@@ -1,0 +1,34 @@
+--- export: UPrimaryDataAsset / DA_Config_STN_06 ---
+{
+  "Type": "BHBaseVehicleConfigDataAsset",
+  "Name": "DA_Config_STN_06",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHBaseVehicleConfigDataAsset'",
+  "Package": "/STN_06/Data/DA_Config_STN_06",
+  "Properties": {
+    "GameplayConfigDataAsset": {
+      "ObjectName": "WDVehicleGameplayComponentsDataAsset'DA_GameplaySystems_STN_06'",
+      "ObjectPath": "/STN_06/Data/DA_GameplaySystems_STN_06.2"
+    },
+    "ThirdPersonCameraBehaviourDataAsset": {
+      "ObjectName": "MLandVehicleSpringArmDataAsset'DA_CameraBehaviour_STN_06'",
+      "ObjectPath": "/STN_06/Data/DA_CameraBehaviour_STN_06.0"
+    },
+    "FirstPersonCameraBehaviourDataAsset": {
+      "ObjectName": "MLandVehicleSpringArmDataAsset'DA_STN_06_CameraBehaviour_FP'",
+      "ObjectPath": "/STN_06/Data/DA_STN_06_CameraBehaviour_FP.0"
+    },
+    "VehicleClassTag": {
+      "TagName": "State.Player.Vehicle.Stationary"
+    },
+    "DestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Destroyed.STN_06"
+    },
+    "bAllowCameraViewToggle": false,
+    "DestroyedStaticMesh": {
+      "ObjectName": "StaticMesh'45ACP'",
+      "ObjectPath": "/Game/Weapons/BulletCasings/Meshes/45ACP.1"
+    },
+    "bShouldPushOffStandingPawns": false
+  }
+}

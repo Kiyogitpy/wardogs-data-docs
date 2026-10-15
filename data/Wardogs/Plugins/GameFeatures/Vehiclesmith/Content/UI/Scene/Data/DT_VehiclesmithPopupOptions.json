@@ -11,5 +11,344 @@
       "ObjectPath": "/Script/WDGame"
     }
   },
-  "Rows": {}
+  "Rows": {
+    "UI.Popup.SaveBlueprint": {
+      "PopupData": {
+        "Tag": {
+          "TagName": "UI.Popup.SaveBlueprint"
+        },
+        "Type": {
+          "TagName": "UI.Popup.Type.Info"
+        },
+        "Title": {
+          "TableId": "/Itemsmith/UI/Data/STRINGS_Itemsmith_Popups.STRINGS_Itemsmith_Popups",
+          "Key": "UI.Popup.SaveBlueprint",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "Subtitle": {
+          "CultureInvariantString": null
+        },
+        "Description": {
+          "CultureInvariantString": null
+        },
+        "bShouldBlockBack": false,
+        "AdditionalData": {
+          "DataArray": []
+        },
+        "Options": [
+          {
+            "Key": "EWDPopupOption::Left",
+            "Value": {
+              "ButtonText": {
+                "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+                "Key": "Button.Cancel",
+                "SourceString": "Cancel",
+                "LocalizedString": "Cancel"
+              },
+              "bAutoCloseOnSelected": true,
+              "bAutoFocusOnOpen": true,
+              "ButtonTypeOverride": {
+                "TagName": "None"
+              },
+              "ButtonConfig": null,
+              "bCallOnSceneEscape": false
+            }
+          },
+          {
+            "Key": "EWDPopupOption::LeftMiddle",
+            "Value": {
+              "ButtonText": {
+                "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+                "Key": "Button.OK",
+                "SourceString": "OK",
+                "LocalizedString": "OK"
+              },
+              "bAutoCloseOnSelected": true,
+              "bAutoFocusOnOpen": false,
+              "ButtonTypeOverride": {
+                "TagName": "None"
+              },
+              "ButtonConfig": null,
+              "bCallOnSceneEscape": false
+            }
+          }
+        ]
+      },
+      "Tag": {
+        "TagName": "UI.Popup.SaveBlueprint"
+      }
+    },
+    "UI.Popup.DeleteBlueprint": {
+      "PopupData": {
+        "Tag": {
+          "TagName": "UI.Popup.DeleteBlueprint"
+        },
+        "Type": {
+          "TagName": "UI.Popup.Type.Warning"
+        },
+        "Title": {
+          "TableId": "/Itemsmith/UI/Data/STRINGS_Itemsmith_Popups.STRINGS_Itemsmith_Popups",
+          "Key": "UI.Popup.DeleteBlueprint",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "Subtitle": {
+          "Namespace": "",
+          "Key": "4CC1F2CC4DBBD6E04D7A2DB89641162B",
+          "SourceString": "This cannot be undone",
+          "LocalizedString": "This cannot be undone"
+        },
+        "Description": {
+          "Namespace": "",
+          "Key": "17463E9B4224DC30F096078AA7D4DCB6",
+          "SourceString": "Do you wish to permanently delete this blueprint?",
+          "LocalizedString": "Do you wish to permanently delete this blueprint?"
+        },
+        "bShouldBlockBack": false,
+        "AdditionalData": {
+          "DataArray": []
+        },
+        "Options": [
+          {
+            "Key": "EWDPopupOption::Left",
+            "Value": {
+              "ButtonText": {
+                "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+                "Key": "Button.Cancel",
+                "SourceString": "Cancel",
+                "LocalizedString": "Cancel"
+              },
+              "bAutoCloseOnSelected": true,
+              "bAutoFocusOnOpen": true,
+              "ButtonTypeOverride": {
+                "TagName": "None"
+              },
+              "ButtonConfig": null,
+              "bCallOnSceneEscape": false
+            }
+          },
+          {
+            "Key": "EWDPopupOption::LeftMiddle",
+            "Value": {
+              "ButtonText": {
+                "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+                "Key": "Button.OK",
+                "SourceString": "OK",
+                "LocalizedString": "OK"
+              },
+              "bAutoCloseOnSelected": true,
+              "bAutoFocusOnOpen": false,
+              "ButtonTypeOverride": {
+                "TagName": "None"
+              },
+              "ButtonConfig": null,
+              "bCallOnSceneEscape": false
+            }
+          }
+        ]
+      },
+      "Tag": {
+        "TagName": "UI.Popup.DeleteBlueprint"
+      }
+    },
+    "UI.Popup.RenameItem": {
+      "PopupData": {
+        "Tag": {
+          "TagName": "UI.Popup.RenameItem"
+        },
+        "Type": {
+          "TagName": "UI.Popup.Type.Itemsmith.Rename"
+        },
+        "Title": {
+          "TableId": "/Vehiclesmith/UI/Scene/Data/STRINGS_Vehiclesmith_Popups.STRINGS_Vehiclesmith_Popups",
+          "Key": "Vehiclesmith.Rename.Title",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "Subtitle": {
+          "TableId": "/Vehiclesmith/UI/Scene/Data/STRINGS_Vehiclesmith_Popups.STRINGS_Vehiclesmith_Popups",
+          "Key": "Vehiclesmith.Rename.Subtitle",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "Description": {
+          "CultureInvariantString": null
+        },
+        "bShouldBlockBack": false,
+        "AdditionalData": {
+          "DataArray": []
+        },
+        "Options": [
+          {
+            "Key": "EWDPopupOption::Left",
+            "Value": {
+              "ButtonText": {
+                "Namespace": "",
+                "Key": "E489474E4129B4569FB2E8868E2D2B8E",
+                "SourceString": "RENAME",
+                "LocalizedString": "RENAME"
+              },
+              "bAutoCloseOnSelected": false,
+              "bAutoFocusOnOpen": false,
+              "ButtonTypeOverride": {
+                "TagName": "None"
+              },
+              "ButtonConfig": null,
+              "bCallOnSceneEscape": false
+            }
+          },
+          {
+            "Key": "EWDPopupOption::LeftMiddle",
+            "Value": {
+              "ButtonText": {
+                "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+                "Key": "Button.Cancel",
+                "SourceString": "Cancel",
+                "LocalizedString": "Cancel"
+              },
+              "bAutoCloseOnSelected": true,
+              "bAutoFocusOnOpen": false,
+              "ButtonTypeOverride": {
+                "TagName": "None"
+              },
+              "ButtonConfig": null,
+              "bCallOnSceneEscape": false
+            }
+          }
+        ]
+      },
+      "Tag": {
+        "TagName": "UI.Popup.RenameItem"
+      }
+    },
+    "UI.Popup.FullBlueprintItems": {
+      "PopupData": {
+        "Tag": {
+          "TagName": "UI.Popup.FullBlueprintItems"
+        },
+        "Type": {
+          "TagName": "UI.Popup.Type.Warning"
+        },
+        "Title": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+          "Key": "Title.Type.Warning",
+          "SourceString": "> Warning <",
+          "LocalizedString": "> Warning <"
+        },
+        "Subtitle": {
+          "TableId": "/Itemsmith/UI/Data/STRINGS_Itemsmith_Popups.STRINGS_Itemsmith_Popups",
+          "Key": "UI.Popup.FullBlueprintItems.Subtitle",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "Description": {
+          "TableId": "/Itemsmith/UI/Data/STRINGS_Itemsmith_Popups.STRINGS_Itemsmith_Popups",
+          "Key": "UI.Popup.FullBlueprintItems.Description",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "bShouldBlockBack": false,
+        "AdditionalData": {
+          "DataArray": []
+        },
+        "Options": [
+          {
+            "Key": "EWDPopupOption::Middle",
+            "Value": {
+              "ButtonText": {
+                "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+                "Key": "Button.OK",
+                "SourceString": "OK",
+                "LocalizedString": "OK"
+              },
+              "bAutoCloseOnSelected": true,
+              "bAutoFocusOnOpen": true,
+              "ButtonTypeOverride": {
+                "TagName": "None"
+              },
+              "ButtonConfig": null,
+              "bCallOnSceneEscape": false
+            }
+          }
+        ]
+      },
+      "Tag": {
+        "TagName": "UI.Popup.FullBlueprintItems"
+      }
+    },
+    "UI.Popup.ChangeComponent": {
+      "PopupData": {
+        "Tag": {
+          "TagName": "UI.Popup.ChangeComponent"
+        },
+        "Type": {
+          "TagName": "UI.Popup.Type.Warning"
+        },
+        "Title": {
+          "TableId": "/Itemsmith/UI/Data/STRINGS_Itemsmith_Popups.STRINGS_Itemsmith_Popups",
+          "Key": "UI.Popup.ChangeComponent",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "Subtitle": {
+          "TableId": "/Vehiclesmith/UI/Scene/Data/STRINGS_Vehiclesmith_Popups.STRINGS_Vehiclesmith_Popups",
+          "Key": "UI.Popup.ChangeComponent.Subtitle",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "Description": {
+          "TableId": "/Vehiclesmith/UI/Scene/Data/STRINGS_Vehiclesmith_Popups.STRINGS_Vehiclesmith_Popups",
+          "Key": "UI.Popup.ChangeComponent.Description",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "bShouldBlockBack": false,
+        "AdditionalData": {
+          "DataArray": []
+        },
+        "Options": [
+          {
+            "Key": "EWDPopupOption::Left",
+            "Value": {
+              "ButtonText": {
+                "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+                "Key": "Button.Apply",
+                "SourceString": "Apply",
+                "LocalizedString": "Apply"
+              },
+              "bAutoCloseOnSelected": true,
+              "bAutoFocusOnOpen": false,
+              "ButtonTypeOverride": {
+                "TagName": "None"
+              },
+              "ButtonConfig": null,
+              "bCallOnSceneEscape": false
+            }
+          },
+          {
+            "Key": "EWDPopupOption::LeftMiddle",
+            "Value": {
+              "ButtonText": {
+                "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+                "Key": "Button.Cancel",
+                "SourceString": "Cancel",
+                "LocalizedString": "Cancel"
+              },
+              "bAutoCloseOnSelected": true,
+              "bAutoFocusOnOpen": true,
+              "ButtonTypeOverride": {
+                "TagName": "None"
+              },
+              "ButtonConfig": null,
+              "bCallOnSceneEscape": false
+            }
+          }
+        ]
+      },
+      "Tag": {
+        "TagName": "UI.Popup.ChangeComponent"
+      }
+    }
+  }
 }

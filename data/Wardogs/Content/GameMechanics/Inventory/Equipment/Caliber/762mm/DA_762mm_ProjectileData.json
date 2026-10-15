@@ -19,7 +19,7 @@
         ]
       },
       "DamageValues": {
-        "BaseDamage": 42.0
+        "BaseDamage": 34.0
       },
       "ProjectileDimensions": {
         "Length": 1.4986,
@@ -42,9 +42,8 @@
         }
       },
       "SuppressionData": {
-        "BaseSuppression": 0.35,
         "DistanceFalloffRange": {
-          "Min": 0.5
+          "Min": 1.0
         },
         "DistanceFalloffCurve": {
           "EditorCurveData": {
@@ -72,6 +71,10 @@
                 "LeaveTangentWeight": 0.0
               }
             ]
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_SuppressionCurve_Medium'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/CR_SuppressionCurve_Medium.0"
           }
         }
       },

@@ -477,7 +477,30 @@
             }
           }
         },
-        null,
+        {
+          "bTaskEnabled": true,
+          "TransitionHandlingPriority": "EStateTreeTransitionPriority::Normal",
+          "Name": "Unlock Achievement",
+          "BindingsBatch": {
+            "Value": 0
+          },
+          "OutputBindingsBatch": {
+            "Value": 65535
+          },
+          "InstanceTemplateIndex": {
+            "Value": 5
+          },
+          "ExecutionRuntimeTemplateIndex": {
+            "Value": 65535
+          },
+          "InstanceDataHandle": {
+            "Source": "EStateTreeDataSourceType::ActiveInstanceData",
+            "Index": 4,
+            "StateHandle": {
+              "Index": 3
+            }
+          }
+        },
         {
           "Operand": "EStateTreeExpressionOperand::Copy",
           "DeltaIndent": 0,
@@ -530,7 +553,28 @@
             }
           }
         },
-        null
+        {
+          "Name": "Get Resource Changed Amount",
+          "BindingsBatch": {
+            "Value": 2
+          },
+          "OutputBindingsBatch": {
+            "Value": 65535
+          },
+          "InstanceTemplateIndex": {
+            "Value": 0
+          },
+          "ExecutionRuntimeTemplateIndex": {
+            "Value": 65535
+          },
+          "InstanceDataHandle": {
+            "Source": "EStateTreeDataSourceType::EvaluationScopeInstanceData",
+            "Index": 0,
+            "StateHandle": {
+              "Index": 65535
+            }
+          }
+        }
       ]
     },
     "DefaultInstanceData": {
@@ -584,7 +628,51 @@
                 "SerialSize": 0
               }
             },
-            null,
+            {
+              "PlayerChallengeComponent": null,
+              "Challenge": {
+                "DisplayName": {
+                  "CultureInvariantString": null
+                },
+                "Description": {
+                  "CultureInvariantString": null
+                },
+                "Rewards": [],
+                "Objectives": [],
+                "bAutoActivate": false,
+                "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+                "bSendChatMessages": false,
+                "Prerequisites": {
+                  "QueryDefinition": {
+                    "StaticStruct": {
+                      "SchemaClass": {
+                        "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                        "ObjectPath": "/Script/WDGame"
+                      },
+                      "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                    },
+                    "SharedDefinition": null
+                  }
+                },
+                "StateTreeReference": {
+                  "StateTree": null,
+                  "Parameters": {
+                    "PropertyDescs": [],
+                    "SerialSize": 0
+                  },
+                  "PropertyOverrides": []
+                },
+                "LinkedStateTreeOverrides": {
+                  "OverrideItems": []
+                },
+                "Tag": {
+                  "TagName": "None"
+                }
+              },
+              "_aaabffnikhljndkfpmmgn_$5D8A7B9D3A5FCC6D$_$21$": [
+                "Event.StateTree.LoadoutPurchased"
+              ]
+            },
             {
               "Parameters": {
                 "PropertyDescs": [],
@@ -598,7 +686,23 @@
     "DefaultEvaluationScopeInstanceData": {
       "InstanceStructs": {
         "Structs": [
-          null
+          {
+            "_aaabfiiccohajljaanldn_$8822E709B900DB3D$_$21$": {
+              "PlayerState": null,
+              "ResourceChanges": [],
+              "ActionTag": {
+                "TagName": "None"
+              },
+              "ItemTag": {
+                "TagName": "None"
+              },
+              "ContextTags": []
+            },
+            "ResourceTag": {
+              "TagName": "Attribute.Meta.Currency.Cash"
+            },
+            "ResourceChangedAmount": 0
+          }
         ]
       }
     },

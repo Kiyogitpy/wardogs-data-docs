@@ -65,6 +65,48 @@
           "AssetPathName": "",
           "SubPathString": ""
         }
+      },
+      {
+        "RegistryToAddTo": "Challenges",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Crowbar/Rewards/DT_Challenges_SessionEvents_Crowbar.DT_Challenges_SessionEvents_Crowbar",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "ChallengeRewards",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Crowbar/Rewards/DT_ChallengeRewards_SessionEvents_Crowbar.DT_ChallengeRewards_SessionEvents_Crowbar",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "RewardFeed",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Crowbar/Rewards/DT_ChallengesFeedActions_Crowbar.DT_ChallengesFeedActions_Crowbar",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
       }
     ]
   }
@@ -81,6 +123,14 @@
       {
         "ObjectName": "GameFeatureAction_DataRegistrySource'Crowbar:GameFeatureAction_DataRegistrySource_0'",
         "ObjectPath": "/Crowbar/Crowbar.0"
+      },
+      {
+        "ObjectName": "WDGameFeatureActions_AddWorldInteractableContextToActor'Crowbar:WDGameFeatureActions_AddWorldInteractableContextToActor_2'",
+        "ObjectPath": "/Crowbar/Crowbar.4"
+      },
+      {
+        "ObjectName": "WDGameFeatureActions_AddWorldInteractableContextToActor'Crowbar:WDGameFeatureActions_AddWorldInteractableContextToActor_3'",
+        "ObjectPath": "/Crowbar/Crowbar.5"
       },
       {
         "ObjectName": "WDGameFeatureActions_AddWorldInteractableContextToActor'Crowbar:WDGameFeatureActions_AddWorldInteractableContextToActor_0'",
@@ -192,12 +242,12 @@
   "Properties": {
     "ContextsToAdd": [
       {
-        "AssetPathName": "/Crowbar/Blueprints/Interaction/WIC_InteractionContext_ForceOpenDoor.WIC_InteractionContext_ForceOpenDoor_C",
+        "AssetPathName": "/Crowbar/Blueprints/Interaction/WIC_InteractionContext_ForceOpenGate.WIC_InteractionContext_ForceOpenGate_C",
         "SubPathString": ""
       }
     ],
     "ClassToAddContextsTo": {
-      "AssetPathName": "/Script/WDGame.WDDoor",
+      "AssetPathName": "/Buildables/Data/Buildables/HBlock_Gate_6x2/B_Door_Gate_Right.B_Door_Gate_Right_C",
       "SubPathString": ""
     }
   }
@@ -221,6 +271,52 @@
     ],
     "ClassToAddContextsTo": {
       "AssetPathName": "/Script/Mechanized.BHBaseVehiclePawn",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / WDGameFeatureActions_AddWorldInteractableContextToActor_2 ---
+{
+  "Type": "WDGameFeatureActions_AddWorldInteractableContextToActor",
+  "Name": "WDGameFeatureActions_AddWorldInteractableContextToActor_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureActions_AddWorldInteractableContextToActor'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Crowbar'",
+    "ObjectPath": "/Crowbar/Crowbar.1"
+  },
+  "Properties": {
+    "ContextsToAdd": [
+      {
+        "AssetPathName": "/Crowbar/Blueprints/Interaction/WIC_InteractionContext_ForceOpenDoor.WIC_InteractionContext_ForceOpenDoor_C",
+        "SubPathString": ""
+      }
+    ],
+    "ClassToAddContextsTo": {
+      "AssetPathName": "/Buildables/Data/Buildables/BarrierDoor/B_Prefab_Door.B_Prefab_Door_C",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / WDGameFeatureActions_AddWorldInteractableContextToActor_3 ---
+{
+  "Type": "WDGameFeatureActions_AddWorldInteractableContextToActor",
+  "Name": "WDGameFeatureActions_AddWorldInteractableContextToActor_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureActions_AddWorldInteractableContextToActor'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Crowbar'",
+    "ObjectPath": "/Crowbar/Crowbar.1"
+  },
+  "Properties": {
+    "ContextsToAdd": [
+      {
+        "AssetPathName": "/Crowbar/Blueprints/Interaction/WIC_InteractionContext_ForceOpenGate.WIC_InteractionContext_ForceOpenGate_C",
+        "SubPathString": ""
+      }
+    ],
+    "ClassToAddContextsTo": {
+      "AssetPathName": "/Buildables/Data/Buildables/HBlock_Gate_6x2/B_Door_Gate_Left.B_Door_Gate_Left_C",
       "SubPathString": ""
     }
   }

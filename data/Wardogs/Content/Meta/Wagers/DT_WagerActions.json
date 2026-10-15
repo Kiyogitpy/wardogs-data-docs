@@ -1,0 +1,387 @@
+--- export: UDataTable / DT_WagerActions ---
+{
+  "Type": "DataTable",
+  "Name": "DT_WagerActions",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/Meta/Wagers/DT_WagerActions",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDWagerActionDefinition'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Wager.Action.Kills": {
+      "_aaaakgfoodihlgbfboeka_$65EE387B6151E4A0$_$10$": true,
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "D4D860BA49486AA777E3F29283F21A9B",
+        "SourceString": "Get {Count} Kills",
+        "LocalizedString": "Get {Count} Kills"
+      },
+      "ShortName": {
+        "Namespace": "",
+        "Key": "D016CEA34B2924434A6FA3AE78C33861",
+        "SourceString": "Kills",
+        "LocalizedString": "Kills"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "5002405F4DE2CF257B5D828F55B06CBC",
+        "SourceString": "Get this amount of kills.",
+        "LocalizedString": "Get this amount of kills."
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Features/HUD/Killfeed/Textures/T_UI_Killfeed_KillConfirmed.T_UI_Killfeed_KillConfirmed",
+        "SubPathString": ""
+      },
+      "Archetype": {
+        "TagName": "Wager.Archetype.Kills"
+      },
+      "ChallengeId": {
+        "TagName": "Challenges.Challenge.Wager.Kills"
+      },
+      "_aaabcjojpnjmnbelecidg_$9E9FD9CD14B42836$_$18$": "NumPlayersToKill",
+      "MinCount": 1,
+      "MaxCount": 25,
+      "DefaultCount": 1,
+      "Odds": [
+        1.001,
+        1.001,
+        1.001,
+        1.0055,
+        1.01,
+        1.0179,
+        1.0258,
+        1.0338,
+        1.0419,
+        1.05,
+        1.0594,
+        1.0689,
+        1.0785,
+        1.0881,
+        1.0979,
+        1.1077,
+        1.1176,
+        1.1276,
+        1.1377,
+        1.1479,
+        1.1582,
+        1.1686,
+        1.1791,
+        1.1897,
+        1.2004
+      ],
+      "Rules": [
+        {
+          "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+          "Key": "Action.Rule.ControlZone",
+          "SourceString": "You must be inside the control zone",
+          "LocalizedString": "You must be inside the control zone"
+        },
+        {
+          "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+          "Key": "Action.Kills.Rule.EnemyPlayers",
+          "SourceString": "Enemy players only",
+          "LocalizedString": "Enemy players only"
+        },
+        {
+          "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+          "Key": "Action.Kills.Rule.RevivedByEnemy",
+          "SourceString": "Not a player an enemy revived",
+          "LocalizedString": "Not a player an enemy revived"
+        },
+        {
+          "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+          "Key": "Action.Rule.Diminishing",
+          "SourceString": "Repeats on the same player don't count",
+          "LocalizedString": "Repeats on the same player don't count"
+        }
+      ],
+      "PayoutResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "CooldownSeconds": 86400.0,
+      "Tag": {
+        "TagName": "Wager.Action.Kills"
+      }
+    },
+    "Wager.Action.PlayerDelivery": {
+      "_aaaakgfoodihlgbfboeka_$65EE387B6151E4A0$_$10$": true,
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "C6D25454459A92E6C3CE09B3FA3951B9",
+        "SourceString": "Deliver {Count} people to the Control Zone",
+        "LocalizedString": "Deliver {Count} people to the Control Zone"
+      },
+      "ShortName": {
+        "Namespace": "",
+        "Key": "EC028FD24344333EAB2E55B346E9EEA4",
+        "SourceString": "Players Delivered",
+        "LocalizedString": "Players Delivered"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "2D7D613E45281142E4E3B481ADF35F0C",
+        "SourceString": "Get this amount of players delivered to the Control Zone",
+        "LocalizedString": "Get this amount of players delivered to the Control Zone"
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Features/HUD/Killfeed/Textures/t_ui_centrefeed_dropoff.t_ui_centrefeed_dropoff",
+        "SubPathString": ""
+      },
+      "Archetype": {
+        "TagName": "Wager.Archetype.PlayersDelivered"
+      },
+      "ChallengeId": {
+        "TagName": "Challenges.Challenge.Wager.PlayerDelivery"
+      },
+      "_aaabcjojpnjmnbelecidg_$9E9FD9CD14B42836$_$18$": "NumPassengersToDeliver",
+      "MinCount": 1,
+      "MaxCount": 20,
+      "DefaultCount": 1,
+      "Odds": [
+        1.001,
+        1.001,
+        1.001,
+        1.001,
+        1.001,
+        1.0058,
+        1.0105,
+        1.0153,
+        1.0202,
+        1.025,
+        1.0301,
+        1.0352,
+        1.0404,
+        1.0455,
+        1.0507,
+        1.056,
+        1.0612,
+        1.0665,
+        1.0718,
+        1.0771
+      ],
+      "Rules": [
+        {
+          "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+          "Key": "Action.PlayerDelivery.Rule.NoSpawnVehicle",
+          "SourceString": "Spawn vehicles don't count",
+          "LocalizedString": "Spawn vehicles don't count"
+        },
+        {
+          "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+          "Key": "Action.PlayerDelivery.Rule.PassengerSurvives",
+          "SourceString": "Counts once your passenger survives the drop-off",
+          "LocalizedString": "Counts once your passenger survives the drop-off"
+        }
+      ],
+      "PayoutResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "CooldownSeconds": 86400.0,
+      "Tag": {
+        "TagName": "Wager.Action.PlayerDelivery"
+      }
+    },
+    "Wager.Action.Revives": {
+      "_aaaakgfoodihlgbfboeka_$65EE387B6151E4A0$_$10$": true,
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "62C3F8B24F3B80F25693A5AC3E537557",
+        "SourceString": "Revive {Count} Teammates",
+        "LocalizedString": "Revive {Count} Teammates"
+      },
+      "ShortName": {
+        "Namespace": "",
+        "Key": "4CA4780E450DC7FAEFBE2A8ACD229B37",
+        "SourceString": "Revives",
+        "LocalizedString": "Revives"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "3D4F1CD04B3705D3ED1E5385EC9C73D8",
+        "SourceString": "Revive this many teammates.",
+        "LocalizedString": "Revive this many teammates."
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Features/HUD/Killfeed/Textures/T_UI_Killfeed_Revive.T_UI_Killfeed_Revive",
+        "SubPathString": ""
+      },
+      "Archetype": {
+        "TagName": "Wager.Archetype.Revives"
+      },
+      "ChallengeId": {
+        "TagName": "Challenges.Challenge.Wager.Revives"
+      },
+      "_aaabcjojpnjmnbelecidg_$9E9FD9CD14B42836$_$18$": "NumPlayersToRevive",
+      "MinCount": 1,
+      "MaxCount": 50,
+      "DefaultCount": 5,
+      "Odds": [
+        1.001,
+        1.001,
+        1.001,
+        1.001,
+        1.001,
+        1.0058,
+        1.0105,
+        1.0153,
+        1.0202,
+        1.025,
+        1.0301,
+        1.0352,
+        1.0404,
+        1.0455,
+        1.0507,
+        1.056,
+        1.0612,
+        1.0665,
+        1.0718,
+        1.0771,
+        1.0825,
+        1.0878,
+        1.0932,
+        1.0987,
+        1.1041,
+        1.1096,
+        1.1151,
+        1.1207,
+        1.1263,
+        1.1318,
+        1.1375,
+        1.1431,
+        1.1488,
+        1.1545,
+        1.1603,
+        1.166,
+        1.1718,
+        1.1776,
+        1.1835,
+        1.1894,
+        1.1953,
+        1.2012,
+        1.2072,
+        1.2132,
+        1.2192,
+        1.2253,
+        1.2314,
+        1.2375,
+        1.2437,
+        1.2498
+      ],
+      "Rules": [
+        {
+          "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+          "Key": "Action.Rule.ControlZone",
+          "SourceString": "You must be inside the control zone",
+          "LocalizedString": "You must be inside the control zone"
+        },
+        {
+          "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+          "Key": "Action.Revives.Rule.Teammates",
+          "SourceString": "Teammates only",
+          "LocalizedString": "Teammates only"
+        },
+        {
+          "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+          "Key": "Action.Revives.Rule.DownedByTeammate",
+          "SourceString": "Not a player downed by a teammate or by themselves",
+          "LocalizedString": "Not a player downed by a teammate or by themselves"
+        },
+        {
+          "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+          "Key": "Action.Rule.Diminishing",
+          "SourceString": "Repeats on the same player don't count",
+          "LocalizedString": "Repeats on the same player don't count"
+        }
+      ],
+      "PayoutResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "CooldownSeconds": 86400.0,
+      "Tag": {
+        "TagName": "Wager.Action.Revives"
+      }
+    },
+    "Wager.Action.VehiclesDestroyed": {
+      "_aaaakgfoodihlgbfboeka_$65EE387B6151E4A0$_$10$": true,
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "916CC7CB48E23D94CC7CB3959A470701",
+        "SourceString": "Destroy {Count} Occupied Vehicles",
+        "LocalizedString": "Destroy {Count} Occupied Vehicles"
+      },
+      "ShortName": {
+        "Namespace": "",
+        "Key": "513E1DD04386F1A85264D388F097FCF6",
+        "SourceString": "Vehicles Destroyed",
+        "LocalizedString": "Vehicles Destroyed"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "BF39BAE946F2EA9CE460D8A179C4EE43",
+        "SourceString": "Destroy this many vehicles that have an enemy occupant.",
+        "LocalizedString": "Destroy this many vehicles that have an enemy occupant."
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Shared/Icons/Equipment/Killfeed/T_UI_Icon_Killfeed_Explosion.T_UI_Icon_Killfeed_Explosion",
+        "SubPathString": ""
+      },
+      "Archetype": {
+        "TagName": "Wager.Archetype.VehiclesDestroyed"
+      },
+      "ChallengeId": {
+        "TagName": "Challenges.Challenge.Wager.VehiclesDestroyed"
+      },
+      "_aaabcjojpnjmnbelecidg_$9E9FD9CD14B42836$_$18$": "NumVehiclesToDestroy",
+      "MinCount": 1,
+      "MaxCount": 20,
+      "DefaultCount": 1,
+      "Odds": [
+        1.001,
+        1.001,
+        1.001,
+        1.0055,
+        1.01,
+        1.0179,
+        1.0258,
+        1.0338,
+        1.0419,
+        1.05,
+        1.0594,
+        1.0689,
+        1.0785,
+        1.0881,
+        1.0979,
+        1.1077,
+        1.1176,
+        1.1276,
+        1.1377,
+        1.1479
+      ],
+      "Rules": [
+        {
+          "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+          "Key": "Action.VehiclesDestroyed.Rule.EnemyDriver",
+          "SourceString": "An enemy must be driving it",
+          "LocalizedString": "An enemy must be driving it"
+        },
+        {
+          "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+          "Key": "Action.VehiclesDestroyed.Rule.EnemyBuyer",
+          "SourceString": "An enemy must have bought it",
+          "LocalizedString": "An enemy must have bought it"
+        }
+      ],
+      "PayoutResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "CooldownSeconds": 86400.0,
+      "Tag": {
+        "TagName": "Wager.Action.VehiclesDestroyed"
+      }
+    }
+  }
+}

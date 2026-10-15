@@ -1,0 +1,59 @@
+--- export: UPrimaryDataAsset / VV_WHL_08_Default ---
+{
+  "Type": "ModularVehicleVariant",
+  "Name": "VV_WHL_08_Default",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleVariant'",
+  "Package": "/WHL_08/Variants/VV_WHL_08_Default",
+  "Properties": {
+    "bIncludeInBuildCommandLine": true,
+    "VariantID": {
+      "TagName": "Vehicle.Variant.Land.Wheeled.WHL_08.Default"
+    },
+    "SpawnParams": {
+      "Min": {
+        "X": -333.41745,
+        "Y": -169.0808,
+        "Z": -0.054968
+      },
+      "Max": {
+        "X": 317.55817,
+        "Y": 169.08083,
+        "Z": 259.09384
+      }
+    },
+    "AssemblyData": {
+      "VehicleBase": {
+        "ObjectName": "ModularVehiclePlatform'VP_WHL_08'",
+        "ObjectPath": "/WHL_08/Platforms/VP_WHL_08.0"
+      },
+      "CustomData": {
+        "SlotOverrides": [
+          {
+            "Path": {
+              "Path": "Seats"
+            },
+            "Part": {
+              "AssetPathName": "/WHL_08/Parts/VP_WHL_08_Seats.VP_WHL_08_Seats",
+              "SubPathString": ""
+            }
+          }
+        ],
+        "CustomFragmentData": [
+          {
+            "Path": {
+              "Path": ":Chassis"
+            },
+            "Data": {
+              "OverrideMesh": {
+                "AssetPathName": "/WHL_08/Meshes/SK_WHL_08_Default.SK_WHL_08_Default",
+                "SubPathString": ""
+              },
+              "OverrideMaterials": []
+            }
+          }
+        ]
+      }
+    }
+  }
+}

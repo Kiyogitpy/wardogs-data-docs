@@ -4,7 +4,21 @@ parent: "Game Features"
 ---
 
 # Wardogs — GameFeatures: WorldFeatures (v2)
-*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: [`Plugins/GameFeatures/WorldFeatures/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures) — 31 JSON files. Values are raw export values. StateTree internals were summarised, not decoded.*
+*Extracted from cooked game data (UE 5.7 export JSON). Source folder: [`Plugins/GameFeatures/WorldFeatures/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures) — 31 JSON files. Values are raw export values. StateTree internals were summarised, not decoded.*
+
+---
+
+## Season 02 update (2026-10-15)
+
+- No files were added or removed, and the file count (31) and table counts are unchanged.
+- HotZoneMagnet tower-capture cash reward, `HostileFactor` literal (`Resources[0]`): 3.0 → 6.0.
+- HotZoneMagnet tower-capture XP reward, `HostileReward` literal (`Resources[1]`): 250.0 → 300.0.
+- The three `ST_Challenges_SessionEvents_KOTH_HotZoneMagnet_*` StateTrees and the [`DT_Challenges_SessionEvents_KOTH_HotZoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Data/Challenges/DT_Challenges_SessionEvents_KOTH_HotZoneMagnet.json) table have structural changes only in fields this page does not cover. Their values are otherwise unchanged.
+- [`DT_LootableDataTable`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/Lootable/Content/Data/DT_LootableDataTable.json) item entries changed across the tower rows, including `ItemsToSpawn` item tags, sub-item tags and sub-item amounts. Loot contents are not covered on this page, so only the notable changes are listed here:
+  - Tower row `ItemsToSpawn[0]` item: `Id.Item.FOB` → `Id.Item.SV98`.
+  - Tower row `ItemsToSpawn[2]` item: `Id.Item.M249` → `Id.Item.MedKit.Standard`.
+  - Tower row `ItemsToSpawn[3]` sub-item amount: 1 → 30 (sub-item `Id.Item.12g.RifledSlug`).
+  - Tower row `ItemsToSpawn[4]` item: `Id.Item.M500` → `ID.Item.RepairTool.Drill.Heavy`, with `ItemSpawnWeight` 1.0 → 0.5.
 
 ---
 
@@ -123,7 +137,7 @@ Each row has `bSpawnInsideControlZoneOnly`.
 | `Lootable.SniperOnly.MiddleValue` | false |
 | `Lootable.SniperOnly.LowValue` | false |
 
-The loot contents themselves (what each row spawns) are not in this export.
+Only the notable loot-content changes are listed in the Season 02 section. The full spawned item lists are not decoded here.
 
 ---
 
@@ -143,7 +157,7 @@ One GFD with no actions. It is a test pack and adds nothing.
 ## 6. Still not pulled / limitations
 
 - **StateTree logic.** The three challenge StateTrees and the full set of state nodes are summarised, not decoded. Triggers and conditions are not confirmed.
-- **Expression variables.** `LastVictimCount`, `LastVictimCountMax`, `LastVictimReductionModifier`, `HostileModifier` and `BaseReward` are named in the expression strings. Their numeric values are not in this folder. They are most likely defined in the challenge system or the `DT_ChallengeRewards` tables elsewhere.
+- **Expression variables.** `LastVictimCount`, `LastVictimCountMax`, `LastVictimReductionModifier`, `HostileModifier` and `BaseReward` are named in the expression strings. Some of their literal values are in `DT_ChallengeRewards` in this folder. This page lists only the ones named in the Season 02 section.
 - **Interaction ranges.** `InteractionRange` is set on the interaction assets but its value was not extracted.
-- **Loot contents.** The spawned item lists for each Lootable row are not in this folder.
-- **Obfuscated keys.** Some `_aaa…` localisation keys are present; they were not resolved.
+- **Loot contents.** The full spawned item lists for each Lootable row are not decoded here.
+- **Localisation keys.** Some `_aaa…` localisation keys are present; their text is not resolved here.

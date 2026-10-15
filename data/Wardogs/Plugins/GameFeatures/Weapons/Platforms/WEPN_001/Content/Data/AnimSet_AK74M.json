@@ -26,8 +26,8 @@
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_Weap_FP_AK74M_Reload_Empty_Retain.0"
             },
             "ThirdPersonItemAnimation": {
-              "ObjectName": "AnimMontage'AM_Weap_AK74M_ReloadEmpty_3P'",
-              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/TP/AM_Weap_AK74M_ReloadEmpty_3P.0"
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Empty.0"
             },
             "bOverrideLength": false,
             "OverrideLength": 0.5,
@@ -341,8 +341,8 @@
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_Weap_AK74M_Reload_Tactical_Retain.0"
             },
             "ThirdPersonItemAnimation": {
-              "ObjectName": "AnimMontage'AM_Weap_AK74M_ReloadTactical_3P'",
-              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/TP/AM_Weap_AK74M_ReloadTactical_3P.0"
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
             },
             "bOverrideLength": false,
             "OverrideLength": 1.25,
@@ -629,6 +629,41 @@
               "KeyOverride": {
                 "TagName": "Animation.Asset.Weapon.Reload.Tactical.AK74M.D2D"
               }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.AK74MMagazine75rnd"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.AK74MExtendedMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Tactical.AK74M.D2E"
+              }
             }
           ],
           "ConditionSchema": {
@@ -689,7 +724,7 @@
             },
             "bOverrideLength": false,
             "OverrideLength": 1.0,
-            "ItemBlendOutTime": 0.1,
+            "ItemBlendOutTime": 0.0,
             "PlayerBlendOutTime": 0.1
           },
           "Overrides": [],
@@ -718,8 +753,8 @@
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_Weap_AK74M_Rechamber.0"
             },
             "ThirdPersonItemAnimation": {
-              "ObjectName": "AnimMontage'AM_Weap_AK74M_Rechamber'",
-              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_Weap_AK74M_Rechamber.0"
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Chamber'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Chamber.0"
             },
             "bOverrideLength": false,
             "OverrideLength": 1.0,
@@ -789,7 +824,10 @@
               "ObjectName": "AnimMontage'AM_FP_AR_Door_Interact'",
               "ObjectPath": "/Game/Animation/Characters/Weapons/Doors/AM_FP_AR_Door_Interact.0"
             },
-            "ThirdPersonPlayerAnimation": null,
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AR_Door_Interact'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Doors/AM_TP_AR_Door_Interact.0"
+            },
             "FirstPersonItemAnimation": null,
             "ThirdPersonItemAnimation": null,
             "bOverrideLength": false,
@@ -823,8 +861,8 @@
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Empty_75_Retain.0"
             },
             "ThirdPersonItemAnimation": {
-              "ObjectName": "AnimMontage'AM_Weap_AK74M_ReloadEmpty_3P'",
-              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/TP/AM_Weap_AK74M_ReloadEmpty_3P.0"
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Empty.0"
             },
             "bOverrideLength": false,
             "OverrideLength": 1.0,
@@ -857,10 +895,10 @@
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Empty_75to30_Retain.0"
             },
             "ThirdPersonItemAnimation": {
-              "ObjectName": "AnimMontage'AM_Weap_AK74M_ReloadEmpty_3P'",
-              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/TP/AM_Weap_AK74M_ReloadEmpty_3P.0"
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Empty.0"
             },
-            "bOverrideLength": true,
+            "bOverrideLength": false,
             "OverrideLength": 3.70067,
             "ItemBlendOutTime": 0.1,
             "PlayerBlendOutTime": 0.1
@@ -891,8 +929,8 @@
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Empty_30to75_Retain.0"
             },
             "ThirdPersonItemAnimation": {
-              "ObjectName": "AnimMontage'AM_Weap_AK74M_ReloadEmpty_3P'",
-              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/TP/AM_Weap_AK74M_ReloadEmpty_3P.0"
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Empty.0"
             },
             "bOverrideLength": false,
             "OverrideLength": 1.0,
@@ -925,8 +963,8 @@
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Tactical_75_Retain.0"
             },
             "ThirdPersonItemAnimation": {
-              "ObjectName": "AnimMontage'AM_Weap_AK74M_ReloadTactical_3P'",
-              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/TP/AM_Weap_AK74M_ReloadTactical_3P.0"
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
             },
             "bOverrideLength": false,
             "OverrideLength": 1.0,
@@ -959,10 +997,10 @@
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Tactical_75to30_Retain.0"
             },
             "ThirdPersonItemAnimation": {
-              "ObjectName": "AnimMontage'AM_Weap_AK74M_ReloadTactical_3P'",
-              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/TP/AM_Weap_AK74M_ReloadTactical_3P.0"
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
             },
-            "bOverrideLength": true,
+            "bOverrideLength": false,
             "OverrideLength": 3.39733,
             "ItemBlendOutTime": 0.1,
             "PlayerBlendOutTime": 0.1
@@ -993,10 +1031,10 @@
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Tactical_30to75_Retain.0"
             },
             "ThirdPersonItemAnimation": {
-              "ObjectName": "AnimMontage'AM_Weap_AK74M_ReloadTactical_3P'",
-              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/TP/AM_Weap_AK74M_ReloadTactical_3P.0"
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
             },
-            "bOverrideLength": true,
+            "bOverrideLength": false,
             "OverrideLength": 3.68,
             "ItemBlendOutTime": 0.1,
             "PlayerBlendOutTime": 0.1
@@ -1427,8 +1465,8 @@
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Empty_30_Drop.0"
             },
             "ThirdPersonItemAnimation": {
-              "ObjectName": "AnimMontage'AM_Weap_AK74M_ReloadEmpty_3P'",
-              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/TP/AM_Weap_AK74M_ReloadEmpty_3P.0"
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Empty.0"
             },
             "bOverrideLength": false,
             "OverrideLength": 0.5,
@@ -1742,8 +1780,8 @@
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Tactical_Drop.0"
             },
             "ThirdPersonItemAnimation": {
-              "ObjectName": "AnimMontage'AM_Weap_AK74M_ReloadTactical_3P'",
-              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/TP/AM_Weap_AK74M_ReloadTactical_3P.0"
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
             },
             "bOverrideLength": false,
             "OverrideLength": 1.25,
@@ -2056,7 +2094,10 @@
               "ObjectName": "AnimMontage'AM_FP_Weap_AK74M_Reload_Empty_75_Drop'",
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Empty_75_Drop.0"
             },
-            "ThirdPersonItemAnimation": null,
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Empty.0"
+            },
             "bOverrideLength": false,
             "OverrideLength": 1.0,
             "ItemBlendOutTime": 0.1,
@@ -2087,8 +2128,11 @@
               "ObjectName": "AnimMontage'AM_FP_Weap_AK74M_Reload_Empty_75to30_Drop'",
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Empty_75to30_Drop.0"
             },
-            "ThirdPersonItemAnimation": null,
-            "bOverrideLength": true,
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Empty.0"
+            },
+            "bOverrideLength": false,
             "OverrideLength": 4.18867,
             "ItemBlendOutTime": 0.1,
             "PlayerBlendOutTime": 0.1
@@ -2118,8 +2162,11 @@
               "ObjectName": "AnimMontage'AM_FP_Weap_AK74M_Reload_Empty_30to75_Drop'",
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Empty_30to75_Drop.0"
             },
-            "ThirdPersonItemAnimation": null,
-            "bOverrideLength": true,
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Empty.0"
+            },
+            "bOverrideLength": false,
             "OverrideLength": 5.22,
             "ItemBlendOutTime": 0.1,
             "PlayerBlendOutTime": 0.1
@@ -2150,8 +2197,8 @@
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Tactical_75_Drop.0"
             },
             "ThirdPersonItemAnimation": {
-              "ObjectName": "AnimMontage'AM_Weap_AK74M_ReloadTactical_3P'",
-              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/TP/AM_Weap_AK74M_ReloadTactical_3P.0"
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
             },
             "bOverrideLength": false,
             "OverrideLength": 1.0,
@@ -2184,10 +2231,10 @@
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Tactical_75to30_Drop.0"
             },
             "ThirdPersonItemAnimation": {
-              "ObjectName": "AnimMontage'AM_Weap_AK74M_ReloadTactical_3P'",
-              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/TP/AM_Weap_AK74M_ReloadTactical_3P.0"
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
             },
-            "bOverrideLength": true,
+            "bOverrideLength": false,
             "OverrideLength": 3.29333,
             "ItemBlendOutTime": 0.1,
             "PlayerBlendOutTime": 0.1
@@ -2218,10 +2265,10 @@
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Tactical_30to75_Drop.0"
             },
             "ThirdPersonItemAnimation": {
-              "ObjectName": "AnimMontage'AM_Weap_AK74M_ReloadTactical_3P'",
-              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/TP/AM_Weap_AK74M_ReloadTactical_3P.0"
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
             },
-            "bOverrideLength": true,
+            "bOverrideLength": false,
             "OverrideLength": 3.885,
             "ItemBlendOutTime": 0.1,
             "PlayerBlendOutTime": 0.1
@@ -2252,8 +2299,8 @@
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_Weap_FP_AK74M_Reload_Empty_Retain.0"
             },
             "ThirdPersonItemAnimation": {
-              "ObjectName": "AnimMontage'AM_Weap_AK74M_ReloadEmpty_3P'",
-              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/TP/AM_Weap_AK74M_ReloadEmpty_3P.0"
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
             },
             "bOverrideLength": false,
             "OverrideLength": 0.5,
@@ -2286,8 +2333,8 @@
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_Weap_FP_AK74M_Reload_Empty_Retain.0"
             },
             "ThirdPersonItemAnimation": {
-              "ObjectName": "AnimMontage'AM_Weap_AK74M_ReloadEmpty_3P'",
-              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/TP/AM_Weap_AK74M_ReloadEmpty_3P.0"
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Empty.0"
             },
             "bOverrideLength": true,
             "OverrideLength": 3.36,
@@ -2320,8 +2367,8 @@
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Empty_30to75_Retain.0"
             },
             "ThirdPersonItemAnimation": {
-              "ObjectName": "AnimMontage'AM_Weap_AK74M_ReloadEmpty_3P'",
-              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/TP/AM_Weap_AK74M_ReloadEmpty_3P.0"
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Empty.0"
             },
             "bOverrideLength": false,
             "OverrideLength": 1.0,
@@ -2354,8 +2401,8 @@
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_Weap_FP_AK74M_Reload_Empty_Retain.0"
             },
             "ThirdPersonItemAnimation": {
-              "ObjectName": "AnimMontage'AM_Weap_AK74M_ReloadEmpty_3P'",
-              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/TP/AM_Weap_AK74M_ReloadEmpty_3P.0"
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Empty.0"
             },
             "bOverrideLength": true,
             "OverrideLength": 3.808,
@@ -2388,8 +2435,8 @@
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Tactical_75to30_Retain.0"
             },
             "ThirdPersonItemAnimation": {
-              "ObjectName": "AnimMontage'AM_Weap_AK74M_ReloadEmpty_3P'",
-              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/TP/AM_Weap_AK74M_ReloadEmpty_3P.0"
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
             },
             "bOverrideLength": true,
             "OverrideLength": 4.10733,
@@ -2422,8 +2469,8 @@
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_Weap_AK74M_Reload_Tactical_Retain.0"
             },
             "ThirdPersonItemAnimation": {
-              "ObjectName": "AnimMontage'AM_Weap_AK74M_ReloadTactical_3P'",
-              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/TP/AM_Weap_AK74M_ReloadTactical_3P.0"
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
             },
             "bOverrideLength": false,
             "OverrideLength": 1.25,
@@ -2456,8 +2503,8 @@
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_Weap_AK74M_Reload_Tactical_Retain.0"
             },
             "ThirdPersonItemAnimation": {
-              "ObjectName": "AnimMontage'AM_Weap_AK74M_ReloadTactical_3P'",
-              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/TP/AM_Weap_AK74M_ReloadTactical_3P.0"
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
             },
             "bOverrideLength": true,
             "OverrideLength": 3.19834,
@@ -2490,8 +2537,8 @@
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Tactical_30to75_Retain.0"
             },
             "ThirdPersonItemAnimation": {
-              "ObjectName": "AnimMontage'AM_Weap_AK74M_ReloadTactical_3P'",
-              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/TP/AM_Weap_AK74M_ReloadTactical_3P.0"
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
             },
             "bOverrideLength": true,
             "OverrideLength": 4.32,
@@ -2524,8 +2571,8 @@
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_Weap_AK74M_Reload_Tactical_Retain.0"
             },
             "ThirdPersonItemAnimation": {
-              "ObjectName": "AnimMontage'AM_Weap_AK74M_ReloadTactical_3P'",
-              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/TP/AM_Weap_AK74M_ReloadTactical_3P.0"
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
             },
             "bOverrideLength": true,
             "OverrideLength": 3.333,
@@ -2546,20 +2593,20 @@
         "Value": {
           "BaseAsset": {
             "FirstPersonPlayerAnimation": {
-              "ObjectName": "AnimMontage'AM_FP_AK74M_Reload_Empty_75to30_Retain'",
-              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Reload_Empty_75to30_Retain.0"
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Reload_Tactical_75to30_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Reload_Tactical_75to30_Retain.0"
             },
             "ThirdPersonPlayerAnimation": {
               "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadEmpty_D2S'",
               "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadEmpty_D2S.2"
             },
             "FirstPersonItemAnimation": {
-              "ObjectName": "AnimMontage'AM_FP_Weap_AK74M_Reload_Empty_75to30_Retain'",
-              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Empty_75to30_Retain.0"
+              "ObjectName": "AnimMontage'AM_FP_Weap_AK74M_Reload_Tactical_75to30_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Tactical_75to30_Retain.0"
             },
             "ThirdPersonItemAnimation": {
-              "ObjectName": "AnimMontage'AM_Weap_AK74M_ReloadTactical_3P'",
-              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/TP/AM_Weap_AK74M_ReloadTactical_3P.0"
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
             },
             "bOverrideLength": true,
             "OverrideLength": 3.77067,
@@ -2592,8 +2639,8 @@
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Empty_30_Drop.0"
             },
             "ThirdPersonItemAnimation": {
-              "ObjectName": "AnimMontage'AM_Weap_AK74M_ReloadEmpty_3P'",
-              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/TP/AM_Weap_AK74M_ReloadEmpty_3P.0"
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Empty.0"
             },
             "bOverrideLength": false,
             "OverrideLength": 0.5,
@@ -2626,8 +2673,8 @@
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Empty_30_Drop.0"
             },
             "ThirdPersonItemAnimation": {
-              "ObjectName": "AnimMontage'AM_Weap_AK74M_ReloadEmpty_3P'",
-              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/TP/AM_Weap_AK74M_ReloadEmpty_3P.0"
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Empty.0"
             },
             "bOverrideLength": true,
             "OverrideLength": 4.06933,
@@ -2660,8 +2707,8 @@
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Tactical_Drop.0"
             },
             "ThirdPersonItemAnimation": {
-              "ObjectName": "AnimMontage'AM_Weap_AK74M_ReloadTactical_3P'",
-              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/TP/AM_Weap_AK74M_ReloadTactical_3P.0"
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
             },
             "bOverrideLength": false,
             "OverrideLength": 4.144,
@@ -2694,8 +2741,8 @@
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Tactical_Drop.0"
             },
             "ThirdPersonItemAnimation": {
-              "ObjectName": "AnimMontage'AM_Weap_AK74M_ReloadTactical_3P'",
-              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/TP/AM_Weap_AK74M_ReloadTactical_3P.0"
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
             },
             "bOverrideLength": true,
             "OverrideLength": 2.914,
@@ -2728,8 +2775,8 @@
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Empty_30to75_Drop.0"
             },
             "ThirdPersonItemAnimation": {
-              "ObjectName": "AnimMontage'AM_Weap_AK74M_ReloadTactical_3P'",
-              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/TP/AM_Weap_AK74M_ReloadTactical_3P.0"
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Empty.0"
             },
             "bOverrideLength": true,
             "OverrideLength": 3.996,
@@ -2762,8 +2809,8 @@
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Tactical_Drop.0"
             },
             "ThirdPersonItemAnimation": {
-              "ObjectName": "AnimMontage'AM_Weap_AK74M_ReloadTactical_3P'",
-              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/TP/AM_Weap_AK74M_ReloadTactical_3P.0"
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
             },
             "bOverrideLength": false,
             "OverrideLength": 1.25,
@@ -2796,8 +2843,8 @@
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Tactical_75to30_Drop.0"
             },
             "ThirdPersonItemAnimation": {
-              "ObjectName": "AnimMontage'AM_Weap_AK74M_ReloadTactical_3P'",
-              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/TP/AM_Weap_AK74M_ReloadTactical_3P.0"
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
             },
             "bOverrideLength": true,
             "OverrideLength": 3.50133,
@@ -2830,8 +2877,8 @@
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Empty_30_Drop.0"
             },
             "ThirdPersonItemAnimation": {
-              "ObjectName": "AnimMontage'AM_Weap_AK74M_ReloadEmpty_3P'",
-              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/TP/AM_Weap_AK74M_ReloadEmpty_3P.0"
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Empty.0"
             },
             "bOverrideLength": true,
             "OverrideLength": 4.032,
@@ -2864,8 +2911,8 @@
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Empty_30to75_Drop.0"
             },
             "ThirdPersonItemAnimation": {
-              "ObjectName": "AnimMontage'AM_Weap_AK74M_ReloadEmpty_3P'",
-              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/TP/AM_Weap_AK74M_ReloadEmpty_3P.0"
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Empty.0"
             },
             "bOverrideLength": true,
             "OverrideLength": 4.88167,
@@ -2898,8 +2945,8 @@
               "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Empty_75to30_Drop.0"
             },
             "ThirdPersonItemAnimation": {
-              "ObjectName": "AnimMontage'AM_Weap_AK74M_ReloadEmpty_3P'",
-              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/TP/AM_Weap_AK74M_ReloadEmpty_3P.0"
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Empty.0"
             },
             "bOverrideLength": false,
             "OverrideLength": 1.0,
@@ -2926,6 +2973,84 @@
             "ThirdPersonAsset": {
               "ObjectName": "AnimSequence'A_TP_AK74M_FGP_14_Pose'",
               "ObjectPath": "/WEPN_001/Animation/Character/Sequences/TP/Foregrips/A_TP_AK74M_FGP_14_Pose.0"
+            }
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Holdable.Inspect.Empty"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Inspect_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Inspect_Empty.0"
+            },
+            "ThirdPersonPlayerAnimation": null,
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_FP_AK74M_Inspect_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_Weap_FP_AK74M_Inspect_Empty.0"
+            },
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Holdable.Inspect.Fallback"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Inspect_Fallback'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Inspect_Fallback.0"
+            },
+            "ThirdPersonPlayerAnimation": null,
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_FP_AK74M_Inspect_Fallback'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_Weap_FP_AK74M_Inspect_Fallback.0"
+            },
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Character.PickUp"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AR_Item_Pickup'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/AssaultRifle/AM_FP_AR_Item_Pickup.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Item_Pick_Up'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Item_Pick_Drop/AM_TP_AK74M_Item_Pick_Up.0"
             }
           },
           "Overrides": [],

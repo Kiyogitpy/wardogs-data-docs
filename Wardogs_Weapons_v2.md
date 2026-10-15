@@ -6,7 +6,22 @@ parent: "Content"
 # Wardogs — Weapons Reference (v2)
 *Extracted from cooked game data (JSON export, [`Wardogs/Content/Weapons/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Weapons), 92 source files). Parsed with a Python script; 15 Input files contain several `--- export:` blocks each and were split on those headers. Numbers are the raw exported values.*
 
-> **Scope note:** this folder holds only **8 weapon stat assets** (`WDWeaponStatsData`). The main rifle, SMG, LMG, shotgun and pistol stat tables are not in this folder. Their aim-sway curves are here; the stat tables themselves live under [`Plugins/GameFeatures/Weapons`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Weapons), all 40 listed in [Infantry Weapon Stats](Wardogs_InfantryWeapons_Stats_v1.html).
+> **Scope note:** this folder holds only **8 weapon stat assets** (`WDWeaponStatsData`). The main rifle, SMG, LMG, shotgun and pistol stat tables are not in this folder. Their aim-sway curves are here; the stat tables themselves live under [`Plugins/GameFeatures/Weapons`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Weapons), all 45 listed in [Infantry Weapon Stats](Wardogs_InfantryWeapons_Stats_v1.html).
+
+---
+
+## Season 02 update (2026-10-15)
+
+- **Removed:** the Mosin sniper package under [`Plugins/GameFeatures/Weapons/Sniper/Mosin`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/Mosin) (11 files, including `DA_Mosin_Stats`). Nothing in the tables below changes because the Mosin was never in this folder.
+- **Added:** 154 files under [`Plugins/GameFeatures/Weapons`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Weapons), mostly attachments: foregrips FGRP_019 and FGRP_020, magazines MAGZ_051 and MAGZ_067 to MAGZ_071, and muzzles MUZL_064 to MUZL_067. Six new weapon stat assets: [`DA_WEPN_017_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/DA_WEPN_017_Stats.json), [`DA_WEPN_031_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_031/Content/Data/DA_WEPN_031_Stats.json), [`DA_WEPN_034_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_034/Content/Data/DA_WEPN_034_Stats.json), [`DA_WEPN_036_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_036/Content/Data/DA_WEPN_036_Stats.json), [`DA_WEPN_037_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_037/Content/Data/DA_WEPN_037_Stats.json) and [`DA_MWSY_001_Heavy_MountedMachineGun_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/VehicleWeaponry/MWSY_001/Content/Weapons/DA_MWSY_001_Heavy_MountedMachineGun_Stats.json).
+- **SKS recoil pattern ([`DA_SKS_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/DMR/SKS/Data/DA_SKS_Stats.json)):** all 20 vertical (Y) values are 2.5x the old values (first point 0.95 → 2.375, last point 1.05 → 2.625). Horizontal (X) values now range from −2.399 to +0.613, where they previously ranged from −0.055 to +0.136. This fits the patch note "new recoil pass across all DMRs".
+- **SKS fields:** `ViewKickMagnitudeMultiplier` 1.1 is gone, and `SuppressionMultiplier` 1.1 is new. This fits the suppression rebuild in the patch notes.
+- **SKS and Judge stabilisation:** the CooldownRate and ExitGracePeriod entries are now unnamed fields. Values are unchanged (SKS 9.0, Judge 4.0).
+- **M2 Browning ([`DA_M2Browning_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Stationary/M2Browning/Data/DA_M2Browning_Stats.json)):** `SuppressionMultiplier` 0.8 is new.
+- **Vendor prices (weapons):** AK74M 1600 → 800, Vector 2600 → 5600, MMGL 6000 → 7500, LMG_02 4500 → 4100, RPG7 2000 → 1800, TAR21 600 → 1200.
+- **Vendor prices (attachments):** FGRP_007 1150 → 840, FGRP_014 1100 → 950, MUZL_013 1000 → 820, MUZL_012 400 → 1200. Attachment prices are not in this doc's tables.
+- **SR_04 ([`ID_SR_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/SR_04/Content/Data/ID_SR_04.json)):** `TimeAfterFireToRechamber` 0.24 → 0.2.
+- The folder still holds 92 files and 8 stat assets. No files were added or removed here.
 
 ---
 
@@ -38,7 +53,7 @@ Notes:
 | FocusEnergyReductionPerShot | 50.0 |
 | RecoilReductionWhenFocussing | 30.0 |
 | ViewKickCurve | 3 keys: 0→0, 0.15→1, 0.4→0.75 |
-| ViewKickMagnitudeMultiplier | 1.1 |
+| SuppressionMultiplier | 1.1 |
 | RecoveryKickCurve | 1 key (0→0) |
 | FOVShiftingType / Curve | `Curve`: 0→0, 1.5→−0.5, 8.43→−1, 13.43→−1, 30.26→−1.5 |
 | RecoilPattern | 20 points |
@@ -53,7 +68,7 @@ Notes:
 | Distance damage falloff | `bUseDistanceDamageFalloffCurve = True`; curve 0→1, 40,000→1, 120,000→0.2 |
 | AdsCameraCurve | [`CF_DMR_ADS_Curve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Curves/ADSCurves/CF_DMR_ADS_Curve.json) |
 | AimSway | Persistent=False, CrouchOffsetMultiplier 0.55, ProneOffsetMultiplier 0.35, TotalPatternDuration 6.0, NoFocusEnergySpeedMultiplier 2.5, PlayerCameraOffsetMultiplier 0.75 |
-| AimSway stabilisation | AdsStabilizeTime 2.0, CooldownRate 9.0, CooldownRateMovingMultiplier 2.0, MovementProgressPenalty 0.75, ExitGracePeriod 9.0 |
+| AimSway stabilisation | AdsStabilizeTime 2.0, two unnamed fields (both 9.0), CooldownRateMovingMultiplier 2.0, MovementProgressPenalty 0.75 |
 | Animation sway | ADSPitch/Yaw multiplier curves both [`CRV_WeaponAnimSwayMultiplier_DMR_Harsh`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Curves/AimSway/DMR/CRV_WeaponAnimSwayMultiplier_DMR_Harsh.json) |
 
 The distance falloff times line up with `EffectiveRange = 400` if the times are in cm (40,000 cm = 400 m). This is consistent with the unit inference above but not proven.
@@ -73,7 +88,7 @@ The distance falloff times line up with `EffectiveRange = 400` if the times are 
 | RandomDeviationDegree | 10.0 |
 | PostPatternRandomYaw / Pitch | Yaw (−0.5, 0.5); Pitch (0.5, 1.0) |
 | AdsCameraCurve | [`CF_Pistol_ADS_Curve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Curves/ADSCurves/CF_Pistol_ADS_Curve.json) |
-| AimSway stabilisation | AdsStabilizeTime 1.5, CooldownRate 4.0, ExitGracePeriod 4.0 |
+| AimSway stabilisation | AdsStabilizeTime 1.5, two unnamed fields (both 4.0) |
 | MeleeDamage | 20 |
 
 **DA_AT4_Stats** (rocket launcher)
@@ -94,6 +109,7 @@ The distance falloff times line up with `EffectiveRange = 400` if the times are 
 - `ViewKickCurve` 0→0, 0.15→1; `RecoveryKickCurve` 0→0, 0.3→0.2.
 - `RecoilPattern` has **29** points (the largest pattern in this folder), with no aim-sway block.
 - No `EffectiveRange` field.
+- `SuppressionMultiplier` 0.8.
 
 **DA_Fists_Stats**: `RandomDeviationDegree` 10.0; view kick 0→0, 0.15→1; recovery kick 0→0, 0.3→1.
 
@@ -219,7 +235,7 @@ The export lists the inputs to each system but not the formulas that combine the
 - The main AR, SMG, LMG, shotgun and pistol **stat tables** are not in this folder. Only their aim-sway and stabilisation curves are here. The stat tables are in [Infantry Weapon Stats](Wardogs_InfantryWeapons_Stats_v1.html).
 - **Units are not stated** in the export. Speeds are assumed to be cm/s and ranges to be metres, based on the falloff-curve and EffectiveRange check. That is an inference.
 - `IronSightsAimTime = 50,000` on the tank barrel and `WeaponAccuracy = 70 MOA` look like placeholders or unused tuning. The export gives no way to check.
-- Two properties on the SKS and Judge are obfuscated names (`_aaabijhbknckndgboaemo_…` and `_aaacamgpphfkeldlcaboo_…`), so their meaning is unknown. Values: SKS 1.0 and 2.5, Judge 2.0.
+- Two unnamed fields on the SKS and Judge have no known meaning. Values: SKS 1.0 and 2.5, Judge 2.0.
 - `CF_*_ADS_Curve` and [`ADS_Blur_Curve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/ADS_Blur_Curve.json) have no stated output meaning.
 - Curve tangents and interpolation modes are not summarised. Only key times and values are reported.
 - The M2 recoil pattern has 29 points; the full list is not reproduced.

@@ -27,6 +27,95 @@
       "Y": 150.0
     },
     "KeyRotationSensitivity": 95.0,
-    "bApplyFovScale": false
+    "bApplyFovScale": false,
+    "WeaponRotationComponentData": {
+      "bLimitWeaponYaw": true,
+      "MinWeaponYawAngle": -65.0,
+      "MaxWeaponYawAngle": 65.0,
+      "bLimitWeaponPitch": true,
+      "MinWeaponPitchAngle": -65.0,
+      "MaxWeaponPitchAngle": 12.0,
+      "_aaabmhagophehdgggmogn_$706EF7473666CE6D$_$28$": true,
+      "_aaablhfoaabeeaoodcjce_$75E001440EE32924$_$27$": -20.0,
+      "bStabilisationPermitted": true,
+      "SimulationType": "EWDVehicleWeaponRotationSimType::FullSim",
+      "YawDriveStrength": 10000.0,
+      "YawDampingFactor": 0.05,
+      "PitchDriveStrength": 10000.0,
+      "PitchDampingFactor": 0.05,
+      "RotationSpeed": 75.0,
+      "_aaabfncmhojkliegpjanl_$D2C7E9AB846F90DB$_$21$": {
+        "X": 150.0,
+        "Y": 150.0
+      },
+      "CollisionTargetFactor": 0.1,
+      "TurretSkeletalMeshTag": "WeaponExtension_0",
+      "YawJointSocket": "weaponYaw_J",
+      "PitchJointSocket": "weaponPitch_J",
+      "PitchBodyBone": "weaponBarrel_J",
+      "YawBodyBone": "weaponYaw_J",
+      "WeaponRotationGameplayCueTag": {
+        "TagName": "GameplayCue.Vehicle.Weapon.Aim"
+      }
+    },
+    "WeaponStatesCameraData": [
+      {
+        "Key": {
+          "TagName": "State.Vehicle.Weapon.ADS"
+        },
+        "Value": {
+          "bSupported": true,
+          "AttachQuery": {
+            "SourceMode": "EAttachSourceQueryMode::ComponentTag",
+            "SocketMode": "EAttachSocketMatchMode::Explicit",
+            "SourceID": "WeaponExtension_0",
+            "SourceFilter": {
+              "RequireTags": [],
+              "IgnoreTags": [],
+              "TagQuery": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [],
+                "QueryTokenStream": [],
+                "UserDescription": "",
+                "AutoDescription": ""
+              }
+            },
+            "SocketName": "S_BarrelCamera",
+            "SocketFilter": {
+              "RequireTags": [],
+              "IgnoreTags": [],
+              "TagQuery": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [],
+                "QueryTokenStream": [],
+                "UserDescription": "",
+                "AutoDescription": ""
+              }
+            }
+          },
+          "CameraBehaviourData": null,
+          "bAlignWithTarget": true,
+          "ZeroingDistance": 200.0,
+          "FOVMultiplier": 1.0,
+          "_aaabokgmbjbllidnailcp_$A6C191BB83D08B2F$_$30$": false,
+          "_aaabfcjmfdhlfmlfijgpg_$29C537B5CB5896F6$_$21$": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "_aaabejnhnhahophgdkgfl_$9D7D707EF763A65B$_$20$": false
+        }
+      }
+    ],
+    "HUDLayoutTag": {
+      "TagName": "UI.HUD.Layout.Vehicle.Crew.Air"
+    },
+    "HUDScopeBlurAlpha": 1.0,
+    "WeaponExtensionsDataAssets": [
+      {
+        "AssetPathName": "/ROT_02/Weapons/Cannon/WE_ROT_02_Weapon_30mmCannon.WE_ROT_02_Weapon_30mmCannon",
+        "SubPathString": ""
+      }
+    ]
   }
 }

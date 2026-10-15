@@ -8,7 +8,47 @@
   "Properties": {
     "PlayersTextFormat": {
       "CultureInvariantString": "{CurrentPlayers}/{Capacity}{ReservedSpaces}"
-    }
+    },
+    "ServerStateTextures": [
+      {
+        "Key": "EWDUIServerBrowserEntryState::Locked",
+        "Value": {
+          "AssetPathName": "/Game/UI/Features/Frontend/FindMatch/Widgets/ServerBrowserEntry/Materials/MI_UI_Image_ServerBrowserEntry__Lock.MI_UI_Image_ServerBrowserEntry__Lock",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": "EWDUIServerBrowserEntryState::Open",
+        "Value": {
+          "AssetPathName": "/Game/UI/Features/Frontend/FindMatch/Widgets/ServerBrowserEntry/Materials/MI_UI_Triangle_ServerBrowserEntry_Play.MI_UI_Triangle_ServerBrowserEntry_Play",
+          "SubPathString": ""
+        }
+      }
+    ],
+    "CustomLoadingScreenWidgetClass": {
+      "AssetPathName": "/Game/UI/Features/Frontend/LoadingScreen/W_LoadingScreen_Bakurani.W_LoadingScreen_Bakurani_C",
+      "SubPathString": ""
+    },
+    "_aaabngbccafmidlpkflnk_$612205C83BFA5BDA$_$29$": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIServerDescriptorViewModel",
+        "SubPathString": ""
+      }
+    },
+    "_aaabbfdhohfpgicgbemnd_$537E75F682614CD3$_$17$": [
+      "Server.Descriptor.PersistentProgression",
+      "Server.Descriptor.CommunityHosted",
+      "Server.Descriptor.Hardcore",
+      "Server.Descriptor.InfantryOnly",
+      "Experience.Rules.InfantryOnly",
+      "Experience.Rules.Hardcore"
+    ],
+    "ExtensionTemplates": [
+      {
+        "ObjectName": "WDUIViewModelExtension_HideReasons'DA_ServerBrowserEntry:WDUIViewModelExtension_HideReasons_1'",
+        "ObjectPath": "/Game/UI/Features/Frontend/FindMatch/Widgets/ServerBrowserEntry/Data/DA_ServerBrowserEntry.1"
+      }
+    ]
   }
 }
 --- export: UObject / WDUIViewModelExtension_HideReasons_1 ---

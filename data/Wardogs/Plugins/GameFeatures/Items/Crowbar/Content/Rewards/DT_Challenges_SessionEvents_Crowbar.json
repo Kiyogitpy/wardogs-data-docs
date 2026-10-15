@@ -1,0 +1,100 @@
+--- export: UDataTable / DT_Challenges_SessionEvents_Crowbar ---
+{
+  "Type": "DataTable",
+  "Name": "DT_Challenges_SessionEvents_Crowbar",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Crowbar/Rewards/DT_Challenges_SessionEvents_Crowbar",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDChallengeDefinition'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Challenges.SessionEvents.Crowbar.DoorForcedOpen": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "9FE7BFEE472AB09D895702B95FE397F4",
+        "SourceString": "Door Forced Open",
+        "LocalizedString": "Door Forced Open"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "D63F0A394A1CB2CECADEDCB2C05007D7",
+        "SourceString": "Reward for breaching doors",
+        "LocalizedString": "Reward for breaching doors"
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.Crowbar.DoorForcedOpen"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_Crowbar_ForceOpenDoor'",
+          "ObjectPath": "/Crowbar/Rewards/ST_Challenges_SessionEvents_Crowbar_ForceOpenDoor.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'WDRepeatActionTargetTracker'",
+                "ObjectPath": "/Script/WDGame"
+              },
+              "ID": "FD92F4F5-401862EC-2BD5C2A2-883E2D9F",
+              "Name": "VictimTracker",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 12
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.Crowbar.DoorForcedOpen"
+      }
+    }
+  }
+}

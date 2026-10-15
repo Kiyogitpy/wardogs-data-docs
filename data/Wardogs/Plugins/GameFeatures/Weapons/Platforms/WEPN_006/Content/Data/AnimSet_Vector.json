@@ -1257,7 +1257,10 @@
               "ObjectName": "AnimMontage'AM_FP_Vector_Door_Interact'",
               "ObjectPath": "/Game/Animation/Characters/Weapons/Doors/AM_FP_Vector_Door_Interact.0"
             },
-            "ThirdPersonPlayerAnimation": null,
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_Vector_Door_Interact'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Doors/AM_TP_Vector_Door_Interact.0"
+            },
             "FirstPersonItemAnimation": null,
             "ThirdPersonItemAnimation": null,
             "bOverrideLength": false,
@@ -3050,6 +3053,84 @@
             "OverrideLength": 3.27,
             "ItemBlendOutTime": 0.1,
             "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Holdable.Inspect.Empty"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Vector_Inspect_Generic'",
+              "ObjectPath": "/WEPN_006/Animation/Character/Montage/FP/AM_FP_Vector_Inspect_Generic.0"
+            },
+            "ThirdPersonPlayerAnimation": null,
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Vector_Inspect_Generic_Weap'",
+              "ObjectPath": "/WEPN_006/Animation/Weapon/Montage/FP/AM_FP_Vector_Inspect_Generic_Weap.0"
+            },
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Holdable.Inspect.Fallback"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Vector_Inspect_Generic'",
+              "ObjectPath": "/WEPN_006/Animation/Character/Montage/FP/AM_FP_Vector_Inspect_Generic.0"
+            },
+            "ThirdPersonPlayerAnimation": null,
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Vector_Inspect_Generic_Weap'",
+              "ObjectPath": "/WEPN_006/Animation/Weapon/Montage/FP/AM_FP_Vector_Inspect_Generic_Weap.0"
+            },
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Character.PickUp"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AR_Item_Pickup'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/AssaultRifle/AM_FP_AR_Item_Pickup.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Item_Pick_Up'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Item_Pick_Drop/AM_TP_AK74M_Item_Pick_Up.0"
+            }
           },
           "Overrides": [],
           "ConditionSchema": {

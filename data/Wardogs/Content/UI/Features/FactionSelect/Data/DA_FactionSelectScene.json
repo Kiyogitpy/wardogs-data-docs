@@ -21,6 +21,79 @@
         "AssetPathName": "/Script/WDGame.WDUIFactionSelectButtonViewModel",
         "SubPathString": ""
       }
+    },
+    "LeaveMatchPopupData": {
+      "Tag": {
+        "TagName": "UI.Popup.LeaveMatch"
+      },
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Title.LeaveMatch",
+        "SourceString": "Leave Match",
+        "LocalizedString": "Leave Match"
+      },
+      "Subtitle": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Subtitle.LeaveMatch",
+        "SourceString": "You will be returned to the main menu.",
+        "LocalizedString": "You will be returned to the main menu."
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Description.LeaveMatch",
+        "SourceString": "Are you sure you want to leave your current match?",
+        "LocalizedString": "Are you sure you want to leave your current match?"
+      },
+      "Options": [
+        {
+          "Key": "EWDPopupOption::Left",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.No",
+              "SourceString": "No",
+              "LocalizedString": "No"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": false,
+            "ButtonTypeOverride": {
+              "TagName": "None"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": true
+          }
+        },
+        {
+          "Key": "EWDPopupOption::Right",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.Yes",
+              "SourceString": "Yes",
+              "LocalizedString": "Yes"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": true,
+            "ButtonTypeOverride": {
+              "TagName": "UI.Popup.Button.Main"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        }
+      ]
+    },
+    "_aaabibjhdamdcaijpphah_$19730C32089FF707$_$24$": {
+      "TableId": "/Game/UI/StringTables/STRINGS_FactionSelect.STRINGS_FactionSelect",
+      "Key": "Text.TeamSwitchLock",
+      "SourceString": "TEAM SWITCH LOCKED... {Minutes}:{Seconds}",
+      "LocalizedString": "TEAM SWITCH LOCKED... {Minutes}:{Seconds}"
+    },
+    "EnterSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.Gamemode.FactionSelect.Enter"
+    },
+    "ExitSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.Gamemode.FactionSelect.Exit"
     }
   }
 }

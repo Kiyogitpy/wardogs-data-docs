@@ -179,8 +179,8 @@
         {
           "Key": "Id.Vehicle.WeaponExtension.TNK_01.MachineGun",
           "Value": {
-            "Namespace": "",
-            "Key": "4426A44C42D70B2F7D257B97EB4DC123",
+            "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+            "Key": "Category.Weapon.MachineGun",
             "SourceString": "Machine Gun",
             "LocalizedString": "Machine Gun"
           }
@@ -223,8 +223,8 @@
         {
           "Key": "Id.Vehicle.WeaponExtension.TNK_01.Heavy",
           "Value": {
-            "Namespace": "",
-            "Key": "570EE34948FB401898760686A8E7DD23",
+            "TableId": "/Game/UI/StringTables/STRINGS_GameplayTags.STRINGS_GameplayTags",
+            "Key": "Vendor.Category.Ammo.Type.Standard.TaggedText.Heavy",
             "SourceString": "Heavy Cannon",
             "LocalizedString": "Heavy Cannon"
           }
@@ -927,8 +927,8 @@
         {
           "Key": "Id.Vehicle.WeaponExtension.TNK_01.MachineGun",
           "Value": {
-            "Namespace": "",
-            "Key": "ECE22F0F44A5EE10FEC75AA41EB29D9D",
+            "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+            "Key": "Category.Weapon.MachineGun",
             "SourceString": "Machine Gun",
             "LocalizedString": "Machine Gun"
           }
@@ -1166,6 +1166,54 @@
         "TagName": "Id.Vehicle.WeaponExtension.ROT_04.MountedMachineGun"
       }
     },
+    "Id.Vehicle.WeaponExtension.WHL_08.RingTurret": {
+      "Text": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+        "Key": "Category.Weapon.MachineGun",
+        "SourceString": "Machine Gun",
+        "LocalizedString": "Machine Gun"
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Id.Vehicle.WeaponExtension.WHL_08.RingTurret"
+      }
+    },
+    "Id.Vehicle.WeaponExtension.TNK_04.Default": {
+      "Text": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+        "Key": "Category.Weapon.Heavy",
+        "SourceString": "Heavy",
+        "LocalizedString": "Heavy"
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Id.Vehicle.WeaponExtension.TNK_04.Default"
+      }
+    },
+    "Id.Vehicle.WeaponExtension.TNK_04.MachineGun": {
+      "Text": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+        "Key": "Category.Weapon.Coaxial",
+        "SourceString": "Coaxial Gun",
+        "LocalizedString": "Coaxial Gun"
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Id.Vehicle.WeaponExtension.TNK_04.MachineGun"
+      }
+    },
+    "Id.Vehicle.WeaponExtension.TNK_04.MountedMachineGun": {
+      "Text": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+        "Key": "Category.Weapon.MachineGun",
+        "SourceString": "Machine Gun",
+        "LocalizedString": "Machine Gun"
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Id.Vehicle.WeaponExtension.TNK_04.MountedMachineGun"
+      }
+    },
     "Vendor.Category.Utility.Type.Vehicle": {
       "Text": {
         "TableId": "/Game/UI/StringTables/STRINGS_GameplayTags.STRINGS_GameplayTags",
@@ -1190,6 +1238,18 @@
         "TagName": "Vendor.Category.Gear.Camouflage"
       }
     },
+    "Vendor.Category.Gear.VehicleUse": {
+      "Text": {
+        "TableId": "/Game/UI/StringTables/STRINGS_GameplayTags.STRINGS_GameplayTags",
+        "Key": "Vendor.Category.Gear.VehicleUse.Text",
+        "SourceString": "Vehicle Use",
+        "LocalizedString": "Vehicle Use"
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Vendor.Category.Gear.VehicleUse"
+      }
+    },
     "Vendor.Category.Vehicle.CounterMeasures": {
       "Text": {
         "TableId": "/Game/UI/StringTables/STRINGS_GameplayTags.STRINGS_GameplayTags",
@@ -1200,6 +1260,30 @@
       "TaggedText": [],
       "Tag": {
         "TagName": "Vendor.Category.Vehicle.CounterMeasures"
+      }
+    },
+    "Vendor.Category.Vehicle.CounterMeasures.Flares": {
+      "Text": {
+        "TableId": "/Game/UI/StringTables/STRINGS_GameplayTags.STRINGS_GameplayTags",
+        "Key": "Item.Category.Flares",
+        "SourceString": "Flares",
+        "LocalizedString": "Flares"
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Vendor.Category.Vehicle.CounterMeasures.Flares"
+      }
+    },
+    "Vendor.Category.Vehicle.CounterMeasures.Smoke": {
+      "Text": {
+        "TableId": "/Game/UI/StringTables/STRINGS_GameplayTags.STRINGS_GameplayTags",
+        "Key": "Item.Category.VehicleSmoke",
+        "SourceString": "Smokes",
+        "LocalizedString": "Smokes"
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Vendor.Category.Vehicle.CounterMeasures.Smoke"
       }
     },
     "Id.Vehicle.WeaponExtension.WHL_07.MachineGun": {
@@ -1226,22 +1310,10 @@
         "TagName": "Vendor.Category.Vehicle.Music"
       }
     },
-    "Vendor.Category.Vehicle.CounterMeasures.Flares": {
-      "Text": {
-        "Namespace": "",
-        "Key": "7A4A4877404864E5A53AF589A1BAABC3",
-        "SourceString": "Flares",
-        "LocalizedString": "Flares"
-      },
-      "TaggedText": [],
-      "Tag": {
-        "TagName": "Vendor.Category.Vehicle.CounterMeasures.Flares"
-      }
-    },
     "Vendor.Category.Sub.Vehicle.SupplyCrate.Small": {
       "Text": {
-        "Namespace": "",
-        "Key": "866E910A4052A8730B66DB9FCE22D2FB",
+        "TableId": "/Game/UI/StringTables/STRINGS_GameplayTags.STRINGS_GameplayTags",
+        "Key": "Vendor.Category.Sub.Vehicle.SupplyCrate.Small.Text",
         "SourceString": "Small Crates",
         "LocalizedString": "Small Crates"
       },
@@ -1252,8 +1324,8 @@
     },
     "Vendor.Category.Sub.Vehicle.SupplyCrate.Large": {
       "Text": {
-        "Namespace": "",
-        "Key": "AA83347F478B8911302C99A85FDFDDB9",
+        "TableId": "/Game/UI/StringTables/STRINGS_GameplayTags.STRINGS_GameplayTags",
+        "Key": "Vendor.Category.Sub.Vehicle.SupplyCrate.Large.Text",
         "SourceString": "Large Crates",
         "LocalizedString": "Large Crates"
       },
@@ -1264,8 +1336,8 @@
     },
     "Vendor.Category.Sub.Vehicle.Logistics.Pallet": {
       "Text": {
-        "Namespace": "",
-        "Key": "11746BE44A02C894CAD79DB3314C516A",
+        "TableId": "/Game/UI/StringTables/STRINGS_GameplayTags.STRINGS_GameplayTags",
+        "Key": "Vendor.Category.Sub.Vehicle.Logistics.Pallet.Text",
         "SourceString": "Supply Pallets",
         "LocalizedString": "Supply Pallets"
       },
@@ -1276,8 +1348,8 @@
     },
     "Vendor.Category.Sub.Vehicle.Logistics.FOB": {
       "Text": {
-        "Namespace": "",
-        "Key": "2CAA449A49014B9928817CAE20206735",
+        "TableId": "/Game/UI/StringTables/STRINGS_Map_Legend.STRINGS_Map_Legend",
+        "Key": "Map.Legend.FOB",
         "SourceString": "FOB",
         "LocalizedString": "FOB"
       },

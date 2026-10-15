@@ -4,7 +4,27 @@ parent: "Plugins"
 ---
 
 # Wardogs — Plugin: BHAimAssist (v2)
-*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: [`Plugins/BHAimAssist/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/BHAimAssist) — 30 JSON files, all `CurveFloat` assets under [`Content/AimAssist/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist). Curve keys were read directly; units are not stated in the export.*
+*Extracted from cooked game data (UE 5.7 export JSON). Source folder: [`Plugins/BHAimAssist/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/BHAimAssist) — 16 JSON files, all `CurveFloat` assets under [`Content/AimAssist/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist). Curve keys were read directly; units are not stated in the export.*
+
+---
+
+## Season 02 update (2026-10-15)
+
+- **Hipfire curves removed.** All 11 hipfire pull and slow curves are gone (AR, LMG, Melee, Pistol, SMG and Shotgun for pull; AR, LMG, Pistol, SMG and Shotgun for slow). Only the ADS curves remain, plus the new Default curves.
+- **New Default curves.** `PullStrengthDistanceCurve_Default` (0:0, 600:1, 2000:1, 2500:0) and `SlowStrengthDistanceCurve_Default` (0:0, 600:1, 2000:1, 2500:0) were added.
+- **Reticle edge falloff reduced to one curve.** The AR, LMG, Pistol, SMG and Shotgun falloff curves were removed. `ReticleEdgeFalloff_Default` now has two keys (0:0.2, 1:1), was 0:0.05, 0.5:0.2, 0.8:0.55, 1:1.
+- **Target weight.** [`C_AimAssistTargetWeightCurve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistTargetWeightCurve.json) now reaches 1 at input 0.01 (was 0.5 at 0.05, 1 at 1.0).
+- **Pull ramp.** ADS pull curves now reach full strength at 200 (was 400). The sniper pull is still 0 at 150 and reaches full at 200.
+- **Pull plateau ends and fall-off, ADS (old → new):**
+  - AR: plateau end 12000 → 22500, falls to 0 at 30000 → 25000
+  - LMG: plateau end 20000 → 20000 (same), falls to 0 at 50000 → 22500
+  - Pistol: falls to 0 at 10000 → 12500
+  - SMG: falls to 0 at 20000 → 15000
+  - Shotgun: falls to 0 at 15000 → 20000
+  - Sniper: plateau end 5000 → 15000, falls to 0 at 10000 → 20000
+- **Slow ramp, ADS.** Slow ADS curves now reach 0.8 at 2000 and full at 4000 (was 0.5 at 300 and full at 1200). The sniper slow curve reaches full at 2000 (was 1200).
+- **Slow fall-off, ADS.** LMG slow falls to 0 at 50000 → 30000. AR slow falls to 0 at 30000 → 22500. The other ADS slow curves now end between 12500 and 30000.
+- The official patch notes list an aim assist strength slider in Settings and changes to Aim Acceleration. This page covers the curve data only.
 
 ---
 
@@ -16,12 +36,12 @@ Three curve families, plus one target-weight curve:
 
 | Family | Count | Input | Output (strength) |
 |---|---|---|---|
-| **PullStrengthDistanceCurve** | 12 | Distance | How hard the reticle is pulled toward a target |
-| **SlowStrengthDistanceCurve** | 12 | Distance | How much the aim is slowed near a target |
-| **ReticleEdgeFalloff** | 6 | Normalised reticle position (0 at centre to 1 at edge) | Weight of the assist toward the reticle edge |
+| **PullStrengthDistanceCurve** | 7 | Distance | How hard the reticle is pulled toward a target |
+| **SlowStrengthDistanceCurve** | 7 | Distance | How much the aim is slowed near a target |
+| **ReticleEdgeFalloff** | 1 | Normalised reticle position (0 at centre to 1 at edge) | Weight of the assist toward the reticle edge |
 | **TargetWeightCurve** | 1 | Normalised input (0 to 1) | Weight of the target |
 
-Pull and slow curves are split by weapon class and by aim state: **ADS** (aiming down sights) and **Hipfire**. Weapon classes are AR, LMG, Pistol, SMG, Shotgun, Sniper, and Melee (melee has hipfire only).
+Pull and slow curves are split by weapon class and by aim state: **ADS** (aiming down sights) and **Default**. Weapon classes with ADS curves are AR, LMG, Pistol, SMG, Shotgun, and Sniper (the sniper curves have no `_ADS` suffix). The Default curves are not tied to a weapon class.
 
 ---
 
@@ -31,20 +51,15 @@ Keys are `Time:Value`. In the export, time is the distance.
 
 | Curve | Key points (distance: strength) | Plateau | Falls to 0 at |
 |---|---|---|---|
-| `PullStrengthDistanceCurve_AR_ADS` | 0:0, 150:0, 400:1, 12000:1, 20000:0.6, 26000:0.25, 30000:0 | 400 to 12000 | 30000 |
-| `PullStrengthDistanceCurve_AR_Hipfire` | 0:0, 150:0, 400:0.8, 600:1, 1900:1, 2100:0.75, 2300:0.5, 2500:0 | 600 to 1900 | 2500 |
-| `PullStrengthDistanceCurve_LMG_ADS` | 0:0, 150:0, 400:1, 20000:1, 35000:0.6, 45000:0.25, 50000:0 | 400 to 20000 | 50000 |
-| `PullStrengthDistanceCurve_LMG_Hipfire` | 0:0, 150:0, 400:0.8, 600:1, 1500:1, 1750:0.75, 2000:0.5, 2100:0 | 600 to 1500 | 2100 |
-| `PullStrengthDistanceCurve_Melee_Hipfire` | 0:0, 150:0, 200:1, 500:1, 700:0.4, 800:0 | 200 to 500 | 800 |
-| `PullStrengthDistanceCurve_Pistol_ADS` | 0:0, 150:0, 400:1, 5000:1, 7500:0.6, 9000:0.25, 10000:0 | 400 to 5000 | 10000 |
-| `PullStrengthDistanceCurve_Pistol_Hipfire` | 0:0, 150:0, 400:1, 1000:1, 1500:0.75, 2000:0.5, 2100:0 | 400 to 1000 | 2100 |
-| `PullStrengthDistanceCurve_SMG_ADS` | 0:0, 150:0, 400:1, 8000:1, 14000:0.6, 18000:0.25, 20000:0 | 400 to 8000 | 20000 |
-| `PullStrengthDistanceCurve_SMG_Hipfire` | 0:0, 150:0, 400:1, 1000:1, 2000:0.75, 2500:0 | 400 to 1000 | 2500 |
-| `PullStrengthDistanceCurve_Shotgun_ADS` | 0:0, 150:0, 400:1, 7000:1, 11000:0.6, 13500:0.25, 15000:0 | 400 to 7000 | 15000 |
-| `PullStrengthDistanceCurve_Shotgun_Hipfire` | 0:0, 150:0, 400:1, 1000:1, 2000:0.75, 2500:0 | 400 to 1000 | 2500 |
-| `PullStrengthDistanceCurve_Sniper` | 0:0, 150:0, 400:1, 5000:1, 8000:0.5, 10000:0 | 400 to 5000 | 10000 |
+| `PullStrengthDistanceCurve_AR_ADS` | 0:0, 200:1, 22500:1, 25000:0 | 200 to 22500 | 25000 |
+| `PullStrengthDistanceCurve_Default` | 0:0, 600:1, 2000:1, 2500:0 | 600 to 2000 | 2500 |
+| `PullStrengthDistanceCurve_LMG_ADS` | 0:0, 200:1, 20000:1, 22500:0 | 200 to 20000 | 22500 |
+| `PullStrengthDistanceCurve_Pistol_ADS` | 0:0, 200:1, 10000:1, 12500:0 | 200 to 10000 | 12500 |
+| `PullStrengthDistanceCurve_SMG_ADS` | 0:0, 200:1, 12500:1, 15000:0 | 200 to 12500 | 15000 |
+| `PullStrengthDistanceCurve_Shotgun_ADS` | 0:0, 200:1, 17500:1, 20000:0 | 200 to 17500 | 20000 |
+| `PullStrengthDistanceCurve_Sniper` | 0:0, 150:0, 200:1, 15000:1, 20000:0 | 200 to 15000 | 20000 |
 
-Pattern: every curve is 0 inside 150, ramps to full by 400, holds, then falls off. ADS curves hold to much longer distances than hipfire (AR ADS to 12000 against AR hipfire to 1900), and the sniper's fall-off is steepest in relative terms.
+Pattern: every ADS curve is 0 at the origin, reaches full by 200, holds, then falls off. The sniper stays at 0 until 150. The Default curve ramps to full at 600 and falls off by 2500, so it holds to much shorter distances than the ADS curves.
 
 ---
 
@@ -52,21 +67,17 @@ Pattern: every curve is 0 inside 150, ramps to full by 400, holds, then falls of
 
 | Curve | Key points (distance: strength) | Plateau | Falls to 0 at |
 |---|---|---|---|
-| `SlowStrengthDistanceCurve_AR_ADS` | 0:0, 150:0, 1500:0.45, 3000:0.5, 9000:1, 20000:1, 25000:0.6, 30000:0 | 9000 to 20000 | 30000 |
-| `SlowStrengthDistanceCurve_AR_Hipfire` | 0:0, 150:0, 400:0.8, 600:1, 2000:1, 2200:0.75, 2400:0.5, 2500:0 | 600 to 2000 | 2500 |
-| `SlowStrengthDistanceCurve_LMG_ADS` | 0:0, 150:0, 300:0.5, 1200:1, 25000:1, 40000:0.6, 47000:0.3, 50000:0 | 1200 to 25000 | 50000 |
-| `SlowStrengthDistanceCurve_LMG_Hipfire` | 0:0, 150:0, 400:0.8, 600:1, 2000:1, 2500:0.75, 3000:0.5, 3100:0 | 600 to 2000 | 3100 |
-| `SlowStrengthDistanceCurvePistol_ADS` | 0:0, 150:0, 300:0.5, 1200:1, 6000:1, 8000:0.6, 9500:0.3, 10000:0 | 1200 to 6000 | 10000 |
-| `SlowStrengthDistanceCurve_Pistol_Hipfire` | 0:0, 150:0, 400:0.8, 600:1, 2000:1, 2500:0.75, 3000:0.5, 3100:0 | 600 to 2000 | 3100 |
-| `SlowStrengthDistanceCurve_SMG_ADS` | 0:0, 150:0, 300:0.5, 1200:1, 10000:1, 16000:0.6, 19000:0.3, 20000:0 | 1200 to 10000 | 20000 |
-| `SlowStrengthDistanceCurve_SMG_Hipfire` | 0:0, 150:0, 400:0.8, 600:1, 2000:1, 2500:0.75, 3000:0.5, 3100:0 | 600 to 2000 | 3100 |
-| `SlowStrengthDistanceCurveShotgun_ADS` | 0:0, 150:0, 300:0.5, 1200:1, 8000:1, 12000:0.6, 14000:0.3, 15000:0 | 1200 to 8000 | 15000 |
-| `SlowStrengthDistanceCurve_Shotgun_Hipfire` | 0:0, 150:0, 400:0.8, 600:1, 2000:1, 2500:0.75, 3000:0.5, 3100:0 | 600 to 2000 | 3100 |
-| `SlowStrengthDistanceCurve_Sniper` | 0:0, 150:0, 300:0.5, 1200:1, 6000:1, 8500:0.4, 10000:0 | 1200 to 6000 | 10000 |
+| `SlowStrengthDistanceCurve_AR_ADS` | 0:0, 2000:0.8, 4000:1, 20000:1, 22500:0 | 4000 to 20000 | 22500 |
+| `SlowStrengthDistanceCurve_Default` | 0:0, 600:1, 2000:1, 2500:0 | 600 to 2000 | 2500 |
+| `SlowStrengthDistanceCurve_LMG_ADS` | 0:0, 2000:0.8, 4000:1, 20000:1, 30000:0 | 4000 to 20000 | 30000 |
+| `SlowStrengthDistanceCurvePistol_ADS` | 0:0, 2000:0.8, 4000:1, 10000:1, 12500:0 | 4000 to 10000 | 12500 |
+| `SlowStrengthDistanceCurve_SMG_ADS` | 0:0, 2000:0.8, 4000:1, 15000:1, 20000:0 | 4000 to 15000 | 20000 |
+| `SlowStrengthDistanceCurveShotgun_ADS` | 0:0, 2000:0.8, 4000:1, 17500:1, 20000:0 | 4000 to 17500 | 20000 |
+| `SlowStrengthDistanceCurve_Sniper` | 0:0, 2000:1, 27500:1, 30000:0 | 2000 to 27500 | 30000 |
 
 Note the naming: the Pistol and Shotgun ADS slow curves use `SlowStrengthDistanceCurvePistol_ADS` and `SlowStrengthDistanceCurveShotgun_ADS` (no underscore before the weapon class). Keep the spelling when searching.
 
-Slow curves differ from pull curves in the early range: they reach 0.5 at 300 (ADS) or 400 (hipfire), before reaching full at 1200 or 600. Their fall-off is also more gradual in the far range on most ADS curves.
+Slow curves ramp more gently than pull curves. The ADS slow curves reach 0.8 at 2000 and full at 4000, and the sniper reaches full at 2000. The Default curve reaches full at 600.
 
 ---
 
@@ -74,16 +85,11 @@ Slow curves differ from pull curves in the early range: they reach 0.5 at 300 (A
 
 Input is the normalised reticle position (0 at centre, 1 at edge). Output is the assist weight.
 
-| Curve | 0.0 | 0.5 | 0.8 | 1.0 |
-|---|---|---|---|---|
-| `ReticleEdgeFalloff_Default` | 0.05 | 0.2 | 0.55 | 1 |
-| `ReticleEdgeFalloff_AR` | 0.2 | 0.55 | 0.85 | 1 |
-| `ReticleEdgeFalloff_LMG` | 0.14 | 0.44 | 0.75 | 1 |
-| `ReticleEdgeFalloff_Pistol` | 0.05 | 0.2 | 0.55 | 1 |
-| `ReticleEdgeFalloff_SMG` | 0.05 | 0.2 | 0.55 | 1 |
-| `ReticleEdgeFalloff_Shotgun` | 0.05 | 0.2 | 0.55 | 1 |
+| Curve | Key points (input: weight) |
+|---|---|
+| `ReticleEdgeFalloff_Default` | 0:0.2, 1:1 |
 
-Pistol, SMG and Shotgun share the Default values. AR gives the highest weight at every point (0.2 at input 0, 0.55 at 0.5). LMG sits between AR and Default.
+This is the only reticle edge falloff curve in the current data. The AR, LMG, Pistol, SMG and Shotgun curves are no longer present.
 
 ---
 
@@ -91,9 +97,9 @@ Pistol, SMG and Shotgun share the Default values. AR gives the highest weight at
 
 | Curve | Key points (input: weight) |
 |---|---|
-| [`C_AimAssistTargetWeightCurve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistTargetWeightCurve.json) | 0:0, 0.05:0.5, 1:1 |
+| [`C_AimAssistTargetWeightCurve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistTargetWeightCurve.json) | 0:0, 0.01:1, 1:1 |
 
-Target weight rises steeply from 0 to 0.5 within the first 5% of the input, then linearly to 1 at 1.0.
+Target weight reaches 1 at input 0.01 and holds at 1 through 1.0.
 
 ---
 
@@ -101,11 +107,11 @@ Target weight rises steeply from 0 to 0.5 within the first 5% of the input, then
 
 These are general aim-assist semantics. The curves are read by name in game code, and the code's combination rule is not in this export.
 
-- The **pull** curve gives the magnetic pull toward a target by distance. It is zero close in (under 150) and at long range, and full in between.
-- The **slow** curve reduces aim speed near a target. It is weaker than the pull inside 400 units and falls off earlier on hipfire.
+- The **pull** curve gives the magnetic pull toward a target by distance. It is zero at close range, reaches full within 200 on ADS curves (600 on Default), and falls off at long range.
+- The **slow** curve reduces aim speed near a target. It reaches full later than the pull curve on ADS (4000 against 200).
 - The **reticle edge** falloff weights the assist as the target drifts toward the reticle edge.
 - The **target weight** scales each target's contribution.
-- The **ADS vs hipfire** split means the assist strength is selected by the weapon's aim state.
+- The **ADS vs Default** split means the assist strength is selected by the curve set the game code uses. The selection rule is not in this export.
 
 Related setting: the BHFramework `AimAssistSensitivityMultiplier` (max 1.5, default 1.0). It is presumed to scale aim-assist strength; the code path is not confirmed in this folder.
 
@@ -113,7 +119,7 @@ Related setting: the BHFramework `AimAssistSensitivityMultiplier` (max 1.5, defa
 
 ## 7. Still not pulled / limitations
 
-- **Units.** The time axis is named "Time" in the curve, but it is used as distance (values 150 to 50000). The unit is assumed to be Unreal units (cm). Not confirmed by the export.
+- **Units.** The time axis is named "Time" in the curve, but it is used as distance (key values 150 to 30000). The unit is assumed to be Unreal units (cm). Not confirmed by the export.
 - **Code path.** Which code reads each curve, and how the reticle and target inputs are normalised, is not in this folder.
 - **Weapon mapping.** How a weapon maps to a curve family (AR, LMG and so on) is in the weapon data, not here.
 - **Curve tangents.** Only key time and value are summarised. Tangents and interpolation modes were not reported.

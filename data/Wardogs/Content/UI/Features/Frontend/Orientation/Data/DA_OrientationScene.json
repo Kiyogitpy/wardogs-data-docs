@@ -4,5 +4,68 @@
   "Name": "DA_OrientationScene",
   "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
   "Class": "UScriptClass'WDUIOrientationData'",
-  "Package": "/Game/UI/Features/Frontend/Orientation/Data/DA_OrientationScene"
+  "Package": "/Game/UI/Features/Frontend/Orientation/Data/DA_OrientationScene",
+  "Properties": {
+    "ExitPopupData": {
+      "Tag": {
+        "TagName": "UI.Popup.ExitGame"
+      },
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Title.ExitGame",
+        "SourceString": "Exit to Desktop",
+        "LocalizedString": "Exit to Desktop"
+      },
+      "Subtitle": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Subtitle.ExitGame",
+        "SourceString": "The application will close.",
+        "LocalizedString": "The application will close."
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Description.ExitGame",
+        "SourceString": "Are you sure you want to exit the game?",
+        "LocalizedString": "Are you sure you want to exit the game?"
+      },
+      "Options": [
+        {
+          "Key": "EWDPopupOption::Left",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.Yes",
+              "SourceString": "Yes",
+              "LocalizedString": "Yes"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": true,
+            "ButtonTypeOverride": {
+              "TagName": "None"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        },
+        {
+          "Key": "EWDPopupOption::Right",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.No",
+              "SourceString": "No",
+              "LocalizedString": "No"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": false,
+            "ButtonTypeOverride": {
+              "TagName": "None"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        }
+      ]
+    }
+  }
 }

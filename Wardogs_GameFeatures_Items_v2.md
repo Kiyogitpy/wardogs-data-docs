@@ -4,43 +4,59 @@ parent: "Game Features"
 ---
 
 # Wardogs: GameFeatures Items Reference (v2)
-*Source: exported JSON under [`Wardogs/Plugins/GameFeatures/Items`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Items) (495 files, 24 item folders). Numbers are read from the export; anything not confirmed is marked as unclear.*
+*Source: exported JSON under [`Wardogs/Plugins/GameFeatures/Items`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Items) (541 files, 25 item folders). Numbers are read from the export; anything not confirmed is marked as unclear.*
 
 > **Scope note:** this covers the Items plugin only. Firearms, vehicles and the global reward/economy tables live in other plugins or Content folders and are not in this doc.
+
+## Season 02 update (2026-10-15)
+
+- **New item: Molotov** (new [`Molotov`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Molotov.json) folder). Vendor price 340 (`Utility.Type.Offensive`, unlock level 1), footprint 1 x 2. See sections 1, 2, 3 and 7.
+- **New armor: Pilot Helmet** (vendor 6400) and **Tank Helmet** (vendor 5000), both `Gear.VehicleUse`, footprint 2 x 2.
+- **New music tape: MusicTape_11** ("Blue (Da Ba Dee) - Eiffel 65", price 100). There is no tape 10 in the export, so the set is 01 to 09 plus 11.
+- **Vendor price changes (old -> new):** Level 3 Armor 2000 -> 2500; Level 4 Armor 4000 -> 5000; Level 3 Helmet 1500 -> 2000; Level 4 Helmet 3000 -> 4500; Binoculars 75 -> 180; C4 Remote Detonator 550 -> 650; Compound Bow 800 -> 1350; Halligan Bar 1100 -> 885; Field Resuscitator 500 -> 425; Medical Bag 2000 -> 1800; Monocular 150 -> 350; Range Finder 400 -> 1450; Infrared Range Finder 1200 -> 3200; Wrench 150 -> 180.
+- **Projectile (Broadhead Arrow):** typical speed 64200 -> 15200; max lifetime 30 -> 14; mass 0.025 -> 0.029; length 80 -> 75; diameter 0.4 -> 0.65; drag value 1.8 -> 2.5; base suppression 0.6 -> 0.2.
+- **Armor durability reduction (per stage):** Level 3 Armor and Level 3 Helmet 55 -> 50; Level 4 Armor and Level 4 Helmet 65 -> 60.
+- **Buildable costs (old -> new):** AirRaidShelter 100 -> 200; Bunker 100 -> 200; CrowsNest 100 -> 200; Gate 85 -> 200; Door 22 -> 80; BremmerWall 15 -> 32; HotzoneMagnet 2250 -> 2750. New: Shelter 250, WoodBase 15.
+- **New buildables:** WoodBase (5 stages, bbox 150.0 x 150.0 x 37.5) and Shelter (`SV_Shelter`, 5 stages, bbox 900.0 x 900.0 x 450.0). Both are placeable by the Small, Medium and Large hammers (WoodBase on all three, Shelter on Medium and Large).
+- **Hammer lists grew:** Small Hammer 6 -> 7, Medium Hammer 10 -> 12, Large Hammer 17 -> 19 (see section 6.1).
+- **Damage modifiers:** most buildables gained damage modifier entries (for example FOB 21 -> 23, Radio 21 -> 22). The columns shown in section 6.3 are unchanged.
+- **Removed:** `DA_Significance_Buildable`, `DA_Significance_Evaluator_Buildable` and `DA_UI_BuildablePlacementData`. Destruction definition IDs were also re-issued for the door and gate definitions (section 6.5).
+- **New action:** `Action.RangeFinder.Reload` ([`DA_Action_RangeFinder_Reload`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/RangeFinder/Content/Data/Actions/DA_Action_RangeFinder_Reload.json)). The Crowbar folder also gained four challenge reward files, which this doc does not cover.
+- **File count:** 495 -> 541 files (49 added, 3 removed). Item folders 24 -> 25.
 
 ---
 
 ## 1. Layout and File Counts
 
-Export `Type` counts across all 495 files:
+Export `Type` counts across all 541 files:
 
 | Export Type | Files | What it holds |
 |---|---|---|
-| DataTable | 84 | Row tables: entity UI, vendor, buildable, damage, tracker, skill, UI |
-| WDAudioData | 46 | Audio event bundles (not decoded) |
-| CrosstalkAudioEvent | 42 | Crosstalk/voice events (not decoded) |
-| BHInventoryFragment_CustomShape | 39 | Inventory grid footprint (section 7) |
+| DataTable | 92 | Row tables: entity UI, vendor, buildable, damage, tracker, skill, UI |
+| WDAudioData | 48 | Audio event bundles (not decoded) |
+| CrosstalkAudioEvent | 57 | Crosstalk/voice events (not decoded) |
+| BHInventoryFragment_CustomShape | 42 | Inventory grid footprint (section 7) |
 | BHActionDefinition | 32 | Use/input actions (section 5) |
-| WDActorBuildSpawner | 30 | Buildable spawn class (section 6.2) |
-| BHAnimationSet | 29 | Animation sets (not decoded) |
-| BuildingStagesDefinition | 29 | Per-stage build geometry (section 6.2) |
-| GameFeatureAction_AddWorldPartitionContent | 22 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
-| WDUIRadialWheelSlotTypeDataAsset | 20 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
-| BHInventoryFragment_Droppable | 16 | World-item mesh for dropped items |
-| AEB_AttachSoundToHeldItem_C | 8 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
+| WDActorBuildSpawner | 32 | Buildable spawn class (section 6.2) |
+| BHAnimationSet | 30 | Animation sets (not decoded) |
+| BuildingStagesDefinition | 31 | Per-stage build geometry (section 6.2) |
+| GameFeatureAction_AddWorldPartitionContent | 23 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
+| WDUIRadialWheelSlotTypeDataAsset | 22 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
+| BHInventoryFragment_Droppable | 17 | World-item mesh for dropped items |
+| AEB_AttachSoundToHeldItem_C | 10 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
 | BHPlayerMappableKeySettings | 6 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
 | AEB_PlayHeldItemPerspectiveSound_C | 5 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
-| CurveFloat | 5 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
+| CurveFloat | 7 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
 | BH_PrototypeMaskedScopes_ExtensionData_C | 4 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
-| WDActionDefinition | 4 | Movement, interaction and vehicle actions (section 5) |
+| WDActionDefinition | 5 | Movement, interaction and vehicle actions (section 5) |
 | AEB_Play_Buildable_Sound_C | 4 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
-| GameFeatureAction_DataRegistrySource | 3 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
+| GameFeatureAction_DataRegistrySource | 2 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
 | WDProjectileData | 3 | Projectile stats (section 4) |
 | BHDestructionBuildingDefinitionDataAsset | 3 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
 | WDUIMaterialTrackerDataAsset | 3 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
 | GameFeatureAction_AddComponents | 3 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
 | BH_VehicleRepairToolExtensionData_C | 3 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
-| BHGameFeatureAction_AddGameplayCuePath | 2 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
+| BHGameFeatureAction_AddGameplayCuePath | 4 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
 | BHDestructionBuildingDecoratorDefinitionDataAsset | 2 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
 | AEB_AttachSoundToVehicle_C | 2 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
 | WDUIContainerGridData | 2 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
@@ -53,9 +69,6 @@ Export `Type` counts across all 495 files:
 | BH_AT_MineExtensionData_C | 1 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
 | BHInventoryFragment_Stackable | 1 | Stack size (section 7) |
 | WDBuildablePlacementDataAsset | 1 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
-| BHSignificanceSettingsAsset | 1 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
-| BHSignificanceEvaluator_Sphere | 1 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
-| WDUIBuildablePlacementData | 1 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
 | AEB_SetBuildableDamageValue_C | 1 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
 | WDFobInteractionDataAsset | 1 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
 | WDFOBRulesetData | 1 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
@@ -76,8 +89,11 @@ Export `Type` counts across all 495 files:
 | BH_Defibrillator_WattsExtensionData_C | 1 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
 | InputMappingContext | 1 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
 | BH_ExtensionData_MedicalPrompts_C | 1 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
-| AEB_PlayPerspectiveSound_C | 1 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
+| AEB_PlayPerspectiveSound_C | 4 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
 | AEB_SetSmokeGrenadeDuration_C | 1 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
+| StateTree | 1 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
+| B_CameraModifier_MolotovBurning_C | 1 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
+| WDUIArmorOverlayData | 1 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
 | WDUIDeployableSpatialTrackerData | 1 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
 | WDCameraModifier_StimulantEffects | 1 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
 | BHGameFeatureAction_AddInputContextMapping | 1 | Other: UI, audio, input, curves, Blueprint actions or world-partition hooks (section 11) |
@@ -87,24 +103,25 @@ Files per item folder:
 
 | Folder | Files | Folder | Files |
 |---|---|---|---|
-| AT_mine | 9 | IED | 15 |
-| Armor | 15 | Injector | 1 |
-| Battery | 8 | Keycard | 15 |
-| Binoculars | 7 | Landmine | 1 |
-| Buildables | 203 | MedKit | 9 |
-| C4 | 16 | MusicTapes | 46 |
+| AT_mine | 9 | Injector | 1 |
+| Armor | 20 | Keycard | 15 |
+| Battery | 8 | Landmine | 1 |
+| Binoculars | 7 | MedKit | 9 |
+| Buildables | 206 | Molotov | 22 |
+| C4 | 16 | MusicTapes | 51 |
 | Claymore | 8 | PrototypeMaskedScopes | 2 |
-| CombatBow | 27 | RangeFinder | 11 |
-| Crowbar | 17 | SmokeGrenade | 20 |
+| CombatBow | 27 | RangeFinder | 18 |
+| Crowbar | 21 | SmokeGrenade | 20 |
 | Defibrillator | 14 | SpotterScope | 1 |
 | Enox | 11 | StimPen | 10 |
 | FuelCanister | 10 | VehicleRepairTool | 19 |
+| IED | 15 | | |
 
 ---
 
 ## 2. Item Roster (Display Names and Tags)
 
-From the 104 rows of the `BHEntityData_UI` tables. These rows give the player-facing name for each tag. A category of `None` (as exported) marks buildables, interaction contexts or UI-only entries.
+From the 108 rows of the `BHEntityData_UI` tables. These rows give the player-facing name for each tag. A category of `None` (as exported) marks buildables, interaction contexts or UI-only entries.
 
 | Folder | Row tag | Display name | Category |
 |---|---|---|---|
@@ -122,6 +139,8 @@ From the 104 rows of the `BHEntityData_UI` tables. These rows give the player-fa
 | Armor | Id.Item.GhillieHelmet | Ghillie Headwear | Item.Category.Armor |
 | Armor | Id.Item.GhillieArmor.Dead | Ghillie Body Suit (Dead) | Item.Category.Armor |
 | Armor | Id.Item.GhillieHelmet.Dead | Ghillie Headwear (Dead) | Item.Category.Armor |
+| Armor | Id.Item.PilotHelmet | Pilot Helmet | Item.Category.Armor |
+| Armor | Id.Item.TankHelmet | Tank Helmet | Item.Category.Armor |
 | AT_mine | ID.Item.ATMine | AT Mine | Item.Category.Deployable |
 | Battery | Id.Item.LargeBattery | High Capacity Battery | Item.Category.Ammunition |
 | Battery | Id.Item.Battery | Battery | Item.Category.Ammunition |
@@ -176,6 +195,7 @@ From the 104 rows of the `BHEntityData_UI` tables. These rows give the player-fa
 | FuelCanister | Id.Item.FuelCan | 40L Fuel Canister | Item.Category.Deployable |
 | IED | Id.Item.IED.Trigger | Improvised Explosive Device | Item.Category.Throwable |
 | IED | Id.Item.IED.Explosive | Improvised Explosive Device | Item.Category.Throwable |
+| Molotov | Id.Item.Molotov | Molotov (string table key only, no text exported) | Item.Category.Throwable |
 | Keycard | Id.Item.KeyCard.Alpha.1 | Alpha Card | Item.Keycard |
 | Keycard | Id.Item.KeyCard.Alpha.2 | Alpha Card | Item.Keycard |
 | Keycard | Id.Item.KeyCard.Bravo.1 | Bravo Card | Item.Keycard |
@@ -209,20 +229,22 @@ From `WDVendorData` rows (`DT_VendorData_Ext_*`). Every row has exactly one `Ven
 |---|---|---|---|---|---|---|---|---|
 | Id.Item.LightArmor | Level 1 Armor | 400 | 1 | Gear.Armor | 0 | 0 | - | Armor |
 | Id.Item.MediumArmor | Level 2 Armor | 1000 | 1 | Gear.Armor | 0 | 0 | - | Armor |
-| Id.Item.HeavyArmor | Level 3 Armor | 2000 | 1 | Gear.Armor | 0 | 0 | - | Armor |
-| Id.Item.SuperHeavyArmor | Level 4 Armor | 4000 | 1 | Gear.Armor | 0 | 0 | - | Armor |
+| Id.Item.HeavyArmor | Level 3 Armor | 2500 | 1 | Gear.Armor | 0 | 0 | - | Armor |
+| Id.Item.SuperHeavyArmor | Level 4 Armor | 5000 | 1 | Gear.Armor | 0 | 0 | - | Armor |
 | Id.Item.LightHelmet | Level 1 Helmet | 200 | 1 | Gear.Helmet | 0 | 0 | - | Armor |
 | Id.Item.MediumHelmet | Level 2 Helmet | 500 | 1 | Gear.Helmet | 0 | 0 | - | Armor |
-| Id.Item.HeavyHelmet | Level 3 Helmet | 1500 | 1 | Gear.Helmet | 0 | 0 | - | Armor |
-| Id.Item.SuperHeavyHelmet | Level 4 Helmet | 3000 | 1 | Gear.Helmet | 0 | 0 | - | Armor |
+| Id.Item.HeavyHelmet | Level 3 Helmet | 2000 | 1 | Gear.Helmet | 0 | 0 | - | Armor |
+| Id.Item.SuperHeavyHelmet | Level 4 Helmet | 4500 | 1 | Gear.Helmet | 0 | 0 | - | Armor |
 | Id.Item.GhillieArmor | Ghillie Body Suit | 3000 | 1 | Gear.Camouflage | 0 | 0 | - | Armor |
 | Id.Item.GhillieHelmet | Ghillie Headwear | 2500 | 1 | Gear.Camouflage | 0 | 0 | - | Armor |
 | Id.Item.GhillieArmor.Dead | Ghillie Body Suit (Dead) | 3500 | 1 | Gear.Camouflage | 0 | 0 | - | Armor |
 | Id.Item.GhillieHelmet.Dead | Ghillie Headwear (Dead) | 2800 | 1 | Gear.Camouflage | 0 | 0 | - | Armor |
+| Id.Item.PilotHelmet | Pilot Helmet | 6400 | 1 | Gear.VehicleUse | 0 | 0 | - | Armor |
+| Id.Item.TankHelmet | Tank Helmet | 5000 | 1 | Gear.VehicleUse | 0 | 0 | - | Armor |
 | ID.Item.ATMine | AT Mine | 650 | 1 | Utility.Type.Offensive | 0 | 0 | - | AT_mine |
 | Id.Item.Battery | Battery | 150 | 1 | Utility.Type.Misc | 1 | 0 | - | Battery |
 | Id.Item.LargeBattery | High Capacity Battery | 300 | 1 | Utility.Type.Misc | 1 | 0 | - | Battery |
-| ID.Item.Binoculars | Binoculars | 75 | 1 | Utility.Type.Recon | 0 | 0 | - | Binoculars |
+| ID.Item.Binoculars | Binoculars | 180 | 1 | Utility.Type.Recon | 0 | 0 | - | Binoculars |
 | Id.Item.MunitionsSupplies | Ammo Supplies | 10 | 50 | Utility.Type.Building | 1 | 0 | - | Buildables |
 | Id.Item.FOB | Forward Operating Base | 7500 | 1 | Utility.Type.Building | 0 | 0 | - | Buildables |
 | ID.Item.BuildTool.Hammer.Large | Large Hammer | 2400 | 1 | Utility.Type.Building | 0 | 0 | - | Buildables |
@@ -232,19 +254,20 @@ From `WDVendorData` rows (`DT_VendorData_Ext_*`). Every row has exactly one `Ven
 | Id.Item.FuelSupplies | Fuel Supplies | 10 | 50 | Utility.Type.Building | 1 | 0 | - | Buildables |
 | Id.Item.SparePartsSupplies | Mechanical Supplies | 10 | 50 | Utility.Type.Building | 1 | 0 | - | Buildables |
 | Id.Item.C4Explosive | C4 Charge | 250 | 1 | Utility.Type.Offensive | 0 | 0 | - | C4 |
-| Id.Item.C4Trigger | Remote Detonator | 550 | 1 | Utility.Type.Offensive | 0 | 0 | - | C4 |
+| Id.Item.C4Trigger | Remote Detonator | 650 | 1 | Utility.Type.Offensive | 0 | 0 | - | C4 |
 | Id.Item.Claymore | Claymore | 900 | 1 | Utility.Type.Offensive | 0 | 0 | - | Claymore |
-| Id.Item.CombatBow | Compound Bow | 800 | 1 | Weapon.Type.Bow | 0 | 0 | - | CombatBow |
+| Id.Item.CombatBow | Compound Bow | 1350 | 1 | Weapon.Type.Bow | 0 | 0 | - | CombatBow |
 | Id.Item.Arrow | Broadhead Arrow | 75 | 5 | Utility.Type.Misc | 0 | 0 | - | CombatBow |
 | Id.Item.Arrow.Explosive | Rambo Explosive Arrow | 150 | 1 | Utility.Type.Misc | 0 | 0 | - | CombatBow |
-| Id.Item.Crowbar | Halligan Bar | 1100 | 1 | Utility.Type.Offensive | 0 | 0 | - | Crowbar |
+| Id.Item.Crowbar | Halligan Bar | 885 | 1 | Utility.Type.Offensive | 0 | 0 | - | Crowbar |
 | Id.Item.Defibrillator.Standard | Defibrillator | 1600 | 1 | Utility.Type.Medical | 0 | 0 | - | Defibrillator |
 | ID.Item.Enox.Standard | Enox | 450 | 1 | Utility.Type.Medical | 0 | 0 | - | Enox |
 | Id.Item.Resuscitator.Cheap | Emergency Resuscitator | 0 | 1 | Utility.Type.Medical | 0 | 1 | - | Enox |
-| Id.Item.Resuscitator.Standard | Field Resuscitator | 500 | 1 | Utility.Type.Medical | 0 | 0 | - | Enox |
+| Id.Item.Resuscitator.Standard | Field Resuscitator | 425 | 1 | Utility.Type.Medical | 0 | 0 | - | Enox |
 | Id.Item.FuelCan | 40L Fuel Canister | 150 | 1 | Utility.Type.Vehicle | 0 | 0 | - | FuelCanister |
 | Id.Item.IED.Trigger | Improvised Explosive Device | 300 | 1 | Utility.Type.Offensive | 0 | 0 | - | IED |
-| ID.Item.MedKit.Standard | Medical Bag | 2000 | 1 | Utility.Type.Medical | 0 | 0 | - | MedKit |
+| Id.Item.Molotov | Molotov | 340 | 1 | Utility.Type.Offensive | 1 | 0 | - | Molotov |
+| ID.Item.MedKit.Standard | Medical Bag | 1800 | 1 | Utility.Type.Medical | 0 | 0 | - | MedKit |
 | Id.Item.MusicTape.01 | - | 100 | 1 | Vehicle.Music | 0 | 0 | - | MusicTapes |
 | Id.Item.MusicTape.02 | - | 100 | 1 | Vehicle.Music | 0 | 0 | - | MusicTapes |
 | Id.Item.MusicTape.03 | - | 100 | 1 | Vehicle.Music | 0 | 0 | - | MusicTapes |
@@ -254,9 +277,10 @@ From `WDVendorData` rows (`DT_VendorData_Ext_*`). Every row has exactly one `Ven
 | Id.Item.MusicTape.07 | - | 100 | 1 | Vehicle.Music | 0 | 0 | - | MusicTapes |
 | Id.Item.MusicTape.08 | - | 100 | 1 | Vehicle.Music | 0 | 0 | - | MusicTapes |
 | Id.Item.MusicTape.09 | - | 100 | 1 | Vehicle.Music | 0 | 0 | - | MusicTapes |
-| ID.Item.Monocular | Monocular | 150 | 1 | Utility.Type.Recon | 0 | 0 | - | RangeFinder |
-| ID.Item.RangeFinder | Range Finder | 400 | 1 | Utility.Type.Recon | 0 | 0 | - | RangeFinder |
-| ID.Item.InfraredRangeFinder | Infrared Range Finder | 1200 | 1 | Utility.Type.Recon | 0 | 0 | - | RangeFinder |
+| Id.Item.MusicTape.11 | - | 100 | 1 | Vehicle.Music | 0 | 0 | - | MusicTapes |
+| ID.Item.Monocular | Monocular | 350 | 1 | Utility.Type.Recon | 0 | 0 | - | RangeFinder |
+| ID.Item.RangeFinder | Range Finder | 1450 | 1 | Utility.Type.Recon | 0 | 0 | - | RangeFinder |
+| ID.Item.InfraredRangeFinder | Infrared Range Finder | 3200 | 1 | Utility.Type.Recon | 0 | 0 | - | RangeFinder |
 | Id.Item.SmokeGrenade.White | M18 Smoke Grenade: White | 100 | 1 | Utility.Type.Offensive | 0 | 0 | - | SmokeGrenade |
 | ID.Item.SmokeGrenade.Yellow | M18  Signal Grenade: Alert | 50 | 1 | Utility.Type.Offensive | 0 | 0 | - | SmokeGrenade |
 | ID.Item.SmokeGrenade.Red | M18  Signal Grenade: Hostile | 50 | 1 | Utility.Type.Offensive | 0 | 0 | - | SmokeGrenade |
@@ -266,7 +290,7 @@ From `WDVendorData` rows (`DT_VendorData_Ext_*`). Every row has exactly one `Ven
 | ID.Item.SmokeGrenade.Orange | M18  Signal Grenade: Damaged Vehicle | 50 | 1 | Utility.Type.Offensive | 0 | 0 | - | SmokeGrenade |
 | ID.Item.SmokeGrenade.Purple | M18  Signal Grenade: Landing Zone | 50 | 1 | Utility.Type.Building | 0 | 0 | - | SmokeGrenade |
 | Id.Item.StimPen | Adrenaline Pen | 250 | 1 | Utility.Type.Medical | 1 | 0 | - | StimPen |
-| ID.Item.RepairTool.Wrench.Standard | Wrench | 150 | 1 | Utility.Type.Vehicle | 0 | 0 | - | VehicleRepairTool |
+| ID.Item.RepairTool.Wrench.Standard | Wrench | 180 | 1 | Utility.Type.Vehicle | 0 | 0 | - | VehicleRepairTool |
 | ID.Item.RepairTool.Drill.Light | Light Drill | 600 | 1 | Utility.Type.Vehicle | 1 | 0 | - | VehicleRepairTool |
 | ID.Item.RepairTool.Drill.Heavy | Heavy Drill | 1300 | 1 | Utility.Type.Vehicle | 1 | 0 | - | VehicleRepairTool |
 
@@ -281,10 +305,10 @@ Only three `WDProjectileData` assets exist in this plugin. Values are the raw ex
 | Caliber tag | Asset | Damage tag | Base dmg | Expl. radius | Effective expl. radius | Typical speed | Lifetime (s) | Mass | Length | Diameter | Drag value / curve row | Penetrates | Ricochet angle (deg) | Base suppression | Whiz travel / player dist | Range mult. |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | Item.Caliber.BatteryCharge | DA_BatteryCharge_ProjectileData | Meta.Damage.Bullet.556mm | 40.0 | - | - | 43700.0 | - | 0.0041 | 1.2696 | 0.57 | 1.26 / G7 (Boat Tail) | - | - | 0.25 | 800.0 / 700.0 | - |
-| Item.Caliber.Arrow | DA_Arrow_Combat_ProjectileData | Meta.Damage.Bullet.Arrow | 77.0 | - | - | 64200.0 | 30.0 | 0.025 | 80.0 | 0.4 | 1.8 / G7 (Boat Tail) | True | 30.0 | 0.6 | 1500.0 / 1200.0 | - |
-| Item.Caliber.Arrow.Explosive | DA_Arrow_Explosive_ProjectileData | Meta.Damage.Bullet.Arrow.Explosive | 150.0 | 400.0 | 200.0 | 18000.0 | 20.0 | 0.045 | 75.0 | 0.85 | 10.0 / GC (Cylinder) | False | 50.0 | 0.5 | 1500.0 / 1200.0 | 0.75 |
+| Item.Caliber.Arrow | DA_Arrow_Combat_ProjectileData | Meta.Damage.Bullet.Arrow | 77.0 | - | - | 15200.0 | 14.0 | 0.029 | 75.0 | 0.65 | 2.5 / G7 (Boat Tail) | unnamed field: True | 30.0 | 0.2 | 1500.0 / 1200.0 | - |
+| Item.Caliber.Arrow.Explosive | DA_Arrow_Explosive_ProjectileData | Meta.Damage.Bullet.Arrow.Explosive | 150.0 | 400.0 | 200.0 | 18000.0 | 20.0 | 0.045 | 75.0 | 0.85 | 10.0 / GC (Cylinder) | unnamed field: False | 50.0 | 0.5 | 1500.0 / 1200.0 | 0.75 |
 
-The explosive arrow exports `bShouldPenetrate = False` and has no penetration multipliers, so its `-` cells are genuinely absent. Drag curve row is `G7 (Boat Tail)` on the battery round and the standard arrow, and `GC (Cylinder)` on the explosive arrow. `Range mult.` is only exported on the explosive arrow (`EffectiveRangeMultiplier = 0.75`).
+The explosive arrow's penetration flag is an unnamed field set to `False`, and it has no penetration multipliers, so its `-` cells are genuinely absent. The broadhead arrow's penetration flag is also an unnamed field in this export (value `True`). Drag curve row is `G7 (Boat Tail)` on the battery round and the standard arrow, and `GC (Cylinder)` on the explosive arrow. `Range mult.` is only exported on the explosive arrow (`EffectiveRangeMultiplier = 0.75`).
 
 ---
 
@@ -325,6 +349,7 @@ Each `BHActionDefinition` / `WDActionDefinition` binds an action tag to a Bluepr
 | MedKit | DA_Action_MedKit_PrimaryUse | Action.MedKit.PrimaryUse | B_Action_MedKit_MultiUse_C | BH | Holdable, Interaction, TwoHanded |
 | MedKit | DA_Action_MedKit_SecondaryUse | Action.Appliable.MedKit.SecondaryUse | B_Action_MedKit_SecondaryUse_C | BH | Holdable, Interaction, TwoHanded |
 | RangeFinder | DA_Action_RangeFinder_ADS | Action.RangeFinder.ADS | B_Action_RangeFinder_ADS_C | WD | Holdable, Weapon, TwoHanded |
+| RangeFinder | DA_Action_RangeFinder_Reload | Action.RangeFinder.Reload | B_Action_Reload_C | WD | Holdable, Weapon, TwoHanded |
 | StimPen | DA_Action_StimPen_PrimaryUse | Action.Appliable.StimPen.PrimaryUse | B_Action_StimPen_C | BH | Holdable, Interaction, TwoHanded |
 | StimPen | DA_Action_StimPen_SecondaryUse | Action.Appliable.StimPen.SecondaryUse | B_Action_StimPen_C | BH | Holdable, TwoHanded |
 | VehicleRepairTool | DA_Action_VehicleRepairTool | Action.VehicleRepairTool.PrimaryUse | B_Action_VehicleRepairTool_C | BH | Holdable, Interaction, TwoHanded |
@@ -341,9 +366,9 @@ Each hammer is a `WDBuildableDataTableRow` table. A buildable can only be placed
 
 | Tool table | Count | Buildables |
 |---|---|---|
-| LargeHammer | 17 | CamoNetTent, TankTrap, BarbedWire, SandbagWall, Radio, HBlock, TallHBlock, Door, Gate, HBlockQuadWall, BremmerWall, Bunker, CrowsNest, AirRaidShelter, RefuelStation, RepairStation, HotzoneMagnet |
-| MediumHammer | 10 | CamoNetTent, TankTrap, BarbedWire, SandbagWall, Radio, HBlock, TallHBlock, Door, Gate, HBlockQuadWall |
-| SmallHammer | 6 | CamoNetTent, TankTrap, BarbedWire, SandbagWall, Radio, HBlock |
+| LargeHammer | 19 | CamoNetTent, TankTrap, BarbedWire, SandbagWall, Radio, HBlock, WoodBase, TallHBlock, Door, Gate, SV_Shelter, HBlockQuadWall, BremmerWall, Bunker, CrowsNest, AirRaidShelter, RefuelStation, RepairStation, HotzoneMagnet |
+| MediumHammer | 12 | CamoNetTent, TankTrap, BarbedWire, SandbagWall, Radio, HBlock, WoodBase, TallHBlock, Door, Gate, HBlockQuadWall, SV_Shelter |
+| SmallHammer | 7 | CamoNetTent, TankTrap, BarbedWire, SandbagWall, Radio, HBlock, WoodBase |
 
 Vendor and inventory tie-in: Small Hammer `100` (2x1 footprint), Medium Hammer `800` (2x3), Large Hammer `2400` (4x2). The hammer tier is therefore a count of placeable buildables, not a separate build cost. The per-buildable material cost is not in this folder (see section 11).
 
@@ -368,8 +393,10 @@ Vendor and inventory tie-in: Small Hammer `100` (2x1 footprint), Medium Hammer `
 | RefuelStation | B_BuildableRefuelStation_C | 5 | 0.0, 0.25, 0.5, 0.75, 1.0 | 300.6 x 300.0 x 240.1 |
 | RepairStation | B_BuildableRepairStation_C | 5 | 0.0, 0.25, 0.5, 0.75, 1.0 | 300.0 x 300.0 x 116.8 |
 | SandbagWall | B_Buildable_C | 5 | 0.0, 0.25, 0.5, 0.75, 1.0 | 300.0 x 33.8 x 100.0 |
+| SV_Shelter | B_Buildable_C | 5 | 0.0, 0.25, 0.5, 0.75, 1.0 | 900.0 x 900.0 x 450.0 |
 | TallHBlock | B_Buildable_C | 5 | 0.0, 0.25, 0.5, 0.75, 1.0 | 150.0 x 150.0 x 300.0 |
 | TankTrap | B_Buildable_C | 5 | 0.0, 0.25, 0.5, 0.75, 1.0 | 220.0 x 220.0 x 200.0 |
+| WoodBase | B_Buildable_C | 5 | 0.0, 0.2, 0.45, 0.7, 1.0 | 150.0 x 150.0 x 37.5 |
 
 ### 6.3 Damage modifiers on buildables ([`DT_GlobalDamage_BuildableData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/DT_GlobalDamage_BuildableData.json))
 
@@ -377,24 +404,26 @@ Each buildable row holds a list of `DamageModificationEntries`. The matrix shows
 
 | Buildable | Melee | Bullet | Bullet+HP | Bullet+AP | Rocket | Rocket 155mm | Cannon 30mm | Throwable | Entries |
 |---|---|---|---|---|---|---|---|---|---|
-| FOB | -80.0 | -80.0 | -60.0 | 35.0 | 1400.0 | -93.5 | -50.0 | -100.0 | 21 |
-| Door | -80.0 | -85.0 | -50.0 | 100.0 | 650.0 | -95.0 | -50.0 | -100.0 | 21 |
-| BarbedWire | -28.0 | -85.0 | -50.0 | 100.0 | 200.0 | -9.0 | -50.0 | -100.0 | 21 |
-| AirRaidShelter | -10.0 | -80.0 | -60.0 | 80.0 | 45.0 | -86.0 | - | -100.0 | 16 |
-| Bunker | -10.0 | -80.0 | -60.0 | 80.0 | 45.0 | -86.0 | - | -100.0 | 16 |
-| CamoTent | -28.0 | -85.0 | -50.0 | 100.0 | 200.0 | -9.0 | -50.0 | -100.0 | 21 |
-| CrowsNest | -10.0 | -80.0 | -60.0 | 80.0 | 45.0 | -86.0 | - | -100.0 | 16 |
-| SmallHesco | -80.0 | -80.0 | -60.0 | 35.0 | 120.0 | -78.0 | -50.0 | -100.0 | 21 |
-| HescoGate | -80.0 | -85.0 | -50.0 | 100.0 | 850.0 | -70.0 | -50.0 | -100.0 | 20 |
-| QuadLargeHescoWall | 0.0 | -80.0 | -60.0 | 35.0 | 200.0 | -9.0 | - | -100.0 | 16 |
-| BuildableHotzoneMagnet | -80.0 | -85.0 | -50.0 | 100.0 | 850.0 | -70.0 | -50.0 | -100.0 | 20 |
-| RepairStation | -80.0 | -80.0 | -60.0 | 35.0 | 1500.0 | -95.0 | -50.0 | -100.0 | 19 |
-| RefuelStation | -80.0 | -80.0 | -60.0 | 35.0 | 1500.0 | -95.0 | -50.0 | -100.0 | 19 |
-| SandbagWall | -80.0 | -85.0 | -50.0 | 100.0 | 650.0 | -9.0 | -50.0 | -100.0 | 20 |
-| LargeHesco | -80.0 | -80.0 | -60.0 | 35.0 | 80.0 | -73.2 | -50.0 | -100.0 | 21 |
-| TankTrap | -80.0 | -85.0 | -50.0 | 100.0 | 450.0 | -55.0 | -50.0 | -100.0 | 19 |
-| Radio | 70.0 | -85.0 | -50.0 | 100.0 | 1000.0 | -9.0 | 100.0 | -100.0 | 21 |
-| BremmerWall | -80.0 | -80.0 | -60.0 | 35.0 | 250.0 | -72.0 | -50.0 | -100.0 | 21 |
+| FOB | -80.0 | -80.0 | -60.0 | 35.0 | 1400.0 | -93.5 | -50.0 | -100.0 | 23 |
+| Door | -80.0 | -85.0 | -50.0 | 100.0 | 650.0 | -95.0 | -50.0 | -100.0 | 23 |
+| BarbedWire | -28.0 | -85.0 | -50.0 | 100.0 | 200.0 | -9.0 | -50.0 | -100.0 | 22 |
+| AirRaidShelter | -10.0 | -80.0 | -60.0 | 80.0 | 45.0 | -86.0 | - | -100.0 | 17 |
+| Bunker | -10.0 | -80.0 | -60.0 | 80.0 | 45.0 | -86.0 | - | -100.0 | 17 |
+| CamoTent | -28.0 | -85.0 | -50.0 | 100.0 | 200.0 | -9.0 | -50.0 | -100.0 | 22 |
+| CrowsNest | -10.0 | -80.0 | -60.0 | 80.0 | 45.0 | -86.0 | - | -100.0 | 17 |
+| SmallHesco | -80.0 | -80.0 | -60.0 | 35.0 | 120.0 | -78.0 | -50.0 | -100.0 | 23 |
+| HescoGate | -80.0 | -85.0 | -50.0 | 100.0 | 850.0 | -70.0 | -50.0 | -100.0 | 22 |
+| QuadLargeHescoWall | 0.0 | -80.0 | -60.0 | 35.0 | 200.0 | -9.0 | - | -100.0 | 17 |
+| BuildableHotzoneMagnet | -80.0 | -85.0 | -50.0 | 100.0 | 850.0 | -70.0 | -50.0 | -100.0 | 22 |
+| RepairStation | -80.0 | -80.0 | -60.0 | 35.0 | 1500.0 | -95.0 | -50.0 | -100.0 | 21 |
+| RefuelStation | -80.0 | -80.0 | -60.0 | 35.0 | 1500.0 | -95.0 | -50.0 | -100.0 | 21 |
+| SandbagWall | -80.0 | -85.0 | -50.0 | 100.0 | 650.0 | -9.0 | -50.0 | -100.0 | 22 |
+| LargeHesco | -80.0 | -80.0 | -60.0 | 35.0 | 80.0 | -73.2 | -50.0 | -100.0 | 23 |
+| TankTrap | -80.0 | -85.0 | -50.0 | 100.0 | 450.0 | -55.0 | -50.0 | -100.0 | 20 |
+| Radio | 70.0 | -85.0 | -50.0 | 100.0 | 1000.0 | -9.0 | 100.0 | -100.0 | 22 |
+| BremmerWall | -80.0 | -80.0 | -60.0 | 35.0 | 250.0 | -72.0 | -50.0 | -100.0 | 23 |
+| SV_Shelter | -80.0 | -80.0 | -60.0 | 35.0 | 80.0 | -73.2 | -50.0 | -100.0 | 23 |
+| WoodBase | -80.0 | -85.0 | -50.0 | 100.0 | 650.0 | -9.0 | -50.0 | -100.0 | 22 |
 
 Each row also has a Throwable and Explosive/Blunt entry plus a catch-all `any` entry with operation `None` and amount `0`. Entries with instigator or target requirements are excluded from the matrix and are not decoded.
 
@@ -410,11 +439,11 @@ Each row also has a Throwable and Explosive/Blunt entry plus a catch-all `any` e
 
 | Kind | Asset | SaveID | Chunks | Required meshes |
 |---|---|---|---|---|
-| Definition | D_BuildableDoor | 4A3D41E9-44BC5FE1-C5584BAE-88E50EC5 | 1 | 1 |
-| Definition | D_Decorator_Door_Gate_Left | 28EDB69F-42227366-D0A23898-D63440B1 | - | - |
-| Definition | D_Decorator_Door_Gate_Right | 588C807F-4E85AF89-19293588-34A5B324 | - | - |
-| Definition | D_Door_Gate_Left | DF456376-41B9DD3E-684DFF91-8345DA3C | 2 | 2 |
-| Definition | D_Door_Gate_Right | 484BCB47-41111B48-EA2F34B6-48C855EF | 2 | 2 |
+| Definition | D_BuildableDoor | 6A939B1C-48AB3604-C363B598-B3484C13 | 1 | 1 |
+| Definition | D_Decorator_Door_Gate_Left | E63D8A35-4B7BB8BB-F69BABB3-054CC362 | - | - |
+| Definition | D_Decorator_Door_Gate_Right | 9B3E4A5B-4A8B6DA8-C7005A9B-FDBB79EE | - | - |
+| Definition | D_Door_Gate_Left | A0853B91-4B181203-B567C9AA-C668DD08 | 2 | 2 |
+| Definition | D_Door_Gate_Right | 501A612F-408F9438-092F47A3-3A642786 | 2 | 2 |
 
 ---
 
@@ -434,8 +463,10 @@ Grid size from `BHInventoryFragment_CustomShape.Dimensions` (X by Y cells) and `
 | Armor | ID_LightHelmet | 2 x 2 |
 | Armor | ID_MediumArmor | 3 x 4 |
 | Armor | ID_MediumHelmet | 2 x 2 |
+| Armor | ID_PilotHelmet | 2 x 2 |
 | Armor | ID_SuperHeavyArmor | 4 x 5 |
 | Armor | ID_SuperHeavyHelmet | 2 x 2 |
+| Armor | ID_TankHelmet | 2 x 2 |
 | Battery | ID_Battery | no Dimensions value exported |
 | Battery | ID_Battery_Charge | stack 100 |
 | Battery | ID_LrgBattery | 1 x 2 |
@@ -455,6 +486,7 @@ Grid size from `BHInventoryFragment_CustomShape.Dimensions` (X by Y cells) and `
 | Enox | ID_Resuscitator | 1 x 2 |
 | Enox | ID_Resuscitator_Standard | 1 x 2 |
 | IED | ID_IED_Explosive | no Dimensions value exported |
+| Molotov | ID_Molotov | 1 x 2 |
 | SmokeGrenade | ID_SmokeGrenade_Black | no Dimensions value exported |
 | SmokeGrenade | ID_SmokeGrenade_Blue | no Dimensions value exported |
 | SmokeGrenade | ID_SmokeGrenade_Green | no Dimensions value exported |
@@ -478,19 +510,20 @@ Grid size from `BHInventoryFragment_CustomShape.Dimensions` (X by Y cells) and `
 
 ## 9. Music Tapes
 
-Nine tapes. Each has a `BHEntityData_UI` row and a vendor row. All nine are priced at 100 and sold in the `Vendor.Category.Vehicle.Music` subcategory.
+Ten tapes (01 to 09, and 11; the export has no tape 10). Each has a `BHEntityData_UI` row and a vendor row. All ten are priced at 100 and sold in the `Vendor.Category.Vehicle.Music` subcategory.
 
 | Row tag | Track (as named in the entity row) | Price |
 |---|---|---|
-| Id.Item.MusicTape.01 | - | 100 |
-| Id.Item.MusicTape.02 | - | 100 |
-| Id.Item.MusicTape.03 | - | 100 |
-| Id.Item.MusicTape.04 | - | 100 |
-| Id.Item.MusicTape.05 | - | 100 |
-| Id.Item.MusicTape.06 | - | 100 |
-| Id.Item.MusicTape.07 | - | 100 |
-| Id.Item.MusicTape.08 | - | 100 |
-| Id.Item.MusicTape.09 | - | 100 |
+| Id.Item.MusicTape.01 | H4ZARD - Gigilow | 100 |
+| Id.Item.MusicTape.02 | You Are Not Invited - MokuMoku | 100 |
+| Id.Item.MusicTape.03 | Giants (Remix) - The Qemists | 100 |
+| Id.Item.MusicTape.04 | Ride of the Valkyries - Richard Wagner | 100 |
+| Id.Item.MusicTape.05 | Dyshat' - Baryber | 100 |
+| Id.Item.MusicTape.06 | Tianqi Xu - Vodka Bomb | 100 |
+| Id.Item.MusicTape.07 | Liuli-Liuli - Masha Kondratenko | 100 |
+| Id.Item.MusicTape.08 | HORA - Irina Rimes & Jerry Heil | 100 |
+| Id.Item.MusicTape.09 | Helikopter - Fazlija | 100 |
+| Id.Item.MusicTape.11 | Blue (Da Ba Dee) - Eiffel 65 | 100 |
 
 ---
 
@@ -504,7 +537,7 @@ Nine tapes. Each has a `BHEntityData_UI` row and a vendor row. All nine are pric
 
 ## 11. Still Not Pulled / Limitations
 
-- **Build costs.** `WDActorBuildSpawner` and `BuildingStagesDefinition` carry no material cost. If a cost field exists, it is in an asset class outside this folder.
+- **Build costs.** `WDActorBuildSpawner` and `BuildingStagesDefinition` carry no material cost. The cost is the `Cost` field of the `WDBuildableDataAsset` export in each `DA_Buildable_*` file (33 files, e.g. AirRaidShelter 200).
 - **Damage modifier requirements.** Entries with instigator, target or hit-location requirements are not decoded. Their meaning and priority order are unknown.
 - **`LevelToUnlock`.** Stored on vendor variations (values 0 or 1). The system that reads it is not in this folder, so its effect is unconfirmed.
 - **Sign and units.** The damage sign (section 6.3) and projectile speed and length units are inferred, not stated.

@@ -4,7 +4,7 @@ parent: "Game Features"
 ---
 
 # Wardogs — GameFeature: ControlZoneRegions Reference (v2)
-*Extracted from cooked game data via CUE4Parse (build `++Wardogs+Live-CL-509546`, UE 5.7.4). Source: [`Wardogs/Plugins/GameFeatures/ControlZoneRegions/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/ControlZoneRegions) (5 JSON files). Scripted pass over every file, then checked against the region arrays directly.*
+*Extracted from cooked game data (build `++Wardogs+Live-CL-516586`, UE 5.7.4). Source: [`Wardogs/Plugins/GameFeatures/ControlZoneRegions/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/ControlZoneRegions) (5 JSON files). Scripted pass over every file, then checked against the region arrays directly.*
 
 > **Scope:** this folder holds the **region map data** for Control Zones: named polygons laid over each map, each with a selection weight. It is the layer the [`ControlZone`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/ControlZone.json) configs (sibling doc `Wardogs_GameFeatures_ControlZone_v2.md`) pick their zone placements from. The mapping between region weights and the zone placement is **not confirmed** by these files (section 5).
 

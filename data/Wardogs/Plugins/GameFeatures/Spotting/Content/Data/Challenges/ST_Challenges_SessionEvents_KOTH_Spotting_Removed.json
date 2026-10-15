@@ -6,7 +6,7 @@
   "Class": "UScriptClass'StateTree'",
   "Package": "/Spotting/Data/Challenges/ST_Challenges_SessionEvents_KOTH_Spotting_Removed",
   "Properties": {
-    "LastCompiledEditorDataHash": 368453238,
+    "LastCompiledEditorDataHash": 2789654278,
     "Schema": {
       "ObjectName": "WDChallengeStateTreeSchema'ST_Challenges_SessionEvents_KOTH_Spotting_Removed:WDChallengeStateTreeSchema_0'",
       "ObjectPath": "/Spotting/Data/Challenges/ST_Challenges_SessionEvents_KOTH_Spotting_Removed.1"
@@ -2345,6 +2345,9 @@
           }
         },
         {
+          "_aaabfgnbfohopopdfengm_$6D15E7EFEF354D6C$_$21$": [
+            "LastVictimCount"
+          ],
           "bTaskEnabled": true,
           "TransitionHandlingPriority": "EStateTreeTransitionPriority::Normal",
           "Name": "Calculate Reward",
@@ -2843,7 +2846,8 @@
               "Event": {
                 "SpottingOwner": null,
                 "SpottedActor": null,
-                "bDestroyedByTeam": false
+                "bDestroyedByTeam": false,
+                "ScalarValue": 1.0
               }
             },
             {
@@ -2955,6 +2959,21 @@
                     "KeyTypeObject": null
                   },
                   {
+                    "ValueTypeObject": null,
+                    "ID": "9C944B4A-499EBE8B-8E47B5B9-1D8DC8C2",
+                    "Name": "ScalarValue",
+                    "ValueType": "EPropertyBagPropertyType::Double",
+                    "ContainerType": "EPropertyBagContainerType::None",
+                    "PropertyFlags": "EPropertyFlags::None",
+                    "ContainerTypes": {
+                      "Types": []
+                    },
+                    "MetaData": null,
+                    "MetaClass": null,
+                    "KeyType": "EPropertyBagPropertyType::None",
+                    "KeyTypeObject": null
+                  },
+                  {
                     "ValueTypeObject": {
                       "ObjectName": "Class'GameplayTag'",
                       "ObjectPath": "/Script/GameplayTags"
@@ -3000,77 +3019,641 @@
                 "SerialSize": 0
               }
             },
-            null,
+            {
+              "PlayerChallengeComponent": null,
+              "Challenge": {
+                "DisplayName": {
+                  "CultureInvariantString": null
+                },
+                "Description": {
+                  "CultureInvariantString": null
+                },
+                "Rewards": [],
+                "Objectives": [],
+                "bAutoActivate": false,
+                "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+                "bSendChatMessages": false,
+                "Prerequisites": {
+                  "QueryDefinition": {
+                    "StaticStruct": {
+                      "SchemaClass": {
+                        "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                        "ObjectPath": "/Script/WDGame"
+                      },
+                      "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                    },
+                    "SharedDefinition": null
+                  }
+                },
+                "StateTreeReference": {
+                  "StateTree": null,
+                  "Parameters": {
+                    "PropertyDescs": [],
+                    "SerialSize": 0
+                  },
+                  "PropertyOverrides": []
+                },
+                "LinkedStateTreeOverrides": {
+                  "OverrideItems": []
+                },
+                "Tag": {
+                  "TagName": "None"
+                }
+              },
+              "ContextTags": {
+                "RefAccessIndex": {
+                  "Value": 0
+                }
+              },
+              "bAddSeveralTags": false,
+              "AddTag": {
+                "TagName": "None"
+              },
+              "AddTags": []
+            },
             {
               "Parameters": {
                 "PropertyDescs": [],
                 "SerialSize": 0
               }
             },
-            null,
+            {
+              "PlayerChallengeComponent": null,
+              "Challenge": {
+                "DisplayName": {
+                  "CultureInvariantString": null
+                },
+                "Description": {
+                  "CultureInvariantString": null
+                },
+                "Rewards": [],
+                "Objectives": [],
+                "bAutoActivate": false,
+                "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+                "bSendChatMessages": false,
+                "Prerequisites": {
+                  "QueryDefinition": {
+                    "StaticStruct": {
+                      "SchemaClass": {
+                        "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                        "ObjectPath": "/Script/WDGame"
+                      },
+                      "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                    },
+                    "SharedDefinition": null
+                  }
+                },
+                "StateTreeReference": {
+                  "StateTree": null,
+                  "Parameters": {
+                    "PropertyDescs": [],
+                    "SerialSize": 0
+                  },
+                  "PropertyOverrides": []
+                },
+                "LinkedStateTreeOverrides": {
+                  "OverrideItems": []
+                },
+                "Tag": {
+                  "TagName": "None"
+                }
+              },
+              "ContextTags": {
+                "RefAccessIndex": {
+                  "Value": 0
+                }
+              },
+              "bAddSeveralTags": false,
+              "AddTag": {
+                "TagName": "Challenges.Context.KilledByEnemy"
+              },
+              "AddTags": []
+            },
             {
               "Parameters": {
                 "PropertyDescs": [],
                 "SerialSize": 0
               }
             },
-            null,
+            {
+              "PlayerChallengeComponent": null,
+              "Challenge": {
+                "DisplayName": {
+                  "CultureInvariantString": null
+                },
+                "Description": {
+                  "CultureInvariantString": null
+                },
+                "Rewards": [],
+                "Objectives": [],
+                "bAutoActivate": false,
+                "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+                "bSendChatMessages": false,
+                "Prerequisites": {
+                  "QueryDefinition": {
+                    "StaticStruct": {
+                      "SchemaClass": {
+                        "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                        "ObjectPath": "/Script/WDGame"
+                      },
+                      "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                    },
+                    "SharedDefinition": null
+                  }
+                },
+                "StateTreeReference": {
+                  "StateTree": null,
+                  "Parameters": {
+                    "PropertyDescs": [],
+                    "SerialSize": 0
+                  },
+                  "PropertyOverrides": []
+                },
+                "LinkedStateTreeOverrides": {
+                  "OverrideItems": []
+                },
+                "Tag": {
+                  "TagName": "None"
+                }
+              },
+              "ContextTags": {
+                "RefAccessIndex": {
+                  "Value": 0
+                }
+              },
+              "bAddSeveralTags": false,
+              "AddTag": {
+                "TagName": "Challenges.Context.Instigator.InControlZone"
+              },
+              "AddTags": []
+            },
             {
               "Parameters": {
                 "PropertyDescs": [],
                 "SerialSize": 0
               }
             },
-            null,
+            {
+              "PlayerChallengeComponent": null,
+              "Challenge": {
+                "DisplayName": {
+                  "CultureInvariantString": null
+                },
+                "Description": {
+                  "CultureInvariantString": null
+                },
+                "Rewards": [],
+                "Objectives": [],
+                "bAutoActivate": false,
+                "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+                "bSendChatMessages": false,
+                "Prerequisites": {
+                  "QueryDefinition": {
+                    "StaticStruct": {
+                      "SchemaClass": {
+                        "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                        "ObjectPath": "/Script/WDGame"
+                      },
+                      "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                    },
+                    "SharedDefinition": null
+                  }
+                },
+                "StateTreeReference": {
+                  "StateTree": null,
+                  "Parameters": {
+                    "PropertyDescs": [],
+                    "SerialSize": 0
+                  },
+                  "PropertyOverrides": []
+                },
+                "LinkedStateTreeOverrides": {
+                  "OverrideItems": []
+                },
+                "Tag": {
+                  "TagName": "None"
+                }
+              },
+              "ContextTags": {
+                "RefAccessIndex": {
+                  "Value": 0
+                }
+              },
+              "bAddSeveralTags": false,
+              "AddTag": {
+                "TagName": "Challenges.Context.Instigator.InHotZone"
+              },
+              "AddTags": []
+            },
             {
               "Parameters": {
                 "PropertyDescs": [],
                 "SerialSize": 0
               }
             },
-            null,
+            {
+              "PlayerChallengeComponent": null,
+              "Challenge": {
+                "DisplayName": {
+                  "CultureInvariantString": null
+                },
+                "Description": {
+                  "CultureInvariantString": null
+                },
+                "Rewards": [],
+                "Objectives": [],
+                "bAutoActivate": false,
+                "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+                "bSendChatMessages": false,
+                "Prerequisites": {
+                  "QueryDefinition": {
+                    "StaticStruct": {
+                      "SchemaClass": {
+                        "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                        "ObjectPath": "/Script/WDGame"
+                      },
+                      "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                    },
+                    "SharedDefinition": null
+                  }
+                },
+                "StateTreeReference": {
+                  "StateTree": null,
+                  "Parameters": {
+                    "PropertyDescs": [],
+                    "SerialSize": 0
+                  },
+                  "PropertyOverrides": []
+                },
+                "LinkedStateTreeOverrides": {
+                  "OverrideItems": []
+                },
+                "Tag": {
+                  "TagName": "None"
+                }
+              },
+              "ContextTags": {
+                "RefAccessIndex": {
+                  "Value": 0
+                }
+              },
+              "bAddSeveralTags": false,
+              "AddTag": {
+                "TagName": "Challenges.Context.Target.InControlZone"
+              },
+              "AddTags": []
+            },
             {
               "Parameters": {
                 "PropertyDescs": [],
                 "SerialSize": 0
               }
             },
-            null,
+            {
+              "PlayerChallengeComponent": null,
+              "Challenge": {
+                "DisplayName": {
+                  "CultureInvariantString": null
+                },
+                "Description": {
+                  "CultureInvariantString": null
+                },
+                "Rewards": [],
+                "Objectives": [],
+                "bAutoActivate": false,
+                "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+                "bSendChatMessages": false,
+                "Prerequisites": {
+                  "QueryDefinition": {
+                    "StaticStruct": {
+                      "SchemaClass": {
+                        "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                        "ObjectPath": "/Script/WDGame"
+                      },
+                      "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                    },
+                    "SharedDefinition": null
+                  }
+                },
+                "StateTreeReference": {
+                  "StateTree": null,
+                  "Parameters": {
+                    "PropertyDescs": [],
+                    "SerialSize": 0
+                  },
+                  "PropertyOverrides": []
+                },
+                "LinkedStateTreeOverrides": {
+                  "OverrideItems": []
+                },
+                "Tag": {
+                  "TagName": "None"
+                }
+              },
+              "ContextTags": {
+                "RefAccessIndex": {
+                  "Value": 0
+                }
+              },
+              "bAddSeveralTags": false,
+              "AddTag": {
+                "TagName": "Challenges.Context.Target.InHotZone"
+              },
+              "AddTags": []
+            },
             {
               "Parameters": {
                 "PropertyDescs": [],
                 "SerialSize": 0
               }
             },
-            null,
+            {
+              "PlayerChallengeComponent": null,
+              "Challenge": {
+                "DisplayName": {
+                  "CultureInvariantString": null
+                },
+                "Description": {
+                  "CultureInvariantString": null
+                },
+                "Rewards": [],
+                "Objectives": [],
+                "bAutoActivate": false,
+                "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+                "bSendChatMessages": false,
+                "Prerequisites": {
+                  "QueryDefinition": {
+                    "StaticStruct": {
+                      "SchemaClass": {
+                        "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                        "ObjectPath": "/Script/WDGame"
+                      },
+                      "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                    },
+                    "SharedDefinition": null
+                  }
+                },
+                "StateTreeReference": {
+                  "StateTree": null,
+                  "Parameters": {
+                    "PropertyDescs": [],
+                    "SerialSize": 0
+                  },
+                  "PropertyOverrides": []
+                },
+                "LinkedStateTreeOverrides": {
+                  "OverrideItems": []
+                },
+                "Tag": {
+                  "TagName": "None"
+                }
+              },
+              "ContextTags": {
+                "RefAccessIndex": {
+                  "Value": 0
+                }
+              },
+              "bAddSeveralTags": false,
+              "AddTag": {
+                "TagName": "Challenges.Context.HotZoneMagnetActive"
+              },
+              "AddTags": []
+            },
             {
               "Parameters": {
                 "PropertyDescs": [],
                 "SerialSize": 0
               }
             },
-            null,
+            {
+              "PlayerChallengeComponent": null,
+              "Challenge": {
+                "DisplayName": {
+                  "CultureInvariantString": null
+                },
+                "Description": {
+                  "CultureInvariantString": null
+                },
+                "Rewards": [],
+                "Objectives": [],
+                "bAutoActivate": false,
+                "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+                "bSendChatMessages": false,
+                "Prerequisites": {
+                  "QueryDefinition": {
+                    "StaticStruct": {
+                      "SchemaClass": {
+                        "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                        "ObjectPath": "/Script/WDGame"
+                      },
+                      "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                    },
+                    "SharedDefinition": null
+                  }
+                },
+                "StateTreeReference": {
+                  "StateTree": null,
+                  "Parameters": {
+                    "PropertyDescs": [],
+                    "SerialSize": 0
+                  },
+                  "PropertyOverrides": []
+                },
+                "LinkedStateTreeOverrides": {
+                  "OverrideItems": []
+                },
+                "Tag": {
+                  "TagName": "None"
+                }
+              },
+              "ContextTags": {
+                "RefAccessIndex": {
+                  "Value": 0
+                }
+              },
+              "bAddSeveralTags": true,
+              "AddTag": {
+                "TagName": "Meta.Progression.Context.Vehicle.Faction.Friendly"
+              },
+              "AddTags": [
+                "Meta.Progression.Context.Vehicle.Faction.Friendly",
+                "Challenges.Context.FriendlyKill"
+              ]
+            },
             {
               "Parameters": {
                 "PropertyDescs": [],
                 "SerialSize": 0
               }
             },
-            null,
+            {
+              "PlayerChallengeComponent": null,
+              "Challenge": {
+                "DisplayName": {
+                  "CultureInvariantString": null
+                },
+                "Description": {
+                  "CultureInvariantString": null
+                },
+                "Rewards": [],
+                "Objectives": [],
+                "bAutoActivate": false,
+                "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+                "bSendChatMessages": false,
+                "Prerequisites": {
+                  "QueryDefinition": {
+                    "StaticStruct": {
+                      "SchemaClass": {
+                        "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                        "ObjectPath": "/Script/WDGame"
+                      },
+                      "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                    },
+                    "SharedDefinition": null
+                  }
+                },
+                "StateTreeReference": {
+                  "StateTree": null,
+                  "Parameters": {
+                    "PropertyDescs": [],
+                    "SerialSize": 0
+                  },
+                  "PropertyOverrides": []
+                },
+                "LinkedStateTreeOverrides": {
+                  "OverrideItems": []
+                },
+                "Tag": {
+                  "TagName": "None"
+                }
+              },
+              "ContextTags": {
+                "RefAccessIndex": {
+                  "Value": 0
+                }
+              },
+              "bAddSeveralTags": false,
+              "AddTag": {
+                "TagName": "Meta.Progression.Context.Vehicle.Faction.Neutral"
+              },
+              "AddTags": []
+            },
             {
               "Parameters": {
                 "PropertyDescs": [],
                 "SerialSize": 0
               }
             },
-            null,
+            {
+              "PlayerChallengeComponent": null,
+              "Challenge": {
+                "DisplayName": {
+                  "CultureInvariantString": null
+                },
+                "Description": {
+                  "CultureInvariantString": null
+                },
+                "Rewards": [],
+                "Objectives": [],
+                "bAutoActivate": false,
+                "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+                "bSendChatMessages": false,
+                "Prerequisites": {
+                  "QueryDefinition": {
+                    "StaticStruct": {
+                      "SchemaClass": {
+                        "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                        "ObjectPath": "/Script/WDGame"
+                      },
+                      "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                    },
+                    "SharedDefinition": null
+                  }
+                },
+                "StateTreeReference": {
+                  "StateTree": null,
+                  "Parameters": {
+                    "PropertyDescs": [],
+                    "SerialSize": 0
+                  },
+                  "PropertyOverrides": []
+                },
+                "LinkedStateTreeOverrides": {
+                  "OverrideItems": []
+                },
+                "Tag": {
+                  "TagName": "None"
+                }
+              },
+              "ContextTags": {
+                "RefAccessIndex": {
+                  "Value": 0
+                }
+              },
+              "bAddSeveralTags": false,
+              "AddTag": {
+                "TagName": "Meta.Progression.Context.Vehicle.Faction.Hostile"
+              },
+              "AddTags": []
+            },
             {
               "Parameters": {
                 "PropertyDescs": [],
                 "SerialSize": 0
               }
             },
-            null,
+            {
+              "PlayerChallengeComponent": null,
+              "Challenge": {
+                "DisplayName": {
+                  "CultureInvariantString": null
+                },
+                "Description": {
+                  "CultureInvariantString": null
+                },
+                "Rewards": [],
+                "Objectives": [],
+                "bAutoActivate": false,
+                "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+                "bSendChatMessages": false,
+                "Prerequisites": {
+                  "QueryDefinition": {
+                    "StaticStruct": {
+                      "SchemaClass": {
+                        "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                        "ObjectPath": "/Script/WDGame"
+                      },
+                      "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                    },
+                    "SharedDefinition": null
+                  }
+                },
+                "StateTreeReference": {
+                  "StateTree": null,
+                  "Parameters": {
+                    "PropertyDescs": [],
+                    "SerialSize": 0
+                  },
+                  "PropertyOverrides": []
+                },
+                "LinkedStateTreeOverrides": {
+                  "OverrideItems": []
+                },
+                "Tag": {
+                  "TagName": "None"
+                }
+              },
+              "ContextTags": {
+                "RefAccessIndex": {
+                  "Value": 0
+                }
+              },
+              "bAddSeveralTags": false,
+              "AddTag": {
+                "TagName": "None"
+              },
+              "AddTags": []
+            },
             {
               "Parameters": {
                 "PropertyDescs": [],
@@ -3115,7 +3698,60 @@
                 "SerialSize": 0
               }
             },
-            null,
+            {
+              "PlayerChallengeComponent": null,
+              "Challenge": {
+                "DisplayName": {
+                  "CultureInvariantString": null
+                },
+                "Description": {
+                  "CultureInvariantString": null
+                },
+                "Rewards": [],
+                "Objectives": [],
+                "bAutoActivate": false,
+                "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+                "bSendChatMessages": false,
+                "Prerequisites": {
+                  "QueryDefinition": {
+                    "StaticStruct": {
+                      "SchemaClass": {
+                        "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                        "ObjectPath": "/Script/WDGame"
+                      },
+                      "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                    },
+                    "SharedDefinition": null
+                  }
+                },
+                "StateTreeReference": {
+                  "StateTree": null,
+                  "Parameters": {
+                    "PropertyDescs": [],
+                    "SerialSize": 0
+                  },
+                  "PropertyOverrides": []
+                },
+                "LinkedStateTreeOverrides": {
+                  "OverrideItems": []
+                },
+                "Tag": {
+                  "TagName": "None"
+                }
+              },
+              "RewardTag": {
+                "TagName": "None"
+              },
+              "Inputs": [
+                {
+                  "VariableName": "ScalarValue",
+                  "Value": 0.0
+                }
+              ],
+              "ContextTags": [],
+              "RewardResources": [],
+              "_aaaaljfdepodpipjjkgej_$9534FE3F8F99A649$_$11$": false
+            },
             {
               "Parameters": {
                 "PropertyDescs": [],
@@ -3141,7 +3777,56 @@
                 "SerialSize": 0
               }
             },
-            null,
+            {
+              "PlayerChallengeComponent": null,
+              "Challenge": {
+                "DisplayName": {
+                  "CultureInvariantString": null
+                },
+                "Description": {
+                  "CultureInvariantString": null
+                },
+                "Rewards": [],
+                "Objectives": [],
+                "bAutoActivate": false,
+                "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+                "bSendChatMessages": false,
+                "Prerequisites": {
+                  "QueryDefinition": {
+                    "StaticStruct": {
+                      "SchemaClass": {
+                        "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                        "ObjectPath": "/Script/WDGame"
+                      },
+                      "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                    },
+                    "SharedDefinition": null
+                  }
+                },
+                "StateTreeReference": {
+                  "StateTree": null,
+                  "Parameters": {
+                    "PropertyDescs": [],
+                    "SerialSize": 0
+                  },
+                  "PropertyOverrides": []
+                },
+                "LinkedStateTreeOverrides": {
+                  "OverrideItems": []
+                },
+                "Tag": {
+                  "TagName": "None"
+                }
+              },
+              "RewardTag": {
+                "TagName": "None"
+              },
+              "ContextTags": [],
+              "RewardResources": [],
+              "_aaaaljfdepodpipjjkgej_$9534FE3F8F99A649$_$11$": false,
+              "_aaabaombnfaebibigppgn_$EC1D50418186FF6D$_$16$": [],
+              "TargetActor": null
+            },
             {
               "Parameters": {
                 "PropertyDescs": [],
@@ -4328,6 +5013,45 @@
         },
         {
           "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::StateEvent",
+            "Index": 2,
+            "StateHandle": {
+              "Index": 2
+            }
+          },
+          "bIsOutputBinding": false,
+          "SourcePropertyPath": {
+            "Segments": [
+              {
+                "Name": "Payload",
+                "ArrayIndex": -1,
+                "InstanceStruct": {
+                  "ObjectName": "Class'WDSpottedTargetRemovedEventMessage'",
+                  "ObjectPath": "/Script/SpottingRuntime"
+                },
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::StructInstance"
+              },
+              {
+                "Name": "ScalarValue",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          },
+          "TargetPropertyPath": {
+            "Segments": [
+              {
+                "Name": "ScalarValue",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          }
+        },
+        {
+          "SourceDataHandle": {
             "Source": "EStateTreeDataSourceType::ContextData",
             "Index": 1,
             "StateHandle": {
@@ -5014,6 +5738,42 @@
             "Segments": [
               {
                 "Name": "RewardTag",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          }
+        },
+        {
+          "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::StateParameterData",
+            "Index": 3,
+            "StateHandle": {
+              "Index": 3
+            }
+          },
+          "bIsOutputBinding": false,
+          "SourcePropertyPath": {
+            "Segments": [
+              {
+                "Name": "ScalarValue",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          },
+          "TargetPropertyPath": {
+            "Segments": [
+              {
+                "Name": "Inputs",
+                "ArrayIndex": 0,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              },
+              {
+                "Name": "Value",
                 "ArrayIndex": -1,
                 "InstanceStruct": null,
                 "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
@@ -5993,7 +6753,7 @@
             "Value": 1
           },
           "BindingsEnd": {
-            "Value": 4
+            "Value": 5
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -6019,10 +6779,10 @@
             "Name": "Add Context Tags"
           },
           "BindingsBegin": {
-            "Value": 4
+            "Value": 5
           },
           "BindingsEnd": {
-            "Value": 7
+            "Value": 8
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -6048,10 +6808,10 @@
             "Name": "Add Context Tags"
           },
           "BindingsBegin": {
-            "Value": 7
+            "Value": 8
           },
           "BindingsEnd": {
-            "Value": 9
+            "Value": 10
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -6077,10 +6837,10 @@
             "Name": "Add Context Tags"
           },
           "BindingsBegin": {
-            "Value": 9
+            "Value": 10
           },
           "BindingsEnd": {
-            "Value": 11
+            "Value": 12
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -6106,10 +6866,10 @@
             "Name": "Add Context Tags"
           },
           "BindingsBegin": {
-            "Value": 11
+            "Value": 12
           },
           "BindingsEnd": {
-            "Value": 13
+            "Value": 14
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -6135,10 +6895,10 @@
             "Name": "Add Context Tags"
           },
           "BindingsBegin": {
-            "Value": 13
+            "Value": 14
           },
           "BindingsEnd": {
-            "Value": 15
+            "Value": 16
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -6164,10 +6924,10 @@
             "Name": "Add Context Tags"
           },
           "BindingsBegin": {
-            "Value": 15
+            "Value": 16
           },
           "BindingsEnd": {
-            "Value": 17
+            "Value": 18
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -6193,10 +6953,10 @@
             "Name": "Add Context Tags"
           },
           "BindingsBegin": {
-            "Value": 17
+            "Value": 18
           },
           "BindingsEnd": {
-            "Value": 19
+            "Value": 20
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -6222,10 +6982,10 @@
             "Name": "Add Context Tags"
           },
           "BindingsBegin": {
-            "Value": 19
+            "Value": 20
           },
           "BindingsEnd": {
-            "Value": 21
+            "Value": 22
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -6251,10 +7011,10 @@
             "Name": "Add Context Tags"
           },
           "BindingsBegin": {
-            "Value": 21
+            "Value": 22
           },
           "BindingsEnd": {
-            "Value": 23
+            "Value": 24
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -6280,10 +7040,10 @@
             "Name": "Add Context Tags"
           },
           "BindingsBegin": {
-            "Value": 23
+            "Value": 24
           },
           "BindingsEnd": {
-            "Value": 25
+            "Value": 26
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -6309,10 +7069,10 @@
             "Name": "Get Entity ID"
           },
           "BindingsBegin": {
-            "Value": 25
+            "Value": 26
           },
           "BindingsEnd": {
-            "Value": 26
+            "Value": 27
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -6338,10 +7098,10 @@
             "Name": "Add Context Tags"
           },
           "BindingsBegin": {
-            "Value": 26
+            "Value": 27
           },
           "BindingsEnd": {
-            "Value": 29
+            "Value": 30
           },
           "PropertyFunctionsBegin": {
             "Value": 12
@@ -6367,10 +7127,10 @@
             "Name": "Increment Match Stat"
           },
           "BindingsBegin": {
-            "Value": 29
+            "Value": 30
           },
           "BindingsEnd": {
-            "Value": 30
+            "Value": 31
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -6396,10 +7156,10 @@
             "Name": "Calculate Reward"
           },
           "BindingsBegin": {
-            "Value": 30
+            "Value": 31
           },
           "BindingsEnd": {
-            "Value": 34
+            "Value": 36
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -6425,10 +7185,10 @@
             "Name": "Update Reward XP Tags"
           },
           "BindingsBegin": {
-            "Value": 34
+            "Value": 36
           },
           "BindingsEnd": {
-            "Value": 36
+            "Value": 38
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -6454,10 +7214,10 @@
             "Name": "Grant Reward"
           },
           "BindingsBegin": {
-            "Value": 36
+            "Value": 38
           },
           "BindingsEnd": {
-            "Value": 41
+            "Value": 43
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -6483,10 +7243,10 @@
             "Name": "Get PlayerState from Pawn"
           },
           "BindingsBegin": {
-            "Value": 41
+            "Value": 43
           },
           "BindingsEnd": {
-            "Value": 42
+            "Value": 44
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -6512,10 +7272,10 @@
             "Name": "Object Equals"
           },
           "BindingsBegin": {
-            "Value": 42
+            "Value": 44
           },
           "BindingsEnd": {
-            "Value": 44
+            "Value": 46
           },
           "PropertyFunctionsBegin": {
             "Value": 20
@@ -6541,10 +7301,10 @@
             "Name": "Get Pawn from PlayerState"
           },
           "BindingsBegin": {
-            "Value": 44
+            "Value": 46
           },
           "BindingsEnd": {
-            "Value": 45
+            "Value": 47
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -6570,10 +7330,10 @@
             "Name": "Get Faction Tag"
           },
           "BindingsBegin": {
-            "Value": 45
+            "Value": 47
           },
           "BindingsEnd": {
-            "Value": 46
+            "Value": 48
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -6599,10 +7359,10 @@
             "Name": "Get Faction Tag"
           },
           "BindingsBegin": {
-            "Value": 46
+            "Value": 48
           },
           "BindingsEnd": {
-            "Value": 47
+            "Value": 49
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -6628,10 +7388,10 @@
             "Name": "Tag Equal Condition"
           },
           "BindingsBegin": {
-            "Value": 47
+            "Value": 49
           },
           "BindingsEnd": {
-            "Value": 49
+            "Value": 51
           },
           "PropertyFunctionsBegin": {
             "Value": 21
@@ -6657,10 +7417,10 @@
             "Name": "Tag Equal Condition"
           },
           "BindingsBegin": {
-            "Value": 49
+            "Value": 51
           },
           "BindingsEnd": {
-            "Value": 50
+            "Value": 52
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -6686,10 +7446,10 @@
             "Name": "Bool Compare"
           },
           "BindingsBegin": {
-            "Value": 50
+            "Value": 52
           },
           "BindingsEnd": {
-            "Value": 51
+            "Value": 53
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -6715,10 +7475,10 @@
             "Name": "Actor In Control Zone"
           },
           "BindingsBegin": {
-            "Value": 51
+            "Value": 53
           },
           "BindingsEnd": {
-            "Value": 52
+            "Value": 54
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -6744,10 +7504,10 @@
             "Name": "Actor In Hot Zone"
           },
           "BindingsBegin": {
-            "Value": 52
+            "Value": 54
           },
           "BindingsEnd": {
-            "Value": 53
+            "Value": 55
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -6773,10 +7533,10 @@
             "Name": "Actor In Control Zone"
           },
           "BindingsBegin": {
-            "Value": 53
+            "Value": 55
           },
           "BindingsEnd": {
-            "Value": 54
+            "Value": 56
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -6802,10 +7562,10 @@
             "Name": "Actor In Hot Zone"
           },
           "BindingsBegin": {
-            "Value": 54
+            "Value": 56
           },
           "BindingsEnd": {
-            "Value": 55
+            "Value": 57
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -6831,10 +7591,10 @@
             "Name": "Actor Hostility Condition"
           },
           "BindingsBegin": {
-            "Value": 55
+            "Value": 57
           },
           "BindingsEnd": {
-            "Value": 57
+            "Value": 59
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -6860,10 +7620,10 @@
             "Name": "Actor Hostility Condition"
           },
           "BindingsBegin": {
-            "Value": 57
+            "Value": 59
           },
           "BindingsEnd": {
-            "Value": 59
+            "Value": 61
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -6889,10 +7649,10 @@
             "Name": "Actor Hostility Condition"
           },
           "BindingsBegin": {
-            "Value": 59
+            "Value": 61
           },
           "BindingsEnd": {
-            "Value": 61
+            "Value": 63
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -6918,10 +7678,10 @@
             "Name": "Object Class Is"
           },
           "BindingsBegin": {
-            "Value": 61
+            "Value": 63
           },
           "BindingsEnd": {
-            "Value": 62
+            "Value": 64
           },
           "PropertyFunctionsBegin": {
             "Value": 65535

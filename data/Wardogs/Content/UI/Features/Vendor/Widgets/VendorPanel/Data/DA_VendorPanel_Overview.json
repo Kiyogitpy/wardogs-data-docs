@@ -21,6 +21,71 @@
     },
     "InsufficientFundsAudioEvent": {
       "TagName": "Audio.Event.UI.Vendor.InsufficientFunds"
+    },
+    "InsufficientFundsPopup": {
+      "Tag": {
+        "TagName": "UI.Popup.Vendor.InsufficientFunds"
+      },
+      "Type": {
+        "TagName": "UI.Popup.Type.Warning"
+      },
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+        "Key": "Popup.InsufficientFunds.Title",
+        "SourceString": "Insufficient Funds",
+        "LocalizedString": "Insufficient Funds"
+      },
+      "Subtitle": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+        "Key": "Popup.InsufficientFunds.Subtitle",
+        "SourceString": " Not Enough Cash",
+        "LocalizedString": " Not Enough Cash"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+        "Key": "Popup.InsufficientFunds.Description",
+        "SourceString": "You have insufficient funds to purchase your loadout.",
+        "LocalizedString": "You have insufficient funds to purchase your loadout."
+      },
+      "Options": [
+        {
+          "Key": "EWDPopupOption::Middle",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+              "Key": "Popup.InsufficientFunds.Options.Cancel",
+              "SourceString": "Back",
+              "LocalizedString": "Back"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": true,
+            "ButtonTypeOverride": {
+              "TagName": "UI.Popup.Button.Main"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        }
+      ]
+    },
+    "DefaultActivatedSlot": {
+      "TagName": "Inventory.Slot.Primary"
+    },
+    "RemovedItemFromCartAudioEvent": {
+      "TagName": "Audio.Event.UI.Vendor.RemoveItemFromCart"
+    },
+    "_aaabmmjaifjllmklafddn_$C90859BBCAB0533D$_$28$": {
+      "TagName": "Audio.Event.UI.Vendor.Rebuy"
+    },
+    "PurchasableEntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIItemCardViewModel_Vendor",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/ItemCard/Data/DA_ItemCard_Vendor.DA_ItemCard_Vendor",
+        "SubPathString": ""
+      }
     }
   }
 }

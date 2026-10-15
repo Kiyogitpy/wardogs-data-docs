@@ -11,5 +11,4817 @@
       "ObjectPath": "/Script/WDGame"
     }
   },
-  "Rows": {}
+  "Rows": {
+    "Challenges.SessionEvents.PlayerKill": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "52B025514C08B1C67C021697FE8C3513",
+        "SourceString": "Player Kill",
+        "LocalizedString": "Player Kill"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "AAD02EFC4AF8991E2729E2A8EA1D1532",
+        "SourceString": "Award resources to (or take from) a player when they kill another player.",
+        "LocalizedString": "Award resources to (or take from) a player when they kill another player."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.PlayerKill"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_PlayerKill'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_PlayerKill.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'WDRepeatActionTargetTracker'",
+                "ObjectPath": "/Script/WDGame"
+              },
+              "ID": "C7916C9E-489CE759-9EA83F99-9E5DAF80",
+              "Name": "VictimTracker",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 12
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.PlayerKill"
+      }
+    },
+    "Challenges.SessionEvents.PlayerKill.CrewAssist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "56D460E949DD54562CE51FB3AC63FFB6",
+        "SourceString": "Player Kill Crew Assist",
+        "LocalizedString": "Player Kill Crew Assist"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "B0DA8DEE49B603711E7E5B84FEF560E5",
+        "SourceString": "Award resources to (or take from) a crew player when their pilot/driver/gunner kills another player.",
+        "LocalizedString": "Award resources to (or take from) a crew player when their pilot/driver/gunner kills another player."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.PlayerKill.CrewAssist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_PlayerKill_CrewAssist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_PlayerKill_CrewAssist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.PlayerKill.CrewAssist"
+      }
+    },
+    "Challenges.SessionEvents.PlayerKill.LogisticAssist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "1FD5019C42F354AA1A744795E40A5A64",
+        "SourceString": "Player Kill Logisitic Assist",
+        "LocalizedString": "Player Kill Logisitic Assist"
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.PlayerKill.LogisticAssist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_PlayerKill_LogisticAssist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_PlayerKill_LogisticAssist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'Actor'",
+                "ObjectPath": "/Script/Engine"
+              },
+              "ID": "39FC248F-4D949D91-9590EC81-8594F81A",
+              "Name": "LastVictimPlayerState",
+              "ValueType": "EPropertyBagPropertyType::Object",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "81187D0F-46A807A6-B9F8899D-0A64FC33",
+              "Name": "LastVictimCount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "FF08D02D-45DA1523-64F178AF-06FF97D8",
+              "Name": "CachedServerWorldTime",
+              "ValueType": "EPropertyBagPropertyType::Double",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 3
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.PlayerKill.LogisticAssist"
+      }
+    },
+    "Challenges.SessionEvents.PlayerKill.ReviveAssist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "B3DDF8FD4BBFDC38C38AD4AFBA7D399B",
+        "SourceString": "Player Kill Revive Assist",
+        "LocalizedString": "Player Kill Revive Assist"
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.PlayerKill.ReviveAssist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_PlayerKill_ReviveAssist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_PlayerKill_ReviveAssist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'Actor'",
+                "ObjectPath": "/Script/Engine"
+              },
+              "ID": "39FC248F-4D949D91-9590EC81-8594F81A",
+              "Name": "LastVictimPlayerState",
+              "ValueType": "EPropertyBagPropertyType::Object",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "81187D0F-46A807A6-B9F8899D-0A64FC33",
+              "Name": "LastVictimCount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "FF08D02D-45DA1523-64F178AF-06FF97D8",
+              "Name": "CachedServerWorldTime",
+              "ValueType": "EPropertyBagPropertyType::Double",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 3
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.PlayerKill.ReviveAssist"
+      }
+    },
+    "Challenges.SessionEvents.PlayerKill.FOBSuppliedAssist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "59F10203469C6327C08340834D411DE5",
+        "SourceString": "Player Kill FOB Supplied Assist",
+        "LocalizedString": "Player Kill FOB Supplied Assist"
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.PlayerKill.FOBSuppliedAssist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_PlayerKill_FOBSuppliedAssist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_PlayerKill_FOBSuppliedAssist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'Actor'",
+                "ObjectPath": "/Script/Engine"
+              },
+              "ID": "39FC248F-4D949D91-9590EC81-8594F81A",
+              "Name": "LastVictimPlayerState",
+              "ValueType": "EPropertyBagPropertyType::Object",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "81187D0F-46A807A6-B9F8899D-0A64FC33",
+              "Name": "LastVictimCount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "FF08D02D-45DA1523-64F178AF-06FF97D8",
+              "Name": "CachedServerWorldTime",
+              "ValueType": "EPropertyBagPropertyType::Double",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 3
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.PlayerKill.FOBSuppliedAssist"
+      }
+    },
+    "Challenges.SessionEvents.PlayerKill.SupplyCrateAssist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "D812EE7947EF3EE4883DACB3152F79C9",
+        "SourceString": "Player Kill Supply Crate Assist",
+        "LocalizedString": "Player Kill Supply Crate Assist"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "BBAD62734DE8468987181D844E536438",
+        "SourceString": "Award resources to the player who sold the damage causer.",
+        "LocalizedString": "Award resources to the player who sold the damage causer."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.PlayerKill.SupplyCrateAssist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_PlayerKill_SupplyCrateAssist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_PlayerKill_SupplyCrateAssist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.PlayerKill.SupplyCrateAssist"
+      }
+    },
+    "Challenges.SessionEvents.PlayerKill.Assist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "9D5503A74117AF9F2EA9B4ABB9ACF840",
+        "SourceString": "Player Kill Assist",
+        "LocalizedString": "Player Kill Assist"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "582D1D844E16340DADAB07A5798F3723",
+        "SourceString": "Award resources to (or take from) a player when they assisted in the death of another player.",
+        "LocalizedString": "Award resources to (or take from) a player when they assisted in the death of another player."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.PlayerKill.Assist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_PlayerKill_Assist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_PlayerKill_Assist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'Actor'",
+                "ObjectPath": "/Script/Engine"
+              },
+              "ID": "18A40F5E-4D5B3FAA-D4233194-FE97429B",
+              "Name": "LastVictimPlayerState",
+              "ValueType": "EPropertyBagPropertyType::Object",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "9D40AB8D-4E120C1C-28E26CBD-8AC659DD",
+              "Name": "LastVictimCount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "D11BFAF3-47BA6196-99A969BE-83DB5E2C",
+              "Name": "CachedServerWorldTime",
+              "ValueType": "EPropertyBagPropertyType::Double",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 3
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.PlayerKill.Assist"
+      }
+    },
+    "Challenges.SessionEvents.PlayerKill.Assist.CrewAssist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "034B5F2547D71EBB67E634ADB5E180DD",
+        "SourceString": "Player Kill Assist Crew Assist",
+        "LocalizedString": "Player Kill Assist Crew Assist"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "36CF990C463DAC20D93A498E593BD780",
+        "SourceString": "Award resources to (or take from) a crew player when their pilot/driver/gunner assists in the death of another player.",
+        "LocalizedString": "Award resources to (or take from) a crew player when their pilot/driver/gunner assists in the death of another player."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.PlayerKill.Assist.CrewAssist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_PlayerKill_Assist_CrewAssist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_PlayerKill_Assist_CrewAssist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.PlayerKill.Assist.CrewAssist"
+      }
+    },
+    "Challenges.SessionEvents.PlayerKill.Assist.LogisticAssist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "F2052C85432F98805B156686B6888364",
+        "SourceString": "Player Kill Assist Logistic Assist",
+        "LocalizedString": "Player Kill Assist Logistic Assist"
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.PlayerKill.Assist.LogisticAssist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_PlayerKill_Assist_LogisticAssist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_PlayerKill_Assist_LogisticAssist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'Actor'",
+                "ObjectPath": "/Script/Engine"
+              },
+              "ID": "39FC248F-4D949D91-9590EC81-8594F81A",
+              "Name": "LastVictimPlayerState",
+              "ValueType": "EPropertyBagPropertyType::Object",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "81187D0F-46A807A6-B9F8899D-0A64FC33",
+              "Name": "LastVictimCount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "FF08D02D-45DA1523-64F178AF-06FF97D8",
+              "Name": "CachedServerWorldTime",
+              "ValueType": "EPropertyBagPropertyType::Double",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 3
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.PlayerKill.Assist.LogisticAssist"
+      }
+    },
+    "Challenges.SessionEvents.PlayerKill.Assist.ReviveAssist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "5DDDBBA04D4A66F2118D7EBE685A3353",
+        "SourceString": "Player Kill Assist Revive Assist",
+        "LocalizedString": "Player Kill Assist Revive Assist"
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.PlayerKill.Assist.ReviveAssist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_PlayerKill_Assist_ReviveAssist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_PlayerKill_Assist_ReviveAssist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'Actor'",
+                "ObjectPath": "/Script/Engine"
+              },
+              "ID": "39FC248F-4D949D91-9590EC81-8594F81A",
+              "Name": "LastVictimPlayerState",
+              "ValueType": "EPropertyBagPropertyType::Object",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "81187D0F-46A807A6-B9F8899D-0A64FC33",
+              "Name": "LastVictimCount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "FF08D02D-45DA1523-64F178AF-06FF97D8",
+              "Name": "CachedServerWorldTime",
+              "ValueType": "EPropertyBagPropertyType::Double",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 3
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.PlayerKill.Assist.ReviveAssist"
+      }
+    },
+    "Challenges.SessionEvents.PlayerKill.Assist.FOBSuppliedAssist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "426798BE4B9904600C126E81B016F10E",
+        "SourceString": "Player Kill Assist FOB Supplied Assist",
+        "LocalizedString": "Player Kill Assist FOB Supplied Assist"
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.PlayerKill.Assist.FOBSuppliedAssist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_PlayerKill_Assist_FOBSuppliedAssist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_PlayerKill_Assist_FOBSuppliedAssist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'Actor'",
+                "ObjectPath": "/Script/Engine"
+              },
+              "ID": "39FC248F-4D949D91-9590EC81-8594F81A",
+              "Name": "LastVictimPlayerState",
+              "ValueType": "EPropertyBagPropertyType::Object",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "81187D0F-46A807A6-B9F8899D-0A64FC33",
+              "Name": "LastVictimCount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "FF08D02D-45DA1523-64F178AF-06FF97D8",
+              "Name": "CachedServerWorldTime",
+              "ValueType": "EPropertyBagPropertyType::Double",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 3
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.PlayerKill.Assist.FOBSuppliedAssist"
+      }
+    },
+    "Challenges.SessionEvents.PlayerKill.Assist.SupplyCrateAssist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "9B12D4C84994911E16748AA182BAACF2",
+        "SourceString": "Player Kill Assist Supply Crate Assist",
+        "LocalizedString": "Player Kill Assist Supply Crate Assist"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "A10FE01E443E6B407F82669175994D31",
+        "SourceString": "Award resources to the player who sold the damage causer.",
+        "LocalizedString": "Award resources to the player who sold the damage causer."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.PlayerKill.Assist.SupplyCrateAssist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_PlayerKill_Assist_SupplyCrateAssist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_PlayerKill_Assist_SupplyCrateAssist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.PlayerKill.Assist.SupplyCrateAssist"
+      }
+    },
+    "Challenges.SessionEvents.RevivePlayer": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "839A8AA34F972E9DA3D8869F86FCF160",
+        "SourceString": "Revive Player",
+        "LocalizedString": "Revive Player"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "37BC2B054D0B907CC163AABDD1B1E89A",
+        "SourceString": "Award resources to a player when they revive another player.",
+        "LocalizedString": "Award resources to a player when they revive another player."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.RevivePlayer"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_RevivePlayer'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_RevivePlayer.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'Actor'",
+                "ObjectPath": "/Script/Engine"
+              },
+              "ID": "39FC248F-4D949D91-9590EC81-8594F81A",
+              "Name": "LastVictimPlayerState",
+              "ValueType": "EPropertyBagPropertyType::Object",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "708156DD-4695A028-7C2038B3-AC36CB30",
+              "Name": "LastVictimCount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "EA9A9683-44154134-762FC0A9-1D67ADB8",
+              "Name": "CachedServerWorldTime",
+              "ValueType": "EPropertyBagPropertyType::Double",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 3
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.RevivePlayer"
+      }
+    },
+    "Challenges.SessionEvents.RevivePlayer.LogisticAssist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "27209AF2418BF5307D4D1F9906BB85F0",
+        "SourceString": "Revive Player Logisitic Assist",
+        "LocalizedString": "Revive Player Logisitic Assist"
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.RevivePlayer.LogisticAssist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_RevivePlayer_LogisticAssist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_RevivePlayer_LogisticAssist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'Actor'",
+                "ObjectPath": "/Script/Engine"
+              },
+              "ID": "39FC248F-4D949D91-9590EC81-8594F81A",
+              "Name": "LastVictimPlayerState",
+              "ValueType": "EPropertyBagPropertyType::Object",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "708156DD-4695A028-7C2038B3-AC36CB30",
+              "Name": "LastVictimCount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "EA9A9683-44154134-762FC0A9-1D67ADB8",
+              "Name": "CachedServerWorldTime",
+              "ValueType": "EPropertyBagPropertyType::Double",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 3
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.RevivePlayer.LogisticAssist"
+      }
+    },
+    "Challenges.SessionEvents.RevivePlayer.ReviveAssist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "89739AF24A3C9CE796172DB067BD3B35",
+        "SourceString": "Revive Player Revive Assist",
+        "LocalizedString": "Revive Player Revive Assist"
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.RevivePlayer.ReviveAssist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_RevivePlayer_ReviveAssist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_RevivePlayer_ReviveAssist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'Actor'",
+                "ObjectPath": "/Script/Engine"
+              },
+              "ID": "39FC248F-4D949D91-9590EC81-8594F81A",
+              "Name": "LastVictimPlayerState",
+              "ValueType": "EPropertyBagPropertyType::Object",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "708156DD-4695A028-7C2038B3-AC36CB30",
+              "Name": "LastVictimCount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "EA9A9683-44154134-762FC0A9-1D67ADB8",
+              "Name": "CachedServerWorldTime",
+              "ValueType": "EPropertyBagPropertyType::Double",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 3
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.RevivePlayer.ReviveAssist"
+      }
+    },
+    "Challenges.SessionEvents.RevivePlayer.SupplyCrateAssist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "C9C9159F469B5C95EF685D9E79611926",
+        "SourceString": "Revive Player Supply Crate Assist",
+        "LocalizedString": "Revive Player Supply Crate Assist"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "FEFE84094C436B6A8C9064ADA3B43CDC",
+        "SourceString": "Award resources to the player who sold the revive causer.",
+        "LocalizedString": "Award resources to the player who sold the revive causer."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.RevivePlayer.SupplyCrateAssist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_RevivePlayer_SupplyCrateAssist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_RevivePlayer_SupplyCrateAssist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.RevivePlayer.SupplyCrateAssist"
+      }
+    },
+    "Challenges.SessionEvents.RevivePlayer.Contributor": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "59FC9827451EC1A5E33CF3BB2A456C73",
+        "SourceString": "Revive Player Contributor",
+        "LocalizedString": "Revive Player Contributor"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "6DADE51D46B77ADA3FF513B6E51B2A71",
+        "SourceString": "Award resources to a player when they're mid-process of reviving another player.",
+        "LocalizedString": "Award resources to a player when they're mid-process of reviving another player."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.RevivePlayer.Contributor"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_RevivePlayerContributor'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_RevivePlayerContributor.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'Actor'",
+                "ObjectPath": "/Script/Engine"
+              },
+              "ID": "29D3133B-4D40EF2E-90B6A4A0-BFA243EC",
+              "Name": "LastVictimPlayerState",
+              "ValueType": "EPropertyBagPropertyType::Object",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "1CAA03C6-4E5B7FE4-58192DA4-8CC0F25C",
+              "Name": "LastVictimCount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "4294775B-46082916-B8488AA9-CD3780E7",
+              "Name": "CachedServerWorldTime",
+              "ValueType": "EPropertyBagPropertyType::Double",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 3
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.RevivePlayer.Contributor"
+      }
+    },
+    "Challenges.SessionEvents.HealPlayer": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "DEA56E4840DBF400AF8D768D527852CC",
+        "SourceString": "Heal Player",
+        "LocalizedString": "Heal Player"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "4C1FD82A4A46CBC642046D9F8C9677F6",
+        "SourceString": "Award resources to a player when they heal another player.",
+        "LocalizedString": "Award resources to a player when they heal another player."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.HealPlayer"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_HealPlayer'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_HealPlayer.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'Actor'",
+                "ObjectPath": "/Script/Engine"
+              },
+              "ID": "39FC248F-4D949D91-9590EC81-8594F81A",
+              "Name": "LastVictimPlayerState",
+              "ValueType": "EPropertyBagPropertyType::Object",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "708156DD-4695A028-7C2038B3-AC36CB30",
+              "Name": "LastVictimCount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "EA9A9683-44154134-762FC0A9-1D67ADB8",
+              "Name": "CachedServerWorldTime",
+              "ValueType": "EPropertyBagPropertyType::Double",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 3
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.HealPlayer"
+      }
+    },
+    "Challenges.SessionEvents.HealPlayer.LogisticAssist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "29D8D04D4004053EF6E26B85ECBDC956",
+        "SourceString": "Heal Player Logistic Assist",
+        "LocalizedString": "Heal Player Logistic Assist"
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.HealPlayer.LogisticAssist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_HealPlayer_LogisticAssist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_HealPlayer_LogisticAssist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'Actor'",
+                "ObjectPath": "/Script/Engine"
+              },
+              "ID": "39FC248F-4D949D91-9590EC81-8594F81A",
+              "Name": "LastVictimPlayerState",
+              "ValueType": "EPropertyBagPropertyType::Object",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "708156DD-4695A028-7C2038B3-AC36CB30",
+              "Name": "LastVictimCount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "EA9A9683-44154134-762FC0A9-1D67ADB8",
+              "Name": "CachedServerWorldTime",
+              "ValueType": "EPropertyBagPropertyType::Double",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 3
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.HealPlayer.LogisticAssist"
+      }
+    },
+    "Challenges.SessionEvents.HealPlayer.ReviveAssist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "BC934AE44AC86F1F8778E9BF4A405710",
+        "SourceString": "Heal Player Revive Assist",
+        "LocalizedString": "Heal Player Revive Assist"
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.HealPlayer.ReviveAssist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_HealPlayer_ReviveAssist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_HealPlayer_ReviveAssist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'Actor'",
+                "ObjectPath": "/Script/Engine"
+              },
+              "ID": "39FC248F-4D949D91-9590EC81-8594F81A",
+              "Name": "LastVictimPlayerState",
+              "ValueType": "EPropertyBagPropertyType::Object",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "708156DD-4695A028-7C2038B3-AC36CB30",
+              "Name": "LastVictimCount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "EA9A9683-44154134-762FC0A9-1D67ADB8",
+              "Name": "CachedServerWorldTime",
+              "ValueType": "EPropertyBagPropertyType::Double",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 3
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.HealPlayer.ReviveAssist"
+      }
+    },
+    "Challenges.SessionEvents.HealPlayer.SupplyCrateAssist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "8FDB26A342236712A8A70D8DE84CF87B",
+        "SourceString": "Heal Player Supply Crate Assist",
+        "LocalizedString": "Heal Player Supply Crate Assist"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "F52A3B69491D082F871E16B59E2FD4F7",
+        "SourceString": "Award resources to the player who sold the heal causer.",
+        "LocalizedString": "Award resources to the player who sold the heal causer."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.HealPlayer.SupplyCrateAssist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_HealPlayer_SupplyCrateAssist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_HealPlayer_SupplyCrateAssist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.HealPlayer.SupplyCrateAssist"
+      }
+    },
+    "Challenges.SessionEvents.DestroyVehicle": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "E922CA1842ACF76A22A778B4FAC13779",
+        "SourceString": "Destroy Vehicle",
+        "LocalizedString": "Destroy Vehicle"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "1555990649059EAF2270AEB505FBF367",
+        "SourceString": "Award resources to a player when they destroy a vehicle.",
+        "LocalizedString": "Award resources to a player when they destroy a vehicle."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.DestroyVehicle"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_DestroyVehicle'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_DestroyVehicle.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.DestroyVehicle"
+      }
+    },
+    "Challenges.SessionEvents.DestroyVehicle.CrewAssist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "1B207327425A056769461AACB9ED57F5",
+        "SourceString": "Destroy Vehicle Crew Assist",
+        "LocalizedString": "Destroy Vehicle Crew Assist"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "4DFC19074ADC81FA2ABA638857FBACC3",
+        "SourceString": "Award resources to a crew player when their pilot/driver/gunner destroys a vehicle.",
+        "LocalizedString": "Award resources to a crew player when their pilot/driver/gunner destroys a vehicle."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.DestroyVehicle.CrewAssist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_DestroyVehicle_CrewAssist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_DestroyVehicle_CrewAssist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.DestroyVehicle.CrewAssist"
+      }
+    },
+    "Challenges.SessionEvents.DestroyVehicle.LogisticAssist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "CA66946540A85AD7ADC5D19EC911AE93",
+        "SourceString": "Destroy Vehicle Logisitic Assist",
+        "LocalizedString": "Destroy Vehicle Logisitic Assist"
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.DestroyVehicle.LogisticAssist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_DestroyVehicle_LogisticAssist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_DestroyVehicle_LogisticAssist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 0
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.DestroyVehicle.LogisticAssist"
+      }
+    },
+    "Challenges.SessionEvents.DestroyVehicle.ReviveAssist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "0F77C3774CD08EAFF80520BD75BBB6B8",
+        "SourceString": "Destroy Vehicle Revive Assist",
+        "LocalizedString": "Destroy Vehicle Revive Assist"
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.DestroyVehicle.ReviveAssist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_DestroyVehicle_ReviveAssist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_DestroyVehicle_ReviveAssist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 0
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.DestroyVehicle.ReviveAssist"
+      }
+    },
+    "Challenges.SessionEvents.DestroyVehicle.FOBSuppliedAssist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "5FDEA81D4FD566B65CE197A7A8CC4B58",
+        "SourceString": "Destroy Vehicle FOB Supplied Assist",
+        "LocalizedString": "Destroy Vehicle FOB Supplied Assist"
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.DestroyVehicle.FOBSuppliedAssist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_DestroyVehicle_FOBSuppliedAssist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_DestroyVehicle_FOBSuppliedAssist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 0
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.DestroyVehicle.FOBSuppliedAssist"
+      }
+    },
+    "Challenges.SessionEvents.DestroyVehicle.SupplyCrateAssist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "79603EE740B2522539370EB4AC28D51B",
+        "SourceString": "Destroy Vehicle Supply Crate Assist",
+        "LocalizedString": "Destroy Vehicle Supply Crate Assist"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "157A3C65465C5A57C4D83F9BFBB4DC2A",
+        "SourceString": "Award resources to the player who sold the damage causer.",
+        "LocalizedString": "Award resources to the player who sold the damage causer."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.DestroyVehicle.SupplyCrateAssist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_DestroyVehicle_SupplyCrateAssist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_DestroyVehicle_SupplyCrateAssist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.DestroyVehicle.SupplyCrateAssist"
+      }
+    },
+    "Challenges.SessionEvents.DestroyVehicle.Assist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "6F344FC342810EB1166FCF9AD199B894",
+        "SourceString": "Destroy Vehicle Assist",
+        "LocalizedString": "Destroy Vehicle Assist"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "5BACEC7740CB7FEBF78ABDA2CCB8F3E2",
+        "SourceString": "Award resources to players who assisted in the destruction of a vehicle by damaging it.",
+        "LocalizedString": "Award resources to players who assisted in the destruction of a vehicle by damaging it."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.DestroyVehicle.Assist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_DestroyVehicle_Assist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_DestroyVehicle_Assist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.DestroyVehicle.Assist"
+      }
+    },
+    "Challenges.SessionEvents.DestroyVehicle.Assist.CrewAssist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "20BDC85944F3D3FD4895D9AE21FD7B9D",
+        "SourceString": "Destroy Vehicle Assist Crew Assist",
+        "LocalizedString": "Destroy Vehicle Assist Crew Assist"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "F09CFED74570C034676A2AB9342A8ED6",
+        "SourceString": "Award resources to crew players whos pilot/driver/gunner assisted in the destruction of a vehicle by damaging it.",
+        "LocalizedString": "Award resources to crew players whos pilot/driver/gunner assisted in the destruction of a vehicle by damaging it."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.DestroyVehicle.Assist.CrewAssist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_DestroyVehicle_Assist_CrewAssist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_DestroyVehicle_Assist_CrewAssist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.DestroyVehicle.Assist.CrewAssist"
+      }
+    },
+    "Challenges.SessionEvents.DestroyVehicle.Assist.LogisticAssist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "27782D8A444E2A2457A5B7A71173366A",
+        "SourceString": "Vehicle Destroyed Assist Logistic Assist",
+        "LocalizedString": "Vehicle Destroyed Assist Logistic Assist"
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.DestroyVehicle.Assist.LogisticAssist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_DestroyVehicle_Assist_LogisticAssist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_DestroyVehicle_Assist_LogisticAssist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 0
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.DestroyVehicle.Assist.LogisticAssist"
+      }
+    },
+    "Challenges.SessionEvents.DestroyVehicle.Assist.ReviveAssist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "740B4BAC428D7FDF1901D6A4FF6AA6A3",
+        "SourceString": "Vehicle Destroyed Assist Revive Assist",
+        "LocalizedString": "Vehicle Destroyed Assist Revive Assist"
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.DestroyVehicle.Assist.ReviveAssist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_DestroyVehicle_Assist_ReviveAssist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_DestroyVehicle_Assist_ReviveAssist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 0
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.DestroyVehicle.Assist.ReviveAssist"
+      }
+    },
+    "Challenges.SessionEvents.DestroyVehicle.Assist.FOBSuppliedAssist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "740B4BAC428D7FDF1901D6A4FF6AA6A3",
+        "SourceString": "Vehicle Destroyed Assist Revive Assist",
+        "LocalizedString": "Vehicle Destroyed Assist Revive Assist"
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.DestroyVehicle.Assist.FOBSuppliedAssist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_DestroyVehicle_Assist_FOBSuppliedAssist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_DestroyVehicle_Assist_FOBSuppliedAssist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 0
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.DestroyVehicle.Assist.FOBSuppliedAssist"
+      }
+    },
+    "Challenges.SessionEvents.DestroyVehicle.Assist.SupplyCrateAssist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "C29462D146CD01259B712F9C1DFD0F3C",
+        "SourceString": "Vehicle Destroyed Assist Supply Crate Assist",
+        "LocalizedString": "Vehicle Destroyed Assist Supply Crate Assist"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "C925C0E84C8C9610BB773A87D4A10314",
+        "SourceString": "Award resources to the player who sold the damage causer.",
+        "LocalizedString": "Award resources to the player who sold the damage causer."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.DestroyVehicle.Assist.SupplyCrateAssist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_DestroyVehicle_Assist_SupplyCrateAssist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_DestroyVehicle_Assist_SupplyCrateAssist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.DestroyVehicle.Assist.SupplyCrateAssist"
+      }
+    },
+    "Challenges.SessionEvents.DestroyVehicleSection": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "6F0AABB24B29C050E6A4E6ACC1051EE4",
+        "SourceString": "Destroy Vehicle Section",
+        "LocalizedString": "Destroy Vehicle Section"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "AD60F0D24A033AFE20F9259C45FC7A05",
+        "SourceString": "Award resources to a player when they destroy a vehicle section.",
+        "LocalizedString": "Award resources to a player when they destroy a vehicle section."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.DestroyVehicleSection"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_DestroyVehicleSection'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_DestroyVehicleSection.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'Actor'",
+                "ObjectPath": "/Script/Engine"
+              },
+              "ID": "18037BD1-416F280E-1E0889A7-52ECBACB",
+              "Name": "LastVictimVehicle",
+              "ValueType": "EPropertyBagPropertyType::Object",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "AFBAE39D-4AA9C26A-67AAFAB1-0496C1E6",
+              "Name": "LastVictimCount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "88B1E771-4AAB5C22-B86199A6-68984501",
+              "Name": "CachedServerWorldTime",
+              "ValueType": "EPropertyBagPropertyType::Double",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 3
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.DestroyVehicleSection"
+      }
+    },
+    "Challenges.SessionEvents.DestroyVehicleSection.CrewAssist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "FB3F0FDF47CA7F8BBE627D854A443142",
+        "SourceString": "Destroy Vehicle Section Crew Assist",
+        "LocalizedString": "Destroy Vehicle Section Crew Assist"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "BAB3303C411D2CBA8F5224B9177B8E7E",
+        "SourceString": "Award resources to a crew player when their pilot/driver/gunner destroys a vehicle section.",
+        "LocalizedString": "Award resources to a crew player when their pilot/driver/gunner destroys a vehicle section."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.DestroyVehicleSection.CrewAssist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_DestroyVehicleSection_CrewAssist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_DestroyVehicleSection_CrewAssist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.DestroyVehicleSection.CrewAssist"
+      }
+    },
+    "Challenges.SessionEvents.DestroyVehicleSection.LogisticAssist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "9BE3868A4ABBC1152E2D6484B8663CFB",
+        "SourceString": "Destroy Vehicle Section Logistic Assist",
+        "LocalizedString": "Destroy Vehicle Section Logistic Assist"
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.DestroyVehicleSection.LogisticAssist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_DestroyVehicleSection_LogisticAssist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_DestroyVehicleSection_LogisticAssist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 0
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.DestroyVehicleSection.LogisticAssist"
+      }
+    },
+    "Challenges.SessionEvents.DestroyVehicleSection.ReviveAssist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "38DAD4D14304D36D430B0885E5468973",
+        "SourceString": "Destroy Vehicle Section Revive Assist",
+        "LocalizedString": "Destroy Vehicle Section Revive Assist"
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.DestroyVehicleSection.ReviveAssist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_DestroyVehicleSection_ReviveAssist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_DestroyVehicleSection_ReviveAssist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 0
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.DestroyVehicleSection.ReviveAssist"
+      }
+    },
+    "Challenges.SessionEvents.DestroyVehicleSection.SupplyCrateAssist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "13B0100247EA67B48FCAFA9FB9649C2E",
+        "SourceString": "Destroy Vehicle Section Supply Crate Assist",
+        "LocalizedString": "Destroy Vehicle Section Supply Crate Assist"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "F699A4994F69C87CC39F0CA08458ACC5",
+        "SourceString": "Award resources to the player who sold the damage causer.",
+        "LocalizedString": "Award resources to the player who sold the damage causer."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.DestroyVehicleSection.SupplyCrateAssist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_DestroyVehicleSection_SupplyCrateAssist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_DestroyVehicleSection_SupplyCrateAssist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.DestroyVehicleSection.SupplyCrateAssist"
+      }
+    },
+    "Challenges.SessionEvents.DestroyVehicleSection.Assist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "DCC002D6433461404B489EBFE2ABFE30",
+        "SourceString": "Destroy Vehicle Section Assist",
+        "LocalizedString": "Destroy Vehicle Section Assist"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "077158D6409328D0CF9890900338F22F",
+        "SourceString": "Award resources to players who assisted in the destruction of a vehicle section by damaging it.",
+        "LocalizedString": "Award resources to players who assisted in the destruction of a vehicle section by damaging it."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.DestroyVehicleSection.Assist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_DestroyVehicleSection_Assist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_DestroyVehicleSection_Assist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'Actor'",
+                "ObjectPath": "/Script/Engine"
+              },
+              "ID": "F4588997-4107BB85-99FDB6A1-218B52B2",
+              "Name": "LastVictimVehicle",
+              "ValueType": "EPropertyBagPropertyType::Object",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "9E978E4D-42BD0487-CAB5EFB5-4EE2FC05",
+              "Name": "LastVictimCount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "ED2359CD-44D32F1C-84CA8384-5D802BDC",
+              "Name": "CachedServerWorldTime",
+              "ValueType": "EPropertyBagPropertyType::Double",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 3
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.DestroyVehicleSection.Assist"
+      }
+    },
+    "Challenges.SessionEvents.DestroyVehicleSection.Assist.CrewAssist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "31AFD93443EE7CD940523DAA4C3197D0",
+        "SourceString": "Destroy Vehicle Section Assist Crew Assist",
+        "LocalizedString": "Destroy Vehicle Section Assist Crew Assist"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "50E35FEC4720F19ACEFB369CCB4C9679",
+        "SourceString": "Award resources to a crew player when their pilot/driver/gunner assists in destroying a vehicle section.",
+        "LocalizedString": "Award resources to a crew player when their pilot/driver/gunner assists in destroying a vehicle section."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.DestroyVehicleSection.Assist.CrewAssist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_DestroyVehicleSection_Assist_CrewAssist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_DestroyVehicleSection_Assist_CrewAssist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.DestroyVehicleSection.Assist.CrewAssist"
+      }
+    },
+    "Challenges.SessionEvents.DestroyVehicleSection.Assist.LogisticAssist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "846043AF41DFDDD90909359FB5D89813",
+        "SourceString": "Destroy Vehicle Section Assist Logistic Assist",
+        "LocalizedString": "Destroy Vehicle Section Assist Logistic Assist"
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.DestroyVehicleSection.Assist.LogisticAssist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_DestroyVehicleSection_Assist_LogisticAssist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_DestroyVehicleSection_Assist_LogisticAssist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 0
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.DestroyVehicleSection.Assist.LogisticAssist"
+      }
+    },
+    "Challenges.SessionEvents.DestroyVehicleSection.Assist.ReviveAssist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "1AFF4F9B482B89FFAC5D7AB33DE94ED8",
+        "SourceString": "Destroy Vehicle Section Assist Revive Assist",
+        "LocalizedString": "Destroy Vehicle Section Assist Revive Assist"
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.DestroyVehicleSection.Assist.ReviveAssist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_DestroyVehicleSection_Assist_ReviveAssist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_DestroyVehicleSection_Assist_ReviveAssist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 0
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.DestroyVehicleSection.Assist.ReviveAssist"
+      }
+    },
+    "Challenges.SessionEvents.DestroyVehicleSection.Assist.SupplyCrateAssist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "5124F2D146FB7103149C479A77281076",
+        "SourceString": "Destroy Vehicle Section Assist Supply Crate Assist",
+        "LocalizedString": "Destroy Vehicle Section Assist Supply Crate Assist"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "9907A83C4D81227FC1A2529120B0BE8F",
+        "SourceString": "Award resources to the player who sold the damage causer.",
+        "LocalizedString": "Award resources to the player who sold the damage causer."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.DestroyVehicleSection.Assist.SupplyCrateAssist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_DestroyVehicleSection_Assist_SupplyCrateAssist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_DestroyVehicleSection_Assist_SupplyCrateAssist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.DestroyVehicleSection.Assist.SupplyCrateAssist"
+      }
+    },
+    "Challenges.SessionEvents.ZoneEntry": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "EA9A807347975EE27EA6848AD55CAC77",
+        "SourceString": "Zone Entry",
+        "LocalizedString": "Zone Entry"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "63C21D1F418C25FCC5320EA277AA5A34",
+        "SourceString": "Award resources to a player when entering the zone.",
+        "LocalizedString": "Award resources to a player when entering the zone."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.ZoneEntry"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_ZoneEntry'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_ZoneEntry.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.ZoneEntry"
+      }
+    },
+    "Challenges.SessionEvents.DestroyThrowable": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "65E5BD104E0313059596049747C5BA18",
+        "SourceString": "Destroy Throwable",
+        "LocalizedString": "Destroy Throwable"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "ED31DE0049A3F0E7D50A888FB2FF09E4",
+        "SourceString": "Award resources or take them when the player destroys a throwable",
+        "LocalizedString": "Award resources or take them when the player destroys a throwable"
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.DestroyThrowable"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_Player_DestroyThrowable'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_Player_DestroyThrowable.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.DestroyThrowable"
+      }
+    },
+    "Challenges.SessionEvents.RefuelVehicle": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "990D198249ECC610C7CC859DD38B6827",
+        "SourceString": "Refuel Vehicle",
+        "LocalizedString": "Refuel Vehicle"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "946DAD6647CCB6844C51B1A5E118FD52",
+        "SourceString": "Award resources to a player when they refuel a vehicle.",
+        "LocalizedString": "Award resources to a player when they refuel a vehicle."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.RefuelVehicle"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_RefuelVehicle'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_RefuelVehicle.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'Actor'",
+                "ObjectPath": "/Script/Engine"
+              },
+              "ID": "39FC248F-4D949D91-9590EC81-8594F81A",
+              "Name": "LastVictimActor",
+              "ValueType": "EPropertyBagPropertyType::Object",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "708156DD-4695A028-7C2038B3-AC36CB30",
+              "Name": "LastVictimCount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "0FFF8CE9-49FEFF6B-1448638D-77AEAD34",
+              "Name": "CachedServerWorldTime",
+              "ValueType": "EPropertyBagPropertyType::Double",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 3
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.RefuelVehicle"
+      }
+    },
+    "Challenges.SessionEvents.DeployOnVehicle": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "90EE1115405ED189E067AC8BFB320CA5",
+        "SourceString": "Deploy On Vehicle",
+        "LocalizedString": "Deploy On Vehicle"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "47516C2A408BA1E6F77F8DA34183B102",
+        "SourceString": "Award resources when a player is deployed on a vehicle",
+        "LocalizedString": "Award resources when a player is deployed on a vehicle"
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.DeployOnVehicle"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_Player_DeployOnVehicle'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_Player_DeployOnVehicle.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": null,
+              "ID": "B595909C-47F15DF6-0038518F-877A00EF",
+              "Name": "SpawnVehicleOwnerMaxDuration",
+              "ValueType": "EPropertyBagPropertyType::Double",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 10
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.DeployOnVehicle"
+      }
+    },
+    "Challenges.SessionEvents.DeploySupplyCrate": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "E04245E54996E8DA75EA5BA9FD618A9D",
+        "SourceString": "Deploy a Supply Crate",
+        "LocalizedString": "Deploy a Supply Crate"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "1BE21E0F484B5AF1A9EA2CA2E66F6DFD",
+        "SourceString": "Award resources when a player deploys a supply crate",
+        "LocalizedString": "Award resources when a player deploys a supply crate"
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.DeploySupplyCrate"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_Player_DeploySupplyCrate'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_Player_DeploySupplyCrate.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.DeploySupplyCrate"
+      }
+    },
+    "Challenges.SessionEvents.SupplyPalletDropped": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "B5F7DCDA4490395C5986DA9F550C8404",
+        "SourceString": "Supply Pallet Dropped",
+        "LocalizedString": "Supply Pallet Dropped"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "C692B5814096C2BC76437F9FF9ACD2F5",
+        "SourceString": "Award resources when a player deploys a supply pallet",
+        "LocalizedString": "Award resources when a player deploys a supply pallet"
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": false,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.SupplyPalletDropped"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_Player_SupplyPalletDropped'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_Player_SupplyPalletDropped.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 0
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.SupplyPalletDropped"
+      }
+    },
+    "Challenges.SessionEvents.RepairVehicle": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "D465CEF6437A46E317134C849DFB39A5",
+        "SourceString": "Repair Vehicle",
+        "LocalizedString": "Repair Vehicle"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "32C6CDB24F4B0018FA6A2F943DD05688",
+        "SourceString": "Award resources to a player when they repair another vehicle.",
+        "LocalizedString": "Award resources to a player when they repair another vehicle."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.RepairVehicle"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_RepairVehicle'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_RepairVehicle.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'Actor'",
+                "ObjectPath": "/Script/Engine"
+              },
+              "ID": "39FC248F-4D949D91-9590EC81-8594F81A",
+              "Name": "LastVictimActor",
+              "ValueType": "EPropertyBagPropertyType::Object",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "81187D0F-46A807A6-B9F8899D-0A64FC33",
+              "Name": "LastVictimCount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "BFA4BE3D-4B5BB9D4-6FC25EA3-71B07E64",
+              "Name": "CachedServerWorldTime",
+              "ValueType": "EPropertyBagPropertyType::Double",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 3
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.RepairVehicle"
+      }
+    },
+    "Challenges.SessionEvents.PurchaseFromSupplyCrate": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "6C427BE843BBA6A8505932BB39DEB558",
+        "SourceString": "Purchase From Supply Crate",
+        "LocalizedString": "Purchase From Supply Crate"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "FDBCFBA143CEBC406B3B288F056F95F8",
+        "SourceString": "Award resources to a player when they purchase from a supply crate.",
+        "LocalizedString": "Award resources to a player when they purchase from a supply crate."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.PurchaseFromSupplyCrate"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_PurchaseFromSupplyCrate'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_PurchaseFromSupplyCrate.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 0
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.PurchaseFromSupplyCrate"
+      }
+    },
+    "Challenges.SessionEvents.DestroySupplyCrate": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "CD6721E04B559C0EB56681A218B67D5E",
+        "SourceString": "Destroy a Supply Crate",
+        "LocalizedString": "Destroy a Supply Crate"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "6538C1E144521C15ABBC8F909F851778",
+        "SourceString": "Award resources when a player destroys a supply crate.",
+        "LocalizedString": "Award resources when a player destroys a supply crate."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.DestroySupplyCrate"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_DestroySupplyCrate'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_DestroySupplyCrate.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 0
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.DestroySupplyCrate"
+      }
+    },
+    "Challenges.SessionEvents.PlayerDelivered": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "2E84189A4AEBE28580844E80F5D839D9",
+        "SourceString": "Deliver Teammate to Zone",
+        "LocalizedString": "Deliver Teammate to Zone"
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.PlayerDelivered"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_PlayerDelivered'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_PlayerDelivered.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": null,
+              "ID": "B595909C-47F15DF6-0038518F-877A00EF",
+              "Name": "SpawnVehicleOwnerMaxDuration",
+              "ValueType": "EPropertyBagPropertyType::Double",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 10
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.PlayerDelivered"
+      }
+    },
+    "Challenges.SessionEvents.PassengerSurvived": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "6DC98E5645F1716DCC14C6A44559A030",
+        "SourceString": "Survived Trip",
+        "LocalizedString": "Survived Trip"
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.PassengerSurvived"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_PassengerSurvived'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_PassengerSurvived.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 0
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.PassengerSurvived"
+      }
+    },
+    "Challenges.SessionEvents.SafeZoneEntered": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "DB8F96FB4777E819CCF8CAA5272F34FD",
+        "SourceString": "Safe Zone Entered after succesful logistics run",
+        "LocalizedString": "Safe Zone Entered after succesful logistics run"
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.SafeZoneEntered"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_SafeZoneEntered'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_SafeZoneEntered.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": null,
+              "ID": "76982849-4AC990AA-6352DBB3-0893A931",
+              "Name": "PlayersSurvivedCount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 3
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.SafeZoneEntered"
+      }
+    },
+    "Challenges.SessionEvents.Tip": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "0FE15A714A917D227C76C4950D73CD25",
+        "SourceString": "Send & Receive Tip",
+        "LocalizedString": "Send & Receive Tip"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "77B3906442E3D9FDB801E582A5D1AE8C",
+        "SourceString": "Remove resources from one player and give it to another when they tip.",
+        "LocalizedString": "Remove resources from one player and give it to another when they tip."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.Tip"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_Tip'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_Tip.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.Tip"
+      }
+    },
+    "Challenges.SessionEvents.PreTip": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "86B487B245BE4326C6E17BABB6670C71",
+        "SourceString": "Send & Receive Pre Tip",
+        "LocalizedString": "Send & Receive Pre Tip"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "94DFA5B04FEE3C7344247CAC386306D8",
+        "SourceString": "Remove resources from one player and give it to another after they pre tip.",
+        "LocalizedString": "Remove resources from one player and give it to another after they pre tip."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.PreTip"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_PreTip'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_PreTip.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.PreTip"
+      }
+    },
+    "Challenges.SessionEvents.VehicleAirborne": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "74B1137B4C04621EA124A583ED112031",
+        "SourceString": "Vehicle Air Time Bonus",
+        "LocalizedString": "Vehicle Air Time Bonus"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "BC49E8E142FB444D3AA7529C4D478561",
+        "SourceString": "Award resources to the vehicle driver after a long duration of air time.",
+        "LocalizedString": "Award resources to the vehicle driver after a long duration of air time."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.VehicleAirborne"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_VehicleAirTime'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_VehicleAirTime.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.VehicleAirborne"
+      }
+    },
+    "Challenges.SessionEvents.VehicleFlyThrough": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "EED1E1F941E51AF84B1A0996FC8AF268",
+        "SourceString": "Vehicle Fly Through Bonus",
+        "LocalizedString": "Vehicle Fly Through Bonus"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "EE51AF884E627896FB4BE5B35C7DFBE7",
+        "SourceString": "Award resources to the vehicle pilot after flying through a fly through trigger",
+        "LocalizedString": "Award resources to the vehicle pilot after flying through a fly through trigger"
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.VehicleFlyThrough"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_VehicleFlyThrough'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_VehicleFlyThrough.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.VehicleFlyThrough"
+      }
+    },
+    "Challenges.SessionEvents.Test": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "0836C9CA4B6F77069117638B03574EAE",
+        "SourceString": "Test Reward",
+        "LocalizedString": "Test Reward"
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.Test"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_Test'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_Test.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'Actor'",
+                "ObjectPath": "/Script/Engine"
+              },
+              "ID": "194E0039-486DCA9B-2ADDB09E-365508A6",
+              "Name": "TestOtherActor",
+              "ValueType": "EPropertyBagPropertyType::Object",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "18850267-4C028F02-CFCB0DB4-0DAF8881",
+              "Name": "TestCount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 3
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.Test"
+      }
+    }
+  }
 }

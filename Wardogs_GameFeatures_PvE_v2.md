@@ -30,10 +30,10 @@ PvE is the scenario framework: a shared base ([`PvECore`](https://github.com/Kiy
 | [`BaseScenario`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PvE/Scenarios/BaseScenario/Content/BaseScenario.json) | — | — | — | — | Quest-log widget, scene data, minimap/tactical/spatial tracker tables |
 | [`HunterKiller_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PvE/Scenarios/HunterKiller_01/Content/HunterKiller_01.json) | `B_DeathRuleSet_NoRespawns` | `Q_HunterKiller_01` | not set | not set | Faction setup (3 teams) |
 | [`ScenarioExample`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PvE/Scenarios/ScenarioExample/Content/ScenarioExample.json) | `B_DeathRuleSet_NoRespawns` | `Q_ScenarioExample` | not set | not set | Example vendor (`B_ExampleScenarioVendorStock`) and free-vehicle spawner (`B_FreeVehicleSpawner`) |
-| [`StrikeDisarm_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PvE/Scenarios/StrikeDisarm_01/Content/StrikeDisarm_01.json) | `B_DeathRuleSet_NoRespawns` | `Q_StrikeDisarm_01` | `Meta.Alignment.Faction.Charlie` | 3000 (obfuscated key) | Interaction contexts ([`DT_InteractionContextData_StrikeDisarm_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PvE/Scenarios/StrikeDisarm_01/Content/DT_InteractionContextData_StrikeDisarm_01.json)) |
-| [`VIPEscort_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PvE/Scenarios/VIPEscort_01/Content/VIPEscort_01.json) | `B_DeathRuleSet_NoRespawns` | `Q_VIPEscort_01` | `Meta.Alignment.Faction.Bravo` | 2000 (obfuscated key) | Lootable table ([`DT_LootableDataTable_VIPEscort_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PvE/Scenarios/VIPEscort_01/Content/DT_LootableDataTable_VIPEscort_01.json)) |
+| [`StrikeDisarm_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PvE/Scenarios/StrikeDisarm_01/Content/StrikeDisarm_01.json) | `B_DeathRuleSet_NoRespawns` | `Q_StrikeDisarm_01` | `Meta.Alignment.Faction.Charlie` | 3000 (unnamed key) | Interaction contexts ([`DT_InteractionContextData_StrikeDisarm_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PvE/Scenarios/StrikeDisarm_01/Content/DT_InteractionContextData_StrikeDisarm_01.json)) |
+| [`VIPEscort_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PvE/Scenarios/VIPEscort_01/Content/VIPEscort_01.json) | `B_DeathRuleSet_NoRespawns` | `Q_VIPEscort_01` | `Meta.Alignment.Faction.Bravo` | 2000 (unnamed key) | Lootable table ([`DT_LootableDataTable_VIPEscort_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PvE/Scenarios/VIPEscort_01/Content/DT_LootableDataTable_VIPEscort_01.json)) |
 
-The "Scenario value" field is an obfuscated property name in the export. The values 3000 (StrikeDisarm) and 2000 (VIPEscort) are present, but their meaning (time limit, reward, or score target) is not confirmed.
+The "Scenario value" field is an unnamed property name in the export. The values 3000 (StrikeDisarm) and 2000 (VIPEscort) are present, but their meaning (time limit, reward, or score target) is not confirmed.
 
 Every scenario pack also adds `WDGameFeatureAction_AddScenarioState` with the `ScenarioData` shown above, and `GameFeatureAction_AddComponents` on `WDGameState` with `B_FactionSetup_CreateThreeTeams`.
 
@@ -115,7 +115,7 @@ Samples checked (`StrikeDisarm_Intro1`, `VIPEscort_Intro3`, `VIPEscort_Success`,
 ## 8. Still not pulled / limitations
 
 - **Scenario quest contents.** The `Q_*` quest assets are referenced by path but are not in this folder.
-- **Obfuscated scenario values.** The 3000 and 2000 values in StrikeDisarm_01 and VIPEscort_01 are under obfuscated keys. Their meaning is not confirmed.
+- **Unnamed scenario values.** The 3000 and 2000 values in StrikeDisarm_01 and VIPEscort_01 are under unnamed keys. Their meaning is not confirmed.
 - **Full AI inventories.** Only some item counts are confirmed.
 - **Tracker rows.** Some tracker-table rows were not expanded.
 - **Voice-over durations.** Only the samples were checked. The 10.0 value is not confirmed across all 13 assets.

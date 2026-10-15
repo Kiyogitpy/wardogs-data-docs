@@ -692,7 +692,7 @@
         "TagName": "None"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "Id.Item.STANAGMagazine"
@@ -1378,7 +1378,7 @@
         "TagName": "Meta.Alignment.Faction.Bravo"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "ID.Item.A91Mag"
@@ -2067,7 +2067,7 @@
         "TagName": "None"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "Id.Item.M4Magazine"
@@ -2753,7 +2753,7 @@
         "TagName": "Meta.Alignment.Faction.Alpha"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "ID.Item.TAR21Mag"
@@ -3452,7 +3452,7 @@
         "TagName": "None"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "Id.Item.AK74MMagazine"
@@ -4155,7 +4155,7 @@
         "TagName": "None"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "Id.Item.AK74MExtendedMagazine"
@@ -4858,7 +4858,7 @@
         "TagName": "None"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "Id.Item.AK74MMagazine75rnd"
@@ -5555,7 +5555,7 @@
         "TagName": "None"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "Id.Item.M249Magazine"
@@ -6257,7 +6257,7 @@
         "TagName": "None"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "Id.Item.RFBMagazine"
@@ -6956,7 +6956,7 @@
         "TagName": "None"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "Id.Item.Glock17Magazine"
@@ -7053,7 +7053,7 @@
         "TagName": "None"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "Id.Item.LeapordBarrel"
@@ -7228,9 +7228,9 @@
           "OverwrittenWeight": 1.0,
           "CustomData": {},
           "bShowInVendor": true,
-          "bIsPreviewOnly": false,
+          "bIsPreviewOnly": true,
           "VendorSlotTag": {
-            "TagName": "None"
+            "TagName": "Inventory.Slot.Attachment.Ammo"
           }
         },
         {
@@ -7402,9 +7402,9 @@
           "OverwrittenWeight": 1.0,
           "CustomData": {},
           "bShowInVendor": true,
-          "bIsPreviewOnly": false,
+          "bIsPreviewOnly": true,
           "VendorSlotTag": {
-            "TagName": "None"
+            "TagName": "Inventory.Slot.Attachment.Ammo"
           }
         },
         {
@@ -7576,9 +7576,9 @@
           "OverwrittenWeight": 1.0,
           "CustomData": {},
           "bShowInVendor": true,
-          "bIsPreviewOnly": false,
+          "bIsPreviewOnly": true,
           "VendorSlotTag": {
-            "TagName": "None"
+            "TagName": "Inventory.Slot.Attachment.Ammo"
           }
         }
       ],
@@ -7587,7 +7587,7 @@
         "TagName": "None"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "Id.Item.762mm"
@@ -7596,7 +7596,8 @@
     "Id.Item.762x54mm": {
       "Categories": [
         "Vendor.Category.Ammo",
-        "Vendor.Category.Weapon"
+        "Vendor.Category.Weapon",
+        "Vendor.Category.Vehicle.Ammo"
       ],
       "VendorItemVariations": [
         {
@@ -7687,6 +7688,7 @@
           "UnlockRequiredItems": [],
           "Categories": [
             "Vendor.Category.Ammo.Type",
+            "Vendor.Category.Vehicle.Ammo",
             "Vendor.Category.AmmoLoose"
           ],
           "Subcategories": [
@@ -8121,7 +8123,7 @@
         "TagName": "None"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "Id.Item.762x54mm"
@@ -8294,7 +8296,7 @@
           },
           "bOverwriteDescriptionColor": true,
           "OverwrittenIcon": {
-            "AssetPathName": "/Game/UI/Shared/Icons/Equipment/AmmoBoxes/T_UI_Icon_ammobox_45-COLT_FMJ.T_UI_Icon_ammobox_45-COLT_FMJ",
+            "AssetPathName": "/Game/UI/Shared/Icons/Equipment/AmmoBoxes/Tracer/T_UI_Icon_ammobox_45COLT_FMJ.T_UI_Icon_ammobox_45COLT_FMJ",
             "SubPathString": ""
           },
           "bOverwriteIcon": true,
@@ -8468,7 +8470,7 @@
           },
           "bOverwriteDescriptionColor": true,
           "OverwrittenIcon": {
-            "AssetPathName": "/Game/UI/Shared/Icons/Equipment/AmmoBoxes/T_UI_Icon_ammobox_45-COLT_HP.T_UI_Icon_ammobox_45-COLT_HP",
+            "AssetPathName": "/Game/UI/Shared/Icons/Equipment/AmmoBoxes/Tracer/T_UI_Icon_ammobox_45COLT_HP.T_UI_Icon_ammobox_45COLT_HP",
             "SubPathString": ""
           },
           "bOverwriteIcon": true,
@@ -8642,7 +8644,7 @@
           },
           "bOverwriteDescriptionColor": true,
           "OverwrittenIcon": {
-            "AssetPathName": "/Game/UI/Shared/Icons/Equipment/AmmoBoxes/T_UI_Icon_ammobox_45-COLT_AP.T_UI_Icon_ammobox_45-COLT_AP",
+            "AssetPathName": "/Game/UI/Shared/Icons/Equipment/AmmoBoxes/Tracer/T_UI_Icon_ammobox_45COLT_AP.T_UI_Icon_ammobox_45COLT_AP",
             "SubPathString": ""
           },
           "bOverwriteIcon": true,
@@ -8661,7 +8663,7 @@
         "TagName": "None"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "Id.Item.45Colt"
@@ -8763,7 +8765,7 @@
         "TagName": "None"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "Id.Item.12g.7mmBuck"
@@ -8865,7 +8867,7 @@
         "TagName": "None"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "Id.Item.12g.RifledSlug"
@@ -9401,7 +9403,7 @@
         "TagName": "None"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "Id.Item.556mm"
@@ -9935,7 +9937,7 @@
         "TagName": "None"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "Id.Item.545mm"
@@ -10469,7 +10471,7 @@
         "TagName": "None"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "Id.Item.9mm"
@@ -10568,7 +10570,7 @@
         "TagName": "None"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "Id.Item.40mm"
@@ -10667,7 +10669,7 @@
         "TagName": "None"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "Id.Item.84mm"
@@ -11201,7 +11203,7 @@
         "TagName": "None"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "Id.Item.45ACP"
@@ -11300,7 +11302,7 @@
         "TagName": "None"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "Id.Item.93mm"
@@ -11401,7 +11403,7 @@
         "TagName": "None"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "ID.Item.120x570mm"
@@ -11943,7 +11945,7 @@
         "TagName": "None"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "Id.Item.308Win"
@@ -11952,7 +11954,8 @@
     "Id.Item.50Cal": {
       "Categories": [
         "Vendor.Category.Ammo",
-        "Vendor.Category.Weapon"
+        "Vendor.Category.Weapon",
+        "Vendor.Category.Vehicle.Ammo"
       ],
       "VendorItemVariations": [
         {
@@ -12043,7 +12046,8 @@
           "UnlockRequiredItems": [],
           "Categories": [
             "Vendor.Category.Ammo",
-            "Vendor.Category.AmmoLoose"
+            "Vendor.Category.AmmoLoose",
+            "Vendor.Category.Vehicle.Ammo"
           ],
           "Subcategories": [
             "Vendor.Category.Ammo.Type.FMJTracer"
@@ -12477,7 +12481,7 @@
         "TagName": "None"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "Id.Item.50Cal"
@@ -12752,7 +12756,7 @@
         "TagName": "None"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "Id.Item.762x51mm"
@@ -13030,7 +13034,7 @@
         "TagName": "None"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "ID.Item.155mm"
@@ -13133,7 +13137,7 @@
         "TagName": "None"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "Id.Item.122mm"
@@ -13236,7 +13240,7 @@
         "TagName": "None"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "Id.Item.30mm"
@@ -13340,7 +13344,7 @@
         "TagName": "None"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "ID.Item.35x228mm"
@@ -13874,7 +13878,7 @@
         "TagName": "None"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "Id.Item.50AE"
@@ -14149,7 +14153,7 @@
         "TagName": "None"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "ID.Item.155mm.Sandbox"
@@ -14252,7 +14256,7 @@
         "TagName": "None"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "Id.Item.20x102mm"
@@ -14527,7 +14531,7 @@
         "TagName": "None"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "Id.Item.120x800mm"
@@ -14630,10 +14634,111 @@
         "TagName": "None"
       },
       "PurchaseCompletedAudioEvent": {
-        "TagName": "None"
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
       },
       "Tag": {
         "TagName": "Id.Item.72mm"
+      }
+    },
+    "ID.Item.125x570mm": {
+      "Categories": [
+        "Vendor.Category.Vehicle.Ammo"
+      ],
+      "VendorItemVariations": [
+        {
+          "VariationTag": {
+            "TagName": "ID.Item.125x570mm"
+          },
+          "UnlockRequiredItems": [],
+          "Categories": [
+            "Vendor.Category.Vehicle.Ammo",
+            "Vendor.Category.Ammo"
+          ],
+          "Subcategories": [
+            "Vendor.Category.Ammo.Type.Standard"
+          ],
+          "VendorRenderUILightingGroupTag": {
+            "TagName": "None"
+          },
+          "VendorRenderUISpawnTransform": {
+            "Rotation": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0,
+              "W": 1.0,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0
+            },
+            "Translation": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 1.0,
+              "Z": 1.0
+            }
+          },
+          "VehicleStatsDataAsset": null,
+          "VendorAudioData": {
+            "ObjectName": "WDAudioData'ID_Bullet_Explosive_Audio'",
+            "ObjectPath": "/Game/Audio/Player/Item/Data/ID_Bullet_Explosive_Audio.0"
+          },
+          "Price": 210.0,
+          "Amount": 1,
+          "_aaabciphbkkmideofopnc_$8F71AAC834E5EFD2$_$18$": true,
+          "LevelToUnlock": 0,
+          "bRequiresAccountEntitlement": false,
+          "LifeTimeBuyLimit": 0,
+          "OverwrittenFriendlyName": {
+            "Namespace": "",
+            "Key": "83FB79F344FB73FCE0E645812F12A404",
+            "SourceString": "3 X (125x570mm)",
+            "LocalizedString": "3 X (125x570mm)"
+          },
+          "bOverwriteFriendlyName": false,
+          "OverwrittenSubtitleText": {
+            "CultureInvariantString": null
+          },
+          "bOverwriteSubtitleText": false,
+          "OverwrittenDescription": {
+            "CultureInvariantString": null
+          },
+          "bOverwriteDescription": false,
+          "OverwrittenDescriptionColor": {
+            "B": 0,
+            "G": 0,
+            "R": 255,
+            "A": 255,
+            "Hex": "FF0000"
+          },
+          "bOverwriteDescriptionColor": false,
+          "OverwrittenIcon": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "bOverwriteIcon": false,
+          "bOverwriteWeight": false,
+          "OverwrittenWeight": 1.0,
+          "CustomData": {},
+          "bShowInVendor": true,
+          "bIsPreviewOnly": false,
+          "VendorSlotTag": {
+            "TagName": "None"
+          }
+        }
+      ],
+      "bFactionSpecific": false,
+      "Faction": {
+        "TagName": "None"
+      },
+      "PurchaseCompletedAudioEvent": {
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
+      },
+      "Tag": {
+        "TagName": "ID.Item.125x570mm"
       }
     }
   }

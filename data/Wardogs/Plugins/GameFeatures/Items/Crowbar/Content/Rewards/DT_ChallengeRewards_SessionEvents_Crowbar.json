@@ -1,0 +1,367 @@
+--- export: UDataTable / DT_ChallengeRewards_SessionEvents_Crowbar ---
+{
+  "Type": "DataTable",
+  "Name": "DT_ChallengeRewards_SessionEvents_Crowbar",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Crowbar/Rewards/DT_ChallengeRewards_SessionEvents_Crowbar",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDChallengeRewardDefinition'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Challenges.Rewards.Crowbar.DoorForcedOpen": {
+      "Resources": [
+        {
+          "Key": {
+            "TagName": "Attribute.Meta.Currency.Cash"
+          },
+          "Value": {
+            "DefaultExpression": {
+              "ExpressionString": "(1 - (clamp(LastVictimCount, 0, LastVictimCountMax) * LastVictimReductionModifier)) * (BaseValue * InstigatorZoneModifier)",
+              "ExpressionTableRow": {
+                "DataTable": null,
+                "RowName": "None"
+              },
+              "ExpressionTableColumn": "None",
+              "bSourceExpressionExternally": false,
+              "CompiledExpression": {
+                "Instructions": [
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushLiteral",
+                    "ValueIndex": 0
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 0
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushLiteral",
+                    "ValueIndex": 1
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 1
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::FuncClamp",
+                    "ValueIndex": -1
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 2
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::Mul",
+                    "ValueIndex": -1
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::Sub",
+                    "ValueIndex": -1
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 3
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 4
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::Mul",
+                    "ValueIndex": -1
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::Mul",
+                    "ValueIndex": -1
+                  }
+                ],
+                "InstructionMetadata": [
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": "clamp(LastVictimCount, 0.0, LastVictimCountMax)"
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": "(clamp(LastVictimCount, 0.0, LastVictimCountMax) * LastVictimReductionModifier)"
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": "(1.0 - (clamp(LastVictimCount, 0.0, LastVictimCountMax) * LastVictimReductionModifier))"
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": "(BaseValue * InstigatorZoneModifier)"
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": "((1.0 - (clamp(LastVictimCount, 0.0, LastVictimCountMax) * LastVictimReductionModifier)) * (BaseValue * InstigatorZoneModifier))"
+                  }
+                ],
+                "Literals": [
+                  1.0,
+                  0.0
+                ],
+                "Variables": [
+                  "LastVictimCount",
+                  "LastVictimCountMax",
+                  "LastVictimReductionModifier",
+                  "BaseValue",
+                  "InstigatorZoneModifier"
+                ],
+                "VariableIndexMap": [
+                  {
+                    "Key": "LastVictimCount",
+                    "Value": 0
+                  },
+                  {
+                    "Key": "LastVictimCountMax",
+                    "Value": 1
+                  },
+                  {
+                    "Key": "LastVictimReductionModifier",
+                    "Value": 2
+                  },
+                  {
+                    "Key": "BaseValue",
+                    "Value": 3
+                  },
+                  {
+                    "Key": "InstigatorZoneModifier",
+                    "Value": 4
+                  }
+                ]
+              }
+            },
+            "ConditionalExpressions": [],
+            "Selectors": [
+              {
+                "Key": "BaseValue",
+                "Value": {
+                  "DefaultOption": "BaseValue",
+                  "Options": []
+                }
+              },
+              {
+                "Key": "InstigatorZoneModifier",
+                "Value": {
+                  "DefaultOption": "DefaultFactor",
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Instigator.InHotZone"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          2,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL( Challenges.Context.Instigator.InHotZone )"
+                      },
+                      "Variable": "HotZoneFactor"
+                    },
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Instigator.InControlZone"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          2,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL( Challenges.Context.Instigator.InControlZone )"
+                      },
+                      "Variable": "ControlZoneFactor"
+                    }
+                  ]
+                }
+              },
+              {
+                "Key": "LastVictimCount",
+                "Value": {
+                  "DefaultOption": "LastVictimCount",
+                  "Options": []
+                }
+              },
+              {
+                "Key": "LastVictimCountMax",
+                "Value": {
+                  "DefaultOption": "LastVictimCountMax",
+                  "Options": []
+                }
+              },
+              {
+                "Key": "LastVictimReductionModifier",
+                "Value": {
+                  "DefaultOption": "LastVictimReductionMultiplier",
+                  "Options": []
+                }
+              }
+            ],
+            "Variables": [
+              {
+                "Key": "BaseValue",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 100.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "DefaultFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "HotZoneFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 2.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "ControlZoneFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 1.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "LastVictimCount",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::GameValue",
+                  "LiteralValue": 0.0,
+                  "GameValue": "LastVictimCount",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "LastVictimCountMax",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 1.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "LastVictimReductionMultiplier",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 1.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Challenges.Rewards.Crowbar.DoorForcedOpen"
+      }
+    }
+  }
+}

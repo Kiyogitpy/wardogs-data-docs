@@ -1,0 +1,20 @@
+--- export: UDataAsset / DA_ServerSeeding ---
+{
+  "Type": "WDUIServerSeedingData",
+  "Name": "DA_ServerSeeding",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIServerSeedingData'",
+  "Package": "/ServerSeeding/Data/UI/DA_ServerSeeding",
+  "Properties": {
+    "EntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/ServerSeedingRuntime.WDUIServerSeedingEntryViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/ServerSeeding/Data/UI/DA_ServerSeedingEntry.DA_ServerSeedingEntry",
+        "SubPathString": ""
+      }
+    }
+  }
+}

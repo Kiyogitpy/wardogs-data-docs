@@ -655,7 +655,7 @@
           "OutModification": {
             "bUseCustomOperation": false,
             "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
-            "Amount": -60.0,
+            "Amount": -84.0,
             "CustomOperationClass": null,
             "PriorityCategory": {
               "TagName": "Meta.Damage.Category.Calibre"
@@ -781,6 +781,31 @@
             "bUseCustomOperation": false,
             "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
             "Amount": 500.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.Calibre"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [],
+          "SourceRequirements": [
+            "Meta.Damage.Explosive.Rocket.125mm"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": -10.0,
             "CustomOperationClass": null,
             "PriorityCategory": {
               "TagName": "Meta.Damage.Category.Calibre"

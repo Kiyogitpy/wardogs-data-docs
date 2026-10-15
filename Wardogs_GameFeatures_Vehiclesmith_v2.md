@@ -4,11 +4,21 @@ parent: "Game Features"
 ---
 
 # Wardogs — Vehiclesmith Game Feature Reference (v2)
-*Extracted from cooked game data ([`Wardogs/Plugins/GameFeatures/Vehiclesmith`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith), 12 JSON files, all parsed). Build `++Wardogs+Live-CL-509546`, UE 5.7.*
+*Extracted from cooked game data ([`Wardogs/Plugins/GameFeatures/Vehiclesmith`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith), 12 JSON files, all parsed). Build `++Wardogs+Live-CL-516586`, UE 5.7.*
 
 > **What this is:** Vehiclesmith is the vehicle-customisation mode (the vehicle counterpart of Gunsmith), built on the shared **Itemsmith** UI framework. Almost everything here is UI configuration: scene layout, tabs, browser pages, camera modes, data layers and input bindings. There are no combat or balance numbers in this plugin.
 
 ---
+
+## Season 02 update (2026-10-15)
+
+- **No files added or removed.** The one changed file is the popup table below.
+- **Popup options** ([`DT_VehiclesmithPopupOptions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/UI/Scene/Data/DT_VehiclesmithPopupOptions.json)) went from 0 rows to 5, the same five popups as the Gunsmith popup table:
+  - `UI.Popup.SaveBlueprint`: Info, Cancel / OK.
+  - `UI.Popup.DeleteBlueprint`: Warning, "Do you wish to permanently delete this blueprint?" ("This cannot be undone"), Cancel / OK.
+  - `UI.Popup.RenameItem`: Itemsmith rename type, RENAME / Cancel.
+  - `UI.Popup.FullBlueprintItems`: Warning, OK.
+  - `UI.Popup.ChangeComponent`: Warning, Apply / Cancel.
 
 ## 1. Plugin Inventory
 
@@ -19,7 +29,7 @@ parent: "Game Features"
 | [`Content/Data/DT_Vehiclesmith_DevMenuMaps`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/Data/DT_Vehiclesmith_DevMenuMaps.json) | `DataTable` (`WDDevMenuMapsDataTableRow`) | Dev-menu map entry `DevMaps.Vehiclesmith` |
 | [`Content/UI/Scene/Data/DA_Vehiclesmith_Scene`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/UI/Scene/Data/DA_Vehiclesmith_Scene.json) | `WDUIVehiclesmithSceneData` | Scene root: tabs, pages, data layers, camera |
 | [`Content/UI/Scene/Data/DA_Vehiclesmith_PersistentActions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/UI/Scene/Data/DA_Vehiclesmith_PersistentActions.json) | `WDUIItemsmithCancelEditDecalPlacementAction` (13 exports) | Bottom-bar persistent actions (12 entries) |
-| [`Content/UI/Scene/Data/DT_VehiclesmithPopupOptions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/UI/Scene/Data/DT_VehiclesmithPopupOptions.json) | `DataTable` (`WDUIPopupOptionDataTableRow`) | Popup options; **0 rows** |
+| [`Content/UI/Scene/Data/DT_VehiclesmithPopupOptions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/UI/Scene/Data/DT_VehiclesmithPopupOptions.json) | `DataTable` (`WDUIPopupOptionDataTableRow`) | Popup options; **5 rows** |
 | [`Content/UI/ItemSelect/Data/DA_Vehiclesmith_AirItemSelect`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/UI/ItemSelect/Data/DA_Vehiclesmith_AirItemSelect.json) | `WDUIItemsmithItemSelectData` | Airframe browser (air archetypes) |
 | [`Content/UI/ItemSelect/Data/DA_Vehiclesmith_LandItemSelect`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/UI/ItemSelect/Data/DA_Vehiclesmith_LandItemSelect.json) | `WDUIItemsmithItemSelectData` | Ground browser (land archetypes) |
 | [`Content/UI/ItemSelect/Data/DA_Vehiclesmith_BrowserList`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/UI/ItemSelect/Data/DA_Vehiclesmith_BrowserList.json) | `WDUIItemsmithBrowserData` | Browser list layout |
@@ -132,7 +142,7 @@ One `GameFeatureAction_DataRegistrySource` adds two sources:
 | Scene mapping context | [`IMC_Itemsmith`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IMC_Itemsmith.json) |
 | Dev controls mapping context | [`IMC_Itemsmith_Dev`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IMC_Itemsmith_Dev.json) |
 | Persistent-action data | [`DA_Vehiclesmith_PersistentActions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/UI/Scene/Data/DA_Vehiclesmith_PersistentActions.json) |
-| Popup data table | [`DT_VehiclesmithPopupOptions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/UI/Scene/Data/DT_VehiclesmithPopupOptions.json) (empty) |
+| Popup data table | [`DT_VehiclesmithPopupOptions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/UI/Scene/Data/DT_VehiclesmithPopupOptions.json) (5 rows, see the Season 02 update) |
 
 ---
 
@@ -227,7 +237,7 @@ This plugin does not change vehicle stats. What it does:
 ## 10. Still Not Pulled / Limitations
 
 - **Vehicle stats and part lists** are not here. They are defined in the vehicle category (see the Vehicles reference).
-- **String and icon assets** (`STRINGS_Vehiclesmith_*`, `W_VehiclesmithScene`, `T_UI_*`) are referenced by key or path. The text itself is not in this dump.
+- **String and icon assets** (`STRINGS_Vehiclesmith_*`, `W_VehiclesmithScene`, `T_UI_*`) are referenced by key or path. The text itself is not in this export.
 - **Lists of variant and filter ids** beyond the ones above (for example every `Vehicle.Archetype.*` tag) are not enumerated here.
 - **The 46 named-action entries** are summarised by group in section 2b rather than listed one by one.
 - **Input bindings** for the `IMC_Itemsmith_*` contexts are in their own assets, not in this plugin folder. Their key assignments are not covered here.

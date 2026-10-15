@@ -1,3 +1,20 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_30mm'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/30mm/ID_30mm.4"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 2,
+      "Y": 2
+    }
+  }
+}
 --- export: UObject / BHInventoryFragment_Droppable_0 ---
 {
   "Type": "BHInventoryFragment_Droppable",
@@ -6,7 +23,7 @@
   "Class": "UScriptClass'BHInventoryFragment_Droppable'",
   "Outer": {
     "ObjectName": "BHInventoryItemDefinition'ID_30mm'",
-    "ObjectPath": "/Game/Items/Resources/Ammo/30mm/ID_30mm.3"
+    "ObjectPath": "/Game/Items/Resources/Ammo/30mm/ID_30mm.4"
   },
   "Properties": {
     "DroppedMesh": {
@@ -23,10 +40,18 @@
   "Class": "UScriptClass'BHInventoryFragment_Stackable'",
   "Outer": {
     "ObjectName": "BHInventoryItemDefinition'ID_30mm'",
-    "ObjectPath": "/Game/Items/Resources/Ammo/30mm/ID_30mm.3"
+    "ObjectPath": "/Game/Items/Resources/Ammo/30mm/ID_30mm.4"
   },
   "Properties": {
-    "MaxStackSize": 200
+    "MaxStackSize": 50,
+    "MaxStackSizeOverrides": [
+      {
+        "Key": {
+          "TagName": "Inventory.Slot.Vehicle.Storage"
+        },
+        "Value": 200
+      }
+    ]
   }
 }
 --- export: UObject / BHInventoryFragment_UserInterface_0 ---
@@ -37,7 +62,7 @@
   "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
   "Outer": {
     "ObjectName": "BHInventoryItemDefinition'ID_30mm'",
-    "ObjectPath": "/Game/Items/Resources/Ammo/30mm/ID_30mm.3"
+    "ObjectPath": "/Game/Items/Resources/Ammo/30mm/ID_30mm.4"
   }
 }
 --- export: UPrimaryDataAsset / ID_30mm ---
@@ -66,23 +91,27 @@
     "DataFragments": [
       {
         "ObjectName": "BHInventoryFragment_UserInterface'ID_30mm:BHInventoryFragment_UserInterface_0'",
-        "ObjectPath": "/Game/Items/Resources/Ammo/30mm/ID_30mm.2"
+        "ObjectPath": "/Game/Items/Resources/Ammo/30mm/ID_30mm.3"
       },
       {
         "ObjectName": "BHInventoryFragment_Stackable'ID_30mm:BHInventoryFragment_Stackable_0'",
-        "ObjectPath": "/Game/Items/Resources/Ammo/30mm/ID_30mm.1"
+        "ObjectPath": "/Game/Items/Resources/Ammo/30mm/ID_30mm.2"
       },
       {
         "ObjectName": "BHInventoryFragment_Droppable'ID_30mm:BHInventoryFragment_Droppable_0'",
-        "ObjectPath": "/Game/Items/Resources/Ammo/30mm/ID_30mm.0"
+        "ObjectPath": "/Game/Items/Resources/Ammo/30mm/ID_30mm.1"
       },
       {
         "ObjectName": "WDInventoryFragment_Projectile'ID_30mm:WDInventoryFragment_Projectile_0'",
-        "ObjectPath": "/Game/Items/Resources/Ammo/30mm/ID_30mm.5"
+        "ObjectPath": "/Game/Items/Resources/Ammo/30mm/ID_30mm.6"
       },
       {
         "ObjectName": "WDInventoryFragment_Audio'ID_30mm:WDInventoryFragment_Audio_0'",
-        "ObjectPath": "/Game/Items/Resources/Ammo/30mm/ID_30mm.4"
+        "ObjectPath": "/Game/Items/Resources/Ammo/30mm/ID_30mm.5"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_30mm:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/30mm/ID_30mm.0"
       }
     ]
   }
@@ -95,7 +124,7 @@
   "Class": "UScriptClass'WDInventoryFragment_Audio'",
   "Outer": {
     "ObjectName": "BHInventoryItemDefinition'ID_30mm'",
-    "ObjectPath": "/Game/Items/Resources/Ammo/30mm/ID_30mm.3"
+    "ObjectPath": "/Game/Items/Resources/Ammo/30mm/ID_30mm.4"
   },
   "Properties": {
     "AudioDataAsset": {
@@ -112,7 +141,7 @@
   "Class": "UScriptClass'WDInventoryFragment_Projectile'",
   "Outer": {
     "ObjectName": "BHInventoryItemDefinition'ID_30mm'",
-    "ObjectPath": "/Game/Items/Resources/Ammo/30mm/ID_30mm.3"
+    "ObjectPath": "/Game/Items/Resources/Ammo/30mm/ID_30mm.4"
   },
   "Properties": {
     "ProjectileData": {

@@ -23,9 +23,9 @@
       "ProjectileDimensions": {
         "Length": 14.0,
         "Diameter": 3.5,
-        "Mass": 0.15,
+        "Mass": 0.375,
         "DragModel": {
-          "Value": 2.5,
+          "Value": 0.5,
           "Curve": {
             "CurveTable": {
               "ObjectName": "CurveTable'CT_Projectile_DragCoefficients'",
@@ -41,9 +41,17 @@
         }
       },
       "SuppressionData": {
-        "BaseSuppression": 0.55,
+        "BaseSuppression": 0.8,
+        "DistanceFalloffRange": {
+          "Min": 1.5,
+          "Max": 5.0
+        },
         "DistanceFalloffCurve": {
-          "EditorCurveData": {}
+          "EditorCurveData": {},
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_SuppressionCurve_Special'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/CR_SuppressionCurve_Special.0"
+          }
         }
       },
       "ArmingDelay": 0.01,

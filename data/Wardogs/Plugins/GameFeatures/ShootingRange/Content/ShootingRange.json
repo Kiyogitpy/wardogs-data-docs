@@ -6,7 +6,7 @@
   "Class": "UScriptClass'BHGameFeatureAction_RegisterMatchStates'",
   "Outer": {
     "ObjectName": "GameFeatureData'ShootingRange'",
-    "ObjectPath": "/ShootingRange/ShootingRange.4"
+    "ObjectPath": "/ShootingRange/ShootingRange.5"
   },
   "Properties": {
     "MatchStates": [
@@ -25,7 +25,7 @@
   "Class": "UScriptClass'GameFeatureAction_AddComponents'",
   "Outer": {
     "ObjectName": "GameFeatureData'ShootingRange'",
-    "ObjectPath": "/ShootingRange/ShootingRange.4"
+    "ObjectPath": "/ShootingRange/ShootingRange.5"
   },
   "Properties": {
     "ComponentList": [
@@ -79,7 +79,7 @@
   "Class": "UScriptClass'GameFeatureAction_AddWorldPartitionContent'",
   "Outer": {
     "ObjectName": "GameFeatureData'ShootingRange'",
-    "ObjectPath": "/ShootingRange/ShootingRange.4"
+    "ObjectPath": "/ShootingRange/ShootingRange.5"
   },
   "Properties": {
     "ExternalDataLayerAsset": {
@@ -96,7 +96,7 @@
   "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
   "Outer": {
     "ObjectName": "GameFeatureData'ShootingRange'",
-    "ObjectPath": "/ShootingRange/ShootingRange.4"
+    "ObjectPath": "/ShootingRange/ShootingRange.5"
   },
   "Properties": {
     "SourcesToAdd": [
@@ -107,6 +107,35 @@
         "bServerSource": true,
         "DataTableToAdd": {
           "AssetPathName": "/Game/UI/Features/HUD/Minimap/Widgets/Trackers/Data/DT_TrackerData_Minimap.DT_TrackerData_Minimap",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_DataRegistrySource_1 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'ShootingRange'",
+    "ObjectPath": "/ShootingRange/ShootingRange.5"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "UISceneData_Match",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Game/UI/Data/Scenes/DT_SceneData_Match_ShootingRange.DT_SceneData_Match_ShootingRange",
           "SubPathString": ""
         },
         "CurveTableToAdd": {
@@ -141,6 +170,10 @@
       {
         "ObjectName": "GameFeatureAction_DataRegistrySource'ShootingRange:GameFeatureAction_DataRegistrySource_0'",
         "ObjectPath": "/ShootingRange/ShootingRange.3"
+      },
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'ShootingRange:GameFeatureAction_DataRegistrySource_1'",
+        "ObjectPath": "/ShootingRange/ShootingRange.4"
       }
     ]
   }

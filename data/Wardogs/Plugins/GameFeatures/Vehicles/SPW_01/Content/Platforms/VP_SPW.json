@@ -132,6 +132,16 @@
             "ObjectPath": "/SPW_01/Platforms/VP_SPW.11"
           }
         }
+      },
+      {
+        "Key": "WeatherResponse",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_VehicleWeatherResponse'VP_SPW:WD_MVF_VehicleWeatherResponse_0'",
+            "ObjectPath": "/SPW_01/Platforms/VP_SPW.13"
+          }
+        }
       }
     ],
     "Slots": [
@@ -646,5 +656,45 @@
       "AssetPathName": "/SPW_01/Data/DA_SPW_Stats.DA_SPW_Stats",
       "SubPathString": ""
     }
+  }
+}
+--- export: UObject / WD_MVF_VehicleWeatherResponse_0 ---
+{
+  "Type": "WD_MVF_VehicleWeatherResponse",
+  "Name": "WD_MVF_VehicleWeatherResponse_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_VehicleWeatherResponse'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_SPW'",
+    "ObjectPath": "/SPW_01/Platforms/VP_SPW.0"
+  },
+  "Properties": {
+    "_aaaapcgcfobaldhifioln_$2625E10B37858EBD$_$15$": [
+      {
+        "_aaabcnhoepebijhipeilk_$D7E4F418978F48BA$_$18$": "VehicleMesh",
+        "_aaaamhppnbilbpolopafh_$7FFD18B1FEBEF057$_$12$": 0,
+        "_aaaaldomkfepfmgkoaigg_$3ECA54F5C6AE0866$_$11$": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.0
+        },
+        "_aaaalnadacbaiaohmnbop_$D03021080E7CD1EF$_$11$": {
+          "X": 1.0,
+          "Y": 0.0,
+          "Z": 0.0
+        },
+        "_aaaahgbhkdjfhkbbghppo_$617A3957A1167FFE$_$7$": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 1.0
+        },
+        "_aaaagfiggkogfodmcpgbb_$5866AE65E3C2F611$_$6$": {
+          "X": 100.0,
+          "Y": 60.0
+        },
+        "_aaaannfbbjadjnncagbng_$D5119039DD2061D6$_$13$": 0.0,
+        "_aaaamikjnmmjokkdcflpn_$8A9DCC9EAA325BFD$_$12$": false
+      }
+    ]
   }
 }

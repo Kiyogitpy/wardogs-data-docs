@@ -6,23 +6,17 @@
   "Class": "UScriptClass'WDUIBuildToolData'",
   "Package": "/Buildables/Data/BuildTool/DA_UI_BuildTool",
   "Properties": {
-    "BuildingPlacementViewModelParams": {
+    "ButtonPromptsBarViewModelParams": {
       "ViewModelClass": {
-        "AssetPathName": "/Script/BuildablesRuntime.WDUIBuildablePlacementViewModel",
+        "AssetPathName": "/Script/WDGame.WDUIButtonPromptsBarViewModel",
         "SubPathString": ""
       },
       "Data": {
-        "AssetPathName": "/Buildables/Data/Buildables/DA_UI_BuildablePlacementData.DA_UI_BuildablePlacementData",
+        "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/Data/ButtonPromptData/DA_Default_PromptBarData.DA_Default_PromptBarData",
         "SubPathString": ""
       }
     },
-    "RadialWheelViewModelParams": {
-      "ViewModelClass": {
-        "AssetPathName": "/Script/BuildablesRuntime.WDUIBuildToolRadialWheelViewModel",
-        "SubPathString": ""
-      }
-    },
-    "BuildableStatusTextMap": [
+    "_aaabghiamedklanclnocd_$780C43AB0D2BDE23$_$22$": [
       {
         "Key": {
           "TagName": "Buildable.BuildableStatus.NotEnoughSupplies"
@@ -43,6 +37,392 @@
           "Key": "Buildable.BuildStatus.Obstructed",
           "SourceString": "Obstructed",
           "LocalizedString": "Obstructed"
+        }
+      }
+    ],
+    "_aaabgildnockogemmhmla_$8B3DE2AE64CC7CB0$_$22$": [
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.Blocked"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.PlacementBlocked",
+          "SourceString": "Obstructed",
+          "LocalizedString": "Obstructed"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.NotEnoughSupplies"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.NotEnoughSupplies",
+          "SourceString": "Not Enough Supplies",
+          "LocalizedString": "Not Enough Supplies"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.NotInFriendlyFOBRadius"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.NotInFriendlyFOBRadius",
+          "SourceString": "Must Place In Friendly FOB Radius",
+          "LocalizedString": "Must Place In Friendly FOB Radius"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.NotOnSurface"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.PlacementNotOnSurface",
+          "SourceString": "Must Place On Ground",
+          "LocalizedString": "Must Place On Ground"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.Success"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.PlacementSuccess",
+          "SourceString": "Success",
+          "LocalizedString": "Success"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Interactions.PlacementWarnings.AnotherFobTooClose"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.TooCloseToFobRadius",
+          "SourceString": "FOB build zones cannot overlap",
+          "LocalizedString": "FOB build zones cannot overlap"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Interactions.PlacementWarnings.NotInControlZone"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.NotInControlZone",
+          "SourceString": "Must Place In Control Zone",
+          "LocalizedString": "Must Place In Control Zone"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Interactions.PlacementWarnings.BelongsToAnotherFaction"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.FobBelongsToAnotherFaction",
+          "SourceString": "Can't Place FOB of a Different Faction",
+          "LocalizedString": "Can't Place FOB of a Different Faction"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.NotInControlZone"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.NotInControlZone",
+          "SourceString": "Must Place In Control Zone",
+          "LocalizedString": "Must Place In Control Zone"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Interactions.PlacementWarnings.InSafeZone"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.PlacementInSafeZone",
+          "SourceString": "Can't Place In Safe Zone",
+          "LocalizedString": "Can't Place In Safe Zone"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.LimitedAmountInFOB"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "Tag.PlacementStatus.LimitedAmountInFOB",
+          "SourceString": "Exceeds FOB Limit",
+          "LocalizedString": "Exceeds FOB Limit"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.CantPlaceOnBuildables"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.CantPlaceOnBuildables",
+          "SourceString": "Can't Place On Buildables",
+          "LocalizedString": "Can't Place On Buildables"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.SurfaceCantBeBuiltOn"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.CantBeBuiltOn",
+          "SourceString": "Can't Place On Surface",
+          "LocalizedString": "Can't Place On Surface"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.StackHeightExceeded"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.PlacementMaxStack",
+          "SourceString": "Exceeds Stack Limit",
+          "LocalizedString": "Exceeds Stack Limit"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.SupportHeightLimitExceeded"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.PlacementMaxHeight",
+          "SourceString": "Exceeds Max Support Height",
+          "LocalizedString": "Exceeds Max Support Height"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.BuildableNotFullyBuilt"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.BuildableNotFullyBuilt",
+          "SourceString": "Can't Place On Un-built Buildable",
+          "LocalizedString": "Can't Place On Un-built Buildable"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.MaximumFoundationHeightExceeded"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.MaximumFoundationHeightExceeded",
+          "SourceString": "Structure Partially Unsupported",
+          "LocalizedString": "Structure Partially Unsupported"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.SurfaceAngleTooSteep"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.MaxSurfaceAngleExceeded",
+          "SourceString": "Surface Too Steep",
+          "LocalizedString": "Surface Too Steep"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.InvalidFoundationBase"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.InvalidFoundationBase",
+          "SourceString": "Foundations Obstructed",
+          "LocalizedString": "Foundations Obstructed"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.UnderTerrain"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.UnderTerrain",
+          "SourceString": "Can't Place Under Terrain",
+          "LocalizedString": "Can't Place Under Terrain"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Interactions.PlacementWarnings.CantPlaceNearLadder"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.CantPlaceNearLadder",
+          "SourceString": "Can't Place Near Ladder",
+          "LocalizedString": "Can't Place Near Ladder"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.InEnemyFOBRadius"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.CantPlaceNearEnemyFOB",
+          "SourceString": "Can't Place In Enemy FOB Radius",
+          "LocalizedString": "Can't Place In Enemy FOB Radius"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.NotInBuildArea"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.NotInBuildArea",
+          "SourceString": "No Building Permitted In This Zone",
+          "LocalizedString": "No Building Permitted In This Zone"
+        }
+      }
+    ],
+    "Prompts": [
+      {
+        "Key": "EWDBuildToolInteractionState::Construction",
+        "Value": {
+          "Prompts": [
+            {
+              "Prompt": {
+                "ActionPromptTag": {
+                  "TagName": "Input.NamedActions.HoldableItem.SecondaryUse"
+                },
+                "_aaabgflgabocbfmnhmana_$5B601E215CD7C0D0$_$22$": {
+                  "TagName": "None"
+                },
+                "ActionPromptText": {
+                  "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+                  "Key": "Prompt.BuildMenu",
+                  "SourceString": "Build Menu",
+                  "LocalizedString": "Build Menu"
+                },
+                "IsHoldable": false,
+                "bUseActionShortName": true,
+                "bUseChordedActionShortName": true,
+                "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+                "_aaabgjoifgdeldclgnnih_$9E85634B32B6DD87$_$22$": [],
+                "_aaabggkaikegbmaklkobl_$6A08A461C0ABAE1B$_$22$": [],
+                "_aaabhmnakckdbejpcmlmc_$CD0A2A3149F2CBC2$_$23$": [],
+                "_aaabhahinfhbanpdncpjc_$78D5710DF3D2F92$_$23$": []
+              },
+              "_aaabjmomcijiddngbbklj_$CEC289833D611AB9$_$25$": false,
+              "_aaaaonfokjmekdkgbhbne_$D5EA9C4A3A6171D4$_$14$": {
+                "CultureInvariantString": null
+              }
+            },
+            {
+              "Prompt": {
+                "ActionPromptTag": {
+                  "TagName": "Input.NamedActions.HoldableItem.BuildTool.Dismantle"
+                },
+                "_aaabgflgabocbfmnhmana_$5B601E215CD7C0D0$_$22$": {
+                  "TagName": "None"
+                },
+                "ActionPromptText": {
+                  "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+                  "Key": "Prompt.Dismantle",
+                  "SourceString": "Dismantle",
+                  "LocalizedString": "Dismantle"
+                },
+                "IsHoldable": false,
+                "bUseActionShortName": true,
+                "bUseChordedActionShortName": true,
+                "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+                "_aaabgjoifgdeldclgnnih_$9E85634B32B6DD87$_$22$": [],
+                "_aaabggkaikegbmaklkobl_$6A08A461C0ABAE1B$_$22$": [],
+                "_aaabhmnakckdbejpcmlmc_$CD0A2A3149F2CBC2$_$23$": [],
+                "_aaabhahinfhbanpdncpjc_$78D5710DF3D2F92$_$23$": []
+              },
+              "_aaabjmomcijiddngbbklj_$CEC289833D611AB9$_$25$": true,
+              "_aaaaonfokjmekdkgbhbne_$D5EA9C4A3A6171D4$_$14$": {
+                "CultureInvariantString": null
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Key": "EWDBuildToolInteractionState::Placement",
+        "Value": {
+          "Prompts": [
+            {
+              "Prompt": {
+                "ActionPromptTag": {
+                  "TagName": "Input.NamedActions.HoldableItem.BuildTool.Rotate"
+                },
+                "_aaabgflgabocbfmnhmana_$5B601E215CD7C0D0$_$22$": {
+                  "TagName": "None"
+                },
+                "ActionPromptText": {
+                  "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+                  "Key": "Prompt.Rotate",
+                  "SourceString": "Rotate",
+                  "LocalizedString": "Rotate"
+                },
+                "IsHoldable": false,
+                "bUseActionShortName": true,
+                "bUseChordedActionShortName": true,
+                "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+                "_aaabgjoifgdeldclgnnih_$9E85634B32B6DD87$_$22$": [],
+                "_aaabggkaikegbmaklkobl_$6A08A461C0ABAE1B$_$22$": [],
+                "_aaabhmnakckdbejpcmlmc_$CD0A2A3149F2CBC2$_$23$": [],
+                "_aaabhahinfhbanpdncpjc_$78D5710DF3D2F92$_$23$": []
+              },
+              "_aaabjmomcijiddngbbklj_$CEC289833D611AB9$_$25$": false,
+              "_aaaaonfokjmekdkgbhbne_$D5EA9C4A3A6171D4$_$14$": {
+                "CultureInvariantString": null
+              }
+            },
+            {
+              "Prompt": {
+                "ActionPromptTag": {
+                  "TagName": "Input.NamedActions.HoldableItem.BuildTool.ToggleSnapping"
+                },
+                "_aaabgflgabocbfmnhmana_$5B601E215CD7C0D0$_$22$": {
+                  "TagName": "None"
+                },
+                "ActionPromptText": {
+                  "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+                  "Key": "Prompt.SnappingOff",
+                  "SourceString": "Snapping [Off]",
+                  "LocalizedString": "Snapping [Off]"
+                },
+                "IsHoldable": false,
+                "bUseActionShortName": true,
+                "bUseChordedActionShortName": true,
+                "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+                "_aaabgjoifgdeldclgnnih_$9E85634B32B6DD87$_$22$": [],
+                "_aaabggkaikegbmaklkobl_$6A08A461C0ABAE1B$_$22$": [],
+                "_aaabhmnakckdbejpcmlmc_$CD0A2A3149F2CBC2$_$23$": [],
+                "_aaabhahinfhbanpdncpjc_$78D5710DF3D2F92$_$23$": []
+              },
+              "_aaabjmomcijiddngbbklj_$CEC289833D611AB9$_$25$": false,
+              "_aaaaonfokjmekdkgbhbne_$D5EA9C4A3A6171D4$_$14$": {
+                "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+                "Key": "Prompt.SnappingOn",
+                "SourceString": "Snapping [On]",
+                "LocalizedString": "Snapping [On]"
+              }
+            }
+          ]
         }
       }
     ]

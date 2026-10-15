@@ -1,3 +1,21 @@
+--- export: UObject / BHGameFeatureAction_AddGameplayCuePath_0 ---
+{
+  "Type": "BHGameFeatureAction_AddGameplayCuePath",
+  "Name": "BHGameFeatureAction_AddGameplayCuePath_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHGameFeatureAction_AddGameplayCuePath'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Armor'",
+    "ObjectPath": "/Armor/Armor.3"
+  },
+  "Properties": {
+    "DirectoryPathsToAdd": [
+      {
+        "Path": "/Armor/Data/GameplayCues"
+      }
+    ]
+  }
+}
 --- export: UObject / GameFeatureAction_DataRegistrySource_0 ---
 {
   "Type": "GameFeatureAction_DataRegistrySource",
@@ -6,7 +24,7 @@
   "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
   "Outer": {
     "ObjectName": "GameFeatureData'Armor'",
-    "ObjectPath": "/Armor/Armor.2"
+    "ObjectPath": "/Armor/Armor.3"
   },
   "Properties": {
     "SourcesToAdd": [
@@ -35,7 +53,7 @@
   "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
   "Outer": {
     "ObjectName": "GameFeatureData'Armor'",
-    "ObjectPath": "/Armor/Armor.2"
+    "ObjectPath": "/Armor/Armor.3"
   },
   "Properties": {
     "SourcesToAdd": [
@@ -67,11 +85,19 @@
     "Actions": [
       {
         "ObjectName": "GameFeatureAction_DataRegistrySource'Armor:GameFeatureAction_DataRegistrySource_0'",
-        "ObjectPath": "/Armor/Armor.0"
+        "ObjectPath": "/Armor/Armor.1"
       },
       {
         "ObjectName": "GameFeatureAction_DataRegistrySource'Armor:GameFeatureAction_DataRegistrySource_1'",
-        "ObjectPath": "/Armor/Armor.1"
+        "ObjectPath": "/Armor/Armor.2"
+      },
+      {
+        "ObjectName": "BHGameFeatureAction_AddGameplayCuePath'Armor:BHGameFeatureAction_AddGameplayCuePath_0'",
+        "ObjectPath": "/Armor/Armor.0"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements'Armor:WDGameFeatureAction_AddWidgetElements_0'",
+        "ObjectPath": "/Armor/Armor.4"
       }
     ],
     "PrimaryAssetTypesToScan": [
@@ -94,6 +120,43 @@
           "ChunkId": -1,
           "bApplyRecursively": true,
           "CookRule": "EPrimaryAssetCookRule::AlwaysCook"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_0 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements",
+  "Name": "WDGameFeatureAction_AddWidgetElements_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Armor'",
+    "ObjectPath": "/Armor/Armor.3"
+  },
+  "Properties": {
+    "TaggedElements": [
+      {
+        "Key": {
+          "TagName": "UI.HUD.Element.ArmorOverlay"
+        },
+        "Value": {
+          "WidgetClass": {
+            "AssetPathName": "/Armor/Data/UI/W_ArmorOverlay.W_ArmorOverlay_C",
+            "SubPathString": ""
+          },
+          "ViewModelParams": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/WDGame.WDUIArmorOverlayViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Armor/Data/UI/DA_ArmorOverlay.DA_ArmorOverlay",
+              "SubPathString": ""
+            }
+          },
+          "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
         }
       }
     ]

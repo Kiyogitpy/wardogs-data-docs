@@ -46,58 +46,18 @@
         }
       },
       "SuppressionData": {
-        "BaseSuppression": 0.12,
+        "BaseSuppression": 0.3,
         "DistanceFalloffRange": {
-          "Min": 0.35
+          "Min": 1.0,
+          "Max": 2.5
         },
         "DistanceFalloffCurve": {
           "EditorCurveData": {
-            "Keys": [
-              {
-                "InterpMode": "RCIM_Cubic",
-                "TangentMode": "RCTM_Auto",
-                "TangentWeightMode": "RCTWM_WeightedNone",
-                "Time": 0.2,
-                "Value": 1.0,
-                "ArriveTangent": -0.272236,
-                "ArriveTangentWeight": 0.0,
-                "LeaveTangent": 0.0,
-                "LeaveTangentWeight": 0.0
-              },
-              {
-                "InterpMode": "RCIM_Cubic",
-                "TangentMode": "RCTM_User",
-                "TangentWeightMode": "RCTWM_WeightedNone",
-                "Time": 0.4809934,
-                "Value": 0.32870734,
-                "ArriveTangent": -0.19313677,
-                "ArriveTangentWeight": 0.0,
-                "LeaveTangent": -0.19313848,
-                "LeaveTangentWeight": 0.0
-              },
-              {
-                "InterpMode": "RCIM_Linear",
-                "TangentMode": "RCTM_Auto",
-                "TangentWeightMode": "RCTWM_WeightedNone",
-                "Time": 0.84019756,
-                "Value": 0.30387115,
-                "ArriveTangent": 0.0,
-                "ArriveTangentWeight": 0.0,
-                "LeaveTangent": 0.0,
-                "LeaveTangentWeight": 0.0
-              },
-              {
-                "InterpMode": "RCIM_Cubic",
-                "TangentMode": "RCTM_User",
-                "TangentWeightMode": "RCTWM_WeightedNone",
-                "Time": 1.000196,
-                "Value": 0.036167,
-                "ArriveTangent": -2E-06,
-                "ArriveTangentWeight": 0.0,
-                "LeaveTangent": 2E-06,
-                "LeaveTangentWeight": 0.0
-              }
-            ]
+            "Keys": []
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_SuppressionCurve_Medium'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/CR_SuppressionCurve_Medium.0"
           }
         }
       },

@@ -8,11 +8,12 @@
   "Properties": {
     "ParachutingFloorTraceDistance": 1000000.0,
     "HorizontalDragCoefficient": 1.1,
+    "VerticalDragCoefficient": 1.75,
     "HorizontalMaxSpeed": 2200.0,
     "VerticalMaxSpeed": 3000.0,
     "HorizontalAcceleration": 250.0,
     "GliderAcceleration": 1000.0,
-    "PullUpDragAcceleration": 825.0,
+    "PullUpDragAcceleration": 400.0,
     "TurnAcceleration": 40.0,
     "PitchSpeed": 1.6,
     "MinPitch": -40.0,
@@ -29,6 +30,8 @@
       "ObjectName": "Class'WDFallDamageType'",
       "ObjectPath": "/Script/WDGame"
     },
-    "MinFallHeightBeforeAbleToParachute": 100.0
+    "OpenDuration": 2.0,
+    "MinFallHeightBeforeAbleToParachute": 400.0,
+    "MinHeightOpenParachuteFromGround": 1000.0
   }
 }

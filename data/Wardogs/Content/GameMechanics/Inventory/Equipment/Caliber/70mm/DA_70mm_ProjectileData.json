@@ -45,8 +45,17 @@
         }
       },
       "SuppressionData": {
+        "BaseSuppression": 0.7,
+        "DistanceFalloffRange": {
+          "Min": 2.0,
+          "Max": 4.0
+        },
         "DistanceFalloffCurve": {
-          "EditorCurveData": {}
+          "EditorCurveData": {},
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_SuppressionCurve_Rocket'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/CR_SuppressionCurve_Rocket.0"
+          }
         }
       },
       "GuidanceData": {
@@ -60,7 +69,7 @@
       },
       "TracerChance": 1.0,
       "TypicalSpeed": 22400.0,
-      "bShouldPenetrate": false,
+      "_aaabackekpkcoeellbllc_$2A4AFA2E44BB1BB2$_$16$": false,
       "MinImpactAngleForRicochet": 100.0,
       "bShouldPreSimulate": false,
       "ThrustSpeed": 22000.0,

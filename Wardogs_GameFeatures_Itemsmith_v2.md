@@ -8,6 +8,17 @@ parent: "Game Features"
 
 ---
 
+## Season 02 update (2026-10-15)
+
+- **No files added or removed;** the file counts below are unchanged.
+- **[`DA_Itemsmith_ItemPaintData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/UI/Flair/ItemPaint/Data/DA_Itemsmith_ItemPaintData.json)** (the flair item-paint screen, section 7) gained settings in this update:
+  - a warning popup for an empty favourites list (`UI.Popup.EmptyFavoritePaints`);
+  - `MaxFavouritePaintsToShow` = 5;
+  - camera mode `EItemsmithCameraMode::FixedSideOn`, with a focus offset of (0, 20, 7);
+  - input mapping context [`IMC_Itemsmith_FlairItemPaint`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IMC_Itemsmith_FlairItemPaint.json) at priority 11;
+  - a screen title (`Itemsmith.Flair.WeaponPaint.Title`) and `bShowBlueprintNameAsSubtitle` = true.
+  The layout of this asset is not decoded in this doc.
+
 ## 1. Layout and File Counts
 
 | Export Type | Files | Role |

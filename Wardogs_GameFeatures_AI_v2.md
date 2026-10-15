@@ -214,4 +214,4 @@ These are general UE EQS semantics. The dump gives the test settings, but this p
 - **Blackboard key use.** Which AI task reads or writes each key is in behaviour trees and BP graphs, not in this folder. This doc does not map key use.
 - **Behaviour trees.** `BT_WDAIPvECore_Base` is referenced but not in this folder.
 - **Sub-exports not expanded.** EQS sub-exports (individual test settings) are summarised by count and type, not every field.
-- **Obfuscated localisation keys.** Some properties appear as `_aaa…` hashes; those were not resolved.
+- **Unnamed localisation keys.** Some properties appear as `_aaa…` hashes; those were not resolved.

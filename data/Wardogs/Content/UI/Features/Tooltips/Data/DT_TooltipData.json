@@ -299,7 +299,7 @@
         },
         "ViewModelParams": {
           "ViewModelClass": {
-            "AssetPathName": "/Script/WDGame.WDUITooltipContainerViewModel",
+            "AssetPathName": "/Script/WDGame.WDUITooltipContainerViewModel_Inventory",
             "SubPathString": ""
           },
           "Data": {
@@ -509,8 +509,8 @@
       "ContentDescription": {
         "TableId": "/Game/UI/StringTables/STRINGS_InventoryTooltip.STRINGS_InventoryTooltip",
         "Key": "Description.Inventory.LockedTacticalVestSlot",
-        "SourceString": "Need to equip a tatical vest.",
-        "LocalizedString": "Need to equip a tatical vest."
+        "SourceString": "Need to equip a tactical vest.",
+        "LocalizedString": "Need to equip a tactical vest."
       },
       "bManuallySetWidgetPosition": false,
       "bAlwaysAttachToWidgetPosition": false,
@@ -1303,8 +1303,8 @@
       "ContentDescription": {
         "TableId": "/Game/UI/StringTables/STRINGS_ComingSoonTooltip.STRINGS_ComingSoonTooltip",
         "Key": "Text.VaultUpgrade",
-        "SourceString": "Upgrade your vault space to hold more items availble for use in-game!",
-        "LocalizedString": "Upgrade your vault space to hold more items availble for use in-game!"
+        "SourceString": "Upgrade your vault space to hold more items available for use in-game!",
+        "LocalizedString": "Upgrade your vault space to hold more items available for use in-game!"
       },
       "bManuallySetWidgetPosition": false,
       "bAlwaysAttachToWidgetPosition": false,
@@ -1561,6 +1561,52 @@
       "bShouldOverrideDataOnViewModel": false,
       "Tag": {
         "TagName": "UI.Tooltip.Data.OfficialServer"
+      }
+    },
+    "UI.Tooltip.Data.SquadIntent": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/W_SingleTitleTextTooltip.W_SingleTitleTextTooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUISquadIntentTooltipViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+      },
+      "Title": {
+        "CultureInvariantString": null
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "CultureInvariantString": null
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 0.0,
+        "Y": 0.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.SquadIntent"
       }
     }
   }

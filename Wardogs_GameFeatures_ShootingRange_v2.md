@@ -4,7 +4,14 @@ parent: "Game Features"
 ---
 
 # Wardogs — GameFeatures: ShootingRange (v2)
-*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: [`Plugins/GameFeatures/ShootingRange/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/ShootingRange) — 1 JSON file ([`Content/ShootingRange.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ShootingRange/Content/ShootingRange.json), 5 exports).*
+*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: [`Plugins/GameFeatures/ShootingRange/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/ShootingRange) — 1 JSON file ([`Content/ShootingRange.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ShootingRange/Content/ShootingRange.json), 6 exports).*
+
+---
+
+## Season 02 update (2026-10-15)
+
+- Added a data registry source action that adds [`DT_SceneData_Match_ShootingRange`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ShootingRange/Content/ShootingRange.json) to the `UISceneData_Match` registry (client and server source, asset priority 0).
+- Export count in this file: 5 → 6.
 
 ---
 
@@ -24,6 +31,7 @@ The base shooting-range experience: a match state, a three-team faction setup, a
 | Component on `WDGameModeSession` | `WDShootingRangePlayerSpawnManagerComponent` |
 | World layer | `EDL_ShootingRange` (external data layer) |
 | Minimap registry | `TrackerData_Minimap` → [`DT_TrackerData_Minimap`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Minimap/Widgets/Trackers/Data/DT_TrackerData_Minimap.json) |
+| Scene data registry | `UISceneData_Match` ← [`DT_SceneData_Match_ShootingRange`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match_ShootingRange.json) |
 
 ---
 

@@ -4,9 +4,27 @@ parent: "Content"
 ---
 
 # Wardogs — Items Reference (v2)
-*Extracted from cooked game data exported to JSON, source [`Wardogs/Content/Items/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items) (254 files). Every number below comes from the exported properties; anything the dump does not contain is marked as such.*
+*Extracted from cooked game data exported to JSON, source [`Wardogs/Content/Items/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items) (259 files). Every number below comes from the exported properties; anything the dump does not contain is marked as such.*
 
-> **How the files are structured:** each `.json` file is not one object. It holds several export blocks, each starting with a `--- export: <Kind> / <Name> ---` header followed by its own JSON object. Across the category there are 1,384 blocks: 225 `UPrimaryDataAsset` roots (the items and assets people actually use), 1,130 `UObject` sub-objects (the "fragments" each item points to), 26 `UCurveFloat`, 2 `UCurveTable`, and 1 `UDataAsset`. A primary item lists its fragments in `DataFragments`; the fragment blocks in the same file hold the values.
+> **How the files are structured:** each `.json` file is not one object. It holds several export blocks, each starting with a `--- export: <Kind> / <Name> ---` header followed by its own JSON object. Across the category there are 1,401 blocks: 230 `UPrimaryDataAsset` roots (the items and assets people actually use), 1,142 `UObject` sub-objects (the "fragments" each item points to), 26 `UCurveFloat`, 2 `UCurveTable`, and 1 `UDataAsset`. A primary item lists its fragments in `DataFragments`; the fragment blocks in the same file hold the values.
+
+---
+
+## Season 02 update (2026-10-15)
+
+- **New ammo:** `125x570mm` (1 round, grid 3x2, max stack 5, weight 24.0), with a new vehicle turret that accepts it.
+- **New vehicle weapons (4):** [`ID_MountedMachineGun_TNK_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Vehicles/Weapons/TNK_04/ID_MountedMachineGun_TNK_04.json) (50Cal, stack 60), [`ID_VehicleTurretMachineGun_TNK_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Vehicles/Weapons/TNK_04/ID_VehicleTurretMachineGun_TNK_04.json) (762x54mm, stack 150), [`ID_VehicleTurret_TNK_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Vehicles/Weapons/TNK_04/ID_VehicleTurret_TNK_04.json) (125x570mm, stack 1), and [`ID_WHL_08_RingTurret`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Vehicles/Weapons/WHL_08/ID_WHL_08_RingTurret.json) (50Cal, stack 60).
+- **Removed:** no items or files were removed.
+- **Stack overrides:** 30mm gains a `Vehicle.Storage` override of 200. The .50 Cal tracer gains `Vehicle.Storage` and `Type.Vehicle` at 50. The 762x54mm tracer variants gain both overrides at 150.
+- **Ammo context:** 84mm and 93mm no longer carry `Item.Context.ForceToStorage`.
+- **Vehicle items:** 20 items gain `Item.Context.MovementBlocked`.
+- **Aim assist, reticles:** AR inner reticle width 1900 -> 900, AR reticle depth 60000 -> 30000, SMG reticle depth 40000 -> 20000, SR reticle depth 20000 -> 40000.
+- **Aim assist, range:** LMG target range 50000 -> 30000, Shotgun 15000 -> 20000, SR gains 40000.
+- **Aim assist, pull and slow:** PullLerp and SlowLerp rates become 10 / 8 for every class except RPG (were 30 / 12 for PullLerp, and 6 / 5 or 5 / 5 for SlowLerp). PullOuterStrengthHip becomes 1.0 for every class that sets it (was 1.4 to 4.0). PullOuterStrengthAds becomes 2.0 for AR, LMG, Pistol, SMG, SR and Shotgun (was 4.0 to 6.0).
+- **Aim assist, rotation:** PullMaxRotationRate becomes 90 for AR, LMG, SMG, SR and Shotgun (was 120 or 135).
+- **Aim assist, removed keys:** `PullInnerStrengthAds`, `SlowOuterStrengthHip` and `SlowMinRotationRate` are gone for most classes. SR no longer sets `PullMode`, and Melee no longer sets `PullModeADS`.
+- **Aim assist, curves:** hipfire pull and slow curves for most classes now point to `_Default` curves (section 9).
+- **Counts:** 259 files, 230 primary assets, 193 item definitions (was 254, 225, 188).
 
 ---
 
@@ -14,9 +32,9 @@ parent: "Content"
 
 | Folder | Primary assets | Main type(s) | Notes |
 |---|---|---|---|
-| [`Resources/Ammo`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Resources/Ammo) | 97 (93 items) | BHInventoryItemDefinition | Every caliber and round variant, plus 3 audio assets and 1 debug projectile |
+| [`Resources/Ammo`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Resources/Ammo) | 98 (94 items) | BHInventoryItemDefinition | Every caliber and round variant, plus 3 audio assets and 1 debug projectile |
 | `Attachments/Magazines` | 23 | BHInventoryItemDefinition | Magazines, drums, and internal cylinders/boxes (internal ones have no gunsmith entry) |
-| `Vehicles/Weapons` | 12 | BHInventoryItemDefinition | Vehicle turrets, mounted MGs, helicopter cannon/rocket pods |
+| `Vehicles/Weapons` | 16 | BHInventoryItemDefinition | Vehicle turrets, mounted MGs, helicopter cannon/rocket pods |
 | [`Clothing/Backpacks`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Clothing/Backpacks) | 10 | BHInventoryItemDefinition | Storage bags, pouch, and sling variants |
 | `Attachments/Sights` | 8 | BHInventoryItemDefinition | Optics, iron sights |
 | [`Attachments/Muzzle_Devices`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Attachments/Muzzle_Devices) | 7 | BHInventoryItemDefinition | Suppressors and brakes |
@@ -38,7 +56,7 @@ parent: "Content"
 | `Weapons/` (root) | 8 aim-assist settings + 1 filter | BHAimAssistSettingsData, BHAimAssistFilterData | One per weapon class |
 | [`Resources/Ammo/Curves`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Resources/Ammo/Curves), [`Throwable/Curves`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Throwable/Curves), `Weapons/Curves` | 28 | CurveFloat, CurveTable | See section 11 |
 
-**Totals:** 188 item definitions (`BHInventoryItemDefinition`), 225 primary assets in all, 254 files. 
+**Totals:** 193 item definitions (`BHInventoryItemDefinition`), 230 primary assets in all, 259 files. 
 
 ---
 
@@ -48,15 +66,15 @@ An item is a `BHInventoryItemDefinition` with an `ItemId` tag, `ItemContext` tag
 
 | Fragment type | Key properties | Blocks in dump | What it controls |
 |---|---|---|---|
-| `BHInventoryFragment_Weight` | `Weight` | 55 (46 with a value) | Carry weight. Unit not stated in dump. |
-| `BHInventoryFragment_Stackable` | `MaxStackSize`, `MaxStackSizeOverrides` (keyed by slot/type tag) | 93 | Inventory stack limit, with per-slot overrides |
-| `BHInventoryFragment_CustomShape` | `Dimensions` (X, Y) | 147 | Inventory grid footprint. X and Y read as columns and rows (not verified in-game). |
-| `BHInventoryFragment_Droppable` | `DroppedMesh`, `RelativeRotation`, `MaterialOverrides`, box/offset overrides | 145 | World drop appearance |
-| `BHInventoryFragment_UserInterface` | `bIsVisibleOnEquippedUI`, `DisplayedItems`, `bDisplayIncludeAllSlots` | 154 | Inventory and equipped-UI display |
-| `BHInventoryFragment_SubSlotSupport` | `Containers[]` (see below) | 58 | Child-slot storage: magazines in weapons, ammo in vehicles, pockets in packs |
+| `BHInventoryFragment_Weight` | `Weight` | 56 (47 with a value) | Carry weight. Unit not stated in dump. |
+| `BHInventoryFragment_Stackable` | `MaxStackSize`, `MaxStackSizeOverrides` (keyed by slot/type tag) | 94 | Inventory stack limit, with per-slot overrides |
+| `BHInventoryFragment_CustomShape` | `Dimensions` (X, Y) | 149 | Inventory grid footprint. X and Y read as columns and rows (not verified in-game). |
+| `BHInventoryFragment_Droppable` | `DroppedMesh`, `RelativeRotation`, `MaterialOverrides`, box/offset overrides | 146 | World drop appearance |
+| `BHInventoryFragment_UserInterface` | `bIsVisibleOnEquippedUI`, `DisplayedItems`, `bDisplayIncludeAllSlots` | 155 | Inventory and equipped-UI display |
+| `BHInventoryFragment_SubSlotSupport` | `Containers[]` (see below) | 62 | Child-slot storage: magazines in weapons, ammo in vehicles, pockets in packs |
 | `WDInventoryFragment_Attachment` | `AttachmentData` (type tag, applied GEs, removable flag, reload rate) | 54 | Gunsmith attachment behaviour |
 | `WDInventoryFragment_Gunsmith` | `ItemType` | 55 | Whether the item appears in the gunsmith (`EWDGunsmithItemType::Attachment`) |
-| `WDInventoryFragment_Projectile` | `ProjectileData` (object reference) | 93 | Links an ammo item to its `WDProjectileData` asset |
+| `WDInventoryFragment_Projectile` | `ProjectileData` (object reference) | 94 | Links an ammo item to its `WDProjectileData` asset |
 | `WDInventoryFragment_Audio` | `AudioDataAsset` | 155 | Pickup and handling sounds |
 | `WDInventoryFragment_ItemActor` | `ExtensionDataFragments[]` | 8 | Groups the extension blocks for a holdable/consumable |
 | `WDInventoryFragment_QuickSlots` | `NumberOfAddedQuickSlots` | 3 | Extra quick slots granted by equipment |
@@ -78,9 +96,9 @@ An item is a `BHInventoryItemDefinition` with an `ItemId` tag, `ItemContext` tag
 
 | Field | Values in dump |
 |---|---|
-| `ItemContext` | Ammo items carry `Item.Ammo` (92) and `Item.Context.ForceToStorage` (92). Equippable items carry `Item.Context.Equippable` (33). Attachments carry `Item.Attachment.<slot>`. |
+| `ItemContext` | Ammo items carry `Item.Ammo` (93) and `Item.Context.ForceToStorage` (91). Equippable items carry `Item.Context.Equippable` (33). Attachments carry `Item.Attachment.<slot>`. |
 | `Item.Ammo.Type.*` | `FMJ.Tracer` (28), `HollowPoint` (12), `HollowPoint.Tracer` (12), `ArmorPiercing` (11), `ArmorPiercing.Tracer` (11) |
-| `DisplayName.SourceString` | Present on 174 of 188 items. The 14 without one are all attachment or weapon-component parts (3 attachment grips/handguards/stocks and 11 weapon components). |
+| `DisplayName.SourceString` | Present on 179 of 193 items. The 14 without one are all attachment or weapon-component parts (3 attachment grips/handguards/stocks and 11 weapon components). |
 
 ---
 
@@ -260,32 +278,33 @@ Both throws use `Action.Throw.Primary`. Pitch and velocity curves: [`CRV_ThrowPi
 
 ### 7a. Calibers
 
-Max stack is the inventory stack limit (`MaxStackSize`). Overrides apply to a slot tag (vehicle storage, vehicle type). Grid is the item footprint. Caliber rows: 97 primary assets in the folder (93 items, 3 audio assets, 1 debug projectile).
+Max stack is the inventory stack limit (`MaxStackSize`). Overrides apply to a slot tag (vehicle storage, vehicle type). Grid is the item footprint. Caliber rows: 98 primary assets in the folder (94 items, 3 audio assets, 1 debug projectile).
 
 | Caliber folder | Variants | Display | Max stack | Overrides | Grid | Projectile asset |
 |---|---|---|---|---|---|---|
 | 120x570mm | 1 | 120x570mm | 5 | - | 3x2 | DA_120x570mm_ProjectileData |
 | 120x800mm | 1 | 120x800mm | 10 | - | 3x2 | DA_120x800mm_Standard_ProjectileData |
 | 122mm | 1 | 122mm | 3 | - | 6x2 | DA_122mm_ProjectileData |
+| 125x570mm | 1 | 125x570mm | 5 | - | 3x2 | DA_125x570mm_ProjectileData |
 | 12Guage | 5 | 12g, 7mm Buckshot, Rifled Slug | 24 | - | 2x1 | DA_12g_RifledSlug, DA_7mmBuckshot |
 | 155mm | 6 | 155mm, 155mm Standard (+SB), 155mm Expensive (+SB), 155mm (SB) | 10 (SB Expensive: 30) | - | 3x2 | DA_155mm_Standard, DA_155mm_Expensive (+SB variants) |
 | 20x102mm | 1 | 20x102mm | 100 | - | 2x2 | DA_20x102mm |
 | 308 | 6 | .308 (+T, AP, AP T, HP, HP T) | 40 | Vehicle.Storage 150 | 2x1 | DA_308Winchester_ProjectileData |
-| 30mm | 1 | 30mm | 200 | - | not set | DA_30mm_ProjectileData |
+| 30mm | 1 | 30mm | 200 | Vehicle.Storage 200 | not set | DA_30mm_ProjectileData |
 | 338NormaMagnum | 6 | .338 Winchester (+AP, HP, tracer variants) | 30 | - | 2x1 | DA_338Norman_ProjectileData |
 | 35x228mm | 1 | 35x228mm | 75 | - | 2x2 | DA_35x228mm_ProjectileData |
 | 40mm | 1 | 40mm | 1 | - | 2x1 | DA_40mm_ProjectileData |
 | 45ACP | 6 | .45 ACP (+AP, HP) | 60 | - | 2x1 | DA_45ACP_ProjectileData |
 | 45Colt | 6 | .45 Colt (+AP, HP, tracer) | 30 | - | not set | DA_45Colt_ProjectileData |
 | 50AE | 6 | .50 AE (+AP, HP, tracer) | 30 | - | 2x1 | DA_50AE_ProjectileData |
-| 50Cal | 6 | .50 Cal (+AP, HP, tracer) | 20 (AP variants 30) | - | 2x1 | DA_50Cal_ProjectileData |
+| 50Cal | 6 | .50 Cal (+AP, HP, tracer) | 20 (AP variants 30) | Tracer: Vehicle.Storage 50, Type.Vehicle 50 | 2x1 | DA_50Cal_ProjectileData |
 | 545mm | 6 | 5.45mm (+AP, HP, tracer) | 80 | - | 2x1 | DA_545mm_ProjectileData |
 | 556mm | 6 | 5.56mm (+AP, HP, tracer) | 80 | Vehicle.Storage 150 | 2x1 | DA_556mm_ProjectileData |
 | 70mm | 1 | 70mm | not set | - | 3x1 | DA_70mm_ProjectileData |
 | 72mm | 1 | 72mm | not set | - | 2x1 | DA_72mm_ProjectileData |
 | 762mm | 6 | 7.62mm (+AP, HP, tracer) | 60 | - | 2x1 | DA_762mm_ProjectileData |
 | 762x51mm | 6 | 7.62x51mm | 100 | Type.Vehicle 150 | 2x1 | DA_762x51mm_ProjectileData |
-| 762x54mm | 6 | 7.62x54mm (+AP, HP, tracer) | 40 | - | 2x1 | DA_762x54mm_ProjectileData |
+| 762x54mm | 6 | 7.62x54mm (+AP, HP, tracer) | 40 | Tracer variants: Vehicle.Storage 150, Type.Vehicle 150 | 2x1 | DA_762x54mm_ProjectileData |
 | 84mm | 1 | 84mm | not set | - | 2x1 | DA_84mm_ProjectileData |
 | 93mm | 1 | 93mm | not set | - | 3x1 | DA_93mm_ProjectileData |
 | 9mm | 6 | 9mm (+AP, HP, tracer) | 100 (some 80) | - | 2x1 | DA_9mm_ProjectileData |
@@ -294,7 +313,7 @@ Max stack is the inventory stack limit (`MaxStackSize`). Overrides apply to a sl
 
 Variant naming: the base round has no suffix, and the others add `_ArmorPiercing`, `_HollowPoint`, and `_Tracer`. Items with `Sandbox` in the ItemId (e.g. `ID.Item.155mm.Sandbox`, [`ID_155mm_SB`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/155mm/ID_155mm_SB.json)) are test variants.
 
-Weight (`BHInventoryFragment_Weight`) is set on only a handful of rounds: 120x570mm 24.0, 35x228mm 1.56, 40mm 0.28, 155mm Expensive 42.0. The rest have no weight property. The unit is not stated.
+Weight (`BHInventoryFragment_Weight`) is set on only a handful of rounds: 120x570mm 24.0, 125x570mm 24.0, 35x228mm 1.56, 40mm 0.28, 155mm Expensive 42.0. The rest have no weight property. The unit is not stated.
 
 ### 7b. Ammo Item Data
 
@@ -330,7 +349,7 @@ Each round is a `BHInventoryItemDefinition` with a `BHInventoryFragment_Stackabl
 
 The Large storage refuses ammo. Its container is listed as 1x1 in the dump, which is unexpected for a large bin; treat the grid as reported.
 
-### 8b. Vehicle Weapons and Turrets (`Vehicles/Weapons`, 12 items)
+### 8b. Vehicle Weapons and Turrets (`Vehicles/Weapons`, 16 items)
 
 Each turret item is a `BHInventoryItemDefinition` with a `BHInventoryFragment_SubSlotSupport` whose single container accepts one caliber (AllowList on `Item.Ammo` plus `Item.Caliber.*`). The stack value is the container's `MaxSlotAmountStackSize`, which reads as the ammo capacity for that mount (interpretation, see section 2a).
 
@@ -348,6 +367,10 @@ Each turret item is a `BHInventoryItemDefinition` with a `BHInventoryFragment_Su
 | ID_VehicleTurretArtillery | Artillery Turret | 155mm | 1 |
 | ID_VehicleTurretArtillery_SB | Artillery Turret (sandbox) | 155mm | 1 |
 | ID_VehicleTurretHeavy | Heavy Turret | 120x570mm | 1 |
+| ID_MountedMachineGun_TNK_04 | Machine Gun | 50Cal | 60 |
+| ID_VehicleTurretMachineGun_TNK_04 | Machine Gun | 762x54mm | 150 |
+| ID_VehicleTurret_TNK_04 | Heavy Turret | 125x570mm | 1 |
+| ID_WHL_08_RingTurret | Machine Gun | 50Cal | 60 |
 
 ### 8c. Launcher Test Barrels ([`Weapons/Launcher`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Weapons/Launcher))
 
@@ -370,36 +393,36 @@ Eight weapon-class settings and one shared filter. Values are as stored, with no
 
 | Key | Filter | AR | LMG | Melee | Pistol | RPG | SMG | SR | Shotgun |
 |---|---|---|---|---|---|---|---|---|---|
-| TargetRange | 30000 | 30000 | 50000 | 800 | - | 0 | 20000 | - | 15000 |
-| AssistInnerReticleWidth | - | 1900 | 2000 | 32 | 400 | 0 | 800 | 400 | 600 |
-| AssistInnerReticleHeight | - | 1620 | 1700 | 28 | 340 | 0 | 680 | 340 | 510 |
-| AssistOuterReticleWidth | - | 7000 | 9300 | 150 | 1860 | 0 | 3720 | 1860 | 2800 |
-| AssistOuterReticleHeight | - | 6000 | 8000 | 128 | 1600 | 0 | 3200 | 1600 | 2400 |
-| TargetingReticleWidth | - | 8400 | 14000 | 224 | 2800 | 0 | 5600 | 2800 | 4200 |
-| TargetingReticleHeight | - | 7200 | 12000 | 192 | 2400 | 0 | 4800 | 2400 | 3600 |
-| ReticleDepth | - | 60000 | 100000 | 1600 | 20000 | 0 | 40000 | 20000 | 30000 |
+| TargetRange | 30000 | 30000 | 30000 | 800 | - | 0 | 20000 | 40000 | 20000 |
+| AssistInnerReticleWidth | - | 900 | 900 | 24 | 300 | 0 | 600 | 1200 | 600 |
+| AssistInnerReticleHeight | - | 720 | 720 | 19.2 | 240 | 0 | 480 | 960 | 480 |
+| AssistOuterReticleWidth | - | 2700 | 2700 | 72 | 900 | 0 | 1800 | 3600 | 1800 |
+| AssistOuterReticleHeight | - | 2160 | 2160 | 57.6 | 720 | 0 | 1440 | 2880 | 1440 |
+| TargetingReticleWidth | - | 2700 | 2700 | 72 | 900 | 0 | 1800 | 3600 | 1800 |
+| TargetingReticleHeight | - | 2160 | 2160 | 57.6 | 720 | 0 | 1440 | 2880 | 1440 |
+| ReticleDepth | - | 30000 | 30000 | 800 | 10000 | 0 | 20000 | 40000 | 20000 |
 | MaxNumberOfTargets | - | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 |
 | MinAssistWeight | - | 0.125 | 0.125 | 0.125 | 0.125 | 0.125 | 0.125 | 0.125 | 0.125 |
 | SensitivityScaleADS | - | 1.0 | 1.0 | 1.0 | 1.0 | 0 | 1.0 | 1.0 | 1.0 |
-| PullOuterStrengthHip | - | 1.4 | 1.5 | 3.0 | 4.0 | 0 | 3.0 | 0 | 3.0 |
-| PullInnerStrengthHip | - | 0.75 | 0.36 | 0 | 0.36 | 0 | 0.44 | 0.28 | 0.36 |
-| PullOuterStrengthAds | - | 6.0 | 6.0 | 0 | 4.0 | 0 | 6.0 | 4.0 | 6.0 |
-| PullInnerStrengthAds | - | 0.7 | 0.8 | 1.5 | 2.0 | 0 | 1.6 | 0 | 1.6 |
-| SlowOuterStrengthHip | - | 0.44 | 0.36 | 0.36 | 0.75 | 0 | 0.64 | 0 | 0.64 |
-| SlowInnerStrengthHip | - | 3.0 | 3.0 | 0 | 2.0 | 0 | 3.0 | 2.0 | 3.0 |
-| SlowOuterStrengthAds | - | 0.9 | 0.8 | 0 | 0.64 | 0 | 0.8 | 0.51 | 0.64 |
-| SlowInnerStrengthAds | - | 0.19 | 0.19 | 0.19 | 0.44 | 0 | 0.36 | 0 | 0.36 |
-| PullLerpInRate / OutRate | - | 30 / 12 | 30 / 12 | - | 30 / 12 | 0 | 30 / 12 | 30 / 12 | 30 / 12 |
-| SlowLerpInRate / OutRate | - | 6 / 5 | 5 / 5 | - | 5 / 5 | 0 | 5 / 5 | 5 / 5 | 5 / 5 |
-| PullMaxRotationRate | - | 120 | 120 | 90 | 90 | - | 135 | 135 | 135 |
-| SlowMinRotationRate | - | 15 | 15 | - | 60 | - | 15 | 120 | 60 |
-| PullMode | - | - | - | - | - | Off | - | Off | - |
-| PullModeADS | - | - | - | Off | - | Off | - | - | - |
+| PullOuterStrengthHip | - | 1.0 | 1.0 | 1.0 | 1.0 | 0 | 1.0 | 0 | 1.0 |
+| PullInnerStrengthHip | - | 0.3 | 0.3 | 0 | 0.3 | 0 | 0.3 | 0.2 | 0.3 |
+| PullOuterStrengthAds | - | 2.0 | 2.0 | 0 | 2.0 | 0 | 2.0 | 2.0 | 2.0 |
+| PullInnerStrengthAds | - | - | - | - | - | 0 | - | 0 | - |
+| SlowOuterStrengthHip | - | - | - | 0.36 | - | 0 | - | 0 | - |
+| SlowInnerStrengthHip | - | 1.0 | 1.0 | 0 | 1.0 | 0 | 1.0 | 1.0 | 1.0 |
+| SlowOuterStrengthAds | - | 0.6 | 0.6 | 0 | 0.6 | 0 | 0.6 | 0.4 | 0.6 |
+| SlowInnerStrengthAds | - | 0.3 | 0.3 | 0.19 | 0.3 | 0 | 0.3 | 0 | 0.3 |
+| PullLerpInRate / OutRate | - | 10 / 8 | 10 / 8 | 10 / 8 | 10 / 8 | 0 | 10 / 8 | 10 / 8 | 10 / 8 |
+| SlowLerpInRate / OutRate | - | 10 / 8 | 10 / 8 | 10 / 8 | 10 / 8 | 0 | 10 / 8 | 10 / 8 | 10 / 8 |
+| PullMaxRotationRate | - | 90 | 90 | 90 | 90 | - | 90 | 90 | 90 |
+| SlowMinRotationRate | - | - | - | - | - | - | - | - | - |
+| PullMode | - | - | - | - | - | Off | - | - | - |
+| PullModeADS | - | - | - | - | - | Off | - | - | - |
 | TargetWeightCurve | - | C_AimAssistTargetWeightCurve (shared) | | | | | | | |
 
-Curves referenced per class (values not in this category): `PullStrengthDistanceCurve` (Hipfire and ADS variants per class), `SlowStrengthDistanceCurve` (Hipfire and ADS variants). The SR uses [`C_AimAssistPullStrengthDistanceCurve_Sniper`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistPullStrengthDistanceCurve_Sniper.json) for ADS. Two curve names have a missing underscore: [`C_AimAssistSlowStrengthDistanceCurvePistol_ADS`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistSlowStrengthDistanceCurvePistol_ADS.json) and [`C_AimAssistSlowStrengthDistanceCurveShotgun_ADS`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistSlowStrengthDistanceCurveShotgun_ADS.json). These are the names as stored.
+Curves referenced per class (values not in this category): the hipfire `PullStrengthDistanceCurve` and `SlowStrengthDistanceCurve` now point to the shared [`C_AimAssistPullStrengthDistanceCurve_Default`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistPullStrengthDistanceCurve_Default.json) and [`C_AimAssistSlowStrengthDistanceCurve_Default`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistSlowStrengthDistanceCurve_Default.json) for AR, LMG, Melee, Pistol, SMG and Shotgun. The ADS variants stay per class, and SR keeps its `_Sniper` curves. Every class except RPG now uses [`C_AimAssistReticleEdgeFalloff_Default`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistReticleEdgeFalloff_Default.json) for its reticle edge falloff. The SR uses [`C_AimAssistPullStrengthDistanceCurve_Sniper`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistPullStrengthDistanceCurve_Sniper.json) for ADS. Two curve names have a missing underscore: [`C_AimAssistSlowStrengthDistanceCurvePistol_ADS`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistSlowStrengthDistanceCurvePistol_ADS.json) and [`C_AimAssistSlowStrengthDistanceCurveShotgun_ADS`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistSlowStrengthDistanceCurveShotgun_ADS.json). These are the names as stored.
 
-The RPG setting is zero across most fields, and both RPG and SR have `PullMode` set to `Off`. Whether assist is intentionally disabled for those classes cannot be confirmed from the dump.
+The RPG setting is zero across most fields, and RPG has `PullMode` set to `Off`. SR no longer sets `PullMode`, and Melee no longer sets `PullModeADS`. Whether assist is intentionally disabled for those classes cannot be confirmed from the dump.
 
 Other settings: `bFOVReticleScaling` is False for every class that sets it. `bApplySlowing`, `bUseDynamicSlow`, and `bApplyStrafePullScale` appear only on the RPG and are False. Every class sets `MaxNumberOfTargets` = 8.
 
@@ -428,7 +451,7 @@ Other settings: `bFOVReticleScaling` is False for every class that sets it. `bAp
 ## 12. Combining Values
 
 - **Magazine rounds available** = the magazine's container `MaxSlotAmountStackSize` (section 2a). Ammo stacks inside the magazine's container and is limited by that container's allow list (the caliber tag).
-- **Inventory stack size for a round** = `MaxStackSize`, unless the slot tag is listed in `MaxStackSizeOverrides`. For ammo, `Vehicle.Storage` and `Type.Vehicle` override to 150 on the 308, 556mm and 762x51mm lines.
+- **Inventory stack size for a round** = `MaxStackSize`, unless the slot tag is listed in `MaxStackSizeOverrides`. For ammo, `Vehicle.Storage` and `Type.Vehicle` override to 150 on the 308, 556mm, 762x51mm and 762x54mm tracer lines, and to 50 on the .50 Cal tracer. The 30mm round overrides `Vehicle.Storage` to 200.
 - **Carry weight** = `BHInventoryFragment_Weight.Weight` (unit not stated). Items with no weight property have no value in the dump, so their total cannot be read from this category.
 - **Attachment on a weapon** = the attachment's `AttachmentType` tag must match a weapon child slot's `ContainerIdentifier`, and the attachment's bone comes from its archetype (section 3a).
 - **Aim assist per shot** = the weapon-class settings (section 9) combined with the class's distance curves; the curve values are outside this category.
@@ -440,10 +463,10 @@ Other settings: `bFOVReticleScaling` is False for every class that sets it. `bAp
 - **Base weapon definitions are absent.** `Weapons/AR` holds only components. The receiver and full gun items (M4, AK74-M, Glock 17, Vector, M249, and so on) are not in this folder, so per-weapon fire rate, damage, and recoil are not here.
 - **Weapon stats and projectile ballistics are external.** `WDWeaponStatsData` (e.g. [`DA_ArtilleryBarrelTest_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/RocketLauncher/ArtilleryBarrelTest/Data/DA_ArtilleryBarrelTest_Stats.json)) and every `WDProjectileData` except [`DA_DebugHomingRocketData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/DebugHomingRocket/DA_DebugHomingRocketData.json) live in other folders, so damage and velocity for ordinary rounds are not in this category.
 - **Weight unit not stated.** The dump gives values (0.08 to 42.0) without a unit. Assume it is the game's internal weight unit until confirmed.
-- **Weight missing on most items.** Only 46 of 188 items have a weight value. The other items carry the fragment but no property, so the default is unknown.
+- **Weight missing on most items.** Only 47 of 193 items have a weight value. The other items carry the fragment but no property, so the default is unknown.
 - **Grid orientation not confirmed.** `CustomShape.Dimensions` and `GridSize` are read as X x Y. Whether X is columns or rows is not verified.
 - **Magazine capacity is an inference.** `MaxSlotAmountStackSize` on a magazine container matches the magazine's name in every case checked, but the dump does not label it as capacity.
-- **Obfuscated property keys omitted.** Keys of the form `_aaa..._$HEX$_$N$` (several per aim-assist asset and a few on containers) are internal and were skipped. Their meaning is unknown.
+- **Unnamed property keys omitted.** Keys of the form `_aaa..._$HEX$_$N$` (several per aim-assist asset and a few on containers) are internal and were skipped. Their meaning is unknown.
 - **Display names missing on 14 items.** Some have no `DisplayName`, and where a `DisplayName` exists only the `SourceString` is shown; the localization table is not dumped.
 - **Holdable and placeable details not decoded.** Holdable mesh, animation and crosshair fields are only partly summarised. The ammo crate's placeable class and init data were not extracted.
 - **Full throw and consumable action data.** The `AppliableActionData` and `ThrowActions` arrays are present but only partly decoded (required states, velocity curve references).
@@ -452,4 +475,4 @@ Other settings: `bFOVReticleScaling` is False for every class that sets it. `bAp
 
 ---
 
-*Source files: [`Wardogs/Content/Items/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items) (254 `.json`). Intermediate extraction scripts live in the session scratchpad only.*
+*Source files: [`Wardogs/Content/Items/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items) (259 `.json`).*

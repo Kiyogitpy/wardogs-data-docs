@@ -39,11 +39,11 @@
       "EndDelayTime": 1.0
     },
     "bAutomaticallyReload": true,
-    "bBypassAmmoChecks": true,
+    "_aaabbcnjpkmbefoopmgmn_$2D9FAC145EEFC6CD$_$17$": true,
     "RestockSuppliesTag": {
       "TagName": "Id.Item.MunitionsSupplies"
     },
-    "RestockSuppliesNeeded": 75,
+    "RestockSuppliesNeeded": 150,
     "RestockInventoryTag": {
       "TagName": "Vehicle.AssociatedInventory.FOB"
     },
@@ -67,6 +67,31 @@
       "ObjectName": "WDAudioData'DA_STN_03_Mortar_Audio'",
       "ObjectPath": "/STN_03/Data/DA_STN_03_Mortar_Audio.0"
     },
+    "Animations": [
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.PreFire"
+        },
+        "Value": {
+          "FirstPersonPlayerAnimation": {
+            "ObjectName": "AnimMontage'AM_FP_Mortar_Fire'",
+            "ObjectPath": "/STN_03/Animation/AM_FP_Mortar_Fire.0"
+          },
+          "ThirdPersonPlayerAnimation": {
+            "ObjectName": "AnimMontage'AM_TP_Mortar_Fire'",
+            "ObjectPath": "/STN_03/Animation/AM_TP_Mortar_Fire.0"
+          },
+          "_aaabkaiiiikngfhjclpcl_$8888AD65792BF2B$_$26$": {
+            "ObjectName": "AnimMontage'AM_FP_Mortar_Fire_Weap'",
+            "ObjectPath": "/STN_03/Animation/AM_FP_Mortar_Fire_Weap.0"
+          },
+          "_aaabknpfkgdelmmgiloin_$DF5A634BCC68BE8D$_$26$": {
+            "ObjectName": "AnimMontage'AM_TP_Mortar_Fire_Weap'",
+            "ObjectPath": "/STN_03/Animation/AM_TP_Mortar_Fire_Weap.0"
+          }
+        }
+      }
+    ],
     "FireCameraShakeClass": {
       "ObjectName": "AnimSequence'A_FP_Mortar_Pose'",
       "ObjectPath": "/Game/Animation/Characters/StateMachine/Idles/Vehicle/Buildables/A_FP_Mortar_Pose.0"

@@ -19,6 +19,16 @@
             "ObjectPath": "/WHL_02/Parts/VP_WHL_02_MainBody_Pickup.1"
           }
         }
+      },
+      {
+        "Key": "WeatherResponse",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_VehicleWeatherResponse'VP_WHL_02_MainBody_Pickup:WD_MVF_VehicleWeatherResponse_0'",
+            "ObjectPath": "/WHL_02/Parts/VP_WHL_02_MainBody_Pickup.2"
+          }
+        }
       }
     ]
   }
@@ -54,6 +64,116 @@
     },
     "WalkableSlopeOverride": {
       "WalkableSlopeBehavior": "EWalkableSlopeBehavior::WalkableSlope_Default"
+    }
+  }
+}
+--- export: UObject / WD_MVF_VehicleWeatherResponse_0 ---
+{
+  "Type": "WD_MVF_VehicleWeatherResponse",
+  "Name": "WD_MVF_VehicleWeatherResponse_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_VehicleWeatherResponse'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_02_MainBody_Pickup'",
+    "ObjectPath": "/WHL_02/Parts/VP_WHL_02_MainBody_Pickup.0"
+  },
+  "Properties": {
+    "Effects": [
+      {
+        "ObjectName": "WDVehicleWeatherEffect_Wipers'VP_WHL_02_MainBody_Pickup:WD_MVF_VehicleWeatherResponse_0.WDVehicleWeatherEffect_Wipers_0'",
+        "ObjectPath": "/WHL_02/Parts/VP_WHL_02_MainBody_Pickup.3"
+      }
+    ],
+    "_aaabcojnkdpbgjpjdhdnd_$E9DA3F169F9373D3$_$18$": [
+      {
+        "_aaaajnjfabibibopalcoc_$D95018181EF0B2E2$_$9$": 1,
+        "_aaaahabkpakalmkkipako_$1AF0A0BCAA8F0AE$_$7$": false,
+        "bFlat": false,
+        "_aaaagklhbbogdedhnfpil_$AB711E63437D5F8B$_$6$": -5.0,
+        "_aaaahnbmpndbipoobkebo_$D1CFD318FEE1A41E$_$7$": -5.0,
+        "_aaaafiidgfeibdmckpcaj_$883654813C2AF209$_$5$": 0.0,
+        "_aaaaickcmfiamoahbhpdf_$2A2C580CE0717F35$_$8$": 0.0,
+        "RotationOffset": {
+          "Pitch": 0.0,
+          "Yaw": 0.0,
+          "Roll": 0.0
+        },
+        "LocationOffset": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.0
+        },
+        "_aaaannfbbjadjnncagbng_$D5119039DD2061D6$_$13$": 0.0,
+        "_aaaamikjnmmjokkdcflpn_$8A9DCC9EAA325BFD$_$12$": false,
+        "_aaaaonfemdhclpedmcnoh_$D54C372BF43C2DE7$_$14$": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "_aaaahegfnkjfjcaodmbhb_$465DA95920E3C171$_$7$": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.0
+        },
+        "_aaaahoeapedhfbndccmoa_$E40F43751D322CE0$_$7$": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.0
+        }
+      },
+      {
+        "_aaaajnjfabibibopalcoc_$D95018181EF0B2E2$_$9$": 2,
+        "_aaaahabkpakalmkkipako_$1AF0A0BCAA8F0AE$_$7$": false,
+        "bFlat": false,
+        "_aaaagklhbbogdedhnfpil_$AB711E63437D5F8B$_$6$": -5.0,
+        "_aaaahnbmpndbipoobkebo_$D1CFD318FEE1A41E$_$7$": -5.0,
+        "_aaaafiidgfeibdmckpcaj_$883654813C2AF209$_$5$": 0.0,
+        "_aaaaickcmfiamoahbhpdf_$2A2C580CE0717F35$_$8$": 0.0,
+        "RotationOffset": {
+          "Pitch": 0.0,
+          "Yaw": 0.0,
+          "Roll": 0.0
+        },
+        "LocationOffset": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.0
+        },
+        "_aaaannfbbjadjnncagbng_$D5119039DD2061D6$_$13$": 0.0,
+        "_aaaamikjnmmjokkdcflpn_$8A9DCC9EAA325BFD$_$12$": false,
+        "_aaaaonfemdhclpedmcnoh_$D54C372BF43C2DE7$_$14$": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "_aaaahegfnkjfjcaodmbhb_$465DA95920E3C171$_$7$": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.0
+        },
+        "_aaaahoeapedhfbndccmoa_$E40F43751D322CE0$_$7$": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.0
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDVehicleWeatherEffect_Wipers_0 ---
+{
+  "Type": "WDVehicleWeatherEffect_Wipers",
+  "Name": "WDVehicleWeatherEffect_Wipers_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeatherEffect_Wipers'",
+  "Outer": {
+    "ObjectName": "WD_MVF_VehicleWeatherResponse'VP_WHL_02_MainBody_Pickup:WD_MVF_VehicleWeatherResponse_0'",
+    "ObjectPath": "/WHL_02/Parts/VP_WHL_02_MainBody_Pickup.2"
+  },
+  "Properties": {
+    "_aaabdcbemgbnfjlgadoan_$214C61D59B603E0D$_$19$": 1.3,
+    "_aaabgbfpmdjbffogdofkk_$15FC39155E63E5AA$_$22$": {
+      "X": 0.0,
+      "Y": 1.0,
+      "Z": 0.0
     }
   }
 }

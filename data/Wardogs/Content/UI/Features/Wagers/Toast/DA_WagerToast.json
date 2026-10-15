@@ -1,0 +1,56 @@
+--- export: UDataAsset / DA_WagerToast ---
+{
+  "Type": "WDUIWagerToastData",
+  "Name": "DA_WagerToast",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIWagerToastData'",
+  "Package": "/Game/UI/Features/Wagers/Toast/DA_WagerToast",
+  "Properties": {
+    "_aaaalgddoeenoplagkoce_$633E44DEFB06AE24$_$11$": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Toast_WonHeadline",
+      "SourceString": "WAGER COMPLETE",
+      "LocalizedString": "WAGER COMPLETE"
+    },
+    "_aaaamdciogbfecefpgcbe_$328E6154245F6214$_$12$": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Toast_LostHeadline",
+      "SourceString": "WAGER FAILED",
+      "LocalizedString": "WAGER FAILED"
+    },
+    "_aaaaneocmgenaadladnlp_$4E2C64D003B03DBF$_$13$": {
+      "TagName": "Audio.Event.Vendor.Wager.Result.Success"
+    },
+    "_aaaaoofbhicjffjkjhkpn_$E517829559A97AFD$_$14$": {
+      "TagName": "Audio.Event.Vendor.Wager.Result.Fail.Death"
+    },
+    "_aaabkljcfjcggcjageoge_$B925926629064E64$_$26$": [
+      {
+        "Key": {
+          "TagName": "Wager.FailReason.TimedOut"
+        },
+        "Value": {
+          "TagName": "Audio.Event.Vendor.Wager.Result.Fail.Time"
+        }
+      }
+    ],
+    "_aaaaijjkaaklhljnpjnlj_$99A00AB7B9DF9DB9$_$8$": [
+      {
+        "_aaaajfjfgkkmkpekliaii_$5956AACAF4AB8088$_$9$": 500000,
+        "_aaaanndohoinfelljpikp_$D3E7E8D54BB9F8AF$_$13$": "JackpotAnimation",
+        "_aaaaiehjbabojocpakklm_$479101E9E2F0AABC$_$8$": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+          "Key": "Toast_JackpotHeadline",
+          "SourceString": "JACKPOT WINNER",
+          "LocalizedString": "JACKPOT WINNER"
+        },
+        "AudioEvent": {
+          "TagName": "Audio.Event.Vendor.Wager.Result.Jackpot"
+        },
+        "_aaabepddjkgfcdlghhglg_$F339A6523B6776B6$_$20$": false,
+        "_aaabcbgogelbnocnmnfbf_$16E64B1DE2DCD515$_$18$": 0.5,
+        "InterpolationTime": 1.0
+      }
+    ]
+  }
+}

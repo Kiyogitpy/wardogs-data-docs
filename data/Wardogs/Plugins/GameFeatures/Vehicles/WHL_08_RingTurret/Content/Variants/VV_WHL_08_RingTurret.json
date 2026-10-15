@@ -1,0 +1,67 @@
+--- export: UPrimaryDataAsset / VV_WHL_08_RingTurret ---
+{
+  "Type": "ModularVehicleVariant",
+  "Name": "VV_WHL_08_RingTurret",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleVariant'",
+  "Package": "/WHL_08_RingTurret/Variants/VV_WHL_08_RingTurret",
+  "Properties": {
+    "bIncludeInBuildCommandLine": true,
+    "VariantID": {
+      "TagName": "Vehicle.Variant.Land.Wheeled.WHL_08.MachineGun"
+    },
+    "SpawnParams": {
+      "Min": {
+        "X": -333.41745,
+        "Y": -169.0808,
+        "Z": -0.054968
+      },
+      "Max": {
+        "X": 317.55817,
+        "Y": 169.08083,
+        "Z": 259.09384
+      }
+    },
+    "bUseFixedBounds": true,
+    "FixedBounds": {
+      "Min": {
+        "X": -300.0,
+        "Y": -150.0,
+        "Z": 0.0
+      },
+      "Max": {
+        "X": 300.0,
+        "Y": 150.0,
+        "Z": 300.0
+      }
+    },
+    "AssemblyData": {
+      "VehicleBase": {
+        "ObjectName": "ModularVehiclePlatform'VP_WHL_08'",
+        "ObjectPath": "/WHL_08/Platforms/VP_WHL_08.0"
+      },
+      "CustomData": {
+        "SlotOverrides": [
+          {
+            "Path": {
+              "Path": "Seats"
+            },
+            "Part": {
+              "AssetPathName": "/WHL_08_RingTurret/Parts/VP_WHL_08_Turret_Seats.VP_WHL_08_Turret_Seats",
+              "SubPathString": ""
+            }
+          },
+          {
+            "Path": {
+              "Path": "Body"
+            },
+            "Part": {
+              "AssetPathName": "/WHL_08_RingTurret/Parts/VP_WHL_08_MainBody_MachineGun.VP_WHL_08_MainBody_MachineGun",
+              "SubPathString": ""
+            }
+          }
+        ]
+      }
+    }
+  }
+}

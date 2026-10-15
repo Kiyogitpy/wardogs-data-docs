@@ -22,17 +22,16 @@
         "BaseDamage": 77.0
       },
       "ProjectileDimensions": {
-        "Length": 80.0,
-        "Diameter": 0.4,
-        "Mass": 0.025,
+        "Length": 75.0,
+        "Diameter": 0.65,
+        "Mass": 0.029,
         "DragModel": {
-          "Value": 1.8,
+          "Value": 2.5,
           "Curve": {
             "CurveTable": {
               "ObjectName": "CurveTable'CT_Projectile_DragCoefficients'",
               "ObjectPath": "/Game/Items/Resources/Ammo/Curves/CT_Projectile_DragCoefficients.0"
-            },
-            "RowName": "G7 (Boat Tail)"
+            }
           }
         }
       },
@@ -42,10 +41,10 @@
         }
       },
       "SuppressionData": {
-        "BaseSuppression": 0.6,
+        "BaseSuppression": 0.2,
         "DistanceFalloffRange": {
-          "Min": 0.1,
-          "Max": 1.2
+          "Min": 0.2,
+          "Max": 1.5
         },
         "DistanceFalloffCurve": {
           "EditorCurveData": {
@@ -84,28 +83,84 @@
                 "LeaveTangentWeight": 0.0
               }
             ]
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_SuppressionCurve_Small'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/CR_SuppressionCurve_Small.0"
           }
         }
       },
-      "MaxProjectileLifetime": 30.0,
+      "MaxProjectileLifetime": 14.0,
       "AttachedEffect": {
         "AssetPathName": "/CombatBow/Data/VFX/NS_ProjectileTrail_Arrow.NS_ProjectileTrail_Arrow",
         "SubPathString": ""
       },
-      "bShouldPenetrate": true,
+      "_aaabahajclnlmdmaabope_$7092BDBC3C001EF4$_$16$": true,
       "ProjectileActor": {
         "AssetPathName": "/CombatBow/Data/DataAssets/Arrow/BP_Arrow.BP_Arrow_C",
         "SubPathString": ""
       },
       "TracerChance": 1.0,
-      "TypicalSpeed": 64200.0,
+      "TypicalSpeed": 15200.0,
       "bForcePenetrateThinSurfaces": true,
-      "PenetrationEffectivenessMultiplier": 0.03,
+      "PenetrationEffectivenessMultiplier": 0.5,
       "PenetrationExitSpeedMultiplier": 0.55,
       "MinImpactAngleForRicochet": 30.0,
       "bShouldPreSimulate": false,
       "bShouldThrust": true,
-      "bHasThrustInstability": true,
+      "TotalFuel": 1.0,
+      "FuelBurnRate": 0.0673401,
+      "FuelGravityAffect": {
+        "EditorCurveData": {
+          "Keys": [
+            {
+              "InterpMode": "RCIM_Constant",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 0.0,
+              "Value": 1.0,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Linear",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 0.93111,
+              "Value": 1.0,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Constant",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 0.97556,
+              "Value": 0.1331,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Constant",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 0.999,
+              "Value": -1.47,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            }
+          ]
+        }
+      },
+      "ThrustSpeed": 1.0,
       "ThrustInstabilityYawScale": 0.02,
       "ThrustInstabilityYawSpeed": 30.0,
       "ThrustInstabilityPitchScale": 0.02,

@@ -4,11 +4,21 @@ parent: "Game Features"
 ---
 
 # Wardogs — Gunsmith Game Feature Reference (v2)
-*Extracted from cooked game data ([`Wardogs/Plugins/GameFeatures/Gunsmith`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Gunsmith), 18 JSON files, all parsed). Build `++Wardogs+Live-CL-509546`, UE 5.7.*
+*Extracted from cooked game data ([`Wardogs/Plugins/GameFeatures/Gunsmith`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Gunsmith), 18 JSON files, all parsed). Build `++Wardogs+Live-CL-516586`, UE 5.7.*
 
 > **What this is:** the weapon-customisation mode (reticles, optics, attachments, flair) built on the shared **Itemsmith** UI framework, the same base as Vehiclesmith. Almost all of it is UI configuration: pages, browser lists, reticle definitions, accuracy display and textures. The weapon balance numbers (damage, RPM, recoil) are **not** in this plugin. Those live on the weapon items elsewhere.
 
 ---
+
+## Season 02 update (2026-10-15)
+
+- **No files added or removed.** The one changed file is the popup table below.
+- **Popup options** ([`DT_GunsmithPopupOptions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/Popups/DT_GunsmithPopupOptions.json)) went from 0 rows to 5:
+  - `UI.Popup.SaveBlueprint`: Info, Cancel / OK.
+  - `UI.Popup.DeleteBlueprint`: Warning, "Do you wish to permanently delete this blueprint?" ("This cannot be undone"), Cancel / OK.
+  - `UI.Popup.RenameItem`: Itemsmith rename type, RENAME / Cancel.
+  - `UI.Popup.FullBlueprintItems`: Warning, OK.
+  - `UI.Popup.ChangeComponent`: Warning, Apply / Cancel.
 
 ## 1. Plugin Inventory
 
@@ -22,7 +32,7 @@ parent: "Game Features"
 | Sub-nodes | [`Content/UI/SubNodeFocus/Data/DA_Gunsmith_SubNodeFocus`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/SubNodeFocus/Data/DA_Gunsmith_SubNodeFocus.json) | Sight sub-node bindings |
 | Stats | [`Content/UI/Shared/Stats/Data/DA_Gunsmith_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Shared/Stats/Data/DA_Gunsmith_Stats.json), [`Content/UI/Shared/Stats/ExpandedStats/Data/DA_GunsmithExpandedAccuracy`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Shared/Stats/ExpandedStats/Data/DA_GunsmithExpandedAccuracy.json) | Accuracy display and expanded accuracy |
 | Entities (UI) | `Content/UI/Data/Entities/` ([`DT_Gunsmith_EntityData_UI_DecalTextures`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/Entities/DT_Gunsmith_EntityData_UI_DecalTextures.json), `..._PaintMaskTextures`, `..._PaintMasteryTextures`, `..._ReticleTextures`, [`DT_Gunsmith_DevMenuMaps`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/Entities/DT_Gunsmith_DevMenuMaps.json)) | Texture and map entries |
-| Popups | [`Content/UI/Data/Popups/DT_GunsmithPopupOptions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/Popups/DT_GunsmithPopupOptions.json) | Popup options, **0 rows** |
+| Popups | [`Content/UI/Data/Popups/DT_GunsmithPopupOptions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/Popups/DT_GunsmithPopupOptions.json) | Popup options, **5 rows** |
 
 ---
 
@@ -224,6 +234,6 @@ The large-MOA bands are on the asset but were not extracted. These read as displ
 - **Weapon balance is not here.** Damage, fire rate, recoil and spread live on the weapon items, which are outside this plugin.
 - **Large-MOA bands** on [`DA_GunsmithExpandedAccuracy`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Shared/Stats/ExpandedStats/Data/DA_GunsmithExpandedAccuracy.json) were not extracted.
 - **Texture and widget assets** (`T_Reticle_*`, `W_*`, `DL_Gunsmith_*`, `B_Gunsmith*`) are referenced by name or path only.
-- **Localised strings** are referenced by key. The text is not in this dump except where a `SourceString` was exported.
+- **Localised strings** are referenced by key. The text is not in this export except where a `SourceString` was exported.
 - **Scope and sight item ids** (for example `Id.Item.OPT_08`) are referenced in the exclusivity and texture rows, but the item definitions are outside this plugin.
-- **Popup options** ([`DT_GunsmithPopupOptions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/Popups/DT_GunsmithPopupOptions.json)) exist but have no rows.
+- **Popup options** ([`DT_GunsmithPopupOptions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/Popups/DT_GunsmithPopupOptions.json)) hold five popup rows (see the Season 02 update). Popup text is referenced by key, and only some `SourceString` values are exported.

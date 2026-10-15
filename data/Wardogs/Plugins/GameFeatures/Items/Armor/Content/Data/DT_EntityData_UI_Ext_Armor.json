@@ -679,8 +679,8 @@
       "Description": {
         "TableId": "/Game/UI/StringTables/STRINGS_Items_Gear.STRINGS_Items_Gear",
         "Key": "Items.Gear.HeavyHelmet.Description",
-        "SourceString": "- High Damage Reduction\r\n- Protects the Head and Neck",
-        "LocalizedString": "- High Damage Reduction\r\n- Protects the Head and Neck"
+        "SourceString": "- High Damage Reduction\r\n- Protects the Head and Neck\r\n- Low Suppression Reduction",
+        "LocalizedString": "- High Damage Reduction\r\n- Protects the Head and Neck\r\n- Low Suppression Reduction"
       },
       "Category": {
         "TagName": "Item.Category.Armor"
@@ -728,8 +728,8 @@
           "Value": {
             "TableId": "/Game/UI/StringTables/STRINGS_Items_Gear.STRINGS_Items_Gear",
             "Key": "Items.Gear.HeavyHelmet.Description",
-            "SourceString": "- High Damage Reduction\r\n- Protects the Head and Neck",
-            "LocalizedString": "- High Damage Reduction\r\n- Protects the Head and Neck"
+            "SourceString": "- High Damage Reduction\r\n- Protects the Head and Neck\r\n- Low Suppression Reduction",
+            "LocalizedString": "- High Damage Reduction\r\n- Protects the Head and Neck\r\n- Low Suppression Reduction"
           }
         },
         {
@@ -788,8 +788,8 @@
       "Description": {
         "TableId": "/Game/UI/StringTables/STRINGS_Items_Gear.STRINGS_Items_Gear",
         "Key": "Items.Gear.SuperHeavyHelmet.Description",
-        "SourceString": "- Very High Damage Reduction\r\n- Protects the Head and Neck",
-        "LocalizedString": "- Very High Damage Reduction\r\n- Protects the Head and Neck"
+        "SourceString": "- Very High Damage Reduction\r\n- Protects the Head and Neck\r\n- High Suppression Reduction\r\n- Strongly muffles the sounds around you",
+        "LocalizedString": "- Very High Damage Reduction\r\n- Protects the Head and Neck\r\n- High Suppression Reduction\r\n- Strongly muffles the sounds around you"
       },
       "Category": {
         "TagName": "Item.Category.Armor"
@@ -837,8 +837,8 @@
           "Value": {
             "TableId": "/Game/UI/StringTables/STRINGS_Items_Gear.STRINGS_Items_Gear",
             "Key": "Items.Gear.SuperHeavyHelmet.Description",
-            "SourceString": "- Very High Damage Reduction\r\n- Protects the Head and Neck",
-            "LocalizedString": "- Very High Damage Reduction\r\n- Protects the Head and Neck"
+            "SourceString": "- Very High Damage Reduction\r\n- Protects the Head and Neck\r\n- High Suppression Reduction\r\n- Strongly muffles the sounds around you",
+            "LocalizedString": "- Very High Damage Reduction\r\n- Protects the Head and Neck\r\n- High Suppression Reduction\r\n- Strongly muffles the sounds around you"
           }
         },
         {
@@ -1428,6 +1428,214 @@
       },
       "Tag": {
         "TagName": "Id.Item.GhillieHelmet.Dead"
+      }
+    },
+    "Id.Item.PilotHelmet": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Gear.STRINGS_Items_Gear",
+        "Key": "Item.Gear.PilotHelmet",
+        "SourceString": "Pilot Helmet",
+        "LocalizedString": "Pilot Helmet"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Gear.STRINGS_Items_Gear",
+        "Key": "Item.Gear.PilotHelmet.Description",
+        "SourceString": "- Low Damage Reduction\r\n- Protects the Head\r\n- Muffles Vehicle Audio\r\n- Highlights Target Vehicles ",
+        "LocalizedString": "- Low Damage Reduction\r\n- Protects the Head\r\n- Muffles Vehicle Audio\r\n- Highlights Target Vehicles "
+      },
+      "Category": {
+        "TagName": "Item.Category.Armor"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "None"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Gear"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Gear"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_General.STRINGS_Items_General",
+            "Key": "Items.General.Armour",
+            "SourceString": "Armor",
+            "LocalizedString": "Armor"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Gear.STRINGS_Items_Gear",
+            "Key": "Item.Gear.PilotHelmet.Description",
+            "SourceString": "- Low Damage Reduction\r\n- Protects the Head\r\n- Muffles Vehicle Audio\r\n- Highlights Target Vehicles ",
+            "LocalizedString": "- Low Damage Reduction\r\n- Protects the Head\r\n- Muffles Vehicle Audio\r\n- Highlights Target Vehicles "
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Gear.STRINGS_Items_Gear",
+            "Key": "Items.Gear.LightHelmet.Flavor",
+            "SourceString": "A Lightweight ballistics helmet offering slight protection from incoming fire.",
+            "LocalizedString": "A Lightweight ballistics helmet offering slight protection from incoming fire."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Utility/T_UI_Icon_Utility_TacVest1star_Textured_512x512.T_UI_Icon_Utility_TacVest1star_Textured_512x512",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Vendor/Gear/T_UI_Gear_PilotHelmet.T_UI_Gear_PilotHelmet",
+            "Value": [
+              "UI.Icon.Inventory.Equipment",
+              "UI.Icon.Inventory.Container",
+              "UI.Icon.Default",
+              "UI.Icon.EventLog.Overview",
+              "UI.Icon.Vendor"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "Id.Item.PilotHelmet"
+      }
+    },
+    "Id.Item.TankHelmet": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Gear.STRINGS_Items_Gear",
+        "Key": "Item.Gear.TankHelmet",
+        "SourceString": "Tank Helmet",
+        "LocalizedString": "Tank Helmet"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Gear.STRINGS_Items_Gear",
+        "Key": "Item.Gear.TankHelmet.Description",
+        "SourceString": "- High Damage Reduction\r\n- Protects the Head and Neck\r\n- Muffles Vehicle and Infantry Audio\r\n- Remove Suppression and Tinnitus",
+        "LocalizedString": "- High Damage Reduction\r\n- Protects the Head and Neck\r\n- Muffles Vehicle and Infantry Audio\r\n- Remove Suppression and Tinnitus"
+      },
+      "Category": {
+        "TagName": "Item.Category.Armor"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "None"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Gear"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Gear"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_General.STRINGS_Items_General",
+            "Key": "Items.General.Armour",
+            "SourceString": "Armor",
+            "LocalizedString": "Armor"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Gear.STRINGS_Items_Gear",
+            "Key": "Item.Gear.TankHelmet.Description",
+            "SourceString": "- High Damage Reduction\r\n- Protects the Head and Neck\r\n- Muffles Vehicle and Infantry Audio\r\n- Remove Suppression and Tinnitus",
+            "LocalizedString": "- High Damage Reduction\r\n- Protects the Head and Neck\r\n- Muffles Vehicle and Infantry Audio\r\n- Remove Suppression and Tinnitus"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Gear.STRINGS_Items_Gear",
+            "Key": "Item.Gear.TankHelmet.Flavor",
+            "SourceString": "A Tank helmet offering good protection to the head while helping reduce explosive effects.",
+            "LocalizedString": "A Tank helmet offering good protection to the head while helping reduce explosive effects."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Utility/T_UI_Icon_Utility_TacVest1star_Textured_512x512.T_UI_Icon_Utility_TacVest1star_Textured_512x512",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Vendor/Gear/T_UI_Gear_TankHelmet.T_UI_Gear_TankHelmet",
+            "Value": [
+              "UI.Icon.Inventory.Equipment",
+              "UI.Icon.Inventory.Container",
+              "UI.Icon.Default",
+              "UI.Icon.EventLog.Overview",
+              "UI.Icon.Vendor"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "Id.Item.TankHelmet"
       }
     }
   }

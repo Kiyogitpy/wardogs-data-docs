@@ -29,8 +29,8 @@
               "ObjectName": "AnimMontage'AM_TP_Scout_Reload_Weap'",
               "ObjectPath": "/WEPN_035/Animation/Weapon/TP/AM_TP_Scout_Reload_Weap.0"
             },
-            "bOverrideLength": false,
-            "OverrideLength": 5.0,
+            "bOverrideLength": true,
+            "OverrideLength": 3.0,
             "ItemBlendOutTime": 0.1,
             "PlayerBlendOutTime": 0.1
           },
@@ -63,8 +63,8 @@
               "ObjectName": "AnimMontage'AM_TP_Scout_Reload_Weap'",
               "ObjectPath": "/WEPN_035/Animation/Weapon/TP/AM_TP_Scout_Reload_Weap.0"
             },
-            "bOverrideLength": false,
-            "OverrideLength": 1.25,
+            "bOverrideLength": true,
+            "OverrideLength": 3.0,
             "ItemBlendOutTime": 0.1,
             "PlayerBlendOutTime": 0.1
           },
@@ -893,7 +893,10 @@
               "ObjectName": "AnimMontage'AM_FP_AR_Door_Interact'",
               "ObjectPath": "/Game/Animation/Characters/Weapons/Doors/AM_FP_AR_Door_Interact.0"
             },
-            "ThirdPersonPlayerAnimation": null,
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_Scout_Door_Interact'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Doors/AM_TP_Scout_Door_Interact.0"
+            },
             "FirstPersonItemAnimation": null,
             "ThirdPersonItemAnimation": null,
             "bOverrideLength": false,
@@ -2707,6 +2710,78 @@
             "ThirdPersonAsset": {
               "ObjectName": "AnimSequence'A_TP_M4_FGP_14_Pose'",
               "ObjectPath": "/WEPN_002/Animations/Character/Sequence/TP/Foregrips/A_TP_M4_FGP_14_Pose.0"
+            }
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Holdable.Inspect.Empty"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Scout_Inspect'",
+              "ObjectPath": "/WEPN_035/Animation/Character/AM_FP_Scout_Inspect.0"
+            },
+            "ThirdPersonPlayerAnimation": null,
+            "FirstPersonItemAnimation": null,
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Holdable.Inspect.Fallback"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Scout_Inspect'",
+              "ObjectPath": "/WEPN_035/Animation/Character/AM_FP_Scout_Inspect.0"
+            },
+            "ThirdPersonPlayerAnimation": null,
+            "FirstPersonItemAnimation": null,
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Character.PickUp"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AR_Item_Pickup'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/AssaultRifle/AM_FP_AR_Item_Pickup.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Item_Pick_Up'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Item_Pick_Drop/AM_TP_AK74M_Item_Pick_Up.0"
             }
           },
           "Overrides": [],

@@ -1506,6 +1506,28 @@
           "NotifyText": {
             "CultureInvariantString": null
           }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.CargoRestricted"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Vehicle.Inventory",
+            "SourceString": "ACCESS",
+            "LocalizedString": "ACCESS"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Vehicle.Inventory.PublicAccess.Denied",
+            "SourceString": "(Squad Locked)",
+            "LocalizedString": "(Squad Locked)"
+          }
         }
       ],
       "Tag": {

@@ -1,0 +1,32 @@
+--- export: UDataTable / DT_ChallengesFeedActions_Crowbar ---
+{
+  "Type": "DataTable",
+  "Name": "DT_ChallengesFeedActions_Crowbar",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Crowbar/Rewards/DT_ChallengesFeedActions_Crowbar",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDRewardFeedActionDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Challenges.Rewards.Crowbar.DoorForcedOpen": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.Crowbar.DoorForcedOpen",
+        "SourceString": "Door Breached",
+        "LocalizedString": "Door Breached"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.HealedScore"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.Crowbar.DoorForcedOpen"
+      }
+    }
+  }
+}

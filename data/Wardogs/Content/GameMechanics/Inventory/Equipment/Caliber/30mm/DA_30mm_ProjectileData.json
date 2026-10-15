@@ -47,9 +47,17 @@
         }
       },
       "SuppressionData": {
-        "BaseSuppression": 0.55,
+        "BaseSuppression": 0.75,
+        "DistanceFalloffRange": {
+          "Min": 1.5,
+          "Max": 5.0
+        },
         "DistanceFalloffCurve": {
-          "EditorCurveData": {}
+          "EditorCurveData": {},
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_SuppressionCurve_Special'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/CR_SuppressionCurve_Special.0"
+          }
         }
       },
       "AttachedEffect": {

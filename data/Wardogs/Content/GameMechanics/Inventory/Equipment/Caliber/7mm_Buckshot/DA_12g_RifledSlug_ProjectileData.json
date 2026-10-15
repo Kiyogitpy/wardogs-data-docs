@@ -46,9 +46,9 @@
         }
       },
       "SuppressionData": {
-        "BaseSuppression": 0.5,
+        "BaseSuppression": 0.45,
         "DistanceFalloffRange": {
-          "Min": 0.1,
+          "Min": 1.0,
           "Max": 2.5
         },
         "DistanceFalloffCurve": {
@@ -88,6 +88,10 @@
                 "LeaveTangentWeight": 0.0
               }
             ]
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_SuppressionCurve_Medium'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/CR_SuppressionCurve_Medium.0"
           }
         }
       },

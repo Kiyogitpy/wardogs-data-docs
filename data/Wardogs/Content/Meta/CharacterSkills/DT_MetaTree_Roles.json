@@ -66,7 +66,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MusicTape.01"
+            "TagName": "Id.Item.MusicTape.06"
           },
           "LevelsData": [
             {
@@ -166,7 +166,7 @@
         },
         {
           "ID": {
-            "TagName": "Vehicle.Variant.Land.Wheeled.DuneBuggy.Default"
+            "TagName": "Vehicle.Variant.Land.Wheeled.WHL_08.Default"
           },
           "LevelsData": [
             {
@@ -190,6 +190,56 @@
                             "TagName": "Attribute.Meta.XP.Role.Driver"
                           },
                           "MinLevel": 8,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 50000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Vehicle.Variant.Land.Wheeled.DuneBuggy.Default"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Driver"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Driver"
+                          },
+                          "MinLevel": 9,
                           "bInvert": false,
                           "Operator": "EWorldConditionOperator::Copy",
                           "NextExpressionDepth": 0
@@ -266,7 +316,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MusicTape.03"
+            "TagName": "Id.Item.MusicTape.07"
           },
           "LevelsData": [
             {
@@ -308,7 +358,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 1500
+                  "Value": 2500
                 }
               ]
             }
@@ -317,6 +367,56 @@
         {
           "ID": {
             "TagName": "Vehicle.Variant.Land.Wheeled.Humvee.Default"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Driver"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Driver"
+                          },
+                          "MinLevel": 14,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 75000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Vehicle.Variant.Land.Wheeled.Ural.Battle"
           },
           "LevelsData": [
             {
@@ -358,7 +458,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 25000
+                  "Value": 75000
                 }
               ]
             }
@@ -366,7 +466,7 @@
         },
         {
           "ID": {
-            "TagName": "ID.Item.VehicleSupplyCrate.Large"
+            "TagName": "Vehicle.Variant.Land.Wheeled.WHL_08.MachineGun"
           },
           "LevelsData": [
             {
@@ -408,7 +508,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 20000
+                  "Value": 125000
                 }
               ]
             }
@@ -416,7 +516,7 @@
         },
         {
           "ID": {
-            "TagName": "Vehicle.Variant.Land.Wheeled.Ural.Battle"
+            "TagName": "ID.Item.VehicleSupplyCrate.Large"
           },
           "LevelsData": [
             {
@@ -439,7 +539,7 @@
                           "XPResourceTag": {
                             "TagName": "Attribute.Meta.XP.Role.Driver"
                           },
-                          "MinLevel": 18,
+                          "MinLevel": 17,
                           "bInvert": false,
                           "Operator": "EWorldConditionOperator::Copy",
                           "NextExpressionDepth": 0
@@ -458,7 +558,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 75000
+                  "Value": 20000
                 }
               ]
             }
@@ -466,7 +566,7 @@
         },
         {
           "ID": {
-            "TagName": "Vehicle.Variant.Land.Wheeled.Humvee.MachineGun"
+            "TagName": "Vehicle.Variant.Land.Tracked.TNK_04.Default"
           },
           "LevelsData": [
             {
@@ -508,7 +608,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 125000
+                  "Value": 250000
                 }
               ]
             }
@@ -516,7 +616,57 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MusicTape.08"
+            "TagName": "Vehicle.Variant.Land.Wheeled.Ural.Attack"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Driver"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Driver"
+                          },
+                          "MinLevel": 22,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 100000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.MusicTape.02"
           },
           "LevelsData": [
             {
@@ -558,7 +708,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 2500
+                  "Value": 5000
                 }
               ]
             }
@@ -566,7 +716,57 @@
         },
         {
           "ID": {
-            "TagName": "Vehicle.Variant.Land.Wheeled.Ural.Attack"
+            "TagName": "Vehicle.Variant.Land.Wheeled.Humvee.MachineGun"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Driver"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Driver"
+                          },
+                          "MinLevel": 24,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 125000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Vehicle.Variant.Land.Tracked.TNK_01.AntiAir"
           },
           "LevelsData": [
             {
@@ -608,7 +808,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 125000
+                  "Value": 300000
                 }
               ]
             }
@@ -616,7 +816,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MusicTape.07"
+            "TagName": "Id.Item.MusicTape.03"
           },
           "LevelsData": [
             {
@@ -658,7 +858,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 5000
+                  "Value": 10000
                 }
               ]
             }
@@ -709,6 +909,106 @@
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
                   "Value": 150000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Vehicle.Variant.Land.Tracked.TNK_01.Artillery"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Driver"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Driver"
+                          },
+                          "MinLevel": 31,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 350000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.MusicTape.05"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Driver"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Driver"
+                          },
+                          "MinLevel": 33,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 25000
                 }
               ]
             }
@@ -773,7 +1073,7 @@
       "Nodes": [
         {
           "ID": {
-            "TagName": "Id.Item.MUZL_024"
+            "TagName": "Id.Item.MUZL_039"
           },
           "LevelsData": [
             {
@@ -823,7 +1123,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.AK74M"
+            "TagName": "Id.Item.TAR21"
           },
           "LevelsData": [
             {
@@ -873,7 +1173,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.AK74MMagazine"
+            "TagName": "Id.Item.STANAGMagazine"
           },
           "LevelsData": [
             {
@@ -923,7 +1223,107 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MUZL_014"
+            "TagName": "Id.Item.C4Trigger"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Infantry"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Infantry"
+                          },
+                          "MinLevel": 4,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 15000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.C4Explosive"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Infantry"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Infantry"
+                          },
+                          "MinLevel": 4,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.MUZL_024"
           },
           "LevelsData": [
             {
@@ -965,7 +1365,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 7500
+                  "Value": 12500
                 }
               ]
             }
@@ -973,57 +1373,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.STANAGMagazine"
-          },
-          "LevelsData": [
-            {
-              "Prerequisites": {
-                "QueryDefinition": {
-                  "StaticStruct": {
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    },
-                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
-                  },
-                  "SharedDefinition": {
-                    "Conditions": {
-                      "Structs": [
-                        {
-                          "MetaId": {
-                            "TagName": "Meta.Role.Infantry"
-                          },
-                          "XPResourceTag": {
-                            "TagName": "Attribute.Meta.XP.Role.Infantry"
-                          },
-                          "MinLevel": 6,
-                          "bInvert": false,
-                          "Operator": "EWorldConditionOperator::Copy",
-                          "NextExpressionDepth": 0
-                        }
-                      ]
-                    },
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    }
-                  }
-                }
-              },
-              "Cost": [
-                {
-                  "Key": {
-                    "TagName": "Attribute.Meta.Currency.Cash"
-                  },
-                  "Value": 10000
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "ID": {
-            "TagName": "ID.Item.PWSCQB74Muzzle"
+            "TagName": "Id.Item.MUZL_013"
           },
           "LevelsData": [
             {
@@ -1065,7 +1415,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 12500
+                  "Value": 7500
                 }
               ]
             }
@@ -1223,7 +1573,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.SGHT_026"
+            "TagName": "Id.Item.SGHT_028"
           },
           "LevelsData": [
             {
@@ -1265,7 +1615,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 10000
+                  "Value": 15000
                 }
               ]
             }
@@ -1273,7 +1623,57 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.FGP_03"
+            "TagName": "Id.Item.Molotov"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Infantry"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Infantry"
+                          },
+                          "MinLevel": 13,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 25000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.FGRP_014"
           },
           "LevelsData": [
             {
@@ -1373,7 +1773,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MUZL_039"
+            "TagName": "ID.Item.PWSCQB74Muzzle"
           },
           "LevelsData": [
             {
@@ -1423,7 +1823,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.SGHT_028"
+            "TagName": "Id.Item.OPT_08"
           },
           "LevelsData": [
             {
@@ -1465,7 +1865,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 15000
+                  "Value": 10000
                 }
               ]
             }
@@ -1473,7 +1873,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MZL_10"
+            "TagName": "Id.Item.MZL_09"
           },
           "LevelsData": [
             {
@@ -1515,7 +1915,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 17500
+                  "Value": 25000
                 }
               ]
             }
@@ -1523,7 +1923,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.M4"
+            "TagName": "Id.Item.WEPN_037"
           },
           "LevelsData": [
             {
@@ -1573,7 +1973,57 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MZL_07"
+            "TagName": "Id.Item.MAGZ_069"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Infantry"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Infantry"
+                          },
+                          "MinLevel": 20,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.MUZL_014"
           },
           "LevelsData": [
             {
@@ -1623,7 +2073,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.EotechHoloSight"
+            "TagName": "Id.Item.SGHT_016"
           },
           "LevelsData": [
             {
@@ -1665,7 +2115,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 20000
+                  "Value": 10000
                 }
               ]
             }
@@ -1673,7 +2123,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MUZL_013"
+            "TagName": "Id.Item.MUZL_032"
           },
           "LevelsData": [
             {
@@ -1715,7 +2165,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 20000
+                  "Value": 30000
                 }
               ]
             }
@@ -1773,7 +2223,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.3xScope"
+            "TagName": "Id.Item.SGHT_023"
           },
           "LevelsData": [
             {
@@ -1815,7 +2265,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 25000
+                  "Value": 30000
                 }
               ]
             }
@@ -1823,7 +2273,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MZL_09"
+            "TagName": "Id.Item.MZL_10"
           },
           "LevelsData": [
             {
@@ -1865,7 +2315,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 25000
+                  "Value": 17500
                 }
               ]
             }
@@ -1873,7 +2323,57 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MUZL_032"
+            "TagName": "Id.Item.M4"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Infantry"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Infantry"
+                          },
+                          "MinLevel": 28,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 150000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.MZL_07"
           },
           "LevelsData": [
             {
@@ -1915,7 +2415,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 30000
+                  "Value": 22500
                 }
               ]
             }
@@ -1973,7 +2473,57 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.SGHT_023"
+            "TagName": "Id.Item.MUZL_067"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Infantry"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Infantry"
+                          },
+                          "MinLevel": 32,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 35000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.SGHT_029"
           },
           "LevelsData": [
             {
@@ -2015,7 +2565,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 30000
+                  "Value": 15000
                 }
               ]
             }
@@ -2065,7 +2615,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 200000
+                  "Value": 250000
                 }
               ]
             }
@@ -2123,7 +2673,107 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.FGRP_014"
+            "TagName": "Id.Item.AK74MMagazine75rnd"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Infantry"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Infantry"
+                          },
+                          "MinLevel": 36,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 75000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.MUZL_068"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Infantry"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Infantry"
+                          },
+                          "MinLevel": 37,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 37500
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.FGRP_006"
           },
           "LevelsData": [
             {
@@ -2173,7 +2823,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.AK74MMagazine75rnd"
+            "TagName": "Id.Item.MUZL_069"
           },
           "LevelsData": [
             {
@@ -2215,7 +2865,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 75000
+                  "Value": 40000
                 }
               ]
             }
@@ -2223,7 +2873,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.SGHT_030"
+            "TagName": "Id.Item.4xElcanSpectr"
           },
           "LevelsData": [
             {
@@ -2265,7 +2915,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 35000
+                  "Value": 15000
                 }
               ]
             }
@@ -2430,7 +3080,7 @@
       "Nodes": [
         {
           "ID": {
-            "TagName": "Id.Item.MUZL_019"
+            "TagName": "Id.Item.MUZL_037"
           },
           "LevelsData": [
             {
@@ -2530,57 +3180,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MAGZ_061"
-          },
-          "LevelsData": [
-            {
-              "Prerequisites": {
-                "QueryDefinition": {
-                  "StaticStruct": {
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    },
-                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
-                  },
-                  "SharedDefinition": {
-                    "Conditions": {
-                      "Structs": [
-                        {
-                          "MetaId": {
-                            "TagName": "Meta.Role.Medic"
-                          },
-                          "XPResourceTag": {
-                            "TagName": "Attribute.Meta.XP.Role.Medic"
-                          },
-                          "MinLevel": 3,
-                          "bInvert": false,
-                          "Operator": "EWorldConditionOperator::Copy",
-                          "NextExpressionDepth": 0
-                        }
-                      ]
-                    },
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    }
-                  }
-                }
-              },
-              "Cost": [
-                {
-                  "Key": {
-                    "TagName": "Attribute.Meta.Currency.Cash"
-                  },
-                  "Value": 7500
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "ID": {
-            "TagName": "Id.Item.SMG_03"
+            "TagName": "Id.Item.WEPN_028"
           },
           "LevelsData": [
             {
@@ -2630,7 +3230,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.SMG_03Magazine"
+            "TagName": "Id.Item.MAGZ_064"
           },
           "LevelsData": [
             {
@@ -2730,7 +3330,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.SGHT_016"
+            "TagName": "Id.Item.EotechHoloSight"
           },
           "LevelsData": [
             {
@@ -2772,6 +3372,56 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
+                  "Value": 20000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.MAGZ_004"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Medic"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Medic"
+                          },
+                          "MinLevel": 8,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
                   "Value": 10000
                 }
               ]
@@ -2780,107 +3430,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MAGZ_059"
-          },
-          "LevelsData": [
-            {
-              "Prerequisites": {
-                "QueryDefinition": {
-                  "StaticStruct": {
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    },
-                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
-                  },
-                  "SharedDefinition": {
-                    "Conditions": {
-                      "Structs": [
-                        {
-                          "MetaId": {
-                            "TagName": "Meta.Role.Medic"
-                          },
-                          "XPResourceTag": {
-                            "TagName": "Attribute.Meta.XP.Role.Medic"
-                          },
-                          "MinLevel": 7,
-                          "bInvert": false,
-                          "Operator": "EWorldConditionOperator::Copy",
-                          "NextExpressionDepth": 0
-                        }
-                      ]
-                    },
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    }
-                  }
-                }
-              },
-              "Cost": [
-                {
-                  "Key": {
-                    "TagName": "Attribute.Meta.Currency.Cash"
-                  },
-                  "Value": 7500
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "ID": {
             "TagName": "Id.Item.SuperBandage"
-          },
-          "LevelsData": [
-            {
-              "Prerequisites": {
-                "QueryDefinition": {
-                  "StaticStruct": {
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    },
-                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
-                  },
-                  "SharedDefinition": {
-                    "Conditions": {
-                      "Structs": [
-                        {
-                          "MetaId": {
-                            "TagName": "Meta.Role.Medic"
-                          },
-                          "XPResourceTag": {
-                            "TagName": "Attribute.Meta.XP.Role.Medic"
-                          },
-                          "MinLevel": 9,
-                          "bInvert": false,
-                          "Operator": "EWorldConditionOperator::Copy",
-                          "NextExpressionDepth": 0
-                        }
-                      ]
-                    },
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    }
-                  }
-                }
-              },
-              "Cost": [
-                {
-                  "Key": {
-                    "TagName": "Attribute.Meta.Currency.Cash"
-                  },
-                  "Value": 25000
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "ID": {
-            "TagName": "Id.Item.MP9Magazine"
           },
           "LevelsData": [
             {
@@ -2922,7 +3472,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 10000
+                  "Value": 25000
                 }
               ]
             }
@@ -2930,7 +3480,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.Defibrillator.Standard"
+            "TagName": "Id.Item.FGP_03"
           },
           "LevelsData": [
             {
@@ -2954,56 +3504,6 @@
                             "TagName": "Attribute.Meta.XP.Role.Medic"
                           },
                           "MinLevel": 11,
-                          "bInvert": false,
-                          "Operator": "EWorldConditionOperator::Copy",
-                          "NextExpressionDepth": 0
-                        }
-                      ]
-                    },
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    }
-                  }
-                }
-              },
-              "Cost": [
-                {
-                  "Key": {
-                    "TagName": "Attribute.Meta.Currency.Cash"
-                  },
-                  "Value": 50000
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "ID": {
-            "TagName": "Id.Item.MUZL_052"
-          },
-          "LevelsData": [
-            {
-              "Prerequisites": {
-                "QueryDefinition": {
-                  "StaticStruct": {
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    },
-                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
-                  },
-                  "SharedDefinition": {
-                    "Conditions": {
-                      "Structs": [
-                        {
-                          "MetaId": {
-                            "TagName": "Meta.Role.Medic"
-                          },
-                          "XPResourceTag": {
-                            "TagName": "Attribute.Meta.XP.Role.Medic"
-                          },
-                          "MinLevel": 12,
                           "bInvert": false,
                           "Operator": "EWorldConditionOperator::Copy",
                           "NextExpressionDepth": 0
@@ -3053,7 +3553,7 @@
                           "XPResourceTag": {
                             "TagName": "Attribute.Meta.XP.Role.Medic"
                           },
-                          "MinLevel": 13,
+                          "MinLevel": 12,
                           "bInvert": false,
                           "Operator": "EWorldConditionOperator::Copy",
                           "NextExpressionDepth": 0
@@ -3080,7 +3580,57 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.StimPen"
+            "TagName": "Id.Item.MUZL_058"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Medic"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Medic"
+                          },
+                          "MinLevel": 13,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 12500
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.MedKit.Standard"
           },
           "LevelsData": [
             {
@@ -3122,7 +3672,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 25000
+                  "Value": 50000
                 }
               ]
             }
@@ -3130,7 +3680,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.WEPN_028"
+            "TagName": "Id.Item.SMG_03"
           },
           "LevelsData": [
             {
@@ -3172,7 +3722,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 75000
+                  "Value": 50000
                 }
               ]
             }
@@ -3180,7 +3730,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MAGZ_064"
+            "TagName": "Id.Item.SMG_03Magazine"
           },
           "LevelsData": [
             {
@@ -3230,7 +3780,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.FGRP_006"
+            "TagName": "Id.Item.StimPen"
           },
           "LevelsData": [
             {
@@ -3272,6 +3822,56 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
+                  "Value": 25000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.MAGZ_059"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Medic"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Medic"
+                          },
+                          "MinLevel": 17,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
                   "Value": 10000
                 }
               ]
@@ -3280,7 +3880,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MUZL_058"
+            "TagName": "Id.Item.MUZL_054"
           },
           "LevelsData": [
             {
@@ -3330,7 +3930,57 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MAGZ_066"
+            "TagName": "Id.Item.SGHT_027"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Medic"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Medic"
+                          },
+                          "MinLevel": 19,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 15000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.MP9"
           },
           "LevelsData": [
             {
@@ -3372,7 +4022,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 15000
+                  "Value": 75000
                 }
               ]
             }
@@ -3380,7 +4030,57 @@
         },
         {
           "ID": {
-            "TagName": "ID.Item.SmokeGrenade.Black"
+            "TagName": "Id.Item.MAGZ_061"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Medic"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Medic"
+                          },
+                          "MinLevel": 20,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.MAGZ_046"
           },
           "LevelsData": [
             {
@@ -3430,7 +4130,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MUZL_054"
+            "TagName": "Id.Item.Defibrillator.Standard"
           },
           "LevelsData": [
             {
@@ -3472,7 +4172,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 20000
+                  "Value": 110000
                 }
               ]
             }
@@ -3480,7 +4180,57 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MedKit.Standard"
+            "TagName": "ID.Item.SmokeGrenade.Black"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Medic"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Medic"
+                          },
+                          "MinLevel": 23,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 15000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.MUZL_053"
           },
           "LevelsData": [
             {
@@ -3522,7 +4272,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 75000
+                  "Value": 20000
                 }
               ]
             }
@@ -3530,7 +4280,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MAGZ_004"
+            "TagName": "Id.Item.MAGZ_052"
           },
           "LevelsData": [
             {
@@ -3572,7 +4322,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 25000
+                  "Value": 12500
                 }
               ]
             }
@@ -3580,7 +4330,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MUZL_037"
+            "TagName": "Id.Item.MUZL_052"
           },
           "LevelsData": [
             {
@@ -3622,7 +4372,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 22500
+                  "Value": 45000
                 }
               ]
             }
@@ -3630,7 +4380,57 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.SGHT_027"
+            "TagName": "Id.Item.MUZL_051"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Medic"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Medic"
+                          },
+                          "MinLevel": 27,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 25000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.MUZL_019"
           },
           "LevelsData": [
             {
@@ -3672,7 +4472,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 15000
+                  "Value": 22500
                 }
               ]
             }
@@ -3680,7 +4480,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MAGZ_046"
+            "TagName": "Id.Item.MAGZ_056"
           },
           "LevelsData": [
             {
@@ -3730,7 +4530,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MUZL_051"
+            "TagName": "Id.Item.MP9Magazine"
           },
           "LevelsData": [
             {
@@ -3772,7 +4572,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 25000
+                  "Value": 50000
                 }
               ]
             }
@@ -3822,7 +4622,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 150000
+                  "Value": 200000
                 }
               ]
             }
@@ -3880,7 +4680,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MUZL_047"
+            "TagName": "Id.Item.MUZL_046"
           },
           "LevelsData": [
             {
@@ -3904,6 +4704,56 @@
                             "TagName": "Attribute.Meta.XP.Role.Medic"
                           },
                           "MinLevel": 36,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 40000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.MUZL_047"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Medic"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Medic"
+                          },
+                          "MinLevel": 40,
                           "bInvert": false,
                           "Operator": "EWorldConditionOperator::Copy",
                           "NextExpressionDepth": 0
@@ -3953,7 +4803,7 @@
                           "XPResourceTag": {
                             "TagName": "Attribute.Meta.XP.Role.Medic"
                           },
-                          "MinLevel": 38,
+                          "MinLevel": 43,
                           "bInvert": false,
                           "Operator": "EWorldConditionOperator::Copy",
                           "NextExpressionDepth": 0
@@ -3980,107 +4830,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MUZL_046"
-          },
-          "LevelsData": [
-            {
-              "Prerequisites": {
-                "QueryDefinition": {
-                  "StaticStruct": {
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    },
-                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
-                  },
-                  "SharedDefinition": {
-                    "Conditions": {
-                      "Structs": [
-                        {
-                          "MetaId": {
-                            "TagName": "Meta.Role.Medic"
-                          },
-                          "XPResourceTag": {
-                            "TagName": "Attribute.Meta.XP.Role.Medic"
-                          },
-                          "MinLevel": 40,
-                          "bInvert": false,
-                          "Operator": "EWorldConditionOperator::Copy",
-                          "NextExpressionDepth": 0
-                        }
-                      ]
-                    },
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    }
-                  }
-                }
-              },
-              "Cost": [
-                {
-                  "Key": {
-                    "TagName": "Attribute.Meta.Currency.Cash"
-                  },
-                  "Value": 40000
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "ID": {
-            "TagName": "Id.Item.MUZL_053"
-          },
-          "LevelsData": [
-            {
-              "Prerequisites": {
-                "QueryDefinition": {
-                  "StaticStruct": {
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    },
-                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
-                  },
-                  "SharedDefinition": {
-                    "Conditions": {
-                      "Structs": [
-                        {
-                          "MetaId": {
-                            "TagName": "Meta.Role.Medic"
-                          },
-                          "XPResourceTag": {
-                            "TagName": "Attribute.Meta.XP.Role.Medic"
-                          },
-                          "MinLevel": 43,
-                          "bInvert": false,
-                          "Operator": "EWorldConditionOperator::Copy",
-                          "NextExpressionDepth": 0
-                        }
-                      ]
-                    },
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    }
-                  }
-                }
-              },
-              "Cost": [
-                {
-                  "Key": {
-                    "TagName": "Attribute.Meta.Currency.Cash"
-                  },
-                  "Value": 45000
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "ID": {
-            "TagName": "Id.Item.MAGZ_056"
+            "TagName": "Id.Item.MAGZ_066"
           },
           "LevelsData": [
             {
@@ -4287,57 +5037,7 @@
         },
         {
           "ID": {
-            "TagName": "Vehicle.Variant.Air.Rotary.Littlebird.MountedMachineGuns"
-          },
-          "LevelsData": [
-            {
-              "Prerequisites": {
-                "QueryDefinition": {
-                  "StaticStruct": {
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    },
-                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
-                  },
-                  "SharedDefinition": {
-                    "Conditions": {
-                      "Structs": [
-                        {
-                          "MetaId": {
-                            "TagName": "Meta.Role.Pilot"
-                          },
-                          "XPResourceTag": {
-                            "TagName": "Attribute.Meta.XP.Role.Pilot"
-                          },
-                          "MinLevel": 4,
-                          "bInvert": false,
-                          "Operator": "EWorldConditionOperator::Copy",
-                          "NextExpressionDepth": 0
-                        }
-                      ]
-                    },
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    }
-                  }
-                }
-              },
-              "Cost": [
-                {
-                  "Key": {
-                    "TagName": "Attribute.Meta.Currency.Cash"
-                  },
-                  "Value": 50000
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "ID": {
-            "TagName": "Id.Item.MusicTape.02"
+            "TagName": "Id.Item.MusicTape.08"
           },
           "LevelsData": [
             {
@@ -4380,6 +5080,56 @@
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
                   "Value": 750
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Vehicle.Variant.Air.Rotary.Littlebird.MountedMachineGuns"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Pilot"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Pilot"
+                          },
+                          "MinLevel": 8,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 125000
                 }
               ]
             }
@@ -4437,7 +5187,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MusicTape.04"
+            "TagName": "Id.Item.MusicTape.01"
           },
           "LevelsData": [
             {
@@ -4479,7 +5229,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 1500
+                  "Value": 2500
                 }
               ]
             }
@@ -4537,56 +5287,6 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MusicTape.06"
-          },
-          "LevelsData": [
-            {
-              "Prerequisites": {
-                "QueryDefinition": {
-                  "StaticStruct": {
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    },
-                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
-                  },
-                  "SharedDefinition": {
-                    "Conditions": {
-                      "Structs": [
-                        {
-                          "MetaId": {
-                            "TagName": "Meta.Role.Pilot"
-                          },
-                          "XPResourceTag": {
-                            "TagName": "Attribute.Meta.XP.Role.Pilot"
-                          },
-                          "MinLevel": 23,
-                          "bInvert": false,
-                          "Operator": "EWorldConditionOperator::Copy",
-                          "NextExpressionDepth": 0
-                        }
-                      ]
-                    },
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    }
-                  }
-                }
-              },
-              "Cost": [
-                {
-                  "Key": {
-                    "TagName": "Attribute.Meta.Currency.Cash"
-                  },
-                  "Value": 2500
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "ID": {
             "TagName": "Vehicle.Variant.Air.Rotary.Littlebird.RocketPods"
           },
           "LevelsData": [
@@ -4637,6 +5337,56 @@
         },
         {
           "ID": {
+            "TagName": "Id.Item.MusicTape.09"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Pilot"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Pilot"
+                          },
+                          "MinLevel": 23,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 10000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
             "TagName": "Vehicle.Variant.Air.Rotary.ROT_04.MountedMachineGuns"
           },
           "LevelsData": [
@@ -4679,7 +5429,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 75000
+                  "Value": 85000
                 }
               ]
             }
@@ -4687,7 +5437,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MusicTape.09"
+            "TagName": "Id.Item.MusicTape.04"
           },
           "LevelsData": [
             {
@@ -4729,7 +5479,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 10000
+                  "Value": 25000
                 }
               ]
             }
@@ -4779,7 +5529,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 500000
+                  "Value": 650000
                 }
               ]
             }
@@ -4886,7 +5636,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 7500
+                  "Value": 5000
                 }
               ]
             }
@@ -4944,7 +5694,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MUZL_028"
+            "TagName": "Id.Item.MUZL_042"
           },
           "LevelsData": [
             {
@@ -4986,7 +5736,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 7500
+                  "Value": 12500
                 }
               ]
             }
@@ -5086,7 +5836,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 15000
+                  "Value": 25000
                 }
               ]
             }
@@ -5094,7 +5844,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MUZL_042"
+            "TagName": "Id.Item.MUZL_028"
           },
           "LevelsData": [
             {
@@ -5136,7 +5886,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 12500
+                  "Value": 7500
                 }
               ]
             }
@@ -5187,6 +5937,56 @@
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
                   "Value": 50000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.SGHT_040"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Recon"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Recon"
+                          },
+                          "MinLevel": 10,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 12500
                 }
               ]
             }
@@ -5494,7 +6294,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.SVDMMagazine"
+            "TagName": "Id.Item.CombatBow"
           },
           "LevelsData": [
             {
@@ -5536,57 +6336,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 25000
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "ID": {
-            "TagName": "Id.Item.CombatBow"
-          },
-          "LevelsData": [
-            {
-              "Prerequisites": {
-                "QueryDefinition": {
-                  "StaticStruct": {
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    },
-                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
-                  },
-                  "SharedDefinition": {
-                    "Conditions": {
-                      "Structs": [
-                        {
-                          "MetaId": {
-                            "TagName": "Meta.Role.Recon"
-                          },
-                          "XPResourceTag": {
-                            "TagName": "Attribute.Meta.XP.Role.Recon"
-                          },
-                          "MinLevel": 17,
-                          "bInvert": false,
-                          "Operator": "EWorldConditionOperator::Copy",
-                          "NextExpressionDepth": 0
-                        }
-                      ]
-                    },
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    }
-                  }
-                }
-              },
-              "Cost": [
-                {
-                  "Key": {
-                    "TagName": "Attribute.Meta.Currency.Cash"
-                  },
-                  "Value": 125000
+                  "Value": 150000
                 }
               ]
             }
@@ -5617,7 +6367,7 @@
                           "XPResourceTag": {
                             "TagName": "Attribute.Meta.XP.Role.Recon"
                           },
-                          "MinLevel": 17,
+                          "MinLevel": 16,
                           "bInvert": false,
                           "Operator": "EWorldConditionOperator::Copy",
                           "NextExpressionDepth": 0
@@ -5644,7 +6394,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.SniperScope10x"
+            "TagName": "Id.Item.SVDMMagazine"
           },
           "LevelsData": [
             {
@@ -5667,7 +6417,7 @@
                           "XPResourceTag": {
                             "TagName": "Attribute.Meta.XP.Role.Recon"
                           },
-                          "MinLevel": 18,
+                          "MinLevel": 17,
                           "bInvert": false,
                           "Operator": "EWorldConditionOperator::Copy",
                           "NextExpressionDepth": 0
@@ -5686,7 +6436,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 40000
+                  "Value": 25000
                 }
               ]
             }
@@ -5717,7 +6467,7 @@
                           "XPResourceTag": {
                             "TagName": "Attribute.Meta.XP.Role.Recon"
                           },
-                          "MinLevel": 19,
+                          "MinLevel": 18,
                           "bInvert": false,
                           "Operator": "EWorldConditionOperator::Copy",
                           "NextExpressionDepth": 0
@@ -5767,407 +6517,7 @@
                           "XPResourceTag": {
                             "TagName": "Attribute.Meta.XP.Role.Recon"
                           },
-                          "MinLevel": 19,
-                          "bInvert": false,
-                          "Operator": "EWorldConditionOperator::Copy",
-                          "NextExpressionDepth": 0
-                        }
-                      ]
-                    },
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    }
-                  }
-                }
-              },
-              "Cost": [
-                {
-                  "Key": {
-                    "TagName": "Attribute.Meta.Currency.Cash"
-                  },
-                  "Value": 0
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "ID": {
-            "TagName": "Id.Item.MUZL_041"
-          },
-          "LevelsData": [
-            {
-              "Prerequisites": {
-                "QueryDefinition": {
-                  "StaticStruct": {
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    },
-                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
-                  },
-                  "SharedDefinition": {
-                    "Conditions": {
-                      "Structs": [
-                        {
-                          "MetaId": {
-                            "TagName": "Meta.Role.Recon"
-                          },
-                          "XPResourceTag": {
-                            "TagName": "Attribute.Meta.XP.Role.Recon"
-                          },
-                          "MinLevel": 20,
-                          "bInvert": false,
-                          "Operator": "EWorldConditionOperator::Copy",
-                          "NextExpressionDepth": 0
-                        }
-                      ]
-                    },
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    }
-                  }
-                }
-              },
-              "Cost": [
-                {
-                  "Key": {
-                    "TagName": "Attribute.Meta.Currency.Cash"
-                  },
-                  "Value": 17500
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "ID": {
-            "TagName": "Id.Item.FGRP_009"
-          },
-          "LevelsData": [
-            {
-              "Prerequisites": {
-                "QueryDefinition": {
-                  "StaticStruct": {
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    },
-                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
-                  },
-                  "SharedDefinition": {
-                    "Conditions": {
-                      "Structs": [
-                        {
-                          "MetaId": {
-                            "TagName": "Meta.Role.Recon"
-                          },
-                          "XPResourceTag": {
-                            "TagName": "Attribute.Meta.XP.Role.Recon"
-                          },
-                          "MinLevel": 21,
-                          "bInvert": false,
-                          "Operator": "EWorldConditionOperator::Copy",
-                          "NextExpressionDepth": 0
-                        }
-                      ]
-                    },
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    }
-                  }
-                }
-              },
-              "Cost": [
-                {
-                  "Key": {
-                    "TagName": "Attribute.Meta.Currency.Cash"
-                  },
-                  "Value": 30000
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "ID": {
-            "TagName": "Id.Item.Claymore"
-          },
-          "LevelsData": [
-            {
-              "Prerequisites": {
-                "QueryDefinition": {
-                  "StaticStruct": {
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    },
-                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
-                  },
-                  "SharedDefinition": {
-                    "Conditions": {
-                      "Structs": [
-                        {
-                          "MetaId": {
-                            "TagName": "Meta.Role.Recon"
-                          },
-                          "XPResourceTag": {
-                            "TagName": "Attribute.Meta.XP.Role.Recon"
-                          },
-                          "MinLevel": 22,
-                          "bInvert": false,
-                          "Operator": "EWorldConditionOperator::Copy",
-                          "NextExpressionDepth": 0
-                        }
-                      ]
-                    },
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    }
-                  }
-                }
-              },
-              "Cost": [
-                {
-                  "Key": {
-                    "TagName": "Attribute.Meta.Currency.Cash"
-                  },
-                  "Value": 50000
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "ID": {
-            "TagName": "Id.Item.MUZL_022"
-          },
-          "LevelsData": [
-            {
-              "Prerequisites": {
-                "QueryDefinition": {
-                  "StaticStruct": {
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    },
-                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
-                  },
-                  "SharedDefinition": {
-                    "Conditions": {
-                      "Structs": [
-                        {
-                          "MetaId": {
-                            "TagName": "Meta.Role.Recon"
-                          },
-                          "XPResourceTag": {
-                            "TagName": "Attribute.Meta.XP.Role.Recon"
-                          },
-                          "MinLevel": 23,
-                          "bInvert": false,
-                          "Operator": "EWorldConditionOperator::Copy",
-                          "NextExpressionDepth": 0
-                        }
-                      ]
-                    },
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    }
-                  }
-                }
-              },
-              "Cost": [
-                {
-                  "Key": {
-                    "TagName": "Attribute.Meta.Currency.Cash"
-                  },
-                  "Value": 20000
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "ID": {
-            "TagName": "Id.Item.GhillieHelmet"
-          },
-          "LevelsData": [
-            {
-              "Prerequisites": {
-                "QueryDefinition": {
-                  "StaticStruct": {
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    },
-                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
-                  },
-                  "SharedDefinition": {
-                    "Conditions": {
-                      "Structs": [
-                        {
-                          "MetaId": {
-                            "TagName": "Meta.Role.Recon"
-                          },
-                          "XPResourceTag": {
-                            "TagName": "Attribute.Meta.XP.Role.Recon"
-                          },
-                          "MinLevel": 24,
-                          "bInvert": false,
-                          "Operator": "EWorldConditionOperator::Copy",
-                          "NextExpressionDepth": 0
-                        }
-                      ]
-                    },
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    }
-                  }
-                }
-              },
-              "Cost": [
-                {
-                  "Key": {
-                    "TagName": "Attribute.Meta.Currency.Cash"
-                  },
-                  "Value": 60000
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "ID": {
-            "TagName": "Id.Item.GhillieArmor"
-          },
-          "LevelsData": [
-            {
-              "Prerequisites": {
-                "QueryDefinition": {
-                  "StaticStruct": {
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    },
-                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
-                  },
-                  "SharedDefinition": {
-                    "Conditions": {
-                      "Structs": [
-                        {
-                          "MetaId": {
-                            "TagName": "Meta.Role.Recon"
-                          },
-                          "XPResourceTag": {
-                            "TagName": "Attribute.Meta.XP.Role.Recon"
-                          },
-                          "MinLevel": 24,
-                          "bInvert": false,
-                          "Operator": "EWorldConditionOperator::Copy",
-                          "NextExpressionDepth": 0
-                        }
-                      ]
-                    },
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    }
-                  }
-                }
-              },
-              "Cost": [
-                {
-                  "Key": {
-                    "TagName": "Attribute.Meta.Currency.Cash"
-                  },
-                  "Value": 80000
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "ID": {
-            "TagName": "Id.Item.MK22"
-          },
-          "LevelsData": [
-            {
-              "Prerequisites": {
-                "QueryDefinition": {
-                  "StaticStruct": {
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    },
-                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
-                  },
-                  "SharedDefinition": {
-                    "Conditions": {
-                      "Structs": [
-                        {
-                          "MetaId": {
-                            "TagName": "Meta.Role.Recon"
-                          },
-                          "XPResourceTag": {
-                            "TagName": "Attribute.Meta.XP.Role.Recon"
-                          },
-                          "MinLevel": 25,
-                          "bInvert": false,
-                          "Operator": "EWorldConditionOperator::Copy",
-                          "NextExpressionDepth": 0
-                        }
-                      ]
-                    },
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    }
-                  }
-                }
-              },
-              "Cost": [
-                {
-                  "Key": {
-                    "TagName": "Attribute.Meta.Currency.Cash"
-                  },
-                  "Value": 150000
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "ID": {
-            "TagName": "Id.Item.MAGZ_034"
-          },
-          "LevelsData": [
-            {
-              "Prerequisites": {
-                "QueryDefinition": {
-                  "StaticStruct": {
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    },
-                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
-                  },
-                  "SharedDefinition": {
-                    "Conditions": {
-                      "Structs": [
-                        {
-                          "MetaId": {
-                            "TagName": "Meta.Role.Recon"
-                          },
-                          "XPResourceTag": {
-                            "TagName": "Attribute.Meta.XP.Role.Recon"
-                          },
-                          "MinLevel": 25,
+                          "MinLevel": 18,
                           "bInvert": false,
                           "Operator": "EWorldConditionOperator::Copy",
                           "NextExpressionDepth": 0
@@ -6217,7 +6567,7 @@
                           "XPResourceTag": {
                             "TagName": "Attribute.Meta.XP.Role.Recon"
                           },
-                          "MinLevel": 26,
+                          "MinLevel": 19,
                           "bInvert": false,
                           "Operator": "EWorldConditionOperator::Copy",
                           "NextExpressionDepth": 0
@@ -6237,156 +6587,6 @@
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
                   "Value": 45000
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "ID": {
-            "TagName": "Id.Item.GhillieHelmet.Dead"
-          },
-          "LevelsData": [
-            {
-              "Prerequisites": {
-                "QueryDefinition": {
-                  "StaticStruct": {
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    },
-                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
-                  },
-                  "SharedDefinition": {
-                    "Conditions": {
-                      "Structs": [
-                        {
-                          "MetaId": {
-                            "TagName": "Meta.Role.Recon"
-                          },
-                          "XPResourceTag": {
-                            "TagName": "Attribute.Meta.XP.Role.Recon"
-                          },
-                          "MinLevel": 27,
-                          "bInvert": false,
-                          "Operator": "EWorldConditionOperator::Copy",
-                          "NextExpressionDepth": 0
-                        }
-                      ]
-                    },
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    }
-                  }
-                }
-              },
-              "Cost": [
-                {
-                  "Key": {
-                    "TagName": "Attribute.Meta.Currency.Cash"
-                  },
-                  "Value": 80000
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "ID": {
-            "TagName": "Id.Item.GhillieArmor.Dead"
-          },
-          "LevelsData": [
-            {
-              "Prerequisites": {
-                "QueryDefinition": {
-                  "StaticStruct": {
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    },
-                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
-                  },
-                  "SharedDefinition": {
-                    "Conditions": {
-                      "Structs": [
-                        {
-                          "MetaId": {
-                            "TagName": "Meta.Role.Recon"
-                          },
-                          "XPResourceTag": {
-                            "TagName": "Attribute.Meta.XP.Role.Recon"
-                          },
-                          "MinLevel": 27,
-                          "bInvert": false,
-                          "Operator": "EWorldConditionOperator::Copy",
-                          "NextExpressionDepth": 0
-                        }
-                      ]
-                    },
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    }
-                  }
-                }
-              },
-              "Cost": [
-                {
-                  "Key": {
-                    "TagName": "Attribute.Meta.Currency.Cash"
-                  },
-                  "Value": 100000
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "ID": {
-            "TagName": "Id.Item.MUZL_025"
-          },
-          "LevelsData": [
-            {
-              "Prerequisites": {
-                "QueryDefinition": {
-                  "StaticStruct": {
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    },
-                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
-                  },
-                  "SharedDefinition": {
-                    "Conditions": {
-                      "Structs": [
-                        {
-                          "MetaId": {
-                            "TagName": "Meta.Role.Recon"
-                          },
-                          "XPResourceTag": {
-                            "TagName": "Attribute.Meta.XP.Role.Recon"
-                          },
-                          "MinLevel": 28,
-                          "bInvert": false,
-                          "Operator": "EWorldConditionOperator::Copy",
-                          "NextExpressionDepth": 0
-                        }
-                      ]
-                    },
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    }
-                  }
-                }
-              },
-              "Cost": [
-                {
-                  "Key": {
-                    "TagName": "Attribute.Meta.Currency.Cash"
-                  },
-                  "Value": 22500
                 }
               ]
             }
@@ -6417,7 +6617,7 @@
                           "XPResourceTag": {
                             "TagName": "Attribute.Meta.XP.Role.Recon"
                           },
-                          "MinLevel": 30,
+                          "MinLevel": 20,
                           "bInvert": false,
                           "Operator": "EWorldConditionOperator::Copy",
                           "NextExpressionDepth": 0
@@ -6467,6 +6667,656 @@
                           "XPResourceTag": {
                             "TagName": "Attribute.Meta.XP.Role.Recon"
                           },
+                          "MinLevel": 20,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.FGRP_009"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Recon"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Recon"
+                          },
+                          "MinLevel": 21,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 17500
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.MUZL_041"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Recon"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Recon"
+                          },
+                          "MinLevel": 22,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 17500
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.Claymore"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Recon"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Recon"
+                          },
+                          "MinLevel": 23,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 90000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.MUZL_055"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Recon"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Recon"
+                          },
+                          "MinLevel": 24,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 50000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.WEPN_034"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Recon"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Recon"
+                          },
+                          "MinLevel": 25,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 100000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.MAGZ_068"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Recon"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Recon"
+                          },
+                          "MinLevel": 25,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.GhillieHelmet"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Recon"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Recon"
+                          },
+                          "MinLevel": 26,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 60000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.GhillieArmor"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Recon"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Recon"
+                          },
+                          "MinLevel": 26,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 80000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.SGHT_039"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Recon"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Recon"
+                          },
+                          "MinLevel": 27,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 35000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.SniperScope10x"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Recon"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Recon"
+                          },
+                          "MinLevel": 28,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 40000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.FGRP_020"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Recon"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Recon"
+                          },
+                          "MinLevel": 29,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 25000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.MK22"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Recon"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Recon"
+                          },
+                          "MinLevel": 30,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 150000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.MAGZ_034"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Recon"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Recon"
+                          },
                           "MinLevel": 30,
                           "bInvert": false,
                           "Operator": "EWorldConditionOperator::Copy",
@@ -6494,7 +7344,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MUZL_055"
+            "TagName": "Id.Item.MAGZ_071"
           },
           "LevelsData": [
             {
@@ -6536,7 +7386,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 25000
+                  "Value": 27500
                 }
               ]
             }
@@ -6636,7 +7486,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 27500
+                  "Value": 25000
                 }
               ]
             }
@@ -6644,7 +7494,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.SGHT_036"
+            "TagName": "Id.Item.MUZL_022"
           },
           "LevelsData": [
             {
@@ -6686,7 +7536,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 35000
+                  "Value": 20000
                 }
               ]
             }
@@ -6794,7 +7644,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MUZL_030"
+            "TagName": "Id.Item.MAGZ_070"
           },
           "LevelsData": [
             {
@@ -6836,7 +7686,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 25000
+                  "Value": 50000
                 }
               ]
             }
@@ -6844,7 +7694,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MUZL_049"
+            "TagName": "Id.Item.MUZL_071"
           },
           "LevelsData": [
             {
@@ -6886,7 +7736,57 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 27500
+                  "Value": 22500
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.MUZL_048"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Recon"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Recon"
+                          },
+                          "MinLevel": 38,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 35000
                 }
               ]
             }
@@ -6994,7 +7894,157 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.SGHT_032"
+            "TagName": "Id.Item.GhillieHelmet.Dead"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Recon"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Recon"
+                          },
+                          "MinLevel": 41,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 80000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.GhillieArmor.Dead"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Recon"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Recon"
+                          },
+                          "MinLevel": 41,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 100000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.MUZL_072"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Recon"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Recon"
+                          },
+                          "MinLevel": 42,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 27500
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.SGHT_036"
           },
           "LevelsData": [
             {
@@ -7036,7 +8086,57 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 95000
+                  "Value": 75000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.MUZL_025"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Recon"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Recon"
+                          },
+                          "MinLevel": 44,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 22500
                 }
               ]
             }
@@ -7144,7 +8244,57 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MUZL_048"
+            "TagName": "Id.Item.SGHT_032"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Recon"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Recon"
+                          },
+                          "MinLevel": 47,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 95000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.MUZL_049"
           },
           "LevelsData": [
             {
@@ -7186,7 +8336,57 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 35000
+                  "Value": 27500
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.MUZL_030"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Recon"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Recon"
+                          },
+                          "MinLevel": 49,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 25000
                 }
               ]
             }
@@ -7301,106 +8501,6 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.C4Trigger"
-          },
-          "LevelsData": [
-            {
-              "Prerequisites": {
-                "QueryDefinition": {
-                  "StaticStruct": {
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    },
-                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
-                  },
-                  "SharedDefinition": {
-                    "Conditions": {
-                      "Structs": [
-                        {
-                          "MetaId": {
-                            "TagName": "Meta.Role.Support"
-                          },
-                          "XPResourceTag": {
-                            "TagName": "Attribute.Meta.XP.Role.Support"
-                          },
-                          "MinLevel": 2,
-                          "bInvert": false,
-                          "Operator": "EWorldConditionOperator::Copy",
-                          "NextExpressionDepth": 0
-                        }
-                      ]
-                    },
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    }
-                  }
-                }
-              },
-              "Cost": [
-                {
-                  "Key": {
-                    "TagName": "Attribute.Meta.Currency.Cash"
-                  },
-                  "Value": 15000
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "ID": {
-            "TagName": "Id.Item.C4Explosive"
-          },
-          "LevelsData": [
-            {
-              "Prerequisites": {
-                "QueryDefinition": {
-                  "StaticStruct": {
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    },
-                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
-                  },
-                  "SharedDefinition": {
-                    "Conditions": {
-                      "Structs": [
-                        {
-                          "MetaId": {
-                            "TagName": "Meta.Role.Support"
-                          },
-                          "XPResourceTag": {
-                            "TagName": "Attribute.Meta.XP.Role.Support"
-                          },
-                          "MinLevel": 2,
-                          "bInvert": false,
-                          "Operator": "EWorldConditionOperator::Copy",
-                          "NextExpressionDepth": 0
-                        }
-                      ]
-                    },
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    }
-                  }
-                }
-              },
-              "Cost": [
-                {
-                  "Key": {
-                    "TagName": "Attribute.Meta.Currency.Cash"
-                  },
-                  "Value": 0
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "ID": {
             "TagName": "ID.Item.BuildTool.Hammer.Medium"
           },
           "LevelsData": [
@@ -7474,7 +8574,7 @@
                           "XPResourceTag": {
                             "TagName": "Attribute.Meta.XP.Role.Support"
                           },
-                          "MinLevel": 5,
+                          "MinLevel": 6,
                           "bInvert": false,
                           "Operator": "EWorldConditionOperator::Copy",
                           "NextExpressionDepth": 0
@@ -7524,7 +8624,7 @@
                           "XPResourceTag": {
                             "TagName": "Attribute.Meta.XP.Role.Support"
                           },
-                          "MinLevel": 5,
+                          "MinLevel": 6,
                           "bInvert": false,
                           "Operator": "EWorldConditionOperator::Copy",
                           "NextExpressionDepth": 0
@@ -7774,7 +8874,7 @@
                           "XPResourceTag": {
                             "TagName": "Attribute.Meta.XP.Role.Support"
                           },
-                          "MinLevel": 14,
+                          "MinLevel": 13,
                           "bInvert": false,
                           "Operator": "EWorldConditionOperator::Copy",
                           "NextExpressionDepth": 0
@@ -7801,7 +8901,57 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.M249"
+            "TagName": "Id.Item.Launcher_04"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Support"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Support"
+                          },
+                          "MinLevel": 14,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 50000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.LMG_02"
           },
           "LevelsData": [
             {
@@ -7851,7 +9001,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MAGZ_062"
+            "TagName": "Id.Item.LMG_02Magazine"
           },
           "LevelsData": [
             {
@@ -7901,7 +9051,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.Launcher_04"
+            "TagName": "Id.Item.MUZL_045"
           },
           "LevelsData": [
             {
@@ -7943,7 +9093,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 50000
+                  "Value": 30000
                 }
               ]
             }
@@ -7951,7 +9101,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MUZL_023"
+            "TagName": "Id.Item.FGRP_008"
           },
           "LevelsData": [
             {
@@ -7993,7 +9143,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 10000
+                  "Value": 25000
                 }
               ]
             }
@@ -8001,7 +9151,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.FGRP_012"
+            "TagName": "Id.Item.CGM4"
           },
           "LevelsData": [
             {
@@ -8043,7 +9193,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 15000
+                  "Value": 100000
                 }
               ]
             }
@@ -8051,7 +9201,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MUZL_045"
+            "TagName": "Id.Item.MUZL_038"
           },
           "LevelsData": [
             {
@@ -8093,7 +9243,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 30000
+                  "Value": 20000
                 }
               ]
             }
@@ -8101,7 +9251,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.CGM4"
+            "TagName": "Id.Item.M249"
           },
           "LevelsData": [
             {
@@ -8143,7 +9293,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 125000
+                  "Value": 150000
                 }
               ]
             }
@@ -8151,7 +9301,57 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.4xElcanSpectr"
+            "TagName": "Id.Item.MAGZ_062"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Support"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Support"
+                          },
+                          "MinLevel": 20,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.SGHT_030"
           },
           "LevelsData": [
             {
@@ -8193,7 +9393,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 15000
+                  "Value": 35000
                 }
               ]
             }
@@ -8201,7 +9401,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.M249Magazine"
+            "TagName": "Id.Item.FGRP_012"
           },
           "LevelsData": [
             {
@@ -8224,7 +9424,7 @@
                           "XPResourceTag": {
                             "TagName": "Attribute.Meta.XP.Role.Support"
                           },
-                          "MinLevel": 23,
+                          "MinLevel": 24,
                           "bInvert": false,
                           "Operator": "EWorldConditionOperator::Copy",
                           "NextExpressionDepth": 0
@@ -8243,7 +9443,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 35000
+                  "Value": 50000
                 }
               ]
             }
@@ -8301,7 +9501,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MUZL_038"
+            "TagName": "Id.Item.M249Magazine"
           },
           "LevelsData": [
             {
@@ -8343,7 +9543,57 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 20000
+                  "Value": 35000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.MUZL_023"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Support"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Support"
+                          },
+                          "MinLevel": 27,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 10000
                 }
               ]
             }
@@ -8393,7 +9643,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 25000
+                  "Value": 50000
                 }
               ]
             }
@@ -8401,7 +9651,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.LMG_02"
+            "TagName": "Id.Item.WEPN_036"
           },
           "LevelsData": [
             {
@@ -8443,7 +9693,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 150000
+                  "Value": 200000
                 }
               ]
             }
@@ -8451,7 +9701,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.LMG_02Magazine"
+            "TagName": "Id.Item.MAGZ_067"
           },
           "LevelsData": [
             {
@@ -8501,7 +9751,57 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.FGRP_008"
+            "TagName": "Id.Item.MZL_06"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MetaId": {
+                            "TagName": "Meta.Role.Support"
+                          },
+                          "XPResourceTag": {
+                            "TagName": "Attribute.Meta.XP.Role.Support"
+                          },
+                          "MinLevel": 32,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 25000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.FGRP_019"
           },
           "LevelsData": [
             {
@@ -8543,7 +9843,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 35000
+                  "Value": 75000
                 }
               ]
             }
@@ -8593,7 +9893,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 200000
+                  "Value": 250000
                 }
               ]
             }
@@ -8651,7 +9951,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.MZL_06"
+            "TagName": "Id.Item.MUZL_070"
           },
           "LevelsData": [
             {
@@ -8693,7 +9993,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 25000
+                  "Value": 35000
                 }
               ]
             }
@@ -8808,7 +10108,7 @@
       "Nodes": [
         {
           "ID": {
-            "TagName": "Id.Item.Glock17"
+            "TagName": "Id.Item.Judge"
           },
           "LevelsData": [
             {
@@ -8845,50 +10145,6 @@
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
                   "Value": 5000
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "ID": {
-            "TagName": "Id.Item.Glock17Magazine"
-          },
-          "LevelsData": [
-            {
-              "Prerequisites": {
-                "QueryDefinition": {
-                  "StaticStruct": {
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    },
-                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
-                  },
-                  "SharedDefinition": {
-                    "Conditions": {
-                      "Structs": [
-                        {
-                          "MinLevel": 1,
-                          "bInvert": false,
-                          "Operator": "EWorldConditionOperator::Copy",
-                          "NextExpressionDepth": 0
-                        }
-                      ]
-                    },
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    }
-                  }
-                }
-              },
-              "Cost": [
-                {
-                  "Key": {
-                    "TagName": "Attribute.Meta.Currency.Cash"
-                  },
-                  "Value": 0
                 }
               ]
             }
@@ -8984,7 +10240,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.BasicRedDot"
+            "TagName": "Id.Item.SGHT_009"
           },
           "LevelsData": [
             {
@@ -9020,7 +10276,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 5000
+                  "Value": 7500
                 }
               ]
             }
@@ -9028,7 +10284,51 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.9mm.HollowPoint.Tracer"
+            "TagName": "ID.Item.VehicleSupplyCrate.Pallet.SparePartsSupply"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MinLevel": 5,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 10000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.545mm.HollowPoint.Tracer"
           },
           "LevelsData": [
             {
@@ -9072,7 +10372,51 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.556mm.HollowPoint.Tracer"
+            "TagName": "ID.Item.VehicleSupplyCrate.Pallet.MunitionsSupply"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MinLevel": 9,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 25000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.9mm.HollowPoint.Tracer"
           },
           "LevelsData": [
             {
@@ -9204,6 +10548,50 @@
         },
         {
           "ID": {
+            "TagName": "Id.Item.556mm.HollowPoint.Tracer"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MinLevel": 13,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 5000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
             "TagName": "Id.Item.MediumTacVest"
           },
           "LevelsData": [
@@ -9292,7 +10680,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.545mm.HollowPoint.Tracer"
+            "TagName": "ID.Item.VehicleSupplyCrate.Pallet.FuelSupply"
           },
           "LevelsData": [
             {
@@ -9328,6 +10716,50 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
+                  "Value": 50000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.BasicRedDot"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MinLevel": 17,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
                   "Value": 5000
                 }
               ]
@@ -9336,7 +10768,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.Judge"
+            "TagName": "Id.Item.Glock17"
           },
           "LevelsData": [
             {
@@ -9373,6 +10805,50 @@
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
                   "Value": 15000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.Glock17Magazine"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MinLevel": 18,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 0
                 }
               ]
             }
@@ -9424,7 +10900,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.SGHT_009"
+            "TagName": "Id.Item.SGHT_038"
           },
           "LevelsData": [
             {
@@ -9460,7 +10936,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 7500
+                  "Value": 12500
                 }
               ]
             }
@@ -9556,7 +11032,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.OPT_08"
+            "TagName": "Id.Item.SGHT_026"
           },
           "LevelsData": [
             {
@@ -9637,6 +11113,50 @@
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
                   "Value": 5000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.MusicTape.11"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MinLevel": 29,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 25000
                 }
               ]
             }
@@ -9732,7 +11252,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.SGHT_029"
+            "TagName": "Id.Item.3xScope"
           },
           "LevelsData": [
             {
@@ -9768,7 +11288,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 15000
+                  "Value": 25000
                 }
               ]
             }
@@ -9881,7 +11401,7 @@
                     "Conditions": {
                       "Structs": [
                         {
-                          "MinLevel": 35,
+                          "MinLevel": 34,
                           "bInvert": false,
                           "Operator": "EWorldConditionOperator::Copy",
                           "NextExpressionDepth": 0
@@ -9901,6 +11421,94 @@
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
                   "Value": 25000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Meta.Unlocks.GoldExchange"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MinLevel": 35,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 150000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.12g.RifledSlug"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MinLevel": 36,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 5000
                 }
               ]
             }
@@ -10013,50 +11621,6 @@
                     "Conditions": {
                       "Structs": [
                         {
-                          "MinLevel": 40,
-                          "bInvert": false,
-                          "Operator": "EWorldConditionOperator::Copy",
-                          "NextExpressionDepth": 0
-                        }
-                      ]
-                    },
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    }
-                  }
-                }
-              },
-              "Cost": [
-                {
-                  "Key": {
-                    "TagName": "Attribute.Meta.Currency.Cash"
-                  },
-                  "Value": 0
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "ID": {
-            "TagName": "Id.Item.12g.RifledSlug"
-          },
-          "LevelsData": [
-            {
-              "Prerequisites": {
-                "QueryDefinition": {
-                  "StaticStruct": {
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    },
-                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
-                  },
-                  "SharedDefinition": {
-                    "Conditions": {
-                      "Structs": [
-                        {
                           "MinLevel": 41,
                           "bInvert": false,
                           "Operator": "EWorldConditionOperator::Copy",
@@ -10076,7 +11640,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 5000
+                  "Value": 0
                 }
               ]
             }
@@ -10145,7 +11709,7 @@
                     "Conditions": {
                       "Structs": [
                         {
-                          "MinLevel": 45,
+                          "MinLevel": 46,
                           "bInvert": false,
                           "Operator": "EWorldConditionOperator::Copy",
                           "NextExpressionDepth": 0
@@ -10392,94 +11956,6 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.HeavyHelmet"
-          },
-          "LevelsData": [
-            {
-              "Prerequisites": {
-                "QueryDefinition": {
-                  "StaticStruct": {
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    },
-                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
-                  },
-                  "SharedDefinition": {
-                    "Conditions": {
-                      "Structs": [
-                        {
-                          "MinLevel": 60,
-                          "bInvert": false,
-                          "Operator": "EWorldConditionOperator::Copy",
-                          "NextExpressionDepth": 0
-                        }
-                      ]
-                    },
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    }
-                  }
-                }
-              },
-              "Cost": [
-                {
-                  "Key": {
-                    "TagName": "Attribute.Meta.Currency.Cash"
-                  },
-                  "Value": 75000
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "ID": {
-            "TagName": "Id.Item.HeavyArmor"
-          },
-          "LevelsData": [
-            {
-              "Prerequisites": {
-                "QueryDefinition": {
-                  "StaticStruct": {
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    },
-                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
-                  },
-                  "SharedDefinition": {
-                    "Conditions": {
-                      "Structs": [
-                        {
-                          "MinLevel": 60,
-                          "bInvert": false,
-                          "Operator": "EWorldConditionOperator::Copy",
-                          "NextExpressionDepth": 0
-                        }
-                      ]
-                    },
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    }
-                  }
-                }
-              },
-              "Cost": [
-                {
-                  "Key": {
-                    "TagName": "Attribute.Meta.Currency.Cash"
-                  },
-                  "Value": 100000
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "ID": {
             "TagName": "Id.Item.762mm.ArmorPiercing.Tracer"
           },
           "LevelsData": [
@@ -10497,7 +11973,7 @@
                     "Conditions": {
                       "Structs": [
                         {
-                          "MinLevel": 63,
+                          "MinLevel": 60,
                           "bInvert": false,
                           "Operator": "EWorldConditionOperator::Copy",
                           "NextExpressionDepth": 0
@@ -10541,7 +12017,7 @@
                     "Conditions": {
                       "Structs": [
                         {
-                          "MinLevel": 65,
+                          "MinLevel": 63,
                           "bInvert": false,
                           "Operator": "EWorldConditionOperator::Copy",
                           "NextExpressionDepth": 0
@@ -10568,7 +12044,95 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.WEPN_032"
+            "TagName": "Id.Item.WEPN_027"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MinLevel": 65,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 75000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "ID.Item.MAGZ_003"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MinLevel": 65,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.HeavyHelmet"
           },
           "LevelsData": [
             {
@@ -10604,7 +12168,51 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 50000
+                  "Value": 75000
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": {
+            "TagName": "Id.Item.HeavyArmor"
+          },
+          "LevelsData": [
+            {
+              "Prerequisites": {
+                "QueryDefinition": {
+                  "StaticStruct": {
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    },
+                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                  },
+                  "SharedDefinition": {
+                    "Conditions": {
+                      "Structs": [
+                        {
+                          "MinLevel": 70,
+                          "bInvert": false,
+                          "Operator": "EWorldConditionOperator::Copy",
+                          "NextExpressionDepth": 0
+                        }
+                      ]
+                    },
+                    "SchemaClass": {
+                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                      "ObjectPath": "/Script/WDGame"
+                    }
+                  }
+                }
+              },
+              "Cost": [
+                {
+                  "Key": {
+                    "TagName": "Attribute.Meta.Currency.Cash"
+                  },
+                  "Value": 100000
                 }
               ]
             }
@@ -10805,7 +12413,7 @@
                     "Conditions": {
                       "Structs": [
                         {
-                          "MinLevel": 83,
+                          "MinLevel": 84,
                           "bInvert": false,
                           "Operator": "EWorldConditionOperator::Copy",
                           "NextExpressionDepth": 0
@@ -10832,7 +12440,7 @@
         },
         {
           "ID": {
-            "TagName": "Id.Item.WEPN_027"
+            "TagName": "Id.Item.WEPN_032"
           },
           "LevelsData": [
             {
@@ -10868,95 +12476,7 @@
                   "Key": {
                     "TagName": "Attribute.Meta.Currency.Cash"
                   },
-                  "Value": 75000
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "ID": {
-            "TagName": "ID.Item.MAGZ_003"
-          },
-          "LevelsData": [
-            {
-              "Prerequisites": {
-                "QueryDefinition": {
-                  "StaticStruct": {
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    },
-                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
-                  },
-                  "SharedDefinition": {
-                    "Conditions": {
-                      "Structs": [
-                        {
-                          "MinLevel": 85,
-                          "bInvert": false,
-                          "Operator": "EWorldConditionOperator::Copy",
-                          "NextExpressionDepth": 0
-                        }
-                      ]
-                    },
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    }
-                  }
-                }
-              },
-              "Cost": [
-                {
-                  "Key": {
-                    "TagName": "Attribute.Meta.Currency.Cash"
-                  },
-                  "Value": 0
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "ID": {
-            "TagName": "Vehicle.Variant.Land.Tracked.TNK_01.Artillery"
-          },
-          "LevelsData": [
-            {
-              "Prerequisites": {
-                "QueryDefinition": {
-                  "StaticStruct": {
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    },
-                    "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
-                  },
-                  "SharedDefinition": {
-                    "Conditions": {
-                      "Structs": [
-                        {
-                          "MinLevel": 90,
-                          "bInvert": false,
-                          "Operator": "EWorldConditionOperator::Copy",
-                          "NextExpressionDepth": 0
-                        }
-                      ]
-                    },
-                    "SchemaClass": {
-                      "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-                      "ObjectPath": "/Script/WDGame"
-                    }
-                  }
-                }
-              },
-              "Cost": [
-                {
-                  "Key": {
-                    "TagName": "Attribute.Meta.Currency.Cash"
-                  },
-                  "Value": 500000
+                  "Value": 125000
                 }
               ]
             }
@@ -10981,7 +12501,7 @@
                     "Conditions": {
                       "Structs": [
                         {
-                          "MinLevel": 93,
+                          "MinLevel": 90,
                           "bInvert": false,
                           "Operator": "EWorldConditionOperator::Copy",
                           "NextExpressionDepth": 0

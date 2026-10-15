@@ -1046,7 +1046,7 @@
       }
     }
   ],
-  "FunctionFlags": "FUNC_Net | FUNC_NetReliable | FUNC_NetServer | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
 }
 --- export: UFunction / ExecuteUbergraph_B_TargetDummy ---
 {
@@ -3839,7 +3839,15 @@
     "OverrideMaterials": [
       null,
       null
-    ]
+    ],
+    "BodyInstance": {
+      "ObjectType": "ECollisionChannel::ECC_Pawn",
+      "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics",
+      "CollisionProfileName": "Custom",
+      "CollisionResponses": {
+        "ResponseArray": []
+      }
+    }
   }
 }
 --- export: UObject / TakeDamage_Template ---
@@ -4037,7 +4045,7 @@
       "X": 0.5,
       "Y": 1.0
     },
-    "RelativeScale3D": {
+    "RelativeLocation": {
       "X": 1.4035679E-07,
       "Y": 0.0,
       "Z": 209.72945

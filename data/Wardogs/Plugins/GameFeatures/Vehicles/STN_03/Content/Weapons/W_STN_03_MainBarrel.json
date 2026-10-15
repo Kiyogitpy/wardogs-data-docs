@@ -20,7 +20,12 @@
       "SourceID": "Chassis",
       "SocketName": "S_Player_Seat"
     },
-    "GamepadRotationSensitivity": 15.0,
+    "_aaacdffbfejnmofpclmfd_$551549DCE5F2BC53$_$35$": true,
+    "_aaabnnbfhdhlgaldcnjie_$D15737B60B32D984$_$29$": {
+      "SourceID": "Chassis",
+      "SocketName": "S_Player_Seat_FP"
+    },
+    "GamepadRotationSensitivity": 50.0,
     "GamepadRotationUpdateMax": {
       "X": 120.0,
       "Y": 120.0
@@ -39,9 +44,116 @@
       "MinWeaponPitchAngle": -29.0,
       "MaxWeaponPitchAngle": 15.0,
       "RotationSpeed": 75.0,
-      "YawJointSocket": "Chassis",
-      "WeaponRotationGameplayCueThreshold": 6.43925E-40
+      "TurretSkeletalMeshTag": "Chassis",
+      "WeaponRotationGameplayCueTag": {
+        "TagName": "GameplayCue.Vehicle.Weapon.Aim"
+      }
     },
-    "WeaponStatesCameraData": []
+    "WeaponStatesCameraData": [
+      {
+        "Key": {
+          "TagName": "State.Vehicle.Weapon.HipFire"
+        },
+        "Value": {
+          "bSupported": true,
+          "AttachQuery": {
+            "SourceMode": "EAttachSourceQueryMode::ComponentTag",
+            "SocketMode": "EAttachSocketMatchMode::Explicit",
+            "SourceID": "Chassis",
+            "SourceFilter": {
+              "RequireTags": [],
+              "IgnoreTags": [],
+              "TagQuery": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [],
+                "QueryTokenStream": [],
+                "UserDescription": "",
+                "AutoDescription": ""
+              }
+            },
+            "SocketName": "AA_Camera_HipFire",
+            "SocketFilter": {
+              "RequireTags": [],
+              "IgnoreTags": [],
+              "TagQuery": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [],
+                "QueryTokenStream": [],
+                "UserDescription": "",
+                "AutoDescription": ""
+              }
+            }
+          },
+          "CameraBehaviourData": null,
+          "bAlignWithTarget": false,
+          "ZeroingDistance": 200.0,
+          "FOVMultiplier": 1.0,
+          "_aaabokgmbjbllidnailcp_$A6C191BB83D08B2F$_$30$": false,
+          "_aaabfcjmfdhlfmlfijgpg_$29C537B5CB5896F6$_$21$": {
+            "X": 65.0,
+            "Y": 30.0,
+            "Z": 48.0
+          },
+          "_aaabejnhnhahophgdkgfl_$9D7D707EF763A65B$_$20$": true
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Vehicle.Weapon.ADS"
+        },
+        "Value": {
+          "bSupported": true,
+          "AttachQuery": {
+            "SourceMode": "EAttachSourceQueryMode::ComponentTag",
+            "SocketMode": "EAttachSocketMatchMode::Explicit",
+            "SourceID": "Chassis",
+            "SourceFilter": {
+              "RequireTags": [],
+              "IgnoreTags": [],
+              "TagQuery": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [],
+                "QueryTokenStream": [],
+                "UserDescription": "",
+                "AutoDescription": ""
+              }
+            },
+            "SocketName": "AA_Camera_ADS",
+            "SocketFilter": {
+              "RequireTags": [],
+              "IgnoreTags": [],
+              "TagQuery": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [],
+                "QueryTokenStream": [],
+                "UserDescription": "",
+                "AutoDescription": ""
+              }
+            }
+          },
+          "CameraBehaviourData": null,
+          "bAlignWithTarget": false,
+          "ZeroingDistance": 200.0,
+          "FOVMultiplier": 3.0,
+          "_aaabokgmbjbllidnailcp_$A6C191BB83D08B2F$_$30$": false,
+          "_aaabfcjmfdhlfmlfijgpg_$29C537B5CB5896F6$_$21$": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "_aaabejnhnhahophgdkgfl_$9D7D707EF763A65B$_$20$": false
+        }
+      }
+    ],
+    "HUDLayoutTag": {
+      "TagName": "UI.HUD.Layout.Vehicle.Crew.Land.Stationary"
+    },
+    "HUDScopeBlurAlpha": 1.0,
+    "WeaponExtensionsDataAssets": [
+      {
+        "AssetPathName": "/STN_03/Weapons/WeaponExtensions/WE_STN_03_Heavy_MainBarrel.WE_STN_03_Heavy_MainBarrel",
+        "SubPathString": ""
+      }
+    ]
   }
 }

@@ -120,4 +120,4 @@ These three rows confirm the stillness mechanic: standing still reveals you; mov
 - **Explode and OOB rules.** The rules inside `ExplodeComponent` and `OOBComponent` are not decoded here.
 - **Music and timers.** Timer durations and music cues are not extracted.
 - **Leaderboard data.** Empty in the export.
-- **Obfuscated keys.** Localised strings use `_aaa…` keys; their values are shown where the source string is present.
+- **Unnamed keys.** Localised strings use `_aaa…` keys; their values are shown where the source string is present.

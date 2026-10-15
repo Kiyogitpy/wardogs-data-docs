@@ -1,0 +1,69 @@
+--- export: UPrimaryDataAsset / ID_HNDG_053 ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_HNDG_053",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/HNDG_053/Data/ID_HNDG_053",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.HNDG_053"
+    },
+    "ItemContext": [
+      "Item.Attachment.Stock.WEPN_034"
+    ],
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_HNDG_053:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/HNDG_053/Data/ID_HNDG_053.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_HNDG_053:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/HNDG_053/Data/ID_HNDG_053.2"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_HNDG_053'",
+    "ObjectPath": "/HNDG_053/Data/ID_HNDG_053.0"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Stock"
+      },
+      "AppliedEffects": [],
+      "AppliedCharacterEffects": [],
+      "bCanBeRemovedInGame": false,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_HNDG_053'",
+    "ObjectPath": "/HNDG_053/Data/ID_HNDG_053.0"
+  },
+  "Properties": {
+    "ItemType": "EWDGunsmithItemType::Attachment"
+  }
+}

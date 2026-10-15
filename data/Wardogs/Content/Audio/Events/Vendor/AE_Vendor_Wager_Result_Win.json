@@ -1,0 +1,69 @@
+--- export: UObject / AEB_PlaySoundDelayed_C_0 ---
+{
+  "Type": "AEB_PlaySoundDelayed_C",
+  "Name": "AEB_PlaySoundDelayed_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlaySoundDelayed.AEB_PlaySoundDelayed_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vendor_Wager_Result_Win'",
+    "ObjectPath": "/Game/Audio/Events/Vendor/AE_Vendor_Wager_Result_Win.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlaySoundDelayed_C'Default__AEB_PlaySoundDelayed_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlaySoundDelayed.0"
+  },
+  "Properties": {
+    "PlaySound": {
+      "ObjectName": "MetaSoundSource'MSS_Vendor_Wager_Result_Win_Preset'",
+      "ObjectPath": "/Game/Audio/Convo/Neutral/Wager/MSS_Vendor_Wager_Result_Win_Preset.0"
+    },
+    "Delay": 1.7,
+    "ContextTag": {
+      "TagName": "Audio.Context.Dial.Equipment.Vendor"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vendor_Wager_Result_Win ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vendor_Wager_Result_Win",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vendor/AE_Vendor_Wager_Result_Win",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vendor.Wager.Result.Success"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Vendor_Wager_Result_Win:CrosstalkAudioEventBehaviorPlaySound_1'",
+        "ObjectPath": "/Game/Audio/Events/Vendor/AE_Vendor_Wager_Result_Win.2"
+      },
+      {
+        "ObjectName": "AEB_PlaySoundDelayed_C'AE_Vendor_Wager_Result_Win:AEB_PlaySoundDelayed_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vendor/AE_Vendor_Wager_Result_Win.0"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_1 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vendor_Wager_Result_Win'",
+    "ObjectPath": "/Game/Audio/Events/Vendor/AE_Vendor_Wager_Result_Win.1"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UI_InGame_Vendor_Wager_Success'",
+      "ObjectPath": "/Game/Audio/UI/InGame/MSS/Vendor/Wager/MSS_UI_InGame_Vendor_Wager_Success.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

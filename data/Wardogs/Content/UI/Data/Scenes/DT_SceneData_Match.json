@@ -1130,6 +1130,61 @@
       "Tag": {
         "TagName": "UI.Scene.Match.GameOver.Scoreboard"
       }
+    },
+    "UI.Scene.Match.Vendor.Wagers": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": false,
+      "bIsFocusable": true,
+      "bShouldPreload": true,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [
+        {
+          "WidgetClass": {
+            "ObjectName": "WidgetBlueprintGeneratedClass'W_Chatbox_C'",
+            "ObjectPath": "/Game/UI/Features/HUD/Chatbox/W_Chatbox.125"
+          }
+        }
+      ],
+      "CloseSceneActions": [
+        {
+          "WidgetClass": {
+            "ObjectName": "WidgetBlueprintGeneratedClass'W_Chatbox_C'",
+            "ObjectPath": "/Game/UI/Features/HUD/Chatbox/W_Chatbox.125"
+          }
+        }
+      ],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Vendor/W_WagerVendorScene.W_WagerVendorScene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIWagerVendorViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Vendor/Data/DA_WagerVendor.DA_WagerVendor",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": true,
+      "bShowBackButton": true,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabffpbdpodpmfcknkog_$5F13FE3FC52ADAE6$_$21$": true,
+      "Tag": {
+        "TagName": "UI.Scene.Match.Vendor.Wagers"
+      }
     }
   }
 }

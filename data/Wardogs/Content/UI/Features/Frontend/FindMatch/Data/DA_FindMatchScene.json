@@ -21,6 +21,394 @@
         "AssetPathName": "/Script/WDGame.WDUIServerDescriptorViewModel",
         "SubPathString": ""
       }
+    },
+    "_aaabhnodadnlljpoaldne_$DE303DBB9FE0B3D4$_$23$": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIServerIDViewModel",
+        "SubPathString": ""
+      }
+    },
+    "ReservedSlotsFormat": {
+      "TableId": "/Game/UI/StringTables/Frontend/STRINGS_FindMatch.STRINGS_FindMatch",
+      "Key": "Text.ReservedSlots",
+      "SourceString": "Reserved Slots: {SlotsInUse}/{MaximumSlots} in use.\r\n\r\nYou must be a server VIP in order to join a reserved slot.",
+      "LocalizedString": "Reserved Slots: {SlotsInUse}/{MaximumSlots} in use.\r\n\r\nYou must be a server VIP in order to join a reserved slot."
+    },
+    "_aaacfpbbmdkfleoohgcjk_$F11C3A5B4EE7629A$_$37$": {
+      "TableId": "/Game/UI/StringTables/Frontend/STRINGS_FindMatch.STRINGS_FindMatch",
+      "Key": "Button.RegionSelect",
+      "SourceString": "Region [{CurrentRegions}/{MaximumRegions}]",
+      "LocalizedString": "Region [{CurrentRegions}/{MaximumRegions}]"
+    },
+    "_aaabbhfemikgigkglpbin_$754C8A686A6BF18D$_$17$": {
+      "TableId": "/Game/UI/StringTables/Frontend/STRINGS_ServerBrowser.STRINGS_ServerBrowser",
+      "Key": "DeploymentSelect.Official.Title",
+      "SourceString": "Official",
+      "LocalizedString": "Official"
+    },
+    "_aaabcmhgndbahdlanehmh_$C76D31073B0D47C7$_$18$": {
+      "TableId": "/Game/UI/StringTables/STRINGS_GameplayTags.STRINGS_GameplayTags",
+      "Key": "Server.Descriptor.CommunityHosted",
+      "SourceString": "Community",
+      "LocalizedString": "Community"
+    },
+    "DefaultImageTexture": {
+      "AssetPathName": "/Game/UI/Features/Settings/Textures/T_UI_OptionsScreen_PlaceholderImage.T_UI_OptionsScreen_PlaceholderImage",
+      "SubPathString": ""
+    },
+    "FilterButtonsData": [
+      {
+        "Key": {
+          "TagName": "UI.Features.ServerBrowser.Filter.ShowPasswordProtectedServers"
+        },
+        "Value": {
+          "Text": {
+            "TableId": "/Game/UI/StringTables/Frontend/STRINGS_FindMatch.STRINGS_FindMatch",
+            "Key": "Button.Text.ShowLocked",
+            "SourceString": "Show Locked",
+            "LocalizedString": "Show Locked"
+          },
+          "bInitiallySelected": false
+        }
+      }
+    ],
+    "_aaabjkbcmdjbgneaofomp_$A12C3916D40E5ECF$_$25$": [
+      {
+        "Key": {
+          "TagName": "UI.Features.ServerBrowser.Filter.ShowFullServers"
+        },
+        "Value": {
+          "Text": {
+            "TableId": "/Game/UI/StringTables/Frontend/STRINGS_ServerBrowser.STRINGS_ServerBrowser",
+            "Key": "Button.ShowFullServers",
+            "SourceString": "Show Full",
+            "LocalizedString": "Show Full"
+          },
+          "bInitiallySelected": true
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Features.ServerBrowser.Filter.ShowEmptyServers"
+        },
+        "Value": {
+          "Text": {
+            "TableId": "/Game/UI/StringTables/Frontend/STRINGS_ServerBrowser.STRINGS_ServerBrowser",
+            "Key": "Button.ShowEmptyServers",
+            "SourceString": "Show Empty",
+            "LocalizedString": "Show Empty"
+          },
+          "bInitiallySelected": true
+        }
+      }
+    ],
+    "RegionSelectPopupData": {
+      "Tag": {
+        "TagName": "UI.Popup.RegionSelection"
+      },
+      "Type": {
+        "TagName": "UI.Popup.Type.Custom.RegionSelection"
+      },
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Popup.Title.SelectMatchmakingRegion",
+        "SourceString": "Select Matchmaking Region",
+        "LocalizedString": "Select Matchmaking Region"
+      },
+      "Options": [
+        {
+          "Key": "EWDPopupOption::Middle",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.Confirm",
+              "SourceString": "Confirm",
+              "LocalizedString": "Confirm"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": true,
+            "ButtonTypeOverride": {
+              "TagName": "UI.Popup.Button.Main"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        }
+      ]
+    },
+    "_aaabgcnboafefhhpjeppe_$2D1E054577F94FF4$_$22$": {
+      "Tag": {
+        "TagName": "UI.Popup.LookupSession"
+      },
+      "Type": {
+        "TagName": "UI.Popup.Type.Custom.LookupSession"
+      },
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Title.LookupServer",
+        "SourceString": "Find Server",
+        "LocalizedString": "Find Server"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Description.Lookup.EnterServerID",
+        "SourceString": "Enter Server ID",
+        "LocalizedString": "Enter Server ID"
+      },
+      "Options": [
+        {
+          "Key": "EWDPopupOption::Left",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.Cancel",
+              "SourceString": "Cancel",
+              "LocalizedString": "Cancel"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": false,
+            "ButtonTypeOverride": {
+              "TagName": "None"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        },
+        {
+          "Key": "EWDPopupOption::Right",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Popup.Button.Select",
+              "SourceString": "Select",
+              "LocalizedString": "Select"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": true,
+            "ButtonTypeOverride": {
+              "TagName": "UI.Popup.Button.Main"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        }
+      ]
+    },
+    "_aaabdkdaempdkghgbhhnc_$A304CF3A676177D2$_$19$": {
+      "Tag": {
+        "TagName": "UI.Popup.Type.Info"
+      },
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Title.ServerBrowser",
+        "SourceString": "Error",
+        "LocalizedString": "Error"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Description.ServerBrowser",
+        "SourceString": "Server Is Full",
+        "LocalizedString": "Server Is Full"
+      }
+    },
+    "_aaabpjdilefikhgbnbjml_$938B458A761D19CB$_$31$": {
+      "TableId": "/Game/UI/StringTables/Frontend/STRINGS_FindMatch.STRINGS_FindMatch",
+      "Key": "Button.Refresh",
+      "SourceString": "Refresh",
+      "LocalizedString": "Refresh"
+    },
+    "_aaacgocafpidobgfaoafj_$E205F83E1650E059$_$38$": {
+      "TableId": "/Game/UI/StringTables/Frontend/STRINGS_FindMatch.STRINGS_FindMatch",
+      "Key": "Button.Refresh.Cooldown",
+      "SourceString": "Refresh ({SecondsRemaining}...)",
+      "LocalizedString": "Refresh ({SecondsRemaining}...)"
+    },
+    "_aaacehibojgpjpkhplibf_$781E96F9FA7FB815$_$36$": {
+      "TableId": "/Game/UI/StringTables/Frontend/STRINGS_FindMatch.STRINGS_FindMatch",
+      "Key": "Button.Join",
+      "SourceString": "Join Match",
+      "LocalizedString": "Join Match"
+    },
+    "_aaaclalcmjdbjgbodlecj_$B2C931961E3B429$_$43$": {
+      "TableId": "/Game/UI/StringTables/Frontend/STRINGS_FindMatch.STRINGS_FindMatch",
+      "Key": "Button.Join.Cooldown",
+      "SourceString": "Join Match ({SecondsRemaining}...)",
+      "LocalizedString": "Join Match ({SecondsRemaining}...)"
+    },
+    "_aaaceidjdleekbacljlom_$8393B44A102B9BEC$_$36$": {
+      "TableId": "/Game/UI/StringTables/Frontend/STRINGS_ServerBrowser.STRINGS_ServerBrowser",
+      "Key": "Text.JoiningServer",
+      "SourceString": "Joining Server...",
+      "LocalizedString": "Joining Server..."
+    },
+    "_aaabiojbgcfifimmcbiog_$E91625858CC218E6$_$24$": {
+      "Tag": {
+        "TagName": "UI.Popup.AdvancedFilters"
+      },
+      "Type": {
+        "TagName": "UI.Popup.Type.Custom.AdvancedFilters"
+      },
+      "Title": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_FindMatch.STRINGS_FindMatch",
+        "Key": "Text.FiltersPopup",
+        "SourceString": "Filter Preferences",
+        "LocalizedString": "Filter Preferences"
+      }
+    },
+    "_aaablpkkbicaogkkaaico_$FAA1820E6AA0082E$_$27$": [
+      {
+        "Key": {
+          "TagName": "UI.Features.ServerBrowser.Filter.GameMode.Standard"
+        },
+        "Value": {
+          "Text": {
+            "TableId": "/Game/UI/StringTables/Frontend/STRINGS_FindMatch.STRINGS_FindMatch",
+            "Key": "Popup.Filter.Gamemode.Text.Title.Standard",
+            "SourceString": "Standard",
+            "LocalizedString": "Standard"
+          },
+          "Description": {
+            "TableId": "/Game/UI/StringTables/Frontend/STRINGS_FindMatch.STRINGS_FindMatch",
+            "Key": "Popup.Filter.Gamemode.Text.Description.Standard",
+            "SourceString": "The classic WARDOGS King of the Hill experience. All vehicles, emplacements, UI and Killcam enabled.",
+            "LocalizedString": "The classic WARDOGS King of the Hill experience. All vehicles, emplacements, UI and Killcam enabled."
+          },
+          "bInitiallySelected": true
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Server.Descriptor.Hardcore"
+        },
+        "Value": {
+          "Text": {
+            "TableId": "/Game/UI/StringTables/Frontend/STRINGS_FindMatch.STRINGS_FindMatch",
+            "Key": "Popup.Filter.Gamemode.Text.Title.Hardcore",
+            "SourceString": "Hardcore",
+            "LocalizedString": "Hardcore"
+          },
+          "Description": {
+            "TableId": "/Game/UI/StringTables/Frontend/STRINGS_FindMatch.STRINGS_FindMatch",
+            "Key": "Popup.Filter.Gamemode.Text.Description.Hardcore",
+            "SourceString": "Standard KOTH with minimal UI - No dynamic crosshair, ammo HUD, quick slots, minimap health bars. Killfeed limited to squad kills/deaths only. Vehicle third-person camera, player health bar, and killcam disabled.",
+            "LocalizedString": "Standard KOTH with minimal UI - No dynamic crosshair, ammo HUD, quick slots, minimap health bars. Killfeed limited to squad kills/deaths only. Vehicle third-person camera, player health bar, and killcam disabled."
+          },
+          "bInitiallySelected": false
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Server.Descriptor.InfantryOnly"
+        },
+        "Value": {
+          "Text": {
+            "TableId": "/Game/UI/StringTables/Frontend/STRINGS_FindMatch.STRINGS_FindMatch",
+            "Key": "Popup.Filter.Gamemode.Text.Title.InfantryMode",
+            "SourceString": "Infantry Mode",
+            "LocalizedString": "Infantry Mode"
+          },
+          "Description": {
+            "TableId": "/Game/UI/StringTables/Frontend/STRINGS_FindMatch.STRINGS_FindMatch",
+            "Key": "Popup.Filter.Gamemode.Text.Description.InfantryMode",
+            "SourceString": "Standard KOTH with all attack vehicles, gunships, and static AA/AT emplacements disabled — no tanks, Havocs, minigun Littlebirds & Humvees. Defensive M249 vehicles only.",
+            "LocalizedString": "Standard KOTH with all attack vehicles, gunships, and static AA/AT emplacements disabled — no tanks, Havocs, minigun Littlebirds & Humvees. Defensive M249 vehicles only."
+          },
+          "bInitiallySelected": false
+        }
+      }
+    ],
+    "_aaabkkimijeedhcodpigh_$A8C8944372E3F867$_$26$": [
+      {
+        "Key": {
+          "TagName": "UI.Features.ServerBrowser.Filter.Slider.MaxTotalPlayers"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/Frontend/STRINGS_FindMatch.STRINGS_FindMatch",
+          "Key": "Popup.Filter.Slider.Text.Description.MaxTotalPlayers",
+          "SourceString": "Only show servers with at most this many players at maximum",
+          "LocalizedString": "Only show servers with at most this many players at maximum"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Features.ServerBrowser.Filter.Slider.MaxCurrentPlayers"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/Frontend/STRINGS_FindMatch.STRINGS_FindMatch",
+          "Key": "Popup.Filter.Slider.Text.Description.MaxCurrentPlayers",
+          "SourceString": "Only show servers with no more than this many players currently in them.",
+          "LocalizedString": "Only show servers with no more than this many players currently in them."
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Features.ServerBrowser.Filter.Slider.MaxLevel"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/Frontend/STRINGS_FindMatch.STRINGS_FindMatch",
+          "Key": "Popup.Filter.Slider.Text.Description.MaxLevel",
+          "SourceString": "Only show servers that allow players at or below this level.",
+          "LocalizedString": "Only show servers that allow players at or below this level."
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Features.ServerBrowser.Filter.Slider.MaxCash"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/Frontend/STRINGS_FindMatch.STRINGS_FindMatch",
+          "Key": "Popup.Filter.Slider.Text.Description.MaxCash",
+          "SourceString": "Only show servers that require players to have no more than this much in-game cash to join.",
+          "LocalizedString": "Only show servers that require players to have no more than this much in-game cash to join."
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Features.ServerBrowser.Filter.Slider.MinCash"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/Frontend/STRINGS_FindMatch.STRINGS_FindMatch",
+          "Key": "Popup.Filter.Slider.Text.Description.MinCash",
+          "SourceString": "Only show servers that require players to have at least this much in-game cash to join.",
+          "LocalizedString": "Only show servers that require players to have at least this much in-game cash to join."
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Features.ServerBrowser.Filter.Slider.MinCurrentPlayers"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/Frontend/STRINGS_FindMatch.STRINGS_FindMatch",
+          "Key": "Popup.Filter.Slider.Text.Description.MinCurrentPlayers",
+          "SourceString": "Only show servers with at least this many players currently in them.",
+          "LocalizedString": "Only show servers with at least this many players currently in them."
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Features.ServerBrowser.Filter.Slider.MinLevel"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/Frontend/STRINGS_FindMatch.STRINGS_FindMatch",
+          "Key": "Popup.Filter.Slider.Text.Description.MinLevel",
+          "SourceString": "Only show servers that allow players at or above this level.",
+          "LocalizedString": "Only show servers that allow players at or above this level."
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Features.ServerBrowser.Filter.Slider.MaxAllowedPing"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/Frontend/STRINGS_FindMatch.STRINGS_FindMatch",
+          "Key": "Popup.Filter.Slider.Text.Description.MaxAllowedPing",
+          "SourceString": "Only show servers whose max allowed ping is at or below this value.",
+          "LocalizedString": "Only show servers whose max allowed ping is at or below this value."
+        }
+      }
+    ],
+    "ExitSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.UI.FrontEnd.Close.ServerBrowser"
     }
   }
 }

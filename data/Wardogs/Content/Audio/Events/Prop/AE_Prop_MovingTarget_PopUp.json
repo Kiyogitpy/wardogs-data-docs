@@ -1,3 +1,23 @@
+--- export: UObject / AEB_PlayTargetPopUpSound_C_0 ---
+{
+  "Type": "AEB_PlayTargetPopUpSound_C",
+  "Name": "AEB_PlayTargetPopUpSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayTargetPopUpSound.AEB_PlayTargetPopUpSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Prop_MovingTarget_PopUp'",
+    "ObjectPath": "/Game/Audio/Events/Prop/AE_Prop_MovingTarget_PopUp.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayTargetPopUpSound_C'Default__AEB_PlayTargetPopUpSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayTargetPopUpSound.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
 --- export: UPrimaryDataAsset / AE_Prop_MovingTarget_PopUp ---
 {
   "Type": "CrosstalkAudioEvent",
@@ -12,13 +32,14 @@
     "Behaviors": [
       {
         "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Prop_MovingTarget_PopUp:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
-        "ObjectPath": "/Game/Audio/Events/Prop/AE_Prop_MovingTarget_PopUp.1"
+        "ObjectPath": "/Game/Audio/Events/Prop/AE_Prop_MovingTarget_PopUp.2"
       },
       {
-        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Prop_MovingTarget_PopUp:CrosstalkAudioEventBehaviorPlaySound_0'",
-        "ObjectPath": "/Game/Audio/Events/Prop/AE_Prop_MovingTarget_PopUp.2"
+        "ObjectName": "AEB_PlayTargetPopUpSound_C'AE_Prop_MovingTarget_PopUp:AEB_PlayTargetPopUpSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Prop/AE_Prop_MovingTarget_PopUp.0"
       }
-    ]
+    ],
+    "_aaabhonahgpdbjealfaaa_$ED076F31940B5000$_$23$": 200.0
   }
 }
 --- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
@@ -29,29 +50,9 @@
   "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
   "Outer": {
     "ObjectName": "CrosstalkAudioEvent'AE_Prop_MovingTarget_PopUp'",
-    "ObjectPath": "/Game/Audio/Events/Prop/AE_Prop_MovingTarget_PopUp.0"
+    "ObjectPath": "/Game/Audio/Events/Prop/AE_Prop_MovingTarget_PopUp.1"
   },
   "Properties": {
-    "ContextTag": {
-      "TagName": "Audio.Context.Prop.MovingTarget"
-    }
-  }
-}
---- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
-{
-  "Type": "CrosstalkAudioEventBehaviorPlaySound",
-  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
-  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
-  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
-  "Outer": {
-    "ObjectName": "CrosstalkAudioEvent'AE_Prop_MovingTarget_PopUp'",
-    "ObjectPath": "/Game/Audio/Events/Prop/AE_Prop_MovingTarget_PopUp.0"
-  },
-  "Properties": {
-    "Sound": {
-      "ObjectName": "MetaSoundSource'MSS_Prop_MovingTarget_PopUp'",
-      "ObjectPath": "/Game/Audio/Props/MovingTarget/MSS_Prop_MovingTarget_PopUp.0"
-    },
     "ContextTag": {
       "TagName": "Audio.Context.Prop.MovingTarget"
     }

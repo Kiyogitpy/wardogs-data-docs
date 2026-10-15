@@ -1,0 +1,109 @@
+--- export: UDataTable / DT_EntityData_Ext_VehicleSmoke ---
+{
+  "Type": "DataTable",
+  "Name": "DT_EntityData_Ext_VehicleSmoke",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/VehicleSmoke/Data/DT_EntityData_Ext_VehicleSmoke",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'BHEntityData_UI'",
+      "ObjectPath": "/Script/BHFramework"
+    }
+  },
+  "Rows": {
+    "Id.Item.VehicleSmoke": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_VehicleVendor_Stats.STRINGS_VehicleVendor_Stats",
+        "Key": "VehicleStats.Equipment.Smoke",
+        "SourceString": "Smoke",
+        "LocalizedString": "Smoke"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_VendorTooltips_Vehicles.STRINGS_VendorTooltips_Vehicles",
+        "Key": "TooltipDescription.Countermeasure.Smokes",
+        "SourceString": "- Sustained discharge trails around the vehicle\r\n- Settles into a large, lingering screen temporarily providing Infantry cover",
+        "LocalizedString": "- Sustained discharge trails around the vehicle\r\n- Settles into a large, lingering screen temporarily providing Infantry cover"
+      },
+      "Category": {
+        "TagName": "Vendor.Category.Vehicle.CounterMeasures"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "None"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_General.STRINGS_Items_General",
+            "Key": "Items.General.CounterMeasure",
+            "SourceString": "Countermeasure",
+            "LocalizedString": "Countermeasure"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_VendorTooltips_Vehicles.STRINGS_VendorTooltips_Vehicles",
+            "Key": "TooltipDescription.Countermeasure.Smokes",
+            "SourceString": "- Sustained discharge trails around the vehicle\r\n- Settles into a large, lingering screen temporarily providing Infantry cover",
+            "LocalizedString": "- Sustained discharge trails around the vehicle\r\n- Settles into a large, lingering screen temporarily providing Infantry cover"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_VendorTooltips_Vehicles.STRINGS_VendorTooltips_Vehicles",
+            "Key": "TooltipFlavor.Countermeasure.Smokes",
+            "SourceString": "Designed to obscure vision and provide cover by creating a dense cloud of smoke.",
+            "LocalizedString": "Designed to obscure vision and provide cover by creating a dense cloud of smoke."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Vehicle_HUD_Materials/Textures/T_UI_Icon_DeploySmoke.T_UI_Icon_DeploySmoke",
+          "SubPathString": ""
+        },
+        "TaggedIcons": []
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "Id.Item.VehicleSmoke"
+      }
+    }
+  }
+}

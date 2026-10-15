@@ -53,12 +53,16 @@
         }
       },
       "SuppressionData": {
-        "BaseSuppression": 0.55,
         "DistanceFalloffRange": {
+          "Min": 0.3,
           "Max": 3.0
         },
         "DistanceFalloffCurve": {
-          "EditorCurveData": {}
+          "EditorCurveData": {},
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_SuppressionCurve_GrenadeLauncher'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/CR_SuppressionCurve_GrenadeLauncher.0"
+          }
         }
       },
       "bHasArmingDelay": true,
@@ -75,7 +79,7 @@
       "bActorHandlesProjectileMovement": true,
       "TracerChance": 1.0,
       "TypicalSpeed": 7500.0,
-      "bShouldPenetrate": false,
+      "_aaabackekpkcoeellbllc_$2A4AFA2E44BB1BB2$_$16$": false,
       "bForcePenetrateThinSurfaces": true,
       "MinImpactAngleForRicochet": 91.0,
       "bShouldPreSimulate": false,

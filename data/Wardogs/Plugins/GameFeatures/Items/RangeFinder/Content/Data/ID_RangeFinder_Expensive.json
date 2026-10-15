@@ -6,7 +6,7 @@
   "Class": "BlueprintGeneratedClass'/PrototypeMaskedScopes/Data/BH_PrototypeMaskedScopes_ExtensionData.BH_PrototypeMaskedScopes_ExtensionData_C'",
   "Outer": {
     "ObjectName": "WDInventoryFragment_ItemActor'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0'",
-    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.7"
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.9"
   },
   "Template": {
     "ObjectName": "BH_PrototypeMaskedScopes_ExtensionData_C'Default__BH_PrototypeMaskedScopes_ExtensionData_C'",
@@ -52,7 +52,8 @@
       "AssetPathName": "/PrototypeMaskedScopes/Data/UI/W_HUD_MaskedScope.W_HUD_MaskedScope_C",
       "SubPathString": ""
     },
-    "MaskedScopeCount": 2
+    "MaskedScopeCount": 2,
+    "_aaabegmabaofbfhibpgld_$6C010E515781F6B3$_$20$": 0.8
   }
 }
 --- export: UObject / BH_SpottingExtensionData_C_0 ---
@@ -63,7 +64,7 @@
   "Class": "BlueprintGeneratedClass'/Spotting/Data/BH_SpottingExtensionData.BH_SpottingExtensionData_C'",
   "Outer": {
     "ObjectName": "WDInventoryFragment_ItemActor'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0'",
-    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.7"
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.9"
   },
   "Template": {
     "ObjectName": "BH_SpottingExtensionData_C'Default__BH_SpottingExtensionData_C'",
@@ -326,7 +327,7 @@
   "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
   "Outer": {
     "ObjectName": "BHInventoryItemDefinition'ID_RangeFinder_Expensive'",
-    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.5"
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.7"
   },
   "Properties": {
     "Dimensions": {
@@ -343,7 +344,7 @@
   "Class": "UScriptClass'BHInventoryFragment_Droppable'",
   "Outer": {
     "ObjectName": "BHInventoryItemDefinition'ID_RangeFinder_Expensive'",
-    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.5"
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.7"
   },
   "Properties": {
     "DroppedMesh": {
@@ -369,6 +370,69 @@
     }
   }
 }
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_RangeFinder_Expensive'",
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.7"
+  },
+  "Properties": {
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Item.Attachment.Magazine"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::AllowList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [
+            "Item.Attachment.Magazine.Battery"
+          ],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": -2,
+        "MaxSlotAmountStackSize": 1,
+        "bAllowsStackedPacking": false,
+        "bIsHiddenContainer": false,
+        "_aaabelnajgoacnpmnokoe_$BD096E02DFCDEAE4$_$20$": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [
+          "Id.Item.Battery"
+        ],
+        "DefaultContainerItems": [
+          {
+            "Item": {
+              "TagName": "Id.Item.Battery"
+            },
+            "Amount": null
+          }
+        ]
+      }
+    ]
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_RangeFinder_Expensive'",
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.7"
+  }
+}
 --- export: UObject / BHInventoryFragment_Weight_0 ---
 {
   "Type": "BHInventoryFragment_Weight",
@@ -377,7 +441,7 @@
   "Class": "UScriptClass'BHInventoryFragment_Weight'",
   "Outer": {
     "ObjectName": "BHInventoryItemDefinition'ID_RangeFinder_Expensive'",
-    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.5"
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.7"
   },
   "Properties": {
     "Weight": 0.43
@@ -401,7 +465,8 @@
       "Item.Context.Animation.Type.RangeFinderIR",
       "Item.Context.QuickSlot",
       "Item.Context.UtilityItem",
-      "Item.Context.Animation.Archetype.Binoculars"
+      "Item.Context.Animation.Archetype.Binoculars",
+      "Item.Weapon"
     ],
     "DisplayName": {
       "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
@@ -411,12 +476,16 @@
     },
     "DataFragments": [
       {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_RangeFinder_Expensive:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.4"
+      },
+      {
         "ObjectName": "WDInventoryFragment_ItemActor'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0'",
-        "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.7"
+        "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.9"
       },
       {
         "ObjectName": "BHInventoryFragment_Weight'ID_RangeFinder_Expensive:BHInventoryFragment_Weight_0'",
-        "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.4"
+        "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.6"
       },
       {
         "ObjectName": "BHInventoryFragment_Droppable'ID_RangeFinder_Expensive:BHInventoryFragment_Droppable_0'",
@@ -424,7 +493,11 @@
       },
       {
         "ObjectName": "WDInventoryFragment_Audio'ID_RangeFinder_Expensive:WDInventoryFragment_Audio_0'",
-        "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.6"
+        "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.8"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_RangeFinder_Expensive:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.5"
       },
       {
         "ObjectName": "BHInventoryFragment_CustomShape'ID_RangeFinder_Expensive:BHInventoryFragment_CustomShape_0'",
@@ -441,7 +514,7 @@
   "Class": "UScriptClass'WDInventoryFragment_Audio'",
   "Outer": {
     "ObjectName": "BHInventoryItemDefinition'ID_RangeFinder_Expensive'",
-    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.5"
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.7"
   },
   "Properties": {
     "AudioDataAsset": {
@@ -458,29 +531,37 @@
   "Class": "UScriptClass'WDInventoryFragment_ItemActor'",
   "Outer": {
     "ObjectName": "BHInventoryItemDefinition'ID_RangeFinder_Expensive'",
-    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.5"
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.7"
   },
   "Properties": {
     "ExtensionDataFragments": [
       {
         "ObjectName": "WDItemExtensionData_Holdable'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Holdable_0'",
-        "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.11"
+        "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.14"
       },
       {
-        "ObjectName": "WDItemExtensionData_Input'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+        "ObjectName": "WDItemExtensionData_Inventory'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InventoryItem_0'",
+        "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.16"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Battery'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Battery_0'",
         "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.12"
       },
       {
+        "ObjectName": "WDItemExtensionData_Input'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+        "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.15"
+      },
+      {
         "ObjectName": "WDItemExtensionData_GameplayEffects'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0.WDItemExtensionData_AttributeExtension_1'",
-        "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.10"
+        "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.13"
       },
       {
         "ObjectName": "WDItemExtensionData_Animation'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Animation_0'",
-        "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.8"
+        "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.10"
       },
       {
         "ObjectName": "WDItemExtensionData_AudioExtension'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0.WDItemExtensionData_AudioExtension_0'",
-        "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.9"
+        "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.11"
       },
       {
         "ObjectName": "BH_PrototypeMaskedScopes_ExtensionData_C'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0.BH_PrototypeMaskedScopes_ExtensionData_C_0'",
@@ -489,10 +570,6 @@
       {
         "ObjectName": "BH_SpottingExtensionData_C'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0.BH_SpottingExtensionData_C_0'",
         "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.1"
-      },
-      {
-        "ObjectName": "WDItemExtensionData_Inventory'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Inventory_0'",
-        "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.13"
       }
     ]
   }
@@ -505,7 +582,7 @@
   "Class": "UScriptClass'WDItemExtensionData_Animation'",
   "Outer": {
     "ObjectName": "WDInventoryFragment_ItemActor'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0'",
-    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.7"
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.9"
   },
   "Properties": {
     "AnimationSet": {
@@ -522,12 +599,29 @@
   "Class": "UScriptClass'WDItemExtensionData_AudioExtension'",
   "Outer": {
     "ObjectName": "WDInventoryFragment_ItemActor'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0'",
-    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.7"
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.9"
   },
   "Properties": {
     "AudioDataAsset": {
       "ObjectName": "WDAudioData'ID_InfraredRangeFinder_Audio'",
       "ObjectPath": "/RangeFinder/Data/Audio/Infrared/ID_InfraredRangeFinder_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_Battery_0 ---
+{
+  "Type": "WDItemExtensionData_Battery",
+  "Name": "WDItemExtensionData_Battery_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Battery'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.9"
+  },
+  "Properties": {
+    "_aaabldemmceabckacmoen_$34CC24012A02CE4D$_$27$": 0.0,
+    "ItemId": {
+      "TagName": "ID.Item.InfraredRangeFinder"
     }
   }
 }
@@ -539,7 +633,7 @@
   "Class": "UScriptClass'WDItemExtensionData_GameplayEffects'",
   "Outer": {
     "ObjectName": "WDInventoryFragment_ItemActor'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0'",
-    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.7"
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.9"
   }
 }
 --- export: UObject / WDItemExtensionData_Holdable_0 ---
@@ -550,7 +644,7 @@
   "Class": "UScriptClass'WDItemExtensionData_Holdable'",
   "Outer": {
     "ObjectName": "WDInventoryFragment_ItemActor'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0'",
-    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.7"
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.9"
   },
   "Properties": {
     "HoldableMesh": {
@@ -614,7 +708,7 @@
   "Class": "UScriptClass'WDItemExtensionData_Input'",
   "Outer": {
     "ObjectName": "WDInventoryFragment_ItemActor'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0'",
-    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.7"
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.9"
   },
   "Properties": {
     "InputMappingContext": {
@@ -627,8 +721,8 @@
           "TagName": "Input.NamedActions.HoldableItem.SecondaryUse"
         },
         "Value": {
-          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_0'",
-          "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.14"
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_2'",
+          "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.18"
         }
       },
       {
@@ -637,7 +731,7 @@
         },
         "Value": {
           "ObjectName": "WDItemInputBehavior_CompleteAction'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_CompleteAction_0'",
-          "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.16"
+          "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.20"
         }
       },
       {
@@ -646,21 +740,55 @@
         },
         "Value": {
           "ObjectName": "WDItemInputBehavior_ActivateAction'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_6'",
-          "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.15"
+          "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.19"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.Weapon.Reload"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_0'",
+          "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.17"
         }
       }
     ]
   }
 }
---- export: UObject / WDItemExtensionData_Inventory_0 ---
+--- export: UObject / WDItemExtensionData_InventoryItem_0 ---
 {
   "Type": "WDItemExtensionData_Inventory",
-  "Name": "WDItemExtensionData_Inventory_0",
+  "Name": "WDItemExtensionData_InventoryItem_0",
   "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
   "Class": "UScriptClass'WDItemExtensionData_Inventory'",
   "Outer": {
     "ObjectName": "WDInventoryFragment_ItemActor'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0'",
-    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.7"
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.9"
+  },
+  "Properties": {
+    "PrimaryUseTag": {
+      "TagName": "Action.BuildTool.BatteryUse"
+    },
+    "ActionResourceRequirements": [
+      {
+        "Key": {
+          "TagName": "Action.BuildTool.BatteryUse"
+        },
+        "Value": {
+          "RequiredResource": {
+            "TagName": "Id.Item.BatteryCharge"
+          },
+          "ResourcesUsed": 0,
+          "bLimitSearchToItem": true,
+          "OptionalRequiredSubSlotCategory": {
+            "TagName": "Item.Attachment.Magazine"
+          },
+          "ResourceType": {
+            "TagName": "Item.Resource.Magazine"
+          }
+        }
+      }
+    ]
   }
 }
 --- export: UObject / WDItemInputBehavior_ActivateAction_0 ---
@@ -671,7 +799,23 @@
   "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
   "Outer": {
     "ObjectName": "WDItemExtensionData_Input'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
-    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.12"
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.15"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.RangeFinder.Reload"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_2 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.15"
   },
   "Properties": {
     "ActionToActivate": {
@@ -693,7 +837,7 @@
   "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
   "Outer": {
     "ObjectName": "WDItemExtensionData_Input'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
-    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.12"
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.15"
   },
   "Properties": {
     "ActionToActivate": {
@@ -709,7 +853,7 @@
   "Class": "UScriptClass'WDItemInputBehavior_CompleteAction'",
   "Outer": {
     "ObjectName": "WDItemExtensionData_Input'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
-    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.12"
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.15"
   },
   "Properties": {
     "ActionToComplete": {

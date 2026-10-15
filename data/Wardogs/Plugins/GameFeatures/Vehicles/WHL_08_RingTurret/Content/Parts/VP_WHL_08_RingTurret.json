@@ -1,0 +1,177 @@
+--- export: UPrimaryDataAsset / VP_WHL_08_RingTurret ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_WHL_08_RingTurret",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/WHL_08_RingTurret/Parts/VP_WHL_08_RingTurret",
+  "Properties": {
+    "Tags": [
+      "Vehicle.Turret"
+    ],
+    "Fragments": [
+      {
+        "Key": "TurretSkeleton",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_SkeletalMesh'VP_WHL_08_RingTurret:MVF_SkeletalMesh_0'",
+            "ObjectPath": "/WHL_08_RingTurret/Parts/VP_WHL_08_RingTurret.1"
+          }
+        }
+      },
+      {
+        "Key": "Weapon",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_WeaponFragment'VP_WHL_08_RingTurret:WD_MVF_WeaponFragment_0'",
+            "ObjectPath": "/WHL_08_RingTurret/Parts/VP_WHL_08_RingTurret.4"
+          }
+        }
+      },
+      {
+        "Key": "HeavyWeaponExtensionSlot",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_InventoryFragment'VP_WHL_08_RingTurret:WD_MVF_InventoryFragment_0'",
+            "ObjectPath": "/WHL_08_RingTurret/Parts/VP_WHL_08_RingTurret.3"
+          }
+        }
+      },
+      {
+        "Key": "TurretHousing",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_WHL_08_RingTurret:MVF_StaticMesh_0'",
+            "ObjectPath": "/WHL_08_RingTurret/Parts/VP_WHL_08_RingTurret.2"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / MVF_SkeletalMesh_0 ---
+{
+  "Type": "MVF_SkeletalMesh",
+  "Name": "MVF_SkeletalMesh_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_SkeletalMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_08_RingTurret'",
+    "ObjectPath": "/WHL_08_RingTurret/Parts/VP_WHL_08_RingTurret.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "PhysicsMode": "EModularVehiclePhysicsMode::AttachOnly",
+      "Constraint": {
+        "ConeLimit": {
+          "Swing1LimitDegrees": 0.0,
+          "Swing2LimitDegrees": 0.0,
+          "bSoftConstraint": false
+        },
+        "TwistLimit": {
+          "TwistLimitDegrees": 0.0,
+          "bSoftConstraint": false
+        },
+        "bParentDominates": true,
+        "bEnableMassConditioning": false
+      },
+      "AttachQuery": {
+        "SourceID": "Chassis",
+        "SocketName": "Turret_Socket"
+      },
+      "bAttachSource": true,
+      "Method": "EModularVehicleComponentMode::CreateNew",
+      "Tags": [
+        "TurretSkeleton"
+      ]
+    },
+    "SkeletalMesh": {
+      "AssetPathName": "/MWSY_001/Meshes/SK_Browning_Mounted.SK_Browning_Mounted",
+      "SubPathString": ""
+    },
+    "AnimInstance": {
+      "AssetPathName": "/MWSY_001/Animation/ABP_MWSY_001_MovableVehicle.ABP_MWSY_001_MovableVehicle_C",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_0 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_08_RingTurret'",
+    "ObjectPath": "/WHL_08_RingTurret/Parts/VP_WHL_08_RingTurret.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceID": "TurretSkeleton",
+        "SocketName": "vehicleTurretHousing_MeshAttach"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/WHL_08/Meshes/SM_WHL_08_TurretHousing.SM_WHL_08_TurretHousing",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    }
+  }
+}
+--- export: UObject / WD_MVF_InventoryFragment_0 ---
+{
+  "Type": "WD_MVF_InventoryFragment",
+  "Name": "WD_MVF_InventoryFragment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_InventoryFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_08_RingTurret'",
+    "ObjectPath": "/WHL_08_RingTurret/Parts/VP_WHL_08_RingTurret.0"
+  },
+  "Properties": {
+    "ItemDefinition": {
+      "AssetPathName": "/Game/Items/Vehicles/Weapons/WHL_08/ID_WHL_08_RingTurret.ID_WHL_08_RingTurret",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / WD_MVF_WeaponFragment_0 ---
+{
+  "Type": "WD_MVF_WeaponFragment",
+  "Name": "WD_MVF_WeaponFragment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_WeaponFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_08_RingTurret'",
+    "ObjectPath": "/WHL_08_RingTurret/Parts/VP_WHL_08_RingTurret.0"
+  },
+  "Properties": {
+    "WeaponMeshTagName": "TurretSkeleton",
+    "WeaponDataAsset": {
+      "AssetPathName": "/WHL_08_RingTurret/Weapons/WeaponExtensions/W_WHL_08_RingTurret.W_WHL_08_RingTurret",
+      "SubPathString": ""
+    },
+    "RoleRequirements": {
+      "RequireTags": [
+        "State.Player.Vehicle.Role.Gunner"
+      ]
+    },
+    "AllowList": [
+      2
+    ]
+  }
+}

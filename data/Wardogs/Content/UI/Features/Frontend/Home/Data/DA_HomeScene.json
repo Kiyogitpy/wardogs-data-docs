@@ -12,7 +12,7 @@
       "SourceString": "EARLY ACCESS {Version}",
       "LocalizedString": "EARLY ACCESS {Version}"
     },
-    "FTUEDeploymentText": {
+    "_aaabcmnbpkokpbibnngal_$CD1FAEAF181DD60B$_$18$": {
       "TableId": "/Game/UI/StringTables/Frontend/STRINGS_Home.STRINGS_Home",
       "Key": "Text.EnterFTUE",
       "SourceString": "TUTORIAL",
@@ -24,7 +24,7 @@
       "SourceString": "SERVER BROWSER",
       "LocalizedString": "SERVER BROWSER"
     },
-    "FTUEDeploymentText": {
+    "_aaabcakoofmccpmfbmclh_$AEE5C22FC51C2B7$_$18$": {
       "TableId": "/Game/UI/StringTables/Frontend/STRINGS_Home.STRINGS_Home",
       "Key": "Text.PlayTutorialButton",
       "SourceString": "PLAY",
@@ -32,6 +32,425 @@
     },
     "ServerBrowserSceneTag": {
       "TagName": "UI.Scene.Frontend.FindMatch"
+    },
+    "_aaabiamgpemhmkemfgbie_$C6F4C7CA4C56184$_$24$": {
+      "TagName": "UI.Scene.Frontend.DeploymentSelect"
+    },
+    "_aaaakppmongpeelghapkl_$FFCED6F44B670FAB$_$10$": [
+      {
+        "Key": {
+          "TagName": "UI.Popup.PrivacyNotice"
+        },
+        "Value": {
+          "Tag": {
+            "TagName": "UI.Popup.PrivacyNotice"
+          },
+          "Type": {
+            "TagName": "UI.Popup.Type.Info"
+          },
+          "Title": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+            "Key": "Title.PrivacyNotice",
+            "SourceString": "Privacy Notice",
+            "LocalizedString": "Privacy Notice"
+          },
+          "Subtitle": {
+            "CultureInvariantString": null
+          },
+          "Description": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+            "Key": "Description.PrivacyNotice",
+            "SourceString": "By selecting \"I Acknowledge\", you confirm that you have read and understood the WARDOGS Privacy Policy. We collect and process certain personal data, including account information, gameplay activity, technical data and communications, to operate and improve the game, maintain security, prevent cheating and provide player support.  Your personal data will be handled in accordance with applicable data protection laws and our Privacy Policy, available at <link id=\"Privacy\" domain=\"www.wardogs.com\">https://www.wardogs.com/privacy</>",
+            "LocalizedString": "By selecting \"I Acknowledge\", you confirm that you have read and understood the WARDOGS Privacy Policy. We collect and process certain personal data, including account information, gameplay activity, technical data and communications, to operate and improve the game, maintain security, prevent cheating and provide player support.  Your personal data will be handled in accordance with applicable data protection laws and our Privacy Policy, available at <link id=\"Privacy\" domain=\"www.wardogs.com\">https://www.wardogs.com/privacy</>"
+          },
+          "bShouldBlockBack": true,
+          "AdditionalData": {
+            "DataArray": []
+          },
+          "Options": [
+            {
+              "Key": "EWDPopupOption::Middle",
+              "Value": {
+                "ButtonText": {
+                  "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+                  "Key": "Button.Acknowledged",
+                  "SourceString": "I Acknowledge",
+                  "LocalizedString": "I Acknowledge"
+                },
+                "bAutoCloseOnSelected": true,
+                "bAutoFocusOnOpen": true,
+                "ButtonTypeOverride": {
+                  "TagName": "UI.Popup.Button.Main"
+                },
+                "ButtonConfig": null,
+                "bCallOnSceneEscape": false
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Popup.PatchNotes"
+        },
+        "Value": {
+          "Tag": {
+            "TagName": "UI.Popup.PatchNotes"
+          },
+          "Type": {
+            "TagName": "UI.Popup.Type.Custom.PatchNotes"
+          },
+          "Title": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+            "Key": "Title.PatchNotes",
+            "SourceString": "EARLY ACCESS",
+            "LocalizedString": "EARLY ACCESS"
+          },
+          "Subtitle": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+            "Key": "Subtitle.PatchNotes",
+            "SourceString": "WARDOGS Early Access",
+            "LocalizedString": "WARDOGS Early Access"
+          },
+          "Description": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+            "Key": "Description.PatchNotes",
+            "SourceString": "// Welcome to WARDOGS\r\nThank you for purchasing our game.\r\n\r\nWelcome to Early Access Season 02. This update brings a new weather variant 'rain' as well as new weapons, vehicles, attachments and buildables, alongside a brand new vendor and balance changes to shake up the metagame. Season 01 XP & Cash progression has been reset. Any cash you had remaining at the end of the season 01 has been automatically converted into gold bars, which you can use to unlock permanent cosmetics for your account in the gold market. All XP and tracked stats have been banked into our backend for use with future in game systems once implemented.\r\n\r\nAs a reminder - WARDOGS is an early access game. If you haven't watched our '10 Reasons NOT to buy WARDOGS' video, we highly recommend you do to understand that this is a long road to 1.0 release. This is a sandbox that rewards teamplay, creativity and freedom, so make sure to use proximity chat for the best experience.\r\n\r\nIf you see any bugs or cheaters, please report them ingame via the scoreboard or use the appropriate bots in our Official Discord.\r\n\r\nThanks,\r\nBULKHEAD",
+            "LocalizedString": "// Welcome to WARDOGS\r\nThank you for purchasing our game.\r\n\r\nWelcome to Early Access Season 02. This update brings a new weather variant 'rain' as well as new weapons, vehicles, attachments and buildables, alongside a brand new vendor and balance changes to shake up the metagame. Season 01 XP & Cash progression has been reset. Any cash you had remaining at the end of the season 01 has been automatically converted into gold bars, which you can use to unlock permanent cosmetics for your account in the gold market. All XP and tracked stats have been banked into our backend for use with future in game systems once implemented.\r\n\r\nAs a reminder - WARDOGS is an early access game. If you haven't watched our '10 Reasons NOT to buy WARDOGS' video, we highly recommend you do to understand that this is a long road to 1.0 release. This is a sandbox that rewards teamplay, creativity and freedom, so make sure to use proximity chat for the best experience.\r\n\r\nIf you see any bugs or cheaters, please report them ingame via the scoreboard or use the appropriate bots in our Official Discord.\r\n\r\nThanks,\r\nBULKHEAD"
+          },
+          "bShouldBlockBack": false,
+          "AdditionalData": {
+            "DataArray": []
+          },
+          "Options": [
+            {
+              "Key": "EWDPopupOption::Left",
+              "Value": {
+                "ButtonText": {
+                  "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+                  "Key": "Button.PatchNotes",
+                  "SourceString": "VIEW PATCH NOTES",
+                  "LocalizedString": "VIEW PATCH NOTES"
+                },
+                "bAutoCloseOnSelected": false,
+                "bAutoFocusOnOpen": true,
+                "ButtonTypeOverride": {
+                  "TagName": "UI.Popup.Button.Main"
+                },
+                "ButtonConfig": null,
+                "bCallOnSceneEscape": false
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Popup.ShootingRange"
+        },
+        "Value": {
+          "Tag": {
+            "TagName": "UI.Popup.ShootingRange"
+          },
+          "Type": {
+            "TagName": "UI.Popup.Type.Info"
+          },
+          "Title": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+            "Key": "Title.ShootingRange",
+            "SourceString": "Firing Range",
+            "LocalizedString": "Firing Range"
+          },
+          "Subtitle": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+            "Key": "Subtitle.ShootingRange",
+            "SourceString": "You will enter the Firing Range.",
+            "LocalizedString": "You will enter the Firing Range."
+          },
+          "Description": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+            "Key": "Description.ShootingRange",
+            "SourceString": "Are you sure you want to enter the Firing Range?",
+            "LocalizedString": "Are you sure you want to enter the Firing Range?"
+          },
+          "bShouldBlockBack": false,
+          "AdditionalData": {
+            "DataArray": [
+              {
+                "Level": {
+                  "AssetPathName": "/Game/Maps/Worlds/Kavkazi/Kavkazi.Kavkazi",
+                  "SubPathString": ""
+                },
+                "Options": "Experience=ShootingRange",
+                "CustomLoadingScreenWidgetClass": {
+                  "AssetPathName": "/Game/UI/Features/Frontend/LoadingScreen/W_LoadingScreen_ShootingRange.W_LoadingScreen_ShootingRange_C",
+                  "SubPathString": ""
+                }
+              }
+            ]
+          },
+          "Options": [
+            {
+              "Key": "EWDPopupOption::Left",
+              "Value": {
+                "ButtonText": {
+                  "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+                  "Key": "Button.Back",
+                  "SourceString": "Back",
+                  "LocalizedString": "Back"
+                },
+                "bAutoCloseOnSelected": true,
+                "bAutoFocusOnOpen": false,
+                "ButtonTypeOverride": {
+                  "TagName": "None"
+                },
+                "ButtonConfig": null,
+                "bCallOnSceneEscape": false
+              }
+            },
+            {
+              "Key": "EWDPopupOption::Right",
+              "Value": {
+                "ButtonText": {
+                  "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+                  "Key": "Button.Confirm",
+                  "SourceString": "Confirm",
+                  "LocalizedString": "Confirm"
+                },
+                "bAutoCloseOnSelected": true,
+                "bAutoFocusOnOpen": true,
+                "ButtonTypeOverride": {
+                  "TagName": "UI.Popup.Button.Main"
+                },
+                "ButtonConfig": null,
+                "bCallOnSceneEscape": false
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Popup.Tutorial"
+        },
+        "Value": {
+          "Tag": {
+            "TagName": "UI.Popup.Tutorial"
+          },
+          "Type": {
+            "TagName": "UI.Popup.Type.Info"
+          },
+          "Title": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+            "Key": "Title.Tutorial",
+            "SourceString": "Tutorial",
+            "LocalizedString": "Tutorial"
+          },
+          "Subtitle": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+            "Key": "Subtitle.Tutorial",
+            "SourceString": "You will enter the Tutorial.",
+            "LocalizedString": "You will enter the Tutorial."
+          },
+          "Description": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+            "Key": "Description.Tutorial",
+            "SourceString": "Are you sure you want to enter the Tutorial?",
+            "LocalizedString": "Are you sure you want to enter the Tutorial?"
+          },
+          "bShouldBlockBack": false,
+          "AdditionalData": {
+            "DataArray": [
+              {
+                "Level": {
+                  "AssetPathName": "/Game/Maps/Worlds/Kavkazi/Kavkazi.Kavkazi",
+                  "SubPathString": ""
+                },
+                "Options": "Experience=ShootingRangeTutorial",
+                "CustomLoadingScreenWidgetClass": {
+                  "AssetPathName": "/Game/UI/Features/Frontend/LoadingScreen/W_LoadingScreen_Tutorial.W_LoadingScreen_Tutorial_C",
+                  "SubPathString": ""
+                }
+              }
+            ]
+          },
+          "Options": [
+            {
+              "Key": "EWDPopupOption::Left",
+              "Value": {
+                "ButtonText": {
+                  "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+                  "Key": "Button.Back",
+                  "SourceString": "Back",
+                  "LocalizedString": "Back"
+                },
+                "bAutoCloseOnSelected": true,
+                "bAutoFocusOnOpen": false,
+                "ButtonTypeOverride": {
+                  "TagName": "None"
+                },
+                "ButtonConfig": null,
+                "bCallOnSceneEscape": false
+              }
+            },
+            {
+              "Key": "EWDPopupOption::Right",
+              "Value": {
+                "ButtonText": {
+                  "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+                  "Key": "Button.Confirm",
+                  "SourceString": "Confirm",
+                  "LocalizedString": "Confirm"
+                },
+                "bAutoCloseOnSelected": true,
+                "bAutoFocusOnOpen": true,
+                "ButtonTypeOverride": {
+                  "TagName": "UI.Popup.Button.Main"
+                },
+                "ButtonConfig": null,
+                "bCallOnSceneEscape": false
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Popup.ExitGame"
+        },
+        "Value": {
+          "Tag": {
+            "TagName": "UI.Popup.ExitGame"
+          },
+          "Type": {
+            "TagName": "UI.Popup.Type.Info"
+          },
+          "Title": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+            "Key": "Title.ExitGame",
+            "SourceString": "Exit to Desktop",
+            "LocalizedString": "Exit to Desktop"
+          },
+          "Subtitle": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+            "Key": "Subtitle.ExitGame",
+            "SourceString": "The application will close.",
+            "LocalizedString": "The application will close."
+          },
+          "Description": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+            "Key": "Description.ExitGame",
+            "SourceString": "Are you sure you want to exit the game?",
+            "LocalizedString": "Are you sure you want to exit the game?"
+          },
+          "bShouldBlockBack": false,
+          "AdditionalData": {
+            "DataArray": []
+          },
+          "Options": [
+            {
+              "Key": "EWDPopupOption::Left",
+              "Value": {
+                "ButtonText": {
+                  "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+                  "Key": "Button.No",
+                  "SourceString": "No",
+                  "LocalizedString": "No"
+                },
+                "bAutoCloseOnSelected": true,
+                "bAutoFocusOnOpen": false,
+                "ButtonTypeOverride": {
+                  "TagName": "None"
+                },
+                "ButtonConfig": null,
+                "bCallOnSceneEscape": false
+              }
+            },
+            {
+              "Key": "EWDPopupOption::Right",
+              "Value": {
+                "ButtonText": {
+                  "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+                  "Key": "Button.Yes",
+                  "SourceString": "Yes",
+                  "LocalizedString": "Yes"
+                },
+                "bAutoCloseOnSelected": true,
+                "bAutoFocusOnOpen": true,
+                "ButtonTypeOverride": {
+                  "TagName": "UI.Popup.Button.Main"
+                },
+                "ButtonConfig": null,
+                "bCallOnSceneEscape": false
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Popup.Home.Subsystem.GPUCheck"
+        },
+        "Value": {
+          "Tag": {
+            "TagName": "UI.Popup.Home.Subsystem.GPUCheck"
+          },
+          "Type": {
+            "TagName": "UI.Popup.Type.Info"
+          },
+          "Title": {
+            "CultureInvariantString": null
+          },
+          "Subtitle": {
+            "CultureInvariantString": null
+          },
+          "Description": {
+            "CultureInvariantString": null
+          },
+          "bShouldBlockBack": false,
+          "AdditionalData": {
+            "DataArray": []
+          },
+          "Options": []
+        }
+      }
+    ],
+    "_aaaanjfiiedikopiljmee_$9588438AEF8B9C44$_$13$": [
+      {
+        "_aaaainndnamkfcioeebom_$DD3D0CA528E441EC$_$8$": {
+          "TagName": "UI.Popup.PrivacyNotice"
+        },
+        "Version": 2,
+        "bEnabled": true
+      },
+      {
+        "_aaaainndnamkfcioeebom_$DD3D0CA528E441EC$_$8$": {
+          "TagName": "UI.Popup.DailyMessage"
+        },
+        "Version": 2,
+        "bEnabled": true
+      },
+      {
+        "_aaaainndnamkfcioeebom_$DD3D0CA528E441EC$_$8$": {
+          "TagName": "UI.Popup.PatchNotes"
+        },
+        "Version": 8,
+        "bEnabled": true
+      },
+      {
+        "_aaaainndnamkfcioeebom_$DD3D0CA528E441EC$_$8$": {
+          "TagName": "UI.Popup.Home.Subsystem.GPUCheck"
+        },
+        "Version": 1,
+        "bEnabled": true
+      }
+    ],
+    "bShouldOpenContextDrawerOnCloseRequested": true,
+    "EnterSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.UI.FrontEnd.Open.MainMenu"
+    },
+    "ExitSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.UI.FrontEnd.Close.MainMenu"
     }
   }
 }

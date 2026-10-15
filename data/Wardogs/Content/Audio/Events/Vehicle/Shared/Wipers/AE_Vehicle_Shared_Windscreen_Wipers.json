@@ -1,0 +1,91 @@
+--- export: UObject / AEB_SetAudioParameters_C_0 ---
+{
+  "Type": "AEB_SetAudioParameters_C",
+  "Name": "AEB_SetAudioParameters_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetAudioParameters.AEB_SetAudioParameters_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Shared_Windscreen_Wipers'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/Wipers/AE_Vehicle_Shared_Windscreen_Wipers.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetAudioParameters_C'Default__AEB_SetAudioParameters_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetAudioParameters.0"
+  },
+  "Properties": {
+    "Parameters": [
+      {
+        "ParamName": "Wiper Intensity",
+        "FloatParam": 0.0,
+        "BoolParam": false,
+        "IntParam": 0,
+        "ObjectParam": null,
+        "StringParam": "",
+        "ArrayFloatParam": [],
+        "ArrayBoolParam": [],
+        "ArrayIntParam": [],
+        "ArrayObjectParam": [],
+        "ArrayStringParam": [],
+        "ParamType": "EAudioParameterType::Float",
+        "TypeName": "None"
+      },
+      {
+        "ParamName": "Up?",
+        "FloatParam": 0.0,
+        "BoolParam": true,
+        "IntParam": 0,
+        "ObjectParam": null,
+        "StringParam": "",
+        "ArrayFloatParam": [],
+        "ArrayBoolParam": [],
+        "ArrayIntParam": [],
+        "ArrayObjectParam": [],
+        "ArrayStringParam": [],
+        "ParamType": "EAudioParameterType::Boolean",
+        "TypeName": "None"
+      }
+    ],
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_Shared_Windscreen_Wipers ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_Shared_Windscreen_Wipers",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/Shared/Wipers/AE_Vehicle_Shared_Windscreen_Wipers",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Shared.Weapon"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_SetAudioParameters_C'AE_Vehicle_Shared_Windscreen_Wipers:AEB_SetAudioParameters_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/Wipers/AE_Vehicle_Shared_Windscreen_Wipers.0"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Vehicle_Shared_Windscreen_Wipers:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/Wipers/AE_Vehicle_Shared_Windscreen_Wipers.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Shared_Windscreen_Wipers'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/Wipers/AE_Vehicle_Shared_Windscreen_Wipers.1"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

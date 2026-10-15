@@ -8,6 +8,12 @@ parent: "Game Features"
 
 ---
 
+## Season 02 update (2026-10-15)
+
+- Added a data registry source action to [`ShootingRangeTutorial.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ShootingRangeTutorial/Content/ShootingRangeTutorial.json) that adds `DT_SceneData_Match_ShootingRange` to the `UISceneData_Match` registry (client and server source, asset priority 0).
+
+---
+
 ## 1. What This Folder Holds
 
 The shooting-range tutorial: a scripted first-run mode with a helicopter fly-by, a seat with a locked camera, and a quest list. It is a short tutorial experience. The base shooting range is in the ShootingRange folder.
@@ -32,6 +38,7 @@ The shooting-range tutorial: a scripted first-run mode with a helicopter fly-by,
 | Component on `WDGameState` | `B_ShootingRangeTutorial_Component` |
 | Component on `WDGameModeSession` | `WDShootingRangeTutorialPlayerSpawnManagerComponent` |
 | World layer | `EDL_ShootingRangeTutorial` (external data layer) |
+| Scene data registry | `UISceneData_Match` ← [`DT_SceneData_Match_ShootingRange`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match_ShootingRange.json) |
 | Character-modifier scan | `BH.CharacterModifierState` in `/ShootingRangeTutorial/Actors` |
 | HUD | `UI.HUD.Element.Tutorial.QuestList` → `W_TutorialQuestList` |
 

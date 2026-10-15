@@ -1,0 +1,57 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_WHL_08_Default'",
+    "ObjectPath": "/WHL_08/Variants/ID_WHL_08_Default.1"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 4,
+      "Y": 3
+    }
+  }
+}
+--- export: UPrimaryDataAsset / ID_WHL_08_Default ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_WHL_08_Default",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/WHL_08/Variants/ID_WHL_08_Default",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Vehicle.Variant.Land.Wheeled.WHL_08.Default"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_WHL_08_Default:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/WHL_08/Variants/ID_WHL_08_Default.0"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_WHL_08_Default:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/WHL_08/Variants/ID_WHL_08_Default.2"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_WHL_08_Default'",
+    "ObjectPath": "/WHL_08/Variants/ID_WHL_08_Default.1"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'DA_WHL_08_Audio'",
+      "ObjectPath": "/WHL_08/Data/DA_WHL_08_Audio.0"
+    }
+  }
+}

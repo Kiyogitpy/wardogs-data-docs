@@ -1,11 +1,17 @@
 --- export: UDataAsset / DA_PopupData_PurchaseCosmetic ---
 {
-  "Type": "WDUIAsyncPopupData",
+  "Type": "WDUIPurchaseCosmeticPopupData",
   "Name": "DA_PopupData_PurchaseCosmetic",
   "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
-  "Class": "UScriptClass'WDUIAsyncPopupData'",
+  "Class": "UScriptClass'WDUIPurchaseCosmeticPopupData'",
   "Package": "/Game/UI/Features/Popups/Widgets/Custom/Data/DA_PopupData_PurchaseCosmetic",
   "Properties": {
+    "_aaabjgeolfhhjakpkeifo_$64EB57790AFA485E$_$25$": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+      "Key": "Text.Popup.Cosmetic.ConfirmAndEquip",
+      "SourceString": "Confirm and Equip",
+      "LocalizedString": "Confirm and Equip"
+    },
     "MinimumAwaitResponseSeconds": 0.5,
     "AutoCloseOnCompletionTimer": 1.5,
     "TitleFormat": {

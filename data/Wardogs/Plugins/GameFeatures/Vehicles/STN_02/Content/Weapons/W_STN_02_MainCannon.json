@@ -20,7 +20,7 @@
       "SourceID": "Chassis",
       "SocketName": "S_Player_Seat"
     },
-    "GamepadRotationSensitivity": 50.0,
+    "GamepadRotationSensitivity": 90.0,
     "GamepadRotationUpdateMax": {
       "X": 150.0,
       "Y": 150.0
@@ -37,11 +37,74 @@
       "MaxWeaponYawAngle": -90.0,
       "bLimitWeaponPitch": true,
       "MinWeaponPitchAngle": -5.0,
-      "MaxWeaponPitchAngle": 55.0,
+      "MaxWeaponPitchAngle": 65.0,
       "RotationSpeed": 115.0,
-      "YawJointSocket": "Chassis",
-      "WeaponRotationGameplayCueThreshold": 5.52089E-40
+      "TurretSkeletalMeshTag": "Chassis",
+      "WeaponRotationGameplayCueTag": {
+        "TagName": "GameplayCue.Vehicle.Weapon.Aim"
+      }
     },
-    "WeaponStatesCameraData": []
+    "WeaponStatesCameraData": [
+      {
+        "Key": {
+          "TagName": "State.Vehicle.Weapon.ADS"
+        },
+        "Value": {
+          "bSupported": true,
+          "AttachQuery": {
+            "SourceMode": "EAttachSourceQueryMode::ComponentTag",
+            "SocketMode": "EAttachSocketMatchMode::Explicit",
+            "SourceID": "Chassis",
+            "SourceFilter": {
+              "RequireTags": [],
+              "IgnoreTags": [],
+              "TagQuery": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [],
+                "QueryTokenStream": [],
+                "UserDescription": "",
+                "AutoDescription": ""
+              }
+            },
+            "SocketName": "AA_Camera_ADS",
+            "SocketFilter": {
+              "RequireTags": [],
+              "IgnoreTags": [],
+              "TagQuery": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [],
+                "QueryTokenStream": [],
+                "UserDescription": "",
+                "AutoDescription": ""
+              }
+            }
+          },
+          "CameraBehaviourData": {
+            "ObjectName": "MLandVehicleSpringArmDataAsset'DA_STN_02_CameraBehaviour_FP'",
+            "ObjectPath": "/STN_02/Data/DA_STN_02_CameraBehaviour_FP.0"
+          },
+          "bAlignWithTarget": true,
+          "ZeroingDistance": 200.0,
+          "FOVMultiplier": 1.0,
+          "_aaabokgmbjbllidnailcp_$A6C191BB83D08B2F$_$30$": false,
+          "_aaabfcjmfdhlfmlfijgpg_$29C537B5CB5896F6$_$21$": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "_aaabejnhnhahophgdkgfl_$9D7D707EF763A65B$_$20$": false
+        }
+      }
+    ],
+    "HUDLayoutTag": {
+      "TagName": "UI.HUD.Layout.Vehicle.Crew.Land.Stationary"
+    },
+    "HUDScopeBlurAlpha": 1.0,
+    "WeaponExtensionsDataAssets": [
+      {
+        "AssetPathName": "/STN_02/Weapons/WeaponExtensions/WE_STN_02_Heavy_MainCannon.WE_STN_02_Heavy_MainCannon",
+        "SubPathString": ""
+      }
+    ]
   }
 }

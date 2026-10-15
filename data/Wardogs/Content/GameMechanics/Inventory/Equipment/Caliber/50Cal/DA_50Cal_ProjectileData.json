@@ -19,7 +19,7 @@
         ]
       },
       "DamageValues": {
-        "BaseDamage": 107.0,
+        "BaseDamage": 90.0,
         "ImpulseValues": {
           "bApplyImpulse": true,
           "bVelocityChange": true,
@@ -46,7 +46,7 @@
         }
       },
       "SuppressionData": {
-        "BaseSuppression": 1.0,
+        "BaseSuppression": 0.75,
         "DistanceFalloffRange": {
           "Min": 2.5,
           "Max": 4.0
@@ -77,6 +77,10 @@
                 "LeaveTangentWeight": 0.0
               }
             ]
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_SuppressionCurve_Special'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/CR_SuppressionCurve_Special.0"
           }
         }
       },

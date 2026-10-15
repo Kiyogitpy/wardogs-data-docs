@@ -1,0 +1,57 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_TNK_04'",
+    "ObjectPath": "/TNK_04/Variants/ID_TNK_04.1"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 6,
+      "Y": 4
+    }
+  }
+}
+--- export: UPrimaryDataAsset / ID_TNK_04 ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_TNK_04",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/TNK_04/Variants/ID_TNK_04",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Vehicle.Variant.Land.Tracked.TNK_04.Default"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_TNK_04:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/TNK_04/Variants/ID_TNK_04.0"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_TNK_04:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/TNK_04/Variants/ID_TNK_04.2"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_TNK_04'",
+    "ObjectPath": "/TNK_04/Variants/ID_TNK_04.1"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'DA_TNK_04_Audio'",
+      "ObjectPath": "/TNK_04/Audio/DA/DA_TNK_04_Audio.0"
+    }
+  }
+}

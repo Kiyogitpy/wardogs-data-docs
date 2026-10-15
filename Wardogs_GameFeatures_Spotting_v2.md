@@ -4,9 +4,23 @@ parent: "Game Features"
 ---
 
 # Wardogs — GameFeature: Spotting Reference (v2)
-*Extracted from cooked game data via CUE4Parse (build `++Wardogs+Live-CL-509546`, UE 5.7.4). Source: [`Wardogs/Plugins/GameFeatures/Spotting/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Spotting) (28 JSON files). Scripted pass over every file, then spot-checked against the reward and tracker tables.*
+*Extracted from cooked game data (build `++Wardogs+Live-CL-516586`, UE 5.7.4). Source: [`Wardogs/Plugins/GameFeatures/Spotting/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Spotting) (28 JSON files).*
 
 > **Overlap with the main doc:** the flat Spotting cash min and max values (15 / 275 and 50 / 500) are in `Wardogs_Rewards_and_Progression_v2.md`, section 9. This doc adds the **per-target challenge formulas**, the **modifier table** behind those min and max values, the **variant lookups**, **skills**, **feed strings**, **trackers**, **input bindings** and **audio** for spotting.
+
+---
+
+## Season 02 update (2026-10-15)
+
+- **Challenge calculator:** 44 rows become 130 (22 Added and 22 Removed become 65 and 65). The new rows are variant-level entries, the new vehicles [`TNK_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/TNK_04.json) and [`WHL_08`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08/Content/WHL_08.json), and the stationary and buildable entries `Loudspeaker`, `MGNest`, [`STN_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/STN_05.json), `BuildableRadio`, `BuildableRepairStation` and `BuildableRefuelStation`.
+- **New `BuildProgress` factor:** 10 buildable and stationary rows now multiply by `BuildProgress` (section 3a). No other formula changed.
+- **Lookup tables:** 47 rows become 51 in both lookups. Every reward tag is now specific to one variant, and `MistralAA`, `Mortar` and [`STN_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/STN_05.json) no longer share a tag (section 5).
+- **Values, old -> new (Added):** TNK_01.Heavy XP 75 -> 60. TNK_01.Artillery cash 1500 -> 400 and XP 75 -> 60. MistralAA cash 200 -> 75 and XP 50 -> 20. Mortar cash 100 -> 75 and XP 50 -> 20.
+- **Values, old -> new (Removed):** TNK_01.Heavy cash 5000 -> 3300 and XP 375 -> 200. TNK_01.Artillery cash 8000 -> 1200. Phalanx cash 1500 -> 725 and XP 125 -> 100.
+- **KOTH challenge definitions:** [`DT_Challenges_SessionEvents_KOTH_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/DT_Challenges_SessionEvents_KOTH_Spotting.json) goes from 0 rows to 2 (`Challenges.SessionEvents.Spotting.Added` and `.Removed`).
+- **Trackers:** the map and spatial trackers gain per-vehicle overrides for [`WHL_08`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08/Content/WHL_08.json) (reward tag `VehicleDestroyed.WHL_08`) and [`TNK_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/TNK_04.json) (reward tag `VehicleDestroyed.TNK_04.Default`). The material tracker gains icon entries for both.
+- **Input:** [`IMC_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Input/IMC_Spotting.json) adds reload bindings on `R` and gamepad face button left ([`IA_Weapon_Reload`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Input/IA_Weapon_Reload.json)).
+- **Unchanged:** state tree states (22 and 21), skills, feed strings, audio, and the match-score cash min and max values.
 
 ---
 
@@ -28,8 +42,8 @@ Both events pay out, and both are split by target type (player, vehicle, buildab
 | Group | Files | Contents |
 |---|---|---|
 | Root bundle | 1 | [`Spotting.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Spotting.json) (`GameFeatureData`): data registry and sources, a gameplay cue path, components, and a widget element. |
-| Challenge rewards | 2 | [`DT_ChallengeRewards_SessionEvents_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/DT_ChallengeRewards_SessionEvents_Spotting.json) (44 rows, the calculator). [`DT_Challenges_SessionEvents_KOTH_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/DT_Challenges_SessionEvents_KOTH_Spotting.json) (0 rows, challenge definitions). |
-| Variant lookups | 2 | [`DT_RewardLookup_SessionEvent_Spotting_Added`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_Spotting_Added.json) (47 rows), `..._Removed` (47 rows). |
+| Challenge rewards | 2 | [`DT_ChallengeRewards_SessionEvents_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/DT_ChallengeRewards_SessionEvents_Spotting.json) (130 rows, the calculator). [`DT_Challenges_SessionEvents_KOTH_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/DT_Challenges_SessionEvents_KOTH_Spotting.json) (2 rows, challenge definitions). |
+| Variant lookups | 2 | [`DT_RewardLookup_SessionEvent_Spotting_Added`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_Spotting_Added.json) (51 rows), `..._Removed` (51 rows). |
 | State trees | 2 | [`ST_Challenges_SessionEvents_KOTH_Spotting_Added`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/ST_Challenges_SessionEvents_KOTH_Spotting_Added.json) (22 states), `..._Removed` (21 states). Each has a `WDChallengeStateTreeSchema`. |
 | Match-score rewards | 2 | [`DT_Reward_Cash_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Rewards/DT_Reward_Cash_Spotting.json) (4 rows, live min and max values). [`DT_Rewards_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/DT_Rewards_Spotting.json) (3 rows, all zero). |
 | Skills | 1 | [`DT_Skills_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Skills/DT_Skills_Spotting.json) (2 rows, Recon skills). |
@@ -40,32 +54,38 @@ Both events pay out, and both are split by target type (player, vehicle, buildab
 
 ---
 
-## 3. Challenge Calculator ([`DT_ChallengeRewards_SessionEvents_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/DT_ChallengeRewards_SessionEvents_Spotting.json), 44 rows)
+## 3. Challenge Calculator ([`DT_ChallengeRewards_SessionEvents_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/DT_ChallengeRewards_SessionEvents_Spotting.json), 130 rows)
 
-There are **22 Added rows and 22 Removed rows**, one per target type. Each row has a cash resource and an XP resource.
+There are **65 Added rows and 65 Removed rows**. The original 22 target types keep one row per event. The rest are variant-level rows (for example `Bobcat.Default` and `Kodiak.MachineGun`), the new vehicles [`TNK_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/TNK_04.json) and [`WHL_08`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08/Content/WHL_08.json), and the stationary and buildable entries listed below. Each row has a cash resource and an XP resource.
 
-Target types (same 22 names on both events): `Player`, `Bobcat`, `Kodiak`, `LittleBird`, `Huey`, `Blackhawk`, `Havoc`, `SpawnVehicle`, `TNK_01.Heavy`, `TNK_01.Artillery`, `TNK_01.AntiAir`, `Humvee`, `DuneBuggy`, `Ural`, [`Claymore`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Claymore/Content/Claymore.json), `ATMine`, `BuildableHotZoneMagnet`, `FOB`, `SupplyCrate`, `MistralAA`, `Phalanx`, `Mortar`.
+Target types (the original 22 names, on both events): `Player`, `Bobcat`, `Kodiak`, `LittleBird`, `Huey`, `Blackhawk`, `Havoc`, `SpawnVehicle`, `TNK_01.Heavy`, `TNK_01.Artillery`, `TNK_01.AntiAir`, `Humvee`, `DuneBuggy`, `Ural`, [`Claymore`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Claymore/Content/Claymore.json), `ATMine`, `BuildableHotZoneMagnet`, `FOB`, `SupplyCrate`, `MistralAA`, `Phalanx`, `Mortar`. New row names in this update: `TNK_04`, `WHL_08`, `Loudspeaker`, `MGNest`, `STN_05`, `BuildableRadio`, `BuildableRepairStation`, `BuildableRefuelStation`, plus variant rows for the vehicles, spawn vehicles and supply crates.
 
 ### 3a. Formulas
 
 | Event | Resource | Expression |
 |---|---|---|
-| Added (all 22) | Cash | `(1 - (clamp(LastVictimCount, 0, LastVictimCountMax) * LastVictimReductionModifier)) * (BaseReward * AlignmentModifier * TargetZoneModifier)` |
-| Added (all 22) | XP | `(1 - (clamp(LastVictimCount, 0, LastVictimCountMax) * LastVictimReductionModifier)) * (BaseReward)` |
-| Removed (all 22) | Cash | `BaseReward * AlignmentModifier * TargetZoneModifier * DestroyedByTeamModifier` |
-| Removed (all 22) | XP | `(BaseReward)` |
+| Added (55 rows) | Cash | `(1 - (clamp(LastVictimCount, 0, LastVictimCountMax) * LastVictimReductionModifier)) * (BaseReward * AlignmentModifier * TargetZoneModifier)` |
+| Added (10 rows, see note) | Cash | `(1 - (clamp(LastVictimCount, 0, LastVictimCountMax) * LastVictimReductionModifier)) * (BaseReward * AlignmentModifier * TargetZoneModifier * BuildProgress)` |
+| Added (55 rows) | XP | `(1 - (clamp(LastVictimCount, 0, LastVictimCountMax) * LastVictimReductionModifier)) * (BaseReward)` |
+| Added (10 rows, see note) | XP | `(1 - (clamp(LastVictimCount, 0, LastVictimCountMax) * LastVictimReductionModifier)) * (BaseReward * BuildProgress)` |
+| Removed (55 rows) | Cash | `BaseReward * AlignmentModifier * TargetZoneModifier * DestroyedByTeamModifier` |
+| Removed (10 rows, see note) | Cash | `BaseReward * AlignmentModifier * TargetZoneModifier * DestroyedByTeamModifier * BuildProgress` |
+| Removed (55 rows) | XP | `(BaseReward)` |
+| Removed (10 rows, see note) | XP | `(BaseReward) * BuildProgress` |
 
 Note the difference. **Added** pays down by how many times the target was already spotted (the "last victim" count). **Removed** has no victim reduction, but adds `DestroyedByTeamModifier`.
+
+The 10 rows marked "see note" are the buildable and stationary entries: `BuildableHotZoneMagnet`, `BuildableRadio`, `BuildableRefuelStation`, `BuildableRepairStation`, `Loudspeaker`, `MistralAA`, `Mortar`, `Phalanx`, `MGNest` and [`STN_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/STN_05.json). They multiply by `BuildProgress`, a variable whose source is not in this folder.
 
 ### 3b. Selectors
 
 | Variable | Default | Options (condition → variable) | Rows |
 |---|---|---|---|
-| `BaseReward` | `DefaultReward` | `ALL(Challenges.Rewards.Spotting.Refreshed)` → `RefreshedReward` | all 44 |
-| `BaseReward` | `DefaultReward` | `ALL(Challenges.Context.KilledByEnemy)` → `KilledByEnemyReward` | 22 Removed rows |
-| `AlignmentModifier` | `DefaultFactor` | `ANY(Vehicle.Faction.Friendly, FriendlyKill)` → `FriendlyFactor`; `ANY(Vehicle.Faction.Neutral)` → `NeutralFactor`; `ANY(Vehicle.Faction.Hostile)` → `HostileFactor` | all 44 |
-| `TargetZoneModifier` | `DefaultFactor` | `ALL(HotZoneMagnetActive, Target.InHotZone)` → `HotZoneMagnetFactor`; `ALL(Target.InHotZone)` → `HotZoneFactor`; `ALL(Target.InControlZone)` → `ControlZoneFactor` | all 44 |
-| `DestroyedByTeamModifier` | `DefaultFactor` | `ALL(Challenges.Context.KilledByEnemy)` → `KilledByEnemyFactor` | 22 Removed rows |
+| `BaseReward` | `DefaultReward` | `ALL(Challenges.Rewards.Spotting.Refreshed)` → `RefreshedReward` | all 130 |
+| `BaseReward` | `DefaultReward` | `ALL(Challenges.Context.KilledByEnemy)` → `KilledByEnemyReward` | 65 Removed rows |
+| `AlignmentModifier` | `DefaultFactor` | `ANY(Vehicle.Faction.Friendly, FriendlyKill)` → `FriendlyFactor`; `ANY(Vehicle.Faction.Neutral)` → `NeutralFactor`; `ANY(Vehicle.Faction.Hostile)` → `HostileFactor` | all 130 |
+| `TargetZoneModifier` | `DefaultFactor` | `ALL(HotZoneMagnetActive, Target.InHotZone)` → `HotZoneMagnetFactor`; `ALL(Target.InHotZone)` → `HotZoneFactor`; `ALL(Target.InControlZone)` → `ControlZoneFactor` | all 130 |
+| `DestroyedByTeamModifier` | `DefaultFactor` | `ALL(Challenges.Context.KilledByEnemy)` → `KilledByEnemyFactor` | 65 Removed rows |
 
 Points to note:
 - `AlignmentModifier` picks a factor by **faction of the target vehicle** (friendly, neutral, hostile). A friendly target also matches `FriendlyKill`.
@@ -101,36 +121,65 @@ So the **owner** (the player who spotted) gets a reduced share of the max value 
 
 ## 5. Variant Lookups ([`DT_RewardLookup_SessionEvent_Spotting_Added`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_Spotting_Added.json) and `_Removed`)
 
-Each lookup has 47 rows and maps the spotted variant to its reward tag. The Added and Removed tables are identical in layout. Only the reward tag prefix differs (`.Added.` or `.Removed.`).
+Each lookup has 51 rows and maps the spotted variant to its reward tag. Each row now has its own reward tag, so the table below lists each one (Added shown; Removed uses the same variants with the `.Removed.` prefix). The Added and Removed tables are identical in layout. Only the reward tag prefix differs (`.Added.` or `.Removed.`).
 
-| Reward tag | Variants | Variant tags |
-|---|---|---|
-| `Spotting.*.Kodiak` | 3 | `Vehicle.Variant.Land.Wheeled.Kodiak.Default / .MachineGun / .Pickup` |
-| `Spotting.*.LittleBird` | 3 | `Vehicle.Variant.Air.Rotary.Littlebird.Default / .MountedMachineGuns / .RocketPods` |
-| `Spotting.*.Huey` | 2 | `Vehicle.Variant.Air.Rotary.ROT_01.Default / .MountedMachineGuns` |
-| `Spotting.*.Blackhawk` | 2 | `Vehicle.Variant.Air.Rotary.ROT_04.Default / .MountedMachineGuns` |
-| `Spotting.*.Havoc` | 1 | `Vehicle.Variant.Air.Rotary.Havoc.Default` |
-| `Spotting.*.SpawnVehicle` | 3 | `Vehicle.Variant.Land.Tracked.SpawnVehicle.Lonestar / .Manticore / .Valkyra` |
-| `Spotting.*.TNK_01.Heavy` | 1 | `Vehicle.Variant.Land.Tracked.TNK_01.Heavy` |
-| `Spotting.*.TNK_01.Artillery` | 1 | `Vehicle.Variant.Land.Tracked.TNK_01.Artillery` |
-| `Spotting.*.TNK_01.AntiAir` | 1 | `Vehicle.Variant.Land.Tracked.TNK_01.AntiAir` |
-| `Spotting.*.Bobcat` | 1 | `Vehicle.Variant.Land.Wheeled.Bobcat.Default` |
-| `Spotting.*.Humvee` | 3 | `Vehicle.Variant.Land.Wheeled.Humvee.Default / .MachineGun / .Minigun` |
-| `Spotting.*.DuneBuggy` | 1 | `Vehicle.Variant.Land.Wheeled.DuneBuggy.Default` |
-| `Spotting.*.Ural` | 3 | `Vehicle.Variant.Land.Wheeled.Ural.Battle / .Attack / .Default` |
-| `Spotting.*.Claymore` | 1 | `Id.Item.Claymore` |
-| `Spotting.*.ATMine` | 1 | `ID.Item.ATMine` |
-| `Spotting.*.FOB` | 1 | `Id.Buildable.FOB` |
-| `Spotting.*.BuildableHotZoneMagnet` | 1 | `Id.Buildable.HotzoneMagnet` |
-| `Spotting.*.SupplyCrate` | 10 | All `ID.Item.VehicleSupplyCrate.*` variants (Free, Container.Free, Small, Small.Armoured, Large, Large.Armoured, Pallet types) |
-| `Spotting.*.MistralAA` | 5 | `Vehicle.Variant.Stationary.MistralAA`, `Vehicle.Variant.Stationary.Loudspeaker`, `Id.Buildable.Radio`, `Id.Buildable.RepairStation`, `Id.Buildable.RefuelStation` |
-| `Spotting.*.Mortar` | 2 | `Vehicle.Variant.Stationary.Mortar`, `Vehicle.Variant.Stationary.STN_05` |
-| `Spotting.*.Phalanx` | 1 | `Vehicle.Variant.Stationary.Phalanx` |
+| Reward tag | Variant tag |
+|---|---|
+| `Spotting.*.Kodiak.Default` | `Vehicle.Variant.Land.Wheeled.Kodiak.Default` |
+| `Spotting.*.Kodiak.MachineGun` | `Vehicle.Variant.Land.Wheeled.Kodiak.MachineGun` |
+| `Spotting.*.Kodiak.Pickup` | `Vehicle.Variant.Land.Wheeled.Kodiak.Pickup` |
+| `Spotting.*.WHL_08.Default` | `Vehicle.Variant.Land.Wheeled.WHL_08.Default` |
+| `Spotting.*.WHL_08.MachineGun` | `Vehicle.Variant.Land.Wheeled.WHL_08.MachineGun` |
+| `Spotting.*.LittleBird.Default` | `Vehicle.Variant.Air.Rotary.Littlebird.Default` |
+| `Spotting.*.LittleBird.MountedMachineGuns` | `Vehicle.Variant.Air.Rotary.Littlebird.MountedMachineGuns` |
+| `Spotting.*.LittleBird.RocketPods` | `Vehicle.Variant.Air.Rotary.Littlebird.RocketPods` |
+| `Spotting.*.Huey.Default` | `Vehicle.Variant.Air.Rotary.ROT_01.Default` |
+| `Spotting.*.Huey.MountedMachineGuns` | `Vehicle.Variant.Air.Rotary.ROT_01.MountedMachineGuns` |
+| `Spotting.*.Blackhawk.Default` | `Vehicle.Variant.Air.Rotary.ROT_04.Default` |
+| `Spotting.*.Blackhawk.MountedMachineGuns` | `Vehicle.Variant.Air.Rotary.ROT_04.MountedMachineGuns` |
+| `Spotting.*.Havoc.Default` | `Vehicle.Variant.Air.Rotary.Havoc.Default` |
+| `Spotting.*.SpawnVehicle.Lonestar` | `Vehicle.Variant.Land.Tracked.SpawnVehicle.Lonestar` |
+| `Spotting.*.SpawnVehicle.Manticore` | `Vehicle.Variant.Land.Tracked.SpawnVehicle.Manticore` |
+| `Spotting.*.SpawnVehicle.Valkyra` | `Vehicle.Variant.Land.Tracked.SpawnVehicle.Valkyra` |
+| `Spotting.*.TNK_01.Heavy` | `Vehicle.Variant.Land.Tracked.TNK_01.Heavy` |
+| `Spotting.*.TNK_01.Artillery` | `Vehicle.Variant.Land.Tracked.TNK_01.Artillery` |
+| `Spotting.*.TNK_01.AntiAir` | `Vehicle.Variant.Land.Tracked.TNK_01.AntiAir` |
+| `Spotting.*.TNK_04.Default` | `Vehicle.Variant.Land.Tracked.TNK_04.Default` |
+| `Spotting.*.Bobcat.Default` | `Vehicle.Variant.Land.Wheeled.Bobcat.Default` |
+| `Spotting.*.Humvee.Default` | `Vehicle.Variant.Land.Wheeled.Humvee.Default` |
+| `Spotting.*.Humvee.MachineGun` | `Vehicle.Variant.Land.Wheeled.Humvee.MachineGun` |
+| `Spotting.*.Humvee.Minigun` | `Vehicle.Variant.Land.Wheeled.Humvee.Minigun` |
+| `Spotting.*.DuneBuggy.Default` | `Vehicle.Variant.Land.Wheeled.DuneBuggy.Default` |
+| `Spotting.*.Ural.Battle` | `Vehicle.Variant.Land.Wheeled.Ural.Battle` |
+| `Spotting.*.Ural.Attack` | `Vehicle.Variant.Land.Wheeled.Ural.Attack` |
+| `Spotting.*.Ural.Default` | `Vehicle.Variant.Land.Wheeled.Ural.Default` |
+| `Spotting.*.Claymore` | `Id.Item.Claymore` |
+| `Spotting.*.ATMine` | `ID.Item.ATMine` |
+| `Spotting.*.FOB` | `Id.Buildable.FOB` |
+| `Spotting.*.BuildableHotZoneMagnet` | `Id.Buildable.HotzoneMagnet` |
+| `Spotting.*.SupplyCrate.Free` | `ID.Item.VehicleSupplyCrate.Free` |
+| `Spotting.*.SupplyCrate.Container.Free` | `ID.Item.VehicleSupplyCrate.Container.Free` |
+| `Spotting.*.SupplyCrate.Small` | `ID.Item.VehicleSupplyCrate.Small` |
+| `Spotting.*.SupplyCrate.Small.Armoured` | `ID.Item.VehicleSupplyCrate.Small.Armoured` |
+| `Spotting.*.SupplyCrate.Large` | `ID.Item.VehicleSupplyCrate.Large` |
+| `Spotting.*.SupplyCrate.Large.Armoured` | `ID.Item.VehicleSupplyCrate.Large.Armoured` |
+| `Spotting.*.SupplyCrate.Pallet.BuildSupply` | `ID.Item.VehicleSupplyCrate.Pallet.BuildSupply` |
+| `Spotting.*.SupplyCrate.Pallet.FuelSupply` | `ID.Item.VehicleSupplyCrate.Pallet.FuelSupply` |
+| `Spotting.*.SupplyCrate.Pallet.MunitionsSupply` | `ID.Item.VehicleSupplyCrate.Pallet.MunitionsSupply` |
+| `Spotting.*.SupplyCrate.Pallet.SparePartsSupply` | `ID.Item.VehicleSupplyCrate.Pallet.SparePartsSupply` |
+| `Spotting.*.MistralAA` | `Vehicle.Variant.Stationary.MistralAA` |
+| `Spotting.*.Mortar` | `Vehicle.Variant.Stationary.Mortar` |
+| `Spotting.*.Phalanx` | `Vehicle.Variant.Stationary.Phalanx` |
+| `Spotting.*.Loudspeaker` | `Vehicle.Variant.Stationary.Loudspeaker` |
+| `Spotting.*.BuildableRadio` | `Id.Buildable.Radio` |
+| `Spotting.*.BuildableRepairStation` | `Id.Buildable.RepairStation` |
+| `Spotting.*.BuildableRefuelStation` | `Id.Buildable.RefuelStation` |
+| `Spotting.*.STN_05` | `Vehicle.Variant.Stationary.STN_05` |
+| `Spotting.*.MGNest` | `Vehicle.Variant.Stationary.MGNest` |
 
 Observations:
-- **21 target reward tags** appear in each lookup. The `Player` target is not in either lookup. The player row must be selected by a different path, which was not traced.
-- The `MistralAA` reward tag covers two stationary vehicles and three buildables (Radio, RepairStation, RefuelStation). They all pay the same.
-- **Mortar and STN_05** share one reward tag (`Spotting.*.Mortar`).
+- **51 reward tags**, one per lookup row, appear in each lookup. The `Player` target is not in either lookup. The player row must be selected by a different path, which was not traced.
+- Each reward tag now maps to a single variant tag. `MistralAA`, `Mortar` and [`STN_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/STN_05.json) have separate tags, and the Loudspeaker, Radio, RepairStation and RefuelStation buildables each have their own.
 
 ---
 

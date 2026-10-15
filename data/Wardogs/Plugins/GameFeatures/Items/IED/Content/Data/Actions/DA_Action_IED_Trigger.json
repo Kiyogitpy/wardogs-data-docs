@@ -24,7 +24,24 @@
           "ResponseType": "EBHActionResponseType::Block",
           "ActionResponses": [
             "Action.Throw.Primary",
-            "Action.Item.Inspect"
+            "Action.Item.Inspect",
+            "Action.Player.Sprint",
+            "Action.Player.TacSprint"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Interrupt",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Interrupt",
+          "ActionResponses": [
+            "Action.Player.Sprint",
+            "Action.Player.TacSprint"
           ],
           "BlockingStates": [],
           "RequiredStates": [],

@@ -23,6 +23,46 @@
     "IgnoreVendorTypes": [
       "Vendor.Type.Equipment",
       "Vendor.Type.Vehicle"
-    ]
+    ],
+    "_aaabcpphnjobeeidekkch_$FF7D9E144834AA27$_$18$": {
+      "Tag": {
+        "TagName": "UI.Popup.Restock.Failed"
+      },
+      "Type": {
+        "TagName": "UI.Popup.Type.Warning"
+      },
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_QuickRestock.STRINGS_QuickRestock",
+        "Key": "Restock.FailedPopupHeader",
+        "SourceString": "Re-buy Failed",
+        "LocalizedString": "Re-buy Failed"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_QuickRestock.STRINGS_QuickRestock",
+        "Key": "Restock.FailedPopupDescription",
+        "SourceString": "Re-buy failed to purchase some items",
+        "LocalizedString": "Re-buy failed to purchase some items"
+      },
+      "Options": [
+        {
+          "Key": "EWDPopupOption::Left",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_QuickRestock.STRINGS_QuickRestock",
+              "Key": "Restock.FailedPopupExit",
+              "SourceString": "Exit",
+              "LocalizedString": "Exit"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": true,
+            "ButtonTypeOverride": {
+              "TagName": "UI.Popup.Button.Main"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        }
+      ]
+    }
   }
 }

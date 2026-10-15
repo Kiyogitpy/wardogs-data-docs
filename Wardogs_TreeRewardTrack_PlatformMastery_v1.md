@@ -4,9 +4,17 @@ parent: "Content"
 ---
 
 # Wardogs — TreeRewardTrack & Platform Mastery Reward Reference (v1)
-*Extracted live via CUE4Parse. Covers the battle-pass/progression-tree UI data assets and the cross-role Platform Mastery reward data asset.*
+*Extracted from the game's data assets. Covers the battle-pass/progression-tree UI data assets and the cross-role Platform Mastery reward data asset.*
 
 > **Finding:** [`DA_TreeRewardTrack`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Progression/Widgets/Widgets/TreeRewardTrack/Data/DA_TreeRewardTrack.json), [`DA_TreeRewardTrackCard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Progression/Widgets/Widgets/TreeRewardCard/Data/DA_TreeRewardTrackCard.json), and [`DA_TreeRewardTrackPanel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Progression/Widgets/Widgets/TreeRewardTrackPanel/Data/DA_TreeRewardTrackPanel.json) are **UI structure/template assets** — view-model class bindings, localized string-table text (labels like "{Cost} to Unlock", "Completed"), and icon tags. They do **not** contain the actual per-level cosmetic/item unlock schedule (which item unlocks at which level/cost). **Follow-up resolved:** the actual Season 1 cosmetic content list lives in [`DT_Cosmetics_Season01_Skins`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season01_SkinsData/Content/Data/DT_Cosmetics_Season01_Skins.json) and [`DT_Cosmetics_Season01_Emotes`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Emotes/Season01_EmotesData/Content/Data/DT_Cosmetics_Season01_Emotes.json) (`Plugins/GameFeatures/{Skins,Emotes}/Season01_*Data/Content/Data/`) — see `Wardogs_Season01_CosmeticUnlocks_v1.md`. The level/XP *gating* for the track itself (`DT_SeasonDefinitions.SeasonDefinitions`) is an **empty array** in this build — the season-number→date/XP-bracket schedule has not been authored yet in this closed-beta build; only `CurrentSeasonNumber: 1` is set.
+
+---
+
+## Season 02 update (2026-10-15)
+
+- [`DA_TreeRewardTrack`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Progression/Widgets/Widgets/TreeRewardTrack/Data/DA_TreeRewardTrack.json) `RewardTextFormat`: key `4CBAAE17…` → `TreeRewardTrack.RewardTextFormat`; table `STRINGS_Progression` is now set as its `TableId`.
+- [`DA_TreeRewardTrackPanel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Progression/Widgets/Widgets/TreeRewardTrackPanel/Data/DA_TreeRewardTrackPanel.json) `XPTextFormat` and `LockedLevelXPTextFormat`: keys `206BF79D…` → `TreeRewardTrackPanel.XPTextFormat` and `7D5C8577…` → `TreeRewardTrackPanel.LockedLevelXPTextFormat`; both now reference `STRINGS_Progression`.
+- Source strings are unchanged.
 
 ---
 
@@ -99,8 +107,8 @@ parent: "Content"
     "LocalizedString": "No Rewards Available"
   },
   "RewardTextFormat": {
-    "Namespace": "",
-    "Key": "4CBAAE17489B4E9C845AE1BC86368540",
+    "TableId": "/Game/UI/StringTables/Frontend/STRINGS_Progression.STRINGS_Progression",
+    "Key": "TreeRewardTrack.RewardTextFormat",
     "SourceString": "{CurrentRewards}/{MaxRewards} Items Unlocked",
     "LocalizedString": "{CurrentRewards}/{MaxRewards} Items Unlocked"
   }
@@ -152,14 +160,14 @@ parent: "Content"
     "LocalizedString": "Completed"
   },
   "XPTextFormat": {
-    "Namespace": "",
-    "Key": "206BF79D4C6AF3DE0B8330B5E10FA4C9",
+    "TableId": "/Game/UI/StringTables/Frontend/STRINGS_Progression.STRINGS_Progression",
+    "Key": "TreeRewardTrackPanel.XPTextFormat",
     "SourceString": "{CurrentLevelXP}/{MaxLevelXP}XP",
     "LocalizedString": "{CurrentLevelXP}/{MaxLevelXP}XP"
   },
   "LockedLevelXPTextFormat": {
-    "Namespace": "",
-    "Key": "7D5C8577480D7E4F7C1902876BFEE248",
+    "TableId": "/Game/UI/StringTables/Frontend/STRINGS_Progression.STRINGS_Progression",
+    "Key": "TreeRewardTrackPanel.LockedLevelXPTextFormat",
     "SourceString": "{RequiredLevelXP}XP",
     "LocalizedString": "{RequiredLevelXP}XP"
   },
@@ -246,5 +254,5 @@ parent: "Content"
 
 - **Per-level cosmetic schedule:** not in these assets. The Season 1 cosmetic content list is in `Wardogs_Season01_CosmeticUnlocks_v1.md`; its "Honest gap" note explains that `DT_SeasonDefinitions.SeasonDefinitions` is empty in this build, so which battle-pass level unlocks which item has not been authored yet.
 - **Mastery rewards:** no per-role reward entries appear in [`DA_UI_PlatformMastery_RewardData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Mastery/Platforms/Data/DA_UI_PlatformMastery_RewardData.json) as extracted here.
-- **Hashed keys:** several keys (for example `4CBAAE17…`, `206BF79D…`, `_aaabdnld…`) are not localization keys: none of the 121 `STRINGS_*` tables pulled contain them. They look like Blueprint property names. Their meaning is not resolved in this doc.
+- **Hashed keys:** several keys (for example `10B5F07C…`, `_aaabdnld…`) are not localization keys: none of the 121 `STRINGS_*` tables pulled contain them. They look like Blueprint property names. Their meaning is not resolved in this doc.
 - **Localized text:** the asset listing has no other-locale copies of the string tables, so only the source strings exist in this data.

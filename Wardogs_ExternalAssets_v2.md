@@ -4,9 +4,24 @@ parent: "Content"
 ---
 
 # Wardogs — External Assets Reference (v2)
-*Extracted from cooked game data ([`Content/ExternalAssets`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/ExternalAssets), 100 JSON exports, UE 5.7 build `++Wardogs+Live-CL-509546`). Every number below was parsed from the export files by script. Where a field's meaning is inferred from its name rather than confirmed, the doc says so.*
+*Extracted from cooked game data ([`Content/ExternalAssets`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/ExternalAssets), 147 JSON exports, UE 5.7 build `++Wardogs+Live-CL-516586`). Every number below was parsed from the export files by script. Where a field's meaning is inferred from its name rather than confirmed, the doc says so.*
 
-> **Scope note:** This folder is almost entirely **building destruction data** (`Flix/Blueprints/**`), plus two damage-tag whitelists and one VFX mapping. It holds no weapons, economy or progression data. All 100 files parsed without error.
+> **Scope note:** This folder is almost entirely **building destruction data** (`Flix/Blueprints/**`), plus two damage-tag whitelists and one VFX mapping. It holds no weapons, economy or progression data. All 147 files parsed without error.
+
+---
+
+## Season 02 update (2026-10-15)
+
+- **Added: 47 files** (26 building definitions and 21 decorator definitions). New in Bakurani: six residential houses and one swimming-pool building, with their decorators. New in Commercial: 14 Highstreet buildings with 13 decorators, 4 Hospital buildings with 4 decorators, and one WorkShop building with one decorator.
+- **Removed: none.**
+- **Building definitions: 48 → 74.** Chunks 13,087 → 22,137; required-mesh entries 2,364 → 3,943; junctions 6,875 → 13,953; chunks with a prefab reference 330 → 343.
+- **Decorator definitions: 49 → 70.** Cosmetic entries 25,927 → 29,890; authoritative entries 5,902 → 8,068; actor decorator entries 1,427 → 1,989; actor-class references 209 → 279.
+- **DA_Warehouse_Small_02a:** 30 → 29 chunks (required-mesh RefCount sum 30 → 29).
+- **D_Residential_House_03:** chunks with a prefab 6 → 2. **D_Residential_House_04:** 17 → 12.
+- **House decorators, cosmetic entries:** D_Decorator_D_Residential_House_01 448 → 470, _03 470 → 492, _04 438 → 459, _05 435 → 455. Required cosmetic meshes: _01 98 → 101, _03 106 → 107, _04 95 → 97, _05 99 → 100.
+- **Actor decorator entries:** DA_ApartmentBuilding_Decorator_01c 103 → 104, D_Decorator_Shop_01 16 → 17, D_Decorator_Residential_Bungalow_02 22 → 23.
+- **Madrid reskins:** the same 7 of 9 pairs share chunk IDs. The two House pairs (Madrid 01 and 03) still differ from Bakurani.
+- **SaveIDs** changed on 97 existing files. Per-chunk prefab hashes and primitive-data values also changed; those fields are not decoded here, so no table records them.
 
 ---
 
@@ -14,18 +29,18 @@ parent: "Content"
 
 | Type | Files | Role (as read) |
 |---|---|---|
-| `BHDestructionBuildingDefinitionDataAsset` | 48 | Destructible building: chunk layout, junctions, required meshes, Niagara refs |
-| `BHDestructionBuildingDecoratorDefinitionDataAsset` | 49 | Decorator layer for a building: spawned actors, cosmetic props, authoritative props, preload lists |
+| `BHDestructionBuildingDefinitionDataAsset` | 74 | Destructible building: chunk layout, junctions, required meshes, Niagara refs |
+| `BHDestructionBuildingDecoratorDefinitionDataAsset` | 70 | Decorator layer for a building: spawned actors, cosmetic props, authoritative props, preload lists |
 | `BHDestructionDecoratorMeshDamageTagsDataAsset` | 2 | Per-mesh damage-tag whitelists (ballistic and explosive) |
 | `BHDestructionBuildingVFXDataAsset` | 1 | [`D_BuildingVFX`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/VFX/Environmental/Destruction/SharedEmitterSystem/DataChannels/D_BuildingVFX.json): chunk classification to Niagara data channel and Houdini point caches |
 
-Folders: [`Flix/Blueprints/Bakurani`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Bakurani) (23 buildings), [`Flix/Blueprints/Madrid`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Madrid) (10), [`Flix/Blueprints/Industrial`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Industrial) (14), [`Flix/Blueprints/Commercial/Office`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Commercial/Office) (1), [`Flix/DataAssets`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/ExternalAssets/Flix/DataAssets), and `Flix/VFX/.../DataChannels`.
+Folders: [`Flix/Blueprints/Bakurani`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Bakurani) (30 buildings), [`Flix/Blueprints/Madrid`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Madrid) (10), [`Flix/Blueprints/Industrial`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Industrial) (14), [`Flix/Blueprints/Commercial/Office`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Commercial/Office) (1), [`Flix/Blueprints/Commercial/Highstreet`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Commercial/Highstreet) (14), [`Flix/Blueprints/Commercial/Hospital`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Commercial/Hospital) (4), [`Flix/Blueprints/Commercial/WorkShop`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Commercial/WorkShop) (1), [`Flix/DataAssets`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/ExternalAssets/Flix/DataAssets), and `Flix/VFX/.../DataChannels`.
 
 ---
 
-## 2. Building Definitions (`BHDestructionBuildingDefinitionDataAsset`, 48 assets)
+## 2. Building Definitions (`BHDestructionBuildingDefinitionDataAsset`, 74 assets)
 
-**Totals across all 48:** 13,087 chunks, 2,364 required-mesh entries, 6,875 junctions, 330 chunks with a prefab reference.
+**Totals across all 74:** 22,137 chunks, 3,943 required-mesh entries, 13,953 junctions, 343 chunks with a prefab reference.
 
 ### 2a. Top-level fields
 
@@ -52,7 +67,7 @@ Folders: [`Flix/Blueprints/Bakurani`](https://github.com/Kiyogitpy/wardogs-data-
 | `NiagaraDataChannelParameters` | Debris tags: `DebrisMeshType` (Wall, Ceiling, Roof, Balcony, Generic), `DebrisShape` (e.g. `Wall_4m`, `Corner_J_2m_x_2m`, `Roof_Slope_4m_x_4m`, or `None`), `DebrisMaterial` (Concrete, Wood, Metal). |
 | `ChunkTraits` | Present on every chunk, empty on every sampled chunk. |
 | `ChunkCustomPrimitiveData` | Four floats (e.g. `0.4, 0.12, 0.085, 1.0`). Meaning not stated, probably shader parameters. Not decoded. |
-| `Prefab` / `PrefabHash` | Optional prefab class reference (e.g. `CP_ModKit04_Roof_Panel_Short_2m_A`). Mostly on apartments (47, 23, 36 chunks in the three Bakurani apartment blocks), Office (15), and houses and bungalows (2 to 17 each). |
+| `Prefab` / `PrefabHash` | Optional prefab class reference (e.g. `CP_ModKit04_Roof_Panel_Short_2m_A`). Mostly on apartments (47, 23, 36 chunks in the three Bakurani apartment blocks), Office (15), houses and bungalows (0 to 17 each), Highstreet buildings (0 to 3 each) and hospitals (1 each). |
 | `AudioPhysMaterialArray` | Audio physical materials. Empty on sampled chunks. |
 | `Properties` | Integer flag field. Non-zero on 882 of 1,550 chunks in [`DA_ApartmentBuilding_01_a`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Bakurani/Apartments/DA_ApartmentBuilding_01_a.json). Meaning not confirmed. |
 
@@ -78,14 +93,40 @@ Columns: mesh entries (`RequiredMeshes` count), unique `StaticMesh` names, chunk
 | D_Residential_Bungalow_02 | Bakurani/Residential | 65 | 62 | 106 | 66 | 1 | 17 | 100 | 28 | 77 | 206 |
 | D_Residential_Bungalow_03 | Bakurani/Residential | 48 | 42 | 70 | 38 | 1 | 9 | 56 | 21 | 66 | 126 |
 | D_Residential_House_01 | Bakurani/Residential | 94 | 79 | 159 | 87 | 1 | 13 | 143 | 89 | 136 | 302 |
-| D_Residential_House_03 | Bakurani/Residential | 76 | 73 | 159 | 98 | 1 | 6 | 158 | 69 | 85 | 317 |
-| D_Residential_House_04 | Bakurani/Residential | 89 | 80 | 153 | 85 | 1 | 17 | 136 | 72 | 100 | 289 |
+| D_Residential_House_03 | Bakurani/Residential | 76 | 73 | 159 | 98 | 1 | 2 | 158 | 69 | 85 | 317 |
+| D_Residential_House_04 | Bakurani/Residential | 89 | 80 | 153 | 85 | 1 | 12 | 136 | 72 | 100 | 289 |
 | D_Residential_House_05 | Bakurani/Residential | 94 | 82 | 163 | 96 | 1 | 2 | 162 | 135 | 95 | 325 |
 | D_Residential_House_Abandoned_01 | Bakurani/Residential | 86 | 69 | 130 | 107 | 2 | 0 | 195 | 84 | 49 | 325 |
+| D_Residential_House_05b | Bakurani/Residential | 97 | 82 | 163 | 96 | 1 | 11 | 163 | 135 | 80 | 326 |
+| D_Residential_House_06 | Bakurani/Residential | 70 | 59 | 219 | 168 | 0 | 0 | 320 | 175 | 54 | 539 |
+| D_Residential_House_Var_01 | Bakurani/Residential | 94 | 79 | 159 | 87 | 1 | 3 | 143 | 89 | 136 | 302 |
+| D_Residential_House_Var_03 | Bakurani/Residential | 79 | 76 | 159 | 98 | 1 | 2 | 158 | 69 | 85 | 317 |
+| D_Residential_House_Var_04 | Bakurani/Residential | 89 | 80 | 153 | 85 | 1 | 2 | 136 | 72 | 100 | 289 |
+| D_Residential_House_Var_05 | Bakurani/Residential | 93 | 81 | 163 | 96 | 1 | 1 | 162 | 135 | 95 | 325 |
 | D_SupplyBuilding_01 | Bakurani/Residential | 19 | 18 | 58 | 42 | 0 | 0 | 50 | 0 | 24 | 108 |
 | D_SupplyBuilding_02 | Bakurani/Residential | 20 | 19 | 34 | 55 | 0 | 0 | 67 | 0 | 20 | 101 |
 | D_SwimPoolBuilding_01 | Bakurani/Residential/SwimmingPool | 39 | 35 | 251 | 182 | 0 | 0 | 271 | 3 | 107 | 522 |
+| D_SwimPool_Building_02 | Bakurani/Residential/SwimmingPool | 33 | 32 | 326 | 350 | 0 | 0 | 520 | 97 | 85 | 846 |
 | DA_Office_01a | Commercial/Office | 98 | 74 | 487 | 356 | 1 | 15 | 649 | 267 | 147 | 1136 |
+| D_Comm_Highstreet_Base_01a | Commercial/Highstreet | 53 | 39 | 181 | 136 | 0 | 0 | 155 | 73 | 13 | 336 |
+| D_Comm_Highstreet_Base_02a | Commercial/Highstreet | 61 | 42 | 170 | 122 | 1 | 0 | 140 | 94 | 1 | 310 |
+| D_Comm_Highstreet_Base_02b | Commercial/Highstreet | 35 | 31 | 197 | 108 | 0 | 0 | 120 | 59 | 0 | 317 |
+| D_Comm_Highstreet_Base_02c | Commercial/Highstreet | 39 | 29 | 185 | 128 | 1 | 0 | 144 | 71 | 0 | 329 |
+| D_Comm_Highstreet_Base_02d | Commercial/Highstreet | 34 | 26 | 222 | 113 | 1 | 0 | 123 | 53 | 14 | 345 |
+| D_Comm_Highstreet_Top_01a | Commercial/Highstreet | 66 | 54 | 353 | 243 | 2 | 3 | 402 | 231 | 186 | 755 |
+| D_Comm_Highstreet_Top_02a | Commercial/Highstreet | 58 | 45 | 499 | 357 | 2 | 0 | 576 | 184 | 404 | 1075 |
+| D_Comm_Highstreet_Top_02b | Commercial/Highstreet | 58 | 45 | 500 | 358 | 2 | 0 | 577 | 185 | 404 | 1077 |
+| D_Comm_Highstreet_Top_02e | Commercial/Highstreet | 56 | 45 | 255 | 163 | 2 | 0 | 257 | 93 | 204 | 512 |
+| D_Comm_Highstreet_Top_03a | Commercial/Highstreet | 62 | 47 | 848 | 522 | 2 | 0 | 906 | 452 | 421 | 1754 |
+| D_Comm_Highstreet_Top_04a | Commercial/Highstreet | 61 | 47 | 733 | 420 | 2 | 0 | 695 | 391 | 359 | 1428 |
+| D_Comm_Highstreet_Top_Var_01a | Commercial/Highstreet | 65 | 53 | 353 | 242 | 2 | 0 | 401 | 231 | 186 | 754 |
+| D_Comm_Highstreet_Top_Var_02c | Commercial/Highstreet | 61 | 48 | 454 | 346 | 2 | 0 | 597 | 207 | 256 | 1051 |
+| D_Comm_Highstreet_Top_Var_02d | Commercial/Highstreet | 62 | 49 | 503 | 346 | 2 | 0 | 597 | 286 | 257 | 1100 |
+| DA_HospitalBuilding_01a | Commercial/Hospital | 65 | 47 | 495 | 563 | 1 | 0 | 866 | 48 | 171 | 1361 |
+| DA_HospitalBuilding_01b | Commercial/Hospital | 58 | 50 | 813 | 948 | 1 | 0 | 1635 | 175 | 605 | 2448 |
+| DA_HospitalBuilding_01c | Commercial/Hospital | 64 | 46 | 649 | 698 | 1 | 0 | 1120 | 90 | 190 | 1769 |
+| DA_HospitalBuilding_01d | Commercial/Hospital | 46 | 39 | 211 | 252 | 1 | 0 | 389 | 95 | 134 | 600 |
+| D_WorkShopBuilding_01 | Commercial/WorkShop | 20 | 20 | 88 | 33 | 1 | 0 | 41 | 4 | 18 | 129 |
 | DA_Factory_Awning_01a | Industrial/Factory_Awning_01a | 5 | 5 | 10 | 0 | 0 | 0 | 0 | 0 | 0 | 10 |
 | DA_Factory_Awning_02a | Industrial/Factory_Awning_02a | 1 | 1 | 8 | 0 | 0 | 0 | 0 | 0 | 0 | 8 |
 | DA_Warehouse_02a | Industrial/Warehouse_02a | 13 | 13 | 84 | 0 | 0 | 0 | 0 | 16 | 64 | 84 |
@@ -95,7 +136,7 @@ Columns: mesh entries (`RequiredMeshes` count), unique `StaticMesh` names, chunk
 | DA_Warehouse_Garage_01a | Industrial/Warehouse_Garage_01a | 5 | 5 | 18 | 0 | 0 | 0 | 0 | 0 | 0 | 18 |
 | DA_Warehouse_Scrapyard_01a | Industrial/Warehouse_Scrapyard_01a | 6 | 6 | 48 | 0 | 0 | 0 | 0 | 0 | 32 | 48 |
 | DA_Warehouse_Small_01a | Industrial/Warehouse_Small_01a | 12 | 12 | 68 | 0 | 0 | 0 | 0 | 0 | 36 | 68 |
-| DA_Warehouse_Small_02a | Industrial/Warehouse_Small_02a | 14 | 14 | 30 | 0 | 0 | 0 | 0 | 0 | 18 | 30 |
+| DA_Warehouse_Small_02a | Industrial/Warehouse_Small_02a | 14 | 14 | 29 | 0 | 0 | 0 | 0 | 0 | 18 | 29 |
 | DA_Warehouse_Small_03a | Industrial/Warehouse_Small_03a | 8 | 8 | 20 | 0 | 0 | 0 | 0 | 0 | 0 | 20 |
 | DA_Warehouse_Small_03b | Industrial/Warehouse_Small_03b | 7 | 7 | 20 | 0 | 0 | 0 | 0 | 0 | 0 | 20 |
 | DA_Warehouse_Small_Hut_01a | Industrial/Warehouse_Small_Hut_01a | 10 | 10 | 18 | 0 | 0 | 0 | 0 | 0 | 6 | 18 |
@@ -118,9 +159,9 @@ Columns: mesh entries (`RequiredMeshes` count), unique `StaticMesh` names, chunk
 
 ---
 
-## 3. Decorator Definitions (`BHDestructionBuildingDecoratorDefinitionDataAsset`, 49 assets)
+## 3. Decorator Definitions (`BHDestructionBuildingDecoratorDefinitionDataAsset`, 70 assets)
 
-**Totals across all 49:** 25,927 cosmetic decorator entries, 5,902 authoritative decorator entries, 1,427 actor decorator entries, 209 actor-class references.
+**Totals across all 70:** 29,890 cosmetic decorator entries, 8,068 authoritative decorator entries, 1,989 actor decorator entries, 279 actor-class references.
 
 ### 3a. Field meanings
 
@@ -144,30 +185,51 @@ Columns: actor-class references, `ActorDecoratorData` count, `CosmeticDecoratorD
 |---|---|---|---|---|---|---|---|---|
 | DA_ApartmentBuilding_Decorator_01a | Bakurani/Apartments | 10 | 117 | 3573 | 880 | 166 | 86 | 0 |
 | DA_ApartmentBuilding_Decorator_01b | Bakurani/Apartments | 12 | 135 | 4350 | 1084 | 165 | 84 | 0 |
-| DA_ApartmentBuilding_Decorator_01c | Bakurani/Apartments | 11 | 103 | 2975 | 600 | 167 | 69 | 0 |
+| DA_ApartmentBuilding_Decorator_01c | Bakurani/Apartments | 11 | 104 | 2975 | 600 | 167 | 69 | 0 |
 | DA_Decorator_MarketBuilding_02 | Bakurani/Commercial/MarketBuilding_02 | 1 | 17 | 12 | 96 | 5 | 36 | 0 |
 | D_MarketBuilding_04a_deco | Bakurani/Commercial/MarketBuilding_04 | 1 | 4 | 2 | 32 | 2 | 17 | 0 |
 | D_MarketBuilding_05a_deco | Bakurani/Commercial/MarketBuilding_05 | 1 | 8 | 9 | 19 | 6 | 11 | 0 |
 | D_Decorator_MarketBuilding_06 | Bakurani/Commercial/MarketBuilding_06 | 1 | 6 | 25 | 39 | 10 | 16 | 0 |
 | D_Market_Building_Deco_01a | Bakurani/Commercial/Market_Building_01 | 2 | 32 | 54 | 115 | 19 | 39 | 0 |
 | D_Decorator_MarketBuilding_03a | Bakurani/Commercial/Market_Building_03 | 2 | 23 | 65 | 74 | 20 | 17 | 0 |
-| D_Decorator_Shop_01 | Bakurani/Commercial/Shop_01 | 3 | 16 | 144 | 104 | 43 | 41 | 0 |
+| D_Decorator_Shop_01 | Bakurani/Commercial/Shop_01 | 3 | 17 | 144 | 104 | 43 | 41 | 0 |
 | D_Decorator_Shop_02 | Bakurani/Commercial/Shop_02 | 4 | 8 | 92 | 25 | 30 | 11 | 0 |
 | D_Decorator_Shop_03 | Bakurani/Commercial/Shop_03 | 4 | 15 | 98 | 50 | 26 | 20 | 0 |
-| D_Decorator_D_Residential_House_01 | Bakurani/Residential | 6 | 32 | 448 | 63 | 98 | 38 | 0 |
-| D_Decorator_D_Residential_House_03 | Bakurani/Residential | 11 | 51 | 470 | 75 | 106 | 39 | 0 |
-| D_Decorator_D_Residential_House_04 | Bakurani/Residential | 10 | 48 | 438 | 57 | 95 | 34 | 0 |
-| D_Decorator_D_Residential_House_05 | Bakurani/Residential | 7 | 33 | 435 | 88 | 99 | 39 | 0 |
+| D_Decorator_D_Residential_House_01 | Bakurani/Residential | 6 | 32 | 470 | 63 | 101 | 38 | 0 |
+| D_Decorator_D_Residential_House_03 | Bakurani/Residential | 11 | 51 | 492 | 75 | 107 | 39 | 0 |
+| D_Decorator_D_Residential_House_04 | Bakurani/Residential | 10 | 48 | 459 | 57 | 97 | 34 | 0 |
+| D_Decorator_D_Residential_House_05 | Bakurani/Residential | 7 | 33 | 455 | 88 | 100 | 39 | 0 |
+| D_Decorator_D_Residential_House_05b | Bakurani/Residential | 7 | 24 | 428 | 80 | 98 | 40 | 0 |
+| D_Decorator_Residential_House_06 | Bakurani/Residential | 7 | 37 | 188 | 199 | 31 | 106 | 0 |
 | D_Decorator_Res_Abandoned_01 | Bakurani/Residential | 5 | 23 | 450 | 47 | 104 | 29 | 0 |
 | D_Decorator_Residential_Bungalow_01 | Bakurani/Residential | 5 | 19 | 210 | 42 | 95 | 31 | 3 |
-| D_Decorator_Residential_Bungalow_02 | Bakurani/Residential | 4 | 22 | 288 | 45 | 85 | 31 | 0 |
+| D_Decorator_Residential_Bungalow_02 | Bakurani/Residential | 4 | 23 | 288 | 45 | 85 | 31 | 0 |
 | D_Decorator_Residential_Bungalow_03 | Bakurani/Residential | 7 | 18 | 202 | 31 | 70 | 25 | 0 |
 | D_Decorator_SupplyBuilding_01 | Bakurani/Residential | 1 | 1 | 62 | 0 | 13 | 0 | 0 |
 | D_Decorator_SupplyBuilding_01b | Bakurani/Residential | 2 | 4 | 83 | 31 | 24 | 7 | 0 |
 | D_Decorator_SupplyBuilding_02 | Bakurani/Residential | 2 | 4 | 42 | 0 | 10 | 0 | 0 |
 | D_Decorator_SupplyBuilding_02b | Bakurani/Residential | 2 | 4 | 57 | 19 | 20 | 8 | 0 |
 | D_Decorator_SwimPoolBuilding_01 | Bakurani/Residential/SwimmingPool | 4 | 58 | 155 | 47 | 17 | 14 | 0 |
+| D_Decorator_SwimPool_Building_02 | Bakurani/Residential/SwimmingPool | 2 | 24 | 9 | 62 | 4 | 16 | 0 |
 | DA_Office_Decorator_01a | Commercial/Office | 8 | 87 | 1571 | 362 | 131 | 45 | 0 |
+| D_Decorator_Comm_Highstreet_Base_01a | Commercial/Highstreet | 3 | 12 | 114 | 58 | 36 | 24 | 0 |
+| D_Decorator_Comm_Highstreet_Base_02a | Commercial/Highstreet | 4 | 12 | 108 | 9 | 48 | 6 | 0 |
+| D_Decorator_Comm_Highstreet_Base_02b | Commercial/Highstreet | 1 | 1 | 84 | 30 | 29 | 15 | 0 |
+| D_Decorator_Comm_Highstreet_Base_02c | Commercial/Highstreet | 0 | 0 | 120 | 36 | 42 | 16 | 0 |
+| D_Decorator_Comm_Highstreet_Base_02d | Commercial/Highstreet | 0 | 0 | 118 | 54 | 41 | 13 | 0 |
+| D_Decorator_Comm_Highstreet_Top_01a | Commercial/Highstreet | 3 | 24 | 276 | 66 | 50 | 8 | 0 |
+| D_Decorator_Comm_Highstreet_Top_02a | Commercial/Highstreet | 3 | 30 | 226 | 102 | 44 | 12 | 0 |
+| D_Decorator_Comm_Highstreet_Top_02b | Commercial/Highstreet | 3 | 28 | 221 | 103 | 44 | 12 | 0 |
+| D_Decorator_Comm_Highstreet_Top_02c | Commercial/Highstreet | 3 | 30 | 289 | 102 | 54 | 12 | 0 |
+| D_Decorator_Comm_Highstreet_Top_02d | Commercial/Highstreet | 3 | 30 | 287 | 103 | 53 | 12 | 0 |
+| D_Decorator_Comm_Highstreet_Top_02e | Commercial/Highstreet | 3 | 22 | 166 | 58 | 43 | 11 | 0 |
+| D_Decorator_Comm_Highstreet_Top_03a | Commercial/Highstreet | 3 | 20 | 263 | 139 | 45 | 13 | 0 |
+| D_Decorator_Comm_Highstreet_Top_04a | Commercial/Highstreet | 3 | 20 | 245 | 111 | 43 | 13 | 0 |
+| DA_HospitalBuilding_01a_Decorator | Commercial/Hospital | 7 | 61 | 102 | 107 | 13 | 16 | 0 |
+| DA_HospitalBuilding_01b_Decorator | Commercial/Hospital | 5 | 108 | 267 | 472 | 53 | 42 | 0 |
+| DA_HospitalBuilding_01c_Decorator | Commercial/Hospital | 3 | 40 | 202 | 211 | 51 | 34 | 0 |
+| DA_HospitalBuilding_01d_Decorator | Commercial/Hospital | 5 | 27 | 63 | 51 | 28 | 15 | 0 |
+| D_Decorator_WorkShopBuilding_01 | Commercial/WorkShop | 2 | 9 | 102 | 13 | 27 | 9 | 0 |
 | FA_Factory_Awning_01a_Decorator | Industrial/Factory_Awning_01a | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | DA_Factory_Awning_02a_Decorator | Industrial/Factory_Awning_02a | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | DA_Warehouse_02a_Decorator | Industrial/Warehouse_02a | 1 | 3 | 0 | 0 | 0 | 0 | 0 |
@@ -201,33 +263,33 @@ Columns: actor-class references, `ActorDecoratorData` count, `CosmeticDecoratorD
 
 | Actor class (leaf name) | Occurrences across decorators |
 |---|---|
-| WDGame | 43 |
-| B_SmashableApartmentSingleWindow | 25 |
-| B_SmashableApartmentDoubleWindow | 18 |
-| B_Door | 18 |
-| MI_Apartment_EdgeDirt_01b | 15 |
-| BP_InteractableDoor_Apartment | 11 |
-| BP_InteractableDoor_ApartmentBalcony | 11 |
-| B_SmashableApartmentBalconyWindow | 9 |
-| MI_Apartment_EdgeDirt_01d | 9 |
+| WDDestructionAmbienceVolume | 61 |
+| B_SmashableApartmentSingleWindow | 31 |
+| B_SmashableApartmentDoubleWindow | 21 |
+| B_Door | 20 |
+| MI_Apartment_EdgeDirt_01b | 16 |
+| BP_InteractableDoor_ApartmentBalcony | 14 |
+| BP_InteractableDoor_Apartment | 13 |
+| BP_Debris_Decal_01a | 11 |
+| B_SmashableApartmentBalconyWindow | 10 |
+| MI_Apartment_EdgeDirt_01d | 10 |
 | MI_Apartment_EdgeDirt_01c | 9 |
+| BP_WaterStain_Decal_01a | 9 |
 | BP_InteractableDoor_ApartmentEntrance | 8 |
 | MI_Apartment_EdgeDirt_01f | 7 |
-| BP_Apartment_EdgeDirt_01a | 5 |
+| BP_Apartment_EdgeDirt_01a | 6 |
+| B_SmashableHospitalSingleWindow_03 | 4 |
 | BP_Apartment_StairStripeDecal_01a | 3 |
 | BP_Apartment_StairStripeDecal_01b | 3 |
-| BP_Debris_Decal_01a | 3 |
+| BP_Interactable_HospitalDoor_01a_Left | 3 |
+| BP_Interactable_HospitalDoor_01a_Right | 3 |
 | BP_Apartment_StairStripeDecal_Orange_01a | 2 |
 | BP_Apartment_StairStripeDecal_Orange_01b | 2 |
 | MI_Apartment_EdgeDirt_01e | 2 |
+| BP_InteractableDoor_Buisness | 2 |
 | BP_Apartment_StairStripeDecal_Blue_01a | 1 |
-| BP_Apartment_StairStripeDecal_Blue_01b | 1 |
-| BP_WaterStain_Decal_01a | 1 |
-| B_SmashableApartmentBalconyDoor | 1 |
-| BP_InteractableDoor_Office | 1 |
-| BP_InteractableDoor_WoodPVC | 1 |
 
-These are soft references (`AssetPathName`). Most are doors (`BP_InteractableDoor_*`, `B_Door`), smashable window and balcony blueprints (`B_Smashable*Window`, `B_SmashableApartmentBalconyDoor`), and decals (`MI_Apartment_EdgeDirt_*`, `BP_Apartment_StairStripeDecal_*`, `BP_WaterStain_Decal_01a`). One script class, `/Script/WDGame.WDDestructionAmbienceVolume`, is used 43 times.
+These are soft references (`AssetPathName`). Most are doors (`BP_InteractableDoor_*`, `B_Door`, `BP_Interactable_HospitalDoor_*`), smashable window and balcony blueprints (`B_Smashable*Window`, `B_SmashableApartmentBalconyDoor`), and decals (`MI_Apartment_EdgeDirt_*`, `BP_Apartment_StairStripeDecal_*`, `BP_WaterStain_Decal_01a`, `BP_Debris_Decal_01a`). One script class, `/Script/WDGame.WDDestructionAmbienceVolume`, is used 61 times.
 
 ---
 

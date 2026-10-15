@@ -1,0 +1,186 @@
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Mosin_MagInternal'",
+    "ObjectPath": "/WEPN_017/Data/ID_Mosin_MagInternal.3"
+  }
+}
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Mosin_MagInternal'",
+    "ObjectPath": "/WEPN_017/Data/ID_Mosin_MagInternal.3"
+  },
+  "Properties": {
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Item.Ammo"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::AllowList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [
+            "Item.Caliber.762x54mm"
+          ],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": -2,
+        "MaxSlotAmountStackSize": 5,
+        "bAllowsStackedPacking": true,
+        "bIsHiddenContainer": false,
+        "_aaabelnajgoacnpmnokoe_$BD096E02DFCDEAE4$_$20$": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": [
+          {
+            "Item": {
+              "TagName": "Id.Item.762x54mm.Tracer"
+            },
+            "Amount": null
+          }
+        ]
+      }
+    ]
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Mosin_MagInternal'",
+    "ObjectPath": "/WEPN_017/Data/ID_Mosin_MagInternal.3"
+  }
+}
+--- export: UPrimaryDataAsset / ID_Mosin_MagInternal ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_Mosin_MagInternal",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/WEPN_017/Data/ID_Mosin_MagInternal",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.MosinMagazine"
+    },
+    "ItemContext": [
+      "Item.Attachment.Magazine",
+      "Item.Resource.Magazine.Internal"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "488186954EB1889D67F35BA5A2CFE2C8",
+      "SourceString": "Mosin Standard Mag",
+      "LocalizedString": "Mosin Standard Mag"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_Mosin_MagInternal:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/WEPN_017/Data/ID_Mosin_MagInternal.1"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_Mosin_MagInternal:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/WEPN_017/Data/ID_Mosin_MagInternal.2"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_Mosin_MagInternal:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/WEPN_017/Data/ID_Mosin_MagInternal.6"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_Mosin_MagInternal:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/WEPN_017/Data/ID_Mosin_MagInternal.0"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_Mosin_MagInternal:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/WEPN_017/Data/ID_Mosin_MagInternal.4"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_Mosin_MagInternal:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/WEPN_017/Data/ID_Mosin_MagInternal.5"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Mosin_MagInternal'",
+    "ObjectPath": "/WEPN_017/Data/ID_Mosin_MagInternal.3"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "ReloadAnimationPlayRate": 1.0,
+      "bAllowsInspect": true,
+      "WeaponInspectIgnoreList": [],
+      "_aaabcefliieaifhmbokhe_$45B8840857C1EA74$_$18$": 1.0,
+      "_aaabfocbgdpdpdbbdkohf_$E2163F3F3113AE75$_$21$": 1.0,
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Magazine"
+      },
+      "AppliedEffects": [],
+      "AppliedCharacterEffects": [],
+      "bCanBeRemovedInGame": false,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Mosin_MagInternal'",
+    "ObjectPath": "/WEPN_017/Data/ID_Mosin_MagInternal.3"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Magazine_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Item/Data/ID_Magazine_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Mosin_MagInternal'",
+    "ObjectPath": "/WEPN_017/Data/ID_Mosin_MagInternal.3"
+  },
+  "Properties": {
+    "ItemType": "EWDGunsmithItemType::Attachment"
+  }
+}

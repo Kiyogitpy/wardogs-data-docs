@@ -1,0 +1,157 @@
+--- export: UDataAsset / W_STN_06_MountedMachineGun ---
+{
+  "Type": "WDVehicleWeaponDataAsset",
+  "Name": "W_STN_06_MountedMachineGun",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeaponDataAsset'",
+  "Package": "/STN_06/Weapons/W_STN_06_MountedMachineGun",
+  "Properties": {
+    "WeaponTag": {
+      "TagName": "Id.Vehicle.Weapon.STN_06.MountedMachineGun"
+    },
+    "SkeletalMeshAsset": {
+      "AssetPathName": "/MWSY_001/Meshes/SK_Browning_Mounted.SK_Browning_Mounted",
+      "SubPathString": ""
+    },
+    "MuzzleSockets": [
+      "muzzleFlash_WeaponExtension"
+    ],
+    "PlayerAttachSocket": {
+      "SourceID": "TurretSkeleton",
+      "SocketName": "S_BuildableAttach_MountedMachineGun_Player"
+    },
+    "GamepadRotationSensitivity": 90.0,
+    "GamepadRotationUpdateMax": {
+      "X": 150.0,
+      "Y": 150.0
+    },
+    "MouseRotationSensitivity": 12.5,
+    "MouseRotationUpdateMax": {
+      "X": 85.0,
+      "Y": 85.0
+    },
+    "KeyRotationSensitivity": 90.0,
+    "bApplyFovScale": false,
+    "WeaponRotationComponentData": {
+      "bLimitWeaponYaw": true,
+      "MinWeaponYawAngle": -85.0,
+      "MaxWeaponYawAngle": 85.0,
+      "bLimitWeaponPitch": true,
+      "MinWeaponPitchAngle": -40.0,
+      "MaxWeaponPitchAngle": 20.0,
+      "RotationSpeed": 115.0,
+      "TurretSkeletalMeshTag": "TurretSkeleton",
+      "WeaponRotationGameplayCueTag": {
+        "TagName": "GameplayCue.Vehicle.Weapon.Aim"
+      },
+      "_aaaccohcigllihmgnocjo_$E7286BB87C6DE29E$_$34$": true
+    },
+    "WeaponStatesCameraData": [
+      {
+        "Key": {
+          "TagName": "State.Vehicle.Weapon.HipFire"
+        },
+        "Value": {
+          "bSupported": true,
+          "AttachQuery": {
+            "SourceMode": "EAttachSourceQueryMode::ComponentTag",
+            "SocketMode": "EAttachSocketMatchMode::Explicit",
+            "SourceID": "TurretSkeleton",
+            "SourceFilter": {
+              "RequireTags": [],
+              "IgnoreTags": [],
+              "TagQuery": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [],
+                "QueryTokenStream": [],
+                "UserDescription": "",
+                "AutoDescription": ""
+              }
+            },
+            "SocketName": "vehicleWeapon_PlayerCameraSocket_HipFire",
+            "SocketFilter": {
+              "RequireTags": [],
+              "IgnoreTags": [],
+              "TagQuery": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [],
+                "QueryTokenStream": [],
+                "UserDescription": "",
+                "AutoDescription": ""
+              }
+            }
+          },
+          "CameraBehaviourData": null,
+          "bAlignWithTarget": true,
+          "ZeroingDistance": 200.0,
+          "FOVMultiplier": 1.0,
+          "_aaabokgmbjbllidnailcp_$A6C191BB83D08B2F$_$30$": false,
+          "_aaabfcjmfdhlfmlfijgpg_$29C537B5CB5896F6$_$21$": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "_aaabejnhnhahophgdkgfl_$9D7D707EF763A65B$_$20$": true
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Vehicle.Weapon.ADS"
+        },
+        "Value": {
+          "bSupported": true,
+          "AttachQuery": {
+            "SourceMode": "EAttachSourceQueryMode::ComponentTag",
+            "SocketMode": "EAttachSocketMatchMode::Explicit",
+            "SourceID": "TurretSkeleton",
+            "SourceFilter": {
+              "RequireTags": [],
+              "IgnoreTags": [],
+              "TagQuery": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [],
+                "QueryTokenStream": [],
+                "UserDescription": "",
+                "AutoDescription": ""
+              }
+            },
+            "SocketName": "vehicleWeapon_PlayerCameraSocket_ADS",
+            "SocketFilter": {
+              "RequireTags": [],
+              "IgnoreTags": [],
+              "TagQuery": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [],
+                "QueryTokenStream": [],
+                "UserDescription": "",
+                "AutoDescription": ""
+              }
+            }
+          },
+          "CameraBehaviourData": null,
+          "bAlignWithTarget": true,
+          "ZeroingDistance": 200.0,
+          "FOVMultiplier": 1.2,
+          "_aaabokgmbjbllidnailcp_$A6C191BB83D08B2F$_$30$": false,
+          "_aaabfcjmfdhlfmlfijgpg_$29C537B5CB5896F6$_$21$": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "_aaabejnhnhahophgdkgfl_$9D7D707EF763A65B$_$20$": true
+        }
+      }
+    ],
+    "InitialWeaponPossessFovLerpTime": 0.45,
+    "HUDLayoutTag": {
+      "TagName": "UI.HUD.Layout.Vehicle.Crew.Land.Stationary"
+    },
+    "HUDScopeBlurAlpha": 1.0,
+    "WeaponExtensionsDataAssets": [
+      {
+        "AssetPathName": "/STN_06/Weapons/WeaponExtensions/WE_STN_06_MountedMachineGun.WE_STN_06_MountedMachineGun",
+        "SubPathString": ""
+      }
+    ]
+  }
+}

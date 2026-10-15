@@ -4,5 +4,143 @@
   "Name": "DA_TNK_01_Heavy_MountedMachineGun_SeatSettings",
   "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
   "Class": "UScriptClass'BHSeatSettingsDataAsset'",
-  "Package": "/TNK_01/Data/Heavy/MountedMachineGun/DA_TNK_01_Heavy_MountedMachineGun_SeatSettings"
+  "Package": "/TNK_01/Data/Heavy/MountedMachineGun/DA_TNK_01_Heavy_MountedMachineGun_SeatSettings",
+  "Properties": {
+    "SeatSetups": [
+      {
+        "Identifier": "Not Selected",
+        "SeatRoleTag": {
+          "TagName": "State.Player.Vehicle.Role.Gunner"
+        },
+        "SeatPriority": 0,
+        "SeatTags": [],
+        "_aaabdpbpgdlebknoodmnp_$F1F63B41ADEE3CDF$_$19$": [],
+        "bShouldAutoEnterGunner": true,
+        "bIsGunner": true,
+        "bDoesGunnerSeatMoveWithWeapon": false,
+        "bIsCrewSeat": true,
+        "bIsExteriorSeat": true,
+        "_aaabinpfmfnbldilbkihk_$DF5C5D1B38B1A87A$_$24$": false,
+        "bIsStandingSeat": false,
+        "bCanExitWithinBounds": false,
+        "_aaabjdkkggbofolgijfmb_$3AA661E5EB6895C1$_$25$": false,
+        "SeatAnimationData": {
+          "bIsolateNeck": false,
+          "bHideBackpack": false,
+          "bOverrideDefaultPose": true,
+          "bUpdateSteeringValues": false,
+          "bUpdateGearChangeValues": false,
+          "SeatIdlePose": {
+            "ObjectName": "AnimSequence'A_TP_Kodiak_Turret_M249_Idle_Pose'",
+            "ObjectPath": "/Game/Animation/Characters/StateMachine/Idles/Vehicle/Turrets/A_TP_Kodiak_Turret_M249_Idle_Pose.0"
+          },
+          "SeatIdleAnimation": {
+            "ObjectName": "AnimSequence'A_TP_MountedM249_Idle'",
+            "ObjectPath": "/Game/Animation/Characters/StateMachine/AimOffset/Vehicle/Mounted/MountedM249/A_TP_MountedM249_Idle.0"
+          },
+          "SeatDeathAnimation": {
+            "ObjectName": "AnimSequence'A_TP_Humvee_Transport_Dead'",
+            "ObjectPath": "/Game/Animation/Characters/Vehicle/Humvee/TP/A_TP_Humvee_Transport_Dead.0"
+          },
+          "SeatBlendSpaces": [
+            {
+              "Key": {
+                "TagName": "Animation.Player.BlendSpace.TP.Seat.Passive"
+              },
+              "Value": {
+                "ObjectName": "BlendSpace'BS_TP_Kodiak_Turret_M249_AO'",
+                "ObjectPath": "/Game/Animation/Characters/StateMachine/AimOffset/Vehicle/Mounted/Kodiak/BS_TP_Kodiak_Turret_M249_AO.0"
+              }
+            }
+          ]
+        },
+        "SeatAccessPoint": {
+          "EntryAnimation": {
+            "FirstPersonPlayerAnimation": null,
+            "ThirdPersonPlayerAnimation": null,
+            "VehicleAnimation": null
+          },
+          "ExitAnimation": {
+            "FirstPersonPlayerAnimation": null,
+            "ThirdPersonPlayerAnimation": null,
+            "VehicleAnimation": null
+          },
+          "InteractOffset": {
+            "X": 80.0,
+            "Y": -214.09631,
+            "Z": 150.0
+          }
+        },
+        "SeatPositionOffset": {
+          "X": 1.3,
+          "Y": 0.0,
+          "Z": 1.8
+        },
+        "SeatTrackerOffset": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.0
+        },
+        "bBlockTest": true,
+        "SeatCharacterCapsuleRadius": 32.0,
+        "SeatCharacterCapsuleHalfHeight": 70.0,
+        "SeatCharacterCapsuleOffset": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 100.0
+        },
+        "SeatCameraMode": "EBHVehicleSeatCameraMode::PlayerCamera",
+        "SeatEyeHeight": 0.0,
+        "_aaabgpleiakbomgdhdceg_$FB480A1EC6373246$_$22$": 70.0,
+        "SeatRotation": {
+          "Pitch": 0.0,
+          "Yaw": 0.0,
+          "Roll": 0.0
+        },
+        "bAutoEjectOnDowned": false,
+        "bUseCameraLimits": false,
+        "CameraLockYaw": 90.0,
+        "CameraLockPitch": 40.0,
+        "OccupancyHistoryExpiration": 10.0,
+        "SeatSwitchFilter": {
+          "RoleRequirements": {
+            "RequireTags": [],
+            "IgnoreTags": [],
+            "TagQuery": {
+              "TokenStreamVersion": 0,
+              "TagDictionary": [],
+              "QueryTokenStream": [],
+              "UserDescription": "",
+              "AutoDescription": ""
+            }
+          },
+          "TagRequirements": {
+            "RequireTags": [],
+            "IgnoreTags": [],
+            "TagQuery": {
+              "TokenStreamVersion": 0,
+              "TagDictionary": [],
+              "QueryTokenStream": [],
+              "UserDescription": "",
+              "AutoDescription": ""
+            }
+          },
+          "AllowList": [],
+          "DenyList": []
+        },
+        "SeatSwitchTimers": [],
+        "SeatExitEffects": {
+          "Effects": []
+        },
+        "_aaabinfodaelcilhdpckh_$D5E304B28B73F2A7$_$24$": false,
+        "_aaabdafahdmfggjphaimc_$5073C5669F708C2$_$19$": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.0
+        },
+        "_aaabdmaknbmaggojbhgig_$C0AD1C066E917686$_$19$": [],
+        "_aaabimjmoonmmbklhfcdc_$C9CEEDCC1AB75232$_$24$": true
+      }
+    ]
+  }
 }

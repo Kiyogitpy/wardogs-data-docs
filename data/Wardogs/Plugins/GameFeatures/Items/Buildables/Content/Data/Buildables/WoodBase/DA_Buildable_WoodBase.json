@@ -1,0 +1,116 @@
+--- export: UObject / WDActorBuildSpawner_0 ---
+{
+  "Type": "WDActorBuildSpawner",
+  "Name": "WDActorBuildSpawner_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDActorBuildSpawner'",
+  "Outer": {
+    "ObjectName": "WDBuildableDataAsset'DA_Buildable_WoodBase'",
+    "ObjectPath": "/Buildables/Data/Buildables/WoodBase/DA_Buildable_WoodBase.1"
+  },
+  "Properties": {
+    "BaseBuildableClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Buildable_C'",
+      "ObjectPath": "/Buildables/Data/Buildables/B_Buildable.2"
+    }
+  }
+}
+--- export: UDataAsset / DA_Buildable_WoodBase ---
+{
+  "Type": "WDBuildableDataAsset",
+  "Name": "DA_Buildable_WoodBase",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDBuildableDataAsset'",
+  "Package": "/Buildables/Data/Buildables/WoodBase/DA_Buildable_WoodBase",
+  "Properties": {
+    "SpawnerOverride": {
+      "ObjectName": "WDActorBuildSpawner'DA_Buildable_WoodBase:WDActorBuildSpawner_0'",
+      "ObjectPath": "/Buildables/Data/Buildables/WoodBase/DA_Buildable_WoodBase.0"
+    },
+    "EntityTag": {
+      "TagName": "Id.Buildable.WoodBase"
+    },
+    "Cost": 15,
+    "DisplayName": {
+      "TableId": "/Buildables/Data/STRINGS_BuildableDescriptions.STRINGS_BuildableDescriptions",
+      "Key": "Buildable.WoodBase.DisplayName",
+      "SourceString": null,
+      "LocalizedString": ""
+    },
+    "MaxHealth": 735.0,
+    "bUseCurveToUpdateHealthVisuals": true,
+    "HealthVisualsPercentageCurve": {
+      "ExternalCurve": {
+        "ObjectName": "CurveFloat'C_DamageTintCurve'",
+        "ObjectPath": "/Buildables/Data/Buildables/C_DamageTintCurve.0"
+      }
+    },
+    "MaxStack": 4,
+    "_aaabhobcmifficciohpfp_$E12C8558228E7F5F$_$23$": 0,
+    "PlacePivotVerticalOffset": 18.75,
+    "FoundationStaticMesh": {
+      "AssetPathName": "/Buildables/Data/Foundations/Meshes/SM_Foundation_Hesco.SM_Foundation_Hesco",
+      "SubPathString": ""
+    },
+    "MaxDepthUnderTerrain": 30.0,
+    "BuildingStagesDefinition": {
+      "ObjectName": "BuildingStagesDefinition'DA_WoodBase_Stages'",
+      "ObjectPath": "/Buildables/Data/Buildables/WoodBase/DA_WoodBase_Stages.0"
+    },
+    "BuildingStageChangedVFX": {
+      "AssetPathName": "/Buildables/Data/Buildables/NS_BuildStage_NoOffset.NS_BuildStage_NoOffset",
+      "SubPathString": ""
+    },
+    "NiagaraDataChannelAsset": {
+      "AssetPathName": "/Game/VFX/Building/DataChannel/NDC_Buildable.NDC_Buildable",
+      "SubPathString": ""
+    },
+    "FinalStageBoundingBox": {
+      "Min": {
+        "X": -75.2311,
+        "Y": -75.4957,
+        "Z": -0.489
+      },
+      "Max": {
+        "X": 75.5005,
+        "Y": 75.2748,
+        "Z": 37.6323
+      },
+      "IsValid": 1
+    },
+    "ConstructedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Constructed"
+    },
+    "DestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Destroyed"
+    },
+    "_aaabeagjamjdjkiepomgn_$690C939A84FEC6D$_$20$": {
+      "TagName": "GameplayCue.Buildable.Placed"
+    },
+    "_aaabigdbeocppfeehmfch_$6314E2FF5447C527$_$24$": {
+      "TagName": "GameplayCue.Buildable.Dismantle"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Buildable.WoodBase"
+      }
+    },
+    "PlacementConditions": [
+      {
+        "ObjectName": "Class'WDWithinFobBoundsPlacementCondition'",
+        "ObjectPath": "/Script/BuildablesRuntime"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_WithinLadderBoundsPlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_WithinLadderBoundsPlacementCondition.1"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_SafeZonePlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_SafeZonePlacementCondition.1"
+      }
+    ],
+    "_aaabcojklankakkagdcpn_$E9AB0DA0AA0632FD$_$18$": {
+      "TagName": "UI.RadialWheel.BuildTool.SlotType.WoodBase"
+    }
+  }
+}

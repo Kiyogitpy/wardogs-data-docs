@@ -7,7 +7,7 @@
   "Package": "/Game/Environment/Lighting/DataAssets/Presets/DA_LightSettings_Morning",
   "Template": {
     "ObjectName": "PDA_LightSettings_C'Default__PDA_LightSettings_C'",
-    "ObjectPath": "/Game/Environment/Lighting/DataAssets/PDA_LightSettings.8"
+    "ObjectPath": "/Game/Environment/Lighting/DataAssets/PDA_LightSettings.9"
   },
   "Properties": {
     "UserTitle": {
@@ -32,7 +32,7 @@
         "Yaw": 15.934623,
         "Roll": 0.0
       },
-      "Intensity_2_FD578EC04DBBE4611F5190AE99128D0F": 9000.0,
+      "Intensity_2_FD578EC04DBBE4611F5190AE99128D0F": 6000.0,
       "LightColor_5_338E67F145880811BBFDBEA86D124CDB": {
         "R": 1.0,
         "G": 1.0,
@@ -60,7 +60,7 @@
     },
     "SkyLightSettings": {
       "Intensity_2_F0845300460630035138F3B6C35B236E": 0.7,
-      "LowerHemisphereIntensity_11_F22E566C4300B4FA42886191B9C65704": 500.0
+      "LowerHemisphereIntensity_11_F22E566C4300B4FA42886191B9C65704": 300.0
     },
     "PostProcessSettings": {
       "bOverride_ColorContrast": true,
@@ -114,9 +114,8 @@
       "DepthOfFieldFstop": 7.0,
       "DepthOfFieldMinFstop": 7.0,
       "AutoExposureBias": 1.0,
-      "AutoExposureLowPercent": 80.0,
-      "AutoExposureMinBrightness": 8.5,
-      "AutoExposureMaxBrightness": 9.5,
+      "AutoExposureMinBrightness": 9.0,
+      "AutoExposureMaxBrightness": 9.4,
       "AutoExposureSpeedUp": 2.0,
       "AutoExposureSpeedDown": 3.0,
       "LocalExposureHighlightContrastScale": 0.8,
@@ -133,8 +132,8 @@
       "MotionBlurAmount": 0.0
     },
     "ExponentialHeightFogSettings": {
-      "FogDensity_2_40EC0F7748B7B55602EA86AC5B8BF830": 0.004,
-      "FogHeightFalloff_4_12443B2948071B15D9F2CEB66DAA7EAF": 0.13,
+      "FogDensity_2_40EC0F7748B7B55602EA86AC5B8BF830": 0.002,
+      "FogHeightFalloff_4_12443B2948071B15D9F2CEB66DAA7EAF": 0.1,
       "FogInscatteringColor_7_30A658CD486FB2B1F38B748C3A6EA0D4": {
         "R": 755.2083,
         "G": 988.19165,
@@ -154,7 +153,9 @@
       "SecondFogFalloff_61_69E7DBB049D60488E56E569C5C9FDF49": 0.05
     },
     "SkyAtmopshereSettings": {
-      "Visible_18_7973107E40F03A3BC89F418010E69E51": true
+      "Visible_18_7973107E40F03A3BC89F418010E69E51": true,
+      "AerialPerspectiveViewDistanceScale_5_3A391652497DF3B8153F56A3AF0D2314": 4.0,
+      "MieScatteringScale_33_38309547484ADB83EE974BBEEE2EB381": 0.01
     },
     "DirectionalLightSettings_Overkill": {
       "DirectionalLightRotation_88_B7AB5B49423DF4F01179B1BDEE958AEA": {
@@ -162,7 +163,7 @@
         "Yaw": 15.934623,
         "Roll": 0.0
       },
-      "Intensity_2_FD578EC04DBBE4611F5190AE99128D0F": 9000.0,
+      "Intensity_2_FD578EC04DBBE4611F5190AE99128D0F": 6000.0,
       "LightColor_5_338E67F145880811BBFDBEA86D124CDB": {
         "R": 1.0,
         "G": 1.0,
@@ -189,7 +190,7 @@
       "LightShaftsBloomMaxBrigthness_81_CCB64EAE4AF96EF9F58C13B4E11304E3": 1.0
     },
     "SkyLightSettings_Overkill": {
-      "LowerHemisphereIntensity_11_F22E566C4300B4FA42886191B9C65704": 250.0
+      "LowerHemisphereIntensity_11_F22E566C4300B4FA42886191B9C65704": 700.0
     },
     "PostProcessSettings_Overkill": {
       "bOverride_ColorContrast": true,
@@ -240,15 +241,14 @@
       },
       "BloomIntensity": 0.5,
       "LumenDiffuseColorBoost": 1.2,
-      "LumenSkylightLeaking": 0.015,
-      "LumenFullSkylightLeakingDistance": 400.0,
+      "LumenSkylightLeaking": 0.0035,
       "LumenReflectionsScreenTraces": true,
       "DepthOfFieldFstop": 7.0,
       "DepthOfFieldMinFstop": 7.0,
       "AutoExposureBias": 1.0,
       "AutoExposureLowPercent": 80.0,
-      "AutoExposureMinBrightness": 8.0,
-      "AutoExposureMaxBrightness": 9.5,
+      "AutoExposureMinBrightness": 6.5,
+      "AutoExposureMaxBrightness": 9.2,
       "AutoExposureSpeedUp": 2.0,
       "AutoExposureSpeedDown": 3.0,
       "LocalExposureHighlightContrastScale": 0.8,
@@ -263,8 +263,8 @@
       "MotionBlurAmount": 0.0
     },
     "ExponentialHeightFogSettings_Overkill": {
-      "FogDensity_2_40EC0F7748B7B55602EA86AC5B8BF830": 0.004,
-      "FogHeightFalloff_4_12443B2948071B15D9F2CEB66DAA7EAF": 0.13,
+      "FogDensity_2_40EC0F7748B7B55602EA86AC5B8BF830": 0.002,
+      "FogHeightFalloff_4_12443B2948071B15D9F2CEB66DAA7EAF": 0.1,
       "FogInscatteringColor_7_30A658CD486FB2B1F38B748C3A6EA0D4": {
         "R": 755.2083,
         "G": 988.19165,
@@ -272,8 +272,8 @@
         "A": 1.0,
         "Hex": "FFFFFF"
       },
+      "FogStartDistance_50_6E092A794E90819063B0B9BDF7BF28C7": 9000.0,
       "VolumetricFog_10_B0D0D3C342BC03730099C09FD76E6F18": true,
-      "VolumetricFogStartDistance_52_3B24CF7B493BB1F8DF9061A3B9F645A3": 500.0,
       "DirectionalInscatteringStartDistance_23_340A4BAB4DDB0E6CFEF60597A9E125C8": 40000.0,
       "DirectionalInscatteringColor_27_BCACAE354F62F8DD85624A8A8E158075": {
         "R": 1.0,
@@ -283,9 +283,9 @@
         "Hex": "FFF6C1"
       },
       "VolumetricEmissive_56_81E3094B421FFFC150CB949DF2071C71": {
-        "R": 100.0,
-        "G": 100.0,
-        "B": 100.0,
+        "R": 1.0,
+        "G": 1.0,
+        "B": 1.0,
         "A": 0.0,
         "Hex": "FFFFFF"
       },
@@ -293,7 +293,9 @@
       "SecondFogFalloff_61_69E7DBB049D60488E56E569C5C9FDF49": 0.05
     },
     "SkyAtmopshereSettings_Overkill": {
-      "Visible_18_7973107E40F03A3BC89F418010E69E51": true
+      "Visible_18_7973107E40F03A3BC89F418010E69E51": true,
+      "AerialPerspectiveViewDistanceScale_5_3A391652497DF3B8153F56A3AF0D2314": 4.0,
+      "MieScatteringScale_33_38309547484ADB83EE974BBEEE2EB381": 0.01
     },
     "NativeClass": {
       "ObjectName": "BlueprintGeneratedClass'PDA_LightSettings_C'",

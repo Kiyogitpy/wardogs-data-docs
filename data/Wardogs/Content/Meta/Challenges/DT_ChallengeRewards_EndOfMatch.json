@@ -147,6 +147,190 @@
         "TagName": "Challenges.Rewards.EndOfMatchFactionReward.ThirdPlace"
       }
     },
+    "Challenges.Rewards.EndOfMatchFactionReward.FactionWinBonus": {
+      "Resources": [
+        {
+          "Key": {
+            "TagName": "Attribute.Meta.Currency.Cash"
+          },
+          "Value": {
+            "DefaultExpression": {
+              "ExpressionString": "FactionWinBonus",
+              "ExpressionTableRow": {
+                "DataTable": null,
+                "RowName": "None"
+              },
+              "ExpressionTableColumn": "None",
+              "bSourceExpressionExternally": false,
+              "CompiledExpression": {
+                "Instructions": [
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 0
+                  }
+                ],
+                "InstructionMetadata": [
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  }
+                ],
+                "Literals": [],
+                "Variables": [
+                  "FactionWinBonus"
+                ],
+                "VariableIndexMap": [
+                  {
+                    "Key": "FactionWinBonus",
+                    "Value": 0
+                  }
+                ]
+              }
+            },
+            "ConditionalExpressions": [],
+            "Selectors": [
+              {
+                "Key": "FactionWinBonus",
+                "Value": {
+                  "DefaultOption": "DefaultReward",
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Meta.Alignment.Faction.Alpha"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          2,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL( Meta.Alignment.Faction.Alpha )"
+                      },
+                      "Variable": "LonestarBonus"
+                    },
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Meta.Alignment.Faction.Bravo"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          2,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL( Meta.Alignment.Faction.Bravo )"
+                      },
+                      "Variable": "ValkyraBonus"
+                    },
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Meta.Alignment.Faction.Charlie"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          2,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL( Meta.Alignment.Faction.Charlie )"
+                      },
+                      "Variable": "ManticoreBonus"
+                    }
+                  ]
+                }
+              }
+            ],
+            "Variables": [
+              {
+                "Key": "DefaultReward",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "LonestarBonus",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 10000.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "ValkyraBonus",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "ManticoreBonus",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Challenges.Rewards.EndOfMatchFactionReward.FactionWinBonus"
+      }
+    },
     "Challenges.Rewards.EndOfMatchFactionReward.Bonus": {
       "Resources": [
         {

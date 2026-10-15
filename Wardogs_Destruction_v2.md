@@ -10,6 +10,11 @@ parent: "Content"
 
 ---
 
+## Season 02 update (2026-10-15)
+
+- **No files added or removed,** and no values in this folder's four files changed.
+- **Garage assets** ([`Environment/Architecture/Residential/Garages`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/Architecture/Residential/Garages), 14 files) changed only in an internal save identifier. This doc does not cover them, so no values are listed here.
+
 ## 1. Assets at a Glance
 
 | Asset | Type | Entries / keys | What it does |

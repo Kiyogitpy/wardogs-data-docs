@@ -511,6 +511,9 @@
     "AnimInstance": {
       "AssetPathName": "/TNK_01/Animation/Blueprints/ABP_TNK_01_AntiAir_New.ABP_TNK_01_AntiAir_New_C",
       "SubPathString": ""
+    },
+    "WalkableSlopeOverride": {
+      "WalkableSlopeBehavior": "EWalkableSlopeBehavior::WalkableSlope_Default"
     }
   }
 }
@@ -529,7 +532,11 @@
       "AttachQuery": {
         "SourceID": "Chassis",
         "SocketName": "body_J"
-      }
+      },
+      "Tags": [
+        "MainBody",
+        "BrakeLight"
+      ]
     },
     "StaticMesh": {
       "AssetPathName": "/TNK_01/Mesh/TNK_03/SM/SM_TNK_03_Body.SM_TNK_03_Body",

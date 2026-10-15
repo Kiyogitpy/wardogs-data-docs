@@ -6,7 +6,7 @@
   "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_EndBehavior.AEB_EndBehavior_C'",
   "Outer": {
     "ObjectName": "CrosstalkAudioEvent'AE_Comms_PlayerStoppedSpeaking'",
-    "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_PlayerStoppedSpeaking.1"
+    "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_PlayerStoppedSpeaking.2"
   },
   "Template": {
     "ObjectName": "AEB_EndBehavior_C'Default__AEB_EndBehavior_C'",
@@ -19,6 +19,30 @@
     },
     "ContextTag": {
       "TagName": "Audio.Context.Comms"
+    }
+  }
+}
+--- export: UObject / AEB_EndBehavior_C_1 ---
+{
+  "Type": "AEB_EndBehavior_C",
+  "Name": "AEB_EndBehavior_C_1",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_EndBehavior.AEB_EndBehavior_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Comms_PlayerStoppedSpeaking'",
+    "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_PlayerStoppedSpeaking.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_EndBehavior_C'Default__AEB_EndBehavior_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_EndBehavior.0"
+  },
+  "Properties": {
+    "BehaviorClass": {
+      "ObjectName": "Class'WDAudioEventBehaviorHelmetMuffle'",
+      "ObjectPath": "/Script/WDGame"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Comms.Proximity"
     }
   }
 }
@@ -36,7 +60,7 @@
     "Behaviors": [
       {
         "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_Comms_PlayerStoppedSpeaking:CrosstalkAudioEventBehaviorStopSound_1'",
-        "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_PlayerStoppedSpeaking.3"
+        "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_PlayerStoppedSpeaking.4"
       },
       {
         "ObjectName": "AEB_EndBehavior_C'AE_Comms_PlayerStoppedSpeaking:AEB_EndBehavior_C_0'",
@@ -44,7 +68,11 @@
       },
       {
         "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_Comms_PlayerStoppedSpeaking:CrosstalkAudioEventBehaviorStopSound_0'",
-        "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_PlayerStoppedSpeaking.2"
+        "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_PlayerStoppedSpeaking.3"
+      },
+      {
+        "ObjectName": "AEB_EndBehavior_C'AE_Comms_PlayerStoppedSpeaking:AEB_EndBehavior_C_1'",
+        "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_PlayerStoppedSpeaking.1"
       }
     ]
   }
@@ -57,7 +85,7 @@
   "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
   "Outer": {
     "ObjectName": "CrosstalkAudioEvent'AE_Comms_PlayerStoppedSpeaking'",
-    "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_PlayerStoppedSpeaking.1"
+    "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_PlayerStoppedSpeaking.2"
   },
   "Properties": {
     "FadeOut": 0.05,
@@ -74,7 +102,7 @@
   "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
   "Outer": {
     "ObjectName": "CrosstalkAudioEvent'AE_Comms_PlayerStoppedSpeaking'",
-    "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_PlayerStoppedSpeaking.1"
+    "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_PlayerStoppedSpeaking.2"
   },
   "Properties": {
     "FadeOut": 0.05,

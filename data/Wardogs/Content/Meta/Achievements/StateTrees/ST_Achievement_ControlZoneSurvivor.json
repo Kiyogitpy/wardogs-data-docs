@@ -1150,7 +1150,36 @@
             }
           }
         },
-        null,
+        {
+          "_aaabaohejfieengchambb_$E7495844D6270C11$_$16$": {
+            "TagName": "Event.StateTree.GameplayTagAdded"
+          },
+          "_aaabcmldjomcidfnamgng_$CB39EC2835D0C6D6$_$18$": {
+            "TagName": "None"
+          },
+          "bTaskEnabled": true,
+          "TransitionHandlingPriority": "EStateTreeTransitionPriority::Normal",
+          "Name": "Wait For Zone Entry - Tag Listener",
+          "BindingsBatch": {
+            "Value": 1
+          },
+          "OutputBindingsBatch": {
+            "Value": 65535
+          },
+          "InstanceTemplateIndex": {
+            "Value": 4
+          },
+          "ExecutionRuntimeTemplateIndex": {
+            "Value": 65535
+          },
+          "InstanceDataHandle": {
+            "Source": "EStateTreeDataSourceType::ActiveInstanceData",
+            "Index": 2,
+            "StateHandle": {
+              "Index": 1
+            }
+          }
+        },
         {
           "Name": "Get Pawn from PlayerState",
           "BindingsBatch": {
@@ -1173,7 +1202,36 @@
             }
           }
         },
-        null,
+        {
+          "_aaabaohejfieengchambb_$E7495844D6270C11$_$16$": {
+            "TagName": "Event.StateTree.PlayerSpawned"
+          },
+          "_aaabcmldjomcidfnamgng_$CB39EC2835D0C6D6$_$18$": {
+            "TagName": "None"
+          },
+          "bTaskEnabled": true,
+          "TransitionHandlingPriority": "EStateTreeTransitionPriority::Normal",
+          "Name": "Keep Waiting - Aliveness Listener",
+          "BindingsBatch": {
+            "Value": 3
+          },
+          "OutputBindingsBatch": {
+            "Value": 65535
+          },
+          "InstanceTemplateIndex": {
+            "Value": 8
+          },
+          "ExecutionRuntimeTemplateIndex": {
+            "Value": 65535
+          },
+          "InstanceDataHandle": {
+            "Source": "EStateTreeDataSourceType::ActiveInstanceData",
+            "Index": 3,
+            "StateHandle": {
+              "Index": 4
+            }
+          }
+        },
         {
           "Name": "Get Pawn from PlayerState",
           "BindingsBatch": {
@@ -1220,7 +1278,36 @@
             }
           }
         },
-        null,
+        {
+          "_aaabaohejfieengchambb_$E7495844D6270C11$_$16$": {
+            "TagName": "None"
+          },
+          "_aaabcmldjomcidfnamgng_$CB39EC2835D0C6D6$_$18$": {
+            "TagName": "Event.StateTree.GameplayTagRemoved"
+          },
+          "bTaskEnabled": true,
+          "TransitionHandlingPriority": "EStateTreeTransitionPriority::Normal",
+          "Name": "Survive Timer - Tag Listener",
+          "BindingsBatch": {
+            "Value": 6
+          },
+          "OutputBindingsBatch": {
+            "Value": 65535
+          },
+          "InstanceTemplateIndex": {
+            "Value": 11
+          },
+          "ExecutionRuntimeTemplateIndex": {
+            "Value": 65535
+          },
+          "InstanceDataHandle": {
+            "Source": "EStateTreeDataSourceType::ActiveInstanceData",
+            "Index": 3,
+            "StateHandle": {
+              "Index": 5
+            }
+          }
+        },
         {
           "Name": "Get Pawn from PlayerState",
           "BindingsBatch": {
@@ -1243,7 +1330,30 @@
             }
           }
         },
-        null,
+        {
+          "bTaskEnabled": true,
+          "TransitionHandlingPriority": "EStateTreeTransitionPriority::Normal",
+          "Name": "Unlock Achievement",
+          "BindingsBatch": {
+            "Value": 7
+          },
+          "OutputBindingsBatch": {
+            "Value": 65535
+          },
+          "InstanceTemplateIndex": {
+            "Value": 17
+          },
+          "ExecutionRuntimeTemplateIndex": {
+            "Value": 65535
+          },
+          "InstanceDataHandle": {
+            "Source": "EStateTreeDataSourceType::ActiveInstanceData",
+            "Index": 2,
+            "StateHandle": {
+              "Index": 10
+            }
+          }
+        },
         {
           "Operand": "EStateTreeExpressionOperand::Copy",
           "DeltaIndent": 0,
@@ -1331,25 +1441,15 @@
             },
             {
               "ContextObject": null,
-              "Event": null
-            },
-            {
-              "Parameters": {
-                "PropertyDescs": [],
-                "SerialSize": 0
-              }
-            },
-            {
-              "Parameters": {
-                "PropertyDescs": [],
-                "SerialSize": 0
-              }
-            },
-            null,
-            {
-              "Parameters": {
-                "PropertyDescs": [],
-                "SerialSize": 0
+              "Event": {
+                "ActionTag": {
+                  "TagName": "None"
+                },
+                "ContextTags": [],
+                "InstigatorPlayerState": null,
+                "TargetPlayerState": null,
+                "Distance": 0.0,
+                "_aaaajjdfcamdcfbfpgppm_$93520C32515F6FFC$_$9$": []
               }
             },
             {
@@ -1364,7 +1464,36 @@
                 "SerialSize": 0
               }
             },
-            null,
+            {
+              "TargetActor": null,
+              "TagToMatch": {
+                "TagName": "State.Location.Objective.ControlZone"
+              }
+            },
+            {
+              "Parameters": {
+                "PropertyDescs": [],
+                "SerialSize": 0
+              }
+            },
+            {
+              "Parameters": {
+                "PropertyDescs": [],
+                "SerialSize": 0
+              }
+            },
+            {
+              "Parameters": {
+                "PropertyDescs": [],
+                "SerialSize": 0
+              }
+            },
+            {
+              "TargetActor": null,
+              "TagToMatch": {
+                "TagName": "State.Player.Vitality.Alive"
+              }
+            },
             {
               "Parameters": {
                 "PropertyDescs": [],
@@ -1376,11 +1505,10 @@
               "RandomDeviation": 0.0,
               "bRunForever": false
             },
-            null,
             {
-              "Parameters": {
-                "PropertyDescs": [],
-                "SerialSize": 0
+              "TargetActor": null,
+              "TagToMatch": {
+                "TagName": "State.Location.Objective.ControlZone"
               }
             },
             {
@@ -1407,7 +1535,60 @@
                 "SerialSize": 0
               }
             },
-            null
+            {
+              "Parameters": {
+                "PropertyDescs": [],
+                "SerialSize": 0
+              }
+            },
+            {
+              "PlayerChallengeComponent": null,
+              "Challenge": {
+                "DisplayName": {
+                  "CultureInvariantString": null
+                },
+                "Description": {
+                  "CultureInvariantString": null
+                },
+                "Rewards": [],
+                "Objectives": [],
+                "bAutoActivate": false,
+                "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+                "bSendChatMessages": false,
+                "Prerequisites": {
+                  "QueryDefinition": {
+                    "StaticStruct": {
+                      "SchemaClass": {
+                        "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                        "ObjectPath": "/Script/WDGame"
+                      },
+                      "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                    },
+                    "SharedDefinition": null
+                  }
+                },
+                "StateTreeReference": {
+                  "StateTree": null,
+                  "Parameters": {
+                    "PropertyDescs": [],
+                    "SerialSize": 0
+                  },
+                  "PropertyOverrides": []
+                },
+                "LinkedStateTreeOverrides": {
+                  "OverrideItems": []
+                },
+                "Tag": {
+                  "TagName": "None"
+                }
+              },
+              "_aaabffnikhljndkfpmmgn_$5D8A7B9D3A5FCC6D$_$21$": [
+                "Event.StateTree.PlayerVitalityChanged",
+                "Event.StateTree.GameplayTagAdded",
+                "Event.StateTree.GameplayTagRemoved",
+                "Event.StateTree.PlayerSpawned"
+              ]
+            }
           ]
         }
       }

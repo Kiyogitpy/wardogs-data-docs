@@ -1,0 +1,40 @@
+--- export: UPrimaryDataAsset / AE_Vehicle_SupplyCrate_Deploy_Fail ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_SupplyCrate_Deploy_Fail",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/SupplyCrates/Audio/Events/AE_Vehicle_SupplyCrate_Deploy_Fail",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.SupplyCrate.Fail"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Vehicle_SupplyCrate_Deploy_Fail:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/SupplyCrates/Audio/Events/AE_Vehicle_SupplyCrate_Deploy_Fail.1"
+      }
+    ],
+    "_aaabhonahgpdbjealfaaa_$ED076F31940B5000$_$23$": 69.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_SupplyCrate_Deploy_Fail'",
+    "ObjectPath": "/SupplyCrates/Audio/Events/AE_Vehicle_SupplyCrate_Deploy_Fail.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UI_InGame_Vendor_InsufficientFunds'",
+      "ObjectPath": "/Game/Audio/UI/InGame/MSS/Vendor/Equipment/Cart/MSS_UI_InGame_Vendor_InsufficientFunds.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.SupplyCrate"
+    }
+  }
+}

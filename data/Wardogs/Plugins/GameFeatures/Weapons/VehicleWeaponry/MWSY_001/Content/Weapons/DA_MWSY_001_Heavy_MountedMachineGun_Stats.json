@@ -1,0 +1,75 @@
+--- export: UPrimaryDataAsset / DA_MWSY_001_Heavy_MountedMachineGun_Stats ---
+{
+  "Type": "WDWeaponStatsData",
+  "Name": "DA_MWSY_001_Heavy_MountedMachineGun_Stats",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDWeaponStatsData'",
+  "Package": "/MWSY_001/Weapons/DA_MWSY_001_Heavy_MountedMachineGun_Stats",
+  "Properties": {
+    "WeaponId": {
+      "TagName": "Id.Item.MWSY_001.MountedMachineGun"
+    },
+    "WeaponStats": {
+      "WeaponAccuracy": {
+        "AccuracyValue": 16.0
+      },
+      "AdsCameraCurve": {
+        "EditorCurveData": {
+          "Keys": [
+            {
+              "InterpMode": "RCIM_Cubic",
+              "TangentMode": "RCTM_User",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 0.0,
+              "Value": 0.0,
+              "ArriveTangent": 2.7112803,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 2.7112806,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Cubic",
+              "TangentMode": "RCTM_User",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 1.0,
+              "Value": 1.0,
+              "ArriveTangent": -0.11760892,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": -0.11760899,
+              "LeaveTangentWeight": 0.0
+            }
+          ]
+        }
+      },
+      "SupportedFireModes": [
+        "EWDFireMode::Automatic"
+      ],
+      "RoundsPerBurst": 1,
+      "bFirstFocalPlane": false,
+      "bSpawnProjectileFromCameraWhenAds": false,
+      "bAnimationSwayEnabled": false,
+      "PostPatternRandomYawRecoil": {
+        "X": 0.0,
+        "Y": 0.0
+      },
+      "PostPatternRandomPitchRecoil": {
+        "X": 0.0,
+        "Y": 0.0
+      },
+      "RandomDeviationDegree": 0.0,
+      "SupportedCaliber": [
+        "Item.Caliber.50Cal"
+      ],
+      "InitialBulletSpeed": 89000.0,
+      "EffectiveRange": 1000.0,
+      "MeleeDamage": 0.0,
+      "MeleeHitBoxSize": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "bAdsPrefires": false,
+      "bPrefireReversible": false
+    }
+  }
+}

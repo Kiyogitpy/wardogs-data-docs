@@ -11,5 +11,201 @@
       "ObjectPath": "/Script/WDGame"
     }
   },
-  "Rows": {}
+  "Rows": {
+    "Challenges.SessionEvents.HotZoneMagnet.TowerCaptured": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "4028B4E44E968A42D4B7D6A95DF65397",
+        "SourceString": "Tower Captured",
+        "LocalizedString": "Tower Captured"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "15FE89BC488D33077EB15289F651778F",
+        "SourceString": "Award resources to all players in range of a captured Tower of the same faction.",
+        "LocalizedString": "Award resources to all players in range of a captured Tower of the same faction."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.HotZoneMagnet.TowerCaptured"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_HotZoneMagnet_TowerCaptured'",
+          "ObjectPath": "/HotZoneMagnet/Data/Challenges/ST_Challenges_SessionEvents_KOTH_HotZoneMagnet_TowerCaptured.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.HotZoneMagnet.TowerCaptured"
+      }
+    },
+    "Challenges.SessionEvents.HotZoneMagnet.MagnetActivated": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "FEABE0244DDF33D33779BD9B4DAC0B02",
+        "SourceString": "Magnet Activated",
+        "LocalizedString": "Magnet Activated"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "27FE292041915613EEE7168663EE1622",
+        "SourceString": "Award resources to all players in range of an activated Magnet of the same faction.",
+        "LocalizedString": "Award resources to all players in range of an activated Magnet of the same faction."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.HotZoneMagnet.MagnetActivated"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_HotZoneMagnet_MagnetActivated'",
+          "ObjectPath": "/HotZoneMagnet/Data/Challenges/ST_Challenges_SessionEvents_KOTH_HotZoneMagnet_MagnetActivated.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.HotZoneMagnet.MagnetActivated"
+      }
+    },
+    "Challenges.SessionEvents.HotZoneMagnet.MagnetDeactivated": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "1329371C4E472195B01FD98220E52083",
+        "SourceString": "Magnet Deactivated",
+        "LocalizedString": "Magnet Deactivated"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "2C818D294126BD85CF294DB0C1FD6DE7",
+        "SourceString": "Award resources to all players in range of a deactivated Magnet of the same faction.",
+        "LocalizedString": "Award resources to all players in range of a deactivated Magnet of the same faction."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.HotZoneMagnet.MagnetDeactivated"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_HotZoneMagnet_MagnetDeactivated'",
+          "ObjectPath": "/HotZoneMagnet/Data/Challenges/ST_Challenges_SessionEvents_KOTH_HotZoneMagnet_MagnetDeactivated.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.HotZoneMagnet.MagnetDeactivated"
+      }
+    }
+  }
 }

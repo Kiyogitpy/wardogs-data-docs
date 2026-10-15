@@ -1,0 +1,151 @@
+--- export: UDataAsset / DA_TNK_04_DynamicsData ---
+{
+  "Type": "MTrackedVehicleDynamicsData",
+  "Name": "DA_TNK_04_DynamicsData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MTrackedVehicleDynamicsData'",
+  "Package": "/TNK_04/Data/DA_TNK_04_DynamicsData",
+  "Properties": {
+    "EngineTorqueCurve": {
+      "EditorCurveData": {
+        "Keys": [
+          {
+            "InterpMode": "RCIM_Cubic",
+            "TangentMode": "RCTM_Auto",
+            "TangentWeightMode": "RCTWM_WeightedNone",
+            "Time": -300.0,
+            "Value": 500.0,
+            "ArriveTangent": 0.0,
+            "ArriveTangentWeight": 0.0,
+            "LeaveTangent": 0.0,
+            "LeaveTangentWeight": 0.0
+          },
+          {
+            "InterpMode": "RCIM_Linear",
+            "TangentMode": "RCTM_Auto",
+            "TangentWeightMode": "RCTWM_WeightedNone",
+            "Time": 0.0,
+            "Value": 1100.0,
+            "ArriveTangent": 0.0,
+            "ArriveTangentWeight": 0.0,
+            "LeaveTangent": 0.0,
+            "LeaveTangentWeight": 0.0
+          },
+          {
+            "InterpMode": "RCIM_Cubic",
+            "TangentMode": "RCTM_User",
+            "TangentWeightMode": "RCTWM_WeightedNone",
+            "Time": 1911.1138,
+            "Value": 1400.0,
+            "ArriveTangent": 0.051902954,
+            "ArriveTangentWeight": 0.0,
+            "LeaveTangent": 0.051902954,
+            "LeaveTangentWeight": 0.0
+          },
+          {
+            "InterpMode": "RCIM_Cubic",
+            "TangentMode": "RCTM_User",
+            "TangentWeightMode": "RCTWM_WeightedNone",
+            "Time": 3202.1938,
+            "Value": 1150.0,
+            "ArriveTangent": -0.5407731,
+            "ArriveTangentWeight": 0.0,
+            "LeaveTangent": -0.5407731,
+            "LeaveTangentWeight": 0.0
+          },
+          {
+            "InterpMode": "RCIM_Cubic",
+            "TangentMode": "RCTM_User",
+            "TangentWeightMode": "RCTWM_WeightedNone",
+            "Time": 4500.0,
+            "Value": 0.0,
+            "ArriveTangent": 0.0,
+            "ArriveTangentWeight": 0.0,
+            "LeaveTangent": 0.0,
+            "LeaveTangentWeight": 0.0
+          }
+        ]
+      }
+    },
+    "Gears": [
+      {
+        "GearRatio": 5.0,
+        "DownRatio": 0.2,
+        "UpRatio": 0.8
+      },
+      {
+        "GearRatio": 0.0,
+        "DownRatio": 0.2,
+        "UpRatio": 0.8
+      },
+      {
+        "GearRatio": 8.0,
+        "DownRatio": 0.2,
+        "UpRatio": 0.8
+      },
+      {
+        "GearRatio": 6.0,
+        "DownRatio": 0.2,
+        "UpRatio": 0.8
+      },
+      {
+        "GearRatio": 3.6,
+        "DownRatio": 0.2,
+        "UpRatio": 0.8
+      }
+    ],
+    "_aaabijelmogbkfinoimmo_$94BCE61A58DE8CCE$_$24$": true,
+    "_aaabceogpiegghjhdmpno_$4E6F84667973CFDE$_$18$": 10.0,
+    "MaxRPM": 5000.0,
+    "DifferentialData": [
+      {
+        "DifferentialType": "EMTrackedVehicleDifferentialType::Simple",
+        "TorqueTransferRatio": 1.0,
+        "DifferentialRatio": 3.1,
+        "MinSlip": 10.0,
+        "MaxSlip": 20.0
+      }
+    ],
+    "SteerCurve": {
+      "EditorCurveData": {
+        "Keys": [
+          {
+            "InterpMode": "RCIM_Linear",
+            "TangentMode": "RCTM_Auto",
+            "TangentWeightMode": "RCTWM_WeightedNone",
+            "Time": 0.0,
+            "Value": 1.25,
+            "ArriveTangent": 0.0,
+            "ArriveTangentWeight": 0.0,
+            "LeaveTangent": 0.0,
+            "LeaveTangentWeight": 0.0
+          },
+          {
+            "InterpMode": "RCIM_Linear",
+            "TangentMode": "RCTM_Auto",
+            "TangentWeightMode": "RCTWM_WeightedNone",
+            "Time": 1.0,
+            "Value": 1.25,
+            "ArriveTangent": 0.0,
+            "ArriveTangentWeight": 0.0,
+            "LeaveTangent": 0.0,
+            "LeaveTangentWeight": 0.0
+          }
+        ]
+      }
+    },
+    "SteerInputRise": 40.0,
+    "SteerInputFall": 80.0,
+    "SleepThreshold": 50.0,
+    "WrongDirectionThreshold": 10.0,
+    "StopThreshold": 10.0,
+    "IdleBrakeInput": 0.3,
+    "DriftAngleThreshold": 25.0,
+    "_aaabegoopepifnlmljdia_$6EEF4F85DBCB9380$_$20$": 3.0,
+    "_aaabljdppeiocgchacenj_$93FF48E2627024D9$_$27$": 200.0,
+    "_aaabgbeamalnopgehkhcg_$140C0BDEF647A726$_$22$": {
+      "X": 3.0,
+      "Y": 3.0
+    }
+  }
+}

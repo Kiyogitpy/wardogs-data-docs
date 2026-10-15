@@ -1,0 +1,142 @@
+--- export: UPrimaryDataAsset / AnimSet_HotPotato ---
+{
+  "Type": "BHAnimationSet",
+  "Name": "AnimSet_HotPotato",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHAnimationSet'",
+  "Package": "/HotPotato/Data/AnimSet_HotPotato",
+  "Properties": {
+    "Animations": [
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Holdable.Equip"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Grenade_Equip'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Throwable/M67_Frag/AM_FP_Grenade_Equip.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_Grenade_Equip'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Throwable/M67_Frag/TP/Player/Montages/AM_TP_Grenade_Equip.0"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_Grenade_Equip'",
+              "ObjectPath": "/Game/Animation/Weapons/Throwable/AM_Weap_Grenade_Equip.0"
+            },
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Holdable.Holster"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Grenade_Holster'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Throwable/M67_Frag/AM_FP_Grenade_Holster.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_Grenade_Holster'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Throwable/M67_Frag/TP/Player/Montages/AM_TP_Grenade_Holster.0"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_Grenade_Holster'",
+              "ObjectPath": "/Game/Animation/Weapons/Throwable/AM_Weap_Grenade_Holster.0"
+            },
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Throwable.Overarm"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Grenade_Throw_Overhand'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Throwable/M67_Frag/AM_FP_Grenade_Throw_Overhand.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_Grenade_Throw_Overhand'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Throwable/M67_Frag/TP/Player/Montages/AM_TP_Grenade_Throw_Overhand.1"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_Grenade_Throw_Overhand'",
+              "ObjectPath": "/Game/Animation/Weapons/Throwable/AM_Weap_Grenade_Throw_Overhand.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_Grenade_Throw_Overhand_3P'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Throwable/M67_Frag/TP/Weapon/Montages/AM_Weap_Grenade_Throw_Overhand_3P.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Throwable.Underarm"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Grenade_Throw_Underhand'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Throwable/M67_Frag/AM_FP_Grenade_Throw_Underhand.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_Grenade_Throw_Underhand'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Throwable/M67_Frag/TP/Player/Montages/AM_TP_Grenade_Throw_Underhand.1"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_Grenade_Throw_Underhand'",
+              "ObjectPath": "/Game/Animation/Weapons/Throwable/AM_Weap_Grenade_Throw_Underhand.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_Grenade_Throw_Underhand_3P'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Throwable/M67_Frag/TP/Weapon/Montages/AM_Weap_Grenade_Throw_Underhand_3P.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      }
+    ]
+  }
+}

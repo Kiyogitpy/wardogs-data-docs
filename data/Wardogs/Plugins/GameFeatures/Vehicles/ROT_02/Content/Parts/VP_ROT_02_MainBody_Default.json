@@ -19,6 +19,16 @@
             "ObjectPath": "/ROT_02/Parts/VP_ROT_02_MainBody_Default.1"
           }
         }
+      },
+      {
+        "Key": "WeatherResponse",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_VehicleWeatherResponse'VP_ROT_02_MainBody_Default:WD_MVF_VehicleWeatherResponse_0'",
+            "ObjectPath": "/ROT_02/Parts/VP_ROT_02_MainBody_Default.2"
+          }
+        }
       }
     ]
   }
@@ -49,5 +59,35 @@
         "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
       }
     }
+  }
+}
+--- export: UObject / WD_MVF_VehicleWeatherResponse_0 ---
+{
+  "Type": "WD_MVF_VehicleWeatherResponse",
+  "Name": "WD_MVF_VehicleWeatherResponse_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_VehicleWeatherResponse'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_ROT_02_MainBody_Default'",
+    "ObjectPath": "/ROT_02/Parts/VP_ROT_02_MainBody_Default.0"
+  },
+  "Properties": {
+    "Effects": [
+      {
+        "ObjectName": "WDVehicleWeatherEffect_Wipers'VP_ROT_02_MainBody_Default:WD_MVF_VehicleWeatherResponse_0.WDVehicleWeatherEffect_Wipers_0'",
+        "ObjectPath": "/ROT_02/Parts/VP_ROT_02_MainBody_Default.3"
+      }
+    ]
+  }
+}
+--- export: UObject / WDVehicleWeatherEffect_Wipers_0 ---
+{
+  "Type": "WDVehicleWeatherEffect_Wipers",
+  "Name": "WDVehicleWeatherEffect_Wipers_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeatherEffect_Wipers'",
+  "Outer": {
+    "ObjectName": "WD_MVF_VehicleWeatherResponse'VP_ROT_02_MainBody_Default:WD_MVF_VehicleWeatherResponse_0'",
+    "ObjectPath": "/ROT_02/Parts/VP_ROT_02_MainBody_Default.2"
   }
 }

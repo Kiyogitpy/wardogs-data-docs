@@ -33,8 +33,8 @@
             "DisabledReason": {
               "TableId": "/Game/UI/StringTables/STRINGS_ContextDrawer.STRINGS_ContextDrawer",
               "Key": "DisabledReason.Squad.Frontend",
-              "SourceString": "Cant access squads in frontend.",
-              "LocalizedString": "Cant access squads in frontend."
+              "SourceString": "Can't access squads in frontend.",
+              "LocalizedString": "Can't access squads in frontend."
             }
           },
           "TabContentWidgetParams": {
@@ -114,6 +114,137 @@
           }
         }
       }
-    ]
+    ],
+    "LeaveMatchPopupData": {
+      "Tag": {
+        "TagName": "UI.Popup.LeaveMatch"
+      },
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Title.LeaveMatch",
+        "SourceString": "Leave Match",
+        "LocalizedString": "Leave Match"
+      },
+      "Subtitle": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Subtitle.LeaveMatch",
+        "SourceString": "You will be returned to the main menu.",
+        "LocalizedString": "You will be returned to the main menu."
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Description.LeaveMatch",
+        "SourceString": "Are you sure you want to leave your current match?",
+        "LocalizedString": "Are you sure you want to leave your current match?"
+      },
+      "Options": [
+        {
+          "Key": "EWDPopupOption::Left",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.No",
+              "SourceString": "No",
+              "LocalizedString": "No"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": false,
+            "ButtonTypeOverride": {
+              "TagName": "None"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": true
+          }
+        },
+        {
+          "Key": "EWDPopupOption::Right",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.Yes",
+              "SourceString": "Yes",
+              "LocalizedString": "Yes"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": true,
+            "ButtonTypeOverride": {
+              "TagName": "UI.Popup.Button.Main"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        }
+      ]
+    },
+    "ExitGamePopupData": {
+      "Tag": {
+        "TagName": "UI.Popup.ExitGame"
+      },
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Title.ExitGame",
+        "SourceString": "Exit to Desktop",
+        "LocalizedString": "Exit to Desktop"
+      },
+      "Subtitle": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Subtitle.ExitGame",
+        "SourceString": "The application will close.",
+        "LocalizedString": "The application will close."
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Description.ExitGame",
+        "SourceString": "Are you sure you want to exit the game?",
+        "LocalizedString": "Are you sure you want to exit the game?"
+      },
+      "Options": [
+        {
+          "Key": "EWDPopupOption::Left",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.No",
+              "SourceString": "No",
+              "LocalizedString": "No"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": false,
+            "ButtonTypeOverride": {
+              "TagName": "None"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": true
+          }
+        },
+        {
+          "Key": "EWDPopupOption::Right",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.Yes",
+              "SourceString": "Yes",
+              "LocalizedString": "Yes"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": true,
+            "ButtonTypeOverride": {
+              "TagName": "UI.Popup.Button.Main"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        }
+      ]
+    },
+    "InputTagCloseScene": {
+      "TagName": "UI.Action.Feature.PauseMenu.ToggleScene"
+    },
+    "EnterSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.UI.FrontEnd.Open.ContextDrawer"
+    },
+    "ExitSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.UI.FrontEnd.Close.ContextDrawer"
+    }
   }
 }

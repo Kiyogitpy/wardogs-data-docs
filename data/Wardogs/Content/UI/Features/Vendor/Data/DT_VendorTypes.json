@@ -567,6 +567,66 @@
       "Tag": {
         "TagName": "Vendor.Type.Garage"
       }
+    },
+    "Vendor.Type.Wager": {
+      "DefaultPanel": {
+        "TagName": "Vendor.Category.Wagers"
+      },
+      "bSwapToDefaultOnCloseRequest": false,
+      "PanelButtons": [
+        {
+          "Tag": {
+            "TagName": "Vendor.Category.Wagers"
+          },
+          "OverrideButtonClass": null,
+          "Action": null,
+          "Text": {
+            "Namespace": "",
+            "Key": "50F7F63C4D999B81944967BA3D5C4A46",
+            "SourceString": "CREATE",
+            "LocalizedString": "CREATE"
+          },
+          "MinimumSize": {
+            "X": 120.0,
+            "Y": 50.0
+          },
+          "Icon": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "bDisabled": false,
+          "DisabledReason": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "PanelWidgetParams": [
+        {
+          "Key": {
+            "TagName": "Vendor.Category.Wagers"
+          },
+          "Value": {
+            "WidgetClass": {
+              "AssetPathName": "/Game/UI/Features/Vendor/Widgets/VendorPanel/W_VendorPanel_Wagers.W_VendorPanel_Wagers_C",
+              "SubPathString": ""
+            },
+            "ViewModelParams": {
+              "ViewModelClass": {
+                "AssetPathName": "/Script/WDGame.WDUIVendorPanelViewModel_Wagers",
+                "SubPathString": ""
+              },
+              "Data": {
+                "AssetPathName": "/Game/UI/Features/Vendor/Widgets/VendorPanel/Data/DA_VendorPanel_Wagers_Create.DA_VendorPanel_Wagers_Create",
+                "SubPathString": ""
+              }
+            },
+            "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Vendor.Type.Wager"
+      }
     }
   }
 }

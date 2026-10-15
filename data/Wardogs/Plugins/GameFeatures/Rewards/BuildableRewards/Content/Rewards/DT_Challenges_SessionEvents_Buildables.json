@@ -11,5 +11,759 @@
       "ObjectPath": "/Script/WDGame"
     }
   },
-  "Rows": {}
+  "Rows": {
+    "Challenges.SessionEvents.Buildables.BuildableDamaged": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "8652B9454760AA6E53F459B0AD484C51",
+        "SourceString": "Buildable Damaged",
+        "LocalizedString": "Buildable Damaged"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "9F1424AB42910F1E787F64B5CD56D080",
+        "SourceString": "Reward for damaging buildables.",
+        "LocalizedString": "Reward for damaging buildables."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": false,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.Buildables.BuildableDamaged"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_Buildable_BuildableDamaged'",
+          "ObjectPath": "/BuildableRewards/Rewards/ST_Challenges_SessionEvents_Buildable_BuildableDamaged.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.Buildables.BuildableDamaged"
+      }
+    },
+    "Challenges.SessionEvents.Buildables.BuildableDestroyed": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "D36DA0D54396C93067F5088F8FFB2DAC",
+        "SourceString": "Buildable Destroyed",
+        "LocalizedString": "Buildable Destroyed"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "F6A59B0D47CE8E85C1F7898A727B5212",
+        "SourceString": "Reward for destroying a buildable.",
+        "LocalizedString": "Reward for destroying a buildable."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.Buildables.BuildableDestroyed"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_Buildable_BuildableDestroyed'",
+          "ObjectPath": "/BuildableRewards/Rewards/ST_Challenges_SessionEvents_Buildable_BuildableDestroyed.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.Buildables.BuildableDestroyed"
+      }
+    },
+    "Challenges.SessionEvents.Buildables.BuildableDestroyed.Assist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "D686D905483A026EBC2A83ABA732C3BE",
+        "SourceString": "Buildable Destroyed Assist",
+        "LocalizedString": "Buildable Destroyed Assist"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "3A29BBCB44E613CEA8A1338C7B6AE791",
+        "SourceString": "Reward for assisting in destroying a buildable.",
+        "LocalizedString": "Reward for assisting in destroying a buildable."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.Buildables.BuildableDestroyed.Assist"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_Buildable_BuildableDestroyed_Assist'",
+          "ObjectPath": "/BuildableRewards/Rewards/ST_Challenges_SessionEvents_Buildable_BuildableDestroyed_Assist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.Buildables.BuildableDestroyed.Assist"
+      }
+    },
+    "Challenges.SessionEvents.Buildables.BuildableFinished": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "3D5B379A48FB2F36406D44B19E94F06E",
+        "SourceString": "Buildable Finished",
+        "LocalizedString": "Buildable Finished"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "C9E757534C5FC9BB3F6259AFE0D1E709",
+        "SourceString": "Reward for finishing construction of a buildable.",
+        "LocalizedString": "Reward for finishing construction of a buildable."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.Buildables.BuildableFinished"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_Buildable_BuildingFinished'",
+          "ObjectPath": "/BuildableRewards/Rewards/ST_Challenges_SessionEvents_Buildable_BuildingFinished.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.Buildables.BuildableFinished"
+      }
+    },
+    "Challenges.SessionEvents.Buildables.Building": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "A1E2E6654C73823AAADC6793B7168AA2",
+        "SourceString": "Buildable Building",
+        "LocalizedString": "Buildable Building"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "93DD916F4914ED9EB65F8680975A0133",
+        "SourceString": "Reward for contributing to construction of a buildable.",
+        "LocalizedString": "Reward for contributing to construction of a buildable."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.Buildables.Building"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_Buildable_Building'",
+          "ObjectPath": "/BuildableRewards/Rewards/ST_Challenges_SessionEvents_Buildable_Building.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.Buildables.Building"
+      }
+    },
+    "Challenges.SessionEvents.Buildables.SchematicPlaced": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "AA4F2F7A455AF86A9D737EA3DB3C9A72",
+        "SourceString": "Schematic Placed",
+        "LocalizedString": "Schematic Placed"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "EB434CDC4FCC8A7DCCDF6F971E8A5738",
+        "SourceString": "Reward for placing a building schematic.",
+        "LocalizedString": "Reward for placing a building schematic."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": false,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.Buildables.SchematicPlaced"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_Buildable_SchematicPlaced'",
+          "ObjectPath": "/BuildableRewards/Rewards/ST_Challenges_SessionEvents_Buildable_SchematicPlaced.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.Buildables.SchematicPlaced"
+      }
+    },
+    "Challenges.SessionEvents.Buildables.BuildSuppliesDeposited": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "03A6EEC34D9255CD99E86D89BD86DB40",
+        "SourceString": "Build Supplies Deposited",
+        "LocalizedString": "Build Supplies Deposited"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "8B5B427349F5FF39D0AB41ACE2C7FF0C",
+        "SourceString": "Reward for placing build supplies in the fob.",
+        "LocalizedString": "Reward for placing build supplies in the fob."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.Buildables.BuildSuppliesDeposited"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_Buildable_BuildSuppliesDeposited'",
+          "ObjectPath": "/BuildableRewards/Rewards/ST_Challenges_SessionEvents_Buildable_BuildSuppliesDeposited.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.Buildables.BuildSuppliesDeposited"
+      }
+    },
+    "Challenges.SessionEvents.Buildables.BuildSuppliesConsumed": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "2D76C0A54B076139BC28C28D5F88369A",
+        "SourceString": "Build Supplies Consumed",
+        "LocalizedString": "Build Supplies Consumed"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "A45137994343BE14123F6D834266394C",
+        "SourceString": "Reward/Cost for using build supplies in the fob.",
+        "LocalizedString": "Reward/Cost for using build supplies in the fob."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.Buildables.BuildSuppliesConsumed"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_Buildable_BuildSuppliesConsumed'",
+          "ObjectPath": "/BuildableRewards/Rewards/ST_Challenges_SessionEvents_Buildable_BuildSuppliesConsumed.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.Buildables.BuildSuppliesConsumed"
+      }
+    },
+    "Challenges.SessionEvents.Buildables.FOBOwnerPayed": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "1379723A4DA13919F51D6E8BC647B1D4",
+        "SourceString": "FOB Resources Used",
+        "LocalizedString": "FOB Resources Used"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "3B7A48984EDD3199204851BDCE238774",
+        "SourceString": "Reward/Cost for another player using the supplies in your FOB.",
+        "LocalizedString": "Reward/Cost for another player using the supplies in your FOB."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.Buildables.FOBOwnerPayed"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_Buildable_FOBOwnerPayed'",
+          "ObjectPath": "/BuildableRewards/Rewards/ST_Challenges_SessionEvents_Buildable_FOBOwnerPayed.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.Buildables.FOBOwnerPayed"
+      }
+    },
+    "Challenges.SessionEvents.Buildables.FOBHacked": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "74E0250C4CDDBAD5E83F99B85FEB6E69",
+        "SourceString": "FOB Hacked",
+        "LocalizedString": "FOB Hacked"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "3E07813945C94155A637BCA35A2A0226",
+        "SourceString": "Reward for successfully hacking an enemy FOB.",
+        "LocalizedString": "Reward for successfully hacking an enemy FOB."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.Buildables.FOBHacked"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_Buildable_FOBHacked'",
+          "ObjectPath": "/BuildableRewards/Rewards/ST_Challenges_SessionEvents_Buildable_FOBHacked.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'WDRepeatActionTargetTracker'",
+                "ObjectPath": "/Script/WDGame"
+              },
+              "ID": "FD92F4F5-401862EC-2BD5C2A2-883E2D9F",
+              "Name": "VictimTracker",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 12
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.Buildables.FOBHacked"
+      }
+    },
+    "Challenges.SessionEvents.Buildables.FOBDoorClosed": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "4FCE2F5848AF807D5AFFCA93AF62AAE4",
+        "SourceString": "Door Closed",
+        "LocalizedString": "Door Closed"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "C125786542A97FE245AB8B8D50BB4285",
+        "SourceString": "Reward for successfully closing a friendly door.",
+        "LocalizedString": "Reward for successfully closing a friendly door."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.Buildables.FOBDoorClosed"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_Buildable_FOBDoorClosed'",
+          "ObjectPath": "/BuildableRewards/Rewards/ST_Challenges_SessionEvents_Buildable_FOBDoorClosed.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'WDRepeatActionTargetTracker'",
+                "ObjectPath": "/Script/WDGame"
+              },
+              "ID": "FD92F4F5-401862EC-2BD5C2A2-883E2D9F",
+              "Name": "VictimTracker",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 12
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.Buildables.FOBDoorClosed"
+      }
+    }
+  }
 }

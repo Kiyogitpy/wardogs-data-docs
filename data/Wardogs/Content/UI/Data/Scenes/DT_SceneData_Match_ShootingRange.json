@@ -1,0 +1,57 @@
+--- export: UDataTable / DT_SceneData_Match_ShootingRange ---
+{
+  "Type": "DataTable",
+  "Name": "DT_SceneData_Match_ShootingRange",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/UI/Data/Scenes/DT_SceneData_Match_ShootingRange",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDSceneDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "UI.Scene.Match.ContextDrawer": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": false,
+      "bIsFocusable": true,
+      "bShouldPreload": true,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Upper",
+        "ZOrder": 3,
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/ContextDrawer/W_ContextDrawer.W_ContextDrawer_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIContextDrawerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/ContextDrawer/Data/DA_ShootingRange_ContextDrawer.DA_ShootingRange_ContextDrawer",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": false,
+      "bShowBackButton": false,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": true,
+      "_aaabffpbdpodpmfcknkog_$5F13FE3FC52ADAE6$_$21$": true,
+      "Tag": {
+        "TagName": "UI.Scene.Match.ContextDrawer"
+      }
+    }
+  }
+}

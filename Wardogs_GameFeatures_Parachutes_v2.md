@@ -4,9 +4,18 @@ parent: "Game Features"
 ---
 
 # Wardogs — Parachutes Game Feature Reference (v2)
-*Extracted from cooked game data ([`Wardogs/Plugins/GameFeatures/Parachutes`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Parachutes), 7 JSON files, all parsed). Build `++Wardogs+Live-CL-509546`, UE 5.7.*
+*Extracted from cooked game data ([`Wardogs/Plugins/GameFeatures/Parachutes`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Parachutes), 7 JSON files, all parsed). Build `++Wardogs+Live-CL-516586`, UE 5.7.*
 
 > **What this is:** two parachute items (Basic and Sport), each with a movement profile, a vendor listing, UI text, and an inventory definition. The plugin registers its vendor and UI rows through two data registry sources.
+
+---
+
+## Season 02 update (2026-10-15)
+
+- Basic and Sport `MinFallHeightBeforeAbleToParachute`: 100 → 400.
+- Sport `PullUpDragAcceleration`: 825 → 400.
+- Both profiles gained `VerticalDragCoefficient` (1.75), `OpenDuration` (2.0) and `MinHeightOpenParachuteFromGround` (1000).
+- Vendor price: Basic 100 → 500, Sport 1,000 → 700.
 
 ---
 
@@ -38,7 +47,7 @@ Fields not listed for a profile are absent from its export (see section 8).
 | `VerticalMaxSpeed` | not exported | **3,000** | |
 | `HorizontalAcceleration` | 300 | **250** | |
 | `GliderAcceleration` | 0 | **1,000** | |
-| `PullUpDragAcceleration` | 0 | **825** | |
+| `PullUpDragAcceleration` | 0 | **400** | |
 | `TurnAcceleration` | 60 | **40** | |
 | `PitchSpeed` | 1.0 | **1.6** | |
 | `RollSpeed` | 1.0 | not exported | |
@@ -48,7 +57,10 @@ Fields not listed for a profile are absent from its export (see section 8).
 | `MaxPullUpStamina` | 0 | not exported | |
 | `PullUpStaminaUsagePerSecond` | 0 | **50** | |
 | `PullUpStaminaRegenPerSecond` | 0 | **30** | |
-| `MinFallHeightBeforeAbleToParachute` | 100 | 100 | Unit not stated (likely cm) |
+| `MinFallHeightBeforeAbleToParachute` | 400 | 400 | Unit not stated (likely cm) |
+| `VerticalDragCoefficient` | 1.75 | 1.75 | |
+| `OpenDuration` | 2.0 | 2.0 | |
+| `MinHeightOpenParachuteFromGround` | 1000 | 1000 | |
 | `VelocityDamageLookup` | [`CRV_ParachutePunishment_Damage`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves/CRV_ParachutePunishment_Damage.json) | same | Damage vs fall velocity |
 | `VelocityDamageType` | `WDFallDamageType` | same | |
 
@@ -87,8 +99,8 @@ Both drop a backpack-style mesh (the Basic one is the `_Temp` variant). The move
 
 | Row | Price | Amount per purchase | Level to unlock | Lifetime buy limit | Vendor category | Shown in vendor |
 |---|---|---|---|---|---|---|
-| `Id.Item.Parachute.Basic` | **100** | 1 | 0 | 0 (no limit) | `Vendor.Category.Gear.Traversal` (variation); `Vendor.Category.Utility` (row) | yes |
-| `Id.Item.Parachute.Sport` | **1,000** | 1 | 0 | 0 (no limit) | `Vendor.Category.Gear.Traversal` (variation); `Vendor.Category.Utility` (row) | yes |
+| `Id.Item.Parachute.Basic` | **500** | 1 | 0 | 0 (no limit) | `Vendor.Category.Gear.Traversal` (variation); `Vendor.Category.Utility` (row) | yes |
+| `Id.Item.Parachute.Sport` | **700** | 1 | 0 | 0 (no limit) | `Vendor.Category.Gear.Traversal` (variation); `Vendor.Category.Utility` (row) | yes |
 
 Both rows have no unlock requirements (`UnlockRequiredItems` empty) and are not faction-specific. Both use purchase event `Audio.Event.UI.InGame.Vendor.Purchase` and vendor audio [`ID_Vest_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Player/Item/Data/ID_Vest_Audio.json), which is not a parachute sound. That looks like a copy-over.
 
@@ -122,9 +134,9 @@ Both are client and server sources with asset priority 0. No curve tables are ad
 
 ## 7. How Values Combine
 
-- **Fall damage:** a fall only lets you open a parachute above 100 (the minimum fall height). Velocity damage is read from [`CRV_ParachutePunishment_Damage`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves/CRV_ParachutePunishment_Damage.json), which lives outside this plugin, so the exact damage at a given speed is not in this dump.
+- **Fall damage:** a fall only lets you open a parachute above 400 (the minimum fall height). Velocity damage is read from [`CRV_ParachutePunishment_Damage`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves/CRV_ParachutePunishment_Damage.json), which lives outside this plugin, so the exact damage at a given speed is not in this dump.
 - **Sport stamina:** the pull-up action costs 50 stamina per second (`PullUpStaminaUsagePerSecond`) and regenerates at 30 per second when not in use. The Basic profile's stamina values are 0, so it cannot pull up.
-- **Sport speed:** horizontal speed caps at 2,200 and vertical at 3,000. Glide adds 1,000 acceleration; pull-up drag adds 825 when active.
+- **Sport speed:** horizontal speed caps at 2,200 and vertical at 3,000. Glide adds 1,000 acceleration; pull-up drag adds 400 when active.
 
 ---
 

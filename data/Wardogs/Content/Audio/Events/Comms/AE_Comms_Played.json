@@ -31,9 +31,33 @@
     },
     "Behaviors": [
       {
+        "ObjectName": "WDAudioEventBehaviorHelmetMuffle'AE_Comms_Played:WDAudioEventBehaviorHelmetMuffle_0'",
+        "ObjectPath": "/Game/Audio/Events/Comms/AE_Comms_Played.2"
+      },
+      {
         "ObjectName": "AEB_Comms_VehiclePerspective_StartedSpeaking_C'AE_Comms_Played:AEB_Comms_VehiclePerspective_StartedSpeaking_C_0'",
         "ObjectPath": "/Game/Audio/Events/Comms/AE_Comms_Played.0"
       }
     ]
+  }
+}
+--- export: UObject / WDAudioEventBehaviorHelmetMuffle_0 ---
+{
+  "Type": "WDAudioEventBehaviorHelmetMuffle",
+  "Name": "WDAudioEventBehaviorHelmetMuffle_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorHelmetMuffle'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Comms_Played'",
+    "ObjectPath": "/Game/Audio/Events/Comms/AE_Comms_Played.1"
+  },
+  "Properties": {
+    "_aaaakiigdocmdpdkhgnim_$8863E2C3F3A76D8C$_$10$": [
+      "State.Player.Armor.SuperHeavyHelmet.Passive"
+    ],
+    "Target": "EWDHelmetMuffleTarget::VoxActiveComponent",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
   }
 }

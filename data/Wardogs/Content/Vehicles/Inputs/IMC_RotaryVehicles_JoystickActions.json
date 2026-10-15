@@ -35,11 +35,16 @@
           "PlayerMappableKeySettings": null
         },
         {
-          "Triggers": [],
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_RotaryVehicles_JoystickActions:InputTriggerPressed_4'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_JoystickActions.6"
+            }
+          ],
           "Modifiers": [],
           "Action": {
-            "ObjectName": "BHInputAction'IA_Vehicle_FireFlares'",
-            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_FireFlares.0"
+            "ObjectName": "BHInputAction'IA_Vehicle_FireCountermeasures'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_FireCountermeasures.0"
           },
           "Key": {
             "KeyName": "HOTAS_Action_Flares"
@@ -110,7 +115,12 @@
           "PlayerMappableKeySettings": null
         },
         {
-          "Triggers": [],
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_RotaryVehicles_JoystickActions:InputTriggerPressed_5'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_JoystickActions.7"
+            }
+          ],
           "Modifiers": [],
           "Action": {
             "ObjectName": "BHInputAction'IA_Vehicle_Deploy_SupplyCrate'",
@@ -144,7 +154,7 @@
           "Triggers": [
             {
               "ObjectName": "InputTriggerTap'IMC_RotaryVehicles_JoystickActions:InputTriggerTap_0'",
-              "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_JoystickActions.6"
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_JoystickActions.8"
             },
             {
               "ObjectName": "InputTriggerHold'IMC_RotaryVehicles_JoystickActions:InputTriggerHold_0'",
@@ -236,6 +246,28 @@
 {
   "Type": "InputTriggerPressed",
   "Name": "InputTriggerPressed_3",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_RotaryVehicles_JoystickActions'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_JoystickActions.0"
+  }
+}
+--- export: UObject / InputTriggerPressed_4 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_4",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_RotaryVehicles_JoystickActions'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_JoystickActions.0"
+  }
+}
+--- export: UObject / InputTriggerPressed_5 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_5",
   "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
   "Class": "UScriptClass'InputTriggerPressed'",
   "Outer": {

@@ -40,7 +40,8 @@
       "Pitch": -90.0,
       "Yaw": 0.0,
       "Roll": 0.0
-    }
+    },
+    "_aaaankomdlipjpppmphif_$AEC3B8F9FFFCF785$_$13$": 2.0
   }
 }
 --- export: UObject / BHInventoryFragment_Stackable_0 ---
@@ -54,7 +55,21 @@
     "ObjectPath": "/Game/Items/Resources/Ammo/762x54mm/ID_762x54mm_Tracer.4"
   },
   "Properties": {
-    "MaxStackSize": 40
+    "MaxStackSize": 40,
+    "MaxStackSizeOverrides": [
+      {
+        "Key": {
+          "TagName": "Inventory.Slot.Vehicle.Storage"
+        },
+        "Value": 150
+      },
+      {
+        "Key": {
+          "TagName": "Inventory.Type.Vehicle"
+        },
+        "Value": 150
+      }
+    ]
   }
 }
 --- export: UObject / BHInventoryFragment_UserInterface_0 ---

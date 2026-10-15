@@ -405,6 +405,33 @@
           "InstigatorRequirements": [],
           "TargetRequirements": [],
           "SourceRequirements": [
+            "Meta.Damage.Bullet",
+            "Meta.Damage.Arms.High",
+            "Meta.Damage.Weapon.Sniper"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": 28.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.Armor"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [],
+          "SourceRequirements": [
             "Meta.Damage.Explosive"
           ],
           "AlignmentRequired": "EWDDamageAlignment::None",
@@ -598,6 +625,33 @@
             "bUseCustomOperation": false,
             "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
             "Amount": -60.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.Armor"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [],
+          "SourceRequirements": [
+            "Meta.Damage.Bullet",
+            "Meta.Damage.Arms.High",
+            "Meta.Damage.Weapon.Sniper"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": 28.0,
             "CustomOperationClass": null,
             "PriorityCategory": {
               "TagName": "Meta.Damage.Category.Armor"

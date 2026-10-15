@@ -6,7 +6,7 @@
   "Class": "UScriptClass'StateTree'",
   "Package": "/Game/Meta/Achievements/StateTrees/ST_Achievement_PunchKristopher",
   "Properties": {
-    "LastCompiledEditorDataHash": 2844686559,
+    "LastCompiledEditorDataHash": 2902776293,
     "Schema": {
       "ObjectName": "WDChallengeStateTreeSchema'ST_Achievement_PunchKristopher:WDChallengeStateTreeSchema_0'",
       "ObjectPath": "/Game/Meta/Achievements/StateTrees/ST_Achievement_PunchKristopher.1"
@@ -483,7 +483,30 @@
             }
           }
         },
-        null,
+        {
+          "bTaskEnabled": true,
+          "TransitionHandlingPriority": "EStateTreeTransitionPriority::Normal",
+          "Name": "Unlock Achievement",
+          "BindingsBatch": {
+            "Value": 0
+          },
+          "OutputBindingsBatch": {
+            "Value": 65535
+          },
+          "InstanceTemplateIndex": {
+            "Value": 5
+          },
+          "ExecutionRuntimeTemplateIndex": {
+            "Value": 65535
+          },
+          "InstanceDataHandle": {
+            "Source": "EStateTreeDataSourceType::ActiveInstanceData",
+            "Index": 5,
+            "StateHandle": {
+              "Index": 3
+            }
+          }
+        },
         {
           "Operand": "EStateTreeExpressionOperand::Copy",
           "DeltaIndent": 1,
@@ -571,41 +594,97 @@
               "Event": {
                 "Target": null,
                 "Instigator": null,
+                "DamageCauser": null,
                 "Damage": 0.0,
                 "HitLocation": {
                   "TagName": "None"
                 },
-                "bone": "",
+                "bone": "None",
                 "CauseEntityTag": {
                   "TagName": "None"
+                },
+                "DamageType": {
+                  "TagName": "None"
+                },
+                "AmmoModifier": {
+                  "TagName": "None"
+                },
+                "Caliber": {
+                  "TagName": "None"
+                },
+                "_aaabaejbdolbdljiigihd_$4913EB13B9886873$_$16$": false,
+                "_aaaaghadpmkmnjgmeojnp_$703FCACD96C4E9DF$_$6$": 0
+              }
+            },
+            {
+              "Parameters": {
+                "PropertyDescs": [],
+                "SerialSize": 0
+              }
+            },
+            {
+              "Parameters": {
+                "PropertyDescs": [],
+                "SerialSize": 0
+              }
+            },
+            {
+              "Parameters": {
+                "PropertyDescs": [],
+                "SerialSize": 0
+              }
+            },
+            {
+              "Parameters": {
+                "PropertyDescs": [],
+                "SerialSize": 0
+              }
+            },
+            {
+              "PlayerChallengeComponent": null,
+              "Challenge": {
+                "DisplayName": {
+                  "CultureInvariantString": null
+                },
+                "Description": {
+                  "CultureInvariantString": null
+                },
+                "Rewards": [],
+                "Objectives": [],
+                "bAutoActivate": false,
+                "_aaabgikgfhflcpoeckhbm_$8A6575B2FE42A71C$_$22$": false,
+                "bSendChatMessages": false,
+                "Prerequisites": {
+                  "QueryDefinition": {
+                    "StaticStruct": {
+                      "SchemaClass": {
+                        "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                        "ObjectPath": "/Script/WDGame"
+                      },
+                      "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                    },
+                    "SharedDefinition": null
+                  }
+                },
+                "StateTreeReference": {
+                  "StateTree": null,
+                  "Parameters": {
+                    "PropertyDescs": [],
+                    "SerialSize": 0
+                  },
+                  "PropertyOverrides": []
+                },
+                "LinkedStateTreeOverrides": {
+                  "OverrideItems": []
+                },
+                "Tag": {
+                  "TagName": "None"
                 }
-              }
+              },
+              "_aaabffnikhljndkfpmmgn_$5D8A7B9D3A5FCC6D$_$21$": [
+                "Event.StateTree.CharacterDamaged"
+              ]
             },
-            {
-              "Parameters": {
-                "PropertyDescs": [],
-                "SerialSize": 0
-              }
-            },
-            {
-              "Parameters": {
-                "PropertyDescs": [],
-                "SerialSize": 0
-              }
-            },
-            {
-              "Parameters": {
-                "PropertyDescs": [],
-                "SerialSize": 0
-              }
-            },
-            {
-              "Parameters": {
-                "PropertyDescs": [],
-                "SerialSize": 0
-              }
-            },
-            null,
             {
               "Parameters": {
                 "PropertyDescs": [],

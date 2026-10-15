@@ -1,0 +1,58 @@
+--- export: UPrimaryDataAsset / VV_STN_06 ---
+{
+  "Type": "ModularVehicleVariant",
+  "Name": "VV_STN_06",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleVariant'",
+  "Package": "/STN_06/Variants/VV_STN_06",
+  "Properties": {
+    "bIncludeInBuildCommandLine": true,
+    "VariantID": {
+      "TagName": "Vehicle.Variant.Stationary.MGNest"
+    },
+    "SpawnParams": {
+      "Min": {
+        "X": -91.4331,
+        "Y": -91.6991,
+        "Z": -53.2223
+      },
+      "Max": {
+        "X": 91.9651,
+        "Y": 91.6991,
+        "Z": 154.3294
+      }
+    },
+    "bUseFixedBounds": true,
+    "FixedBounds": {
+      "Min": {
+        "X": -150.0,
+        "Y": -150.0,
+        "Z": -100.0
+      },
+      "Max": {
+        "X": 150.0,
+        "Y": 150.0,
+        "Z": 200.0
+      }
+    },
+    "AssemblyData": {
+      "VehicleBase": {
+        "ObjectName": "ModularVehiclePlatform'VP_STN_06'",
+        "ObjectPath": "/STN_06/Platforms/VP_STN_06.0"
+      },
+      "CustomData": {
+        "SlotOverrides": [
+          {
+            "Path": {
+              "Path": "Seats"
+            },
+            "Part": {
+              "AssetPathName": "/STN_06/Parts/VP_STN_06_Seats.VP_STN_06_Seats",
+              "SubPathString": ""
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -4,44 +4,57 @@ nav_order: 2
 ---
 
 # Wardogs — Rewards & Progression Reference (v2, corrected)
-*Extracted from cooked game data via CUE4Parse (build `++Wardogs+Live-CL-509546`, UE 5.7.4). All numbers below come directly from the game's own DataTables.*
+*Extracted from cooked game data (build `++Wardogs+Live-CL-516586`, UE 5.7.4). All numbers below come directly from the game's own DataTables.*
 
 > **Correction note:** v1 of this doc pulled from [`DT_Rewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_Rewards.json)/[`DT_CashRewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_CashRewards.json) — those tables turned out to be **stale/placeholder** (nearly everything reads `0`). The real, live numbers live in a separate, much bigger family of per-category tables (`DT_Reward_Cash_*`, `DT_ChallengeRewards_*`) under [`CashRewardsDataTable/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/CashRewardsDataTable). This version replaces those zeros with the actual base values, including per-item, per-vehicle, and per-buildable breakdowns that weren't in v1 at all.
 
 ---
 
-## 1. Role Mastery XP Curve (unchanged from v1, confirmed correct)
+## Season 02 update (2026-10-15)
+
+- **Role Mastery XP curve changed** for all six roles, which still share one curve. Level 10: 35,000 → 25,000. Level 20: 250,000 → 111,500. Level 50: 1,500,000 → 1,150,000. Level 100: 6,000,000 → 5,132,500. Levels 0 to 9 are unchanged. See [section 1](#1-role-mastery-xp-curve-updated-in-season-02).
+- **New tank variant:** [`TNK_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/TNK_04.json) (Default) destroyed pays a base of 5,000. See [section 5a](#5a-vehicle-destroyed-dt_reward_cash_vehicledestroyed).
+- **New faction bonus row:** `FactionWinBonus` in the end-of-match challenge data. Alpha 10,000, the other alignment tags 0. See [section 10](#10-end-of-match-challenge-rewards-dt_challengerewards_endofmatch).
+- **Supply crate session rewards:** DeploySupplyCrate literal 250 → 125. DestroySupplyCrate (Free) 250 → 150. PlayerDelivered 150 → 100.
+- **Vehicle session rewards** (per-kill calculator data, not in the tables below): TNK_01 Artillery 14,000 → 8,000. TNK_01 AntiAir 10,000 → 3,500. MistralAA 2,000 → 650. Phalanx 3,000 → 1,200. Mortar 300 → 650.
+- **Supply crate XP curve:** [`CRV_Challenges_Curves_PurchaseFromSupplyCrate_XP`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/RewardData/CurveTables/CRV_Challenges_Curves_PurchaseFromSupplyCrate_XP.json) key 2 time 75 → 10.
+- **New challenge state trees (4):** [`ST_Challenges_Challenge_PassengersDelivered`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/StateTrees/ST_Challenges_Challenge_PassengersDelivered.json), [`ST_Challenges_Challenge_RewardedKills`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/StateTrees/ST_Challenges_Challenge_RewardedKills.json), [`ST_Challenges_Challenge_RewardedRevives`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/StateTrees/ST_Challenges_Challenge_RewardedRevives.json), and [`ST_Challenges_Challenge_RewardedVehiclesDestroyed`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/StateTrees/ST_Challenges_Challenge_RewardedVehiclesDestroyed.json). Not yet covered in the tables below.
+- **New supply crate curves (2):** [`CRV_Challenges_Curves_DeploySupplyCrate_XP`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/RewardData/CurveTables/CRV_Challenges_Curves_DeploySupplyCrate_XP.json) and [`CRV_Challenges_Curves_DestroySupplyCrate_Cash`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/RewardData/CurveTables/CRV_Challenges_Curves_DestroySupplyCrate_Cash.json), referenced by [`DT_Challenges_Curves_PurchaseFromSupplyCrate`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/RewardData/CurveTables/DT_Challenges_Curves_PurchaseFromSupplyCrate.json).
+
+---
+
+## 1. Role Mastery XP Curve (updated in Season 02)
 
 Applies identically to all 6 roles: Infantry, Medic, Support, Recon, Pilot, Driver.
 
 | Level | XP | Level | XP | Level | XP | Level | XP |
 |---|---|---|---|---|---|---|---|
-| 0 | 0 | 26 | 388,000 | 52 | 1,589,500 | 78 | 3,064,000 |
-| 1 | 200 | 27 | 413,500 | 53 | 1,634,500 | 79 | 3,154,750 |
-| 2 | 750 | 28 | 438,000 | 54 | 1,682,250 | 80 | 3,257,500 |
-| 3 | 1,250 | 29 | 464,000 | 55 | 1,734,750 | 81 | 3,345,250 |
-| 4 | 3,000 | 30 | 500,000 | 56 | 1,780,750 | 82 | 3,441,250 |
-| 5 | 6,250 | 31 | 534,000 | 57 | 1,829,000 | 83 | 3,534,500 |
-| 6 | 9,250 | 32 | 576,000 | 58 | 1,876,750 | 84 | 3,637,000 |
-| 7 | 13,000 | 33 | 622,000 | 59 | 1,926,750 | 85 | 3,764,500 |
-| 8 | 17,250 | 34 | 675,000 | 60 | 1,983,000 | 86 | 3,869,000 |
-| 9 | 22,500 | 35 | 750,000 | 61 | 2,031,500 | 87 | 3,981,750 |
-| 10 | 35,000 | 36 | 791,000 | 62 | 2,082,750 | 88 | 4,091,250 |
-| 11 | 46,250 | 37 | 835,500 | 63 | 2,132,750 | 89 | 4,210,500 |
-| 12 | 58,500 | 38 | 878,500 | 64 | 2,186,000 | 90 | 4,362,750 |
-| 13 | 71,500 | 39 | 925,000 | 65 | 2,245,750 | 91 | 4,489,000 |
-| 14 | 85,000 | 40 | 975,000 | 66 | 2,297,500 | 92 | 4,625,000 |
-| 15 | 110,000 | 41 | 1,020,500 | 67 | 2,351,750 | 93 | 4,757,500 |
-| 16 | 131,750 | 42 | 1,069,500 | 68 | 2,405,000 | 94 | 4,901,250 |
-| 17 | 158,000 | 43 | 1,117,000 | 69 | 2,461,250 | 95 | 5,086,250 |
-| 18 | 183,750 | 44 | 1,168,000 | 70 | 2,524,750 | 96 | 5,242,500 |
-| 19 | 214,500 | 45 | 1,225,000 | 71 | 2,579,250 | 97 | 5,410,500 |
-| 20 | 250,000 | 46 | 1,275,500 | 72 | 2,636,750 | 98 | 5,574,000 |
-| 21 | 269,000 | 47 | 1,329,500 | 73 | 2,693,000 | 99 | 5,750,000 |
-| 22 | 291,000 | 48 | 1,382,000 | 74 | 2,753,000 | **100** | **6,000,000** |
-| 23 | 312,500 | 49 | 1,438,000 | 75 | 2,826,750 | | |
-| 24 | 337,000 | 50 | 1,500,000 | 76 | 2,898,000 | | |
-| 25 | 365,000 | 51 | 1,543,750 | 77 | 2,982,750 | | |
+| 0 | 0 | 26 | 225,600 | 52 | 1,218,800 | 78 | 2,424,200 |
+| 1 | 200 | 27 | 246,700 | 53 | 1,253,450 | 79 | 2,504,600 |
+| 2 | 750 | 28 | 266,950 | 54 | 1,290,850 | 80 | 2,597,000 |
+| 3 | 1,250 | 29 | 288,450 | 55 | 1,333,000 | 81 | 2,674,400 |
+| 4 | 3,000 | 30 | 318,200 | 56 | 1,368,650 | 82 | 2,760,050 |
+| 5 | 6,250 | 31 | 346,300 | 57 | 1,406,550 | 83 | 2,842,950 |
+| 6 | 9,250 | 32 | 381,050 | 58 | 1,443,950 | 84 | 2,935,100 |
+| 7 | 13,000 | 33 | 419,100 | 59 | 1,483,600 | 85 | 3,052,250 |
+| 8 | 17,250 | 34 | 462,950 | 60 | 1,529,500 | 86 | 3,146,400 |
+| 9 | 22,500 | 35 | 525,000 | 61 | 1,567,650 | 87 | 3,248,800 |
+| 10 | 25,000 | 36 | 559,150 | 62 | 1,608,550 | 88 | 3,347,950 |
+| 11 | 28,750 | 37 | 596,250 | 63 | 1,648,200 | 89 | 3,456,850 |
+| 12 | 33,750 | 38 | 632,100 | 64 | 1,691,100 | 90 | 3,598,750 |
+| 13 | 37,500 | 39 | 670,850 | 65 | 1,740,500 | 91 | 3,714,650 |
+| 14 | 43,750 | 40 | 712,500 | 66 | 1,781,900 | 92 | 3,840,300 |
+| 15 | 54,750 | 41 | 750,400 | 67 | 1,825,800 | 93 | 3,962,450 |
+| 16 | 64,500 | 42 | 791,250 | 68 | 1,868,700 | 94 | 4,095,850 |
+| 17 | 75,000 | 43 | 830,850 | 69 | 1,914,600 | 95 | 4,270,500 |
+| 18 | 84,750 | 44 | 873,350 | 70 | 1,967,750 | 96 | 4,416,400 |
+| 19 | 95,750 | 45 | 920,850 | 71 | 2,011,900 | 97 | 4,574,050 |
+| 20 | 111,500 | 46 | 962,950 | 72 | 2,059,050 | 98 | 4,727,200 |
+| 21 | 127,200 | 47 | 1,007,950 | 73 | 2,104,950 | 99 | 4,892,850 |
+| 22 | 145,400 | 48 | 1,051,700 | 74 | 2,154,600 | **100** | **5,132,500** |
+| 23 | 163,200 | 49 | 1,098,350 | 75 | 2,218,000 | | |
+| 24 | 183,450 | 50 | 1,150,000 | 76 | 2,278,900 | | |
+| 25 | 206,600 | 51 | 1,183,400 | 77 | 2,353,300 | | |
 
 Source: [`DT_RoleMasteryDefinitions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Levels/Roles/DT_RoleMasteryDefinitions.json)
 
@@ -118,6 +131,7 @@ Each `DT_Reward_Cash_*` row has a `base` cash value plus context modifiers appli
 | **TNK_01 Artillery** | **6,000** |
 | SpawnVehicle | 4,000 |
 | **Havoc (attack heli)** | **6,000** |
+| **TNK_04 (tank, Default)** | **5,000** |
 
 ### 5b. Vehicle repair ([`DT_Reward_Cash_Repair`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/CashRewardsDataTable/Vehicle/DT_Reward_Cash_Repair.json))
 
@@ -257,6 +271,15 @@ Faction placement bonus formula: `CashEarned × PlacementModifier`, where:
 
 So the winning faction gets +30% of their earned match cash as a bonus **and double XP** on top of whatever they earned in-match, across every role simultaneously.
 
+A separate `FactionWinBonus` row (new in Season 02) is a flat cash bonus selected by faction alignment tag:
+
+| Alignment tag | Bonus cash | Variable |
+|---|---|---|
+| Alpha | 10,000 | `LonestarBonus` |
+| Bravo | 0 | `ValkyraBonus` |
+| Charlie | 0 | `ManticoreBonus` |
+| Default | 0 | `DefaultReward` |
+
 ---
 
 ## 11. Challenge Tips (unchanged from v1 — confirmed still accurate, lives in [`DT_Rewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_Rewards.json))
@@ -380,7 +403,7 @@ Net effect: a long-range artillery kill on a streaking player inside an active H
 
 v1 of this doc used [`DT_Rewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_Rewards.json)/[`DT_CashRewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_CashRewards.json) — those are evidently a **deprecated or placeholder layer** (almost every `ResourceValue` in them reads 0.0). The real, currently-live reward logic routes through `WDCustomRewardTableRow` entries in the [`CashRewardsDataTable/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/CashRewardsDataTable) folder tree (organized by category: KillScore, Revive, Heal, Vehicle, Objective, Buildable, Deployable, HotZoneMagnet) plus `WDChallengeRewardDefinition` rows for end-of-match bonuses. This version (v2) is built from those and is the accurate picture — so no, v1 was not all of it, not even close on the cash side.
 
-**Still not pulled** (exists in the dump, flagged for a future pass): [`DT_Meta_RewardScalingCurves`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Rewards/DT_Meta_RewardScalingCurves.json), `DT_RewardLookup_SessionEvent_*` (session-event lookups for Spotting/Buildables/KOTH game mode), [`DT_DemoRewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/Demo/DT_DemoRewards.json), cosmetic/item unlock rewards tied to the `TreeRewardTrack` battle-pass UI widgets, and [`DA_UI_PlatformMastery_RewardData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Mastery/Platforms/Data/DA_UI_PlatformMastery_RewardData.json). Say the word if you want those too.
+**Still not pulled** (exists in the game data, flagged for a future pass): [`DT_Meta_RewardScalingCurves`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Rewards/DT_Meta_RewardScalingCurves.json), `DT_RewardLookup_SessionEvent_*` (session-event lookups for Spotting/Buildables/KOTH game mode), [`DT_DemoRewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/Demo/DT_DemoRewards.json), cosmetic/item unlock rewards tied to the `TreeRewardTrack` battle-pass UI widgets, and [`DA_UI_PlatformMastery_RewardData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Mastery/Platforms/Data/DA_UI_PlatformMastery_RewardData.json). Say the word if you want those too.
 
 ---
 

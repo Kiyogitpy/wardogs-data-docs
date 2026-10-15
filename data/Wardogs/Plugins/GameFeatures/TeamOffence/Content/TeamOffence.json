@@ -1,0 +1,748 @@
+--- export: UObject / GameFeatureAction_AddComponents_1 ---
+{
+  "Type": "GameFeatureAction_AddComponents",
+  "Name": "GameFeatureAction_AddComponents_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddComponents'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'TeamOffence'",
+    "ObjectPath": "/TeamOffence/TeamOffence.3"
+  },
+  "Properties": {
+    "ComponentList": [
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDPlayerStateSession",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Script/TeamOffenceRuntime.WDTeamOffenceVoterComponent",
+          "SubPathString": ""
+        },
+        "bClientComponent": false,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_DataRegistrySource_0 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'TeamOffence'",
+    "ObjectPath": "/TeamOffence/TeamOffence.3"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "UIGameplayTagToTextData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/TeamOffence/UI/Data/DT_GameplayTagToText_TeamOffence.DT_GameplayTagToText_TeamOffence",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "RewardFeed",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/TeamOffence/Data/UI/RewardFeed/DT_RewardFeedActions_TeamOffence.DT_RewardFeedActions_TeamOffence",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_DataRegistrySource_1 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'TeamOffence'",
+    "ObjectPath": "/TeamOffence/TeamOffence.3"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "Challenges",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/TeamOffence/Challenges/DT_Challenges_SessionEvents_TeamOffence.DT_Challenges_SessionEvents_TeamOffence",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "ChallengeRewards",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/TeamOffence/Challenges/DT_ChallengeRewards_TeamOffence.DT_ChallengeRewards_TeamOffence",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / TeamOffence ---
+{
+  "Type": "GameFeatureData",
+  "Name": "TeamOffence",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/TeamOffence/TeamOffence",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+        "ObjectPath": "/TeamOffence/TeamOffence.4"
+      },
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'TeamOffence:GameFeatureAction_DataRegistrySource_1'",
+        "ObjectPath": "/TeamOffence/TeamOffence.2"
+      },
+      {
+        "ObjectName": "GameFeatureAction_AddComponents'TeamOffence:GameFeatureAction_AddComponents_1'",
+        "ObjectPath": "/TeamOffence/TeamOffence.0"
+      },
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'TeamOffence:GameFeatureAction_DataRegistrySource_0'",
+        "ObjectPath": "/TeamOffence/TeamOffence.1"
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_0 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements",
+  "Name": "WDGameFeatureAction_AddWidgetElements_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'TeamOffence'",
+    "ObjectPath": "/TeamOffence/TeamOffence.3"
+  },
+  "Properties": {
+    "PersistentWidgets": [
+      {
+        "Layer": "EWDWidgetLayer::Tooltip",
+        "ZOrder": 255,
+        "WidgetClass": {
+          "AssetPathName": "/TeamOffence/UI/W_TeamOffencePrompt.W_TeamOffencePrompt_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/TeamOffenceRuntime.WDUITeamOffencePromptViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/TeamOffence/UI/DA_TeamOffencePrompt.DA_TeamOffencePrompt",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+      }
+    ],
+    "AddWidgetElementsInstances": [
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_0'",
+        "ObjectPath": "/TeamOffence/TeamOffence.5"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_1'",
+        "ObjectPath": "/TeamOffence/TeamOffence.6"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_3'",
+        "ObjectPath": "/TeamOffence/TeamOffence.25"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_2'",
+        "ObjectPath": "/TeamOffence/TeamOffence.16"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_4'",
+        "ObjectPath": "/TeamOffence/TeamOffence.32"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_6'",
+        "ObjectPath": "/TeamOffence/TeamOffence.39"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_7'",
+        "ObjectPath": "/TeamOffence/TeamOffence.40"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_9'",
+        "ObjectPath": "/TeamOffence/TeamOffence.42"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_10'",
+        "ObjectPath": "/TeamOffence/TeamOffence.7"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_12'",
+        "ObjectPath": "/TeamOffence/TeamOffence.8"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_13'",
+        "ObjectPath": "/TeamOffence/TeamOffence.9"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_15'",
+        "ObjectPath": "/TeamOffence/TeamOffence.11"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_16'",
+        "ObjectPath": "/TeamOffence/TeamOffence.12"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_18'",
+        "ObjectPath": "/TeamOffence/TeamOffence.14"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_19'",
+        "ObjectPath": "/TeamOffence/TeamOffence.15"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_21'",
+        "ObjectPath": "/TeamOffence/TeamOffence.17"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_22'",
+        "ObjectPath": "/TeamOffence/TeamOffence.18"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_24'",
+        "ObjectPath": "/TeamOffence/TeamOffence.20"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_25'",
+        "ObjectPath": "/TeamOffence/TeamOffence.21"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_27'",
+        "ObjectPath": "/TeamOffence/TeamOffence.23"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_28'",
+        "ObjectPath": "/TeamOffence/TeamOffence.24"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_5'",
+        "ObjectPath": "/TeamOffence/TeamOffence.38"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_8'",
+        "ObjectPath": "/TeamOffence/TeamOffence.41"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_14'",
+        "ObjectPath": "/TeamOffence/TeamOffence.10"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_17'",
+        "ObjectPath": "/TeamOffence/TeamOffence.13"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_23'",
+        "ObjectPath": "/TeamOffence/TeamOffence.19"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_26'",
+        "ObjectPath": "/TeamOffence/TeamOffence.22"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_30'",
+        "ObjectPath": "/TeamOffence/TeamOffence.26"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_31'",
+        "ObjectPath": "/TeamOffence/TeamOffence.27"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_33'",
+        "ObjectPath": "/TeamOffence/TeamOffence.28"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_34'",
+        "ObjectPath": "/TeamOffence/TeamOffence.29"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_36'",
+        "ObjectPath": "/TeamOffence/TeamOffence.30"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_37'",
+        "ObjectPath": "/TeamOffence/TeamOffence.31"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_40'",
+        "ObjectPath": "/TeamOffence/TeamOffence.33"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_41'",
+        "ObjectPath": "/TeamOffence/TeamOffence.34"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_43'",
+        "ObjectPath": "/TeamOffence/TeamOffence.35"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_45'",
+        "ObjectPath": "/TeamOffence/TeamOffence.36"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'TeamOffence:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_46'",
+        "ObjectPath": "/TeamOffence/TeamOffence.37"
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_0 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_1 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_1",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_10 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_10",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_12 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_12",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_13 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_13",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_14 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_14",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_15 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_15",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_16 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_16",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_17 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_17",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_18 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_18",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_19 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_19",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_2 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_2",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_21 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_21",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_22 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_22",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_23 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_23",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_24 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_24",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_25 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_25",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_26 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_26",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_27 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_27",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_28 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_28",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_3 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_3",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_30 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_30",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_31 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_31",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_33 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_33",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_34 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_34",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_36 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_36",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_37 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_37",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_4 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_4",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_40 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_40",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_41 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_41",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_43 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_43",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_45 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_45",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_46 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_46",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_5 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_5",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_6 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_6",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_7 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_7",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_8 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_8",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_9 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_9",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'TeamOffence:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/TeamOffence/TeamOffence.4"
+  }
+}

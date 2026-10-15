@@ -7,22 +7,22 @@
   "Package": "/Game/Items/Weapons/DA_AimAssistSettings_Melee",
   "Properties": {
     "AssistInnerReticleWidth": {
-      "Value": 32.0
+      "Value": 24.0
     },
     "AssistInnerReticleHeight": {
-      "Value": 28.0
+      "Value": 19.2
     },
     "AssistOuterReticleWidth": {
-      "Value": 150.0
+      "Value": 72.0
     },
     "AssistOuterReticleHeight": {
-      "Value": 128.0
+      "Value": 57.6
     },
     "TargetingReticleWidth": {
-      "Value": 224.0
+      "Value": 72.0
     },
     "TargetingReticleHeight": {
-      "Value": 192.0
+      "Value": 57.6
     },
     "TargetRange": {
       "Value": 800.0
@@ -31,16 +31,17 @@
       "ObjectName": "CurveFloat'C_AimAssistTargetWeightCurve'",
       "ObjectPath": "/BHAimAssist/AimAssist/C_AimAssistTargetWeightCurve.0"
     },
+    "_aaabholpfiejhkoelmbhh_$EBF58497AE4BC177$_$23$": {
+      "ObjectName": "CurveFloat'C_AimAssistReticleEdgeFalloff_Default'",
+      "ObjectPath": "/BHAimAssist/AimAssist/C_AimAssistReticleEdgeFalloff_Default.0"
+    },
     "bFOVReticleScaling": false,
     "PullStrengthDistanceCurve": {
-      "ObjectName": "CurveFloat'C_AimAssistPullStrengthDistanceCurve_Melee_Hipfire'",
-      "ObjectPath": "/BHAimAssist/AimAssist/C_AimAssistPullStrengthDistanceCurve_Melee_Hipfire.0"
+      "ObjectName": "CurveFloat'C_AimAssistPullStrengthDistanceCurve_Default'",
+      "ObjectPath": "/BHAimAssist/AimAssist/C_AimAssistPullStrengthDistanceCurve_Default.0"
     },
     "PullOuterStrengthHip": {
-      "Value": 3.0
-    },
-    "PullInnerStrengthAds": {
-      "Value": 1.5
+      "Value": 1.0
     },
     "PullOuterStrengthAds": {
       "Value": 0.0
@@ -48,12 +49,18 @@
     "SlowInnerStrengthHip": {
       "Value": 0.0
     },
+    "PullLerpInRate": {
+      "Value": 10.0
+    },
+    "PullLerpOutRate": {
+      "Value": 8.0
+    },
     "PullMaxRotationRate": {
       "Value": 90.0
     },
     "SlowStrengthDistanceCurve": {
-      "ObjectName": "CurveFloat'C_AimAssistSlowStrengthDistanceCurve_SMG_Hipfire'",
-      "ObjectPath": "/BHAimAssist/AimAssist/C_AimAssistSlowStrengthDistanceCurve_SMG_Hipfire.0"
+      "ObjectName": "CurveFloat'C_AimAssistSlowStrengthDistanceCurve_Default'",
+      "ObjectPath": "/BHAimAssist/AimAssist/C_AimAssistSlowStrengthDistanceCurve_Default.0"
     },
     "SlowOuterStrengthHip": {
       "Value": 0.36
@@ -67,12 +74,19 @@
     "PullInnerStrengthHip": {
       "Value": 0.0
     },
+    "SlowLerpInRate": {
+      "Value": 10.0
+    },
+    "SlowLerpOutRate": {
+      "Value": 8.0
+    },
+    "_aaablnnhjmlkblemcidll_$DD79CBA1B4C283BB$_$27$": 0.25,
+    "_aaabodfkkpmggjikdcjgk_$35AAFC6698A3296A$_$30$": 0.6,
     "SensitivityScaleADS": {
       "Value": 1.0
     },
     "MaxNumberOfTargets": 8,
-    "ReticleDepth": 1600.0,
-    "PullModeADS": "EBHAimAssistPullMode::Off",
+    "ReticleDepth": 800.0,
     "MinAssistWeight": 0.125
   }
 }

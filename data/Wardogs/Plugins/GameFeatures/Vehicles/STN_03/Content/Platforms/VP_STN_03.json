@@ -49,7 +49,7 @@
           "bEnabled": true,
           "Fragment": {
             "ObjectName": "MVF_VehicleConfig'VP_STN_03:MVF_VehicleConfig_0'",
-            "ObjectPath": "/STN_03/Platforms/VP_STN_03.7"
+            "ObjectPath": "/STN_03/Platforms/VP_STN_03.8"
           }
         }
       },
@@ -59,7 +59,7 @@
           "bEnabled": true,
           "Fragment": {
             "ObjectName": "WD_MVF_Interactions'VP_STN_03:WD_MVF_Interactions_0'",
-            "ObjectPath": "/STN_03/Platforms/VP_STN_03.9"
+            "ObjectPath": "/STN_03/Platforms/VP_STN_03.10"
           }
         }
       },
@@ -69,7 +69,7 @@
           "bEnabled": true,
           "Fragment": {
             "ObjectName": "WD_MVF_InventoryFragment'VP_STN_03:WD_MVF_InventoryFragment_0'",
-            "ObjectPath": "/STN_03/Platforms/VP_STN_03.10"
+            "ObjectPath": "/STN_03/Platforms/VP_STN_03.11"
           }
         }
       },
@@ -79,7 +79,7 @@
           "bEnabled": true,
           "Fragment": {
             "ObjectName": "WD_MVF_WeaponFragment'VP_STN_03:WD_MVF_WeaponFragment_0'",
-            "ObjectPath": "/STN_03/Platforms/VP_STN_03.11"
+            "ObjectPath": "/STN_03/Platforms/VP_STN_03.12"
           }
         }
       },
@@ -119,7 +119,17 @@
           "bEnabled": true,
           "Fragment": {
             "ObjectName": "WD_MVF_BuildableFragment'VP_STN_03:WD_MVF_BuildableFragment_0'",
-            "ObjectPath": "/STN_03/Platforms/VP_STN_03.8"
+            "ObjectPath": "/STN_03/Platforms/VP_STN_03.9"
+          }
+        }
+      },
+      {
+        "Key": "MortarShell",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_STN_03:MVF_StaticMesh_3'",
+            "ObjectPath": "/STN_03/Platforms/VP_STN_03.7"
           }
         }
       }
@@ -421,6 +431,36 @@
     },
     "WalkableSlopeOverride": {
       "WalkableSlopeBehavior": "EWalkableSlopeBehavior::WalkableSlope_Default"
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_3 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_STN_03'",
+    "ObjectPath": "/STN_03/Platforms/VP_STN_03.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "PhysicsMode": "EModularVehiclePhysicsMode::ConditionalWeld",
+      "AttachQuery": {
+        "SourceID": "Chassis",
+        "SocketName": "_120mm_J"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/Game/Items/Weapons/_Ammunition/SM_Ammo_120mm.SM_Ammo_120mm",
+      "SubPathString": ""
+    },
+    "bHitEvents": false,
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_Kinematic"
+      }
     }
   }
 }

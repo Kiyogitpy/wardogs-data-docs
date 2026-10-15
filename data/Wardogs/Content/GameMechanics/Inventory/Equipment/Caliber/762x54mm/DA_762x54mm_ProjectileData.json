@@ -19,7 +19,7 @@
         ]
       },
       "DamageValues": {
-        "BaseDamage": 55.0,
+        "BaseDamage": 44.0,
         "ImpulseValues": {
           "bApplyImpulse": true,
           "bVelocityChange": true,
@@ -47,10 +47,10 @@
         }
       },
       "SuppressionData": {
-        "BaseSuppression": 0.9,
+        "BaseSuppression": 0.65,
         "DistanceFalloffRange": {
-          "Min": 0.35,
-          "Max": 2.5
+          "Min": 1.5,
+          "Max": 3.0
         },
         "DistanceFalloffCurve": {
           "EditorCurveData": {
@@ -89,6 +89,10 @@
                 "LeaveTangentWeight": 0.0
               }
             ]
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_SuppressionCurve_Large'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/CR_SuppressionCurve_Large.0"
           }
         },
         "FriendlyMultiplier": 0.1

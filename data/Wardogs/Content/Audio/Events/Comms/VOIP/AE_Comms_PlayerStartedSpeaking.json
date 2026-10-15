@@ -46,6 +46,10 @@
     },
     "Behaviors": [
       {
+        "ObjectName": "WDAudioEventBehaviorHelmetMuffle'AE_Comms_PlayerStartedSpeaking:WDAudioEventBehaviorHelmetMuffle_0'",
+        "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_PlayerStartedSpeaking.3"
+      },
+      {
         "ObjectName": "AEB_Comms_StartPlayerVoice_C'AE_Comms_PlayerStartedSpeaking:AEB_Comms_StartPlayerVoice_C_0'",
         "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_PlayerStartedSpeaking.0"
       },
@@ -54,5 +58,26 @@
         "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_PlayerStartedSpeaking.1"
       }
     ]
+  }
+}
+--- export: UObject / WDAudioEventBehaviorHelmetMuffle_0 ---
+{
+  "Type": "WDAudioEventBehaviorHelmetMuffle",
+  "Name": "WDAudioEventBehaviorHelmetMuffle_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorHelmetMuffle'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Comms_PlayerStartedSpeaking'",
+    "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_PlayerStartedSpeaking.2"
+  },
+  "Properties": {
+    "_aaaakiigdocmdpdkhgnim_$8863E2C3F3A76D8C$_$10$": [
+      "State.Player.Armor.SuperHeavyHelmet.Passive"
+    ],
+    "_aaaanjckaiabfjbcaaoce_$92A0801591200E24$_$13$": true,
+    "ContextTag": {
+      "TagName": "Audio.Context.Comms.Proximity"
+    },
+    "bPersistent": true
   }
 }

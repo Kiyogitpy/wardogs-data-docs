@@ -132,6 +132,20 @@
   "Outer": {
     "ObjectName": "ModularVehiclePart'VP_SPW_Radar'",
     "ObjectPath": "/SPW_01/Parts/VP_SPW_Radar.0"
+  },
+  "Properties": {
+    "_aaabgppmaflnpkojmgeng_$FFC05BDFAE9C64D6$_$22$": {
+      "AttachQuery": {
+        "SourceID": "Chassis",
+        "SocketName": "body_RadarSocket"
+      },
+      "bAttachSource": true,
+      "Identifier": "RadarDeployPivot",
+      "Tags": [
+        "RadarDeployedPivot"
+      ]
+    },
+    "_aaabibgniejeehbjjnaee_$16D849447199D044$_$24$": 60.0
   }
 }
 --- export: UObject / MVF_DestructibleMeshes_0 ---
@@ -3416,7 +3430,36 @@
             "bTickIfDestroyed": false,
             "TickingFrequency": 1.0
           },
-          null
+          {
+            "_aaabbmnjfiefjaocbjbnl_$CD9584590E2191DB$_$17$": {
+              "TagName": "Vehicle.DestructibleMesh.Radar.Deployed"
+            },
+            "_aaaaomnmhabgolndbbofd_$CDC7016EBD311E53$_$14$": [
+              {
+                "TagName": "Vehicle.DestructibleMesh.Radar.RotatorCore"
+              },
+              {
+                "TagName": "Vehicle.DestructibleMesh.Radar"
+              },
+              {
+                "TagName": "Vehicle.DestructibleMesh.Radar.Flap03"
+              },
+              {
+                "TagName": "Vehicle.DestructibleMesh.Radar.Flap02"
+              },
+              {
+                "TagName": "Vehicle.DestructibleMesh.Radar.Flap01"
+              },
+              {
+                "TagName": "Vehicle.DestructibleMesh.Radar.Antenna"
+              }
+            ],
+            "ApplyTypes": "EBHModularDestructibleMeshGroupRuleApplyTypes::OnDelegateBroadcast",
+            "bApplyOnAuthority": true,
+            "bApplyOnlyOnAuthority": false,
+            "bTickIfDestroyed": false,
+            "TickingFrequency": 1.0
+          }
         ]
       }
     ]

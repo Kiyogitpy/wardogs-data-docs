@@ -8,6 +8,14 @@ parent: "Game Features"
 
 ---
 
+## Season 02 update (2026-10-15)
+
+- `Id.Item.AK74M` ProductionCost: 1280 → 640.
+- `Id.Item.MP9` ProductionCost: 720 → 1100.
+- `Id.Item.Vector` ProductionCost: 2080 → 4480.
+
+---
+
 ## 1. What This Folder Holds
 
 The first factory investment (investment ID `Id.Investment.Factory01`; the display name begins "Zaystev Foun…" in the source). It sets three production lines, the recipes they can make, the costs, and the upgrade values that control queue size and storage.
@@ -52,10 +60,10 @@ All six share the same timing and discount.
 
 | Recipe | ProductionCost | RecipeDuration | ProductionDiscount | Override cost |
 |---|---|---|---|---|
-| `Id.Item.AK74M` | 1280 | 10.0 | 20.0 | false |
+| `Id.Item.AK74M` | 640 | 10.0 | 20.0 | false |
 | `Id.Item.M4` | 2240 | 10.0 | 20.0 | false |
-| `Id.Item.MP9` | 720 | 10.0 | 20.0 | false |
-| `Id.Item.Vector` | 2080 | 10.0 | 20.0 | false |
+| `Id.Item.MP9` | 1100 | 10.0 | 20.0 | false |
+| `Id.Item.Vector` | 4480 | 10.0 | 20.0 | false |
 | `Id.Item.4xElcanSpectr` | 640 | 10.0 | 20.0 | false |
 | `Id.Item.EotechHoloSight` | 496 | 10.0 | 20.0 | false |
 

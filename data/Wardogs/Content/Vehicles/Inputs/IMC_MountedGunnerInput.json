@@ -356,7 +356,7 @@
           "Modifiers": [
             {
               "ObjectName": "WDDeadZoneInputModifier'IMC_MountedGunnerInput:WDDeadZoneInputModifier_1'",
-              "ObjectPath": "/Game/Vehicles/Inputs/IMC_MountedGunnerInput.40"
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_MountedGunnerInput.41"
             }
           ],
           "Action": {
@@ -716,7 +716,12 @@
         },
         {
           "Triggers": [],
-          "Modifiers": [],
+          "Modifiers": [
+            {
+              "ObjectName": "WDDeadZoneInputModifier'IMC_MountedGunnerInput:WDDeadZoneInputModifier_3'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_MountedGunnerInput.42"
+            }
+          ],
           "Action": {
             "ObjectName": "BHInputAction'IA_Vehicle_Weapon_ADS'",
             "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_ADS.0"
@@ -750,7 +755,7 @@
           "Key": {
             "KeyName": "R"
           },
-          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::IgnoreSettings",
           "PlayerMappableKeySettings": {
             "ObjectName": "BHPlayerMappableKeySettings'IMC_MountedGunnerInput:BHPlayerMappableKeySettings_5'",
             "ObjectPath": "/Game/Vehicles/Inputs/IMC_MountedGunnerInput.16"
@@ -779,7 +784,7 @@
           "Key": {
             "KeyName": "One"
           },
-          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::IgnoreSettings",
           "PlayerMappableKeySettings": {
             "ObjectName": "BHPlayerMappableKeySettings'IMC_MountedGunnerInput:BHPlayerMappableKeySettings_9'",
             "ObjectPath": "/Game/Vehicles/Inputs/IMC_MountedGunnerInput.18"
@@ -795,7 +800,7 @@
           "Key": {
             "KeyName": "Two"
           },
-          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::IgnoreSettings",
           "PlayerMappableKeySettings": {
             "ObjectName": "BHPlayerMappableKeySettings'IMC_MountedGunnerInput:BHPlayerMappableKeySettings_10'",
             "ObjectPath": "/Game/Vehicles/Inputs/IMC_MountedGunnerInput.2"
@@ -811,7 +816,7 @@
           "Key": {
             "KeyName": "Three"
           },
-          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::IgnoreSettings",
           "PlayerMappableKeySettings": {
             "ObjectName": "BHPlayerMappableKeySettings'IMC_MountedGunnerInput:BHPlayerMappableKeySettings_11'",
             "ObjectPath": "/Game/Vehicles/Inputs/IMC_MountedGunnerInput.3"
@@ -827,7 +832,7 @@
           "Key": {
             "KeyName": "Four"
           },
-          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::IgnoreSettings",
           "PlayerMappableKeySettings": {
             "ObjectName": "BHPlayerMappableKeySettings'IMC_MountedGunnerInput:BHPlayerMappableKeySettings_12'",
             "ObjectPath": "/Game/Vehicles/Inputs/IMC_MountedGunnerInput.4"
@@ -843,7 +848,7 @@
           "Key": {
             "KeyName": "Five"
           },
-          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::IgnoreSettings",
           "PlayerMappableKeySettings": {
             "ObjectName": "BHPlayerMappableKeySettings'IMC_MountedGunnerInput:BHPlayerMappableKeySettings_13'",
             "ObjectPath": "/Game/Vehicles/Inputs/IMC_MountedGunnerInput.5"
@@ -859,7 +864,7 @@
           "Key": {
             "KeyName": "Six"
           },
-          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::IgnoreSettings",
           "PlayerMappableKeySettings": {
             "ObjectName": "BHPlayerMappableKeySettings'IMC_MountedGunnerInput:BHPlayerMappableKeySettings_14'",
             "ObjectPath": "/Game/Vehicles/Inputs/IMC_MountedGunnerInput.6"
@@ -874,8 +879,8 @@
           ],
           "Modifiers": [
             {
-              "ObjectName": "WDDeadZoneInputModifier'IMC_MountedGunnerInput:WDDeadZoneInputModifier_3'",
-              "ObjectPath": "/Game/Vehicles/Inputs/IMC_MountedGunnerInput.41"
+              "ObjectName": "WDDeadZoneInputModifier'IMC_MountedGunnerInput:WDDeadZoneInputModifier_0'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_MountedGunnerInput.40"
             },
             {
               "ObjectName": "WDApplyAxisConfig'IMC_MountedGunnerInput:WDApplyAxisConfig_1'",
@@ -972,7 +977,7 @@
             "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_Focus.0"
           },
           "Key": {
-            "KeyName": "Gamepad_LeftTriggerAxis"
+            "KeyName": "Gamepad_LeftTrigger"
           },
           "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
           "PlayerMappableKeySettings": null
@@ -1226,7 +1231,32 @@
     "ObjectPath": "/Game/Vehicles/Inputs/IMC_MountedGunnerInput.19"
   },
   "Properties": {
-    "bIsGamepad": true
+    "bIsGamepad": true,
+    "_aaaaooaafpdpiiinfajpc_$E005F3F888D509F2$_$14$": false,
+    "_aaabbeajjaninihabcoik_$40990D8D87012E8A$_$17$": false
+  }
+}
+--- export: UObject / WDDeadZoneInputModifier_0 ---
+{
+  "Type": "WDDeadZoneInputModifier",
+  "Name": "WDDeadZoneInputModifier_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDDeadZoneInputModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_MountedGunnerInput'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_MountedGunnerInput.19"
+  },
+  "Properties": {
+    "MinThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.LookStick.Centre"
+    },
+    "MaxThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.LookStick.MaxInput"
+    },
+    "RadiusAxialThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.LookStick.Axial"
+    },
+    "bInvertMaxThreshold": true
   }
 }
 --- export: UObject / WDDeadZoneInputModifier_1 ---
@@ -1260,15 +1290,12 @@
     "ObjectPath": "/Game/Vehicles/Inputs/IMC_MountedGunnerInput.19"
   },
   "Properties": {
+    "Type": "EDeadZoneType::Axial",
     "MinThresholdSettingTag": {
-      "TagName": "UserSettings.Controls.Gamepad.DeadZone.LookStick.Centre"
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.LeftTrigger.Min"
     },
     "MaxThresholdSettingTag": {
-      "TagName": "UserSettings.Controls.Gamepad.DeadZone.LookStick.MaxInput"
-    },
-    "RadiusAxialThresholdSettingTag": {
-      "TagName": "UserSettings.Controls.Gamepad.DeadZone.LookStick.Axial"
-    },
-    "bInvertMaxThreshold": true
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.LeftTrigger.Max"
+    }
   }
 }

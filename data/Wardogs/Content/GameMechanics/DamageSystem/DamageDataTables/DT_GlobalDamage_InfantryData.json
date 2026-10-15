@@ -163,6 +163,36 @@
           "InstigatorRequirements": [],
           "TargetRequirements": [],
           "SourceRequirements": [
+            "Meta.Damage.Bullet"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [
+            "Meta.Damage.HitLocation.Infantry"
+          ],
+          "OutModification": {
+            "bUseCustomOperation": true,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": 0.0,
+            "CustomOperationClass": {
+              "ObjectName": "BlueprintGeneratedClass'B_ArchetypeCaliberModifiers_C'",
+              "ObjectPath": "/Game/GameMechanics/DamageSystem/ConditionalDamageFunctions/B_ArchetypeCaliberModifiers.1"
+            },
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.Calibre"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [],
+          "SourceRequirements": [
             "Meta.Damage.Kinetic.Impact.ExplosiveBlunt"
           ],
           "AlignmentRequired": "EWDDamageAlignment::None",
@@ -646,7 +676,7 @@
         {
           "InstigatorRequirements": [],
           "TargetRequirements": [
-            "Meta.Damage.Armor"
+            "Meta.Damage.Armor.Heavy"
           ],
           "SourceRequirements": [
             "Meta.Damage.Bullet.Arrow"
@@ -656,7 +686,34 @@
           "OutModification": {
             "bUseCustomOperation": false,
             "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
-            "Amount": 0.0,
+            "Amount": -10.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.AmmoModifier"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [
+            "Meta.Damage.Armor.SuperHeavy"
+          ],
+          "SourceRequirements": [
+            "Meta.Damage.Bullet.Arrow"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": -34.0,
             "CustomOperationClass": null,
             "PriorityCategory": {
               "TagName": "Meta.Damage.Category.AmmoModifier"
@@ -684,6 +741,87 @@
             "bUseCustomOperation": false,
             "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
             "Amount": 0.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.AmmoModifier"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [
+            "Meta.Damage.Helmet.Light"
+          ],
+          "SourceRequirements": [
+            "Meta.Damage.Bullet.Arrow"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": 0.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.AmmoModifier"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [
+            "Meta.Damage.Helmet.Heavy"
+          ],
+          "SourceRequirements": [
+            "Meta.Damage.Bullet.Arrow"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": -10.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.AmmoModifier"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [
+            "Meta.Damage.Helmet.SuperHeavy"
+          ],
+          "SourceRequirements": [
+            "Meta.Damage.Bullet.Arrow"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": -34.0,
             "CustomOperationClass": null,
             "PriorityCategory": {
               "TagName": "Meta.Damage.Category.AmmoModifier"
@@ -915,6 +1053,35 @@
             "Meta.Damage.HitLocation.Infantry.Neck",
             "Meta.Damage.HitLocation.Infantry.Pelvis",
             "Meta.Damage.HitLocation.Infantry.Torso"
+          ],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": 0.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.Weapon"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [],
+          "SourceRequirements": [
+            "Meta.Damage.Bullet.556mm",
+            "Meta.Damage.Weapon.Sniper.WEPN_035"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [
+            "Meta.Damage.HitLocation.Infantry.Neck",
+            "Meta.Damage.HitLocation.Infantry.Head"
           ],
           "OutModification": {
             "bUseCustomOperation": false,
@@ -2128,7 +2295,7 @@
           "OutModification": {
             "bUseCustomOperation": false,
             "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
-            "Amount": -13.0,
+            "Amount": -30.0,
             "CustomOperationClass": null,
             "PriorityCategory": {
               "TagName": "Meta.Damage.Category.AmmoModifier"
@@ -2542,6 +2709,33 @@
         },
         {
           "InstigatorRequirements": [],
+          "TargetRequirements": [
+            "Meta.Damage.Armor.SuperHeavy"
+          ],
+          "SourceRequirements": [
+            "Meta.Damage.Explosive.Utility.Molotov"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": -30.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.Calibre"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
           "TargetRequirements": [],
           "SourceRequirements": [],
           "AlignmentRequired": "EWDDamageAlignment::None",
@@ -2594,7 +2788,7 @@
           "TargetRequirements": [],
           "SourceRequirements": [
             "Meta.Damage.Explosive.Radius.Outer",
-            "Meta.Damage.Explosive.Rocket.120mm"
+            "Meta.Damage.Explosive.Rocket.125mm"
           ],
           "AlignmentRequired": "EWDDamageAlignment::None",
           "PossibleHitLocations": [],
@@ -2627,6 +2821,58 @@
             "bUseCustomOperation": false,
             "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
             "Amount": -45.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.Calibre"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [],
+          "SourceRequirements": [
+            "Meta.Damage.Explosive.Radius.Outer",
+            "Meta.Damage.Explosive.Rocket.120mm"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": -50.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.Calibre"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [],
+          "SourceRequirements": [
+            "Meta.Damage.Explosive.Radius.Outer",
+            "Meta.Damage.Explosive.Rocket.93mm"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": -50.0,
             "CustomOperationClass": null,
             "PriorityCategory": {
               "TagName": "Meta.Damage.Category.Calibre"
@@ -2696,8 +2942,8 @@
           "InstigatorRequirements": [],
           "TargetRequirements": [],
           "SourceRequirements": [
-            "Meta.Damage.Explosive.Radius.Outer",
-            "Meta.Damage.Explosive.Rocket.93mm"
+            "Meta.Damage.Explosive.Grenade.40mm",
+            "Meta.Damage.Explosive.Radius.Outer"
           ],
           "AlignmentRequired": "EWDDamageAlignment::None",
           "PossibleHitLocations": [],
@@ -2757,6 +3003,60 @@
             "bUseCustomOperation": false,
             "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
             "Amount": 500.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.AmmoModifier"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [],
+          "SourceRequirements": [
+            "Meta.Damage.Cannon.35x228mm"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [
+            "Meta.Damage.HitLocation.Infantry"
+          ],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": -30.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.AmmoModifier"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [],
+          "SourceRequirements": [
+            "Meta.Damage.Cannon.20x102mm"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [
+            "Meta.Damage.HitLocation.Infantry"
+          ],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": -30.0,
             "CustomOperationClass": null,
             "PriorityCategory": {
               "TagName": "Meta.Damage.Category.AmmoModifier"
@@ -2864,8 +3164,119 @@
         },
         {
           "InstigatorRequirements": [],
+          "TargetRequirements": [],
+          "SourceRequirements": [
+            "Meta.Damage.Bullet.50Cal"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [
+            "Meta.Damage.HitLocation.Infantry.Head",
+            "Meta.Damage.HitLocation.Infantry.Neck"
+          ],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": -15.6,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.PenetrationEffectiveness"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [],
+          "SourceRequirements": [
+            "Meta.Damage.Bullet.50Cal"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [
+            "Meta.Damage.HitLocation.Infantry.Torso.Upper"
+          ],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": -12.5,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.PenetrationEffectiveness"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [],
+          "SourceRequirements": [
+            "Meta.Damage.Bullet.50Cal"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [
+            "Meta.Damage.HitLocation.Infantry.Torso.Middle",
+            "Meta.Damage.HitLocation.Infantry.Torso.Lower"
+          ],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": -6.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.PenetrationEffectiveness"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [],
+          "SourceRequirements": [
+            "Meta.Damage.Bullet.50Cal"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [
+            "Meta.Damage.HitLocation.Infantry.Torso.Middle",
+            "Meta.Damage.HitLocation.Infantry.Torso.Lower"
+          ],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": -7.7,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.PenetrationEffectiveness"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
           "TargetRequirements": [
-            "Meta.Damage.Armor"
+            "Meta.Damage.Armor.Heavy"
           ],
           "SourceRequirements": [
             "Meta.Damage.Bullet.50Cal"
@@ -2875,7 +3286,139 @@
           "OutModification": {
             "bUseCustomOperation": false,
             "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": -10.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.PenetrationEffectiveness"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [
+            "Meta.Damage.Armor.SuperHeavy"
+          ],
+          "SourceRequirements": [
+            "Meta.Damage.Bullet.50Cal"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": -12.5,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.PenetrationEffectiveness"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [
+            "Meta.Damage.Helmet.Heavy"
+          ],
+          "SourceRequirements": [
+            "Meta.Damage.Bullet.50Cal"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": -10.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.PenetrationEffectiveness"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [
+            "Meta.Damage.Helmet.SuperHeavy"
+          ],
+          "SourceRequirements": [
+            "Meta.Damage.Bullet.50Cal"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": -20.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.PenetrationEffectiveness"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [],
+          "SourceRequirements": [],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::None",
             "Amount": 0.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "None"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [
+            "Meta.Damage.Armor"
+          ],
+          "SourceRequirements": [
+            "Meta.Damage.Bullet",
+            "Meta.Damage.AmmoModifier.HollowPoint"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": -40.0,
             "CustomOperationClass": null,
             "PriorityCategory": {
               "TagName": "Meta.Damage.Category.PenetrationEffectiveness"
@@ -2895,14 +3438,15 @@
             "Meta.Damage.Helmet"
           ],
           "SourceRequirements": [
-            "Meta.Damage.Bullet.50Cal"
+            "Meta.Damage.Bullet",
+            "Meta.Damage.AmmoModifier.HollowPoint"
           ],
           "AlignmentRequired": "EWDDamageAlignment::None",
           "PossibleHitLocations": [],
           "OutModification": {
             "bUseCustomOperation": false,
             "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
-            "Amount": 0.0,
+            "Amount": -40.0,
             "CustomOperationClass": null,
             "PriorityCategory": {
               "TagName": "Meta.Damage.Category.PenetrationEffectiveness"
@@ -2945,93 +3489,16 @@
             "Meta.Damage.Helmet.SuperHeavy"
           ],
           "SourceRequirements": [
-            "Meta.Damage.Arms.High"
-          ],
-          "AlignmentRequired": "EWDDamageAlignment::None",
-          "PossibleHitLocations": [],
-          "OutModification": {
-            "bUseCustomOperation": false,
-            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
-            "Amount": -25.0,
-            "CustomOperationClass": null,
-            "PriorityCategory": {
-              "TagName": "Meta.Damage.Category.PenetrationEffectiveness"
-            },
-            "PriorityIndex": -1,
-            "DebugTargetTag": {
-              "TagName": "None"
-            }
-          },
-          "DebugTargetTag": {
-            "TagName": "None"
-          }
-        },
-        {
-          "InstigatorRequirements": [],
-          "TargetRequirements": [],
-          "SourceRequirements": [],
-          "AlignmentRequired": "EWDDamageAlignment::None",
-          "PossibleHitLocations": [],
-          "OutModification": {
-            "bUseCustomOperation": false,
-            "Operation": "EWDDamageModificationOperation::None",
-            "Amount": 0.0,
-            "CustomOperationClass": null,
-            "PriorityCategory": {
-              "TagName": "None"
-            },
-            "PriorityIndex": -1,
-            "DebugTargetTag": {
-              "TagName": "None"
-            }
-          },
-          "DebugTargetTag": {
-            "TagName": "None"
-          }
-        },
-        {
-          "InstigatorRequirements": [],
-          "TargetRequirements": [
-            "Meta.Damage.Armor"
-          ],
-          "SourceRequirements": [
             "Meta.Damage.Bullet",
-            "Meta.Damage.AmmoModifier.HollowPoint"
+            "Meta.Damage.AmmoModifier.ArmorPiercing",
+            "Meta.Damage.Weapon.Sniper"
           ],
           "AlignmentRequired": "EWDDamageAlignment::None",
           "PossibleHitLocations": [],
           "OutModification": {
             "bUseCustomOperation": false,
             "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
-            "Amount": -40.0,
-            "CustomOperationClass": null,
-            "PriorityCategory": {
-              "TagName": "Meta.Damage.Category.PenetrationEffectiveness"
-            },
-            "PriorityIndex": -1,
-            "DebugTargetTag": {
-              "TagName": "None"
-            }
-          },
-          "DebugTargetTag": {
-            "TagName": "None"
-          }
-        },
-        {
-          "InstigatorRequirements": [],
-          "TargetRequirements": [
-            "Meta.Damage.Helmet"
-          ],
-          "SourceRequirements": [
-            "Meta.Damage.Bullet",
-            "Meta.Damage.AmmoModifier.HollowPoint"
-          ],
-          "AlignmentRequired": "EWDDamageAlignment::None",
-          "PossibleHitLocations": [],
-          "OutModification": {
-            "bUseCustomOperation": false,
-            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
-            "Amount": -40.0,
+            "Amount": -20.0,
             "CustomOperationClass": null,
             "PriorityCategory": {
               "TagName": "Meta.Damage.Category.PenetrationEffectiveness"

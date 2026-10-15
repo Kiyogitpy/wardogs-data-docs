@@ -112,6 +112,91 @@
           "LocalizedString": "Sprint Disabled"
         }
       }
-    ]
+    ],
+    "WeightClassesInformation": [
+      {
+        "Key": {
+          "TagName": "State.Player.Weight.Lightest"
+        },
+        "Value": {
+          "AttributesToCheck": [],
+          "ActionsToCheck": []
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Player.Weight.Light"
+        },
+        "Value": {
+          "AttributesToCheck": [
+            "Attribute.Gameplay.Movement.MaxSpeedMultiplier",
+            "Attribute.Gameplay.Movement.JumpVelocityMultiplier",
+            "Attribute.Gameplay.Character.AimSwayScaleMultiplier",
+            "Attribute.Gameplay.Character.AimSwaySpeedMultiplier",
+            "Attribute.Gameplay.Movement.StaminaRegenPerSecondMultiplier"
+          ],
+          "ActionsToCheck": []
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Player.Weight.Medium"
+        },
+        "Value": {
+          "AttributesToCheck": [
+            "Attribute.Gameplay.Movement.MaxSpeedMultiplier",
+            "Attribute.Gameplay.Movement.JumpVelocityMultiplier",
+            "Attribute.Gameplay.Character.AimSwayScaleMultiplier",
+            "Attribute.Gameplay.Character.AimSwaySpeedMultiplier",
+            "Attribute.Gameplay.Movement.StaminaRegenPerSecondMultiplier",
+            "Attribute.Gameplay.Character.AdsTimeMultiplier"
+          ],
+          "ActionsToCheck": []
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Player.Weight.Heavy"
+        },
+        "Value": {
+          "AttributesToCheck": [
+            "Attribute.Gameplay.Movement.MaxSpeedMultiplier",
+            "Attribute.Gameplay.Movement.LeanTimeMultiplier",
+            "Attribute.Gameplay.Movement.JumpVelocityMultiplier",
+            "Attribute.Gameplay.Character.AimSwayScaleMultiplier",
+            "Attribute.Gameplay.Character.AimSwaySpeedMultiplier",
+            "Attribute.Gameplay.Character.AdsTimeMultiplier"
+          ],
+          "ActionsToCheck": [
+            "Action.Player.TacSprint"
+          ]
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Player.Weight.SuperHeavy"
+        },
+        "Value": {
+          "AttributesToCheck": [
+            "Attribute.Gameplay.Movement.MaxSpeedMultiplier",
+            "Attribute.Gameplay.Movement.LeanTimeMultiplier",
+            "Attribute.Gameplay.Movement.JumpVelocityMultiplier",
+            "Attribute.Gameplay.Character.AimSwayScaleMultiplier",
+            "Attribute.Gameplay.Character.AimSwaySpeedMultiplier",
+            "Attribute.Gameplay.Character.AdsTimeMultiplier"
+          ],
+          "ActionsToCheck": [
+            "Action.Player.TacSprint",
+            "Action.Player.Sprint"
+          ]
+        }
+      }
+    ],
+    "DefaultNoEffectText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+      "Key": "Text.Weight.NoEffect",
+      "SourceString": "No Effect",
+      "LocalizedString": "No Effect"
+    }
   }
 }

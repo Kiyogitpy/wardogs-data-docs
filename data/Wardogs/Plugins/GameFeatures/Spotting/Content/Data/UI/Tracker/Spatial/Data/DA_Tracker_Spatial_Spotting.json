@@ -404,6 +404,24 @@
                   "TagName": "Challenges.Rewards.VehicleDestroyed.Humvee"
                 }
               }
+            },
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Land.Wheeled.WHL_08"
+              },
+              "Value": {
+                "Texture": {
+                  "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_Kodiak.T_UI_Map_Spotted_Kodiak",
+                  "SubPathString": ""
+                },
+                "Scale": 1.0,
+                "Rotation": 90.0,
+                "FadeoutTime": 3.0,
+                "StartingOpacity": 0.75,
+                "RewardTag": {
+                  "TagName": "Challenges.Rewards.VehicleDestroyed.WHL_08"
+                }
+              }
             }
           ],
           "_aaabbfjknjfnhaagphpek_$59AD95D7006F7F4A$_$17$": false
@@ -459,6 +477,24 @@
                 "StartingOpacity": 0.75,
                 "RewardTag": {
                   "TagName": "Challenges.Rewards.VehicleDestroyed.TNK_01.Heavy"
+                }
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Land.Tracked.TNK_04"
+              },
+              "Value": {
+                "Texture": {
+                  "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_Tank.T_UI_Map_Spotted_Tank",
+                  "SubPathString": ""
+                },
+                "Scale": 1.0,
+                "Rotation": 90.0,
+                "FadeoutTime": 3.0,
+                "StartingOpacity": 0.75,
+                "RewardTag": {
+                  "TagName": "Challenges.Rewards.VehicleDestroyed.TNK_04.Default"
                 }
               }
             }
@@ -668,9 +704,37 @@
         },
         "bOverrideForCurrentVehicle": true,
         "AllowedVehicles": [
-          "Vehicle.Variant.Land.Tracked.TNK_01.Artillery",
+          "Vehicle.Variant.Land.Tracked.TNK_01.Artillery"
+        ],
+        "_aaaamakfjhkdhoglfpefd_$A597A37E6B5F453$_$12$": [
+          "Vehicle.Seat.Context.Artillery.Gunner.MainGun"
+        ],
+        "_aaabkmjknnoghehgkocdh_$C9ADDE67476AE237$_$26$": false,
+        "AllowedTargets": []
+      },
+      {
+        "StateQuery": {
+          "TokenStreamVersion": 0,
+          "TagDictionary": [
+            {
+              "TagName": "State.Player.Vehicle.Role.Gunner"
+            }
+          ],
+          "QueryTokenStream": [
+            0,
+            1,
+            2,
+            1,
+            0
+          ],
+          "UserDescription": "",
+          "AutoDescription": " ALL( State.Player.Vehicle.Role.Gunner )"
+        },
+        "bOverrideForCurrentVehicle": true,
+        "AllowedVehicles": [
           "Vehicle.Variant.Stationary.Mortar"
         ],
+        "_aaaamakfjhkdhoglfpefd_$A597A37E6B5F453$_$12$": [],
         "_aaabkmjknnoghehgkocdh_$C9ADDE67476AE237$_$26$": false,
         "AllowedTargets": []
       },
@@ -696,6 +760,7 @@
         "AllowedVehicles": [
           "Vehicle.Variant.Stationary.STN_05"
         ],
+        "_aaaamakfjhkdhoglfpefd_$A597A37E6B5F453$_$12$": [],
         "_aaabkmjknnoghehgkocdh_$C9ADDE67476AE237$_$26$": true,
         "AllowedTargets": [
           "Vehicle.Variant.Air.Rotary.Havoc.Default",
@@ -758,7 +823,7 @@
         }
       },
       {
-        "Key": "EWDUISpatialRulesetType::Player_InVehicle",
+        "Key": "EWDUISpatialRulesetType::SpottedTarget_Vehicle",
         "Value": {
           "Priority": 0,
           "OptionalRules": [
@@ -782,7 +847,7 @@
         }
       },
       {
-        "Key": "EWDUISpatialRulesetType::LocalUser_InVehicle",
+        "Key": "EWDUISpatialRulesetType::LocalUser_CanSeeSpottedTargets",
         "Value": {
           "Priority": 1,
           "OptionalRules": [

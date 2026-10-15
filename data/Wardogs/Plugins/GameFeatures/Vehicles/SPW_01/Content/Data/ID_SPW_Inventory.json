@@ -17,6 +17,7 @@
         "Filter": {
           "SupportFilter": "EBHSupportFilterMethod::AllowList",
           "AllowedSubSlotItems": [
+            "Id.Item.VehicleSmoke",
             "Id.Item.Flares"
           ],
           "AllowedSubSlotContext": [],
@@ -53,7 +54,8 @@
       "TagName": "ID.Item.SpawnVehicleStorage"
     },
     "ItemContext": [
-      "Inventory.Slot.Vehicle.Storage"
+      "Inventory.Slot.Vehicle.Storage",
+      "Item.Context.MovementBlocked"
     ],
     "DisplayName": {
       "Namespace": "",

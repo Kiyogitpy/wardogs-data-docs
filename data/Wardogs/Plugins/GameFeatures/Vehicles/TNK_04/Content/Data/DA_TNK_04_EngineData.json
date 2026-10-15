@@ -1,0 +1,41 @@
+--- export: UDataAsset / DA_TNK_04_EngineData ---
+{
+  "Type": "MTrackedVehicleEngineData",
+  "Name": "DA_TNK_04_EngineData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MTrackedVehicleEngineData'",
+  "Package": "/TNK_04/Data/DA_TNK_04_EngineData",
+  "Properties": {
+    "SpeedToBrakeForce": {
+      "ExternalCurve": {
+        "ObjectName": "CurveFloat'CRV_TrackedVehicle_SpeedToBrakeRatio'",
+        "ObjectPath": "/TNK_01/Curves/CRV_TrackedVehicle_SpeedToBrakeRatio.0"
+      }
+    },
+    "DifferentialRatio": 6.0,
+    "ChangeTime": 1000.0,
+    "GearRatios": [
+      1.8,
+      2.16,
+      4.35,
+      0.0,
+      3.485,
+      2.787,
+      2.2,
+      1.978,
+      1.55,
+      1.25
+    ],
+    "EngineExtraPowerRatio": 7.5,
+    "BoostScale": 2.0,
+    "TorqueCurve": {
+      "ExternalCurve": {
+        "ObjectName": "CurveFloat'CRV_TrackedVehicle_TorqueCurve_TNK_01_Heavy'",
+        "ObjectPath": "/TNK_01/Curves/CRV_TrackedVehicle_TorqueCurve_TNK_01_Heavy.0"
+      }
+    },
+    "SleepLinearThreshold": 5.0,
+    "SleepAngularThreshold": 5.0,
+    "SleepWaitingTime": 3.0
+  }
+}

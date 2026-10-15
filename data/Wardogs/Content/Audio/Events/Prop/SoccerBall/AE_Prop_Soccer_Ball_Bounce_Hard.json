@@ -1,0 +1,85 @@
+--- export: UObject / AEB_SendRawMagnitudeToMSS_C_0 ---
+{
+  "Type": "AEB_SendRawMagnitudeToMSS_C",
+  "Name": "AEB_SendRawMagnitudeToMSS_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SendRawMagnitudeToMSS.AEB_SendRawMagnitudeToMSS_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Prop_Soccer_Ball_Bounce_Hard'",
+    "ObjectPath": "/Game/Audio/Events/Prop/SoccerBall/AE_Prop_Soccer_Ball_Bounce_Hard.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_SendRawMagnitudeToMSS_C'Default__AEB_SendRawMagnitudeToMSS_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SendRawMagnitudeToMSS.0"
+  },
+  "Properties": {
+    "Float": "Velocity",
+    "ContextTag": {
+      "TagName": "Audio.Context.Prop.Ball.Bounce.Hard"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Prop_Soccer_Ball_Bounce_Hard ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Prop_Soccer_Ball_Bounce_Hard",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Prop/SoccerBall/AE_Prop_Soccer_Ball_Bounce_Hard",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Prop.Ball.Bounce.Hard"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Prop_Soccer_Ball_Bounce_Hard:CrosstalkAudioEventBehaviorAttachSoundToActor_1'",
+        "ObjectPath": "/Game/Audio/Events/Prop/SoccerBall/AE_Prop_Soccer_Ball_Bounce_Hard.2"
+      },
+      {
+        "ObjectName": "AEB_SendRawMagnitudeToMSS_C'AE_Prop_Soccer_Ball_Bounce_Hard:AEB_SendRawMagnitudeToMSS_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Prop/SoccerBall/AE_Prop_Soccer_Ball_Bounce_Hard.0"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Prop_Soccer_Ball_Bounce_Hard:CrosstalkAudioEventBehaviorPlaySound_1'",
+        "ObjectPath": "/Game/Audio/Events/Prop/SoccerBall/AE_Prop_Soccer_Ball_Bounce_Hard.3"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_1 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Prop_Soccer_Ball_Bounce_Hard'",
+    "ObjectPath": "/Game/Audio/Events/Prop/SoccerBall/AE_Prop_Soccer_Ball_Bounce_Hard.1"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Prop.Ball.Bounce.Hard"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_1 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Prop_Soccer_Ball_Bounce_Hard'",
+    "ObjectPath": "/Game/Audio/Events/Prop/SoccerBall/AE_Prop_Soccer_Ball_Bounce_Hard.1"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Soccer_Ball_Bounce_Hard'",
+      "ObjectPath": "/Game/Audio/Props/Soccer/Audio/MSS/MSS_Soccer_Ball_Bounce_Hard.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Prop.Ball.Bounce.Hard"
+    }
+  }
+}

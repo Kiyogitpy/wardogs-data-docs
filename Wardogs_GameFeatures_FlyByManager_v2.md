@@ -4,7 +4,7 @@ parent: "Game Features"
 ---
 
 # Wardogs — FlyByManager Game Feature Reference (v2)
-*Extracted from cooked game data ([`Wardogs/Plugins/GameFeatures/FlyByManager`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/FlyByManager), 6 JSON files, all parsed). Build `++Wardogs+Live-CL-509546`, UE 5.7.*
+*Extracted from cooked game data ([`Wardogs/Plugins/GameFeatures/FlyByManager`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/FlyByManager), 6 JSON files, all parsed). Build `++Wardogs+Live-CL-516586`, UE 5.7.*
 
 > **What this is:** the jet fly-by audio plugin. It has **no numeric gameplay data**. It registers gameplay cue and world-partition content, and defines six Crosstalk audio events for two jet types (Jet_01, Jet_02): a moving loop with a Doppler behaviour, a weapon-fire one-shot, and stop events.
 

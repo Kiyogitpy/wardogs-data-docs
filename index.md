@@ -5,7 +5,7 @@ nav_order: 1
 
 <div class="wd-hero" markdown="0">
 <h1>Every number in Wardogs, in one place</h1>
-<p>Reference pages for the game's data: weapon and vehicle stats, rewards, items, challenges and more, read straight from the game files (build <code>++Wardogs+Live-CL-509546</code>, UE 5.7). Search any value, asset name or table name from the bar at the top.</p>
+<p>Reference pages for the game's data: weapon and vehicle stats, rewards, items, challenges and more, read straight from the game files (build <code>++Wardogs+Live-CL-516586</code>, UE 5.7). Search any value, asset name or table name from the bar at the top.</p>
 <div class="wd-actions">
 <a class="wd-btn wd-btn-primary" href="#content">Browse categories</a>
 <a class="wd-btn wd-btn-secondary" href="Wardogs_Rewards_and_Progression_v2.html">Rewards &amp; progression</a>

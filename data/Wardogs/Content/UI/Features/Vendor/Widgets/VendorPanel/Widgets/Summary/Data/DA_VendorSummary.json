@@ -51,6 +51,40 @@
       "Key": "Text.DiscountExpiry",
       "SourceString": "Expires: Lvl {Level}",
       "LocalizedString": "Expires: Lvl {Level}"
+    },
+    "PurchaseUnavailablePopupData": {
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Title.Vendor.PurchaseUnavailable",
+        "SourceString": "Purchase Unavailable",
+        "LocalizedString": "Purchase Unavailable"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Description.Vendor.PurchaseUnavailable",
+        "SourceString": "You may not complete any purchases at this time.",
+        "LocalizedString": "You may not complete any purchases at this time."
+      },
+      "Options": [
+        {
+          "Key": "EWDPopupOption::Middle",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.OK",
+              "SourceString": "OK",
+              "LocalizedString": "OK"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": true,
+            "ButtonTypeOverride": {
+              "TagName": "UI.Popup.Button.Main"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        }
+      ]
     }
   }
 }

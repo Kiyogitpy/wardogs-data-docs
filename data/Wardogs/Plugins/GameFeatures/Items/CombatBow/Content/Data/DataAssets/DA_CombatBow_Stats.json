@@ -21,6 +21,8 @@
       },
       "FocusEnergyReductionPerShot": 100.0,
       "RecoilReductionWhenFocussing": 80.0,
+      "bOverrideTypicalSpeed": true,
+      "TypicalSpeed": 13000.0,
       "bUseDistanceDamageFalloffCurve": true,
       "DistanceDamageFalloffCurve": {
         "EditorCurveData": {
@@ -42,9 +44,20 @@
               "TangentWeightMode": "RCTWM_WeightedNone",
               "Time": 10000.0,
               "Value": 1.0,
-              "ArriveTangent": -2.413006E-05,
+              "ArriveTangent": -1.070042E-05,
               "ArriveTangentWeight": 0.0,
-              "LeaveTangent": -2.4311637E-05,
+              "LeaveTangent": -1.0786811E-05,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Linear",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 50000.0,
+              "Value": 0.0,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
               "LeaveTangentWeight": 0.0
             },
             {
@@ -52,7 +65,7 @@
               "TangentMode": "RCTM_Auto",
               "TangentWeightMode": "RCTWM_WeightedNone",
               "Time": 120000.0,
-              "Value": 0.2,
+              "Value": 0.0,
               "ArriveTangent": 0.0,
               "ArriveTangentWeight": 0.0,
               "LeaveTangent": 0.0,
@@ -166,7 +179,7 @@
         },
         "AdsStabilizationData": {
           "AdsStabilizeTime": 1.25,
-          "AdsStabilizeCooldownRate": 5.0,
+          "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 5.0,
           "AdsStabilizeMovementProgressPenalty": 0.35
         }
       },
@@ -282,7 +295,8 @@
       "SupportedCaliber": [
         "Item.Caliber.Arrow"
       ],
-      "InitialBulletSpeed": 65000.0,
+      "InitialBulletSpeed": 16000.0,
+      "EffectiveRange": 60.0,
       "MeleeDamage": 35.0,
       "MeleeHitBoxSize": {
         "X": 55.0,

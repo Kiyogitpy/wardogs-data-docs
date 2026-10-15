@@ -1,0 +1,56 @@
+--- export: UPrimaryDataAsset / VP_STN_06_Body ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_STN_06_Body",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/STN_06/Parts/VP_STN_06_Body",
+  "Properties": {
+    "Tags": [
+      "Vehicle.MainBody"
+    ],
+    "Fragments": [
+      {
+        "Key": "cC_Main",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_STN_06_Body:MVF_StaticMesh_0'",
+            "ObjectPath": "/STN_06/Parts/VP_STN_06_Body.1"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / MVF_StaticMesh_0 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_STN_06_Body'",
+    "ObjectPath": "/STN_06/Parts/VP_STN_06_Body.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceID": "Chassis",
+        "SocketName": "S_Body"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/STN_06/Meshes/Browning_Sandbag_Base.Browning_Sandbag_Base",
+      "SubPathString": ""
+    },
+    "PhysicsGroups": {
+      "Group": {
+        "TagName": "Vehicle.PhysicsGroup.MainBody"
+      }
+    },
+    "WalkableSlopeOverride": {
+      "WalkableSlopeBehavior": "EWalkableSlopeBehavior::WalkableSlope_Default"
+    }
+  }
+}
