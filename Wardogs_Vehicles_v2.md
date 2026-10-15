@@ -45,6 +45,7 @@ parent: "Content"
 ## 3. Rigid Body, Engine, Drag
 
 ### 3a. Body (`DA_FWG_01_Body`, `BHAirplaneBodyDataAsset`)
+
 | Property | Value |
 |---|---|
 | Mass override | **10,000** (unit not stated, likely kg) |
@@ -53,6 +54,7 @@ parent: "Content"
 | Max angular velocity override | **180 deg/s** |
 
 ### 3b. Engine (`DA_FWG_01_Engine`, `BHAirplaneEngineDataAsset`)
+
 | Property | Value |
 |---|---|
 | Max engine thrust | **226,800 N** (`MaxEngineThrust_n`) |
@@ -62,6 +64,7 @@ parent: "Content"
 | Fan RPM ramp up / down | 5,000 / 5,000 per second |
 
 ### 3c. Drag (`DA_FWG_01_Drag`, `BHAirplaneDragDataAsset`)
+
 | Property | Value |
 |---|---|
 | Air density at sea level | 0.00125 (as exported; unit not stated) |
@@ -75,6 +78,7 @@ parent: "Content"
 | Draw debug lines | true |
 
 ### 3d. Vehicle config (`DA_FWG_01_Config`, `BHAirplaneVehicleConfigDataAsset`)
+
 | Field | Value |
 |---|---|
 | Sub-assets | Body / Engine / Drag / FlightCharacteristics / GameplayConfig / SensorsData / InputControls all point to `DA_FWG_01_*` |
@@ -183,6 +187,7 @@ Two seat setups only:
 Both are exported with the identifier "Not Selected" and priority 0. No gunner seat exists on this airplane.
 
 ### Sensors (`DA_FWG_01_SensorsData`)
+
 | Property | Value |
 |---|---|
 | Landing strut sensor boxes | 2 (left and right), extents 230 x 10 x 25, translated (23, +/-108, -3.5) |
@@ -194,6 +199,7 @@ Both are exported with the identifier "Not Selected" and priority 0. No gunner s
 ## 6. Cameras
 
 ### 6a. Third/first-person behaviour (`DA_FWG_01_CameraBehaviourSettings`, `MRotaryVehicleSpringArmDataAsset`)
+
 | Property | Value |
 |---|---|
 | Socket offset | (-750, 0, 300) |
@@ -209,6 +215,7 @@ Both are exported with the identifier "Not Selected" and priority 0. No gunner s
 | FOV vs speed curve | `DA_FWG_01_SpeedFOVCurve` (see section 7) |
 
 ### 6b. Weapon spring arms (`Weapons/WeaponExtensions/ProjectileActors/`)
+
 | Asset | Probe min dist | Camera lag speed | Rotation lag speed | Lag max dist | Notes |
 |---|---|---|---|---|---|
 | `DA_155mm_Expensive_Camera` | 20 | 4.0 | 14.0 | 1.0 | FP lag: yaw 12, pitch 30, roll 12 |

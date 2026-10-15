@@ -73,6 +73,7 @@ Each `DT_Reward_Cash_*` row has a `base` cash value plus context modifiers appli
 ## 4. Revive & Heal Cash Rewards
 
 ### 4a. Revive (`DT_Reward_Cash_Revive`) — reward goes to the reviver
+
 | Method used | Base cash |
 |---|---|
 | No item (bare-hands revive) | 1,500 |
@@ -85,6 +86,7 @@ Each `DT_Reward_Cash_*` row has a `base` cash value plus context modifiers appli
 (All scale further ×1.2–2.0 in Control/Hot Zones per the CZ/HZ/HZM modifiers.)
 
 ### 4b. Heal (`DT_Reward_Cash_Heal`) — reward to the healer
+
 | Item | Base cash |
 |---|---|
 | Default (no item tag) | 10 |
@@ -101,6 +103,7 @@ Each `DT_Reward_Cash_*` row has a `base` cash value plus context modifiers appli
 ## 5. Vehicle-Related Cash Rewards
 
 ### 5a. Vehicle destroyed (`DT_Reward_Cash_VehicleDestroyed`)
+
 | Vehicle | Base cash |
 |---|---|
 | DuneBuggy | 300 |
@@ -115,6 +118,7 @@ Each `DT_Reward_Cash_*` row has a `base` cash value plus context modifiers appli
 | **Havoc (attack heli)** | **6,000** |
 
 ### 5b. Vehicle repair (`DT_Reward_Cash_Repair`)
+
 | Tool | Base cash |
 |---|---|
 | Default / Wrench (Standard) | 20 |
@@ -122,11 +126,13 @@ Each `DT_Reward_Cash_*` row has a `base` cash value plus context modifiers appli
 | Drill (Heavy) | 25 |
 
 ### 5c. Vehicle refuel (`DT_Reward_Cash_Refuel`)
+
 | Context | Base cash |
 |---|---|
 | Default fallback | 10 |
 
 ### 5d. Vehicle transport (`DT_Reward_Cash_VehicleTransport`)
+
 | Context | Base cash |
 |---|---|
 | Default fallback | 20 |
@@ -138,6 +144,7 @@ Each `DT_Reward_Cash_*` row has a `base` cash value plus context modifiers appli
 ## 6. Objective Cash Rewards
 
 ### 6a. Control Zone / Hot Zone / Magnet Zone (`DT_Reward_Cash_ControlZoneReward`)
+
 | Event | Base cash |
 |---|---|
 | Control Zone — contested | 150 |
@@ -154,6 +161,7 @@ Each `DT_Reward_Cash_*` row has a `base` cash value plus context modifiers appli
 | **Spawn-vehicle enters Control Zone** | **3,000** |
 
 ### 6b. HotZone Magnet / Tower events (`DT_Reward_Cash_HotZoneMagnet`)
+
 | Event | Base cash |
 |---|---|
 | Activated the magnet (instigator) | **5,000** |
@@ -166,6 +174,7 @@ Each `DT_Reward_Cash_*` row has a `base` cash value plus context modifiers appli
 | Near a neutral tower | 250 |
 
 ### 6c. End-of-match faction placement (`DT_Reward_Cash_EndGameFactionReward`)
+
 | Placement | Base cash |
 |---|---|
 | Default (no item used — revive context reused here) | 100 |
@@ -204,6 +213,7 @@ Three separate tables by action — **Built**, **Placed**, **Placed-in-FOB** —
 ## 8. Deployable (Supply Crate / Explosives) Cash Rewards
 
 ### 8a. Deployed (`DT_Reward_Cash_DeployedSupplyCrate`)
+
 | Item | Base cash |
 |---|---|
 | Default fallback | 25 |
@@ -212,6 +222,7 @@ Three separate tables by action — **Built**, **Placed**, **Placed-in-FOB** —
 | Supply Crate (Large / Large Armoured) | 150 |
 
 ### 8b. Destroyed (`DT_Reward_Cash_DeployableDestroyed`, destroying enemy deployables)
+
 | Item | Base cash |
 |---|---|
 | Claymore | 100 |
@@ -235,6 +246,7 @@ Three separate tables by action — **Built**, **Placed**, **Placed-in-FOB** —
 ## 10. End-of-Match Challenge Rewards (`DT_ChallengeRewards_EndOfMatch`)
 
 Faction placement bonus formula: `CashEarned × PlacementModifier`, where:
+
 | Placement | Cash multiplier | XP multiplier (all 6 roles) |
 |---|---|---|
 | 1st place | 0.3× | **2.0×** |
@@ -295,6 +307,7 @@ XPBonus   = XPEarned_thisMatch   × PlacementModifier   (applied separately, per
 ```
 
 **Placement modifiers:**
+
 | Placement | Cash multiplier | XP multiplier |
 |---|---|---|
 | 1st place | **0.3×** | **2.0×** |
@@ -310,6 +323,7 @@ XPBonus   = XPEarned_thisMatch   × PlacementModifier   (applied separately, per
 So no matter how big the match was, the bonus calculation treats anything above 100k cash / 2.5k XP earned-that-match as capped before the placement multiplier applies.
 
 **Flat placement bonus on top** (separate from the formula above, from `DT_Reward_Cash_EndGameFactionReward`):
+
 | Placement | Flat cash |
 |---|---|
 | 1st | 200 |
@@ -330,6 +344,7 @@ Reward = (1 − min(LastVictimCount,4) × 0.24)
 ```
 
 **Base rewards by kill type:**
+
 | Kill type | Base |
 |---|---|
 | Default player kill | 300 |
@@ -338,6 +353,7 @@ Reward = (1 − min(LastVictimCount,4) × 0.24)
 | Air Vehicle kill | 300 |
 
 **Key modifiers:**
+
 | Modifier | Value | Trigger |
 |---|---|---|
 | Last-victim diminishing returns | −24% per repeat kill on same player, capped at 4 stacks | Spawn-camping tax |

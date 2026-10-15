@@ -69,6 +69,7 @@ Reading the difference: the Basic chute has no pull-up stamina, no glide, no pul
 | Audio data asset | `ID_Backpack_Audio` | `ID_Backpack_Audio` |
 
 ### Fragments (both items)
+
 | Fragment | Settings |
 |---|---|
 | `BHInventoryFragment_UserInterface` | (none) |

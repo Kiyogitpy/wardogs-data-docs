@@ -98,6 +98,7 @@ One `GameFeatureAction_DataRegistrySource` adds two sources:
 ## 5. Scene Root (`DA_Vehiclesmith_Scene`)
 
 ### 5a. Tabs and type
+
 | Field | Value |
 |---|---|
 | Item system type | `EWDUIItemsmithType::Vehiclesmith` |
@@ -109,6 +110,7 @@ One `GameFeatureAction_DataRegistrySource` adds two sources:
 | Default item-family background | `Vehicle.Variant.Land` |
 
 ### 5b. Pages
+
 | Page | Widget class | Scene widgets shown |
 |---|---|---|
 | `ItemSelect` | `W_Itemsmith_ItemSelectGrid` | (browser) |
@@ -116,12 +118,14 @@ One `GameFeatureAction_DataRegistrySource` adds two sources:
 | `Variants` | `W_Itemsmith_ItemSelectGrid` | `Stats`, `BaseInfo`, `HeroTitle`, `NavigationBar` (4) |
 
 ### 5c. Data layers per family
+
 | Family | Background data layer | Test-drive data layer |
 |---|---|---|
 | `Vehicle.Variant.Land` | `DL_Vehiclesmith_Garage_Background` | `DL_Vehiclesmith_Land_TestDrive` |
 | `Vehicle.Variant.Air` | `DL_Vehiclesmith_Hangar_Background` | `DL_Vehiclesmith_Air_TestDrive` |
 
 ### 5d. Camera, controls and misc
+
 | Field | Value |
 |---|---|
 | Dpad controls angle | 55 |
@@ -158,6 +162,7 @@ Display strings come from `STRINGS_Itemsmith_PersistentActions` and `STRINGS_Veh
 ## 7. Browser Pages
 
 ### 7a. Air browser (`DA_Vehiclesmith_AirItemSelect`)
+
 | Field | Value |
 |---|---|
 | Default archetype | `Vehicle.Archetype.Air.Rotary` |
@@ -167,6 +172,7 @@ Display strings come from `STRINGS_Itemsmith_PersistentActions` and `STRINGS_Veh
 | Browser filters | Favourited-archetype filter, plus archetype filter(s) |
 
 ### 7b. Land browser (`DA_Vehiclesmith_LandItemSelect`)
+
 | Field | Value |
 |---|---|
 | Default archetype | `Vehicle.Archetype.Land.Wheeled` |
@@ -175,6 +181,7 @@ Display strings come from `STRINGS_Itemsmith_PersistentActions` and `STRINGS_Veh
 | Browser filters | Archetype `Vehicle.Archetype.Land.Wheeled`, archetype `Vehicle.Archetype.Land.Tracked`, Favourited archetype `Vehicle.Archetype.Land` |
 
 ### 7c. Variant picker (`DA_Vehiclesmith_VariantSelect`)
+
 | Field | Value |
 |---|---|
 | Page type | `EWDUIItemsmithPages::Variants` |
@@ -184,6 +191,7 @@ Display strings come from `STRINGS_Itemsmith_PersistentActions` and `STRINGS_Veh
 | Browser filters | Favourited variants (`Itemsmith.Variants.Tabs.Favourite`); Saved variants (`Itemsmith.Variants.Tabs.Saved`), with "create new" button tag `Itemsmith.Variants.CreateNewButton` |
 
 ### 7d. Browser list and entry
+
 | Field | Value |
 |---|---|
 | Entry view model | `WDUIItemsmithBrowserEntryViewModel` on `DA_Vehiclesmith_BrowserEntry` |

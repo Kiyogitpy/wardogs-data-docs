@@ -29,6 +29,7 @@ parent: "Game Features"
 ## 2. Root Game Feature
 
 ### 2a. Component
+
 | Actor class | Component class |
 |---|---|
 | `WDGame.WDPlayerController` | `GunsmithRuntime.WDGunsmithPlayerComponent` |
@@ -36,6 +37,7 @@ parent: "Game Features"
 The Gunsmith runtime attaches its controller component to the player controller when the feature loads.
 
 ### 2b. Data registry sources
+
 | Registry | Table |
 |---|---|
 | `DevMenuMapsData` | `DT_Gunsmith_DevMenuMaps` |
@@ -55,6 +57,7 @@ The Gunsmith runtime attaches its controller component to the player controller 
 ## 4. Scene (`DA_GunsmithScene`)
 
 ### 4a. Map layers and family
+
 | Field | Value |
 |---|---|
 | Default item family background | `Id.Item` |
@@ -85,6 +88,7 @@ The Gunsmith runtime attaches its controller component to the player controller 
 The count is how many shared scene widgets the page asks for. The `Build` page has the most.
 
 ### 4c. Node classes
+
 | Node type | Node component |
 |---|---|
 | `ItemPartNode` | `B_GunsmithNodeComponent` |
@@ -127,6 +131,7 @@ Pattern: the 10x-class reticles exclude the 10x and hybrid scopes; the red-dot f
 The 10 reticle rows above, plus 4 rows keyed by scope item id and sight state (`Id.Item.SniperScope10x.S_Aim01`, `Id.Item.OPT_08.S_Aim01`, `Id.Item.4xElcanSpectr.S_Aim01`, `Id.Item.HybridScope4x.S_Aim01`).
 
 ### 6c. Reticle browser
+
 | Field | Value |
 |---|---|
 | Base filter | `Item.Archetype.Build.Reticle.Base` ("Base") |
@@ -170,6 +175,7 @@ The slider's internal range (-2 to 10) is wider than its display range (-1 to 2)
 ## 9. Accuracy Display
 
 ### 9a. Accuracy unit labels (`DA_Gunsmith_Stats`)
+
 | Accuracy type | Label |
 |---|---|
 | `EWDWeaponAccuracyType::Milliradians` | MRAD |
@@ -178,6 +184,7 @@ The slider's internal range (-2 to 10) is wider than its display range (-1 to 2)
 Expand and collapse actions: `Input.NamedActions.ItemSmith.ExpandStats` and `...CollapseStats`.
 
 ### 9b. Expanded accuracy (`DA_GunsmithExpandedAccuracy`)
+
 | Setting | Value |
 |---|---|
 | Max MOA value | **25.0** |

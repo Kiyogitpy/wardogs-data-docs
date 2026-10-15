@@ -73,6 +73,27 @@ body {
   margin: 1.25rem 0 2rem;
 }
 
+// A long, narrow table split in two halves (head_custom.html): side by side
+// where there is room, stacked back into one column on narrow screens.
+.main-content .table-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.25rem 0 2rem;
+  align-items: start;
+
+  .table-wrapper { margin: 0; }
+  table { width: 100%; }
+
+  @media (max-width: 50rem) {
+    grid-template-columns: 1fr;
+    gap: 0;
+    .table-wrapper:first-child { border-bottom-left-radius: 0; border-bottom-right-radius: 0; border-bottom: 0; }
+    .table-wrapper:last-child { border-top-left-radius: 0; border-top-right-radius: 0; }
+    .table-wrapper:last-child thead { display: none; }
+  }
+}
+
 .main-content table {
   font-size: 0.925rem;
   border-collapse: collapse;

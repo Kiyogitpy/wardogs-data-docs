@@ -1,3 +1,24 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+/* Long, narrow tables (<= 3 columns, >= 12 rows) flow into two side-by-side halves,
+   each with its own header; CSS stacks the halves again on narrow screens. */
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".main-content .table-wrapper > table").forEach(function (table) {
+    var head = table.tHead, body = table.tBodies[0];
+    if (!head || !body || head.rows[0].cells.length > 3 || body.rows.length < 12) return;
+    var wrapper = table.parentNode, rows = Array.prototype.slice.call(body.rows);
+    var right = table.cloneNode(false), rightBody = document.createElement("tbody");
+    right.appendChild(head.cloneNode(true));
+    right.appendChild(rightBody);
+    rows.slice(Math.ceil(rows.length / 2)).forEach(function (row) { rightBody.appendChild(row); });
+    var pair = document.createElement("div"), rightWrapper = wrapper.cloneNode(false);
+    pair.className = "table-pair";
+    wrapper.parentNode.insertBefore(pair, wrapper);
+    pair.appendChild(wrapper);
+    rightWrapper.appendChild(right);
+    pair.appendChild(rightWrapper);
+  });
+});
+</script>

@@ -30,6 +30,7 @@ parent: "Game Features"
 | `ItemContext` | `Item.Attachment.Underbarrel` |
 
 ### Fragments (6)
+
 | Fragment | Purpose |
 |---|---|
 | `BHInventoryFragment_UserInterface` | UI hook (no properties) |
@@ -44,6 +45,7 @@ parent: "Game Features"
 ## 3. Attachment Fragment: Weapon Setup
 
 ### 3a. Ammo requirement
+
 | Field | Value |
 |---|---|
 | Required resource | `Id.Item.40mm` |
@@ -53,6 +55,7 @@ parent: "Game Features"
 | Optional required sub-slot category | `None` |
 
 ### 3b. Reload animation
+
 | Field | Value |
 |---|---|
 | First-person player montage | `AM_FP_UniTool_Reload` |

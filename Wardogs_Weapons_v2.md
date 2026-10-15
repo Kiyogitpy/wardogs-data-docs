@@ -31,6 +31,7 @@ Notes:
 ### 1a. Per-weapon details beyond the table
 
 **DA_SKS_Stats** (the most fully specified asset)
+
 | Field | Value |
 |---|---|
 | WeaponAccuracy | 0.73, `AccuracyType = MinutesOfAngle` |
@@ -58,6 +59,7 @@ Notes:
 The distance falloff times line up with `EffectiveRange = 400` if the times are in cm (40,000 cm = 400 m). This is consistent with the unit inference above but not proven.
 
 **DA_Judge_Stats** (pistol)
+
 | Field | Value |
 |---|---|
 | WeaponAccuracy | 3.49 (no AccuracyType set, so the default applies) |
@@ -75,6 +77,7 @@ The distance falloff times line up with `EffectiveRange = 400` if the times are 
 | MeleeDamage | 20 |
 
 **DA_AT4_Stats** (rocket launcher)
+
 | Field | Value |
 |---|---|
 | Aim sway | Speed/Horizontal/Vertical curves plus `TotalPatternDuration` 6.0, `NoFocusEnergySpeedMultiplier` 2.5, `PlayerCameraOffsetMultiplier` 0.75 |
