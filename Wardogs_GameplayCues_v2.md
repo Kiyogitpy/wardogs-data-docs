@@ -1,3 +1,8 @@
+---
+title: "GameplayCues"
+parent: "Content"
+---
+
 # Wardogs: GameplayCues Data Reference (v2)
 *Extracted from cooked game data (`Wardogs/Content/GameplayCues`, 1 file). Values are raw asset values.*
 

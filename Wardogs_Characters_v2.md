@@ -1,3 +1,8 @@
+---
+title: "Characters"
+parent: "Content"
+---
+
 # Wardogs: Characters Data Reference (v2)
 *Extracted from cooked game data (`Wardogs/Content/Characters`, 3 files). Values are raw asset values.*
 

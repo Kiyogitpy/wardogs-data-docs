@@ -1,3 +1,8 @@
+---
+title: "Parachutes (feature)"
+parent: "Game Features"
+---
+
 # Wardogs — Parachutes Game Feature Reference (v2)
 *Extracted from cooked game data (`Wardogs/Plugins/GameFeatures/Parachutes`, 7 JSON files, all parsed). Build `++Wardogs+Live-CL-509546`, UE 5.7.*
 

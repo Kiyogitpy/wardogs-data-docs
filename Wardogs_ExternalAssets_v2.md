@@ -1,3 +1,8 @@
+---
+title: "ExternalAssets"
+parent: "Content"
+---
+
 # Wardogs — External Assets Reference (v2)
 *Extracted from cooked game data (`Content/ExternalAssets`, 100 JSON exports, UE 5.7 build `++Wardogs+Live-CL-509546`). Every number below was parsed from the export files by script. Where a field's meaning is inferred from its name rather than confirmed, the doc says so.*
 

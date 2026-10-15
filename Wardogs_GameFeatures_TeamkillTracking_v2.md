@@ -1,3 +1,8 @@
+---
+title: "TeamkillTracking (feature)"
+parent: "Game Features"
+---
+
 # Wardogs — GameFeatures: TeamkillTracking (v2)
 *Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/GameFeatures/TeamkillTracking/` — 1 JSON file (`Content/TeamkillTracking.json`, 2 exports).*
 

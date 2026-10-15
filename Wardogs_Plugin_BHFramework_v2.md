@@ -1,3 +1,8 @@
+---
+title: "BHFramework"
+parent: "Plugins"
+---
+
 # Wardogs — Plugin: BHFramework (v2)
 *Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/BHFramework/` — 46 JSON files, all under `Content/Settings/`. These are user-setting definitions (`BHUserSetting*`). Values are the export's defaults and ranges.*
 

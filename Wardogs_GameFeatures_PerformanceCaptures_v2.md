@@ -1,3 +1,8 @@
+---
+title: "PerformanceCaptures (feature)"
+parent: "Game Features"
+---
+
 # Wardogs — GameFeatures: PerformanceCaptures (v2)
 *Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/GameFeatures/PerformanceCaptures/` — 4 JSON files.*
 

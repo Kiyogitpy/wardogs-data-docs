@@ -1,3 +1,8 @@
+---
+title: "WDAutomation (feature)"
+parent: "Game Features"
+---
+
 # Wardogs — GameFeatures: WDAutomation (v2)
 *Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/GameFeatures/WDAutomation/` — 1 JSON file (`Content/WDAutomation.json`).*
 

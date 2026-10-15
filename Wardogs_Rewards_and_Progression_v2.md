@@ -1,3 +1,8 @@
+---
+title: "Rewards & Progression"
+nav_order: 2
+---
+
 # Wardogs — Rewards & Progression Reference (v2, corrected)
 *Extracted from cooked game data via CUE4Parse (build `++Wardogs+Live-CL-509546`, UE 5.7.4). All numbers below come directly from the game's own DataTables.*
 

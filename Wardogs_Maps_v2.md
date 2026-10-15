@@ -1,3 +1,8 @@
+---
+title: "Maps"
+parent: "Content"
+---
+
 # Wardogs — Maps & Gym Data Reference (v2)
 *Extracted from the cooked JSON export under `Content/Maps` (7 files, 41 export blocks). Values are raw asset properties. Anything inferred from a name rather than from the export is marked as inferred. The `.umap` level files are not in this category, so this doc covers the data assets that sit beside the maps.*
 

@@ -1,3 +1,8 @@
+---
+title: "Weapons"
+parent: "Content"
+---
+
 # Wardogs — Weapons Reference (v2)
 *Extracted from cooked game data (JSON export, `Wardogs/Content/Weapons/`, 92 source files). Parsed with a Python script; 15 Input files contain several `--- export:` blocks each and were split on those headers. Numbers are the raw exported values.*
 

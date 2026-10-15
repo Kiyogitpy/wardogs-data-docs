@@ -1,6 +1,18 @@
+---
+title: Home
+nav_order: 1
+---
+
 # Wardogs Data Reference
 
 Structured reference docs for Wardogs game data (build `++Wardogs+Live-CL-509546`, UE 5.7), one page per data category. Each page lists real values from the game's data assets and ends with a limitations section saying what was inferred or not covered.
+
+## Finding things
+
+- **Search** with the box at the top of every page (press `/` or `Ctrl+K` to jump to it). It searches the full text of every page, including tables, and takes you straight to the matching section.
+- **Search by asset or table name works on parts of the name.** `PlayerKill` finds `DT_Reward_Cash_PlayerKill`, and `Havoc` finds every page that mentions the Havoc.
+- **Browse** with the sidebar, grouped into Content, Game Features and Plugins, or use the tables below.
+- **Items, Weapons and Vehicles exist twice.** The Content pages hold base definitions; the "(feature)" pages under Game Features hold most of the per-item, per-weapon and per-vehicle data.
 
 ## Rewards & progression
 

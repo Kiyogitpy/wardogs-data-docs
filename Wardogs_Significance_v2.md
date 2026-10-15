@@ -1,3 +1,8 @@
+---
+title: "Significance"
+parent: "Content"
+---
+
 # Wardogs — Significance Reference (v2)
 *Extracted from cooked game data (JSON export, `Wardogs/Content/Significance/`, 15 source files: 8 significance settings, 2 FOV evaluators, 5 sphere evaluators). Parsed with a Python script. Values are the raw exported values.*
 

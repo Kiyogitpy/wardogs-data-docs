@@ -1,3 +1,8 @@
+---
+title: "VFX"
+parent: "Content"
+---
+
 # Wardogs — VFX Reference (v2)
 *Extracted from the cooked JSON export under `Content/VFX` (191 files, all parsed; 191 export blocks). Values are the raw asset properties. Where a property's meaning is inferred from its name, that is said explicitly. A "-" in a table means the property is absent from the export, so the engine default applies and that default is not in the dump.*
 

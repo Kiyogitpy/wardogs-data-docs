@@ -1,3 +1,8 @@
+---
+title: "Meta"
+parent: "Content"
+---
+
 # Wardogs: Meta Data Reference (v2)
 *Extracted from cooked game data (`Wardogs/Content/Meta`, 67 files, UE 5.7 export to JSON). Values are the raw asset values. Interpretations are marked as inferred.*
 

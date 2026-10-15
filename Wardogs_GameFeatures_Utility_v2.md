@@ -1,3 +1,8 @@
+---
+title: "Utility (feature)"
+parent: "Game Features"
+---
+
 # Wardogs — GameFeatures: Utility (v2)
 *Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/GameFeatures/Utility/` — 13 JSON files.*
 

@@ -1,3 +1,8 @@
+---
+title: "BHSpectatorCamera"
+parent: "Plugins"
+---
+
 # Wardogs — Plugin: BHSpectatorCamera (v2)
 *Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/BHSpectatorCamera/` — 6 JSON files under `Content/Inputs/`: 5 input actions and 1 input mapping context.*
 

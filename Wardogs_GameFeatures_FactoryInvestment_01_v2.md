@@ -1,3 +1,8 @@
+---
+title: "FactoryInvestment 01 (feature)"
+parent: "Game Features"
+---
+
 # Wardogs — GameFeatures: FactoryInvestment_01 (v2)
 *Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/GameFeatures/FactoryInvestment_01/` — 3 JSON files.*
 

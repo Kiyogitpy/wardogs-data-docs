@@ -1,3 +1,8 @@
+---
+title: "Experiences (feature)"
+parent: "Game Features"
+---
+
 # Wardogs — GameFeatures: Experiences (v2)
 *Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/GameFeatures/Experiences/` — 11 JSON files. Two experiences: `KOTH` (1 file) and `SniperShowdown` (10 files).*
 

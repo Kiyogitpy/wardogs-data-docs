@@ -1,3 +1,8 @@
+---
+title: "WorldFeatures (feature)"
+parent: "Game Features"
+---
+
 # Wardogs — GameFeatures: WorldFeatures (v2)
 *Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/GameFeatures/WorldFeatures/` — 31 JSON files. Values are raw export values. StateTree internals were summarised, not decoded.*
 

@@ -1,3 +1,8 @@
+---
+title: "AccountWatermark (feature)"
+parent: "Game Features"
+---
+
 # Wardogs — GameFeatures: AccountWatermark (v2)
 *Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/GameFeatures/AccountWatermark/` — 2 JSON files (`Content/AccountWatermark.json` with 151 exports, and `Content/Data/DA_AccountWatermark.json`).*
 

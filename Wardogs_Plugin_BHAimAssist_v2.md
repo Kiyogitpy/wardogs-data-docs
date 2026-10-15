@@ -1,3 +1,8 @@
+---
+title: "BHAimAssist"
+parent: "Plugins"
+---
+
 # Wardogs — Plugin: BHAimAssist (v2)
 *Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/BHAimAssist/` — 30 JSON files, all `CurveFloat` assets under `Content/AimAssist/`. Curve keys were read directly; units are not stated in the export.*
 

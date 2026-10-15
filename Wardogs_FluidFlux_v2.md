@@ -1,3 +1,8 @@
+---
+title: "FluidFlux"
+parent: "Content"
+---
+
 # Wardogs: FluidFlux Data Reference (v2)
 *Extracted from cooked game data (`Wardogs/Content/FluidFlux`, 2 files). Values are raw curve keys.*
 

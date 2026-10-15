@@ -1,3 +1,8 @@
+---
+title: "GameMechanics"
+parent: "Content"
+---
+
 # Wardogs — Game Mechanics Reference (v2)
 *Extracted from cooked game data under `Content/GameMechanics` (467 files, 898 export blocks, UE 5.7 build `++Wardogs+Live-CL-509546`). Numbers are the raw values stored in the DataAssets and DataTables. Where the meaning of a field is inferred or unknown, the doc says so.*
 

@@ -1,3 +1,8 @@
+---
+title: "UI"
+parent: "Content"
+---
+
 # Wardogs — UI Data Reference (v2)
 *Extracted from cooked game data (`Wardogs/Content/UI`, 586 JSON files holding 774 export blocks: 486 UDataAsset, 188 UObject, 88 UDataTable, 11 curve assets, 1 common input table). Values are as exported; nothing here was checked in-game. Multi-export files were split on their `--- export:` headers before parsing.*
 

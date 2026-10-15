@@ -1,3 +1,8 @@
+---
+title: "Tools"
+parent: "Content"
+---
+
 # Wardogs: Tools Data Reference (v2)
 *Extracted from cooked game data (`Wardogs/Content/Tools`, 1 file). Editor UI text styles, not gameplay data.*
 

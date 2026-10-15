@@ -1,3 +1,8 @@
+---
+title: "ShootingRange (feature)"
+parent: "Game Features"
+---
+
 # Wardogs — GameFeatures: ShootingRange (v2)
 *Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/GameFeatures/ShootingRange/` — 1 JSON file (`Content/ShootingRange.json`, 5 exports).*
 

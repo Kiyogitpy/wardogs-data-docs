@@ -1,3 +1,8 @@
+---
+title: "Gunsmith (feature)"
+parent: "Game Features"
+---
+
 # Wardogs — Gunsmith Game Feature Reference (v2)
 *Extracted from cooked game data (`Wardogs/Plugins/GameFeatures/Gunsmith`, 18 JSON files, all parsed). Build `++Wardogs+Live-CL-509546`, UE 5.7.*
 

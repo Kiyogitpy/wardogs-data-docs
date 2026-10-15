@@ -1,3 +1,8 @@
+---
+title: "Developers"
+parent: "Content"
+---
+
 # Wardogs: Developers Data Reference (v2)
 *Extracted from cooked game data (`Wardogs/Content/Developers`, 1 file). This is a single developer-owned settings asset.*
 

@@ -1,3 +1,8 @@
+---
+title: "Vehicles (feature)"
+parent: "Game Features"
+---
+
 # Wardogs — GameFeatures / Vehicles Reference (v2)
 *Extracted from cooked game data via CUE4Parse JSON export. Source: `Wardogs/Plugins/GameFeatures/Vehicles` — 868 files, 2,580 export objects, 0 parse errors. Values are shown exactly as stored unless noted.*
 

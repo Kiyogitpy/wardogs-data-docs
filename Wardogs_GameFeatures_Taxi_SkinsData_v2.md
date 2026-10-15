@@ -1,3 +1,8 @@
+---
+title: "Taxi SkinsData (feature)"
+parent: "Game Features"
+---
+
 # Wardogs — GameFeatures: Taxi_SkinsData (v2)
 *Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/GameFeatures/Taxi_SkinsData/` — 3 JSON files.*
 

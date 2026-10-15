@@ -1,3 +1,8 @@
+---
+title: "Vehicles"
+parent: "Content"
+---
+
 # Wardogs — Vehicles Reference (v2)
 *Extracted from cooked game data (`Wardogs/Content/Vehicles`, 121 JSON files, all parsed). Multi-object files were split on each `--- export:` header; the first export is the asset, later exports are its sub-objects (input triggers, modifiers, curve keys, etc.). Build `++Wardogs+Live-CL-509546`, UE 5.7.*
 

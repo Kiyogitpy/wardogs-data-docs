@@ -1,3 +1,8 @@
+---
+title: "Demolition"
+parent: "Content"
+---
+
 # Wardogs — Demolition Reference (v2)
 *Extracted from cooked game data (JSON export, `Wardogs/Content/Demolition/`, 78 source files: 38 demolition assets, 9 component settings, 16 remnant-mesh assets, 15 rulesets). Parsed with a Python script. The 15 ruleset files each contain several `--- export:` blocks and were split on those headers. Values are the raw exported values.*
 

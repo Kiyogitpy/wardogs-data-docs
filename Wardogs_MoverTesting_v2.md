@@ -1,3 +1,8 @@
+---
+title: "MoverTesting"
+parent: "Content"
+---
+
 # Wardogs — Mover & Character Movement Reference (v2)
 *Extracted from the cooked JSON export under `Content/MoverTesting` (78 files, 177 export blocks). Values are raw asset properties. Where a meaning comes from a property name rather than from the export, it is marked as inferred. A "-" in a table means the property is absent from the export.*
 

@@ -1,3 +1,8 @@
+---
+title: "Character (feature)"
+parent: "Game Features"
+---
+
 # Wardogs — GameFeatures: Character (v2)
 *Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/GameFeatures/Character/` — 2 JSON files, both under `Kits/`.*
 

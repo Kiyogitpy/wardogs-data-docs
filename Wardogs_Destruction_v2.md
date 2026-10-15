@@ -1,3 +1,8 @@
+---
+title: "Destruction"
+parent: "Content"
+---
+
 # Wardogs — Destruction Reference (v2)
 *Extracted from cooked game data (JSON export, `Wardogs/Content/Destruction/`, 4 source files: 2 mesh-to-prefab lookup assets, 2 curves). Parsed with a Python script. Values are the raw exported values.*
 

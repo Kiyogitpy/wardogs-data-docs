@@ -1,3 +1,8 @@
+---
+title: "Tests"
+parent: "Content"
+---
+
 # Wardogs: Tests Data Reference (v2)
 *Extracted from cooked game data (`Wardogs/Content/Tests`, 2 files). These are automated load-test profiles, not gameplay data.*
 

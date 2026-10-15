@@ -1,3 +1,8 @@
+---
+title: "Audio"
+parent: "Content"
+---
+
 # Wardogs — Audio Data Reference (v2)
 *Extracted from cooked game data under `/Game/Audio/` (UE 5.7 export, 956 JSON files in `Wardogs/Content/Audio`). Every number below was counted by script over the whole folder. Behaviour meanings are inferred from property names unless marked as confirmed.*
 

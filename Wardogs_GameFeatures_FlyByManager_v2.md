@@ -1,3 +1,8 @@
+---
+title: "FlyByManager (feature)"
+parent: "Game Features"
+---
+
 # Wardogs — FlyByManager Game Feature Reference (v2)
 *Extracted from cooked game data (`Wardogs/Plugins/GameFeatures/FlyByManager`, 6 JSON files, all parsed). Build `++Wardogs+Live-CL-509546`, UE 5.7.*
 

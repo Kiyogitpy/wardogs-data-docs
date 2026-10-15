@@ -1,3 +1,8 @@
+---
+title: "Items (feature)"
+parent: "Game Features"
+---
+
 # Wardogs: GameFeatures Items Reference (v2)
 *Source: exported JSON under `Wardogs/Plugins/GameFeatures/Items` (495 files, 24 item folders). Numbers are read from the export; anything not confirmed is marked as unclear.*
 

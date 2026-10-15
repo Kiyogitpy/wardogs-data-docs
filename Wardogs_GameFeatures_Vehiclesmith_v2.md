@@ -1,3 +1,8 @@
+---
+title: "Vehiclesmith (feature)"
+parent: "Game Features"
+---
+
 # Wardogs — Vehiclesmith Game Feature Reference (v2)
 *Extracted from cooked game data (`Wardogs/Plugins/GameFeatures/Vehiclesmith`, 12 JSON files, all parsed). Build `++Wardogs+Live-CL-509546`, UE 5.7.*
 

@@ -1,3 +1,8 @@
+---
+title: "ControlZoneRegions (feature)"
+parent: "Game Features"
+---
+
 # Wardogs — GameFeature: ControlZoneRegions Reference (v2)
 *Extracted from cooked game data via CUE4Parse (build `++Wardogs+Live-CL-509546`, UE 5.7.4). Source: `Wardogs/Plugins/GameFeatures/ControlZoneRegions/` (5 JSON files). Scripted pass over every file, then checked against the region arrays directly.*
 

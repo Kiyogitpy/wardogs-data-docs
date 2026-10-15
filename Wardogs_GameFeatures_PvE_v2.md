@@ -1,3 +1,8 @@
+---
+title: "PvE (feature)"
+parent: "Game Features"
+---
+
 # Wardogs — GameFeatures: PvE (v2)
 *Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/GameFeatures/PvE/` — 37 JSON files. Each file is a sequence of `--- export:` blocks; the first is the asset, the rest are sub-objects. Values are raw export values.*
 

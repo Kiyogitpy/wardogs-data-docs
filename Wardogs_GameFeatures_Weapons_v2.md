@@ -1,3 +1,8 @@
+---
+title: "Weapons (feature)"
+parent: "Game Features"
+---
+
 # Wardogs — GameFeatures/Weapons Reference (v2)
 
 *Source: `Wardogs/Plugins/GameFeatures/Weapons/` (870 JSON files, 3383 exported objects, 0 parse errors). Parsed with a Python script that splits each file on its `--- export:` headers, since many files hold several objects. Values are cooked data as exported. Where a meaning is inferred from a property name, the text says so.*

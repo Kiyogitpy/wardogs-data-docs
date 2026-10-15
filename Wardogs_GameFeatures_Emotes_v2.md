@@ -1,3 +1,8 @@
+---
+title: "Emotes (feature)"
+parent: "Game Features"
+---
+
 # Wardogs: GameFeatures Emotes Reference (v2)
 *Source: exported JSON under `Wardogs/Plugins/GameFeatures/Emotes` (3 files, 1 folder: `Season01_EmotesData`). This is the full emote data set in the dump. Numbers and tags are read from the export.*
 

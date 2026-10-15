@@ -1,3 +1,8 @@
+---
+title: "ControlZone (feature)"
+parent: "Game Features"
+---
+
 # Wardogs — GameFeature: ControlZone Reference (v2)
 *Extracted from cooked game data via CUE4Parse (build `++Wardogs+Live-CL-509546`, UE 5.7.4). Source: `Wardogs/Plugins/GameFeatures/ControlZone/` (17 JSON files). Scripted pass over every file, then spot-checked against the configs and tables.*
 

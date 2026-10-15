@@ -1,3 +1,8 @@
+---
+title: "Spotting (feature)"
+parent: "Game Features"
+---
+
 # Wardogs — GameFeature: Spotting Reference (v2)
 *Extracted from cooked game data via CUE4Parse (build `++Wardogs+Live-CL-509546`, UE 5.7.4). Source: `Wardogs/Plugins/GameFeatures/Spotting/` (28 JSON files). Scripted pass over every file, then spot-checked against the reward and tracker tables.*
 

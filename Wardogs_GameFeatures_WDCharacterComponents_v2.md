@@ -1,3 +1,8 @@
+---
+title: "WDCharacterComponents (feature)"
+parent: "Game Features"
+---
+
 # Wardogs — GameFeatures: WDCharacterComponents (v2)
 *Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/GameFeatures/WDCharacterComponents/` — 1 JSON file (`Content/WDCharacterComponents.json`, 2 exports).*
 

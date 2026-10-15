@@ -1,3 +1,8 @@
+---
+title: "Items"
+parent: "Content"
+---
+
 # Wardogs — Items Reference (v2)
 *Extracted from cooked game data exported to JSON, source `Wardogs/Content/Items/` (254 files). Every number below comes from the exported properties; anything the dump does not contain is marked as such.*
 

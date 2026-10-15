@@ -1,0 +1,144 @@
+// Data-plate styling on top of Just the Docs. Boldness lives in headings and tables.
+
+$plate-deep: #191c16;
+$plate-raised: #272c22;
+$plate-stripe: #23281f;
+$rule: #3b4231;
+$khaki-bright: #efe9d0;
+$khaki-dim: #a29e8a;
+$amber: #e0a43a;
+$display: "Barlow Condensed", "Arial Narrow", sans-serif-condensed, sans-serif;
+
+body {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  font-variant-numeric: tabular-nums;
+}
+
+// Prose stays readable even though the content column is wide for tables.
+.main-content {
+  p, ul, ol, blockquote {
+    max-width: 75ch;
+  }
+}
+
+// Headings: condensed, large, tight. h1 sits on a short amber bar like a plate rivet line.
+.main-content {
+  h1, h2, h3, h4 {
+    font-family: $display;
+    color: $khaki-bright;
+    letter-spacing: 0.005em;
+    line-height: 1.1;
+  }
+  h1 {
+    font-size: 2.75rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid $amber;
+    display: inline-block;
+  }
+  h2 {
+    font-size: 1.85rem;
+    font-weight: 600;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid $rule;
+  }
+  h3 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-top: 2rem;
+  }
+  // The italic source line under each page title.
+  h1 + p > em:only-child {
+    color: $khaki-dim;
+    font-size: 0.95rem;
+  }
+}
+
+// Tables are the point of the site: plate header, striped rows, numbers aligned.
+.main-content .table-wrapper {
+  border: 1px solid $rule;
+  border-radius: 4px;
+  box-shadow: none;
+  margin: 1.25rem 0 1.75rem;
+}
+
+.main-content table {
+  font-size: 0.95rem;
+  border-collapse: collapse;
+
+  th, td {
+    border-bottom: 1px solid $rule;
+    border-left: 0;
+    padding: 0.5rem 0.9rem;
+    white-space: normal;
+    min-width: 6rem;
+  }
+  thead th {
+    background: $plate-deep;
+    font-family: $display;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: $khaki-bright;
+    border-bottom: 2px solid $rule;
+  }
+  tbody tr:nth-child(even) td {
+    background: $plate-stripe;
+  }
+  tbody tr:hover td {
+    background: $plate-raised;
+  }
+  strong {
+    color: $khaki-bright;
+  }
+}
+
+// Asset and table names.
+code {
+  font-size: 0.86em;
+  padding: 0.1em 0.35em;
+  border: 1px solid $rule;
+  border-radius: 3px;
+}
+
+pre.highlight,
+div.highlighter-rouge {
+  border: 1px solid $rule;
+  border-radius: 4px;
+}
+
+// Sidebar and header.
+.site-title {
+  font-family: $display;
+  font-weight: 700;
+  font-size: 1.35rem !important;
+  color: $khaki-bright;
+}
+
+.nav-list .nav-list-item .nav-list-link.active {
+  color: $amber;
+  font-weight: 600;
+}
+
+.search-input {
+  font-size: 1rem;
+}
+
+.search-input:focus + .search-label .search-icon {
+  color: $amber;
+}
+
+// Keyboard focus is always visible.
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid $amber;
+  outline-offset: 2px;
+}
+
+.search-result-title {
+  font-family: $display;
+  font-size: 1.05rem;
+}

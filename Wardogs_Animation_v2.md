@@ -1,3 +1,8 @@
+---
+title: "Animation"
+parent: "Content"
+---
+
 # Wardogs: Animation Data Reference (v2)
 *Extracted from cooked game data (`Wardogs/Content/Animation`, 10 files). Motion-matching and mirroring tables are read directly; curve semantics are inferred from asset names unless stated.*
 

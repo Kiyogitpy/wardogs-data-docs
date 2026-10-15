@@ -1,3 +1,8 @@
+---
+title: "PlayerHealthBar (feature)"
+parent: "Game Features"
+---
+
 # Wardogs — GameFeatures: PlayerHealthBar (v2)
 *Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/GameFeatures/PlayerHealthBar/` — 2 JSON files.*
 
