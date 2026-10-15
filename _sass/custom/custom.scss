@@ -15,6 +15,7 @@ $ue-white: #ffffff;
 $ue-blue: #26bbff;
 $radius-panel: 12px;
 $radius-small: 6px;
+$radius-card: 24px;     // the Unreal site's step cards
 
 body {
   font-size: 1rem;
@@ -66,26 +67,27 @@ body {
 }
 
 // Unreal Engine download-page backdrop: a soft teal, indigo and magenta glow across
-// the top of the page that fades into the charcoal by ~40rem down. Drawn behind the
-// content only; the header bar is opaque and covers its top edge.
+// the page below the header bar, fading into the charcoal by ~40rem down. Drawn behind
+// the whole page (not just the content column) so its sides fade into the margins;
+// the sidebar and header bar are opaque and sit over it.
+body::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: $header-height;
+  left: 0;
+  right: 0;
+  height: 52rem;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 22% 70% at 73% 0, rgba(166, 69, 148, 0.32), rgba(166, 69, 148, 0.2) 40%, transparent 78%),
+    radial-gradient(ellipse 24% 72% at 59% 0, rgba(99, 69, 175, 0.26), rgba(99, 69, 175, 0.15) 40%, transparent 78%),
+    radial-gradient(ellipse 20% 65% at 46% 0, rgba(30, 120, 175, 0.12), transparent 75%);
+}
+
 .main {
   position: relative;
   isolation: isolate;
-
-  &::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 52rem;
-    pointer-events: none;
-    background:
-      radial-gradient(ellipse 34% 70% at 80% 3.75rem, rgba(166, 69, 148, 0.32), rgba(166, 69, 148, 0.2) 40%, transparent 78%),
-      radial-gradient(ellipse 36% 72% at 57% 3.75rem, rgba(99, 69, 175, 0.26), rgba(99, 69, 175, 0.15) 40%, transparent 78%),
-      radial-gradient(ellipse 30% 65% at 36% 3.75rem, rgba(30, 120, 175, 0.12), transparent 75%);
-  }
 }
 
 // Tables sit on rounded raised panels.
@@ -497,6 +499,26 @@ $ue-btn-grey-hover: #46474a;
   &:hover { background: $ue-btn-grey-hover; background-image: none; text-decoration: none; }
 }
 
+// Gradient pills, as the Unreal site's "STEP 1/2/3" labels: one per home section.
+.main-content .wd-kicker {
+  margin: 3.5rem 0 -2.25rem;
+}
+.wd-pill {
+  display: inline-block;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  color: #000;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  &.wd-pill-1 { background: linear-gradient(90deg, #4ebefe, #c0bbf9); }
+  &.wd-pill-2 { background: linear-gradient(90deg, #9791f8, #e0b0e2); }
+  &.wd-pill-3 { background: linear-gradient(90deg, #c576e7, #f0a6bc); }
+}
+
 .main-content .wd-section-intro {
   color: $ue-text-dim;
   margin-top: -0.25rem;
@@ -513,10 +535,10 @@ $ue-btn-grey-hover: #46474a;
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
-  padding: 1.25rem 1.35rem;
+  padding: 1.5rem 1.6rem;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: $radius-panel;
+  border-radius: $radius-card;
   color: $ue-text;
   text-decoration: none;
   transition: background-color 0.15s ease, border-color 0.15s ease;

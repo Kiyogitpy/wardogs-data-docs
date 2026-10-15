@@ -19,6 +19,7 @@ nav_order: 1
 - **Items, Weapons and Vehicles appear twice.** Content holds the base definitions; Game Features holds most of the per-item, per-weapon and per-vehicle data.
 - **Every page ends with its limitations:** what was inferred, and what the game files don't contain.
 
+<div class="wd-kicker"><span class="wd-pill wd-pill-1">28 pages</span></div>
 <h2 id="content">Content</h2>
 
 <p class="wd-section-intro">Core content folders: weapons, items, vehicles, audio, UI, environment, VFX and maps.</p>
@@ -54,6 +55,7 @@ nav_order: 1
 <a class="wd-card" href="Wardogs_Weapons_v2.html"><span class="wd-card-name">Weapons</span><span class="wd-card-desc">Weapon Stat Assets, Aim Sway Curve Families, ADS Curves, Input Actions and Mapping Contexts</span></a>
 </div>
 
+<div class="wd-kicker"><span class="wd-pill wd-pill-2">37 pages</span></div>
 <h2 id="game-features">Game Features</h2>
 
 <p class="wd-section-intro">Feature plugins. Most per-weapon, per-vehicle and per-item data lives here, along with challenges, control zones, spotting, AI and PvE.</p>
@@ -98,6 +100,7 @@ nav_order: 1
 <a class="wd-card" href="Wardogs_GameFeatures_WorldFeatures_v2.html"><span class="wd-card-name">WorldFeatures</span><span class="wd-card-desc">What This Folder Holds, HotZoneMagnet, Lootable, SpawnZoneTest</span></a>
 </div>
 
+<div class="wd-kicker"><span class="wd-pill wd-pill-3">3 pages</span></div>
 <h2 id="plugins">Plugins</h2>
 
 <p class="wd-section-intro">Wardogs engine plugins: aim assist, framework settings and spectator camera.</p>
