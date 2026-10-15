@@ -1,0 +1,108 @@
+--- export: UDataTable / DT_InfantryData_AmmoTypeEffectivenessPen ---
+{
+  "Type": "DataTable",
+  "Name": "DT_InfantryData_AmmoTypeEffectivenessPen",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_AmmoTypeEffectivenessPen",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDAmmoTypeEffectivenessData'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Meta.Damage.AmmoModifier.FMJ": {
+      "Modifier": 1.0,
+      "_aaabckamhakccdhbomlfj_$A0C70A22371ECB59$_$18$": [],
+      "Tag": {
+        "TagName": "Meta.Damage.AmmoModifier.FMJ"
+      }
+    },
+    "Meta.Damage.AmmoModifier.Tracer": {
+      "Modifier": 1.0,
+      "_aaabckamhakccdhbomlfj_$A0C70A22371ECB59$_$18$": [],
+      "Tag": {
+        "TagName": "Meta.Damage.AmmoModifier.Tracer"
+      }
+    },
+    "Meta.Damage.AmmoModifier.HollowPoint": {
+      "Modifier": 1.5,
+      "_aaabckamhakccdhbomlfj_$A0C70A22371ECB59$_$18$": [],
+      "Tag": {
+        "TagName": "Meta.Damage.AmmoModifier.HollowPoint"
+      }
+    },
+    "Meta.Damage.AmmoModifier.HollowPoint.Tracer": {
+      "Modifier": 1.5,
+      "_aaabckamhakccdhbomlfj_$A0C70A22371ECB59$_$18$": [],
+      "Tag": {
+        "TagName": "Meta.Damage.AmmoModifier.HollowPoint.Tracer"
+      }
+    },
+    "Meta.Damage.AmmoModifier.ArmorPiercing": {
+      "Modifier": 0.3,
+      "_aaabckamhakccdhbomlfj_$A0C70A22371ECB59$_$18$": [
+        {
+          "Key": {
+            "TagName": "Meta.Damage.Arms.Small"
+          },
+          "Value": 0.7
+        },
+        {
+          "Key": {
+            "TagName": "Meta.Damage.Arms.Medium"
+          },
+          "Value": 0.6
+        },
+        {
+          "Key": {
+            "TagName": "Meta.Damage.Arms.High"
+          },
+          "Value": 0.5
+        },
+        {
+          "Key": {
+            "TagName": "Meta.Damage.Arms.Special"
+          },
+          "Value": 1.0
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Damage.AmmoModifier.ArmorPiercing"
+      }
+    },
+    "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer": {
+      "Modifier": 0.3,
+      "_aaabckamhakccdhbomlfj_$A0C70A22371ECB59$_$18$": [
+        {
+          "Key": {
+            "TagName": "Meta.Damage.Arms.Small"
+          },
+          "Value": 0.7
+        },
+        {
+          "Key": {
+            "TagName": "Meta.Damage.Arms.Medium"
+          },
+          "Value": 0.6
+        },
+        {
+          "Key": {
+            "TagName": "Meta.Damage.Arms.High"
+          },
+          "Value": 0.5
+        },
+        {
+          "Key": {
+            "TagName": "Meta.Damage.Arms.Special"
+          },
+          "Value": 1.0
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer"
+      }
+    }
+  }
+}

@@ -1,0 +1,89 @@
+--- export: UObject / AEB_PlayPlayerHitSound_C_0 ---
+{
+  "Type": "AEB_PlayHitConfirmSound_C",
+  "Name": "AEB_PlayPlayerHitSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayHitConfirmSound.AEB_PlayHitConfirmSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UX_Combat_Hitmarker'",
+    "ObjectPath": "/Game/Audio/Events/UX/Combat/AE_UX_Combat_Hitmarker.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayHitConfirmSound_C'Default__AEB_PlayHitConfirmSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayHitConfirmSound.0"
+  },
+  "Properties": {
+    "Flesh": {
+      "ObjectName": "MetaSoundSource'MSS_UX_Combat_Hitmarker_Flesh'",
+      "ObjectPath": "/Game/Audio/UX/Combat/MSS_UX_Combat_Hitmarker_Flesh.0"
+    },
+    "ArmorBlunt": {
+      "ObjectName": "MetaSoundSource'MSS_UX_Combat_Hitmarker_Armor'",
+      "ObjectPath": "/Game/Audio/UX/Combat/MSS_UX_Combat_Hitmarker_Armor.0"
+    },
+    "HelmetBlunt": {
+      "ObjectName": "MetaSoundSource'MSS_UX_Combat_Hitmarker_Armor_Helmet'",
+      "ObjectPath": "/Game/Audio/UX/Combat/MSS_UX_Combat_Hitmarker_Armor_Helmet.0"
+    },
+    "ArmorPenetrate": {
+      "ObjectName": "MetaSoundSource'MSS_UX_Combat_Hitmarker_Armor'",
+      "ObjectPath": "/Game/Audio/UX/Combat/MSS_UX_Combat_Hitmarker_Armor.0"
+    },
+    "HelmetPenetrate": {
+      "ObjectName": "MetaSoundSource'MSS_UX_Combat_Hitmarker_Armor_Helmet'",
+      "ObjectPath": "/Game/Audio/UX/Combat/MSS_UX_Combat_Hitmarker_Armor_Helmet.0"
+    },
+    "BodyArmorBreak": {
+      "ObjectName": "MetaSoundSource'MSS_UX_Combat_Notify_Armor_Break'",
+      "ObjectPath": "/Game/Audio/UX/Combat/MSS_UX_Combat_Notify_Armor_Break.0"
+    },
+    "HelmetBreak": {
+      "ObjectName": "MetaSoundSource'MSS_UX_Combat_Notify_Helmet_Break'",
+      "ObjectPath": "/Game/Audio/UX/Combat/MSS_UX_Combat_Notify_Helmet_Break.0"
+    },
+    "Hitmarker": true,
+    "ContextTag": {
+      "TagName": "Audio.Context.UX.CentralFeedback"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_UX_Combat_Hitmarker ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UX_Combat_Hitmarker",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UX/Combat/AE_UX_Combat_Hitmarker",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UX.Combat.Hitmarker"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_PlayHitConfirmSound_C'AE_UX_Combat_Hitmarker:AEB_PlayPlayerHitSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/UX/Combat/AE_UX_Combat_Hitmarker.0"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_UX_Combat_Hitmarker:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Game/Audio/Events/UX/Combat/AE_UX_Combat_Hitmarker.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UX_Combat_Hitmarker'",
+    "ObjectPath": "/Game/Audio/Events/UX/Combat/AE_UX_Combat_Hitmarker.1"
+  },
+  "Properties": {
+    "ParameterName": "Trigger",
+    "ContextTag": {
+      "TagName": "Audio.Context.UX.CentralFeedback"
+    }
+  }
+}

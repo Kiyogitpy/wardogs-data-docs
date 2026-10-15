@@ -1,0 +1,122 @@
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MusicTape_04'",
+    "ObjectPath": "/MusicTape_04/Data/ID_MusicTape_04.2"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/MusicTape/Meshs/SM_CassetteTape_01.SM_CassetteTape_01",
+      "SubPathString": ""
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_CassetteTape_04'",
+        "ObjectPath": "/MusicTape/Materials/MI_CassetteTape_04.0"
+      }
+    ],
+    "RelativeRotation": {
+      "Pitch": 90.0,
+      "Yaw": 0.0,
+      "Roll": 0.0
+    },
+    "bOverrideDroppedRelativeLocation": true,
+    "OverridedRelativeLocation": {
+      "X": 1.0,
+      "Y": 0.0,
+      "Z": 0.02
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MusicTape_04'",
+    "ObjectPath": "/MusicTape_04/Data/ID_MusicTape_04.2"
+  },
+  "Properties": {
+    "Weight": 0.01
+  }
+}
+--- export: UPrimaryDataAsset / ID_MusicTape_04 ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_MusicTape_04",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/MusicTape_04/Data/ID_MusicTape_04",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.MusicTape.04"
+    },
+    "ItemContext": [
+      "Item.Context.VehicleHifiItem"
+    ],
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_MusicTapes.STRINGS_MusicTapes",
+      "Key": "Item.MusicTape.04",
+      "SourceString": "Ride of the Valkyries - Richard Wagner",
+      "LocalizedString": "Ride of the Valkyries - Richard Wagner"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_MusicTape_04:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/MusicTape_04/Data/ID_MusicTape_04.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_MusicTape_04:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/MusicTape_04/Data/ID_MusicTape_04.1"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_MusicTape_04:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/MusicTape_04/Data/ID_MusicTape_04.0"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_VehicleHifi'ID_MusicTape_04:WDInventoryFragment_VehicleHifi_0'",
+        "ObjectPath": "/MusicTape_04/Data/ID_MusicTape_04.4"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MusicTape_04'",
+    "ObjectPath": "/MusicTape_04/Data/ID_MusicTape_04.2"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'DA_Vehicle_MusicTape_04'",
+      "ObjectPath": "/MusicTape_04/Data/DA_Vehicle_MusicTape_04.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_VehicleHifi_0 ---
+{
+  "Type": "WDInventoryFragment_VehicleHifi",
+  "Name": "WDInventoryFragment_VehicleHifi_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_VehicleHifi'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MusicTape_04'",
+    "ObjectPath": "/MusicTape_04/Data/ID_MusicTape_04.2"
+  },
+  "Properties": {
+    "DurationPadding": 1.2,
+    "DurationAudioAssetSet": {
+      "TagName": "Audio.Asset.Vehicle.Hifi"
+    }
+  }
+}

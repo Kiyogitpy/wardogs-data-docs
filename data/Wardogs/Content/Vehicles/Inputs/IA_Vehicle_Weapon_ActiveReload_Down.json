@@ -1,0 +1,40 @@
+--- export: UDataAsset / IA_Vehicle_Weapon_ActiveReload_Down ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Vehicle_Weapon_ActiveReload_Down",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_ActiveReload_Down",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.WeaponExtension.ActiveReload.Down"
+    },
+    "ActionDescription": {
+      "Namespace": "",
+      "Key": "5CBF5B154E8C04ACAA8E8D8D3F195C52",
+      "SourceString": "Active Reload Binds",
+      "LocalizedString": "Active Reload Binds"
+    },
+    "PlayerMappableKeySettings": {
+      "ObjectName": "BHPlayerMappableKeySettings'IA_Vehicle_Weapon_ActiveReload_Down:BHPlayerMappableKeySettings_0'",
+      "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_ActiveReload_Down.1"
+    }
+  }
+}
+--- export: UObject / BHPlayerMappableKeySettings_0 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_Weapon_ActiveReload_Down'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_ActiveReload_Down.0"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.WeaponExtension.ActiveReload.Down"
+    },
+    "Name": "Input.NamedActions.Vehicle.WeaponExtension.ActiveReload.Down"
+  }
+}

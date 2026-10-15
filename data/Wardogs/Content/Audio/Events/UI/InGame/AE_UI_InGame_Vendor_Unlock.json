@@ -1,0 +1,85 @@
+--- export: UObject / AEB_PlayItemUnlockVendorBark_C_0 ---
+{
+  "Type": "AEB_PlayItemUnlockVendorBark_C",
+  "Name": "AEB_PlayItemUnlockVendorBark_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayItemUnlockVendorBark.AEB_PlayItemUnlockVendorBark_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_InGame_Vendor_Unlock'",
+    "ObjectPath": "/Game/Audio/Events/UI/InGame/AE_UI_InGame_Vendor_Unlock.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayItemUnlockVendorBark_C'Default__AEB_PlayItemUnlockVendorBark_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayItemUnlockVendorBark.0"
+  },
+  "Properties": {
+    "Vendor Bark Delay": 2.0,
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_UI_InGame_Vendor_Unlock ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UI_InGame_Vendor_Unlock",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UI/InGame/AE_UI_InGame_Vendor_Unlock",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.Vendor.Unlock"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_UI_InGame_Vendor_Unlock:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/InGame/AE_UI_InGame_Vendor_Unlock.3"
+      },
+      {
+        "ObjectName": "AEB_PlayItemUnlockVendorBark_C'AE_UI_InGame_Vendor_Unlock:AEB_PlayItemUnlockVendorBark_C_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/InGame/AE_UI_InGame_Vendor_Unlock.0"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_UI_InGame_Vendor_Unlock:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/InGame/AE_UI_InGame_Vendor_Unlock.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_InGame_Vendor_Unlock'",
+    "ObjectPath": "/Game/Audio/Events/UI/InGame/AE_UI_InGame_Vendor_Unlock.1"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Dial.Equipment.Vendor"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_InGame_Vendor_Unlock'",
+    "ObjectPath": "/Game/Audio/Events/UI/InGame/AE_UI_InGame_Vendor_Unlock.1"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UI_Meta_Unlock_Success'",
+      "ObjectPath": "/Game/Audio/UI/Meta/MSS_UI_Meta_Unlock_Success.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

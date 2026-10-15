@@ -1,0 +1,94 @@
+--- export: UDataAsset / DA_Demolition_Corrugated_Metal_01a ---
+{
+  "Type": "BHDemolitionDataAsset",
+  "Name": "DA_Demolition_Corrugated_Metal_01a",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDemolitionDataAsset'",
+  "Package": "/Game/Demolition/DA_Demolition_Corrugated_Metal_01a",
+  "Properties": {
+    "SourceMeshes": [
+      {
+        "Key": "StaticMesh'/Game/Environment/Props/Lumberyard/Demolition/SM_Demolition_Corrugated_Metal_01a.SM_Demolition_Corrugated_Metal_01a'",
+        "Value": {
+          "FarRepresentationMesh": {
+            "AssetPathName": "/Game/Environment/Props/Lumberyard/Demolition/SM_FarRep_Demolition_Corrugated_Metal_01a.SM_FarRep_Demolition_Corrugated_Metal_01a",
+            "SubPathString": ""
+          },
+          "RemnantMeshes": null,
+          "Remnant_BaseCPD": {
+            "CustomPrimitiveColor": {
+              "R": 0.098958,
+              "G": 0.081839,
+              "B": 0.069064,
+              "A": 0.0,
+              "Hex": "58514A"
+            },
+            "CustomPrimitiveValue": [
+              0.0,
+              1.0
+            ]
+          },
+          "FarRepresentationData": {
+            "Offset": {
+              "Rotation": {
+                "X": 0.0,
+                "Y": 0.0,
+                "Z": 0.0,
+                "W": 1.0,
+                "IsNormalized": true,
+                "Size": 1.0,
+                "SizeSquared": 1.0
+              },
+              "Translation": {
+                "X": 0.0,
+                "Y": 0.0,
+                "Z": 0.0
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            },
+            "CPD": {
+              "CustomPrimitiveColor": {
+                "R": 0.098958,
+                "G": 0.081839,
+                "B": 0.069064,
+                "A": 0.0,
+                "Hex": "58514A"
+              },
+              "CustomPrimitiveValue": []
+            }
+          }
+        }
+      }
+    ],
+    "DemolitionComponentSettings": {
+      "ObjectName": "BHDemolitionComponentSettings'DA_Demolition_CS_ShadowCacheStatic'",
+      "ObjectPath": "/Game/Demolition/ComponentSettings/DA_Demolition_CS_ShadowCacheStatic.0"
+    },
+    "DemolitionRuleSet": {
+      "ObjectName": "BHDemolitionRuleset'BH_Demolition_RS_Everything'",
+      "ObjectPath": "/Game/Demolition/RuleSets/BH_Demolition_RS_Everything.3"
+    },
+    "PermittedZones": [
+      "Demolition.Zone.Important",
+      "Demolition.Zone.Distant"
+    ],
+    "DemolitionVFX": [
+      {
+        "AssetPathName": "/Game/VFX/Environmental/Destruction/Demolition/Metal/NS_MetalGeneralSmash.NS_MetalGeneralSmash",
+        "SubPathString": ""
+      }
+    ],
+    "CrosstalkEventTag": {
+      "TagName": "Audio.Event.Prop.Demolition.FenceMetalSheet"
+    },
+    "DemolitionFragments": [
+      {
+        "RestitutionImpulseMultiplier": 0.2
+      }
+    ]
+  }
+}

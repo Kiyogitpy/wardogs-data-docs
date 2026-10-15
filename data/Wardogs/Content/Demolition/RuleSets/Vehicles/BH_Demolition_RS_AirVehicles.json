@@ -1,0 +1,37 @@
+--- export: UObject / BHDemolitionRule_Vehicle_0 ---
+{
+  "Type": "BHDemolitionRule_Vehicle",
+  "Name": "BHDemolitionRule_Vehicle_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDemolitionRule_Vehicle'",
+  "Outer": {
+    "ObjectName": "BHDemolitionRuleset'BH_Demolition_RS_AirVehicles'",
+    "ObjectPath": "/Game/Demolition/RuleSets/Vehicles/BH_Demolition_RS_AirVehicles.1"
+  },
+  "Properties": {
+    "PermittedVehicles": [
+      "Vehicle.Variant.Air.Airplane.FWG.Default",
+      "Vehicle.Variant.Air.Rotary.Littlebird.Default",
+      "Vehicle.Variant.Air.Rotary.Littlebird.MountedMachineGuns",
+      "Vehicle.Variant.Air.Rotary.Havoc.Default",
+      "Vehicle.Variant.Air.Rotary.ROT_01.Default",
+      "Vehicle.Variant.Air.Rotary.ROT_01.MountedMachineGuns"
+    ],
+    "bPermitOverlaps": true,
+    "bPermitBlockingHits": true
+  }
+}
+--- export: UDataAsset / BH_Demolition_RS_AirVehicles ---
+{
+  "Type": "BHDemolitionRuleset",
+  "Name": "BH_Demolition_RS_AirVehicles",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDemolitionRuleset'",
+  "Package": "/Game/Demolition/RuleSets/Vehicles/BH_Demolition_RS_AirVehicles",
+  "Properties": {
+    "Rule": {
+      "ObjectName": "BHDemolitionRule_Vehicle'BH_Demolition_RS_AirVehicles:BHDemolitionRule_Vehicle_0'",
+      "ObjectPath": "/Game/Demolition/RuleSets/Vehicles/BH_Demolition_RS_AirVehicles.0"
+    }
+  }
+}

@@ -1,0 +1,119 @@
+--- export: UPrimaryDataAsset / AE_Weapon_Claymore_Explosion ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_Claymore_Explosion",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Claymore/Audio/Events/AE_Weapon_Claymore_Explosion",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.Throwable.Claymore.Explosion"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings'AE_Weapon_Claymore_Explosion:CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings_0'",
+        "ObjectPath": "/Claymore/Audio/Events/AE_Weapon_Claymore_Explosion.3"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Weapon_Claymore_Explosion:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Claymore/Audio/Events/AE_Weapon_Claymore_Explosion.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Weapon_Claymore_Explosion:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Claymore/Audio/Events/AE_Weapon_Claymore_Explosion.2"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorApplyImpulseResonance'AE_Weapon_Claymore_Explosion:WDAudioEventBehaviorApplyImpulseResonance_0'",
+        "ObjectPath": "/Claymore/Audio/Events/AE_Weapon_Claymore_Explosion.4"
+      }
+    ],
+    "_aaabhonahgpdbjealfaaa_$ED076F31940B5000$_$23$": 405.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Claymore_Explosion'",
+    "ObjectPath": "/Claymore/Audio/Events/AE_Weapon_Claymore_Explosion.0"
+  },
+  "Properties": {
+    "AttachmentOffset": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 15.0
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Claymore.Explosion"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Claymore_Explosion'",
+    "ObjectPath": "/Claymore/Audio/Events/AE_Weapon_Claymore_Explosion.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Weapon_Throwable_Claymore_Explosion_Preset'",
+      "ObjectPath": "/Claymore/Audio/MSS/MSS_Weapon_Throwable_Claymore_Explosion_Preset.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Claymore.Explosion"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings",
+  "Name": "CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Claymore_Explosion'",
+    "ObjectPath": "/Claymore/Audio/Events/AE_Weapon_Claymore_Explosion.0"
+  },
+  "Properties": {
+    "ExpirationDelay": 10.0,
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Claymore.Explosion"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviorApplyImpulseResonance_0 ---
+{
+  "Type": "WDAudioEventBehaviorApplyImpulseResonance",
+  "Name": "WDAudioEventBehaviorApplyImpulseResonance_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorApplyImpulseResonance'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Claymore_Explosion'",
+    "ObjectPath": "/Claymore/Audio/Events/AE_Weapon_Claymore_Explosion.0"
+  },
+  "Properties": {
+    "DefaultResonanceRange": 1500.0,
+    "IdImpulseProperties": [
+      {
+        "Key": {
+          "TagName": "Id.Item.Claymore"
+        },
+        "Value": {
+          "ResonanceRange": 5000.0,
+          "VolumeScaling": 0.5
+        }
+      }
+    ],
+    "CollisionChannel": "ECollisionChannel::ECC_GameTraceChannel12",
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Claymore.Explosion"
+    }
+  }
+}

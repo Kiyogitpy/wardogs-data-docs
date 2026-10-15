@@ -1,0 +1,154 @@
+--- export: UDataAsset / DA_Vehiclesmith_LandItemSelect ---
+{
+  "Type": "WDUIItemsmithItemSelectData",
+  "Name": "DA_Vehiclesmith_LandItemSelect",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIItemsmithItemSelectData'",
+  "Package": "/Vehiclesmith/UI/ItemSelect/Data/DA_Vehiclesmith_LandItemSelect",
+  "Properties": {
+    "PlatformViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithPlatformViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Itemsmith/UI/SharedWidgets/Platform/Data/DA_Itemsmith_Platform.DA_Itemsmith_Platform",
+        "SubPathString": ""
+      }
+    },
+    "ArchetypeTabsViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithTabGroupViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Itemsmith/UI/SharedWidgets/TabGroup/Data/DA_Itemsmith_TabGroup.DA_Itemsmith_TabGroup",
+        "SubPathString": ""
+      }
+    },
+    "DefaultArchetype": {
+      "TagName": "Vehicle.Archetype.Land.Wheeled"
+    },
+    "BrowserFilters": [
+      {
+        "ObjectName": "WDUIVehiclesmithFavouritedArchetypeFilter'DA_Vehiclesmith_LandItemSelect:WDUIVehiclesmithFavouritedArchetypeFilter_0'",
+        "ObjectPath": "/Vehiclesmith/UI/ItemSelect/Data/DA_Vehiclesmith_LandItemSelect.3"
+      },
+      {
+        "ObjectName": "WDUIVehiclesmithArchetypeFilter'DA_Vehiclesmith_LandItemSelect:WDUIVehiclesmithArchetypeFilter_0'",
+        "ObjectPath": "/Vehiclesmith/UI/ItemSelect/Data/DA_Vehiclesmith_LandItemSelect.1"
+      },
+      {
+        "ObjectName": "WDUIVehiclesmithArchetypeFilter'DA_Vehiclesmith_LandItemSelect:WDUIVehiclesmithArchetypeFilter_1'",
+        "ObjectPath": "/Vehiclesmith/UI/ItemSelect/Data/DA_Vehiclesmith_LandItemSelect.2"
+      }
+    ],
+    "CameraMode": "EItemsmithCameraMode::FixedSideOn",
+    "CameraFocusOffset": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 5.5
+    },
+    "InputMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_Itemsmith_ItemSelect'",
+      "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_ItemSelect.0"
+    },
+    "InputMappingContextPriority": 11
+  }
+}
+--- export: UObject / WDUIVehiclesmithArchetypeFilter_0 ---
+{
+  "Type": "WDUIVehiclesmithArchetypeFilter",
+  "Name": "WDUIVehiclesmithArchetypeFilter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIVehiclesmithArchetypeFilter'",
+  "Outer": {
+    "ObjectName": "WDUIItemsmithItemSelectData'DA_Vehiclesmith_LandItemSelect'",
+    "ObjectPath": "/Vehiclesmith/UI/ItemSelect/Data/DA_Vehiclesmith_LandItemSelect.0"
+  },
+  "Properties": {
+    "FilterIdTag": {
+      "TagName": "Vehicle.Archetype.Land.Wheeled"
+    },
+    "FilterTitleText": {
+      "TableId": "/Vehiclesmith/UI/ItemSelect/Data/STRINGS_Vehiclesmith_ItemSelect.STRINGS_Vehiclesmith_ItemSelect",
+      "Key": "Archetype.Land.Wheeled",
+      "SourceString": null,
+      "LocalizedString": ""
+    },
+    "ResultViewModelData": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithBrowserViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Vehiclesmith/UI/ItemSelect/Data/DA_Vehiclesmith_BrowserList.DA_Vehiclesmith_BrowserList",
+        "SubPathString": ""
+      }
+    }
+  }
+}
+--- export: UObject / WDUIVehiclesmithArchetypeFilter_1 ---
+{
+  "Type": "WDUIVehiclesmithArchetypeFilter",
+  "Name": "WDUIVehiclesmithArchetypeFilter_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIVehiclesmithArchetypeFilter'",
+  "Outer": {
+    "ObjectName": "WDUIItemsmithItemSelectData'DA_Vehiclesmith_LandItemSelect'",
+    "ObjectPath": "/Vehiclesmith/UI/ItemSelect/Data/DA_Vehiclesmith_LandItemSelect.0"
+  },
+  "Properties": {
+    "FilterIdTag": {
+      "TagName": "Vehicle.Archetype.Land.Tracked"
+    },
+    "FilterTitleText": {
+      "TableId": "/Vehiclesmith/UI/ItemSelect/Data/STRINGS_Vehiclesmith_ItemSelect.STRINGS_Vehiclesmith_ItemSelect",
+      "Key": "Archetype.Land.Tracked",
+      "SourceString": null,
+      "LocalizedString": ""
+    },
+    "ResultViewModelData": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithBrowserViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Vehiclesmith/UI/ItemSelect/Data/DA_Vehiclesmith_BrowserList.DA_Vehiclesmith_BrowserList",
+        "SubPathString": ""
+      }
+    }
+  }
+}
+--- export: UObject / WDUIVehiclesmithFavouritedArchetypeFilter_0 ---
+{
+  "Type": "WDUIVehiclesmithFavouritedArchetypeFilter",
+  "Name": "WDUIVehiclesmithFavouritedArchetypeFilter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIVehiclesmithFavouritedArchetypeFilter'",
+  "Outer": {
+    "ObjectName": "WDUIItemsmithItemSelectData'DA_Vehiclesmith_LandItemSelect'",
+    "ObjectPath": "/Vehiclesmith/UI/ItemSelect/Data/DA_Vehiclesmith_LandItemSelect.0"
+  },
+  "Properties": {
+    "FilterIdTag": {
+      "TagName": "Vehicle.Archetype.Land"
+    },
+    "FilterTitleText": {
+      "TableId": "/Itemsmith/UI/Data/STRINGS_Itemsmith.STRINGS_Itemsmith",
+      "Key": "Itemsmith.ItemSelect.TabGroup.Favourite",
+      "SourceString": null,
+      "LocalizedString": ""
+    },
+    "ResultViewModelData": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithBrowserViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Vehiclesmith/UI/ItemSelect/Data/DA_Vehiclesmith_BrowserList.DA_Vehiclesmith_BrowserList",
+        "SubPathString": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,150 @@
+--- export: UDataAsset / DA_Demolition_SmallMetalFence_1m_01 ---
+{
+  "Type": "BHDemolitionDataAsset",
+  "Name": "DA_Demolition_SmallMetalFence_1m_01",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDemolitionDataAsset'",
+  "Package": "/Game/Demolition/DA_Demolition_SmallMetalFence_1m_01",
+  "Properties": {
+    "SourceMeshes": [
+      {
+        "Key": "StaticMesh'/Game/Environment/Props/Walls_and_Fences/Decorative/Fence_Decorative_Residential_01/SM_Fence_Decorative_Residential_1m_Straight_01a.SM_Fence_Decorative_Residential_1m_Straight_01a'",
+        "Value": {
+          "FarRepresentationMesh": {
+            "AssetPathName": "/Game/Environment/Props/Walls_and_Fences/Decorative/Fence_Decorative_Residential_01/Demolition/SM_FarRep_Fence_Decorative_Residential_1m.SM_FarRep_Fence_Decorative_Residential_1m",
+            "SubPathString": ""
+          },
+          "RemnantMeshes": null,
+          "Remnant_BaseCPD": {
+            "CustomPrimitiveColor": {
+              "R": 0.152926,
+              "G": 0.191202,
+              "B": 0.215861,
+              "A": 0.0,
+              "Hex": "6D7980"
+            },
+            "CustomPrimitiveValue": [
+              0.0,
+              1.0
+            ]
+          },
+          "FarRepresentationData": {
+            "Offset": {
+              "Rotation": {
+                "X": 0.0,
+                "Y": 0.0,
+                "Z": 0.0,
+                "W": 1.0,
+                "IsNormalized": true,
+                "Size": 1.0,
+                "SizeSquared": 1.0
+              },
+              "Translation": {
+                "X": 0.0,
+                "Y": 0.0,
+                "Z": 0.0
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            },
+            "CPD": {
+              "CustomPrimitiveColor": {
+                "R": 0.152926,
+                "G": 0.191202,
+                "B": 0.215861,
+                "A": 0.0,
+                "Hex": "6D7980"
+              },
+              "CustomPrimitiveValue": []
+            }
+          }
+        }
+      },
+      {
+        "Key": "StaticMesh'/Game/Environment/Props/Walls_and_Fences/Decorative/Fence_Decorative_Residential_01/SM_Fence_Decorative_Residential_1m_Straight_01b.SM_Fence_Decorative_Residential_1m_Straight_01b'",
+        "Value": {
+          "FarRepresentationMesh": {
+            "AssetPathName": "/Game/Environment/Props/Walls_and_Fences/Decorative/Fence_Decorative_Residential_01/Demolition/SM_FarRep_Fence_Decorative_Residential_1m.SM_FarRep_Fence_Decorative_Residential_1m",
+            "SubPathString": ""
+          },
+          "RemnantMeshes": null,
+          "Remnant_BaseCPD": {
+            "CustomPrimitiveColor": {
+              "R": 0.152926,
+              "G": 0.191202,
+              "B": 0.215861,
+              "A": 0.0,
+              "Hex": "6D7980"
+            },
+            "CustomPrimitiveValue": [
+              0.0,
+              1.0
+            ]
+          },
+          "FarRepresentationData": {
+            "Offset": {
+              "Rotation": {
+                "X": 0.0,
+                "Y": 0.0,
+                "Z": 0.0,
+                "W": 1.0,
+                "IsNormalized": true,
+                "Size": 1.0,
+                "SizeSquared": 1.0
+              },
+              "Translation": {
+                "X": 0.0,
+                "Y": 0.0,
+                "Z": 0.0
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            },
+            "CPD": {
+              "CustomPrimitiveColor": {
+                "R": 0.152926,
+                "G": 0.191202,
+                "B": 0.215861,
+                "A": 0.0,
+                "Hex": "6D7980"
+              },
+              "CustomPrimitiveValue": []
+            }
+          }
+        }
+      }
+    ],
+    "DemolitionComponentSettings": {
+      "ObjectName": "BHDemolitionComponentSettings'DA_Demolition_CS_Default'",
+      "ObjectPath": "/Game/Demolition/ComponentSettings/DA_Demolition_CS_Default.0"
+    },
+    "DemolitionRuleSet": {
+      "ObjectName": "BHDemolitionRuleset'BH_Demolition_RS_Everything'",
+      "ObjectPath": "/Game/Demolition/RuleSets/BH_Demolition_RS_Everything.3"
+    },
+    "PermittedZones": [
+      "Demolition.Zone.Important",
+      "Demolition.Zone.Distant"
+    ],
+    "DemolitionVFX": [
+      {
+        "AssetPathName": "/Game/VFX/Environmental/Destruction/Demolition/Metal/NS_MetalGeneralSmash.NS_MetalGeneralSmash",
+        "SubPathString": ""
+      }
+    ],
+    "CrosstalkEventTag": {
+      "TagName": "Audio.Event.Prop.Demolition.FenceMetalSheet"
+    },
+    "DemolitionFragments": [
+      {
+        "RestitutionImpulseMultiplier": 0.3
+      }
+    ]
+  }
+}

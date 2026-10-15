@@ -1,0 +1,896 @@
+--- export: UDataTable / DT_LoadingScreenTips ---
+{
+  "Type": "DataTable",
+  "Name": "DT_LoadingScreenTips",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/UI/Features/Frontend/LoadingScreen/Data/DT_LoadingScreenTips",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDLoadingScreenTips'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Tip.Economy.Cash.TeamPlay": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Economy.Cash.TeamPlay",
+        "SourceString": "Earning cash is easy if you're a team player. Playing the objective and helping your team rewards you with cash.",
+        "LocalizedString": "Earning cash is easy if you're a team player. Playing the objective and helping your team rewards you with cash."
+      }
+    },
+    "Tip.Items.Weapons.FreeRifle": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Items.Weapons.FreeRifle",
+        "SourceString": "Low on cash? Each faction provides a free rifle at the equipment vendor.",
+        "LocalizedString": "Low on cash? Each faction provides a free rifle at the equipment vendor."
+      }
+    },
+    "Tip.ControlZone.FactionCount": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.ControlZone.FactionCount",
+        "SourceString": "Every player in the Control Zone contributes 1 point to their team's Faction Count. The team with the highest total, controls the Control Zone.",
+        "LocalizedString": "Every player in the Control Zone contributes 1 point to their team's Faction Count. The team with the highest total, controls the Control Zone."
+      }
+    },
+    "Tip.ControlZone.HotZone": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.ControlZone.HotZone",
+        "SourceString": "The Hot Zone (HZ) is a roaming sub-zone inside the Control Zone. Players in the Hot Zone count for twice the Faction Count and earn extra cash.",
+        "LocalizedString": "The Hot Zone (HZ) is a roaming sub-zone inside the Control Zone. Players in the Hot Zone count for twice the Faction Count and earn extra cash."
+      }
+    },
+    "Tip.Travel.Squads.FriendPings": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Travel.Squads.FriendPings",
+        "SourceString": "Create a squad with your friends to see each others pings and enable squad chat.",
+        "LocalizedString": "Create a squad with your friends to see each others pings and enable squad chat."
+      }
+    },
+    "Tip.Inventory.Ammo.Consolidate": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Inventory.Ammo.Consolidate",
+        "SourceString": "Use the ammo consolidation button in your inventory to combine rounds of the same calibre, maximising the number of full magazines.",
+        "LocalizedString": "Use the ammo consolidation button in your inventory to combine rounds of the same calibre, maximising the number of full magazines."
+      }
+    },
+    "Tip.Combat.Weapons.FireModes": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Combat.Weapons.FireModes",
+        "SourceString": "Many weapons support multiple fire modes (e.g., semi-auto, burst, full-auto). Choose the mode that suits the fight.",
+        "LocalizedString": "Many weapons support multiple fire modes (e.g., semi-auto, burst, full-auto). Choose the mode that suits the fight."
+      }
+    },
+    "Tip.Combat.Weapons.Zeroing": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Combat.Weapons.Zeroing",
+        "SourceString": "Zeroing makes the reticle accurate at a chosen range. While aiming down sight, adjust the zero up or down to match your target distance.",
+        "LocalizedString": "Zeroing makes the reticle accurate at a chosen range. While aiming down sight, adjust the zero up or down to match your target distance."
+      }
+    },
+    "Tip.ControlZone.HotZone.Rewards": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.ControlZone.HotZone.Rewards",
+        "SourceString": "The Hot Zone counts you as 2 players and rewards bonus cash for every teamplay action.",
+        "LocalizedString": "The Hot Zone counts you as 2 players and rewards bonus cash for every teamplay action."
+      }
+    },
+    "Tip.Economy.Cash.SpendAtVendors": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Economy.Cash.SpendAtVendors",
+        "SourceString": "Spend cash at Vendors to buy items and vehicles. Short on funds? Pick up the free weapon and go get some kills!",
+        "LocalizedString": "Spend cash at Vendors to buy items and vehicles. Short on funds? Pick up the free weapon and go get some kills!"
+      }
+    },
+    "Tip.Economy.Cash.Persistent": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Economy.Cash.Persistent",
+        "SourceString": "The cash you earn in a match is persistent. Whatever you leave the match with, is what you have to spend in the next match.",
+        "LocalizedString": "The cash you earn in a match is persistent. Whatever you leave the match with, is what you have to spend in the next match."
+      }
+    },
+    "Tip.Movement.Mantle": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Movement.Mantle",
+        "SourceString": "You can mantle over objects of different heights; the higher the obstacle, the longer the mantle takes.",
+        "LocalizedString": "You can mantle over objects of different heights; the higher the obstacle, the longer the mantle takes."
+      }
+    },
+    "Tip.Interaction.WorldObjects": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Interaction.WorldObjects",
+        "SourceString": "You can interact with objects in the world, such as doors. When several actions are available, an options list is shown so you can pick one.",
+        "LocalizedString": "You can interact with objects in the world, such as doors. When several actions are available, an options list is shown so you can pick one."
+      }
+    },
+    "Tip.Health.HealthBar": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Health.HealthBar",
+        "SourceString": "Your current health is displayed in a bar at the bottom right of the screen. Keep an eye on this whilst in combat.",
+        "LocalizedString": "Your current health is displayed in a bar at the bottom right of the screen. Keep an eye on this whilst in combat."
+      }
+    },
+    "Tip.Health.CriticalState": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Health.CriticalState",
+        "SourceString": "When your health reaches zero, you enter the critical state. If you aren't revived in time, you'll bleed out and respawn at Headquarters.",
+        "LocalizedString": "When your health reaches zero, you enter the critical state. If you aren't revived in time, you'll bleed out and respawn at Headquarters."
+      }
+    },
+    "Tip.Health.Revive": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Health.Revive",
+        "SourceString": "If a friendly player is in a critical state, get within range, interact, and select Revive. Reviving with no medical gear takes time, so watch your surroundings.",
+        "LocalizedString": "If a friendly player is in a critical state, get within range, interact, and select Revive. Reviving with no medical gear takes time, so watch your surroundings."
+      }
+    },
+    "Tip.Inventory.Ammo.Combine": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Inventory.Ammo.Combine",
+        "SourceString": "Use the combine ammo button in your inventory to combine rounds of the same calibre, maximising the number of full magazines.",
+        "LocalizedString": "Use the combine ammo button in your inventory to combine rounds of the same calibre, maximising the number of full magazines."
+      }
+    },
+    "Tip.Economy.Loadout.Invest": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Economy.Loadout.Invest",
+        "SourceString": "The most expensive loadout isn't always the most profitable. Tactically invest when you think you need too.",
+        "LocalizedString": "The most expensive loadout isn't always the most profitable. Tactically invest when you think you need too."
+      }
+    },
+    "Tip.Travel.Misc.RequestSupport": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Travel.Misc.RequestSupport",
+        "SourceString": "Requesting ammo / healing / supplies / backup via the ping wheel lets your team know you need support at your current location.",
+        "LocalizedString": "Requesting ammo / healing / supplies / backup via the ping wheel lets your team know you need support at your current location."
+      }
+    },
+    "Tip.Health.ProximityHelp": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Health.ProximityHelp",
+        "SourceString": "Need healing / ammo? Use proximity chat to ask for help from teammates, or loot an enemy corpse.",
+        "LocalizedString": "Need healing / ammo? Use proximity chat to ask for help from teammates, or loot an enemy corpse."
+      }
+    },
+    "Tip.Travel.Misc.RequestPickup": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Travel.Misc.RequestPickup",
+        "SourceString": "Stuck in spawn with no cash? Request a pickup via the ping wheel to let your team know.",
+        "LocalizedString": "Stuck in spawn with no cash? Request a pickup via the ping wheel to let your team know."
+      }
+    },
+    "Tip.Travel.Misc.AcknowledgeRequest": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Travel.Misc.AcknowledgeRequest",
+        "SourceString": "You can acknowledge a distant players request for revive / health / pickup by pinging their request icon above their head or pinging their request icon on the tactical map.",
+        "LocalizedString": "You can acknowledge a distant players request for revive / health / pickup by pinging their request icon above their head or pinging their request icon on the tactical map."
+      }
+    },
+    "Tip.Combat.UseCover": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Combat.UseCover",
+        "SourceString": "Open space in the Control Zone is lethal, always try and keep cover nearby.",
+        "LocalizedString": "Open space in the Control Zone is lethal, always try and keep cover nearby."
+      }
+    },
+    "Tip.SpawnVehicle.KeepSafe": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.SpawnVehicle.KeepSafe",
+        "SourceString": "Spawn Vehicles are extremely advantageous for your team. Keep them hidden, keep them secret, keep them safe.",
+        "LocalizedString": "Spawn Vehicles are extremely advantageous for your team. Keep them hidden, keep them secret, keep them safe."
+      }
+    },
+    "Tip.Health.Resuscitator": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Health.Resuscitator",
+        "SourceString": "You can add one free resuscitator to your loadout per life - They help keep your team up and reward cash on revive.",
+        "LocalizedString": "You can add one free resuscitator to your loadout per life - They help keep your team up and reward cash on revive."
+      }
+    },
+    "Tip.Health.DragToSafety": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Health.DragToSafety",
+        "SourceString": "Dragging teammates to safety before reviving them is often a safer strategy than risking a revive out in the open.",
+        "LocalizedString": "Dragging teammates to safety before reviving them is often a safer strategy than risking a revive out in the open."
+      }
+    },
+    "Tip.Items.Gear.GhillieSuit": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Items.Gear.GhillieSuit",
+        "SourceString": "Ghillie suits are extremely effective at hiding your location in forested areas. Not so useful in urban combat.",
+        "LocalizedString": "Ghillie suits are extremely effective at hiding your location in forested areas. Not so useful in urban combat."
+      }
+    },
+    "Tip.Economy.Armour.WaitForRevive": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Economy.Armour.WaitForRevive",
+        "SourceString": "Your armour will likely outlive you. You might be throwing money away by respawning - consider waiting for a revive before giving up immediately.",
+        "LocalizedString": "Your armour will likely outlive you. You might be throwing money away by respawning - consider waiting for a revive before giving up immediately."
+      }
+    },
+    "Tip.Combat.FriendlyFire": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Combat.FriendlyFire",
+        "SourceString": "Remember: friendly fire, isn't friendly.",
+        "LocalizedString": "Remember: friendly fire, isn't friendly."
+      }
+    },
+    "Tip.Travel.Map.MinimapZoom": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Travel.Map.MinimapZoom",
+        "SourceString": "You can change the zoom level of the minimap on the fly - check your key bindings!",
+        "LocalizedString": "You can change the zoom level of the minimap on the fly - check your key bindings!"
+      }
+    },
+    "Tip.Items.Gear.GhillieSuit.Infrared": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Items.Gear.GhillieSuit.Infrared",
+        "SourceString": "The ghillie suit makes you invisible to Infrared Binoculars.",
+        "LocalizedString": "The ghillie suit makes you invisible to Infrared Binoculars."
+      }
+    },
+    "Tip.Economy.SupplyCrate.Trade": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Economy.SupplyCrate.Trade",
+        "SourceString": "You can buy and sell items to other players in the Control Zone for a profit by purchasing and filling a supply crate from the garage vendor.",
+        "LocalizedString": "You can buy and sell items to other players in the Control Zone for a profit by purchasing and filling a supply crate from the garage vendor."
+      }
+    },
+    "Tip.Travel.Map.ChatCoordinates": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Travel.Map.ChatCoordinates",
+        "SourceString": "Clicking on coordinates shared by teammates in the chatbox will open that location on your tactical map.",
+        "LocalizedString": "Clicking on coordinates shared by teammates in the chatbox will open that location on your tactical map."
+      }
+    },
+    "Tip.Vehicles.General.GiveLifts": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Vehicles.General.GiveLifts",
+        "SourceString": "When you buy a vehicle, check if there are any teammates in your safe zone that need a lift before leaving. Dropping them off in the Control Zone earns you cash!",
+        "LocalizedString": "When you buy a vehicle, check if there are any teammates in your safe zone that need a lift before leaving. Dropping them off in the Control Zone earns you cash!"
+      }
+    },
+    "Tip.Vehicles.General.Unlock": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Vehicles.General.Unlock",
+        "SourceString": "Purchased vehicles must be unlocked to allow teammates to enter.",
+        "LocalizedString": "Purchased vehicles must be unlocked to allow teammates to enter."
+      }
+    },
+    "Tip.Vehicles.General.Parachutes": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Vehicles.General.Parachutes",
+        "SourceString": "You can see who does or doesn't have a parachute in the passenger list of your vehicle - especially useful for pilots.",
+        "LocalizedString": "You can see who does or doesn't have a parachute in the passenger list of your vehicle - especially useful for pilots."
+      }
+    },
+    "Tip.Vehicles.Rotary.FlyLow": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Vehicles.Rotary.FlyLow",
+        "SourceString": "Flying low stops certain launchers being able to lock on to your vehicle.",
+        "LocalizedString": "Flying low stops certain launchers being able to lock on to your vehicle."
+      }
+    },
+    "Tip.Combat.Vehicles.WeakPoints": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Combat.Vehicles.WeakPoints",
+        "SourceString": "If you want to quickly dispose of an enemy vehicle, try focusing damage on its weak points (such as the engine or rotor blades).",
+        "LocalizedString": "If you want to quickly dispose of an enemy vehicle, try focusing damage on its weak points (such as the engine or rotor blades)."
+      }
+    },
+    "Tip.Vehicles.Refuel.SafeZone": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Vehicles.Refuel.SafeZone",
+        "SourceString": "You can repair and refuel vehicles by returning to your factions safe zone - alternatively land in a FOB built by your team that has a repair/refuel station.",
+        "LocalizedString": "You can repair and refuel vehicles by returning to your factions safe zone - alternatively land in a FOB built by your team that has a repair/refuel station."
+      }
+    },
+    "Tip.Combat.Ammo.HollowPoint": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Combat.Ammo.HollowPoint",
+        "SourceString": "\"Flesh Damage\" Hollow Point (HP) ammo is particularly effective at damaging non-armoured body parts.",
+        "LocalizedString": "\"Flesh Damage\" Hollow Point (HP) ammo is particularly effective at damaging non-armoured body parts."
+      }
+    },
+    "Tip.Combat.Ammo.ArmourPiercing": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Combat.Ammo.ArmourPiercing",
+        "SourceString": "Armour Piercing (AP) ammo is effective at penetrating armour.",
+        "LocalizedString": "Armour Piercing (AP) ammo is effective at penetrating armour."
+      }
+    },
+    "Tip.Combat.Ammo.FMJ": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Combat.Ammo.FMJ",
+        "SourceString": "\"Standard\" Full Metal Jacket (FMJ) ammo is a middle ground between flesh damage and penetration.",
+        "LocalizedString": "\"Standard\" Full Metal Jacket (FMJ) ammo is a middle ground between flesh damage and penetration."
+      }
+    },
+    "Tip.Movement.Weight": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Movement.Weight",
+        "SourceString": "Weight effects your movement - to the point you can no longer tac-sprint if you carry too many items.",
+        "LocalizedString": "Weight effects your movement - to the point you can no longer tac-sprint if you carry too many items."
+      }
+    },
+    "Tip.ControlZone.DrillTowers": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.ControlZone.DrillTowers",
+        "SourceString": "Drill towers can be captured once inside them. Once captured - they reveal a part of a longer key code. Collect all digits of the code and activate the tower to potentially swing the outcome of a match.",
+        "LocalizedString": "Drill towers can be captured once inside them. Once captured - they reveal a part of a longer key code. Collect all digits of the code and activate the tower to potentially swing the outcome of a match."
+      }
+    },
+    "Tip.ControlZone.DrillTowers.Loot": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.ControlZone.DrillTowers.Loot",
+        "SourceString": "Drill towers have randomised helpful equipment that spawn on their roofs - consider looting at the risk of being exposed to enemy sightlines.",
+        "LocalizedString": "Drill towers have randomised helpful equipment that spawn on their roofs - consider looting at the risk of being exposed to enemy sightlines."
+      }
+    },
+    "Tip.Vehicles.Artillery.Angle": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Vehicles.Artillery.Angle",
+        "SourceString": "The angle of your artillery tank effects the distance and direction of rounds. A level surface gives you the most accurate reading on direction and distance.",
+        "LocalizedString": "The angle of your artillery tank effects the distance and direction of rounds. A level surface gives you the most accurate reading on direction and distance."
+      }
+    },
+    "Tip.Combat.Mines": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Combat.Mines",
+        "SourceString": "Claymores and AT mines are lethal to all players, not just enemies. Be careful where you place them.",
+        "LocalizedString": "Claymores and AT mines are lethal to all players, not just enemies. Be careful where you place them."
+      }
+    },
+    "Tip.Buildables.Repair": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Buildables.Repair",
+        "SourceString": "Damaged buildables can be repaired by hitting them with a hammer.",
+        "LocalizedString": "Damaged buildables can be repaired by hitting them with a hammer."
+      }
+    },
+    "Tip.Combat.Ricochet": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Combat.Ricochet",
+        "SourceString": "Bullets can ricochet off walls and penetrate surfaces. Remember this when retreating behind cover.",
+        "LocalizedString": "Bullets can ricochet off walls and penetrate surfaces. Remember this when retreating behind cover."
+      }
+    },
+    "Tip.ControlZone.WinCondition": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.ControlZone.WinCondition",
+        "SourceString": "Winning WARDOGS is not just about kills. Every player in the Control Zone is helping their team gain a majority to seize the Control Zone.",
+        "LocalizedString": "Winning WARDOGS is not just about kills. Every player in the Control Zone is helping their team gain a majority to seize the Control Zone."
+      }
+    },
+    "Tip.Combat.Ammo.ShotgunSlugs": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Combat.Ammo.ShotgunSlugs",
+        "SourceString": "Shotgun slugs can perform exceptionally well at range - providing more penetration capability than buckshot.",
+        "LocalizedString": "Shotgun slugs can perform exceptionally well at range - providing more penetration capability than buckshot."
+      }
+    },
+    "Tip.ControlZone.DrillTowers.Duplicate": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.ControlZone.DrillTowers.Duplicate",
+        "SourceString": "Drill towers can be captured once inside them. Once captured - they reveal a part of a longer key code. Collect all digits of the code and activate the tower to potentially swing the outcome of a match.",
+        "LocalizedString": "Drill towers can be captured once inside them. Once captured - they reveal a part of a longer key code. Collect all digits of the code and activate the tower to potentially swing the outcome of a match."
+      }
+    },
+    "Tip.Combat.Headshots": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Combat.Headshots",
+        "SourceString": "Aim for the head. Not only does it kill targets without a helmet faster - you'll earn bonus cash and they'll talk about your one taps.",
+        "LocalizedString": "Aim for the head. Not only does it kill targets without a helmet faster - you'll earn bonus cash and they'll talk about your one taps."
+      }
+    },
+    "Tip.Combat.TargetLimbs": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Combat.TargetLimbs",
+        "SourceString": "Think before you pull the trigger - sometimes it makes sense to shoot unarmoured limbs than try to penetrate heavy armour.",
+        "LocalizedString": "Think before you pull the trigger - sometimes it makes sense to shoot unarmoured limbs than try to penetrate heavy armour."
+      }
+    },
+    "Tip.Economy.Cash.LongRangeKills": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Economy.Cash.LongRangeKills",
+        "SourceString": "Snipers, artillery and mortars receive additional cash rewards the further away they are from their killed target.",
+        "LocalizedString": "Snipers, artillery and mortars receive additional cash rewards the further away they are from their killed target."
+      }
+    },
+    "Tip.Items.Looting.UseUnlocked": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Items.Looting.UseUnlocked",
+        "SourceString": "Even if you haven't unlocked an item, you can still use it if you loot a body or purchase it from a supply crate.",
+        "LocalizedString": "Even if you haven't unlocked an item, you can still use it if you loot a body or purchase it from a supply crate."
+      }
+    },
+    "Tip.Combat.Weapons.QuickReload": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Combat.Weapons.QuickReload",
+        "SourceString": "In close quarters, milliseconds matter. Double-tap reload to drop your current magazine and load the next one faster.",
+        "LocalizedString": "In close quarters, milliseconds matter. Double-tap reload to drop your current magazine and load the next one faster."
+      }
+    },
+    "Tip.Buildables.Strategy": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Buildables.Strategy",
+        "SourceString": "Build strategically - you can place FOBs and build outside the CZ if you think it'll give your team a tactical edge in combat.",
+        "LocalizedString": "Build strategically - you can place FOBs and build outside the CZ if you think it'll give your team a tactical edge in combat."
+      }
+    },
+    "Tip.Vehicles.Refuel.HIDZ": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Vehicles.Refuel.HIDZ",
+        "SourceString": "High Impact Damage Zones (HIDZ) on vehicles can be repaired with repair tools. Consider buying one from the equipment vendor if you want to support your team.",
+        "LocalizedString": "High Impact Damage Zones (HIDZ) on vehicles can be repaired with repair tools. Consider buying one from the equipment vendor if you want to support your team."
+      }
+    },
+    "Tip.Travel.Routes": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Travel.Routes",
+        "SourceString": "Entering the Control Zone via the most direct route isn't always the safest option. Use alternative routes if enemy recon are placing traps or holding key sightlines.",
+        "LocalizedString": "Entering the Control Zone via the most direct route isn't always the safest option. Use alternative routes if enemy recon are placing traps or holding key sightlines."
+      }
+    },
+    "Tip.Travel.TrustDriver": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Travel.TrustDriver",
+        "SourceString": "Make sure you trust your chosen pilot / driver to get you safely to the Control Zone - every trip to the CZ is a risk / reward that is your decision to make.",
+        "LocalizedString": "Make sure you trust your chosen pilot / driver to get you safely to the Control Zone - every trip to the CZ is a risk / reward that is your decision to make."
+      }
+    },
+    "Tip.Economy.Cash.Dropoffs": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Economy.Cash.Dropoffs",
+        "SourceString": "Taking players to the Control Zone in a vehicle can be very profitable. Consider returning to the Safe Zone after dropping off your teammates to pickup more players and make even more cash.",
+        "LocalizedString": "Taking players to the Control Zone in a vehicle can be very profitable. Consider returning to the Safe Zone after dropping off your teammates to pickup more players and make even more cash."
+      }
+    },
+    "Tip.Vehicles.Artillery.Fuel": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Vehicles.Artillery.Fuel",
+        "SourceString": "After parking up your artillery tank, remember to turn off the engine before switching to the gunner position to avoid draining fuel needlessly.",
+        "LocalizedString": "After parking up your artillery tank, remember to turn off the engine before switching to the gunner position to avoid draining fuel needlessly."
+      }
+    },
+    "Tip.Vehicles.Aircraft.Altitude": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Vehicles.Aircraft.Altitude",
+        "SourceString": "When in aircraft, ASL is your 'Altitude above Sea Level' and AGL is your 'Altitude above Ground Level'.",
+        "LocalizedString": "When in aircraft, ASL is your 'Altitude above Sea Level' and AGL is your 'Altitude above Ground Level'."
+      }
+    },
+    "Tip.Intro.LearnToPlay": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Intro.LearnToPlay",
+        "SourceString": "Remember to check the 'Learn to Play' section in the main menu for information on more advanced mechanics.",
+        "LocalizedString": "Remember to check the 'Learn to Play' section in the main menu for information on more advanced mechanics."
+      }
+    },
+    "Tip.Combat.HammerKill": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Combat.HammerKill",
+        "SourceString": "Hitting someone with a large hammer is an instant kill.",
+        "LocalizedString": "Hitting someone with a large hammer is an instant kill."
+      }
+    },
+    "Tip.Health.WaitForReviveReward": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Health.WaitForReviveReward",
+        "SourceString": "If you wait for a revive from a teammate instead of giving up - you'll receive a cash reward for your patience and belief in your teammates.",
+        "LocalizedString": "If you wait for a revive from a teammate instead of giving up - you'll receive a cash reward for your patience and belief in your teammates."
+      }
+    },
+    "Tip.Travel.LocalChat": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Travel.LocalChat",
+        "SourceString": "Both friendly and enemy players can hear you in local chat - use this knowledge to your advantage.",
+        "LocalizedString": "Both friendly and enemy players can hear you in local chat - use this knowledge to your advantage."
+      }
+    },
+    "Tip.Economy.EquipmentValue": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Economy.EquipmentValue",
+        "SourceString": "You can see your current equipment value when you open your inventory. Every bullet you fire is cash spent.",
+        "LocalizedString": "You can see your current equipment value when you open your inventory. Every bullet you fire is cash spent."
+      }
+    },
+    "Tip.Combat.Suppression": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Combat.Suppression",
+        "SourceString": "Suppression can be effective at stopping players peeking angles - consider firing toward the enemy whilst your squadmate pushes forward.",
+        "LocalizedString": "Suppression can be effective at stopping players peeking angles - consider firing toward the enemy whilst your squadmate pushes forward."
+      }
+    },
+    "Tip.Movement.SlowWalk": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Movement.SlowWalk",
+        "SourceString": "You can bind 'slow walk' to a dedicated key to keep your footsteps quiet at the cost of speed.",
+        "LocalizedString": "You can bind 'slow walk' to a dedicated key to keep your footsteps quiet at the cost of speed."
+      }
+    },
+    "Tip.Combat.Spotting": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Combat.Spotting",
+        "SourceString": "Spotting enemy player with binoculars makes them show up for your teammates on their mini and tactical maps. You earn cash for every followup kill.",
+        "LocalizedString": "Spotting enemy player with binoculars makes them show up for your teammates on their mini and tactical maps. You earn cash for every followup kill."
+      }
+    },
+    "Tip.Intro.Basics": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Intro.Basics",
+        "SourceString": "Complete role-specific actions to gain XP for that role (e.g., reviving grants Medic XP).",
+        "LocalizedString": "Complete role-specific actions to gain XP for that role (e.g., reviving grants Medic XP)."
+      }
+    },
+    "Tip.Items.FreeWeapons": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Items.FreeWeapons",
+        "SourceString": "Each faction offers one FREE weapon, so you'll never deploy without being combat-ready.",
+        "LocalizedString": "Each faction offers one FREE weapon, so you'll never deploy without being combat-ready."
+      }
+    },
+    "Tip.Items.Gear.Armour": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Items.Gear.Armour",
+        "SourceString": "Helmets and armour reduce damage from gunfire. Superior armor covers more of the body and offers better protection against larger-calibre rounds.",
+        "LocalizedString": "Helmets and armour reduce damage from gunfire. Superior armor covers more of the body and offers better protection against larger-calibre rounds."
+      }
+    },
+    "Tip.Items.Gear.Backpacks": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Items.Gear.Backpacks",
+        "SourceString": "Backpacks increase your carry capacity, allowing a bigger loadout.",
+        "LocalizedString": "Backpacks increase your carry capacity, allowing a bigger loadout."
+      }
+    },
+    "Tip.Items.Gear.Vests": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Items.Gear.Vests",
+        "SourceString": "Vests provide Quick Access slots, used to swiftly switch between equipped items.",
+        "LocalizedString": "Vests provide Quick Access slots, used to swiftly switch between equipped items."
+      }
+    },
+    "Tip.Items.Utility.Traversal": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Items.Utility.Traversal",
+        "SourceString": "The Traversal slot is dedicated to movement gear, for example, parachutes.",
+        "LocalizedString": "The Traversal slot is dedicated to movement gear, for example, parachutes."
+      }
+    },
+    "Tip.Items.Weapons.Purchasing": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Items.Weapons.Purchasing",
+        "SourceString": "Interact with the Equipment Vendor, open the weapons tab, and pick your weapon. Use filters to quickly find your favourite.",
+        "LocalizedString": "Interact with the Equipment Vendor, open the weapons tab, and pick your weapon. Use filters to quickly find your favourite."
+      }
+    },
+    "Tip.SpawnVehicle.Availability": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.SpawnVehicle.Availability",
+        "SourceString": "You can only spawn into your team’s Spawn Vehicle from the Spawn Board once its stationary inside the Control Zone, with vacant seats and a suitable amount of Hit Points.",
+        "LocalizedString": "You can only spawn into your team’s Spawn Vehicle from the Spawn Board once its stationary inside the Control Zone, with vacant seats and a suitable amount of Hit Points."
+      }
+    },
+    "Tip.SpawnVehicle.Cooldown": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.SpawnVehicle.Cooldown",
+        "SourceString": "If your team’s Spawn Vehicle takes enough damage, it will be destroyed. The Spawn Board then becomes inactive until a new Spawn Vehicle appears at Headquarters after a short cooldown.",
+        "LocalizedString": "If your team’s Spawn Vehicle takes enough damage, it will be destroyed. The Spawn Board then becomes inactive until a new Spawn Vehicle appears at Headquarters after a short cooldown."
+      }
+    },
+    "Tip.SpawnVehicle.Unlocking": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.SpawnVehicle.Unlocking",
+        "SourceString": "Upon any team reaching 20 points from holding the Control Zone, each of the three teams will be granted a free Spawn Vehicle, which spawns at their Headquarters.",
+        "LocalizedString": "Upon any team reaching 20 points from holding the Control Zone, each of the three teams will be granted a free Spawn Vehicle, which spawns at their Headquarters."
+      }
+    },
+    "Tip.Travel.Map.FactionRequests": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Travel.Map.FactionRequests",
+        "SourceString": "Downed allies and various faction requests will appear on the mini map. Check it frequently to see how you can help your faction and earn some extra cash!",
+        "LocalizedString": "Downed allies and various faction requests will appear on the mini map. Check it frequently to see how you can help your faction and earn some extra cash!"
+      }
+    },
+    "Tip.Travel.Map.TacticalMap": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Travel.Map.TacticalMap",
+        "SourceString": "Use the tactical map to navigate; zoom in and out and pan around to spot key information that helps you plan your next move.",
+        "LocalizedString": "Use the tactical map to navigate; zoom in and out and pan around to spot key information that helps you plan your next move."
+      }
+    },
+    "Tip.Travel.Map.Zones": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Travel.Map.Zones",
+        "SourceString": "The mini map shows whether you are in the Control Zone, the Hot Zone, or No Man's Land. Take note of area titles, zone borders, and your location when navigating your surroundings.",
+        "LocalizedString": "The mini map shows whether you are in the Control Zone, the Hot Zone, or No Man's Land. Take note of area titles, zone borders, and your location when navigating your surroundings."
+      }
+    },
+    "Tip.Travel.Misc.PingWheel": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Travel.Misc.PingWheel",
+        "SourceString": "The Ping Wheel is a powerful tool which you can use to make faction requests, to send squad commands, and to quickly communicate with local players.",
+        "LocalizedString": "The Ping Wheel is a powerful tool which you can use to make faction requests, to send squad commands, and to quickly communicate with local players."
+      }
+    },
+    "Tip.Travel.Squads.CreateASquad": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Travel.Squads.CreateASquad",
+        "SourceString": "You can create a new squad by accessing the Squad Menu and selecting the 'Create Squad' option. Whoever creates the squad instantly becomes the squad leader and has control over the squad's management.",
+        "LocalizedString": "You can create a new squad by accessing the Squad Menu and selecting the 'Create Squad' option. Whoever creates the squad instantly becomes the squad leader and has control over the squad's management."
+      }
+    },
+    "Tip.Travel.Squads.JoinASquad": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Travel.Squads.JoinASquad",
+        "SourceString": "To join an already existing squad, open the Squad Menu and select 'Join Squad' icon. It's also worth noting, you'll only be able to join an 'Open Squad'.",
+        "LocalizedString": "To join an already existing squad, open the Squad Menu and select 'Join Squad' icon. It's also worth noting, you'll only be able to join an 'Open Squad'."
+      }
+    },
+    "Tip.Travel.Squads.Pings": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Travel.Squads.Pings",
+        "SourceString": "The Squad Ping System allows you to easily mark a location or a threat for other squad members, without needing to use the Voice Channels or the Chat Box.",
+        "LocalizedString": "The Squad Ping System allows you to easily mark a location or a threat for other squad members, without needing to use the Voice Channels or the Chat Box."
+      }
+    },
+    "Tip.Travel.Squads.SquadChat": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Travel.Squads.SquadChat",
+        "SourceString": "Squad Chat provides private text and voice channels for you and your squad. Allowing  focused and strategic discussions without interference from other players.",
+        "LocalizedString": "Squad Chat provides private text and voice channels for you and your squad. Allowing  focused and strategic discussions without interference from other players."
+      }
+    },
+    "Tip.Travel.Squads.SquadTracker": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Travel.Squads.SquadTracker",
+        "SourceString": "All squadmates trackers are colored gold, making them easier to distinguish from the rest of your team.",
+        "LocalizedString": "All squadmates trackers are colored gold, making them easier to distinguish from the rest of your team."
+      }
+    },
+    "Tip.Travel.Squads.VehicleSquadLock": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Travel.Squads.VehicleSquadLock",
+        "SourceString": "After purchasing a vehicle from the Vendor, you can Squad Lock it. This results in the vehicle only being accessible by Squadmates, unless the vehicle owner chooses to Unlock it to all teammates.",
+        "LocalizedString": "After purchasing a vehicle from the Vendor, you can Squad Lock it. This results in the vehicle only being accessible by Squadmates, unless the vehicle owner chooses to Unlock it to all teammates."
+      }
+    },
+    "Tip.Vehicles.General.Cameras": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Vehicles.General.Cameras",
+        "SourceString": "Drivers and pilots can cycle between first- and third-person cameras. When in third person, you can also enter free-look, allowing you to see more of your surrounding area.",
+        "LocalizedString": "Drivers and pilots can cycle between first- and third-person cameras. When in third person, you can also enter free-look, allowing you to see more of your surrounding area."
+      }
+    },
+    "Tip.Vehicles.General.Crews": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Vehicles.General.Crews",
+        "SourceString": "Vehicle crews share responsibilities. The driver or pilot navigates the battlefield, while gunners tracks targets and eliminates the enemy. Rewards and penalties will be shared!",
+        "LocalizedString": "Vehicle crews share responsibilities. The driver or pilot navigates the battlefield, while gunners tracks targets and eliminates the enemy. Rewards and penalties will be shared!"
+      }
+    },
+    "Tip.Vehicles.General.Entering": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Vehicles.General.Entering",
+        "SourceString": "To enter a vehicle, approach it and use the interaction prompt to initiate the Enter Vehicle action.",
+        "LocalizedString": "To enter a vehicle, approach it and use the interaction prompt to initiate the Enter Vehicle action."
+      }
+    },
+    "Tip.Vehicles.General.Exiting": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Vehicles.General.Exiting",
+        "SourceString": "Exit a vehicle by using the interaction menu. Press and Hold the Exit Vehicle option.",
+        "LocalizedString": "Exit a vehicle by using the interaction menu. Press and Hold the Exit Vehicle option."
+      }
+    },
+    "Tip.Vehicles.General.GarageVendor": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Vehicles.General.GarageVendor",
+        "SourceString": "Purchase ammo & supply crates for your vehicle. When sitting in a driver or pilot seat in the vehicle spawn, you can open the Garage Vendor and select your desired tab and click on your desired items to purchase them.",
+        "LocalizedString": "Purchase ammo & supply crates for your vehicle. When sitting in a driver or pilot seat in the vehicle spawn, you can open the Garage Vendor and select your desired tab and click on your desired items to purchase them."
+      }
+    },
+    "Tip.Vehicles.General.Health": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Vehicles.General.Health",
+        "SourceString": "Dashboard icons and smoke indicate your vehicle's status. Bail out or repair it before it's destroyed.",
+        "LocalizedString": "Dashboard icons and smoke indicate your vehicle's status. Bail out or repair it before it's destroyed."
+      }
+    },
+    "Tip.Vehicles.General.Locking": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Vehicles.General.Locking",
+        "SourceString": "Vehicles are purchased in a locked state. Their owners can choose to unlock them for their squad, or everyone in the game.",
+        "LocalizedString": "Vehicles are purchased in a locked state. Their owners can choose to unlock them for their squad, or everyone in the game."
+      }
+    },
+    "Tip.Vehicles.General.Seats": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Vehicles.General.Seats",
+        "SourceString": "You can switch seats within a vehicle, but note, switching isn't instant and will take a moment.",
+        "LocalizedString": "You can switch seats within a vehicle, but note, switching isn't instant and will take a moment."
+      }
+    },
+    "Tip.Vehicles.Refuel.FuelCan": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Vehicles.Refuel.FuelCan",
+        "SourceString": "The Fuel Can is a purchasable item, used to provide emergency fuel during combat or travel. It can be stored in your personal inventory or vehicle inventories and obtained from Headquarters , Supply Crates, or looted from other players.",
+        "LocalizedString": "The Fuel Can is a purchasable item, used to provide emergency fuel during combat or travel. It can be stored in your personal inventory or vehicle inventories and obtained from Headquarters , Supply Crates, or looted from other players."
+      }
+    },
+    "Tip.Vehicles.Refuel.GasStation": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Vehicles.Refuel.GasStation",
+        "SourceString": "Repair and refuel vehicles by returning to Headquarters or a FOB. This doesn't come free, you will be charged.",
+        "LocalizedString": "Repair and refuel vehicles by returning to Headquarters or a FOB. This doesn't come free, you will be charged."
+      }
+    },
+    "Tip.Vehicles.Refuel.RepairTools": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Vehicles.Refuel.RepairTools",
+        "SourceString": "Use the Vehicle Repair Tool to repair damaged vehicles. There are three types; pick the one that fits budget. It uses batteries.",
+        "LocalizedString": "Use the Vehicle Repair Tool to repair damaged vehicles. There are three types; pick the one that fits budget. It uses batteries."
+      }
+    },
+    "Tip.Vehicles.Rotary.Blades": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Vehicles.Rotary.Blades",
+        "SourceString": "Be careful with the rotor blades, if they hit objects, they will break.",
+        "LocalizedString": "Be careful with the rotor blades, if they hit objects, they will break."
+      }
+    },
+    "Tip.Vehicles.Rotary.Flares": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Vehicles.Rotary.Flares",
+        "SourceString": "Flares can be used to momentarily prevent heat-seeking projectiles from locking onto your helicopter.",
+        "LocalizedString": "Flares can be used to momentarily prevent heat-seeking projectiles from locking onto your helicopter."
+      }
+    },
+    "Tip.Vehicles.Rotary.Spooling": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Vehicles.Rotary.Spooling",
+        "SourceString": "Helicopter engines must spool up before takeoff, this can take a few moments and is done by the pilot.",
+        "LocalizedString": "Helicopter engines must spool up before takeoff, this can take a few moments and is done by the pilot."
+      }
+    },
+    "Tip.Vendor.CarryingItems": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Vendor.CarryingItems",
+        "SourceString": "You need a backpack to carry magazines and other essential equipment. Watch your carry weight, the more you take, the slower you move.",
+        "LocalizedString": "You need a backpack to carry magazines and other essential equipment. Watch your carry weight, the more you take, the slower you move."
+      }
+    },
+    "Tip.Vendor.GarageVendor": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Vendor.GarageVendor",
+        "SourceString": "The Garage Vendor is accessible while seated in the driver’s or gunner’s seat. It sells vehicle supplies, such as ammunition, and items you can store in the vehicle inventory.",
+        "LocalizedString": "The Garage Vendor is accessible while seated in the driver’s or gunner’s seat. It sells vehicle supplies, such as ammunition, and items you can store in the vehicle inventory."
+      }
+    },
+    "Tip.Vendor.Rebuy": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Vendor.Rebuy",
+        "SourceString": "On respawn, you can repurchase the items you bought in your previous life.",
+        "LocalizedString": "On respawn, you can repurchase the items you bought in your previous life."
+      }
+    },
+    "Tip.Vendor.VehicleVendor": {
+      "LoadingScreenText": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_LoadingScreen.STRINGS_LoadingScreen",
+        "Key": "Tip.Vendor.VehicleVendor",
+        "SourceString": "Vehicle vendors sell cars, tanks, helicopters and more. You can collect your vehicle near the main road to the Control Zone. ",
+        "LocalizedString": "Vehicle vendors sell cars, tanks, helicopters and more. You can collect your vehicle near the main road to the Control Zone. "
+      }
+    }
+  }
+}

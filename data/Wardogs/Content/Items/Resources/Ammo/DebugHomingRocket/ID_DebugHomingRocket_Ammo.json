@@ -1,0 +1,101 @@
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_DebugHomingRocket_Ammo'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/DebugHomingRocket/ID_DebugHomingRocket_Ammo.3"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Items/Weapons/Launcher/AT4/Assets/SM_AT4Rocket.SM_AT4Rocket",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Stackable_0 ---
+{
+  "Type": "BHInventoryFragment_Stackable",
+  "Name": "BHInventoryFragment_Stackable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Stackable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_DebugHomingRocket_Ammo'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/DebugHomingRocket/ID_DebugHomingRocket_Ammo.3"
+  },
+  "Properties": {
+    "MaxStackSize": 99
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_DebugHomingRocket_Ammo'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/DebugHomingRocket/ID_DebugHomingRocket_Ammo.3"
+  }
+}
+--- export: UPrimaryDataAsset / ID_DebugHomingRocket_Ammo ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_DebugHomingRocket_Ammo",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Resources/Ammo/DebugHomingRocket/ID_DebugHomingRocket_Ammo",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.DebugHomingRocketAmmo"
+    },
+    "ItemContext": [
+      "Item.Ammo",
+      "Item.Caliber.84mm",
+      "Item.Ammo.Type.FMJ.Tracer"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "4F80C1144DC03D15663374995ECBC616",
+      "SourceString": "RocketTesting 84mm",
+      "LocalizedString": "RocketTesting 84mm"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_Stackable'ID_DebugHomingRocket_Ammo:BHInventoryFragment_Stackable_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/DebugHomingRocket/ID_DebugHomingRocket_Ammo.1"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_DebugHomingRocket_Ammo:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/DebugHomingRocket/ID_DebugHomingRocket_Ammo.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_DebugHomingRocket_Ammo:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/DebugHomingRocket/ID_DebugHomingRocket_Ammo.0"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Projectile'ID_DebugHomingRocket_Ammo:WDInventoryFragment_Projectile_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/DebugHomingRocket/ID_DebugHomingRocket_Ammo.4"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Projectile_0 ---
+{
+  "Type": "WDInventoryFragment_Projectile",
+  "Name": "WDInventoryFragment_Projectile_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Projectile'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_DebugHomingRocket_Ammo'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/DebugHomingRocket/ID_DebugHomingRocket_Ammo.3"
+  },
+  "Properties": {
+    "ProjectileData": {
+      "ObjectName": "WDProjectileData'DA_DebugHomingRocketData'",
+      "ObjectPath": "/Game/Items/Resources/Ammo/DebugHomingRocket/DA_DebugHomingRocketData.0"
+    }
+  }
+}

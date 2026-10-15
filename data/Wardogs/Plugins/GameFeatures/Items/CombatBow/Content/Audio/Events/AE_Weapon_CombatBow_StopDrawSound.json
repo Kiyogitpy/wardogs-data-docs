@@ -1,0 +1,35 @@
+--- export: UPrimaryDataAsset / AE_Weapon_CombatBow_StopDrawSound ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_CombatBow_StopDrawSound",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/CombatBow/Audio/Events/AE_Weapon_CombatBow_StopDrawSound",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.CombatBow.StopDrawSound"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_Weapon_CombatBow_StopDrawSound:CrosstalkAudioEventBehaviorStopSound_0'",
+        "ObjectPath": "/CombatBow/Audio/Events/AE_Weapon_CombatBow_StopDrawSound.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_CombatBow_StopDrawSound'",
+    "ObjectPath": "/CombatBow/Audio/Events/AE_Weapon_CombatBow_StopDrawSound.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

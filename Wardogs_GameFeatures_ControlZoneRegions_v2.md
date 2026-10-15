@@ -4,9 +4,9 @@ parent: "Game Features"
 ---
 
 # Wardogs — GameFeature: ControlZoneRegions Reference (v2)
-*Extracted from cooked game data via CUE4Parse (build `++Wardogs+Live-CL-509546`, UE 5.7.4). Source: `Wardogs/Plugins/GameFeatures/ControlZoneRegions/` (5 JSON files). Scripted pass over every file, then checked against the region arrays directly.*
+*Extracted from cooked game data via CUE4Parse (build `++Wardogs+Live-CL-509546`, UE 5.7.4). Source: [`Wardogs/Plugins/GameFeatures/ControlZoneRegions/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/ControlZoneRegions) (5 JSON files). Scripted pass over every file, then checked against the region arrays directly.*
 
-> **Scope:** this folder holds the **region map data** for Control Zones: named polygons laid over each map, each with a selection weight. It is the layer the `ControlZone` configs (sibling doc `Wardogs_GameFeatures_ControlZone_v2.md`) pick their zone placements from. The mapping between region weights and the zone placement is **not confirmed** by these files (section 5).
+> **Scope:** this folder holds the **region map data** for Control Zones: named polygons laid over each map, each with a selection weight. It is the layer the [`ControlZone`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/ControlZone.json) configs (sibling doc `Wardogs_GameFeatures_ControlZone_v2.md`) pick their zone placements from. The mapping between region weights and the zone placement is **not confirmed** by these files (section 5).
 
 ---
 
@@ -14,11 +14,11 @@ parent: "Game Features"
 
 | File | Type | Role |
 |---|---|---|
-| `ControlZoneRegions.json` | `GameFeatureData` | Root bundle. One action: a data-registry add for `DR_Editor_Trackers_ControlZoneRegions`, with `bPreloadInEditor` and `bPreloadInCommandlets` on. |
-| `DA_ControlZoneRegionsConfig_Kavkazi.json` | `WDControlZoneRegionsConfigDataAsset` | 60 regions. |
-| `DA_ControlZoneRegionsConfig_Europe.json` | `WDControlZoneRegionsConfigDataAsset` | 55 regions. |
-| `DA_ControlZoneRegionsConfig_NorthAmerica.json` | `WDControlZoneRegionsConfigDataAsset` | 56 regions. |
-| `DT_Editor_TrackerData_ControlZoneRegions.json` | `DataTable` (1 row) | Editor tracker for the regions, tag `Trackers.Type.ControlZone` (section 4). |
+| [`ControlZoneRegions.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZoneRegions/Content/ControlZoneRegions.json) | `GameFeatureData` | Root bundle. One action: a data-registry add for `DR_Editor_Trackers_ControlZoneRegions`, with `bPreloadInEditor` and `bPreloadInCommandlets` on. |
+| [`DA_ControlZoneRegionsConfig_Kavkazi.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZoneRegions/Content/Data/Config/DA_ControlZoneRegionsConfig_Kavkazi.json) | `WDControlZoneRegionsConfigDataAsset` | 60 regions. |
+| [`DA_ControlZoneRegionsConfig_Europe.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZoneRegions/Content/Data/Config/Europe/DA_ControlZoneRegionsConfig_Europe.json) | `WDControlZoneRegionsConfigDataAsset` | 55 regions. |
+| [`DA_ControlZoneRegionsConfig_NorthAmerica.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZoneRegions/Content/Data/Config/NorthAmerica/DA_ControlZoneRegionsConfig_NorthAmerica.json) | `WDControlZoneRegionsConfigDataAsset` | 56 regions. |
+| [`DT_Editor_TrackerData_ControlZoneRegions.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZoneRegions/Content/Data/DT_Editor_TrackerData_ControlZoneRegions.json) | `DataTable` (1 row) | Editor tracker for the regions, tag `Trackers.Type.ControlZone` (section 4). |
 
 The bundle's data registry is marked **editor-only** (`DR_Editor_*`), and the tracker widget is also an editor widget (`W_Editor_Tracker_Regions`). The region data is therefore an authoring tool layer, not a runtime UI.
 
@@ -76,7 +76,7 @@ Names are as stored. Spelling and case vary between configs.
 
 **NorthAmerica (56).** Towers (`Tower 1` to `Tower 3`), industry (`Factory Large 1`, `Factory Large 2`, `Shipping Exports Large`, `Shipping Exports Long`, `Import Scrap`), and rail (`TrainTracks`, `TrainShed 1`, `TrainShed 2`).
 
-The Kavkazi config is named for the map that the `ControlZone` Bakurani config uses (`/Game/Maps/Worlds/Kavkazi/Kavkazi`), so the Kavkazi regions are most likely for that map. The Europe and NorthAmerica regions are matched by folder and name to their `ControlZone` configs. That match is by name only.
+The Kavkazi config is named for the map that the [`ControlZone`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/ControlZone.json) Bakurani config uses (`/Game/Maps/Worlds/Kavkazi/Kavkazi`), so the Kavkazi regions are most likely for that map. The Europe and NorthAmerica regions are matched by folder and name to their [`ControlZone`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/ControlZone.json) configs. That match is by name only.
 
 ---
 
@@ -115,15 +115,15 @@ Example: the first Kavkazi region, `TOWER 1`, starts its outline at X = -824,856
 
 | Item | Value |
 |---|---|
-| Table | `DT_Editor_TrackerData_ControlZoneRegions` (1 row) |
+| Table | [`DT_Editor_TrackerData_ControlZoneRegions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZoneRegions/Content/Data/DT_Editor_TrackerData_ControlZoneRegions.json) (1 row) |
 | Tag | `Trackers.Type.ControlZone` |
 | Widget | `/ControlZoneRegions/Data/UI/W_Editor_Tracker_Regions` |
 | View model | `WDUIRegionsTrackerViewModel` (ControlZoneRegionsRuntime) |
-| Data asset | `/Game/UI/Tools/WorldDisplay/Data/DA_Editor_Tracker_Location` |
+| Data asset | [`/Game/UI/Tools/WorldDisplay/Data/DA_Editor_Tracker_Location`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Tools/WorldDisplay/Data/DA_Editor_Tracker_Location.json) |
 | Faction change recreate | No |
 | Required tags | none |
 
-This tracker displays the regions in the editor. It is not a player-facing HUD tracker. The player-facing Control Zone trackers are in the `ControlZone` folder (sibling doc).
+This tracker displays the regions in the editor. It is not a player-facing HUD tracker. The player-facing Control Zone trackers are in the [`ControlZone`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/ControlZone.json) folder (sibling doc).
 
 ---
 

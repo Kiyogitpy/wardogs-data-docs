@@ -1,0 +1,782 @@
+--- export: UDataAsset / DA_SettingsPanel_Controls ---
+{
+  "Type": "WDUISettingsPanelData",
+  "Name": "DA_SettingsPanel_Controls",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUISettingsPanelData'",
+  "Package": "/Game/UI/Features/Settings/Widgets/SettingPanel/Data/DA_SettingsPanel_Controls",
+  "Properties": {
+    "Tabs": [
+      {
+        "Key": {
+          "TagName": "UI.Settings.Tab.General"
+        },
+        "Value": {
+          "TabText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Settings_Controls.STRINGS_Settings_Controls",
+            "Key": "Tab.Settings",
+            "SourceString": "Settings",
+            "LocalizedString": "Settings"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Settings.Tab.Controls.Keybindings"
+        },
+        "Value": {
+          "TabText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Settings_Controls.STRINGS_Settings_Controls",
+            "Key": "Tab.Keybindings",
+            "SourceString": "Keybindings",
+            "LocalizedString": "Keybindings"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Settings.Tab.Controls.ActionBehaviors"
+        },
+        "Value": {
+          "TabText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Settings_Controls.STRINGS_Settings_Controls",
+            "Key": "Tab.ActionBehaviors",
+            "SourceString": "Action Behaviors",
+            "LocalizedString": "Action Behaviors"
+          }
+        }
+      }
+    ],
+    "CategorizedSettings": [
+      {
+        "CategoryText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Keybindings.STRINGS_Settings_Keybindings",
+          "Key": "Category.Mouse",
+          "SourceString": "Mouse - Infantry",
+          "LocalizedString": "Mouse - Infantry"
+        },
+        "TabTag": {
+          "TagName": "None"
+        },
+        "Settings": [
+          {
+            "TagName": "UserSettings.Controls.Mouse.Sensitivity"
+          },
+          {
+            "TagName": "UserSettings.Controls.Mouse.Multiplier.ADS"
+          },
+          {
+            "TagName": "UserSettings.Controls.Mouse.Acceleration"
+          },
+          {
+            "TagName": "UserSettings.Controls.Mouse.Axis.Y.Invert.Infantry"
+          }
+        ]
+      },
+      {
+        "CategoryText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Keybindings.STRINGS_Settings_Keybindings",
+          "Key": "Category.MouseAdvanced",
+          "SourceString": "Mouse - Infantry (Advanced)",
+          "LocalizedString": "Mouse - Infantry (Advanced)"
+        },
+        "TabTag": {
+          "TagName": "None"
+        },
+        "Settings": [
+          {
+            "TagName": "UserSettings.Controls.Mouse.Scaling.Mode"
+          },
+          {
+            "TagName": "UserSettings.Controls.Mouse.Scaling.RelativeCoefficient"
+          },
+          {
+            "TagName": "UserSettings.Controls.Mouse.Scaling.Transition"
+          }
+        ]
+      },
+      {
+        "CategoryText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Keybindings.STRINGS_Settings_Keybindings",
+          "Key": "Category.MouseVehicle",
+          "SourceString": "Mouse - Vehicle",
+          "LocalizedString": "Mouse - Vehicle"
+        },
+        "TabTag": {
+          "TagName": "None"
+        },
+        "Settings": [
+          {
+            "TagName": "UserSettings.General.AdvancedVehicle.VehicleFreelookOnByDefault"
+          },
+          {
+            "TagName": "UserSettings.General.AdvancedVehicle.FirstPersonCameraSensitivity"
+          },
+          {
+            "TagName": "UserSettings.General.AdvancedVehicle.ThirdPersonCameraSensitivity"
+          },
+          {
+            "TagName": "UserSettings.Controls.VehicleBehavior.Vehicle.Weapon.Sensitivity"
+          },
+          {
+            "TagName": "UserSettings.Controls.Mouse.Multiplier.Vehicle.Ground"
+          },
+          {
+            "TagName": "UserSettings.Controls.Mouse.Multiplier.Vehicle.Air"
+          },
+          {
+            "TagName": "UserSettings.Controls.VehicleBehavior.Vehicle.Rotary.Mouse"
+          },
+          {
+            "TagName": "UserSettings.Controls.VehicleBehavior.Vehicle.Rotary.Mouse.AxisX"
+          },
+          {
+            "TagName": "UserSettings.Controls.VehicleBehavior.Vehicle.Rotary.Mouse.AxisY"
+          },
+          {
+            "TagName": "UserSettings.Controls.VehicleBehavior.Vehicle.Rotary.Mouse.PitchSensitivity"
+          },
+          {
+            "TagName": "UserSettings.Controls.VehicleBehavior.Vehicle.Rotary.Mouse.RollSensitivity"
+          },
+          {
+            "TagName": "UserSettings.Controls.VehicleBehavior.Vehicle.Rotary.Mouse.YawSensitivity"
+          },
+          {
+            "TagName": "UserSettings.Controls.VehicleBehavior.Vehicle.Rotary.Mouse.AxisIsolation"
+          },
+          {
+            "TagName": "UserSettings.Controls.Mouse.Axis.Y.Invert.Vehicle.Ground"
+          },
+          {
+            "TagName": "UserSettings.Controls.Mouse.Axis.Y.Invert.Vehicle.Air.Helicopter"
+          }
+        ]
+      },
+      {
+        "CategoryText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Joystick.STRINGS_Settings_Joystick",
+          "Key": "Text.Setting.HelicopterAssist",
+          "SourceString": "Helicopter Flight Assists",
+          "LocalizedString": "Helicopter Flight Assists"
+        },
+        "TabTag": {
+          "TagName": "None"
+        },
+        "Settings": [
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.FlightAssists"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.FlightAssist.Stability"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.FlightAssist.AutoHover"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.FlightAssist.EnvelopeLimits"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.FlightAssist.TurnCoordination"
+          }
+        ]
+      },
+      {
+        "CategoryText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings.STRINGS_Settings",
+          "Key": "Text.Setting.MissileSettings",
+          "SourceString": "Missile Settings",
+          "LocalizedString": "Missile Settings"
+        },
+        "TabTag": {
+          "TagName": "None"
+        },
+        "Settings": [
+          {
+            "TagName": "UserSettings.Controls.VehicleBehavior.Vehicle.Missile.Mouse"
+          },
+          {
+            "TagName": "UserSettings.Controls.Mouse.Axis.Y.Invert.Vehicle.Air.Missile"
+          }
+        ]
+      },
+      {
+        "CategoryText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Controls.STRINGS_Settings_Controls",
+          "Key": "Category.Behaviors",
+          "SourceString": "Action Behaviors",
+          "LocalizedString": "Action Behaviors"
+        },
+        "TabTag": {
+          "TagName": "UI.Settings.Tab.Controls.ActionBehaviors"
+        },
+        "Settings": [
+          {
+            "TagName": "UserSettings.Controls.ActionBehavior.ADS"
+          },
+          {
+            "TagName": "UserSettings.Controls.ActionBehavior.Steady"
+          },
+          {
+            "TagName": "UserSettings.Controls.ActionBehavior.Crouch"
+          },
+          {
+            "TagName": "UserSettings.Controls.ActionBehavior.Prone"
+          },
+          {
+            "TagName": "UserSettings.Controls.ActionBehavior.Lean"
+          },
+          {
+            "TagName": "UserSettings.Controls.ActionBehavior.Sprint"
+          },
+          {
+            "TagName": "UserSettings.Controls.ActionBehavior.SlowWalk"
+          },
+          {
+            "TagName": "UserSettings.General.Movement.SlowWalkSpeed"
+          },
+          {
+            "TagName": "UserSettings.General.BipodDeployMode"
+          },
+          {
+            "TagName": "UserSettings.Controls.ActionBehavior.InvertC4Input"
+          }
+        ]
+      },
+      {
+        "CategoryText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Keybindings.STRINGS_Settings_Keybindings",
+          "Key": "Category.MovementKeybinds",
+          "SourceString": "Movement Keybinds",
+          "LocalizedString": "Movement Keybinds"
+        },
+        "TabTag": {
+          "TagName": "UI.Settings.Tab.Controls.Keybindings"
+        },
+        "Settings": [
+          {
+            "TagName": "Input.NamedActions.Player.MoveForward"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.MoveBackward"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.MoveLeft"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.MoveRight"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.Sprint"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.SlowWalk"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.Jump"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.Crouch"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.CrouchProne"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.Prone"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.Lean.Left"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.Lean.Right"
+          }
+        ]
+      },
+      {
+        "CategoryText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Keybindings.STRINGS_Settings_Keybindings",
+          "Key": "Category.Keybindings.Weapon",
+          "SourceString": "Weapon / Item Keybinds",
+          "LocalizedString": "Weapon / Item Keybinds"
+        },
+        "TabTag": {
+          "TagName": "UI.Settings.Tab.Controls.Keybindings"
+        },
+        "Settings": [
+          {
+            "TagName": "Input.NamedActions.HoldableItem.PrimaryUse"
+          },
+          {
+            "TagName": "Input.NamedActions.HoldableItem.SecondaryUse"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.Focus"
+          },
+          {
+            "TagName": "Input.NamedActions.HoldableItem.Weapon.MeleeBash"
+          },
+          {
+            "TagName": "Input.NamedActions.HoldableItem.Weapon.Reload"
+          },
+          {
+            "TagName": "Input.NamedActions.HoldableItem.Weapon.IncreaseZeroing"
+          },
+          {
+            "TagName": "Input.NamedActions.HoldableItem.Weapon.DecreaseZeroing"
+          },
+          {
+            "TagName": "Input.NamedActions.HoldableItem.Weapon.CycleFireMode"
+          },
+          {
+            "TagName": "Input.NamedActions.HoldableItem.Weapon.CycleSights"
+          },
+          {
+            "TagName": "Input.NamedActions.HoldableItem.Weapon.Bipod.Mount"
+          },
+          {
+            "TagName": "Input.NamedActions.HoldableItem.Weapon.Bipod.ToggleFold"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.DeployParachute"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.CutParachute"
+          },
+          {
+            "TagName": "Input.NamedActions.HoldableItem.Inspect"
+          },
+          {
+            "TagName": "Input.NamedActions.Inventory.ChangeNext"
+          },
+          {
+            "TagName": "Input.NamedActions.Inventory.ChangePrev"
+          },
+          {
+            "TagName": "Input.NamedActions.Inventory.ToggleHands"
+          },
+          {
+            "TagName": "UI.Action.Feature.RadialWheel.Equipment.ToggleScene"
+          },
+          {
+            "TagName": "Input.NamedActions.Inventory.Change.1"
+          },
+          {
+            "TagName": "Input.NamedActions.Inventory.Change.2"
+          },
+          {
+            "TagName": "Input.NamedActions.Inventory.Change.3"
+          },
+          {
+            "TagName": "Input.NamedActions.Inventory.Change.4"
+          },
+          {
+            "TagName": "Input.NamedActions.Inventory.Change.5"
+          },
+          {
+            "TagName": "Input.NamedActions.Inventory.Change.6"
+          },
+          {
+            "TagName": "Input.NamedActions.Inventory.Change.7"
+          },
+          {
+            "TagName": "Input.NamedActions.Inventory.Change.8"
+          },
+          {
+            "TagName": "Input.NamedActions.Inventory.Change.9"
+          },
+          {
+            "TagName": "Input.NamedActions.Inventory.Change.0"
+          }
+        ]
+      },
+      {
+        "CategoryText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Keybindings.STRINGS_Settings_Keybindings",
+          "Key": "Category.InteractionKeybinds",
+          "SourceString": "Interaction Keybinds",
+          "LocalizedString": "Interaction Keybinds"
+        },
+        "TabTag": {
+          "TagName": "UI.Settings.Tab.Controls.Keybindings"
+        },
+        "Settings": [
+          {
+            "TagName": "Input.NamedActions.Player.Interact"
+          }
+        ]
+      },
+      {
+        "CategoryText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Keybindings.STRINGS_Settings_Keybindings",
+          "Key": "Category.Communication",
+          "SourceString": "Communication",
+          "LocalizedString": "Communication"
+        },
+        "TabTag": {
+          "TagName": "UI.Settings.Tab.Controls.Keybindings"
+        },
+        "Settings": [
+          {
+            "TagName": "Input.NamedActions.Player.VOIP.ToggleVoiceChat"
+          },
+          {
+            "TagName": "UI.Action.Feature.Scoreboard.ToggleVoiceChat"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.VOIP.PushToTalk.Squad"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.VOIP.PushToTalk.Proximity"
+          },
+          {
+            "TagName": "Input.NamedActions.Ping"
+          },
+          {
+            "TagName": "UI.Action.Feature.PingWheel.ToggleScene"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.Tip"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.Tip.Reject"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.Downed.Bribe"
+          }
+        ]
+      },
+      {
+        "CategoryText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Keybindings.STRINGS_Settings_Keybindings",
+          "Key": "Category.Keybindings.BuildTool",
+          "SourceString": "Build Tool Keybinds",
+          "LocalizedString": "Build Tool Keybinds"
+        },
+        "TabTag": {
+          "TagName": "UI.Settings.Tab.Controls.Keybindings"
+        },
+        "Settings": [
+          {
+            "TagName": "Input.NamedActions.HoldableItem.BuildTool.Dismantle"
+          },
+          {
+            "TagName": "Input.NamedActions.HoldableItem.BuildTool.Rotate"
+          },
+          {
+            "TagName": "Input.NamedActions.HoldableItem.BuildTool.ToggleSnapping"
+          }
+        ]
+      },
+      {
+        "CategoryText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Keybindings.STRINGS_Settings_Keybindings",
+          "Key": "Category.Keybindings.GroundVehicles",
+          "SourceString": "Ground Vehicle Keybinds",
+          "LocalizedString": "Ground Vehicle Keybinds"
+        },
+        "TabTag": {
+          "TagName": "UI.Settings.Tab.Controls.Keybindings"
+        },
+        "Settings": [
+          {
+            "TagName": "Input.NamedActions.Vehicle.Boost"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Throttle"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Brake"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Steering.Right"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Steering.Left"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Handbrake"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.GearshiftR"
+          }
+        ]
+      },
+      {
+        "CategoryText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Keybindings.STRINGS_Settings_Keybindings",
+          "Key": "Category.Keybindings.RotaryVehicles",
+          "SourceString": "Rotary Vehicle Keybinds",
+          "LocalizedString": "Rotary Vehicle Keybinds"
+        },
+        "TabTag": {
+          "TagName": "UI.Settings.Tab.Controls.Keybindings"
+        },
+        "Settings": [
+          {
+            "TagName": "Input.NamedActions.Vehicle.Collective.Raise"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Collective.Lower"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Cyclic.X.Positive"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Cyclic.X.Negative"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Cyclic.Y.Positive"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Cyclic.Y.Negative"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Pedals.Left"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Pedals.Right"
+          }
+        ]
+      },
+      {
+        "CategoryText": {
+          "Namespace": "",
+          "Key": "F9FA709F4A5FFE0CC6D79CA539F71F47",
+          "SourceString": "Missile Keybinds",
+          "LocalizedString": "Missile Keybinds"
+        },
+        "TabTag": {
+          "TagName": "UI.Settings.Tab.Controls.Keybindings"
+        },
+        "Settings": [
+          {
+            "TagName": "Input.NamedActions.Drone.Projectile.Cyclic.X.Positive"
+          },
+          {
+            "TagName": "Input.NamedActions.Drone.Projectile.Cyclic.X.Negative"
+          }
+        ]
+      },
+      {
+        "CategoryText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Keybindings.STRINGS_Settings_Keybindings",
+          "Key": "Category.Keybindings.GeneralVehicle",
+          "SourceString": "General Vehicle Keybinds",
+          "LocalizedString": "General Vehicle Keybinds"
+        },
+        "TabTag": {
+          "TagName": "UI.Settings.Tab.Controls.Keybindings"
+        },
+        "Settings": [
+          {
+            "TagName": "Input.NamedActions.Vehicle.ChangeSeat.Next"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.ChangeSeat.Prev"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.CycleLockState"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.FireFlares"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.OpenGarageVendor"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.DeploySupplyCrate"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Horn"
+          }
+        ]
+      },
+      {
+        "CategoryText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Keybindings.STRINGS_Settings_Keybindings",
+          "Key": "Category.Keybindings.Vehicle.Weapons",
+          "SourceString": "Vehicle Weapons Keybinds",
+          "LocalizedString": "Vehicle Weapons Keybinds"
+        },
+        "TabTag": {
+          "TagName": "UI.Settings.Tab.Controls.Keybindings"
+        },
+        "Settings": [
+          {
+            "TagName": "Input.NamedActions.Vehicle.MountedWeapon.Fire"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.WeaponExtension.CycleWeapons"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.WeaponExtension.CycleFireMode"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.WeaponExtension.ToggleGunnerActive"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.WeaponExtension.CycleZoomLevel"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.WeaponExtension.CycleCamera"
+          },
+          {
+            "TagName": "Input.NamedActions.Projectile.Eject"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.MountedWeapon.PitchUp"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.MountedWeapon.PitchDown"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.MountedWeapon.YawLeft"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.MountedWeapon.YawRight"
+          }
+        ]
+      },
+      {
+        "CategoryText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Keybindings.STRINGS_Settings_Keybindings",
+          "Key": "Category.Keybindings.VehicleCamera",
+          "SourceString": "Vehicle Camera Keybinds",
+          "LocalizedString": "Vehicle Camera Keybinds"
+        },
+        "TabTag": {
+          "TagName": "UI.Settings.Tab.Controls.Keybindings"
+        },
+        "Settings": [
+          {
+            "TagName": "Input.NamedActions.Vehicle.Camera.ToggleFreeLook"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Camera.ToggleMode"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Camera.LeftView"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Camera.RightView"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Camera.RearView"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Camera.ZoomIn"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Camera.ZoomOut"
+          }
+        ]
+      },
+      {
+        "CategoryText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Keybindings.STRINGS_Settings_Keybindings",
+          "Key": "Category.Keybindings.UI",
+          "SourceString": "UI - General Keybinds",
+          "LocalizedString": "UI - General Keybinds"
+        },
+        "TabTag": {
+          "TagName": "UI.Settings.Tab.Controls.Keybindings"
+        },
+        "Settings": [
+          {
+            "TagName": "UI.Action.Feature.PauseMenu.ToggleScene"
+          },
+          {
+            "TagName": "UI.Action.Feature.Inventory.ToggleScene"
+          },
+          {
+            "TagName": "UI.Action.Feature.Scoreboard.ToggleScene"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.Ready"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.Downed.GiveUp"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.Downed.HoldOn"
+          },
+          {
+            "TagName": "UI.Action.Feature.Chat.OpenChat"
+          },
+          {
+            "TagName": "UI.Action.Feature.Vendor.Vault.Toggle"
+          }
+        ]
+      },
+      {
+        "CategoryText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Keybindings.STRINGS_Settings_Keybindings",
+          "Key": "Category.Keybindings.UImap",
+          "SourceString": "UI - Map Keybinds",
+          "LocalizedString": "UI - Map Keybinds"
+        },
+        "TabTag": {
+          "TagName": "UI.Settings.Tab.Controls.Keybindings"
+        },
+        "Settings": [
+          {
+            "TagName": "UI.Action.Feature.Map.ToggleScene"
+          },
+          {
+            "TagName": "UI.Action.Feature.Map.Recenter"
+          },
+          {
+            "TagName": "Input.NamedActions.UI.Minimap.ZoomedIn"
+          },
+          {
+            "TagName": "Input.NamedActions.UI.Minimap.ZoomedOut"
+          },
+          {
+            "TagName": "None"
+          },
+          {
+            "TagName": "None"
+          },
+          {
+            "TagName": "None"
+          }
+        ]
+      },
+      {
+        "CategoryText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Keybindings.STRINGS_Settings_Keybindings",
+          "Key": "Category.Keybindings.ActiveReload",
+          "SourceString": "UI - Active Reload Keybinds",
+          "LocalizedString": "UI - Active Reload Keybinds"
+        },
+        "TabTag": {
+          "TagName": "UI.Settings.Tab.Controls.Keybindings"
+        },
+        "Settings": [
+          {
+            "TagName": "Input.NamedActions.Vehicle.WeaponExtension.ActiveReload.Up"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.WeaponExtension.ActiveReload.Right"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.WeaponExtension.ActiveReload.Left"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.WeaponExtension.ActiveReload.Down"
+          }
+        ]
+      }
+    ],
+    "SettingEntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUISettingEntryViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Settings/Widgets/SettingEntry/Data/DA_SettingEntry.DA_SettingEntry",
+        "SubPathString": ""
+      }
+    }
+  }
+}

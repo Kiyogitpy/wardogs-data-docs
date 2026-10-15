@@ -1,0 +1,55 @@
+--- export: UDataAsset / DA_WeaponTooltipData ---
+{
+  "Type": "WDUIWeaponTooltipData",
+  "Name": "DA_WeaponTooltipData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIWeaponTooltipData'",
+  "Package": "/Game/UI/Features/Tooltips/Widgets/Data/DA_WeaponTooltipData",
+  "Properties": {
+    "TextUnlockFormatting": [
+      {
+        "Key": "EWDUILockState::FromLevel",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_TooltipItems.STRINGS_TooltipItems",
+          "Key": "Tooltip.Text.Locked.Level",
+          "SourceString": "Reach {Reason}",
+          "LocalizedString": "Reach {Reason}"
+        }
+      },
+      {
+        "Key": "EWDUILockState::FromCurrency",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_TooltipItems.STRINGS_TooltipItems",
+          "Key": "Tooltip.Text.Locked.Currency",
+          "SourceString": "Unlock for {Reason}",
+          "LocalizedString": "Unlock for {Reason}"
+        }
+      },
+      {
+        "Key": "EWDUILockState::Unknown",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_TooltipItems.STRINGS_TooltipItems",
+          "Key": "Tooltip.Text.Locked.Unknown",
+          "SourceString": "Locked",
+          "LocalizedString": "Locked"
+        }
+      }
+    ],
+    "_aaabejkombelopgfdkigh_$9AEC14BEF653A867$_$20$": {
+      "TableId": "/Game/UI/StringTables/STRINGS_TooltipDescriptions.STRINGS_TooltipDescriptions",
+      "Key": "TooltipDescription.RoleXP.Formatting",
+      "SourceString": "\r\nREWARDS {Emoji} {RoleName} XP",
+      "LocalizedString": "\r\nREWARDS {Emoji} {RoleName} XP"
+    },
+    "ButtonPromptsBarViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIButtonPromptsBarViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/Data/ButtonPromptData/DA_Default_PromptBarData.DA_Default_PromptBarData",
+        "SubPathString": ""
+      }
+    }
+  }
+}

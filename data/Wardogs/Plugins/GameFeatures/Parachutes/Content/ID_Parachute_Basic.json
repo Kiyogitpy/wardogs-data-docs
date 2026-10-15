@@ -1,0 +1,161 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Parachute_Basic'",
+    "ObjectPath": "/Parachutes/ID_Parachute_Basic.4"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 3,
+      "Y": 2
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Parachute_Basic'",
+    "ObjectPath": "/Parachutes/ID_Parachute_Basic.4"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/ExternalAssets/ParachuteKit/Meshes/Backpack/Backpack_SM_Temp.Backpack_SM_Temp",
+      "SubPathString": ""
+    },
+    "RelativeRotation": {
+      "Pitch": 0.0,
+      "Yaw": 90.0,
+      "Roll": 10.0
+    },
+    "bOverrideDroppedRelativeLocation": true,
+    "OverridedRelativeLocation": {
+      "X": -4.0,
+      "Y": 0.0,
+      "Z": -25.0
+    },
+    "bOverrideDroppedBoxExtent": true,
+    "OverridedBoxExtent": {
+      "X": 15.0,
+      "Y": 16.0,
+      "Z": 22.0
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Parachute_Basic'",
+    "ObjectPath": "/Parachutes/ID_Parachute_Basic.4"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Parachute_Basic'",
+    "ObjectPath": "/Parachutes/ID_Parachute_Basic.4"
+  },
+  "Properties": {
+    "Weight": 2.5
+  }
+}
+--- export: UPrimaryDataAsset / ID_Parachute_Basic ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_Parachute_Basic",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Parachutes/ID_Parachute_Basic",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.Parachute.Basic"
+    },
+    "ItemContext": [
+      "Inventory.Slot.Traversal",
+      "Item.Parachute",
+      "Item.Context.Equippable",
+      "Item.Archetype.Parachute"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "6C860B1D437AD33841DA6D84BF661094",
+      "SourceString": "Parachute",
+      "LocalizedString": "Parachute"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_Parachute_Basic:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Parachutes/ID_Parachute_Basic.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_Parachute_Basic:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/Parachutes/ID_Parachute_Basic.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_Parachute_Basic:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Parachutes/ID_Parachute_Basic.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_Parachute_Basic:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Parachutes/ID_Parachute_Basic.5"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_Parachute_Basic:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Parachutes/ID_Parachute_Basic.0"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Parachute'ID_Parachute_Basic:WDInventoryFragment_Parachute_0'",
+        "ObjectPath": "/Parachutes/ID_Parachute_Basic.6"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Parachute_Basic'",
+    "ObjectPath": "/Parachutes/ID_Parachute_Basic.4"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Backpack_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Item/Data/ID_Backpack_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Parachute_0 ---
+{
+  "Type": "WDInventoryFragment_Parachute",
+  "Name": "WDInventoryFragment_Parachute_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Parachute'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Parachute_Basic'",
+    "ObjectPath": "/Parachutes/ID_Parachute_Basic.4"
+  },
+  "Properties": {
+    "ParachuteData": {
+      "ObjectName": "WDParachuteData'DA_ParachuteMovement_Basic'",
+      "ObjectPath": "/Parachutes/DA_ParachuteMovement_Basic.0"
+    }
+  }
+}

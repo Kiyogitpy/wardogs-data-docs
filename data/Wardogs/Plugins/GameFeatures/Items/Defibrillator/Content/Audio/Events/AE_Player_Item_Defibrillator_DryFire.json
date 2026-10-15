@@ -1,0 +1,70 @@
+--- export: UObject / AEB_AttachSoundToHeldItem_C_0 ---
+{
+  "Type": "AEB_AttachSoundToHeldItem_C",
+  "Name": "AEB_AttachSoundToHeldItem_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_AttachSoundToHeldItem.AEB_AttachSoundToHeldItem_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Item_Defibrillator_DryFire'",
+    "ObjectPath": "/Defibrillator/Audio/Events/AE_Player_Item_Defibrillator_DryFire.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_AttachSoundToHeldItem_C'Default__AEB_AttachSoundToHeldItem_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_AttachSoundToHeldItem.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / AEB_PlayHeldItemPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayHeldItemPerspectiveSound_C",
+  "Name": "AEB_PlayHeldItemPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayHeldItemPerspectiveSound.AEB_PlayHeldItemPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Item_Defibrillator_DryFire'",
+    "ObjectPath": "/Defibrillator/Audio/Events/AE_Player_Item_Defibrillator_DryFire.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayHeldItemPerspectiveSound_C'Default__AEB_PlayHeldItemPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayHeldItemPerspectiveSound.0"
+  },
+  "Properties": {
+    "FirstPersonSoundTag": {
+      "TagName": "Audio.Asset.Item.DryFire.1p"
+    },
+    "ThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Item.DryFire.3p"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Player_Item_Defibrillator_DryFire ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Player_Item_Defibrillator_DryFire",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Defibrillator/Audio/Events/AE_Player_Item_Defibrillator_DryFire",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Item.Defibrillator.DryFire"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_AttachSoundToHeldItem_C'AE_Player_Item_Defibrillator_DryFire:AEB_AttachSoundToHeldItem_C_0'",
+        "ObjectPath": "/Defibrillator/Audio/Events/AE_Player_Item_Defibrillator_DryFire.0"
+      },
+      {
+        "ObjectName": "AEB_PlayHeldItemPerspectiveSound_C'AE_Player_Item_Defibrillator_DryFire:AEB_PlayHeldItemPerspectiveSound_C_0'",
+        "ObjectPath": "/Defibrillator/Audio/Events/AE_Player_Item_Defibrillator_DryFire.1"
+      }
+    ],
+    "_aaabhonahgpdbjealfaaa_$ED076F31940B5000$_$23$": 0.505
+  }
+}

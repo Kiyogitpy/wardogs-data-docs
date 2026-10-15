@@ -1,0 +1,330 @@
+--- export: UPrimaryDataAsset / AnimSet_Resuscitator ---
+{
+  "Type": "BHAnimationSet",
+  "Name": "AnimSet_Resuscitator",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHAnimationSet'",
+  "Package": "/Enox/Data/ResuscitatorTest/AnimSet_Resuscitator",
+  "Properties": {
+    "Animations": [
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Appliable.PrimaryUse"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_Resuscitator_Use'",
+              "ObjectPath": "/Enox/Animation/Character/Montage/AM_Resuscitator_Use.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_Resuscitator_Teammate_Use'",
+              "ObjectPath": "/Enox/Animation/Character/Montage/AM_TP_Resuscitator_Teammate_Use.0"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_Enox_Use'",
+              "ObjectPath": "/Enox/Animation/Item/Montage/AM_Weap_Enox_Use.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_Enox_Use'",
+              "ObjectPath": "/Enox/Animation/Item/Montage/AM_Weap_Enox_Use.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Holdable.Inspect"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Enox_Inspect'",
+              "ObjectPath": "/Enox/Animation/Character/Montage/AM_FP_Enox_Inspect.0"
+            },
+            "ThirdPersonPlayerAnimation": null,
+            "FirstPersonItemAnimation": null,
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_Weap_Enox_Use_Throw'",
+              "ObjectPath": "/Enox/Animation/Item/Montage/AM_TP_Weap_Enox_Use_Throw.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Appliable.PrimaryUse.Release"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Enox_Use_Throw'",
+              "ObjectPath": "/Enox/Animation/Character/Montage/AM_FP_Enox_Use_Throw.0"
+            },
+            "ThirdPersonPlayerAnimation": null,
+            "FirstPersonItemAnimation": null,
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_Weap_Enox_Use_Throw'",
+              "ObjectPath": "/Enox/Animation/Item/Montage/AM_TP_Weap_Enox_Use_Throw.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Holdable.DoorInteraction"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Nothing_Door_Interact'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Doors/AM_FP_Nothing_Door_Interact.0"
+            },
+            "ThirdPersonPlayerAnimation": null,
+            "FirstPersonItemAnimation": null,
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Inventory.Weapon.Base"
+        },
+        "Value": {
+          "BaseAsset": {
+            "Asset": {
+              "ObjectName": "AnimSequence'A_NPC_Inventory_Rifle_Idle'",
+              "ObjectPath": "/Game/Animation/Characters/NPC/Inventory/A_NPC_Inventory_Rifle_Idle.0"
+            }
+          },
+          "Overrides": [
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+                    "ObjectPath": "/Script/BHAnimationData"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "TagQuery": {
+                          "TokenStreamVersion": 0,
+                          "TagDictionary": [
+                            {
+                              "TagName": "Item.Context.Animation.Archetype.Foregrip.BumpStop"
+                            }
+                          ],
+                          "QueryTokenStream": [
+                            0,
+                            1,
+                            1,
+                            1,
+                            0
+                          ],
+                          "UserDescription": "",
+                          "AutoDescription": " ANY( Item.Context.Animation.Archetype.Foregrip.BumpStop )"
+                        },
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+                    "ObjectPath": "/Script/BHAnimationData"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Pose.Foregrip.RK6"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+                    "ObjectPath": "/Script/BHAnimationData"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "TagQuery": {
+                          "TokenStreamVersion": 0,
+                          "TagDictionary": [
+                            {
+                              "TagName": "Item.Context.Animation.Archetype.Foregrip.Vertical"
+                            }
+                          ],
+                          "QueryTokenStream": [
+                            0,
+                            1,
+                            1,
+                            1,
+                            0
+                          ],
+                          "UserDescription": "",
+                          "AutoDescription": " ANY( Item.Context.Animation.Archetype.Foregrip.Vertical )"
+                        },
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+                    "ObjectPath": "/Script/BHAnimationData"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Pose.Foregrip.FGP_02"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+                    "ObjectPath": "/Script/BHAnimationData"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "TagQuery": {
+                          "TokenStreamVersion": 0,
+                          "TagDictionary": [
+                            {
+                              "TagName": "Item.Context.Animation.Archetype.Foregrip.Angled"
+                            }
+                          ],
+                          "QueryTokenStream": [
+                            0,
+                            1,
+                            1,
+                            1,
+                            0
+                          ],
+                          "UserDescription": "",
+                          "AutoDescription": " ANY( Item.Context.Animation.Archetype.Foregrip.Angled )"
+                        },
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+                    "ObjectPath": "/Script/BHAnimationData"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Pose.Foregrip.FGP_03"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+                    "ObjectPath": "/Script/BHAnimationData"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "TagQuery": {
+                          "TokenStreamVersion": 0,
+                          "TagDictionary": [
+                            {
+                              "TagName": "Item.Context.Animation.Archetype.Foregrip.Vertical"
+                            }
+                          ],
+                          "QueryTokenStream": [
+                            0,
+                            1,
+                            1,
+                            1,
+                            0
+                          ],
+                          "UserDescription": "",
+                          "AutoDescription": " ANY( Item.Context.Animation.Archetype.Foregrip.Vertical )"
+                        },
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+                    "ObjectPath": "/Script/BHAnimationData"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Pose.Foregrip.FGP_04"
+              }
+            }
+          ],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      }
+    ]
+  }
+}

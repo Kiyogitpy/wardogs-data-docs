@@ -1,0 +1,64 @@
+--- export: UObject / AEB_SetEnemyKilledDistance_C_0 ---
+{
+  "Type": "AEB_SetEnemyKilledDistance_C",
+  "Name": "AEB_SetEnemyKilledDistance_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetEnemyKilledDistance.AEB_SetEnemyKilledDistance_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UX_Combat_HeadshotKill'",
+    "ObjectPath": "/Game/Audio/Events/UX/Combat/AE_UX_Combat_HeadshotKill.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetEnemyKilledDistance_C'Default__AEB_SetEnemyKilledDistance_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetEnemyKilledDistance.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_UX_Combat_HeadshotKill ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UX_Combat_HeadshotKill",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UX/Combat/AE_UX_Combat_HeadshotKill",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UX.Combat.HeadshotKill"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_SetEnemyKilledDistance_C'AE_UX_Combat_HeadshotKill:AEB_SetEnemyKilledDistance_C_0'",
+        "ObjectPath": "/Game/Audio/Events/UX/Combat/AE_UX_Combat_HeadshotKill.0"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_UX_Combat_HeadshotKill:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/UX/Combat/AE_UX_Combat_HeadshotKill.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UX_Combat_HeadshotKill'",
+    "ObjectPath": "/Game/Audio/Events/UX/Combat/AE_UX_Combat_HeadshotKill.1"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UX_Combat_Notify_HeadshotKill'",
+      "ObjectPath": "/Game/Audio/UX/Combat/Kill/MSS_UX_Combat_Notify_HeadshotKill.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.UX.CentralFeedback"
+    }
+  }
+}

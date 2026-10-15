@@ -1,0 +1,65 @@
+--- export: UObject / WDPingAction_Emote_0 ---
+{
+  "Type": "WDPingAction_Emote",
+  "Name": "WDPingAction_Emote_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingAction_Emote'",
+  "Outer": {
+    "ObjectName": "WDPingActionAsset'DA_PingAction_Middle_Finger'",
+    "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Emote/DA_PingAction_Middle_Finger.1"
+  },
+  "Properties": {
+    "_aaaaoanpgoebekdgeegjn_$DF6E414A364469D$_$14$": {
+      "TagName": "Action.Player.Emote.Middle_Finger"
+    },
+    "_aaabbgiodmehbainkmoic_$68E3C47108DACE82$_$17$": {
+      "TagName": "Meta.Cosmetic.Emote.Middle_Finger"
+    }
+  }
+}
+--- export: UDataAsset / DA_PingAction_Middle_Finger ---
+{
+  "Type": "WDPingActionAsset",
+  "Name": "DA_PingAction_Middle_Finger",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingActionAsset'",
+  "Package": "/Game/UI/Features/PingWheel/Data/Actions/Emote/DA_PingAction_Middle_Finger",
+  "Properties": {
+    "Text": {
+      "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+      "Key": "Action.Emote.Middle_Finger",
+      "SourceString": "Middle Finger",
+      "LocalizedString": "Middle Finger"
+    },
+    "LockedDescription": {
+      "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+      "Key": "Emote.State.Locked",
+      "SourceString": "Must be unlocked",
+      "LocalizedString": "Must be unlocked"
+    },
+    "NonTriggerableDescriptions": [
+      {
+        "Key": {
+          "TagName": "Tag.PingAction.NonTriggerable.Critical"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+          "Key": "Action.Request.Emote.NonTriggerable.Critical",
+          "SourceString": "Health Critical",
+          "LocalizedString": "Health Critical"
+        }
+      }
+    ],
+    "Icon": {
+      "AssetPathName": "/Game/UI/Features/PingWheel/Widgets/Action/Textures/T_UI_Icon_PingWheel_MiddleFinger.T_UI_Icon_PingWheel_MiddleFinger",
+      "SubPathString": ""
+    },
+    "bIsWorkInProgress": false,
+    "Actions": [
+      {
+        "ObjectName": "WDPingAction_Emote'DA_PingAction_Middle_Finger:WDPingAction_Emote_0'",
+        "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Emote/DA_PingAction_Middle_Finger.0"
+      }
+    ]
+  }
+}

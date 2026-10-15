@@ -1,0 +1,340 @@
+--- export: UDataTable / DT_MusicSystem ---
+{
+  "Type": "DataTable",
+  "Name": "DT_MusicSystem",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/Audio/Music/DT_MusicSystem",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDMusicState'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Audio.Music.FrontEnd.MainMenu": {
+      "Track": {
+        "ObjectName": "MetaSoundSource'MSS_Music_FrontEnd_MainMenu'",
+        "ObjectPath": "/Game/Audio/Music/FrontEnd/MS/MSS_Music_FrontEnd_MainMenu.0"
+      },
+      "TimeSignature": {
+        "NumBeats": 4,
+        "BeatType": "EQuartzTimeSignatureQuantization::QuarterNote",
+        "OptionalPulseOverride": []
+      },
+      "Tempo": 90.0,
+      "Priority": 100,
+      "TransitionIn": {
+        "Fade": "EAudioFaderCurve::Logarithmic",
+        "Synchronization": "EQuartzCommandQuantization::None",
+        "Duration": 1.0
+      },
+      "TransitionOut": {
+        "Fade": "EAudioFaderCurve::Logarithmic",
+        "Synchronization": "EQuartzCommandQuantization::None",
+        "Duration": 20.0
+      },
+      "bDisableWhenDeactivated": false,
+      "Tag": {
+        "TagName": "Audio.Music.FrontEnd.MainMenu"
+      }
+    },
+    "Audio.Music.Death": {
+      "Track": {
+        "ObjectName": "MetaSoundSource'MSS_Music_Death'",
+        "ObjectPath": "/Game/Audio/Music/InGame/MSS/MSS_Music_Death.0"
+      },
+      "TimeSignature": {
+        "NumBeats": 4,
+        "BeatType": "EQuartzTimeSignatureQuantization::QuarterNote",
+        "OptionalPulseOverride": []
+      },
+      "Tempo": 90.0,
+      "Priority": 80,
+      "TransitionIn": {
+        "Fade": "EAudioFaderCurve::Logarithmic",
+        "Synchronization": "EQuartzCommandQuantization::None",
+        "Duration": 0.2
+      },
+      "TransitionOut": {
+        "Fade": "EAudioFaderCurve::Logarithmic",
+        "Synchronization": "EQuartzCommandQuantization::None",
+        "Duration": 1.0
+      },
+      "bDisableWhenDeactivated": true,
+      "Tag": {
+        "TagName": "Audio.Music.Death"
+      }
+    },
+    "Audio.Music.FirstSpawn": {
+      "Track": {
+        "ObjectName": "MetaSoundSource'MSS_Music_InGame_FirstSpawn'",
+        "ObjectPath": "/Game/Audio/Music/InGame/MSS/MSS_Music_InGame_FirstSpawn.0"
+      },
+      "TimeSignature": {
+        "NumBeats": 4,
+        "BeatType": "EQuartzTimeSignatureQuantization::QuarterNote",
+        "OptionalPulseOverride": []
+      },
+      "Tempo": 90.0,
+      "Priority": 59,
+      "TransitionIn": {
+        "Fade": "EAudioFaderCurve::Logarithmic",
+        "Synchronization": "EQuartzCommandQuantization::None",
+        "Duration": 0.2
+      },
+      "TransitionOut": {
+        "Fade": "EAudioFaderCurve::Logarithmic",
+        "Synchronization": "EQuartzCommandQuantization::None",
+        "Duration": 1.0
+      },
+      "bDisableWhenDeactivated": true,
+      "Tag": {
+        "TagName": "Audio.Music.FirstSpawn"
+      }
+    },
+    "Audio.Music.FirstTimeLeaveSpawn": {
+      "Track": {
+        "ObjectName": "MetaSoundSource'MSS_Music_InGame_FirstTimeLeaveSpawn'",
+        "ObjectPath": "/Game/Audio/Music/InGame/MSS/MSS_Music_InGame_FirstTimeLeaveSpawn.0"
+      },
+      "TimeSignature": {
+        "NumBeats": 4,
+        "BeatType": "EQuartzTimeSignatureQuantization::QuarterNote",
+        "OptionalPulseOverride": []
+      },
+      "Tempo": 90.0,
+      "Priority": 5,
+      "TransitionIn": {
+        "Fade": "EAudioFaderCurve::Logarithmic",
+        "Synchronization": "EQuartzCommandQuantization::None",
+        "Duration": 1.0
+      },
+      "TransitionOut": {
+        "Fade": "EAudioFaderCurve::Logarithmic",
+        "Synchronization": "EQuartzCommandQuantization::None",
+        "Duration": 1.0
+      },
+      "bDisableWhenDeactivated": true,
+      "Tag": {
+        "TagName": "Audio.Music.FirstTimeLeaveSpawn"
+      }
+    },
+    "Audio.Music.FirstTimeInCZ": {
+      "Track": {
+        "ObjectName": "MetaSoundSource'MSS_Music_InGame_FirstTimeInCZ'",
+        "ObjectPath": "/Game/Audio/Music/InGame/MSS/MSS_Music_InGame_FirstTimeInCZ.0"
+      },
+      "TimeSignature": {
+        "NumBeats": 4,
+        "BeatType": "EQuartzTimeSignatureQuantization::QuarterNote",
+        "OptionalPulseOverride": []
+      },
+      "Tempo": 90.0,
+      "Priority": 6,
+      "TransitionIn": {
+        "Fade": "EAudioFaderCurve::Logarithmic",
+        "Synchronization": "EQuartzCommandQuantization::None",
+        "Duration": 1.0
+      },
+      "TransitionOut": {
+        "Fade": "EAudioFaderCurve::Logarithmic",
+        "Synchronization": "EQuartzCommandQuantization::None",
+        "Duration": 1.0
+      },
+      "bDisableWhenDeactivated": true,
+      "Tag": {
+        "TagName": "Audio.Music.FirstTimeInCZ"
+      }
+    },
+    "Audio.Music.EndGame": {
+      "Track": {
+        "ObjectName": "MetaSoundSource'MSS_Music_InGame_EndGame'",
+        "ObjectPath": "/Game/Audio/Music/InGame/MSS/MSS_Music_InGame_EndGame.0"
+      },
+      "TimeSignature": {
+        "NumBeats": 4,
+        "BeatType": "EQuartzTimeSignatureQuantization::QuarterNote",
+        "OptionalPulseOverride": []
+      },
+      "Tempo": 90.0,
+      "Priority": 101,
+      "TransitionIn": {
+        "Fade": "EAudioFaderCurve::Logarithmic",
+        "Synchronization": "EQuartzCommandQuantization::None",
+        "Duration": 0.0
+      },
+      "TransitionOut": {
+        "Fade": "EAudioFaderCurve::Logarithmic",
+        "Synchronization": "EQuartzCommandQuantization::None",
+        "Duration": 15.0
+      },
+      "bDisableWhenDeactivated": true,
+      "Tag": {
+        "TagName": "Audio.Music.EndGame"
+      }
+    },
+    "Audio.Music.SpawnBoardWait": {
+      "Track": {
+        "ObjectName": "MetaSoundSource'MSS_Gamemode_SpawnBoardWait'",
+        "ObjectPath": "/Game/Audio/Gamemode/SpawnBoard/MSS/MSS_Gamemode_SpawnBoardWait.0"
+      },
+      "TimeSignature": {
+        "NumBeats": 4,
+        "BeatType": "EQuartzTimeSignatureQuantization::QuarterNote",
+        "OptionalPulseOverride": []
+      },
+      "Tempo": 90.0,
+      "Priority": 6,
+      "TransitionIn": {
+        "Fade": "EAudioFaderCurve::Linear",
+        "Synchronization": "EQuartzCommandQuantization::None",
+        "Duration": 0.1
+      },
+      "TransitionOut": {
+        "Fade": "EAudioFaderCurve::Linear",
+        "Synchronization": "EQuartzCommandQuantization::None",
+        "Duration": 4.0
+      },
+      "bDisableWhenDeactivated": true,
+      "Tag": {
+        "TagName": "Audio.Music.SpawnBoardWait"
+      }
+    },
+    "Audio.Music.Last10Points": {
+      "Track": {
+        "ObjectName": "MetaSoundSource'MSS_Music_InGame_Last10Points'",
+        "ObjectPath": "/Game/Audio/Music/InGame/MSS/MSS_Music_InGame_Last10Points.0"
+      },
+      "TimeSignature": {
+        "NumBeats": 4,
+        "BeatType": "EQuartzTimeSignatureQuantization::QuarterNote",
+        "OptionalPulseOverride": []
+      },
+      "Tempo": 90.0,
+      "Priority": 60,
+      "TransitionIn": {
+        "Fade": "EAudioFaderCurve::Linear",
+        "Synchronization": "EQuartzCommandQuantization::None",
+        "Duration": 1.0
+      },
+      "TransitionOut": {
+        "Fade": "EAudioFaderCurve::Linear",
+        "Synchronization": "EQuartzCommandQuantization::None",
+        "Duration": 1.0
+      },
+      "bDisableWhenDeactivated": true,
+      "Tag": {
+        "TagName": "Audio.Music.Last10Points"
+      }
+    },
+    "Audio.Music.Last5Points": {
+      "Track": {
+        "ObjectName": "MetaSoundSource'MSS_Music_InGame_Last5Points_Loop'",
+        "ObjectPath": "/Game/Audio/Music/InGame/MSS/MSS_Music_InGame_Last5Points_Loop.0"
+      },
+      "TimeSignature": {
+        "NumBeats": 4,
+        "BeatType": "EQuartzTimeSignatureQuantization::QuarterNote",
+        "OptionalPulseOverride": []
+      },
+      "Tempo": 90.0,
+      "Priority": 61,
+      "TransitionIn": {
+        "Fade": "EAudioFaderCurve::Linear",
+        "Synchronization": "EQuartzCommandQuantization::None",
+        "Duration": 1.0
+      },
+      "TransitionOut": {
+        "Fade": "EAudioFaderCurve::Linear",
+        "Synchronization": "EQuartzCommandQuantization::None",
+        "Duration": 1.0
+      },
+      "bDisableWhenDeactivated": false,
+      "Tag": {
+        "TagName": "Audio.Music.Last5Points"
+      }
+    },
+    "Audio.Music.ShootingRangeTutorial.FlyOver": {
+      "Track": {
+        "ObjectName": "MetaSoundSource'MSS_Music_InGame_ShootingRangeTutorial_FlyOver'",
+        "ObjectPath": "/Game/Audio/Music/InGame/MSS/MSS_Music_InGame_ShootingRangeTutorial_FlyOver.0"
+      },
+      "TimeSignature": {
+        "NumBeats": 4,
+        "BeatType": "EQuartzTimeSignatureQuantization::QuarterNote",
+        "OptionalPulseOverride": []
+      },
+      "Tempo": 90.0,
+      "Priority": 60,
+      "TransitionIn": {
+        "Fade": "EAudioFaderCurve::Linear",
+        "Synchronization": "EQuartzCommandQuantization::None",
+        "Duration": 1.0
+      },
+      "TransitionOut": {
+        "Fade": "EAudioFaderCurve::Linear",
+        "Synchronization": "EQuartzCommandQuantization::None",
+        "Duration": 0.5
+      },
+      "bDisableWhenDeactivated": false,
+      "Tag": {
+        "TagName": "Audio.Music.ShootingRangeTutorial.FlyOver"
+      }
+    },
+    "Audio.Music.Revived": {
+      "Track": {
+        "ObjectName": "MetaSoundSource'MSS_Music_Revived'",
+        "ObjectPath": "/Game/Audio/Music/InGame/MSS/MSS_Music_Revived.0"
+      },
+      "TimeSignature": {
+        "NumBeats": 4,
+        "BeatType": "EQuartzTimeSignatureQuantization::QuarterNote",
+        "OptionalPulseOverride": []
+      },
+      "Tempo": 90.0,
+      "Priority": 81,
+      "TransitionIn": {
+        "Fade": "EAudioFaderCurve::Linear",
+        "Synchronization": "EQuartzCommandQuantization::None",
+        "Duration": 0.0
+      },
+      "TransitionOut": {
+        "Fade": "EAudioFaderCurve::Linear",
+        "Synchronization": "EQuartzCommandQuantization::None",
+        "Duration": 10.0
+      },
+      "bDisableWhenDeactivated": true,
+      "Tag": {
+        "TagName": "Audio.Music.Revived"
+      }
+    },
+    "Audio.Music.PreGameCount": {
+      "Track": {
+        "ObjectName": "MetaSoundSource'MSS_Music_PreGameCount'",
+        "ObjectPath": "/Game/Audio/Music/InGame/MSS/MSS_Music_PreGameCount.0"
+      },
+      "TimeSignature": {
+        "NumBeats": 4,
+        "BeatType": "EQuartzTimeSignatureQuantization::QuarterNote",
+        "OptionalPulseOverride": []
+      },
+      "Tempo": 90.0,
+      "Priority": 60,
+      "TransitionIn": {
+        "Fade": "EAudioFaderCurve::Linear",
+        "Synchronization": "EQuartzCommandQuantization::None",
+        "Duration": 0.0
+      },
+      "TransitionOut": {
+        "Fade": "EAudioFaderCurve::Linear",
+        "Synchronization": "EQuartzCommandQuantization::None",
+        "Duration": 1.0
+      },
+      "bDisableWhenDeactivated": true,
+      "Tag": {
+        "TagName": "Audio.Music.PreGameCount"
+      }
+    }
+  }
+}

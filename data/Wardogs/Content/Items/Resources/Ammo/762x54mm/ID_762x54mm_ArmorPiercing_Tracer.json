@@ -1,0 +1,155 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_762x54mm_ArmorPiercing_Tracer'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/762x54mm/ID_762x54mm_ArmorPiercing_Tracer.4"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 2,
+      "Y": 1
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_762x54mm_ArmorPiercing_Tracer'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/762x54mm/ID_762x54mm_ArmorPiercing_Tracer.4"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Items/Weapons/_Ammunition/AmmoBoxes_Drop/Mesh/SM_AmmoBox.SM_AmmoBox",
+      "SubPathString": ""
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_762x54_AP'",
+        "ObjectPath": "/Game/Items/Weapons/_Ammunition/AmmoBoxes_Drop/Materials/MI_762x54_AP.0"
+      }
+    ],
+    "RelativeRotation": {
+      "Pitch": -90.0,
+      "Yaw": 0.0,
+      "Roll": 0.0
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Stackable_0 ---
+{
+  "Type": "BHInventoryFragment_Stackable",
+  "Name": "BHInventoryFragment_Stackable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Stackable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_762x54mm_ArmorPiercing_Tracer'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/762x54mm/ID_762x54mm_ArmorPiercing_Tracer.4"
+  },
+  "Properties": {
+    "MaxStackSize": 40
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_762x54mm_ArmorPiercing_Tracer'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/762x54mm/ID_762x54mm_ArmorPiercing_Tracer.4"
+  }
+}
+--- export: UPrimaryDataAsset / ID_762x54mm_ArmorPiercing_Tracer ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_762x54mm_ArmorPiercing_Tracer",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Resources/Ammo/762x54mm/ID_762x54mm_ArmorPiercing_Tracer",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.762x54mm.ArmorPiercing.Tracer"
+    },
+    "ItemContext": [
+      "Item.Ammo",
+      "Item.Caliber.762x54mm",
+      "Item.Ammo.Type.ArmorPiercing.Tracer",
+      "Item.Context.ForceToStorage"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "E1F6E1474A9DB727875284A109847A2B",
+      "SourceString": "7.62x54mm AP (T)",
+      "LocalizedString": "7.62x54mm AP (T)"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_Stackable'ID_762x54mm_ArmorPiercing_Tracer:BHInventoryFragment_Stackable_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/762x54mm/ID_762x54mm_ArmorPiercing_Tracer.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_762x54mm_ArmorPiercing_Tracer:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/762x54mm/ID_762x54mm_ArmorPiercing_Tracer.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_762x54mm_ArmorPiercing_Tracer:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/762x54mm/ID_762x54mm_ArmorPiercing_Tracer.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Projectile'ID_762x54mm_ArmorPiercing_Tracer:WDInventoryFragment_Projectile_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/762x54mm/ID_762x54mm_ArmorPiercing_Tracer.6"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_762x54mm_ArmorPiercing_Tracer:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/762x54mm/ID_762x54mm_ArmorPiercing_Tracer.5"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_762x54mm_ArmorPiercing_Tracer:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/762x54mm/ID_762x54mm_ArmorPiercing_Tracer.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_762x54mm_ArmorPiercing_Tracer'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/762x54mm/ID_762x54mm_ArmorPiercing_Tracer.4"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_LooseAmmoBox_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Item/Data/ID_LooseAmmoBox_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Projectile_0 ---
+{
+  "Type": "WDInventoryFragment_Projectile",
+  "Name": "WDInventoryFragment_Projectile_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Projectile'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_762x54mm_ArmorPiercing_Tracer'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/762x54mm/ID_762x54mm_ArmorPiercing_Tracer.4"
+  },
+  "Properties": {
+    "ProjectileData": {
+      "ObjectName": "WDProjectileData'DA_762x54mm_ProjectileData'",
+      "ObjectPath": "/Game/GameMechanics/Inventory/Equipment/Caliber/762x54mm/DA_762x54mm_ProjectileData.0"
+    }
+  }
+}

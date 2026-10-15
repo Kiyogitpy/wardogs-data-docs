@@ -1,0 +1,51 @@
+--- export: UDataAsset / DA_VoiceChatLocalSpeaker ---
+{
+  "Type": "WDUIVoiceChatSpeakerData",
+  "Name": "DA_VoiceChatLocalSpeaker",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIVoiceChatSpeakerData'",
+  "Package": "/Game/UI/Features/HUD/VoiceChat/Data/DA_VoiceChatLocalSpeaker",
+  "Properties": {
+    "bIsLocalVoiceChatSpeakerViewModel": true,
+    "VoiceRecognitionActiveIcon": {
+      "AssetPathName": "/Game/UI/Features/HUD/VoiceChat/Textures/T_UI_Icon_VOIP_Squad_64x64.T_UI_Icon_VOIP_Squad_64x64",
+      "SubPathString": ""
+    },
+    "VoiceRecognitionInactiveIcon": {
+      "AssetPathName": "/Game/UI/Features/HUD/VoiceChat/Textures/T_UI_Icon_VOIP_Inactive_64x64.T_UI_Icon_VOIP_Inactive_64x64",
+      "SubPathString": ""
+    },
+    "VoiceRecognitionDisabledIcon": {
+      "AssetPathName": "/Game/UI/Features/HUD/VoiceChat/Textures/T_UI_Icon_VOIP_Disabled_64x64.T_UI_Icon_VOIP_Disabled_64x64",
+      "SubPathString": ""
+    },
+    "LoudSpeakerVoiceRecognitionActiveIcon": {
+      "AssetPathName": "/Game/UI/Features/HUD/VoiceChat/Textures/T_UI_Icon_Loudspeaker.T_UI_Icon_Loudspeaker",
+      "SubPathString": ""
+    },
+    "LoudSpeakerVoiceRecognitionInactiveIcon": {
+      "AssetPathName": "/Game/UI/Features/HUD/VoiceChat/Textures/T_UI_Icon_Loudspeaker_Inactive.T_UI_Icon_Loudspeaker_Inactive",
+      "SubPathString": ""
+    },
+    "ChannelNameOverrides": [
+      {
+        "Key": "EWDChannelType::Squad",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Audio.STRINGS_Settings_Audio",
+          "Key": "VOIP.Override.Squad",
+          "SourceString": "SQUAD",
+          "LocalizedString": "SQUAD"
+        }
+      },
+      {
+        "Key": "EWDChannelType::Proximity",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Audio.STRINGS_Settings_Audio",
+          "Key": "VOIP.Override.Local",
+          "SourceString": "LOCAL",
+          "LocalizedString": "LOCAL"
+        }
+      }
+    ]
+  }
+}

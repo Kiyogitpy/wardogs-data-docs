@@ -1,0 +1,78 @@
+--- export: UObject / GameFeatureAction_DataRegistrySource_0 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'AlternativeCriticalCamera'",
+    "ObjectPath": "/AlternativeCriticalCamera/AlternativeCriticalCamera.1"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "PostProcessEffectsData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/AlternativeCriticalCamera/DT_AlternativeCriticalCamera.DT_AlternativeCriticalCamera",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / AlternativeCriticalCamera ---
+{
+  "Type": "GameFeatureData",
+  "Name": "AlternativeCriticalCamera",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/AlternativeCriticalCamera/AlternativeCriticalCamera",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "WDGameFeatureAction_AddCharacterModifierStates'AlternativeCriticalCamera:WDGameFeatureAction_AddCharacterModifierStates_0'",
+        "ObjectPath": "/AlternativeCriticalCamera/AlternativeCriticalCamera.2"
+      },
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'AlternativeCriticalCamera:GameFeatureAction_DataRegistrySource_0'",
+        "ObjectPath": "/AlternativeCriticalCamera/AlternativeCriticalCamera.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddCharacterModifierStates_0 ---
+{
+  "Type": "WDGameFeatureAction_AddCharacterModifierStates",
+  "Name": "WDGameFeatureAction_AddCharacterModifierStates_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddCharacterModifierStates'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'AlternativeCriticalCamera'",
+    "ObjectPath": "/AlternativeCriticalCamera/AlternativeCriticalCamera.1"
+  },
+  "Properties": {
+    "ModifierStateDefinitions": [
+      {
+        "bOverrideExistingState": true,
+        "StateDefinition": {
+          "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_AlternateCritical'",
+          "ObjectPath": "/AlternativeCriticalCamera/DA_CharacterModifierState_AlternateCritical.4"
+        }
+      },
+      {
+        "bOverrideExistingState": true,
+        "StateDefinition": {
+          "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_AlternateVehicleCritical'",
+          "ObjectPath": "/AlternativeCriticalCamera/DA_CharacterModifierState_AlternateVehicleCritical.3"
+        }
+      }
+    ]
+  }
+}

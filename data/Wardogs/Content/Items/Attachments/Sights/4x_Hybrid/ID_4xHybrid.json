@@ -1,0 +1,314 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_4xHybrid'",
+    "ObjectPath": "/Game/Items/Attachments/Sights/4x_Hybrid/ID_4xHybrid.3"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 2,
+      "Y": 1
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_4xHybrid'",
+    "ObjectPath": "/Game/Items/Attachments/Sights/4x_Hybrid/ID_4xHybrid.3"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Items/Attachments/Sights/4x_Elcan_Spectr/Assets/SM_Specter_01.SM_Specter_01",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_4xHybrid'",
+    "ObjectPath": "/Game/Items/Attachments/Sights/4x_Hybrid/ID_4xHybrid.3"
+  }
+}
+--- export: UPrimaryDataAsset / ID_4xHybrid ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_4xHybrid",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Attachments/Sights/4x_Hybrid/ID_4xHybrid",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.HybridScope4x"
+    },
+    "ItemContext": [
+      "Item.Attachment.Sight",
+      "Item.Context.Equippable"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "FADC5474417FB779D45BB88D5114CF22",
+      "SourceString": "4x Hybrid",
+      "LocalizedString": "4x Hybrid"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_4xHybrid:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Game/Items/Attachments/Sights/4x_Hybrid/ID_4xHybrid.2"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_4xHybrid:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/Game/Items/Attachments/Sights/4x_Hybrid/ID_4xHybrid.4"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_4xHybrid:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/Game/Items/Attachments/Sights/4x_Hybrid/ID_4xHybrid.6"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_4xHybrid:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Game/Items/Attachments/Sights/4x_Hybrid/ID_4xHybrid.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_4xHybrid:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Game/Items/Attachments/Sights/4x_Hybrid/ID_4xHybrid.5"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_4xHybrid:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Game/Items/Attachments/Sights/4x_Hybrid/ID_4xHybrid.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_4xHybrid'",
+    "ObjectPath": "/Game/Items/Attachments/Sights/4x_Hybrid/ID_4xHybrid.3"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "SightsData": [
+        {
+          "Key": "S_Aim01",
+          "Value": {
+            "AppliedEffects": [],
+            "bIsMaskedScope": false,
+            "WeightedBlendables": {
+              "Array": []
+            },
+            "bOverrideAdsWeaponMaterialFOV": false,
+            "AdsWeaponMaterialFOVOverride": 90.0,
+            "bOverrideSightCameraOffset": true,
+            "SightCameraOffsetOverride": -5.0,
+            "SightCameraOffsetOverridePerWeapon": [
+              {
+                "Key": {
+                  "TagName": "Id.Item.AK74M"
+                },
+                "Value": 2.0
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.SV98"
+                },
+                "Value": -14.200233
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.SKS"
+                },
+                "Value": -2.5
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.M4"
+                },
+                "Value": -14.2
+              }
+            ],
+            "bOverrideSightSwayDistanceOffset": false,
+            "SightSwayDistanceOffset": 0.0,
+            "SightSwayDistanceOffsetOverridePerWeapon": [],
+            "bOverrideWeaponSwayStabilizationData": false,
+            "SightStabilizationOverrideMultipliers": [],
+            "bOverrideScopeHipOffset": true,
+            "ScopeHipOffsetOverride": {
+              "X": 0.0,
+              "Y": 2.016066,
+              "Z": -1.234262
+            },
+            "bOverrideScopeHipOffsetPerWeapon": false,
+            "ScopeHipOffsetOverridePerWeapon": [],
+            "bOverrideScopeHipRotateOffset": true,
+            "ScopeHipRotateOffsetOverride": {
+              "Pitch": 0.167532,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "bOverrideScopeHipRotateOffsetPerWeapon": false,
+            "ScopeHipRotateOffsetOverridePerWeapon": [],
+            "bOverrideCameraOffset": false,
+            "SightCameraAnimationTranslationOffset": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "bOverridePerWeaponCameraOffset": false,
+            "PerWeaponSightCameraAnimationTranslationOffsets": [],
+            "ScopeRenderTarget": {
+              "ObjectName": "TextureRenderTarget2D'RT_Scope'",
+              "ObjectPath": "/Game/Items/Weapons/MasterMaterials/Textures/RT_Scope.0"
+            },
+            "ScopeSocketName": "S_Aim01",
+            "SightWidgetRetainerBoxMaterial": {
+              "ObjectName": "MaterialInstanceConstant'M_UI_ReticleMask_4x'",
+              "ObjectPath": "/Game/UI/Features/HUD/ScopeReticle/Materials/Masks/M_UI_ReticleMask_4x.0"
+            },
+            "BaseReticleSize": 0.5,
+            "bFirstFocalPlane": true,
+            "FovMultiplierFrameOfReference": 4.0,
+            "ReticleColor": {
+              "R": 0.0,
+              "G": 0.0,
+              "B": 0.0,
+              "A": 1.0,
+              "Hex": "000000"
+            },
+            "ScopeWidgetSocketName": "S_Aim01",
+            "ScopeMask": {
+              "ObjectName": "StaticMesh'Disc_9DB5994C'",
+              "ObjectPath": "/Game/Maps/Gyms/Range/Assets/_GENERATED/AshleyDavenport/Disc_9DB5994C.1"
+            },
+            "ScopeMaskMaterial": {
+              "ObjectName": "Material'M_ScopeMaskMesh'",
+              "ObjectPath": "/Game/Items/Weapons/MasterMaterials/M_ScopeMaskMesh.0"
+            },
+            "ScopeMaskScale": {
+              "X": 0.0125,
+              "Y": 0.0125,
+              "Z": 0.0125
+            },
+            "ScopeMaskRotation": {
+              "Pitch": 180.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "ScopeMaskRelativeLocation": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "bScopeBlur": true,
+            "ScopeBlurBlendPercentageMax": 20.0,
+            "ScopeBlurCurve": null,
+            "ScopeVignettePercentageMax": 20.0,
+            "ScopeVignetteCurve": null,
+            "VariableZoomData": {
+              "bCanVariableZoom": false,
+              "ZoomMultiplierMin": 0.0,
+              "ZoomMultiplierMax": 0.0,
+              "MouseZoomMultiplierStep": 0.0,
+              "ControllerZoomMultiplierStep": 0.0,
+              "ZoomMultiplierInterpTime": 0.0
+            },
+            "AdsZoomMultiplier": 4.0,
+            "AdsTransitionData": {
+              "OutSettlePlayTime": 0.9,
+              "OutSettleWeight": 0.4,
+              "OutSettlePlayRate": 0.7,
+              "TransitionVelocity": 0.1,
+              "TransitionDamping": 0.4,
+              "TransitionStrength": 1.0,
+              "SpringLerpWeight": 0.2,
+              "AttachmentOffsetAlphaLerpSpeed": 25.0,
+              "AttachmentEndRange": 0.8,
+              "CameraOffsetLerpSpeed": 35.0,
+              "MinWallCollisionAlpha": 0.9,
+              "MinBlockAdsWallCollisionAlpha": 0.4
+            },
+            "DefaultCycleSightTransitionData": {
+              "AdsZoomMultiplierInterpTime": 0.5,
+              "AnimationSpeed": 15.0
+            },
+            "CycleSightTransitionData": [],
+            "ZoomInAudioEvent": {
+              "TagName": "None"
+            },
+            "ZoomOutAudioEvent": {
+              "TagName": "None"
+            },
+            "_aaabiinkkgpbkkclfhpnn_$8DAA6F1AA2B57FDD$_$24$": false,
+            "bFirstFocalPlane": false
+          }
+        }
+      ],
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Sight"
+      },
+      "AppliedEffects": [
+        {
+          "ObjectName": "BlueprintGeneratedClass'GE_4xHybrid_C'",
+          "ObjectPath": "/Game/Items/Attachments/Sights/4x_Hybrid/GE_4xHybrid.0"
+        }
+      ],
+      "AppliedCharacterEffects": [],
+      "bCanBeRemovedInGame": true,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_4xHybrid'",
+    "ObjectPath": "/Game/Items/Attachments/Sights/4x_Hybrid/ID_4xHybrid.3"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Attachment_Audio'",
+      "ObjectPath": "/Game/Audio/Weapon/Attachments/ID_Attachment_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_4xHybrid'",
+    "ObjectPath": "/Game/Items/Attachments/Sights/4x_Hybrid/ID_4xHybrid.3"
+  },
+  "Properties": {
+    "ItemType": "EWDGunsmithItemType::Attachment"
+  }
+}

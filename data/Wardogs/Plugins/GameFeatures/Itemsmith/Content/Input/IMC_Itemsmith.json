@@ -1,0 +1,873 @@
+--- export: UDataAsset / IMC_Itemsmith ---
+{
+  "Type": "InputMappingContext",
+  "Name": "IMC_Itemsmith",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputMappingContext'",
+  "Package": "/Itemsmith/Input/IMC_Itemsmith",
+  "Properties": {
+    "DefaultKeyMappings": {
+      "Mappings": [
+        {
+          "Triggers": [],
+          "Modifiers": [
+            {
+              "ObjectName": "InputModifierScalar'IMC_Itemsmith:InputModifierScalar_0'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.3"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_ZoomIn'",
+            "ObjectPath": "/Itemsmith/Input/IA_ZoomIn.0"
+          },
+          "Key": {
+            "KeyName": "MouseScrollUp"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_ZoomIn'",
+            "ObjectPath": "/Itemsmith/Input/IA_ZoomIn.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_RightTrigger"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_ZoomIn'",
+            "ObjectPath": "/Itemsmith/Input/IA_ZoomIn.0"
+          },
+          "Key": {
+            "KeyName": "Equals"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [
+            {
+              "ObjectName": "InputModifierScalar'IMC_Itemsmith:InputModifierScalar_1'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.4"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_ZoomOut'",
+            "ObjectPath": "/Itemsmith/Input/IA_ZoomOut.0"
+          },
+          "Key": {
+            "KeyName": "MouseScrollDown"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_ZoomOut'",
+            "ObjectPath": "/Itemsmith/Input/IA_ZoomOut.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_LeftTrigger"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_ZoomOut'",
+            "ObjectPath": "/Itemsmith/Input/IA_ZoomOut.0"
+          },
+          "Key": {
+            "KeyName": "Hyphen"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_AllowRotateView'",
+            "ObjectPath": "/Itemsmith/Input/IA_AllowRotateView.0"
+          },
+          "Key": {
+            "KeyName": "RightMouseButton"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerChordAction'IMC_Itemsmith:InputTriggerChordAction_1'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.5"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_RotateView'",
+            "ObjectPath": "/Itemsmith/Input/IA_RotateView.0"
+          },
+          "Key": {
+            "KeyName": "Mouse2D"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [
+            {
+              "ObjectName": "InputModifierDeadZone'IMC_Itemsmith:InputModifierDeadZone_0'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.1"
+            },
+            {
+              "ObjectName": "InputModifierNegate'IMC_Itemsmith:InputModifierNegate_0'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.2"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_RotateView'",
+            "ObjectPath": "/Itemsmith/Input/IA_RotateView.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_Right2D"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_Itemsmith:InputTriggerPressed_0'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.8"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_NodeLeft'",
+            "ObjectPath": "/Itemsmith/Input/IA_NodeLeft.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_DPad_Left"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_Itemsmith:InputTriggerPressed_1'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.9"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_NodeLeft'",
+            "ObjectPath": "/Itemsmith/Input/IA_NodeLeft.0"
+          },
+          "Key": {
+            "KeyName": "Left"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_Itemsmith:InputTriggerPressed_2'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.11"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_NodeRight'",
+            "ObjectPath": "/Itemsmith/Input/IA_NodeRight.0"
+          },
+          "Key": {
+            "KeyName": "Right"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_Itemsmith:InputTriggerPressed_3'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.14"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_NodeRight'",
+            "ObjectPath": "/Itemsmith/Input/IA_NodeRight.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_DPad_Right"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_Itemsmith:InputTriggerPressed_4'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.15"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_NodeUp'",
+            "ObjectPath": "/Itemsmith/Input/IA_NodeUp.0"
+          },
+          "Key": {
+            "KeyName": "Up"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerReleased'IMC_Itemsmith:InputTriggerReleased_0'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.20"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_NodeUp'",
+            "ObjectPath": "/Itemsmith/Input/IA_NodeUp.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_DPad_Up"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_Itemsmith:InputTriggerPressed_5'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.16"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_NodeDown'",
+            "ObjectPath": "/Itemsmith/Input/IA_NodeDown.0"
+          },
+          "Key": {
+            "KeyName": "Down"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_Itemsmith:InputTriggerPressed_6'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.17"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_NodeDown'",
+            "ObjectPath": "/Itemsmith/Input/IA_NodeDown.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_DPad_Down"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_Itemsmith:InputTriggerPressed_7'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.18"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_SelectNode'",
+            "ObjectPath": "/Itemsmith/Input/IA_SelectNode.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_FaceButton_Bottom"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_Itemsmith:InputTriggerPressed_8'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.19"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_SelectNode'",
+            "ObjectPath": "/Itemsmith/Input/IA_SelectNode.0"
+          },
+          "Key": {
+            "KeyName": "Enter"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Itemsmith_Next'",
+            "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_Next.0"
+          },
+          "Key": {
+            "KeyName": "E"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Itemsmith_Next'",
+            "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_Next.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_RightShoulder"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Itemsmith_Previous'",
+            "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_Previous.0"
+          },
+          "Key": {
+            "KeyName": "Q"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Itemsmith_Previous'",
+            "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_Previous.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_LeftShoulder"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Itemsmith_Tab'",
+            "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_Tab.0"
+          },
+          "Key": {
+            "KeyName": "Tab"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Itemsmith_Tab'",
+            "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_Tab.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_FaceButton_Top"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Itemsmith_HeroTitle'",
+            "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_HeroTitle.0"
+          },
+          "Key": {
+            "KeyName": "P"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Itemsmith_HeroTitle'",
+            "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_HeroTitle.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_Special_Right"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Itemsmith_TestingGround'",
+            "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_TestingGround.0"
+          },
+          "Key": {
+            "KeyName": "F"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Itemsmith_TestingGround'",
+            "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_TestingGround.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_Special_Left"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Itemsmith_ExpandStats'",
+            "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_ExpandStats.0"
+          },
+          "Key": {
+            "KeyName": "X"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Itemsmith_ExpandStats'",
+            "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_ExpandStats.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_RightThumbstick"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_Itemsmith:InputTriggerPressed_13'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.10"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Itemsmith_RemoveBlueprint'",
+            "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_RemoveBlueprint.0"
+          },
+          "Key": {
+            "KeyName": "Delete"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerHold'IMC_Itemsmith:InputTriggerHold_0'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.6"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Itemsmith_RemoveBlueprint'",
+            "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_RemoveBlueprint.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_FaceButton_Left"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_Itemsmith:InputTriggerPressed_21'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.12"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Itemsmith_HideShowUI'",
+            "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_HideShowUI.0"
+          },
+          "Key": {
+            "KeyName": "H"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_Itemsmith:InputTriggerPressed_23'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.13"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Itemsmith_SaveBlueprint'",
+            "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_SaveBlueprint.0"
+          },
+          "Key": {
+            "KeyName": "S"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_AllowRotateView'",
+            "ObjectPath": "/Itemsmith/Input/IA_AllowRotateView.0"
+          },
+          "Key": {
+            "KeyName": "LeftMouseButton"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerHold'IMC_Itemsmith:InputTriggerHold_1'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.7"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Itemsmith_HideShowUI'",
+            "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_HideShowUI.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_Special_Left"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerTap'IMC_Itemsmith:InputTriggerTap_0'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.21"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Itemsmith_SaveBlueprint'",
+            "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_SaveBlueprint.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_FaceButton_Left"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        }
+      ]
+    }
+  }
+}
+--- export: UObject / InputModifierDeadZone_0 ---
+{
+  "Type": "InputModifierDeadZone",
+  "Name": "InputModifierDeadZone_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierDeadZone'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.0"
+  }
+}
+--- export: UObject / InputModifierNegate_0 ---
+{
+  "Type": "InputModifierNegate",
+  "Name": "InputModifierNegate_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierNegate'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.0"
+  },
+  "Properties": {
+    "bY": false,
+    "bZ": false
+  }
+}
+--- export: UObject / InputModifierScalar_0 ---
+{
+  "Type": "InputModifierScalar",
+  "Name": "InputModifierScalar_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierScalar'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.0"
+  },
+  "Properties": {
+    "Scalar": {
+      "X": 2.0,
+      "Y": 1.0,
+      "Z": 1.0
+    }
+  }
+}
+--- export: UObject / InputModifierScalar_1 ---
+{
+  "Type": "InputModifierScalar",
+  "Name": "InputModifierScalar_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierScalar'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.0"
+  },
+  "Properties": {
+    "Scalar": {
+      "X": 2.0,
+      "Y": 1.0,
+      "Z": 1.0
+    }
+  }
+}
+--- export: UObject / InputTriggerChordAction_1 ---
+{
+  "Type": "InputTriggerChordAction",
+  "Name": "InputTriggerChordAction_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerChordAction'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.0"
+  },
+  "Properties": {
+    "ChordAction": {
+      "ObjectName": "BHInputAction'IA_AllowRotateView'",
+      "ObjectPath": "/Itemsmith/Input/IA_AllowRotateView.0"
+    }
+  }
+}
+--- export: UObject / InputTriggerHold_0 ---
+{
+  "Type": "InputTriggerHold",
+  "Name": "InputTriggerHold_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerHold'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.0"
+  },
+  "Properties": {
+    "bIsOneShot": true
+  }
+}
+--- export: UObject / InputTriggerHold_1 ---
+{
+  "Type": "InputTriggerHold",
+  "Name": "InputTriggerHold_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerHold'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.0"
+  },
+  "Properties": {
+    "bIsOneShot": true
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.0"
+  }
+}
+--- export: UObject / InputTriggerPressed_1 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.0"
+  }
+}
+--- export: UObject / InputTriggerPressed_13 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_13",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.0"
+  }
+}
+--- export: UObject / InputTriggerPressed_2 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.0"
+  }
+}
+--- export: UObject / InputTriggerPressed_21 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_21",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.0"
+  }
+}
+--- export: UObject / InputTriggerPressed_23 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_23",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.0"
+  }
+}
+--- export: UObject / InputTriggerPressed_3 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.0"
+  }
+}
+--- export: UObject / InputTriggerPressed_4 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.0"
+  }
+}
+--- export: UObject / InputTriggerPressed_5 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_5",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.0"
+  }
+}
+--- export: UObject / InputTriggerPressed_6 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_6",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.0"
+  }
+}
+--- export: UObject / InputTriggerPressed_7 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_7",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.0"
+  }
+}
+--- export: UObject / InputTriggerPressed_8 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_8",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.0"
+  }
+}
+--- export: UObject / InputTriggerReleased_0 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.0"
+  }
+}
+--- export: UObject / InputTriggerTap_0 ---
+{
+  "Type": "InputTriggerTap",
+  "Name": "InputTriggerTap_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerTap'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.0"
+  }
+}

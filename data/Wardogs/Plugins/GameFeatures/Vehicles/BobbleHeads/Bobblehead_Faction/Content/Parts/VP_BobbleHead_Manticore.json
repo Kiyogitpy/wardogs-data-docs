@@ -1,0 +1,67 @@
+--- export: UPrimaryDataAsset / VP_BobbleHead_Manticore ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_BobbleHead_Manticore",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/Bobblehead_Faction/Parts/VP_BobbleHead_Manticore",
+  "Properties": {
+    "Tags": [
+      "Vehicle.Bobblehead"
+    ],
+    "Fragments": [
+      {
+        "Key": "BobbleHead",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_SkeletalMesh'VP_BobbleHead_Manticore:MVF_SkeletalMesh_0'",
+            "ObjectPath": "/Bobblehead_Faction/Parts/VP_BobbleHead_Manticore.1"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / MVF_SkeletalMesh_0 ---
+{
+  "Type": "MVF_SkeletalMesh",
+  "Name": "MVF_SkeletalMesh_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_SkeletalMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_BobbleHead_Manticore'",
+    "ObjectPath": "/Bobblehead_Faction/Parts/VP_BobbleHead_Manticore.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceID": "Chassis",
+        "SocketName": "Bobblehead_Socket"
+      },
+      "Method": "EModularVehicleComponentMode::CreateNew",
+      "Identifier": "Chassis"
+    },
+    "SkeletalMesh": {
+      "AssetPathName": "/Bobblehead_Faction/Meshes/Manticore/SK_Bobblehead_MT_002.SK_Bobblehead_MT_002",
+      "SubPathString": ""
+    },
+    "AnimInstance": {
+      "AssetPathName": "/Bobblehead_Faction/Meshes/Manticore/ABP_Bobblehead_MT_002.ABP_Bobblehead_MT_002_C",
+      "SubPathString": ""
+    },
+    "bReceiveDecals": false,
+    "bHitEvents": false,
+    "bGenerateOverlapsOnServer": false,
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_Kinematic",
+        "Flags": 0
+      }
+    },
+    "MeshComponentClass": {
+      "ObjectName": "Class'MOccupancyGatedMeshComponent'",
+      "ObjectPath": "/Script/Mechanized"
+    }
+  }
+}

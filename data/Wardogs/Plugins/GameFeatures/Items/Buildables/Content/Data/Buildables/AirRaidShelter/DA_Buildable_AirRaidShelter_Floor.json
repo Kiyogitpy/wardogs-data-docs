@@ -1,0 +1,99 @@
+--- export: UObject / WDActorBuildSpawner_0 ---
+{
+  "Type": "WDActorBuildSpawner",
+  "Name": "WDActorBuildSpawner_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDActorBuildSpawner'",
+  "Outer": {
+    "ObjectName": "WDBuildableDataAsset'DA_Buildable_AirRaidShelter_Floor'",
+    "ObjectPath": "/Buildables/Data/Buildables/AirRaidShelter/DA_Buildable_AirRaidShelter_Floor.1"
+  },
+  "Properties": {
+    "BaseBuildableClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Buildable_C'",
+      "ObjectPath": "/Buildables/Data/Buildables/B_Buildable.2"
+    }
+  }
+}
+--- export: UDataAsset / DA_Buildable_AirRaidShelter_Floor ---
+{
+  "Type": "WDBuildableDataAsset",
+  "Name": "DA_Buildable_AirRaidShelter_Floor",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDBuildableDataAsset'",
+  "Package": "/Buildables/Data/Buildables/AirRaidShelter/DA_Buildable_AirRaidShelter_Floor",
+  "Properties": {
+    "SpawnerOverride": {
+      "ObjectName": "WDActorBuildSpawner'DA_Buildable_AirRaidShelter_Floor:WDActorBuildSpawner_0'",
+      "ObjectPath": "/Buildables/Data/Buildables/AirRaidShelter/DA_Buildable_AirRaidShelter_Floor.0"
+    },
+    "EntityTag": {
+      "TagName": "Id.Buildable.AirRaidShelter.Floor"
+    },
+    "Cost": 10,
+    "_aaabfagpiegcpjedampen_$6F8462F9430CF4D$_$21$": 0.67,
+    "DisplayName": {
+      "CultureInvariantString": "Air Raid Shelter Floor"
+    },
+    "MaxHealth": 2250.0,
+    "MaxStack": 1,
+    "_aaabhobcmifficciohpfp_$E12C8558228E7F5F$_$23$": 0,
+    "FoundationStaticMesh": {
+      "AssetPathName": "/Buildables/Data/Foundations/Meshes/SM_Foundation_AirRaidShelter.SM_Foundation_AirRaidShelter",
+      "SubPathString": ""
+    },
+    "BuildingStagesDefinition": {
+      "ObjectName": "BuildingStagesDefinition'DA_Buildable_AirRaidShelter_Floor_Stages'",
+      "ObjectPath": "/Buildables/Data/Buildables/AirRaidShelter/DA_Buildable_AirRaidShelter_Floor_Stages.0"
+    },
+    "BuildingStageChangedVFX": {
+      "AssetPathName": "/Buildables/Data/Buildables/NS_BuildStage.NS_BuildStage",
+      "SubPathString": ""
+    },
+    "NiagaraDataChannelAsset": {
+      "AssetPathName": "/Game/VFX/Building/DataChannel/NDC_Buildable.NDC_Buildable",
+      "SubPathString": ""
+    },
+    "FinalStageBoundingBox": {
+      "Min": {
+        "X": -364.1708,
+        "Y": -373.48294,
+        "Z": -2.0686488
+      },
+      "Max": {
+        "X": 365.05652,
+        "Y": 368.5913,
+        "Z": 7.4523764
+      },
+      "IsValid": 1
+    },
+    "ConstructedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Constructed"
+    },
+    "DestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Destroyed"
+    },
+    "PlacedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Placed"
+    },
+    "_aaabigdbeocppfeehmfch_$6314E2FF5447C527$_$24$": {
+      "TagName": "GameplayCue.Buildable.Dismantle"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Buildable.AirRaidShelter"
+      }
+    },
+    "PlacementConditions": [
+      {
+        "ObjectName": "Class'WDWithinFobBoundsPlacementCondition'",
+        "ObjectPath": "/Script/BuildablesRuntime"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_WithinLadderBoundsPlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_WithinLadderBoundsPlacementCondition.1"
+      }
+    ],
+    "bUsesCriticalHitSpots": false
+  }
+}

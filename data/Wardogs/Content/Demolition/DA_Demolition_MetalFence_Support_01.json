@@ -1,0 +1,36 @@
+--- export: UDataAsset / DA_Demolition_MetalFence_Support_01 ---
+{
+  "Type": "BHDemolitionDataAsset",
+  "Name": "DA_Demolition_MetalFence_Support_01",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDemolitionDataAsset'",
+  "Package": "/Game/Demolition/DA_Demolition_MetalFence_Support_01",
+  "Properties": {
+    "DemolitionComponentSettings": {
+      "ObjectName": "BHDemolitionComponentSettings'DA_Demolition_CS_Default'",
+      "ObjectPath": "/Game/Demolition/ComponentSettings/DA_Demolition_CS_Default.0"
+    },
+    "DemolitionRuleSet": {
+      "ObjectName": "BHDemolitionRuleset'BH_Demolition_RS_TanksAndMedLargeExplosions'",
+      "ObjectPath": "/Game/Demolition/RuleSets/BH_Demolition_RS_TanksAndMedLargeExplosions.4"
+    },
+    "PermittedZones": [
+      "Demolition.Zone.Important",
+      "Demolition.Zone.Distant"
+    ],
+    "DemolitionVFX": [
+      {
+        "AssetPathName": "/Game/VFX/Environmental/Destruction/Demolition/Metal/NS_MetalConcreteSmash.NS_MetalConcreteSmash",
+        "SubPathString": ""
+      }
+    ],
+    "CrosstalkEventTag": {
+      "TagName": "Audio.Event.Prop.Demolition.FenceConcrete"
+    },
+    "DemolitionFragments": [
+      {
+        "RestitutionImpulseMultiplier": 0.2
+      }
+    ]
+  }
+}

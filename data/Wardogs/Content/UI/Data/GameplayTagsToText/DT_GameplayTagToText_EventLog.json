@@ -1,0 +1,88 @@
+--- export: UDataTable / DT_GameplayTagToText_EventLog ---
+{
+  "Type": "DataTable",
+  "Name": "DT_GameplayTagToText_EventLog",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/UI/Data/GameplayTagsToText/DT_GameplayTagToText_EventLog",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUIGameplayTagToTextTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "EventLog.Category.Damage": {
+      "Text": {
+        "TableId": "/Game/UI/StringTables/EventLog/STRINGS_EventLog.STRINGS_EventLog",
+        "Key": "Event.Category.Damage",
+        "SourceString": "Damage",
+        "LocalizedString": "Damage"
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "EventLog.Category.Damage"
+      }
+    },
+    "EventLog.Category.Reward": {
+      "Text": {
+        "TableId": "/Game/UI/StringTables/EventLog/STRINGS_EventLog.STRINGS_EventLog",
+        "Key": "Event.Category.Reward",
+        "SourceString": "Cash",
+        "LocalizedString": "Cash"
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "EventLog.Category.Reward"
+      }
+    },
+    "EventLog.Category.Misc": {
+      "Text": {
+        "TableId": "/Game/UI/StringTables/EventLog/STRINGS_EventLog.STRINGS_EventLog",
+        "Key": "Event.Category.Misc",
+        "SourceString": "Misc",
+        "LocalizedString": "Misc"
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "EventLog.Category.Misc"
+      }
+    },
+    "EventLog.Category.Damage.Dealt": {
+      "Text": {
+        "TableId": "/Game/UI/StringTables/EventLog/STRINGS_EventLog.STRINGS_EventLog",
+        "Key": "Event.Category.Damage.Dealt",
+        "SourceString": "Damage Dealt",
+        "LocalizedString": "Damage Dealt"
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "EventLog.Category.Damage.Dealt"
+      }
+    },
+    "EventLog.Category.Damage.Received": {
+      "Text": {
+        "TableId": "/Game/UI/StringTables/EventLog/STRINGS_EventLog.STRINGS_EventLog",
+        "Key": "Event.Category.Damage.Received",
+        "SourceString": "Damage Received",
+        "LocalizedString": "Damage Received"
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "EventLog.Category.Damage.Received"
+      }
+    },
+    "EventLog.Category.Healing": {
+      "Text": {
+        "TableId": "/Game/UI/StringTables/EventLog/STRINGS_EventLog.STRINGS_EventLog",
+        "Key": "Event.Category.Healing",
+        "SourceString": "Healing",
+        "LocalizedString": "Healing"
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "EventLog.Category.Healing"
+      }
+    }
+  }
+}

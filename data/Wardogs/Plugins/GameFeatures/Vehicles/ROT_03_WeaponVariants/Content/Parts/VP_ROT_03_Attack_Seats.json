@@ -1,0 +1,69 @@
+--- export: UPrimaryDataAsset / VP_ROT_03_Attack_Seats ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_ROT_03_Attack_Seats",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/ROT_03_WeaponVariants/Parts/VP_ROT_03_Attack_Seats",
+  "Properties": {
+    "Tags": [
+      "Vehicle.Attachment"
+    ],
+    "Fragments": [
+      {
+        "Key": "Seats",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_Seats'VP_ROT_03_Attack_Seats:MVF_Seats_0'",
+            "ObjectPath": "/ROT_03_WeaponVariants/Parts/VP_ROT_03_Attack_Seats.1"
+          }
+        }
+      },
+      {
+        "Key": "Interactions",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_Interactions'VP_ROT_03_Attack_Seats:WD_MVF_Interactions_0'",
+            "ObjectPath": "/ROT_03_WeaponVariants/Parts/VP_ROT_03_Attack_Seats.2"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / MVF_Seats_0 ---
+{
+  "Type": "MVF_Seats",
+  "Name": "MVF_Seats_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_Seats'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_ROT_03_Attack_Seats'",
+    "ObjectPath": "/ROT_03_WeaponVariants/Parts/VP_ROT_03_Attack_Seats.0"
+  },
+  "Properties": {
+    "SeatSettingsDataAsset": {
+      "AssetPathName": "/ROT_03_WeaponVariants/Data/WeaponVariants/DA_ROT_03_Attack_SeatSettings.DA_ROT_03_Attack_SeatSettings",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / WD_MVF_Interactions_0 ---
+{
+  "Type": "WD_MVF_Interactions",
+  "Name": "WD_MVF_Interactions_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_Interactions'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_ROT_03_Attack_Seats'",
+    "ObjectPath": "/ROT_03_WeaponVariants/Parts/VP_ROT_03_Attack_Seats.0"
+  },
+  "Properties": {
+    "VehicleInteractionsDataAsset": {
+      "AssetPathName": "/ROT_03_WeaponVariants/Data/WeaponVariants/DA_VehicleInteractions_ROT_03_Attack.DA_VehicleInteractions_ROT_03_Attack",
+      "SubPathString": ""
+    }
+  }
+}

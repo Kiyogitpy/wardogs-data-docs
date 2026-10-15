@@ -1,0 +1,115 @@
+--- export: UDataAsset / DA_Buildable_MistralAA ---
+{
+  "Type": "WDBuildableDataAsset",
+  "Name": "DA_Buildable_MistralAA",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDBuildableDataAsset'",
+  "Package": "/STN_01/BuildableData/DA_Buildable_MistralAA",
+  "Properties": {
+    "SpawnerOverride": {
+      "ObjectName": "WDVehicleBuildSpawner'DA_Buildable_MistralAA:WDVehicleBuildSpawner_0'",
+      "ObjectPath": "/STN_01/BuildableData/DA_Buildable_MistralAA.1"
+    },
+    "EntityTag": {
+      "TagName": "Id.Buildable.MistralAA"
+    },
+    "Cost": 1000,
+    "_aaabfagpiegcpjedampen_$6F8462F9430CF4D$_$21$": 66.67,
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+      "Key": "Buildable.MistralAA",
+      "SourceString": "Talon 9K-SAM",
+      "LocalizedString": "Talon 9K-SAM"
+    },
+    "MaxHealth": 3000.0,
+    "bUseCurveToUpdateHealthVisuals": true,
+    "HealthVisualsPercentageCurve": {
+      "ExternalCurve": {
+        "ObjectName": "CurveFloat'C_DamageTintCurve'",
+        "ObjectPath": "/Buildables/Data/Buildables/C_DamageTintCurve.0"
+      }
+    },
+    "MaxStack": 6,
+    "PlacementFlags": 9,
+    "PlacePivotVerticalOffset": 110.0,
+    "FoundationStaticMesh": {
+      "AssetPathName": "/Buildables/Data/Foundations/Meshes/SM_Foundation_Mistral.SM_Foundation_Mistral",
+      "SubPathString": ""
+    },
+    "bShowFOBExtents": false,
+    "BuildingStagesDefinition": {
+      "ObjectName": "BuildingStagesDefinition'DA_Mistral_AA_Stages'",
+      "ObjectPath": "/STN_01/BuildableData/DA_Mistral_AA_Stages.0"
+    },
+    "BuildingStageChangedVFX": {
+      "AssetPathName": "/Buildables/Data/Buildables/NS_BuildStage_NoOffset.NS_BuildStage_NoOffset",
+      "SubPathString": ""
+    },
+    "FinalStageBoundingBox": {
+      "Min": {
+        "X": -189.14673,
+        "Y": -169.66556,
+        "Z": -57.217926
+      },
+      "Max": {
+        "X": 166.7547,
+        "Y": 156.96246,
+        "Z": 169.07141
+      },
+      "IsValid": 1
+    },
+    "ConstructedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Constructed"
+    },
+    "DestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Destroyed"
+    },
+    "PlacedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Placed"
+    },
+    "_aaabigdbeocppfeehmfch_$6314E2FF5447C527$_$24$": {
+      "TagName": "GameplayCue.Buildable.Dismantle"
+    },
+    "PlacementConditions": [
+      {
+        "ObjectName": "Class'WDWithinFobBoundsPlacementCondition'",
+        "ObjectPath": "/Script/BuildablesRuntime"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_WithinLadderBoundsPlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_WithinLadderBoundsPlacementCondition.1"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_SafeZonePlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_SafeZonePlacementCondition.1"
+      }
+    ],
+    "AudioData": {
+      "ObjectName": "WDAudioData'DA_Buildable_Default_Audio'",
+      "ObjectPath": "/Buildables/Data/Buildables/Audio/DA_Buildable_Default_Audio.0"
+    },
+    "RadialWheelSlotTag": {
+      "TagName": "UI.RadialWheel.BuildTool.SlotType.MistralAA"
+    }
+  }
+}
+--- export: UObject / WDVehicleBuildSpawner_0 ---
+{
+  "Type": "WDVehicleBuildSpawner",
+  "Name": "WDVehicleBuildSpawner_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleBuildSpawner'",
+  "Outer": {
+    "ObjectName": "WDBuildableDataAsset'DA_Buildable_MistralAA'",
+    "ObjectPath": "/STN_01/BuildableData/DA_Buildable_MistralAA.0"
+  },
+  "Properties": {
+    "BaseBuildableClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Buildable_StationaryVehicle_C'",
+      "ObjectPath": "/Buildables/Data/Buildables/B_Buildable_StationaryVehicle.2"
+    },
+    "VehicleTag": {
+      "TagName": "Vehicle.Variant.Stationary.MistralAA"
+    }
+  }
+}

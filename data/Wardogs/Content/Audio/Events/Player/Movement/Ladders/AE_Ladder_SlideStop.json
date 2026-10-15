@@ -1,0 +1,36 @@
+--- export: UPrimaryDataAsset / AE_Ladder_SlideStop ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Ladder_SlideStop",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Movement/Ladders/AE_Ladder_SlideStop",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.Ladder.SlideStop"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Ladder_SlideStop:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Ladders/AE_Ladder_SlideStop.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Ladder_SlideStop'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Ladders/AE_Ladder_SlideStop.0"
+  },
+  "Properties": {
+    "ParameterName": "Stop",
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Ladder.Slide"
+    }
+  }
+}

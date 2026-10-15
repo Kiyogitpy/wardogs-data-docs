@@ -1,0 +1,52 @@
+--- export: UDataAsset / DA_TNK_01_ArtilleryDriving_CameraBehaviour ---
+{
+  "Type": "MVehicleSpringArmDataAsset",
+  "Name": "DA_TNK_01_ArtilleryDriving_CameraBehaviour",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVehicleSpringArmDataAsset'",
+  "Package": "/TNK_01/Data/Artillery/DA_TNK_01_ArtilleryDriving_CameraBehaviour",
+  "Properties": {
+    "FreelookYawRange": {
+      "LowerBound": {
+        "Value": -35.0
+      },
+      "UpperBound": {
+        "Value": 35.0
+      }
+    },
+    "FreelookPitchRange": {
+      "LowerBound": {
+        "Value": -27.5
+      },
+      "UpperBound": {
+        "Value": 30.0
+      }
+    },
+    "CameraProbeMinDistance": 20.0,
+    "TargetOffset": {
+      "X": 2.638962,
+      "Y": 74.46982,
+      "Z": 178.26689
+    },
+    "SocketOffset": {
+      "X": 230.0,
+      "Y": 75.0,
+      "Z": 182.5
+    },
+    "TargetArmLength": 800.0,
+    "bEnableCameraLag": true,
+    "bEnableCameraRotationLag": true,
+    "CameraLagSpeed": 8.0,
+    "CameraRotationLagSpeed": 10.0,
+    "CameraComponentSettings": {
+      "FieldOfViewVsSpeed": {
+        "EditorCurveData": {}
+      },
+      "FirstPersonLagSettings": {
+        "LagSpeedInYaw": 30.0,
+        "LagSpeedInPitch": 30.0,
+        "LagSpeedInRoll": 30.0
+      }
+    }
+  }
+}

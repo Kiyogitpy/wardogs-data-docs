@@ -1,0 +1,30 @@
+--- export: UDataAsset / DA_ContextDrawerTab_Squad ---
+{
+  "Type": "WDUIContextDrawerTabSquadData",
+  "Name": "DA_ContextDrawerTab_Squad",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIContextDrawerTabSquadData'",
+  "Package": "/Game/UI/Features/ContextDrawer/Tabs/Party/Data/DA_ContextDrawerTab_Squad",
+  "Properties": {
+    "SquadlessPlayersViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUISquadEntryViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/ContextDrawer/Tabs/Party/Widgets/SquadEntry/Data/DA_Squadless.DA_Squadless",
+        "SubPathString": ""
+      }
+    },
+    "SquadEntriesViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUISquadEntryViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/ContextDrawer/Tabs/Party/Widgets/SquadEntry/Data/DA_SquadEntry.DA_SquadEntry",
+        "SubPathString": ""
+      }
+    }
+  }
+}

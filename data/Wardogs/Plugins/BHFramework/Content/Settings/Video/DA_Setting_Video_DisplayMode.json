@@ -1,0 +1,88 @@
+--- export: UDataAsset / DA_Setting_Video_DisplayMode ---
+{
+  "Type": "BHUserSettingDiscreteData",
+  "Name": "DA_Setting_Video_DisplayMode",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingDiscreteData'",
+  "Package": "/BHFramework/Settings/Video/DA_Setting_Video_DisplayMode",
+  "Properties": {
+    "Parameters": {
+      "DefaultIndex": 1,
+      "DefaultValues": {
+        "ObjectName": "BHUserSettingEnumDiscreteValues'DA_Setting_Video_DisplayMode:BHUserSettingEnumDiscreteValues_0'",
+        "ObjectPath": "/BHFramework/Settings/Video/DA_Setting_Video_DisplayMode.1"
+      }
+    }
+  }
+}
+--- export: UObject / BHUserSettingEnumDiscreteValues_0 ---
+{
+  "Type": "BHUserSettingEnumDiscreteValues",
+  "Name": "BHUserSettingEnumDiscreteValues_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingEnumDiscreteValues'",
+  "Outer": {
+    "ObjectName": "BHUserSettingDiscreteData'DA_Setting_Video_DisplayMode'",
+    "ObjectPath": "/BHFramework/Settings/Video/DA_Setting_Video_DisplayMode.0"
+  },
+  "Properties": {
+    "NamedValues": [
+      {
+        "Key": "EWindowMode::Fullscreen",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Video.STRINGS_Settings_Video",
+          "Key": "Value.FullscreenMode.Fullscreen",
+          "SourceString": "Fullscreen",
+          "LocalizedString": "Fullscreen"
+        }
+      },
+      {
+        "Key": "EWindowMode::WindowedFullscreen",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Video.STRINGS_Settings_Video",
+          "Key": "Value.FullscreenMode.WindowedFullscreen",
+          "SourceString": "Windowed Fullscreen",
+          "LocalizedString": "Windowed Fullscreen"
+        }
+      },
+      {
+        "Key": "EWindowMode::Windowed",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Video.STRINGS_Settings_Video",
+          "Key": "Value.FullscreenMode.Windowed",
+          "SourceString": "Windowed",
+          "LocalizedString": "Windowed"
+        }
+      }
+    ],
+    "Values": [
+      {
+        "Key": "0",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Video.STRINGS_Settings_Video",
+          "Key": "Value.FullscreenMode.Fullscreen",
+          "SourceString": "Fullscreen",
+          "LocalizedString": "Fullscreen"
+        }
+      },
+      {
+        "Key": "1",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Video.STRINGS_Settings_Video",
+          "Key": "Value.FullscreenMode.WindowedFullscreen",
+          "SourceString": "Windowed Fullscreen",
+          "LocalizedString": "Windowed Fullscreen"
+        }
+      },
+      {
+        "Key": "2",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Video.STRINGS_Settings_Video",
+          "Key": "Value.FullscreenMode.Windowed",
+          "SourceString": "Windowed",
+          "LocalizedString": "Windowed"
+        }
+      }
+    ]
+  }
+}

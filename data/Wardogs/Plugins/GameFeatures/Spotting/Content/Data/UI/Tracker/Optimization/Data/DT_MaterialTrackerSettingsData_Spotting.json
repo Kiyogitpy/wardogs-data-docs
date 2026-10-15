@@ -1,0 +1,30 @@
+--- export: UDataTable / DT_MaterialTrackerSettingsData_Spotting ---
+{
+  "Type": "DataTable",
+  "Name": "DT_MaterialTrackerSettingsData_Spotting",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Spotting/Data/UI/Tracker/Optimization/Data/DT_MaterialTrackerSettingsData_Spotting",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUIMaterialTrackerDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Trackers.Type.SpottingTarget": {
+      "bDisableTracker": false,
+      "TrackerType": {
+        "AssetPathName": "/Script/SpottingRuntime.WDUIMaterialTracker_Spotting",
+        "SubPathString": ""
+      },
+      "TrackerData": {
+        "ObjectName": "WDUISpottingMaterialTrackerDataAsset'DA_MaterialTrackerData_Spotting'",
+        "ObjectPath": "/Spotting/Data/UI/Tracker/Optimization/Data/DA_MaterialTrackerData_Spotting.0"
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.SpottingTarget"
+      }
+    }
+  }
+}

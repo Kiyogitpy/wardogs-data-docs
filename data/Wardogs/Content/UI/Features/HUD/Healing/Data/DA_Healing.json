@@ -1,0 +1,40 @@
+--- export: UDataAsset / DA_Healing ---
+{
+  "Type": "WDUIHealingData",
+  "Name": "DA_Healing",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIHealingData'",
+  "Package": "/Game/UI/Features/HUD/Healing/Data/DA_Healing",
+  "Properties": {
+    "CanHealSelfText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD.Healing.HealSelf",
+      "SourceString": "HEAL SELF",
+      "LocalizedString": "HEAL SELF"
+    },
+    "CanHealFriendlyText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD.Healing.HealFriendly",
+      "SourceString": "HEAL FRIENDLY",
+      "LocalizedString": "HEAL FRIENDLY"
+    },
+    "CanReviveFriendlyText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD.Reviving.ReviveFriendly",
+      "SourceString": "REVIVE FRIENDLY",
+      "LocalizedString": "REVIVE FRIENDLY"
+    },
+    "CanReviveEnemyText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD.Healing.ReviveEnemy",
+      "SourceString": "REVIVE ENEMY",
+      "LocalizedString": "REVIVE ENEMY"
+    },
+    "PrimaryUseTag": {
+      "TagName": "UI.Action.Generic.Appliable.PrimaryUse"
+    },
+    "_aaaappgeajchokjkijgnc_$F640927EA9A896D2$_$15$": {
+      "TagName": "UI.Action.Generic.Appliable.SecondaryUse"
+    }
+  }
+}

@@ -5,7 +5,7 @@ parent: "Game Features"
 
 # Wardogs — GameFeatures/Weapons Reference (v2)
 
-*Source: `Wardogs/Plugins/GameFeatures/Weapons/` (870 JSON files, 3383 exported objects, 0 parse errors). Parsed with a Python script that splits each file on its `--- export:` headers, since many files hold several objects. Values are cooked data as exported. Where a meaning is inferred from a property name, the text says so.*
+*Source: [`Wardogs/Plugins/GameFeatures/Weapons/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Weapons) (870 JSON files, 3383 exported objects, 0 parse errors). Parsed with a Python script that splits each file on its `--- export:` headers, since many files hold several objects. Values are cooked data as exported. Where a meaning is inferred from a property name, the text says so.*
 
 > **Scope:** this folder holds the per-item GameFeature bundles: inventory definitions, weapon ballistics, vendor rows, attachment wiring, input bindings, audio and mutables. The `Content/Weapons` tree is covered by a separate doc.
 
@@ -31,8 +31,8 @@ Each subfolder is one content bundle. A bundle has a `GameFeatureData` manifest,
 
 Notes on the layout:
 
-- `AR/AR_01` to `AR_07` (six folders, 10 files) hold only GameFeature shells: 6 `GameFeatureData` and 4 world-partition actions. The AR-class item definitions are not in this folder.
-- `Platforms/WEPN_0xx` (23 folders) holds the full bundles for the newer weapons. The older hand-named bundles sit in `DMR`, `Sniper`, `LMG`, `Shotgun`, `SMG`, `Pistols` and `Launchers` (`RFB`, `SVDM`, `MK22`, `Mosin`, `SR_04`, `MP43`, `SMG_03`, `LMG_02`, `Pistol_02`, `Launcher_04`, `RPG7`).
+- [`AR/AR_01`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Weapons/AR/AR_01) to [`AR_07`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/AR/AR_07/Content/AR_07.json) (six folders, 10 files) hold only GameFeature shells: 6 `GameFeatureData` and 4 world-partition actions. The AR-class item definitions are not in this folder.
+- `Platforms/WEPN_0xx` (23 folders) holds the full bundles for the newer weapons. The older hand-named bundles sit in `DMR`, `Sniper`, `LMG`, `Shotgun`, `SMG`, `Pistols` and `Launchers` ([`RFB`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/RFB/Content/RFB.json), [`SVDM`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/SVDM/Content/SVDM.json), [`MK22`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/MK22/Content/MK22.json), [`Mosin`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/Mosin/Content/Mosin.json), [`SR_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/SR_04/Content/SR_04.json), [`MP43`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Shotgun/MP43/Content/MP43.json), [`SMG_03`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/SMG/SMG_03/Content/SMG_03.json), [`LMG_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/LMG/LMG_02/Content/LMG_02.json), [`Pistol_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Pistols/Pistol_02/Content/Pistol_02.json), [`Launcher_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/Launcher_04/Content/Launcher_04.json), [`RPG7`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/RPG7/Content/RPG7.json)).
 - `Attachments/` holds 99 attachment items (Foregrips 13, Magazines 28, Muzzle 40, Sights 18), of which 96 have vendor rows. `Components/` holds 74 weapon-specific items (Barrels 21, Handguards 17, Pistol Grips 12, Stocks 18, Triggers 3, Dust Covers 3), none of which have vendor rows.
 
 **Object types (3383 exported objects):**
@@ -238,7 +238,7 @@ Each weapon stores a list of `Attribute.Gameplay.Weapon.*` defaults. Five multip
 
 ### 5b. Spread, stance and holdable
 
-- **Spread:** every weapon has three `SpreadValues` entries (`EBHPlayerStance::Stand`, `Crouch`, `Prone`). Each points at a row of `CT_Weapon_Spread` named `<Class>.<Stance>` (for example `AR.Stand` or `Sniper.Prone`). All stance multipliers are `1.0`, so the live spread numbers are in the curve table, not here.
+- **Spread:** every weapon has three `SpreadValues` entries (`EBHPlayerStance::Stand`, `Crouch`, `Prone`). Each points at a row of [`CT_Weapon_Spread`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Curves/CT_Weapon_Spread.json) named `<Class>.<Stance>` (for example `AR.Stand` or `Sniper.Prone`). All stance multipliers are `1.0`, so the live spread numbers are in the curve table, not here.
 - **Stance recoil:** weapons with a `StanceGameplayEffects` list point at `GE_Weapon_StanceRecoil_<Class>_<Stance>` effects, with a separate set per class. Launcher_04 has no list.
 - **Holdable:** `MeshFovAds` is 80.0 on all 33. Hip offset (`ItemHipOffset`) varies per weapon. It is absent on the launchers.
 - **Trace radius (`WeaponTraceRadius`):** 6.0 on most rifles, 8.0 on Launcher_04, 4.0 on the Deagle, 3.0 on the Judge.
@@ -255,7 +255,7 @@ Every weapon has one `Action.Item.PrimaryUse` requirement. It spends `ResourcesU
 
 ### 5e. Aim assist, audio and mutables
 
-- **Aim assist:** 7 settings assets, one per class (`DA_AimAssistSettings_<Class>`), all sharing `DA_AimAssistFilter`. Weapon count per settings asset: AR 9, SR 8, Pistol 5, RPG 4, SMG 4, Shotgun 2, LMG 1.
+- **Aim assist:** 7 settings assets, one per class (`DA_AimAssistSettings_<Class>`), all sharing [`DA_AimAssistFilter`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/DA_AimAssistFilter.json). Weapon count per settings asset: AR 9, SR 8, Pistol 5, RPG 4, SMG 4, Shotgun 2, LMG 1.
 - **Audio:** each weapon has one `WDAudioData` with between 31 and 51 sound cues (`SoundAssets`).
 - **Mutable:** all 33 weapons point at `/Game/Items/Weapons/Mutable/MUT_MasterWeapon`. Each carries a `DefaultParameters` list of the slots it exposes: `Id.Item` (33), `Item.Attachment.Handguard` (31), `Sight` (30), `Barrel` (30), `Muzzle` (29), `Grip` (28), `Magazine` (28), `Mount{Left,Right,Top,Under}` (28 each), `Stock` (28), `Underbarrel` (28), `CantedSight` (27), `SightMount` (26), `DustCover` (2). The parameter values are not decoded.
 
@@ -282,11 +282,11 @@ Every vendor-priced attachment carries a `GE_*` gameplay effect in `AppliedEffec
 
 **Magazine class tags** (on the item context): Extended (11), Standard (9), Small (7), Drum (4), Belt (2), Internal (1). These are tags only. Round counts appear in item names, for example "AK74 30 RND Magazine".
 
-**Shotgun choke override:** some muzzles set `bOverrideShotgunData`. For example, `MUZL_012` (`MZL_07`, AR Multi-Caliber Suppressor) sets `ChokeFactor 0.8`, `OuterConeHalfAngle 10`, `InnerConeHalfAngleMultiplier 0.5`, and `FireMuzzleFlashScaleMultiplier 0.2`.
+**Shotgun choke override:** some muzzles set `bOverrideShotgunData`. For example, [`MUZL_012`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_012/Content/MUZL_012.json) (`MZL_07`, AR Multi-Caliber Suppressor) sets `ChokeFactor 0.8`, `OuterConeHalfAngle 10`, `InnerConeHalfAngleMultiplier 0.5`, and `FireMuzzleFlashScaleMultiplier 0.2`.
 
-**Attachment type tags are inconsistent:** two of three triggers (`TRGR_002`, `TRGR_003`) are tagged `Item.Attachment.Handguard`. One stock in `Handguards` is tagged `Item.Attachment.Stock`. Two pistol grips and one trigger have no attachment type. The effect of this on slot fitting is not verified.
+**Attachment type tags are inconsistent:** two of three triggers ([`TRGR_002`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Triggers/TRGR_002/Content/TRGR_002.json), [`TRGR_003`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Triggers/TRGR_003/Content/TRGR_003.json)) are tagged `Item.Attachment.Handguard`. One stock in `Handguards` is tagged `Item.Attachment.Stock`. Two pistol grips and one trigger have no attachment type. The effect of this on slot fitting is not verified.
 
-**Multiple vendor variations:** magazine vendor rows hold 7 variations each. The first is shown (`bShowInVendor = true`) and the rest are hidden price points. For example, `MAGZ_002` shows 20 and hides 27, 27, 30, 30, 34, 34. The hidden variations are not decoded.
+**Multiple vendor variations:** magazine vendor rows hold 7 variations each. The first is shown (`bShowInVendor = true`) and the rest are hidden price points. For example, [`MAGZ_002`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_002/Content/MAGZ_002.json) shows 20 and hides 27, 27, 30, 30, 34, 34. The hidden variations are not decoded.
 
 **Weight:** attachments range from 0.03 (sights) to 2.2 (magazines). Foregrips range 0.08 to 0.7.
 
@@ -303,9 +303,9 @@ Every vendor-priced attachment carries a `GE_*` gameplay effect in `AppliedEffec
 
 ## 8. Anomalies and data-quality notes
 
-1. **WEPN_033 stats asset is a copy.** `DA_WEPN_033_Stats` has `WeaponId = Id.Item.TAR21` and values 700 RPM, 71,500 speed, 300 range, which match the A-91 family. `TAR21` already has its own stats asset (`DA_TAR21_Stats`, 750 RPM, 91,000 speed, 550 range). The `WEPN_033` item loads its own file, so its live values are the copied ones.
-2. **Missing stats assets.** `Pistol_02` (Judge) references `DA_Judge_Stats` and `WEPN_007` (SKS) references `DA_SKS_Stats`. Neither exists in this folder, so their ballistics are unknown here.
-3. **Zero shown prices.** `KH2002`, `A91` and `WEPN_033` are shown at price 0 with unlock level 1. The data does not say whether this means unreleased, free or unpriced.
+1. **WEPN_033 stats asset is a copy.** [`DA_WEPN_033_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_033/Content/Data/DA_WEPN_033_Stats.json) has `WeaponId = Id.Item.TAR21` and values 700 RPM, 71,500 speed, 300 range, which match the A-91 family. `TAR21` already has its own stats asset ([`DA_TAR21_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_005/Content/Data/DA_TAR21_Stats.json), 750 RPM, 91,000 speed, 550 range). The [`WEPN_033`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_033/Content/WEPN_033.json) item loads its own file, so its live values are the copied ones.
+2. **Missing stats assets.** [`Pistol_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Pistols/Pistol_02/Content/Pistol_02.json) (Judge) references [`DA_Judge_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Pistol/Judge/Data/DA_Judge_Stats.json) and [`WEPN_007`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_007/Content/WEPN_007.json) (SKS) references [`DA_SKS_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/DMR/SKS/Data/DA_SKS_Stats.json). Neither exists in this folder, so their ballistics are unknown here.
+3. **Zero shown prices.** `KH2002`, `A91` and [`WEPN_033`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_033/Content/WEPN_033.json) are shown at price 0 with unlock level 1. The data does not say whether this means unreleased, free or unpriced.
 4. **Launcher `IronSightsAimTime = 50000`.** Not a time value. Meaning unknown.
 5. **Attachment type tags** are inconsistent (section 6).
 6. **No vendor row for 77 of 173 parts.** That is all 74 `Components` items, plus 3 attachments (2 sights and 1 magazine). The 74 components are probably weapon-specific and unlocked by ownership, but the unlock path is not in this folder.
@@ -317,7 +317,7 @@ Every vendor-priced attachment carries a `GE_*` gameplay effect in `AppliedEffec
 - **Price and unlock:** the shown vendor variation sets the price and `LevelToUnlock`. Hidden variations never appear in the shop.
 - **Attachments:** a fitted attachment applies the `GE_*` effects in its `AppliedEffects`. Those effects are not in this folder, so the net stat change of a build cannot be computed here.
 - **Ammo:** one unit of `RequiredResource` is spent per primary-fire shot, from the weapon's own magazine or ammo pool.
-- **Spread and recoil:** base values sit in `WDWeaponStatsData` and the `CT_Weapon_Spread` curve table. Attribute multipliers (all 1.0 except `AdsZoomMultiplier` at 1.2) apply on top. How the runtime combines them is not in this folder.
+- **Spread and recoil:** base values sit in `WDWeaponStatsData` and the [`CT_Weapon_Spread`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Curves/CT_Weapon_Spread.json) curve table. Attribute multipliers (all 1.0 except `AdsZoomMultiplier` at 1.2) apply on top. How the runtime combines them is not in this folder.
 
 ---
 

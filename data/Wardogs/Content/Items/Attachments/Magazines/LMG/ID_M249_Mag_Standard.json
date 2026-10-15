@@ -1,0 +1,254 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_M249_Mag_Standard'",
+    "ObjectPath": "/Game/Items/Attachments/Magazines/LMG/ID_M249_Mag_Standard.5"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 2,
+      "Y": 3
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_M249_Mag_Standard'",
+    "ObjectPath": "/Game/Items/Attachments/Magazines/LMG/ID_M249_Mag_Standard.5"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Items/Weapons/LMG/M249/Assets/SM_M249_StandardMag.SM_M249_StandardMag",
+      "SubPathString": ""
+    },
+    "RelativeRotation": {
+      "Pitch": -90.0,
+      "Yaw": 0.0,
+      "Roll": 0.0
+    },
+    "bOverrideDroppedRelativeLocation": true,
+    "OverridedRelativeLocation": {
+      "X": 4.389096,
+      "Y": 0.0,
+      "Z": 0.0
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_M249_Mag_Standard'",
+    "ObjectPath": "/Game/Items/Attachments/Magazines/LMG/ID_M249_Mag_Standard.5"
+  },
+  "Properties": {
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Item.Ammo"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::AllowList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [
+            "Item.Caliber.556mm"
+          ],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": -2,
+        "MaxSlotAmountStackSize": 200,
+        "bAllowsStackedPacking": true,
+        "bIsHiddenContainer": true,
+        "_aaabelnajgoacnpmnokoe_$BD096E02DFCDEAE4$_$20$": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [
+          "Id.Item.556mm"
+        ],
+        "DefaultContainerItems": [
+          {
+            "Item": {
+              "TagName": "Id.Item.556mm.Tracer"
+            },
+            "Amount": null
+          }
+        ]
+      }
+    ]
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_M249_Mag_Standard'",
+    "ObjectPath": "/Game/Items/Attachments/Magazines/LMG/ID_M249_Mag_Standard.5"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_M249_Mag_Standard'",
+    "ObjectPath": "/Game/Items/Attachments/Magazines/LMG/ID_M249_Mag_Standard.5"
+  },
+  "Properties": {
+    "Weight": 3.14
+  }
+}
+--- export: UPrimaryDataAsset / ID_M249_Mag_Standard ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_M249_Mag_Standard",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Attachments/Magazines/LMG/ID_M249_Mag_Standard",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.M249Magazine"
+    },
+    "ItemContext": [
+      "Item.Attachment.Magazine",
+      "Item.Resource.Magazine.Belt"
+    ],
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Magazines.STRINGS_Magazines",
+      "Key": "Items.Magazine.M249.Large",
+      "SourceString": "M249 200 RND Box",
+      "LocalizedString": "M249 200 RND Box"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_M249_Mag_Standard:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/Game/Items/Attachments/Magazines/LMG/ID_M249_Mag_Standard.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_M249_Mag_Standard:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Game/Items/Attachments/Magazines/LMG/ID_M249_Mag_Standard.3"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_M249_Mag_Standard:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/Game/Items/Attachments/Magazines/LMG/ID_M249_Mag_Standard.8"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_M249_Mag_Standard:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Game/Items/Attachments/Magazines/LMG/ID_M249_Mag_Standard.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_M249_Mag_Standard:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/Game/Items/Attachments/Magazines/LMG/ID_M249_Mag_Standard.6"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_M249_Mag_Standard:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Game/Items/Attachments/Magazines/LMG/ID_M249_Mag_Standard.7"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_M249_Mag_Standard:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Game/Items/Attachments/Magazines/LMG/ID_M249_Mag_Standard.0"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_M249_Mag_Standard:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/Game/Items/Attachments/Magazines/LMG/ID_M249_Mag_Standard.4"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_M249_Mag_Standard'",
+    "ObjectPath": "/Game/Items/Attachments/Magazines/LMG/ID_M249_Mag_Standard.5"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "ReloadAnimationPlayRate": 1.0,
+      "bAllowsInspect": true,
+      "WeaponInspectIgnoreList": [],
+      "_aaabcefliieaifhmbokhe_$45B8840857C1EA74$_$18$": 0.6,
+      "_aaabfocbgdpdpdbbdkohf_$E2163F3F3113AE75$_$21$": 0.6,
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Magazine"
+      },
+      "AppliedEffects": [
+        {
+          "ObjectName": "BlueprintGeneratedClass'GE_MAG_M249_200rd_C'",
+          "ObjectPath": "/Game/Items/Attachments/Magazines/LMG/GE_MAG_M249_200rd.0"
+        }
+      ],
+      "AppliedCharacterEffects": [
+        {
+          "ObjectName": "BlueprintGeneratedClass'GE_MAG_M249_200rd_CharacterEffects_C'",
+          "ObjectPath": "/Game/Items/Attachments/Magazines/LMG/GE_MAG_M249_200rd_CharacterEffects.0"
+        }
+      ],
+      "bCanBeRemovedInGame": true,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_M249_Mag_Standard'",
+    "ObjectPath": "/Game/Items/Attachments/Magazines/LMG/ID_M249_Mag_Standard.5"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Magazine_Box_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Item/Data/ID_Magazine_Box_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_M249_Mag_Standard'",
+    "ObjectPath": "/Game/Items/Attachments/Magazines/LMG/ID_M249_Mag_Standard.5"
+  },
+  "Properties": {
+    "ItemType": "EWDGunsmithItemType::Attachment"
+  }
+}

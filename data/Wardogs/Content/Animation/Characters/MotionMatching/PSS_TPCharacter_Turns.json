@@ -1,0 +1,166 @@
+--- export: UObject / PoseSearchFeatureChannel_Group_0 ---
+{
+  "Type": "PoseSearchFeatureChannel_Group",
+  "Name": "PoseSearchFeatureChannel_Group_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'PoseSearchFeatureChannel_Group'",
+  "Outer": {
+    "ObjectName": "PoseSearchSchema'PSS_TPCharacter_Turns'",
+    "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter_Turns.6"
+  },
+  "Properties": {
+    "SubChannels": [
+      {
+        "ObjectName": "PoseSearchFeatureChannel_Position'PSS_TPCharacter_Turns:PoseSearchFeatureChannel_Group_0.PoseSearchFeatureChannel_Position_0'",
+        "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter_Turns.2"
+      },
+      {
+        "ObjectName": "PoseSearchFeatureChannel_Velocity'PSS_TPCharacter_Turns:PoseSearchFeatureChannel_Group_0.PoseSearchFeatureChannel_Velocity_0'",
+        "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter_Turns.4"
+      },
+      {
+        "ObjectName": "PoseSearchFeatureChannel_Velocity'PSS_TPCharacter_Turns:PoseSearchFeatureChannel_Group_0.PoseSearchFeatureChannel_Velocity_1'",
+        "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter_Turns.5"
+      },
+      {
+        "ObjectName": "PoseSearchFeatureChannel_Heading'PSS_TPCharacter_Turns:PoseSearchFeatureChannel_Group_0.PoseSearchFeatureChannel_Heading_0'",
+        "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter_Turns.1"
+      }
+    ]
+  }
+}
+--- export: UObject / PoseSearchFeatureChannel_Heading_0 ---
+{
+  "Type": "PoseSearchFeatureChannel_Heading",
+  "Name": "PoseSearchFeatureChannel_Heading_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'PoseSearchFeatureChannel_Heading'",
+  "Outer": {
+    "ObjectName": "PoseSearchFeatureChannel_Group'PSS_TPCharacter_Turns:PoseSearchFeatureChannel_Group_0'",
+    "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter_Turns.0"
+  },
+  "Properties": {
+    "bone": {
+      "BoneName": "pelvis"
+    },
+    "OriginTimeOffset": 0.2,
+    "HeadingAxis": "EHeadingAxis::Y",
+    "ComponentStripping": "EComponentStrippingVector::StripZ"
+  }
+}
+--- export: UObject / PoseSearchFeatureChannel_Position_0 ---
+{
+  "Type": "PoseSearchFeatureChannel_Position",
+  "Name": "PoseSearchFeatureChannel_Position_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'PoseSearchFeatureChannel_Position'",
+  "Outer": {
+    "ObjectName": "PoseSearchFeatureChannel_Group'PSS_TPCharacter_Turns:PoseSearchFeatureChannel_Group_0'",
+    "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter_Turns.0"
+  },
+  "Properties": {
+    "bone": {
+      "BoneName": "foot_l"
+    },
+    "OriginBone": {
+      "BoneName": "foot_r"
+    }
+  }
+}
+--- export: UObject / PoseSearchFeatureChannel_Trajectory_0 ---
+{
+  "Type": "PoseSearchFeatureChannel_Trajectory",
+  "Name": "PoseSearchFeatureChannel_Trajectory_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'PoseSearchFeatureChannel_Trajectory'",
+  "Outer": {
+    "ObjectName": "PoseSearchSchema'PSS_TPCharacter_Turns'",
+    "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter_Turns.6"
+  },
+  "Properties": {
+    "Samples": [
+      {
+        "Offset": -0.05,
+        "Flags": 32
+      },
+      {
+        "Offset": 0.0,
+        "Flags": 144
+      },
+      {
+        "Offset": 0.35,
+        "Flags": 160
+      },
+      {
+        "Offset": 0.7,
+        "Flags": 176
+      },
+      {
+        "Offset": 1.0,
+        "Flags": 4
+      }
+    ]
+  }
+}
+--- export: UObject / PoseSearchFeatureChannel_Velocity_0 ---
+{
+  "Type": "PoseSearchFeatureChannel_Velocity",
+  "Name": "PoseSearchFeatureChannel_Velocity_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'PoseSearchFeatureChannel_Velocity'",
+  "Outer": {
+    "ObjectName": "PoseSearchFeatureChannel_Group'PSS_TPCharacter_Turns:PoseSearchFeatureChannel_Group_0'",
+    "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter_Turns.0"
+  },
+  "Properties": {
+    "bone": {
+      "BoneName": "foot_l"
+    }
+  }
+}
+--- export: UObject / PoseSearchFeatureChannel_Velocity_1 ---
+{
+  "Type": "PoseSearchFeatureChannel_Velocity",
+  "Name": "PoseSearchFeatureChannel_Velocity_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'PoseSearchFeatureChannel_Velocity'",
+  "Outer": {
+    "ObjectName": "PoseSearchFeatureChannel_Group'PSS_TPCharacter_Turns:PoseSearchFeatureChannel_Group_0'",
+    "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter_Turns.0"
+  },
+  "Properties": {
+    "bone": {
+      "BoneName": "foot_r"
+    }
+  }
+}
+--- export: UDataAsset / PSS_TPCharacter_Turns ---
+{
+  "Type": "PoseSearchSchema",
+  "Name": "PSS_TPCharacter_Turns",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'PoseSearchSchema'",
+  "Package": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter_Turns",
+  "Properties": {
+    "Skeletons": [
+      {
+        "Skeleton": {
+          "ObjectName": "Skeleton'SKEL_TP_Character_Refactor'",
+          "ObjectPath": "/Game/Characters/Default_PlayerMesh/TP/SKEL_TP_Character_Refactor.37"
+        },
+        "MirrorDataTable": null,
+        "Role": "None"
+      }
+    ],
+    "Channels": [
+      {
+        "ObjectName": "PoseSearchFeatureChannel_Trajectory'PSS_TPCharacter_Turns:PoseSearchFeatureChannel_Trajectory_0'",
+        "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter_Turns.3"
+      },
+      {
+        "ObjectName": "PoseSearchFeatureChannel_Group'PSS_TPCharacter_Turns:PoseSearchFeatureChannel_Group_0'",
+        "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter_Turns.0"
+      }
+    ]
+  }
+}

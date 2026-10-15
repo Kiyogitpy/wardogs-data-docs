@@ -4,7 +4,7 @@ parent: "Game Features"
 ---
 
 # Wardogs — GameFeatures: TeamkillTracking (v2)
-*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/GameFeatures/TeamkillTracking/` — 1 JSON file (`Content/TeamkillTracking.json`, 2 exports).*
+*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: [`Plugins/GameFeatures/TeamkillTracking/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/TeamkillTracking) — 1 JSON file ([`Content/TeamkillTracking.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/TeamkillTracking/Content/TeamkillTracking.json), 2 exports).*
 
 ---
 

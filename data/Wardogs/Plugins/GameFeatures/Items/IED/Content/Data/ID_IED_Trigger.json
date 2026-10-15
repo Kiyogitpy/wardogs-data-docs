@@ -1,0 +1,800 @@
+--- export: UObject / BH_C4_Data_C_0 ---
+{
+  "Type": "BH_C4_Data_C",
+  "Name": "BH_C4_Data_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/C4/Data/Blueprints/BH_C4_Data.BH_C4_Data_C'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_IED_Trigger:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/IED/Data/ID_IED_Trigger.10"
+  },
+  "Template": {
+    "ObjectName": "BH_C4_Data_C'Default__BH_C4_Data_C'",
+    "ObjectPath": "/C4/Data/Blueprints/BH_C4_Data.0"
+  },
+  "Properties": {
+    "DelayTillExplosion": 3.0,
+    "MaxDetonationDistance": -1.0
+  }
+}
+--- export: UObject / BH_ExtensionData_ItemChargeManager_C_0 ---
+{
+  "Type": "BH_ExtensionData_ItemChargeManager_C",
+  "Name": "BH_ExtensionData_ItemChargeManager_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/GameMechanics/ExtensionComponents/BH_ExtensionData_ItemChargeManager.BH_ExtensionData_ItemChargeManager_C'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_IED_Trigger:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/IED/Data/ID_IED_Trigger.10"
+  },
+  "Template": {
+    "ObjectName": "BH_ExtensionData_ItemChargeManager_C'Default__BH_ExtensionData_ItemChargeManager_C'",
+    "ObjectPath": "/Game/GameMechanics/ExtensionComponents/BH_ExtensionData_ItemChargeManager.0"
+  }
+}
+--- export: UObject / BH_ExtensionData_MedicalPrompts_C_0 ---
+{
+  "Type": "BH_ExtensionData_MedicalPrompts_C",
+  "Name": "BH_ExtensionData_MedicalPrompts_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/GameMechanics/ExtensionComponents/BH_ExtensionData_MedicalPrompts.BH_ExtensionData_MedicalPrompts_C'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_IED_Trigger:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/IED/Data/ID_IED_Trigger.10"
+  },
+  "Template": {
+    "ObjectName": "BH_ExtensionData_MedicalPrompts_C'Default__BH_ExtensionData_MedicalPrompts_C'",
+    "ObjectPath": "/Game/GameMechanics/ExtensionComponents/BH_ExtensionData_MedicalPrompts.0"
+  },
+  "Properties": {
+    "NotInRangeText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Healing_ActionText.STRINGS_Healing_ActionText",
+      "Key": "ActionText.IED.Placed",
+      "SourceString": "IED already placed",
+      "LocalizedString": "IED already placed"
+    },
+    "CannotHealSelfText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Healing_ActionText.STRINGS_Healing_ActionText",
+      "Key": "ActionText.IED.NotPlaced",
+      "SourceString": "No IED placed",
+      "LocalizedString": "No IED placed"
+    },
+    "TargetFullHealthText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Healing_ActionText.STRINGS_Healing_ActionText",
+      "Key": "ActionText.IED.Empty",
+      "SourceString": "IED empty",
+      "LocalizedString": "IED empty"
+    },
+    "SelfFullHealthText": {
+      "CultureInvariantString": null
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_IED_Trigger'",
+    "ObjectPath": "/IED/Data/ID_IED_Trigger.8"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 1,
+      "Y": 2
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_IED_Trigger'",
+    "ObjectPath": "/IED/Data/ID_IED_Trigger.8"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/IED/Meshes/SM_IED_Planted.SM_IED_Planted",
+      "SubPathString": ""
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_THRW_007_b'",
+        "ObjectPath": "/IED/Materials/MI_THRW_007_b.0"
+      }
+    ],
+    "bOverrideDroppedRelativeLocation": true,
+    "OverridedRelativeLocation": {
+      "X": -3.1,
+      "Y": 1.0,
+      "Z": -2.0
+    },
+    "bOverrideDroppedBoxExtent": true,
+    "OverridedBoxExtent": {
+      "X": 3.5,
+      "Y": 6.387502,
+      "Z": 10.359856
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_IED_Trigger'",
+    "ObjectPath": "/IED/Data/ID_IED_Trigger.8"
+  },
+  "Properties": {
+    "bIsVisibleOnEquippedUI": true,
+    "bCanRemoveItem": false,
+    "DisplayedResource": {
+      "TagName": "Id.Item.IED.Explosive"
+    },
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Item.Attachment.Chamber"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::AllowList",
+          "AllowedSubSlotItems": [
+            "Id.Item.IED.Explosive"
+          ],
+          "AllowedSubSlotContext": [],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": -2,
+        "MaxSlotAmountStackSize": 1,
+        "bAllowsStackedPacking": false,
+        "bIsHiddenContainer": true,
+        "_aaabelnajgoacnpmnokoe_$BD096E02DFCDEAE4$_$20$": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": [
+          {
+            "Item": {
+              "TagName": "Id.Item.IED.Explosive"
+            },
+            "Amount": 1
+          }
+        ]
+      }
+    ]
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_IED_Trigger'",
+    "ObjectPath": "/IED/Data/ID_IED_Trigger.8"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_IED_Trigger'",
+    "ObjectPath": "/IED/Data/ID_IED_Trigger.8"
+  },
+  "Properties": {
+    "Weight": 1.5
+  }
+}
+--- export: UPrimaryDataAsset / ID_IED_Trigger ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_IED_Trigger",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/IED/Data/ID_IED_Trigger",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.IED.Trigger"
+    },
+    "ItemContext": [
+      "Item.Resource.HiddenConsumable",
+      "Item.Ammo",
+      "Item.Resource.Ammo",
+      "Item.Context.UtilityItem",
+      "Item.Context.QuickSlot",
+      "Item.Context.Animation.Type.Unarmed",
+      "Item.Context.Animation.Archetype.EquipRightHand",
+      "Inventory.Slot.Specialist"
+    ],
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+      "Key": "Items.Utility.IED",
+      "SourceString": "Improvised Explosive Device",
+      "LocalizedString": "Improvised Explosive Device"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_IED_Trigger:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/IED/Data/ID_IED_Trigger.5"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_ItemActor'ID_IED_Trigger:WDInventoryFragment_ItemActor_0'",
+        "ObjectPath": "/IED/Data/ID_IED_Trigger.10"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_IED_Trigger:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/IED/Data/ID_IED_Trigger.4"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_IED_Trigger:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/IED/Data/ID_IED_Trigger.9"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_IED_Trigger:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/IED/Data/ID_IED_Trigger.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_IED_Trigger:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/IED/Data/ID_IED_Trigger.6"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_IED_Trigger:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/IED/Data/ID_IED_Trigger.7"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_IED_Trigger'",
+    "ObjectPath": "/IED/Data/ID_IED_Trigger.8"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_IED_Audio'",
+      "ObjectPath": "/IED/Data/ID_IED_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_ItemActor_0 ---
+{
+  "Type": "WDInventoryFragment_ItemActor",
+  "Name": "WDInventoryFragment_ItemActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_ItemActor'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_IED_Trigger'",
+    "ObjectPath": "/IED/Data/ID_IED_Trigger.8"
+  },
+  "Properties": {
+    "ExtensionDataFragments": [
+      {
+        "ObjectName": "WDItemExtensionData_Holdable'ID_IED_Trigger:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Holdable_0'",
+        "ObjectPath": "/IED/Data/ID_IED_Trigger.14"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Input'ID_IED_Trigger:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+        "ObjectPath": "/IED/Data/ID_IED_Trigger.15"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Inventory'ID_IED_Trigger:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Inventory_0'",
+        "ObjectPath": "/IED/Data/ID_IED_Trigger.16"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Animation'ID_IED_Trigger:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Animation_0'",
+        "ObjectPath": "/IED/Data/ID_IED_Trigger.11"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_AudioExtension'ID_IED_Trigger:WDInventoryFragment_ItemActor_0.WDItemExtensionData_AudioExtension_0'",
+        "ObjectPath": "/IED/Data/ID_IED_Trigger.12"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Placeable'ID_IED_Trigger:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Placeable_0'",
+        "ObjectPath": "/IED/Data/ID_IED_Trigger.17"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Throwable'ID_IED_Trigger:WDInventoryFragment_ItemActor_0.WDItemFragment_Throwable_0'",
+        "ObjectPath": "/IED/Data/ID_IED_Trigger.18"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Trigger'ID_IED_Trigger:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Trigger_0'",
+        "ObjectPath": "/IED/Data/ID_IED_Trigger.19"
+      },
+      {
+        "ObjectName": "BH_C4_Data_C'ID_IED_Trigger:WDInventoryFragment_ItemActor_0.BH_C4_Data_C_0'",
+        "ObjectPath": "/IED/Data/ID_IED_Trigger.0"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_GameplayEffects'ID_IED_Trigger:WDInventoryFragment_ItemActor_0.WDItemExtensionData_GameplayEffects_0'",
+        "ObjectPath": "/IED/Data/ID_IED_Trigger.13"
+      },
+      {
+        "ObjectName": "BH_ExtensionData_ItemChargeManager_C'ID_IED_Trigger:WDInventoryFragment_ItemActor_0.BH_ExtensionData_ItemChargeManager_C_0'",
+        "ObjectPath": "/IED/Data/ID_IED_Trigger.1"
+      },
+      {
+        "ObjectName": "BH_ExtensionData_MedicalPrompts_C'ID_IED_Trigger:WDInventoryFragment_ItemActor_0.BH_ExtensionData_MedicalPrompts_C_0'",
+        "ObjectPath": "/IED/Data/ID_IED_Trigger.2"
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Animation_0 ---
+{
+  "Type": "WDItemExtensionData_Animation",
+  "Name": "WDItemExtensionData_Animation_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Animation'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_IED_Trigger:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/IED/Data/ID_IED_Trigger.10"
+  },
+  "Properties": {
+    "AnimationSet": {
+      "ObjectName": "BHAnimationSet'AnimSet_IED'",
+      "ObjectPath": "/IED/Data/AnimSet_IED.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_AudioExtension_0 ---
+{
+  "Type": "WDItemExtensionData_AudioExtension",
+  "Name": "WDItemExtensionData_AudioExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_AudioExtension'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_IED_Trigger:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/IED/Data/ID_IED_Trigger.10"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_IED_Audio'",
+      "ObjectPath": "/IED/Data/ID_IED_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_GameplayEffects_0 ---
+{
+  "Type": "WDItemExtensionData_GameplayEffects",
+  "Name": "WDItemExtensionData_GameplayEffects_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_GameplayEffects'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_IED_Trigger:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/IED/Data/ID_IED_Trigger.10"
+  }
+}
+--- export: UObject / WDItemExtensionData_Holdable_0 ---
+{
+  "Type": "WDItemExtensionData_Holdable",
+  "Name": "WDItemExtensionData_Holdable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Holdable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_IED_Trigger:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/IED/Data/ID_IED_Trigger.10"
+  },
+  "Properties": {
+    "HoldableMesh": {
+      "ObjectName": "SkeletalMesh'SK_IED'",
+      "ObjectPath": "/IED/Meshes/SK_IED.1"
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_THRW_007_b'",
+        "ObjectPath": "/IED/Materials/MI_THRW_007_b.0"
+      },
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_THRW_007_a'",
+        "ObjectPath": "/IED/Materials/MI_THRW_007_a.0"
+      }
+    ],
+    "MeshAnimClass": {
+      "ObjectName": "AnimBlueprintGeneratedClass'ABP_IED_C'",
+      "ObjectPath": "/IED/Animation/Weapon/Blueprint/ABP_IED.1"
+    },
+    "bShowCrosshair": true,
+    "bOverrideDefaultCrosshairSettings": true,
+    "CrosshairSettings": {
+      "Type": "EWDCrosshairType::Throwable"
+    },
+    "EquipAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_IED_Equip'",
+        "ObjectPath": "/IED/Animation/Character/Montage/AM_FP_IED_Equip.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_EquipmentRH_Equip'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/EquipmentRH/Actions/AM_TP_Gen_EquipmentRH_Equip.0"
+      },
+      "FirstPersonItemAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_IED_Equip_Weap'",
+        "ObjectPath": "/IED/Animation/Weapon/FP/AM_FP_IED_Equip_Weap.0"
+      }
+    },
+    "HolsterAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_IED_Holster'",
+        "ObjectPath": "/IED/Animation/Character/Montage/AM_FP_IED_Holster.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_EquipmentRH_Holster'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/EquipmentRH/Actions/AM_TP_Gen_EquipmentRH_Holster.0"
+      },
+      "FirstPersonItemAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_IED_Holster_Weap'",
+        "ObjectPath": "/IED/Animation/Weapon/FP/AM_FP_IED_Holster_Weap.0"
+      }
+    },
+    "EquippedAnimSet": {
+      "DefaultFirstPersonLayer": {
+        "AssetPathName": "/IED/Animation/Character/Blueprint/ABP_FP_IED_Layer_RW.ABP_FP_IED_Layer_RW_C",
+        "SubPathString": ""
+      },
+      "DefaultThirdPersonLayer": {
+        "AssetPathName": "/IED/Animation/Character/Blueprint/ABP_TP_IED_Layer_RW.ABP_TP_IED_Layer_RW_C",
+        "SubPathString": ""
+      }
+    },
+    "FallbackMeshSignificanceThreshold": {
+      "Significance": 0.03
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_InputActionExtension_0 ---
+{
+  "Type": "WDItemExtensionData_Input",
+  "Name": "WDItemExtensionData_InputActionExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Input'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_IED_Trigger:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/IED/Data/ID_IED_Trigger.10"
+  },
+  "Properties": {
+    "InputMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_IED'",
+      "ObjectPath": "/IED/Data/IMC_IED.4"
+    },
+    "InputBehaviors": [
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.Player.PrimaryUse"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_IED_Trigger:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_3'",
+          "ObjectPath": "/IED/Data/ID_IED_Trigger.22"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.Inspect"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_IED_Trigger:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_0'",
+          "ObjectPath": "/IED/Data/ID_IED_Trigger.20"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.PrimaryUse.Release"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_CompleteAction'ID_IED_Trigger:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_CompleteAction_1'",
+          "ObjectPath": "/IED/Data/ID_IED_Trigger.24"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.Appliable.SecondaryUse"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_IED_Trigger:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_1'",
+          "ObjectPath": "/IED/Data/ID_IED_Trigger.21"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.SecondaryUse.Release"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_CompleteAction'ID_IED_Trigger:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_CompleteAction_0'",
+          "ObjectPath": "/IED/Data/ID_IED_Trigger.23"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Inventory_0 ---
+{
+  "Type": "WDItemExtensionData_Inventory",
+  "Name": "WDItemExtensionData_Inventory_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Inventory'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_IED_Trigger:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/IED/Data/ID_IED_Trigger.10"
+  },
+  "Properties": {
+    "PrimaryUseTag": {
+      "TagName": "Action.Placeable.PrimaryUse.IED"
+    },
+    "ActionResourceRequirements": [
+      {
+        "Key": {
+          "TagName": "Action.Throw.Dropped"
+        },
+        "Value": {
+          "RequiredResource": {
+            "TagName": "Id.Item.IED.Trigger"
+          },
+          "ResourcesUsed": 1,
+          "bLimitSearchToItem": false,
+          "OptionalRequiredSubSlotCategory": {
+            "TagName": "None"
+          },
+          "ResourceType": {
+            "TagName": "Item.Resource.Supplies"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Action.Placeable.PrimaryUse.IED"
+        },
+        "Value": {
+          "RequiredResource": {
+            "TagName": "Id.Item.IED.Explosive"
+          },
+          "ResourcesUsed": 1,
+          "bLimitSearchToItem": true,
+          "OptionalRequiredSubSlotCategory": {
+            "TagName": "Item.Attachment.Magazine"
+          },
+          "ResourceType": {
+            "TagName": "Item.Resource.Ammo"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Placeable_0 ---
+{
+  "Type": "WDItemExtensionData_Placeable",
+  "Name": "WDItemExtensionData_Placeable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Placeable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_IED_Trigger:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/IED/Data/ID_IED_Trigger.10"
+  },
+  "Properties": {
+    "MaxPlacementAngle": 180.0,
+    "bCanPlaceOnOtherPlaceable": false,
+    "PlacementCollisionSize": {
+      "X": 0.5,
+      "Y": 0.5,
+      "Z": 0.5
+    },
+    "PlaceableClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_PlaceableIED_C'",
+      "ObjectPath": "/IED/Blueprints/B_PlaceableIED.2"
+    },
+    "PlaceableInitData": {
+      "VitalityComponentParams": {
+        "bOverrideBaseHealth": true,
+        "BaseHealthOverride": 1.0,
+        "bOverrideMaxHealth": true,
+        "MaxHealthOverride": 1.0
+      }
+    },
+    "ProgressWheelText": {
+      "Namespace": "",
+      "Key": "810024404C0984463C30E1B58FBEE38E",
+      "SourceString": "Deploying Landmine",
+      "LocalizedString": "Deploying Landmine"
+    },
+    "BlockedReason": {
+      "TagName": "UI.Interactions.PlacementWarnings.PlacementBlocked"
+    },
+    "BlockedActorClasses": [
+      {
+        "ObjectName": "Class'WDMoverPlayerCharacter'",
+        "ObjectPath": "/Script/WDGame"
+      }
+    ],
+    "AppliedEffects": [
+      {
+        "ObjectName": "BlueprintGeneratedClass'GE_UsePlaceable_C'",
+        "ObjectPath": "/Game/GameMechanics/GameplayEffects/Actions/GE_UsePlaceable.0"
+      }
+    ],
+    "_aaabglnjplikklkgfpoaf_$BD9FB8AABA65FE05$_$22$": false,
+    "ExtensionComponentClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_WDItemExtension_IED_Placeable_C'",
+      "ObjectPath": "/IED/Data/B_WDItemExtension_IED_Placeable.1"
+    }
+  }
+}
+--- export: UObject / WDItemFragment_Throwable_0 ---
+{
+  "Type": "WDItemExtensionData_Throwable",
+  "Name": "WDItemFragment_Throwable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Throwable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_IED_Trigger:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/IED/Data/ID_IED_Trigger.10"
+  },
+  "Properties": {
+    "ThrowableClass": {
+      "AssetPathName": "/IED/Blueprints/B_ThrowableIED.B_ThrowableIED_C",
+      "SubPathString": ""
+    },
+    "ThrowActions": [
+      {
+        "Key": {
+          "TagName": "Action.Throw.Secondary"
+        },
+        "Value": {
+          "bUseConsistentVelocity": true,
+          "ThrowVelocity": 1200.0,
+          "VelocityCurve": null,
+          "OwnerVerticalVelocityInfluence": 1.0,
+          "OwnerHorizontalVelocityInfluence": 0.45,
+          "PitchCurve": {
+            "ObjectName": "CurveFloat'CRV_ThrowPitch_OverarmStrong'",
+            "ObjectPath": "/Game/Items/Throwable/Curves/CRV_ThrowPitch_OverarmStrong.0"
+          },
+          "MinAngularVelocity": {
+            "X": 25.0,
+            "Y": 100.0,
+            "Z": 25.0
+          },
+          "MaxAngularVelocity": {
+            "X": 40.0,
+            "Y": 150.0,
+            "Z": 40.0
+          },
+          "SpawnOffset": {
+            "X": 40.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "BlockEquipAfterDestroyTime": 0.5,
+          "ThrowTypeTag": {
+            "TagName": "Action.Throw.Secondary"
+          },
+          "ThrowAnimationTag": {
+            "TagName": "Animation.Asset.Throwable.Overarm"
+          },
+          "ThrowInputReleaseTag": {
+            "TagName": "Input.NamedActions.Throwable.Throw.Primary.Release"
+          },
+          "SwapThrowTypeTag": {
+            "TagName": "None"
+          }
+        }
+      }
+    ],
+    "bDropOnInterrupt": false,
+    "ItemToConsume": {
+      "TagName": "Id.Item.IED.Explosive"
+    },
+    "MaxItemsThatCanBeThrown": 1
+  }
+}
+--- export: UObject / WDItemExtensionData_Trigger_0 ---
+{
+  "Type": "WDItemExtensionData_Trigger",
+  "Name": "WDItemExtensionData_Trigger_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Trigger'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_IED_Trigger:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/IED/Data/ID_IED_Trigger.10"
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_0 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_IED_Trigger:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/IED/Data/ID_IED_Trigger.15"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Item.Inspect"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_1 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_IED_Trigger:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/IED/Data/ID_IED_Trigger.15"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.IED.Trigger"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_3 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_IED_Trigger:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/IED/Data/ID_IED_Trigger.15"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Placeable.PrimaryUse.IED"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_CompleteAction_0 ---
+{
+  "Type": "WDItemInputBehavior_CompleteAction",
+  "Name": "WDItemInputBehavior_CompleteAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_CompleteAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_IED_Trigger:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/IED/Data/ID_IED_Trigger.15"
+  },
+  "Properties": {
+    "ActionToComplete": {
+      "TagName": "Action.IED.Trigger"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_CompleteAction_1 ---
+{
+  "Type": "WDItemInputBehavior_CompleteAction",
+  "Name": "WDItemInputBehavior_CompleteAction_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_CompleteAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_IED_Trigger:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/IED/Data/ID_IED_Trigger.15"
+  },
+  "Properties": {
+    "ActionToComplete": {
+      "TagName": "Action.Placeable.PrimaryUse.IED"
+    }
+  }
+}

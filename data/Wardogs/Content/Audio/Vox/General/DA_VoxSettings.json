@@ -1,0 +1,72 @@
+--- export: UDataAsset / DA_VoxSettings ---
+{
+  "Type": "WDVoxSettings",
+  "Name": "DA_VoxSettings",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVoxSettings'",
+  "Package": "/Game/Audio/Vox/General/DA_VoxSettings",
+  "Properties": {
+    "VoxDataRegistry": {
+      "ObjectName": "DataRegistry'DR_VoxData'",
+      "ObjectPath": "/Game/Audio/Vox/General/DR_VoxData.0"
+    },
+    "InterruptFadeOutDuration": 0.1,
+    "VoxGroupPriorities": [
+      {
+        "Key": "EWDVoxGroup::Narrator",
+        "Value": 1
+      },
+      {
+        "Key": "EWDVoxGroup::Bark",
+        "Value": 2
+      },
+      {
+        "Key": "EWDVoxGroup::Exertion",
+        "Value": 3
+      },
+      {
+        "Key": "EWDVoxGroup::Dialogue",
+        "Value": 4
+      }
+    ],
+    "DefaultVoxPlayerStatusTag": {
+      "TagName": "Audio.Asset.Vox.Normal"
+    },
+    "VoxPlayerStatusAssetTags": [
+      {
+        "Key": "EWDVoxPlayerStatus::Normal",
+        "Value": {
+          "TagName": "Audio.Asset.Vox.Normal"
+        }
+      },
+      {
+        "Key": "EWDVoxPlayerStatus::LowStamina",
+        "Value": {
+          "TagName": "Audio.Asset.Vox.LowStamina"
+        }
+      },
+      {
+        "Key": "EWDVoxPlayerStatus::LowHealth",
+        "Value": {
+          "TagName": "Audio.Asset.Vox.LowHealth"
+        }
+      },
+      {
+        "Key": "EWDVoxPlayerStatus::Critical",
+        "Value": {
+          "TagName": "Audio.Asset.Vox.Critical"
+        }
+      }
+    ],
+    "VoxPlayerStatusThresholdValues": [
+      {
+        "Key": "EWDVoxPlayerStatus::LowHealth",
+        "Value": 50.0
+      },
+      {
+        "Key": "EWDVoxPlayerStatus::LowStamina",
+        "Value": 10.0
+      }
+    ]
+  }
+}

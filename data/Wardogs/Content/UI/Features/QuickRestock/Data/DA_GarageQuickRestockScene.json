@@ -1,0 +1,28 @@
+--- export: UDataAsset / DA_GarageQuickRestockScene ---
+{
+  "Type": "WDUIQuickRestockData",
+  "Name": "DA_GarageQuickRestockScene",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIQuickRestockData'",
+  "Package": "/Game/UI/Features/QuickRestock/Data/DA_GarageQuickRestockScene",
+  "Properties": {
+    "RestockableCategories": [
+      "Vendor.Category.Ammo",
+      "Vendor.Category.Attachment",
+      "Vendor.Category.Gear",
+      "Vendor.Category.Utility",
+      "Vendor.Category.Vehicle.Ammo",
+      "Vendor.Category.Vehicle.Garage",
+      "Vendor.Category.Vehicle.SupplyCrate",
+      "Vendor.Category.Weapon",
+      "Vendor.Category.Vehicle.Music"
+    ],
+    "PurchaseActionTag": {
+      "TagName": "UI.Audio.Vendor.Purchased"
+    },
+    "IgnoreVendorTypes": [
+      "Vendor.Type.Equipment",
+      "Vendor.Type.Vehicle"
+    ]
+  }
+}

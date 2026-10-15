@@ -1,0 +1,60 @@
+--- export: UDataAsset / DA_TreeRewardTrack ---
+{
+  "Type": "WDUITreeRewardTrackData",
+  "Name": "DA_TreeRewardTrack",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUITreeRewardTrackData'",
+  "Package": "/Game/UI/Features/Frontend/Progression/Widgets/Widgets/TreeRewardTrack/Data/DA_TreeRewardTrack",
+  "Properties": {
+    "RewardTrackPanelViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUITreeRewardTrackPanelViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Frontend/Progression/Widgets/Widgets/TreeRewardTrackPanel/Data/DA_TreeRewardTrackPanel.DA_TreeRewardTrackPanel",
+        "SubPathString": ""
+      }
+    },
+    "UnlocksDescriberEntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIUnlocksTreeNodeViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Frontend/Progression/Widgets/Widgets/TreeRewardCard/Data/DA_TreeRewardTrackCard.DA_TreeRewardTrackCard",
+        "SubPathString": ""
+      }
+    },
+    "LevelUnlockedTextFormat": {
+      "TableId": "/Game/UI/StringTables/Frontend/STRINGS_Progression.STRINGS_Progression",
+      "Key": "Text.LevelUnlocks",
+      "SourceString": "// Level {Level} Unlockable Items",
+      "LocalizedString": "// Level {Level} Unlockable Items"
+    },
+    "LevelRequiredTextFormat": {
+      "TableId": "/Game/UI/StringTables/Frontend/STRINGS_Progression.STRINGS_Progression",
+      "Key": "Text.Format.LevelRequired",
+      "SourceString": "Level {Level} Required",
+      "LocalizedString": "Level {Level} Required"
+    },
+    "XPRequiredTextFormat": {
+      "TableId": "/Game/UI/StringTables/Frontend/STRINGS_Progression.STRINGS_Progression",
+      "Key": "Text.Format.ExperienceRequired",
+      "SourceString": "{Experience}XP Required",
+      "LocalizedString": "{Experience}XP Required"
+    },
+    "FallbackRewardTextFormat": {
+      "TableId": "/Game/UI/StringTables/Frontend/STRINGS_Progression.STRINGS_Progression",
+      "Key": "Text.NoRewards",
+      "SourceString": "No Rewards Available",
+      "LocalizedString": "No Rewards Available"
+    },
+    "RewardTextFormat": {
+      "Namespace": "",
+      "Key": "4CBAAE17489B4E9C845AE1BC86368540",
+      "SourceString": "{CurrentRewards}/{MaxRewards} Items Unlocked",
+      "LocalizedString": "{CurrentRewards}/{MaxRewards} Items Unlocked"
+    }
+  }
+}

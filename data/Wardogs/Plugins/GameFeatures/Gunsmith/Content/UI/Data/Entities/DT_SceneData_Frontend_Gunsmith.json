@@ -1,0 +1,57 @@
+--- export: UDataTable / DT_SceneData_Frontend_Gunsmith ---
+{
+  "Type": "DataTable",
+  "Name": "DT_SceneData_Frontend_Gunsmith",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Gunsmith/UI/Data/Entities/DT_SceneData_Frontend_Gunsmith",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDSceneDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "UI.Scene.Frontend.Gunsmith": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": false,
+      "bIsFocusable": true,
+      "bShouldPreload": false,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 1,
+        "WidgetClass": {
+          "AssetPathName": "/Gunsmith/UI/W_GunsmithScene.W_GunsmithScene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/GunsmithRuntime.WDUIGunsmithSceneViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Gunsmith/UI/Data/DA_GunsmithScene.DA_GunsmithScene",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": false,
+      "bShowBackButton": false,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabffpbdpodpmfcknkog_$5F13FE3FC52ADAE6$_$21$": false,
+      "Tag": {
+        "TagName": "UI.Scene.Frontend.Gunsmith"
+      }
+    }
+  }
+}

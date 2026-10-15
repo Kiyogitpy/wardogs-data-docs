@@ -4,9 +4,9 @@ parent: "Content"
 ---
 
 # Wardogs — Maps & Gym Data Reference (v2)
-*Extracted from the cooked JSON export under `Content/Maps` (7 files, 41 export blocks). Values are raw asset properties. Anything inferred from a name rather than from the export is marked as inferred. The `.umap` level files are not in this category, so this doc covers the data assets that sit beside the maps.*
+*Extracted from the cooked JSON export under [`Content/Maps`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Maps) (7 files, 41 export blocks). Values are raw asset properties. Anything inferred from a name rather than from the export is marked as inferred. The `.umap` level files are not in this category, so this doc covers the data assets that sit beside the maps.*
 
-> **Scope note:** this is the supporting data for the test gyms (`Gyms/`) and the per-map shader warmup manifests (`PSOWarming/`). The actual level layouts, actor placement, and gameplay rules are not in this dump.
+> **Scope note:** this is the supporting data for the test gyms ([`Gyms/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Maps/Gyms)) and the per-map shader warmup manifests ([`PSOWarming/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Maps/PSOWarming)). The actual level layouts, actor placement, and gameplay rules are not in this dump.
 
 ---
 
@@ -14,17 +14,17 @@ parent: "Content"
 
 | File | Export type | What it is |
 |---|---|---|
-| `Gyms/Minimal/DT_Gym_Minimal_GridTest` | `WDAutomationWorldGridData` | Grid of capture cells over the minimal test gym |
-| `Gyms/Range/Assets/B_MovingTarget` | `BlueprintGeneratedClass` (`B_MovingTarget_C`) | Moving shooting-range target actor |
-| `Gyms/Water/PDA_Flux_Gym_Water` | `PDA_FluxSimulationState_C` | Fluid simulation settings and texture references for the water gym |
-| `Gyms/Water/WHG_PDA_Flux_Gym_Water` | `WDWaterHeightGridAsset` | Water height grid (512 x 512 samples) for the water gym |
-| `PSOWarming/Europe_Madrid_KOTH_01` | `WDPSOWarmupDataAsset` | Shader/PSO warmup manifest for the Madrid KOTH map |
-| `PSOWarming/NorthAmerica_Detroit_KOTH_01` | `WDPSOWarmupDataAsset` | Shader/PSO warmup manifest for the Detroit KOTH map |
-| `PSOWarming/Kavkazi_Bakurani_KOTH_01` | `WDPSOWarmupDataAsset` | Shader/PSO warmup manifest for the Bakurani KOTH map (**truncated in the dump**, see section 6) |
+| [`Gyms/Minimal/DT_Gym_Minimal_GridTest`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Minimal/DT_Gym_Minimal_GridTest.json) | `WDAutomationWorldGridData` | Grid of capture cells over the minimal test gym |
+| [`Gyms/Range/Assets/B_MovingTarget`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json) | `BlueprintGeneratedClass` ([`B_MovingTarget_C`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json)) | Moving shooting-range target actor |
+| [`Gyms/Water/PDA_Flux_Gym_Water`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Water/PDA_Flux_Gym_Water.json) | `PDA_FluxSimulationState_C` | Fluid simulation settings and texture references for the water gym |
+| [`Gyms/Water/WHG_PDA_Flux_Gym_Water`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Water/WHG_PDA_Flux_Gym_Water.json) | `WDWaterHeightGridAsset` | Water height grid (512 x 512 samples) for the water gym |
+| [`PSOWarming/Europe_Madrid_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/PSOWarming/Europe_Madrid_KOTH_01.json) | `WDPSOWarmupDataAsset` | Shader/PSO warmup manifest for the Madrid KOTH map |
+| [`PSOWarming/NorthAmerica_Detroit_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/PSOWarming/NorthAmerica_Detroit_KOTH_01.json) | `WDPSOWarmupDataAsset` | Shader/PSO warmup manifest for the Detroit KOTH map |
+| [`PSOWarming/Kavkazi_Bakurani_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/PSOWarming/Kavkazi_Bakurani_KOTH_01.json) | `WDPSOWarmupDataAsset` | Shader/PSO warmup manifest for the Bakurani KOTH map (**truncated in the dump**, see section 6) |
 
 ---
 
-## 2. Minimal Grid Test (`DT_Gym_Minimal_GridTest`)
+## 2. Minimal Grid Test ([`DT_Gym_Minimal_GridTest`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Minimal/DT_Gym_Minimal_GridTest.json))
 
 | Field | Value |
 |---|---|
@@ -42,7 +42,7 @@ parent: "Content"
 
 ---
 
-## 3. Shooting-Range Moving Target (`B_MovingTarget`)
+## 3. Shooting-Range Moving Target ([`B_MovingTarget`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json))
 
 The moving target is a blueprint actor. The export includes its class defaults, its components, its one timeline, and the names of its functions. The function bodies (graph logic) are not in the export, so only the data is documented here.
 
@@ -52,7 +52,7 @@ The moving target is a blueprint actor. The export includes its class defaults, 
 |---|---|---|
 | Health | 1.0 | Units not stated |
 | DamageIncrease | 3.5 | Units and meaning not stated |
-| TimeToReachTargetRange | Min 15, Max 25 | Likely seconds (inferred from name). The range is consumed by `GetTimeToReachTarget` |
+| TimeToReachTargetRange | Min 15, Max 25 | Likely seconds (inferred from name). The range is consumed by [`GetTimeToReachTarget`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json) |
 | StartingLocation | (0, 0, 0) | |
 | bReplicates | True | |
 | RemoteRole | `ROLE_SimulatedProxy` | |
@@ -74,23 +74,23 @@ The moving target is a blueprint actor. The export includes its class defaults, 
 
 | Item | Value |
 |---|---|
-| Timeline name | `TargetFall` (template `TargetFall_Template`) |
+| Timeline name | `TargetFall` (template [`TargetFall_Template`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json)) |
 | TimelineLength | 0.5 |
 | Track | `FallRate` on `CurveFloat_0` |
 | Curve keys | (t 0.0, value 0.0) to (t 0.5, value 1.0), cubic interpolation, auto tangents |
-| Bound functions | `TargetFall__UpdateFunc`, `TargetFall__FinishedFunc` |
+| Bound functions | [`TargetFall__UpdateFunc`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json), [`TargetFall__FinishedFunc`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json) |
 
 The fall plays out over half a second. The rate curve goes from 0 to 1 over the length of the timeline.
 
 ### 3d. Function list
 
-`SetMovingTarget`, `GetTimeToReachTarget`, `OnMovingTargetUpdated`, `TakeDamage`, `ReceiveDamage`, `Knockdown`, `Popup`, `ReceiveBeginPlay`, `ExecuteUbergraph_B_MovingTarget`, `TargetFall__UpdateFunc`, `TargetFall__FinishedFunc`.
+[`SetMovingTarget`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json), [`GetTimeToReachTarget`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json), [`OnMovingTargetUpdated`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json), [`TakeDamage`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json), [`ReceiveDamage`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json), [`Knockdown`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json), [`Popup`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json), `ReceiveBeginPlay`, [`ExecuteUbergraph_B_MovingTarget`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json), [`TargetFall__UpdateFunc`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json), [`TargetFall__FinishedFunc`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json).
 
 Function names only. The export has no graph nodes, so the actual formula for time-to-target or the damage math is not in this dump.
 
 ---
 
-## 4. Water Gym (`PDA_Flux_Gym_Water` and `WHG_PDA_Flux_Gym_Water`)
+## 4. Water Gym ([`PDA_Flux_Gym_Water`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Water/PDA_Flux_Gym_Water.json) and [`WHG_PDA_Flux_Gym_Water`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Water/WHG_PDA_Flux_Gym_Water.json))
 
 Two assets make up the water gym. The first is the fluid simulation state. The second is a precomputed height grid.
 
@@ -126,7 +126,7 @@ Two assets make up the water gym. The first is the fluid simulation state. The s
 | GridWidth | 512 |
 | Origin | (-51200, -51200), half the world size, so the grid is centred on the origin |
 | Sample array | 262,144 values (512 x 512), stored as unsigned 16-bit |
-| Linked asset | `PDA_Flux_Gym_Water` (the sim state in 4a) |
+| Linked asset | [`PDA_Flux_Gym_Water`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Water/PDA_Flux_Gym_Water.json) (the sim state in 4a) |
 
 **Sample distribution (from the array)**
 
@@ -160,9 +160,9 @@ Each manifest has the same structure:
 
 | Manifest | Experience name | World | Graphics PSOs | Compute PSOs | Status |
 |---|---|---|---|---|---|
-| `Europe_Madrid_KOTH_01` | Madrid_KOTH_01 | `/Game/Maps/Worlds/Europe/Europe` | 1,639 | 6 | Complete |
-| `NorthAmerica_Detroit_KOTH_01` | Detroit_KOTH_01 | `/Game/Maps/Worlds/NorthAmerica/NorthAmerica` | 1,870 | 76 | Complete |
-| `Kavkazi_Bakurani_KOTH_01` | Bakurani_KOTH_01 | `/Game/Maps/Worlds/Kavkazi/Kavkazi` | 2,528 | at least 2 (file truncated) | **Truncated**, see section 6 |
+| [`Europe_Madrid_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/PSOWarming/Europe_Madrid_KOTH_01.json) | Madrid_KOTH_01 | `/Game/Maps/Worlds/Europe/Europe` | 1,639 | 6 | Complete |
+| [`NorthAmerica_Detroit_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/PSOWarming/NorthAmerica_Detroit_KOTH_01.json) | Detroit_KOTH_01 | `/Game/Maps/Worlds/NorthAmerica/NorthAmerica` | 1,870 | 76 | Complete |
+| [`Kavkazi_Bakurani_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/PSOWarming/Kavkazi_Bakurani_KOTH_01.json) | Bakurani_KOTH_01 | `/Game/Maps/Worlds/Kavkazi/Kavkazi` | 2,528 | at least 2 (file truncated) | **Truncated**, see section 6 |
 
 The experience name for the Kavkazi file is `Bakurani_KOTH_01`, which differs from the file name. The file name and the experience name are both kept as they appear in the export.
 
@@ -209,7 +209,7 @@ The Detroit list is heavier on Lumen, screen-probe, and HZB shaders (engine rend
 
 ---
 
-## 6. Truncated File: `Kavkazi_Bakurani_KOTH_01`
+## 6. Truncated File: [`Kavkazi_Bakurani_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/PSOWarming/Kavkazi_Bakurani_KOTH_01.json)
 
 The file is 629,760 bytes, but the JSON stops partway through the `ComputePSOs` array (around character 614,457). As a result it does not parse as a whole.
 
@@ -233,8 +233,8 @@ The GraphicsPSO figures in section 5 come from that isolated, complete array, so
 
 ## 8. Still Not Pulled / Limitations
 
-- **Level (`.umap`) data.** Actor placement, spawn points, and gameplay rules are not in `Content/Maps`. Only the supporting assets are.
-- **Blueprint logic.** `B_MovingTarget` exports its function names, variables, and components, but not the graph nodes. The time-to-target formula and the damage response are not in this dump.
+- **Level (`.umap`) data.** Actor placement, spawn points, and gameplay rules are not in [`Content/Maps`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Maps). Only the supporting assets are.
+- **Blueprint logic.** [`B_MovingTarget`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json) exports its function names, variables, and components, but not the graph nodes. The time-to-target formula and the damage response are not in this dump.
 - **Units and meaning.** Health (1.0), DamageIncrease (3.5), the grid bounds, and the simulation values have no units in the export. The `Iteration` counter and the sample meaning of 65535 in the height grid are not verified.
 - **Obfuscated keys.** Several properties in the height grid and the warmup manifests use hashed keys (for example `_aaaaidjmhamkdihpinkjd_$39C70CA387F8DA93$_$8$`). Their values were read and reported, but their names are not known. Those values are cited by position and value only.
 - **Kavkazi compute list.** The file is truncated. Its full compute PSO count and names are not recoverable from this dump.

@@ -1,0 +1,45 @@
+--- export: UDataAsset / IA_Vehicle_Camera_RightView ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Vehicle_Camera_RightView",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Vehicles/Inputs/IA_Vehicle_Camera_RightView",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.Camera.RightView"
+    },
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerPressed'IA_Vehicle_Camera_RightView:InputTriggerPressed_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Camera_RightView.1"
+      },
+      {
+        "ObjectName": "InputTriggerReleased'IA_Vehicle_Camera_RightView:InputTriggerReleased_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Camera_RightView.2"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_Camera_RightView'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Camera_RightView.0"
+  }
+}
+--- export: UObject / InputTriggerReleased_0 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_Camera_RightView'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Camera_RightView.0"
+  }
+}

@@ -1,0 +1,33 @@
+--- export: UObject / GameFeatureAction_AddWorldPartitionContent_2 ---
+{
+  "Type": "GameFeatureAction_AddWorldPartitionContent",
+  "Name": "GameFeatureAction_AddWorldPartitionContent_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddWorldPartitionContent'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'TOOL_002'",
+    "ObjectPath": "/TOOL_002/TOOL_002.1"
+  },
+  "Properties": {
+    "ExternalDataLayerAsset": {
+      "ObjectName": "ExternalDataLayerAsset'EDL_TOOL_002'",
+      "ObjectPath": "/TOOL_002/EDL_TOOL_002.0"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / TOOL_002 ---
+{
+  "Type": "GameFeatureData",
+  "Name": "TOOL_002",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/TOOL_002/TOOL_002",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_AddWorldPartitionContent'TOOL_002:GameFeatureAction_AddWorldPartitionContent_2'",
+        "ObjectPath": "/TOOL_002/TOOL_002.0"
+      }
+    ]
+  }
+}

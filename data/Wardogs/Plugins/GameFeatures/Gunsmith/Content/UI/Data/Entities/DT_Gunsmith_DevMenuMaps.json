@@ -1,0 +1,35 @@
+--- export: UDataTable / DT_Gunsmith_DevMenuMaps ---
+{
+  "Type": "DataTable",
+  "Name": "DT_Gunsmith_DevMenuMaps",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Gunsmith/UI/Data/Entities/DT_Gunsmith_DevMenuMaps",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDDevMenuMapsDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "DevMaps.Gunsmith": {
+      "MapName": {
+        "Namespace": "",
+        "Key": "59E54B8646673612E6F6EA99D0046FCB",
+        "SourceString": "Gunsmith",
+        "LocalizedString": "Gunsmith"
+      },
+      "MapToLoad": {
+        "AssetPathName": "/Gunsmith/Maps/Gunsmith_Main_P.Gunsmith_Main_P",
+        "SubPathString": ""
+      },
+      "CustomLoadingScreenWidgetClass": {
+        "ObjectName": "WidgetBlueprintGeneratedClass'W_GunsmithLoadingScreen_C'",
+        "ObjectPath": "/Gunsmith/UI/LoadingScreen/W_GunsmithLoadingScreen.16"
+      },
+      "Tag": {
+        "TagName": "DevMaps.Gunsmith"
+      }
+    }
+  }
+}

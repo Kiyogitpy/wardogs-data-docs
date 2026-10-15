@@ -1,0 +1,41 @@
+--- export: UDataAsset / IA_Vehicle_Weapon_RotationControl_Key ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Vehicle_Weapon_RotationControl_Key",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_RotationControl_Key",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.WeaponExtension.RotationControl.Key"
+    },
+    "ActionDescription": {
+      "Namespace": "",
+      "Key": "6729A4E945A574F0383FE8934E2F3566",
+      "SourceString": "Control the Weapon Extension Pitch Rotation",
+      "LocalizedString": "Control the Weapon Extension Pitch Rotation"
+    },
+    "ValueType": "EInputActionValueType::Axis2D",
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerHold'IA_Vehicle_Weapon_RotationControl_Key:InputTriggerHold_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_RotationControl_Key.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerHold_0 ---
+{
+  "Type": "InputTriggerHold",
+  "Name": "InputTriggerHold_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerHold'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_Weapon_RotationControl_Key'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_RotationControl_Key.0"
+  },
+  "Properties": {
+    "HoldTimeThreshold": 0.0,
+    "ActuationThreshold": 0.01
+  }
+}

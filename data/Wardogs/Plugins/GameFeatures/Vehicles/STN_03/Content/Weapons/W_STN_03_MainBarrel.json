@@ -1,0 +1,47 @@
+--- export: UDataAsset / W_STN_03_MainBarrel ---
+{
+  "Type": "WDVehicleWeaponDataAsset",
+  "Name": "W_STN_03_MainBarrel",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeaponDataAsset'",
+  "Package": "/STN_03/Weapons/W_STN_03_MainBarrel",
+  "Properties": {
+    "WeaponTag": {
+      "TagName": "Id.Vehicle.Weapon.STN_03.MainBarrel"
+    },
+    "SkeletalMeshAsset": {
+      "AssetPathName": "/STN_03/Meshes/SK_Deployable_Mortar.SK_Deployable_Mortar",
+      "SubPathString": ""
+    },
+    "MuzzleSockets": [
+      "Muzzle"
+    ],
+    "PlayerAttachSocket": {
+      "SourceID": "Chassis",
+      "SocketName": "S_Player_Seat"
+    },
+    "GamepadRotationSensitivity": 15.0,
+    "GamepadRotationUpdateMax": {
+      "X": 120.0,
+      "Y": 120.0
+    },
+    "MouseRotationSensitivity": 5.0,
+    "MouseRotationUpdateMax": {
+      "X": 50.0,
+      "Y": 50.0
+    },
+    "KeyRotationSensitivity": 50.0,
+    "bApplyFovScale": false,
+    "WeaponRotationComponentData": {
+      "MinWeaponYawAngle": 90.0,
+      "MaxWeaponYawAngle": -90.0,
+      "bLimitWeaponPitch": true,
+      "MinWeaponPitchAngle": -29.0,
+      "MaxWeaponPitchAngle": 15.0,
+      "RotationSpeed": 75.0,
+      "YawJointSocket": "Chassis",
+      "WeaponRotationGameplayCueThreshold": 6.43925E-40
+    },
+    "WeaponStatesCameraData": []
+  }
+}

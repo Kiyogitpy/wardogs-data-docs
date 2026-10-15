@@ -1,0 +1,165 @@
+--- export: UPrimaryDataAsset / VP_ROT_04_Attachment_MachineGunMount ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_ROT_04_Attachment_MachineGunMount",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/ROT_04_MachineGun/Parts/VP_ROT_04_Attachment_MachineGunMount",
+  "Properties": {
+    "Tags": [
+      "Vehicle.Attachment"
+    ],
+    "Fragments": [
+      {
+        "Key": "Left",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_ROT_04_Attachment_MachineGunMount:MVF_StaticMesh_0'",
+            "ObjectPath": "/ROT_04_MachineGun/Parts/VP_ROT_04_Attachment_MachineGunMount.3"
+          }
+        }
+      },
+      {
+        "Key": "Right",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_ROT_04_Attachment_MachineGunMount:MVF_StaticMesh_1'",
+            "ObjectPath": "/ROT_04_MachineGun/Parts/VP_ROT_04_Attachment_MachineGunMount.4"
+          }
+        }
+      }
+    ],
+    "Slots": [
+      {
+        "Key": "Turret_R",
+        "Value": {
+          "bEnabled": true,
+          "Slot": {
+            "ObjectName": "ModularVehicleSlot'VP_ROT_04_Attachment_MachineGunMount:ModularVehicleSlot_0'",
+            "ObjectPath": "/ROT_04_MachineGun/Parts/VP_ROT_04_Attachment_MachineGunMount.1"
+          }
+        }
+      },
+      {
+        "Key": "Turret_L",
+        "Value": {
+          "bEnabled": true,
+          "Slot": {
+            "ObjectName": "ModularVehicleSlot'VP_ROT_04_Attachment_MachineGunMount:ModularVehicleSlot_1'",
+            "ObjectPath": "/ROT_04_MachineGun/Parts/VP_ROT_04_Attachment_MachineGunMount.2"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / ModularVehicleSlot_0 ---
+{
+  "Type": "ModularVehicleSlot",
+  "Name": "ModularVehicleSlot_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleSlot'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_ROT_04_Attachment_MachineGunMount'",
+    "ObjectPath": "/ROT_04_MachineGun/Parts/VP_ROT_04_Attachment_MachineGunMount.0"
+  },
+  "Properties": {
+    "DefaultPart": {
+      "AssetPathName": "/ROT_04_MachineGun/Parts/VP_ROT_04_MountedMachineGun_R.VP_ROT_04_MountedMachineGun_R",
+      "SubPathString": ""
+    },
+    "CompatibilityTags": {
+      "RequireTags": [
+        "Vehicle.Turret"
+      ]
+    }
+  }
+}
+--- export: UObject / ModularVehicleSlot_1 ---
+{
+  "Type": "ModularVehicleSlot",
+  "Name": "ModularVehicleSlot_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleSlot'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_ROT_04_Attachment_MachineGunMount'",
+    "ObjectPath": "/ROT_04_MachineGun/Parts/VP_ROT_04_Attachment_MachineGunMount.0"
+  },
+  "Properties": {
+    "DefaultPart": {
+      "AssetPathName": "/ROT_04_MachineGun/Parts/VP_ROT_04_MountedMachineGun_L.VP_ROT_04_MountedMachineGun_L",
+      "SubPathString": ""
+    },
+    "CompatibilityTags": {
+      "RequireTags": [
+        "Vehicle.Turret"
+      ]
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_0 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_ROT_04_Attachment_MachineGunMount'",
+    "ObjectPath": "/ROT_04_MachineGun/Parts/VP_ROT_04_Attachment_MachineGunMount.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceID": "Chassis",
+        "SocketName": "machineGunMountL_J"
+      },
+      "bAttachSource": true,
+      "Tags": [
+        "TurretsMount_Left"
+      ]
+    },
+    "StaticMesh": {
+      "AssetPathName": "/ROT_04/Meshes/Components/Mount/SM_ROT_04_Mount_01a.SM_ROT_04_Mount_01a",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_Kinematic"
+      }
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_1 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_ROT_04_Attachment_MachineGunMount'",
+    "ObjectPath": "/ROT_04_MachineGun/Parts/VP_ROT_04_Attachment_MachineGunMount.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceID": "Chassis",
+        "SocketName": "machineGunMountR_J"
+      },
+      "bAttachSource": true,
+      "Tags": [
+        "TurretsMount_Right"
+      ]
+    },
+    "StaticMesh": {
+      "AssetPathName": "/ROT_04/Meshes/Components/Mount/SM_ROT_04_Mount_01b.SM_ROT_04_Mount_01b",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_Kinematic"
+      }
+    }
+  }
+}

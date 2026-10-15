@@ -1,0 +1,49 @@
+--- export: UDataAsset / W_SUV_RingTurret ---
+{
+  "Type": "WDVehicleWeaponDataAsset",
+  "Name": "W_SUV_RingTurret",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeaponDataAsset'",
+  "Package": "/WHL_02_RingTurret/Weapons/WeaponExtensions/W_SUV_RingTurret",
+  "Properties": {
+    "WeaponTag": {
+      "TagName": "Id.Vehicle.Weapon.WHL_02.SUV.RingTurret"
+    },
+    "SkeletalMeshAsset": {
+      "AssetPathName": "/Game/Items/Weapons/Mounted/M249/SK_M249_Mounted.SK_M249_Mounted",
+      "SubPathString": ""
+    },
+    "MuzzleSockets": [
+      "muzzleFlash_WeaponExtension"
+    ],
+    "PlayerAttachSocket": {
+      "SourceID": "TurretSkeleton",
+      "SocketName": "S_Attach_MountedMachineGun_Player"
+    },
+    "GamepadRotationSensitivity": 35.0,
+    "GamepadRotationUpdateMax": {
+      "X": 85.0,
+      "Y": 85.0
+    },
+    "MouseRotationSensitivity": 15.0,
+    "MouseRotationUpdateMax": {
+      "X": 125.0,
+      "Y": 125.0
+    },
+    "KeyRotationSensitivity": 80.0,
+    "bApplyFovScale": false,
+    "WeaponRotationComponentData": {
+      "MinWeaponYawAngle": -60.0,
+      "MaxWeaponYawAngle": 60.0,
+      "bLimitWeaponPitch": true,
+      "MinWeaponPitchAngle": -20.0,
+      "MaxWeaponPitchAngle": 30.0,
+      "bStabilisationPermitted": true,
+      "RotationSpeed": 110.0,
+      "YawJointSocket": "TurretSkeleton",
+      "PitchJointSocket": "vehicleRotation_J",
+      "WeaponRotationGameplayCueThreshold": 9.19431E-40
+    },
+    "WeaponStatesCameraData": []
+  }
+}

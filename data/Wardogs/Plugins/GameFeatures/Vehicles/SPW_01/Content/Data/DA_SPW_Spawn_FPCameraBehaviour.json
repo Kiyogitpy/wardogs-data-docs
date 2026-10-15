@@ -1,0 +1,35 @@
+--- export: UDataAsset / DA_SPW_Spawn_FPCameraBehaviour ---
+{
+  "Type": "MVehicleSpringArmDataAsset",
+  "Name": "DA_SPW_Spawn_FPCameraBehaviour",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVehicleSpringArmDataAsset'",
+  "Package": "/SPW_01/Data/DA_SPW_Spawn_FPCameraBehaviour",
+  "Properties": {
+    "FreelookPitchRange": {
+      "LowerBound": {
+        "Value": -30.0
+      }
+    },
+    "FreeLookMinPitchYawCurve": {
+      "ObjectName": "CurveFloat'CRV_FreeLookPitchRange_SPW_01'",
+      "ObjectPath": "/SPW_01/Curves/CRV_FreeLookPitchRange_SPW_01.0"
+    },
+    "CameraProbeMinDistance": 20.0,
+    "SocketOffset": {
+      "X": 240.0,
+      "Y": -80.0,
+      "Z": 213.0
+    },
+    "TargetArmLength": 800.0,
+    "bEnableCameraLag": true,
+    "bEnableCameraRotationLag": true,
+    "CameraLagSpeed": 8.0,
+    "CameraRotationLagSpeed": 10.0,
+    "CameraComponentSettings": {
+      "FieldOfViewVsSpeed": {
+        "EditorCurveData": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,105 @@
+--- export: UPrimaryDataAsset / DA_12g_RifledSlug_ProjectileData ---
+{
+  "Type": "WDProjectileData",
+  "Name": "DA_12g_RifledSlug_ProjectileData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDProjectileData'",
+  "Package": "/Game/GameMechanics/Inventory/Equipment/Caliber/7mm_Buckshot/DA_12g_RifledSlug_ProjectileData",
+  "Properties": {
+    "ProjectileId": {
+      "TagName": "Item.Caliber.12g.RifledSlug"
+    },
+    "ProjectileStats": {
+      "DamageEntityData": {
+        "Tag": {
+          "TagName": "Meta.Damage.Bullet.12g.RifledSlug"
+        },
+        "Context": [
+          "Meta.Damage.Arms.Small"
+        ]
+      },
+      "DamageValues": {
+        "BaseDamage": 105.0,
+        "ImpulseValues": {
+          "bApplyImpulse": true,
+          "bVelocityChange": true,
+          "ImpulseScale": 12000.0
+        }
+      },
+      "ProjectileDimensions": {
+        "Length": 3.0,
+        "Diameter": 1.85,
+        "Mass": 0.028,
+        "DragModel": {
+          "Curve": {
+            "CurveTable": {
+              "ObjectName": "CurveTable'CT_Projectile_DragCoefficients'",
+              "ObjectPath": "/Game/Items/Resources/Ammo/Curves/CT_Projectile_DragCoefficients.0"
+            },
+            "RowName": "GL (Blunt Nose)"
+          }
+        }
+      },
+      "ProjectileEffects": {
+        "GameplayCueTag": {
+          "TagName": "GameplayCue.Weapon.Projectile"
+        }
+      },
+      "SuppressionData": {
+        "BaseSuppression": 0.5,
+        "DistanceFalloffRange": {
+          "Min": 0.1,
+          "Max": 2.5
+        },
+        "DistanceFalloffCurve": {
+          "EditorCurveData": {
+            "Keys": [
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.0,
+                "Value": 1.0,
+                "ArriveTangent": 0.0,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.0,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_User",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.73484874,
+                "Value": 0.66750747,
+                "ArriveTangent": -1.4502221,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": -1.4502227,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Linear",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.9936556,
+                "Value": 0.0,
+                "ArriveTangent": 0.0,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.0,
+                "LeaveTangentWeight": 0.0
+              }
+            ]
+          }
+        }
+      },
+      "AttachedEffect": {
+        "AssetPathName": "/Game/VFX/Weapons/Tracers/NS_Tracer_7mmBuckshot.NS_Tracer_7mmBuckshot",
+        "SubPathString": ""
+      },
+      "TracerChance": 1.0,
+      "TypicalSpeed": 29800.0,
+      "PenetrationExitSpeedMultiplier": 0.12,
+      "TravelDistanceForWhizBy": 1000.0,
+      "DistanceToPlayerForWhizBy": 700.0
+    }
+  }
+}

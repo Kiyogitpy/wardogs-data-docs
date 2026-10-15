@@ -1,0 +1,206 @@
+--- export: UDataAsset / EQS_FindCoverTowardGoalTarget ---
+{
+  "Type": "EnvQuery",
+  "Name": "EQS_FindCoverTowardGoalTarget",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQuery'",
+  "Package": "/SquadExample/EQS/EQS_FindCoverTowardGoalTarget",
+  "Properties": {
+    "QueryName": "EQS_FindCoverTowardGoalTarget",
+    "Options": [
+      {
+        "ObjectName": "EnvQueryOption'EQS_FindCoverTowardGoalTarget:EnvQueryOption_1'",
+        "ObjectPath": "/SquadExample/EQS/EQS_FindCoverTowardGoalTarget.1"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryOption_1 ---
+{
+  "Type": "EnvQueryOption",
+  "Name": "EnvQueryOption_1",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryOption'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindCoverTowardGoalTarget'",
+    "ObjectPath": "/SquadExample/EQS/EQS_FindCoverTowardGoalTarget.0"
+  },
+  "Properties": {
+    "Generator": {
+      "ObjectName": "SDEnvQueryGenerator_Covers'EQS_FindCoverTowardGoalTarget:SDEnvQueryGenerator_Covers_2'",
+      "ObjectPath": "/SquadExample/EQS/EQS_FindCoverTowardGoalTarget.7"
+    },
+    "Tests": [
+      {
+        "ObjectName": "EnvQueryTest_Dot'EQS_FindCoverTowardGoalTarget:EnvQueryTest_Dot_2'",
+        "ObjectPath": "/SquadExample/EQS/EQS_FindCoverTowardGoalTarget.4"
+      },
+      {
+        "ObjectName": "EnvQueryTest_Pathfinding'EQS_FindCoverTowardGoalTarget:EnvQueryTest_Pathfinding_1'",
+        "ObjectPath": "/SquadExample/EQS/EQS_FindCoverTowardGoalTarget.5"
+      },
+      {
+        "ObjectName": "EnvQueryTest_Distance'EQS_FindCoverTowardGoalTarget:EnvQueryTest_Distance_3'",
+        "ObjectPath": "/SquadExample/EQS/EQS_FindCoverTowardGoalTarget.3"
+      },
+      {
+        "ObjectName": "EnvQueryTest_Distance'EQS_FindCoverTowardGoalTarget:EnvQueryTest_Distance_0'",
+        "ObjectPath": "/SquadExample/EQS/EQS_FindCoverTowardGoalTarget.2"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryTest_Distance_0 ---
+{
+  "Type": "EnvQueryTest_Distance",
+  "Name": "EnvQueryTest_Distance_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Distance'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindCoverTowardGoalTarget'",
+    "ObjectPath": "/SquadExample/EQS/EQS_FindCoverTowardGoalTarget.0"
+  },
+  "Properties": {
+    "DistanceTo": {
+      "ObjectName": "Class'EnvQueryContext_SDAIGoalSquadMembers'",
+      "ObjectPath": "/Script/SDAIGoalsRuntime"
+    },
+    "TestOrder": 3,
+    "FilterType": "EEnvTestFilterType::Minimum",
+    "FloatValueMin": {
+      "DefaultValue": 300.0
+    },
+    "VerNum": 2
+  }
+}
+--- export: UObject / EnvQueryTest_Distance_3 ---
+{
+  "Type": "EnvQueryTest_Distance",
+  "Name": "EnvQueryTest_Distance_3",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Distance'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindCoverTowardGoalTarget'",
+    "ObjectPath": "/SquadExample/EQS/EQS_FindCoverTowardGoalTarget.0"
+  },
+  "Properties": {
+    "DistanceTo": {
+      "ObjectName": "Class'EnvQueryContext_SDAIGoalTarget'",
+      "ObjectPath": "/Script/SDAIGoalsRuntime"
+    },
+    "TestOrder": 2,
+    "TestPurpose": "EEnvTestPurpose::Filter",
+    "FilterType": "EEnvTestFilterType::Maximum",
+    "FloatValueMin": {
+      "DefaultValue": 200.0
+    },
+    "FloatValueMax": {
+      "DataBinding": {
+        "ObjectName": "SDAIGoalDataProvider_Target'EQS_FindCoverTowardGoalTarget:EnvQueryTest_Distance_3.SDAIGoalDataProvider_Target_0'",
+        "ObjectPath": "/SquadExample/EQS/EQS_FindCoverTowardGoalTarget.6"
+      },
+      "DataField": "DataValue"
+    },
+    "ScoringEquation": "EEnvTestScoreEquation::InverseLinear",
+    "ScoringFactor": {
+      "DefaultValue": 4.0
+    },
+    "VerNum": 2
+  }
+}
+--- export: UObject / EnvQueryTest_Dot_2 ---
+{
+  "Type": "EnvQueryTest_Dot",
+  "Name": "EnvQueryTest_Dot_2",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Dot'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindCoverTowardGoalTarget'",
+    "ObjectPath": "/SquadExample/EQS/EQS_FindCoverTowardGoalTarget.0"
+  },
+  "Properties": {
+    "LineA": {
+      "Rotation": {
+        "ObjectName": "Class'EnvQueryContext_Item'",
+        "ObjectPath": "/Script/AIModule"
+      }
+    },
+    "LineB": {
+      "LineFrom": {
+        "ObjectName": "Class'EnvQueryContext_Item'",
+        "ObjectPath": "/Script/AIModule"
+      },
+      "LineTo": {
+        "ObjectName": "Class'EnvQueryContext_SDAIGoalTarget'",
+        "ObjectPath": "/Script/SDAIGoalsRuntime"
+      }
+    },
+    "TestMode": "EEnvTestDot::Dot2D",
+    "TestPurpose": "EEnvTestPurpose::Filter",
+    "FloatValueMin": {
+      "DefaultValue": 0.8
+    },
+    "FloatValueMax": {
+      "DefaultValue": 1.0
+    },
+    "VerNum": 2
+  }
+}
+--- export: UObject / EnvQueryTest_Pathfinding_1 ---
+{
+  "Type": "EnvQueryTest_Pathfinding",
+  "Name": "EnvQueryTest_Pathfinding_1",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Pathfinding'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindCoverTowardGoalTarget'",
+    "ObjectPath": "/SquadExample/EQS/EQS_FindCoverTowardGoalTarget.0"
+  },
+  "Properties": {
+    "TestMode": "EEnvTestPathfinding::PathCost",
+    "TestOrder": 1,
+    "TestPurpose": "EEnvTestPurpose::Score",
+    "FilterType": "EEnvTestFilterType::Range",
+    "ScoringEquation": "EEnvTestScoreEquation::InverseLinear",
+    "bWorkOnFloatValues": true,
+    "VerNum": 2
+  }
+}
+--- export: UObject / SDAIGoalDataProvider_Target_0 ---
+{
+  "Type": "SDAIGoalDataProvider_Target",
+  "Name": "SDAIGoalDataProvider_Target_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'SDAIGoalDataProvider_Target'",
+  "Outer": {
+    "ObjectName": "EnvQueryTest_Distance'EQS_FindCoverTowardGoalTarget:EnvQueryTest_Distance_3'",
+    "ObjectPath": "/SquadExample/EQS/EQS_FindCoverTowardGoalTarget.3"
+  },
+  "Properties": {
+    "TargetType": "ESDAIGoalDataProviderTargetType::GoalToOwnerDistance"
+  }
+}
+--- export: UObject / SDEnvQueryGenerator_Covers_2 ---
+{
+  "Type": "SDEnvQueryGenerator_Covers",
+  "Name": "SDEnvQueryGenerator_Covers_2",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'SDEnvQueryGenerator_Covers'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindCoverTowardGoalTarget'",
+    "ObjectPath": "/SquadExample/EQS/EQS_FindCoverTowardGoalTarget.0"
+  },
+  "Properties": {
+    "CenterContext": {
+      "ObjectName": "Class'EnvQueryContext_Querier'",
+      "ObjectPath": "/Script/AIModule"
+    },
+    "Radius": {
+      "DefaultValue": 2000.0
+    },
+    "OnlyFreeCovers": {
+      "DefaultValue": true
+    },
+    "VerNum": 1
+  }
+}

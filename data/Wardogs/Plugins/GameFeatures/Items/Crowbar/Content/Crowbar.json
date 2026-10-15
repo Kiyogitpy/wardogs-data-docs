@@ -1,0 +1,227 @@
+--- export: UObject / GameFeatureAction_DataRegistrySource_0 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Crowbar'",
+    "ObjectPath": "/Crowbar/Crowbar.1"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "EntityData_UI",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Crowbar/Data/DT_EntityData_UI_Ext_Crowbar.DT_EntityData_UI_Ext_Crowbar",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "VendorData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Crowbar/Data/DT_VendorData_Ext_Crowbar.DT_VendorData_Ext_Crowbar",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "UIInteractionContextV1",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Crowbar/Data/Interaction/DT_InteractionContexts_ForceOpenDoor.DT_InteractionContexts_ForceOpenDoor",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "UIInteractionContextData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Crowbar/Data/Interaction/DT_InteractionContextData_ForceOpenDoor.DT_InteractionContextData_ForceOpenDoor",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / Crowbar ---
+{
+  "Type": "GameFeatureData",
+  "Name": "Crowbar",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/Crowbar/Crowbar",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'Crowbar:GameFeatureAction_DataRegistrySource_0'",
+        "ObjectPath": "/Crowbar/Crowbar.0"
+      },
+      {
+        "ObjectName": "WDGameFeatureActions_AddWorldInteractableContextToActor'Crowbar:WDGameFeatureActions_AddWorldInteractableContextToActor_0'",
+        "ObjectPath": "/Crowbar/Crowbar.2"
+      },
+      {
+        "ObjectName": "WDGameFeatureActions_AddWorldInteractableContextToActor'Crowbar:WDGameFeatureActions_AddWorldInteractableContextToActor_1'",
+        "ObjectPath": "/Crowbar/Crowbar.3"
+      }
+    ],
+    "PrimaryAssetTypesToScan": [
+      {
+        "PrimaryAssetType": "BH.Item",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/BHInventory.BHInventoryItemDefinition",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/Crowbar/Data"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::AlwaysCook"
+        }
+      },
+      {
+        "PrimaryAssetType": "BH.Action",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/BHActionSystem.BHActionDefinition",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/Crowbar/Blueprints/Action"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::Unknown"
+        }
+      },
+      {
+        "PrimaryAssetType": "BH.CharacterModifierState",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/WDGame.WDCharacterModifierStateDefinition",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/Crowbar/Data"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::Unknown"
+        }
+      },
+      {
+        "PrimaryAssetType": "CrosstalkAudioEvent",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/Crosstalk.CrosstalkAudioEvent",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/Crowbar/Audio/Events"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::Unknown"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameFeatureActions_AddWorldInteractableContextToActor_0 ---
+{
+  "Type": "WDGameFeatureActions_AddWorldInteractableContextToActor",
+  "Name": "WDGameFeatureActions_AddWorldInteractableContextToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureActions_AddWorldInteractableContextToActor'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Crowbar'",
+    "ObjectPath": "/Crowbar/Crowbar.1"
+  },
+  "Properties": {
+    "ContextsToAdd": [
+      {
+        "AssetPathName": "/Crowbar/Blueprints/Interaction/WIC_InteractionContext_ForceOpenDoor.WIC_InteractionContext_ForceOpenDoor_C",
+        "SubPathString": ""
+      }
+    ],
+    "ClassToAddContextsTo": {
+      "AssetPathName": "/Script/WDGame.WDDoor",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / WDGameFeatureActions_AddWorldInteractableContextToActor_1 ---
+{
+  "Type": "WDGameFeatureActions_AddWorldInteractableContextToActor",
+  "Name": "WDGameFeatureActions_AddWorldInteractableContextToActor_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureActions_AddWorldInteractableContextToActor'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Crowbar'",
+    "ObjectPath": "/Crowbar/Crowbar.1"
+  },
+  "Properties": {
+    "ContextsToAdd": [
+      {
+        "AssetPathName": "/Crowbar/Blueprints/Interaction/WIC_InteractionContext_ForceUnlockVehicle.WIC_InteractionContext_ForceUnlockVehicle_C",
+        "SubPathString": ""
+      }
+    ],
+    "ClassToAddContextsTo": {
+      "AssetPathName": "/Script/Mechanized.BHBaseVehiclePawn",
+      "SubPathString": ""
+    }
+  }
+}

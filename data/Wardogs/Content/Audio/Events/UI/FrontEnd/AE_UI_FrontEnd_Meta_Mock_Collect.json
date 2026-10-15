@@ -1,0 +1,39 @@
+--- export: UObject / AEB_PlayInventoryItemUISound_C_0 ---
+{
+  "Type": "AEB_PlayInventoryItemUISound_C",
+  "Name": "AEB_PlayInventoryItemUISound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayInventoryItemUISound.AEB_PlayInventoryItemUISound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_FrontEnd_Meta_Mock_Collect'",
+    "ObjectPath": "/Game/Audio/Events/UI/FrontEnd/AE_UI_FrontEnd_Meta_Mock_Collect.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayInventoryItemUISound_C'Default__AEB_PlayInventoryItemUISound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayInventoryItemUISound.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_UI_FrontEnd_Meta_Mock_Collect ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UI_FrontEnd_Meta_Mock_Collect",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UI/FrontEnd/AE_UI_FrontEnd_Meta_Mock_Collect",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.FrontEnd.Meta.Mock.Collect"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_PlayInventoryItemUISound_C'AE_UI_FrontEnd_Meta_Mock_Collect:AEB_PlayInventoryItemUISound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/FrontEnd/AE_UI_FrontEnd_Meta_Mock_Collect.0"
+      }
+    ]
+  }
+}

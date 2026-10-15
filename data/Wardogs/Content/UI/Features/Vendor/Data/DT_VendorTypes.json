@@ -1,0 +1,572 @@
+--- export: UDataTable / DT_VendorTypes ---
+{
+  "Type": "DataTable",
+  "Name": "DT_VendorTypes",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/UI/Features/Vendor/Data/DT_VendorTypes",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUIVendorType'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Vendor.Type.Equipment": {
+      "DefaultPanel": {
+        "TagName": "Vendor.Panel.Overview"
+      },
+      "bSwapToDefaultOnCloseRequest": true,
+      "PanelButtons": [
+        {
+          "Tag": {
+            "TagName": "Vendor.Panel.Overview"
+          },
+          "OverrideButtonClass": null,
+          "Action": null,
+          "Text": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+            "Key": "Panel.Overview",
+            "SourceString": "Overview",
+            "LocalizedString": "Overview"
+          },
+          "MinimumSize": {
+            "X": 120.0,
+            "Y": 50.0
+          },
+          "Icon": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "bDisabled": false,
+          "DisabledReason": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "Tag": {
+            "TagName": "Vendor.Panel.Equipment"
+          },
+          "OverrideButtonClass": null,
+          "Action": null,
+          "Text": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+            "Key": "Panel.Equipment",
+            "SourceString": "Equipment",
+            "LocalizedString": "Equipment"
+          },
+          "MinimumSize": {
+            "X": 120.0,
+            "Y": 50.0
+          },
+          "Icon": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "bDisabled": false,
+          "DisabledReason": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "Tag": {
+            "TagName": "Vendor.Panel.Gear"
+          },
+          "OverrideButtonClass": null,
+          "Action": null,
+          "Text": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+            "Key": "Panel.Gear",
+            "SourceString": "Gear",
+            "LocalizedString": "Gear"
+          },
+          "MinimumSize": {
+            "X": 120.0,
+            "Y": 50.0
+          },
+          "Icon": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "bDisabled": false,
+          "DisabledReason": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "Tag": {
+            "TagName": "Vendor.Panel.Items"
+          },
+          "OverrideButtonClass": null,
+          "Action": null,
+          "Text": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+            "Key": "Panel.Items",
+            "SourceString": "Items",
+            "LocalizedString": "Items"
+          },
+          "MinimumSize": {
+            "X": 120.0,
+            "Y": 50.0
+          },
+          "Icon": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "bDisabled": false,
+          "DisabledReason": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "Tag": {
+            "TagName": "Vendor.Panel.AmmoLoose"
+          },
+          "OverrideButtonClass": null,
+          "Action": null,
+          "Text": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+            "Key": "Panel.LooseAmmo",
+            "SourceString": "Loose Ammo",
+            "LocalizedString": "Loose Ammo"
+          },
+          "MinimumSize": {
+            "X": 120.0,
+            "Y": 50.0
+          },
+          "Icon": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "bDisabled": false,
+          "DisabledReason": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "PanelWidgetParams": [
+        {
+          "Key": {
+            "TagName": "Vendor.Panel.Overview"
+          },
+          "Value": {
+            "WidgetClass": {
+              "AssetPathName": "/Game/UI/Features/Vendor/Widgets/VendorPanel/W_VendorPanel_Overview.W_VendorPanel_Overview_C",
+              "SubPathString": ""
+            },
+            "ViewModelParams": {
+              "ViewModelClass": {
+                "AssetPathName": "/Script/WDGame.WDUIVendorPanelViewModel_Overview",
+                "SubPathString": ""
+              },
+              "Data": {
+                "AssetPathName": "/Game/UI/Features/Vendor/Widgets/VendorPanel/Data/DA_VendorPanel_Overview.DA_VendorPanel_Overview",
+                "SubPathString": ""
+              }
+            },
+            "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Vendor.Panel.Gear"
+          },
+          "Value": {
+            "WidgetClass": {
+              "AssetPathName": "/Game/UI/Features/Vendor/Widgets/VendorPanel/W_VendorPanel_Gear.W_VendorPanel_Gear_C",
+              "SubPathString": ""
+            },
+            "ViewModelParams": {
+              "ViewModelClass": {
+                "AssetPathName": "/Script/WDGame.WDUIVendorPanelViewModel_Gear",
+                "SubPathString": ""
+              },
+              "Data": {
+                "AssetPathName": "/Game/UI/Features/Vendor/Widgets/VendorPanel/Data/DA_VendorPanel_Gear.DA_VendorPanel_Gear",
+                "SubPathString": ""
+              }
+            },
+            "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Vendor.Panel.Equipment"
+          },
+          "Value": {
+            "WidgetClass": {
+              "AssetPathName": "/Game/UI/Features/Vendor/Widgets/VendorPanel/W_VendorPanel_Weapons.W_VendorPanel_Weapons_C",
+              "SubPathString": ""
+            },
+            "ViewModelParams": {
+              "ViewModelClass": {
+                "AssetPathName": "/Script/WDGame.WDUIVendorPanelViewModel_Weapons",
+                "SubPathString": ""
+              },
+              "Data": {
+                "AssetPathName": "/Game/UI/Features/Vendor/Widgets/VendorPanel/Data/DA_VendorPanel_Weapons.DA_VendorPanel_Weapons",
+                "SubPathString": ""
+              }
+            },
+            "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Vendor.Panel.Items"
+          },
+          "Value": {
+            "WidgetClass": {
+              "AssetPathName": "/Game/UI/Features/Vendor/Widgets/VendorPanel/W_VendorPanel_Utility.W_VendorPanel_Utility_C",
+              "SubPathString": ""
+            },
+            "ViewModelParams": {
+              "ViewModelClass": {
+                "AssetPathName": "/Script/WDGame.WDUIVendorPanelViewModel_Utility",
+                "SubPathString": ""
+              },
+              "Data": {
+                "AssetPathName": "/Game/UI/Features/Vendor/Widgets/VendorPanel/Data/DA_VendorPanel_Utility.DA_VendorPanel_Utility",
+                "SubPathString": ""
+              }
+            },
+            "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Vendor.Panel.AmmoLoose"
+          },
+          "Value": {
+            "WidgetClass": {
+              "AssetPathName": "/Game/UI/Features/Vendor/Widgets/VendorPanel/W_VendorPanel_Utility.W_VendorPanel_Utility_C",
+              "SubPathString": ""
+            },
+            "ViewModelParams": {
+              "ViewModelClass": {
+                "AssetPathName": "/Script/WDGame.WDUIVendorPanelViewModel_Utility",
+                "SubPathString": ""
+              },
+              "Data": {
+                "AssetPathName": "/Game/UI/Features/Vendor/Widgets/VendorPanel/Data/DA_VendorPanel_LooseAmmo.DA_VendorPanel_LooseAmmo",
+                "SubPathString": ""
+              }
+            },
+            "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Vendor.Type.Equipment"
+      }
+    },
+    "Vendor.Type.Vehicle": {
+      "DefaultPanel": {
+        "TagName": "None"
+      },
+      "bSwapToDefaultOnCloseRequest": false,
+      "PanelButtons": [
+        {
+          "Tag": {
+            "TagName": "Vendor.Category.Vehicle.Land"
+          },
+          "OverrideButtonClass": null,
+          "Action": null,
+          "Text": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+            "Key": "Category.Vehicles.Land",
+            "SourceString": "Land",
+            "LocalizedString": "Land"
+          },
+          "MinimumSize": {
+            "X": 50.0,
+            "Y": 50.0
+          },
+          "Icon": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "bDisabled": false,
+          "DisabledReason": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "Tag": {
+            "TagName": "Vendor.Category.Vehicle.Air"
+          },
+          "OverrideButtonClass": null,
+          "Action": null,
+          "Text": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+            "Key": "Category.Vehicles.Air",
+            "SourceString": "Air",
+            "LocalizedString": "Air"
+          },
+          "MinimumSize": {
+            "X": 50.0,
+            "Y": 50.0
+          },
+          "Icon": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "bDisabled": false,
+          "DisabledReason": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "PanelWidgetParams": [
+        {
+          "Key": {
+            "TagName": "Vendor.Category.Vehicle.Land"
+          },
+          "Value": {
+            "WidgetClass": {
+              "AssetPathName": "/Game/UI/Features/Vendor/Widgets/VendorPanel/W_VendorPanel_Vehicles.W_VendorPanel_Vehicles_C",
+              "SubPathString": ""
+            },
+            "ViewModelParams": {
+              "ViewModelClass": {
+                "AssetPathName": "/Script/WDGame.WDUIVendorPanelViewModel_Vehicles",
+                "SubPathString": ""
+              },
+              "Data": {
+                "AssetPathName": "/Game/UI/Features/Vendor/Widgets/VendorPanel/Data/DA_VendorPanel_Vehicles.DA_VendorPanel_Vehicles",
+                "SubPathString": ""
+              }
+            },
+            "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Vendor.Category.Vehicle.Air"
+          },
+          "Value": {
+            "WidgetClass": {
+              "AssetPathName": "/Game/UI/Features/Vendor/Widgets/VendorPanel/W_VendorPanel_Vehicles.W_VendorPanel_Vehicles_C",
+              "SubPathString": ""
+            },
+            "ViewModelParams": {
+              "ViewModelClass": {
+                "AssetPathName": "/Script/WDGame.WDUIVendorPanelViewModel_Vehicles",
+                "SubPathString": ""
+              },
+              "Data": {
+                "AssetPathName": "/Game/UI/Features/Vendor/Widgets/VendorPanel/Data/DA_VendorPanel_Vehicles.DA_VendorPanel_Vehicles",
+                "SubPathString": ""
+              }
+            },
+            "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Vendor.Type.Vehicle"
+      }
+    },
+    "Vendor.Type.Garage": {
+      "DefaultPanel": {
+        "TagName": "Vendor.Panel.Garage.Overview"
+      },
+      "bSwapToDefaultOnCloseRequest": true,
+      "PanelButtons": [
+        {
+          "Tag": {
+            "TagName": "Vendor.Panel.Garage.Overview"
+          },
+          "OverrideButtonClass": null,
+          "Action": null,
+          "Text": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+            "Key": "Category.Garage.Overview",
+            "SourceString": "Overview",
+            "LocalizedString": "Overview"
+          },
+          "MinimumSize": {
+            "X": 120.0,
+            "Y": 120.0
+          },
+          "Icon": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "bDisabled": false,
+          "DisabledReason": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "Tag": {
+            "TagName": "Vendor.Panel.Garage.SupplyCrates"
+          },
+          "OverrideButtonClass": null,
+          "Action": null,
+          "Text": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+            "Key": "Category.Garage.SupplyCrate",
+            "SourceString": "Crates",
+            "LocalizedString": "Crates"
+          },
+          "MinimumSize": {
+            "X": 120.0,
+            "Y": 120.0
+          },
+          "Icon": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "bDisabled": false,
+          "DisabledReason": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "Tag": {
+            "TagName": "Vendor.Panel.Garage.VehicleStorage"
+          },
+          "OverrideButtonClass": null,
+          "Action": null,
+          "Text": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+            "Key": "Category.Garage.VehicleStorage",
+            "SourceString": "Vehicle Storage",
+            "LocalizedString": "Vehicle Storage"
+          },
+          "MinimumSize": {
+            "X": 120.0,
+            "Y": 120.0
+          },
+          "Icon": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "bDisabled": false,
+          "DisabledReason": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "Tag": {
+            "TagName": "Vendor.Panel.Garage.Munitions"
+          },
+          "OverrideButtonClass": null,
+          "Action": null,
+          "Text": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+            "Key": "Category.VehicleAmmo",
+            "SourceString": "Ammo",
+            "LocalizedString": "Ammo"
+          },
+          "MinimumSize": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Icon": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "bDisabled": false,
+          "DisabledReason": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "PanelWidgetParams": [
+        {
+          "Key": {
+            "TagName": "Vendor.Panel.Garage.Overview"
+          },
+          "Value": {
+            "WidgetClass": {
+              "AssetPathName": "/Game/UI/Features/Vendor/Widgets/VendorPanel/W_VendorPanel_GarageOverview.W_VendorPanel_GarageOverview_C",
+              "SubPathString": ""
+            },
+            "ViewModelParams": {
+              "ViewModelClass": {
+                "AssetPathName": "/Script/WDGame.WDUIVendorPanelViewModel_GarageOverview",
+                "SubPathString": ""
+              },
+              "Data": {
+                "AssetPathName": "/Game/UI/Features/Vendor/Widgets/VendorPanel/Data/DA_VendorPanel_GarageOverview.DA_VendorPanel_GarageOverview",
+                "SubPathString": ""
+              }
+            },
+            "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Vendor.Panel.Garage.SupplyCrates"
+          },
+          "Value": {
+            "WidgetClass": {
+              "AssetPathName": "/Game/UI/Features/Vendor/Widgets/VendorPanel/W_VendorPanel_GarageSupplyCrates.W_VendorPanel_GarageSupplyCrates_C",
+              "SubPathString": ""
+            },
+            "ViewModelParams": {
+              "ViewModelClass": {
+                "AssetPathName": "/Script/WDGame.WDUIVendorPanelViewModel_GarageSupplyCrate",
+                "SubPathString": ""
+              },
+              "Data": {
+                "AssetPathName": "/Game/UI/Features/Vendor/Widgets/VendorPanel/Data/DA_VendorPanel_GarageSupplyCrate.DA_VendorPanel_GarageSupplyCrate",
+                "SubPathString": ""
+              }
+            },
+            "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Vendor.Panel.Garage.VehicleStorage"
+          },
+          "Value": {
+            "WidgetClass": {
+              "AssetPathName": "/Game/UI/Features/Vendor/Widgets/VendorPanel/W_VendorPanel_Garage_VehicleStorage.W_VendorPanel_Garage_VehicleStorage_C",
+              "SubPathString": ""
+            },
+            "ViewModelParams": {
+              "ViewModelClass": {
+                "AssetPathName": "/Script/WDGame.WDUIVendorPanelViewModel_GarageVehicleStorage",
+                "SubPathString": ""
+              },
+              "Data": {
+                "AssetPathName": "/Game/UI/Features/Vendor/Widgets/VendorPanel/Data/DA_VendorPanel_GarageVehicleStorage.DA_VendorPanel_GarageVehicleStorage",
+                "SubPathString": ""
+              }
+            },
+            "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Vendor.Panel.Garage.Munitions"
+          },
+          "Value": {
+            "WidgetClass": {
+              "AssetPathName": "/Game/UI/Features/Vendor/Widgets/VendorPanel/W_VendorPanel_GarageMunitions.W_VendorPanel_GarageMunitions_C",
+              "SubPathString": ""
+            },
+            "ViewModelParams": {
+              "ViewModelClass": {
+                "AssetPathName": "/Script/WDGame.WDUIVendorPanelViewModel_GarageMunitions",
+                "SubPathString": ""
+              },
+              "Data": {
+                "AssetPathName": "/Game/UI/Features/Vendor/Widgets/VendorPanel/Data/DA_VendorPanel_GarageMunitions.DA_VendorPanel_GarageMunitions",
+                "SubPathString": ""
+              }
+            },
+            "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Vendor.Type.Garage"
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+--- export: UPrimaryDataAsset / AE_Comms_Request_Supplies_Radio ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Comms_Request_Supplies_Radio",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Comms/AssistanceRequests/AE_Comms_Request_Supplies_Radio",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Comms.Request.Supplies.Radio"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Comms_Request_Supplies_Radio:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Comms/AssistanceRequests/AE_Comms_Request_Supplies_Radio.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Comms_Request_Supplies_Radio'",
+    "ObjectPath": "/Game/Audio/Events/Comms/AssistanceRequests/AE_Comms_Request_Supplies_Radio.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Vox_Bark_Norm_Request_Supplies_Radio_Preset'",
+      "ObjectPath": "/Game/Audio/Vox/Barks/AssistanceRequest/MSS_Vox_Bark_Norm_Request_Supplies_Radio_Preset.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

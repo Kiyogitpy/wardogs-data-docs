@@ -1,0 +1,93 @@
+--- export: UCurveFloat / AimSway_SpeedCurve_Shotgun ---
+{
+  "Type": "CurveFloat",
+  "Name": "AimSway_SpeedCurve_Shotgun",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CurveFloat'",
+  "Package": "/Game/Weapons/AimSway/Shotgun/AimSway_SpeedCurve_Shotgun",
+  "Properties": {
+    "FloatCurve": {
+      "Keys": [
+        {
+          "InterpMode": "RCIM_Cubic",
+          "TangentMode": "RCTM_User",
+          "TangentWeightMode": "RCTWM_WeightedNone",
+          "Time": 0.0,
+          "Value": 0.92,
+          "ArriveTangent": 0.0007260313,
+          "ArriveTangentWeight": 0.0,
+          "LeaveTangent": 0.0007260313,
+          "LeaveTangentWeight": 0.0
+        },
+        {
+          "InterpMode": "RCIM_Cubic",
+          "TangentMode": "RCTM_User",
+          "TangentWeightMode": "RCTWM_WeightedNone",
+          "Time": 1.0,
+          "Value": 1.25,
+          "ArriveTangent": -8.9E-05,
+          "ArriveTangentWeight": 0.33333334,
+          "LeaveTangent": -8.9E-05,
+          "LeaveTangentWeight": 1.6666667
+        },
+        {
+          "InterpMode": "RCIM_Cubic",
+          "TangentMode": "RCTM_User",
+          "TangentWeightMode": "RCTWM_WeightedNone",
+          "Time": 2.0,
+          "Value": 1.15,
+          "ArriveTangent": -0.018452,
+          "ArriveTangentWeight": 0.33333334,
+          "LeaveTangent": -0.018452,
+          "LeaveTangentWeight": 1.3333334
+        },
+        {
+          "InterpMode": "RCIM_Cubic",
+          "TangentMode": "RCTM_User",
+          "TangentWeightMode": "RCTWM_WeightedNone",
+          "Time": 3.0,
+          "Value": 1.13,
+          "ArriveTangent": -0.016196,
+          "ArriveTangentWeight": 0.33333334,
+          "LeaveTangent": -0.016196,
+          "LeaveTangentWeight": 1.0
+        },
+        {
+          "InterpMode": "RCIM_Cubic",
+          "TangentMode": "RCTM_User",
+          "TangentWeightMode": "RCTWM_WeightedNone",
+          "Time": 4.0,
+          "Value": 1.15,
+          "ArriveTangent": 0.042628,
+          "ArriveTangentWeight": 0.33333334,
+          "LeaveTangent": 0.042628,
+          "LeaveTangentWeight": 0.6666667
+        },
+        {
+          "InterpMode": "RCIM_Cubic",
+          "TangentMode": "RCTM_User",
+          "TangentWeightMode": "RCTWM_WeightedNone",
+          "Time": 5.0,
+          "Value": 1.25,
+          "ArriveTangent": -0.000119,
+          "ArriveTangentWeight": 0.33333334,
+          "LeaveTangent": -0.000119,
+          "LeaveTangentWeight": 0.33333334
+        },
+        {
+          "InterpMode": "RCIM_Cubic",
+          "TangentMode": "RCTM_Auto",
+          "TangentWeightMode": "RCTWM_WeightedNone",
+          "Time": 6.0,
+          "Value": 0.92,
+          "ArriveTangent": 0.0,
+          "ArriveTangentWeight": 0.0,
+          "LeaveTangent": 0.0,
+          "LeaveTangentWeight": 0.0
+        }
+      ],
+      "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Cycle",
+      "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Cycle"
+    }
+  }
+}

@@ -1,0 +1,772 @@
+--- export: UDataAsset / DA_GunsmithScene ---
+{
+  "Type": "WDUIItemsmithSceneData",
+  "Name": "DA_GunsmithScene",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIItemsmithSceneData'",
+  "Package": "/Gunsmith/UI/Data/DA_GunsmithScene",
+  "Properties": {
+    "ItemsmithPagePreferenceParams": [
+      {
+        "Key": "EWDUIItemsmithPages::ReticleNodeFocus",
+        "Value": {
+          "SceneWidgetsPreference": [
+            "EWDUIItemsmithSharedSceneWidgets::Stats",
+            "EWDUIItemsmithSharedSceneWidgets::BaseInfo",
+            "EWDUIItemsmithSharedSceneWidgets::HeroTitle",
+            "EWDUIItemsmithSharedSceneWidgets::NavigationBar"
+          ],
+          "PageViewModel": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/WDGame.WDUIScopeReticleViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Gunsmith/UI/ReticleNodeFocus/Data/DA_Gunsmith_ReticleNodeFocus.DA_Gunsmith_ReticleNodeFocus",
+              "SubPathString": ""
+            }
+          },
+          "ViewModelPreference": [
+            {
+              "Key": "EWDUIItemsmithType::Gunsmith",
+              "Value": {
+                "ViewModelClass": {
+                  "AssetPathName": "/Script/GunsmithRuntime.WDUIGunsmithReticleNodeFocusViewModel",
+                  "SubPathString": ""
+                },
+                "Data": {
+                  "AssetPathName": "/Gunsmith/UI/ReticleNodeFocus/Data/DA_Gunsmith_ReticleNodeFocus.DA_Gunsmith_ReticleNodeFocus",
+                  "SubPathString": ""
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::FlairNodeFocus",
+        "Value": {
+          "SceneWidgetsPreference": [
+            "EWDUIItemsmithSharedSceneWidgets::BaseInfo",
+            "EWDUIItemsmithSharedSceneWidgets::HeroTitle",
+            "EWDUIItemsmithSharedSceneWidgets::NavigationBar",
+            "EWDUIItemsmithSharedSceneWidgets::BuildFlair"
+          ],
+          "PageViewModel": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithSubNodeFocusViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Itemsmith/UI/FlairNodeFocus/Data/DA_Itemsmith_FlairNodeFocus.DA_Itemsmith_FlairNodeFocus",
+              "SubPathString": ""
+            }
+          },
+          "ViewModelPreference": [
+            {
+              "Key": "EWDUIItemsmithType::Gunsmith",
+              "Value": {
+                "ViewModelClass": {
+                  "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithSubNodeFocusViewModel",
+                  "SubPathString": ""
+                },
+                "Data": {
+                  "AssetPathName": "/Itemsmith/UI/FlairNodeFocus/Data/DA_Itemsmith_FlairNodeFocus.DA_Itemsmith_FlairNodeFocus",
+                  "SubPathString": ""
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::OpticAdjust",
+        "Value": {
+          "SceneWidgetsPreference": [
+            "EWDUIItemsmithSharedSceneWidgets::Stats",
+            "EWDUIItemsmithSharedSceneWidgets::BaseInfo",
+            "EWDUIItemsmithSharedSceneWidgets::HeroTitle",
+            "EWDUIItemsmithSharedSceneWidgets::NavigationBar"
+          ],
+          "PageViewModel": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/GunsmithRuntime.WDUIGunsmithOpticAdjustViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Gunsmith/UI/OpticAdjust/Data/DA_Gunsmith_OpticAdjust.DA_Gunsmith_OpticAdjust",
+              "SubPathString": ""
+            }
+          },
+          "ViewModelPreference": [
+            {
+              "Key": "EWDUIItemsmithType::Gunsmith",
+              "Value": {
+                "ViewModelClass": {
+                  "AssetPathName": "/Script/GunsmithRuntime.WDUIGunsmithOpticAdjustViewModel",
+                  "SubPathString": ""
+                },
+                "Data": {
+                  "AssetPathName": "/Gunsmith/UI/OpticAdjust/Data/DA_Gunsmith_OpticAdjust.DA_Gunsmith_OpticAdjust",
+                  "SubPathString": ""
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::SubNodeFocus",
+        "Value": {
+          "SceneWidgetsPreference": [
+            "EWDUIItemsmithSharedSceneWidgets::Stats",
+            "EWDUIItemsmithSharedSceneWidgets::BaseInfo",
+            "EWDUIItemsmithSharedSceneWidgets::HeroTitle",
+            "EWDUIItemsmithSharedSceneWidgets::BuildFlair",
+            "EWDUIItemsmithSharedSceneWidgets::NavigationBar"
+          ],
+          "PageViewModel": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithSubNodeFocusViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Itemsmith/UI/SubNodeFocus/Data/DA_Itemsmith_SubNodeFocus.DA_Itemsmith_SubNodeFocus",
+              "SubPathString": ""
+            }
+          },
+          "ViewModelPreference": [
+            {
+              "Key": "EWDUIItemsmithType::Gunsmith",
+              "Value": {
+                "ViewModelClass": {
+                  "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithSubNodeFocusViewModel",
+                  "SubPathString": ""
+                },
+                "Data": {
+                  "AssetPathName": "/Gunsmith/UI/SubNodeFocus/Data/DA_Gunsmith_SubNodeFocus.DA_Gunsmith_SubNodeFocus",
+                  "SubPathString": ""
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::AttachmentNodeFocus",
+        "Value": {
+          "SceneWidgetsPreference": [
+            "EWDUIItemsmithSharedSceneWidgets::Stats",
+            "EWDUIItemsmithSharedSceneWidgets::BaseInfo",
+            "EWDUIItemsmithSharedSceneWidgets::HeroTitle",
+            "EWDUIItemsmithSharedSceneWidgets::NavigationBar"
+          ],
+          "PageViewModel": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithAttachmentNodeFocusViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Itemsmith/UI/AttachmentNodeFocus/Data/DA_Itemsmith_AttachmentSelect.DA_Itemsmith_AttachmentSelect",
+              "SubPathString": ""
+            }
+          },
+          "ViewModelPreference": []
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::Build",
+        "Value": {
+          "SceneWidgetsPreference": [
+            "EWDUIItemsmithSharedSceneWidgets::AttachmentModifications",
+            "EWDUIItemsmithSharedSceneWidgets::BuildFlair",
+            "EWDUIItemsmithSharedSceneWidgets::Stats",
+            "EWDUIItemsmithSharedSceneWidgets::BaseInfo",
+            "EWDUIItemsmithSharedSceneWidgets::HeroTitle",
+            "EWDUIItemsmithSharedSceneWidgets::NavigationBar"
+          ],
+          "PageViewModel": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithBuildViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Itemsmith/UI/Build/Data/DA_Itemsmith_Build.DA_Itemsmith_Build",
+              "SubPathString": ""
+            }
+          },
+          "ViewModelPreference": [
+            {
+              "Key": "EWDUIItemsmithType::Gunsmith",
+              "Value": {
+                "ViewModelClass": {
+                  "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithBuildViewModel",
+                  "SubPathString": ""
+                },
+                "Data": {
+                  "AssetPathName": "/Gunsmith/UI/Build/Data/DA_Gunsmith_Build.DA_Gunsmith_Build",
+                  "SubPathString": ""
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::FlairOverview",
+        "Value": {
+          "SceneWidgetsPreference": [
+            "EWDUIItemsmithSharedSceneWidgets::BuildFlair",
+            "EWDUIItemsmithSharedSceneWidgets::BaseInfo",
+            "EWDUIItemsmithSharedSceneWidgets::AttachmentModifications",
+            "EWDUIItemsmithSharedSceneWidgets::HeroTitle",
+            "EWDUIItemsmithSharedSceneWidgets::NavigationBar"
+          ],
+          "PageViewModel": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithFlairOverviewViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Itemsmith/UI/Flair/FlairOverview/Data/DA_Itemsmith_FlairOverviewData.DA_Itemsmith_FlairOverviewData",
+              "SubPathString": ""
+            }
+          },
+          "ViewModelPreference": []
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::HideUI",
+        "Value": {
+          "SceneWidgetsPreference": [],
+          "PageViewModel": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithHideUIViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Itemsmith/UI/HideUI/Data/DA_Itemsith_HideUI.DA_Itemsith_HideUI",
+              "SubPathString": ""
+            }
+          },
+          "ViewModelPreference": []
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::Variants",
+        "Value": {
+          "SceneWidgetsPreference": [
+            "EWDUIItemsmithSharedSceneWidgets::BaseInfo",
+            "EWDUIItemsmithSharedSceneWidgets::Stats",
+            "EWDUIItemsmithSharedSceneWidgets::NavigationBar",
+            "EWDUIItemsmithSharedSceneWidgets::HeroTitle"
+          ],
+          "PageViewModel": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithVariantSelectViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Itemsmith/UI/ItemSelect/Data/DA_Itemsmith_VariantSelect.DA_Itemsmith_VariantSelect",
+              "SubPathString": ""
+            }
+          },
+          "ViewModelPreference": []
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::ItemSelect",
+        "Value": {
+          "SceneWidgetsPreference": [
+            "EWDUIItemsmithSharedSceneWidgets::NavigationBar",
+            "EWDUIItemsmithSharedSceneWidgets::BaseInfo",
+            "EWDUIItemsmithSharedSceneWidgets::Stats",
+            "EWDUIItemsmithSharedSceneWidgets::HeroTitle"
+          ],
+          "PageViewModel": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithItemSelectViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Itemsmith/UI/ItemSelect/Data/DA_Itemsmith_ItemSelect.DA_Itemsmith_ItemSelect",
+              "SubPathString": ""
+            }
+          },
+          "ViewModelPreference": []
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::FlairItemPaint",
+        "Value": {
+          "SceneWidgetsPreference": [
+            "EWDUIItemsmithSharedSceneWidgets::HeroTitle",
+            "EWDUIItemsmithSharedSceneWidgets::BaseInfo",
+            "EWDUIItemsmithSharedSceneWidgets::BuildFlair",
+            "EWDUIItemsmithSharedSceneWidgets::NavigationBar"
+          ],
+          "PageViewModel": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithFlairItemPaintViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Itemsmith/UI/Flair/ItemPaint/Data/DA_Itemsmith_ItemPaintData.DA_Itemsmith_ItemPaintData",
+              "SubPathString": ""
+            }
+          },
+          "ViewModelPreference": []
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::FlairBasicPaint",
+        "Value": {
+          "SceneWidgetsPreference": [
+            "EWDUIItemsmithSharedSceneWidgets::HeroTitle",
+            "EWDUIItemsmithSharedSceneWidgets::NavigationBar"
+          ],
+          "PageViewModel": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithFlairPaintSelectViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Itemsmith/UI/Flair/PaintSelect/Data/Basic/DA_Itemsmith_BasicPaintSelect.DA_Itemsmith_BasicPaintSelect",
+              "SubPathString": ""
+            }
+          },
+          "ViewModelPreference": []
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::FlairDecalOverview",
+        "Value": {
+          "SceneWidgetsPreference": [
+            "EWDUIItemsmithSharedSceneWidgets::HeroTitle",
+            "EWDUIItemsmithSharedSceneWidgets::NavigationBar"
+          ],
+          "PageViewModel": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithFlairDecalOverviewViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Itemsmith/UI/Flair/DecalEditor/Data/DA_Itemsmith_DecalOverview.DA_Itemsmith_DecalOverview",
+              "SubPathString": ""
+            }
+          },
+          "ViewModelPreference": []
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::FlairDecalSelection",
+        "Value": {
+          "SceneWidgetsPreference": [
+            "EWDUIItemsmithSharedSceneWidgets::HeroTitle",
+            "EWDUIItemsmithSharedSceneWidgets::NavigationBar"
+          ],
+          "PageViewModel": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithFlairDecalSelectionViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Itemsmith/UI/Flair/DecalEditor/Data/DA_Itemsmith_DecalSelect.DA_Itemsmith_DecalSelect",
+              "SubPathString": ""
+            }
+          },
+          "ViewModelPreference": []
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::FlairCamoPaint",
+        "Value": {
+          "SceneWidgetsPreference": [
+            "EWDUIItemsmithSharedSceneWidgets::HeroTitle",
+            "EWDUIItemsmithSharedSceneWidgets::NavigationBar"
+          ],
+          "PageViewModel": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithFlairPaintSelectViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Itemsmith/UI/Flair/PaintSelect/Data/Camo/DA_Itemsmith_CamoPaintSelect.DA_Itemsmith_CamoPaintSelect",
+              "SubPathString": ""
+            }
+          },
+          "ViewModelPreference": []
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::FlairMasteryPaint",
+        "Value": {
+          "SceneWidgetsPreference": [
+            "EWDUIItemsmithSharedSceneWidgets::HeroTitle",
+            "EWDUIItemsmithSharedSceneWidgets::NavigationBar"
+          ],
+          "PageViewModel": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithFlairPaintSelectViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Itemsmith/UI/Flair/PaintSelect/Data/Mastery/DA_Itemsmith_MasteryPaintSelect.DA_Itemsmith_MasteryPaintSelect",
+              "SubPathString": ""
+            }
+          },
+          "ViewModelPreference": []
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::FlairFavouritePaint",
+        "Value": {
+          "SceneWidgetsPreference": [
+            "EWDUIItemsmithSharedSceneWidgets::HeroTitle",
+            "EWDUIItemsmithSharedSceneWidgets::NavigationBar"
+          ],
+          "PageViewModel": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithFlairPaintSelectViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Itemsmith/UI/Flair/PaintSelect/Data/Favourites/DA_Itemsmith_FavouritePaintSelect.DA_Itemsmith_FavouritePaintSelect",
+              "SubPathString": ""
+            }
+          },
+          "ViewModelPreference": []
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::FlairPaintMaskSelection",
+        "Value": {
+          "SceneWidgetsPreference": [
+            "EWDUIItemsmithSharedSceneWidgets::HeroTitle",
+            "EWDUIItemsmithSharedSceneWidgets::NavigationBar"
+          ],
+          "PageViewModel": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithFlairPaintMaskSelectViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Itemsmith/UI/Flair/PaintMaskSelect/Data/DA_Itemsmith_PaintMaskItemSelect.DA_Itemsmith_PaintMaskItemSelect",
+              "SubPathString": ""
+            }
+          },
+          "ViewModelPreference": []
+        }
+      }
+    ],
+    "ItemsmithPageSubClass": [
+      {
+        "Key": "EWDUIItemsmithPages::ItemSelect",
+        "Value": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'W_Itemsmith_ItemSelectGrid_C'",
+          "ObjectPath": "/Itemsmith/UI/ItemSelect/W_Itemsmith_ItemSelectGrid.8"
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::Variants",
+        "Value": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'W_Itemsmith_ItemSelectGrid_C'",
+          "ObjectPath": "/Itemsmith/UI/ItemSelect/W_Itemsmith_ItemSelectGrid.8"
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::Build",
+        "Value": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'W_Itemsmith_Build_C'",
+          "ObjectPath": "/Itemsmith/UI/Build/W_Itemsmith_Build.2"
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::AttachmentNodeFocus",
+        "Value": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'W_Itemsmith_AttachmentNodeFocus_C'",
+          "ObjectPath": "/Itemsmith/UI/AttachmentNodeFocus/W_Itemsmith_AttachmentNodeFocus.8"
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::SubNodeFocus",
+        "Value": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'W_Itemsmith_SubNodeFocus_C'",
+          "ObjectPath": "/Itemsmith/UI/SubNodeFocus/W_Itemsmith_SubNodeFocus.2"
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::OpticAdjust",
+        "Value": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'W_Gunsmith_OpticAdjust_C'",
+          "ObjectPath": "/Gunsmith/UI/OpticAdjust/W_Gunsmith_OpticAdjust.10"
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::ReticleNodeFocus",
+        "Value": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'W_Gunsmith_ReticleNodeFocus_C'",
+          "ObjectPath": "/Gunsmith/UI/ReticleNodeFocus/W_Gunsmith_ReticleNodeFocus.8"
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::HideUI",
+        "Value": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'W_Itemsmith_HideUI_C'",
+          "ObjectPath": "/Itemsmith/UI/HideUI/W_Itemsmith_HideUI.1"
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::FlairOverview",
+        "Value": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'W_Itemsmith_FlairOverview_C'",
+          "ObjectPath": "/Itemsmith/UI/Flair/FlairOverview/W_Itemsmith_FlairOverview.19"
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::FlairItemPaint",
+        "Value": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'W_Itemsmith_FlairItemPaint_C'",
+          "ObjectPath": "/Itemsmith/UI/Flair/ItemPaint/W_Itemsmith_FlairItemPaint.36"
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::FlairBasicPaint",
+        "Value": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'W_Itemsmith_PaintSelect_C'",
+          "ObjectPath": "/Itemsmith/UI/Flair/PaintSelect/W_Itemsmith_PaintSelect.51"
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::FlairCamoPaint",
+        "Value": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'W_Itemsmith_PaintSelect_C'",
+          "ObjectPath": "/Itemsmith/UI/Flair/PaintSelect/W_Itemsmith_PaintSelect.51"
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::FlairMasteryPaint",
+        "Value": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'W_Itemsmith_PaintSelect_C'",
+          "ObjectPath": "/Itemsmith/UI/Flair/PaintSelect/W_Itemsmith_PaintSelect.51"
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::FlairFavouritePaint",
+        "Value": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'W_Itemsmith_PaintSelect_C'",
+          "ObjectPath": "/Itemsmith/UI/Flair/PaintSelect/W_Itemsmith_PaintSelect.51"
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::FlairNodeFocus",
+        "Value": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'W_Itemsmith_FlairNodeFocus_C'",
+          "ObjectPath": "/Itemsmith/UI/FlairNodeFocus/W_Itemsmith_FlairNodeFocus.2"
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::FlairDecalOverview",
+        "Value": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'W_ItemSmith_Flair_DecalOverview_C'",
+          "ObjectPath": "/Itemsmith/UI/Flair/DecalEditor/W_ItemSmith_Flair_DecalOverview.8"
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::FlairDecalSelection",
+        "Value": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'W_ItemSmith_Flair_DecalSelection_C'",
+          "ObjectPath": "/Itemsmith/UI/Flair/DecalEditor/W_ItemSmith_Flair_DecalSelection.8"
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::FlairPaintMaskSelection",
+        "Value": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'W_ItemSmith_Flair_PaintMaskSelect_C'",
+          "ObjectPath": "/Itemsmith/UI/Flair/PaintMaskSelect/W_ItemSmith_Flair_PaintMaskSelect.21"
+        }
+      }
+    ],
+    "ItemsmithSharedWidgetsViewModelsParams": [
+      {
+        "Key": "EWDUIItemsmithSharedSceneWidgets::NavigationBar",
+        "Value": {
+          "PageViewModel": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithNavigationBarViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Itemsmith/UI/SharedWidgets/NavigationBar/Data/DA_Itemsmith_NavigationBar.DA_Itemsmith_NavigationBar",
+              "SubPathString": ""
+            }
+          },
+          "ViewModelPreference": []
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithSharedSceneWidgets::Stats",
+        "Value": {
+          "PageViewModel": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/GunsmithRuntime.WDUIGunsmithStatsViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Gunsmith/UI/Shared/Stats/Data/DA_Gunsmith_Stats.DA_Gunsmith_Stats",
+              "SubPathString": ""
+            }
+          },
+          "ViewModelPreference": []
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithSharedSceneWidgets::BaseInfo",
+        "Value": {
+          "PageViewModel": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithBaseInfoViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Itemsmith/UI/SharedWidgets/BaseInfo/Data/DA_Itemsmith_BaseInfo.DA_Itemsmith_BaseInfo",
+              "SubPathString": ""
+            }
+          },
+          "ViewModelPreference": []
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithSharedSceneWidgets::HeroTitle",
+        "Value": {
+          "PageViewModel": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithHeroTitleViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Itemsmith/UI/SharedWidgets/HeroTitle/Data/DA_Itemsmith_HeroTitle.DA_Itemsmith_HeroTitle",
+              "SubPathString": ""
+            }
+          },
+          "ViewModelPreference": []
+        }
+      }
+    ],
+    "DefaultItemFamilyBackground": {
+      "TagName": "Id.Item"
+    },
+    "ItemFamilyToDataLayers": [
+      {
+        "Key": {
+          "TagName": "Id.Item"
+        },
+        "Value": {
+          "BackgroundDataLayer": {
+            "AssetPathName": "/Gunsmith/Maps/DataLayers/DL_Gunsmith_Background.DL_Gunsmith_Background",
+            "SubPathString": ""
+          },
+          "TestingGroundDataLayer": {
+            "AssetPathName": "/Gunsmith/Maps/DataLayers/DL_Gunsmith_FiringRange.DL_Gunsmith_FiringRange",
+            "SubPathString": ""
+          }
+        }
+      }
+    ],
+    "NodeTypeToNodeClass": [
+      {
+        "Key": "EWDUIItemsmithNodeType::ItemPartNode",
+        "Value": {
+          "AssetPathName": "/Itemsmith/UI/Nodes/B_GunsmithNodeComponent.B_GunsmithNodeComponent_C",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithNodeType::DecalLayerNode",
+        "Value": {
+          "AssetPathName": "/Itemsmith/UI/Nodes/B_GunsmithDecalLayerNodeComponent.B_GunsmithDecalLayerNodeComponent_C",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithNodeType::LoadingSpinnerNode",
+        "Value": {
+          "AssetPathName": "/Itemsmith/UI/Nodes/B_GunsmithLoadingSpinnerNodeComponent.B_GunsmithLoadingSpinnerNodeComponent_C",
+          "SubPathString": ""
+        }
+      }
+    ],
+    "NodeTypeToViewModelParams": [
+      {
+        "Key": "EWDUIItemsmithNodeType::ItemPartNode",
+        "Value": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithNodeViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Itemsmith/UI/Nodes/Data/DA_Itemsmith_NodeData.DA_Itemsmith_NodeData",
+            "SubPathString": ""
+          }
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithNodeType::DecalLayerNode",
+        "Value": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithNodeViewModelBase",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          }
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithNodeType::LoadingSpinnerNode",
+        "Value": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithNodeViewModelBase",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          }
+        }
+      }
+    ],
+    "DpadControlsAngle": 55.0,
+    "DevControlsMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_Itemsmith_Dev'",
+      "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_Dev.0"
+    },
+    "PersistentActionViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithPersistentActionsViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Itemsmith/UI/Data/DA_Itemsmith_PersistentActions.DA_Itemsmith_PersistentActions",
+        "SubPathString": ""
+      }
+    },
+    "PopupDataTable": {
+      "AssetPathName": "/Gunsmith/UI/Data/Popups/DT_GunsmithPopupOptions.DT_GunsmithPopupOptions",
+      "SubPathString": ""
+    },
+    "LeftSceneTabImage": {
+      "AssetPathName": "/Itemsmith/UI/Textures/Common/T_UI_Attachments_Icon.T_UI_Attachments_Icon",
+      "SubPathString": ""
+    },
+    "RightSceneTabImage": {
+      "AssetPathName": "/Itemsmith/UI/Textures/Common/T_UI_Components_Icon.T_UI_Components_Icon",
+      "SubPathString": ""
+    },
+    "SceneMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_Itemsmith'",
+      "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.0"
+    }
+  }
+}

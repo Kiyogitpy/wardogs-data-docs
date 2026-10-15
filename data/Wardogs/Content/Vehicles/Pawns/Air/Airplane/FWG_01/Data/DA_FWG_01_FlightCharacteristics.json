@@ -1,0 +1,1068 @@
+--- export: UDataAsset / DA_FWG_01_FlightCharacteristics ---
+{
+  "Type": "BHAirplaneFlightDataAsset",
+  "Name": "DA_FWG_01_FlightCharacteristics",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHAirplaneFlightDataAsset'",
+  "Package": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics",
+  "Properties": {
+    "AerodynamicSettings": {
+      "Airfoils": [
+        {
+          "Name": "Fuselage",
+          "ForwardDirection_LS": {
+            "X": 1.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "LiftForceOrigin_LS_cm": {
+            "X": -100.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "LiftForceDirection_LS": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 1.0
+          },
+          "SurfaceArea_m": 10.0,
+          "IncidenceAngle_deg": 0.0,
+          "LiftCoeffFromAngleOfAttackDeg_Curve": {
+            "ObjectName": "CurveFloat'Curve_Symmetrical_LiftCoefFromAngleOfAttackDeg'",
+            "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/Curve_Symmetrical_LiftCoefFromAngleOfAttackDeg.0"
+          },
+          "DragCoeffFromAngleOfAttackDeg_Curve": {
+            "ObjectName": "CurveFloat'Curve_DragCoefFromAngleOfAttackDeg'",
+            "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/Curve_DragCoefFromAngleOfAttackDeg.0"
+          },
+          "MaxPositiveDeflectionFromInput_deg": 0.0,
+          "MaxNegativeDeflectionFromInput_deg": 0.0,
+          "InputMode": "EBHAirplaneSurfaceInputMode::Direct",
+          "bExtendable": false,
+          "ExtensionTime": 1.0,
+          "RetractionTime": 1.0,
+          "ForceMulWhenRetracted": 0.0
+        },
+        {
+          "Name": "Airbrake",
+          "ForwardDirection_LS": {
+            "X": 1.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "LiftForceOrigin_LS_cm": {
+            "X": 50.0,
+            "Y": 0.0,
+            "Z": 50.0
+          },
+          "LiftForceDirection_LS": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 1.0
+          },
+          "SurfaceArea_m": 30.0,
+          "IncidenceAngle_deg": -45.0,
+          "LiftCoeffFromAngleOfAttackDeg_Curve": {
+            "ObjectName": "CurveFloat'Curve_Symmetrical_LiftCoefFromAngleOfAttackDeg'",
+            "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/Curve_Symmetrical_LiftCoefFromAngleOfAttackDeg.0"
+          },
+          "DragCoeffFromAngleOfAttackDeg_Curve": {
+            "ObjectName": "CurveFloat'Curve_DragCoefFromAngleOfAttackDeg'",
+            "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/Curve_DragCoefFromAngleOfAttackDeg.0"
+          },
+          "MaxPositiveDeflectionFromInput_deg": 0.0,
+          "MaxNegativeDeflectionFromInput_deg": 0.0,
+          "InputMode": "EBHAirplaneSurfaceInputMode::Direct",
+          "bExtendable": true,
+          "ExtensionTime": 1.0,
+          "RetractionTime": 1.0,
+          "ForceMulWhenRetracted": 0.0
+        },
+        {
+          "Name": "Left Wing",
+          "ForwardDirection_LS": {
+            "X": 1.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "LiftForceOrigin_LS_cm": {
+            "X": -150.0,
+            "Y": -300.0,
+            "Z": 0.0
+          },
+          "LiftForceDirection_LS": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 1.0
+          },
+          "SurfaceArea_m": 130.0,
+          "IncidenceAngle_deg": 2.0,
+          "LiftCoeffFromAngleOfAttackDeg_Curve": {
+            "ObjectName": "CurveFloat'Curve_Symmetrical_LiftCoefFromAngleOfAttackDeg'",
+            "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/Curve_Symmetrical_LiftCoefFromAngleOfAttackDeg.0"
+          },
+          "DragCoeffFromAngleOfAttackDeg_Curve": {
+            "ObjectName": "CurveFloat'Curve_DragCoefFromAngleOfAttackDeg'",
+            "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/Curve_DragCoefFromAngleOfAttackDeg.0"
+          },
+          "MaxPositiveDeflectionFromInput_deg": 0.0,
+          "MaxNegativeDeflectionFromInput_deg": 0.0,
+          "InputMode": "EBHAirplaneSurfaceInputMode::Direct",
+          "bExtendable": false,
+          "ExtensionTime": 1.0,
+          "RetractionTime": 1.0,
+          "ForceMulWhenRetracted": 0.0
+        },
+        {
+          "Name": "Right Wing",
+          "ForwardDirection_LS": {
+            "X": 1.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "LiftForceOrigin_LS_cm": {
+            "X": -150.0,
+            "Y": 300.0,
+            "Z": 0.0
+          },
+          "LiftForceDirection_LS": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 1.0
+          },
+          "SurfaceArea_m": 130.0,
+          "IncidenceAngle_deg": 2.0,
+          "LiftCoeffFromAngleOfAttackDeg_Curve": {
+            "ObjectName": "CurveFloat'Curve_Symmetrical_LiftCoefFromAngleOfAttackDeg'",
+            "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/Curve_Symmetrical_LiftCoefFromAngleOfAttackDeg.0"
+          },
+          "DragCoeffFromAngleOfAttackDeg_Curve": {
+            "ObjectName": "CurveFloat'Curve_DragCoefFromAngleOfAttackDeg'",
+            "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/Curve_DragCoefFromAngleOfAttackDeg.0"
+          },
+          "MaxPositiveDeflectionFromInput_deg": 0.0,
+          "MaxNegativeDeflectionFromInput_deg": 0.0,
+          "InputMode": "EBHAirplaneSurfaceInputMode::Direct",
+          "bExtendable": false,
+          "ExtensionTime": 1.0,
+          "RetractionTime": 1.0,
+          "ForceMulWhenRetracted": 0.0
+        },
+        {
+          "Name": "Left Aileron",
+          "ForwardDirection_LS": {
+            "X": 1.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "LiftForceOrigin_LS_cm": {
+            "X": -250.0,
+            "Y": -500.0,
+            "Z": 0.0
+          },
+          "LiftForceDirection_LS": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 1.0
+          },
+          "SurfaceArea_m": 40.0,
+          "IncidenceAngle_deg": 0.0,
+          "LiftCoeffFromAngleOfAttackDeg_Curve": {
+            "ObjectName": "CurveFloat'Curve_Symmetrical_LiftCoefFromAngleOfAttackDeg'",
+            "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/Curve_Symmetrical_LiftCoefFromAngleOfAttackDeg.0"
+          },
+          "DragCoeffFromAngleOfAttackDeg_Curve": {
+            "ObjectName": "CurveFloat'Curve_DragCoefFromAngleOfAttackDeg'",
+            "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/Curve_DragCoefFromAngleOfAttackDeg.0"
+          },
+          "MaxPositiveDeflectionFromInput_deg": 20.0,
+          "MaxNegativeDeflectionFromInput_deg": 20.0,
+          "InputMode": "EBHAirplaneSurfaceInputMode::Direct",
+          "bExtendable": false,
+          "ExtensionTime": 1.0,
+          "RetractionTime": 1.0,
+          "ForceMulWhenRetracted": 0.0
+        },
+        {
+          "Name": "Right Aileron",
+          "ForwardDirection_LS": {
+            "X": 1.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "LiftForceOrigin_LS_cm": {
+            "X": -250.0,
+            "Y": 500.0,
+            "Z": 0.0
+          },
+          "LiftForceDirection_LS": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 1.0
+          },
+          "SurfaceArea_m": 40.0,
+          "IncidenceAngle_deg": 0.0,
+          "LiftCoeffFromAngleOfAttackDeg_Curve": {
+            "ObjectName": "CurveFloat'Curve_Symmetrical_LiftCoefFromAngleOfAttackDeg'",
+            "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/Curve_Symmetrical_LiftCoefFromAngleOfAttackDeg.0"
+          },
+          "DragCoeffFromAngleOfAttackDeg_Curve": {
+            "ObjectName": "CurveFloat'Curve_DragCoefFromAngleOfAttackDeg'",
+            "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/Curve_DragCoefFromAngleOfAttackDeg.0"
+          },
+          "MaxPositiveDeflectionFromInput_deg": 20.0,
+          "MaxNegativeDeflectionFromInput_deg": 20.0,
+          "InputMode": "EBHAirplaneSurfaceInputMode::Direct",
+          "bExtendable": false,
+          "ExtensionTime": 1.0,
+          "RetractionTime": 1.0,
+          "ForceMulWhenRetracted": 0.0
+        },
+        {
+          "Name": "Left Flap",
+          "ForwardDirection_LS": {
+            "X": 1.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "LiftForceOrigin_LS_cm": {
+            "X": -200.0,
+            "Y": -250.0,
+            "Z": 0.0
+          },
+          "LiftForceDirection_LS": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 1.0
+          },
+          "SurfaceArea_m": 30.0,
+          "IncidenceAngle_deg": 2.0,
+          "LiftCoeffFromAngleOfAttackDeg_Curve": {
+            "ObjectName": "CurveFloat'Curve_Symmetrical_LiftCoefFromAngleOfAttackDeg'",
+            "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/Curve_Symmetrical_LiftCoefFromAngleOfAttackDeg.0"
+          },
+          "DragCoeffFromAngleOfAttackDeg_Curve": {
+            "ObjectName": "CurveFloat'Curve_DragCoefFromAngleOfAttackDeg'",
+            "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/Curve_DragCoefFromAngleOfAttackDeg.0"
+          },
+          "MaxPositiveDeflectionFromInput_deg": 18.0,
+          "MaxNegativeDeflectionFromInput_deg": 0.0,
+          "InputMode": "EBHAirplaneSurfaceInputMode::Relative",
+          "bExtendable": false,
+          "ExtensionTime": 1.0,
+          "RetractionTime": 1.0,
+          "ForceMulWhenRetracted": 0.0
+        },
+        {
+          "Name": "Right Flap",
+          "ForwardDirection_LS": {
+            "X": 1.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "LiftForceOrigin_LS_cm": {
+            "X": -200.0,
+            "Y": 250.0,
+            "Z": 0.0
+          },
+          "LiftForceDirection_LS": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 1.0
+          },
+          "SurfaceArea_m": 30.0,
+          "IncidenceAngle_deg": 2.0,
+          "LiftCoeffFromAngleOfAttackDeg_Curve": {
+            "ObjectName": "CurveFloat'Curve_Symmetrical_LiftCoefFromAngleOfAttackDeg'",
+            "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/Curve_Symmetrical_LiftCoefFromAngleOfAttackDeg.0"
+          },
+          "DragCoeffFromAngleOfAttackDeg_Curve": {
+            "ObjectName": "CurveFloat'Curve_DragCoefFromAngleOfAttackDeg'",
+            "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/Curve_DragCoefFromAngleOfAttackDeg.0"
+          },
+          "MaxPositiveDeflectionFromInput_deg": 18.0,
+          "MaxNegativeDeflectionFromInput_deg": 0.0,
+          "InputMode": "EBHAirplaneSurfaceInputMode::Relative",
+          "bExtendable": false,
+          "ExtensionTime": 1.0,
+          "RetractionTime": 1.0,
+          "ForceMulWhenRetracted": 0.0
+        },
+        {
+          "Name": "Left Elevator",
+          "ForwardDirection_LS": {
+            "X": 1.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "LiftForceOrigin_LS_cm": {
+            "X": -600.0,
+            "Y": -300.0,
+            "Z": 0.0
+          },
+          "LiftForceDirection_LS": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 1.0
+          },
+          "SurfaceArea_m": 55.0,
+          "IncidenceAngle_deg": 0.0,
+          "LiftCoeffFromAngleOfAttackDeg_Curve": {
+            "ObjectName": "CurveFloat'Curve_Symmetrical_LiftCoefFromAngleOfAttackDeg'",
+            "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/Curve_Symmetrical_LiftCoefFromAngleOfAttackDeg.0"
+          },
+          "DragCoeffFromAngleOfAttackDeg_Curve": {
+            "ObjectName": "CurveFloat'Curve_DragCoefFromAngleOfAttackDeg'",
+            "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/Curve_DragCoefFromAngleOfAttackDeg.0"
+          },
+          "MaxPositiveDeflectionFromInput_deg": 40.0,
+          "MaxNegativeDeflectionFromInput_deg": 40.0,
+          "InputMode": "EBHAirplaneSurfaceInputMode::Direct",
+          "bExtendable": false,
+          "ExtensionTime": 1.0,
+          "RetractionTime": 1.0,
+          "ForceMulWhenRetracted": 0.0
+        },
+        {
+          "Name": "Right Elevator",
+          "ForwardDirection_LS": {
+            "X": 1.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "LiftForceOrigin_LS_cm": {
+            "X": -600.0,
+            "Y": 300.0,
+            "Z": 0.0
+          },
+          "LiftForceDirection_LS": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 1.0
+          },
+          "SurfaceArea_m": 55.0,
+          "IncidenceAngle_deg": 0.0,
+          "LiftCoeffFromAngleOfAttackDeg_Curve": {
+            "ObjectName": "CurveFloat'Curve_Symmetrical_LiftCoefFromAngleOfAttackDeg'",
+            "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/Curve_Symmetrical_LiftCoefFromAngleOfAttackDeg.0"
+          },
+          "DragCoeffFromAngleOfAttackDeg_Curve": {
+            "ObjectName": "CurveFloat'Curve_DragCoefFromAngleOfAttackDeg'",
+            "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/Curve_DragCoefFromAngleOfAttackDeg.0"
+          },
+          "MaxPositiveDeflectionFromInput_deg": 40.0,
+          "MaxNegativeDeflectionFromInput_deg": 40.0,
+          "InputMode": "EBHAirplaneSurfaceInputMode::Direct",
+          "bExtendable": false,
+          "ExtensionTime": 1.0,
+          "RetractionTime": 1.0,
+          "ForceMulWhenRetracted": 0.0
+        },
+        {
+          "Name": "Left Rudder",
+          "ForwardDirection_LS": {
+            "X": 1.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "LiftForceOrigin_LS_cm": {
+            "X": -600.0,
+            "Y": -150.0,
+            "Z": 75.0
+          },
+          "LiftForceDirection_LS": {
+            "X": 0.0,
+            "Y": 1.0,
+            "Z": 0.0
+          },
+          "SurfaceArea_m": 40.0,
+          "IncidenceAngle_deg": 0.0,
+          "LiftCoeffFromAngleOfAttackDeg_Curve": {
+            "ObjectName": "CurveFloat'Curve_Symmetrical_LiftCoefFromAngleOfAttackDeg'",
+            "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/Curve_Symmetrical_LiftCoefFromAngleOfAttackDeg.0"
+          },
+          "DragCoeffFromAngleOfAttackDeg_Curve": {
+            "ObjectName": "CurveFloat'Curve_DragCoefFromAngleOfAttackDeg'",
+            "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/Curve_DragCoefFromAngleOfAttackDeg.0"
+          },
+          "MaxPositiveDeflectionFromInput_deg": 20.0,
+          "MaxNegativeDeflectionFromInput_deg": 20.0,
+          "InputMode": "EBHAirplaneSurfaceInputMode::Direct",
+          "bExtendable": false,
+          "ExtensionTime": 1.0,
+          "RetractionTime": 1.0,
+          "ForceMulWhenRetracted": 0.0
+        },
+        {
+          "Name": "Right Rudder",
+          "ForwardDirection_LS": {
+            "X": 1.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "LiftForceOrigin_LS_cm": {
+            "X": -600.0,
+            "Y": 150.0,
+            "Z": 75.0
+          },
+          "LiftForceDirection_LS": {
+            "X": 0.0,
+            "Y": 1.0,
+            "Z": 0.0
+          },
+          "SurfaceArea_m": 40.0,
+          "IncidenceAngle_deg": 0.0,
+          "LiftCoeffFromAngleOfAttackDeg_Curve": {
+            "ObjectName": "CurveFloat'Curve_Symmetrical_LiftCoefFromAngleOfAttackDeg'",
+            "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/Curve_Symmetrical_LiftCoefFromAngleOfAttackDeg.0"
+          },
+          "DragCoeffFromAngleOfAttackDeg_Curve": {
+            "ObjectName": "CurveFloat'Curve_DragCoefFromAngleOfAttackDeg'",
+            "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/Curve_DragCoefFromAngleOfAttackDeg.0"
+          },
+          "MaxPositiveDeflectionFromInput_deg": 20.0,
+          "MaxNegativeDeflectionFromInput_deg": 20.0,
+          "InputMode": "EBHAirplaneSurfaceInputMode::Direct",
+          "bExtendable": false,
+          "ExtensionTime": 1.0,
+          "RetractionTime": 1.0,
+          "ForceMulWhenRetracted": 0.0
+        }
+      ],
+      "MainLiftMultiplier": 0.4
+    },
+    "PitchControl": {
+      "ObjectName": "BHRotaryMovementControl'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_1'",
+      "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.13"
+    },
+    "PitchControlInfluence": {
+      "AirfoilInfluences": [
+        {
+          "AirfoilName": "Left Elevator",
+          "Deflection": 1.0,
+          "Extension": 0.0
+        },
+        {
+          "AirfoilName": "Right Elevator",
+          "Deflection": 1.0,
+          "Extension": 0.0
+        }
+      ]
+    },
+    "RollControl": {
+      "ObjectName": "BHRotaryMovementControl'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_2'",
+      "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.14"
+    },
+    "RollControlInfluence": {
+      "AirfoilInfluences": [
+        {
+          "AirfoilName": "Left Aileron",
+          "Deflection": 0.3,
+          "Extension": 0.0
+        },
+        {
+          "AirfoilName": "Right Aileron",
+          "Deflection": 0.0,
+          "Extension": 0.0
+        },
+        {
+          "AirfoilName": "Left Elevator",
+          "Deflection": 0.0,
+          "Extension": 0.0
+        },
+        {
+          "AirfoilName": "Right Elevator",
+          "Deflection": 0.0,
+          "Extension": 0.0
+        }
+      ]
+    },
+    "YawControl": {
+      "ObjectName": "BHRotaryMovementControl'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_3'",
+      "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.15"
+    },
+    "YawControlInfluence": {
+      "AirfoilInfluences": [
+        {
+          "AirfoilName": "Left Rudder",
+          "Deflection": -1.0,
+          "Extension": 0.0
+        },
+        {
+          "AirfoilName": "Right Rudder",
+          "Deflection": -1.0,
+          "Extension": 0.0
+        }
+      ]
+    },
+    "FlapsControl": {
+      "ObjectName": "BHRotaryMovementControl'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_4'",
+      "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.16"
+    },
+    "FlapsControlInfluence": {
+      "AirfoilInfluences": [
+        {
+          "AirfoilName": "Left Flap",
+          "Deflection": 1.0,
+          "Extension": 0.0
+        },
+        {
+          "AirfoilName": "Right Flap",
+          "Deflection": 1.0,
+          "Extension": 0.0
+        }
+      ]
+    },
+    "AirbrakeControl": {
+      "ObjectName": "BHRotaryMovementControl'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_6'",
+      "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.18"
+    },
+    "AirbrakeControlInfluence": {
+      "AirfoilInfluences": [
+        {
+          "AirfoilName": "Airbrake",
+          "Deflection": 0.0,
+          "Extension": 1.0
+        }
+      ]
+    },
+    "ThrottleControl": {
+      "ObjectName": "BHRotaryMovementControl'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_0'",
+      "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.12"
+    },
+    "WheelBrakeControl": {
+      "ObjectName": "BHRotaryMovementControl'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_5'",
+      "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.17"
+    },
+    "LandingGear": {
+      "WheelSystems": [
+        {
+          "SuspensionBoneName": "wheelMechanismF_J",
+          "SteeringBoneName": "wheelMechanismRotateF_J",
+          "WheelBoneName": "wheelF_J",
+          "Side": "EWDAirplaneWheelSide::NoseCenter",
+          "BrakingStrength": 0.0,
+          "SteeringStrength": 250.0,
+          "SteeringDamping": 50.0,
+          "SteeringMaxAngleDeg": 45.0,
+          "BrakeSteeringInfluence": 0.0,
+          "WheelSteeringInfluenceByForwardSpeedKmPHCurve": {
+            "ObjectName": "CurveFloat'Curve_FWG_01_NoseCenterWheel_SteeringInfluenceByForwardSpeedKmPH'",
+            "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/Curve_FWG_01_NoseCenterWheel_SteeringInfluenceByForwardSpeedKmPH.0"
+          }
+        },
+        {
+          "SuspensionBoneName": "wheelMechanismL_J",
+          "SteeringBoneName": "wheelMechanismRotateL_J",
+          "WheelBoneName": "wheelL_J",
+          "Side": "EWDAirplaneWheelSide::RearLeft",
+          "BrakingStrength": 1000000.0,
+          "SteeringStrength": 0.0,
+          "SteeringDamping": 0.0,
+          "SteeringMaxAngleDeg": 0.0,
+          "BrakeSteeringInfluence": 0.2,
+          "WheelSteeringInfluenceByForwardSpeedKmPHCurve": null
+        },
+        {
+          "SuspensionBoneName": "wheelMechanismR_J",
+          "SteeringBoneName": "wheelMechanismRotateR_J",
+          "WheelBoneName": "wheelR_J",
+          "Side": "EWDAirplaneWheelSide::RearRight",
+          "BrakingStrength": 1000000.0,
+          "SteeringStrength": 0.0,
+          "SteeringDamping": 0.0,
+          "SteeringMaxAngleDeg": 0.0,
+          "BrakeSteeringInfluence": 0.2,
+          "WheelSteeringInfluenceByForwardSpeedKmPHCurve": null
+        }
+      ]
+    },
+    "bEnableMaxAngularVelocity": false,
+    "MaxAngularVelocityDegPerS": 83.0,
+    "PitchHoverAssistanceCurve": {
+      "ObjectName": "CurveFloat'CF_PitchHoverAssistance'",
+      "ObjectPath": "/Game/Vehicles/Pawns/Air/Helicopter/Data/Curves/CF_PitchHoverAssistance.0"
+    },
+    "DefaultFMAssistanceLevel": {
+      "bNeutralLift": true,
+      "bRateLock": true
+    },
+    "TranslationalLiftPercent": 20.0,
+    "TranslationalLiftMinAtHorizSpeed_mps": 24.0,
+    "TranslationalLiftMaxAtHorizSpeed_mps": 34.0,
+    "GroundEffectAltitude_m": 8.38,
+    "GroundEffectFalloff_m": 8.38,
+    "GroundEffectStrengthPercent": 0.0,
+    "RearRotorEfficiencyCurve": {
+      "ObjectName": "CurveFloat'TestHelo_RearRotorEfficiency_Curve2000KG'",
+      "ObjectPath": "/Game/Vehicles/Pawns/Air/Helicopter/Data/Curves/TestHelo_RearRotorEfficiency_Curve2000KG.0"
+    },
+    "GForceControlFalloffCurve": {
+      "ObjectName": "CurveVector'CF_GForceControlFalloff_AprilKom'",
+      "ObjectPath": "/Game/Vehicles/Pawns/Air/Helicopter/Data/Curves/CF_GForceControlFalloff_AprilKom.0"
+    }
+  }
+}
+--- export: UObject / BHAutoTrimCurveSamplingRotaryMovementControlAssistBody_0 ---
+{
+  "Type": "BHAutoTrimCurveSamplingRotaryMovementControlAssistBody",
+  "Name": "BHAutoTrimCurveSamplingRotaryMovementControlAssistBody_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHAutoTrimCurveSamplingRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_1'",
+    "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.13"
+  },
+  "Properties": {
+    "CurveTable": {
+      "ObjectName": "CurveTable'CurveTable_FWG_01_AutoTrimByAirspeedKmPH'",
+      "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/CurveTable_FWG_01_AutoTrimByAirspeedKmPH.0"
+    }
+  }
+}
+--- export: UObject / BHChangeRotaryMovementControlAssistBody_0 ---
+{
+  "Type": "BHChangeRotaryMovementControlAssistBody",
+  "Name": "BHChangeRotaryMovementControlAssistBody_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHChangeRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_0'",
+    "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.12"
+  },
+  "Properties": {
+    "RawIncreaseInterpSpeed": 2.0,
+    "RawDecreaseInterpSpeed": 2.0,
+    "IncreasePerSecond": 0.5,
+    "DecreasePerSecond": 0.5,
+    "ClampLowerBound": 0.0
+  }
+}
+--- export: UObject / BHControlValueSatisfiesRotaryMovementControlAssistCondition_0 ---
+{
+  "Type": "BHControlValueSatisfiesRotaryMovementControlAssistCondition",
+  "Name": "BHControlValueSatisfiesRotaryMovementControlAssistCondition_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHControlValueSatisfiesRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHSmoothedInfluenceRotaryMovementControlAssistConditions'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_1.BHSmoothedInfluenceRotaryMovementControlAssistConditions_0'",
+    "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.21"
+  },
+  "Properties": {
+    "ControlValueType": "EBHRotaryMovementControlAssistControlValueType::LocalGForce",
+    "ControlValueComponent": "EBHRotaryMovementControlAssistControlValueComponent::Z",
+    "TestOperator": "EBHRotaryMovementControlAssistConditionOperator::GreaterThan",
+    "TestValue": 6.0,
+    "Label": "GForce exceeds limit"
+  }
+}
+--- export: UObject / BHDampingRotaryMovementControlAssistBody_0 ---
+{
+  "Type": "BHDampingRotaryMovementControlAssistBody",
+  "Name": "BHDampingRotaryMovementControlAssistBody_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDampingRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_3'",
+    "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.15"
+  },
+  "Properties": {
+    "Interpolation": {
+      "InterpolationMethod": "EBHControlAssistInterpolationMethod::INTERP_TO",
+      "InterpSpeed": 0.5
+    }
+  }
+}
+--- export: UObject / BHDampingRotaryMovementControlAssistBody_1 ---
+{
+  "Type": "BHDampingRotaryMovementControlAssistBody",
+  "Name": "BHDampingRotaryMovementControlAssistBody_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDampingRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_3'",
+    "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.15"
+  },
+  "Properties": {
+    "Interpolation": {
+      "InterpolationMethod": "EBHControlAssistInterpolationMethod::INTERP_TO",
+      "InterpSpeed": 1.0
+    }
+  }
+}
+--- export: UObject / BHDampingRotaryMovementControlAssistBody_0 ---
+{
+  "Type": "BHDampingRotaryMovementControlAssistBody",
+  "Name": "BHDampingRotaryMovementControlAssistBody_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDampingRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_5'",
+    "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.17"
+  },
+  "Properties": {
+    "Interpolation": {
+      "InterpolationMethod": "EBHControlAssistInterpolationMethod::INTERP_TO",
+      "InterpSpeed": 3.0
+    }
+  }
+}
+--- export: UObject / BHInputStateControlAssistCondition_1 ---
+{
+  "Type": "BHInputStateRotaryMovementControlAssistCondition",
+  "Name": "BHInputStateControlAssistCondition_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputStateRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_2'",
+    "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.14"
+  },
+  "Properties": {
+    "ControlType": "EBHRotaryMovementControlType::CyclicX",
+    "Threshold": 0.01,
+    "Operator": "EBHRotaryMovementControlAssistConditionOperator::Equal"
+  }
+}
+--- export: UObject / BHInputStateRotaryMovementControlAssistCondition_1 ---
+{
+  "Type": "BHInputStateRotaryMovementControlAssistCondition",
+  "Name": "BHInputStateRotaryMovementControlAssistCondition_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputStateRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_3'",
+    "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.15"
+  },
+  "Properties": {
+    "ControlType": "EBHRotaryMovementControlType::Pedals",
+    "Operator": "EBHRotaryMovementControlAssistConditionOperator::Equal"
+  }
+}
+--- export: UObject / BHInputStateRotaryMovementControlAssistCondition_2 ---
+{
+  "Type": "BHInputStateRotaryMovementControlAssistCondition",
+  "Name": "BHInputStateRotaryMovementControlAssistCondition_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputStateRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_3'",
+    "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.15"
+  },
+  "Properties": {
+    "ControlType": "EBHRotaryMovementControlType::Pedals",
+    "Threshold": 1.0,
+    "Operator": "EBHRotaryMovementControlAssistConditionOperator::Equal"
+  }
+}
+--- export: UObject / BHIsFullyStoppedAircraftMovementControlAssistCondition_0 ---
+{
+  "Type": "BHIsFullyStoppedAircraftMovementControlAssistCondition",
+  "Name": "BHIsFullyStoppedAircraftMovementControlAssistCondition_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHIsFullyStoppedAircraftMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_5'",
+    "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.17"
+  }
+}
+--- export: UObject / BHPIDRotaryMovementControlAssistBody_0 ---
+{
+  "Type": "BHPIDRotaryMovementControlAssistBody",
+  "Name": "BHPIDRotaryMovementControlAssistBody_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPIDRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_2'",
+    "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.14"
+  },
+  "Properties": {
+    "OutputParams": {
+      "NegateCondition": "EBHNegatePIDRotaryMovementControlAssistOutputCondition::Always"
+    },
+    "ControlValueParams": {
+      "Type": "EBHRotaryMovementControlAssistControlValueType::LocalAngularVelocity_DegPerS",
+      "Component": "EBHRotaryMovementControlAssistControlValueComponent::X"
+    },
+    "PID": {
+      "ProportionalGain": 0.20943952,
+      "IntegralGain": 0.0017453292,
+      "DerivativeGain": 0.08726646
+    }
+  }
+}
+--- export: UObject / BHRotaryMovementControl_0 ---
+{
+  "Type": "BHRotaryMovementControl",
+  "Name": "BHRotaryMovementControl_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHRotaryMovementControl'",
+  "Outer": {
+    "ObjectName": "BHAirplaneFlightDataAsset'DA_FWG_01_FlightCharacteristics'",
+    "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.0"
+  },
+  "Properties": {
+    "Assists": [
+      {
+        "bEnabled": true,
+        "Category": "EBHHeliAssistCategory::Core",
+        "Label": "Apply change",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [],
+        "Body": {
+          "ObjectName": "BHChangeRotaryMovementControlAssistBody'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_0.BHChangeRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.2"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / BHRotaryMovementControl_1 ---
+{
+  "Type": "BHRotaryMovementControl",
+  "Name": "BHRotaryMovementControl_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHRotaryMovementControl'",
+  "Outer": {
+    "ObjectName": "BHAirplaneFlightDataAsset'DA_FWG_01_FlightCharacteristics'",
+    "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.0"
+  },
+  "Properties": {
+    "Assists": [
+      {
+        "bEnabled": true,
+        "Category": "EBHHeliAssistCategory::Core",
+        "Label": "Reduce pitch when exceeding GForce limit",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [
+          {
+            "ObjectName": "BHSmoothedInfluenceRotaryMovementControlAssistConditions'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_1.BHSmoothedInfluenceRotaryMovementControlAssistConditions_0'",
+            "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.21"
+          }
+        ],
+        "Body": {
+          "ObjectName": "BHSetToValueRotaryMovementControlAssistBody'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_1.BHSetToValueRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.19"
+        }
+      },
+      {
+        "bEnabled": true,
+        "Category": "EBHHeliAssistCategory::Core",
+        "Label": "Auto-trim",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Additive",
+        "Conditions": [],
+        "Body": {
+          "ObjectName": "BHAutoTrimCurveSamplingRotaryMovementControlAssistBody'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_1.BHAutoTrimCurveSamplingRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.1"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / BHRotaryMovementControl_2 ---
+{
+  "Type": "BHRotaryMovementControl",
+  "Name": "BHRotaryMovementControl_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHRotaryMovementControl'",
+  "Outer": {
+    "ObjectName": "BHAirplaneFlightDataAsset'DA_FWG_01_FlightCharacteristics'",
+    "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.0"
+  },
+  "Properties": {
+    "Assists": [
+      {
+        "bEnabled": true,
+        "Category": "EBHHeliAssistCategory::Core",
+        "Label": "Stabilize after input released",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [
+          {
+            "ObjectName": "BHStabilizedAfterInputReleasedControlAssistCondition'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_2.BHStabilizeAfterInputReleasedControlAssistCondition_0'",
+            "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.22"
+          },
+          {
+            "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_2.BHInputStateControlAssistCondition_1'",
+            "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.7"
+          }
+        ],
+        "Body": {
+          "ObjectName": "BHPIDRotaryMovementControlAssistBody'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_2.BHPIDRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.11"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / BHRotaryMovementControl_3 ---
+{
+  "Type": "BHRotaryMovementControl",
+  "Name": "BHRotaryMovementControl_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHRotaryMovementControl'",
+  "Outer": {
+    "ObjectName": "BHAirplaneFlightDataAsset'DA_FWG_01_FlightCharacteristics'",
+    "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.0"
+  },
+  "Properties": {
+    "Assists": [
+      {
+        "bEnabled": true,
+        "Category": "EBHHeliAssistCategory::Core",
+        "Label": "Dampen pressed inputs",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [
+          {
+            "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_3.BHInputStateRotaryMovementControlAssistCondition_2'",
+            "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.9"
+          }
+        ],
+        "Body": {
+          "ObjectName": "BHDampingRotaryMovementControlAssistBody'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_3.BHDampingRotaryMovementControlAssistBody_1'",
+          "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.5"
+        }
+      },
+      {
+        "bEnabled": true,
+        "Category": "EBHHeliAssistCategory::Core",
+        "Label": "Dampen inputs",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [
+          {
+            "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_3.BHInputStateRotaryMovementControlAssistCondition_1'",
+            "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.8"
+          }
+        ],
+        "Body": {
+          "ObjectName": "BHDampingRotaryMovementControlAssistBody'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_3.BHDampingRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.4"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / BHRotaryMovementControl_4 ---
+{
+  "Type": "BHRotaryMovementControl",
+  "Name": "BHRotaryMovementControl_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHRotaryMovementControl'",
+  "Outer": {
+    "ObjectName": "BHAirplaneFlightDataAsset'DA_FWG_01_FlightCharacteristics'",
+    "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.0"
+  }
+}
+--- export: UObject / BHRotaryMovementControl_5 ---
+{
+  "Type": "BHRotaryMovementControl",
+  "Name": "BHRotaryMovementControl_5",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHRotaryMovementControl'",
+  "Outer": {
+    "ObjectName": "BHAirplaneFlightDataAsset'DA_FWG_01_FlightCharacteristics'",
+    "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.0"
+  },
+  "Properties": {
+    "Assists": [
+      {
+        "bEnabled": true,
+        "Category": "EBHHeliAssistCategory::Core",
+        "Label": "Engage when fully stopped",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [
+          {
+            "ObjectName": "BHIsFullyStoppedAircraftMovementControlAssistCondition'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_5.BHIsFullyStoppedAircraftMovementControlAssistCondition_0'",
+            "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.10"
+          }
+        ],
+        "Body": {
+          "ObjectName": "BHSetToValueRotaryMovementControlAssistBody'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_5.BHSetToValueRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.20"
+        }
+      },
+      {
+        "bEnabled": true,
+        "Category": "EBHHeliAssistCategory::Core",
+        "Label": "Damping",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [],
+        "Body": {
+          "ObjectName": "BHDampingRotaryMovementControlAssistBody'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_5.BHDampingRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.6"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / BHRotaryMovementControl_6 ---
+{
+  "Type": "BHRotaryMovementControl",
+  "Name": "BHRotaryMovementControl_6",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHRotaryMovementControl'",
+  "Outer": {
+    "ObjectName": "BHAirplaneFlightDataAsset'DA_FWG_01_FlightCharacteristics'",
+    "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.0"
+  }
+}
+--- export: UObject / BHSetToValueRotaryMovementControlAssistBody_0 ---
+{
+  "Type": "BHSetToValueRotaryMovementControlAssistBody",
+  "Name": "BHSetToValueRotaryMovementControlAssistBody_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHSetToValueRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_1'",
+    "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.13"
+  }
+}
+--- export: UObject / BHSetToValueRotaryMovementControlAssistBody_0 ---
+{
+  "Type": "BHSetToValueRotaryMovementControlAssistBody",
+  "Name": "BHSetToValueRotaryMovementControlAssistBody_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHSetToValueRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_5'",
+    "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.17"
+  },
+  "Properties": {
+    "Value": 1.0
+  }
+}
+--- export: UObject / BHSmoothedInfluenceRotaryMovementControlAssistConditions_0 ---
+{
+  "Type": "BHSmoothedInfluenceRotaryMovementControlAssistConditions",
+  "Name": "BHSmoothedInfluenceRotaryMovementControlAssistConditions_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHSmoothedInfluenceRotaryMovementControlAssistConditions'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_1'",
+    "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.13"
+  },
+  "Properties": {
+    "InInterpSpeed": 0.3,
+    "OutInterpSpeed": 0.3,
+    "Conditions": [
+      {
+        "ObjectName": "BHControlValueSatisfiesRotaryMovementControlAssistCondition'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_1.BHSmoothedInfluenceRotaryMovementControlAssistConditions_0.BHControlValueSatisfiesRotaryMovementControlAssistCondition_0'",
+        "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.3"
+      }
+    ]
+  }
+}
+--- export: UObject / BHStabilizeAfterInputReleasedControlAssistCondition_0 ---
+{
+  "Type": "BHStabilizedAfterInputReleasedControlAssistCondition",
+  "Name": "BHStabilizeAfterInputReleasedControlAssistCondition_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHStabilizedAfterInputReleasedControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_FWG_01_FlightCharacteristics:BHRotaryMovementControl_2'",
+    "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.14"
+  },
+  "Properties": {
+    "StabilityControlValueType": "EBHRotaryMovementControlAssistControlValueType::LocalAngularVelocity_DegPerS",
+    "StabilityControlValueComponent": "EBHRotaryMovementControlAssistControlValueComponent::X",
+    "StabilityThreshold": 2.864789
+  }
+}

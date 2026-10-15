@@ -1,0 +1,34 @@
+--- export: UDataAsset / DA_VehicleWeaponAmmo_Artillery ---
+{
+  "Type": "WDUIVehicleWeaponAmmoData",
+  "Name": "DA_VehicleWeaponAmmo_Artillery",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIVehicleWeaponAmmoData'",
+  "Package": "/Game/UI/Features/HUD/Vehicles/Gunner/Weapons/Data/DA_VehicleWeaponAmmo_Artillery",
+  "Properties": {
+    "bShouldDisplayCurrentAmmo": false,
+    "FiringModeTextures": [
+      {
+        "Key": "EWDFireMode::Burst",
+        "Value": {
+          "AssetPathName": "/Game/UI/Features/HUD/EquippedItem/Textures/T_UI_Icon_FiringMode_Burst_32.T_UI_Icon_FiringMode_Burst_32",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": "EWDFireMode::Automatic",
+        "Value": {
+          "AssetPathName": "/Game/UI/Features/HUD/EquippedItem/Textures/T_UI_Icon_FiringMode_FullAuto_32.T_UI_Icon_FiringMode_FullAuto_32",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": "EWDFireMode::SemiAutomatic",
+        "Value": {
+          "AssetPathName": "/Game/UI/Features/HUD/EquippedItem/Textures/T_UI_Icon_FiringMode_SemiAuto_32.T_UI_Icon_FiringMode_SemiAuto_32",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}

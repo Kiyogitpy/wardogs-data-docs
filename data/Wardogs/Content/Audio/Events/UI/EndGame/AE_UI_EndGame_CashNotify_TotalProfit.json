@@ -1,0 +1,40 @@
+--- export: UPrimaryDataAsset / AE_UI_EndGame_CashNotify_TotalProfit ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UI_EndGame_CashNotify_TotalProfit",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UI/EndGame/AE_UI_EndGame_CashNotify_TotalProfit",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.EndGame.CashNotify.TotalProfit"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_UI_EndGame_CashNotify_TotalProfit:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/EndGame/AE_UI_EndGame_CashNotify_TotalProfit.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_EndGame_CashNotify_TotalProfit'",
+    "ObjectPath": "/Game/Audio/Events/UI/EndGame/AE_UI_EndGame_CashNotify_TotalProfit.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UI_EndGame_CashRecap_TotalProfit_Preset'",
+      "ObjectPath": "/Game/Audio/UI/EndGame/CashRecap/MSS_UI_EndGame_CashRecap_TotalProfit_Preset.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.UI.EndGame.CashNotify.TotalProfit"
+    }
+  }
+}

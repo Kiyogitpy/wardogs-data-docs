@@ -1,0 +1,24 @@
+--- export: UDataAsset / DA_VehicleMovement ---
+{
+  "Type": "WDVehicleData",
+  "Name": "DA_VehicleMovement",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleData'",
+  "Package": "/Game/MoverTesting/Settings/DA_VehicleMovement",
+  "Properties": {
+    "EntryForceCompleteActionTags": [
+      "Action.Player.Sprint",
+      "Action.Player.TacSprint",
+      "Action.Binoculars.ADS",
+      "Action.RangeFinder.ADS",
+      "Action.Weapon.ADS",
+      "Action.Weapon.Bipod"
+    ],
+    "LeaveForceCompleteActionTags": [
+      "Action.Binoculars.ADS",
+      "Action.RangeFinder.ADS",
+      "Action.Weapon.ADS"
+    ],
+    "HitValidationBoundsMultiplier": 2.0
+  }
+}

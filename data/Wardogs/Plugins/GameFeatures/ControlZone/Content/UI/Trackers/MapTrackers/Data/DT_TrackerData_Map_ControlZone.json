@@ -1,0 +1,45 @@
+--- export: UDataTable / DT_TrackerData_Map_ControlZone ---
+{
+  "Type": "DataTable",
+  "Name": "DT_TrackerData_Map_ControlZone",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/ControlZone/UI/Trackers/MapTrackers/Data/DT_TrackerData_Map_ControlZone",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUITrackerDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Trackers.Type.ControlZone": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPersistentDataTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhkjekddbhagijalc_$7A94A331706890B2$_$26$": true,
+      "bShouldRecreateOnFactionChange": false,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/ControlZone/UI/Trackers/MapTrackers/W_Tracker_Map_ControlZone.W_Tracker_Map_ControlZone_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/ControlZoneRuntime.WDUIControlZoneMapTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/ControlZone/UI/Trackers/MapTrackers/Data/DA_Tracker_Map_ControlZone.DA_Tracker_Map_ControlZone",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.ControlZone"
+      }
+    }
+  }
+}

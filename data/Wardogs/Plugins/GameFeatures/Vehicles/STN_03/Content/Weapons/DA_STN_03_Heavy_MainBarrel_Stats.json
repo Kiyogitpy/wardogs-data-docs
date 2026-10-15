@@ -1,0 +1,51 @@
+--- export: UPrimaryDataAsset / DA_STN_03_Heavy_MainBarrel_Stats ---
+{
+  "Type": "WDWeaponStatsData",
+  "Name": "DA_STN_03_Heavy_MainBarrel_Stats",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDWeaponStatsData'",
+  "Package": "/STN_03/Weapons/DA_STN_03_Heavy_MainBarrel_Stats",
+  "Properties": {
+    "WeaponId": {
+      "TagName": "Id.Item.STN_03.MainBarrel"
+    },
+    "WeaponStats": {
+      "WeaponAccuracy": {
+        "AccuracyType": "EWDWeaponAccuracyType::MinutesOfAngle",
+        "AccuracyValue": 50.0
+      },
+      "RoundsPerMinute": 50.0,
+      "SupportedFireModes": [
+        "EWDFireMode::SemiAutomatic"
+      ],
+      "RoundsPerBurst": 1,
+      "bFirstFocalPlane": false,
+      "bSpawnProjectileFromCameraWhenAds": false,
+      "bAnimationSwayEnabled": false,
+      "PostPatternRandomYawRecoil": {
+        "X": 0.0,
+        "Y": 0.0
+      },
+      "PostPatternRandomPitchRecoil": {
+        "X": 0.0,
+        "Y": 0.0
+      },
+      "RandomDeviationDegree": 360.0,
+      "SupportedCaliber": [
+        "Item.Caliber.120x800mm"
+      ],
+      "InitialBulletSpeed": 80000.0,
+      "EffectiveRange": 1000.0,
+      "MeleeDamage": 0.0,
+      "MeleeHitBoxSize": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "WindupTime": 0.85,
+      "bAdsPrefires": false,
+      "bPrefireReversible": false,
+      "bPrefireNeedsAmmo": true
+    }
+  }
+}

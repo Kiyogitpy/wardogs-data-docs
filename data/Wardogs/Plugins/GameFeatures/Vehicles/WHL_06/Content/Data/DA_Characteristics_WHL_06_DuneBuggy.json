@@ -1,0 +1,47 @@
+--- export: UDataAsset / DA_Characteristics_WHL_06_DuneBuggy ---
+{
+  "Type": "MWheeledVehicleCharacteristicsDataAsset",
+  "Name": "DA_Characteristics_WHL_06_DuneBuggy",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MWheeledVehicleCharacteristicsDataAsset'",
+  "Package": "/WHL_06/Data/DA_Characteristics_WHL_06_DuneBuggy",
+  "Properties": {
+    "Mass": 550.0,
+    "InertiaScale": {
+      "X": 1.5,
+      "Y": 1.5,
+      "Z": 1.5
+    },
+    "CenterOfMassOffset": {
+      "X": 0.35,
+      "Y": 0.0,
+      "Z": -0.65
+    },
+    "bHasRelaxationDownforce": true,
+    "bDetectGroundVelocity": true,
+    "DrivetrainInertia": 0.65,
+    "DrivetrainFriction": 10.0,
+    "RollingResistanceCoefficient": 1.0,
+    "HandBrakePower": 50.0,
+    "StickyTireSpeed": 5.0,
+    "HardContactScale": 0.3,
+    "DownForceCoefficient": 0.5,
+    "Abs": 25.0,
+    "ASR": 18.0,
+    "UnderSteerAssist": 20.0,
+    "MinUnderSteerAngle": 10.0,
+    "OverSteerAssist": 15.0,
+    "MinOverSteerAngle": 20.0,
+    "FrontAntiRollPower": 28.0,
+    "RearAntiRollPower": 22.0,
+    "MaxSlopeLockSpeed": 2.0,
+    "SuspensionQueryType": "EMSuspensionQueryType::Sphere",
+    "ConvexAsset": {
+      "ObjectName": "StaticMesh'Cylinder'",
+      "ObjectPath": "/Game/Vehicles/Shared/StaticMeshes/Cylinder.2"
+    },
+    "SleepLinearThreshold": 5.0,
+    "SleepAngularThreshold": 5.0,
+    "SleepWaitingTime": 3.0
+  }
+}

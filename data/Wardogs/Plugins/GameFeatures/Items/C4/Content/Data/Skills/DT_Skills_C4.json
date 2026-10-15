@@ -1,0 +1,70 @@
+--- export: UDataTable / DT_Skills_C4 ---
+{
+  "Type": "DataTable",
+  "Name": "DT_Skills_C4",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/C4/Data/Skills/DT_Skills_C4",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDMetaSkillEffectsTaggedTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Meta.Role.Support.IncreadedDetonatorRange": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Item"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Weapons_DetonatorRangeMultiplier_C'",
+                  "ObjectPath": "/C4/Data/GameplayEffects/GE_Weapons_DetonatorRangeMultiplier.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Weapon.DetonatorRangeMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_SupportSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_SupportSkills.0"
+                        },
+                        "RowName": "IncreasedDetonatorRange"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "DefaultAttributes": [
+                      {
+                        "Key": {
+                          "TagName": "Attribute.Gameplay.Weapon.DetonatorRangeMultiplier"
+                        },
+                        "Value": 1.0
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Support.IncreadedDetonatorRange"
+      }
+    }
+  }
+}

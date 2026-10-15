@@ -1,0 +1,62 @@
+--- export: UDataAsset / DA_VehicleVendor_PromptBarData ---
+{
+  "Type": "WDUIButtonPromptsBarData",
+  "Name": "DA_VehicleVendor_PromptBarData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIButtonPromptsBarData'",
+  "Package": "/Game/UI/Features/Vendor/Data/DA_VehicleVendor_PromptBarData",
+  "Properties": {
+    "ButtonPromptViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIButtonPromptViewModel",
+        "SubPathString": ""
+      }
+    },
+    "UIActionTags": [
+      {
+        "ActionPromptTag": {
+          "TagName": "UI.Action.Feature.Vendor.Purchase"
+        },
+        "ChordedActionPromptTag": {
+          "TagName": "None"
+        },
+        "ActionPromptText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+          "Key": "Prompt.Purchase",
+          "SourceString": "Purchase",
+          "LocalizedString": "Purchase"
+        },
+        "IsHoldable": false,
+        "bUseActionShortName": true,
+        "bUseChordedActionShortName": false,
+        "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+        "ChordedActionPromptTag": [],
+        "ChordedActionPromptTag": [],
+        "_aaabhmnakckdbejpcmlmc_$CD0A2A3149F2CBC2$_$23$": [],
+        "_aaabhahinfhbanpdncpjc_$78D5710DF3D2F92$_$23$": []
+      },
+      {
+        "ActionPromptTag": {
+          "TagName": "UI.Action.Feature.CloseCurrentScene"
+        },
+        "ChordedActionPromptTag": {
+          "TagName": "None"
+        },
+        "ActionPromptText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+          "Key": "Prompt.Back",
+          "SourceString": "Back",
+          "LocalizedString": "Back"
+        },
+        "IsHoldable": false,
+        "bUseActionShortName": true,
+        "bUseChordedActionShortName": false,
+        "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+        "ChordedActionPromptTag": [],
+        "ChordedActionPromptTag": [],
+        "_aaabhmnakckdbejpcmlmc_$CD0A2A3149F2CBC2$_$23$": [],
+        "_aaabhahinfhbanpdncpjc_$78D5710DF3D2F92$_$23$": []
+      }
+    ]
+  }
+}

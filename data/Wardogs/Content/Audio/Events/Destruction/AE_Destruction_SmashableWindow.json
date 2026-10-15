@@ -1,0 +1,61 @@
+--- export: UPrimaryDataAsset / AE_Destruction_SmashableWindow ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Destruction_SmashableWindow",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Destruction/AE_Destruction_SmashableWindow",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Destruction.SmashableWindow"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Destruction_SmashableWindow:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Destruction/AE_Destruction_SmashableWindow.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Destruction_SmashableWindow:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Destruction/AE_Destruction_SmashableWindow.2"
+      }
+    ],
+    "_aaabhonahgpdbjealfaaa_$ED076F31940B5000$_$23$": 102.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Destruction_SmashableWindow'",
+    "ObjectPath": "/Game/Audio/Events/Destruction/AE_Destruction_SmashableWindow.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Destruction_SmashableWindow'",
+    "ObjectPath": "/Game/Audio/Events/Destruction/AE_Destruction_SmashableWindow.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Dest_Glass_WindowSmash'",
+      "ObjectPath": "/Game/Audio/Destruction/MSS/MSS_Dest_Glass_WindowSmash.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

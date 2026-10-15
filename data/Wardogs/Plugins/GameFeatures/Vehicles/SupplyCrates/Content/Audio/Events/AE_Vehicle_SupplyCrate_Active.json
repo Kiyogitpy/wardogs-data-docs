@@ -1,0 +1,59 @@
+--- export: UPrimaryDataAsset / AE_Vehicle_SupplyCrate_Active ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_SupplyCrate_Active",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/SupplyCrates/Audio/Events/AE_Vehicle_SupplyCrate_Active",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.SupplyCrate.Active"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Vehicle_SupplyCrate_Active:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/SupplyCrates/Audio/Events/AE_Vehicle_SupplyCrate_Active.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Vehicle_SupplyCrate_Active:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/SupplyCrates/Audio/Events/AE_Vehicle_SupplyCrate_Active.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_SupplyCrate_Active'",
+    "ObjectPath": "/SupplyCrates/Audio/Events/AE_Vehicle_SupplyCrate_Active.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.SupplyCrate.Active"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_SupplyCrate_Active'",
+    "ObjectPath": "/SupplyCrates/Audio/Events/AE_Vehicle_SupplyCrate_Active.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Item_SupplyCrate_Active'",
+      "ObjectPath": "/SupplyCrates/Audio/MSS/MSS_Item_SupplyCrate_Active.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.SupplyCrate.Active"
+    }
+  }
+}

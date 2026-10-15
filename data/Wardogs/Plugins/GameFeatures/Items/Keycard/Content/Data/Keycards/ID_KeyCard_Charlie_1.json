@@ -1,0 +1,255 @@
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_KeyCard_Charlie_1'",
+    "ObjectPath": "/Keycard/Data/Keycards/ID_KeyCard_Charlie_1.2"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Keycard/Meshes/SM_KeyCard.SM_KeyCard",
+      "SubPathString": ""
+    },
+    "Lifetime": 0.0
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_KeyCard_Charlie_1'",
+    "ObjectPath": "/Keycard/Data/Keycards/ID_KeyCard_Charlie_1.2"
+  }
+}
+--- export: UPrimaryDataAsset / ID_KeyCard_Charlie_1 ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_KeyCard_Charlie_1",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Keycard/Data/Keycards/ID_KeyCard_Charlie_1",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.KeyCard.Charlie.1"
+    },
+    "ItemContext": [
+      "Item.Slot.QuickSlot"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "083EC6EA4545A21BAB3D25956ED774F0",
+      "SourceString": "Charlie Card 1",
+      "LocalizedString": "Charlie Card 1"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_ItemActor'ID_KeyCard_Charlie_1:WDInventoryFragment_ItemActor_0'",
+        "ObjectPath": "/Keycard/Data/Keycards/ID_KeyCard_Charlie_1.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_KeyCard_Charlie_1:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Keycard/Data/Keycards/ID_KeyCard_Charlie_1.1"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_KeyCard_Charlie_1:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Keycard/Data/Keycards/ID_KeyCard_Charlie_1.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_ItemActor_0 ---
+{
+  "Type": "WDInventoryFragment_ItemActor",
+  "Name": "WDInventoryFragment_ItemActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_ItemActor'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_KeyCard_Charlie_1'",
+    "ObjectPath": "/Keycard/Data/Keycards/ID_KeyCard_Charlie_1.2"
+  },
+  "Properties": {
+    "ExtensionDataFragments": [
+      {
+        "ObjectName": "WDItemExtensionData_Holdable'ID_KeyCard_Charlie_1:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Holdable_1'",
+        "ObjectPath": "/Keycard/Data/Keycards/ID_KeyCard_Charlie_1.5"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Inventory'ID_KeyCard_Charlie_1:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InventoryItem_0'",
+        "ObjectPath": "/Keycard/Data/Keycards/ID_KeyCard_Charlie_1.7"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Animation'ID_KeyCard_Charlie_1:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Animation_0'",
+        "ObjectPath": "/Keycard/Data/Keycards/ID_KeyCard_Charlie_1.4"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Input'ID_KeyCard_Charlie_1:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+        "ObjectPath": "/Keycard/Data/Keycards/ID_KeyCard_Charlie_1.6"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Keycard'ID_KeyCard_Charlie_1:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Keycard_0'",
+        "ObjectPath": "/Keycard/Data/Keycards/ID_KeyCard_Charlie_1.8"
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Animation_0 ---
+{
+  "Type": "WDItemExtensionData_Animation",
+  "Name": "WDItemExtensionData_Animation_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Animation'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_KeyCard_Charlie_1:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Keycard/Data/Keycards/ID_KeyCard_Charlie_1.3"
+  },
+  "Properties": {
+    "AnimationSet": {
+      "ObjectName": "BHAnimationSet'AnimSet_KeyCardCharlie1'",
+      "ObjectPath": "/Keycard/Data/Keycards/AnimSet_KeyCardCharlie1.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_Holdable_1 ---
+{
+  "Type": "WDItemExtensionData_Holdable",
+  "Name": "WDItemExtensionData_Holdable_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Holdable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_KeyCard_Charlie_1:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Keycard/Data/Keycards/ID_KeyCard_Charlie_1.3"
+  },
+  "Properties": {
+    "HoldableMesh": {
+      "ObjectName": "SkeletalMesh'SK_UniversalTool'",
+      "ObjectPath": "/Game/Items/Tools/UniversalTool/Assets/SK_UniversalTool.2"
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_UniversalTool_Tool'",
+        "ObjectPath": "/Game/Items/Tools/UniversalTool/Assets/Material/MI_UniversalTool_Tool.0"
+      },
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_WDPlayerGreen_FP'",
+        "ObjectPath": "/Game/Characters/Default_PlayerMesh/FP/Materials/MI_WDPlayerGreen_FP.0"
+      }
+    ],
+    "MeshAnimClass": {
+      "ObjectName": "AnimBlueprintGeneratedClass'ABP_UniversalTool_C'",
+      "ObjectPath": "/Game/Animation/Blueprints/Utilities/ABP_UniversalTool.1"
+    },
+    "EquipAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_Keycard_Equip'",
+        "ObjectPath": "/Keycard/Animation/Character/Montages/AM_FP_Keycard_Equip.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_UniTool_Equip'",
+        "ObjectPath": "/Game/Animation/Characters/Utilities/Universal_Tool/TP/AM_TP_UniTool_Equip.0"
+      }
+    },
+    "HolsterAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_Keycard_Holster'",
+        "ObjectPath": "/Keycard/Animation/Character/Montages/AM_FP_Keycard_Holster.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_UniTool_Holster'",
+        "ObjectPath": "/Game/Animation/Characters/Utilities/Universal_Tool/TP/AM_TP_UniTool_Holster.0"
+      }
+    },
+    "EquippedAnimSet": {
+      "DefaultFirstPersonLayer": {
+        "AssetPathName": "/Keycard/Animation/Blueprints/ABP_FP_Keycard_Layer.ABP_FP_Keycard_Layer_C",
+        "SubPathString": ""
+      },
+      "DefaultThirdPersonLayer": {
+        "AssetPathName": "/Game/Animation/Blueprints/Character/Layers/WeaponArchetypes/AR/ABP_TP_Temp_Layer_RW.ABP_TP_Temp_Layer_RW_C",
+        "SubPathString": ""
+      }
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_InputActionExtension_0 ---
+{
+  "Type": "WDItemExtensionData_Input",
+  "Name": "WDItemExtensionData_InputActionExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Input'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_KeyCard_Charlie_1:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Keycard/Data/Keycards/ID_KeyCard_Charlie_1.3"
+  },
+  "Properties": {
+    "InputMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_Action_KeyCard'",
+      "ObjectPath": "/Game/Weapons/Input/IMC_Action_KeyCard.2"
+    },
+    "InputBehaviors": [
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.Keycard.PrimaryUse"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_KeyCard_Charlie_1:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_1'",
+          "ObjectPath": "/Keycard/Data/Keycards/ID_KeyCard_Charlie_1.9"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_InventoryItem_0 ---
+{
+  "Type": "WDItemExtensionData_Inventory",
+  "Name": "WDItemExtensionData_InventoryItem_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Inventory'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_KeyCard_Charlie_1:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Keycard/Data/Keycards/ID_KeyCard_Charlie_1.3"
+  },
+  "Properties": {
+    "PrimaryUseTag": {
+      "TagName": "None"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_Keycard_0 ---
+{
+  "Type": "WDItemExtensionData_Keycard",
+  "Name": "WDItemExtensionData_Keycard_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Keycard'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_KeyCard_Charlie_1:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Keycard/Data/Keycards/ID_KeyCard_Charlie_1.3"
+  },
+  "Properties": {
+    "KeycardAlignment": {
+      "TagName": "Meta.Alignment.Faction.Charlie"
+    },
+    "KeycardNumber": 1
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_1 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_KeyCard_Charlie_1:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Keycard/Data/Keycards/ID_KeyCard_Charlie_1.6"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Keycard.Use"
+    }
+  }
+}

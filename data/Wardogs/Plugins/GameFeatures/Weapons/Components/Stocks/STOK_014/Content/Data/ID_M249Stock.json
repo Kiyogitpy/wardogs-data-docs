@@ -1,0 +1,69 @@
+--- export: UPrimaryDataAsset / ID_M249Stock ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_M249Stock",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/STOK_014/Data/ID_M249Stock",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.M249Stock"
+    },
+    "ItemContext": [
+      "Item.Attachment.Stock.M249"
+    ],
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_M249Stock:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/STOK_014/Data/ID_M249Stock.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_M249Stock:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/STOK_014/Data/ID_M249Stock.2"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_M249Stock'",
+    "ObjectPath": "/STOK_014/Data/ID_M249Stock.0"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Stock"
+      },
+      "AppliedEffects": [],
+      "AppliedCharacterEffects": [],
+      "bCanBeRemovedInGame": false,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_M249Stock'",
+    "ObjectPath": "/STOK_014/Data/ID_M249Stock.0"
+  },
+  "Properties": {
+    "ItemType": "EWDGunsmithItemType::Attachment"
+  }
+}

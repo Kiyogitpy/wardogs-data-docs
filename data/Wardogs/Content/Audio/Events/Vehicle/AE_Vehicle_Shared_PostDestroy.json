@@ -1,0 +1,59 @@
+--- export: UPrimaryDataAsset / AE_Vehicle_Shared_PostDestroy ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_Shared_PostDestroy",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/AE_Vehicle_Shared_PostDestroy",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Shared.PostDestroy"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Vehicle_Shared_PostDestroy:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Shared_PostDestroy.2"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Vehicle_Shared_PostDestroy:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Shared_PostDestroy.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Shared_PostDestroy'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Shared_PostDestroy.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.PostDestroy"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Shared_PostDestroy'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Shared_PostDestroy.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Vehicle_Shared_Destroy_PostDestroy'",
+      "ObjectPath": "/Game/Audio/Vehicles/Shared/Destroy/MSS_Vehicle_Shared_Destroy_PostDestroy.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.PostDestroy"
+    }
+  }
+}

@@ -1,0 +1,238 @@
+--- export: UObject / WDUIContextMenuAction_BlockPlayer_0 ---
+{
+  "Type": "WDUIContextMenuAction_BlockPlayer",
+  "Name": "WDUIContextMenuAction_BlockPlayer_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIContextMenuAction_BlockPlayer'",
+  "Outer": {
+    "ObjectName": "WDUITooltipContextMenuData'DA_ContextMenuData'",
+    "ObjectPath": "/Game/UI/Features/Tooltips/Widgets/Data/DA_ContextMenuData.5"
+  },
+  "Properties": {
+    "bIsAdminAction": true
+  }
+}
+--- export: UObject / WDUIContextMenuAction_KickPlayer_0 ---
+{
+  "Type": "WDUIContextMenuAction_KickPlayer",
+  "Name": "WDUIContextMenuAction_KickPlayer_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIContextMenuAction_KickPlayer'",
+  "Outer": {
+    "ObjectName": "WDUITooltipContextMenuData'DA_ContextMenuData'",
+    "ObjectPath": "/Game/UI/Features/Tooltips/Widgets/Data/DA_ContextMenuData.5"
+  },
+  "Properties": {
+    "bIsAdminAction": true
+  }
+}
+--- export: UObject / WDUIContextMenuAction_MutePlayer_0 ---
+{
+  "Type": "WDUIContextMenuAction_MutePlayer",
+  "Name": "WDUIContextMenuAction_MutePlayer_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIContextMenuAction_MutePlayer'",
+  "Outer": {
+    "ObjectName": "WDUITooltipContextMenuData'DA_ContextMenuData'",
+    "ObjectPath": "/Game/UI/Features/Tooltips/Widgets/Data/DA_ContextMenuData.5"
+  }
+}
+--- export: UObject / WDUIContextMenuAction_ReportPlayer_0 ---
+{
+  "Type": "WDUIContextMenuAction_ReportPlayer",
+  "Name": "WDUIContextMenuAction_ReportPlayer_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIContextMenuAction_ReportPlayer'",
+  "Outer": {
+    "ObjectName": "WDUITooltipContextMenuData'DA_ContextMenuData'",
+    "ObjectPath": "/Game/UI/Features/Tooltips/Widgets/Data/DA_ContextMenuData.5"
+  }
+}
+--- export: UObject / WDUIContextMenuAction_UnmutePlayer_0 ---
+{
+  "Type": "WDUIContextMenuAction_UnmutePlayer",
+  "Name": "WDUIContextMenuAction_UnmutePlayer_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIContextMenuAction_UnmutePlayer'",
+  "Outer": {
+    "ObjectName": "WDUITooltipContextMenuData'DA_ContextMenuData'",
+    "ObjectPath": "/Game/UI/Features/Tooltips/Widgets/Data/DA_ContextMenuData.5"
+  }
+}
+--- export: UDataAsset / DA_ContextMenuData ---
+{
+  "Type": "WDUITooltipContextMenuData",
+  "Name": "DA_ContextMenuData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUITooltipContextMenuData'",
+  "Package": "/Game/UI/Features/Tooltips/Widgets/Data/DA_ContextMenuData",
+  "Properties": {
+    "ActionButtonParams": [
+      {
+        "Key": {
+          "TagName": "ContextMenu.Action.MutePlayer"
+        },
+        "Value": {
+          "Tag": {
+            "TagName": "ContextMenu.Action.MutePlayer"
+          },
+          "OverrideButtonClass": null,
+          "Action": {
+            "ObjectName": "WDUIContextMenuAction_MutePlayer'DA_ContextMenuData:WDUIContextMenuAction_MutePlayer_0'",
+            "ObjectPath": "/Game/UI/Features/Tooltips/Widgets/Data/DA_ContextMenuData.2"
+          },
+          "Text": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContextMenu.STRINGS_InteractionContextMenu",
+            "Key": "Action.ButtonText.MutePlayer",
+            "SourceString": "Mute",
+            "LocalizedString": "Mute"
+          },
+          "MinimumSize": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Icon": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "bDisabled": false,
+          "DisabledReason": {
+            "CultureInvariantString": null
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "ContextMenu.Action.UnmutePlayer"
+        },
+        "Value": {
+          "Tag": {
+            "TagName": "ContextMenu.Action.UnmutePlayer"
+          },
+          "OverrideButtonClass": null,
+          "Action": {
+            "ObjectName": "WDUIContextMenuAction_UnmutePlayer'DA_ContextMenuData:WDUIContextMenuAction_UnmutePlayer_0'",
+            "ObjectPath": "/Game/UI/Features/Tooltips/Widgets/Data/DA_ContextMenuData.4"
+          },
+          "Text": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContextMenu.STRINGS_InteractionContextMenu",
+            "Key": "Action.ButtonText.UnmutePlayer",
+            "SourceString": "Unmute",
+            "LocalizedString": "Unmute"
+          },
+          "MinimumSize": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Icon": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "bDisabled": false,
+          "DisabledReason": {
+            "CultureInvariantString": null
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "ContextMenu.Action.ReportPlayer"
+        },
+        "Value": {
+          "Tag": {
+            "TagName": "ContextMenu.Action.ReportPlayer"
+          },
+          "OverrideButtonClass": null,
+          "Action": {
+            "ObjectName": "WDUIContextMenuAction_ReportPlayer'DA_ContextMenuData:WDUIContextMenuAction_ReportPlayer_0'",
+            "ObjectPath": "/Game/UI/Features/Tooltips/Widgets/Data/DA_ContextMenuData.3"
+          },
+          "Text": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContextMenu.STRINGS_InteractionContextMenu",
+            "Key": "Action.ButtonText.ReportPlayer",
+            "SourceString": "Report",
+            "LocalizedString": "Report"
+          },
+          "MinimumSize": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Icon": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "bDisabled": false,
+          "DisabledReason": {
+            "CultureInvariantString": null
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "ContextMenu.Action.KickPlayer"
+        },
+        "Value": {
+          "Tag": {
+            "TagName": "ContextMenu.Action.KickPlayer"
+          },
+          "OverrideButtonClass": null,
+          "Action": {
+            "ObjectName": "WDUIContextMenuAction_KickPlayer'DA_ContextMenuData:WDUIContextMenuAction_KickPlayer_0'",
+            "ObjectPath": "/Game/UI/Features/Tooltips/Widgets/Data/DA_ContextMenuData.1"
+          },
+          "Text": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContextMenu.STRINGS_InteractionContextMenu",
+            "Key": "Action.ButtonText.KickPlayer",
+            "SourceString": "Kick Player",
+            "LocalizedString": "Kick Player"
+          },
+          "MinimumSize": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Icon": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "bDisabled": false,
+          "DisabledReason": {
+            "CultureInvariantString": null
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "ContextMenu.Action.BlockPlayer"
+        },
+        "Value": {
+          "Tag": {
+            "TagName": "ContextMenu.Action.BlockPlayer"
+          },
+          "OverrideButtonClass": null,
+          "Action": {
+            "ObjectName": "WDUIContextMenuAction_BlockPlayer'DA_ContextMenuData:WDUIContextMenuAction_BlockPlayer_0'",
+            "ObjectPath": "/Game/UI/Features/Tooltips/Widgets/Data/DA_ContextMenuData.0"
+          },
+          "Text": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContextMenu.STRINGS_InteractionContextMenu",
+            "Key": "Action.ButtonText.BlockPlayer",
+            "SourceString": "Ban Player",
+            "LocalizedString": "Ban Player"
+          },
+          "MinimumSize": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Icon": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "bDisabled": false,
+          "DisabledReason": {
+            "CultureInvariantString": null
+          }
+        }
+      }
+    ]
+  }
+}

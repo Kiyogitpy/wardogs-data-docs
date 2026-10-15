@@ -1,0 +1,128 @@
+--- export: UDataTable / DT_EntityData_UI_Ext_C4 ---
+{
+  "Type": "DataTable",
+  "Name": "DT_EntityData_UI_Ext_C4",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/C4/Data/DT_EntityData_UI_Ext_C4",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'BHEntityData_UI'",
+      "ObjectPath": "/Script/BHFramework"
+    }
+  },
+  "Rows": {
+    "Id.Item.C4Trigger": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+        "Key": "Items.Utility.C4Trigger",
+        "SourceString": "Remote Detonator",
+        "LocalizedString": "Remote Detonator"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+        "Key": "Items.Utility.C4Trigger.Description",
+        "SourceString": "- Detonates placed C4 Charges\r\n- Requires C4 Charges",
+        "LocalizedString": "- Detonates placed C4 Charges\r\n- Requires C4 Charges"
+      },
+      "Category": {
+        "TagName": "Item.Category.Throwable"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "Attribute.Meta.XP.Role.Support"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory.QuickAccess"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.QuickAccess"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+            "Key": "Items.Utility.C4Trigger.Description",
+            "SourceString": "- Detonates placed C4 Charges\r\n- Requires C4 Charges",
+            "LocalizedString": "- Detonates placed C4 Charges\r\n- Requires C4 Charges"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_General.STRINGS_Items_General",
+            "Key": "Items.QuickSlot.Equipment",
+            "SourceString": "Equipment // Quick Slot",
+            "LocalizedString": "Equipment // Quick Slot"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+            "Key": "Items.Utility.C4Trigger.Flavor",
+            "SourceString": "Remote Detonator used to detonate C4 Charges from a safe position.",
+            "LocalizedString": "Remote Detonator used to detonate C4 Charges from a safe position."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Utility/3D/t_ui_icon_c4_trigger.t_ui_icon_c4_trigger",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Utility/3D/t_ui_icon_c4_trigger.t_ui_icon_c4_trigger",
+            "Value": [
+              "UI.Icon.Vendor",
+              "UI.Icon.Inventory.Equipment",
+              "UI.Icon.Inventory.Container",
+              "UI.Icon.Inventory.Pickup.Tooltip",
+              "UI.Icon.DeathRecap.KillCause"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "Id.Item.C4Trigger"
+      }
+    }
+  }
+}

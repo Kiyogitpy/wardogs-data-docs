@@ -1,0 +1,355 @@
+--- export: UDataAsset / EQS_FindCoverCloserToEnemy ---
+{
+  "Type": "EnvQuery",
+  "Name": "EQS_FindCoverCloserToEnemy",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQuery'",
+  "Package": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverCloserToEnemy",
+  "Properties": {
+    "QueryName": "EQS_FindCoverCloserToEnemy",
+    "Options": [
+      {
+        "ObjectName": "EnvQueryOption'EQS_FindCoverCloserToEnemy:EnvQueryOption_1'",
+        "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverCloserToEnemy.1"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryOption_1 ---
+{
+  "Type": "EnvQueryOption",
+  "Name": "EnvQueryOption_1",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryOption'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindCoverCloserToEnemy'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverCloserToEnemy.0"
+  },
+  "Properties": {
+    "Generator": {
+      "ObjectName": "SDEnvQueryGenerator_Covers'EQS_FindCoverCloserToEnemy:SDEnvQueryGenerator_Covers_1'",
+      "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverCloserToEnemy.8"
+    },
+    "Tests": [
+      {
+        "ObjectName": "EnvQueryTest_Dot'EQS_FindCoverCloserToEnemy:EnvQueryTest_Dot_1'",
+        "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverCloserToEnemy.5"
+      },
+      {
+        "ObjectName": "EnvQueryTest_Distance'EQS_FindCoverCloserToEnemy:EnvQueryTest_Distance_3'",
+        "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverCloserToEnemy.4"
+      },
+      {
+        "ObjectName": "WDEnvQueryTest_CoverTrace'EQS_FindCoverCloserToEnemy:WDEnvQueryTest_CoverTrace_0'",
+        "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverCloserToEnemy.13"
+      },
+      {
+        "ObjectName": "EnvQueryTest_Distance'EQS_FindCoverCloserToEnemy:EnvQueryTest_Distance_0'",
+        "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverCloserToEnemy.2"
+      },
+      {
+        "ObjectName": "EnvQueryTest_Distance'EQS_FindCoverCloserToEnemy:EnvQueryTest_Distance_1'",
+        "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverCloserToEnemy.3"
+      },
+      {
+        "ObjectName": "EnvQueryTest_PathfindingBatch'EQS_FindCoverCloserToEnemy:EnvQueryTest_PathfindingBatch_0'",
+        "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverCloserToEnemy.6"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryTest_Distance_0 ---
+{
+  "Type": "EnvQueryTest_Distance",
+  "Name": "EnvQueryTest_Distance_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Distance'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindCoverCloserToEnemy'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverCloserToEnemy.0"
+  },
+  "Properties": {
+    "DistanceTo": {
+      "ObjectName": "BlueprintGeneratedClass'EQS_Context_TargetEnemy_C'",
+      "ObjectPath": "/WDAIPvEAICore/EQS/Context/EQS_Context_TargetEnemy.0"
+    },
+    "TestOrder": 3,
+    "FilterType": "EEnvTestFilterType::Maximum",
+    "FloatValueMin": {
+      "DefaultValue": 500.0,
+      "DataBinding": {
+        "ObjectName": "SDCompositeDataProvider'EQS_FindCoverCloserToEnemy:EnvQueryTest_Distance_0.AIDataProvider_SDComposite_0'",
+        "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverCloserToEnemy.7"
+      },
+      "DataField": "FloatValue"
+    },
+    "FloatValueMax": {
+      "DataBinding": {
+        "ObjectName": "WDAIDataProvider_WeaponData'EQS_FindCoverCloserToEnemy:EnvQueryTest_Distance_0.WDAIDataProvider_WeaponData_0'",
+        "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverCloserToEnemy.10"
+      },
+      "DataField": "DataValue"
+    },
+    "ScoringEquation": "EEnvTestScoreEquation::InverseLinear",
+    "ReferenceValue": {
+      "DataBinding": {
+        "ObjectName": "WDAIDataProvider_WeaponData'EQS_FindCoverCloserToEnemy:EnvQueryTest_Distance_0.WDAIDataProvider_WeaponData_1'",
+        "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverCloserToEnemy.11"
+      },
+      "DataField": "DataValue"
+    },
+    "bDefineReferenceValue": true,
+    "VerNum": 2
+  }
+}
+--- export: UObject / EnvQueryTest_Distance_1 ---
+{
+  "Type": "EnvQueryTest_Distance",
+  "Name": "EnvQueryTest_Distance_1",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Distance'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindCoverCloserToEnemy'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverCloserToEnemy.0"
+  },
+  "Properties": {
+    "DistanceTo": {
+      "ObjectName": "BlueprintGeneratedClass'BP_EnvQueryContext_AliveTeammates_C'",
+      "ObjectPath": "/WDAIPvEAICore/EQS/Context/BP_EnvQueryContext_AliveTeammates.0"
+    },
+    "TestOrder": 4,
+    "TestPurpose": "EEnvTestPurpose::Filter",
+    "FilterType": "EEnvTestFilterType::Minimum",
+    "FloatValueMin": {
+      "DefaultValue": 200.0
+    },
+    "VerNum": 2
+  }
+}
+--- export: UObject / EnvQueryTest_Distance_3 ---
+{
+  "Type": "EnvQueryTest_Distance",
+  "Name": "EnvQueryTest_Distance_3",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Distance'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindCoverCloserToEnemy'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverCloserToEnemy.0"
+  },
+  "Properties": {
+    "TestOrder": 1,
+    "TestPurpose": "EEnvTestPurpose::Score",
+    "FilterType": "EEnvTestFilterType::Minimum",
+    "FloatValueMin": {
+      "DataBinding": {
+        "ObjectName": "WDAIDataProvider_WeaponData'EQS_FindCoverCloserToEnemy:EnvQueryTest_Distance_3.WDAIDataProvider_WeaponData_0'",
+        "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverCloserToEnemy.12"
+      },
+      "DataField": "DataValue"
+    },
+    "ScoringEquation": "EEnvTestScoreEquation::InverseLinear",
+    "ScoringFactor": {
+      "DefaultValue": 0.5
+    },
+    "VerNum": 2
+  }
+}
+--- export: UObject / EnvQueryTest_Dot_1 ---
+{
+  "Type": "EnvQueryTest_Dot",
+  "Name": "EnvQueryTest_Dot_1",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Dot'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindCoverCloserToEnemy'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverCloserToEnemy.0"
+  },
+  "Properties": {
+    "LineA": {
+      "Rotation": {
+        "ObjectName": "Class'EnvQueryContext_Item'",
+        "ObjectPath": "/Script/AIModule"
+      }
+    },
+    "LineB": {
+      "LineFrom": {
+        "ObjectName": "Class'EnvQueryContext_Item'",
+        "ObjectPath": "/Script/AIModule"
+      },
+      "LineTo": {
+        "ObjectName": "BlueprintGeneratedClass'EQS_Context_TargetEnemy_C'",
+        "ObjectPath": "/WDAIPvEAICore/EQS/Context/EQS_Context_TargetEnemy.0"
+      }
+    },
+    "TestMode": "EEnvTestDot::Dot2D",
+    "FilterType": "EEnvTestFilterType::Minimum",
+    "FloatValueMin": {
+      "DefaultValue": 0.7
+    },
+    "FloatValueMax": {
+      "DefaultValue": 1.0
+    },
+    "ScoringEquation": "EEnvTestScoreEquation::Square",
+    "NormalizationType": "EEQSNormalizationType::RelativeToScores",
+    "ScoringFactor": {
+      "DefaultValue": 0.5
+    },
+    "VerNum": 2
+  }
+}
+--- export: UObject / EnvQueryTest_PathfindingBatch_0 ---
+{
+  "Type": "EnvQueryTest_PathfindingBatch",
+  "Name": "EnvQueryTest_PathfindingBatch_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_PathfindingBatch'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindCoverCloserToEnemy'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverCloserToEnemy.0"
+  },
+  "Properties": {
+    "TestOrder": 5,
+    "TestPurpose": "EEnvTestPurpose::Filter",
+    "VerNum": 2
+  }
+}
+--- export: UObject / AIDataProvider_SDComposite_0 ---
+{
+  "Type": "SDCompositeDataProvider",
+  "Name": "AIDataProvider_SDComposite_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'SDCompositeDataProvider'",
+  "Outer": {
+    "ObjectName": "EnvQueryTest_Distance'EQS_FindCoverCloserToEnemy:EnvQueryTest_Distance_0'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverCloserToEnemy.2"
+  },
+  "Properties": {
+    "DataProviders": [
+      {
+        "DefaultValue": 0.0,
+        "DataBinding": {
+          "ObjectName": "WDAIDataProvider_WeaponData'EQS_FindCoverCloserToEnemy:EnvQueryTest_Distance_0.AIDataProvider_SDComposite_0.WDAIDataProvider_WeaponData_0'",
+          "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverCloserToEnemy.9"
+        },
+        "DataField": "DataValue"
+      },
+      {
+        "DefaultValue": 0.5,
+        "DataBinding": null,
+        "DataField": "None"
+      }
+    ],
+    "Operator": "ESDAICompositeOperation::Mul"
+  }
+}
+--- export: UObject / SDEnvQueryGenerator_Covers_1 ---
+{
+  "Type": "SDEnvQueryGenerator_Covers",
+  "Name": "SDEnvQueryGenerator_Covers_1",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'SDEnvQueryGenerator_Covers'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindCoverCloserToEnemy'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverCloserToEnemy.0"
+  },
+  "Properties": {
+    "CenterContext": {
+      "ObjectName": "Class'EnvQueryContext_Querier'",
+      "ObjectPath": "/Script/AIModule"
+    },
+    "Radius": {
+      "DefaultValue": 3000.0,
+      "DataField": "DataValue"
+    },
+    "OnlyFreeCovers": {
+      "DefaultValue": true
+    },
+    "IncludeReservedByMe": {
+      "DefaultValue": true
+    },
+    "VerNum": 1
+  }
+}
+--- export: UObject / WDAIDataProvider_WeaponData_0 ---
+{
+  "Type": "WDAIDataProvider_WeaponData",
+  "Name": "WDAIDataProvider_WeaponData_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAIDataProvider_WeaponData'",
+  "Outer": {
+    "ObjectName": "SDCompositeDataProvider'EQS_FindCoverCloserToEnemy:EnvQueryTest_Distance_0.AIDataProvider_SDComposite_0'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverCloserToEnemy.7"
+  },
+  "Properties": {
+    "WeaponDataField": "EAIWeaponDataField::MinAIRange"
+  }
+}
+--- export: UObject / WDAIDataProvider_WeaponData_0 ---
+{
+  "Type": "WDAIDataProvider_WeaponData",
+  "Name": "WDAIDataProvider_WeaponData_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAIDataProvider_WeaponData'",
+  "Outer": {
+    "ObjectName": "EnvQueryTest_Distance'EQS_FindCoverCloserToEnemy:EnvQueryTest_Distance_0'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverCloserToEnemy.2"
+  },
+  "Properties": {
+    "WeaponDataField": "EAIWeaponDataField::MaxAIRange"
+  }
+}
+--- export: UObject / WDAIDataProvider_WeaponData_1 ---
+{
+  "Type": "WDAIDataProvider_WeaponData",
+  "Name": "WDAIDataProvider_WeaponData_1",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAIDataProvider_WeaponData'",
+  "Outer": {
+    "ObjectName": "EnvQueryTest_Distance'EQS_FindCoverCloserToEnemy:EnvQueryTest_Distance_0'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverCloserToEnemy.2"
+  },
+  "Properties": {
+    "WeaponDataField": "EAIWeaponDataField::MinAIRange"
+  }
+}
+--- export: UObject / WDAIDataProvider_WeaponData_0 ---
+{
+  "Type": "WDAIDataProvider_WeaponData",
+  "Name": "WDAIDataProvider_WeaponData_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAIDataProvider_WeaponData'",
+  "Outer": {
+    "ObjectName": "EnvQueryTest_Distance'EQS_FindCoverCloserToEnemy:EnvQueryTest_Distance_3'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverCloserToEnemy.4"
+  },
+  "Properties": {
+    "WeaponDataField": "EAIWeaponDataField::MinAIRange"
+  }
+}
+--- export: UObject / WDEnvQueryTest_CoverTrace_0 ---
+{
+  "Type": "WDEnvQueryTest_CoverTrace",
+  "Name": "WDEnvQueryTest_CoverTrace_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDEnvQueryTest_CoverTrace'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindCoverCloserToEnemy'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverCloserToEnemy.0"
+  },
+  "Properties": {
+    "TraceData": {
+      "TraceMode": "EEnvQueryTrace::GeometryByChannel",
+      "bOnlyBlockingHits": false
+    },
+    "Context": {
+      "ObjectName": "BlueprintGeneratedClass'EQS_Context_TargetEnemy_C'",
+      "ObjectPath": "/WDAIPvEAICore/EQS/Context/EQS_Context_TargetEnemy.0"
+    },
+    "TestOrder": 2,
+    "TestPurpose": "EEnvTestPurpose::Filter",
+    "BoolValue": {
+      "DefaultValue": false
+    },
+    "VerNum": 2
+  }
+}

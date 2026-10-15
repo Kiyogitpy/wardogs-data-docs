@@ -1,0 +1,40 @@
+--- export: UPrimaryDataAsset / AE_Debug_AnimSync ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Debug_AnimSync",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/AE_Debug_AnimSync",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Debug.AnimSync"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Debug_AnimSync:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/AE_Debug_AnimSync.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Debug_AnimSync'",
+    "ObjectPath": "/Game/Audio/Events/AE_Debug_AnimSync.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Debug_AnimSync'",
+      "ObjectPath": "/Game/Audio/Test/MSS/MSS_Debug_AnimSync.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Debug.AnimSync"
+    }
+  }
+}

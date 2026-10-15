@@ -1,0 +1,75 @@
+--- export: UPrimaryDataAsset / DA_155mm_Standard_ProjectileData_SB ---
+{
+  "Type": "WDProjectileData",
+  "Name": "DA_155mm_Standard_ProjectileData_SB",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDProjectileData'",
+  "Package": "/Game/GameMechanics/Inventory/Equipment/Caliber/155mm/DA_155mm_Standard_ProjectileData_SB",
+  "Properties": {
+    "ProjectileId": {
+      "TagName": "Item.Caliber.155mm.Standard.Sandbox"
+    },
+    "ProjectileStats": {
+      "DamageEntityData": {
+        "Tag": {
+          "TagName": "Meta.Damage.Explosive.Rocket.155mm"
+        }
+      },
+      "DamageValues": {
+        "BaseDamage": 450.0,
+        "ExplosiveRadius": 2000.0,
+        "EffectiveExplosiveRadius": 750.0,
+        "ExplosiveDamageFallOff": 0.5
+      },
+      "ProjectileDimensions": {
+        "Length": 25.4,
+        "Diameter": 8.4,
+        "Mass": 70.0,
+        "DragModel": {
+          "Value": 80.0,
+          "Curve": {
+            "CurveTable": {
+              "ObjectName": "CurveTable'CT_Projectile_DragCoefficients'",
+              "ObjectPath": "/Game/Items/Resources/Ammo/Curves/CT_Projectile_DragCoefficients.0"
+            },
+            "RowName": "GC (Cylinder)"
+          }
+        }
+      },
+      "ProjectileEffects": {
+        "GameplayCueTag": {
+          "TagName": "GameplayCue.Weapon.RocketProjectile"
+        },
+        "AudioEventTag": {
+          "TagName": "Audio.Event.Projectile.Rocket.Travel.155mm"
+        }
+      },
+      "SuppressionData": {
+        "BaseSuppression": 0.8,
+        "DistanceFalloffCurve": {
+          "EditorCurveData": {}
+        }
+      },
+      "MaxProjectileLifetime": 40.0,
+      "AttachedEffect": {
+        "AssetPathName": "/Game/VFX/Weapons/RocketLauncher/NS_ProjectileTrail_155mm.NS_ProjectileTrail_155mm",
+        "SubPathString": ""
+      },
+      "bUseProjectileActor": true,
+      "ProjectileActor": {
+        "AssetPathName": "/Game/Vehicles/Weapons/WeaponExtensions/ProjectileActors/BP_155mm_Standard.BP_155mm_Standard_C",
+        "SubPathString": ""
+      },
+      "bActorHandlesProjectileMovement": true,
+      "TracerChance": 1.0,
+      "TypicalSpeed": 15000.0,
+      "bShouldPenetrate": false,
+      "MinImpactAngleForRicochet": 91.0,
+      "bShouldPreSimulate": false,
+      "ThrustSpeed": 22000.0,
+      "bClientPredictive": false,
+      "PerceivedImpactRange": 100000.0,
+      "IgnoreInstigatorVehicleTime": 0.5
+    }
+  }
+}

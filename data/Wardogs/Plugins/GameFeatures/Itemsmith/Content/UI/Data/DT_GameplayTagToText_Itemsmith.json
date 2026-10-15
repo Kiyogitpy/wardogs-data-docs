@@ -1,0 +1,448 @@
+--- export: UDataTable / DT_GameplayTagToText_Itemsmith ---
+{
+  "Type": "DataTable",
+  "Name": "DT_GameplayTagToText_Itemsmith",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Itemsmith/UI/Data/DT_GameplayTagToText_Itemsmith",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUIGameplayTagToTextTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Item.Archetype.AR": {
+      "Text": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Itemsmith.STRINGS_Itemsmith",
+        "Key": "Itemsmith.Archetype.AR",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Item.Archetype.AR"
+      }
+    },
+    "Item.Archetype.DMR": {
+      "Text": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Itemsmith.STRINGS_Itemsmith",
+        "Key": "Itemsmith.Archetype.DMR",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Item.Archetype.DMR"
+      }
+    },
+    "Item.Archetype.Grenade": {
+      "Text": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Itemsmith.STRINGS_Itemsmith",
+        "Key": "Itemsmith.Archetype.Grenade",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Item.Archetype.Grenade"
+      }
+    },
+    "Item.Archetype.Launcher": {
+      "Text": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Itemsmith.STRINGS_Itemsmith",
+        "Key": "Itemsmith.Archetype.Launcher",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Item.Archetype.Launcher"
+      }
+    },
+    "Item.Archetype.LMG": {
+      "Text": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Itemsmith.STRINGS_Itemsmith",
+        "Key": "Itemsmith.Archetype.LMG",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Item.Archetype.LMG"
+      }
+    },
+    "Item.Archetype.Melee": {
+      "Text": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Itemsmith.STRINGS_Itemsmith",
+        "Key": "Itemsmith.Archetype.Melee",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Item.Archetype.Melee"
+      }
+    },
+    "Item.Archetype.Pistol": {
+      "Text": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Itemsmith.STRINGS_Itemsmith",
+        "Key": "Itemsmith.Archetype.Pistol",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Item.Archetype.Pistol"
+      }
+    },
+    "Item.Archetype.Shotgun": {
+      "Text": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Itemsmith.STRINGS_Itemsmith",
+        "Key": "Itemsmith.Archetype.Shotgun",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Item.Archetype.Shotgun"
+      }
+    },
+    "Item.Archetype.SMG": {
+      "Text": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Itemsmith.STRINGS_Itemsmith",
+        "Key": "Itemsmith.Archetype.SMG",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Item.Archetype.SMG"
+      }
+    },
+    "Item.Archetype.Sniper": {
+      "Text": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Itemsmith.STRINGS_Itemsmith",
+        "Key": "Itemsmith.Archetype.Sniper",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Item.Archetype.Sniper"
+      }
+    },
+    "Itemsmith.Flair.WeaponPaint.Title": {
+      "Text": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Itemsmith.STRINGS_Itemsmith",
+        "Key": "Itemsmith.Flair.WeaponPaint.Title",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Itemsmith.Flair.WeaponPaint.Title"
+      }
+    },
+    "Input.NamedActions.ItemSmith.ExpandStats": {
+      "Text": {
+        "Namespace": "",
+        "Key": "476C83DB4D8118006A1ABAA0D6781EC0",
+        "SourceString": "Expand Stats",
+        "LocalizedString": "Expand Stats"
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Input.NamedActions.ItemSmith.ExpandStats"
+      }
+    },
+    "Input.NamedActions.ItemSmith.CollapseStats": {
+      "Text": {
+        "Namespace": "",
+        "Key": "0E0C56704D868F5EEE96B68B900A3FA3",
+        "SourceString": "Collapse Stats",
+        "LocalizedString": "Collapse Stats"
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Input.NamedActions.ItemSmith.CollapseStats"
+      }
+    },
+    "Itemsmith.Rename.NameExists": {
+      "Text": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Itemsmith_Popups.STRINGS_Itemsmith_Popups",
+        "Key": "Itemsmith.Rename.NameExists",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Itemsmith.Rename.NameExists"
+      }
+    },
+    "Itemsmith.Rename.EnterName": {
+      "Text": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Itemsmith_Popups.STRINGS_Itemsmith_Popups",
+        "Key": "Itemsmith.Rename.EnterName",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Itemsmith.Rename.EnterName"
+      }
+    },
+    "Itemsmith.Rename.NameTooShort": {
+      "Text": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Itemsmith_Popups.STRINGS_Itemsmith_Popups",
+        "Key": "Itemsmith.Rename.NameTooShort",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Itemsmith.Rename.NameTooShort"
+      }
+    },
+    "Item.Attachment.Barrel": {
+      "Text": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Gunsmith_Attachments.STRINGS_Gunsmith_Attachments",
+        "Key": "Itemsmith.Attachment.Barrel",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Item.Attachment.Barrel"
+      }
+    },
+    "Item.Attachment.CantedSight": {
+      "Text": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Gunsmith_Attachments.STRINGS_Gunsmith_Attachments",
+        "Key": "Itemsmith.Attachment.CantedSight",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Item.Attachment.CantedSight"
+      }
+    },
+    "Item.Attachment.Chamber": {
+      "Text": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Gunsmith_Attachments.STRINGS_Gunsmith_Attachments",
+        "Key": "Itemsmith.Attachment.Chamber",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Item.Attachment.Chamber"
+      }
+    },
+    "Item.Attachment.Charm": {
+      "Text": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Gunsmith_Attachments.STRINGS_Gunsmith_Attachments",
+        "Key": "Itemsmith.Attachment.Charm",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Item.Attachment.Charm"
+      }
+    },
+    "Item.Attachment.Grip": {
+      "Text": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Gunsmith_Attachments.STRINGS_Gunsmith_Attachments",
+        "Key": "Itemsmith.Attachment.Grip",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Item.Attachment.Grip"
+      }
+    },
+    "Item.Attachment.Handguard": {
+      "Text": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Gunsmith_Attachments.STRINGS_Gunsmith_Attachments",
+        "Key": "Itemsmith.Attachment.Handguard",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Item.Attachment.Handguard"
+      }
+    },
+    "Item.Attachment.Mag": {
+      "Text": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Gunsmith_Attachments.STRINGS_Gunsmith_Attachments",
+        "Key": "Itemsmith.Attachment.Mag",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Item.Attachment.Mag"
+      }
+    },
+    "Item.Attachment.Magazine": {
+      "Text": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Gunsmith_Attachments.STRINGS_Gunsmith_Attachments",
+        "Key": "Itemsmith.Attachment.Magazine",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Item.Attachment.Magazine"
+      }
+    },
+    "Item.Attachment.MountLeft": {
+      "Text": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Gunsmith_Attachments.STRINGS_Gunsmith_Attachments",
+        "Key": "Itemsmith.Attachment.MountLeft",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Item.Attachment.MountLeft"
+      }
+    },
+    "Item.Attachment.MountRight": {
+      "Text": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Gunsmith_Attachments.STRINGS_Gunsmith_Attachments",
+        "Key": "Itemsmith.Attachment.MountRight",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Item.Attachment.MountRight"
+      }
+    },
+    "Item.Attachment.MountTop": {
+      "Text": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Gunsmith_Attachments.STRINGS_Gunsmith_Attachments",
+        "Key": "Itemsmith.Attachment.MountTop",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Item.Attachment.MountTop"
+      }
+    },
+    "Item.Attachment.MountUnder": {
+      "Text": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Gunsmith_Attachments.STRINGS_Gunsmith_Attachments",
+        "Key": "Itemsmith.Attachment.MountUnder",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Item.Attachment.MountUnder"
+      }
+    },
+    "Item.Attachment.Muzzle": {
+      "Text": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Gunsmith_Attachments.STRINGS_Gunsmith_Attachments",
+        "Key": "Itemsmith.Attachment.Muzzle",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Item.Attachment.Muzzle"
+      }
+    },
+    "Item.Attachment.Pistolgrip": {
+      "Text": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Gunsmith_Attachments.STRINGS_Gunsmith_Attachments",
+        "Key": "Itemsmith.Attachment.Pistolgrip",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Item.Attachment.Pistolgrip"
+      }
+    },
+    "Item.Attachment.Receiver": {
+      "Text": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Gunsmith_Attachments.STRINGS_Gunsmith_Attachments",
+        "Key": "Itemsmith.Attachment.Receiver",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Item.Attachment.Receiver"
+      }
+    },
+    "Item.Attachment.Sight": {
+      "Text": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Gunsmith_Attachments.STRINGS_Gunsmith_Attachments",
+        "Key": "Itemsmith.Attachment.Sight",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Item.Attachment.Sight"
+      }
+    },
+    "Item.Attachment.SightMount": {
+      "Text": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Gunsmith_Attachments.STRINGS_Gunsmith_Attachments",
+        "Key": "Itemsmith.Attachment.SightMount",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Item.Attachment.SightMount"
+      }
+    },
+    "Item.Attachment.Bipod": {
+      "Text": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Gunsmith_Attachments.STRINGS_Gunsmith_Attachments",
+        "Key": "Itemsmith.Attachment.Sniper.Bipod",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Item.Attachment.Bipod"
+      }
+    },
+    "Item.Attachment.Stock": {
+      "Text": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Gunsmith_Attachments.STRINGS_Gunsmith_Attachments",
+        "Key": "Itemsmith.Attachment.Stock",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Item.Attachment.Stock"
+      }
+    },
+    "Item.Attachment.Underbarrel": {
+      "Text": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Gunsmith_Attachments.STRINGS_Gunsmith_Attachments",
+        "Key": "Itemsmith.Attachment.Underbarrel",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "Item.Attachment.Underbarrel"
+      }
+    }
+  }
+}

@@ -1,0 +1,99 @@
+--- export: UObject / BHUserSettingEnumDiscreteValues_1 ---
+{
+  "Type": "BHUserSettingEnumDiscreteValues",
+  "Name": "BHUserSettingEnumDiscreteValues_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingEnumDiscreteValues'",
+  "Outer": {
+    "ObjectName": "WDUserSettingDiscretePresetData'DA_Setting_Controls_Gamepad_DeadZonePreset_Triggers'",
+    "ObjectPath": "/Game/GameMechanics/Settings/Controls/DA_Setting_Controls_Gamepad_DeadZonePreset_Triggers.1"
+  },
+  "Properties": {
+    "NamedValues": [
+      {
+        "Key": "EWDDeadZoneTriggerPresets::None",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Controls.STRINGS_Settings_Controls",
+          "Key": "Preset.Gamepad.Deadzone.None",
+          "SourceString": "None",
+          "LocalizedString": "None"
+        }
+      },
+      {
+        "Key": "EWDDeadZoneTriggerPresets::Custom",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Controls.STRINGS_Settings_Controls",
+          "Key": "Preset.Gamepad.Deadzone.Custom",
+          "SourceString": "Custom",
+          "LocalizedString": "Custom"
+        }
+      }
+    ],
+    "Values": [
+      {
+        "Key": "0",
+        "Value": {
+          "Namespace": "",
+          "Key": "8A2DFD7342A3965E03A4E3855B4F20D1",
+          "SourceString": "None",
+          "LocalizedString": "None"
+        }
+      },
+      {
+        "Key": "1",
+        "Value": {
+          "Namespace": "",
+          "Key": "81F321E14B150A5A73062DBFBAE9F5CF",
+          "SourceString": "Custom",
+          "LocalizedString": "Custom"
+        }
+      }
+    ]
+  }
+}
+--- export: UDataAsset / DA_Setting_Controls_Gamepad_DeadZonePreset_Triggers ---
+{
+  "Type": "WDUserSettingDiscretePresetData",
+  "Name": "DA_Setting_Controls_Gamepad_DeadZonePreset_Triggers",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUserSettingDiscretePresetData'",
+  "Package": "/Game/GameMechanics/Settings/Controls/DA_Setting_Controls_Gamepad_DeadZonePreset_Triggers",
+  "Properties": {
+    "SettingPresets": [
+      {
+        "SettingPreset": [
+          {
+            "Key": {
+              "TagName": "UserSettings.Controls.Gamepad.DeadZone.LeftTrigger.Max"
+            },
+            "Value": 100.0
+          },
+          {
+            "Key": {
+              "TagName": "UserSettings.Controls.Gamepad.DeadZone.LeftTrigger.Min"
+            },
+            "Value": 0.0
+          },
+          {
+            "Key": {
+              "TagName": "UserSettings.Controls.Gamepad.DeadZone.RightTrigger.Max"
+            },
+            "Value": 100.0
+          },
+          {
+            "Key": {
+              "TagName": "UserSettings.Controls.Gamepad.DeadZone.RightTrigger.Min"
+            },
+            "Value": 0.0
+          }
+        ]
+      }
+    ],
+    "Parameters": {
+      "DefaultValues": {
+        "ObjectName": "BHUserSettingEnumDiscreteValues'DA_Setting_Controls_Gamepad_DeadZonePreset_Triggers:BHUserSettingEnumDiscreteValues_1'",
+        "ObjectPath": "/Game/GameMechanics/Settings/Controls/DA_Setting_Controls_Gamepad_DeadZonePreset_Triggers.0"
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+--- export: UDataTable / DT_LootedComponentTypes_FOB ---
+{
+  "Type": "DataTable",
+  "Name": "DT_LootedComponentTypes_FOB",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Buildables/Data/UI/DT_LootedComponentTypes_FOB",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUITaggedWidgetParamsRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Inventory.Type.FOB": {
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Buildables/Data/UI/W_InventoryComponent_Looted_FOB.W_InventoryComponent_Looted_FOB_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUILootedComponentViewModel_Storage",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Buildables/Data/UI/DA_LootedComponent_FOB.DA_LootedComponent_FOB",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+      },
+      "Tag": {
+        "TagName": "Inventory.Type.FOB"
+      }
+    }
+  }
+}

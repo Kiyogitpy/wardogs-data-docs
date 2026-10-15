@@ -1,0 +1,45 @@
+--- export: UDataAsset / DA_Tracker_Spatial_Buildable ---
+{
+  "Type": "WDUIBuildableSpatialTrackerData",
+  "Name": "DA_Tracker_Spatial_Buildable",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIBuildableSpatialTrackerData'",
+  "Package": "/Buildables/Data/UI/DA_Tracker_Spatial_Buildable",
+  "Properties": {
+    "RuleSets": [
+      {
+        "Key": "EWDUISpatialRulesetType::Default",
+        "Value": {
+          "Priority": 0,
+          "OptionalRules": [
+            {
+              "ObjectName": "WDUIWorldDistanceOpacityRules'DA_Tracker_Spatial_Buildable:WDUIWorldDistanceOpacityRules_0'",
+              "ObjectPath": "/Buildables/Data/UI/DA_Tracker_Spatial_Buildable.1"
+            }
+          ]
+        }
+      }
+    ],
+    "DefaultSize": {
+      "X": 110.0,
+      "Y": 42.0
+    }
+  }
+}
+--- export: UObject / WDUIWorldDistanceOpacityRules_0 ---
+{
+  "Type": "WDUIWorldDistanceOpacityRules",
+  "Name": "WDUIWorldDistanceOpacityRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIWorldDistanceOpacityRules'",
+  "Outer": {
+    "ObjectName": "WDUIBuildableSpatialTrackerData'DA_Tracker_Spatial_Buildable'",
+    "ObjectPath": "/Buildables/Data/UI/DA_Tracker_Spatial_Buildable.0"
+  },
+  "Properties": {
+    "MaximumVisibleDistance": 5.0,
+    "FalloffRangeMaximum": 2.0,
+    "SquaredFalloffRangeMaximum": 160000.0,
+    "SquaredMaximumVisibleDistance": 250000.0
+  }
+}

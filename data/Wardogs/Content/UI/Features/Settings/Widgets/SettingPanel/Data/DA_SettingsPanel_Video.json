@@ -1,0 +1,287 @@
+--- export: UDataAsset / DA_SettingsPanel_Video ---
+{
+  "Type": "WDUISettingsPanelData",
+  "Name": "DA_SettingsPanel_Video",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUISettingsPanelData'",
+  "Package": "/Game/UI/Features/Settings/Widgets/SettingPanel/Data/DA_SettingsPanel_Video",
+  "Properties": {
+    "Tabs": [
+      {
+        "Key": {
+          "TagName": "UI.Settings.Tab.Video.Display"
+        },
+        "Value": {
+          "TabText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Settings_Video.STRINGS_Settings_Video",
+            "Key": "Category.Display",
+            "SourceString": "Display",
+            "LocalizedString": "Display"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Settings.Tab.Video.Quality"
+        },
+        "Value": {
+          "TabText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Settings_Video.STRINGS_Settings_Video",
+            "Key": "Category.Quality",
+            "SourceString": "Quality",
+            "LocalizedString": "Quality"
+          }
+        }
+      }
+    ],
+    "CategorizedSettings": [
+      {
+        "CategoryText": {
+          "Namespace": "",
+          "Key": "C3B193AC4476FE362DDCCC992FD5F6A4",
+          "SourceString": "Display",
+          "LocalizedString": "Display"
+        },
+        "TabTag": {
+          "TagName": "UI.Settings.Tab.Video.Display"
+        },
+        "Settings": [
+          {
+            "TagName": "UserSettings.Video.DisplayMode"
+          },
+          {
+            "TagName": "UserSettings.Video.Resolution"
+          },
+          {
+            "TagName": "UserSettings.Video.Scalability.ResolutionScale"
+          },
+          {
+            "TagName": "UserSettings.Video.DynamicResolution"
+          },
+          {
+            "TagName": "UserSettings.Video.Brightness"
+          },
+          {
+            "TagName": "UserSettings.Video.Sharpness"
+          },
+          {
+            "TagName": "UserSettings.Video.FrameLimit"
+          },
+          {
+            "TagName": "UserSettings.Video.VSync"
+          },
+          {
+            "TagName": "UserSettings.Video.NVIDIA.Reflex"
+          },
+          {
+            "TagName": "UserSettings.Video.BackgroundFrameRateLimit"
+          }
+        ]
+      },
+      {
+        "CategoryText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Video.STRINGS_Settings_Video",
+          "Key": "DisplayName.Scalability.ResolutionGroup",
+          "SourceString": "Resolution Quality",
+          "LocalizedString": "Resolution Quality"
+        },
+        "TabTag": {
+          "TagName": "UI.Settings.Tab.Video.Display"
+        },
+        "Settings": [
+          {
+            "TagName": "UserSettings.Video.UpscalingMethod"
+          },
+          {
+            "TagName": "UserSettings.Video.NVIDIA.DLSS"
+          },
+          {
+            "TagName": "UserSettings.Video.NVIDIA.DLSSG"
+          },
+          {
+            "TagName": "UserSettings.Video.FSR3"
+          },
+          {
+            "TagName": "UserSettings.Video.XeSS"
+          },
+          {
+            "TagName": "UserSettings.Video.Scalability.Antialiasing"
+          }
+        ]
+      },
+      {
+        "CategoryText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Video.STRINGS_Settings_Video",
+          "Key": "Category.Overall",
+          "SourceString": "Overall",
+          "LocalizedString": "Overall"
+        },
+        "TabTag": {
+          "TagName": "UI.Settings.Tab.Video.Quality"
+        },
+        "Settings": [
+          {
+            "TagName": "UserSettings.Video.Scalability.QualityPreset"
+          }
+        ]
+      },
+      {
+        "CategoryText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Video.STRINGS_Settings_Video",
+          "Key": "DisplayName.GeometryGroup",
+          "SourceString": "Geometry",
+          "LocalizedString": "Geometry"
+        },
+        "TabTag": {
+          "TagName": "UI.Settings.Tab.Video.Quality"
+        },
+        "Settings": [
+          {
+            "TagName": "UserSettings.Video.Scalability.Mesh"
+          }
+        ]
+      },
+      {
+        "CategoryText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Video.STRINGS_Settings_Video",
+          "Key": "DisplayName.EnvironmentGroup",
+          "SourceString": "Environment",
+          "LocalizedString": "Environment"
+        },
+        "TabTag": {
+          "TagName": "UI.Settings.Tab.Video.Quality"
+        },
+        "Settings": [
+          {
+            "TagName": "UserSettings.Video.Scalability.ViewDistance"
+          },
+          {
+            "TagName": "UserSettings.Video.Scalability.Foliage"
+          },
+          {
+            "TagName": "UserSettings.Video.Scalability.Shading"
+          }
+        ]
+      },
+      {
+        "CategoryText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Video.STRINGS_Settings_Video",
+          "Key": "DisplayName.LightingGroup",
+          "SourceString": "Lighting",
+          "LocalizedString": "Lighting"
+        },
+        "TabTag": {
+          "TagName": "UI.Settings.Tab.Video.Quality"
+        },
+        "Settings": [
+          {
+            "TagName": "UserSettings.Video.Scalability.GlobalIllumination"
+          },
+          {
+            "TagName": "UserSettings.Video.Scalability.Shadows"
+          },
+          {
+            "TagName": "UserSettings.Video.Scalability.Reflections"
+          }
+        ]
+      },
+      {
+        "CategoryText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Video.STRINGS_Settings_Video",
+          "Key": "DisplayName.EffectsGroup",
+          "SourceString": "Effects",
+          "LocalizedString": "Effects"
+        },
+        "TabTag": {
+          "TagName": "UI.Settings.Tab.Video.Quality"
+        },
+        "Settings": [
+          {
+            "TagName": "UserSettings.Video.Scalability.VFX"
+          },
+          {
+            "TagName": "UserSettings.Video.Scalability.ParticleSpawnRate"
+          }
+        ]
+      },
+      {
+        "CategoryText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Video.STRINGS_Settings_Video",
+          "Key": "DisplayName.Postprocessing",
+          "SourceString": "Post Processing Quality",
+          "LocalizedString": "Post Processing Quality"
+        },
+        "TabTag": {
+          "TagName": "UI.Settings.Tab.Video.Quality"
+        },
+        "Settings": [
+          {
+            "TagName": "UserSettings.Video.Scalability.Postprocessing"
+          },
+          {
+            "TagName": "UserSettings.Video.MotionBlur"
+          },
+          {
+            "TagName": "UserSettings.Video.Scalability.MotionBlur"
+          },
+          {
+            "TagName": "UserSettings.Video.DOF"
+          },
+          {
+            "TagName": "UserSettings.Video.Scalability.DOF"
+          },
+          {
+            "TagName": "UserSettings.Video.LensFlare"
+          },
+          {
+            "TagName": "UserSettings.Video.Scalability.LensFlare"
+          },
+          {
+            "TagName": "UserSettings.Video.Bloom"
+          },
+          {
+            "TagName": "UserSettings.Video.Scalability.Bloom"
+          }
+        ]
+      },
+      {
+        "CategoryText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Video.STRINGS_Settings_Video",
+          "Key": "DisplayName.Textures",
+          "SourceString": "Textures",
+          "LocalizedString": "Textures"
+        },
+        "TabTag": {
+          "TagName": "UI.Settings.Tab.Video.Quality"
+        },
+        "Settings": [
+          {
+            "TagName": "UserSettings.Video.Scalability.WorldTexture"
+          },
+          {
+            "TagName": "UserSettings.Video.Scalability.CharacterTexture"
+          },
+          {
+            "TagName": "UserSettings.Video.Scalability.EffectsTexture"
+          },
+          {
+            "TagName": "UserSettings.Video.Scalability.Textures"
+          },
+          {
+            "TagName": "UserSettings.Video.Scalability.TextureFiltering"
+          }
+        ]
+      }
+    ],
+    "SettingEntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUISettingEntryViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Settings/Widgets/SettingEntry/Data/DA_SettingEntry.DA_SettingEntry",
+        "SubPathString": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+--- export: UDataAsset / IA_AdminPanel_Toggle ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_AdminPanel_Toggle",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_AdminPanel_Toggle",
+  "Properties": {
+    "InputTag": {
+      "TagName": "UI.Action.Feature.AdminPanel.ToggleScene"
+    },
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerPressed'IA_AdminPanel_Toggle:InputTriggerPressed_0'",
+        "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_AdminPanel_Toggle.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_AdminPanel_Toggle'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_AdminPanel_Toggle.0"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.2
+  }
+}

@@ -1,0 +1,87 @@
+--- export: UDataAsset / DA_Itemsmith_Flair_Setting_Finish_Discrete ---
+{
+  "Type": "BHUserSettingDiscreteData",
+  "Name": "DA_Itemsmith_Flair_Setting_Finish_Discrete",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingDiscreteData'",
+  "Package": "/Itemsmith/UI/Flair/PaintSelect/Data/DA_Itemsmith_Flair_Setting_Finish_Discrete",
+  "Properties": {
+    "Parameters": {
+      "DefaultValues": {
+        "ObjectName": "BHUserSettingEnumDiscreteValues'DA_Itemsmith_Flair_Setting_Finish_Discrete:BHUserSettingEnumDiscreteValues_1'",
+        "ObjectPath": "/Itemsmith/UI/Flair/PaintSelect/Data/DA_Itemsmith_Flair_Setting_Finish_Discrete.1"
+      }
+    }
+  }
+}
+--- export: UObject / BHUserSettingEnumDiscreteValues_1 ---
+{
+  "Type": "BHUserSettingEnumDiscreteValues",
+  "Name": "BHUserSettingEnumDiscreteValues_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingEnumDiscreteValues'",
+  "Outer": {
+    "ObjectName": "BHUserSettingDiscreteData'DA_Itemsmith_Flair_Setting_Finish_Discrete'",
+    "ObjectPath": "/Itemsmith/UI/Flair/PaintSelect/Data/DA_Itemsmith_Flair_Setting_Finish_Discrete.0"
+  },
+  "Properties": {
+    "NamedValues": [
+      {
+        "Key": "EWDFlairPaintFinish::Unspecified",
+        "Value": {
+          "TableId": "/Itemsmith/UI/Flair/PaintSelect/STRINGS_Itemsmith_PaintSelect.STRINGS_Itemsmith_PaintSelect",
+          "Key": "Itemsmith.Flair.PaintSelect.Settings.Finish.Unspecified",
+          "SourceString": null,
+          "LocalizedString": ""
+        }
+      },
+      {
+        "Key": "EWDFlairPaintFinish::Matte",
+        "Value": {
+          "TableId": "/Itemsmith/UI/Flair/PaintSelect/STRINGS_Itemsmith_PaintSelect.STRINGS_Itemsmith_PaintSelect",
+          "Key": "Itemsmith.Flair.PaintSelect.Settings.Finish.Matte",
+          "SourceString": null,
+          "LocalizedString": ""
+        }
+      },
+      {
+        "Key": "EWDFlairPaintFinish::Gloss",
+        "Value": {
+          "TableId": "/Itemsmith/UI/Flair/PaintSelect/STRINGS_Itemsmith_PaintSelect.STRINGS_Itemsmith_PaintSelect",
+          "Key": "Itemsmith.Flair.PaintSelect.Settings.Finish.Gloss",
+          "SourceString": null,
+          "LocalizedString": ""
+        }
+      }
+    ],
+    "Values": [
+      {
+        "Key": "0",
+        "Value": {
+          "TableId": "/Itemsmith/UI/Flair/PaintSelect/STRINGS_Itemsmith_PaintSelect.STRINGS_Itemsmith_PaintSelect",
+          "Key": "Itemsmith.Flair.PaintSelect.Settings.Finish.Unspecified",
+          "SourceString": null,
+          "LocalizedString": ""
+        }
+      },
+      {
+        "Key": "1",
+        "Value": {
+          "TableId": "/Itemsmith/UI/Flair/PaintSelect/STRINGS_Itemsmith_PaintSelect.STRINGS_Itemsmith_PaintSelect",
+          "Key": "Itemsmith.Flair.PaintSelect.Settings.Finish.Matte",
+          "SourceString": null,
+          "LocalizedString": ""
+        }
+      },
+      {
+        "Key": "2",
+        "Value": {
+          "TableId": "/Itemsmith/UI/Flair/PaintSelect/STRINGS_Itemsmith_PaintSelect.STRINGS_Itemsmith_PaintSelect",
+          "Key": "Itemsmith.Flair.PaintSelect.Settings.Finish.Gloss",
+          "SourceString": null,
+          "LocalizedString": ""
+        }
+      }
+    ]
+  }
+}

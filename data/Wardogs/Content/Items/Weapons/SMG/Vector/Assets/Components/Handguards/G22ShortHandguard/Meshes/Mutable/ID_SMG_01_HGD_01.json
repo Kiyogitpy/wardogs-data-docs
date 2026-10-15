@@ -1,0 +1,80 @@
+--- export: UPrimaryDataAsset / ID_SMG_01_HGD_01 ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_SMG_01_HGD_01",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Weapons/SMG/Vector/Assets/Components/Handguards/G22ShortHandguard/Meshes/Mutable/ID_SMG_01_HGD_01",
+  "Properties": {
+    "ItemId": {
+      "TagName": "ID.Item.SMG_01_HGD_01"
+    },
+    "ItemContext": [
+      "Item.Attachment.Handguard.Vector"
+    ],
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_SMG_01_HGD_01:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/Game/Items/Weapons/SMG/Vector/Assets/Components/Handguards/G22ShortHandguard/Meshes/Mutable/ID_SMG_01_HGD_01.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_SMG_01_HGD_01:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/Game/Items/Weapons/SMG/Vector/Assets/Components/Handguards/G22ShortHandguard/Meshes/Mutable/ID_SMG_01_HGD_01.2"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SMG_01_HGD_01'",
+    "ObjectPath": "/Game/Items/Weapons/SMG/Vector/Assets/Components/Handguards/G22ShortHandguard/Meshes/Mutable/ID_SMG_01_HGD_01.0"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Handguard"
+      },
+      "AppliedEffects": [],
+      "AppliedCharacterEffects": [],
+      "bCanBeRemovedInGame": false,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SMG_01_HGD_01'",
+    "ObjectPath": "/Game/Items/Weapons/SMG/Vector/Assets/Components/Handguards/G22ShortHandguard/Meshes/Mutable/ID_SMG_01_HGD_01.0"
+  },
+  "Properties": {
+    "TextureParamDefaults": [
+      {
+        "Key": {
+          "TagName": "Item.Flair.BaseTexture.Handguard"
+        },
+        "Value": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ],
+    "ItemType": "EWDGunsmithItemType::Attachment"
+  }
+}

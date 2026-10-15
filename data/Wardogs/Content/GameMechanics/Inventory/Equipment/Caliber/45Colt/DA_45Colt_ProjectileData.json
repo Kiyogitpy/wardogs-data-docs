@@ -1,0 +1,66 @@
+--- export: UPrimaryDataAsset / DA_45Colt_ProjectileData ---
+{
+  "Type": "WDProjectileData",
+  "Name": "DA_45Colt_ProjectileData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDProjectileData'",
+  "Package": "/Game/GameMechanics/Inventory/Equipment/Caliber/45Colt/DA_45Colt_ProjectileData",
+  "Properties": {
+    "ProjectileId": {
+      "TagName": "Item.Caliber.45Colt"
+    },
+    "ProjectileStats": {
+      "DamageEntityData": {
+        "Tag": {
+          "TagName": "Meta.Damage.Bullet.45Colt"
+        },
+        "Context": [
+          "Meta.Damage.Arms.Small"
+        ]
+      },
+      "DamageValues": {
+        "BaseDamage": 45.0,
+        "ImpulseValues": {
+          "bApplyImpulse": true,
+          "ImpulseScale": 9000.0
+        }
+      },
+      "ProjectileDimensions": {
+        "Length": 1.8796,
+        "Diameter": 1.14,
+        "Mass": 0.01,
+        "DragModel": {
+          "Curve": {
+            "CurveTable": {
+              "ObjectName": "CurveTable'CT_Projectile_DragCoefficients'",
+              "ObjectPath": "/Game/Items/Resources/Ammo/Curves/CT_Projectile_DragCoefficients.0"
+            },
+            "RowName": "G1 (Flat Bottom)"
+          }
+        }
+      },
+      "ProjectileEffects": {
+        "GameplayCueTag": {
+          "TagName": "GameplayCue.Weapon.Projectile"
+        }
+      },
+      "SuppressionData": {
+        "BaseSuppression": 0.25,
+        "DistanceFalloffRange": {
+          "Min": 0.3
+        },
+        "DistanceFalloffCurve": {
+          "EditorCurveData": {}
+        }
+      },
+      "AttachedEffect": {
+        "AssetPathName": "/Game/VFX/Weapons/Tracers/NS_Tracer_45Colt.NS_Tracer_45Colt",
+        "SubPathString": ""
+      },
+      "TypicalSpeed": 29200.0,
+      "PenetrationExitSpeedMultiplier": 0.3,
+      "TravelDistanceForWhizBy": 1000.0,
+      "DistanceToPlayerForWhizBy": 700.0
+    }
+  }
+}

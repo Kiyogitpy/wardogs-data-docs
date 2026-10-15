@@ -1,0 +1,33 @@
+--- export: UDataAsset / DA_Significance_Buildable ---
+{
+  "Type": "BHSignificanceSettingsAsset",
+  "Name": "DA_Significance_Buildable",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHSignificanceSettingsAsset'",
+  "Package": "/Buildables/Data/Buildables/DA_Significance_Buildable",
+  "Properties": {
+    "SignificanceEvaluators": [
+      {
+        "ObjectName": "BHSignificanceEvaluator_Sphere'DA_Significance_Evaluator_Buildable'",
+        "ObjectPath": "/Buildables/Data/Buildables/DA_Significance_Evaluator_Buildable.0"
+      }
+    ],
+    "LevelSettings": [
+      {
+        "TickRate": -1.0,
+        "SignificanceUpdateRate": 1.0,
+        "LocationUpdateRate": 1.0
+      },
+      {
+        "TickRate": -1.0,
+        "SignificanceUpdateRate": 1.5,
+        "LocationUpdateRate": 1.5
+      },
+      {
+        "TickRate": -1.0,
+        "SignificanceUpdateRate": 5.0,
+        "LocationUpdateRate": 5.0
+      }
+    ]
+  }
+}

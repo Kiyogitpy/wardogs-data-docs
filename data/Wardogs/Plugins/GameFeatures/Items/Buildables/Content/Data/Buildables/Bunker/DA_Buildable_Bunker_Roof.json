@@ -1,0 +1,124 @@
+--- export: UObject / WDActorBuildSpawner_0 ---
+{
+  "Type": "WDActorBuildSpawner",
+  "Name": "WDActorBuildSpawner_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDActorBuildSpawner'",
+  "Outer": {
+    "ObjectName": "WDBuildableDataAsset'DA_Buildable_Bunker_Roof'",
+    "ObjectPath": "/Buildables/Data/Buildables/Bunker/DA_Buildable_Bunker_Roof.1"
+  },
+  "Properties": {
+    "BaseBuildableClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Buildable_C'",
+      "ObjectPath": "/Buildables/Data/Buildables/B_Buildable.2"
+    }
+  }
+}
+--- export: UDataAsset / DA_Buildable_Bunker_Roof ---
+{
+  "Type": "WDBuildableDataAsset",
+  "Name": "DA_Buildable_Bunker_Roof",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDBuildableDataAsset'",
+  "Package": "/Buildables/Data/Buildables/Bunker/DA_Buildable_Bunker_Roof",
+  "Properties": {
+    "SpawnerOverride": {
+      "ObjectName": "WDActorBuildSpawner'DA_Buildable_Bunker_Roof:WDActorBuildSpawner_0'",
+      "ObjectPath": "/Buildables/Data/Buildables/Bunker/DA_Buildable_Bunker_Roof.0"
+    },
+    "EntityTag": {
+      "TagName": "Id.Buildable.Bunker.Roof"
+    },
+    "Cost": 10,
+    "_aaabfagpiegcpjedampen_$6F8462F9430CF4D$_$21$": 0.67,
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "AFD4C8BC409DE270B4E31BB4403D9A53",
+      "SourceString": "Bunker",
+      "LocalizedString": "Bunker"
+    },
+    "MaxHealth": 2250.0,
+    "_aaabhobcmifficciohpfp_$E12C8558228E7F5F$_$23$": 0,
+    "BuildingStagesDefinition": {
+      "ObjectName": "BuildingStagesDefinition'DA_Buildable_Bunker_Roof_Stages'",
+      "ObjectPath": "/Buildables/Data/Buildables/Bunker/DA_Buildable_Bunker_Roof_Stages.0"
+    },
+    "BuildingStages": [
+      {
+        "Mesh": {
+          "AssetPathName": "/Buildables/Data/Buildables/Bunker/SM_Bunker_Roof_01A.SM_Bunker_Roof_01A",
+          "SubPathString": ""
+        },
+        "MeshLocalBoundingBox": {
+          "Min": {
+            "X": -382.31192,
+            "Y": -366.1128,
+            "Z": -215.54507
+          },
+          "Max": {
+            "X": 367.36096,
+            "Y": 367.73395,
+            "Z": 110.41064
+          },
+          "IsValid": 1
+        },
+        "RequiredBuildingProgress": 1.0,
+        "BuildingStageChangedVFXHeightFromBase": 0.0,
+        "CriticalHitSpotTransforms": []
+      }
+    ],
+    "BuildingStageChangedVFX": {
+      "AssetPathName": "/Buildables/Data/Buildables/NS_BuildStage_NoOffset.NS_BuildStage_NoOffset",
+      "SubPathString": ""
+    },
+    "NiagaraDataChannelAsset": {
+      "AssetPathName": "/Game/VFX/Building/DataChannel/NDC_Buildable.NDC_Buildable",
+      "SubPathString": ""
+    },
+    "FinalStageBoundingBox": {
+      "Min": {
+        "X": -382.31192,
+        "Y": -366.1128,
+        "Z": -215.54507
+      },
+      "Max": {
+        "X": 367.36096,
+        "Y": 367.73395,
+        "Z": 110.41064
+      },
+      "IsValid": 1
+    },
+    "ConstructedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Constructed"
+    },
+    "DestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Destroyed"
+    },
+    "PlacedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Placed"
+    },
+    "_aaabigdbeocppfeehmfch_$6314E2FF5447C527$_$24$": {
+      "TagName": "GameplayCue.Buildable.Dismantle"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Buildable.Bunker"
+      }
+    },
+    "PlacementConditions": [
+      {
+        "ObjectName": "Class'WDWithinFobBoundsPlacementCondition'",
+        "ObjectPath": "/Script/BuildablesRuntime"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_WithinLadderBoundsPlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_WithinLadderBoundsPlacementCondition.1"
+      }
+    ],
+    "bUsesCriticalHitSpots": false,
+    "RadialWheelSlotTag": {
+      "TagName": "UI.RadialWheel.BuildTool.SlotType.Bunker"
+    }
+  }
+}

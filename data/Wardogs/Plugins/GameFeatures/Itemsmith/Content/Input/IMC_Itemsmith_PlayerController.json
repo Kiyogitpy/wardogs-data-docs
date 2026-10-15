@@ -1,0 +1,444 @@
+--- export: UObject / BHPlayerMappableKeySettings_11 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_11",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith_PlayerController'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_PlayerController.2"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "UI.Action.Feature.PauseMenu.ToggleScene"
+    },
+    "Name": "UI.Action.Feature.PauseMenu.ToggleScene"
+  }
+}
+--- export: UObject / BHPlayerMappableKeySettings_4 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith_PlayerController'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_PlayerController.2"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Player.Look"
+    },
+    "SlotContext": "EBHMappableSlotContext::NoSlot",
+    "Name": "Input.NamedActions.Player.Look"
+  }
+}
+--- export: UDataAsset / IMC_Itemsmith_PlayerController ---
+{
+  "Type": "InputMappingContext",
+  "Name": "IMC_Itemsmith_PlayerController",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputMappingContext'",
+  "Package": "/Itemsmith/Input/IMC_Itemsmith_PlayerController",
+  "Properties": {
+    "DefaultKeyMappings": {
+      "Mappings": [
+        {
+          "Triggers": [],
+          "Modifiers": [
+            {
+              "ObjectName": "WDApplyAxisConfig'IMC_Itemsmith_PlayerController:WDApplyAxisConfig_0'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_PlayerController.10"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Look'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_Look.0"
+          },
+          "Key": {
+            "KeyName": "Mouse2D"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "WDAlwaysTickGamepadInputTrigger'IMC_Itemsmith_PlayerController:WDAlwaysTickGamepadInputTrigger_1'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_PlayerController.9"
+            }
+          ],
+          "Modifiers": [
+            {
+              "ObjectName": "WDRerouteAxisInput'IMC_Itemsmith_PlayerController:WDRerouteAxisInput_0'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_PlayerController.13"
+            },
+            {
+              "ObjectName": "WDDeadZoneInputModifier'IMC_Itemsmith_PlayerController:WDDeadZoneInputModifier_0'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_PlayerController.12"
+            },
+            {
+              "ObjectName": "WDResponseCurveTypeModifier'IMC_Itemsmith_PlayerController:WDResponseCurveTypeModifier_0'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_PlayerController.14"
+            },
+            {
+              "ObjectName": "InputModifierNegate'IMC_Itemsmith_PlayerController:InputModifierNegate_0'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_PlayerController.3"
+            },
+            {
+              "ObjectName": "WDApplyAxisConfig'IMC_Itemsmith_PlayerController:WDApplyAxisConfig_1'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_PlayerController.11"
+            },
+            {
+              "ObjectName": "WDAimAssistInputModifier'IMC_Itemsmith_PlayerController:WDAimAssistInputModifier_0'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_PlayerController.8"
+            },
+            {
+              "ObjectName": "InputModifierScalar'IMC_Itemsmith_PlayerController:InputModifierScalar_2'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_PlayerController.4"
+            },
+            {
+              "ObjectName": "InputModifierScaleByDeltaTime'IMC_Itemsmith_PlayerController:InputModifierScaleByDeltaTime_0'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_PlayerController.5"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Look'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_Look.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_Right2D"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_Itemsmith_PlayerController:BHPlayerMappableKeySettings_4'",
+            "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_PlayerController.1"
+          }
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerTap'IMC_Itemsmith_PlayerController:InputTriggerTap_3'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_PlayerController.7"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_UI_PauseMenu_Open'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_UI_PauseMenu_Open.0"
+          },
+          "Key": {
+            "KeyName": "Escape"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_Itemsmith_PlayerController:BHPlayerMappableKeySettings_11'",
+            "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_PlayerController.0"
+          }
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerTap'IMC_Itemsmith_PlayerController:InputTriggerTap_2'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_PlayerController.6"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_UI_PauseMenu_Open'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_UI_PauseMenu_Open.0"
+          },
+          "Key": {
+            "KeyName": "F10"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_UI_PauseMenu_Open'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_UI_PauseMenu_Open.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_Special_Right"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        }
+      ]
+    }
+  }
+}
+--- export: UObject / InputModifierNegate_0 ---
+{
+  "Type": "InputModifierNegate",
+  "Name": "InputModifierNegate_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierNegate'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith_PlayerController'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_PlayerController.2"
+  },
+  "Properties": {
+    "bX": false,
+    "bZ": false
+  }
+}
+--- export: UObject / InputModifierScalar_2 ---
+{
+  "Type": "InputModifierScalar",
+  "Name": "InputModifierScalar_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierScalar'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith_PlayerController'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_PlayerController.2"
+  },
+  "Properties": {
+    "Scalar": {
+      "X": 60.0,
+      "Y": 60.0,
+      "Z": 60.0
+    }
+  }
+}
+--- export: UObject / InputModifierScaleByDeltaTime_0 ---
+{
+  "Type": "InputModifierScaleByDeltaTime",
+  "Name": "InputModifierScaleByDeltaTime_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierScaleByDeltaTime'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith_PlayerController'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_PlayerController.2"
+  }
+}
+--- export: UObject / InputTriggerTap_2 ---
+{
+  "Type": "InputTriggerTap",
+  "Name": "InputTriggerTap_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerTap'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith_PlayerController'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_PlayerController.2"
+  }
+}
+--- export: UObject / InputTriggerTap_3 ---
+{
+  "Type": "InputTriggerTap",
+  "Name": "InputTriggerTap_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerTap'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith_PlayerController'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_PlayerController.2"
+  }
+}
+--- export: UObject / WDAimAssistInputModifier_0 ---
+{
+  "Type": "WDAimAssistInputModifier",
+  "Name": "WDAimAssistInputModifier_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAimAssistInputModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith_PlayerController'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_PlayerController.2"
+  },
+  "Properties": {
+    "DefaultFilterData": {
+      "ObjectName": "BHAimAssistFilterData'DA_AimAssistFilter'",
+      "ObjectPath": "/Game/Items/Weapons/DA_AimAssistFilter.0"
+    },
+    "DefaultSettingsData": {
+      "ObjectName": "BHAimAssistSettingsData'DA_AimAssistSettings_LMG'",
+      "ObjectPath": "/Game/Items/Weapons/DA_AimAssistSettings_LMG.0"
+    },
+    "MoveInputAction": {
+      "ObjectName": "BHInputAction'IA_Player_MoveDirectional'",
+      "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_MoveDirectional.0"
+    }
+  }
+}
+--- export: UObject / WDAlwaysTickGamepadInputTrigger_1 ---
+{
+  "Type": "WDAlwaysTickGamepadInputTrigger",
+  "Name": "WDAlwaysTickGamepadInputTrigger_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAlwaysTickGamepadInputTrigger'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith_PlayerController'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_PlayerController.2"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.01
+  }
+}
+--- export: UObject / WDApplyAxisConfig_0 ---
+{
+  "Type": "WDApplyAxisConfig",
+  "Name": "WDApplyAxisConfig_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDApplyAxisConfig'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith_PlayerController'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_PlayerController.2"
+  }
+}
+--- export: UObject / WDApplyAxisConfig_1 ---
+{
+  "Type": "WDApplyAxisConfig",
+  "Name": "WDApplyAxisConfig_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDApplyAxisConfig'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith_PlayerController'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_PlayerController.2"
+  },
+  "Properties": {
+    "bIsGamepad": true
+  }
+}
+--- export: UObject / WDDeadZoneInputModifier_0 ---
+{
+  "Type": "WDDeadZoneInputModifier",
+  "Name": "WDDeadZoneInputModifier_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDDeadZoneInputModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith_PlayerController'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_PlayerController.2"
+  },
+  "Properties": {
+    "MinThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.LookStick.Centre"
+    },
+    "MaxThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.LookStick.MaxInput"
+    },
+    "RadiusAxialThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.LookStick.Axial"
+    },
+    "bInvertMaxThreshold": true
+  }
+}
+--- export: UObject / WDRerouteAxisInput_0 ---
+{
+  "Type": "WDRerouteAxisInput",
+  "Name": "WDRerouteAxisInput_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDRerouteAxisInput'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith_PlayerController'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_PlayerController.2"
+  },
+  "Properties": {
+    "RerouteAxisConfigs": [
+      {
+        "Key": {
+          "TagName": "Input.Gamepad.Config.Axis.Default"
+        },
+        "Value": {
+          "InputKeyAxisX": {
+            "KeyName": "Gamepad_RightX"
+          },
+          "NegateX": false,
+          "InputKeyAxisY": {
+            "KeyName": "Gamepad_RightY"
+          },
+          "NegateY": false
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.Gamepad.Config.Axis.Southpaw"
+        },
+        "Value": {
+          "InputKeyAxisX": {
+            "KeyName": "Gamepad_LeftX"
+          },
+          "NegateX": false,
+          "InputKeyAxisY": {
+            "KeyName": "Gamepad_LeftY"
+          },
+          "NegateY": true
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.Gamepad.Config.Axis.Legacy"
+        },
+        "Value": {
+          "InputKeyAxisX": {
+            "KeyName": "Gamepad_RightX"
+          },
+          "NegateX": false,
+          "InputKeyAxisY": {
+            "KeyName": "Gamepad_LeftY"
+          },
+          "NegateY": true
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.Gamepad.Config.Axis.LegacySouthpaw"
+        },
+        "Value": {
+          "InputKeyAxisX": {
+            "KeyName": "Gamepad_LeftX"
+          },
+          "NegateX": false,
+          "InputKeyAxisY": {
+            "KeyName": "Gamepad_RightY"
+          },
+          "NegateY": false
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDResponseCurveTypeModifier_0 ---
+{
+  "Type": "WDResponseCurveTypeModifier",
+  "Name": "WDResponseCurveTypeModifier_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDResponseCurveTypeModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith_PlayerController'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_PlayerController.2"
+  },
+  "Properties": {
+    "ResponseCurves": [
+      {
+        "Key": "EWDGamepadResponseCurveType::Classic",
+        "Value": {
+          "ObjectName": "CurveFloat'CRV_GamepadResponseCurve_Classic'",
+          "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/ResponseCurves/CRV_GamepadResponseCurve_Classic.0"
+        }
+      },
+      {
+        "Key": "EWDGamepadResponseCurveType::Standard",
+        "Value": {
+          "ObjectName": "CurveFloat'CRV_GamepadResponseCurve_Standard'",
+          "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/ResponseCurves/CRV_GamepadResponseCurve_Standard.0"
+        }
+      },
+      {
+        "Key": "EWDGamepadResponseCurveType::Dynamic",
+        "Value": {
+          "ObjectName": "CurveFloat'CRV_GamepadResponseCurve_Dynamic'",
+          "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/ResponseCurves/CRV_GamepadResponseCurve_Dynamic.0"
+        }
+      },
+      {
+        "Key": "EWDGamepadResponseCurveType::Linear",
+        "Value": {
+          "ObjectName": "CurveFloat'CRV_GamepadResponseCurve_Linear'",
+          "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/ResponseCurves/CRV_GamepadResponseCurve_Linear.0"
+        }
+      }
+    ]
+  }
+}

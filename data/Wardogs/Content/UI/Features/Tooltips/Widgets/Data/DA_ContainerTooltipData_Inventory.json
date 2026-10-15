@@ -1,0 +1,107 @@
+--- export: UDataAsset / DA_ContainerTooltipData_Inventory ---
+{
+  "Type": "WDUITooltipContainerData",
+  "Name": "DA_ContainerTooltipData_Inventory",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUITooltipContainerData'",
+  "Package": "/Game/UI/Features/Tooltips/Widgets/Data/DA_ContainerTooltipData_Inventory",
+  "Properties": {
+    "ItemWidgetsParams": [
+      {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/TooltipItems/W_TooltipItem_Equipped.W_TooltipItem_Equipped_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUITooltipItemViewModel_Equipped",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+      },
+      {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/TooltipItems/W_TooltipItem_Header_Inventory.W_TooltipItem_Header_Inventory_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUITooltipItemViewModelInventory_Header",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/TooltipItems/Data/DA_TooltipItem_HeaderData_Default.DA_TooltipItem_HeaderData_Default",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+      },
+      {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/TooltipItems/W_TooltipItem_Description.W_TooltipItem_Description_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUITooltipItemViewModel_Description",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/TooltipItems/Data/DA_TooltipItem_DescriptionData_Default.DA_TooltipItem_DescriptionData_Default",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+      },
+      {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/TooltipItems/W_TooltipItem_EntityText.W_TooltipItem_EntityText_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUITooltipItemViewModel_EntityText",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/TooltipItems/Data/DA_TooltipItem_EntityText_Flavor.DA_TooltipItem_EntityText_Flavor",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+      },
+      {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/TooltipItems/W_TooltipItem_SubDescription.W_TooltipItem_SubDescription_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUITooltipItemViewModel_SubslotDescriptions",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/TooltipItems/Data/DA_TooltipItem_SubslotDescriptionData.DA_TooltipItem_SubslotDescriptionData",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+      }
+    ],
+    "ButtonPromptsBarViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIButtonPromptsBarViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/Data/ButtonPromptData/DA_ItemCard_PromptBarData_Inventory.DA_ItemCard_PromptBarData_Inventory",
+        "SubPathString": ""
+      }
+    }
+  }
+}

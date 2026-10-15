@@ -1,0 +1,78 @@
+--- export: UDataAsset / DA_WHL_01_PredictionSettings ---
+{
+  "Type": "MVehiclePredictionSettings_Wheeled",
+  "Name": "DA_WHL_01_PredictionSettings",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVehiclePredictionSettings_Wheeled'",
+  "Package": "/WHL_01/Config/DA_WHL_01_PredictionSettings",
+  "Properties": {
+    "Settings": {
+      "ResimulationSettings": {
+        "bOverrideResimulationErrorPositionThreshold": true,
+        "bOverrideResimulationErrorRotationThreshold": true,
+        "bOverrideResimulationErrorLinearVelocityThreshold": true,
+        "bOverrideResimulationErrorAngularVelocityThreshold": true,
+        "bOverrideRuntimeCorrectionEnabled": true,
+        "bOverrideRuntimeVelocityCorrection": true,
+        "bOverridePosStabilityMultiplier": true,
+        "bOverrideRotStabilityMultiplier": true,
+        "bOverrideVelStabilityMultiplier": true,
+        "bOverrideAngVelStabilityMultiplier": true,
+        "ResimulationErrorPositionThreshold": 20.0,
+        "ResimulationErrorRotationThreshold": 6.0,
+        "ResimulationErrorLinearVelocityThreshold": 40.0,
+        "ResimulationErrorAngularVelocityThreshold": 8.0,
+        "bRuntimeCorrectionEnabled": true,
+        "bRuntimeVelocityCorrection": true,
+        "PosStabilityMultiplier": 0.4,
+        "RotStabilityMultiplier": 0.4,
+        "VelStabilityMultiplier": 0.4,
+        "AngVelStabilityMultiplier": 0.4
+      },
+      "NetworkPhysicsComponentSettings": {
+        "bOverrideRedundantInputs": true,
+        "bOverrideRedundantStates": true,
+        "RedundantStates": 2,
+        "InputDecayCurve": {
+          "EditorCurveData": {
+            "Keys": [
+              {
+                "InterpMode": "RCIM_Linear",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.0,
+                "Value": 0.0,
+                "ArriveTangent": 0.0,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.0,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Linear",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.5,
+                "Value": 1.0,
+                "ArriveTangent": 0.0,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.0,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Linear",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 1.0,
+                "Value": 1.0,
+                "ArriveTangent": 0.0,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.0,
+                "LeaveTangentWeight": 0.0
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

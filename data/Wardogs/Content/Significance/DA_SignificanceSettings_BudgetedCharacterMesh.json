@@ -1,0 +1,33 @@
+--- export: UDataAsset / DA_SignificanceSettings_BudgetedCharacterMesh ---
+{
+  "Type": "BHSignificanceSettingsAsset",
+  "Name": "DA_SignificanceSettings_BudgetedCharacterMesh",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHSignificanceSettingsAsset'",
+  "Package": "/Game/Significance/DA_SignificanceSettings_BudgetedCharacterMesh",
+  "Properties": {
+    "SignificanceEvaluators": [
+      {
+        "ObjectName": "BHSignificanceEvaluator_Sphere'DA_Significance_Evaluator_Sphere_BudgetedCharacterMesh'",
+        "ObjectPath": "/Game/Significance/Evaluators/DA_Significance_Evaluator_Sphere_BudgetedCharacterMesh.0"
+      }
+    ],
+    "LevelSettings": [
+      {
+        "TickRate": 0.0,
+        "SignificanceUpdateRate": 0.03,
+        "LocationUpdateRate": 0.03
+      },
+      {
+        "TickRate": 0.0,
+        "SignificanceUpdateRate": 0.1,
+        "LocationUpdateRate": 0.1
+      },
+      {
+        "TickRate": 0.0,
+        "SignificanceUpdateRate": 0.1,
+        "LocationUpdateRate": 0.1
+      }
+    ]
+  }
+}

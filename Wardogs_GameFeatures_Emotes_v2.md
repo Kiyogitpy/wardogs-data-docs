@@ -4,7 +4,7 @@ parent: "Game Features"
 ---
 
 # Wardogs: GameFeatures Emotes Reference (v2)
-*Source: exported JSON under `Wardogs/Plugins/GameFeatures/Emotes` (3 files, 1 folder: `Season01_EmotesData`). This is the full emote data set in the dump. Numbers and tags are read from the export.*
+*Source: exported JSON under [`Wardogs/Plugins/GameFeatures/Emotes`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Emotes) (3 files, 1 folder: [`Season01_EmotesData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Emotes/Season01_EmotesData/Content/Season01_EmotesData.json)). This is the full emote data set in the dump. Numbers and tags are read from the export.*
 
 ---
 
@@ -12,9 +12,9 @@ parent: "Game Features"
 
 | File | Type | Contents |
 |---|---|---|
-| `DT_Cosmetics_Season01_Emotes` | DataTable (`WDCosmeticData`) | 3 cosmetic rows |
-| `DT_EntityData_Ext_Emotes` | DataTable (`BHEntityData_UI`) | 6 entity rows with display names and icons |
-| `Season01_EmotesData` | GameFeatureAction_DataRegistrySource | Registers the entity table |
+| [`DT_Cosmetics_Season01_Emotes`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Emotes/Season01_EmotesData/Content/Data/DT_Cosmetics_Season01_Emotes.json) | DataTable (`WDCosmeticData`) | 3 cosmetic rows |
+| [`DT_EntityData_Ext_Emotes`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Emotes/Season01_EmotesData/Content/Data/DT_EntityData_Ext_Emotes.json) | DataTable (`BHEntityData_UI`) | 6 entity rows with display names and icons |
+| [`Season01_EmotesData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Emotes/Season01_EmotesData/Content/Season01_EmotesData.json) | GameFeatureAction_DataRegistrySource | Registers the entity table |
 
 ---
 

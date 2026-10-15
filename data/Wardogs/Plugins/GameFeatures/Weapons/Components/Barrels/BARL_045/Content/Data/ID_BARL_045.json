@@ -1,0 +1,146 @@
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_BARL_045'",
+    "ObjectPath": "/BARL_045/Data/ID_BARL_045.1"
+  },
+  "Properties": {
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Item.Attachment.Muzzle"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::BlockPriority",
+          "AllowedSubSlotItems": [
+            "Id.Item.MUZL_042",
+            "Id.Item.MUZL_062"
+          ],
+          "AllowedSubSlotContext": [
+            "Item.Attachment.Muzzle.WEPN_035"
+          ],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": -2,
+        "MaxSlotAmountStackSize": 1,
+        "bAllowsStackedPacking": false,
+        "bIsHiddenContainer": false,
+        "_aaabelnajgoacnpmnokoe_$BD096E02DFCDEAE4$_$20$": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": []
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / ID_BARL_045 ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_BARL_045",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/BARL_045/Data/ID_BARL_045",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.BARL_045"
+    },
+    "ItemContext": [
+      "Item.Attachment.Barrel.WEPN_035"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "190132ED41F953FDB1F5CEA47B0FBA1B",
+      "SourceString": "Scout Rifle Standard Barrel",
+      "LocalizedString": "Scout Rifle Standard Barrel"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_BARL_045:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/BARL_045/Data/ID_BARL_045.2"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_BARL_045:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/BARL_045/Data/ID_BARL_045.4"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_BARL_045:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/BARL_045/Data/ID_BARL_045.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_BARL_045:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/BARL_045/Data/ID_BARL_045.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_BARL_045'",
+    "ObjectPath": "/BARL_045/Data/ID_BARL_045.1"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Barrel"
+      },
+      "AppliedEffects": [],
+      "AppliedCharacterEffects": [],
+      "bCanBeRemovedInGame": false,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_BARL_045'",
+    "ObjectPath": "/BARL_045/Data/ID_BARL_045.1"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Attachment_Audio'",
+      "ObjectPath": "/Game/Audio/Weapon/Attachments/ID_Attachment_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_BARL_045'",
+    "ObjectPath": "/BARL_045/Data/ID_BARL_045.1"
+  },
+  "Properties": {
+    "ItemType": "EWDGunsmithItemType::Attachment"
+  }
+}

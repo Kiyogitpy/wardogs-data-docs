@@ -1,0 +1,89 @@
+--- export: UDataAsset / WE_WHL_05_RingMinigun ---
+{
+  "Type": "WDVehicleWeaponExtensionDataAsset",
+  "Name": "WE_WHL_05_RingMinigun",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeaponExtensionDataAsset'",
+  "Package": "/WHL_05_Minigun/Weapons/WeaponExtensions/WE_WHL_05_RingMinigun",
+  "Properties": {
+    "WeaponExtensionTag": {
+      "TagName": "Id.Vehicle.WeaponExtension.WHL_05.RingMinigun"
+    },
+    "WeaponItemId": {
+      "TagName": "Id.Item.HumveeVehicleRingMinigun"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Weapon.Vehicle.Turret.Minigun"
+      }
+    },
+    "WeaponExtensionName": "Minigun",
+    "WeaponStatsData": {
+      "ObjectName": "WDWeaponStatsData'DA_WHL_05_RingMinigun_Stats'",
+      "ObjectPath": "/WHL_05_Minigun/Weapons/WeaponExtensions/DA_WHL_05_RingMinigun_Stats.0"
+    },
+    "ReloadSetupData": {
+      "ReloadType": "EWDVehicleWeaponReloadType::Standard",
+      "ReloadTime": 4.25,
+      "StartDelayTime": 1.0,
+      "EndDelayTime": 1.0
+    },
+    "AmmoTag": {
+      "TagName": "Id.Item.308Win"
+    },
+    "AmmoCaliberTag": {
+      "TagName": "Item.Caliber.308Win"
+    },
+    "AmmoInsertionMethod": "EWDAmmoInsertionMethod::PullsAmmoFromReserve",
+    "WeaponStartingInventoryItems": [
+      {
+        "Key": {
+          "TagName": "Id.Item.308Win.Tracer"
+        },
+        "Value": 150
+      }
+    ],
+    "WeaponAudioData": {
+      "ObjectName": "WDAudioData'DA_WHL_05_RingMinigun_Audio'",
+      "ObjectPath": "/WHL_05_Minigun/Weapons/WeaponExtensions/DA_WHL_05_RingMinigun_Audio.0"
+    },
+    "OperatorStateAnimations": [
+      {
+        "Key": {
+          "TagName": "State.Vehicle.Weapon.Crouch"
+        },
+        "Value": {
+          "OperatorAnimations": [
+            {
+              "Key": "EWDVehicleWeaponStateAnimationTypes::FirstPerson",
+              "Value": {
+                "ObjectName": "AnimSequence'A_FP_Humvee_Turret_Minigun_Crouch_Pose'",
+                "ObjectPath": "/Game/Animation/Characters/StateMachine/Idles/Vehicle/Turrets/A_FP_Humvee_Turret_Minigun_Crouch_Pose.0"
+              }
+            },
+            {
+              "Key": "EWDVehicleWeaponStateAnimationTypes::ThirdPerson",
+              "Value": {
+                "ObjectName": "AnimSequence'A_TP_Humvee_Turret_Crouch_Pose'",
+                "ObjectPath": "/Game/Animation/Characters/StateMachine/Idles/Vehicle/Turrets/A_TP_Humvee_Turret_Crouch_Pose.0"
+              }
+            }
+          ],
+          "bHasPerSeatBlendSpace": false,
+          "WeaponStateBlendSpace": null,
+          "PerSeatBlendSpaces": []
+        }
+      }
+    ],
+    "FireCameraShakeClass": {
+      "ObjectName": "AnimSequence'A_FP_Humvee_Turret_Minigun_Idle_Pose'",
+      "ObjectPath": "/Game/Animation/Characters/StateMachine/Idles/Vehicle/Turrets/A_FP_Humvee_Turret_Minigun_Idle_Pose.0"
+    },
+    "bShakeOnWeaponFire": true,
+    "OperatorIdleSequence": {
+      "ObjectName": "BlueprintGeneratedClass'BP_WHL_05_Camera_RingMinigun_FiringShake_C'",
+      "ObjectPath": "/WHL_05_Minigun/Weapons/Camera/BP_WHL_05_Camera_RingMinigun_FiringShake.0"
+    },
+    "FireCameraShakeMultiplier": 0.15
+  }
+}

@@ -1,0 +1,48 @@
+--- export: UDataAsset / IA_Vehicle_AggressiveMode ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Vehicle_AggressiveMode",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Vehicles/Inputs/IA_Vehicle_AggressiveMode",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.AggressiveMode"
+    },
+    "AccumulationBehavior": "EInputActionAccumulationBehavior::Cumulative",
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerDown'IA_Vehicle_AggressiveMode:InputTriggerDown_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AggressiveMode.2"
+      }
+    ],
+    "Modifiers": [
+      {
+        "ObjectName": "InputModifierDeadZone'IA_Vehicle_AggressiveMode:InputModifierDeadZone_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AggressiveMode.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputModifierDeadZone_0 ---
+{
+  "Type": "InputModifierDeadZone",
+  "Name": "InputModifierDeadZone_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierDeadZone'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_AggressiveMode'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AggressiveMode.0"
+  }
+}
+--- export: UObject / InputTriggerDown_0 ---
+{
+  "Type": "InputTriggerDown",
+  "Name": "InputTriggerDown_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerDown'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_AggressiveMode'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AggressiveMode.0"
+  }
+}

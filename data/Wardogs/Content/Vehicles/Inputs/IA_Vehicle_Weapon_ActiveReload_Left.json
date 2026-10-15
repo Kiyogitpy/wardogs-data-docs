@@ -1,0 +1,41 @@
+--- export: UDataAsset / IA_Vehicle_Weapon_ActiveReload_Left ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Vehicle_Weapon_ActiveReload_Left",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_ActiveReload_Left",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.WeaponExtension.ActiveReload.Left"
+    },
+    "ActionDescription": {
+      "Namespace": "",
+      "Key": "A35BD7494EBB883B339DFF9E63E8F1A6",
+      "SourceString": "Active Reload Binds",
+      "LocalizedString": "Active Reload Binds"
+    },
+    "bConsumeInput": false,
+    "PlayerMappableKeySettings": {
+      "ObjectName": "BHPlayerMappableKeySettings'IA_Vehicle_Weapon_ActiveReload_Left:BHPlayerMappableKeySettings_0'",
+      "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_ActiveReload_Left.1"
+    }
+  }
+}
+--- export: UObject / BHPlayerMappableKeySettings_0 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_Weapon_ActiveReload_Left'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_ActiveReload_Left.0"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.WeaponExtension.ActiveReload.Left"
+    },
+    "Name": "Input.NamedActions.Vehicle.WeaponExtension.ActiveReload.Left"
+  }
+}

@@ -1,0 +1,59 @@
+--- export: UPrimaryDataAsset / VP_WHL_02_MainBody_MachineGun ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_WHL_02_MainBody_MachineGun",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/WHL_02_RingTurret/Parts/VP_WHL_02_MainBody_MachineGun",
+  "Properties": {
+    "Tags": [
+      "Vehicle.MainBody"
+    ],
+    "Fragments": [
+      {
+        "Key": "Body",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_WHL_02_MainBody_MachineGun:MVF_StaticMesh_0'",
+            "ObjectPath": "/WHL_02_RingTurret/Parts/VP_WHL_02_MainBody_MachineGun.1"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / MVF_StaticMesh_0 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_02_MainBody_MachineGun'",
+    "ObjectPath": "/WHL_02_RingTurret/Parts/VP_WHL_02_MainBody_MachineGun.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceID": "Chassis",
+        "SocketName": "chassis_J"
+      },
+      "Tags": [
+        "BrakeLight"
+      ]
+    },
+    "StaticMesh": {
+      "AssetPathName": "/WHL_02/StaticMeshes/SM_WHL_02_Turret_01.SM_WHL_02_Turret_01",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    },
+    "WalkableSlopeOverride": {
+      "WalkableSlopeBehavior": "EWalkableSlopeBehavior::WalkableSlope_Default"
+    }
+  }
+}

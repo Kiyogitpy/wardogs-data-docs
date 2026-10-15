@@ -1,0 +1,202 @@
+--- export: UDataAsset / DA_Tracker_Spatial_ActiveZone ---
+{
+  "Type": "WDUIActiveZoneData",
+  "Name": "DA_Tracker_Spatial_ActiveZone",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIActiveZoneData'",
+  "Package": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_ActiveZone",
+  "Properties": {
+    "ValueSmoothingSpeed": 0.5,
+    "ColorThresholds": [
+      {
+        "Key": "0,25",
+        "Value": {
+          "B": 0,
+          "G": 57,
+          "R": 222,
+          "A": 255,
+          "Hex": "DE3900"
+        }
+      },
+      {
+        "Key": "0,55",
+        "Value": {
+          "B": 73,
+          "G": 207,
+          "R": 219,
+          "A": 255,
+          "Hex": "DBCF49"
+        }
+      },
+      {
+        "Key": "1",
+        "Value": {
+          "B": 217,
+          "G": 217,
+          "R": 217,
+          "A": 255,
+          "Hex": "D9D9D9"
+        }
+      }
+    ],
+    "ButtonPromptViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIButtonPromptViewModel",
+        "SubPathString": ""
+      }
+    },
+    "_aaaanhflklfbeeeanphjn_$75BAB514440DF79D$_$13$": [
+      {
+        "Key": {
+          "TagName": "Vehicle.ActiveLocation.Fuel"
+        },
+        "Value": {
+          "ActionPromptTag": {
+            "TagName": "Input.NamedActions.Appliable.PrimaryUse"
+          },
+          "ChordedActionPromptTag": {
+            "TagName": "None"
+          },
+          "ActionPromptText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_SpatialTrackers.STRINGS_SpatialTrackers",
+            "Key": "ActiveZone.Prompt.Refuel",
+            "SourceString": "Refuel",
+            "LocalizedString": "Refuel"
+          },
+          "IsHoldable": false,
+          "bUseActionShortName": false,
+          "bUseChordedActionShortName": false,
+          "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+          "ChordedActionPromptTag": [],
+          "ChordedActionPromptTag": [],
+          "_aaabhmnakckdbejpcmlmc_$CD0A2A3149F2CBC2$_$23$": [],
+          "_aaabhahinfhbanpdncpjc_$78D5710DF3D2F92$_$23$": []
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.ActiveLocation.Repair"
+        },
+        "Value": {
+          "ActionPromptTag": {
+            "TagName": "Input.NamedActions.Appliable.PrimaryUse"
+          },
+          "ChordedActionPromptTag": {
+            "TagName": "None"
+          },
+          "ActionPromptText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_SpatialTrackers.STRINGS_SpatialTrackers",
+            "Key": "ActiveZone.Prompt.Repair",
+            "SourceString": "Repair",
+            "LocalizedString": "Repair"
+          },
+          "IsHoldable": false,
+          "bUseActionShortName": false,
+          "bUseChordedActionShortName": false,
+          "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+          "ChordedActionPromptTag": [],
+          "ChordedActionPromptTag": [],
+          "_aaabhmnakckdbejpcmlmc_$CD0A2A3149F2CBC2$_$23$": [],
+          "_aaabhahinfhbanpdncpjc_$78D5710DF3D2F92$_$23$": []
+        }
+      }
+    ],
+    "RuleSets": [
+      {
+        "Key": "EWDUISpatialRulesetType::Default",
+        "Value": {
+          "Priority": 0,
+          "OptionalRules": [
+            {
+              "ObjectName": "WDUIWorldDistanceOpacityRules'DA_Tracker_Spatial_ActiveZone:WDUIWorldDistanceOpacityRules_0'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_ActiveZone.4"
+            },
+            {
+              "ObjectName": "WDUIScreenDistanceOpacityRules'DA_Tracker_Spatial_ActiveZone:WDUIScreenDistanceOpacityRules_0'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_ActiveZone.3"
+            },
+            {
+              "ObjectName": "WDUIScaleMultiplierRule'DA_Tracker_Spatial_ActiveZone:WDUIScaleMultiplierRule_0'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_ActiveZone.2"
+            },
+            {
+              "ObjectName": "WDUILineOfSightRules'DA_Tracker_Spatial_ActiveZone:WDUILineOfSightRules_0'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_ActiveZone.1"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDUILineOfSightRules_0 ---
+{
+  "Type": "WDUILineOfSightRules",
+  "Name": "WDUILineOfSightRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUILineOfSightRules'",
+  "Outer": {
+    "ObjectName": "WDUIActiveZoneData'DA_Tracker_Spatial_ActiveZone'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_ActiveZone.0"
+  },
+  "Properties": {
+    "Range": 7.5,
+    "BlockedOpacity": 0.4,
+    "bUseAdditionalCharacterTraces": false,
+    "bAddSelfToIgnoredActors": true,
+    "TraceChannel": "ECollisionChannel::ECC_GameTraceChannel4",
+    "SquaredRange": 562500.0
+  }
+}
+--- export: UObject / WDUIScaleMultiplierRule_0 ---
+{
+  "Type": "WDUIScaleMultiplierRule",
+  "Name": "WDUIScaleMultiplierRule_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIScaleMultiplierRule'",
+  "Outer": {
+    "ObjectName": "WDUIActiveZoneData'DA_Tracker_Spatial_ActiveZone'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_ActiveZone.0"
+  },
+  "Properties": {
+    "Multiplier": 2.5
+  }
+}
+--- export: UObject / WDUIScreenDistanceOpacityRules_0 ---
+{
+  "Type": "WDUIScreenDistanceOpacityRules",
+  "Name": "WDUIScreenDistanceOpacityRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIScreenDistanceOpacityRules'",
+  "Outer": {
+    "ObjectName": "WDUIActiveZoneData'DA_Tracker_Spatial_ActiveZone'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_ActiveZone.0"
+  },
+  "Properties": {
+    "MaximumVisibleDistance": {
+      "X": 0.95,
+      "Y": 0.95
+    },
+    "FalloffRangeMaximum": {
+      "X": 0.1,
+      "Y": 0.1
+    }
+  }
+}
+--- export: UObject / WDUIWorldDistanceOpacityRules_0 ---
+{
+  "Type": "WDUIWorldDistanceOpacityRules",
+  "Name": "WDUIWorldDistanceOpacityRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIWorldDistanceOpacityRules'",
+  "Outer": {
+    "ObjectName": "WDUIActiveZoneData'DA_Tracker_Spatial_ActiveZone'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_ActiveZone.0"
+  },
+  "Properties": {
+    "MaximumVisibleDistance": 8.5,
+    "FalloffRangeMaximum": 0.3,
+    "SquaredFalloffRangeMaximum": 50100.0,
+    "SquaredMaximumVisibleDistance": 722500.0
+  }
+}

@@ -1,0 +1,36 @@
+--- export: UPrimaryDataAsset / AE_UI_XPProgression_SkipReveal ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UI_XPProgression_SkipReveal",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UI/XPProgression/AE_UI_XPProgression_SkipReveal",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.XPProgression.SkipReveal"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_UI_XPProgression_SkipReveal:CrosstalkAudioEventBehaviorStopSound_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/XPProgression/AE_UI_XPProgression_SkipReveal.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_XPProgression_SkipReveal'",
+    "ObjectPath": "/Game/Audio/Events/UI/XPProgression/AE_UI_XPProgression_SkipReveal.0"
+  },
+  "Properties": {
+    "FadeOut": 0.1,
+    "ContextTag": {
+      "TagName": "Audio.Context.UI.XPProgression.StartFillingProgress"
+    }
+  }
+}

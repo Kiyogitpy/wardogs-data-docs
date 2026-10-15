@@ -1,0 +1,70 @@
+--- export: UDataAsset / DA_FWG_01_SensorsData ---
+{
+  "Type": "BHRotaryVehicleSensorsDataAsset",
+  "Name": "DA_FWG_01_SensorsData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHRotaryVehicleSensorsDataAsset'",
+  "Package": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_SensorsData",
+  "Properties": {
+    "LandingStrutSensorShapes": [
+      {
+        "ShapeToActor": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": -0.0,
+            "Z": 0.0,
+            "W": 1.0,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": 23.0,
+            "Y": 108.0,
+            "Z": -3.5
+          },
+          "Scale3D": {
+            "X": 1.0,
+            "Y": 1.0,
+            "Z": 1.0
+          }
+        },
+        "Extents": {
+          "X": 230.0,
+          "Y": 10.0,
+          "Z": 25.0
+        }
+      },
+      {
+        "ShapeToActor": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": -0.0,
+            "Z": 0.0,
+            "W": 1.0,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": 23.0,
+            "Y": -108.0,
+            "Z": -3.5
+          },
+          "Scale3D": {
+            "X": 1.0,
+            "Y": 1.0,
+            "Z": 1.0
+          }
+        },
+        "Extents": {
+          "X": 230.0,
+          "Y": 10.0,
+          "Z": 25.0
+        }
+      }
+    ],
+    "AltitudeSensorLength": 1000.0,
+    "OnGroundCollisionChannel": "ECollisionChannel::ECC_GameTraceChannel1"
+  }
+}

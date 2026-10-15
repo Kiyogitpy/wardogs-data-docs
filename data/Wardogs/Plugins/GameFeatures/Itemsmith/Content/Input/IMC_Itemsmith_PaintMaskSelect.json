@@ -1,0 +1,179 @@
+--- export: UDataAsset / IMC_Itemsmith_PaintMaskSelect ---
+{
+  "Type": "InputMappingContext",
+  "Name": "IMC_Itemsmith_PaintMaskSelect",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputMappingContext'",
+  "Package": "/Itemsmith/Input/IMC_Itemsmith_PaintMaskSelect",
+  "Properties": {
+    "DefaultKeyMappings": {
+      "Mappings": [
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Itemsmith_Next'",
+            "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_Next.0"
+          },
+          "Key": {
+            "KeyName": "E"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Itemsmith_Next'",
+            "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_Next.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_RightShoulder"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Itemsmith_Previous'",
+            "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_Previous.0"
+          },
+          "Key": {
+            "KeyName": "Q"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Itemsmith_Previous'",
+            "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_Previous.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_LeftShoulder"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerReleased'IMC_Itemsmith_PaintMaskSelect:InputTriggerReleased_0'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_PaintMaskSelect.2"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Itemsmith_Favourite'",
+            "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_Favourite.0"
+          },
+          "Key": {
+            "KeyName": "O"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerHold'IMC_Itemsmith_PaintMaskSelect:InputTriggerHold_0'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_PaintMaskSelect.1"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Itemsmith_Favourite'",
+            "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_Favourite.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_FaceButton_Top"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Itemsmith_Next_Alternative'",
+            "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_Next_Alternative.0"
+          },
+          "Key": {
+            "KeyName": "C"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Itemsmith_Next_Alternative'",
+            "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_Next_Alternative.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_RightTrigger"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Itemsmith_Previous_Alternative'",
+            "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_Previous_Alternative.0"
+          },
+          "Key": {
+            "KeyName": "Z"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Itemsmith_Previous_Alternative'",
+            "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_Previous_Alternative.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_LeftTrigger"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        }
+      ]
+    }
+  }
+}
+--- export: UObject / InputTriggerHold_0 ---
+{
+  "Type": "InputTriggerHold",
+  "Name": "InputTriggerHold_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerHold'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith_PaintMaskSelect'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_PaintMaskSelect.0"
+  },
+  "Properties": {
+    "bIsOneShot": true
+  }
+}
+--- export: UObject / InputTriggerReleased_0 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith_PaintMaskSelect'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_PaintMaskSelect.0"
+  }
+}

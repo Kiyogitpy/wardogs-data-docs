@@ -1,0 +1,120 @@
+--- export: UObject / AEB_EndBehavior_C_0 ---
+{
+  "Type": "AEB_EndBehavior_C",
+  "Name": "AEB_EndBehavior_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_EndBehavior.AEB_EndBehavior_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Shared_Damaged_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Shared_Damaged_Stop.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_EndBehavior_C'Default__AEB_EndBehavior_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_EndBehavior.0"
+  },
+  "Properties": {
+    "BehaviorClass": {
+      "ObjectName": "BlueprintGeneratedClass'AEB_VehicleDamaged_C'",
+      "ObjectPath": "/Game/Audio/Behaviours/AEB_VehicleDamaged.1"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Damage"
+    }
+  }
+}
+--- export: UObject / AEB_EndBehavior_C_1 ---
+{
+  "Type": "AEB_EndBehavior_C",
+  "Name": "AEB_EndBehavior_C_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_EndBehavior.AEB_EndBehavior_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Shared_Damaged_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Shared_Damaged_Stop.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_EndBehavior_C'Default__AEB_EndBehavior_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_EndBehavior.0"
+  },
+  "Properties": {
+    "BehaviorClass": {
+      "ObjectName": "BlueprintGeneratedClass'AEB_SetVehicleHIDZAttribute_C'",
+      "ObjectPath": "/Game/Audio/Behaviours/AEB_SetVehicleHIDZAttribute.1"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Damage"
+    }
+  }
+}
+--- export: UObject / AEB_EndBehavior_C_2 ---
+{
+  "Type": "AEB_EndBehavior_C",
+  "Name": "AEB_EndBehavior_C_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_EndBehavior.AEB_EndBehavior_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Shared_Damaged_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Shared_Damaged_Stop.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_EndBehavior_C'Default__AEB_EndBehavior_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_EndBehavior.0"
+  },
+  "Properties": {
+    "BehaviorClass": {
+      "ObjectName": "BlueprintGeneratedClass'AEB_Doppler_C'",
+      "ObjectPath": "/Game/Audio/Behaviours/AEB_Doppler.1"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Damage"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_Shared_Damaged_Stop ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_Shared_Damaged_Stop",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/AE_Vehicle_Shared_Damaged_Stop",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Shared.Damaged.Stop"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_Vehicle_Shared_Damaged_Stop:CrosstalkAudioEventBehaviorStopSound_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Shared_Damaged_Stop.4"
+      },
+      {
+        "ObjectName": "AEB_EndBehavior_C'AE_Vehicle_Shared_Damaged_Stop:AEB_EndBehavior_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Shared_Damaged_Stop.0"
+      },
+      {
+        "ObjectName": "AEB_EndBehavior_C'AE_Vehicle_Shared_Damaged_Stop:AEB_EndBehavior_C_1'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Shared_Damaged_Stop.1"
+      },
+      {
+        "ObjectName": "AEB_EndBehavior_C'AE_Vehicle_Shared_Damaged_Stop:AEB_EndBehavior_C_2'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Shared_Damaged_Stop.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Shared_Damaged_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Shared_Damaged_Stop.3"
+  },
+  "Properties": {
+    "FadeOut": 1.0,
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Damage"
+    }
+  }
+}

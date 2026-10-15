@@ -1,0 +1,92 @@
+--- export: UObject / BHDemolitionRule_Or_0 ---
+{
+  "Type": "BHDemolitionRule_Or",
+  "Name": "BHDemolitionRule_Or_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDemolitionRule_Or'",
+  "Outer": {
+    "ObjectName": "BHDemolitionRuleset'BH_Demolition_RS_AllExplosions'",
+    "ObjectPath": "/Game/Demolition/RuleSets/Explosions/BH_Demolition_RS_AllExplosions.4"
+  },
+  "Properties": {
+    "Rules": [
+      {
+        "ObjectName": "BHDemolitionRule_Ruleset'BH_Demolition_RS_AllExplosions:BHDemolitionRule_Or_0.BHDemolitionRule_Ruleset_0'",
+        "ObjectPath": "/Game/Demolition/RuleSets/Explosions/BH_Demolition_RS_AllExplosions.1"
+      },
+      {
+        "ObjectName": "BHDemolitionRule_Ruleset'BH_Demolition_RS_AllExplosions:BHDemolitionRule_Or_0.BHDemolitionRule_Ruleset_1'",
+        "ObjectPath": "/Game/Demolition/RuleSets/Explosions/BH_Demolition_RS_AllExplosions.2"
+      },
+      {
+        "ObjectName": "BHDemolitionRule_Ruleset'BH_Demolition_RS_AllExplosions:BHDemolitionRule_Or_0.BHDemolitionRule_Ruleset_2'",
+        "ObjectPath": "/Game/Demolition/RuleSets/Explosions/BH_Demolition_RS_AllExplosions.3"
+      }
+    ]
+  }
+}
+--- export: UObject / BHDemolitionRule_Ruleset_0 ---
+{
+  "Type": "BHDemolitionRule_Ruleset",
+  "Name": "BHDemolitionRule_Ruleset_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDemolitionRule_Ruleset'",
+  "Outer": {
+    "ObjectName": "BHDemolitionRule_Or'BH_Demolition_RS_AllExplosions:BHDemolitionRule_Or_0'",
+    "ObjectPath": "/Game/Demolition/RuleSets/Explosions/BH_Demolition_RS_AllExplosions.0"
+  },
+  "Properties": {
+    "Ruleset": {
+      "ObjectName": "BHDemolitionRuleset'BH_Demolition_RS_LargeExplosives'",
+      "ObjectPath": "/Game/Demolition/RuleSets/Explosions/BH_Demolition_RS_LargeExplosives.0"
+    }
+  }
+}
+--- export: UObject / BHDemolitionRule_Ruleset_1 ---
+{
+  "Type": "BHDemolitionRule_Ruleset",
+  "Name": "BHDemolitionRule_Ruleset_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDemolitionRule_Ruleset'",
+  "Outer": {
+    "ObjectName": "BHDemolitionRule_Or'BH_Demolition_RS_AllExplosions:BHDemolitionRule_Or_0'",
+    "ObjectPath": "/Game/Demolition/RuleSets/Explosions/BH_Demolition_RS_AllExplosions.0"
+  },
+  "Properties": {
+    "Ruleset": {
+      "ObjectName": "BHDemolitionRuleset'BH_Demolition_RS_MediumExplosives'",
+      "ObjectPath": "/Game/Demolition/RuleSets/Explosions/BH_Demolition_RS_MediumExplosives.0"
+    }
+  }
+}
+--- export: UObject / BHDemolitionRule_Ruleset_2 ---
+{
+  "Type": "BHDemolitionRule_Ruleset",
+  "Name": "BHDemolitionRule_Ruleset_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDemolitionRule_Ruleset'",
+  "Outer": {
+    "ObjectName": "BHDemolitionRule_Or'BH_Demolition_RS_AllExplosions:BHDemolitionRule_Or_0'",
+    "ObjectPath": "/Game/Demolition/RuleSets/Explosions/BH_Demolition_RS_AllExplosions.0"
+  },
+  "Properties": {
+    "Ruleset": {
+      "ObjectName": "BHDemolitionRuleset'BH_Demolition_RS_SmallExplosions'",
+      "ObjectPath": "/Game/Demolition/RuleSets/Explosions/BH_Demolition_RS_SmallExplosions.0"
+    }
+  }
+}
+--- export: UDataAsset / BH_Demolition_RS_AllExplosions ---
+{
+  "Type": "BHDemolitionRuleset",
+  "Name": "BH_Demolition_RS_AllExplosions",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDemolitionRuleset'",
+  "Package": "/Game/Demolition/RuleSets/Explosions/BH_Demolition_RS_AllExplosions",
+  "Properties": {
+    "Rule": {
+      "ObjectName": "BHDemolitionRule_Or'BH_Demolition_RS_AllExplosions:BHDemolitionRule_Or_0'",
+      "ObjectPath": "/Game/Demolition/RuleSets/Explosions/BH_Demolition_RS_AllExplosions.0"
+    }
+  }
+}

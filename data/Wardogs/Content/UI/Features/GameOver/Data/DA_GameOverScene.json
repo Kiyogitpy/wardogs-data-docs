@@ -1,0 +1,112 @@
+--- export: UDataAsset / DA_GameOverScene ---
+{
+  "Type": "WDUIGameOverData",
+  "Name": "DA_GameOverScene",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIGameOverData'",
+  "Package": "/Game/UI/Features/GameOver/Data/DA_GameOverScene",
+  "Properties": {
+    "FactionScoreEntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIGameOverFactionScoreEntryViewModel",
+        "SubPathString": ""
+      }
+    },
+    "NextMatchTimerText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_GameOver.STRINGS_GameOver",
+      "Key": "Text.NextMatchTimer",
+      "SourceString": "Next Round in {Minutes}:{Seconds}",
+      "LocalizedString": "Next Round in {Minutes}:{Seconds}"
+    },
+    "_aaabhfmjabeedecagbeac_$5C90144342061402$_$23$": {
+      "TableId": "/Game/UI/StringTables/STRINGS_GameOver.STRINGS_GameOver",
+      "Key": "Text.ShutdownTimer",
+      "SourceString": "Server shutting down in {Minutes}:{Seconds}",
+      "LocalizedString": "Server shutting down in {Minutes}:{Seconds}"
+    },
+    "_aaabgihginbecdameefll_$8768D14230C445BB$_$22$": {
+      "TableId": "/Game/UI/StringTables/STRINGS_GameOver.STRINGS_GameOver",
+      "Key": "Text.RestartTimer",
+      "SourceString": "Server restarting in {Minutes} {Seconds}",
+      "LocalizedString": "Server restarting in {Minutes} {Seconds}"
+    },
+    "WinningMessageText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD_GameOver_TeamWins",
+      "SourceString": "{0} Wins",
+      "LocalizedString": "{0} Wins"
+    },
+    "VictoryTitleText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD_GameOver_Victory",
+      "SourceString": "Victory",
+      "LocalizedString": "Victory"
+    },
+    "DefeatTitleText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD_GameOver_Defeat",
+      "SourceString": "Defeat",
+      "LocalizedString": "Defeat"
+    },
+    "_aaabmaipidldmpnoenhfh_$8F83B3CFDE4D757$_$28$": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD_GameOver_Placed1stCompletionBonus",
+      "SourceString": "1st Place + Contribution",
+      "LocalizedString": "1st Place + Contribution"
+    },
+    "_aaabmpappimfpidahoaoa_$F0FF8C5F8307E0E0$_$28$": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD_GameOver_Placed2ndCompletionBonus",
+      "SourceString": "2nd Place + Contribution",
+      "LocalizedString": "2nd Place + Contribution"
+    },
+    "_aaabmpbjmkjljlboeaadb_$F19CA9B9B1E40031$_$28$": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD_GameOver_Placed3rdCompletionBonus",
+      "SourceString": "3rd Place + Contribution",
+      "LocalizedString": "3rd Place + Contribution"
+    },
+    "_aaabcolellgilnpfjajfe_$EB4BB68BDF590954$_$18$": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD_GameOver_Placed1stBonus",
+      "SourceString": "1st Place Bonus",
+      "LocalizedString": "1st Place Bonus"
+    },
+    "_aaabcaopgjbokmegopfod_$EF691EAC46EF5E3$_$18$": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD_GameOver_Placed2ndBonus",
+      "SourceString": "2nd Place Bonus",
+      "LocalizedString": "2nd Place Bonus"
+    },
+    "_aaabcejbhgkjjmoeekcgh_$49176A99CE44A267$_$18$": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD_GameOver_Placed3rdBonus",
+      "SourceString": "3rd Place Bonus",
+      "LocalizedString": "3rd Place Bonus"
+    },
+    "_aaabdgkhcdhjnkcjjllmi_$6A72379DA299BBC8$_$19$": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD_GameOver_MatchCompletion",
+      "SourceString": "Match Contribution",
+      "LocalizedString": "Match Contribution"
+    },
+    "_aaabbkijmlcdkonopmphj_$A89CB23AEDEFCF79$_$17$": {
+      "B": 168,
+      "G": 229,
+      "R": 73,
+      "A": 255,
+      "Hex": "49E5A8"
+    },
+    "_aaabbflddkfgfoffimknc_$5B33A565E558CAD2$_$17$": {
+      "B": 0,
+      "G": 33,
+      "R": 238,
+      "A": 255,
+      "Hex": "EE2100"
+    },
+    "FadeTime": 15.0,
+    "DelayAfterRecapPoints": 3.0,
+    "bShouldOpenContextDrawerOnCloseRequested": true,
+    "bExitPreviousSceneOnContextDrawerOpened": false
+  }
+}

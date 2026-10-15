@@ -1,0 +1,3008 @@
+--- export: UPrimaryDataAsset / AnimSet_M4 ---
+{
+  "Type": "BHAnimationSet",
+  "Name": "AnimSet_M4",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHAnimationSet'",
+  "Package": "/WEPN_002/Data/AnimSet_M4",
+  "Properties": {
+    "Animations": [
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Empty"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Empty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Empty.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadEmpty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadEmpty.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Empty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Empty.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadEmpty_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadEmpty_3P.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 5.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.STANAGMagazine20rd"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.STANAGMagazine20rd"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Empty.M4.L2L"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.STANAGMagazine20rd"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.STANAGMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Empty.M4.L2S"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.STANAGMagazine20rd"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.STANAGExtendedMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Empty.M4.L2E"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.STANAGMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.STANAGMagazine20rd"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Empty.M4.S2L"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.STANAGMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.STANAGExtendedMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Empty.M4.S2E"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.STANAGExtendedMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.STANAGMagazine20rd"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Empty.M4.E2L"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.STANAGExtendedMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.STANAGMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Empty.M4.E2S"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.STANAGExtendedMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.STANAGExtendedMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Empty.M4.E2E"
+              }
+            }
+          ],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Tactical"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Tactical'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Tactical.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadTactical'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadTactical.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Tactical'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Tactical.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadTactical_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadTactical_3P.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.25,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.STANAGMagazine20rd"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.STANAGMagazine20rd"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Tactical.M4.L2L"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.STANAGMagazine20rd"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.STANAGMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Tactical.M4.L2S"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.STANAGMagazine20rd"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.STANAGExtendedMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Tactical.M4.L2E"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.STANAGMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.STANAGMagazine20rd"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Tactical.M4.S2L"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.STANAGMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.STANAGExtendedMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Tactical.M4.S2E"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.STANAGExtendedMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.STANAGMagazine20rd"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Tactical.M4.E2L"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.STANAGExtendedMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.STANAGMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Tactical.M4.E2S"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.STANAGExtendedMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.STANAGExtendedMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Tactical.M4.E2E"
+              }
+            }
+          ],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.MeleeBash"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Melee'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/AM_FP_M4_Melee.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_Gen_Rifle_Melee'",
+              "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/Rifle/Actions/AM_TP_Gen_Rifle_Melee.0"
+            },
+            "FirstPersonItemAnimation": null,
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Fire"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Fire'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/AM_FP_M4_Fire.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_Fire'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_Fire.0"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Fire'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/FP/AM_Weap_M4_Fire.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Fire'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/FP/AM_Weap_M4_Fire.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Chamber"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Rechamber'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/AM_FP_M4_Rechamber.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_Rechamber'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_Rechamber.0"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Chamber'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/FP/AM_Weap_M4_Chamber.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Chamber'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/FP/AM_Weap_M4_Chamber.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Holdable.Inspect"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Inspect'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/AM_FP_M4_Inspect.0"
+            },
+            "ThirdPersonPlayerAnimation": null,
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Inspect'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/FP/AM_Weap_M4_Inspect.0"
+            },
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Holdable.Equip"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Equip'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/AM_FP_M4_Equip.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_Equip'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_Equip.0"
+            },
+            "FirstPersonItemAnimation": null,
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_Equip_Weap'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/FP/AM_TP_M4_Equip_Weap.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Holdable.Holster"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Holster'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/AM_FP_M4_Holster.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_Holster'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_Holster.0"
+            },
+            "FirstPersonItemAnimation": null,
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Inventory.Weapon.Base"
+        },
+        "Value": {
+          "BaseAsset": {
+            "Asset": {
+              "ObjectName": "AnimSequence'A_NPC_Inventory_Rifle_Idle'",
+              "ObjectPath": "/Game/Animation/Characters/NPC/Inventory/A_NPC_Inventory_Rifle_Idle.0"
+            }
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Pose.Foregrip"
+        },
+        "Value": {
+          "BaseAsset": null,
+          "Overrides": [
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+                    "ObjectPath": "/Script/BHAnimationData"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "TagQuery": {
+                          "TokenStreamVersion": 0,
+                          "TagDictionary": [
+                            {
+                              "TagName": "Item.Context.Animation.Archetype.Foregrip.BumpStop"
+                            }
+                          ],
+                          "QueryTokenStream": [
+                            0,
+                            1,
+                            1,
+                            1,
+                            0
+                          ],
+                          "UserDescription": "",
+                          "AutoDescription": " ANY( Item.Context.Animation.Archetype.Foregrip.BumpStop )"
+                        },
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+                    "ObjectPath": "/Script/BHAnimationData"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Pose.Foregrip.RK6"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+                    "ObjectPath": "/Script/BHAnimationData"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "TagQuery": {
+                          "TokenStreamVersion": 0,
+                          "TagDictionary": [
+                            {
+                              "TagName": "Item.Context.Animation.Archetype.Foregrip.Vertical"
+                            }
+                          ],
+                          "QueryTokenStream": [
+                            0,
+                            1,
+                            1,
+                            1,
+                            0
+                          ],
+                          "UserDescription": "",
+                          "AutoDescription": " ANY( Item.Context.Animation.Archetype.Foregrip.Vertical )"
+                        },
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+                    "ObjectPath": "/Script/BHAnimationData"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Pose.Foregrip.FGP_02"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+                    "ObjectPath": "/Script/BHAnimationData"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "TagQuery": {
+                          "TokenStreamVersion": 0,
+                          "TagDictionary": [
+                            {
+                              "TagName": "Item.Context.Animation.Archetype.Foregrip.Angled"
+                            }
+                          ],
+                          "QueryTokenStream": [
+                            0,
+                            1,
+                            1,
+                            1,
+                            0
+                          ],
+                          "UserDescription": "",
+                          "AutoDescription": " ANY( Item.Context.Animation.Archetype.Foregrip.Angled )"
+                        },
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+                    "ObjectPath": "/Script/BHAnimationData"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Pose.Foregrip.FGP_03"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+                    "ObjectPath": "/Script/BHAnimationData"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "TagQuery": {
+                          "TokenStreamVersion": 0,
+                          "TagDictionary": [
+                            {
+                              "TagName": "Item.Context.Animation.Archetype.Foregrip.Vertical"
+                            }
+                          ],
+                          "QueryTokenStream": [
+                            0,
+                            1,
+                            1,
+                            1,
+                            0
+                          ],
+                          "UserDescription": "",
+                          "AutoDescription": " ANY( Item.Context.Animation.Archetype.Foregrip.Vertical )"
+                        },
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+                    "ObjectPath": "/Script/BHAnimationData"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Pose.Foregrip.FGP_04"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+                    "ObjectPath": "/Script/BHAnimationData"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "TagQuery": {
+                          "TokenStreamVersion": 0,
+                          "TagDictionary": [
+                            {
+                              "TagName": "Item.Context.Animation.Archetype.Foregrip.HERA"
+                            }
+                          ],
+                          "QueryTokenStream": [
+                            0,
+                            1,
+                            1,
+                            1,
+                            0
+                          ],
+                          "UserDescription": "",
+                          "AutoDescription": " ANY( Item.Context.Animation.Archetype.Foregrip.HERA )"
+                        },
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+                    "ObjectPath": "/Script/BHAnimationData"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Pose.Foregrip.FGP_014"
+              }
+            }
+          ],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Pose.Foregrip.FGP_02"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonAsset": {
+              "ObjectName": "AnimSequence'A_FP_M4_FGP_02_Idle'",
+              "ObjectPath": "/Game/Items/Attachments/Foregrips/Foregrip_Anim/A_FP_M4_FGP_02_Idle.0"
+            },
+            "ThirdPersonAsset": {
+              "ObjectName": "AnimSequence'A_TP_M4_FGP_02_Pose'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/TP/Foregrips/A_TP_M4_FGP_02_Pose.0"
+            }
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Pose.Foregrip.FGP_03"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonAsset": {
+              "ObjectName": "AnimSequence'A_FP_M4_FGP_03_Idle'",
+              "ObjectPath": "/Game/Items/Attachments/Foregrips/Foregrip_Anim/A_FP_M4_FGP_03_Idle.0"
+            },
+            "ThirdPersonAsset": {
+              "ObjectName": "AnimSequence'A_TP_M4_FGP_03_Pose'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/TP/Foregrips/A_TP_M4_FGP_03_Pose.0"
+            }
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Pose.Foregrip.RK6"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonAsset": {
+              "ObjectName": "AnimSequence'A_FP_M4_RK6_Idle'",
+              "ObjectPath": "/Game/Items/Attachments/Foregrips/Foregrip_Anim/A_FP_M4_RK6_Idle.0"
+            },
+            "ThirdPersonAsset": {
+              "ObjectName": "AnimSequence'A_TP_M4_RK6_Pose'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/TP/Foregrips/A_TP_M4_RK6_Pose.0"
+            }
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Pose.Foregrip.FGP_04"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonAsset": {
+              "ObjectName": "AnimSequence'A_FP_M4_FGP_04_Idle'",
+              "ObjectPath": "/Game/Items/Attachments/Foregrips/Foregrip_Anim/A_FP_M4_FGP_04_Idle.0"
+            },
+            "ThirdPersonAsset": {
+              "ObjectName": "AnimSequence'A_TP_M4_FGP_04_Pose'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/TP/Foregrips/A_TP_M4_FGP_04_Pose.0"
+            }
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Holdable.DoorInteraction"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AR_Door_Interact'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Doors/AM_FP_AR_Door_Interact.0"
+            },
+            "ThirdPersonPlayerAnimation": null,
+            "FirstPersonItemAnimation": null,
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Attachment.Bipod.Unfold"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_FGP_04_Deploy'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/AM_FP_M4_FGP_04_Deploy.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_FGP_04_Deploy'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_FGP_04_Deploy.0"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_FGP_04_Deploy'",
+              "ObjectPath": "/Game/Items/Attachments/Foregrips/FGP_04/Assets/Animations/AM_FP_FGP_04_Deploy.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_FGP_04_Deploy'",
+              "ObjectPath": "/Game/Items/Attachments/Foregrips/FGP_04/Assets/Animations/AM_FP_FGP_04_Deploy.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Attachment.Bipod.Fold"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_FGP_04_Stow'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/AM_FP_M4_FGP_04_Stow.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_FGP_04_Stow'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_FGP_04_Stow.0"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_FGP_04_Stow'",
+              "ObjectPath": "/Game/Items/Attachments/Foregrips/FGP_04/Assets/Animations/AM_FP_FGP_04_Stow.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_FGP_04_Stow'",
+              "ObjectPath": "/Game/Items/Attachments/Foregrips/FGP_04/Assets/Animations/AM_FP_FGP_04_Stow.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Empty.M4.E2E"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Empty_Retain_60'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Empty_Retain_60.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadEmpty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadEmpty.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Empty_Retain_60'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Empty_Retain_60.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadEmpty_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadEmpty_3P.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 4.251,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Tactical.M4.E2E"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Tactical_60'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Tactical_60.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadTactical'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadTactical.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Tactical_60'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Tactical_60.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadTactical_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadTactical_3P.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 3.63333,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Empty.M4.L2L"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Empty_Retention_20'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Empty_Retention_20.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadEmpty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadEmpty.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Empty_Retention_20'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Empty_Retention_20.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadEmpty_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadEmpty_3P.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 2.91,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Tactical.M4.L2L"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Tactical_20'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Tactical_20.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadTactical'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadTactical.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Tactical_20'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Tactical_20.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadTactical_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadTactical_3P.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 2.34367,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Empty"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Empty_Drop'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Empty_Drop.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadEmpty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadEmpty.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Empty_Drop'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Empty_Drop.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadEmpty_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadEmpty_3P.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.STANAGExtendedMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.STANAGExtendedMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Discarding.Empty.M4.E2E"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.STANAGMagazine20rd"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.STANAGMagazine20rd"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Discarding.Empty.M4.L2L"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.STANAGExtendedMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.STANAGMagazine20rd"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Discarding.Empty.M4.E2L"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.STANAGExtendedMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.STANAGMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Discarding.Empty.M4.E2S"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.STANAGMagazine20rd"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.STANAGExtendedMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Discarding.Empty.M4.L2E"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.STANAGMagazine20rd"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.STANAGMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Discarding.Empty.M4.L2S"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.STANAGMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.STANAGExtendedMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Discarding.Empty.M4.S2E"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.STANAGMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.STANAGMagazine20rd"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Discarding.Empty.M4.S2L"
+              }
+            }
+          ],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Tactical"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Tactical_Drop'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Tactical_Drop.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadTactical'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadTactical.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Tactical_Drop'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Tactical_Drop.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadTactical_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadTactical_3P.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.STANAGExtendedMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.STANAGExtendedMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Discarding.Tactical.M4.E2E"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.STANAGMagazine20rd"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.STANAGMagazine20rd"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Discarding.Tactical.M4.L2L"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.STANAGExtendedMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.STANAGMagazine20rd"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Discarding.Tactical.M4.E2L"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.STANAGExtendedMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.STANAGMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Discarding.Tactical.M4.E2S"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.STANAGMagazine20rd"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.STANAGExtendedMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Discarding.Tactical.M4.L2E"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.STANAGMagazine20rd"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.STANAGMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Discarding.Tactical.M4.L2S"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.STANAGMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.STANAGExtendedMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Discarding.Tactical.M4.S2E"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "_aaabcdmnjplbfihhjmlik_$3CD9FB158779CB8A$_$18$": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.STANAGMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.STANAGMagazine20rd"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Discarding.Tactical.M4.S2L"
+              }
+            }
+          ],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Empty.M4.E2E"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Empty_Drop_E'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Empty_Drop_E.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadEmpty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadEmpty.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Empty_Drop_60'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Empty_Drop_60.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadEmpty_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadEmpty_3P.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 3.99667,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Tactical.M4.E2E"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Tactical_Drop_60'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Tactical_Drop_60.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadTactical'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadTactical.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Tactical_Drop_60'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Tactical_Drop_60.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadTactical_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadTactical_3P.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 3.63333,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Empty.M4.L2L"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Empty_Drop_20'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Empty_Drop_20.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadEmpty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadEmpty.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Empty_Drop_20'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Empty_Drop_20.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadEmpty_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadEmpty_3P.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 2.96667,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Tactical.M4.L2L"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Tactical_Drop_20'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Tactical_Drop_20.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadTactical'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadTactical.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Tactical_Drop_20'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Tactical_Drop_20.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadTactical_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadTactical_3P.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 2.34367,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Empty.M4.E2L"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Empty_Drop'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Empty_Drop.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadEmpty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadEmpty.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Empty_Drop'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Empty_Drop.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadEmpty_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadEmpty_3P.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 3.48333,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Empty.M4.L2E"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Empty_Drop'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Empty_Drop.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadEmpty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadEmpty.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Empty_Drop'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Empty_Drop.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadEmpty_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadEmpty_3P.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 3.85,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Empty.M4.S2E"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Empty_Drop'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Empty_Drop.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadEmpty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadEmpty.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Empty_Drop'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Empty_Drop.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadEmpty_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadEmpty_3P.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 3.88667,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Empty.M4.S2L"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Empty_Drop'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Empty_Drop.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadEmpty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadEmpty.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Empty_Drop'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Empty_Drop.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadEmpty_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadEmpty_3P.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 3.3,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Empty.M4.E2S"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Empty_Drop'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Empty_Drop.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadEmpty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadEmpty.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Empty_Drop'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Empty_Drop.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadEmpty_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadEmpty_3P.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 3.70333,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Empty.M4.L2S"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Empty_Drop'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Empty_Drop.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadEmpty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadEmpty.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Empty_Drop'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Empty_Drop.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadEmpty_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadEmpty_3P.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 3.3,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Tactical.M4.E2L"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Tactical_Drop'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Tactical_Drop.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadEmpty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadEmpty.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Tactical_Drop'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Tactical_Drop.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadEmpty_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadEmpty_3P.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 2.97267,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Tactical.M4.E2S"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Tactical_Drop'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Tactical_Drop.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadEmpty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadEmpty.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Tactical_Drop'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Tactical_Drop.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadEmpty_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadEmpty_3P.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 3.29933,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Tactical.M4.L2E"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Tactical_Drop'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Tactical_Drop.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadEmpty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadEmpty.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Tactical_Drop'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Tactical_Drop.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadEmpty_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadEmpty_3P.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 3.49533,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Tactical.M4.L2S"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Tactical_Drop'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Tactical_Drop.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadEmpty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadEmpty.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Tactical_Drop'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Tactical_Drop.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadEmpty_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadEmpty_3P.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 3.234,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Tactical.M4.S2E"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Tactical_Drop_60'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Tactical_Drop_60.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadEmpty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadEmpty.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Tactical_Drop_60'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Tactical_Drop_60.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadEmpty_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadEmpty_3P.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 3.6,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Tactical.M4.S2L"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Tactical_Drop'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Tactical_Drop.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadEmpty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadEmpty.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Tactical_Drop'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Tactical_Drop.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadEmpty_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadEmpty_3P.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 2.94,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Empty.M4.L2S"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Empty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Empty.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadEmpty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadEmpty.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Empty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Empty.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadEmpty_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadEmpty_3P.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 3.696,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Empty.M4.L2E"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Empty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Empty.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadEmpty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadEmpty.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Empty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Empty.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadEmpty_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadEmpty_3P.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 3.99467,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Empty.M4.S2L"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Empty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Empty.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadEmpty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadEmpty.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Empty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Empty.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadEmpty_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadEmpty_3P.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 3.36,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Empty.M4.S2E"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Empty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Empty.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadEmpty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadEmpty.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Empty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Empty.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadEmpty_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadEmpty_3P.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 4.032,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Empty.M4.E2L"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Empty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Empty.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadEmpty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadEmpty.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Empty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Empty.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadEmpty_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadEmpty_3P.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 3.39733,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Empty.M4.E2S"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Empty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Empty.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadEmpty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadEmpty.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Empty'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Empty.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadEmpty_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadEmpty_3P.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 3.77067,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Tactical.M4.L2S"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Tactical'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Tactical.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadTactical'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadTactical.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Tactical'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Tactical.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadTactical_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadTactical_3P.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 3.135,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Tactical.M4.L2E"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Tactical'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Tactical.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadTactical'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadTactical.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Tactical'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Tactical.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadTactical_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadTactical_3P.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 3.38833,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Tactical.M4.S2L"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Tactical'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Tactical.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadTactical'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadTactical.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Tactical'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Tactical.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadTactical_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadTactical_3P.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 2.85,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Tactical.M4.S2E"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Tactical'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Tactical.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadTactical'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadTactical.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Tactical'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Tactical.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadTactical_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadTactical_3P.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 3.42,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Tactical.M4.E2L"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Tactical'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Tactical.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadTactical'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadTactical.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Tactical'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Tactical.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadTactical_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadTactical_3P.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 2.88167,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Tactical.M4.E2S"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_M4_Reload_Tactical'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_FP_M4_Reload_Tactical.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_M4_ReloadTactical'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Montage/TP/AM_TP_M4_ReloadTactical.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_Reload_Tactical'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Reloads/AM_Weap_M4_Reload_Tactical.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_M4_ReloadTactical_3P'",
+              "ObjectPath": "/WEPN_002/Animations/Weapon/Montage/TP/AM_Weap_M4_ReloadTactical_3P.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 3.19833,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Pose.Foregrip.FGP_014"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonAsset": {
+              "ObjectName": "AnimSequence'A_FP_M4_FGP_014'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/Foregrips/Animations/A_FP_M4_FGP_014.0"
+            },
+            "ThirdPersonAsset": {
+              "ObjectName": "AnimSequence'A_TP_M4_FGP_14_Pose'",
+              "ObjectPath": "/WEPN_002/Animations/Character/Sequence/TP/Foregrips/A_TP_M4_FGP_14_Pose.0"
+            }
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      }
+    ]
+  }
+}

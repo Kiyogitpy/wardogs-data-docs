@@ -1,0 +1,535 @@
+--- export: UObject / BH_ClaymoreExtensionData_C_0 ---
+{
+  "Type": "BH_ClaymoreExtensionData_C",
+  "Name": "BH_ClaymoreExtensionData_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Claymore/Data/Blueprints/BH_ClaymoreExtensionData.BH_ClaymoreExtensionData_C'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Claymore:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Claymore/Data/ID_Claymore.7"
+  },
+  "Template": {
+    "ObjectName": "BH_ClaymoreExtensionData_C'Default__BH_ClaymoreExtensionData_C'",
+    "ObjectPath": "/Claymore/Data/Blueprints/BH_ClaymoreExtensionData.0"
+  },
+  "Properties": {
+    "TriggerBoxExtends": {
+      "X": 80.0,
+      "Y": 80.0,
+      "Z": 45.0
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Claymore'",
+    "ObjectPath": "/Claymore/Data/ID_Claymore.5"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 2,
+      "Y": 1
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Claymore'",
+    "ObjectPath": "/Claymore/Data/ID_Claymore.5"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Claymore/Meshes/SM_Claymore.SM_Claymore",
+      "SubPathString": ""
+    },
+    "Scale": {
+      "X": 1.0,
+      "Y": 1.0,
+      "Z": 1.0
+    },
+    "RelativeRotation": {
+      "Pitch": 0.0,
+      "Yaw": 90.0,
+      "Roll": 15.0
+    },
+    "bOverrideDroppedRelativeLocation": true,
+    "OverridedRelativeLocation": {
+      "X": -4.0,
+      "Y": 0.0,
+      "Z": 4.0
+    },
+    "bOverrideDroppedBoxExtent": true,
+    "OverridedBoxExtent": {
+      "X": 5.5,
+      "Y": 16.0,
+      "Z": 16.0
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Claymore'",
+    "ObjectPath": "/Claymore/Data/ID_Claymore.5"
+  },
+  "Properties": {
+    "bIsVisibleOnEquippedUI": true,
+    "DisplayedItems": [
+      "Id.Item.Claymore"
+    ],
+    "bDisplayIncludeAllSlots": true
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Claymore'",
+    "ObjectPath": "/Claymore/Data/ID_Claymore.5"
+  },
+  "Properties": {
+    "Weight": 1.6
+  }
+}
+--- export: UPrimaryDataAsset / ID_Claymore ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_Claymore",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Claymore/Data/ID_Claymore",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.Claymore"
+    },
+    "ItemContext": [
+      "Item.Context.UtilityItem",
+      "Item.Context.QuickSlot",
+      "Item.Context.Animation.Archetype.EquipRightHand",
+      "Item.Context.Animation.Type.Claymore"
+    ],
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+      "Key": "Items.Utility.Claymore",
+      "SourceString": "Claymore",
+      "LocalizedString": "Claymore"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_ItemActor'ID_Claymore:WDInventoryFragment_ItemActor_0'",
+        "ObjectPath": "/Claymore/Data/ID_Claymore.7"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_Claymore:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Claymore/Data/ID_Claymore.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_Claymore:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Claymore/Data/ID_Claymore.2"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_Claymore:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Claymore/Data/ID_Claymore.6"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_Claymore:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Claymore/Data/ID_Claymore.1"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_Claymore:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/Claymore/Data/ID_Claymore.4"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Claymore'",
+    "ObjectPath": "/Claymore/Data/ID_Claymore.5"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Claymore_Audio'",
+      "ObjectPath": "/Claymore/Data/ID_Claymore_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_ItemActor_0 ---
+{
+  "Type": "WDInventoryFragment_ItemActor",
+  "Name": "WDInventoryFragment_ItemActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_ItemActor'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Claymore'",
+    "ObjectPath": "/Claymore/Data/ID_Claymore.5"
+  },
+  "Properties": {
+    "ExtensionDataFragments": [
+      {
+        "ObjectName": "WDItemExtensionData_Holdable'ID_Claymore:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Holdable_0'",
+        "ObjectPath": "/Claymore/Data/ID_Claymore.10"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Input'ID_Claymore:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+        "ObjectPath": "/Claymore/Data/ID_Claymore.11"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Inventory'ID_Claymore:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Inventory_0'",
+        "ObjectPath": "/Claymore/Data/ID_Claymore.12"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_AudioExtension'ID_Claymore:WDInventoryFragment_ItemActor_0.WDItemExtensionData_AudioExtension_0'",
+        "ObjectPath": "/Claymore/Data/ID_Claymore.9"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Animation'ID_Claymore:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Animation_0'",
+        "ObjectPath": "/Claymore/Data/ID_Claymore.8"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Placeable'ID_Claymore:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Placeable_0'",
+        "ObjectPath": "/Claymore/Data/ID_Claymore.13"
+      },
+      {
+        "ObjectName": "BH_ClaymoreExtensionData_C'ID_Claymore:WDInventoryFragment_ItemActor_0.BH_ClaymoreExtensionData_C_0'",
+        "ObjectPath": "/Claymore/Data/ID_Claymore.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Animation_0 ---
+{
+  "Type": "WDItemExtensionData_Animation",
+  "Name": "WDItemExtensionData_Animation_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Animation'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Claymore:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Claymore/Data/ID_Claymore.7"
+  },
+  "Properties": {
+    "AnimationSet": {
+      "ObjectName": "BHAnimationSet'AnimSet_Claymore'",
+      "ObjectPath": "/Claymore/Data/AnimSet_Claymore.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_AudioExtension_0 ---
+{
+  "Type": "WDItemExtensionData_AudioExtension",
+  "Name": "WDItemExtensionData_AudioExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_AudioExtension'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Claymore:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Claymore/Data/ID_Claymore.7"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Claymore_Audio'",
+      "ObjectPath": "/Claymore/Data/ID_Claymore_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_Holdable_0 ---
+{
+  "Type": "WDItemExtensionData_Holdable",
+  "Name": "WDItemExtensionData_Holdable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Holdable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Claymore:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Claymore/Data/ID_Claymore.7"
+  },
+  "Properties": {
+    "HoldableMesh": {
+      "ObjectName": "SkeletalMesh'SK_Claymore'",
+      "ObjectPath": "/Claymore/Meshes/SK_Claymore.1"
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_Claymore'",
+        "ObjectPath": "/Claymore/Materials/MI_Claymore.0"
+      }
+    ],
+    "MeshAnimClass": {
+      "ObjectName": "AnimBlueprintGeneratedClass'ABP_Claymore_C'",
+      "ObjectPath": "/Claymore/Animation/Weapon/Blueprint/ABP_Claymore.1"
+    },
+    "EquipAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_Claymore_Equip'",
+        "ObjectPath": "/Claymore/Animation/Character/Montage/AM_FP_Claymore_Equip.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_Equipment2H_Equip'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/Equipment2H/Actions/AM_TP_Gen_Equipment2H_Equip.0"
+      },
+      "FirstPersonItemAnimation": {
+        "ObjectName": "AnimMontage'AM_Weap_Claymore_Equip'",
+        "ObjectPath": "/Claymore/Animation/Weapon/Montage/AM_Weap_Claymore_Equip.0"
+      },
+      "ThirdPersonItemAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Claymore_Equip_Weap'",
+        "ObjectPath": "/Claymore/Animation/Weapon/Montage/AM_TP_Claymore_Equip_Weap.0"
+      }
+    },
+    "HolsterAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_Claymore_Holster'",
+        "ObjectPath": "/Claymore/Animation/Character/Montage/AM_FP_Claymore_Holster.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_Equipment2H_Holster'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/Equipment2H/Actions/AM_TP_Gen_Equipment2H_Holster.0"
+      },
+      "ThirdPersonItemAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Claymore_Holster_Weap'",
+        "ObjectPath": "/Claymore/Animation/Weapon/Montage/AM_TP_Claymore_Holster_Weap.0"
+      }
+    },
+    "EquippedAnimSet": {
+      "DefaultFirstPersonLayer": {
+        "AssetPathName": "/Claymore/Animation/Character/Blueprint/ABP_FP_Claymore_Layer_RW.ABP_FP_Claymore_Layer_RW_C",
+        "SubPathString": ""
+      },
+      "DefaultThirdPersonLayer": {
+        "AssetPathName": "/Claymore/Animation/Character/Blueprint/ABP_TP_Claymore_Layer_RW.ABP_TP_Claymore_Layer_RW_C",
+        "SubPathString": ""
+      }
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_InputActionExtension_0 ---
+{
+  "Type": "WDItemExtensionData_Input",
+  "Name": "WDItemExtensionData_InputActionExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Input'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Claymore:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Claymore/Data/ID_Claymore.7"
+  },
+  "Properties": {
+    "InputMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_DeployableItem'",
+      "ObjectPath": "/Game/Weapons/Input/IMC_DeployableItem.7"
+    },
+    "InputBehaviors": [
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.Player.PrimaryUse"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_Claymore:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_0'",
+          "ObjectPath": "/Claymore/Data/ID_Claymore.14"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.Inspect"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_Claymore:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_2'",
+          "ObjectPath": "/Claymore/Data/ID_Claymore.15"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.PrimaryUse.Release"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_CompleteAction'ID_Claymore:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_CompleteAction_0'",
+          "ObjectPath": "/Claymore/Data/ID_Claymore.16"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Inventory_0 ---
+{
+  "Type": "WDItemExtensionData_Inventory",
+  "Name": "WDItemExtensionData_Inventory_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Inventory'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Claymore:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Claymore/Data/ID_Claymore.7"
+  },
+  "Properties": {
+    "ActionResourceRequirements": [
+      {
+        "Key": {
+          "TagName": "Action.Throw.Primary"
+        },
+        "Value": {
+          "RequiredResource": {
+            "TagName": "Id.Item.Claymore"
+          },
+          "ResourcesUsed": 1,
+          "bLimitSearchToItem": false,
+          "OptionalRequiredSubSlotCategory": {
+            "TagName": "None"
+          },
+          "ResourceType": {
+            "TagName": "Item.Resource.Self"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Action.Throw.Dropped"
+        },
+        "Value": {
+          "RequiredResource": {
+            "TagName": "Id.Item.Claymore"
+          },
+          "ResourcesUsed": 1,
+          "bLimitSearchToItem": false,
+          "OptionalRequiredSubSlotCategory": {
+            "TagName": "None"
+          },
+          "ResourceType": {
+            "TagName": "Item.Resource.Self"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Placeable_0 ---
+{
+  "Type": "WDItemExtensionData_Placeable",
+  "Name": "WDItemExtensionData_Placeable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Placeable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Claymore:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Claymore/Data/ID_Claymore.7"
+  },
+  "Properties": {
+    "MaxPlacementDistance": 400.0,
+    "MaxPlacementAngle": 30.0,
+    "bCanPlaceOnOtherPlaceable": false,
+    "PlacementCollisionSize": {
+      "X": 0.9,
+      "Y": 0.9,
+      "Z": 0.8
+    },
+    "PlaceableClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Claymore_C'",
+      "ObjectPath": "/Claymore/Data/Blueprints/B_Claymore.2"
+    },
+    "PlaceableInitData": {
+      "VitalityComponentParams": {
+        "bOverrideBaseHealth": true,
+        "BaseHealthOverride": 1.0,
+        "bOverrideMaxHealth": true,
+        "MaxHealthOverride": 1.0
+      }
+    },
+    "ProgressWheelText": {
+      "Namespace": "",
+      "Key": "D53D19CA4980F3E9C41EB2A18F35EFBD",
+      "SourceString": "Deploying Landmine",
+      "LocalizedString": "Deploying Landmine"
+    },
+    "BlockedReason": {
+      "TagName": "UI.Interactions.PlacementWarnings.PlacementBlocked"
+    },
+    "BlockedActorClasses": [
+      {
+        "ObjectName": "Class'WDWheeledVehiclePawn'",
+        "ObjectPath": "/Script/WDGame"
+      },
+      {
+        "ObjectName": "Class'WDTrackedVehicle'",
+        "ObjectPath": "/Script/WDGame"
+      },
+      {
+        "ObjectName": "Class'WDRotaryVehicle'",
+        "ObjectPath": "/Script/WDGame"
+      },
+      {
+        "ObjectName": "Class'WDMoverPlayerCharacter'",
+        "ObjectPath": "/Script/WDGame"
+      }
+    ],
+    "AppliedEffects": [
+      {
+        "ObjectName": "BlueprintGeneratedClass'GE_UsePlaceable_C'",
+        "ObjectPath": "/Game/GameMechanics/GameplayEffects/Actions/GE_UsePlaceable.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_0 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_Claymore:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Claymore/Data/ID_Claymore.11"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Placeable.PrimaryUse"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_2 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_Claymore:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Claymore/Data/ID_Claymore.11"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Item.Inspect"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_CompleteAction_0 ---
+{
+  "Type": "WDItemInputBehavior_CompleteAction",
+  "Name": "WDItemInputBehavior_CompleteAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_CompleteAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_Claymore:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Claymore/Data/ID_Claymore.11"
+  },
+  "Properties": {
+    "ActionToComplete": {
+      "TagName": "Action.Placeable.PrimaryUse"
+    }
+  }
+}

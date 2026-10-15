@@ -1,0 +1,40 @@
+--- export: UPrimaryDataAsset / AE_Music_InGame_TeamSelect ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Music_InGame_TeamSelect",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Music/InGame/AE_Music_InGame_TeamSelect",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Music.InGame.TeamSelect"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Music_InGame_TeamSelect:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Music/InGame/AE_Music_InGame_TeamSelect.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Music_InGame_TeamSelect'",
+    "ObjectPath": "/Game/Audio/Events/Music/InGame/AE_Music_InGame_TeamSelect.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Music_InGame_TeamSelect'",
+      "ObjectPath": "/Game/Audio/Music/InGame/MSS/MSS_Music_InGame_TeamSelect.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::IfDifferentSound",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

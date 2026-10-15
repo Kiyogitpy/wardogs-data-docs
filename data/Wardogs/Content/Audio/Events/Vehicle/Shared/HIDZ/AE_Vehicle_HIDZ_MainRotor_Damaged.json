@@ -1,0 +1,139 @@
+--- export: UObject / AEB_Doppler_C_0 ---
+{
+  "Type": "AEB_Doppler_C",
+  "Name": "AEB_Doppler_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_Doppler.AEB_Doppler_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_HIDZ_MainRotor_Damaged'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_HIDZ_MainRotor_Damaged.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_Doppler_C'Default__AEB_Doppler_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_Doppler.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.HIDZ.MainRotor.Damaged"
+    },
+    "ConcurrentInstanceLimit": 1
+  }
+}
+--- export: UObject / AEB_UpdateVehicleHIDZHealth_C_0 ---
+{
+  "Type": "AEB_SetVehicleHIDZAttribute_C",
+  "Name": "AEB_UpdateVehicleHIDZHealth_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetVehicleHIDZAttribute.AEB_SetVehicleHIDZAttribute_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_HIDZ_MainRotor_Damaged'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_HIDZ_MainRotor_Damaged.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetVehicleHIDZAttribute_C'Default__AEB_SetVehicleHIDZAttribute_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetVehicleHIDZAttribute.0"
+  },
+  "Properties": {
+    "Attribute Tag": {
+      "TagName": "Attribute.Gameplay.Health.Rotor.Main"
+    },
+    "ParameterName": "HIDZHealth",
+    "ShouldNormaliseAttribute": true,
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.HIDZ.MainRotor.Damaged"
+    },
+    "ConcurrentInstanceLimit": 1
+  }
+}
+--- export: UObject / AEB_VehiclePerspective_C_0 ---
+{
+  "Type": "AEB_VehiclePerspective_C",
+  "Name": "AEB_VehiclePerspective_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_VehiclePerspective.AEB_VehiclePerspective_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_HIDZ_MainRotor_Damaged'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_HIDZ_MainRotor_Damaged.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_VehiclePerspective_C'Default__AEB_VehiclePerspective_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_VehiclePerspective.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_HIDZ_MainRotor_Damaged ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_HIDZ_MainRotor_Damaged",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_HIDZ_MainRotor_Damaged",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.HIDZ.MainRotor.Damaged"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Vehicle_HIDZ_MainRotor_Damaged:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_HIDZ_MainRotor_Damaged.4"
+      },
+      {
+        "ObjectName": "AEB_SetVehicleHIDZAttribute_C'AE_Vehicle_HIDZ_MainRotor_Damaged:AEB_UpdateVehicleHIDZHealth_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_HIDZ_MainRotor_Damaged.1"
+      },
+      {
+        "ObjectName": "AEB_Doppler_C'AE_Vehicle_HIDZ_MainRotor_Damaged:AEB_Doppler_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_HIDZ_MainRotor_Damaged.0"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorPlayVehicleSound'AE_Vehicle_HIDZ_MainRotor_Damaged:WDAudioEventBehaviorPlayVehicleSound_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_HIDZ_MainRotor_Damaged.5"
+      },
+      {
+        "ObjectName": "AEB_VehiclePerspective_C'AE_Vehicle_HIDZ_MainRotor_Damaged:AEB_VehiclePerspective_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_HIDZ_MainRotor_Damaged.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_HIDZ_MainRotor_Damaged'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_HIDZ_MainRotor_Damaged.3"
+  },
+  "Properties": {
+    "SocketName": "Collective_J",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.HIDZ.MainRotor.Damaged"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviorPlayVehicleSound_0 ---
+{
+  "Type": "WDAudioEventBehaviorPlayVehicleSound",
+  "Name": "WDAudioEventBehaviorPlayVehicleSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorPlayVehicleSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_HIDZ_MainRotor_Damaged'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_HIDZ_MainRotor_Damaged.3"
+  },
+  "Properties": {
+    "SoundAssetTag": {
+      "TagName": "Audio.Asset.Vehicle.Shared.HIDZ.MainRotor.Damaged"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.HIDZ.MainRotor.Damaged"
+    },
+    "bPersistent": true
+  }
+}

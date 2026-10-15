@@ -1,0 +1,125 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_72mm'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/72mm/ID_72mm.3"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 2,
+      "Y": 1
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_72mm'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/72mm/ID_72mm.3"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Items/Resources/Ammo/SM_84mm_Ammo.SM_84mm_Ammo",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_72mm'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/72mm/ID_72mm.3"
+  }
+}
+--- export: UPrimaryDataAsset / ID_72mm ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_72mm",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Resources/Ammo/72mm/ID_72mm",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.72mm"
+    },
+    "ItemContext": [
+      "Item.Ammo",
+      "Item.Caliber.72mm",
+      "Item.Context.ForceToStorage"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "2B56CA78460859EE8D70FCA810310D85",
+      "SourceString": "72mm",
+      "LocalizedString": "72mm"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_72mm:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/72mm/ID_72mm.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_72mm:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/72mm/ID_72mm.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Projectile'ID_72mm:WDInventoryFragment_Projectile_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/72mm/ID_72mm.5"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_72mm:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/72mm/ID_72mm.4"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_72mm:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/72mm/ID_72mm.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_72mm'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/72mm/ID_72mm.3"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Rockets_Audio'",
+      "ObjectPath": "/Game/Items/Resources/Ammo/Rockets/ID_Rockets_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Projectile_0 ---
+{
+  "Type": "WDInventoryFragment_Projectile",
+  "Name": "WDInventoryFragment_Projectile_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Projectile'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_72mm'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/72mm/ID_72mm.3"
+  },
+  "Properties": {
+    "ProjectileData": {
+      "ObjectName": "WDProjectileData'DA_72mm_ProjectileData'",
+      "ObjectPath": "/Game/GameMechanics/Inventory/Equipment/Caliber/72mm/DA_72mm_ProjectileData.0"
+    }
+  }
+}

@@ -1,0 +1,120 @@
+--- export: UObject / AEB_AttachSoundToVehicle_C_1 ---
+{
+  "Type": "AEB_AttachSoundToVehicle_C",
+  "Name": "AEB_AttachSoundToVehicle_C_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_AttachSoundToVehicle.AEB_AttachSoundToVehicle_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_SpawnVehicle_Radar_HeavyDamaged_WhileActive'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_SpawnVehicle_Radar_HeavyDamaged_WhileActive.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_AttachSoundToVehicle_C'Default__AEB_AttachSoundToVehicle_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_AttachSoundToVehicle.0"
+  },
+  "Properties": {
+    "Socket Name": "body_RadarSocket",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Radar.HeavyDamage.WhileActive"
+    }
+  }
+}
+--- export: UObject / AEB_SetBooleanParameter_C_0 ---
+{
+  "Type": "AEB_SetBooleanParameter_C",
+  "Name": "AEB_SetBooleanParameter_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetBooleanParameter.AEB_SetBooleanParameter_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_SpawnVehicle_Radar_HeavyDamaged_WhileActive'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_SpawnVehicle_Radar_HeavyDamaged_WhileActive.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetBooleanParameter_C'Default__AEB_SetBooleanParameter_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetBooleanParameter.0"
+  },
+  "Properties": {
+    "In Name": "Destroyed",
+    "Delay": 0.0,
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Radar.HeavyDamage.WhileActive"
+    }
+  }
+}
+--- export: UObject / AEB_SetVehicleHIDZAttribute_C_0 ---
+{
+  "Type": "AEB_SetVehicleHIDZAttribute_C",
+  "Name": "AEB_SetVehicleHIDZAttribute_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetVehicleHIDZAttribute.AEB_SetVehicleHIDZAttribute_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_SpawnVehicle_Radar_HeavyDamaged_WhileActive'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_SpawnVehicle_Radar_HeavyDamaged_WhileActive.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetVehicleHIDZAttribute_C'Default__AEB_SetVehicleHIDZAttribute_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetVehicleHIDZAttribute.0"
+  },
+  "Properties": {
+    "Attribute Tag": {
+      "TagName": "Attribute.Gameplay.Health.Radar"
+    },
+    "ParameterName": "RadarHealth",
+    "ShouldNormaliseAttribute": true,
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Radar.HeavyDamage.WhileActive"
+    },
+    "ConcurrentInstanceLimit": 1
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_SpawnVehicle_Radar_HeavyDamaged_WhileActive ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_SpawnVehicle_Radar_HeavyDamaged_WhileActive",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/AE_Vehicle_SpawnVehicle_Radar_HeavyDamaged_WhileActive",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.SpawnVehicle.Radar.HeavyDamage.WhileActive"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_AttachSoundToVehicle_C'AE_Vehicle_SpawnVehicle_Radar_HeavyDamaged_WhileActive:AEB_AttachSoundToVehicle_C_1'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_SpawnVehicle_Radar_HeavyDamaged_WhileActive.0"
+      },
+      {
+        "ObjectName": "AEB_SetBooleanParameter_C'AE_Vehicle_SpawnVehicle_Radar_HeavyDamaged_WhileActive:AEB_SetBooleanParameter_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_SpawnVehicle_Radar_HeavyDamaged_WhileActive.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Vehicle_SpawnVehicle_Radar_HeavyDamaged_WhileActive:CrosstalkAudioEventBehaviorPlaySound_1'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_SpawnVehicle_Radar_HeavyDamaged_WhileActive.4"
+      },
+      {
+        "ObjectName": "AEB_SetVehicleHIDZAttribute_C'AE_Vehicle_SpawnVehicle_Radar_HeavyDamaged_WhileActive:AEB_SetVehicleHIDZAttribute_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_SpawnVehicle_Radar_HeavyDamaged_WhileActive.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_1 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_SpawnVehicle_Radar_HeavyDamaged_WhileActive'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_SpawnVehicle_Radar_HeavyDamaged_WhileActive.3"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Vehicles_Land_SpawnVehicle_Patriot_RadarDish_Damage_Loop'",
+      "ObjectPath": "/Game/Audio/Vehicles/Land/Spawn_Vehicle/Radars/MSS_Vehicles_Land_SpawnVehicle_Patriot_RadarDish_Damage_Loop.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Radar.HeavyDamage.WhileActive"
+    }
+  }
+}

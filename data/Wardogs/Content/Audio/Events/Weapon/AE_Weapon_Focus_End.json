@@ -1,0 +1,164 @@
+--- export: UObject / AEB_DeactivateControlBusMix_C_0 ---
+{
+  "Type": "AEB_DeactivateControlBusMix_C",
+  "Name": "AEB_DeactivateControlBusMix_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_DeactivateControlBusMix.AEB_DeactivateControlBusMix_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Focus_End'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/AE_Weapon_Focus_End.5"
+  },
+  "Template": {
+    "ObjectName": "AEB_DeactivateControlBusMix_C'Default__AEB_DeactivateControlBusMix_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_DeactivateControlBusMix.0"
+  },
+  "Properties": {
+    "Mix": {
+      "ObjectName": "SoundControlBusMix'AM_CBM_Focus'",
+      "ObjectPath": "/Game/Audio/AudioModulation/ControlBusMixes/AM_CBM_Focus.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / AEB_FocusRemaining_C_0 ---
+{
+  "Type": "AEB_FocusRemaining_C",
+  "Name": "AEB_FocusRemaining_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_FocusRemaining.AEB_FocusRemaining_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Focus_End'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/AE_Weapon_Focus_End.5"
+  },
+  "Template": {
+    "ObjectName": "AEB_FocusRemaining_C'Default__AEB_FocusRemaining_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_FocusRemaining.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / AEB_RemoveCosmeticExertionSource_C_0 ---
+{
+  "Type": "AEB_RemoveCosmeticExertionSource_C",
+  "Name": "AEB_RemoveCosmeticExertionSource_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_RemoveCosmeticExertionSource.AEB_RemoveCosmeticExertionSource_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Focus_End'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/AE_Weapon_Focus_End.5"
+  },
+  "Template": {
+    "ObjectName": "AEB_RemoveCosmeticExertionSource_C'Default__AEB_RemoveCosmeticExertionSource_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_RemoveCosmeticExertionSource.0"
+  },
+  "Properties": {
+    "SourceName": "FocusDecay"
+  }
+}
+--- export: UObject / AEB_RequestVox_C_0 ---
+{
+  "Type": "AEB_RequestVox_C",
+  "Name": "AEB_RequestVox_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_RequestVox.AEB_RequestVox_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Focus_End'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/AE_Weapon_Focus_End.5"
+  },
+  "Template": {
+    "ObjectName": "AEB_RequestVox_C'Default__AEB_RequestVox_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_RequestVox.0"
+  },
+  "Properties": {
+    "VoxRequest": {
+      "LineID": {
+        "TagName": "Audio.Vox.Exertion.Focus.Out"
+      },
+      "Perspective": "EWDVoxPerspective::FirstPerson"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    },
+    "bSourceObjectInstanced": false,
+    "ConcurrentInstanceLimit": 1
+  }
+}
+--- export: UObject / AEB_SuppressBreathVox_C_0 ---
+{
+  "Type": "AEB_SuppressBreathVox_C",
+  "Name": "AEB_SuppressBreathVox_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SuppressBreathVox.AEB_SuppressBreathVox_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Focus_End'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/AE_Weapon_Focus_End.5"
+  },
+  "Template": {
+    "ObjectName": "AEB_SuppressBreathVox_C'Default__AEB_SuppressBreathVox_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SuppressBreathVox.0"
+  },
+  "Properties": {
+    "Breath Clock Suppressed": false
+  }
+}
+--- export: UPrimaryDataAsset / AE_Weapon_Focus_End ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_Focus_End",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Weapon/AE_Weapon_Focus_End",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.Focus.End"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_RequestVox_C'AE_Weapon_Focus_End:AEB_RequestVox_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/AE_Weapon_Focus_End.3"
+      },
+      {
+        "ObjectName": "AEB_FocusRemaining_C'AE_Weapon_Focus_End:AEB_FocusRemaining_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/AE_Weapon_Focus_End.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Weapon_Focus_End:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/AE_Weapon_Focus_End.6"
+      },
+      {
+        "ObjectName": "AEB_DeactivateControlBusMix_C'AE_Weapon_Focus_End:AEB_DeactivateControlBusMix_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/AE_Weapon_Focus_End.0"
+      },
+      {
+        "ObjectName": "AEB_RemoveCosmeticExertionSource_C'AE_Weapon_Focus_End:AEB_RemoveCosmeticExertionSource_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/AE_Weapon_Focus_End.2"
+      },
+      {
+        "ObjectName": "AEB_SuppressBreathVox_C'AE_Weapon_Focus_End:AEB_SuppressBreathVox_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/AE_Weapon_Focus_End.4"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Focus_End'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/AE_Weapon_Focus_End.5"
+  },
+  "Properties": {
+    "ParameterName": "Stop",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

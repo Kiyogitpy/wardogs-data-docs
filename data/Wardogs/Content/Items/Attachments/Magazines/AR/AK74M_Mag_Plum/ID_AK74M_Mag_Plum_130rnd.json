@@ -1,0 +1,173 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_AK74M_Mag_Plum_130rnd'",
+    "ObjectPath": "/Game/Items/Attachments/Magazines/AR/AK74M_Mag_Plum/ID_AK74M_Mag_Plum_130rnd.4"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 1,
+      "Y": 2
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_AK74M_Mag_Plum_130rnd'",
+    "ObjectPath": "/Game/Items/Attachments/Magazines/AR/AK74M_Mag_Plum/ID_AK74M_Mag_Plum_130rnd.4"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Items/Weapons/AR/AK74-M/Assets/DefaultAttachments/SM_AK74M_ExtendedMag.SM_AK74M_ExtendedMag",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_AK74M_Mag_Plum_130rnd'",
+    "ObjectPath": "/Game/Items/Attachments/Magazines/AR/AK74M_Mag_Plum/ID_AK74M_Mag_Plum_130rnd.4"
+  },
+  "Properties": {
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Item.Ammo"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::AllowList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [
+            "Item.Caliber.545mm"
+          ],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": -2,
+        "MaxSlotAmountStackSize": 130,
+        "bAllowsStackedPacking": true,
+        "bIsHiddenContainer": true,
+        "_aaabelnajgoacnpmnokoe_$BD096E02DFCDEAE4$_$20$": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [
+          "Id.Item.545mm"
+        ],
+        "DefaultContainerItems": [
+          {
+            "Item": {
+              "TagName": "Id.Item.545mm"
+            },
+            "Amount": null
+          }
+        ]
+      }
+    ]
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_AK74M_Mag_Plum_130rnd'",
+    "ObjectPath": "/Game/Items/Attachments/Magazines/AR/AK74M_Mag_Plum/ID_AK74M_Mag_Plum_130rnd.4"
+  }
+}
+--- export: UPrimaryDataAsset / ID_AK74M_Mag_Plum_130rnd ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_AK74M_Mag_Plum_130rnd",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Attachments/Magazines/AR/AK74M_Mag_Plum/ID_AK74M_Mag_Plum_130rnd",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.AK74MMagazinePlum130rnd"
+    },
+    "ItemContext": [
+      "Item.Attachment.Magazine"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "0AB6A5CC4B1BD9190AC22E9AB4DDC4D2",
+      "SourceString": "AK74-M Extended Mag",
+      "LocalizedString": "AK74-M Extended Mag"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_AK74M_Mag_Plum_130rnd:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/Game/Items/Attachments/Magazines/AR/AK74M_Mag_Plum/ID_AK74M_Mag_Plum_130rnd.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_AK74M_Mag_Plum_130rnd:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Game/Items/Attachments/Magazines/AR/AK74M_Mag_Plum/ID_AK74M_Mag_Plum_130rnd.3"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_AK74M_Mag_Plum_130rnd:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/Game/Items/Attachments/Magazines/AR/AK74M_Mag_Plum/ID_AK74M_Mag_Plum_130rnd.6"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_AK74M_Mag_Plum_130rnd:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Game/Items/Attachments/Magazines/AR/AK74M_Mag_Plum/ID_AK74M_Mag_Plum_130rnd.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_AK74M_Mag_Plum_130rnd:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Game/Items/Attachments/Magazines/AR/AK74M_Mag_Plum/ID_AK74M_Mag_Plum_130rnd.5"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_AK74M_Mag_Plum_130rnd:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Game/Items/Attachments/Magazines/AR/AK74M_Mag_Plum/ID_AK74M_Mag_Plum_130rnd.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_AK74M_Mag_Plum_130rnd'",
+    "ObjectPath": "/Game/Items/Attachments/Magazines/AR/AK74M_Mag_Plum/ID_AK74M_Mag_Plum_130rnd.4"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Magazine_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Item/Data/ID_Magazine_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_AK74M_Mag_Plum_130rnd'",
+    "ObjectPath": "/Game/Items/Attachments/Magazines/AR/AK74M_Mag_Plum/ID_AK74M_Mag_Plum_130rnd.4"
+  }
+}

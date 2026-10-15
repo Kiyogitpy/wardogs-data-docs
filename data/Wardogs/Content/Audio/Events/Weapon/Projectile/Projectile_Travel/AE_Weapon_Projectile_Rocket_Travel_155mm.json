@@ -1,0 +1,110 @@
+--- export: UObject / AEB_UpdateProjectileSoundLocation_C_0 ---
+{
+  "Type": "AEB_HandleProjectileSimulation_C",
+  "Name": "AEB_UpdateProjectileSoundLocation_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_HandleProjectileSimulation.AEB_HandleProjectileSimulation_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Projectile_Rocket_Travel_155mm'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Projectile/Projectile_Travel/AE_Weapon_Projectile_Rocket_Travel_155mm.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_HandleProjectileSimulation_C'Default__AEB_HandleProjectileSimulation_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_HandleProjectileSimulation.0"
+  }
+}
+--- export: UObject / AEB_HandleRocketIncoming_C_0 ---
+{
+  "Type": "AEB_HandleRocketIncoming_C",
+  "Name": "AEB_HandleRocketIncoming_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_HandleRocketIncoming.AEB_HandleRocketIncoming_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Projectile_Rocket_Travel_155mm'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Projectile/Projectile_Travel/AE_Weapon_Projectile_Rocket_Travel_155mm.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_HandleRocketIncoming_C'Default__AEB_HandleRocketIncoming_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_HandleRocketIncoming.0"
+  },
+  "Properties": {
+    "IncomingSound": {
+      "ObjectName": "MetaSoundSource'MSS_Weapon_Projectile_155mm_Incoming_Preset'",
+      "ObjectPath": "/Game/Audio/Weapon/Projectile/155mm/MSS_Weapon_Projectile_155mm_Incoming_Preset.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Projectile.Rocket.Incoming"
+    }
+  }
+}
+--- export: UObject / AEB_HandleRocketWhizby_C_0 ---
+{
+  "Type": "AEB_HandleRocketWhizby_C",
+  "Name": "AEB_HandleRocketWhizby_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_HandleRocketWhizby.AEB_HandleRocketWhizby_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Projectile_Rocket_Travel_155mm'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Projectile/Projectile_Travel/AE_Weapon_Projectile_Rocket_Travel_155mm.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_HandleRocketWhizby_C'Default__AEB_HandleRocketWhizby_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_HandleRocketWhizby.0"
+  },
+  "Properties": {
+    "WhizbySound": {
+      "ObjectName": "MetaSoundSource'MSS_Weapon_Projectile_Flight_155mm'",
+      "ObjectPath": "/Game/Audio/Weapon/Projectile/155mm/MSS_Weapon_Projectile_Flight_155mm.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Projectile.Rocket"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Weapon_Projectile_Rocket_Travel_155mm ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_Projectile_Rocket_Travel_155mm",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Weapon/Projectile/Projectile_Travel/AE_Weapon_Projectile_Rocket_Travel_155mm",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Projectile.Rocket.Travel.155mm"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_HandleProjectileSimulation_C'AE_Weapon_Projectile_Rocket_Travel_155mm:AEB_UpdateProjectileSoundLocation_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Projectile/Projectile_Travel/AE_Weapon_Projectile_Rocket_Travel_155mm.0"
+      },
+      {
+        "ObjectName": "AEB_HandleRocketWhizby_C'AE_Weapon_Projectile_Rocket_Travel_155mm:AEB_HandleRocketWhizby_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Projectile/Projectile_Travel/AE_Weapon_Projectile_Rocket_Travel_155mm.2"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Weapon_Projectile_Rocket_Travel_155mm:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Projectile/Projectile_Travel/AE_Weapon_Projectile_Rocket_Travel_155mm.4"
+      },
+      {
+        "ObjectName": "AEB_HandleRocketIncoming_C'AE_Weapon_Projectile_Rocket_Travel_155mm:AEB_HandleRocketIncoming_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Projectile/Projectile_Travel/AE_Weapon_Projectile_Rocket_Travel_155mm.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Projectile_Rocket_Travel_155mm'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Projectile/Projectile_Travel/AE_Weapon_Projectile_Rocket_Travel_155mm.3"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Projectile.Rocket"
+    }
+  }
+}

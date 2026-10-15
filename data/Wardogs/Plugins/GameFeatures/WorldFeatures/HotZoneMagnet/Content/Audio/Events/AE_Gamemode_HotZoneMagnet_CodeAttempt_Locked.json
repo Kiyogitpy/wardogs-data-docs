@@ -1,0 +1,62 @@
+--- export: UPrimaryDataAsset / AE_Gamemode_HotZoneMagnet_CodeAttempt_Locked ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Gamemode_HotZoneMagnet_CodeAttempt_Locked",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/HotZoneMagnet/Audio/Events/AE_Gamemode_HotZoneMagnet_CodeAttempt_Locked",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Gamemode.HotZoneMagnet.CodeAttempt.Locked"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Gamemode_HotZoneMagnet_CodeAttempt_Locked:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/HotZoneMagnet/Audio/Events/AE_Gamemode_HotZoneMagnet_CodeAttempt_Locked.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Gamemode_HotZoneMagnet_CodeAttempt_Locked:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/HotZoneMagnet/Audio/Events/AE_Gamemode_HotZoneMagnet_CodeAttempt_Locked.2"
+      }
+    ],
+    "_aaabhonahgpdbjealfaaa_$ED076F31940B5000$_$23$": 50.5
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Gamemode_HotZoneMagnet_CodeAttempt_Locked'",
+    "ObjectPath": "/HotZoneMagnet/Audio/Events/AE_Gamemode_HotZoneMagnet_CodeAttempt_Locked.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Gamemode_HotZoneMagnet_CodeAttempt_Locked'",
+    "ObjectPath": "/HotZoneMagnet/Audio/Events/AE_Gamemode_HotZoneMagnet_CodeAttempt_Locked.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Gamemode_HotZoneMagnet_Code_Lock'",
+      "ObjectPath": "/Game/Audio/Gamemode/HotZoneMagnet/MSS/MSS_Gamemode_HotZoneMagnet_Code_Lock.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "CancelFadeOutDuration": 0.5,
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

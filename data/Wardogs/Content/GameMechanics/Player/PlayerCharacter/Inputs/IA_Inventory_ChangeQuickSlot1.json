@@ -1,0 +1,31 @@
+--- export: UDataAsset / IA_Inventory_ChangeQuickSlot1 ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Inventory_ChangeQuickSlot1",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Inventory_ChangeQuickSlot1",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Inventory.Change.1"
+    },
+    "bConsumeInput": false,
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerTap'IA_Inventory_ChangeQuickSlot1:InputTriggerTap_1'",
+        "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Inventory_ChangeQuickSlot1.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerTap_1 ---
+{
+  "Type": "InputTriggerTap",
+  "Name": "InputTriggerTap_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerTap'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Inventory_ChangeQuickSlot1'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Inventory_ChangeQuickSlot1.0"
+  }
+}

@@ -1,0 +1,115 @@
+--- export: UObject / WDActorBuildSpawner_0 ---
+{
+  "Type": "WDActorBuildSpawner",
+  "Name": "WDActorBuildSpawner_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDActorBuildSpawner'",
+  "Outer": {
+    "ObjectName": "WDBuildableDataAsset'DA_Buildable_CamoNetTent'",
+    "ObjectPath": "/Buildables/Data/Buildables/CamoNetTent/DA_Buildable_CamoNetTent.1"
+  },
+  "Properties": {
+    "BaseBuildableClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Buildable_CamoNetTent_C'",
+      "ObjectPath": "/Buildables/Data/Buildables/CamoNetTent/B_Buildable_CamoNetTent.2"
+    }
+  }
+}
+--- export: UDataAsset / DA_Buildable_CamoNetTent ---
+{
+  "Type": "WDBuildableDataAsset",
+  "Name": "DA_Buildable_CamoNetTent",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDBuildableDataAsset'",
+  "Package": "/Buildables/Data/Buildables/CamoNetTent/DA_Buildable_CamoNetTent",
+  "Properties": {
+    "SpawnerOverride": {
+      "ObjectName": "WDActorBuildSpawner'DA_Buildable_CamoNetTent:WDActorBuildSpawner_0'",
+      "ObjectPath": "/Buildables/Data/Buildables/CamoNetTent/DA_Buildable_CamoNetTent.0"
+    },
+    "EntityTag": {
+      "TagName": "Id.Buildable.CamoNetTent"
+    },
+    "Cost": 7,
+    "PlacePivotHorizontalOffset": 3.5,
+    "_aaabfagpiegcpjedampen_$6F8462F9430CF4D$_$21$": 0.47,
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+      "Key": "Buildable.SniperTent",
+      "SourceString": "Recon Tent",
+      "LocalizedString": "Recon Tent"
+    },
+    "MaxHealth": 300.0,
+    "bUseCurveToUpdateHealthVisuals": true,
+    "HealthVisualsPercentageCurve": {
+      "ExternalCurve": {
+        "ObjectName": "CurveFloat'C_DamageTintCurve'",
+        "ObjectPath": "/Buildables/Data/Buildables/C_DamageTintCurve.0"
+      }
+    },
+    "MaxStack": 100,
+    "PlacementFlags": 9,
+    "StartingPlacementRotationAngle": 90.0,
+    "PlacementBlockedPenetrationBuffer": 25.0,
+    "SnappedPlacementBlockedPenetrationBuffer": 25.0,
+    "bRequiresAllCornersOnSurface": false,
+    "bRotateWithSurface": true,
+    "bCanBuildFoundation": false,
+    "BuildingStagesDefinition": {
+      "ObjectName": "BuildingStagesDefinition'DA_Buildable_CamoNetTent_Stages'",
+      "ObjectPath": "/Buildables/Data/Buildables/CamoNetTent/DA_Buildable_CamoNetTent_Stages.0"
+    },
+    "NiagaraDataChannelAsset": {
+      "AssetPathName": "/Game/VFX/Building/DataChannel/NDC_Buildable.NDC_Buildable",
+      "SubPathString": ""
+    },
+    "FinalStageBoundingBox": {
+      "Min": {
+        "X": -105.77867,
+        "Y": -171.97957,
+        "Z": -0.92155117
+      },
+      "Max": {
+        "X": 105.77867,
+        "Y": 170.46695,
+        "Z": 94.57565
+      },
+      "IsValid": 1
+    },
+    "ConstructedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Constructed"
+    },
+    "DestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Destroyed"
+    },
+    "PlacedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Placed"
+    },
+    "_aaabigdbeocppfeehmfch_$6314E2FF5447C527$_$24$": {
+      "TagName": "GameplayCue.Buildable.Dismantle"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Buildable.CamoTent"
+      }
+    },
+    "PlacementConditions": [
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_SafeZonePlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_SafeZonePlacementCondition.1"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_WithinLadderBoundsPlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_WithinLadderBoundsPlacementCondition.1"
+      },
+      {
+        "ObjectName": "Class'WDNotInsideEnemyFobBoundsPlacementCondition'",
+        "ObjectPath": "/Script/BuildablesRuntime"
+      }
+    ],
+    "bUsesCriticalHitSpots": false,
+    "RadialWheelSlotTag": {
+      "TagName": "UI.RadialWheel.BuildTool.SlotType.CamoNetTent"
+    }
+  }
+}

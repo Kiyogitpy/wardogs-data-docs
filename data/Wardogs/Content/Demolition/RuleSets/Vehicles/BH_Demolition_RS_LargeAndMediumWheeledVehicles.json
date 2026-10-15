@@ -1,0 +1,41 @@
+--- export: UObject / BHDemolitionRule_Vehicle_0 ---
+{
+  "Type": "BHDemolitionRule_Vehicle",
+  "Name": "BHDemolitionRule_Vehicle_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDemolitionRule_Vehicle'",
+  "Outer": {
+    "ObjectName": "BHDemolitionRuleset'BH_Demolition_RS_LargeAndMediumWheeledVehicles'",
+    "ObjectPath": "/Game/Demolition/RuleSets/Vehicles/BH_Demolition_RS_LargeAndMediumWheeledVehicles.1"
+  },
+  "Properties": {
+    "PermittedVehicles": [
+      "Vehicle.Variant.Land.Wheeled.Humvee.Default",
+      "Vehicle.Variant.Land.Wheeled.Humvee.MachineGun",
+      "Vehicle.Variant.Land.Wheeled.Kodiak.Default",
+      "Vehicle.Variant.Land.Wheeled.Kodiak.Pickup",
+      "Vehicle.Variant.Land.Wheeled.Kodiak.MachineGun",
+      "Vehicle.Variant.Land.Wheeled.Ural.Attack",
+      "Vehicle.Variant.Land.Wheeled.Ural.Battle",
+      "Vehicle.Variant.Land.Wheeled.Ural.Default",
+      "Vehicle.Variant.Land.Wheeled.Humvee.Minigun",
+      "Vehicle.Variant.Land.Wheeled.DuneBuggy.Default"
+    ],
+    "bPermitOverlaps": true,
+    "bPermitBlockingHits": true
+  }
+}
+--- export: UDataAsset / BH_Demolition_RS_LargeAndMediumWheeledVehicles ---
+{
+  "Type": "BHDemolitionRuleset",
+  "Name": "BH_Demolition_RS_LargeAndMediumWheeledVehicles",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDemolitionRuleset'",
+  "Package": "/Game/Demolition/RuleSets/Vehicles/BH_Demolition_RS_LargeAndMediumWheeledVehicles",
+  "Properties": {
+    "Rule": {
+      "ObjectName": "BHDemolitionRule_Vehicle'BH_Demolition_RS_LargeAndMediumWheeledVehicles:BHDemolitionRule_Vehicle_0'",
+      "ObjectPath": "/Game/Demolition/RuleSets/Vehicles/BH_Demolition_RS_LargeAndMediumWheeledVehicles.0"
+    }
+  }
+}

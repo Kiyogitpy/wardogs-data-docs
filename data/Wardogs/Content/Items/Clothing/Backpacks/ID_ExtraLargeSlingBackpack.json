@@ -1,0 +1,260 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_ExtraLargeSlingBackpack'",
+    "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_ExtraLargeSlingBackpack.5"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 5,
+      "Y": 6
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_ExtraLargeSlingBackpack'",
+    "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_ExtraLargeSlingBackpack.5"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Characters/Player/Backpack/SuperHeavySling/000/SM/SM_Sling_000_Double_Drop.SM_Sling_000_Double_Drop",
+      "SubPathString": ""
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_Backpack_Sling_000_drop'",
+        "ObjectPath": "/Game/Characters/Player/Backpack/HeavySling/000/MAT/MI_Backpack_Sling_000_drop.0"
+      },
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_Backpack_Heavy_001_drop'",
+        "ObjectPath": "/Game/Characters/Player/Backpack/Heavy/001/MAT/MI_Backpack_Heavy_001_drop.0"
+      }
+    ],
+    "RelativeRotation": {
+      "Pitch": 0.0,
+      "Yaw": 90.0,
+      "Roll": 0.0
+    },
+    "bOverrideDroppedRelativeLocation": true,
+    "bOverrideDroppedBoxExtent": true,
+    "OverridedBoxExtent": {
+      "X": 23.2,
+      "Y": 30.4,
+      "Z": 44.6
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_ExtraLargeSlingBackpack'",
+    "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_ExtraLargeSlingBackpack.5"
+  },
+  "Properties": {
+    "bIsStorage": true,
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "None"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::BlockPriority",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [
+            "Inventory.Slot.Primary",
+            "Inventory.Slot.Secondary",
+            "Inventory.Slot.Sidearm",
+            "Inventory.Slot.Specialist"
+          ],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": [
+            "Inventory.Slot.Locked",
+            "Inventory.Slot.SupplyContainer"
+          ]
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 2,
+          "Y": 5
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": 6,
+        "MaxSlotAmountStackSize": 1,
+        "bAllowsStackedPacking": false,
+        "bIsHiddenContainer": false,
+        "_aaabelnajgoacnpmnokoe_$BD096E02DFCDEAE4$_$20$": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": []
+      },
+      {
+        "ContainerIdentifier": {
+          "TagName": "None"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::BlockList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": [
+            "Inventory.Slot.Backpack",
+            "Inventory.Slot.Vest",
+            "Inventory.Slot.Locked"
+          ]
+        },
+        "SizeType": "EBHContainerType::Grid",
+        "GridSize": {
+          "X": 4,
+          "Y": 6
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": 6,
+        "MaxSlotAmountStackSize": 0,
+        "bAllowsStackedPacking": false,
+        "bIsHiddenContainer": false,
+        "_aaabelnajgoacnpmnokoe_$BD096E02DFCDEAE4$_$20$": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": []
+      },
+      {
+        "ContainerIdentifier": {
+          "TagName": "None"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::BlockPriority",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [
+            "Inventory.Slot.Primary",
+            "Inventory.Slot.Secondary",
+            "Inventory.Slot.Sidearm",
+            "Inventory.Slot.Specialist"
+          ],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": [
+            "Inventory.Slot.Locked"
+          ]
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 2
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": 6,
+        "MaxSlotAmountStackSize": 1,
+        "bAllowsStackedPacking": false,
+        "bIsHiddenContainer": false,
+        "_aaabelnajgoacnpmnokoe_$BD096E02DFCDEAE4$_$20$": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": []
+      }
+    ]
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_ExtraLargeSlingBackpack'",
+    "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_ExtraLargeSlingBackpack.5"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_ExtraLargeSlingBackpack'",
+    "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_ExtraLargeSlingBackpack.5"
+  },
+  "Properties": {
+    "Weight": 1.5
+  }
+}
+--- export: UPrimaryDataAsset / ID_ExtraLargeSlingBackpack ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_ExtraLargeSlingBackpack",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Clothing/Backpacks/ID_ExtraLargeSlingBackpack",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.ExtraLargeSlingBackpack"
+    },
+    "ItemContext": [
+      "Inventory.Slot.Backpack",
+      "Item.Context.Equippable"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "6F0A54DD4DDCAA6729769A8B2E2AFA3B",
+      "SourceString": "Large Backpack + 2 Slings",
+      "LocalizedString": "Large Backpack + 2 Slings"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_ExtraLargeSlingBackpack:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_ExtraLargeSlingBackpack.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_ExtraLargeSlingBackpack:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_ExtraLargeSlingBackpack.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_ExtraLargeSlingBackpack:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_ExtraLargeSlingBackpack.4"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_ExtraLargeSlingBackpack:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_ExtraLargeSlingBackpack.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_ExtraLargeSlingBackpack:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_ExtraLargeSlingBackpack.6"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_ExtraLargeSlingBackpack:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_ExtraLargeSlingBackpack.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_ExtraLargeSlingBackpack'",
+    "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_ExtraLargeSlingBackpack.5"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Backpack_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Item/Data/ID_Backpack_Audio.0"
+    }
+  }
+}

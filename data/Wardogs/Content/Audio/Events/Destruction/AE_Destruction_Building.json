@@ -1,0 +1,60 @@
+--- export: UPrimaryDataAsset / AE_Destruction_Building ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Destruction_Building",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Destruction/AE_Destruction_Building",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Destruction.Building"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "WDAudioEventBehaviorMoveSoundToGameplayCueLocation'AE_Destruction_Building:WDAudioEventBehaviorMoveSoundToGameplayCueLocation_0'",
+        "ObjectPath": "/Game/Audio/Events/Destruction/AE_Destruction_Building.2"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Destruction_Building:CrosstalkAudioEventBehaviorPlaySound_1'",
+        "ObjectPath": "/Game/Audio/Events/Destruction/AE_Destruction_Building.1"
+      }
+    ],
+    "_aaabhonahgpdbjealfaaa_$ED076F31940B5000$_$23$": 101.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_1 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Destruction_Building'",
+    "ObjectPath": "/Game/Audio/Events/Destruction/AE_Destruction_Building.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Destruction_Building_Prototype'",
+      "ObjectPath": "/Game/Audio/Destruction/MSS/MSS_Destruction_Building_Prototype.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Destruction.Building"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviorMoveSoundToGameplayCueLocation_0 ---
+{
+  "Type": "WDAudioEventBehaviorMoveSoundToGameplayCueLocation",
+  "Name": "WDAudioEventBehaviorMoveSoundToGameplayCueLocation_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorMoveSoundToGameplayCueLocation'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Destruction_Building'",
+    "ObjectPath": "/Game/Audio/Events/Destruction/AE_Destruction_Building.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Destruction.Building"
+    }
+  }
+}

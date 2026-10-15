@@ -1,0 +1,26 @@
+--- export: UPrimaryDataAsset / DA_Action_FuelCan_Refuel ---
+{
+  "Type": "BHActionDefinition",
+  "Name": "DA_Action_FuelCan_Refuel",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHActionDefinition'",
+  "Package": "/FuelCanister/Blueprints/Action/DA_Action_FuelCan_Refuel",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.Appliable.FuelCan.Refuel"
+    },
+    "ActionContext": [
+      "Action.Context.Holdable",
+      "Action.Context.TwoHanded",
+      "Action.Context.Interaction"
+    ],
+    "ActionClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Action_FuelCan_Refuel_C'",
+      "ObjectPath": "/FuelCanister/Blueprints/Action/B_Action_FuelCan_Refuel.1"
+    },
+    "ActivationContextType": {
+      "ObjectName": "Class'WDAppliableItemActionContext'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+--- export: UDataTable / DT_TrackerData_Spatial_Buildables ---
+{
+  "Type": "DataTable",
+  "Name": "DT_TrackerData_Spatial_Buildables",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Buildables/Data/UI/DT_TrackerData_Spatial_Buildables",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUITrackerDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Trackers.Type.Buildable": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIActorTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhkjekddbhagijalc_$7A94A331706890B2$_$26$": true,
+      "bShouldRecreateOnFactionChange": false,
+      "RequiredTags": [
+        "Trackers.Type.Buildable"
+      ],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Buildables/Data/BuildTool/Widgets/W_Tracker_Spatial_Buildable.W_Tracker_Spatial_Buildable_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/BuildablesRuntime.WDUIBuildableSpatialTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Buildables/Data/UI/DA_Tracker_Spatial_Buildable.DA_Tracker_Spatial_Buildable",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.Buildable"
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+--- export: UObject / AEB_SetReviveParameters_C_0 ---
+{
+  "Type": "AEB_SetReviveParametersToActiveMusicState_C",
+  "Name": "AEB_SetReviveParameters_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetReviveParametersToActiveMusicState.AEB_SetReviveParametersToActiveMusicState_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_State_BeingRevived'",
+    "ObjectPath": "/Game/Audio/Events/Player/State/AE_Player_State_BeingRevived.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetReviveParametersToActiveMusicState_C'Default__AEB_SetReviveParametersToActiveMusicState_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetReviveParametersToActiveMusicState.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Player_State_BeingRevived ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Player_State_BeingRevived",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/State/AE_Player_State_BeingRevived",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.State.BeingRevived"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_SetReviveParametersToActiveMusicState_C'AE_Player_State_BeingRevived:AEB_SetReviveParameters_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/State/AE_Player_State_BeingRevived.0"
+      }
+    ]
+  }
+}

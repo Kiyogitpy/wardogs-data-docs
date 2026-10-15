@@ -1,0 +1,71 @@
+--- export: UObject / BHInventoryFragment_SubSlotSupport_1 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SPW_Inventory'",
+    "ObjectPath": "/SPW_01/Data/ID_SPW_Inventory.1"
+  },
+  "Properties": {
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "None"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::AllowList",
+          "AllowedSubSlotItems": [
+            "Id.Item.Flares"
+          ],
+          "AllowedSubSlotContext": [],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": 1,
+        "MaxSlotAmountStackSize": 255,
+        "bAllowsStackedPacking": false,
+        "bIsHiddenContainer": true,
+        "_aaabelnajgoacnpmnokoe_$BD096E02DFCDEAE4$_$20$": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": []
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / ID_SPW_Inventory ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_SPW_Inventory",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/SPW_01/Data/ID_SPW_Inventory",
+  "Properties": {
+    "ItemId": {
+      "TagName": "ID.Item.SpawnVehicleStorage"
+    },
+    "ItemContext": [
+      "Inventory.Slot.Vehicle.Storage"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "A318B8F940EAA5B2327FE09698B1397C",
+      "SourceString": "Spawn Vehicle Vehicle Storage",
+      "LocalizedString": "Spawn Vehicle Vehicle Storage"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_SPW_Inventory:BHInventoryFragment_SubSlotSupport_1'",
+        "ObjectPath": "/SPW_01/Data/ID_SPW_Inventory.0"
+      }
+    ]
+  }
+}

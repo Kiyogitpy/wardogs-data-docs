@@ -1,0 +1,614 @@
+--- export: UDataTable / DT_AssistCashRewards ---
+{
+  "Type": "DataTable",
+  "Name": "DT_AssistCashRewards",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/GameMechanics/Gamemode/Data/DT_AssistCashRewards",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDAssistResourceRewardTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Meta.Progression.Resources.MatchScore.DamageAssist.Player": {
+      "MaxDuration": 60.0,
+      "bUsesThreshold": false,
+      "ThresholdValue": 1.0,
+      "RewardAmount": 25,
+      "bSeparateByAction": false,
+      "ActionRewards": [
+        {
+          "Key": {
+            "TagName": "None"
+          },
+          "Value": {
+            "RewardAmount": 0,
+            "MessageTag": {
+              "TagName": "None"
+            }
+          }
+        }
+      ],
+      "SimpleModifiers": [
+        {
+          "Key": {
+            "TagName": "Meta.Progression.Context.Target.InControlZone"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::Additive",
+            "ModifierValue": 25.0
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Meta.Progression.Context.Target.InHotZone"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::Additive",
+            "ModifierValue": 50.0
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Meta.Progression.Context.Player.Faction.Friendly"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::Override",
+            "ModifierValue": -50.0
+          }
+        }
+      ],
+      "ComplexModifiers": [
+        "Meta.Rewards.Modifier.DamageScalar"
+      ],
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.DamageAssist.Player"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.SpawnTransportAssist": {
+      "MaxDuration": 300.0,
+      "bUsesThreshold": false,
+      "ThresholdValue": 30.0,
+      "RewardAmount": 0,
+      "bSeparateByAction": true,
+      "ActionRewards": [
+        {
+          "Key": {
+            "TagName": "Meta.Progression.Resources.MatchScore.KillScore"
+          },
+          "Value": {
+            "RewardAmount": 10,
+            "MessageTag": {
+              "TagName": "UI.Message.RewardFeed.TransportAssist.Kill"
+            }
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Meta.Progression.Resources.MatchScore.RevivedScore"
+          },
+          "Value": {
+            "RewardAmount": 25,
+            "MessageTag": {
+              "TagName": "UI.Message.RewardFeed.TransportAssist.Revive"
+            }
+          }
+        }
+      ],
+      "SimpleModifiers": [
+        {
+          "Key": {
+            "TagName": "Meta.Progression.Context.Target.InControlZone"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::Override",
+            "ModifierValue": 25.0
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Meta.Progression.Context.Target.InHotZone"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::Override",
+            "ModifierValue": 50.0
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Meta.Progression.Context.Player.Faction.Friendly"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::Override",
+            "ModifierValue": 0.0
+          }
+        },
+        {
+          "Key": {
+            "TagName": "State.Location.SafeZone.Alpha"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::BaseAdditive",
+            "ModifierValue": 0.0
+          }
+        },
+        {
+          "Key": {
+            "TagName": "State.Location.SafeZone.Bravo"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::BaseAdditive",
+            "ModifierValue": 0.0
+          }
+        },
+        {
+          "Key": {
+            "TagName": "State.Location.SafeZone.Charlie"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::BaseAdditive",
+            "ModifierValue": 0.0
+          }
+        }
+      ],
+      "ComplexModifiers": [],
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.SpawnTransportAssist"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.TransportAssist": {
+      "MaxDuration": 600.0,
+      "bUsesThreshold": false,
+      "ThresholdValue": 30.0,
+      "RewardAmount": 0,
+      "bSeparateByAction": true,
+      "ActionRewards": [
+        {
+          "Key": {
+            "TagName": "Meta.Progression.Resources.MatchScore.KillScore"
+          },
+          "Value": {
+            "RewardAmount": 10,
+            "MessageTag": {
+              "TagName": "UI.Message.RewardFeed.TransportAssist.Kill"
+            }
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Meta.Progression.Resources.MatchScore.RevivedScore"
+          },
+          "Value": {
+            "RewardAmount": 25,
+            "MessageTag": {
+              "TagName": "UI.Message.RewardFeed.TransportAssist.Revive"
+            }
+          }
+        }
+      ],
+      "SimpleModifiers": [
+        {
+          "Key": {
+            "TagName": "Meta.Progression.Context.Target.InControlZone"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::Override",
+            "ModifierValue": 25.0
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Meta.Progression.Context.Target.InHotZone"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::Override",
+            "ModifierValue": 50.0
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Meta.Progression.Context.Player.Faction.Friendly"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::Override",
+            "ModifierValue": 0.0
+          }
+        },
+        {
+          "Key": {
+            "TagName": "State.Location.SafeZone.Alpha"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::BaseAdditive",
+            "ModifierValue": 0.0
+          }
+        },
+        {
+          "Key": {
+            "TagName": "State.Location.SafeZone.Bravo"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::BaseAdditive",
+            "ModifierValue": 0.0
+          }
+        },
+        {
+          "Key": {
+            "TagName": "State.Location.SafeZone.Charlie"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::BaseAdditive",
+            "ModifierValue": 0.0
+          }
+        }
+      ],
+      "ComplexModifiers": [],
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.TransportAssist"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.ReviveAssist": {
+      "MaxDuration": 300.0,
+      "bUsesThreshold": false,
+      "ThresholdValue": 30.0,
+      "RewardAmount": 0,
+      "bSeparateByAction": true,
+      "ActionRewards": [
+        {
+          "Key": {
+            "TagName": "Meta.Progression.Resources.MatchScore.KillScore"
+          },
+          "Value": {
+            "RewardAmount": 10,
+            "MessageTag": {
+              "TagName": "UI.Message.RewardFeed.TransportAssist.Kill"
+            }
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Meta.Progression.Resources.MatchScore.RevivedScore"
+          },
+          "Value": {
+            "RewardAmount": 25,
+            "MessageTag": {
+              "TagName": "UI.Message.RewardFeed.TransportAssist.Revive"
+            }
+          }
+        }
+      ],
+      "SimpleModifiers": [
+        {
+          "Key": {
+            "TagName": "Meta.Progression.Context.Target.InControlZone"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::Override",
+            "ModifierValue": 25.0
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Meta.Progression.Context.Target.InHotZone"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::Override",
+            "ModifierValue": 50.0
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Meta.Progression.Context.Player.Faction.Friendly"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::Override",
+            "ModifierValue": 0.0
+          }
+        },
+        {
+          "Key": {
+            "TagName": "State.Location.SafeZone.Alpha"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::BaseAdditive",
+            "ModifierValue": 0.0
+          }
+        },
+        {
+          "Key": {
+            "TagName": "State.Location.SafeZone.Bravo"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::BaseAdditive",
+            "ModifierValue": 0.0
+          }
+        },
+        {
+          "Key": {
+            "TagName": "State.Location.SafeZone.Charlie"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::BaseAdditive",
+            "ModifierValue": 0.0
+          }
+        }
+      ],
+      "ComplexModifiers": [],
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.ReviveAssist"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.DamageAssist.Vehicle": {
+      "MaxDuration": 45.0,
+      "bUsesThreshold": false,
+      "ThresholdValue": 1.0,
+      "RewardAmount": 0,
+      "bSeparateByAction": false,
+      "ActionRewards": [],
+      "SimpleModifiers": [
+        {
+          "Key": {
+            "TagName": "Meta.Progression.Context.Target.InControlZone"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::BaseAdditive",
+            "ModifierValue": 0.0
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Meta.Progression.Context.Target.InHotZone"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::BaseAdditive",
+            "ModifierValue": 0.0
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Meta.Progression.Context.Vehicle.Faction.Friendly"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::Override",
+            "ModifierValue": 0.0
+          }
+        }
+      ],
+      "ComplexModifiers": [
+        "Meta.Rewards.Modifier.DamageScalar.Vehicle",
+        "Meta.Rewards.Modifier.DestroyedVehicleType"
+      ],
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.DamageAssist.Vehicle"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.DamageAssist.Buildable": {
+      "MaxDuration": 60.0,
+      "bUsesThreshold": false,
+      "ThresholdValue": 1.0,
+      "RewardAmount": 0,
+      "bSeparateByAction": false,
+      "ActionRewards": [
+        {
+          "Key": {
+            "TagName": "None"
+          },
+          "Value": {
+            "RewardAmount": 0,
+            "MessageTag": {
+              "TagName": "None"
+            }
+          }
+        }
+      ],
+      "SimpleModifiers": [
+        {
+          "Key": {
+            "TagName": "Meta.Progression.Context.Target.InControlZone"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::Additive",
+            "ModifierValue": 25.0
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Meta.Progression.Context.Target.InHotZone"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::Additive",
+            "ModifierValue": 50.0
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Meta.Progression.Context.Player.Faction.Friendly"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::Override",
+            "ModifierValue": -50.0
+          }
+        }
+      ],
+      "ComplexModifiers": [],
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.DamageAssist.Buildable"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.SuppressionAssist": {
+      "MaxDuration": 30.0,
+      "bUsesThreshold": false,
+      "ThresholdValue": 1.0,
+      "RewardAmount": 5,
+      "bSeparateByAction": false,
+      "ActionRewards": [],
+      "SimpleModifiers": [
+        {
+          "Key": {
+            "TagName": "Meta.Progression.Context.Target.InControlZone"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::BaseAdditive",
+            "ModifierValue": 5.0
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Meta.Progression.Context.Target.InHotZone"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::BaseAdditive",
+            "ModifierValue": 10.0
+          }
+        }
+      ],
+      "ComplexModifiers": [],
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.SuppressionAssist"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.Vehicle.CrewAssist": {
+      "MaxDuration": 0.0,
+      "bUsesThreshold": false,
+      "ThresholdValue": 1.0,
+      "RewardAmount": 10,
+      "bSeparateByAction": true,
+      "ActionRewards": [
+        {
+          "Key": {
+            "TagName": "Meta.Progression.Resources.MatchScore.KillScore"
+          },
+          "Value": {
+            "RewardAmount": 10,
+            "MessageTag": {
+              "TagName": "None"
+            }
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Meta.Progression.Resources.MatchScore.VehicleKillScore"
+          },
+          "Value": {
+            "RewardAmount": 25,
+            "MessageTag": {
+              "TagName": "None"
+            }
+          }
+        }
+      ],
+      "SimpleModifiers": [
+        {
+          "Key": {
+            "TagName": "Meta.Progression.Context.Target.InControlZone"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::Override",
+            "ModifierValue": 25.0
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Meta.Progression.Context.Target.InHotZone"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::Override",
+            "ModifierValue": 50.0
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Meta.Progression.Context.Player.Faction.Friendly"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::Override",
+            "ModifierValue": 0.0
+          }
+        },
+        {
+          "Key": {
+            "TagName": "None"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::BaseAdditive",
+            "ModifierValue": 1.0
+          }
+        }
+      ],
+      "ComplexModifiers": [],
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.Vehicle.CrewAssist"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.MunitionsAssist": {
+      "MaxDuration": 300.0,
+      "bUsesThreshold": false,
+      "ThresholdValue": 30.0,
+      "RewardAmount": 0,
+      "bSeparateByAction": true,
+      "ActionRewards": [],
+      "SimpleModifiers": [
+        {
+          "Key": {
+            "TagName": "Meta.Progression.Context.Target.InControlZone"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::Override",
+            "ModifierValue": 25.0
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Meta.Progression.Context.Target.InHotZone"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::Override",
+            "ModifierValue": 50.0
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Meta.Progression.Context.Player.Faction.Friendly"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::Override",
+            "ModifierValue": 0.0
+          }
+        },
+        {
+          "Key": {
+            "TagName": "State.Location.SafeZone.Alpha"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::BaseAdditive",
+            "ModifierValue": 0.0
+          }
+        },
+        {
+          "Key": {
+            "TagName": "State.Location.SafeZone.Bravo"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::BaseAdditive",
+            "ModifierValue": 0.0
+          }
+        },
+        {
+          "Key": {
+            "TagName": "State.Location.SafeZone.Charlie"
+          },
+          "Value": {
+            "ModifierType": "EWDRewardModifierType::BaseAdditive",
+            "ModifierValue": 0.0
+          }
+        }
+      ],
+      "ComplexModifiers": [],
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.MunitionsAssist"
+      }
+    }
+  }
+}

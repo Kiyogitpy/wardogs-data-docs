@@ -1,0 +1,83 @@
+--- export: UPrimaryDataAsset / AE_Gamemode_SpawnBoardFail ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Gamemode_SpawnBoardFail",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Gamemode/SpawnBoard/AE_Gamemode_SpawnBoardFail",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Gamemode.SpawnBoard.Fail"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Gamemode_SpawnBoardFail:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Gamemode/SpawnBoard/AE_Gamemode_SpawnBoardFail.2"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Gamemode_SpawnBoardFail:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Game/Audio/Events/Gamemode/SpawnBoard/AE_Gamemode_SpawnBoardFail.1"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorMoveSoundToGameplayCueLocation'AE_Gamemode_SpawnBoardFail:WDAudioEventBehaviorMoveSoundToGameplayCueLocation_0'",
+        "ObjectPath": "/Game/Audio/Events/Gamemode/SpawnBoard/AE_Gamemode_SpawnBoardFail.3"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Gamemode_SpawnBoardFail'",
+    "ObjectPath": "/Game/Audio/Events/Gamemode/SpawnBoard/AE_Gamemode_SpawnBoardFail.0"
+  },
+  "Properties": {
+    "ParameterName": "OnSpawnFailed",
+    "ContextTag": {
+      "TagName": "Audio.Context.Gamemode.SpawnBoardWait"
+    },
+    "bSourceObjectInstanced": false
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Gamemode_SpawnBoardFail'",
+    "ObjectPath": "/Game/Audio/Events/Gamemode/SpawnBoard/AE_Gamemode_SpawnBoardFail.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Gamemode_SpawnBoardWait'",
+      "ObjectPath": "/Game/Audio/Gamemode/SpawnBoard/MSS/MSS_Gamemode_SpawnBoardWait.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Gamemode.SpawnBoardWait"
+    },
+    "bSourceObjectInstanced": false
+  }
+}
+--- export: UObject / WDAudioEventBehaviorMoveSoundToGameplayCueLocation_0 ---
+{
+  "Type": "WDAudioEventBehaviorMoveSoundToGameplayCueLocation",
+  "Name": "WDAudioEventBehaviorMoveSoundToGameplayCueLocation_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorMoveSoundToGameplayCueLocation'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Gamemode_SpawnBoardFail'",
+    "ObjectPath": "/Game/Audio/Events/Gamemode/SpawnBoard/AE_Gamemode_SpawnBoardFail.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Gamemode.SpawnBoardWait"
+    },
+    "bSourceObjectInstanced": false
+  }
+}

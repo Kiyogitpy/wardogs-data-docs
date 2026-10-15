@@ -1,0 +1,71 @@
+--- export: UDataTable / DT_InteractionContextStateData ---
+{
+  "Type": "DataTable",
+  "Name": "DT_InteractionContextStateData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/UI/Data/Interaction/DT_InteractionContextStateData",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUIInteractionContextStateDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Interaction.Context.State.Condition.Pass": {
+      "Color": {
+        "R": 0.713542,
+        "G": 0.530044,
+        "B": 0.019706,
+        "A": 1.0,
+        "Hex": "DCC126"
+      },
+      "Icon": null,
+      "Tag": {
+        "TagName": "Interaction.Context.State.Condition.Pass"
+      }
+    },
+    "Interaction.Context.State.Condition.ContextualFail": {
+      "Color": {
+        "R": 0.401042,
+        "G": 0.370629,
+        "B": 0.378711,
+        "A": 1.0,
+        "Hex": "AAA4A6"
+      },
+      "Icon": null,
+      "Tag": {
+        "TagName": "Interaction.Context.State.Condition.ContextualFail"
+      }
+    },
+    "Interaction.Context.State.Interaction.Fail": {
+      "Color": {
+        "R": 0.5,
+        "G": 0.0,
+        "B": 0.0,
+        "A": 1.0,
+        "Hex": "BC0000"
+      },
+      "Icon": {
+        "ObjectName": "Texture2D'T_UI_Icon_PingWheel_Negative_64x64'",
+        "ObjectPath": "/Game/UI/Features/PingWheel/Widgets/Action/Textures/T_UI_Icon_PingWheel_Negative_64x64.0"
+      },
+      "Tag": {
+        "TagName": "Interaction.Context.State.Interaction.Fail"
+      }
+    },
+    "Interaction.Context.State.Interaction.Default": {
+      "Color": {
+        "R": 0.348958,
+        "G": 0.344152,
+        "B": 0.330783,
+        "A": 1.0,
+        "Hex": "A09F9C"
+      },
+      "Icon": null,
+      "Tag": {
+        "TagName": "Interaction.Context.State.Interaction.Default"
+      }
+    }
+  }
+}

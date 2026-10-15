@@ -1,0 +1,40 @@
+--- export: UObject / AEB_PlaySpottedTargetSound_C_0 ---
+{
+  "Type": "AEB_PlaySpottedTargetSound_C",
+  "Name": "AEB_PlaySpottedTargetSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Spotting/Data/Audio/Blueprints/AEB_PlaySpottedTargetSound.AEB_PlaySpottedTargetSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UX_Spotted_Target'",
+    "ObjectPath": "/Spotting/Data/Audio/Events/AE_UX_Spotted_Target.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlaySpottedTargetSound_C'Default__AEB_PlaySpottedTargetSound_C'",
+    "ObjectPath": "/Spotting/Data/Audio/Blueprints/AEB_PlaySpottedTargetSound.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.UX.Spotting.SpottedTarget"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_UX_Spotted_Target ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UX_Spotted_Target",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Spotting/Data/Audio/Events/AE_UX_Spotted_Target",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UX.Spotted.Target"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_PlaySpottedTargetSound_C'AE_UX_Spotted_Target:AEB_PlaySpottedTargetSound_C_0'",
+        "ObjectPath": "/Spotting/Data/Audio/Events/AE_UX_Spotted_Target.0"
+      }
+    ],
+    "_aaabhonahgpdbjealfaaa_$ED076F31940B5000$_$23$": 454.0
+  }
+}

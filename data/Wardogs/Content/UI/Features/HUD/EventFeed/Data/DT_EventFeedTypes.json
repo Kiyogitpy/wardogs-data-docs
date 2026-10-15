@@ -1,0 +1,601 @@
+--- export: UDataTable / DT_EventFeedTypes ---
+{
+  "Type": "DataTable",
+  "Name": "DT_EventFeedTypes",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/UI/Features/HUD/EventFeed/Data/DT_EventFeedTypes",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDEventFeedActionDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "UI.HUD.Element.EventFeed.Type.Acknowledgement": {
+      "DisplayTextSelf": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Acknowledgement_Self",
+        "SourceString": "{RequestPlayerName} acknowledged <Highlight>{PlayerName}</>'s request",
+        "LocalizedString": "{RequestPlayerName} acknowledged <Highlight>{PlayerName}</>'s request"
+      },
+      "DisplayTextOther": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Acknowledgement_Other",
+        "SourceString": "{RequestPlayerName} acknowledged your request",
+        "LocalizedString": "{RequestPlayerName} acknowledged your request"
+      },
+      "MaxDistanceForTeamEvents": 0.0,
+      "Tag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Acknowledgement"
+      }
+    },
+    "UI.HUD.Element.EventFeed.Type.Safezone.Exit": {
+      "DisplayTextSelf": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Safezone_Exit_Self",
+        "SourceString": "{RequestPlayerName} have left the Safe Zone",
+        "LocalizedString": "{RequestPlayerName} have left the Safe Zone"
+      },
+      "DisplayTextOther": {
+        "CultureInvariantString": null
+      },
+      "MaxDistanceForTeamEvents": 0.0,
+      "Tag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Safezone.Exit"
+      }
+    },
+    "UI.HUD.Element.EventFeed.Type.Request.Cancelled": {
+      "DisplayTextSelf": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Request_Cancelled_Self",
+        "SourceString": "{RequestPlayerName} cancelled your request",
+        "LocalizedString": "{RequestPlayerName} cancelled your request"
+      },
+      "DisplayTextOther": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Request_Cancelled_Other",
+        "SourceString": "{RequestPlayerName} cancelled their request",
+        "LocalizedString": "{RequestPlayerName} cancelled their request"
+      },
+      "MaxDistanceForTeamEvents": 0.0,
+      "Tag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Request.Cancelled"
+      }
+    },
+    "UI.HUD.Element.EventFeed.Type.Request.Ammo": {
+      "DisplayTextSelf": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Request_Ammo_Self",
+        "SourceString": "{RequestPlayerName} requested <Highlight>{AmmoType} Ammo</>",
+        "LocalizedString": "{RequestPlayerName} requested <Highlight>{AmmoType} Ammo</>"
+      },
+      "DisplayTextOther": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Request_Ammo_Other",
+        "SourceString": "{RequestPlayerName} is requesting <Highlight>{AmmoType} Ammo</>",
+        "LocalizedString": "{RequestPlayerName} is requesting <Highlight>{AmmoType} Ammo</>"
+      },
+      "MaxDistanceForTeamEvents": 2.5E+09,
+      "Tag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Request.Ammo"
+      }
+    },
+    "UI.HUD.Element.EventFeed.Type.Request.Healing": {
+      "DisplayTextSelf": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Request_Healing_Self",
+        "SourceString": "{RequestPlayerName} requested <Highlight>Healing</>",
+        "LocalizedString": "{RequestPlayerName} requested <Highlight>Healing</>"
+      },
+      "DisplayTextOther": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Request_Healing_Other",
+        "SourceString": "{RequestPlayerName} is requesting <Highlight>Healing</>",
+        "LocalizedString": "{RequestPlayerName} is requesting <Highlight>Healing</>"
+      },
+      "MaxDistanceForTeamEvents": 2.5E+09,
+      "Tag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Request.Healing"
+      }
+    },
+    "UI.HUD.Element.EventFeed.Type.Request.Healing.Failed": {
+      "DisplayTextSelf": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Request_Healing_Failed_Self",
+        "SourceString": "{RequestPlayerName} are already at full health",
+        "LocalizedString": "{RequestPlayerName} are already at full health"
+      },
+      "DisplayTextOther": {
+        "CultureInvariantString": null
+      },
+      "MaxDistanceForTeamEvents": 0.0,
+      "Tag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Request.Healing.Failed"
+      }
+    },
+    "UI.HUD.Element.EventFeed.Type.Request.Revive": {
+      "DisplayTextSelf": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Request_Revive_Self",
+        "SourceString": "{RequestPlayerName} requested <Highlight>Revive</>",
+        "LocalizedString": "{RequestPlayerName} requested <Highlight>Revive</>"
+      },
+      "DisplayTextOther": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Request_Revive_Other",
+        "SourceString": "{RequestPlayerName} is requesting <Highlight>Revive</>",
+        "LocalizedString": "{RequestPlayerName} is requesting <Highlight>Revive</>"
+      },
+      "MaxDistanceForTeamEvents": 0.0,
+      "Tag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Request.Revive"
+      }
+    },
+    "UI.HUD.Element.EventFeed.Type.Request.Refueling": {
+      "DisplayTextSelf": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Request_Refueling_Self",
+        "SourceString": "{RequestPlayerName} requested <Highlight>Fuel</>",
+        "LocalizedString": "{RequestPlayerName} requested <Highlight>Fuel</>"
+      },
+      "DisplayTextOther": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Request_Refueling_Other",
+        "SourceString": "{RequestPlayerName} is requesting <Highlight>Fuel</>",
+        "LocalizedString": "{RequestPlayerName} is requesting <Highlight>Fuel</>"
+      },
+      "MaxDistanceForTeamEvents": 0.0,
+      "Tag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Request.Refueling"
+      }
+    },
+    "UI.HUD.Element.EventFeed.Type.Request.Repair": {
+      "DisplayTextSelf": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Request_Repair_Self",
+        "SourceString": "{RequestPlayerName} requested <Highlight>Vehicle Repairs</>",
+        "LocalizedString": "{RequestPlayerName} requested <Highlight>Vehicle Repairs</>"
+      },
+      "DisplayTextOther": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Request_Repair_Other",
+        "SourceString": "{RequestPlayerName} is requesting <Highlight>Vehicle Repairs</>",
+        "LocalizedString": "{RequestPlayerName} is requesting <Highlight>Vehicle Repairs</>"
+      },
+      "MaxDistanceForTeamEvents": 0.0,
+      "Tag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Request.Repair"
+      }
+    },
+    "UI.HUD.Element.EventFeed.Type.Request.Pickup": {
+      "DisplayTextSelf": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Request_Pickup_Self",
+        "SourceString": "{RequestPlayerName} requested <Highlight>Pickup</>",
+        "LocalizedString": "{RequestPlayerName} requested <Highlight>Pickup</>"
+      },
+      "DisplayTextOther": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Request_Pickup_Other",
+        "SourceString": "{RequestPlayerName} is requesting <Highlight>Pickup</>",
+        "LocalizedString": "{RequestPlayerName} is requesting <Highlight>Pickup</>"
+      },
+      "MaxDistanceForTeamEvents": 0.0,
+      "Tag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Request.Pickup"
+      }
+    },
+    "UI.HUD.Element.EventFeed.Type.Request.Dropoff": {
+      "DisplayTextSelf": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Request_Dropoff_Self",
+        "SourceString": "{RequestPlayerName} requested <Highlight>Dropoff</>",
+        "LocalizedString": "{RequestPlayerName} requested <Highlight>Dropoff</>"
+      },
+      "DisplayTextOther": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Request_Dropoff_Other",
+        "SourceString": "{RequestPlayerName} is requesting <Highlight>Dropoff</>",
+        "LocalizedString": "{RequestPlayerName} is requesting <Highlight>Dropoff</>"
+      },
+      "MaxDistanceForTeamEvents": 0.0,
+      "Tag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Request.Dropoff"
+      }
+    },
+    "UI.HUD.Element.EventFeed.Type.Squad.Request": {
+      "DisplayTextSelf": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Squad_Request_Self",
+        "SourceString": "{RequestPlayerName} are looking for a squad",
+        "LocalizedString": "{RequestPlayerName} are looking for a squad"
+      },
+      "DisplayTextOther": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Squad_Request_Other",
+        "SourceString": "{RequestPlayerName} is looking for a squad",
+        "LocalizedString": "{RequestPlayerName} is looking for a squad"
+      },
+      "MaxDistanceForTeamEvents": 0.0,
+      "Tag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Squad.Request"
+      }
+    },
+    "UI.HUD.Element.EventFeed.Type.Squad.Joined": {
+      "DisplayTextSelf": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Squad_Joined_Self",
+        "SourceString": "{RequestPlayerName} have joined <Highlight>{SquadName}</>",
+        "LocalizedString": "{RequestPlayerName} have joined <Highlight>{SquadName}</>"
+      },
+      "DisplayTextOther": {
+        "CultureInvariantString": null
+      },
+      "MaxDistanceForTeamEvents": 0.0,
+      "Tag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Squad.Joined"
+      }
+    },
+    "UI.HUD.Element.EventFeed.Type.Squad.Added": {
+      "DisplayTextSelf": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Squad_Added_Self",
+        "SourceString": "{RequestPlayerName} have been added to <Highlight>{SquadName}</>",
+        "LocalizedString": "{RequestPlayerName} have been added to <Highlight>{SquadName}</>"
+      },
+      "DisplayTextOther": {
+        "CultureInvariantString": null
+      },
+      "MaxDistanceForTeamEvents": 0.0,
+      "Tag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Squad.Added"
+      }
+    },
+    "UI.HUD.Element.EventFeed.Type.Squad.Kicked": {
+      "DisplayTextSelf": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Squad_Kicked_Self",
+        "SourceString": "{RequestPlayerName} have been kicked from <Highlight>{SquadName}</>",
+        "LocalizedString": "{RequestPlayerName} have been kicked from <Highlight>{SquadName}</>"
+      },
+      "DisplayTextOther": {
+        "CultureInvariantString": null
+      },
+      "MaxDistanceForTeamEvents": 0.0,
+      "Tag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Squad.Kicked"
+      }
+    },
+    "UI.HUD.Element.EventFeed.Type.Ping.Item": {
+      "DisplayTextSelf": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Ping_Item_Self",
+        "SourceString": "{RequestPlayerName} pinged <Highlight>{ItemName}</>",
+        "LocalizedString": "{RequestPlayerName} pinged <Highlight>{ItemName}</>"
+      },
+      "DisplayTextOther": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Ping_Item_Other",
+        "SourceString": "{RequestPlayerName} is pinging <Highlight>{ItemName}</>",
+        "LocalizedString": "{RequestPlayerName} is pinging <Highlight>{ItemName}</>"
+      },
+      "MaxDistanceForTeamEvents": 0.0,
+      "Tag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Ping.Item"
+      }
+    },
+    "UI.HUD.Element.EventFeed.Type.Ping.Weapon": {
+      "DisplayTextSelf": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Ping_Weapon_Self",
+        "SourceString": "{RequestPlayerName} are looking for <Highlight>{AmmoType} ({CurrentAmmo})</>",
+        "LocalizedString": "{RequestPlayerName} are looking for <Highlight>{AmmoType} ({CurrentAmmo})</>"
+      },
+      "DisplayTextOther": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Ping_Weapon_Other",
+        "SourceString": "{RequestPlayerName} is looking for <Highlight>{AmmoType} ({CurrentAmmo})</>",
+        "LocalizedString": "{RequestPlayerName} is looking for <Highlight>{AmmoType} ({CurrentAmmo})</>"
+      },
+      "MaxDistanceForTeamEvents": 0.0,
+      "Tag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Ping.Weapon"
+      }
+    },
+    "UI.HUD.Element.EventFeed.Type.Ping.Weapon.Attachment": {
+      "DisplayTextSelf": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Ping_Weapon_Attachment_Self",
+        "SourceString": "{RequestPlayerName} are looking for <Highlight>{AttachmentType}</>",
+        "LocalizedString": "{RequestPlayerName} are looking for <Highlight>{AttachmentType}</>"
+      },
+      "DisplayTextOther": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Ping_Weapon_Attachment_Other",
+        "SourceString": "{RequestPlayerName} is looking for <Highlight>{AttachmentType}</>",
+        "LocalizedString": "{RequestPlayerName} is looking for <Highlight>{AttachmentType}</>"
+      },
+      "MaxDistanceForTeamEvents": 0.0,
+      "Tag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Ping.Weapon.Attachment"
+      }
+    },
+    "UI.HUD.Element.EventFeed.Type.Ping.Weapon.Slot": {
+      "DisplayTextSelf": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Ping_Weapon_Slot_Self",
+        "SourceString": "{RequestPlayerName} are looking for <Highlight>{WeaponType}</>",
+        "LocalizedString": "{RequestPlayerName} are looking for <Highlight>{WeaponType}</>"
+      },
+      "DisplayTextOther": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Ping_Weapon_Slot_Other",
+        "SourceString": "{RequestPlayerName} is looking for <Highlight>{WeaponType}</>",
+        "LocalizedString": "{RequestPlayerName} is looking for <Highlight>{WeaponType}</>"
+      },
+      "MaxDistanceForTeamEvents": 0.0,
+      "Tag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Ping.Weapon.Slot"
+      }
+    },
+    "UI.HUD.Element.EventFeed.Type.Ping.Armor": {
+      "DisplayTextSelf": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Ping_Armor_Self",
+        "SourceString": "{RequestPlayerName} have <Highlight>Lvl {ArmorLevel} {ArmorType} ({ArmorDurability})</>",
+        "LocalizedString": "{RequestPlayerName} have <Highlight>Lvl {ArmorLevel} {ArmorType} ({ArmorDurability})</>"
+      },
+      "DisplayTextOther": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Ping_Armor_Other",
+        "SourceString": "{RequestPlayerName} has <Highlight>Lvl {ArmorLevel} {ArmorType} ({ArmorDurability})</>",
+        "LocalizedString": "{RequestPlayerName} has <Highlight>Lvl {ArmorLevel} {ArmorType} ({ArmorDurability})</>"
+      },
+      "MaxDistanceForTeamEvents": 0.0,
+      "Tag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Ping.Armor"
+      }
+    },
+    "UI.HUD.Element.EventFeed.Type.Ping.Armor.Slot": {
+      "DisplayTextSelf": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Ping_Armor_Slot_Self",
+        "SourceString": "{RequestPlayerName} are looking for <Highlight>{ArmorType}</>",
+        "LocalizedString": "{RequestPlayerName} are looking for <Highlight>{ArmorType}</>"
+      },
+      "DisplayTextOther": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Ping_Armor_Slot_Other",
+        "SourceString": "{RequestPlayerName} is looking for <Highlight>{ArmorType}</>",
+        "LocalizedString": "{RequestPlayerName} is looking for <Highlight>{ArmorType}</>"
+      },
+      "MaxDistanceForTeamEvents": 0.0,
+      "Tag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Ping.Armor.Slot"
+      }
+    },
+    "UI.HUD.Element.EventFeed.Type.Ping.Traversal.Slot": {
+      "DisplayTextSelf": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Ping_Traversal_Slot_Self",
+        "SourceString": "{RequestPlayerName} are looking for <Highlight>{TraversalType}</>",
+        "LocalizedString": "{RequestPlayerName} are looking for <Highlight>{TraversalType}</>"
+      },
+      "DisplayTextOther": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Ping_Traversal_Slot_Other",
+        "SourceString": "{RequestPlayerName} is looking for <Highlight>{TraversalType}</>",
+        "LocalizedString": "{RequestPlayerName} is looking for <Highlight>{TraversalType}</>"
+      },
+      "MaxDistanceForTeamEvents": 0.0,
+      "Tag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Ping.Traversal.Slot"
+      }
+    },
+    "UI.HUD.Element.EventFeed.Type.Request.Ammo.Failed": {
+      "DisplayTextSelf": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Request_Ammo_Failed_Self",
+        "SourceString": "{RequestPlayerName} are already at full ammo",
+        "LocalizedString": "{RequestPlayerName} are already at full ammo"
+      },
+      "DisplayTextOther": {
+        "CultureInvariantString": null
+      },
+      "MaxDistanceForTeamEvents": 0.0,
+      "Tag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Request.Ammo.Failed"
+      }
+    },
+    "UI.HUD.Element.EventFeed.Type.Disacknowledgement": {
+      "DisplayTextSelf": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Disacknowledgement_Self",
+        "SourceString": "{RequestPlayerName} Disacknowledged <Highlight>{PlayerName}</>'s request",
+        "LocalizedString": "{RequestPlayerName} Disacknowledged <Highlight>{PlayerName}</>'s request"
+      },
+      "DisplayTextOther": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Disacknowledgement_Other",
+        "SourceString": "{RequestPlayerName} Disacknowledged your request",
+        "LocalizedString": "{RequestPlayerName} Disacknowledged your request"
+      },
+      "MaxDistanceForTeamEvents": 0.0,
+      "Tag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Disacknowledgement"
+      }
+    },
+    "UI.HUD.Element.EventFeed.Type.Request.Refueling.Failed": {
+      "DisplayTextSelf": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Request_Refueling_Failed_Self",
+        "SourceString": "Vehicle is already at full fuel.",
+        "LocalizedString": "Vehicle is already at full fuel."
+      },
+      "DisplayTextOther": {
+        "CultureInvariantString": null
+      },
+      "MaxDistanceForTeamEvents": 0.0,
+      "Tag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Request.Refueling.Failed"
+      }
+    },
+    "UI.HUD.Element.EventFeed.Type.Request.Repair.Failed": {
+      "DisplayTextSelf": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Request_Repair_Failed_Self",
+        "SourceString": "Vehicle is already at full health.",
+        "LocalizedString": "Vehicle is already at full health."
+      },
+      "DisplayTextOther": {
+        "CultureInvariantString": null
+      },
+      "MaxDistanceForTeamEvents": 0.0,
+      "Tag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Request.Repair.Failed"
+      }
+    },
+    "UI.HUD.Element.EventFeed.Type.Request.GetOut": {
+      "DisplayTextSelf": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Request_GetOut_Self",
+        "SourceString": "{RequestPlayerName} requested passengers to <Highlight>Get Out</>",
+        "LocalizedString": "{RequestPlayerName} requested passengers to <Highlight>Get Out</>"
+      },
+      "DisplayTextOther": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Request_GetOut_Other",
+        "SourceString": "{RequestPlayerName} is requesting you <Highlight>Get Out</> of their vehicle.",
+        "LocalizedString": "{RequestPlayerName} is requesting you <Highlight>Get Out</> of their vehicle."
+      },
+      "MaxDistanceForTeamEvents": 0.0,
+      "Tag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Request.GetOut"
+      }
+    },
+    "UI.HUD.Element.EventFeed.Type.Request.Backup": {
+      "DisplayTextSelf": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Request_Backup_Self",
+        "SourceString": "{RequestPlayerName} requested <Highlight>Backup</>",
+        "LocalizedString": "{RequestPlayerName} requested <Highlight>Backup</>"
+      },
+      "DisplayTextOther": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Request_Backup_Other",
+        "SourceString": "{RequestPlayerName} is requesting <Highlight>Backup</>",
+        "LocalizedString": "{RequestPlayerName} is requesting <Highlight>Backup</>"
+      },
+      "MaxDistanceForTeamEvents": 2.5E+09,
+      "Tag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Request.Backup"
+      }
+    },
+    "UI.HUD.Element.EventFeed.Type.Request.SquadInvite": {
+      "DisplayTextSelf": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Request_SquadInvite_Self",
+        "SourceString": "{RequestPlayerName} requested a <Highlight>Squad Invite</>",
+        "LocalizedString": "{RequestPlayerName} requested a <Highlight>Squad Invite</>"
+      },
+      "DisplayTextOther": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Request_SquadInvite_Other",
+        "SourceString": "{RequestPlayerName} is requesting a <Highlight>Squad Invite</>",
+        "LocalizedString": "{RequestPlayerName} is requesting a <Highlight>Squad Invite</>"
+      },
+      "MaxDistanceForTeamEvents": 0.0,
+      "Tag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Request.SquadInvite"
+      }
+    },
+    "UI.HUD.Element.EventFeed.Type.Acknowledgement.SquadInvite": {
+      "DisplayTextSelf": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Acknowledgement_SquadInvite_Self",
+        "SourceString": "{RequestPlayerName} have been added to<Highlight>{Squad} Squad</>",
+        "LocalizedString": "{RequestPlayerName} have been added to<Highlight>{Squad} Squad</>"
+      },
+      "DisplayTextOther": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Acknowledgement_SquadInvite_Other",
+        "SourceString": "{RequestPlayerName} has been added to<Highlight>{Squad} Squad</>",
+        "LocalizedString": "{RequestPlayerName} has been added to<Highlight>{Squad} Squad</>"
+      },
+      "MaxDistanceForTeamEvents": 0.0,
+      "Tag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Acknowledgement.SquadInvite"
+      }
+    },
+    "UI.HUD.Element.EventFeed.Type.Request.GetIn": {
+      "DisplayTextSelf": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Request_GetIn_Self",
+        "SourceString": "{RequestPlayerName} requested teammates to <Highlight>Get In</>",
+        "LocalizedString": "{RequestPlayerName} requested teammates to <Highlight>Get In</>"
+      },
+      "DisplayTextOther": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Request_GetIn_Other",
+        "SourceString": "{RequestPlayerName} is requesting you to <Highlight>Get In</> their vehicle.",
+        "LocalizedString": "{RequestPlayerName} is requesting you to <Highlight>Get In</> their vehicle."
+      },
+      "MaxDistanceForTeamEvents": 0.0,
+      "Tag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Request.GetIn"
+      }
+    },
+    "UI.HUD.Element.EventFeed.Type.Request.Dropoff.Exact": {
+      "DisplayTextSelf": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Request_Dropoff_Exact_Self",
+        "SourceString": "{RequestPlayerName} requested <Highlight>Dropoff</> at <Highlight>[x: {X}] [y: {Y}]</>",
+        "LocalizedString": "{RequestPlayerName} requested <Highlight>Dropoff</> at <Highlight>[x: {X}] [y: {Y}]</>"
+      },
+      "DisplayTextOther": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Request_Dropoff_Exact_Other",
+        "SourceString": "{RequestPlayerName} is requesting <Highlight>Dropoff</> at <Highlight>[x: {X}] [y: {Y}]</>",
+        "LocalizedString": "{RequestPlayerName} is requesting <Highlight>Dropoff</> at <Highlight>[x: {X}] [y: {Y}]</>"
+      },
+      "MaxDistanceForTeamEvents": 0.0,
+      "Tag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Request.Dropoff.Exact"
+      }
+    },
+    "UI.HUD.Element.EventFeed.Type.Request.Supplies": {
+      "DisplayTextSelf": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Request_Supplies_Self",
+        "SourceString": "{RequestPlayerName} requested <Highlight>Supplies</>",
+        "LocalizedString": "{RequestPlayerName} requested <Highlight>Supplies</>"
+      },
+      "DisplayTextOther": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Request_Supplies_Other",
+        "SourceString": "{RequestPlayerName} is requesting <Highlight>Supplies</>",
+        "LocalizedString": "{RequestPlayerName} is requesting <Highlight>Supplies</>"
+      },
+      "MaxDistanceForTeamEvents": 0.0,
+      "Tag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Request.Supplies"
+      }
+    },
+    "UI.HUD.Element.EventFeed.Type.Request.Ammo.NoWeapon": {
+      "DisplayTextSelf": {
+        "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+        "Key": "Type_Request_Ammo_NoWeapon_Self",
+        "SourceString": "{RequestPlayerName} have no weapon to resupply",
+        "LocalizedString": "{RequestPlayerName} have no weapon to resupply"
+      },
+      "DisplayTextOther": {
+        "CultureInvariantString": null
+      },
+      "MaxDistanceForTeamEvents": 0.0,
+      "Tag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Request.Ammo.NoWeapon"
+      }
+    }
+  }
+}

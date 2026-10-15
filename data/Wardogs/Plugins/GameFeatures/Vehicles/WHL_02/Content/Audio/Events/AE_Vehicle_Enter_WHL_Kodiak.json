@@ -1,0 +1,125 @@
+--- export: UObject / AEB_AttachToGCObject_C_0 ---
+{
+  "Type": "AEB_AttachToGCObject_C",
+  "Name": "AEB_AttachToGCObject_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_AttachToGCObject.AEB_AttachToGCObject_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Enter_WHL_Kodiak'",
+    "ObjectPath": "/WHL_02/Audio/Events/AE_Vehicle_Enter_WHL_Kodiak.4"
+  },
+  "Template": {
+    "ObjectName": "AEB_AttachToGCObject_C'Default__AEB_AttachToGCObject_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_AttachToGCObject.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Enter"
+    }
+  }
+}
+--- export: UObject / AEB_PlayPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayPerspectiveSound_C",
+  "Name": "AEB_PlayPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.AEB_PlayPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Enter_WHL_Kodiak'",
+    "ObjectPath": "/WHL_02/Audio/Events/AE_Vehicle_Enter_WHL_Kodiak.4"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayPerspectiveSound_C'Default__AEB_PlayPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.0"
+  },
+  "Properties": {
+    "1pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Vehicle_WHL_Kodiak_Enter_1p'",
+      "ObjectPath": "/WHL_02/Audio/MSS/Foley/1p/MSS_Vehicle_WHL_Kodiak_Enter_1p.0"
+    },
+    "3pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Vehicle_WHL_Kodiak_Enter_3p'",
+      "ObjectPath": "/WHL_02/Audio/MSS/Foley/3p/MSS_Vehicle_WHL_Kodiak_Enter_3p.0"
+    },
+    "RestartBehaviour": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Enter"
+    }
+  }
+}
+--- export: UObject / AEB_TriggerOnGCSourceObject_C_0 ---
+{
+  "Type": "AEB_TriggerOnGCSourceObject_C",
+  "Name": "AEB_TriggerOnGCSourceObject_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_TriggerOnGCSourceObject.AEB_TriggerOnGCSourceObject_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Enter_WHL_Kodiak'",
+    "ObjectPath": "/WHL_02/Audio/Events/AE_Vehicle_Enter_WHL_Kodiak.4"
+  },
+  "Template": {
+    "ObjectName": "AEB_TriggerOnGCSourceObject_C'Default__AEB_TriggerOnGCSourceObject_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_TriggerOnGCSourceObject.0"
+  },
+  "Properties": {
+    "Context Name Tag": {
+      "TagName": "Audio.Context.Player.Foliage"
+    },
+    "Trigger Name": "Stop",
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Foliage"
+    }
+  }
+}
+--- export: UObject / AEB_VehiclePerspective_C_0 ---
+{
+  "Type": "AEB_VehiclePerspective_C",
+  "Name": "AEB_VehiclePerspective_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_VehiclePerspective.AEB_VehiclePerspective_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Enter_WHL_Kodiak'",
+    "ObjectPath": "/WHL_02/Audio/Events/AE_Vehicle_Enter_WHL_Kodiak.4"
+  },
+  "Template": {
+    "ObjectName": "AEB_VehiclePerspective_C'Default__AEB_VehiclePerspective_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_VehiclePerspective.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Enter"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_Enter_WHL_Kodiak ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_Enter_WHL_Kodiak",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/WHL_02/Audio/Events/AE_Vehicle_Enter_WHL_Kodiak",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Enter.WHL_02"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_AttachToGCObject_C'AE_Vehicle_Enter_WHL_Kodiak:AEB_AttachToGCObject_C_0'",
+        "ObjectPath": "/WHL_02/Audio/Events/AE_Vehicle_Enter_WHL_Kodiak.0"
+      },
+      {
+        "ObjectName": "AEB_PlayPerspectiveSound_C'AE_Vehicle_Enter_WHL_Kodiak:AEB_PlayPerspectiveSound_C_0'",
+        "ObjectPath": "/WHL_02/Audio/Events/AE_Vehicle_Enter_WHL_Kodiak.1"
+      },
+      {
+        "ObjectName": "AEB_TriggerOnGCSourceObject_C'AE_Vehicle_Enter_WHL_Kodiak:AEB_TriggerOnGCSourceObject_C_0'",
+        "ObjectPath": "/WHL_02/Audio/Events/AE_Vehicle_Enter_WHL_Kodiak.2"
+      },
+      {
+        "ObjectName": "AEB_VehiclePerspective_C'AE_Vehicle_Enter_WHL_Kodiak:AEB_VehiclePerspective_C_0'",
+        "ObjectPath": "/WHL_02/Audio/Events/AE_Vehicle_Enter_WHL_Kodiak.3"
+      }
+    ],
+    "_aaabhonahgpdbjealfaaa_$ED076F31940B5000$_$23$": 62.0
+  }
+}

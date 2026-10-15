@@ -1,0 +1,174 @@
+--- export: UObject / AEB_ActivateControlBusMix_C_0 ---
+{
+  "Type": "AEB_ActivateControlBusMix_C",
+  "Name": "AEB_ActivateControlBusMix_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_ActivateControlBusMix.AEB_ActivateControlBusMix_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Damaged_Explosion'",
+    "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Explosion.5"
+  },
+  "Template": {
+    "ObjectName": "AEB_ActivateControlBusMix_C'Default__AEB_ActivateControlBusMix_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_ActivateControlBusMix.0"
+  },
+  "Properties": {
+    "Mix": {
+      "ObjectName": "SoundControlBusMix'AM_CBM_DamageFromExplosion'",
+      "ObjectPath": "/Game/Audio/AudioModulation/ControlBusMixes/AM_CBM_DamageFromExplosion.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / AEB_DeactivateControlBusMix_C_0 ---
+{
+  "Type": "AEB_DeactivateControlBusMix_C",
+  "Name": "AEB_DeactivateControlBusMix_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_DeactivateControlBusMix.AEB_DeactivateControlBusMix_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Damaged_Explosion'",
+    "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Explosion.5"
+  },
+  "Template": {
+    "ObjectName": "AEB_DeactivateControlBusMix_C'Default__AEB_DeactivateControlBusMix_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_DeactivateControlBusMix.0"
+  },
+  "Properties": {
+    "Mix": {
+      "ObjectName": "SoundControlBusMix'AM_CBM_DamageFromExplosion'",
+      "ObjectPath": "/Game/Audio/AudioModulation/ControlBusMixes/AM_CBM_DamageFromExplosion.0"
+    },
+    "Delay": 2.5,
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / AEB_SetTakeHitParameters_C_0 ---
+{
+  "Type": "AEB_PlayHitConfirmSound_C",
+  "Name": "AEB_SetTakeHitParameters_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayHitConfirmSound.AEB_PlayHitConfirmSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Damaged_Explosion'",
+    "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Explosion.5"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayHitConfirmSound_C'Default__AEB_PlayHitConfirmSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayHitConfirmSound.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Damage.Explosion"
+    }
+  }
+}
+--- export: UObject / AEB_PlayPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayPerspectiveSound_C",
+  "Name": "AEB_PlayPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.AEB_PlayPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Damaged_Explosion'",
+    "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Explosion.5"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayPerspectiveSound_C'Default__AEB_PlayPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.0"
+  },
+  "Properties": {
+    "1pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Player_Damage_FromExplosion'",
+      "ObjectPath": "/Game/Audio/Player/Damage/FromExplosion/MSS_Player_Damage_FromExplosion.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Damage.Explosion"
+    }
+  }
+}
+--- export: UObject / AEB_RequestDamagedVox_C_0 ---
+{
+  "Type": "AEB_RequestDamagedVox_C",
+  "Name": "AEB_RequestDamagedVox_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_RequestDamagedVox.AEB_RequestDamagedVox_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Damaged_Explosion'",
+    "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Explosion.5"
+  },
+  "Template": {
+    "ObjectName": "AEB_RequestDamagedVox_C'Default__AEB_RequestDamagedVox_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_RequestDamagedVox.0"
+  },
+  "Properties": {
+    "Under Threshold": {
+      "TagName": "Audio.Vox.Exertion.TakingDamage.Light"
+    },
+    "Over Threshold": {
+      "TagName": "Audio.Vox.Exertion.TakingDamage.Heavy"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Vocalisations"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Player_Damaged_Explosion ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Player_Damaged_Explosion",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Explosion",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.Damaged.Explosive"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_PlayPerspectiveSound_C'AE_Player_Damaged_Explosion:AEB_PlayPerspectiveSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Explosion.3"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Player_Damaged_Explosion:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Explosion.6"
+      },
+      {
+        "ObjectName": "AEB_ActivateControlBusMix_C'AE_Player_Damaged_Explosion:AEB_ActivateControlBusMix_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Explosion.0"
+      },
+      {
+        "ObjectName": "AEB_DeactivateControlBusMix_C'AE_Player_Damaged_Explosion:AEB_DeactivateControlBusMix_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Explosion.1"
+      },
+      {
+        "ObjectName": "AEB_PlayHitConfirmSound_C'AE_Player_Damaged_Explosion:AEB_SetTakeHitParameters_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Explosion.2"
+      },
+      {
+        "ObjectName": "AEB_RequestDamagedVox_C'AE_Player_Damaged_Explosion:AEB_RequestDamagedVox_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Explosion.4"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Damaged_Explosion'",
+    "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Explosion.5"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Damage.Explosion"
+    }
+  }
+}

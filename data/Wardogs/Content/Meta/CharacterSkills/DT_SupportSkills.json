@@ -1,0 +1,707 @@
+--- export: UDataTable / DT_SupportSkills ---
+{
+  "Type": "DataTable",
+  "Name": "DT_SupportSkills",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/Meta/CharacterSkills/DT_SupportSkills",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDMetaSkillEffectsTaggedTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Meta.Role.Support.ReadyToFireSpeed.LMG": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Character"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Player_ReadyToFirePlayRate_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Player/GE_Player_ReadyToFirePlayRate.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Movement.ReadyToFirePlayRate"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_SupportSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_SupportSkills.0"
+                        },
+                        "RowName": "ReadyToFireSpeed_LMG"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "DefaultAttributes": [
+                      {
+                        "Key": {
+                          "TagName": "Attribute.Gameplay.Movement.ReadyToFirePlayRate"
+                        },
+                        "Value": 1.0
+                      }
+                    ]
+                  },
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Item.Archetype.LMG"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Support.ReadyToFireSpeed.LMG"
+      }
+    },
+    "Meta.Role.Support.AimMoveSpeed.LMG": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Character.HeldItemUpdated"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Player_MaxSpeedMultiplier_Aiming_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Player/GE_Player_MaxSpeedMultiplier_Aiming.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Movement.MaxSpeedMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_SupportSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_SupportSkills.0"
+                        },
+                        "RowName": "AimMoveSpeed_LMG"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Item.Archetype.LMG"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Support.AimMoveSpeed.LMG"
+      }
+    },
+    "Meta.Role.Support.HorizontalRecoil.LMG": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Item"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Weapon_HorizontalRecoilMultiplier_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Weapons/GE_Weapon_HorizontalRecoilMultiplier.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Weapon.HorizontalRecoilMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_SupportSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_SupportSkills.0"
+                        },
+                        "RowName": "HorizontalRecoil_LMG"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Item.Archetype.LMG"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Support.HorizontalRecoil.LMG"
+      }
+    },
+    "Meta.Role.Support.VerticalRecoil.LMG": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Item"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Weapon_VerticalRecoilMultiplier_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Weapons/GE_Weapon_VerticalRecoilMultiplier.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Weapon.VerticalRecoilMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_SupportSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_SupportSkills.0"
+                        },
+                        "RowName": "VerticalRecoil_LMG"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Item.Archetype.LMG"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Support.VerticalRecoil.LMG"
+      }
+    },
+    "Meta.Role.Support.AimDownSightSpeed.LMG": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Item"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Weapon_AimTime_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Weapons/GE_Weapon_AimTime.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Weapon.AimTime"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_SupportSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_SupportSkills.0"
+                        },
+                        "RowName": "AimDownSightSpeed_LMG"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Item.Archetype.LMG"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Support.AimDownSightSpeed.LMG"
+      }
+    },
+    "Meta.Role.Support.WeaponSwitchSpeed": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Item"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Weapon_EquipSpeedMultiplier_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Weapons/GE_Weapon_EquipSpeedMultiplier.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Weapon.EquipSpeedMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_SupportSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_SupportSkills.0"
+                        },
+                        "RowName": "WeaponSwitchSpeed"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "DefaultAttributes": [
+                      {
+                        "Key": {
+                          "TagName": "Attribute.Gameplay.Weapon.EquipSpeedMultiplier"
+                        },
+                        "Value": 1.0
+                      }
+                    ]
+                  },
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Item.Archetype.LMG"
+                          },
+                          {
+                            "TagName": "Item.Archetype.Shotgun"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          2,
+                          0,
+                          1
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Item.Archetype.LMG, Item.Archetype.Shotgun )"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Support.WeaponSwitchSpeed"
+      }
+    },
+    "Meta.Role.Support.HorizontalRecoil.Shotgun": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Item"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Weapon_HorizontalRecoilMultiplier_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Weapons/GE_Weapon_HorizontalRecoilMultiplier.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Weapon.HorizontalRecoilMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_SupportSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_SupportSkills.0"
+                        },
+                        "RowName": "HorizontalRecoil_Shotgun"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Item.Archetype.Shotgun"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Support.HorizontalRecoil.Shotgun"
+      }
+    },
+    "Meta.Role.Support.VerticalRecoil.Shotgun": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Item"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Weapon_VerticalRecoilMultiplier_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Weapons/GE_Weapon_VerticalRecoilMultiplier.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Weapon.VerticalRecoilMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_SupportSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_SupportSkills.0"
+                        },
+                        "RowName": "VerticalRecoil_Shotgun"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Item.Archetype.Shotgun"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Support.VerticalRecoil.Shotgun"
+      }
+    },
+    "Meta.Role.Support.AimdownSightspeed.Shotgun": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Item"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Weapon_AimTime_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Weapons/GE_Weapon_AimTime.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Weapon.AimTime"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_SupportSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_SupportSkills.0"
+                        },
+                        "RowName": "AimDownSightSpeed_Shotgun"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Item.Archetype.Shotgun"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Support.AimdownSightspeed.Shotgun"
+      }
+    },
+    "Meta.Role.Support.ReadyToFireSpeed.Shotgun": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Character"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Player_ReadyToFirePlayRate_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Player/GE_Player_ReadyToFirePlayRate.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Movement.ReadyToFirePlayRate"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_SupportSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_SupportSkills.0"
+                        },
+                        "RowName": "ReadyToFireSpeed_Shotgun"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "DefaultAttributes": [
+                      {
+                        "Key": {
+                          "TagName": "Attribute.Gameplay.Movement.ReadyToFirePlayRate"
+                        },
+                        "Value": 1.0
+                      }
+                    ]
+                  },
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Item.Archetype.Shotgun"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Support.ReadyToFireSpeed.Shotgun"
+      }
+    },
+    "Meta.Role.Support.AimMoveSpeed.Shotgun": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Character.HeldItemUpdated"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Player_MaxSpeedMultiplier_Aiming_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Player/GE_Player_MaxSpeedMultiplier_Aiming.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Movement.MaxSpeedMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_SupportSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_SupportSkills.0"
+                        },
+                        "RowName": "AimMoveSpeed_Shotgun"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Item.Archetype.Shotgun"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Support.AimMoveSpeed.Shotgun"
+      }
+    }
+  }
+}

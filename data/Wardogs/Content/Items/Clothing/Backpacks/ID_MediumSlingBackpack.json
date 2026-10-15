@@ -1,0 +1,211 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MediumSlingBackpack'",
+    "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_MediumSlingBackpack.5"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 3,
+      "Y": 5
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MediumSlingBackpack'",
+    "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_MediumSlingBackpack.5"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Characters/Player/Backpack/Medium/001/SM/SM_Backpack_Medium_001_drop.SM_Backpack_Medium_001_drop",
+      "SubPathString": ""
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_Backpack_Medium_001_drop'",
+        "ObjectPath": "/Game/Characters/Player/Backpack/Medium/001/MAT/MI_Backpack_Medium_001_drop.0"
+      }
+    ]
+  }
+}
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MediumSlingBackpack'",
+    "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_MediumSlingBackpack.5"
+  },
+  "Properties": {
+    "bIsStorage": true,
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "None"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::BlockPriority",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [
+            "Inventory.Slot.Primary",
+            "Inventory.Slot.Secondary",
+            "Inventory.Slot.Sidearm",
+            "Inventory.Slot.Specialist"
+          ],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": [
+            "Inventory.Slot.Locked",
+            "Inventory.Slot.SupplyContainer"
+          ]
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 2,
+          "Y": 5
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": 6,
+        "MaxSlotAmountStackSize": 1,
+        "bAllowsStackedPacking": false,
+        "bIsHiddenContainer": false,
+        "_aaabelnajgoacnpmnokoe_$BD096E02DFCDEAE4$_$20$": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": []
+      },
+      {
+        "ContainerIdentifier": {
+          "TagName": "None"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::BlockList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": [
+            "Inventory.Slot.Backpack",
+            "Inventory.Slot.Vest",
+            "Inventory.Slot.Locked"
+          ]
+        },
+        "SizeType": "EBHContainerType::Grid",
+        "GridSize": {
+          "X": 3,
+          "Y": 5
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": 6,
+        "MaxSlotAmountStackSize": 0,
+        "bAllowsStackedPacking": false,
+        "bIsHiddenContainer": false,
+        "_aaabelnajgoacnpmnokoe_$BD096E02DFCDEAE4$_$20$": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": []
+      }
+    ]
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MediumSlingBackpack'",
+    "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_MediumSlingBackpack.5"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MediumSlingBackpack'",
+    "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_MediumSlingBackpack.5"
+  },
+  "Properties": {
+    "Weight": 4.0
+  }
+}
+--- export: UPrimaryDataAsset / ID_MediumSlingBackpack ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_MediumSlingBackpack",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Clothing/Backpacks/ID_MediumSlingBackpack",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.MediumSlingBackpack"
+    },
+    "ItemContext": [
+      "Inventory.Slot.Backpack",
+      "Item.Context.Equippable"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "1CD75C084A6DAE244EF0EEB0FED6663B",
+      "SourceString": "Medium Backpack + Sling",
+      "LocalizedString": "Medium Backpack + Sling"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_MediumSlingBackpack:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_MediumSlingBackpack.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_MediumSlingBackpack:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_MediumSlingBackpack.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_MediumSlingBackpack:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_MediumSlingBackpack.4"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_MediumSlingBackpack:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_MediumSlingBackpack.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_MediumSlingBackpack:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_MediumSlingBackpack.6"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_MediumSlingBackpack:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_MediumSlingBackpack.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MediumSlingBackpack'",
+    "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_MediumSlingBackpack.5"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Backpack_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Item/Data/ID_Backpack_Audio.0"
+    }
+  }
+}

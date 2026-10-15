@@ -1,0 +1,155 @@
+--- export: UDataAsset / DA_ROT_03_InputControls ---
+{
+  "Type": "MRotaryInputControlsDataAsset",
+  "Name": "DA_ROT_03_InputControls",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MRotaryInputControlsDataAsset'",
+  "Package": "/ROT_03/Data/DA_ROT_03_InputControls",
+  "Properties": {
+    "DriverInputMappingContexts": [
+      {
+        "ObjectName": "InputMappingContext'IMC_RotaryVehicles_DriverGunner'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_DriverGunner.33"
+      }
+    ],
+    "_aaaccknjpcldljfebkgbp_$AD9F2B3B9541A61F$_$34$": [
+      {
+        "ObjectName": "InputMappingContext'IMC_RotaryVehicles_Joystick'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.0"
+      },
+      {
+        "ObjectName": "InputMappingContext'IMC_RotaryVehicles_JoystickActions'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_JoystickActions.0"
+      }
+    ],
+    "GunnerInputMappingContexts": [
+      {
+        "ObjectName": "InputMappingContext'IMC_MountedGunnerInput'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IMC_MountedGunnerInput.19"
+      }
+    ],
+    "DefaultInputPromptActions": {
+      "Map": [
+        {
+          "Key": {
+            "TagName": "Input.NamedActions.Vehicle.ChangeSeat.Next"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_VehicleInputs.STRINGS_VehicleInputs",
+            "Key": "Vehicle.Input.ChangeSeat",
+            "SourceString": "Change Seat",
+            "LocalizedString": "Change Seat"
+          }
+        }
+      ]
+    },
+    "VehicleInputPromptActions": [
+      {
+        "Key": {
+          "TagName": "Vehicle.UI.InputPrompts.Driver"
+        },
+        "Value": {
+          "Map": [
+            {
+              "Key": {
+                "TagName": "Input.NamedActions.Vehicle.Camera.ToggleMode"
+              },
+              "Value": {
+                "TableId": "/Game/UI/StringTables/STRINGS_VehicleInputs.STRINGS_VehicleInputs",
+                "Key": "Vehicle.Input.ToggleCamera",
+                "SourceString": "Toggle Camera",
+                "LocalizedString": "Toggle Camera"
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Input.NamedActions.Vehicle.Camera.ToggleFreeLook"
+              },
+              "Value": {
+                "TableId": "/Game/UI/StringTables/STRINGS_VehicleInputs.STRINGS_VehicleInputs",
+                "Key": "Vehicle.Input.Freelook",
+                "SourceString": "Free Look",
+                "LocalizedString": "Free Look"
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Input.NamedActions.Vehicle.Collective.Raise"
+              },
+              "Value": {
+                "TableId": "/Game/UI/StringTables/STRINGS_VehicleInputs.STRINGS_VehicleInputs",
+                "Key": "Vehicle.Input.Collective.Raise",
+                "SourceString": "Collective Lift",
+                "LocalizedString": "Collective Lift"
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Input.NamedActions.Vehicle.Collective.Lower"
+              },
+              "Value": {
+                "TableId": "/Game/UI/StringTables/STRINGS_VehicleInputs.STRINGS_VehicleInputs",
+                "Key": "Vehicle.Input.Collective.Lower",
+                "SourceString": "Collective Descent",
+                "LocalizedString": "Collective Descent"
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Input.NamedActions.Vehicle.FireFlares"
+              },
+              "Value": {
+                "TableId": "/Game/UI/StringTables/STRINGS_VehicleInputs.STRINGS_VehicleInputs",
+                "Key": "Vehicle.Input.DeployFlares",
+                "SourceString": "Deploy Flares",
+                "LocalizedString": "Deploy Flares"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.UI.InputPrompts.DriverGunner"
+        },
+        "Value": {
+          "Map": [
+            {
+              "Key": {
+                "TagName": "Input.NamedActions.Vehicle.Collective.Raise"
+              },
+              "Value": {
+                "TableId": "/Game/UI/StringTables/STRINGS_VehicleInputs.STRINGS_VehicleInputs",
+                "Key": "Vehicle.Input.Collective.Raise",
+                "SourceString": "Collective Lift",
+                "LocalizedString": "Collective Lift"
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Input.NamedActions.Vehicle.Collective.Lower"
+              },
+              "Value": {
+                "TableId": "/Game/UI/StringTables/STRINGS_VehicleInputs.STRINGS_VehicleInputs",
+                "Key": "Vehicle.Input.Collective.Lower",
+                "SourceString": "Collective Descent",
+                "LocalizedString": "Collective Descent"
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Input.NamedActions.Vehicle.FireFlares"
+              },
+              "Value": {
+                "TableId": "/Game/UI/StringTables/STRINGS_VehicleInputs.STRINGS_VehicleInputs",
+                "Key": "Vehicle.Input.DeployFlares",
+                "SourceString": "Deploy Flares",
+                "LocalizedString": "Deploy Flares"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

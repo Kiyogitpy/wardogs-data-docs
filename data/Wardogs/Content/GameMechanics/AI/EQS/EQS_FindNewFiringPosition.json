@@ -1,0 +1,187 @@
+--- export: UDataAsset / EQS_FindNewFiringPosition ---
+{
+  "Type": "EnvQuery",
+  "Name": "EQS_FindNewFiringPosition",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQuery'",
+  "Package": "/Game/GameMechanics/AI/EQS/EQS_FindNewFiringPosition",
+  "Properties": {
+    "QueryName": "EQS_FindNewFiringPosition",
+    "Options": [
+      {
+        "ObjectName": "EnvQueryOption'EQS_FindNewFiringPosition:EnvQueryOption_0'",
+        "ObjectPath": "/Game/GameMechanics/AI/EQS/EQS_FindNewFiringPosition.2"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryGenerator_SimpleGrid_0 ---
+{
+  "Type": "EnvQueryGenerator_SimpleGrid",
+  "Name": "EnvQueryGenerator_SimpleGrid_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryGenerator_SimpleGrid'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindNewFiringPosition'",
+    "ObjectPath": "/Game/GameMechanics/AI/EQS/EQS_FindNewFiringPosition.0"
+  },
+  "Properties": {
+    "GridSize": {
+      "DefaultValue": 4000.0
+    },
+    "SpaceBetween": {
+      "DefaultValue": 500.0
+    },
+    "GenerateAround": {
+      "ObjectName": "BlueprintGeneratedClass'EQS_Context_TargetEnemy_C'",
+      "ObjectPath": "/WDAIPvEAICore/EQS/Context/EQS_Context_TargetEnemy.0"
+    },
+    "ProjectionData": {
+      "VersionNum": 1,
+      "SerializedChannel": "ECollisionChannel::ECC_Visibility"
+    },
+    "VerNum": 1
+  }
+}
+--- export: UObject / EnvQueryOption_0 ---
+{
+  "Type": "EnvQueryOption",
+  "Name": "EnvQueryOption_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryOption'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindNewFiringPosition'",
+    "ObjectPath": "/Game/GameMechanics/AI/EQS/EQS_FindNewFiringPosition.0"
+  },
+  "Properties": {
+    "Generator": {
+      "ObjectName": "EnvQueryGenerator_SimpleGrid'EQS_FindNewFiringPosition:EnvQueryGenerator_SimpleGrid_0'",
+      "ObjectPath": "/Game/GameMechanics/AI/EQS/EQS_FindNewFiringPosition.1"
+    },
+    "Tests": [
+      {
+        "ObjectName": "EnvQueryTest_Dot'EQS_FindNewFiringPosition:EnvQueryTest_Dot_0'",
+        "ObjectPath": "/Game/GameMechanics/AI/EQS/EQS_FindNewFiringPosition.5"
+      },
+      {
+        "ObjectName": "EnvQueryTest_Distance'EQS_FindNewFiringPosition:EnvQueryTest_Distance_2'",
+        "ObjectPath": "/Game/GameMechanics/AI/EQS/EQS_FindNewFiringPosition.4"
+      },
+      {
+        "ObjectName": "EnvQueryTest_Distance'EQS_FindNewFiringPosition:EnvQueryTest_Distance_0'",
+        "ObjectPath": "/Game/GameMechanics/AI/EQS/EQS_FindNewFiringPosition.3"
+      },
+      {
+        "ObjectName": "EnvQueryTest_Trace'EQS_FindNewFiringPosition:EnvQueryTest_Trace_0'",
+        "ObjectPath": "/Game/GameMechanics/AI/EQS/EQS_FindNewFiringPosition.6"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryTest_Distance_0 ---
+{
+  "Type": "EnvQueryTest_Distance",
+  "Name": "EnvQueryTest_Distance_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Distance'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindNewFiringPosition'",
+    "ObjectPath": "/Game/GameMechanics/AI/EQS/EQS_FindNewFiringPosition.0"
+  },
+  "Properties": {
+    "TestMode": "EEnvTestDistance::Distance2D",
+    "TestOrder": 2,
+    "TestPurpose": "EEnvTestPurpose::Score",
+    "ScoringEquation": "EEnvTestScoreEquation::InverseLinear",
+    "VerNum": 2
+  }
+}
+--- export: UObject / EnvQueryTest_Distance_2 ---
+{
+  "Type": "EnvQueryTest_Distance",
+  "Name": "EnvQueryTest_Distance_2",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Distance'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindNewFiringPosition'",
+    "ObjectPath": "/Game/GameMechanics/AI/EQS/EQS_FindNewFiringPosition.0"
+  },
+  "Properties": {
+    "DistanceTo": {
+      "ObjectName": "BlueprintGeneratedClass'EQS_Context_TargetEnemy_C'",
+      "ObjectPath": "/WDAIPvEAICore/EQS/Context/EQS_Context_TargetEnemy.0"
+    },
+    "TestOrder": 1,
+    "FloatValueMin": {
+      "DefaultValue": 500.0
+    },
+    "FloatValueMax": {
+      "DefaultValue": 4000.0
+    },
+    "VerNum": 2
+  }
+}
+--- export: UObject / EnvQueryTest_Dot_0 ---
+{
+  "Type": "EnvQueryTest_Dot",
+  "Name": "EnvQueryTest_Dot_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Dot'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindNewFiringPosition'",
+    "ObjectPath": "/Game/GameMechanics/AI/EQS/EQS_FindNewFiringPosition.0"
+  },
+  "Properties": {
+    "LineA": {
+      "LineFrom": {
+        "ObjectName": "BlueprintGeneratedClass'EQS_Context_TargetEnemy_C'",
+        "ObjectPath": "/WDAIPvEAICore/EQS/Context/EQS_Context_TargetEnemy.0"
+      },
+      "LineTo": {
+        "ObjectName": "Class'EnvQueryContext_Querier'",
+        "ObjectPath": "/Script/AIModule"
+      },
+      "Rotation": null,
+      "DirMode": "EEnvDirection::TwoPoints"
+    },
+    "LineB": {
+      "LineFrom": {
+        "ObjectName": "BlueprintGeneratedClass'EQS_Context_TargetEnemy_C'",
+        "ObjectPath": "/WDAIPvEAICore/EQS/Context/EQS_Context_TargetEnemy.0"
+      }
+    },
+    "TestPurpose": "EEnvTestPurpose::Filter",
+    "FilterType": "EEnvTestFilterType::Minimum",
+    "VerNum": 2
+  }
+}
+--- export: UObject / EnvQueryTest_Trace_0 ---
+{
+  "Type": "EnvQueryTest_Trace",
+  "Name": "EnvQueryTest_Trace_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Trace'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindNewFiringPosition'",
+    "ObjectPath": "/Game/GameMechanics/AI/EQS/EQS_FindNewFiringPosition.0"
+  },
+  "Properties": {
+    "TraceData": {
+      "VersionNum": 1,
+      "SerializedChannel": "ECollisionChannel::ECC_Visibility"
+    },
+    "TraceFromContext": {
+      "DefaultValue": true
+    },
+    "Context": {
+      "ObjectName": "BlueprintGeneratedClass'EQS_Context_TargetEnemy_C'",
+      "ObjectPath": "/WDAIPvEAICore/EQS/Context/EQS_Context_TargetEnemy.0"
+    },
+    "TestOrder": 3,
+    "TestPurpose": "EEnvTestPurpose::Filter",
+    "BoolValue": {
+      "DefaultValue": false
+    },
+    "VerNum": 2
+  }
+}

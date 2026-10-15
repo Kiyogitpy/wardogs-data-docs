@@ -1,0 +1,54 @@
+--- export: UPrimaryDataAsset / VV_ROT_04_MountedMachineGuns ---
+{
+  "Type": "ModularVehicleVariant",
+  "Name": "VV_ROT_04_MountedMachineGuns",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleVariant'",
+  "Package": "/ROT_04_MachineGun/Variants/VV_ROT_04_MountedMachineGuns",
+  "Properties": {
+    "bIncludeInBuildCommandLine": true,
+    "VariantID": {
+      "TagName": "Vehicle.Variant.Air.Rotary.ROT_04.MountedMachineGuns"
+    },
+    "SpawnParams": {
+      "Min": {
+        "X": -1500.0,
+        "Y": -1100.0,
+        "Z": -1.7
+      },
+      "Max": {
+        "X": 1000.0,
+        "Y": 1100.0,
+        "Z": 1000.0
+      }
+    },
+    "AssemblyData": {
+      "VehicleBase": {
+        "ObjectName": "ModularVehiclePlatform'VP_ROT_04'",
+        "ObjectPath": "/ROT_04/Platforms/VP_ROT_04.0"
+      },
+      "CustomData": {
+        "SlotOverrides": [
+          {
+            "Path": {
+              "Path": "Attachments"
+            },
+            "Part": {
+              "AssetPathName": "/ROT_04_MachineGun/Parts/VP_ROT_04_Attachment_MachineGunMount.VP_ROT_04_Attachment_MachineGunMount",
+              "SubPathString": ""
+            }
+          },
+          {
+            "Path": {
+              "Path": "Seats"
+            },
+            "Part": {
+              "AssetPathName": "/ROT_04_MachineGun/Parts/VP_ROT_04_Seats_MachineGun.VP_ROT_04_Seats_MachineGun",
+              "SubPathString": ""
+            }
+          }
+        ]
+      }
+    }
+  }
+}

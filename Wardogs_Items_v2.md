@@ -4,7 +4,7 @@ parent: "Content"
 ---
 
 # Wardogs — Items Reference (v2)
-*Extracted from cooked game data exported to JSON, source `Wardogs/Content/Items/` (254 files). Every number below comes from the exported properties; anything the dump does not contain is marked as such.*
+*Extracted from cooked game data exported to JSON, source [`Wardogs/Content/Items/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items) (254 files). Every number below comes from the exported properties; anything the dump does not contain is marked as such.*
 
 > **How the files are structured:** each `.json` file is not one object. It holds several export blocks, each starting with a `--- export: <Kind> / <Name> ---` header followed by its own JSON object. Across the category there are 1,384 blocks: 225 `UPrimaryDataAsset` roots (the items and assets people actually use), 1,130 `UObject` sub-objects (the "fragments" each item points to), 26 `UCurveFloat`, 2 `UCurveTable`, and 1 `UDataAsset`. A primary item lists its fragments in `DataFragments`; the fragment blocks in the same file hold the values.
 
@@ -14,29 +14,29 @@ parent: "Content"
 
 | Folder | Primary assets | Main type(s) | Notes |
 |---|---|---|---|
-| `Resources/Ammo` | 97 (93 items) | BHInventoryItemDefinition | Every caliber and round variant, plus 3 audio assets and 1 debug projectile |
+| [`Resources/Ammo`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Resources/Ammo) | 97 (93 items) | BHInventoryItemDefinition | Every caliber and round variant, plus 3 audio assets and 1 debug projectile |
 | `Attachments/Magazines` | 23 | BHInventoryItemDefinition | Magazines, drums, and internal cylinders/boxes (internal ones have no gunsmith entry) |
 | `Vehicles/Weapons` | 12 | BHInventoryItemDefinition | Vehicle turrets, mounted MGs, helicopter cannon/rocket pods |
-| `Clothing/Backpacks` | 10 | BHInventoryItemDefinition | Storage bags, pouch, and sling variants |
+| [`Clothing/Backpacks`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Clothing/Backpacks) | 10 | BHInventoryItemDefinition | Storage bags, pouch, and sling variants |
 | `Attachments/Sights` | 8 | BHInventoryItemDefinition | Optics, iron sights |
-| `Attachments/Muzzle_Devices` | 7 | BHInventoryItemDefinition | Suppressors and brakes |
+| [`Attachments/Muzzle_Devices`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Attachments/Muzzle_Devices) | 7 | BHInventoryItemDefinition | Suppressors and brakes |
 | `Weapons/AR` | 5 | BHInventoryItemDefinition | Components only (barrels, grip, handguard, stock) |
 | `Attachments/Foregrips` | 4 | BHInventoryItemDefinition | Foregrips and the Grip Pod bipod |
-| `Vehicles/Storage` | 4 | BHInventoryItemDefinition | Vehicle cargo containers |
+| [`Vehicles/Storage`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Vehicles/Storage) | 4 | BHInventoryItemDefinition | Vehicle cargo containers |
 | `Weapons/Pistol` | 4 | BHInventoryItemDefinition | Pistol components |
-| `Clothing/Vests` | 3 | BHInventoryItemDefinition | Tac vests (quick-slot providers) |
+| [`Clothing/Vests`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Clothing/Vests) | 3 | BHInventoryItemDefinition | Tac vests (quick-slot providers) |
 | `Weapons/SMG` | 3 | BHInventoryItemDefinition | SMG components |
-| `Consumables/Bandage` | 2 items + 4 support | BHInventoryItemDefinition, BHAnimationSet, WDAudioData | Bandage and IFAK |
-| `Throwable/Grenades` | 2 items + 3 support | BHInventoryItemDefinition, BHAnimationSet, WDAudioData | M67 frag and gold variant |
-| `Weapons/Launcher` | 2 items + 2 anim sets | BHInventoryItemDefinition | Two artillery/tank barrel test items |
-| `Attachments/Grips`, `Handguards`, `Stocks` | 1 each | BHInventoryItemDefinition | Single components |
-| `Placeables/AmmoCrate` | 1 | BHInventoryItemDefinition | Ammo Crate |
+| [`Consumables/Bandage`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Consumables/Bandage) | 2 items + 4 support | BHInventoryItemDefinition, BHAnimationSet, WDAudioData | Bandage and IFAK |
+| [`Throwable/Grenades`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Throwable/Grenades) | 2 items + 3 support | BHInventoryItemDefinition, BHAnimationSet, WDAudioData | M67 frag and gold variant |
+| [`Weapons/Launcher`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Weapons/Launcher) | 2 items + 2 anim sets | BHInventoryItemDefinition | Two artillery/tank barrel test items |
+| [`Attachments/Grips`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Attachments/Grips), `Handguards`, `Stocks` | 1 each | BHInventoryItemDefinition | Single components |
+| [`Placeables/AmmoCrate`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Placeables/AmmoCrate) | 1 | BHInventoryItemDefinition | Ammo Crate |
 | `Weapons/Fists` | 1 item + 2 support | BHInventoryItemDefinition, BHAnimationSet, WDAudioData | Unarmed |
 | `Weapons/LMG` | 1 | BHInventoryItemDefinition | LMG barrel component |
-| `Attachments/Archetypes` | 12 | WDAttachmentArchetype | Slot-type definitions (bone, tag) |
-| `Attachments/Utilities` | 1 | BHAnimationSet | Grip Pod animation set |
+| [`Attachments/Archetypes`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Attachments/Archetypes) | 12 | WDAttachmentArchetype | Slot-type definitions (bone, tag) |
+| [`Attachments/Utilities`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Attachments/Utilities) | 1 | BHAnimationSet | Grip Pod animation set |
 | `Weapons/` (root) | 8 aim-assist settings + 1 filter | BHAimAssistSettingsData, BHAimAssistFilterData | One per weapon class |
-| `Resources/Ammo/Curves`, `Throwable/Curves`, `Weapons/Curves` | 28 | CurveFloat, CurveTable | See section 11 |
+| [`Resources/Ammo/Curves`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Resources/Ammo/Curves), [`Throwable/Curves`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Throwable/Curves), `Weapons/Curves` | 28 | CurveFloat, CurveTable | See section 11 |
 
 **Totals:** 188 item definitions (`BHInventoryItemDefinition`), 225 primary assets in all, 254 files. 
 
@@ -86,7 +86,7 @@ An item is a `BHInventoryItemDefinition` with an `ItemId` tag, `ItemContext` tag
 
 ## 3. Attachments
 
-### 3a. Attachment Archetypes (`Attachments/Archetypes`)
+### 3a. Attachment Archetypes ([`Attachments/Archetypes`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Attachments/Archetypes))
 
 Twelve `WDAttachmentArchetype` assets define each slot's `AttachmentId` tag, the skeletal bone it attaches to, and (in two cases) a bone offset.
 
@@ -139,7 +139,7 @@ Capacity is taken from the magazine's `MaxSlotAmountStackSize` (section 2a).
 | ID_M12G_Mag_Internal | M500 Internal Mag | - | 6 | - | 12g | No |
 | ID_MMGL_Mag_Internal | MMGL Internal Mag | - | 6 | - | 40mm | No |
 
-Notes: "Internal" magazines have no gunsmith entry and no grid. Two different items are both labelled "M4 Extended Mag" (`ID_M4_Mag_Extended` at 45 and `ID_STANAG_Mag_Extended90rd` at 90), and the two SV98 mags share one name. Display names are not unique keys; use the asset name.
+Notes: "Internal" magazines have no gunsmith entry and no grid. Two different items are both labelled "M4 Extended Mag" ([`ID_M4_Mag_Extended`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Magazines/AR/ID_M4_Mag_Extended.json) at 45 and [`ID_STANAG_Mag_Extended90rd`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Magazines/AR/STANAG_Mag_Drum_90rd/ID_STANAG_Mag_Extended90rd.json) at 90), and the two SV98 mags share one name. Display names are not unique keys; use the asset name.
 
 ### 3c. Optics and Muzzle Devices
 
@@ -167,7 +167,7 @@ Notes: "Internal" magazines have no gunsmith entry and no grid. Two different it
 |---|---|---|---|---|
 | ID_FGP_02 | TDG Vertical Foregrip | 0.13 | Grip | - |
 | ID_FGP_03 | AFG Angled Foregrip | 0.08 | Grip | - |
-| ID_FGP_04 | Grip Pod | 0.26 | Bipod | Grid 1x2; uses `AnimSet_FGP_04` (Attachments/Utilities) |
+| ID_FGP_04 | Grip Pod | 0.26 | Bipod | Grid 1x2; uses [`AnimSet_FGP_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Utilities/Bipod/AnimSet_FGP_04.json) (Attachments/Utilities) |
 | ID_RK6_Grip | RK6 Tactical Foregrip | 1.05 | Grip | - |
 | ID_AK74MIMIEGGrip | (no display) | - | Grip | ItemId `ID.Item.AK74MIMIEGGrip` |
 | ID_ZenitHandguard | (no display) | - | Handguard | Child slot accepts `Item.Attachment.Underbarrel` (BlockPriority) |
@@ -188,7 +188,7 @@ These are the sub-parts a weapon is built from. The base weapon definitions (e.g
 
 ## 4. Clothing and Equipment
 
-### 4a. Backpacks and Pouch (`Clothing/Backpacks`, 10 items)
+### 4a. Backpacks and Pouch ([`Clothing/Backpacks`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Clothing/Backpacks), 10 items)
 
 Container grid is listed as `X x Y` cells, and `Filter` is shown where present. "Sling" variants add a weapon-slot container (BlockPriority on Primary, Secondary, Sidearm, Specialist) with capacity 1.
 
@@ -207,7 +207,7 @@ Container grid is listed as `X x Y` cells, and `Filter` is shown where present. 
 
 Note: Medium Backpack + Sling reads 4.0 weight against 0.88 for the plain Medium. The sling variants' weight is far higher than the bag alone; the dump does not explain why.
 
-### 4b. Tac Vests (`Clothing/Vests`, 3 items)
+### 4b. Tac Vests ([`Clothing/Vests`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Clothing/Vests), 3 items)
 
 | Asset | Display | Weight | Grid | Extra quick slots | Equipped effect |
 |---|---|---|---|---|---|
@@ -221,7 +221,7 @@ Vests give no container of their own; their capacity comes from the quick-slot c
 
 ## 5. Consumables and Medical Items
 
-| Property | Bandage (`ID_Bandage`) | Individual First Aid Kit (`ID_SuperBandage`) |
+| Property | Bandage ([`ID_Bandage`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Consumables/Bandage/ID_Bandage.json)) | Individual First Aid Kit ([`ID_SuperBandage`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Consumables/Bandage/ID_SuperBandage.json)) |
 |---|---|---|
 | Display | Bandage | Individual First Aid Kit |
 | ItemId | Id.Item.Bandage | Id.Item.SuperBandage |
@@ -239,24 +239,24 @@ Vests give no container of their own; their capacity comes from the quick-slot c
 | Audio | ID_Bandage_Audio | ID_IFAK_Audio |
 | Spatial tracker | Applies only to friendlies (`bShouldOnlyApplyToFriendly` = True); checks WorldGrid.Layer.Character | Same class, same friendly-only setting |
 
-Input behaviour is shared: the primary-use input (`Input.NamedActions.Appliable.PrimaryUse`) maps to `WDItemInputBehavior_ActivateAppliableAction` with `Action.Appliable.Bandage.PrimaryUse`, secondary use maps to `...SecondaryUse`, and the completion action is bound to the same two uses. Inspection (`Action.Item.Inspect`) is bound on the item too. The shared key set is `IMC_Appliable` (section 11).
+Input behaviour is shared: the primary-use input (`Input.NamedActions.Appliable.PrimaryUse`) maps to `WDItemInputBehavior_ActivateAppliableAction` with `Action.Appliable.Bandage.PrimaryUse`, secondary use maps to `...SecondaryUse`, and the completion action is bound to the same two uses. Inspection (`Action.Item.Inspect`) is bound on the item too. The shared key set is [`IMC_Appliable`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/ItemExtensionDefaults/IMC_Appliable.json) (section 11).
 
-Other consumable item (not decoded further): `Placeables/AmmoCrate/ID_AmmoCrate` (2x2 grid, a `WDItemExtensionData_Placeable` with collision size, placeable class and init data). Those three values are present in the dump but were not extracted.
+Other consumable item (not decoded further): [`Placeables/AmmoCrate/ID_AmmoCrate`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Placeables/AmmoCrate/ID_AmmoCrate.json) (2x2 grid, a `WDItemExtensionData_Placeable` with collision size, placeable class and init data). Those three values are present in the dump but were not extracted.
 
 ---
 
-## 6. Throwables (`Throwable/Grenades`)
+## 6. Throwables ([`Throwable/Grenades`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Throwable/Grenades))
 
 | Asset | Display | Weight | ThrowableClass | Throw velocity | Resource used |
 |---|---|---|---|---|---|
 | ID_M67Grenade | M67 Frag Grenade | 0.4 | B_FragGrenade | 2500 | Id.Item.M67Grenade x1 |
 | ID_M67Grenade_Gold | Golden Grenade | - | B_GoldFragGrenade | 2200 | Id.Item.GoldM67Grenade x1 |
 
-Both throws use `Action.Throw.Primary`. Pitch and velocity curves: `CRV_ThrowPitch_Overarm`, `CRV_ThrowPitch_OverarmStrong`, `CRV_ThrowPitch_Underarm` (pitch), and `CRV_ThrowVelocity_OverarmStrong`, `CRV_ThrowVelocity_Underarm` (velocity). `DropSpawnOffset` is (0, 0, -40) on the M67. The gold variant has no `Weight` property. Its drop and throw data share the M67 audio (`ID_M67Grenade_Audio`). Full throw action fields (VelocityCurve reference, bUseConsistentVelocity) are present in the dump but only partly decoded here.
+Both throws use `Action.Throw.Primary`. Pitch and velocity curves: [`CRV_ThrowPitch_Overarm`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Throwable/Curves/CRV_ThrowPitch_Overarm.json), [`CRV_ThrowPitch_OverarmStrong`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Throwable/Curves/CRV_ThrowPitch_OverarmStrong.json), [`CRV_ThrowPitch_Underarm`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Throwable/Curves/CRV_ThrowPitch_Underarm.json) (pitch), and [`CRV_ThrowVelocity_OverarmStrong`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Throwable/Curves/CRV_ThrowVelocity_OverarmStrong.json), [`CRV_ThrowVelocity_Underarm`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Throwable/Curves/CRV_ThrowVelocity_Underarm.json) (velocity). `DropSpawnOffset` is (0, 0, -40) on the M67. The gold variant has no `Weight` property. Its drop and throw data share the M67 audio ([`ID_M67Grenade_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Throwable/Grenades/M67_Grenade/ID_M67Grenade_Audio.json)). Full throw action fields (VelocityCurve reference, bUseConsistentVelocity) are present in the dump but only partly decoded here.
 
 ---
 
-## 7. Ammunition (`Resources/Ammo`)
+## 7. Ammunition ([`Resources/Ammo`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Resources/Ammo))
 
 ### 7a. Calibers
 
@@ -292,7 +292,7 @@ Max stack is the inventory stack limit (`MaxStackSize`). Overrides apply to a sl
 | DebugHomingRocket | 2 | RocketTesting 84mm | 99 | - | not set | DA_DebugHomingRocketData (see 7c) |
 | Rockets | 1 | (no display) | not set | - | not set | not set |
 
-Variant naming: the base round has no suffix, and the others add `_ArmorPiercing`, `_HollowPoint`, and `_Tracer`. Items with `Sandbox` in the ItemId (e.g. `ID.Item.155mm.Sandbox`, `ID_155mm_SB`) are test variants.
+Variant naming: the base round has no suffix, and the others add `_ArmorPiercing`, `_HollowPoint`, and `_Tracer`. Items with `Sandbox` in the ItemId (e.g. `ID.Item.155mm.Sandbox`, [`ID_155mm_SB`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/155mm/ID_155mm_SB.json)) are test variants.
 
 Weight (`BHInventoryFragment_Weight`) is set on only a handful of rounds: 120x570mm 24.0, 35x228mm 1.56, 40mm 0.28, 155mm Expensive 42.0. The rest have no weight property. The unit is not stated.
 
@@ -300,7 +300,7 @@ Weight (`BHInventoryFragment_Weight`) is set on only a handful of rounds: 120x57
 
 Each round is a `BHInventoryItemDefinition` with a `BHInventoryFragment_Stackable`, a `WDInventoryFragment_Projectile` (pointing to a `WDProjectileData` in `GameMechanics`), a `WDInventoryFragment_Audio`, and a `CustomShape`. The projectile asset is **outside** this folder, so ballistics for ordinary rounds are not in this category.
 
-### 7c. The One Decoded Projectile (`DA_DebugHomingRocketData`)
+### 7c. The One Decoded Projectile ([`DA_DebugHomingRocketData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/DebugHomingRocket/DA_DebugHomingRocketData.json))
 
 | Field | Value |
 |---|---|
@@ -308,7 +308,7 @@ Each round is a `BHInventoryItemDefinition` with a `BHInventoryFragment_Stackabl
 | BaseDamage | 47 |
 | Damage tag | Meta.Damage.Bullet.545mm |
 | Length / Diameter / Mass | 37 / 4 / 1 |
-| Drag model | `CT_Projectile_DragCoefficients` row "GC (Cylinder)" |
+| Drag model | [`CT_Projectile_DragCoefficients`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/Curves/CT_Projectile_DragCoefficients.json) row "GC (Cylinder)" |
 | Typical speed / thrust speed | 100000 / 20000 |
 | Max lifetime / total fuel / burn rate | 20 s / 100 / 1.0 |
 | Guidance | Guided, MaxTurnAngle 2.0 |
@@ -319,7 +319,7 @@ Each round is a `BHInventoryItemDefinition` with a `BHInventoryFragment_Stackabl
 
 ## 8. Vehicle Items
 
-### 8a. Vehicle Cargo (`Vehicles/Storage`)
+### 8a. Vehicle Cargo ([`Vehicles/Storage`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Vehicles/Storage))
 
 | Asset | Display | Container slot | Container grid | Filter |
 |---|---|---|---|---|
@@ -349,18 +349,18 @@ Each turret item is a `BHInventoryItemDefinition` with a `BHInventoryFragment_Su
 | ID_VehicleTurretArtillery_SB | Artillery Turret (sandbox) | 155mm | 1 |
 | ID_VehicleTurretHeavy | Heavy Turret | 120x570mm | 1 |
 
-### 8c. Launcher Test Barrels (`Weapons/Launcher`)
+### 8c. Launcher Test Barrels ([`Weapons/Launcher`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Weapons/Launcher))
 
 | Asset | Display | Weight | Notes |
 |---|---|---|---|
-| ID_ArtilleryBarrelTest | Artillery Barrel Test | 50 | Ranged-weapon extension: default `Attribute.Gameplay.Weapon.AimTime` 0.5, damage tag `Meta.Damage.Weapon.Vehicle.Turret.Artillery`, weapon stats asset `DA_ArtilleryBarrelTest_Stats` (not in dump) |
+| ID_ArtilleryBarrelTest | Artillery Barrel Test | 50 | Ranged-weapon extension: default `Attribute.Gameplay.Weapon.AimTime` 0.5, damage tag `Meta.Damage.Weapon.Vehicle.Turret.Artillery`, weapon stats asset [`DA_ArtilleryBarrelTest_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/RocketLauncher/ArtilleryBarrelTest/Data/DA_ArtilleryBarrelTest_Stats.json) (not in dump) |
 | ID_TankBarrelTest | Tank Barrel Test (ItemId Id.Item.LeapordBarrel) | 50 | Chamber and muzzle child slots, AllowList |
 
 These two are the only items with a `WDItemExtensionData_RangedWeapon`, and their stats are in an external asset.
 
 ### 8d. Fists (`Weapons/Fists`)
 
-ID_Fists (ItemId Id.Item.Fists). Melee damage tag `Meta.Damage.Utility.Fists`. Player effect `GE_Player_Fists`. Input context `IMC_Fists`. Animation set `AnimSet_Fists`. Aim-assist extension references `DA_AimAssistSettings_Melee` and `DA_AimAssistFilter`. The two test barrels in section 8c carry the same extension type.
+ID_Fists (ItemId Id.Item.Fists). Melee damage tag `Meta.Damage.Utility.Fists`. Player effect `GE_Player_Fists`. Input context [`IMC_Fists`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Input/IMC_Fists.json). Animation set [`AnimSet_Fists`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Fists/AnimSet_Fists.json). Aim-assist extension references [`DA_AimAssistSettings_Melee`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/DA_AimAssistSettings_Melee.json) and [`DA_AimAssistFilter`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/DA_AimAssistFilter.json). The two test barrels in section 8c carry the same extension type.
 
 ---
 
@@ -397,7 +397,7 @@ Eight weapon-class settings and one shared filter. Values are as stored, with no
 | PullModeADS | - | - | - | Off | - | Off | - | - | - |
 | TargetWeightCurve | - | C_AimAssistTargetWeightCurve (shared) | | | | | | | |
 
-Curves referenced per class (values not in this category): `PullStrengthDistanceCurve` (Hipfire and ADS variants per class), `SlowStrengthDistanceCurve` (Hipfire and ADS variants). The SR uses `C_AimAssistPullStrengthDistanceCurve_Sniper` for ADS. Two curve names have a missing underscore: `C_AimAssistSlowStrengthDistanceCurvePistol_ADS` and `C_AimAssistSlowStrengthDistanceCurveShotgun_ADS`. These are the names as stored.
+Curves referenced per class (values not in this category): `PullStrengthDistanceCurve` (Hipfire and ADS variants per class), `SlowStrengthDistanceCurve` (Hipfire and ADS variants). The SR uses [`C_AimAssistPullStrengthDistanceCurve_Sniper`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistPullStrengthDistanceCurve_Sniper.json) for ADS. Two curve names have a missing underscore: [`C_AimAssistSlowStrengthDistanceCurvePistol_ADS`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistSlowStrengthDistanceCurvePistol_ADS.json) and [`C_AimAssistSlowStrengthDistanceCurveShotgun_ADS`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistSlowStrengthDistanceCurveShotgun_ADS.json). These are the names as stored.
 
 The RPG setting is zero across most fields, and both RPG and SR have `PullMode` set to `Off`. Whether assist is intentionally disabled for those classes cannot be confirmed from the dump.
 
@@ -417,11 +417,11 @@ Other settings: `bFOVReticleScaling` is False for every class that sets it. `bAp
 
 | Group | Count | Assets |
 |---|---|---|
-| Throw curves (`Throwable/Curves`) | 5 CurveFloat | CRV_ThrowPitch_Overarm (4 keys), CRV_ThrowPitch_OverarmStrong (4), CRV_ThrowPitch_Underarm (8), CRV_ThrowVelocity_OverarmStrong (3), CRV_ThrowVelocity_Underarm (4) |
-| ADS curves (`Weapons/Curves/ADS`) | 6 CurveFloat | CF_Animation_ADSIn_Curve, CF_Animation_ADSIn_Linear, CF_Animation_ADSOut_Curve, CF_Animation_ADSOut_Linear, CF_Animation_ADSIn_WEPN_029_Curve, and one more not listed in this pass |
-| Aim sway (`Weapons/Curves/AimSway/*`) | 15 CurveFloat | Per-class sway multipliers (`CRV_WeaponAnimSwayMultiplier_AR_Harsh`, `_AR_Moderate`, `_Bow`, `_DMR_Harsh`, `_LMG_Harsh`, `_Launcher`, `_SMG`, `_Shotgun`, and others), plus `CF_AimSway_Stabilization_PlayerSpeed` and `_SR` |
-| Curve tables | 2 | `CT_Weapon_Spread` (`Weapons/Curves`), with rows per stance: `Launcher.Stand`, `Launcher.Crouch`, `Launcher.Prone`. `CT_Projectile_DragCoefficients` (`Resources/Ammo/Curves`), with rows such as "GC (Cylinder)". |
-| Input mapping | 1 | `IMC_Appliable` (UDataAsset; primary-use, secondary-use and inspect keys for consumables) |
+| Throw curves ([`Throwable/Curves`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Throwable/Curves)) | 5 CurveFloat | CRV_ThrowPitch_Overarm (4 keys), CRV_ThrowPitch_OverarmStrong (4), CRV_ThrowPitch_Underarm (8), CRV_ThrowVelocity_OverarmStrong (3), CRV_ThrowVelocity_Underarm (4) |
+| ADS curves ([`Weapons/Curves/ADS`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Weapons/Curves/ADS)) | 6 CurveFloat | CF_Animation_ADSIn_Curve, CF_Animation_ADSIn_Linear, CF_Animation_ADSOut_Curve, CF_Animation_ADSOut_Linear, CF_Animation_ADSIn_WEPN_029_Curve, and one more not listed in this pass |
+| Aim sway (`Weapons/Curves/AimSway/*`) | 15 CurveFloat | Per-class sway multipliers ([`CRV_WeaponAnimSwayMultiplier_AR_Harsh`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Curves/AimSway/AR/CRV_WeaponAnimSwayMultiplier_AR_Harsh.json), `_AR_Moderate`, `_Bow`, `_DMR_Harsh`, `_LMG_Harsh`, `_Launcher`, `_SMG`, `_Shotgun`, and others), plus [`CF_AimSway_Stabilization_PlayerSpeed`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Curves/AimSway/CF_AimSway_Stabilization_PlayerSpeed.json) and `_SR` |
+| Curve tables | 2 | [`CT_Weapon_Spread`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Curves/CT_Weapon_Spread.json) (`Weapons/Curves`), with rows per stance: `Launcher.Stand`, `Launcher.Crouch`, `Launcher.Prone`. [`CT_Projectile_DragCoefficients`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/Curves/CT_Projectile_DragCoefficients.json) ([`Resources/Ammo/Curves`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Resources/Ammo/Curves)), with rows such as "GC (Cylinder)". |
+| Input mapping | 1 | [`IMC_Appliable`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/ItemExtensionDefaults/IMC_Appliable.json) (UDataAsset; primary-use, secondary-use and inspect keys for consumables) |
 
 ---
 
@@ -438,7 +438,7 @@ Other settings: `bFOVReticleScaling` is False for every class that sets it. `bAp
 ## 13. Still Not Pulled / Limitations
 
 - **Base weapon definitions are absent.** `Weapons/AR` holds only components. The receiver and full gun items (M4, AK74-M, Glock 17, Vector, M249, and so on) are not in this folder, so per-weapon fire rate, damage, and recoil are not here.
-- **Weapon stats and projectile ballistics are external.** `WDWeaponStatsData` (e.g. `DA_ArtilleryBarrelTest_Stats`) and every `WDProjectileData` except `DA_DebugHomingRocketData` live in other folders, so damage and velocity for ordinary rounds are not in this category.
+- **Weapon stats and projectile ballistics are external.** `WDWeaponStatsData` (e.g. [`DA_ArtilleryBarrelTest_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/RocketLauncher/ArtilleryBarrelTest/Data/DA_ArtilleryBarrelTest_Stats.json)) and every `WDProjectileData` except [`DA_DebugHomingRocketData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/DebugHomingRocket/DA_DebugHomingRocketData.json) live in other folders, so damage and velocity for ordinary rounds are not in this category.
 - **Weight unit not stated.** The dump gives values (0.08 to 42.0) without a unit. Assume it is the game's internal weight unit until confirmed.
 - **Weight missing on most items.** Only 46 of 188 items have a weight value. The other items carry the fragment but no property, so the default is unknown.
 - **Grid orientation not confirmed.** `CustomShape.Dimensions` and `GridSize` are read as X x Y. Whether X is columns or rows is not verified.
@@ -452,4 +452,4 @@ Other settings: `bFOVReticleScaling` is False for every class that sets it. `bAp
 
 ---
 
-*Source files: `Wardogs/Content/Items/` (254 `.json`). Intermediate extraction scripts live in the session scratchpad only.*
+*Source files: [`Wardogs/Content/Items/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items) (254 `.json`). Intermediate extraction scripts live in the session scratchpad only.*

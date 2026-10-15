@@ -1,0 +1,95 @@
+--- export: UObject / AEB_AttachSoundToHeldItem_C_0 ---
+{
+  "Type": "AEB_AttachSoundToHeldItem_C",
+  "Name": "AEB_AttachSoundToHeldItem_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_AttachSoundToHeldItem.AEB_AttachSoundToHeldItem_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_CycleFireMode'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Firing/AE_Weapon_CycleFireMode.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_AttachSoundToHeldItem_C'Default__AEB_AttachSoundToHeldItem_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_AttachSoundToHeldItem.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Firemode"
+    }
+  }
+}
+--- export: UObject / AEB_ExecuteFireModeTrigger_C_0 ---
+{
+  "Type": "AEB_ExecuteFireModeTrigger_C",
+  "Name": "AEB_ExecuteFireModeTrigger_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_ExecuteFireModeTrigger.AEB_ExecuteFireModeTrigger_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_CycleFireMode'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Firing/AE_Weapon_CycleFireMode.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_ExecuteFireModeTrigger_C'Default__AEB_ExecuteFireModeTrigger_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_ExecuteFireModeTrigger.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Firemode"
+    }
+  }
+}
+--- export: UObject / AEB_PlayHeldWeaponPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayHeldItemPerspectiveSound_C",
+  "Name": "AEB_PlayHeldWeaponPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayHeldItemPerspectiveSound.AEB_PlayHeldItemPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_CycleFireMode'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Firing/AE_Weapon_CycleFireMode.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayHeldItemPerspectiveSound_C'Default__AEB_PlayHeldItemPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayHeldItemPerspectiveSound.0"
+  },
+  "Properties": {
+    "FirstPersonSoundTag": {
+      "TagName": "Audio.Asset.Weapon.Firemode.1p"
+    },
+    "ThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Weapon.Firemode.3p"
+    },
+    "RestartBehaviour": "ESoundRestartBehavior::PlayBoth",
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Firemode"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Weapon_CycleFireMode ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_CycleFireMode",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Weapon/Firing/AE_Weapon_CycleFireMode",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.CycleFireMode"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_PlayHeldItemPerspectiveSound_C'AE_Weapon_CycleFireMode:AEB_PlayHeldWeaponPerspectiveSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Firing/AE_Weapon_CycleFireMode.2"
+      },
+      {
+        "ObjectName": "AEB_ExecuteFireModeTrigger_C'AE_Weapon_CycleFireMode:AEB_ExecuteFireModeTrigger_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Firing/AE_Weapon_CycleFireMode.1"
+      },
+      {
+        "ObjectName": "AEB_AttachSoundToHeldItem_C'AE_Weapon_CycleFireMode:AEB_AttachSoundToHeldItem_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Firing/AE_Weapon_CycleFireMode.0"
+      }
+    ],
+    "_aaabhonahgpdbjealfaaa_$ED076F31940B5000$_$23$": 25.0
+  }
+}

@@ -1,0 +1,337 @@
+--- export: UDataTable / DT_Reward_Cash_ControlZoneReward ---
+{
+  "Type": "DataTable",
+  "Name": "DT_Reward_Cash_ControlZoneReward",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/GameMechanics/Gamemode/Data/CashRewardsDataTable/Objective/DT_Reward_Cash_ControlZoneReward",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDCustomRewardTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Meta.Progression.Resources.MatchScore.ObjectiveScore.ControlZoneContested": {
+      "Description": {
+        "Namespace": "",
+        "Key": "955096F24C73B4F3F260BD815B1CC2FF",
+        "SourceString": "Reward for player if  they are in the control zone and it is contested",
+        "LocalizedString": "Reward for player if  they are in the control zone and it is contested"
+      },
+      "ResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "base": 150.0,
+      "FriendlyModifier": 1.0,
+      "NeutralModifier": 1.0,
+      "OwnerModifier": 1.0,
+      "ModifierCZ": 1.0,
+      "ModifierHZ": 1.0,
+      "ModifierHZM": 1.0,
+      "InstigatorLocationRatioModifier": 1.0,
+      "TargetLocationRatioModifier": 0.0,
+      "AssistBaseModifier": 1.0,
+      "AssistScalingModifier": 1.0,
+      "CrewAssistModifier": 1.0,
+      "LogisticAssistModifier": 1.0,
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.ObjectiveScore.ControlZoneContested"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.ObjectiveScore.ControlZoneNotOwned": {
+      "Description": {
+        "Namespace": "",
+        "Key": "DF500F1C4EE5BE03F1259794A241EE0B",
+        "SourceString": "Reward for player if they are in the control zone and it is not owned by the players faction",
+        "LocalizedString": "Reward for player if they are in the control zone and it is not owned by the players faction"
+      },
+      "ResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "base": 150.0,
+      "FriendlyModifier": 1.0,
+      "NeutralModifier": 1.0,
+      "OwnerModifier": 1.0,
+      "ModifierCZ": 1.0,
+      "ModifierHZ": 1.0,
+      "ModifierHZM": 1.0,
+      "InstigatorLocationRatioModifier": 1.0,
+      "TargetLocationRatioModifier": 0.0,
+      "AssistBaseModifier": 1.0,
+      "AssistScalingModifier": 1.0,
+      "CrewAssistModifier": 1.0,
+      "LogisticAssistModifier": 1.0,
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.ObjectiveScore.ControlZoneNotOwned"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.ObjectiveScore.ControlZoneOwned": {
+      "Description": {
+        "Namespace": "",
+        "Key": "534199A84B46AF6B7A3E568A354BAC11",
+        "SourceString": "Reward for player if they are in the control zone and it is owned by the players faction",
+        "LocalizedString": "Reward for player if they are in the control zone and it is owned by the players faction"
+      },
+      "ResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "base": 150.0,
+      "FriendlyModifier": 1.0,
+      "NeutralModifier": 1.0,
+      "OwnerModifier": 1.0,
+      "ModifierCZ": 1.0,
+      "ModifierHZ": 1.0,
+      "ModifierHZM": 1.0,
+      "InstigatorLocationRatioModifier": 1.0,
+      "TargetLocationRatioModifier": 0.0,
+      "AssistBaseModifier": 1.0,
+      "AssistScalingModifier": 1.0,
+      "CrewAssistModifier": 1.0,
+      "LogisticAssistModifier": 1.0,
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.ObjectiveScore.ControlZoneOwned"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.ObjectiveScore.ControlZoneEntered": {
+      "Description": {
+        "Namespace": "",
+        "Key": "AAFA03874D57097DE549E1AEA60457F7",
+        "SourceString": "Reward for player when they enter the control zone for the first time in that life",
+        "LocalizedString": "Reward for player when they enter the control zone for the first time in that life"
+      },
+      "ResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "base": 100.0,
+      "FriendlyModifier": 1.0,
+      "NeutralModifier": 1.0,
+      "OwnerModifier": 1.0,
+      "ModifierCZ": 1.0,
+      "ModifierHZ": 1.0,
+      "ModifierHZM": 1.0,
+      "InstigatorLocationRatioModifier": 1.0,
+      "TargetLocationRatioModifier": 0.0,
+      "AssistBaseModifier": 1.0,
+      "AssistScalingModifier": 1.0,
+      "CrewAssistModifier": 1.0,
+      "LogisticAssistModifier": 1.0,
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.ObjectiveScore.ControlZoneEntered"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.ObjectiveScore.HotzoneNotOwned": {
+      "Description": {
+        "Namespace": "",
+        "Key": "859A047F4C6FDB1B0463F482CB4FA850",
+        "SourceString": "Reward for player if they are in the HZ and it is not owed",
+        "LocalizedString": "Reward for player if they are in the HZ and it is not owed"
+      },
+      "ResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "base": 600.0,
+      "FriendlyModifier": 1.0,
+      "NeutralModifier": 1.0,
+      "OwnerModifier": 1.0,
+      "ModifierCZ": 1.0,
+      "ModifierHZ": 1.0,
+      "ModifierHZM": 1.0,
+      "InstigatorLocationRatioModifier": 1.0,
+      "TargetLocationRatioModifier": 0.0,
+      "AssistBaseModifier": 1.0,
+      "AssistScalingModifier": 1.0,
+      "CrewAssistModifier": 1.0,
+      "LogisticAssistModifier": 1.0,
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.ObjectiveScore.HotzoneNotOwned"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.ObjectiveScore.HotzoneContested": {
+      "Description": {
+        "Namespace": "",
+        "Key": "509998864A27D35830ECB7B77A09633E",
+        "SourceString": "Reward for player if they are in the HZ and it is contested",
+        "LocalizedString": "Reward for player if they are in the HZ and it is contested"
+      },
+      "ResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "base": 600.0,
+      "FriendlyModifier": 1.0,
+      "NeutralModifier": 1.0,
+      "OwnerModifier": 1.0,
+      "ModifierCZ": 1.0,
+      "ModifierHZ": 1.0,
+      "ModifierHZM": 1.0,
+      "InstigatorLocationRatioModifier": 1.0,
+      "TargetLocationRatioModifier": 0.0,
+      "AssistBaseModifier": 1.0,
+      "AssistScalingModifier": 1.0,
+      "CrewAssistModifier": 1.0,
+      "LogisticAssistModifier": 1.0,
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.ObjectiveScore.HotzoneContested"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.ObjectiveScore.HotzoneOwned": {
+      "Description": {
+        "Namespace": "",
+        "Key": "F12BBF4B4B3DE423755A4DA6761742F1",
+        "SourceString": "Reward for player if they are in the HZ and it is owned by the players faction",
+        "LocalizedString": "Reward for player if they are in the HZ and it is owned by the players faction"
+      },
+      "ResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "base": 600.0,
+      "FriendlyModifier": 1.0,
+      "NeutralModifier": 1.0,
+      "OwnerModifier": 1.0,
+      "ModifierCZ": 1.0,
+      "ModifierHZ": 1.0,
+      "ModifierHZM": 1.0,
+      "InstigatorLocationRatioModifier": 1.0,
+      "TargetLocationRatioModifier": 0.0,
+      "AssistBaseModifier": 1.0,
+      "AssistScalingModifier": 1.0,
+      "CrewAssistModifier": 1.0,
+      "LogisticAssistModifier": 1.0,
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.ObjectiveScore.HotzoneOwned"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.ObjectiveScore.HotzoneEntered": {
+      "Description": {
+        "Namespace": "",
+        "Key": "06D4FA4B493DF3A67AA74CBB4E27ACED",
+        "SourceString": "Reward for player if they enter the HZ",
+        "LocalizedString": "Reward for player if they enter the HZ"
+      },
+      "ResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "base": 0.0,
+      "FriendlyModifier": 1.0,
+      "NeutralModifier": 1.0,
+      "OwnerModifier": 1.0,
+      "ModifierCZ": 1.0,
+      "ModifierHZ": 1.0,
+      "ModifierHZM": 1.0,
+      "InstigatorLocationRatioModifier": 1.0,
+      "TargetLocationRatioModifier": 0.0,
+      "AssistBaseModifier": 1.0,
+      "AssistScalingModifier": 1.0,
+      "CrewAssistModifier": 1.0,
+      "LogisticAssistModifier": 1.0,
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.ObjectiveScore.HotzoneEntered"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.ObjectiveScore.MagnetZoneContested": {
+      "Description": {
+        "Namespace": "",
+        "Key": "94B5500E432340B580EFD8B272A053E4",
+        "SourceString": "Reward for player if they enter the HZM and it is contested",
+        "LocalizedString": "Reward for player if they enter the HZM and it is contested"
+      },
+      "ResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "base": 600.0,
+      "FriendlyModifier": 1.0,
+      "NeutralModifier": 1.0,
+      "OwnerModifier": 1.0,
+      "ModifierCZ": 1.0,
+      "ModifierHZ": 1.0,
+      "ModifierHZM": 1.0,
+      "InstigatorLocationRatioModifier": 1.0,
+      "TargetLocationRatioModifier": 0.0,
+      "AssistBaseModifier": 1.0,
+      "AssistScalingModifier": 1.0,
+      "CrewAssistModifier": 1.0,
+      "LogisticAssistModifier": 1.0,
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.ObjectiveScore.MagnetZoneContested"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.ObjectiveScore.MagnetZoneOwned": {
+      "Description": {
+        "Namespace": "",
+        "Key": "68BDD81A476369971E970080B06683A5",
+        "SourceString": "Reward for player if they enter the HZM and it is owned by the players faction",
+        "LocalizedString": "Reward for player if they enter the HZM and it is owned by the players faction"
+      },
+      "ResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "base": 700.0,
+      "FriendlyModifier": 1.0,
+      "NeutralModifier": 1.0,
+      "OwnerModifier": 1.0,
+      "ModifierCZ": 1.0,
+      "ModifierHZ": 1.0,
+      "ModifierHZM": 1.0,
+      "InstigatorLocationRatioModifier": 1.0,
+      "TargetLocationRatioModifier": 0.0,
+      "AssistBaseModifier": 1.0,
+      "AssistScalingModifier": 1.0,
+      "CrewAssistModifier": 1.0,
+      "LogisticAssistModifier": 1.0,
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.ObjectiveScore.MagnetZoneOwned"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.ObjectiveScore.MagnetZoneNotOwned": {
+      "Description": {
+        "Namespace": "",
+        "Key": "6D93651140EDE4B183CB56ABEA761DB5",
+        "SourceString": "Reward for player if they enter the HZM and it is not owned by the players faction",
+        "LocalizedString": "Reward for player if they enter the HZM and it is not owned by the players faction"
+      },
+      "ResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "base": 600.0,
+      "FriendlyModifier": 1.0,
+      "NeutralModifier": 1.0,
+      "OwnerModifier": 1.0,
+      "ModifierCZ": 1.0,
+      "ModifierHZ": 1.0,
+      "ModifierHZM": 1.0,
+      "InstigatorLocationRatioModifier": 1.0,
+      "TargetLocationRatioModifier": 0.0,
+      "AssistBaseModifier": 1.0,
+      "AssistScalingModifier": 1.0,
+      "CrewAssistModifier": 1.0,
+      "LogisticAssistModifier": 1.0,
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.ObjectiveScore.MagnetZoneNotOwned"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.ObjectiveScore.SpawnVehicle.ControlZoneEntered": {
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "ResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "base": 3000.0,
+      "FriendlyModifier": 1.0,
+      "NeutralModifier": 1.0,
+      "OwnerModifier": 1.0,
+      "ModifierCZ": 1.0,
+      "ModifierHZ": 1.0,
+      "ModifierHZM": 1.0,
+      "InstigatorLocationRatioModifier": 1.0,
+      "TargetLocationRatioModifier": 1.0,
+      "AssistBaseModifier": 1.0,
+      "AssistScalingModifier": 1.0,
+      "CrewAssistModifier": 1.0,
+      "LogisticAssistModifier": 1.0,
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.ObjectiveScore.SpawnVehicle.ControlZoneEntered"
+      }
+    }
+  }
+}

@@ -1,0 +1,68 @@
+--- export: UDataAsset / DA_GameplaySystems_STN_04 ---
+{
+  "Type": "WDVehicleGameplayComponentsDataAsset",
+  "Name": "DA_GameplaySystems_STN_04",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleGameplayComponentsDataAsset'",
+  "Package": "/STN_04/Data/DA_GameplaySystems_STN_04",
+  "Properties": {
+    "FactionSettings": {
+      "SetNeutralFactionTime": 36000.0,
+      "bShouldFactionChange": false
+    },
+    "FuelSettings": {
+      "MaxFuel": 1.0,
+      "RPML": 1.0,
+      "FuelConsumptionOnBoostMultiplier": 1.0
+    },
+    "DamageEntitySettings": {
+      "VehicleDamageTag": {
+        "TagName": "Meta.Damage.Vehicle.Stationary.RadioTower"
+      },
+      "DestroyedExplosionDamageValues": {
+        "BaseDamage": 0.0,
+        "ExplosiveRadius": 0.0
+      }
+    },
+    "HealthSettings": {
+      "InitialVehicleHealth": 1000.0,
+      "CriticalStateThreshold": 1.0,
+      "BleedOutTimer": 1.0,
+      "RepairWidgetLocations": [
+        {
+          "HealthSectionTags": [
+            {
+              "TagName": "Attribute.Gameplay.Health"
+            }
+          ],
+          "WidgetLocation": {
+            "X": 300.0,
+            "Y": 0.0,
+            "Z": 125.0
+          }
+        }
+      ]
+    },
+    "ActiveZonesSettings": {
+      "ActiveZones": [
+        {
+          "PerActiveZoneTypeTags": [
+            {
+              "Key": {
+                "TagName": "Vehicle.ActiveLocation.Repair"
+              },
+              "Value": [
+                "Attribute.Gameplay.Health"
+              ]
+            }
+          ],
+          "WidgetLocation": {
+            "X": 300.0,
+            "Y": 0.0,
+            "Z": 125.0
+          }
+        }
+      ]
+    }
+  }
+}

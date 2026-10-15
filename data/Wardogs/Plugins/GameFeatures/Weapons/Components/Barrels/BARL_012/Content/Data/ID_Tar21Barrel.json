@@ -1,0 +1,122 @@
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Tar21Barrel'",
+    "ObjectPath": "/BARL_012/Data/ID_Tar21Barrel.1"
+  },
+  "Properties": {
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Item.Attachment.Muzzle"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::BlockPriority",
+          "AllowedSubSlotItems": [
+            "Id.Item.MZL_07"
+          ],
+          "AllowedSubSlotContext": [
+            "Item.Attachment.Muzzle.556",
+            "Item.Attachment.Muzzle.M4"
+          ],
+          "BlockedSubSlotItems": [
+            "Id.Item.MUZL_023",
+            "Id.Item.MUZL_029"
+          ],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": -2,
+        "MaxSlotAmountStackSize": 1,
+        "bAllowsStackedPacking": false,
+        "bIsHiddenContainer": false,
+        "_aaabelnajgoacnpmnokoe_$BD096E02DFCDEAE4$_$20$": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": []
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / ID_Tar21Barrel ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_Tar21Barrel",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/BARL_012/Data/ID_Tar21Barrel",
+  "Properties": {
+    "ItemId": {
+      "TagName": "ID.Item.TAR21Barrel"
+    },
+    "ItemContext": [
+      "Item.Attachment.Barrel.TAR21"
+    ],
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_Tar21Barrel:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/BARL_012/Data/ID_Tar21Barrel.2"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_Tar21Barrel:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/BARL_012/Data/ID_Tar21Barrel.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_Tar21Barrel:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/BARL_012/Data/ID_Tar21Barrel.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Tar21Barrel'",
+    "ObjectPath": "/BARL_012/Data/ID_Tar21Barrel.1"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Barrel"
+      },
+      "AppliedEffects": [],
+      "AppliedCharacterEffects": [],
+      "bCanBeRemovedInGame": false,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Tar21Barrel'",
+    "ObjectPath": "/BARL_012/Data/ID_Tar21Barrel.1"
+  },
+  "Properties": {
+    "ItemType": "EWDGunsmithItemType::Attachment"
+  }
+}

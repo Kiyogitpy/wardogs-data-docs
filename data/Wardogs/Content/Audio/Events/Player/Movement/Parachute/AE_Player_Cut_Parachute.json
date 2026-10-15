@@ -1,0 +1,36 @@
+--- export: UPrimaryDataAsset / AE_Player_Cut_Parachute ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Player_Cut_Parachute",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Movement/Parachute/AE_Player_Cut_Parachute",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Item.UsePrimary.Parachute.Cut"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_Player_Cut_Parachute:CrosstalkAudioEventBehaviorStopSound_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Parachute/AE_Player_Cut_Parachute.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Cut_Parachute'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Parachute/AE_Player_Cut_Parachute.0"
+  },
+  "Properties": {
+    "FadeOut": 0.5,
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Fall.Parachute"
+    }
+  }
+}

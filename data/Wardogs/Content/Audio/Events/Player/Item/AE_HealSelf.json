@@ -1,0 +1,70 @@
+--- export: UObject / AEB_AttachSoundToHeldItem_C_0 ---
+{
+  "Type": "AEB_AttachSoundToHeldItem_C",
+  "Name": "AEB_AttachSoundToHeldItem_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_AttachSoundToHeldItem.AEB_AttachSoundToHeldItem_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_HealSelf'",
+    "ObjectPath": "/Game/Audio/Events/Player/Item/AE_HealSelf.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_AttachSoundToHeldItem_C'Default__AEB_AttachSoundToHeldItem_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_AttachSoundToHeldItem.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Healing"
+    }
+  }
+}
+--- export: UObject / AEB_PlayHeldWeaponPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayHeldItemPerspectiveSound_C",
+  "Name": "AEB_PlayHeldWeaponPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayHeldItemPerspectiveSound.AEB_PlayHeldItemPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_HealSelf'",
+    "ObjectPath": "/Game/Audio/Events/Player/Item/AE_HealSelf.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayHeldItemPerspectiveSound_C'Default__AEB_PlayHeldItemPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayHeldItemPerspectiveSound.0"
+  },
+  "Properties": {
+    "FirstPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.HealSelf.1p"
+    },
+    "ThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.HealSelf.3p"
+    },
+    "RestartBehaviour": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Healing"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_HealSelf ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_HealSelf",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Item/AE_HealSelf",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.HealSelf"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_PlayHeldItemPerspectiveSound_C'AE_HealSelf:AEB_PlayHeldWeaponPerspectiveSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Item/AE_HealSelf.1"
+      },
+      {
+        "ObjectName": "AEB_AttachSoundToHeldItem_C'AE_HealSelf:AEB_AttachSoundToHeldItem_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Item/AE_HealSelf.0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+--- export: UObject / AEB_Comms_VehiclePerspective_PerspectiveChange_C_0 ---
+{
+  "Type": "AEB_Comms_VehiclePerspective_PerspectiveChanged_C",
+  "Name": "AEB_Comms_VehiclePerspective_PerspectiveChange_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_Comms_VehiclePerspective_PerspectiveChanged.AEB_Comms_VehiclePerspective_PerspectiveChanged_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Perspective'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Perspective.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_Comms_VehiclePerspective_PerspectiveChanged_C'Default__AEB_Comms_VehiclePerspective_PerspectiveChanged_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_Comms_VehiclePerspective_PerspectiveChanged.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Comms"
+    }
+  }
+}
+--- export: UObject / AEB_SetVehicleHostility_C_0 ---
+{
+  "Type": "AEB_SetVehicleHostility_C",
+  "Name": "AEB_SetVehicleHostility_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetVehicleHostility.AEB_SetVehicleHostility_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Perspective'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Perspective.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetVehicleHostility_C'Default__AEB_SetVehicleHostility_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetVehicleHostility.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Engine"
+    }
+  }
+}
+--- export: UObject / AEB_VehiclePerspective_C_0 ---
+{
+  "Type": "AEB_VehiclePerspective_C",
+  "Name": "AEB_VehiclePerspective_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_VehiclePerspective.AEB_VehiclePerspective_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Perspective'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Perspective.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_VehiclePerspective_C'Default__AEB_VehiclePerspective_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_VehiclePerspective.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_Perspective ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_Perspective",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/AE_Vehicle_Perspective",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Shared.Perspective"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_SetVehicleHostility_C'AE_Vehicle_Perspective:AEB_SetVehicleHostility_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Perspective.1"
+      },
+      {
+        "ObjectName": "AEB_VehiclePerspective_C'AE_Vehicle_Perspective:AEB_VehiclePerspective_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Perspective.2"
+      },
+      {
+        "ObjectName": "AEB_Comms_VehiclePerspective_PerspectiveChanged_C'AE_Vehicle_Perspective:AEB_Comms_VehiclePerspective_PerspectiveChange_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Perspective.0"
+      }
+    ]
+  }
+}

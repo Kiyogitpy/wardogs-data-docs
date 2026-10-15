@@ -1,0 +1,449 @@
+--- export: UObject / GameFeatureAction_AddComponents_0 ---
+{
+  "Type": "GameFeatureAction_AddComponents",
+  "Name": "GameFeatureAction_AddComponents_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddComponents'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'ControlZone'",
+    "ObjectPath": "/ControlZone/ControlZone.3"
+  },
+  "Properties": {
+    "ComponentList": [
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDGameStateSession",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Script/ControlZoneRuntime.WDControlZoneGameStateComponent",
+          "SubPathString": ""
+        },
+        "bClientComponent": true,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      },
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDMoverCharacter",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/ControlZone/Components/CharacterControlZoneInteractionComponent.CharacterControlZoneInteractionComponent_C",
+          "SubPathString": ""
+        },
+        "bClientComponent": false,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_AddWorldPartitionContent_0 ---
+{
+  "Type": "GameFeatureAction_AddWorldPartitionContent",
+  "Name": "GameFeatureAction_AddWorldPartitionContent_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddWorldPartitionContent'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'ControlZone'",
+    "ObjectPath": "/ControlZone/ControlZone.3"
+  },
+  "Properties": {
+    "ExternalDataLayerAsset": {
+      "ObjectName": "ExternalDataLayerAsset'EDL_ControlZone'",
+      "ObjectPath": "/ControlZone/DataLayers/EDL_ControlZone.0"
+    }
+  }
+}
+--- export: UObject / GameFeatureAction_DataRegistrySource_0 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'ControlZone'",
+    "ObjectPath": "/ControlZone/ControlZone.3"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "RewardFeed",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/ControlZone/UI/RewardFeed/Data/DT_ControlZoneRewardFeedActions.DT_ControlZoneRewardFeedActions",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "TrackerData_Spatial",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/ControlZone/UI/Trackers/SpatialTrackers/Data/DT_Trackers_ControlZone_Spatial.DT_Trackers_ControlZone_Spatial",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "TrackerData_Minimap",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/ControlZone/UI/Trackers/MapTrackers/Data/DT_TrackerData_Map_ControlZone.DT_TrackerData_Map_ControlZone",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "TrackerData_TacticalMap",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/ControlZone/UI/Trackers/MapTrackers/Data/DT_TrackerData_Map_ControlZone.DT_TrackerData_Map_ControlZone",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "DeploymentRejectionReasons",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": false,
+        "DataTableToAdd": {
+          "AssetPathName": "/ControlZone/UI/DeploymentBoard/DT_DeploymentRejectionReasons_ControlZone.DT_DeploymentRejectionReasons_ControlZone",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "PlacementDisplayTexts",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/ControlZone/UI/DT_ControlZone_PlacementDisplayTexts.DT_ControlZone_PlacementDisplayTexts",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / ControlZone ---
+{
+  "Type": "GameFeatureData",
+  "Name": "ControlZone",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/ControlZone/ControlZone",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements'ControlZone:WDGameFeatureAction_AddWidgetElements_0'",
+        "ObjectPath": "/ControlZone/ControlZone.4"
+      },
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'ControlZone:GameFeatureAction_DataRegistrySource_0'",
+        "ObjectPath": "/ControlZone/ControlZone.2"
+      },
+      {
+        "ObjectName": "GameFeatureAction_AddComponents'ControlZone:GameFeatureAction_AddComponents_0'",
+        "ObjectPath": "/ControlZone/ControlZone.0"
+      },
+      {
+        "ObjectName": "GameFeatureAction_AddWorldPartitionContent'ControlZone:GameFeatureAction_AddWorldPartitionContent_0'",
+        "ObjectPath": "/ControlZone/ControlZone.1"
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_0 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements",
+  "Name": "WDGameFeatureAction_AddWidgetElements_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'ControlZone'",
+    "ObjectPath": "/ControlZone/ControlZone.3"
+  },
+  "Properties": {
+    "TaggedElements": [
+      {
+        "Key": {
+          "TagName": "UI.HUD.Element.GameModeStatus"
+        },
+        "Value": {
+          "WidgetClass": {
+            "AssetPathName": "/ControlZone/UI/GameModeStatus/W_GameModeStatus.W_GameModeStatus_C",
+            "SubPathString": ""
+          },
+          "ViewModelParams": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/ControlZoneRuntime.WDUIGameModeStatusViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/ControlZone/UI/GameModeStatus/Data/DA_GameModeStatus.DA_GameModeStatus",
+              "SubPathString": ""
+            }
+          },
+          "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+        }
+      }
+    ],
+    "AddWidgetElementsInstances": [
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'ControlZone:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_146'",
+        "ObjectPath": "/ControlZone/ControlZone.9"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'ControlZone:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_147'",
+        "ObjectPath": "/ControlZone/ControlZone.10"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'ControlZone:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_148'",
+        "ObjectPath": "/ControlZone/ControlZone.11"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'ControlZone:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_0'",
+        "ObjectPath": "/ControlZone/ControlZone.5"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'ControlZone:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_1'",
+        "ObjectPath": "/ControlZone/ControlZone.6"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'ControlZone:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_2'",
+        "ObjectPath": "/ControlZone/ControlZone.12"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'ControlZone:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_3'",
+        "ObjectPath": "/ControlZone/ControlZone.13"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'ControlZone:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_4'",
+        "ObjectPath": "/ControlZone/ControlZone.14"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'ControlZone:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_5'",
+        "ObjectPath": "/ControlZone/ControlZone.15"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'ControlZone:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_6'",
+        "ObjectPath": "/ControlZone/ControlZone.16"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'ControlZone:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_7'",
+        "ObjectPath": "/ControlZone/ControlZone.17"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'ControlZone:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_8'",
+        "ObjectPath": "/ControlZone/ControlZone.18"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'ControlZone:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_9'",
+        "ObjectPath": "/ControlZone/ControlZone.19"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'ControlZone:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_10'",
+        "ObjectPath": "/ControlZone/ControlZone.7"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'ControlZone:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_11'",
+        "ObjectPath": "/ControlZone/ControlZone.8"
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_0 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'ControlZone:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/ControlZone/ControlZone.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_1 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_1",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'ControlZone:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/ControlZone/ControlZone.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_10 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_10",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'ControlZone:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/ControlZone/ControlZone.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_11 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_11",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'ControlZone:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/ControlZone/ControlZone.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_146 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_146",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'ControlZone:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/ControlZone/ControlZone.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_147 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_147",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'ControlZone:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/ControlZone/ControlZone.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_148 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_148",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'ControlZone:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/ControlZone/ControlZone.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_2 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_2",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'ControlZone:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/ControlZone/ControlZone.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_3 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_3",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'ControlZone:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/ControlZone/ControlZone.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_4 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_4",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'ControlZone:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/ControlZone/ControlZone.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_5 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_5",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'ControlZone:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/ControlZone/ControlZone.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_6 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_6",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'ControlZone:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/ControlZone/ControlZone.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_7 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_7",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'ControlZone:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/ControlZone/ControlZone.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_8 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_8",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'ControlZone:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/ControlZone/ControlZone.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_9 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_9",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'ControlZone:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/ControlZone/ControlZone.4"
+  }
+}

@@ -1,0 +1,105 @@
+--- export: UObject / AEB_VehiclePerspective_C_2 ---
+{
+  "Type": "AEB_VehiclePerspective_C",
+  "Name": "AEB_VehiclePerspective_C_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_VehiclePerspective.AEB_VehiclePerspective_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Targeting_Drone_IsLockedOnTo'",
+    "ObjectPath": "/STN_05/Audio/Events/AE_Vehicle_Targeting_Drone_IsLockedOnTo.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_VehiclePerspective_C'Default__AEB_VehiclePerspective_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_VehiclePerspective.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_Targeting_Drone_IsLockedOnTo ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_Targeting_Drone_IsLockedOnTo",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/STN_05/Audio/Events/AE_Vehicle_Targeting_Drone_IsLockedOnTo",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Shared.Targeting.Drone.IsLockedOnTo"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Vehicle_Targeting_Drone_IsLockedOnTo:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/STN_05/Audio/Events/AE_Vehicle_Targeting_Drone_IsLockedOnTo.2"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorPlayVehicleSound'AE_Vehicle_Targeting_Drone_IsLockedOnTo:WDAudioEventBehaviorPlayVehicleSound_0'",
+        "ObjectPath": "/STN_05/Audio/Events/AE_Vehicle_Targeting_Drone_IsLockedOnTo.4"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Vehicle_Targeting_Drone_IsLockedOnTo:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/STN_05/Audio/Events/AE_Vehicle_Targeting_Drone_IsLockedOnTo.3"
+      },
+      {
+        "ObjectName": "AEB_VehiclePerspective_C'AE_Vehicle_Targeting_Drone_IsLockedOnTo:AEB_VehiclePerspective_C_2'",
+        "ObjectPath": "/STN_05/Audio/Events/AE_Vehicle_Targeting_Drone_IsLockedOnTo.0"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Targeting_Drone_IsLockedOnTo'",
+    "ObjectPath": "/STN_05/Audio/Events/AE_Vehicle_Targeting_Drone_IsLockedOnTo.1"
+  },
+  "Properties": {
+    "SocketName": "radio_J",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Targeting.LockOnSystem"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Targeting_Drone_IsLockedOnTo'",
+    "ObjectPath": "/STN_05/Audio/Events/AE_Vehicle_Targeting_Drone_IsLockedOnTo.1"
+  },
+  "Properties": {
+    "ParameterName": "LockOn Start",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Targeting.LockOnSystem"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviorPlayVehicleSound_0 ---
+{
+  "Type": "WDAudioEventBehaviorPlayVehicleSound",
+  "Name": "WDAudioEventBehaviorPlayVehicleSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorPlayVehicleSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Targeting_Drone_IsLockedOnTo'",
+    "ObjectPath": "/STN_05/Audio/Events/AE_Vehicle_Targeting_Drone_IsLockedOnTo.1"
+  },
+  "Properties": {
+    "SoundAssetTag": {
+      "TagName": "Audio.Asset.Vehicle.Targeting.LockOn.3p"
+    },
+    "RestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Targeting.LockOnSystem"
+    }
+  }
+}

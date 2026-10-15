@@ -1,0 +1,60 @@
+--- export: UPrimaryDataAsset / AE_Vendor_Greeting_Hello_ShootingRange ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vendor_Greeting_Hello_ShootingRange",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vendor/AE_Vendor_Greeting_Hello_ShootingRange",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vendor.Greeting.Hello.ShootingRange"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Vendor_Greeting_Hello_ShootingRange:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Vendor/AE_Vendor_Greeting_Hello_ShootingRange.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Vendor_Greeting_Hello_ShootingRange:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Vendor/AE_Vendor_Greeting_Hello_ShootingRange.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vendor_Greeting_Hello_ShootingRange'",
+    "ObjectPath": "/Game/Audio/Events/Vendor/AE_Vendor_Greeting_Hello_ShootingRange.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vendor_Greeting_Hello_ShootingRange'",
+    "ObjectPath": "/Game/Audio/Events/Vendor/AE_Vendor_Greeting_Hello_ShootingRange.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Vendor_Greeting_Hello_ShootingRange_Preset'",
+      "ObjectPath": "/Game/Audio/Convo/Neutral/Greeting/Hello/MSS_Vendor_Greeting_Hello_ShootingRange_Preset.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::IfDifferentSound",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

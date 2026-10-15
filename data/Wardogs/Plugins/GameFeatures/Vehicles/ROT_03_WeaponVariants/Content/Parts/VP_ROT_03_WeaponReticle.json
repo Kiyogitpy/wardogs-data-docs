@@ -1,0 +1,55 @@
+--- export: UPrimaryDataAsset / VP_ROT_03_WeaponReticle ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_ROT_03_WeaponReticle",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/ROT_03_WeaponVariants/Parts/VP_ROT_03_WeaponReticle",
+  "Properties": {
+    "Tags": [
+      "Vehicle.Reticle"
+    ],
+    "Fragments": [
+      {
+        "Key": "Reticle",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_ROT_03_WeaponReticle:MVF_StaticMesh_0'",
+            "ObjectPath": "/ROT_03_WeaponVariants/Parts/VP_ROT_03_WeaponReticle.1"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / MVF_StaticMesh_0 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_ROT_03_WeaponReticle'",
+    "ObjectPath": "/ROT_03_WeaponVariants/Parts/VP_ROT_03_WeaponReticle.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceID": "Chassis",
+        "SocketName": "S_ReticleLocation"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/Game/VFX/Vehicles/Helicopter/LittlebirdHUD/SM_VFX_LittlebirdCrosshair.SM_VFX_LittlebirdCrosshair",
+      "SubPathString": ""
+    },
+    "bHitEvents": false,
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy",
+        "Flags": 1
+      }
+    }
+  }
+}

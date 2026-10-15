@@ -1,0 +1,93 @@
+--- export: UObject / AEB_ActivateControlBusMix_C_0 ---
+{
+  "Type": "AEB_ActivateControlBusMix_C",
+  "Name": "AEB_ActivateControlBusMix_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_ActivateControlBusMix.AEB_ActivateControlBusMix_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Gamemode_SpawnBoardWait'",
+    "ObjectPath": "/Game/Audio/Events/Gamemode/SpawnBoard/AE_Gamemode_SpawnBoardWait.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_ActivateControlBusMix_C'Default__AEB_ActivateControlBusMix_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_ActivateControlBusMix.0"
+  },
+  "Properties": {
+    "Mix": {
+      "ObjectName": "SoundControlBusMix'AM_CBM_SpawnBoardWait'",
+      "ObjectPath": "/Game/Audio/AudioModulation/ControlBusMixes/AM_CBM_SpawnBoardWait.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Gamemode.SpawnBoardWait"
+    },
+    "bSourceObjectInstanced": false
+  }
+}
+--- export: UPrimaryDataAsset / AE_Gamemode_SpawnBoardWait ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Gamemode_SpawnBoardWait",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Gamemode/SpawnBoard/AE_Gamemode_SpawnBoardWait",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Gamemode.SpawnBoard.Wait"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "WDAudioEventBehaviorEnableMusicState'AE_Gamemode_SpawnBoardWait:WDAudioEventBehaviorEnableMusicState_0'",
+        "ObjectPath": "/Game/Audio/Events/Gamemode/SpawnBoard/AE_Gamemode_SpawnBoardWait.3"
+      },
+      {
+        "ObjectName": "AEB_ActivateControlBusMix_C'AE_Gamemode_SpawnBoardWait:AEB_ActivateControlBusMix_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Gamemode/SpawnBoard/AE_Gamemode_SpawnBoardWait.0"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Gamemode_SpawnBoardWait:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Gamemode/SpawnBoard/AE_Gamemode_SpawnBoardWait.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Gamemode_SpawnBoardWait'",
+    "ObjectPath": "/Game/Audio/Events/Gamemode/SpawnBoard/AE_Gamemode_SpawnBoardWait.1"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UI_DeploymentBoard_StartWait'",
+      "ObjectPath": "/Game/Audio/UI/InGame/MSS/DeploymentBoard/MSS_UI_DeploymentBoard_StartWait.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviorEnableMusicState_0 ---
+{
+  "Type": "WDAudioEventBehaviorEnableMusicState",
+  "Name": "WDAudioEventBehaviorEnableMusicState_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorEnableMusicState'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Gamemode_SpawnBoardWait'",
+    "ObjectPath": "/Game/Audio/Events/Gamemode/SpawnBoard/AE_Gamemode_SpawnBoardWait.1"
+  },
+  "Properties": {
+    "StateToEnable": {
+      "TagName": "Audio.Music.SpawnBoardWait"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Gamemode.SpawnBoardWait"
+    },
+    "bSourceObjectInstanced": false
+  }
+}

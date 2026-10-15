@@ -1,0 +1,111 @@
+--- export: UDataTable / DT_TooltipData_HotZoneMagnet ---
+{
+  "Type": "DataTable",
+  "Name": "DT_TooltipData_HotZoneMagnet",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/HotZoneMagnet/Data/UI/MapTrackers/DT_TooltipData_HotZoneMagnet",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUITooltipDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "UI.Tooltip.Data.TacticalMap.HotZoneMagnet": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/W_SingleTitleTextTooltip.W_SingleTitleTextTooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUISingleTitleTextTooltipViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+      },
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Map.STRINGS_Map",
+        "Key": "Tracker.HotZoneMagnet",
+        "SourceString": "Hot Zone Magnet",
+        "LocalizedString": "Hot Zone Magnet"
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "CultureInvariantString": null
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 0.0,
+        "Y": 0.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.TacticalMap.HotZoneMagnet"
+      }
+    },
+    "UI.Tooltip.Data.TacticalMap.HotZoneMagnetTower": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/W_ContainerTooltip.W_ContainerTooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUITooltipContainerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/Data/DA_ContainerTooltipData_Ping.DA_ContainerTooltipData_Ping",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+      },
+      "Title": {
+        "CultureInvariantString": null
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "CultureInvariantString": null
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 0.0,
+        "Y": 0.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.TacticalMap.HotZoneMagnetTower"
+      }
+    }
+  }
+}

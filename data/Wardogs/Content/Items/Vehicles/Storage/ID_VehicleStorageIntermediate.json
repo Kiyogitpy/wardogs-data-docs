@@ -1,0 +1,75 @@
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_VehicleStorageIntermediate'",
+    "ObjectPath": "/Game/Items/Vehicles/Storage/ID_VehicleStorageIntermediate.1"
+  },
+  "Properties": {
+    "bIsStorage": true,
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Inventory.Slot.Vehicle.Storage"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::BlockList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": [
+            "Inventory.Slot.Vehicle.Storage",
+            "Inventory.Slot.Vehicle.Weapon",
+            "Inventory.Slot.Backpack",
+            "Inventory.Slot.Vest"
+          ]
+        },
+        "SizeType": "EBHContainerType::List",
+        "GridSize": {
+          "X": 4,
+          "Y": 2
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": 9,
+        "MaxSlotAmountStackSize": 0,
+        "bAllowsStackedPacking": false,
+        "bIsHiddenContainer": false,
+        "_aaabelnajgoacnpmnokoe_$BD096E02DFCDEAE4$_$20$": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": []
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / ID_VehicleStorageIntermediate ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_VehicleStorageIntermediate",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Vehicles/Storage/ID_VehicleStorageIntermediate",
+  "Properties": {
+    "ItemId": {
+      "TagName": "ID.Item.VehicleStorageIntermediate"
+    },
+    "ItemContext": [
+      "Inventory.Slot.Vehicle.Storage"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "1C2F6B3744D6E1FCCAAB439C2F389680",
+      "SourceString": "Intermediate Vehicle Storage",
+      "LocalizedString": "Intermediate Vehicle Storage"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_VehicleStorageIntermediate:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/Game/Items/Vehicles/Storage/ID_VehicleStorageIntermediate.0"
+      }
+    ]
+  }
+}

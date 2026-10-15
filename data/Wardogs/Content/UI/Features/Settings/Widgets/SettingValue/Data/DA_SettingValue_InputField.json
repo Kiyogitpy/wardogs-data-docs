@@ -1,0 +1,45 @@
+--- export: UDataAsset / DA_SettingValue_InputField ---
+{
+  "Type": "WDUISettingValueData",
+  "Name": "DA_SettingValue_InputField",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUISettingValueData'",
+  "Package": "/Game/UI/Features/Settings/Widgets/SettingValue/Data/DA_SettingValue_InputField",
+  "Properties": {
+    "UnknownValueText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Settings.STRINGS_Settings",
+      "Key": "Value.Unknown",
+      "SourceString": "Custom",
+      "LocalizedString": "Custom"
+    },
+    "bCanBeContinuouslyNudged": true,
+    "NudgeCurve": {
+      "EditorCurveData": {
+        "Keys": [
+          {
+            "InterpMode": "RCIM_Cubic",
+            "TangentMode": "RCTM_Auto",
+            "TangentWeightMode": "RCTWM_WeightedNone",
+            "Time": 0.0,
+            "Value": 0.5,
+            "ArriveTangent": 0.0,
+            "ArriveTangentWeight": 0.0,
+            "LeaveTangent": 0.0,
+            "LeaveTangentWeight": 0.0
+          },
+          {
+            "InterpMode": "RCIM_Linear",
+            "TangentMode": "RCTM_Auto",
+            "TangentWeightMode": "RCTWM_WeightedNone",
+            "Time": 1.0,
+            "Value": 0.05,
+            "ArriveTangent": 0.0,
+            "ArriveTangentWeight": 0.0,
+            "LeaveTangent": 0.0,
+            "LeaveTangentWeight": 0.0
+          }
+        ]
+      }
+    }
+  }
+}

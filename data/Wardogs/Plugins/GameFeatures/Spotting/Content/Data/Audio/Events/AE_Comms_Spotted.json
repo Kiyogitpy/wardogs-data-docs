@@ -1,0 +1,68 @@
+--- export: UObject / AEB_PlayPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayPerspectiveSound_C",
+  "Name": "AEB_PlayPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.AEB_PlayPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Comms_Spotted'",
+    "ObjectPath": "/Spotting/Data/Audio/Events/AE_Comms_Spotted.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayPerspectiveSound_C'Default__AEB_PlayPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.0"
+  },
+  "Properties": {
+    "1pSound": {
+      "ObjectName": "MetaSoundSource'MSS_UX_Spotted'",
+      "ObjectPath": "/Spotting/Data/Audio/MSS/MSS_UX_Spotted.0"
+    },
+    "RestartBehaviour": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / AEB_RequestSpottedVox_C_0 ---
+{
+  "Type": "AEB_RequestSpottedVox_C",
+  "Name": "AEB_RequestSpottedVox_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Spotting/Data/Audio/Blueprints/AEB_RequestSpottedVox.AEB_RequestSpottedVox_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Comms_Spotted'",
+    "ObjectPath": "/Spotting/Data/Audio/Events/AE_Comms_Spotted.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_RequestSpottedVox_C'Default__AEB_RequestSpottedVox_C'",
+    "ObjectPath": "/Spotting/Data/Audio/Blueprints/AEB_RequestSpottedVox.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Comms_Spotted ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Comms_Spotted",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Spotting/Data/Audio/Events/AE_Comms_Spotted",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Comms.Spotted"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_RequestSpottedVox_C'AE_Comms_Spotted:AEB_RequestSpottedVox_C_0'",
+        "ObjectPath": "/Spotting/Data/Audio/Events/AE_Comms_Spotted.1"
+      },
+      {
+        "ObjectName": "AEB_PlayPerspectiveSound_C'AE_Comms_Spotted:AEB_PlayPerspectiveSound_C_0'",
+        "ObjectPath": "/Spotting/Data/Audio/Events/AE_Comms_Spotted.0"
+      }
+    ]
+  }
+}

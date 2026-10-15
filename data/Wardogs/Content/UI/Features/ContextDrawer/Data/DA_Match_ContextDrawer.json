@@ -1,0 +1,116 @@
+--- export: UDataAsset / DA_Match_ContextDrawer ---
+{
+  "Type": "WDUIContextDrawerData",
+  "Name": "DA_Match_ContextDrawer",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIContextDrawerData'",
+  "Package": "/Game/UI/Features/ContextDrawer/Data/DA_Match_ContextDrawer",
+  "Properties": {
+    "Tabs": [
+      {
+        "Key": {
+          "TagName": "UI.ContextDrawer.Tab.Party"
+        },
+        "Value": {
+          "TabButtonParams": {
+            "Tag": {
+              "TagName": "None"
+            },
+            "OverrideButtonClass": null,
+            "Action": null,
+            "Text": {
+              "CultureInvariantString": null
+            },
+            "MinimumSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Icon": {
+              "AssetPathName": "/Game/UI/Features/Frontend/Home/Textures/T_UI_PartyIcon.T_UI_PartyIcon",
+              "SubPathString": ""
+            },
+            "bDisabled": false,
+            "DisabledReason": {
+              "CultureInvariantString": null
+            }
+          },
+          "TabContentWidgetParams": {
+            "WidgetClass": {
+              "AssetPathName": "/Game/UI/Features/ContextDrawer/Tabs/Party/W_ContextDrawerTab_Party.W_ContextDrawerTab_Party_C",
+              "SubPathString": ""
+            },
+            "ViewModelParams": {
+              "ViewModelClass": {
+                "AssetPathName": "/Script/WDGame.WDUIContextDrawerTabViewModel_Squad",
+                "SubPathString": ""
+              },
+              "Data": {
+                "AssetPathName": "/Game/UI/Features/ContextDrawer/Tabs/Party/Data/DA_ContextDrawerTab_Squad.DA_ContextDrawerTab_Squad",
+                "SubPathString": ""
+              }
+            },
+            "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+          },
+          "TabName": {
+            "TableId": "/Game/UI/StringTables/STRINGS_ContextDrawer.STRINGS_ContextDrawer",
+            "Key": "TabName.Text.Party",
+            "SourceString": "//Squad",
+            "LocalizedString": "//Squad"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.ContextDrawer.Tab.Settings"
+        },
+        "Value": {
+          "TabButtonParams": {
+            "Tag": {
+              "TagName": "None"
+            },
+            "OverrideButtonClass": null,
+            "Action": null,
+            "Text": {
+              "CultureInvariantString": null
+            },
+            "MinimumSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Icon": {
+              "AssetPathName": "/Game/UI/Features/Frontend/Home/Textures/T_UI_SettingsIcon.T_UI_SettingsIcon",
+              "SubPathString": ""
+            },
+            "bDisabled": false,
+            "DisabledReason": {
+              "CultureInvariantString": null
+            }
+          },
+          "TabContentWidgetParams": {
+            "WidgetClass": {
+              "AssetPathName": "/Game/UI/Features/ContextDrawer/Tabs/Settings/W_ContextDrawerTab_Settings.W_ContextDrawerTab_Settings_C",
+              "SubPathString": ""
+            },
+            "ViewModelParams": {
+              "ViewModelClass": {
+                "AssetPathName": "",
+                "SubPathString": ""
+              },
+              "Data": {
+                "AssetPathName": "",
+                "SubPathString": ""
+              }
+            },
+            "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+          },
+          "TabName": {
+            "TableId": "/Game/UI/StringTables/STRINGS_ContextDrawer.STRINGS_ContextDrawer",
+            "Key": "TabName.Text.Settings",
+            "SourceString": "//Settings",
+            "LocalizedString": "//Settings"
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,120 @@
+--- export: UDataTable / DT_VehicleMarket_WHL_05_RingTurret ---
+{
+  "Type": "DataTable",
+  "Name": "DT_VehicleMarket_WHL_05_RingTurret",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/WHL_05_RingTurret/DataTables/DT_VehicleMarket_WHL_05_RingTurret",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDVendorData'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Vehicle.Variant.Land.Wheeled.Humvee.MachineGun": {
+      "Categories": [
+        "Vendor.Category.Vehicle"
+      ],
+      "VendorItemVariations": [
+        {
+          "VariationTag": {
+            "TagName": "Vehicle.Variant.Land.Wheeled.Humvee.MachineGun"
+          },
+          "UnlockRequiredItems": [],
+          "Categories": [
+            "Vendor.Category.Vehicle.Land",
+            "Vendor.Category.Vehicle.Blueprints"
+          ],
+          "Subcategories": [
+            "Vendor.Category.Sub.Vehicle.Land.Transport"
+          ],
+          "VendorRenderUILightingGroupTag": {
+            "TagName": "PocketEnvironment.LightingGroup.Vehicle.Car"
+          },
+          "VendorRenderUISpawnTransform": {
+            "Rotation": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.8660254,
+              "W": 0.5,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0
+            },
+            "Translation": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 120.0
+            },
+            "Scale3D": {
+              "X": 0.25,
+              "Y": 0.25,
+              "Z": 0.25
+            }
+          },
+          "VehicleStatsDataAsset": {
+            "ObjectName": "WDVehicleStatsDataAsset'DA_WHL_05_Humvee_RingTurretStats'",
+            "ObjectPath": "/WHL_05_RingTurret/Data/RingTurretHumvee/DA_WHL_05_Humvee_RingTurretStats.6"
+          },
+          "VendorAudioData": {
+            "ObjectName": "WDAudioData'DA_WHL_05_Audio'",
+            "ObjectPath": "/WHL_05/Data/DA_WHL_05_Audio.0"
+          },
+          "Price": 3750.0,
+          "Amount": 1,
+          "_aaabciphbkkmideofopnc_$8F71AAC834E5EFD2$_$18$": true,
+          "LevelToUnlock": 0,
+          "bRequiresAccountEntitlement": false,
+          "LifeTimeBuyLimit": 0,
+          "OverwrittenFriendlyName": {
+            "Namespace": "",
+            "Key": "CD73778246DBB524028050A6CCCDECDC",
+            "SourceString": "Humvee",
+            "LocalizedString": "Humvee"
+          },
+          "bOverwriteFriendlyName": false,
+          "OverwrittenSubtitleText": {
+            "CultureInvariantString": null
+          },
+          "bOverwriteSubtitleText": false,
+          "OverwrittenDescription": {
+            "CultureInvariantString": null
+          },
+          "bOverwriteDescription": false,
+          "OverwrittenDescriptionColor": {
+            "B": 0,
+            "G": 0,
+            "R": 255,
+            "A": 255,
+            "Hex": "FF0000"
+          },
+          "bOverwriteDescriptionColor": false,
+          "OverwrittenIcon": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Vehicles/3D/T_UI_Icon_Vehicle_Humvee_Gun.T_UI_Icon_Vehicle_Humvee_Gun",
+            "SubPathString": ""
+          },
+          "bOverwriteIcon": true,
+          "bOverwriteWeight": false,
+          "OverwrittenWeight": 1.0,
+          "CustomData": {},
+          "bShowInVendor": true,
+          "bIsPreviewOnly": false,
+          "VendorSlotTag": {
+            "TagName": "None"
+          }
+        }
+      ],
+      "bFactionSpecific": false,
+      "Faction": {
+        "TagName": "None"
+      },
+      "PurchaseCompletedAudioEvent": {
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
+      },
+      "Tag": {
+        "TagName": "Vehicle.Variant.Land.Wheeled.Humvee.MachineGun"
+      }
+    }
+  }
+}

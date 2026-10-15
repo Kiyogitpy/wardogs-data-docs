@@ -1,0 +1,62 @@
+--- export: UDataAsset / DA_Demolition_Bushes_Flora ---
+{
+  "Type": "BHDemolitionDataAsset",
+  "Name": "DA_Demolition_Bushes_Flora",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDemolitionDataAsset'",
+  "Package": "/Game/Demolition/DA_Demolition_Bushes_Flora",
+  "Properties": {
+    "SourceMeshes": [
+      {
+        "Key": "StaticMesh'/Game/Environment/Foliage/Trees/Beech/SM_Tree_Beech_Bush_01a.SM_Tree_Beech_Bush_01a'",
+        "Value": {
+          "FarRepresentationMesh": {
+            "AssetPathName": "/Game/Environment/Foliage/Trees/Beech/Proxies/SM_Tree_Beech_Bush_01a_Proxy.SM_Tree_Beech_Bush_01a_Proxy",
+            "SubPathString": ""
+          },
+          "RemnantMeshes": null,
+          "Remnant_BaseCPD": null,
+          "FarRepresentationData": null
+        }
+      },
+      {
+        "Key": "StaticMesh'/Game/Environment/Foliage/Trees/Beech/SM_Tree_Beech_Bush_02a.SM_Tree_Beech_Bush_02a'",
+        "Value": {
+          "FarRepresentationMesh": {
+            "AssetPathName": "/Game/Environment/Foliage/Trees/Beech/Proxies/SM_Tree_Beech_Bush_02a_Proxy.SM_Tree_Beech_Bush_02a_Proxy",
+            "SubPathString": ""
+          },
+          "RemnantMeshes": null,
+          "Remnant_BaseCPD": null,
+          "FarRepresentationData": null
+        }
+      }
+    ],
+    "DemolitionComponentSettings": {
+      "ObjectName": "BHDemolitionComponentSettings'DA_Demolition_CS_Default_Bushes'",
+      "ObjectPath": "/Game/Demolition/ComponentSettings/DA_Demolition_CS_Default_Bushes.0"
+    },
+    "DemolitionRuleSet": {
+      "ObjectName": "BHDemolitionRuleset'BH_Demolition_RS_Everything'",
+      "ObjectPath": "/Game/Demolition/RuleSets/BH_Demolition_RS_Everything.3"
+    },
+    "PermittedZones": [
+      "Demolition.Zone.Important"
+    ],
+    "bEnableCollisionWhenInFarRepresentation": false,
+    "DemolitionVFX": [
+      {
+        "AssetPathName": "/Game/VFX/Environmental/Destruction/Demolition/Foliage/NS_BushSmash_01.NS_BushSmash_01",
+        "SubPathString": ""
+      }
+    ],
+    "CrosstalkEventTag": {
+      "TagName": "Audio.Event.Prop.Demolition.Bush"
+    },
+    "DemolitionFragments": [
+      {
+        "RestitutionImpulseMultiplier": 0.05
+      }
+    ]
+  }
+}

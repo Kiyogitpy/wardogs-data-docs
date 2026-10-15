@@ -1,0 +1,190 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SmallBackpack'",
+    "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_SmallBackpack.5"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 2,
+      "Y": 4
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SmallBackpack'",
+    "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_SmallBackpack.5"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Characters/Player/Backpack/Light/001/SM/SM_Backpack_Light_001_drop.SM_Backpack_Light_001_drop",
+      "SubPathString": ""
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_Backpack_Light_001_drop'",
+        "ObjectPath": "/Game/Characters/Player/Backpack/Light/001/MAT/MI_Backpack_Light_001_drop.0"
+      }
+    ],
+    "RelativeRotation": {
+      "Pitch": 0.0,
+      "Yaw": 90.0,
+      "Roll": 10.0
+    },
+    "bOverrideDroppedRelativeLocation": true,
+    "bOverrideDroppedBoxExtent": true,
+    "OverridedBoxExtent": {
+      "X": 13.0,
+      "Y": 20.0,
+      "Z": 21.0
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SmallBackpack'",
+    "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_SmallBackpack.5"
+  },
+  "Properties": {
+    "bIsStorage": true,
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "None"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::BlockList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": [
+            "Inventory.Slot.Backpack",
+            "Inventory.Slot.Vest",
+            "Inventory.Slot.Locked",
+            "Inventory.Slot.SupplyContainer"
+          ]
+        },
+        "SizeType": "EBHContainerType::Grid",
+        "GridSize": {
+          "X": 2,
+          "Y": 4
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": 6,
+        "MaxSlotAmountStackSize": 0,
+        "bAllowsStackedPacking": false,
+        "bIsHiddenContainer": false,
+        "_aaabelnajgoacnpmnokoe_$BD096E02DFCDEAE4$_$20$": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": []
+      }
+    ]
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SmallBackpack'",
+    "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_SmallBackpack.5"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SmallBackpack'",
+    "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_SmallBackpack.5"
+  },
+  "Properties": {
+    "Weight": 0.5
+  }
+}
+--- export: UPrimaryDataAsset / ID_SmallBackpack ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_SmallBackpack",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Clothing/Backpacks/ID_SmallBackpack",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.SmallBackpack"
+    },
+    "ItemContext": [
+      "Inventory.Slot.Backpack",
+      "Item.Context.Equippable"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "BA7B7FC04F0BED636C160A846BF9B3B7",
+      "SourceString": "Small Backpack",
+      "LocalizedString": "Small Backpack"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_SmallBackpack:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_SmallBackpack.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_SmallBackpack:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_SmallBackpack.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_SmallBackpack:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_SmallBackpack.4"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_SmallBackpack:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_SmallBackpack.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_SmallBackpack:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_SmallBackpack.6"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_SmallBackpack:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_SmallBackpack.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SmallBackpack'",
+    "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_SmallBackpack.5"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Backpack_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Item/Data/ID_Backpack_Audio.0"
+    }
+  }
+}

@@ -1,0 +1,102 @@
+--- export: UObject / WDCharacterModifier_CameraLock_0 ---
+{
+  "Type": "WDCharacterModifier_CameraLock",
+  "Name": "WDCharacterModifier_CameraLock_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifier_CameraLock'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_ShootingRangeTutorial_CharacterModifierState_Vehicle'",
+    "ObjectPath": "/ShootingRangeTutorial/Actors/HelicopterFlyBy/DA_ShootingRangeTutorial_CharacterModifierState_Vehicle.3"
+  },
+  "Properties": {
+    "PitchLockSettings": {
+      "LockActivationType": "EWDAxisLockActivationType::WorldZero",
+      "LockAngle": 35.0,
+      "LockSmoothPercent": 0.75,
+      "LockSmoothMaxTurnSpeed": 5.0,
+      "LockSmoothCurve": {
+        "ObjectName": "CurveFloat'CRV_ShootingRangeTutorial_FlyByCamera_Smooth'",
+        "ObjectPath": "/ShootingRangeTutorial/Actors/HelicopterFlyBy/CRV_ShootingRangeTutorial_FlyByCamera_Smooth.0"
+      }
+    },
+    "YawLockSettings": {
+      "LockActivationType": "EWDAxisLockActivationType::WorldZero",
+      "LockAngle": 75.0,
+      "LockSmoothPercent": 0.75,
+      "LockSmoothMaxTurnSpeed": 5.0,
+      "LockSmoothCurve": {
+        "ObjectName": "CurveFloat'CRV_ShootingRangeTutorial_FlyByCamera_Smooth'",
+        "ObjectPath": "/ShootingRangeTutorial/Actors/HelicopterFlyBy/CRV_ShootingRangeTutorial_FlyByCamera_Smooth.0"
+      }
+    },
+    "RollLockSettings": {
+      "LockActivationType": "EWDAxisLockActivationType::None"
+    }
+  }
+}
+--- export: UObject / WDCharacterModifier_ShootingRangeTutotial_VehicleSeat_0 ---
+{
+  "Type": "WDCharacterModifier_Tutorial_Seat",
+  "Name": "WDCharacterModifier_ShootingRangeTutotial_VehicleSeat_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifier_Tutorial_Seat'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_ShootingRangeTutorial_CharacterModifierState_Vehicle'",
+    "ObjectPath": "/ShootingRangeTutorial/Actors/HelicopterFlyBy/DA_ShootingRangeTutorial_CharacterModifierState_Vehicle.3"
+  },
+  "Properties": {
+    "FlyByData": {
+      "ObjectName": "WDShootingRangeTutorialFlyByData'DA_ShootingRangeTutorial_FlyByData'",
+      "ObjectPath": "/ShootingRangeTutorial/Actors/HelicopterFlyBy/DA_ShootingRangeTutorial_FlyByData.0"
+    },
+    "NetMask": 3
+  }
+}
+--- export: UObject / WDCharacterModifierCondition_Tags_0 ---
+{
+  "Type": "WDCharacterModifierCondition_Tags",
+  "Name": "WDCharacterModifierCondition_Tags_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierCondition_Tags'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_ShootingRangeTutorial_CharacterModifierState_Vehicle'",
+    "ObjectPath": "/ShootingRangeTutorial/Actors/HelicopterFlyBy/DA_ShootingRangeTutorial_CharacterModifierState_Vehicle.3"
+  },
+  "Properties": {
+    "Requirements": {
+      "RequireTags": [
+        "State.CharacterModifier.Vehicle.ShootingRange"
+      ]
+    }
+  }
+}
+--- export: UPrimaryDataAsset / DA_ShootingRangeTutorial_CharacterModifierState_Vehicle ---
+{
+  "Type": "WDCharacterModifierStateDefinition",
+  "Name": "DA_ShootingRangeTutorial_CharacterModifierState_Vehicle",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierStateDefinition'",
+  "Package": "/ShootingRangeTutorial/Actors/HelicopterFlyBy/DA_ShootingRangeTutorial_CharacterModifierState_Vehicle",
+  "Properties": {
+    "StateTag": {
+      "TagName": "State.CharacterModifier.Vehicle.ShootingRange"
+    },
+    "CharacterModifiers": [
+      {
+        "ObjectName": "WDCharacterModifier_Tutorial_Seat'DA_ShootingRangeTutorial_CharacterModifierState_Vehicle:WDCharacterModifier_ShootingRangeTutotial_VehicleSeat_0'",
+        "ObjectPath": "/ShootingRangeTutorial/Actors/HelicopterFlyBy/DA_ShootingRangeTutorial_CharacterModifierState_Vehicle.1"
+      },
+      {
+        "ObjectName": "WDCharacterModifier_CameraLock'DA_ShootingRangeTutorial_CharacterModifierState_Vehicle:WDCharacterModifier_CameraLock_0'",
+        "ObjectPath": "/ShootingRangeTutorial/Actors/HelicopterFlyBy/DA_ShootingRangeTutorial_CharacterModifierState_Vehicle.0"
+      }
+    ],
+    "Priority": 255,
+    "Conditions": [
+      {
+        "ObjectName": "WDCharacterModifierCondition_Tags'DA_ShootingRangeTutorial_CharacterModifierState_Vehicle:WDCharacterModifierCondition_Tags_0'",
+        "ObjectPath": "/ShootingRangeTutorial/Actors/HelicopterFlyBy/DA_ShootingRangeTutorial_CharacterModifierState_Vehicle.2"
+      }
+    ]
+  }
+}

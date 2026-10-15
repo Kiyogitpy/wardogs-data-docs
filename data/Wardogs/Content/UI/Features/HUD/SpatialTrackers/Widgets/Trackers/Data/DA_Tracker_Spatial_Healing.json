@@ -1,0 +1,59 @@
+--- export: UDataAsset / DA_Tracker_Spatial_Healing ---
+{
+  "Type": "WDUIHealingSpatialTrackerData",
+  "Name": "DA_Tracker_Spatial_Healing",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIHealingSpatialTrackerData'",
+  "Package": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Healing",
+  "Properties": {
+    "RuleSets": [
+      {
+        "Key": "EWDUISpatialRulesetType::Default",
+        "Value": {
+          "Priority": 0,
+          "OptionalRules": [
+            {
+              "ObjectName": "WDUILineOfSightRules'DA_Tracker_Spatial_Healing:WDUILineOfSightRules_1'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Healing.1"
+            },
+            {
+              "ObjectName": "WDUIWorldDistanceScaleRules'DA_Tracker_Spatial_Healing:WDUIWorldDistanceScaleRules_0'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Healing.2"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDUILineOfSightRules_1 ---
+{
+  "Type": "WDUILineOfSightRules",
+  "Name": "WDUILineOfSightRules_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUILineOfSightRules'",
+  "Outer": {
+    "ObjectName": "WDUIHealingSpatialTrackerData'DA_Tracker_Spatial_Healing'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Healing.0"
+  },
+  "Properties": {
+    "SquaredRange": 100000000.0
+  }
+}
+--- export: UObject / WDUIWorldDistanceScaleRules_0 ---
+{
+  "Type": "WDUIWorldDistanceScaleRules",
+  "Name": "WDUIWorldDistanceScaleRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIWorldDistanceScaleRules'",
+  "Outer": {
+    "ObjectName": "WDUIHealingSpatialTrackerData'DA_Tracker_Spatial_Healing'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Healing.0"
+  },
+  "Properties": {
+    "DistanceForScalingEnd": 15.0,
+    "StartScale": 2.0,
+    "EndScale": 0.45,
+    "SquaredDistanceForScalingEnd": 2250000.0
+  }
+}

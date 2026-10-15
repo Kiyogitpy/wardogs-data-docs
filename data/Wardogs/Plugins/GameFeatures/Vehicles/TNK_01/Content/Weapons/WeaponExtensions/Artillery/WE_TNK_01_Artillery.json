@@ -1,0 +1,284 @@
+--- export: UDataAsset / WE_TNK_01_Artillery ---
+{
+  "Type": "WDVehicleWeaponExtensionDataAsset",
+  "Name": "WE_TNK_01_Artillery",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeaponExtensionDataAsset'",
+  "Package": "/TNK_01/Weapons/WeaponExtensions/Artillery/WE_TNK_01_Artillery",
+  "Properties": {
+    "WeaponExtensionTag": {
+      "TagName": "Id.Vehicle.WeaponExtension.TNK_01.Artillery"
+    },
+    "WeaponItemId": {
+      "TagName": "ID.Item.VehicleTurretArtillery"
+    },
+    "ItemSlotTag": {
+      "TagName": "Inventory.Slot.Vehicle.Weapon.TNK_02.Turret"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Weapon.Vehicle.Turret.Artillery"
+      }
+    },
+    "WeaponExtensionName": "Artillery",
+    "WeaponStatsData": {
+      "ObjectName": "WDWeaponStatsData'DA_TNK_01_Artillery_Weapon_Stats'",
+      "ObjectPath": "/TNK_01/Weapons/WeaponExtensions/Artillery/DA_TNK_01_Artillery_Weapon_Stats.0"
+    },
+    "ReloadSetupData": {
+      "ReloadType": "EWDVehicleWeaponReloadType::Standard",
+      "bUseActiveReload": true,
+      "ReloadTime": 25.0,
+      "StartDelayTime": 1.0,
+      "EndDelayTime": 1.0
+    },
+    "AmmoTag": {
+      "TagName": "ID.Item.155mm"
+    },
+    "AmmoCaliberTag": {
+      "TagName": "Item.Caliber.155mm"
+    },
+    "WeaponStartingInventoryItems": [
+      {
+        "Key": {
+          "TagName": "ID.Item.155mm.Expensive"
+        },
+        "Value": 10
+      },
+      {
+        "Key": {
+          "TagName": "ID.Item.155mm.Standard"
+        },
+        "Value": 0
+      }
+    ],
+    "bSimulateWeaponExtensionFire": true,
+    "WeaponAudioData": {
+      "ObjectName": "WDAudioData'DA_TNK_01_Artillery_Weapon_Audio'",
+      "ObjectPath": "/TNK_01/Weapons/WeaponExtensions/Artillery/DA_TNK_01_Artillery_Weapon_Audio.0"
+    },
+    "WeaponAnimMontages": [
+      {
+        "Key": {
+          "TagName": "State.Vehicle.Weapon.Fire"
+        },
+        "Value": {
+          "ObjectName": "AnimMontage'AM_TNK_01_Heavy_Turret_Fire'",
+          "ObjectPath": "/TNK_01/Animation/Montages/AM_TNK_01_Heavy_Turret_Fire.0"
+        }
+      }
+    ],
+    "bShakeOnWeaponFire": true,
+    "OperatorIdleSequence": {
+      "ObjectName": "BlueprintGeneratedClass'B_CameraShake_BarrelBoomFirstPerson_C'",
+      "ObjectPath": "/Game/VFX/Explosions/Data/B_CameraShake_BarrelBoomFirstPerson.1"
+    },
+    "WeaponType": "EWDVehicleWeaponType::Artillery",
+    "ArtilleryRangeData": [
+      {
+        "Milliradians": 20.0,
+        "ImpactDistance": 600.0,
+        "TravelTime": 2.74
+      },
+      {
+        "Milliradians": 31.0,
+        "ImpactDistance": 700.0,
+        "TravelTime": 2.92
+      },
+      {
+        "Milliradians": 42.0,
+        "ImpactDistance": 800.0,
+        "TravelTime": 3.44
+      },
+      {
+        "Milliradians": 53.0,
+        "ImpactDistance": 900.0,
+        "TravelTime": 3.97
+      },
+      {
+        "Milliradians": 64.0,
+        "ImpactDistance": 1000.0,
+        "TravelTime": 4.51
+      },
+      {
+        "Milliradians": 77.0,
+        "ImpactDistance": 1100.0,
+        "TravelTime": 5.12
+      },
+      {
+        "Milliradians": 91.0,
+        "ImpactDistance": 1200.0,
+        "TravelTime": 5.74
+      },
+      {
+        "Milliradians": 106.0,
+        "ImpactDistance": 1300.0,
+        "TravelTime": 6.41
+      },
+      {
+        "Milliradians": 121.0,
+        "ImpactDistance": 1400.0,
+        "TravelTime": 7.08
+      },
+      {
+        "Milliradians": 139.0,
+        "ImpactDistance": 1500.0,
+        "TravelTime": 7.84
+      },
+      {
+        "Milliradians": 157.0,
+        "ImpactDistance": 1600.0,
+        "TravelTime": 8.6
+      },
+      {
+        "Milliradians": 177.0,
+        "ImpactDistance": 1700.0,
+        "TravelTime": 9.42
+      },
+      {
+        "Milliradians": 199.0,
+        "ImpactDistance": 1800.0,
+        "TravelTime": 10.29
+      },
+      {
+        "Milliradians": 224.0,
+        "ImpactDistance": 1900.0,
+        "TravelTime": 11.23
+      },
+      {
+        "Milliradians": 251.0,
+        "ImpactDistance": 2000.0,
+        "TravelTime": 12.25
+      },
+      {
+        "Milliradians": 282.0,
+        "ImpactDistance": 2100.0,
+        "TravelTime": 13.37
+      },
+      {
+        "Milliradians": 316.0,
+        "ImpactDistance": 2200.0,
+        "TravelTime": 14.59
+      },
+      {
+        "Milliradians": 358.0,
+        "ImpactDistance": 2300.0,
+        "TravelTime": 15.99
+      },
+      {
+        "Milliradians": 409.0,
+        "ImpactDistance": 2400.0,
+        "TravelTime": 17.64
+      },
+      {
+        "Milliradians": 480.0,
+        "ImpactDistance": 2500.0,
+        "TravelTime": 19.84
+      },
+      {
+        "Milliradians": 619.0,
+        "ImpactDistance": 2600.0,
+        "TravelTime": 23.73
+      },
+      {
+        "Milliradians": 777.0,
+        "ImpactDistance": 2500.0,
+        "TravelTime": 27.68
+      },
+      {
+        "Milliradians": 857.0,
+        "ImpactDistance": 2400.0,
+        "TravelTime": 29.42
+      },
+      {
+        "Milliradians": 915.0,
+        "ImpactDistance": 2300.0,
+        "TravelTime": 30.62
+      },
+      {
+        "Milliradians": 965.0,
+        "ImpactDistance": 2200.0,
+        "TravelTime": 31.58
+      },
+      {
+        "Milliradians": 1009.0,
+        "ImpactDistance": 2100.0,
+        "TravelTime": 32.36
+      },
+      {
+        "Milliradians": 1048.0,
+        "ImpactDistance": 2000.0,
+        "TravelTime": 33.02
+      },
+      {
+        "Milliradians": 1084.0,
+        "ImpactDistance": 1900.0,
+        "TravelTime": 33.61
+      },
+      {
+        "Milliradians": 1118.0,
+        "ImpactDistance": 1800.0,
+        "TravelTime": 34.11
+      },
+      {
+        "Milliradians": 1149.0,
+        "ImpactDistance": 1700.0,
+        "TravelTime": 34.55
+      },
+      {
+        "Milliradians": 1180.0,
+        "ImpactDistance": 1600.0,
+        "TravelTime": 34.95
+      },
+      {
+        "Milliradians": 1209.0,
+        "ImpactDistance": 1500.0,
+        "TravelTime": 35.31
+      },
+      {
+        "Milliradians": 1236.0,
+        "ImpactDistance": 1400.0,
+        "TravelTime": 35.62
+      },
+      {
+        "Milliradians": 1262.0,
+        "ImpactDistance": 1300.0,
+        "TravelTime": 35.9
+      },
+      {
+        "Milliradians": 1287.0,
+        "ImpactDistance": 1200.0,
+        "TravelTime": 36.14
+      },
+      {
+        "Milliradians": 1313.0,
+        "ImpactDistance": 1100.0,
+        "TravelTime": 36.37
+      },
+      {
+        "Milliradians": 1337.0,
+        "ImpactDistance": 1000.0,
+        "TravelTime": 36.56
+      },
+      {
+        "Milliradians": 1360.0,
+        "ImpactDistance": 900.0,
+        "TravelTime": 36.73
+      },
+      {
+        "Milliradians": 1384.0,
+        "ImpactDistance": 800.0,
+        "TravelTime": 36.89
+      },
+      {
+        "Milliradians": 1400.0,
+        "ImpactDistance": 700.0,
+        "TravelTime": 37.0
+      }
+    ],
+    "_aaabnjdfoegkkadcbakae_$935E46AA03210A04$_$29$": {
+      "ObjectName": "BlueprintGeneratedClass'GC_Weapon_Artillery_Fire_C'",
+      "ObjectPath": "/Game/GameplayCues/Weapon/Artillery/GC_Weapon_Artillery_Fire.0"
+    }
+  }
+}

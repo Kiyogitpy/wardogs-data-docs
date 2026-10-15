@@ -1,0 +1,108 @@
+--- export: UDataTable / DT_EntityData_Ext_MAGZ_065 ---
+{
+  "Type": "DataTable",
+  "Name": "DT_EntityData_Ext_MAGZ_065",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/MAGZ_065/Data/DT_EntityData_Ext_MAGZ_065",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'BHEntityData_UI'",
+      "ObjectPath": "/Script/BHFramework"
+    }
+  },
+  "Rows": {
+    "Id.Item.MAGZ_065": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Magazines.STRINGS_Magazines",
+        "Key": "Items.Magazine.SVDM.Short",
+        "SourceString": "SVD 5 RND Magazine",
+        "LocalizedString": "SVD 5 RND Magazine"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Magazines_Descriptions.STRINGS_Magazines_Descriptions",
+        "Key": "Description.Magazine.SVDM.Short",
+        "SourceString": "- 5 Rounds\r\n- 7.62x54R ammo\r\n- SVD only",
+        "LocalizedString": "- 5 Rounds\r\n- 7.62x54R ammo\r\n- SVD only"
+      },
+      "Category": {
+        "TagName": "Item.Category.Attachment"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "None"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Magazines_Descriptions.STRINGS_Magazines_Descriptions",
+            "Key": "Description.Magazine.Tooltip",
+            "SourceString": "Magazine",
+            "LocalizedString": "Magazine"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Magazines_Descriptions.STRINGS_Magazines_Descriptions",
+            "Key": "Description.Magazine.SVDM.Short",
+            "SourceString": "- 5 Rounds\r\n- 7.62x54R ammo\r\n- SVD only",
+            "LocalizedString": "- 5 Rounds\r\n- 7.62x54R ammo\r\n- SVD only"
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Features/Inventory_2_0/Textures/T_Icon_SmgMag.T_Icon_SmgMag",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Vendor/Magazines/T_UI_Vendor_MAGZ_SVDM.T_UI_Vendor_MAGZ_SVDM",
+            "Value": [
+              "UI.Icon.Inventory.Container",
+              "UI.Icon.Inventory.Tooltip",
+              "UI.Icon.Inventory.Equipment",
+              "UI.Icon.Vendor"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "Id.Item.MAGZ_065"
+      }
+    }
+  }
+}

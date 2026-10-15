@@ -1,0 +1,60 @@
+--- export: UObject / BHPlayerMappableKeySettings_0 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Action_FireWeapon'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IMC_Action_FireWeapon.1"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.HoldableItem.PrimaryUse"
+    },
+    "Name": "Input.NamedActions.HoldableItem.PrimaryUse"
+  }
+}
+--- export: UDataAsset / IMC_Action_FireWeapon ---
+{
+  "Type": "InputMappingContext",
+  "Name": "IMC_Action_FireWeapon",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputMappingContext'",
+  "Package": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IMC_Action_FireWeapon",
+  "Properties": {
+    "DefaultKeyMappings": {
+      "Mappings": [
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Player_Holdable_PrimaryUse_Release'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/TaggedActions/IA_Player_Holdable_PrimaryUse_Release.0"
+          },
+          "Key": {
+            "KeyName": "LeftMouseButton"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_Action_FireWeapon:BHPlayerMappableKeySettings_0'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IMC_Action_FireWeapon.0"
+          }
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Player_Holdable_PrimaryUse_Release'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/TaggedActions/IA_Player_Holdable_PrimaryUse_Release.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_RightTriggerAxis"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        }
+      ]
+    }
+  }
+}

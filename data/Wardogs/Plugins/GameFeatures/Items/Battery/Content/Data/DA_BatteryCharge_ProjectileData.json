@@ -1,0 +1,56 @@
+--- export: UPrimaryDataAsset / DA_BatteryCharge_ProjectileData ---
+{
+  "Type": "WDProjectileData",
+  "Name": "DA_BatteryCharge_ProjectileData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDProjectileData'",
+  "Package": "/Battery/Data/DA_BatteryCharge_ProjectileData",
+  "Properties": {
+    "ProjectileId": {
+      "TagName": "Item.Caliber.BatteryCharge"
+    },
+    "ProjectileStats": {
+      "DamageEntityData": {
+        "Tag": {
+          "TagName": "Meta.Damage.Bullet.556mm"
+        }
+      },
+      "DamageValues": {
+        "BaseDamage": 40.0
+      },
+      "ProjectileDimensions": {
+        "Length": 1.2696,
+        "Diameter": 0.57,
+        "Mass": 0.0041,
+        "DragModel": {
+          "Value": 1.26,
+          "Curve": {
+            "CurveTable": {
+              "ObjectName": "CurveTable'CT_Projectile_DragCoefficients'",
+              "ObjectPath": "/Game/Items/Resources/Ammo/Curves/CT_Projectile_DragCoefficients.0"
+            },
+            "RowName": "G7 (Boat Tail)"
+          }
+        }
+      },
+      "ProjectileEffects": {
+        "GameplayCueTag": {
+          "TagName": "GameplayCue.Weapon.Projectile"
+        }
+      },
+      "SuppressionData": {
+        "BaseSuppression": 0.25,
+        "DistanceFalloffCurve": {
+          "EditorCurveData": {}
+        }
+      },
+      "AttachedEffect": {
+        "AssetPathName": "/Game/VFX/Weapons/Tracers/NS_Tracer_556mm.NS_Tracer_556mm",
+        "SubPathString": ""
+      },
+      "TypicalSpeed": 43700.0,
+      "TravelDistanceForWhizBy": 800.0,
+      "DistanceToPlayerForWhizBy": 700.0
+    }
+  }
+}

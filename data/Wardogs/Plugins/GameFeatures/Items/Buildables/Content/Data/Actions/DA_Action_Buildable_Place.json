@@ -1,0 +1,61 @@
+--- export: UPrimaryDataAsset / DA_Action_Buildable_Place ---
+{
+  "Type": "WDActionDefinition",
+  "Name": "DA_Action_Buildable_Place",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDActionDefinition'",
+  "Package": "/Buildables/Data/Actions/DA_Action_Buildable_Place",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.FOBPlacement.PrimaryUse"
+    },
+    "ActionContext": [
+      "Action.Context.Holdable",
+      "Action.Context.TwoHanded"
+    ],
+    "ActionClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Action_Buildable_Place_C'",
+      "ObjectPath": "/Buildables/Data/Actions/B_Action_Buildable_Place.1"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::BlockingStates",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::BlockingStates",
+          "ActionResponses": [],
+          "BlockingStates": [
+            "State.Player.Vitality.Critical",
+            "State.Player.Vitality.Dead",
+            "Action.Player.TacSprint",
+            "Action.Player.Sprint",
+            "State.Player.Vehicle.Role.ActivePassenger"
+          ],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Interrupt",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Interrupt",
+          "ActionResponses": [
+            "Action.Player.Sprint",
+            "Action.Player.TacSprint",
+            "Action.Item.Inspect"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      }
+    ],
+    "ActivationContextType": {
+      "ObjectName": "Class'WDGenericItemActionContext'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  }
+}

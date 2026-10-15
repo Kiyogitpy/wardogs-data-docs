@@ -1,0 +1,51 @@
+--- export: UDataAsset / IA_KeyCard_Use ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_KeyCard_Use",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Weapons/Input/IA_KeyCard_Use",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.HoldableItem.Keycard.PrimaryUse"
+    },
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerPressed'IA_KeyCard_Use:InputTriggerPressed_0'",
+        "ObjectPath": "/Game/Weapons/Input/IA_KeyCard_Use.2"
+      }
+    ],
+    "PlayerMappableKeySettings": {
+      "ObjectName": "BHPlayerMappableKeySettings'IA_KeyCard_Use:BHPlayerMappableKeySettings_0'",
+      "ObjectPath": "/Game/Weapons/Input/IA_KeyCard_Use.1"
+    }
+  }
+}
+--- export: UObject / BHPlayerMappableKeySettings_0 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_KeyCard_Use'",
+    "ObjectPath": "/Game/Weapons/Input/IA_KeyCard_Use.0"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.HoldableItem.Keycard.PrimaryUse"
+    },
+    "Name": "Input.NamedActions.HoldableItem.Keycard.PrimaryUse"
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_KeyCard_Use'",
+    "ObjectPath": "/Game/Weapons/Input/IA_KeyCard_Use.0"
+  }
+}

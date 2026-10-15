@@ -1,0 +1,64 @@
+--- export: UPrimaryDataAsset / DA_Action_AccessInventory ---
+{
+  "Type": "BHActionDefinition",
+  "Name": "DA_Action_AccessInventory",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHActionDefinition'",
+  "Package": "/Game/GameMechanics/Actions/UI/DA_Action_AccessInventory",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.Player.AccessInventory"
+    },
+    "ActionContext": [
+      "Action.Context.UI"
+    ],
+    "ActionClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Action_AccessInventory_C'",
+      "ObjectPath": "/Game/GameMechanics/Actions/UI/B_Action_AccessInventory.1"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::Block",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Block",
+          "ActionResponses": [
+            "Action.Weapon.ADS"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Interrupt",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Interrupt",
+          "ActionResponses": [
+            "Action.Weapon.ADS",
+            "Action.Player.Lean.Left",
+            "Action.Player.Lean.Right"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::None",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::None",
+          "ActionResponses": [],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      }
+    ]
+  }
+}

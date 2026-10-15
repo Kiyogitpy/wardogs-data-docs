@@ -1,0 +1,244 @@
+--- export: UDataAsset / DA_Tracker_Spatial_Interactable_ScreenClampingActor ---
+{
+  "Type": "WDUIInteractableActorData",
+  "Name": "DA_Tracker_Spatial_Interactable_ScreenClampingActor",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIInteractableActorData'",
+  "Package": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Interactable_ScreenClampingActor",
+  "Properties": {
+    "InfoPromptViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIInfoPromptViewModel",
+        "SubPathString": ""
+      }
+    },
+    "HideDuringAppliableContexts": [
+      "Appliable.Context.ReviveFriendly"
+    ],
+    "DistanceRulesets": [
+      {
+        "Key": "EWDUISpatialRulesetType::Distance_First",
+        "Value": 0.0
+      },
+      {
+        "Key": "EWDUISpatialRulesetType::Distance_Second",
+        "Value": 1.0
+      }
+    ],
+    "RuleSets": [
+      {
+        "Key": "EWDUISpatialRulesetType::Default",
+        "Value": {
+          "Priority": 0,
+          "OptionalRules": []
+        }
+      },
+      {
+        "Key": "EWDUISpatialRulesetType::Interactable_IsNotRelevant",
+        "Value": {
+          "Priority": 1,
+          "OptionalRules": [
+            {
+              "ObjectName": "WDUIScreenClampingRules'DA_Tracker_Spatial_Interactable_ScreenClampingActor:WDUIScreenClampingRules_0'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Interactable_ScreenClampingActor.1"
+            },
+            {
+              "ObjectName": "WDUIScreenLocationOffsetRules'DA_Tracker_Spatial_Interactable_ScreenClampingActor:WDUIScreenLocationOffsetRules_0'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Interactable_ScreenClampingActor.5"
+            }
+          ]
+        }
+      },
+      {
+        "Key": "EWDUISpatialRulesetType::Distance_Second",
+        "Value": {
+          "Priority": 1,
+          "OptionalRules": [
+            {
+              "ObjectName": "WDUIScreenClampingRules'DA_Tracker_Spatial_Interactable_ScreenClampingActor:WDUIScreenClampingRules_1'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Interactable_ScreenClampingActor.2"
+            },
+            {
+              "ObjectName": "WDUIScreenLocationOffsetRules'DA_Tracker_Spatial_Interactable_ScreenClampingActor:WDUIScreenLocationOffsetRules_2'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Interactable_ScreenClampingActor.7"
+            }
+          ]
+        }
+      },
+      {
+        "Key": "EWDUISpatialRulesetType::Distance_First",
+        "Value": {
+          "Priority": 0,
+          "OptionalRules": [
+            {
+              "ObjectName": "WDUIScreenClampingRules'DA_Tracker_Spatial_Interactable_ScreenClampingActor:WDUIScreenClampingRules_2'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Interactable_ScreenClampingActor.3"
+            },
+            {
+              "ObjectName": "WDUIScreenLocationOffsetRules'DA_Tracker_Spatial_Interactable_ScreenClampingActor:WDUIScreenLocationOffsetRules_3'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Interactable_ScreenClampingActor.8"
+            }
+          ]
+        }
+      },
+      {
+        "Key": "EWDUISpatialRulesetType::IgnorePointLOS",
+        "Value": {
+          "Priority": 2,
+          "OptionalRules": [
+            {
+              "ObjectName": "WDUIScreenClampingRules'DA_Tracker_Spatial_Interactable_ScreenClampingActor:WDUIScreenClampingRules_4'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Interactable_ScreenClampingActor.4"
+            },
+            {
+              "ObjectName": "WDUIScreenLocationOffsetRules'DA_Tracker_Spatial_Interactable_ScreenClampingActor:WDUIScreenLocationOffsetRules_1'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Interactable_ScreenClampingActor.6"
+            }
+          ]
+        }
+      }
+    ],
+    "MaximumDistanceFromScreenCenter": {
+      "X": 0.95,
+      "Y": 0.95
+    }
+  }
+}
+--- export: UObject / WDUIScreenClampingRules_0 ---
+{
+  "Type": "WDUIScreenClampingRules",
+  "Name": "WDUIScreenClampingRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIScreenClampingRules'",
+  "Outer": {
+    "ObjectName": "WDUIInteractableActorData'DA_Tracker_Spatial_Interactable_ScreenClampingActor'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Interactable_ScreenClampingActor.0"
+  },
+  "Properties": {
+    "ClampingAsPercentage": {
+      "X": 0.5,
+      "Y": 0.5
+    },
+    "State": "EWDUIRuleState::Disable"
+  }
+}
+--- export: UObject / WDUIScreenClampingRules_1 ---
+{
+  "Type": "WDUIScreenClampingRules",
+  "Name": "WDUIScreenClampingRules_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIScreenClampingRules'",
+  "Outer": {
+    "ObjectName": "WDUIInteractableActorData'DA_Tracker_Spatial_Interactable_ScreenClampingActor'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Interactable_ScreenClampingActor.0"
+  },
+  "Properties": {
+    "ClampingAsPercentage": {
+      "X": 0.5,
+      "Y": 0.5
+    },
+    "State": "EWDUIRuleState::Disable"
+  }
+}
+--- export: UObject / WDUIScreenClampingRules_2 ---
+{
+  "Type": "WDUIScreenClampingRules",
+  "Name": "WDUIScreenClampingRules_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIScreenClampingRules'",
+  "Outer": {
+    "ObjectName": "WDUIInteractableActorData'DA_Tracker_Spatial_Interactable_ScreenClampingActor'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Interactable_ScreenClampingActor.0"
+  },
+  "Properties": {
+    "bClampByScreenPercentage": true,
+    "ClampingAsPercentage": {
+      "X": 0.5,
+      "Y": 0.5
+    }
+  }
+}
+--- export: UObject / WDUIScreenClampingRules_4 ---
+{
+  "Type": "WDUIScreenClampingRules",
+  "Name": "WDUIScreenClampingRules_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIScreenClampingRules'",
+  "Outer": {
+    "ObjectName": "WDUIInteractableActorData'DA_Tracker_Spatial_Interactable_ScreenClampingActor'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Interactable_ScreenClampingActor.0"
+  },
+  "Properties": {
+    "bClampByScreenPercentage": true,
+    "ClampingAsPercentage": {
+      "X": 0.5,
+      "Y": 0.5
+    }
+  }
+}
+--- export: UObject / WDUIScreenLocationOffsetRules_0 ---
+{
+  "Type": "WDUIScreenLocationOffsetRules",
+  "Name": "WDUIScreenLocationOffsetRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIScreenLocationOffsetRules'",
+  "Outer": {
+    "ObjectName": "WDUIInteractableActorData'DA_Tracker_Spatial_Interactable_ScreenClampingActor'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Interactable_ScreenClampingActor.0"
+  },
+  "Properties": {
+    "State": "EWDUIRuleState::Disable"
+  }
+}
+--- export: UObject / WDUIScreenLocationOffsetRules_1 ---
+{
+  "Type": "WDUIScreenLocationOffsetRules",
+  "Name": "WDUIScreenLocationOffsetRules_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIScreenLocationOffsetRules'",
+  "Outer": {
+    "ObjectName": "WDUIInteractableActorData'DA_Tracker_Spatial_Interactable_ScreenClampingActor'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Interactable_ScreenClampingActor.0"
+  },
+  "Properties": {
+    "bOffsetAfterScreenClamping": true,
+    "bOffsetByScreenPercentage": true,
+    "OffsetAsPercentage": {
+      "X": 0.0,
+      "Y": 0.35
+    }
+  }
+}
+--- export: UObject / WDUIScreenLocationOffsetRules_2 ---
+{
+  "Type": "WDUIScreenLocationOffsetRules",
+  "Name": "WDUIScreenLocationOffsetRules_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIScreenLocationOffsetRules'",
+  "Outer": {
+    "ObjectName": "WDUIInteractableActorData'DA_Tracker_Spatial_Interactable_ScreenClampingActor'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Interactable_ScreenClampingActor.0"
+  },
+  "Properties": {
+    "State": "EWDUIRuleState::Disable"
+  }
+}
+--- export: UObject / WDUIScreenLocationOffsetRules_3 ---
+{
+  "Type": "WDUIScreenLocationOffsetRules",
+  "Name": "WDUIScreenLocationOffsetRules_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIScreenLocationOffsetRules'",
+  "Outer": {
+    "ObjectName": "WDUIInteractableActorData'DA_Tracker_Spatial_Interactable_ScreenClampingActor'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Interactable_ScreenClampingActor.0"
+  },
+  "Properties": {
+    "bOffsetAfterScreenClamping": true,
+    "bOffsetByScreenPercentage": true,
+    "OffsetAsPercentage": {
+      "X": 0.0,
+      "Y": 0.35
+    }
+  }
+}

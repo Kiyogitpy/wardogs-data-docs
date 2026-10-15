@@ -1,0 +1,83 @@
+--- export: UObject / AEB_SetFOBStateParameters_C_0 ---
+{
+  "Type": "AEB_SetFOBStateParameters_C",
+  "Name": "AEB_SetFOBStateParameters_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Buildables/Data/Buildables/ForwardOperatingBase/Audio/AEB_SetFOBStateParameters.AEB_SetFOBStateParameters_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Build_FOB_State'",
+    "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Audio/Events/AE_Build_FOB_State.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetFOBStateParameters_C'Default__AEB_SetFOBStateParameters_C'",
+    "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Audio/AEB_SetFOBStateParameters.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Build.FOB.State"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Build_FOB_State ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Build_FOB_State",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Buildables/Data/Buildables/ForwardOperatingBase/Audio/Events/AE_Build_FOB_State",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Build.FOB.State"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Build_FOB_State:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Audio/Events/AE_Build_FOB_State.3"
+      },
+      {
+        "ObjectName": "AEB_SetFOBStateParameters_C'AE_Build_FOB_State:AEB_SetFOBStateParameters_C_0'",
+        "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Audio/Events/AE_Build_FOB_State.0"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Build_FOB_State:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Audio/Events/AE_Build_FOB_State.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Build_FOB_State'",
+    "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Audio/Events/AE_Build_FOB_State.1"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Build.FOB.State"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Build_FOB_State'",
+    "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Audio/Events/AE_Build_FOB_State.1"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Item_FOB_State'",
+      "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Audio/MSS/MSS_Item_FOB_State.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Build.FOB.State"
+    }
+  }
+}

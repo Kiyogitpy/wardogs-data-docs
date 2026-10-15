@@ -1,0 +1,25 @@
+--- export: UDataTable / DT_STN_03_Buildable_Data ---
+{
+  "Type": "DataTable",
+  "Name": "DT_STN_03_Buildable_Data",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/STN_03/BuildableData/DT_STN_03_Buildable_Data",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDBuildableDataTableRow'",
+      "ObjectPath": "/Script/BuildablesRuntime"
+    }
+  },
+  "Rows": {
+    "Id.Buildable.Mortar": {
+      "BuildableData": {
+        "ObjectName": "WDBuildableDataAsset'DA_Buildable_STN_03'",
+        "ObjectPath": "/STN_03/BuildableData/DA_Buildable_STN_03.0"
+      },
+      "Tag": {
+        "TagName": "Id.Buildable.Mortar"
+      }
+    }
+  }
+}

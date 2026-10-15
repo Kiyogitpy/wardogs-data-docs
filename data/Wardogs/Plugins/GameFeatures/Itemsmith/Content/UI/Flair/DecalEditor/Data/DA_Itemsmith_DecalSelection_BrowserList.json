@@ -1,0 +1,33 @@
+--- export: UDataAsset / DA_Itemsmith_DecalSelection_BrowserList ---
+{
+  "Type": "WDUIItemsmithBrowserDecalData",
+  "Name": "DA_Itemsmith_DecalSelection_BrowserList",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIItemsmithBrowserDecalData'",
+  "Package": "/Itemsmith/UI/Flair/DecalEditor/Data/DA_Itemsmith_DecalSelection_BrowserList",
+  "Properties": {
+    "EmptyDecalDisplayedText": {
+      "TableId": "/Itemsmith/UI/Flair/DecalEditor/Data/STRINGS_Itemsmith_DecalEditor.STRINGS_Itemsmith_DecalEditor",
+      "Key": "Itemsmith.Flair.DecalSelection.EmptyDecal",
+      "SourceString": null,
+      "LocalizedString": ""
+    },
+    "ItemsmithBrowserEntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithBrowserEntryViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Itemsmith/UI/Flair/DecalEditor/Data/DA_Itemsmith_DecalSelection_BrowserItem.DA_Itemsmith_DecalSelection_BrowserItem",
+        "SubPathString": ""
+      }
+    },
+    "EntryHeight": 150.0,
+    "EntryWidth": 150.0,
+    "ItemsPerPage": 12,
+    "EntryWidgetClass": {
+      "ObjectName": "WidgetBlueprintGeneratedClass'W_Itemsmith_DecalSelectionEntry_C'",
+      "ObjectPath": "/Itemsmith/UI/Flair/DecalEditor/Components/W_Itemsmith_DecalSelectionEntry.2"
+    }
+  }
+}

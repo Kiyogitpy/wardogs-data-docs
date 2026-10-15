@@ -1,0 +1,665 @@
+--- export: UDataAsset / DA_SettingControllerPanel ---
+{
+  "Type": "WDUISettingsControllerPanelData",
+  "Name": "DA_SettingControllerPanel",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUISettingsControllerPanelData'",
+  "Package": "/Game/UI/Features/Settings/Widgets/SettingControllerPanel/Data/DA_SettingControllerPanel",
+  "Properties": {
+    "CategorizedSettings": [
+      {
+        "CategoryText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Controller.STRINGS_Settings_Controller",
+          "Key": "Button.Infantry",
+          "SourceString": "Infantry",
+          "LocalizedString": "Infantry"
+        },
+        "ButtonTag": {
+          "TagName": "UI.Settings.Tab.Controller.Infantry"
+        },
+        "Settings": [
+          {
+            "TagName": "Input.NamedActions.Player.MoveForward"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.MoveBackward"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.MoveLeft"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.MoveRight"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.MoveDirectional"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.Interact"
+          },
+          {
+            "TagName": "Input.NamedActions.Inventory.ChangeNext"
+          },
+          {
+            "TagName": "Input.NamedActions.Inventory.ChangePrev"
+          },
+          {
+            "TagName": "Input.NamedActions.Inventory.ChangeNextWeapon"
+          },
+          {
+            "TagName": "Input.NamedActions.Inventory.ChangeNextItem"
+          },
+          {
+            "TagName": "Input.NamedActions.Ping"
+          },
+          {
+            "TagName": "UI.Action.Feature.PingWheel.ToggleScene"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.Crouch"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.CrouchProne"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.Focus"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.Jump"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.Lean.Left"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.Lean.Right"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.Look"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.Prone"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.Ready"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.Sprint"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.TacticalSprint"
+          },
+          {
+            "TagName": "Input.NamedActions.HoldableItem.Inspect"
+          },
+          {
+            "TagName": "Input.NamedActions.HoldableItem.PrimaryUse"
+          },
+          {
+            "TagName": "Input.NamedActions.HoldableItem.SecondaryUse"
+          },
+          {
+            "TagName": "Input.NamedActions.HoldableItem.Weapon.CycleFireMode"
+          },
+          {
+            "TagName": "Input.NamedActions.HoldableItem.Weapon.DecreaseZeroing"
+          },
+          {
+            "TagName": "Input.NamedActions.HoldableItem.Weapon.IncreaseZeroing"
+          },
+          {
+            "TagName": "Input.NamedActions.HoldableItem.Weapon.MeleeBash"
+          },
+          {
+            "TagName": "Input.NamedActions.HoldableItem.Weapon.Reload"
+          },
+          {
+            "TagName": "Input.NamedActions.HoldableItem.Weapon.ToggleAncillaryFire"
+          },
+          {
+            "TagName": "UI.Action.Feature.Scoreboard.ToggleScene"
+          },
+          {
+            "TagName": "UI.Action.Feature.Inventory.ToggleScene"
+          },
+          {
+            "TagName": "UI.Action.Feature.PauseMenu.ToggleScene"
+          },
+          {
+            "TagName": "UI.Action.Feature.Map.ToggleScene"
+          },
+          {
+            "TagName": "UI.Action.Feature.Inventory.ToggleScene"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.VOIP.ToggleTalk"
+          }
+        ],
+        "DisplayedSettings": [],
+        "AxisConfigSetting": {
+          "TagName": "UserSettings.Controls.Gamepad.AxisConfig.Infantry"
+        },
+        "ButtonConfigSetting": {
+          "TagName": "UserSettings.Controls.Gamepad.ButtonConfig.Infantry"
+        },
+        "bAxisConfigEnabled": true
+      },
+      {
+        "CategoryText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Controller.STRINGS_Settings_Controller",
+          "Key": "Button.GroundVehicle",
+          "SourceString": "Ground Vehicles",
+          "LocalizedString": "Ground Vehicles"
+        },
+        "ButtonTag": {
+          "TagName": "UI.Settings.Tab.Controller.GroundVehicle"
+        },
+        "Settings": [
+          {
+            "TagName": "Input.NamedActions.Vehicle.Boost"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Steering"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Throttle"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Brake"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Handbrake"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Camera.FreeLook"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Camera.LeftView"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Camera.RightView"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Camera.RearView"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Camera.ToggleFreeLook"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Camera.ToggleMode"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Camera.ZoomIn"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Camera.ZoomOut"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.ChangeSeat.Next"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.ChangeSeat.Prev"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.ChangeSeat.Seat_0"
+          },
+          {
+            "TagName": "UI.Action.Feature.Scoreboard.ToggleScene"
+          },
+          {
+            "TagName": "UI.Action.Feature.Inventory.ToggleScene"
+          },
+          {
+            "TagName": "UI.Action.Feature.PauseMenu.ToggleScene"
+          },
+          {
+            "TagName": "UI.Action.Feature.Map.ToggleScene"
+          },
+          {
+            "TagName": "Input.NamedActions.Ping"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.Interact"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Horn"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.OpenGarageVendor"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.DeploySupplyCrate"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.VOIP.ToggleTalk"
+          },
+          {
+            "TagName": "UI.Action.Feature.Inventory.ToggleScene"
+          }
+        ],
+        "DisplayedSettings": [],
+        "AxisConfigSetting": {
+          "TagName": "UserSettings.Controls.Gamepad.AxisConfig.Vehicle.Ground"
+        },
+        "ButtonConfigSetting": {
+          "TagName": "UserSettings.Controls.Gamepad.ButtonConfig.Vehicle.Ground"
+        },
+        "bAxisConfigEnabled": false
+      },
+      {
+        "CategoryText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Controller.STRINGS_Settings_Controller",
+          "Key": "Button.Helicopter",
+          "SourceString": "Air Vehicles",
+          "LocalizedString": "Air Vehicles"
+        },
+        "ButtonTag": {
+          "TagName": "UI.Settings.Tab.Controller.Helicopter"
+        },
+        "Settings": [
+          {
+            "TagName": "Input.NamedActions.Vehicle.Cyclic"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Collective"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Collective.Raise"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Collective.Lower"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Pedals"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Camera.FreeLook"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Camera.LeftView"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Camera.RightView"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Camera.RearView"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Camera.ToggleFreeLook"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Camera.ToggleMode"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Camera.ZoomIn"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Camera.ZoomOut"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.ChangeSeat.Next"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.ChangeSeat.Prev"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.ChangeSeat.Seat_0"
+          },
+          {
+            "TagName": "UI.Action.Feature.Scoreboard.ToggleScene"
+          },
+          {
+            "TagName": "UI.Action.Feature.Inventory.ToggleScene"
+          },
+          {
+            "TagName": "UI.Action.Feature.PauseMenu.ToggleScene"
+          },
+          {
+            "TagName": "UI.Action.Feature.Map.ToggleScene"
+          },
+          {
+            "TagName": "Input.NamedActions.Ping"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.Interact"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.OpenGarageVendor"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.FireFlares"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.MountedWeapon.Fire"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.DeploySupplyCrate"
+          },
+          {
+            "TagName": "Input.NamedActions.Vehicle.Horn"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.VOIP.ToggleTalk"
+          },
+          {
+            "TagName": "UI.Action.Feature.Inventory.ToggleScene"
+          }
+        ],
+        "DisplayedSettings": [],
+        "AxisConfigSetting": {
+          "TagName": "UserSettings.Controls.Gamepad.AxisConfig.Vehicle.Air.Helicopter"
+        },
+        "ButtonConfigSetting": {
+          "TagName": "UserSettings.Controls.Gamepad.ButtonConfig.Vehicle.Air.Helicopter"
+        },
+        "bAxisConfigEnabled": false
+      },
+      {
+        "CategoryText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Controller.STRINGS_Settings_Controller",
+          "Key": "Button.InputBehaviors",
+          "SourceString": "Input Behaviors",
+          "LocalizedString": "Input Behaviors"
+        },
+        "ButtonTag": {
+          "TagName": "UI.Settings.Tab.Controller.InputBehavior"
+        },
+        "Settings": [],
+        "DisplayedSettings": [
+          {
+            "TagName": "UserSettings.Controls.ActionBehavior.Gamepad.ADS"
+          },
+          {
+            "TagName": "UserSettings.Controls.ActionBehavior.Gamepad.Steady"
+          },
+          {
+            "TagName": "UserSettings.Controls.ActionBehavior.Gamepad.Lean"
+          },
+          {
+            "TagName": "UserSettings.General.Controller.EnableFreeCursor"
+          },
+          {
+            "TagName": "UserSettings.General.Controller.FreeCursorSensitivity"
+          }
+        ],
+        "AxisConfigSetting": {
+          "TagName": "None"
+        },
+        "ButtonConfigSetting": {
+          "TagName": "None"
+        },
+        "bAxisConfigEnabled": true
+      },
+      {
+        "CategoryText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Controller.STRINGS_Settings_Controller",
+          "Key": "Button.AdvancedSettings",
+          "SourceString": "Advanced Settings",
+          "LocalizedString": "Advanced Settings"
+        },
+        "ButtonTag": {
+          "TagName": "UI.Settings.Tab.Controller.AdvancedSettings"
+        },
+        "Settings": [],
+        "DisplayedSettings": [
+          {
+            "TagName": "UserSettings.Controls.Gamepad.Sensitivity.Horizontal"
+          },
+          {
+            "TagName": "UserSettings.Controls.Gamepad.Sensitivity.Vertical"
+          },
+          {
+            "TagName": "UserSettings.Controls.Gamepad.Multiplier.ADS"
+          },
+          {
+            "TagName": "UserSettings.Controls.Gamepad.LookAcceleration"
+          },
+          {
+            "TagName": "UserSettings.Controls.Gamepad.LookAcceleration.Curve"
+          },
+          {
+            "TagName": "UserSettings.Controls.Gamepad.LookAcceleration.MaxMultiplier"
+          },
+          {
+            "TagName": "UserSettings.Controls.Gamepad.LookAcceleration.MagnitudeThreshold"
+          },
+          {
+            "TagName": "UserSettings.Controls.Gamepad.LookAcceleration.PitchWeight"
+          },
+          {
+            "TagName": "UserSettings.General.Controller.FreeCursorSensitivity"
+          },
+          {
+            "TagName": "UserSettings.Controls.Gamepad.ResponseCurve"
+          },
+          {
+            "TagName": "UserSettings.Controls.Gamepad.Multiplier.Vehicle.Ground"
+          },
+          {
+            "TagName": "UserSettings.Controls.Gamepad.Multiplier.Vehicle.Air"
+          },
+          {
+            "TagName": "UserSettings.Controls.Gamepad.Axis.Y.Invert.Infantry"
+          },
+          {
+            "TagName": "UserSettings.Controls.Gamepad.Axis.Y.Invert.Vehicle.Ground"
+          },
+          {
+            "TagName": "UserSettings.Controls.Gamepad.Axis.Y.Invert.Vehicle.Air.Helicopter"
+          },
+          {
+            "TagName": "UserSettings.Controls.Gamepad.Axis.Y.Invert.Vehicle.Air.Missile"
+          },
+          {
+            "TagName": "UserSettings.Controls.Gamepad.DeadZone.MoveStick.Preset"
+          },
+          {
+            "TagName": "UserSettings.Controls.Gamepad.DeadZone.MoveStick.Centre"
+          },
+          {
+            "TagName": "UserSettings.Controls.Gamepad.DeadZone.MoveStick.Axial"
+          },
+          {
+            "TagName": "UserSettings.Controls.Gamepad.DeadZone.MoveStick.MaxInput"
+          },
+          {
+            "TagName": "UserSettings.Controls.Gamepad.DeadZone.LookStick.Preset"
+          },
+          {
+            "TagName": "UserSettings.Controls.Gamepad.DeadZone.LookStick.Centre"
+          },
+          {
+            "TagName": "UserSettings.Controls.Gamepad.DeadZone.LookStick.Axial"
+          },
+          {
+            "TagName": "UserSettings.Controls.Gamepad.DeadZone.LookStick.MaxInput"
+          },
+          {
+            "TagName": "UserSettings.Controls.Gamepad.DeadZone.Triggers.Preset"
+          },
+          {
+            "TagName": "UserSettings.Controls.Gamepad.DeadZone.LeftTrigger.Min"
+          },
+          {
+            "TagName": "UserSettings.Controls.Gamepad.DeadZone.LeftTrigger.Max"
+          },
+          {
+            "TagName": "UserSettings.Controls.Gamepad.DeadZone.RightTrigger.Min"
+          },
+          {
+            "TagName": "UserSettings.Controls.Gamepad.DeadZone.RightTrigger.Max"
+          }
+        ],
+        "AxisConfigSetting": {
+          "TagName": "None"
+        },
+        "ButtonConfigSetting": {
+          "TagName": "None"
+        },
+        "bAxisConfigEnabled": true
+      },
+      {
+        "CategoryText": {
+          "Namespace": "",
+          "Key": "06374006406A366F2CB093B53A570F88",
+          "SourceString": "HOTAS",
+          "LocalizedString": "HOTAS"
+        },
+        "ButtonTag": {
+          "TagName": "UI.Settings.Tab.Controller.HOTAS"
+        },
+        "Settings": [],
+        "DisplayedSettings": [
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.UseHOTAS"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickAxis.Roll.Left"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickAxis.Roll.Right"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickAxisInvert.Roll"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickSensitivity.Roll"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickDeadzone.Roll"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickAxis.Pitch.Up"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickAxis.Pitch.Down"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickAxisInvert.Pitch"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickSensitivity.Pitch"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickDeadzone.Pitch"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickAxis.Yaw.Left"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickAxis.Yaw.Right"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickAxisInvert.Yaw"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickSensitivity.Yaw"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickDeadzone.Yaw"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickAxis.Collective.Up"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickAxis.Collective.Down"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickAxisInvert.Collective"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickSensitivity.Collective"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickDeadzone.Collective"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.CollectiveSelfCentering"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickAxis.LookYaw.Left"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickAxis.LookYaw.Right"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickAxisInvert.LookYaw"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickAxis.LookPitch.Up"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickAxis.LookPitch.Down"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickAxisInvert.LookPitch"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickAction.FreeLookReset"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickAction.Fire"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickAction.Reload"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickAction.Flares"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickAction.Horn"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickAction.GarageVendor"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickAction.CycleLockState"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickAction.DeploySupplyCrate"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickAction.ToggleCameraMode"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickAction.TacticalMap"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickAction.Ping"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickAction.VoipToggleTalk"
+          },
+          {
+            "TagName": "UserSettings.Controls.Vehicle.Air.JoystickAction.VoipChannelWheel"
+          }
+        ],
+        "AxisConfigSetting": {
+          "TagName": "None"
+        },
+        "ButtonConfigSetting": {
+          "TagName": "None"
+        },
+        "bAxisConfigEnabled": false
+      }
+    ],
+    "SettingRotatorViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUISettingValueRotatorViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Settings/Widgets/SettingValue/Data/DA_SettingValue_Rotator.DA_SettingValue_Rotator",
+        "SubPathString": ""
+      }
+    },
+    "SettingEntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUISettingEntryViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Settings/Widgets/SettingEntry/Data/DA_SettingEntry.DA_SettingEntry",
+        "SubPathString": ""
+      }
+    }
+  }
+}

@@ -4,7 +4,7 @@ parent: "Content"
 ---
 
 # Wardogs: FluidFlux Data Reference (v2)
-*Extracted from cooked game data (`Wardogs/Content/FluidFlux`, 2 files). Values are raw curve keys.*
+*Extracted from cooked game data ([`Wardogs/Content/FluidFlux`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/FluidFlux), 2 files). Values are raw curve keys.*
 
 > **Scope:** the underwater surface waterline gradient. FluidFlux is a fluid-simulation plugin, and this folder holds only its waterline colour data. No simulation settings are present.
 
@@ -19,9 +19,9 @@ parent: "Content"
 
 ---
 
-## 2. Waterline Gradient (`C_Waterline`)
+## 2. Waterline Gradient ([`C_Waterline`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/FluidFlux/Surface/Underwater/Curves/C_Waterline.json))
 
-`C_Waterline` is a `CurveLinearColor` with four float channels. The export does not label the channels. Under the Unreal `CurveLinearColor` convention they are R, G, B and A, and the labels below use that reading.
+[`C_Waterline`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/FluidFlux/Surface/Underwater/Curves/C_Waterline.json) is a `CurveLinearColor` with four float channels. The export does not label the channels. Under the Unreal `CurveLinearColor` convention they are R, G, B and A, and the labels below use that reading.
 
 | Channel (inferred) | Keys (time, value) | Interpolation |
 |---|---|---|
@@ -30,7 +30,7 @@ parent: "Content"
 | channel 2 | (0, 1.468e-07), (0.3, 1), (0.6, -0.25), (1, 1.468e-07) | RCIM_Linear x4 |
 | channel 3 | (-0.2, -7.604e-08), (0.1, -7.604e-08), (0.2, 0.375), (0.3, 0.625), (0.7, -1.018e-07), (0.9, -1.018e-07) | RCIM_Linear x3, RCIM_Cubic x3 |
 
-- `CA_Waterline` points at `C_Waterline` and is imported at 256 x 1. The atlas is most likely the baked form of the gradient, so the curve time axis would map across the 256 pixels (inferred).
+- [`CA_Waterline`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/FluidFlux/Surface/Underwater/Curves/CA_Waterline.json) points at [`C_Waterline`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/FluidFlux/Surface/Underwater/Curves/C_Waterline.json) and is imported at 256 x 1. The atlas is most likely the baked form of the gradient, so the curve time axis would map across the 256 pixels (inferred).
 - Channel 0 is nearly flat at 1.0, with a small bump to 1.075 at t=0.2. Channel 1 ramps up to 1 at t=0.1 and falls to 0 at t=1. Channel 2 peaks at 1.0 at t=0.3 and dips to -0.25 at t=0.6. Channel 3 rises from 0 at t=0.1 to 0.625 at t=0.3, and is back to 0 by t=0.7.
 - Values fall outside 0 to 1 in two places (1.075 and -0.25). Curves allow this. Whether a colour channel clamps it depends on how the atlas is sampled, which is not in the export.
 

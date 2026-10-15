@@ -1,0 +1,129 @@
+--- export: UObject / AEB_ActivateControlBusMix_C_0 ---
+{
+  "Type": "AEB_ActivateControlBusMix_C",
+  "Name": "AEB_ActivateControlBusMix_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_ActivateControlBusMix.AEB_ActivateControlBusMix_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_EndGame_TeamWin'",
+    "ObjectPath": "/Game/Audio/Events/UI/EndGame/AE_UI_EndGame_TeamWin.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_ActivateControlBusMix_C'Default__AEB_ActivateControlBusMix_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_ActivateControlBusMix.0"
+  },
+  "Properties": {
+    "Mix": {
+      "ObjectName": "SoundControlBusMix'AM_CBM_EndGame'",
+      "ObjectPath": "/Game/Audio/AudioModulation/ControlBusMixes/AM_CBM_EndGame.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / AEB_Submix_DectivateEffect_C_0 ---
+{
+  "Type": "AEB_Submix_DeactivateEffect_C",
+  "Name": "AEB_Submix_DectivateEffect_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_Submix_DeactivateEffect.AEB_Submix_DeactivateEffect_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_EndGame_TeamWin'",
+    "ObjectPath": "/Game/Audio/Events/UI/EndGame/AE_UI_EndGame_TeamWin.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_Submix_DeactivateEffect_C'Default__AEB_Submix_DeactivateEffect_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_Submix_DeactivateEffect.0"
+  },
+  "Properties": {
+    "Sound Submixes": [
+      {
+        "ObjectName": "SoundSubmix'SBMIX_Vehicles'",
+        "ObjectPath": "/Game/Audio/Submix/SBMIX_Vehicles.0"
+      },
+      {
+        "ObjectName": "SoundSubmix'SBMIX_EnemyFootsteps'",
+        "ObjectPath": "/Game/Audio/Submix/SBMIX_EnemyFootsteps.0"
+      },
+      {
+        "ObjectName": "SoundSubmix'SBMIX_Player'",
+        "ObjectPath": "/Game/Audio/Submix/SBMIX_Player.0"
+      },
+      {
+        "ObjectName": "SoundSubmix'SBMIX_Ambience'",
+        "ObjectPath": "/Game/Audio/Submix/SBMIX_Ambience.0"
+      },
+      {
+        "ObjectName": "SoundSubmix'SBMIX_Weapons'",
+        "ObjectPath": "/Game/Audio/Submix/SBMIX_Weapons.0"
+      },
+      {
+        "ObjectName": "SoundSubmix'SBMIX_VOIP'",
+        "ObjectPath": "/Game/Audio/Submix/SBMIX_VOIP.0"
+      },
+      {
+        "ObjectName": "SoundSubmix'SBMIX_Dialogue_3p'",
+        "ObjectPath": "/Game/Audio/Submix/SBMIX_Dialogue_3p.0"
+      },
+      {
+        "ObjectName": "SoundSubmix'SBMIX_Dialogue_1p'",
+        "ObjectPath": "/Game/Audio/Submix/SBMIX_Dialogue_1p.0"
+      },
+      {
+        "ObjectName": "SoundSubmix'SBMIX_WeaponImpacts'",
+        "ObjectPath": "/Game/Audio/Submix/SBMIX_WeaponImpacts.0"
+      }
+    ],
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_UI_EndGame_TeamWin ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UI_EndGame_TeamWin",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UI/EndGame/AE_UI_EndGame_TeamWin",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.EndGame.TeamWin"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_UI_EndGame_TeamWin:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/EndGame/AE_UI_EndGame_TeamWin.3"
+      },
+      {
+        "ObjectName": "AEB_ActivateControlBusMix_C'AE_UI_EndGame_TeamWin:AEB_ActivateControlBusMix_C_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/EndGame/AE_UI_EndGame_TeamWin.0"
+      },
+      {
+        "ObjectName": "AEB_Submix_DeactivateEffect_C'AE_UI_EndGame_TeamWin:AEB_Submix_DectivateEffect_C_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/EndGame/AE_UI_EndGame_TeamWin.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_EndGame_TeamWin'",
+    "ObjectPath": "/Game/Audio/Events/UI/EndGame/AE_UI_EndGame_TeamWin.2"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UI_EndGame_TeamWin'",
+      "ObjectPath": "/Game/Audio/UI/EndGame/MSS/MSS_UI_EndGame_TeamWin.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.UI.EndGame.TeamWin"
+    }
+  }
+}

@@ -1,0 +1,79 @@
+--- export: UDataAsset / DA_Gunsmith_SubNodeFocus ---
+{
+  "Type": "WDUIItemsmithSubNodeFocusData",
+  "Name": "DA_Gunsmith_SubNodeFocus",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIItemsmithSubNodeFocusData'",
+  "Package": "/Gunsmith/UI/SubNodeFocus/Data/DA_Gunsmith_SubNodeFocus",
+  "Properties": {
+    "SubNodeAttachmentParameters": [
+      {
+        "Key": {
+          "TagName": "Item.Attachment.Sight"
+        },
+        "Value": {
+          "SubNodeParameters": [
+            {
+              "Key": "Optic",
+              "Value": {
+                "AttachBoneName": "sight_Attach",
+                "NodeNameText": {
+                  "TableId": "/Gunsmith/UI/SubNodeFocus/Data/STRINGS_Gunsmith_SubNodeFocus.STRINGS_Gunsmith_SubNodeFocus",
+                  "Key": "Gunsmith.SubNode.Optic",
+                  "SourceString": null,
+                  "LocalizedString": ""
+                },
+                "AttachBoneOffset": {
+                  "X": 0.0,
+                  "Y": 2.0,
+                  "Z": 2.0
+                },
+                "SubNodePage": "EWDUIItemsmithPages::AttachmentNodeFocus",
+                "bShowToolTip": true
+              }
+            },
+            {
+              "Key": "Adjust",
+              "Value": {
+                "AttachBoneName": "sight_Attach",
+                "NodeNameText": {
+                  "TableId": "/Gunsmith/UI/SubNodeFocus/Data/STRINGS_Gunsmith_SubNodeFocus.STRINGS_Gunsmith_SubNodeFocus",
+                  "Key": "Gunsmith.SubNode.Adjust",
+                  "SourceString": null,
+                  "LocalizedString": ""
+                },
+                "AttachBoneOffset": {
+                  "X": 0.0,
+                  "Y": 5.0,
+                  "Z": 0.0
+                },
+                "SubNodePage": "EWDUIItemsmithPages::OpticAdjust",
+                "bShowToolTip": false
+              }
+            },
+            {
+              "Key": "Reticle",
+              "Value": {
+                "AttachBoneName": "S_Aim01",
+                "NodeNameText": {
+                  "TableId": "/Gunsmith/UI/SubNodeFocus/Data/STRINGS_Gunsmith_SubNodeFocus.STRINGS_Gunsmith_SubNodeFocus",
+                  "Key": "Gunsmith.SubNode.Reticle",
+                  "SourceString": null,
+                  "LocalizedString": ""
+                },
+                "AttachBoneOffset": {
+                  "X": 0.0,
+                  "Y": 0.0,
+                  "Z": 0.0
+                },
+                "SubNodePage": "EWDUIItemsmithPages::ReticleNodeFocus",
+                "bShowToolTip": false
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "CameraMode": "EItemsmithCameraMode::Normal"
+  }
+}

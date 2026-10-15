@@ -1,0 +1,69 @@
+--- export: UPrimaryDataAsset / ID_VectorStock ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_VectorStock",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/STOK_004/Data/ID_VectorStock",
+  "Properties": {
+    "ItemId": {
+      "TagName": "ID.Item.VectorStock"
+    },
+    "ItemContext": [
+      "Item.Attachment.Stock"
+    ],
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_VectorStock:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/STOK_004/Data/ID_VectorStock.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_VectorStock:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/STOK_004/Data/ID_VectorStock.2"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_VectorStock'",
+    "ObjectPath": "/STOK_004/Data/ID_VectorStock.0"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Stock"
+      },
+      "AppliedEffects": [],
+      "AppliedCharacterEffects": [],
+      "bCanBeRemovedInGame": false,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_VectorStock'",
+    "ObjectPath": "/STOK_004/Data/ID_VectorStock.0"
+  },
+  "Properties": {
+    "ItemType": "EWDGunsmithItemType::Attachment"
+  }
+}

@@ -1,0 +1,86 @@
+--- export: UPrimaryDataAsset / ID_PGRP_003 ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_PGRP_003",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/PGRP_003/Data/ID_PGRP_003",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.PGRP_003"
+    },
+    "ItemContext": [
+      "Item.Attachment.Grip.WEPN_030"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "E0D341364F0333DF5FCAF29A5114CC87",
+      "SourceString": "FAL Pistol Grip",
+      "LocalizedString": "FAL Pistol Grip"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_PGRP_003:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/PGRP_003/Data/ID_PGRP_003.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_PGRP_003:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/PGRP_003/Data/ID_PGRP_003.2"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_PGRP_003'",
+    "ObjectPath": "/PGRP_003/Data/ID_PGRP_003.0"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Grip"
+      },
+      "AppliedEffects": [],
+      "AppliedCharacterEffects": [],
+      "bCanBeRemovedInGame": false,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_PGRP_003'",
+    "ObjectPath": "/PGRP_003/Data/ID_PGRP_003.0"
+  },
+  "Properties": {
+    "TextureParamDefaults": [
+      {
+        "Key": {
+          "TagName": "Item.Flair.BaseTexture.Grip"
+        },
+        "Value": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ],
+    "ItemType": "EWDGunsmithItemType::Attachment"
+  }
+}

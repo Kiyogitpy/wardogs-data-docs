@@ -1,0 +1,567 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SmokeGrenade_Red'",
+    "ObjectPath": "/SmokeGrenade/Data/ColourVariants/ID_SmokeGrenade_Red.5"
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SmokeGrenade_Red'",
+    "ObjectPath": "/SmokeGrenade/Data/ColourVariants/ID_SmokeGrenade_Red.5"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/SmokeGrenade/Meshes/SM_Smoke_Grenade.SM_Smoke_Grenade",
+      "SubPathString": ""
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_Smoke_Grenade_Red'",
+        "ObjectPath": "/SmokeGrenade/Materials/MI_Smoke_Grenade_Red.0"
+      }
+    ],
+    "bOverrideDroppedRelativeLocation": true
+  }
+}
+--- export: UObject / BHInventoryFragment_Stackable_0 ---
+{
+  "Type": "BHInventoryFragment_Stackable",
+  "Name": "BHInventoryFragment_Stackable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Stackable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SmokeGrenade_Red'",
+    "ObjectPath": "/SmokeGrenade/Data/ColourVariants/ID_SmokeGrenade_Red.5"
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SmokeGrenade_Red'",
+    "ObjectPath": "/SmokeGrenade/Data/ColourVariants/ID_SmokeGrenade_Red.5"
+  },
+  "Properties": {
+    "bIsVisibleOnEquippedUI": true,
+    "DisplayedItems": [
+      "ID.Item.SmokeGrenade.Red"
+    ],
+    "bDisplayIncludeAllSlots": true
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SmokeGrenade_Red'",
+    "ObjectPath": "/SmokeGrenade/Data/ColourVariants/ID_SmokeGrenade_Red.5"
+  },
+  "Properties": {
+    "Weight": 0.54
+  }
+}
+--- export: UPrimaryDataAsset / ID_SmokeGrenade_Red ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_SmokeGrenade_Red",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/SmokeGrenade/Data/ColourVariants/ID_SmokeGrenade_Red",
+  "Properties": {
+    "ItemId": {
+      "TagName": "ID.Item.SmokeGrenade.Red"
+    },
+    "ItemContext": [
+      "Item.Context.UtilityItem",
+      "Item.Context.QuickSlot",
+      "Item.Context.Animation.Type.Unarmed",
+      "Item.Context.Animation.Archetype.EquipRightHand"
+    ],
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Items_Throwables.STRINGS_Items_Throwables",
+      "Key": "Items.Throwable.SmokeGrenade.Red",
+      "SourceString": "M18  Signal Grenade: Hostile",
+      "LocalizedString": "M18  Signal Grenade: Hostile"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_ItemActor'ID_SmokeGrenade_Red:WDInventoryFragment_ItemActor_0'",
+        "ObjectPath": "/SmokeGrenade/Data/ColourVariants/ID_SmokeGrenade_Red.7"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_SmokeGrenade_Red:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/SmokeGrenade/Data/ColourVariants/ID_SmokeGrenade_Red.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_SmokeGrenade_Red:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/SmokeGrenade/Data/ColourVariants/ID_SmokeGrenade_Red.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_SmokeGrenade_Red:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/SmokeGrenade/Data/ColourVariants/ID_SmokeGrenade_Red.6"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_SmokeGrenade_Red:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/SmokeGrenade/Data/ColourVariants/ID_SmokeGrenade_Red.0"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_SmokeGrenade_Red:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/SmokeGrenade/Data/ColourVariants/ID_SmokeGrenade_Red.4"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Stackable'ID_SmokeGrenade_Red:BHInventoryFragment_Stackable_0'",
+        "ObjectPath": "/SmokeGrenade/Data/ColourVariants/ID_SmokeGrenade_Red.2"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SmokeGrenade_Red'",
+    "ObjectPath": "/SmokeGrenade/Data/ColourVariants/ID_SmokeGrenade_Red.5"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_SmokeGrenade_Audio'",
+      "ObjectPath": "/SmokeGrenade/Data/ID_SmokeGrenade_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_ItemActor_0 ---
+{
+  "Type": "WDInventoryFragment_ItemActor",
+  "Name": "WDInventoryFragment_ItemActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_ItemActor'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SmokeGrenade_Red'",
+    "ObjectPath": "/SmokeGrenade/Data/ColourVariants/ID_SmokeGrenade_Red.5"
+  },
+  "Properties": {
+    "ExtensionDataFragments": [
+      {
+        "ObjectName": "WDItemExtensionData_Holdable'ID_SmokeGrenade_Red:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Holdable_0'",
+        "ObjectPath": "/SmokeGrenade/Data/ColourVariants/ID_SmokeGrenade_Red.10"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Input'ID_SmokeGrenade_Red:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+        "ObjectPath": "/SmokeGrenade/Data/ColourVariants/ID_SmokeGrenade_Red.11"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Throwable'ID_SmokeGrenade_Red:WDInventoryFragment_ItemActor_0.WDItemFragment_Throwable_0'",
+        "ObjectPath": "/SmokeGrenade/Data/ColourVariants/ID_SmokeGrenade_Red.13"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Inventory'ID_SmokeGrenade_Red:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Inventory_0'",
+        "ObjectPath": "/SmokeGrenade/Data/ColourVariants/ID_SmokeGrenade_Red.12"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_AudioExtension'ID_SmokeGrenade_Red:WDInventoryFragment_ItemActor_0.WDItemExtensionData_AudioExtension_0'",
+        "ObjectPath": "/SmokeGrenade/Data/ColourVariants/ID_SmokeGrenade_Red.9"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Animation'ID_SmokeGrenade_Red:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Animation_0'",
+        "ObjectPath": "/SmokeGrenade/Data/ColourVariants/ID_SmokeGrenade_Red.8"
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Animation_0 ---
+{
+  "Type": "WDItemExtensionData_Animation",
+  "Name": "WDItemExtensionData_Animation_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Animation'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_SmokeGrenade_Red:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/SmokeGrenade/Data/ColourVariants/ID_SmokeGrenade_Red.7"
+  },
+  "Properties": {
+    "AnimationSet": {
+      "ObjectName": "BHAnimationSet'AnimSet_SmokeGrenade'",
+      "ObjectPath": "/SmokeGrenade/Data/AnimSet_SmokeGrenade.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_AudioExtension_0 ---
+{
+  "Type": "WDItemExtensionData_AudioExtension",
+  "Name": "WDItemExtensionData_AudioExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_AudioExtension'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_SmokeGrenade_Red:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/SmokeGrenade/Data/ColourVariants/ID_SmokeGrenade_Red.7"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_SmokeGrenade_Audio'",
+      "ObjectPath": "/SmokeGrenade/Data/ID_SmokeGrenade_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_Holdable_0 ---
+{
+  "Type": "WDItemExtensionData_Holdable",
+  "Name": "WDItemExtensionData_Holdable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Holdable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_SmokeGrenade_Red:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/SmokeGrenade/Data/ColourVariants/ID_SmokeGrenade_Red.7"
+  },
+  "Properties": {
+    "HoldableMesh": {
+      "ObjectName": "SkeletalMesh'SK_SmokeGrenade'",
+      "ObjectPath": "/SmokeGrenade/Meshes/SK_SmokeGrenade.1"
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_Smoke_Grenade_Red'",
+        "ObjectPath": "/SmokeGrenade/Materials/MI_Smoke_Grenade_Red.0"
+      }
+    ],
+    "MeshAnimClass": {
+      "ObjectName": "AnimBlueprintGeneratedClass'ABP_SmokeGrenade_C'",
+      "ObjectPath": "/SmokeGrenade/Data/ABP_SmokeGrenade.1"
+    },
+    "bShowCrosshair": true,
+    "bOverrideDefaultCrosshairSettings": true,
+    "CrosshairSettings": {
+      "Type": "EWDCrosshairType::Throwable"
+    },
+    "EquipAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_SmokeGrenade_Equip'",
+        "ObjectPath": "/Game/Animation/Characters/Weapons/Throwable/SmokeGrenade/AM_FP_SmokeGrenade_Equip.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_EquipmentRH_Equip'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/EquipmentRH/Actions/AM_TP_Gen_EquipmentRH_Equip.0"
+      }
+    },
+    "HolsterAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_SmokeGrenade_Holster'",
+        "ObjectPath": "/Game/Animation/Characters/Weapons/Throwable/SmokeGrenade/AM_FP_SmokeGrenade_Holster.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_EquipmentRH_Holster'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/EquipmentRH/Actions/AM_TP_Gen_EquipmentRH_Holster.0"
+      }
+    },
+    "EquippedAnimSet": {
+      "DefaultFirstPersonLayer": {
+        "AssetPathName": "/SmokeGrenade/Data/ABP_FP_SmokeGrenade_Layer_RW.ABP_FP_SmokeGrenade_Layer_RW_C",
+        "SubPathString": ""
+      },
+      "DefaultThirdPersonLayer": {
+        "AssetPathName": "/Game/Animation/Blueprints/Character/Layers/WeaponArchetypes/Throwable/ABP_TP_Grenade_Layer_RW.ABP_TP_Grenade_Layer_RW_C",
+        "SubPathString": ""
+      }
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_InputActionExtension_0 ---
+{
+  "Type": "WDItemExtensionData_Input",
+  "Name": "WDItemExtensionData_InputActionExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Input'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_SmokeGrenade_Red:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/SmokeGrenade/Data/ColourVariants/ID_SmokeGrenade_Red.7"
+  },
+  "Properties": {
+    "InputMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_GrenadeWeapon'",
+      "ObjectPath": "/Game/Weapons/Input/IMC_GrenadeWeapon.3"
+    },
+    "InputBehaviors": [
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.Player.PrimaryUse"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_SmokeGrenade_Red:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_0'",
+          "ObjectPath": "/SmokeGrenade/Data/ColourVariants/ID_SmokeGrenade_Red.14"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.Player.PrimaryAltUse"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_SmokeGrenade_Red:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_2'",
+          "ObjectPath": "/SmokeGrenade/Data/ColourVariants/ID_SmokeGrenade_Red.15"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.Inspect"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_SmokeGrenade_Red:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_4'",
+          "ObjectPath": "/SmokeGrenade/Data/ColourVariants/ID_SmokeGrenade_Red.16"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Inventory_0 ---
+{
+  "Type": "WDItemExtensionData_Inventory",
+  "Name": "WDItemExtensionData_Inventory_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Inventory'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_SmokeGrenade_Red:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/SmokeGrenade/Data/ColourVariants/ID_SmokeGrenade_Red.7"
+  },
+  "Properties": {
+    "ActionResourceRequirements": [
+      {
+        "Key": {
+          "TagName": "Action.Throw.Primary"
+        },
+        "Value": {
+          "RequiredResource": {
+            "TagName": "ID.Item.SmokeGrenade.Red"
+          },
+          "ResourcesUsed": 1,
+          "bLimitSearchToItem": false,
+          "OptionalRequiredSubSlotCategory": {
+            "TagName": "None"
+          },
+          "ResourceType": {
+            "TagName": "Item.Resource.Self"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Action.Throw.Secondary"
+        },
+        "Value": {
+          "RequiredResource": {
+            "TagName": "ID.Item.SmokeGrenade.Red"
+          },
+          "ResourcesUsed": 1,
+          "bLimitSearchToItem": false,
+          "OptionalRequiredSubSlotCategory": {
+            "TagName": "None"
+          },
+          "ResourceType": {
+            "TagName": "Item.Resource.Self"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Action.Throw.Dropped"
+        },
+        "Value": {
+          "RequiredResource": {
+            "TagName": "ID.Item.SmokeGrenade.Red"
+          },
+          "ResourcesUsed": 1,
+          "bLimitSearchToItem": false,
+          "OptionalRequiredSubSlotCategory": {
+            "TagName": "None"
+          },
+          "ResourceType": {
+            "TagName": "Item.Resource.Self"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemFragment_Throwable_0 ---
+{
+  "Type": "WDItemExtensionData_Throwable",
+  "Name": "WDItemFragment_Throwable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Throwable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_SmokeGrenade_Red:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/SmokeGrenade/Data/ColourVariants/ID_SmokeGrenade_Red.7"
+  },
+  "Properties": {
+    "ThrowableClass": {
+      "AssetPathName": "/SmokeGrenade/Data/ColourVariants/B_SmokeGrenade_Red.B_SmokeGrenade_Red_C",
+      "SubPathString": ""
+    },
+    "ThrowActions": [
+      {
+        "Key": {
+          "TagName": "Action.Throw.Primary"
+        },
+        "Value": {
+          "bUseConsistentVelocity": false,
+          "ThrowVelocity": 2000.0,
+          "VelocityCurve": {
+            "ObjectName": "CurveFloat'CRV_ThrowVelocity_OverarmStrong'",
+            "ObjectPath": "/Game/Items/Throwable/Curves/CRV_ThrowVelocity_OverarmStrong.0"
+          },
+          "OwnerVerticalVelocityInfluence": 1.0,
+          "OwnerHorizontalVelocityInfluence": 0.45,
+          "PitchCurve": {
+            "ObjectName": "CurveFloat'CRV_ThrowPitch_OverarmStrong'",
+            "ObjectPath": "/Game/Items/Throwable/Curves/CRV_ThrowPitch_OverarmStrong.0"
+          },
+          "MinAngularVelocity": {
+            "X": 50.0,
+            "Y": 200.0,
+            "Z": 50.0
+          },
+          "MaxAngularVelocity": {
+            "X": 100.0,
+            "Y": 400.0,
+            "Z": 100.0
+          },
+          "SpawnOffset": {
+            "X": 40.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "BlockEquipAfterDestroyTime": 0.5,
+          "ThrowTypeTag": {
+            "TagName": "Action.Throw.Primary"
+          },
+          "ThrowAnimationTag": {
+            "TagName": "Animation.Asset.Throwable.Overarm"
+          },
+          "ThrowInputReleaseTag": {
+            "TagName": "Input.NamedActions.Throwable.Throw.Primary.Release"
+          },
+          "SwapThrowTypeTag": {
+            "TagName": "Action.Throw.Secondary"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Action.Throw.Secondary"
+        },
+        "Value": {
+          "bUseConsistentVelocity": false,
+          "ThrowVelocity": 1200.0,
+          "VelocityCurve": {
+            "ObjectName": "CurveFloat'CRV_ThrowVelocity_Underarm'",
+            "ObjectPath": "/Game/Items/Throwable/Curves/CRV_ThrowVelocity_Underarm.0"
+          },
+          "OwnerVerticalVelocityInfluence": 1.0,
+          "OwnerHorizontalVelocityInfluence": 0.45,
+          "PitchCurve": {
+            "ObjectName": "CurveFloat'CRV_ThrowPitch_Underarm'",
+            "ObjectPath": "/Game/Items/Throwable/Curves/CRV_ThrowPitch_Underarm.0"
+          },
+          "MinAngularVelocity": {
+            "X": 25.0,
+            "Y": 100.0,
+            "Z": 25.0
+          },
+          "MaxAngularVelocity": {
+            "X": 50.0,
+            "Y": 200.0,
+            "Z": 50.0
+          },
+          "SpawnOffset": {
+            "X": 40.0,
+            "Y": 0.0,
+            "Z": -10.0
+          },
+          "BlockEquipAfterDestroyTime": 0.4,
+          "ThrowTypeTag": {
+            "TagName": "Action.Throw.Secondary"
+          },
+          "ThrowAnimationTag": {
+            "TagName": "Animation.Asset.Throwable.Underarm"
+          },
+          "ThrowInputReleaseTag": {
+            "TagName": "Input.NamedActions.Throwable.Throw.Primary.Release"
+          },
+          "SwapThrowTypeTag": {
+            "TagName": "Action.Throw.Primary"
+          }
+        }
+      }
+    ],
+    "bDropOnInterrupt": false,
+    "DropSpawnOffset": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": -40.0
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_0 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_SmokeGrenade_Red:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/SmokeGrenade/Data/ColourVariants/ID_SmokeGrenade_Red.11"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Throw.Primary"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_2 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_SmokeGrenade_Red:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/SmokeGrenade/Data/ColourVariants/ID_SmokeGrenade_Red.11"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Throw.Swap"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_4 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_SmokeGrenade_Red:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/SmokeGrenade/Data/ColourVariants/ID_SmokeGrenade_Red.11"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Item.Inspect"
+    }
+  }
+}

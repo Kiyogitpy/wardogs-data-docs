@@ -1,0 +1,333 @@
+--- export: UObject / AEB_DeactivateControlBusMixes_C_0 ---
+{
+  "Type": "AEB_DeactivateControlBusMixes_C",
+  "Name": "AEB_DeactivateControlBusMixes_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_DeactivateControlBusMixes.AEB_DeactivateControlBusMixes_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Death'",
+    "ObjectPath": "/Game/Audio/Events/Player/Death/AE_Player_Death.5"
+  },
+  "Template": {
+    "ObjectName": "AEB_DeactivateControlBusMixes_C'Default__AEB_DeactivateControlBusMixes_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_DeactivateControlBusMixes.0"
+  },
+  "Properties": {
+    "Control Bus Mixes To Deactivate": [
+      {
+        "ObjectName": "SoundControlBusMix'AM_CBM_ADS'",
+        "ObjectPath": "/Game/Audio/AudioModulation/ControlBusMixes/AM_CBM_ADS.0"
+      },
+      {
+        "ObjectName": "SoundControlBusMix'AM_CBM_Focus'",
+        "ObjectPath": "/Game/Audio/AudioModulation/ControlBusMixes/AM_CBM_Focus.0"
+      },
+      {
+        "ObjectName": "SoundControlBusMix'AM_CBM_Helicopter_Exterior'",
+        "ObjectPath": "/Game/Audio/AudioModulation/ControlBusMixes/AM_CBM_Helicopter_Exterior.0"
+      },
+      {
+        "ObjectName": "SoundControlBusMix'AM_CBM_Helicopter_Interior'",
+        "ObjectPath": "/Game/Audio/AudioModulation/ControlBusMixes/AM_CBM_Helicopter_Interior.0"
+      },
+      {
+        "ObjectName": "SoundControlBusMix'AM_CBM_Helicopter_Interior_Gunner'",
+        "ObjectPath": "/Game/Audio/AudioModulation/ControlBusMixes/AM_CBM_Helicopter_Interior_Gunner.0"
+      },
+      {
+        "ObjectName": "SoundControlBusMix'AM_CBM_SpawnBoardWait'",
+        "ObjectPath": "/Game/Audio/AudioModulation/ControlBusMixes/AM_CBM_SpawnBoardWait.0"
+      },
+      {
+        "ObjectName": "SoundControlBusMix'AM_CBM_Tinnitus'",
+        "ObjectPath": "/Game/Audio/AudioModulation/ControlBusMixes/AM_CBM_Tinnitus.0"
+      },
+      {
+        "ObjectName": "SoundControlBusMix'AM_CBM_UIScene'",
+        "ObjectPath": "/Game/Audio/AudioModulation/ControlBusMixes/AM_CBM_UIScene.0"
+      },
+      {
+        "ObjectName": "SoundControlBusMix'AM_CBM_UIScene_DeploymentScreen'",
+        "ObjectPath": "/Game/Audio/AudioModulation/ControlBusMixes/AM_CBM_UIScene_DeploymentScreen.0"
+      },
+      {
+        "ObjectName": "SoundControlBusMix'AM_CBM_UIScene_FactionSelect'",
+        "ObjectPath": "/Game/Audio/AudioModulation/ControlBusMixes/AM_CBM_UIScene_FactionSelect.0"
+      },
+      {
+        "ObjectName": "SoundControlBusMix'AM_CBM_UIScene_LoadingScreen'",
+        "ObjectPath": "/Game/Audio/AudioModulation/ControlBusMixes/AM_CBM_UIScene_LoadingScreen.0"
+      },
+      {
+        "ObjectName": "SoundControlBusMix'AM_CBM_UIScene_Scoreboard'",
+        "ObjectPath": "/Game/Audio/AudioModulation/ControlBusMixes/AM_CBM_UIScene_Scoreboard.0"
+      },
+      {
+        "ObjectName": "SoundControlBusMix'AM_CBM_UIScene_Vendor'",
+        "ObjectPath": "/Game/Audio/AudioModulation/ControlBusMixes/AM_CBM_UIScene_Vendor.0"
+      },
+      {
+        "ObjectName": "SoundControlBusMix'AM_CBM_Vehicle_DuneBuggy_Interior'",
+        "ObjectPath": "/Game/Audio/AudioModulation/ControlBusMixes/AM_CBM_Vehicle_DuneBuggy_Interior.0"
+      },
+      {
+        "ObjectName": "SoundControlBusMix'AM_CBM_Vehicle_Exterior'",
+        "ObjectPath": "/Game/Audio/AudioModulation/ControlBusMixes/AM_CBM_Vehicle_Exterior.0"
+      },
+      {
+        "ObjectName": "SoundControlBusMix'AM_CBM_Vehicle_Interior'",
+        "ObjectPath": "/Game/Audio/AudioModulation/ControlBusMixes/AM_CBM_Vehicle_Interior.0"
+      }
+    ],
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / AEB_PlayPerspectiveDeathSound_C_0 ---
+{
+  "Type": "AEB_PlayPerspectiveDeathSound_C",
+  "Name": "AEB_PlayPerspectiveDeathSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayPerspectiveDeathSound.AEB_PlayPerspectiveDeathSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Death'",
+    "ObjectPath": "/Game/Audio/Events/Player/Death/AE_Player_Death.5"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayPerspectiveDeathSound_C'Default__AEB_PlayPerspectiveDeathSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayPerspectiveDeathSound.0"
+  },
+  "Properties": {
+    "1P Death Sounds": [
+      {
+        "Key": "Class'/Script/WDGame.WDImpactDamageType'",
+        "Value": {
+          "ObjectName": "MetaSoundSource'MSS_Player_Death_FromImpact_1p'",
+          "ObjectPath": "/Game/Audio/Player/Damage/FromImpact/MSS_Player_Death_FromImpact_1p.0"
+        }
+      },
+      {
+        "Key": "Class'/Script/WDGame.WDMeleeDamageType'",
+        "Value": {
+          "ObjectName": "MetaSoundSource'MSS_Player_Death_FromMelee_1p'",
+          "ObjectPath": "/Game/Audio/Player/Death/FromMelee/MSS_Player_Death_FromMelee_1p.0"
+        }
+      }
+    ],
+    "3P Death Sounds": [
+      {
+        "Key": "Class'/Script/WDGame.WDImpactDamageType'",
+        "Value": {
+          "ObjectName": "MetaSoundSource'MSS_Player_Death_FromImpact_3p'",
+          "ObjectPath": "/Game/Audio/Player/Damage/FromImpact/MSS_Player_Death_FromImpact_3p.0"
+        }
+      },
+      {
+        "Key": "Class'/Script/WDGame.WDMeleeDamageType'",
+        "Value": {
+          "ObjectName": "MetaSoundSource'MSS_Player_Death_FromMelee_3p'",
+          "ObjectPath": "/Game/Audio/Player/Death/FromMelee/MSS_Player_Death_FromMelee_3p.0"
+        }
+      }
+    ],
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Player_Death_FromMelee_3p'",
+      "ObjectPath": "/Game/Audio/Player/Death/FromMelee/MSS_Player_Death_FromMelee_3p.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Death"
+    },
+    "_aaabhonahgpdbjealfaaa_$ED076F31940B5000$_$23$": 58.0
+  }
+}
+--- export: UObject / AEB_RequestVox_C_0 ---
+{
+  "Type": "AEB_RequestVox_C",
+  "Name": "AEB_RequestVox_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_RequestVox.AEB_RequestVox_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Death'",
+    "ObjectPath": "/Game/Audio/Events/Player/Death/AE_Player_Death.5"
+  },
+  "Template": {
+    "ObjectName": "AEB_RequestVox_C'Default__AEB_RequestVox_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_RequestVox.0"
+  },
+  "Properties": {
+    "VoxRequest": {
+      "LineID": {
+        "TagName": "Audio.Vox.Exertion.TakingDamage.GoingCritical"
+      }
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Vocalisations"
+    }
+  }
+}
+--- export: UObject / AEB_SendActiveMusicTriggerParameter_C_0 ---
+{
+  "Type": "AEB_SendActiveMusicTriggerParameter_C",
+  "Name": "AEB_SendActiveMusicTriggerParameter_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SendActiveMusicTriggerParameter.AEB_SendActiveMusicTriggerParameter_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Death'",
+    "ObjectPath": "/Game/Audio/Events/Player/Death/AE_Player_Death.5"
+  },
+  "Template": {
+    "ObjectName": "AEB_SendActiveMusicTriggerParameter_C'Default__AEB_SendActiveMusicTriggerParameter_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SendActiveMusicTriggerParameter.0"
+  },
+  "Properties": {
+    "Parameter Name": "Death",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / AEB_StopSoundByContext_C_0 ---
+{
+  "Type": "AEB_StopSoundByContext_C",
+  "Name": "AEB_StopSoundByContext_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_StopSoundByContext.AEB_StopSoundByContext_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Death'",
+    "ObjectPath": "/Game/Audio/Events/Player/Death/AE_Player_Death.5"
+  },
+  "Template": {
+    "ObjectName": "AEB_StopSoundByContext_C'Default__AEB_StopSoundByContext_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_StopSoundByContext.0"
+  },
+  "Properties": {
+    "Fade Out Duration": 0.2,
+    "Context Tags Array": [
+      {
+        "TagName": "Audio.Context.Vehicle.Artillery.Travel.1p"
+      },
+      {
+        "TagName": "Audio.Context.Player.Fall.Parachute"
+      },
+      {
+        "TagName": "Audio.Context.Player.Vault"
+      },
+      {
+        "TagName": "Audio.Context.Default"
+      },
+      {
+        "TagName": "Audio.Context.Player.Reviving"
+      },
+      {
+        "TagName": "Audio.Context.Player.Fall.SkyDive"
+      },
+      {
+        "TagName": "Audio.Context.Player.Fall.Parachute"
+      },
+      {
+        "TagName": "Audio.Context.Player.Healing"
+      }
+    ],
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Player_Death ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Player_Death",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Death/AE_Player_Death",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.Death"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_PlayPerspectiveDeathSound_C'AE_Player_Death:AEB_PlayPerspectiveDeathSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Death/AE_Player_Death.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Player_Death:CrosstalkAudioEventBehaviorAttachSoundToActor_2'",
+        "ObjectPath": "/Game/Audio/Events/Player/Death/AE_Player_Death.7"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Player_Death:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Death/AE_Player_Death.6"
+      },
+      {
+        "ObjectName": "AEB_RequestVox_C'AE_Player_Death:AEB_RequestVox_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Death/AE_Player_Death.2"
+      },
+      {
+        "ObjectName": "AEB_DeactivateControlBusMixes_C'AE_Player_Death:AEB_DeactivateControlBusMixes_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Death/AE_Player_Death.0"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Player_Death:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Death/AE_Player_Death.8"
+      },
+      {
+        "ObjectName": "AEB_StopSoundByContext_C'AE_Player_Death:AEB_StopSoundByContext_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Death/AE_Player_Death.4"
+      },
+      {
+        "ObjectName": "AEB_SendActiveMusicTriggerParameter_C'AE_Player_Death:AEB_SendActiveMusicTriggerParameter_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Death/AE_Player_Death.3"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Death'",
+    "ObjectPath": "/Game/Audio/Events/Player/Death/AE_Player_Death.5"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Vocalisations"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_2 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Death'",
+    "ObjectPath": "/Game/Audio/Events/Player/Death/AE_Player_Death.5"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Death"
+    },
+    "_aaabhonahgpdbjealfaaa_$ED076F31940B5000$_$23$": 58.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Death'",
+    "ObjectPath": "/Game/Audio/Events/Player/Death/AE_Player_Death.5"
+  },
+  "Properties": {
+    "ParameterName": "StopFire",
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Fire"
+    }
+  }
+}

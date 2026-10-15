@@ -1,0 +1,56 @@
+--- export: UPrimaryDataAsset / VP_WHL_07_MainBody_Default ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_WHL_07_MainBody_Default",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/WHL_07/Parts/VP_WHL_07_MainBody_Default",
+  "Properties": {
+    "Tags": [
+      "Vehicle.MainBody"
+    ],
+    "Fragments": [
+      {
+        "Key": "Body",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_WHL_07_MainBody_Default:MVF_StaticMesh_1'",
+            "ObjectPath": "/WHL_07/Parts/VP_WHL_07_MainBody_Default.1"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / MVF_StaticMesh_1 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_07_MainBody_Default'",
+    "ObjectPath": "/WHL_07/Parts/VP_WHL_07_MainBody_Default.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceID": "Chassis",
+        "SocketName": "Cabin_J"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/WHL_07/Meshes/SM_WHL_07_Cabin.SM_WHL_07_Cabin",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    },
+    "WalkableSlopeOverride": {
+      "WalkableSlopeBehavior": "EWalkableSlopeBehavior::WalkableSlope_Default"
+    }
+  }
+}

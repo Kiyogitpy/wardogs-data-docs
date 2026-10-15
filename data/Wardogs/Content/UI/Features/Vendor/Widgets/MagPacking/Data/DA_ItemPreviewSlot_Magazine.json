@@ -1,0 +1,37 @@
+--- export: UDataAsset / DA_ItemPreviewSlot_Magazine ---
+{
+  "Type": "WDUIItemPreviewSlotData",
+  "Name": "DA_ItemPreviewSlot_Magazine",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIItemPreviewSlotData'",
+  "Package": "/Game/UI/Features/Vendor/Widgets/MagPacking/Data/DA_ItemPreviewSlot_Magazine",
+  "Properties": {
+    "ItemCardViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIPurchasableItemCardViewModel_Vendor",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/ItemCard/Data/DA_ItemCard_Vendor_Purchasable.DA_ItemCard_Vendor_Purchasable",
+        "SubPathString": ""
+      }
+    },
+    "HintIconType": {
+      "TagName": "UI.Icon.Vendor"
+    },
+    "States": [
+      {
+        "Key": {
+          "TagName": "UI.Shared.ShapeGrid.SlotState.Available"
+        },
+        "Value": 0
+      },
+      {
+        "Key": {
+          "TagName": "UI.Shared.ShapeGrid.SlotState.Unavailable"
+        },
+        "Value": 1
+      }
+    ]
+  }
+}

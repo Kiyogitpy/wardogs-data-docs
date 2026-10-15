@@ -1,0 +1,56 @@
+--- export: UPrimaryDataAsset / AE_FoliageMovement_Stop ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_FoliageMovement_Stop",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Movement/Foliage/AE_FoliageMovement_Stop",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.Footstep.Foliage.Stop"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized'AE_FoliageMovement_Stop:WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Foliage/AE_FoliageMovement_Stop.2"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorDetachSound'AE_FoliageMovement_Stop:CrosstalkAudioEventBehaviorDetachSound_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Foliage/AE_FoliageMovement_Stop.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorDetachSound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorDetachSound",
+  "Name": "CrosstalkAudioEventBehaviorDetachSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorDetachSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_FoliageMovement_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Foliage/AE_FoliageMovement_Stop.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Foliage"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized_0 ---
+{
+  "Type": "WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized",
+  "Name": "WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_FoliageMovement_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Foliage/AE_FoliageMovement_Stop.0"
+  },
+  "Properties": {
+    "ParameterName": "Stop",
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Foliage"
+    }
+  }
+}

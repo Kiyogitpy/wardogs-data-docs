@@ -1,0 +1,147 @@
+--- export: UObject / BHGameFeatureAction_RegisterMatchStates_0 ---
+{
+  "Type": "BHGameFeatureAction_RegisterMatchStates",
+  "Name": "BHGameFeatureAction_RegisterMatchStates_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHGameFeatureAction_RegisterMatchStates'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'ShootingRange'",
+    "ObjectPath": "/ShootingRange/ShootingRange.4"
+  },
+  "Properties": {
+    "MatchStates": [
+      {
+        "AssetPathName": "/Script/ShootingRangeRuntime.WDMatchState_Playing_ShootingRange",
+        "SubPathString": ""
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_AddComponents_0 ---
+{
+  "Type": "GameFeatureAction_AddComponents",
+  "Name": "GameFeatureAction_AddComponents_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddComponents'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'ShootingRange'",
+    "ObjectPath": "/ShootingRange/ShootingRange.4"
+  },
+  "Properties": {
+    "ComponentList": [
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDGameState",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Game/GameMechanics/Gamemode/B_FactionSetup_CreateThreeTeams.B_FactionSetup_CreateThreeTeams_C",
+          "SubPathString": ""
+        },
+        "bClientComponent": true,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      },
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDGameState",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Script/ShootingRangeRuntime.WDShootingRangeComponent",
+          "SubPathString": ""
+        },
+        "bClientComponent": true,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      },
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDGameModeSession",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Script/ShootingRangeRuntime.WDShootingRangePlayerSpawnManagerComponent",
+          "SubPathString": ""
+        },
+        "bClientComponent": true,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_AddWorldPartitionContent_0 ---
+{
+  "Type": "GameFeatureAction_AddWorldPartitionContent",
+  "Name": "GameFeatureAction_AddWorldPartitionContent_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddWorldPartitionContent'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'ShootingRange'",
+    "ObjectPath": "/ShootingRange/ShootingRange.4"
+  },
+  "Properties": {
+    "ExternalDataLayerAsset": {
+      "ObjectName": "ExternalDataLayerAsset'EDL_ShootingRange'",
+      "ObjectPath": "/ShootingRange/DataLayers/EDL_ShootingRange.0"
+    }
+  }
+}
+--- export: UObject / GameFeatureAction_DataRegistrySource_0 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'ShootingRange'",
+    "ObjectPath": "/ShootingRange/ShootingRange.4"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "TrackerData_Minimap",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Game/UI/Features/HUD/Minimap/Widgets/Trackers/Data/DT_TrackerData_Minimap.DT_TrackerData_Minimap",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / ShootingRange ---
+{
+  "Type": "GameFeatureData",
+  "Name": "ShootingRange",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/ShootingRange/ShootingRange",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_AddComponents'ShootingRange:GameFeatureAction_AddComponents_0'",
+        "ObjectPath": "/ShootingRange/ShootingRange.1"
+      },
+      {
+        "ObjectName": "BHGameFeatureAction_RegisterMatchStates'ShootingRange:BHGameFeatureAction_RegisterMatchStates_0'",
+        "ObjectPath": "/ShootingRange/ShootingRange.0"
+      },
+      {
+        "ObjectName": "GameFeatureAction_AddWorldPartitionContent'ShootingRange:GameFeatureAction_AddWorldPartitionContent_0'",
+        "ObjectPath": "/ShootingRange/ShootingRange.2"
+      },
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'ShootingRange:GameFeatureAction_DataRegistrySource_0'",
+        "ObjectPath": "/ShootingRange/ShootingRange.3"
+      }
+    ]
+  }
+}

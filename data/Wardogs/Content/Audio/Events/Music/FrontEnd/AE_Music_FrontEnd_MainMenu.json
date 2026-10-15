@@ -1,0 +1,84 @@
+--- export: UPrimaryDataAsset / AE_Music_FrontEnd_MainMenu ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Music_FrontEnd_MainMenu",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Music/FrontEnd/AE_Music_FrontEnd_MainMenu",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Music.FrontEnd.MainMenu"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "WDAudioEventBehaviorEnableMusicState'AE_Music_FrontEnd_MainMenu:WDAudioEventBehaviorEnableMusicState_0'",
+        "ObjectPath": "/Game/Audio/Events/Music/FrontEnd/AE_Music_FrontEnd_MainMenu.3"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorDisableMusicState'AE_Music_FrontEnd_MainMenu:WDAudioEventBehaviorDisableMusicState_0'",
+        "ObjectPath": "/Game/Audio/Events/Music/FrontEnd/AE_Music_FrontEnd_MainMenu.1"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorDisableMusicState'AE_Music_FrontEnd_MainMenu:WDAudioEventBehaviorDisableMusicState_1'",
+        "ObjectPath": "/Game/Audio/Events/Music/FrontEnd/AE_Music_FrontEnd_MainMenu.2"
+      }
+    ]
+  }
+}
+--- export: UObject / WDAudioEventBehaviorDisableMusicState_0 ---
+{
+  "Type": "WDAudioEventBehaviorDisableMusicState",
+  "Name": "WDAudioEventBehaviorDisableMusicState_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorDisableMusicState'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Music_FrontEnd_MainMenu'",
+    "ObjectPath": "/Game/Audio/Events/Music/FrontEnd/AE_Music_FrontEnd_MainMenu.0"
+  },
+  "Properties": {
+    "StateToDisable": {
+      "TagName": "Audio.Music.EndGame"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviorDisableMusicState_1 ---
+{
+  "Type": "WDAudioEventBehaviorDisableMusicState",
+  "Name": "WDAudioEventBehaviorDisableMusicState_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorDisableMusicState'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Music_FrontEnd_MainMenu'",
+    "ObjectPath": "/Game/Audio/Events/Music/FrontEnd/AE_Music_FrontEnd_MainMenu.0"
+  },
+  "Properties": {
+    "StateToDisable": {
+      "TagName": "Audio.Music.FirstSpawn"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviorEnableMusicState_0 ---
+{
+  "Type": "WDAudioEventBehaviorEnableMusicState",
+  "Name": "WDAudioEventBehaviorEnableMusicState_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorEnableMusicState'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Music_FrontEnd_MainMenu'",
+    "ObjectPath": "/Game/Audio/Events/Music/FrontEnd/AE_Music_FrontEnd_MainMenu.0"
+  },
+  "Properties": {
+    "StateToEnable": {
+      "TagName": "Audio.Music.FrontEnd.MainMenu"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

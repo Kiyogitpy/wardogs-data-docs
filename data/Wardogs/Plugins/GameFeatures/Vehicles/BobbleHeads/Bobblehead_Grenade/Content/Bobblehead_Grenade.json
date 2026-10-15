@@ -1,0 +1,78 @@
+--- export: UObject / GameFeatureAction_DataRegistrySource_0 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Bobblehead_Grenade'",
+    "ObjectPath": "/Bobblehead_Grenade/Bobblehead_Grenade.2"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "CosmeticData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Bobblehead_Grenade/Data/DT_Bobblehead_Grenade_Cosmetics.DT_Bobblehead_Grenade_Cosmetics",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_DataRegistrySource_1 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Bobblehead_Grenade'",
+    "ObjectPath": "/Bobblehead_Grenade/Bobblehead_Grenade.2"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "VehicleSlotParts",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Bobblehead_Grenade/Data/DT_Bobblehead_Grenade_SlotParts.DT_Bobblehead_Grenade_SlotParts",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / Bobblehead_Grenade ---
+{
+  "Type": "GameFeatureData",
+  "Name": "Bobblehead_Grenade",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/Bobblehead_Grenade/Bobblehead_Grenade",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'Bobblehead_Grenade:GameFeatureAction_DataRegistrySource_0'",
+        "ObjectPath": "/Bobblehead_Grenade/Bobblehead_Grenade.0"
+      },
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'Bobblehead_Grenade:GameFeatureAction_DataRegistrySource_1'",
+        "ObjectPath": "/Bobblehead_Grenade/Bobblehead_Grenade.1"
+      }
+    ]
+  }
+}

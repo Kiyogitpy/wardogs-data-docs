@@ -1,0 +1,1336 @@
+--- export: UDataTable / DT_MapImageStyle ---
+{
+  "Type": "DataTable",
+  "Name": "DT_MapImageStyle",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/UI/Features/Map/Widgets/TacticalMap/Data/DT_MapImageStyle",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'RichImageRow'",
+      "ObjectPath": "/Script/UMG"
+    }
+  },
+  "Rows": {
+    "Tower": {
+      "Brush": {
+        "TintColor": {
+          "SpecifiedColor": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFF"
+          },
+          "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+        },
+        "DrawAs": "ESlateBrushDrawType::Image",
+        "Tiling": "ESlateBrushTileType::NoTile",
+        "Mirroring": "ESlateBrushMirrorType::NoMirror",
+        "ImageType": "ESlateBrushImageType::FullColor",
+        "ImageSize": {
+          "X": 256.0,
+          "Y": 256.0
+        },
+        "Margin": {
+          "Left": 0.0,
+          "Top": 0.0,
+          "Right": 0.0,
+          "Bottom": 0.0
+        },
+        "ResourceObject": {
+          "ObjectName": "Texture2D'T_UI_Tower_Legend_Temp'",
+          "ObjectPath": "/Game/UI/Features/Map/Widgets/TacticalMap/Textures/T_UI_Tower_Legend_Temp.0"
+        },
+        "OutlineSettings": {
+          "CornerRadii": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0,
+            "W": 0.0
+          },
+          "Color": {
+            "SpecifiedColor": {
+              "R": 0.0,
+              "G": 0.0,
+              "B": 0.0,
+              "A": 0.0,
+              "Hex": "000000"
+            },
+            "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+          },
+          "Width": 0.0,
+          "RoundingType": "ESlateBrushRoundingType::HalfHeightRadius",
+          "bUseBrushTransparency": false
+        },
+        "UVRegion": {
+          "Min": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Max": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "bIsValid": 0
+        },
+        "bIsDynamicallyLoaded": false,
+        "ResourceName": "None"
+      }
+    },
+    "Spawn": {
+      "Brush": {
+        "TintColor": {
+          "SpecifiedColor": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFF"
+          },
+          "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+        },
+        "DrawAs": "ESlateBrushDrawType::Image",
+        "Tiling": "ESlateBrushTileType::NoTile",
+        "Mirroring": "ESlateBrushMirrorType::NoMirror",
+        "ImageType": "ESlateBrushImageType::FullColor",
+        "ImageSize": {
+          "X": 256.0,
+          "Y": 267.0
+        },
+        "Margin": {
+          "Left": 0.0,
+          "Top": 0.0,
+          "Right": 0.0,
+          "Bottom": 0.0
+        },
+        "ResourceObject": {
+          "ObjectName": "Texture2D'T_UI_Icon_Spatial_GrnTeamSpawn_256px'",
+          "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Textures/T_UI_Icon_Spatial_GrnTeamSpawn_256px.0"
+        },
+        "OutlineSettings": {
+          "CornerRadii": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0,
+            "W": 0.0
+          },
+          "Color": {
+            "SpecifiedColor": {
+              "R": 0.0,
+              "G": 0.0,
+              "B": 0.0,
+              "A": 0.0,
+              "Hex": "000000"
+            },
+            "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+          },
+          "Width": 0.0,
+          "RoundingType": "ESlateBrushRoundingType::HalfHeightRadius",
+          "bUseBrushTransparency": false
+        },
+        "UVRegion": {
+          "Min": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Max": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "bIsValid": 0
+        },
+        "bIsDynamicallyLoaded": false,
+        "ResourceName": "None"
+      }
+    },
+    "SpawnVehicle": {
+      "Brush": {
+        "TintColor": {
+          "SpecifiedColor": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFF"
+          },
+          "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+        },
+        "DrawAs": "ESlateBrushDrawType::Image",
+        "Tiling": "ESlateBrushTileType::Both",
+        "Mirroring": "ESlateBrushMirrorType::NoMirror",
+        "ImageType": "ESlateBrushImageType::FullColor",
+        "ImageSize": {
+          "X": 257.0,
+          "Y": 257.0
+        },
+        "Margin": {
+          "Left": 0.0,
+          "Top": 0.0,
+          "Right": 0.0,
+          "Bottom": 0.0
+        },
+        "ResourceObject": {
+          "ObjectName": "Texture2D'T_UI_MapTracker_SpawnVehicle'",
+          "ObjectPath": "/Game/UI/Features/Map/Widgets/Trackers/Textures/T_UI_MapTracker_SpawnVehicle.0"
+        },
+        "OutlineSettings": {
+          "CornerRadii": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0,
+            "W": 0.0
+          },
+          "Color": {
+            "SpecifiedColor": {
+              "R": 0.0,
+              "G": 0.0,
+              "B": 0.0,
+              "A": 0.0,
+              "Hex": "000000"
+            },
+            "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+          },
+          "Width": 0.0,
+          "RoundingType": "ESlateBrushRoundingType::HalfHeightRadius",
+          "bUseBrushTransparency": false
+        },
+        "UVRegion": {
+          "Min": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Max": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "bIsValid": 0
+        },
+        "bIsDynamicallyLoaded": false,
+        "ResourceName": "None"
+      }
+    },
+    "FOB": {
+      "Brush": {
+        "TintColor": {
+          "SpecifiedColor": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFF"
+          },
+          "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+        },
+        "DrawAs": "ESlateBrushDrawType::Image",
+        "Tiling": "ESlateBrushTileType::NoTile",
+        "Mirroring": "ESlateBrushMirrorType::NoMirror",
+        "ImageType": "ESlateBrushImageType::FullColor",
+        "ImageSize": {
+          "X": 200.0,
+          "Y": 200.0
+        },
+        "Margin": {
+          "Left": 0.0,
+          "Top": 0.0,
+          "Right": 0.0,
+          "Bottom": 0.0
+        },
+        "ResourceObject": {
+          "ObjectName": "Texture2D'T_UI_FOB_Temp'",
+          "ObjectPath": "/Game/UI/Features/Map/Widgets/TacticalMap/Textures/T_UI_FOB_Temp.0"
+        },
+        "OutlineSettings": {
+          "CornerRadii": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0,
+            "W": 0.0
+          },
+          "Color": {
+            "SpecifiedColor": {
+              "R": 0.0,
+              "G": 0.0,
+              "B": 0.0,
+              "A": 0.0,
+              "Hex": "000000"
+            },
+            "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+          },
+          "Width": 0.0,
+          "RoundingType": "ESlateBrushRoundingType::HalfHeightRadius",
+          "bUseBrushTransparency": false
+        },
+        "UVRegion": {
+          "Min": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Max": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "bIsValid": 0
+        },
+        "bIsDynamicallyLoaded": false,
+        "ResourceName": "None"
+      }
+    },
+    "GasStation": {
+      "Brush": {
+        "TintColor": {
+          "SpecifiedColor": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFF"
+          },
+          "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+        },
+        "DrawAs": "ESlateBrushDrawType::Image",
+        "Tiling": "ESlateBrushTileType::NoTile",
+        "Mirroring": "ESlateBrushMirrorType::NoMirror",
+        "ImageType": "ESlateBrushImageType::FullColor",
+        "ImageSize": {
+          "X": 512.0,
+          "Y": 512.0
+        },
+        "Margin": {
+          "Left": 0.0,
+          "Top": 0.0,
+          "Right": 0.0,
+          "Bottom": 0.0
+        },
+        "ResourceObject": {
+          "ObjectName": "Texture2D'T_UI_Icon_Utility_fuel_Textured_512x512'",
+          "ObjectPath": "/Game/UI/Shared/Icons/Utility/T_UI_Icon_Utility_fuel_Textured_512x512.0"
+        },
+        "OutlineSettings": {
+          "CornerRadii": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0,
+            "W": 0.0
+          },
+          "Color": {
+            "SpecifiedColor": {
+              "R": 0.0,
+              "G": 0.0,
+              "B": 0.0,
+              "A": 0.0,
+              "Hex": "000000"
+            },
+            "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+          },
+          "Width": 0.0,
+          "RoundingType": "ESlateBrushRoundingType::HalfHeightRadius",
+          "bUseBrushTransparency": false
+        },
+        "UVRegion": {
+          "Min": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Max": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "bIsValid": 0
+        },
+        "bIsDynamicallyLoaded": false,
+        "ResourceName": "None"
+      }
+    },
+    "Ping": {
+      "Brush": {
+        "TintColor": {
+          "SpecifiedColor": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFF"
+          },
+          "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+        },
+        "DrawAs": "ESlateBrushDrawType::Image",
+        "Tiling": "ESlateBrushTileType::NoTile",
+        "Mirroring": "ESlateBrushMirrorType::NoMirror",
+        "ImageType": "ESlateBrushImageType::FullColor",
+        "ImageSize": {
+          "X": 256.0,
+          "Y": 227.0
+        },
+        "Margin": {
+          "Left": 0.0,
+          "Top": 0.0,
+          "Right": 0.0,
+          "Bottom": 0.0
+        },
+        "ResourceObject": {
+          "ObjectName": "Texture2D'T_UI_Icon_Spatial_PingMarker_White_256'",
+          "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Textures/T_UI_Icon_Spatial_PingMarker_White_256.0"
+        },
+        "OutlineSettings": {
+          "CornerRadii": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0,
+            "W": 0.0
+          },
+          "Color": {
+            "SpecifiedColor": {
+              "R": 0.0,
+              "G": 0.0,
+              "B": 0.0,
+              "A": 0.0,
+              "Hex": "000000"
+            },
+            "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+          },
+          "Width": 0.0,
+          "RoundingType": "ESlateBrushRoundingType::HalfHeightRadius",
+          "bUseBrushTransparency": false
+        },
+        "UVRegion": {
+          "Min": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Max": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "bIsValid": 0
+        },
+        "bIsDynamicallyLoaded": false,
+        "ResourceName": "None"
+      }
+    },
+    "DangerPing": {
+      "Brush": {
+        "TintColor": {
+          "SpecifiedColor": {
+            "R": 1.0,
+            "G": 0.0,
+            "B": 0.0,
+            "A": 1.0,
+            "Hex": "FF0000"
+          },
+          "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+        },
+        "DrawAs": "ESlateBrushDrawType::Image",
+        "Tiling": "ESlateBrushTileType::NoTile",
+        "Mirroring": "ESlateBrushMirrorType::NoMirror",
+        "ImageType": "ESlateBrushImageType::FullColor",
+        "ImageSize": {
+          "X": 256.0,
+          "Y": 227.0
+        },
+        "Margin": {
+          "Left": 0.0,
+          "Top": 0.0,
+          "Right": 0.0,
+          "Bottom": 0.0
+        },
+        "ResourceObject": {
+          "ObjectName": "Texture2D'T_UI_Icon_Spatial_PingMarker_White_256'",
+          "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Textures/T_UI_Icon_Spatial_PingMarker_White_256.0"
+        },
+        "OutlineSettings": {
+          "CornerRadii": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0,
+            "W": 0.0
+          },
+          "Color": {
+            "SpecifiedColor": {
+              "R": 0.0,
+              "G": 0.0,
+              "B": 0.0,
+              "A": 0.0,
+              "Hex": "000000"
+            },
+            "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+          },
+          "Width": 0.0,
+          "RoundingType": "ESlateBrushRoundingType::HalfHeightRadius",
+          "bUseBrushTransparency": false
+        },
+        "UVRegion": {
+          "Min": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Max": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "bIsValid": 0
+        },
+        "bIsDynamicallyLoaded": false,
+        "ResourceName": "None"
+      }
+    },
+    "Defend": {
+      "Brush": {
+        "TintColor": {
+          "SpecifiedColor": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFF"
+          },
+          "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+        },
+        "DrawAs": "ESlateBrushDrawType::Image",
+        "Tiling": "ESlateBrushTileType::NoTile",
+        "Mirroring": "ESlateBrushMirrorType::NoMirror",
+        "ImageType": "ESlateBrushImageType::FullColor",
+        "ImageSize": {
+          "X": 92.0,
+          "Y": 92.0
+        },
+        "Margin": {
+          "Left": 0.0,
+          "Top": 0.0,
+          "Right": 0.0,
+          "Bottom": 0.0
+        },
+        "ResourceObject": {
+          "ObjectName": "Texture2D'T_UI_Icon_PingWheel_Defend_64x64'",
+          "ObjectPath": "/Game/UI/Features/PingWheel/Widgets/Action/Textures/T_UI_Icon_PingWheel_Defend_64x64.0"
+        },
+        "OutlineSettings": {
+          "CornerRadii": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0,
+            "W": 0.0
+          },
+          "Color": {
+            "SpecifiedColor": {
+              "R": 0.0,
+              "G": 0.0,
+              "B": 0.0,
+              "A": 0.0,
+              "Hex": "000000"
+            },
+            "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+          },
+          "Width": 0.0,
+          "RoundingType": "ESlateBrushRoundingType::HalfHeightRadius",
+          "bUseBrushTransparency": false
+        },
+        "UVRegion": {
+          "Min": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Max": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "bIsValid": 0
+        },
+        "bIsDynamicallyLoaded": false,
+        "ResourceName": "None"
+      }
+    },
+    "Follow": {
+      "Brush": {
+        "TintColor": {
+          "SpecifiedColor": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFF"
+          },
+          "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+        },
+        "DrawAs": "ESlateBrushDrawType::Image",
+        "Tiling": "ESlateBrushTileType::NoTile",
+        "Mirroring": "ESlateBrushMirrorType::NoMirror",
+        "ImageType": "ESlateBrushImageType::FullColor",
+        "ImageSize": {
+          "X": 92.0,
+          "Y": 92.0
+        },
+        "Margin": {
+          "Left": 0.0,
+          "Top": 0.0,
+          "Right": 0.0,
+          "Bottom": 0.0
+        },
+        "ResourceObject": {
+          "ObjectName": "Texture2D'T_UI_Icon_PingWheel_FollowMe_64x64'",
+          "ObjectPath": "/Game/UI/Features/PingWheel/Widgets/Action/Textures/T_UI_Icon_PingWheel_FollowMe_64x64.0"
+        },
+        "OutlineSettings": {
+          "CornerRadii": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0,
+            "W": 0.0
+          },
+          "Color": {
+            "SpecifiedColor": {
+              "R": 0.0,
+              "G": 0.0,
+              "B": 0.0,
+              "A": 0.0,
+              "Hex": "000000"
+            },
+            "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+          },
+          "Width": 0.0,
+          "RoundingType": "ESlateBrushRoundingType::HalfHeightRadius",
+          "bUseBrushTransparency": false
+        },
+        "UVRegion": {
+          "Min": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Max": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "bIsValid": 0
+        },
+        "bIsDynamicallyLoaded": false,
+        "ResourceName": "None"
+      }
+    },
+    "Attack": {
+      "Brush": {
+        "TintColor": {
+          "SpecifiedColor": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFF"
+          },
+          "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+        },
+        "DrawAs": "ESlateBrushDrawType::Image",
+        "Tiling": "ESlateBrushTileType::NoTile",
+        "Mirroring": "ESlateBrushMirrorType::NoMirror",
+        "ImageType": "ESlateBrushImageType::FullColor",
+        "ImageSize": {
+          "X": 92.0,
+          "Y": 92.0
+        },
+        "Margin": {
+          "Left": 0.0,
+          "Top": 0.0,
+          "Right": 0.0,
+          "Bottom": 0.0
+        },
+        "ResourceObject": {
+          "ObjectName": "Texture2D'T_UI_Icon_PingWheel_Attack_64x64'",
+          "ObjectPath": "/Game/UI/Features/PingWheel/Widgets/Action/Textures/T_UI_Icon_PingWheel_Attack_64x64.0"
+        },
+        "OutlineSettings": {
+          "CornerRadii": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0,
+            "W": 0.0
+          },
+          "Color": {
+            "SpecifiedColor": {
+              "R": 0.0,
+              "G": 0.0,
+              "B": 0.0,
+              "A": 0.0,
+              "Hex": "000000"
+            },
+            "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+          },
+          "Width": 0.0,
+          "RoundingType": "ESlateBrushRoundingType::HalfHeightRadius",
+          "bUseBrushTransparency": false
+        },
+        "UVRegion": {
+          "Min": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Max": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "bIsValid": 0
+        },
+        "bIsDynamicallyLoaded": false,
+        "ResourceName": "None"
+      }
+    },
+    "Healing": {
+      "Brush": {
+        "TintColor": {
+          "SpecifiedColor": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFF"
+          },
+          "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+        },
+        "DrawAs": "ESlateBrushDrawType::Image",
+        "Tiling": "ESlateBrushTileType::NoTile",
+        "Mirroring": "ESlateBrushMirrorType::NoMirror",
+        "ImageType": "ESlateBrushImageType::FullColor",
+        "ImageSize": {
+          "X": 92.0,
+          "Y": 92.0
+        },
+        "Margin": {
+          "Left": 0.0,
+          "Top": 0.0,
+          "Right": 0.0,
+          "Bottom": 0.0
+        },
+        "ResourceObject": {
+          "ObjectName": "Texture2D'T_UI_Icon_PingWheel_Healing_64x64'",
+          "ObjectPath": "/Game/UI/Features/PingWheel/Widgets/Action/Textures/T_UI_Icon_PingWheel_Healing_64x64.0"
+        },
+        "OutlineSettings": {
+          "CornerRadii": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0,
+            "W": 0.0
+          },
+          "Color": {
+            "SpecifiedColor": {
+              "R": 0.0,
+              "G": 0.0,
+              "B": 0.0,
+              "A": 0.0,
+              "Hex": "000000"
+            },
+            "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+          },
+          "Width": 0.0,
+          "RoundingType": "ESlateBrushRoundingType::HalfHeightRadius",
+          "bUseBrushTransparency": false
+        },
+        "UVRegion": {
+          "Min": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Max": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "bIsValid": 0
+        },
+        "bIsDynamicallyLoaded": false,
+        "ResourceName": "None"
+      }
+    },
+    "Ammo": {
+      "Brush": {
+        "TintColor": {
+          "SpecifiedColor": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFF"
+          },
+          "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+        },
+        "DrawAs": "ESlateBrushDrawType::Image",
+        "Tiling": "ESlateBrushTileType::NoTile",
+        "Mirroring": "ESlateBrushMirrorType::NoMirror",
+        "ImageType": "ESlateBrushImageType::FullColor",
+        "ImageSize": {
+          "X": 128.0,
+          "Y": 128.0
+        },
+        "Margin": {
+          "Left": 0.0,
+          "Top": 0.0,
+          "Right": 0.0,
+          "Bottom": 0.0
+        },
+        "ResourceObject": {
+          "ObjectName": "Texture2D'T_UI_Icon_Request_Ammo'",
+          "ObjectPath": "/Game/UI/Shared/Icons/Trackers/T_UI_Icon_Request_Ammo.0"
+        },
+        "OutlineSettings": {
+          "CornerRadii": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0,
+            "W": 0.0
+          },
+          "Color": {
+            "SpecifiedColor": {
+              "R": 0.0,
+              "G": 0.0,
+              "B": 0.0,
+              "A": 0.0,
+              "Hex": "000000"
+            },
+            "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+          },
+          "Width": 0.0,
+          "RoundingType": "ESlateBrushRoundingType::HalfHeightRadius",
+          "bUseBrushTransparency": false
+        },
+        "UVRegion": {
+          "Min": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Max": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "bIsValid": 0
+        },
+        "bIsDynamicallyLoaded": false,
+        "ResourceName": "None"
+      }
+    },
+    "Squad": {
+      "Brush": {
+        "TintColor": {
+          "SpecifiedColor": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFF"
+          },
+          "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+        },
+        "DrawAs": "ESlateBrushDrawType::Image",
+        "Tiling": "ESlateBrushTileType::NoTile",
+        "Mirroring": "ESlateBrushMirrorType::NoMirror",
+        "ImageType": "ESlateBrushImageType::FullColor",
+        "ImageSize": {
+          "X": 128.0,
+          "Y": 128.0
+        },
+        "Margin": {
+          "Left": 0.0,
+          "Top": 0.0,
+          "Right": 0.0,
+          "Bottom": 0.0
+        },
+        "ResourceObject": {
+          "ObjectName": "Texture2D'T_UI_SquadInviteRequest_Icon'",
+          "ObjectPath": "/Game/UI/Shared/Icons/Trackers/T_UI_SquadInviteRequest_Icon.0"
+        },
+        "OutlineSettings": {
+          "CornerRadii": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0,
+            "W": 0.0
+          },
+          "Color": {
+            "SpecifiedColor": {
+              "R": 0.0,
+              "G": 0.0,
+              "B": 0.0,
+              "A": 0.0,
+              "Hex": "000000"
+            },
+            "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+          },
+          "Width": 0.0,
+          "RoundingType": "ESlateBrushRoundingType::HalfHeightRadius",
+          "bUseBrushTransparency": false
+        },
+        "UVRegion": {
+          "Min": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Max": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "bIsValid": 0
+        },
+        "bIsDynamicallyLoaded": false,
+        "ResourceName": "None"
+      }
+    },
+    "Fuel": {
+      "Brush": {
+        "TintColor": {
+          "SpecifiedColor": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFF"
+          },
+          "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+        },
+        "DrawAs": "ESlateBrushDrawType::Image",
+        "Tiling": "ESlateBrushTileType::NoTile",
+        "Mirroring": "ESlateBrushMirrorType::NoMirror",
+        "ImageType": "ESlateBrushImageType::FullColor",
+        "ImageSize": {
+          "X": 142.0,
+          "Y": 142.0
+        },
+        "Margin": {
+          "Left": 0.0,
+          "Top": 0.0,
+          "Right": 0.0,
+          "Bottom": 0.0
+        },
+        "ResourceObject": {
+          "ObjectName": "Texture2D'T_UI_FuelRequest_Icon'",
+          "ObjectPath": "/Game/UI/Shared/Icons/Trackers/T_UI_FuelRequest_Icon.0"
+        },
+        "OutlineSettings": {
+          "CornerRadii": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0,
+            "W": 0.0
+          },
+          "Color": {
+            "SpecifiedColor": {
+              "R": 0.0,
+              "G": 0.0,
+              "B": 0.0,
+              "A": 0.0,
+              "Hex": "000000"
+            },
+            "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+          },
+          "Width": 0.0,
+          "RoundingType": "ESlateBrushRoundingType::HalfHeightRadius",
+          "bUseBrushTransparency": false
+        },
+        "UVRegion": {
+          "Min": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Max": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "bIsValid": 0
+        },
+        "bIsDynamicallyLoaded": false,
+        "ResourceName": "None"
+      }
+    },
+    "Repair": {
+      "Brush": {
+        "TintColor": {
+          "SpecifiedColor": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFF"
+          },
+          "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+        },
+        "DrawAs": "ESlateBrushDrawType::Image",
+        "Tiling": "ESlateBrushTileType::NoTile",
+        "Mirroring": "ESlateBrushMirrorType::NoMirror",
+        "ImageType": "ESlateBrushImageType::FullColor",
+        "ImageSize": {
+          "X": 142.0,
+          "Y": 142.0
+        },
+        "Margin": {
+          "Left": 0.0,
+          "Top": 0.0,
+          "Right": 0.0,
+          "Bottom": 0.0
+        },
+        "ResourceObject": {
+          "ObjectName": "Texture2D'T_UI_RepairRequest_Icon'",
+          "ObjectPath": "/Game/UI/Shared/Icons/Trackers/T_UI_RepairRequest_Icon.0"
+        },
+        "OutlineSettings": {
+          "CornerRadii": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0,
+            "W": 0.0
+          },
+          "Color": {
+            "SpecifiedColor": {
+              "R": 0.0,
+              "G": 0.0,
+              "B": 0.0,
+              "A": 0.0,
+              "Hex": "000000"
+            },
+            "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+          },
+          "Width": 0.0,
+          "RoundingType": "ESlateBrushRoundingType::HalfHeightRadius",
+          "bUseBrushTransparency": false
+        },
+        "UVRegion": {
+          "Min": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Max": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "bIsValid": 0
+        },
+        "bIsDynamicallyLoaded": false,
+        "ResourceName": "None"
+      }
+    },
+    "Dropoff": {
+      "Brush": {
+        "TintColor": {
+          "SpecifiedColor": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFF"
+          },
+          "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+        },
+        "DrawAs": "ESlateBrushDrawType::Image",
+        "Tiling": "ESlateBrushTileType::NoTile",
+        "Mirroring": "ESlateBrushMirrorType::NoMirror",
+        "ImageType": "ESlateBrushImageType::FullColor",
+        "ImageSize": {
+          "X": 142.0,
+          "Y": 142.0
+        },
+        "Margin": {
+          "Left": 0.0,
+          "Top": 0.0,
+          "Right": 0.0,
+          "Bottom": 0.0
+        },
+        "ResourceObject": {
+          "ObjectName": "Texture2D'T_UI_DropOff_Request_Icon'",
+          "ObjectPath": "/Game/UI/Shared/Icons/Trackers/T_UI_DropOff_Request_Icon.0"
+        },
+        "OutlineSettings": {
+          "CornerRadii": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0,
+            "W": 0.0
+          },
+          "Color": {
+            "SpecifiedColor": {
+              "R": 0.0,
+              "G": 0.0,
+              "B": 0.0,
+              "A": 0.0,
+              "Hex": "000000"
+            },
+            "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+          },
+          "Width": 0.0,
+          "RoundingType": "ESlateBrushRoundingType::HalfHeightRadius",
+          "bUseBrushTransparency": false
+        },
+        "UVRegion": {
+          "Min": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Max": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "bIsValid": 0
+        },
+        "bIsDynamicallyLoaded": false,
+        "ResourceName": "None"
+      }
+    },
+    "Backup": {
+      "Brush": {
+        "TintColor": {
+          "SpecifiedColor": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFF"
+          },
+          "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+        },
+        "DrawAs": "ESlateBrushDrawType::Image",
+        "Tiling": "ESlateBrushTileType::NoTile",
+        "Mirroring": "ESlateBrushMirrorType::NoMirror",
+        "ImageType": "ESlateBrushImageType::FullColor",
+        "ImageSize": {
+          "X": 142.0,
+          "Y": 142.0
+        },
+        "Margin": {
+          "Left": 0.0,
+          "Top": 0.0,
+          "Right": 0.0,
+          "Bottom": 0.0
+        },
+        "ResourceObject": {
+          "ObjectName": "Texture2D'T_UI_Backup_Request_Icon'",
+          "ObjectPath": "/Game/UI/Shared/Icons/Trackers/T_UI_Backup_Request_Icon.0"
+        },
+        "OutlineSettings": {
+          "CornerRadii": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0,
+            "W": 0.0
+          },
+          "Color": {
+            "SpecifiedColor": {
+              "R": 0.0,
+              "G": 0.0,
+              "B": 0.0,
+              "A": 0.0,
+              "Hex": "000000"
+            },
+            "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+          },
+          "Width": 0.0,
+          "RoundingType": "ESlateBrushRoundingType::HalfHeightRadius",
+          "bUseBrushTransparency": false
+        },
+        "UVRegion": {
+          "Min": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Max": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "bIsValid": 0
+        },
+        "bIsDynamicallyLoaded": false,
+        "ResourceName": "None"
+      }
+    },
+    "Infantry_Player": {
+      "Brush": {
+        "TintColor": {
+          "SpecifiedColor": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFF"
+          },
+          "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+        },
+        "DrawAs": "ESlateBrushDrawType::Image",
+        "Tiling": "ESlateBrushTileType::NoTile",
+        "Mirroring": "ESlateBrushMirrorType::NoMirror",
+        "ImageType": "ESlateBrushImageType::FullColor",
+        "ImageSize": {
+          "X": 64.0,
+          "Y": 64.0
+        },
+        "Margin": {
+          "Left": 0.0,
+          "Top": 0.0,
+          "Right": 0.0,
+          "Bottom": 0.0
+        },
+        "ResourceObject": {
+          "ObjectName": "Texture2D'T_UI_Player_Icon'",
+          "ObjectPath": "/Game/UI/Features/Map/Widgets/Trackers/Textures/T_UI_Player_Icon.0"
+        },
+        "OutlineSettings": {
+          "CornerRadii": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0,
+            "W": 0.0
+          },
+          "Color": {
+            "SpecifiedColor": {
+              "R": 0.0,
+              "G": 0.0,
+              "B": 0.0,
+              "A": 0.0,
+              "Hex": "000000"
+            },
+            "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+          },
+          "Width": 0.0,
+          "RoundingType": "ESlateBrushRoundingType::HalfHeightRadius",
+          "bUseBrushTransparency": false
+        },
+        "UVRegion": {
+          "Min": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Max": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "bIsValid": 0
+        },
+        "bIsDynamicallyLoaded": false,
+        "ResourceName": "None"
+      }
+    },
+    "Infantry_Teammate": {
+      "Brush": {
+        "TintColor": {
+          "SpecifiedColor": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFF"
+          },
+          "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+        },
+        "DrawAs": "ESlateBrushDrawType::Image",
+        "Tiling": "ESlateBrushTileType::NoTile",
+        "Mirroring": "ESlateBrushMirrorType::NoMirror",
+        "ImageType": "ESlateBrushImageType::FullColor",
+        "ImageSize": {
+          "X": 64.0,
+          "Y": 64.0
+        },
+        "Margin": {
+          "Left": 0.0,
+          "Top": 0.0,
+          "Right": 0.0,
+          "Bottom": 0.0
+        },
+        "ResourceObject": {
+          "ObjectName": "Texture2D'T_UI_Player_Icon'",
+          "ObjectPath": "/Game/UI/Features/Map/Widgets/Trackers/Textures/T_UI_Player_Icon.0"
+        },
+        "OutlineSettings": {
+          "CornerRadii": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0,
+            "W": 0.0
+          },
+          "Color": {
+            "SpecifiedColor": {
+              "R": 0.0,
+              "G": 0.0,
+              "B": 0.0,
+              "A": 0.0,
+              "Hex": "000000"
+            },
+            "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+          },
+          "Width": 0.0,
+          "RoundingType": "ESlateBrushRoundingType::HalfHeightRadius",
+          "bUseBrushTransparency": false
+        },
+        "UVRegion": {
+          "Min": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Max": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "bIsValid": 0
+        },
+        "bIsDynamicallyLoaded": false,
+        "ResourceName": "None"
+      }
+    },
+    "Infantry_Squadmate": {
+      "Brush": {
+        "TintColor": {
+          "SpecifiedColor": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFF"
+          },
+          "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+        },
+        "DrawAs": "ESlateBrushDrawType::Image",
+        "Tiling": "ESlateBrushTileType::NoTile",
+        "Mirroring": "ESlateBrushMirrorType::NoMirror",
+        "ImageType": "ESlateBrushImageType::FullColor",
+        "ImageSize": {
+          "X": 64.0,
+          "Y": 64.0
+        },
+        "Margin": {
+          "Left": 0.0,
+          "Top": 0.0,
+          "Right": 0.0,
+          "Bottom": 0.0
+        },
+        "ResourceObject": {
+          "ObjectName": "Texture2D'T_UI_Player_Icon'",
+          "ObjectPath": "/Game/UI/Features/Map/Widgets/Trackers/Textures/T_UI_Player_Icon.0"
+        },
+        "OutlineSettings": {
+          "CornerRadii": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0,
+            "W": 0.0
+          },
+          "Color": {
+            "SpecifiedColor": {
+              "R": 0.0,
+              "G": 0.0,
+              "B": 0.0,
+              "A": 0.0,
+              "Hex": "000000"
+            },
+            "ColorUseRule": "ESlateColorStylingMode::UseColor_Specified"
+          },
+          "Width": 0.0,
+          "RoundingType": "ESlateBrushRoundingType::HalfHeightRadius",
+          "bUseBrushTransparency": false
+        },
+        "UVRegion": {
+          "Min": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Max": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "bIsValid": 0
+        },
+        "bIsDynamicallyLoaded": false,
+        "ResourceName": "None"
+      }
+    }
+  }
+}

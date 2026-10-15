@@ -4,7 +4,7 @@ parent: "Plugins"
 ---
 
 # Wardogs — Plugin: BHAimAssist (v2)
-*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/BHAimAssist/` — 30 JSON files, all `CurveFloat` assets under `Content/AimAssist/`. Curve keys were read directly; units are not stated in the export.*
+*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: [`Plugins/BHAimAssist/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/BHAimAssist) — 30 JSON files, all `CurveFloat` assets under [`Content/AimAssist/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist). Curve keys were read directly; units are not stated in the export.*
 
 ---
 
@@ -91,7 +91,7 @@ Pistol, SMG and Shotgun share the Default values. AR gives the highest weight at
 
 | Curve | Key points (input: weight) |
 |---|---|
-| `C_AimAssistTargetWeightCurve` | 0:0, 0.05:0.5, 1:1 |
+| [`C_AimAssistTargetWeightCurve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistTargetWeightCurve.json) | 0:0, 0.05:0.5, 1:1 |
 
 Target weight rises steeply from 0 to 0.5 within the first 5% of the input, then linearly to 1 at 1.0.
 

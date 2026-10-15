@@ -1,0 +1,82 @@
+--- export: UObject / GameFeatureAction_AddComponents_0 ---
+{
+  "Type": "GameFeatureAction_AddComponents",
+  "Name": "GameFeatureAction_AddComponents_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddComponents'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'MoneyMan'",
+    "ObjectPath": "/MoneyMan/MoneyMan.1"
+  },
+  "Properties": {
+    "ComponentList": [
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDMoverPlayerCharacter",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/MoneyMan/BP_MoneyManComponent.BP_MoneyManComponent_C",
+          "SubPathString": ""
+        },
+        "bClientComponent": false,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / MoneyMan ---
+{
+  "Type": "GameFeatureData",
+  "Name": "MoneyMan",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/MoneyMan/MoneyMan",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_AddComponents'MoneyMan:GameFeatureAction_AddComponents_0'",
+        "ObjectPath": "/MoneyMan/MoneyMan.0"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements'MoneyMan:WDGameFeatureAction_AddWidgetElements_0'",
+        "ObjectPath": "/MoneyMan/MoneyMan.2"
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_0 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements",
+  "Name": "WDGameFeatureAction_AddWidgetElements_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'MoneyMan'",
+    "ObjectPath": "/MoneyMan/MoneyMan.1"
+  },
+  "Properties": {
+    "PersistentWidgets": [
+      {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/MoneyMan/WBP_MoneyManWidget.WBP_MoneyManWidget_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+      }
+    ]
+  }
+}

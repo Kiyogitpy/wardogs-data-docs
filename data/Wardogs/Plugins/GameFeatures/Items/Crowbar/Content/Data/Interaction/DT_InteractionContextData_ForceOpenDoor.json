@@ -1,0 +1,48 @@
+--- export: UDataTable / DT_InteractionContextData_ForceOpenDoor ---
+{
+  "Type": "DataTable",
+  "Name": "DT_InteractionContextData_ForceOpenDoor",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Crowbar/Data/Interaction/DT_InteractionContextData_ForceOpenDoor",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUIInteractionContextDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Interaction.Context.ForceOpenDoor": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Door.Operation.OutcomeText",
+        "SourceString": "Door",
+        "LocalizedString": "Door"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.WorldFeatures.Crowbar.Door.Unlock",
+            "SourceString": "PRY OPEN",
+            "LocalizedString": "PRY OPEN"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.ForceOpenDoor"
+      }
+    }
+  }
+}

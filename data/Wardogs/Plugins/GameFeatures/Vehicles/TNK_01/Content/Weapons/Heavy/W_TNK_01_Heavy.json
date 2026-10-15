@@ -1,0 +1,35 @@
+--- export: UDataAsset / W_TNK_01_Heavy ---
+{
+  "Type": "WDVehicleWeaponDataAsset",
+  "Name": "W_TNK_01_Heavy",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeaponDataAsset'",
+  "Package": "/TNK_01/Weapons/Heavy/W_TNK_01_Heavy",
+  "Properties": {
+    "WeaponTag": {
+      "TagName": "Id.Vehicle.Weapon.TNK_01.Turret.Heavy"
+    },
+    "SkeletalMeshAsset": {
+      "AssetPathName": "/TNK_01/Mesh/Battle/SK/SK_TNK_01_Turret.SK_TNK_01_Turret",
+      "SubPathString": ""
+    },
+    "MuzzleSockets": [
+      "S_MuzzleFlash"
+    ],
+    "PlayerAttachSocket": {
+      "SourceID": "TurretSkeleton",
+      "SocketName": "S_Attach_TankTurret_Player"
+    },
+    "GamepadRotationSensitivity": 35.0,
+    "GamepadRotationUpdateMax": {
+      "X": 75.0,
+      "Y": 75.0
+    },
+    "MouseRotationSensitivity": 8.0,
+    "MouseRotationUpdateMax": {
+      "X": 75.0,
+      "Y": 75.0
+    },
+    "KeyRotationSensitivity": 45.0
+  }
+}

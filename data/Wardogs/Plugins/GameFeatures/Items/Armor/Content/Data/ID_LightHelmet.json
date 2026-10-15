@@ -1,0 +1,183 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_LightHelmet'",
+    "ObjectPath": "/Armor/Data/ID_LightHelmet.4"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 2,
+      "Y": 2
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_LightHelmet'",
+    "ObjectPath": "/Armor/Data/ID_LightHelmet.4"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Characters/Player/Helmet/Light/002/SM/SM_Light_Helmet_002_drop.SM_Light_Helmet_002_drop",
+      "SubPathString": ""
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_Helmet_Light_002_drop'",
+        "ObjectPath": "/Game/Characters/Player/Helmet/Light/002/MAT/MI_Helmet_Light_002_drop.0"
+      }
+    ],
+    "RelativeRotation": {
+      "Pitch": -90.0,
+      "Yaw": 0.0,
+      "Roll": 0.0
+    },
+    "bOverrideDroppedRelativeLocation": true,
+    "OverridedRelativeLocation": {
+      "X": -5.0,
+      "Y": 0.0,
+      "Z": 0.0
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_LightHelmet'",
+    "ObjectPath": "/Armor/Data/ID_LightHelmet.4"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_LightHelmet'",
+    "ObjectPath": "/Armor/Data/ID_LightHelmet.4"
+  }
+}
+--- export: UPrimaryDataAsset / ID_LightHelmet ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_LightHelmet",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Armor/Data/ID_LightHelmet",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.LightHelmet"
+    },
+    "ItemContext": [
+      "Inventory.Slot.Helmet",
+      "Item.Context.Equippable"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "F5175974416FC21A0435EF98F98E0DAC",
+      "SourceString": "Level 1 Helmet",
+      "LocalizedString": "Level 1 Helmet"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_LightHelmet:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Armor/Data/ID_LightHelmet.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_LightHelmet:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/Armor/Data/ID_LightHelmet.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_LightHelmet:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Armor/Data/ID_LightHelmet.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Armor'ID_LightHelmet:WDInventoryFragment_Armor_0'",
+        "ObjectPath": "/Armor/Data/ID_LightHelmet.5"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_LightHelmet:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Armor/Data/ID_LightHelmet.6"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_LightHelmet:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Armor/Data/ID_LightHelmet.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Armor_0 ---
+{
+  "Type": "WDInventoryFragment_Armor",
+  "Name": "WDInventoryFragment_Armor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Armor'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_LightHelmet'",
+    "ObjectPath": "/Armor/Data/ID_LightHelmet.4"
+  },
+  "Properties": {
+    "DamageContextTag": {
+      "TagName": "Meta.Damage.Helmet.Light"
+    },
+    "CoveredHitLocations": [
+      "Meta.Damage.HitLocation.Infantry.Head"
+    ],
+    "ReplicatedData": {
+      "Durability": 80.0
+    },
+    "DurabilityStagesSetupData": [
+      {
+        "DamagePercentageReduction": 30.0,
+        "Thickness": 0.5,
+        "Density": 50.0
+      },
+      {
+        "DamagePercentageReduction": 30.0,
+        "Thickness": 0.5,
+        "Density": 40.0
+      },
+      {
+        "DamagePercentageReduction": 30.0,
+        "Thickness": 0.5,
+        "Density": 30.0
+      },
+      {
+        "DamagePercentageReduction": 30.0,
+        "Thickness": 0.5,
+        "Density": 20.0
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_LightHelmet'",
+    "ObjectPath": "/Armor/Data/ID_LightHelmet.4"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Helmet_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Item/Data/ID_Helmet_Audio.0"
+    }
+  }
+}

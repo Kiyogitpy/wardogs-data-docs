@@ -1,0 +1,295 @@
+--- export: UObject / GameFeatureAction_AddComponents_0 ---
+{
+  "Type": "GameFeatureAction_AddComponents",
+  "Name": "GameFeatureAction_AddComponents_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddComponents'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'SkinsInSession'",
+    "ObjectPath": "/SkinsInSession/SkinsInSession.2"
+  },
+  "Properties": {
+    "ComponentList": [
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/BHItems.BHItem",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Script/SkinsInSessionRuntime.WDActorSkinComponent",
+          "SubPathString": ""
+        },
+        "bClientComponent": true,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      },
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/Mechanized.BHBaseVehiclePawn",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Script/SkinsInSessionRuntime.WDActorSkinComponent",
+          "SubPathString": ""
+        },
+        "bClientComponent": true,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      },
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDDroppedItem",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Script/SkinsInSessionRuntime.WDActorSkinComponent",
+          "SubPathString": ""
+        },
+        "bClientComponent": true,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_AddComponents_1 ---
+{
+  "Type": "GameFeatureAction_AddComponents",
+  "Name": "GameFeatureAction_AddComponents_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddComponents'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'SkinsInSession'",
+    "ObjectPath": "/SkinsInSession/SkinsInSession.2"
+  },
+  "Properties": {
+    "ComponentList": [
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDMoverCharacter",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Script/SkinsInSessionRuntime.WDCharacterSkinComponent",
+          "SubPathString": ""
+        },
+        "bClientComponent": true,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / SkinsInSession ---
+{
+  "Type": "GameFeatureData",
+  "Name": "SkinsInSession",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/SkinsInSession/SkinsInSession",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_AddComponents'SkinsInSession:GameFeatureAction_AddComponents_0'",
+        "ObjectPath": "/SkinsInSession/SkinsInSession.0"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements'SkinsInSession:WDGameFeatureAction_AddWidgetElements_6'",
+        "ObjectPath": "/SkinsInSession/SkinsInSession.3"
+      },
+      {
+        "ObjectName": "GameFeatureAction_AddComponents'SkinsInSession:GameFeatureAction_AddComponents_1'",
+        "ObjectPath": "/SkinsInSession/SkinsInSession.1"
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_6 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements",
+  "Name": "WDGameFeatureAction_AddWidgetElements_6",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'SkinsInSession'",
+    "ObjectPath": "/SkinsInSession/SkinsInSession.2"
+  },
+  "Properties": {
+    "TaggedElements": [
+      {
+        "Key": {
+          "TagName": "UI.Element.ItemCard.SkinBadge"
+        },
+        "Value": {
+          "WidgetClass": {
+            "AssetPathName": "/SkinsInSession/W_SkinBadge.W_SkinBadge_C",
+            "SubPathString": ""
+          },
+          "ViewModelParams": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/SkinsInSessionRuntime.SkinDisplayBadgeViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/SkinsInSession/DA_SkindBadgeData.DA_SkindBadgeData",
+              "SubPathString": ""
+            }
+          },
+          "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": true
+        }
+      }
+    ],
+    "AddWidgetElementsInstances": [
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'SkinsInSession:WDGameFeatureAction_AddWidgetElements_6.WDGameFeatureAction_AddWidgetElements_Instance_15'",
+        "ObjectPath": "/SkinsInSession/SkinsInSession.8"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'SkinsInSession:WDGameFeatureAction_AddWidgetElements_6.WDGameFeatureAction_AddWidgetElements_Instance_0'",
+        "ObjectPath": "/SkinsInSession/SkinsInSession.4"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'SkinsInSession:WDGameFeatureAction_AddWidgetElements_6.WDGameFeatureAction_AddWidgetElements_Instance_2'",
+        "ObjectPath": "/SkinsInSession/SkinsInSession.9"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'SkinsInSession:WDGameFeatureAction_AddWidgetElements_6.WDGameFeatureAction_AddWidgetElements_Instance_4'",
+        "ObjectPath": "/SkinsInSession/SkinsInSession.10"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'SkinsInSession:WDGameFeatureAction_AddWidgetElements_6.WDGameFeatureAction_AddWidgetElements_Instance_1'",
+        "ObjectPath": "/SkinsInSession/SkinsInSession.5"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'SkinsInSession:WDGameFeatureAction_AddWidgetElements_6.WDGameFeatureAction_AddWidgetElements_Instance_5'",
+        "ObjectPath": "/SkinsInSession/SkinsInSession.11"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'SkinsInSession:WDGameFeatureAction_AddWidgetElements_6.WDGameFeatureAction_AddWidgetElements_Instance_7'",
+        "ObjectPath": "/SkinsInSession/SkinsInSession.12"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'SkinsInSession:WDGameFeatureAction_AddWidgetElements_6.WDGameFeatureAction_AddWidgetElements_Instance_9'",
+        "ObjectPath": "/SkinsInSession/SkinsInSession.13"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'SkinsInSession:WDGameFeatureAction_AddWidgetElements_6.WDGameFeatureAction_AddWidgetElements_Instance_11'",
+        "ObjectPath": "/SkinsInSession/SkinsInSession.6"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'SkinsInSession:WDGameFeatureAction_AddWidgetElements_6.WDGameFeatureAction_AddWidgetElements_Instance_13'",
+        "ObjectPath": "/SkinsInSession/SkinsInSession.7"
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_0 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'SkinsInSession:WDGameFeatureAction_AddWidgetElements_6'",
+    "ObjectPath": "/SkinsInSession/SkinsInSession.3"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_1 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_1",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'SkinsInSession:WDGameFeatureAction_AddWidgetElements_6'",
+    "ObjectPath": "/SkinsInSession/SkinsInSession.3"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_11 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_11",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'SkinsInSession:WDGameFeatureAction_AddWidgetElements_6'",
+    "ObjectPath": "/SkinsInSession/SkinsInSession.3"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_13 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_13",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'SkinsInSession:WDGameFeatureAction_AddWidgetElements_6'",
+    "ObjectPath": "/SkinsInSession/SkinsInSession.3"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_15 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_15",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'SkinsInSession:WDGameFeatureAction_AddWidgetElements_6'",
+    "ObjectPath": "/SkinsInSession/SkinsInSession.3"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_2 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_2",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'SkinsInSession:WDGameFeatureAction_AddWidgetElements_6'",
+    "ObjectPath": "/SkinsInSession/SkinsInSession.3"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_4 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_4",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'SkinsInSession:WDGameFeatureAction_AddWidgetElements_6'",
+    "ObjectPath": "/SkinsInSession/SkinsInSession.3"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_5 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_5",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'SkinsInSession:WDGameFeatureAction_AddWidgetElements_6'",
+    "ObjectPath": "/SkinsInSession/SkinsInSession.3"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_7 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_7",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'SkinsInSession:WDGameFeatureAction_AddWidgetElements_6'",
+    "ObjectPath": "/SkinsInSession/SkinsInSession.3"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_9 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_9",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'SkinsInSession:WDGameFeatureAction_AddWidgetElements_6'",
+    "ObjectPath": "/SkinsInSession/SkinsInSession.3"
+  }
+}

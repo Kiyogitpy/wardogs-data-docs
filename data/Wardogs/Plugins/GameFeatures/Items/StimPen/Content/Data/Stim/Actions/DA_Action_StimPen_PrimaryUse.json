@@ -1,0 +1,42 @@
+--- export: UPrimaryDataAsset / DA_Action_StimPen_PrimaryUse ---
+{
+  "Type": "BHActionDefinition",
+  "Name": "DA_Action_StimPen_PrimaryUse",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHActionDefinition'",
+  "Package": "/StimPen/Data/Stim/Actions/DA_Action_StimPen_PrimaryUse",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.Appliable.StimPen.PrimaryUse"
+    },
+    "ActionContext": [
+      "Action.Context.Holdable",
+      "Action.Context.Interaction",
+      "Action.Context.TwoHanded"
+    ],
+    "ActionClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Action_StimPen_C'",
+      "ObjectPath": "/StimPen/Data/Stim/Actions/B_Action_StimPen.1"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::Block",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Block",
+          "ActionResponses": [
+            "Action.Appliable.StimPen.SecondaryUse"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      }
+    ],
+    "ActivationContextType": {
+      "ObjectName": "Class'WDAppliableItemActionContext'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  }
+}

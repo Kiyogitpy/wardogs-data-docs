@@ -1,0 +1,88 @@
+--- export: UObject / WDPingAction_CheckSquadStatus_0 ---
+{
+  "Type": "WDPingAction_CheckSquadStatus",
+  "Name": "WDPingAction_CheckSquadStatus_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingAction_CheckSquadStatus'",
+  "Outer": {
+    "ObjectName": "WDPingActionAsset'DA_PingAction_Squad_Affirmative'",
+    "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Squad/DA_PingAction_Squad_Affirmative.3"
+  }
+}
+--- export: UObject / WDPingAction_SendTextMessage_0 ---
+{
+  "Type": "WDPingAction_SendTextMessage",
+  "Name": "WDPingAction_SendTextMessage_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingAction_SendTextMessage'",
+  "Outer": {
+    "ObjectName": "WDPingActionAsset'DA_PingAction_Squad_Affirmative'",
+    "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Squad/DA_PingAction_Squad_Affirmative.3"
+  },
+  "Properties": {
+    "PingActionChatLocText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+      "Key": "Action.Squad.Affirmative",
+      "SourceString": "Affirmative",
+      "LocalizedString": "Affirmative"
+    },
+    "ChannelType": "EWDChannelType::Squad"
+  }
+}
+--- export: UObject / WDPingAction_VoxRequest_0 ---
+{
+  "Type": "WDPingAction_VoxRequest",
+  "Name": "WDPingAction_VoxRequest_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingAction_VoxRequest'",
+  "Outer": {
+    "ObjectName": "WDPingActionAsset'DA_PingAction_Squad_Affirmative'",
+    "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Squad/DA_PingAction_Squad_Affirmative.3"
+  },
+  "Properties": {
+    "GameplayCueTag": {
+      "TagName": "GameplayCue.Comms.Squad.Affirmative"
+    }
+  }
+}
+--- export: UDataAsset / DA_PingAction_Squad_Affirmative ---
+{
+  "Type": "WDPingActionAsset",
+  "Name": "DA_PingAction_Squad_Affirmative",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingActionAsset'",
+  "Package": "/Game/UI/Features/PingWheel/Data/Actions/Squad/DA_PingAction_Squad_Affirmative",
+  "Properties": {
+    "Text": {
+      "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+      "Key": "Action.Squad.Affirmative",
+      "SourceString": "Affirmative",
+      "LocalizedString": "Affirmative"
+    },
+    "LockedDescription": {
+      "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+      "Key": "Squad.State.Locked",
+      "SourceString": "Must be in a squad",
+      "LocalizedString": "Must be in a squad"
+    },
+    "Icon": {
+      "AssetPathName": "/Game/UI/Features/PingWheel/Widgets/Action/Textures/T_UI_Icon_PingWheel_Affirmative_64x64.T_UI_Icon_PingWheel_Affirmative_64x64",
+      "SubPathString": ""
+    },
+    "bIsWorkInProgress": false,
+    "Actions": [
+      {
+        "ObjectName": "WDPingAction_SendTextMessage'DA_PingAction_Squad_Affirmative:WDPingAction_SendTextMessage_0'",
+        "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Squad/DA_PingAction_Squad_Affirmative.1"
+      },
+      {
+        "ObjectName": "WDPingAction_CheckSquadStatus'DA_PingAction_Squad_Affirmative:WDPingAction_CheckSquadStatus_0'",
+        "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Squad/DA_PingAction_Squad_Affirmative.0"
+      },
+      {
+        "ObjectName": "WDPingAction_VoxRequest'DA_PingAction_Squad_Affirmative:WDPingAction_VoxRequest_0'",
+        "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Squad/DA_PingAction_Squad_Affirmative.2"
+      }
+    ]
+  }
+}

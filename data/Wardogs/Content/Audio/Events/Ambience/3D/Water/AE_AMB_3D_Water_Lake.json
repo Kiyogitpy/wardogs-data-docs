@@ -1,0 +1,39 @@
+--- export: UPrimaryDataAsset / AE_AMB_3D_Water_Lake ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_AMB_3D_Water_Lake",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Ambience/3D/Water/AE_AMB_3D_Water_Lake",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Ambience.3D.Water.Lake"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_AMB_3D_Water_Lake:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Ambience/3D/Water/AE_AMB_3D_Water_Lake.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_AMB_3D_Water_Lake'",
+    "ObjectPath": "/Game/Audio/Events/Ambience/3D/Water/AE_AMB_3D_Water_Lake.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_AMB_3D_Water_Lake'",
+      "ObjectPath": "/Game/Audio/Ambience/3D/Wavs/Lake/MSS_AMB_3D_Water_Lake.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

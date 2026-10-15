@@ -1,0 +1,38 @@
+--- export: UPrimaryDataAsset / AE_UI_FrontEnd_Exit_Photosensitivity ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UI_FrontEnd_Exit_Photosensitivity",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UI/FrontEnd/AE_UI_FrontEnd_Exit_Photosensitivity",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.FrontEnd.Photosensitivity.Exit"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "WDAudioEventBehaviorEnableMusicState'AE_UI_FrontEnd_Exit_Photosensitivity:WDAudioEventBehaviorEnableMusicState_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/FrontEnd/AE_UI_FrontEnd_Exit_Photosensitivity.1"
+      }
+    ]
+  }
+}
+--- export: UObject / WDAudioEventBehaviorEnableMusicState_0 ---
+{
+  "Type": "WDAudioEventBehaviorEnableMusicState",
+  "Name": "WDAudioEventBehaviorEnableMusicState_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorEnableMusicState'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_FrontEnd_Exit_Photosensitivity'",
+    "ObjectPath": "/Game/Audio/Events/UI/FrontEnd/AE_UI_FrontEnd_Exit_Photosensitivity.0"
+  },
+  "Properties": {
+    "StateToEnable": {
+      "TagName": "Audio.Music.FrontEnd.MainMenu"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

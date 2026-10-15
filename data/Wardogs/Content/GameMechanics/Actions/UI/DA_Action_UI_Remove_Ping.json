@@ -1,0 +1,45 @@
+--- export: UPrimaryDataAsset / DA_Action_UI_Remove_Ping ---
+{
+  "Type": "BHActionDefinition",
+  "Name": "DA_Action_UI_Remove_Ping",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHActionDefinition'",
+  "Package": "/Game/GameMechanics/Actions/UI/DA_Action_UI_Remove_Ping",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.Player.Ping.Remove"
+    },
+    "ActionClass": {
+      "ObjectName": "Class'WDGameplayAction'",
+      "ObjectPath": "/Script/WDGame"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::Block",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Block",
+          "ActionResponses": [
+            "Action.Player.Ping.TacticalMap"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Interrupt",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Interrupt",
+          "ActionResponses": [],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      }
+    ]
+  }
+}

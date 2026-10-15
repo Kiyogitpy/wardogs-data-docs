@@ -1,0 +1,70 @@
+--- export: UDataTable / DT_LootableDataTable_VIPEscort_01 ---
+{
+  "Type": "DataTable",
+  "Name": "DT_LootableDataTable_VIPEscort_01",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/VIPEscort_01/DT_LootableDataTable_VIPEscort_01",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDLootableDataTable'",
+      "ObjectPath": "/Script/LootableRuntime"
+    }
+  },
+  "Rows": {
+    "Lootable.VIPEscort01.Fuelcan100": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.FuelCan"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": false,
+        "RespawnTime": 0.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false
+    },
+    "Lootable.VIPEscort01.AK": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.SV98"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.SV98Magazine"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": true,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 15,
+        "bCanRespawn": true,
+        "RespawnTime": 10.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false
+    }
+  }
+}

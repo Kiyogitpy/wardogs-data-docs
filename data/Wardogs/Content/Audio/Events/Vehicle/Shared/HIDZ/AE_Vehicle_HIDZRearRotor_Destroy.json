@@ -1,0 +1,60 @@
+--- export: UPrimaryDataAsset / AE_Vehicle_HIDZRearRotor_Destroy ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_HIDZRearRotor_Destroy",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_HIDZRearRotor_Destroy",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.HIDZ.TailRotor.Destroy"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Vehicle_HIDZRearRotor_Destroy:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_HIDZRearRotor_Destroy.1"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorPlayVehicleSound'AE_Vehicle_HIDZRearRotor_Destroy:WDAudioEventBehaviorPlayVehicleSound_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_HIDZRearRotor_Destroy.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_HIDZRearRotor_Destroy'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_HIDZRearRotor_Destroy.0"
+  },
+  "Properties": {
+    "SocketName": "collective_J",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.HIDZ.TailRotor.Destroy"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviorPlayVehicleSound_0 ---
+{
+  "Type": "WDAudioEventBehaviorPlayVehicleSound",
+  "Name": "WDAudioEventBehaviorPlayVehicleSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorPlayVehicleSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_HIDZRearRotor_Destroy'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_HIDZRearRotor_Destroy.0"
+  },
+  "Properties": {
+    "SoundAssetTag": {
+      "TagName": "Audio.Asset.Vehicle.Shared.HIDZ.TailRotor.Destroy"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.HIDZ.TailRotor.Destroy"
+    },
+    "bPersistent": true
+  }
+}

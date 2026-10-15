@@ -1,0 +1,68 @@
+--- export: UDataTable / DT_RadialWheelType_BuildToolData ---
+{
+  "Type": "DataTable",
+  "Name": "DT_RadialWheelType_BuildToolData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Buildables/Data/BuildTool/DT_RadialWheelType_BuildToolData",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUIRadialWheelTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "UI.RadialWheel.BuildTool": {
+      "CloseAndSelectActionTag": {
+        "TagName": "UI.Action.Feature.RadialWheel.BuildTool.ToggleScene"
+      },
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_RadialWheels.STRINGS_RadialWheels",
+        "Key": "BuildTool.DisplayName",
+        "SourceString": "BUILDABLES",
+        "LocalizedString": "BUILDABLES"
+      },
+      "DisplayDescription": {
+        "CultureInvariantString": null
+      },
+      "WheelWidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Buildables/Data/BuildTool/Widgets/W_BuildToolRadialWheel.W_BuildToolRadialWheel_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/BuildablesRuntime.WDUIBuildToolRadialWheelViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Buildables/Data/BuildTool/DA_BuildToolRadialWheelData.DA_BuildToolRadialWheelData",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+      },
+      "SlotWidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Buildables/Data/BuildTool/Widgets/W_BuildToolRadialWheelSlot.W_BuildToolRadialWheelSlot_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/BuildablesRuntime.WDUIBuildToolRadialWheelSlotViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/RadialWheel/Data/DA_DefaultRadialWheelSlotData.DA_DefaultRadialWheelSlotData",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+      },
+      "MaxSlotCapacityPerPage": 7,
+      "Tag": {
+        "TagName": "UI.RadialWheel.BuildTool"
+      }
+    }
+  }
+}

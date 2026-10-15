@@ -1,0 +1,46 @@
+--- export: UObject / WDPingAction_AssistanceRequest_GetIn_0 ---
+{
+  "Type": "WDPingAction_AssistanceRequest_GetIn",
+  "Name": "WDPingAction_AssistanceRequest_GetIn_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingAction_AssistanceRequest_GetIn'",
+  "Outer": {
+    "ObjectName": "WDPingActionAsset'DA_PingAction_Request_GetIn'",
+    "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_GetIn.1"
+  },
+  "Properties": {
+    "PingActionChatLocText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_ChatBox_AssistanceRequests.STRINGS_ChatBox_AssistanceRequests",
+      "Key": "Type_Request_GetIn_Other",
+      "SourceString": "Get in my vehicle!",
+      "LocalizedString": "Get in my vehicle!"
+    }
+  }
+}
+--- export: UDataAsset / DA_PingAction_Request_GetIn ---
+{
+  "Type": "WDPingActionAsset",
+  "Name": "DA_PingAction_Request_GetIn",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingActionAsset'",
+  "Package": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_GetIn",
+  "Properties": {
+    "Text": {
+      "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+      "Key": "Action.Request.GetIn",
+      "SourceString": "Get in",
+      "LocalizedString": "Get in"
+    },
+    "Icon": {
+      "AssetPathName": "/Game/UI/Features/PingWheel/Widgets/Action/Textures/T_UI_Icon_PingWheel_GetIn_64x64.T_UI_Icon_PingWheel_GetIn_64x64",
+      "SubPathString": ""
+    },
+    "bIsWorkInProgress": false,
+    "Actions": [
+      {
+        "ObjectName": "WDPingAction_AssistanceRequest_GetIn'DA_PingAction_Request_GetIn:WDPingAction_AssistanceRequest_GetIn_0'",
+        "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_GetIn.0"
+      }
+    ]
+  }
+}

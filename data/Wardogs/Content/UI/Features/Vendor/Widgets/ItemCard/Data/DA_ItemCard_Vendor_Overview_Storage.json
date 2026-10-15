@@ -1,0 +1,145 @@
+--- export: UDataAsset / DA_ItemCard_Vendor_Overview_Storage ---
+{
+  "Type": "WDUIItemCardData_Vendor",
+  "Name": "DA_ItemCard_Vendor_Overview_Storage",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIItemCardData_Vendor'",
+  "Package": "/Game/UI/Features/Vendor/Widgets/ItemCard/Data/DA_ItemCard_Vendor_Overview_Storage",
+  "Properties": {
+    "ItemCardTooltipPrompts": [
+      {
+        "Key": {
+          "TagName": "UI.Action.Feature.Vendor.Purchase"
+        },
+        "Value": {
+          "ActionPromptTag": {
+            "TagName": "UI.Action.Feature.Vendor.Purchase"
+          },
+          "ChordedActionPromptTag": {
+            "TagName": "None"
+          },
+          "ActionPromptText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+            "Key": "Prompt.Purchase.AddToLoadout",
+            "SourceString": "Add to Loadout ",
+            "LocalizedString": "Add to Loadout "
+          },
+          "IsHoldable": false,
+          "bUseActionShortName": false,
+          "bUseChordedActionShortName": false,
+          "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+          "ChordedActionPromptTag": [],
+          "ChordedActionPromptTag": [],
+          "_aaabhmnakckdbejpcmlmc_$CD0A2A3149F2CBC2$_$23$": [],
+          "_aaabhahinfhbanpdncpjc_$78D5710DF3D2F92$_$23$": []
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Action.Feature.Vendor.Refund"
+        },
+        "Value": {
+          "ActionPromptTag": {
+            "TagName": "UI.Action.Feature.Vendor.Refund"
+          },
+          "ChordedActionPromptTag": {
+            "TagName": "None"
+          },
+          "ActionPromptText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+            "Key": "Prompt.Refund.RemoveFromLoadout",
+            "SourceString": "Remove from Loadout",
+            "LocalizedString": "Remove from Loadout"
+          },
+          "IsHoldable": false,
+          "bUseActionShortName": false,
+          "bUseChordedActionShortName": false,
+          "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+          "ChordedActionPromptTag": [],
+          "ChordedActionPromptTag": [],
+          "_aaabhmnakckdbejpcmlmc_$CD0A2A3149F2CBC2$_$23$": [],
+          "_aaabhahinfhbanpdncpjc_$78D5710DF3D2F92$_$23$": []
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Action.Feature.Vendor.Destroy"
+        },
+        "Value": {
+          "ActionPromptTag": {
+            "TagName": "UI.Action.Feature.Vendor.Destroy"
+          },
+          "ChordedActionPromptTag": {
+            "TagName": "None"
+          },
+          "ActionPromptText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+            "Key": "Prompt.Destroy.DestroyFromLoadout",
+            "SourceString": "Delete Item / Stack",
+            "LocalizedString": "Delete Item / Stack"
+          },
+          "IsHoldable": true,
+          "bUseActionShortName": true,
+          "bUseChordedActionShortName": false,
+          "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+          "ChordedActionPromptTag": [],
+          "ChordedActionPromptTag": [],
+          "_aaabhmnakckdbejpcmlmc_$CD0A2A3149F2CBC2$_$23$": [],
+          "_aaabhahinfhbanpdncpjc_$78D5710DF3D2F92$_$23$": []
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Action.Feature.Vendor.RefundFullStack"
+        },
+        "Value": {
+          "ActionPromptTag": {
+            "TagName": "UI.Action.Feature.Modifier.Ctrl"
+          },
+          "ChordedActionPromptTag": {
+            "TagName": "UI.Action.Feature.Vendor.Refund"
+          },
+          "ActionPromptText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+            "Key": "Prompt.Refund.RemoveFullStack",
+            "SourceString": "Remove full stack from Loadout",
+            "LocalizedString": "Remove full stack from Loadout"
+          },
+          "IsHoldable": false,
+          "bUseActionShortName": false,
+          "bUseChordedActionShortName": false,
+          "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+          "ChordedActionPromptTag": [],
+          "ChordedActionPromptTag": [],
+          "_aaabhmnakckdbejpcmlmc_$CD0A2A3149F2CBC2$_$23$": [],
+          "_aaabhahinfhbanpdncpjc_$78D5710DF3D2F92$_$23$": []
+        }
+      }
+    ],
+    "DeleteItemAudioEvent": {
+      "TagName": "Audio.Event.UI.Vendor.DeleteItem"
+    },
+    "ItemGridViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIItemGridViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Inventory_2_0/Widgets/ItemGrid/Data/DA_ItemGrid.DA_ItemGrid",
+        "SubPathString": ""
+      }
+    },
+    "IconType": {
+      "TagName": "UI.Icon.Inventory.Container"
+    },
+    "TooltipContext": {
+      "TagName": "UI.Tooltip.Context.Vendor"
+    },
+    "_aaabejkombelopgfdkigh_$9AEC14BEF653A867$_$20$": {
+      "TableId": "/Game/UI/StringTables/STRINGS_TooltipDescriptions.STRINGS_TooltipDescriptions",
+      "Key": "TooltipDescription.RoleXP.Formatting",
+      "SourceString": "\r\nREWARDS {Emoji} {RoleName} XP",
+      "LocalizedString": "\r\nREWARDS {Emoji} {RoleName} XP"
+    }
+  }
+}

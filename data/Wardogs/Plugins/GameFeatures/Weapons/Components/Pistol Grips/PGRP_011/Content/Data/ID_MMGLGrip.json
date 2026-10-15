@@ -1,0 +1,69 @@
+--- export: UPrimaryDataAsset / ID_MMGLGrip ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_MMGLGrip",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/PGRP_011/Data/ID_MMGLGrip",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.MMGLPistolGrip"
+    },
+    "ItemContext": [
+      "Item.Attachment.Grip"
+    ],
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_MMGLGrip:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/PGRP_011/Data/ID_MMGLGrip.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_MMGLGrip:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/PGRP_011/Data/ID_MMGLGrip.2"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MMGLGrip'",
+    "ObjectPath": "/PGRP_011/Data/ID_MMGLGrip.0"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Grip"
+      },
+      "AppliedEffects": [],
+      "AppliedCharacterEffects": [],
+      "bCanBeRemovedInGame": false,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MMGLGrip'",
+    "ObjectPath": "/PGRP_011/Data/ID_MMGLGrip.0"
+  },
+  "Properties": {
+    "ItemType": "EWDGunsmithItemType::Attachment"
+  }
+}

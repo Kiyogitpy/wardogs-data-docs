@@ -1,0 +1,38 @@
+--- export: UDataTable / DT_ForwardOperatingBase_PlacementDisplayTexts ---
+{
+  "Type": "DataTable",
+  "Name": "DT_ForwardOperatingBase_PlacementDisplayTexts",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Buildables/Data/ForwardOperatingBase/DT_ForwardOperatingBase_PlacementDisplayTexts",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDPlacementUiTextRecord'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "UI.Interactions.PlacementWarnings.AnotherFobTooClose": {
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_PlacementWarnings.STRINGS_PlacementWarnings",
+        "Key": "PlacementWarning.LocationTooCloseToAnotherFob",
+        "SourceString": "Too close to another Forward Operating Base",
+        "LocalizedString": "Too close to another Forward Operating Base"
+      },
+      "Tag": {
+        "TagName": "UI.Interactions.PlacementWarnings.AnotherFobTooClose"
+      }
+    },
+    "UI.Interactions.PlacementWarnings.BelongsToAnotherFaction": {
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+        "Key": "BuildPlacement.FobBelongsToAnotherFaction",
+        "SourceString": "Can't Place FOB of a Different Faction",
+        "LocalizedString": "Can't Place FOB of a Different Faction"
+      },
+      "Tag": {
+        "TagName": "UI.Interactions.PlacementWarnings.BelongsToAnotherFaction"
+      }
+    }
+  }
+}

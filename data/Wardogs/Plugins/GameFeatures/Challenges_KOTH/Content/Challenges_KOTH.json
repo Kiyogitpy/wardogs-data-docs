@@ -1,0 +1,117 @@
+--- export: UObject / GameFeatureAction_DataRegistry_0 ---
+{
+  "Type": "GameFeatureAction_DataRegistry",
+  "Name": "GameFeatureAction_DataRegistry_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistry'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Challenges_KOTH'",
+    "ObjectPath": "/Challenges_KOTH/Challenges_KOTH.2"
+  },
+  "Properties": {
+    "RegistriesToAdd": [
+      {
+        "AssetPathName": "/Challenges_KOTH/LookupRegistries/DR_SessionEvent_HealPlayer.DR_SessionEvent_HealPlayer",
+        "SubPathString": ""
+      },
+      {
+        "AssetPathName": "/Challenges_KOTH/LookupRegistries/DR_SessionEvent_HealPlayerLogisticAssist.DR_SessionEvent_HealPlayerLogisticAssist",
+        "SubPathString": ""
+      },
+      {
+        "AssetPathName": "/Challenges_KOTH/LookupRegistries/DR_SessionEvent_HealPlayerReviveAssist.DR_SessionEvent_HealPlayerReviveAssist",
+        "SubPathString": ""
+      },
+      {
+        "AssetPathName": "/Challenges_KOTH/LookupRegistries/DR_SessionEvent_RevivePlayer.DR_SessionEvent_RevivePlayer",
+        "SubPathString": ""
+      },
+      {
+        "AssetPathName": "/Challenges_KOTH/LookupRegistries/DR_SessionEvent_RevivePlayerLogisticAssist.DR_SessionEvent_RevivePlayerLogisticAssist",
+        "SubPathString": ""
+      },
+      {
+        "AssetPathName": "/Challenges_KOTH/LookupRegistries/DR_SessionEvent_RevivePlayerReviveAssist.DR_SessionEvent_RevivePlayerReviveAssist",
+        "SubPathString": ""
+      },
+      {
+        "AssetPathName": "/Challenges_KOTH/LookupRegistries/DR_SessionEvent_DestroyVehicle.DR_SessionEvent_DestroyVehicle",
+        "SubPathString": ""
+      },
+      {
+        "AssetPathName": "/Challenges_KOTH/LookupRegistries/DR_SessionEvent_DestroyVehicleLogisticAssist.DR_SessionEvent_DestroyVehicleLogisticAssist",
+        "SubPathString": ""
+      },
+      {
+        "AssetPathName": "/Challenges_KOTH/LookupRegistries/DR_SessionEvent_DestroyVehicleReviveAssist.DR_SessionEvent_DestroyVehicleReviveAssist",
+        "SubPathString": ""
+      },
+      {
+        "AssetPathName": "/Challenges_KOTH/LookupRegistries/DR_SessionEvent_DestroyVehicleFOBSuppliedAssist.DR_SessionEvent_DestroyVehicleFOBSuppliedAssist",
+        "SubPathString": ""
+      },
+      {
+        "AssetPathName": "/Challenges_KOTH/LookupRegistries/DR_SessionEvent_DestroyVehicleSection.DR_SessionEvent_DestroyVehicleSection",
+        "SubPathString": ""
+      },
+      {
+        "AssetPathName": "/Challenges_KOTH/LookupRegistries/DR_SessionEvent_RepairVehicle.DR_SessionEvent_RepairVehicle",
+        "SubPathString": ""
+      },
+      {
+        "AssetPathName": "/Challenges_KOTH/LookupRegistries/DR_SessionEvent_DestroySupplyCrate.DR_SessionEvent_DestroySupplyCrate",
+        "SubPathString": ""
+      }
+    ],
+    "bPreloadInEditor": true
+  }
+}
+--- export: UObject / GameFeatureAction_DataRegistrySource_0 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Challenges_KOTH'",
+    "ObjectPath": "/Challenges_KOTH/Challenges_KOTH.2"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "Challenges",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Challenges_KOTH/DT_Challenges_SessionEvents_KOTH.DT_Challenges_SessionEvents_KOTH",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / Challenges_KOTH ---
+{
+  "Type": "GameFeatureData",
+  "Name": "Challenges_KOTH",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/Challenges_KOTH/Challenges_KOTH",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'Challenges_KOTH:GameFeatureAction_DataRegistrySource_0'",
+        "ObjectPath": "/Challenges_KOTH/Challenges_KOTH.1"
+      },
+      {
+        "ObjectName": "GameFeatureAction_DataRegistry'Challenges_KOTH:GameFeatureAction_DataRegistry_0'",
+        "ObjectPath": "/Challenges_KOTH/Challenges_KOTH.0"
+      }
+    ]
+  }
+}

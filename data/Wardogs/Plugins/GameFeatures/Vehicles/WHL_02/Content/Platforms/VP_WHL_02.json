@@ -1,0 +1,769 @@
+--- export: UPrimaryDataAsset / VP_WHL_02 ---
+{
+  "Type": "ModularVehiclePlatform",
+  "Name": "VP_WHL_02",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePlatform'",
+  "Package": "/WHL_02/Platforms/VP_WHL_02",
+  "Properties": {
+    "ImplementationClass": {
+      "AssetPathName": "/Script/WDGame.WDWheeledVehiclePawn",
+      "SubPathString": ""
+    },
+    "SpawnParams": {
+      "Min": {
+        "X": -346.63126,
+        "Y": -143.75768,
+        "Z": -1.903966
+      },
+      "Max": {
+        "X": 299.10556,
+        "Y": 143.76756,
+        "Z": 224.8432
+      }
+    },
+    "Fragments": [
+      {
+        "Key": "Chassis",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_SkeletalMesh'VP_WHL_02:MVF_SkeletalMesh_0'",
+            "ObjectPath": "/WHL_02/Platforms/VP_WHL_02.9"
+          }
+        }
+      },
+      {
+        "Key": "Door_FrontLeft",
+        "Value": {
+          "bEnabled": false,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_WHL_02:MVF_StaticMesh_1'",
+            "ObjectPath": "/WHL_02/Platforms/VP_WHL_02.10"
+          }
+        }
+      },
+      {
+        "Key": "Door_FrontRight",
+        "Value": {
+          "bEnabled": false,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_WHL_02:MVF_StaticMesh_2'",
+            "ObjectPath": "/WHL_02/Platforms/VP_WHL_02.11"
+          }
+        }
+      },
+      {
+        "Key": "Door_RearLeft",
+        "Value": {
+          "bEnabled": false,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_WHL_02:MVF_StaticMesh_3'",
+            "ObjectPath": "/WHL_02/Platforms/VP_WHL_02.12"
+          }
+        }
+      },
+      {
+        "Key": "Door_RearRight",
+        "Value": {
+          "bEnabled": false,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_WHL_02:MVF_StaticMesh_4'",
+            "ObjectPath": "/WHL_02/Platforms/VP_WHL_02.13"
+          }
+        }
+      },
+      {
+        "Key": "Interior",
+        "Value": {
+          "bEnabled": false,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_WHL_02:MVF_StaticMesh_5'",
+            "ObjectPath": "/WHL_02/Platforms/VP_WHL_02.14"
+          }
+        }
+      },
+      {
+        "Key": "BootBottom",
+        "Value": {
+          "bEnabled": false,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_WHL_02:MVF_StaticMesh_8'",
+            "ObjectPath": "/WHL_02/Platforms/VP_WHL_02.15"
+          }
+        }
+      },
+      {
+        "Key": "Destruction",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_DestructionInvokerFragment'VP_WHL_02:WD_MVF_DestructionInvokerFragment_0'",
+            "ObjectPath": "/WHL_02/Platforms/VP_WHL_02.16"
+          }
+        }
+      },
+      {
+        "Key": "Health",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_HealthSections'VP_WHL_02:MVF_HealthSections_0'",
+            "ObjectPath": "/WHL_02/Platforms/VP_WHL_02.8"
+          }
+        }
+      }
+    ],
+    "Slots": [
+      {
+        "Key": "Body",
+        "Value": {
+          "bEnabled": true,
+          "Slot": {
+            "ObjectName": "ModularVehicleSlot'VP_WHL_02:ModularVehicleSlot_5'",
+            "ObjectPath": "/WHL_02/Platforms/VP_WHL_02.6"
+          }
+        }
+      },
+      {
+        "Key": "Config",
+        "Value": {
+          "bEnabled": true,
+          "Slot": {
+            "ObjectName": "ModularVehicleSlot'VP_WHL_02:ModularVehicleSlot_4'",
+            "ObjectPath": "/WHL_02/Platforms/VP_WHL_02.5"
+          }
+        }
+      },
+      {
+        "Key": "Wheels",
+        "Value": {
+          "bEnabled": true,
+          "Slot": {
+            "ObjectName": "ModularVehicleSlot'VP_WHL_02:ModularVehicleSlot_0'",
+            "ObjectPath": "/WHL_02/Platforms/VP_WHL_02.1"
+          }
+        }
+      },
+      {
+        "Key": "Rearback",
+        "Value": {
+          "bEnabled": true,
+          "Slot": {
+            "ObjectName": "ModularVehicleSlot'VP_WHL_02:ModularVehicleSlot_1'",
+            "ObjectPath": "/WHL_02/Platforms/VP_WHL_02.2"
+          }
+        }
+      },
+      {
+        "Key": "Chassis",
+        "Value": {
+          "bEnabled": true,
+          "Slot": {
+            "ObjectName": "ModularVehicleSlot'VP_WHL_02:ModularVehicleSlot_2'",
+            "ObjectPath": "/WHL_02/Platforms/VP_WHL_02.3"
+          }
+        }
+      },
+      {
+        "Key": "Seats",
+        "Value": {
+          "bEnabled": true,
+          "Slot": {
+            "ObjectName": "ModularVehicleSlot'VP_WHL_02:ModularVehicleSlot_3'",
+            "ObjectPath": "/WHL_02/Platforms/VP_WHL_02.4"
+          }
+        }
+      },
+      {
+        "Key": "Bobblehead",
+        "Value": {
+          "bEnabled": true,
+          "Slot": {
+            "ObjectName": "ModularVehicleSlot'VP_WHL_02:ModularVehicleSlot_6'",
+            "ObjectPath": "/WHL_02/Platforms/VP_WHL_02.7"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / ModularVehicleSlot_0 ---
+{
+  "Type": "ModularVehicleSlot",
+  "Name": "ModularVehicleSlot_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleSlot'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_WHL_02'",
+    "ObjectPath": "/WHL_02/Platforms/VP_WHL_02.0"
+  },
+  "Properties": {
+    "DefaultPart": {
+      "AssetPathName": "/WHL_02/Parts/VP_WHL_02_Wheels.VP_WHL_02_Wheels",
+      "SubPathString": ""
+    },
+    "CompatibilityTags": {
+      "RequireTags": [
+        "Vehicle.Wheel"
+      ]
+    }
+  }
+}
+--- export: UObject / ModularVehicleSlot_1 ---
+{
+  "Type": "ModularVehicleSlot",
+  "Name": "ModularVehicleSlot_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleSlot'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_WHL_02'",
+    "ObjectPath": "/WHL_02/Platforms/VP_WHL_02.0"
+  },
+  "Properties": {
+    "Type": "EModularVehicleSlotType::Optional",
+    "CompatibilityTags": {
+      "RequireTags": [
+        "Vehicle.Chassis.Rear"
+      ]
+    }
+  }
+}
+--- export: UObject / ModularVehicleSlot_2 ---
+{
+  "Type": "ModularVehicleSlot",
+  "Name": "ModularVehicleSlot_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleSlot'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_WHL_02'",
+    "ObjectPath": "/WHL_02/Platforms/VP_WHL_02.0"
+  },
+  "Properties": {
+    "CompatibilityTags": {
+      "RequireTags": [
+        "Vehicle.Chassis"
+      ]
+    }
+  }
+}
+--- export: UObject / ModularVehicleSlot_3 ---
+{
+  "Type": "ModularVehicleSlot",
+  "Name": "ModularVehicleSlot_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleSlot'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_WHL_02'",
+    "ObjectPath": "/WHL_02/Platforms/VP_WHL_02.0"
+  },
+  "Properties": {
+    "CompatibilityTags": {
+      "RequireTags": [
+        "Vehicle.Seat"
+      ]
+    }
+  }
+}
+--- export: UObject / ModularVehicleSlot_4 ---
+{
+  "Type": "ModularVehicleSlot",
+  "Name": "ModularVehicleSlot_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleSlot'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_WHL_02'",
+    "ObjectPath": "/WHL_02/Platforms/VP_WHL_02.0"
+  },
+  "Properties": {
+    "DefaultPart": {
+      "AssetPathName": "/WHL_02/Parts/VP_WHL_02_Config.VP_WHL_02_Config",
+      "SubPathString": ""
+    },
+    "CompatibilityTags": {
+      "RequireTags": [
+        "Vehicle.Config"
+      ]
+    }
+  }
+}
+--- export: UObject / ModularVehicleSlot_5 ---
+{
+  "Type": "ModularVehicleSlot",
+  "Name": "ModularVehicleSlot_5",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleSlot'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_WHL_02'",
+    "ObjectPath": "/WHL_02/Platforms/VP_WHL_02.0"
+  },
+  "Properties": {
+    "DefaultPart": {
+      "AssetPathName": "/WHL_02/Parts/VP_WHL_02_MainBody_Default.VP_WHL_02_MainBody_Default",
+      "SubPathString": ""
+    },
+    "CompatibilityTags": {
+      "RequireTags": [
+        "Vehicle.MainBody"
+      ]
+    }
+  }
+}
+--- export: UObject / ModularVehicleSlot_6 ---
+{
+  "Type": "ModularVehicleSlot",
+  "Name": "ModularVehicleSlot_6",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleSlot'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_WHL_02'",
+    "ObjectPath": "/WHL_02/Platforms/VP_WHL_02.0"
+  },
+  "Properties": {
+    "Type": "EModularVehicleSlotType::Optional",
+    "CompatibilityTags": {
+      "RequireTags": [
+        "Vehicle.Bobblehead"
+      ]
+    }
+  }
+}
+--- export: UObject / MVF_HealthSections_0 ---
+{
+  "Type": "MVF_HealthSections",
+  "Name": "MVF_HealthSections_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_HealthSections'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_WHL_02'",
+    "ObjectPath": "/WHL_02/Platforms/VP_WHL_02.0"
+  },
+  "Properties": {
+    "HealthSections": [
+      {
+        "Key": {
+          "TagName": "Attribute.Gameplay.Health"
+        },
+        "Value": {
+          "MaxHealth": 400.0,
+          "Tags": [
+            "Meta.Damage.HitLocation.Vehicle.MainBody"
+          ],
+          "_aaachppjniilchbhchfel_$FF9D88B27172754B$_$39$": false,
+          "PreDamageRouting": [],
+          "_aaacihkleekkmjpdiiofn_$7AB44AAC9F388E5D$_$40$": false,
+          "PostDamageRouting": [],
+          "_aaadailpdlfefdlnfieob_$8BF3B5453BD584E1$_$48$": false,
+          "SimultaneousDamageRouting": [],
+          "RepairInteractionContextTag": {
+            "TagName": "Interaction.Context.Vehicle.Repair.Engine"
+          },
+          "RepairInteractionTrackerPointTag": {
+            "TagName": "UI.Trackers.InteractionPoint.Vehicle.RepairPoint.Engine"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Attribute.Gameplay.Health.Engine"
+        },
+        "Value": {
+          "MaxHealth": 400.0,
+          "Tags": [
+            "Meta.Damage.HitLocation.Vehicle.Engine"
+          ],
+          "_aaachppjniilchbhchfel_$FF9D88B27172754B$_$39$": false,
+          "PreDamageRouting": [],
+          "_aaacihkleekkmjpdiiofn_$7AB44AAC9F388E5D$_$40$": false,
+          "PostDamageRouting": [],
+          "_aaadailpdlfefdlnfieob_$8BF3B5453BD584E1$_$48$": false,
+          "SimultaneousDamageRouting": [],
+          "RepairInteractionContextTag": {
+            "TagName": "None"
+          },
+          "RepairInteractionTrackerPointTag": {
+            "TagName": "None"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Attribute.Gameplay.Health.FuelTank"
+        },
+        "Value": {
+          "MaxHealth": 400.0,
+          "Tags": [
+            "Meta.Damage.HitLocation.Vehicle.FuelTank"
+          ],
+          "_aaachppjniilchbhchfel_$FF9D88B27172754B$_$39$": false,
+          "PreDamageRouting": [],
+          "_aaacihkleekkmjpdiiofn_$7AB44AAC9F388E5D$_$40$": false,
+          "PostDamageRouting": [],
+          "_aaadailpdlfefdlnfieob_$8BF3B5453BD584E1$_$48$": false,
+          "SimultaneousDamageRouting": [],
+          "RepairInteractionContextTag": {
+            "TagName": "Interaction.Context.Vehicle.Repair.FuelTank"
+          },
+          "RepairInteractionTrackerPointTag": {
+            "TagName": "UI.Trackers.InteractionPoint.Vehicle.RepairPoint.FuelTank"
+          }
+        }
+      }
+    ],
+    "ComplexSurfaceMappings": {
+      "SurfaceGroups": [
+        {
+          "Key": {
+            "TagName": "ComplexSurface.Group.Default"
+          },
+          "Value": {
+            "bUseDefault": true,
+            "Default": {
+              "TagName": "Attribute.Gameplay.Health"
+            },
+            "SlotMap": [
+              {
+                "Key": "CC_FuelTank",
+                "Value": {
+                  "TagName": "Attribute.Gameplay.Health.FuelTank"
+                }
+              },
+              {
+                "Key": "CC_Engine",
+                "Value": {
+                  "TagName": "Attribute.Gameplay.Health"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "PhysicsGroupMappings": [
+      {
+        "Key": {
+          "TagName": "Vehicle.PhysicsGroup.Engine"
+        },
+        "Value": {
+          "bExecuteCollisionEffects": true,
+          "CollisionDamageModifier": 1.0,
+          "DamageRouting": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": 2.5
+            }
+          ],
+          "SimultaneousDamageRouting": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Right.Front"
+              },
+              "Value": 0.5
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Left.Front"
+              },
+              "Value": 0.5
+            }
+          ]
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.PhysicsGroup.MainBody"
+        },
+        "Value": {
+          "bExecuteCollisionEffects": true,
+          "CollisionDamageModifier": 1.0,
+          "DamageRouting": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": 1.75
+            }
+          ],
+          "SimultaneousDamageRouting": []
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.PhysicsGroup.MainBody.Rear"
+        },
+        "Value": {
+          "bExecuteCollisionEffects": true,
+          "CollisionDamageModifier": 1.0,
+          "DamageRouting": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.FuelTank"
+              },
+              "Value": 1.75
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": 1.75
+            }
+          ],
+          "SimultaneousDamageRouting": []
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / MVF_SkeletalMesh_0 ---
+{
+  "Type": "MVF_SkeletalMesh",
+  "Name": "MVF_SkeletalMesh_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_SkeletalMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_WHL_02'",
+    "ObjectPath": "/WHL_02/Platforms/VP_WHL_02.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "bAttachSource": true,
+      "Tags": [
+        "Chassis"
+      ]
+    },
+    "SkeletalMesh": {
+      "AssetPathName": "/WHL_02/SkeletalMeshes/SK_WHL_02_Pickup.SK_WHL_02_Pickup",
+      "SubPathString": ""
+    },
+    "AnimInstance": {
+      "AssetPathName": "/WHL_02/Assets/ABP_WHL_02_Pickup.ABP_WHL_02_Pickup_C",
+      "SubPathString": ""
+    },
+    "PhysicsGroups": {
+      "Group": {
+        "TagName": "None"
+      },
+      "bEnablePerShape": true,
+      "PerShapeOverrides": [
+        {
+          "Key": "MainBody",
+          "Value": {
+            "TagName": "Vehicle.PhysicsGroup.MainBody"
+          }
+        },
+        {
+          "Key": "Engine",
+          "Value": {
+            "TagName": "Vehicle.PhysicsGroup.Engine"
+          }
+        },
+        {
+          "Key": "Rear",
+          "Value": {
+            "TagName": "Vehicle.PhysicsGroup.MainBody.Rear"
+          }
+        }
+      ]
+    },
+    "WalkableSlopeOverride": {
+      "WalkableSlopeBehavior": "EWalkableSlopeBehavior::WalkableSlope_Default"
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_1 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_WHL_02'",
+    "ObjectPath": "/WHL_02/Platforms/VP_WHL_02.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceID": "Chassis",
+        "SocketName": "frontLDoor_J"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/WHL_02/StaticMeshes/SM_WHL_02_FrontL_Door.SM_WHL_02_FrontL_Door",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_Kinematic"
+      }
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_2 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_WHL_02'",
+    "ObjectPath": "/WHL_02/Platforms/VP_WHL_02.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceID": "Chassis",
+        "SocketName": "frontRDoor_J"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/WHL_02/StaticMeshes/SM_WHL_02_FrontR_Door.SM_WHL_02_FrontR_Door",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_Kinematic"
+      }
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_3 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_WHL_02'",
+    "ObjectPath": "/WHL_02/Platforms/VP_WHL_02.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceID": "Chassis",
+        "SocketName": "rearLDoor_J"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/WHL_02/StaticMeshes/SM_WHL_02_RearL_Door.SM_WHL_02_RearL_Door",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_Kinematic"
+      }
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_4 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_WHL_02'",
+    "ObjectPath": "/WHL_02/Platforms/VP_WHL_02.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceID": "Chassis",
+        "SocketName": "rearRDoor_J"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/WHL_02/StaticMeshes/SM_WHL_02_RearR_Door.SM_WHL_02_RearR_Door",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_Kinematic"
+      }
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_5 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_5",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_WHL_02'",
+    "ObjectPath": "/WHL_02/Platforms/VP_WHL_02.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceID": "Chassis",
+        "SocketName": "chassis_J"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/WHL_02/StaticMeshes/SM_WHL_02_Interior.SM_WHL_02_Interior",
+      "SubPathString": ""
+    },
+    "bHitEvents": false,
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_8 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_8",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_WHL_02'",
+    "ObjectPath": "/WHL_02/Platforms/VP_WHL_02.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceID": "Chassis",
+        "SocketName": "bootDoorBottom_J"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/WHL_02/StaticMeshes/SM_WHL_02_BootBottom.SM_WHL_02_BootBottom",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    }
+  }
+}
+--- export: UObject / WD_MVF_DestructionInvokerFragment_0 ---
+{
+  "Type": "WD_MVF_DestructionInvokerFragment",
+  "Name": "WD_MVF_DestructionInvokerFragment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_DestructionInvokerFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_WHL_02'",
+    "ObjectPath": "/WHL_02/Platforms/VP_WHL_02.0"
+  },
+  "Properties": {
+    "VehicleCollisionCentre": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 97.5
+    },
+    "VehicleCollisionExtents": {
+      "X": 562.5,
+      "Y": 200.0,
+      "Z": 180.0
+    },
+    "VehicleMass": 800.0,
+    "VelocityOffsetMultiplier": 0.075,
+    "bPlayerCustomizable": false
+  }
+}

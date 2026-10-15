@@ -1,0 +1,42 @@
+--- export: UPrimaryDataAsset / VP_ROT_03_MachineGuns_Stats ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_ROT_03_MachineGuns_Stats",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/ROT_03_WeaponVariants/Parts/VP_ROT_03_MachineGuns_Stats",
+  "Properties": {
+    "Tags": [
+      "Vehicle.Statistics"
+    ],
+    "Fragments": [
+      {
+        "Key": "Stats",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_VehicleStats'VP_ROT_03_MachineGuns_Stats:WD_MVF_VehicleStats_0'",
+            "ObjectPath": "/ROT_03_WeaponVariants/Parts/VP_ROT_03_MachineGuns_Stats.1"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WD_MVF_VehicleStats_0 ---
+{
+  "Type": "WD_MVF_VehicleStats",
+  "Name": "WD_MVF_VehicleStats_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_VehicleStats'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_ROT_03_MachineGuns_Stats'",
+    "ObjectPath": "/ROT_03_WeaponVariants/Parts/VP_ROT_03_MachineGuns_Stats.0"
+  },
+  "Properties": {
+    "VehiclesStatsDataAsset": {
+      "AssetPathName": "/ROT_03_WeaponVariants/Data/WeaponVariants/DA_ROT_03_MachineGuns_Stats.DA_ROT_03_MachineGuns_Stats",
+      "SubPathString": ""
+    }
+  }
+}

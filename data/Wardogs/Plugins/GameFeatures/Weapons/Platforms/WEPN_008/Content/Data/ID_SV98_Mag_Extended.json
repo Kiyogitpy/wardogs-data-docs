@@ -1,0 +1,193 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SV98_Mag_Extended'",
+    "ObjectPath": "/WEPN_008/Data/ID_SV98_Mag_Extended.3"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 1,
+      "Y": 2
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SV98_Mag_Extended'",
+    "ObjectPath": "/WEPN_008/Data/ID_SV98_Mag_Extended.3"
+  },
+  "Properties": {
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Item.Ammo"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::AllowList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [
+            "Item.Caliber.762x54mm"
+          ],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": -2,
+        "MaxSlotAmountStackSize": 20,
+        "bAllowsStackedPacking": true,
+        "bIsHiddenContainer": false,
+        "_aaabelnajgoacnpmnokoe_$BD096E02DFCDEAE4$_$20$": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [
+          "Id.Item.762x54mm"
+        ],
+        "DefaultContainerItems": [
+          {
+            "Item": {
+              "TagName": "Id.Item.762x54mm.Tracer"
+            },
+            "Amount": null
+          }
+        ]
+      }
+    ]
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SV98_Mag_Extended'",
+    "ObjectPath": "/WEPN_008/Data/ID_SV98_Mag_Extended.3"
+  }
+}
+--- export: UPrimaryDataAsset / ID_SV98_Mag_Extended ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_SV98_Mag_Extended",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/WEPN_008/Data/ID_SV98_Mag_Extended",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.SV98ExtendedMagazine"
+    },
+    "ItemContext": [
+      "Item.Attachment.Magazine"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "5B9F0E824C70886F258C0F8EC1D5A7EE",
+      "SourceString": "SV98 Extended Mag",
+      "LocalizedString": "SV98 Extended Mag"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_SV98_Mag_Extended:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/WEPN_008/Data/ID_SV98_Mag_Extended.1"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_SV98_Mag_Extended:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/WEPN_008/Data/ID_SV98_Mag_Extended.2"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_SV98_Mag_Extended:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/WEPN_008/Data/ID_SV98_Mag_Extended.6"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_SV98_Mag_Extended:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/WEPN_008/Data/ID_SV98_Mag_Extended.4"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_SV98_Mag_Extended:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/WEPN_008/Data/ID_SV98_Mag_Extended.5"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_SV98_Mag_Extended:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/WEPN_008/Data/ID_SV98_Mag_Extended.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SV98_Mag_Extended'",
+    "ObjectPath": "/WEPN_008/Data/ID_SV98_Mag_Extended.3"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "ReloadAnimationPlayRate": 1.0,
+      "bAllowsInspect": true,
+      "WeaponInspectIgnoreList": [],
+      "_aaabcefliieaifhmbokhe_$45B8840857C1EA74$_$18$": 1.0,
+      "_aaabfocbgdpdpdbbdkohf_$E2163F3F3113AE75$_$21$": 1.0,
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Magazine"
+      },
+      "AppliedEffects": [],
+      "AppliedCharacterEffects": [],
+      "bCanBeRemovedInGame": true,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SV98_Mag_Extended'",
+    "ObjectPath": "/WEPN_008/Data/ID_SV98_Mag_Extended.3"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Magazine_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Item/Data/ID_Magazine_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SV98_Mag_Extended'",
+    "ObjectPath": "/WEPN_008/Data/ID_SV98_Mag_Extended.3"
+  },
+  "Properties": {
+    "ItemType": "EWDGunsmithItemType::Attachment"
+  }
+}

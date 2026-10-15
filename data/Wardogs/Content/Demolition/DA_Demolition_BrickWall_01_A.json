@@ -1,0 +1,156 @@
+--- export: UDataAsset / DA_Demolition_BrickWall_01_A ---
+{
+  "Type": "BHDemolitionDataAsset",
+  "Name": "DA_Demolition_BrickWall_01_A",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDemolitionDataAsset'",
+  "Package": "/Game/Demolition/DA_Demolition_BrickWall_01_A",
+  "Properties": {
+    "SourceMeshes": [
+      {
+        "Key": "StaticMesh'/Game/Environment/Props/Walls_and_Fences/Full_Cover/Wall_Brick_Industrial_01/SM_Wall_Brick_Industrial_01_EndCap_01a.SM_Wall_Brick_Industrial_01_EndCap_01a'",
+        "Value": {
+          "FarRepresentationMesh": {
+            "AssetPathName": "/Game/Environment/Props/Walls_and_Fences/Full_Cover/Wall_Brick_Industrial_01/Demolition/SM_FarRep_Wall_Brick_Industrial_01_EndCap_01a.SM_FarRep_Wall_Brick_Industrial_01_EndCap_01a",
+            "SubPathString": ""
+          },
+          "RemnantMeshes": {
+            "ObjectName": "BHDemolitionRemnantMeshesAsset'DA_Demolition_RM_BrickWall_01_A'",
+            "ObjectPath": "/Game/Demolition/Remnants/DA/DA_Demolition_RM_BrickWall_01_A.0"
+          },
+          "Remnant_BaseCPD": {
+            "CustomPrimitiveColor": {
+              "R": 0.219526,
+              "G": 0.205079,
+              "B": 0.174647,
+              "A": 0.0,
+              "Hex": "817D74"
+            },
+            "CustomPrimitiveValue": [
+              0.0,
+              1.0
+            ]
+          },
+          "FarRepresentationData": {
+            "Offset": {
+              "Rotation": {
+                "X": 0.0,
+                "Y": 0.0,
+                "Z": 0.0,
+                "W": 1.0,
+                "IsNormalized": true,
+                "Size": 1.0,
+                "SizeSquared": 1.0
+              },
+              "Translation": {
+                "X": 0.0,
+                "Y": 0.0,
+                "Z": 0.0
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            },
+            "CPD": {
+              "CustomPrimitiveColor": {
+                "R": 0.219526,
+                "G": 0.205079,
+                "B": 0.174647,
+                "A": 0.0,
+                "Hex": "817D74"
+              },
+              "CustomPrimitiveValue": []
+            }
+          }
+        }
+      },
+      {
+        "Key": "StaticMesh'/Game/Environment/Props/Walls_and_Fences/Crouch_Cover/Wall_Brick_Industrial_02/SM_Wall_Brick_Industrial_02_EndCap_01a.SM_Wall_Brick_Industrial_02_EndCap_01a'",
+        "Value": {
+          "FarRepresentationMesh": {
+            "AssetPathName": "/Game/Environment/Props/Walls_and_Fences/Crouch_Cover/Wall_Brick_Industrial_02/Demolition/SM_FarRep_Wall_Brick_Industrial_02_EndCap_01a.SM_FarRep_Wall_Brick_Industrial_02_EndCap_01a",
+            "SubPathString": ""
+          },
+          "RemnantMeshes": {
+            "ObjectName": "BHDemolitionRemnantMeshesAsset'DA_Demolition_RM_BrickWall_01_A'",
+            "ObjectPath": "/Game/Demolition/Remnants/DA/DA_Demolition_RM_BrickWall_01_A.0"
+          },
+          "Remnant_BaseCPD": {
+            "CustomPrimitiveColor": {
+              "R": 0.219526,
+              "G": 0.205079,
+              "B": 0.174647,
+              "A": 0.0,
+              "Hex": "817D74"
+            },
+            "CustomPrimitiveValue": [
+              0.0,
+              1.0
+            ]
+          },
+          "FarRepresentationData": {
+            "Offset": {
+              "Rotation": {
+                "X": 0.0,
+                "Y": 0.0,
+                "Z": 0.0,
+                "W": 1.0,
+                "IsNormalized": true,
+                "Size": 1.0,
+                "SizeSquared": 1.0
+              },
+              "Translation": {
+                "X": 0.0,
+                "Y": 0.0,
+                "Z": 0.0
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            },
+            "CPD": {
+              "CustomPrimitiveColor": {
+                "R": 0.219526,
+                "G": 0.205079,
+                "B": 0.174647,
+                "A": 0.0,
+                "Hex": "817D74"
+              },
+              "CustomPrimitiveValue": []
+            }
+          }
+        }
+      }
+    ],
+    "DemolitionComponentSettings": {
+      "ObjectName": "BHDemolitionComponentSettings'DA_Demolition_CS_ConcreteWalls_01'",
+      "ObjectPath": "/Game/Demolition/ComponentSettings/DA_Demolition_CS_ConcreteWalls_01.0"
+    },
+    "DemolitionRuleSet": {
+      "ObjectName": "BHDemolitionRuleset'BH_Demolition_RS_TanksAndLargeExplosions'",
+      "ObjectPath": "/Game/Demolition/RuleSets/BH_Demolition_RS_TanksAndLargeExplosions.3"
+    },
+    "PermittedZones": [
+      "Demolition.Zone.Important",
+      "Demolition.Zone.Distant"
+    ],
+    "DemolitionVFX": [
+      {
+        "AssetPathName": "/Game/VFX/Environmental/Destruction/Demolition/Concrete_Brick/NS_BrickSmash.NS_BrickSmash",
+        "SubPathString": ""
+      }
+    ],
+    "CrosstalkEventTag": {
+      "TagName": "Audio.Event.Prop.Demolition.FenceConcrete"
+    },
+    "DemolitionFragments": [
+      {
+        "RestitutionImpulseMultiplier": 0.4
+      }
+    ]
+  }
+}

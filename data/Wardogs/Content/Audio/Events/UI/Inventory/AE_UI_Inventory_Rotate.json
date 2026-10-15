@@ -1,0 +1,40 @@
+--- export: UPrimaryDataAsset / AE_UI_Inventory_Rotate ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UI_Inventory_Rotate",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UI/Inventory/AE_UI_Inventory_Rotate",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.Inventory.Rotate"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_UI_Inventory_Rotate:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/Inventory/AE_UI_Inventory_Rotate.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_Inventory_Rotate'",
+    "ObjectPath": "/Game/Audio/Events/UI/Inventory/AE_UI_Inventory_Rotate.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UI_InGame_Inventory_Rotate'",
+      "ObjectPath": "/Game/Audio/UI/InGame/MSS/Inventory/MSS_UI_InGame_Inventory_Rotate.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::PlayBoth",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

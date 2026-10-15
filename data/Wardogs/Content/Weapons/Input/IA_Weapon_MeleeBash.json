@@ -1,0 +1,30 @@
+--- export: UDataAsset / IA_Weapon_MeleeBash ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Weapon_MeleeBash",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Weapons/Input/IA_Weapon_MeleeBash",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.HoldableItem.Weapon.MeleeBash"
+    },
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerPressed'IA_Weapon_MeleeBash:InputTriggerPressed_0'",
+        "ObjectPath": "/Game/Weapons/Input/IA_Weapon_MeleeBash.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Weapon_MeleeBash'",
+    "ObjectPath": "/Game/Weapons/Input/IA_Weapon_MeleeBash.0"
+  }
+}

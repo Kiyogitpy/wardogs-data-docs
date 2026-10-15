@@ -1,0 +1,73 @@
+--- export: UObject / AEB_AttachSoundToHeldItem_C_0 ---
+{
+  "Type": "AEB_AttachSoundToHeldItem_C",
+  "Name": "AEB_AttachSoundToHeldItem_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_AttachSoundToHeldItem.AEB_AttachSoundToHeldItem_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Attachment_Bipod_Mount'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Attachment/AE_Weapon_Attachment_Bipod_Mount.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_AttachSoundToHeldItem_C'Default__AEB_AttachSoundToHeldItem_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_AttachSoundToHeldItem.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / AEB_PlayPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayPerspectiveSound_C",
+  "Name": "AEB_PlayPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.AEB_PlayPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Attachment_Bipod_Mount'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Attachment/AE_Weapon_Attachment_Bipod_Mount.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayPerspectiveSound_C'Default__AEB_PlayPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.0"
+  },
+  "Properties": {
+    "1pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Weapon_Attachment_Bipod_Mount_1p'",
+      "ObjectPath": "/Game/Audio/Weapon/Attachments/MSS/1p/MSS_Weapon_Attachment_Bipod_Mount_1p.0"
+    },
+    "3pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Weapon_Attachment_Bipod_Mount_3p'",
+      "ObjectPath": "/Game/Audio/Weapon/Attachments/MSS/3p/MSS_Weapon_Attachment_Bipod_Mount_3p.0"
+    },
+    "RestartBehaviour": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Weapon_Attachment_Bipod_Mount ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_Attachment_Bipod_Mount",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Weapon/Attachment/AE_Weapon_Attachment_Bipod_Mount",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.Attachment.Bipod.Mount"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_PlayPerspectiveSound_C'AE_Weapon_Attachment_Bipod_Mount:AEB_PlayPerspectiveSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Attachment/AE_Weapon_Attachment_Bipod_Mount.1"
+      },
+      {
+        "ObjectName": "AEB_AttachSoundToHeldItem_C'AE_Weapon_Attachment_Bipod_Mount:AEB_AttachSoundToHeldItem_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Attachment/AE_Weapon_Attachment_Bipod_Mount.0"
+      }
+    ],
+    "_aaabhonahgpdbjealfaaa_$ED076F31940B5000$_$23$": 50.5
+  }
+}

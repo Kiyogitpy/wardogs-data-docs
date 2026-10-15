@@ -1,0 +1,83 @@
+--- export: UObject / WDPingAction_AssistanceRequest_Ammo_1 ---
+{
+  "Type": "WDPingAction_AssistanceRequest_Ammo",
+  "Name": "WDPingAction_AssistanceRequest_Ammo_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingAction_AssistanceRequest_Ammo'",
+  "Outer": {
+    "ObjectName": "WDPingActionAsset'DA_PingAction_Request_Ammo'",
+    "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_Ammo.1"
+  },
+  "Properties": {
+    "PingActionChatLocText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_ChatBox_AssistanceRequests.STRINGS_ChatBox_AssistanceRequests",
+      "Key": "Type_Request_Ammo_Other",
+      "SourceString": "Requesting {AmmoType} ammo!",
+      "LocalizedString": "Requesting {AmmoType} ammo!"
+    },
+    "PingActionChatLocTextWithLocation": {
+      "TableId": "/Game/UI/StringTables/STRINGS_ChatBox_AssistanceRequests.STRINGS_ChatBox_AssistanceRequests",
+      "Key": "Type_Request_Ammo_Other_WithLoc",
+      "SourceString": "Requesting {AmmoType} ammo at X{X}, Y{Y}",
+      "LocalizedString": "Requesting {AmmoType} ammo at X{X}, Y{Y}"
+    }
+  }
+}
+--- export: UDataAsset / DA_PingAction_Request_Ammo ---
+{
+  "Type": "WDPingActionAsset",
+  "Name": "DA_PingAction_Request_Ammo",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingActionAsset'",
+  "Package": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_Ammo",
+  "Properties": {
+    "Text": {
+      "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+      "Key": "Action.Request.Ammo",
+      "SourceString": "Ammo",
+      "LocalizedString": "Ammo"
+    },
+    "LockedDescription": {
+      "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+      "Key": "Action.Request.Ammo.Locked",
+      "SourceString": "Ammo\r\nWeapon required.",
+      "LocalizedString": "Ammo\r\nWeapon required."
+    },
+    "NonTriggerableDescriptions": [
+      {
+        "Key": {
+          "TagName": "Tag.PingAction.NonTriggerable.NoWeapon"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+          "Key": "Action.Request.Ammo.NonTriggerable.NoWeapon",
+          "SourceString": "Ammo\r\nWeapon required",
+          "LocalizedString": "Ammo\r\nWeapon required"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Tag.PingAction.NonTriggerable.DropAfterUse"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+          "Key": "Action.Request.Ammo.NonTriggerable.DropAfterUse",
+          "SourceString": "Ammo\r\nUnable to request ammo for this weapon",
+          "LocalizedString": "Ammo\r\nUnable to request ammo for this weapon"
+        }
+      }
+    ],
+    "Icon": {
+      "AssetPathName": "/Game/UI/Features/PingWheel/Widgets/Action/Textures/T_UI_Icon_PingWheel_Ammo_64x64.T_UI_Icon_PingWheel_Ammo_64x64",
+      "SubPathString": ""
+    },
+    "bIsWorkInProgress": false,
+    "bRequestPlayerMapCoordinates": true,
+    "Actions": [
+      {
+        "ObjectName": "WDPingAction_AssistanceRequest_Ammo'DA_PingAction_Request_Ammo:WDPingAction_AssistanceRequest_Ammo_1'",
+        "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_Ammo.0"
+      }
+    ]
+  }
+}

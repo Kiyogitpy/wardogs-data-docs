@@ -1,0 +1,134 @@
+--- export: UObject / WDUIContextTextRules_1 ---
+{
+  "Type": "WDUIContextTextRules",
+  "Name": "WDUIContextTextRules_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIContextTextRules'",
+  "Outer": {
+    "ObjectName": "WDUISpatialTrackerData'DA_Tracker_Spatial_Deployable'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Deployable.3"
+  },
+  "Properties": {
+    "State": "EWDUIRuleState::Disable"
+  }
+}
+--- export: UObject / WDUILineOfSightRules_0 ---
+{
+  "Type": "WDUILineOfSightRules",
+  "Name": "WDUILineOfSightRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUILineOfSightRules'",
+  "Outer": {
+    "ObjectName": "WDUISpatialTrackerData'DA_Tracker_Spatial_Deployable'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Deployable.3"
+  },
+  "Properties": {
+    "TraceChannel": "ECollisionChannel::ECC_GameTraceChannel4",
+    "SquaredRange": 100000000.0
+  }
+}
+--- export: UObject / WDUILocationOffsetRules_0 ---
+{
+  "Type": "WDUILocationOffsetRules",
+  "Name": "WDUILocationOffsetRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUILocationOffsetRules'",
+  "Outer": {
+    "ObjectName": "WDUISpatialTrackerData'DA_Tracker_Spatial_Deployable'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Deployable.3"
+  },
+  "Properties": {
+    "Offset": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 50.0
+    }
+  }
+}
+--- export: UDataAsset / DA_Tracker_Spatial_Deployable ---
+{
+  "Type": "WDUISpatialTrackerData",
+  "Name": "DA_Tracker_Spatial_Deployable",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUISpatialTrackerData'",
+  "Package": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Deployable",
+  "Properties": {
+    "DistanceRulesets": [
+      {
+        "Key": "EWDUISpatialRulesetType::Distance_First",
+        "Value": 20.0
+      },
+      {
+        "Key": "EWDUISpatialRulesetType::Distance_Second",
+        "Value": 30.0
+      }
+    ],
+    "RuleSets": [
+      {
+        "Key": "EWDUISpatialRulesetType::Default",
+        "Value": {
+          "Priority": 0,
+          "OptionalRules": [
+            {
+              "ObjectName": "WDUIWorldDistanceScaleRules'DA_Tracker_Spatial_Deployable:WDUIWorldDistanceScaleRules_1'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Deployable.5"
+            },
+            {
+              "ObjectName": "WDUIContextTextRules'DA_Tracker_Spatial_Deployable:WDUIContextTextRules_1'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Deployable.0"
+            },
+            {
+              "ObjectName": "WDUILineOfSightRules'DA_Tracker_Spatial_Deployable:WDUILineOfSightRules_0'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Deployable.1"
+            },
+            {
+              "ObjectName": "WDUILocationOffsetRules'DA_Tracker_Spatial_Deployable:WDUILocationOffsetRules_0'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Deployable.2"
+            },
+            {
+              "ObjectName": "WDUIWorldDistanceOpacityRules'DA_Tracker_Spatial_Deployable:WDUIWorldDistanceOpacityRules_0'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Deployable.4"
+            }
+          ]
+        }
+      }
+    ],
+    "DefaultSize": {
+      "X": 16.0,
+      "Y": 16.0
+    }
+  }
+}
+--- export: UObject / WDUIWorldDistanceOpacityRules_0 ---
+{
+  "Type": "WDUIWorldDistanceOpacityRules",
+  "Name": "WDUIWorldDistanceOpacityRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIWorldDistanceOpacityRules'",
+  "Outer": {
+    "ObjectName": "WDUISpatialTrackerData'DA_Tracker_Spatial_Deployable'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Deployable.3"
+  },
+  "Properties": {
+    "MinimumVisibleDistance": 1.0,
+    "FalloffRangeMinimum": 0.5,
+    "MaximumVisibleDistance": 10.0,
+    "SquaredFalloffRangeMinimum": 12500.0,
+    "SquaredMinimumVisibleDistance": 10000.0,
+    "SquaredMaximumVisibleDistance": 1000000.0
+  }
+}
+--- export: UObject / WDUIWorldDistanceScaleRules_1 ---
+{
+  "Type": "WDUIWorldDistanceScaleRules",
+  "Name": "WDUIWorldDistanceScaleRules_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIWorldDistanceScaleRules'",
+  "Outer": {
+    "ObjectName": "WDUISpatialTrackerData'DA_Tracker_Spatial_Deployable'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Deployable.3"
+  },
+  "Properties": {
+    "State": "EWDUIRuleState::Disable"
+  }
+}

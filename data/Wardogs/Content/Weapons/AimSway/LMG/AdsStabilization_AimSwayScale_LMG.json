@@ -1,0 +1,36 @@
+--- export: UCurveFloat / AdsStabilization_AimSwayScale_LMG ---
+{
+  "Type": "CurveFloat",
+  "Name": "AdsStabilization_AimSwayScale_LMG",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CurveFloat'",
+  "Package": "/Game/Weapons/AimSway/LMG/AdsStabilization_AimSwayScale_LMG",
+  "Properties": {
+    "FloatCurve": {
+      "Keys": [
+        {
+          "InterpMode": "RCIM_Cubic",
+          "TangentMode": "RCTM_User",
+          "TangentWeightMode": "RCTWM_WeightedBoth",
+          "Time": 0.0,
+          "Value": 1.2,
+          "ArriveTangent": 0.0002905941,
+          "ArriveTangentWeight": 0.614537,
+          "LeaveTangent": 0.0002905941,
+          "LeaveTangentWeight": 0.614537
+        },
+        {
+          "InterpMode": "RCIM_Cubic",
+          "TangentMode": "RCTM_User",
+          "TangentWeightMode": "RCTWM_WeightedNone",
+          "Time": 1.0,
+          "Value": 0.8,
+          "ArriveTangent": -0.86387223,
+          "ArriveTangentWeight": 0.0,
+          "LeaveTangent": -0.86387223,
+          "LeaveTangentWeight": 0.0
+        }
+      ]
+    }
+  }
+}

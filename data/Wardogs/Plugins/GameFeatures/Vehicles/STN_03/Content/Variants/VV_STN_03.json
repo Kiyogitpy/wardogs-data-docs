@@ -1,0 +1,57 @@
+--- export: UPrimaryDataAsset / VV_STN_03 ---
+{
+  "Type": "ModularVehicleVariant",
+  "Name": "VV_STN_03",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleVariant'",
+  "Package": "/STN_03/Variants/VV_STN_03",
+  "Properties": {
+    "VariantID": {
+      "TagName": "Vehicle.Variant.Stationary.Mortar"
+    },
+    "SpawnParams": {
+      "Min": {
+        "X": -40.291775,
+        "Y": -75.88599,
+        "Z": -85.79038
+      },
+      "Max": {
+        "X": 101.47036,
+        "Y": 75.885765,
+        "Z": 163.99646
+      }
+    },
+    "bUseFixedBounds": true,
+    "FixedBounds": {
+      "Min": {
+        "X": -200.0,
+        "Y": -200.0,
+        "Z": -85.79038
+      },
+      "Max": {
+        "X": 200.0,
+        "Y": 200.0,
+        "Z": 163.99646
+      }
+    },
+    "AssemblyData": {
+      "VehicleBase": {
+        "ObjectName": "ModularVehiclePlatform'VP_STN_03'",
+        "ObjectPath": "/STN_03/Platforms/VP_STN_03.0"
+      },
+      "CustomData": {
+        "SlotOverrides": [
+          {
+            "Path": {
+              "Path": "Seats"
+            },
+            "Part": {
+              "AssetPathName": "/STN_03/Parts/VP_STN_03_Seats.VP_STN_03_Seats",
+              "SubPathString": ""
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,131 @@
+--- export: UObject / AEB_ModifyCosmeticExertion_C_0 ---
+{
+  "Type": "AEB_ModifyCosmeticExertion_C",
+  "Name": "AEB_ModifyCosmeticExertion_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_ModifyCosmeticExertion.AEB_ModifyCosmeticExertion_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_TakeHit'",
+    "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_TakeHit.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_ModifyCosmeticExertion_C'Default__AEB_ModifyCosmeticExertion_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_ModifyCosmeticExertion.0"
+  },
+  "Properties": {
+    "Amount": 0.8,
+    "ExertionBump": true
+  }
+}
+--- export: UObject / AEB_SetTakeHitParameters_C_0 ---
+{
+  "Type": "AEB_PlayHitConfirmSound_C",
+  "Name": "AEB_SetTakeHitParameters_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayHitConfirmSound.AEB_PlayHitConfirmSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_TakeHit'",
+    "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_TakeHit.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayHitConfirmSound_C'Default__AEB_PlayHitConfirmSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayHitConfirmSound.0"
+  },
+  "Properties": {
+    "Flesh": {
+      "ObjectName": "MetaSoundSource'MSS_Player_Damage_Hurtmarker_Flesh'",
+      "ObjectPath": "/Game/Audio/Player/Damage/FromBullet/MSS_Player_Damage_Hurtmarker_Flesh.0"
+    },
+    "ArmorBlunt": {
+      "ObjectName": "MetaSoundSource'MSS_Player_Damage_Hurtmarker_Flesh'",
+      "ObjectPath": "/Game/Audio/Player/Damage/FromBullet/MSS_Player_Damage_Hurtmarker_Flesh.0"
+    },
+    "HelmetBlunt": {
+      "ObjectName": "MetaSoundSource'MSS_Player_Damage_Hurtmarker_Flesh'",
+      "ObjectPath": "/Game/Audio/Player/Damage/FromBullet/MSS_Player_Damage_Hurtmarker_Flesh.0"
+    },
+    "ArmorPenetrate": {
+      "ObjectName": "MetaSoundSource'MSS_Player_Damage_Hurtmarker_Flesh'",
+      "ObjectPath": "/Game/Audio/Player/Damage/FromBullet/MSS_Player_Damage_Hurtmarker_Flesh.0"
+    },
+    "HelmetPenetrate": {
+      "ObjectName": "MetaSoundSource'MSS_Player_Damage_Hurtmarker_Flesh'",
+      "ObjectPath": "/Game/Audio/Player/Damage/FromBullet/MSS_Player_Damage_Hurtmarker_Flesh.0"
+    },
+    "BodyArmorBreak": {
+      "ObjectName": "MetaSoundSource'MSS_Player_Damage_Armor_Break_1p'",
+      "ObjectPath": "/Game/Audio/Player/Damage/Break/MSS_Player_Damage_Armor_Break_1p.0"
+    },
+    "HelmetBreak": {
+      "ObjectName": "MetaSoundSource'MSS_Player_Damage_Helmet_Break_1p'",
+      "ObjectPath": "/Game/Audio/Player/Damage/Break/MSS_Player_Damage_Helmet_Break_1p.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Damage.Projectile"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Player_TakeHit ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Player_TakeHit",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Damaged/AE_Player_TakeHit",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.TakeHit"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Player_TakeHit:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_TakeHit.3"
+      },
+      {
+        "ObjectName": "AEB_PlayHitConfirmSound_C'AE_Player_TakeHit:AEB_SetTakeHitParameters_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_TakeHit.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Player_TakeHit:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_TakeHit.4"
+      },
+      {
+        "ObjectName": "AEB_ModifyCosmeticExertion_C'AE_Player_TakeHit:AEB_ModifyCosmeticExertion_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_TakeHit.0"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_TakeHit'",
+    "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_TakeHit.2"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Damage.Projectile"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_TakeHit'",
+    "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_TakeHit.2"
+  },
+  "Properties": {
+    "ParameterName": "Trigger",
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Damage.Projectile"
+    }
+  }
+}

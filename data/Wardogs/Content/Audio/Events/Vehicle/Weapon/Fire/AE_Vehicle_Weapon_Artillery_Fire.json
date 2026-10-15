@@ -1,0 +1,133 @@
+--- export: UObject / AEB_ArtilleryFiringSound_C_0 ---
+{
+  "Type": "AEB_ArtilleryFiringSound_C",
+  "Name": "AEB_ArtilleryFiringSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_ArtilleryFiringSound.AEB_ArtilleryFiringSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Weapon_Artillery_Fire'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Artillery_Fire.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_ArtilleryFiringSound_C'Default__AEB_ArtilleryFiringSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_ArtilleryFiringSound.0"
+  },
+  "Properties": {
+    "1pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Weapon_Vehicle_Artillery_Fire_1p'",
+      "ObjectPath": "/Game/Audio/Weapon/VehicleWeapons/TNK_01_Artillery/MSS/MSS_Weapon_Vehicle_Artillery_Fire_1p.0"
+    },
+    "3pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Weapon_Vehicle_Artillery_Fire_3p'",
+      "ObjectPath": "/Game/Audio/Weapon/VehicleWeapons/TNK_01_Artillery/MSS/MSS_Weapon_Vehicle_Artillery_Fire_3p.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Fire"
+    }
+  }
+}
+--- export: UObject / AEB_SetHostilityParameter_C_0 ---
+{
+  "Type": "AEB_SetHostilityParameter_C",
+  "Name": "AEB_SetHostilityParameter_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetHostilityParameter.AEB_SetHostilityParameter_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Weapon_Artillery_Fire'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Artillery_Fire.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetHostilityParameter_C'Default__AEB_SetHostilityParameter_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetHostilityParameter.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Fire"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_Weapon_Artillery_Fire ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_Weapon_Artillery_Fire",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Artillery_Fire",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.Artillery.Fire"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorMoveSoundToActor'AE_Vehicle_Weapon_Artillery_Fire:CrosstalkAudioEventBehaviorMoveSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Artillery_Fire.5"
+      },
+      {
+        "ObjectName": "AEB_ArtilleryFiringSound_C'AE_Vehicle_Weapon_Artillery_Fire:AEB_ArtilleryFiringSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Artillery_Fire.0"
+      },
+      {
+        "ObjectName": "AEB_SetHostilityParameter_C'AE_Vehicle_Weapon_Artillery_Fire:AEB_SetHostilityParameter_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Artillery_Fire.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Vehicle_Weapon_Artillery_Fire:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Artillery_Fire.3"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Vehicle_Weapon_Artillery_Fire:CrosstalkAudioEventBehaviorExecuteTriggerParameter_1'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Artillery_Fire.4"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Weapon_Artillery_Fire'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Artillery_Fire.2"
+  },
+  "Properties": {
+    "ParameterName": "Semi",
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Fire"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_1 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Weapon_Artillery_Fire'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Artillery_Fire.2"
+  },
+  "Properties": {
+    "ParameterName": "Fire",
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Fire"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorMoveSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorMoveSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorMoveSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorMoveSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Weapon_Artillery_Fire'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Artillery_Fire.2"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Fire"
+    }
+  }
+}

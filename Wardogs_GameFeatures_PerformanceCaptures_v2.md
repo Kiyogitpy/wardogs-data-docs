@@ -4,7 +4,7 @@ parent: "Game Features"
 ---
 
 # Wardogs — GameFeatures: PerformanceCaptures (v2)
-*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/GameFeatures/PerformanceCaptures/` — 4 JSON files.*
+*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: [`Plugins/GameFeatures/PerformanceCaptures/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/PerformanceCaptures) — 4 JSON files.*
 
 ---
 
@@ -14,10 +14,10 @@ The performance-capture tooling: a game-state component for capturing performanc
 
 | File | Type | Role |
 |---|---|---|
-| `Content/PerformanceCaptures.json` | GameFeatureData + component action | Adds the capture component to the game state |
-| `Content/GridCell/WorldData/DT_PerformanceCaptureWorldData_GymCore.json` | `WDPerformanceCaptureWorldData` | Gym test world |
-| `Content/GridCell/WorldData/DT_PerformanceCaptureWorldData_ICB_WP.json` | `WDPerformanceCaptureWorldData` | ICB world (World Partition) |
-| `Content/GridCell/WorldData/DT_PerformanceCaptureWorldData_WorldMGT.json` | `WDPerformanceCaptureWorldData` | World management test world |
+| [`Content/PerformanceCaptures.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PerformanceCaptures/Content/PerformanceCaptures.json) | GameFeatureData + component action | Adds the capture component to the game state |
+| [`Content/GridCell/WorldData/DT_PerformanceCaptureWorldData_GymCore.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PerformanceCaptures/Content/GridCell/WorldData/DT_PerformanceCaptureWorldData_GymCore.json) | `WDPerformanceCaptureWorldData` | Gym test world |
+| [`Content/GridCell/WorldData/DT_PerformanceCaptureWorldData_ICB_WP.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PerformanceCaptures/Content/GridCell/WorldData/DT_PerformanceCaptureWorldData_ICB_WP.json) | `WDPerformanceCaptureWorldData` | ICB world (World Partition) |
+| [`Content/GridCell/WorldData/DT_PerformanceCaptureWorldData_WorldMGT.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PerformanceCaptures/Content/GridCell/WorldData/DT_PerformanceCaptureWorldData_WorldMGT.json) | `WDPerformanceCaptureWorldData` | World management test world |
 
 ---
 

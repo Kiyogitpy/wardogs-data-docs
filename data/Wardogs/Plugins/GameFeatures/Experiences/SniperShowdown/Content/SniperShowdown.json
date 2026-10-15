@@ -1,0 +1,534 @@
+--- export: UObject / BHGameFeatureAction_RegisterMatchStates_0 ---
+{
+  "Type": "BHGameFeatureAction_RegisterMatchStates",
+  "Name": "BHGameFeatureAction_RegisterMatchStates_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHGameFeatureAction_RegisterMatchStates'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'SniperShowdown'",
+    "ObjectPath": "/SniperShowdown/SniperShowdown.4"
+  },
+  "Properties": {
+    "MatchStates": [
+      {
+        "AssetPathName": "/Script/WDGame.WDMatchState_PreMatch_WaitingForWorldLoad",
+        "SubPathString": ""
+      },
+      {
+        "AssetPathName": "/Script/WDGame.WDMatchState_PreMatch_WaitingForPlayerCount",
+        "SubPathString": ""
+      },
+      {
+        "AssetPathName": "/Script/SniperShowdownRuntime.WDMatchState_Playing_SniperShowdown",
+        "SubPathString": ""
+      },
+      {
+        "AssetPathName": "/Script/WDGame.WDMatchState_PostMatch",
+        "SubPathString": ""
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_AddComponents_0 ---
+{
+  "Type": "GameFeatureAction_AddComponents",
+  "Name": "GameFeatureAction_AddComponents_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddComponents'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'SniperShowdown'",
+    "ObjectPath": "/SniperShowdown/SniperShowdown.4"
+  },
+  "Properties": {
+    "ComponentList": [
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDGameStateSession",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/SniperShowdown/Data/B_SniperShowdown_FactionAssignmentComponent.B_SniperShowdown_FactionAssignmentComponent_C",
+          "SubPathString": ""
+        },
+        "bClientComponent": false,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      },
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDGameStateSession",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Script/SniperShowdownRuntime.WDSniperShowdownLastKillTrackerComponent",
+          "SubPathString": ""
+        },
+        "bClientComponent": false,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      },
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDGameStateSession",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/SniperShowdown/Data/B_SniperShowdown_MusicController.B_SniperShowdown_MusicController_C",
+          "SubPathString": ""
+        },
+        "bClientComponent": true,
+        "bServerComponent": false,
+        "AdditionFlags": 0
+      },
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDGameModeSession",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/SniperShowdown/Data/B_SniperShowdown_PlayerSpawnManagerComponent.B_SniperShowdown_PlayerSpawnManagerComponent_C",
+          "SubPathString": ""
+        },
+        "bClientComponent": false,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      },
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDMoverPlayerCharacter",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/SniperShowdown/Data/B_SniperShowdown_ExplodeComponent.B_SniperShowdown_ExplodeComponent_C",
+          "SubPathString": ""
+        },
+        "bClientComponent": false,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      },
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDMoverPlayerCharacter",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/SniperShowdown/Data/B_SniperShowdown_LoadoutComponent.B_SniperShowdown_LoadoutComponent_C",
+          "SubPathString": ""
+        },
+        "bClientComponent": false,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      },
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDMoverPlayerCharacter",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/SniperShowdown/Data/B_SniperShowdown_OOBComponent.B_SniperShowdown_OOBComponent_C",
+          "SubPathString": ""
+        },
+        "bClientComponent": false,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      },
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDMoverPlayerCharacter",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/SniperShowdown/Data/B_SniperShowdown_StillnessSpottingComponent.B_SniperShowdown_StillnessSpottingComponent_C",
+          "SubPathString": ""
+        },
+        "bClientComponent": true,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      },
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/ControlZoneRuntime.WDControlZone",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Script/SniperShowdownRuntime.WDSniperShowdownControlZoneSeekerComponent",
+          "SubPathString": ""
+        },
+        "bClientComponent": false,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_AddWorldPartitionContent_0 ---
+{
+  "Type": "GameFeatureAction_AddWorldPartitionContent",
+  "Name": "GameFeatureAction_AddWorldPartitionContent_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddWorldPartitionContent'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'SniperShowdown'",
+    "ObjectPath": "/SniperShowdown/SniperShowdown.4"
+  },
+  "Properties": {
+    "ExternalDataLayerAsset": {
+      "ObjectName": "ExternalDataLayerAsset'EDL_SniperShowdown'",
+      "ObjectPath": "/SniperShowdown/EDL_SniperShowdown.0"
+    }
+  }
+}
+--- export: UObject / GameFeatureAction_DataRegistrySource_0 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'SniperShowdown'",
+    "ObjectPath": "/SniperShowdown/SniperShowdown.4"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "UIEventFeedData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/SniperShowdown/UI/DT_EventFeedTypes_SniperShowdown.DT_EventFeedTypes_SniperShowdown",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "UISceneData_Match",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/SniperShowdown/UI/DT_SceneData_Match_SniperShowdown.DT_SceneData_Match_SniperShowdown",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "TrackerData_Minimap",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/SniperShowdown/UI/DT_TrackerData_Map_SniperShowdown.DT_TrackerData_Map_SniperShowdown",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "TrackerData_TacticalMap",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/SniperShowdown/UI/DT_TrackerData_Map_SniperShowdown.DT_TrackerData_Map_SniperShowdown",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / SniperShowdown ---
+{
+  "Type": "GameFeatureData",
+  "Name": "SniperShowdown",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/SniperShowdown/SniperShowdown",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "BHGameFeatureAction_RegisterMatchStates'SniperShowdown:BHGameFeatureAction_RegisterMatchStates_0'",
+        "ObjectPath": "/SniperShowdown/SniperShowdown.0"
+      },
+      {
+        "ObjectName": "GameFeatureAction_AddComponents'SniperShowdown:GameFeatureAction_AddComponents_0'",
+        "ObjectPath": "/SniperShowdown/SniperShowdown.1"
+      },
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'SniperShowdown:GameFeatureAction_DataRegistrySource_0'",
+        "ObjectPath": "/SniperShowdown/SniperShowdown.3"
+      },
+      {
+        "ObjectName": "GameFeatureAction_AddWorldPartitionContent'SniperShowdown:GameFeatureAction_AddWorldPartitionContent_0'",
+        "ObjectPath": "/SniperShowdown/SniperShowdown.2"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements'SniperShowdown:WDGameFeatureAction_AddWidgetElements_0'",
+        "ObjectPath": "/SniperShowdown/SniperShowdown.5"
+      }
+    ],
+    "PrimaryAssetTypesToScan": [
+      {
+        "PrimaryAssetType": "BH.PawnData",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/BHModularGameplay.BHPawnData",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/SniperShowdown/Character"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::AlwaysCook"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_0 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements",
+  "Name": "WDGameFeatureAction_AddWidgetElements_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'SniperShowdown'",
+    "ObjectPath": "/SniperShowdown/SniperShowdown.4"
+  },
+  "Properties": {
+    "TaggedElements": [
+      {
+        "Key": {
+          "TagName": "UI.HUD.Element.GameModeLeaderboard"
+        },
+        "Value": {
+          "WidgetClass": {
+            "AssetPathName": "/SniperShowdown/UI/W_SniperShowdown_Leaderboard.W_SniperShowdown_Leaderboard_C",
+            "SubPathString": ""
+          },
+          "ViewModelParams": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/SniperShowdownRuntime.WDSniperShowdownLeaderboardViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/SniperShowdown/UI/DA_SniperShowdown_Leaderboard.DA_SniperShowdown_Leaderboard",
+              "SubPathString": ""
+            }
+          },
+          "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.HUD.Element.Timer"
+        },
+        "Value": {
+          "WidgetClass": {
+            "AssetPathName": "/SniperShowdown/UI/W_SniperShowdown_Timer.W_SniperShowdown_Timer_C",
+            "SubPathString": ""
+          },
+          "ViewModelParams": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/SniperShowdownRuntime.WDSniperShowdownTimerViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/SniperShowdown/UI/DA_SniperShowdown_Timer.DA_SniperShowdown_Timer",
+              "SubPathString": ""
+            }
+          },
+          "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.HUD.Element.GameModeStatus"
+        },
+        "Value": {
+          "WidgetClass": {
+            "AssetPathName": "/SniperShowdown/UI/W_SniperShowdown_Empty.W_SniperShowdown_Empty_C",
+            "SubPathString": ""
+          },
+          "ViewModelParams": {
+            "ViewModelClass": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            }
+          },
+          "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+        }
+      }
+    ],
+    "PersistentWidgets": [
+      {
+        "Layer": "EWDWidgetLayer::Upper",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/SniperShowdown/UI/W_SniperShowdown_FadeOut.W_SniperShowdown_FadeOut_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/SniperShowdownRuntime.WDSniperShowdownFadeOutViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/SniperShowdown/UI/DA_SniperShowdown_FadeOut.DA_SniperShowdown_FadeOut",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+      },
+      {
+        "Layer": "EWDWidgetLayer::Lower",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/SniperShowdown/UI/W_SniperShowdown_Revealed.W_SniperShowdown_Revealed_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/SniperShowdownRuntime.WDSniperShowdownRevealedViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+      }
+    ],
+    "AddWidgetElementsInstances": [
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'SniperShowdown:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_23'",
+        "ObjectPath": "/SniperShowdown/SniperShowdown.8"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'SniperShowdown:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_24'",
+        "ObjectPath": "/SniperShowdown/SniperShowdown.9"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'SniperShowdown:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_0'",
+        "ObjectPath": "/SniperShowdown/SniperShowdown.6"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'SniperShowdown:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_2'",
+        "ObjectPath": "/SniperShowdown/SniperShowdown.7"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'SniperShowdown:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_4'",
+        "ObjectPath": "/SniperShowdown/SniperShowdown.10"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'SniperShowdown:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_6'",
+        "ObjectPath": "/SniperShowdown/SniperShowdown.11"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'SniperShowdown:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_8'",
+        "ObjectPath": "/SniperShowdown/SniperShowdown.12"
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_0 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'SniperShowdown:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/SniperShowdown/SniperShowdown.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_2 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_2",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'SniperShowdown:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/SniperShowdown/SniperShowdown.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_23 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_23",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'SniperShowdown:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/SniperShowdown/SniperShowdown.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_24 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_24",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'SniperShowdown:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/SniperShowdown/SniperShowdown.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_4 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_4",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'SniperShowdown:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/SniperShowdown/SniperShowdown.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_6 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_6",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'SniperShowdown:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/SniperShowdown/SniperShowdown.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_8 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_8",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'SniperShowdown:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/SniperShowdown/SniperShowdown.5"
+  }
+}

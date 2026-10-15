@@ -1,0 +1,26 @@
+--- export: UDataAsset / DA_RoleXPProgressionEntry ---
+{
+  "Type": "WDUIRoleXPProgressionData",
+  "Name": "DA_RoleXPProgressionEntry",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIRoleXPProgressionData'",
+  "Package": "/Game/UI/Features/GameOver/Data/DA_RoleXPProgressionEntry",
+  "Properties": {
+    "ProgressUpdateRate": 1.5,
+    "XPAmountFormatting": {
+      "TableId": "/Game/UI/StringTables/STRINGS_XPProgression.STRINGS_XPProgression",
+      "Key": "Text.Entry.XPAmount.Formatting",
+      "SourceString": "XP {Amount}",
+      "LocalizedString": "XP {Amount}"
+    },
+    "RevealRoleProgressionAudioEvent": {
+      "TagName": "Audio.Event.UI.XPProgression.RevealRoleProgression"
+    },
+    "StartProgressUpdateAudioEvent": {
+      "TagName": "Audio.Event.UI.XPProgression.StartFillingProgress"
+    },
+    "LevelledUpAudioEvent": {
+      "TagName": "Audio.Event.UI.XPProgression.LevelledUp"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+--- export: UPrimaryDataAsset / VP_ROT_02_MainBody_Default ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_ROT_02_MainBody_Default",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/ROT_02/Parts/VP_ROT_02_MainBody_Default",
+  "Properties": {
+    "Tags": [
+      "Vehicle.MainBody"
+    ],
+    "Fragments": [
+      {
+        "Key": "Body",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_ROT_02_MainBody_Default:MVF_StaticMesh_6'",
+            "ObjectPath": "/ROT_02/Parts/VP_ROT_02_MainBody_Default.1"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / MVF_StaticMesh_6 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_6",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_ROT_02_MainBody_Default'",
+    "ObjectPath": "/ROT_02/Parts/VP_ROT_02_MainBody_Default.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceID": "Chassis",
+        "SocketName": "body_J"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/ROT_02/Meshes/SM_ROT_02_Body.SM_ROT_02_Body",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    }
+  }
+}

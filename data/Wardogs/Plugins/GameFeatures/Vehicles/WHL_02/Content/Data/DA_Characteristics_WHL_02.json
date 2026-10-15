@@ -1,0 +1,50 @@
+--- export: UDataAsset / DA_Characteristics_WHL_02 ---
+{
+  "Type": "MWheeledVehicleCharacteristicsDataAsset",
+  "Name": "DA_Characteristics_WHL_02",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MWheeledVehicleCharacteristicsDataAsset'",
+  "Package": "/WHL_02/Data/DA_Characteristics_WHL_02",
+  "Properties": {
+    "Mass": 2750.0,
+    "InertiaScale": {
+      "X": 1.0,
+      "Y": 1.0,
+      "Z": 1.0
+    },
+    "CenterOfMassOffset": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": -0.3
+    },
+    "bHasRelaxationDownforce": true,
+    "bDetectGroundVelocity": true,
+    "bTirePenetration": true,
+    "ReverseBrakeSpeed": 6.0,
+    "DrivetrainFriction": 100.0,
+    "RollingResistanceCoefficient": 30.0,
+    "HandBrakePower": 50.0,
+    "StickyTireSpeed": 5.0,
+    "HardContactScale": 1.0,
+    "OptimumSlipWeight": 0.5,
+    "DownForceCoefficient": 5.0,
+    "Abs": 30.0,
+    "MinAbsSpeed": 35.0,
+    "ASR": 55.0,
+    "UnderSteerAssist": 60.0,
+    "MinUnderSteerAngle": 10.0,
+    "OverSteerAssist": 55.0,
+    "MinOverSteerAngle": 10.0,
+    "FrontAntiRollPower": 50.0,
+    "RearAntiRollPower": 60.0,
+    "MaxSlopeLockSpeed": 2.0,
+    "SuspensionQueryType": "EMSuspensionQueryType::Convex",
+    "ConvexAsset": {
+      "ObjectName": "StaticMesh'Cylinder'",
+      "ObjectPath": "/Game/Vehicles/Shared/StaticMeshes/Cylinder.2"
+    },
+    "SleepLinearThreshold": 5.0,
+    "SleepAngularThreshold": 5.0,
+    "SleepWaitingTime": 3.0
+  }
+}

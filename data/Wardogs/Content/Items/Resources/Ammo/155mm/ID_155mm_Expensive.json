@@ -1,0 +1,158 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_155mm_Expensive'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/155mm/ID_155mm_Expensive.5"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 3,
+      "Y": 2
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_155mm_Expensive'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/155mm/ID_155mm_Expensive.5"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Vehicles/Vehicle_Ammo/DF20_Shell_155mm/SM_Shell_DF20.SM_Shell_DF20",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Stackable_0 ---
+{
+  "Type": "BHInventoryFragment_Stackable",
+  "Name": "BHInventoryFragment_Stackable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Stackable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_155mm_Expensive'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/155mm/ID_155mm_Expensive.5"
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_155mm_Expensive'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/155mm/ID_155mm_Expensive.5"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_155mm_Expensive'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/155mm/ID_155mm_Expensive.5"
+  },
+  "Properties": {
+    "Weight": 42.0
+  }
+}
+--- export: UPrimaryDataAsset / ID_155mm_Expensive ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_155mm_Expensive",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Resources/Ammo/155mm/ID_155mm_Expensive",
+  "Properties": {
+    "ItemId": {
+      "TagName": "ID.Item.155mm.Expensive"
+    },
+    "ItemContext": [
+      "Item.Ammo",
+      "Item.Caliber.155mm.Expensive",
+      "Item.Context.ForceToStorage"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "F2649E3C47DBFC2A95FA848AFA14C9E5",
+      "SourceString": "155mm",
+      "LocalizedString": "155mm"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_155mm_Expensive:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/155mm/ID_155mm_Expensive.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_155mm_Expensive:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/155mm/ID_155mm_Expensive.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Projectile'ID_155mm_Expensive:WDInventoryFragment_Projectile_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/155mm/ID_155mm_Expensive.7"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Stackable'ID_155mm_Expensive:BHInventoryFragment_Stackable_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/155mm/ID_155mm_Expensive.2"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_155mm_Expensive:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/155mm/ID_155mm_Expensive.6"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_155mm_Expensive:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/155mm/ID_155mm_Expensive.0"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_155mm_Expensive:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/155mm/ID_155mm_Expensive.4"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_155mm_Expensive'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/155mm/ID_155mm_Expensive.5"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Magazine_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Item/Data/ID_Magazine_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Projectile_0 ---
+{
+  "Type": "WDInventoryFragment_Projectile",
+  "Name": "WDInventoryFragment_Projectile_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Projectile'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_155mm_Expensive'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/155mm/ID_155mm_Expensive.5"
+  },
+  "Properties": {
+    "ProjectileData": {
+      "ObjectName": "WDProjectileData'DA_155mm_Expensive_ProjectileData'",
+      "ObjectPath": "/Game/GameMechanics/Inventory/Equipment/Caliber/155mm/DA_155mm_Expensive_ProjectileData.0"
+    }
+  }
+}

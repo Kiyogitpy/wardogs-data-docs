@@ -1,0 +1,57 @@
+--- export: UDataAsset / DA_EquipmentRadialWheelSlotData ---
+{
+  "Type": "WDUIRadialWheelSlotData",
+  "Name": "DA_EquipmentRadialWheelSlotData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIRadialWheelSlotData'",
+  "Package": "/Game/UI/Features/RadialWheel/Data/EquipmentWheel/DA_EquipmentRadialWheelSlotData",
+  "Properties": {
+    "LockedTexture": {
+      "AssetPathName": "/Game/UI/Features/RadialWheel/Textures/T_UI_Locked.T_UI_Locked",
+      "SubPathString": ""
+    },
+    "LockedSlotTitleText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_RadialWheels.STRINGS_RadialWheels",
+      "Key": "Default.LockedSlot.Title",
+      "SourceString": "LOCKED",
+      "LocalizedString": "LOCKED"
+    },
+    "LockedSlotDescriptionText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_RadialWheels.STRINGS_RadialWheels",
+      "Key": "Equipment.LockedSlot.Description",
+      "SourceString": "You need a better Tac-Vest to unlock this slot",
+      "LocalizedString": "You need a better Tac-Vest to unlock this slot"
+    },
+    "LockedTextureScale": {
+      "X": 0.5,
+      "Y": 0.5
+    },
+    "QuantityTextAngleOverride": 135.0,
+    "EmptyTexture": {
+      "AssetPathName": "/Game/UI/Features/RadialWheel/Textures/T_UI_None.T_UI_None",
+      "SubPathString": ""
+    },
+    "EmptySlotTitleText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_RadialWheels.STRINGS_RadialWheels",
+      "Key": "Default.EmptySlot.Title",
+      "SourceString": "EMPTY",
+      "LocalizedString": "EMPTY"
+    },
+    "EmptySlotDescriptionText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_RadialWheels.STRINGS_RadialWheels",
+      "Key": "Equipment.EmptySlot.Description",
+      "SourceString": "You can occupy this slot by moving an item into it from your inventory",
+      "LocalizedString": "You can occupy this slot by moving an item into it from your inventory"
+    },
+    "EmptySlotTextureScale": {
+      "X": 0.5,
+      "Y": 0.5
+    },
+    "HoveredNormalAudioEvent": {
+      "TagName": "Audio.Event.UI.FrontEnd.Hover"
+    },
+    "HoveredLockedAudioEvent": {
+      "TagName": "Audio.Event.UI.FrontEnd.Hover"
+    }
+  }
+}

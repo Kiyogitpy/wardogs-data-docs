@@ -1,0 +1,53 @@
+--- export: UObject / WDPingAction_AssistanceRequest_Backup_0 ---
+{
+  "Type": "WDPingAction_AssistanceRequest_Backup",
+  "Name": "WDPingAction_AssistanceRequest_Backup_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingAction_AssistanceRequest_Backup'",
+  "Outer": {
+    "ObjectName": "WDPingActionAsset'DA_PingAction_Request_Backup'",
+    "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_Backup.1"
+  },
+  "Properties": {
+    "PingActionChatLocText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_ChatBox_AssistanceRequests.STRINGS_ChatBox_AssistanceRequests",
+      "Key": "Type_Request_Backup_Other",
+      "SourceString": "Requesting backup",
+      "LocalizedString": "Requesting backup"
+    },
+    "PingActionChatLocTextWithLocation": {
+      "TableId": "/Game/UI/StringTables/STRINGS_ChatBox_AssistanceRequests.STRINGS_ChatBox_AssistanceRequests",
+      "Key": "Type_Request_Backup_Other_WithLoc",
+      "SourceString": "Requesting backup X{X}, Y{Y}",
+      "LocalizedString": "Requesting backup X{X}, Y{Y}"
+    }
+  }
+}
+--- export: UDataAsset / DA_PingAction_Request_Backup ---
+{
+  "Type": "WDPingActionAsset",
+  "Name": "DA_PingAction_Request_Backup",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingActionAsset'",
+  "Package": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_Backup",
+  "Properties": {
+    "Text": {
+      "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+      "Key": "Action.Request.Backup",
+      "SourceString": "Backup",
+      "LocalizedString": "Backup"
+    },
+    "Icon": {
+      "AssetPathName": "/Game/UI/Features/PingWheel/Widgets/Action/Textures/T_UI_Icon_PingWheel_Backup_64x64.T_UI_Icon_PingWheel_Backup_64x64",
+      "SubPathString": ""
+    },
+    "bIsWorkInProgress": false,
+    "bRequestPlayerMapCoordinates": true,
+    "Actions": [
+      {
+        "ObjectName": "WDPingAction_AssistanceRequest_Backup'DA_PingAction_Request_Backup:WDPingAction_AssistanceRequest_Backup_0'",
+        "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_Backup.0"
+      }
+    ]
+  }
+}

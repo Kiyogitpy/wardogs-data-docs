@@ -1,0 +1,124 @@
+--- export: UDataTable / DT_InteractionContextData_Lootable ---
+{
+  "Type": "DataTable",
+  "Name": "DT_InteractionContextData_Lootable",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Lootable/Data/DT_InteractionContextData_Lootable",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUIInteractionContextDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Interaction.Context.WorldFeatures.Lootable.Equip": {
+      "OutcomeText": {
+        "Namespace": "",
+        "Key": "D9274F29471D8581E6D20AA065610783",
+        "SourceString": "Item",
+        "LocalizedString": "Item"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.WorldFeatures.Lootable.Equip",
+            "SourceString": "LOOT",
+            "LocalizedString": "LOOT"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.NoSpace"
+          },
+          "ActionText": {
+            "Namespace": "",
+            "Key": "98A7B08F4E16DDF8E453429AEE6CD267",
+            "SourceString": "NO SPACE",
+            "LocalizedString": "NO SPACE"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": {
+            "ObjectName": "Texture2D'T_UI_IntelIcon'",
+            "ObjectPath": "/Game/UI/Features/Popups/Widgets/Textures/T_UI_IntelIcon.0"
+          },
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.WorldFeatures.Lootable.Equip"
+      }
+    },
+    "Interaction.Context.WorldFeatures.Lootable.Swap": {
+      "OutcomeText": {
+        "Namespace": "",
+        "Key": "5C3466EA4DE6B68609ADF98A5846F792",
+        "SourceString": "Item",
+        "LocalizedString": "Item"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.WorldFeatures.Lootable.Swap",
+            "SourceString": "SWAP",
+            "LocalizedString": "SWAP"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.NoSpace"
+          },
+          "ActionText": {
+            "Namespace": "",
+            "Key": "98A7B08F4E16DDF8E453429AEE6CD267",
+            "SourceString": "NO SPACE",
+            "LocalizedString": "NO SPACE"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": {
+            "ObjectName": "Texture2D'T_UI_IntelIcon'",
+            "ObjectPath": "/Game/UI/Features/Popups/Widgets/Textures/T_UI_IntelIcon.0"
+          },
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.WorldFeatures.Lootable.Swap"
+      }
+    }
+  }
+}

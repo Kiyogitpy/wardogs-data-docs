@@ -1,0 +1,59 @@
+--- export: UObject / WDPingAction_AssistanceRequest_Dropoff_0 ---
+{
+  "Type": "WDPingAction_AssistanceRequest_Dropoff",
+  "Name": "WDPingAction_AssistanceRequest_Dropoff_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingAction_AssistanceRequest_Dropoff'",
+  "Outer": {
+    "ObjectName": "WDPingActionAsset'DA_PingAction_Request_Dropoff'",
+    "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_Dropoff.1"
+  },
+  "Properties": {
+    "PingActionChatLocText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_ChatBox_AssistanceRequests.STRINGS_ChatBox_AssistanceRequests",
+      "Key": "Type_Request_Dropoff_Other",
+      "SourceString": "Requesting Dropoff",
+      "LocalizedString": "Requesting Dropoff"
+    }
+  }
+}
+--- export: UDataAsset / DA_PingAction_Request_Dropoff ---
+{
+  "Type": "WDPingActionAsset",
+  "Name": "DA_PingAction_Request_Dropoff",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingActionAsset'",
+  "Package": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_Dropoff",
+  "Properties": {
+    "Text": {
+      "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+      "Key": "Action.Request.DropOff",
+      "SourceString": "Drop off",
+      "LocalizedString": "Drop off"
+    },
+    "NonTriggerableDescriptions": [
+      {
+        "Key": {
+          "TagName": "Tag.PingAction.NonTriggerable.FuelFull"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+          "Key": "Action.Request.Fuel.NonTriggerable.FuelFull",
+          "SourceString": "Already full",
+          "LocalizedString": "Already full"
+        }
+      }
+    ],
+    "Icon": {
+      "AssetPathName": "/Game/UI/Features/PingWheel/Widgets/Action/Textures/T_UI_Icon_PingWheel_DropOff_64x66.T_UI_Icon_PingWheel_DropOff_64x66",
+      "SubPathString": ""
+    },
+    "bIsWorkInProgress": false,
+    "Actions": [
+      {
+        "ObjectName": "WDPingAction_AssistanceRequest_Dropoff'DA_PingAction_Request_Dropoff:WDPingAction_AssistanceRequest_Dropoff_0'",
+        "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_Dropoff.0"
+      }
+    ]
+  }
+}

@@ -4,9 +4,9 @@ parent: "Game Features"
 ---
 
 # Wardogs — GameFeatures / Vehicles Reference (v2)
-*Extracted from cooked game data via CUE4Parse JSON export. Source: `Wardogs/Plugins/GameFeatures/Vehicles` — 868 files, 2,580 export objects, 0 parse errors. Values are shown exactly as stored unless noted.*
+*Extracted from cooked game data via CUE4Parse JSON export. Source: [`Wardogs/Plugins/GameFeatures/Vehicles`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Vehicles) — 868 files, 2,580 export objects, 0 parse errors. Values are shown exactly as stored unless noted.*
 
-> **Scope note:** This doc covers the vehicle *plugin* data: GameFeature wrappers, vehicle market and stats tables, modular platform/variant/part assets, health pools, seats, weapons, buildables, supply crates, and physics configs. The `Content/Vehicles` folder is covered elsewhere and is not described here.
+> **Scope note:** This doc covers the vehicle *plugin* data: GameFeature wrappers, vehicle market and stats tables, modular platform/variant/part assets, health pools, seats, weapons, buildables, supply crates, and physics configs. The [`Content/Vehicles`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Vehicles) folder is covered elsewhere and is not described here.
 >
 > **Units:** the export does not state units for most fields. Where a unit is named in the property (for example `_mps`, `_kmh`, `_deg`, `_m`), it is given. Everything else is "as stored".
 
@@ -18,36 +18,36 @@ Each top-level folder is one **family** (a vehicle, a vehicle variant group, a b
 
 | Family folder | Role (class tag) | Files | Objects | What it is |
 |---|---|---|---|---|
-| `TNK_01` | Tracked | 85 | 255 | Heavy tank family: Heavy, Artillery, AntiAir variants |
-| `WHL_01` | Wheeled (4W) | 51 | 117 | Bobcat light truck |
-| `WHL_02` | Wheeled (4W) | 72 | 167 | Kodiak truck: Default, Pickup, base platform for ring turret |
-| `WHL_02_RingTurret` | Wheeled | 15 | 40 | Kodiak "MachineGun" variant (ring turret) |
-| `WHL_05` | Wheeled (4W) | 59 | 201 | Humvee (Default + shared platform) |
-| `WHL_05_Minigun` | Wheeled | 17 | 40 | Humvee Minigun variant |
-| `WHL_05_RingTurret` | Wheeled | 20 | 102 | Humvee MachineGun (ring turret) variant |
-| `WHL_06` | Wheeled (4W) | 50 | 122 | Dune Buggy |
-| `WHL_07` | Wheeled (4W) | 60 | 156 | Ural truck: Default and Battle variants |
-| `WHL_07_ArmouredBattle` | Wheeled | 17 | 44 | Ural "Attack" (armoured battle) variant |
-| `ROT_02` | Rotary | 48 | 213 | Havoc attack helicopter |
-| `ROT_03` | Rotary | 40 | 209 | Littlebird helicopter (base) |
-| `ROT_03_WeaponVariants` | Rotary | 31 | 66 | Littlebird Mounted MachineGuns and RocketPods variants |
-| `ROT_04` | Rotary | 38 | 198 | ROT_04 helicopter (13 seats; unnamed in export) |
-| `ROT_04_MachineGun` | Rotary | 18 | 39 | ROT_04 Mounted MachineGuns variant |
-| `SPW_01` | Tracked | 36 | 117 | Spawn vehicle (Valkyra), 10 seats |
-| `STN_01` | Stationary | 27 | 49 | Mistral AA (buildable emplacement) |
-| `STN_02` | Stationary | 27 | 51 | Phalanx (buildable emplacement) |
-| `STN_03` | Stationary | 27 | 49 | Mortar (buildable emplacement) |
-| `STN_04` | Stationary | 18 | 31 | Loudspeaker (buildable) |
-| `STN_05` | Stationary | 49 | 130 | Stingray (drone buildable, DroneProjectile) |
-| `SupplyCrates` | n/a | 30 | 121 | Supply crates, supply pallets and the garage market for them |
+| [`TNK_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/TNK_01.json) | Tracked | 85 | 255 | Heavy tank family: Heavy, Artillery, AntiAir variants |
+| [`WHL_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_01/Content/WHL_01.json) | Wheeled (4W) | 51 | 117 | Bobcat light truck |
+| [`WHL_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_02/Content/WHL_02.json) | Wheeled (4W) | 72 | 167 | Kodiak truck: Default, Pickup, base platform for ring turret |
+| [`WHL_02_RingTurret`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_02_RingTurret/Content/WHL_02_RingTurret.json) | Wheeled | 15 | 40 | Kodiak "MachineGun" variant (ring turret) |
+| [`WHL_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05/Content/WHL_05.json) | Wheeled (4W) | 59 | 201 | Humvee (Default + shared platform) |
+| [`WHL_05_Minigun`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05_Minigun/Content/WHL_05_Minigun.json) | Wheeled | 17 | 40 | Humvee Minigun variant |
+| [`WHL_05_RingTurret`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05_RingTurret/Content/WHL_05_RingTurret.json) | Wheeled | 20 | 102 | Humvee MachineGun (ring turret) variant |
+| [`WHL_06`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_06/Content/WHL_06.json) | Wheeled (4W) | 50 | 122 | Dune Buggy |
+| [`WHL_07`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/WHL_07.json) | Wheeled (4W) | 60 | 156 | Ural truck: Default and Battle variants |
+| [`WHL_07_ArmouredBattle`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07_ArmouredBattle/Content/WHL_07_ArmouredBattle.json) | Wheeled | 17 | 44 | Ural "Attack" (armoured battle) variant |
+| [`ROT_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/ROT_02.json) | Rotary | 48 | 213 | Havoc attack helicopter |
+| [`ROT_03`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03/Content/ROT_03.json) | Rotary | 40 | 209 | Littlebird helicopter (base) |
+| [`ROT_03_WeaponVariants`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03_WeaponVariants/Content/ROT_03_WeaponVariants.json) | Rotary | 31 | 66 | Littlebird Mounted MachineGuns and RocketPods variants |
+| [`ROT_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04/Content/ROT_04.json) | Rotary | 38 | 198 | ROT_04 helicopter (13 seats; unnamed in export) |
+| [`ROT_04_MachineGun`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04_MachineGun/Content/ROT_04_MachineGun.json) | Rotary | 18 | 39 | ROT_04 Mounted MachineGuns variant |
+| [`SPW_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/SPW_01/Content/SPW_01.json) | Tracked | 36 | 117 | Spawn vehicle (Valkyra), 10 seats |
+| [`STN_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_01/Content/STN_01.json) | Stationary | 27 | 49 | Mistral AA (buildable emplacement) |
+| [`STN_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_02/Content/STN_02.json) | Stationary | 27 | 51 | Phalanx (buildable emplacement) |
+| [`STN_03`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_03/Content/STN_03.json) | Stationary | 27 | 49 | Mortar (buildable emplacement) |
+| [`STN_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_04/Content/STN_04.json) | Stationary | 18 | 31 | Loudspeaker (buildable) |
+| [`STN_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/STN_05.json) | Stationary | 49 | 130 | Stingray (drone buildable, DroneProjectile) |
+| [`SupplyCrates`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/SupplyCrates/Content/SupplyCrates.json) | n/a | 30 | 121 | Supply crates, supply pallets and the garage market for them |
 | `BobbleHeads` | n/a | 20 | 36 | Bobblehead cosmetic parts (4 sub-features) |
-| `Flares` | n/a | 4 | 9 | Flares countermeasure item and vendor entry |
-| `Lockpicking` | n/a | 4 | 6 | Lockpicking interaction context and recon skill grant |
-| `FreeVehicleSpawner` | n/a | 1 | 2 | Component add for a free vehicle spawner |
-| `VehicleRewardZone` | n/a | 1 | 5 | Reward-zone widgets and components (values are not in this folder) |
-| `VehicleUtility` | n/a | 1 | 2 | Component add (utility) |
-| `VehicleLifetimeManager` | n/a | 1 | 1 | GameFeatureData only |
-| `DebugCockpit` | n/a | 1 | 2 | Debug widget elements |
+| [`Flares`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/Flares/Content/Flares.json) | n/a | 4 | 9 | Flares countermeasure item and vendor entry |
+| [`Lockpicking`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/Lockpicking/Content/Lockpicking.json) | n/a | 4 | 6 | Lockpicking interaction context and recon skill grant |
+| [`FreeVehicleSpawner`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/FreeVehicleSpawner/Content/FreeVehicleSpawner.json) | n/a | 1 | 2 | Component add for a free vehicle spawner |
+| [`VehicleRewardZone`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/VehicleRewardZone/Content/VehicleRewardZone.json) | n/a | 1 | 5 | Reward-zone widgets and components (values are not in this folder) |
+| [`VehicleUtility`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/VehicleUtility/Content/VehicleUtility.json) | n/a | 1 | 2 | Component add (utility) |
+| [`VehicleLifetimeManager`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/VehicleLifetimeManager/Content/VehicleLifetimeManager.json) | n/a | 1 | 1 | GameFeatureData only |
+| [`DebugCockpit`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/DebugCockpit/Content/DebugCockpit.json) | n/a | 1 | 2 | Debug widget elements |
 
 Object totals by type (top of the list): `WDGameplayCueEffect` 134, `MVF_StaticMesh` 133, `CurveFloat` 104, `DataTable` 95, `WDAttributeEffectsTrigger_VehicleHealth` 87, `ModularVehiclePart` 82, `WDWheeledVehicleEffect` 76, `ModularVehicleSlot` 61, `WDAudioData` 68, `ModularVehicleVariant` 28, `WDVehicleStatsDataAsset` 20, `WDVehicleWeaponDataAsset` 19, `WDVehicleWeaponExtensionDataAsset` 19, `WDWeaponStatsData` 14, `WDBuildableDataAsset` 5, `WDVehicleBuildSpawner` 5, `WDItemExtensionData_VehicleSupplyCrate` 9, `WDVendorData` (in DataTables) 17 tables.
 
@@ -70,7 +70,7 @@ Most vehicle data follows one chain. Read it top-down to find any value.
 
 ## 3. Vehicle Market (Purchase Prices)
 
-Source: `DT_VehicleMarket_*` (one per family) and `DT_GarageMarket_SupplyCrates`. Each row is a `WDVendorData` with `VendorItemVariations`. Price is the stored purchase price; LevelToUnlock is the stored unlock level (its exact meaning is not confirmed, see section 15). All entries have Amount 1, LifeTimeBuyLimit 0 and bRequiresAccountEntitlement False.
+Source: `DT_VehicleMarket_*` (one per family) and [`DT_GarageMarket_SupplyCrates`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/SupplyCrates/Content/DataTables/DT_GarageMarket_SupplyCrates.json). Each row is a `WDVendorData` with `VendorItemVariations`. Price is the stored purchase price; LevelToUnlock is the stored unlock level (its exact meaning is not confirmed, see section 15). All entries have Amount 1, LifeTimeBuyLimit 0 and bRequiresAccountEntitlement False.
 
 | Variant tag | Price | LevelToUnlock | Vendor subcategory | Stats asset |
 |---|---|---|---|---|
@@ -95,7 +95,7 @@ Source: `DT_VehicleMarket_*` (one per family) and `DT_GarageMarket_SupplyCrates`
 | Vehicle.Variant.Land.Wheeled.Ural.Battle | 6,000 | 0 | Land.Transport | **DA_WHL_07_Stats** (see note) |
 | Vehicle.Variant.Land.Wheeled.Ural.Attack | 6,750 | 0 | Land.Transport | DA_WHL_07_Battle_Stats |
 
-> **Note:** `Ural.Battle` points at `DA_WHL_07_Stats`, while `Ural.Attack` (the ArmouredBattle asset) uses `DA_WHL_07_Battle_Stats`. Both have identical numbers in the stats table, so this has no visible effect in this export. It may be a leftover reference.
+> **Note:** `Ural.Battle` points at [`DA_WHL_07_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Data/DA_WHL_07_Stats.json), while `Ural.Attack` (the ArmouredBattle asset) uses [`DA_WHL_07_Battle_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07_ArmouredBattle/Content/Data/ArmouredBattleUral/DA_WHL_07_Battle_Stats.json). Both have identical numbers in the stats table, so this has no visible effect in this export. It may be a leftover reference.
 
 **Other market rows**
 
@@ -268,7 +268,7 @@ Four extensions carry a restock count (the Restock column). The restock semantic
 
 ### 8c. Weapon data (`WDVehicleWeaponDataAsset`)
 
-19 assets, one per weapon mount (for example `W_TNK_01_Heavy`, `W_ROT_02_122mm`, `W_WHL_05_Humvee_RingMinigun`). Each gives the weapon tag (`Id.Vehicle.Weapon.*`), a skeletal mesh, muzzle sockets, the player attach socket and the aim sensitivities (for example Gamepad 35, Mouse 8, Key 45 for `W_TNK_01_Heavy`).
+19 assets, one per weapon mount (for example [`W_TNK_01_Heavy`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/Heavy/W_TNK_01_Heavy.json), [`W_ROT_02_122mm`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/Weapons/122mm/W_ROT_02_122mm.json), [`W_WHL_05_Humvee_RingMinigun`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05_Minigun/Content/Weapons/WeaponExtensions/W_WHL_05_Humvee_RingMinigun.json)). Each gives the weapon tag (`Id.Vehicle.Weapon.*`), a skeletal mesh, muzzle sockets, the player attach socket and the aim sensitivities (for example Gamepad 35, Mouse 8, Key 45 for [`W_TNK_01_Heavy`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/Heavy/W_TNK_01_Heavy.json)).
 
 ---
 
@@ -441,5 +441,5 @@ Stationary platforms use `BHBaseVehicleConfigDataAsset` (no physics). They carry
 - **Input and camera.** `MWheeledVehicleInputDataAsset`, `MLandInputControlsDataAsset`, and the spring arm and camera behaviour assets are not tabled.
 - **Stationary stats.** STN_01 to STN_05 have no stats asset, so their MaxSpeed, fuel and seat values are not available.
 - **Vendor stat widgets.** `W_VehicleVendor_Stat_*` widget objects (Seats, MaxSpeed, FuelCapacity, FuelEconomy, CounterMeasures, Weapons) are referenced by each stats asset but their display logic is not decoded.
-- **Ural asset mapping.** `Ural.Battle` points at `DA_WHL_07_Stats` rather than the ArmouredBattle asset (section 3). Numbers are identical, so this is only a reference oddity.
+- **Ural asset mapping.** `Ural.Battle` points at [`DA_WHL_07_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Data/DA_WHL_07_Stats.json) rather than the ArmouredBattle asset (section 3). Numbers are identical, so this is only a reference oddity.
 - **Localization.** Names come from string-table keys (`STRINGS_VehicleVendor_Stats`, `STRINGS_BuildTool`, `STRINGS_Bobblehead_Faction`). Only the source strings are shown, not localized text in other languages.

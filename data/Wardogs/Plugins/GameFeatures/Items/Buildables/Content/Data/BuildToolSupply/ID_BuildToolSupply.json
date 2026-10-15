@@ -1,0 +1,160 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_BuildToolSupply'",
+    "ObjectPath": "/Buildables/Data/BuildToolSupply/ID_BuildToolSupply.5"
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_BuildToolSupply'",
+    "ObjectPath": "/Buildables/Data/BuildToolSupply/ID_BuildToolSupply.5"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Environment/Props/Industrial/ConstructionMaterials/ConstructionStackConcreteBag/SM_Cement_Bag_01a.SM_Cement_Bag_01a",
+      "SubPathString": ""
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_Cement_Bag_01a'",
+        "ObjectPath": "/Game/Environment/Props/Industrial/ConstructionMaterials/ConstructionStackConcreteBag/Materials/MI_Cement_Bag_01a.0"
+      }
+    ],
+    "Scale": {
+      "X": 1.3,
+      "Y": 1.0,
+      "Z": 1.0
+    },
+    "RelativeRotation": {
+      "Pitch": -90.0,
+      "Yaw": 0.0,
+      "Roll": 0.0
+    },
+    "bOverrideDroppedRelativeLocation": true,
+    "OverridedRelativeLocation": {
+      "X": 2.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "OverridedBoxExtent": {
+      "X": 15.0,
+      "Y": 27.7,
+      "Z": 18.2
+    },
+    "bShouldBounce": false
+  }
+}
+--- export: UObject / BHInventoryFragment_Stackable_0 ---
+{
+  "Type": "BHInventoryFragment_Stackable",
+  "Name": "BHInventoryFragment_Stackable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Stackable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_BuildToolSupply'",
+    "ObjectPath": "/Buildables/Data/BuildToolSupply/ID_BuildToolSupply.5"
+  },
+  "Properties": {
+    "MaxStackSize": 50
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_BuildToolSupply'",
+    "ObjectPath": "/Buildables/Data/BuildToolSupply/ID_BuildToolSupply.5"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_BuildToolSupply'",
+    "ObjectPath": "/Buildables/Data/BuildToolSupply/ID_BuildToolSupply.5"
+  },
+  "Properties": {
+    "Weight": 0.02
+  }
+}
+--- export: UPrimaryDataAsset / ID_BuildToolSupply ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_BuildToolSupply",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Buildables/Data/BuildToolSupply/ID_BuildToolSupply",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.BuildToolSupply"
+    },
+    "ItemContext": [
+      "Item.BuildToolSupplies"
+    ],
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+      "Key": "Items.Utility.BuildToolSupplies",
+      "SourceString": "Build Supplies",
+      "LocalizedString": "Build Supplies"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_Stackable'ID_BuildToolSupply:BHInventoryFragment_Stackable_0'",
+        "ObjectPath": "/Buildables/Data/BuildToolSupply/ID_BuildToolSupply.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_BuildToolSupply:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Buildables/Data/BuildToolSupply/ID_BuildToolSupply.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_BuildToolSupply:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Buildables/Data/BuildToolSupply/ID_BuildToolSupply.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_BuildToolSupply:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Buildables/Data/BuildToolSupply/ID_BuildToolSupply.6"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_BuildToolSupply:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Buildables/Data/BuildToolSupply/ID_BuildToolSupply.0"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_BuildToolSupply:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/Buildables/Data/BuildToolSupply/ID_BuildToolSupply.4"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_BuildToolSupply'",
+    "ObjectPath": "/Buildables/Data/BuildToolSupply/ID_BuildToolSupply.5"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'DA_Item_BuildingSupply_Audio'",
+      "ObjectPath": "/Buildables/Data/BuildToolSupply/DA_Item_BuildingSupply_Audio.0"
+    }
+  }
+}

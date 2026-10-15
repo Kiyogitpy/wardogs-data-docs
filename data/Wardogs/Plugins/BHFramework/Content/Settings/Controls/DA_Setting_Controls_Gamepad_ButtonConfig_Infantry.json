@@ -1,0 +1,42 @@
+--- export: UDataAsset / DA_Setting_Controls_Gamepad_ButtonConfig_Infantry ---
+{
+  "Type": "BHUserSettingDiscreteData",
+  "Name": "DA_Setting_Controls_Gamepad_ButtonConfig_Infantry",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingDiscreteData'",
+  "Package": "/BHFramework/Settings/Controls/DA_Setting_Controls_Gamepad_ButtonConfig_Infantry",
+  "Properties": {
+    "Parameters": {
+      "DefaultValues": {
+        "ObjectName": "BHUserSettingGameplayTagDiscreteValues'DA_Setting_Controls_Gamepad_ButtonConfig_Infantry:BHUserSettingGameplayTagDiscreteValues_0'",
+        "ObjectPath": "/BHFramework/Settings/Controls/DA_Setting_Controls_Gamepad_ButtonConfig_Infantry.1"
+      }
+    }
+  }
+}
+--- export: UObject / BHUserSettingGameplayTagDiscreteValues_0 ---
+{
+  "Type": "BHUserSettingGameplayTagDiscreteValues",
+  "Name": "BHUserSettingGameplayTagDiscreteValues_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingGameplayTagDiscreteValues'",
+  "Outer": {
+    "ObjectName": "BHUserSettingDiscreteData'DA_Setting_Controls_Gamepad_ButtonConfig_Infantry'",
+    "ObjectPath": "/BHFramework/Settings/Controls/DA_Setting_Controls_Gamepad_ButtonConfig_Infantry.0"
+  },
+  "Properties": {
+    "Values": [
+      {
+        "Key": {
+          "TagName": "Input.Gamepad.Config.Button.Infantry.Default"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Controller.STRINGS_Settings_Controller",
+          "Key": "Config.Button.Infantry.Default",
+          "SourceString": "Default",
+          "LocalizedString": "Default"
+        }
+      }
+    ]
+  }
+}

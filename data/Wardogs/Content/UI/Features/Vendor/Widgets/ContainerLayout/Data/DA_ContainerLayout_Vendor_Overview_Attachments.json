@@ -1,0 +1,40 @@
+--- export: UDataAsset / DA_ContainerLayout_Vendor_Overview_Attachments ---
+{
+  "Type": "WDUIContainerLayoutData",
+  "Name": "DA_ContainerLayout_Vendor_Overview_Attachments",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIContainerLayoutData'",
+  "Package": "/Game/UI/Features/Vendor/Widgets/ContainerLayout/Data/DA_ContainerLayout_Vendor_Overview_Attachments",
+  "Properties": {
+    "FallbackContainerViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIContainerGridViewModel_Vendor",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/ContainerGrid/Data/DA_ContainerGrid_Vendor_Overview_Slot.DA_ContainerGrid_Vendor_Overview_Slot",
+        "SubPathString": ""
+      }
+    },
+    "ContainerPriority": [
+      {
+        "TagName": "Item.Attachment.Chamber"
+      },
+      {
+        "TagName": "Item.Attachment.Magazine"
+      },
+      {
+        "TagName": "Item.Ammo"
+      },
+      {
+        "TagName": "Item.Attachment.Sight"
+      },
+      {
+        "TagName": "Item.Attachment.Underbarrel"
+      },
+      {
+        "TagName": "Item.Attachment.Muzzle"
+      }
+    ]
+  }
+}

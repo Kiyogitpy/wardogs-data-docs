@@ -1,0 +1,46 @@
+--- export: UPrimaryDataAsset / DA_ImpactDirt ---
+{
+  "Type": "PDA_PhysicalMaterialResponse_C",
+  "Name": "DA_ImpactDirt",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/VFX/Weapons/Impacts/PDA_PhysicalMaterialResponse.PDA_PhysicalMaterialResponse_C'",
+  "Package": "/Game/VFX/Weapons/Impacts/DA_ImpactDirt",
+  "Template": {
+    "ObjectName": "PDA_PhysicalMaterialResponse_C'Default__PDA_PhysicalMaterialResponse_C'",
+    "ObjectPath": "/Game/VFX/Weapons/Impacts/PDA_PhysicalMaterialResponse.1"
+  },
+  "Properties": {
+    "BulletDecal": {
+      "AssetPathName": "/Game/VFX/Decals/_MaterialInstances/MI_Decal_DirtBulletImpact.MI_Decal_DirtBulletImpact",
+      "SubPathString": ""
+    },
+    "BulletImpactEffect": {
+      "AssetPathName": "/Game/VFX/Weapons/Impacts/Systems/NS_VFX_ImpactDirt.NS_VFX_ImpactDirt",
+      "SubPathString": ""
+    },
+    "ExplosionEffect": [
+      {
+        "AssetPathName": "/Game/VFX/Weapons/Explosions/Systems/NS_VFX_Explosion01_Dirt.NS_VFX_Explosion01_Dirt",
+        "SubPathString": ""
+      },
+      {
+        "AssetPathName": "/Game/VFX/Weapons/Explosions/Systems/NS_VFX_Explosion_Med.NS_VFX_Explosion_Med",
+        "SubPathString": ""
+      },
+      {
+        "AssetPathName": "/Game/VFX/Weapons/Explosions/Systems/NS_VFX_Explosion_Big.NS_VFX_Explosion_Big",
+        "SubPathString": ""
+      }
+    ],
+    "SmallCaliberSIze": 4.0,
+    "MediumCaliberSIze": 4.0,
+    "LargeCaliberSIze": 4.0,
+    "SizeRandomMin": 0.8,
+    "SizeRandomMax": 1.2,
+    "ExplosionDecalSize": 200.0,
+    "NativeClass": {
+      "ObjectName": "BlueprintGeneratedClass'PDA_PhysicalMaterialResponse_C'",
+      "ObjectPath": "/Game/VFX/Weapons/Impacts/PDA_PhysicalMaterialResponse.0"
+    }
+  }
+}

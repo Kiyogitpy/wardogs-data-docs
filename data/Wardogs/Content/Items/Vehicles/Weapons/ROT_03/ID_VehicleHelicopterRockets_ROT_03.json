@@ -1,0 +1,78 @@
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_VehicleHelicopterRockets_ROT_03'",
+    "ObjectPath": "/Game/Items/Vehicles/Weapons/ROT_03/ID_VehicleHelicopterRockets_ROT_03.1"
+  },
+  "Properties": {
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Item.Ammo"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::AllowList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [
+            "Item.Caliber.122mm"
+          ],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": -2,
+        "MaxSlotAmountStackSize": 6,
+        "bAllowsStackedPacking": false,
+        "bIsHiddenContainer": true,
+        "_aaabelnajgoacnpmnokoe_$BD096E02DFCDEAE4$_$20$": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": [
+          {
+            "Item": {
+              "TagName": "Id.Item.122mm"
+            },
+            "Amount": null
+          }
+        ]
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / ID_VehicleHelicopterRockets_ROT_03 ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_VehicleHelicopterRockets_ROT_03",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Vehicles/Weapons/ROT_03/ID_VehicleHelicopterRockets_ROT_03",
+  "Properties": {
+    "ItemId": {
+      "TagName": "ID.Item.VehicleHelicopterRockets_ROT_03"
+    },
+    "ItemContext": [
+      "Inventory.Slot.Vehicle.Weapon.ROT_03.RocketPods"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "7145942E4C5B252ED3BC73A9B3952F2F",
+      "SourceString": "Rockets",
+      "LocalizedString": "Rockets"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_VehicleHelicopterRockets_ROT_03:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/Game/Items/Vehicles/Weapons/ROT_03/ID_VehicleHelicopterRockets_ROT_03.0"
+      }
+    ]
+  }
+}

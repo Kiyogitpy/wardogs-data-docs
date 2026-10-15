@@ -1,0 +1,390 @@
+--- export: UDataAsset / DA_VehicleInteractions_ROT_02 ---
+{
+  "Type": "WDVehicleInteractionsDataAsset",
+  "Name": "DA_VehicleInteractions_ROT_02",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleInteractionsDataAsset'",
+  "Package": "/ROT_02/Data/DA_VehicleInteractions_ROT_02",
+  "Properties": {
+    "MaxInteractDistanceRadius": 1000.0,
+    "VehicleInteractionContextsData": [
+      {
+        "ObjectName": "WDVehicleInteractionContextsData'DA_VehicleInteractionContext_ROT_02'",
+        "ObjectPath": "/ROT_02/Data/DA_VehicleInteractionContext_ROT_02.0"
+      }
+    ],
+    "PerContextOverrides": [
+      {
+        "WorldInteractionContextTags": [
+          "Interaction.Context.Vehicle.Locked"
+        ],
+        "WorldInteractionContextConfig": {
+          "InteractionTag": {
+            "TagName": "None"
+          },
+          "InteractionBehavior": null,
+          "InteractionBehaviorGamepad": null,
+          "bAllowMultipleInteractors": null,
+          "bBypassLookAtCheck": null,
+          "bBypassConditionCheck": null,
+          "bRequirePlayerDragging": null,
+          "InputActionTag": null,
+          "InteractionDuration": null,
+          "InteractionRange": null,
+          "InteractionAngle": null,
+          "bTraceLookAtCameraForward": null,
+          "bSendSuccessRPC": null,
+          "bSendFailureRPC": null,
+          "bShowInteractionPrompt": null,
+          "InteractionBeginGameplayCueTag": null,
+          "InteractionSuccessGameplayCueTag": null,
+          "InteractionFailedGameplayCueTag": null,
+          "InteractionDeniedGameplayCueTag": {
+            "TagName": "GameplayCue.Vehicle.CantEnter.ROT_02"
+          },
+          "InteractionPointTag": {
+            "TagName": "None"
+          },
+          "InteractorBlockingTags": []
+        },
+        "ContextOverride": null
+      },
+      {
+        "WorldInteractionContextTags": [
+          "Interaction.Context.Vehicle.Enter"
+        ],
+        "WorldInteractionContextConfig": {
+          "InteractionTag": {
+            "TagName": "None"
+          },
+          "InteractionBehavior": null,
+          "InteractionBehaviorGamepad": null,
+          "bAllowMultipleInteractors": null,
+          "bBypassLookAtCheck": null,
+          "bBypassConditionCheck": null,
+          "bRequirePlayerDragging": null,
+          "InputActionTag": null,
+          "InteractionDuration": null,
+          "InteractionRange": null,
+          "InteractionAngle": null,
+          "bTraceLookAtCameraForward": null,
+          "bSendSuccessRPC": null,
+          "bSendFailureRPC": null,
+          "bShowInteractionPrompt": null,
+          "InteractionBeginGameplayCueTag": null,
+          "InteractionSuccessGameplayCueTag": null,
+          "InteractionFailedGameplayCueTag": null,
+          "InteractionDeniedGameplayCueTag": {
+            "TagName": "GameplayCue.Vehicle.CantEnter.ROT_02"
+          },
+          "InteractionPointTag": {
+            "TagName": "None"
+          },
+          "InteractorBlockingTags": []
+        },
+        "ContextOverride": {
+          "_aaabfpcmlidpglmknigdl_$F2CB83F6BCAD863B$_$21$": [
+            {
+              "Key": "0",
+              "Value": 0
+            },
+            {
+              "Key": "1",
+              "Value": 1
+            }
+          ]
+        }
+      }
+    ],
+    "InteractionTrackerPoints": [
+      {
+        "InteractionContextTagContainer": [
+          "UI.Trackers.InteractionPoint.Vehicle.AccessPoint",
+          "UI.Trackers.InteractionPoint.Vehicle.ExitPoint",
+          "UI.Trackers.InteractionPoint.Vehicle.Reposition",
+          "UI.Trackers.InteractionPoint.Vehicle.Inventory"
+        ],
+        "InteractionTrackerIcon": {
+          "ObjectName": "Texture2D'T_UI_Icon_VehicleDriver_White_256'",
+          "ObjectPath": "/Game/UI/Features/HUD/Passengers/Widgets/PassengersEntry/Textures/T_UI_Icon_VehicleDriver_White_256.0"
+        },
+        "InteractionPointRange": 300.0,
+        "PriorityContextTag": {
+          "TagName": "Interaction.Context.Vehicle.Enter.Driver"
+        },
+        "bUseScreenClampingInteractablePoints": false,
+        "bRequiresLineOfSightCheck": true,
+        "_aaabadpkllkbagplgfhmj_$3FABBA106FB657C9$_$16$": true,
+        "LineOfSightThreshold": 0.0,
+        "bOverrideContextDisplayOrder": false,
+        "ContextDisplayOrder": [],
+        "Location": {
+          "X": 240.0,
+          "Y": 110.0,
+          "Z": 212.0
+        },
+        "Rotation": {
+          "Pitch": 0.0,
+          "Yaw": 90.0,
+          "Roll": 3.5527137E-15
+        },
+        "bAttachToComponent": false,
+        "ComponentToAttachTo": {
+          "OtherActor": null,
+          "ComponentProperty": "None",
+          "PathToComponent": ""
+        },
+        "SocketToAttachToName": "littleBirdSeatR_J",
+        "bIsInvisible": false
+      },
+      {
+        "InteractionContextTagContainer": [
+          "UI.Trackers.InteractionPoint.Vehicle.AccessPoint",
+          "UI.Trackers.InteractionPoint.Vehicle.ExitPoint",
+          "UI.Trackers.InteractionPoint.Vehicle.Inventory",
+          "UI.Trackers.InteractionPoint.Vehicle.Reposition"
+        ],
+        "InteractionTrackerIcon": {
+          "ObjectName": "Texture2D'T_UI_Icon_VehicleGunner_White_256'",
+          "ObjectPath": "/Game/UI/Features/HUD/Passengers/Widgets/PassengersEntry/Textures/T_UI_Icon_VehicleGunner_White_256.0"
+        },
+        "InteractionPointRange": 300.0,
+        "PriorityContextTag": {
+          "TagName": "Interaction.Context.Vehicle.Enter.Gunner"
+        },
+        "bUseScreenClampingInteractablePoints": false,
+        "bRequiresLineOfSightCheck": true,
+        "_aaabadpkllkbagplgfhmj_$3FABBA106FB657C9$_$16$": true,
+        "LineOfSightThreshold": 0.0,
+        "bOverrideContextDisplayOrder": false,
+        "ContextDisplayOrder": [],
+        "Location": {
+          "X": 345.0,
+          "Y": -94.0,
+          "Z": 179.0
+        },
+        "Rotation": {
+          "Pitch": 0.0,
+          "Yaw": 270.0,
+          "Roll": 0.0
+        },
+        "bAttachToComponent": false,
+        "ComponentToAttachTo": {
+          "OtherActor": null,
+          "ComponentProperty": "None",
+          "PathToComponent": ""
+        },
+        "SocketToAttachToName": "littleBirdSeatR_J",
+        "bIsInvisible": false
+      },
+      {
+        "InteractionContextTagContainer": [
+          "UI.Trackers.InteractionPoint.Vehicle.FuelPoint"
+        ],
+        "InteractionTrackerIcon": {
+          "ObjectName": "Texture2D'T_UI_Icon_PingWheel_Fuel_64x64'",
+          "ObjectPath": "/Game/UI/Features/PingWheel/Widgets/Action/Textures/T_UI_Icon_PingWheel_Fuel_64x64.0"
+        },
+        "InteractionPointRange": 30.0,
+        "PriorityContextTag": {
+          "TagName": "None"
+        },
+        "bUseScreenClampingInteractablePoints": false,
+        "bRequiresLineOfSightCheck": false,
+        "_aaabadpkllkbagplgfhmj_$3FABBA106FB657C9$_$16$": false,
+        "LineOfSightThreshold": -0.5,
+        "bOverrideContextDisplayOrder": false,
+        "ContextDisplayOrder": [],
+        "Location": {
+          "X": -305.0,
+          "Y": 70.0,
+          "Z": 130.0
+        },
+        "Rotation": {
+          "Pitch": 0.0,
+          "Yaw": 90.0,
+          "Roll": 0.0
+        },
+        "bAttachToComponent": false,
+        "ComponentToAttachTo": {
+          "OtherActor": null,
+          "ComponentProperty": "None",
+          "PathToComponent": ""
+        },
+        "SocketToAttachToName": "None",
+        "bIsInvisible": true
+      },
+      {
+        "InteractionContextTagContainer": [
+          "UI.Trackers.InteractionPoint.Vehicle.RepairPoint.Engine"
+        ],
+        "InteractionTrackerIcon": null,
+        "InteractionPointRange": 50.0,
+        "PriorityContextTag": {
+          "TagName": "Interaction.Context.Repair"
+        },
+        "bUseScreenClampingInteractablePoints": false,
+        "bRequiresLineOfSightCheck": true,
+        "_aaabadpkllkbagplgfhmj_$3FABBA106FB657C9$_$16$": false,
+        "LineOfSightThreshold": 0.0,
+        "bOverrideContextDisplayOrder": false,
+        "ContextDisplayOrder": [],
+        "Location": {
+          "X": -35.0,
+          "Y": 175.0,
+          "Z": 235.0
+        },
+        "Rotation": {
+          "Pitch": 0.0,
+          "Yaw": 90.0,
+          "Roll": 0.0
+        },
+        "bAttachToComponent": false,
+        "ComponentToAttachTo": {
+          "OtherActor": null,
+          "ComponentProperty": "None",
+          "PathToComponent": ""
+        },
+        "SocketToAttachToName": "None",
+        "bIsInvisible": true
+      },
+      {
+        "InteractionContextTagContainer": [
+          "UI.Trackers.InteractionPoint.Vehicle.RepairPoint.Engine"
+        ],
+        "InteractionTrackerIcon": null,
+        "InteractionPointRange": 50.0,
+        "PriorityContextTag": {
+          "TagName": "Interaction.Context.Repair"
+        },
+        "bUseScreenClampingInteractablePoints": false,
+        "bRequiresLineOfSightCheck": true,
+        "_aaabadpkllkbagplgfhmj_$3FABBA106FB657C9$_$16$": false,
+        "LineOfSightThreshold": 0.0,
+        "bOverrideContextDisplayOrder": false,
+        "ContextDisplayOrder": [],
+        "Location": {
+          "X": -35.0,
+          "Y": -175.0,
+          "Z": 235.0
+        },
+        "Rotation": {
+          "Pitch": 0.0,
+          "Yaw": -90.0,
+          "Roll": 0.0
+        },
+        "bAttachToComponent": false,
+        "ComponentToAttachTo": {
+          "OtherActor": null,
+          "ComponentProperty": "None",
+          "PathToComponent": ""
+        },
+        "SocketToAttachToName": "None",
+        "bIsInvisible": true
+      },
+      {
+        "InteractionContextTagContainer": [
+          "UI.Trackers.InteractionPoint.Vehicle.RepairPoint.FuelTank"
+        ],
+        "InteractionTrackerIcon": null,
+        "InteractionPointRange": 50.0,
+        "PriorityContextTag": {
+          "TagName": "Interaction.Context.Repair"
+        },
+        "bUseScreenClampingInteractablePoints": false,
+        "bRequiresLineOfSightCheck": true,
+        "_aaabadpkllkbagplgfhmj_$3FABBA106FB657C9$_$16$": false,
+        "LineOfSightThreshold": 0.0,
+        "bOverrideContextDisplayOrder": false,
+        "ContextDisplayOrder": [],
+        "Location": {
+          "X": -305.0,
+          "Y": 70.0,
+          "Z": 130.0
+        },
+        "Rotation": {
+          "Pitch": 0.0,
+          "Yaw": 90.0,
+          "Roll": 0.0
+        },
+        "bAttachToComponent": false,
+        "ComponentToAttachTo": {
+          "OtherActor": null,
+          "ComponentProperty": "None",
+          "PathToComponent": ""
+        },
+        "SocketToAttachToName": "None",
+        "bIsInvisible": true
+      },
+      {
+        "InteractionContextTagContainer": [
+          "UI.Trackers.InteractionPoint.Vehicle.RepairPoint.Rotor.Tail"
+        ],
+        "InteractionTrackerIcon": null,
+        "InteractionPointRange": 50.0,
+        "PriorityContextTag": {
+          "TagName": "Interaction.Context.Repair"
+        },
+        "bUseScreenClampingInteractablePoints": false,
+        "bRequiresLineOfSightCheck": true,
+        "_aaabadpkllkbagplgfhmj_$3FABBA106FB657C9$_$16$": false,
+        "LineOfSightThreshold": 0.0,
+        "bOverrideContextDisplayOrder": false,
+        "ContextDisplayOrder": [],
+        "Location": {
+          "X": -750.0,
+          "Y": 30.0,
+          "Z": 130.0
+        },
+        "Rotation": {
+          "Pitch": 0.0,
+          "Yaw": 90.0,
+          "Roll": 0.0
+        },
+        "bAttachToComponent": false,
+        "ComponentToAttachTo": {
+          "OtherActor": null,
+          "ComponentProperty": "None",
+          "PathToComponent": ""
+        },
+        "SocketToAttachToName": "None",
+        "bIsInvisible": true
+      },
+      {
+        "InteractionContextTagContainer": [
+          "UI.Trackers.InteractionPoint.Vehicle.RepairPoint.Rotor.Main"
+        ],
+        "InteractionTrackerIcon": null,
+        "InteractionPointRange": 50.0,
+        "PriorityContextTag": {
+          "TagName": "Interaction.Context.Repair"
+        },
+        "bUseScreenClampingInteractablePoints": false,
+        "bRequiresLineOfSightCheck": true,
+        "_aaabadpkllkbagplgfhmj_$3FABBA106FB657C9$_$16$": false,
+        "LineOfSightThreshold": 0.0,
+        "bOverrideContextDisplayOrder": false,
+        "ContextDisplayOrder": [],
+        "Location": {
+          "X": 205.0,
+          "Y": -105.0,
+          "Z": 215.0
+        },
+        "Rotation": {
+          "Pitch": 0.0,
+          "Yaw": -90.0,
+          "Roll": 0.0
+        },
+        "bAttachToComponent": false,
+        "ComponentToAttachTo": {
+          "OtherActor": null,
+          "ComponentProperty": "None",
+          "PathToComponent": ""
+        },
+        "SocketToAttachToName": "None",
+        "bIsInvisible": true
+      }
+    ],
+    "bAllowSameFactionOccupantsOnly": true
+  }
+}

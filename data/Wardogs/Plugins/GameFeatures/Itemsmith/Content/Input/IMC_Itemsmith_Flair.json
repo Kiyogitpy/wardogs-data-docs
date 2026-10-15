@@ -1,0 +1,370 @@
+--- export: UDataAsset / IMC_Itemsmith_Flair ---
+{
+  "Type": "InputMappingContext",
+  "Name": "IMC_Itemsmith_Flair",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputMappingContext'",
+  "Package": "/Itemsmith/Input/IMC_Itemsmith_Flair",
+  "Properties": {
+    "DefaultKeyMappings": {
+      "Mappings": [
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_FlipView'",
+            "ObjectPath": "/Itemsmith/Input/IA_FlipView.0"
+          },
+          "Key": {
+            "KeyName": "C"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_PanCameraUp'",
+            "ObjectPath": "/Itemsmith/Input/IA_PanCameraUp.0"
+          },
+          "Key": {
+            "KeyName": "W"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_PanCameraDown'",
+            "ObjectPath": "/Itemsmith/Input/IA_PanCameraDown.0"
+          },
+          "Key": {
+            "KeyName": "S"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_PanCameraLeft'",
+            "ObjectPath": "/Itemsmith/Input/IA_PanCameraLeft.0"
+          },
+          "Key": {
+            "KeyName": "A"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_PanCameraRight'",
+            "ObjectPath": "/Itemsmith/Input/IA_PanCameraRight.0"
+          },
+          "Key": {
+            "KeyName": "D"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_ResetCamera'",
+            "ObjectPath": "/Itemsmith/Input/IA_ResetCamera.0"
+          },
+          "Key": {
+            "KeyName": "R"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_FlipView'",
+            "ObjectPath": "/Itemsmith/Input/IA_FlipView.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_FaceButton_Top"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [
+            {
+              "ObjectName": "WDDeadZoneInputModifier'IMC_Itemsmith_Flair:WDDeadZoneInputModifier_0'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_Flair.5"
+            },
+            {
+              "ObjectName": "InputModifierScalar'IMC_Itemsmith_Flair:InputModifierScalar_3'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_Flair.2"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_PanCameraUp'",
+            "ObjectPath": "/Itemsmith/Input/IA_PanCameraUp.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_RightStick_Up"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [
+            {
+              "ObjectName": "WDDeadZoneInputModifier'IMC_Itemsmith_Flair:WDDeadZoneInputModifier_3'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_Flair.8"
+            },
+            {
+              "ObjectName": "InputModifierScalar'IMC_Itemsmith_Flair:InputModifierScalar_4'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_Flair.3"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_PanCameraDown'",
+            "ObjectPath": "/Itemsmith/Input/IA_PanCameraDown.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_RightStick_Down"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [
+            {
+              "ObjectName": "WDDeadZoneInputModifier'IMC_Itemsmith_Flair:WDDeadZoneInputModifier_2'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_Flair.7"
+            },
+            {
+              "ObjectName": "InputModifierScalar'IMC_Itemsmith_Flair:InputModifierScalar_5'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_Flair.4"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_PanCameraLeft'",
+            "ObjectPath": "/Itemsmith/Input/IA_PanCameraLeft.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_RightStick_Left"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [
+            {
+              "ObjectName": "WDDeadZoneInputModifier'IMC_Itemsmith_Flair:WDDeadZoneInputModifier_1'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_Flair.6"
+            },
+            {
+              "ObjectName": "InputModifierScalar'IMC_Itemsmith_Flair:InputModifierScalar_2'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_Flair.1"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_PanCameraRight'",
+            "ObjectPath": "/Itemsmith/Input/IA_PanCameraRight.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_RightStick_Right"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_ResetCamera'",
+            "ObjectPath": "/Itemsmith/Input/IA_ResetCamera.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_FaceButton_Left"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        }
+      ]
+    }
+  }
+}
+--- export: UObject / InputModifierScalar_2 ---
+{
+  "Type": "InputModifierScalar",
+  "Name": "InputModifierScalar_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierScalar'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith_Flair'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_Flair.0"
+  },
+  "Properties": {
+    "Scalar": {
+      "X": 0.6,
+      "Y": 0.6,
+      "Z": 0.6
+    }
+  }
+}
+--- export: UObject / InputModifierScalar_3 ---
+{
+  "Type": "InputModifierScalar",
+  "Name": "InputModifierScalar_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierScalar'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith_Flair'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_Flair.0"
+  },
+  "Properties": {
+    "Scalar": {
+      "X": 0.6,
+      "Y": 0.6,
+      "Z": 0.6
+    }
+  }
+}
+--- export: UObject / InputModifierScalar_4 ---
+{
+  "Type": "InputModifierScalar",
+  "Name": "InputModifierScalar_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierScalar'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith_Flair'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_Flair.0"
+  },
+  "Properties": {
+    "Scalar": {
+      "X": 0.6,
+      "Y": 0.6,
+      "Z": 0.6
+    }
+  }
+}
+--- export: UObject / InputModifierScalar_5 ---
+{
+  "Type": "InputModifierScalar",
+  "Name": "InputModifierScalar_5",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierScalar'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith_Flair'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_Flair.0"
+  },
+  "Properties": {
+    "Scalar": {
+      "X": 0.6,
+      "Y": 0.6,
+      "Z": 0.6
+    }
+  }
+}
+--- export: UObject / WDDeadZoneInputModifier_0 ---
+{
+  "Type": "WDDeadZoneInputModifier",
+  "Name": "WDDeadZoneInputModifier_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDDeadZoneInputModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith_Flair'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_Flair.0"
+  },
+  "Properties": {
+    "MinThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.MoveStick.Centre"
+    },
+    "MaxThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.MoveStick.MaxInput"
+    },
+    "RadiusAxialThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.MoveStick.Axial"
+    },
+    "bInvertMaxThreshold": true
+  }
+}
+--- export: UObject / WDDeadZoneInputModifier_1 ---
+{
+  "Type": "WDDeadZoneInputModifier",
+  "Name": "WDDeadZoneInputModifier_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDDeadZoneInputModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith_Flair'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_Flair.0"
+  },
+  "Properties": {
+    "MinThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.MoveStick.Centre"
+    },
+    "MaxThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.MoveStick.MaxInput"
+    },
+    "RadiusAxialThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.MoveStick.Axial"
+    },
+    "bInvertMaxThreshold": true
+  }
+}
+--- export: UObject / WDDeadZoneInputModifier_2 ---
+{
+  "Type": "WDDeadZoneInputModifier",
+  "Name": "WDDeadZoneInputModifier_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDDeadZoneInputModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith_Flair'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_Flair.0"
+  },
+  "Properties": {
+    "MinThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.MoveStick.Centre"
+    },
+    "MaxThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.MoveStick.MaxInput"
+    },
+    "RadiusAxialThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.MoveStick.Axial"
+    },
+    "bInvertMaxThreshold": true
+  }
+}
+--- export: UObject / WDDeadZoneInputModifier_3 ---
+{
+  "Type": "WDDeadZoneInputModifier",
+  "Name": "WDDeadZoneInputModifier_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDDeadZoneInputModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith_Flair'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_Flair.0"
+  },
+  "Properties": {
+    "MinThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.MoveStick.Centre"
+    },
+    "MaxThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.MoveStick.MaxInput"
+    },
+    "RadiusAxialThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.MoveStick.Axial"
+    },
+    "bInvertMaxThreshold": true
+  }
+}

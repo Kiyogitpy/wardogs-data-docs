@@ -1,0 +1,68 @@
+--- export: UObject / AEB_StopLocalPlayerSoundByContext_C_0 ---
+{
+  "Type": "AEB_StopLocalPlayerSoundByContext_C",
+  "Name": "AEB_StopLocalPlayerSoundByContext_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_StopLocalPlayerSoundByContext.AEB_StopLocalPlayerSoundByContext_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_InGame_Vendor_DeleteItem'",
+    "ObjectPath": "/Game/Audio/Events/UI/InGame/AE_UI_InGame_Vendor_DeleteItem.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_StopLocalPlayerSoundByContext_C'Default__AEB_StopLocalPlayerSoundByContext_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_StopLocalPlayerSoundByContext.0"
+  },
+  "Properties": {
+    "Context Name Tag": {
+      "TagName": "Audio.Context.Weapon.Attachment"
+    },
+    "DelayTime": 0.2,
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_UI_InGame_Vendor_DeleteItem ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UI_InGame_Vendor_DeleteItem",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UI/InGame/AE_UI_InGame_Vendor_DeleteItem",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.Vendor.DeleteItem"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_UI_InGame_Vendor_DeleteItem:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/InGame/AE_UI_InGame_Vendor_DeleteItem.2"
+      },
+      {
+        "ObjectName": "AEB_StopLocalPlayerSoundByContext_C'AE_UI_InGame_Vendor_DeleteItem:AEB_StopLocalPlayerSoundByContext_C_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/InGame/AE_UI_InGame_Vendor_DeleteItem.0"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_InGame_Vendor_DeleteItem'",
+    "ObjectPath": "/Game/Audio/Events/UI/InGame/AE_UI_InGame_Vendor_DeleteItem.1"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UI_Vendor_DeleteItem'",
+      "ObjectPath": "/Game/Audio/UI/InGame/MSS/Vendor/MSS_UI_Vendor_DeleteItem.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Item.AddToCart"
+    }
+  }
+}

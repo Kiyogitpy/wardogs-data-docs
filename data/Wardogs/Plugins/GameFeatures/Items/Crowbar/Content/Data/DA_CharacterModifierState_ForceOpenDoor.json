@@ -1,0 +1,62 @@
+--- export: UObject / B_CharacterModifier_IgnoreLookInput_C_0 ---
+{
+  "Type": "B_CharacterModifier_IgnoreLookInput_C",
+  "Name": "B_CharacterModifier_IgnoreLookInput_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/MoverTesting/CharacterModifierStates/CharacterModifiers/B_CharacterModifier_IgnoreLookInput.B_CharacterModifier_IgnoreLookInput_C'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_ForceOpenDoor'",
+    "ObjectPath": "/Crowbar/Data/DA_CharacterModifierState_ForceOpenDoor.2"
+  },
+  "Template": {
+    "ObjectName": "B_CharacterModifier_IgnoreLookInput_C'Default__B_CharacterModifier_IgnoreLookInput_C'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/CharacterModifiers/B_CharacterModifier_IgnoreLookInput.0"
+  }
+}
+--- export: UObject / WDCharacterModifierCondition_Tags_0 ---
+{
+  "Type": "WDCharacterModifierCondition_Tags",
+  "Name": "WDCharacterModifierCondition_Tags_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierCondition_Tags'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_ForceOpenDoor'",
+    "ObjectPath": "/Crowbar/Data/DA_CharacterModifierState_ForceOpenDoor.2"
+  },
+  "Properties": {
+    "Requirements": {
+      "RequireTags": [
+        "State.Player.ForceOpenDoor"
+      ],
+      "IgnoreTags": [
+        "State.Player.Vitality.Critical"
+      ]
+    }
+  }
+}
+--- export: UPrimaryDataAsset / DA_CharacterModifierState_ForceOpenDoor ---
+{
+  "Type": "WDCharacterModifierStateDefinition",
+  "Name": "DA_CharacterModifierState_ForceOpenDoor",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierStateDefinition'",
+  "Package": "/Crowbar/Data/DA_CharacterModifierState_ForceOpenDoor",
+  "Properties": {
+    "StateTag": {
+      "TagName": "State.CharacterModifier.ForceOpenDoor"
+    },
+    "CharacterModifiers": [
+      {
+        "ObjectName": "B_CharacterModifier_IgnoreLookInput_C'DA_CharacterModifierState_ForceOpenDoor:B_CharacterModifier_IgnoreLookInput_C_0'",
+        "ObjectPath": "/Crowbar/Data/DA_CharacterModifierState_ForceOpenDoor.0"
+      }
+    ],
+    "Priority": 0,
+    "Conditions": [
+      {
+        "ObjectName": "WDCharacterModifierCondition_Tags'DA_CharacterModifierState_ForceOpenDoor:WDCharacterModifierCondition_Tags_0'",
+        "ObjectPath": "/Crowbar/Data/DA_CharacterModifierState_ForceOpenDoor.1"
+      }
+    ]
+  }
+}

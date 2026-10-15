@@ -1,0 +1,144 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_338Nor_ArmorPiercing'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/338NormaMagnum/ID_338Nor_ArmorPiercing.4"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 2,
+      "Y": 1
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_338Nor_ArmorPiercing'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/338NormaMagnum/ID_338Nor_ArmorPiercing.4"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Items/Resources/Ammo/545mm/SM_545x39_AP_Ammo.SM_545x39_AP_Ammo",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Stackable_0 ---
+{
+  "Type": "BHInventoryFragment_Stackable",
+  "Name": "BHInventoryFragment_Stackable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Stackable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_338Nor_ArmorPiercing'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/338NormaMagnum/ID_338Nor_ArmorPiercing.4"
+  },
+  "Properties": {
+    "MaxStackSize": 30
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_338Nor_ArmorPiercing'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/338NormaMagnum/ID_338Nor_ArmorPiercing.4"
+  }
+}
+--- export: UPrimaryDataAsset / ID_338Nor_ArmorPiercing ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_338Nor_ArmorPiercing",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Resources/Ammo/338NormaMagnum/ID_338Nor_ArmorPiercing",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.338Nor.ArmourPiercing"
+    },
+    "ItemContext": [
+      "Item.Ammo",
+      "Item.Caliber.338Nor",
+      "Item.Ammo.Type.FMJ.Tracer",
+      "Item.Context.ForceToStorage"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "39A17E7643E300B2C2A809A6949ABCD8",
+      "SourceString": ".338 AP",
+      "LocalizedString": ".338 AP"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_Stackable'ID_338Nor_ArmorPiercing:BHInventoryFragment_Stackable_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/338NormaMagnum/ID_338Nor_ArmorPiercing.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_338Nor_ArmorPiercing:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/338NormaMagnum/ID_338Nor_ArmorPiercing.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_338Nor_ArmorPiercing:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/338NormaMagnum/ID_338Nor_ArmorPiercing.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Projectile'ID_338Nor_ArmorPiercing:WDInventoryFragment_Projectile_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/338NormaMagnum/ID_338Nor_ArmorPiercing.6"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_338Nor_ArmorPiercing:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/338NormaMagnum/ID_338Nor_ArmorPiercing.5"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_338Nor_ArmorPiercing:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/338NormaMagnum/ID_338Nor_ArmorPiercing.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_338Nor_ArmorPiercing'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/338NormaMagnum/ID_338Nor_ArmorPiercing.4"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_LooseAmmoBox_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Item/Data/ID_LooseAmmoBox_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Projectile_0 ---
+{
+  "Type": "WDInventoryFragment_Projectile",
+  "Name": "WDInventoryFragment_Projectile_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Projectile'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_338Nor_ArmorPiercing'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/338NormaMagnum/ID_338Nor_ArmorPiercing.4"
+  },
+  "Properties": {
+    "ProjectileData": {
+      "ObjectName": "WDProjectileData'DA_338Norman_ProjectileData'",
+      "ObjectPath": "/Game/GameMechanics/Inventory/Equipment/Caliber/338NormanMagnum/DA_338Norman_ProjectileData.0"
+    }
+  }
+}

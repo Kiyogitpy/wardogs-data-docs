@@ -1,0 +1,93 @@
+--- export: UPrimaryDataAsset / DA_9mm_ProjectileData ---
+{
+  "Type": "WDProjectileData",
+  "Name": "DA_9mm_ProjectileData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDProjectileData'",
+  "Package": "/Game/GameMechanics/Inventory/Equipment/Caliber/9mm/DA_9mm_ProjectileData",
+  "Properties": {
+    "ProjectileId": {
+      "TagName": "Item.Caliber.9mm"
+    },
+    "ProjectileStats": {
+      "DamageEntityData": {
+        "Tag": {
+          "TagName": "Meta.Damage.Bullet.9mm"
+        },
+        "Context": [
+          "Meta.Damage.Arms.Small"
+        ]
+      },
+      "DamageValues": {
+        "BaseDamage": 22.0,
+        "ImpulseValues": {
+          "bApplyImpulse": true,
+          "ImpulseScale": 1800.0
+        }
+      },
+      "ProjectileDimensions": {
+        "Length": 1.0541,
+        "Diameter": 0.9017,
+        "Mass": 0.007,
+        "DragModel": {
+          "Value": 1.27,
+          "Curve": {
+            "CurveTable": {
+              "ObjectName": "CurveTable'CT_Projectile_DragCoefficients'",
+              "ObjectPath": "/Game/Items/Resources/Ammo/Curves/CT_Projectile_DragCoefficients.0"
+            },
+            "RowName": "G1 (Flat Bottom)"
+          }
+        }
+      },
+      "ProjectileEffects": {
+        "GameplayCueTag": {
+          "TagName": "GameplayCue.Weapon.Projectile"
+        }
+      },
+      "SuppressionData": {
+        "BaseSuppression": 0.1,
+        "DistanceFalloffRange": {
+          "Min": 0.1,
+          "Max": 1.5
+        },
+        "DistanceFalloffCurve": {
+          "EditorCurveData": {
+            "Keys": [
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_User",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.0,
+                "Value": 1.0,
+                "ArriveTangent": -0.59885013,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": -0.59884894,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_User",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 1.0,
+                "Value": 0.7,
+                "ArriveTangent": -0.1975556,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": -0.30912212,
+                "LeaveTangentWeight": 0.0
+              }
+            ]
+          }
+        }
+      },
+      "AttachedEffect": {
+        "AssetPathName": "/Game/VFX/Weapons/Tracers/NS_Tracer_9mm.NS_Tracer_9mm",
+        "SubPathString": ""
+      },
+      "TypicalSpeed": 28000.0,
+      "PenetrationExitSpeedMultiplier": 0.35,
+      "TravelDistanceForWhizBy": 1000.0,
+      "DistanceToPlayerForWhizBy": 700.0
+    }
+  }
+}

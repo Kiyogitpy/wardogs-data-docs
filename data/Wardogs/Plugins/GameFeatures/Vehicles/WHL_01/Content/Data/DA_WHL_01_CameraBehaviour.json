@@ -1,0 +1,86 @@
+--- export: UDataAsset / DA_WHL_01_CameraBehaviour ---
+{
+  "Type": "MLandVehicleSpringArmDataAsset",
+  "Name": "DA_WHL_01_CameraBehaviour",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MLandVehicleSpringArmDataAsset'",
+  "Package": "/WHL_01/Data/DA_WHL_01_CameraBehaviour",
+  "Properties": {
+    "FreelookYawRange": {
+      "LowerBound": {
+        "Type": "ERangeBoundTypes::Open"
+      },
+      "UpperBound": {
+        "Type": "ERangeBoundTypes::Open"
+      }
+    },
+    "FreelookPitchRange": {
+      "LowerBound": {
+        "Value": -20.0
+      },
+      "UpperBound": {
+        "Value": 60.0
+      }
+    },
+    "CameraProbeMinDistance": 10.0,
+    "CameraUpwardsZOffset": 20.0,
+    "ZoomRange": {
+      "LowerBound": {
+        "Value": 100.0
+      },
+      "UpperBound": {
+        "Value": 300.0
+      }
+    },
+    "TargetOffset": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 18.0
+    },
+    "SocketOffset": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 150.0
+    },
+    "TargetArmLength": 525.0,
+    "bMapArmLengthFromFOV": true,
+    "bMapArmHeightFromFOV": true,
+    "FOVMappingRange": {
+      "LowerBound": {
+        "Value": 60.0
+      },
+      "UpperBound": {
+        "Value": 110.0
+      }
+    },
+    "ArmLengthAtFOVRange": {
+      "X": 675.0,
+      "Y": 375.0
+    },
+    "ArmHeightAtFOVRange": {
+      "X": 5.0,
+      "Y": 0.0
+    },
+    "ProbeSize": 50.0,
+    "bInheritRoll": false,
+    "bEnableCameraLag": true,
+    "bEnableCameraRotationLag": true,
+    "CameraLagSpeed": 12.0,
+    "CameraRotationLagSpeed": 5.0,
+    "CameraLagMaxDistance": 125.0,
+    "CameraComponentSettings": {
+      "FieldOfViewVsSpeed": {
+        "EditorCurveData": {},
+        "ExternalCurve": {
+          "ObjectName": "CurveFloat'CRV_WHL_01_SpeedCurveFOV'",
+          "ObjectPath": "/WHL_01/Curves/CRV_WHL_01_SpeedCurveFOV.0"
+        }
+      },
+      "RotationOverride": {
+        "Pitch": -7.5,
+        "Yaw": 0.0,
+        "Roll": 0.0
+      }
+    }
+  }
+}

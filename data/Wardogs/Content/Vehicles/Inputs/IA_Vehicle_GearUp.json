@@ -1,0 +1,48 @@
+--- export: UDataAsset / IA_Vehicle_GearUp ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Vehicle_GearUp",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Vehicles/Inputs/IA_Vehicle_GearUp",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.GearUp"
+    },
+    "AccumulationBehavior": "EInputActionAccumulationBehavior::Cumulative",
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerReleased'IA_Vehicle_GearUp:InputTriggerReleased_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_GearUp.2"
+      }
+    ],
+    "Modifiers": [
+      {
+        "ObjectName": "InputModifierDeadZone'IA_Vehicle_GearUp:InputModifierDeadZone_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_GearUp.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputModifierDeadZone_0 ---
+{
+  "Type": "InputModifierDeadZone",
+  "Name": "InputModifierDeadZone_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierDeadZone'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_GearUp'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_GearUp.0"
+  }
+}
+--- export: UObject / InputTriggerReleased_0 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_GearUp'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_GearUp.0"
+  }
+}

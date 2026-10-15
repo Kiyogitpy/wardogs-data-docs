@@ -1,0 +1,33 @@
+--- export: UObject / GameFeatureAction_AddWorldPartitionContent_0 ---
+{
+  "Type": "GameFeatureAction_AddWorldPartitionContent",
+  "Name": "GameFeatureAction_AddWorldPartitionContent_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddWorldPartitionContent'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'MusicTape'",
+    "ObjectPath": "/MusicTape/MusicTape.1"
+  },
+  "Properties": {
+    "ExternalDataLayerAsset": {
+      "ObjectName": "ExternalDataLayerAsset'EDL_MusicTape'",
+      "ObjectPath": "/MusicTape/EDL_MusicTape.0"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / MusicTape ---
+{
+  "Type": "GameFeatureData",
+  "Name": "MusicTape",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/MusicTape/MusicTape",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_AddWorldPartitionContent'MusicTape:GameFeatureAction_AddWorldPartitionContent_0'",
+        "ObjectPath": "/MusicTape/MusicTape.0"
+      }
+    ]
+  }
+}

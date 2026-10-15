@@ -1,0 +1,48 @@
+--- export: UDataAsset / W_TNK_01_Heavy_MountedMachineGun ---
+{
+  "Type": "WDVehicleWeaponDataAsset",
+  "Name": "W_TNK_01_Heavy_MountedMachineGun",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeaponDataAsset'",
+  "Package": "/TNK_01/Weapons/Heavy/W_TNK_01_Heavy_MountedMachineGun",
+  "Properties": {
+    "WeaponTag": {
+      "TagName": "Id.Vehicle.Weapon.TNK_01.MountedMachineGun"
+    },
+    "SkeletalMeshAsset": {
+      "AssetPathName": "/Game/Items/Weapons/Mounted/M249/SK_M249_Mounted.SK_M249_Mounted",
+      "SubPathString": ""
+    },
+    "MuzzleSockets": [
+      "muzzleFlash_WeaponExtension"
+    ],
+    "PlayerAttachSocket": {
+      "SourceID": "MountedMachineGun",
+      "SocketName": "S_Attach_MountedMachineGun_Player"
+    },
+    "GamepadRotationSensitivity": 35.0,
+    "GamepadRotationUpdateMax": {
+      "X": 85.0,
+      "Y": 85.0
+    },
+    "MouseRotationSensitivity": 15.0,
+    "MouseRotationUpdateMax": {
+      "X": 125.0,
+      "Y": 125.0
+    },
+    "KeyRotationSensitivity": 80.0,
+    "bApplyFovScale": false,
+    "WeaponRotationComponentData": {
+      "MinWeaponYawAngle": 90.0,
+      "MaxWeaponYawAngle": -90.0,
+      "bLimitWeaponPitch": true,
+      "MinWeaponPitchAngle": -20.0,
+      "MaxWeaponPitchAngle": 30.0,
+      "bStabilisationPermitted": true,
+      "RotationSpeed": 110.0,
+      "YawJointSocket": "MountedMachineGun",
+      "WeaponRotationGameplayCueThreshold": 7.3576E-40
+    },
+    "WeaponStatesCameraData": []
+  }
+}

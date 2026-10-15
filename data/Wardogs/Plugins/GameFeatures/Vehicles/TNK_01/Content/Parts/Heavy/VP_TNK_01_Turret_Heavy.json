@@ -1,0 +1,380 @@
+--- export: UPrimaryDataAsset / VP_TNK_01_Turret_Heavy ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_TNK_01_Turret_Heavy",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/TNK_01/Parts/Heavy/VP_TNK_01_Turret_Heavy",
+  "Properties": {
+    "Tags": [
+      "ID.Vehicle.Turret.TNK_01.Heavy"
+    ],
+    "Fragments": [
+      {
+        "Key": "TurretSkeleton",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_SkeletalMesh'VP_TNK_01_Turret_Heavy:MVF_SkeletalMesh_0'",
+            "ObjectPath": "/TNK_01/Parts/Heavy/VP_TNK_01_Turret_Heavy.2"
+          }
+        }
+      },
+      {
+        "Key": "TurretSpin",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_TNK_01_Turret_Heavy:MVF_StaticMesh_4'",
+            "ObjectPath": "/TNK_01/Parts/Heavy/VP_TNK_01_Turret_Heavy.6"
+          }
+        }
+      },
+      {
+        "Key": "TurretPitch",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_TNK_01_Turret_Heavy:MVF_StaticMesh_1'",
+            "ObjectPath": "/TNK_01/Parts/Heavy/VP_TNK_01_Turret_Heavy.4"
+          }
+        }
+      },
+      {
+        "Key": "TurretBarrel",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_TNK_01_Turret_Heavy:MVF_StaticMesh_2'",
+            "ObjectPath": "/TNK_01/Parts/Heavy/VP_TNK_01_Turret_Heavy.5"
+          }
+        }
+      },
+      {
+        "Key": "Weapon",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_WeaponFragment'VP_TNK_01_Turret_Heavy:WD_MVF_WeaponFragment_0'",
+            "ObjectPath": "/TNK_01/Parts/Heavy/VP_TNK_01_Turret_Heavy.9"
+          }
+        }
+      },
+      {
+        "Key": "HeavyWeaponExtensionSlot",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_InventoryFragment'VP_TNK_01_Turret_Heavy:WD_MVF_InventoryFragment_0'",
+            "ObjectPath": "/TNK_01/Parts/Heavy/VP_TNK_01_Turret_Heavy.7"
+          }
+        }
+      },
+      {
+        "Key": "MachineGunWeaponExtensionSlot",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_InventoryFragment'VP_TNK_01_Turret_Heavy:WD_MVF_InventoryFragment_1'",
+            "ObjectPath": "/TNK_01/Parts/Heavy/VP_TNK_01_Turret_Heavy.8"
+          }
+        }
+      },
+      {
+        "Key": "TurretFlap",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_TNK_01_Turret_Heavy:MVF_StaticMesh_0'",
+            "ObjectPath": "/TNK_01/Parts/Heavy/VP_TNK_01_Turret_Heavy.3"
+          }
+        }
+      }
+    ],
+    "Slots": [
+      {
+        "Key": "MountedMachineGun",
+        "Value": {
+          "bEnabled": true,
+          "Slot": {
+            "ObjectName": "ModularVehicleSlot'VP_TNK_01_Turret_Heavy:ModularVehicleSlot_0'",
+            "ObjectPath": "/TNK_01/Parts/Heavy/VP_TNK_01_Turret_Heavy.1"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / ModularVehicleSlot_0 ---
+{
+  "Type": "ModularVehicleSlot",
+  "Name": "ModularVehicleSlot_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleSlot'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_TNK_01_Turret_Heavy'",
+    "ObjectPath": "/TNK_01/Parts/Heavy/VP_TNK_01_Turret_Heavy.0"
+  },
+  "Properties": {
+    "DefaultPart": {
+      "AssetPathName": "/TNK_01/Parts/Heavy/VP_TNK_01_MountedHeavy_MachineGun.VP_TNK_01_MountedHeavy_MachineGun",
+      "SubPathString": ""
+    },
+    "CompatibilityTags": {
+      "RequireTags": [
+        "Vehicle.Turret"
+      ]
+    }
+  }
+}
+--- export: UObject / MVF_SkeletalMesh_0 ---
+{
+  "Type": "MVF_SkeletalMesh",
+  "Name": "MVF_SkeletalMesh_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_SkeletalMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_TNK_01_Turret_Heavy'",
+    "ObjectPath": "/TNK_01/Parts/Heavy/VP_TNK_01_Turret_Heavy.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "PhysicsMode": "EModularVehiclePhysicsMode::AttachOnly",
+      "Constraint": {
+        "ConeLimit": {
+          "Swing1LimitDegrees": 0.0,
+          "Swing2LimitDegrees": 0.0,
+          "bSoftConstraint": false
+        },
+        "TwistLimit": {
+          "TwistLimitDegrees": 0.0,
+          "bSoftConstraint": false
+        },
+        "bParentDominates": true,
+        "bEnableMassConditioning": false
+      },
+      "AttachQuery": {
+        "SourceID": "Chassis",
+        "SocketName": "turretSpin_Attach"
+      },
+      "bAttachSource": true,
+      "Method": "EModularVehicleComponentMode::CreateNew",
+      "Tags": [
+        "TurretSkeleton"
+      ]
+    },
+    "SkeletalMesh": {
+      "AssetPathName": "/TNK_01/Mesh/Battle/SK/SK_TNK_01_Turret.SK_TNK_01_Turret",
+      "SubPathString": ""
+    },
+    "AnimInstance": {
+      "AssetPathName": "/TNK_01/Animation/Blueprints/ABP_TNK_01_Turret.ABP_TNK_01_Turret_C",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_Kinematic"
+      }
+    },
+    "WalkableSlopeOverride": {
+      "WalkableSlopeBehavior": "EWalkableSlopeBehavior::WalkableSlope_Default"
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_0 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_TNK_01_Turret_Heavy'",
+    "ObjectPath": "/TNK_01/Parts/Heavy/VP_TNK_01_Turret_Heavy.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceID": "TurretSkeleton",
+        "SocketName": "turretFlap_Attach"
+      },
+      "bAttachSource": true,
+      "Tags": [
+        "TurretFlap"
+      ]
+    },
+    "StaticMesh": {
+      "AssetPathName": "/TNK_01/Mesh/Heavy/Sentient/SM_TNK_01_Turret_Pitch_Flap.SM_TNK_01_Turret_Pitch_Flap",
+      "SubPathString": ""
+    },
+    "bUseAttachParentBound": false,
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_1 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_TNK_01_Turret_Heavy'",
+    "ObjectPath": "/TNK_01/Parts/Heavy/VP_TNK_01_Turret_Heavy.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceID": "TurretSkeleton",
+        "SocketName": "turretPitch_Attach"
+      },
+      "bAttachSource": true,
+      "Tags": [
+        "TurretPitch"
+      ]
+    },
+    "StaticMesh": {
+      "AssetPathName": "/TNK_01/Mesh/Heavy/Sentient/SM_TNK_01_Turret_Pitch.SM_TNK_01_Turret_Pitch",
+      "SubPathString": ""
+    },
+    "bUseAttachParentBound": false,
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_2 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_TNK_01_Turret_Heavy'",
+    "ObjectPath": "/TNK_01/Parts/Heavy/VP_TNK_01_Turret_Heavy.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceID": "TurretSkeleton",
+        "SocketName": "turretBarrel_01_Attach"
+      },
+      "bAttachSource": true,
+      "Tags": [
+        "TurretBarrel"
+      ]
+    },
+    "StaticMesh": {
+      "AssetPathName": "/TNK_01/Mesh/Heavy/Sentient/SM_TNK_01_Turret.SM_TNK_01_Turret",
+      "SubPathString": ""
+    },
+    "bUseAttachParentBound": false,
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_Kinematic"
+      }
+    },
+    "WalkableSlopeOverride": {
+      "WalkableSlopeBehavior": "EWalkableSlopeBehavior::WalkableSlope_Default"
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_4 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_TNK_01_Turret_Heavy'",
+    "ObjectPath": "/TNK_01/Parts/Heavy/VP_TNK_01_Turret_Heavy.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceID": "TurretSkeleton",
+        "SocketName": "TurretYaw_Attach"
+      },
+      "Tags": [
+        "TurretSpin"
+      ]
+    },
+    "StaticMesh": {
+      "AssetPathName": "/TNK_01/Mesh/Heavy/Sentient/SM_TNK_01_Turret_Yaw_.SM_TNK_01_Turret_Yaw_",
+      "SubPathString": ""
+    },
+    "bUseAttachParentBound": false,
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_Kinematic"
+      }
+    },
+    "WalkableSlopeOverride": {
+      "WalkableSlopeBehavior": "EWalkableSlopeBehavior::WalkableSlope_Increase"
+    }
+  }
+}
+--- export: UObject / WD_MVF_InventoryFragment_0 ---
+{
+  "Type": "WD_MVF_InventoryFragment",
+  "Name": "WD_MVF_InventoryFragment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_InventoryFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_TNK_01_Turret_Heavy'",
+    "ObjectPath": "/TNK_01/Parts/Heavy/VP_TNK_01_Turret_Heavy.0"
+  },
+  "Properties": {
+    "ItemDefinition": {
+      "AssetPathName": "/Game/Items/Vehicles/Weapons/TNK_01/Heavy/ID_VehicleTurretHeavy.ID_VehicleTurretHeavy",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / WD_MVF_InventoryFragment_1 ---
+{
+  "Type": "WD_MVF_InventoryFragment",
+  "Name": "WD_MVF_InventoryFragment_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_InventoryFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_TNK_01_Turret_Heavy'",
+    "ObjectPath": "/TNK_01/Parts/Heavy/VP_TNK_01_Turret_Heavy.0"
+  },
+  "Properties": {
+    "ItemDefinition": {
+      "AssetPathName": "/Game/Items/Vehicles/Weapons/TNK_01/ID_VehicleTurretMachineGun.ID_VehicleTurretMachineGun",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / WD_MVF_WeaponFragment_0 ---
+{
+  "Type": "WD_MVF_WeaponFragment",
+  "Name": "WD_MVF_WeaponFragment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_WeaponFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_TNK_01_Turret_Heavy'",
+    "ObjectPath": "/TNK_01/Parts/Heavy/VP_TNK_01_Turret_Heavy.0"
+  },
+  "Properties": {
+    "WeaponMeshTagName": "TurretSkeleton",
+    "WeaponDataAsset": {
+      "AssetPathName": "/TNK_01/Weapons/Heavy/W_TNK_01_Heavy.W_TNK_01_Heavy",
+      "SubPathString": ""
+    },
+    "RoleRequirements": {
+      "RequireTags": [
+        "State.Player.Vehicle.Role.Gunner"
+      ]
+    },
+    "AllowList": [
+      1
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+--- export: UDataTable / DT_TrackerData_Spatial_Spotting ---
+{
+  "Type": "DataTable",
+  "Name": "DT_TrackerData_Spatial_Spotting",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Spotting/Data/UI/Tracker/Spatial/Data/DT_TrackerData_Spatial_Spotting",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUITrackerDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Trackers.Type.SpottingTarget": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPersistentDataTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhkjekddbhagijalc_$7A94A331706890B2$_$26$": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [
+        "Meta.Alignment.Faction",
+        "Trackers.Type.SpottingTarget"
+      ],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Spotting/Data/UI/Tracker/Spatial/W_Tracker_Spatial_SpottingTarget.W_Tracker_Spatial_SpottingTarget_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/SpottingRuntime.WDUISpottingTargetSpatialTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Spotting/Data/UI/Tracker/Spatial/Data/DA_Tracker_Spatial_Spotting.DA_Tracker_Spatial_Spotting",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.SpottingTarget"
+      }
+    }
+  }
+}

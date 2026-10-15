@@ -1,0 +1,66 @@
+--- export: UDataAsset / DA_VehicleVendor ---
+{
+  "Type": "WDUIVehicleVendorData",
+  "Name": "DA_VehicleVendor",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIVehicleVendorData'",
+  "Package": "/Game/UI/Features/Vendor/Data/DA_VehicleVendor",
+  "Properties": {
+    "VehicleTypeFormat": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+      "Key": "Text.Format.VehicleType",
+      "SourceString": "{Subcategory} Vehicle",
+      "LocalizedString": "{Subcategory} Vehicle"
+    },
+    "StatsViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIStatsViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/Stats/Data/DA_VehicleStats.DA_VehicleStats",
+        "SubPathString": ""
+      }
+    },
+    "ActorRenderViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIPocketWorldRenderViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/PocketWorldRender/Data/DA_PocketWorldRender_Vehicle.DA_PocketWorldRender_Vehicle",
+        "SubPathString": ""
+      }
+    },
+    "WeightDisplayViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIWeightDisplayViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Shared/Widgets/WeightDisplay/Data/DA_WeightDisplay.DA_WeightDisplay",
+        "SubPathString": ""
+      }
+    },
+    "ButtonPromptsBarViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIButtonPromptsBarViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Data/DA_VehicleVendor_PromptBarData.DA_VehicleVendor_PromptBarData",
+        "SubPathString": ""
+      }
+    },
+    "bFlushInputOnEnter": true,
+    "EnterSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.UI.InGame.Vendor.Vehicle.Open"
+    },
+    "ExitSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.UI.InGame.Vendor.Vehicle.Close"
+    },
+    "AssociatedSceneAction": {
+      "TagName": "Action.Player.AccessVehicleVendor"
+    }
+  }
+}

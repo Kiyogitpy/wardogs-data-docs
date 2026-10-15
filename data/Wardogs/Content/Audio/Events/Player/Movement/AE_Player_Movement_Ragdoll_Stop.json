@@ -1,0 +1,36 @@
+--- export: UPrimaryDataAsset / AE_Player_Movement_Ragdoll_Stop ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Player_Movement_Ragdoll_Stop",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Movement/AE_Player_Movement_Ragdoll_Stop",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.Ragdoll.Stop"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_Player_Movement_Ragdoll_Stop:CrosstalkAudioEventBehaviorStopSound_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/AE_Player_Movement_Ragdoll_Stop.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Movement_Ragdoll_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/AE_Player_Movement_Ragdoll_Stop.0"
+  },
+  "Properties": {
+    "FadeOut": 1.0,
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Ragdoll"
+    }
+  }
+}

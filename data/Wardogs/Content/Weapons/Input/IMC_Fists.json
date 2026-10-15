@@ -1,0 +1,407 @@
+--- export: UObject / BHPlayerMappableKeySettings_0 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Fists'",
+    "ObjectPath": "/Game/Weapons/Input/IMC_Fists.5"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.HoldableItem.PrimaryUse"
+    },
+    "Name": "Input.NamedActions.HoldableItem.PrimaryUse"
+  }
+}
+--- export: UObject / BHPlayerMappableKeySettings_1 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Fists'",
+    "ObjectPath": "/Game/Weapons/Input/IMC_Fists.5"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.HoldableItem.SecondaryUse"
+    },
+    "Name": "Input.NamedActions.HoldableItem.SecondaryUse"
+  }
+}
+--- export: UObject / BHPlayerMappableKeySettings_12 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_12",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Fists'",
+    "ObjectPath": "/Game/Weapons/Input/IMC_Fists.5"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.HoldableItem.Inspect"
+    },
+    "Name": "Input.NamedActions.HoldableItem.Inspect"
+  }
+}
+--- export: UObject / BHPlayerMappableKeySettings_8 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_8",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Fists'",
+    "ObjectPath": "/Game/Weapons/Input/IMC_Fists.5"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.HoldableItem.Weapon.MeleeBash"
+    },
+    "Name": "Input.NamedActions.HoldableItem.Weapon.MeleeBash"
+  }
+}
+--- export: UObject / BHPlayerMappableKeySettings_9 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_9",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Fists'",
+    "ObjectPath": "/Game/Weapons/Input/IMC_Fists.5"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.HoldableItem.Weapon.MeleeBash"
+    },
+    "SlotContext": "EBHMappableSlotContext::NoSlot",
+    "Name": "Input.NamedActions.HoldableItem.Weapon.MeleeBash"
+  }
+}
+--- export: UDataAsset / IMC_Fists ---
+{
+  "Type": "InputMappingContext",
+  "Name": "IMC_Fists",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputMappingContext'",
+  "Package": "/Game/Weapons/Input/IMC_Fists",
+  "Properties": {
+    "DefaultKeyMappings": {
+      "Mappings": [
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerHold'IMC_Fists:InputTriggerHold_3'",
+              "ObjectPath": "/Game/Weapons/Input/IMC_Fists.8"
+            },
+            {
+              "ObjectName": "InputTriggerReleased'IMC_Fists:InputTriggerReleased_1'",
+              "ObjectPath": "/Game/Weapons/Input/IMC_Fists.11"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Player_PrimaryUse'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_PrimaryUse.0"
+          },
+          "Key": {
+            "KeyName": "LeftMouseButton"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_Fists:BHPlayerMappableKeySettings_0'",
+            "ObjectPath": "/Game/Weapons/Input/IMC_Fists.0"
+          }
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerHold'IMC_Fists:InputTriggerHold_4'",
+              "ObjectPath": "/Game/Weapons/Input/IMC_Fists.9"
+            },
+            {
+              "ObjectName": "InputTriggerReleased'IMC_Fists:InputTriggerReleased_2'",
+              "ObjectPath": "/Game/Weapons/Input/IMC_Fists.12"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Player_SecondaryUse'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_SecondaryUse.0"
+          },
+          "Key": {
+            "KeyName": "RightMouseButton"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_Fists:BHPlayerMappableKeySettings_1'",
+            "ObjectPath": "/Game/Weapons/Input/IMC_Fists.1"
+          }
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerHold'IMC_Fists:InputTriggerHold_0'",
+              "ObjectPath": "/Game/Weapons/Input/IMC_Fists.6"
+            },
+            {
+              "ObjectName": "InputTriggerReleased'IMC_Fists:InputTriggerReleased_0'",
+              "ObjectPath": "/Game/Weapons/Input/IMC_Fists.10"
+            }
+          ],
+          "Modifiers": [
+            {
+              "ObjectName": "WDDeadZoneInputModifier'IMC_Fists:WDDeadZoneInputModifier_1'",
+              "ObjectPath": "/Game/Weapons/Input/IMC_Fists.15"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Player_SecondaryUse'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_SecondaryUse.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_LeftTriggerAxis"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerHold'IMC_Fists:InputTriggerHold_2'",
+              "ObjectPath": "/Game/Weapons/Input/IMC_Fists.7"
+            },
+            {
+              "ObjectName": "InputTriggerReleased'IMC_Fists:InputTriggerReleased_8'",
+              "ObjectPath": "/Game/Weapons/Input/IMC_Fists.13"
+            }
+          ],
+          "Modifiers": [
+            {
+              "ObjectName": "WDDeadZoneInputModifier'IMC_Fists:WDDeadZoneInputModifier_0'",
+              "ObjectPath": "/Game/Weapons/Input/IMC_Fists.14"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Player_PrimaryUse'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_PrimaryUse.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_RightTriggerAxis"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Player_Inspect'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_Inspect.0"
+          },
+          "Key": {
+            "KeyName": "I"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_Fists:BHPlayerMappableKeySettings_12'",
+            "ObjectPath": "/Game/Weapons/Input/IMC_Fists.2"
+          }
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Weapon_MeleeBash'",
+            "ObjectPath": "/Game/Weapons/Input/IA_Weapon_MeleeBash.0"
+          },
+          "Key": {
+            "KeyName": "V"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_Fists:BHPlayerMappableKeySettings_8'",
+            "ObjectPath": "/Game/Weapons/Input/IMC_Fists.3"
+          }
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Weapon_MeleeBash'",
+            "ObjectPath": "/Game/Weapons/Input/IA_Weapon_MeleeBash.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_RightShoulder"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_Fists:BHPlayerMappableKeySettings_9'",
+            "ObjectPath": "/Game/Weapons/Input/IMC_Fists.4"
+          }
+        }
+      ]
+    }
+  }
+}
+--- export: UObject / InputTriggerHold_0 ---
+{
+  "Type": "InputTriggerHold",
+  "Name": "InputTriggerHold_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerHold'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Fists'",
+    "ObjectPath": "/Game/Weapons/Input/IMC_Fists.5"
+  },
+  "Properties": {
+    "HoldTimeThreshold": 0.01,
+    "ActuationThreshold": 0.01
+  }
+}
+--- export: UObject / InputTriggerHold_2 ---
+{
+  "Type": "InputTriggerHold",
+  "Name": "InputTriggerHold_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerHold'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Fists'",
+    "ObjectPath": "/Game/Weapons/Input/IMC_Fists.5"
+  },
+  "Properties": {
+    "HoldTimeThreshold": 0.01,
+    "ActuationThreshold": 0.01
+  }
+}
+--- export: UObject / InputTriggerHold_3 ---
+{
+  "Type": "InputTriggerHold",
+  "Name": "InputTriggerHold_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerHold'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Fists'",
+    "ObjectPath": "/Game/Weapons/Input/IMC_Fists.5"
+  },
+  "Properties": {
+    "HoldTimeThreshold": 0.01
+  }
+}
+--- export: UObject / InputTriggerHold_4 ---
+{
+  "Type": "InputTriggerHold",
+  "Name": "InputTriggerHold_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerHold'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Fists'",
+    "ObjectPath": "/Game/Weapons/Input/IMC_Fists.5"
+  },
+  "Properties": {
+    "HoldTimeThreshold": 0.01,
+    "ActuationThreshold": 0.01
+  }
+}
+--- export: UObject / InputTriggerReleased_0 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Fists'",
+    "ObjectPath": "/Game/Weapons/Input/IMC_Fists.5"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.01
+  }
+}
+--- export: UObject / InputTriggerReleased_1 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Fists'",
+    "ObjectPath": "/Game/Weapons/Input/IMC_Fists.5"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.01
+  }
+}
+--- export: UObject / InputTriggerReleased_2 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Fists'",
+    "ObjectPath": "/Game/Weapons/Input/IMC_Fists.5"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.01
+  }
+}
+--- export: UObject / InputTriggerReleased_8 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_8",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Fists'",
+    "ObjectPath": "/Game/Weapons/Input/IMC_Fists.5"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.01
+  }
+}
+--- export: UObject / WDDeadZoneInputModifier_0 ---
+{
+  "Type": "WDDeadZoneInputModifier",
+  "Name": "WDDeadZoneInputModifier_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDDeadZoneInputModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Fists'",
+    "ObjectPath": "/Game/Weapons/Input/IMC_Fists.5"
+  },
+  "Properties": {
+    "Type": "EDeadZoneType::Axial",
+    "MinThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.LeftTrigger.Min"
+    },
+    "MaxThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.LeftTrigger.Max"
+    }
+  }
+}
+--- export: UObject / WDDeadZoneInputModifier_1 ---
+{
+  "Type": "WDDeadZoneInputModifier",
+  "Name": "WDDeadZoneInputModifier_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDDeadZoneInputModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Fists'",
+    "ObjectPath": "/Game/Weapons/Input/IMC_Fists.5"
+  },
+  "Properties": {
+    "Type": "EDeadZoneType::Axial",
+    "MinThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.RightTrigger.Min"
+    },
+    "MaxThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.RightTrigger.Max"
+    }
+  }
+}

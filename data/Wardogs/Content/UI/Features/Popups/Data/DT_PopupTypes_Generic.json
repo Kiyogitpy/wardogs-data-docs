@@ -1,0 +1,82 @@
+--- export: UDataTable / DT_PopupTypes_Generic ---
+{
+  "Type": "DataTable",
+  "Name": "DT_PopupTypes_Generic",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/UI/Features/Popups/Data/DT_PopupTypes_Generic",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUIPopupTypeDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "UI.Popup.Type.Info": {
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Popups/Widgets/W_Popup_Type_Info.W_Popup_Type_Info_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIPopupViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+      },
+      "Tag": {
+        "TagName": "UI.Popup.Type.Info"
+      }
+    },
+    "UI.Popup.Type.Warning": {
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Popups/Widgets/W_Popup_Type_Warning.W_Popup_Type_Warning_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIPopupViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+      },
+      "Tag": {
+        "TagName": "UI.Popup.Type.Warning"
+      }
+    },
+    "UI.Popup.Type.Error": {
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Popups/Widgets/W_Popup_Type_Error.W_Popup_Type_Error_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIPopupViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+      },
+      "Tag": {
+        "TagName": "UI.Popup.Type.Error"
+      }
+    }
+  }
+}

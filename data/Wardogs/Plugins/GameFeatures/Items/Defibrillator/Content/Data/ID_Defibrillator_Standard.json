@@ -1,0 +1,567 @@
+--- export: UObject / BH_Defibrillator_WattsExtensionData_C_0 ---
+{
+  "Type": "BH_Defibrillator_WattsExtensionData_C",
+  "Name": "BH_Defibrillator_WattsExtensionData_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Defibrillator/Data/WattsDefib/BH_Defibrillator_WattsExtensionData.BH_Defibrillator_WattsExtensionData_C'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Defibrillator_Standard:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.8"
+  },
+  "Template": {
+    "ObjectName": "BH_Defibrillator_WattsExtensionData_C'Default__BH_Defibrillator_WattsExtensionData_C'",
+    "ObjectPath": "/Defibrillator/Data/WattsDefib/BH_Defibrillator_WattsExtensionData.0"
+  },
+  "Properties": {
+    "Damage": 100.0
+  }
+}
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Defibrillator_Standard'",
+    "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.6"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 2,
+      "Y": 2
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Defibrillator_Standard'",
+    "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.6"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Defibrillator/Meshes/SM_Defibrilator_00a.SM_Defibrilator_00a",
+      "SubPathString": ""
+    },
+    "RelativeRotation": {
+      "Pitch": 0.0,
+      "Yaw": 90.0,
+      "Roll": 0.0
+    },
+    "bOverrideDroppedRelativeLocation": true,
+    "OverridedRelativeLocation": {
+      "X": -14.0,
+      "Y": 0.0,
+      "Z": 31.0
+    },
+    "bOverrideDroppedBoxExtent": true,
+    "OverridedBoxExtent": {
+      "X": 14.0,
+      "Y": 9.4,
+      "Z": 39.75655
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Defibrillator_Standard'",
+    "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.6"
+  },
+  "Properties": {
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Item.Attachment.Magazine"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::AllowList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [
+            "Item.Attachment.Magazine.Battery"
+          ],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": -2,
+        "MaxSlotAmountStackSize": 1,
+        "bAllowsStackedPacking": false,
+        "bIsHiddenContainer": false,
+        "_aaabelnajgoacnpmnokoe_$BD096E02DFCDEAE4$_$20$": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [
+          "Id.Item.Battery"
+        ],
+        "DefaultContainerItems": [
+          {
+            "Item": {
+              "TagName": "Id.Item.Battery"
+            },
+            "Amount": null
+          }
+        ]
+      }
+    ]
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Defibrillator_Standard'",
+    "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.6"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Defibrillator_Standard'",
+    "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.6"
+  },
+  "Properties": {
+    "Weight": 2.6
+  }
+}
+--- export: UPrimaryDataAsset / ID_Defibrillator_Standard ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_Defibrillator_Standard",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Defibrillator/Data/ID_Defibrillator_Standard",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.Defibrillator.Standard"
+    },
+    "ItemContext": [
+      "Item.Context.Medical",
+      "Item.Context.Animation.Archetype.EquipRightHand",
+      "Item.Context.Animation.Type.Defib",
+      "Inventory.Slot.Specialist",
+      "Inventory.Slot.Secondary",
+      "Item.Context.Equippable",
+      "Item.Context.UtilityItem",
+      "Item.Context.QuickSlot"
+    ],
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Items_Medical.STRINGS_Items_Medical",
+      "Key": "Items.Medical.Defibrillator",
+      "SourceString": "Defibrillator",
+      "LocalizedString": "Defibrillator"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_Defibrillator_Standard:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.3"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_ItemActor'ID_Defibrillator_Standard:WDInventoryFragment_ItemActor_0'",
+        "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.8"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_Defibrillator_Standard:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.5"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_Defibrillator_Standard:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.2"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_Defibrillator_Standard:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.7"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_Defibrillator_Standard:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.4"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_Defibrillator_Standard:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.1"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Defibrillator_Standard'",
+    "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.6"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Defibrillator_Audio'",
+      "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_ItemActor_0 ---
+{
+  "Type": "WDInventoryFragment_ItemActor",
+  "Name": "WDInventoryFragment_ItemActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_ItemActor'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Defibrillator_Standard'",
+    "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.6"
+  },
+  "Properties": {
+    "ExtensionDataFragments": [
+      {
+        "ObjectName": "WDItemExtensionData_Holdable'ID_Defibrillator_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Holdable_0'",
+        "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.14"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Inventory'ID_Defibrillator_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InventoryItem_0'",
+        "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.16"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Battery'ID_Defibrillator_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Battery_0'",
+        "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.12"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Appliable'ID_Defibrillator_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Appliable_0'",
+        "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.10"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Input'ID_Defibrillator_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+        "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.15"
+      },
+      {
+        "ObjectName": "BH_Defibrillator_WattsExtensionData_C'ID_Defibrillator_Standard:WDInventoryFragment_ItemActor_0.BH_Defibrillator_WattsExtensionData_C_0'",
+        "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.0"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_GameplayEffects'ID_Defibrillator_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_AttributeExtension_1'",
+        "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.13"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_AudioExtension'ID_Defibrillator_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_AudioExtension_0'",
+        "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.11"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Animation'ID_Defibrillator_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Animation_0'",
+        "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.9"
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Animation_0 ---
+{
+  "Type": "WDItemExtensionData_Animation",
+  "Name": "WDItemExtensionData_Animation_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Animation'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Defibrillator_Standard:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.8"
+  },
+  "Properties": {
+    "AnimationSet": {
+      "ObjectName": "BHAnimationSet'AnimSet_DefibrillatorStandard'",
+      "ObjectPath": "/Defibrillator/Data/AnimSet_DefibrillatorStandard.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_Appliable_0 ---
+{
+  "Type": "WDItemExtensionData_Appliable",
+  "Name": "WDItemExtensionData_Appliable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Appliable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Defibrillator_Standard:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.8"
+  },
+  "Properties": {
+    "Attribute": {
+      "TagName": "Attribute.Gameplay.Appliable.Amount"
+    },
+    "AttributeValue": 35.0,
+    "ContextTags": [
+      "Appliable.Context.ReviveFriendly",
+      "Appliable.Context.AllowStartWithoutTarget"
+    ],
+    "bContainerAppliable": true,
+    "ContainerData": {
+      "UpdateTime": 0.2,
+      "UpdateAmount": 1.0
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_AudioExtension_0 ---
+{
+  "Type": "WDItemExtensionData_AudioExtension",
+  "Name": "WDItemExtensionData_AudioExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_AudioExtension'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Defibrillator_Standard:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.8"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Defibrillator_Audio'",
+      "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_Battery_0 ---
+{
+  "Type": "WDItemExtensionData_Battery",
+  "Name": "WDItemExtensionData_Battery_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Battery'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Defibrillator_Standard:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.8"
+  },
+  "Properties": {
+    "_aaabldemmceabckacmoen_$34CC24012A02CE4D$_$27$": 0.0,
+    "ItemId": {
+      "TagName": "Id.Item.Defibrillator.Standard"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_AttributeExtension_1 ---
+{
+  "Type": "WDItemExtensionData_GameplayEffects",
+  "Name": "WDItemExtensionData_AttributeExtension_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_GameplayEffects'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Defibrillator_Standard:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.8"
+  }
+}
+--- export: UObject / WDItemExtensionData_Holdable_0 ---
+{
+  "Type": "WDItemExtensionData_Holdable",
+  "Name": "WDItemExtensionData_Holdable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Holdable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Defibrillator_Standard:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.8"
+  },
+  "Properties": {
+    "HoldableMesh": {
+      "ObjectName": "SkeletalMesh'SK_Defibrilator'",
+      "ObjectPath": "/Defibrillator/Meshes/SK_Defibrilator.1"
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_Defib'",
+        "ObjectPath": "/Defibrillator/Materials/MI_Defib.0"
+      },
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_Defib'",
+        "ObjectPath": "/Defibrillator/Materials/MI_Defib.0"
+      },
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_Battery'",
+        "ObjectPath": "/Defibrillator/Materials/MI_Battery.0"
+      }
+    ],
+    "MeshAnimClass": {
+      "ObjectName": "AnimBlueprintGeneratedClass'ABP_Defib_C'",
+      "ObjectPath": "/Defibrillator/Animation/Item/Blueprint/ABP_Defib.1"
+    },
+    "EquipAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_A_FP_Defib_Equip'",
+        "ObjectPath": "/Defibrillator/Animation/Character/FP/Montage/AM_A_FP_Defib_Equip.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Defib_Equip'",
+        "ObjectPath": "/Defibrillator/Animation/Character/TP/Montage/AM_TP_Defib_Equip.0"
+      },
+      "FirstPersonItemAnimation": {
+        "ObjectName": "AnimMontage'AM_Weap_Defib_Equip'",
+        "ObjectPath": "/Defibrillator/Animation/Item/FP/Montages/AM_Weap_Defib_Equip.0"
+      }
+    },
+    "HolsterAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_A_FP_Defib_Holster'",
+        "ObjectPath": "/Defibrillator/Animation/Character/FP/Montage/AM_A_FP_Defib_Holster.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Defib_Holster'",
+        "ObjectPath": "/Defibrillator/Animation/Character/TP/Montage/AM_TP_Defib_Holster.0"
+      },
+      "FirstPersonItemAnimation": {
+        "ObjectName": "AnimMontage'AM_Weap_Defib_Holster'",
+        "ObjectPath": "/Defibrillator/Animation/Item/FP/Montages/AM_Weap_Defib_Holster.0"
+      }
+    },
+    "EquippedAnimSet": {
+      "DefaultFirstPersonLayer": {
+        "AssetPathName": "/Defibrillator/Animation/Character/FP/Blueprint/ABP_FP_Defibrillator_Layer_RW.ABP_FP_Defibrillator_Layer_RW_C",
+        "SubPathString": ""
+      },
+      "DefaultThirdPersonLayer": {
+        "AssetPathName": "/Defibrillator/Animation/Character/TP/Blueprint/ABP_TP_Defibrillator_Layer_RW.ABP_TP_Defibrillator_Layer_RW_C",
+        "SubPathString": ""
+      }
+    },
+    "FallbackMeshSignificanceThreshold": {
+      "Significance": 0.02
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_InputActionExtension_0 ---
+{
+  "Type": "WDItemExtensionData_Input",
+  "Name": "WDItemExtensionData_InputActionExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Input'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Defibrillator_Standard:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.8"
+  },
+  "Properties": {
+    "InputMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_Defibrillator'",
+      "ObjectPath": "/Defibrillator/Data/IMC_Defibrillator.1"
+    },
+    "InputBehaviors": [
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.Appliable.PrimaryUse"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_Defibrillator_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_1'",
+          "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.18"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.Inspect"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_Defibrillator_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_2'",
+          "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.19"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.Weapon.Reload"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_Defibrillator_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_0'",
+          "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.17"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_InventoryItem_0 ---
+{
+  "Type": "WDItemExtensionData_Inventory",
+  "Name": "WDItemExtensionData_InventoryItem_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Inventory'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Defibrillator_Standard:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.8"
+  },
+  "Properties": {
+    "PrimaryUseTag": {
+      "TagName": "Action.BuildTool.BatteryUse"
+    },
+    "ActionResourceRequirements": [
+      {
+        "Key": {
+          "TagName": "Action.BuildTool.BatteryUse"
+        },
+        "Value": {
+          "RequiredResource": {
+            "TagName": "Id.Item.BatteryCharge"
+          },
+          "ResourcesUsed": 0,
+          "bLimitSearchToItem": true,
+          "OptionalRequiredSubSlotCategory": {
+            "TagName": "Item.Attachment.Magazine"
+          },
+          "ResourceType": {
+            "TagName": "Item.Resource.Magazine"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_0 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_Defibrillator_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.15"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Defibrillator.Reload"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_1 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_Defibrillator_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.15"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Defibrillator.PrimaryUse"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_2 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_Defibrillator_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Defibrillator/Data/ID_Defibrillator_Standard.15"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Item.Inspect"
+    }
+  }
+}

@@ -1,0 +1,119 @@
+--- export: UObject / AEB_PlayPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayPerspectiveSound_C",
+  "Name": "AEB_PlayPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.AEB_PlayPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Damaged_Melee'",
+    "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Melee.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayPerspectiveSound_C'Default__AEB_PlayPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.0"
+  },
+  "Properties": {
+    "1pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Player_Damage_FromMelee_1p'",
+      "ObjectPath": "/Game/Audio/Player/Damage/FromMelee/MSS/MSS_Player_Damage_FromMelee_1p.0"
+    },
+    "3pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Player_Damage_FromMelee_3p'",
+      "ObjectPath": "/Game/Audio/Player/Damage/FromMelee/MSS/MSS_Player_Damage_FromMelee_3p.0"
+    },
+    "RestartBehaviour": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Damage.Melee"
+    }
+  }
+}
+--- export: UObject / AEB_RequestDamagedVox_C_0 ---
+{
+  "Type": "AEB_RequestDamagedVox_C",
+  "Name": "AEB_RequestDamagedVox_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_RequestDamagedVox.AEB_RequestDamagedVox_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Damaged_Melee'",
+    "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Melee.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_RequestDamagedVox_C'Default__AEB_RequestDamagedVox_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_RequestDamagedVox.0"
+  },
+  "Properties": {
+    "Under Threshold": {
+      "TagName": "Audio.Vox.Exertion.TakingDamage.Light"
+    },
+    "Over Threshold": {
+      "TagName": "Audio.Vox.Exertion.TakingDamage.Heavy"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Vocalisations"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Player_Damaged_Melee ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Player_Damaged_Melee",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Melee",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.Damaged.Melee"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_PlayPerspectiveSound_C'AE_Player_Damaged_Melee:AEB_PlayPerspectiveSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Melee.0"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Player_Damaged_Melee:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Melee.3"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Player_Damaged_Melee:CrosstalkAudioEventBehaviorAttachSoundToActor_1'",
+        "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Melee.4"
+      },
+      {
+        "ObjectName": "AEB_RequestDamagedVox_C'AE_Player_Damaged_Melee:AEB_RequestDamagedVox_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Melee.1"
+      }
+    ],
+    "_aaabhonahgpdbjealfaaa_$ED076F31940B5000$_$23$": 50.5
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Damaged_Melee'",
+    "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Melee.2"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Damage.Melee"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_1 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Damaged_Melee'",
+    "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Melee.2"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Vocalisations"
+    }
+  }
+}

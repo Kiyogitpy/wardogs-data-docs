@@ -1,0 +1,143 @@
+--- export: UObject / WDActorBuildSpawner_0 ---
+{
+  "Type": "WDActorBuildSpawner",
+  "Name": "WDActorBuildSpawner_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDActorBuildSpawner'",
+  "Outer": {
+    "ObjectName": "WDBuildableDataAsset'DA_Buildable_TankTrap'",
+    "ObjectPath": "/Buildables/Data/Buildables/TankTrap/DA_Buildable_TankTrap.1"
+  },
+  "Properties": {
+    "BaseBuildableClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Buildable_C'",
+      "ObjectPath": "/Buildables/Data/Buildables/B_Buildable.2"
+    }
+  }
+}
+--- export: UDataAsset / DA_Buildable_TankTrap ---
+{
+  "Type": "WDBuildableDataAsset",
+  "Name": "DA_Buildable_TankTrap",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDBuildableDataAsset'",
+  "Package": "/Buildables/Data/Buildables/TankTrap/DA_Buildable_TankTrap",
+  "Properties": {
+    "SpawnerOverride": {
+      "ObjectName": "WDActorBuildSpawner'DA_Buildable_TankTrap:WDActorBuildSpawner_0'",
+      "ObjectPath": "/Buildables/Data/Buildables/TankTrap/DA_Buildable_TankTrap.0"
+    },
+    "EntityTag": {
+      "TagName": "Id.Buildable.TankTrap"
+    },
+    "Cost": 22,
+    "_aaabfagpiegcpjedampen_$6F8462F9430CF4D$_$21$": 1.47,
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+      "Key": "Buildable.TankTrap",
+      "SourceString": "Hedgehog",
+      "LocalizedString": "Hedgehog"
+    },
+    "MaxHealth": 4500.0,
+    "bUseCurveToUpdateHealthVisuals": true,
+    "HealthVisualsPercentageCurve": {
+      "ExternalCurve": {
+        "ObjectName": "CurveFloat'C_DamageTintCurve'",
+        "ObjectPath": "/Buildables/Data/Buildables/C_DamageTintCurve.0"
+      }
+    },
+    "MaxStack": 100,
+    "SnapTransforms": [
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": -0.0,
+          "Z": 0.0,
+          "W": 1.0,
+          "IsNormalized": true,
+          "Size": 1.0,
+          "SizeSquared": 1.0
+        },
+        "Translation": {
+          "X": 122.0,
+          "Y": 0.0,
+          "Z": 0.0
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      }
+    ],
+    "PlacementFlags": 9,
+    "PlacementBlockedPenetrationBuffer": 25.0,
+    "SnappedPlacementBlockedPenetrationBuffer": 25.0,
+    "bRequiresAllCornersOnSurface": false,
+    "bRotateWithSurface": true,
+    "bCanBuildFoundation": false,
+    "BuildingStagesDefinition": {
+      "ObjectName": "BuildingStagesDefinition'DA_Buildable_TankTrap_Stages'",
+      "ObjectPath": "/Buildables/Data/Buildables/TankTrap/DA_Buildable_TankTrap_Stages.0"
+    },
+    "BuildingStageChangedVFX": {
+      "AssetPathName": "/Buildables/Data/Buildables/NS_BuildStage.NS_BuildStage",
+      "SubPathString": ""
+    },
+    "NiagaraDataChannelAsset": {
+      "AssetPathName": "/Game/VFX/Building/DataChannel/NDC_Buildable.NDC_Buildable",
+      "SubPathString": ""
+    },
+    "FinalStageBoundingBox": {
+      "Min": {
+        "X": -95.672,
+        "Y": -108.39811,
+        "Z": -1.5297394
+      },
+      "Max": {
+        "X": 123.06308,
+        "Y": 103.95023,
+        "Z": 185.29071
+      },
+      "IsValid": 1
+    },
+    "ConstructedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Constructed"
+    },
+    "DestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Destroyed"
+    },
+    "PlacedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Placed"
+    },
+    "_aaabigdbeocppfeehmfch_$6314E2FF5447C527$_$24$": {
+      "TagName": "GameplayCue.Buildable.Dismantle"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Buildable.TankTrap"
+      }
+    },
+    "PlacementConditions": [
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_SafeZonePlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_SafeZonePlacementCondition.1"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_WithinLadderBoundsPlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_WithinLadderBoundsPlacementCondition.1"
+      },
+      {
+        "ObjectName": "Class'WDNotInsideEnemyFobBoundsPlacementCondition'",
+        "ObjectPath": "/Script/BuildablesRuntime"
+      }
+    ],
+    "AudioData": {
+      "ObjectName": "WDAudioData'DA_Buildable_TankTrap_Audio'",
+      "ObjectPath": "/Buildables/Data/Buildables/TankTrap/Audio/DA_Buildable_TankTrap_Audio.0"
+    },
+    "RadialWheelSlotTag": {
+      "TagName": "UI.RadialWheel.BuildTool.SlotType.TankTrap"
+    }
+  }
+}

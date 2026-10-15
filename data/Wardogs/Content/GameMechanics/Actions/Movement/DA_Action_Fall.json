@@ -1,0 +1,145 @@
+--- export: UPrimaryDataAsset / DA_Action_Fall ---
+{
+  "Type": "BHActionDefinition",
+  "Name": "DA_Action_Fall",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHActionDefinition'",
+  "Package": "/Game/GameMechanics/Actions/Movement/DA_Action_Fall",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.Player.Fall"
+    },
+    "ActionClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Action_Fall_C'",
+      "ObjectPath": "/Game/GameMechanics/Actions/Movement/B_Action_Fall.1"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::Block",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Block",
+          "ActionResponses": [
+            "State.Player.Movement.Custom.Ladder",
+            "State.Player.Movement.Custom.Dragging",
+            "Action.Weapon.Bipod.Mount"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Interrupt",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Interrupt",
+          "ActionResponses": [
+            "Action.Player.Crouch",
+            "Action.Player.Prone",
+            "Action.Player.Focus",
+            "Action.Weapon.Bipod.Mount",
+            "Action.VehicleRepairTool.Reload"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Buffer",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Buffer",
+          "ActionResponses": [],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": [
+            {
+              "ActionTag": {
+                "TagName": "Action.Player.Crouch"
+              },
+              "BufferType": "EBHActionBufferType::PartialBuffer",
+              "BufferTime": 2.0
+            },
+            {
+              "ActionTag": {
+                "TagName": "Action.Player.Prone"
+              },
+              "BufferType": "EBHActionBufferType::PartialBuffer",
+              "BufferTime": 2.0
+            },
+            {
+              "ActionTag": {
+                "TagName": "Action.Player.Sprint"
+              },
+              "BufferType": "EBHActionBufferType::PartialBuffer",
+              "BufferTime": 3.0
+            },
+            {
+              "ActionTag": {
+                "TagName": "Action.Player.TacSprint"
+              },
+              "BufferType": "EBHActionBufferType::PartialBuffer",
+              "BufferTime": 3.0
+            },
+            {
+              "ActionTag": {
+                "TagName": "Action.VehicleRepairTool.Reload"
+              },
+              "BufferType": "EBHActionBufferType::PartialBuffer",
+              "BufferTime": 2.0
+            },
+            {
+              "ActionTag": {
+                "TagName": "Action.Player.Lean.Left"
+              },
+              "BufferType": "EBHActionBufferType::PartialBuffer",
+              "BufferTime": 2.0
+            },
+            {
+              "ActionTag": {
+                "TagName": "Action.Player.Lean.Right"
+              },
+              "BufferType": "EBHActionBufferType::PartialBuffer",
+              "BufferTime": 2.0
+            }
+          ]
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::BlockingStates",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::BlockingStates",
+          "ActionResponses": [],
+          "BlockingStates": [
+            "State.Player.Vitality.Critical",
+            "State.Player.Vitality.Dead"
+          ],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::InterruptAndBuffer",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::InterruptAndBuffer",
+          "ActionResponses": [
+            "Action.Player.Sprint",
+            "Action.Player.TacSprint"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      }
+    ]
+  }
+}

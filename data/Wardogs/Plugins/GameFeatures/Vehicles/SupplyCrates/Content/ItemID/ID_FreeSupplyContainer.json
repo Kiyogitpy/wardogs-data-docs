@@ -1,0 +1,105 @@
+--- export: UPrimaryDataAsset / ID_FreeSupplyContainer ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_FreeSupplyContainer",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/SupplyCrates/ItemID/ID_FreeSupplyContainer",
+  "Properties": {
+    "ItemId": {
+      "TagName": "ID.Item.VehicleSupplyCrate.Container.Free"
+    },
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "C7D86E9140ED92CE6B5E199A5B22D02B",
+      "SourceString": "Free Supply Crate Container",
+      "LocalizedString": "Free Supply Crate Container"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_ItemActor'ID_FreeSupplyContainer:WDInventoryFragment_ItemActor_0'",
+        "ObjectPath": "/SupplyCrates/ItemID/ID_FreeSupplyContainer.1"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_ItemActor_0 ---
+{
+  "Type": "WDInventoryFragment_ItemActor",
+  "Name": "WDInventoryFragment_ItemActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_ItemActor'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_FreeSupplyContainer'",
+    "ObjectPath": "/SupplyCrates/ItemID/ID_FreeSupplyContainer.0"
+  },
+  "Properties": {
+    "ExtensionDataFragments": [
+      {
+        "ObjectName": "WDItemExtensionData_VehicleSupplyContainer'ID_FreeSupplyContainer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_VehicleSupplyContainer_0'",
+        "ObjectPath": "/SupplyCrates/ItemID/ID_FreeSupplyContainer.2"
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_VehicleSupplyContainer_0 ---
+{
+  "Type": "WDItemExtensionData_VehicleSupplyContainer",
+  "Name": "WDItemExtensionData_VehicleSupplyContainer_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_VehicleSupplyContainer'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_FreeSupplyContainer:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/SupplyCrates/ItemID/ID_FreeSupplyContainer.1"
+  },
+  "Properties": {
+    "InventoryItem": {
+      "ObjectName": "BHInventoryItemDefinition'ID_LargeBackpack'",
+      "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_LargeBackpack.5"
+    },
+    "BaseClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_SupplyCrate_FreeContainer_C'",
+      "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_FreeContainer.4"
+    },
+    "SupplyCrateSkeletalMesh": {
+      "AssetPathName": "/SupplyCrates/Free_Supply_Crate/SK/SK_SupplyCrate_Free_Lonestar.SK_SupplyCrate_Free_Lonestar",
+      "SubPathString": ""
+    },
+    "bUseFactionSkeletalMeshes": true,
+    "FactionSkeletalMeshes": [
+      {
+        "Key": {
+          "TagName": "Meta.Alignment.Faction.Alpha"
+        },
+        "Value": {
+          "ObjectName": "SkeletalMesh'SK_SupplyCrate_Free_Lonestar'",
+          "ObjectPath": "/SupplyCrates/Free_Supply_Crate/SK/SK_SupplyCrate_Free_Lonestar.1"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Meta.Alignment.Faction.Bravo"
+        },
+        "Value": {
+          "ObjectName": "SkeletalMesh'SK_SupplyCrate_Free_Valkyra'",
+          "ObjectPath": "/SupplyCrates/Free_Supply_Crate/SK/SK_SupplyCrate_Free_Valkyra.1"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Meta.Alignment.Faction.Charlie"
+        },
+        "Value": {
+          "ObjectName": "SkeletalMesh'SK_SupplyCrate_Free_Manticore'",
+          "ObjectPath": "/SupplyCrates/Free_Supply_Crate/SK/SK_SupplyCrate_Free_Manticore.1"
+        }
+      }
+    ],
+    "NumberOfSlots": 6,
+    "MaxHealth": 300.0,
+    "ExtensionComponentClass": {
+      "ObjectName": "Class'WDItemExtension_VehicleSupplyContainer'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  }
+}

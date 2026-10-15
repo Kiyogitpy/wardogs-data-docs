@@ -1,0 +1,92 @@
+--- export: UPrimaryDataAsset / AE_Ladder_Climbing_Slow ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Ladder_Climbing_Slow",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Movement/Ladders/AE_Ladder_Climbing_Slow",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.Ladder.Climbing.Slow"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware'AE_Ladder_Climbing_Slow:WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Ladders/AE_Ladder_Climbing_Slow.3"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Ladder_Climbing_Slow:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Ladders/AE_Ladder_Climbing_Slow.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Ladder_Climbing_Slow:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Ladders/AE_Ladder_Climbing_Slow.2"
+      }
+    ],
+    "_aaabhonahgpdbjealfaaa_$ED076F31940B5000$_$23$": 15.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Ladder_Climbing_Slow'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Ladders/AE_Ladder_Climbing_Slow.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Ladder"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Ladder_Climbing_Slow'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Ladders/AE_Ladder_Climbing_Slow.0"
+  },
+  "Properties": {
+    "ParameterName": "Trigger",
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Ladder"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0 ---
+{
+  "Type": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware",
+  "Name": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Ladder_Climbing_Slow'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Ladders/AE_Ladder_Climbing_Slow.0"
+  },
+  "Properties": {
+    "FirstPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Climb.Ladder.Climbing.1p"
+    },
+    "AlliedThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Climb.Ladder.Climbing.Ally"
+    },
+    "HostileThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Climb.Ladder.Climbing.Enemy"
+    },
+    "RestartBehavior": "ESoundRestartBehavior::PlayBothIfDifferentSound",
+    "SoundAssetData": {
+      "ObjectName": "WDAudioData'DA_Player_Ladder_Climbing_Stealth'",
+      "ObjectPath": "/Game/Audio/Player/Movement/Ladder/DA/DA_Player_Ladder_Climbing_Stealth.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Ladder"
+    },
+    "bStatic": true
+  }
+}

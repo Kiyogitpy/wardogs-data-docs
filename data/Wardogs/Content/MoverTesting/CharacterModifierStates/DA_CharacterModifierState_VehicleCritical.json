@@ -1,0 +1,175 @@
+--- export: UObject / WDCameraModifier_Critical_0 ---
+{
+  "Type": "WDCameraModifier_Critical",
+  "Name": "WDCameraModifier_Critical_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCameraModifier_Critical'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_VehicleCritical'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_VehicleCritical.3"
+  },
+  "Properties": {
+    "YawLockAngle": 30.0,
+    "PitchLockAngle": 30.0
+  }
+}
+--- export: UObject / WDCameraModifier_PanToKillerVehicle_0 ---
+{
+  "Type": "WDCameraModifier_PanToKillerVehicle",
+  "Name": "WDCameraModifier_PanToKillerVehicle_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCameraModifier_PanToKillerVehicle'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_VehicleCritical'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_VehicleCritical.3"
+  },
+  "Properties": {
+    "StateQuery": {
+      "TagDictionary": [
+        {
+          "TagName": "Id.Item.GhillieArmor"
+        },
+        {
+          "TagName": "Id.Item.GhillieHelmet"
+        },
+        {
+          "TagName": "Id.Item.GhillieArmor.Dead"
+        },
+        {
+          "TagName": "Id.Item.GhillieHelmet.Dead"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.Driver"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.Gunner"
+        }
+      ],
+      "QueryTokenStream": [
+        0,
+        1,
+        5,
+        2,
+        4,
+        2,
+        2,
+        2,
+        0,
+        1,
+        2,
+        2,
+        2,
+        3,
+        3,
+        2,
+        4,
+        5
+      ],
+      "UserDescription": "Checks if someone is wearing a ghillie suit or is also in a vehicle before playing killcam",
+      "AutoDescription": " ALL(  ANY(  ALL( Id.Item.GhillieArmor, Id.Item.GhillieHelmet ),  ALL( Id.Item.GhillieArmor.Dead, Id.Item.GhillieHelmet.Dead ) ),  NONE( State.Player.Vehicle.Role.Driver, State.Player.Vehicle.Role.Gunner ) )"
+    },
+    "CauseQuery": {
+      "TagDictionary": [
+        {
+          "TagName": "Id.Item.Claymore"
+        },
+        {
+          "TagName": "ID.Item.ATMine"
+        },
+        {
+          "TagName": "Id.Vehicle.WeaponExtension.TNK_01.Artillery"
+        }
+      ],
+      "QueryTokenStream": [
+        0,
+        1,
+        1,
+        3,
+        0,
+        1,
+        2
+      ],
+      "UserDescription": "Checks if the kill causer was a claymore/landmine or artillery",
+      "AutoDescription": " ANY( Id.Item.Claymore, ID.Item.ATMine, Id.Vehicle.WeaponExtension.TNK_01.Artillery )"
+    }
+  }
+}
+--- export: UObject / WDCharacterModifierCondition_StateTags_0 ---
+{
+  "Type": "WDCharacterModifierCondition_StateTags",
+  "Name": "WDCharacterModifierCondition_StateTags_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierCondition_StateTags'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_VehicleCritical'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_VehicleCritical.3"
+  },
+  "Properties": {
+    "StateQuery": {
+      "TagDictionary": [
+        {
+          "TagName": "State.Player.Vitality.Critical"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.ActivePassenger"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.Driver"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.Gunner"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.PassivePassenger"
+        }
+      ],
+      "QueryTokenStream": [
+        0,
+        1,
+        5,
+        2,
+        1,
+        1,
+        0,
+        1,
+        4,
+        1,
+        2,
+        3,
+        4
+      ],
+      "UserDescription": "We are in a critical/dead state and in a vehicle",
+      "AutoDescription": " ALL(  ANY( State.Player.Vitality.Critical ),  ANY( State.Player.Vehicle.Role.ActivePassenger, State.Player.Vehicle.Role.Driver, State.Player.Vehicle.Role.Gunner, State.Player.Vehicle.Role.PassivePassenger ) )"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / DA_CharacterModifierState_VehicleCritical ---
+{
+  "Type": "WDCharacterModifierStateDefinition",
+  "Name": "DA_CharacterModifierState_VehicleCritical",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierStateDefinition'",
+  "Package": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_VehicleCritical",
+  "Properties": {
+    "StateTag": {
+      "TagName": "State.CharacterModifier.Vehicle.Critical"
+    },
+    "CameraModifiers": [
+      {
+        "ObjectName": "WDCameraModifier_PanToKillerVehicle'DA_CharacterModifierState_VehicleCritical:WDCameraModifier_PanToKillerVehicle_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_VehicleCritical.1"
+      },
+      {
+        "ObjectName": "WDCameraModifier_Critical'DA_CharacterModifierState_VehicleCritical:WDCameraModifier_Critical_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_VehicleCritical.0"
+      }
+    ],
+    "Priority": 0,
+    "Conditions": [
+      {
+        "ObjectName": "WDCharacterModifierCondition_StateTags'DA_CharacterModifierState_VehicleCritical:WDCharacterModifierCondition_StateTags_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_VehicleCritical.2"
+      }
+    ]
+  }
+}

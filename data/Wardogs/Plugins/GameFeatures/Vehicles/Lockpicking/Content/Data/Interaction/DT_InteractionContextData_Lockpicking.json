@@ -1,0 +1,48 @@
+--- export: UDataTable / DT_InteractionContextData_Lockpicking ---
+{
+  "Type": "DataTable",
+  "Name": "DT_InteractionContextData_Lockpicking",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Lockpicking/Data/Interaction/DT_InteractionContextData_Lockpicking",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUIInteractionContextDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Interaction.Context.Lockpicking": {
+      "OutcomeText": {
+        "Namespace": "",
+        "Key": "A24BEDCF40B828FB56B17BA82E2D7188",
+        "SourceString": "Vehicle",
+        "LocalizedString": "Vehicle"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "Namespace": "",
+            "Key": "FB9442C447C23E7910AEE2A4BF00D878",
+            "SourceString": "LOCKPICK",
+            "LocalizedString": "LOCKPICK"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Lockpicking"
+      }
+    }
+  }
+}

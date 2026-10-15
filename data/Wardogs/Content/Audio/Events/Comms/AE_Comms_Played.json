@@ -1,0 +1,39 @@
+--- export: UObject / AEB_Comms_VehiclePerspective_StartedSpeaking_C_0 ---
+{
+  "Type": "AEB_Comms_VehiclePerspective_StartedSpeaking_C",
+  "Name": "AEB_Comms_VehiclePerspective_StartedSpeaking_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_Comms_VehiclePerspective_StartedSpeaking.AEB_Comms_VehiclePerspective_StartedSpeaking_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Comms_Played'",
+    "ObjectPath": "/Game/Audio/Events/Comms/AE_Comms_Played.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_Comms_VehiclePerspective_StartedSpeaking_C'Default__AEB_Comms_VehiclePerspective_StartedSpeaking_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_Comms_VehiclePerspective_StartedSpeaking.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Comms_Played ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Comms_Played",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Comms/AE_Comms_Played",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Comms.Played"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_Comms_VehiclePerspective_StartedSpeaking_C'AE_Comms_Played:AEB_Comms_VehiclePerspective_StartedSpeaking_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Comms/AE_Comms_Played.0"
+      }
+    ]
+  }
+}

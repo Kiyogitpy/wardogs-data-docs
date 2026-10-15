@@ -1,0 +1,86 @@
+--- export: UDataAsset / DA_CameraBehaviour_WHL_06_DuneBuggy ---
+{
+  "Type": "MLandVehicleSpringArmDataAsset",
+  "Name": "DA_CameraBehaviour_WHL_06_DuneBuggy",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MLandVehicleSpringArmDataAsset'",
+  "Package": "/WHL_06/Data/DA_CameraBehaviour_WHL_06_DuneBuggy",
+  "Properties": {
+    "FreelookYawRange": {
+      "LowerBound": {
+        "Type": "ERangeBoundTypes::Open"
+      },
+      "UpperBound": {
+        "Type": "ERangeBoundTypes::Open"
+      }
+    },
+    "FreelookPitchRange": {
+      "LowerBound": {
+        "Value": -14.0
+      },
+      "UpperBound": {
+        "Value": 60.0
+      }
+    },
+    "CameraProbeMinDistance": 10.0,
+    "CameraUpwardsZOffset": 60.0,
+    "ZoomRange": {
+      "LowerBound": {
+        "Value": 100.0
+      },
+      "UpperBound": {
+        "Value": 300.0
+      }
+    },
+    "TargetOffset": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 100.0
+    },
+    "SocketOffset": {
+      "X": 125.0,
+      "Y": 0.0,
+      "Z": 75.0
+    },
+    "TargetArmLength": 750.0,
+    "bMapArmLengthFromFOV": true,
+    "bMapArmHeightFromFOV": true,
+    "FOVMappingRange": {
+      "LowerBound": {
+        "Value": 60.0
+      },
+      "UpperBound": {
+        "Value": 110.0
+      }
+    },
+    "ArmLengthAtFOVRange": {
+      "X": 1150.0,
+      "Y": 650.0
+    },
+    "ArmHeightAtFOVRange": {
+      "X": 65.0,
+      "Y": 45.0
+    },
+    "ProbeSize": 50.0,
+    "bInheritRoll": false,
+    "bEnableCameraLag": true,
+    "bEnableCameraRotationLag": true,
+    "CameraLagSpeed": 14.0,
+    "CameraRotationLagSpeed": 6.0,
+    "CameraLagMaxDistance": 100.0,
+    "CameraComponentSettings": {
+      "FieldOfViewVsSpeed": {
+        "EditorCurveData": {},
+        "ExternalCurve": {
+          "ObjectName": "CurveFloat'CRV_WHL_06_SpeedCurveFOV'",
+          "ObjectPath": "/WHL_06/Data/Curves/CRV_WHL_06_SpeedCurveFOV.0"
+        }
+      },
+      "RotationOverride": {
+        "Pitch": -3.75,
+        "Yaw": 0.0,
+        "Roll": 0.0
+      }
+    }
+  }
+}

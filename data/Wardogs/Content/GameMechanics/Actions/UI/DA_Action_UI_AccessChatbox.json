@@ -1,0 +1,55 @@
+--- export: UPrimaryDataAsset / DA_Action_UI_AccessChatbox ---
+{
+  "Type": "BHActionDefinition",
+  "Name": "DA_Action_UI_AccessChatbox",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHActionDefinition'",
+  "Package": "/Game/GameMechanics/Actions/UI/DA_Action_UI_AccessChatbox",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.Player.AccessChatbox"
+    },
+    "ActionContext": [
+      "Action.Context.UI"
+    ],
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::Block",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Block",
+          "ActionResponses": [
+            "Action.Player.ChangeToNextQuickSlot",
+            "Action.Player.ChangeToPreviousQuickSlot",
+            "Action.Player.MoveDirectional",
+            "Action.Vehicle.Movement",
+            "Action.Player.Crouch",
+            "Action.Player.Prone",
+            "Action.Player.Stand",
+            "Action.Player.Melee.SecondaryUse",
+            "Action.Player.Melee.PrimaryUse"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Interrupt",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Interrupt",
+          "ActionResponses": [
+            "Action.Player.MoveDirectional",
+            "Action.Vehicle.Movement"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      }
+    ]
+  }
+}

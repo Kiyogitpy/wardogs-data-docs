@@ -1,0 +1,254 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Battery'",
+    "ObjectPath": "/Battery/Data/ID_Battery.5"
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Battery'",
+    "ObjectPath": "/Battery/Data/ID_Battery.5"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Battery/Data/Meshes/SM_Battery.SM_Battery",
+      "SubPathString": ""
+    },
+    "Scale": {
+      "X": 1.5,
+      "Y": 1.5,
+      "Z": 1.5
+    },
+    "RelativeRotation": {
+      "Pitch": -90.0,
+      "Yaw": 0.0,
+      "Roll": 0.0
+    },
+    "bOverrideDroppedRelativeLocation": true,
+    "OverridedRelativeLocation": {
+      "X": 0.5,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "bOverrideDroppedBoxExtent": true,
+    "OverridedBoxExtent": {
+      "X": 2.0,
+      "Y": 5.159992,
+      "Z": 3.6
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Battery'",
+    "ObjectPath": "/Battery/Data/ID_Battery.5"
+  },
+  "Properties": {
+    "bCanRemoveItem": false,
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Item.Ammo"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::AllowList",
+          "AllowedSubSlotItems": [
+            "Id.Item.BatteryCharge"
+          ],
+          "AllowedSubSlotContext": [
+            "Item.Caliber.BatteryCharge"
+          ],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": -2,
+        "MaxSlotAmountStackSize": 100,
+        "bAllowsStackedPacking": false,
+        "bIsHiddenContainer": true,
+        "_aaabelnajgoacnpmnokoe_$BD096E02DFCDEAE4$_$20$": true,
+        "ContainerContextTags": [
+          "Inventory.Container.Context.BlockCombine"
+        ],
+        "DefaultItems": [
+          "Id.Item.BatteryCharge"
+        ],
+        "DefaultContainerItems": [
+          {
+            "Item": {
+              "TagName": "Id.Item.BatteryCharge"
+            },
+            "Amount": null
+          }
+        ]
+      }
+    ]
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Battery'",
+    "ObjectPath": "/Battery/Data/ID_Battery.5"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Battery'",
+    "ObjectPath": "/Battery/Data/ID_Battery.5"
+  },
+  "Properties": {
+    "Weight": 0.63
+  }
+}
+--- export: UPrimaryDataAsset / ID_Battery ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_Battery",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Battery/Data/ID_Battery",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.Battery"
+    },
+    "ItemContext": [
+      "Item.Attachment.Magazine.Battery",
+      "Item.Resource.Magazine.Battery"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "FC464C5345F729AACD505A86A87B14AE",
+      "SourceString": "Battery",
+      "LocalizedString": "Battery"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_Battery:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/Battery/Data/ID_Battery.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_Battery:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Battery/Data/ID_Battery.3"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_Battery:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/Battery/Data/ID_Battery.8"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_Battery:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Battery/Data/ID_Battery.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_Battery:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/Battery/Data/ID_Battery.6"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_Battery:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Battery/Data/ID_Battery.7"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_Battery:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Battery/Data/ID_Battery.0"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_Battery:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/Battery/Data/ID_Battery.4"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Battery'",
+    "ObjectPath": "/Battery/Data/ID_Battery.5"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "ReloadAnimationPlayRate": 1.0,
+      "bAllowsInspect": true,
+      "WeaponInspectIgnoreList": [],
+      "_aaabcefliieaifhmbokhe_$45B8840857C1EA74$_$18$": 1.0,
+      "_aaabfocbgdpdpdbbdkohf_$E2163F3F3113AE75$_$21$": 1.0,
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Magazine"
+      },
+      "AppliedEffects": [],
+      "AppliedCharacterEffects": [],
+      "bCanBeRemovedInGame": true,
+      "bDiscardWhenEmptyOnReload": true,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Battery'",
+    "ObjectPath": "/Battery/Data/ID_Battery.5"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Battery_Audio'",
+      "ObjectPath": "/Battery/Data/ID_Battery_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Battery'",
+    "ObjectPath": "/Battery/Data/ID_Battery.5"
+  },
+  "Properties": {
+    "ItemType": "EWDGunsmithItemType::Attachment"
+  }
+}

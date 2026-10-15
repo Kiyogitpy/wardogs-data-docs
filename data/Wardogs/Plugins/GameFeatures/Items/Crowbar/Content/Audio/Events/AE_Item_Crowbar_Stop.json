@@ -1,0 +1,36 @@
+--- export: UPrimaryDataAsset / AE_Item_Crowbar_Stop ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Item_Crowbar_Stop",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Crowbar/Audio/Events/AE_Item_Crowbar_Stop",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Item.Crowbar.Stop"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Item_Crowbar_Stop:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Crowbar/Audio/Events/AE_Item_Crowbar_Stop.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Item_Crowbar_Stop'",
+    "ObjectPath": "/Crowbar/Audio/Events/AE_Item_Crowbar_Stop.0"
+  },
+  "Properties": {
+    "ParameterName": "Stop",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

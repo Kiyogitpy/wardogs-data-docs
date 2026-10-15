@@ -1,0 +1,212 @@
+--- export: UDataAsset / DA_ControlZone_Config_Europe ---
+{
+  "Type": "WDControlZoneConfigDataAsset",
+  "Name": "DA_ControlZone_Config_Europe",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDControlZoneConfigDataAsset'",
+  "Package": "/ControlZone/ControlZone/Config/DA_ControlZone_Config_Europe",
+  "Properties": {
+    "bActivateAlternator": true,
+    "_aaaakhdiijicfiamdphka_$7388982580C3F7A0$_$10$": [
+      {
+        "AssetPathName": "/Game/Maps/Worlds/Europe/Europe.Europe",
+        "SubPathString": ""
+      }
+    ],
+    "ZoneData": {
+      "ControlZoneData": {
+        "ControlZoneActorLocation": {
+          "X": -638340.56,
+          "Y": -620784.06,
+          "Z": -93392.95
+        },
+        "ZoneScaledExtents": {
+          "X": 55000.0,
+          "Y": 55000.0,
+          "Z": 15000.0
+        },
+        "ZoneShape": "EWDZoneShape::Cylinder"
+      },
+      "HotZoneData": {
+        "ZoneScaledExtents": {
+          "X": 8500.0,
+          "Y": 8500.0,
+          "Z": 15000.0
+        },
+        "ZoneShape": "EWDZoneShape::Cylinder"
+      }
+    },
+    "AlternatorZoneData": [
+      {
+        "AlternatorTag": {
+          "TagName": "ZoneAlternator.Ozeti.Default.Circle"
+        },
+        "AlternatorSelectionWeight": 1.0,
+        "ControlZoneData": {
+          "ControlZoneActorLocation": {
+            "X": -619826.56,
+            "Y": -616670.94,
+            "Z": -93392.95
+          },
+          "ControlZoneActorRotation": {
+            "Pitch": 0.0,
+            "Yaw": 0.0,
+            "Roll": 0.0
+          },
+          "ZoneScaledExtents": {
+            "X": 55000.0,
+            "Y": 55000.0,
+            "Z": 15000.0
+          },
+          "ZoneShape": "EWDZoneShape::Cylinder"
+        },
+        "HotZoneData": {
+          "ZoneScaledExtents": {
+            "X": 8500.0,
+            "Y": 8500.0,
+            "Z": 15000.0
+          },
+          "ZoneShape": "EWDZoneShape::Cylinder"
+        }
+      },
+      {
+        "AlternatorTag": {
+          "TagName": "ZoneAlternator.Ozeti.Farmland.Circle"
+        },
+        "AlternatorSelectionWeight": 0.0,
+        "ControlZoneData": {
+          "ControlZoneActorLocation": {
+            "X": -672935.1,
+            "Y": -616922.44,
+            "Z": -93392.95
+          },
+          "ControlZoneActorRotation": {
+            "Pitch": 0.0,
+            "Yaw": 0.0,
+            "Roll": 0.0
+          },
+          "ZoneScaledExtents": {
+            "X": 55000.0,
+            "Y": 55000.0,
+            "Z": 15000.0
+          },
+          "ZoneShape": "EWDZoneShape::Cylinder"
+        },
+        "HotZoneData": {
+          "ZoneScaledExtents": {
+            "X": 8500.0,
+            "Y": 8500.0,
+            "Z": 15000.0
+          },
+          "ZoneShape": "EWDZoneShape::Cylinder"
+        }
+      },
+      {
+        "AlternatorTag": {
+          "TagName": "ZoneAlternator.Ozeti.Church.Circle"
+        },
+        "AlternatorSelectionWeight": 1.0,
+        "ControlZoneData": {
+          "ControlZoneActorLocation": {
+            "X": -603697.2,
+            "Y": -613630.56,
+            "Z": -88294.94
+          },
+          "ControlZoneActorRotation": {
+            "Pitch": 0.0,
+            "Yaw": 0.0,
+            "Roll": 0.0
+          },
+          "ZoneScaledExtents": {
+            "X": 55000.0,
+            "Y": 55000.0,
+            "Z": 15000.0
+          },
+          "ZoneShape": "EWDZoneShape::Cylinder"
+        },
+        "HotZoneData": {
+          "ZoneScaledExtents": {
+            "X": 8500.0,
+            "Y": 8500.0,
+            "Z": 15000.0
+          },
+          "ZoneShape": "EWDZoneShape::Cylinder"
+        }
+      },
+      {
+        "AlternatorTag": {
+          "TagName": "ZoneAlternator.Ozeti.River.Circle"
+        },
+        "AlternatorSelectionWeight": 1.0,
+        "ControlZoneData": {
+          "ControlZoneActorLocation": {
+            "X": -642564.06,
+            "Y": -605435.56,
+            "Z": -93735.72
+          },
+          "ControlZoneActorRotation": {
+            "Pitch": 0.0,
+            "Yaw": 0.0,
+            "Roll": 0.0
+          },
+          "ZoneScaledExtents": {
+            "X": 55000.0,
+            "Y": 55000.0,
+            "Z": 15000.0
+          },
+          "ZoneShape": "EWDZoneShape::Cylinder"
+        },
+        "HotZoneData": {
+          "ZoneScaledExtents": {
+            "X": 8500.0,
+            "Y": 8500.0,
+            "Z": 15000.0
+          },
+          "ZoneShape": "EWDZoneShape::Cylinder"
+        }
+      }
+    ],
+    "HotZoneMovementData": {
+      "MoveDelay": 25.0,
+      "HotZoneInnerRadiusPercentage": 0.95,
+      "DefaultSpeed": 1.0,
+      "bUseDynamicHotzoneSpeeds": true,
+      "HotzoneSpeeds": [
+        0.75,
+        1.0,
+        1.25,
+        1.5,
+        1.75,
+        2.0
+      ],
+      "HotZoneTransitionEasingCurve": {
+        "EditorCurveData": {
+          "Keys": [
+            {
+              "InterpMode": "RCIM_Linear",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 0.0,
+              "Value": 0.0,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Constant",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 1.0,
+              "Value": 1.0,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            }
+          ]
+        }
+      }
+    }
+  }
+}

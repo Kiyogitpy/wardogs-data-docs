@@ -1,0 +1,36 @@
+--- export: UPrimaryDataAsset / AE_Vehicle_Weapon_Aim_ChangeDirection ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_Weapon_Aim_ChangeDirection",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/Weapon/Aim/AE_Vehicle_Weapon_Aim_ChangeDirection",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Shared.Weapon.Aim.ChangeDirection"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Vehicle_Weapon_Aim_ChangeDirection:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Aim/AE_Vehicle_Weapon_Aim_ChangeDirection.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Weapon_Aim_ChangeDirection'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Aim/AE_Vehicle_Weapon_Aim_ChangeDirection.0"
+  },
+  "Properties": {
+    "ParameterName": "Change Direction",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Weapon.Aim"
+    }
+  }
+}

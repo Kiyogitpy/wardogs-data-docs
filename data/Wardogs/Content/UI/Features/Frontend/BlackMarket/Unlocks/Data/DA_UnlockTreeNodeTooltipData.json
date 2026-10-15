@@ -1,0 +1,23 @@
+--- export: UDataAsset / DA_UnlockTreeNodeTooltipData ---
+{
+  "Type": "WDUITooltipUnlocksTreeNodeData",
+  "Name": "DA_UnlockTreeNodeTooltipData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUITooltipUnlocksTreeNodeData'",
+  "Package": "/Game/UI/Features/Frontend/BlackMarket/Unlocks/Data/DA_UnlockTreeNodeTooltipData",
+  "Properties": {
+    "IconTag": {
+      "TagName": "UI.Icon.Inventory.Tooltip"
+    },
+    "PrerequisiteEntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIPrerequisiteInfoViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Frontend/BlackMarket/Unlocks/Data/DA_UnlockTreeNodePrerequisiteData.DA_UnlockTreeNodePrerequisiteData",
+        "SubPathString": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,716 @@
+--- export: UPrimaryDataAsset / DA_InventoryMagPackingData ---
+{
+  "Type": "WDInventoryMagPackingData",
+  "Name": "DA_InventoryMagPackingData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryMagPackingData'",
+  "Package": "/Game/GameMechanics/Inventory/InventoryMagPacking/DA_InventoryMagPackingData",
+  "Properties": {
+    "_aaablidajpmbnnaibaabo_$8309FC1DD081001E$_$27$": {
+      "ExternalCurve": {
+        "ObjectName": "CurveFloat'CR_CombineAmmoCurve'",
+        "ObjectPath": "/Game/GameMechanics/Inventory/CR_CombineAmmoCurve.0"
+      }
+    },
+    "_aaabikcklbnaomofaaoaj_$A2AB1D0ECE500E09$_$24$": {
+      "ExternalCurve": {
+        "ObjectName": "CurveFloat'CR_CombineAmmoCurve'",
+        "ObjectPath": "/Game/GameMechanics/Inventory/CR_CombineAmmoCurve.0"
+      }
+    },
+    "_aaacadokkbnhiibfdehef_$3EAA1D7881534745$_$32$": {
+      "ExternalCurve": {
+        "ObjectName": "CurveFloat'CR_CombineLooseAmmoCurve_Default'",
+        "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/CR_CombineLooseAmmoCurve_Default.0"
+      }
+    },
+    "_aaabonnmhbdkghjmnlmem_$DDC713A679CDBC4C$_$30$": [
+      {
+        "Key": {
+          "TagName": "Id.Item.545mm"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [
+              {
+                "InterpMode": "RCIM_Linear",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.0,
+                "Value": 3.0,
+                "ArriveTangent": 0.0,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.0,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Linear",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 100.0,
+                "Value": 6.0,
+                "ArriveTangent": 0.0,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.0,
+                "LeaveTangentWeight": 0.0
+              }
+            ],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_ExtractAmmoCurve_545mm'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/ExtractAmmo/CR_ExtractAmmoCurve_545mm.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.556mm"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_ExtractAmmoCurve_556mm'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/ExtractAmmo/CR_ExtractAmmoCurve_556mm.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.12g"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_ExtractAmmoCurve_12Guage'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/ExtractAmmo/CR_ExtractAmmoCurve_12Guage.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.308Win"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_ExtractAmmoCurve_308Win'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/ExtractAmmo/CR_ExtractAmmoCurve_308Win.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.45ACP"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_ExtractAmmoCurve_45ACP'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/ExtractAmmo/CR_ExtractAmmoCurve_45ACP.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.45Colt"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_ExtractAmmoCurve_45Colt'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/ExtractAmmo/CR_ExtractAmmoCurve_45Colt.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.50AE"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_ExtractAmmoCurve_50AE'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/ExtractAmmo/CR_ExtractAmmoCurve_50AE.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.50Cal"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_ExtractAmmoCurve_50Cal'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/ExtractAmmo/CR_ExtractAmmoCurve_50Cal.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.762mm"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_ExtractAmmoCurve_762x39mm'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/ExtractAmmo/CR_ExtractAmmoCurve_762x39mm.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.762x54mm"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_ExtractAmmoCurve_762x54mm'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/ExtractAmmo/CR_ExtractAmmoCurve_762x54mm.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.9mm"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_ExtractAmmoCurve_9mm'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/ExtractAmmo/CR_ExtractAmmoCurve_9mm.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.Arrow"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_ExtractAmmoCurve_Arrow'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/ExtractAmmo/CR_ExtractAmmoCurve_Arrow.0"
+          }
+        }
+      }
+    ],
+    "_aaabllmnkpffkimjlodcb_$BCDAF55A8C9BE321$_$27$": [
+      {
+        "Key": {
+          "TagName": "Id.Item.545mm"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [
+              {
+                "InterpMode": "RCIM_Linear",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.0,
+                "Value": 3.0,
+                "ArriveTangent": 0.0,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.0,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Linear",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 100.0,
+                "Value": 6.0,
+                "ArriveTangent": 0.0,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.0,
+                "LeaveTangentWeight": 0.0
+              }
+            ],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_LoadAmmoCurve_545mm'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/LoadAmmo/CR_LoadAmmoCurve_545mm.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.556mm"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_LoadAmmoCurve_556mm'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/LoadAmmo/CR_LoadAmmoCurve_556mm.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.12g"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_LoadAmmoCurve_12Guage'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/LoadAmmo/CR_LoadAmmoCurve_12Guage.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.308Win"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_LoadAmmoCurve_308Win'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/LoadAmmo/CR_LoadAmmoCurve_308Win.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.45ACP"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_LoadAmmoCurve_45ACP'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/LoadAmmo/CR_LoadAmmoCurve_45ACP.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.45Colt"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_LoadAmmoCurve_45Colt'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/LoadAmmo/CR_LoadAmmoCurve_45Colt.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.50AE"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_LoadAmmoCurve_50AE'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/LoadAmmo/CR_LoadAmmoCurve_50AE.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.50Cal"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_LoadAmmoCurve_50Cal'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/LoadAmmo/CR_LoadAmmoCurve_50Cal.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.762mm"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_LoadAmmoCurve_762x39mm'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/LoadAmmo/CR_LoadAmmoCurve_762x39mm.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.762x54mm"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_LoadAmmoCurve_762x54mm'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/LoadAmmo/CR_LoadAmmoCurve_762x54mm.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.9mm"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_LoadAmmoCurve_9mm'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/LoadAmmo/CR_LoadAmmoCurve_9mm.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.Arrow"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_LoadAmmoCurve_Arrow'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/LoadAmmo/CR_LoadAmmoCurve_Arrow.0"
+          }
+        }
+      }
+    ],
+    "_aaacdimmohoigiahkmmkc_$8CCE7E86807ACCA2$_$35$": [
+      {
+        "Key": {
+          "TagName": "Id.Item.545mm"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [
+              {
+                "InterpMode": "RCIM_Linear",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.0,
+                "Value": 3.0,
+                "ArriveTangent": 0.0,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.0,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Linear",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 100.0,
+                "Value": 6.0,
+                "ArriveTangent": 0.0,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.0,
+                "LeaveTangentWeight": 0.0
+              }
+            ],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_CombineLooseAmmoCurve_545mm'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/CombineLooseAmmo/CR_CombineLooseAmmoCurve_545mm.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.556mm"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_CombineLooseAmmoCurve_556mm'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/CombineLooseAmmo/CR_CombineLooseAmmoCurve_556mm.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.12g"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_CombineLooseAmmoCurve_12Guage'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/CombineLooseAmmo/CR_CombineLooseAmmoCurve_12Guage.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.308Win"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_CombineLooseAmmoCurve_308Win'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/CombineLooseAmmo/CR_CombineLooseAmmoCurve_308Win.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.45ACP"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_CombineLooseAmmoCurve_45ACP'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/CombineLooseAmmo/CR_CombineLooseAmmoCurve_45ACP.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.45Colt"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_CombineLooseAmmoCurve_45Colt'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/CombineLooseAmmo/CR_CombineLooseAmmoCurve_45Colt.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.50AE"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_CombineLooseAmmoCurve_50AE'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/CombineLooseAmmo/CR_CombineLooseAmmoCurve_50AE.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.50Cal"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_CombineLooseAmmoCurve_50Cal'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/CombineLooseAmmo/CR_CombineLooseAmmoCurve_50Cal.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.762mm"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_CombineLooseAmmoCurve_762x39mm'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/CombineLooseAmmo/CR_CombineLooseAmmoCurve_762x39mm.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.762x54mm"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_CombineLooseAmmoCurve_762x54mm'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/CombineLooseAmmo/CR_CombineLooseAmmoCurve_762x54mm.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.9mm"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_CombineLooseAmmoCurve_9mm'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/CombineLooseAmmo/CR_CombineLooseAmmoCurve_9mm.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.Arrow"
+        },
+        "Value": {
+          "EditorCurveData": {
+            "Keys": [],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+            "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_CombineLooseAmmoCurve_Arrow'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/CombineLooseAmmo/CR_CombineLooseAmmoCurve_Arrow.0"
+          }
+        }
+      }
+    ],
+    "_aaaamcpeoannmdgfkdnmd_$2F4E0DDC365A3DC3$_$12$": 48
+  }
+}

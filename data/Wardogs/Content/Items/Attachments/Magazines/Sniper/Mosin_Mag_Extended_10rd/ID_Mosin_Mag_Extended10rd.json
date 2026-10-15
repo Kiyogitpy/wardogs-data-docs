@@ -1,0 +1,152 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Mosin_Mag_Extended10rd'",
+    "ObjectPath": "/Game/Items/Attachments/Magazines/Sniper/Mosin_Mag_Extended_10rd/ID_Mosin_Mag_Extended10rd.3"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 1,
+      "Y": 2
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Mosin_Mag_Extended10rd'",
+    "ObjectPath": "/Game/Items/Attachments/Magazines/Sniper/Mosin_Mag_Extended_10rd/ID_Mosin_Mag_Extended10rd.3"
+  },
+  "Properties": {
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Item.Ammo"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::AllowList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [
+            "Item.Caliber.762x54mm"
+          ],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": -2,
+        "MaxSlotAmountStackSize": 10,
+        "bAllowsStackedPacking": true,
+        "bIsHiddenContainer": true,
+        "_aaabelnajgoacnpmnokoe_$BD096E02DFCDEAE4$_$20$": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [
+          "Id.Item.762x54mm"
+        ],
+        "DefaultContainerItems": [
+          {
+            "Item": {
+              "TagName": "Id.Item.762x54mm"
+            },
+            "Amount": null
+          }
+        ]
+      }
+    ]
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Mosin_Mag_Extended10rd'",
+    "ObjectPath": "/Game/Items/Attachments/Magazines/Sniper/Mosin_Mag_Extended_10rd/ID_Mosin_Mag_Extended10rd.3"
+  }
+}
+--- export: UPrimaryDataAsset / ID_Mosin_Mag_Extended10rd ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_Mosin_Mag_Extended10rd",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Attachments/Magazines/Sniper/Mosin_Mag_Extended_10rd/ID_Mosin_Mag_Extended10rd",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.MosinMagazineExtended10rd"
+    },
+    "ItemContext": [
+      "Item.Attachment.Magazine"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "ECA4F6074D1245D598C156AF7E470AD6",
+      "SourceString": "SV98 Extended Mag",
+      "LocalizedString": "SV98 Extended Mag"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_Mosin_Mag_Extended10rd:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/Game/Items/Attachments/Magazines/Sniper/Mosin_Mag_Extended_10rd/ID_Mosin_Mag_Extended10rd.1"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_Mosin_Mag_Extended10rd:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Game/Items/Attachments/Magazines/Sniper/Mosin_Mag_Extended_10rd/ID_Mosin_Mag_Extended10rd.2"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_Mosin_Mag_Extended10rd:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/Game/Items/Attachments/Magazines/Sniper/Mosin_Mag_Extended_10rd/ID_Mosin_Mag_Extended10rd.5"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_Mosin_Mag_Extended10rd:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Game/Items/Attachments/Magazines/Sniper/Mosin_Mag_Extended_10rd/ID_Mosin_Mag_Extended10rd.4"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_Mosin_Mag_Extended10rd:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Game/Items/Attachments/Magazines/Sniper/Mosin_Mag_Extended_10rd/ID_Mosin_Mag_Extended10rd.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Mosin_Mag_Extended10rd'",
+    "ObjectPath": "/Game/Items/Attachments/Magazines/Sniper/Mosin_Mag_Extended_10rd/ID_Mosin_Mag_Extended10rd.3"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Magazine_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Item/Data/ID_Magazine_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Mosin_Mag_Extended10rd'",
+    "ObjectPath": "/Game/Items/Attachments/Magazines/Sniper/Mosin_Mag_Extended_10rd/ID_Mosin_Mag_Extended10rd.3"
+  }
+}

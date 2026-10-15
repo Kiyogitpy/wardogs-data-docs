@@ -1,0 +1,78 @@
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_VehicleTurretArtillery_SB'",
+    "ObjectPath": "/Game/Items/Vehicles/Weapons/TNK_01/ID_VehicleTurretArtillery_SB.1"
+  },
+  "Properties": {
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Item.Ammo"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::AllowList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [
+            "Item.Caliber.155mm"
+          ],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": -2,
+        "MaxSlotAmountStackSize": 1,
+        "bAllowsStackedPacking": false,
+        "bIsHiddenContainer": true,
+        "_aaabelnajgoacnpmnokoe_$BD096E02DFCDEAE4$_$20$": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": [
+          {
+            "Item": {
+              "TagName": "ID.Item.155mm.Expensive.Sandbox"
+            },
+            "Amount": null
+          }
+        ]
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / ID_VehicleTurretArtillery_SB ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_VehicleTurretArtillery_SB",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Vehicles/Weapons/TNK_01/ID_VehicleTurretArtillery_SB",
+  "Properties": {
+    "ItemId": {
+      "TagName": "ID.Item.VehicleTurretArtillery.Sandbox"
+    },
+    "ItemContext": [
+      "Inventory.Slot.Vehicle.Weapon.TNK_02.Turret"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "98B88F46402D54E11DFEB3A9351CA91D",
+      "SourceString": "Artillery Turret",
+      "LocalizedString": "Artillery Turret"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_VehicleTurretArtillery_SB:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/Game/Items/Vehicles/Weapons/TNK_01/ID_VehicleTurretArtillery_SB.0"
+      }
+    ]
+  }
+}

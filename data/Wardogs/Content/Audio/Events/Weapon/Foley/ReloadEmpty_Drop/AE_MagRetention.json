@@ -1,0 +1,41 @@
+--- export: UPrimaryDataAsset / AE_MagRetention ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_MagRetention",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Weapon/Foley/ReloadEmpty_Drop/AE_MagRetention",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.Reload.MagRetention"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_MagRetention:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Foley/ReloadEmpty_Drop/AE_MagRetention.1"
+      }
+    ],
+    "_aaabhonahgpdbjealfaaa_$ED076F31940B5000$_$23$": 50.5
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_MagRetention'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Foley/ReloadEmpty_Drop/AE_MagRetention.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Weapon_Shared_MagRetention'",
+      "ObjectPath": "/Game/Audio/Weapon/Shared/MagRetention/MSS/MSS_Weapon_Shared_MagRetention.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::PlayBoth",
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.MagRetention"
+    }
+  }
+}

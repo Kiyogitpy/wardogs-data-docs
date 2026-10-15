@@ -1,0 +1,30 @@
+--- export: UDataAsset / DA_ContainerGrid_Inventory_Subslots_FOB ---
+{
+  "Type": "WDUIContainerGridData",
+  "Name": "DA_ContainerGrid_Inventory_Subslots_FOB",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIContainerGridData'",
+  "Package": "/Buildables/Data/UI/DA_ContainerGrid_Inventory_Subslots_FOB",
+  "Properties": {
+    "ItemCardViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIItemCardViewModel_Inventory",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Buildables/Data/UI/DA_ItemCard_Inventory_FOB.DA_ItemCard_Inventory_FOB",
+        "SubPathString": ""
+      }
+    },
+    "GridSlotViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIContainerGridSlotViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Inventory_2_0/Widgets/ContainerGridSlot/Data/DA_ContainerGridSlot_Inventory_Storage.DA_ContainerGridSlot_Inventory_Storage",
+        "SubPathString": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,344 @@
+--- export: UDataTable / DT_EntityData_UI_Ext_VehicleRepairTool ---
+{
+  "Type": "DataTable",
+  "Name": "DT_EntityData_UI_Ext_VehicleRepairTool",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/VehicleRepairTool/Data/DT_EntityData_UI_Ext_VehicleRepairTool",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'BHEntityData_UI'",
+      "ObjectPath": "/Script/BHFramework"
+    }
+  },
+  "Rows": {
+    "ID.Item.RepairTool.Wrench.Standard": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+        "Key": "Items.Utility.Wrench",
+        "SourceString": "Wrench",
+        "LocalizedString": "Wrench"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+        "Key": "Items.Utility.Wrench.Description",
+        "SourceString": "- Used to Manually Repair ALL Vehicles\r\n- Slow Repair Speed",
+        "LocalizedString": "- Used to Manually Repair ALL Vehicles\r\n- Slow Repair Speed"
+      },
+      "Category": {
+        "TagName": "None"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "Attribute.Meta.XP.Role.Support"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory.QuickAccess"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.QuickAccess"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_General.STRINGS_Items_General",
+            "Key": "Items.QuickSlot.RepairTool",
+            "SourceString": "Repair Tool // Quick Slot",
+            "LocalizedString": "Repair Tool // Quick Slot"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+            "Key": "Items.Utility.Wrench.Description",
+            "SourceString": "- Used to Manually Repair ALL Vehicles\r\n- Slow Repair Speed",
+            "LocalizedString": "- Used to Manually Repair ALL Vehicles\r\n- Slow Repair Speed"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+            "Key": "Items.Utility.Wrench.Flavor",
+            "SourceString": "Cheap, reliable and slow.",
+            "LocalizedString": "Cheap, reliable and slow."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Utility/3D/T_UI_Icon_Utility_Repair_Textured_512x512.T_UI_Icon_Utility_Repair_Textured_512x512",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Utility/3D/T_UI_Item_Repair_1_BC.T_UI_Item_Repair_1_BC",
+            "Value": [
+              "UI.Icon.Inventory.Equipment",
+              "UI.Icon.Inventory.Tooltip",
+              "UI.Icon.Inventory.Container",
+              "UI.Icon.Vendor",
+              "UI.Icon.DeathRecap.KillCause"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "ID.Item.RepairTool.Wrench.Standard"
+      }
+    },
+    "ID.Item.RepairTool.Drill.Light": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+        "Key": "Items.Utility.LightDrill",
+        "SourceString": "Light Drill",
+        "LocalizedString": "Light Drill"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+        "Key": "Items.Utility.LightDrill.Description",
+        "SourceString": "- Used to Manually Repair Vehicles\r\n- Moderate Repair Speed\r\n- Requires Batteries to Use",
+        "LocalizedString": "- Used to Manually Repair Vehicles\r\n- Moderate Repair Speed\r\n- Requires Batteries to Use"
+      },
+      "Category": {
+        "TagName": "Item.Category.Weapon"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "Attribute.Meta.XP.Role.Support"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_General.STRINGS_Items_General",
+            "Key": "Items.SpecItem.RepairTool",
+            "SourceString": "Repair Tool // Spec. Item",
+            "LocalizedString": "Repair Tool // Spec. Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+            "Key": "Items.Utility.LightDrill.Description",
+            "SourceString": "- Used to Manually Repair Vehicles\r\n- Moderate Repair Speed\r\n- Requires Batteries to Use",
+            "LocalizedString": "- Used to Manually Repair Vehicles\r\n- Moderate Repair Speed\r\n- Requires Batteries to Use"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+            "Key": "Items.Utility.LightDrill.Flavor",
+            "SourceString": "Battery-powered repair tool that is faster than manual tools.",
+            "LocalizedString": "Battery-powered repair tool that is faster than manual tools."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Utility/3D/t_ui_icon_drill_medium.t_ui_icon_drill_medium",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Utility/3D/t_ui_icon_drill_medium.t_ui_icon_drill_medium",
+            "Value": [
+              "UI.Icon.Vendor",
+              "UI.Icon.Inventory.Equipment",
+              "UI.Icon.Inventory.Pickup.Tooltip"
+            ]
+          },
+          {
+            "Key": "/Game/UI/Shared/Icons/Equipment/Killfeed/T_UI_Icon_Killfeed_SmallDrill.T_UI_Icon_Killfeed_SmallDrill",
+            "Value": [
+              "UI.Icon.Killfeed"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "ID.Item.RepairTool.Drill.Light"
+      }
+    },
+    "ID.Item.RepairTool.Drill.Heavy": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+        "Key": "Items.Utility.HeavyDrill",
+        "SourceString": "Heavy Drill",
+        "LocalizedString": "Heavy Drill"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+        "Key": "Items.Utility.HeavyDrill.Description",
+        "SourceString": "- Used to Manually Repair Vehicles\r\n- Fastest Repair Speed\r\n- Requires Batteries to Use",
+        "LocalizedString": "- Used to Manually Repair Vehicles\r\n- Fastest Repair Speed\r\n- Requires Batteries to Use"
+      },
+      "Category": {
+        "TagName": "Item.Category.Weapon"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "Attribute.Meta.XP.Role.Support"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_General.STRINGS_Items_General",
+            "Key": "Items.SpecItem.RepairTool",
+            "SourceString": "Repair Tool // Spec. Item",
+            "LocalizedString": "Repair Tool // Spec. Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+            "Key": "Items.Utility.HeavyDrill.Description",
+            "SourceString": "- Used to Manually Repair Vehicles\r\n- Fastest Repair Speed\r\n- Requires Batteries to Use",
+            "LocalizedString": "- Used to Manually Repair Vehicles\r\n- Fastest Repair Speed\r\n- Requires Batteries to Use"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+            "Key": "Items.Utility.HeavyDrill.Flavor",
+            "SourceString": "Heavy duty, battery-powered repair tool that is faster than ALL other repair tools.",
+            "LocalizedString": "Heavy duty, battery-powered repair tool that is faster than ALL other repair tools."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Utility/3D/t_ui_icon_drill_heavy.t_ui_icon_drill_heavy",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Utility/3D/t_ui_icon_drill_heavy.t_ui_icon_drill_heavy",
+            "Value": [
+              "UI.Icon.Inventory.Equipment",
+              "UI.Icon.Vendor",
+              "UI.Icon.Inventory.Pickup.Tooltip"
+            ]
+          },
+          {
+            "Key": "/Game/UI/Shared/Icons/Equipment/Killfeed/T_UI_Icon_Killfeed_LargeDrill.T_UI_Icon_Killfeed_LargeDrill",
+            "Value": [
+              "UI.Icon.Killfeed"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "ID.Item.RepairTool.Drill.Heavy"
+      }
+    }
+  }
+}

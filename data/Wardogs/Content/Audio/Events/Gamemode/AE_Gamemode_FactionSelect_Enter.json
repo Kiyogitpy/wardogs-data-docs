@@ -1,0 +1,44 @@
+--- export: UObject / AEB_ActivateControlBusMix_C_0 ---
+{
+  "Type": "AEB_ActivateControlBusMix_C",
+  "Name": "AEB_ActivateControlBusMix_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_ActivateControlBusMix.AEB_ActivateControlBusMix_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Gamemode_FactionSelect_Enter'",
+    "ObjectPath": "/Game/Audio/Events/Gamemode/AE_Gamemode_FactionSelect_Enter.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_ActivateControlBusMix_C'Default__AEB_ActivateControlBusMix_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_ActivateControlBusMix.0"
+  },
+  "Properties": {
+    "Mix": {
+      "ObjectName": "SoundControlBusMix'AM_CBM_UIScene_FactionSelect'",
+      "ObjectPath": "/Game/Audio/AudioModulation/ControlBusMixes/AM_CBM_UIScene_FactionSelect.0"
+    },
+    "Local Only": false,
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Gamemode_FactionSelect_Enter ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Gamemode_FactionSelect_Enter",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Gamemode/AE_Gamemode_FactionSelect_Enter",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Gamemode.FactionSelect.Enter"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_ActivateControlBusMix_C'AE_Gamemode_FactionSelect_Enter:AEB_ActivateControlBusMix_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Gamemode/AE_Gamemode_FactionSelect_Enter.0"
+      }
+    ]
+  }
+}

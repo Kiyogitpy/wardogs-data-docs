@@ -1,0 +1,1723 @@
+--- export: UObject / BHPlayerMappableKeySettings_2 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.Cyclic"
+    },
+    "SlotContext": "EBHMappableSlotContext::NoSlot",
+    "Name": "Input.NamedActions.Vehicle.Cyclic"
+  }
+}
+--- export: UObject / BHPlayerMappableKeySettings_29 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_29",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.DeploySupplyCrate"
+    },
+    "Name": "Input.NamedActions.Vehicle.DeploySupplyCrate"
+  }
+}
+--- export: UObject / BHPlayerMappableKeySettings_3 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.Pedals"
+    },
+    "SlotContext": "EBHMappableSlotContext::NoSlot",
+    "Name": "Input.NamedActions.Vehicle.Pedals"
+  }
+}
+--- export: UObject / BHPlayerMappableKeySettings_4 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.Camera.ToggleFreeLook"
+    },
+    "Name": "Input.NamedActions.Vehicle.Camera.ToggleFreeLook"
+  }
+}
+--- export: UObject / BHPlayerMappableKeySettings_5 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_5",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.Camera.ToggleFreeLook"
+    },
+    "SlotContext": "EBHMappableSlotContext::NoSlot",
+    "Name": "Input.NamedActions.Vehicle.Camera.ToggleFreeLook"
+  }
+}
+--- export: UObject / BHPlayerMappableKeySettings_6 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_6",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.Camera.FreeLook"
+    },
+    "SlotContext": "EBHMappableSlotContext::NoSlot",
+    "Name": "Input.NamedActions.Vehicle.Camera.FreeLook"
+  }
+}
+--- export: UDataAsset / IMC_Airplane_Driver ---
+{
+  "Type": "InputMappingContext",
+  "Name": "IMC_Airplane_Driver",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputMappingContext'",
+  "Package": "/Game/Vehicles/Inputs/IMC_Airplane_Driver",
+  "Properties": {
+    "DefaultKeyMappings": {
+      "Mappings": [
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_Airplane_Driver:InputTriggerPressed_2'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.27"
+            },
+            {
+              "ObjectName": "InputTriggerReleased'IMC_Airplane_Driver:InputTriggerReleased_2'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.33"
+            },
+            {
+              "ObjectName": "MNonZeroInputTrigger'IMC_Airplane_Driver:BHSmoothingInputTrigger_0'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.50"
+            }
+          ],
+          "Modifiers": [
+            {
+              "ObjectName": "InputModifierSwizzleAxis'IMC_Airplane_Driver:InputModifierSwizzleAxis_3'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.17"
+            },
+            {
+              "ObjectName": "MDynamicScalarInputModifier'IMC_Airplane_Driver:BHDynamicScalarInputModifier_3'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.41"
+            },
+            {
+              "ObjectName": "MDynamicSmoothInputModifier'IMC_Airplane_Driver:BHDynamicSmoothInputModifier_1'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.43"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Cyclic'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Cyclic.0"
+          },
+          "Key": {
+            "KeyName": "W"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_Airplane_Driver:InputTriggerPressed_3'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.28"
+            },
+            {
+              "ObjectName": "InputTriggerReleased'IMC_Airplane_Driver:InputTriggerReleased_3'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.34"
+            },
+            {
+              "ObjectName": "MNonZeroInputTrigger'IMC_Airplane_Driver:BHSmoothingInputTrigger_1'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.51"
+            }
+          ],
+          "Modifiers": [
+            {
+              "ObjectName": "InputModifierSwizzleAxis'IMC_Airplane_Driver:InputModifierSwizzleAxis_4'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.18"
+            },
+            {
+              "ObjectName": "InputModifierNegate'IMC_Airplane_Driver:InputModifierNegate_4'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.9"
+            },
+            {
+              "ObjectName": "MDynamicScalarInputModifier'IMC_Airplane_Driver:BHDynamicScalarInputModifier_0'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.39"
+            },
+            {
+              "ObjectName": "MDynamicSmoothInputModifier'IMC_Airplane_Driver:BHDynamicSmoothInputModifier_2'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.44"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Cyclic'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Cyclic.0"
+          },
+          "Key": {
+            "KeyName": "S"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_Airplane_Driver:InputTriggerPressed_4'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.29"
+            },
+            {
+              "ObjectName": "InputTriggerReleased'IMC_Airplane_Driver:InputTriggerReleased_4'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.35"
+            },
+            {
+              "ObjectName": "MNonZeroInputTrigger'IMC_Airplane_Driver:BHSmoothingInputTrigger_2'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.52"
+            }
+          ],
+          "Modifiers": [
+            {
+              "ObjectName": "InputModifierNegate'IMC_Airplane_Driver:InputModifierNegate_3'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.8"
+            },
+            {
+              "ObjectName": "InputModifierSwizzleAxis'IMC_Airplane_Driver:InputModifierSwizzleAxis_1'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.15"
+            },
+            {
+              "ObjectName": "MDynamicScalarInputModifier'IMC_Airplane_Driver:BHDynamicScalarInputModifier_5'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.42"
+            },
+            {
+              "ObjectName": "MDynamicSmoothInputModifier'IMC_Airplane_Driver:BHDynamicSmoothInputModifier_5'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.46"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Cyclic'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Cyclic.0"
+          },
+          "Key": {
+            "KeyName": "A"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_Airplane_Driver:InputTriggerPressed_5'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.30"
+            },
+            {
+              "ObjectName": "InputTriggerReleased'IMC_Airplane_Driver:InputTriggerReleased_5'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.36"
+            },
+            {
+              "ObjectName": "MNonZeroInputTrigger'IMC_Airplane_Driver:BHSmoothingInputTrigger_3'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.53"
+            }
+          ],
+          "Modifiers": [
+            {
+              "ObjectName": "InputModifierSwizzleAxis'IMC_Airplane_Driver:InputModifierSwizzleAxis_2'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.16"
+            },
+            {
+              "ObjectName": "MDynamicScalarInputModifier'IMC_Airplane_Driver:BHDynamicScalarInputModifier_2'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.40"
+            },
+            {
+              "ObjectName": "MDynamicSmoothInputModifier'IMC_Airplane_Driver:BHDynamicSmoothInputModifier_4'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.45"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Cyclic'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Cyclic.0"
+          },
+          "Key": {
+            "KeyName": "D"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerHold'IMC_Airplane_Driver:InputTriggerHold_0'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.23"
+            },
+            {
+              "ObjectName": "InputTriggerReleased'IMC_Airplane_Driver:InputTriggerReleased_6'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.37"
+            }
+          ],
+          "Modifiers": [
+            {
+              "ObjectName": "WDDeadZoneInputModifier'IMC_Airplane_Driver:WDDeadZoneInputModifier_2'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.69"
+            },
+            {
+              "ObjectName": "WDApplyAxisConfig'IMC_Airplane_Driver:WDApplyAxisConfig_3'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.60"
+            },
+            {
+              "ObjectName": "InputModifierSwizzleAxis'IMC_Airplane_Driver:InputModifierSwizzleAxis_0'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.14"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Cyclic'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Cyclic.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_Left2D"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_Airplane_Driver:BHPlayerMappableKeySettings_2'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.0"
+          }
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_Airplane_Driver:InputTriggerPressed_1'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.26"
+            },
+            {
+              "ObjectName": "InputTriggerReleased'IMC_Airplane_Driver:InputTriggerReleased_1'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.32"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Pedals'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Pedals.0"
+          },
+          "Key": {
+            "KeyName": "E"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_Airplane_Driver:InputTriggerPressed_0'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.25"
+            },
+            {
+              "ObjectName": "InputTriggerReleased'IMC_Airplane_Driver:InputTriggerReleased_0'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.31"
+            }
+          ],
+          "Modifiers": [
+            {
+              "ObjectName": "InputModifierNegate'IMC_Airplane_Driver:InputModifierNegate_5'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.10"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Pedals'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Pedals.0"
+          },
+          "Key": {
+            "KeyName": "Q"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerHold'IMC_Airplane_Driver:InputTriggerHold_1'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.24"
+            },
+            {
+              "ObjectName": "InputTriggerReleased'IMC_Airplane_Driver:InputTriggerReleased_7'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.38"
+            }
+          ],
+          "Modifiers": [
+            {
+              "ObjectName": "WDDeadZoneInputModifier'IMC_Airplane_Driver:WDDeadZoneInputModifier_5'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.71"
+            },
+            {
+              "ObjectName": "WDApplyAxisConfig'IMC_Airplane_Driver:WDApplyAxisConfig_4'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.61"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Pedals'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Pedals.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_RightX"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_Airplane_Driver:BHPlayerMappableKeySettings_3'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.2"
+          }
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Camera_ToggleFreeLook'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Camera_ToggleFreeLook.0"
+          },
+          "Key": {
+            "KeyName": "LeftAlt"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_Airplane_Driver:BHPlayerMappableKeySettings_4'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.3"
+          }
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Camera_ToggleFreeLook'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Camera_ToggleFreeLook.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_DPad_Left"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_Airplane_Driver:BHPlayerMappableKeySettings_5'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.4"
+          }
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [
+            {
+              "ObjectName": "WDApplyAxisConfig'IMC_Airplane_Driver:WDApplyAxisConfig_0'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.57"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Camera_FreeLook'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Camera_FreeLook.0"
+          },
+          "Key": {
+            "KeyName": "Mouse2D"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [
+            {
+              "ObjectName": "WDDeadZoneInputModifier'IMC_Airplane_Driver:WDDeadZoneInputModifier_1'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.68"
+            },
+            {
+              "ObjectName": "InputModifierNegate'IMC_Airplane_Driver:InputModifierNegate_0'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.7"
+            },
+            {
+              "ObjectName": "WDApplyAxisConfig'IMC_Airplane_Driver:WDApplyAxisConfig_1'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.58"
+            },
+            {
+              "ObjectName": "WDAimAssistInputModifier'IMC_Airplane_Driver:WDAimAssistInputModifier_0'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.56"
+            },
+            {
+              "ObjectName": "InputModifierScalar'IMC_Airplane_Driver:InputModifierScalar_2'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.12"
+            },
+            {
+              "ObjectName": "InputModifierScaleByDeltaTime'IMC_Airplane_Driver:InputModifierScaleByDeltaTime_0'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.13"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Camera_FreeLook'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Camera_FreeLook.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_Right2D"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_Airplane_Driver:BHPlayerMappableKeySettings_6'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.5"
+          }
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerDown'IMC_Airplane_Driver:InputTriggerDown_2'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.22"
+            }
+          ],
+          "Modifiers": [
+            {
+              "ObjectName": "InputModifierResponseCurveExponential'IMC_Airplane_Driver:InputModifierResponseCurveExponential_0'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.11"
+            },
+            {
+              "ObjectName": "WDApplyAxisConfig'IMC_Airplane_Driver:WDApplyAxisConfig_2'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.59"
+            },
+            {
+              "ObjectName": "MInputBlocker'IMC_Airplane_Driver:WDInputBlocker_0'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.47"
+            },
+            {
+              "ObjectName": "WDBlockVehicleMouseInput'IMC_Airplane_Driver:WDBlockRotaryMouseInput_0'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.64"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Cyclic'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Cyclic.0"
+          },
+          "Key": {
+            "KeyName": "MouseY"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerDown'IMC_Airplane_Driver:InputTriggerDown_0'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.20"
+            }
+          ],
+          "Modifiers": [
+            {
+              "ObjectName": "InputModifierSwizzleAxis'IMC_Airplane_Driver:InputModifierSwizzleAxis_5'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.19"
+            },
+            {
+              "ObjectName": "MVehicleSpeedInputModifier'IMC_Airplane_Driver:BHVehicleSpeedInputModifier_0'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.54"
+            },
+            {
+              "ObjectName": "MInputBlocker'IMC_Airplane_Driver:WDInputBlocker_1'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.48"
+            },
+            {
+              "ObjectName": "WDBlockVehicleMouseInput'IMC_Airplane_Driver:WDBlockRotaryMouseInput_1'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.65"
+            },
+            {
+              "ObjectName": "WDApplyAxisConfig'IMC_Airplane_Driver:WDApplyAxisConfig_6'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.63"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Cyclic'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Cyclic.0"
+          },
+          "Key": {
+            "KeyName": "MouseX"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerDown'IMC_Airplane_Driver:InputTriggerDown_1'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.21"
+            }
+          ],
+          "Modifiers": [
+            {
+              "ObjectName": "WDApplyAxisConfig'IMC_Airplane_Driver:WDApplyAxisConfig_5'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.62"
+            },
+            {
+              "ObjectName": "MVehicleSpeedInputModifier'IMC_Airplane_Driver:BHVehicleSpeedInputModifier_1'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.55"
+            },
+            {
+              "ObjectName": "MInputBlocker'IMC_Airplane_Driver:WDInputBlocker_2'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.49"
+            },
+            {
+              "ObjectName": "WDBlockVehicleMouseInput'IMC_Airplane_Driver:WDBlockRotaryMouseInput_2'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.66"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Pedals'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Pedals.0"
+          },
+          "Key": {
+            "KeyName": "MouseX"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_FireFlares'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_FireFlares.0"
+          },
+          "Key": {
+            "KeyName": "V"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_AirplaneThrottleUp'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneThrottleUp.0"
+          },
+          "Key": {
+            "KeyName": "X"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [
+            {
+              "ObjectName": "WDDeadZoneInputModifier'IMC_Airplane_Driver:WDDeadZoneInputModifier_0'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.67"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_AirplaneThrottleUp'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneThrottleUp.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_RightTriggerAxis"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_AirplaneThrottleDown'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneThrottleDown.0"
+          },
+          "Key": {
+            "KeyName": "Z"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [
+            {
+              "ObjectName": "WDDeadZoneInputModifier'IMC_Airplane_Driver:WDDeadZoneInputModifier_3'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.70"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_AirplaneThrottleDown'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneThrottleDown.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_LeftTriggerAxis"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_GearUp'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_GearUp.0"
+          },
+          "Key": {
+            "KeyName": "G"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_AirplaneWheelBrake'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneWheelBrake.0"
+          },
+          "Key": {
+            "KeyName": "LeftControl"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_AggressiveMode'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AggressiveMode.0"
+          },
+          "Key": {
+            "KeyName": "LeftShift"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Airbrake'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Airbrake.0"
+          },
+          "Key": {
+            "KeyName": "SpaceBar"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_AirplaneExtendFlaps'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneExtendFlaps.0"
+          },
+          "Key": {
+            "KeyName": "Period"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_AirplaneRetractFlaps'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneRetractFlaps.0"
+          },
+          "Key": {
+            "KeyName": "Comma"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Camera_HoldFreeLook'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Camera_HoldFreeLook.0"
+          },
+          "Key": {
+            "KeyName": "LeftAlt"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Camera_HoldFreeLook'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Camera_HoldFreeLook.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_DPad_Left"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Deploy_SupplyCrate'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Deploy_SupplyCrate.0"
+          },
+          "Key": {
+            "KeyName": "G"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_Airplane_Driver:BHPlayerMappableKeySettings_29'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.1"
+          }
+        }
+      ]
+    }
+  }
+}
+--- export: UObject / InputModifierNegate_0 ---
+{
+  "Type": "InputModifierNegate",
+  "Name": "InputModifierNegate_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierNegate'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "bX": false,
+    "bZ": false
+  }
+}
+--- export: UObject / InputModifierNegate_3 ---
+{
+  "Type": "InputModifierNegate",
+  "Name": "InputModifierNegate_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierNegate'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  }
+}
+--- export: UObject / InputModifierNegate_4 ---
+{
+  "Type": "InputModifierNegate",
+  "Name": "InputModifierNegate_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierNegate'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  }
+}
+--- export: UObject / InputModifierNegate_5 ---
+{
+  "Type": "InputModifierNegate",
+  "Name": "InputModifierNegate_5",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierNegate'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  }
+}
+--- export: UObject / InputModifierResponseCurveExponential_0 ---
+{
+  "Type": "InputModifierResponseCurveExponential",
+  "Name": "InputModifierResponseCurveExponential_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierResponseCurveExponential'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "CurveExponent": {
+      "X": 0.1,
+      "Y": 0.1,
+      "Z": 0.1
+    }
+  }
+}
+--- export: UObject / InputModifierScalar_2 ---
+{
+  "Type": "InputModifierScalar",
+  "Name": "InputModifierScalar_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierScalar'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "Scalar": {
+      "X": 60.0,
+      "Y": 60.0,
+      "Z": 60.0
+    }
+  }
+}
+--- export: UObject / InputModifierScaleByDeltaTime_0 ---
+{
+  "Type": "InputModifierScaleByDeltaTime",
+  "Name": "InputModifierScaleByDeltaTime_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierScaleByDeltaTime'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  }
+}
+--- export: UObject / InputModifierSwizzleAxis_0 ---
+{
+  "Type": "InputModifierSwizzleAxis",
+  "Name": "InputModifierSwizzleAxis_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierSwizzleAxis'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  }
+}
+--- export: UObject / InputModifierSwizzleAxis_1 ---
+{
+  "Type": "InputModifierSwizzleAxis",
+  "Name": "InputModifierSwizzleAxis_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierSwizzleAxis'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  }
+}
+--- export: UObject / InputModifierSwizzleAxis_2 ---
+{
+  "Type": "InputModifierSwizzleAxis",
+  "Name": "InputModifierSwizzleAxis_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierSwizzleAxis'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  }
+}
+--- export: UObject / InputModifierSwizzleAxis_3 ---
+{
+  "Type": "InputModifierSwizzleAxis",
+  "Name": "InputModifierSwizzleAxis_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierSwizzleAxis'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "Order": "EInputAxisSwizzle::XZY"
+  }
+}
+--- export: UObject / InputModifierSwizzleAxis_4 ---
+{
+  "Type": "InputModifierSwizzleAxis",
+  "Name": "InputModifierSwizzleAxis_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierSwizzleAxis'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "Order": "EInputAxisSwizzle::XZY"
+  }
+}
+--- export: UObject / InputModifierSwizzleAxis_5 ---
+{
+  "Type": "InputModifierSwizzleAxis",
+  "Name": "InputModifierSwizzleAxis_5",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierSwizzleAxis'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  }
+}
+--- export: UObject / InputTriggerDown_0 ---
+{
+  "Type": "InputTriggerDown",
+  "Name": "InputTriggerDown_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerDown'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.0
+  }
+}
+--- export: UObject / InputTriggerDown_1 ---
+{
+  "Type": "InputTriggerDown",
+  "Name": "InputTriggerDown_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerDown'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.0
+  }
+}
+--- export: UObject / InputTriggerDown_2 ---
+{
+  "Type": "InputTriggerDown",
+  "Name": "InputTriggerDown_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerDown'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.0
+  }
+}
+--- export: UObject / InputTriggerHold_0 ---
+{
+  "Type": "InputTriggerHold",
+  "Name": "InputTriggerHold_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerHold'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "HoldTimeThreshold": 0.0,
+    "ActuationThreshold": 0.01
+  }
+}
+--- export: UObject / InputTriggerHold_1 ---
+{
+  "Type": "InputTriggerHold",
+  "Name": "InputTriggerHold_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerHold'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "HoldTimeThreshold": 0.0,
+    "ActuationThreshold": 0.01
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  }
+}
+--- export: UObject / InputTriggerPressed_1 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  }
+}
+--- export: UObject / InputTriggerPressed_2 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  }
+}
+--- export: UObject / InputTriggerPressed_3 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  }
+}
+--- export: UObject / InputTriggerPressed_4 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  }
+}
+--- export: UObject / InputTriggerPressed_5 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_5",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  }
+}
+--- export: UObject / InputTriggerReleased_0 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  }
+}
+--- export: UObject / InputTriggerReleased_1 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  }
+}
+--- export: UObject / InputTriggerReleased_2 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  }
+}
+--- export: UObject / InputTriggerReleased_3 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  }
+}
+--- export: UObject / InputTriggerReleased_4 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  }
+}
+--- export: UObject / InputTriggerReleased_5 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_5",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  }
+}
+--- export: UObject / InputTriggerReleased_6 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_6",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.01
+  }
+}
+--- export: UObject / InputTriggerReleased_7 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_7",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.01
+  }
+}
+--- export: UObject / BHDynamicScalarInputModifier_0 ---
+{
+  "Type": "MDynamicScalarInputModifier",
+  "Name": "BHDynamicScalarInputModifier_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MDynamicScalarInputModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "ActivateOnAction": {
+      "ObjectName": "BHInputAction'IA_Vehicle_AggressiveMode'",
+      "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AggressiveMode.0"
+    },
+    "BaseMul": 0.5
+  }
+}
+--- export: UObject / BHDynamicScalarInputModifier_2 ---
+{
+  "Type": "MDynamicScalarInputModifier",
+  "Name": "BHDynamicScalarInputModifier_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MDynamicScalarInputModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "ActivateOnAction": {
+      "ObjectName": "BHInputAction'IA_Vehicle_AggressiveMode'",
+      "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AggressiveMode.0"
+    },
+    "BaseMul": 0.25,
+    "AlternativeMul": 0.8
+  }
+}
+--- export: UObject / BHDynamicScalarInputModifier_3 ---
+{
+  "Type": "MDynamicScalarInputModifier",
+  "Name": "BHDynamicScalarInputModifier_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MDynamicScalarInputModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "ActivateOnAction": {
+      "ObjectName": "BHInputAction'IA_Vehicle_AggressiveMode'",
+      "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AggressiveMode.0"
+    },
+    "BaseMul": 0.5
+  }
+}
+--- export: UObject / BHDynamicScalarInputModifier_5 ---
+{
+  "Type": "MDynamicScalarInputModifier",
+  "Name": "BHDynamicScalarInputModifier_5",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MDynamicScalarInputModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "ActivateOnAction": {
+      "ObjectName": "BHInputAction'IA_Vehicle_AggressiveMode'",
+      "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AggressiveMode.0"
+    },
+    "BaseMul": 0.25,
+    "AlternativeMul": 0.8
+  }
+}
+--- export: UObject / BHDynamicSmoothInputModifier_1 ---
+{
+  "Type": "MDynamicSmoothInputModifier",
+  "Name": "BHDynamicSmoothInputModifier_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MDynamicSmoothInputModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "ActivateOnAction": {
+      "ObjectName": "BHInputAction'IA_Vehicle_AggressiveMode'",
+      "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AggressiveMode.0"
+    },
+    "BaseInterpSpeed": {
+      "X": 0.7,
+      "Y": 0.7
+    },
+    "AlternativeInterpSpeed": {
+      "X": 2.0,
+      "Y": 2.0
+    }
+  }
+}
+--- export: UObject / BHDynamicSmoothInputModifier_2 ---
+{
+  "Type": "MDynamicSmoothInputModifier",
+  "Name": "BHDynamicSmoothInputModifier_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MDynamicSmoothInputModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "ActivateOnAction": {
+      "ObjectName": "BHInputAction'IA_Vehicle_AggressiveMode'",
+      "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AggressiveMode.0"
+    },
+    "BaseInterpSpeed": {
+      "X": 0.7,
+      "Y": 0.7
+    },
+    "AlternativeInterpSpeed": {
+      "X": 2.0,
+      "Y": 2.0
+    }
+  }
+}
+--- export: UObject / BHDynamicSmoothInputModifier_4 ---
+{
+  "Type": "MDynamicSmoothInputModifier",
+  "Name": "BHDynamicSmoothInputModifier_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MDynamicSmoothInputModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "ActivateOnAction": {
+      "ObjectName": "BHInputAction'IA_Vehicle_AggressiveMode'",
+      "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AggressiveMode.0"
+    },
+    "BaseInterpSpeed": {
+      "X": 0.5,
+      "Y": 25.0
+    },
+    "AlternativeInterpSpeed": {
+      "X": 1.2,
+      "Y": 25.0
+    }
+  }
+}
+--- export: UObject / BHDynamicSmoothInputModifier_5 ---
+{
+  "Type": "MDynamicSmoothInputModifier",
+  "Name": "BHDynamicSmoothInputModifier_5",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MDynamicSmoothInputModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "ActivateOnAction": {
+      "ObjectName": "BHInputAction'IA_Vehicle_AggressiveMode'",
+      "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AggressiveMode.0"
+    },
+    "BaseInterpSpeed": {
+      "X": 0.5,
+      "Y": 25.0
+    },
+    "AlternativeInterpSpeed": {
+      "X": 1.2,
+      "Y": 25.0
+    }
+  }
+}
+--- export: UObject / WDInputBlocker_0 ---
+{
+  "Type": "MInputBlocker",
+  "Name": "WDInputBlocker_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MInputBlocker'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  }
+}
+--- export: UObject / WDInputBlocker_1 ---
+{
+  "Type": "MInputBlocker",
+  "Name": "WDInputBlocker_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MInputBlocker'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  }
+}
+--- export: UObject / WDInputBlocker_2 ---
+{
+  "Type": "MInputBlocker",
+  "Name": "WDInputBlocker_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MInputBlocker'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  }
+}
+--- export: UObject / BHSmoothingInputTrigger_0 ---
+{
+  "Type": "MNonZeroInputTrigger",
+  "Name": "BHSmoothingInputTrigger_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MNonZeroInputTrigger'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  }
+}
+--- export: UObject / BHSmoothingInputTrigger_1 ---
+{
+  "Type": "MNonZeroInputTrigger",
+  "Name": "BHSmoothingInputTrigger_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MNonZeroInputTrigger'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  }
+}
+--- export: UObject / BHSmoothingInputTrigger_2 ---
+{
+  "Type": "MNonZeroInputTrigger",
+  "Name": "BHSmoothingInputTrigger_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MNonZeroInputTrigger'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  }
+}
+--- export: UObject / BHSmoothingInputTrigger_3 ---
+{
+  "Type": "MNonZeroInputTrigger",
+  "Name": "BHSmoothingInputTrigger_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MNonZeroInputTrigger'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  }
+}
+--- export: UObject / BHVehicleSpeedInputModifier_0 ---
+{
+  "Type": "MVehicleSpeedInputModifier",
+  "Name": "BHVehicleSpeedInputModifier_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVehicleSpeedInputModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "InputMulRange": {
+      "X": 0.0,
+      "Y": 1.0
+    }
+  }
+}
+--- export: UObject / BHVehicleSpeedInputModifier_1 ---
+{
+  "Type": "MVehicleSpeedInputModifier",
+  "Name": "BHVehicleSpeedInputModifier_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVehicleSpeedInputModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  }
+}
+--- export: UObject / WDAimAssistInputModifier_0 ---
+{
+  "Type": "WDAimAssistInputModifier",
+  "Name": "WDAimAssistInputModifier_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAimAssistInputModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "MoveInputAction": {
+      "ObjectName": "BHInputAction'IA_Player_MoveDirectional'",
+      "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_MoveDirectional.0"
+    }
+  }
+}
+--- export: UObject / WDApplyAxisConfig_0 ---
+{
+  "Type": "WDApplyAxisConfig",
+  "Name": "WDApplyAxisConfig_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDApplyAxisConfig'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  }
+}
+--- export: UObject / WDApplyAxisConfig_1 ---
+{
+  "Type": "WDApplyAxisConfig",
+  "Name": "WDApplyAxisConfig_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDApplyAxisConfig'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "bIsGamepad": true
+  }
+}
+--- export: UObject / WDApplyAxisConfig_2 ---
+{
+  "Type": "WDApplyAxisConfig",
+  "Name": "WDApplyAxisConfig_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDApplyAxisConfig'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  }
+}
+--- export: UObject / WDApplyAxisConfig_3 ---
+{
+  "Type": "WDApplyAxisConfig",
+  "Name": "WDApplyAxisConfig_3",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDApplyAxisConfig'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "bIsGamepad": true
+  }
+}
+--- export: UObject / WDApplyAxisConfig_4 ---
+{
+  "Type": "WDApplyAxisConfig",
+  "Name": "WDApplyAxisConfig_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDApplyAxisConfig'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "bIsGamepad": true
+  }
+}
+--- export: UObject / WDApplyAxisConfig_5 ---
+{
+  "Type": "WDApplyAxisConfig",
+  "Name": "WDApplyAxisConfig_5",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDApplyAxisConfig'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  }
+}
+--- export: UObject / WDApplyAxisConfig_6 ---
+{
+  "Type": "WDApplyAxisConfig",
+  "Name": "WDApplyAxisConfig_6",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDApplyAxisConfig'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  }
+}
+--- export: UObject / WDBlockRotaryMouseInput_0 ---
+{
+  "Type": "WDBlockVehicleMouseInput",
+  "Name": "WDBlockRotaryMouseInput_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDBlockVehicleMouseInput'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  }
+}
+--- export: UObject / WDBlockRotaryMouseInput_1 ---
+{
+  "Type": "WDBlockVehicleMouseInput",
+  "Name": "WDBlockRotaryMouseInput_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDBlockVehicleMouseInput'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  }
+}
+--- export: UObject / WDBlockRotaryMouseInput_2 ---
+{
+  "Type": "WDBlockVehicleMouseInput",
+  "Name": "WDBlockRotaryMouseInput_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDBlockVehicleMouseInput'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  }
+}
+--- export: UObject / WDDeadZoneInputModifier_0 ---
+{
+  "Type": "WDDeadZoneInputModifier",
+  "Name": "WDDeadZoneInputModifier_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDDeadZoneInputModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "Type": "EDeadZoneType::Axial",
+    "MinThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.RightTrigger.Min"
+    },
+    "MaxThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.RightTrigger.Max"
+    }
+  }
+}
+--- export: UObject / WDDeadZoneInputModifier_1 ---
+{
+  "Type": "WDDeadZoneInputModifier",
+  "Name": "WDDeadZoneInputModifier_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDDeadZoneInputModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "MinThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.LookStick.Centre"
+    },
+    "MaxThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.LookStick.MaxInput"
+    },
+    "RadiusAxialThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.LookStick.Axial"
+    },
+    "bInvertMaxThreshold": true
+  }
+}
+--- export: UObject / WDDeadZoneInputModifier_2 ---
+{
+  "Type": "WDDeadZoneInputModifier",
+  "Name": "WDDeadZoneInputModifier_2",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDDeadZoneInputModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "MinThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.MoveStick.Centre"
+    },
+    "MaxThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.MoveStick.MaxInput"
+    },
+    "RadiusAxialThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.MoveStick.Axial"
+    },
+    "bInvertMaxThreshold": true
+  }
+}
+--- export: UObject / WDDeadZoneInputModifier_3 ---
+{
+  "Type": "WDDeadZoneInputModifier",
+  "Name": "WDDeadZoneInputModifier_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDDeadZoneInputModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "Type": "EDeadZoneType::Axial",
+    "MinThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.LeftTrigger.Min"
+    },
+    "MaxThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.LeftTrigger.Max"
+    }
+  }
+}
+--- export: UObject / WDDeadZoneInputModifier_5 ---
+{
+  "Type": "WDDeadZoneInputModifier",
+  "Name": "WDDeadZoneInputModifier_5",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDDeadZoneInputModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Airplane_Driver'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_Airplane_Driver.6"
+  },
+  "Properties": {
+    "MinThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.LookStick.Centre"
+    },
+    "MaxThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.LookStick.MaxInput"
+    },
+    "RadiusAxialThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.LookStick.Axial"
+    },
+    "bInvertMaxThreshold": true
+  }
+}

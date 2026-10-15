@@ -1,0 +1,122 @@
+--- export: UObject / WDActorBuildSpawner_0 ---
+{
+  "Type": "WDActorBuildSpawner",
+  "Name": "WDActorBuildSpawner_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDActorBuildSpawner'",
+  "Outer": {
+    "ObjectName": "WDBuildableDataAsset'DA_Buildable_CrowsNest_Roof'",
+    "ObjectPath": "/Buildables/Data/Buildables/CrowsNest/DA_Buildable_CrowsNest_Roof.1"
+  },
+  "Properties": {
+    "BaseBuildableClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Buildable_C'",
+      "ObjectPath": "/Buildables/Data/Buildables/B_Buildable.2"
+    }
+  }
+}
+--- export: UDataAsset / DA_Buildable_CrowsNest_Roof ---
+{
+  "Type": "WDBuildableDataAsset",
+  "Name": "DA_Buildable_CrowsNest_Roof",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDBuildableDataAsset'",
+  "Package": "/Buildables/Data/Buildables/CrowsNest/DA_Buildable_CrowsNest_Roof",
+  "Properties": {
+    "SpawnerOverride": {
+      "ObjectName": "WDActorBuildSpawner'DA_Buildable_CrowsNest_Roof:WDActorBuildSpawner_0'",
+      "ObjectPath": "/Buildables/Data/Buildables/CrowsNest/DA_Buildable_CrowsNest_Roof.0"
+    },
+    "EntityTag": {
+      "TagName": "Id.Buildable.CrowsNest.Roof"
+    },
+    "Cost": 10,
+    "_aaabfagpiegcpjedampen_$6F8462F9430CF4D$_$21$": 0.67,
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "12EFAB3A40A4CA733A5E49B9CF8FF08F",
+      "SourceString": "CrowsNest",
+      "LocalizedString": "CrowsNest"
+    },
+    "MaxHealth": 2250.0,
+    "MaxStack": 0,
+    "_aaabhobcmifficciohpfp_$E12C8558228E7F5F$_$23$": 0,
+    "BuildingStagesDefinition": {
+      "ObjectName": "BuildingStagesDefinition'DA_Buildable_CrowsNest_Roof_Stages'",
+      "ObjectPath": "/Buildables/Data/Buildables/CrowsNest/DA_Buildable_CrowsNest_Roof_Stages.0"
+    },
+    "BuildingStages": [
+      {
+        "Mesh": {
+          "AssetPathName": "/Buildables/Data/Buildables/CrowsNest/SM_Crows_Nest_Roof.SM_Crows_Nest_Roof",
+          "SubPathString": ""
+        },
+        "MeshLocalBoundingBox": {
+          "Min": {
+            "X": -351.16528,
+            "Y": -382.70065,
+            "Z": -260.8605
+          },
+          "Max": {
+            "X": 381.5009,
+            "Y": 370.90125,
+            "Z": 55.507927
+          },
+          "IsValid": 1
+        },
+        "RequiredBuildingProgress": 1.0,
+        "BuildingStageChangedVFXHeightFromBase": 0.0,
+        "CriticalHitSpotTransforms": []
+      }
+    ],
+    "BuildingStageChangedVFX": {
+      "AssetPathName": "/Buildables/Data/Buildables/NS_BuildStage.NS_BuildStage",
+      "SubPathString": ""
+    },
+    "NiagaraDataChannelAsset": {
+      "AssetPathName": "/Game/VFX/Building/DataChannel/NDC_Buildable.NDC_Buildable",
+      "SubPathString": ""
+    },
+    "FinalStageBoundingBox": {
+      "Min": {
+        "X": -351.16528,
+        "Y": -382.70065,
+        "Z": -260.8605
+      },
+      "Max": {
+        "X": 381.5009,
+        "Y": 370.90125,
+        "Z": 55.507927
+      },
+      "IsValid": 1
+    },
+    "ConstructedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Constructed"
+    },
+    "DestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Destroyed"
+    },
+    "PlacedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Placed"
+    },
+    "_aaabigdbeocppfeehmfch_$6314E2FF5447C527$_$24$": {
+      "TagName": "GameplayCue.Buildable.Dismantle"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Buildable.CrowsNest"
+      }
+    },
+    "PlacementConditions": [
+      {
+        "ObjectName": "Class'WDWithinFobBoundsPlacementCondition'",
+        "ObjectPath": "/Script/BuildablesRuntime"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_WithinLadderBoundsPlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_WithinLadderBoundsPlacementCondition.1"
+      }
+    ],
+    "bUsesCriticalHitSpots": false
+  }
+}

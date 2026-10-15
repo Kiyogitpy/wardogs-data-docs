@@ -1,0 +1,72 @@
+--- export: UDataAsset / EQS_BesiegeTakeOverMovementTokenHandling ---
+{
+  "Type": "EnvQuery",
+  "Name": "EQS_BesiegeTakeOverMovementTokenHandling",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQuery'",
+  "Package": "/Behavior_Besiege/EQS/EQS_BesiegeTakeOverMovementTokenHandling",
+  "Properties": {
+    "QueryName": "EQS_BesiegeTakeOverMovementTokenHandling",
+    "Options": [
+      {
+        "ObjectName": "EnvQueryOption'EQS_BesiegeTakeOverMovementTokenHandling:EnvQueryOption_1'",
+        "ObjectPath": "/Behavior_Besiege/EQS/EQS_BesiegeTakeOverMovementTokenHandling.1"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryOption_1 ---
+{
+  "Type": "EnvQueryOption",
+  "Name": "EnvQueryOption_1",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryOption'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_BesiegeTakeOverMovementTokenHandling'",
+    "ObjectPath": "/Behavior_Besiege/EQS/EQS_BesiegeTakeOverMovementTokenHandling.0"
+  },
+  "Properties": {
+    "Generator": {
+      "ObjectName": "SDEnvQueryGenerator_TokenRequests'EQS_BesiegeTakeOverMovementTokenHandling:SDEnvQueryGenerator_TokenRequests_1'",
+      "ObjectPath": "/Behavior_Besiege/EQS/EQS_BesiegeTakeOverMovementTokenHandling.2"
+    },
+    "Tests": [
+      {
+        "ObjectName": "WDEnvQueryTest_InfluenceMapValue'EQS_BesiegeTakeOverMovementTokenHandling:WDEnvQueryTest_InfluenceMapValue_0'",
+        "ObjectPath": "/Behavior_Besiege/EQS/EQS_BesiegeTakeOverMovementTokenHandling.3"
+      }
+    ]
+  }
+}
+--- export: UObject / SDEnvQueryGenerator_TokenRequests_1 ---
+{
+  "Type": "SDEnvQueryGenerator_TokenRequests",
+  "Name": "SDEnvQueryGenerator_TokenRequests_1",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'SDEnvQueryGenerator_TokenRequests'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_BesiegeTakeOverMovementTokenHandling'",
+    "ObjectPath": "/Behavior_Besiege/EQS/EQS_BesiegeTakeOverMovementTokenHandling.0"
+  },
+  "Properties": {
+    "VerNum": 1
+  }
+}
+--- export: UObject / WDEnvQueryTest_InfluenceMapValue_0 ---
+{
+  "Type": "WDEnvQueryTest_InfluenceMapValue",
+  "Name": "WDEnvQueryTest_InfluenceMapValue_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDEnvQueryTest_InfluenceMapValue'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_BesiegeTakeOverMovementTokenHandling'",
+    "ObjectPath": "/Behavior_Besiege/EQS/EQS_BesiegeTakeOverMovementTokenHandling.0"
+  },
+  "Properties": {
+    "InfluenceMapTag": {
+      "TagName": "InfluenceMap.TeamMap"
+    },
+    "TestPurpose": "EEnvTestPurpose::Score",
+    "VerNum": 2
+  }
+}

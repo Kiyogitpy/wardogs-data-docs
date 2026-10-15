@@ -1,0 +1,68 @@
+--- export: UPrimaryDataAsset / VV_WHL_07_Default ---
+{
+  "Type": "ModularVehicleVariant",
+  "Name": "VV_WHL_07_Default",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleVariant'",
+  "Package": "/WHL_07/Variants/VV_WHL_07_Default",
+  "Properties": {
+    "bIncludeInBuildCommandLine": true,
+    "VariantID": {
+      "TagName": "Vehicle.Variant.Land.Wheeled.Ural.Default"
+    },
+    "SpawnParams": {
+      "Min": {
+        "X": -401.2754,
+        "Y": -146.63548,
+        "Z": -0.505
+      },
+      "Max": {
+        "X": 399.66324,
+        "Y": 146.63458,
+        "Z": 289.1306
+      }
+    },
+    "AssemblyData": {
+      "VehicleBase": {
+        "ObjectName": "ModularVehiclePlatform'VP_WHL_07'",
+        "ObjectPath": "/WHL_07/Platforms/VP_WHL_07.0"
+      },
+      "CustomData": {
+        "SlotOverrides": [
+          {
+            "Path": {
+              "Path": "Seats"
+            },
+            "Part": {
+              "AssetPathName": "/WHL_07/Parts/VP_WHL_07_Seats.VP_WHL_07_Seats",
+              "SubPathString": ""
+            }
+          },
+          {
+            "Path": {
+              "Path": "Interactions"
+            },
+            "Part": {
+              "AssetPathName": "/WHL_07/Parts/VP_WHL_07_Interactions.VP_WHL_07_Interactions",
+              "SubPathString": ""
+            }
+          }
+        ],
+        "CustomFragmentData": [
+          {
+            "Path": {
+              "Path": ":Chassis"
+            },
+            "Data": {
+              "OverrideMesh": {
+                "AssetPathName": "/WHL_07/Meshes/SK_WHL_07.SK_WHL_07",
+                "SubPathString": ""
+              },
+              "OverrideMaterials": []
+            }
+          }
+        ]
+      }
+    }
+  }
+}

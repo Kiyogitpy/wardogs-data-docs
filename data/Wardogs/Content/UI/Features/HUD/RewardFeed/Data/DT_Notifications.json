@@ -1,0 +1,33 @@
+--- export: UDataTable / DT_Notifications ---
+{
+  "Type": "DataTable",
+  "Name": "DT_Notifications",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/UI/Features/HUD/RewardFeed/Data/DT_Notifications",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'SDUINotificationDataRow'",
+      "ObjectPath": "/Script/SDUINotification"
+    }
+  },
+  "Rows": {
+    "RewardEntry": {
+      "NotificationParams": {
+        "TextParams": [],
+        "ImageParams": [],
+        "ColorParams": [],
+        "ColorTagParams": [],
+        "Int32Params": [],
+        "FloatParams": [],
+        "Channel": "Reward",
+        "NotificationType": "Reward",
+        "Priority": "None",
+        "UniqueID": "None",
+        "DurationOverride": 1.5,
+        "bHasDuration": true,
+        "bShouldResetTimerOnUniqueUpdate": true
+      }
+    }
+  }
+}

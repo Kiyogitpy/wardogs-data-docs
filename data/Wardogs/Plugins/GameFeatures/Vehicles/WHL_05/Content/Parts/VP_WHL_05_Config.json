@@ -1,0 +1,42 @@
+--- export: UPrimaryDataAsset / VP_WHL_05_Config ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_WHL_05_Config",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/WHL_05/Parts/VP_WHL_05_Config",
+  "Properties": {
+    "Tags": [
+      "Vehicle.Config"
+    ],
+    "Fragments": [
+      {
+        "Key": "Config",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_VehicleConfig'VP_WHL_05_Config:MVF_VehicleConfig_0'",
+            "ObjectPath": "/WHL_05/Parts/VP_WHL_05_Config.1"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / MVF_VehicleConfig_0 ---
+{
+  "Type": "MVF_VehicleConfig",
+  "Name": "MVF_VehicleConfig_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_VehicleConfig'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_05_Config'",
+    "ObjectPath": "/WHL_05/Parts/VP_WHL_05_Config.0"
+  },
+  "Properties": {
+    "VehicleConfig": {
+      "AssetPathName": "/WHL_05/Data/DA_Config_WHL_05_Humvee.DA_Config_WHL_05_Humvee",
+      "SubPathString": ""
+    }
+  }
+}

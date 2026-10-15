@@ -1,0 +1,201 @@
+--- export: UPrimaryDataAsset / VP_ROT_03_RocketPods_Weaponry ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_ROT_03_RocketPods_Weaponry",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/ROT_03_WeaponVariants/Parts/VP_ROT_03_RocketPods_Weaponry",
+  "Properties": {
+    "Tags": [
+      "Vehicle.Turret"
+    ],
+    "Fragments": [
+      {
+        "Key": "WeaponMount",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_ROT_03_RocketPods_Weaponry:MVF_StaticMesh_1'",
+            "ObjectPath": "/ROT_03_WeaponVariants/Parts/VP_ROT_03_RocketPods_Weaponry.3"
+          }
+        }
+      },
+      {
+        "Key": "RocketPodR",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_SkeletalMesh'VP_ROT_03_RocketPods_Weaponry:MVF_SkeletalMesh_0'",
+            "ObjectPath": "/ROT_03_WeaponVariants/Parts/VP_ROT_03_RocketPods_Weaponry.1"
+          }
+        }
+      },
+      {
+        "Key": "RocketPodL",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_ROT_03_RocketPods_Weaponry:MVF_StaticMesh_0'",
+            "ObjectPath": "/ROT_03_WeaponVariants/Parts/VP_ROT_03_RocketPods_Weaponry.2"
+          }
+        }
+      },
+      {
+        "Key": "WeaponInventory",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_InventoryFragment'VP_ROT_03_RocketPods_Weaponry:WD_MVF_InventoryFragment_0'",
+            "ObjectPath": "/ROT_03_WeaponVariants/Parts/VP_ROT_03_RocketPods_Weaponry.4"
+          }
+        }
+      },
+      {
+        "Key": "WeaponExtension",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_WeaponFragment'VP_ROT_03_RocketPods_Weaponry:WD_MVF_WeaponFragment_0'",
+            "ObjectPath": "/ROT_03_WeaponVariants/Parts/VP_ROT_03_RocketPods_Weaponry.5"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / MVF_SkeletalMesh_0 ---
+{
+  "Type": "MVF_SkeletalMesh",
+  "Name": "MVF_SkeletalMesh_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_SkeletalMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_ROT_03_RocketPods_Weaponry'",
+    "ObjectPath": "/ROT_03_WeaponVariants/Parts/VP_ROT_03_RocketPods_Weaponry.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "PhysicsMode": "EModularVehiclePhysicsMode::AttachOnly",
+      "AttachQuery": {
+        "SourceID": "Chassis",
+        "SocketName": "turretSpinL_J"
+      },
+      "Method": "EModularVehicleComponentMode::CreateNew",
+      "Tags": [
+        "WeaponExtension"
+      ]
+    },
+    "SkeletalMesh": {
+      "AssetPathName": "/ROT_03/Meshes/AttackMeshes/Components/Mount/SKM_ROT_03_MissilePods_01a.SKM_ROT_03_MissilePods_01a",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_0 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_ROT_03_RocketPods_Weaponry'",
+    "ObjectPath": "/ROT_03_WeaponVariants/Parts/VP_ROT_03_RocketPods_Weaponry.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceID": "Chassis",
+        "SocketName": "turretSpinR_J"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/ROT_03/Meshes/AttackMeshes/Components/Mount/SM_ROT_03_MissilePods_01a.SM_ROT_03_MissilePods_01a",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_1 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_ROT_03_RocketPods_Weaponry'",
+    "ObjectPath": "/ROT_03_WeaponVariants/Parts/VP_ROT_03_RocketPods_Weaponry.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceID": "Chassis",
+        "SocketName": "body_J"
+      },
+      "bAttachSource": true,
+      "Tags": [
+        "RocketsMount"
+      ]
+    },
+    "StaticMesh": {
+      "AssetPathName": "/ROT_03/Meshes/AttackMeshes/Components/Mount/SM_ROT_03_Mount_01a.SM_ROT_03_Mount_01a",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    }
+  }
+}
+--- export: UObject / WD_MVF_InventoryFragment_0 ---
+{
+  "Type": "WD_MVF_InventoryFragment",
+  "Name": "WD_MVF_InventoryFragment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_InventoryFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_ROT_03_RocketPods_Weaponry'",
+    "ObjectPath": "/ROT_03_WeaponVariants/Parts/VP_ROT_03_RocketPods_Weaponry.0"
+  },
+  "Properties": {
+    "ItemDefinition": {
+      "AssetPathName": "/Game/Items/Vehicles/Weapons/ROT_03/ID_VehicleHelicopterRockets_ROT_03.ID_VehicleHelicopterRockets_ROT_03",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / WD_MVF_WeaponFragment_0 ---
+{
+  "Type": "WD_MVF_WeaponFragment",
+  "Name": "WD_MVF_WeaponFragment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_WeaponFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_ROT_03_RocketPods_Weaponry'",
+    "ObjectPath": "/ROT_03_WeaponVariants/Parts/VP_ROT_03_RocketPods_Weaponry.0"
+  },
+  "Properties": {
+    "WeaponMeshTagName": "WeaponExtension",
+    "WeaponDataAsset": {
+      "AssetPathName": "/ROT_03_WeaponVariants/Weapons/W_ROT_03_122mm.W_ROT_03_122mm",
+      "SubPathString": ""
+    },
+    "RoleRequirements": {
+      "RequireTags": [
+        "State.Player.Vehicle.Role.Driver"
+      ]
+    },
+    "AllowList": [
+      0
+    ]
+  }
+}

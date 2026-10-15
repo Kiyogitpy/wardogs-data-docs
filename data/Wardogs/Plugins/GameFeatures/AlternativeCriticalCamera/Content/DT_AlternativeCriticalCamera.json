@@ -1,0 +1,43 @@
+--- export: UDataTable / DT_AlternativeCriticalCamera ---
+{
+  "Type": "DataTable",
+  "Name": "DT_AlternativeCriticalCamera",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/AlternativeCriticalCamera/DT_AlternativeCriticalCamera",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDPostProcessEffect'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "PostProcessEffect.DeathState.Killcam": {
+      "MaterialClass": {
+        "ObjectName": "MaterialInstanceConstant'MI_PP_Damage'",
+        "ObjectPath": "/Game/VFX/Postprocess/MI_PP_Damage.0"
+      },
+      "Duration": 0.0,
+      "ProgressParams": [],
+      "ParameterValuesOnEffectApplication": [
+        {
+          "Value": 1.0,
+          "ParameterName": "IsKillcam"
+        }
+      ],
+      "OnRemoveParameterValues": [
+        {
+          "Value": 0.0,
+          "ParameterName": "IsKillcam"
+        }
+      ],
+      "bIgnoreMaterialRemoval": true,
+      "bRemoveOnPawnPossessed": true,
+      "bKeepInitialParameterValuesConstant": false,
+      "BlendWeight": 1.0,
+      "Tag": {
+        "TagName": "PostProcessEffect.DeathState.Killcam"
+      }
+    }
+  }
+}

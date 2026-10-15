@@ -1,0 +1,64 @@
+--- export: UPrimaryDataAsset / AE_Buildable_HotzoneMagnet_Ready_Start ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Buildable_HotzoneMagnet_Ready_Start",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Buildables/Data/Buildables/Hotzone_Magnet/Audio/AE_Buildable_HotzoneMagnet_Ready_Start",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Buildable.HotzoneMagnet.Ready.Start"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Buildable_HotzoneMagnet_Ready_Start:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Buildables/Data/Buildables/Hotzone_Magnet/Audio/AE_Buildable_HotzoneMagnet_Ready_Start.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Buildable_HotzoneMagnet_Ready_Start:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Buildables/Data/Buildables/Hotzone_Magnet/Audio/AE_Buildable_HotzoneMagnet_Ready_Start.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Buildable_HotzoneMagnet_Ready_Start'",
+    "ObjectPath": "/Buildables/Data/Buildables/Hotzone_Magnet/Audio/AE_Buildable_HotzoneMagnet_Ready_Start.0"
+  },
+  "Properties": {
+    "AttachmentOffset": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 250.0
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Build.HotZoneMagnet.Tablet"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Buildable_HotzoneMagnet_Ready_Start'",
+    "ObjectPath": "/Buildables/Data/Buildables/Hotzone_Magnet/Audio/AE_Buildable_HotzoneMagnet_Ready_Start.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Buildable_HotZoneMagnet_Ready'",
+      "ObjectPath": "/Buildables/Data/Buildables/Hotzone_Magnet/Audio/MSS_Buildable_HotZoneMagnet_Ready.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Build.HotZoneMagnet.Tablet"
+    }
+  }
+}

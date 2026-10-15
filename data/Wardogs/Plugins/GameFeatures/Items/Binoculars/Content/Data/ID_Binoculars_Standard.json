@@ -1,0 +1,697 @@
+--- export: UObject / BH_PrototypeMaskedScopes_ExtensionData_C_1 ---
+{
+  "Type": "BH_PrototypeMaskedScopes_ExtensionData_C",
+  "Name": "BH_PrototypeMaskedScopes_ExtensionData_C_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/PrototypeMaskedScopes/Data/BH_PrototypeMaskedScopes_ExtensionData.BH_PrototypeMaskedScopes_ExtensionData_C'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Binoculars_Standard:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Binoculars/Data/ID_Binoculars_Standard.7"
+  },
+  "Template": {
+    "ObjectName": "BH_PrototypeMaskedScopes_ExtensionData_C'Default__BH_PrototypeMaskedScopes_ExtensionData_C'",
+    "ObjectPath": "/PrototypeMaskedScopes/Data/BH_PrototypeMaskedScopes_ExtensionData.0"
+  },
+  "Properties": {
+    "MaterialImage": {
+      "AssetPathName": "/Game/UI/Textures/Rangefinder_Reticle_Test_NoMarkers.Rangefinder_Reticle_Test_NoMarkers",
+      "SubPathString": ""
+    },
+    "SquareOpactiy": 0.0,
+    "ShowZoomLevel": false,
+    "ActionTag": {
+      "TagName": "Action.Binoculars.ADS"
+    },
+    "DefaultAdsZoom": 4.0,
+    "AdsZoomMax": 4.0,
+    "MouseZoomMultiplierStep": 0.0,
+    "AdsLerpSpeed": 0.0,
+    "MaskedScopeWidgetClass": {
+      "AssetPathName": "/PrototypeMaskedScopes/Data/UI/W_HUD_MaskedScope.W_HUD_MaskedScope_C",
+      "SubPathString": ""
+    },
+    "MaskedScopeCount": 2
+  }
+}
+--- export: UObject / BH_SpottingExtensionData_C_0 ---
+{
+  "Type": "BH_SpottingExtensionData_C",
+  "Name": "BH_SpottingExtensionData_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Spotting/Data/BH_SpottingExtensionData.BH_SpottingExtensionData_C'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Binoculars_Standard:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Binoculars/Data/ID_Binoculars_Standard.7"
+  },
+  "Template": {
+    "ObjectName": "BH_SpottingExtensionData_C'Default__BH_SpottingExtensionData_C'",
+    "ObjectPath": "/Spotting/Data/BH_SpottingExtensionData.0"
+  },
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.Binoculars.ADS"
+    },
+    "TrackingBoundsDiameter": 350,
+    "bShowDistance": false,
+    "bShowHitData": true,
+    "TargetData": [
+      {
+        "Key": "/Script/WDGame.WDMoverCharacter",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 0.5,
+          "SpotRefreshTime": 1.0,
+          "DecayTime": 30.0,
+          "PersistentSpotTime": 180.0
+        }
+      },
+      {
+        "Key": "/Script/WDGame.WDTargetDummy",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 0.5,
+          "SpotRefreshTime": 1.0,
+          "DecayTime": 30.0,
+          "PersistentSpotTime": 180.0
+        }
+      },
+      {
+        "Key": "/Script/WDGame.WDRotaryVehicle",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 0.75,
+          "SpotRefreshTime": 1.25,
+          "DecayTime": 60.0,
+          "PersistentSpotTime": 180.0
+        }
+      },
+      {
+        "Key": "/Script/WDGame.WDAirplaneVehicle",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 0.75,
+          "SpotRefreshTime": 1.25,
+          "DecayTime": 60.0,
+          "PersistentSpotTime": 180.0
+        }
+      },
+      {
+        "Key": "/Script/WDGame.WDTrackedVehicle",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 1.25,
+          "SpotRefreshTime": 1.5,
+          "DecayTime": 90.0,
+          "PersistentSpotTime": 180.0
+        }
+      },
+      {
+        "Key": "/Script/WDGame.WDWheeledVehiclePawn",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 0.75,
+          "SpotRefreshTime": 1.25,
+          "DecayTime": 60.0,
+          "PersistentSpotTime": 180.0
+        }
+      },
+      {
+        "Key": "/Script/WDGame.WDLandminePlaceable",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 1.5,
+          "SpotRefreshTime": 2.5,
+          "DecayTime": 3600.0,
+          "PersistentSpotTime": 3600.0
+        }
+      },
+      {
+        "Key": "/Buildables/Data/Buildables/ForwardOperatingBase/Buildables/B_Buildable_ForwardOperatingBase_Valkyra.B_Buildable_ForwardOperatingBase_Valkyra_C",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 2.5,
+          "SpotRefreshTime": 5.0,
+          "DecayTime": 3600.0,
+          "PersistentSpotTime": 3600.0
+        }
+      },
+      {
+        "Key": "/Buildables/Data/Buildables/ForwardOperatingBase/Buildables/B_Buildable_ForwardOperatingBase_Manticore.B_Buildable_ForwardOperatingBase_Manticore_C",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 2.5,
+          "SpotRefreshTime": 5.0,
+          "DecayTime": 3600.0,
+          "PersistentSpotTime": 3600.0
+        }
+      },
+      {
+        "Key": "/Buildables/Data/Buildables/ForwardOperatingBase/Buildables/B_Buildable_ForwardOperatingBase_Lonestar.B_Buildable_ForwardOperatingBase_Lonestar_C",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 2.5,
+          "SpotRefreshTime": 5.0,
+          "DecayTime": 3600.0,
+          "PersistentSpotTime": 3600.0
+        }
+      },
+      {
+        "Key": "/Buildables/Data/Buildables/Hotzone_Magnet/B_Buildable_HotzoneMagnet.B_Buildable_HotzoneMagnet_C",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 2.5,
+          "SpotRefreshTime": 5.0,
+          "DecayTime": 900.0,
+          "PersistentSpotTime": 900.0
+        }
+      },
+      {
+        "Key": "/Script/WDGame.WDVehicleSupplyCrate",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 2.5,
+          "SpotRefreshTime": 5.0,
+          "DecayTime": 3600.0,
+          "PersistentSpotTime": 3600.0
+        }
+      },
+      {
+        "Key": "/Script/WDGame.WDVehicleSupplyPallet",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 2.5,
+          "SpotRefreshTime": 5.0,
+          "DecayTime": 3600.0,
+          "PersistentSpotTime": 3600.0
+        }
+      },
+      {
+        "Key": "/Script/WDGame.WDStationaryVehicle",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 2.5,
+          "SpotRefreshTime": 5.0,
+          "DecayTime": 900.0,
+          "PersistentSpotTime": 900.0
+        }
+      },
+      {
+        "Key": "/Buildables/Data/Buildables/ForwardOperatingBase/B_ForwardOperatingBase_LoneStar.B_ForwardOperatingBase_LoneStar_C",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 2.5,
+          "SpotRefreshTime": 5.0,
+          "DecayTime": 3600.0,
+          "PersistentSpotTime": 3600.0
+        }
+      },
+      {
+        "Key": "/Buildables/Data/Buildables/ForwardOperatingBase/B_ForwardOperatingBase_Manticore.B_ForwardOperatingBase_Manticore_C",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 2.5,
+          "SpotRefreshTime": 5.0,
+          "DecayTime": 3600.0,
+          "PersistentSpotTime": 3600.0
+        }
+      },
+      {
+        "Key": "/Buildables/Data/Buildables/ForwardOperatingBase/B_ForwardOperatingBase_Valkyra.B_ForwardOperatingBase_Valkyra_C",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 2.5,
+          "SpotRefreshTime": 5.0,
+          "DecayTime": 3600.0,
+          "PersistentSpotTime": 3600.0
+        }
+      },
+      {
+        "Key": "/Buildables/Data/Buildables/RefuelStation/B_BuildableRefuelStation.B_BuildableRefuelStation_C",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 2.5,
+          "SpotRefreshTime": 5.0,
+          "DecayTime": 900.0,
+          "PersistentSpotTime": 900.0
+        }
+      },
+      {
+        "Key": "/Buildables/Data/Buildables/RepairStation/B_BuildableRepairStation.B_BuildableRepairStation_C",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 2.5,
+          "SpotRefreshTime": 5.0,
+          "DecayTime": 900.0,
+          "PersistentSpotTime": 900.0
+        }
+      }
+    ],
+    "_aaabgomanahllknocifco_$EC0D07BBADE2852E$_$22$": [
+      "Vehicle.Variant.Stationary.Loudspeaker"
+    ],
+    "_aaabbnkhogljfbnnpgekg_$DA7E6B951DDF64A6$_$17$": [
+      "State.Location.SafeZone.Alpha",
+      "State.Location.SafeZone.Bravo",
+      "State.Location.SafeZone.Charlie"
+    ],
+    "SpottedTargetGameplayCueTag": {
+      "TagName": "GameplayCue.Player.SpottedTarget"
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Binoculars_Standard'",
+    "ObjectPath": "/Binoculars/Data/ID_Binoculars_Standard.5"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 2,
+      "Y": 2
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Binoculars_Standard'",
+    "ObjectPath": "/Binoculars/Data/ID_Binoculars_Standard.5"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Binoculars/Meshes/SM_Binoculars.SM_Binoculars",
+      "SubPathString": ""
+    },
+    "RelativeRotation": {
+      "Pitch": -87.0,
+      "Yaw": 0.0,
+      "Roll": 0.0
+    },
+    "bOverrideDroppedRelativeLocation": true,
+    "OverridedRelativeLocation": {
+      "X": -1.7,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "bOverrideDroppedBoxExtent": true,
+    "OverridedBoxExtent": {
+      "X": 6.5,
+      "Y": 15.0,
+      "Z": 15.0
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Binoculars_Standard'",
+    "ObjectPath": "/Binoculars/Data/ID_Binoculars_Standard.5"
+  },
+  "Properties": {
+    "Weight": 0.3
+  }
+}
+--- export: UPrimaryDataAsset / ID_Binoculars_Standard ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_Binoculars_Standard",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Binoculars/Data/ID_Binoculars_Standard",
+  "Properties": {
+    "ItemId": {
+      "TagName": "ID.Item.Binoculars"
+    },
+    "ItemContext": [
+      "Item.Archetype.Spotting",
+      "Item.Context.Animation.Type.Unarmed",
+      "Inventory.Slot.Specialist",
+      "Item.Context.Equippable",
+      "Item.Context.QuickSlot",
+      "Item.Context.UtilityItem",
+      "Item.Context.Animation.Archetype.Binoculars"
+    ],
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+      "Key": "Items.Utility.Binoculars",
+      "SourceString": "Binoculars",
+      "LocalizedString": "Binoculars"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_ItemActor'ID_Binoculars_Standard:WDInventoryFragment_ItemActor_0'",
+        "ObjectPath": "/Binoculars/Data/ID_Binoculars_Standard.7"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_Binoculars_Standard:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/Binoculars/Data/ID_Binoculars_Standard.4"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_Binoculars_Standard:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Binoculars/Data/ID_Binoculars_Standard.3"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_Binoculars_Standard:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Binoculars/Data/ID_Binoculars_Standard.6"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_Binoculars_Standard:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Binoculars/Data/ID_Binoculars_Standard.2"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Binoculars_Standard'",
+    "ObjectPath": "/Binoculars/Data/ID_Binoculars_Standard.5"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Binoculars_Audio'",
+      "ObjectPath": "/Binoculars/Data/Audio/ID_Binoculars_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_ItemActor_0 ---
+{
+  "Type": "WDInventoryFragment_ItemActor",
+  "Name": "WDInventoryFragment_ItemActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_ItemActor'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Binoculars_Standard'",
+    "ObjectPath": "/Binoculars/Data/ID_Binoculars_Standard.5"
+  },
+  "Properties": {
+    "ExtensionDataFragments": [
+      {
+        "ObjectName": "WDItemExtensionData_Holdable'ID_Binoculars_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Holdable_0'",
+        "ObjectPath": "/Binoculars/Data/ID_Binoculars_Standard.11"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Input'ID_Binoculars_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+        "ObjectPath": "/Binoculars/Data/ID_Binoculars_Standard.12"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_GameplayEffects'ID_Binoculars_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_AttributeExtension_1'",
+        "ObjectPath": "/Binoculars/Data/ID_Binoculars_Standard.10"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Animation'ID_Binoculars_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Animation_0'",
+        "ObjectPath": "/Binoculars/Data/ID_Binoculars_Standard.8"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_AudioExtension'ID_Binoculars_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_AudioExtension_0'",
+        "ObjectPath": "/Binoculars/Data/ID_Binoculars_Standard.9"
+      },
+      {
+        "ObjectName": "BH_PrototypeMaskedScopes_ExtensionData_C'ID_Binoculars_Standard:WDInventoryFragment_ItemActor_0.BH_PrototypeMaskedScopes_ExtensionData_C_1'",
+        "ObjectPath": "/Binoculars/Data/ID_Binoculars_Standard.0"
+      },
+      {
+        "ObjectName": "BH_SpottingExtensionData_C'ID_Binoculars_Standard:WDInventoryFragment_ItemActor_0.BH_SpottingExtensionData_C_0'",
+        "ObjectPath": "/Binoculars/Data/ID_Binoculars_Standard.1"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Inventory'ID_Binoculars_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Inventory_0'",
+        "ObjectPath": "/Binoculars/Data/ID_Binoculars_Standard.13"
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Animation_0 ---
+{
+  "Type": "WDItemExtensionData_Animation",
+  "Name": "WDItemExtensionData_Animation_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Animation'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Binoculars_Standard:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Binoculars/Data/ID_Binoculars_Standard.7"
+  },
+  "Properties": {
+    "AnimationSet": {
+      "ObjectName": "BHAnimationSet'AnimSet_BinocularsStandard'",
+      "ObjectPath": "/Binoculars/Data/AnimSet_BinocularsStandard.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_AudioExtension_0 ---
+{
+  "Type": "WDItemExtensionData_AudioExtension",
+  "Name": "WDItemExtensionData_AudioExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_AudioExtension'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Binoculars_Standard:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Binoculars/Data/ID_Binoculars_Standard.7"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Binoculars_Audio'",
+      "ObjectPath": "/Binoculars/Data/Audio/ID_Binoculars_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_AttributeExtension_1 ---
+{
+  "Type": "WDItemExtensionData_GameplayEffects",
+  "Name": "WDItemExtensionData_AttributeExtension_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_GameplayEffects'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Binoculars_Standard:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Binoculars/Data/ID_Binoculars_Standard.7"
+  }
+}
+--- export: UObject / WDItemExtensionData_Holdable_0 ---
+{
+  "Type": "WDItemExtensionData_Holdable",
+  "Name": "WDItemExtensionData_Holdable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Holdable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Binoculars_Standard:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Binoculars/Data/ID_Binoculars_Standard.7"
+  },
+  "Properties": {
+    "HoldableMesh": {
+      "ObjectName": "SkeletalMesh'SK_Binoculars'",
+      "ObjectPath": "/Binoculars/Meshes/SK_Binoculars.1"
+    },
+    "MaterialOverrides": [
+      null
+    ],
+    "MeshAnimClass": {
+      "ObjectName": "AnimBlueprintGeneratedClass'ABP_Binoculars_Layer_C'",
+      "ObjectPath": "/Binoculars/Animation/Blueprint/ABP_Binoculars_Layer.1"
+    },
+    "EquipAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_Binoculars_Equip'",
+        "ObjectPath": "/Binoculars/Animation/FP/Character/Montage/AM_FP_Binoculars_Equip.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_EquipmentRH_Equip'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/EquipmentRH/Actions/AM_TP_Gen_EquipmentRH_Equip.0"
+      }
+    },
+    "HolsterAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_Binoculars_Holster'",
+        "ObjectPath": "/Binoculars/Animation/FP/Character/Montage/AM_FP_Binoculars_Holster.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_EquipmentRH_Holster'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/EquipmentRH/Actions/AM_TP_Gen_EquipmentRH_Holster.0"
+      }
+    },
+    "EquippedAnimSet": {
+      "DefaultFirstPersonLayer": {
+        "AssetPathName": "/Binoculars/Animation/Blueprint/ABP_FP_Binoculars_Layer.ABP_FP_Binoculars_Layer_C",
+        "SubPathString": ""
+      },
+      "DefaultThirdPersonLayer": {
+        "AssetPathName": "/Binoculars/Animation/Blueprint/ABP_TP_Binoculars_Layer_RW.ABP_TP_Binoculars_Layer_RW_C",
+        "SubPathString": ""
+      }
+    },
+    "FallbackMeshSignificanceThreshold": {
+      "Significance": 0.01
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_InputActionExtension_0 ---
+{
+  "Type": "WDItemExtensionData_Input",
+  "Name": "WDItemExtensionData_InputActionExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Input'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Binoculars_Standard:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Binoculars/Data/ID_Binoculars_Standard.7"
+  },
+  "Properties": {
+    "InputMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_Spotting'",
+      "ObjectPath": "/Spotting/Data/Input/IMC_Spotting.2"
+    },
+    "InputBehaviors": [
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.SecondaryUse"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_Binoculars_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_0'",
+          "ObjectPath": "/Binoculars/Data/ID_Binoculars_Standard.14"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.SecondaryUse.Release"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_CompleteAction'ID_Binoculars_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_CompleteAction_0'",
+          "ObjectPath": "/Binoculars/Data/ID_Binoculars_Standard.16"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.Inspect"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_Binoculars_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_6'",
+          "ObjectPath": "/Binoculars/Data/ID_Binoculars_Standard.15"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Inventory_0 ---
+{
+  "Type": "WDItemExtensionData_Inventory",
+  "Name": "WDItemExtensionData_Inventory_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Inventory'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Binoculars_Standard:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Binoculars/Data/ID_Binoculars_Standard.7"
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_0 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_Binoculars_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Binoculars/Data/ID_Binoculars_Standard.12"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Binoculars.ADS"
+    },
+    "ActionBehaviorTag": {
+      "TagName": "UserSettings.Controls.ActionBehavior.ADS"
+    },
+    "GamepadActionBehaviorTag": {
+      "TagName": "UserSettings.Controls.ActionBehavior.Gamepad.ADS"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_6 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_6",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_Binoculars_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Binoculars/Data/ID_Binoculars_Standard.12"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Item.Inspect"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_CompleteAction_0 ---
+{
+  "Type": "WDItemInputBehavior_CompleteAction",
+  "Name": "WDItemInputBehavior_CompleteAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_CompleteAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_Binoculars_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Binoculars/Data/ID_Binoculars_Standard.12"
+  },
+  "Properties": {
+    "ActionToComplete": {
+      "TagName": "Action.Binoculars.ADS"
+    },
+    "ActionBehaviorTag": {
+      "TagName": "UserSettings.Controls.ActionBehavior.ADS"
+    },
+    "GamepadActionBehaviorTag": {
+      "TagName": "UserSettings.Controls.ActionBehavior.Gamepad.ADS"
+    }
+  }
+}

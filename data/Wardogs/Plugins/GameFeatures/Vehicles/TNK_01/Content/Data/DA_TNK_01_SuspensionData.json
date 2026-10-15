@@ -1,0 +1,44 @@
+--- export: UDataAsset / DA_TNK_01_SuspensionData ---
+{
+  "Type": "MTrackedVehicleSuspensionData",
+  "Name": "DA_TNK_01_SuspensionData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MTrackedVehicleSuspensionData'",
+  "Package": "/TNK_01/Data/DA_TNK_01_SuspensionData",
+  "Properties": {
+    "TreadMesh": {
+      "AssetPathName": "/Game/Vehicles/Shared/StaticMeshes/SM_Wheel_Track_02.SM_Wheel_Track_02",
+      "SubPathString": ""
+    },
+    "TreadsOnSpline": 71,
+    "LeftTrackBones": [
+      "wheelSpinL_01_J",
+      "wheelSpinL_02_J",
+      "wheelSpinL_03_J",
+      "wheelSpinL_04_J",
+      "wheelSpinL_05_J",
+      "wheelSpinL_06_J",
+      "wheelSpinL_07_J"
+    ],
+    "RightTrackBones": [
+      "wheelSpinR_01_J",
+      "wheelSpinR_02_J",
+      "wheelSpinR_03_J",
+      "wheelSpinR_04_J",
+      "wheelSpinR_05_J",
+      "wheelSpinR_06_J",
+      "wheelSpinR_07_J"
+    ],
+    "LeftSprocketBone": "rearWheelSpinL_J",
+    "LeftIdlerBone": "frontWheelSpinL_J",
+    "RightSprocketBone": "rearWheelSpinR_J",
+    "RightIdlerBone": "frontWheelSpinR_J",
+    "SprocketRadius": 35.0,
+    "IdlerRadius": 35.0,
+    "Radius": 35.0,
+    "SuspensionUpTravel": 0.15,
+    "SuspensionDownTravel": 0.15,
+    "StiffnessForce": 6000000.0,
+    "DampenForce": 20000.0
+  }
+}

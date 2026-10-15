@@ -1,0 +1,69 @@
+--- export: UObject / AEB_EndBehavior_C_1 ---
+{
+  "Type": "AEB_EndBehavior_C",
+  "Name": "AEB_EndBehavior_C_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_EndBehavior.AEB_EndBehavior_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_SPW_01_Engine_Stop'",
+    "ObjectPath": "/SPW_01/Audio/Events/AE_SPW_01_Engine_Stop.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_EndBehavior_C'Default__AEB_EndBehavior_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_EndBehavior.0"
+  },
+  "Properties": {
+    "BehaviorClass": {
+      "ObjectName": "Class'WDAudioEventBehaviorVehicleThreatLevel'",
+      "ObjectPath": "/Script/WDGame"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Engine"
+    }
+  }
+}
+--- export: UObject / AEB_SetBooleanParameter_C_0 ---
+{
+  "Type": "AEB_SetBooleanParameter_C",
+  "Name": "AEB_SetBooleanParameter_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetBooleanParameter.AEB_SetBooleanParameter_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_SPW_01_Engine_Stop'",
+    "ObjectPath": "/SPW_01/Audio/Events/AE_SPW_01_Engine_Stop.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetBooleanParameter_C'Default__AEB_SetBooleanParameter_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetBooleanParameter.0"
+  },
+  "Properties": {
+    "In Name": "Engine On",
+    "Delay": 0.0,
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Engine"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_SPW_01_Engine_Stop ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_SPW_01_Engine_Stop",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/SPW_01/Audio/Events/AE_SPW_01_Engine_Stop",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Engine.Stop.SPW_01"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_EndBehavior_C'AE_SPW_01_Engine_Stop:AEB_EndBehavior_C_1'",
+        "ObjectPath": "/SPW_01/Audio/Events/AE_SPW_01_Engine_Stop.0"
+      },
+      {
+        "ObjectName": "AEB_SetBooleanParameter_C'AE_SPW_01_Engine_Stop:AEB_SetBooleanParameter_C_0'",
+        "ObjectPath": "/SPW_01/Audio/Events/AE_SPW_01_Engine_Stop.1"
+      }
+    ]
+  }
+}

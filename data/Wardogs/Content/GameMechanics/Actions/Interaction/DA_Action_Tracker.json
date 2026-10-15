@@ -1,0 +1,43 @@
+--- export: UPrimaryDataAsset / DA_Action_Tracker ---
+{
+  "Type": "BHActionDefinition",
+  "Name": "DA_Action_Tracker",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHActionDefinition'",
+  "Package": "/Game/GameMechanics/Actions/Interaction/DA_Action_Tracker",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.Player.Tracker"
+    },
+    "ActionContext": [
+      "Action.Context.Interaction"
+    ],
+    "ActionClass": {
+      "ObjectName": "Class'WDGameplayAction'",
+      "ObjectPath": "/Script/WDGame"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::Block",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Block",
+          "ActionResponses": [
+            "Action.Equipment.Change",
+            "Action.Defibrillator.Reload",
+            "Action.Weapon.Bow.Reload",
+            "Action.Weapon.Reload.Tactical",
+            "Action.Weapon.Reload.Segmented",
+            "Action.Weapon.Reload.Empty",
+            "Action.Weapon.Reload.Auto",
+            "Action.Weapon.Reload.Discarding"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      }
+    ]
+  }
+}

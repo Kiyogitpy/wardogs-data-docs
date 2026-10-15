@@ -1,0 +1,68 @@
+--- export: UObject / AEB_RequestVoxRepeat_C_0 ---
+{
+  "Type": "AEB_RequestVoxRepeat_C",
+  "Name": "AEB_RequestVoxRepeat_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_RequestVoxRepeat.AEB_RequestVoxRepeat_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_State_LowHealth_Start'",
+    "ObjectPath": "/Game/Audio/Events/Player/State/AE_Player_State_LowHealth_Start.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_RequestVoxRepeat_C'Default__AEB_RequestVoxRepeat_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_RequestVoxRepeat.0"
+  },
+  "Properties": {
+    "Vox Request": {
+      "LineID": {
+        "TagName": "Audio.Vox.Exertion.TakingDamage.GoingLowHealth"
+      },
+      "Perspective": "EWDVoxPerspective::ThirdPerson",
+      "Allegiance": "EWDVoxAllegiance::Ally"
+    },
+    "RepeatTimeMin": 18.0,
+    "RepeatTimeMax": 6.0,
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Player_State_LowHealth_Start ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Player_State_LowHealth_Start",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/State/AE_Player_State_LowHealth_Start",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.State.LowHealth"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Player_State_LowHealth_Start:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/State/AE_Player_State_LowHealth_Start.2"
+      },
+      {
+        "ObjectName": "AEB_RequestVoxRepeat_C'AE_Player_State_LowHealth_Start:AEB_RequestVoxRepeat_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/State/AE_Player_State_LowHealth_Start.0"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_State_LowHealth_Start'",
+    "ObjectPath": "/Game/Audio/Events/Player/State/AE_Player_State_LowHealth_Start.1"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

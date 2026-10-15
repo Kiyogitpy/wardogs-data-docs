@@ -1,0 +1,47 @@
+--- export: UDataAsset / W_STN_02_MainCannon ---
+{
+  "Type": "WDVehicleWeaponDataAsset",
+  "Name": "W_STN_02_MainCannon",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeaponDataAsset'",
+  "Package": "/STN_02/Weapons/W_STN_02_MainCannon",
+  "Properties": {
+    "WeaponTag": {
+      "TagName": "Id.Vehicle.Weapon.STN_02.MainCannon"
+    },
+    "SkeletalMeshAsset": {
+      "AssetPathName": "/STN_02/Meshes/SK_Phalanx_CIWS.SK_Phalanx_CIWS",
+      "SubPathString": ""
+    },
+    "MuzzleSockets": [
+      "Muzzle"
+    ],
+    "PlayerAttachSocket": {
+      "SourceID": "Chassis",
+      "SocketName": "S_Player_Seat"
+    },
+    "GamepadRotationSensitivity": 50.0,
+    "GamepadRotationUpdateMax": {
+      "X": 150.0,
+      "Y": 150.0
+    },
+    "MouseRotationSensitivity": 12.5,
+    "MouseRotationUpdateMax": {
+      "X": 85.0,
+      "Y": 85.0
+    },
+    "KeyRotationSensitivity": 90.0,
+    "bApplyFovScale": false,
+    "WeaponRotationComponentData": {
+      "MinWeaponYawAngle": 90.0,
+      "MaxWeaponYawAngle": -90.0,
+      "bLimitWeaponPitch": true,
+      "MinWeaponPitchAngle": -5.0,
+      "MaxWeaponPitchAngle": 55.0,
+      "RotationSpeed": 115.0,
+      "YawJointSocket": "Chassis",
+      "WeaponRotationGameplayCueThreshold": 5.52089E-40
+    },
+    "WeaponStatesCameraData": []
+  }
+}

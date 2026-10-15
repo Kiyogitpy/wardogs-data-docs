@@ -1,0 +1,39 @@
+--- export: UPrimaryDataAsset / AE_AMB_3D_Water_River ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_AMB_3D_Water_River",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Ambience/3D/Water/AE_AMB_3D_Water_River",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Ambience.3D.Water.River"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_AMB_3D_Water_River:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Ambience/3D/Water/AE_AMB_3D_Water_River.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_AMB_3D_Water_River'",
+    "ObjectPath": "/Game/Audio/Events/Ambience/3D/Water/AE_AMB_3D_Water_River.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Amb_3D_RiverSpline'",
+      "ObjectPath": "/Game/Audio/Ambience/3D/MS/MSS_Amb_3D_RiverSpline.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

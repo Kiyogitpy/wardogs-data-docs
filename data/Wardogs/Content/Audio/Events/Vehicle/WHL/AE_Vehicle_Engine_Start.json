@@ -1,0 +1,82 @@
+--- export: UObject / AEB_SetAudioParameters_C_1 ---
+{
+  "Type": "AEB_SetAudioParameters_C",
+  "Name": "AEB_SetAudioParameters_C_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetAudioParameters.AEB_SetAudioParameters_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Engine_Start'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/WHL/AE_Vehicle_Engine_Start.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetAudioParameters_C'Default__AEB_SetAudioParameters_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetAudioParameters.0"
+  },
+  "Properties": {
+    "Parameters": [
+      {
+        "ParamName": "AllowIgnition",
+        "FloatParam": 0.0,
+        "BoolParam": true,
+        "IntParam": 0,
+        "ObjectParam": null,
+        "StringParam": "",
+        "ArrayFloatParam": [],
+        "ArrayBoolParam": [],
+        "ArrayIntParam": [],
+        "ArrayObjectParam": [],
+        "ArrayStringParam": [],
+        "ParamType": "EAudioParameterType::Boolean",
+        "TypeName": "None"
+      }
+    ],
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Engine"
+    }
+  }
+}
+--- export: UObject / AEB_SetBooleanParameter_C_1 ---
+{
+  "Type": "AEB_SetBooleanParameter_C",
+  "Name": "AEB_SetBooleanParameter_C_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetBooleanParameter.AEB_SetBooleanParameter_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Engine_Start'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/WHL/AE_Vehicle_Engine_Start.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetBooleanParameter_C'Default__AEB_SetBooleanParameter_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetBooleanParameter.0"
+  },
+  "Properties": {
+    "In Name": "AllowIgnition",
+    "Delay": 0.2,
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Engine"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_Engine_Start ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_Engine_Start",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/WHL/AE_Vehicle_Engine_Start",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Engine.Start"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_SetAudioParameters_C'AE_Vehicle_Engine_Start:AEB_SetAudioParameters_C_1'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/WHL/AE_Vehicle_Engine_Start.0"
+      },
+      {
+        "ObjectName": "AEB_SetBooleanParameter_C'AE_Vehicle_Engine_Start:AEB_SetBooleanParameter_C_1'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/WHL/AE_Vehicle_Engine_Start.1"
+      }
+    ]
+  }
+}

@@ -1,0 +1,340 @@
+--- export: UObject / WDActorBuildSpawner_0 ---
+{
+  "Type": "WDActorBuildSpawner",
+  "Name": "WDActorBuildSpawner_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDActorBuildSpawner'",
+  "Outer": {
+    "ObjectName": "WDBuildableDataAsset'DA_Buildable_BarbedWire'",
+    "ObjectPath": "/Buildables/Data/Buildables/BarbedWire/DA_Buildable_BarbedWire.1"
+  },
+  "Properties": {
+    "BaseBuildableClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Buildable_BarbedWire_C'",
+      "ObjectPath": "/Buildables/Data/Buildables/BarbedWire/B_Buildable_BarbedWire.2"
+    }
+  }
+}
+--- export: UDataAsset / DA_Buildable_BarbedWire ---
+{
+  "Type": "WDBuildableDataAsset",
+  "Name": "DA_Buildable_BarbedWire",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDBuildableDataAsset'",
+  "Package": "/Buildables/Data/Buildables/BarbedWire/DA_Buildable_BarbedWire",
+  "Properties": {
+    "SpawnerOverride": {
+      "ObjectName": "WDActorBuildSpawner'DA_Buildable_BarbedWire:WDActorBuildSpawner_0'",
+      "ObjectPath": "/Buildables/Data/Buildables/BarbedWire/DA_Buildable_BarbedWire.0"
+    },
+    "EntityTag": {
+      "TagName": "Id.Buildable.BarbedWire"
+    },
+    "Cost": 7,
+    "PlacePivotHorizontalOffset": 3.5,
+    "_aaabfagpiegcpjedampen_$6F8462F9430CF4D$_$21$": 0.47,
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+      "Key": "Buildable.BarbedWire",
+      "SourceString": "Barbed Wire",
+      "LocalizedString": "Barbed Wire"
+    },
+    "MaxHealth": 250.0,
+    "bUseCurveToUpdateHealthVisuals": true,
+    "HealthVisualsPercentageCurve": {
+      "ExternalCurve": {
+        "ObjectName": "CurveFloat'C_DamageTintCurve'",
+        "ObjectPath": "/Buildables/Data/Buildables/C_DamageTintCurve.0"
+      }
+    },
+    "MaxStack": 100,
+    "SnapTransforms": [
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.70710677,
+          "W": -0.70710677,
+          "IsNormalized": true,
+          "Size": 0.99999994,
+          "SizeSquared": 0.99999994
+        },
+        "Translation": {
+          "X": -6.7715814E-07,
+          "Y": -140.0,
+          "Z": 2.1988E-08
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": -0.0,
+          "Z": 0.70710677,
+          "W": 0.70710677,
+          "IsNormalized": true,
+          "Size": 0.99999994,
+          "SizeSquared": 0.99999994
+        },
+        "Translation": {
+          "X": -4.3753204E-08,
+          "Y": 140.0,
+          "Z": 3.7323815E-09
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": -0.0,
+          "Z": 0.0,
+          "W": 1.0,
+          "IsNormalized": true,
+          "Size": 1.0,
+          "SizeSquared": 1.0
+        },
+        "Translation": {
+          "X": 75.0,
+          "Y": 75.0,
+          "Z": -3.522086E-07
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": -0.0,
+          "Z": 0.0,
+          "W": 1.0,
+          "IsNormalized": true,
+          "Size": 1.0,
+          "SizeSquared": 1.0
+        },
+        "Translation": {
+          "X": 75.0,
+          "Y": -75.0,
+          "Z": -3.522087E-07
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": -0.0,
+          "Z": 1.0,
+          "W": 6.123234E-17,
+          "IsNormalized": true,
+          "Size": 1.0,
+          "SizeSquared": 1.0
+        },
+        "Translation": {
+          "X": -75.0,
+          "Y": -75.0,
+          "Z": -3.522087E-07
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": -0.0,
+          "Z": 1.0,
+          "W": 6.123234E-17,
+          "IsNormalized": true,
+          "Size": 1.0,
+          "SizeSquared": 1.0
+        },
+        "Translation": {
+          "X": -75.0,
+          "Y": 75.0,
+          "Z": -3.5220867E-07
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": -0.70710677,
+          "Y": -4.5759656E-08,
+          "Z": 0.70710677,
+          "W": -4.5759656E-08,
+          "IsNormalized": true,
+          "Size": 0.99999994,
+          "SizeSquared": 0.99999994
+        },
+        "Translation": {
+          "X": 0.0,
+          "Y": 75.0,
+          "Z": -3.5220873E-07
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.70710677,
+          "Y": -4.3297803E-17,
+          "Z": -0.70710677,
+          "W": -4.3297803E-17,
+          "IsNormalized": true,
+          "Size": 0.99999994,
+          "SizeSquared": 0.99999994
+        },
+        "Translation": {
+          "X": 0.0,
+          "Y": -75.0,
+          "Z": -3.5220873E-07
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": -0.70710677,
+          "Y": -4.3297803E-17,
+          "Z": -0.70710677,
+          "W": 4.3297803E-17,
+          "IsNormalized": true,
+          "Size": 0.99999994,
+          "SizeSquared": 0.99999994
+        },
+        "Translation": {
+          "X": -5.6507213E-13,
+          "Y": -75.0,
+          "Z": 150.0
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": -0.70710677,
+          "Z": 0.0,
+          "W": 0.70710677,
+          "IsNormalized": true,
+          "Size": 0.99999994,
+          "SizeSquared": 0.99999994
+        },
+        "Translation": {
+          "X": -4.9426873E-08,
+          "Y": 75.0,
+          "Z": 150.0
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      }
+    ],
+    "RadialWheelSlotTag": [
+      "Id.Buildable.BarbedWire"
+    ],
+    "PlacementBlockedPenetrationBuffer": 20.0,
+    "SnappedPlacementBlockedPenetrationBuffer": 25.0,
+    "bRequiresAllCornersOnSurface": false,
+    "bRotateWithSurface": true,
+    "_aaablnjcghmpobdcpmclm_$D9267CFE132FC2BC$_$27$": true,
+    "ServerSurfaceHitResultLeeway": 45.0,
+    "PlacementBlockedPenetrationBuffer": 75.0,
+    "bCanBuildFoundation": false,
+    "BuildingStagesDefinition": {
+      "ObjectName": "BuildingStagesDefinition'DA_Buildable_BarbedWire_Stages'",
+      "ObjectPath": "/Buildables/Data/Buildables/BarbedWire/DA_Buildable_BarbedWire_Stages.0"
+    },
+    "BuildingStageChangedVFX": {
+      "AssetPathName": "/Buildables/Data/Buildables/NS_BuildStage.NS_BuildStage",
+      "SubPathString": ""
+    },
+    "NiagaraDataChannelAsset": {
+      "AssetPathName": "/Game/VFX/Building/DataChannel/NDC_Buildable.NDC_Buildable",
+      "SubPathString": ""
+    },
+    "FinalStageBoundingBox": {
+      "Min": {
+        "X": -99.38292,
+        "Y": -137.5667,
+        "Z": -4.217407
+      },
+      "Max": {
+        "X": 106.869125,
+        "Y": 137.4056,
+        "Z": 148.55374
+      },
+      "IsValid": 1
+    },
+    "MaterialDamageTintCPD": 7,
+    "ConstructedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Constructed"
+    },
+    "DestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Destroyed"
+    },
+    "PlacedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Placed"
+    },
+    "_aaabigdbeocppfeehmfch_$6314E2FF5447C527$_$24$": {
+      "TagName": "GameplayCue.Buildable.Dismantle"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Buildable.BarbedWire"
+      }
+    },
+    "PlacementConditions": [
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_SafeZonePlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_SafeZonePlacementCondition.1"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_WithinLadderBoundsPlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_WithinLadderBoundsPlacementCondition.1"
+      },
+      {
+        "ObjectName": "Class'WDNotInsideEnemyFobBoundsPlacementCondition'",
+        "ObjectPath": "/Script/BuildablesRuntime"
+      }
+    ],
+    "bUsesCriticalHitSpots": false,
+    "AudioData": {
+      "ObjectName": "WDAudioData'DA_Buildable_BarbedWire_Audio'",
+      "ObjectPath": "/Buildables/Data/Buildables/BarbedWire/Audio/DA_Buildable_BarbedWire_Audio.0"
+    },
+    "RadialWheelSlotTag": {
+      "TagName": "UI.RadialWheel.BuildTool.SlotType.BarbedWire"
+    }
+  }
+}

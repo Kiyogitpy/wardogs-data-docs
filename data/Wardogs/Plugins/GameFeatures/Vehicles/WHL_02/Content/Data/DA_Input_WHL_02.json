@@ -1,0 +1,31 @@
+--- export: UDataAsset / DA_Input_WHL_02 ---
+{
+  "Type": "MWheeledVehicleInputDataAsset",
+  "Name": "DA_Input_WHL_02",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MWheeledVehicleInputDataAsset'",
+  "Package": "/WHL_02/Data/DA_Input_WHL_02",
+  "Properties": {
+    "SteerSpeedCurve": {
+      "ObjectName": "CurveFloat'CRV_SteerSpeedVariant'",
+      "ObjectPath": "/WHL_02/Data/Curves/CRV_SteerSpeedVariant.0"
+    },
+    "SteerLimitCurve": {
+      "ObjectName": "CurveFloat'CRV_SteerLimitVariant'",
+      "ObjectPath": "/WHL_02/Data/Curves/CRV_SteerLimitVariant.0"
+    },
+    "SteerInputGravity": 2.0,
+    "ThrottleEngagement": {
+      "ObjectName": "CurveFloat'CRV_ThrottleEngagement'",
+      "ObjectPath": "/WHL_02/Data/Curves/CRV_ThrottleEngagement.0"
+    },
+    "BrakeEngagement": {
+      "ObjectName": "CurveFloat'CRV_BrakeEngagement'",
+      "ObjectPath": "/WHL_02/Data/Curves/CRV_BrakeEngagement.0"
+    },
+    "ClutchEngagement": {
+      "ObjectName": "CurveFloat'CRV_ClutchEngagement'",
+      "ObjectPath": "/WHL_02/Data/Curves/CRV_ClutchEngagement.0"
+    }
+  }
+}

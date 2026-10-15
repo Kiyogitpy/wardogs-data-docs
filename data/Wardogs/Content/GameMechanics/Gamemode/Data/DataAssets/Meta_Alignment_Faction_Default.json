@@ -1,0 +1,88 @@
+--- export: UPrimaryDataAsset / Meta_Alignment_Faction_Default ---
+{
+  "Type": "WDFactionData",
+  "Name": "Meta_Alignment_Faction_Default",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDFactionData'",
+  "Package": "/Game/GameMechanics/Gamemode/Data/DataAssets/Meta_Alignment_Faction_Default",
+  "Properties": {
+    "FactionTag": {
+      "TagName": "Meta.Alignment.Faction.Default"
+    },
+    "FactionName": {
+      "Namespace": "",
+      "Key": "D4BE015B4AAB1BAEB79EBA990B896668",
+      "SourceString": "White",
+      "LocalizedString": "White"
+    },
+    "FactionShortName": {
+      "Namespace": "",
+      "Key": "D1253A034CC41A9C99126088964920AB",
+      "SourceString": "White",
+      "LocalizedString": "White"
+    },
+    "Icons": {
+      "FallbackIcon": {
+        "AssetPathName": "/Game/UI/Features/HUD/Chatbox/Textures/CustomEmojis/t_ui_customemoji_wardogs.t_ui_customemoji_wardogs",
+        "SubPathString": ""
+      },
+      "TaggedIcons": [
+        {
+          "Key": "/Game/UI/Features/HUD/Chatbox/Textures/CustomEmojis/t_ui_customemoji_wardogs.t_ui_customemoji_wardogs",
+          "Value": [
+            "UI.Icon.Default",
+            "UI.Icon.FactionSelect",
+            "UI.Icon.Inventory",
+            "UI.Icon.Tracker.TacticalMap.Spawn",
+            "UI.Icon.GameOver",
+            "UI.Icon.Chatbox",
+            "UI.Icon.EventFeed",
+            "UI.Icon.GameModeStatus",
+            "UI.Icon.Scoreboard"
+          ]
+        },
+        {
+          "Key": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Textures/T_UI_Icon_Spatial_GRN_White_256px.T_UI_Icon_Spatial_GRN_White_256px",
+          "Value": []
+        },
+        {
+          "Key": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Textures/T_UI_SquadMarker_Icon.T_UI_SquadMarker_Icon",
+          "Value": [
+            "UI.Icon.Tracker.Spatial.Player.Squad",
+            "UI.Icon.Chatbox.Squad",
+            "UI.Icon.Passengers.Squad",
+            "UI.Icon.Killfeed.Squad",
+            "UI.Icon.Tracker.TacticalMap.Player.Squad",
+            "UI.Icon.EventFeed.Squad"
+          ]
+        },
+        {
+          "Key": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Textures/T_UI_Icon_Spatial_GrnTeamSpawn_256px.T_UI_Icon_Spatial_GrnTeamSpawn_256px",
+          "Value": [
+            "UI.Icon.Tracker.Spatial.Spawn"
+          ]
+        },
+        {
+          "Key": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Textures/T_UI_Manticore_SpatialIcon.T_UI_Manticore_SpatialIcon",
+          "Value": [
+            "UI.Icon.Passengers",
+            "UI.Icon.Tracker.Spatial.Player"
+          ]
+        }
+      ]
+    },
+    "TPCharacterMaterials": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_Western_Band'",
+        "ObjectPath": "/Game/Characters/First_Playable/Western/Variants/MI_Western_Band.0"
+      }
+    ],
+    "BlockColorMaterials": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_WDPlayerNoTeam'",
+        "ObjectPath": "/Game/Characters/Default_PlayerMesh/TP/Materials/MI_WDPlayerNoTeam.0"
+      }
+    ],
+    "GenericTeamId": 3
+  }
+}

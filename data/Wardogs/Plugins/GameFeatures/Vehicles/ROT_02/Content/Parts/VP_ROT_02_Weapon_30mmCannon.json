@@ -1,0 +1,152 @@
+--- export: UPrimaryDataAsset / VP_ROT_02_Weapon_30mmCannon ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_ROT_02_Weapon_30mmCannon",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/ROT_02/Parts/VP_ROT_02_Weapon_30mmCannon",
+  "Properties": {
+    "Tags": [
+      "Id.Vehicle.WeaponExtension"
+    ],
+    "Fragments": [
+      {
+        "Key": "WeaponMesh",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_SkeletalMesh'VP_ROT_02_Weapon_30mmCannon:MVF_SkeletalMesh_0'",
+            "ObjectPath": "/ROT_02/Parts/VP_ROT_02_Weapon_30mmCannon.1"
+          }
+        }
+      },
+      {
+        "Key": "WeaponInventory",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_InventoryFragment'VP_ROT_02_Weapon_30mmCannon:WD_MVF_InventoryFragment_0'",
+            "ObjectPath": "/ROT_02/Parts/VP_ROT_02_Weapon_30mmCannon.2"
+          }
+        }
+      },
+      {
+        "Key": "WeaponFragment",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_WeaponFragment'VP_ROT_02_Weapon_30mmCannon:WD_MVF_WeaponFragment_0'",
+            "ObjectPath": "/ROT_02/Parts/VP_ROT_02_Weapon_30mmCannon.3"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / MVF_SkeletalMesh_0 ---
+{
+  "Type": "MVF_SkeletalMesh",
+  "Name": "MVF_SkeletalMesh_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_SkeletalMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_ROT_02_Weapon_30mmCannon'",
+    "ObjectPath": "/ROT_02/Parts/VP_ROT_02_Weapon_30mmCannon.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "PhysicsMode": "EModularVehiclePhysicsMode::AttachOnly",
+      "Constraint": {
+        "LinearLimit": {
+          "ContactDistance": 0.0
+        },
+        "ConeLimit": {
+          "Swing1LimitDegrees": 0.0,
+          "Swing2LimitDegrees": 0.0,
+          "ContactDistance": 0.0,
+          "bSoftConstraint": false
+        },
+        "TwistLimit": {
+          "TwistLimitDegrees": 0.0,
+          "ContactDistance": 0.0,
+          "bSoftConstraint": false
+        },
+        "bParentDominates": true,
+        "bEnableMassConditioning": false
+      },
+      "AttachQuery": {
+        "SourceID": "Chassis",
+        "SocketName": "weapon_Attach"
+      },
+      "bAttachSource": true,
+      "AttachSource": {
+        "TaggedSockets": [
+          {
+            "Key": "None",
+            "Value": []
+          }
+        ]
+      },
+      "Method": "EModularVehicleComponentMode::CreateNew",
+      "Tags": [
+        "WeaponExtension_0"
+      ]
+    },
+    "SkeletalMesh": {
+      "AssetPathName": "/ROT_02/BigBirdTurret/SK_Helicopter_Turret.SK_Helicopter_Turret",
+      "SubPathString": ""
+    },
+    "AnimInstance": {
+      "AssetPathName": "/ROT_02/BigBirdTurret/ABP_Helicopter_Turret.ABP_Helicopter_Turret_C",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_Kinematic"
+      }
+    }
+  }
+}
+--- export: UObject / WD_MVF_InventoryFragment_0 ---
+{
+  "Type": "WD_MVF_InventoryFragment",
+  "Name": "WD_MVF_InventoryFragment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_InventoryFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_ROT_02_Weapon_30mmCannon'",
+    "ObjectPath": "/ROT_02/Parts/VP_ROT_02_Weapon_30mmCannon.0"
+  },
+  "Properties": {
+    "ItemDefinition": {
+      "AssetPathName": "/Game/Items/Vehicles/Weapons/ROT_02/ID_VehicleHelicopterCannon.ID_VehicleHelicopterCannon",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / WD_MVF_WeaponFragment_0 ---
+{
+  "Type": "WD_MVF_WeaponFragment",
+  "Name": "WD_MVF_WeaponFragment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_WeaponFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_ROT_02_Weapon_30mmCannon'",
+    "ObjectPath": "/ROT_02/Parts/VP_ROT_02_Weapon_30mmCannon.0"
+  },
+  "Properties": {
+    "WeaponMeshTagName": "WeaponExtension_0",
+    "WeaponDataAsset": {
+      "AssetPathName": "/ROT_02/Weapons/Cannon/W_ROT_02_30mmCannon.W_ROT_02_30mmCannon",
+      "SubPathString": ""
+    },
+    "RoleRequirements": {
+      "RequireTags": [
+        "State.Player.Vehicle.Role.Gunner"
+      ]
+    },
+    "AllowList": [
+      1
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+--- export: UDataAsset / W_TNK_03 ---
+{
+  "Type": "WDVehicleWeaponDataAsset",
+  "Name": "W_TNK_03",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeaponDataAsset'",
+  "Package": "/TNK_01/Weapons/AntiAir/W_TNK_03",
+  "Properties": {
+    "WeaponTag": {
+      "TagName": "Id.Vehicle.Weapon.TNK_01.Turret.AntiAir"
+    },
+    "SkeletalMeshAsset": {
+      "AssetPathName": "/TNK_01/Mesh/TNK_03/SK/SK_TNK_03_Turret.SK_TNK_03_Turret",
+      "SubPathString": ""
+    },
+    "MuzzleSockets": [
+      "muzzleSocket_Turret_L",
+      "muzzleSocket_Turret_R"
+    ],
+    "PlayerAttachSocket": {
+      "SourceID": "TurretSkeleton",
+      "SocketName": "S_Attach_TankTurret_Player"
+    },
+    "GamepadRotationSensitivity": 50.0,
+    "GamepadRotationUpdateMax": {
+      "X": 150.0,
+      "Y": 150.0
+    },
+    "MouseRotationSensitivity": 25.0,
+    "MouseRotationUpdateMax": {
+      "X": 150.0,
+      "Y": 150.0
+    },
+    "KeyRotationSensitivity": 100.0
+  }
+}

@@ -1,0 +1,94 @@
+--- export: UDataAsset / DA_Demolition_TelephonePole_Concrete_01 ---
+{
+  "Type": "BHDemolitionDataAsset",
+  "Name": "DA_Demolition_TelephonePole_Concrete_01",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDemolitionDataAsset'",
+  "Package": "/Game/Demolition/DA_Demolition_TelephonePole_Concrete_01",
+  "Properties": {
+    "SourceMeshes": [
+      {
+        "Key": "StaticMesh'/Game/Environment/Transport_Infrastructure/Telephone_Poles/SM_TelephonePole_02a.SM_TelephonePole_02a'",
+        "Value": {
+          "FarRepresentationMesh": {
+            "AssetPathName": "/Game/Environment/Transport_Infrastructure/Street_Lights/Demolition/SM_FarRep_LampPost_01a.SM_FarRep_LampPost_01a",
+            "SubPathString": ""
+          },
+          "RemnantMeshes": null,
+          "Remnant_BaseCPD": {
+            "CustomPrimitiveColor": {
+              "R": 0.104167,
+              "G": 0.093716,
+              "B": 0.087753,
+              "A": 0.0,
+              "Hex": "5B5653"
+            },
+            "CustomPrimitiveValue": [
+              0.0,
+              1.0
+            ]
+          },
+          "FarRepresentationData": {
+            "Offset": {
+              "Rotation": {
+                "X": 0.0,
+                "Y": 0.0,
+                "Z": 0.0,
+                "W": 1.0,
+                "IsNormalized": true,
+                "Size": 1.0,
+                "SizeSquared": 1.0
+              },
+              "Translation": {
+                "X": 0.0,
+                "Y": 0.0,
+                "Z": 0.0
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            },
+            "CPD": {
+              "CustomPrimitiveColor": {
+                "R": 0.104167,
+                "G": 0.093716,
+                "B": 0.087753,
+                "A": 0.0,
+                "Hex": "5B5653"
+              },
+              "CustomPrimitiveValue": []
+            }
+          }
+        }
+      }
+    ],
+    "DemolitionComponentSettings": {
+      "ObjectName": "BHDemolitionComponentSettings'DA_Demolition_CS_Default'",
+      "ObjectPath": "/Game/Developers/Celesteneukirchen/Demolition/Settings/DA_Demolition_CS_Default.0"
+    },
+    "DemolitionRuleSet": {
+      "ObjectName": "BHDemolitionRuleset'BH_Demolition_RS_LargeAndMediumVehiclesAndExplosions'",
+      "ObjectPath": "/Game/Demolition/RuleSets/BH_Demolition_RS_LargeAndMediumVehiclesAndExplosions.5"
+    },
+    "PermittedZones": [
+      "Demolition.Zone.Important",
+      "Demolition.Zone.Distant"
+    ],
+    "DemolitionVFX": [
+      {
+        "AssetPathName": "/Game/VFX/Environmental/Destruction/Demolition/Metal/NS_LampPostSmash.NS_LampPostSmash",
+        "SubPathString": ""
+      }
+    ],
+    "CrosstalkEventTag": {
+      "TagName": "Audio.Event.Prop.Demolition.FenceConcrete"
+    },
+    "DemolitionFragments": [
+      {
+        "RestitutionImpulseMultiplier": 0.3
+      }
+    ]
+  }
+}

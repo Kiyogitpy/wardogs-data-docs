@@ -1,0 +1,110 @@
+--- export: UDataTable / DT_VendorData_Ext_Flares ---
+{
+  "Type": "DataTable",
+  "Name": "DT_VendorData_Ext_Flares",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Flares/Data/DT_VendorData_Ext_Flares",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDVendorData'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Id.Item.Flares": {
+      "Categories": [
+        "Vendor.Category.Vehicle.CounterMeasures"
+      ],
+      "VendorItemVariations": [
+        {
+          "VariationTag": {
+            "TagName": "Id.Item.Flares"
+          },
+          "UnlockRequiredItems": [],
+          "Categories": [
+            "Vendor.Category.Vehicle.CounterMeasures"
+          ],
+          "Subcategories": [
+            "Vendor.Category.Vehicle.CounterMeasures.Flares"
+          ],
+          "VendorRenderUILightingGroupTag": {
+            "TagName": "None"
+          },
+          "VendorRenderUISpawnTransform": {
+            "Rotation": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0,
+              "W": 1.0,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0
+            },
+            "Translation": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 1.0,
+              "Z": 1.0
+            }
+          },
+          "VehicleStatsDataAsset": null,
+          "VendorAudioData": null,
+          "Price": 750.0,
+          "Amount": 1,
+          "_aaabciphbkkmideofopnc_$8F71AAC834E5EFD2$_$18$": true,
+          "LevelToUnlock": 1,
+          "bRequiresAccountEntitlement": false,
+          "LifeTimeBuyLimit": 0,
+          "OverwrittenFriendlyName": {
+            "CultureInvariantString": null
+          },
+          "bOverwriteFriendlyName": false,
+          "OverwrittenSubtitleText": {
+            "CultureInvariantString": null
+          },
+          "bOverwriteSubtitleText": false,
+          "OverwrittenDescription": {
+            "CultureInvariantString": null
+          },
+          "bOverwriteDescription": false,
+          "OverwrittenDescriptionColor": {
+            "B": 0,
+            "G": 0,
+            "R": 255,
+            "A": 255,
+            "Hex": "FF0000"
+          },
+          "bOverwriteDescriptionColor": false,
+          "OverwrittenIcon": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "bOverwriteIcon": false,
+          "bOverwriteWeight": false,
+          "OverwrittenWeight": 1.0,
+          "CustomData": null,
+          "bShowInVendor": true,
+          "bIsPreviewOnly": false,
+          "VendorSlotTag": {
+            "TagName": "None"
+          }
+        }
+      ],
+      "bFactionSpecific": false,
+      "Faction": {
+        "TagName": "None"
+      },
+      "PurchaseCompletedAudioEvent": {
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
+      },
+      "Tag": {
+        "TagName": "Id.Item.Flares"
+      }
+    }
+  }
+}

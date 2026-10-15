@@ -1,0 +1,40 @@
+--- export: UPrimaryDataAsset / AE_Comms_LoggingIn_Disconnecting ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Comms_LoggingIn_Disconnecting",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Comms/VOIP/AE_Comms_LoggingIn_Disconnecting",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Comms.LoggingIn.Disconnecting"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Comms_LoggingIn_Disconnecting:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_LoggingIn_Disconnecting.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Comms_LoggingIn_Disconnecting'",
+    "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_LoggingIn_Disconnecting.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Comms_LoggingIn_Disconnecting_Preset'",
+      "ObjectPath": "/Game/Audio/Comms/VOIP/MSS_Comms_LoggingIn_Disconnecting_Preset.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::IfDifferentSound",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

@@ -1,0 +1,277 @@
+--- export: UDataAsset / DA_UI_BuildablePlacementData ---
+{
+  "Type": "WDUIBuildablePlacementData",
+  "Name": "DA_UI_BuildablePlacementData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIBuildablePlacementData'",
+  "Package": "/Buildables/Data/Buildables/DA_UI_BuildablePlacementData",
+  "Properties": {
+    "PlacementStatusTextMap": [
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.Blocked"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.PlacementBlocked",
+          "SourceString": "Obstructed",
+          "LocalizedString": "Obstructed"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.NotEnoughSupplies"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.NotEnoughSupplies",
+          "SourceString": "Not Enough Supplies",
+          "LocalizedString": "Not Enough Supplies"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.NotInFriendlyFOBRadius"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.NotInFriendlyFOBRadius",
+          "SourceString": "Must Place In Friendly FOB Radius",
+          "LocalizedString": "Must Place In Friendly FOB Radius"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.NotOnSurface"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.PlacementNotOnSurface",
+          "SourceString": "Must Place On Ground",
+          "LocalizedString": "Must Place On Ground"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.Success"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.PlacementSuccess",
+          "SourceString": "Success",
+          "LocalizedString": "Success"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Interactions.PlacementWarnings.AnotherFobTooClose"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.TooCloseToFobRadius",
+          "SourceString": "FOB build zones cannot overlap",
+          "LocalizedString": "FOB build zones cannot overlap"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Interactions.PlacementWarnings.NotInControlZone"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.NotInControlZone",
+          "SourceString": "Must Place In Control Zone",
+          "LocalizedString": "Must Place In Control Zone"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Interactions.PlacementWarnings.BelongsToAnotherFaction"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.FobBelongsToAnotherFaction",
+          "SourceString": "Can't Place FOB of a Different Faction",
+          "LocalizedString": "Can't Place FOB of a Different Faction"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.NotInControlZone"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.NotInControlZone",
+          "SourceString": "Must Place In Control Zone",
+          "LocalizedString": "Must Place In Control Zone"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Interactions.PlacementWarnings.InSafeZone"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.PlacementInSafeZone",
+          "SourceString": "Can't Place In Safe Zone",
+          "LocalizedString": "Can't Place In Safe Zone"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.LimitedAmountInFOB"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "Tag.PlacementStatus.LimitedAmountInFOB",
+          "SourceString": "Exceeds FOB Limit",
+          "LocalizedString": "Exceeds FOB Limit"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.CantPlaceOnBuildables"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.CantPlaceOnBuildables",
+          "SourceString": "Can't Place On Buildables",
+          "LocalizedString": "Can't Place On Buildables"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.SurfaceCantBeBuiltOn"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.CantBeBuiltOn",
+          "SourceString": "Can't Place On Surface",
+          "LocalizedString": "Can't Place On Surface"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.StackHeightExceeded"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.PlacementMaxStack",
+          "SourceString": "Exceeds Stack Limit",
+          "LocalizedString": "Exceeds Stack Limit"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.SupportHeightLimitExceeded"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.PlacementMaxHeight",
+          "SourceString": "Exceeds Max Support Height",
+          "LocalizedString": "Exceeds Max Support Height"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.BuildableNotFullyBuilt"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.BuildableNotFullyBuilt",
+          "SourceString": "Can't Place On Un-built Buildable",
+          "LocalizedString": "Can't Place On Un-built Buildable"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.MaximumFoundationHeightExceeded"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.MaximumFoundationHeightExceeded",
+          "SourceString": "Structure Partially Unsupported",
+          "LocalizedString": "Structure Partially Unsupported"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.SurfaceAngleTooSteep"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.MaxSurfaceAngleExceeded",
+          "SourceString": "Surface Too Steep",
+          "LocalizedString": "Surface Too Steep"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.InvalidFoundationBase"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.InvalidFoundationBase",
+          "SourceString": "Foundations Obstructed",
+          "LocalizedString": "Foundations Obstructed"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.UnderTerrain"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.UnderTerrain",
+          "SourceString": "Can't Place Under Terrain",
+          "LocalizedString": "Can't Place Under Terrain"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Interactions.PlacementWarnings.CantPlaceNearLadder"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.CantPlaceNearLadder",
+          "SourceString": "Can't Place Near Ladder",
+          "LocalizedString": "Can't Place Near Ladder"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.InEnemyFOBRadius"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.CantPlaceNearEnemyFOB",
+          "SourceString": "Can't Place In Enemy FOB Radius",
+          "LocalizedString": "Can't Place In Enemy FOB Radius"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Tag.PlacementStatus.NotInBuildArea"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "BuildPlacement.NotInBuildArea",
+          "SourceString": "No Building Permitted In This Zone",
+          "LocalizedString": "No Building Permitted In This Zone"
+        }
+      }
+    ],
+    "SnappingOnText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+      "Key": "Prompt.SnappingOn",
+      "SourceString": "Snapping [On]",
+      "LocalizedString": "Snapping [On]"
+    },
+    "SnappingOffText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+      "Key": "Prompt.SnappingOff",
+      "SourceString": "Snapping [Off]",
+      "LocalizedString": "Snapping [Off]"
+    }
+  }
+}

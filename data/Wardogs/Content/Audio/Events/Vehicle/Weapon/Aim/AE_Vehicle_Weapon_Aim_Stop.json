@@ -1,0 +1,43 @@
+--- export: UObject / AEB_EndBehavior_C_0 ---
+{
+  "Type": "AEB_EndBehavior_C",
+  "Name": "AEB_EndBehavior_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_EndBehavior.AEB_EndBehavior_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Weapon_Aim_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Aim/AE_Vehicle_Weapon_Aim_Stop.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_EndBehavior_C'Default__AEB_EndBehavior_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_EndBehavior.0"
+  },
+  "Properties": {
+    "BehaviorClass": {
+      "ObjectName": "Class'WDAudioEventBehaviorSetVehicleWeaponAim'",
+      "ObjectPath": "/Script/WDGame"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Weapon.Aim"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_Weapon_Aim_Stop ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_Weapon_Aim_Stop",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/Weapon/Aim/AE_Vehicle_Weapon_Aim_Stop",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Shared.Weapon.Aim.Stop"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_EndBehavior_C'AE_Vehicle_Weapon_Aim_Stop:AEB_EndBehavior_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Aim/AE_Vehicle_Weapon_Aim_Stop.0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+--- export: UObject / AEB_SetBooleanParameter_C_0 ---
+{
+  "Type": "AEB_SetBooleanParameter_C",
+  "Name": "AEB_SetBooleanParameter_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetBooleanParameter.AEB_SetBooleanParameter_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_SpawnVehicle_Radar_Destroyed_OnRemove'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_SpawnVehicle_Radar_Destroyed_OnRemove.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetBooleanParameter_C'Default__AEB_SetBooleanParameter_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetBooleanParameter.0"
+  },
+  "Properties": {
+    "In Name": "Destroyed",
+    "Delay": 0.0,
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Radar.Damaged.WhileActive"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_SpawnVehicle_Radar_Destroyed_OnRemove ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_SpawnVehicle_Radar_Destroyed_OnRemove",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/AE_Vehicle_SpawnVehicle_Radar_Destroyed_OnRemove",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.SpawnVehicle.Radar.Destroyed.OnRemove"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_SetBooleanParameter_C'AE_Vehicle_SpawnVehicle_Radar_Destroyed_OnRemove:AEB_SetBooleanParameter_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_SpawnVehicle_Radar_Destroyed_OnRemove.0"
+      }
+    ]
+  }
+}

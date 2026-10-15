@@ -1,0 +1,42 @@
+--- export: UDataAsset / DA_Crosshair ---
+{
+  "Type": "WDUICrosshairData",
+  "Name": "DA_Crosshair",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUICrosshairData'",
+  "Package": "/Game/UI/Features/HUD/Crosshair/Data/DA_Crosshair",
+  "Properties": {
+    "Settings": {
+      "bShowDot": true,
+      "Opacity": 0.6,
+      "HairLength": 7.5,
+      "Gap": 0.0,
+      "SpreadMultiplier": 600.0,
+      "BuildableCheckRadius": 310.0
+    },
+    "HideActionTags": [
+      "Action.Player.Sprint",
+      "Action.Player.TacSprint",
+      "Action.Player.Ladder",
+      "Action.Player.Traversing.Climbing",
+      "Action.Player.Traversing.Mantling",
+      "Action.Player.Traversing.Vaulting",
+      "Action.Player.Revive",
+      "Action.Weapon.MeleeBash",
+      "Action.Weapon.Reload",
+      "Action.Weapon.ChamberRound",
+      "Action.Player.Swimming",
+      "Action.Player.Parachuting",
+      "Action.Item.Inspect",
+      "Action.Player.Prone.Crawl"
+    ],
+    "HideGameplayTags": [
+      "State.Player.Vitality.Critical",
+      "State.Player.Vitality.Dead",
+      "State.Player.Vehicle.Role.ActivePassenger"
+    ],
+    "RevealGraceTime": 0.4,
+    "RevealAnimPlayRate": 1.2,
+    "FallbackCrosshairProjectionDistance": 1000.0
+  }
+}

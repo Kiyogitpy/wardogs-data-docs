@@ -1,0 +1,153 @@
+--- export: UDataAsset / EQS_FindControlZoneTeleportLocation ---
+{
+  "Type": "EnvQuery",
+  "Name": "EQS_FindControlZoneTeleportLocation",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQuery'",
+  "Package": "/ControlZone/AI/EQS/EQS_FindControlZoneTeleportLocation",
+  "Properties": {
+    "QueryName": "EQS_FindControlZoneTeleportLocation",
+    "Options": [
+      {
+        "ObjectName": "EnvQueryOption'EQS_FindControlZoneTeleportLocation:EnvQueryOption_0'",
+        "ObjectPath": "/ControlZone/AI/EQS/EQS_FindControlZoneTeleportLocation.1"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryOption_0 ---
+{
+  "Type": "EnvQueryOption",
+  "Name": "EnvQueryOption_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryOption'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindControlZoneTeleportLocation'",
+    "ObjectPath": "/ControlZone/AI/EQS/EQS_FindControlZoneTeleportLocation.0"
+  },
+  "Properties": {
+    "Generator": {
+      "ObjectName": "WDEnvQueryGenerator_ConeBetweenContexts'EQS_FindControlZoneTeleportLocation:WDEnvQueryGenerator_ConeBetweenContexts_0'",
+      "ObjectPath": "/ControlZone/AI/EQS/EQS_FindControlZoneTeleportLocation.4"
+    },
+    "Tests": [
+      {
+        "ObjectName": "WDEnvQueryTest_InControlZone'EQS_FindControlZoneTeleportLocation:WDEnvQueryTest_InControlZone_0'",
+        "ObjectPath": "/ControlZone/AI/EQS/EQS_FindControlZoneTeleportLocation.5"
+      },
+      {
+        "ObjectName": "EnvQueryTest_Distance'EQS_FindControlZoneTeleportLocation:EnvQueryTest_Distance_0'",
+        "ObjectPath": "/ControlZone/AI/EQS/EQS_FindControlZoneTeleportLocation.2"
+      },
+      {
+        "ObjectName": "EnvQueryTest_Distance'EQS_FindControlZoneTeleportLocation:EnvQueryTest_Distance_3'",
+        "ObjectPath": "/ControlZone/AI/EQS/EQS_FindControlZoneTeleportLocation.3"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryTest_Distance_0 ---
+{
+  "Type": "EnvQueryTest_Distance",
+  "Name": "EnvQueryTest_Distance_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Distance'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindControlZoneTeleportLocation'",
+    "ObjectPath": "/ControlZone/AI/EQS/EQS_FindControlZoneTeleportLocation.0"
+  },
+  "Properties": {
+    "TestMode": "EEnvTestDistance::Distance2D",
+    "TestOrder": 1,
+    "MultipleContextScoreOp": "EEnvTestScoreOperator::Multiply",
+    "FilterType": "EEnvTestFilterType::Minimum",
+    "FloatValueMin": {
+      "DataField": "FloatValue"
+    },
+    "ScoringFactor": {
+      "DefaultValue": -1000.0
+    },
+    "VerNum": 2
+  }
+}
+--- export: UObject / EnvQueryTest_Distance_3 ---
+{
+  "Type": "EnvQueryTest_Distance",
+  "Name": "EnvQueryTest_Distance_3",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Distance'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindControlZoneTeleportLocation'",
+    "ObjectPath": "/ControlZone/AI/EQS/EQS_FindControlZoneTeleportLocation.0"
+  },
+  "Properties": {
+    "TestMode": "EEnvTestDistance::DistanceZ",
+    "DistanceTo": {
+      "ObjectName": "BlueprintGeneratedClass'EQS_Context_ControlZone_C'",
+      "ObjectPath": "/ControlZone/AI/EQS/Context/EQS_Context_ControlZone.0"
+    },
+    "TestOrder": 2,
+    "TestPurpose": "EEnvTestPurpose::Score",
+    "MultipleContextScoreOp": "EEnvTestScoreOperator::Multiply",
+    "ScoringFactor": {
+      "DefaultValue": 1000.0
+    },
+    "VerNum": 2
+  }
+}
+--- export: UObject / WDEnvQueryGenerator_ConeBetweenContexts_0 ---
+{
+  "Type": "WDEnvQueryGenerator_ConeBetweenContexts",
+  "Name": "WDEnvQueryGenerator_ConeBetweenContexts_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDEnvQueryGenerator_ConeBetweenContexts'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindControlZoneTeleportLocation'",
+    "ObjectPath": "/ControlZone/AI/EQS/EQS_FindControlZoneTeleportLocation.0"
+  },
+  "Properties": {
+    "ConeSpacingType": "EWDConeSpacingType::TargetDistance",
+    "AlignedPointsDistance": {
+      "DefaultValue": 1000.0
+    },
+    "ConeDegrees": {
+      "DefaultValue": 60.0
+    },
+    "DesiredSpokes": {
+      "DefaultValue": 3
+    },
+    "ArcPointsDistance": {
+      "DefaultValue": 1000.0
+    },
+    "Range": {
+      "DefaultValue": 25000.0
+    },
+    "CenterActor": {
+      "ObjectName": "BlueprintGeneratedClass'EQS_Context_ControlZone_C'",
+      "ObjectPath": "/ControlZone/AI/EQS/Context/EQS_Context_ControlZone.0"
+    },
+    "ProjectionData": {
+      "VersionNum": 1,
+      "ProjectDown": 20000.0,
+      "ProjectUp": 20000.0,
+      "SerializedChannel": "ECollisionChannel::ECC_Visibility",
+      "TraceMode": "EEnvQueryTrace::GeometryByChannel"
+    },
+    "VerNum": 1
+  }
+}
+--- export: UObject / WDEnvQueryTest_InControlZone_0 ---
+{
+  "Type": "WDEnvQueryTest_InControlZone",
+  "Name": "WDEnvQueryTest_InControlZone_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDEnvQueryTest_InControlZone'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindControlZoneTeleportLocation'",
+    "ObjectPath": "/ControlZone/AI/EQS/EQS_FindControlZoneTeleportLocation.0"
+  },
+  "Properties": {
+    "TestPurpose": "EEnvTestPurpose::Filter",
+    "VerNum": 2
+  }
+}

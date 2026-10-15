@@ -1,0 +1,97 @@
+--- export: UDataAsset / DA_ROT_03_CameraBehaviourSettings ---
+{
+  "Type": "MRotaryVehicleSpringArmDataAsset",
+  "Name": "DA_ROT_03_CameraBehaviourSettings",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MRotaryVehicleSpringArmDataAsset'",
+  "Package": "/ROT_03/Data/DA_ROT_03_CameraBehaviourSettings",
+  "Properties": {
+    "PitchMapBoundsInput": {
+      "X": -45.0,
+      "Y": 45.0
+    },
+    "PitchMapBoundsOutput": {
+      "X": -25.0,
+      "Y": 2.5
+    },
+    "VelocityMapBoundsInput": {
+      "X": 0.0,
+      "Y": 7000.0
+    },
+    "VelocityMapBoundsOutput": {
+      "X": 0.3,
+      "Y": 5.0
+    },
+    "DefaultLerpSpeed": 5.0,
+    "FreelookYawRange": {
+      "LowerBound": {
+        "Type": "ERangeBoundTypes::Open"
+      },
+      "UpperBound": {
+        "Type": "ERangeBoundTypes::Open"
+      }
+    },
+    "FreelookPitchRange": {
+      "LowerBound": {
+        "Value": -85.0
+      },
+      "UpperBound": {
+        "Value": 90.0
+      }
+    },
+    "CameraUpwardsZOffset": 500.0,
+    "SocketOffset": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 150.0
+    },
+    "TargetArmLength": 1000.0,
+    "bMapArmLengthFromFOV": true,
+    "bMapArmHeightFromFOV": true,
+    "FOVMappingRange": {
+      "LowerBound": {
+        "Value": 60.0
+      },
+      "UpperBound": {
+        "Value": 110.0
+      }
+    },
+    "ArmLengthAtFOVRange": {
+      "X": 1669.8309,
+      "Y": 997.32697
+    },
+    "ArmHeightAtFOVRange": {
+      "X": 146.22395,
+      "Y": 68.99857
+    },
+    "RotationLagVsVehicleRotation": {
+      "ExternalCurve": {
+        "ObjectName": "CurveFloat'DA_ROT_03_CameraRotationCurve'",
+        "ObjectPath": "/ROT_03/Camera/DA_ROT_03_CameraRotationCurve.0"
+      }
+    },
+    "RotationLagLerpSpeed": 2.0,
+    "bInheritRoll": false,
+    "bEnableCameraLag": true,
+    "bEnableCameraRotationLag": true,
+    "CameraLagSpeed": 8.0,
+    "CameraRotationLagSpeed": 3.0,
+    "CameraLagMaxDistance": 150.0,
+    "CameraComponentSettings": {
+      "FieldOfViewVsSpeed": {
+        "EditorCurveData": {
+          "Keys": []
+        },
+        "ExternalCurve": {
+          "ObjectName": "CurveFloat'CRV_ROT_03_FOVSpeedCurve'",
+          "ObjectPath": "/ROT_03/Curves/CRV_ROT_03_FOVSpeedCurve.0"
+        }
+      },
+      "RotationOverride": {
+        "Pitch": -2.5,
+        "Yaw": 0.0,
+        "Roll": 0.0
+      }
+    }
+  }
+}

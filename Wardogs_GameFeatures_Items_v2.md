@@ -4,7 +4,7 @@ parent: "Game Features"
 ---
 
 # Wardogs: GameFeatures Items Reference (v2)
-*Source: exported JSON under `Wardogs/Plugins/GameFeatures/Items` (495 files, 24 item folders). Numbers are read from the export; anything not confirmed is marked as unclear.*
+*Source: exported JSON under [`Wardogs/Plugins/GameFeatures/Items`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Items) (495 files, 24 item folders). Numbers are read from the export; anything not confirmed is marked as unclear.*
 
 > **Scope note:** this covers the Items plugin only. Firearms, vehicles and the global reward/economy tables live in other plugins or Content folders and are not in this doc.
 
@@ -371,7 +371,7 @@ Vendor and inventory tie-in: Small Hammer `100` (2x1 footprint), Medium Hammer `
 | TallHBlock | B_Buildable_C | 5 | 0.0, 0.25, 0.5, 0.75, 1.0 | 150.0 x 150.0 x 300.0 |
 | TankTrap | B_Buildable_C | 5 | 0.0, 0.25, 0.5, 0.75, 1.0 | 220.0 x 220.0 x 200.0 |
 
-### 6.3 Damage modifiers on buildables (`DT_GlobalDamage_BuildableData`)
+### 6.3 Damage modifiers on buildables ([`DT_GlobalDamage_BuildableData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/DT_GlobalDamage_BuildableData.json))
 
 Each buildable row holds a list of `DamageModificationEntries`. The matrix shows the `Amount` of the entry that matches a source damage tag only (no instigator or target requirement). Every shown entry uses operation `Percentage_Ongoing`. Negative is read as reduced damage and positive as increased damage. **This sign reading is inferred** from the amounts (e.g. `-80` on bullets and `+1400` on FOB rockets); the export does not state it.
 
@@ -509,6 +509,6 @@ Nine tapes. Each has a `BHEntityData_UI` row and a vendor row. All nine are pric
 - **`LevelToUnlock`.** Stored on vendor variations (values 0 or 1). The system that reads it is not in this folder, so its effect is unconfirmed.
 - **Sign and units.** The damage sign (section 6.3) and projectile speed and length units are inferred, not stated.
 - **Audio, animation, crosstalk and most UI widget data.** Counted in section 1 but not decoded. Firing audio, animation sets and HUD tracker layouts are not summarised.
-- **Placeholder assets.** `Injector` has only a `GameFeatureData` shell with no properties. `Landmine` has a `GameFeatureData` with an asset scan for `BH.Item` and no item data.
+- **Placeholder assets.** [`Injector`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Injector/Content/Injector.json) has only a `GameFeatureData` shell with no properties. [`Landmine`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Landmine/Content/Landmine.json) has a `GameFeatureData` with an asset scan for `BH.Item` and no item data.
 - **Mortar, Phalanx, Talon 9K-SAM, Loudspeaker.** These buildables have roster rows here but no hammer, spawner or stages data in this folder.
 

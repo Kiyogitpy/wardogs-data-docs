@@ -1,0 +1,154 @@
+--- export: UPrimaryDataAsset / DA_Action_Jump ---
+{
+  "Type": "WDActionDefinition",
+  "Name": "DA_Action_Jump",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDActionDefinition'",
+  "Package": "/Game/GameMechanics/Actions/Movement/DA_Action_Jump",
+  "Properties": {
+    "ActionEffects": [
+      {
+        "Key": "GameplayEffect_Jump",
+        "Value": {
+          "ObjectName": "BlueprintGeneratedClass'GE_Player_Jump_C'",
+          "ObjectPath": "/Game/GameMechanics/GameplayEffects/Player/GE_Player_Jump.0"
+        }
+      }
+    ],
+    "ActionTag": {
+      "TagName": "Action.Player.Jump"
+    },
+    "ActionContext": [
+      "Action.Context.Movement"
+    ],
+    "ActionClass": {
+      "ObjectName": "Class'WDGameplayAction'",
+      "ObjectPath": "/Script/WDGame"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::Block",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Block",
+          "ActionResponses": [
+            "State.Player.Movement.Custom.Ladder",
+            "State.Player.Movement.Custom.Dragging",
+            "Action.Weapon.Bipod.Mount",
+            "Action.Player.Emote.Surrender_Drop"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Interrupt",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Interrupt",
+          "ActionResponses": [
+            "Action.Player.Crouch",
+            "Action.Player.Prone",
+            "Action.Player.Focus",
+            "Action.Weapon.Reload",
+            "Action.Weapon.Bipod.Mount",
+            "Action.Weapon.ChamberRound",
+            "Action.Player.Lean.Right",
+            "Action.Player.Lean.Left"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Buffer",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Buffer",
+          "ActionResponses": [],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": [
+            {
+              "ActionTag": {
+                "TagName": "Action.Weapon.Reload"
+              },
+              "BufferType": "EBHActionBufferType::PartialBuffer",
+              "BufferTime": 2.0
+            },
+            {
+              "ActionTag": {
+                "TagName": "Action.Player.Crouch"
+              },
+              "BufferType": "EBHActionBufferType::PartialBuffer",
+              "BufferTime": 2.0
+            },
+            {
+              "ActionTag": {
+                "TagName": "Action.Player.Prone"
+              },
+              "BufferType": "EBHActionBufferType::PartialBuffer",
+              "BufferTime": 2.0
+            },
+            {
+              "ActionTag": {
+                "TagName": "Action.Player.Sprint"
+              },
+              "BufferType": "EBHActionBufferType::PartialBuffer",
+              "BufferTime": 3.0
+            },
+            {
+              "ActionTag": {
+                "TagName": "Action.Player.TacSprint"
+              },
+              "BufferType": "EBHActionBufferType::PartialBuffer",
+              "BufferTime": 3.0
+            },
+            {
+              "ActionTag": {
+                "TagName": "Action.Weapon.ChamberRound"
+              },
+              "BufferType": "EBHActionBufferType::FullBuffer",
+              "BufferTime": -10.0
+            }
+          ]
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::BlockingStates",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::BlockingStates",
+          "ActionResponses": [],
+          "BlockingStates": [
+            "State.Player.Vitality.Critical",
+            "State.Player.Vitality.Dead"
+          ],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::InterruptCategories",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::InterruptCategories",
+          "ActionResponses": [],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [
+            "Action.Context.Emote"
+          ],
+          "BufferedResponses": []
+        }
+      }
+    ],
+    "bInstantAction": true
+  }
+}

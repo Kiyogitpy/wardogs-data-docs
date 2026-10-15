@@ -1,0 +1,154 @@
+--- export: UObject / WDActorBuildSpawner_0 ---
+{
+  "Type": "WDActorBuildSpawner",
+  "Name": "WDActorBuildSpawner_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDActorBuildSpawner'",
+  "Outer": {
+    "ObjectName": "WDBuildableDataAsset'DA_Buildable_FOB'",
+    "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/DA_Buildable_FOB.1"
+  },
+  "Properties": {
+    "BaseBuildableClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Buildable_ForwardOperatingBase_Manticore_C'",
+      "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Buildables/B_Buildable_ForwardOperatingBase_Manticore.2"
+    }
+  }
+}
+--- export: UDataAsset / DA_Buildable_FOB ---
+{
+  "Type": "WDBuildableDataAsset",
+  "Name": "DA_Buildable_FOB",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDBuildableDataAsset'",
+  "Package": "/Buildables/Data/Buildables/ForwardOperatingBase/DA_Buildable_FOB",
+  "Properties": {
+    "SpawnerOverride": {
+      "ObjectName": "WDActorBuildSpawner'DA_Buildable_FOB:WDActorBuildSpawner_0'",
+      "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/DA_Buildable_FOB.0"
+    },
+    "PlacementClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_PlacementBuildable_ForwardOperatingBase_Manticore_C'",
+      "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Placement/B_PlacementBuildable_ForwardOperatingBase_Manticore.1"
+    },
+    "FactionBuildableOverrides": [
+      {
+        "FactionTag": {
+          "TagName": "Meta.Alignment.Faction.Alpha"
+        },
+        "BaseBuildableClass": {
+          "ObjectName": "BlueprintGeneratedClass'B_Buildable_ForwardOperatingBase_Lonestar_C'",
+          "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Buildables/B_Buildable_ForwardOperatingBase_Lonestar.2"
+        },
+        "PlacementClass": {
+          "ObjectName": "BlueprintGeneratedClass'B_PlacementBuildable_ForwardOperatingBase_LoneStar_C'",
+          "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Placement/B_PlacementBuildable_ForwardOperatingBase_LoneStar.1"
+        }
+      },
+      {
+        "FactionTag": {
+          "TagName": "Meta.Alignment.Faction.Bravo"
+        },
+        "BaseBuildableClass": {
+          "ObjectName": "BlueprintGeneratedClass'B_Buildable_ForwardOperatingBase_Valkyra_C'",
+          "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Buildables/B_Buildable_ForwardOperatingBase_Valkyra.2"
+        },
+        "PlacementClass": {
+          "ObjectName": "BlueprintGeneratedClass'B_PlacementBuildable_ForwardOperatingBase_Valkyra_C'",
+          "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Placement/B_PlacementBuildable_ForwardOperatingBase_Valkyra.1"
+        }
+      },
+      {
+        "FactionTag": {
+          "TagName": "Meta.Alignment.Faction.Charlie"
+        },
+        "BaseBuildableClass": {
+          "ObjectName": "BlueprintGeneratedClass'B_Buildable_ForwardOperatingBase_Manticore_C'",
+          "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Buildables/B_Buildable_ForwardOperatingBase_Manticore.2"
+        },
+        "PlacementClass": {
+          "ObjectName": "BlueprintGeneratedClass'B_PlacementBuildable_ForwardOperatingBase_Manticore_C'",
+          "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Placement/B_PlacementBuildable_ForwardOperatingBase_Manticore.1"
+        }
+      }
+    ],
+    "EntityTag": {
+      "TagName": "Id.Buildable.FOB"
+    },
+    "PlacementCost": 0,
+    "Cost": 30,
+    "_aaabfagpiegcpjedampen_$6F8462F9430CF4D$_$21$": 2.0,
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+      "Key": "Buildable.ForwardOperatingBase",
+      "SourceString": "Forward Operating Base",
+      "LocalizedString": "Forward Operating Base"
+    },
+    "MaxHealth": 15000.0,
+    "MaxStack": 1,
+    "PlacementFlags": 1,
+    "PlacePivotVerticalOffset": 110.0,
+    "FoundationStaticMesh": {
+      "AssetPathName": "/Buildables/Data/Foundations/Meshes/SM_Foundation_FOB.SM_Foundation_FOB",
+      "SubPathString": ""
+    },
+    "bShowFOBExtents": false,
+    "_aaabkdofllhppihockpio_$3E5BB7FF87E2AF8E$_$26$": true,
+    "_aaabgcinpnenblnhogiop_$28DFD4D1BD7E68EF$_$22$": 250.0,
+    "NiagaraDataChannelAsset": {
+      "AssetPathName": "/Game/VFX/Building/DataChannel/NDC_Buildable.NDC_Buildable",
+      "SubPathString": ""
+    },
+    "FinalStageBoundingBox": {
+      "Min": {
+        "X": -183.51196,
+        "Y": -183.51196,
+        "Z": -3.360728
+      },
+      "Max": {
+        "X": 183.51196,
+        "Y": 183.51198,
+        "Z": 1303.8368
+      },
+      "IsValid": 1
+    },
+    "ConstructedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Constructed"
+    },
+    "DestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Destroyed"
+    },
+    "PlacedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Placed"
+    },
+    "_aaabigdbeocppfeehmfch_$6314E2FF5447C527$_$24$": {
+      "TagName": "GameplayCue.Buildable.Dismantle"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Buildable.FOB"
+      }
+    },
+    "_aaaaoldpfnojdchifckec_$B3F5DE9327852A42$_$14$": "Buildable.Damage.DoNotTakeDamage",
+    "bInstantFinish": true,
+    "PlacementConditions": [
+      {
+        "ObjectName": "Class'WDFobPlacementCondition'",
+        "ObjectPath": "/Script/BuildablesRuntime"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_SafeZonePlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_SafeZonePlacementCondition.1"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_WithinLadderBoundsPlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_WithinLadderBoundsPlacementCondition.1"
+      }
+    ],
+    "bUsesCriticalHitSpots": false,
+    "AudioData": {
+      "ObjectName": "WDAudioData'DA_Buildable_FOB_Audio'",
+      "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Audio/DA_Buildable_FOB_Audio.0"
+    }
+  }
+}

@@ -1,0 +1,182 @@
+--- export: UDataTable / DT_ChallengesFeedActions_Spotting ---
+{
+  "Type": "DataTable",
+  "Name": "DT_ChallengesFeedActions_Spotting",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Spotting/Data/UI/RewardFeed/DT_ChallengesFeedActions_Spotting",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDRewardFeedActionDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Challenges.Rewards.Spotting.Added": {
+      "ConditionalExpressions": [
+        {
+          "Condition": {
+            "TokenStreamVersion": 0,
+            "TagDictionary": [
+              {
+                "TagName": "Challenges.Rewards.Spotting.Refreshed"
+              }
+            ],
+            "QueryTokenStream": [
+              0,
+              1,
+              1,
+              1,
+              0
+            ],
+            "UserDescription": "",
+            "AutoDescription": " ANY( Challenges.Rewards.Spotting.Refreshed )"
+          },
+          "DisplayText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+            "Key": "Challenges.Rewards.Spotting.Refreshed",
+            "SourceString": "Target Spotted Refreshed",
+            "LocalizedString": "Target Spotted Refreshed"
+          },
+          "bOverrideAudio": false,
+          "AudioEventTag": {
+            "TagName": "None"
+          }
+        }
+      ],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.Spotting.Added",
+        "SourceString": "Target Spotted",
+        "LocalizedString": "Target Spotted"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.Spotting.Added"
+      }
+    },
+    "Challenges.Rewards.Spotting.Refreshed": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.Spotting.Refreshed",
+        "SourceString": "Target Spotted Refreshed",
+        "LocalizedString": "Target Spotted Refreshed"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.Spotting.Refreshed"
+      }
+    },
+    "Challenges.Rewards.Spotting.Removed": {
+      "ConditionalExpressions": [
+        {
+          "Condition": {
+            "TokenStreamVersion": 0,
+            "TagDictionary": [
+              {
+                "TagName": "Id.Item"
+              }
+            ],
+            "QueryTokenStream": [
+              0,
+              1,
+              1,
+              1,
+              0
+            ],
+            "UserDescription": "",
+            "AutoDescription": " ANY( Id.Item )"
+          },
+          "DisplayText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+            "Key": "Challenges.Rewards.Spotting.Removed.Item",
+            "SourceString": "Spotted Item Destroyed",
+            "LocalizedString": "Spotted Item Destroyed"
+          },
+          "bOverrideAudio": true,
+          "AudioEventTag": {
+            "TagName": "Audio.Event.UX.Spotted.DestroyAssist.Deployable"
+          }
+        },
+        {
+          "Condition": {
+            "TokenStreamVersion": 0,
+            "TagDictionary": [
+              {
+                "TagName": "Id.Buildable"
+              }
+            ],
+            "QueryTokenStream": [
+              0,
+              1,
+              1,
+              1,
+              0
+            ],
+            "UserDescription": "",
+            "AutoDescription": " ANY( Id.Buildable )"
+          },
+          "DisplayText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+            "Key": "Challenges.Rewards.Spotting.Removed.Buildable",
+            "SourceString": "Spotted Buildable Destroyed",
+            "LocalizedString": "Spotted Buildable Destroyed"
+          },
+          "bOverrideAudio": true,
+          "AudioEventTag": {
+            "TagName": "Audio.Event.UX.Spotted.DestroyAssist.Buildable"
+          }
+        },
+        {
+          "Condition": {
+            "TokenStreamVersion": 0,
+            "TagDictionary": [
+              {
+                "TagName": "Vehicle.Variant"
+              }
+            ],
+            "QueryTokenStream": [
+              0,
+              1,
+              1,
+              1,
+              0
+            ],
+            "UserDescription": "",
+            "AutoDescription": " ANY( Vehicle.Variant )"
+          },
+          "DisplayText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+            "Key": "Challenges.Rewards.Spotting.Removed.Vehicle",
+            "SourceString": "Spotted Vehicle Destroyed",
+            "LocalizedString": "Spotted Vehicle Destroyed"
+          },
+          "bOverrideAudio": true,
+          "AudioEventTag": {
+            "TagName": "Audio.Event.UX.Spotted.DestroyAssist.Vehicle"
+          }
+        }
+      ],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.Spotting.Removed",
+        "SourceString": "Spotted Target Destroyed",
+        "LocalizedString": "Spotted Target Destroyed"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Spotted.DestroyAssist.Player"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.Spotting.Removed"
+      }
+    }
+  }
+}

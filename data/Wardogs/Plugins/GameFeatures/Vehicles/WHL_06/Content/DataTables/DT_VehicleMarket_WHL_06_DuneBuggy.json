@@ -1,0 +1,117 @@
+--- export: UDataTable / DT_VehicleMarket_WHL_06_DuneBuggy ---
+{
+  "Type": "DataTable",
+  "Name": "DT_VehicleMarket_WHL_06_DuneBuggy",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/WHL_06/DataTables/DT_VehicleMarket_WHL_06_DuneBuggy",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDVendorData'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Vehicle.Variant.Land.Wheeled.DuneBuggy.Default": {
+      "Categories": [
+        "Vendor.Category.Vehicle"
+      ],
+      "VendorItemVariations": [
+        {
+          "VariationTag": {
+            "TagName": "Vehicle.Variant.Land.Wheeled.DuneBuggy.Default"
+          },
+          "UnlockRequiredItems": [],
+          "Categories": [
+            "Vendor.Category.Vehicle.Land",
+            "Vendor.Category.Vehicle.Blueprints"
+          ],
+          "Subcategories": [
+            "Vendor.Category.Sub.Vehicle.Land.Transport"
+          ],
+          "VendorRenderUILightingGroupTag": {
+            "TagName": "PocketEnvironment.LightingGroup.Vehicle.Car"
+          },
+          "VendorRenderUISpawnTransform": {
+            "Rotation": {
+              "X": 0.0,
+              "Y": -0.0,
+              "Z": 0.8660254,
+              "W": 0.5,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0
+            },
+            "Translation": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 120.0
+            },
+            "Scale3D": {
+              "X": 0.25,
+              "Y": 0.25,
+              "Z": 0.25
+            }
+          },
+          "VehicleStatsDataAsset": {
+            "ObjectName": "WDVehicleStatsDataAsset'DA_WHL_06_DuneBuggy_Stats'",
+            "ObjectPath": "/WHL_06/Data/DA_WHL_06_DuneBuggy_Stats.6"
+          },
+          "VendorAudioData": null,
+          "Price": 1500.0,
+          "Amount": 1,
+          "_aaabciphbkkmideofopnc_$8F71AAC834E5EFD2$_$18$": true,
+          "LevelToUnlock": 0,
+          "bRequiresAccountEntitlement": false,
+          "LifeTimeBuyLimit": 0,
+          "OverwrittenFriendlyName": {
+            "Namespace": "",
+            "Key": "DC96C95E42E15CF1921ABDB69ECA3F0E",
+            "SourceString": "Humvee",
+            "LocalizedString": "Humvee"
+          },
+          "bOverwriteFriendlyName": false,
+          "OverwrittenSubtitleText": {
+            "CultureInvariantString": null
+          },
+          "bOverwriteSubtitleText": false,
+          "OverwrittenDescription": {
+            "CultureInvariantString": null
+          },
+          "bOverwriteDescription": false,
+          "OverwrittenDescriptionColor": {
+            "B": 0,
+            "G": 0,
+            "R": 255,
+            "A": 255,
+            "Hex": "FF0000"
+          },
+          "bOverwriteDescriptionColor": false,
+          "OverwrittenIcon": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Vehicles/T_UI_Icon_Vehicle_DuneBuggy_512x512.T_UI_Icon_Vehicle_DuneBuggy_512x512",
+            "SubPathString": ""
+          },
+          "bOverwriteIcon": true,
+          "bOverwriteWeight": false,
+          "OverwrittenWeight": 1.0,
+          "CustomData": {},
+          "bShowInVendor": true,
+          "bIsPreviewOnly": false,
+          "VendorSlotTag": {
+            "TagName": "None"
+          }
+        }
+      ],
+      "bFactionSpecific": false,
+      "Faction": {
+        "TagName": "None"
+      },
+      "PurchaseCompletedAudioEvent": {
+        "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
+      },
+      "Tag": {
+        "TagName": "Vehicle.Variant.Land.Wheeled.DuneBuggy.Default"
+      }
+    }
+  }
+}

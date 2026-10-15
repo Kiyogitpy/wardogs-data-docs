@@ -1,0 +1,44 @@
+--- export: UObject / AEB_PlayPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayPerspectiveSound_C",
+  "Name": "AEB_PlayPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.AEB_PlayPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_Request_Ammo'",
+    "ObjectPath": "/Game/Audio/Events/UI/Request/AE_UI_Request_Ammo.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayPerspectiveSound_C'Default__AEB_PlayPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.0"
+  },
+  "Properties": {
+    "1pSound": {
+      "ObjectName": "MetaSoundSource'MSS_UI_InGame_Request_Ammo_1p'",
+      "ObjectPath": "/Game/Audio/UI/InGame/MSS/Request/1p/MSS_UI_InGame_Request_Ammo_1p.0"
+    },
+    "RestartBehaviour": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_UI_Request_Ammo ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UI_Request_Ammo",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UI/Request/AE_UI_Request_Ammo",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.Request.Ammo"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_PlayPerspectiveSound_C'AE_UI_Request_Ammo:AEB_PlayPerspectiveSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/Request/AE_UI_Request_Ammo.0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+--- export: UDataAsset / DA_Passengers ---
+{
+  "Type": "WDUIPassengersData",
+  "Name": "DA_Passengers",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIPassengersData'",
+  "Package": "/Game/UI/Features/HUD/Passengers/Data/DA_Passengers",
+  "Properties": {
+    "EntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIPassengersEntryViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/HUD/Passengers/Widgets/PassengersEntry/Data/DA_PassengerEntry.DA_PassengerEntry",
+        "SubPathString": ""
+      }
+    },
+    "PassengerCountTextFormat": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD.Vehicle.PassengerAmount",
+      "SourceString": "PASSENGERS [{Occupants}/{Capacity}]",
+      "LocalizedString": "PASSENGERS [{Occupants}/{Capacity}]"
+    },
+    "PassengerCollapseThreshold": 13,
+    "DefaultPassengerTextColor": {
+      "R": 0.332452,
+      "G": 0.337164,
+      "B": 0.323143,
+      "A": 1.0,
+      "Hex": "9C9D9A"
+    },
+    "VehicleLockStateData": [
+      {
+        "Key": "EWDVehicleLockState::Locked",
+        "Value": {
+          "StateTexture": {
+            "AssetPathName": "/Game/UI/Features/HUD/Passengers/Textures/T_UI_Vehicle_Locked.T_UI_Vehicle_Locked",
+            "SubPathString": ""
+          },
+          "StateText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+            "Key": "HUD.Vehicle.LockState.Locked",
+            "SourceString": "LOCKED",
+            "LocalizedString": "LOCKED"
+          }
+        }
+      },
+      {
+        "Key": "EWDVehicleLockState::SquadOnly",
+        "Value": {
+          "StateTexture": {
+            "AssetPathName": "/Game/UI/Features/HUD/Passengers/Textures/T_UI_Vehicle_Locked.T_UI_Vehicle_Locked",
+            "SubPathString": ""
+          },
+          "StateText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+            "Key": "HUD.Vehicle.LockState.SquadLock",
+            "SourceString": "SQUAD ONLY",
+            "LocalizedString": "SQUAD ONLY"
+          }
+        }
+      },
+      {
+        "Key": "EWDVehicleLockState::Unlocked",
+        "Value": {
+          "StateTexture": {
+            "AssetPathName": "/Game/UI/Features/HUD/Passengers/Textures/T_UI_Vehicle_Unlocked.T_UI_Vehicle_Unlocked",
+            "SubPathString": ""
+          },
+          "StateText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+            "Key": "HUD.Vehicle.LockState.Unlocked",
+            "SourceString": "UNLOCKED",
+            "LocalizedString": "UNLOCKED"
+          }
+        }
+      }
+    ],
+    "PassengerItemIcons": [
+      {
+        "Key": {
+          "TagName": "Item.Parachute"
+        },
+        "Value": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Vehicles/T_UI_Icon_Vehicle_Parachute.T_UI_Icon_Vehicle_Parachute",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}

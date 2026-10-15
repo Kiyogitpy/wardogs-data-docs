@@ -1,0 +1,70 @@
+--- export: UPrimaryDataAsset / DA_DebugHomingRocketData ---
+{
+  "Type": "WDProjectileData",
+  "Name": "DA_DebugHomingRocketData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDProjectileData'",
+  "Package": "/Game/Items/Resources/Ammo/DebugHomingRocket/DA_DebugHomingRocketData",
+  "Properties": {
+    "ProjectileId": {
+      "TagName": "Item.Caliber.84mm"
+    },
+    "ProjectileStats": {
+      "DamageEntityData": {
+        "Tag": {
+          "TagName": "Meta.Damage.Bullet.545mm"
+        }
+      },
+      "DamageValues": {
+        "BaseDamage": 47.0
+      },
+      "ProjectileDimensions": {
+        "Length": 37.0,
+        "Diameter": 4.0,
+        "Mass": 1.0,
+        "DragModel": {
+          "Curve": {
+            "CurveTable": {
+              "ObjectName": "CurveTable'CT_Projectile_DragCoefficients'",
+              "ObjectPath": "/Game/Items/Resources/Ammo/Curves/CT_Projectile_DragCoefficients.0"
+            },
+            "RowName": "GC (Cylinder)"
+          }
+        }
+      },
+      "ProjectileEffects": {
+        "GameplayCueTag": {
+          "TagName": "GameplayCue.Weapon.RocketProjectile"
+        },
+        "AudioEventTag": {
+          "TagName": "Audio.Event.Projectile.Rocket.Travel.Homing"
+        }
+      },
+      "SuppressionData": {
+        "DistanceFalloffCurve": {
+          "EditorCurveData": {}
+        }
+      },
+      "GuidanceData": {
+        "bGuidedProjectile": true,
+        "MaxTurnAngle": 2.0
+      },
+      "MaxProjectileLifetime": 20.0,
+      "AttachedEffect": {
+        "AssetPathName": "/Game/VFX/Weapons/Tracers/NS_Projectile_Mesh.NS_Projectile_Mesh",
+        "SubPathString": ""
+      },
+      "TracerChance": 1.0,
+      "bDestroyEffectOnProjectileCleanup": false,
+      "TypicalSpeed": 100000.0,
+      "bShouldPenetrate": false,
+      "MinImpactAngleForRicochet": 91.0,
+      "bShouldPreSimulate": false,
+      "TotalFuel": 100.0,
+      "FuelBurnRate": 1.0,
+      "ThrustSpeed": 20000.0,
+      "bClientPredictive": false,
+      "bAffectedByGravity": false
+    }
+  }
+}

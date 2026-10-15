@@ -1,0 +1,59 @@
+--- export: UObject / B_CameraModifier_HeavyBreathing_C_0 ---
+{
+  "Type": "B_CameraModifier_HeavyBreathing_C",
+  "Name": "B_CameraModifier_HeavyBreathing_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/MoverTesting/CharacterModifierStates/CameraModifiers/B_CameraModifier_HeavyBreathing.B_CameraModifier_HeavyBreathing_C'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_HeavyBreathing'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_HeavyBreathing.2"
+  },
+  "Template": {
+    "ObjectName": "B_CameraModifier_HeavyBreathing_C'Default__B_CameraModifier_HeavyBreathing_C'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/CameraModifiers/B_CameraModifier_HeavyBreathing.0"
+  }
+}
+--- export: UObject / WDCharacterModifierCondition_Tags_0 ---
+{
+  "Type": "WDCharacterModifierCondition_Tags",
+  "Name": "WDCharacterModifierCondition_Tags_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierCondition_Tags'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_HeavyBreathing'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_HeavyBreathing.2"
+  },
+  "Properties": {
+    "Requirements": {
+      "RequireTags": [
+        "Meta.Punishment.HeavyBreathing"
+      ]
+    }
+  }
+}
+--- export: UPrimaryDataAsset / DA_CharacterModifierState_HeavyBreathing ---
+{
+  "Type": "WDCharacterModifierStateDefinition",
+  "Name": "DA_CharacterModifierState_HeavyBreathing",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierStateDefinition'",
+  "Package": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_HeavyBreathing",
+  "Properties": {
+    "StateTag": {
+      "TagName": "State.CharacterModifier.Camera.HeavyBreathing"
+    },
+    "CameraModifiers": [
+      {
+        "ObjectName": "B_CameraModifier_HeavyBreathing_C'DA_CharacterModifierState_HeavyBreathing:B_CameraModifier_HeavyBreathing_C_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_HeavyBreathing.0"
+      }
+    ],
+    "Priority": 10,
+    "Conditions": [
+      {
+        "ObjectName": "WDCharacterModifierCondition_Tags'DA_CharacterModifierState_HeavyBreathing:WDCharacterModifierCondition_Tags_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_HeavyBreathing.1"
+      }
+    ]
+  }
+}

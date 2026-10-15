@@ -1,0 +1,161 @@
+--- export: UObject / AEB_Doppler_C_0 ---
+{
+  "Type": "AEB_Doppler_C",
+  "Name": "AEB_Doppler_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_Doppler.AEB_Doppler_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Shared_Damaged'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Shared_Damaged.4"
+  },
+  "Template": {
+    "ObjectName": "AEB_Doppler_C'Default__AEB_Doppler_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_Doppler.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Damage"
+    }
+  }
+}
+--- export: UObject / AEB_SetVehicleHIDZAttribute_C_0 ---
+{
+  "Type": "AEB_SetVehicleHIDZAttribute_C",
+  "Name": "AEB_SetVehicleHIDZAttribute_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetVehicleHIDZAttribute.AEB_SetVehicleHIDZAttribute_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Shared_Damaged'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Shared_Damaged.4"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetVehicleHIDZAttribute_C'Default__AEB_SetVehicleHIDZAttribute_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetVehicleHIDZAttribute.0"
+  },
+  "Properties": {
+    "Attribute Tag": {
+      "TagName": "Attribute.Gameplay.Health.Engine"
+    },
+    "ParameterName": "EngineHealth",
+    "ShouldNormaliseAttribute": true,
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Damage"
+    },
+    "ConcurrentInstanceLimit": 1
+  }
+}
+--- export: UObject / AEB_SPM_VehicleSmoking_C_0 ---
+{
+  "Type": "AEB_VehicleDamaged_C",
+  "Name": "AEB_SPM_VehicleSmoking_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_VehicleDamaged.AEB_VehicleDamaged_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Shared_Damaged'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Shared_Damaged.4"
+  },
+  "Template": {
+    "ObjectName": "AEB_VehicleDamaged_C'Default__AEB_VehicleDamaged_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_VehicleDamaged.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Damage"
+    }
+  }
+}
+--- export: UObject / AEB_VehiclePerspective_C_0 ---
+{
+  "Type": "AEB_VehiclePerspective_C",
+  "Name": "AEB_VehiclePerspective_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_VehiclePerspective.AEB_VehiclePerspective_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Shared_Damaged'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Shared_Damaged.4"
+  },
+  "Template": {
+    "ObjectName": "AEB_VehiclePerspective_C'Default__AEB_VehiclePerspective_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_VehiclePerspective.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_Shared_Damaged ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_Shared_Damaged",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/AE_Vehicle_Shared_Damaged",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Shared.Damaged"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "WDAudioEventBehaviorAttachSoundToActor'AE_Vehicle_Shared_Damaged:WDAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Shared_Damaged.5"
+      },
+      {
+        "ObjectName": "AEB_VehicleDamaged_C'AE_Vehicle_Shared_Damaged:AEB_SPM_VehicleSmoking_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Shared_Damaged.2"
+      },
+      {
+        "ObjectName": "AEB_SetVehicleHIDZAttribute_C'AE_Vehicle_Shared_Damaged:AEB_SetVehicleHIDZAttribute_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Shared_Damaged.1"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorPlayVehicleSound'AE_Vehicle_Shared_Damaged:WDAudioEventBehaviorPlayVehicleSound_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Shared_Damaged.6"
+      },
+      {
+        "ObjectName": "AEB_Doppler_C'AE_Vehicle_Shared_Damaged:AEB_Doppler_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Shared_Damaged.0"
+      },
+      {
+        "ObjectName": "AEB_VehiclePerspective_C'AE_Vehicle_Shared_Damaged:AEB_VehiclePerspective_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Shared_Damaged.3"
+      }
+    ]
+  }
+}
+--- export: UObject / WDAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "WDAudioEventBehaviorAttachSoundToActor",
+  "Name": "WDAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Shared_Damaged'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Shared_Damaged.4"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Damage"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviorPlayVehicleSound_0 ---
+{
+  "Type": "WDAudioEventBehaviorPlayVehicleSound",
+  "Name": "WDAudioEventBehaviorPlayVehicleSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorPlayVehicleSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Shared_Damaged'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Shared_Damaged.4"
+  },
+  "Properties": {
+    "SoundAssetTag": {
+      "TagName": "Audio.Asset.Vehicle.Shared.Damage"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Damage"
+    },
+    "bPersistent": true
+  }
+}

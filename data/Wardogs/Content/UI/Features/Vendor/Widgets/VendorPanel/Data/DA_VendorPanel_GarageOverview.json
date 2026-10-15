@@ -1,0 +1,54 @@
+--- export: UDataAsset / DA_VendorPanel_GarageOverview ---
+{
+  "Type": "WDUIVendorPanelData_GarageOverview",
+  "Name": "DA_VendorPanel_GarageOverview",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIVendorPanelData_GarageOverview'",
+  "Package": "/Game/UI/Features/Vendor/Widgets/VendorPanel/Data/DA_VendorPanel_GarageOverview",
+  "Properties": {
+    "NoLogisticsSlotsText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+      "Key": "Vendor.Garage.NoLogisticsSlots",
+      "SourceString": "No Logistics Slots",
+      "LocalizedString": "No Logistics Slots"
+    },
+    "LogisticsSlotsFullText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+      "Key": "Vendor.Garage.LogisticsSlotsFull",
+      "SourceString": "Logistics Slots Full",
+      "LocalizedString": "Logistics Slots Full"
+    },
+    "_aaabpafnllkclignbmpkl_$5DBBA2B86D1CFAB$_$31$": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+      "Key": "Vendor.Garage.NoWeaponsSupported",
+      "SourceString": "VEHICLE DOES NOT HAVE WEAPONS / COUNTER MEASURES",
+      "LocalizedString": "VEHICLE DOES NOT HAVE WEAPONS / COUNTER MEASURES"
+    },
+    "_aaacacllpeiahbmbkkjda_$2BBF48071C1AA930$_$32$": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+      "Key": "Vendor.Garage.VehicleInventoryFull",
+      "SourceString": "VEHICLE INVENTORY IS FULL",
+      "LocalizedString": "VEHICLE INVENTORY IS FULL"
+    },
+    "VehicleInventoryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIVehicleInventoryViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/InventoryComponent/Data/DA_InventoryComponent_Vendor_Vehicle.DA_InventoryComponent_Vendor_Vehicle",
+        "SubPathString": ""
+      }
+    },
+    "VehicleInformationViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIVehicleInformationViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/VendorPanel/Widgets/Garage/Data/DA_VehicleInformation.DA_VehicleInformation",
+        "SubPathString": ""
+      }
+    }
+  }
+}

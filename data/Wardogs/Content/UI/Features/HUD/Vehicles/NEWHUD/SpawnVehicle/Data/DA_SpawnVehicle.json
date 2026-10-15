@@ -1,0 +1,40 @@
+--- export: UDataAsset / DA_SpawnVehicle ---
+{
+  "Type": "WDUISpawnVehicleData",
+  "Name": "DA_SpawnVehicle",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUISpawnVehicleData'",
+  "Package": "/Game/UI/Features/HUD/Vehicles/NEWHUD/SpawnVehicle/Data/DA_SpawnVehicle",
+  "Properties": {
+    "InactiveSpawnVehicleTexture": {
+      "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/Textures/T_UI_Icon_SpawnInactive_256x256.T_UI_Icon_SpawnInactive_256x256",
+      "SubPathString": ""
+    },
+    "ActiveSpawnVehicleTexture": {
+      "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/Textures/T_UI_Icon_SpawnActive_256x256.T_UI_Icon_SpawnActive_256x256",
+      "SubPathString": ""
+    },
+    "RadarDestroyedSpawnVehicleTexture": {
+      "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/Textures/T_UI_Icon_Spawn_RadarDestroyed.T_UI_Icon_Spawn_RadarDestroyed",
+      "SubPathString": ""
+    },
+    "ActiveText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD.Vehicle.SpawnVehicle.Active",
+      "SourceString": "Active",
+      "LocalizedString": "Active"
+    },
+    "InactiveText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD.Vehicle.SpawnVehicle.Inactive",
+      "SourceString": "Inactive",
+      "LocalizedString": "Inactive"
+    },
+    "RadarDestroyedText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD.Vehicle.SpawnVehicle.RadarDestroyed",
+      "SourceString": "Radar Destroyed",
+      "LocalizedString": "Radar Destroyed"
+    }
+  }
+}

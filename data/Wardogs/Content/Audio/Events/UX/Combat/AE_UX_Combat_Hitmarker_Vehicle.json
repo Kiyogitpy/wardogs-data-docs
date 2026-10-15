@@ -1,0 +1,80 @@
+--- export: UObject / AEB_PlayVehicleHitmarker_C_0 ---
+{
+  "Type": "AEB_PlayVehicleHitSound_C",
+  "Name": "AEB_PlayVehicleHitmarker_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayVehicleHitSound.AEB_PlayVehicleHitSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UX_Combat_Hitmarker_Vehicle'",
+    "ObjectPath": "/Game/Audio/Events/UX/Combat/AE_UX_Combat_Hitmarker_Vehicle.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayVehicleHitSound_C'Default__AEB_PlayVehicleHitSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayVehicleHitSound.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_UX_Combat_Hitmarker_Vehicle ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UX_Combat_Hitmarker_Vehicle",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UX/Combat/AE_UX_Combat_Hitmarker_Vehicle",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UX.Combat.Hitmarker.Vehicle"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "WDAudioEventBehaviorMoveSoundToGameplayCueLocation'AE_UX_Combat_Hitmarker_Vehicle:WDAudioEventBehaviorMoveSoundToGameplayCueLocation_0'",
+        "ObjectPath": "/Game/Audio/Events/UX/Combat/AE_UX_Combat_Hitmarker_Vehicle.3"
+      },
+      {
+        "ObjectName": "AEB_PlayVehicleHitSound_C'AE_UX_Combat_Hitmarker_Vehicle:AEB_PlayVehicleHitmarker_C_0'",
+        "ObjectPath": "/Game/Audio/Events/UX/Combat/AE_UX_Combat_Hitmarker_Vehicle.0"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_UX_Combat_Hitmarker_Vehicle:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Game/Audio/Events/UX/Combat/AE_UX_Combat_Hitmarker_Vehicle.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UX_Combat_Hitmarker_Vehicle'",
+    "ObjectPath": "/Game/Audio/Events/UX/Combat/AE_UX_Combat_Hitmarker_Vehicle.1"
+  },
+  "Properties": {
+    "ParameterName": "Trigger",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviorMoveSoundToGameplayCueLocation_0 ---
+{
+  "Type": "WDAudioEventBehaviorMoveSoundToGameplayCueLocation",
+  "Name": "WDAudioEventBehaviorMoveSoundToGameplayCueLocation_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorMoveSoundToGameplayCueLocation'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UX_Combat_Hitmarker_Vehicle'",
+    "ObjectPath": "/Game/Audio/Events/UX/Combat/AE_UX_Combat_Hitmarker_Vehicle.1"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

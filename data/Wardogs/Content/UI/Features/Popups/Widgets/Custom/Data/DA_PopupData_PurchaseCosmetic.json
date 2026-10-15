@@ -1,0 +1,55 @@
+--- export: UDataAsset / DA_PopupData_PurchaseCosmetic ---
+{
+  "Type": "WDUIAsyncPopupData",
+  "Name": "DA_PopupData_PurchaseCosmetic",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIAsyncPopupData'",
+  "Package": "/Game/UI/Features/Popups/Widgets/Custom/Data/DA_PopupData_PurchaseCosmetic",
+  "Properties": {
+    "MinimumAwaitResponseSeconds": 0.5,
+    "AutoCloseOnCompletionTimer": 1.5,
+    "TitleFormat": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+      "Key": "Text.PurchaseCosmetic.Title",
+      "SourceString": "Unlock Cosmetic",
+      "LocalizedString": "Unlock Cosmetic"
+    },
+    "DescriptionFormat": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+      "Key": "Text.PurchaseCosmetic.Format.Description",
+      "SourceString": "Are you sure you want to unlock the {Set} {Name} for {Price} gold bars?",
+      "LocalizedString": "Are you sure you want to unlock the {Set} {Name} for {Price} gold bars?"
+    },
+    "CancelButtonText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+      "Key": "Button.Cancel",
+      "SourceString": "Cancel",
+      "LocalizedString": "Cancel"
+    },
+    "CloseButtonText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+      "Key": "Button.Close",
+      "SourceString": "Close",
+      "LocalizedString": "Close"
+    },
+    "ConfirmButtonText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+      "Key": "Button.Confirm",
+      "SourceString": "Confirm",
+      "LocalizedString": "Confirm"
+    },
+    "InformationIcon": {
+      "AssetPathName": "/Game/UI/Features/HUD/Passengers/Textures/T_UI_Vehicle_Unlocked.T_UI_Vehicle_Unlocked",
+      "SubPathString": ""
+    },
+    "ConfirmationAudioEvent": {
+      "TagName": "Audio.Event.UI.FrontEnd.Select"
+    },
+    "SuccessAudioEvent": {
+      "TagName": "Audio.Event.UI.FrontEnd.PurchaseCosmetic.Success"
+    },
+    "FailureAudioEvent": {
+      "TagName": "Audio.Event.UI.FrontEnd.PurchaseCosmetic.Fail"
+    }
+  }
+}

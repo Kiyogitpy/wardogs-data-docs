@@ -1,0 +1,58 @@
+--- export: UDataTable / DT_MaterialTrackerSettingsData_Buildables ---
+{
+  "Type": "DataTable",
+  "Name": "DT_MaterialTrackerSettingsData_Buildables",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Buildables/Data/UI/DT_MaterialTrackerSettingsData_Buildables",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUIMaterialTrackerDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Trackers.Type.BuildableHotZoneMagnet": {
+      "bDisableTracker": false,
+      "TrackerType": {
+        "AssetPathName": "/Script/BuildablesRuntime.WDUIMaterialTracker_Buildable",
+        "SubPathString": ""
+      },
+      "TrackerData": {
+        "ObjectName": "WDUIMaterialTrackerDataAsset'DA_MaterialTrackerData_HotZoneMagnet'",
+        "ObjectPath": "/Buildables/Data/UI/DA_MaterialTrackerData_HotZoneMagnet.0"
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.BuildableHotZoneMagnet"
+      }
+    },
+    "Trackers.Type.BuildableRefuelStation": {
+      "bDisableTracker": false,
+      "TrackerType": {
+        "AssetPathName": "/Script/BuildablesRuntime.WDUIMaterialTracker_Buildable",
+        "SubPathString": ""
+      },
+      "TrackerData": {
+        "ObjectName": "WDUIMaterialTrackerDataAsset'DA_MaterialTrackerData_RefuelStation'",
+        "ObjectPath": "/Buildables/Data/UI/DA_MaterialTrackerData_RefuelStation.0"
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.BuildableRefuelStation"
+      }
+    },
+    "Trackers.Type.BuildableRepairStation": {
+      "bDisableTracker": false,
+      "TrackerType": {
+        "AssetPathName": "/Script/BuildablesRuntime.WDUIMaterialTracker_Buildable",
+        "SubPathString": ""
+      },
+      "TrackerData": {
+        "ObjectName": "WDUIMaterialTrackerDataAsset'DA_MaterialTrackerData_RepairStation'",
+        "ObjectPath": "/Buildables/Data/UI/DA_MaterialTrackerData_RepairStation.0"
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.BuildableRepairStation"
+      }
+    }
+  }
+}

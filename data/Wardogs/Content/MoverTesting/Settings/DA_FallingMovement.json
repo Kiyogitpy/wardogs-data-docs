@@ -1,0 +1,43 @@
+--- export: UDataAsset / DA_FallingMovement ---
+{
+  "Type": "WDFallingData",
+  "Name": "DA_FallingMovement",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDFallingData'",
+  "Package": "/Game/MoverTesting/Settings/DA_FallingMovement",
+  "Properties": {
+    "FallingFloorTraceDistance": 1000000.0,
+    "DamageLookup": {
+      "ObjectName": "CurveFloat'CRV_LandingPunishment_Damage'",
+      "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Curves/CRV_LandingPunishment_Damage.0"
+    },
+    "LandingDamageType": {
+      "ObjectName": "Class'WDFallDamageType'",
+      "ObjectPath": "/Script/WDGame"
+    },
+    "Acceleration": 5.0,
+    "MaxSpeed": 300.0,
+    "MaxStopSpeed": 150.0,
+    "AirFriction": 1.0,
+    "AirControlPercentage": 0.2,
+    "SurfaceAngleToAirControlCurve": {
+      "ObjectName": "CurveFloat'CRF_Falling_SurfaceAngleToAirControl'",
+      "ObjectPath": "/Game/MoverTesting/Curves/Falling/CRF_Falling_SurfaceAngleToAirControl.0"
+    },
+    "SurfaceAngleToPushOffForceCurve": {
+      "ObjectName": "CurveFloat'CRF_Falling_SurfaceAngleToPushOffForce'",
+      "ObjectPath": "/Game/MoverTesting/Curves/Falling/CRF_Falling_SurfaceAngleToPushOffForce.0"
+    },
+    "bApplyImpartedMovementBaseVelocity": true,
+    "bImpartBaseVelocityX": true,
+    "bImpartBaseVelocityY": true,
+    "bImpartBaseVelocityZ": true,
+    "bStayBasedInAir": true,
+    "VerticalTerminalSpeed": 5300.0,
+    "HorizontalTerminalSpeed": 5300.0,
+    "InputMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_Player_Falling'",
+      "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IMC_Player_Falling.2"
+    }
+  }
+}

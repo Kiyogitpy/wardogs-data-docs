@@ -1,0 +1,30 @@
+--- export: UDataAsset / W_TNK_01_Artillery ---
+{
+  "Type": "WDVehicleWeaponDataAsset",
+  "Name": "W_TNK_01_Artillery",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeaponDataAsset'",
+  "Package": "/TNK_01/Weapons/Artillery/W_TNK_01_Artillery",
+  "Properties": {
+    "WeaponTag": {
+      "TagName": "Id.Vehicle.Weapon.TNK_01.Turret.Artillery"
+    },
+    "SkeletalMeshAsset": {
+      "AssetPathName": "/TNK_01/Mesh/TNK_02/SK/SK_TNK_02_Turret.SK_TNK_02_Turret",
+      "SubPathString": ""
+    },
+    "MuzzleSockets": [
+      "S_MuzzleFlash"
+    ],
+    "PlayerAttachSocket": {
+      "SourceID": "TurretSkeleton",
+      "SocketName": "S_Attach_TankTurret_Player"
+    },
+    "GamepadRotationSensitivity": 5.0,
+    "GamepadRotationUpdateMax": {
+      "X": 60.0,
+      "Y": 60.0
+    },
+    "KeyRotationSensitivity": 6.0
+  }
+}

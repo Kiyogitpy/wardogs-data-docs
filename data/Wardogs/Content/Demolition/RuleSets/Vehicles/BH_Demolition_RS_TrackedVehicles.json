@@ -1,0 +1,38 @@
+--- export: UObject / BHDemolitionRule_Vehicle_0 ---
+{
+  "Type": "BHDemolitionRule_Vehicle",
+  "Name": "BHDemolitionRule_Vehicle_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDemolitionRule_Vehicle'",
+  "Outer": {
+    "ObjectName": "BHDemolitionRuleset'BH_Demolition_RS_TrackedVehicles'",
+    "ObjectPath": "/Game/Demolition/RuleSets/Vehicles/BH_Demolition_RS_TrackedVehicles.1"
+  },
+  "Properties": {
+    "PermittedVehicles": [
+      "Vehicle.Variant.Land.Tracked.SpawnVehicle.Valkyra",
+      "Vehicle.Variant.Land.Tracked.SpawnVehicle.Manticore",
+      "Vehicle.Variant.Land.Tracked.SpawnVehicle.Lonestar",
+      "Vehicle.Variant.Land.Tracked.TNK_01.AntiAir",
+      "Vehicle.Variant.Land.Tracked.TNK_01.Artillery",
+      "Vehicle.Variant.Land.Tracked.TNK_01.Light",
+      "Vehicle.Variant.Land.Tracked.TNK_01.Heavy"
+    ],
+    "bPermitOverlaps": true,
+    "bPermitBlockingHits": true
+  }
+}
+--- export: UDataAsset / BH_Demolition_RS_TrackedVehicles ---
+{
+  "Type": "BHDemolitionRuleset",
+  "Name": "BH_Demolition_RS_TrackedVehicles",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDemolitionRuleset'",
+  "Package": "/Game/Demolition/RuleSets/Vehicles/BH_Demolition_RS_TrackedVehicles",
+  "Properties": {
+    "Rule": {
+      "ObjectName": "BHDemolitionRule_Vehicle'BH_Demolition_RS_TrackedVehicles:BHDemolitionRule_Vehicle_0'",
+      "ObjectPath": "/Game/Demolition/RuleSets/Vehicles/BH_Demolition_RS_TrackedVehicles.0"
+    }
+  }
+}

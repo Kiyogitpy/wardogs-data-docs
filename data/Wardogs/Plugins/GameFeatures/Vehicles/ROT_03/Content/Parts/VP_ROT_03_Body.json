@@ -1,0 +1,237 @@
+--- export: UPrimaryDataAsset / VP_ROT_03_Body ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_ROT_03_Body",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/ROT_03/Parts/VP_ROT_03_Body",
+  "Properties": {
+    "Tags": [
+      "Vehicle.Attachment"
+    ],
+    "Fragments": [
+      {
+        "Key": "MainBody",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_ROT_03_Body:MVF_StaticMesh_5'",
+            "ObjectPath": "/ROT_03/Parts/VP_ROT_03_Body.1"
+          }
+        }
+      },
+      {
+        "Key": "Stats",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_VehicleStats'VP_ROT_03_Body:WD_MVF_VehicleStats_0'",
+            "ObjectPath": "/ROT_03/Parts/VP_ROT_03_Body.3"
+          }
+        }
+      },
+      {
+        "Key": "SupplyCrate",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_SupplyCrateFragment'VP_ROT_03_Body:WD_MVF_SupplyCrateFragment_0'",
+            "ObjectPath": "/ROT_03/Parts/VP_ROT_03_Body.2"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / MVF_StaticMesh_5 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_5",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_ROT_03_Body'",
+    "ObjectPath": "/ROT_03/Parts/VP_ROT_03_Body.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceMode": "EAttachSourceQueryMode::Explicit",
+        "SourceID": "Mesh",
+        "SocketName": "body_J"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/ROT_03/Meshes/SM_ROT_03_Body.SM_ROT_03_Body",
+      "SubPathString": ""
+    },
+    "bHitEvents": false,
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    }
+  }
+}
+--- export: UObject / WD_MVF_SupplyCrateFragment_0 ---
+{
+  "Type": "WD_MVF_SupplyCrateFragment",
+  "Name": "WD_MVF_SupplyCrateFragment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_SupplyCrateFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_ROT_03_Body'",
+    "ObjectPath": "/ROT_03/Parts/VP_ROT_03_Body.0"
+  },
+  "Properties": {
+    "SupplyCrateSettings": {
+      "bCanSupportSupplyCrates": true,
+      "bShouldUseVehicleSpeedCheck": false,
+      "LogisticsSlotSettings": [
+        {
+          "Identifier": {
+            "TableId": "/Game/UI/StringTables/STRINGS_VehicleSettings.STRINGS_VehicleSettings",
+            "Key": "Text.Settings.SupplyCrate.Id.LeftSlot",
+            "SourceString": "Left Slot",
+            "LocalizedString": "Left Slot"
+          },
+          "bAccessibleInVehicle": true,
+          "SlotTransform": {
+            "Rotation": {
+              "X": -0.0,
+              "Y": 0.0,
+              "Z": -0.707107,
+              "W": 0.7071066,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0
+            },
+            "Translation": {
+              "X": 0.0,
+              "Y": -100.0,
+              "Z": 120.0
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 1.0,
+              "Z": 1.0
+            }
+          },
+          "SlotSize": {
+            "X": 1,
+            "Y": 3
+          },
+          "SpaceEdgeLength": 25.0,
+          "SpaceDimensions": {
+            "X": 66.5,
+            "Y": 51.75,
+            "Z": 156.25
+          },
+          "MeshAdditionalRotation": {
+            "Pitch": -5.0,
+            "Yaw": -90.0,
+            "Roll": 0.0
+          },
+          "MeshAdditionalLocationOffset": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": -30.0
+          },
+          "_aaabfeobnoecnfpfeplfp_$4E1DE42D5F54FB5F$_$21$": true,
+          "DeployOffset": {
+            "X": 0.0,
+            "Y": -500.0,
+            "Z": 0.0
+          },
+          "DeployRotationOffset": {
+            "Pitch": 0.0,
+            "Yaw": 180.0,
+            "Roll": 0.0
+          }
+        },
+        {
+          "Identifier": {
+            "TableId": "/Game/UI/StringTables/STRINGS_VehicleSettings.STRINGS_VehicleSettings",
+            "Key": "Text.Settings.SupplyCrate.Id.RightSlot",
+            "SourceString": "Right Slot",
+            "LocalizedString": "Right Slot"
+          },
+          "bAccessibleInVehicle": true,
+          "SlotTransform": {
+            "Rotation": {
+              "X": -0.0,
+              "Y": 0.0,
+              "Z": -0.70710677,
+              "W": 0.70710677,
+              "IsNormalized": true,
+              "Size": 0.99999994,
+              "SizeSquared": 0.99999994
+            },
+            "Translation": {
+              "X": 0.0,
+              "Y": 100.0,
+              "Z": 120.0
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 1.0,
+              "Z": 1.0
+            }
+          },
+          "SlotSize": {
+            "X": 1,
+            "Y": 3
+          },
+          "SpaceEdgeLength": 25.0,
+          "SpaceDimensions": {
+            "X": 66.5,
+            "Y": 51.75,
+            "Z": 156.25
+          },
+          "MeshAdditionalRotation": {
+            "Pitch": 5.0,
+            "Yaw": 90.0,
+            "Roll": 0.0
+          },
+          "MeshAdditionalLocationOffset": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": -30.0
+          },
+          "_aaabfeobnoecnfpfeplfp_$4E1DE42D5F54FB5F$_$21$": true,
+          "DeployOffset": {
+            "X": 0.0,
+            "Y": 500.0,
+            "Z": 0.0
+          },
+          "DeployRotationOffset": {
+            "Pitch": 0.0,
+            "Yaw": 0.0,
+            "Roll": 0.0
+          }
+        }
+      ],
+      "SupplyCrateData": {
+        "ObjectName": "WDUISupplyCrateData'DA_SupplyCrateData'",
+        "ObjectPath": "/Game/UI/Features/Vendor/Widgets/LogisticsSlots/Data/DA_SupplyCrateData.0"
+      }
+    }
+  }
+}
+--- export: UObject / WD_MVF_VehicleStats_0 ---
+{
+  "Type": "WD_MVF_VehicleStats",
+  "Name": "WD_MVF_VehicleStats_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_VehicleStats'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_ROT_03_Body'",
+    "ObjectPath": "/ROT_03/Parts/VP_ROT_03_Body.0"
+  },
+  "Properties": {
+    "VehiclesStatsDataAsset": {
+      "AssetPathName": "/ROT_03/Data/DA_ROT_03_Stats.DA_ROT_03_Stats",
+      "SubPathString": ""
+    }
+  }
+}

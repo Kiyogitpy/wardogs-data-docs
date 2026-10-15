@@ -1,0 +1,305 @@
+--- export: UPrimaryDataAsset / DA_LightSettings_Sunset ---
+{
+  "Type": "PDA_LightSettings_C",
+  "Name": "DA_LightSettings_Sunset",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Environment/Lighting/DataAssets/PDA_LightSettings.PDA_LightSettings_C'",
+  "Package": "/Game/Environment/Lighting/DataAssets/Presets/DA_LightSettings_Sunset",
+  "Template": {
+    "ObjectName": "PDA_LightSettings_C'Default__PDA_LightSettings_C'",
+    "ObjectPath": "/Game/Environment/Lighting/DataAssets/PDA_LightSettings.8"
+  },
+  "Properties": {
+    "UserTitle": {
+      "Namespace": "",
+      "Key": "8C45FA204D41AD9A4A43D5A32EA0CD5E",
+      "SourceString": "DayEndClear",
+      "LocalizedString": "DayEndClear"
+    },
+    "UserDescription": {
+      "Namespace": "",
+      "Key": "8120A3044F87A64391BF50B5505895D4",
+      "SourceString": "Sunset",
+      "LocalizedString": "Sunset"
+    },
+    "SkyMaterial": {
+      "ObjectName": "MaterialInstanceConstant'MI_HDRI_Sunset'",
+      "ObjectPath": "/Game/Environment/Sky/Materials/Presets/MI_HDRI_Sunset.0"
+    },
+    "DirectionalLightSettings": {
+      "DirectionalLightRotation_88_B7AB5B49423DF4F01179B1BDEE958AEA": {
+        "Pitch": -12.842258,
+        "Yaw": 191.0,
+        "Roll": 1056.0293
+      },
+      "Intensity_2_FD578EC04DBBE4611F5190AE99128D0F": 12000.0,
+      "Temperature_19_B8D3E2B94C5754BCEA445B8CC7E57AB7": 5000.0,
+      "VolumetricScatteringIntensity_52_8C71A1D548FC1C4E77E80C810226B5FE": 0.6,
+      "UseLightFunction_53_F60645C4407F2741BBA5CFBB88463C47": true,
+      "LightFunctionMaterial_54_ABEEBF28463517E2972403A5010CA5BA": {
+        "AssetPathName": "/Game/Environment/Sky/Materials/MI_LightFunction_Basic_02.MI_LightFunction_Basic_02",
+        "SubPathString": ""
+      },
+      "LightFunctionDisabledBrightness_57_ED6253E447F57CF5D9E234A97548E5F3": 0.3,
+      "ContactShadowCastingIntensity_62_4384D699488C53FC8C7504A7AD573BB1": 0.5,
+      "LightShaftsBloomTint_85_87DB071244A47E2566E66F8BFDE13358": {
+        "B": 255,
+        "G": 255,
+        "R": 255,
+        "A": 255,
+        "Hex": "FFFFFF"
+      },
+      "LightShaftsBloomScale_79_8F5AE5F8428DCF2CB698FBBD519570AE": 0.03,
+      "LightShaftsBloomMaxBrigthness_81_CCB64EAE4AF96EF9F58C13B4E11304E3": 1.0
+    },
+    "SkyLightSettings": {
+      "Intensity_2_F0845300460630035138F3B6C35B236E": 0.7,
+      "LowerHemisphereIntensity_11_F22E566C4300B4FA42886191B9C65704": 200.0
+    },
+    "PostProcessSettings": {
+      "bOverride_ColorContrast": true,
+      "bOverride_SceneFringeIntensity": true,
+      "bOverride_ChromaticAberrationStartOffset": true,
+      "bOverride_BloomMethod": true,
+      "bOverride_BloomIntensity": true,
+      "bOverride_BloomThreshold": true,
+      "bOverride_AutoExposureMethod": true,
+      "bOverride_AutoExposureLowPercent": true,
+      "bOverride_AutoExposureHighPercent": true,
+      "bOverride_AutoExposureMinBrightness": true,
+      "bOverride_AutoExposureMaxBrightness": true,
+      "bOverride_AutoExposureSpeedUp": true,
+      "bOverride_AutoExposureSpeedDown": true,
+      "bOverride_LocalExposureHighlightContrastScale": true,
+      "bOverride_LocalExposureShadowContrastScale": true,
+      "bOverride_VignetteIntensity": true,
+      "bOverride_AmbientOcclusionIntensity": true,
+      "bOverride_AmbientOcclusionRadius": true,
+      "bOverride_AmbientOcclusionRadiusInWS": true,
+      "bOverride_AmbientOcclusionPower": true,
+      "bOverride_IndirectLightingIntensity": true,
+      "bOverride_DepthOfFieldSkyFocusDistance": true,
+      "bOverride_ReflectionMethod": true,
+      "bOverride_ScreenSpaceReflectionIntensity": true,
+      "bOverride_ScreenSpaceReflectionMaxRoughness": true,
+      "bOverride_DynamicGlobalIlluminationMethod": true,
+      "bOverride_LumenSceneDetail": true,
+      "bOverride_LumenSceneViewDistance": true,
+      "bOverride_LumenSceneLightingUpdateSpeed": true,
+      "bOverride_LumenFinalGatherLightingUpdateSpeed": true,
+      "bOverride_LumenMaxTraceDistance": true,
+      "bOverride_LumenDiffuseColorBoost": true,
+      "bOverride_LumenFullSkylightLeakingDistance": true,
+      "bOverride_LumenSurfaceCacheResolution": true,
+      "WhiteTemp": 6000.0,
+      "ColorContrast": {
+        "X": 1.1,
+        "Y": 1.1,
+        "Z": 1.1,
+        "W": 1.0
+      },
+      "ColorContrastHighlights": {
+        "X": 1.3,
+        "Y": 1.3,
+        "Z": 1.3,
+        "W": 1.0
+      },
+      "FilmToe": 0.5,
+      "DynamicGlobalIlluminationMethod": "EDynamicGlobalIlluminationMethod::None",
+      "LumenDiffuseColorBoost": 1.5,
+      "ReflectionMethod": "EReflectionMethod::ScreenSpace",
+      "LumenReflectionsScreenTraces": true,
+      "ScreenSpaceReflectionQuality": 90.4,
+      "ScreenSpaceReflectionMaxRoughness": 0.514465,
+      "AutoExposureBias": 1.0,
+      "AutoExposureLowPercent": 50.0,
+      "AutoExposureMinBrightness": 8.3,
+      "AutoExposureMaxBrightness": 9.0,
+      "AutoExposureSpeedUp": 1.0,
+      "AutoExposureSpeedDown": 2.0,
+      "LocalExposureHighlightContrastScale": 0.8,
+      "LocalExposureShadowContrastScale": 0.8,
+      "VignetteIntensity": 0.3,
+      "AmbientOcclusionIntensity": 0.85,
+      "AmbientOcclusionRadius": 100.0,
+      "AmbientOcclusionRadiusInWS": true,
+      "AmbientOcclusionPower": 1.5,
+      "AmbientOcclusionQuality": 60.0,
+      "ColorGradingIntensity": 0.0,
+      "DepthOfFieldFarBlurSize": 32.0,
+      "DepthOfFieldOcclusion": 1.0,
+      "DepthOfFieldSkyFocusDistance": 92800.0,
+      "MotionBlurAmount": 0.0
+    },
+    "ExponentialHeightFogSettings": {
+      "FogDensity_2_40EC0F7748B7B55602EA86AC5B8BF830": 0.0009,
+      "FogInscatteringColor_7_30A658CD486FB2B1F38B748C3A6EA0D4": {
+        "R": 1000.0,
+        "G": 863.1753,
+        "B": 669.8485,
+        "A": 1.0,
+        "Hex": "FFFFFF"
+      },
+      "ScatteringDistribution_13_151CFC384B2804FF5032D38A57A7CCDE": 0.4,
+      "DirectionalInscatteringStartDistance_23_340A4BAB4DDB0E6CFEF60597A9E125C8": 20000.0,
+      "DirectionalInscatteringColor_27_BCACAE354F62F8DD85624A8A8E158075": {
+        "R": 1.0,
+        "G": 0.566043,
+        "B": 0.167594,
+        "A": 1.0,
+        "Hex": "FFC672"
+      },
+      "SecondFogDensity_59_C09F80FD4D6E1BF61399C0ADDF2C0DDD": 0.0002,
+      "SecondFogFalloff_61_69E7DBB049D60488E56E569C5C9FDF49": 0.03
+    },
+    "SkyAtmopshereSettings": {
+      "Visible_18_7973107E40F03A3BC89F418010E69E51": true,
+      "SkyandAerialPerspectiveLuminanceFactor_26_7860D37243F4258FABBD69839BC7E33A": {
+        "R": 2.0,
+        "G": 2.0,
+        "B": 2.0,
+        "A": 0.0,
+        "Hex": "FFFFFF"
+      }
+    },
+    "DirectionalLightSettings_Overkill": {
+      "DirectionalLightRotation_88_B7AB5B49423DF4F01179B1BDEE958AEA": {
+        "Pitch": -12.842258,
+        "Yaw": 191.0,
+        "Roll": 1056.0293
+      },
+      "Intensity_2_FD578EC04DBBE4611F5190AE99128D0F": 16000.0,
+      "Temperature_19_B8D3E2B94C5754BCEA445B8CC7E57AB7": 5000.0,
+      "VolumetricScatteringIntensity_52_8C71A1D548FC1C4E77E80C810226B5FE": 0.6,
+      "UseLightFunction_53_F60645C4407F2741BBA5CFBB88463C47": true,
+      "LightFunctionMaterial_54_ABEEBF28463517E2972403A5010CA5BA": {
+        "AssetPathName": "/Game/Environment/Sky/Materials/MI_LightFunction_Basic_02.MI_LightFunction_Basic_02",
+        "SubPathString": ""
+      },
+      "LightFunctionDisabledBrightness_57_ED6253E447F57CF5D9E234A97548E5F3": 0.3,
+      "ContactShadowCastingIntensity_62_4384D699488C53FC8C7504A7AD573BB1": 0.5,
+      "LightShaftsBloomTint_85_87DB071244A47E2566E66F8BFDE13358": {
+        "B": 255,
+        "G": 255,
+        "R": 255,
+        "A": 255,
+        "Hex": "FFFFFF"
+      },
+      "LightShaftsBloomScale_79_8F5AE5F8428DCF2CB698FBBD519570AE": 0.03,
+      "LightShaftsBloomMaxBrigthness_81_CCB64EAE4AF96EF9F58C13B4E11304E3": 1.0
+    },
+    "SkyLightSettings_Overkill": {
+      "LowerHemisphereIntensity_11_F22E566C4300B4FA42886191B9C65704": 100.0,
+      "MinOcclusion_14_3E984F0946A37BDB011DB4A838A20329": 1.0
+    },
+    "PostProcessSettings_Overkill": {
+      "bOverride_ColorContrast": true,
+      "bOverride_SceneFringeIntensity": true,
+      "bOverride_ChromaticAberrationStartOffset": true,
+      "bOverride_BloomMethod": true,
+      "bOverride_BloomIntensity": true,
+      "bOverride_BloomThreshold": true,
+      "bOverride_AutoExposureMethod": true,
+      "bOverride_AutoExposureLowPercent": true,
+      "bOverride_AutoExposureHighPercent": true,
+      "bOverride_AutoExposureMinBrightness": true,
+      "bOverride_AutoExposureMaxBrightness": true,
+      "bOverride_AutoExposureSpeedUp": true,
+      "bOverride_AutoExposureSpeedDown": true,
+      "bOverride_LocalExposureHighlightContrastScale": true,
+      "bOverride_LocalExposureShadowContrastScale": true,
+      "bOverride_VignetteIntensity": true,
+      "bOverride_AmbientOcclusionIntensity": true,
+      "bOverride_AmbientOcclusionRadius": true,
+      "bOverride_AmbientOcclusionFadeDistance": true,
+      "bOverride_AmbientOcclusionPower": true,
+      "bOverride_IndirectLightingIntensity": true,
+      "bOverride_DepthOfFieldSkyFocusDistance": true,
+      "bOverride_ReflectionMethod": true,
+      "bOverride_ScreenSpaceReflectionIntensity": true,
+      "bOverride_ScreenSpaceReflectionMaxRoughness": true,
+      "bOverride_DynamicGlobalIlluminationMethod": true,
+      "bOverride_LumenSceneDetail": true,
+      "bOverride_LumenSceneViewDistance": true,
+      "bOverride_LumenSceneLightingUpdateSpeed": true,
+      "bOverride_LumenFinalGatherLightingUpdateSpeed": true,
+      "bOverride_LumenMaxTraceDistance": true,
+      "bOverride_LumenDiffuseColorBoost": true,
+      "bOverride_LumenSkylightLeaking": true,
+      "bOverride_LumenFullSkylightLeakingDistance": true,
+      "bOverride_LumenSurfaceCacheResolution": true,
+      "WhiteTemp": 6000.0,
+      "ColorContrast": {
+        "X": 1.05,
+        "Y": 1.05,
+        "Z": 1.05,
+        "W": 1.0
+      },
+      "ColorContrastHighlights": {
+        "X": 1.3,
+        "Y": 1.3,
+        "Z": 1.3,
+        "W": 1.0
+      },
+      "FilmToe": 0.5,
+      "LumenDiffuseColorBoost": 1.2,
+      "LumenSkylightLeaking": 0.015,
+      "LumenReflectionsScreenTraces": true,
+      "ScreenSpaceReflectionQuality": 90.4,
+      "ScreenSpaceReflectionMaxRoughness": 0.514465,
+      "AutoExposureBias": 1.0,
+      "AutoExposureLowPercent": 50.0,
+      "AutoExposureMinBrightness": 8.0,
+      "AutoExposureMaxBrightness": 9.0,
+      "AutoExposureSpeedUp": 1.0,
+      "AutoExposureSpeedDown": 2.0,
+      "LocalExposureHighlightContrastScale": 0.8,
+      "LocalExposureShadowContrastScale": 0.6,
+      "VignetteIntensity": 0.2,
+      "AmbientOcclusionIntensity": 1.0,
+      "AmbientOcclusionRadius": 150.0,
+      "AmbientOcclusionFadeDistance": 12000.0,
+      "AmbientOcclusionPower": 1.5,
+      "ColorGradingIntensity": 0.0,
+      "DepthOfFieldFarBlurSize": 32.0,
+      "DepthOfFieldOcclusion": 1.0,
+      "DepthOfFieldSkyFocusDistance": 92800.0,
+      "MotionBlurAmount": 0.0
+    },
+    "ExponentialHeightFogSettings_Overkill": {
+      "FogDensity_2_40EC0F7748B7B55602EA86AC5B8BF830": 0.0009,
+      "FogInscatteringColor_7_30A658CD486FB2B1F38B748C3A6EA0D4": {
+        "R": 1000.0,
+        "G": 863.1753,
+        "B": 669.8485,
+        "A": 1.0,
+        "Hex": "FFFFFF"
+      },
+      "ScatteringDistribution_13_151CFC384B2804FF5032D38A57A7CCDE": 0.4,
+      "DirectionalInscatteringStartDistance_23_340A4BAB4DDB0E6CFEF60597A9E125C8": 20000.0,
+      "DirectionalInscatteringColor_27_BCACAE354F62F8DD85624A8A8E158075": {
+        "R": 1.0,
+        "G": 0.566043,
+        "B": 0.167594,
+        "A": 1.0,
+        "Hex": "FFC672"
+      },
+      "SecondFogDensity_59_C09F80FD4D6E1BF61399C0ADDF2C0DDD": 0.0002,
+      "SecondFogFalloff_61_69E7DBB049D60488E56E569C5C9FDF49": 0.03
+    },
+    "SkyAtmopshereSettings_Overkill": {
+      "Visible_18_7973107E40F03A3BC89F418010E69E51": true,
+      "SkyandAerialPerspectiveLuminanceFactor_26_7860D37243F4258FABBD69839BC7E33A": {
+        "R": 2.0,
+        "G": 2.0,
+        "B": 2.0,
+        "A": 0.0,
+        "Hex": "FFFFFF"
+      }
+    },
+    "NativeClass": {
+      "ObjectName": "BlueprintGeneratedClass'PDA_LightSettings_C'",
+      "ObjectPath": "/Game/Environment/Lighting/DataAssets/PDA_LightSettings.0"
+    }
+  }
+}

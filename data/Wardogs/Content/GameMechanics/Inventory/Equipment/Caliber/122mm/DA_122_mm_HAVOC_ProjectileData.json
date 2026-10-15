@@ -1,0 +1,77 @@
+--- export: UPrimaryDataAsset / DA_122_mm_HAVOC_ProjectileData ---
+{
+  "Type": "WDProjectileData",
+  "Name": "DA_122_mm_HAVOC_ProjectileData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDProjectileData'",
+  "Package": "/Game/GameMechanics/Inventory/Equipment/Caliber/122mm/DA_122_mm_HAVOC_ProjectileData",
+  "Properties": {
+    "ProjectileId": {
+      "TagName": "Item.Caliber.122mm.Havoc"
+    },
+    "ProjectileStats": {
+      "DamageEntityData": {
+        "Tag": {
+          "TagName": "Meta.Damage.Explosive.Rocket.122mm"
+        }
+      },
+      "DamageValues": {
+        "BaseDamage": 300.0,
+        "ExplosiveRadius": 300.0,
+        "EffectiveExplosiveRadius": 600.0,
+        "ExplosiveDamageFallOff": 0.6,
+        "bPreferUpwardsTrace": false
+      },
+      "ProjectileDimensions": {
+        "Length": 254.0,
+        "Diameter": 12.2,
+        "Mass": 57.0,
+        "DragModel": {
+          "Curve": {
+            "CurveTable": {
+              "ObjectName": "CurveTable'CT_Projectile_DragCoefficients'",
+              "ObjectPath": "/Game/Items/Resources/Ammo/Curves/CT_Projectile_DragCoefficients.0"
+            },
+            "RowName": "GC (Cylinder)"
+          }
+        }
+      },
+      "ProjectileEffects": {
+        "GameplayCueTag": {
+          "TagName": "GameplayCue.Weapon.RocketProjectile"
+        },
+        "AudioEventTag": {
+          "TagName": "Audio.Event.Projectile.Rocket.Travel.122mm"
+        }
+      },
+      "SuppressionData": {
+        "BaseSuppression": 1.0,
+        "DistanceFalloffCurve": {
+          "EditorCurveData": {}
+        }
+      },
+      "AttachedEffect": {
+        "AssetPathName": "/Game/VFX/Weapons/RocketLauncher/NS_ProjectileTrail_84mm.NS_ProjectileTrail_84mm",
+        "SubPathString": ""
+      },
+      "bUseProjectileActor": true,
+      "ProjectileActor": {
+        "AssetPathName": "/Game/GameMechanics/Inventory/Equipment/Caliber/122mm/BP_122mm.BP_122mm_C",
+        "SubPathString": ""
+      },
+      "bActorHandlesProjectileMovement": true,
+      "TracerChance": 1.0,
+      "TypicalSpeed": 143000.0,
+      "bShouldPenetrate": false,
+      "bForcePenetrateThinSurfaces": true,
+      "PenetrationEffectivenessMultiplier": 2.0,
+      "MinImpactAngleForRicochet": 91.0,
+      "bShouldPreSimulate": false,
+      "bShouldThrust": true,
+      "ThrustSpeed": 20000.0,
+      "bClientPredictive": false,
+      "PerceivedImpactRange": 60000.0,
+      "IgnoreInstigatorVehicleTime": 0.5
+    }
+  }
+}

@@ -1,0 +1,31 @@
+--- export: UDataAsset / IA_Vehicle_Weapon_ChangeWeapon2 ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Vehicle_Weapon_ChangeWeapon2",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_ChangeWeapon2",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.WeaponExtension.Change.2"
+    },
+    "bConsumeInput": false,
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerTap'IA_Vehicle_Weapon_ChangeWeapon2:InputTriggerTap_1'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_ChangeWeapon2.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerTap_1 ---
+{
+  "Type": "InputTriggerTap",
+  "Name": "InputTriggerTap_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerTap'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_Weapon_ChangeWeapon2'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_ChangeWeapon2.0"
+  }
+}

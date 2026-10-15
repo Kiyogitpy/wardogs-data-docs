@@ -1,0 +1,39 @@
+--- export: UObject / AEB_LoadingScreen_Enter_C_0 ---
+{
+  "Type": "AEB_LoadingScreen_Enter_C",
+  "Name": "AEB_LoadingScreen_Enter_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_LoadingScreen_Enter.AEB_LoadingScreen_Enter_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Gamemode_LoadingScreen_Enter'",
+    "ObjectPath": "/Game/Audio/Events/Gamemode/AE_Gamemode_LoadingScreen_Enter.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_LoadingScreen_Enter_C'Default__AEB_LoadingScreen_Enter_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_LoadingScreen_Enter.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Gamemode_LoadingScreen_Enter ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Gamemode_LoadingScreen_Enter",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Gamemode/AE_Gamemode_LoadingScreen_Enter",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Gamemode.LoadingScreen.Enter"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_LoadingScreen_Enter_C'AE_Gamemode_LoadingScreen_Enter:AEB_LoadingScreen_Enter_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Gamemode/AE_Gamemode_LoadingScreen_Enter.0"
+      }
+    ]
+  }
+}

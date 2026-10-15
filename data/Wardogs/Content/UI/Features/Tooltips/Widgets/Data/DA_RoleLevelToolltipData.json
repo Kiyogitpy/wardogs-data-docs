@@ -1,0 +1,60 @@
+--- export: UDataAsset / DA_RoleLevelToolltipData ---
+{
+  "Type": "WDUITooltipRoleLevelData",
+  "Name": "DA_RoleLevelToolltipData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUITooltipRoleLevelData'",
+  "Package": "/Game/UI/Features/Tooltips/Widgets/Data/DA_RoleLevelToolltipData",
+  "Properties": {
+    "CareerLevelViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIRoleLevelViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Shared/Widgets/Meta/Data/DA_RoleLevelData.DA_RoleLevelData",
+        "SubPathString": ""
+      }
+    },
+    "RolesEntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIRoleMasteryProgressViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Frontend/Progression/Widgets/Widgets/RoleMastery/Data/DA_RoleMasteryProgression.DA_RoleMasteryProgression",
+        "SubPathString": ""
+      }
+    },
+    "RoleTags": [
+      {
+        "TagName": "Meta.Role.Infantry"
+      },
+      {
+        "TagName": "Meta.Role.Medic"
+      },
+      {
+        "TagName": "Meta.Role.Support"
+      },
+      {
+        "TagName": "Meta.Role.Recon"
+      },
+      {
+        "TagName": "Meta.Role.Driver"
+      },
+      {
+        "TagName": "Meta.Role.Pilot"
+      }
+    ],
+    "ButtonPromptsBarViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIButtonPromptsBarViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/Data/ButtonPromptData/DA_Default_PromptBarData.DA_Default_PromptBarData",
+        "SubPathString": ""
+      }
+    }
+  }
+}

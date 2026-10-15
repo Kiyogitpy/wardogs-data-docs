@@ -1,0 +1,40 @@
+--- export: UDataTable / DT_Skills_Lockpicking ---
+{
+  "Type": "DataTable",
+  "Name": "DT_Skills_Lockpicking",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Lockpicking/Data/Skills/DT_Skills_Lockpicking",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDMetaSkillEffectsTaggedTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Meta.Role.Recon.Lockpicking": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Character"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_GrantSkill_Lockpicking_C'",
+                  "ObjectPath": "/Lockpicking/Data/GameplayEffects/GE_GrantSkill_Lockpicking.0"
+                },
+                "CustomMagnitudes": [],
+                "AdditionalData": []
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Recon.Lockpicking"
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+--- export: UObject / AEB_XPProgression_SetXPBarTime_C_0 ---
+{
+  "Type": "AEB_XPProgression_SetXPBarTime_C",
+  "Name": "AEB_XPProgression_SetXPBarTime_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_XPProgression_SetXPBarTime.AEB_XPProgression_SetXPBarTime_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_XPProgression_StartFillingProgress'",
+    "ObjectPath": "/Game/Audio/Events/UI/XPProgression/AE_UI_XPProgression_StartFillingProgress.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_XPProgression_SetXPBarTime_C'Default__AEB_XPProgression_SetXPBarTime_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_XPProgression_SetXPBarTime.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.UI.XPProgression.StartFillingProgress"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_UI_XPProgression_StartFillingProgress ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UI_XPProgression_StartFillingProgress",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UI/XPProgression/AE_UI_XPProgression_StartFillingProgress",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.XPProgression.StartFillingProgress"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_XPProgression_SetXPBarTime_C'AE_UI_XPProgression_StartFillingProgress:AEB_XPProgression_SetXPBarTime_C_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/XPProgression/AE_UI_XPProgression_StartFillingProgress.0"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_UI_XPProgression_StartFillingProgress:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/XPProgression/AE_UI_XPProgression_StartFillingProgress.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_XPProgression_StartFillingProgress'",
+    "ObjectPath": "/Game/Audio/Events/UI/XPProgression/AE_UI_XPProgression_StartFillingProgress.1"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UI_EndGame_XP_Bar'",
+      "ObjectPath": "/Game/Audio/UI/EndGame/XP/MSS_UI_EndGame_XP_Bar.0"
+    },
+    "FadeIn": 0.1,
+    "bCancelFadeOut": true,
+    "ContextTag": {
+      "TagName": "Audio.Context.UI.XPProgression.StartFillingProgress"
+    }
+  }
+}

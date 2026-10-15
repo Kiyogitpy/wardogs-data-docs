@@ -1,0 +1,58 @@
+--- export: UDataAsset / DA_ContainerTooltipData_Stationary ---
+{
+  "Type": "WDUITooltipContainerData",
+  "Name": "DA_ContainerTooltipData_Stationary",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUITooltipContainerData'",
+  "Package": "/Game/UI/Features/Tooltips/Widgets/Data/DA_ContainerTooltipData_Stationary",
+  "Properties": {
+    "ItemWidgetsParams": [
+      {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/TooltipItems/Small/W_TooltipItem_Title_Small.W_TooltipItem_Title_Small_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUITooltipItemViewModel_Title",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+      },
+      {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/TooltipItems/Small/W_TooltipItem_Description_Small.W_TooltipItem_Description_Small_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUITooltipItemViewModel_Description",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/TooltipItems/Data/DA_TooltipItem_DescriptionData_Default.DA_TooltipItem_DescriptionData_Default",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+      }
+    ],
+    "_aaaanjlmndaddcohcfahh_$9BCD30332E725077$_$13$": 150.0,
+    "_aaabihpeobhndjeogfecd_$7F4E17D394E65423$_$24$": 300.0,
+    "ButtonPromptsBarViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIButtonPromptsBarViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/Data/ButtonPromptData/DA_Default_PromptBarData.DA_Default_PromptBarData",
+        "SubPathString": ""
+      }
+    }
+  }
+}

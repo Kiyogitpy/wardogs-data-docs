@@ -1,0 +1,192 @@
+--- export: UPrimaryDataAsset / DA_Config_WHL_05_Humvee_Minigun ---
+{
+  "Type": "MWheeledVehicleConfigDataAsset",
+  "Name": "DA_Config_WHL_05_Humvee_Minigun",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MWheeledVehicleConfigDataAsset'",
+  "Package": "/WHL_05/Data/Minigun/DA_Config_WHL_05_Humvee_Minigun",
+  "Properties": {
+    "CharacteristicsDataAsset": {
+      "ObjectName": "MWheeledVehicleCharacteristicsDataAsset'DA_Characteristics_WHL_05_Humvee'",
+      "ObjectPath": "/WHL_05/Data/DA_Characteristics_WHL_05_Humvee.0"
+    },
+    "EngineTransmissionDataAsset": {
+      "ObjectName": "MWheeledVehicleEngineTransmissionDataAsset'DA_EngineTransmission_WHL_05_Humvee'",
+      "ObjectPath": "/WHL_05/Data/DA_EngineTransmission_WHL_05_Humvee.0"
+    },
+    "AxleDataAssets": [
+      {
+        "ObjectName": "MWheeledVehicleAxlesDataAsset'DA_FrontAxle_WHL_05_Humvee'",
+        "ObjectPath": "/WHL_05/Data/AxleData/DA_FrontAxle_WHL_05_Humvee.0"
+      },
+      {
+        "ObjectName": "MWheeledVehicleAxlesDataAsset'DA_RearAxle_WHL_05_Humvee'",
+        "ObjectPath": "/WHL_05/Data/AxleData/DA_RearAxle_WHL_05_Humvee.0"
+      }
+    ],
+    "ArcadeDataAsset": {
+      "ObjectName": "MWheeledVehicleArcadeDataAsset'DA_ArcadeControls_WHL_05_Humvee'",
+      "ObjectPath": "/WHL_05/Data/DA_ArcadeControls_WHL_05_Humvee.0"
+    },
+    "InputDataAsset": {
+      "ObjectName": "MWheeledVehicleInputDataAsset'DA_Input_WHL_05'",
+      "ObjectPath": "/WHL_05/Data/DA_Input_WHL_05.0"
+    },
+    "GameplayConfigDataAsset": {
+      "ObjectName": "WDVehicleGameplayComponentsDataAsset'DA_GameplaySystems_WHL_05_Humvee_Minigun'",
+      "ObjectPath": "/WHL_05/Data/Minigun/DA_GameplaySystems_WHL_05_Humvee_Minigun.22"
+    },
+    "_aaablpoaobapnjpgiekhm_$FE0E10FD9F684A7C$_$27$": {
+      "ObjectName": "MVehiclePredictionSettings_Wheeled'DA_PredictionSettings_WHL_05_Humvee_Minigun'",
+      "ObjectPath": "/WHL_05/Data/Minigun/DA_PredictionSettings_WHL_05_Humvee_Minigun.0"
+    },
+    "ThirdPersonCameraBehaviourDataAsset": {
+      "ObjectName": "MLandVehicleSpringArmDataAsset'DA_CameraBehaviour_WHL_05_Humvee'",
+      "ObjectPath": "/WHL_05/Data/DA_CameraBehaviour_WHL_05_Humvee.0"
+    },
+    "FirstPersonCameraBehaviourDataAsset": {
+      "ObjectName": "MLandVehicleSpringArmDataAsset'DA_WHL_05_Humvee_CameraBehaviour_FP'",
+      "ObjectPath": "/WHL_05/Data/DA_WHL_05_Humvee_CameraBehaviour_FP.0"
+    },
+    "VehicleSensorsDataAsset": {
+      "ObjectName": "MVehicleSensorsDataAsset'DA_VehicleSensors_WHL_05_Humvee'",
+      "ObjectPath": "/WHL_05/Data/DA_VehicleSensors_WHL_05_Humvee.0"
+    },
+    "VehicleInputControlsDataAsset": {
+      "ObjectName": "MLandInputControlsDataAsset'DA_WHL_05_Humvee_InputControls'",
+      "ObjectPath": "/WHL_05/Data/DA_WHL_05_Humvee_InputControls.0"
+    },
+    "VehicleClassTag": {
+      "TagName": "State.Player.Vehicle.4W"
+    },
+    "ExitVehicleDamageType": {
+      "ObjectName": "Class'WDImpactDamageType'",
+      "ObjectPath": "/Script/WDGame"
+    },
+    "EngineRunningGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Engine.Running.WHL_05"
+    },
+    "CollisionGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Collision.WHL_05"
+    },
+    "MovingGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Moving.WHL_05"
+    },
+    "DestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Destroyed.WHL_05"
+    },
+    "PostDestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.PostDestroyed.WHL_05"
+    },
+    "PlayerChangedSeatGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.ChangedSeats"
+    },
+    "PlayerEnteredVehicleGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Enter.WHL_05"
+    },
+    "PlayerExitedVehicleGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Exit.WHL_05"
+    },
+    "PlayerToggleChaseCamGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.ToggleChaseCam"
+    },
+    "UseHornGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Horn"
+    },
+    "ItemAddedToInventoryCueTag": {
+      "TagName": "GameplayCue.Vehicle.DepositSupplies"
+    },
+    "HornMinimumHoldTime": 0.05,
+    "VehicleExitDamageCurve": {
+      "ObjectName": "CurveFloat'CRV_ExitVehiclePunishment_Damage'",
+      "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Curves/CRV_ExitVehiclePunishment_Damage.0"
+    },
+    "VehicleFlipCheckThreshold": 120.0,
+    "EntryOffsetTolerance": 1000.0,
+    "VehicleConfigExtensions": [
+      {
+        "Key": "Audio",
+        "Value": {
+          "ObjectName": "WDAudioData'DA_WHL_05_Audio'",
+          "ObjectPath": "/WHL_05/Data/DA_WHL_05_Audio.0"
+        }
+      },
+      {
+        "Key": "SurfaceSlow",
+        "Value": {
+          "ObjectName": "WDAudioData'DA_Vehicle_Surface_Slow_WHL_05_Humvee'",
+          "ObjectPath": "/WHL_05/Audio/DA/DA_Vehicle_Surface_Slow_WHL_05_Humvee.0"
+        }
+      },
+      {
+        "Key": "SurfaceMedium",
+        "Value": {
+          "ObjectName": "WDAudioData'DA_Vehicle_Surface_Medium_WHL_05_Humvee'",
+          "ObjectPath": "/WHL_05/Audio/DA/DA_Vehicle_Surface_Medium_WHL_05_Humvee.0"
+        }
+      },
+      {
+        "Key": "SurfaceFast",
+        "Value": {
+          "ObjectName": "WDAudioData'DA_Vehicle_Surface_Fast_WHL_05_Humvee'",
+          "ObjectPath": "/WHL_05/Audio/DA/DA_Vehicle_Surface_Fast_WHL_05_Humvee.0"
+        }
+      },
+      {
+        "Key": "BrakingSurface",
+        "Value": {
+          "ObjectName": "WDAudioData'DA_Vehicle_BrakingSurface_WHL_05_Humvee'",
+          "ObjectPath": "/WHL_05/Audio/DA/DA_Vehicle_BrakingSurface_WHL_05_Humvee.0"
+        }
+      },
+      {
+        "Key": "SkiddingSurfaceSlow",
+        "Value": {
+          "ObjectName": "WDAudioData'DA_Vehicle_Skidding_Slow_WHL_05_Humvee'",
+          "ObjectPath": "/WHL_05/Audio/DA/DA_Vehicle_Skidding_Slow_WHL_05_Humvee.0"
+        }
+      },
+      {
+        "Key": "SkiddingSurfaceMedium",
+        "Value": {
+          "ObjectName": "WDAudioData'DA_Vehicle_Skidding_Medium_WHL_05_Humvee'",
+          "ObjectPath": "/WHL_05/Audio/DA/DA_Vehicle_Skidding_Medium_WHL_05_Humvee.0"
+        }
+      },
+      {
+        "Key": "SkiddingSurfaceFast",
+        "Value": {
+          "ObjectName": "WDAudioData'DA_Vehicle_Skidding_Fast_WHL_05_Humvee'",
+          "ObjectPath": "/WHL_05/Audio/DA/DA_Vehicle_Skidding_Fast_WHL_05_Humvee.0"
+        }
+      },
+      {
+        "Key": "CBM",
+        "Value": {
+          "ObjectName": "PDA_CBM_Map_C'DA_Vehicle_WHL_05_Humvee_CBM_Map'",
+          "ObjectPath": "/WHL_05/Audio/DA/DA_Vehicle_WHL_05_Humvee_CBM_Map.0"
+        }
+      },
+      {
+        "Key": "WheelSpinSurface",
+        "Value": {
+          "ObjectName": "WDAudioData'DA_Vehicle_WheelSpin_WHL_05_Humvee'",
+          "ObjectPath": "/WHL_05/Audio/DA/DA_Vehicle_WheelSpin_WHL_05_Humvee.0"
+        }
+      }
+    ],
+    "DestroyedStaticMesh": {
+      "ObjectName": "StaticMesh'SM_WHL_05_Destroyed'",
+      "ObjectPath": "/WHL_05/Meshes/SM_WHL_05_Destroyed.2"
+    },
+    "ThirdPersonSpringArmComponentTransform": {
+      "Translation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 115.0
+      }
+    },
+    "MovingEffectSpeedThreshold": 80.0,
+    "NativeClass": null
+  }
+}

@@ -1,0 +1,58 @@
+--- export: UObject / AEB_Comms_StartPlayerVoice_C_0 ---
+{
+  "Type": "AEB_Comms_StartPlayerVoice_C",
+  "Name": "AEB_Comms_StartPlayerVoice_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_Comms_StartPlayerVoice.AEB_Comms_StartPlayerVoice_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Comms_PlayerStartedSpeaking'",
+    "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_PlayerStartedSpeaking.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_Comms_StartPlayerVoice_C'Default__AEB_Comms_StartPlayerVoice_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_Comms_StartPlayerVoice.0"
+  }
+}
+--- export: UObject / AEB_Comms_VehiclePerspective_StartedSpeaking_C_0 ---
+{
+  "Type": "AEB_Comms_VehiclePerspective_StartedSpeaking_C",
+  "Name": "AEB_Comms_VehiclePerspective_StartedSpeaking_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_Comms_VehiclePerspective_StartedSpeaking.AEB_Comms_VehiclePerspective_StartedSpeaking_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Comms_PlayerStartedSpeaking'",
+    "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_PlayerStartedSpeaking.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_Comms_VehiclePerspective_StartedSpeaking_C'Default__AEB_Comms_VehiclePerspective_StartedSpeaking_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_Comms_VehiclePerspective_StartedSpeaking.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Comms_PlayerStartedSpeaking ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Comms_PlayerStartedSpeaking",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Comms/VOIP/AE_Comms_PlayerStartedSpeaking",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Comms.PlayerStartedSpeaking"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_Comms_StartPlayerVoice_C'AE_Comms_PlayerStartedSpeaking:AEB_Comms_StartPlayerVoice_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_PlayerStartedSpeaking.0"
+      },
+      {
+        "ObjectName": "AEB_Comms_VehiclePerspective_StartedSpeaking_C'AE_Comms_PlayerStartedSpeaking:AEB_Comms_VehiclePerspective_StartedSpeaking_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_PlayerStartedSpeaking.1"
+      }
+    ]
+  }
+}

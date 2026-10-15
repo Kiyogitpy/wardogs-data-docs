@@ -4,7 +4,7 @@ parent: "Game Features"
 ---
 
 # Wardogs — GameFeatures: ShootingRangeTutorial (v2)
-*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/GameFeatures/ShootingRangeTutorial/` — 7 JSON files.*
+*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: [`Plugins/GameFeatures/ShootingRangeTutorial/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/ShootingRangeTutorial) — 7 JSON files.*
 
 ---
 
@@ -14,13 +14,13 @@ The shooting-range tutorial: a scripted first-run mode with a helicopter fly-by,
 
 | File | Type | Role |
 |---|---|---|
-| `ShootingRangeTutorial.json` | GameFeatureData + actions | Match state, components, quest-list widget, world layer |
-| `Actors/B_ShootingRangeTutorial_VerbaRocketSpline.json` | AudioComponent | Audio component, not auto-activate |
-| `Actors/HelicopterFlyBy/CRV_ShootingRangeTutorial_FlyByCamera_Smooth.json` | CurveFloat | Smooth fly-by camera curve |
-| `Actors/HelicopterFlyBy/DA_ShootingRangeTutorial_FlyByData.json` | WDShootingRangeTutorialFlyByData | Seat, rotor and effect settings |
-| `Actors/HelicopterFlyBy/DA_ShootingRangeTutorial_CharacterModifierState_Vehicle.json` | WDCharacterModifierStateDefinition | Vehicle-seat state with camera lock |
-| `UI/Data/DA_QuestEntry.json` | WDUIQuestEntryData | Quest-entry description format |
-| `UI/Data/DA_TutorialQuest.json` | WDUITutorialQuestData | Tutorial quest view model |
+| [`ShootingRangeTutorial.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ShootingRangeTutorial/Content/ShootingRangeTutorial.json) | GameFeatureData + actions | Match state, components, quest-list widget, world layer |
+| [`Actors/B_ShootingRangeTutorial_VerbaRocketSpline.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ShootingRangeTutorial/Content/Actors/B_ShootingRangeTutorial_VerbaRocketSpline.json) | AudioComponent | Audio component, not auto-activate |
+| [`Actors/HelicopterFlyBy/CRV_ShootingRangeTutorial_FlyByCamera_Smooth.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ShootingRangeTutorial/Content/Actors/HelicopterFlyBy/CRV_ShootingRangeTutorial_FlyByCamera_Smooth.json) | CurveFloat | Smooth fly-by camera curve |
+| [`Actors/HelicopterFlyBy/DA_ShootingRangeTutorial_FlyByData.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ShootingRangeTutorial/Content/Actors/HelicopterFlyBy/DA_ShootingRangeTutorial_FlyByData.json) | WDShootingRangeTutorialFlyByData | Seat, rotor and effect settings |
+| [`Actors/HelicopterFlyBy/DA_ShootingRangeTutorial_CharacterModifierState_Vehicle.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ShootingRangeTutorial/Content/Actors/HelicopterFlyBy/DA_ShootingRangeTutorial_CharacterModifierState_Vehicle.json) | WDCharacterModifierStateDefinition | Vehicle-seat state with camera lock |
+| [`UI/Data/DA_QuestEntry.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ShootingRangeTutorial/Content/UI/Data/DA_QuestEntry.json) | WDUIQuestEntryData | Quest-entry description format |
+| [`UI/Data/DA_TutorialQuest.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ShootingRangeTutorial/Content/UI/Data/DA_TutorialQuest.json) | WDUITutorialQuestData | Tutorial quest view model |
 
 ---
 
@@ -39,7 +39,7 @@ The shooting-range tutorial: a scripted first-run mode with a helicopter fly-by,
 
 ## 3. Helicopter Fly-By
 
-### 3a. Seat and effect (`DA_ShootingRangeTutorial_FlyByData`)
+### 3a. Seat and effect ([`DA_ShootingRangeTutorial_FlyByData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ShootingRangeTutorial/Content/Actors/HelicopterFlyBy/DA_ShootingRangeTutorial_FlyByData.json))
 
 | Setting | Value |
 |---|---|
@@ -54,13 +54,13 @@ The shooting-range tutorial: a scripted first-run mode with a helicopter fly-by,
 
 The fly-by uses a Little Bird (ROT_03 materials). The rotor materials swap between a blur-disc (high speed) and plain plastics (low speed) as the engine spins up and down.
 
-### 3b. Seat modifier and camera lock (`DA_ShootingRangeTutorial_CharacterModifierState_Vehicle`)
+### 3b. Seat modifier and camera lock ([`DA_ShootingRangeTutorial_CharacterModifierState_Vehicle`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ShootingRangeTutorial/Content/Actors/HelicopterFlyBy/DA_ShootingRangeTutorial_CharacterModifierState_Vehicle.json))
 
 | Field | Value |
 |---|---|
 | StateTag | `State.CharacterModifier.Vehicle.ShootingRange` |
 | Condition | `WDCharacterModifierCondition_Tags` requires `State.CharacterModifier.Vehicle.ShootingRange` |
-| Modifier 1 | `WDCharacterModifier_Tutorial_Seat` pointing to `DA_ShootingRangeTutorial_FlyByData` |
+| Modifier 1 | `WDCharacterModifier_Tutorial_Seat` pointing to [`DA_ShootingRangeTutorial_FlyByData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ShootingRangeTutorial/Content/Actors/HelicopterFlyBy/DA_ShootingRangeTutorial_FlyByData.json) |
 | Modifier 2 | `WDCharacterModifier_CameraLock` |
 
 Camera lock:
@@ -79,8 +79,8 @@ Pitch and yaw are limited to 35 and 75 degrees with smoothing, which suggests th
 
 | Asset | Type | Content |
 |---|---|---|
-| `DA_QuestEntry` | `WDUIQuestEntryData` | Description format "{Description}" with a bullet prefix |
-| `DA_TutorialQuest` | `WDUITutorialQuestData` | Quest-entry view model `WDUIQuestEntryViewModel`; data asset reference |
+| [`DA_QuestEntry`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ShootingRangeTutorial/Content/UI/Data/DA_QuestEntry.json) | `WDUIQuestEntryData` | Description format "{Description}" with a bullet prefix |
+| [`DA_TutorialQuest`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ShootingRangeTutorial/Content/UI/Data/DA_TutorialQuest.json) | `WDUITutorialQuestData` | Quest-entry view model `WDUIQuestEntryViewModel`; data asset reference |
 
 The bullet prefix in the source is a non-ASCII character. It renders as "�" in the export and is kept as-is here.
 

@@ -1,0 +1,42 @@
+--- export: UPrimaryDataAsset / DA_Action_VehicleRepairTool ---
+{
+  "Type": "BHActionDefinition",
+  "Name": "DA_Action_VehicleRepairTool",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHActionDefinition'",
+  "Package": "/VehicleRepairTool/Data/Actions/DA_Action_VehicleRepairTool",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.VehicleRepairTool.PrimaryUse"
+    },
+    "ActionContext": [
+      "Action.Context.Holdable",
+      "Action.Context.Interaction",
+      "Action.Context.TwoHanded"
+    ],
+    "ActionClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Action_VehicleRepairTool_C'",
+      "ObjectPath": "/VehicleRepairTool/Data/Actions/B_Action_VehicleRepairTool.1"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::BlockingStates",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::BlockingStates",
+          "ActionResponses": [],
+          "BlockingStates": [
+            "State.Player.Vitality.Critical"
+          ],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      }
+    ],
+    "ActivationContextType": {
+      "ObjectName": "Class'WDGenericItemActionContext'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  }
+}

@@ -1,0 +1,66 @@
+--- export: UObject / WDPingAction_AssistanceRequest_Refueling_0 ---
+{
+  "Type": "WDPingAction_AssistanceRequest_Refueling",
+  "Name": "WDPingAction_AssistanceRequest_Refueling_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingAction_AssistanceRequest_Refueling'",
+  "Outer": {
+    "ObjectName": "WDPingActionAsset'DA_PingAction_Request_Fuel'",
+    "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_Fuel.1"
+  },
+  "Properties": {
+    "PingActionChatLocText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_ChatBox_AssistanceRequests.STRINGS_ChatBox_AssistanceRequests",
+      "Key": "Type_Request_Refueling_Other",
+      "SourceString": "Requesting fuel",
+      "LocalizedString": "Requesting fuel"
+    },
+    "PingActionChatLocTextWithLocation": {
+      "TableId": "/Game/UI/StringTables/STRINGS_ChatBox_AssistanceRequests.STRINGS_ChatBox_AssistanceRequests",
+      "Key": "Type_Request_Refulling_Other_WithLoc",
+      "SourceString": "Requesting fuel X{X}, Y{Y}",
+      "LocalizedString": "Requesting fuel X{X}, Y{Y}"
+    }
+  }
+}
+--- export: UDataAsset / DA_PingAction_Request_Fuel ---
+{
+  "Type": "WDPingActionAsset",
+  "Name": "DA_PingAction_Request_Fuel",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingActionAsset'",
+  "Package": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_Fuel",
+  "Properties": {
+    "Text": {
+      "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+      "Key": "Action.Request.Fuel",
+      "SourceString": "Fuel",
+      "LocalizedString": "Fuel"
+    },
+    "NonTriggerableDescriptions": [
+      {
+        "Key": {
+          "TagName": "Tag.PingAction.NonTriggerable.FuelFull"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+          "Key": "Action.Request.Fuel.NonTriggerable.FuelFull",
+          "SourceString": "Already full",
+          "LocalizedString": "Already full"
+        }
+      }
+    ],
+    "Icon": {
+      "AssetPathName": "/Game/UI/Features/PingWheel/Widgets/Action/Textures/T_UI_Icon_PingWheel_Fuel_64x64.T_UI_Icon_PingWheel_Fuel_64x64",
+      "SubPathString": ""
+    },
+    "bIsWorkInProgress": false,
+    "bRequestPlayerMapCoordinates": true,
+    "Actions": [
+      {
+        "ObjectName": "WDPingAction_AssistanceRequest_Refueling'DA_PingAction_Request_Fuel:WDPingAction_AssistanceRequest_Refueling_0'",
+        "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_Fuel.0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,134 @@
+--- export: UObject / WDUIDistanceTextRules_0 ---
+{
+  "Type": "WDUIDistanceTextRules",
+  "Name": "WDUIDistanceTextRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIDistanceTextRules'",
+  "Outer": {
+    "ObjectName": "WDUISpatialTrackerData'DA_Tracker_Spatial_Spawn'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Spawn.5"
+  }
+}
+--- export: UObject / WDUILocationOffsetRules_0 ---
+{
+  "Type": "WDUILocationOffsetRules",
+  "Name": "WDUILocationOffsetRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUILocationOffsetRules'",
+  "Outer": {
+    "ObjectName": "WDUISpatialTrackerData'DA_Tracker_Spatial_Spawn'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Spawn.5"
+  },
+  "Properties": {
+    "Offset": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 500.0
+    }
+  }
+}
+--- export: UObject / WDUINameTextRules_0 ---
+{
+  "Type": "WDUINameTextRules",
+  "Name": "WDUINameTextRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUINameTextRules'",
+  "Outer": {
+    "ObjectName": "WDUISpatialTrackerData'DA_Tracker_Spatial_Spawn'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Spawn.5"
+  }
+}
+--- export: UObject / WDUIOpacityMultiplierRule_0 ---
+{
+  "Type": "WDUIOpacityMultiplierRule",
+  "Name": "WDUIOpacityMultiplierRule_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIOpacityMultiplierRule'",
+  "Outer": {
+    "ObjectName": "WDUISpatialTrackerData'DA_Tracker_Spatial_Spawn'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Spawn.5"
+  },
+  "Properties": {
+    "Multiplier": 0.7,
+    "Targets": 7
+  }
+}
+--- export: UObject / WDUIScreenDistanceOpacityRules_0 ---
+{
+  "Type": "WDUIScreenDistanceOpacityRules",
+  "Name": "WDUIScreenDistanceOpacityRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIScreenDistanceOpacityRules'",
+  "Outer": {
+    "ObjectName": "WDUISpatialTrackerData'DA_Tracker_Spatial_Spawn'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Spawn.5"
+  },
+  "Properties": {
+    "MaximumVisibleDistance": {
+      "X": 0.075,
+      "Y": 0.5
+    },
+    "FalloffRangeMaximum": {
+      "X": 0.05,
+      "Y": 0.05
+    },
+    "OpacityRange": {
+      "Min": 0.4
+    },
+    "bInvertOpacity": true,
+    "Targets": 7
+  }
+}
+--- export: UDataAsset / DA_Tracker_Spatial_Spawn ---
+{
+  "Type": "WDUISpatialTrackerData",
+  "Name": "DA_Tracker_Spatial_Spawn",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUISpatialTrackerData'",
+  "Package": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Spawn",
+  "Properties": {
+    "RuleSets": [
+      {
+        "Key": "EWDUISpatialRulesetType::Default",
+        "Value": {
+          "Priority": 0,
+          "OptionalRules": [
+            {
+              "ObjectName": "WDUINameTextRules'DA_Tracker_Spatial_Spawn:WDUINameTextRules_0'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Spawn.2"
+            },
+            {
+              "ObjectName": "WDUIDistanceTextRules'DA_Tracker_Spatial_Spawn:WDUIDistanceTextRules_0'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Spawn.0"
+            },
+            {
+              "ObjectName": "WDUIOpacityMultiplierRule'DA_Tracker_Spatial_Spawn:WDUIOpacityMultiplierRule_0'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Spawn.3"
+            },
+            {
+              "ObjectName": "WDUILocationOffsetRules'DA_Tracker_Spatial_Spawn:WDUILocationOffsetRules_0'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Spawn.1"
+            }
+          ]
+        }
+      },
+      {
+        "Key": "EWDUISpatialRulesetType::LocalUser_InADS",
+        "Value": {
+          "Priority": 1,
+          "OptionalRules": [
+            {
+              "ObjectName": "WDUIScreenDistanceOpacityRules'DA_Tracker_Spatial_Spawn:WDUIScreenDistanceOpacityRules_0'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Spawn.4"
+            }
+          ]
+        }
+      }
+    ],
+    "ZOrder": 3,
+    "DefaultSize": {
+      "X": 24.0,
+      "Y": 24.0
+    }
+  }
+}

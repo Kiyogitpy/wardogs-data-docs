@@ -1,0 +1,624 @@
+--- export: UObject / BH_ExtensionData_MedicalPrompts_C_0 ---
+{
+  "Type": "BH_ExtensionData_MedicalPrompts_C",
+  "Name": "BH_ExtensionData_MedicalPrompts_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/GameMechanics/ExtensionComponents/BH_ExtensionData_MedicalPrompts.BH_ExtensionData_MedicalPrompts_C'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Bandage:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.8"
+  },
+  "Template": {
+    "ObjectName": "BH_ExtensionData_MedicalPrompts_C'Default__BH_ExtensionData_MedicalPrompts_C'",
+    "ObjectPath": "/Game/GameMechanics/ExtensionComponents/BH_ExtensionData_MedicalPrompts.0"
+  }
+}
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Bandage'",
+    "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.6"
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Bandage'",
+    "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.6"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Items/Medical/Bandage/SM_Bandage_01.SM_Bandage_01",
+      "SubPathString": ""
+    },
+    "RelativeRotation": {
+      "Pitch": 90.0,
+      "Yaw": 0.0,
+      "Roll": -90.0
+    },
+    "bOverrideDroppedRelativeLocation": true,
+    "OverridedRelativeLocation": {
+      "X": -0.0,
+      "Y": 5.0,
+      "Z": 8.0
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Stackable_0 ---
+{
+  "Type": "BHInventoryFragment_Stackable",
+  "Name": "BHInventoryFragment_Stackable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Stackable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Bandage'",
+    "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.6"
+  },
+  "Properties": {
+    "MaxStackSize": 5
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Bandage'",
+    "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.6"
+  },
+  "Properties": {
+    "bIsVisibleOnEquippedUI": true,
+    "DisplayedItems": [
+      "Id.Item.Bandage"
+    ],
+    "bDisplayIncludeAllSlots": true
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Bandage'",
+    "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.6"
+  },
+  "Properties": {
+    "Weight": 0.08
+  }
+}
+--- export: UPrimaryDataAsset / ID_Bandage ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_Bandage",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Consumables/Bandage/ID_Bandage",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.Bandage"
+    },
+    "ItemContext": [
+      "Item.Context.QuickSlot",
+      "Item.Context.Medical",
+      "Item.Context.Animation.Archetype.EquipRightHand",
+      "Item.Context.Animation.Type.Unarmed"
+    ],
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Items_Medical.STRINGS_Items_Medical",
+      "Key": "Items.Medical.Bandage",
+      "SourceString": "Bandage",
+      "LocalizedString": "Bandage"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_Stackable'ID_Bandage:BHInventoryFragment_Stackable_0'",
+        "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.3"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_ItemActor'ID_Bandage:WDInventoryFragment_ItemActor_0'",
+        "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.8"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_Bandage:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.5"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_Bandage:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.4"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_Bandage:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.2"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_Bandage:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.7"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_Bandage:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.1"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Bandage'",
+    "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.6"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Bandage_Audio'",
+      "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_ItemActor_0 ---
+{
+  "Type": "WDInventoryFragment_ItemActor",
+  "Name": "WDInventoryFragment_ItemActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_ItemActor'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Bandage'",
+    "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.6"
+  },
+  "Properties": {
+    "ExtensionDataFragments": [
+      {
+        "ObjectName": "WDItemExtensionData_Holdable'ID_Bandage:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Holdable_0'",
+        "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.13"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Inventory'ID_Bandage:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InventoryItem_0'",
+        "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.15"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Appliable'ID_Bandage:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Appliable_0'",
+        "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.11"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Input'ID_Bandage:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+        "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.14"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_AudioExtension'ID_Bandage:WDInventoryFragment_ItemActor_0.WDItemExtensionData_AudioExtension_0'",
+        "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.12"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Animation'ID_Bandage:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Animation_0'",
+        "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.10"
+      },
+      {
+        "ObjectName": "BH_ExtensionData_MedicalPrompts_C'ID_Bandage:WDInventoryFragment_ItemActor_0.BH_ExtensionData_MedicalPrompts_C_0'",
+        "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.0"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_ActorSpatialTracker'ID_Bandage:WDInventoryFragment_ItemActor_0.WDItemExtensionData_ActorSpatialTracker_0'",
+        "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.9"
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_ActorSpatialTracker_0 ---
+{
+  "Type": "WDItemExtensionData_ActorSpatialTracker",
+  "Name": "WDItemExtensionData_ActorSpatialTracker_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_ActorSpatialTracker'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Bandage:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.8"
+  },
+  "Properties": {
+    "bShouldOnlyApplyToFriendly": true,
+    "GridLayerToCheck": [
+      "WorldGrid.Layer.Character"
+    ],
+    "ExtensionComponentClass": {
+      "ObjectName": "Class'WDItemExtension_ActorHealingSpatialTracker'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_Animation_0 ---
+{
+  "Type": "WDItemExtensionData_Animation",
+  "Name": "WDItemExtensionData_Animation_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Animation'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Bandage:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.8"
+  },
+  "Properties": {
+    "AnimationSet": {
+      "ObjectName": "BHAnimationSet'AnimSet_Bandage'",
+      "ObjectPath": "/Game/Items/Consumables/Bandage/AnimSet_Bandage.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_Appliable_0 ---
+{
+  "Type": "WDItemExtensionData_Appliable",
+  "Name": "WDItemExtensionData_Appliable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Appliable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Bandage:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.8"
+  },
+  "Properties": {
+    "Attribute": {
+      "TagName": "Attribute.Gameplay.Health"
+    },
+    "AttributeValue": 35.0,
+    "bApplyAsDelta": true,
+    "ContextTags": [
+      "Appliable.Context.HealSelf",
+      "Appliable.Context.HealFriendly"
+    ],
+    "AppliedEffects": [
+      {
+        "ObjectName": "BlueprintGeneratedClass'GE_UseAppliable_C'",
+        "ObjectPath": "/Game/GameMechanics/GameplayEffects/Actions/GE_UseAppliable.0"
+      }
+    ],
+    "AppliableActionData": [
+      {
+        "Key": {
+          "TagName": "Action.Appliable.Bandage.SecondaryUse"
+        },
+        "Value": {
+          "RequiredOwnerStates": [
+            "State.Player.Injured",
+            "State.Player.Vitality.Alive"
+          ],
+          "ProgressWheelTextData": {
+            "OwnerText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Healing_ActionText.STRINGS_Healing_ActionText",
+              "Key": "ActionText.Healing.Self",
+              "SourceString": "Healing Self",
+              "LocalizedString": "Healing Self"
+            },
+            "TargetText": {
+              "CultureInvariantString": null
+            }
+          },
+          "InteractionTimeMethod": "EWDAppliableInteractionTimeMethod::AnimationLength",
+          "AnimationTag": {
+            "TagName": "Animation.Asset.Appliable.SecondaryUse"
+          },
+          "Notifier": "None",
+          "bUseAppliableProgressWheel": false,
+          "CurrentAppliable": {
+            "TagName": "None"
+          },
+          "MaxAppliable": {
+            "TagName": "None"
+          },
+          "EffectsToApply": {
+            "Effects": []
+          },
+          "AmountConsumedOnUse": 1,
+          "bWorldInteractableUse": false,
+          "bInteractionSystemAppliable": false,
+          "WorldInteractionContextClass": null,
+          "RequiredTargetStates": [],
+          "bShowOnScreenHoldProgressWheel": false
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Action.Appliable.Bandage.PrimaryUse"
+        },
+        "Value": {
+          "RequiredOwnerStates": [
+            "State.Player.Vitality.Alive"
+          ],
+          "ProgressWheelTextData": {
+            "OwnerText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Healing_ActionText.STRINGS_Healing_ActionText",
+              "Key": "ActionText.Healing.Owner",
+              "SourceString": "Healing",
+              "LocalizedString": "Healing"
+            },
+            "TargetText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Healing_ActionText.STRINGS_Healing_ActionText",
+              "Key": "ActionText.Healing.Target",
+              "SourceString": "Being Healed By",
+              "LocalizedString": "Being Healed By"
+            }
+          },
+          "InteractionTimeMethod": "EWDAppliableInteractionTimeMethod::AnimationLength",
+          "AnimationTag": {
+            "TagName": "Animation.Asset.Appliable.PrimaryUse"
+          },
+          "Notifier": "None",
+          "bUseAppliableProgressWheel": false,
+          "CurrentAppliable": {
+            "TagName": "None"
+          },
+          "MaxAppliable": {
+            "TagName": "None"
+          },
+          "EffectsToApply": {
+            "Effects": []
+          },
+          "AmountConsumedOnUse": 1,
+          "bWorldInteractableUse": true,
+          "bInteractionSystemAppliable": false,
+          "WorldInteractionContextClass": {
+            "ObjectName": "Class'WDHealPlayerInteractionContext'",
+            "ObjectPath": "/Script/WDGame"
+          },
+          "RequiredTargetStates": [
+            "State.Player.Injured",
+            "State.Player.Vitality.Alive"
+          ],
+          "bShowOnScreenHoldProgressWheel": false
+        }
+      }
+    ],
+    "bContinuousUse": true
+  }
+}
+--- export: UObject / WDItemExtensionData_AudioExtension_0 ---
+{
+  "Type": "WDItemExtensionData_AudioExtension",
+  "Name": "WDItemExtensionData_AudioExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_AudioExtension'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Bandage:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.8"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Bandage_Audio'",
+      "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_Holdable_0 ---
+{
+  "Type": "WDItemExtensionData_Holdable",
+  "Name": "WDItemExtensionData_Holdable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Holdable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Bandage:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.8"
+  },
+  "Properties": {
+    "HoldableMesh": {
+      "ObjectName": "SkeletalMesh'SK_Bandage_Long'",
+      "ObjectPath": "/Game/Items/Consumables/Bandage/Assets/Meshes/SK_Bandage_Long.1"
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_Bandage_Long'",
+        "ObjectPath": "/Game/Items/Consumables/Bandage/Assets/Material/MI_Bandage_Long.0"
+      },
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_Bandage'",
+        "ObjectPath": "/Game/Weapons/Healables/Bandage/Materials/MI_Bandage.0"
+      }
+    ],
+    "MeshAnimClass": {
+      "ObjectName": "AnimBlueprintGeneratedClass'ABP_Bandage_Long_C'",
+      "ObjectPath": "/Game/Items/Consumables/Bandage/Assets/Meshes/ABP_Bandage_Long.1"
+    },
+    "EquipAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_Bandage_Equip'",
+        "ObjectPath": "/Game/Animation/Characters/Utilities/Bandage/Rework/AM_FP_Bandage_Equip.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_EquipmentRH_Equip'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/EquipmentRH/Actions/AM_TP_Gen_EquipmentRH_Equip.0"
+      }
+    },
+    "HolsterAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_Bandage_Holster'",
+        "ObjectPath": "/Game/Animation/Characters/Utilities/Bandage/Rework/AM_FP_Bandage_Holster.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_EquipmentRH_Holster'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/EquipmentRH/Actions/AM_TP_Gen_EquipmentRH_Holster.0"
+      },
+      "OverrideLength": 0.2
+    },
+    "EquippedAnimSet": {
+      "DefaultFirstPersonLayer": {
+        "AssetPathName": "/Game/Animation/Blueprints/Character/Layers/Utilities/ABP_FP_Bandage_Layer_RW.ABP_FP_Bandage_Layer_RW_C",
+        "SubPathString": ""
+      },
+      "DefaultThirdPersonLayer": {
+        "AssetPathName": "/Game/Animation/Blueprints/Character/Layers/Utilities/ABP_TP_Bandage_Layer_RW.ABP_TP_Bandage_Layer_RW_C",
+        "SubPathString": ""
+      }
+    },
+    "FallbackMeshSignificanceThreshold": {
+      "Significance": 0.1
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_InputActionExtension_0 ---
+{
+  "Type": "WDItemExtensionData_Input",
+  "Name": "WDItemExtensionData_InputActionExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Input'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Bandage:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.8"
+  },
+  "Properties": {
+    "InputMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_Appliable'",
+      "ObjectPath": "/Game/Items/ItemExtensionDefaults/IMC_Appliable.3"
+    },
+    "InputBehaviors": [
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.Appliable.PrimaryUse"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAppliableAction'ID_Bandage:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAppliableAction_0'",
+          "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.17"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.PrimaryUse.Release"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_CompleteAction'ID_Bandage:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_CompleteAction_0'",
+          "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.19"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.Appliable.SecondaryUse"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAppliableAction'ID_Bandage:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAppliableAction_1'",
+          "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.18"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.SecondaryUse.Release"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_CompleteAction'ID_Bandage:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_CompleteAction_1'",
+          "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.20"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.Inspect"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_Bandage:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_2'",
+          "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.16"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_InventoryItem_0 ---
+{
+  "Type": "WDItemExtensionData_Inventory",
+  "Name": "WDItemExtensionData_InventoryItem_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Inventory'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Bandage:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.8"
+  },
+  "Properties": {
+    "PrimaryUseTag": {
+      "TagName": "Action.Appliable.PrimaryUse"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_2 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_Bandage:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.14"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Item.Inspect"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAppliableAction_0 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAppliableAction",
+  "Name": "WDItemInputBehavior_ActivateAppliableAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAppliableAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_Bandage:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.14"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Appliable.Bandage.PrimaryUse"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAppliableAction_1 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAppliableAction",
+  "Name": "WDItemInputBehavior_ActivateAppliableAction_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAppliableAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_Bandage:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.14"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Appliable.Bandage.SecondaryUse"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_CompleteAction_0 ---
+{
+  "Type": "WDItemInputBehavior_CompleteAction",
+  "Name": "WDItemInputBehavior_CompleteAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_CompleteAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_Bandage:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.14"
+  },
+  "Properties": {
+    "ActionToComplete": {
+      "TagName": "Action.Appliable.Bandage.PrimaryUse"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_CompleteAction_1 ---
+{
+  "Type": "WDItemInputBehavior_CompleteAction",
+  "Name": "WDItemInputBehavior_CompleteAction_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_CompleteAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_Bandage:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Game/Items/Consumables/Bandage/ID_Bandage.14"
+  },
+  "Properties": {
+    "ActionToComplete": {
+      "TagName": "Action.Appliable.Bandage.SecondaryUse"
+    }
+  }
+}

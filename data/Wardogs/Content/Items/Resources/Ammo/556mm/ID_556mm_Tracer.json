@@ -1,0 +1,163 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_556mm_Tracer'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/556mm/ID_556mm_Tracer.4"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 2,
+      "Y": 1
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_556mm_Tracer'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/556mm/ID_556mm_Tracer.4"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Items/Weapons/_Ammunition/AmmoBoxes_Drop/Mesh/SM_AmmoBox.SM_AmmoBox",
+      "SubPathString": ""
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_556x45_FMJ'",
+        "ObjectPath": "/Game/Items/Weapons/_Ammunition/AmmoBoxes_Drop/Materials/MI_556x45_FMJ.0"
+      }
+    ],
+    "RelativeRotation": {
+      "Pitch": -90.0,
+      "Yaw": 0.0,
+      "Roll": 0.0
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Stackable_0 ---
+{
+  "Type": "BHInventoryFragment_Stackable",
+  "Name": "BHInventoryFragment_Stackable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Stackable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_556mm_Tracer'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/556mm/ID_556mm_Tracer.4"
+  },
+  "Properties": {
+    "MaxStackSize": 80,
+    "MaxStackSizeOverrides": [
+      {
+        "Key": {
+          "TagName": "Inventory.Slot.Vehicle.Storage"
+        },
+        "Value": 150
+      }
+    ]
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_556mm_Tracer'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/556mm/ID_556mm_Tracer.4"
+  }
+}
+--- export: UPrimaryDataAsset / ID_556mm_Tracer ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_556mm_Tracer",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Resources/Ammo/556mm/ID_556mm_Tracer",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.556mm.Tracer"
+    },
+    "ItemContext": [
+      "Item.Caliber.556mm",
+      "Item.Ammo",
+      "Item.Ammo.Type.FMJ.Tracer",
+      "Item.Context.ForceToStorage"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "F31503794B268BF16AC6AF8683D97F86",
+      "SourceString": "5.56mm (T)",
+      "LocalizedString": "5.56mm (T)"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_Stackable'ID_556mm_Tracer:BHInventoryFragment_Stackable_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/556mm/ID_556mm_Tracer.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_556mm_Tracer:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/556mm/ID_556mm_Tracer.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_556mm_Tracer:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/556mm/ID_556mm_Tracer.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Projectile'ID_556mm_Tracer:WDInventoryFragment_Projectile_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/556mm/ID_556mm_Tracer.6"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_556mm_Tracer:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/556mm/ID_556mm_Tracer.5"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_556mm_Tracer:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/556mm/ID_556mm_Tracer.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_556mm_Tracer'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/556mm/ID_556mm_Tracer.4"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_LooseAmmoBox_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Item/Data/ID_LooseAmmoBox_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Projectile_0 ---
+{
+  "Type": "WDInventoryFragment_Projectile",
+  "Name": "WDInventoryFragment_Projectile_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Projectile'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_556mm_Tracer'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/556mm/ID_556mm_Tracer.4"
+  },
+  "Properties": {
+    "ProjectileData": {
+      "ObjectName": "WDProjectileData'DA_556mm_ProjectileData'",
+      "ObjectPath": "/Game/GameMechanics/Inventory/Equipment/Caliber/556mm/DA_556mm_ProjectileData.0"
+    }
+  }
+}

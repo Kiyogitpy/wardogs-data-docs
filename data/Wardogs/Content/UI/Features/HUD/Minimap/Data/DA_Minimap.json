@@ -1,0 +1,165 @@
+--- export: UDataAsset / DA_Minimap ---
+{
+  "Type": "WDUITacticalMapData",
+  "Name": "DA_Minimap",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUITacticalMapData'",
+  "Package": "/Game/UI/Features/HUD/Minimap/Data/DA_Minimap",
+  "Properties": {
+    "InteractionMenuViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUITacticalMapInteractionMenuViewModel",
+        "SubPathString": ""
+      }
+    },
+    "DisplayMethod": "EWDDisplayMethod::VirtualTexture",
+    "TexturesRootDirectory": {
+      "Path": "/Game/UI/Tools/WorldCapture/Textures"
+    },
+    "VirtualTextureMaterial": {
+      "AssetPathName": "/MinimapCapture/Materials/MI_Map_VirtualTexture.MI_Map_VirtualTexture",
+      "SubPathString": ""
+    },
+    "_aaabcedlmgkmjfcejjgof_$43BC6AC9524996E5$_$18$": {
+      "AssetPathName": "/Game/UI/Features/Map/Map_Optimisation/TA_MapTrackers_Player_Packed.TA_MapTrackers_Player_Packed",
+      "SubPathString": ""
+    },
+    "LerpZoomTolerance": 0.1,
+    "GridTileSize": 25.0,
+    "bShowZoomLevel": true,
+    "bAlwaysRecenter": true,
+    "bShouldLerpZoom": true,
+    "LerpZoomSpeed": 3.0,
+    "LerpZoomTolerance": 0.005,
+    "LerpZoomPresetTolerance": 0.005,
+    "LargestViewSize": 8000.0,
+    "SmallestViewSize": 80.0,
+    "bUseZoomCurve": true,
+    "ZoomCurve": {
+      "EditorCurveData": {
+        "Keys": [
+          {
+            "InterpMode": "RCIM_Cubic",
+            "TangentMode": "RCTM_Auto",
+            "TangentWeightMode": "RCTWM_WeightedNone",
+            "Time": 0.0,
+            "Value": 0.0,
+            "ArriveTangent": 0.311925,
+            "ArriveTangentWeight": 0.0,
+            "LeaveTangent": 0.0,
+            "LeaveTangentWeight": 0.0
+          },
+          {
+            "InterpMode": "RCIM_Cubic",
+            "TangentMode": "RCTM_User",
+            "TangentWeightMode": "RCTWM_WeightedNone",
+            "Time": 1.0,
+            "Value": 1.0,
+            "ArriveTangent": 2.910178,
+            "ArriveTangentWeight": 0.0,
+            "LeaveTangent": 2.910196,
+            "LeaveTangentWeight": 0.0
+          }
+        ]
+      }
+    },
+    "bClampToTextureZoom": false,
+    "MapZoomCategories": [
+      {
+        "Key": "EWDUIZoomPresetCategory::Default",
+        "Value": {
+          "DefaultPresetIndex": 1,
+          "MapZoomPresetData": [
+            {
+              "ZoomPreset": 100.0,
+              "ZoomTarget": "EWDZoomTarget::Center"
+            },
+            {
+              "ZoomPreset": 180.0,
+              "ZoomTarget": "EWDZoomTarget::Center"
+            },
+            {
+              "ZoomPreset": 400.0,
+              "ZoomTarget": "EWDZoomTarget::Center"
+            },
+            {
+              "ZoomPreset": 650.0,
+              "ZoomTarget": "EWDZoomTarget::Center"
+            },
+            {
+              "ZoomPreset": 1350.0,
+              "ZoomTarget": "EWDZoomTarget::Center"
+            }
+          ]
+        }
+      },
+      {
+        "Key": "EWDUIZoomPresetCategory::AirVehicle",
+        "Value": {
+          "DefaultPresetIndex": 2,
+          "MapZoomPresetData": [
+            {
+              "ZoomPreset": 175.0,
+              "ZoomTarget": "EWDZoomTarget::Center"
+            },
+            {
+              "ZoomPreset": 400.0,
+              "ZoomTarget": "EWDZoomTarget::Center"
+            },
+            {
+              "ZoomPreset": 650.0,
+              "ZoomTarget": "EWDZoomTarget::Center"
+            },
+            {
+              "ZoomPreset": 1000.0,
+              "ZoomTarget": "EWDZoomTarget::Center"
+            },
+            {
+              "ZoomPreset": 2000.0,
+              "ZoomTarget": "EWDZoomTarget::Center"
+            },
+            {
+              "ZoomPreset": 5000.0,
+              "ZoomTarget": "EWDZoomTarget::Center"
+            }
+          ]
+        }
+      },
+      {
+        "Key": "EWDUIZoomPresetCategory::LandVehicle",
+        "Value": {
+          "DefaultPresetIndex": 2,
+          "MapZoomPresetData": [
+            {
+              "ZoomPreset": 175.0,
+              "ZoomTarget": "EWDZoomTarget::Center"
+            },
+            {
+              "ZoomPreset": 300.0,
+              "ZoomTarget": "EWDZoomTarget::Center"
+            },
+            {
+              "ZoomPreset": 500.0,
+              "ZoomTarget": "EWDZoomTarget::Center"
+            },
+            {
+              "ZoomPreset": 700.0,
+              "ZoomTarget": "EWDZoomTarget::Center"
+            },
+            {
+              "ZoomPreset": 1000.0,
+              "ZoomTarget": "EWDZoomTarget::Center"
+            },
+            {
+              "ZoomPreset": 1350.0,
+              "ZoomTarget": "EWDZoomTarget::Center"
+            }
+          ]
+        }
+      }
+    ],
+    "TrackerDataRegistry": {
+      "Name": "TrackerData_Minimap"
+    }
+  }
+}

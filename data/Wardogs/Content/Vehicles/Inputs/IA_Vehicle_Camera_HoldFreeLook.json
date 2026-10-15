@@ -1,0 +1,35 @@
+--- export: UDataAsset / IA_Vehicle_Camera_HoldFreeLook ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Vehicle_Camera_HoldFreeLook",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Vehicles/Inputs/IA_Vehicle_Camera_HoldFreeLook",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.Camera.HoldFreeLook"
+    },
+    "bConsumeInput": false,
+    "Triggers": [
+      {
+        "ObjectName": "WDInputTriggerHoldAndReleaseIfHeld'IA_Vehicle_Camera_HoldFreeLook:WDInputTriggerHoldAndReleaseIfHeld_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Camera_HoldFreeLook.1"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInputTriggerHoldAndReleaseIfHeld_0 ---
+{
+  "Type": "WDInputTriggerHoldAndReleaseIfHeld",
+  "Name": "WDInputTriggerHoldAndReleaseIfHeld_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInputTriggerHoldAndReleaseIfHeld'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_Camera_HoldFreeLook'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Camera_HoldFreeLook.0"
+  },
+  "Properties": {
+    "HoldTimeThreshold": 0.2,
+    "bIsOneShot": true
+  }
+}

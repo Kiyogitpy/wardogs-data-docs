@@ -1,0 +1,31 @@
+--- export: UPrimaryDataAsset / DA_TankBarrelTest_Stats ---
+{
+  "Type": "WDWeaponStatsData",
+  "Name": "DA_TankBarrelTest_Stats",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDWeaponStatsData'",
+  "Package": "/Game/Weapons/RocketLauncher/TankBarrelTest/Data/DA_TankBarrelTest_Stats",
+  "Properties": {
+    "WeaponId": {
+      "TagName": "Id.Item.LeapordBarrel"
+    },
+    "WeaponStats": {
+      "WeaponAccuracy": {
+        "AccuracyType": "EWDWeaponAccuracyType::MinutesOfAngle",
+        "AccuracyValue": 70.0
+      },
+      "RoundsPerMinute": 100.0,
+      "SupportedFireModes": [
+        "EWDFireMode::SemiAutomatic"
+      ],
+      "IronSightsAimTime": 50000.0,
+      "MaxZeroingRange": 1000,
+      "bSpawnProjectileFromCameraWhenAds": false,
+      "SupportedCaliber": [
+        "Item.Caliber.120x570mm"
+      ],
+      "InitialBulletSpeed": 55000.0,
+      "EffectiveRange": 3500.0
+    }
+  }
+}

@@ -1,0 +1,50 @@
+--- export: UDataAsset / DA_HealthReport ---
+{
+  "Type": "WDUIHealthReportData",
+  "Name": "DA_HealthReport",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIHealthReportData'",
+  "Package": "/Game/UI/Features/DeathRecap/Widgets/HealthReport/Data/DA_HealthReport",
+  "Properties": {
+    "DefaultDeathText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_DeathRecap.STRINGS_DeathRecap",
+      "Key": "Text.YouDied",
+      "SourceString": "You Died",
+      "LocalizedString": "You Died"
+    },
+    "DistanceTextFormat": {
+      "CultureInvariantString": "[{Distance} {Unit}]"
+    },
+    "SelfText": {
+      "TableId": "/Game/UI/StringTables/EventLog/STRINGS_EventLog.STRINGS_EventLog",
+      "Key": "Event.Damage.Self",
+      "SourceString": "Self",
+      "LocalizedString": "Self"
+    },
+    "SuicideText": {
+      "TableId": "/Game/UI/StringTables/EventLog/STRINGS_EventLog.STRINGS_EventLog",
+      "Key": "Event.Damage.Suicide",
+      "SourceString": "Suicide",
+      "LocalizedString": "Suicide"
+    },
+    "HealthReportEntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIHealthReportEntryViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/DeathRecap/Widgets/HealthReport/Data/DA_HealthReportEntry.DA_HealthReportEntry",
+        "SubPathString": ""
+      }
+    },
+    "EventLogCategories": [
+      "EventLog.Category.Damage"
+    ],
+    "ExcludedEventTypes": [
+      {
+        "ObjectName": "Class'WDEvent_Killed'",
+        "ObjectPath": "/Script/WDGame"
+      }
+    ]
+  }
+}

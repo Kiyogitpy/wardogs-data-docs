@@ -1,0 +1,60 @@
+--- export: UPrimaryDataAsset / DA_Action_BuildTool_ToggleSnapping ---
+{
+  "Type": "BHActionDefinition",
+  "Name": "DA_Action_BuildTool_ToggleSnapping",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHActionDefinition'",
+  "Package": "/Buildables/Data/Actions/DA_Action_BuildTool_ToggleSnapping",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.BuildTool.ToggleSnapping"
+    },
+    "ActionContext": [
+      "Action.Context.Holdable",
+      "Action.Context.Weapon",
+      "Action.Context.TwoHanded"
+    ],
+    "ActionClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Action_BuildTool_ToggleSnapping_C'",
+      "ObjectPath": "/Buildables/Data/Actions/B_Action_BuildTool_ToggleSnapping.1"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::BlockingStates",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::BlockingStates",
+          "ActionResponses": [],
+          "BlockingStates": [
+            "State.Player.Vitality.Critical",
+            "State.Player.Vitality.Dead"
+          ],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Block",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Block",
+          "ActionResponses": [
+            "Action.BuildTool.SecondaryUse",
+            "Action.BuildTool.Rotate",
+            "Action.BuildTool.ToggleSnapping",
+            "Action.BuildTool.PlaceSchematic"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      }
+    ],
+    "ActivationContextType": {
+      "ObjectName": "Class'WDGenericItemActionContext'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  }
+}

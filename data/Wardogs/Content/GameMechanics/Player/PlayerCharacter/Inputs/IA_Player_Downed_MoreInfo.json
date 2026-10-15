@@ -1,0 +1,30 @@
+--- export: UDataAsset / IA_Player_Downed_MoreInfo ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Player_Downed_MoreInfo",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_Downed_MoreInfo",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Player.Downed.MoreInfo"
+    },
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerPressed'IA_Player_Downed_MoreInfo:InputTriggerPressed_0'",
+        "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_Downed_MoreInfo.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Player_Downed_MoreInfo'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_Downed_MoreInfo.0"
+  }
+}

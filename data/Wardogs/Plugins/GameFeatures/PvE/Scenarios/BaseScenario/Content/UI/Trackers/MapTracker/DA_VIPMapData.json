@@ -1,0 +1,265 @@
+--- export: UDataAsset / DA_VIPMapData ---
+{
+  "Type": "WDUIVIPMapTrackerData",
+  "Name": "DA_VIPMapData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIVIPMapTrackerData'",
+  "Package": "/BaseScenario/UI/Trackers/MapTracker/DA_VIPMapData",
+  "Properties": {
+    "VIPColor": {
+      "B": 173,
+      "G": 59,
+      "R": 146,
+      "A": 255,
+      "Hex": "923BAD"
+    },
+    "VitalityStateTextures": [
+      {
+        "Key": {
+          "TagName": "State.Player.Vitality.Critical"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Icon_Player_Critical.T_UI_Icon_Player_Critical",
+            "SubPathString": ""
+          },
+          "Scale": 1.0
+        }
+      }
+    ],
+    "AssistanceRequestTextures": [
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Ammo"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Icon_Request_Ammo.T_UI_Icon_Request_Ammo",
+            "SubPathString": ""
+          },
+          "Scale": 1.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Backup"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Backup_Request_Icon.T_UI_Backup_Request_Icon",
+            "SubPathString": ""
+          },
+          "Scale": 1.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Dropoff"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_DropOff_Request_Icon.T_UI_DropOff_Request_Icon",
+            "SubPathString": ""
+          },
+          "Scale": 1.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Pickup"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_PickRequest_Icon.T_UI_PickRequest_Icon",
+            "SubPathString": ""
+          },
+          "Scale": 1.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Healing"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Icon_Request_Medical.T_UI_Icon_Request_Medical",
+            "SubPathString": ""
+          },
+          "Scale": 1.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Refueling"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_FuelRequest_Icon.T_UI_FuelRequest_Icon",
+            "SubPathString": ""
+          },
+          "Scale": 1.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Revive"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Icon_Player_Critical.T_UI_Icon_Player_Critical",
+            "SubPathString": ""
+          },
+          "Scale": 1.2
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Repair"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_RepairRequest_Icon.T_UI_RepairRequest_Icon",
+            "SubPathString": ""
+          },
+          "Scale": 1.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.SquadInvite"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_SquadInviteRequest_Icon.T_UI_SquadInviteRequest_Icon",
+            "SubPathString": ""
+          },
+          "Scale": 1.0
+        }
+      }
+    ],
+    "AcknowledgedAssistanceRequestTextures": [
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Ammo"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Icon_Request_Ammo_Acknowledged.T_UI_Icon_Request_Ammo_Acknowledged",
+            "SubPathString": ""
+          },
+          "Scale": 1.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Backup"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Backup_Request_Filled_Icon.T_UI_Backup_Request_Filled_Icon",
+            "SubPathString": ""
+          },
+          "Scale": 1.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Dropoff"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_DropOff_Request_Approved_Icon.T_UI_DropOff_Request_Approved_Icon",
+            "SubPathString": ""
+          },
+          "Scale": 1.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Pickup"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_PickRequest_Approved_Icon.T_UI_PickRequest_Approved_Icon",
+            "SubPathString": ""
+          },
+          "Scale": 1.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Healing"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Icon_Request_Medical_Acknowledged.T_UI_Icon_Request_Medical_Acknowledged",
+            "SubPathString": ""
+          },
+          "Scale": 1.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Getout"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_GetOut_Request_Filled_Icon.T_UI_GetOut_Request_Filled_Icon",
+            "SubPathString": ""
+          },
+          "Scale": 1.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Refueling"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_FuelRequest_Filled_Icon.T_UI_FuelRequest_Filled_Icon",
+            "SubPathString": ""
+          },
+          "Scale": 1.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Revive"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Icon_Request_Revive_Acknowledged.T_UI_Icon_Request_Revive_Acknowledged",
+            "SubPathString": ""
+          },
+          "Scale": 1.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Repair"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_RepairRequest_Filled_Icon.T_UI_RepairRequest_Filled_Icon",
+            "SubPathString": ""
+          },
+          "Scale": 1.0
+        }
+      }
+    ],
+    "DefaultTexture": {
+      "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/Textures/T_UI_FriendlyMarker_Map_Icon.T_UI_FriendlyMarker_Map_Icon",
+      "SubPathString": ""
+    },
+    "SelfOrSquadTexture": {
+      "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/Textures/T_UI_PlayerMarker_Map_Icon.T_UI_PlayerMarker_Map_Icon",
+      "SubPathString": ""
+    },
+    "DefaultIconScale": 1.5,
+    "bDisplayText": false,
+    "DefaultSize": {
+      "X": 18.0,
+      "Y": 18.0
+    }
+  }
+}

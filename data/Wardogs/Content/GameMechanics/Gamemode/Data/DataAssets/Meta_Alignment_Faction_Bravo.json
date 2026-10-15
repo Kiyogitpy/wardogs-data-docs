@@ -1,0 +1,103 @@
+--- export: UPrimaryDataAsset / Meta_Alignment_Faction_Bravo ---
+{
+  "Type": "WDFactionData",
+  "Name": "Meta_Alignment_Faction_Bravo",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDFactionData'",
+  "Package": "/Game/GameMechanics/Gamemode/Data/DataAssets/Meta_Alignment_Faction_Bravo",
+  "Properties": {
+    "FactionTag": {
+      "TagName": "Meta.Alignment.Faction.Bravo"
+    },
+    "FactionName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Misc.STRINGS_Misc",
+      "Key": "FactionName.Bravo",
+      "SourceString": "Valkyra",
+      "LocalizedString": "Valkyra"
+    },
+    "FactionShortName": {
+      "Namespace": "",
+      "Key": "A4E6C32B41BDBE84D8BB899575E828E4",
+      "SourceString": "Vlk",
+      "LocalizedString": "Vlk"
+    },
+    "FactionColor": {
+      "B": 62,
+      "G": 80,
+      "R": 250,
+      "A": 255,
+      "Hex": "FA503E"
+    },
+    "FactionColorSquad": {
+      "B": 20,
+      "G": 163,
+      "R": 237,
+      "A": 255,
+      "Hex": "EDA314"
+    },
+    "Icons": {
+      "FallbackIcon": {
+        "AssetPathName": "/Game/UI/Shared/Textures/Factions/T_UI_ValkyraLogo_White.T_UI_ValkyraLogo_White",
+        "SubPathString": ""
+      },
+      "TaggedIcons": [
+        {
+          "Key": "/Game/UI/Shared/Textures/Factions/T_UI_ValkyraLogo_White.T_UI_ValkyraLogo_White",
+          "Value": [
+            "UI.Icon.Default",
+            "UI.Icon.FactionSelect",
+            "UI.Icon.Inventory",
+            "UI.Icon.GameOver",
+            "UI.Icon.Tracker.TacticalMap.Spawn",
+            "UI.Icon.Scoreboard",
+            "UI.Icon.Killfeed",
+            "UI.Icon.EventFeed"
+          ]
+        },
+        {
+          "Key": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Textures/T_UI_Icon_Spatial_RED_White_256px.T_UI_Icon_Spatial_RED_White_256px",
+          "Value": []
+        },
+        {
+          "Key": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Textures/T_UI_SquadMarker_Icon.T_UI_SquadMarker_Icon",
+          "Value": [
+            "UI.Icon.Tracker.Spatial.Player.Squad",
+            "UI.Icon.Chatbox.Squad",
+            "UI.Icon.Passengers.Squad",
+            "UI.Icon.Killfeed.Squad",
+            "UI.Icon.Tracker.TacticalMap.Player.Squad",
+            "UI.Icon.EventFeed.Squad"
+          ]
+        },
+        {
+          "Key": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Textures/T_UI_Icon_Spatial_RedTeamSpawn_256px.T_UI_Icon_Spatial_RedTeamSpawn_256px",
+          "Value": [
+            "UI.Icon.Tracker.Spatial.Spawn"
+          ]
+        },
+        {
+          "Key": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Textures/T_UI_Valkyra_SpatialIcon.T_UI_Valkyra_SpatialIcon",
+          "Value": [
+            "UI.Icon.Passengers",
+            "UI.Icon.Tracker.Spatial.Player",
+            "UI.Icon.GameModeStatus",
+            "UI.Icon.Chatbox"
+          ]
+        }
+      ]
+    },
+    "BlockColorMaterials": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_WDPlayerRed'",
+        "ObjectPath": "/Game/Characters/Default_PlayerMesh/TP/Materials/MI_WDPlayerRed.0"
+      }
+    ],
+    "GenericTeamId": 1,
+    "SafeZoneTag": {
+      "TagName": "State.Location.SafeZone.Bravo"
+    },
+    "SafeZoneCameraTag": {
+      "TagName": "State.Player.Camera.SafeZone.Bravo"
+    }
+  }
+}

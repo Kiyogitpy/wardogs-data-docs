@@ -1,0 +1,111 @@
+--- export: UObject / B_CharacterModifier_IgnoreLookInput_C_0 ---
+{
+  "Type": "B_CharacterModifier_IgnoreLookInput_C",
+  "Name": "B_CharacterModifier_IgnoreLookInput_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/MoverTesting/CharacterModifierStates/CharacterModifiers/B_CharacterModifier_IgnoreLookInput.B_CharacterModifier_IgnoreLookInput_C'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_Emote_FullBody'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Emote_FullBody.3"
+  },
+  "Template": {
+    "ObjectName": "B_CharacterModifier_IgnoreLookInput_C'Default__B_CharacterModifier_IgnoreLookInput_C'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/CharacterModifiers/B_CharacterModifier_IgnoreLookInput.0"
+  }
+}
+--- export: UObject / WDCameraModifier_Critical_0 ---
+{
+  "Type": "WDCameraModifier_Critical",
+  "Name": "WDCameraModifier_Critical_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCameraModifier_Critical'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_Emote_FullBody'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Emote_FullBody.3"
+  },
+  "Properties": {
+    "DefaultState": {
+      "OffsetMode": "EWDCriticalOffsetMode::RelativeOffset",
+      "TransitionTime": 0.0,
+      "BoneName": "head",
+      "RelativeRotationOffset": {
+        "Pitch": 0.0,
+        "Yaw": 75.0,
+        "Roll": -90.0
+      }
+    }
+  }
+}
+--- export: UObject / WDCharacterModifierCondition_StateTags_0 ---
+{
+  "Type": "WDCharacterModifierCondition_StateTags",
+  "Name": "WDCharacterModifierCondition_StateTags_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierCondition_StateTags'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_Emote_FullBody'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Emote_FullBody.3"
+  },
+  "Properties": {
+    "StateQuery": {
+      "TagDictionary": [
+        {
+          "TagName": "State.Player.Vitality.Critical"
+        },
+        {
+          "TagName": "State.Player.Vitality.Dead"
+        },
+        {
+          "TagName": "State.Player.Action.Emote.FullBody"
+        }
+      ],
+      "QueryTokenStream": [
+        0,
+        1,
+        5,
+        2,
+        3,
+        2,
+        0,
+        1,
+        1,
+        1,
+        2
+      ],
+      "UserDescription": "We are alive and doing a full body emote",
+      "AutoDescription": " ALL(  NONE( State.Player.Vitality.Critical, State.Player.Vitality.Dead ),  ANY( State.Player.Action.Emote.FullBody ) )"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / DA_CharacterModifierState_Emote_FullBody ---
+{
+  "Type": "WDCharacterModifierStateDefinition",
+  "Name": "DA_CharacterModifierState_Emote_FullBody",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierStateDefinition'",
+  "Package": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Emote_FullBody",
+  "Properties": {
+    "StateTag": {
+      "TagName": "State.CharacterModifier.Emote.FullBody"
+    },
+    "CameraModifiers": [
+      {
+        "ObjectName": "WDCameraModifier_Critical'DA_CharacterModifierState_Emote_FullBody:WDCameraModifier_Critical_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Emote_FullBody.1"
+      }
+    ],
+    "CharacterModifiers": [
+      {
+        "ObjectName": "B_CharacterModifier_IgnoreLookInput_C'DA_CharacterModifierState_Emote_FullBody:B_CharacterModifier_IgnoreLookInput_C_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Emote_FullBody.0"
+      }
+    ],
+    "Priority": 0,
+    "Conditions": [
+      {
+        "ObjectName": "WDCharacterModifierCondition_StateTags'DA_CharacterModifierState_Emote_FullBody:WDCharacterModifierCondition_StateTags_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Emote_FullBody.2"
+      }
+    ]
+  }
+}

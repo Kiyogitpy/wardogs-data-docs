@@ -1,0 +1,37 @@
+--- export: UDataAsset / DA_WaitingToDeployScene ---
+{
+  "Type": "WDUIWaitingToDeployData",
+  "Name": "DA_WaitingToDeployScene",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIWaitingToDeployData'",
+  "Package": "/Game/UI/Features/DeploymentBoard/Data/DA_WaitingToDeployScene",
+  "Properties": {
+    "RemainingTimeTextFormat": {
+      "TableId": "/Game/UI/StringTables/STRINGS_DeploymentBoard.STRINGS_DeploymentBoard",
+      "Key": "Spawn.WaitingToDeploy",
+      "SourceString": "WAITING TO DEPLOY... {RemainingSeconds}",
+      "LocalizedString": "WAITING TO DEPLOY... {RemainingSeconds}"
+    },
+    "VehicleDestroyedText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_DeploymentBoard.STRINGS_DeploymentBoard",
+      "Key": "RejectionReason.Destroyed",
+      "SourceString": "SPAWN VEHICLE DESTROYED ... FAILED TO DEPLOY",
+      "LocalizedString": "SPAWN VEHICLE DESTROYED ... FAILED TO DEPLOY"
+    },
+    "WaitingToDeployGameplayCueTag": {
+      "TagName": "GameplayCue.Player.Spawn.DeploymentVehicle.Wait"
+    },
+    "VehicleDestroyedRemovalTag": {
+      "TagName": "GameplayCue.Player.Spawn.DeploymentVehicle.VehicleDestroyed"
+    },
+    "CountdownFinishedRemovalTag": {
+      "TagName": "GameplayCue.Player.Spawn.DeploymentVehicle.CountdownFinished"
+    },
+    "EnterSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.Gamemode.DeployScreen.Enter"
+    },
+    "ExitSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.Gamemode.DeployScreen.Exit"
+    }
+  }
+}

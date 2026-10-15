@@ -1,0 +1,123 @@
+--- export: UDataTable / DT_RadialWheelTypeDatas ---
+{
+  "Type": "DataTable",
+  "Name": "DT_RadialWheelTypeDatas",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/UI/Features/RadialWheel/Data/DT_RadialWheelTypeDatas",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUIRadialWheelTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "UI.RadialWheel.Equipment": {
+      "CloseAndSelectActionTag": {
+        "TagName": "UI.Action.Feature.RadialWheel.Equipment.ToggleScene"
+      },
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_RadialWheels.STRINGS_RadialWheels",
+        "Key": "Equipment.DisplayName",
+        "SourceString": "TAC-VEST",
+        "LocalizedString": "TAC-VEST"
+      },
+      "DisplayDescription": {
+        "CultureInvariantString": null
+      },
+      "WheelWidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/RadialWheel/Widgets/W_RadialWheel.W_RadialWheel_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIRadialWheelViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/RadialWheel/Data/EquipmentWheel/DA_EquipmentRadialWheelData.DA_EquipmentRadialWheelData",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+      },
+      "SlotWidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/RadialWheel/Widgets/Equipment/W_EquipmentRadialWheelSlot.W_EquipmentRadialWheelSlot_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIEquipmentRadialWheelSlotViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/RadialWheel/Data/EquipmentWheel/DA_EquipmentRadialWheelSlotData.DA_EquipmentRadialWheelSlotData",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+      },
+      "MaxSlotCapacityPerPage": 7,
+      "Tag": {
+        "TagName": "UI.RadialWheel.Equipment"
+      }
+    },
+    "UI.RadialWheel.VoiceChat": {
+      "CloseAndSelectActionTag": {
+        "TagName": "UI.Action.Feature.RadialWheel.VoiceChat.ToggleScene"
+      },
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_RadialWheels.STRINGS_RadialWheels",
+        "Key": "VoiceChat.DisplayName",
+        "SourceString": "SELECT VOICE CHANNEL",
+        "LocalizedString": "SELECT VOICE CHANNEL"
+      },
+      "DisplayDescription": {
+        "TableId": "/Game/UI/StringTables/STRINGS_RadialWheels.STRINGS_RadialWheels",
+        "Key": "VoiceChat.DisplayDescription",
+        "SourceString": "Current - {TalkingChannel}",
+        "LocalizedString": "Current - {TalkingChannel}"
+      },
+      "WheelWidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/RadialWheel/Widgets/W_RadialWheel.W_RadialWheel_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIVoiceChatRadialWheelViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/RadialWheel/Data/VoiceChat/DA_VoiceChatRadialWheelData.DA_VoiceChatRadialWheelData",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+      },
+      "SlotWidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/RadialWheel/Widgets/W_RadialWheelSlot.W_RadialWheelSlot_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIVoiceChatRadialWheelSlotViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/RadialWheel/Data/VoiceChat/DA_VoiceChatRadialWheelSlotData.DA_VoiceChatRadialWheelSlotData",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+      },
+      "MaxSlotCapacityPerPage": 4,
+      "Tag": {
+        "TagName": "UI.RadialWheel.VoiceChat"
+      }
+    }
+  }
+}

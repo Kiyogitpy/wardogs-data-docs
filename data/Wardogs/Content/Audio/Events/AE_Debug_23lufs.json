@@ -1,0 +1,39 @@
+--- export: UPrimaryDataAsset / AE_Debug_23lufs ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Debug_23lufs",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/AE_Debug_23lufs",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Debug.23lufs"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Debug_23lufs:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/AE_Debug_23lufs.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Debug_23lufs'",
+    "ObjectPath": "/Game/Audio/Events/AE_Debug_23lufs.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "SoundWave'SFX_-23db'",
+      "ObjectPath": "/Game/Audio/Test/Wavs/SFX_-23db.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

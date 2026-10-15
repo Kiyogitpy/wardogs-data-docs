@@ -1,0 +1,36 @@
+--- export: UDataAsset / DA_EngineTransmission_WHL_06_DuneBuggy ---
+{
+  "Type": "MWheeledVehicleEngineTransmissionDataAsset",
+  "Name": "DA_EngineTransmission_WHL_06_DuneBuggy",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MWheeledVehicleEngineTransmissionDataAsset'",
+  "Package": "/WHL_06/Data/DA_EngineTransmission_WHL_06_DuneBuggy",
+  "Properties": {
+    "EngineData": {
+      "TorqueCurve": {
+        "ObjectName": "CurveFloat'CRV_Torque'",
+        "ObjectPath": "/WHL_06/Data/Curves/CRV_Torque.0"
+      },
+      "TorqueScale": 0.35,
+      "FrictionTorque": 75.0,
+      "IdleRPM": 800.0,
+      "EngineInertia": 0.65,
+      "BoostScale": 1.03
+    },
+    "TransmissionData": {
+      "ChangeTime": 200.0,
+      "GearUpRatio": 85.0,
+      "GearDownRatio": 60.0,
+      "ClutchTime": 30.0,
+      "GearRatios": [
+        4.8,
+        3.6,
+        2.7,
+        2.15,
+        1.98,
+        6.0
+      ],
+      "FinalGearRatio": 4.3
+    }
+  }
+}

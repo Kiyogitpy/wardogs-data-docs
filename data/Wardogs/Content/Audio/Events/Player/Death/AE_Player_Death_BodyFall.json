@@ -1,0 +1,68 @@
+--- export: UObject / AEB_PlayBodyFall_C_0 ---
+{
+  "Type": "AEB_PlayBodyFall_C",
+  "Name": "AEB_PlayBodyFall_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayBodyFall.AEB_PlayBodyFall_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Death_BodyFall'",
+    "ObjectPath": "/Game/Audio/Events/Player/Death/AE_Player_Death_BodyFall.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayBodyFall_C'Default__AEB_PlayBodyFall_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayBodyFall.0"
+  },
+  "Properties": {
+    "1p Standing": {
+      "ObjectName": "MetaSoundSource'MSS_Player_Death_BodyFall_Standing_1p'",
+      "ObjectPath": "/Game/Audio/Player/Death/BodyFall/MSS/MSS_Player_Death_BodyFall_Standing_1p.0"
+    },
+    "3p Standing": {
+      "ObjectName": "MetaSoundSource'MSS_Player_Death_BodyFall_Standing_3p'",
+      "ObjectPath": "/Game/Audio/Player/Death/BodyFall/MSS/MSS_Player_Death_BodyFall_Standing_3p.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Death.BodyFall"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Player_Death_BodyFall ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Player_Death_BodyFall",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Death/AE_Player_Death_BodyFall",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.Death.BodyFall"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Player_Death_BodyFall:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Death/AE_Player_Death_BodyFall.2"
+      },
+      {
+        "ObjectName": "AEB_PlayBodyFall_C'AE_Player_Death_BodyFall:AEB_PlayBodyFall_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Death/AE_Player_Death_BodyFall.0"
+      }
+    ],
+    "_aaabhonahgpdbjealfaaa_$ED076F31940B5000$_$23$": 50.5
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Death_BodyFall'",
+    "ObjectPath": "/Game/Audio/Events/Player/Death/AE_Player_Death_BodyFall.1"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Death.BodyFall"
+    }
+  }
+}

@@ -1,0 +1,81 @@
+--- export: UDataAsset / DA_Squadless ---
+{
+  "Type": "WDUISquadEntryData",
+  "Name": "DA_Squadless",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUISquadEntryData'",
+  "Package": "/Game/UI/Features/ContextDrawer/Tabs/Party/Widgets/SquadEntry/Data/DA_Squadless",
+  "Properties": {
+    "SquadPlayerViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUISquadPlayerViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/ContextDrawer/Tabs/Party/Widgets/SquadPlayer/Data/DA_SquadPlayer.DA_SquadPlayer",
+        "SubPathString": ""
+      }
+    },
+    "BorderIdleColor": {
+      "R": 0.006793,
+      "G": 0.008047,
+      "B": 0.010417,
+      "A": 1.0,
+      "Hex": "13161A"
+    },
+    "BorderHoveredColor": {
+      "R": 0.028426,
+      "G": 0.030713,
+      "B": 0.033105,
+      "A": 1.0,
+      "Hex": "2F3133"
+    },
+    "MembershipButtonTexts": [
+      {
+        "Key": "EWDUISquadEntryState::Joinable",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Squads.STRINGS_Squads",
+          "Key": "Button.JoinSquad",
+          "SourceString": "Join Squad",
+          "LocalizedString": "Join Squad"
+        }
+      },
+      {
+        "Key": "EWDUISquadEntryState::Leavable",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Squads.STRINGS_Squads",
+          "Key": "Button.LeaveSquad",
+          "SourceString": "Leave Squad",
+          "LocalizedString": "Leave Squad"
+        }
+      },
+      {
+        "Key": "EWDUISquadEntryState::Locked",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Squads.STRINGS_Squads",
+          "Key": "Button.SquadLocked",
+          "SourceString": "Locked",
+          "LocalizedString": "Locked"
+        }
+      },
+      {
+        "Key": "EWDUISquadEntryState::Requestable",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Squads.STRINGS_Squads",
+          "Key": "Button.RequestJoin",
+          "SourceString": "Request to join",
+          "LocalizedString": "Request to join"
+        }
+      }
+    ],
+    "SquadLockedTexture": {
+      "AssetPathName": "/Game/UI/Features/ContextDrawer/Tabs/Party/Textures/T_UI_Icon_SquadLock.T_UI_Icon_SquadLock",
+      "SubPathString": ""
+    },
+    "SquadUnlockedTexture": {
+      "AssetPathName": "/Game/UI/Features/HUD/Passengers/Textures/T_UI_Vehicle_Unlocked.T_UI_Vehicle_Unlocked",
+      "SubPathString": ""
+    },
+    "_aaaapfgiofbbnopjihgka_$568E511DEF9876A0$_$15$": true
+  }
+}

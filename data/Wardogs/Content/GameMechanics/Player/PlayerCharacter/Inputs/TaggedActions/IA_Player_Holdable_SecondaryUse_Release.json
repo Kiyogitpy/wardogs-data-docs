@@ -1,0 +1,34 @@
+--- export: UDataAsset / IA_Player_Holdable_SecondaryUse_Release ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Player_Holdable_SecondaryUse_Release",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/TaggedActions/IA_Player_Holdable_SecondaryUse_Release",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.HoldableItem.SecondaryUse.Release"
+    },
+    "ValueType": "EInputActionValueType::Axis1D",
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerReleased'IA_Player_Holdable_SecondaryUse_Release:InputTriggerReleased_1'",
+        "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/TaggedActions/IA_Player_Holdable_SecondaryUse_Release.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerReleased_1 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Player_Holdable_SecondaryUse_Release'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/TaggedActions/IA_Player_Holdable_SecondaryUse_Release.0"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.01
+  }
+}

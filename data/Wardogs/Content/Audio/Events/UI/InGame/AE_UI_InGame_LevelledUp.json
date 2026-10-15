@@ -1,0 +1,40 @@
+--- export: UPrimaryDataAsset / AE_UI_InGame_LevelledUp ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UI_InGame_LevelledUp",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UI/InGame/AE_UI_InGame_LevelledUp",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.InGame.LevelledUp"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_UI_InGame_LevelledUp:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/InGame/AE_UI_InGame_LevelledUp.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_InGame_LevelledUp'",
+    "ObjectPath": "/Game/Audio/Events/UI/InGame/AE_UI_InGame_LevelledUp.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UX_Meta_LevelUp'",
+      "ObjectPath": "/Game/Audio/UX/Meta/LevelUp/MSS/MSS_UX_Meta_LevelUp.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

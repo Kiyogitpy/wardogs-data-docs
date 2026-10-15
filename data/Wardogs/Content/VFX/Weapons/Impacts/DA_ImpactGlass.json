@@ -1,0 +1,50 @@
+--- export: UPrimaryDataAsset / DA_ImpactGlass ---
+{
+  "Type": "PDA_PhysicalMaterialResponse_C",
+  "Name": "DA_ImpactGlass",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/VFX/Weapons/Impacts/PDA_PhysicalMaterialResponse.PDA_PhysicalMaterialResponse_C'",
+  "Package": "/Game/VFX/Weapons/Impacts/DA_ImpactGlass",
+  "Template": {
+    "ObjectName": "PDA_PhysicalMaterialResponse_C'Default__PDA_PhysicalMaterialResponse_C'",
+    "ObjectPath": "/Game/VFX/Weapons/Impacts/PDA_PhysicalMaterialResponse.1"
+  },
+  "Properties": {
+    "BulletDecal": {
+      "AssetPathName": "/Game/Materials/ImpactMaterials/MM_GlassCrack.MM_GlassCrack",
+      "SubPathString": ""
+    },
+    "BulletImpactEffect": {
+      "AssetPathName": "/Game/VFX/Weapons/Impacts/Systems/NS_VFX_ImpactGlass.NS_VFX_ImpactGlass",
+      "SubPathString": ""
+    },
+    "ExplosionDecal": {
+      "AssetPathName": "/Game/Materials/ImpactMaterials/MM_GlassCrack.MM_GlassCrack",
+      "SubPathString": ""
+    },
+    "ExplosionEffect": [
+      {
+        "AssetPathName": "/Game/VFX/Weapons/Explosions/Systems/NS_VFX_Explosion01_Glass.NS_VFX_Explosion01_Glass",
+        "SubPathString": ""
+      },
+      {
+        "AssetPathName": "/Game/VFX/Weapons/Explosions/Systems/NS_VFX_Explosion_Med.NS_VFX_Explosion_Med",
+        "SubPathString": ""
+      },
+      {
+        "AssetPathName": "/Game/VFX/Weapons/Explosions/Systems/NS_VFX_Explosion_Big.NS_VFX_Explosion_Big",
+        "SubPathString": ""
+      }
+    ],
+    "SmallCaliberSIze": 0.2,
+    "MediumCaliberSIze": 0.25,
+    "LargeCaliberSIze": 0.4,
+    "SizeRandomMin": 0.9,
+    "SizeRandomMax": 1.1,
+    "ExplosionDecalSize": 1.0,
+    "NativeClass": {
+      "ObjectName": "BlueprintGeneratedClass'PDA_PhysicalMaterialResponse_C'",
+      "ObjectPath": "/Game/VFX/Weapons/Impacts/PDA_PhysicalMaterialResponse.0"
+    }
+  }
+}

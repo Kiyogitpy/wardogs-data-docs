@@ -1,0 +1,297 @@
+--- export: UDataAsset / DA_TacticalMap ---
+{
+  "Type": "WDUITacticalMapData",
+  "Name": "DA_TacticalMap",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUITacticalMapData'",
+  "Package": "/Game/UI/Features/Map/Widgets/TacticalMap/Data/DA_TacticalMap",
+  "Properties": {
+    "InteractionMenuViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUITacticalMapInteractionMenuViewModel",
+        "SubPathString": ""
+      }
+    },
+    "DisplayMethod": "EWDDisplayMethod::VirtualTexture",
+    "TexturesRootDirectory": {
+      "Path": "/Game/UI/Tools/WorldCapture/Textures"
+    },
+    "VirtualTextureMaterial": {
+      "AssetPathName": "/MinimapCapture/Materials/MI_Map_VirtualTexture.MI_Map_VirtualTexture",
+      "SubPathString": ""
+    },
+    "_aaabcedlmgkmjfcejjgof_$43BC6AC9524996E5$_$18$": {
+      "AssetPathName": "/Game/UI/Features/Map/Map_Optimisation/TA_MapTrackers_Player_Packed.TA_MapTrackers_Player_Packed",
+      "SubPathString": ""
+    },
+    "bShowGraticules": true,
+    "bShowGrid": true,
+    "GridTileSize": 1000.0,
+    "MidRangeZoomGridAdjustments": {
+      "ThresholdPercentage": 10,
+      "NumberOfDigitsToDraw": 1
+    },
+    "MaxRangeZoomGridAdjustments": {
+      "ThresholdPercentage": 80,
+      "NumberOfDigitsToDraw": 2
+    },
+    "bShowZoomLevel": true,
+    "bRecenterWhenOpened": true,
+    "_aaabgnalglcppbbenlngl_$D0B6B2FF114DBD6B$_$22$": false,
+    "ZoomInputMultipliers": [
+      {
+        "Key": "EInputDevices::Mouse",
+        "Value": {
+          "ZoomLevelDatas": [
+            {
+              "MaxAllowedViewSize": 500.0,
+              "InputMultiplier": 15.0
+            },
+            {
+              "MaxAllowedViewSize": 1000.0,
+              "InputMultiplier": 7.5
+            },
+            {
+              "MaxAllowedViewSize": 2000.0,
+              "InputMultiplier": 5.0
+            },
+            {
+              "MaxAllowedViewSize": 3000.0,
+              "InputMultiplier": 2.5
+            },
+            {
+              "MaxAllowedViewSize": 5000.0,
+              "InputMultiplier": 2.0
+            },
+            {
+              "MaxAllowedViewSize": 7500.0,
+              "InputMultiplier": 1.0
+            }
+          ]
+        }
+      },
+      {
+        "Key": "EInputDevices::Gamepad",
+        "Value": {
+          "ZoomLevelDatas": [
+            {
+              "MaxAllowedViewSize": 100.0,
+              "InputMultiplier": 10.0
+            }
+          ]
+        }
+      }
+    ],
+    "bShouldLerpZoom": true,
+    "LerpZoomSpeed": 6.0,
+    "LerpZoomTolerance": 0.005,
+    "LerpZoomPresetTolerance": 50.0,
+    "bUseFullMapViewSize": true,
+    "LargestViewSize": 8000.0,
+    "SmallestViewSize": 200.0,
+    "bUseZoomCurve": true,
+    "ZoomCurve": {
+      "EditorCurveData": {
+        "Keys": [
+          {
+            "InterpMode": "RCIM_Cubic",
+            "TangentMode": "RCTM_User",
+            "TangentWeightMode": "RCTWM_WeightedNone",
+            "Time": 0.07924999,
+            "Value": 0.024502039,
+            "ArriveTangent": 0.34623718,
+            "ArriveTangentWeight": 0.0,
+            "LeaveTangent": 0.18172935,
+            "LeaveTangentWeight": 0.0
+          },
+          {
+            "InterpMode": "RCIM_Cubic",
+            "TangentMode": "RCTM_User",
+            "TangentWeightMode": "RCTWM_WeightedNone",
+            "Time": 1.0,
+            "Value": 1.0,
+            "ArriveTangent": 2.9101784,
+            "ArriveTangentWeight": 0.0,
+            "LeaveTangent": 2.9101956,
+            "LeaveTangentWeight": 0.0
+          }
+        ]
+      }
+    },
+    "bClampToTextureZoom": false,
+    "MapZoomCategories": [
+      {
+        "Key": "EWDUIZoomPresetCategory::Default",
+        "Value": {
+          "DefaultPresetIndex": 1,
+          "MapZoomPresetData": [
+            {
+              "ZoomPreset": 200.0,
+              "ZoomTarget": "EWDZoomTarget::Cursor"
+            },
+            {
+              "ZoomPreset": 400.0,
+              "ZoomTarget": "EWDZoomTarget::Cursor"
+            },
+            {
+              "ZoomPreset": 800.0,
+              "ZoomTarget": "EWDZoomTarget::Cursor"
+            },
+            {
+              "ZoomPreset": 1200.0,
+              "ZoomTarget": "EWDZoomTarget::Cursor"
+            },
+            {
+              "ZoomPreset": 2000.0,
+              "ZoomTarget": "EWDZoomTarget::Cursor"
+            },
+            {
+              "ZoomPreset": 3000.0,
+              "ZoomTarget": "EWDZoomTarget::Cursor"
+            },
+            {
+              "ZoomPreset": 5000.0,
+              "ZoomTarget": "EWDZoomTarget::Cursor"
+            }
+          ]
+        }
+      },
+      {
+        "Key": "EWDUIZoomPresetCategory::AirVehicle",
+        "Value": {
+          "DefaultPresetIndex": 6,
+          "MapZoomPresetData": [
+            {
+              "ZoomPreset": 200.0,
+              "ZoomTarget": "EWDZoomTarget::Cursor"
+            },
+            {
+              "ZoomPreset": 400.0,
+              "ZoomTarget": "EWDZoomTarget::Cursor"
+            },
+            {
+              "ZoomPreset": 800.0,
+              "ZoomTarget": "EWDZoomTarget::Cursor"
+            },
+            {
+              "ZoomPreset": 1200.0,
+              "ZoomTarget": "EWDZoomTarget::Cursor"
+            },
+            {
+              "ZoomPreset": 2000.0,
+              "ZoomTarget": "EWDZoomTarget::Cursor"
+            },
+            {
+              "ZoomPreset": 3000.0,
+              "ZoomTarget": "EWDZoomTarget::Cursor"
+            },
+            {
+              "ZoomPreset": 5000.0,
+              "ZoomTarget": "EWDZoomTarget::Cursor"
+            }
+          ]
+        }
+      },
+      {
+        "Key": "EWDUIZoomPresetCategory::LandVehicle",
+        "Value": {
+          "DefaultPresetIndex": 4,
+          "MapZoomPresetData": [
+            {
+              "ZoomPreset": 200.0,
+              "ZoomTarget": "EWDZoomTarget::Cursor"
+            },
+            {
+              "ZoomPreset": 400.0,
+              "ZoomTarget": "EWDZoomTarget::Cursor"
+            },
+            {
+              "ZoomPreset": 800.0,
+              "ZoomTarget": "EWDZoomTarget::Cursor"
+            },
+            {
+              "ZoomPreset": 1200.0,
+              "ZoomTarget": "EWDZoomTarget::Cursor"
+            },
+            {
+              "ZoomPreset": 2000.0,
+              "ZoomTarget": "EWDZoomTarget::Cursor"
+            },
+            {
+              "ZoomPreset": 3000.0,
+              "ZoomTarget": "EWDZoomTarget::Cursor"
+            },
+            {
+              "ZoomPreset": 5000.0,
+              "ZoomTarget": "EWDZoomTarget::Cursor"
+            }
+          ]
+        }
+      }
+    ],
+    "PanInputMultipliers": [
+      {
+        "Key": "EInputDevices::Gamepad",
+        "Value": 20.0
+      },
+      {
+        "Key": "EInputDevices::Keyboard",
+        "Value": 20.0
+      }
+    ],
+    "bShouldLerpPanToMapCenter": true,
+    "LerpPanSpeedPerSecond": 12000.0,
+    "InteractionMenuRequestsItems": [
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Dropoff"
+        },
+        "Value": {
+          "ItemTexture": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "ItemName": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Map.STRINGS_Map",
+            "Key": "Map.InteractionMenu.Dropoff",
+            "SourceString": "Request Dropoff",
+            "LocalizedString": "Request Dropoff"
+          },
+          "ChatboxMessage": {
+            "CultureInvariantString": null
+          },
+          "bNeedsToBeInVehicle": true,
+          "bNeedsToBeOutAndAbout": false
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Message.Map.MarkCoordinates"
+        },
+        "Value": {
+          "ItemTexture": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "ItemName": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Map.STRINGS_Map",
+            "Key": "Map.InteractionMenu.MarkCoordinates",
+            "SourceString": "Mark Coordinates",
+            "LocalizedString": "Mark Coordinates"
+          },
+          "ChatboxMessage": {
+            "CultureInvariantString": null
+          },
+          "bNeedsToBeInVehicle": false,
+          "bNeedsToBeOutAndAbout": false
+        }
+      }
+    ],
+    "MarkCoordinatesFormat": {
+      "CultureInvariantString": "x{XCoord}, y{YCoord}"
+    },
+    "TrackerDataRegistry": {
+      "Name": "TrackerData_TacticalMap"
+    }
+  }
+}

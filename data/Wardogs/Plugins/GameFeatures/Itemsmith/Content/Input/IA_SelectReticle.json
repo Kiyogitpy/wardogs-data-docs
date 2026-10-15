@@ -1,0 +1,32 @@
+--- export: UDataAsset / IA_SelectReticle ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_SelectReticle",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Itemsmith/Input/IA_SelectReticle",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.ItemSmith.ScalePreview.Up"
+    },
+    "bConsumeInput": false,
+    "ValueType": "EInputActionValueType::Axis1D",
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerPressed'IA_SelectReticle:InputTriggerPressed_0'",
+        "ObjectPath": "/Itemsmith/Input/IA_SelectReticle.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_SelectReticle'",
+    "ObjectPath": "/Itemsmith/Input/IA_SelectReticle.0"
+  }
+}

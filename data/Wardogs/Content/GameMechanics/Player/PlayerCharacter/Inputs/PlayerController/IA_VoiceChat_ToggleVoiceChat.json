@@ -1,0 +1,30 @@
+--- export: UDataAsset / IA_VoiceChat_ToggleVoiceChat ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_VoiceChat_ToggleVoiceChat",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_VoiceChat_ToggleVoiceChat",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Player.VOIP.ToggleVoiceChat"
+    },
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerPressed'IA_VoiceChat_ToggleVoiceChat:InputTriggerPressed_0'",
+        "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_VoiceChat_ToggleVoiceChat.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_VoiceChat_ToggleVoiceChat'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_VoiceChat_ToggleVoiceChat.0"
+  }
+}

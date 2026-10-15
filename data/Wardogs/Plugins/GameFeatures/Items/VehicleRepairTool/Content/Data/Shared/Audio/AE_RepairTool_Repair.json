@@ -1,0 +1,85 @@
+--- export: UObject / AEB_SetVehicleRepairParameters_C_0 ---
+{
+  "Type": "AEB_SetVehicleRepairParameters_C",
+  "Name": "AEB_SetVehicleRepairParameters_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetVehicleRepairParameters.AEB_SetVehicleRepairParameters_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_RepairTool_Repair'",
+    "ObjectPath": "/VehicleRepairTool/Data/Shared/Audio/AE_RepairTool_Repair.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetVehicleRepairParameters_C'Default__AEB_SetVehicleRepairParameters_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetVehicleRepairParameters.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_RepairTool_Repair ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_RepairTool_Repair",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/VehicleRepairTool/Data/Shared/Audio/AE_RepairTool_Repair",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Item.Repair"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_SetVehicleRepairParameters_C'AE_RepairTool_Repair:AEB_SetVehicleRepairParameters_C_0'",
+        "ObjectPath": "/VehicleRepairTool/Data/Shared/Audio/AE_RepairTool_Repair.0"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_RepairTool_Repair:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/VehicleRepairTool/Data/Shared/Audio/AE_RepairTool_Repair.3"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_RepairTool_Repair:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/VehicleRepairTool/Data/Shared/Audio/AE_RepairTool_Repair.2"
+      }
+    ],
+    "_aaabhonahgpdbjealfaaa_$ED076F31940B5000$_$23$": 40.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_RepairTool_Repair'",
+    "ObjectPath": "/VehicleRepairTool/Data/Shared/Audio/AE_RepairTool_Repair.1"
+  },
+  "Properties": {
+    "ParameterName": "Play",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_RepairTool_Repair'",
+    "ObjectPath": "/VehicleRepairTool/Data/Shared/Audio/AE_RepairTool_Repair.1"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Vehicle_Repair_Tick'",
+      "ObjectPath": "/VehicleRepairTool/Data/Shared/Audio/MSS_Vehicle_Repair_Tick.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

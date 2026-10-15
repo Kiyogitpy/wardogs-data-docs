@@ -1,0 +1,59 @@
+--- export: UPrimaryDataAsset / AE_Gamemode_SpawnBoard_Loop ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Gamemode_SpawnBoard_Loop",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Gamemode/SpawnBoard/AE_Gamemode_SpawnBoard_Loop",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Gamemode.SpawnBoard"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Gamemode_SpawnBoard_Loop:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Gamemode/SpawnBoard/AE_Gamemode_SpawnBoard_Loop.2"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Gamemode_SpawnBoard_Loop:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Gamemode/SpawnBoard/AE_Gamemode_SpawnBoard_Loop.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Gamemode_SpawnBoard_Loop'",
+    "ObjectPath": "/Game/Audio/Events/Gamemode/SpawnBoard/AE_Gamemode_SpawnBoard_Loop.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Gamemode.SpawnBoard"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Gamemode_SpawnBoard_Loop'",
+    "ObjectPath": "/Game/Audio/Events/Gamemode/SpawnBoard/AE_Gamemode_SpawnBoard_Loop.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Gamemode_SpawnBoard'",
+      "ObjectPath": "/Game/Audio/Gamemode/SpawnBoard/MSS/MSS_Gamemode_SpawnBoard.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Gamemode.SpawnBoard"
+    }
+  }
+}

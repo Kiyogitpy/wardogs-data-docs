@@ -1,0 +1,97 @@
+--- export: UPrimaryDataAsset / VV_SPW_01 ---
+{
+  "Type": "ModularVehicleVariant",
+  "Name": "VV_SPW_01",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleVariant'",
+  "Package": "/SPW_01/Variants/VV_SPW_01",
+  "Properties": {
+    "bIncludeInBuildCommandLine": true,
+    "VariantID": {
+      "TagName": "Vehicle.Variant.Land.Tracked.SpawnVehicle.Valkyra"
+    },
+    "SpawnParams": {
+      "Min": {
+        "X": -371.11514,
+        "Y": -176.17609,
+        "Z": -0.007212889
+      },
+      "Max": {
+        "X": 385.6212,
+        "Y": 176.17601,
+        "Z": 436.38785
+      }
+    },
+    "bUseFixedBounds": true,
+    "FixedBounds": {
+      "Min": {
+        "X": -371.11514,
+        "Y": -176.17609,
+        "Z": -0.007212889
+      },
+      "Max": {
+        "X": 385.6212,
+        "Y": 176.17601,
+        "Z": 436.38785
+      }
+    },
+    "AssemblyData": {
+      "VehicleBase": {
+        "ObjectName": "ModularVehiclePlatform'VP_SPW'",
+        "ObjectPath": "/SPW_01/Platforms/VP_SPW.0"
+      },
+      "CustomData": {
+        "CustomFragmentData": [
+          {
+            "Path": {
+              "Path": ":MainBody"
+            },
+            "Data": {
+              "OverrideMesh": {
+                "AssetPathName": "",
+                "SubPathString": ""
+              },
+              "OverrideMaterials": [
+                {
+                  "Key": "4",
+                  "Value": {
+                    "AssetPathName": "/SPW_01/Materials/MI_SPW_01_Camo.MI_SPW_01_Camo",
+                    "SubPathString": ""
+                  }
+                },
+                {
+                  "Key": "3",
+                  "Value": {
+                    "AssetPathName": "/SPW_01/Materials/MI_SPW_LightMetal.MI_SPW_LightMetal",
+                    "SubPathString": ""
+                  }
+                },
+                {
+                  "Key": "2",
+                  "Value": {
+                    "AssetPathName": "/SPW_01/Materials/MI_SPW_01_Painted.MI_SPW_01_Painted",
+                    "SubPathString": ""
+                  }
+                },
+                {
+                  "Key": "1",
+                  "Value": {
+                    "AssetPathName": "/SPW_01/Materials/MI_SPW_DarkMetal.MI_SPW_DarkMetal",
+                    "SubPathString": ""
+                  }
+                },
+                {
+                  "Key": "0",
+                  "Value": {
+                    "AssetPathName": "/SPW_01/Materials/MI_SPW_01_Tracks.MI_SPW_01_Tracks",
+                    "SubPathString": ""
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -6,7 +6,7 @@ nav_order: 2
 # Wardogs — Rewards & Progression Reference (v2, corrected)
 *Extracted from cooked game data via CUE4Parse (build `++Wardogs+Live-CL-509546`, UE 5.7.4). All numbers below come directly from the game's own DataTables.*
 
-> **Correction note:** v1 of this doc pulled from `DT_Rewards`/`DT_CashRewards` — those tables turned out to be **stale/placeholder** (nearly everything reads `0`). The real, live numbers live in a separate, much bigger family of per-category tables (`DT_Reward_Cash_*`, `DT_ChallengeRewards_*`) under `CashRewardsDataTable/`. This version replaces those zeros with the actual base values, including per-item, per-vehicle, and per-buildable breakdowns that weren't in v1 at all.
+> **Correction note:** v1 of this doc pulled from [`DT_Rewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_Rewards.json)/[`DT_CashRewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_CashRewards.json) — those tables turned out to be **stale/placeholder** (nearly everything reads `0`). The real, live numbers live in a separate, much bigger family of per-category tables (`DT_Reward_Cash_*`, `DT_ChallengeRewards_*`) under [`CashRewardsDataTable/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/CashRewardsDataTable). This version replaces those zeros with the actual base values, including per-item, per-vehicle, and per-buildable breakdowns that weren't in v1 at all.
 
 ---
 
@@ -43,7 +43,7 @@ Applies identically to all 6 roles: Infantry, Medic, Support, Recon, Pilot, Driv
 | 24 | 337,000 | 50 | 1,500,000 | 76 | 2,898,000 | | |
 | 25 | 365,000 | 51 | 1,543,750 | 77 | 2,982,750 | | |
 
-Source: `DT_RoleMasteryDefinitions`
+Source: [`DT_RoleMasteryDefinitions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Levels/Roles/DT_RoleMasteryDefinitions.json)
 
 ---
 
@@ -60,7 +60,7 @@ Each `DT_Reward_Cash_*` row has a `base` cash value plus context modifiers appli
 
 ---
 
-## 3. Player-Kill Cash Rewards (`DT_Reward_Cash_PlayerKill`)
+## 3. Player-Kill Cash Rewards ([`DT_Reward_Cash_PlayerKill`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/CashRewardsDataTable/KillScore/DT_Reward_Cash_PlayerKill.json))
 
 | Context | Base | Notes |
 |---|---|---|
@@ -72,7 +72,7 @@ Each `DT_Reward_Cash_*` row has a `base` cash value plus context modifiers appli
 
 ## 4. Revive & Heal Cash Rewards
 
-### 4a. Revive (`DT_Reward_Cash_Revive`) — reward goes to the reviver
+### 4a. Revive ([`DT_Reward_Cash_Revive`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/CashRewardsDataTable/Revive/DT_Reward_Cash_Revive.json)) — reward goes to the reviver
 
 | Method used | Base cash |
 |---|---|
@@ -85,7 +85,7 @@ Each `DT_Reward_Cash_*` row has a `base` cash value plus context modifiers appli
 
 (All scale further ×1.2–2.0 in Control/Hot Zones per the CZ/HZ/HZM modifiers.)
 
-### 4b. Heal (`DT_Reward_Cash_Heal`) — reward to the healer
+### 4b. Heal ([`DT_Reward_Cash_Heal`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/CashRewardsDataTable/Heal/DT_Reward_Cash_Heal.json)) — reward to the healer
 
 | Item | Base cash |
 |---|---|
@@ -102,7 +102,7 @@ Each `DT_Reward_Cash_*` row has a `base` cash value plus context modifiers appli
 
 ## 5. Vehicle-Related Cash Rewards
 
-### 5a. Vehicle destroyed (`DT_Reward_Cash_VehicleDestroyed`)
+### 5a. Vehicle destroyed ([`DT_Reward_Cash_VehicleDestroyed`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/CashRewardsDataTable/Vehicle/DT_Reward_Cash_VehicleDestroyed.json))
 
 | Vehicle | Base cash |
 |---|---|
@@ -117,7 +117,7 @@ Each `DT_Reward_Cash_*` row has a `base` cash value plus context modifiers appli
 | SpawnVehicle | 4,000 |
 | **Havoc (attack heli)** | **6,000** |
 
-### 5b. Vehicle repair (`DT_Reward_Cash_Repair`)
+### 5b. Vehicle repair ([`DT_Reward_Cash_Repair`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/CashRewardsDataTable/Vehicle/DT_Reward_Cash_Repair.json))
 
 | Tool | Base cash |
 |---|---|
@@ -125,13 +125,13 @@ Each `DT_Reward_Cash_*` row has a `base` cash value plus context modifiers appli
 | Drill (Light) | 20 |
 | Drill (Heavy) | 25 |
 
-### 5c. Vehicle refuel (`DT_Reward_Cash_Refuel`)
+### 5c. Vehicle refuel ([`DT_Reward_Cash_Refuel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/CashRewardsDataTable/Vehicle/DT_Reward_Cash_Refuel.json))
 
 | Context | Base cash |
 |---|---|
 | Default fallback | 10 |
 
-### 5d. Vehicle transport (`DT_Reward_Cash_VehicleTransport`)
+### 5d. Vehicle transport ([`DT_Reward_Cash_VehicleTransport`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/CashRewardsDataTable/Vehicle/DT_Reward_Cash_VehicleTransport.json))
 
 | Context | Base cash |
 |---|---|
@@ -143,7 +143,7 @@ Each `DT_Reward_Cash_*` row has a `base` cash value plus context modifiers appli
 
 ## 6. Objective Cash Rewards
 
-### 6a. Control Zone / Hot Zone / Magnet Zone (`DT_Reward_Cash_ControlZoneReward`)
+### 6a. Control Zone / Hot Zone / Magnet Zone ([`DT_Reward_Cash_ControlZoneReward`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/CashRewardsDataTable/Objective/DT_Reward_Cash_ControlZoneReward.json))
 
 | Event | Base cash |
 |---|---|
@@ -160,7 +160,7 @@ Each `DT_Reward_Cash_*` row has a `base` cash value plus context modifiers appli
 | Magnet Zone — not owned | 600 |
 | **Spawn-vehicle enters Control Zone** | **3,000** |
 
-### 6b. HotZone Magnet / Tower events (`DT_Reward_Cash_HotZoneMagnet`)
+### 6b. HotZone Magnet / Tower events ([`DT_Reward_Cash_HotZoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/CashRewardsDataTable/HotZoneMagnet/DT_Reward_Cash_HotZoneMagnet.json))
 
 | Event | Base cash |
 |---|---|
@@ -173,7 +173,7 @@ Each `DT_Reward_Cash_*` row has a `base` cash value plus context modifiers appli
 | Captured a neutral tower (instigator) | 250 |
 | Near a neutral tower | 250 |
 
-### 6c. End-of-match faction placement (`DT_Reward_Cash_EndGameFactionReward`)
+### 6c. End-of-match faction placement ([`DT_Reward_Cash_EndGameFactionReward`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/CashRewardsDataTable/Objective/DT_Reward_Cash_EndGameFactionReward.json))
 
 | Placement | Base cash |
 |---|---|
@@ -212,7 +212,7 @@ Three separate tables by action — **Built**, **Placed**, **Placed-in-FOB** —
 
 ## 8. Deployable (Supply Crate / Explosives) Cash Rewards
 
-### 8a. Deployed (`DT_Reward_Cash_DeployedSupplyCrate`)
+### 8a. Deployed ([`DT_Reward_Cash_DeployedSupplyCrate`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/CashRewardsDataTable/Deployable/DT_Reward_Cash_DeployedSupplyCrate.json))
 
 | Item | Base cash |
 |---|---|
@@ -221,7 +221,7 @@ Three separate tables by action — **Built**, **Placed**, **Placed-in-FOB** —
 | Supply Crate (Small / Small Armoured) | 50 |
 | Supply Crate (Large / Large Armoured) | 150 |
 
-### 8b. Destroyed (`DT_Reward_Cash_DeployableDestroyed`, destroying enemy deployables)
+### 8b. Destroyed ([`DT_Reward_Cash_DeployableDestroyed`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/CashRewardsDataTable/Deployable/DT_Reward_Cash_DeployableDestroyed.json), destroying enemy deployables)
 
 | Item | Base cash |
 |---|---|
@@ -232,7 +232,7 @@ Three separate tables by action — **Built**, **Placed**, **Placed-in-FOB** —
 
 ---
 
-## 9. Spotting Cash Rewards (`DT_Reward_Cash_Spotting`)
+## 9. Spotting Cash Rewards ([`DT_Reward_Cash_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Rewards/DT_Reward_Cash_Spotting.json))
 
 | Event | Min | Max |
 |---|---|---|
@@ -243,7 +243,7 @@ Three separate tables by action — **Built**, **Placed**, **Placed-in-FOB** —
 
 ---
 
-## 10. End-of-Match Challenge Rewards (`DT_ChallengeRewards_EndOfMatch`)
+## 10. End-of-Match Challenge Rewards ([`DT_ChallengeRewards_EndOfMatch`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/DT_ChallengeRewards_EndOfMatch.json))
 
 Faction placement bonus formula: `CashEarned × PlacementModifier`, where:
 
@@ -257,7 +257,7 @@ So the winning faction gets +30% of their earned match cash as a bonus **and dou
 
 ---
 
-## 11. Challenge Tips (unchanged from v1 — confirmed still accurate, lives in `DT_Rewards`)
+## 11. Challenge Tips (unchanged from v1 — confirmed still accurate, lives in [`DT_Rewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_Rewards.json))
 
 | Challenge | Tier 1 | Tier 2 | Tier 3 | Tier 4 |
 |---|---|---|---|---|
@@ -317,12 +317,12 @@ XPBonus   = XPEarned_thisMatch   × PlacementModifier   (applied separately, per
 1st place gets 30% of their earned match cash back as a bonus plus double XP across every role; 2nd/3rd still get a smaller consolation cut.
 
 **Input caps (`CurveFloat` assets, applied before the multiplier):**
-- `CRV_Challenges_Curves_EndOfMatch_CashEarned` — passes `CashEarned` through 1:1 up to **100,000**, flat beyond that (hard cap)
-- `CRV_Challenges_Curves_EndOfMatch_XPEarned` — passes `XPEarned` through 1:1 up to **2,500**, default fallback 1.5 beyond that
+- [`CRV_Challenges_Curves_EndOfMatch_CashEarned`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/RewardData/CurveTables/CRV_Challenges_Curves_EndOfMatch_CashEarned.json) — passes `CashEarned` through 1:1 up to **100,000**, flat beyond that (hard cap)
+- [`CRV_Challenges_Curves_EndOfMatch_XPEarned`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/RewardData/CurveTables/CRV_Challenges_Curves_EndOfMatch_XPEarned.json) — passes `XPEarned` through 1:1 up to **2,500**, default fallback 1.5 beyond that
 
 So no matter how big the match was, the bonus calculation treats anything above 100k cash / 2.5k XP earned-that-match as capped before the placement multiplier applies.
 
-**Flat placement bonus on top** (separate from the formula above, from `DT_Reward_Cash_EndGameFactionReward`):
+**Flat placement bonus on top** (separate from the formula above, from [`DT_Reward_Cash_EndGameFactionReward`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/CashRewardsDataTable/Objective/DT_Reward_Cash_EndGameFactionReward.json)):
 
 | Placement | Flat cash |
 |---|---|
@@ -330,7 +330,7 @@ So no matter how big the match was, the bonus calculation treats anything above 
 | 2nd | 150 |
 | 3rd | 100 |
 
-## 15. Dynamic Per-Kill Reward Calculator (`DT_ChallengeRewards_SessionEvents_Shared`)
+## 15. Dynamic Per-Kill Reward Calculator ([`DT_ChallengeRewards_SessionEvents_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/DT_ChallengeRewards_SessionEvents_Shared.json))
 
 Kill rewards are not flat either — resolved through a ~20-variable formula per kill:
 
@@ -376,10 +376,10 @@ Net effect: a long-range artillery kill on a streaking player inside an active H
 
 ## 16. What Was Wrong in v1 (honesty note)
 
-v1 of this doc used `DT_Rewards`/`DT_CashRewards` — those are evidently a **deprecated or placeholder layer** (almost every `ResourceValue` in them reads 0.0). The real, currently-live reward logic routes through `WDCustomRewardTableRow` entries in the `CashRewardsDataTable/` folder tree (organized by category: KillScore, Revive, Heal, Vehicle, Objective, Buildable, Deployable, HotZoneMagnet) plus `WDChallengeRewardDefinition` rows for end-of-match bonuses. This version (v2) is built from those and is the accurate picture — so no, v1 was not all of it, not even close on the cash side.
+v1 of this doc used [`DT_Rewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_Rewards.json)/[`DT_CashRewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_CashRewards.json) — those are evidently a **deprecated or placeholder layer** (almost every `ResourceValue` in them reads 0.0). The real, currently-live reward logic routes through `WDCustomRewardTableRow` entries in the [`CashRewardsDataTable/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/CashRewardsDataTable) folder tree (organized by category: KillScore, Revive, Heal, Vehicle, Objective, Buildable, Deployable, HotZoneMagnet) plus `WDChallengeRewardDefinition` rows for end-of-match bonuses. This version (v2) is built from those and is the accurate picture — so no, v1 was not all of it, not even close on the cash side.
 
-**Still not pulled** (exists in the dump, flagged for a future pass): `DT_Meta_RewardScalingCurves`, `DT_RewardLookup_SessionEvent_*` (session-event lookups for Spotting/Buildables/KOTH game mode), `DT_DemoRewards`, cosmetic/item unlock rewards tied to the `TreeRewardTrack` battle-pass UI widgets, and `DA_UI_PlatformMastery_RewardData`. Say the word if you want those too.
+**Still not pulled** (exists in the dump, flagged for a future pass): [`DT_Meta_RewardScalingCurves`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Rewards/DT_Meta_RewardScalingCurves.json), `DT_RewardLookup_SessionEvent_*` (session-event lookups for Spotting/Buildables/KOTH game mode), [`DT_DemoRewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/Demo/DT_DemoRewards.json), cosmetic/item unlock rewards tied to the `TreeRewardTrack` battle-pass UI widgets, and [`DA_UI_PlatformMastery_RewardData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Mastery/Platforms/Data/DA_UI_PlatformMastery_RewardData.json). Say the word if you want those too.
 
 ---
 
-*Full raw JSON for every table above lives in `Wardogs/Content/GameMechanics/Gamemode/Data/CashRewardsDataTable/` and `Wardogs/Content/Meta/Challenges/`.*
+*Full raw JSON for every table above lives in [`Wardogs/Content/GameMechanics/Gamemode/Data/CashRewardsDataTable/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/CashRewardsDataTable) and [`Wardogs/Content/Meta/Challenges/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Meta/Challenges).*

@@ -1,0 +1,84 @@
+--- export: UObject / AEB_Comms_RestartPlayerVoice_C_0 ---
+{
+  "Type": "AEB_Comms_RestartPlayerVoice_C",
+  "Name": "AEB_Comms_RestartPlayerVoice_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_Comms_RestartPlayerVoice.AEB_Comms_RestartPlayerVoice_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Comms_LoudspeakerStopped'",
+    "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_LoudspeakerStopped.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_Comms_RestartPlayerVoice_C'Default__AEB_Comms_RestartPlayerVoice_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_Comms_RestartPlayerVoice.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Comms_LoudspeakerStopped ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Comms_LoudspeakerStopped",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Comms/VOIP/AE_Comms_LoudspeakerStopped",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Comms.LoudspeakerStopped"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_Comms_RestartPlayerVoice_C'AE_Comms_LoudspeakerStopped:AEB_Comms_RestartPlayerVoice_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_LoudspeakerStopped.0"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Comms_LoudspeakerStopped:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_LoudspeakerStopped.3"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Comms_LoudspeakerStopped:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_LoudspeakerStopped.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Comms_LoudspeakerStopped'",
+    "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_LoudspeakerStopped.1"
+  },
+  "Properties": {
+    "ParameterName": "Stop",
+    "ContextTag": {
+      "TagName": "Audio.Context.Loudspeaker"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Comms_LoudspeakerStopped'",
+    "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_LoudspeakerStopped.1"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Comms_SelfSpeaking_Loudspeaker'",
+      "ObjectPath": "/Game/Audio/Comms/VOIP/MSS_Comms_SelfSpeaking_Loudspeaker.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Loudspeaker"
+    }
+  }
+}

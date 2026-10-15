@@ -1,0 +1,539 @@
+--- export: UObject / BH_LandmineExtensionData_C_0 ---
+{
+  "Type": "BH_AT_MineExtensionData_C",
+  "Name": "BH_LandmineExtensionData_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/AT_mine/Data/Blueprints/BH_AT_MineExtensionData.BH_AT_MineExtensionData_C'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_AT_Mine:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/AT_mine/Data/ID_AT_Mine.7"
+  },
+  "Template": {
+    "ObjectName": "BH_AT_MineExtensionData_C'Default__BH_AT_MineExtensionData_C'",
+    "ObjectPath": "/AT_mine/Data/Blueprints/BH_AT_MineExtensionData.0"
+  },
+  "Properties": {
+    "UniversalVehicleSpeed": 0.1,
+    "TriggerLocation": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 120.0
+    },
+    "TriggerBoxExtends": {
+      "X": 30.0,
+      "Y": 30.0,
+      "Z": 120.0
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_AT_Mine'",
+    "ObjectPath": "/AT_mine/Data/ID_AT_Mine.5"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 2,
+      "Y": 1
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_AT_Mine'",
+    "ObjectPath": "/AT_mine/Data/ID_AT_Mine.5"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/AT_mine/Meshes/SM_AT_mine.SM_AT_mine",
+      "SubPathString": ""
+    },
+    "Scale": {
+      "X": 1.0,
+      "Y": 1.0,
+      "Z": 1.0
+    },
+    "RelativeRotation": {
+      "Pitch": -90.0,
+      "Yaw": 0.0,
+      "Roll": 0.0
+    },
+    "bOverrideDroppedRelativeLocation": true,
+    "OverridedRelativeLocation": {
+      "X": -6.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "bOverrideDroppedBoxExtent": true,
+    "OverridedBoxExtent": {
+      "X": 12.0,
+      "Y": 30.0,
+      "Z": 25.0
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_AT_Mine'",
+    "ObjectPath": "/AT_mine/Data/ID_AT_Mine.5"
+  },
+  "Properties": {
+    "bIsVisibleOnEquippedUI": true,
+    "DisplayedItems": [
+      "ID.Item.ATMine"
+    ],
+    "bDisplayIncludeAllSlots": true
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_AT_Mine'",
+    "ObjectPath": "/AT_mine/Data/ID_AT_Mine.5"
+  },
+  "Properties": {
+    "Weight": 8.6
+  }
+}
+--- export: UPrimaryDataAsset / ID_AT_Mine ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_AT_Mine",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/AT_mine/Data/ID_AT_Mine",
+  "Properties": {
+    "ItemId": {
+      "TagName": "ID.Item.ATMine"
+    },
+    "ItemContext": [
+      "Item.Context.UtilityItem",
+      "Item.Context.QuickSlot",
+      "Item.Context.Animation.Archetype.EquipRightHand",
+      "Item.Context.Animation.Type.ATMine"
+    ],
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+      "Key": "Items.Utility.ATMine",
+      "SourceString": "AT Mine",
+      "LocalizedString": "AT Mine"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_ItemActor'ID_AT_Mine:WDInventoryFragment_ItemActor_0'",
+        "ObjectPath": "/AT_mine/Data/ID_AT_Mine.7"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_AT_Mine:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/AT_mine/Data/ID_AT_Mine.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_AT_Mine:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/AT_mine/Data/ID_AT_Mine.2"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_AT_Mine:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/AT_mine/Data/ID_AT_Mine.6"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_AT_Mine:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/AT_mine/Data/ID_AT_Mine.1"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_AT_Mine:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/AT_mine/Data/ID_AT_Mine.4"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_AT_Mine'",
+    "ObjectPath": "/AT_mine/Data/ID_AT_Mine.5"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_AT_Mine_Audio'",
+      "ObjectPath": "/AT_mine/Audio/ID_AT_Mine_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_ItemActor_0 ---
+{
+  "Type": "WDInventoryFragment_ItemActor",
+  "Name": "WDInventoryFragment_ItemActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_ItemActor'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_AT_Mine'",
+    "ObjectPath": "/AT_mine/Data/ID_AT_Mine.5"
+  },
+  "Properties": {
+    "ExtensionDataFragments": [
+      {
+        "ObjectName": "WDItemExtensionData_Holdable'ID_AT_Mine:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Holdable_0'",
+        "ObjectPath": "/AT_mine/Data/ID_AT_Mine.10"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Input'ID_AT_Mine:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+        "ObjectPath": "/AT_mine/Data/ID_AT_Mine.11"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Inventory'ID_AT_Mine:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Inventory_0'",
+        "ObjectPath": "/AT_mine/Data/ID_AT_Mine.12"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_AudioExtension'ID_AT_Mine:WDInventoryFragment_ItemActor_0.WDItemExtensionData_AudioExtension_0'",
+        "ObjectPath": "/AT_mine/Data/ID_AT_Mine.9"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Animation'ID_AT_Mine:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Animation_0'",
+        "ObjectPath": "/AT_mine/Data/ID_AT_Mine.8"
+      },
+      {
+        "ObjectName": "BH_AT_MineExtensionData_C'ID_AT_Mine:WDInventoryFragment_ItemActor_0.BH_LandmineExtensionData_C_0'",
+        "ObjectPath": "/AT_mine/Data/ID_AT_Mine.0"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Placeable'ID_AT_Mine:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Placeable_0'",
+        "ObjectPath": "/AT_mine/Data/ID_AT_Mine.13"
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Animation_0 ---
+{
+  "Type": "WDItemExtensionData_Animation",
+  "Name": "WDItemExtensionData_Animation_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Animation'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_AT_Mine:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/AT_mine/Data/ID_AT_Mine.7"
+  },
+  "Properties": {
+    "AnimationSet": {
+      "ObjectName": "BHAnimationSet'AnimSet_ATMine'",
+      "ObjectPath": "/AT_mine/Data/AnimSet_ATMine.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_AudioExtension_0 ---
+{
+  "Type": "WDItemExtensionData_AudioExtension",
+  "Name": "WDItemExtensionData_AudioExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_AudioExtension'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_AT_Mine:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/AT_mine/Data/ID_AT_Mine.7"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_AT_Mine_Audio'",
+      "ObjectPath": "/AT_mine/Audio/ID_AT_Mine_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_Holdable_0 ---
+{
+  "Type": "WDItemExtensionData_Holdable",
+  "Name": "WDItemExtensionData_Holdable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Holdable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_AT_Mine:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/AT_mine/Data/ID_AT_Mine.7"
+  },
+  "Properties": {
+    "HoldableMesh": {
+      "ObjectName": "SkeletalMesh'SK_AT_Mine'",
+      "ObjectPath": "/AT_mine/Meshes/SK_AT_Mine.1"
+    },
+    "MaterialOverrides": [
+      null
+    ],
+    "MeshAnimClass": {
+      "ObjectName": "AnimBlueprintGeneratedClass'ABP_AT_Mine_C'",
+      "ObjectPath": "/AT_mine/Animation/Blueprints/ABP_AT_Mine.1"
+    },
+    "EquipAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_AT_Mine_Equip'",
+        "ObjectPath": "/AT_mine/Animation/Character/Montages/AM_FP_AT_Mine_Equip.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_EquipmentRH_Equip'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/EquipmentRH/Actions/AM_TP_Gen_EquipmentRH_Equip.0"
+      }
+    },
+    "HolsterAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_AT_Mine_Holster'",
+        "ObjectPath": "/AT_mine/Animation/Character/Montages/AM_FP_AT_Mine_Holster.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_EquipmentRH_Holster'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/EquipmentRH/Actions/AM_TP_Gen_EquipmentRH_Holster.0"
+      }
+    },
+    "EquippedAnimSet": {
+      "DefaultFirstPersonLayer": {
+        "AssetPathName": "/AT_mine/Animation/Blueprints/ABP_FP_AT_Mine_Layer_RW.ABP_FP_AT_Mine_Layer_RW_C",
+        "SubPathString": ""
+      },
+      "DefaultThirdPersonLayer": {
+        "AssetPathName": "/AT_mine/Animation/Blueprints/ABP_TP_AT_Mine_Layer_RW.ABP_TP_AT_Mine_Layer_RW_C",
+        "SubPathString": ""
+      }
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_InputActionExtension_0 ---
+{
+  "Type": "WDItemExtensionData_Input",
+  "Name": "WDItemExtensionData_InputActionExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Input'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_AT_Mine:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/AT_mine/Data/ID_AT_Mine.7"
+  },
+  "Properties": {
+    "InputMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_DeployableItem'",
+      "ObjectPath": "/Game/Weapons/Input/IMC_DeployableItem.7"
+    },
+    "InputBehaviors": [
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.Player.PrimaryUse"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_AT_Mine:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_2'",
+          "ObjectPath": "/AT_mine/Data/ID_AT_Mine.15"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.Inspect"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_AT_Mine:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_0'",
+          "ObjectPath": "/AT_mine/Data/ID_AT_Mine.14"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.PrimaryUse.Release"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_CompleteAction'ID_AT_Mine:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_CompleteAction_0'",
+          "ObjectPath": "/AT_mine/Data/ID_AT_Mine.16"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Inventory_0 ---
+{
+  "Type": "WDItemExtensionData_Inventory",
+  "Name": "WDItemExtensionData_Inventory_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Inventory'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_AT_Mine:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/AT_mine/Data/ID_AT_Mine.7"
+  },
+  "Properties": {
+    "ActionResourceRequirements": [
+      {
+        "Key": {
+          "TagName": "Action.Throw.Primary"
+        },
+        "Value": {
+          "RequiredResource": {
+            "TagName": "ID.Item.ATMine"
+          },
+          "ResourcesUsed": 1,
+          "bLimitSearchToItem": false,
+          "OptionalRequiredSubSlotCategory": {
+            "TagName": "None"
+          },
+          "ResourceType": {
+            "TagName": "Item.Resource.Self"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Action.Throw.Secondary"
+        },
+        "Value": {
+          "RequiredResource": {
+            "TagName": "ID.Item.ATMine"
+          },
+          "ResourcesUsed": 1,
+          "bLimitSearchToItem": false,
+          "OptionalRequiredSubSlotCategory": {
+            "TagName": "None"
+          },
+          "ResourceType": {
+            "TagName": "Item.Resource.Self"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Action.Throw.Dropped"
+        },
+        "Value": {
+          "RequiredResource": {
+            "TagName": "ID.Item.ATMine"
+          },
+          "ResourcesUsed": 1,
+          "bLimitSearchToItem": false,
+          "OptionalRequiredSubSlotCategory": {
+            "TagName": "None"
+          },
+          "ResourceType": {
+            "TagName": "Item.Resource.Self"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Placeable_0 ---
+{
+  "Type": "WDItemExtensionData_Placeable",
+  "Name": "WDItemExtensionData_Placeable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Placeable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_AT_Mine:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/AT_mine/Data/ID_AT_Mine.7"
+  },
+  "Properties": {
+    "MaxPlacementDistance": 400.0,
+    "MaxPlacementAngle": 30.0,
+    "bCanPlaceOnOtherPlaceable": false,
+    "PlaceableClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_AT_Mine_C'",
+      "ObjectPath": "/AT_mine/Data/Blueprints/B_AT_Mine.2"
+    },
+    "PlaceableInitData": {
+      "VitalityComponentParams": {
+        "bOverrideBaseHealth": true,
+        "BaseHealthOverride": 1.0,
+        "bOverrideMaxHealth": true,
+        "MaxHealthOverride": 1.0
+      }
+    },
+    "ProgressWheelText": {
+      "Namespace": "",
+      "Key": "3890C75E4DA16D0EA2ACB08974DA2E61",
+      "SourceString": "Deploying Landmine",
+      "LocalizedString": "Deploying Landmine"
+    },
+    "BlockedReason": {
+      "TagName": "UI.Interactions.PlacementWarnings.PlacementBlocked"
+    },
+    "BlockedActorClasses": [
+      {
+        "ObjectName": "Class'WDWheeledVehiclePawn'",
+        "ObjectPath": "/Script/WDGame"
+      },
+      {
+        "ObjectName": "Class'WDTrackedVehicle'",
+        "ObjectPath": "/Script/WDGame"
+      },
+      {
+        "ObjectName": "Class'WDRotaryVehicle'",
+        "ObjectPath": "/Script/WDGame"
+      },
+      {
+        "ObjectName": "Class'WDMoverPlayerCharacter'",
+        "ObjectPath": "/Script/WDGame"
+      }
+    ],
+    "AppliedEffects": [
+      {
+        "ObjectName": "BlueprintGeneratedClass'GE_UsePlaceable_C'",
+        "ObjectPath": "/Game/GameMechanics/GameplayEffects/Actions/GE_UsePlaceable.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_0 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_AT_Mine:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/AT_mine/Data/ID_AT_Mine.11"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Item.Inspect"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_2 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_AT_Mine:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/AT_mine/Data/ID_AT_Mine.11"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Placeable.PrimaryUse"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_CompleteAction_0 ---
+{
+  "Type": "WDItemInputBehavior_CompleteAction",
+  "Name": "WDItemInputBehavior_CompleteAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_CompleteAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_AT_Mine:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/AT_mine/Data/ID_AT_Mine.11"
+  },
+  "Properties": {
+    "ActionToComplete": {
+      "TagName": "Action.Placeable.PrimaryUse"
+    }
+  }
+}

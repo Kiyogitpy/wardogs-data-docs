@@ -1,0 +1,52 @@
+--- export: UDataAsset / W_STN_01_MountedMachineGun ---
+{
+  "Type": "WDVehicleWeaponDataAsset",
+  "Name": "W_STN_01_MountedMachineGun",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeaponDataAsset'",
+  "Package": "/STN_01/Weapon/W_STN_01_MountedMachineGun",
+  "Properties": {
+    "WeaponTag": {
+      "TagName": "Id.Vehicle.Weapon.STN_01.MistralAA"
+    },
+    "SkeletalMeshAsset": {
+      "AssetPathName": "/STN_01/Meshes/Mistral_AA/SK_Mistral_Anti_Aircraft.SK_Mistral_Anti_Aircraft",
+      "SubPathString": ""
+    },
+    "MuzzleSockets": [
+      "muzzleFlash_WeaponExtension"
+    ],
+    "PlayerAttachSocket": {
+      "SourceID": "Chassis",
+      "SocketName": "S_Player_Seat"
+    },
+    "GamepadRotationSensitivity": 30.0,
+    "GamepadRotationUpdateMax": {
+      "X": 150.0,
+      "Y": 150.0
+    },
+    "MouseRotationSensitivity": 20.0,
+    "MouseRotationUpdateMax": {
+      "X": 85.0,
+      "Y": 85.0
+    },
+    "KeyRotationSensitivity": 100.0,
+    "bApplyFovScale": false,
+    "WeaponRotationComponentData": {
+      "MinWeaponYawAngle": 90.0,
+      "MaxWeaponYawAngle": -90.0,
+      "bLimitWeaponPitch": true,
+      "MinWeaponPitchAngle": -20.0,
+      "MaxWeaponPitchAngle": 55.0,
+      "RotationSpeed": 125.0,
+      "YawJointSocket": "Chassis",
+      "WeaponRotationGameplayCueThreshold": 7.3576E-40
+    },
+    "WeaponStatesCameraData": [],
+    "InitialWeaponPossessFovLerpTime": 1.83671E-40,
+    "HUDLayoutTag": {
+      "TagName": "State.Vehicle.Weapon.HipFire"
+    },
+    "HUDScopeBlurAlpha": 2.4254257E-38
+  }
+}

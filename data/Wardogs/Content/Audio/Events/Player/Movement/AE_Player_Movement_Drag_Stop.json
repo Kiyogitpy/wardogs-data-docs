@@ -1,0 +1,92 @@
+--- export: UPrimaryDataAsset / AE_Player_Movement_Drag_Stop ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Player_Movement_Drag_Stop",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Movement/AE_Player_Movement_Drag_Stop",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.Footstep.Drag.Stop"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_Player_Movement_Drag_Stop:CrosstalkAudioEventBehaviorStopSound_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/AE_Player_Movement_Drag_Stop.2"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Player_Movement_Drag_Stop:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/AE_Player_Movement_Drag_Stop.1"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware'AE_Player_Movement_Drag_Stop:WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/AE_Player_Movement_Drag_Stop.3"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Movement_Drag_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/AE_Player_Movement_Drag_Stop.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Drag.Stop"
+    },
+    "_aaabhonahgpdbjealfaaa_$ED076F31940B5000$_$23$": 35.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Movement_Drag_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/AE_Player_Movement_Drag_Stop.0"
+  },
+  "Properties": {
+    "FadeOut": 0.2,
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Drag.Loop"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0 ---
+{
+  "Type": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware",
+  "Name": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Movement_Drag_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/AE_Player_Movement_Drag_Stop.0"
+  },
+  "Properties": {
+    "FirstPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Footstep.1p"
+    },
+    "AlliedThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Footstep.Ally"
+    },
+    "HostileThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Footstep.Enemy"
+    },
+    "SoundAssetData": {
+      "ObjectName": "WDAudioData'DA_PlayerMovement_Drag_Stop'",
+      "ObjectPath": "/Game/Audio/Player/Movement/Drag/DA_PlayerMovement_Drag_Stop.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Drag.Stop"
+    },
+    "bStatic": true,
+    "_aaabhonahgpdbjealfaaa_$ED076F31940B5000$_$23$": 35.0
+  }
+}

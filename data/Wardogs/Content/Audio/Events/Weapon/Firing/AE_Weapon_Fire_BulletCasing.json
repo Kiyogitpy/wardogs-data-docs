@@ -1,0 +1,133 @@
+--- export: UObject / AEB_PlayBulletCasing_C_0 ---
+{
+  "Type": "AEB_PlayBulletCasing_C",
+  "Name": "AEB_PlayBulletCasing_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayBulletCasing.AEB_PlayBulletCasing_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Fire_BulletCasing'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Firing/AE_Weapon_Fire_BulletCasing.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayBulletCasing_C'Default__AEB_PlayBulletCasing_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayBulletCasing.0"
+  },
+  "Properties": {
+    "Caliber > Size Data Assets": [
+      {
+        "Key": {
+          "TagName": "Item.Caliber.9mm"
+        },
+        "Value": {
+          "ObjectName": "WDAudioData'DA_BulletCasings_Medium'",
+          "ObjectPath": "/Game/Audio/Weapon/Shared/BulletCasings/AudioDataAssets/DA_BulletCasings_Medium.0"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Item.Caliber.762mm"
+        },
+        "Value": {
+          "ObjectName": "WDAudioData'DA_BulletCasings_Medium'",
+          "ObjectPath": "/Game/Audio/Weapon/Shared/BulletCasings/AudioDataAssets/DA_BulletCasings_Medium.0"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Item.Caliber.45ACP"
+        },
+        "Value": {
+          "ObjectName": "WDAudioData'DA_BulletCasings_Medium'",
+          "ObjectPath": "/Game/Audio/Weapon/Shared/BulletCasings/AudioDataAssets/DA_BulletCasings_Medium.0"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Item.Caliber.556mm"
+        },
+        "Value": {
+          "ObjectName": "WDAudioData'DA_BulletCasings_Medium'",
+          "ObjectPath": "/Game/Audio/Weapon/Shared/BulletCasings/AudioDataAssets/DA_BulletCasings_Medium.0"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Item.Caliber.545mm"
+        },
+        "Value": {
+          "ObjectName": "WDAudioData'DA_BulletCasings_Medium'",
+          "ObjectPath": "/Game/Audio/Weapon/Shared/BulletCasings/AudioDataAssets/DA_BulletCasings_Medium.0"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Item.Caliber.762x54mm"
+        },
+        "Value": {
+          "ObjectName": "WDAudioData'DA_BulletCasings_Medium'",
+          "ObjectPath": "/Game/Audio/Weapon/Shared/BulletCasings/AudioDataAssets/DA_BulletCasings_Medium.0"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Item.Caliber.7mmBuck"
+        },
+        "Value": {
+          "ObjectName": "WDAudioData'DA_BulletCasings_Shotgun'",
+          "ObjectPath": "/Game/Audio/Weapon/Shared/BulletCasings/AudioDataAssets/DA_BulletCasings_Shotgun.0"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Item.Caliber.308Win"
+        },
+        "Value": {
+          "ObjectName": "WDAudioData'DA_BulletCasings_Medium'",
+          "ObjectPath": "/Game/Audio/Weapon/Shared/BulletCasings/AudioDataAssets/DA_BulletCasings_Medium.0"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Item.Caliber.338Nor"
+        },
+        "Value": {
+          "ObjectName": "WDAudioData'DA_BulletCasings_Medium'",
+          "ObjectPath": "/Game/Audio/Weapon/Shared/BulletCasings/AudioDataAssets/DA_BulletCasings_Medium.0"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Item.Caliber.50Cal"
+        },
+        "Value": {
+          "ObjectName": "WDAudioData'DA_BulletCasings_Medium'",
+          "ObjectPath": "/Game/Audio/Weapon/Shared/BulletCasings/AudioDataAssets/DA_BulletCasings_Medium.0"
+        }
+      }
+    ],
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.BulletCase"
+    },
+    "bPersistent": false
+  }
+}
+--- export: UPrimaryDataAsset / AE_Weapon_Fire_BulletCasing ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_Fire_BulletCasing",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Weapon/Firing/AE_Weapon_Fire_BulletCasing",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.Projectile.BulletCasing"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_PlayBulletCasing_C'AE_Weapon_Fire_BulletCasing:AEB_PlayBulletCasing_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Firing/AE_Weapon_Fire_BulletCasing.0"
+      }
+    ],
+    "_aaabhonahgpdbjealfaaa_$ED076F31940B5000$_$23$": 22.5
+  }
+}

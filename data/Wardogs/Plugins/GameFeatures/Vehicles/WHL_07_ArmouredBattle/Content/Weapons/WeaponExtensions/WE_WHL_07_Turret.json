@@ -1,0 +1,151 @@
+--- export: UDataAsset / WE_WHL_07_Turret ---
+{
+  "Type": "WDVehicleWeaponExtensionDataAsset",
+  "Name": "WE_WHL_07_Turret",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeaponExtensionDataAsset'",
+  "Package": "/WHL_07_ArmouredBattle/Weapons/WeaponExtensions/WE_WHL_07_Turret",
+  "Properties": {
+    "WeaponExtensionTag": {
+      "TagName": "Id.Vehicle.WeaponExtension.WHL_07.MachineGun"
+    },
+    "WeaponItemId": {
+      "TagName": "Id.Item.UralVehicleMachineGun"
+    },
+    "ItemSlotTag": {
+      "TagName": "Inventory.Slot.Vehicle.Weapon.WHL_07.MountedMachineGun"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Weapon.LMG.M249"
+      }
+    },
+    "WeaponExtensionName": "Mounted M249",
+    "WeaponStatsData": {
+      "ObjectName": "WDWeaponStatsData'DA_M249_Stats'",
+      "ObjectPath": "/WEPN_009/Data/DA_M249_Stats.0"
+    },
+    "bDoesWeaponUseSpread": true,
+    "SpreadValue": {
+      "Value": 1.0,
+      "Curve": {
+        "CurveTable": {
+          "ObjectName": "CurveTable'CT_Weapon_Spread'",
+          "ObjectPath": "/Game/Items/Weapons/Curves/CT_Weapon_Spread.0"
+        },
+        "RowName": "MountedMachineGun"
+      }
+    },
+    "ReloadSetupData": {
+      "ReloadType": "EWDVehicleWeaponReloadType::Standard",
+      "ReloadTime": 4.25,
+      "StartDelayTime": 1.0,
+      "EndDelayTime": 1.0
+    },
+    "bAutomaticallyReload": true,
+    "AmmoTag": {
+      "TagName": "Id.Item.556mm"
+    },
+    "AmmoCaliberTag": {
+      "TagName": "Item.Caliber.556mm"
+    },
+    "WeaponStartingInventoryItems": [
+      {
+        "Key": {
+          "TagName": "Id.Item.556mm.Tracer"
+        },
+        "Value": 0
+      }
+    ],
+    "WeaponAudioData": {
+      "ObjectName": "WDAudioData'DA_WHL_07_MachineGunTurret_Audio'",
+      "ObjectPath": "/WHL_07_ArmouredBattle/Weapons/WeaponExtensions/DA_WHL_07_MachineGunTurret_Audio.0"
+    },
+    "WeaponAnimMontages": [
+      {
+        "Key": {
+          "TagName": "State.Vehicle.Weapon.Fire"
+        },
+        "Value": {
+          "ObjectName": "AnimMontage'AM_Weap_M249_Fire'",
+          "ObjectPath": "/WEPN_009/Animation/Weapon/Montage/FP/AM_Weap_M249_Fire.0"
+        }
+      }
+    ],
+    "OperatorAnimMontages": [
+      {
+        "Key": {
+          "TagName": "None"
+        },
+        "Value": null
+      }
+    ],
+    "OperatorStateAnimations": [
+      {
+        "Key": {
+          "TagName": "State.Vehicle.Weapon.Crouch"
+        },
+        "Value": {
+          "OperatorAnimations": [
+            {
+              "Key": "EWDVehicleWeaponStateAnimationTypes::FirstPerson",
+              "Value": {
+                "ObjectName": "AnimSequence'A_FP_Humvee_Turret_M249_Crouch_Pose'",
+                "ObjectPath": "/Game/Animation/Characters/StateMachine/Idles/Vehicle/Turrets/A_FP_Humvee_Turret_M249_Crouch_Pose.0"
+              }
+            },
+            {
+              "Key": "EWDVehicleWeaponStateAnimationTypes::ThirdPerson",
+              "Value": {
+                "ObjectName": "AnimSequence'A_TP_Tank_Turret_Crouch_Pose'",
+                "ObjectPath": "/Game/Animation/Characters/StateMachine/Idles/Vehicle/Turrets/A_TP_Tank_Turret_Crouch_Pose.0"
+              }
+            }
+          ],
+          "bHasPerSeatBlendSpace": false,
+          "WeaponStateBlendSpace": null,
+          "PerSeatBlendSpaces": []
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Vehicle.Weapon.ADS"
+        },
+        "Value": {
+          "OperatorAnimations": [
+            {
+              "Key": "EWDVehicleWeaponStateAnimationTypes::FirstPerson",
+              "Value": {
+                "ObjectName": "AnimSequence'A_FP_Humvee_Turret_M249_Idle_Pose'",
+                "ObjectPath": "/Game/Animation/Characters/StateMachine/Idles/Vehicle/Turrets/A_FP_Humvee_Turret_M249_Idle_Pose.0"
+              }
+            },
+            {
+              "Key": "EWDVehicleWeaponStateAnimationTypes::ThirdPerson",
+              "Value": {
+                "ObjectName": "AnimSequence'A_TP_Humvee_Turret_M249_Idle_Pose'",
+                "ObjectPath": "/Game/Animation/Characters/StateMachine/Idles/Vehicle/Turrets/A_TP_Humvee_Turret_M249_Idle_Pose.0"
+              }
+            }
+          ],
+          "bHasPerSeatBlendSpace": false,
+          "WeaponStateBlendSpace": {
+            "ObjectName": "BlendSpace'BS_TP_Humvee_Turret_M249'",
+            "ObjectPath": "/Game/Animation/Characters/StateMachine/AimOffset/Vehicle/Mounted/Humvee/BS_TP_Humvee_Turret_M249.0"
+          },
+          "PerSeatBlendSpaces": []
+        }
+      }
+    ],
+    "FireCameraShakeClass": {
+      "ObjectName": "AnimSequence'A_FP_Humvee_Turret_M249_Idle_Pose'",
+      "ObjectPath": "/Game/Animation/Characters/StateMachine/Idles/Vehicle/Turrets/A_FP_Humvee_Turret_M249_Idle_Pose.0"
+    },
+    "bShakeOnWeaponFire": true,
+    "OperatorIdleSequence": {
+      "ObjectName": "BlueprintGeneratedClass'BP_WHL_07_MachineGunTurret_Camera_FiringShake_C'",
+      "ObjectPath": "/WHL_07_ArmouredBattle/Weapons/Camera/BP_WHL_07_MachineGunTurret_Camera_FiringShake.0"
+    },
+    "FireCameraShakeMultiplier": 0.1
+  }
+}

@@ -1,0 +1,84 @@
+--- export: UDataAsset / DA_InventoryScene_Prompts ---
+{
+  "Type": "WDUIButtonPromptsBarData",
+  "Name": "DA_InventoryScene_Prompts",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIButtonPromptsBarData'",
+  "Package": "/Game/UI/Features/Inventory_2_0/Data/DA_InventoryScene_Prompts",
+  "Properties": {
+    "ButtonPromptViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIButtonPromptViewModel",
+        "SubPathString": ""
+      }
+    },
+    "UIActionTags": [
+      {
+        "ActionPromptTag": {
+          "TagName": "UI.Action.Feature.CloseCurrentScene"
+        },
+        "ChordedActionPromptTag": {
+          "TagName": "None"
+        },
+        "ActionPromptText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Inventory_2_0.STRINGS_Inventory_2_0",
+          "Key": "Prompt.Close",
+          "SourceString": "Close",
+          "LocalizedString": "Close"
+        },
+        "IsHoldable": false,
+        "bUseActionShortName": true,
+        "bUseChordedActionShortName": false,
+        "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+        "ChordedActionPromptTag": [],
+        "ChordedActionPromptTag": [],
+        "_aaabhmnakckdbejpcmlmc_$CD0A2A3149F2CBC2$_$23$": [],
+        "_aaabhahinfhbanpdncpjc_$78D5710DF3D2F92$_$23$": []
+      },
+      {
+        "ActionPromptTag": {
+          "TagName": "UI.Action.Feature.Inventory.ToggleWeight"
+        },
+        "ChordedActionPromptTag": {
+          "TagName": "None"
+        },
+        "ActionPromptText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Inventory_2_0.STRINGS_Inventory_2_0",
+          "Key": "Prompt.ToggleWeight",
+          "SourceString": "Toggle Weight",
+          "LocalizedString": "Toggle Weight"
+        },
+        "IsHoldable": false,
+        "bUseActionShortName": false,
+        "bUseChordedActionShortName": false,
+        "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+        "ChordedActionPromptTag": [],
+        "ChordedActionPromptTag": [],
+        "_aaabhmnakckdbejpcmlmc_$CD0A2A3149F2CBC2$_$23$": [],
+        "_aaabhahinfhbanpdncpjc_$78D5710DF3D2F92$_$23$": []
+      },
+      {
+        "ActionPromptTag": {
+          "TagName": "UI.Action.Feature.Inventory.Transfer"
+        },
+        "ChordedActionPromptTag": {
+          "TagName": "None"
+        },
+        "ActionPromptText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Inventory_2_0.STRINGS_Inventory_2_0",
+          "Key": "Text.Prompts.QuickMove",
+          "SourceString": "Quick Move",
+          "LocalizedString": "Quick Move"
+        },
+        "IsHoldable": false,
+        "bUseActionShortName": true,
+        "bUseChordedActionShortName": false,
+        "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+        "ChordedActionPromptTag": [],
+        "ChordedActionPromptTag": [],
+        "_aaabhmnakckdbejpcmlmc_$CD0A2A3149F2CBC2$_$23$": [],
+        "_aaabhahinfhbanpdncpjc_$78D5710DF3D2F92$_$23$": []
+      }
+    ]
+  }
+}

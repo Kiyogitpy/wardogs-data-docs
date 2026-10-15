@@ -1,0 +1,692 @@
+--- export: UDataTable / DT_RewardFeedActions ---
+{
+  "Type": "DataTable",
+  "Name": "DT_RewardFeedActions",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/UI/Features/HUD/RewardFeed/Data/DT_RewardFeedActions",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDRewardFeedActionDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Meta.Progression.Resources.MatchScore.DownedScore": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Enemy Player Downed"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.DownedScore"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.HealedScore": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Friendly Player Healed"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.HealedScore"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.HealedScore"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.KillScore": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Enemy Player Killed"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.KillScore"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.VehicleKillScore": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Enemy Vehicle Destroyed"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.DestroyedVehicle"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.VehicleKillScore"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.RevivedScore": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Friendly Player Revived"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.RevivedScore"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.RevivedScore"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.DamageAssist.Player": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Enemy Kill Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Combat.KillAssist"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.DamageAssist.Player"
+      }
+    },
+    "UI.Message.RewardFeed.DownedTeammate": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Teammate Downed"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "UI.Message.RewardFeed.DownedTeammate"
+      }
+    },
+    "UI.Message.RewardFeed.KilledTeammate": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Teammate Killed"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.TeammateKill"
+      },
+      "Tag": {
+        "TagName": "UI.Message.RewardFeed.KilledTeammate"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.TransportAssist.Kill": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Transport Kill Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.TransportAssist.Kill"
+      }
+    },
+    "UI.Message.RewardFeed.DestroyedFriendlyVehicle": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Friendly Vehicle Destroyed"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "UI.Message.RewardFeed.DestroyedFriendlyVehicle"
+      }
+    },
+    "UI.Message.RewardFeed.DestroyedNeutralVehicle": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Neutral Vehicle Destroyed"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "UI.Message.RewardFeed.DestroyedNeutralVehicle"
+      }
+    },
+    "UI.Message.RewardFeed.DamageAssist.Friendly": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Teammate Kill Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "UI.Message.RewardFeed.DamageAssist.Friendly"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.DamageAssist.Vehicle": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Enemy Vehicle Kill Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.DamageAssist.Vehicle"
+      }
+    },
+    "UI.Message.RewardFeed.DamageAssist.Vehicle.Friendly": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Friendly Vehicle Kill Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "UI.Message.RewardFeed.DamageAssist.Vehicle.Friendly"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.RepairingScore": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Friendly Vehicle Repaired"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.RepairingScore"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.RepairingScore"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.PurchaseSupplyCrateItemScore": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Supply Crate Item Purchased"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.PurchaseSupplyCrateItemScore"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.SupplyCrateKillScore": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Destroyed Enemy Supply Crate"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.DestroyedVehicle"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.SupplyCrateKillScore"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.DeploySupplyCrate": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Deployed Supply Crate"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.DeploySupplyCrate"
+      }
+    },
+    "UI.Message.RewardFeed.DestroyedFriendlySupplyCrate": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Destroyed Friendly Supply Crate"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "UI.Message.RewardFeed.DestroyedFriendlySupplyCrate"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.ObjectiveScore.MagnetZoneNotOwned": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Magnet Presence"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.ObjectiveScore.MagnetZoneNotOwned"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.ObjectiveScore.MagnetZoneOwned": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Magnet Presence"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.ObjectiveScore.MagnetZoneOwned"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.TowerCaptured": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Tower Captured"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.BuiltScore"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.TowerCaptured"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.MagnetActivated": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Magnet Activated"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.RevivedScore"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.MagnetActivated"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.MagnetDestroyed": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Magnet Destroyed"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.DestroyedVehicle"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.MagnetDestroyed"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.SchematicBuildStepScore.SchematicOwner": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Schematic Building!"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.SchematicBuildStepScore.SchematicOwner"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.SchematicBuildStepScore.Builder": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Building"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.SchematicBuildStepScore.Builder"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.SchematicBuiltScore.FinalBuilder": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Finished Building"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.BuiltScore"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.SchematicBuiltScore.FinalBuilder"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.SchematicBuiltScore.SchematicOwner": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Buildable Complete"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.SchematicBuiltScore.SchematicOwner"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.SchematicBuiltInFOBScore": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Build Finished In FOB"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.SchematicBuiltInFOBScore"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.SchematicPlacedInFOBScore": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Schematic Placed In FOB"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.SchematicPlacedInFOBScore"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.BuildDamaged": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Enemy Buildable Damaged"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.BuildDamaged"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.ObjectiveScore.SpawnVehicle.ControlZoneEntered": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Spawn Vehicle Delivered"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.DeliveredSpawnVehicle"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.ObjectiveScore.SpawnVehicle.ControlZoneEntered"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.Vehicle.CrewAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Crew Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.Vehicle.CrewAssist"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.DestoryedUtility": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Destroyed Utility"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.RepairingScore"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.DestoryedUtility"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.ObjectiveScore.PassengerSpawned": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Passenger Spawned In Control Zone"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.ObjectiveScore.PassengerSpawned"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.RefuelingScore": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Refueling Vehicle"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.RepairingScore"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.RefuelingScore"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.DropOffPassenger": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Passenger Delivered"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.DeliveredPassenger"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.DropOffPassenger"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.ReviveAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Friendly Player Revived Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.ReviveAssist"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.DestroyedDeployable": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Enemy Deployable Destroyed"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.RepairingScore"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.DestroyedDeployable"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.DestroyedDeployable.Friendly": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Friendly Deployable Destroyed"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.DestroyedDeployable.Friendly"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.SchematicPlaced": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Schematic Placed"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.SchematicPlaced"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.SchematicPlaced.FOB": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "FOB Placed"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.RevivedScore"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.SchematicPlaced.FOB"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.VehicleKillScore.Assist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Enemy Vehicle Destroyed Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.VehicleKillScore.Assist"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.TransportAssist.Revive": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Transport Revive Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.TransportAssist.Revive"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.TransportAssist.VehicleDestruction": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Transport Vehicle Destroyed Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.TransportAssist.VehicleDestruction"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.Vehicle.CrewAssist.PlayerKill": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Crew Assist Player Kill"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Combat.KillAssist"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.Vehicle.CrewAssist.PlayerKill"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.Vehicle.CrewAssist.VehicleKill": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Crew Assist Vehicle Destroyed"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.Vehicle.CrewAssist.VehicleKill"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.ReviveAssist.Kill": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Revive Kill Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.ReviveAssist.Kill"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.ReviveAssist.Revive": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Revive Revive Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.ReviveAssist.Revive"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.ReviveAssist.VehicleDestruction": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Revive Vehicle Destroyed Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.ReviveAssist.VehicleDestruction"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.DropOffPassengerSurvived": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Passenger Survived"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.PassengerSurvived"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.DropOffPassengerSurvived"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.BuildDamaged.Friendly": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": "Friendly Buildable Damaged"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.BuildDamaged.Friendly"
+      }
+    }
+  }
+}

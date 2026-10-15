@@ -4,7 +4,7 @@ parent: "Game Features"
 ---
 
 # Wardogs — GameFeatures: WDCore (v2)
-*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/GameFeatures/WDCore/` — 3 JSON files.*
+*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: [`Plugins/GameFeatures/WDCore/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/WDCore) — 3 JSON files.*
 
 ---
 
@@ -14,9 +14,9 @@ The core player-character pack. It sets the player pawn data for the mover chara
 
 | File | Type | Role |
 |---|---|---|
-| `Content/WDCore.json` | GameFeatureData + component action | Adds the aim-assist manager, scans pawn data |
-| `Content/Character/WDCore_PlayerData.json` | `WDPawnData` | Player pawn: `B_WDCore_MoverPlayerCharacter_C` |
-| `Content/Character/AnimSet_MoverCharacter.json` | `BHAnimationSet` | Animation set for the mover character |
+| [`Content/WDCore.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WDCore/Content/WDCore.json) | GameFeatureData + component action | Adds the aim-assist manager, scans pawn data |
+| [`Content/Character/WDCore_PlayerData.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WDCore/Content/Character/WDCore_PlayerData.json) | `WDPawnData` | Player pawn: `B_WDCore_MoverPlayerCharacter_C` |
+| [`Content/Character/AnimSet_MoverCharacter.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WDCore/Content/Character/AnimSet_MoverCharacter.json) | `BHAnimationSet` | Animation set for the mover character |
 
 ---
 
@@ -30,11 +30,11 @@ The core player-character pack. It sets the player pawn data for the mover chara
 
 ## 3. Pawn Data Scan
 
-The pack scans `BH.PawnData` (base `BHPawnData`) in `/WDCore/Character`. The only pawn data in the folder is `WDCore_PlayerData`.
+The pack scans `BH.PawnData` (base `BHPawnData`) in `/WDCore/Character`. The only pawn data in the folder is [`WDCore_PlayerData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WDCore/Content/Character/WDCore_PlayerData.json).
 
 ---
 
-## 4. Animation Set (`AnimSet_MoverCharacter`)
+## 4. Animation Set ([`AnimSet_MoverCharacter`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WDCore/Content/Character/AnimSet_MoverCharacter.json))
 
 Six animation tags, each mapped to a base asset with first-person and third-person variants:
 

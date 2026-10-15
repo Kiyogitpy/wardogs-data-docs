@@ -1,0 +1,120 @@
+--- export: UObject / WDUIItemsmithFavouritedDecalFilter_0 ---
+{
+  "Type": "WDUIItemsmithFavouritedDecalFilter",
+  "Name": "WDUIItemsmithFavouritedDecalFilter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIItemsmithFavouritedDecalFilter'",
+  "Outer": {
+    "ObjectName": "WDUIItemsmithItemSelectData'DA_Itemsmith_DecalSelect'",
+    "ObjectPath": "/Itemsmith/UI/Flair/DecalEditor/Data/DA_Itemsmith_DecalSelect.1"
+  },
+  "Properties": {
+    "FilterIdTag": {
+      "TagName": "Item.Archetype.Flair.Decals.Favourite"
+    },
+    "FilterTitleText": {
+      "TableId": "/Itemsmith/UI/Data/STRINGS_Itemsmith.STRINGS_Itemsmith",
+      "Key": "Itemsmith.ItemSelect.TabGroup.Favourite",
+      "SourceString": null,
+      "LocalizedString": ""
+    },
+    "ResultViewModelData": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithBrowserViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Itemsmith/UI/Flair/DecalEditor/Data/DA_Itemsmith_DecalSelection_BrowserList.DA_Itemsmith_DecalSelection_BrowserList",
+        "SubPathString": ""
+      }
+    }
+  }
+}
+--- export: UDataAsset / DA_Itemsmith_DecalSelect ---
+{
+  "Type": "WDUIItemsmithItemSelectData",
+  "Name": "DA_Itemsmith_DecalSelect",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIItemsmithItemSelectData'",
+  "Package": "/Itemsmith/UI/Flair/DecalEditor/Data/DA_Itemsmith_DecalSelect",
+  "Properties": {
+    "PlatformViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithPlatformViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Itemsmith/UI/SharedWidgets/Platform/Data/DA_Itemsmith_Platform.DA_Itemsmith_Platform",
+        "SubPathString": ""
+      }
+    },
+    "ArchetypeTabsViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithTabGroupViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Itemsmith/UI/SharedWidgets/TabGroup/Data/DA_Itemsmith_TabGroup.DA_Itemsmith_TabGroup",
+        "SubPathString": ""
+      }
+    },
+    "DefaultArchetype": {
+      "TagName": "Item.Archetype.Flair.Decals"
+    },
+    "BrowserFilters": [
+      {
+        "ObjectName": "WDUIItemsmithFavouritedDecalFilter'DA_Itemsmith_DecalSelect:WDUIItemsmithFavouritedDecalFilter_0'",
+        "ObjectPath": "/Itemsmith/UI/Flair/DecalEditor/Data/DA_Itemsmith_DecalSelect.0"
+      },
+      {
+        "ObjectName": "WDUIItemsmithStandardDecalFilter'DA_Itemsmith_DecalSelect:WDUIItemsmithStandardDecalFilter_0'",
+        "ObjectPath": "/Itemsmith/UI/Flair/DecalEditor/Data/DA_Itemsmith_DecalSelect.2"
+      }
+    ],
+    "PageType": "EWDUIItemsmithPages::FlairDecalSelection",
+    "CameraMode": "EItemsmithCameraMode::FixedSideOn",
+    "InputMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_Itemsmith_FlairDecalSelect'",
+      "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_FlairDecalSelect.0"
+    },
+    "InputMappingContextPriority": 11,
+    "ScreenTitle": {
+      "TableId": "/Itemsmith/UI/Flair/DecalEditor/Data/STRINGS_Itemsmith_DecalEditor.STRINGS_Itemsmith_DecalEditor",
+      "Key": "Itemsmith.Flair.DecalSelection.Subtitle.Layer",
+      "SourceString": null,
+      "LocalizedString": ""
+    }
+  }
+}
+--- export: UObject / WDUIItemsmithStandardDecalFilter_0 ---
+{
+  "Type": "WDUIItemsmithStandardDecalFilter",
+  "Name": "WDUIItemsmithStandardDecalFilter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIItemsmithStandardDecalFilter'",
+  "Outer": {
+    "ObjectName": "WDUIItemsmithItemSelectData'DA_Itemsmith_DecalSelect'",
+    "ObjectPath": "/Itemsmith/UI/Flair/DecalEditor/Data/DA_Itemsmith_DecalSelect.1"
+  },
+  "Properties": {
+    "FilterIdTag": {
+      "TagName": "Item.Archetype.Flair.Decals.Standard"
+    },
+    "FilterTitleText": {
+      "TableId": "/Itemsmith/UI/Flair/DecalEditor/Data/STRINGS_Itemsmith_DecalEditor.STRINGS_Itemsmith_DecalEditor",
+      "Key": "Itemsmith.Flair.DecalSelection.Filter.Decals",
+      "SourceString": null,
+      "LocalizedString": ""
+    },
+    "ResultViewModelData": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithBrowserViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Itemsmith/UI/Flair/DecalEditor/Data/DA_Itemsmith_DecalSelection_BrowserList.DA_Itemsmith_DecalSelection_BrowserList",
+        "SubPathString": ""
+      }
+    }
+  }
+}

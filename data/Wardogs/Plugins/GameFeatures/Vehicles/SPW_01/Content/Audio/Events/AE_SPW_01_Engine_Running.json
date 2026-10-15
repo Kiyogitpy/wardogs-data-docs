@@ -1,0 +1,188 @@
+--- export: UObject / AEB_SetBooleanParameter_C_0 ---
+{
+  "Type": "AEB_SetBooleanParameter_C",
+  "Name": "AEB_SetBooleanParameter_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetBooleanParameter.AEB_SetBooleanParameter_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_SPW_01_Engine_Running'",
+    "ObjectPath": "/SPW_01/Audio/Events/AE_SPW_01_Engine_Running.5"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetBooleanParameter_C'Default__AEB_SetBooleanParameter_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetBooleanParameter.0"
+  },
+  "Properties": {
+    "In Name": "Engine On",
+    "In Bool": true,
+    "Delay": 0.0,
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Engine"
+    }
+  }
+}
+--- export: UObject / AEB_SetVehicleHostility_C_0 ---
+{
+  "Type": "AEB_SetVehicleHostility_C",
+  "Name": "AEB_SetVehicleHostility_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetVehicleHostility.AEB_SetVehicleHostility_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_SPW_01_Engine_Running'",
+    "ObjectPath": "/SPW_01/Audio/Events/AE_SPW_01_Engine_Running.5"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetVehicleHostility_C'Default__AEB_SetVehicleHostility_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetVehicleHostility.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / AEB_SetVehicleParameters_SpeedAndRotation_C_0 ---
+{
+  "Type": "AEB_SetVehicleParameters_SpeedAndRotation_C",
+  "Name": "AEB_SetVehicleParameters_SpeedAndRotation_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/VehicleAEBs/AEB_SetVehicleParameters_SpeedAndRotation.AEB_SetVehicleParameters_SpeedAndRotation_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_SPW_01_Engine_Running'",
+    "ObjectPath": "/SPW_01/Audio/Events/AE_SPW_01_Engine_Running.5"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetVehicleParameters_SpeedAndRotation_C'Default__AEB_SetVehicleParameters_SpeedAndRotation_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/VehicleAEBs/AEB_SetVehicleParameters_SpeedAndRotation.0"
+  }
+}
+--- export: UObject / AEB_SetVehicleParameters_Tracked_C_1 ---
+{
+  "Type": "AEB_SetVehicleParameters_Tracked_C",
+  "Name": "AEB_SetVehicleParameters_Tracked_C_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/VehicleAEBs/AEB_SetVehicleParameters_Tracked.AEB_SetVehicleParameters_Tracked_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_SPW_01_Engine_Running'",
+    "ObjectPath": "/SPW_01/Audio/Events/AE_SPW_01_Engine_Running.5"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetVehicleParameters_Tracked_C'Default__AEB_SetVehicleParameters_Tracked_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/VehicleAEBs/AEB_SetVehicleParameters_Tracked.0"
+  }
+}
+--- export: UObject / AEB_VehiclePerspective_C_0 ---
+{
+  "Type": "AEB_VehiclePerspective_C",
+  "Name": "AEB_VehiclePerspective_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_VehiclePerspective.AEB_VehiclePerspective_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_SPW_01_Engine_Running'",
+    "ObjectPath": "/SPW_01/Audio/Events/AE_SPW_01_Engine_Running.5"
+  },
+  "Template": {
+    "ObjectName": "AEB_VehiclePerspective_C'Default__AEB_VehiclePerspective_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_VehiclePerspective.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_SPW_01_Engine_Running ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_SPW_01_Engine_Running",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/SPW_01/Audio/Events/AE_SPW_01_Engine_Running",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Engine.Running.SPW_01"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_SPW_01_Engine_Running:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/SPW_01/Audio/Events/AE_SPW_01_Engine_Running.6"
+      },
+      {
+        "ObjectName": "AEB_SetBooleanParameter_C'AE_SPW_01_Engine_Running:AEB_SetBooleanParameter_C_0'",
+        "ObjectPath": "/SPW_01/Audio/Events/AE_SPW_01_Engine_Running.0"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorVehicleThreatLevel'AE_SPW_01_Engine_Running:WDAudioEventBehaviorVehicleThreatLevel_0'",
+        "ObjectPath": "/SPW_01/Audio/Events/AE_SPW_01_Engine_Running.8"
+      },
+      {
+        "ObjectName": "AEB_SetVehicleHostility_C'AE_SPW_01_Engine_Running:AEB_SetVehicleHostility_C_0'",
+        "ObjectPath": "/SPW_01/Audio/Events/AE_SPW_01_Engine_Running.1"
+      },
+      {
+        "ObjectName": "AEB_SetVehicleParameters_Tracked_C'AE_SPW_01_Engine_Running:AEB_SetVehicleParameters_Tracked_C_1'",
+        "ObjectPath": "/SPW_01/Audio/Events/AE_SPW_01_Engine_Running.3"
+      },
+      {
+        "ObjectName": "AEB_SetVehicleParameters_SpeedAndRotation_C'AE_SPW_01_Engine_Running:AEB_SetVehicleParameters_SpeedAndRotation_C_0'",
+        "ObjectPath": "/SPW_01/Audio/Events/AE_SPW_01_Engine_Running.2"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_SPW_01_Engine_Running:CrosstalkAudioEventBehaviorPlaySound_1'",
+        "ObjectPath": "/SPW_01/Audio/Events/AE_SPW_01_Engine_Running.7"
+      },
+      {
+        "ObjectName": "AEB_VehiclePerspective_C'AE_SPW_01_Engine_Running:AEB_VehiclePerspective_C_0'",
+        "ObjectPath": "/SPW_01/Audio/Events/AE_SPW_01_Engine_Running.4"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_SPW_01_Engine_Running'",
+    "ObjectPath": "/SPW_01/Audio/Events/AE_SPW_01_Engine_Running.5"
+  },
+  "Properties": {
+    "SocketName": "body_J",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Engine"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_1 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_SPW_01_Engine_Running'",
+    "ObjectPath": "/SPW_01/Audio/Events/AE_SPW_01_Engine_Running.5"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Vehicle_Engine_SPW_01'",
+      "ObjectPath": "/Game/Audio/Vehicles/Land/APC/MSS_Vehicle_Engine_SPW_01.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Engine"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviorVehicleThreatLevel_0 ---
+{
+  "Type": "WDAudioEventBehaviorVehicleThreatLevel",
+  "Name": "WDAudioEventBehaviorVehicleThreatLevel_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorVehicleThreatLevel'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_SPW_01_Engine_Running'",
+    "ObjectPath": "/SPW_01/Audio/Events/AE_SPW_01_Engine_Running.5"
+  }
+}

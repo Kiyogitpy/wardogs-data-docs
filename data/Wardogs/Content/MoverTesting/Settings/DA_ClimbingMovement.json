@@ -1,0 +1,52 @@
+--- export: UDataAsset / DA_ClimbingMovement ---
+{
+  "Type": "BHClimbingData",
+  "Name": "DA_ClimbingMovement",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHClimbingData'",
+  "Package": "/Game/MoverTesting/Settings/DA_ClimbingMovement",
+  "Properties": {
+    "MaxLedgeLookAngle": 60.0,
+    "MaxClimbPercentToCancel": 0.65,
+    "ClimbOverScaling_AnimSequence": {
+      "ObjectName": "AnimSequence'A_TP_Rifle_Climb_Still_Scaling_180'",
+      "ObjectPath": "/Game/Animation/Characters/Gen_Locomotion/Stand/Rifle/Traversal/A_TP_Rifle_Climb_Still_Scaling_180.0"
+    },
+    "ClimbOverOnTop_AnimSequence": {
+      "ObjectName": "AnimSequence'A_TP_Rifle_Climb_Still_OnTop_180'",
+      "ObjectPath": "/Game/Animation/Characters/Gen_Locomotion/Stand/Rifle/Traversal/A_TP_Rifle_Climb_Still_OnTop_180.0"
+    },
+    "ScaleOverTransitionWeightMultiplierCurve": {
+      "ObjectName": "CurveVector'CRV_Climbing_ScaleOver_TransitionWeight'",
+      "ObjectPath": "/Game/MoverTesting/Curves/Traversing/CRV_Climbing_ScaleOver_TransitionWeight.0"
+    },
+    "ScaleOverTransitionOffsetCurve": {
+      "ObjectName": "CurveVector'CRV_Climbing_ScaleOver_TransitionOffset'",
+      "ObjectPath": "/Game/MoverTesting/Curves/Traversing/CRV_Climbing_ScaleOver_TransitionOffset.0"
+    },
+    "ScaleOverAnimMontageChooserTable": {
+      "ObjectName": "ChooserTable'CHT_Traversal_Climbing_ThirdPerson_RM_Off'",
+      "ObjectPath": "/Game/Animation/Blueprints/Character/Chooser/CHT_Traversal_Climbing_ThirdPerson_RM_Off.0"
+    },
+    "BaseScaleOverSpeed": 145.0,
+    "FindWallTraceDistance": 20.0,
+    "ClampedTraversalDirectionMask": 1,
+    "TransitionWeightMultiplierCurve": {
+      "ObjectName": "CurveVector'CRV_Climbing_TransitionWeight'",
+      "ObjectPath": "/Game/MoverTesting/Curves/Traversing/CRV_Climbing_TransitionWeight.0"
+    },
+    "TraversalHeightSpeedMultiplierCurve": {
+      "ObjectName": "CurveFloat'CRV_Climbing_HeightSpeedMultiplier'",
+      "ObjectPath": "/Game/MoverTesting/Curves/Traversing/CRV_Climbing_HeightSpeedMultiplier.0"
+    },
+    "AnimMontageChooserTable": {
+      "ObjectName": "ChooserTable'CHT_Traversal_Climbing_ThirdPerson'",
+      "ObjectPath": "/Game/Animation/Blueprints/Character/Chooser/CHT_Traversal_Climbing_ThirdPerson.0"
+    },
+    "RootMotionAnimMontageChooserTable": {
+      "ObjectName": "ChooserTable'CHT_Traversal_Climbing_ThirdPerson_RM_On'",
+      "ObjectPath": "/Game/Animation/Blueprints/Character/Chooser/CHT_Traversal_Climbing_ThirdPerson_RM_On.0"
+    },
+    "BaseTraversalSpeed": 145.0
+  }
+}

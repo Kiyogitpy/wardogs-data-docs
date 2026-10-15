@@ -1,0 +1,127 @@
+--- export: UDataAsset / IMC_Itemsmith_BlueprintSelect ---
+{
+  "Type": "InputMappingContext",
+  "Name": "IMC_Itemsmith_BlueprintSelect",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputMappingContext'",
+  "Package": "/Itemsmith/Input/IMC_Itemsmith_BlueprintSelect",
+  "Properties": {
+    "DefaultKeyMappings": {
+      "Mappings": [
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_Itemsmith_BlueprintSelect:InputTriggerPressed_8'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_BlueprintSelect.2"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Itemsmith_Favourite'",
+            "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_Favourite.0"
+          },
+          "Key": {
+            "KeyName": "O"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerHold'IMC_Itemsmith_BlueprintSelect:InputTriggerHold_0'",
+              "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_BlueprintSelect.1"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Itemsmith_Favourite'",
+            "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_Favourite.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_FaceButton_Top"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Itemsmith_Next_Alternative'",
+            "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_Next_Alternative.0"
+          },
+          "Key": {
+            "KeyName": "C"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Itemsmith_Next_Alternative'",
+            "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_Next_Alternative.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_RightTrigger"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Itemsmith_Previous_Alternative'",
+            "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_Previous_Alternative.0"
+          },
+          "Key": {
+            "KeyName": "Z"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Itemsmith_Previous_Alternative'",
+            "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_Previous_Alternative.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_LeftTrigger"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        }
+      ]
+    }
+  }
+}
+--- export: UObject / InputTriggerHold_0 ---
+{
+  "Type": "InputTriggerHold",
+  "Name": "InputTriggerHold_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerHold'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith_BlueprintSelect'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_BlueprintSelect.0"
+  },
+  "Properties": {
+    "bIsOneShot": true
+  }
+}
+--- export: UObject / InputTriggerPressed_8 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_8",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Itemsmith_BlueprintSelect'",
+    "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_BlueprintSelect.0"
+  }
+}

@@ -1,0 +1,97 @@
+--- export: UPrimaryDataAsset / DA_72mm_ProjectileData ---
+{
+  "Type": "WDProjectileData",
+  "Name": "DA_72mm_ProjectileData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDProjectileData'",
+  "Package": "/Game/GameMechanics/Inventory/Equipment/Caliber/72mm/DA_72mm_ProjectileData",
+  "Properties": {
+    "ProjectileId": {
+      "TagName": "Item.Caliber.72mm"
+    },
+    "ProjectileStats": {
+      "DamageEntityData": {
+        "Tag": {
+          "TagName": "Meta.Damage.Explosive.Rocket.72mm"
+        }
+      },
+      "DamageValues": {
+        "BaseDamage": 200.0,
+        "ExplosiveRadius": 1080.0,
+        "EffectiveExplosiveRadius": 200.0,
+        "ExplosiveDamageFallOff": 0.8,
+        "ExplosiveBluntDamage": 120.0,
+        "bPreferUpwardsTrace": false
+      },
+      "ProjectileDimensions": {
+        "Length": 142.0,
+        "Diameter": 7.2,
+        "Mass": 9.2,
+        "DragModel": {
+          "Curve": {
+            "CurveTable": {
+              "ObjectName": "CurveTable'CT_Projectile_DragCoefficients'",
+              "ObjectPath": "/Game/Items/Resources/Ammo/Curves/CT_Projectile_DragCoefficients.0"
+            },
+            "RowName": "G7 (Boat Tail)"
+          }
+        }
+      },
+      "ProjectileEffects": {
+        "GameplayCueTag": {
+          "TagName": "GameplayCue.Weapon.RocketProjectile"
+        },
+        "AudioEventTag": {
+          "TagName": "Audio.Event.Projectile.Rocket.Travel.72mm"
+        }
+      },
+      "SuppressionData": {
+        "BaseSuppression": 1.0,
+        "DistanceFalloffRange": {
+          "Max": 4.0
+        },
+        "DistanceFalloffCurve": {
+          "EditorCurveData": {}
+        }
+      },
+      "GuidanceData": {
+        "bGuidedProjectile": true,
+        "ProportionalNavigationConstant": 30.0,
+        "MaxTurnAngle": 10.0,
+        "LockOnTime": 2.0
+      },
+      "bHasArmingDelay": true,
+      "ArmingDelay": 0.13,
+      "MaxProjectileLifetime": 50.0,
+      "AttachedEffect": {
+        "AssetPathName": "/Game/VFX/Weapons/RocketLauncher/NS_ProjectileTrail_72mm_Verba.NS_ProjectileTrail_72mm_Verba",
+        "SubPathString": ""
+      },
+      "bUseProjectileActor": true,
+      "ProjectileActor": {
+        "AssetPathName": "/Game/GameMechanics/Inventory/Equipment/Caliber/72mm/BP_72mm.BP_72mm_C",
+        "SubPathString": ""
+      },
+      "bActorHandlesProjectileMovement": true,
+      "TracerChance": 1.0,
+      "TypicalSpeed": 45000.0,
+      "bShouldPenetrate": false,
+      "bForcePenetrateThinSurfaces": true,
+      "MinImpactAngleForRicochet": 91.0,
+      "bShouldPreSimulate": false,
+      "bShouldThrust": true,
+      "TotalFuel": 180.0,
+      "FuelBurnRate": 30.0,
+      "ThrustSpeed": 17500.0,
+      "ThrustStartDelay": 0.35,
+      "bHasThrustInstability": true,
+      "ThrustInstabilityYawScale": 0.25,
+      "ThrustInstabilityPitchScale": 0.25,
+      "MaxSpeed": 20000.0,
+      "bClientPredictive": false,
+      "TravelDistanceForWhizBy": 1000.0,
+      "PerceivedImpactRange": 50000.0,
+      "IgnoreInstigatorVehicleTime": 0.5
+    }
+  }
+}

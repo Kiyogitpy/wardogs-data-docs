@@ -1,0 +1,66 @@
+--- export: UObject / WDPingAction_AssistanceRequest_Repair_0 ---
+{
+  "Type": "WDPingAction_AssistanceRequest_Repair",
+  "Name": "WDPingAction_AssistanceRequest_Repair_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingAction_AssistanceRequest_Repair'",
+  "Outer": {
+    "ObjectName": "WDPingActionAsset'DA_PingAction_Request_Repair'",
+    "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_Repair.1"
+  },
+  "Properties": {
+    "PingActionChatLocText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_ChatBox_AssistanceRequests.STRINGS_ChatBox_AssistanceRequests",
+      "Key": "Type_Request_Repair_Other",
+      "SourceString": "Requesting repairs",
+      "LocalizedString": "Requesting repairs"
+    },
+    "PingActionChatLocTextWithLocation": {
+      "TableId": "/Game/UI/StringTables/STRINGS_ChatBox_AssistanceRequests.STRINGS_ChatBox_AssistanceRequests",
+      "Key": "Type_Request_Repair_Other_WithLoc",
+      "SourceString": "Requesting repairs X{X}, Y{Y}",
+      "LocalizedString": "Requesting repairs X{X}, Y{Y}"
+    }
+  }
+}
+--- export: UDataAsset / DA_PingAction_Request_Repair ---
+{
+  "Type": "WDPingActionAsset",
+  "Name": "DA_PingAction_Request_Repair",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingActionAsset'",
+  "Package": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_Repair",
+  "Properties": {
+    "Text": {
+      "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+      "Key": "Action.Request.Repair",
+      "SourceString": "Repairs",
+      "LocalizedString": "Repairs"
+    },
+    "NonTriggerableDescriptions": [
+      {
+        "Key": {
+          "TagName": "Tag.PingAction.NonTriggerable.FullHealth"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+          "Key": "Action.Request.Repair.NonTriggerable.FullHealth",
+          "SourceString": "Repair\r\nAlready full health",
+          "LocalizedString": "Repair\r\nAlready full health"
+        }
+      }
+    ],
+    "Icon": {
+      "AssetPathName": "/Game/UI/Features/PingWheel/Widgets/Action/Textures/T_UI_Icon_PingWheel_Repair_64x64.T_UI_Icon_PingWheel_Repair_64x64",
+      "SubPathString": ""
+    },
+    "bIsWorkInProgress": false,
+    "bRequestPlayerMapCoordinates": true,
+    "Actions": [
+      {
+        "ObjectName": "WDPingAction_AssistanceRequest_Repair'DA_PingAction_Request_Repair:WDPingAction_AssistanceRequest_Repair_0'",
+        "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_Repair.0"
+      }
+    ]
+  }
+}

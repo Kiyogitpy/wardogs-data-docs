@@ -1,0 +1,48 @@
+--- export: UDataAsset / DA_InventoryScene_2_0 ---
+{
+  "Type": "WDUIInventoryData",
+  "Name": "DA_InventoryScene_2_0",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIInventoryData'",
+  "Package": "/Game/UI/Features/Inventory_2_0/Data/DA_InventoryScene_2_0",
+  "Properties": {
+    "PlayerInventoryComponentViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIInventoryComponentViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Inventory_2_0/Widgets/InventoryComponent/Data/DA_InventoryComponent_2_0.DA_InventoryComponent_2_0",
+        "SubPathString": ""
+      }
+    },
+    "CharacterRenderViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIPocketWorldRenderViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/PocketWorldRender/Data/DA_PocketWorldRender_Player.DA_PocketWorldRender_Player",
+        "SubPathString": ""
+      }
+    },
+    "ButtonPromptsViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIButtonPromptsBarViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Inventory_2_0/Data/DA_InventoryScene_Prompts.DA_InventoryScene_Prompts",
+        "SubPathString": ""
+      }
+    },
+    "InputTagCloseScene": {
+      "TagName": "UI.Action.Feature.Inventory.ToggleScene"
+    },
+    "InputEventCloseScene": "EInputEvent::IE_Released",
+    "bExitOnPlayerDeath": true,
+    "ExitSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.UI.Inventory.SceneExit"
+    }
+  }
+}

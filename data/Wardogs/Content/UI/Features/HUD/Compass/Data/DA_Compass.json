@@ -1,0 +1,70 @@
+--- export: UDataAsset / DA_Compass ---
+{
+  "Type": "WDUICompassData",
+  "Name": "DA_Compass",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUICompassData'",
+  "Package": "/Game/UI/Features/HUD/Compass/Data/DA_Compass",
+  "Properties": {
+    "DirectionIntervals": [
+      {
+        "Symbol": {
+          "CultureInvariantString": "N"
+        },
+        "Degrees": 0.0
+      },
+      {
+        "Symbol": {
+          "CultureInvariantString": "NE"
+        },
+        "Degrees": 45.0
+      },
+      {
+        "Symbol": {
+          "CultureInvariantString": "E"
+        },
+        "Degrees": 90.0
+      },
+      {
+        "Symbol": {
+          "CultureInvariantString": "SE"
+        },
+        "Degrees": 135.0
+      },
+      {
+        "Symbol": {
+          "CultureInvariantString": "S"
+        },
+        "Degrees": 180.0
+      },
+      {
+        "Symbol": {
+          "CultureInvariantString": "SW"
+        },
+        "Degrees": 225.0
+      },
+      {
+        "Symbol": {
+          "CultureInvariantString": "W"
+        },
+        "Degrees": 270.0
+      },
+      {
+        "Symbol": {
+          "CultureInvariantString": "NW"
+        },
+        "Degrees": 315.0
+      }
+    ],
+    "PingMaterial": {
+      "AssetPathName": "/Game/UI/Features/HUD/Compass/Materials/MI_UI_Compass_PingTracker.MI_UI_Compass_PingTracker",
+      "SubPathString": ""
+    },
+    "bCullPingsAtEdgeOfCompass": true,
+    "IconSize": {
+      "X": 18.0,
+      "Y": 18.0
+    },
+    "FadeStart": 0.4
+  }
+}

@@ -1,0 +1,342 @@
+--- export: UPrimaryDataAsset / ID_Fists ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_Fists",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Weapons/Fists/ID_Fists",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.Fists"
+    },
+    "ItemContext": [
+      "Inventory.Slot.Hands",
+      "Item.Context.Animation.Archetype.Unarmed",
+      "Item.Context.Animation.Type.Fists"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "314A1EEC42FA39ECB46373AF1B5D7139",
+      "SourceString": "Fists",
+      "LocalizedString": "Fists"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_ItemActor'ID_Fists:WDInventoryFragment_ItemActor_0'",
+        "ObjectPath": "/Game/Items/Weapons/Fists/ID_Fists.2"
+      }
+    ]
+  }
+}
+--- export: UObject / BHItemExtensionData_AimAssistExtension_0 ---
+{
+  "Type": "BHItemExtensionData_AimAssistExtension",
+  "Name": "BHItemExtensionData_AimAssistExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHItemExtensionData_AimAssistExtension'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Fists:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Game/Items/Weapons/Fists/ID_Fists.2"
+  },
+  "Properties": {
+    "AimAssistSettingsDataAsset": {
+      "ObjectName": "BHAimAssistSettingsData'DA_AimAssistSettings_Melee'",
+      "ObjectPath": "/Game/Items/Weapons/DA_AimAssistSettings_Melee.0"
+    },
+    "AimAssistFilterDataAsset": {
+      "ObjectName": "BHAimAssistFilterData'DA_AimAssistFilter'",
+      "ObjectPath": "/Game/Items/Weapons/DA_AimAssistFilter.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_ItemActor_0 ---
+{
+  "Type": "WDInventoryFragment_ItemActor",
+  "Name": "WDInventoryFragment_ItemActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_ItemActor'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Fists'",
+    "ObjectPath": "/Game/Items/Weapons/Fists/ID_Fists.0"
+  },
+  "Properties": {
+    "ExtensionDataFragments": [
+      {
+        "ObjectName": "WDItemExtensionData_Holdable'ID_Fists:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Holdable_0'",
+        "ObjectPath": "/Game/Items/Weapons/Fists/ID_Fists.7"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Input'ID_Fists:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+        "ObjectPath": "/Game/Items/Weapons/Fists/ID_Fists.8"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_CharacterMelee'ID_Fists:WDInventoryFragment_ItemActor_0.WDItemExtensionData_CharacterMelee_0'",
+        "ObjectPath": "/Game/Items/Weapons/Fists/ID_Fists.5"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_AudioExtension'ID_Fists:WDInventoryFragment_ItemActor_0.WDItemExtensionData_AudioExtension_0'",
+        "ObjectPath": "/Game/Items/Weapons/Fists/ID_Fists.4"
+      },
+      {
+        "ObjectName": "BHItemExtensionData_AimAssistExtension'ID_Fists:WDInventoryFragment_ItemActor_0.BHItemExtensionData_AimAssistExtension_0'",
+        "ObjectPath": "/Game/Items/Weapons/Fists/ID_Fists.1"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Animation'ID_Fists:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Animation_0'",
+        "ObjectPath": "/Game/Items/Weapons/Fists/ID_Fists.3"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_GameplayEffects'ID_Fists:WDInventoryFragment_ItemActor_0.WDItemExtensionData_GameplayEffects_0'",
+        "ObjectPath": "/Game/Items/Weapons/Fists/ID_Fists.6"
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Animation_0 ---
+{
+  "Type": "WDItemExtensionData_Animation",
+  "Name": "WDItemExtensionData_Animation_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Animation'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Fists:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Game/Items/Weapons/Fists/ID_Fists.2"
+  },
+  "Properties": {
+    "AnimationSet": {
+      "ObjectName": "BHAnimationSet'AnimSet_Fists'",
+      "ObjectPath": "/Game/Items/Weapons/Fists/AnimSet_Fists.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_AudioExtension_0 ---
+{
+  "Type": "WDItemExtensionData_AudioExtension",
+  "Name": "WDItemExtensionData_AudioExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_AudioExtension'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Fists:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Game/Items/Weapons/Fists/ID_Fists.2"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Fists_Audio'",
+      "ObjectPath": "/Game/Items/Weapons/Fists/ID_Fists_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_CharacterMelee_0 ---
+{
+  "Type": "WDItemExtensionData_CharacterMelee",
+  "Name": "WDItemExtensionData_CharacterMelee_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_CharacterMelee'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Fists:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Game/Items/Weapons/Fists/ID_Fists.2"
+  },
+  "Properties": {
+    "MeleeActions": [
+      {
+        "Key": {
+          "TagName": "Action.Player.Melee.PrimaryUse"
+        },
+        "Value": {
+          "HitBoxSize": {
+            "X": 45.0,
+            "Y": 35.0,
+            "Z": 25.0
+          },
+          "Damage": 25.0,
+          "TraceDistance": 50.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Action.Player.Melee.SecondaryUse"
+        },
+        "Value": {
+          "HitBoxSize": {
+            "X": 45.0,
+            "Y": 35.0,
+            "Z": 25.0
+          },
+          "Damage": 25.0,
+          "TraceDistance": 50.0
+        }
+      }
+    ],
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Utility.Fists"
+      }
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_GameplayEffects_0 ---
+{
+  "Type": "WDItemExtensionData_GameplayEffects",
+  "Name": "WDItemExtensionData_GameplayEffects_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_GameplayEffects'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Fists:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Game/Items/Weapons/Fists/ID_Fists.2"
+  },
+  "Properties": {
+    "PlayerEffects": {
+      "Effects": [
+        {
+          "Effect": {
+            "ObjectName": "BlueprintGeneratedClass'GE_Player_Fists_C'",
+            "ObjectPath": "/Game/GameMechanics/GameplayEffects/Player/GE_Player_Fists.0"
+          },
+          "Stacks": 1,
+          "CustomMagnitudes": []
+        }
+      ]
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_Holdable_0 ---
+{
+  "Type": "WDItemExtensionData_Holdable",
+  "Name": "WDItemExtensionData_Holdable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Holdable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Fists:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Game/Items/Weapons/Fists/ID_Fists.2"
+  },
+  "Properties": {
+    "EquipAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_Fists_Equip'",
+        "ObjectPath": "/Game/Animation/Characters/Weapons/Fists/AM_FP_Fists_Equip.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Unarmed_Equip'",
+        "ObjectPath": "/Game/Animation/Characters/Weapons/Fists/TP/AM_TP_Unarmed_Equip.0"
+      }
+    },
+    "HolsterAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_Fists_Holster'",
+        "ObjectPath": "/Game/Animation/Characters/Weapons/Fists/AM_FP_Fists_Holster.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_Unarmed_Holster'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/Unarmed/Actions/AM_TP_Gen_Unarmed_Holster.0"
+      }
+    },
+    "EquippedAnimSet": {
+      "DefaultFirstPersonLayer": {
+        "AssetPathName": "/Game/Animation/Blueprints/Character/Layers/WeaponArchetypes/Unarmed/ABP_FP_Fists_Layer_RW.ABP_FP_Fists_Layer_RW_C",
+        "SubPathString": ""
+      },
+      "DefaultThirdPersonLayer": {
+        "AssetPathName": "/Game/Animation/Blueprints/Character/Layers/WeaponArchetypes/_MasterLayers/ABP_TP_Unarmed_Layer_RW.ABP_TP_Unarmed_Layer_RW_C",
+        "SubPathString": ""
+      }
+    },
+    "SprintInterpPlayRate": 1.25,
+    "SprintOutterpPlayRate": 0.75,
+    "TacSprintInterpPlayRate": 1.5,
+    "TacSprintOutterpPlayRate": 0.75
+  }
+}
+--- export: UObject / WDItemExtensionData_InputActionExtension_0 ---
+{
+  "Type": "WDItemExtensionData_Input",
+  "Name": "WDItemExtensionData_InputActionExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Input'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Fists:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Game/Items/Weapons/Fists/ID_Fists.2"
+  },
+  "Properties": {
+    "InputMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_Fists'",
+      "ObjectPath": "/Game/Weapons/Input/IMC_Fists.5"
+    },
+    "InputBehaviors": [
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.Player.PrimaryUse"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_Fists:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_0'",
+          "ObjectPath": "/Game/Items/Weapons/Fists/ID_Fists.9"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.Inspect"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_Fists:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_2'",
+          "ObjectPath": "/Game/Items/Weapons/Fists/ID_Fists.11"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.Weapon.MeleeBash"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_Fists:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_1'",
+          "ObjectPath": "/Game/Items/Weapons/Fists/ID_Fists.10"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_0 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_Fists:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Game/Items/Weapons/Fists/ID_Fists.8"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Player.Melee.PrimaryUse"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_1 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_Fists:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Game/Items/Weapons/Fists/ID_Fists.8"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Player.Melee.PrimaryUse"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_2 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_Fists:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Game/Items/Weapons/Fists/ID_Fists.8"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Item.Inspect"
+    }
+  }
+}

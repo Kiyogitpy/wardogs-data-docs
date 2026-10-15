@@ -1,0 +1,39 @@
+--- export: UObject / AEB_EnableFirstSpawnMusicState_C_0 ---
+{
+  "Type": "AEB_EnableFirstSpawnMusicState_C",
+  "Name": "AEB_EnableFirstSpawnMusicState_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_EnableFirstSpawnMusicState.AEB_EnableFirstSpawnMusicState_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Music_InGame_FirstSpawn'",
+    "ObjectPath": "/Game/Audio/Events/Music/InGame/AE_Music_InGame_FirstSpawn.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_EnableFirstSpawnMusicState_C'Default__AEB_EnableFirstSpawnMusicState_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_EnableFirstSpawnMusicState.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Music_InGame_FirstSpawn ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Music_InGame_FirstSpawn",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Music/InGame/AE_Music_InGame_FirstSpawn",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Music.InGame.FirstSpawn"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_EnableFirstSpawnMusicState_C'AE_Music_InGame_FirstSpawn:AEB_EnableFirstSpawnMusicState_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Music/InGame/AE_Music_InGame_FirstSpawn.0"
+      }
+    ]
+  }
+}

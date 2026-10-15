@@ -1,0 +1,160 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_FuelSupplies'",
+    "ObjectPath": "/Buildables/Data/FuelSupplies/ID_FuelSupplies.5"
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_FuelSupplies'",
+    "ObjectPath": "/Buildables/Data/FuelSupplies/ID_FuelSupplies.5"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Megascans/3D_Assets/Rusty_Jerrycan_vktifj1ga/S_Rusty_Jerrycan_vktifj1ga_high_Var1.S_Rusty_Jerrycan_vktifj1ga_high_Var1",
+      "SubPathString": ""
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_rusty_jerrycan_vktifj1ga'",
+        "ObjectPath": "/Game/Megascans/3D_Assets/Rusty_Jerrycan_vktifj1ga/Materials/MI_rusty_jerrycan_vktifj1ga.0"
+      }
+    ],
+    "Scale": {
+      "X": 1.5,
+      "Y": 1.5,
+      "Z": 1.5
+    },
+    "RelativeRotation": {
+      "Pitch": -90.0,
+      "Yaw": 0.0,
+      "Roll": 0.0
+    },
+    "bOverrideDroppedRelativeLocation": true,
+    "OverridedRelativeLocation": {
+      "X": -10.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "bOverrideDroppedBoxExtent": true,
+    "OverridedBoxExtent": {
+      "X": 15.0,
+      "Y": 27.7,
+      "Z": 18.2
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Stackable_0 ---
+{
+  "Type": "BHInventoryFragment_Stackable",
+  "Name": "BHInventoryFragment_Stackable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Stackable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_FuelSupplies'",
+    "ObjectPath": "/Buildables/Data/FuelSupplies/ID_FuelSupplies.5"
+  },
+  "Properties": {
+    "MaxStackSize": 50
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_FuelSupplies'",
+    "ObjectPath": "/Buildables/Data/FuelSupplies/ID_FuelSupplies.5"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_FuelSupplies'",
+    "ObjectPath": "/Buildables/Data/FuelSupplies/ID_FuelSupplies.5"
+  },
+  "Properties": {
+    "Weight": 0.03
+  }
+}
+--- export: UPrimaryDataAsset / ID_FuelSupplies ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_FuelSupplies",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Buildables/Data/FuelSupplies/ID_FuelSupplies",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.FuelSupplies"
+    },
+    "ItemContext": [
+      "Item.FuelSupplies"
+    ],
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+      "Key": "Items.Utility.MunitionsSupplies",
+      "SourceString": "Ammo Supplies",
+      "LocalizedString": "Ammo Supplies"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_Stackable'ID_FuelSupplies:BHInventoryFragment_Stackable_0'",
+        "ObjectPath": "/Buildables/Data/FuelSupplies/ID_FuelSupplies.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_FuelSupplies:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Buildables/Data/FuelSupplies/ID_FuelSupplies.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_FuelSupplies:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Buildables/Data/FuelSupplies/ID_FuelSupplies.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_FuelSupplies:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Buildables/Data/FuelSupplies/ID_FuelSupplies.6"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_FuelSupplies:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Buildables/Data/FuelSupplies/ID_FuelSupplies.0"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_FuelSupplies:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/Buildables/Data/FuelSupplies/ID_FuelSupplies.4"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_FuelSupplies'",
+    "ObjectPath": "/Buildables/Data/FuelSupplies/ID_FuelSupplies.5"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'DA_Item_FuelSupplies_Audio'",
+      "ObjectPath": "/Buildables/Data/FuelSupplies/DA_Item_FuelSupplies_Audio.0"
+    }
+  }
+}

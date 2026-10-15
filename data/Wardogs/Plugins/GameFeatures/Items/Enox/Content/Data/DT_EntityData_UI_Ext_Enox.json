@@ -1,0 +1,329 @@
+--- export: UDataTable / DT_EntityData_UI_Ext_Enox ---
+{
+  "Type": "DataTable",
+  "Name": "DT_EntityData_UI_Ext_Enox",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Enox/Data/DT_EntityData_UI_Ext_Enox",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'BHEntityData_UI'",
+      "ObjectPath": "/Script/BHFramework"
+    }
+  },
+  "Rows": {
+    "ID.Item.Enox.Standard": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Medical.STRINGS_Items_Medical",
+        "Key": "Items.Medical.Enox",
+        "SourceString": "Enox",
+        "LocalizedString": "Enox"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Medical.STRINGS_Items_Medical",
+        "Key": "Items.Medical.Enox.Description",
+        "SourceString": "A consumable item that grants decaying health",
+        "LocalizedString": "A consumable item that grants decaying health"
+      },
+      "Category": {
+        "TagName": "Item.Category.Health"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "Attribute.Meta.XP.Role.Medic"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory.QuickAccess"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.QuickAccess"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_General.STRINGS_Items_General",
+            "Key": "Items.General.Equipment",
+            "SourceString": "Equipment",
+            "LocalizedString": "Equipment"
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Utility/3D/t_ui_icon_enox_512x512.t_ui_icon_enox_512x512",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Utility/3D/t_ui_icon_enox_512x512.t_ui_icon_enox_512x512",
+            "Value": [
+              "UI.Icon.Inventory.Equipment",
+              "UI.Icon.Inventory.Tooltip",
+              "UI.Icon.Inventory.Container",
+              "UI.Icon.Vendor",
+              "UI.Icon.Default",
+              "UI.Icon.EventLog.Overview"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "ID.Item.Enox.Standard"
+      }
+    },
+    "Id.Item.Resuscitator.Cheap": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Medical.STRINGS_Items_Medical",
+        "Key": "Items.Medical.Resuscitator",
+        "SourceString": "Emergency Resuscitator",
+        "LocalizedString": "Emergency Resuscitator"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Medical.STRINGS_Items_Medical",
+        "Key": "Items.Medical.Resuscitator.Description",
+        "SourceString": "- 1 Per Life Emergency Revive Item\r\n- Revives Teammates Faster\r\n- Single-Use Item",
+        "LocalizedString": "- 1 Per Life Emergency Revive Item\r\n- Revives Teammates Faster\r\n- Single-Use Item"
+      },
+      "Category": {
+        "TagName": "Item.Category.Health"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "Attribute.Meta.XP.Role.Medic"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory.QuickAccess"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.QuickAccess"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_General.STRINGS_Items_General",
+            "Key": "Items.QuickSlot.Medical",
+            "SourceString": "Medical // Quick Slot",
+            "LocalizedString": "Medical // Quick Slot"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Medical.STRINGS_Items_Medical",
+            "Key": "Items.Medical.Resuscitator.Description",
+            "SourceString": "- 1 Per Life Emergency Revive Item\r\n- Revives Teammates Faster\r\n- Single-Use Item",
+            "LocalizedString": "- 1 Per Life Emergency Revive Item\r\n- Revives Teammates Faster\r\n- Single-Use Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Medical.STRINGS_Items_Medical",
+            "Key": "Items.Medical.Resuscitator.Flavor",
+            "SourceString": "Ideal for quicker reviving during intense situations where every second counts.",
+            "LocalizedString": "Ideal for quicker reviving during intense situations where every second counts."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Utility/3D/t_ui_icon_enox_512x512.t_ui_icon_enox_512x512",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Utility/3D/t_ui_icon_enox_512x512.t_ui_icon_enox_512x512",
+            "Value": [
+              "UI.Icon.Inventory.Equipment",
+              "UI.Icon.Inventory.Tooltip",
+              "UI.Icon.Inventory.Container",
+              "UI.Icon.Vendor"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "Id.Item.Resuscitator.Cheap"
+      }
+    },
+    "Id.Item.Resuscitator.Standard": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Medical.STRINGS_Items_Medical",
+        "Key": "Items.Medical.Resiscitator.Standard",
+        "SourceString": "Field Resuscitator",
+        "LocalizedString": "Field Resuscitator"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Medical.STRINGS_Items_Medical",
+        "Key": "Items.Medical.Resuscitator.Standard.Description",
+        "SourceString": "- Field Revive Item\r\n- Revives Teammates Faster\r\n- Single-Use Item",
+        "LocalizedString": "- Field Revive Item\r\n- Revives Teammates Faster\r\n- Single-Use Item"
+      },
+      "Category": {
+        "TagName": "Item.Category.Health"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "Attribute.Meta.XP.Role.Medic"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory.QuickAccess"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.QuickAccess"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_General.STRINGS_Items_General",
+            "Key": "Items.QuickSlot.Medical",
+            "SourceString": "Medical // Quick Slot",
+            "LocalizedString": "Medical // Quick Slot"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Medical.STRINGS_Items_Medical",
+            "Key": "Items.Medical.Resuscitator.Standard.Description",
+            "SourceString": "- Field Revive Item\r\n- Revives Teammates Faster\r\n- Single-Use Item",
+            "LocalizedString": "- Field Revive Item\r\n- Revives Teammates Faster\r\n- Single-Use Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Medical.STRINGS_Items_Medical",
+            "Key": "Items.Medical.Resuscitator.Flavor",
+            "SourceString": "Ideal for quicker reviving during intense situations where every second counts.",
+            "LocalizedString": "Ideal for quicker reviving during intense situations where every second counts."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Utility/3D/t_ui_icon_enox_512x512.t_ui_icon_enox_512x512",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Utility/3D/t_ui_icon_enox_512x512.t_ui_icon_enox_512x512",
+            "Value": [
+              "UI.Icon.Inventory.Equipment",
+              "UI.Icon.Inventory.Tooltip",
+              "UI.Icon.Inventory.Container",
+              "UI.Icon.Vendor"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "Id.Item.Resuscitator.Standard"
+      }
+    }
+  }
+}

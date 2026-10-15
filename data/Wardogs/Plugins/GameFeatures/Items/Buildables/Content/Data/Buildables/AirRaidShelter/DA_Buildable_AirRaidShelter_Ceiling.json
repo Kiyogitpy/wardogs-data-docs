@@ -1,0 +1,119 @@
+--- export: UObject / WDActorBuildSpawner_0 ---
+{
+  "Type": "WDActorBuildSpawner",
+  "Name": "WDActorBuildSpawner_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDActorBuildSpawner'",
+  "Outer": {
+    "ObjectName": "WDBuildableDataAsset'DA_Buildable_AirRaidShelter_Ceiling'",
+    "ObjectPath": "/Buildables/Data/Buildables/AirRaidShelter/DA_Buildable_AirRaidShelter_Ceiling.1"
+  },
+  "Properties": {
+    "BaseBuildableClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Buildable_C'",
+      "ObjectPath": "/Buildables/Data/Buildables/B_Buildable.2"
+    }
+  }
+}
+--- export: UDataAsset / DA_Buildable_AirRaidShelter_Ceiling ---
+{
+  "Type": "WDBuildableDataAsset",
+  "Name": "DA_Buildable_AirRaidShelter_Ceiling",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDBuildableDataAsset'",
+  "Package": "/Buildables/Data/Buildables/AirRaidShelter/DA_Buildable_AirRaidShelter_Ceiling",
+  "Properties": {
+    "SpawnerOverride": {
+      "ObjectName": "WDActorBuildSpawner'DA_Buildable_AirRaidShelter_Ceiling:WDActorBuildSpawner_0'",
+      "ObjectPath": "/Buildables/Data/Buildables/AirRaidShelter/DA_Buildable_AirRaidShelter_Ceiling.0"
+    },
+    "EntityTag": {
+      "TagName": "Id.Buildable.AirRaidShelter.Ceiling"
+    },
+    "Cost": 10,
+    "_aaabfagpiegcpjedampen_$6F8462F9430CF4D$_$21$": 0.67,
+    "DisplayName": {
+      "CultureInvariantString": "Air Raid Shelter Floor"
+    },
+    "MaxHealth": 2250.0,
+    "MaxStack": 1,
+    "_aaabhobcmifficciohpfp_$E12C8558228E7F5F$_$23$": 0,
+    "BuildingStagesDefinition": {
+      "ObjectName": "BuildingStagesDefinition'DA_Buildable_AirRaidShelter_Ceiling_Stages'",
+      "ObjectPath": "/Buildables/Data/Buildables/AirRaidShelter/DA_Buildable_AirRaidShelter_Ceiling_Stages.0"
+    },
+    "BuildingStages": [
+      {
+        "Mesh": {
+          "AssetPathName": "/Buildables/Data/Buildables/AirRaidShelter/SM_AirRaidShelter_Stage5_01b.SM_AirRaidShelter_Stage5_01b",
+          "SubPathString": ""
+        },
+        "MeshLocalBoundingBox": {
+          "Min": {
+            "X": -354.43753,
+            "Y": -364.09515,
+            "Z": -298.46
+          },
+          "Max": {
+            "X": 356.9321,
+            "Y": 358.60208,
+            "Z": 17.571127
+          },
+          "IsValid": 1
+        },
+        "RequiredBuildingProgress": 1.0,
+        "BuildingStageChangedVFXHeightFromBase": 0.0,
+        "CriticalHitSpotTransforms": []
+      }
+    ],
+    "BuildingStageChangedVFX": {
+      "AssetPathName": "/Buildables/Data/Buildables/NS_BuildStage.NS_BuildStage",
+      "SubPathString": ""
+    },
+    "NiagaraDataChannelAsset": {
+      "AssetPathName": "/Game/VFX/Building/DataChannel/NDC_Buildable.NDC_Buildable",
+      "SubPathString": ""
+    },
+    "FinalStageBoundingBox": {
+      "Min": {
+        "X": -354.43753,
+        "Y": -364.09515,
+        "Z": -298.46
+      },
+      "Max": {
+        "X": 356.9321,
+        "Y": 358.60208,
+        "Z": 17.571127
+      },
+      "IsValid": 1
+    },
+    "ConstructedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Constructed"
+    },
+    "DestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Destroyed"
+    },
+    "PlacedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Placed"
+    },
+    "_aaabigdbeocppfeehmfch_$6314E2FF5447C527$_$24$": {
+      "TagName": "GameplayCue.Buildable.Dismantle"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Buildable.AirRaidShelter"
+      }
+    },
+    "PlacementConditions": [
+      {
+        "ObjectName": "Class'WDWithinFobBoundsPlacementCondition'",
+        "ObjectPath": "/Script/BuildablesRuntime"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_WithinLadderBoundsPlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_WithinLadderBoundsPlacementCondition.1"
+      }
+    ],
+    "bUsesCriticalHitSpots": false
+  }
+}

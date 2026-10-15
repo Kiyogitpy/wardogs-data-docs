@@ -1,0 +1,36 @@
+--- export: UPrimaryDataAsset / AE_Vehicle_Targeting_Drone_IsFullLockedOnTo_Stop ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_Targeting_Drone_IsFullLockedOnTo_Stop",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/STN_05/Audio/Events/AE_Vehicle_Targeting_Drone_IsFullLockedOnTo_Stop",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Shared.Targeting.Drone.IsFullLockedOnTo.Stop"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized'AE_Vehicle_Targeting_Drone_IsFullLockedOnTo_Stop:WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized_0'",
+        "ObjectPath": "/STN_05/Audio/Events/AE_Vehicle_Targeting_Drone_IsFullLockedOnTo_Stop.1"
+      }
+    ]
+  }
+}
+--- export: UObject / WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized_0 ---
+{
+  "Type": "WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized",
+  "Name": "WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Targeting_Drone_IsFullLockedOnTo_Stop'",
+    "ObjectPath": "/STN_05/Audio/Events/AE_Vehicle_Targeting_Drone_IsFullLockedOnTo_Stop.0"
+  },
+  "Properties": {
+    "ParameterName": "Stop Sound",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Targeting.LockOnSystem"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+--- export: UObject / GameFeatureAction_AddComponents_0 ---
+{
+  "Type": "GameFeatureAction_AddComponents",
+  "Name": "GameFeatureAction_AddComponents_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddComponents'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'FreeVehicleSpawner'",
+    "ObjectPath": "/FreeVehicleSpawner/FreeVehicleSpawner.1"
+  },
+  "Properties": {
+    "ComponentList": [
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDGameStateSession",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Game/GameMechanics/Gamemode/Objects/B_FreeVehicleSpawner.B_FreeVehicleSpawner_C",
+          "SubPathString": ""
+        },
+        "bClientComponent": false,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / FreeVehicleSpawner ---
+{
+  "Type": "GameFeatureData",
+  "Name": "FreeVehicleSpawner",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/FreeVehicleSpawner/FreeVehicleSpawner",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_AddComponents'FreeVehicleSpawner:GameFeatureAction_AddComponents_0'",
+        "ObjectPath": "/FreeVehicleSpawner/FreeVehicleSpawner.0"
+      }
+    ]
+  }
+}

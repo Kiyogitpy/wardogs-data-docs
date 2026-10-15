@@ -4,7 +4,7 @@ parent: "Game Features"
 ---
 
 # Wardogs — Vehiclesmith Game Feature Reference (v2)
-*Extracted from cooked game data (`Wardogs/Plugins/GameFeatures/Vehiclesmith`, 12 JSON files, all parsed). Build `++Wardogs+Live-CL-509546`, UE 5.7.*
+*Extracted from cooked game data ([`Wardogs/Plugins/GameFeatures/Vehiclesmith`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith), 12 JSON files, all parsed). Build `++Wardogs+Live-CL-509546`, UE 5.7.*
 
 > **What this is:** Vehiclesmith is the vehicle-customisation mode (the vehicle counterpart of Gunsmith), built on the shared **Itemsmith** UI framework. Almost everything here is UI configuration: scene layout, tabs, browser pages, camera modes, data layers and input bindings. There are no combat or balance numbers in this plugin.
 
@@ -14,18 +14,18 @@ parent: "Game Features"
 
 | Asset | Type | Role |
 |---|---|---|
-| `Vehiclesmith.json` (root) | `GameFeatureData` `Vehiclesmith` + `BHGameFeatureAction_AddInputContextMapping` + `GameFeatureAction_DataRegistrySource` | Registers input contexts and data registry sources |
-| `Content/Data/DT_SceneData_Frontend_Vehiclesmith` | `DataTable` (`WDSceneDataTableRow`) | Frontend scene entry `UI.Scene.Frontend.Vehiclesmith` |
-| `Content/Data/DT_Vehiclesmith_DevMenuMaps` | `DataTable` (`WDDevMenuMapsDataTableRow`) | Dev-menu map entry `DevMaps.Vehiclesmith` |
-| `Content/UI/Scene/Data/DA_Vehiclesmith_Scene` | `WDUIVehiclesmithSceneData` | Scene root: tabs, pages, data layers, camera |
-| `Content/UI/Scene/Data/DA_Vehiclesmith_PersistentActions` | `WDUIItemsmithCancelEditDecalPlacementAction` (13 exports) | Bottom-bar persistent actions (12 entries) |
-| `Content/UI/Scene/Data/DT_VehiclesmithPopupOptions` | `DataTable` (`WDUIPopupOptionDataTableRow`) | Popup options; **0 rows** |
-| `Content/UI/ItemSelect/Data/DA_Vehiclesmith_AirItemSelect` | `WDUIItemsmithItemSelectData` | Airframe browser (air archetypes) |
-| `Content/UI/ItemSelect/Data/DA_Vehiclesmith_LandItemSelect` | `WDUIItemsmithItemSelectData` | Ground browser (land archetypes) |
-| `Content/UI/ItemSelect/Data/DA_Vehiclesmith_BrowserList` | `WDUIItemsmithBrowserData` | Browser list layout |
-| `Content/UI/ItemSelect/Data/DA_Vehiclesmith_BrowserEntry` | `WDUIItemsmithBrowserItemData` | Browser entry item |
-| `Content/UI/VariantSelect/Data/DA_Vehiclesmith_VariantSelect` | `WDUIItemsmithItemSelectData` | Saved-variant (blueprint) picker |
-| `Content/UI/BuildOverview/Data/DA_Vehiclesmith_BuildOverview` | `WDUIItemsmithBuildData` | Build page settings |
+| [`Vehiclesmith.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/Vehiclesmith.json) (root) | `GameFeatureData` [`Vehiclesmith`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/Vehiclesmith.json) + `BHGameFeatureAction_AddInputContextMapping` + `GameFeatureAction_DataRegistrySource` | Registers input contexts and data registry sources |
+| [`Content/Data/DT_SceneData_Frontend_Vehiclesmith`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/Data/DT_SceneData_Frontend_Vehiclesmith.json) | `DataTable` (`WDSceneDataTableRow`) | Frontend scene entry `UI.Scene.Frontend.Vehiclesmith` |
+| [`Content/Data/DT_Vehiclesmith_DevMenuMaps`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/Data/DT_Vehiclesmith_DevMenuMaps.json) | `DataTable` (`WDDevMenuMapsDataTableRow`) | Dev-menu map entry `DevMaps.Vehiclesmith` |
+| [`Content/UI/Scene/Data/DA_Vehiclesmith_Scene`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/UI/Scene/Data/DA_Vehiclesmith_Scene.json) | `WDUIVehiclesmithSceneData` | Scene root: tabs, pages, data layers, camera |
+| [`Content/UI/Scene/Data/DA_Vehiclesmith_PersistentActions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/UI/Scene/Data/DA_Vehiclesmith_PersistentActions.json) | `WDUIItemsmithCancelEditDecalPlacementAction` (13 exports) | Bottom-bar persistent actions (12 entries) |
+| [`Content/UI/Scene/Data/DT_VehiclesmithPopupOptions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/UI/Scene/Data/DT_VehiclesmithPopupOptions.json) | `DataTable` (`WDUIPopupOptionDataTableRow`) | Popup options; **0 rows** |
+| [`Content/UI/ItemSelect/Data/DA_Vehiclesmith_AirItemSelect`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/UI/ItemSelect/Data/DA_Vehiclesmith_AirItemSelect.json) | `WDUIItemsmithItemSelectData` | Airframe browser (air archetypes) |
+| [`Content/UI/ItemSelect/Data/DA_Vehiclesmith_LandItemSelect`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/UI/ItemSelect/Data/DA_Vehiclesmith_LandItemSelect.json) | `WDUIItemsmithItemSelectData` | Ground browser (land archetypes) |
+| [`Content/UI/ItemSelect/Data/DA_Vehiclesmith_BrowserList`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/UI/ItemSelect/Data/DA_Vehiclesmith_BrowserList.json) | `WDUIItemsmithBrowserData` | Browser list layout |
+| [`Content/UI/ItemSelect/Data/DA_Vehiclesmith_BrowserEntry`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/UI/ItemSelect/Data/DA_Vehiclesmith_BrowserEntry.json) | `WDUIItemsmithBrowserItemData` | Browser entry item |
+| [`Content/UI/VariantSelect/Data/DA_Vehiclesmith_VariantSelect`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/UI/VariantSelect/Data/DA_Vehiclesmith_VariantSelect.json) | `WDUIItemsmithItemSelectData` | Saved-variant (blueprint) picker |
+| [`Content/UI/BuildOverview/Data/DA_Vehiclesmith_BuildOverview`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/UI/BuildOverview/Data/DA_Vehiclesmith_BuildOverview.json) | `WDUIItemsmithBuildData` | Build page settings |
 
 ---
 
@@ -36,24 +36,24 @@ parent: "Game Features"
 
 | Context | Purpose (from name) |
 |---|---|
-| `IMC_Itemsmith` | Scene base |
-| `IMC_Itemsmith_PlayerController` | Player controller |
-| `IMC_Itemsmith_ItemSelect` | Browser pages (priority 11 on the browser page data) |
-| `IMC_Itemsmith_BlueprintSelect` | Variant picker (priority 1 on the variant page) |
-| `IMC_Itemsmith_Dev` | Dev controls |
-| `IMC_Itemsmith_BasicPaintSelect` | Basic paint |
-| `IMC_Itemsmith_Flair`, `_FlairOverview`, `_FlairItemPaint`, `_FlairDecalOverview`, `_FlairDecalSelect` | Flair (paint and decal) sub-modes |
+| [`IMC_Itemsmith`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IMC_Itemsmith.json) | Scene base |
+| [`IMC_Itemsmith_PlayerController`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IMC_Itemsmith_PlayerController.json) | Player controller |
+| [`IMC_Itemsmith_ItemSelect`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IMC_Itemsmith_ItemSelect.json) | Browser pages (priority 11 on the browser page data) |
+| [`IMC_Itemsmith_BlueprintSelect`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IMC_Itemsmith_BlueprintSelect.json) | Variant picker (priority 1 on the variant page) |
+| [`IMC_Itemsmith_Dev`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IMC_Itemsmith_Dev.json) | Dev controls |
+| [`IMC_Itemsmith_BasicPaintSelect`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IMC_Itemsmith_BasicPaintSelect.json) | Basic paint |
+| [`IMC_Itemsmith_Flair`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IMC_Itemsmith_Flair.json), `_FlairOverview`, `_FlairItemPaint`, `_FlairDecalOverview`, `_FlairDecalSelect` | Flair (paint and decal) sub-modes |
 
 ### 2b. Named action map
 `InputActionTagsMap` maps **46** `Input.NamedActions.ItemSmith.*` tags to `IA_*` assets. Grouped:
 
 | Group | Tags (examples) | Assets (examples) |
 |---|---|---|
-| Camera | `RotateView`, `ZoomIn`, `ZoomOut`, `PanCamera.Up/Down/Left/Right`, `FlipView`, `ResetCamera`, `EnableRotateView` | `IA_RotateView`, `IA_ZoomIn`, `IA_ZoomOut`, `IA_PanCameraUp`..., `IA_FlipView`, `IA_ResetCamera`, `IA_AllowRotateView` |
-| Node navigation | `Node.Up/Down/Left/Right`, `MoveFocus.Up/Down/Left/Right/Forwards/Backwards`, `SelectNode`, `MovePreview.Up` | `IA_NodeUp`..., `IA_MoveFocusUp`..., `IA_SelectNode`, `IA_MovePreviewUp` |
-| Pages and tabs | `Next`, `Previous` (and `.Alternative`), `Tab`, `HeroTitle`, `HideShowUI`, `ExpandStats` | `IA_Itemsmith_Next`, `IA_Itemsmith_Tab`, `IA_Itemsmith_HeroTitle`, `IA_Itemsmith_HideShowUI`, `IA_Itemsmith_ExpandStats` |
-| Flair | `FlairOverview.EnterPaint`, `FlairOverview.EnterDecals`, `Flair.ApplyPaint`, `Flair.ClearDecalLayer`, `Flair.EditDecalPlacement`, `Flair.CancelEditDecalPlacement`, `Flair.ClearPaint` | `IA_Itemsmith_FlairOverview_EnterPaint`, `IA_Itemsmith_ApplyPaint`, ... |
-| Blueprint | `RemoveBlueprint`, `SaveBlueprint`, `TestingGround` | `IA_Itemsmith_RemoveBlueprint`, `IA_Itemsmith_SaveBlueprint`, `IA_Itemsmith_TestingGround` |
+| Camera | `RotateView`, `ZoomIn`, `ZoomOut`, `PanCamera.Up/Down/Left/Right`, `FlipView`, `ResetCamera`, `EnableRotateView` | [`IA_RotateView`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IA_RotateView.json), [`IA_ZoomIn`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IA_ZoomIn.json), [`IA_ZoomOut`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IA_ZoomOut.json), [`IA_PanCameraUp`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IA_PanCameraUp.json)..., [`IA_FlipView`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IA_FlipView.json), [`IA_ResetCamera`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IA_ResetCamera.json), [`IA_AllowRotateView`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IA_AllowRotateView.json) |
+| Node navigation | `Node.Up/Down/Left/Right`, `MoveFocus.Up/Down/Left/Right/Forwards/Backwards`, `SelectNode`, `MovePreview.Up` | [`IA_NodeUp`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IA_NodeUp.json)..., [`IA_MoveFocusUp`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IA_MoveFocusUp.json)..., [`IA_SelectNode`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IA_SelectNode.json), [`IA_MovePreviewUp`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IA_MovePreviewUp.json) |
+| Pages and tabs | `Next`, `Previous` (and `.Alternative`), `Tab`, `HeroTitle`, `HideShowUI`, `ExpandStats` | [`IA_Itemsmith_Next`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IA_Itemsmith_Next.json), [`IA_Itemsmith_Tab`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IA_Itemsmith_Tab.json), [`IA_Itemsmith_HeroTitle`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IA_Itemsmith_HeroTitle.json), [`IA_Itemsmith_HideShowUI`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IA_Itemsmith_HideShowUI.json), [`IA_Itemsmith_ExpandStats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IA_Itemsmith_ExpandStats.json) |
+| Flair | `FlairOverview.EnterPaint`, `FlairOverview.EnterDecals`, `Flair.ApplyPaint`, `Flair.ClearDecalLayer`, `Flair.EditDecalPlacement`, `Flair.CancelEditDecalPlacement`, `Flair.ClearPaint` | [`IA_Itemsmith_FlairOverview_EnterPaint`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IA_Itemsmith_FlairOverview_EnterPaint.json), [`IA_Itemsmith_ApplyPaint`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IA_Itemsmith_ApplyPaint.json), ... |
+| Blueprint | `RemoveBlueprint`, `SaveBlueprint`, `TestingGround` | [`IA_Itemsmith_RemoveBlueprint`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IA_Itemsmith_RemoveBlueprint.json), [`IA_Itemsmith_SaveBlueprint`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IA_Itemsmith_SaveBlueprint.json), [`IA_Itemsmith_TestingGround`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IA_Itemsmith_TestingGround.json) |
 
 Full list is 46 entries; the table is abbreviated.
 
@@ -62,12 +62,12 @@ One `GameFeatureAction_DataRegistrySource` adds two sources:
 
 | Registry | Data table |
 |---|---|
-| `DevMenuMapsData` | `DT_Vehiclesmith_DevMenuMaps` (client source on, server source off) |
-| `UISceneData_Frontend` | `DT_SceneData_Frontend_Vehiclesmith` |
+| `DevMenuMapsData` | [`DT_Vehiclesmith_DevMenuMaps`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/Data/DT_Vehiclesmith_DevMenuMaps.json) (client source on, server source off) |
+| `UISceneData_Frontend` | [`DT_SceneData_Frontend_Vehiclesmith`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/Data/DT_SceneData_Frontend_Vehiclesmith.json) |
 
 ---
 
-## 3. Frontend Scene Entry (`DT_SceneData_Frontend_Vehiclesmith`)
+## 3. Frontend Scene Entry ([`DT_SceneData_Frontend_Vehiclesmith`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/Data/DT_SceneData_Frontend_Vehiclesmith.json))
 
 | Field | Value |
 |---|---|
@@ -79,12 +79,12 @@ One `GameFeatureAction_DataRegistrySource` adds two sources:
 | Focusable | true |
 | Layer / Z-order | `EWDWidgetLayer::Normal` / 1 |
 | Widget class | `/Vehiclesmith/UI/Scene/W_VehiclesmithScene` |
-| View model | `WDUIVehiclesmithSceneViewModel` on `DA_Vehiclesmith_Scene` |
+| View model | `WDUIVehiclesmithSceneViewModel` on [`DA_Vehiclesmith_Scene`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/UI/Scene/Data/DA_Vehiclesmith_Scene.json) |
 | Show scene title / back button / seasonal countdown | all false |
 
 ---
 
-## 4. Dev Menu Map (`DT_Vehiclesmith_DevMenuMaps`)
+## 4. Dev Menu Map ([`DT_Vehiclesmith_DevMenuMaps`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/Data/DT_Vehiclesmith_DevMenuMaps.json))
 
 | Field | Value |
 |---|---|
@@ -95,7 +95,7 @@ One `GameFeatureAction_DataRegistrySource` adds two sources:
 
 ---
 
-## 5. Scene Root (`DA_Vehiclesmith_Scene`)
+## 5. Scene Root ([`DA_Vehiclesmith_Scene`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/UI/Scene/Data/DA_Vehiclesmith_Scene.json))
 
 ### 5a. Tabs and type
 
@@ -129,14 +129,14 @@ One `GameFeatureAction_DataRegistrySource` adds two sources:
 | Field | Value |
 |---|---|
 | Dpad controls angle | 55 |
-| Scene mapping context | `IMC_Itemsmith` |
-| Dev controls mapping context | `IMC_Itemsmith_Dev` |
-| Persistent-action data | `DA_Vehiclesmith_PersistentActions` |
-| Popup data table | `DT_VehiclesmithPopupOptions` (empty) |
+| Scene mapping context | [`IMC_Itemsmith`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IMC_Itemsmith.json) |
+| Dev controls mapping context | [`IMC_Itemsmith_Dev`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IMC_Itemsmith_Dev.json) |
+| Persistent-action data | [`DA_Vehiclesmith_PersistentActions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/UI/Scene/Data/DA_Vehiclesmith_PersistentActions.json) |
+| Popup data table | [`DT_VehiclesmithPopupOptions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/UI/Scene/Data/DT_VehiclesmithPopupOptions.json) (empty) |
 
 ---
 
-## 6. Persistent Actions (bottom bar, `DA_Vehiclesmith_PersistentActions`)
+## 6. Persistent Actions (bottom bar, [`DA_Vehiclesmith_PersistentActions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/UI/Scene/Data/DA_Vehiclesmith_PersistentActions.json))
 
 12 entries. Left-aligned (`EWDUIPersistentActionAlignment::Left`) and right-aligned (`Right`):
 
@@ -161,40 +161,40 @@ Display strings come from `STRINGS_Itemsmith_PersistentActions` and `STRINGS_Veh
 
 ## 7. Browser Pages
 
-### 7a. Air browser (`DA_Vehiclesmith_AirItemSelect`)
+### 7a. Air browser ([`DA_Vehiclesmith_AirItemSelect`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/UI/ItemSelect/Data/DA_Vehiclesmith_AirItemSelect.json))
 
 | Field | Value |
 |---|---|
 | Default archetype | `Vehicle.Archetype.Air.Rotary` |
 | Camera mode | `EItemsmithCameraMode::FixedSideOn` |
 | Camera focus offset | (0, 0, 5.5) |
-| Input mapping context | `IMC_Itemsmith_ItemSelect`, priority 11 |
+| Input mapping context | [`IMC_Itemsmith_ItemSelect`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IMC_Itemsmith_ItemSelect.json), priority 11 |
 | Browser filters | Favourited-archetype filter, plus archetype filter(s) |
 
-### 7b. Land browser (`DA_Vehiclesmith_LandItemSelect`)
+### 7b. Land browser ([`DA_Vehiclesmith_LandItemSelect`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/UI/ItemSelect/Data/DA_Vehiclesmith_LandItemSelect.json))
 
 | Field | Value |
 |---|---|
 | Default archetype | `Vehicle.Archetype.Land.Wheeled` |
 | Camera mode | `FixedSideOn` |
-| Input mapping context | `IMC_Itemsmith_ItemSelect`, priority 11 |
+| Input mapping context | [`IMC_Itemsmith_ItemSelect`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IMC_Itemsmith_ItemSelect.json), priority 11 |
 | Browser filters | Archetype `Vehicle.Archetype.Land.Wheeled`, archetype `Vehicle.Archetype.Land.Tracked`, Favourited archetype `Vehicle.Archetype.Land` |
 
-### 7c. Variant picker (`DA_Vehiclesmith_VariantSelect`)
+### 7c. Variant picker ([`DA_Vehiclesmith_VariantSelect`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/UI/VariantSelect/Data/DA_Vehiclesmith_VariantSelect.json))
 
 | Field | Value |
 |---|---|
 | Page type | `EWDUIItemsmithPages::Variants` |
 | Default archetype | `Vehicle.Archetype` |
 | Camera mode | `FixedSideOn`, focus offset (0, 0, 5.5) |
-| Input mapping context | `IMC_Itemsmith_BlueprintSelect`, priority 1 |
+| Input mapping context | [`IMC_Itemsmith_BlueprintSelect`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IMC_Itemsmith_BlueprintSelect.json), priority 1 |
 | Browser filters | Favourited variants (`Itemsmith.Variants.Tabs.Favourite`); Saved variants (`Itemsmith.Variants.Tabs.Saved`), with "create new" button tag `Itemsmith.Variants.CreateNewButton` |
 
 ### 7d. Browser list and entry
 
 | Field | Value |
 |---|---|
-| Entry view model | `WDUIItemsmithBrowserEntryViewModel` on `DA_Vehiclesmith_BrowserEntry` |
+| Entry view model | `WDUIItemsmithBrowserEntryViewModel` on [`DA_Vehiclesmith_BrowserEntry`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/UI/ItemSelect/Data/DA_Vehiclesmith_BrowserEntry.json) |
 | Entry width x height | **270 x 125** |
 | Items per page | **6** |
 | Entry widget | `W_ItemsmithBrowserEntry` |
@@ -204,7 +204,7 @@ Display strings come from `STRINGS_Itemsmith_PersistentActions` and `STRINGS_Veh
 
 ---
 
-## 8. Build Overview (`DA_Vehiclesmith_BuildOverview`)
+## 8. Build Overview ([`DA_Vehiclesmith_BuildOverview`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/UI/BuildOverview/Data/DA_Vehiclesmith_BuildOverview.json))
 
 | Field | Value |
 |---|---|

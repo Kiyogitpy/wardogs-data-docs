@@ -1,0 +1,66 @@
+--- export: UDataAsset / IA_Vehicle_Airbrake ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Vehicle_Airbrake",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Vehicles/Inputs/IA_Vehicle_Airbrake",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.Airbrake"
+    },
+    "AccumulationBehavior": "EInputActionAccumulationBehavior::Cumulative",
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerDown'IA_Vehicle_Airbrake:InputTriggerDown_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Airbrake.2"
+      },
+      {
+        "ObjectName": "InputTriggerReleased'IA_Vehicle_Airbrake:InputTriggerReleased_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Airbrake.3"
+      }
+    ],
+    "Modifiers": [
+      {
+        "ObjectName": "InputModifierDeadZone'IA_Vehicle_Airbrake:InputModifierDeadZone_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Airbrake.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputModifierDeadZone_0 ---
+{
+  "Type": "InputModifierDeadZone",
+  "Name": "InputModifierDeadZone_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierDeadZone'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_Airbrake'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Airbrake.0"
+  }
+}
+--- export: UObject / InputTriggerDown_0 ---
+{
+  "Type": "InputTriggerDown",
+  "Name": "InputTriggerDown_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerDown'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_Airbrake'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Airbrake.0"
+  }
+}
+--- export: UObject / InputTriggerReleased_0 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_Airbrake'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Airbrake.0"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.1
+  }
+}

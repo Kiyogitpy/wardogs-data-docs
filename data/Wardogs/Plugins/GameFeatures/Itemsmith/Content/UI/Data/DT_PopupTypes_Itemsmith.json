@@ -1,0 +1,38 @@
+--- export: UDataTable / DT_PopupTypes_Itemsmith ---
+{
+  "Type": "DataTable",
+  "Name": "DT_PopupTypes_Itemsmith",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Itemsmith/UI/Data/DT_PopupTypes_Itemsmith",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUIPopupTypeDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "UI.Popup.Type.Itemsmith.Rename": {
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Itemsmith/UI/RenameItem/W_Itemsmith_RenameItem.W_Itemsmith_RenameItem_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithRenamePopupViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Itemsmith/UI/RenameItem/Data/DA_Itemsmith_RenameItem.DA_Itemsmith_RenameItem",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+      },
+      "Tag": {
+        "TagName": "UI.Popup.Type.Itemsmith.Rename"
+      }
+    }
+  }
+}

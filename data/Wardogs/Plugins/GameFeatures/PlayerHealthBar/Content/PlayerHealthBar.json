@@ -1,0 +1,115 @@
+--- export: UPrimaryDataAsset / PlayerHealthBar ---
+{
+  "Type": "GameFeatureData",
+  "Name": "PlayerHealthBar",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/PlayerHealthBar/PlayerHealthBar",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements'PlayerHealthBar:WDGameFeatureAction_AddWidgetElements_0'",
+        "ObjectPath": "/PlayerHealthBar/PlayerHealthBar.1"
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_0 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements",
+  "Name": "WDGameFeatureAction_AddWidgetElements_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'PlayerHealthBar'",
+    "ObjectPath": "/PlayerHealthBar/PlayerHealthBar.0"
+  },
+  "Properties": {
+    "TaggedElements": [
+      {
+        "Key": {
+          "TagName": "UI.HUD.Element.Health"
+        },
+        "Value": {
+          "WidgetClass": {
+            "AssetPathName": "/PlayerHealthBar/Data/W_PlayerHealthBar.W_PlayerHealthBar_C",
+            "SubPathString": ""
+          },
+          "ViewModelParams": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/PlayerHealthBarRuntime.WDUIPlayerHealthBarViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/PlayerHealthBar/Data/DA_PlayerHealthBar.DA_PlayerHealthBar",
+              "SubPathString": ""
+            }
+          },
+          "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+        }
+      }
+    ],
+    "AddWidgetElementsInstances": [
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'PlayerHealthBar:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_0'",
+        "ObjectPath": "/PlayerHealthBar/PlayerHealthBar.2"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'PlayerHealthBar:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_1'",
+        "ObjectPath": "/PlayerHealthBar/PlayerHealthBar.3"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'PlayerHealthBar:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_2'",
+        "ObjectPath": "/PlayerHealthBar/PlayerHealthBar.4"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'PlayerHealthBar:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_3'",
+        "ObjectPath": "/PlayerHealthBar/PlayerHealthBar.5"
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_0 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'PlayerHealthBar:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/PlayerHealthBar/PlayerHealthBar.1"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_1 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_1",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'PlayerHealthBar:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/PlayerHealthBar/PlayerHealthBar.1"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_2 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_2",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'PlayerHealthBar:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/PlayerHealthBar/PlayerHealthBar.1"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_3 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_3",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'PlayerHealthBar:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/PlayerHealthBar/PlayerHealthBar.1"
+  }
+}

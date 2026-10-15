@@ -1,0 +1,52 @@
+--- export: UDataAsset / WE_ROT_03_AttachedMachineGuns ---
+{
+  "Type": "WDVehicleWeaponExtensionDataAsset",
+  "Name": "WE_ROT_03_AttachedMachineGuns",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeaponExtensionDataAsset'",
+  "Package": "/ROT_03_WeaponVariants/Weapons/WE_ROT_03_AttachedMachineGuns",
+  "Properties": {
+    "WeaponExtensionTag": {
+      "TagName": "Id.Vehicle.WeaponExtension.ROT_03.MountedMachineGun"
+    },
+    "WeaponItemId": {
+      "TagName": "Id.Item.ROT_03.MountedMachineGun"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Weapon.Vehicle.Turret.Minigun"
+      }
+    },
+    "WeaponExtensionName": "308mm Machine Gun",
+    "WeaponStatsData": {
+      "ObjectName": "WDWeaponStatsData'DA_ROT_03_AttachedMachineGuns_Stats'",
+      "ObjectPath": "/ROT_03_WeaponVariants/Weapons/DA_ROT_03_AttachedMachineGuns_Stats.0"
+    },
+    "ReloadSetupData": {
+      "ReloadType": "EWDVehicleWeaponReloadType::Standard",
+      "ReloadTime": 4.25,
+      "StartDelayTime": 1.0,
+      "EndDelayTime": 1.0
+    },
+    "AmmoTag": {
+      "TagName": "Id.Item.308Win"
+    },
+    "AmmoCaliberTag": {
+      "TagName": "Item.Caliber.308Win"
+    },
+    "AmmoInsertionMethod": "EWDAmmoInsertionMethod::PullsAmmoFromReserve",
+    "WeaponStartingInventoryItems": [
+      {
+        "Key": {
+          "TagName": "Id.Item.308Win.Tracer"
+        },
+        "Value": 300
+      }
+    ],
+    "WeaponAudioData": {
+      "ObjectName": "WDAudioData'DA_ROT_03_AttachedMachineGuns_Audio'",
+      "ObjectPath": "/ROT_03_WeaponVariants/Weapons/DA_ROT_03_AttachedMachineGuns_Audio.0"
+    },
+    "FireCameraShakeMultiplier": 0.15
+  }
+}

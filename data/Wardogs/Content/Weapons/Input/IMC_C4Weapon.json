@@ -1,0 +1,189 @@
+--- export: UObject / BHPlayerMappableKeySettings_0 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_C4Weapon'",
+    "ObjectPath": "/Game/Weapons/Input/IMC_C4Weapon.3"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.HoldableItem.PrimaryUse"
+    },
+    "Name": "Input.NamedActions.HoldableItem.PrimaryUse"
+  }
+}
+--- export: UObject / BHPlayerMappableKeySettings_2 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_C4Weapon'",
+    "ObjectPath": "/Game/Weapons/Input/IMC_C4Weapon.3"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.HoldableItem.Inspect"
+    },
+    "Name": "Input.NamedActions.HoldableItem.Inspect"
+  }
+}
+--- export: UObject / BHPlayerMappableKeySettings_7 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_7",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_C4Weapon'",
+    "ObjectPath": "/Game/Weapons/Input/IMC_C4Weapon.3"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.HoldableItem.TriggerUse"
+    },
+    "Name": "Input.NamedActions.HoldableItem.TriggerUse"
+  }
+}
+--- export: UDataAsset / IMC_C4Weapon ---
+{
+  "Type": "InputMappingContext",
+  "Name": "IMC_C4Weapon",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputMappingContext'",
+  "Package": "/Game/Weapons/Input/IMC_C4Weapon",
+  "Properties": {
+    "DefaultKeyMappings": {
+      "Mappings": [
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Player_PrimaryUse'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_PrimaryUse.0"
+          },
+          "Key": {
+            "KeyName": "LeftMouseButton"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_C4Weapon:BHPlayerMappableKeySettings_0'",
+            "ObjectPath": "/Game/Weapons/Input/IMC_C4Weapon.0"
+          }
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [
+            {
+              "ObjectName": "WDDeadZoneInputModifier'IMC_C4Weapon:WDDeadZoneInputModifier_1'",
+              "ObjectPath": "/Game/Weapons/Input/IMC_C4Weapon.5"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Player_PrimaryUse'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_PrimaryUse.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_RightTriggerAxis"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Player_TriggerUse'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_TriggerUse.0"
+          },
+          "Key": {
+            "KeyName": "RightMouseButton"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_C4Weapon:BHPlayerMappableKeySettings_7'",
+            "ObjectPath": "/Game/Weapons/Input/IMC_C4Weapon.2"
+          }
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [
+            {
+              "ObjectName": "WDDeadZoneInputModifier'IMC_C4Weapon:WDDeadZoneInputModifier_0'",
+              "ObjectPath": "/Game/Weapons/Input/IMC_C4Weapon.4"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Player_TriggerUse'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_TriggerUse.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_LeftTriggerAxis"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Player_Inspect'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_Inspect.0"
+          },
+          "Key": {
+            "KeyName": "I"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_C4Weapon:BHPlayerMappableKeySettings_2'",
+            "ObjectPath": "/Game/Weapons/Input/IMC_C4Weapon.1"
+          }
+        }
+      ]
+    }
+  }
+}
+--- export: UObject / WDDeadZoneInputModifier_0 ---
+{
+  "Type": "WDDeadZoneInputModifier",
+  "Name": "WDDeadZoneInputModifier_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDDeadZoneInputModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_C4Weapon'",
+    "ObjectPath": "/Game/Weapons/Input/IMC_C4Weapon.3"
+  },
+  "Properties": {
+    "Type": "EDeadZoneType::Axial",
+    "MinThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.LeftTrigger.Min"
+    },
+    "MaxThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.LeftTrigger.Max"
+    }
+  }
+}
+--- export: UObject / WDDeadZoneInputModifier_1 ---
+{
+  "Type": "WDDeadZoneInputModifier",
+  "Name": "WDDeadZoneInputModifier_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDDeadZoneInputModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_C4Weapon'",
+    "ObjectPath": "/Game/Weapons/Input/IMC_C4Weapon.3"
+  },
+  "Properties": {
+    "Type": "EDeadZoneType::Axial",
+    "MinThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.RightTrigger.Min"
+    },
+    "MaxThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.RightTrigger.Max"
+    }
+  }
+}

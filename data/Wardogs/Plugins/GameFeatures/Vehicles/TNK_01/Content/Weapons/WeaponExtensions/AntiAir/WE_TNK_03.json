@@ -1,0 +1,80 @@
+--- export: UDataAsset / WE_TNK_03 ---
+{
+  "Type": "WDVehicleWeaponExtensionDataAsset",
+  "Name": "WE_TNK_03",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeaponExtensionDataAsset'",
+  "Package": "/TNK_01/Weapons/WeaponExtensions/AntiAir/WE_TNK_03",
+  "Properties": {
+    "WeaponExtensionTag": {
+      "TagName": "Id.Vehicle.WeaponExtension.TNK_01.AntiAir"
+    },
+    "WeaponItemId": {
+      "TagName": "ID.Item.VehicleTurretAntiAir"
+    },
+    "ItemSlotTag": {
+      "TagName": "Inventory.Slot.Vehicle.Weapon.TNK_03.Turret"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Weapon.Vehicle.Cannon"
+      }
+    },
+    "WeaponExtensionName": "35mm Cannons",
+    "WeaponStatsData": {
+      "ObjectName": "WDWeaponStatsData'DA_TNK_03_Weapon_Stats'",
+      "ObjectPath": "/TNK_01/Weapons/WeaponExtensions/AntiAir/DA_TNK_03_Weapon_Stats.0"
+    },
+    "ReloadSetupData": {
+      "ReloadType": "EWDVehicleWeaponReloadType::Standard",
+      "ReloadTime": 4.0,
+      "bHasAdditionalReloadTime": true,
+      "AdditionalReloadTimes": [
+        {
+          "Key": {
+            "TagName": "State.Player.Vehicle.Role.Driver"
+          },
+          "Value": 2.0
+        }
+      ]
+    },
+    "bAutomaticallyReload": true,
+    "AmmoTag": {
+      "TagName": "ID.Item.35x228mm"
+    },
+    "AmmoCaliberTag": {
+      "TagName": "Item.Caliber.35x228mm"
+    },
+    "WeaponStartingInventoryItems": [
+      {
+        "Key": {
+          "TagName": "Item.Caliber.35x228mm"
+        },
+        "Value": 0
+      }
+    ],
+    "WeaponAudioData": {
+      "ObjectName": "WDAudioData'DA_TNK_03_Weapon_Audio'",
+      "ObjectPath": "/TNK_01/Weapons/WeaponExtensions/AntiAir/DA_TNK_03_Weapon_Audio.0"
+    },
+    "WeaponAnimMontages": [
+      {
+        "Key": {
+          "TagName": "State.Vehicle.Weapon.Fire"
+        },
+        "Value": {
+          "ObjectName": "AnimMontage'AM_TNK_03_Turret_Fire'",
+          "ObjectPath": "/TNK_01/Animation/Montages/AM_TNK_03_Turret_Fire.0"
+        }
+      }
+    ],
+    "bShakeOnWeaponFire": true,
+    "OperatorIdleSequence": {
+      "ObjectName": "BlueprintGeneratedClass'B_CameraShake_Suppression_C'",
+      "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/CameraShake/B_CameraShake_Suppression.1"
+    },
+    "FireCameraShakeMultiplier": 0.1,
+    "_aaabfelnhikdjgichlfab_$4BD78A396827B501$_$21$": true,
+    "_aaabhampchocmmncphioe_$CF27E2CCD2F78E4$_$23$": 10.0
+  }
+}

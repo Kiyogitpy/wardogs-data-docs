@@ -1,0 +1,66 @@
+--- export: UObject / WDCameraModifier_StimulantEffects_0 ---
+{
+  "Type": "WDCameraModifier_StimulantEffects",
+  "Name": "WDCameraModifier_StimulantEffects_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCameraModifier_StimulantEffects'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_StimulantEffects'",
+    "ObjectPath": "/StimPen/Data/DA_CharacterModifierState_StimulantEffects.2"
+  },
+  "Properties": {
+    "EffectTag": {
+      "TagName": "State.Player.Stimulant.UnlimitedTacSprint"
+    },
+    "LerpTime": 0.15,
+    "FOVMultiplier": 1.05,
+    "bBlendedRemoval": true,
+    "RemovalTime": 0.25
+  }
+}
+--- export: UObject / WDCharacterModifierCondition_Tags_0 ---
+{
+  "Type": "WDCharacterModifierCondition_Tags",
+  "Name": "WDCharacterModifierCondition_Tags_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierCondition_Tags'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_StimulantEffects'",
+    "ObjectPath": "/StimPen/Data/DA_CharacterModifierState_StimulantEffects.2"
+  },
+  "Properties": {
+    "Requirements": {
+      "RequireTags": [
+        "State.Player.Stimulant.UnlimitedTacSprint"
+      ],
+      "IgnoreTags": [
+        "State.Player.Vitality.Critical"
+      ]
+    }
+  }
+}
+--- export: UPrimaryDataAsset / DA_CharacterModifierState_StimulantEffects ---
+{
+  "Type": "WDCharacterModifierStateDefinition",
+  "Name": "DA_CharacterModifierState_StimulantEffects",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierStateDefinition'",
+  "Package": "/StimPen/Data/DA_CharacterModifierState_StimulantEffects",
+  "Properties": {
+    "StateTag": {
+      "TagName": "State.CharacterModifier.Stimulant"
+    },
+    "CameraModifiers": [
+      {
+        "ObjectName": "WDCameraModifier_StimulantEffects'DA_CharacterModifierState_StimulantEffects:WDCameraModifier_StimulantEffects_0'",
+        "ObjectPath": "/StimPen/Data/DA_CharacterModifierState_StimulantEffects.0"
+      }
+    ],
+    "Conditions": [
+      {
+        "ObjectName": "WDCharacterModifierCondition_Tags'DA_CharacterModifierState_StimulantEffects:WDCharacterModifierCondition_Tags_0'",
+        "ObjectPath": "/StimPen/Data/DA_CharacterModifierState_StimulantEffects.1"
+      }
+    ]
+  }
+}

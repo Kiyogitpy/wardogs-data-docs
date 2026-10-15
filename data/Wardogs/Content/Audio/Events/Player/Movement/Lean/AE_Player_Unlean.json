@@ -1,0 +1,69 @@
+--- export: UObject / AEB_PlayPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayPerspectiveSound_C",
+  "Name": "AEB_PlayPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.AEB_PlayPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Unlean'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Lean/AE_Player_Unlean.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayPerspectiveSound_C'Default__AEB_PlayPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.0"
+  },
+  "Properties": {
+    "1pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Player_Movement_Unlean_1p'",
+      "ObjectPath": "/Game/Audio/Player/Movement/Lean/MSS/MSS_Player_Movement_Unlean_1p.0"
+    },
+    "3pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Player_Movement_Unlean_3p_Preset'",
+      "ObjectPath": "/Game/Audio/Player/Movement/Lean/MSS/MSS_Player_Movement_Unlean_3p_Preset.0"
+    },
+    "RestartBehaviour": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Lean"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Player_Unlean ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Player_Unlean",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Movement/Lean/AE_Player_Unlean",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.Unlean"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Player_Unlean:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Lean/AE_Player_Unlean.2"
+      },
+      {
+        "ObjectName": "AEB_PlayPerspectiveSound_C'AE_Player_Unlean:AEB_PlayPerspectiveSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Lean/AE_Player_Unlean.0"
+      }
+    ],
+    "_aaabhonahgpdbjealfaaa_$ED076F31940B5000$_$23$": 30.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Unlean'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Lean/AE_Player_Unlean.1"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Lean"
+    }
+  }
+}

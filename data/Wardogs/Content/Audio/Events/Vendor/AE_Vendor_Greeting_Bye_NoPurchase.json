@@ -1,0 +1,60 @@
+--- export: UPrimaryDataAsset / AE_Vendor_Greeting_Bye_NoPurchase ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vendor_Greeting_Bye_NoPurchase",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vendor/AE_Vendor_Greeting_Bye_NoPurchase",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vendor.Greeting.Bye.NoPurchase"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Vendor_Greeting_Bye_NoPurchase:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Vendor/AE_Vendor_Greeting_Bye_NoPurchase.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Vendor_Greeting_Bye_NoPurchase:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Vendor/AE_Vendor_Greeting_Bye_NoPurchase.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vendor_Greeting_Bye_NoPurchase'",
+    "ObjectPath": "/Game/Audio/Events/Vendor/AE_Vendor_Greeting_Bye_NoPurchase.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vendor_Greeting_Bye_NoPurchase'",
+    "ObjectPath": "/Game/Audio/Events/Vendor/AE_Vendor_Greeting_Bye_NoPurchase.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Vendor_Greeting_Bye_NoPurchase_Preset'",
+      "ObjectPath": "/Game/Audio/Convo/Neutral/Greeting/Bye/MSS_Vendor_Greeting_Bye_NoPurchase_Preset.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::IfDifferentSound",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

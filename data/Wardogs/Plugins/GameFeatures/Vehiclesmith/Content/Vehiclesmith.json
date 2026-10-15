@@ -1,0 +1,593 @@
+--- export: UObject / BHGameFeatureAction_AddInputContextMapping_0 ---
+{
+  "Type": "BHGameFeatureAction_AddInputContextMapping",
+  "Name": "BHGameFeatureAction_AddInputContextMapping_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHGameFeatureAction_AddInputContextMapping'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Vehiclesmith'",
+    "ObjectPath": "/Vehiclesmith/Vehiclesmith.2"
+  },
+  "Properties": {
+    "InputMappings": [
+      {
+        "InputMapping": {
+          "AssetPathName": "/Itemsmith/Input/IMC_Itemsmith.IMC_Itemsmith",
+          "SubPathString": ""
+        },
+        "Priority": 0,
+        "bRegisterWithSettings": true,
+        "bAddMappingContextOnLoad": false
+      },
+      {
+        "InputMapping": {
+          "AssetPathName": "/Itemsmith/Input/IMC_Itemsmith_BasicPaintSelect.IMC_Itemsmith_BasicPaintSelect",
+          "SubPathString": ""
+        },
+        "Priority": 0,
+        "bRegisterWithSettings": true,
+        "bAddMappingContextOnLoad": false
+      },
+      {
+        "InputMapping": {
+          "AssetPathName": "/Itemsmith/Input/IMC_Itemsmith_BlueprintSelect.IMC_Itemsmith_BlueprintSelect",
+          "SubPathString": ""
+        },
+        "Priority": 0,
+        "bRegisterWithSettings": true,
+        "bAddMappingContextOnLoad": false
+      },
+      {
+        "InputMapping": {
+          "AssetPathName": "/Itemsmith/Input/IMC_Itemsmith_Dev.IMC_Itemsmith_Dev",
+          "SubPathString": ""
+        },
+        "Priority": 0,
+        "bRegisterWithSettings": true,
+        "bAddMappingContextOnLoad": false
+      },
+      {
+        "InputMapping": {
+          "AssetPathName": "/Itemsmith/Input/IMC_Itemsmith_Flair.IMC_Itemsmith_Flair",
+          "SubPathString": ""
+        },
+        "Priority": 0,
+        "bRegisterWithSettings": true,
+        "bAddMappingContextOnLoad": false
+      },
+      {
+        "InputMapping": {
+          "AssetPathName": "/Itemsmith/Input/IMC_Itemsmith_FlairDecalOverview.IMC_Itemsmith_FlairDecalOverview",
+          "SubPathString": ""
+        },
+        "Priority": 0,
+        "bRegisterWithSettings": true,
+        "bAddMappingContextOnLoad": false
+      },
+      {
+        "InputMapping": {
+          "AssetPathName": "/Itemsmith/Input/IMC_Itemsmith_FlairDecalSelect.IMC_Itemsmith_FlairDecalSelect",
+          "SubPathString": ""
+        },
+        "Priority": 0,
+        "bRegisterWithSettings": true,
+        "bAddMappingContextOnLoad": false
+      },
+      {
+        "InputMapping": {
+          "AssetPathName": "/Itemsmith/Input/IMC_Itemsmith_FlairItemPaint.IMC_Itemsmith_FlairItemPaint",
+          "SubPathString": ""
+        },
+        "Priority": 0,
+        "bRegisterWithSettings": true,
+        "bAddMappingContextOnLoad": false
+      },
+      {
+        "InputMapping": {
+          "AssetPathName": "/Itemsmith/Input/IMC_Itemsmith_FlairOverview.IMC_Itemsmith_FlairOverview",
+          "SubPathString": ""
+        },
+        "Priority": 0,
+        "bRegisterWithSettings": true,
+        "bAddMappingContextOnLoad": false
+      },
+      {
+        "InputMapping": {
+          "AssetPathName": "/Itemsmith/Input/IMC_Itemsmith_ItemSelect.IMC_Itemsmith_ItemSelect",
+          "SubPathString": ""
+        },
+        "Priority": 0,
+        "bRegisterWithSettings": true,
+        "bAddMappingContextOnLoad": false
+      },
+      {
+        "InputMapping": {
+          "AssetPathName": "/Itemsmith/Input/IMC_Itemsmith_PlayerController.IMC_Itemsmith_PlayerController",
+          "SubPathString": ""
+        },
+        "Priority": 0,
+        "bRegisterWithSettings": true,
+        "bAddMappingContextOnLoad": false
+      }
+    ],
+    "InputActionTagsMap": [
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.RotateView"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_RotateView.IA_RotateView",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.ZoomIn"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_ZoomIn.IA_ZoomIn",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.ZoomOut"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_ZoomOut.IA_ZoomOut",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.Node.Up"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_NodeUp.IA_NodeUp",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.Node.Down"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_NodeDown.IA_NodeDown",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.Node.Right"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_NodeRight.IA_NodeRight",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.Node.Left"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_NodeLeft.IA_NodeLeft",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.MoveFocus.Up"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_MoveFocusUp.IA_MoveFocusUp",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.MoveFocus.Down"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_MoveFocusDown.IA_MoveFocusDown",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.MoveFocus.Left"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_MoveFocusLeft.IA_MoveFocusLeft",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.MoveFocus.Right"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_MoveFocusRight.IA_MoveFocusRight",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.MoveFocus.Forwards"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_MoveFocusForward.IA_MoveFocusForward",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.MoveFocus.Backwards"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_MoveFocusBackwards.IA_MoveFocusBackwards",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.SelectNode"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_SelectNode.IA_SelectNode",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.EnableRotateView"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_AllowRotateView.IA_AllowRotateView",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.PanCamera.Up"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_PanCameraUp.IA_PanCameraUp",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.PanCamera.Down"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_PanCameraDown.IA_PanCameraDown",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.PanCamera.Left"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_PanCameraLeft.IA_PanCameraLeft",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.PanCamera.Right"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_PanCameraRight.IA_PanCameraRight",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.FlipView"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_FlipView.IA_FlipView",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.ResetCamera"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_ResetCamera.IA_ResetCamera",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.Next"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_Itemsmith_Next.IA_Itemsmith_Next",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.Tab"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_Itemsmith_Tab.IA_Itemsmith_Tab",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.Previous"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_Itemsmith_Previous.IA_Itemsmith_Previous",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.HeroTitle"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_Itemsmith_HeroTitle.IA_Itemsmith_HeroTitle",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.HideShowUI"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_Itemsmith_HideShowUI.IA_Itemsmith_HideShowUI",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.Next.Alternative"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_Itemsmith_Next_Alternative.IA_Itemsmith_Next_Alternative",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.Previous.Alternative"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_Itemsmith_Previous_Alternative.IA_Itemsmith_Previous_Alternative",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.FlairOverview.EnterPaint"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_Itemsmith_FlairOverview_EnterPaint.IA_Itemsmith_FlairOverview_EnterPaint",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.FlairOverview.EnterDecals"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_Itemsmith_FlairOverview_EnterDecals.IA_Itemsmith_FlairOverview_EnterDecals",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.RemoveBlueprint"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_Itemsmith_RemoveBlueprint.IA_Itemsmith_RemoveBlueprint",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.TestingGround"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_Itemsmith_TestingGround.IA_Itemsmith_TestingGround",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.SaveBlueprint"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_Itemsmith_SaveBlueprint.IA_Itemsmith_SaveBlueprint",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.ExpandStats"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_Itemsmith_ExpandStats.IA_Itemsmith_ExpandStats",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.Flair.ApplyPaint"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_Itemsmith_ApplyPaint.IA_Itemsmith_ApplyPaint",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.Flair.ClearDecalLayer"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_Itemsmith_ClearDecalLayer.IA_Itemsmith_ClearDecalLayer",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.Flair.EditDecalPlacement"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_Itemsmith_EditDecalPlacement.IA_Itemsmith_EditDecalPlacement",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.Flair.CancelEditDecalPlacement"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_Itemsmith_CancelEditDecalPlacement.IA_Itemsmith_CancelEditDecalPlacement",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.Flair.ClearPaint"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_Itemsmith_ClearPaint.IA_Itemsmith_ClearPaint",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.MovePreview.Up"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_MovePreviewUp.IA_MovePreviewUp",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.MovePreview.Down"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_MovePreviewDown.IA_MovePreviewDown",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.MovePreview.Left"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_MovePreviewLeft.IA_MovePreviewLeft",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.MovePreview.Right"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_MovePreviewRight.IA_MovePreviewRight",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.Favourite"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_Itemsmith_Favourite.IA_Itemsmith_Favourite",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.ScalePreview.Down"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_ScalePreviewDown.IA_ScalePreviewDown",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.ItemSmith.ScalePreview.Up"
+        },
+        "Value": {
+          "AssetPathName": "/Itemsmith/Input/IA_ScalePreviewUp.IA_ScalePreviewUp",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_DataRegistrySource_0 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Vehiclesmith'",
+    "ObjectPath": "/Vehiclesmith/Vehiclesmith.2"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "DevMenuMapsData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": false,
+        "DataTableToAdd": {
+          "AssetPathName": "/Vehiclesmith/Data/DT_Vehiclesmith_DevMenuMaps.DT_Vehiclesmith_DevMenuMaps",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "UISceneData_Frontend",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": false,
+        "DataTableToAdd": {
+          "AssetPathName": "/Vehiclesmith/Data/DT_SceneData_Frontend_Vehiclesmith.DT_SceneData_Frontend_Vehiclesmith",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / Vehiclesmith ---
+{
+  "Type": "GameFeatureData",
+  "Name": "Vehiclesmith",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/Vehiclesmith/Vehiclesmith",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'Vehiclesmith:GameFeatureAction_DataRegistrySource_0'",
+        "ObjectPath": "/Vehiclesmith/Vehiclesmith.1"
+      },
+      {
+        "ObjectName": "BHGameFeatureAction_AddInputContextMapping'Vehiclesmith:BHGameFeatureAction_AddInputContextMapping_0'",
+        "ObjectPath": "/Vehiclesmith/Vehiclesmith.0"
+      }
+    ]
+  }
+}

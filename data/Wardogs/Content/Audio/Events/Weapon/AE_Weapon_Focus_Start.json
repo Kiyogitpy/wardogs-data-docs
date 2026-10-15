@@ -1,0 +1,188 @@
+--- export: UObject / AEB_ActivateControlBusMix_C_0 ---
+{
+  "Type": "AEB_ActivateControlBusMix_C",
+  "Name": "AEB_ActivateControlBusMix_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_ActivateControlBusMix.AEB_ActivateControlBusMix_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Focus_Start'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/AE_Weapon_Focus_Start.5"
+  },
+  "Template": {
+    "ObjectName": "AEB_ActivateControlBusMix_C'Default__AEB_ActivateControlBusMix_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_ActivateControlBusMix.0"
+  },
+  "Properties": {
+    "Mix": {
+      "ObjectName": "SoundControlBusMix'AM_CBM_Focus'",
+      "ObjectPath": "/Game/Audio/AudioModulation/ControlBusMixes/AM_CBM_Focus.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / AEB_FocusFOVMultiplier_C_0 ---
+{
+  "Type": "AEB_FocusFOVMultiplier_C",
+  "Name": "AEB_FocusFOVMultiplier_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_FocusFOVMultiplier.AEB_FocusFOVMultiplier_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Focus_Start'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/AE_Weapon_Focus_Start.5"
+  },
+  "Template": {
+    "ObjectName": "AEB_FocusFOVMultiplier_C'Default__AEB_FocusFOVMultiplier_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_FocusFOVMultiplier.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / AEB_FocusRemaining_C_0 ---
+{
+  "Type": "AEB_FocusRemaining_C",
+  "Name": "AEB_FocusRemaining_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_FocusRemaining.AEB_FocusRemaining_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Focus_Start'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/AE_Weapon_Focus_Start.5"
+  },
+  "Template": {
+    "ObjectName": "AEB_FocusRemaining_C'Default__AEB_FocusRemaining_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_FocusRemaining.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / AEB_RequestVox_C_0 ---
+{
+  "Type": "AEB_RequestVox_C",
+  "Name": "AEB_RequestVox_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_RequestVox.AEB_RequestVox_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Focus_Start'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/AE_Weapon_Focus_Start.5"
+  },
+  "Template": {
+    "ObjectName": "AEB_RequestVox_C'Default__AEB_RequestVox_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_RequestVox.0"
+  },
+  "Properties": {
+    "VoxRequest": {
+      "LineID": {
+        "TagName": "Audio.Vox.Exertion.Focus.In"
+      },
+      "Perspective": "EWDVoxPerspective::FirstPerson"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    },
+    "bSourceObjectInstanced": false,
+    "ConcurrentInstanceLimit": 1
+  }
+}
+--- export: UObject / AEB_SuppressBreathVox_C_0 ---
+{
+  "Type": "AEB_SuppressBreathVox_C",
+  "Name": "AEB_SuppressBreathVox_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SuppressBreathVox.AEB_SuppressBreathVox_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Focus_Start'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/AE_Weapon_Focus_Start.5"
+  },
+  "Template": {
+    "ObjectName": "AEB_SuppressBreathVox_C'Default__AEB_SuppressBreathVox_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SuppressBreathVox.0"
+  }
+}
+--- export: UPrimaryDataAsset / AE_Weapon_Focus_Start ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_Focus_Start",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Weapon/AE_Weapon_Focus_Start",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.Focus.Start"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_RequestVox_C'AE_Weapon_Focus_Start:AEB_RequestVox_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/AE_Weapon_Focus_Start.3"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Weapon_Focus_Start:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/AE_Weapon_Focus_Start.7"
+      },
+      {
+        "ObjectName": "AEB_FocusFOVMultiplier_C'AE_Weapon_Focus_Start:AEB_FocusFOVMultiplier_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/AE_Weapon_Focus_Start.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Weapon_Focus_Start:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/AE_Weapon_Focus_Start.6"
+      },
+      {
+        "ObjectName": "AEB_ActivateControlBusMix_C'AE_Weapon_Focus_Start:AEB_ActivateControlBusMix_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/AE_Weapon_Focus_Start.0"
+      },
+      {
+        "ObjectName": "AEB_FocusRemaining_C'AE_Weapon_Focus_Start:AEB_FocusRemaining_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/AE_Weapon_Focus_Start.2"
+      },
+      {
+        "ObjectName": "AEB_SuppressBreathVox_C'AE_Weapon_Focus_Start:AEB_SuppressBreathVox_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/AE_Weapon_Focus_Start.4"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Focus_Start'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/AE_Weapon_Focus_Start.5"
+  },
+  "Properties": {
+    "ParameterName": "Start",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Focus_Start'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/AE_Weapon_Focus_Start.5"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Weapon_Focus'",
+      "ObjectPath": "/Game/Audio/Weapon/Shared/Focus/MSS_Weapon_Focus.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

@@ -1,0 +1,88 @@
+--- export: UDataAsset / DA_Setting_Accessibility_HUD_Visibility ---
+{
+  "Type": "BHUserSettingDiscreteData",
+  "Name": "DA_Setting_Accessibility_HUD_Visibility",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingDiscreteData'",
+  "Package": "/Game/GameMechanics/Settings/Accessibility/DA_Setting_Accessibility_HUD_Visibility",
+  "Properties": {
+    "Parameters": {
+      "DefaultIndex": 1,
+      "DefaultValues": {
+        "ObjectName": "BHUserSettingEnumDiscreteValues'DA_Setting_Accessibility_HUD_Visibility:BHUserSettingEnumDiscreteValues_0'",
+        "ObjectPath": "/Game/GameMechanics/Settings/Accessibility/DA_Setting_Accessibility_HUD_Visibility.1"
+      }
+    }
+  }
+}
+--- export: UObject / BHUserSettingEnumDiscreteValues_0 ---
+{
+  "Type": "BHUserSettingEnumDiscreteValues",
+  "Name": "BHUserSettingEnumDiscreteValues_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingEnumDiscreteValues'",
+  "Outer": {
+    "ObjectName": "BHUserSettingDiscreteData'DA_Setting_Accessibility_HUD_Visibility'",
+    "ObjectPath": "/Game/GameMechanics/Settings/Accessibility/DA_Setting_Accessibility_HUD_Visibility.0"
+  },
+  "Properties": {
+    "NamedValues": [
+      {
+        "Key": "EWDUIHUDVisibilityType::On",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Value.Visibility.On",
+          "SourceString": "Always On",
+          "LocalizedString": "Always On"
+        }
+      },
+      {
+        "Key": "EWDUIHUDVisibilityType::Dynamic",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Value.Visibility.Dynamic",
+          "SourceString": "Dynamic",
+          "LocalizedString": "Dynamic"
+        }
+      },
+      {
+        "Key": "EWDUIHUDVisibilityType::Off",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Value.Visibility.Off",
+          "SourceString": "Off",
+          "LocalizedString": "Off"
+        }
+      }
+    ],
+    "Values": [
+      {
+        "Key": "0",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Value.Visibility.On",
+          "SourceString": "Always On",
+          "LocalizedString": "Always On"
+        }
+      },
+      {
+        "Key": "1",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Value.Visibility.Dynamic",
+          "SourceString": "Dynamic",
+          "LocalizedString": "Dynamic"
+        }
+      },
+      {
+        "Key": "2",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Value.Visibility.Off",
+          "SourceString": "Off",
+          "LocalizedString": "Off"
+        }
+      }
+    ]
+  }
+}

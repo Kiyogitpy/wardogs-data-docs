@@ -1,0 +1,45 @@
+--- export: UDataAsset / AIInfluence_DataConfig ---
+{
+  "Type": "WDAIInfluenceData",
+  "Name": "AIInfluence_DataConfig",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAIInfluenceData'",
+  "Package": "/WDAIPvEAICore/DataAssets/AIInfluence_DataConfig",
+  "Properties": {
+    "AIInfluenceData": [
+      {
+        "Key": {
+          "TagName": "InfluenceMap.TeamMap"
+        },
+        "Value": {
+          "Radius": 1000.0,
+          "Strength": 1.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "InfluenceMap.EnemyMap"
+        },
+        "Value": {
+          "Radius": 500.0,
+          "Strength": 1.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "InfluenceMap.AlertMap"
+        },
+        "Value": {
+          "Radius": 1000.0,
+          "Strength": 1.0
+        }
+      }
+    ],
+    "SensesToUseForAlertMap": [
+      {
+        "ObjectName": "Class'AISense_Hearing'",
+        "ObjectPath": "/Script/AIModule"
+      }
+    ]
+  }
+}

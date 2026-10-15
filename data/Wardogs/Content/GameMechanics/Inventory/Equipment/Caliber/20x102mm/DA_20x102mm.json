@@ -1,0 +1,64 @@
+--- export: UPrimaryDataAsset / DA_20x102mm ---
+{
+  "Type": "WDProjectileData",
+  "Name": "DA_20x102mm",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDProjectileData'",
+  "Package": "/Game/GameMechanics/Inventory/Equipment/Caliber/20x102mm/DA_20x102mm",
+  "Properties": {
+    "ProjectileId": {
+      "TagName": "Item.Caliber.20x102mm"
+    },
+    "ProjectileStats": {
+      "DamageEntityData": {
+        "Tag": {
+          "TagName": "Meta.Damage.Cannon.20x102mm"
+        }
+      },
+      "DamageValues": {
+        "BaseDamage": 60.0,
+        "EffectiveExplosiveRadius": 375.0,
+        "ExplosiveDamageFallOff": 0.7
+      },
+      "ProjectileDimensions": {
+        "Length": 9.9,
+        "Diameter": 1.0,
+        "Mass": 0.04,
+        "DragModel": {
+          "Curve": {
+            "CurveTable": {
+              "ObjectName": "CurveTable'CT_Projectile_DragCoefficients'",
+              "ObjectPath": "/Game/Items/Resources/Ammo/Curves/CT_Projectile_DragCoefficients.0"
+            },
+            "RowName": "G7 (Boat Tail)"
+          }
+        }
+      },
+      "ProjectileEffects": {
+        "GameplayCueTag": {
+          "TagName": "GameplayCue.Weapon.Projectile"
+        }
+      },
+      "SuppressionData": {
+        "BaseSuppression": 0.55,
+        "DistanceFalloffCurve": {
+          "EditorCurveData": {}
+        }
+      },
+      "ArmingDelay": 0.01,
+      "AttachedEffect": {
+        "AssetPathName": "/Game/VFX/Weapons/Tracers/NS_Tracer_20mm.NS_Tracer_20mm",
+        "SubPathString": ""
+      },
+      "TracerChance": 0.5,
+      "TypicalSpeed": 22400.0,
+      "PenetrationEffectivenessMultiplier": 1.8,
+      "MinImpactAngleForRicochet": 91.0,
+      "bShouldPreSimulate": false,
+      "ThrustSpeed": 22000.0,
+      "TravelDistanceForWhizBy": 250.0,
+      "PerceivedImpactRange": 60000.0,
+      "IgnoreInstigatorVehicleTime": 0.5
+    }
+  }
+}

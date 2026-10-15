@@ -1,0 +1,26 @@
+--- export: UDataAsset / DA_VendorPanel_Overview ---
+{
+  "Type": "WDUIVendorPanelData_Overview",
+  "Name": "DA_VendorPanel_Overview",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIVendorPanelData_Overview'",
+  "Package": "/Game/UI/Features/Vendor/Widgets/VendorPanel/Data/DA_VendorPanel_Overview",
+  "Properties": {
+    "VendorInventoryComponentViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIInventoryComponentViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/InventoryComponent/Data/DA_InventoryComponent_Vendor_Overview.DA_InventoryComponent_Vendor_Overview",
+        "SubPathString": ""
+      }
+    },
+    "PurchasedCartAudioEvent": {
+      "TagName": "Audio.Event.UI.Vendor.PurchaseCart"
+    },
+    "InsufficientFundsAudioEvent": {
+      "TagName": "Audio.Event.UI.Vendor.InsufficientFunds"
+    }
+  }
+}

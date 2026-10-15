@@ -4,7 +4,7 @@ parent: "Game Features"
 ---
 
 # Wardogs — GameFeatures: Experiences (v2)
-*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/GameFeatures/Experiences/` — 11 JSON files. Two experiences: `KOTH` (1 file) and `SniperShowdown` (10 files).*
+*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: [`Plugins/GameFeatures/Experiences/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Experiences) — 11 JSON files. Two experiences: [`KOTH`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Experiences/KOTH/Content/KOTH.json) (1 file) and [`SniperShowdown`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Experiences/SniperShowdown/Content/SniperShowdown.json) (10 files).*
 
 ---
 
@@ -19,7 +19,7 @@ Experiences are complete game modes. Each one is a GameFeature pack that sets ma
 
 ---
 
-## 2. KOTH (`KOTH/Content/KOTH.json`)
+## 2. KOTH ([`KOTH/Content/KOTH.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Experiences/KOTH/Content/KOTH.json))
 
 ### 2a. Match states
 
@@ -73,17 +73,17 @@ Experiences are complete game modes. Each one is a GameFeature pack that sets ma
 
 | Item | Value |
 |---|---|
-| Pawn data | `SniperShowdown_PlayerData` (`WDPawnData`): `B_SniperShowdown_MoverPlayerCharacter` |
-| Scene registry | `UISceneData_Match` → `DT_SceneData_Match_SniperShowdown` |
-| Event feed | `UIEventFeedData` → `DT_EventFeedTypes_SniperShowdown` |
-| Tracker registries | `TrackerData_Minimap` and `TrackerData_TacticalMap` → `DT_TrackerData_Map_SniperShowdown` |
+| Pawn data | [`SniperShowdown_PlayerData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Experiences/SniperShowdown/Content/Character/SniperShowdown_PlayerData.json) (`WDPawnData`): `B_SniperShowdown_MoverPlayerCharacter` |
+| Scene registry | `UISceneData_Match` → [`DT_SceneData_Match_SniperShowdown`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Experiences/SniperShowdown/Content/UI/DT_SceneData_Match_SniperShowdown.json) |
+| Event feed | `UIEventFeedData` → [`DT_EventFeedTypes_SniperShowdown`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Experiences/SniperShowdown/Content/UI/DT_EventFeedTypes_SniperShowdown.json) |
+| Tracker registries | `TrackerData_Minimap` and `TrackerData_TacticalMap` → [`DT_TrackerData_Map_SniperShowdown`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Experiences/SniperShowdown/Content/UI/DT_TrackerData_Map_SniperShowdown.json) |
 | HUD: leaderboard | `UI.HUD.Element.GameModeLeaderboard` → `W_SniperShowdown_Leaderboard` |
 | HUD: timer | `UI.HUD.Element.Timer` → `W_SniperShowdown_Timer` |
 | HUD: status | `UI.HUD.Element.GameModeStatus` → `W_SniperShowdown_Empty` |
 | Persistent: fade out | `W_SniperShowdown_FadeOut`, layer Upper |
 | Persistent: revealed | `W_SniperShowdown_Revealed`, layer Lower |
 
-### 3d. Event feed (`DT_EventFeedTypes_SniperShowdown`)
+### 3d. Event feed ([`DT_EventFeedTypes_SniperShowdown`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Experiences/SniperShowdown/Content/UI/DT_EventFeedTypes_SniperShowdown.json))
 
 | Row | Self text | Meaning |
 |---|---|---|
@@ -97,13 +97,13 @@ These three rows confirm the stillness mechanic: standing still reveals you; mov
 
 | Asset | Type | Content |
 |---|---|---|
-| `DA_SniperShowdown_FadeOut` | `WDSniperShowdownFadeOutData` | Death text "Killed by {KillerName}"; blackout transition out 3.0 s; respawn text "Respawning in {Time}..." |
-| `DA_SniperShowdown_GameOverScene` | `WDSniperShowdownGameOverSceneData` | "Next Round in {Minutes}:{Seconds}"; scoreboard view model `WDUIScoreboardViewModel` |
-| `DA_SniperShowdown_Leaderboard` | `WDSniperShowdownLeaderboardData` | Present, empty in export |
-| `DA_SniperShowdown_Timer` | `WDSniperShowdownTimerData` | Format "{Minutes}:{Seconds}" |
-| `DA_Tracker_Map_SniperShowdownZone` | `WDUIMapTrackerData` | Text off, no map zoom scaling |
-| `DT_TrackerData_Map_SniperShowdown` | DataTable | 3 rows: `Trackers.Type.SniperShowdownZoneActive`, `…ZonePassive`, `…ControlZone` |
-| `DT_SceneData_Match_SniperShowdown` | DataTable | 1 row: `UI.Scene.Match.EndgameMovie` |
+| [`DA_SniperShowdown_FadeOut`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Experiences/SniperShowdown/Content/UI/DA_SniperShowdown_FadeOut.json) | `WDSniperShowdownFadeOutData` | Death text "Killed by {KillerName}"; blackout transition out 3.0 s; respawn text "Respawning in {Time}..." |
+| [`DA_SniperShowdown_GameOverScene`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Experiences/SniperShowdown/Content/UI/DA_SniperShowdown_GameOverScene.json) | `WDSniperShowdownGameOverSceneData` | "Next Round in {Minutes}:{Seconds}"; scoreboard view model `WDUIScoreboardViewModel` |
+| [`DA_SniperShowdown_Leaderboard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Experiences/SniperShowdown/Content/UI/DA_SniperShowdown_Leaderboard.json) | `WDSniperShowdownLeaderboardData` | Present, empty in export |
+| [`DA_SniperShowdown_Timer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Experiences/SniperShowdown/Content/UI/DA_SniperShowdown_Timer.json) | `WDSniperShowdownTimerData` | Format "{Minutes}:{Seconds}" |
+| [`DA_Tracker_Map_SniperShowdownZone`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Experiences/SniperShowdown/Content/UI/DA_Tracker_Map_SniperShowdownZone.json) | `WDUIMapTrackerData` | Text off, no map zoom scaling |
+| [`DT_TrackerData_Map_SniperShowdown`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Experiences/SniperShowdown/Content/UI/DT_TrackerData_Map_SniperShowdown.json) | DataTable | 3 rows: `Trackers.Type.SniperShowdownZoneActive`, `…ZonePassive`, `…ControlZone` |
+| [`DT_SceneData_Match_SniperShowdown`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Experiences/SniperShowdown/Content/UI/DT_SceneData_Match_SniperShowdown.json) | DataTable | 1 row: `UI.Scene.Match.EndgameMovie` |
 
 ---
 

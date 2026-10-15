@@ -1,0 +1,66 @@
+--- export: UPrimaryDataAsset / VV_WHL_05_Humvee_Default ---
+{
+  "Type": "ModularVehicleVariant",
+  "Name": "VV_WHL_05_Humvee_Default",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleVariant'",
+  "Package": "/WHL_05/Variants/VV_WHL_05_Humvee_Default",
+  "Properties": {
+    "bIncludeInBuildCommandLine": true,
+    "VariantID": {
+      "TagName": "Vehicle.Variant.Land.Wheeled.Humvee.Default"
+    },
+    "SpawnParams": {
+      "Min": {
+        "X": -333.41745,
+        "Y": -169.0808,
+        "Z": -0.054967806
+      },
+      "Max": {
+        "X": 317.55817,
+        "Y": 169.08083,
+        "Z": 259.09384
+      }
+    },
+    "FixedBounds": {
+      "Min": {
+        "X": -333.41745,
+        "Y": -169.0808,
+        "Z": -0.054967806
+      },
+      "Max": {
+        "X": 317.55817,
+        "Y": 169.08083,
+        "Z": 259.09384
+      }
+    },
+    "AssemblyData": {
+      "VehicleBase": {
+        "ObjectName": "ModularVehiclePlatform'VP_WHL_05'",
+        "ObjectPath": "/WHL_05/Platforms/VP_WHL_05.0"
+      },
+      "CustomData": {
+        "SlotOverrides": [
+          {
+            "Path": {
+              "Path": "Seats"
+            },
+            "Part": {
+              "AssetPathName": "/WHL_05/Parts/VP_WHL_05_Humvee_Seats.VP_WHL_05_Humvee_Seats",
+              "SubPathString": ""
+            }
+          },
+          {
+            "Path": {
+              "Path": "Body"
+            },
+            "Part": {
+              "AssetPathName": "/WHL_05/Parts/VP_WHL_05_MainBody_Default.VP_WHL_05_MainBody_Default",
+              "SubPathString": ""
+            }
+          }
+        ]
+      }
+    }
+  }
+}

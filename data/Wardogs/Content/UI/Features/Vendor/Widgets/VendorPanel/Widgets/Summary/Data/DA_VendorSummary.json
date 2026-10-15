@@ -1,0 +1,56 @@
+--- export: UDataAsset / DA_VendorSummary ---
+{
+  "Type": "WDUIVendorSummaryData",
+  "Name": "DA_VendorSummary",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIVendorSummaryData'",
+  "Package": "/Game/UI/Features/Vendor/Widgets/VendorPanel/Widgets/Summary/Data/DA_VendorSummary",
+  "Properties": {
+    "WeightDisplayViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIWeightDisplayViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Shared/Widgets/WeightDisplay/Data/DA_WeightDisplay.DA_WeightDisplay",
+        "SubPathString": ""
+      }
+    },
+    "WeaponSlotTags": [
+      "Inventory.Slot.Primary"
+    ],
+    "PurchaseText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+      "Key": "Button.Purchase",
+      "SourceString": "Purchase",
+      "LocalizedString": "Purchase"
+    },
+    "PurchaseUnavailableText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+      "Key": "Button.Purchase.Unavailable",
+      "SourceString": "Unavailable",
+      "LocalizedString": "Unavailable"
+    },
+    "NoAmmoText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Inventory_2_0.STRINGS_Inventory_2_0",
+      "Key": "Text.NoAmmo",
+      "SourceString": "No Ammo",
+      "LocalizedString": "No Ammo"
+    },
+    "LowAmmoText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Inventory_2_0.STRINGS_Inventory_2_0",
+      "Key": "Text.LowAmmo",
+      "SourceString": "Low Ammo",
+      "LocalizedString": "Low Ammo"
+    },
+    "CapacityFormat": {
+      "CultureInvariantString": "{Amount}/{Capacity}"
+    },
+    "NewRecruitDiscountLevelFormat": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+      "Key": "Text.DiscountExpiry",
+      "SourceString": "Expires: Lvl {Level}",
+      "LocalizedString": "Expires: Lvl {Level}"
+    }
+  }
+}

@@ -1,0 +1,86 @@
+--- export: UPrimaryDataAsset / VV_WHL_02_Default ---
+{
+  "Type": "ModularVehicleVariant",
+  "Name": "VV_WHL_02_Default",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleVariant'",
+  "Package": "/WHL_02/Variants/VV_WHL_02_Default",
+  "Properties": {
+    "bIncludeInBuildCommandLine": true,
+    "VariantID": {
+      "TagName": "Vehicle.Variant.Land.Wheeled.Kodiak.Default"
+    },
+    "SpawnParams": {
+      "Min": {
+        "X": -346.63126,
+        "Y": -143.75768,
+        "Z": -1.903966
+      },
+      "Max": {
+        "X": 299.10556,
+        "Y": 143.76756,
+        "Z": 224.8432
+      }
+    },
+    "AssemblyData": {
+      "VehicleBase": {
+        "ObjectName": "ModularVehiclePlatform'VP_WHL_02'",
+        "ObjectPath": "/WHL_02/Platforms/VP_WHL_02.0"
+      },
+      "CustomData": {
+        "SlotOverrides": [
+          {
+            "Path": {
+              "Path": "Seats"
+            },
+            "Part": {
+              "AssetPathName": "/WHL_02/Parts/VP_WHL_02_Seats.VP_WHL_02_Seats",
+              "SubPathString": ""
+            }
+          },
+          {
+            "Path": {
+              "Path": "Rearback"
+            },
+            "Part": {
+              "AssetPathName": "/WHL_02/Parts/SUV/VP_WHL_02_RearBack_SUV.VP_WHL_02_RearBack_SUV",
+              "SubPathString": ""
+            }
+          },
+          {
+            "Path": {
+              "Path": "Rearback.Chassis"
+            },
+            "Part": {
+              "AssetPathName": "/WHL_02/Parts/SUV/VP_WHL_02_RearBack_SUV_Chassis.VP_WHL_02_RearBack_SUV_Chassis",
+              "SubPathString": ""
+            }
+          },
+          {
+            "Path": {
+              "Path": "Body"
+            },
+            "Part": {
+              "AssetPathName": "/WHL_02/Parts/VP_WHL_02_MainBody_Default.VP_WHL_02_MainBody_Default",
+              "SubPathString": ""
+            }
+          }
+        ],
+        "CustomFragmentData": [
+          {
+            "Path": {
+              "Path": ":Chassis"
+            },
+            "Data": {
+              "OverrideMesh": {
+                "AssetPathName": "/WHL_02/SkeletalMeshes/SK_WHL_02_SUV.SK_WHL_02_SUV",
+                "SubPathString": ""
+              },
+              "OverrideMaterials": []
+            }
+          }
+        ]
+      }
+    }
+  }
+}

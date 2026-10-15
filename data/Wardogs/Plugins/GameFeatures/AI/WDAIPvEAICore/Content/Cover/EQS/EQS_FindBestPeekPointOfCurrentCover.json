@@ -1,0 +1,85 @@
+--- export: UDataAsset / EQS_FindBestPeekPointOfCurrentCover ---
+{
+  "Type": "EnvQuery",
+  "Name": "EQS_FindBestPeekPointOfCurrentCover",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQuery'",
+  "Package": "/WDAIPvEAICore/Cover/EQS/EQS_FindBestPeekPointOfCurrentCover",
+  "Properties": {
+    "QueryName": "EQS_FindBestPeekPointOfCurrentCover",
+    "Options": [
+      {
+        "ObjectName": "EnvQueryOption'EQS_FindBestPeekPointOfCurrentCover:EnvQueryOption_1'",
+        "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindBestPeekPointOfCurrentCover.1"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryOption_1 ---
+{
+  "Type": "EnvQueryOption",
+  "Name": "EnvQueryOption_1",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryOption'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindBestPeekPointOfCurrentCover'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindBestPeekPointOfCurrentCover.0"
+  },
+  "Properties": {
+    "Generator": {
+      "ObjectName": "SDEnvQueryGenerator_PeekPoints'EQS_FindBestPeekPointOfCurrentCover:SDEnvQueryGenerator_PeekPoints_2'",
+      "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindBestPeekPointOfCurrentCover.2"
+    },
+    "Tests": [
+      {
+        "ObjectName": "WDEnvQueryTest_CoverTrace'EQS_FindBestPeekPointOfCurrentCover:WDEnvQueryTest_CoverTrace_0'",
+        "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindBestPeekPointOfCurrentCover.3"
+      }
+    ]
+  }
+}
+--- export: UObject / SDEnvQueryGenerator_PeekPoints_2 ---
+{
+  "Type": "SDEnvQueryGenerator_PeekPoints",
+  "Name": "SDEnvQueryGenerator_PeekPoints_2",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'SDEnvQueryGenerator_PeekPoints'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindBestPeekPointOfCurrentCover'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindBestPeekPointOfCurrentCover.0"
+  },
+  "Properties": {
+    "VerNum": 1
+  }
+}
+--- export: UObject / WDEnvQueryTest_CoverTrace_0 ---
+{
+  "Type": "WDEnvQueryTest_CoverTrace",
+  "Name": "WDEnvQueryTest_CoverTrace_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDEnvQueryTest_CoverTrace'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindBestPeekPointOfCurrentCover'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindBestPeekPointOfCurrentCover.0"
+  },
+  "Properties": {
+    "TraceData": {
+      "VersionNum": 1,
+      "SerializedChannel": "ECollisionChannel::ECC_Visibility",
+      "TraceProfileName": "ECC_WorldStatic",
+      "TraceMode": "EEnvQueryTrace::GeometryByChannel",
+      "bOnlyBlockingHits": false,
+      "bCanTraceOnNavMesh": false,
+      "bCanDisableTrace": false
+    },
+    "Context": {
+      "ObjectName": "BlueprintGeneratedClass'EQS_Context_TargetEnemy_C'",
+      "ObjectPath": "/WDAIPvEAICore/EQS/Context/EQS_Context_TargetEnemy.0"
+    },
+    "TestPurpose": "EEnvTestPurpose::Filter",
+    "BoolValue": {
+      "DefaultValue": false
+    },
+    "VerNum": 2
+  }
+}

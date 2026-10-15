@@ -1,0 +1,63 @@
+--- export: UObject / AEB_PlayHotzoneMagnetActivate_C_0 ---
+{
+  "Type": "AEB_PlayHotzoneMagnetActivate_C",
+  "Name": "AEB_PlayHotzoneMagnetActivate_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayHotzoneMagnetActivate.AEB_PlayHotzoneMagnetActivate_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Gamemode_HotZoneMagnet_Activate'",
+    "ObjectPath": "/HotZoneMagnet/Audio/Events/AE_Gamemode_HotZoneMagnet_Activate.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayHotzoneMagnetActivate_C'Default__AEB_PlayHotzoneMagnetActivate_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayHotzoneMagnetActivate.0"
+  },
+  "Properties": {
+    "Tower Magnet": {
+      "ObjectName": "MetaSoundSource'MSS_Gamemode_HotZoneMagnet_Activate'",
+      "ObjectPath": "/Game/Audio/Gamemode/HotZoneMagnet/MSS/MSS_Gamemode_HotZoneMagnet_Activate.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Gamemode.HotZoneMagnet.Activate"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Gamemode_HotZoneMagnet_Activate ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Gamemode_HotZoneMagnet_Activate",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/HotZoneMagnet/Audio/Events/AE_Gamemode_HotZoneMagnet_Activate",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Gamemode.HotZoneMagnet.Activate"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "WDAudioEventBehaviorMoveSoundToGameplayCueLocation'AE_Gamemode_HotZoneMagnet_Activate:WDAudioEventBehaviorMoveSoundToGameplayCueLocation_0'",
+        "ObjectPath": "/HotZoneMagnet/Audio/Events/AE_Gamemode_HotZoneMagnet_Activate.2"
+      },
+      {
+        "ObjectName": "AEB_PlayHotzoneMagnetActivate_C'AE_Gamemode_HotZoneMagnet_Activate:AEB_PlayHotzoneMagnetActivate_C_0'",
+        "ObjectPath": "/HotZoneMagnet/Audio/Events/AE_Gamemode_HotZoneMagnet_Activate.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDAudioEventBehaviorMoveSoundToGameplayCueLocation_0 ---
+{
+  "Type": "WDAudioEventBehaviorMoveSoundToGameplayCueLocation",
+  "Name": "WDAudioEventBehaviorMoveSoundToGameplayCueLocation_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorMoveSoundToGameplayCueLocation'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Gamemode_HotZoneMagnet_Activate'",
+    "ObjectPath": "/HotZoneMagnet/Audio/Events/AE_Gamemode_HotZoneMagnet_Activate.1"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Gamemode.HotZoneMagnet.Activate"
+    }
+  }
+}

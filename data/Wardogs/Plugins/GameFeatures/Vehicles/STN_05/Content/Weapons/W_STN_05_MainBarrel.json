@@ -1,0 +1,45 @@
+--- export: UDataAsset / W_STN_05_MainBarrel ---
+{
+  "Type": "WDVehicleWeaponDataAsset",
+  "Name": "W_STN_05_MainBarrel",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeaponDataAsset'",
+  "Package": "/STN_05/Weapons/W_STN_05_MainBarrel",
+  "Properties": {
+    "WeaponTag": {
+      "TagName": "Id.Vehicle.Weapon.STN_05.MainBarrel"
+    },
+    "SkeletalMeshAsset": {
+      "AssetPathName": "/STN_05/Mesh/SK_STN_05.SK_STN_05",
+      "SubPathString": ""
+    },
+    "MuzzleSockets": [
+      "Muzzle"
+    ],
+    "PlayerAttachSocket": {
+      "SourceID": "Chassis",
+      "SocketName": "S_Player_Seat"
+    },
+    "GamepadRotationSensitivity": 15.0,
+    "GamepadRotationUpdateMax": {
+      "X": 120.0,
+      "Y": 120.0
+    },
+    "MouseRotationSensitivity": 5.0,
+    "MouseRotationUpdateMax": {
+      "X": 50.0,
+      "Y": 50.0
+    },
+    "KeyRotationSensitivity": 50.0,
+    "bApplyFovScale": false,
+    "WeaponRotationComponentData": {
+      "MinWeaponYawAngle": 90.0,
+      "MaxWeaponYawAngle": -90.0,
+      "bLimitWeaponPitch": true,
+      "RotationSpeed": 75.0,
+      "YawJointSocket": "Chassis",
+      "WeaponRotationGameplayCueThreshold": 5.52089E-40
+    },
+    "WeaponStatesCameraData": []
+  }
+}

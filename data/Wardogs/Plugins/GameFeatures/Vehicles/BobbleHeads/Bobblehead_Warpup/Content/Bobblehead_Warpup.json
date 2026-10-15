@@ -1,0 +1,78 @@
+--- export: UObject / GameFeatureAction_DataRegistrySource_1 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Bobblehead_Warpup'",
+    "ObjectPath": "/Bobblehead_Warpup/Bobblehead_Warpup.2"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "CosmeticData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Bobblehead_Warpup/Data/DT_Bobblehead_Warpup_Cosmetics.DT_Bobblehead_Warpup_Cosmetics",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_DataRegistrySource_2 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Bobblehead_Warpup'",
+    "ObjectPath": "/Bobblehead_Warpup/Bobblehead_Warpup.2"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "VehicleSlotParts",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Bobblehead_Warpup/Data/DT_Bobblehead_Warpup_SlotParts.DT_Bobblehead_Warpup_SlotParts",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / Bobblehead_Warpup ---
+{
+  "Type": "GameFeatureData",
+  "Name": "Bobblehead_Warpup",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/Bobblehead_Warpup/Bobblehead_Warpup",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'Bobblehead_Warpup:GameFeatureAction_DataRegistrySource_1'",
+        "ObjectPath": "/Bobblehead_Warpup/Bobblehead_Warpup.0"
+      },
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'Bobblehead_Warpup:GameFeatureAction_DataRegistrySource_2'",
+        "ObjectPath": "/Bobblehead_Warpup/Bobblehead_Warpup.1"
+      }
+    ]
+  }
+}

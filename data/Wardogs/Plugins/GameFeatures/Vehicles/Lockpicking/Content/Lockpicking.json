@@ -1,0 +1,100 @@
+--- export: UObject / GameFeatureAction_DataRegistrySource_1 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Lockpicking'",
+    "ObjectPath": "/Lockpicking/Lockpicking.1"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "UIInteractionContextV1",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Lockpicking/Data/Interaction/DT_InteractionContexts_Lockpicking.DT_InteractionContexts_Lockpicking",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "UIInteractionContextData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Lockpicking/Data/Interaction/DT_InteractionContextData_Lockpicking.DT_InteractionContextData_Lockpicking",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "SkillEffectsRegistry",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Lockpicking/Data/Skills/DT_Skills_Lockpicking.DT_Skills_Lockpicking",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / Lockpicking ---
+{
+  "Type": "GameFeatureData",
+  "Name": "Lockpicking",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/Lockpicking/Lockpicking",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "WDGameFeatureActions_AddWorldInteractableContextToActor'Lockpicking:WDGameFeatureActions_AddWorldInteractableContextToActor_0'",
+        "ObjectPath": "/Lockpicking/Lockpicking.2"
+      },
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'Lockpicking:GameFeatureAction_DataRegistrySource_1'",
+        "ObjectPath": "/Lockpicking/Lockpicking.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameFeatureActions_AddWorldInteractableContextToActor_0 ---
+{
+  "Type": "WDGameFeatureActions_AddWorldInteractableContextToActor",
+  "Name": "WDGameFeatureActions_AddWorldInteractableContextToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureActions_AddWorldInteractableContextToActor'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Lockpicking'",
+    "ObjectPath": "/Lockpicking/Lockpicking.1"
+  },
+  "Properties": {
+    "ContextsToAdd": [
+      {
+        "AssetPathName": "/Lockpicking/Data/Interaction/WIC_InteractionContext_Lockpicking.WIC_InteractionContext_Lockpicking_C",
+        "SubPathString": ""
+      }
+    ],
+    "ClassToAddContextsTo": {
+      "AssetPathName": "/Script/WDGame.WDWheeledVehiclePawn",
+      "SubPathString": ""
+    }
+  }
+}

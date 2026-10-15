@@ -1,0 +1,49 @@
+--- export: UDataTable / DT_PlacementDisplayTexts ---
+{
+  "Type": "DataTable",
+  "Name": "DT_PlacementDisplayTexts",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/UI/Features/HUD/Placement/Data/DT_PlacementDisplayTexts",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDPlacementUiTextRecord'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "UI.Interactions.PlacementWarnings.IsProne": {
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_PlacementWarnings.STRINGS_PlacementWarnings",
+        "Key": "PlacementWarning.IsProne",
+        "SourceString": "Can't Deploy While Prone",
+        "LocalizedString": "Can't Deploy While Prone"
+      },
+      "Tag": {
+        "TagName": "UI.Interactions.PlacementWarnings.IsProne"
+      }
+    },
+    "UI.Interactions.PlacementWarnings.PlacementBlocked": {
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_PlacementWarnings.STRINGS_PlacementWarnings",
+        "Key": "PlacementWarning.NoSpace",
+        "SourceString": "Not Enough Space To Deploy",
+        "LocalizedString": "Not Enough Space To Deploy"
+      },
+      "Tag": {
+        "TagName": "UI.Interactions.PlacementWarnings.PlacementBlocked"
+      }
+    },
+    "UI.Interactions.PlacementWarnings.InSafeZone": {
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_PlacementWarnings.STRINGS_PlacementWarnings",
+        "Key": "PlacementWarning.SafeZone",
+        "SourceString": "Can't Deploy In Safe Zone",
+        "LocalizedString": "Can't Deploy In Safe Zone"
+      },
+      "Tag": {
+        "TagName": "UI.Interactions.PlacementWarnings.InSafeZone"
+      }
+    }
+  }
+}

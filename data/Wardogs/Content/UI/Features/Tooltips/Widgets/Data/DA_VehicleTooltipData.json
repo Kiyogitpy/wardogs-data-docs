@@ -1,0 +1,54 @@
+--- export: UDataAsset / DA_VehicleTooltipData ---
+{
+  "Type": "WDUIVehicleTooltipData",
+  "Name": "DA_VehicleTooltipData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIVehicleTooltipData'",
+  "Package": "/Game/UI/Features/Tooltips/Widgets/Data/DA_VehicleTooltipData",
+  "Properties": {
+    "EntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIPassengersEntryViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/HUD/Passengers/Widgets/PassengersEntry/Data/DA_PassengerEntry.DA_PassengerEntry",
+        "SubPathString": ""
+      }
+    },
+    "VehicleAssistanceRequestTooltipText": [
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Acknowledge"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Map.STRINGS_Map",
+          "Key": "Tooltip.Vehicle.RequestPickup",
+          "SourceString": "Request Pickup",
+          "LocalizedString": "Request Pickup"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Disacknowledged"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Map.STRINGS_Map",
+          "Key": "Tooltip.Vehicle.CancelPickUp",
+          "SourceString": "Cancel Request ",
+          "LocalizedString": "Cancel Request "
+        }
+      }
+    ],
+    "ButtonPromptsBarViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIButtonPromptsBarViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/Data/ButtonPromptData/DA_Default_PromptBarData.DA_Default_PromptBarData",
+        "SubPathString": ""
+      }
+    }
+  }
+}

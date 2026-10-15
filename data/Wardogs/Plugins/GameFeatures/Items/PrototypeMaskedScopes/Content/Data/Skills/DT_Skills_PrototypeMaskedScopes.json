@@ -1,0 +1,67 @@
+--- export: UDataTable / DT_Skills_PrototypeMaskedScopes ---
+{
+  "Type": "DataTable",
+  "Name": "DT_Skills_PrototypeMaskedScopes",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/PrototypeMaskedScopes/Data/Skills/DT_Skills_PrototypeMaskedScopes",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDMetaSkillEffectsTaggedTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Meta.Role.Recon.ColdBlooded": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Character"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Spotting_CustomDepthStencilValue_C'",
+                  "ObjectPath": "/PrototypeMaskedScopes/Data/GameplayEffects/GE_Spotting_CustomDepthStencilValue.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.CustomDepthStencilValue"
+                    },
+                    "Value": {
+                      "Value": 2.0,
+                      "Curve": {
+                        "CurveTable": null,
+                        "RowName": "None"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "DefaultAttributes": [
+                      {
+                        "Key": {
+                          "TagName": "Attribute.Gameplay.CustomDepthStencilValue"
+                        },
+                        "Value": 1.0
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Recon.ColdBlooded"
+      }
+    }
+  }
+}

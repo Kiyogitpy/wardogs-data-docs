@@ -1,0 +1,40 @@
+--- export: UDataAsset / DA_VehicleWeaponAmmo ---
+{
+  "Type": "WDUIVehicleWeaponAmmoData",
+  "Name": "DA_VehicleWeaponAmmo",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIVehicleWeaponAmmoData'",
+  "Package": "/Game/UI/Features/HUD/Vehicles/Gunner/Weapons/Data/DA_VehicleWeaponAmmo",
+  "Properties": {
+    "FiringModeTextures": [
+      {
+        "Key": "EWDFireMode::Burst",
+        "Value": {
+          "AssetPathName": "/Game/UI/Features/HUD/EquippedItem/Textures/T_UI_Icon_FiringMode_Burst_32.T_UI_Icon_FiringMode_Burst_32",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": "EWDFireMode::Automatic",
+        "Value": {
+          "AssetPathName": "/Game/UI/Features/HUD/EquippedItem/Textures/T_UI_Icon_FiringMode_FullAuto_32.T_UI_Icon_FiringMode_FullAuto_32",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": "EWDFireMode::SemiAutomatic",
+        "Value": {
+          "AssetPathName": "/Game/UI/Features/HUD/EquippedItem/Textures/T_UI_Icon_FiringMode_SemiAuto_32.T_UI_Icon_FiringMode_SemiAuto_32",
+          "SubPathString": ""
+        }
+      }
+    ],
+    "LoadedAmmoUnreadyColor": {
+      "R": 0.03125,
+      "G": 0.03125,
+      "B": 0.03125,
+      "A": 1.0,
+      "Hex": "313131"
+    }
+  }
+}

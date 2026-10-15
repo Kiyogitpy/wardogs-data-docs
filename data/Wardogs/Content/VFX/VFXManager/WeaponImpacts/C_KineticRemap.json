@@ -1,0 +1,36 @@
+--- export: UCurveFloat / C_KineticRemap ---
+{
+  "Type": "CurveFloat",
+  "Name": "C_KineticRemap",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CurveFloat'",
+  "Package": "/Game/VFX/VFXManager/WeaponImpacts/C_KineticRemap",
+  "Properties": {
+    "FloatCurve": {
+      "Keys": [
+        {
+          "InterpMode": "RCIM_Cubic",
+          "TangentMode": "RCTM_User",
+          "TangentWeightMode": "RCTWM_WeightedNone",
+          "Time": 0.0,
+          "Value": 20.0,
+          "ArriveTangent": 0.39440468,
+          "ArriveTangentWeight": 0.0,
+          "LeaveTangent": 0.39440468,
+          "LeaveTangentWeight": 0.0
+        },
+        {
+          "InterpMode": "RCIM_Cubic",
+          "TangentMode": "RCTM_Auto",
+          "TangentWeightMode": "RCTWM_WeightedNone",
+          "Time": 2000.0,
+          "Value": 350.0,
+          "ArriveTangent": 0.0,
+          "ArriveTangentWeight": 0.0,
+          "LeaveTangent": 0.0,
+          "LeaveTangentWeight": 0.0
+        }
+      ]
+    }
+  }
+}

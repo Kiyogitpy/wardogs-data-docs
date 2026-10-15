@@ -1,0 +1,131 @@
+--- export: UObject / AEB_PlayProjectileImpactSound_C_0 ---
+{
+  "Type": "AEB_PlayProjectileImpactSound_C",
+  "Name": "AEB_PlayProjectileImpactSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayProjectileImpactSound.AEB_PlayProjectileImpactSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Projectile_Impact'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Projectile/AE_Weapon_Projectile_Impact.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayProjectileImpactSound_C'Default__AEB_PlayProjectileImpactSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayProjectileImpactSound.0"
+  },
+  "Properties": {
+    "ImpactLocation": {
+      "X": -273.4,
+      "Y": 166.6,
+      "Z": 2.2
+    },
+    "ImpactType": 0.5,
+    "Aggregated Source Tags": [
+      "Item.Caliber.9mm",
+      "Projectile.Impact.Final"
+    ],
+    "GCParams": {
+      "NormalizedMagnitude": 567.7913,
+      "RawMagnitude": 0.001,
+      "MatchedTagName": {
+        "TagName": "GameplayCue.Weapon.Impact"
+      },
+      "AggregatedSourceTags": [
+        "Item.Caliber.762mm",
+        "Projectile.Impact.Final",
+        "Id.Item.SKS"
+      ],
+      "Location": {
+        "X": 2890.0,
+        "Y": -1406.5981512069702,
+        "Z": 99.62624399025188
+      },
+      "Normal": {
+        "X": -1.0
+      }
+    },
+    "AdjustedAttenuationSettings": {
+      "bEnableLogFrequencyScaling": true,
+      "bEnableSubmixSends": true,
+      "bEnableSourceDataOverride": true,
+      "SpatializationAlgorithm": "ESoundSpatializationAlgorithm::SPATIALIZATION_HRTF",
+      "LPFRadiusMin": 0.0,
+      "LPFRadiusMax": 3000.0,
+      "LPFFrequencyAtMax": 10000.0,
+      "HPFFrequencyAtMax": 100.0,
+      "OcclusionLowPassFilterFrequency": 8000.0,
+      "OcclusionVolumeAttenuation": 0.8,
+      "SubmixSendSettings": [
+        {
+          "SendLevelControlMethod": "ESendLevelControlMethod::Linear",
+          "SoundSubmix": {
+            "ObjectName": "SoundSubmix'SBMIX_Reverb'",
+            "ObjectPath": "/Game/Audio/Submix/Master/SBMIX_Reverb.0"
+          },
+          "SendLevel": 0.0,
+          "DisableManualSendClamp": false,
+          "MinSendLevel": 0.2,
+          "MaxSendLevel": 0.6,
+          "MinSendDistance": 400.0,
+          "MaxSendDistance": 3000.0,
+          "CustomSendLevelCurve": {
+            "EditorCurveData": {
+              "Keys": [],
+              "DefaultValue": 3.4028235E+38,
+              "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+              "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+            },
+            "ExternalCurve": null
+          }
+        }
+      ],
+      "PluginSettings": {
+        "OcclusionPluginSettingsArray": [
+          {
+            "ObjectName": "WaveBreakerSoundingObjectSettings'SOS_Weapon_Foley'",
+            "ObjectPath": "/Game/Audio/Attenuations/Occlusion/Weapons/SOS_Weapon_Foley.0"
+          }
+        ]
+      },
+      "DistanceAlgorithm": "EAttenuationDistanceModel::Custom",
+      "FalloffMode": "ENaturalSoundFalloffMode::Silent",
+      "dBAttenuationAtMax": 0.0,
+      "AttenuationShapeExtents": {
+        "X": 4000.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "FalloffDistance": 5000.0,
+      "CustomAttenuationCurve": {
+        "ExternalCurve": {
+          "ObjectName": "CurveFloat'CC_HDR_ATT_SharedImpacts'",
+          "ObjectPath": "/Game/Audio/Attenuations/HDR/CC_HDR_ATT_SharedImpacts.0"
+        }
+      }
+    },
+    "DamageSize": 2,
+    "Normalised Impact Magnitude": 0.7097391172901774,
+    "ContextTag": {
+      "TagName": "Audio.Context.Projectile.Impact"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Weapon_Projectile_Impact ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_Projectile_Impact",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Weapon/Projectile/AE_Weapon_Projectile_Impact",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.Projectile.Impact"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_PlayProjectileImpactSound_C'AE_Weapon_Projectile_Impact:AEB_PlayProjectileImpactSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Projectile/AE_Weapon_Projectile_Impact.0"
+      }
+    ],
+    "_aaabhonahgpdbjealfaaa_$ED076F31940B5000$_$23$": 50.0
+  }
+}

@@ -1,0 +1,78 @@
+--- export: UPrimaryDataAsset / DA_AimAssistSettings_Melee ---
+{
+  "Type": "BHAimAssistSettingsData",
+  "Name": "DA_AimAssistSettings_Melee",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHAimAssistSettingsData'",
+  "Package": "/Game/Items/Weapons/DA_AimAssistSettings_Melee",
+  "Properties": {
+    "AssistInnerReticleWidth": {
+      "Value": 32.0
+    },
+    "AssistInnerReticleHeight": {
+      "Value": 28.0
+    },
+    "AssistOuterReticleWidth": {
+      "Value": 150.0
+    },
+    "AssistOuterReticleHeight": {
+      "Value": 128.0
+    },
+    "TargetingReticleWidth": {
+      "Value": 224.0
+    },
+    "TargetingReticleHeight": {
+      "Value": 192.0
+    },
+    "TargetRange": {
+      "Value": 800.0
+    },
+    "TargetWeightCurve": {
+      "ObjectName": "CurveFloat'C_AimAssistTargetWeightCurve'",
+      "ObjectPath": "/BHAimAssist/AimAssist/C_AimAssistTargetWeightCurve.0"
+    },
+    "bFOVReticleScaling": false,
+    "PullStrengthDistanceCurve": {
+      "ObjectName": "CurveFloat'C_AimAssistPullStrengthDistanceCurve_Melee_Hipfire'",
+      "ObjectPath": "/BHAimAssist/AimAssist/C_AimAssistPullStrengthDistanceCurve_Melee_Hipfire.0"
+    },
+    "PullOuterStrengthHip": {
+      "Value": 3.0
+    },
+    "PullInnerStrengthAds": {
+      "Value": 1.5
+    },
+    "PullOuterStrengthAds": {
+      "Value": 0.0
+    },
+    "SlowInnerStrengthHip": {
+      "Value": 0.0
+    },
+    "PullMaxRotationRate": {
+      "Value": 90.0
+    },
+    "SlowStrengthDistanceCurve": {
+      "ObjectName": "CurveFloat'C_AimAssistSlowStrengthDistanceCurve_SMG_Hipfire'",
+      "ObjectPath": "/BHAimAssist/AimAssist/C_AimAssistSlowStrengthDistanceCurve_SMG_Hipfire.0"
+    },
+    "SlowOuterStrengthHip": {
+      "Value": 0.36
+    },
+    "SlowInnerStrengthAds": {
+      "Value": 0.19
+    },
+    "SlowOuterStrengthAds": {
+      "Value": 0.0
+    },
+    "PullInnerStrengthHip": {
+      "Value": 0.0
+    },
+    "SensitivityScaleADS": {
+      "Value": 1.0
+    },
+    "MaxNumberOfTargets": 8,
+    "ReticleDepth": 1600.0,
+    "PullModeADS": "EBHAimAssistPullMode::Off",
+    "MinAssistWeight": 0.125
+  }
+}

@@ -1,0 +1,212 @@
+--- export: UObject / AEB_SetBlendedFootstepSurfaceTrigger_C_0 ---
+{
+  "Type": "AEB_SetBlendedFootstepSurfaceTrigger_C",
+  "Name": "AEB_SetBlendedFootstepSurfaceTrigger_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetBlendedFootstepSurfaceTrigger.AEB_SetBlendedFootstepSurfaceTrigger_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Prone'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Prone/AE_Prone.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetBlendedFootstepSurfaceTrigger_C'Default__AEB_SetBlendedFootstepSurfaceTrigger_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetBlendedFootstepSurfaceTrigger.0"
+  },
+  "Properties": {
+    "AudioData": {
+      "ObjectName": "WDAudioData'DA_Surface_Footstep_Prone_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Movement/Footsteps/DA/DA_Surface_Footstep_Prone_Audio.0"
+    },
+    "SurfacePropertiesMap": [
+      {
+        "Key": "EWDAudioSurface::Flesh",
+        "Value": {
+          "SurfaceTypeTag_3_DE440E674169AD29743E0884827F546A": {
+            "TagName": "Audio.Asset.Surface.Concrete"
+          },
+          "Gain_6_D4662255444A88DCF5FC8C9F0602210B": 1.0
+        }
+      },
+      {
+        "Key": "EWDAudioSurface::Leaves",
+        "Value": {
+          "SurfaceTypeTag_3_DE440E674169AD29743E0884827F546A": {
+            "TagName": "Audio.Asset.Surface.Grass"
+          },
+          "Gain_6_D4662255444A88DCF5FC8C9F0602210B": 1.0
+        }
+      },
+      {
+        "Key": "EWDAudioSurface::Foliage",
+        "Value": {
+          "SurfaceTypeTag_3_DE440E674169AD29743E0884827F546A": {
+            "TagName": "Audio.Asset.Surface.Grass"
+          },
+          "Gain_6_D4662255444A88DCF5FC8C9F0602210B": 1.0
+        }
+      },
+      {
+        "Key": "EWDAudioSurface::Carpet",
+        "Value": {
+          "SurfaceTypeTag_3_DE440E674169AD29743E0884827F546A": {
+            "TagName": "Audio.Asset.Surface.Concrete"
+          },
+          "Gain_6_D4662255444A88DCF5FC8C9F0602210B": 1.0
+        }
+      },
+      {
+        "Key": "EWDAudioSurface::Fabric",
+        "Value": {
+          "SurfaceTypeTag_3_DE440E674169AD29743E0884827F546A": {
+            "TagName": "Audio.Asset.Surface.Concrete"
+          },
+          "Gain_6_D4662255444A88DCF5FC8C9F0602210B": 1.0
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / AEB_SetSourceTransformParameters_C_0 ---
+{
+  "Type": "AEB_SetSourceTransformParameters_C",
+  "Name": "AEB_SetSourceTransformParameters_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetSourceTransformParameters.AEB_SetSourceTransformParameters_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Prone'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Prone/AE_Prone.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetSourceTransformParameters_C'Default__AEB_SetSourceTransformParameters_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetSourceTransformParameters.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Footstep"
+    }
+  }
+}
+--- export: UObject / AEB_StorePreviousFootstepSurface_C_0 ---
+{
+  "Type": "AEB_StoreFootstepData_C",
+  "Name": "AEB_StorePreviousFootstepSurface_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_StoreFootstepData.AEB_StoreFootstepData_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Prone'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Prone/AE_Prone.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_StoreFootstepData_C'Default__AEB_StoreFootstepData_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_StoreFootstepData.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Footstep"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Prone ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Prone",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Movement/Prone/AE_Prone",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.Prone"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_StoreFootstepData_C'AE_Prone:AEB_StorePreviousFootstepSurface_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Prone/AE_Prone.2"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Prone:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Prone/AE_Prone.4"
+      },
+      {
+        "ObjectName": "AEB_SetSourceTransformParameters_C'AE_Prone:AEB_SetSourceTransformParameters_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Prone/AE_Prone.1"
+      },
+      {
+        "ObjectName": "AEB_SetBlendedFootstepSurfaceTrigger_C'AE_Prone:AEB_SetBlendedFootstepSurfaceTrigger_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Prone/AE_Prone.0"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware'AE_Prone:WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Prone/AE_Prone.6"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Prone:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Prone/AE_Prone.5"
+      }
+    ],
+    "_aaabhonahgpdbjealfaaa_$ED076F31940B5000$_$23$": 35.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Prone'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Prone/AE_Prone.3"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Footstep"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Prone'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Prone/AE_Prone.3"
+  },
+  "Properties": {
+    "ParameterName": "Step",
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Footstep"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0 ---
+{
+  "Type": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware",
+  "Name": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Prone'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Prone/AE_Prone.3"
+  },
+  "Properties": {
+    "FirstPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Prone.1p"
+    },
+    "AlliedThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Prone.Ally"
+    },
+    "HostileThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Prone.Enemy"
+    },
+    "PlayEvenIfInaudible": false,
+    "SoundAssetData": {
+      "ObjectName": "WDAudioData'DA_Prone_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Movement/Prone/DA/DA_Prone_Audio.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Footstep"
+    },
+    "bStatic": true
+  }
+}

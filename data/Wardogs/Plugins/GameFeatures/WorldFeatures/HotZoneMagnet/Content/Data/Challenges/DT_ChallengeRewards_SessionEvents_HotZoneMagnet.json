@@ -1,0 +1,924 @@
+--- export: UDataTable / DT_ChallengeRewards_SessionEvents_HotZoneMagnet ---
+{
+  "Type": "DataTable",
+  "Name": "DT_ChallengeRewards_SessionEvents_HotZoneMagnet",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/HotZoneMagnet/Data/Challenges/DT_ChallengeRewards_SessionEvents_HotZoneMagnet",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDChallengeRewardDefinition'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Challenges.Rewards.HotZoneMagnet.TowerCaptured": {
+      "Resources": [
+        {
+          "Key": {
+            "TagName": "Attribute.Meta.Currency.Cash"
+          },
+          "Value": {
+            "DefaultExpression": {
+              "ExpressionString": "(1 - (clamp(LastVictimCount, 0, LastVictimCountMax) * LastVictimReductionModifier)) * (BaseReward * HostileModifier)",
+              "ExpressionTableRow": {
+                "DataTable": null,
+                "RowName": "None"
+              },
+              "ExpressionTableColumn": "None",
+              "bSourceExpressionExternally": false,
+              "CompiledExpression": {
+                "Instructions": [
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushLiteral",
+                    "ValueIndex": 0
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 0
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushLiteral",
+                    "ValueIndex": 1
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 1
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::FuncClamp",
+                    "ValueIndex": -1
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 2
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::Mul",
+                    "ValueIndex": -1
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::Sub",
+                    "ValueIndex": -1
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 3
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 4
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::Mul",
+                    "ValueIndex": -1
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::Mul",
+                    "ValueIndex": -1
+                  }
+                ],
+                "InstructionMetadata": [
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": "clamp(LastVictimCount, 0.0, LastVictimCountMax)"
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": "(clamp(LastVictimCount, 0.0, LastVictimCountMax) * LastVictimReductionModifier)"
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": "(1.0 - (clamp(LastVictimCount, 0.0, LastVictimCountMax) * LastVictimReductionModifier))"
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": "(BaseReward * HostileModifier)"
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": "((1.0 - (clamp(LastVictimCount, 0.0, LastVictimCountMax) * LastVictimReductionModifier)) * (BaseReward * HostileModifier))"
+                  }
+                ],
+                "Literals": [
+                  1.0,
+                  0.0
+                ],
+                "Variables": [
+                  "LastVictimCount",
+                  "LastVictimCountMax",
+                  "LastVictimReductionModifier",
+                  "BaseReward",
+                  "HostileModifier"
+                ],
+                "VariableIndexMap": [
+                  {
+                    "Key": "LastVictimCount",
+                    "Value": 0
+                  },
+                  {
+                    "Key": "LastVictimCountMax",
+                    "Value": 1
+                  },
+                  {
+                    "Key": "LastVictimReductionModifier",
+                    "Value": 2
+                  },
+                  {
+                    "Key": "BaseReward",
+                    "Value": 3
+                  },
+                  {
+                    "Key": "HostileModifier",
+                    "Value": 4
+                  }
+                ]
+              }
+            },
+            "ConditionalExpressions": [],
+            "Selectors": [
+              {
+                "Key": "BaseReward",
+                "Value": {
+                  "DefaultOption": "DefaultReward",
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.HotZoneMagnet.Instigator"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          2,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL( Challenges.Context.HotZoneMagnet.Instigator )"
+                      },
+                      "Variable": "InstigatorReward"
+                    }
+                  ]
+                }
+              },
+              {
+                "Key": "HostileModifier",
+                "Value": {
+                  "DefaultOption": "DefaultFactor",
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.HotZoneMagnet.Hostile"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          2,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL( Challenges.Context.HotZoneMagnet.Hostile )"
+                      },
+                      "Variable": "HostileFactor"
+                    }
+                  ]
+                }
+              },
+              {
+                "Key": "LastVictimCount",
+                "Value": {
+                  "DefaultOption": "LastVictimCount",
+                  "Options": []
+                }
+              },
+              {
+                "Key": "LastVictimCountMax",
+                "Value": {
+                  "DefaultOption": "LastVictimCountMax",
+                  "Options": []
+                }
+              },
+              {
+                "Key": "LastVictimReductionModifier",
+                "Value": {
+                  "DefaultOption": "LastVictimReductionMultiplier",
+                  "Options": []
+                }
+              }
+            ],
+            "Variables": [
+              {
+                "Key": "DefaultReward",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 250.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "InstigatorReward",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 250.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "DefaultFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 1.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "HostileFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 3.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "LastVictimCount",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::GameValue",
+                  "LiteralValue": 0.0,
+                  "GameValue": "LastVictimCount",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "LastVictimCountMax",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 4.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "LastVictimReductionMultiplier",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.25,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Attribute.Meta.XP.Role"
+          },
+          "Value": {
+            "DefaultExpression": {
+              "ExpressionString": "(1 - (clamp(LastVictimCount, 0, LastVictimCountMax) * LastVictimReductionModifier)) * (BaseReward)",
+              "ExpressionTableRow": {
+                "DataTable": null,
+                "RowName": "None"
+              },
+              "ExpressionTableColumn": "None",
+              "bSourceExpressionExternally": false,
+              "CompiledExpression": {
+                "Instructions": [
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushLiteral",
+                    "ValueIndex": 0
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 0
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushLiteral",
+                    "ValueIndex": 1
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 1
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::FuncClamp",
+                    "ValueIndex": -1
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 2
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::Mul",
+                    "ValueIndex": -1
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::Sub",
+                    "ValueIndex": -1
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 3
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::Mul",
+                    "ValueIndex": -1
+                  }
+                ],
+                "InstructionMetadata": [
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": "clamp(LastVictimCount, 0.0, LastVictimCountMax)"
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": "(clamp(LastVictimCount, 0.0, LastVictimCountMax) * LastVictimReductionModifier)"
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": "(1.0 - (clamp(LastVictimCount, 0.0, LastVictimCountMax) * LastVictimReductionModifier))"
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": "((1.0 - (clamp(LastVictimCount, 0.0, LastVictimCountMax) * LastVictimReductionModifier)) * BaseReward)"
+                  }
+                ],
+                "Literals": [
+                  1.0,
+                  0.0
+                ],
+                "Variables": [
+                  "LastVictimCount",
+                  "LastVictimCountMax",
+                  "LastVictimReductionModifier",
+                  "BaseReward"
+                ],
+                "VariableIndexMap": [
+                  {
+                    "Key": "LastVictimCount",
+                    "Value": 0
+                  },
+                  {
+                    "Key": "LastVictimCountMax",
+                    "Value": 1
+                  },
+                  {
+                    "Key": "LastVictimReductionModifier",
+                    "Value": 2
+                  },
+                  {
+                    "Key": "BaseReward",
+                    "Value": 3
+                  }
+                ]
+              }
+            },
+            "ConditionalExpressions": [],
+            "Selectors": [
+              {
+                "Key": "BaseReward",
+                "Value": {
+                  "DefaultOption": "DefaultReward",
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.HotZoneMagnet.Hostile"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          2,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL( Challenges.Context.HotZoneMagnet.Hostile )"
+                      },
+                      "Variable": "HostileReward"
+                    }
+                  ]
+                }
+              },
+              {
+                "Key": "LastVictimCount",
+                "Value": {
+                  "DefaultOption": "LastVictimCount",
+                  "Options": []
+                }
+              },
+              {
+                "Key": "LastVictimCountMax",
+                "Value": {
+                  "DefaultOption": "LastVictimCountMax",
+                  "Options": []
+                }
+              },
+              {
+                "Key": "LastVictimReductionModifier",
+                "Value": {
+                  "DefaultOption": "LastVictimReductionMultiplier",
+                  "Options": []
+                }
+              }
+            ],
+            "Variables": [
+              {
+                "Key": "DefaultReward",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 100.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "HostileReward",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 250.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "LastVictimCount",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::GameValue",
+                  "LiteralValue": 0.0,
+                  "GameValue": "LastVictimCount",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "LastVictimCountMax",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 4.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "LastVictimReductionMultiplier",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.25,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Challenges.Rewards.HotZoneMagnet.TowerCaptured"
+      }
+    },
+    "Challenges.Rewards.HotZoneMagnet.MagnetActivated": {
+      "Resources": [
+        {
+          "Key": {
+            "TagName": "Attribute.Meta.Currency.Cash"
+          },
+          "Value": {
+            "DefaultExpression": {
+              "ExpressionString": "(BaseReward)",
+              "ExpressionTableRow": {
+                "DataTable": null,
+                "RowName": "None"
+              },
+              "ExpressionTableColumn": "None",
+              "bSourceExpressionExternally": false,
+              "CompiledExpression": {
+                "Instructions": [
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 0
+                  }
+                ],
+                "InstructionMetadata": [
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  }
+                ],
+                "Literals": [],
+                "Variables": [
+                  "BaseReward"
+                ],
+                "VariableIndexMap": [
+                  {
+                    "Key": "BaseReward",
+                    "Value": 0
+                  }
+                ]
+              }
+            },
+            "ConditionalExpressions": [],
+            "Selectors": [
+              {
+                "Key": "BaseReward",
+                "Value": {
+                  "DefaultOption": "DefaultReward",
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.HotZoneMagnet.Instigator"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          2,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL( Challenges.Context.HotZoneMagnet.Instigator )"
+                      },
+                      "Variable": "InstigatorReward"
+                    }
+                  ]
+                }
+              }
+            ],
+            "Variables": [
+              {
+                "Key": "DefaultReward",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 2500.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "InstigatorReward",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 2500.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Attribute.Meta.XP.Role"
+          },
+          "Value": {
+            "DefaultExpression": {
+              "ExpressionString": "(BaseReward)",
+              "ExpressionTableRow": {
+                "DataTable": null,
+                "RowName": "None"
+              },
+              "ExpressionTableColumn": "None",
+              "bSourceExpressionExternally": false,
+              "CompiledExpression": {
+                "Instructions": [
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 0
+                  }
+                ],
+                "InstructionMetadata": [
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  }
+                ],
+                "Literals": [],
+                "Variables": [
+                  "BaseReward"
+                ],
+                "VariableIndexMap": [
+                  {
+                    "Key": "BaseReward",
+                    "Value": 0
+                  }
+                ]
+              }
+            },
+            "ConditionalExpressions": [],
+            "Selectors": [
+              {
+                "Key": "BaseReward",
+                "Value": {
+                  "DefaultOption": "DefaultReward",
+                  "Options": []
+                }
+              }
+            ],
+            "Variables": [
+              {
+                "Key": "DefaultReward",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 500.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Challenges.Rewards.HotZoneMagnet.MagnetActivated"
+      }
+    },
+    "Challenges.Rewards.HotZoneMagnet.MagnetDeactivated": {
+      "Resources": [
+        {
+          "Key": {
+            "TagName": "Attribute.Meta.Currency.Cash"
+          },
+          "Value": {
+            "DefaultExpression": {
+              "ExpressionString": "(BaseReward)",
+              "ExpressionTableRow": {
+                "DataTable": null,
+                "RowName": "None"
+              },
+              "ExpressionTableColumn": "None",
+              "bSourceExpressionExternally": false,
+              "CompiledExpression": {
+                "Instructions": [
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 0
+                  }
+                ],
+                "InstructionMetadata": [
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  }
+                ],
+                "Literals": [],
+                "Variables": [
+                  "BaseReward"
+                ],
+                "VariableIndexMap": [
+                  {
+                    "Key": "BaseReward",
+                    "Value": 0
+                  }
+                ]
+              }
+            },
+            "ConditionalExpressions": [],
+            "Selectors": [
+              {
+                "Key": "BaseReward",
+                "Value": {
+                  "DefaultOption": "DefaultReward",
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.HotZoneMagnet.Instigator"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          2,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL( Challenges.Context.HotZoneMagnet.Instigator )"
+                      },
+                      "Variable": "InstigatorReward"
+                    }
+                  ]
+                }
+              }
+            ],
+            "Variables": [
+              {
+                "Key": "DefaultReward",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 2500.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "InstigatorReward",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 2500.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Challenges.Rewards.HotZoneMagnet.MagnetDeactivated"
+      }
+    }
+  }
+}

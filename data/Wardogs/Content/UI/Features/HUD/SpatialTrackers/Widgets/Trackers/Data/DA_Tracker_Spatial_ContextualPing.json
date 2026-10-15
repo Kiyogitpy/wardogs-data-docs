@@ -1,0 +1,257 @@
+--- export: UDataAsset / DA_Tracker_Spatial_ContextualPing ---
+{
+  "Type": "WDUIContextualPingSpatialTrackerData",
+  "Name": "DA_Tracker_Spatial_ContextualPing",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIContextualPingSpatialTrackerData'",
+  "Package": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_ContextualPing",
+  "Properties": {
+    "ContextualPingTextures": [
+      {
+        "Key": {
+          "TagName": "Communication.Ping.Type.Context.Squad.WatchHere"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Features/PingWheel/Widgets/Action/Textures/T_UI_Icon_PingWheel_WatchHere_64x64.T_UI_Icon_PingWheel_WatchHere_64x64",
+            "SubPathString": ""
+          },
+          "IconHeightScale": 20.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.Ping.Type.Context.Orders.Attack"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Features/PingWheel/Widgets/Action/Textures/T_UI_Icon_PingWheel_Attack_64x64.T_UI_Icon_PingWheel_Attack_64x64",
+            "SubPathString": ""
+          },
+          "IconHeightScale": 20.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.Ping.Type.Context.Orders.Defend"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Features/PingWheel/Widgets/Action/Textures/T_UI_Icon_PingWheel_Defend_64x64.T_UI_Icon_PingWheel_Defend_64x64",
+            "SubPathString": ""
+          },
+          "IconHeightScale": 20.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.Ping.Type.Context.Orders.FallBack"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Features/PingWheel/Widgets/Action/Textures/T_UI_Icon_PingWheel_FallBack_64x64.T_UI_Icon_PingWheel_FallBack_64x64",
+            "SubPathString": ""
+          },
+          "IconHeightScale": 20.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.Ping.Type.Context.Orders.Fortify"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Features/PingWheel/Widgets/Action/Textures/T_UI_Icon_PingWheel_fortify.T_UI_Icon_PingWheel_fortify",
+            "SubPathString": ""
+          },
+          "IconHeightScale": 20.0
+        }
+      }
+    ],
+    "PingTypeColors": [
+      {
+        "Key": {
+          "TagName": "Communication.Ping.Type.Context.Squad.WatchHere"
+        },
+        "Value": {
+          "R": 0.846873,
+          "G": 0.366253,
+          "B": 0.006995,
+          "A": 1.0,
+          "Hex": "EDA314"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.Ping.Type.Context.Orders.Attack"
+        },
+        "Value": {
+          "R": 0.846873,
+          "G": 0.366253,
+          "B": 0.006995,
+          "A": 1.0,
+          "Hex": "EDA314"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.Ping.Type.Context.Orders.Defend"
+        },
+        "Value": {
+          "R": 0.846873,
+          "G": 0.366253,
+          "B": 0.006995,
+          "A": 1.0,
+          "Hex": "EDA314"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.Ping.Type.Context.Orders.FallBack"
+        },
+        "Value": {
+          "R": 0.846873,
+          "G": 0.366253,
+          "B": 0.006995,
+          "A": 1.0,
+          "Hex": "EDA314"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.Ping.Type.Context.Orders.Fortify"
+        },
+        "Value": {
+          "R": 0.846873,
+          "G": 0.366253,
+          "B": 0.006995,
+          "A": 1.0,
+          "Hex": "EDA314"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.Ping.Type.Context.Orders.Regroup"
+        },
+        "Value": {
+          "R": 0.846873,
+          "G": 0.366253,
+          "B": 0.006995,
+          "A": 1.0,
+          "Hex": "EDA314"
+        }
+      }
+    ],
+    "StalkMaxScreenDistance": {
+      "X": 0.1,
+      "Y": 0.1
+    },
+    "StalkMaxYSize": 300.0,
+    "StalkSizeChangeRate": 1500.0,
+    "PingScaleMaxDistance": 10.0,
+    "RuleSets": [
+      {
+        "Key": "EWDUISpatialRulesetType::Default",
+        "Value": {
+          "Priority": 0,
+          "OptionalRules": [
+            {
+              "ObjectName": "WDUIScreenClampingRules'DA_Tracker_Spatial_ContextualPing:WDUIScreenClampingRules_0'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_ContextualPing.1"
+            }
+          ]
+        }
+      },
+      {
+        "Key": "EWDUISpatialRulesetType::LocalUser_InADS",
+        "Value": {
+          "Priority": 1,
+          "OptionalRules": [
+            {
+              "ObjectName": "WDUIScreenDistanceOpacityRules'DA_Tracker_Spatial_ContextualPing:WDUIScreenDistanceOpacityRules_0'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_ContextualPing.2"
+            }
+          ]
+        }
+      },
+      {
+        "Key": "EWDUISpatialRulesetType::Delayed_First",
+        "Value": {
+          "Priority": 1,
+          "OptionalRules": [
+            {
+              "ObjectName": "WDUIWorldDistanceOpacityRules'DA_Tracker_Spatial_ContextualPing:WDUIWorldDistanceOpacityRules_0'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_ContextualPing.3"
+            }
+          ]
+        }
+      }
+    ],
+    "ZOrder": 3,
+    "DefaultSize": {
+      "X": 24.0,
+      "Y": 24.0
+    }
+  }
+}
+--- export: UObject / WDUIScreenClampingRules_0 ---
+{
+  "Type": "WDUIScreenClampingRules",
+  "Name": "WDUIScreenClampingRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIScreenClampingRules'",
+  "Outer": {
+    "ObjectName": "WDUIContextualPingSpatialTrackerData'DA_Tracker_Spatial_ContextualPing'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_ContextualPing.0"
+  },
+  "Properties": {
+    "ClampingAsPixels": {
+      "X": 24.0,
+      "Y": 24.0
+    }
+  }
+}
+--- export: UObject / WDUIScreenDistanceOpacityRules_0 ---
+{
+  "Type": "WDUIScreenDistanceOpacityRules",
+  "Name": "WDUIScreenDistanceOpacityRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIScreenDistanceOpacityRules'",
+  "Outer": {
+    "ObjectName": "WDUIContextualPingSpatialTrackerData'DA_Tracker_Spatial_ContextualPing'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_ContextualPing.0"
+  },
+  "Properties": {
+    "MaximumVisibleDistance": {
+      "X": 0.075,
+      "Y": 0.5
+    },
+    "FalloffRangeMaximum": {
+      "X": 0.05,
+      "Y": 0.05
+    },
+    "OpacityRange": {
+      "Min": 0.4
+    },
+    "bInvertOpacity": true,
+    "Targets": 7
+  }
+}
+--- export: UObject / WDUIWorldDistanceOpacityRules_0 ---
+{
+  "Type": "WDUIWorldDistanceOpacityRules",
+  "Name": "WDUIWorldDistanceOpacityRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIWorldDistanceOpacityRules'",
+  "Outer": {
+    "ObjectName": "WDUIContextualPingSpatialTrackerData'DA_Tracker_Spatial_ContextualPing'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_ContextualPing.0"
+  },
+  "Properties": {
+    "MaximumVisibleDistance": 1000.0,
+    "FalloffRangeMaximum": 900.0,
+    "MaxOpacity": 0.7,
+    "SquaredFalloffRangeMaximum": 9.9E+09,
+    "SquaredMaximumVisibleDistance": 1E+10
+  }
+}

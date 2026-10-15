@@ -1,0 +1,226 @@
+--- export: UDataTable / DT_MaterialTrackerSettingsData ---
+{
+  "Type": "DataTable",
+  "Name": "DT_MaterialTrackerSettingsData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/UI/Data/Trackers/DT_MaterialTrackerSettingsData",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUIMaterialTrackerDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Trackers.Type.Character": {
+      "bDisableTracker": false,
+      "TrackerType": {
+        "AssetPathName": "/Script/WDGame.WDUIMaterialTracker_Character",
+        "SubPathString": ""
+      },
+      "TrackerData": {
+        "ObjectName": "WDUIMaterialTrackerDataAsset'DA_MaterialTrackerData_Character'",
+        "ObjectPath": "/Game/UI/Features/Map/Map_Optimisation/Data/DA_MaterialTrackerData_Character.0"
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.Character"
+      }
+    },
+    "Trackers.Type.Vehicle": {
+      "bDisableTracker": false,
+      "TrackerType": {
+        "AssetPathName": "/Script/WDGame.WDUIMaterialTracker_Vehicle",
+        "SubPathString": ""
+      },
+      "TrackerData": {
+        "ObjectName": "WDUIMaterialTrackerDataAsset'DA_MaterialTrackerData_Vehicle'",
+        "ObjectPath": "/Game/UI/Features/Map/Map_Optimisation/Data/DA_MaterialTrackerData_Vehicle.0"
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.Vehicle"
+      }
+    },
+    "Trackers.Type.Vendor": {
+      "bDisableTracker": false,
+      "TrackerType": {
+        "AssetPathName": "/Script/WDGame.WDUIMaterialTracker_Vendor",
+        "SubPathString": ""
+      },
+      "TrackerData": {
+        "ObjectName": "WDUIMaterialTrackerDataAsset'DA_MaterialTrackerData_Vendor'",
+        "ObjectPath": "/Game/UI/Features/Map/Map_Optimisation/Data/DA_MaterialTrackerData_Vendor.0"
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.Vendor"
+      }
+    },
+    "Trackers.Type.DeploymentBoard": {
+      "bDisableTracker": false,
+      "TrackerType": {
+        "AssetPathName": "/Script/WDGame.WDUIMaterialTracker_DeploymentBoard",
+        "SubPathString": ""
+      },
+      "TrackerData": {
+        "ObjectName": "WDUIMaterialTrackerDataAsset'DA_MaterialTrackerData_DeploymentBoard'",
+        "ObjectPath": "/Game/UI/Features/Map/Map_Optimisation/Data/DA_MaterialTrackerData_DeploymentBoard.0"
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.DeploymentBoard"
+      }
+    },
+    "Trackers.Type.RefuelStation": {
+      "bDisableTracker": false,
+      "TrackerType": {
+        "AssetPathName": "/Script/WDGame.WDUIMaterialTracker_PersistentData",
+        "SubPathString": ""
+      },
+      "TrackerData": {
+        "ObjectName": "WDUIMaterialTrackerDataAsset'DA_MaterialTrackerData_FuelStation'",
+        "ObjectPath": "/Game/UI/Features/Map/Map_Optimisation/Data/DA_MaterialTrackerData_FuelStation.0"
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.RefuelStation"
+      }
+    },
+    "Trackers.Type.Corpse": {
+      "bDisableTracker": false,
+      "TrackerType": {
+        "AssetPathName": "/Script/WDGame.WDUIMaterialTracker_StationaryPersistentData",
+        "SubPathString": ""
+      },
+      "TrackerData": {
+        "ObjectName": "WDUIMaterialTrackerDataAsset'DA_MaterialTrackerData_Corpse'",
+        "ObjectPath": "/Game/UI/Features/Map/Map_Optimisation/Data/DA_MaterialTrackerData_Corpse.0"
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.Corpse"
+      }
+    },
+    "Trackers.Type.Ping": {
+      "bDisableTracker": false,
+      "TrackerType": {
+        "AssetPathName": "/Script/WDGame.WDUIMaterialTracker_Ping",
+        "SubPathString": ""
+      },
+      "TrackerData": {
+        "ObjectName": "WDUIMaterialTrackerDataAsset'DA_MaterialTrackerData_Ping'",
+        "ObjectPath": "/Game/UI/Features/Map/Map_Optimisation/Data/DA_MaterialTrackerData_Ping.0"
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.Ping"
+      }
+    },
+    "Trackers.Type.SupplyCrate": {
+      "bDisableTracker": false,
+      "TrackerType": {
+        "AssetPathName": "/Script/WDGame.WDUIMaterialTracker_SupplyCrate",
+        "SubPathString": ""
+      },
+      "TrackerData": {
+        "ObjectName": "WDUIMaterialTrackerDataAsset'DA_MaterialTrackerData_SupplyCrate'",
+        "ObjectPath": "/Game/UI/Features/Map/Map_Optimisation/Data/DA_MaterialTrackerData_SupplyCrate.0"
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.SupplyCrate"
+      }
+    },
+    "Trackers.Type.AssistanceRequest": {
+      "bDisableTracker": false,
+      "TrackerType": {
+        "AssetPathName": "/Script/WDGame.WDUIMaterialTracker_Ping",
+        "SubPathString": ""
+      },
+      "TrackerData": {
+        "ObjectName": "WDUIMaterialTrackerDataAsset'DA_MaterialTrackerData_AssistanceRequest'",
+        "ObjectPath": "/Game/UI/Features/Map/Map_Optimisation/Data/DA_MaterialTrackerData_AssistanceRequest.0"
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.AssistanceRequest"
+      }
+    },
+    "Trackers.Type.Ping.Contextual": {
+      "bDisableTracker": false,
+      "TrackerType": {
+        "AssetPathName": "/Script/WDGame.WDUIMaterialTracker_Ping",
+        "SubPathString": ""
+      },
+      "TrackerData": {
+        "ObjectName": "WDUIMaterialTrackerDataAsset'DA_MaterialTrackerData_Ping_Contextual'",
+        "ObjectPath": "/Game/UI/Features/Map/Map_Optimisation/Data/DA_MaterialTrackerData_Ping_Contextual.0"
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.Ping.Contextual"
+      }
+    },
+    "Trackers.Type.Ping.Contextual.MarkCoordinates": {
+      "bDisableTracker": false,
+      "TrackerType": {
+        "AssetPathName": "/Script/WDGame.WDUIMaterialTracker_PingMarker",
+        "SubPathString": ""
+      },
+      "TrackerData": {
+        "ObjectName": "WDUIMaterialTrackerDataAsset'DA_MaterialTrackerData_Ping_MarkCoordinates'",
+        "ObjectPath": "/Game/UI/Features/Map/Map_Optimisation/Data/DA_MaterialTrackerData_Ping_MarkCoordinates.0"
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.Ping.Contextual.MarkCoordinates"
+      }
+    },
+    "Trackers.Type.HitMarker": {
+      "bDisableTracker": false,
+      "TrackerType": {
+        "AssetPathName": "/Script/WDGame.WDUIMaterialTracker_PingMarker",
+        "SubPathString": ""
+      },
+      "TrackerData": {
+        "ObjectName": "WDUIMaterialTrackerDataAsset'DA_MaterialTrackerData_HitMarker'",
+        "ObjectPath": "/Game/UI/Features/Map/Map_Optimisation/Data/DA_MaterialTrackerData_HitMarker.0"
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.HitMarker"
+      }
+    },
+    "Trackers.Type.Deployable": {
+      "bDisableTracker": true,
+      "TrackerType": {
+        "AssetPathName": "/Script/WDGame.WDUIMaterialTracker_Item",
+        "SubPathString": ""
+      },
+      "TrackerData": {
+        "ObjectName": "WDUIMaterialTrackerDataAsset'DA_MaterialTrackerData_Deployable'",
+        "ObjectPath": "/Game/UI/Features/Map/Map_Optimisation/Data/DA_MaterialTrackerData_Deployable.0"
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.Deployable"
+      }
+    },
+    "Trackers.Type.SupplyPallet": {
+      "bDisableTracker": false,
+      "TrackerType": {
+        "AssetPathName": "/Script/WDGame.WDUIMaterialTracker_SupplyPallet",
+        "SubPathString": ""
+      },
+      "TrackerData": {
+        "ObjectName": "WDUIMaterialTrackerDataAsset'DA_MaterialTrackerData_SupplyPallet'",
+        "ObjectPath": "/Game/UI/Features/Map/Map_Optimisation/Data/DA_MaterialTrackerData_SupplyPallet.0"
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.SupplyPallet"
+      }
+    },
+    "Trackers.Type.StationaryVehicle": {
+      "bDisableTracker": false,
+      "TrackerType": {
+        "AssetPathName": "/Script/WDGame.WDUIMaterialTracker_StationaryVehicle",
+        "SubPathString": ""
+      },
+      "TrackerData": {
+        "ObjectName": "WDUIMaterialTrackerDataAsset'DA_MaterialTrackerData_StationaryVehicle'",
+        "ObjectPath": "/Game/UI/Features/Map/Map_Optimisation/Data/DA_MaterialTrackerData_StationaryVehicle.0"
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.StationaryVehicle"
+      }
+    }
+  }
+}

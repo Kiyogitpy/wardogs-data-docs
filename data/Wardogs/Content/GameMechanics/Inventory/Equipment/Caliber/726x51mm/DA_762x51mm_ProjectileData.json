@@ -1,0 +1,66 @@
+--- export: UPrimaryDataAsset / DA_762x51mm_ProjectileData ---
+{
+  "Type": "WDProjectileData",
+  "Name": "DA_762x51mm_ProjectileData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDProjectileData'",
+  "Package": "/Game/GameMechanics/Inventory/Equipment/Caliber/726x51mm/DA_762x51mm_ProjectileData",
+  "Properties": {
+    "ProjectileId": {
+      "TagName": "Item.Caliber.762x51mm"
+    },
+    "ProjectileStats": {
+      "DamageEntityData": {
+        "Tag": {
+          "TagName": "Meta.Damage.Bullet.762x51mm"
+        },
+        "Context": [
+          "Meta.Damage.Arms.High"
+        ]
+      },
+      "DamageValues": {
+        "BaseDamage": 60.0,
+        "ImpulseValues": {
+          "bApplyImpulse": true,
+          "ImpulseScale": 7500.0
+        }
+      },
+      "ProjectileDimensions": {
+        "Length": 2.789936,
+        "Diameter": 0.782,
+        "Mass": 0.01,
+        "DragModel": {
+          "Value": 0.89,
+          "Curve": {
+            "CurveTable": {
+              "ObjectName": "CurveTable'CT_Projectile_DragCoefficients'",
+              "ObjectPath": "/Game/Items/Resources/Ammo/Curves/CT_Projectile_DragCoefficients.0"
+            },
+            "RowName": "G7 (Boat Tail)"
+          }
+        }
+      },
+      "ProjectileEffects": {
+        "GameplayCueTag": {
+          "TagName": "GameplayCue.Weapon.Projectile"
+        }
+      },
+      "SuppressionData": {
+        "BaseSuppression": 0.6,
+        "DistanceFalloffRange": {
+          "Max": 3.0
+        },
+        "DistanceFalloffCurve": {
+          "EditorCurveData": {}
+        }
+      },
+      "AttachedEffect": {
+        "AssetPathName": "/Game/VFX/Weapons/Tracers/NS_Tracer_762mm.NS_Tracer_762mm",
+        "SubPathString": ""
+      },
+      "bShouldPreSimulate": false,
+      "TravelDistanceForWhizBy": 1500.0,
+      "DistanceToPlayerForWhizBy": 1200.0
+    }
+  }
+}

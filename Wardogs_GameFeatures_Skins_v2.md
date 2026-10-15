@@ -4,7 +4,7 @@ parent: "Game Features"
 ---
 
 # Wardogs: GameFeatures Skins Reference (v2)
-*Source: exported JSON under `Wardogs/Plugins/GameFeatures/Skins` (13 files, 4 folders). Numbers and tags are read from the export. Meanings of fields that are not named in the export are marked as unconfirmed.*
+*Source: exported JSON under [`Wardogs/Plugins/GameFeatures/Skins`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Skins) (13 files, 4 folders). Numbers and tags are read from the export. Meanings of fields that are not named in the export are marked as unconfirmed.*
 
 ---
 
@@ -63,7 +63,7 @@ Each `WDSkinDataAsset` holds one `Skin` struct with four fields: `Pattern_ID_Mas
 | Skin_DigitalWood | Season01_SkinsData | T_Pattern_Digital_002 | T_LUT_Green_001 | 43 | Glock17, CGM4, Parachute.Sport, M4, KH2002, A91, AK74M, RFB, M249, WEPN_027, M500, SR_04, WEPN_033, WEPN_029, WEPN_030, MMGL, Vector, WEPN_026, SKS, SMG_03, Judge, LMG_02, MK22, WEPN_028, Vehicle.Variant.Land.Wheeled.Bobcat.Default, Vehicle.Variant.Land.Wheeled.DuneBuggy.Default, Vehicle.Variant.Land.Wheeled.Kodiak.Pickup, Vehicle.Variant.Land.Wheeled.Kodiak.MachineGun, Vehicle.Variant.Land.Wheeled.Humvee.Default, Vehicle.Variant.Land.Wheeled.Humvee.MachineGun, Vehicle.Variant.Land.Wheeled.Ural.Default, Vehicle.Variant.Land.Wheeled.Ural.Battle, Vehicle.Variant.Land.Wheeled.Ural.Attack, Vehicle.Variant.Land.Tracked.TNK_01.Heavy, Vehicle.Variant.Land.Tracked.TNK_01.AntiAir, Vehicle.Variant.Land.Tracked.TNK_01.Artillery, SVDM, SV98, RPG7, CombatBow, TAR21, Mosin, Vehicle.Variant.Land.Wheeled.Kodiak.Default |
 | Skin_TwoTone_Desert | Season01_SkinsData | T_Pattern_Solid_001 | T_LUT_Desert_002 | 3 | M4, Judge, Mosin |
 
-Override targets for `Skin_DigitalWood` cover 43 items, the largest set. The other five assets override 1 to 3 items each. Each override sets its own `DisplaySkin`, `WearThreshold`, `DisplayMastery` and `MasteryColour`, so one skin can look different on each item.
+Override targets for [`Skin_DigitalWood`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season01_SkinsData/Content/Data/Skin_DigitalWood.json) cover 43 items, the largest set. The other five assets override 1 to 3 items each. Each override sets its own `DisplaySkin`, `WearThreshold`, `DisplayMastery` and `MasteryColour`, so one skin can look different on each item.
 
 ---
 
@@ -71,8 +71,8 @@ Override targets for `Skin_DigitalWood` cover 43 items, the largest set. The oth
 
 | Feature file | Action | Effect |
 |---|---|---|
-| FactionLogo_SkinsData | DataRegistrySource | Adds `DT_Cosmetics_FactionLogo` to registry `CosmeticData` (priority 0, client and server) |
-| Season01_SkinsData | DataRegistrySource | Adds `DT_Cosmetics_Season01_Skins` to registry `CosmeticData` (priority 0, client and server) |
+| FactionLogo_SkinsData | DataRegistrySource | Adds [`DT_Cosmetics_FactionLogo`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/FactionLogo_SkinsData/Content/Data/DT_Cosmetics_FactionLogo.json) to registry `CosmeticData` (priority 0, client and server) |
+| Season01_SkinsData | DataRegistrySource | Adds [`DT_Cosmetics_Season01_Skins`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season01_SkinsData/Content/Data/DT_Cosmetics_Season01_Skins.json) to registry `CosmeticData` (priority 0, client and server) |
 | Season01_SkinsAssets | GameFeatureData | No properties exported; its role is not confirmed |
 | SkinsInSession | AddComponents | Adds `WDActorSkinComponent` to `BHItem`, `BHBaseVehiclePawn`, `WDDroppedItem` (client and server, one entry per actor class) |
 | SkinsInSession | SkinDisplayBadgeData | Preview material: `MM_SkinsPreview` |
@@ -92,5 +92,5 @@ Override targets for `Skin_DigitalWood` cover 43 items, the largest set. The oth
 - **Prices, unlock conditions and rarity** for cosmetics are not in this folder.
 - **Texture and material contents** (what `T_Pattern_*`, `T_LUT_*` and `MM_SkinsPreview` look like) are not decoded.
 - **`CPD` field meanings.** The UV, wear and mastery field names are as exported. Their effect on rendering is not confirmed.
-- **Component class** `WDActorSkinComponent` and the `SkinsInSession` runtime are only named here, not decoded.
+- **Component class** `WDActorSkinComponent` and the [`SkinsInSession`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/SkinsInSession/Content/SkinsInSession.json) runtime are only named here, not decoded.
 

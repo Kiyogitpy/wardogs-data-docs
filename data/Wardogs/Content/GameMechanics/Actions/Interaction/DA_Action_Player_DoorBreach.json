@@ -1,0 +1,65 @@
+--- export: UPrimaryDataAsset / DA_Action_Player_DoorBreach ---
+{
+  "Type": "WDActionDefinition",
+  "Name": "DA_Action_Player_DoorBreach",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDActionDefinition'",
+  "Package": "/Game/GameMechanics/Actions/Interaction/DA_Action_Player_DoorBreach",
+  "Properties": {
+    "ActionEffects": [
+      {
+        "Key": "GE_DoorBreach",
+        "Value": {
+          "ObjectName": "BlueprintGeneratedClass'GE_DoorBreach_C'",
+          "ObjectPath": "/Game/GameMechanics/GameplayEffects/Actions/GE_DoorBreach.0"
+        }
+      }
+    ],
+    "ActionTag": {
+      "TagName": "Action.Player.Door.Breach"
+    },
+    "ActionContext": [
+      "Action.Context.Interaction"
+    ],
+    "ActionClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Action_Player_Door_Breach_C'",
+      "ObjectPath": "/Game/GameMechanics/Actions/Interaction/B_Action_Player_Door_Breach.1"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::BlockCategories",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::BlockCategories",
+          "ActionResponses": [],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [
+            "Action.Context.OneHanded",
+            "Action.Context.TwoHanded",
+            "Action.Context.Holdable",
+            "Action.Context.Weapon"
+          ],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::InterruptCategories",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::InterruptCategories",
+          "ActionResponses": [],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [
+            "Action.Context.OneHanded",
+            "Action.Context.TwoHanded",
+            "Action.Context.Holdable",
+            "Action.Context.Weapon"
+          ],
+          "BufferedResponses": []
+        }
+      }
+    ]
+  }
+}

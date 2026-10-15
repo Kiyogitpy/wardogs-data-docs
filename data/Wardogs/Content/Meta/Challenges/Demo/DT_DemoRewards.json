@@ -1,0 +1,54 @@
+--- export: UDataTable / DT_DemoRewards ---
+{
+  "Type": "DataTable",
+  "Name": "DT_DemoRewards",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/Meta/Challenges/Demo/DT_DemoRewards",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDRewardDefinition'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Meta.Progression.Context.DefaultReward": {
+      "Resources": [
+        {
+          "Key": {
+            "TagName": "Attribute.Meta.Currency.Cash"
+          },
+          "Value": {
+            "BaseValue": 100.0,
+            "Modifiers": [
+              {
+                "ContextQuery": {
+                  "TokenStreamVersion": 0,
+                  "TagDictionary": [
+                    {
+                      "TagName": "Meta.Damage.Category.Friendly"
+                    }
+                  ],
+                  "QueryTokenStream": [
+                    0,
+                    1,
+                    2,
+                    1,
+                    0
+                  ],
+                  "UserDescription": "",
+                  "AutoDescription": " ALL( Meta.Damage.Category.Friendly )"
+                },
+                "Modifier": 2.0,
+                "Operation": "EWDRewardResourceModifierOp::Divide"
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Progression.Context.DefaultReward"
+      }
+    }
+  }
+}

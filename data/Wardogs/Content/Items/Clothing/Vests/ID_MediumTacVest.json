@@ -1,0 +1,179 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MediumTacVest'",
+    "ObjectPath": "/Game/Items/Clothing/Vests/ID_MediumTacVest.4"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 4,
+      "Y": 3
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MediumTacVest'",
+    "ObjectPath": "/Game/Items/Clothing/Vests/ID_MediumTacVest.4"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Items/Clothing/Vests/SM_MediumTacVest.SM_MediumTacVest",
+      "SubPathString": ""
+    },
+    "Scale": {
+      "X": 1.25,
+      "Y": 0.5,
+      "Z": 1.25
+    },
+    "RelativeRotation": {
+      "Pitch": -0.0,
+      "Yaw": -90.0,
+      "Roll": 5.0
+    },
+    "bOverrideDroppedRelativeLocation": true,
+    "bOverrideDroppedBoxExtent": true,
+    "OverridedBoxExtent": {
+      "X": 12.0,
+      "Y": 22.0,
+      "Z": 22.0
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MediumTacVest'",
+    "ObjectPath": "/Game/Items/Clothing/Vests/ID_MediumTacVest.4"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MediumTacVest'",
+    "ObjectPath": "/Game/Items/Clothing/Vests/ID_MediumTacVest.4"
+  },
+  "Properties": {
+    "Weight": 1.65
+  }
+}
+--- export: UPrimaryDataAsset / ID_MediumTacVest ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_MediumTacVest",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Clothing/Vests/ID_MediumTacVest",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.MediumTacVest"
+    },
+    "ItemContext": [
+      "Inventory.Slot.Vest",
+      "Item.Context.Equippable"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "7B49D21C473B67160781A5B0CDC131D3",
+      "SourceString": "Medium Tac Vest",
+      "LocalizedString": "Medium Tac Vest"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_MediumTacVest:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Game/Items/Clothing/Vests/ID_MediumTacVest.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_MediumTacVest:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/Game/Items/Clothing/Vests/ID_MediumTacVest.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_MediumTacVest:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Game/Items/Clothing/Vests/ID_MediumTacVest.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_MediumTacVest:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Game/Items/Clothing/Vests/ID_MediumTacVest.5"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_QuickSlots'ID_MediumTacVest:WDInventoryFragment_QuickSlots_0'",
+        "ObjectPath": "/Game/Items/Clothing/Vests/ID_MediumTacVest.7"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_MediumTacVest:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Game/Items/Clothing/Vests/ID_MediumTacVest.0"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_EquippedEffects'ID_MediumTacVest:WDInventoryFragment_EquippedEffects_0'",
+        "ObjectPath": "/Game/Items/Clothing/Vests/ID_MediumTacVest.6"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MediumTacVest'",
+    "ObjectPath": "/Game/Items/Clothing/Vests/ID_MediumTacVest.4"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Backpack_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Item/Data/ID_Backpack_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_EquippedEffects_0 ---
+{
+  "Type": "WDInventoryFragment_EquippedEffects",
+  "Name": "WDInventoryFragment_EquippedEffects_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_EquippedEffects'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MediumTacVest'",
+    "ObjectPath": "/Game/Items/Clothing/Vests/ID_MediumTacVest.4"
+  },
+  "Properties": {
+    "AppliedEffects": [
+      {
+        "ObjectName": "BlueprintGeneratedClass'GE_Item_MediumTacVest_C'",
+        "ObjectPath": "/Game/GameMechanics/GameplayEffects/Items/GE_Item_MediumTacVest.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_QuickSlots_0 ---
+{
+  "Type": "WDInventoryFragment_QuickSlots",
+  "Name": "WDInventoryFragment_QuickSlots_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_QuickSlots'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MediumTacVest'",
+    "ObjectPath": "/Game/Items/Clothing/Vests/ID_MediumTacVest.4"
+  },
+  "Properties": {
+    "NumberOfAddedQuickSlots": 4
+  }
+}

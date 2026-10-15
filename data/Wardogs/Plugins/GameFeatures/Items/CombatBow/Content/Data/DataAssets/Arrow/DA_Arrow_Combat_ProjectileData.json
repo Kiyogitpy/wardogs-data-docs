@@ -1,0 +1,142 @@
+--- export: UPrimaryDataAsset / DA_Arrow_Combat_ProjectileData ---
+{
+  "Type": "WDProjectileData",
+  "Name": "DA_Arrow_Combat_ProjectileData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDProjectileData'",
+  "Package": "/CombatBow/Data/DataAssets/Arrow/DA_Arrow_Combat_ProjectileData",
+  "Properties": {
+    "ProjectileId": {
+      "TagName": "Item.Caliber.Arrow"
+    },
+    "ProjectileStats": {
+      "DamageEntityData": {
+        "Tag": {
+          "TagName": "Meta.Damage.Bullet.Arrow"
+        },
+        "Context": [
+          "Meta.Damage.Arms.High"
+        ]
+      },
+      "DamageValues": {
+        "BaseDamage": 77.0
+      },
+      "ProjectileDimensions": {
+        "Length": 80.0,
+        "Diameter": 0.4,
+        "Mass": 0.025,
+        "DragModel": {
+          "Value": 1.8,
+          "Curve": {
+            "CurveTable": {
+              "ObjectName": "CurveTable'CT_Projectile_DragCoefficients'",
+              "ObjectPath": "/Game/Items/Resources/Ammo/Curves/CT_Projectile_DragCoefficients.0"
+            },
+            "RowName": "G7 (Boat Tail)"
+          }
+        }
+      },
+      "ProjectileEffects": {
+        "GameplayCueTag": {
+          "TagName": "GameplayCue.Weapon.Projectile"
+        }
+      },
+      "SuppressionData": {
+        "BaseSuppression": 0.6,
+        "DistanceFalloffRange": {
+          "Min": 0.1,
+          "Max": 1.2
+        },
+        "DistanceFalloffCurve": {
+          "EditorCurveData": {
+            "Keys": [
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.0,
+                "Value": 1.0,
+                "ArriveTangent": 0.0,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.0,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_User",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.4570763,
+                "Value": 0.7216193,
+                "ArriveTangent": -1.9123409,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": -1.9123383,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Linear",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 1.0,
+                "Value": 0.47056067,
+                "ArriveTangent": 0.0,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.0,
+                "LeaveTangentWeight": 0.0
+              }
+            ]
+          }
+        }
+      },
+      "MaxProjectileLifetime": 30.0,
+      "AttachedEffect": {
+        "AssetPathName": "/CombatBow/Data/VFX/NS_ProjectileTrail_Arrow.NS_ProjectileTrail_Arrow",
+        "SubPathString": ""
+      },
+      "bShouldPenetrate": true,
+      "ProjectileActor": {
+        "AssetPathName": "/CombatBow/Data/DataAssets/Arrow/BP_Arrow.BP_Arrow_C",
+        "SubPathString": ""
+      },
+      "TracerChance": 1.0,
+      "TypicalSpeed": 64200.0,
+      "bForcePenetrateThinSurfaces": true,
+      "PenetrationEffectivenessMultiplier": 0.03,
+      "PenetrationExitSpeedMultiplier": 0.55,
+      "MinImpactAngleForRicochet": 30.0,
+      "bShouldPreSimulate": false,
+      "bShouldThrust": true,
+      "bHasThrustInstability": true,
+      "ThrustInstabilityYawScale": 0.02,
+      "ThrustInstabilityYawSpeed": 30.0,
+      "ThrustInstabilityPitchScale": 0.02,
+      "ThrustInstabilityPitchSpeed": 30.0,
+      "TravelDistanceForWhizBy": 1500.0,
+      "DistanceToPlayerForWhizBy": 1200.0,
+      "bSpawnPickupOnImpact": true,
+      "PickUpProjectileData": {
+        "PickupClass": {
+          "ObjectName": "BlueprintGeneratedClass'B_Pickup_Arrow_C'",
+          "ObjectPath": "/CombatBow/Data/PickUpProjectile/B_Pickup_Arrow.1"
+        },
+        "ProjectileItemId": {
+          "TagName": "Id.Item.Arrow"
+        },
+        "MaxPickUpLifeSpan": 120.0,
+        "ActorClassesToIgnore": [
+          {
+            "AssetPathName": "/Script/WDGame.WDMoverCharacter",
+            "SubPathString": ""
+          },
+          {
+            "AssetPathName": "/Script/WDGame.WDTargetDummy",
+            "SubPathString": ""
+          },
+          {
+            "AssetPathName": "/Script/WDGame.WDPlaceable",
+            "SubPathString": ""
+          }
+        ]
+      }
+    }
+  }
+}

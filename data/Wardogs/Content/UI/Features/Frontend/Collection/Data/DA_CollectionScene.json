@@ -1,0 +1,52 @@
+--- export: UDataAsset / DA_CollectionScene ---
+{
+  "Type": "WDUICollectionSceneData",
+  "Name": "DA_CollectionScene",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUICollectionSceneData'",
+  "Package": "/Game/UI/Features/Frontend/Collection/Data/DA_CollectionScene",
+  "Properties": {
+    "_aaaamnfkcebkdioeamjjk_$D5A241A38E40C99A$_$12$": [
+      {
+        "FilterType": {
+          "TagName": "Item.Archetype"
+        },
+        "Header": {
+          "TableId": "/Game/UI/StringTables/Frontend/STRINGS_Collection.STRINGS_Collection",
+          "Key": "Text.Equipment",
+          "SourceString": "Equipment",
+          "LocalizedString": "Equipment"
+        }
+      },
+      {
+        "FilterType": {
+          "TagName": "Vehicle.Archetype"
+        },
+        "Header": {
+          "TableId": "/Game/UI/StringTables/Frontend/STRINGS_Collection.STRINGS_Collection",
+          "Key": "Text.Vehicles",
+          "SourceString": "Vehicles",
+          "LocalizedString": "Vehicles"
+        }
+      },
+      {
+        "FilterType": {
+          "TagName": "Item.Archetype.Bobblehead"
+        },
+        "Header": {
+          "TableId": "/Game/UI/StringTables/Frontend/STRINGS_Collection.STRINGS_Collection",
+          "Key": "Text.Bobbleheads",
+          "SourceString": "Bobbleheads",
+          "LocalizedString": "Bobbleheads"
+        }
+      }
+    ],
+    "InputTagCloseScene": {
+      "TagName": "UI.Scene.Frontend.Customize"
+    },
+    "bExitPreviousSceneOnContextDrawerOpened": false,
+    "EnterSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.UI.FrontEnd.Open.SubMenu"
+    }
+  }
+}

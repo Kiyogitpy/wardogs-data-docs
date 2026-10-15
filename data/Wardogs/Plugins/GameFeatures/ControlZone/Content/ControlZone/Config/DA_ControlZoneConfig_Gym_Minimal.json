@@ -1,0 +1,93 @@
+--- export: UDataAsset / DA_ControlZoneConfig_Gym_Minimal ---
+{
+  "Type": "WDControlZoneConfigDataAsset",
+  "Name": "DA_ControlZoneConfig_Gym_Minimal",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDControlZoneConfigDataAsset'",
+  "Package": "/ControlZone/ControlZone/Config/DA_ControlZoneConfig_Gym_Minimal",
+  "Properties": {
+    "ZoneData": {
+      "ControlZoneData": {
+        "ControlZoneActorLocation": {
+          "X": 9290.0,
+          "Y": -1030.0,
+          "Z": 0.0
+        },
+        "ZoneScaledExtents": {
+          "X": 5000.0,
+          "Y": 5000.0,
+          "Z": 2500.0
+        },
+        "ZoneShape": "EWDZoneShape::Cylinder"
+      },
+      "HotZoneData": {
+        "ZoneShape": "EWDZoneShape::Cylinder"
+      }
+    },
+    "HotZoneMovementData": {
+      "MoveDelay": 25.0,
+      "HotZoneInnerRadiusPercentage": 1.0,
+      "DefaultSpeed": 1.0,
+      "bUseDynamicHotzoneSpeeds": true,
+      "HotzoneSpeeds": [
+        0.75,
+        1.0,
+        1.25,
+        1.5,
+        1.75,
+        2.0
+      ],
+      "MinHotZoneMoveDistance": 750.0,
+      "HotZoneTransitionEasingCurve": {
+        "EditorCurveData": {
+          "Keys": [
+            {
+              "InterpMode": "RCIM_Cubic",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 0.0,
+              "Value": 0.0,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Cubic",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 0.2,
+              "Value": 0.1,
+              "ArriveTangent": 1.125,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 1.125,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Cubic",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 0.8,
+              "Value": 0.9,
+              "ArriveTangent": 1.125,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 1.125,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Cubic",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 1.0,
+              "Value": 1.0,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            }
+          ]
+        }
+      }
+    }
+  }
+}

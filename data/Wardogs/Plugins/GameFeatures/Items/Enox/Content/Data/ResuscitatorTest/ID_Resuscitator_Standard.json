@@ -1,0 +1,481 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Resuscitator_Standard'",
+    "ObjectPath": "/Enox/Data/ResuscitatorTest/ID_Resuscitator_Standard.3"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 1,
+      "Y": 2
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Resuscitator_Standard'",
+    "ObjectPath": "/Enox/Data/ResuscitatorTest/ID_Resuscitator_Standard.3"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Enox/Meshes/SM_Enox.SM_Enox",
+      "SubPathString": ""
+    },
+    "RelativeRotation": {
+      "Pitch": 0.0,
+      "Yaw": 90.0,
+      "Roll": 0.0
+    },
+    "bOverrideDroppedRelativeLocation": true,
+    "OverridedRelativeLocation": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 3.0
+    },
+    "bOverrideDroppedBoxExtent": true,
+    "OverridedBoxExtent": {
+      "X": 5.0,
+      "Y": 6.0,
+      "Z": 7.6
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Resuscitator_Standard'",
+    "ObjectPath": "/Enox/Data/ResuscitatorTest/ID_Resuscitator_Standard.3"
+  },
+  "Properties": {
+    "Weight": 0.39
+  }
+}
+--- export: UPrimaryDataAsset / ID_Resuscitator_Standard ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_Resuscitator_Standard",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Enox/Data/ResuscitatorTest/ID_Resuscitator_Standard",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.Resuscitator.Standard"
+    },
+    "ItemContext": [
+      "Item.Context.UtilityItem",
+      "Item.Context.QuickSlot",
+      "Item.Context.Animation.Type.Unarmed",
+      "Item.Context.Animation.Archetype.EquipRightHand",
+      "Item.Context.Medical"
+    ],
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Items_Medical.STRINGS_Items_Medical",
+      "Key": "Items.Medical.Resiscitator.Standard",
+      "SourceString": "Field Resuscitator",
+      "LocalizedString": "Field Resuscitator"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_ItemActor'ID_Resuscitator_Standard:WDInventoryFragment_ItemActor_0'",
+        "ObjectPath": "/Enox/Data/ResuscitatorTest/ID_Resuscitator_Standard.5"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_Resuscitator_Standard:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/Enox/Data/ResuscitatorTest/ID_Resuscitator_Standard.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_Resuscitator_Standard:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Enox/Data/ResuscitatorTest/ID_Resuscitator_Standard.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_Resuscitator_Standard:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Enox/Data/ResuscitatorTest/ID_Resuscitator_Standard.4"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_Resuscitator_Standard:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Enox/Data/ResuscitatorTest/ID_Resuscitator_Standard.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Resuscitator_Standard'",
+    "ObjectPath": "/Enox/Data/ResuscitatorTest/ID_Resuscitator_Standard.3"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Enox_Audio'",
+      "ObjectPath": "/Enox/Data/ID_Enox_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_ItemActor_0 ---
+{
+  "Type": "WDInventoryFragment_ItemActor",
+  "Name": "WDInventoryFragment_ItemActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_ItemActor'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Resuscitator_Standard'",
+    "ObjectPath": "/Enox/Data/ResuscitatorTest/ID_Resuscitator_Standard.3"
+  },
+  "Properties": {
+    "ExtensionDataFragments": [
+      {
+        "ObjectName": "WDItemExtensionData_Holdable'ID_Resuscitator_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Holdable_0'",
+        "ObjectPath": "/Enox/Data/ResuscitatorTest/ID_Resuscitator_Standard.10"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Inventory'ID_Resuscitator_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InventoryItem_0'",
+        "ObjectPath": "/Enox/Data/ResuscitatorTest/ID_Resuscitator_Standard.12"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Appliable'ID_Resuscitator_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Appliable_0'",
+        "ObjectPath": "/Enox/Data/ResuscitatorTest/ID_Resuscitator_Standard.7"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Input'ID_Resuscitator_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+        "ObjectPath": "/Enox/Data/ResuscitatorTest/ID_Resuscitator_Standard.11"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_AudioExtension'ID_Resuscitator_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_AudioExtension_0'",
+        "ObjectPath": "/Enox/Data/ResuscitatorTest/ID_Resuscitator_Standard.8"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Animation'ID_Resuscitator_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Animation_0'",
+        "ObjectPath": "/Enox/Data/ResuscitatorTest/ID_Resuscitator_Standard.6"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_GameplayEffects'ID_Resuscitator_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_GameplayEffects_0'",
+        "ObjectPath": "/Enox/Data/ResuscitatorTest/ID_Resuscitator_Standard.9"
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Animation_0 ---
+{
+  "Type": "WDItemExtensionData_Animation",
+  "Name": "WDItemExtensionData_Animation_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Animation'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Resuscitator_Standard:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Enox/Data/ResuscitatorTest/ID_Resuscitator_Standard.5"
+  },
+  "Properties": {
+    "AnimationSet": {
+      "ObjectName": "BHAnimationSet'AnimSet_Resuscitator'",
+      "ObjectPath": "/Enox/Data/ResuscitatorTest/AnimSet_Resuscitator.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_Appliable_0 ---
+{
+  "Type": "WDItemExtensionData_Appliable",
+  "Name": "WDItemExtensionData_Appliable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Appliable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Resuscitator_Standard:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Enox/Data/ResuscitatorTest/ID_Resuscitator_Standard.5"
+  },
+  "Properties": {
+    "Attribute": {
+      "TagName": "Attribute.Gameplay.Appliable.Amount"
+    },
+    "AttributeValue": 10.0,
+    "bApplyAsDelta": true,
+    "ContextTags": [
+      "Appliable.Context.ReviveFriendly"
+    ],
+    "AppliedEffects": [
+      {
+        "ObjectName": "BlueprintGeneratedClass'GE_UseAppliable_C'",
+        "ObjectPath": "/Game/GameMechanics/GameplayEffects/Actions/GE_UseAppliable.0"
+      }
+    ],
+    "AppliableActionData": [
+      {
+        "Key": {
+          "TagName": "Action.Appliable.Resuscitator.PrimaryUse"
+        },
+        "Value": {
+          "RequiredOwnerStates": [
+            "State.Player.Vitality.Alive"
+          ],
+          "ProgressWheelTextData": {
+            "OwnerText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Healing_ActionText.STRINGS_Healing_ActionText",
+              "Key": "ActionText.Reviving.Owner",
+              "SourceString": "Reviving",
+              "LocalizedString": "Reviving"
+            },
+            "TargetText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Healing_ActionText.STRINGS_Healing_ActionText",
+              "Key": "ActionText.Reviving.Target",
+              "SourceString": "Being Revived By",
+              "LocalizedString": "Being Revived By"
+            }
+          },
+          "InteractionTimeMethod": "EWDAppliableInteractionTimeMethod::UntilItemEmptyOrTargetFull",
+          "AnimationTag": {
+            "TagName": "Animation.Asset.Appliable.PrimaryUse"
+          },
+          "Notifier": "None",
+          "bUseAppliableProgressWheel": false,
+          "CurrentAppliable": {
+            "TagName": "None"
+          },
+          "MaxAppliable": {
+            "TagName": "None"
+          },
+          "EffectsToApply": {
+            "Effects": []
+          },
+          "AmountConsumedOnUse": 1,
+          "bWorldInteractableUse": true,
+          "bInteractionSystemAppliable": false,
+          "WorldInteractionContextClass": {
+            "ObjectName": "BlueprintGeneratedClass'WIC_ResuscitatorInteractionContext_C'",
+            "ObjectPath": "/Enox/Data/ResuscitatorTest/WIC_ResuscitatorInteractionContext.0"
+          },
+          "RequiredTargetStates": [],
+          "bShowOnScreenHoldProgressWheel": false
+        }
+      }
+    ],
+    "bContainerAppliable": true,
+    "ContainerData": {
+      "StartingAmount": 10.0,
+      "MaxAmount": 10.0,
+      "UpdateTime": 4.0,
+      "UpdateAmount": 1.0
+    },
+    "ConsumeAnimationTag": {
+      "TagName": "Animation.Asset.Appliable.PrimaryUse.Release"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_AudioExtension_0 ---
+{
+  "Type": "WDItemExtensionData_AudioExtension",
+  "Name": "WDItemExtensionData_AudioExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_AudioExtension'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Resuscitator_Standard:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Enox/Data/ResuscitatorTest/ID_Resuscitator_Standard.5"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Enox_Audio'",
+      "ObjectPath": "/Enox/Data/ID_Enox_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_GameplayEffects_0 ---
+{
+  "Type": "WDItemExtensionData_GameplayEffects",
+  "Name": "WDItemExtensionData_GameplayEffects_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_GameplayEffects'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Resuscitator_Standard:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Enox/Data/ResuscitatorTest/ID_Resuscitator_Standard.5"
+  }
+}
+--- export: UObject / WDItemExtensionData_Holdable_0 ---
+{
+  "Type": "WDItemExtensionData_Holdable",
+  "Name": "WDItemExtensionData_Holdable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Holdable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Resuscitator_Standard:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Enox/Data/ResuscitatorTest/ID_Resuscitator_Standard.5"
+  },
+  "Properties": {
+    "HoldableMesh": {
+      "ObjectName": "SkeletalMesh'SK_Enox'",
+      "ObjectPath": "/Enox/Meshes/SK_Enox.1"
+    },
+    "MaterialOverrides": [
+      null,
+      null
+    ],
+    "MeshAnimClass": {
+      "ObjectName": "AnimBlueprintGeneratedClass'ABP_Enox_C'",
+      "ObjectPath": "/Enox/Animation/Item/Blueprint/ABP_Enox.1"
+    },
+    "AttachTransform": {
+      "Rotation": {
+        "X": -1.0,
+        "Y": -0.0,
+        "Z": 0.0,
+        "W": 6.123234E-17,
+        "IsNormalized": true,
+        "Size": 1.0,
+        "SizeSquared": 1.0
+      }
+    },
+    "EquipAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_Enox_Equip'",
+        "ObjectPath": "/Enox/Animation/Character/Montage/AM_FP_Enox_Equip.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_EquipmentRH_Equip'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/EquipmentRH/Actions/AM_TP_Gen_EquipmentRH_Equip.0"
+      }
+    },
+    "HolsterAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_Enox_Holster'",
+        "ObjectPath": "/Enox/Animation/Character/Montage/AM_FP_Enox_Holster.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_EquipmentRH_Holster'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/EquipmentRH/Actions/AM_TP_Gen_EquipmentRH_Holster.0"
+      }
+    },
+    "EquippedAnimSet": {
+      "DefaultFirstPersonLayer": {
+        "AssetPathName": "/Enox/Animation/Character/Blueprint/ABP_FP_Enox_Layer_RW.ABP_FP_Enox_Layer_RW_C",
+        "SubPathString": ""
+      },
+      "DefaultThirdPersonLayer": {
+        "AssetPathName": "/Enox/Animation/Character/Blueprint/ABP_TP_Enox_Layer_RW.ABP_TP_Enox_Layer_RW_C",
+        "SubPathString": ""
+      }
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_InputActionExtension_0 ---
+{
+  "Type": "WDItemExtensionData_Input",
+  "Name": "WDItemExtensionData_InputActionExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Input'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Resuscitator_Standard:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Enox/Data/ResuscitatorTest/ID_Resuscitator_Standard.5"
+  },
+  "Properties": {
+    "InputMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_Appliable'",
+      "ObjectPath": "/Game/Items/ItemExtensionDefaults/IMC_Appliable.3"
+    },
+    "InputBehaviors": [
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.Appliable.PrimaryUse"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAppliableAction'ID_Resuscitator_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAppliableAction_0'",
+          "ObjectPath": "/Enox/Data/ResuscitatorTest/ID_Resuscitator_Standard.14"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.PrimaryUse.Release"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_CompleteAction'ID_Resuscitator_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_CompleteAction_0'",
+          "ObjectPath": "/Enox/Data/ResuscitatorTest/ID_Resuscitator_Standard.15"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.Inspect"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_Resuscitator_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_0'",
+          "ObjectPath": "/Enox/Data/ResuscitatorTest/ID_Resuscitator_Standard.13"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_InventoryItem_0 ---
+{
+  "Type": "WDItemExtensionData_Inventory",
+  "Name": "WDItemExtensionData_InventoryItem_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Inventory'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Resuscitator_Standard:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Enox/Data/ResuscitatorTest/ID_Resuscitator_Standard.5"
+  },
+  "Properties": {
+    "PrimaryUseTag": {
+      "TagName": "Action.Appliable.PrimaryUse"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_0 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_Resuscitator_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Enox/Data/ResuscitatorTest/ID_Resuscitator_Standard.11"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Item.Inspect"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAppliableAction_0 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAppliableAction",
+  "Name": "WDItemInputBehavior_ActivateAppliableAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAppliableAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_Resuscitator_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Enox/Data/ResuscitatorTest/ID_Resuscitator_Standard.11"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Appliable.Resuscitator.PrimaryUse"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_CompleteAction_0 ---
+{
+  "Type": "WDItemInputBehavior_CompleteAction",
+  "Name": "WDItemInputBehavior_CompleteAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_CompleteAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_Resuscitator_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Enox/Data/ResuscitatorTest/ID_Resuscitator_Standard.11"
+  },
+  "Properties": {
+    "ActionToComplete": {
+      "TagName": "Action.Appliable.Resuscitator.PrimaryUse"
+    }
+  }
+}

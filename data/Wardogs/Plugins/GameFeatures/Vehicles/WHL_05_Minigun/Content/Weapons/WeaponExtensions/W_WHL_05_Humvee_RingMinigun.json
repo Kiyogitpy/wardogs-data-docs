@@ -1,0 +1,49 @@
+--- export: UDataAsset / W_WHL_05_Humvee_RingMinigun ---
+{
+  "Type": "WDVehicleWeaponDataAsset",
+  "Name": "W_WHL_05_Humvee_RingMinigun",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeaponDataAsset'",
+  "Package": "/WHL_05_Minigun/Weapons/WeaponExtensions/W_WHL_05_Humvee_RingMinigun",
+  "Properties": {
+    "WeaponTag": {
+      "TagName": "Id.Vehicle.Weapon.WHL_05.RingMinigun"
+    },
+    "SkeletalMeshAsset": {
+      "AssetPathName": "/WHL_05/Meshes/Components/SK_WHL_05_PassengerGun_01b.SK_WHL_05_PassengerGun_01b",
+      "SubPathString": ""
+    },
+    "MuzzleSockets": [
+      "muzzleFlash_WeaponExtension"
+    ],
+    "PlayerAttachSocket": {
+      "SourceID": "TurretSkeleton",
+      "SocketName": "S_Attach_MountedMinigun_Player"
+    },
+    "GamepadRotationSensitivity": 75.0,
+    "GamepadRotationUpdateMax": {
+      "X": 110.0,
+      "Y": 110.0
+    },
+    "MouseRotationSensitivity": 25.0,
+    "MouseRotationUpdateMax": {
+      "X": 150.0,
+      "Y": 150.0
+    },
+    "KeyRotationSensitivity": 100.0,
+    "bApplyFovScale": false,
+    "WeaponRotationComponentData": {
+      "MinWeaponYawAngle": -60.0,
+      "MaxWeaponYawAngle": 60.0,
+      "bLimitWeaponPitch": true,
+      "MinWeaponPitchAngle": -22.5,
+      "MaxWeaponPitchAngle": 30.0,
+      "bStabilisationPermitted": true,
+      "RotationSpeed": 150.0,
+      "YawJointSocket": "TurretSkeleton",
+      "PitchJointSocket": "vehicleRotation_J",
+      "WeaponRotationGameplayCueThreshold": 1.103102E-39
+    },
+    "WeaponStatesCameraData": []
+  }
+}

@@ -1,0 +1,371 @@
+--- export: UObject / AEB_AttachSoundToHeldItem_C_0 ---
+{
+  "Type": "AEB_AttachSoundToHeldItem_C",
+  "Name": "AEB_AttachSoundToHeldItem_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_AttachSoundToHeldItem.AEB_AttachSoundToHeldItem_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Footstep_Stealth'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Footstep/AE_Footstep_Stealth.6"
+  },
+  "Template": {
+    "ObjectName": "AEB_AttachSoundToHeldItem_C'Default__AEB_AttachSoundToHeldItem_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_AttachSoundToHeldItem.0"
+  },
+  "Properties": {
+    "Socket Name": "handguard_Attach",
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Footstep.Item"
+    }
+  }
+}
+--- export: UObject / AEB_SetAndPlayItemMovementSoundWaveArrayParameterByHeldItem_C_0 ---
+{
+  "Type": "AEB_PlayItemMovementSound_C",
+  "Name": "AEB_SetAndPlayItemMovementSoundWaveArrayParameterByHeldItem_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayItemMovementSound.AEB_PlayItemMovementSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Footstep_Stealth'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Footstep/AE_Footstep_Stealth.6"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayItemMovementSound_C'Default__AEB_PlayItemMovementSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayItemMovementSound.0"
+  },
+  "Properties": {
+    "Item Movement 1p Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Player_Movement_Footstep_Item_1p'",
+      "ObjectPath": "/Game/Audio/Player/Movement/ItemLocomotion/MSS_Player_Movement_Footstep_Item_1p.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Footstep.Item"
+    }
+  }
+}
+--- export: UObject / AEB_SetAudioParameter_C_0 ---
+{
+  "Type": "AEB_SetAudioParameters_C",
+  "Name": "AEB_SetAudioParameter_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetAudioParameters.AEB_SetAudioParameters_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Footstep_Stealth'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Footstep/AE_Footstep_Stealth.6"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetAudioParameters_C'Default__AEB_SetAudioParameters_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetAudioParameters.0"
+  },
+  "Properties": {
+    "Parameters": [
+      {
+        "ParamName": "Gain",
+        "FloatParam": 0.3,
+        "BoolParam": false,
+        "IntParam": 0,
+        "ObjectParam": null,
+        "StringParam": "",
+        "ArrayFloatParam": [],
+        "ArrayBoolParam": [],
+        "ArrayIntParam": [],
+        "ArrayObjectParam": [],
+        "ArrayStringParam": [],
+        "ParamType": "EAudioParameterType::Float",
+        "TypeName": "None"
+      },
+      {
+        "ParamName": "Delay Time",
+        "FloatParam": 0.4,
+        "BoolParam": false,
+        "IntParam": 0,
+        "ObjectParam": null,
+        "StringParam": "",
+        "ArrayFloatParam": [],
+        "ArrayBoolParam": [],
+        "ArrayIntParam": [],
+        "ArrayObjectParam": [],
+        "ArrayStringParam": [],
+        "ParamType": "EAudioParameterType::Float",
+        "TypeName": "None"
+      }
+    ],
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Footstep.Item"
+    }
+  }
+}
+--- export: UObject / AEB_SetBlendedFootstepSurfaceTrigger_C_0 ---
+{
+  "Type": "AEB_SetBlendedFootstepSurfaceTrigger_C",
+  "Name": "AEB_SetBlendedFootstepSurfaceTrigger_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetBlendedFootstepSurfaceTrigger.AEB_SetBlendedFootstepSurfaceTrigger_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Footstep_Stealth'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Footstep/AE_Footstep_Stealth.6"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetBlendedFootstepSurfaceTrigger_C'Default__AEB_SetBlendedFootstepSurfaceTrigger_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetBlendedFootstepSurfaceTrigger.0"
+  },
+  "Properties": {
+    "AudioData": {
+      "ObjectName": "WDAudioData'DA_Surface_Footstep_Stealth_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Movement/Footsteps/DA/DA_Surface_Footstep_Stealth_Audio.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Footstep.CrouchWalk"
+    }
+  }
+}
+--- export: UObject / AEB_SetSoundWaveArrayParameterByHeldItem_C_1 ---
+{
+  "Type": "AEB_SetSoundWaveArrayParameterByHeldItem_C",
+  "Name": "AEB_SetSoundWaveArrayParameterByHeldItem_C_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetSoundWaveArrayParameterByHeldItem.AEB_SetSoundWaveArrayParameterByHeldItem_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Footstep_Stealth'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Footstep/AE_Footstep_Stealth.6"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetSoundWaveArrayParameterByHeldItem_C'Default__AEB_SetSoundWaveArrayParameterByHeldItem_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetSoundWaveArrayParameterByHeldItem.0"
+  },
+  "Properties": {
+    "HeldItemSoundSet": {
+      "TagName": "Audio.Asset.Item.Footstep.Sprint"
+    },
+    "SoundParameterName": "ItemFoley.Waves",
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Footstep.CrouchWalk"
+    }
+  }
+}
+--- export: UObject / AEB_StorePreviousFootstepSurface_C_0 ---
+{
+  "Type": "AEB_StoreFootstepData_C",
+  "Name": "AEB_StorePreviousFootstepSurface_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_StoreFootstepData.AEB_StoreFootstepData_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Footstep_Stealth'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Footstep/AE_Footstep_Stealth.6"
+  },
+  "Template": {
+    "ObjectName": "AEB_StoreFootstepData_C'Default__AEB_StoreFootstepData_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_StoreFootstepData.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Footstep"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Footstep_Stealth ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Footstep_Stealth",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Movement/Footstep/AE_Footstep_Stealth",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.Footstep.CrouchWalk"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_StoreFootstepData_C'AE_Footstep_Stealth:AEB_StorePreviousFootstepSurface_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Footstep/AE_Footstep_Stealth.5"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Footstep_Stealth:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Footstep/AE_Footstep_Stealth.7"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware'AE_Footstep_Stealth:WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Footstep/AE_Footstep_Stealth.10"
+      },
+      {
+        "ObjectName": "AEB_SetBlendedFootstepSurfaceTrigger_C'AE_Footstep_Stealth:AEB_SetBlendedFootstepSurfaceTrigger_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Footstep/AE_Footstep_Stealth.3"
+      },
+      {
+        "ObjectName": "AEB_SetSoundWaveArrayParameterByHeldItem_C'AE_Footstep_Stealth:AEB_SetSoundWaveArrayParameterByHeldItem_C_1'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Footstep/AE_Footstep_Stealth.4"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorSetPlayerWeight'AE_Footstep_Stealth:WDAudioEventBehaviorSetPlayerWeight_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Footstep/AE_Footstep_Stealth.9"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Footstep_Stealth:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Footstep/AE_Footstep_Stealth.8"
+      },
+      {
+        "ObjectName": "AEB_AttachSoundToHeldItem_C'AE_Footstep_Stealth:AEB_AttachSoundToHeldItem_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Footstep/AE_Footstep_Stealth.0"
+      },
+      {
+        "ObjectName": "AEB_SetAudioParameters_C'AE_Footstep_Stealth:AEB_SetAudioParameter_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Footstep/AE_Footstep_Stealth.2"
+      },
+      {
+        "ObjectName": "AEB_PlayItemMovementSound_C'AE_Footstep_Stealth:AEB_SetAndPlayItemMovementSoundWaveArrayParameterByHeldItem_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Footstep/AE_Footstep_Stealth.1"
+      }
+    ],
+    "_aaabhonahgpdbjealfaaa_$ED076F31940B5000$_$23$": 35.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Footstep_Stealth'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Footstep/AE_Footstep_Stealth.6"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Footstep.CrouchWalk"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Footstep_Stealth'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Footstep/AE_Footstep_Stealth.6"
+  },
+  "Properties": {
+    "ParameterName": "Step",
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Footstep.CrouchWalk"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviorSetPlayerWeight_0 ---
+{
+  "Type": "WDAudioEventBehaviorSetPlayerWeight",
+  "Name": "WDAudioEventBehaviorSetPlayerWeight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorSetPlayerWeight'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Footstep_Stealth'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Footstep/AE_Footstep_Stealth.6"
+  },
+  "Properties": {
+    "WeightData": [
+      {
+        "Key": {
+          "TagName": "State.Player.Weight.Lightest"
+        },
+        "Value": {
+          "WeightLayerGain": 1.0,
+          "FootstepGain": 1.0,
+          "WeightLayerDelay": 0.4,
+          "AudioWeightTag": {
+            "TagName": "Audio.Asset.Player.Weight.Lightest"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Player.Weight.Light"
+        },
+        "Value": {
+          "WeightLayerGain": 0.5,
+          "FootstepGain": 1.0,
+          "WeightLayerDelay": 0.4,
+          "AudioWeightTag": {
+            "TagName": "Audio.Asset.Player.Weight.Light"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Player.Weight.Medium"
+        },
+        "Value": {
+          "WeightLayerGain": 1.0,
+          "FootstepGain": 0.35,
+          "WeightLayerDelay": 0.4,
+          "AudioWeightTag": {
+            "TagName": "Audio.Asset.Player.Weight.Medium"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Player.Weight.Heavy"
+        },
+        "Value": {
+          "WeightLayerGain": 1.0,
+          "FootstepGain": 0.25,
+          "WeightLayerDelay": 0.4,
+          "AudioWeightTag": {
+            "TagName": "Audio.Asset.Player.Weight.Heavy"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Player.Weight.SuperHeavy"
+        },
+        "Value": {
+          "WeightLayerGain": 1.0,
+          "FootstepGain": 0.35,
+          "WeightLayerDelay": 0.0,
+          "AudioWeightTag": {
+            "TagName": "Audio.Asset.Player.Weight.SuperHeavy"
+          }
+        }
+      }
+    ],
+    "SoundAssetData": {
+      "ObjectName": "WDAudioData'DA_Player_Weight_Stealth'",
+      "ObjectPath": "/Game/Audio/Player/Movement/Footsteps/DA/DA_Player_Weight_Stealth.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Footstep.CrouchWalk"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0 ---
+{
+  "Type": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware",
+  "Name": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Footstep_Stealth'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Footstep/AE_Footstep_Stealth.6"
+  },
+  "Properties": {
+    "FirstPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Footstep.1p"
+    },
+    "AlliedThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Footstep.Ally"
+    },
+    "HostileThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Footstep.Enemy"
+    },
+    "SoundAssetData": {
+      "ObjectName": "WDAudioData'DA_Footstep_CrouchWalk_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Movement/Footsteps/DA/DA_Footstep_CrouchWalk_Audio.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Footstep.CrouchWalk"
+    },
+    "bStatic": true
+  }
+}

@@ -1,0 +1,37 @@
+--- export: UObject / GameFeatureAction_DataRegistry_1 ---
+{
+  "Type": "GameFeatureAction_DataRegistry",
+  "Name": "GameFeatureAction_DataRegistry_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistry'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'ControlZoneRegions'",
+    "ObjectPath": "/ControlZoneRegions/ControlZoneRegions.1"
+  },
+  "Properties": {
+    "RegistriesToAdd": [
+      {
+        "AssetPathName": "/ControlZoneRegions/Data/DR_Editor_Trackers_ControlZoneRegions.DR_Editor_Trackers_ControlZoneRegions",
+        "SubPathString": ""
+      }
+    ],
+    "bPreloadInEditor": true,
+    "bPreloadInCommandlets": true
+  }
+}
+--- export: UPrimaryDataAsset / ControlZoneRegions ---
+{
+  "Type": "GameFeatureData",
+  "Name": "ControlZoneRegions",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/ControlZoneRegions/ControlZoneRegions",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_DataRegistry'ControlZoneRegions:GameFeatureAction_DataRegistry_1'",
+        "ObjectPath": "/ControlZoneRegions/ControlZoneRegions.0"
+      }
+    ]
+  }
+}

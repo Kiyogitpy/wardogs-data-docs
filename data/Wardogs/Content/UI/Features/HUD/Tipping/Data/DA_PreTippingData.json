@@ -1,0 +1,17 @@
+--- export: UDataAsset / DA_PreTippingData ---
+{
+  "Type": "WDUIPreTippingData",
+  "Name": "DA_PreTippingData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIPreTippingData'",
+  "Package": "/Game/UI/Features/HUD/Tipping/Data/DA_PreTippingData",
+  "Properties": {
+    "AudioEventTag": {
+      "TagName": "Audio.Event.UX.Cash.Bribe"
+    },
+    "TippingDataTable": {
+      "ObjectName": "DataTable'DT_CashRewards'",
+      "ObjectPath": "/Game/GameMechanics/Gamemode/Data/DT_CashRewards.0"
+    }
+  }
+}

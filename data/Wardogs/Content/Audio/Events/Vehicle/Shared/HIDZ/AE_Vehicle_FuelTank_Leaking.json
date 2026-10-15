@@ -1,0 +1,198 @@
+--- export: UObject / AEB_VehiclePerspective_C_0 ---
+{
+  "Type": "AEB_VehiclePerspective_C",
+  "Name": "AEB_VehiclePerspective_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_VehiclePerspective.AEB_VehiclePerspective_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_FuelTank_Leaking'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_FuelTank_Leaking.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_VehiclePerspective_C'Default__AEB_VehiclePerspective_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_VehiclePerspective.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Fuel"
+    },
+    "ConcurrentInstanceLimit": 0
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_FuelTank_Leaking ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_FuelTank_Leaking",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_FuelTank_Leaking",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.FuelTank.Leaking"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Vehicle_FuelTank_Leaking:CrosstalkAudioEventBehaviorAttachSoundToActor_1'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_FuelTank_Leaking.3"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorVehicleUpdateFuelLeakParameters'AE_Vehicle_FuelTank_Leaking:WDAudioEventBehaviorVehicleUpdateFuelLeakParameters_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_FuelTank_Leaking.6"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Vehicle_FuelTank_Leaking:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_FuelTank_Leaking.4"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Vehicle_FuelTank_Leaking:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_FuelTank_Leaking.2"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorPlayVehicleFuelLeakSound'AE_Vehicle_FuelTank_Leaking:WDAudioEventBehaviorPlayVehicleFuelLeakSound_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_FuelTank_Leaking.5"
+      },
+      {
+        "ObjectName": "AEB_VehiclePerspective_C'AE_Vehicle_FuelTank_Leaking:AEB_VehiclePerspective_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_FuelTank_Leaking.0"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_FuelTank_Leaking'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_FuelTank_Leaking.1"
+  },
+  "Properties": {
+    "AttachmentOffset": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 35.0
+    },
+    "SocketName": "fuelPoint_J",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Fuel.Burst"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_1 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_FuelTank_Leaking'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_FuelTank_Leaking.1"
+  },
+  "Properties": {
+    "SocketName": "fuelPoint_J",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Fuel"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_FuelTank_Leaking'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_FuelTank_Leaking.1"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Vehicle_Shared_Fuel_Leak'",
+      "ObjectPath": "/Game/Audio/Vehicles/Shared/HIDZ/Fuel/MSS/MSS_Vehicle_Shared_Fuel_Leak.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Fuel"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviorPlayVehicleFuelLeakSound_0 ---
+{
+  "Type": "WDAudioEventBehaviorPlayVehicleFuelLeakSound",
+  "Name": "WDAudioEventBehaviorPlayVehicleFuelLeakSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorPlayVehicleFuelLeakSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_FuelTank_Leaking'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_FuelTank_Leaking.1"
+  },
+  "Properties": {
+    "VehicleFuelLeakSounds": [
+      {
+        "Threshold": 0.1,
+        "FuelLeakSound": {
+          "ObjectName": "MetaSoundSource'MSS_Vehicle_Shared_Fuel_MediumBurst'",
+          "ObjectPath": "/Game/Audio/Vehicles/Shared/HIDZ/Fuel/MSS/MSS_Vehicle_Shared_Fuel_MediumBurst.0"
+        }
+      },
+      {
+        "Threshold": 0.5,
+        "FuelLeakSound": {
+          "ObjectName": "MetaSoundSource'MSS_Vehicle_Shared_Fuel_HeavyBurst'",
+          "ObjectPath": "/Game/Audio/Vehicles/Shared/HIDZ/Fuel/MSS/MSS_Vehicle_Shared_Fuel_HeavyBurst.0"
+        }
+      },
+      {
+        "Threshold": 1.0,
+        "FuelLeakSound": {
+          "ObjectName": "MetaSoundSource'MSS_Vehicle_Shared_Fuel_HeavyBurst'",
+          "ObjectPath": "/Game/Audio/Vehicles/Shared/HIDZ/Fuel/MSS/MSS_Vehicle_Shared_Fuel_HeavyBurst.0"
+        }
+      }
+    ],
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Fuel.Burst"
+    },
+    "bPersistent": true,
+    "ConcurrentInstanceLimit": 1
+  }
+}
+--- export: UObject / WDAudioEventBehaviorVehicleUpdateFuelLeakParameters_0 ---
+{
+  "Type": "WDAudioEventBehaviorVehicleUpdateFuelLeakParameters",
+  "Name": "WDAudioEventBehaviorVehicleUpdateFuelLeakParameters_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorVehicleUpdateFuelLeakParameters'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_FuelTank_Leaking'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_FuelTank_Leaking.1"
+  },
+  "Properties": {
+    "UpdateRate": 0.1,
+    "MaxFuelLeakRate": 1.0,
+    "FuelLeakRateParameter": "Leak Rate",
+    "FuelRemainingParameter": "Fuel Level",
+    "FuelLeakThresholdTriggers": [
+      {
+        "ThresholdParamName": "MediumLoop",
+        "ThresholdParamValue": 0.1
+      },
+      {
+        "ThresholdParamName": "HeavyLoop",
+        "ThresholdParamValue": 0.5
+      }
+    ],
+    "FuelRemainingThresholdTriggers": [
+      {
+        "ThresholdParamName": "No Fuel Stop",
+        "ThresholdParamValue": 0.0
+      }
+    ],
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Fuel"
+    },
+    "bPersistent": true,
+    "ConcurrentInstanceLimit": 1
+  }
+}

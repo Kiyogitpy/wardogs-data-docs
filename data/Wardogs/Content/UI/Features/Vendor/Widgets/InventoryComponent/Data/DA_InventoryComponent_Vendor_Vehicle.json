@@ -1,0 +1,46 @@
+--- export: UDataAsset / DA_InventoryComponent_Vendor_Vehicle ---
+{
+  "Type": "WDUIVehicleInventoryWidgetData",
+  "Name": "DA_InventoryComponent_Vendor_Vehicle",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIVehicleInventoryWidgetData'",
+  "Package": "/Game/UI/Features/Vendor/Widgets/InventoryComponent/Data/DA_InventoryComponent_Vendor_Vehicle",
+  "Properties": {
+    "VehicleEntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIVehicleCrateEntryViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/InventoryComponent/Data/DA_InventoryComponent_VehicleEntry.DA_InventoryComponent_VehicleEntry",
+        "SubPathString": ""
+      }
+    },
+    "ContainerLayoutViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIContainerLayoutViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/ContainerLayout/Data/DA_ContainerLayout_Vendor_Garage_VehicleInventory.DA_ContainerLayout_Vendor_Garage_VehicleInventory",
+        "SubPathString": ""
+      }
+    },
+    "_aaabmchfonpclieeclagn_$275EDF2B8442B06D$_$28$": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIVehicleLogisticsGridViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/LogisticsSlots/Widgets/LogisticsGrid/Data/DA_LogisticsGridData.DA_LogisticsGridData",
+        "SubPathString": ""
+      }
+    },
+    "VehicleInventoryTextFormat": {
+      "Namespace": "",
+      "Key": "D3DC8C9A49608975933841B441768337",
+      "SourceString": "{CurrentCapacity}/{MaxCapacity}",
+      "LocalizedString": "{CurrentCapacity}/{MaxCapacity}"
+    }
+  }
+}

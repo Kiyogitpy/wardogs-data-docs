@@ -1,0 +1,33 @@
+--- export: UObject / GameFeatureAction_AddWorldPartitionContent_0 ---
+{
+  "Type": "GameFeatureAction_AddWorldPartitionContent",
+  "Name": "GameFeatureAction_AddWorldPartitionContent_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddWorldPartitionContent'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Pistol_04'",
+    "ObjectPath": "/Pistol_04/Pistol_04.1"
+  },
+  "Properties": {
+    "ExternalDataLayerAsset": {
+      "ObjectName": "ExternalDataLayerAsset'EDL_Pistol_04'",
+      "ObjectPath": "/Pistol_04/DataLayer/EDL_Pistol_04.0"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / Pistol_04 ---
+{
+  "Type": "GameFeatureData",
+  "Name": "Pistol_04",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/Pistol_04/Pistol_04",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_AddWorldPartitionContent'Pistol_04:GameFeatureAction_AddWorldPartitionContent_0'",
+        "ObjectPath": "/Pistol_04/Pistol_04.0"
+      }
+    ]
+  }
+}

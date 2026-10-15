@@ -1,0 +1,52 @@
+--- export: UObject / WDInvestmentCore_0 ---
+{
+  "Type": "WDInvestmentCore",
+  "Name": "WDInvestmentCore_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInvestmentCore'",
+  "Outer": {
+    "ObjectName": "WDInvestmentDefinition'DA_TestInvestmentOne'",
+    "ObjectPath": "/Game/Meta/Investments/DA_TestInvestmentOne.1"
+  }
+}
+--- export: UPrimaryDataAsset / DA_TestInvestmentOne ---
+{
+  "Type": "WDInvestmentDefinition",
+  "Name": "DA_TestInvestmentOne",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInvestmentDefinition'",
+  "Package": "/Game/Meta/Investments/DA_TestInvestmentOne",
+  "Properties": {
+    "ID": {
+      "TagName": "Id.Investment.DebugOne"
+    },
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "A88994D8461518431068BEBEA403734B",
+      "SourceString": "Debug One Title",
+      "LocalizedString": "Debug One Title"
+    },
+    "Description": {
+      "Namespace": "",
+      "Key": "3BB7264346088670DC87839B5D838671",
+      "SourceString": "Debug One Description",
+      "LocalizedString": "Debug One Description"
+    },
+    "PurchaseCost": [
+      {
+        "Key": {
+          "TagName": "Attribute.Meta.Currency.Cash"
+        },
+        "Value": 100
+      }
+    ],
+    "MapIcon": {
+      "AssetPathName": "/Game/UI/Features/ContextDrawer/Tabs/Party/Widgets/SquadPlayer/Textures/T_UI_Icon_AddToSquad.T_UI_Icon_AddToSquad",
+      "SubPathString": ""
+    },
+    "ArchetypeObject": {
+      "ObjectName": "WDInvestmentCore'DA_TestInvestmentOne:WDInvestmentCore_0'",
+      "ObjectPath": "/Game/Meta/Investments/DA_TestInvestmentOne.0"
+    }
+  }
+}

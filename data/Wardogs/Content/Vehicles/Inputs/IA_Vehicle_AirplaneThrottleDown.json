@@ -1,0 +1,70 @@
+--- export: UDataAsset / IA_Vehicle_AirplaneThrottleDown ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Vehicle_AirplaneThrottleDown",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneThrottleDown",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.ThrottleDown"
+    },
+    "ValueType": "EInputActionValueType::Axis1D",
+    "AccumulationBehavior": "EInputActionAccumulationBehavior::Cumulative",
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerPressed'IA_Vehicle_AirplaneThrottleDown:InputTriggerPressed_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneThrottleDown.2"
+      },
+      {
+        "ObjectName": "InputTriggerReleased'IA_Vehicle_AirplaneThrottleDown:InputTriggerReleased_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneThrottleDown.3"
+      }
+    ],
+    "Modifiers": [
+      {
+        "ObjectName": "InputModifierNegate'IA_Vehicle_AirplaneThrottleDown:InputModifierNegate_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneThrottleDown.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputModifierNegate_0 ---
+{
+  "Type": "InputModifierNegate",
+  "Name": "InputModifierNegate_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierNegate'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_AirplaneThrottleDown'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneThrottleDown.0"
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_AirplaneThrottleDown'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneThrottleDown.0"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.01
+  }
+}
+--- export: UObject / InputTriggerReleased_0 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_AirplaneThrottleDown'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneThrottleDown.0"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.01
+  }
+}

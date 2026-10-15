@@ -1,0 +1,35 @@
+--- export: UDataAsset / IA_Weapon_ReloadDiscard ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Weapon_ReloadDiscard",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Weapons/Input/IA_Weapon_ReloadDiscard",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.HoldableItem.Weapon.Reload.Discard"
+    },
+    "bConsumeInput": false,
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerHold'IA_Weapon_ReloadDiscard:InputTriggerHold_0'",
+        "ObjectPath": "/Game/Weapons/Input/IA_Weapon_ReloadDiscard.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerHold_0 ---
+{
+  "Type": "InputTriggerHold",
+  "Name": "InputTriggerHold_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerHold'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Weapon_ReloadDiscard'",
+    "ObjectPath": "/Game/Weapons/Input/IA_Weapon_ReloadDiscard.0"
+  },
+  "Properties": {
+    "HoldTimeThreshold": 0.3,
+    "bIsOneShot": true
+  }
+}

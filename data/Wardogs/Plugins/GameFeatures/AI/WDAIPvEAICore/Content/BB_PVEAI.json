@@ -1,0 +1,288 @@
+--- export: UDataAsset / BB_PVEAI ---
+{
+  "Type": "BlackboardData",
+  "Name": "BB_PVEAI",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BlackboardData'",
+  "Package": "/WDAIPvEAICore/BB_PVEAI",
+  "Properties": {
+    "Keys": [
+      {
+        "EntryName": "HasLineOfSight",
+        "KeyType": {
+          "ObjectName": "BlackboardKeyType_Bool'BB_PVEAI:BlackboardKeyType_Bool_0'",
+          "ObjectPath": "/WDAIPvEAICore/BB_PVEAI.1"
+        },
+        "bInstanceSynced": false
+      },
+      {
+        "EntryName": "MoveGoal",
+        "KeyType": {
+          "ObjectName": "BlackboardKeyType_Vector'BB_PVEAI:BlackboardKeyType_Vector_0'",
+          "ObjectPath": "/WDAIPvEAICore/BB_PVEAI.11"
+        },
+        "bInstanceSynced": false
+      },
+      {
+        "EntryName": "SelfActor",
+        "KeyType": {
+          "ObjectName": "BlackboardKeyType_Object'BB_PVEAI:BlackboardKeyType_Object_0'",
+          "ObjectPath": "/WDAIPvEAICore/BB_PVEAI.7"
+        },
+        "bInstanceSynced": false
+      },
+      {
+        "EntryName": "TargetActor",
+        "KeyType": {
+          "ObjectName": "BlackboardKeyType_Object'BB_PVEAI:BlackboardKeyType_Object_2'",
+          "ObjectPath": "/WDAIPvEAICore/BB_PVEAI.9"
+        },
+        "bInstanceSynced": false
+      },
+      {
+        "EntryName": "Pressure",
+        "KeyType": {
+          "ObjectName": "BlackboardKeyType_Float'BB_PVEAI:BlackboardKeyType_Float_0'",
+          "ObjectPath": "/WDAIPvEAICore/BB_PVEAI.5"
+        },
+        "bInstanceSynced": false
+      },
+      {
+        "EntryName": "HasTeleportedToAO",
+        "KeyType": {
+          "ObjectName": "BlackboardKeyType_Bool'BB_PVEAI:BlackboardKeyType_Bool_1'",
+          "ObjectPath": "/WDAIPvEAICore/BB_PVEAI.2"
+        },
+        "bInstanceSynced": false
+      },
+      {
+        "EntryName": "Cover",
+        "KeyType": {
+          "ObjectName": "SDBlackboardKeyType_Cover'BB_PVEAI:SDBlackboardKeyType_Cover_0'",
+          "ObjectPath": "/WDAIPvEAICore/BB_PVEAI.12"
+        },
+        "bInstanceSynced": false
+      },
+      {
+        "EntryName": "PeekPoint",
+        "KeyType": {
+          "ObjectName": "SDBlackboardKeyType_PeekPoint'BB_PVEAI:SDBlackboardKeyType_PeekPoint_0'",
+          "ObjectPath": "/WDAIPvEAICore/BB_PVEAI.13"
+        },
+        "bInstanceSynced": false
+      },
+      {
+        "EntryName": "SOClaimHande",
+        "KeyType": {
+          "ObjectName": "BlackboardKeyType_SOClaimHandle'BB_PVEAI:BlackboardKeyType_SOClaimHandle_0'",
+          "ObjectPath": "/WDAIPvEAICore/BB_PVEAI.10"
+        },
+        "bInstanceSynced": false
+      },
+      {
+        "EntryName": "GoalActor",
+        "KeyType": {
+          "ObjectName": "BlackboardKeyType_Object'BB_PVEAI:BlackboardKeyType_Object_1'",
+          "ObjectPath": "/WDAIPvEAICore/BB_PVEAI.8"
+        },
+        "bInstanceSynced": false
+      },
+      {
+        "EntryName": "LastAlertState",
+        "KeyType": {
+          "ObjectName": "BlackboardKeyType_Enum'BB_PVEAI:BlackboardKeyType_Enum_0'",
+          "ObjectPath": "/WDAIPvEAICore/BB_PVEAI.4"
+        },
+        "bInstanceSynced": false
+      },
+      {
+        "EntryName": "TargetAreaId",
+        "KeyType": {
+          "ObjectName": "BlackboardKeyType_Int'BB_PVEAI:BlackboardKeyType_Int_0'",
+          "ObjectPath": "/WDAIPvEAICore/BB_PVEAI.6"
+        },
+        "bInstanceSynced": false
+      },
+      {
+        "EntryName": "AlertInterruptible",
+        "KeyType": {
+          "ObjectName": "BlackboardKeyType_Bool'BB_PVEAI:BlackboardKeyType_Bool_2'",
+          "ObjectPath": "/WDAIPvEAICore/BB_PVEAI.3"
+        },
+        "bInstanceSynced": false
+      }
+    ]
+  }
+}
+--- export: UObject / BlackboardKeyType_Bool_0 ---
+{
+  "Type": "BlackboardKeyType_Bool",
+  "Name": "BlackboardKeyType_Bool_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BlackboardKeyType_Bool'",
+  "Outer": {
+    "ObjectName": "BlackboardData'BB_PVEAI'",
+    "ObjectPath": "/WDAIPvEAICore/BB_PVEAI.0"
+  }
+}
+--- export: UObject / BlackboardKeyType_Bool_1 ---
+{
+  "Type": "BlackboardKeyType_Bool",
+  "Name": "BlackboardKeyType_Bool_1",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BlackboardKeyType_Bool'",
+  "Outer": {
+    "ObjectName": "BlackboardData'BB_PVEAI'",
+    "ObjectPath": "/WDAIPvEAICore/BB_PVEAI.0"
+  }
+}
+--- export: UObject / BlackboardKeyType_Bool_2 ---
+{
+  "Type": "BlackboardKeyType_Bool",
+  "Name": "BlackboardKeyType_Bool_2",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BlackboardKeyType_Bool'",
+  "Outer": {
+    "ObjectName": "BlackboardData'BB_PVEAI'",
+    "ObjectPath": "/WDAIPvEAICore/BB_PVEAI.0"
+  },
+  "Properties": {
+    "bDefaultValue": true
+  }
+}
+--- export: UObject / BlackboardKeyType_Enum_0 ---
+{
+  "Type": "BlackboardKeyType_Enum",
+  "Name": "BlackboardKeyType_Enum_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BlackboardKeyType_Enum'",
+  "Outer": {
+    "ObjectName": "BlackboardData'BB_PVEAI'",
+    "ObjectPath": "/WDAIPvEAICore/BB_PVEAI.0"
+  },
+  "Properties": {
+    "EnumType": {
+      "ObjectName": "Class'EWDAIAlertState'",
+      "ObjectPath": "/Script/WDAIPvEAICoreRuntime"
+    },
+    "EnumName": "EWDAIAlertState",
+    "bIsEnumNameValid": true
+  }
+}
+--- export: UObject / BlackboardKeyType_Float_0 ---
+{
+  "Type": "BlackboardKeyType_Float",
+  "Name": "BlackboardKeyType_Float_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BlackboardKeyType_Float'",
+  "Outer": {
+    "ObjectName": "BlackboardData'BB_PVEAI'",
+    "ObjectPath": "/WDAIPvEAICore/BB_PVEAI.0"
+  }
+}
+--- export: UObject / BlackboardKeyType_Int_0 ---
+{
+  "Type": "BlackboardKeyType_Int",
+  "Name": "BlackboardKeyType_Int_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BlackboardKeyType_Int'",
+  "Outer": {
+    "ObjectName": "BlackboardData'BB_PVEAI'",
+    "ObjectPath": "/WDAIPvEAICore/BB_PVEAI.0"
+  }
+}
+--- export: UObject / BlackboardKeyType_Object_0 ---
+{
+  "Type": "BlackboardKeyType_Object",
+  "Name": "BlackboardKeyType_Object_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BlackboardKeyType_Object'",
+  "Outer": {
+    "ObjectName": "BlackboardData'BB_PVEAI'",
+    "ObjectPath": "/WDAIPvEAICore/BB_PVEAI.0"
+  },
+  "Properties": {
+    "BaseClass": {
+      "ObjectName": "Class'Actor'",
+      "ObjectPath": "/Script/Engine"
+    }
+  }
+}
+--- export: UObject / BlackboardKeyType_Object_1 ---
+{
+  "Type": "BlackboardKeyType_Object",
+  "Name": "BlackboardKeyType_Object_1",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BlackboardKeyType_Object'",
+  "Outer": {
+    "ObjectName": "BlackboardData'BB_PVEAI'",
+    "ObjectPath": "/WDAIPvEAICore/BB_PVEAI.0"
+  },
+  "Properties": {
+    "BaseClass": {
+      "ObjectName": "Class'Actor'",
+      "ObjectPath": "/Script/Engine"
+    }
+  }
+}
+--- export: UObject / BlackboardKeyType_Object_2 ---
+{
+  "Type": "BlackboardKeyType_Object",
+  "Name": "BlackboardKeyType_Object_2",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BlackboardKeyType_Object'",
+  "Outer": {
+    "ObjectName": "BlackboardData'BB_PVEAI'",
+    "ObjectPath": "/WDAIPvEAICore/BB_PVEAI.0"
+  },
+  "Properties": {
+    "BaseClass": {
+      "ObjectName": "BlueprintGeneratedClass'Actor_C'",
+      "ObjectPath": "/Prefixed/Test/Enforcement/Actor.1"
+    }
+  }
+}
+--- export: UObject / BlackboardKeyType_SOClaimHandle_0 ---
+{
+  "Type": "BlackboardKeyType_SOClaimHandle",
+  "Name": "BlackboardKeyType_SOClaimHandle_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BlackboardKeyType_SOClaimHandle'",
+  "Outer": {
+    "ObjectName": "BlackboardData'BB_PVEAI'",
+    "ObjectPath": "/WDAIPvEAICore/BB_PVEAI.0"
+  }
+}
+--- export: UObject / BlackboardKeyType_Vector_0 ---
+{
+  "Type": "BlackboardKeyType_Vector",
+  "Name": "BlackboardKeyType_Vector_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BlackboardKeyType_Vector'",
+  "Outer": {
+    "ObjectName": "BlackboardData'BB_PVEAI'",
+    "ObjectPath": "/WDAIPvEAICore/BB_PVEAI.0"
+  }
+}
+--- export: UObject / SDBlackboardKeyType_Cover_0 ---
+{
+  "Type": "SDBlackboardKeyType_Cover",
+  "Name": "SDBlackboardKeyType_Cover_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'SDBlackboardKeyType_Cover'",
+  "Outer": {
+    "ObjectName": "BlackboardData'BB_PVEAI'",
+    "ObjectPath": "/WDAIPvEAICore/BB_PVEAI.0"
+  }
+}
+--- export: UObject / SDBlackboardKeyType_PeekPoint_0 ---
+{
+  "Type": "SDBlackboardKeyType_PeekPoint",
+  "Name": "SDBlackboardKeyType_PeekPoint_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'SDBlackboardKeyType_PeekPoint'",
+  "Outer": {
+    "ObjectName": "BlackboardData'BB_PVEAI'",
+    "ObjectPath": "/WDAIPvEAICore/BB_PVEAI.0"
+  }
+}

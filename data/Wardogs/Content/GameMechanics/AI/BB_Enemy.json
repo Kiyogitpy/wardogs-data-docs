@@ -1,0 +1,182 @@
+--- export: UDataAsset / BB_Enemy ---
+{
+  "Type": "BlackboardData",
+  "Name": "BB_Enemy",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BlackboardData'",
+  "Package": "/Game/GameMechanics/AI/BB_Enemy",
+  "Properties": {
+    "Keys": [
+      {
+        "EntryName": "EnemyActor",
+        "KeyType": {
+          "ObjectName": "BlackboardKeyType_Object'BB_Enemy:BlackboardKeyType_Object_1'",
+          "ObjectPath": "/Game/GameMechanics/AI/BB_Enemy.5"
+        },
+        "bInstanceSynced": false
+      },
+      {
+        "EntryName": "HasLineOfSight",
+        "KeyType": {
+          "ObjectName": "BlackboardKeyType_Bool'BB_Enemy:BlackboardKeyType_Bool_0'",
+          "ObjectPath": "/Game/GameMechanics/AI/BB_Enemy.1"
+        },
+        "bInstanceSynced": false
+      },
+      {
+        "EntryName": "MoveGoal",
+        "KeyType": {
+          "ObjectName": "BlackboardKeyType_Vector'BB_Enemy:BlackboardKeyType_Vector_0'",
+          "ObjectPath": "/Game/GameMechanics/AI/BB_Enemy.8"
+        },
+        "bInstanceSynced": false
+      },
+      {
+        "EntryName": "SelfActor",
+        "KeyType": {
+          "ObjectName": "BlackboardKeyType_Object'BB_Enemy:BlackboardKeyType_Object_0'",
+          "ObjectPath": "/Game/GameMechanics/AI/BB_Enemy.4"
+        },
+        "bInstanceSynced": false
+      },
+      {
+        "EntryName": "TargetActor",
+        "KeyType": {
+          "ObjectName": "BlackboardKeyType_Object'BB_Enemy:BlackboardKeyType_Object_2'",
+          "ObjectPath": "/Game/GameMechanics/AI/BB_Enemy.6"
+        },
+        "bInstanceSynced": false
+      },
+      {
+        "EntryName": "Pressure",
+        "KeyType": {
+          "ObjectName": "BlackboardKeyType_Float'BB_Enemy:BlackboardKeyType_Float_0'",
+          "ObjectPath": "/Game/GameMechanics/AI/BB_Enemy.3"
+        },
+        "bInstanceSynced": false
+      },
+      {
+        "EntryName": "HasTeleportedToAO",
+        "KeyType": {
+          "ObjectName": "BlackboardKeyType_Bool'BB_Enemy:BlackboardKeyType_Bool_1'",
+          "ObjectPath": "/Game/GameMechanics/AI/BB_Enemy.2"
+        },
+        "bInstanceSynced": false
+      },
+      {
+        "EntryName": "SOClaimHandle",
+        "KeyType": {
+          "ObjectName": "BlackboardKeyType_SOClaimHandle'BB_Enemy:BlackboardKeyType_SOClaimHandle_0'",
+          "ObjectPath": "/Game/GameMechanics/AI/BB_Enemy.7"
+        },
+        "bInstanceSynced": false
+      }
+    ]
+  }
+}
+--- export: UObject / BlackboardKeyType_Bool_0 ---
+{
+  "Type": "BlackboardKeyType_Bool",
+  "Name": "BlackboardKeyType_Bool_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BlackboardKeyType_Bool'",
+  "Outer": {
+    "ObjectName": "BlackboardData'BB_Enemy'",
+    "ObjectPath": "/Game/GameMechanics/AI/BB_Enemy.0"
+  }
+}
+--- export: UObject / BlackboardKeyType_Bool_1 ---
+{
+  "Type": "BlackboardKeyType_Bool",
+  "Name": "BlackboardKeyType_Bool_1",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BlackboardKeyType_Bool'",
+  "Outer": {
+    "ObjectName": "BlackboardData'BB_Enemy'",
+    "ObjectPath": "/Game/GameMechanics/AI/BB_Enemy.0"
+  }
+}
+--- export: UObject / BlackboardKeyType_Float_0 ---
+{
+  "Type": "BlackboardKeyType_Float",
+  "Name": "BlackboardKeyType_Float_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BlackboardKeyType_Float'",
+  "Outer": {
+    "ObjectName": "BlackboardData'BB_Enemy'",
+    "ObjectPath": "/Game/GameMechanics/AI/BB_Enemy.0"
+  }
+}
+--- export: UObject / BlackboardKeyType_Object_0 ---
+{
+  "Type": "BlackboardKeyType_Object",
+  "Name": "BlackboardKeyType_Object_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BlackboardKeyType_Object'",
+  "Outer": {
+    "ObjectName": "BlackboardData'BB_Enemy'",
+    "ObjectPath": "/Game/GameMechanics/AI/BB_Enemy.0"
+  },
+  "Properties": {
+    "BaseClass": {
+      "ObjectName": "Class'Actor'",
+      "ObjectPath": "/Script/Engine"
+    }
+  }
+}
+--- export: UObject / BlackboardKeyType_Object_1 ---
+{
+  "Type": "BlackboardKeyType_Object",
+  "Name": "BlackboardKeyType_Object_1",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BlackboardKeyType_Object'",
+  "Outer": {
+    "ObjectName": "BlackboardData'BB_Enemy'",
+    "ObjectPath": "/Game/GameMechanics/AI/BB_Enemy.0"
+  },
+  "Properties": {
+    "BaseClass": {
+      "ObjectName": "BlueprintGeneratedClass'Actor_C'",
+      "ObjectPath": "/Prefixed/Test/Noncompliants/Actor.1"
+    }
+  }
+}
+--- export: UObject / BlackboardKeyType_Object_2 ---
+{
+  "Type": "BlackboardKeyType_Object",
+  "Name": "BlackboardKeyType_Object_2",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BlackboardKeyType_Object'",
+  "Outer": {
+    "ObjectName": "BlackboardData'BB_Enemy'",
+    "ObjectPath": "/Game/GameMechanics/AI/BB_Enemy.0"
+  },
+  "Properties": {
+    "BaseClass": {
+      "ObjectName": "BlueprintGeneratedClass'Actor_C'",
+      "ObjectPath": "/Prefixed/Test/Enforcement/Actor.1"
+    }
+  }
+}
+--- export: UObject / BlackboardKeyType_SOClaimHandle_0 ---
+{
+  "Type": "BlackboardKeyType_SOClaimHandle",
+  "Name": "BlackboardKeyType_SOClaimHandle_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BlackboardKeyType_SOClaimHandle'",
+  "Outer": {
+    "ObjectName": "BlackboardData'BB_Enemy'",
+    "ObjectPath": "/Game/GameMechanics/AI/BB_Enemy.0"
+  }
+}
+--- export: UObject / BlackboardKeyType_Vector_0 ---
+{
+  "Type": "BlackboardKeyType_Vector",
+  "Name": "BlackboardKeyType_Vector_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BlackboardKeyType_Vector'",
+  "Outer": {
+    "ObjectName": "BlackboardData'BB_Enemy'",
+    "ObjectPath": "/Game/GameMechanics/AI/BB_Enemy.0"
+  }
+}

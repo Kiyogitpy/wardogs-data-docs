@@ -1,0 +1,344 @@
+--- export: UPrimaryDataAsset / VP_STN_04 ---
+{
+  "Type": "ModularVehiclePlatform",
+  "Name": "VP_STN_04",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePlatform'",
+  "Package": "/STN_04/Platforms/VP_STN_04",
+  "Properties": {
+    "ImplementationClass": {
+      "AssetPathName": "/Script/STN_04.WDStationaryVehicle_Loudspeaker",
+      "SubPathString": ""
+    },
+    "SpawnParams": {
+      "Min": {
+        "X": -173.02835,
+        "Y": -174.66219,
+        "Z": 0.0
+      },
+      "Max": {
+        "X": 170.4458,
+        "Y": 168.3375,
+        "Z": 876.98505
+      }
+    },
+    "Fragments": [
+      {
+        "Key": "Chassis",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_SkeletalMesh'VP_STN_04:MVF_SkeletalMesh_0'",
+            "ObjectPath": "/STN_04/Platforms/VP_STN_04.4"
+          }
+        }
+      },
+      {
+        "Key": "Health",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_HealthSections'VP_STN_04:MVF_HealthSections_0'",
+            "ObjectPath": "/STN_04/Platforms/VP_STN_04.3"
+          }
+        }
+      },
+      {
+        "Key": "Config",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_VehicleConfig'VP_STN_04:MVF_VehicleConfig_0'",
+            "ObjectPath": "/STN_04/Platforms/VP_STN_04.6"
+          }
+        }
+      },
+      {
+        "Key": "Interactions",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_Interactions'VP_STN_04:WD_MVF_Interactions_0'",
+            "ObjectPath": "/STN_04/Platforms/VP_STN_04.8"
+          }
+        }
+      },
+      {
+        "Key": "Ladder",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_ActorFragment'VP_STN_04:MVF_ActorFragment_0'",
+            "ObjectPath": "/STN_04/Platforms/VP_STN_04.2"
+          }
+        }
+      },
+      {
+        "Key": "CC_Loudspeaker",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_STN_04:MVF_StaticMesh_1'",
+            "ObjectPath": "/STN_04/Platforms/VP_STN_04.5"
+          }
+        }
+      },
+      {
+        "Key": "Buildable",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_BuildableFragment'VP_STN_04:WD_MVF_BuildableFragment_0'",
+            "ObjectPath": "/STN_04/Platforms/VP_STN_04.7"
+          }
+        }
+      }
+    ],
+    "Slots": [
+      {
+        "Key": "Seats",
+        "Value": {
+          "bEnabled": true,
+          "Slot": {
+            "ObjectName": "ModularVehicleSlot'VP_STN_04:ModularVehicleSlot_0'",
+            "ObjectPath": "/STN_04/Platforms/VP_STN_04.1"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / ModularVehicleSlot_0 ---
+{
+  "Type": "ModularVehicleSlot",
+  "Name": "ModularVehicleSlot_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleSlot'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_STN_04'",
+    "ObjectPath": "/STN_04/Platforms/VP_STN_04.0"
+  },
+  "Properties": {
+    "CompatibilityTags": {
+      "RequireTags": [
+        "Vehicle.Seat"
+      ]
+    }
+  }
+}
+--- export: UObject / MVF_ActorFragment_0 ---
+{
+  "Type": "MVF_ActorFragment",
+  "Name": "MVF_ActorFragment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_ActorFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_STN_04'",
+    "ObjectPath": "/STN_04/Platforms/VP_STN_04.0"
+  },
+  "Properties": {
+    "ActorData": {
+      "Actor": {
+        "AssetPathName": "/STN_04/Blueprints/B_CommunicationsTowerLadder.B_CommunicationsTowerLadder_C",
+        "SubPathString": ""
+      },
+      "AttachBone": "root_J",
+      "AttachTransform": {
+        "Translation": {
+          "X": -155.0,
+          "Y": 60.0,
+          "Z": 10.0
+        }
+      }
+    }
+  }
+}
+--- export: UObject / MVF_HealthSections_0 ---
+{
+  "Type": "MVF_HealthSections",
+  "Name": "MVF_HealthSections_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_HealthSections'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_STN_04'",
+    "ObjectPath": "/STN_04/Platforms/VP_STN_04.0"
+  },
+  "Properties": {
+    "HealthSections": [
+      {
+        "Key": {
+          "TagName": "Attribute.Gameplay.Health"
+        },
+        "Value": {
+          "MaxHealth": 1000.0,
+          "Tags": [
+            "Meta.Damage.HitLocation.Vehicle.MainBody"
+          ],
+          "_aaachppjniilchbhchfel_$FF9D88B27172754B$_$39$": false,
+          "PreDamageRouting": [],
+          "_aaacihkleekkmjpdiiofn_$7AB44AAC9F388E5D$_$40$": false,
+          "PostDamageRouting": [],
+          "_aaadailpdlfefdlnfieob_$8BF3B5453BD584E1$_$48$": false,
+          "SimultaneousDamageRouting": [],
+          "RepairInteractionContextTag": {
+            "TagName": "None"
+          },
+          "RepairInteractionTrackerPointTag": {
+            "TagName": "None"
+          }
+        }
+      }
+    ],
+    "ComplexSurfaceMappings": {
+      "SurfaceGroups": [
+        {
+          "Key": {
+            "TagName": "ComplexSurface.Group.Default"
+          },
+          "Value": {
+            "bUseDefault": true,
+            "Default": {
+              "TagName": "Attribute.Gameplay.Health"
+            },
+            "SlotMap": [
+              {
+                "Key": "CC_Main",
+                "Value": {
+                  "TagName": "Attribute.Gameplay.Health"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "PhysicsGroupMappings": [
+      {
+        "Key": {
+          "TagName": "Vehicle.PhysicsGroup.MainBody"
+        },
+        "Value": {
+          "bExecuteCollisionEffects": true,
+          "CollisionDamageModifier": 1.0,
+          "DamageRouting": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": 2.5
+            }
+          ],
+          "SimultaneousDamageRouting": []
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / MVF_SkeletalMesh_0 ---
+{
+  "Type": "MVF_SkeletalMesh",
+  "Name": "MVF_SkeletalMesh_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_SkeletalMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_STN_04'",
+    "ObjectPath": "/STN_04/Platforms/VP_STN_04.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "Tags": [
+        "Chassis"
+      ]
+    },
+    "SkeletalMesh": {
+      "AssetPathName": "/STN_04/Meshes/SK_STN_04.SK_STN_04",
+      "SubPathString": ""
+    },
+    "WalkableSlopeOverride": {
+      "WalkableSlopeBehavior": "EWalkableSlopeBehavior::WalkableSlope_Default"
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_1 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_STN_04'",
+    "ObjectPath": "/STN_04/Platforms/VP_STN_04.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceID": "Chassis",
+        "SocketName": "root_J"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/STN_04/Meshes/ComplexCollision/ComplexProxy/Loudspeaker_Proxy.Loudspeaker_Proxy",
+      "SubPathString": ""
+    },
+    "bHitEvents": false,
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    },
+    "WalkableSlopeOverride": {
+      "WalkableSlopeBehavior": "EWalkableSlopeBehavior::WalkableSlope_Default"
+    }
+  }
+}
+--- export: UObject / MVF_VehicleConfig_0 ---
+{
+  "Type": "MVF_VehicleConfig",
+  "Name": "MVF_VehicleConfig_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_VehicleConfig'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_STN_04'",
+    "ObjectPath": "/STN_04/Platforms/VP_STN_04.0"
+  },
+  "Properties": {
+    "VehicleConfig": {
+      "AssetPathName": "/STN_04/Data/DA_Config_STN_04.DA_Config_STN_04",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / WD_MVF_BuildableFragment_0 ---
+{
+  "Type": "WD_MVF_BuildableFragment",
+  "Name": "WD_MVF_BuildableFragment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_BuildableFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_STN_04'",
+    "ObjectPath": "/STN_04/Platforms/VP_STN_04.0"
+  },
+  "Properties": {
+    "SoftBuildableData": {
+      "AssetPathName": "/STN_04/BuildableData/DA_Buildable_STN_04.DA_Buildable_STN_04",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / WD_MVF_Interactions_0 ---
+{
+  "Type": "WD_MVF_Interactions",
+  "Name": "WD_MVF_Interactions_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_Interactions'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_STN_04'",
+    "ObjectPath": "/STN_04/Platforms/VP_STN_04.0"
+  },
+  "Properties": {
+    "VehicleInteractionsDataAsset": {
+      "AssetPathName": "/STN_04/Data/DA_VehicleInteractions_STN_04.DA_VehicleInteractions_STN_04",
+      "SubPathString": ""
+    }
+  }
+}

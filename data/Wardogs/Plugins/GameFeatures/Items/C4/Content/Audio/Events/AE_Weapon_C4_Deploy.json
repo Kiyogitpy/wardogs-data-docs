@@ -1,0 +1,61 @@
+--- export: UPrimaryDataAsset / AE_Weapon_C4_Deploy ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_C4_Deploy",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/C4/Audio/Events/AE_Weapon_C4_Deploy",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.Throwable.C4.Deploy"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Weapon_C4_Deploy:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/C4/Audio/Events/AE_Weapon_C4_Deploy.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Weapon_C4_Deploy:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/C4/Audio/Events/AE_Weapon_C4_Deploy.2"
+      }
+    ],
+    "_aaabhonahgpdbjealfaaa_$ED076F31940B5000$_$23$": 26.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_C4_Deploy'",
+    "ObjectPath": "/C4/Audio/Events/AE_Weapon_C4_Deploy.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.C4.Deploy"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_C4_Deploy'",
+    "ObjectPath": "/C4/Audio/Events/AE_Weapon_C4_Deploy.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Weapon_Throwable_C4_Deploy'",
+      "ObjectPath": "/C4/Audio/MSS/MSS_Weapon_Throwable_C4_Deploy.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.C4.Deploy"
+    }
+  }
+}

@@ -1,0 +1,95 @@
+--- export: UObject / AEB_ActivateControlBusMix_C_0 ---
+{
+  "Type": "AEB_ActivateControlBusMix_C",
+  "Name": "AEB_ActivateControlBusMix_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_ActivateControlBusMix.AEB_ActivateControlBusMix_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_GiveUp_Local'",
+    "ObjectPath": "/Game/Audio/Events/Player/Death/AE_Player_GiveUp_Local.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_ActivateControlBusMix_C'Default__AEB_ActivateControlBusMix_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_ActivateControlBusMix.0"
+  },
+  "Properties": {
+    "Mix": {
+      "ObjectName": "SoundControlBusMix'AM_CBM_GiveUp'",
+      "ObjectPath": "/Game/Audio/AudioModulation/ControlBusMixes/AM_CBM_GiveUp.0"
+    },
+    "Local Only": false,
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / AEB_EndBehavior_C_0 ---
+{
+  "Type": "AEB_EndBehavior_C",
+  "Name": "AEB_EndBehavior_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_EndBehavior.AEB_EndBehavior_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_GiveUp_Local'",
+    "ObjectPath": "/Game/Audio/Events/Player/Death/AE_Player_GiveUp_Local.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_EndBehavior_C'Default__AEB_EndBehavior_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_EndBehavior.0"
+  },
+  "Properties": {
+    "BehaviorClass": {
+      "ObjectName": "BlueprintGeneratedClass'AEB_SetTinnitusMix_C'",
+      "ObjectPath": "/Game/Audio/Behaviours/AEB_SetTinnitusMix.1"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.State.Tinnitus"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Player_GiveUp_Local ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Player_GiveUp_Local",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Death/AE_Player_GiveUp_Local",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.GiveUp.Local"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "WDAudioEventBehaviorDisableMusicState'AE_Player_GiveUp_Local:WDAudioEventBehaviorDisableMusicState_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Death/AE_Player_GiveUp_Local.3"
+      },
+      {
+        "ObjectName": "AEB_ActivateControlBusMix_C'AE_Player_GiveUp_Local:AEB_ActivateControlBusMix_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Death/AE_Player_GiveUp_Local.0"
+      },
+      {
+        "ObjectName": "AEB_EndBehavior_C'AE_Player_GiveUp_Local:AEB_EndBehavior_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Death/AE_Player_GiveUp_Local.1"
+      }
+    ]
+  }
+}
+--- export: UObject / WDAudioEventBehaviorDisableMusicState_0 ---
+{
+  "Type": "WDAudioEventBehaviorDisableMusicState",
+  "Name": "WDAudioEventBehaviorDisableMusicState_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorDisableMusicState'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_GiveUp_Local'",
+    "ObjectPath": "/Game/Audio/Events/Player/Death/AE_Player_GiveUp_Local.2"
+  },
+  "Properties": {
+    "StateToDisable": {
+      "TagName": "Audio.Music.Death"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

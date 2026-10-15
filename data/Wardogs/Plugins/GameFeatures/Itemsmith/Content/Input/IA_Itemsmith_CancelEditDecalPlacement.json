@@ -1,0 +1,31 @@
+--- export: UDataAsset / IA_Itemsmith_CancelEditDecalPlacement ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Itemsmith_CancelEditDecalPlacement",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Itemsmith/Input/IA_Itemsmith_CancelEditDecalPlacement",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.ItemSmith.Flair.CancelEditDecalPlacement"
+    },
+    "bConsumeInput": false,
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerPressed'IA_Itemsmith_CancelEditDecalPlacement:InputTriggerPressed_0'",
+        "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_CancelEditDecalPlacement.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Itemsmith_CancelEditDecalPlacement'",
+    "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_CancelEditDecalPlacement.0"
+  }
+}

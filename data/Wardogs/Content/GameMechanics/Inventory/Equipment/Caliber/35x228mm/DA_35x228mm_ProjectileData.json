@@ -1,0 +1,66 @@
+--- export: UPrimaryDataAsset / DA_35x228mm_ProjectileData ---
+{
+  "Type": "WDProjectileData",
+  "Name": "DA_35x228mm_ProjectileData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDProjectileData'",
+  "Package": "/Game/GameMechanics/Inventory/Equipment/Caliber/35x228mm/DA_35x228mm_ProjectileData",
+  "Properties": {
+    "ProjectileId": {
+      "TagName": "Item.Caliber.35x228mm"
+    },
+    "ProjectileStats": {
+      "DamageEntityData": {
+        "Tag": {
+          "TagName": "Meta.Damage.Cannon.35x228mm"
+        }
+      },
+      "DamageValues": {
+        "BaseDamage": 60.0,
+        "EffectiveExplosiveRadius": 375.0,
+        "ExplosiveDamageFallOff": 0.7
+      },
+      "ProjectileDimensions": {
+        "Length": 14.0,
+        "Diameter": 3.5,
+        "Mass": 0.15,
+        "DragModel": {
+          "Value": 2.5,
+          "Curve": {
+            "CurveTable": {
+              "ObjectName": "CurveTable'CT_Projectile_DragCoefficients'",
+              "ObjectPath": "/Game/Items/Resources/Ammo/Curves/CT_Projectile_DragCoefficients.0"
+            },
+            "RowName": "G7 (Boat Tail)"
+          }
+        }
+      },
+      "ProjectileEffects": {
+        "GameplayCueTag": {
+          "TagName": "GameplayCue.Weapon.Projectile"
+        }
+      },
+      "SuppressionData": {
+        "BaseSuppression": 0.55,
+        "DistanceFalloffCurve": {
+          "EditorCurveData": {}
+        }
+      },
+      "ArmingDelay": 0.01,
+      "AttachedEffect": {
+        "AssetPathName": "/Game/VFX/Weapons/Tracers/NS_Tracer_35x228mm_Gepard.NS_Tracer_35x228mm_Gepard",
+        "SubPathString": ""
+      },
+      "TracerChance": 0.725,
+      "TypicalSpeed": 79200.0,
+      "PenetrationEffectivenessMultiplier": 0.75,
+      "_aaabgifapemhpeiehejfd_$850F4C7F48474953$_$22$": false,
+      "MinImpactAngleForRicochet": 91.0,
+      "bShouldPreSimulate": false,
+      "ThrustSpeed": 22000.0,
+      "TravelDistanceForWhizBy": 250.0,
+      "PerceivedImpactRange": 60000.0,
+      "IgnoreInstigatorVehicleTime": 0.5
+    }
+  }
+}

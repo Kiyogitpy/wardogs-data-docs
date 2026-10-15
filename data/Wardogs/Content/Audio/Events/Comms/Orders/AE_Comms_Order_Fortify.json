@@ -1,0 +1,62 @@
+--- export: UObject / AEB_RequestSquadVox_C_0 ---
+{
+  "Type": "AEB_RequestSquadVox_C",
+  "Name": "AEB_RequestSquadVox_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_RequestSquadVox.AEB_RequestSquadVox_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Comms_Order_Fortify'",
+    "ObjectPath": "/Game/Audio/Events/Comms/Orders/AE_Comms_Order_Fortify.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_RequestSquadVox_C'Default__AEB_RequestSquadVox_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_RequestSquadVox.0"
+  },
+  "Properties": {
+    "Line ID": {
+      "TagName": "Audio.Vox.Bark.Order.Fortify"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Comms_Order_Fortify ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Comms_Order_Fortify",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Comms/Orders/AE_Comms_Order_Fortify",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Comms.Order.Fortify"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Comms_Order_Fortify:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Comms/Orders/AE_Comms_Order_Fortify.2"
+      },
+      {
+        "ObjectName": "AEB_RequestSquadVox_C'AE_Comms_Order_Fortify:AEB_RequestSquadVox_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Comms/Orders/AE_Comms_Order_Fortify.0"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Comms_Order_Fortify'",
+    "ObjectPath": "/Game/Audio/Events/Comms/Orders/AE_Comms_Order_Fortify.1"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

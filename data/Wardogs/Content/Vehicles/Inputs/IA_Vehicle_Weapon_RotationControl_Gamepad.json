@@ -1,0 +1,41 @@
+--- export: UDataAsset / IA_Vehicle_Weapon_RotationControl_Gamepad ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Vehicle_Weapon_RotationControl_Gamepad",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_RotationControl_Gamepad",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.WeaponExtension.RotationControl.Gamepad"
+    },
+    "ActionDescription": {
+      "Namespace": "",
+      "Key": "D188DE554A705A7E5E598D918EBBEEE8",
+      "SourceString": "Control the Weapon Extension Pitch Rotation",
+      "LocalizedString": "Control the Weapon Extension Pitch Rotation"
+    },
+    "ValueType": "EInputActionValueType::Axis2D",
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerHold'IA_Vehicle_Weapon_RotationControl_Gamepad:InputTriggerHold_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_RotationControl_Gamepad.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerHold_0 ---
+{
+  "Type": "InputTriggerHold",
+  "Name": "InputTriggerHold_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerHold'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_Weapon_RotationControl_Gamepad'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_RotationControl_Gamepad.0"
+  },
+  "Properties": {
+    "HoldTimeThreshold": 0.0,
+    "ActuationThreshold": 0.01
+  }
+}

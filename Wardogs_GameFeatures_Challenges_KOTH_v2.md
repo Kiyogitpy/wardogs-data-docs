@@ -4,7 +4,7 @@ parent: "Game Features"
 ---
 
 # Wardogs — GameFeature: Challenges_KOTH Reference (v2)
-*Extracted from cooked game data via CUE4Parse (build `++Wardogs+Live-CL-509546`, UE 5.7.4). Source: `Wardogs/Plugins/GameFeatures/Challenges_KOTH/` (75 JSON files). Scripted pass over every file, then spot-checked against representative files.*
+*Extracted from cooked game data via CUE4Parse (build `++Wardogs+Live-CL-509546`, UE 5.7.4). Source: [`Wardogs/Plugins/GameFeatures/Challenges_KOTH/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH) (75 JSON files). Scripted pass over every file, then spot-checked against representative files.*
 
 > **Scope note:** this folder holds the **wiring** for the KOTH challenge set: which state tree runs for which session event, which reward tag it grants, and which lookup table turns a vehicle/item variant into a reward tag. The **reward values** (cash, XP) live in the shared challenge tables outside this folder. See `Wardogs_Rewards_and_Progression_v2.md` (sections 10, 13, 15) and the sibling doc `Wardogs_GameFeatures_Rewards_v2.md`.
 
@@ -14,14 +14,14 @@ parent: "Game Features"
 
 | Export type | Count | Role |
 |---|---|---|
-| `GameFeatureData` (`Challenges_KOTH`) | 1 | Root bundle. Two actions. |
-| `GameFeatureAction_DataRegistrySource` | 1 | Adds `DT_Challenges_SessionEvents_KOTH` as a source to the `Challenges` registry (client and server). |
+| `GameFeatureData` ([`Challenges_KOTH`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/Challenges_KOTH.json)) | 1 | Root bundle. Two actions. |
+| `GameFeatureAction_DataRegistrySource` | 1 | Adds [`DT_Challenges_SessionEvents_KOTH`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/DT_Challenges_SessionEvents_KOTH.json) as a source to the `Challenges` registry (client and server). |
 | `GameFeatureAction_DataRegistry` | 1 | Adds 13 lookup registries (`DR_SessionEvent_*`). |
 | `StateTree` | 60 | One state tree per session event or assist variant (section 3). |
 | `WDChallengeStateTreeSchema` | 60 | One schema object per state tree. All are empty (no properties). |
 | `DataTable` | 14 | 1 challenge-definition table (**0 rows**) plus 13 reward lookup tables (section 4). |
 
-The `DT_Challenges_SessionEvents_KOTH` table has `RowStruct = WDChallengeDefinition` and **no rows**. The challenge definitions for this set are not stored in this folder.
+The [`DT_Challenges_SessionEvents_KOTH`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/DT_Challenges_SessionEvents_KOTH.json) table has `RowStruct = WDChallengeDefinition` and **no rows**. The challenge definitions for this set are not stored in this folder.
 
 ---
 
@@ -61,7 +61,7 @@ Notes:
 - The "Event tags only" entries reference no `Challenges.Rewards.*` tag in the aggregated pass. Their reward path is either absent or resolved through a shared table. This was not traced per state.
 - The `Event.StateTree.*` tags are how the game routes an event to its tree. The mapping from in-game action to event tag is not in this folder.
 
-### 3a. Sampled tree: `ST_Challenges_SessionEvents_KOTH_PlayerKill_Assist_CrewAssist` (13 states)
+### 3a. Sampled tree: [`ST_Challenges_SessionEvents_KOTH_PlayerKill_Assist_CrewAssist`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/ST_Challenges_SessionEvents_KOTH_PlayerKill_Assist_CrewAssist.json) (13 states)
 
 `Root` → `Wait For Player Kill Assist Crew Assist Event` → `On Player Kill Assist Crew Assist Event` → `Populate Context` → `Populate Reward XP Tags` → `Add Role XP Tag To Context` → `Transfer Context from Event` → `Add Crew Assist To Context Tags` → `IncrementMatchStat` → `Calculate Reward` → `Update Reward XP Tags` → `Grant Reward` → `Complete When Done`
 
@@ -75,19 +75,19 @@ Each row maps a **variant tag** (the specific vehicle, item or buildable variant
 
 | Lookup table | Rows | Maps to (reward tag family) | Examples |
 |---|---|---|---|
-| `DT_RewardLookup_SessionEvent_DestroyVehicle` | 30 | `Challenges.Rewards.VehicleDestroyed.<Vehicle>` | Kodiak (3 variants), LittleBird (3), Huey (2), Blackhawk (2), SpawnVehicle (3), TNK_01.Heavy, Bobcat, Humvee (3), DuneBuggy, Ural (3), Loudspeaker, MistralAA, Mortar (2), Phalanx |
-| `DT_RewardLookup_SessionEvent_DestroyVehicleSection` | 24 | `Challenges.Rewards.DestroyVehicleSection.<Vehicle>` | Same vehicle families as above, section-based |
-| `DT_RewardLookup_SessionEvent_DestroyVehicleFOBSuppliedAssist` | 24 | `Challenges.Rewards.VehicleDestroyed.FOBSuppliedAssist.<Vehicle>` | Blackhawk, TNK_01.Artillery, Humvee, and others |
-| `DT_RewardLookup_SessionEvent_DestroyVehicleLogisticAssist` | 24 | `Challenges.Rewards.VehicleDestroyed.LogisticAssist.<Vehicle>` | Havoc, TNK_01.AntiAir, Humvee, and others |
-| `DT_RewardLookup_SessionEvent_DestroyVehicleReviveAssist` | 24 | `Challenges.Rewards.VehicleDestroyed.ReviveAssist.<Vehicle>` | Same family pattern as above |
-| `DT_RewardLookup_SessionEvent_DestroySupplyCrate` | 10 | `Challenges.Rewards.DestroySupplyCrate.<Size>` | Free (2 variants), Small, Small.Armoured, Large, Large.Armoured, Pallet (4 pallet types: BuildSupply, FuelSupply, MunitionsSupply, SparePartsSupply) |
-| `DT_RewardLookup_SessionEvent_HealPlayer` | 6 | `Challenges.Rewards.HealPlayer.<Item>` | Bandage, SuperBandage, MedKit, StimPen, AdrenalinePen, Defibrillator |
-| `DT_RewardLookup_SessionEvent_HealPlayer_LogisticAssist` | 6 | `Challenges.Rewards.HealPlayer.LogisticAssist.<Item>` | Same six items |
-| `DT_RewardLookup_SessionEvent_HealPlayer_ReviveAssist` | 6 | `Challenges.Rewards.HealPlayer.ReviveAssist.<Item>` | Same six items |
-| `DT_RewardLookup_SessionEvent_RevivePlayer` | 6 | `Challenges.Rewards.RevivePlayer.<Item>` | Defibrillator, StimPen, AdrenalinePen and others |
-| `DT_RewardLookup_SessionEvent_RevivePlayerLogisticAssist` | 6 | `Challenges.Rewards.RevivePlayer.LogisticAssist.<Item>` | Defibrillator, StimPen, AdrenalinePen, MedKit |
-| `DT_RewardLookup_SessionEvent_RevivePlayerReviveAssist` | 6 | `Challenges.Rewards.RevivePlayer.ReviveAssist.<Item>` | StimPen, AdrenalinePen, MedKit, Resuscitator (2 variants) |
-| `DT_RewardLookup_SessionEvent_RepairVehicle` | 3 | `Challenges.Rewards.RepairVehicle.<Tool>` | Wrench.Standard, Drill.Light, Drill.Heavy |
+| [`DT_RewardLookup_SessionEvent_DestroyVehicle`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_DestroyVehicle.json) | 30 | `Challenges.Rewards.VehicleDestroyed.<Vehicle>` | Kodiak (3 variants), LittleBird (3), Huey (2), Blackhawk (2), SpawnVehicle (3), TNK_01.Heavy, Bobcat, Humvee (3), DuneBuggy, Ural (3), Loudspeaker, MistralAA, Mortar (2), Phalanx |
+| [`DT_RewardLookup_SessionEvent_DestroyVehicleSection`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_DestroyVehicleSection.json) | 24 | `Challenges.Rewards.DestroyVehicleSection.<Vehicle>` | Same vehicle families as above, section-based |
+| [`DT_RewardLookup_SessionEvent_DestroyVehicleFOBSuppliedAssist`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_DestroyVehicleFOBSuppliedAssist.json) | 24 | `Challenges.Rewards.VehicleDestroyed.FOBSuppliedAssist.<Vehicle>` | Blackhawk, TNK_01.Artillery, Humvee, and others |
+| [`DT_RewardLookup_SessionEvent_DestroyVehicleLogisticAssist`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_DestroyVehicleLogisticAssist.json) | 24 | `Challenges.Rewards.VehicleDestroyed.LogisticAssist.<Vehicle>` | Havoc, TNK_01.AntiAir, Humvee, and others |
+| [`DT_RewardLookup_SessionEvent_DestroyVehicleReviveAssist`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_DestroyVehicleReviveAssist.json) | 24 | `Challenges.Rewards.VehicleDestroyed.ReviveAssist.<Vehicle>` | Same family pattern as above |
+| [`DT_RewardLookup_SessionEvent_DestroySupplyCrate`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_DestroySupplyCrate.json) | 10 | `Challenges.Rewards.DestroySupplyCrate.<Size>` | Free (2 variants), Small, Small.Armoured, Large, Large.Armoured, Pallet (4 pallet types: BuildSupply, FuelSupply, MunitionsSupply, SparePartsSupply) |
+| [`DT_RewardLookup_SessionEvent_HealPlayer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_HealPlayer.json) | 6 | `Challenges.Rewards.HealPlayer.<Item>` | Bandage, SuperBandage, MedKit, StimPen, AdrenalinePen, Defibrillator |
+| [`DT_RewardLookup_SessionEvent_HealPlayer_LogisticAssist`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_HealPlayer_LogisticAssist.json) | 6 | `Challenges.Rewards.HealPlayer.LogisticAssist.<Item>` | Same six items |
+| [`DT_RewardLookup_SessionEvent_HealPlayer_ReviveAssist`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_HealPlayer_ReviveAssist.json) | 6 | `Challenges.Rewards.HealPlayer.ReviveAssist.<Item>` | Same six items |
+| [`DT_RewardLookup_SessionEvent_RevivePlayer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_RevivePlayer.json) | 6 | `Challenges.Rewards.RevivePlayer.<Item>` | Defibrillator, StimPen, AdrenalinePen and others |
+| [`DT_RewardLookup_SessionEvent_RevivePlayerLogisticAssist`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_RevivePlayerLogisticAssist.json) | 6 | `Challenges.Rewards.RevivePlayer.LogisticAssist.<Item>` | Defibrillator, StimPen, AdrenalinePen, MedKit |
+| [`DT_RewardLookup_SessionEvent_RevivePlayerReviveAssist`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_RevivePlayerReviveAssist.json) | 6 | `Challenges.Rewards.RevivePlayer.ReviveAssist.<Item>` | StimPen, AdrenalinePen, MedKit, Resuscitator (2 variants) |
+| [`DT_RewardLookup_SessionEvent_RepairVehicle`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_RepairVehicle.json) | 3 | `Challenges.Rewards.RepairVehicle.<Tool>` | Wrench.Standard, Drill.Light, Drill.Heavy |
 
 Observations:
 - Heal and revive lookups map a **consumable item** to a reward tag. The item tags are `Id.Item.*` (for example `Id.Item.MedKit.Standard`, `Id.Item.Defibrillator.Standard`).
@@ -100,14 +100,14 @@ Observations:
 
 ## 5. Reward Values
 
-**Not in this folder.** The KOTH state trees grant reward tags, but the cash and XP amounts for those tags are defined in the shared challenge reward table (`DT_ChallengeRewards_SessionEvents_Shared`, under `Content/Meta/Challenges/`), which the existing v2 doc covers in section 15. Use that section for the per-kill and per-event calculator, and section 10 for end-of-match rewards.
+**Not in this folder.** The KOTH state trees grant reward tags, but the cash and XP amounts for those tags are defined in the shared challenge reward table ([`DT_ChallengeRewards_SessionEvents_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/DT_ChallengeRewards_SessionEvents_Shared.json), under [`Content/Meta/Challenges/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Meta/Challenges)), which the existing v2 doc covers in section 15. Use that section for the per-kill and per-event calculator, and section 10 for end-of-match rewards.
 
 ---
 
 ## 6. Limitations
 - Values for each `Challenges.Rewards.*` tag are not resolved in this doc. They live outside the folder.
 - Per-state logic (the actual calculation in `Calculate Reward`) is compiled StateTree bytecode. This doc names states and tags but does not decode the expressions.
-- `DT_Challenges_SessionEvents_KOTH` (challenge definitions) has zero rows here, so the list of active challenges for KOTH mode is not visible from this folder.
+- [`DT_Challenges_SessionEvents_KOTH`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/DT_Challenges_SessionEvents_KOTH.json) (challenge definitions) has zero rows here, so the list of active challenges for KOTH mode is not visible from this folder.
 - The `DataRegistry` action lists 13 lookup registries, but not every state tree maps to a lookup. Some (the "Event tags only" trees in section 3) grant no reward through a lookup, and their reward path was not traced.
 - The `WDChallengeStateTreeSchema` objects carry no properties, so schema-level settings are not available.
 - The meaning of `Challenges.Context.*` tags is inferred from their names. Their runtime values were not checked.

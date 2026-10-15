@@ -1,0 +1,81 @@
+--- export: UPrimaryDataAsset / AE_Buildable_BarbedWire_Damage ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Buildable_BarbedWire_Damage",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Buildables/Data/Buildables/BarbedWire/Audio/AE_Buildable_BarbedWire_Damage",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Buildable.BarbedWire.Damage"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Buildable_BarbedWire_Damage:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Buildables/Data/Buildables/BarbedWire/Audio/AE_Buildable_BarbedWire_Damage.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Buildable_BarbedWire_Damage:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Buildables/Data/Buildables/BarbedWire/Audio/AE_Buildable_BarbedWire_Damage.3"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Buildable_BarbedWire_Damage:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Buildables/Data/Buildables/BarbedWire/Audio/AE_Buildable_BarbedWire_Damage.2"
+      }
+    ],
+    "_aaabhonahgpdbjealfaaa_$ED076F31940B5000$_$23$": 39.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Buildable_BarbedWire_Damage'",
+    "ObjectPath": "/Buildables/Data/Buildables/BarbedWire/Audio/AE_Buildable_BarbedWire_Damage.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Buildable_BarbedWire_Damage'",
+    "ObjectPath": "/Buildables/Data/Buildables/BarbedWire/Audio/AE_Buildable_BarbedWire_Damage.0"
+  },
+  "Properties": {
+    "ParameterName": "Trigger",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Buildable_BarbedWire_Damage'",
+    "ObjectPath": "/Buildables/Data/Buildables/BarbedWire/Audio/AE_Buildable_BarbedWire_Damage.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Player_Damage_Env_BarbedWire'",
+      "ObjectPath": "/Buildables/Data/Buildables/BarbedWire/Audio/MSS/MSS_Player_Damage_Env_BarbedWire.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

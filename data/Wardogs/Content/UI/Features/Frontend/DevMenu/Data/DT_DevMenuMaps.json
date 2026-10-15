@@ -1,0 +1,42 @@
+--- export: UDataTable / DT_DevMenuMaps ---
+{
+  "Type": "DataTable",
+  "Name": "DT_DevMenuMaps",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/UI/Features/Frontend/DevMenu/Data/DT_DevMenuMaps",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDDevMenuMapsDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "DevMaps.ShootingRange": {
+      "MapName": {
+        "CultureInvariantString": "Shooting Range"
+      },
+      "MapToLoad": {
+        "AssetPathName": "/Game/Maps/Templates/Greybox/Points_Of_Interest/Shooting_Range_4.Shooting_Range_4",
+        "SubPathString": ""
+      },
+      "CustomLoadingScreenWidgetClass": null,
+      "Tag": {
+        "TagName": "DevMaps.ShootingRange"
+      }
+    },
+    "DevMaps.ArtWorld": {
+      "MapName": {
+        "CultureInvariantString": "Art World"
+      },
+      "MapToLoad": {
+        "AssetPathName": "/Game/Maps/Art/ArtWorld/ArtWorld.ArtWorld",
+        "SubPathString": ""
+      },
+      "CustomLoadingScreenWidgetClass": null,
+      "Tag": {
+        "TagName": "DevMaps.ArtWorld"
+      }
+    }
+  }
+}

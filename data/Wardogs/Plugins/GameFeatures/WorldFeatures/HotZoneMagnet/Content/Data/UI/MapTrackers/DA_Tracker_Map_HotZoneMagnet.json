@@ -1,0 +1,64 @@
+--- export: UDataAsset / DA_Tracker_Map_HotZoneMagnet ---
+{
+  "Type": "WDUIMapTrackerData",
+  "Name": "DA_Tracker_Map_HotZoneMagnet",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIMapTrackerData'",
+  "Package": "/HotZoneMagnet/Data/UI/MapTrackers/DA_Tracker_Map_HotZoneMagnet",
+  "Properties": {
+    "bDisplayText": false,
+    "bShouldMaskCursor": true,
+    "ZoomScaleCurve": {
+      "EditorCurveData": {
+        "Keys": [
+          {
+            "InterpMode": "RCIM_Linear",
+            "TangentMode": "RCTM_Auto",
+            "TangentWeightMode": "RCTWM_WeightedNone",
+            "Time": 0.0,
+            "Value": 1.0,
+            "ArriveTangent": 0.0,
+            "ArriveTangentWeight": 0.0,
+            "LeaveTangent": 0.0,
+            "LeaveTangentWeight": 0.0
+          },
+          {
+            "InterpMode": "RCIM_Linear",
+            "TangentMode": "RCTM_Auto",
+            "TangentWeightMode": "RCTWM_WeightedNone",
+            "Time": 1.0,
+            "Value": 0.25,
+            "ArriveTangent": 0.0,
+            "ArriveTangentWeight": 0.0,
+            "LeaveTangent": 0.0,
+            "LeaveTangentWeight": 0.0
+          }
+        ]
+      }
+    },
+    "DefaultTrackerIcon": {
+      "TrackerIcon": {
+        "AssetPathName": "/Game/UI/Features/Map/Widgets/TacticalMap/Textures/T_UI_Icon_ActivatedTower.T_UI_Icon_ActivatedTower",
+        "SubPathString": ""
+      }
+    },
+    "TrackerZoomIcons": [
+      {
+        "MapZoomMin": 10.0,
+        "TrackerIcon": {
+          "AssetPathName": "/HotZoneMagnet/Data/UI/Textures/T_UI_Tower.T_UI_Tower",
+          "SubPathString": ""
+        },
+        "Scale": {
+          "X": 0.25,
+          "Y": 0.25
+        }
+      }
+    ],
+    "ZOrder": 21,
+    "DefaultSize": {
+      "X": 48.0,
+      "Y": 48.0
+    }
+  }
+}

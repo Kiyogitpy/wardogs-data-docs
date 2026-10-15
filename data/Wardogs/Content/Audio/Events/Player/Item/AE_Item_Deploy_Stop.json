@@ -1,0 +1,36 @@
+--- export: UPrimaryDataAsset / AE_Item_Deploy_Stop ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Item_Deploy_Stop",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Item/AE_Item_Deploy_Stop",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Item.UsePrimary.Stop.Deploy"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_Item_Deploy_Stop:CrosstalkAudioEventBehaviorStopSound_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Item/AE_Item_Deploy_Stop.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Item_Deploy_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Player/Item/AE_Item_Deploy_Stop.0"
+  },
+  "Properties": {
+    "FadeOut": 0.2,
+    "ContextTag": {
+      "TagName": "Audio.Context.Item.Deploy"
+    }
+  }
+}

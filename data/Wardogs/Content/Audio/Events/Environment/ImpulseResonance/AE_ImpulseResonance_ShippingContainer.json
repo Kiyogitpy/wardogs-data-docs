@@ -1,0 +1,64 @@
+--- export: UObject / AEB_SetImpulseResonanceParameters_C_0 ---
+{
+  "Type": "AEB_SetImpulseResonanceParameters_C",
+  "Name": "AEB_SetImpulseResonanceParameters_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetImpulseResonanceParameters.AEB_SetImpulseResonanceParameters_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_ImpulseResonance_ShippingContainer'",
+    "ObjectPath": "/Game/Audio/Events/Environment/ImpulseResonance/AE_ImpulseResonance_ShippingContainer.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetImpulseResonanceParameters_C'Default__AEB_SetImpulseResonanceParameters_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetImpulseResonanceParameters.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_ImpulseResonance_ShippingContainer ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_ImpulseResonance_ShippingContainer",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Environment/ImpulseResonance/AE_ImpulseResonance_ShippingContainer",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Environment.ImpulseResonance.ShippingContainer"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_ImpulseResonance_ShippingContainer:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Environment/ImpulseResonance/AE_ImpulseResonance_ShippingContainer.2"
+      },
+      {
+        "ObjectName": "AEB_SetImpulseResonanceParameters_C'AE_ImpulseResonance_ShippingContainer:AEB_SetImpulseResonanceParameters_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Environment/ImpulseResonance/AE_ImpulseResonance_ShippingContainer.0"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_ImpulseResonance_ShippingContainer'",
+    "ObjectPath": "/Game/Audio/Events/Environment/ImpulseResonance/AE_ImpulseResonance_ShippingContainer.1"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Ambience_Resonance_Container'",
+      "ObjectPath": "/Game/Audio/Ambience/Resonance/MSS/MSS_Ambience_Resonance_Container.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::PlayBoth",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

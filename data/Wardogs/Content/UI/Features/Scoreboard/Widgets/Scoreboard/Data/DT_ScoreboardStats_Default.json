@@ -1,0 +1,141 @@
+--- export: UDataTable / DT_ScoreboardStats_Default ---
+{
+  "Type": "DataTable",
+  "Name": "DT_ScoreboardStats_Default",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/UI/Features/Scoreboard/Widgets/Scoreboard/Data/DT_ScoreboardStats_Default",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUIScoreboardStatTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Analytics.Player.Cash.Earned": {
+      "WidgetClass": {
+        "AssetPathName": "/Game/UI/Features/Scoreboard/Widgets/Item/W_ScoreboardStat_Cash.W_ScoreboardStat_Cash_C",
+        "SubPathString": ""
+      },
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+        "Key": "HUD_Scoreboard_CashEarned",
+        "SourceString": "Cash Earned",
+        "LocalizedString": "Cash Earned"
+      },
+      "ValueFormat": "EWDUINumberFormatType::Cash",
+      "FilterButtonClass": {
+        "AssetPathName": "/Game/UI/Features/Scoreboard/Widgets/FilterButton/W_ScoreboardFilterButton.W_ScoreboardFilterButton_C",
+        "SubPathString": ""
+      },
+      "FilterButtonStyle": {
+        "AssetPathName": "/Game/UI/Features/Scoreboard/Widgets/FilterButton/Styles/B_Style_Button_ScoreboardFilter_CashEarned.B_Style_Button_ScoreboardFilter_CashEarned_C",
+        "SubPathString": ""
+      },
+      "_aaaamlpiomfphbgninidj_$BF8EC5F716D8D839$_$12$": 0.75,
+      "Tag": {
+        "TagName": "Analytics.Player.Cash.Earned"
+      }
+    },
+    "Analytics.Player.Kills": {
+      "WidgetClass": {
+        "AssetPathName": "/Game/UI/Features/Scoreboard/Widgets/Item/W_ScoreboardStat.W_ScoreboardStat_C",
+        "SubPathString": ""
+      },
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+        "Key": "HUD_Scoreboard_Kills",
+        "SourceString": "Kills",
+        "LocalizedString": "Kills"
+      },
+      "ValueFormat": "EWDUINumberFormatType::Simple",
+      "FilterButtonClass": {
+        "AssetPathName": "/Game/UI/Features/Scoreboard/Widgets/FilterButton/W_ScoreboardFilterButton.W_ScoreboardFilterButton_C",
+        "SubPathString": ""
+      },
+      "FilterButtonStyle": {
+        "AssetPathName": "/Game/UI/Features/Scoreboard/Widgets/FilterButton/Styles/B_Style_Button_ScoreboardFilter_Kills.B_Style_Button_ScoreboardFilter_Kills_C",
+        "SubPathString": ""
+      },
+      "_aaaamlpiomfphbgninidj_$BF8EC5F716D8D839$_$12$": 0.5,
+      "Tag": {
+        "TagName": "Analytics.Player.Kills"
+      }
+    },
+    "Analytics.Player.Assists": {
+      "WidgetClass": {
+        "AssetPathName": "/Game/UI/Features/Scoreboard/Widgets/Item/W_ScoreboardStat.W_ScoreboardStat_C",
+        "SubPathString": ""
+      },
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+        "Key": "HUD_Scoreboard_Assists",
+        "SourceString": "Assists",
+        "LocalizedString": "Assists"
+      },
+      "ValueFormat": "EWDUINumberFormatType::Simple",
+      "FilterButtonClass": {
+        "AssetPathName": "/Game/UI/Features/Scoreboard/Widgets/FilterButton/W_ScoreboardFilterButton.W_ScoreboardFilterButton_C",
+        "SubPathString": ""
+      },
+      "FilterButtonStyle": {
+        "AssetPathName": "/Game/UI/Features/Scoreboard/Widgets/FilterButton/Styles/B_Style_Button_ScoreboardFilter_Assists.B_Style_Button_ScoreboardFilter_Assists_C",
+        "SubPathString": ""
+      },
+      "_aaaamlpiomfphbgninidj_$BF8EC5F716D8D839$_$12$": 0.5,
+      "Tag": {
+        "TagName": "Analytics.Player.Assists"
+      }
+    },
+    "Analytics.Player.Revives": {
+      "WidgetClass": {
+        "AssetPathName": "/Game/UI/Features/Scoreboard/Widgets/Item/W_ScoreboardStat.W_ScoreboardStat_C",
+        "SubPathString": ""
+      },
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+        "Key": "HUD_Scoreboard_Revives",
+        "SourceString": "Revives",
+        "LocalizedString": "Revives"
+      },
+      "ValueFormat": "EWDUINumberFormatType::Simple",
+      "FilterButtonClass": {
+        "AssetPathName": "/Game/UI/Features/Scoreboard/Widgets/FilterButton/W_ScoreboardFilterButton.W_ScoreboardFilterButton_C",
+        "SubPathString": ""
+      },
+      "FilterButtonStyle": {
+        "AssetPathName": "/Game/UI/Features/Scoreboard/Widgets/FilterButton/Styles/B_Style_Button_ScoreboardFilter_Revives.B_Style_Button_ScoreboardFilter_Revives_C",
+        "SubPathString": ""
+      },
+      "_aaaamlpiomfphbgninidj_$BF8EC5F716D8D839$_$12$": 0.5,
+      "Tag": {
+        "TagName": "Analytics.Player.Revives"
+      }
+    },
+    "Analytics.Player.Deaths": {
+      "WidgetClass": {
+        "AssetPathName": "/Game/UI/Features/Scoreboard/Widgets/Item/W_ScoreboardStat.W_ScoreboardStat_C",
+        "SubPathString": ""
+      },
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+        "Key": "HUD_Scoreboard_Deaths",
+        "SourceString": "Deaths",
+        "LocalizedString": "Deaths"
+      },
+      "ValueFormat": "EWDUINumberFormatType::Simple",
+      "FilterButtonClass": {
+        "AssetPathName": "/Game/UI/Features/Scoreboard/Widgets/FilterButton/W_ScoreboardFilterButton.W_ScoreboardFilterButton_C",
+        "SubPathString": ""
+      },
+      "FilterButtonStyle": {
+        "AssetPathName": "/Game/UI/Features/Scoreboard/Widgets/FilterButton/Styles/B_Style_Button_ScoreboardFilter_Deaths.B_Style_Button_ScoreboardFilter_Deaths_C",
+        "SubPathString": ""
+      },
+      "_aaaamlpiomfphbgninidj_$BF8EC5F716D8D839$_$12$": 0.5,
+      "Tag": {
+        "TagName": "Analytics.Player.Deaths"
+      }
+    }
+  }
+}

@@ -1,0 +1,68 @@
+--- export: UDataTable / DT_TippingReward ---
+{
+  "Type": "DataTable",
+  "Name": "DT_TippingReward",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/UI/Features/HUD/Tipping/Data/DT_TippingReward",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDRewardFeedActionDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Meta.Progression.Resources.MatchScore.Tip.Player.Revive": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": null
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.Tip"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.Tip.Player.Revive"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.Tip.Vehicle.DropOffControlZone": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": null
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.Tip"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.Tip.Vehicle.DropOffControlZone"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.Tip.Vehicle.DropOffHotZone": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": null
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.Tip"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.Tip.Vehicle.DropOffHotZone"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.Tip.Player.Heal": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "CultureInvariantString": null
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.Tip"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.Tip.Player.Heal"
+      }
+    }
+  }
+}

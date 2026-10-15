@@ -1,0 +1,146 @@
+--- export: UPrimaryDataAsset / DA_ROT_02_Config ---
+{
+  "Type": "BHRotaryVehicleConfigDataAsset",
+  "Name": "DA_ROT_02_Config",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHRotaryVehicleConfigDataAsset'",
+  "Package": "/ROT_02/Data/DA_ROT_02_Config",
+  "Properties": {
+    "RotaryVehicleBodyDataAsset": {
+      "ObjectName": "BHRotaryVehicleBodyDataAsset'DA_ROT_02_Body'",
+      "ObjectPath": "/ROT_02/Data/DA_ROT_02_Body.0"
+    },
+    "RotaryEngineDataAsset": {
+      "ObjectName": "BHHelicopterEngineDataAsset'DA_ROT_02_Engine'",
+      "ObjectPath": "/ROT_02/Data/DA_ROT_02_Engine.0"
+    },
+    "RotaryVehicleDragDataAsset": {
+      "ObjectName": "BHAirVehicleDragDataAsset'DA_ROT_02_Drag'",
+      "ObjectPath": "/ROT_02/Data/DA_ROT_02_Drag.0"
+    },
+    "RotaryVehicleFlightCharacteristicsDataAsset": {
+      "ObjectName": "BHRotaryFlightDataAsset'DA_ROT_02_FlightCharacteristics'",
+      "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.73"
+    },
+    "DustKickupGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.DustKickup"
+    },
+    "RotorExplosionGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Collision.Rotor"
+    },
+    "RotorMaterialCurve": {
+      "ObjectName": "CurveFloat'FC_ROT_02_MainRotorRPM_MaterialValue'",
+      "ObjectPath": "/ROT_02/Data/FC_ROT_02_MainRotorRPM_MaterialValue.0"
+    },
+    "TailRotorMaterialCurve": {
+      "ObjectName": "CurveFloat'FC_ROT_02_TailRotorRPM_MaterialValue'",
+      "ObjectPath": "/ROT_02/Data/FC_ROT_02_TailRotorRPM_MaterialValue.0"
+    },
+    "RotorReturnMeshCurve": {
+      "ObjectName": "CurveFloat'FC_ROT_02_MainRotorRPM_MeshValue'",
+      "ObjectPath": "/ROT_02/Data/FC_ROT_02_MainRotorRPM_MeshValue.0"
+    },
+    "GameplayConfigDataAsset": {
+      "ObjectName": "WDVehicleGameplayComponentsDataAsset'DA_GameplaySystems_ROT_02'",
+      "ObjectPath": "/ROT_02/Data/DA_GameplaySystems_ROT_02.34"
+    },
+    "_aaablpoaobapnjpgiekhm_$FE0E10FD9F684A7C$_$27$": {
+      "ObjectName": "MVehiclePredictionSettings_Rotary'DA_ROT_02_PredictionSettings'",
+      "ObjectPath": "/ROT_02/Data/DA_ROT_02_PredictionSettings.0"
+    },
+    "ThirdPersonCameraBehaviourDataAsset": {
+      "ObjectName": "MRotaryVehicleSpringArmDataAsset'DA_ROT_02_CameraBehaviourSettings'",
+      "ObjectPath": "/ROT_02/Data/DA_ROT_02_CameraBehaviourSettings.0"
+    },
+    "FirstPersonCameraBehaviourDataAsset": {
+      "ObjectName": "MRotaryVehicleSpringArmDataAsset'DA_ROT_02_CameraBehaviourSettings_FP'",
+      "ObjectPath": "/ROT_02/Data/DA_ROT_02_CameraBehaviourSettings_FP.0"
+    },
+    "VehicleSensorsDataAsset": {
+      "ObjectName": "BHRotaryVehicleSensorsDataAsset'DA_ROT_02_SensorsData'",
+      "ObjectPath": "/ROT_02/Data/DA_ROT_02_SensorsData.0"
+    },
+    "VehicleInputControlsDataAsset": {
+      "ObjectName": "MRotaryInputControlsDataAsset'DA_ROT_02_InputControls'",
+      "ObjectPath": "/ROT_02/Data/DA_ROT_02_InputControls.0"
+    },
+    "VehicleClassTag": {
+      "TagName": "State.Player.Vehicle.Rotary"
+    },
+    "ExitVehicleDamageType": {
+      "ObjectName": "Class'WDImpactDamageType'",
+      "ObjectPath": "/Script/WDGame"
+    },
+    "EngineRunningGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Engine.Running.ROT_02"
+    },
+    "CollisionGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Collision"
+    },
+    "DestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Destroyed.ROT_02"
+    },
+    "PostDestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.PostDestroyed.ROT_02"
+    },
+    "PlayerChangedSeatGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.ChangedSeats"
+    },
+    "PlayerEnteredVehicleGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Enter.ROT_02"
+    },
+    "PlayerExitedVehicleGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Exit.ROT_02"
+    },
+    "PlayerToggleChaseCamGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.ToggleChaseCam"
+    },
+    "UseHornGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Horn"
+    },
+    "ItemAddedToInventoryCueTag": {
+      "TagName": "GameplayCue.Vehicle.DepositSupplies"
+    },
+    "HornMinimumHoldTime": 0.05,
+    "VehicleExitDamageCurve": {
+      "ObjectName": "CurveFloat'CRV_ExitVehiclePunishment_Damage'",
+      "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Curves/CRV_ExitVehiclePunishment_Damage.0"
+    },
+    "EntryOffsetTolerance": 1000.0,
+    "VehicleConfigExtensions": [
+      {
+        "Key": "CBM",
+        "Value": {
+          "ObjectName": "PDA_CBM_Map_C'DA_Vehicle_ROT_02_CBM_Map'",
+          "ObjectPath": "/ROT_02/Data/DA_Vehicle_ROT_02_CBM_Map.0"
+        }
+      },
+      {
+        "Key": "Audio",
+        "Value": {
+          "ObjectName": "WDAudioData'DA_ROT_02_Audio'",
+          "ObjectPath": "/ROT_02/Data/DA_ROT_02_Audio.0"
+        }
+      }
+    ],
+    "DestroyedStaticMesh": {
+      "ObjectName": "StaticMesh'SM_Destroyed_ROT_02_Body'",
+      "ObjectPath": "/ROT_02/Meshes/SM_Destroyed_ROT_02_Body.2"
+    },
+    "FirstPersonSpringArmComponentTransform": {
+      "Translation": {
+        "X": 180.0,
+        "Y": -0.611377,
+        "Z": 286.89774
+      }
+    },
+    "ThirdPersonSpringArmComponentTransform": {
+      "Translation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 115.0
+      }
+    },
+    "NativeClass": null
+  }
+}

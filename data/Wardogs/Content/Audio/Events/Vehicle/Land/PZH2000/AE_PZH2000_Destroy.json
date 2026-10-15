@@ -1,0 +1,150 @@
+--- export: UObject / AEB_AttachToGCObject_C_0 ---
+{
+  "Type": "AEB_AttachToGCObject_C",
+  "Name": "AEB_AttachToGCObject_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_AttachToGCObject.AEB_AttachToGCObject_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_PZH2000_Destroy'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Land/PZH2000/AE_PZH2000_Destroy.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_AttachToGCObject_C'Default__AEB_AttachToGCObject_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_AttachToGCObject.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Destroy"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_PZH2000_Destroy ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_PZH2000_Destroy",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/Land/PZH2000/AE_PZH2000_Destroy",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.PZH2000.Destroy"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings'AE_PZH2000_Destroy:CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Land/PZH2000/AE_PZH2000_Destroy.2"
+      },
+      {
+        "ObjectName": "AEB_AttachToGCObject_C'AE_PZH2000_Destroy:AEB_AttachToGCObject_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Land/PZH2000/AE_PZH2000_Destroy.0"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorPlayVehicleSound'AE_PZH2000_Destroy:WDAudioEventBehaviorPlayVehicleSound_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Land/PZH2000/AE_PZH2000_Destroy.6"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_PZH2000_Destroy:CrosstalkAudioEventBehaviorStopSound_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Land/PZH2000/AE_PZH2000_Destroy.3"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_PZH2000_Destroy:CrosstalkAudioEventBehaviorStopSound_1'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Land/PZH2000/AE_PZH2000_Destroy.4"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorApplyImpulseResonance'AE_PZH2000_Destroy:WDAudioEventBehaviorApplyImpulseResonance_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Land/PZH2000/AE_PZH2000_Destroy.5"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings",
+  "Name": "CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_PZH2000_Destroy'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Land/PZH2000/AE_PZH2000_Destroy.1"
+  },
+  "Properties": {
+    "ExpirationDelay": 10.0,
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Destroy"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_PZH2000_Destroy'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Land/PZH2000/AE_PZH2000_Destroy.1"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Damage"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_1 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_PZH2000_Destroy'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Land/PZH2000/AE_PZH2000_Destroy.1"
+  },
+  "Properties": {
+    "FadeOut": 0.1,
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Weapon.Aim"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviorApplyImpulseResonance_0 ---
+{
+  "Type": "WDAudioEventBehaviorApplyImpulseResonance",
+  "Name": "WDAudioEventBehaviorApplyImpulseResonance_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorApplyImpulseResonance'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_PZH2000_Destroy'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Land/PZH2000/AE_PZH2000_Destroy.1"
+  },
+  "Properties": {
+    "DefaultResonanceRange": 7500.0,
+    "bSuppressImpulseOnMissingIdProperties": false,
+    "CollisionChannel": "ECollisionChannel::ECC_GameTraceChannel12",
+    "ContextTag": {
+      "TagName": "Audio.Context.Projectile.Impact"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviorPlayVehicleSound_0 ---
+{
+  "Type": "WDAudioEventBehaviorPlayVehicleSound",
+  "Name": "WDAudioEventBehaviorPlayVehicleSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorPlayVehicleSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_PZH2000_Destroy'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Land/PZH2000/AE_PZH2000_Destroy.1"
+  },
+  "Properties": {
+    "SoundAssetTag": {
+      "TagName": "Audio.Asset.Vehicle.Shared.Destroyed"
+    },
+    "RestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Destroy"
+    },
+    "bPersistent": true,
+    "_aaabhonahgpdbjealfaaa_$ED076F31940B5000$_$23$": 500.0
+  }
+}

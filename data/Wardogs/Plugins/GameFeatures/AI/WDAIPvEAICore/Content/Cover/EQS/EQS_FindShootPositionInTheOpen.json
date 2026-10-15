@@ -1,0 +1,316 @@
+--- export: UDataAsset / EQS_FindShootPositionInTheOpen ---
+{
+  "Type": "EnvQuery",
+  "Name": "EQS_FindShootPositionInTheOpen",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQuery'",
+  "Package": "/WDAIPvEAICore/Cover/EQS/EQS_FindShootPositionInTheOpen",
+  "Properties": {
+    "QueryName": "EQS_FindShootPositionInTheOpen",
+    "Options": [
+      {
+        "ObjectName": "EnvQueryOption'EQS_FindShootPositionInTheOpen:EnvQueryOption_0'",
+        "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindShootPositionInTheOpen.2"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryGenerator_Donut_0 ---
+{
+  "Type": "EnvQueryGenerator_Donut",
+  "Name": "EnvQueryGenerator_Donut_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryGenerator_Donut'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindShootPositionInTheOpen'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindShootPositionInTheOpen.0"
+  },
+  "Properties": {
+    "InnerRadius": {
+      "DefaultValue": 0.0,
+      "DataField": "DataValue"
+    },
+    "OuterRadius": {
+      "DefaultValue": 3000.0,
+      "DataBinding": {
+        "ObjectName": "WDAIDataProvider_AIConfigData'EQS_FindShootPositionInTheOpen:EnvQueryGenerator_Donut_0.WDAIDataProvider_AIConfigData_0'",
+        "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindShootPositionInTheOpen.9"
+      },
+      "DataField": "DataValue"
+    },
+    "NumberOfRings": {
+      "DefaultValue": 4
+    },
+    "ProjectionData": {
+      "VersionNum": 1,
+      "SerializedChannel": "ECollisionChannel::ECC_Visibility",
+      "TraceMode": "EEnvQueryTrace::Navigation"
+    },
+    "VerNum": 1
+  }
+}
+--- export: UObject / EnvQueryOption_0 ---
+{
+  "Type": "EnvQueryOption",
+  "Name": "EnvQueryOption_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryOption'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindShootPositionInTheOpen'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindShootPositionInTheOpen.0"
+  },
+  "Properties": {
+    "Generator": {
+      "ObjectName": "EnvQueryGenerator_Donut'EQS_FindShootPositionInTheOpen:EnvQueryGenerator_Donut_0'",
+      "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindShootPositionInTheOpen.1"
+    },
+    "Tests": [
+      {
+        "ObjectName": "EnvQueryTest_Trace'EQS_FindShootPositionInTheOpen:EnvQueryTest_Trace_1'",
+        "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindShootPositionInTheOpen.6"
+      },
+      {
+        "ObjectName": "EnvQueryTest_Pathfinding'EQS_FindShootPositionInTheOpen:EnvQueryTest_Pathfinding_0'",
+        "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindShootPositionInTheOpen.5"
+      },
+      {
+        "ObjectName": "EnvQueryTest_Distance'EQS_FindShootPositionInTheOpen:EnvQueryTest_Distance_3'",
+        "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindShootPositionInTheOpen.4"
+      },
+      {
+        "ObjectName": "EnvQueryTest_Distance'EQS_FindShootPositionInTheOpen:EnvQueryTest_Distance_0'",
+        "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindShootPositionInTheOpen.3"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryTest_Distance_0 ---
+{
+  "Type": "EnvQueryTest_Distance",
+  "Name": "EnvQueryTest_Distance_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Distance'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindShootPositionInTheOpen'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindShootPositionInTheOpen.0"
+  },
+  "Properties": {
+    "DistanceTo": {
+      "ObjectName": "BlueprintGeneratedClass'BP_EnvQueryContext_AliveTeammates_C'",
+      "ObjectPath": "/WDAIPvEAICore/EQS/Context/BP_EnvQueryContext_AliveTeammates.0"
+    },
+    "TestOrder": 3,
+    "TestPurpose": "EEnvTestPurpose::Filter",
+    "FilterType": "EEnvTestFilterType::Minimum",
+    "FloatValueMin": {
+      "DefaultValue": 200.0
+    },
+    "VerNum": 2
+  }
+}
+--- export: UObject / EnvQueryTest_Distance_3 ---
+{
+  "Type": "EnvQueryTest_Distance",
+  "Name": "EnvQueryTest_Distance_3",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Distance'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindShootPositionInTheOpen'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindShootPositionInTheOpen.0"
+  },
+  "Properties": {
+    "DistanceTo": {
+      "ObjectName": "BlueprintGeneratedClass'EQS_Context_TargetEnemy_C'",
+      "ObjectPath": "/WDAIPvEAICore/EQS/Context/EQS_Context_TargetEnemy.0"
+    },
+    "TestOrder": 2,
+    "FilterType": "EEnvTestFilterType::Maximum",
+    "FloatValueMin": {
+      "DataBinding": {
+        "ObjectName": "SDCompositeDataProvider'EQS_FindShootPositionInTheOpen:EnvQueryTest_Distance_3.AIDataProvider_SDComposite_1'",
+        "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindShootPositionInTheOpen.7"
+      },
+      "DataField": "FloatValue"
+    },
+    "FloatValueMax": {
+      "DataBinding": {
+        "ObjectName": "WDAIDataProvider_WeaponData'EQS_FindShootPositionInTheOpen:EnvQueryTest_Distance_3.WDAIDataProvider_WeaponData_1'",
+        "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindShootPositionInTheOpen.11"
+      },
+      "DataField": "DataValue"
+    },
+    "ScoringEquation": "EEnvTestScoreEquation::InverseLinear",
+    "ReferenceValue": {
+      "DataBinding": {
+        "ObjectName": "WDAIDataProvider_WeaponData'EQS_FindShootPositionInTheOpen:EnvQueryTest_Distance_3.WDAIDataProvider_WeaponData_2'",
+        "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindShootPositionInTheOpen.12"
+      },
+      "DataField": "DataValue"
+    },
+    "bDefineReferenceValue": true,
+    "VerNum": 2
+  }
+}
+--- export: UObject / EnvQueryTest_Pathfinding_0 ---
+{
+  "Type": "EnvQueryTest_Pathfinding",
+  "Name": "EnvQueryTest_Pathfinding_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Pathfinding'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindShootPositionInTheOpen'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindShootPositionInTheOpen.0"
+  },
+  "Properties": {
+    "TestMode": "EEnvTestPathfinding::PathCost",
+    "TestOrder": 1,
+    "TestPurpose": "EEnvTestPurpose::Score",
+    "FilterType": "EEnvTestFilterType::Range",
+    "ScoringEquation": "EEnvTestScoreEquation::InverseLinear",
+    "ScoringFactor": {
+      "DefaultValue": 0.5
+    },
+    "bWorkOnFloatValues": true,
+    "VerNum": 2
+  }
+}
+--- export: UObject / EnvQueryTest_Trace_1 ---
+{
+  "Type": "EnvQueryTest_Trace",
+  "Name": "EnvQueryTest_Trace_1",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Trace'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindShootPositionInTheOpen'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindShootPositionInTheOpen.0"
+  },
+  "Properties": {
+    "TraceData": {
+      "VersionNum": 1,
+      "SerializedChannel": "ECollisionChannel::ECC_Visibility",
+      "bOnlyBlockingHits": false
+    },
+    "ItemHeightOffset": {
+      "DefaultValue": 170.0,
+      "DataBinding": {
+        "ObjectName": "WDAIDataProvider_AgentHeight'EQS_FindShootPositionInTheOpen:EnvQueryTest_Trace_1.WDAIDataProvider_AgentHeight_0'",
+        "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindShootPositionInTheOpen.8"
+      },
+      "DataField": "DataValue"
+    },
+    "ContextHeightOffset": {
+      "DataField": "FloatValue"
+    },
+    "Context": {
+      "ObjectName": "BlueprintGeneratedClass'EQS_Context_TargetEnemy_C'",
+      "ObjectPath": "/WDAIPvEAICore/EQS/Context/EQS_Context_TargetEnemy.0"
+    },
+    "TestPurpose": "EEnvTestPurpose::Filter",
+    "BoolValue": {
+      "DefaultValue": false
+    },
+    "VerNum": 2
+  }
+}
+--- export: UObject / AIDataProvider_SDComposite_1 ---
+{
+  "Type": "SDCompositeDataProvider",
+  "Name": "AIDataProvider_SDComposite_1",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'SDCompositeDataProvider'",
+  "Outer": {
+    "ObjectName": "EnvQueryTest_Distance'EQS_FindShootPositionInTheOpen:EnvQueryTest_Distance_3'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindShootPositionInTheOpen.4"
+  },
+  "Properties": {
+    "DataProviders": [
+      {
+        "DefaultValue": 0.0,
+        "DataBinding": {
+          "ObjectName": "WDAIDataProvider_WeaponData'EQS_FindShootPositionInTheOpen:EnvQueryTest_Distance_3.AIDataProvider_SDComposite_1.WDAIDataProvider_WeaponData_0'",
+          "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindShootPositionInTheOpen.10"
+        },
+        "DataField": "DataValue"
+      },
+      {
+        "DefaultValue": 0.5,
+        "DataBinding": null,
+        "DataField": "None"
+      }
+    ],
+    "Operator": "ESDAICompositeOperation::Mul"
+  }
+}
+--- export: UObject / WDAIDataProvider_AgentHeight_0 ---
+{
+  "Type": "WDAIDataProvider_AgentHeight",
+  "Name": "WDAIDataProvider_AgentHeight_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAIDataProvider_AgentHeight'",
+  "Outer": {
+    "ObjectName": "EnvQueryTest_Trace'EQS_FindShootPositionInTheOpen:EnvQueryTest_Trace_1'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindShootPositionInTheOpen.6"
+  },
+  "Properties": {
+    "Context": {
+      "ObjectName": "Class'EnvQueryContext_Querier'",
+      "ObjectPath": "/Script/AIModule"
+    }
+  }
+}
+--- export: UObject / WDAIDataProvider_AIConfigData_0 ---
+{
+  "Type": "WDAIDataProvider_AIConfigData",
+  "Name": "WDAIDataProvider_AIConfigData_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAIDataProvider_AIConfigData'",
+  "Outer": {
+    "ObjectName": "EnvQueryGenerator_Donut'EQS_FindShootPositionInTheOpen:EnvQueryGenerator_Donut_0'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindShootPositionInTheOpen.1"
+  },
+  "Properties": {
+    "AIConfigDataField": "EAIConfigDataField::RadiusToSearchForCovers"
+  }
+}
+--- export: UObject / WDAIDataProvider_WeaponData_0 ---
+{
+  "Type": "WDAIDataProvider_WeaponData",
+  "Name": "WDAIDataProvider_WeaponData_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAIDataProvider_WeaponData'",
+  "Outer": {
+    "ObjectName": "SDCompositeDataProvider'EQS_FindShootPositionInTheOpen:EnvQueryTest_Distance_3.AIDataProvider_SDComposite_1'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindShootPositionInTheOpen.7"
+  },
+  "Properties": {
+    "WeaponDataField": "EAIWeaponDataField::MinAIRange"
+  }
+}
+--- export: UObject / WDAIDataProvider_WeaponData_1 ---
+{
+  "Type": "WDAIDataProvider_WeaponData",
+  "Name": "WDAIDataProvider_WeaponData_1",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAIDataProvider_WeaponData'",
+  "Outer": {
+    "ObjectName": "EnvQueryTest_Distance'EQS_FindShootPositionInTheOpen:EnvQueryTest_Distance_3'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindShootPositionInTheOpen.4"
+  },
+  "Properties": {
+    "WeaponDataField": "EAIWeaponDataField::MaxAIRange"
+  }
+}
+--- export: UObject / WDAIDataProvider_WeaponData_2 ---
+{
+  "Type": "WDAIDataProvider_WeaponData",
+  "Name": "WDAIDataProvider_WeaponData_2",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAIDataProvider_WeaponData'",
+  "Outer": {
+    "ObjectName": "EnvQueryTest_Distance'EQS_FindShootPositionInTheOpen:EnvQueryTest_Distance_3'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindShootPositionInTheOpen.4"
+  },
+  "Properties": {
+    "WeaponDataField": "EAIWeaponDataField::MinAIRange"
+  }
+}

@@ -1,0 +1,717 @@
+--- export: UObject / BH_VehicleRepairToolExtensionData_C_0 ---
+{
+  "Type": "BH_VehicleRepairToolExtensionData_C",
+  "Name": "BH_VehicleRepairToolExtensionData_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/VehicleRepairTool/Data/BH_VehicleRepairToolExtensionData.BH_VehicleRepairToolExtensionData_C'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_LightDrill_RepairTool:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.8"
+  },
+  "Template": {
+    "ObjectName": "BH_VehicleRepairToolExtensionData_C'Default__BH_VehicleRepairToolExtensionData_C'",
+    "ObjectPath": "/VehicleRepairTool/Data/BH_VehicleRepairToolExtensionData.0"
+  },
+  "Properties": {
+    "ChargesToUse": 1
+  }
+}
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_LightDrill_RepairTool'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.6"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 2,
+      "Y": 2
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_LightDrill_RepairTool'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.6"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/VehicleRepairTool/Data/LightDrill/Meshes/SM_LightDrill_RepairTool.SM_LightDrill_RepairTool",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_LightDrill_RepairTool'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.6"
+  },
+  "Properties": {
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Item.Attachment.Magazine"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::AllowList",
+          "AllowedSubSlotItems": [
+            "Id.Item.Battery"
+          ],
+          "AllowedSubSlotContext": [
+            "Item.Attachment.Magazine.Battery"
+          ],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": -2,
+        "MaxSlotAmountStackSize": 1,
+        "bAllowsStackedPacking": false,
+        "bIsHiddenContainer": false,
+        "_aaabelnajgoacnpmnokoe_$BD096E02DFCDEAE4$_$20$": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [
+          "Id.Item.Battery"
+        ],
+        "DefaultContainerItems": [
+          {
+            "Item": {
+              "TagName": "Id.Item.Battery"
+            },
+            "Amount": null
+          }
+        ]
+      }
+    ]
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_LightDrill_RepairTool'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.6"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_LightDrill_RepairTool'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.6"
+  },
+  "Properties": {
+    "Weight": 1.5
+  }
+}
+--- export: UPrimaryDataAsset / ID_LightDrill_RepairTool ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_LightDrill_RepairTool",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool",
+  "Properties": {
+    "ItemId": {
+      "TagName": "ID.Item.RepairTool.Drill.Light"
+    },
+    "ItemContext": [
+      "Inventory.Slot.Secondary",
+      "Inventory.Slot.Specialist",
+      "Item.Context.Equippable",
+      "Item.Context.Animation.Archetype.EquipRightHand",
+      "Item.Context.Animation.Type.Unarmed"
+    ],
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+      "Key": "Items.Utility.LightDrill",
+      "SourceString": "Light Drill",
+      "LocalizedString": "Light Drill"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_LightDrill_RepairTool:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.3"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_ItemActor'ID_LightDrill_RepairTool:WDInventoryFragment_ItemActor_0'",
+        "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.8"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_LightDrill_RepairTool:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.2"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_LightDrill_RepairTool:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.7"
+      },
+      {
+        "ObjectName": "WDItemsmithDataFragment_CameraData'ID_LightDrill_RepairTool:WDItemsmithDataFragment_CameraData_0'",
+        "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.22"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_LightDrill_RepairTool:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.5"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_LightDrill_RepairTool:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.4"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_LightDrill_RepairTool:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.1"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_LightDrill_RepairTool'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.6"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Drill_Light_Audio'",
+      "ObjectPath": "/VehicleRepairTool/Data/LightDrill/Audio/ID_Drill_Light_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_ItemActor_0 ---
+{
+  "Type": "WDInventoryFragment_ItemActor",
+  "Name": "WDInventoryFragment_ItemActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_ItemActor'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_LightDrill_RepairTool'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.6"
+  },
+  "Properties": {
+    "ExtensionDataFragments": [
+      {
+        "ObjectName": "WDItemExtensionData_Holdable'ID_LightDrill_RepairTool:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Holdable_0'",
+        "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.15"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Inventory'ID_LightDrill_RepairTool:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Inventory_0'",
+        "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.17"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Battery'ID_LightDrill_RepairTool:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Battery_0'",
+        "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.12"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_GameplayEffects'ID_LightDrill_RepairTool:WDInventoryFragment_ItemActor_0.WDItemExtensionData_AttributeExtension_1'",
+        "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.14"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Input'ID_LightDrill_RepairTool:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+        "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.16"
+      },
+      {
+        "ObjectName": "BH_VehicleRepairToolExtensionData_C'ID_LightDrill_RepairTool:WDInventoryFragment_ItemActor_0.BH_VehicleRepairToolExtensionData_C_0'",
+        "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.0"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_AudioExtension'ID_LightDrill_RepairTool:WDInventoryFragment_ItemActor_0.WDItemExtensionData_AudioExtension_0'",
+        "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.11"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Animation'ID_LightDrill_RepairTool:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Animation_0'",
+        "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.9"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Appliable'ID_LightDrill_RepairTool:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Appliable_0'",
+        "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.10"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_CharacterMelee'ID_LightDrill_RepairTool:WDInventoryFragment_ItemActor_0.WDItemExtensionData_CharacterMelee_0'",
+        "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.13"
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Animation_0 ---
+{
+  "Type": "WDItemExtensionData_Animation",
+  "Name": "WDItemExtensionData_Animation_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Animation'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_LightDrill_RepairTool:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.8"
+  },
+  "Properties": {
+    "AnimationSet": {
+      "ObjectName": "BHAnimationSet'AnimSet_RepairToolDrillLight'",
+      "ObjectPath": "/VehicleRepairTool/Data/AnimSet_RepairToolDrillLight.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_Appliable_0 ---
+{
+  "Type": "WDItemExtensionData_Appliable",
+  "Name": "WDItemExtensionData_Appliable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Appliable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_LightDrill_RepairTool:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.8"
+  },
+  "Properties": {
+    "Attribute": {
+      "TagName": "Attribute.Gameplay.Health"
+    },
+    "AttributeValue": 5.0,
+    "bApplyAsDelta": true,
+    "AppliableActionData": [
+      {
+        "Key": {
+          "TagName": "Action.VehicleRepairTool.PrimaryUse"
+        },
+        "Value": {
+          "RequiredOwnerStates": [],
+          "ProgressWheelTextData": {
+            "OwnerText": {
+              "Namespace": "",
+              "Key": "A773EC6E499AEED149287698E8CFBCC1",
+              "SourceString": "Repairing",
+              "LocalizedString": "Repairing"
+            },
+            "TargetText": {
+              "Namespace": "",
+              "Key": "B6032B7441DBEFA593C3CEA1E417A3FD",
+              "SourceString": "Being Repaired",
+              "LocalizedString": "Being Repaired"
+            }
+          },
+          "InteractionTimeMethod": "EWDAppliableInteractionTimeMethod::UntilItemEmptyOrTargetFull",
+          "AnimationTag": {
+            "TagName": "Animation.Asset.Appliable.PrimaryUse"
+          },
+          "Notifier": "None",
+          "bUseAppliableProgressWheel": false,
+          "CurrentAppliable": {
+            "TagName": "None"
+          },
+          "MaxAppliable": {
+            "TagName": "None"
+          },
+          "EffectsToApply": {
+            "Effects": []
+          },
+          "AmountConsumedOnUse": 1,
+          "bWorldInteractableUse": true,
+          "bInteractionSystemAppliable": true,
+          "WorldInteractionContextClass": {
+            "ObjectName": "Class'WDVehicleRepairInteractionContext'",
+            "ObjectPath": "/Script/WDGame"
+          },
+          "RequiredTargetStates": [],
+          "bShowOnScreenHoldProgressWheel": false
+        }
+      }
+    ],
+    "bContainerAppliable": true,
+    "ContainerData": {
+      "UpdateTime": 0.75,
+      "UpdateAmount": 14.5
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_AudioExtension_0 ---
+{
+  "Type": "WDItemExtensionData_AudioExtension",
+  "Name": "WDItemExtensionData_AudioExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_AudioExtension'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_LightDrill_RepairTool:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.8"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Drill_Light_Audio'",
+      "ObjectPath": "/VehicleRepairTool/Data/LightDrill/Audio/ID_Drill_Light_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_Battery_0 ---
+{
+  "Type": "WDItemExtensionData_Battery",
+  "Name": "WDItemExtensionData_Battery_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Battery'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_LightDrill_RepairTool:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.8"
+  },
+  "Properties": {
+    "_aaabldemmceabckacmoen_$34CC24012A02CE4D$_$27$": 1.25,
+    "ItemId": {
+      "TagName": "ID.Item.RepairTool.Drill.Light"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_CharacterMelee_0 ---
+{
+  "Type": "WDItemExtensionData_CharacterMelee",
+  "Name": "WDItemExtensionData_CharacterMelee_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_CharacterMelee'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_LightDrill_RepairTool:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.8"
+  },
+  "Properties": {
+    "MeleeActions": [
+      {
+        "Key": {
+          "TagName": "Action.VehicleRepairTool.ContinuousUse"
+        },
+        "Value": {
+          "HitBoxSize": {
+            "X": 20.0,
+            "Y": 20.0,
+            "Z": 20.0
+          },
+          "Damage": 5.0,
+          "TraceDistance": 120.0
+        }
+      }
+    ],
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Utility.MediumDrill"
+      }
+    },
+    "ExtensionComponentClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_WDItemExtension_ItemMelee_C'",
+      "ObjectPath": "/Game/GameMechanics/ExtensionComponents/B_WDItemExtension_ItemMelee.1"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_AttributeExtension_1 ---
+{
+  "Type": "WDItemExtensionData_GameplayEffects",
+  "Name": "WDItemExtensionData_AttributeExtension_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_GameplayEffects'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_LightDrill_RepairTool:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.8"
+  }
+}
+--- export: UObject / WDItemExtensionData_Holdable_0 ---
+{
+  "Type": "WDItemExtensionData_Holdable",
+  "Name": "WDItemExtensionData_Holdable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Holdable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_LightDrill_RepairTool:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.8"
+  },
+  "Properties": {
+    "HoldableMesh": {
+      "ObjectName": "SkeletalMesh'SK_LightDrill_RepairTool'",
+      "ObjectPath": "/VehicleRepairTool/Data/LightDrill/Meshes/SK_LightDrill_RepairTool.1"
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_LightDrill_RepairTool'",
+        "ObjectPath": "/VehicleRepairTool/Data/LightDrill/Materials/MI_LightDrill_RepairTool.0"
+      },
+      null
+    ],
+    "MeshAnimClass": {
+      "ObjectName": "AnimBlueprintGeneratedClass'ABP_LightDrill_RepairTool_C'",
+      "ObjectPath": "/VehicleRepairTool/Data/LightDrill/Animation/Weapon/Blueprint/ABP_LightDrill_RepairTool.1"
+    },
+    "bShowCrosshair": true,
+    "bOverrideDefaultCrosshairSettings": true,
+    "CrosshairSettings": {
+      "Opacity": 0.6,
+      "HairLength": 7.5,
+      "Gap": 5.0,
+      "SpreadMultiplier": 0.0
+    },
+    "EquipAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_LightDrill_RepairTool_Equip'",
+        "ObjectPath": "/VehicleRepairTool/Data/LightDrill/Animation/Character/Montage/AM_FP_LightDrill_RepairTool_Equip.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_EquipmentRH_Equip'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/EquipmentRH/Actions/AM_TP_Gen_EquipmentRH_Equip.0"
+      }
+    },
+    "HolsterAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_LightDrill_RepairTool_Holster'",
+        "ObjectPath": "/VehicleRepairTool/Data/LightDrill/Animation/Character/Montage/AM_FP_LightDrill_RepairTool_Holster.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_EquipmentRH_Holster'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/EquipmentRH/Actions/AM_TP_Gen_EquipmentRH_Holster.0"
+      }
+    },
+    "EquippedAnimSet": {
+      "DefaultFirstPersonLayer": {
+        "AssetPathName": "/VehicleRepairTool/Data/LightDrill/Animation/Character/Blueprint/ABP_FP_LightDrill_RepairTool_Layer_RW.ABP_FP_LightDrill_RepairTool_Layer_RW_C",
+        "SubPathString": ""
+      },
+      "DefaultThirdPersonLayer": {
+        "AssetPathName": "/VehicleRepairTool/Data/LightDrill/Animation/Character/Blueprint/ABP_TP_LightDrill_RepairTool_Layer_RW_NEW.ABP_TP_LightDrill_RepairTool_Layer_RW_NEW_C",
+        "SubPathString": ""
+      }
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_InputActionExtension_0 ---
+{
+  "Type": "WDItemExtensionData_Input",
+  "Name": "WDItemExtensionData_InputActionExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Input'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_LightDrill_RepairTool:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.8"
+  },
+  "Properties": {
+    "InputMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_RepairingTools'",
+      "ObjectPath": "/VehicleRepairTool/Data/IMC_RepairingTools.1"
+    },
+    "InputBehaviors": [
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.Appliable.PrimaryUse"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateVehicleRepairAction'ID_LightDrill_RepairTool:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateVehicleRepairAction_0'",
+          "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.20"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.Inspect"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_LightDrill_RepairTool:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_0'",
+          "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.18"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.PrimaryUse.Release"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_CompleteAction'ID_LightDrill_RepairTool:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_CompleteAction_1'",
+          "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.21"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.Weapon.Reload"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_LightDrill_RepairTool:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_1'",
+          "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.19"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Inventory_0 ---
+{
+  "Type": "WDItemExtensionData_Inventory",
+  "Name": "WDItemExtensionData_Inventory_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Inventory'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_LightDrill_RepairTool:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.8"
+  },
+  "Properties": {
+    "PrimaryUseTag": {
+      "TagName": "Action.VehicleRepairTool.PrimaryUse"
+    },
+    "ActionResourceRequirements": [
+      {
+        "Key": {
+          "TagName": "Action.VehicleRepairTool.PrimaryUse"
+        },
+        "Value": {
+          "RequiredResource": {
+            "TagName": "Id.Item.BatteryCharge"
+          },
+          "ResourcesUsed": 10,
+          "bLimitSearchToItem": true,
+          "OptionalRequiredSubSlotCategory": {
+            "TagName": "Item.Attachment.Magazine"
+          },
+          "ResourceType": {
+            "TagName": "Item.Resource.Magazine"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_0 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_LightDrill_RepairTool:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.16"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Item.Inspect"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_1 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_LightDrill_RepairTool:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.16"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.VehicleRepairTool.Reload"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateVehicleRepairAction_0 ---
+{
+  "Type": "WDItemInputBehavior_ActivateVehicleRepairAction",
+  "Name": "WDItemInputBehavior_ActivateVehicleRepairAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateVehicleRepairAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_LightDrill_RepairTool:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.16"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.VehicleRepairTool.ContinuousUse"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_CompleteAction_1 ---
+{
+  "Type": "WDItemInputBehavior_CompleteAction",
+  "Name": "WDItemInputBehavior_CompleteAction_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_CompleteAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_LightDrill_RepairTool:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.16"
+  },
+  "Properties": {
+    "ActionToComplete": {
+      "TagName": "Action.VehicleRepairTool.ContinuousUse"
+    }
+  }
+}
+--- export: UObject / WDItemsmithDataFragment_CameraData_0 ---
+{
+  "Type": "WDItemsmithDataFragment_CameraData",
+  "Name": "WDItemsmithDataFragment_CameraData_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemsmithDataFragment_CameraData'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_LightDrill_RepairTool'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_LightDrill_RepairTool.6"
+  },
+  "Properties": {
+    "CameraParams": [
+      {
+        "Key": {
+          "TagName": "Id.Item"
+        },
+        "Value": {
+          "FocusPositionOffset": {
+            "X": -1.0,
+            "Y": 9.0,
+            "Z": 3.0
+          },
+          "FocusPosition": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "DefaultAngle": {
+            "Pitch": -9.0,
+            "Yaw": 232.0,
+            "Roll": 0.0
+          },
+          "CenterAngle": {
+            "Pitch": 0.0,
+            "Yaw": 180.0,
+            "Roll": 0.0
+          },
+          "AngleOffsetLimit": 75.0,
+          "DesiredDistance": 87.0,
+          "DistanceLimits": {
+            "X": 10.0,
+            "Y": 100.0
+          },
+          "CameraSpeed": 1.0,
+          "ZoomSpeed": 40.0,
+          "FlairPanLimitMin": {
+            "X": -100.0,
+            "Y": -50.0
+          },
+          "FlairPanLimitMax": {
+            "X": 100.0,
+            "Y": 50.0
+          },
+          "ItemSelectViewOffset": {
+            "X": 0.0,
+            "Y": 0.0
+          }
+        }
+      }
+    ]
+  }
+}

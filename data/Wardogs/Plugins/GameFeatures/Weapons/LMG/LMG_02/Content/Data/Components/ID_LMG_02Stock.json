@@ -1,0 +1,69 @@
+--- export: UPrimaryDataAsset / ID_LMG_02Stock ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_LMG_02Stock",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/LMG_02/Data/Components/ID_LMG_02Stock",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.LMG_02Stock"
+    },
+    "ItemContext": [
+      "Item.Attachment.Stock"
+    ],
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_LMG_02Stock:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/LMG_02/Data/Components/ID_LMG_02Stock.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_LMG_02Stock:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/LMG_02/Data/Components/ID_LMG_02Stock.2"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_LMG_02Stock'",
+    "ObjectPath": "/LMG_02/Data/Components/ID_LMG_02Stock.0"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Stock"
+      },
+      "AppliedEffects": [],
+      "AppliedCharacterEffects": [],
+      "bCanBeRemovedInGame": false,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_LMG_02Stock'",
+    "ObjectPath": "/LMG_02/Data/Components/ID_LMG_02Stock.0"
+  },
+  "Properties": {
+    "ItemType": "EWDGunsmithItemType::Attachment"
+  }
+}

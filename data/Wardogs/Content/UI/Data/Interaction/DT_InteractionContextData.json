@@ -1,0 +1,3824 @@
+--- export: UDataTable / DT_InteractionContextData ---
+{
+  "Type": "DataTable",
+  "Name": "DT_InteractionContextData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/UI/Data/Interaction/DT_InteractionContextData",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUIInteractionContextDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Interaction.Context.Container.Loot": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Container.OutcomeText.Container",
+        "SourceString": "Container",
+        "LocalizedString": "Container"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Container.Loot",
+            "SourceString": "OPEN",
+            "LocalizedString": "OPEN"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.FullHealth"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Player.Heal.FullHealth",
+            "SourceString": "Player At Full Health",
+            "LocalizedString": "Player At Full Health"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Container.Loot"
+      }
+    },
+    "Interaction.Context.Container.QuickRestock": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Container.OutcomeText.Container",
+        "SourceString": "Container",
+        "LocalizedString": "Container"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Container.QuickRestock",
+            "SourceString": "QUICK RESTOCK",
+            "LocalizedString": "QUICK RESTOCK"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Container.QuickRestock"
+      }
+    },
+    "Interaction.Context.DeploymentBoard.OpenBoard": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.DeploymentBoard.OpenBoard.OutcomeText",
+        "SourceString": "Deployment Board",
+        "LocalizedString": "Deployment Board"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.DeploymentBoard.OpenBoard",
+            "SourceString": "OPEN",
+            "LocalizedString": "OPEN"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.DeploymentBoard.OpenBoard"
+      }
+    },
+    "Interaction.Context.Door.Operation": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Door.Operation.OutcomeText",
+        "SourceString": "Door",
+        "LocalizedString": "Door"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Door.Operate",
+            "SourceString": "OPERATE",
+            "LocalizedString": "OPERATE"
+          },
+          "ActionTextOverrides": [
+            {
+              "Key": {
+                "TagName": "UI.Interaction.Action.ContextOverride.Open"
+              },
+              "Value": {
+                "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+                "Key": "Interaction.Prompt.Door.Open",
+                "SourceString": "OPEN",
+                "LocalizedString": "OPEN"
+              }
+            },
+            {
+              "Key": {
+                "TagName": "UI.Interaction.Action.ContextOverride.Close"
+              },
+              "Value": {
+                "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+                "Key": "Interaction.Prompt.Door.Close",
+                "SourceString": "CLOSE",
+                "LocalizedString": "CLOSE"
+              }
+            },
+            {
+              "Key": {
+                "TagName": "UI.Interaction.Action.ContextOverride.Peek"
+              },
+              "Value": {
+                "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+                "Key": "Interaction.Prompt.Door.Peek",
+                "SourceString": "PEEK",
+                "LocalizedString": "PEEK"
+              }
+            }
+          ],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Door.Operation"
+      }
+    },
+    "Interaction.Context.FuelStation.Refuel": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.OutcomeText.Vehicle",
+        "SourceString": "Vehicle",
+        "LocalizedString": "Vehicle"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.FuelStation.Refuel",
+            "SourceString": "REFUEL",
+            "LocalizedString": "REFUEL"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.FuelStation.Refuel"
+      }
+    },
+    "Interaction.Context.Player.BodyDrag": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Player.OutcomeText.Player",
+        "SourceString": "Player",
+        "LocalizedString": "Player"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Player.BodyDrag",
+            "SourceString": "DRAG",
+            "LocalizedString": "DRAG"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.Blocked"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Player.BodyDrag.Blocked",
+            "SourceString": "DRAG (Blocked)",
+            "LocalizedString": "DRAG (Blocked)"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": {
+            "ObjectName": "Texture2D'T_UI_IntelIcon'",
+            "ObjectPath": "/Game/UI/Features/Popups/Widgets/Textures/T_UI_IntelIcon.0"
+          },
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Player.BodyDrag"
+      }
+    },
+    "Interaction.Context.Player.BodyEject": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Player.OutcomeText.Player",
+        "SourceString": "Player",
+        "LocalizedString": "Player"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Player.BodyEject",
+            "SourceString": "EJECT",
+            "LocalizedString": "EJECT"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Player.BodyEject"
+      }
+    },
+    "Interaction.Context.Player.DropBody": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Player.OutcomeText.Player",
+        "SourceString": "Player",
+        "LocalizedString": "Player"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Player.DropBody",
+            "SourceString": "DROP",
+            "LocalizedString": "DROP"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Player.DropBody"
+      }
+    },
+    "Interaction.Context.Player.Heal": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Player.OutcomeText.Player",
+        "SourceString": "Player",
+        "LocalizedString": "Player"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Player.Heal",
+            "SourceString": "HEAL",
+            "LocalizedString": "HEAL"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Player.Heal"
+      }
+    },
+    "Interaction.Context.Player.Loot": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Player.OutcomeText.Player",
+        "SourceString": "Player",
+        "LocalizedString": "Player"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Player.Loot",
+            "SourceString": "LOOT",
+            "LocalizedString": "LOOT"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Player.Loot"
+      }
+    },
+    "Interaction.Context.Player.Revive": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Player.OutcomeText.Player",
+        "SourceString": "Player",
+        "LocalizedString": "Player"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Player.Revive",
+            "SourceString": "REVIVE",
+            "LocalizedString": "REVIVE"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.Blocked"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Player.Revive.Blocked",
+            "SourceString": "REVIVE (Blocked)",
+            "LocalizedString": "REVIVE (Blocked)"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": {
+            "ObjectName": "Texture2D'T_UI_IntelIcon'",
+            "ObjectPath": "/Game/UI/Features/Popups/Widgets/Textures/T_UI_IntelIcon.0"
+          },
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Player.Revive"
+      }
+    },
+    "Interaction.Context.Vehicle.Access": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.OutcomeText.Vehicle",
+        "SourceString": "Vehicle",
+        "LocalizedString": "Vehicle"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Vehicle.Access",
+            "SourceString": "ACCESS",
+            "LocalizedString": "ACCESS"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Access"
+      }
+    },
+    "Interaction.Context.Vehicle.Internal": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.Internal.OutcomeText",
+        "SourceString": "Internal Menu",
+        "LocalizedString": "Internal Menu"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Vehicle.Internal",
+            "SourceString": "OPEN",
+            "LocalizedString": "OPEN"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Internal"
+      }
+    },
+    "Interaction.Context.Vehicle.Locking": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.OutcomeText.All",
+        "SourceString": "All",
+        "LocalizedString": "All"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Vehicle.Locking",
+            "SourceString": "LOCK",
+            "LocalizedString": "LOCK"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Locking"
+      }
+    },
+    "Interaction.Context.Vehicle.Unlock": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.OutcomeText.All",
+        "SourceString": "All",
+        "LocalizedString": "All"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Vehicle.Unlock",
+            "SourceString": "UNLOCK",
+            "LocalizedString": "UNLOCK"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Unlock"
+      }
+    },
+    "Interaction.Context.Vehicle.SquadLock": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.SquadLock.OutcomeText",
+        "SourceString": "Squad",
+        "LocalizedString": "Squad"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Vehicle.SquadLock",
+            "SourceString": "UNLOCK",
+            "LocalizedString": "UNLOCK"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.SquadLock"
+      }
+    },
+    "Interaction.Context.Vendor.OpenStore": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vendor.OpenStore.OutcomeText",
+        "SourceString": "Vendor",
+        "LocalizedString": "Vendor"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Vendor.OpenStore",
+            "SourceString": "OPEN",
+            "LocalizedString": "OPEN"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.Blocked"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Vendor.Open.Blocked.ActionText",
+            "SourceString": "Reloading",
+            "LocalizedString": "Reloading"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": {
+            "ObjectName": "Texture2D'T_UI_IntelIcon'",
+            "ObjectPath": "/Game/UI/Features/Popups/Widgets/Textures/T_UI_IntelIcon.0"
+          },
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vendor.OpenStore"
+      }
+    },
+    "Interaction.Context.Vendor.OpenStore.Blocked": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vendor.OpenStore.OutcomeText",
+        "SourceString": "Vendor",
+        "LocalizedString": "Vendor"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Vendor.OpenStore",
+            "SourceString": "OPEN",
+            "LocalizedString": "OPEN"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.Blocked"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Vendor.Open.Blocked.ActionText",
+            "SourceString": "Reloading",
+            "LocalizedString": "Reloading"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": {
+            "ObjectName": "Texture2D'T_UI_IntelIcon'",
+            "ObjectPath": "/Game/UI/Features/Popups/Widgets/Textures/T_UI_IntelIcon.0"
+          },
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vendor.OpenStore.Blocked"
+      }
+    },
+    "Interaction.Context.DroppedItem.PickUp": {
+      "OutcomeText": {
+        "CultureInvariantString": null
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.DroppedItem.PickUp",
+            "SourceString": "PICK UP",
+            "LocalizedString": "PICK UP"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.NoSpace"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.PickUp.ActionText.NoSpace",
+            "SourceString": "NO SPACE",
+            "LocalizedString": "NO SPACE"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": {
+            "ObjectName": "Texture2D'T_UI_IntelIcon'",
+            "ObjectPath": "/Game/UI/Features/Popups/Widgets/Textures/T_UI_IntelIcon.0"
+          },
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.DroppedItem.PickUp"
+      }
+    },
+    "Interaction.Context.DroppedItem.OpenInventory": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.DroppedItem.OpenInventory.OutcomeText",
+        "SourceString": "Items",
+        "LocalizedString": "Items"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.DroppedItem.OpenInventory",
+            "SourceString": "LOOT",
+            "LocalizedString": "LOOT"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.DroppedItem.OpenInventory"
+      }
+    },
+    "Interaction.Context.DroppedItem.SwapWeapon": {
+      "OutcomeText": {
+        "CultureInvariantString": null
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.DroppedItem.SwapWeapon",
+            "SourceString": "SWAP",
+            "LocalizedString": "SWAP"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.DroppedItem.SwapWeapon"
+      }
+    },
+    "Interaction.Context.DroppedItem.Equip": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.DroppedItem.Equip.OutcomeText",
+        "SourceString": "Dropped Item",
+        "LocalizedString": "Dropped Item"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.DroppedItem.Equip",
+            "SourceString": "EQUIP",
+            "LocalizedString": "EQUIP"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.DroppedItem.Equip"
+      }
+    },
+    "Interaction.Context.RangeButton.Apply": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.RangeButton.Apply.OutcomeText",
+        "SourceString": "Button",
+        "LocalizedString": "Button"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.RangeButton.Apply",
+            "SourceString": "APPLY",
+            "LocalizedString": "APPLY"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.RangeButton.Apply"
+      }
+    },
+    "Interaction.Context.Vehicle.Enter": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.Enter.OutcomeText",
+        "SourceString": "Passenger",
+        "LocalizedString": "Passenger"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Vehicle.Enter",
+            "SourceString": "ENTER",
+            "LocalizedString": "ENTER"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.Occupied"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Vehicle.Enter.Occupied.ActionText",
+            "SourceString": "OCCUPIED",
+            "LocalizedString": "OCCUPIED"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": {
+            "ObjectName": "Texture2D'T_UI_IntelIcon'",
+            "ObjectPath": "/Game/UI/Features/Popups/Widgets/Textures/T_UI_IntelIcon.0"
+          },
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.Locked"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": ".Interaction.Context.Vehicle.ActionText.Locked",
+            "SourceString": "LOCKED",
+            "LocalizedString": "LOCKED"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": {
+            "ObjectName": "Texture2D'T_UI_Icon_SquadLock'",
+            "ObjectPath": "/Game/UI/Features/ContextDrawer/Tabs/Party/Textures/T_UI_Icon_SquadLock.0"
+          },
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.FactionDenied"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Vehicle.Enter.FactionDenied.ActionText",
+            "SourceString": "Faction Denied",
+            "LocalizedString": "Faction Denied"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": {
+            "ObjectName": "Texture2D'T_UI_IntelIcon'",
+            "ObjectPath": "/Game/UI/Features/Popups/Widgets/Textures/T_UI_IntelIcon.0"
+          },
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Enter"
+      }
+    },
+    "Interaction.Context.Vehicle.Locked": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.OutcomeText.Vehicle",
+        "SourceString": "Vehicle",
+        "LocalizedString": "Vehicle"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.Locked"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": ".Interaction.Context.Vehicle.ActionText.Locked",
+            "SourceString": "LOCKED",
+            "LocalizedString": "LOCKED"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": {
+            "ObjectName": "Texture2D'T_UI_Icon_SquadLock'",
+            "ObjectPath": "/Game/UI/Features/ContextDrawer/Tabs/Party/Textures/T_UI_Icon_SquadLock.0"
+          },
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Locked"
+      }
+    },
+    "Interaction.Context.Vehicle.Exit": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.OutcomeText.Vehicle",
+        "SourceString": "Vehicle",
+        "LocalizedString": "Vehicle"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Vehicle.Exit",
+            "SourceString": "EXIT",
+            "LocalizedString": "EXIT"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Exit"
+      }
+    },
+    "Interaction.Context.Vehicle.Fuel.Add": {
+      "OutcomeText": {
+        "CultureInvariantString": null
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Vehicle.Fuel.Add",
+            "SourceString": "REFUEL",
+            "LocalizedString": "REFUEL"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Vehicle.Fuel.Add",
+            "SourceString": "REFUEL",
+            "LocalizedString": "REFUEL"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": {
+            "ObjectName": "Texture2D'T_UI_IntelIcon'",
+            "ObjectPath": "/Game/UI/Features/Popups/Widgets/Textures/T_UI_IntelIcon.0"
+          },
+          "NotifyText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Vehicle.Fuel.Add.NotifyText",
+            "SourceString": "(Equip a fuel can)",
+            "LocalizedString": "(Equip a fuel can)"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Fuel.Add"
+      }
+    },
+    "Interaction.Context.VehicleSupplyCrate": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.SupplyCrate.OutcomeText",
+        "SourceString": "Supply Crate",
+        "LocalizedString": "Supply Crate"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.VehicleSupplyCrate",
+            "SourceString": "ACCESS",
+            "LocalizedString": "ACCESS"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.VehicleSupplyCrate"
+      }
+    },
+    "Interaction.Context.Vehicle.Enter.Driver": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.Enter.Driver.OutcomeText",
+        "SourceString": "Driver",
+        "LocalizedString": "Driver"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Vehicle.Enter.Driver",
+            "SourceString": "ENTER",
+            "LocalizedString": "ENTER"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.Occupied"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Vehicle.Enter.Occupied.ActionText",
+            "SourceString": "OCCUPIED",
+            "LocalizedString": "OCCUPIED"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": {
+            "ObjectName": "Texture2D'T_UI_IntelIcon'",
+            "ObjectPath": "/Game/UI/Features/Popups/Widgets/Textures/T_UI_IntelIcon.0"
+          },
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.Locked"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": ".Interaction.Context.Vehicle.ActionText.Locked",
+            "SourceString": "LOCKED",
+            "LocalizedString": "LOCKED"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": {
+            "ObjectName": "Texture2D'T_UI_Icon_SquadLock'",
+            "ObjectPath": "/Game/UI/Features/ContextDrawer/Tabs/Party/Textures/T_UI_Icon_SquadLock.0"
+          },
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.FactionDenied"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Vehicle.Enter.FactionDenied.ActionText",
+            "SourceString": "Faction Denied",
+            "LocalizedString": "Faction Denied"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": {
+            "ObjectName": "Texture2D'T_UI_IntelIcon'",
+            "ObjectPath": "/Game/UI/Features/Popups/Widgets/Textures/T_UI_IntelIcon.0"
+          },
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Enter.Driver"
+      }
+    },
+    "Interaction.Context.Vehicle.Enter.Gunner": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.Enter.Gunner.OutcomeText",
+        "SourceString": "Gunner",
+        "LocalizedString": "Gunner"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Vehicle.Enter.Gunner",
+            "SourceString": "ENTER",
+            "LocalizedString": "ENTER"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.Occupied"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Vehicle.Enter.Occupied.ActionText",
+            "SourceString": "OCCUPIED",
+            "LocalizedString": "OCCUPIED"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": {
+            "ObjectName": "Texture2D'T_UI_IntelIcon'",
+            "ObjectPath": "/Game/UI/Features/Popups/Widgets/Textures/T_UI_IntelIcon.0"
+          },
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.Locked"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": ".Interaction.Context.Vehicle.ActionText.Locked",
+            "SourceString": "LOCKED",
+            "LocalizedString": "LOCKED"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": {
+            "ObjectName": "Texture2D'T_UI_Icon_SquadLock'",
+            "ObjectPath": "/Game/UI/Features/ContextDrawer/Tabs/Party/Textures/T_UI_Icon_SquadLock.0"
+          },
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.FactionDenied"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Vehicle.Enter.FactionDenied.ActionText",
+            "SourceString": "Faction Denied",
+            "LocalizedString": "Faction Denied"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": {
+            "ObjectName": "Texture2D'T_UI_IntelIcon'",
+            "ObjectPath": "/Game/UI/Features/Popups/Widgets/Textures/T_UI_IntelIcon.0"
+          },
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Enter.Gunner"
+      }
+    },
+    "Interaction.Context.Vehicle.SwitchSeat": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.SwitchSeat.OutcomeText",
+        "SourceString": "Seat",
+        "LocalizedString": "Seat"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Vehicle.SwitchSeat",
+            "SourceString": "SWITCH",
+            "LocalizedString": "SWITCH"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.SwitchSeat"
+      }
+    },
+    "Interaction.Context.Vehicle.Engine.Start": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.OutcomeText.Engine",
+        "SourceString": "Engine",
+        "LocalizedString": "Engine"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Vehicle.Engine.Start",
+            "SourceString": "START",
+            "LocalizedString": "START"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Engine.Start"
+      }
+    },
+    "Interaction.Context.Vehicle.Engine.Stop": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.OutcomeText.Engine",
+        "SourceString": "Engine",
+        "LocalizedString": "Engine"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Vehicle.Engine.Stop",
+            "SourceString": "STOP",
+            "LocalizedString": "STOP"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Engine.Stop"
+      }
+    },
+    "Interaction.Context.Vehicle.Vendor.Garage": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.Vendor.Garage.OutcomeText",
+        "SourceString": "Garage Vendor",
+        "LocalizedString": "Garage Vendor"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Vehicle.Vendor.Garage",
+            "SourceString": "OPEN",
+            "LocalizedString": "OPEN"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Vendor.Garage"
+      }
+    },
+    "Interaction.Context.Vehicle.Inventory": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.Inventory.OutcomeText",
+        "SourceString": "Inventory",
+        "LocalizedString": "Inventory"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Vehicle.Inventory",
+            "SourceString": "ACCESS",
+            "LocalizedString": "ACCESS"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Inventory"
+      }
+    },
+    "Interaction.Context.Vehicle.Deploy.SupplyCrate": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.SupplyCrate.OutcomeText",
+        "SourceString": "Supply Crate",
+        "LocalizedString": "Supply Crate"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Vehicle.Deploy.SupplyCrate",
+            "SourceString": "DEPLOY",
+            "LocalizedString": "DEPLOY"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Deploy.SupplyCrate"
+      }
+    },
+    "Interaction.Context.Vehicle.Kick.All": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.OutcomeText.All",
+        "SourceString": "All",
+        "LocalizedString": "All"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Vehicle.Kick.All",
+            "SourceString": "KICK",
+            "LocalizedString": "KICK"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Kick.All"
+      }
+    },
+    "Interaction.Context.Vehicle.Kick.NonGunners": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.Kick.NonGunners.OutcomeText",
+        "SourceString": "Passengers",
+        "LocalizedString": "Passengers"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Vehicle.Kick.NonGunners",
+            "SourceString": "KICK",
+            "LocalizedString": "KICK"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Kick.NonGunners"
+      }
+    },
+    "Interaction.Context.Vehicle.Kick.NonSquadMembers": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.Kick.NonSquadMembers.OutcomeText",
+        "SourceString": "Non-Squad Members",
+        "LocalizedString": "Non-Squad Members"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Vehicle.Kick.NonSquadMembers",
+            "SourceString": "KICK",
+            "LocalizedString": "KICK"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Kick.NonSquadMembers"
+      }
+    },
+    "Interaction.Context.WorldFeatures.HotZoneMagnet": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.WorldFeatures.HotZoneMagnet.OutcomeText",
+        "SourceString": "Code",
+        "LocalizedString": "Code"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.WorldFeatures.HotZoneMagnet",
+            "SourceString": "ENTER",
+            "LocalizedString": "ENTER"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.WorldFeatures.HotZoneMagnet"
+      }
+    },
+    "Interaction.Context.WorldFeatures.TowerControl": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.WorldFeatures.OutcomeText.Tower",
+        "SourceString": "Tower",
+        "LocalizedString": "Tower"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.WorldFeatures.TowerControl",
+            "SourceString": "CAPTURE",
+            "LocalizedString": "CAPTURE"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.WorldFeatures.TowerControl"
+      }
+    },
+    "Interaction.Context.WorldFeatures.HotZoneHitPoint": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.WorldFeatures.OutcomeText.Tower",
+        "SourceString": "Tower",
+        "LocalizedString": "Tower"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.WorldFeatures.HotZoneHitPoint",
+            "SourceString": "DEACTIVATE",
+            "LocalizedString": "DEACTIVATE"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.WorldFeatures.HotZoneHitPoint"
+      }
+    },
+    "Interaction.Context.Deployable.PickUp": {
+      "OutcomeText": {
+        "CultureInvariantString": null
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Deployable.PickUp",
+            "SourceString": "PICKUP",
+            "LocalizedString": "PICKUP"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.PickUp.ActionText.NoSpace",
+            "SourceString": "NO SPACE",
+            "LocalizedString": "NO SPACE"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": {
+            "ObjectName": "Texture2D'T_UI_IntelIcon'",
+            "ObjectPath": "/Game/UI/Features/Popups/Widgets/Textures/T_UI_IntelIcon.0"
+          },
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Deployable.PickUp"
+      }
+    },
+    "Interaction.Context.Deployable.Disarm": {
+      "OutcomeText": {
+        "CultureInvariantString": null
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Deployable.Disarm",
+            "SourceString": "DISARM",
+            "LocalizedString": "DISARM"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Deployable.Disarm"
+      }
+    },
+    "Interaction.Context.Ladder.Top": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Ladder.Top.OutcomeText",
+        "SourceString": "Ladder",
+        "LocalizedString": "Ladder"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Ladder.Top",
+            "SourceString": "ENTER",
+            "LocalizedString": "ENTER"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Ladder.Top"
+      }
+    },
+    "Interaction.Context.Grenade.ThrowBack": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Grenade.ThrowBack.OutcomeText",
+        "SourceString": "Throw Back",
+        "LocalizedString": "Throw Back"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Grenade.ThrowBack",
+            "SourceString": "GRENADE",
+            "LocalizedString": "GRENADE"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Grenade.ThrowBack"
+      }
+    },
+    "Interaction.Context.Holdable.Refill": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Holdable.Refill.NotifyText",
+        "SourceString": "FUEL CANISTER",
+        "LocalizedString": "FUEL CANISTER"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Holdable.Refill",
+            "SourceString": "REFILL",
+            "LocalizedString": "REFILL"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.Occupied"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Holdable.Refill.NotifyText.HoldableFull",
+            "SourceString": "FUEL CANISTER FULL",
+            "LocalizedString": "FUEL CANISTER FULL"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": {
+            "ObjectName": "Texture2D'T_UI_Locked'",
+            "ObjectPath": "/Game/UI/Features/RadialWheel/Textures/T_UI_Locked.0"
+          },
+          "NotifyText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Holdable.Refill.NotifyText.Fail",
+            "SourceString": "UNABLE TO REFUEL",
+            "LocalizedString": "UNABLE TO REFUEL"
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.Blocked"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Holdable.Refill.NotifyText.WrongItem",
+            "SourceString": "NEED FUEL CANISTER",
+            "LocalizedString": "NEED FUEL CANISTER"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": {
+            "ObjectName": "Texture2D'T_UI_Locked'",
+            "ObjectPath": "/Game/UI/Features/RadialWheel/Textures/T_UI_Locked.0"
+          },
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.Locked"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Holdable.Refill.NotifyText.NoCash",
+            "SourceString": "NO CASH",
+            "LocalizedString": "NO CASH"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": {
+            "ObjectName": "Texture2D'T_UI_Locked'",
+            "ObjectPath": "/Game/UI/Features/RadialWheel/Textures/T_UI_Locked.0"
+          },
+          "NotifyText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Holdable.Refill.NotifyText.Fail",
+            "SourceString": "UNABLE TO REFUEL",
+            "LocalizedString": "UNABLE TO REFUEL"
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.NoSpace"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Holdable.Refill.NotifyText.ContainerEmpty",
+            "SourceString": "CONTAINER EMPTY",
+            "LocalizedString": "CONTAINER EMPTY"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": {
+            "ObjectName": "Texture2D'T_UI_Locked'",
+            "ObjectPath": "/Game/UI/Features/RadialWheel/Textures/T_UI_Locked.0"
+          },
+          "NotifyText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Holdable.Refill.NotifyText.Fail",
+            "SourceString": "UNABLE TO REFUEL",
+            "LocalizedString": "UNABLE TO REFUEL"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Holdable.Refill"
+      }
+    },
+    "Interaction.Context.Repair": {
+      "OutcomeText": {
+        "CultureInvariantString": null
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Repair",
+            "SourceString": "REPAIR",
+            "LocalizedString": "REPAIR"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Repair.ActionText",
+            "SourceString": "FULLY REPAIRED",
+            "LocalizedString": "FULLY REPAIRED"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Repair"
+      }
+    },
+    "Interaction.Context.Vehicle.Repair.Engine": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.OutcomeText.Engine",
+        "SourceString": "Engine",
+        "LocalizedString": "Engine"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Repair",
+            "SourceString": "REPAIR",
+            "LocalizedString": "REPAIR"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Repair.ActionText",
+            "SourceString": "FULLY REPAIRED",
+            "LocalizedString": "FULLY REPAIRED"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Repair.Engine"
+      }
+    },
+    "Interaction.Context.Vehicle.Repair.FuelTank": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.Repair.FuelTank.OutcomeText",
+        "SourceString": "Fuel Tank",
+        "LocalizedString": "Fuel Tank"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Repair",
+            "SourceString": "REPAIR",
+            "LocalizedString": "REPAIR"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Repair.ActionText",
+            "SourceString": "FULLY REPAIRED",
+            "LocalizedString": "FULLY REPAIRED"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Repair.FuelTank"
+      }
+    },
+    "Interaction.Context.Vehicle.Repair.Wheel.Left.Front": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.OutcomeText.Wheel",
+        "SourceString": "Wheel",
+        "LocalizedString": "Wheel"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Repair",
+            "SourceString": "REPAIR",
+            "LocalizedString": "REPAIR"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Repair.ActionText",
+            "SourceString": "FULLY REPAIRED",
+            "LocalizedString": "FULLY REPAIRED"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Repair.Wheel.Left.Front"
+      }
+    },
+    "Interaction.Context.Vehicle.Repair.Wheel.Left.Rear": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.OutcomeText.Wheel",
+        "SourceString": "Wheel",
+        "LocalizedString": "Wheel"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Repair",
+            "SourceString": "REPAIR",
+            "LocalizedString": "REPAIR"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Repair.ActionText",
+            "SourceString": "FULLY REPAIRED",
+            "LocalizedString": "FULLY REPAIRED"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Repair.Wheel.Left.Rear"
+      }
+    },
+    "Interaction.Context.Vehicle.Repair.Wheel.Right.Front": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.OutcomeText.Wheel",
+        "SourceString": "Wheel",
+        "LocalizedString": "Wheel"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Repair",
+            "SourceString": "REPAIR",
+            "LocalizedString": "REPAIR"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Repair.ActionText",
+            "SourceString": "FULLY REPAIRED",
+            "LocalizedString": "FULLY REPAIRED"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Repair.Wheel.Right.Front"
+      }
+    },
+    "Interaction.Context.Vehicle.Repair.Wheel.Right.Rear": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.OutcomeText.Wheel",
+        "SourceString": "Wheel",
+        "LocalizedString": "Wheel"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Repair",
+            "SourceString": "REPAIR",
+            "LocalizedString": "REPAIR"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Repair.ActionText",
+            "SourceString": "FULLY REPAIRED",
+            "LocalizedString": "FULLY REPAIRED"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Repair.Wheel.Right.Rear"
+      }
+    },
+    "Interaction.Context.Vehicle.Repair.Rotor.Tail": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.Repair.Rotor.Tail.OutcomeText",
+        "SourceString": "Tail Rotor",
+        "LocalizedString": "Tail Rotor"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Repair",
+            "SourceString": "REPAIR",
+            "LocalizedString": "REPAIR"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Repair.ActionText",
+            "SourceString": "FULLY REPAIRED",
+            "LocalizedString": "FULLY REPAIRED"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Repair.Rotor.Tail"
+      }
+    },
+    "Interaction.Context.Vehicle.Repair.Rotor.Main": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.Repair.Rotor.Main.OutcomeText",
+        "SourceString": "Main Rotor",
+        "LocalizedString": "Main Rotor"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Repair",
+            "SourceString": "REPAIR",
+            "LocalizedString": "REPAIR"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Repair.ActionText",
+            "SourceString": "FULLY REPAIRED",
+            "LocalizedString": "FULLY REPAIRED"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Repair.Rotor.Main"
+      }
+    },
+    "Interaction.Context.Vehicle.Repair.Body.StrongArea": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.Repair.Body.StrongArea.OutcomeText",
+        "SourceString": "Armor",
+        "LocalizedString": "Armor"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Repair",
+            "SourceString": "REPAIR",
+            "LocalizedString": "REPAIR"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Repair.ActionText",
+            "SourceString": "FULLY REPAIRED",
+            "LocalizedString": "FULLY REPAIRED"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Repair.Body.StrongArea"
+      }
+    },
+    "Interaction.Context.Vehicle.Reposition": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.OutcomeText.Vehicle",
+        "SourceString": "Vehicle",
+        "LocalizedString": "Vehicle"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Vehicle.Reposition",
+            "SourceString": "REPOSITION",
+            "LocalizedString": "REPOSITION"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Reposition"
+      }
+    },
+    "Interaction.Context.Lever.Pull": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Lever.Pull.OutcomeText",
+        "SourceString": "Lever",
+        "LocalizedString": "Lever"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Lever.Pull",
+            "SourceString": "PULL",
+            "LocalizedString": "PULL"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Lever.Pull"
+      }
+    },
+    "Interaction.Context.Projector.TurnOn": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Projector.TurnOn.OutcomeText",
+        "SourceString": "Projector",
+        "LocalizedString": "Projector"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Projector.TurnOn",
+            "SourceString": "TURN ON",
+            "LocalizedString": "TURN ON"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Projector.TurnOn"
+      }
+    },
+    "Interaction.Context.Projector.TurnOff": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Projector.TurnOn.OutcomeText",
+        "SourceString": "Projector",
+        "LocalizedString": "Projector"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Projector.TurnOff",
+            "SourceString": "TURN OFF",
+            "LocalizedString": "TURN OFF"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Projector.TurnOff"
+      }
+    },
+    "Interaction.Context.Projector.Play": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Projector.TurnOn.OutcomeText",
+        "SourceString": "Projector",
+        "LocalizedString": "Projector"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Projector.Play",
+            "SourceString": "PLAY MEDIA",
+            "LocalizedString": "PLAY MEDIA"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Projector.Play"
+      }
+    },
+    "Interaction.Context.Projector.Replay": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Projector.TurnOn.OutcomeText",
+        "SourceString": "Projector",
+        "LocalizedString": "Projector"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Projector.Replay",
+            "SourceString": "REPLAY MEDIA",
+            "LocalizedString": "REPLAY MEDIA"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Projector.Replay"
+      }
+    },
+    "Interaction.Context.Vehicle.Repair.Tracks.Left": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.Repair.Tracks.OutcomeText",
+        "SourceString": "Track",
+        "LocalizedString": "Track"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Repair",
+            "SourceString": "REPAIR",
+            "LocalizedString": "REPAIR"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Repair.ActionText",
+            "SourceString": "FULLY REPAIRED",
+            "LocalizedString": "FULLY REPAIRED"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Repair.Tracks.Left"
+      }
+    },
+    "Interaction.Context.Vehicle.Repair.Tracks.Right": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.Repair.Tracks.OutcomeText",
+        "SourceString": "Track",
+        "LocalizedString": "Track"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Repair",
+            "SourceString": "REPAIR",
+            "LocalizedString": "REPAIR"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Repair.ActionText",
+            "SourceString": "FULLY REPAIRED",
+            "LocalizedString": "FULLY REPAIRED"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Repair.Tracks.Right"
+      }
+    },
+    "Interaction.Context.DepositSupplyPallet": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.SupplyPallet.OutcomeText",
+        "SourceString": "Into F.O.B",
+        "LocalizedString": "Into F.O.B"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.VehicleSupplyPallet",
+            "SourceString": "UNLOAD SUPPLIES",
+            "LocalizedString": "UNLOAD SUPPLIES"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.NoSpace"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.VehicleSupplyPallet",
+            "SourceString": "UNLOAD SUPPLIES",
+            "LocalizedString": "UNLOAD SUPPLIES"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.PickUp.ActionText.NoSpace",
+            "SourceString": "NO SPACE",
+            "LocalizedString": "NO SPACE"
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.Blocked"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.VehicleSupplyPallet",
+            "SourceString": "UNLOAD SUPPLIES",
+            "LocalizedString": "UNLOAD SUPPLIES"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.DepositSupplyPallet.NotInFOBRange",
+            "SourceString": "OUT OF RANGE",
+            "LocalizedString": "OUT OF RANGE"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.DepositSupplyPallet"
+      }
+    },
+    "Interaction.Context.Buildables.Radio.On": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Buildables.Radio.Off",
+        "SourceString": "Radio",
+        "LocalizedString": "Radio"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Context.Buildables.Radio.On",
+            "SourceString": "TURN ON",
+            "LocalizedString": "TURN ON"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Buildables.Radio.On"
+      }
+    },
+    "Interaction.Context.Buildables.Radio.Off": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Buildables.Radio.Off",
+        "SourceString": "Radio",
+        "LocalizedString": "Radio"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Context.Buildables.Radio.Off",
+            "SourceString": "TURN OFF",
+            "LocalizedString": "TURN OFF"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Buildables.Radio.Off"
+      }
+    },
+    "Interaction.Context.Buildables.Radio.Station1": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Buildables.Radio.Station1",
+        "SourceString": "Classical",
+        "LocalizedString": "Classical"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Context.Buildables.Radio.Station1",
+            "SourceString": "CHANGE STATION",
+            "LocalizedString": "CHANGE STATION"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.Blocked"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Context.Buildables.Radio.NowPlaying",
+            "SourceString": "NOW PLAYING",
+            "LocalizedString": "NOW PLAYING"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Buildables.Radio.Station1"
+      }
+    },
+    "Interaction.Context.Buildables.Radio.Station2": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Buildables.Radio.Station2",
+        "SourceString": "World",
+        "LocalizedString": "World"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Context.Buildables.Radio.Station2",
+            "SourceString": "CHANGE STATION",
+            "LocalizedString": "CHANGE STATION"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.Blocked"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Context.Buildables.Radio.NowPlaying",
+            "SourceString": "NOW PLAYING",
+            "LocalizedString": "NOW PLAYING"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Buildables.Radio.Station2"
+      }
+    },
+    "Interaction.Context.Buildables.Radio.Station3": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Buildables.Radio.Station3",
+        "SourceString": "Dance",
+        "LocalizedString": "Dance"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Context.Buildables.Radio.Station2",
+            "SourceString": "CHANGE STATION",
+            "LocalizedString": "CHANGE STATION"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.Blocked"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Context.Buildables.Radio.NowPlaying",
+            "SourceString": "NOW PLAYING",
+            "LocalizedString": "NOW PLAYING"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Buildables.Radio.Station3"
+      }
+    },
+    "Interaction.Context.Buildables.Radio.Station4": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Buildables.Radio.Station4",
+        "SourceString": "Electronic Chill",
+        "LocalizedString": "Electronic Chill"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Context.Buildables.Radio.Station2",
+            "SourceString": "CHANGE STATION",
+            "LocalizedString": "CHANGE STATION"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.Blocked"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Context.Buildables.Radio.NowPlaying",
+            "SourceString": "NOW PLAYING",
+            "LocalizedString": "NOW PLAYING"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Buildables.Radio.Station4"
+      }
+    },
+    "Interaction.Context.Buildables.Radio.Station5": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Buildables.Radio.Station5",
+        "SourceString": "Rap",
+        "LocalizedString": "Rap"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Context.Buildables.Radio.Station2",
+            "SourceString": "CHANGE STATION",
+            "LocalizedString": "CHANGE STATION"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.Blocked"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Context.Buildables.Radio.NowPlaying",
+            "SourceString": "NOW PLAYING",
+            "LocalizedString": "NOW PLAYING"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Buildables.Radio.Station5"
+      }
+    },
+    "Interaction.Context.Buildables.Radio.Station6": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Buildables.Radio.Station6",
+        "SourceString": "Rock",
+        "LocalizedString": "Rock"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Context.Buildables.Radio.Station2",
+            "SourceString": "CHANGE STATION",
+            "LocalizedString": "CHANGE STATION"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.Blocked"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Context.Buildables.Radio.NowPlaying",
+            "SourceString": "NOW PLAYING",
+            "LocalizedString": "NOW PLAYING"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Buildables.Radio.Station6"
+      }
+    },
+    "Interaction.Context.Buildables.Radio.Station7": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Buildables.Radio.Station7",
+        "SourceString": "Post-Punk",
+        "LocalizedString": "Post-Punk"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Context.Buildables.Radio.Station2",
+            "SourceString": "CHANGE STATION",
+            "LocalizedString": "CHANGE STATION"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.Blocked"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Context.Buildables.Radio.NowPlaying",
+            "SourceString": "NOW PLAYING",
+            "LocalizedString": "NOW PLAYING"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Buildables.Radio.Station7"
+      }
+    },
+    "Interaction.Context.Vehicle.Weapon.Restock": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.Weapon.Restock",
+        "SourceString": "Restock",
+        "LocalizedString": "Restock"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Vehicle.Weapon.Restock",
+            "SourceString": "RESTOCK",
+            "LocalizedString": "RESTOCK"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Weapon.Restock"
+      }
+    },
+    "Interaction.Context.Vehicle.FOB.Repair": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.OutcomeText.Vehicle",
+        "SourceString": "Vehicle",
+        "LocalizedString": "Vehicle"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Repair",
+            "SourceString": "REPAIR",
+            "LocalizedString": "REPAIR"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.NoSpace"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.FOB.Repair.Fail.NoResource",
+            "SourceString": "F.O.B Empty",
+            "LocalizedString": "F.O.B Empty"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.Blocked"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.FOB.Repair.Fail.FullHealth",
+            "SourceString": "Not Missing Health",
+            "LocalizedString": "Not Missing Health"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.FOB.Repair"
+      }
+    },
+    "Interaction.Context.Vehicle.FOB.Refuel": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.OutcomeText.Vehicle",
+        "SourceString": "Vehicle",
+        "LocalizedString": "Vehicle"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.FuelStation.Refuel",
+            "SourceString": "REFUEL",
+            "LocalizedString": "REFUEL"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.NoSpace"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.FOB.Refuel.Fail.NoResource",
+            "SourceString": "F.O.B Empty",
+            "LocalizedString": "F.O.B Empty"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.Blocked"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.FOB.Refuel.Fail.FullFuel",
+            "SourceString": "Not Missing Fuel",
+            "LocalizedString": "Not Missing Fuel"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.FOB.Refuel"
+      }
+    },
+    "Interaction.Context.Buildables.Radio.Power": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Buildables.Radio.TogglePower",
+        "SourceString": "Radio",
+        "LocalizedString": "Radio"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Context.Buildables.Radio.TogglePower",
+            "SourceString": "TOGGLE POWER",
+            "LocalizedString": "TOGGLE POWER"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Buildables.Radio.Power"
+      }
+    },
+    "Interaction.Context.Vehicle.Hifi.Play": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.Hifi.Play.OutcomeText",
+        "SourceString": "Cassette Tape",
+        "LocalizedString": "Cassette Tape"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Vehicle.Hifi.Play",
+            "SourceString": "PLAY",
+            "LocalizedString": "PLAY"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Hifi.Play"
+      }
+    },
+    "Interaction.Context.Vehicle.Hifi.Stop": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.Hifi.Stop.OutcomeText",
+        "SourceString": "Cassette Tape",
+        "LocalizedString": "Cassette Tape"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Vehicle.Hifi.Stop",
+            "SourceString": "STOP",
+            "LocalizedString": "STOP"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Hifi.Stop"
+      }
+    },
+    "Interaction.Context.Vehicle.Hifi.NextItem": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.Hifi.NextItem.OutcomeText",
+        "SourceString": "Cassette Tape",
+        "LocalizedString": "Cassette Tape"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Vehicle.Hifi.NextItem",
+            "SourceString": "CHANGE",
+            "LocalizedString": "CHANGE"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Hifi.NextItem"
+      }
+    },
+    "Interaction.Context.DroppedItem.Reload": {
+      "OutcomeText": {
+        "CultureInvariantString": null
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.DroppedItem.Reload",
+            "SourceString": "RELOAD",
+            "LocalizedString": "RELOAD"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.DroppedItem.Reload"
+      }
+    },
+    "Interaction.Context.Vehicle.Stabilize": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.OutcomeText.Vehicle",
+        "SourceString": "Vehicle",
+        "LocalizedString": "Vehicle"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_VehiclesStabilizing.STRINGS_VehiclesStabilizing",
+            "Key": "Interction.Context.Vehicle.Stabilize.Title",
+            "SourceString": " TRANSITION",
+            "LocalizedString": " TRANSITION"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Stabilize"
+      }
+    },
+    "Interaction.Context.Vehicle.Enter.Basic": {
+      "OutcomeText": {
+        "CultureInvariantString": null
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Vehicle.Enter.Gunner",
+            "SourceString": "ENTER",
+            "LocalizedString": "ENTER"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.Occupied"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Vehicle.Enter.Occupied.ActionText",
+            "SourceString": "OCCUPIED",
+            "LocalizedString": "OCCUPIED"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": {
+            "ObjectName": "Texture2D'T_UI_IntelIcon'",
+            "ObjectPath": "/Game/UI/Features/Popups/Widgets/Textures/T_UI_IntelIcon.0"
+          },
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.Locked"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": ".Interaction.Context.Vehicle.ActionText.Locked",
+            "SourceString": "LOCKED",
+            "LocalizedString": "LOCKED"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": {
+            "ObjectName": "Texture2D'T_UI_Icon_SquadLock'",
+            "ObjectPath": "/Game/UI/Features/ContextDrawer/Tabs/Party/Textures/T_UI_Icon_SquadLock.0"
+          },
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.FactionDenied"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Vehicle.Enter.FactionDenied.ActionText",
+            "SourceString": "Faction Denied",
+            "LocalizedString": "Faction Denied"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": {
+            "ObjectName": "Texture2D'T_UI_IntelIcon'",
+            "ObjectPath": "/Game/UI/Features/Popups/Widgets/Textures/T_UI_IntelIcon.0"
+          },
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Vehicle.Enter.Basic"
+      }
+    },
+    "Interaction.Context.ForceUnlockVehicle": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.OutcomeText.Vehicle",
+        "SourceString": "Vehicle",
+        "LocalizedString": "Vehicle"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Vehicle.ForceUnlock",
+            "SourceString": "BREAK IN",
+            "LocalizedString": "BREAK IN"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": {
+            "ObjectName": "Texture2D'T_UI_Vehicle_Unlocked'",
+            "ObjectPath": "/Game/UI/Features/HUD/Passengers/Textures/T_UI_Vehicle_Unlocked.0"
+          },
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.Occupied"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Vehicle.Enter.Occupied.ActionText",
+            "SourceString": "OCCUPIED",
+            "LocalizedString": "OCCUPIED"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": {
+            "ObjectName": "Texture2D'T_UI_IntelIcon'",
+            "ObjectPath": "/Game/UI/Features/Popups/Widgets/Textures/T_UI_IntelIcon.0"
+          },
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.ForceUnlockVehicle"
+      }
+    }
+  }
+}

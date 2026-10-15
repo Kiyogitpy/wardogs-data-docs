@@ -1,0 +1,119 @@
+--- export: UDataTable / DT_EntityData_UI_Ext_Binoculars ---
+{
+  "Type": "DataTable",
+  "Name": "DT_EntityData_UI_Ext_Binoculars",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Binoculars/Data/DT_EntityData_UI_Ext_Binoculars",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'BHEntityData_UI'",
+      "ObjectPath": "/Script/BHFramework"
+    }
+  },
+  "Rows": {
+    "ID.Item.Binoculars": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+        "Key": "Items.Utility.Binoculars",
+        "SourceString": "Binoculars",
+        "LocalizedString": "Binoculars"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+        "Key": "Items.Utility.Binoculars.Description",
+        "SourceString": "- Spot enemy Infantry & Vehicles\r\n- Low Level Magnification",
+        "LocalizedString": "- Spot enemy Infantry & Vehicles\r\n- Low Level Magnification"
+      },
+      "Category": {
+        "TagName": "None"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "Attribute.Meta.XP.Role.Recon"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_General.STRINGS_Items_General",
+            "Key": "Items.SpecItem.Recon",
+            "SourceString": "Recon // Spec. Item",
+            "LocalizedString": "Recon // Spec. Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+            "Key": "Items.Utility.Binoculars.Description",
+            "SourceString": "- Spot enemy Infantry & Vehicles\r\n- Low Level Magnification",
+            "LocalizedString": "- Spot enemy Infantry & Vehicles\r\n- Low Level Magnification"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+            "Key": "Items.Utility.Binoculars.Flavor",
+            "SourceString": "Basic equipment used to Spot enemy Infantry & Vehicles for your teammates.",
+            "LocalizedString": "Basic equipment used to Spot enemy Infantry & Vehicles for your teammates."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Utility/3D/T_UI_Icon_Utility_RangeFinder_Textured_512x512.T_UI_Icon_Utility_RangeFinder_Textured_512x512",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Utility/3D/T_UI_Icon_Utility_RangeFinder_Textured_512x512.T_UI_Icon_Utility_RangeFinder_Textured_512x512",
+            "Value": [
+              "UI.Icon.Inventory.Equipment",
+              "UI.Icon.Inventory.Tooltip",
+              "UI.Icon.Inventory.Container",
+              "UI.Icon.Vendor"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "ID.Item.Binoculars"
+      }
+    }
+  }
+}

@@ -1,0 +1,69 @@
+--- export: UDataAsset / DA_CharacterWeight ---
+{
+  "Type": "WDMoverWeightData",
+  "Name": "DA_CharacterWeight",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDMoverWeightData'",
+  "Package": "/Game/MoverTesting/Settings/DA_CharacterWeight",
+  "Properties": {
+    "WeightClasses": [
+      {
+        "Key": {
+          "TagName": "State.Player.Weight.Lightest"
+        },
+        "Value": {
+          "MinWeight": 0,
+          "Effect": null
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Player.Weight.Light"
+        },
+        "Value": {
+          "MinWeight": 10000,
+          "Effect": {
+            "ObjectName": "BlueprintGeneratedClass'GE_Player_Weight_Light_C'",
+            "ObjectPath": "/Game/GameMechanics/GameplayEffects/Player/GE_Player_Weight_Light.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Player.Weight.Medium"
+        },
+        "Value": {
+          "MinWeight": 17000,
+          "Effect": {
+            "ObjectName": "BlueprintGeneratedClass'GE_Player_Weight_Medium_C'",
+            "ObjectPath": "/Game/GameMechanics/GameplayEffects/Player/GE_Player_Weight_Medium.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Player.Weight.Heavy"
+        },
+        "Value": {
+          "MinWeight": 27000,
+          "Effect": {
+            "ObjectName": "BlueprintGeneratedClass'GE_Player_Weight_Heavy_C'",
+            "ObjectPath": "/Game/GameMechanics/GameplayEffects/Player/GE_Player_Weight_Heavy.0"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Player.Weight.SuperHeavy"
+        },
+        "Value": {
+          "MinWeight": 40000,
+          "Effect": {
+            "ObjectName": "BlueprintGeneratedClass'GE_Player_Weight_SuperHeavy_C'",
+            "ObjectPath": "/Game/GameMechanics/GameplayEffects/Player/GE_Player_Weight_SuperHeavy.0"
+          }
+        }
+      }
+    ]
+  }
+}

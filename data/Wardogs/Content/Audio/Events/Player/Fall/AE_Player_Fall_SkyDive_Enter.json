@@ -1,0 +1,71 @@
+--- export: UPrimaryDataAsset / AE_Player_Fall_SkyDive_Enter ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Player_Fall_SkyDive_Enter",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Fall/AE_Player_Fall_SkyDive_Enter",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.Fall.Skydive.Enter"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Player_Fall_SkyDive_Enter:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Fall/AE_Player_Fall_SkyDive_Enter.1"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware'AE_Player_Fall_SkyDive_Enter:WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Fall/AE_Player_Fall_SkyDive_Enter.2"
+      }
+    ],
+    "_aaabhonahgpdbjealfaaa_$ED076F31940B5000$_$23$": 70.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Fall_SkyDive_Enter'",
+    "ObjectPath": "/Game/Audio/Events/Player/Fall/AE_Player_Fall_SkyDive_Enter.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Fall.SkyDive.Enter"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0 ---
+{
+  "Type": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware",
+  "Name": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Fall_SkyDive_Enter'",
+    "ObjectPath": "/Game/Audio/Events/Player/Fall/AE_Player_Fall_SkyDive_Enter.0"
+  },
+  "Properties": {
+    "FirstPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Parachute.SkydiveEnter.1p"
+    },
+    "AlliedThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Parachute.SkydiveEnter.Ally"
+    },
+    "HostileThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Parachute.SkydiveEnter.Enemy"
+    },
+    "RestartBehavior": "ESoundRestartBehavior::PlayBothIfDifferentSound",
+    "SoundAssetData": {
+      "ObjectName": "WDAudioData'DA_Item_Parachute_SkydiveEnter'",
+      "ObjectPath": "/Game/Audio/Player/Movement/Parachute/DA/DA_Item_Parachute_SkydiveEnter.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Fall.SkyDive.Enter"
+    },
+    "bStatic": true
+  }
+}

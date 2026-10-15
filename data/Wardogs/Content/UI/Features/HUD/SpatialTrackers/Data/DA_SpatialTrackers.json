@@ -1,0 +1,41 @@
+--- export: UDataAsset / DA_SpatialTrackers ---
+{
+  "Type": "WDUISpatialTrackersData",
+  "Name": "DA_SpatialTrackers",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUISpatialTrackersData'",
+  "Package": "/Game/UI/Features/HUD/SpatialTrackers/Data/DA_SpatialTrackers",
+  "Properties": {
+    "FocusPointDistanceScoreMultiplier": 0.6,
+    "WorldDistanceScoreMultipliers": [
+      {
+        "Key": "2,5",
+        "Value": 0.6
+      },
+      {
+        "Key": "5",
+        "Value": 0.3
+      },
+      {
+        "Key": "10",
+        "Value": 0.25
+      },
+      {
+        "Key": "25",
+        "Value": 0.2
+      },
+      {
+        "Key": "50",
+        "Value": 0.15
+      },
+      {
+        "Key": "100",
+        "Value": 0.1
+      }
+    ],
+    "_aaabigkeibhoklcgloncd_$6A4817EAB26BED23$_$24$": 400000.0,
+    "TrackerDataRegistry": {
+      "Name": "TrackerData_Spatial"
+    }
+  }
+}

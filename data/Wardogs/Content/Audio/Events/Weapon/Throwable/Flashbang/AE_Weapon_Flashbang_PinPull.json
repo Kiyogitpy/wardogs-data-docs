@@ -1,0 +1,65 @@
+--- export: UObject / AEB_PlayHeldItemPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayHeldItemPerspectiveSound_C",
+  "Name": "AEB_PlayHeldItemPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayHeldItemPerspectiveSound.AEB_PlayHeldItemPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Flashbang_PinPull'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Throwable/Flashbang/AE_Weapon_Flashbang_PinPull.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayHeldItemPerspectiveSound_C'Default__AEB_PlayHeldItemPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayHeldItemPerspectiveSound.0"
+  },
+  "Properties": {
+    "FirstPersonSoundTag": {
+      "TagName": "Audio.Asset.Item.PinPull.1p"
+    },
+    "ThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Item.PinPull.3p"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Grenade.PinPull"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Weapon_Flashbang_PinPull ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_Flashbang_PinPull",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Weapon/Throwable/Flashbang/AE_Weapon_Flashbang_PinPull",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.Throwable.Flashbang.PinPull"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Weapon_Flashbang_PinPull:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Throwable/Flashbang/AE_Weapon_Flashbang_PinPull.2"
+      },
+      {
+        "ObjectName": "AEB_PlayHeldItemPerspectiveSound_C'AE_Weapon_Flashbang_PinPull:AEB_PlayHeldItemPerspectiveSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Throwable/Flashbang/AE_Weapon_Flashbang_PinPull.0"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Flashbang_PinPull'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Throwable/Flashbang/AE_Weapon_Flashbang_PinPull.1"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Grenade.PinPull"
+    }
+  }
+}

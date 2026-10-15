@@ -1,0 +1,48 @@
+--- export: UDataTable / DT_TrackerData_Minimap_SmokeGrenade ---
+{
+  "Type": "DataTable",
+  "Name": "DT_TrackerData_Minimap_SmokeGrenade",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/SmokeGrenade/UI/Trackers/MapTrackers/Data/DT_TrackerData_Minimap_SmokeGrenade",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUITrackerDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Trackers.Type.SmokeGrenade": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPersistentDataTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhkjekddbhagijalc_$7A94A331706890B2$_$26$": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [
+        "Trackers.Type.SmokeGrenade",
+        "Id.Item"
+      ],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/W_Tracker_Map_Deployable.W_Tracker_Map_Deployable_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIDeployableMapTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/SmokeGrenade/UI/Trackers/MapTrackers/Data/DA_Tracker_Minimap_SmokeGrenade.DA_Tracker_Minimap_SmokeGrenade",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.SmokeGrenade"
+      }
+    }
+  }
+}

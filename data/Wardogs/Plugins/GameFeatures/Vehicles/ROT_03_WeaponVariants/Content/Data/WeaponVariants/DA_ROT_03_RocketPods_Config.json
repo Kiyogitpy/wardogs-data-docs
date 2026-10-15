@@ -1,0 +1,211 @@
+--- export: UPrimaryDataAsset / DA_ROT_03_RocketPods_Config ---
+{
+  "Type": "BHRotaryVehicleConfigDataAsset",
+  "Name": "DA_ROT_03_RocketPods_Config",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHRotaryVehicleConfigDataAsset'",
+  "Package": "/ROT_03_WeaponVariants/Data/WeaponVariants/DA_ROT_03_RocketPods_Config",
+  "Properties": {
+    "RotaryVehicleBodyDataAsset": {
+      "ObjectName": "BHRotaryVehicleBodyDataAsset'DA_ROT_03_RocketPods_BodyDataAsset'",
+      "ObjectPath": "/ROT_03_WeaponVariants/Data/WeaponVariants/DA_ROT_03_RocketPods_BodyDataAsset.0"
+    },
+    "RotaryEngineDataAsset": {
+      "ObjectName": "BHHelicopterEngineDataAsset'DA_ROT_03_Engine'",
+      "ObjectPath": "/ROT_03/Data/DA_ROT_03_Engine.0"
+    },
+    "RotaryVehicleDragDataAsset": {
+      "ObjectName": "BHAirVehicleDragDataAsset'DA_ROT_03_RocketPods_DragDataAsset2000KGLight'",
+      "ObjectPath": "/ROT_03_WeaponVariants/Data/WeaponVariants/DA_ROT_03_RocketPods_DragDataAsset2000KGLight.0"
+    },
+    "RotaryVehicleFlightCharacteristicsDataAsset": {
+      "ObjectName": "BHRotaryFlightDataAsset'DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight'",
+      "ObjectPath": "/ROT_03/Data/DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight.66"
+    },
+    "DustKickupGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.DustKickup"
+    },
+    "RotorExplosionGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Collision.Rotor"
+    },
+    "RotorMaterialCurve": {
+      "ObjectName": "CurveFloat'FC_ROT_03_MainRotorRPM_MaterialValue'",
+      "ObjectPath": "/ROT_03/Data/FC_ROT_03_MainRotorRPM_MaterialValue.0"
+    },
+    "TailRotorMaterialCurve": {
+      "ObjectName": "CurveFloat'FC_ROT_03_TailRotorRPM_MaterialValue'",
+      "ObjectPath": "/ROT_03/Data/FC_ROT_03_TailRotorRPM_MaterialValue.0"
+    },
+    "RotorReturnMeshCurve": {
+      "ObjectName": "CurveFloat'FC_ROT_03_MainRotorRPM_MeshValue'",
+      "ObjectPath": "/ROT_03/Data/FC_ROT_03_MainRotorRPM_MeshValue.0"
+    },
+    "GameplayConfigDataAsset": {
+      "ObjectName": "WDVehicleGameplayComponentsDataAsset'DA_GameplaySystems_ROT_03'",
+      "ObjectPath": "/ROT_03/Data/DA_GameplaySystems_ROT_03.35"
+    },
+    "_aaablpoaobapnjpgiekhm_$FE0E10FD9F684A7C$_$27$": {
+      "ObjectName": "MVehiclePredictionSettings_Rotary'DA_ROT_03_RocketPods_PredictionSettings'",
+      "ObjectPath": "/ROT_03_WeaponVariants/Data/WeaponVariants/DA_ROT_03_RocketPods_PredictionSettings.0"
+    },
+    "ThirdPersonCameraBehaviourDataAsset": {
+      "ObjectName": "MRotaryVehicleSpringArmDataAsset'DA_ROT_03_CameraBehaviourSettings'",
+      "ObjectPath": "/ROT_03/Data/DA_ROT_03_CameraBehaviourSettings.0"
+    },
+    "FirstPersonCameraBehaviourDataAsset": {
+      "ObjectName": "MRotaryVehicleSpringArmDataAsset'DA_ROT_03_CameraBehaviourSettings_FP'",
+      "ObjectPath": "/ROT_03/Data/DA_ROT_03_CameraBehaviourSettings_FP.0"
+    },
+    "VehicleSensorsDataAsset": {
+      "ObjectName": "BHRotaryVehicleSensorsDataAsset'DA_ROT_03_SensorsData'",
+      "ObjectPath": "/ROT_03/Data/DA_ROT_03_SensorsData.0"
+    },
+    "VehicleInputControlsDataAsset": {
+      "ObjectName": "MRotaryInputControlsDataAsset'DA_ROT_03_InputControls'",
+      "ObjectPath": "/ROT_03/Data/DA_ROT_03_InputControls.0"
+    },
+    "EventMappings": [
+      {
+        "Key": {
+          "TagName": "Vehicle.Event.RotaryVehicle.Landed"
+        },
+        "Value": {
+          "Events": [
+            {
+              "ObjectName": "MCameraShakeEvent'DA_ROT_03_RocketPods_Config:MCameraShakeEvent_0'",
+              "ObjectPath": "/ROT_03_WeaponVariants/Data/WeaponVariants/DA_ROT_03_RocketPods_Config.1"
+            }
+          ]
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Event.Crashed"
+        },
+        "Value": {
+          "Events": [
+            {
+              "ObjectName": "MCameraShakeEvent'DA_ROT_03_RocketPods_Config:MCameraShakeEvent_1'",
+              "ObjectPath": "/ROT_03_WeaponVariants/Data/WeaponVariants/DA_ROT_03_RocketPods_Config.2"
+            }
+          ]
+        }
+      }
+    ],
+    "VehicleClassTag": {
+      "TagName": "State.Player.Vehicle.Rotary"
+    },
+    "ExitVehicleDamageType": {
+      "ObjectName": "Class'WDImpactDamageType'",
+      "ObjectPath": "/Script/WDGame"
+    },
+    "EngineRunningGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Engine.Running.ROT_03"
+    },
+    "CollisionGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Collision.ROT_03"
+    },
+    "DestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Destroyed.ROT_03"
+    },
+    "PostDestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.PostDestroyed.ROT_03"
+    },
+    "PlayerChangedSeatGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.ChangedSeats"
+    },
+    "PlayerEnteredVehicleGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Enter.ROT_03"
+    },
+    "PlayerExitedVehicleGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Exit.ROT_03"
+    },
+    "PlayerToggleChaseCamGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.ToggleChaseCam"
+    },
+    "UseHornGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Horn"
+    },
+    "ItemAddedToInventoryCueTag": {
+      "TagName": "GameplayCue.Vehicle.DepositSupplies"
+    },
+    "CollisionEffectImpactThreshold": 10.0,
+    "HornMinimumHoldTime": 0.05,
+    "VehicleExitDamageCurve": {
+      "ObjectName": "CurveFloat'CRV_ExitVehiclePunishment_Damage'",
+      "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Curves/CRV_ExitVehiclePunishment_Damage.0"
+    },
+    "EntryOffsetTolerance": 600.0,
+    "VehicleConfigExtensions": [
+      {
+        "Key": "CBM",
+        "Value": {
+          "ObjectName": "PDA_CBM_Map_C'DA_Vehicle_Air_Helicopter_CBM_Map'",
+          "ObjectPath": "/Game/Audio/Vehicles/Shared/Helicopter/DA/DA_Vehicle_Air_Helicopter_CBM_Map.0"
+        }
+      },
+      {
+        "Key": "Audio",
+        "Value": {
+          "ObjectName": "WDAudioData'DA_ROT_03_Audio'",
+          "ObjectPath": "/ROT_03/Data/DA_ROT_03_Audio.0"
+        }
+      }
+    ],
+    "DestroyedStaticMesh": {
+      "ObjectName": "StaticMesh'SM_ROT_03_Destroyed'",
+      "ObjectPath": "/ROT_03/Meshes/SM_ROT_03_Destroyed.2"
+    },
+    "ThirdPersonSpringArmComponentTransform": {
+      "Translation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 115.0
+      }
+    },
+    "NativeClass": null
+  }
+}
+--- export: UObject / MCameraShakeEvent_0 ---
+{
+  "Type": "MCameraShakeEvent",
+  "Name": "MCameraShakeEvent_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MCameraShakeEvent'",
+  "Outer": {
+    "ObjectName": "BHRotaryVehicleConfigDataAsset'DA_ROT_03_RocketPods_Config'",
+    "ObjectPath": "/ROT_03_WeaponVariants/Data/WeaponVariants/DA_ROT_03_RocketPods_Config.0"
+  },
+  "Properties": {
+    "FirstPersonCameraShakeClass": {
+      "ObjectName": "BlueprintGeneratedClass'BP_CameraShake_Landed_FirstPerson_C'",
+      "ObjectPath": "/ROT_03/Camera/BP_CameraShake_Landed_FirstPerson.0"
+    },
+    "ThirdPersonCameraShakeClass": {
+      "ObjectName": "BlueprintGeneratedClass'BP_CameraShake_Landed_ThirdPerson_C'",
+      "ObjectPath": "/ROT_03/Camera/BP_CameraShake_Landed_ThirdPerson.0"
+    },
+    "bUseValueAsMultiplier": false
+  }
+}
+--- export: UObject / MCameraShakeEvent_1 ---
+{
+  "Type": "MCameraShakeEvent",
+  "Name": "MCameraShakeEvent_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MCameraShakeEvent'",
+  "Outer": {
+    "ObjectName": "BHRotaryVehicleConfigDataAsset'DA_ROT_03_RocketPods_Config'",
+    "ObjectPath": "/ROT_03_WeaponVariants/Data/WeaponVariants/DA_ROT_03_RocketPods_Config.0"
+  },
+  "Properties": {
+    "FirstPersonCameraShakeClass": {
+      "ObjectName": "BlueprintGeneratedClass'BP_CameraShake_Crash_FirstPerson_C'",
+      "ObjectPath": "/ROT_03/Camera/BP_CameraShake_Crash_FirstPerson.0"
+    },
+    "ThirdPersonCameraShakeClass": {
+      "ObjectName": "BlueprintGeneratedClass'BP_CameraShake_Crash_ThirdPerson_C'",
+      "ObjectPath": "/ROT_03/Camera/BP_CameraShake_Crash_ThirdPerson.0"
+    }
+  }
+}

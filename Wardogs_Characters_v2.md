@@ -4,7 +4,7 @@ parent: "Content"
 ---
 
 # Wardogs: Characters Data Reference (v2)
-*Extracted from cooked game data (`Wardogs/Content/Characters`, 3 files). Values are raw asset values.*
+*Extracted from cooked game data ([`Wardogs/Content/Characters`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Characters), 3 files). Values are raw asset values.*
 
 > **Scope:** the third-person character LOD policy and the physics bone-constraint assets for the ghillie suit. The skeletal meshes, materials and armour meshes themselves are not in this folder.
 

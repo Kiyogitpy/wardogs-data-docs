@@ -1,0 +1,91 @@
+--- export: UObject / AEB_EndBehavior_C_0 ---
+{
+  "Type": "AEB_EndBehavior_C",
+  "Name": "AEB_EndBehavior_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_EndBehavior.AEB_EndBehavior_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_RearRotor_Kill'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/ROT/AE_RearRotor_Kill.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_EndBehavior_C'Default__AEB_EndBehavior_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_EndBehavior.0"
+  },
+  "Properties": {
+    "BehaviorClass": {
+      "ObjectName": "BlueprintGeneratedClass'AEB_SetVehicleHIDZAttribute_C'",
+      "ObjectPath": "/Game/Audio/Behaviours/AEB_SetVehicleHIDZAttribute.1"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Engine.RearRotor"
+    }
+  }
+}
+--- export: UObject / AEB_EndBehavior_C_2 ---
+{
+  "Type": "AEB_EndBehavior_C",
+  "Name": "AEB_EndBehavior_C_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_EndBehavior.AEB_EndBehavior_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_RearRotor_Kill'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/ROT/AE_RearRotor_Kill.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_EndBehavior_C'Default__AEB_EndBehavior_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_EndBehavior.0"
+  },
+  "Properties": {
+    "BehaviorClass": {
+      "ObjectName": "BlueprintGeneratedClass'AEB_Doppler_C'",
+      "ObjectPath": "/Game/Audio/Behaviours/AEB_Doppler.1"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Engine.RearRotor"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_RearRotor_Kill ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_RearRotor_Kill",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/ROT/AE_RearRotor_Kill",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.RearRotor.Kill"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_EndBehavior_C'AE_RearRotor_Kill:AEB_EndBehavior_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/ROT/AE_RearRotor_Kill.0"
+      },
+      {
+        "ObjectName": "AEB_EndBehavior_C'AE_RearRotor_Kill:AEB_EndBehavior_C_2'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/ROT/AE_RearRotor_Kill.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_RearRotor_Kill:CrosstalkAudioEventBehaviorStopSound_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/ROT/AE_RearRotor_Kill.3"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_RearRotor_Kill'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/ROT/AE_RearRotor_Kill.2"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Engine.RearRotor"
+    }
+  }
+}

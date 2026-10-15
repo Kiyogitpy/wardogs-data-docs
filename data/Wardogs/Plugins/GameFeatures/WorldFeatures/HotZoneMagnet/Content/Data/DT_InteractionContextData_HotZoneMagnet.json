@@ -1,0 +1,112 @@
+--- export: UDataTable / DT_InteractionContextData_HotZoneMagnet ---
+{
+  "Type": "DataTable",
+  "Name": "DT_InteractionContextData_HotZoneMagnet",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/HotZoneMagnet/Data/DT_InteractionContextData_HotZoneMagnet",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUIInteractionContextDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Interaction.Context.WorldFeatures.HotZoneMagnet": {
+      "OutcomeText": {
+        "Namespace": "",
+        "Key": "49D8735142D8BF9015FF81ADD65797C0",
+        "SourceString": "Keypad",
+        "LocalizedString": "Keypad"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "Namespace": "",
+            "Key": "E40A53874890DB006488D1B3443C5830",
+            "SourceString": "ENTER CODE",
+            "LocalizedString": "ENTER CODE"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.WorldFeatures.HotZoneMagnet"
+      }
+    },
+    "Interaction.Context.WorldFeatures.TowerControl": {
+      "OutcomeText": {
+        "Namespace": "",
+        "Key": "02E51FCD4C584FAB194251AC1B5E200A",
+        "SourceString": "Drill Tower",
+        "LocalizedString": "Drill Tower"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "Namespace": "",
+            "Key": "EC7289A947366F9831C29CB3699E898B",
+            "SourceString": "CAPTURE",
+            "LocalizedString": "CAPTURE"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.WorldFeatures.TowerControl"
+      }
+    },
+    "Interaction.Context.WorldFeatures.HotZoneHitPoint": {
+      "OutcomeText": {
+        "Namespace": "",
+        "Key": "C13757804022F68B07D777BC878A5EC2",
+        "SourceString": "Drill Tower",
+        "LocalizedString": "Drill Tower"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "Namespace": "",
+            "Key": "AFBC1EF54372547257DEC99CC11C502D",
+            "SourceString": "DEACTIVATE",
+            "LocalizedString": "DEACTIVATE"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.WorldFeatures.HotZoneHitPoint"
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+--- export: UDataAsset / IA_Player_PrimaryUse ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Player_PrimaryUse",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_PrimaryUse",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Player.PrimaryUse"
+    },
+    "ValueType": "EInputActionValueType::Axis1D",
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerPressed'IA_Player_PrimaryUse:InputTriggerPressed_0'",
+        "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_PrimaryUse.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Player_PrimaryUse'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_PrimaryUse.0"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.01
+  }
+}

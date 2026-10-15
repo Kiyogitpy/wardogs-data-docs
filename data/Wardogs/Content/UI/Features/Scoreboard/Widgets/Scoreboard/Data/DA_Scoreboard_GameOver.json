@@ -1,0 +1,70 @@
+--- export: UDataAsset / DA_Scoreboard_GameOver ---
+{
+  "Type": "WDUIScoreboardData",
+  "Name": "DA_Scoreboard_GameOver",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIScoreboardData'",
+  "Package": "/Game/UI/Features/Scoreboard/Widgets/Scoreboard/Data/DA_Scoreboard_GameOver",
+  "Properties": {
+    "ScoreboardItemViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIScoreboardItemViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Scoreboard/Data/DA_ScoreboardItem.DA_ScoreboardItem",
+        "SubPathString": ""
+      }
+    },
+    "GlobalFilterText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD_Scoreboard_GlobalFilter",
+      "SourceString": "Global",
+      "LocalizedString": "Global"
+    },
+    "GlobalFilterIcon": {
+      "AssetPathName": "/Game/UI/Features/Frontend/Shared/Textures/T_UI_Frontend_WDLogo_Icon.T_UI_Frontend_WDLogo_Icon",
+      "SubPathString": ""
+    },
+    "DefaultStats": [
+      {
+        "TagName": "Analytics.Player.Cash.Earned"
+      },
+      {
+        "TagName": "Analytics.Player.Kills"
+      },
+      {
+        "TagName": "Analytics.Player.Assists"
+      },
+      {
+        "TagName": "Analytics.Player.Deaths"
+      },
+      {
+        "TagName": "Analytics.Player.Revives"
+      }
+    ],
+    "ButtonPromptsBarViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIButtonPromptsBarViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Scoreboard/Widgets/Scoreboard/Data/DA_Scoreboard_ButtonPromptsBar.DA_Scoreboard_ButtonPromptsBar",
+        "SubPathString": ""
+      }
+    },
+    "EnableVoiceChatPromptText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD_Scoreboard_EnableVoiceChat",
+      "SourceString": "Enable Voicechat",
+      "LocalizedString": "Enable Voicechat"
+    },
+    "DisableVoiceChatPromptText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD_Scoreboard_DisableVoiceChat",
+      "SourceString": "Disable Voicechat",
+      "LocalizedString": "Disable Voicechat"
+    },
+    "_aaabcnmbdpeiddoobjind_$DC13F4833EE198D3$_$18$": false
+  }
+}

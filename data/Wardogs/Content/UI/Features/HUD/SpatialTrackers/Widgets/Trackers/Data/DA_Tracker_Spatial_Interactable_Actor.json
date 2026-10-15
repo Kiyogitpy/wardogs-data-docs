@@ -1,0 +1,95 @@
+--- export: UObject / WDUIContextTextRules_0 ---
+{
+  "Type": "WDUIContextTextRules",
+  "Name": "WDUIContextTextRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIContextTextRules'",
+  "Outer": {
+    "ObjectName": "WDUIInteractableActorData'DA_Tracker_Spatial_Interactable_Actor'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Interactable_Actor.2"
+  }
+}
+--- export: UObject / WDUIContextTextRules_1 ---
+{
+  "Type": "WDUIContextTextRules",
+  "Name": "WDUIContextTextRules_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIContextTextRules'",
+  "Outer": {
+    "ObjectName": "WDUIInteractableActorData'DA_Tracker_Spatial_Interactable_Actor'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Interactable_Actor.2"
+  },
+  "Properties": {
+    "State": "EWDUIRuleState::Disable"
+  }
+}
+--- export: UDataAsset / DA_Tracker_Spatial_Interactable_Actor ---
+{
+  "Type": "WDUIInteractableActorData",
+  "Name": "DA_Tracker_Spatial_Interactable_Actor",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIInteractableActorData'",
+  "Package": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Interactable_Actor",
+  "Properties": {
+    "InfoPromptViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIInfoPromptViewModel",
+        "SubPathString": ""
+      }
+    },
+    "HideDuringAppliableContexts": [
+      "Appliable.Context.ReviveFriendly"
+    ],
+    "RuleSets": [
+      {
+        "Key": "EWDUISpatialRulesetType::Default",
+        "Value": {
+          "Priority": 0,
+          "OptionalRules": [
+            {
+              "ObjectName": "WDUIWorldDistanceScaleRules'DA_Tracker_Spatial_Interactable_Actor:WDUIWorldDistanceScaleRules_1'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Interactable_Actor.3"
+            },
+            {
+              "ObjectName": "WDUIContextTextRules'DA_Tracker_Spatial_Interactable_Actor:WDUIContextTextRules_1'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Interactable_Actor.1"
+            }
+          ]
+        }
+      },
+      {
+        "Key": "EWDUISpatialRulesetType::Interactable_IsRelevant",
+        "Value": {
+          "Priority": 1,
+          "OptionalRules": [
+            {
+              "ObjectName": "WDUIContextTextRules'DA_Tracker_Spatial_Interactable_Actor:WDUIContextTextRules_0'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Interactable_Actor.0"
+            }
+          ]
+        }
+      }
+    ],
+    "DefaultTextureColor": {
+      "B": 255,
+      "G": 255,
+      "R": 255,
+      "A": 204,
+      "Hex": "CCFFFFFF"
+    }
+  }
+}
+--- export: UObject / WDUIWorldDistanceScaleRules_1 ---
+{
+  "Type": "WDUIWorldDistanceScaleRules",
+  "Name": "WDUIWorldDistanceScaleRules_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIWorldDistanceScaleRules'",
+  "Outer": {
+    "ObjectName": "WDUIInteractableActorData'DA_Tracker_Spatial_Interactable_Actor'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Interactable_Actor.2"
+  },
+  "Properties": {
+    "State": "EWDUIRuleState::Disable"
+  }
+}

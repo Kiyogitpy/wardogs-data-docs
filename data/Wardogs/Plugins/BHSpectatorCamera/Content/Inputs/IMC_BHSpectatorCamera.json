@@ -1,0 +1,522 @@
+--- export: UDataAsset / IMC_BHSpectatorCamera ---
+{
+  "Type": "InputMappingContext",
+  "Name": "IMC_BHSpectatorCamera",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputMappingContext'",
+  "Package": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera",
+  "Properties": {
+    "DefaultKeyMappings": {
+      "Mappings": [
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_BHSpectatorCamera:InputTriggerPressed_0'",
+              "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.9"
+            },
+            {
+              "ObjectName": "InputTriggerReleased'IMC_BHSpectatorCamera:InputTriggerReleased_0'",
+              "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.17"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_BHSpectatorCameraMove'",
+            "ObjectPath": "/BHSpectatorCamera/Inputs/IA_BHSpectatorCameraMove.0"
+          },
+          "Key": {
+            "KeyName": "W"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_BHSpectatorCamera:InputTriggerPressed_1'",
+              "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.10"
+            },
+            {
+              "ObjectName": "InputTriggerReleased'IMC_BHSpectatorCamera:InputTriggerReleased_1'",
+              "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.18"
+            }
+          ],
+          "Modifiers": [
+            {
+              "ObjectName": "InputModifierNegate'IMC_BHSpectatorCamera:InputModifierNegate_0'",
+              "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.1"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_BHSpectatorCameraMove'",
+            "ObjectPath": "/BHSpectatorCamera/Inputs/IA_BHSpectatorCameraMove.0"
+          },
+          "Key": {
+            "KeyName": "S"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_BHSpectatorCamera:InputTriggerPressed_2'",
+              "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.11"
+            },
+            {
+              "ObjectName": "InputTriggerReleased'IMC_BHSpectatorCamera:InputTriggerReleased_2'",
+              "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.19"
+            }
+          ],
+          "Modifiers": [
+            {
+              "ObjectName": "InputModifierSwizzleAxis'IMC_BHSpectatorCamera:InputModifierSwizzleAxis_0'",
+              "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.5"
+            },
+            {
+              "ObjectName": "InputModifierNegate'IMC_BHSpectatorCamera:InputModifierNegate_2'",
+              "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.3"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_BHSpectatorCameraMove'",
+            "ObjectPath": "/BHSpectatorCamera/Inputs/IA_BHSpectatorCameraMove.0"
+          },
+          "Key": {
+            "KeyName": "A"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_BHSpectatorCamera:InputTriggerPressed_3'",
+              "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.12"
+            },
+            {
+              "ObjectName": "InputTriggerReleased'IMC_BHSpectatorCamera:InputTriggerReleased_3'",
+              "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.20"
+            }
+          ],
+          "Modifiers": [
+            {
+              "ObjectName": "InputModifierSwizzleAxis'IMC_BHSpectatorCamera:InputModifierSwizzleAxis_1'",
+              "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.6"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_BHSpectatorCameraMove'",
+            "ObjectPath": "/BHSpectatorCamera/Inputs/IA_BHSpectatorCameraMove.0"
+          },
+          "Key": {
+            "KeyName": "D"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_BHSpectatorCamera:InputTriggerPressed_4'",
+              "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.13"
+            },
+            {
+              "ObjectName": "InputTriggerReleased'IMC_BHSpectatorCamera:InputTriggerReleased_4'",
+              "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.21"
+            }
+          ],
+          "Modifiers": [
+            {
+              "ObjectName": "InputModifierSwizzleAxis'IMC_BHSpectatorCamera:InputModifierSwizzleAxis_4'",
+              "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.8"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_BHSpectatorCameraMove'",
+            "ObjectPath": "/BHSpectatorCamera/Inputs/IA_BHSpectatorCameraMove.0"
+          },
+          "Key": {
+            "KeyName": "SpaceBar"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_BHSpectatorCamera:InputTriggerPressed_5'",
+              "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.14"
+            },
+            {
+              "ObjectName": "InputTriggerReleased'IMC_BHSpectatorCamera:InputTriggerReleased_5'",
+              "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.22"
+            }
+          ],
+          "Modifiers": [
+            {
+              "ObjectName": "InputModifierNegate'IMC_BHSpectatorCamera:InputModifierNegate_3'",
+              "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.4"
+            },
+            {
+              "ObjectName": "InputModifierSwizzleAxis'IMC_BHSpectatorCamera:InputModifierSwizzleAxis_3'",
+              "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.7"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_BHSpectatorCameraMove'",
+            "ObjectPath": "/BHSpectatorCamera/Inputs/IA_BHSpectatorCameraMove.0"
+          },
+          "Key": {
+            "KeyName": "LeftControl"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_BHSpectatorCameraRotate'",
+            "ObjectPath": "/BHSpectatorCamera/Inputs/IA_BHSpectatorCameraRotate.0"
+          },
+          "Key": {
+            "KeyName": "Mouse2D"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_BHSpectatorCamera:InputTriggerPressed_7'",
+              "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.15"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_BHSpectatorCameraLockOntoActor'",
+            "ObjectPath": "/BHSpectatorCamera/Inputs/IA_BHSpectatorCameraLockOntoActor.0"
+          },
+          "Key": {
+            "KeyName": "L"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_BHSpectatorCamera:InputTriggerPressed_8'",
+              "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.16"
+            },
+            {
+              "ObjectName": "InputTriggerReleased'IMC_BHSpectatorCamera:InputTriggerReleased_7'",
+              "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.23"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_BHSpectatorCameraFast'",
+            "ObjectPath": "/BHSpectatorCamera/Inputs/IA_BHSpectatorCameraFast.0"
+          },
+          "Key": {
+            "KeyName": "LeftShift"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [
+            {
+              "ObjectName": "InputModifierNegate'IMC_BHSpectatorCamera:InputModifierNegate_1'",
+              "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.2"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_BHSpectatorCameraRoll'",
+            "ObjectPath": "/BHSpectatorCamera/Inputs/IA_BHSpectatorCameraRoll.0"
+          },
+          "Key": {
+            "KeyName": "E"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_BHSpectatorCameraRoll'",
+            "ObjectPath": "/BHSpectatorCamera/Inputs/IA_BHSpectatorCameraRoll.0"
+          },
+          "Key": {
+            "KeyName": "Q"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        }
+      ]
+    }
+  }
+}
+--- export: UObject / InputModifierNegate_0 ---
+{
+  "Type": "InputModifierNegate",
+  "Name": "InputModifierNegate_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierNegate'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_BHSpectatorCamera'",
+    "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.0"
+  }
+}
+--- export: UObject / InputModifierNegate_1 ---
+{
+  "Type": "InputModifierNegate",
+  "Name": "InputModifierNegate_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierNegate'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_BHSpectatorCamera'",
+    "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.0"
+  }
+}
+--- export: UObject / InputModifierNegate_2 ---
+{
+  "Type": "InputModifierNegate",
+  "Name": "InputModifierNegate_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierNegate'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_BHSpectatorCamera'",
+    "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.0"
+  }
+}
+--- export: UObject / InputModifierNegate_3 ---
+{
+  "Type": "InputModifierNegate",
+  "Name": "InputModifierNegate_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierNegate'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_BHSpectatorCamera'",
+    "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.0"
+  }
+}
+--- export: UObject / InputModifierSwizzleAxis_0 ---
+{
+  "Type": "InputModifierSwizzleAxis",
+  "Name": "InputModifierSwizzleAxis_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierSwizzleAxis'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_BHSpectatorCamera'",
+    "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.0"
+  }
+}
+--- export: UObject / InputModifierSwizzleAxis_1 ---
+{
+  "Type": "InputModifierSwizzleAxis",
+  "Name": "InputModifierSwizzleAxis_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierSwizzleAxis'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_BHSpectatorCamera'",
+    "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.0"
+  }
+}
+--- export: UObject / InputModifierSwizzleAxis_3 ---
+{
+  "Type": "InputModifierSwizzleAxis",
+  "Name": "InputModifierSwizzleAxis_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierSwizzleAxis'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_BHSpectatorCamera'",
+    "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.0"
+  },
+  "Properties": {
+    "Order": "EInputAxisSwizzle::ZYX"
+  }
+}
+--- export: UObject / InputModifierSwizzleAxis_4 ---
+{
+  "Type": "InputModifierSwizzleAxis",
+  "Name": "InputModifierSwizzleAxis_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierSwizzleAxis'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_BHSpectatorCamera'",
+    "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.0"
+  },
+  "Properties": {
+    "Order": "EInputAxisSwizzle::ZYX"
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_BHSpectatorCamera'",
+    "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.0"
+  }
+}
+--- export: UObject / InputTriggerPressed_1 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_BHSpectatorCamera'",
+    "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.0"
+  }
+}
+--- export: UObject / InputTriggerPressed_2 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_BHSpectatorCamera'",
+    "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.0"
+  }
+}
+--- export: UObject / InputTriggerPressed_3 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_BHSpectatorCamera'",
+    "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.0"
+  }
+}
+--- export: UObject / InputTriggerPressed_4 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_BHSpectatorCamera'",
+    "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.0"
+  }
+}
+--- export: UObject / InputTriggerPressed_5 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_5",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_BHSpectatorCamera'",
+    "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.0"
+  }
+}
+--- export: UObject / InputTriggerPressed_7 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_7",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_BHSpectatorCamera'",
+    "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.0"
+  }
+}
+--- export: UObject / InputTriggerPressed_8 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_8",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_BHSpectatorCamera'",
+    "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.0"
+  }
+}
+--- export: UObject / InputTriggerReleased_0 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_BHSpectatorCamera'",
+    "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.0"
+  }
+}
+--- export: UObject / InputTriggerReleased_1 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_BHSpectatorCamera'",
+    "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.0"
+  }
+}
+--- export: UObject / InputTriggerReleased_2 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_BHSpectatorCamera'",
+    "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.0"
+  }
+}
+--- export: UObject / InputTriggerReleased_3 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_BHSpectatorCamera'",
+    "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.0"
+  }
+}
+--- export: UObject / InputTriggerReleased_4 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_BHSpectatorCamera'",
+    "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.0"
+  }
+}
+--- export: UObject / InputTriggerReleased_5 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_5",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_BHSpectatorCamera'",
+    "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.0"
+  }
+}
+--- export: UObject / InputTriggerReleased_7 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_7",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_BHSpectatorCamera'",
+    "ObjectPath": "/BHSpectatorCamera/Inputs/IMC_BHSpectatorCamera.0"
+  }
+}

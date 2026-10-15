@@ -1,0 +1,191 @@
+--- export: UObject / GameFeatureAction_AddWorldPartitionContent_0 ---
+{
+  "Type": "GameFeatureAction_AddWorldPartitionContent",
+  "Name": "GameFeatureAction_AddWorldPartitionContent_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddWorldPartitionContent'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Enox'",
+    "ObjectPath": "/Enox/Enox.3"
+  },
+  "Properties": {
+    "ExternalDataLayerAsset": {
+      "ObjectName": "ExternalDataLayerAsset'EDL_Enox'",
+      "ObjectPath": "/Enox/EDL_Enox.0"
+    }
+  }
+}
+--- export: UObject / GameFeatureAction_DataRegistrySource_0 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Enox'",
+    "ObjectPath": "/Enox/Enox.3"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "EntityData_UI",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Enox/Data/DT_EntityData_UI_Ext_Enox.DT_EntityData_UI_Ext_Enox",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_DataRegistrySource_1 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Enox'",
+    "ObjectPath": "/Enox/Enox.3"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "VendorData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Enox/Data/DT_VendorData_Ext_Enox.DT_VendorData_Ext_Enox",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / Enox ---
+{
+  "Type": "GameFeatureData",
+  "Name": "Enox",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/Enox/Enox",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'Enox:GameFeatureAction_DataRegistrySource_0'",
+        "ObjectPath": "/Enox/Enox.1"
+      },
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'Enox:GameFeatureAction_DataRegistrySource_1'",
+        "ObjectPath": "/Enox/Enox.2"
+      },
+      {
+        "ObjectName": "GameFeatureAction_AddWorldPartitionContent'Enox:GameFeatureAction_AddWorldPartitionContent_0'",
+        "ObjectPath": "/Enox/Enox.0"
+      },
+      {
+        "ObjectName": "WDGameFeatureActions_AddWorldInteractableContextToActor'Enox:WDGameFeatureActions_AddWorldInteractableContextToActor_0'",
+        "ObjectPath": "/Enox/Enox.4"
+      }
+    ],
+    "PrimaryAssetTypesToScan": [
+      {
+        "PrimaryAssetType": "BH.Item",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/BHInventory.BHInventoryItemDefinition",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/Enox/Data"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::AlwaysCook"
+        }
+      },
+      {
+        "PrimaryAssetType": "BH.Action",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/BHActionSystem.BHActionDefinition",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/Enox/Data/Actions"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::AlwaysCook"
+        }
+      },
+      {
+        "PrimaryAssetType": "BH.Action",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/BHActionSystem.BHActionDefinition",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/Enox/Data/ResuscitatorTest"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::AlwaysCook"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameFeatureActions_AddWorldInteractableContextToActor_0 ---
+{
+  "Type": "WDGameFeatureActions_AddWorldInteractableContextToActor",
+  "Name": "WDGameFeatureActions_AddWorldInteractableContextToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureActions_AddWorldInteractableContextToActor'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Enox'",
+    "ObjectPath": "/Enox/Enox.3"
+  },
+  "Properties": {
+    "ContextsToAdd": [
+      {
+        "AssetPathName": "/Enox/Data/ResuscitatorTest/WIC_ResuscitatorInteractionContext.WIC_ResuscitatorInteractionContext_C",
+        "SubPathString": ""
+      }
+    ],
+    "ClassToAddContextsTo": {
+      "AssetPathName": "/Script/WDGame.WDMoverCharacter",
+      "SubPathString": ""
+    }
+  }
+}

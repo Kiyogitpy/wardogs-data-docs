@@ -1,0 +1,40 @@
+--- export: UPrimaryDataAsset / AE_UI_EndGame_CashNotify_CashSpent ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UI_EndGame_CashNotify_CashSpent",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UI/EndGame/AE_UI_EndGame_CashNotify_CashSpent",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.EndGame.CashNotify.CashSpent"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_UI_EndGame_CashNotify_CashSpent:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/EndGame/AE_UI_EndGame_CashNotify_CashSpent.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_EndGame_CashNotify_CashSpent'",
+    "ObjectPath": "/Game/Audio/Events/UI/EndGame/AE_UI_EndGame_CashNotify_CashSpent.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UI_EndGame_CashRecap_CashSpent_Preset'",
+      "ObjectPath": "/Game/Audio/UI/EndGame/CashRecap/MSS_UI_EndGame_CashRecap_CashSpent_Preset.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.UI.EndGame.CashNotify.CashSpent"
+    }
+  }
+}

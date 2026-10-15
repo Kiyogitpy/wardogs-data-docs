@@ -1,0 +1,60 @@
+--- export: UPrimaryDataAsset / AE_Jet02 ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Jet02",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/FlyByManager/Audio/Jet_02/Events/AE_Jet02",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Jet02.Moving"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Jet02:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/FlyByManager/Audio/Jet_02/Events/AE_Jet02.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Jet02:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/FlyByManager/Audio/Jet_02/Events/AE_Jet02.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Jet02'",
+    "ObjectPath": "/FlyByManager/Audio/Jet_02/Events/AE_Jet02.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Moving"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Jet02'",
+    "ObjectPath": "/FlyByManager/Audio/Jet_02/Events/AE_Jet02.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Vehicles_Jet_02'",
+      "ObjectPath": "/FlyByManager/Audio/Jet_02/MSS_Vehicles_Jet_02.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Moving"
+    }
+  }
+}

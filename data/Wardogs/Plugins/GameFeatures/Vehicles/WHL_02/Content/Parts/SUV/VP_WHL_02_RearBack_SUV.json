@@ -1,0 +1,87 @@
+--- export: UPrimaryDataAsset / VP_WHL_02_RearBack_SUV ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_WHL_02_RearBack_SUV",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/WHL_02/Parts/SUV/VP_WHL_02_RearBack_SUV",
+  "Properties": {
+    "Tags": [
+      "Vehicle.Chassis.Rear"
+    ],
+    "Fragments": [
+      {
+        "Key": "Boot_Bottom",
+        "Value": {
+          "bEnabled": false,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_WHL_02_RearBack_SUV:MVF_StaticMesh_8'",
+            "ObjectPath": "/WHL_02/Parts/SUV/VP_WHL_02_RearBack_SUV.2"
+          }
+        }
+      }
+    ],
+    "Slots": [
+      {
+        "Key": "Chassis",
+        "Value": {
+          "bEnabled": true,
+          "Slot": {
+            "ObjectName": "ModularVehicleSlot'VP_WHL_02_RearBack_SUV:ModularVehicleSlot_1'",
+            "ObjectPath": "/WHL_02/Parts/SUV/VP_WHL_02_RearBack_SUV.1"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / ModularVehicleSlot_1 ---
+{
+  "Type": "ModularVehicleSlot",
+  "Name": "ModularVehicleSlot_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleSlot'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_02_RearBack_SUV'",
+    "ObjectPath": "/WHL_02/Parts/SUV/VP_WHL_02_RearBack_SUV.0"
+  },
+  "Properties": {
+    "Type": "EModularVehicleSlotType::Optional",
+    "CompatibilityTags": {
+      "RequireTags": [
+        "Vehicle.Chassis.Rear"
+      ]
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_8 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_8",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_02_RearBack_SUV'",
+    "ObjectPath": "/WHL_02/Parts/SUV/VP_WHL_02_RearBack_SUV.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceID": "Chassis",
+        "SocketName": "bootDoorBottom_J"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/WHL_02/StaticMeshes/SM_WHL_02_BootBottom.SM_WHL_02_BootBottom",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    },
+    "WalkableSlopeOverride": {
+      "WalkableSlopeBehavior": "EWalkableSlopeBehavior::WalkableSlope_Default"
+    }
+  }
+}

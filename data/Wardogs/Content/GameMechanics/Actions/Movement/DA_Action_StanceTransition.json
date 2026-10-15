@@ -1,0 +1,49 @@
+--- export: UPrimaryDataAsset / DA_Action_StanceTransition ---
+{
+  "Type": "WDActionDefinition",
+  "Name": "DA_Action_StanceTransition",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDActionDefinition'",
+  "Package": "/Game/GameMechanics/Actions/Movement/DA_Action_StanceTransition",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.Player.StanceTransition"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::BlockingStates",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::BlockingStates",
+          "ActionResponses": [],
+          "BlockingStates": [
+            "State.Player.Vitality.Critical"
+          ],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Block",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Block",
+          "ActionResponses": [
+            "Action.Player.Traversing.Climbing",
+            "Action.Player.Traversing.Vaulting",
+            "Action.Player.Traversing.Mantling"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      }
+    ],
+    "ActivationContextType": {
+      "ObjectName": "Class'BHStanceTransitionContextData'",
+      "ObjectPath": "/Script/BHMover"
+    }
+  }
+}

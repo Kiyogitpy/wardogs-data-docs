@@ -1,0 +1,118 @@
+--- export: UDataTable / DT_ServerTestingProfiles ---
+{
+  "Type": "DataTable",
+  "Name": "DT_ServerTestingProfiles",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/Tests/LoadTests/Data/DT_ServerTestingProfiles",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDAutomatedTestServerProfile'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Default": {
+      "bClientsOptIn": true,
+      "TotalClients": 100,
+      "TestOrchestrator": {
+        "AssetPathName": "/Game/Tests/LoadTests/Orchestrators/RandomScatter/B_Default.B_Default_C",
+        "SubPathString": ""
+      },
+      "CustomPlayerControllerClass": null
+    },
+    "SoloTest": {
+      "bClientsOptIn": true,
+      "TotalClients": 1,
+      "TestOrchestrator": {
+        "AssetPathName": "/Game/Tests/LoadTests/Orchestrators/RandomScatter/B_SoloTest.B_SoloTest_C",
+        "SubPathString": ""
+      },
+      "CustomPlayerControllerClass": null
+    },
+    "Default10Players": {
+      "bClientsOptIn": true,
+      "TotalClients": 10,
+      "TestOrchestrator": {
+        "AssetPathName": "/Game/Tests/LoadTests/Orchestrators/RandomScatter/B_Default10Players.B_Default10Players_C",
+        "SubPathString": ""
+      },
+      "CustomPlayerControllerClass": null
+    },
+    "100Players": {
+      "bClientsOptIn": true,
+      "TotalClients": 100,
+      "TestOrchestrator": {
+        "AssetPathName": "/Game/Tests/LoadTests/Orchestrators/RandomScatter/B_100Players.B_100Players_C",
+        "SubPathString": ""
+      },
+      "CustomPlayerControllerClass": null
+    },
+    "100GroundVehicles": {
+      "bClientsOptIn": true,
+      "TotalClients": 100,
+      "TestOrchestrator": {
+        "AssetPathName": "/Game/Tests/LoadTests/Orchestrators/RandomScatter/B_100GroundVehicles.B_100GroundVehicles_C",
+        "SubPathString": ""
+      },
+      "CustomPlayerControllerClass": null
+    },
+    "100TrackedVehicles": {
+      "bClientsOptIn": true,
+      "TotalClients": 100,
+      "TestOrchestrator": {
+        "AssetPathName": "/Game/Tests/LoadTests/Orchestrators/RandomScatter/B_100TrackedVehicles.B_100TrackedVehicles_C",
+        "SubPathString": ""
+      },
+      "CustomPlayerControllerClass": null
+    },
+    "100Helicopters": {
+      "bClientsOptIn": true,
+      "TotalClients": 100,
+      "TestOrchestrator": {
+        "AssetPathName": "/Game/Tests/LoadTests/Orchestrators/RandomScatter/B_100Helicopters.B_100Helicopters_C",
+        "SubPathString": ""
+      },
+      "CustomPlayerControllerClass": null
+    },
+    "30BotOrchestra": {
+      "bClientsOptIn": true,
+      "TotalClients": 30,
+      "TestOrchestrator": {
+        "AssetPathName": "/Game/Tests/LoadTests/Orchestrators/RandomScatter/B_30BotOrchestra.B_30BotOrchestra_C",
+        "SubPathString": ""
+      },
+      "CustomPlayerControllerClass": null
+    },
+    "MovementMedley": {
+      "bClientsOptIn": true,
+      "TotalClients": 100,
+      "TestOrchestrator": {
+        "AssetPathName": "/Game/Tests/LoadTests/Orchestrators/B_MovementMedley.B_MovementMedley_C",
+        "SubPathString": ""
+      },
+      "CustomPlayerControllerClass": null
+    },
+    "Macarena": {
+      "bClientsOptIn": true,
+      "TotalClients": 100,
+      "TestOrchestrator": {
+        "AssetPathName": "/Game/Tests/LoadTests/Orchestrators/B_Macarena.B_Macarena_C",
+        "SubPathString": ""
+      },
+      "CustomPlayerControllerClass": null
+    },
+    "InputTest": {
+      "bClientsOptIn": true,
+      "TotalClients": 5,
+      "TestOrchestrator": {
+        "AssetPathName": "/Game/Tests/LoadTests/Orchestrators/B_InputTest.B_InputTest_C",
+        "SubPathString": ""
+      },
+      "CustomPlayerControllerClass": {
+        "ObjectName": "BlueprintGeneratedClass'PC_AutomatedPlayerController_C'",
+        "ObjectPath": "/Game/Tests/LoadTests/Actors/PC_AutomatedPlayerController.1"
+      }
+    }
+  }
+}

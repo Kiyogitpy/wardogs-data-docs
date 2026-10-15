@@ -1,0 +1,38 @@
+--- export: UPrimaryDataAsset / AE_Music_InGame_Last10Points ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Music_InGame_Last10Points",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Music/InGame/AE_Music_InGame_Last10Points",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Music.InGame.Last10Points"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "WDAudioEventBehaviorEnableMusicState'AE_Music_InGame_Last10Points:WDAudioEventBehaviorEnableMusicState_0'",
+        "ObjectPath": "/Game/Audio/Events/Music/InGame/AE_Music_InGame_Last10Points.1"
+      }
+    ]
+  }
+}
+--- export: UObject / WDAudioEventBehaviorEnableMusicState_0 ---
+{
+  "Type": "WDAudioEventBehaviorEnableMusicState",
+  "Name": "WDAudioEventBehaviorEnableMusicState_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorEnableMusicState'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Music_InGame_Last10Points'",
+    "ObjectPath": "/Game/Audio/Events/Music/InGame/AE_Music_InGame_Last10Points.0"
+  },
+  "Properties": {
+    "StateToEnable": {
+      "TagName": "Audio.Music.Last10Points"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

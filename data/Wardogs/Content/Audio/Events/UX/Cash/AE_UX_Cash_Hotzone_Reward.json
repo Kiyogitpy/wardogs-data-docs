@@ -1,0 +1,40 @@
+--- export: UPrimaryDataAsset / AE_UX_Cash_Hotzone_Reward ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UX_Cash_Hotzone_Reward",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UX/Cash/AE_UX_Cash_Hotzone_Reward",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UX.Cash.HotzoneReward"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_UX_Cash_Hotzone_Reward:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/UX/Cash/AE_UX_Cash_Hotzone_Reward.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UX_Cash_Hotzone_Reward'",
+    "ObjectPath": "/Game/Audio/Events/UX/Cash/AE_UX_Cash_Hotzone_Reward.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UX_Cash_Hotzone_Reward'",
+      "ObjectPath": "/Game/Audio/UX/Cash/MSS_UX_Cash_Hotzone_Reward.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.UX.Cash.HotzoneReward"
+    }
+  }
+}

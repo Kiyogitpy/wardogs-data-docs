@@ -1,0 +1,46 @@
+--- export: UObject / WDPingAction_AssistanceRequest_GetOut_0 ---
+{
+  "Type": "WDPingAction_AssistanceRequest_GetOut",
+  "Name": "WDPingAction_AssistanceRequest_GetOut_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingAction_AssistanceRequest_GetOut'",
+  "Outer": {
+    "ObjectName": "WDPingActionAsset'DA_PingAction_Request_GetOut'",
+    "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_GetOut.1"
+  },
+  "Properties": {
+    "PingActionChatLocText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_ChatBox_AssistanceRequests.STRINGS_ChatBox_AssistanceRequests",
+      "Key": "Type_Request_GetOut_Other",
+      "SourceString": "Get out of my vehicle!",
+      "LocalizedString": "Get out of my vehicle!"
+    }
+  }
+}
+--- export: UDataAsset / DA_PingAction_Request_GetOut ---
+{
+  "Type": "WDPingActionAsset",
+  "Name": "DA_PingAction_Request_GetOut",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingActionAsset'",
+  "Package": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_GetOut",
+  "Properties": {
+    "Text": {
+      "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+      "Key": "Action.Request.GetOut",
+      "SourceString": "Get out",
+      "LocalizedString": "Get out"
+    },
+    "Icon": {
+      "AssetPathName": "/Game/UI/Features/PingWheel/Widgets/Action/Textures/T_UI_Icon_PingWheel_GetOut_64x64.T_UI_Icon_PingWheel_GetOut_64x64",
+      "SubPathString": ""
+    },
+    "bIsWorkInProgress": false,
+    "Actions": [
+      {
+        "ObjectName": "WDPingAction_AssistanceRequest_GetOut'DA_PingAction_Request_GetOut:WDPingAction_AssistanceRequest_GetOut_0'",
+        "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_GetOut.0"
+      }
+    ]
+  }
+}

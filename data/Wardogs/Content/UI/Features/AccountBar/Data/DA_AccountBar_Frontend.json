@@ -1,0 +1,43 @@
+--- export: UDataAsset / DA_AccountBar_Frontend ---
+{
+  "Type": "WDUIAccountBarData",
+  "Name": "DA_AccountBar_Frontend",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIAccountBarData'",
+  "Package": "/Game/UI/Features/AccountBar/Data/DA_AccountBar_Frontend",
+  "Properties": {
+    "Modules": 13,
+    "CareerLevelViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIRoleLevelViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Shared/Widgets/Meta/Data/DA_RoleLevelData.DA_RoleLevelData",
+        "SubPathString": ""
+      }
+    },
+    "ProfitColor_Secondary": {
+      "R": 0.597202,
+      "G": 0.973445,
+      "B": 0.238398,
+      "A": 1.0,
+      "Hex": "CBFC86"
+    },
+    "LossColor_Secondary": {
+      "R": 1.0,
+      "G": 0.15,
+      "B": 0.15,
+      "A": 1.0,
+      "Hex": "FF6C6C"
+    },
+    "ProfitTexture": {
+      "AssetPathName": "/Game/UI/Shared/Icons/Generic/T_UI_ProfitGain_Full.T_UI_ProfitGain_Full",
+      "SubPathString": ""
+    },
+    "LossTexture": {
+      "AssetPathName": "/Game/UI/Shared/Icons/Generic/T_UI_ProfitLoss_Full_fix.T_UI_ProfitLoss_Full_fix",
+      "SubPathString": ""
+    }
+  }
+}

@@ -1,0 +1,52 @@
+--- export: UPrimaryDataAsset / DA_AT4_Stats ---
+{
+  "Type": "WDWeaponStatsData",
+  "Name": "DA_AT4_Stats",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDWeaponStatsData'",
+  "Package": "/Game/Weapons/RocketLauncher/AT4/Data/DA_AT4_Stats",
+  "Properties": {
+    "WeaponId": {
+      "TagName": "Id.Item.AT4"
+    },
+    "WeaponStats": {
+      "RoundsPerMinute": 100.0,
+      "SupportedFireModes": [
+        "EWDFireMode::SemiAutomatic"
+      ],
+      "bFirstFocalPlane": false,
+      "bSpawnProjectileFromCameraWhenAds": false,
+      "AimSwayData": {
+        "bPersistentValues": false,
+        "CurveData": {
+          "AimSwaySpeedCurve": {
+            "ExternalCurve": {
+              "ObjectName": "CurveFloat'AimSway_SpeedCurve'",
+              "ObjectPath": "/Game/Weapons/AimSway_SpeedCurve.0"
+            }
+          },
+          "HorizontalAimSwayMovementCurve": {
+            "ExternalCurve": {
+              "ObjectName": "CurveFloat'HorizontalAimSway_MovementCurve'",
+              "ObjectPath": "/Game/Weapons/HorizontalAimSway_MovementCurve.0"
+            }
+          },
+          "VerticalAimSwayMovementCurve": {
+            "ExternalCurve": {
+              "ObjectName": "CurveFloat'VerticalAimSway_MovementCurve'",
+              "ObjectPath": "/Game/Weapons/VerticalAimSway_MovementCurve.0"
+            }
+          }
+        },
+        "TotalPatternDuration": 6.0,
+        "NoFocusEnergySpeedMultiplier": 2.5,
+        "PlayerCameraOffsetMultiplier": 0.75
+      },
+      "SupportedCaliber": [
+        "Item.Caliber.84mm"
+      ],
+      "InitialBulletSpeed": 29000.0,
+      "EffectiveRange": 300.0
+    }
+  }
+}

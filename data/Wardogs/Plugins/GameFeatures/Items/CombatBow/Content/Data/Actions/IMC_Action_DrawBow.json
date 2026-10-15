@@ -1,0 +1,118 @@
+--- export: UObject / BHPlayerMappableKeySettings_0 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Action_DrawBow'",
+    "ObjectPath": "/CombatBow/Data/Actions/IMC_Action_DrawBow.2"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.HoldableItem.PrimaryUse"
+    },
+    "Name": "Input.NamedActions.HoldableItem.PrimaryUse"
+  }
+}
+--- export: UObject / BHPlayerMappableKeySettings_2 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Action_DrawBow'",
+    "ObjectPath": "/CombatBow/Data/Actions/IMC_Action_DrawBow.2"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Throwable.Throw.Primary.Release"
+    },
+    "Name": "Input.NamedActions.Throwable.Throw.Primary.Release"
+  }
+}
+--- export: UDataAsset / IMC_Action_DrawBow ---
+{
+  "Type": "InputMappingContext",
+  "Name": "IMC_Action_DrawBow",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputMappingContext'",
+  "Package": "/CombatBow/Data/Actions/IMC_Action_DrawBow",
+  "Properties": {
+    "DefaultKeyMappings": {
+      "Mappings": [
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Player_PrimaryUse'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_PrimaryUse.0"
+          },
+          "Key": {
+            "KeyName": "LeftMouseButton"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_Action_DrawBow:BHPlayerMappableKeySettings_0'",
+            "ObjectPath": "/CombatBow/Data/Actions/IMC_Action_DrawBow.0"
+          }
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Player_Holdable_PrimaryUse_Release'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/TaggedActions/IA_Player_Holdable_PrimaryUse_Release.0"
+          },
+          "Key": {
+            "KeyName": "LeftMouseButton"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_Action_DrawBow:BHPlayerMappableKeySettings_2'",
+            "ObjectPath": "/CombatBow/Data/Actions/IMC_Action_DrawBow.1"
+          }
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [
+            {
+              "ObjectName": "WDDeadZoneInputModifier'IMC_Action_DrawBow:WDDeadZoneInputModifier_1'",
+              "ObjectPath": "/CombatBow/Data/Actions/IMC_Action_DrawBow.3"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Player_Holdable_PrimaryUse_Release'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/TaggedActions/IA_Player_Holdable_PrimaryUse_Release.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_RightTriggerAxis"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        }
+      ]
+    }
+  }
+}
+--- export: UObject / WDDeadZoneInputModifier_1 ---
+{
+  "Type": "WDDeadZoneInputModifier",
+  "Name": "WDDeadZoneInputModifier_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDDeadZoneInputModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Action_DrawBow'",
+    "ObjectPath": "/CombatBow/Data/Actions/IMC_Action_DrawBow.2"
+  },
+  "Properties": {
+    "Type": "EDeadZoneType::Axial",
+    "MinThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.RightTrigger.Min"
+    },
+    "MaxThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.RightTrigger.Max"
+    }
+  }
+}

@@ -1,0 +1,138 @@
+--- export: UDataAsset / DA_Graph_GoldExchange ---
+{
+  "Type": "WDUIGoldExchangeGraphData",
+  "Name": "DA_Graph_GoldExchange",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIGoldExchangeGraphData'",
+  "Package": "/Game/UI/Features/Frontend/GoldExchange/Widgets/Data/DA_Graph_GoldExchange",
+  "Properties": {
+    "GraphPointFormatting": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Graph.STRINGS_Graph",
+      "Key": "Formatting.GraphPoint",
+      "SourceString": "{Value}\r\n{Day}{DaySuffix} {Month}",
+      "LocalizedString": "{Value}\r\n{Day}{DaySuffix} {Month}"
+    },
+    "GraphFilterButtonParams": [
+      {
+        "Key": "EWDUIGraphFilter::SevenDay",
+        "Value": {
+          "Tag": {
+            "TagName": "Graph.Tab.Week"
+          },
+          "OverrideButtonClass": null,
+          "Action": null,
+          "Text": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Graph.STRINGS_Graph",
+            "Key": "Filter.Week",
+            "SourceString": "1W",
+            "LocalizedString": "1W"
+          },
+          "MinimumSize": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Icon": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "bDisabled": false,
+          "DisabledReason": {
+            "CultureInvariantString": null
+          }
+        }
+      },
+      {
+        "Key": "EWDUIGraphFilter::Month",
+        "Value": {
+          "Tag": {
+            "TagName": "Graph.Tab.Month"
+          },
+          "OverrideButtonClass": null,
+          "Action": null,
+          "Text": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Graph.STRINGS_Graph",
+            "Key": "Filter.Month",
+            "SourceString": "4W",
+            "LocalizedString": "4W"
+          },
+          "MinimumSize": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Icon": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "bDisabled": false,
+          "DisabledReason": {
+            "CultureInvariantString": null
+          }
+        }
+      },
+      {
+        "Key": "EWDUIGraphFilter::Quarter",
+        "Value": {
+          "Tag": {
+            "TagName": "Graph.Tab.Quarter"
+          },
+          "OverrideButtonClass": null,
+          "Action": null,
+          "Text": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Graph.STRINGS_Graph",
+            "Key": "Filter.Quarter",
+            "SourceString": "12W",
+            "LocalizedString": "12W"
+          },
+          "MinimumSize": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Icon": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "bDisabled": false,
+          "DisabledReason": {
+            "CultureInvariantString": null
+          }
+        }
+      },
+      {
+        "Key": "EWDUIGraphFilter::Year",
+        "Value": {
+          "Tag": {
+            "TagName": "Graph.Tab.Year"
+          },
+          "OverrideButtonClass": null,
+          "Action": null,
+          "Text": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Graph.STRINGS_Graph",
+            "Key": "Filter.Year",
+            "SourceString": "52W",
+            "LocalizedString": "52W"
+          },
+          "MinimumSize": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Icon": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "bDisabled": false,
+          "DisabledReason": {
+            "CultureInvariantString": null
+          }
+        }
+      }
+    ],
+    "GraphMaterialParameterCollection": {
+      "AssetPathName": "/Game/UI/Features/Frontend/GoldExchange/Widgets/Materials/MPC_GraphData.MPC_GraphData",
+      "SubPathString": ""
+    },
+    "ExchangeTag": {
+      "TagName": "Attribute.Meta.Currency.GoldBars"
+    },
+    "GraphDataPadding": 0.2
+  }
+}

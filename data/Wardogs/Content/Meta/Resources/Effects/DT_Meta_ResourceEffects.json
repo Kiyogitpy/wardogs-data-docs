@@ -1,0 +1,25 @@
+--- export: UDataTable / DT_Meta_ResourceEffects ---
+{
+  "Type": "DataTable",
+  "Name": "DT_Meta_ResourceEffects",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/Meta/Resources/Effects/DT_Meta_ResourceEffects",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'BHGameplayEffectTaggedTableRow'",
+      "ObjectPath": "/Script/BHGameplayEffects"
+    }
+  },
+  "Rows": {
+    "Meta.Effect.Resource": {
+      "GameplayEffect": {
+        "AssetPathName": "/Game/Meta/Resources/Effects/GE_Meta_ResourceChange.GE_Meta_ResourceChange_C",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "Meta.Effect.Resource"
+      }
+    }
+  }
+}

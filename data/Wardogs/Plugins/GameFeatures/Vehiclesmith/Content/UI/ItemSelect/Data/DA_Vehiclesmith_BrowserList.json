@@ -1,0 +1,27 @@
+--- export: UDataAsset / DA_Vehiclesmith_BrowserList ---
+{
+  "Type": "WDUIItemsmithBrowserData",
+  "Name": "DA_Vehiclesmith_BrowserList",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIItemsmithBrowserData'",
+  "Package": "/Vehiclesmith/UI/ItemSelect/Data/DA_Vehiclesmith_BrowserList",
+  "Properties": {
+    "ItemsmithBrowserEntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithBrowserEntryViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Vehiclesmith/UI/ItemSelect/Data/DA_Vehiclesmith_BrowserEntry.DA_Vehiclesmith_BrowserEntry",
+        "SubPathString": ""
+      }
+    },
+    "EntryHeight": 125.0,
+    "EntryWidth": 270.0,
+    "ItemsPerPage": 6,
+    "EntryWidgetClass": {
+      "ObjectName": "WidgetBlueprintGeneratedClass'W_ItemsmithBrowserEntry_C'",
+      "ObjectPath": "/Itemsmith/UI/Browser/W_ItemsmithBrowserEntry.117"
+    }
+  }
+}

@@ -1,0 +1,61 @@
+--- export: UPrimaryDataAsset / AE_UI_InGame_TankReloadMiniGame_FinalQuadrantSuccess ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UI_InGame_TankReloadMiniGame_FinalQuadrantSuccess",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UI/InGame/TankReloadMinigame/AE_UI_InGame_TankReloadMiniGame_FinalQuadrantSuccess",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.InGame.ReloadingMinigame.FinalQuadrant"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_UI_InGame_TankReloadMiniGame_FinalQuadrantSuccess:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/InGame/TankReloadMinigame/AE_UI_InGame_TankReloadMiniGame_FinalQuadrantSuccess.2"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_UI_InGame_TankReloadMiniGame_FinalQuadrantSuccess:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/InGame/TankReloadMinigame/AE_UI_InGame_TankReloadMiniGame_FinalQuadrantSuccess.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_InGame_TankReloadMiniGame_FinalQuadrantSuccess'",
+    "ObjectPath": "/Game/Audio/Events/UI/InGame/TankReloadMinigame/AE_UI_InGame_TankReloadMiniGame_FinalQuadrantSuccess.0"
+  },
+  "Properties": {
+    "ParameterName": "FinalQuadrantSuccess",
+    "ContextTag": {
+      "TagName": "Audio.Context.UI.ReloadMinigame"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_InGame_TankReloadMiniGame_FinalQuadrantSuccess'",
+    "ObjectPath": "/Game/Audio/Events/UI/InGame/TankReloadMinigame/AE_UI_InGame_TankReloadMiniGame_FinalQuadrantSuccess.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UI_InGame_TankReloadMinigame'",
+      "ObjectPath": "/Game/Audio/UI/InGame/MSS/TankReloadMinigame/MSS_UI_InGame_TankReloadMinigame.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::IfDifferentSound",
+    "ContextTag": {
+      "TagName": "Audio.Context.UI.ReloadMinigame"
+    }
+  }
+}

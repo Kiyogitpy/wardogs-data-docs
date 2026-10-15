@@ -1,0 +1,141 @@
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_HNDG_003'",
+    "ObjectPath": "/HNDG_003/Data/ID_HNDG_003.1"
+  },
+  "Properties": {
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Item.Attachment.Underbarrel"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::AllowList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": -2,
+        "MaxSlotAmountStackSize": 1,
+        "bAllowsStackedPacking": false,
+        "bIsHiddenContainer": true,
+        "_aaabelnajgoacnpmnokoe_$BD096E02DFCDEAE4$_$20$": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": []
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / ID_HNDG_003 ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_HNDG_003",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/HNDG_003/Data/ID_HNDG_003",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.HNDG_003"
+    },
+    "ItemContext": [
+      "Item.Attachment.Handguard.WEPN_028"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "945B63304FAF0BC0104E9392A68AA930",
+      "SourceString": "MP5 Handguard",
+      "LocalizedString": "MP5 Handguard"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_HNDG_003:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/HNDG_003/Data/ID_HNDG_003.2"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_HNDG_003:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/HNDG_003/Data/ID_HNDG_003.4"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_HNDG_003:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/HNDG_003/Data/ID_HNDG_003.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_HNDG_003:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/HNDG_003/Data/ID_HNDG_003.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_HNDG_003'",
+    "ObjectPath": "/HNDG_003/Data/ID_HNDG_003.1"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Handguard"
+      },
+      "AppliedEffects": [],
+      "AppliedCharacterEffects": [],
+      "bCanBeRemovedInGame": false,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_HNDG_003'",
+    "ObjectPath": "/HNDG_003/Data/ID_HNDG_003.1"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Attachment_Audio'",
+      "ObjectPath": "/Game/Audio/Weapon/Attachments/ID_Attachment_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_HNDG_003'",
+    "ObjectPath": "/HNDG_003/Data/ID_HNDG_003.1"
+  },
+  "Properties": {
+    "ItemType": "EWDGunsmithItemType::Attachment"
+  }
+}

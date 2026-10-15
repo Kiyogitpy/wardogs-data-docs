@@ -1,0 +1,84 @@
+--- export: UObject / AEB_Doppler_C_0 ---
+{
+  "Type": "AEB_Doppler_C",
+  "Name": "AEB_Doppler_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_Doppler.AEB_Doppler_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Jet'",
+    "ObjectPath": "/FlyByManager/Audio/Jet_01/Events/AE_Jet.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_Doppler_C'Default__AEB_Doppler_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_Doppler.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Moving"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Jet ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Jet",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/FlyByManager/Audio/Jet_01/Events/AE_Jet",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Jet.Moving"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Jet:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/FlyByManager/Audio/Jet_01/Events/AE_Jet.2"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Jet:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/FlyByManager/Audio/Jet_01/Events/AE_Jet.3"
+      },
+      {
+        "ObjectName": "AEB_Doppler_C'AE_Jet:AEB_Doppler_C_0'",
+        "ObjectPath": "/FlyByManager/Audio/Jet_01/Events/AE_Jet.0"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Jet'",
+    "ObjectPath": "/FlyByManager/Audio/Jet_01/Events/AE_Jet.1"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Moving"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Jet'",
+    "ObjectPath": "/FlyByManager/Audio/Jet_01/Events/AE_Jet.1"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Vehicles_Jet'",
+      "ObjectPath": "/FlyByManager/Audio/Jet_01/MSS_Vehicles_Jet.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Moving"
+    }
+  }
+}

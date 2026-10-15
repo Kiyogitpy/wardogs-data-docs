@@ -1,0 +1,36 @@
+--- export: UDataAsset / DA_ContainerGrid_Vendor_SupplyCrates_Subslots_Storage ---
+{
+  "Type": "WDUIContainerGridData",
+  "Name": "DA_ContainerGrid_Vendor_SupplyCrates_Subslots_Storage",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIContainerGridData'",
+  "Package": "/Game/UI/Features/Vendor/Widgets/ContainerGrid/Data/DA_ContainerGrid_Vendor_SupplyCrates_Subslots_Storage",
+  "Properties": {
+    "ItemCardViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIMarkItemCardViewModel_Vendor",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/ItemCard/Data/DA_ItemCard_Vendor_SupplyCrates_Storage.DA_ItemCard_Vendor_SupplyCrates_Storage",
+        "SubPathString": ""
+      }
+    },
+    "NameText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Inventory_2_0.STRINGS_Inventory_2_0",
+      "Key": "Text.Slot.Backpack",
+      "SourceString": "Backpack",
+      "LocalizedString": "Backpack"
+    },
+    "GridSlotViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIContainerGridSlotViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/ContainerGridSlot/Data/DA_ContainerGridSlot_Vendor_SupplyCrate_Storage.DA_ContainerGridSlot_Vendor_SupplyCrate_Storage",
+        "SubPathString": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,213 @@
+--- export: UDataAsset / WE_STN_05_Heavy_MainBarrel ---
+{
+  "Type": "WDVehicleWeaponExtensionDataAsset",
+  "Name": "WE_STN_05_Heavy_MainBarrel",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeaponExtensionDataAsset'",
+  "Package": "/STN_05/Weapons/WeaponExtensions/WE_STN_05_Heavy_MainBarrel",
+  "Properties": {
+    "WeaponExtensionTag": {
+      "TagName": "Id.Vehicle.WeaponExtension.STN_05.MainBarrel"
+    },
+    "WeaponItemId": {
+      "TagName": "Id.Item.STN_05.MainBarrel"
+    },
+    "ItemSlotTag": {
+      "TagName": "Inventory.Slot.Vehicle.Weapon.STN_05.MainBarrel"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Weapon.Vehicle.Turret.STN_05"
+      }
+    },
+    "WeaponExtensionName": "Stingray",
+    "WeaponStatsData": {
+      "ObjectName": "WDWeaponStatsData'DA_STN_05_Heavy_MainBarrel_Stats'",
+      "ObjectPath": "/STN_05/Weapons/DA_STN_05_Heavy_MainBarrel_Stats.0"
+    },
+    "SpreadValue": {
+      "Value": 1883.8337,
+      "Curve": {
+        "RowName": "Launcher.Stand"
+      }
+    },
+    "ReloadSetupData": {
+      "ReloadType": "EWDVehicleWeaponReloadType::Standard",
+      "ActiveReloadSegmentNum": 3,
+      "ReloadTime": 0.0,
+      "StartDelayTime": 1.0,
+      "EndDelayTime": 1.0
+    },
+    "bAllowsRestocking": true,
+    "bBypassAmmoChecks": true,
+    "RestockSuppliesTag": {
+      "TagName": "Id.Item.SparePartsSupplies"
+    },
+    "RestockSuppliesNeeded": 900,
+    "_aaabbjnfnjpkghnkclbcn_$9D5D9FA67DA2B12D$_$17$": 5000,
+    "RestockInventoryTag": {
+      "TagName": "Vehicle.AssociatedInventory.FOB"
+    },
+    "AmmoTag": {
+      "TagName": "Id.Item.DroneProjectile"
+    },
+    "AmmoCaliberTag": {
+      "TagName": "Item.Caliber.DroneProjectile"
+    },
+    "WeaponStartingInventoryItems": [
+      {
+        "Key": {
+          "TagName": "Id.Item.DroneProjectile"
+        },
+        "Value": 0
+      }
+    ],
+    "bSimulateWeaponExtensionFire": true,
+    "WeaponAudioData": {
+      "ObjectName": "WDAudioData'DA_STN_05_Drone_Audio'",
+      "ObjectPath": "/STN_05/Data/DA_STN_05_Drone_Audio.0"
+    },
+    "FireCameraShakeClass": {
+      "ObjectName": "AnimSequence'A_FP_Mortar_Pose'",
+      "ObjectPath": "/Game/Animation/Characters/StateMachine/Idles/Vehicle/Buildables/A_FP_Mortar_Pose.0"
+    },
+    "bShakeOnWeaponFire": true,
+    "OperatorIdleSequence": {
+      "ObjectName": "BlueprintGeneratedClass'B_CameraShake_DroneBarrelBoom_FirstPerson_C'",
+      "ObjectPath": "/Game/VFX/Explosions/Data/B_CameraShake_DroneBarrelBoom_FirstPerson.1"
+    },
+    "WeaponType": "EWDVehicleWeaponType::Artillery",
+    "TargetingSetup": {
+      "MaxTargetingAngleCurve": {
+        "EditorCurveData": {
+          "Keys": [
+            {
+              "InterpMode": "RCIM_Linear",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 0.0,
+              "Value": 1.0,
+              "ArriveTangent": -0.0072686863,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Linear",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 1.0,
+              "Value": 1.0,
+              "ArriveTangent": -0.00435961,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": -0.0043527056,
+              "LeaveTangentWeight": 0.0
+            }
+          ]
+        }
+      },
+      "TargetingDistance": {
+        "Max": 100000.0
+      },
+      "TimeToTarget": 2.0,
+      "FireDelayAfterLock": 0.5,
+      "AllowedTargets": [
+        "Vehicle.Variant.Air.Rotary.Littlebird.Default",
+        "Vehicle.Variant.Air.Airplane.FWG.Default",
+        "Vehicle.Variant.Air.Rotary.Havoc.Default",
+        "Vehicle.Variant.Air.Rotary.Littlebird.MountedMachineGuns",
+        "Vehicle.Variant.Air.Rotary.Littlebird.RocketPods",
+        "Vehicle.Variant.Air.Rotary.ROT_01.Default",
+        "Vehicle.Variant.Air.Rotary.ROT_01.MountedMachineGuns"
+      ],
+      "bOnlyFireWhenLockedOn": true
+    },
+    "ArtilleryRangeData": [
+      {
+        "Milliradians": -500.0,
+        "ImpactDistance": 697.0,
+        "TravelTime": 15.94
+      },
+      {
+        "Milliradians": -450.0,
+        "ImpactDistance": 677.0,
+        "TravelTime": 16.61
+      },
+      {
+        "Milliradians": -400.0,
+        "ImpactDistance": 654.0,
+        "TravelTime": 17.25
+      },
+      {
+        "Milliradians": -350.0,
+        "ImpactDistance": 629.0,
+        "TravelTime": 17.86
+      },
+      {
+        "Milliradians": -300.0,
+        "ImpactDistance": 600.0,
+        "TravelTime": 20.0
+      },
+      {
+        "Milliradians": -250.0,
+        "ImpactDistance": 568.0,
+        "TravelTime": 19.02
+      },
+      {
+        "Milliradians": -200.0,
+        "ImpactDistance": 535.0,
+        "TravelTime": 19.53
+      },
+      {
+        "Milliradians": -150.0,
+        "ImpactDistance": 498.0,
+        "TravelTime": 20.02
+      },
+      {
+        "Milliradians": -100.0,
+        "ImpactDistance": 458.0,
+        "TravelTime": 20.47
+      },
+      {
+        "Milliradians": -50.0,
+        "ImpactDistance": 417.0,
+        "TravelTime": 20.88
+      },
+      {
+        "Milliradians": 0.0,
+        "ImpactDistance": 372.0,
+        "TravelTime": 21.25
+      },
+      {
+        "Milliradians": 50.0,
+        "ImpactDistance": 325.0,
+        "TravelTime": 21.57
+      },
+      {
+        "Milliradians": 100.0,
+        "ImpactDistance": 275.0,
+        "TravelTime": 21.85
+      },
+      {
+        "Milliradians": 150.0,
+        "ImpactDistance": 224.0,
+        "TravelTime": 22.08
+      },
+      {
+        "Milliradians": 200.0,
+        "ImpactDistance": 170.0,
+        "TravelTime": 22.26
+      },
+      {
+        "Milliradians": 250.0,
+        "ImpactDistance": 113.0,
+        "TravelTime": 22.39
+      },
+      {
+        "Milliradians": 300.0,
+        "ImpactDistance": 80.0,
+        "TravelTime": 22.0
+      }
+    ]
+  }
+}

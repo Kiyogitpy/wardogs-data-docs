@@ -1,0 +1,34 @@
+--- export: UDataAsset / IA_Weapon_Reload ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Weapon_Reload",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Weapons/Input/IA_Weapon_Reload",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.HoldableItem.Weapon.Reload"
+    },
+    "bConsumeInput": false,
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerTap'IA_Weapon_Reload:InputTriggerTap_0'",
+        "ObjectPath": "/Game/Weapons/Input/IA_Weapon_Reload.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerTap_0 ---
+{
+  "Type": "InputTriggerTap",
+  "Name": "InputTriggerTap_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerTap'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Weapon_Reload'",
+    "ObjectPath": "/Game/Weapons/Input/IA_Weapon_Reload.0"
+  },
+  "Properties": {
+    "TapReleaseTimeThreshold": 0.3
+  }
+}

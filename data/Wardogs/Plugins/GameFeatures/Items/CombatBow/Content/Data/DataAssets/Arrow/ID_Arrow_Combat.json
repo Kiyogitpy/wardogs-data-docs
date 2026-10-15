@@ -1,0 +1,176 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Arrow_Combat'",
+    "ObjectPath": "/CombatBow/Data/DataAssets/Arrow/ID_Arrow_Combat.5"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 1,
+      "Y": 3
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Arrow_Combat'",
+    "ObjectPath": "/CombatBow/Data/DataAssets/Arrow/ID_Arrow_Combat.5"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/CombatBow/Meshes/Arrow/SM_Compound_Bow_Arrow_L2.SM_Compound_Bow_Arrow_L2",
+      "SubPathString": ""
+    },
+    "RelativeRotation": {
+      "Pitch": -90.0,
+      "Yaw": 0.0,
+      "Roll": 0.0
+    },
+    "bOverrideDroppedRelativeLocation": true,
+    "OverridedRelativeLocation": {
+      "X": 2.0,
+      "Y": 0.0,
+      "Z": -35.0
+    },
+    "OverridedBoxExtent": {
+      "X": 2.0,
+      "Y": 2.0,
+      "Z": 40.0
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Stackable_0 ---
+{
+  "Type": "BHInventoryFragment_Stackable",
+  "Name": "BHInventoryFragment_Stackable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Stackable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Arrow_Combat'",
+    "ObjectPath": "/CombatBow/Data/DataAssets/Arrow/ID_Arrow_Combat.5"
+  },
+  "Properties": {
+    "MaxStackSize": 10
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Arrow_Combat'",
+    "ObjectPath": "/CombatBow/Data/DataAssets/Arrow/ID_Arrow_Combat.5"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Arrow_Combat'",
+    "ObjectPath": "/CombatBow/Data/DataAssets/Arrow/ID_Arrow_Combat.5"
+  },
+  "Properties": {
+    "Weight": 0.01
+  }
+}
+--- export: UPrimaryDataAsset / ID_Arrow_Combat ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_Arrow_Combat",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/CombatBow/Data/DataAssets/Arrow/ID_Arrow_Combat",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.Arrow"
+    },
+    "ItemContext": [
+      "Item.Ammo",
+      "Item.Caliber.Arrow"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "9542E6024AA82E26D15A03A86B341345",
+      "SourceString": "Arrow",
+      "LocalizedString": "Arrow"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_Stackable'ID_Arrow_Combat:BHInventoryFragment_Stackable_0'",
+        "ObjectPath": "/CombatBow/Data/DataAssets/Arrow/ID_Arrow_Combat.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_Arrow_Combat:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/CombatBow/Data/DataAssets/Arrow/ID_Arrow_Combat.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_Arrow_Combat:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/CombatBow/Data/DataAssets/Arrow/ID_Arrow_Combat.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Projectile'ID_Arrow_Combat:WDInventoryFragment_Projectile_0'",
+        "ObjectPath": "/CombatBow/Data/DataAssets/Arrow/ID_Arrow_Combat.7"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_Arrow_Combat:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/CombatBow/Data/DataAssets/Arrow/ID_Arrow_Combat.6"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_Arrow_Combat:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/CombatBow/Data/DataAssets/Arrow/ID_Arrow_Combat.0"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_Arrow_Combat:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/CombatBow/Data/DataAssets/Arrow/ID_Arrow_Combat.4"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Arrow_Combat'",
+    "ObjectPath": "/CombatBow/Data/DataAssets/Arrow/ID_Arrow_Combat.5"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Arrow_Combat_Audio'",
+      "ObjectPath": "/CombatBow/Data/ID_Arrow_Combat_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Projectile_0 ---
+{
+  "Type": "WDInventoryFragment_Projectile",
+  "Name": "WDInventoryFragment_Projectile_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Projectile'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Arrow_Combat'",
+    "ObjectPath": "/CombatBow/Data/DataAssets/Arrow/ID_Arrow_Combat.5"
+  },
+  "Properties": {
+    "ProjectileData": {
+      "ObjectName": "WDProjectileData'DA_Arrow_Combat_ProjectileData'",
+      "ObjectPath": "/CombatBow/Data/DataAssets/Arrow/DA_Arrow_Combat_ProjectileData.0"
+    }
+  }
+}

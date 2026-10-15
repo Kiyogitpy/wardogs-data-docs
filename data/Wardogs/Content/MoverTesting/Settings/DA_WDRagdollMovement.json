@@ -1,0 +1,204 @@
+--- export: UDataAsset / DA_WDRagdollMovement ---
+{
+  "Type": "WDRagdollMovementData",
+  "Name": "DA_WDRagdollMovement",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDRagdollMovementData'",
+  "Package": "/Game/MoverTesting/Settings/DA_WDRagdollMovement",
+  "Properties": {
+    "PhysicsAsset": {
+      "ObjectName": "PhysicsAsset'PA_TPCharacter_Simplified_Physics'",
+      "ObjectPath": "/Game/Characters/Default_PlayerMesh/TP/PA_TPCharacter_Simplified_Physics.0"
+    },
+    "SimulationRoot": "pelvis",
+    "CapsuleTarget": "spine_04",
+    "CapsuleProxyCollisionProfile": {
+      "Name": "RagdollProbe"
+    },
+    "CapsuleProxyPhysicalMaterial": {
+      "ObjectName": "WDPhysicalMaterial'PM_Body'",
+      "ObjectPath": "/Game/Environment/_Global/PhysicalMaterials/PM_Body.0"
+    },
+    "CapsuleProxyConstraint": {
+      "LinearLimit": {
+        "Limit": 1.0,
+        "XMotion": "ELinearConstraintMotion::LCM_Limited",
+        "YMotion": "ELinearConstraintMotion::LCM_Limited",
+        "ZMotion": "ELinearConstraintMotion::LCM_Limited",
+        "Stiffness": 250.0,
+        "Damping": 2.0,
+        "bSoftConstraint": true
+      },
+      "ConeLimit": {
+        "Swing1Motion": "EAngularConstraintMotion::ACM_Locked",
+        "Swing2Motion": "EAngularConstraintMotion::ACM_Locked"
+      },
+      "TwistLimit": {
+        "TwistMotion": "EAngularConstraintMotion::ACM_Locked"
+      },
+      "bDisableCollision": true,
+      "bParentDominates": true,
+      "bEnableProjection": false
+    },
+    "ReplicatedBodies": [
+      {
+        "Key": "pelvis",
+        "Value": {
+          "ProjectionLinearTolerance": 5.0,
+          "ProjectionAngularTolerance": 180.0,
+          "ProjectionLinearAlpha": 1.0,
+          "ProjectionAngularAlpha": 0.0,
+          "ShockPropagationAlpha": 0.3,
+          "LinearBreakThreshold": 300.0,
+          "LinearPlasticityThreshold": 0.1,
+          "AngularBreakThreshold": 500.0,
+          "AngularPlasticityThreshold": 10.0,
+          "ContactTransferScale": 0.0,
+          "LinearLimit": {
+            "Limit": 50.0,
+            "XMotion": "ELinearConstraintMotion::LCM_Limited",
+            "YMotion": "ELinearConstraintMotion::LCM_Limited",
+            "ZMotion": "ELinearConstraintMotion::LCM_Limited",
+            "Stiffness": 1800.0,
+            "Damping": 15.0,
+            "Restitution": 0.0,
+            "ContactDistance": 2.0,
+            "bSoftConstraint": true
+          },
+          "ConeLimit": {
+            "Swing1LimitDegrees": 0.0,
+            "Swing2LimitDegrees": 0.0,
+            "Swing1Motion": "EAngularConstraintMotion::ACM_Free",
+            "Swing2Motion": "EAngularConstraintMotion::ACM_Free",
+            "Stiffness": 50.0,
+            "Damping": 5.0,
+            "Restitution": 0.0,
+            "ContactDistance": 1.0,
+            "bSoftConstraint": true
+          },
+          "TwistLimit": {
+            "TwistLimitDegrees": 45.0,
+            "TwistMotion": "EAngularConstraintMotion::ACM_Free",
+            "Stiffness": 50.0,
+            "Damping": 5.0,
+            "Restitution": 0.0,
+            "ContactDistance": 1.0,
+            "bSoftConstraint": true
+          },
+          "bDisableCollision": true,
+          "bParentDominates": true,
+          "bEnableShockPropagation": false,
+          "bEnableProjection": false,
+          "bEnableMassConditioning": false,
+          "bUseLinearJointSolver": true,
+          "bAngularBreakable": false,
+          "bAngularPlasticity": false,
+          "bLinearBreakable": false,
+          "bLinearPlasticity": false,
+          "LinearDrive": {
+            "PositionTarget": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "VelocityTarget": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "XDrive": {
+              "Stiffness": 50.0,
+              "Damping": 1.0,
+              "MaxForce": 0.0,
+              "bEnablePositionDrive": false,
+              "bEnableVelocityDrive": false
+            },
+            "YDrive": {
+              "Stiffness": 50.0,
+              "Damping": 1.0,
+              "MaxForce": 0.0,
+              "bEnablePositionDrive": false,
+              "bEnableVelocityDrive": false
+            },
+            "ZDrive": {
+              "Stiffness": 50.0,
+              "Damping": 1.0,
+              "MaxForce": 0.0,
+              "bEnablePositionDrive": false,
+              "bEnableVelocityDrive": false
+            },
+            "bAccelerationMode": true
+          },
+          "AngularDrive": {
+            "TwistDrive": {
+              "Stiffness": 50.0,
+              "Damping": 1.0,
+              "MaxForce": 0.0,
+              "bEnablePositionDrive": false,
+              "bEnableVelocityDrive": false
+            },
+            "SwingDrive": {
+              "Stiffness": 50.0,
+              "Damping": 1.0,
+              "MaxForce": 0.0,
+              "bEnablePositionDrive": false,
+              "bEnableVelocityDrive": false
+            },
+            "SlerpDrive": {
+              "Stiffness": 50.0,
+              "Damping": 1.0,
+              "MaxForce": 0.0,
+              "bEnablePositionDrive": false,
+              "bEnableVelocityDrive": false
+            },
+            "OrientationTarget": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "AngularVelocityTarget": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "AngularDriveMode": "EAngularDriveMode::SLERP",
+            "bAccelerationMode": true
+          },
+          "LinearPlasticityType": "EConstraintPlasticityType::CCPT_Free"
+        }
+      }
+    ],
+    "_aaabcmfnacipbidicnkfp_$C5D028F18382DA5F$_$18$": [
+      "pelvis",
+      "spine_02",
+      "spine_03",
+      "spine_04",
+      "upperarm_r",
+      "lowerarm_r",
+      "upperarm_l",
+      "lowerarm_l",
+      "thigh_l",
+      "calf_l",
+      "thigh_r",
+      "calf_r"
+    ],
+    "_aaabidloljdeipdahbjek_$3BEB9348F307194A$_$24$": 200.0,
+    "_aaabgbnifinfnldcolohp_$1D858D5DB32EBE7F$_$22$": [
+      "upperarm_r",
+      "upperarm_l",
+      "thigh_r",
+      "thigh_l"
+    ],
+    "_aaabhfdnoooblejhnnbeb_$53DEEE1B497DD141$_$23$": [
+      "foot_r",
+      "foot_l",
+      "calf_l",
+      "calf_r"
+    ],
+    "DriveForcesBlendTime": 0.75,
+    "DriveForcesTargetMultiplier": 0.12,
+    "MeshCollisionProfile": {
+      "Name": "Ragdoll"
+    }
+  }
+}

@@ -1,0 +1,66 @@
+--- export: UDataTable / DT_Bobblehead_Faction_Cosmetics ---
+{
+  "Type": "DataTable",
+  "Name": "DT_Bobblehead_Faction_Cosmetics",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Bobblehead_Faction/Data/DT_Bobblehead_Faction_Cosmetics",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDCosmeticData'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Meta.Cosmetic.Bobblehead.Wardog": {
+      "EntityID": {
+        "TagName": "Id.Bobblehead"
+      },
+      "Category": {
+        "TagName": "Meta.Cosmetic.Bobblehead"
+      },
+      "Archetype": {
+        "TagName": "Item.Archetype.Bobblehead"
+      },
+      "UITextures": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/T_UI_OptionsScreen_PlaceholderImage.T_UI_OptionsScreen_PlaceholderImage",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Faction/T_UI_Faction_MiddleEast_Team_256.T_UI_Faction_MiddleEast_Team_256",
+            "Value": [
+              "UI.Icon.Collection",
+              "UI.Icon.GoldMarket",
+              "UI.Icon.Vendor",
+              "UI.Icon.Inventory.Container",
+              "UI.Icon.Inventory.Equipment"
+            ]
+          }
+        ]
+      },
+      "SkinDefinition": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "_aaabbcbgnjdleejkabiji_$216D93B449A01898$_$17$": {
+        "AssetPathName": "/Game/UI/Shared/Icons/Faction/T_UI_Faction_MiddleEast_Team_256.T_UI_Faction_MiddleEast_Team_256",
+        "SubPathString": ""
+      },
+      "_aaabgmnmblefiammlldpg_$CDC1B4580CCBB3F6$_$22$": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "NameOverride": {
+        "TableId": "/Bobblehead_Faction/Strings/STRINGS_Bobblehead_Faction.STRINGS_Bobblehead_Faction",
+        "Key": "Cosmetic.Bobblhead.Faction.DisplayName",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "Tag": {
+        "TagName": "Meta.Cosmetic.Bobblehead.Wardog"
+      }
+    }
+  }
+}

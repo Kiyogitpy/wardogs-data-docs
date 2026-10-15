@@ -1,0 +1,33 @@
+--- export: UObject / GameFeatureAction_AddWorldPartitionContent_1 ---
+{
+  "Type": "GameFeatureAction_AddWorldPartitionContent",
+  "Name": "GameFeatureAction_AddWorldPartitionContent_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddWorldPartitionContent'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'SpotterScope'",
+    "ObjectPath": "/SpotterScope/SpotterScope.1"
+  },
+  "Properties": {
+    "ExternalDataLayerAsset": {
+      "ObjectName": "ExternalDataLayerAsset'EDL_SpotterScope'",
+      "ObjectPath": "/SpotterScope/EDL_SpotterScope.0"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / SpotterScope ---
+{
+  "Type": "GameFeatureData",
+  "Name": "SpotterScope",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/SpotterScope/SpotterScope",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_AddWorldPartitionContent'SpotterScope:GameFeatureAction_AddWorldPartitionContent_1'",
+        "ObjectPath": "/SpotterScope/SpotterScope.0"
+      }
+    ]
+  }
+}

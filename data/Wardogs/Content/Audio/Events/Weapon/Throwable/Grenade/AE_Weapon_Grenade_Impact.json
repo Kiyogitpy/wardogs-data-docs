@@ -1,0 +1,81 @@
+--- export: UObject / AEB_PlayThrowableImpactSound_C_0 ---
+{
+  "Type": "AEB_PlayThrowableImpactSound_C",
+  "Name": "AEB_PlayThrowableImpactSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayThrowableImpactSound.AEB_PlayThrowableImpactSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Grenade_Impact'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Throwable/Grenade/AE_Weapon_Grenade_Impact.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayThrowableImpactSound_C'Default__AEB_PlayThrowableImpactSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayThrowableImpactSound.0"
+  },
+  "Properties": {
+    "CueParams": {
+      "RawMagnitude": 731.41266,
+      "MatchedTagName": {
+        "TagName": "GameplayCue.Grenade.Impact"
+      },
+      "Location": {
+        "X": 5063.653354570757,
+        "Y": -8785.685292913447,
+        "Z": 0.08759979487059688
+      },
+      "Normal": {
+        "X": 3.1086244689504383E-15,
+        "Y": -3.3306690738754696E-16,
+        "Z": 0.9999999403953552
+      }
+    },
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Weapon_Throwable_Grenade_Impact'",
+      "ObjectPath": "/Game/Audio/Weapon/Throwable/Grenade/MSS/MSS_Weapon_Throwable_Grenade_Impact.0"
+    },
+    "Restart Behaviour": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Grenade.Impact"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Weapon_Grenade_Impact ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_Grenade_Impact",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Weapon/Throwable/Grenade/AE_Weapon_Grenade_Impact",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.Throwable.Grenade.Impact"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Weapon_Grenade_Impact:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Throwable/Grenade/AE_Weapon_Grenade_Impact.2"
+      },
+      {
+        "ObjectName": "AEB_PlayThrowableImpactSound_C'AE_Weapon_Grenade_Impact:AEB_PlayThrowableImpactSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Throwable/Grenade/AE_Weapon_Grenade_Impact.0"
+      }
+    ],
+    "_aaabhonahgpdbjealfaaa_$ED076F31940B5000$_$23$": 40.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Grenade_Impact'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Throwable/Grenade/AE_Weapon_Grenade_Impact.1"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Grenade.Impact"
+    }
+  }
+}

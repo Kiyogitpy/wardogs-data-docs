@@ -1,0 +1,79 @@
+--- export: UObject / BHInventoryFragment_Stackable_0 ---
+{
+  "Type": "BHInventoryFragment_Stackable",
+  "Name": "BHInventoryFragment_Stackable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Stackable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Battery_Charge'",
+    "ObjectPath": "/Battery/Data/ID_Battery_Charge.2"
+  },
+  "Properties": {
+    "MaxStackSize": 100
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Battery_Charge'",
+    "ObjectPath": "/Battery/Data/ID_Battery_Charge.2"
+  }
+}
+--- export: UPrimaryDataAsset / ID_Battery_Charge ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_Battery_Charge",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Battery/Data/ID_Battery_Charge",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.BatteryCharge"
+    },
+    "ItemContext": [
+      "Item.Ammo",
+      "Item.Caliber.BatteryCharge"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "67A8FD214A3FD775285957A0B067D9DA",
+      "SourceString": "Charge",
+      "LocalizedString": "Charge"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_Stackable'ID_Battery_Charge:BHInventoryFragment_Stackable_0'",
+        "ObjectPath": "/Battery/Data/ID_Battery_Charge.0"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_Battery_Charge:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Battery/Data/ID_Battery_Charge.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Projectile'ID_Battery_Charge:WDInventoryFragment_Projectile_0'",
+        "ObjectPath": "/Battery/Data/ID_Battery_Charge.3"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Projectile_0 ---
+{
+  "Type": "WDInventoryFragment_Projectile",
+  "Name": "WDInventoryFragment_Projectile_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Projectile'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Battery_Charge'",
+    "ObjectPath": "/Battery/Data/ID_Battery_Charge.2"
+  },
+  "Properties": {
+    "ProjectileData": {
+      "ObjectName": "WDProjectileData'DA_BatteryCharge_ProjectileData'",
+      "ObjectPath": "/Battery/Data/DA_BatteryCharge_ProjectileData.0"
+    }
+  }
+}

@@ -1,0 +1,144 @@
+--- export: UObject / WDCharacterModifier_ProneCameraLock_0 ---
+{
+  "Type": "WDCharacterModifier_ProneCameraLock",
+  "Name": "WDCharacterModifier_ProneCameraLock_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifier_ProneCameraLock'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_Prone'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Prone.4"
+  },
+  "Properties": {
+    "TargetExitMultiplier": 5.0,
+    "PitchLockSettings": {
+      "LockActivationType": "EWDAxisLockActivationType::WorldZero",
+      "LockActivationMode": "EWDAxisLockActivationMode::Interpolated",
+      "LockCentreOffset": 5.0,
+      "LockActivationInterpolationSpeed": 3.0
+    },
+    "YawLockSettings": {
+      "LockActivationType": "EWDAxisLockActivationType::ControlRotation",
+      "LockMode": "EWDAxisLockMode::TargetLookRotation",
+      "LockAngle": 90.0,
+      "bSmoothLock": true,
+      "LockSmoothPercent": 0.4,
+      "LockSmoothMaxTurnSpeed": 5.0,
+      "LockSmoothCurve": {
+        "ObjectName": "CurveFloat'CRV_Camera_LockSmoothCurve_ProneYaw'",
+        "ObjectPath": "/Game/MoverTesting/Curves/CRV_Camera_LockSmoothCurve_ProneYaw.0"
+      },
+      "LockTargetInterpolationSpeed": 1.5
+    }
+  }
+}
+--- export: UObject / WDCharacterModifier_ProneWallLock_0 ---
+{
+  "Type": "WDCharacterModifier_ProneWallLock",
+  "Name": "WDCharacterModifier_ProneWallLock_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifier_ProneWallLock'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_Prone'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Prone.4"
+  }
+}
+--- export: UObject / WDCharacterModifierCondition_ProneOrTransition_0 ---
+{
+  "Type": "WDCharacterModifierCondition_ProneOrTransition",
+  "Name": "WDCharacterModifierCondition_ProneOrTransition_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierCondition_ProneOrTransition'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_Prone'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Prone.4"
+  }
+}
+--- export: UObject / WDCharacterModifierCondition_StateTags_0 ---
+{
+  "Type": "WDCharacterModifierCondition_StateTags",
+  "Name": "WDCharacterModifierCondition_StateTags_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierCondition_StateTags'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_Prone'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Prone.4"
+  },
+  "Properties": {
+    "StateQuery": {
+      "TagDictionary": [
+        {
+          "TagName": "State.Player.Vitality.Critical"
+        },
+        {
+          "TagName": "State.Player.Vitality.Dead"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.ActivePassenger"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.Driver"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.Gunner"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.PassivePassenger"
+        },
+        {
+          "TagName": "State.Player.Vehicle"
+        }
+      ],
+      "QueryTokenStream": [
+        0,
+        1,
+        5,
+        1,
+        3,
+        7,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "UserDescription": "We are alive and not in a vehicle and have the prone action active.",
+      "AutoDescription": " ALL(  NONE( State.Player.Vitality.Critical, State.Player.Vitality.Dead, State.Player.Vehicle.Role.ActivePassenger, State.Player.Vehicle.Role.Driver, State.Player.Vehicle.Role.Gunner, State.Player.Vehicle.Role.PassivePassenger, State.Player.Vehicle ) )"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / DA_CharacterModifierState_Prone ---
+{
+  "Type": "WDCharacterModifierStateDefinition",
+  "Name": "DA_CharacterModifierState_Prone",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierStateDefinition'",
+  "Package": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Prone",
+  "Properties": {
+    "StateTag": {
+      "TagName": "State.CharacterModifier.Prone"
+    },
+    "CharacterModifiers": [
+      {
+        "ObjectName": "WDCharacterModifier_ProneCameraLock'DA_CharacterModifierState_Prone:WDCharacterModifier_ProneCameraLock_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Prone.0"
+      },
+      {
+        "ObjectName": "WDCharacterModifier_ProneWallLock'DA_CharacterModifierState_Prone:WDCharacterModifier_ProneWallLock_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Prone.1"
+      }
+    ],
+    "Priority": 9,
+    "Conditions": [
+      {
+        "ObjectName": "WDCharacterModifierCondition_StateTags'DA_CharacterModifierState_Prone:WDCharacterModifierCondition_StateTags_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Prone.3"
+      },
+      {
+        "ObjectName": "WDCharacterModifierCondition_ProneOrTransition'DA_CharacterModifierState_Prone:WDCharacterModifierCondition_ProneOrTransition_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Prone.2"
+      }
+    ]
+  }
+}

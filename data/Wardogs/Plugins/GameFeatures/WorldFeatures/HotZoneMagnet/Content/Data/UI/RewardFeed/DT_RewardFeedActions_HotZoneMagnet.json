@@ -1,0 +1,64 @@
+--- export: UDataTable / DT_RewardFeedActions_HotZoneMagnet ---
+{
+  "Type": "DataTable",
+  "Name": "DT_RewardFeedActions_HotZoneMagnet",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/HotZoneMagnet/Data/UI/RewardFeed/DT_RewardFeedActions_HotZoneMagnet",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDRewardFeedActionDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Challenges.Rewards.HotZoneMagnet.TowerCaptured": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "Namespace": "",
+        "Key": "638B9C2D43BE0D3554F347B96C4E6C56",
+        "SourceString": "Tower Captured",
+        "LocalizedString": "Tower Captured"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.BuiltScore"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.HotZoneMagnet.TowerCaptured"
+      }
+    },
+    "Challenges.Rewards.HotZoneMagnet.MagnetActivated": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "Namespace": "",
+        "Key": "A2768F2B4EFA62B20D314FB8F6CF6505",
+        "SourceString": "Magnet Activated",
+        "LocalizedString": "Magnet Activated"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.RevivedScore"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.HotZoneMagnet.MagnetActivated"
+      }
+    },
+    "Challenges.Rewards.HotZoneMagnet.MagnetDeactivated": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "Namespace": "",
+        "Key": "3EA245D148495C2136DC8D8C44353EC4",
+        "SourceString": "Magnet Deactivated",
+        "LocalizedString": "Magnet Deactivated"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.DestroyedVehicle"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.HotZoneMagnet.MagnetDeactivated"
+      }
+    }
+  }
+}

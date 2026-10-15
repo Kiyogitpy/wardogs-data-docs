@@ -1,0 +1,107 @@
+--- export: UObject / AEB_TriggerStabilizingState_C_0 ---
+{
+  "Type": "AEB_TriggerStabilizingState_C",
+  "Name": "AEB_TriggerStabilizingState_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_TriggerStabilizingState.AEB_TriggerStabilizingState_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Stabilizing'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Stabilizers/AE_Vehicle_Stabilizing.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_TriggerStabilizingState_C'Default__AEB_TriggerStabilizingState_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_TriggerStabilizingState.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Artillery.Stabilizing"
+    }
+  }
+}
+--- export: UObject / AEB_VehiclePerspective_C_0 ---
+{
+  "Type": "AEB_VehiclePerspective_C",
+  "Name": "AEB_VehiclePerspective_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_VehiclePerspective.AEB_VehiclePerspective_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Stabilizing'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Stabilizers/AE_Vehicle_Stabilizing.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_VehiclePerspective_C'Default__AEB_VehiclePerspective_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_VehiclePerspective.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Artillery.Stabilizing"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_Stabilizing ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_Stabilizing",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/Weapon/Stabilizers/AE_Vehicle_Stabilizing",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Stabilizing"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Vehicle_Stabilizing:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Stabilizers/AE_Vehicle_Stabilizing.4"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Vehicle_Stabilizing:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Stabilizers/AE_Vehicle_Stabilizing.3"
+      },
+      {
+        "ObjectName": "AEB_TriggerStabilizingState_C'AE_Vehicle_Stabilizing:AEB_TriggerStabilizingState_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Stabilizers/AE_Vehicle_Stabilizing.0"
+      },
+      {
+        "ObjectName": "AEB_VehiclePerspective_C'AE_Vehicle_Stabilizing:AEB_VehiclePerspective_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Stabilizers/AE_Vehicle_Stabilizing.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Stabilizing'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Stabilizers/AE_Vehicle_Stabilizing.2"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Artillery.Stabilizing"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Stabilizing'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Stabilizers/AE_Vehicle_Stabilizing.2"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Vehicle_TNK_Stabilizing'",
+      "ObjectPath": "/Game/Audio/Vehicles/TNK/Shared/Stabilizing/MSS_Vehicle_TNK_Stabilizing.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Artillery.Stabilizing"
+    }
+  }
+}

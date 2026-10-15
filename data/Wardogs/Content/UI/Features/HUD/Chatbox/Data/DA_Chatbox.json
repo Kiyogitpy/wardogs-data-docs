@@ -1,0 +1,178 @@
+--- export: UDataAsset / DA_Chatbox ---
+{
+  "Type": "WDUIChatboxData",
+  "Name": "DA_Chatbox",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIChatboxData'",
+  "Package": "/Game/UI/Features/HUD/Chatbox/Data/DA_Chatbox",
+  "Properties": {
+    "ChatboxEntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIChatboxEntryViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/HUD/Chatbox/Widgets/ChatboxEntry/Data/DA_ChatboxEntry.DA_ChatboxEntry",
+        "SubPathString": ""
+      }
+    },
+    "ControllerHotkeysPromptsBarViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIButtonPromptsBarViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/HUD/Chatbox/Data/DA_ChatboxButtonPromptsBar.DA_ChatboxButtonPromptsBar",
+        "SubPathString": ""
+      }
+    },
+    "MaximumCachedMessages": 50,
+    "DisplayDuration": 10.0,
+    "ChatboxBlockingSceneTags": [
+      "UI.Scene.Match.Inventory",
+      "UI.Scene.Match.Looting",
+      "UI.Scene.Match.FactionSelect",
+      "UI.Scene.Match.Scoreboard",
+      "UI.Scene.Match.Vendor.Vehicles",
+      "UI.Scene.Match.Vendor.Garage",
+      "UI.Scene.Match.Vendor.Equipment",
+      "UI.Scene.Shared.Settings",
+      "UI.Scene.Shared.Popups",
+      "UI.Scene.Frontend.Progression"
+    ],
+    "ProfanityFilter": {
+      "AssetPathName": "/Game/UI/Features/HUD/Chatbox/Data/DA_ProfanityFilter.DA_ProfanityFilter",
+      "SubPathString": ""
+    },
+    "ChannelTypeTexts": [
+      {
+        "Key": "EWDChannelType::Team",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+          "Key": "HUD_Chat_Channel_Team",
+          "SourceString": "TEAM",
+          "LocalizedString": "TEAM"
+        }
+      },
+      {
+        "Key": "EWDChannelType::Squad",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+          "Key": "HUD_Chat_Channel_Squad",
+          "SourceString": "SQUAD",
+          "LocalizedString": "SQUAD"
+        }
+      },
+      {
+        "Key": "EWDChannelType::Proximity",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+          "Key": "HUD_Chat_Channel_Proximity",
+          "SourceString": "LOCAL",
+          "LocalizedString": "LOCAL"
+        }
+      },
+      {
+        "Key": "EWDChannelType::Global",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+          "Key": "HUD_Chat_Channel_Global",
+          "SourceString": "ALL",
+          "LocalizedString": "ALL"
+        }
+      },
+      {
+        "Key": "EWDChannelType::EWDChannelType_MAX",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+          "Key": "HUD_Chat_Channel_DirectMessage",
+          "SourceString": "DM",
+          "LocalizedString": "DM"
+        }
+      },
+      {
+        "Key": "EWDChannelType::Vehicle",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+          "Key": "HUD_Chat_Channel_Vehicle",
+          "SourceString": "VEHICLE",
+          "LocalizedString": "VEHICLE"
+        }
+      }
+    ],
+    "MaxCharactersPerMessage": 64,
+    "ChatCooldownAppliedChannelTypes": [
+      "EWDChannelType::Global",
+      "EWDChannelType::Team",
+      "EWDChannelType::Squad",
+      "EWDChannelType::Proximity",
+      "EWDChannelType::Vehicle"
+    ],
+    "PlayerNameLinkCommand": "PlayerName",
+    "MentionOtherPlayerLinkCommand": "MentionOtherPlayer",
+    "MentionMeLinkCommand": "MentionMe",
+    "CoordinateLinkCommand": "Coordinate",
+    "PlayerNameLeftSquareBracket": "[",
+    "PlayerNameRightSquareBracket": "]",
+    "MentionPlayerCommand": "@",
+    "MentionPlayerFormat": {
+      "CultureInvariantString": "{ExistingString} @{PlayerName} "
+    },
+    "MentionMeTextColorChangeCommand": "<link type=\"MentionMe\">{0}</>",
+    "MentionOthersTextColorChangeCommand": "<link type=\"MentionOtherPlayer\">{0}</>",
+    "TacMapCoordinateX": "X",
+    "TacMapCoordinateY": "Y",
+    "TacMapCoordinateXYSeparatingSymbol": ",",
+    "CoordinateTextColorChangeCommand": "<img id=\"Coords\"/> <link type=\"Coordinate\">{0}</>",
+    "LevelUpMessageDelay": 0.25,
+    "LevelUpMessageInterval": 0.1,
+    "GenericEntryFormat": {
+      "CultureInvariantString": "<span color=\"#{ChannelTypeColor}\" style=\"demi\">[{ChannelType}]</> {PlayerName}: {Message}"
+    },
+    "SystemAnnouncementEntryFormat": {
+      "CultureInvariantString": "<span color=\"#{MessageColor}\" style=\"demi\">{Message}</>"
+    },
+    "RoleLevelUpEntryFormat": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD_Chat_Self_RoleLevelUp",
+      "SourceString": "<span color=\"#{MessageColor}\" style=\"demi\">PROMOTED TO {Role} LVL {Level}</> <img id=\"LevelUp\"/>",
+      "LocalizedString": "<span color=\"#{MessageColor}\" style=\"demi\">PROMOTED TO {Role} LVL {Level}</> <img id=\"LevelUp\"/>"
+    },
+    "SystemAnnouncementIcon": {
+      "AssetPathName": "/Game/UI/Features/Popups/Widgets/Textures/T_UI_WarningIcon.T_UI_WarningIcon",
+      "SubPathString": ""
+    },
+    "SystemAnnouncementIconColor": {
+      "R": 0.0,
+      "G": 2.75,
+      "B": 0.0,
+      "A": 2.75,
+      "Hex": "00FF00"
+    },
+    "SystemAnnouncementTextColor": {
+      "R": 0.0,
+      "G": 2.75,
+      "B": 0.0,
+      "A": 2.75,
+      "Hex": "00FF00"
+    },
+    "CareerLevelAnnouncementTextColor": {
+      "R": 0.0,
+      "G": 2.75,
+      "B": 0.0,
+      "A": 2.75,
+      "Hex": "00FF00"
+    }
+  }
+}
+--- export: UObject / WDUIViewModelExtension_HideReasons_1 ---
+{
+  "Type": "WDUIViewModelExtension_HideReasons",
+  "Name": "WDUIViewModelExtension_HideReasons_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIViewModelExtension_HideReasons'",
+  "Outer": {
+    "ObjectName": "WDUIChatboxData'DA_Chatbox'",
+    "ObjectPath": "/Game/UI/Features/HUD/Chatbox/Data/DA_Chatbox.0"
+  }
+}

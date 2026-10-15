@@ -1,0 +1,59 @@
+--- export: UPrimaryDataAsset / AE_Weapon_Flashbang_Impact ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_Flashbang_Impact",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Weapon/Throwable/Flashbang/AE_Weapon_Flashbang_Impact",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.Throwable.Flashbang.Impact"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Weapon_Flashbang_Impact:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Throwable/Flashbang/AE_Weapon_Flashbang_Impact.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Weapon_Flashbang_Impact:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Throwable/Flashbang/AE_Weapon_Flashbang_Impact.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Flashbang_Impact'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Throwable/Flashbang/AE_Weapon_Flashbang_Impact.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Grenade.Impact"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Flashbang_Impact'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Throwable/Flashbang/AE_Weapon_Flashbang_Impact.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Weapon_Throwable_Flashbang_Impact'",
+      "ObjectPath": "/Game/Audio/Weapon/Throwable/Flashbang/MSS/MSS_Weapon_Throwable_Flashbang_Impact.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Grenade.Impact"
+    }
+  }
+}

@@ -1,0 +1,123 @@
+--- export: UObject / WDCharacterModifier_ParachuteCameraLock_0 ---
+{
+  "Type": "WDCharacterModifier_ParachuteCameraLock",
+  "Name": "WDCharacterModifier_ParachuteCameraLock_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifier_ParachuteCameraLock'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_Parachute'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Parachute.3"
+  },
+  "Properties": {
+    "PitchLockSettings": {
+      "LockActivationType": "EWDAxisLockActivationType::CapsuleRotation",
+      "LockActivationMode": "EWDAxisLockActivationMode::Interpolated",
+      "LockAngle": 60.0,
+      "bSmoothLock": true,
+      "LockSmoothPercent": 0.7
+    },
+    "YawLockSettings": {
+      "LockActivationType": "EWDAxisLockActivationType::CapsuleRotation",
+      "LockMode": "EWDAxisLockMode::TargetCapsuleRotation",
+      "LockActivationMode": "EWDAxisLockActivationMode::Interpolated",
+      "LockAngle": 60.0,
+      "bSmoothLock": true,
+      "LockSmoothPercent": 0.7
+    }
+  }
+}
+--- export: UObject / WDCharacterModifierCondition_MovementMode_0 ---
+{
+  "Type": "WDCharacterModifierCondition_MovementMode",
+  "Name": "WDCharacterModifierCondition_MovementMode_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierCondition_MovementMode'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_Parachute'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Parachute.3"
+  },
+  "Properties": {
+    "MovementModeTag": {
+      "TagName": "Mover.Mode.Parachuting"
+    }
+  }
+}
+--- export: UObject / WDCharacterModifierCondition_StateTags_0 ---
+{
+  "Type": "WDCharacterModifierCondition_StateTags",
+  "Name": "WDCharacterModifierCondition_StateTags_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierCondition_StateTags'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_Parachute'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Parachute.3"
+  },
+  "Properties": {
+    "StateQuery": {
+      "TagDictionary": [
+        {
+          "TagName": "State.Player.Vitality.Critical"
+        },
+        {
+          "TagName": "State.Player.Vitality.Dead"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.ActivePassenger"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.Driver"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.Gunner"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.PassivePassenger"
+        }
+      ],
+      "QueryTokenStream": [
+        0,
+        1,
+        3,
+        6,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "UserDescription": "We are alive and not in a vehicle",
+      "AutoDescription": " NONE( State.Player.Vitality.Critical, State.Player.Vitality.Dead, State.Player.Vehicle.Role.ActivePassenger, State.Player.Vehicle.Role.Driver, State.Player.Vehicle.Role.Gunner, State.Player.Vehicle.Role.PassivePassenger )"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / DA_CharacterModifierState_Parachute ---
+{
+  "Type": "WDCharacterModifierStateDefinition",
+  "Name": "DA_CharacterModifierState_Parachute",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierStateDefinition'",
+  "Package": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Parachute",
+  "Properties": {
+    "StateTag": {
+      "TagName": "State.CharacterModifier.Parachute"
+    },
+    "CharacterModifiers": [
+      {
+        "ObjectName": "WDCharacterModifier_ParachuteCameraLock'DA_CharacterModifierState_Parachute:WDCharacterModifier_ParachuteCameraLock_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Parachute.0"
+      }
+    ],
+    "Priority": 128,
+    "Conditions": [
+      {
+        "ObjectName": "WDCharacterModifierCondition_StateTags'DA_CharacterModifierState_Parachute:WDCharacterModifierCondition_StateTags_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Parachute.2"
+      },
+      {
+        "ObjectName": "WDCharacterModifierCondition_MovementMode'DA_CharacterModifierState_Parachute:WDCharacterModifierCondition_MovementMode_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Parachute.1"
+      }
+    ]
+  }
+}

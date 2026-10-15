@@ -1,0 +1,34 @@
+--- export: UDataAsset / DA_Input_WHL_06_DuneBuggy ---
+{
+  "Type": "MWheeledVehicleInputDataAsset",
+  "Name": "DA_Input_WHL_06_DuneBuggy",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MWheeledVehicleInputDataAsset'",
+  "Package": "/WHL_06/Data/DA_Input_WHL_06_DuneBuggy",
+  "Properties": {
+    "SteerSensivity": 1.25,
+    "SteerSpeedCurve": {
+      "ObjectName": "CurveFloat'CRV_SteerSpeed_Reactive'",
+      "ObjectPath": "/WHL_06/Data/Curves/CRV_SteerSpeed_Reactive.0"
+    },
+    "SteerLimitCurve": {
+      "ObjectName": "CurveFloat'CRV_SteerLimitVariant'",
+      "ObjectPath": "/WHL_06/Data/Curves/CRV_SteerLimitVariant.0"
+    },
+    "SteerInputGravity": 2.0,
+    "ThrottleSensivity": 1.75,
+    "ThrottleEngagement": {
+      "ObjectName": "CurveFloat'CRV_ThrottleEngagement'",
+      "ObjectPath": "/WHL_06/Data/Curves/CRV_ThrottleEngagement.0"
+    },
+    "BrakingSensivity": 1.25,
+    "BrakeEngagement": {
+      "ObjectName": "CurveFloat'CRV_BrakeEngagement'",
+      "ObjectPath": "/WHL_06/Data/Curves/CRV_BrakeEngagement.0"
+    },
+    "ClutchEngagement": {
+      "ObjectName": "CurveFloat'CRV_ClutchEngagement'",
+      "ObjectPath": "/WHL_06/Data/Curves/CRV_ClutchEngagement.0"
+    }
+  }
+}

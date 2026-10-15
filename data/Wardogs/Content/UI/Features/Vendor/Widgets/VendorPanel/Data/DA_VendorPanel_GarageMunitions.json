@@ -1,0 +1,62 @@
+--- export: UObject / WDUIButtonAction_Vendor_SetCategoryFilter_0 ---
+{
+  "Type": "WDUIButtonAction_Vendor_SetCategoryFilter",
+  "Name": "WDUIButtonAction_Vendor_SetCategoryFilter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIButtonAction_Vendor_SetCategoryFilter'",
+  "Outer": {
+    "ObjectName": "WDUIVendorPanelData_Garage'DA_VendorPanel_GarageMunitions'",
+    "ObjectPath": "/Game/UI/Features/Vendor/Widgets/VendorPanel/Data/DA_VendorPanel_GarageMunitions.2"
+  },
+  "Properties": {
+    "Filter": {
+      "TagName": "Vendor.Category.Vehicle.Ammo"
+    }
+  }
+}
+--- export: UObject / WDUIButtonAction_Vendor_SetCategoryFilter_1 ---
+{
+  "Type": "WDUIButtonAction_Vendor_SetCategoryFilter",
+  "Name": "WDUIButtonAction_Vendor_SetCategoryFilter_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIButtonAction_Vendor_SetCategoryFilter'",
+  "Outer": {
+    "ObjectName": "WDUIVendorPanelData_Garage'DA_VendorPanel_GarageMunitions'",
+    "ObjectPath": "/Game/UI/Features/Vendor/Widgets/VendorPanel/Data/DA_VendorPanel_GarageMunitions.2"
+  },
+  "Properties": {
+    "Filter": {
+      "TagName": "Vendor.Category.Vehicle.CounterMeasures"
+    }
+  }
+}
+--- export: UDataAsset / DA_VendorPanel_GarageMunitions ---
+{
+  "Type": "WDUIVendorPanelData_Garage",
+  "Name": "DA_VendorPanel_GarageMunitions",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIVendorPanelData_Garage'",
+  "Package": "/Game/UI/Features/Vendor/Widgets/VendorPanel/Data/DA_VendorPanel_GarageMunitions",
+  "Properties": {
+    "VehicleInventoryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIVehicleInventoryViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/InventoryComponent/Data/DA_InventoryComponent_Vendor_Vehicle.DA_InventoryComponent_Vendor_Vehicle",
+        "SubPathString": ""
+      }
+    },
+    "VehicleInformationViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIVehicleInformationViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/VendorPanel/Widgets/Garage/Data/DA_VehicleInformation.DA_VehicleInformation",
+        "SubPathString": ""
+      }
+    }
+  }
+}

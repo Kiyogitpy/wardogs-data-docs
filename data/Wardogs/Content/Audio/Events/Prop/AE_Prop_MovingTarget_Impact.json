@@ -1,0 +1,59 @@
+--- export: UPrimaryDataAsset / AE_Prop_MovingTarget_Impact ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Prop_MovingTarget_Impact",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Prop/AE_Prop_MovingTarget_Impact",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Prop.MovingTarget.Impact"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Prop_MovingTarget_Impact:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Prop/AE_Prop_MovingTarget_Impact.2"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Prop_MovingTarget_Impact:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Prop/AE_Prop_MovingTarget_Impact.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Prop_MovingTarget_Impact'",
+    "ObjectPath": "/Game/Audio/Events/Prop/AE_Prop_MovingTarget_Impact.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Prop_MovingTarget_Impact'",
+    "ObjectPath": "/Game/Audio/Events/Prop/AE_Prop_MovingTarget_Impact.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Prop_MovingTarget_Impact'",
+      "ObjectPath": "/Game/Audio/Props/MovingTarget/MSS_Prop_MovingTarget_Impact.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

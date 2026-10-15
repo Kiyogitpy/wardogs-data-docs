@@ -1,0 +1,37 @@
+--- export: UDataAsset / IA_UI_Chat_Open_Controller ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_UI_Chat_Open_Controller",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_UI_Chat_Open_Controller",
+  "Properties": {
+    "InputTag": {
+      "TagName": "UI.Action.Feature.Chat.OpenChat.Controller"
+    },
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerChordAction'IA_UI_Chat_Open_Controller:InputTriggerChordAction_0'",
+        "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_UI_Chat_Open_Controller.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerChordAction_0 ---
+{
+  "Type": "InputTriggerChordAction",
+  "Name": "InputTriggerChordAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerChordAction'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_UI_Chat_Open_Controller'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_UI_Chat_Open_Controller.0"
+  },
+  "Properties": {
+    "ChordAction": {
+      "ObjectName": "BHInputAction'IA_UI_Chat_Open_ControllerChordedAction'",
+      "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_UI_Chat_Open_ControllerChordedAction.0"
+    },
+    "ActuationThreshold": 0.1
+  }
+}

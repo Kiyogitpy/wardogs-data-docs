@@ -1,0 +1,836 @@
+--- export: UObject / WDUIDistanceTextRules_0 ---
+{
+  "Type": "WDUIDistanceTextRules",
+  "Name": "WDUIDistanceTextRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIDistanceTextRules'",
+  "Outer": {
+    "ObjectName": "WDUISpottingSpatialTrackerData'DA_Tracker_Spatial_Spotting'",
+    "ObjectPath": "/Spotting/Data/UI/Tracker/Spatial/Data/DA_Tracker_Spatial_Spotting.8"
+  },
+  "Properties": {
+    "bForceMeters": true
+  }
+}
+--- export: UObject / WDUILineOfSightRules_0 ---
+{
+  "Type": "WDUILineOfSightRules",
+  "Name": "WDUILineOfSightRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUILineOfSightRules'",
+  "Outer": {
+    "ObjectName": "WDUISpottingSpatialTrackerData'DA_Tracker_Spatial_Spotting'",
+    "ObjectPath": "/Spotting/Data/UI/Tracker/Spatial/Data/DA_Tracker_Spatial_Spotting.8"
+  },
+  "Properties": {
+    "bRequireRenderedComponent": true,
+    "TraceChannel": "ECollisionChannel::ECC_GameTraceChannel4",
+    "SquaredRange": 100000000.0,
+    "State": "EWDUIRuleState::Disable"
+  }
+}
+--- export: UObject / WDUILineOfSightRules_1 ---
+{
+  "Type": "WDUILineOfSightRules",
+  "Name": "WDUILineOfSightRules_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUILineOfSightRules'",
+  "Outer": {
+    "ObjectName": "WDUISpottingSpatialTrackerData'DA_Tracker_Spatial_Spotting'",
+    "ObjectPath": "/Spotting/Data/UI/Tracker/Spatial/Data/DA_Tracker_Spatial_Spotting.8"
+  },
+  "Properties": {
+    "bRequireRenderedComponent": true,
+    "bTraceEvenIfValidComponentIsRendered": true,
+    "TraceChannel": "ECollisionChannel::ECC_GameTraceChannel4",
+    "SquaredRange": 100000000.0
+  }
+}
+--- export: UObject / WDUILineOfSightRules_2 ---
+{
+  "Type": "WDUILineOfSightRules",
+  "Name": "WDUILineOfSightRules_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUILineOfSightRules'",
+  "Outer": {
+    "ObjectName": "WDUISpottingSpatialTrackerData'DA_Tracker_Spatial_Spotting'",
+    "ObjectPath": "/Spotting/Data/UI/Tracker/Spatial/Data/DA_Tracker_Spatial_Spotting.8"
+  },
+  "Properties": {
+    "bRequireRenderedComponent": true,
+    "bTraceEvenIfValidComponentIsRendered": true,
+    "TraceChannel": "ECollisionChannel::ECC_GameTraceChannel4",
+    "SquaredRange": 100000000.0
+  }
+}
+--- export: UObject / WDUILocationOffsetRules_0 ---
+{
+  "Type": "WDUILocationOffsetRules",
+  "Name": "WDUILocationOffsetRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUILocationOffsetRules'",
+  "Outer": {
+    "ObjectName": "WDUISpottingSpatialTrackerData'DA_Tracker_Spatial_Spotting'",
+    "ObjectPath": "/Spotting/Data/UI/Tracker/Spatial/Data/DA_Tracker_Spatial_Spotting.8"
+  },
+  "Properties": {
+    "bDynamicOffset": true,
+    "Offset": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 300.0
+    }
+  }
+}
+--- export: UObject / WDUILocationOffsetRules_3 ---
+{
+  "Type": "WDUILocationOffsetRules",
+  "Name": "WDUILocationOffsetRules_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUILocationOffsetRules'",
+  "Outer": {
+    "ObjectName": "WDUISpottingSpatialTrackerData'DA_Tracker_Spatial_Spotting'",
+    "ObjectPath": "/Spotting/Data/UI/Tracker/Spatial/Data/DA_Tracker_Spatial_Spotting.8"
+  },
+  "Properties": {
+    "bDynamicOffset": true,
+    "DynamicOffsetDistanceCurve": {
+      "ObjectName": "CurveFloat'C_DynamicLocationOffsetSpottingTracker'",
+      "ObjectPath": "/Spotting/Data/UI/Tracker/Spatial/Data/C_DynamicLocationOffsetSpottingTracker.0"
+    },
+    "DynamicCurveRange": {
+      "X": 251.78268,
+      "Y": 0.0
+    },
+    "Offset": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 30.0
+    },
+    "AttachBone": "Head"
+  }
+}
+--- export: UObject / WDUIScreenClampingRules_0 ---
+{
+  "Type": "WDUIScreenClampingRules",
+  "Name": "WDUIScreenClampingRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIScreenClampingRules'",
+  "Outer": {
+    "ObjectName": "WDUISpottingSpatialTrackerData'DA_Tracker_Spatial_Spotting'",
+    "ObjectPath": "/Spotting/Data/UI/Tracker/Spatial/Data/DA_Tracker_Spatial_Spotting.8"
+  },
+  "Properties": {
+    "ClampingAsPixels": {
+      "X": 250.0,
+      "Y": 250.0
+    }
+  }
+}
+--- export: UObject / WDUIScreenClampingRules_1 ---
+{
+  "Type": "WDUIScreenClampingRules",
+  "Name": "WDUIScreenClampingRules_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIScreenClampingRules'",
+  "Outer": {
+    "ObjectName": "WDUISpottingSpatialTrackerData'DA_Tracker_Spatial_Spotting'",
+    "ObjectPath": "/Spotting/Data/UI/Tracker/Spatial/Data/DA_Tracker_Spatial_Spotting.8"
+  },
+  "Properties": {
+    "ClampingAsPixels": {
+      "X": 250.0,
+      "Y": 250.0
+    }
+  }
+}
+--- export: UDataAsset / DA_Tracker_Spatial_Spotting ---
+{
+  "Type": "WDUISpottingSpatialTrackerData",
+  "Name": "DA_Tracker_Spatial_Spotting",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUISpottingSpatialTrackerData'",
+  "Package": "/Spotting/Data/UI/Tracker/Spatial/Data/DA_Tracker_Spatial_Spotting",
+  "Properties": {
+    "DefaultMaterial": {
+      "AssetPathName": "/Spotting/Data/UI/Materials/M_UI_SpottingMarker.M_UI_SpottingMarker",
+      "SubPathString": ""
+    },
+    "OverrideMaterial": {
+      "AssetPathName": "/Spotting/Data/UI/Materials/M_UI_SpottingTracker.M_UI_SpottingTracker",
+      "SubPathString": ""
+    },
+    "OverrideDefaultTexture": {
+      "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted.T_UI_Map_Spotted",
+      "SubPathString": ""
+    },
+    "TargetData": [
+      {
+        "Key": "/Script/WDGame.WDMoverCharacter",
+        "Value": {
+          "DefaultTexture": {
+            "Texture": {
+              "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted.T_UI_Map_Spotted",
+              "SubPathString": ""
+            },
+            "Scale": 0.8,
+            "Rotation": 0.0,
+            "FadeoutTime": 3.0,
+            "StartingOpacity": 0.75,
+            "RewardTag": {
+              "TagName": "Challenges.Rewards.PlayerKill"
+            }
+          },
+          "OverrideTextures": [],
+          "_aaabbfjknjfnhaagphpek_$59AD95D7006F7F4A$_$17$": false
+        }
+      },
+      {
+        "Key": "/Script/WDGame.WDRotaryVehicle",
+        "Value": {
+          "DefaultTexture": {
+            "Texture": {
+              "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_Vehicle.T_UI_Map_Spotted_Vehicle",
+              "SubPathString": ""
+            },
+            "Scale": 1.0,
+            "Rotation": 0.0,
+            "FadeoutTime": 3.0,
+            "StartingOpacity": 0.75,
+            "RewardTag": {
+              "TagName": "None"
+            }
+          },
+          "OverrideTextures": [
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Air.Rotary.Littlebird"
+              },
+              "Value": {
+                "Texture": {
+                  "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_Heli.T_UI_Map_Spotted_Heli",
+                  "SubPathString": ""
+                },
+                "Scale": 1.0,
+                "Rotation": 90.0,
+                "FadeoutTime": 3.0,
+                "StartingOpacity": 0.75,
+                "RewardTag": {
+                  "TagName": "Challenges.Rewards.VehicleDestroyed.LittleBird"
+                }
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Air.Rotary.ROT_01"
+              },
+              "Value": {
+                "Texture": {
+                  "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_Heli.T_UI_Map_Spotted_Heli",
+                  "SubPathString": ""
+                },
+                "Scale": 1.0,
+                "Rotation": 90.0,
+                "FadeoutTime": 3.0,
+                "StartingOpacity": 0.75,
+                "RewardTag": {
+                  "TagName": "Challenges.Rewards.VehicleDestroyed.Huey"
+                }
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Air.Rotary.Havoc"
+              },
+              "Value": {
+                "Texture": {
+                  "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_Havoc.T_UI_Map_Spotted_Havoc",
+                  "SubPathString": ""
+                },
+                "Scale": 1.0,
+                "Rotation": 90.0,
+                "FadeoutTime": 3.0,
+                "StartingOpacity": 0.75,
+                "RewardTag": {
+                  "TagName": "Challenges.Rewards.VehicleDestroyed.Havoc"
+                }
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Air.Rotary.ROT_04"
+              },
+              "Value": {
+                "Texture": {
+                  "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_Heli.T_UI_Map_Spotted_Heli",
+                  "SubPathString": ""
+                },
+                "Scale": 1.0,
+                "Rotation": 90.0,
+                "FadeoutTime": 3.0,
+                "StartingOpacity": 0.75,
+                "RewardTag": {
+                  "TagName": "Challenges.Rewards.VehicleDestroyed.Blackhawk"
+                }
+              }
+            }
+          ],
+          "_aaabbfjknjfnhaagphpek_$59AD95D7006F7F4A$_$17$": false
+        }
+      },
+      {
+        "Key": "/Script/WDGame.WDAirplaneVehicle",
+        "Value": {
+          "DefaultTexture": {
+            "Texture": {
+              "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_Vehicle.T_UI_Map_Spotted_Vehicle",
+              "SubPathString": ""
+            },
+            "Scale": 1.0,
+            "Rotation": 0.0,
+            "FadeoutTime": 3.0,
+            "StartingOpacity": 0.75,
+            "RewardTag": {
+              "TagName": "None"
+            }
+          },
+          "OverrideTextures": [],
+          "_aaabbfjknjfnhaagphpek_$59AD95D7006F7F4A$_$17$": false
+        }
+      },
+      {
+        "Key": "/Script/WDGame.WDWheeledVehiclePawn",
+        "Value": {
+          "DefaultTexture": {
+            "Texture": {
+              "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_Vehicle.T_UI_Map_Spotted_Vehicle",
+              "SubPathString": ""
+            },
+            "Scale": 1.0,
+            "Rotation": 0.0,
+            "FadeoutTime": 3.0,
+            "StartingOpacity": 0.75,
+            "RewardTag": {
+              "TagName": "None"
+            }
+          },
+          "OverrideTextures": [
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Land.Wheeled.Bobcat"
+              },
+              "Value": {
+                "Texture": {
+                  "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_Quad.T_UI_Map_Spotted_Quad",
+                  "SubPathString": ""
+                },
+                "Scale": 1.0,
+                "Rotation": 90.0,
+                "FadeoutTime": 3.0,
+                "StartingOpacity": 0.75,
+                "RewardTag": {
+                  "TagName": "Challenges.Rewards.VehicleDestroyed.Bobcat"
+                }
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Land.Wheeled.DuneBuggy"
+              },
+              "Value": {
+                "Texture": {
+                  "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_Dune.T_UI_Map_Spotted_Dune",
+                  "SubPathString": ""
+                },
+                "Scale": 1.0,
+                "Rotation": 90.0,
+                "FadeoutTime": 3.0,
+                "StartingOpacity": 0.75,
+                "RewardTag": {
+                  "TagName": "Challenges.Rewards.VehicleDestroyed.DuneBuggy"
+                }
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Land.Wheeled.Humvee"
+              },
+              "Value": {
+                "Texture": {
+                  "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_Kodiak.T_UI_Map_Spotted_Kodiak",
+                  "SubPathString": ""
+                },
+                "Scale": 1.0,
+                "Rotation": 90.0,
+                "FadeoutTime": 3.0,
+                "StartingOpacity": 0.75,
+                "RewardTag": {
+                  "TagName": "Challenges.Rewards.VehicleDestroyed.Humvee"
+                }
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Land.Wheeled.Kodiak"
+              },
+              "Value": {
+                "Texture": {
+                  "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_Kodiak.T_UI_Map_Spotted_Kodiak",
+                  "SubPathString": ""
+                },
+                "Scale": 1.0,
+                "Rotation": 90.0,
+                "FadeoutTime": 3.0,
+                "StartingOpacity": 0.75,
+                "RewardTag": {
+                  "TagName": "Challenges.Rewards.VehicleDestroyed.Kodiak"
+                }
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Land.Wheeled.Ural"
+              },
+              "Value": {
+                "Texture": {
+                  "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_URAL.T_UI_Map_Spotted_URAL",
+                  "SubPathString": ""
+                },
+                "Scale": 1.0,
+                "Rotation": 90.0,
+                "FadeoutTime": 3.0,
+                "StartingOpacity": 0.75,
+                "RewardTag": {
+                  "TagName": "Challenges.Rewards.VehicleDestroyed.Humvee"
+                }
+              }
+            }
+          ],
+          "_aaabbfjknjfnhaagphpek_$59AD95D7006F7F4A$_$17$": false
+        }
+      },
+      {
+        "Key": "/Script/WDGame.WDTrackedVehicle",
+        "Value": {
+          "DefaultTexture": {
+            "Texture": {
+              "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_Vehicle.T_UI_Map_Spotted_Vehicle",
+              "SubPathString": ""
+            },
+            "Scale": 1.0,
+            "Rotation": 0.0,
+            "FadeoutTime": 3.0,
+            "StartingOpacity": 0.75,
+            "RewardTag": {
+              "TagName": "None"
+            }
+          },
+          "OverrideTextures": [
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Land.Tracked.SpawnVehicle"
+              },
+              "Value": {
+                "Texture": {
+                  "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_Spawn.T_UI_Map_Spotted_Spawn",
+                  "SubPathString": ""
+                },
+                "Scale": 1.0,
+                "Rotation": 90.0,
+                "FadeoutTime": 3.0,
+                "StartingOpacity": 0.75,
+                "RewardTag": {
+                  "TagName": "Challenges.Rewards.VehicleDestroyed.SpawnVehicle"
+                }
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Land.Tracked.TNK_01"
+              },
+              "Value": {
+                "Texture": {
+                  "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_Tank.T_UI_Map_Spotted_Tank",
+                  "SubPathString": ""
+                },
+                "Scale": 1.0,
+                "Rotation": 90.0,
+                "FadeoutTime": 3.0,
+                "StartingOpacity": 0.75,
+                "RewardTag": {
+                  "TagName": "Challenges.Rewards.VehicleDestroyed.TNK_01.Heavy"
+                }
+              }
+            }
+          ],
+          "_aaabbfjknjfnhaagphpek_$59AD95D7006F7F4A$_$17$": false
+        }
+      },
+      {
+        "Key": "/Claymore/Data/Blueprints/B_Claymore.B_Claymore_C",
+        "Value": {
+          "DefaultTexture": {
+            "Texture": {
+              "AssetPathName": "/Game/UI/Shared/Icons/Equipment/Killfeed/T_UI_Icon_Killfeed_Claymore.T_UI_Icon_Killfeed_Claymore",
+              "SubPathString": ""
+            },
+            "Scale": 0.75,
+            "Rotation": 0.0,
+            "FadeoutTime": 3.0,
+            "StartingOpacity": 0.75,
+            "RewardTag": {
+              "TagName": "None"
+            }
+          },
+          "OverrideTextures": [],
+          "_aaabbfjknjfnhaagphpek_$59AD95D7006F7F4A$_$17$": false
+        }
+      },
+      {
+        "Key": "/AT_mine/Data/Blueprints/B_AT_Mine.B_AT_Mine_C",
+        "Value": {
+          "DefaultTexture": {
+            "Texture": {
+              "AssetPathName": "/Game/UI/Shared/Icons/Equipment/Killfeed/T_UI_Icon_Killfeed_APMine.T_UI_Icon_Killfeed_APMine",
+              "SubPathString": ""
+            },
+            "Scale": 0.75,
+            "Rotation": 0.0,
+            "FadeoutTime": 3.0,
+            "StartingOpacity": 0.75,
+            "RewardTag": {
+              "TagName": "None"
+            }
+          },
+          "OverrideTextures": [],
+          "_aaabbfjknjfnhaagphpek_$59AD95D7006F7F4A$_$17$": false
+        }
+      },
+      {
+        "Key": "/Buildables/Data/Buildables/ForwardOperatingBase/Buildables/B_Buildable_ForwardOperatingBase_Lonestar.B_Buildable_ForwardOperatingBase_Lonestar_C",
+        "Value": {
+          "DefaultTexture": {
+            "Texture": {
+              "AssetPathName": "/Game/UI/Features/Map/Map_Optimisation/Textures/T_UI_Map_Spotted_FOB.T_UI_Map_Spotted_FOB",
+              "SubPathString": ""
+            },
+            "Scale": 1.0,
+            "Rotation": 90.0,
+            "FadeoutTime": 3.0,
+            "StartingOpacity": 0.75,
+            "RewardTag": {
+              "TagName": "None"
+            }
+          },
+          "OverrideTextures": [],
+          "_aaabbfjknjfnhaagphpek_$59AD95D7006F7F4A$_$17$": false
+        }
+      },
+      {
+        "Key": "/Buildables/Data/Buildables/ForwardOperatingBase/Buildables/B_Buildable_ForwardOperatingBase_Manticore.B_Buildable_ForwardOperatingBase_Manticore_C",
+        "Value": {
+          "DefaultTexture": {
+            "Texture": {
+              "AssetPathName": "/Game/UI/Features/Map/Map_Optimisation/Textures/T_UI_Map_Spotted_FOB.T_UI_Map_Spotted_FOB",
+              "SubPathString": ""
+            },
+            "Scale": 1.0,
+            "Rotation": 90.0,
+            "FadeoutTime": 3.0,
+            "StartingOpacity": 0.75,
+            "RewardTag": {
+              "TagName": "None"
+            }
+          },
+          "OverrideTextures": [],
+          "_aaabbfjknjfnhaagphpek_$59AD95D7006F7F4A$_$17$": false
+        }
+      },
+      {
+        "Key": "/Buildables/Data/Buildables/ForwardOperatingBase/Buildables/B_Buildable_ForwardOperatingBase_Valkyra.B_Buildable_ForwardOperatingBase_Valkyra_C",
+        "Value": {
+          "DefaultTexture": {
+            "Texture": {
+              "AssetPathName": "/Game/UI/Features/Map/Map_Optimisation/Textures/T_UI_Map_Spotted_FOB.T_UI_Map_Spotted_FOB",
+              "SubPathString": ""
+            },
+            "Scale": 1.0,
+            "Rotation": 90.0,
+            "FadeoutTime": 3.0,
+            "StartingOpacity": 0.75,
+            "RewardTag": {
+              "TagName": "None"
+            }
+          },
+          "OverrideTextures": [],
+          "_aaabbfjknjfnhaagphpek_$59AD95D7006F7F4A$_$17$": false
+        }
+      },
+      {
+        "Key": "/Buildables/Data/Buildables/Hotzone_Magnet/B_Buildable_HotzoneMagnet.B_Buildable_HotzoneMagnet_C",
+        "Value": {
+          "DefaultTexture": {
+            "Texture": {
+              "AssetPathName": "/Game/UI/Features/Map/Map_Optimisation/Textures/T_UI_Map_Spotted_HotzoneMagnet.T_UI_Map_Spotted_HotzoneMagnet",
+              "SubPathString": ""
+            },
+            "Scale": 1.0,
+            "Rotation": 90.0,
+            "FadeoutTime": 3.0,
+            "StartingOpacity": 0.75,
+            "RewardTag": {
+              "TagName": "None"
+            }
+          },
+          "OverrideTextures": [],
+          "_aaabbfjknjfnhaagphpek_$59AD95D7006F7F4A$_$17$": false
+        }
+      },
+      {
+        "Key": "/Script/WDGame.WDVehicleSupplyCrate",
+        "Value": {
+          "DefaultTexture": {
+            "Texture": {
+              "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_supplycrate.T_UI_Map_Spotted_supplycrate",
+              "SubPathString": ""
+            },
+            "Scale": 1.0,
+            "Rotation": 90.0,
+            "FadeoutTime": 3.0,
+            "StartingOpacity": 0.75,
+            "RewardTag": {
+              "TagName": "None"
+            }
+          },
+          "OverrideTextures": [],
+          "_aaabbfjknjfnhaagphpek_$59AD95D7006F7F4A$_$17$": false
+        }
+      },
+      {
+        "Key": "/Script/WDGame.WDVehicleSupplyPallet",
+        "Value": {
+          "DefaultTexture": {
+            "Texture": {
+              "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_supplycrate.T_UI_Map_Spotted_supplycrate",
+              "SubPathString": ""
+            },
+            "Scale": 1.0,
+            "Rotation": 90.0,
+            "FadeoutTime": 3.0,
+            "StartingOpacity": 0.75,
+            "RewardTag": {
+              "TagName": "None"
+            }
+          },
+          "OverrideTextures": [],
+          "_aaabbfjknjfnhaagphpek_$59AD95D7006F7F4A$_$17$": false
+        }
+      },
+      {
+        "Key": "/Script/WDGame.WDStationaryVehicle",
+        "Value": {
+          "DefaultTexture": {
+            "Texture": {
+              "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Tower_Zoom.T_UI_Map_Tower_Zoom",
+              "SubPathString": ""
+            },
+            "Scale": 1.0,
+            "Rotation": 0.0,
+            "FadeoutTime": 3.0,
+            "StartingOpacity": 0.75,
+            "RewardTag": {
+              "TagName": "None"
+            }
+          },
+          "OverrideTextures": [],
+          "_aaabbfjknjfnhaagphpek_$59AD95D7006F7F4A$_$17$": false
+        }
+      }
+    ],
+    "_aaaaoggecpcpgijealkim_$6642F2F68940BA8C$_$14$": [
+      {
+        "StateQuery": {
+          "TokenStreamVersion": 0,
+          "TagDictionary": [
+            {
+              "TagName": "State.Player.Vehicle.Role.Gunner"
+            }
+          ],
+          "QueryTokenStream": [
+            0,
+            1,
+            2,
+            1,
+            0
+          ],
+          "UserDescription": "",
+          "AutoDescription": " ALL( State.Player.Vehicle.Role.Gunner )"
+        },
+        "bOverrideForCurrentVehicle": true,
+        "AllowedVehicles": [
+          "Vehicle.Variant.Land.Tracked.TNK_01.Artillery",
+          "Vehicle.Variant.Stationary.Mortar"
+        ],
+        "_aaabkmjknnoghehgkocdh_$C9ADDE67476AE237$_$26$": false,
+        "AllowedTargets": []
+      },
+      {
+        "StateQuery": {
+          "TokenStreamVersion": 0,
+          "TagDictionary": [
+            {
+              "TagName": "State.Player.Vehicle.Role.Gunner"
+            }
+          ],
+          "QueryTokenStream": [
+            0,
+            1,
+            2,
+            1,
+            0
+          ],
+          "UserDescription": "",
+          "AutoDescription": " ALL( State.Player.Vehicle.Role.Gunner )"
+        },
+        "bOverrideForCurrentVehicle": true,
+        "AllowedVehicles": [
+          "Vehicle.Variant.Stationary.STN_05"
+        ],
+        "_aaabkmjknnoghehgkocdh_$C9ADDE67476AE237$_$26$": true,
+        "AllowedTargets": [
+          "Vehicle.Variant.Air.Rotary.Havoc.Default",
+          "Vehicle.Variant.Air.Rotary.Littlebird.Default",
+          "Vehicle.Variant.Air.Rotary.Littlebird.MountedMachineGuns",
+          "Vehicle.Variant.Air.Rotary.Littlebird.RocketPods",
+          "Vehicle.Variant.Land.Tracked.SpawnVehicle.Lonestar",
+          "Vehicle.Variant.Land.Tracked.SpawnVehicle.Manticore",
+          "Vehicle.Variant.Land.Tracked.SpawnVehicle.Valkyra",
+          "Vehicle.Variant.Land.Tracked.TNK_01.AntiAir",
+          "Vehicle.Variant.Land.Tracked.TNK_01.Artillery",
+          "Vehicle.Variant.Land.Tracked.TNK_01.Heavy",
+          "Vehicle.Variant.Land.Tracked.TNK_01.Light",
+          "Vehicle.Variant.Land.Wheeled.Azar",
+          "Vehicle.Variant.Land.Wheeled.Bobcat.Default",
+          "Vehicle.Variant.Land.Wheeled.DuneBuggy.Default",
+          "Vehicle.Variant.Land.Wheeled.Humvee.Default",
+          "Vehicle.Variant.Land.Wheeled.Humvee.MachineGun",
+          "Vehicle.Variant.Land.Wheeled.Humvee.Minigun",
+          "Vehicle.Variant.Land.Wheeled.Kodiak.Default",
+          "Vehicle.Variant.Land.Wheeled.Kodiak.MachineGun",
+          "Vehicle.Variant.Land.Wheeled.Kodiak.Pickup",
+          "Vehicle.Variant.Land.Wheeled.Ural.Attack",
+          "Vehicle.Variant.Land.Wheeled.Ural.Battle",
+          "Vehicle.Variant.Land.Wheeled.Ural.Default",
+          "Vehicle.Variant.Air.Rotary.ROT_01.Default",
+          "Vehicle.Variant.Air.Rotary.ROT_01.MountedMachineGuns",
+          "Vehicle.Variant.Air.Rotary.ROT_04.Default",
+          "Vehicle.Variant.Air.Rotary.ROT_04.MountedMachineGuns"
+        ]
+      }
+    ],
+    "RuleSets": [
+      {
+        "Key": "EWDUISpatialRulesetType::Default",
+        "Value": {
+          "Priority": 0,
+          "OptionalRules": [
+            {
+              "ObjectName": "WDUIDistanceTextRules'DA_Tracker_Spatial_Spotting:WDUIDistanceTextRules_0'",
+              "ObjectPath": "/Spotting/Data/UI/Tracker/Spatial/Data/DA_Tracker_Spatial_Spotting.0"
+            },
+            {
+              "ObjectName": "WDUILocationOffsetRules'DA_Tracker_Spatial_Spotting:WDUILocationOffsetRules_3'",
+              "ObjectPath": "/Spotting/Data/UI/Tracker/Spatial/Data/DA_Tracker_Spatial_Spotting.5"
+            },
+            {
+              "ObjectName": "WDUILineOfSightRules'DA_Tracker_Spatial_Spotting:WDUILineOfSightRules_1'",
+              "ObjectPath": "/Spotting/Data/UI/Tracker/Spatial/Data/DA_Tracker_Spatial_Spotting.2"
+            },
+            {
+              "ObjectName": "WDUIWorldDistanceScaleRules'DA_Tracker_Spatial_Spotting:WDUIWorldDistanceScaleRules_1'",
+              "ObjectPath": "/Spotting/Data/UI/Tracker/Spatial/Data/DA_Tracker_Spatial_Spotting.10"
+            },
+            {
+              "ObjectName": "WDUIScreenClampingRules'DA_Tracker_Spatial_Spotting:WDUIScreenClampingRules_0'",
+              "ObjectPath": "/Spotting/Data/UI/Tracker/Spatial/Data/DA_Tracker_Spatial_Spotting.6"
+            }
+          ]
+        }
+      },
+      {
+        "Key": "EWDUISpatialRulesetType::Player_InVehicle",
+        "Value": {
+          "Priority": 0,
+          "OptionalRules": [
+            {
+              "ObjectName": "WDUILocationOffsetRules'DA_Tracker_Spatial_Spotting:WDUILocationOffsetRules_0'",
+              "ObjectPath": "/Spotting/Data/UI/Tracker/Spatial/Data/DA_Tracker_Spatial_Spotting.4"
+            },
+            {
+              "ObjectName": "WDUILineOfSightRules'DA_Tracker_Spatial_Spotting:WDUILineOfSightRules_2'",
+              "ObjectPath": "/Spotting/Data/UI/Tracker/Spatial/Data/DA_Tracker_Spatial_Spotting.3"
+            },
+            {
+              "ObjectName": "WDUIWorldDistanceScaleRules'DA_Tracker_Spatial_Spotting:WDUIWorldDistanceScaleRules_0'",
+              "ObjectPath": "/Spotting/Data/UI/Tracker/Spatial/Data/DA_Tracker_Spatial_Spotting.9"
+            },
+            {
+              "ObjectName": "WDUIScreenClampingRules'DA_Tracker_Spatial_Spotting:WDUIScreenClampingRules_1'",
+              "ObjectPath": "/Spotting/Data/UI/Tracker/Spatial/Data/DA_Tracker_Spatial_Spotting.7"
+            }
+          ]
+        }
+      },
+      {
+        "Key": "EWDUISpatialRulesetType::LocalUser_InVehicle",
+        "Value": {
+          "Priority": 1,
+          "OptionalRules": [
+            {
+              "ObjectName": "WDUILineOfSightRules'DA_Tracker_Spatial_Spotting:WDUILineOfSightRules_0'",
+              "ObjectPath": "/Spotting/Data/UI/Tracker/Spatial/Data/DA_Tracker_Spatial_Spotting.1"
+            }
+          ]
+        }
+      }
+    ],
+    "ZOrder": 150,
+    "DefaultSize": {
+      "X": 40.0,
+      "Y": 40.0
+    }
+  }
+}
+--- export: UObject / WDUIWorldDistanceScaleRules_0 ---
+{
+  "Type": "WDUIWorldDistanceScaleRules",
+  "Name": "WDUIWorldDistanceScaleRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIWorldDistanceScaleRules'",
+  "Outer": {
+    "ObjectName": "WDUISpottingSpatialTrackerData'DA_Tracker_Spatial_Spotting'",
+    "ObjectPath": "/Spotting/Data/UI/Tracker/Spatial/Data/DA_Tracker_Spatial_Spotting.8"
+  },
+  "Properties": {
+    "DistanceForScalingEnd": 100.0,
+    "EndScale": 0.4,
+    "SquaredDistanceForScalingEnd": 100000000.0
+  }
+}
+--- export: UObject / WDUIWorldDistanceScaleRules_1 ---
+{
+  "Type": "WDUIWorldDistanceScaleRules",
+  "Name": "WDUIWorldDistanceScaleRules_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIWorldDistanceScaleRules'",
+  "Outer": {
+    "ObjectName": "WDUISpottingSpatialTrackerData'DA_Tracker_Spatial_Spotting'",
+    "ObjectPath": "/Spotting/Data/UI/Tracker/Spatial/Data/DA_Tracker_Spatial_Spotting.8"
+  },
+  "Properties": {
+    "DistanceForScalingEnd": 70.0,
+    "StartScale": 0.8,
+    "EndScale": 0.55,
+    "SquaredDistanceForScalingEnd": 49000000.0
+  }
+}

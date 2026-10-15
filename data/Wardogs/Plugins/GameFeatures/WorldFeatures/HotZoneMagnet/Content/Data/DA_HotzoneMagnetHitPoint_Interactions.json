@@ -1,0 +1,45 @@
+--- export: UDataAsset / DA_HotzoneMagnetHitPoint_Interactions ---
+{
+  "Type": "WDHotZoneMagnetInteractionDataAsset",
+  "Name": "DA_HotzoneMagnetHitPoint_Interactions",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDHotZoneMagnetInteractionDataAsset'",
+  "Package": "/HotZoneMagnet/Data/DA_HotzoneMagnetHitPoint_Interactions",
+  "Properties": {
+    "_aaabcnfdnfndeohfidlgi_$D53D5D34E7583B68$_$18$": [
+      {
+        "InteractionContext": {
+          "AssetPathName": "/Script/HotZoneMagnetRuntime.WDHotZoneMagnetHitPointInteractionContext",
+          "SubPathString": ""
+        },
+        "Config": {
+          "InteractionTag": {
+            "TagName": "Interaction.Context.WorldFeatures.HotZoneHitPoint"
+          },
+          "InteractionBehavior": "EWDWorldInteractableContextBehaviour::Hold",
+          "InteractionBehaviorGamepad": "EWDWorldInteractableContextBehaviour::Hold",
+          "bAllowMultipleInteractors": false,
+          "bBypassLookAtCheck": null,
+          "bBypassConditionCheck": null,
+          "bRequirePlayerDragging": null,
+          "InputActionTag": null,
+          "InteractionDuration": 0.5,
+          "InteractionRange": 250.0,
+          "InteractionAngle": null,
+          "bTraceLookAtCameraForward": null,
+          "bSendSuccessRPC": null,
+          "bSendFailureRPC": null,
+          "bShowInteractionPrompt": null,
+          "InteractionBeginGameplayCueTag": null,
+          "InteractionSuccessGameplayCueTag": null,
+          "InteractionFailedGameplayCueTag": null,
+          "InteractionDeniedGameplayCueTag": null,
+          "InteractionPointTag": {
+            "TagName": "None"
+          },
+          "InteractorBlockingTags": []
+        }
+      }
+    ]
+  }
+}

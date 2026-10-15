@@ -1,0 +1,351 @@
+--- export: UDataTable / DT_ClientTestingProfiles ---
+{
+  "Type": "DataTable",
+  "Name": "DT_ClientTestingProfiles",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/Tests/LoadTests/Orchestrators/RandomScatter/Data/DT_ClientTestingProfiles",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDAutomatedTestClientProfile'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Character": {
+      "PawnToControl": {
+        "AssetPathName": "/Game/MoverTesting/B_WDMoverPlayerCharacter.B_WDMoverPlayerCharacter_C",
+        "SubPathString": ""
+      },
+      "CustomTestFunction": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "AutomatedInputs": [
+        {
+          "Key": {
+            "KeyName": "None"
+          },
+          "InputAction": {
+            "AssetPathName": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_MoveDirectional.IA_Player_MoveDirectional",
+            "SubPathString": ""
+          },
+          "InputInterval": {
+            "Min": 2.0,
+            "Max": 2.0
+          },
+          "InputDuration": {
+            "Min": 1.0,
+            "Max": 3.0
+          }
+        },
+        {
+          "Key": {
+            "KeyName": "None"
+          },
+          "InputAction": {
+            "AssetPathName": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_Jump.IA_Player_Jump",
+            "SubPathString": ""
+          },
+          "InputInterval": {
+            "Min": 2.0,
+            "Max": 2.0
+          },
+          "InputDuration": {
+            "Min": 0.0,
+            "Max": 0.0
+          }
+        },
+        {
+          "Key": {
+            "KeyName": "None"
+          },
+          "InputAction": {
+            "AssetPathName": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_Sprint_Toggle.IA_Player_Sprint_Toggle",
+            "SubPathString": ""
+          },
+          "InputInterval": {
+            "Min": 2.0,
+            "Max": 2.0
+          },
+          "InputDuration": {
+            "Min": 1.0,
+            "Max": 3.0
+          }
+        },
+        {
+          "Key": {
+            "KeyName": "None"
+          },
+          "InputAction": {
+            "AssetPathName": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_Prone.IA_Player_Prone",
+            "SubPathString": ""
+          },
+          "InputInterval": {
+            "Min": 3.0,
+            "Max": 5.0
+          },
+          "InputDuration": {
+            "Min": 0.5,
+            "Max": 1.0
+          }
+        },
+        {
+          "Key": {
+            "KeyName": "None"
+          },
+          "InputAction": {
+            "AssetPathName": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_Crouch.IA_Player_Crouch",
+            "SubPathString": ""
+          },
+          "InputInterval": {
+            "Min": 1.0,
+            "Max": 2.0
+          },
+          "InputDuration": {
+            "Min": 0.5,
+            "Max": 1.0
+          }
+        }
+      ],
+      "InputMethod": "EWDAutomatedTestInputMethod::Asynchronous",
+      "ConsoleCommands": [],
+      "bCustomSpawnMode": false
+    },
+    "DownedCharacter": {
+      "PawnToControl": {
+        "AssetPathName": "/Game/MoverTesting/B_WDMoverPlayerCharacter.B_WDMoverPlayerCharacter_C",
+        "SubPathString": ""
+      },
+      "CustomTestFunction": {
+        "AssetPathName": "/Game/Tests/LoadTests/Orchestrators/RandomScatter/CustomTestFunctions/B_AutoTestFunc_DownedPlayer.B_AutoTestFunc_DownedPlayer_C",
+        "SubPathString": ""
+      },
+      "AutomatedInputs": [
+        {
+          "Key": {
+            "KeyName": "None"
+          },
+          "InputAction": {
+            "AssetPathName": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_MoveDirectional.IA_Player_MoveDirectional",
+            "SubPathString": ""
+          },
+          "InputInterval": {
+            "Min": 2.0,
+            "Max": 2.0
+          },
+          "InputDuration": {
+            "Min": 1.0,
+            "Max": 3.0
+          }
+        },
+        {
+          "Key": {
+            "KeyName": "None"
+          },
+          "InputAction": {
+            "AssetPathName": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_Jump.IA_Player_Jump",
+            "SubPathString": ""
+          },
+          "InputInterval": {
+            "Min": 2.0,
+            "Max": 2.0
+          },
+          "InputDuration": {
+            "Min": 0.0,
+            "Max": 0.0
+          }
+        },
+        {
+          "Key": {
+            "KeyName": "None"
+          },
+          "InputAction": {
+            "AssetPathName": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_Sprint_Toggle.IA_Player_Sprint_Toggle",
+            "SubPathString": ""
+          },
+          "InputInterval": {
+            "Min": 2.0,
+            "Max": 2.0
+          },
+          "InputDuration": {
+            "Min": 1.0,
+            "Max": 3.0
+          }
+        },
+        {
+          "Key": {
+            "KeyName": "None"
+          },
+          "InputAction": {
+            "AssetPathName": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_Prone.IA_Player_Prone",
+            "SubPathString": ""
+          },
+          "InputInterval": {
+            "Min": 3.0,
+            "Max": 5.0
+          },
+          "InputDuration": {
+            "Min": 0.5,
+            "Max": 1.0
+          }
+        },
+        {
+          "Key": {
+            "KeyName": "None"
+          },
+          "InputAction": {
+            "AssetPathName": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_Crouch.IA_Player_Crouch",
+            "SubPathString": ""
+          },
+          "InputInterval": {
+            "Min": 1.0,
+            "Max": 2.0
+          },
+          "InputDuration": {
+            "Min": 0.5,
+            "Max": 1.0
+          }
+        },
+        {
+          "Key": {
+            "KeyName": "None"
+          },
+          "InputAction": {
+            "AssetPathName": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_DownedGiveUp.IA_Player_DownedGiveUp",
+            "SubPathString": ""
+          },
+          "InputInterval": {
+            "Min": 1.0,
+            "Max": 2.0
+          },
+          "InputDuration": {
+            "Min": 0.5,
+            "Max": 5.0
+          }
+        }
+      ],
+      "InputMethod": "EWDAutomatedTestInputMethod::Asynchronous",
+      "ConsoleCommands": [],
+      "bCustomSpawnMode": false
+    },
+    "TriggerHappyCharacter": {
+      "PawnToControl": {
+        "AssetPathName": "/Game/MoverTesting/B_WDMoverPlayerCharacter.B_WDMoverPlayerCharacter_C",
+        "SubPathString": ""
+      },
+      "CustomTestFunction": {
+        "AssetPathName": "/Game/Tests/LoadTests/Orchestrators/RandomScatter/CustomTestFunctions/B_AutoTestFunc_TriggerHappyPlayer.B_AutoTestFunc_TriggerHappyPlayer_C",
+        "SubPathString": ""
+      },
+      "AutomatedInputs": [
+        {
+          "Key": {
+            "KeyName": "None"
+          },
+          "InputAction": {
+            "AssetPathName": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_MoveDirectional.IA_Player_MoveDirectional",
+            "SubPathString": ""
+          },
+          "InputInterval": {
+            "Min": 0.0,
+            "Max": 0.0
+          },
+          "InputDuration": {
+            "Min": 1.0,
+            "Max": 1.0
+          }
+        },
+        {
+          "Key": {
+            "KeyName": "None"
+          },
+          "InputAction": {
+            "AssetPathName": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_PrimaryUse.IA_Player_PrimaryUse",
+            "SubPathString": ""
+          },
+          "InputInterval": {
+            "Min": 0.0,
+            "Max": 5.0
+          },
+          "InputDuration": {
+            "Min": 10.0,
+            "Max": 10.0
+          }
+        }
+      ],
+      "InputMethod": "EWDAutomatedTestInputMethod::Asynchronous",
+      "ConsoleCommands": [
+        "WD.Player.SetInfiniteAmmo True",
+        "WD.Player.SetInvulnerable True"
+      ],
+      "bCustomSpawnMode": true
+    },
+    "MovementCharacter": {
+      "PawnToControl": {
+        "AssetPathName": "/Game/MoverTesting/B_WDMoverPlayerCharacter.B_WDMoverPlayerCharacter_C",
+        "SubPathString": ""
+      },
+      "CustomTestFunction": {
+        "AssetPathName": "/Game/Tests/LoadTests/Orchestrators/RandomScatter/CustomTestFunctions/B_AutomatedTestFunc_CustomSpawner.B_AutomatedTestFunc_CustomSpawner_C",
+        "SubPathString": ""
+      },
+      "AutomatedInputs": [
+        {
+          "Key": {
+            "KeyName": "None"
+          },
+          "InputAction": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "InputInterval": {
+            "Min": 10.0,
+            "Max": 10.0
+          },
+          "InputDuration": {
+            "Min": 10.0,
+            "Max": 10.0
+          }
+        },
+        {
+          "Key": {
+            "KeyName": "W"
+          },
+          "InputAction": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "InputInterval": {
+            "Min": 20.0,
+            "Max": 20.0
+          },
+          "InputDuration": {
+            "Min": 20.0,
+            "Max": 20.0
+          }
+        },
+        {
+          "Key": {
+            "KeyName": "None"
+          },
+          "InputAction": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "InputInterval": {
+            "Min": 10.0,
+            "Max": 10.0
+          },
+          "InputDuration": {
+            "Min": 10.0,
+            "Max": 10.0
+          }
+        }
+      ],
+      "InputMethod": "EWDAutomatedTestInputMethod::Sequential",
+      "ConsoleCommands": [],
+      "bCustomSpawnMode": true
+    }
+  }
+}

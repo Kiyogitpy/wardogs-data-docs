@@ -1,0 +1,124 @@
+--- export: UDataTable / DT_Skills_Spotting ---
+{
+  "Type": "DataTable",
+  "Name": "DT_Skills_Spotting",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Spotting/Data/Skills/DT_Skills_Spotting",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDMetaSkillEffectsTaggedTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Meta.Role.Recon.IncreasedSpottedTime": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Character"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Spotting_IncreasedSpottedTime_C'",
+                  "ObjectPath": "/Spotting/Data/GameplayEffects/GE_Spotting_IncreasedSpottedTime.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Spotting.SpottedTimeMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_ReconSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_ReconSkills.0"
+                        },
+                        "RowName": "IncreasedSpottedTime"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "DefaultAttributes": [
+                      {
+                        "Key": {
+                          "TagName": "Attribute.Gameplay.Spotting.SpottedTimeMultiplier"
+                        },
+                        "Value": 1.0
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Recon.IncreasedSpottedTime"
+      }
+    },
+    "Meta.Role.Recon.IncreasedSpottingDuration": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Item"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Spotting_IncreasedSpottingDuration_C'",
+                  "ObjectPath": "/Spotting/Data/GameplayEffects/GE_Spotting_IncreasedSpottingDuration.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Spotting.SpottingDurationMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_ReconSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_ReconSkills.0"
+                        },
+                        "RowName": "IncreasedSpottingDuration"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "DefaultAttributes": [
+                      {
+                        "Key": {
+                          "TagName": "Attribute.Gameplay.Spotting.SpottingDurationMultiplier"
+                        },
+                        "Value": 1.0
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Recon.IncreasedSpottingDuration"
+      }
+    }
+  }
+}

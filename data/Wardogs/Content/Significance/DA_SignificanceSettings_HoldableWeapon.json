@@ -1,0 +1,38 @@
+--- export: UDataAsset / DA_SignificanceSettings_HoldableWeapon ---
+{
+  "Type": "BHSignificanceSettingsAsset",
+  "Name": "DA_SignificanceSettings_HoldableWeapon",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHSignificanceSettingsAsset'",
+  "Package": "/Game/Significance/DA_SignificanceSettings_HoldableWeapon",
+  "Properties": {
+    "SignificanceEvaluators": [
+      {
+        "ObjectName": "BHSignificanceEvaluator_Sphere'DA_Significance_Evaluator_Sphere_HoldableWeapon'",
+        "ObjectPath": "/Game/Significance/Evaluators/DA_Significance_Evaluator_Sphere_HoldableWeapon.0"
+      }
+    ],
+    "LevelSettings": [
+      {
+        "TickRate": 0.0,
+        "SignificanceUpdateRate": 0.15,
+        "LocationUpdateRate": 0.03
+      },
+      {
+        "TickRate": 0.1,
+        "SignificanceUpdateRate": 0.25,
+        "LocationUpdateRate": 0.1
+      },
+      {
+        "TickRate": 0.33,
+        "SignificanceUpdateRate": 0.5,
+        "LocationUpdateRate": 1.0
+      },
+      {
+        "TickRate": 0.75,
+        "SignificanceUpdateRate": 1.0,
+        "LocationUpdateRate": 2.0
+      }
+    ]
+  }
+}

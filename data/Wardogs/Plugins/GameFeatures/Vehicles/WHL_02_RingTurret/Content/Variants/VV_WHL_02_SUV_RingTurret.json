@@ -1,0 +1,108 @@
+--- export: UPrimaryDataAsset / VV_WHL_02_SUV_RingTurret ---
+{
+  "Type": "ModularVehicleVariant",
+  "Name": "VV_WHL_02_SUV_RingTurret",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleVariant'",
+  "Package": "/WHL_02_RingTurret/Variants/VV_WHL_02_SUV_RingTurret",
+  "Properties": {
+    "bIncludeInBuildCommandLine": true,
+    "VariantID": {
+      "TagName": "Vehicle.Variant.Land.Wheeled.Kodiak.MachineGun"
+    },
+    "SpawnParams": {
+      "Min": {
+        "X": -346.63126,
+        "Y": -148.47139,
+        "Z": -0.45649338
+      },
+      "Max": {
+        "X": 301.86328,
+        "Y": 147.63188,
+        "Z": 334.0166
+      }
+    },
+    "bUseFixedBounds": true,
+    "FixedBounds": {
+      "Min": {
+        "X": -346.63126,
+        "Y": -148.47139,
+        "Z": -0.45649338
+      },
+      "Max": {
+        "X": 301.86328,
+        "Y": 147.63188,
+        "Z": 334.0166
+      }
+    },
+    "AssemblyData": {
+      "VehicleBase": {
+        "ObjectName": "ModularVehiclePlatform'VP_WHL_02'",
+        "ObjectPath": "/WHL_02/Platforms/VP_WHL_02.0"
+      },
+      "CustomData": {
+        "SlotOverrides": [
+          {
+            "Path": {
+              "Path": "Seats"
+            },
+            "Part": {
+              "AssetPathName": "/WHL_02_RingTurret/Parts/VP_WHL_02_SUV_RingTurret_Seats.VP_WHL_02_SUV_RingTurret_Seats",
+              "SubPathString": ""
+            }
+          },
+          {
+            "Path": {
+              "Path": "Rearback"
+            },
+            "Part": {
+              "AssetPathName": "/WHL_02/Parts/SUV/VP_WHL_02_RearBack_SUV.VP_WHL_02_RearBack_SUV",
+              "SubPathString": ""
+            }
+          },
+          {
+            "Path": {
+              "Path": "Rearback.Chassis"
+            },
+            "Part": {
+              "AssetPathName": "/WHL_02_RingTurret/Parts/VP_WHL_02_RearBack_SUV_Chassis_Turret.VP_WHL_02_RearBack_SUV_Chassis_Turret",
+              "SubPathString": ""
+            }
+          },
+          {
+            "Path": {
+              "Path": "Rearback.Chassis.Turret"
+            },
+            "Part": {
+              "AssetPathName": "/WHL_02_RingTurret/Parts/VP_WHL_02_SUV_RingTurret.VP_WHL_02_SUV_RingTurret",
+              "SubPathString": ""
+            }
+          },
+          {
+            "Path": {
+              "Path": "Body"
+            },
+            "Part": {
+              "AssetPathName": "/WHL_02_RingTurret/Parts/VP_WHL_02_MainBody_MachineGun.VP_WHL_02_MainBody_MachineGun",
+              "SubPathString": ""
+            }
+          }
+        ],
+        "CustomFragmentData": [
+          {
+            "Path": {
+              "Path": ":Chassis"
+            },
+            "Data": {
+              "OverrideMesh": {
+                "AssetPathName": "/WHL_02/SkeletalMeshes/SK_WHL_02_SUV.SK_WHL_02_SUV",
+                "SubPathString": ""
+              },
+              "OverrideMaterials": []
+            }
+          }
+        ]
+      }
+    }
+  }
+}

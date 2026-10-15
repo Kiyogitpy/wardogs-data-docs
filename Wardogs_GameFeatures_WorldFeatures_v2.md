@@ -4,7 +4,7 @@ parent: "Game Features"
 ---
 
 # Wardogs — GameFeatures: WorldFeatures (v2)
-*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/GameFeatures/WorldFeatures/` — 31 JSON files. Values are raw export values. StateTree internals were summarised, not decoded.*
+*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: [`Plugins/GameFeatures/WorldFeatures/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures) — 31 JSON files. Values are raw export values. StateTree internals were summarised, not decoded.*
 
 ---
 
@@ -15,7 +15,7 @@ WorldFeatures are the in-world objectives and props that the map places: the **H
 | Metric | Value |
 |---|---|
 | Files | 31 |
-| GameFeatureData packs | 3 (`HotZoneMagnet`, `Lootable`, `SpawnZoneTest`) |
+| GameFeatureData packs | 3 ([`HotZoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/HotZoneMagnet.json), [`Lootable`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/Lootable/Content/Lootable.json), [`SpawnZoneTest`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/SpawnZoneTest/Content/SpawnZoneTest.json)) |
 | DataTables | 10 |
 | StateTrees | 3 (challenge event trees in HotZoneMagnet) |
 | Interaction data assets | 3 (HotZoneMagnet) |
@@ -39,13 +39,13 @@ Data registries added by the GFD:
 
 | Registry | Table |
 |---|---|
-| `RewardFeed` | `DT_RewardFeedActions_HotZoneMagnet` |
-| `TrackerData_Minimap` | `DT_TrackerData_Map_HotZoneMagnet` |
-| `TooltipData` | `DT_TooltipData_HotZoneMagnet` |
-| `UIInteractionContextV1` | `DT_InteractionContexts_HotZoneMagnet` |
-| `UIInteractionContextData` | `DT_InteractionContextData_HotZoneMagnet` |
-| `Challenges` | `DT_Challenges_SessionEvents_KOTH_HotZoneMagnet` (0 rows) |
-| `ChallengeRewards` | `DT_ChallengeRewards_SessionEvents_HotZoneMagnet` |
+| `RewardFeed` | [`DT_RewardFeedActions_HotZoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Data/UI/RewardFeed/DT_RewardFeedActions_HotZoneMagnet.json) |
+| `TrackerData_Minimap` | [`DT_TrackerData_Map_HotZoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Data/UI/MapTrackers/DT_TrackerData_Map_HotZoneMagnet.json) |
+| `TooltipData` | [`DT_TooltipData_HotZoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Data/UI/MapTrackers/DT_TooltipData_HotZoneMagnet.json) |
+| `UIInteractionContextV1` | [`DT_InteractionContexts_HotZoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Data/DT_InteractionContexts_HotZoneMagnet.json) |
+| `UIInteractionContextData` | [`DT_InteractionContextData_HotZoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Data/DT_InteractionContextData_HotZoneMagnet.json) |
+| `Challenges` | [`DT_Challenges_SessionEvents_KOTH_HotZoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Data/Challenges/DT_Challenges_SessionEvents_KOTH_HotZoneMagnet.json) (0 rows) |
+| `ChallengeRewards` | [`DT_ChallengeRewards_SessionEvents_HotZoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Data/Challenges/DT_ChallengeRewards_SessionEvents_HotZoneMagnet.json) |
 
 ### 2b. Interactions
 
@@ -53,13 +53,13 @@ Three interaction data assets. Each holds an `InteractionContext`, behaviour, an
 
 | Asset | Context tag | Behaviour | Duration (s) |
 |---|---|---|---|
-| `DA_HotzoneMagnet_Interactions` | `Interaction.Context.WorldFeatures.TowerControl` | Hold | 10.0 |
-| `DA_HotzoneMagnetHitInput_Interactions` | `Interaction.Context.WorldFeatures.HotZoneMagnet` | Tap | 0.3 |
-| `DA_HotzoneMagnetHitPoint_Interactions` | `Interaction.Context.WorldFeatures.HotZoneHitPoint` | Hold | 0.5 |
+| [`DA_HotzoneMagnet_Interactions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Data/DA_HotzoneMagnet_Interactions.json) | `Interaction.Context.WorldFeatures.TowerControl` | Hold | 10.0 |
+| [`DA_HotzoneMagnetHitInput_Interactions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Data/DA_HotzoneMagnetHitInput_Interactions.json) | `Interaction.Context.WorldFeatures.HotZoneMagnet` | Tap | 0.3 |
+| [`DA_HotzoneMagnetHitPoint_Interactions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Data/DA_HotzoneMagnetHitPoint_Interactions.json) | `Interaction.Context.WorldFeatures.HotZoneHitPoint` | Hold | 0.5 |
 
 The context type is `WDHotZoneMagnetInteractionContext`. Tower control is a 10-second hold. The hit-input and hit-point contexts are short tap and hold actions.
 
-### 2c. Challenge rewards (`DT_ChallengeRewards_SessionEvents_HotZoneMagnet`)
+### 2c. Challenge rewards ([`DT_ChallengeRewards_SessionEvents_HotZoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Data/Challenges/DT_ChallengeRewards_SessionEvents_HotZoneMagnet.json))
 
 Three rows, each with a `Resources` list of cash and XP.
 
@@ -78,8 +78,8 @@ The three `ST_Challenges_SessionEvents_KOTH_HotZoneMagnet_*` StateTrees (`TowerC
 
 | Asset | Type | Notes |
 |---|---|---|
-| `DA_Tracker_Map_HotZoneMagnet` | `WDUIMapTrackerData` | Standard map tracker |
-| `DA_Tracker_Map_HotZoneMagnetTower` | `WDUIHotZoneMagnetMapTrackerData` | Has `Title` and `CooldownDescription` |
+| [`DA_Tracker_Map_HotZoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Data/UI/MapTrackers/DA_Tracker_Map_HotZoneMagnet.json) | `WDUIMapTrackerData` | Standard map tracker |
+| [`DA_Tracker_Map_HotZoneMagnetTower`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Data/UI/MapTrackers/DA_Tracker_Map_HotZoneMagnetTower.json) | `WDUIHotZoneMagnetMapTrackerData` | Has `Title` and `CooldownDescription` |
 
 Tracker rows: `Trackers.Type.HotZoneMagnet` and `Trackers.Type.HotZoneMagnetTower`. Tooltip rows: `UI.Tooltip.Data.TacticalMap.HotZoneMagnet` and `…HotZoneMagnetTower`.
 
@@ -87,8 +87,8 @@ Tracker rows: `Trackers.Type.HotZoneMagnet` and `Trackers.Type.HotZoneMagnetTowe
 
 | Asset | Type | Content |
 |---|---|---|
-| `AE_Gamemode_HotZoneMagnet_Activate` | `AEB_PlayHotzoneMagnetActivate` | Plays the tower-magnet MetaSound on context `Audio.Context.Gamemode.HotZoneMagnet.Activate` |
-| `AE_Gamemode_HotZoneMagnet_Capture_Success` | `AEB_PlaySoundDelayed` | Plays `MSS_Gamemode_HotZoneMagnet_Code_Correct` after a 0.5 s delay, restart behaviour Always |
+| [`AE_Gamemode_HotZoneMagnet_Activate`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Audio/Events/AE_Gamemode_HotZoneMagnet_Activate.json) | `AEB_PlayHotzoneMagnetActivate` | Plays the tower-magnet MetaSound on context `Audio.Context.Gamemode.HotZoneMagnet.Activate` |
+| [`AE_Gamemode_HotZoneMagnet_Capture_Success`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Audio/Events/AE_Gamemode_HotZoneMagnet_Capture_Success.json) | `AEB_PlaySoundDelayed` | Plays `MSS_Gamemode_HotZoneMagnet_Code_Correct` after a 0.5 s delay, restart behaviour Always |
 
 Seven crosstalk audio events cover the activate, deactivate, capture start and stop, and the code attempt states (`Clear`, `Incorrect`, `Input`, `Locked`).
 
@@ -99,10 +99,10 @@ Seven crosstalk audio events cover the activate, deactivate, capture start and s
 | Item | Value |
 |---|---|
 | Components | `B_LootableComponent` on `WDGameFrameworkComponentReceiver` |
-| Interaction registries | `DT_InteractionContexts_Lootable`, `DT_InteractionContextData_Lootable` |
+| Interaction registries | [`DT_InteractionContexts_Lootable`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/Lootable/Content/Data/DT_InteractionContexts_Lootable.json), [`DT_InteractionContextData_Lootable`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/Lootable/Content/Data/DT_InteractionContextData_Lootable.json) |
 | Contexts | `Interaction.Context.WorldFeatures.Lootable.Equip`, `…Lootable.Swap` |
-| Loot table | `DT_LootableDataTable` (12 rows) |
-| Query | `EQS_FindSubLootableLocation` |
+| Loot table | [`DT_LootableDataTable`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/Lootable/Content/Data/DT_LootableDataTable.json) (12 rows) |
+| Query | [`EQS_FindSubLootableLocation`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/Lootable/Content/Data/EQS_FindSubLootableLocation.json) |
 
 ### 3a. Loot rows
 

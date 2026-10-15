@@ -1,0 +1,45 @@
+--- export: UDataAsset / IA_Vehicle_Weapon_ADS ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Vehicle_Weapon_ADS",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_ADS",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.WeaponExtension.ADS"
+    },
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerPressed'IA_Vehicle_Weapon_ADS:InputTriggerPressed_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_ADS.1"
+      },
+      {
+        "ObjectName": "InputTriggerReleased'IA_Vehicle_Weapon_ADS:InputTriggerReleased_1'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_ADS.2"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_Weapon_ADS'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_ADS.0"
+  }
+}
+--- export: UObject / InputTriggerReleased_1 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_Weapon_ADS'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_ADS.0"
+  }
+}

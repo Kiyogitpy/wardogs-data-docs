@@ -1,0 +1,117 @@
+--- export: UDataAsset / DA_LocationContext ---
+{
+  "Type": "WDUILocationContextData",
+  "Name": "DA_LocationContext",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUILocationContextData'",
+  "Package": "/Game/UI/Features/HUD/LocationContext/Data/DA_LocationContext",
+  "Properties": {
+    "LocationSettings": [
+      {
+        "Key": {
+          "TagName": "State.Location.Objective.Hotzone"
+        },
+        "Value": {
+          "DisplayText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+            "Key": "HUD.Location.HotZone",
+            "SourceString": "HOT ZONE",
+            "LocalizedString": "HOT ZONE"
+          },
+          "bPermanent": false,
+          "DisplayLength": 5.0,
+          "Priority": 128
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Location.Objective.ControlZone"
+        },
+        "Value": {
+          "DisplayText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+            "Key": "HUD.Location.ControlZone",
+            "SourceString": "CONTROL ZONE",
+            "LocalizedString": "CONTROL ZONE"
+          },
+          "bPermanent": false,
+          "DisplayLength": 5.0,
+          "Priority": 127
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Location.OutOfBounds"
+        },
+        "Value": {
+          "DisplayText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+            "Key": "HUD.Location.OutOfBounds",
+            "SourceString": "Return to the\r\nCombat Area",
+            "LocalizedString": "Return to the\r\nCombat Area"
+          },
+          "bPermanent": false,
+          "DisplayLength": 5.0,
+          "Priority": 127
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Location.SafeZone"
+        },
+        "Value": {
+          "DisplayText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+            "Key": "HUD.Location.SafeZone",
+            "SourceString": "SAFE ZONE",
+            "LocalizedString": "SAFE ZONE"
+          },
+          "bPermanent": true,
+          "DisplayLength": 5.0,
+          "Priority": 127
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Location.SafeZone.Hostile"
+        },
+        "Value": {
+          "DisplayText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+            "Key": "HUD.Location.Safezone.Hostile",
+            "SourceString": "HOSTILE SAFE ZONE",
+            "LocalizedString": "HOSTILE SAFE ZONE"
+          },
+          "bPermanent": false,
+          "DisplayLength": 5.0,
+          "Priority": 127
+        }
+      }
+    ],
+    "NoMansLandSettings": {
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+        "Key": "HUD.Location.NoMansLand",
+        "SourceString": "NO MANS LAND",
+        "LocalizedString": "NO MANS LAND"
+      }
+    },
+    "ExtensionTemplates": [
+      {
+        "ObjectName": "WDUIViewModelExtension_HideReasons'DA_LocationContext:WDUIViewModelExtension_HideReasons_0'",
+        "ObjectPath": "/Game/UI/Features/HUD/LocationContext/Data/DA_LocationContext.1"
+      }
+    ]
+  }
+}
+--- export: UObject / WDUIViewModelExtension_HideReasons_0 ---
+{
+  "Type": "WDUIViewModelExtension_HideReasons",
+  "Name": "WDUIViewModelExtension_HideReasons_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIViewModelExtension_HideReasons'",
+  "Outer": {
+    "ObjectName": "WDUILocationContextData'DA_LocationContext'",
+    "ObjectPath": "/Game/UI/Features/HUD/LocationContext/Data/DA_LocationContext.0"
+  }
+}

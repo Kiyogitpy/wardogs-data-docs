@@ -1,0 +1,94 @@
+--- export: UObject / AEB_SetSourceTransformParameters_C_0 ---
+{
+  "Type": "AEB_SetSourceTransformParameters_C",
+  "Name": "AEB_SetSourceTransformParameters_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetSourceTransformParameters.AEB_SetSourceTransformParameters_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Swimming_Start'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Swimming/AE_Swimming_Start.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetSourceTransformParameters_C'Default__AEB_SetSourceTransformParameters_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetSourceTransformParameters.0"
+  },
+  "Properties": {
+    "Continuous": true,
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Footstep"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Swimming_Start ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Swimming_Start",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Movement/Swimming/AE_Swimming_Start",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.Swimming.Start"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Swimming_Start:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Swimming/AE_Swimming_Start.2"
+      },
+      {
+        "ObjectName": "AEB_SetSourceTransformParameters_C'AE_Swimming_Start:AEB_SetSourceTransformParameters_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Swimming/AE_Swimming_Start.0"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware'AE_Swimming_Start:WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Swimming/AE_Swimming_Start.3"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Swimming_Start'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Swimming/AE_Swimming_Start.1"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Footstep"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0 ---
+{
+  "Type": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware",
+  "Name": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Swimming_Start'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Swimming/AE_Swimming_Start.1"
+  },
+  "Properties": {
+    "FirstPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Swim.SwimStart.1p"
+    },
+    "AlliedThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Swim.SwimStart.Ally"
+    },
+    "HostileThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Swim.SwimStart.Enemy"
+    },
+    "SoundAssetData": {
+      "ObjectName": "WDAudioData'DA_Player_Swim_SwimStart'",
+      "ObjectPath": "/Game/Audio/Player/Movement/Swimming/DA/DA_Player_Swim_SwimStart.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Footstep"
+    },
+    "bStatic": true
+  }
+}

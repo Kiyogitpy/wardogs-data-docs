@@ -1,0 +1,84 @@
+--- export: UDataAsset / DA_ChatboxButtonPromptsBar ---
+{
+  "Type": "WDUIButtonPromptsBarData",
+  "Name": "DA_ChatboxButtonPromptsBar",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIButtonPromptsBarData'",
+  "Package": "/Game/UI/Features/HUD/Chatbox/Data/DA_ChatboxButtonPromptsBar",
+  "Properties": {
+    "ButtonPromptViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIButtonPromptViewModel",
+        "SubPathString": ""
+      }
+    },
+    "UIActionTags": [
+      {
+        "ActionPromptTag": {
+          "TagName": "UI.Action.Feature.Chat.NavigateMessages"
+        },
+        "ChordedActionPromptTag": {
+          "TagName": "None"
+        },
+        "ActionPromptText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+          "Key": "HUD_Chat_ControllerNavigateMessages",
+          "SourceString": "Navigate",
+          "LocalizedString": "Navigate"
+        },
+        "IsHoldable": false,
+        "bUseActionShortName": false,
+        "bUseChordedActionShortName": false,
+        "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+        "ChordedActionPromptTag": [],
+        "ChordedActionPromptTag": [],
+        "_aaabhmnakckdbejpcmlmc_$CD0A2A3149F2CBC2$_$23$": [],
+        "_aaabhahinfhbanpdncpjc_$78D5710DF3D2F92$_$23$": []
+      },
+      {
+        "ActionPromptTag": {
+          "TagName": "UI.Action.Feature.Chat.SelectMessage"
+        },
+        "ChordedActionPromptTag": {
+          "TagName": "None"
+        },
+        "ActionPromptText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+          "Key": "HUD_Chat_ControllerSelectMessagePrompt",
+          "SourceString": "Select",
+          "LocalizedString": "Select"
+        },
+        "IsHoldable": false,
+        "bUseActionShortName": false,
+        "bUseChordedActionShortName": false,
+        "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+        "ChordedActionPromptTag": [],
+        "ChordedActionPromptTag": [],
+        "_aaabhmnakckdbejpcmlmc_$CD0A2A3149F2CBC2$_$23$": [],
+        "_aaabhahinfhbanpdncpjc_$78D5710DF3D2F92$_$23$": []
+      },
+      {
+        "ActionPromptTag": {
+          "TagName": "UI.Action.Feature.Chat.CloseChatbox"
+        },
+        "ChordedActionPromptTag": {
+          "TagName": "None"
+        },
+        "ActionPromptText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+          "Key": "HUD_Chat_ControllerCloseChatboxPromp",
+          "SourceString": "Cancel",
+          "LocalizedString": "Cancel"
+        },
+        "IsHoldable": false,
+        "bUseActionShortName": false,
+        "bUseChordedActionShortName": false,
+        "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+        "ChordedActionPromptTag": [],
+        "ChordedActionPromptTag": [],
+        "_aaabhmnakckdbejpcmlmc_$CD0A2A3149F2CBC2$_$23$": [],
+        "_aaabhahinfhbanpdncpjc_$78D5710DF3D2F92$_$23$": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+--- export: UPrimaryDataAsset / DA_Drone_ProjectileData ---
+{
+  "Type": "WDProjectileData",
+  "Name": "DA_Drone_ProjectileData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDProjectileData'",
+  "Package": "/STN_05/Data/Projectile/DA_Drone_ProjectileData",
+  "Properties": {
+    "ProjectileId": {
+      "TagName": "Item.Caliber.DroneProjectile"
+    },
+    "ProjectileStats": {
+      "DamageEntityData": {
+        "Tag": {
+          "TagName": "Meta.Damage.Explosive.Drone"
+        }
+      },
+      "DamageValues": {
+        "BaseDamage": 120.0,
+        "ExplosiveRadius": 1000.0,
+        "MinimumExplosiveDamage": 15.0,
+        "EffectiveExplosiveRadius": 500.0,
+        "ExplosiveDamageFallOff": 0.45,
+        "ExplosiveBluntDamage": 100.0,
+        "ImpulseValues": {
+          "bApplyImpulse": true,
+          "ImpulseScale": 2500.0,
+          "ImpulseZScale": 3500.0
+        }
+      },
+      "ProjectileDimensions": {
+        "Length": 130.0,
+        "Diameter": 10.0,
+        "Mass": 10.0,
+        "DragModel": {
+          "Curve": {
+            "CurveTable": {
+              "ObjectName": "CurveTable'CT_Projectile_DragCoefficients'",
+              "ObjectPath": "/Game/Items/Resources/Ammo/Curves/CT_Projectile_DragCoefficients.0"
+            },
+            "RowName": "GC (Cylinder)"
+          }
+        }
+      },
+      "ProjectileEffects": {
+        "GameplayCueTag": {
+          "TagName": "GameplayCue.Weapon.RocketProjectile"
+        },
+        "AudioEventTag": {
+          "TagName": "Audio.Event.Projectile.Rocket.Travel.Drone"
+        }
+      },
+      "SuppressionData": {
+        "BaseSuppression": 0.8,
+        "DistanceFalloffCurve": {
+          "EditorCurveData": {}
+        }
+      },
+      "bHasArmingDelay": true,
+      "ArmingDelay": 0.1,
+      "MaxProjectileLifetime": 500.0,
+      "AttachedEffect": {
+        "AssetPathName": "/Game/VFX/Weapons/RocketLauncher/NS_ProjectileTrail_40mm.NS_ProjectileTrail_40mm",
+        "SubPathString": ""
+      },
+      "bUseProjectileActor": true,
+      "ProjectileActor": {
+        "AssetPathName": "/STN_05/Blueprints/BP_Drone_Projectile.BP_Drone_Projectile_C",
+        "SubPathString": ""
+      },
+      "bActorHandlesProjectileMovement": true,
+      "bShouldTakeViewTarget": true,
+      "TracerChance": 1.0,
+      "TypicalSpeed": 15000.0,
+      "bShouldPenetrate": false,
+      "MinImpactAngleForRicochet": 91.0,
+      "bShouldPreSimulate": false,
+      "ThrustSpeed": 22000.0,
+      "bClientPredictive": false,
+      "PerceivedImpactRange": 100000.0,
+      "IgnoreInstigatorVehicleTime": 0.5
+    }
+  }
+}

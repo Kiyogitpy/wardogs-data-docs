@@ -4,7 +4,7 @@ parent: "Game Features"
 ---
 
 # Wardogs — GameFeatures: WDCharacterComponents (v2)
-*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/GameFeatures/WDCharacterComponents/` — 1 JSON file (`Content/WDCharacterComponents.json`, 2 exports).*
+*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: [`Plugins/GameFeatures/WDCharacterComponents/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/WDCharacterComponents) — 1 JSON file ([`Content/WDCharacterComponents.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WDCharacterComponents/Content/WDCharacterComponents.json), 2 exports).*
 
 ---
 

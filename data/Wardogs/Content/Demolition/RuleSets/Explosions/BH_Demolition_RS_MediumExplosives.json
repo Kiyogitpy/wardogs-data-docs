@@ -1,0 +1,44 @@
+--- export: UDataAsset / BH_Demolition_RS_MediumExplosives ---
+{
+  "Type": "BHDemolitionRuleset",
+  "Name": "BH_Demolition_RS_MediumExplosives",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDemolitionRuleset'",
+  "Package": "/Game/Demolition/RuleSets/Explosions/BH_Demolition_RS_MediumExplosives",
+  "Properties": {
+    "Rule": {
+      "ObjectName": "WDDemolitionRule_Explosion'BH_Demolition_RS_MediumExplosives:WDDemolitionRule_Explosion_0'",
+      "ObjectPath": "/Game/Demolition/RuleSets/Explosions/BH_Demolition_RS_MediumExplosives.1"
+    }
+  }
+}
+--- export: UObject / WDDemolitionRule_Explosion_0 ---
+{
+  "Type": "WDDemolitionRule_Explosion",
+  "Name": "WDDemolitionRule_Explosion_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDDemolitionRule_Explosion'",
+  "Outer": {
+    "ObjectName": "BHDemolitionRuleset'BH_Demolition_RS_MediumExplosives'",
+    "ObjectPath": "/Game/Demolition/RuleSets/Explosions/BH_Demolition_RS_MediumExplosives.0"
+  },
+  "Properties": {
+    "PermittedDamageSources": {
+      "TagDictionary": [
+        {
+          "TagName": "Meta.Damage.Explosive.Rocket"
+        }
+      ],
+      "QueryTokenStream": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "UserDescription": "Medium Explosives",
+      "AutoDescription": " ANY( Meta.Damage.Explosive.Rocket )"
+    },
+    "MinimumDistanceFromExplosionSource": 400.0
+  }
+}

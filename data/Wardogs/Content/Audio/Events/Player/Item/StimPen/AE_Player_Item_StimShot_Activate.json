@@ -1,0 +1,67 @@
+--- export: UObject / AEB_PlayHeldItemPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayHeldItemPerspectiveSound_C",
+  "Name": "AEB_PlayHeldItemPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayHeldItemPerspectiveSound.AEB_PlayHeldItemPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Item_StimShot_Activate'",
+    "ObjectPath": "/Game/Audio/Events/Player/Item/StimPen/AE_Player_Item_StimShot_Activate.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayHeldItemPerspectiveSound_C'Default__AEB_PlayHeldItemPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayHeldItemPerspectiveSound.0"
+  },
+  "Properties": {
+    "FirstPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.StimActivation.1p"
+    },
+    "ThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.StimActivation.3p"
+    },
+    "RestartBehaviour": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Item.StimActivation"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Player_Item_StimShot_Activate ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Player_Item_StimShot_Activate",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Item/StimPen/AE_Player_Item_StimShot_Activate",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Item.StimShot.Activation"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_PlayHeldItemPerspectiveSound_C'AE_Player_Item_StimShot_Activate:AEB_PlayHeldItemPerspectiveSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Item/StimPen/AE_Player_Item_StimShot_Activate.0"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Player_Item_StimShot_Activate:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Item/StimPen/AE_Player_Item_StimShot_Activate.2"
+      }
+    ],
+    "_aaabhonahgpdbjealfaaa_$ED076F31940B5000$_$23$": 50.5
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Item_StimShot_Activate'",
+    "ObjectPath": "/Game/Audio/Events/Player/Item/StimPen/AE_Player_Item_StimShot_Activate.1"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Item.StimActivation"
+    }
+  }
+}

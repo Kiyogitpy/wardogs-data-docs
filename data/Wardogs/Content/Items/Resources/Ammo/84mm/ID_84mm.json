@@ -1,0 +1,143 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_84mm'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/84mm/ID_84mm.4"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 2,
+      "Y": 1
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_84mm'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/84mm/ID_84mm.4"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Items/Resources/Ammo/SM_84mm_Ammo.SM_84mm_Ammo",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_84mm'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/84mm/ID_84mm.4"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_84mm'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/84mm/ID_84mm.4"
+  },
+  "Properties": {
+    "Weight": 3.5
+  }
+}
+--- export: UPrimaryDataAsset / ID_84mm ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_84mm",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Resources/Ammo/84mm/ID_84mm",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.84mm"
+    },
+    "ItemContext": [
+      "Item.Ammo",
+      "Item.Caliber.84mm",
+      "Item.Context.ForceToStorage"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "EC37EE92415B22A2A148D8A9C36F79A6",
+      "SourceString": "84mm",
+      "LocalizedString": "84mm"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_84mm:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/84mm/ID_84mm.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_84mm:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/84mm/ID_84mm.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Projectile'ID_84mm:WDInventoryFragment_Projectile_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/84mm/ID_84mm.6"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_84mm:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/84mm/ID_84mm.5"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_84mm:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/84mm/ID_84mm.0"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_84mm:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/84mm/ID_84mm.3"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_84mm'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/84mm/ID_84mm.4"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Rockets_Audio'",
+      "ObjectPath": "/Game/Items/Resources/Ammo/Rockets/ID_Rockets_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Projectile_0 ---
+{
+  "Type": "WDInventoryFragment_Projectile",
+  "Name": "WDInventoryFragment_Projectile_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Projectile'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_84mm'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/84mm/ID_84mm.4"
+  },
+  "Properties": {
+    "ProjectileData": {
+      "ObjectName": "WDProjectileData'DA_84mm_ProjectileData'",
+      "ObjectPath": "/Game/GameMechanics/Inventory/Equipment/Caliber/84mm/DA_84mm_ProjectileData.0"
+    }
+  }
+}

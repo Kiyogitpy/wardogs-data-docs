@@ -1,0 +1,279 @@
+--- export: UPrimaryDataAsset / VP_WHL_07_Rearback_Protected ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_WHL_07_Rearback_Protected",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/WHL_07/Parts/VP_WHL_07_Rearback_Protected",
+  "Properties": {
+    "Tags": [
+      "Vehicle.Chassis.Rear"
+    ],
+    "Fragments": [
+      {
+        "Key": "TransportBack",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_WHL_07_Rearback_Protected:MVF_StaticMesh_1'",
+            "ObjectPath": "/WHL_07/Parts/VP_WHL_07_Rearback_Protected.2"
+          }
+        }
+      },
+      {
+        "Key": "ArmouredBack",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_WHL_07_Rearback_Protected:MVF_StaticMesh_3'",
+            "ObjectPath": "/WHL_07/Parts/VP_WHL_07_Rearback_Protected.4"
+          }
+        }
+      },
+      {
+        "Key": "ArmouredBackWindows",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_WHL_07_Rearback_Protected:MVF_StaticMesh_0'",
+            "ObjectPath": "/WHL_07/Parts/VP_WHL_07_Rearback_Protected.1"
+          }
+        }
+      },
+      {
+        "Key": "RoofPiece",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_WHL_07_Rearback_Protected:MVF_StaticMesh_2'",
+            "ObjectPath": "/WHL_07/Parts/VP_WHL_07_Rearback_Protected.3"
+          }
+        }
+      },
+      {
+        "Key": "SupplyCrate",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_SupplyCrateFragment'VP_WHL_07_Rearback_Protected:WD_MVF_SupplyCrateFragment_0'",
+            "ObjectPath": "/WHL_07/Parts/VP_WHL_07_Rearback_Protected.5"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / MVF_StaticMesh_0 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_07_Rearback_Protected'",
+    "ObjectPath": "/WHL_07/Parts/VP_WHL_07_Rearback_Protected.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceID": "Chassis",
+        "SocketName": "Cabin_J"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/WHL_07/Meshes/SM_WHL_07_Transport_Armored_Glass.SM_WHL_07_Transport_Armored_Glass",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    },
+    "WalkableSlopeOverride": {
+      "WalkableSlopeBehavior": "EWalkableSlopeBehavior::WalkableSlope_Default"
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_1 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_07_Rearback_Protected'",
+    "ObjectPath": "/WHL_07/Parts/VP_WHL_07_Rearback_Protected.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceID": "Chassis",
+        "SocketName": "truckBed_J"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/WHL_07/Meshes/SM_WHL_07_Transport_Back.SM_WHL_07_Transport_Back",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    },
+    "WalkableSlopeOverride": {
+      "WalkableSlopeBehavior": "EWalkableSlopeBehavior::WalkableSlope_Default"
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_2 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_07_Rearback_Protected'",
+    "ObjectPath": "/WHL_07/Parts/VP_WHL_07_Rearback_Protected.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceID": "Chassis",
+        "SocketName": "Cabin_J"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/WHL_07/Meshes/SM_WHL_07_Transport_Armored_Roof.SM_WHL_07_Transport_Armored_Roof",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    },
+    "WalkableSlopeOverride": {
+      "WalkableSlopeBehavior": "EWalkableSlopeBehavior::WalkableSlope_Default"
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_3 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_07_Rearback_Protected'",
+    "ObjectPath": "/WHL_07/Parts/VP_WHL_07_Rearback_Protected.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceID": "Chassis",
+        "SocketName": "Cabin_J"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/WHL_07/Meshes/SM_WHL_07_Transport_Armored.SM_WHL_07_Transport_Armored",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    },
+    "WalkableSlopeOverride": {
+      "WalkableSlopeBehavior": "EWalkableSlopeBehavior::WalkableSlope_Default"
+    }
+  }
+}
+--- export: UObject / WD_MVF_SupplyCrateFragment_0 ---
+{
+  "Type": "WD_MVF_SupplyCrateFragment",
+  "Name": "WD_MVF_SupplyCrateFragment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_SupplyCrateFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_07_Rearback_Protected'",
+    "ObjectPath": "/WHL_07/Parts/VP_WHL_07_Rearback_Protected.0"
+  },
+  "Properties": {
+    "SupplyCrateSettings": {
+      "bCanSupportSupplyCrates": true,
+      "DeployOffset": {
+        "X": -750.0,
+        "Y": 0.0,
+        "Z": 60.0
+      },
+      "bShouldUseVehicleSpeedCheck": false,
+      "LogisticsSlotSettings": [
+        {
+          "Identifier": {
+            "TableId": "/Game/UI/StringTables/STRINGS_VehicleSettings.STRINGS_VehicleSettings",
+            "Key": "Text.Settings.SupplyCrate.Id.BackSlot",
+            "SourceString": "Back Slot",
+            "LocalizedString": "Back Slot"
+          },
+          "bAccessibleInVehicle": true,
+          "SlotTransform": {
+            "Rotation": {
+              "X": 0.0,
+              "Y": -0.0,
+              "Z": 0.707107,
+              "W": 0.707107,
+              "IsNormalized": true,
+              "Size": 1.0000002,
+              "SizeSquared": 1.0000006
+            },
+            "Translation": {
+              "X": -250.0,
+              "Y": 0.0,
+              "Z": 250.0
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 1.0,
+              "Z": 1.0
+            }
+          },
+          "SlotSize": {
+            "X": 2,
+            "Y": 8
+          },
+          "SpaceEdgeLength": 70.0,
+          "SpaceDimensions": {
+            "X": 120.0,
+            "Y": 55.0,
+            "Z": 150.0
+          },
+          "MeshAdditionalRotation": {
+            "Pitch": 0.0,
+            "Yaw": 90.0,
+            "Roll": 0.0
+          },
+          "MeshAdditionalLocationOffset": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": -88.0
+          },
+          "_aaabfeobnoecnfpfeplfp_$4E1DE42D5F54FB5F$_$21$": false,
+          "DeployOffset": {
+            "X": -750.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "DeployRotationOffset": {
+            "Pitch": 0.0,
+            "Yaw": 0.0,
+            "Roll": 0.0
+          }
+        }
+      ],
+      "_aaabcaefnmhmpelfmpfdj_$45DC7CF4B5CF539$_$18$": 0.95,
+      "SupplyCrateData": {
+        "ObjectName": "WDUISupplyCrateData'DA_SupplyCrateData'",
+        "ObjectPath": "/Game/UI/Features/Vendor/Widgets/LogisticsSlots/Data/DA_SupplyCrateData.0"
+      }
+    }
+  }
+}

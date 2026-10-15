@@ -4,7 +4,7 @@ parent: "Game Features"
 ---
 
 # Wardogs — FlyByManager Game Feature Reference (v2)
-*Extracted from cooked game data (`Wardogs/Plugins/GameFeatures/FlyByManager`, 6 JSON files, all parsed). Build `++Wardogs+Live-CL-509546`, UE 5.7.*
+*Extracted from cooked game data ([`Wardogs/Plugins/GameFeatures/FlyByManager`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/FlyByManager), 6 JSON files, all parsed). Build `++Wardogs+Live-CL-509546`, UE 5.7.*
 
 > **What this is:** the jet fly-by audio plugin. It has **no numeric gameplay data**. It registers gameplay cue and world-partition content, and defines six Crosstalk audio events for two jet types (Jet_01, Jet_02): a moving loop with a Doppler behaviour, a weapon-fire one-shot, and stop events.
 
@@ -14,16 +14,16 @@ parent: "Game Features"
 
 | Asset | Type | Role |
 |---|---|---|
-| `Content/FlyByManager` | `GameFeatureData` + 2 actions | Plugin root |
-| `Content/Audio/Jet_01/Events/AE_Jet` | `CrosstalkAudioEvent` (+ `AEB_Doppler_C` behaviour) | Jet_01 moving loop |
-| `Content/Audio/Jet_01/Events/AE_Jet_Fire` | `CrosstalkAudioEvent` | Jet_01 weapon fire |
-| `Content/Audio/Jet_01/Events/AE_Jet_Stop` | `CrosstalkAudioEvent` | Jet_01 moving stop |
-| `Content/Audio/Jet_02/Events/AE_Jet02` | `CrosstalkAudioEvent` | Jet_02 moving loop |
-| `Content/Audio/Jet_02/Events/AE_Jet02_Stop` | `CrosstalkAudioEvent` | Jet_02 moving stop |
+| [`Content/FlyByManager`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/FlyByManager/Content/FlyByManager.json) | `GameFeatureData` + 2 actions | Plugin root |
+| [`Content/Audio/Jet_01/Events/AE_Jet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/FlyByManager/Content/Audio/Jet_01/Events/AE_Jet.json) | `CrosstalkAudioEvent` (+ `AEB_Doppler_C` behaviour) | Jet_01 moving loop |
+| [`Content/Audio/Jet_01/Events/AE_Jet_Fire`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/FlyByManager/Content/Audio/Jet_01/Events/AE_Jet_Fire.json) | `CrosstalkAudioEvent` | Jet_01 weapon fire |
+| [`Content/Audio/Jet_01/Events/AE_Jet_Stop`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/FlyByManager/Content/Audio/Jet_01/Events/AE_Jet_Stop.json) | `CrosstalkAudioEvent` | Jet_01 moving stop |
+| [`Content/Audio/Jet_02/Events/AE_Jet02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/FlyByManager/Content/Audio/Jet_02/Events/AE_Jet02.json) | `CrosstalkAudioEvent` | Jet_02 moving loop |
+| [`Content/Audio/Jet_02/Events/AE_Jet02_Stop`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/FlyByManager/Content/Audio/Jet_02/Events/AE_Jet02_Stop.json) | `CrosstalkAudioEvent` | Jet_02 moving stop |
 
 ---
 
-## 2. Plugin Root (`FlyByManager`)
+## 2. Plugin Root ([`FlyByManager`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/FlyByManager/Content/FlyByManager.json))
 
 | Action | Setting |
 |---|---|
@@ -42,16 +42,16 @@ Each `CrosstalkAudioEvent` is a list of behaviours. The name tag is the event th
 
 | Event | Name tag | Behaviours (in order) | Sound | Restart | Context tag |
 |---|---|---|---|---|---|
-| `AE_Jet` | none | `AEB_Doppler_C` (Doppler behaviour, `/Game/Audio/Behaviours/AEB_Doppler`); `AttachSoundToActor`; `PlaySound` | `MSS_Vehicles_Jet` (`/FlyByManager/Audio/Jet_01/MSS_Vehicles_Jet`) | `ESoundRestartBehavior::Always` | `Audio.Context.Vehicle.Moving` |
-| `AE_Jet_Fire` | `Audio.Event.Vehicle.Jet.Fire` | `AttachSoundToActor`; `PlaySound` | `MSS_Vehicles_Jet_Firing` | none set | `Audio.Context.Vehicle.Weapon.Fire` |
-| `AE_Jet_Stop` | `Audio.Event.Vehicle.Jet.Moving.Stop` | `StopSound` | (stops the moving loop) | n/a | `Audio.Context.Vehicle.Moving` |
+| [`AE_Jet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/FlyByManager/Content/Audio/Jet_01/Events/AE_Jet.json) | none | `AEB_Doppler_C` (Doppler behaviour, `/Game/Audio/Behaviours/AEB_Doppler`); `AttachSoundToActor`; `PlaySound` | `MSS_Vehicles_Jet` (`/FlyByManager/Audio/Jet_01/MSS_Vehicles_Jet`) | `ESoundRestartBehavior::Always` | `Audio.Context.Vehicle.Moving` |
+| [`AE_Jet_Fire`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/FlyByManager/Content/Audio/Jet_01/Events/AE_Jet_Fire.json) | `Audio.Event.Vehicle.Jet.Fire` | `AttachSoundToActor`; `PlaySound` | `MSS_Vehicles_Jet_Firing` | none set | `Audio.Context.Vehicle.Weapon.Fire` |
+| [`AE_Jet_Stop`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/FlyByManager/Content/Audio/Jet_01/Events/AE_Jet_Stop.json) | `Audio.Event.Vehicle.Jet.Moving.Stop` | `StopSound` | (stops the moving loop) | n/a | `Audio.Context.Vehicle.Moving` |
 
 ### 3b. Jet_02
 
 | Event | Name tag | Behaviours (in order) | Sound | Restart | Context tag |
 |---|---|---|---|---|---|
-| `AE_Jet02` | `Audio.Event.Vehicle.Jet02.Moving` | `AttachSoundToActor`; `PlaySound` | `MSS_Vehicles_Jet_02` (`/FlyByManager/Audio/Jet_02/MSS_Vehicles_Jet_02`) | `ESoundRestartBehavior::Always` | `Audio.Context.Vehicle.Moving` |
-| `AE_Jet02_Stop` | `Audio.Event.Vehicle.Jet02.Moving.Stop` | `StopSound` | (stops the moving loop) | n/a | `Audio.Context.Vehicle.Moving` |
+| [`AE_Jet02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/FlyByManager/Content/Audio/Jet_02/Events/AE_Jet02.json) | `Audio.Event.Vehicle.Jet02.Moving` | `AttachSoundToActor`; `PlaySound` | `MSS_Vehicles_Jet_02` (`/FlyByManager/Audio/Jet_02/MSS_Vehicles_Jet_02`) | `ESoundRestartBehavior::Always` | `Audio.Context.Vehicle.Moving` |
+| [`AE_Jet02_Stop`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/FlyByManager/Content/Audio/Jet_02/Events/AE_Jet02_Stop.json) | `Audio.Event.Vehicle.Jet02.Moving.Stop` | `StopSound` | (stops the moving loop) | n/a | `Audio.Context.Vehicle.Moving` |
 
 Note the asymmetry: Jet_01 has a dedicated fire event and a Doppler behaviour. Jet_02 has neither in this export.
 

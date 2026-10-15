@@ -1,0 +1,217 @@
+--- export: UObject / BHMoverPoseSearchChannel_LedgeHeading_0 ---
+{
+  "Type": "BHMoverPoseSearchChannel_LedgeHeading",
+  "Name": "BHMoverPoseSearchChannel_LedgeHeading_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHMoverPoseSearchChannel_LedgeHeading'",
+  "Outer": {
+    "ObjectName": "PoseSearchFeatureChannel_Group'PSS_TPCharacter_Traversal:PoseSearchFeatureChannel_Group_1'",
+    "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter_Traversal.3"
+  },
+  "Properties": {
+    "bone": {
+      "BoneName": "attach"
+    }
+  }
+}
+--- export: UObject / BHMoverPoseSearchChannel_LedgePosition_1 ---
+{
+  "Type": "BHMoverPoseSearchChannel_LedgePosition",
+  "Name": "BHMoverPoseSearchChannel_LedgePosition_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHMoverPoseSearchChannel_LedgePosition'",
+  "Outer": {
+    "ObjectName": "PoseSearchFeatureChannel_Group'PSS_TPCharacter_Traversal:PoseSearchFeatureChannel_Group_1'",
+    "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter_Traversal.3"
+  },
+  "Properties": {
+    "bone": {
+      "BoneName": "attach"
+    }
+  }
+}
+--- export: UObject / PoseSearchFeatureChannel_Group_0 ---
+{
+  "Type": "PoseSearchFeatureChannel_Group",
+  "Name": "PoseSearchFeatureChannel_Group_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'PoseSearchFeatureChannel_Group'",
+  "Outer": {
+    "ObjectName": "PoseSearchSchema'PSS_TPCharacter_Traversal'",
+    "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter_Traversal.9"
+  },
+  "Properties": {
+    "SubChannels": [
+      {
+        "ObjectName": "PoseSearchFeatureChannel_Position'PSS_TPCharacter_Traversal:PoseSearchFeatureChannel_Group_0.PoseSearchFeatureChannel_Position_0'",
+        "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter_Traversal.4"
+      },
+      {
+        "ObjectName": "PoseSearchFeatureChannel_Velocity'PSS_TPCharacter_Traversal:PoseSearchFeatureChannel_Group_0.PoseSearchFeatureChannel_Velocity_0'",
+        "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter_Traversal.6"
+      },
+      {
+        "ObjectName": "PoseSearchFeatureChannel_Velocity'PSS_TPCharacter_Traversal:PoseSearchFeatureChannel_Group_0.PoseSearchFeatureChannel_Velocity_1'",
+        "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter_Traversal.7"
+      },
+      {
+        "ObjectName": "PoseSearchFeatureChannel_Velocity'PSS_TPCharacter_Traversal:PoseSearchFeatureChannel_Group_0.PoseSearchFeatureChannel_Velocity_2'",
+        "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter_Traversal.8"
+      }
+    ]
+  }
+}
+--- export: UObject / PoseSearchFeatureChannel_Group_1 ---
+{
+  "Type": "PoseSearchFeatureChannel_Group",
+  "Name": "PoseSearchFeatureChannel_Group_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'PoseSearchFeatureChannel_Group'",
+  "Outer": {
+    "ObjectName": "PoseSearchSchema'PSS_TPCharacter_Traversal'",
+    "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter_Traversal.9"
+  },
+  "Properties": {
+    "SubChannels": [
+      {
+        "ObjectName": "BHMoverPoseSearchChannel_LedgePosition'PSS_TPCharacter_Traversal:PoseSearchFeatureChannel_Group_1.BHMoverPoseSearchChannel_LedgePosition_1'",
+        "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter_Traversal.1"
+      },
+      {
+        "ObjectName": "BHMoverPoseSearchChannel_LedgeHeading'PSS_TPCharacter_Traversal:PoseSearchFeatureChannel_Group_1.BHMoverPoseSearchChannel_LedgeHeading_0'",
+        "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter_Traversal.0"
+      }
+    ]
+  }
+}
+--- export: UObject / PoseSearchFeatureChannel_Position_0 ---
+{
+  "Type": "PoseSearchFeatureChannel_Position",
+  "Name": "PoseSearchFeatureChannel_Position_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'PoseSearchFeatureChannel_Position'",
+  "Outer": {
+    "ObjectName": "PoseSearchFeatureChannel_Group'PSS_TPCharacter_Traversal:PoseSearchFeatureChannel_Group_0'",
+    "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter_Traversal.2"
+  },
+  "Properties": {
+    "bone": {
+      "BoneName": "foot_l"
+    },
+    "OriginBone": {
+      "BoneName": "foot_r"
+    }
+  }
+}
+--- export: UObject / PoseSearchFeatureChannel_Trajectory_0 ---
+{
+  "Type": "PoseSearchFeatureChannel_Trajectory",
+  "Name": "PoseSearchFeatureChannel_Trajectory_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'PoseSearchFeatureChannel_Trajectory'",
+  "Outer": {
+    "ObjectName": "PoseSearchSchema'PSS_TPCharacter_Traversal'",
+    "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter_Traversal.9"
+  },
+  "Properties": {
+    "Samples": [
+      {
+        "Offset": -0.4,
+        "Flags": 32
+      },
+      {
+        "Offset": 0.0,
+        "Flags": 16
+      },
+      {
+        "Offset": 0.5,
+        "Flags": 16
+      }
+    ]
+  }
+}
+--- export: UObject / PoseSearchFeatureChannel_Velocity_0 ---
+{
+  "Type": "PoseSearchFeatureChannel_Velocity",
+  "Name": "PoseSearchFeatureChannel_Velocity_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'PoseSearchFeatureChannel_Velocity'",
+  "Outer": {
+    "ObjectName": "PoseSearchFeatureChannel_Group'PSS_TPCharacter_Traversal:PoseSearchFeatureChannel_Group_0'",
+    "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter_Traversal.2"
+  },
+  "Properties": {
+    "bone": {
+      "BoneName": "foot_l"
+    },
+    "OriginBone": {
+      "BoneName": "foot_r"
+    }
+  }
+}
+--- export: UObject / PoseSearchFeatureChannel_Velocity_1 ---
+{
+  "Type": "PoseSearchFeatureChannel_Velocity",
+  "Name": "PoseSearchFeatureChannel_Velocity_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'PoseSearchFeatureChannel_Velocity'",
+  "Outer": {
+    "ObjectName": "PoseSearchFeatureChannel_Group'PSS_TPCharacter_Traversal:PoseSearchFeatureChannel_Group_0'",
+    "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter_Traversal.2"
+  },
+  "Properties": {
+    "bone": {
+      "BoneName": "foot_l"
+    }
+  }
+}
+--- export: UObject / PoseSearchFeatureChannel_Velocity_2 ---
+{
+  "Type": "PoseSearchFeatureChannel_Velocity",
+  "Name": "PoseSearchFeatureChannel_Velocity_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'PoseSearchFeatureChannel_Velocity'",
+  "Outer": {
+    "ObjectName": "PoseSearchFeatureChannel_Group'PSS_TPCharacter_Traversal:PoseSearchFeatureChannel_Group_0'",
+    "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter_Traversal.2"
+  },
+  "Properties": {
+    "bone": {
+      "BoneName": "foot_r"
+    }
+  }
+}
+--- export: UDataAsset / PSS_TPCharacter_Traversal ---
+{
+  "Type": "PoseSearchSchema",
+  "Name": "PSS_TPCharacter_Traversal",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'PoseSearchSchema'",
+  "Package": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter_Traversal",
+  "Properties": {
+    "Skeletons": [
+      {
+        "Skeleton": {
+          "ObjectName": "Skeleton'SKEL_TP_Character_Refactor'",
+          "ObjectPath": "/Game/Characters/Default_PlayerMesh/TP/SKEL_TP_Character_Refactor.37"
+        },
+        "MirrorDataTable": null,
+        "Role": "None"
+      }
+    ],
+    "Channels": [
+      {
+        "ObjectName": "PoseSearchFeatureChannel_Trajectory'PSS_TPCharacter_Traversal:PoseSearchFeatureChannel_Trajectory_0'",
+        "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter_Traversal.5"
+      },
+      {
+        "ObjectName": "PoseSearchFeatureChannel_Group'PSS_TPCharacter_Traversal:PoseSearchFeatureChannel_Group_1'",
+        "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter_Traversal.3"
+      },
+      {
+        "ObjectName": "PoseSearchFeatureChannel_Group'PSS_TPCharacter_Traversal:PoseSearchFeatureChannel_Group_0'",
+        "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter_Traversal.2"
+      }
+    ]
+  }
+}

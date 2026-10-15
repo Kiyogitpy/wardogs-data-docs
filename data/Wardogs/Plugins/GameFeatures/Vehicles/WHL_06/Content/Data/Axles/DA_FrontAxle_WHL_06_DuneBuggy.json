@@ -1,0 +1,42 @@
+--- export: UDataAsset / DA_FrontAxle_WHL_06_DuneBuggy ---
+{
+  "Type": "MWheeledVehicleAxlesDataAsset",
+  "Name": "DA_FrontAxle_WHL_06_DuneBuggy",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MWheeledVehicleAxlesDataAsset'",
+  "Package": "/WHL_06/Data/Axles/DA_FrontAxle_WHL_06_DuneBuggy",
+  "Properties": {
+    "TireModelDataAsset": {
+      "ObjectName": "MWheeledVehicleTireModelSimpleDataAsset'DA_SimpleTireModel_WHL_06_DuneBuggy'",
+      "ObjectPath": "/WHL_06/Data/Axles/DA_SimpleTireModel_WHL_06_DuneBuggy.0"
+    },
+    "WheelDataAsset": {
+      "ObjectName": "MWheeledVehicleWheelDataAsset'DA_FrontWheels_WHL_06_DuneBuggy'",
+      "ObjectPath": "/WHL_06/Data/Axles/DA_FrontWheels_WHL_06_DuneBuggy.0"
+    },
+    "WheelSetup": [
+      {
+        "Side": "EMWheelSide::Left",
+        "BoneName": "frontLWheelSpin_J",
+        "WheelTags": [],
+        "TyreHealthAttribute": {
+          "TagName": "Attribute.Gameplay.Health.Wheel.Left.Front"
+        },
+        "DeflateThreshold": 0.5
+      },
+      {
+        "Side": "EMWheelSide::Right",
+        "BoneName": "frontRWheelSpin_J",
+        "WheelTags": [],
+        "TyreHealthAttribute": {
+          "TagName": "Attribute.Gameplay.Health.Wheel.Right.Front"
+        },
+        "DeflateThreshold": 0.5
+      }
+    ],
+    "DifferentialType": "EMDifferential::LSD",
+    "DiffStrength": 0.1,
+    "TorqueShare": 0.15,
+    "MaxSteerAngle": 40.0
+  }
+}

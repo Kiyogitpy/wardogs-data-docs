@@ -1,0 +1,141 @@
+--- export: UDataAsset / DA_ControlZone_SpatialTracker ---
+{
+  "Type": "WDUIControlZoneSpatialTrackerData",
+  "Name": "DA_ControlZone_SpatialTracker",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIControlZoneSpatialTrackerData'",
+  "Package": "/ControlZone/UI/Trackers/SpatialTrackers/Data/DA_ControlZone_SpatialTracker",
+  "Properties": {
+    "OutsideControlZoneText": {
+      "TableId": "/ControlZone/UI/STRINGS_ControlZone.STRINGS_ControlZone",
+      "Key": "ControlZone.HUD.SpatialTrackers.AOZone",
+      "SourceString": null,
+      "LocalizedString": ""
+    },
+    "OutsideHotZoneText": {
+      "TableId": "/ControlZone/UI/STRINGS_ControlZone.STRINGS_ControlZone",
+      "Key": "ControlZone.HUD.SpatialTrackers.HotZone",
+      "SourceString": null,
+      "LocalizedString": ""
+    },
+    "RuleSets": [
+      {
+        "Key": "EWDUISpatialRulesetType::Default",
+        "Value": {
+          "Priority": 0,
+          "OptionalRules": [
+            {
+              "ObjectName": "WDUINameTextRules'DA_ControlZone_SpatialTracker:WDUINameTextRules_0'",
+              "ObjectPath": "/ControlZone/UI/Trackers/SpatialTrackers/Data/DA_ControlZone_SpatialTracker.3"
+            },
+            {
+              "ObjectName": "WDUIDistanceTextRules'DA_ControlZone_SpatialTracker:WDUIDistanceTextRules_0'",
+              "ObjectPath": "/ControlZone/UI/Trackers/SpatialTrackers/Data/DA_ControlZone_SpatialTracker.1"
+            },
+            {
+              "ObjectName": "WDUILocationOffsetRules'DA_ControlZone_SpatialTracker:WDUILocationOffsetRules_0'",
+              "ObjectPath": "/ControlZone/UI/Trackers/SpatialTrackers/Data/DA_ControlZone_SpatialTracker.2"
+            },
+            {
+              "ObjectName": "WDUIScreenClampingRules'DA_ControlZone_SpatialTracker:WDUIScreenClampingRules_0'",
+              "ObjectPath": "/ControlZone/UI/Trackers/SpatialTrackers/Data/DA_ControlZone_SpatialTracker.5"
+            }
+          ]
+        }
+      },
+      {
+        "Key": "EWDUISpatialRulesetType::LocalUser_InADS",
+        "Value": {
+          "Priority": 1,
+          "OptionalRules": [
+            {
+              "ObjectName": "WDUIOpacityMultiplierRule'DA_ControlZone_SpatialTracker:WDUIOpacityMultiplierRule_0'",
+              "ObjectPath": "/ControlZone/UI/Trackers/SpatialTrackers/Data/DA_ControlZone_SpatialTracker.4"
+            }
+          ]
+        }
+      }
+    ],
+    "MaximumDistanceFromScreenCenter": {
+      "X": 0.85,
+      "Y": 0.85
+    },
+    "ZOrder": 3,
+    "DefaultSize": {
+      "X": 28.0,
+      "Y": 28.0
+    }
+  }
+}
+--- export: UObject / WDUIDistanceTextRules_0 ---
+{
+  "Type": "WDUIDistanceTextRules",
+  "Name": "WDUIDistanceTextRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIDistanceTextRules'",
+  "Outer": {
+    "ObjectName": "WDUIControlZoneSpatialTrackerData'DA_ControlZone_SpatialTracker'",
+    "ObjectPath": "/ControlZone/UI/Trackers/SpatialTrackers/Data/DA_ControlZone_SpatialTracker.0"
+  }
+}
+--- export: UObject / WDUILocationOffsetRules_0 ---
+{
+  "Type": "WDUILocationOffsetRules",
+  "Name": "WDUILocationOffsetRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUILocationOffsetRules'",
+  "Outer": {
+    "ObjectName": "WDUIControlZoneSpatialTrackerData'DA_ControlZone_SpatialTracker'",
+    "ObjectPath": "/ControlZone/UI/Trackers/SpatialTrackers/Data/DA_ControlZone_SpatialTracker.0"
+  },
+  "Properties": {
+    "Offset": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 500.0
+    }
+  }
+}
+--- export: UObject / WDUINameTextRules_0 ---
+{
+  "Type": "WDUINameTextRules",
+  "Name": "WDUINameTextRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUINameTextRules'",
+  "Outer": {
+    "ObjectName": "WDUIControlZoneSpatialTrackerData'DA_ControlZone_SpatialTracker'",
+    "ObjectPath": "/ControlZone/UI/Trackers/SpatialTrackers/Data/DA_ControlZone_SpatialTracker.0"
+  }
+}
+--- export: UObject / WDUIOpacityMultiplierRule_0 ---
+{
+  "Type": "WDUIOpacityMultiplierRule",
+  "Name": "WDUIOpacityMultiplierRule_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIOpacityMultiplierRule'",
+  "Outer": {
+    "ObjectName": "WDUIControlZoneSpatialTrackerData'DA_ControlZone_SpatialTracker'",
+    "ObjectPath": "/ControlZone/UI/Trackers/SpatialTrackers/Data/DA_ControlZone_SpatialTracker.0"
+  },
+  "Properties": {
+    "Multiplier": 0.4,
+    "Targets": 7
+  }
+}
+--- export: UObject / WDUIScreenClampingRules_0 ---
+{
+  "Type": "WDUIScreenClampingRules",
+  "Name": "WDUIScreenClampingRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIScreenClampingRules'",
+  "Outer": {
+    "ObjectName": "WDUIControlZoneSpatialTrackerData'DA_ControlZone_SpatialTracker'",
+    "ObjectPath": "/ControlZone/UI/Trackers/SpatialTrackers/Data/DA_ControlZone_SpatialTracker.0"
+  },
+  "Properties": {
+    "ClampingAsPixels": {
+      "X": 120.0,
+      "Y": 120.0
+    }
+  }
+}

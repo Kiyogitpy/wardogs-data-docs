@@ -1,0 +1,37 @@
+--- export: UPrimaryDataAsset / DA_Action_AccessAdminScene ---
+{
+  "Type": "BHActionDefinition",
+  "Name": "DA_Action_AccessAdminScene",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHActionDefinition'",
+  "Package": "/Game/GameMechanics/Actions/Interaction/DA_Action_AccessAdminScene",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.Player.Scene.VehicleAdmin"
+    },
+    "ActionContext": [
+      "Action.Context.Interaction"
+    ],
+    "ActionClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Action_AccessAdminScene_C'",
+      "ObjectPath": "/Game/GameMechanics/Actions/Interaction/B_Action_AccessAdminScene.1"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::Block",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Block",
+          "ActionResponses": [
+            "Action.Player.Melee.SecondaryUse",
+            "Action.Weapon.ADS"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      }
+    ]
+  }
+}

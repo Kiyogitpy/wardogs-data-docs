@@ -1,0 +1,62 @@
+--- export: UObject / AEB_RequestSquadVox_C_0 ---
+{
+  "Type": "AEB_RequestSquadVox_C",
+  "Name": "AEB_RequestSquadVox_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_RequestSquadVox.AEB_RequestSquadVox_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Comms_Squad_Negative'",
+    "ObjectPath": "/Game/Audio/Events/Comms/Squad/AE_Comms_Squad_Negative.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_RequestSquadVox_C'Default__AEB_RequestSquadVox_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_RequestSquadVox.0"
+  },
+  "Properties": {
+    "Line ID": {
+      "TagName": "Audio.Vox.Bark.Squad.Negative"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Comms_Squad_Negative ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Comms_Squad_Negative",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Comms/Squad/AE_Comms_Squad_Negative",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Comms.Squad.Negative"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Comms_Squad_Negative:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Comms/Squad/AE_Comms_Squad_Negative.2"
+      },
+      {
+        "ObjectName": "AEB_RequestSquadVox_C'AE_Comms_Squad_Negative:AEB_RequestSquadVox_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Comms/Squad/AE_Comms_Squad_Negative.0"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Comms_Squad_Negative'",
+    "ObjectPath": "/Game/Audio/Events/Comms/Squad/AE_Comms_Squad_Negative.1"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

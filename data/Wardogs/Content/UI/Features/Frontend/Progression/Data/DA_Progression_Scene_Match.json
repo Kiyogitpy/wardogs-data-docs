@@ -1,0 +1,41 @@
+--- export: UDataAsset / DA_Progression_Scene_Match ---
+{
+  "Type": "WDUIProgressionSceneData",
+  "Name": "DA_Progression_Scene_Match",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIProgressionSceneData'",
+  "Package": "/Game/UI/Features/Frontend/Progression/Data/DA_Progression_Scene_Match",
+  "Properties": {
+    "RewardTrackViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUITreeRewardTrackViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Frontend/Progression/Widgets/Widgets/TreeRewardTrack/Data/DA_TreeRewardTrack.DA_TreeRewardTrack",
+        "SubPathString": ""
+      }
+    },
+    "CareerLevelViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIRoleLevelViewModel",
+        "SubPathString": ""
+      }
+    },
+    "UnrankedLevelTextOverride": {
+      "TableId": "/Game/UI/StringTables/Frontend/STRINGS_Progression.STRINGS_Progression",
+      "Key": "Text.Unranked",
+      "SourceString": "-",
+      "LocalizedString": "-"
+    },
+    "InputTagCloseScene": {
+      "TagName": "UI.Action.Feature.CloseScene"
+    },
+    "ExitSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.UI.Inventory.SceneExit"
+    },
+    "ExtensionTemplates": [
+      null
+    ]
+  }
+}

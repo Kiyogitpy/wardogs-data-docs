@@ -1,0 +1,61 @@
+--- export: UPrimaryDataAsset / AE_Player_Revived_Local ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Player_Revived_Local",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Item/AE_Player_Revived_Local",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.Revived.Local"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "WDAudioEventBehaviorEnableMusicState'AE_Player_Revived_Local:WDAudioEventBehaviorEnableMusicState_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Item/AE_Player_Revived_Local.2"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorDisableMusicState'AE_Player_Revived_Local:WDAudioEventBehaviorDisableMusicState_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Item/AE_Player_Revived_Local.1"
+      }
+    ]
+  }
+}
+--- export: UObject / WDAudioEventBehaviorDisableMusicState_0 ---
+{
+  "Type": "WDAudioEventBehaviorDisableMusicState",
+  "Name": "WDAudioEventBehaviorDisableMusicState_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorDisableMusicState'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Revived_Local'",
+    "ObjectPath": "/Game/Audio/Events/Player/Item/AE_Player_Revived_Local.0"
+  },
+  "Properties": {
+    "StateToDisable": {
+      "TagName": "Audio.Music.Revived"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviorEnableMusicState_0 ---
+{
+  "Type": "WDAudioEventBehaviorEnableMusicState",
+  "Name": "WDAudioEventBehaviorEnableMusicState_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorEnableMusicState'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Revived_Local'",
+    "ObjectPath": "/Game/Audio/Events/Player/Item/AE_Player_Revived_Local.0"
+  },
+  "Properties": {
+    "StateToEnable": {
+      "TagName": "Audio.Music.Revived"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

@@ -1,0 +1,230 @@
+--- export: UDataTable / DT_EntityData_Ext_LMG_02 ---
+{
+  "Type": "DataTable",
+  "Name": "DT_EntityData_Ext_LMG_02",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/LMG_02/Data/DT_EntityData_Ext_LMG_02",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'BHEntityData_UI'",
+      "ObjectPath": "/Script/BHFramework"
+    }
+  },
+  "Rows": {
+    "Id.Item.LMG_02Magazine": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Magazines.STRINGS_Magazines",
+        "Key": "Items.Magazine.PKM.Standard",
+        "SourceString": "PKM 100 RND Box ",
+        "LocalizedString": "PKM 100 RND Box "
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Magazines_Descriptions.STRINGS_Magazines_Descriptions",
+        "Key": "Description.Magazine.PKM.Standard",
+        "SourceString": "- 100 Rounds\r\n- 7.62x54R ammo\r\n- PKM only",
+        "LocalizedString": "- 100 Rounds\r\n- 7.62x54R ammo\r\n- PKM only"
+      },
+      "Category": {
+        "TagName": "Item.Category.Ammunition"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "None"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_General.STRINGS_Items_General",
+            "Key": "Items.General.Ammunition",
+            "SourceString": "Ammunition",
+            "LocalizedString": "Ammunition"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Magazines_Descriptions.STRINGS_Magazines_Descriptions",
+            "Key": "Description.Magazine.PKM.Standard",
+            "SourceString": "- 100 Rounds\r\n- 7.62x54R ammo\r\n- PKM only",
+            "LocalizedString": "- 100 Rounds\r\n- 7.62x54R ammo\r\n- PKM only"
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Attachments/3D/T_UI_Icon_Attachment_Cheap_Magazine_556_Textured_512x512.T_UI_Icon_Attachment_Cheap_Magazine_556_Textured_512x512",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Vendor/Magazines/T_UI_Vendor_MAGZ_LMG.T_UI_Vendor_MAGZ_LMG",
+            "Value": [
+              "UI.Icon.Vendor",
+              "UI.Icon.Inventory.Equipment",
+              "UI.Icon.Inventory.Container",
+              "UI.Icon.Inventory.Pickup.Tooltip"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "Id.Item.LMG_02Magazine"
+      }
+    },
+    "Id.Item.LMG_02": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Weapons.STRINGS_Items_Weapons",
+        "Key": "Items.Weapons.PKM",
+        "SourceString": "PKM",
+        "LocalizedString": "PKM"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Weapon_Descriptions.STRINGS_Weapon_Descriptions",
+        "Key": "Description.Weapon.PKM",
+        "SourceString": "- Semi / Full Auto\r\n- 7.62x54mm",
+        "LocalizedString": "- Semi / Full Auto\r\n- 7.62x54mm"
+      },
+      "Category": {
+        "TagName": "Item.Category.Weapon.Ranged"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "Attribute.Meta.XP.Role.Support"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Weapon"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Weapon"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Weapons.STRINGS_Items_Weapons",
+            "Key": "Items.Weapons.LMG",
+            "SourceString": "Light Machine Gun",
+            "LocalizedString": "Light Machine Gun"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Weapon_Descriptions.STRINGS_Weapon_Descriptions",
+            "Key": "Description.Weapon.PKM",
+            "SourceString": "- Semi / Full Auto\r\n- 7.62x54mm",
+            "LocalizedString": "- Semi / Full Auto\r\n- 7.62x54mm"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Weapon_Descriptions.STRINGS_Weapon_Descriptions",
+            "Key": "Flavor.Weapon.PKM",
+            "SourceString": "The PKM excels in keeping enemies suppressed thanks to its high powered rounds and slower rate of fire.",
+            "LocalizedString": "The PKM excels in keeping enemies suppressed thanks to its high powered rounds and slower rate of fire."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Weapons/Killfeed/T_UI_Icon_Killfeed_LMG02.T_UI_Icon_Killfeed_LMG02",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Weapons/3D/Equip/T_UI_Icon_Weapon_LMG02_Textured_512x256_equip.T_UI_Icon_Weapon_LMG02_Textured_512x256_equip",
+            "Value": [
+              "UI.Icon.DeathRecap.KillCause"
+            ]
+          },
+          {
+            "Key": "/Game/UI/Shared/Icons/Vendor/Weapons/T_UI_Vendor_WEPN_019.T_UI_Vendor_WEPN_019",
+            "Value": [
+              "UI.Icon.Vendor",
+              "UI.Icon.Inventory.Tooltip",
+              "UI.Icon.Inventory.Pickup.Tooltip",
+              "UI.Icon.Inventory.Equipment",
+              "UI.Icon.Inventory.Container"
+            ]
+          },
+          {
+            "Key": "/Game/UI/Shared/Icons/Weapons/Killfeed/T_UI_Icon_Killfeed_LMG02.T_UI_Icon_Killfeed_LMG02",
+            "Value": [
+              "UI.Icon.Killfeed"
+            ]
+          },
+          {
+            "Key": "/Game/UI/Shared/Icons/Weapons/DeathRecap/T_UI_DeathRecap_PKM.T_UI_DeathRecap_PKM",
+            "Value": [
+              "UI.Icon.EventLog.Overview"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "Id.Item.LMG_02"
+      }
+    }
+  }
+}

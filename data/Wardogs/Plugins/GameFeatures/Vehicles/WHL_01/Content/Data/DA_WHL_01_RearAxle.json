@@ -1,0 +1,43 @@
+--- export: UDataAsset / DA_WHL_01_RearAxle ---
+{
+  "Type": "MWheeledVehicleAxlesDataAsset",
+  "Name": "DA_WHL_01_RearAxle",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MWheeledVehicleAxlesDataAsset'",
+  "Package": "/WHL_01/Data/DA_WHL_01_RearAxle",
+  "Properties": {
+    "TireModelDataAsset": {
+      "ObjectName": "MWheeledVehicleTireModelSimpleDataAsset'DA_WHL_01_TireModelSimple'",
+      "ObjectPath": "/WHL_01/Data/DA_WHL_01_TireModelSimple.0"
+    },
+    "WheelDataAsset": {
+      "ObjectName": "MWheeledVehicleWheelDataAsset'DA_WHL_01_RearWheels'",
+      "ObjectPath": "/WHL_01/Data/DA_WHL_01_RearWheels.0"
+    },
+    "WheelSetup": [
+      {
+        "Side": "EMWheelSide::Left",
+        "BoneName": "rearLWheelSpin_J",
+        "WheelTags": [],
+        "TyreHealthAttribute": {
+          "TagName": "Attribute.Gameplay.Health.Wheel.Left.Rear"
+        },
+        "DeflateThreshold": 0.5
+      },
+      {
+        "Side": "EMWheelSide::Right",
+        "BoneName": "rearRWheelSpin_J",
+        "WheelTags": [],
+        "TyreHealthAttribute": {
+          "TagName": "Attribute.Gameplay.Health.Wheel.Right.Rear"
+        },
+        "DeflateThreshold": 0.5
+      }
+    ],
+    "DifferentialType": "EMDifferential::LSD",
+    "DiffStrength": 0.6,
+    "TorqueShare": 0.4,
+    "AckermanCoefficient": 0.0,
+    "bHasHandbrake": true
+  }
+}

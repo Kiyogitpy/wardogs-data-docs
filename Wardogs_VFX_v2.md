@@ -4,9 +4,9 @@ parent: "Content"
 ---
 
 # Wardogs — VFX Reference (v2)
-*Extracted from the cooked JSON export under `Content/VFX` (191 files, all parsed; 191 export blocks). Values are the raw asset properties. Where a property's meaning is inferred from its name, that is said explicitly. A "-" in a table means the property is absent from the export, so the engine default applies and that default is not in the dump.*
+*Extracted from the cooked JSON export under [`Content/VFX`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/VFX) (191 files, all parsed; 191 export blocks). Values are the raw asset properties. Where a property's meaning is inferred from its name, that is said explicitly. A "-" in a table means the property is absent from the export, so the engine default applies and that default is not in the dump.*
 
-> **Scope note:** this doc covers only `Content/VFX`. Balance numbers for weapons and vehicles live in other categories. Asset names in the tables match the export `Name` field, so they can be searched directly in the dump.
+> **Scope note:** this doc covers only [`Content/VFX`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/VFX). Balance numbers for weapons and vehicles live in other categories. Asset names in the tables match the export `Name` field, so they can be searched directly in the dump.
 
 ---
 
@@ -15,18 +15,18 @@ parent: "Content"
 | Family (subfolder) | Files | Asset type | What it controls |
 |---|---|---|---|
 | `Explosions/` | 34 | `PDA_Explosion_C` | Single explosion recipes (fireball, core, streaks, embers, shockwave, camera shake) |
-| `Explosions/Blueprints/Sequence/` | 14 | `PDA_ExplosionTimingData_C` | Multi-explosion sequences (which recipe fires, when, and where) |
-| `Weapons/MuzzleFlashes/AmmoMuzzleFlashData/` | 12 | `PDA_MuzzleFlashAmmuniton_C` | Per-ammo-type flash color and spark overrides |
-| `Weapons/MuzzleFlashes/AttachmentMuzzleFlashData/` | 44 | `PDA_MuzzleFlashAttachement_C` | Per-muzzle-device flash size, pattern, gas and light multipliers |
-| `Weapons/MuzzleFlashes/MuzzleFlashData/` (+ subfolders) | 40 | `PDA_MuzzleFlash_C` | Per-weapon flash: 1P/3P size, lifetime, distant flash, gas, light, default muzzle |
-| `Weapons/Impacts/` | 9 | `PDA_PhysicalMaterialResponse_C` | Bullet and explosion response per physical material |
-| `VFXManager/WeaponImpacts/` | 1 | `CurveFloat` | `C_KineticRemap` float curve |
-| `VFXManager/LandscapeResponse/CurveAtlas/` | 6 | `CurveLinearColor` x5 + `CurveLinearColorAtlas` | Landscape-response color gradients |
-| `Shared/` + `Shared/SmokeGrenadeVFX_Variants/` | 8 | `PDA_SmokeGrenade_C` | Smoke grenade colors and duration |
-| `Vehicles/Exhaust/DataAssets/` | 11 | `BHExhaustDataAsset_C` | Vehicle exhaust Niagara setup per vehicle |
-| `Vehicles/Exhaust/` | 4 | `CurveLinearColor` x3 + `CurveLinearColorAtlas` | Exhaust scale-by-velocity curves |
-| `Environmental/Ambient/FallingLeaves/Materials/Gradients/` | 7 | `CurveLinearColor` x6 + `CurveLinearColorAtlas` | Falling-leaf color gradients per tree type |
-| `Postprocess/` | 1 | `DataTable` (11 rows) | Post-process effects keyed by damage/state tag |
+| [`Explosions/Blueprints/Sequence/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/VFX/Explosions/Blueprints/Sequence) | 14 | `PDA_ExplosionTimingData_C` | Multi-explosion sequences (which recipe fires, when, and where) |
+| [`Weapons/MuzzleFlashes/AmmoMuzzleFlashData/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/VFX/Weapons/MuzzleFlashes/AmmoMuzzleFlashData) | 12 | `PDA_MuzzleFlashAmmuniton_C` | Per-ammo-type flash color and spark overrides |
+| [`Weapons/MuzzleFlashes/AttachmentMuzzleFlashData/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/VFX/Weapons/MuzzleFlashes/AttachmentMuzzleFlashData) | 44 | `PDA_MuzzleFlashAttachement_C` | Per-muzzle-device flash size, pattern, gas and light multipliers |
+| [`Weapons/MuzzleFlashes/MuzzleFlashData/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/VFX/Weapons/MuzzleFlashes/MuzzleFlashData) (+ subfolders) | 40 | `PDA_MuzzleFlash_C` | Per-weapon flash: 1P/3P size, lifetime, distant flash, gas, light, default muzzle |
+| [`Weapons/Impacts/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/VFX/Weapons/Impacts) | 9 | `PDA_PhysicalMaterialResponse_C` | Bullet and explosion response per physical material |
+| [`VFXManager/WeaponImpacts/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/VFX/VFXManager/WeaponImpacts) | 1 | `CurveFloat` | [`C_KineticRemap`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/VFX/VFXManager/WeaponImpacts/C_KineticRemap.json) float curve |
+| [`VFXManager/LandscapeResponse/CurveAtlas/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/VFX/VFXManager/LandscapeResponse/CurveAtlas) | 6 | `CurveLinearColor` x5 + `CurveLinearColorAtlas` | Landscape-response color gradients |
+| `Shared/` + [`Shared/SmokeGrenadeVFX_Variants/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/VFX/Shared/SmokeGrenadeVFX_Variants) | 8 | `PDA_SmokeGrenade_C` | Smoke grenade colors and duration |
+| [`Vehicles/Exhaust/DataAssets/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/VFX/Vehicles/Exhaust/DataAssets) | 11 | `BHExhaustDataAsset_C` | Vehicle exhaust Niagara setup per vehicle |
+| [`Vehicles/Exhaust/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/VFX/Vehicles/Exhaust) | 4 | `CurveLinearColor` x3 + `CurveLinearColorAtlas` | Exhaust scale-by-velocity curves |
+| [`Environmental/Ambient/FallingLeaves/Materials/Gradients/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/VFX/Environmental/Ambient/FallingLeaves/Materials/Gradients) | 7 | `CurveLinearColor` x6 + `CurveLinearColorAtlas` | Falling-leaf color gradients per tree type |
+| [`Postprocess/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/VFX/Postprocess) | 1 | `DataTable` (11 rows) | Post-process effects keyed by damage/state tag |
 
 Totals: 34 + 14 + 12 + 44 + 40 + 9 + 1 + 6 + 8 + 11 + 4 + 7 + 1 = **191**.
 
@@ -73,7 +73,7 @@ Each row is one explosion recipe. Used directly, or as a timing entry inside a s
 
 **Reading the table**
 
-- **Size tiers are visible in the numbers.** Small and medium recipes (30mm through 115mm-class, and the infantry and vehicle-scale bursts) sit around CoreSize 14 to 21 and FireballSize 60 to 90. Artillery and large vehicles go up to FireballSize 157 to 344 (155mm = 344.5, lifetime 6.05 s). `DA_Explosion_VeryLarge` is FireballSize 252.4 with a 5.79 s lifetime.
+- **Size tiers are visible in the numbers.** Small and medium recipes (30mm through 115mm-class, and the infantry and vehicle-scale bursts) sit around CoreSize 14 to 21 and FireballSize 60 to 90. Artillery and large vehicles go up to FireballSize 157 to 344 (155mm = 344.5, lifetime 6.05 s). [`DA_Explosion_VeryLarge`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/VFX/Explosions/DA_Explosion_VeryLarge.json) is FireballSize 252.4 with a 5.79 s lifetime.
 - **Camera shake range** is 5000 on the heavy recipes (DA_Explosion_Helicopter, LargeVehicle, LargeHelicopter, DebrisExplosion_LowTemp, HeavyDebrisBurst_NoTemp, Medium_DebrisHeavyFireball). The smallest non-zero is 250 (DA_ComponentBurst_Small). Each recipe also references a camera shake blueprint by name (for example `B_CameraShake_Artillery_C` on DA_Explosion_155mm); those names are not in this table.
 - **Heat intensity (`HeatIntensity`)** is set on 18 assets, from 0 to 5000. The highest are DA_Explosion_120x570mm and DA_Explosion_120x800mm at 5000, followed by DA_Explosion_155mm at 4400.
 - **Fireball and Shockwave are independent booleans.** Neither implies the other. For example DA_Explosion_30mm has a fireball and no shockwave, and DA_Explosion_LargeVehicle has a fireball and no shockwave.
@@ -147,13 +147,13 @@ Grouped by the mesh each one is paired with. Ranges are min..max across the grou
 
 **Notes**
 
-- The 14 no-mesh entries are the **default muzzles** referenced by weapons in section 4c (for example `DA_MF_A91_DefaultMuzzle`, `DA_MF_M4_DefaultMuzzle`). They are the built-in flash for a weapon with no attachment.
-- `DA_MF_Attachment` and `DA_MF_NoAttachment` do not set a size multiplier. They act as the placeholder entries.
+- The 14 no-mesh entries are the **default muzzles** referenced by weapons in section 4c (for example [`DA_MF_A91_DefaultMuzzle`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/VFX/Weapons/MuzzleFlashes/AttachmentMuzzleFlashData/DA_MF_A91_DefaultMuzzle.json), [`DA_MF_M4_DefaultMuzzle`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/VFX/Weapons/MuzzleFlashes/AttachmentMuzzleFlashData/DA_MF_M4_DefaultMuzzle.json)). They are the built-in flash for a weapon with no attachment.
+- [`DA_MF_Attachment`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/VFX/Weapons/MuzzleFlashes/AttachmentMuzzleFlashData/DA_MF_Attachment.json) and [`DA_MF_NoAttachment`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/VFX/Weapons/MuzzleFlashes/AttachmentMuzzleFlashData/DA_MF_NoAttachment.json) do not set a size multiplier. They act as the placeholder entries.
 - Across the 44 attachments, `Override Spark Amount` is set on 29, `Override Material` on 33, `Override Flash Frequency` on 13, and `Override Distant Flash` on 1. These are flags that say whether the attachment replaces the weapon's value for that field.
 
 ### 4c. Weapon flash recipes (`PDA_MuzzleFlash_C`, 40 assets)
 
-Folder shown as the subfolder under `MuzzleFlashData/`. Size1P / Size3P are the first-person and third-person flash sizes. "DistSize / DistMax" is the distant-flash size and its cap. Gas columns are the gas puff amount, size, and spread. Every row has the same flash RGB (175, 74.5, 18.2).
+Folder shown as the subfolder under [`MuzzleFlashData/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/VFX/Weapons/MuzzleFlashes/MuzzleFlashData). Size1P / Size3P are the first-person and third-person flash sizes. "DistSize / DistMax" is the distant-flash size and its cap. Gas columns are the gas puff amount, size, and spread. Every row has the same flash RGB (175, 74.5, 18.2).
 
 | Folder | Asset | Size 1P | Size 3P | Life (s) | DistSize | DistMax | Prob | Freq | Gas amt / size / spread | DefaultMuzzle | DistantFX |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -198,7 +198,7 @@ Folder shown as the subfolder under `MuzzleFlashData/`. Size1P / Size3P are the 
 | TNK_03_Gepard | DA_MuzzleFlash_Cannon35x228mm | 0.8 | 90 | - | 150 | 150 | - | - | 3 / 120 / 40 | - | - |
 | WHL_05 | DA_MuzzleFlash_WHL_05_Minigun | 30 | 50 | 0.1 | 80 | 350 | - | - | 3 / 120 / 40 | - | - |
 
-Additional fields on single rows: `DA_MuzzleFlash_ROT_03_RocketPods` and `DA_MuzzleFlash_STN_03_MortarLaunch` carry a light radius of 250 with intensity unset. `DA_MuzzleFlash_TankCoaxialGun` uses socket `S_CoaxialMuzzle`. `DA_MuzzleFlash_Deagle` and `DA_MuzzleFlash_Judge` override the material to `MI_MuzzleFlash_02`. `DA_MuzzleFlash_AK74-M` sets light intensity 100.
+Additional fields on single rows: [`DA_MuzzleFlash_ROT_03_RocketPods`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/VFX/Weapons/MuzzleFlashes/MuzzleFlashData/ROT_03/DA_MuzzleFlash_ROT_03_RocketPods.json) and [`DA_MuzzleFlash_STN_03_MortarLaunch`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/VFX/Weapons/MuzzleFlashes/MuzzleFlashData/STN03_Mortar/DA_MuzzleFlash_STN_03_MortarLaunch.json) carry a light radius of 250 with intensity unset. [`DA_MuzzleFlash_TankCoaxialGun`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/VFX/Weapons/MuzzleFlashes/MuzzleFlashData/TNK_01/Heavy/DA_MuzzleFlash_TankCoaxialGun.json) uses socket `S_CoaxialMuzzle`. [`DA_MuzzleFlash_Deagle`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/VFX/Weapons/MuzzleFlashes/MuzzleFlashData/Sidearms/DA_MuzzleFlash_Deagle.json) and [`DA_MuzzleFlash_Judge`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/VFX/Weapons/MuzzleFlashes/MuzzleFlashData/Sidearms/DA_MuzzleFlash_Judge.json) override the material to `MI_MuzzleFlash_02`. [`DA_MuzzleFlash_AK74-M`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/VFX/Weapons/MuzzleFlashes/MuzzleFlashData/AssualtRifles/DA_MuzzleFlash_AK74-M.json) sets light intensity 100.
 
 **Notes**
 
@@ -269,7 +269,7 @@ Each physical material maps to a bullet impact effect, a bullet decal, an explos
 | DA_ROT_04_Exhaust | NS_HeliRadiator | - | 1.0 to 1.2 | 200 | 80 x 100 | 0.05 | True | 0, -213, 0 |
 | DA_UralExhaust | - | 1 | 0.8 to 1.0 | 250 | 80 x 100 | 0.35 | - | - |
 
-**Exhaust scale curves** (`CurveLinearColor` on the vehicle exhaust, packed in `Exhaust_ScaleVel_Atlas`):
+**Exhaust scale curves** (`CurveLinearColor` on the vehicle exhaust, packed in [`Exhaust_ScaleVel_Atlas`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/VFX/Vehicles/Exhaust/Exhaust_ScaleVel_Atlas.json)):
 
 | Curve | Keys | Start value | End value |
 |---|---|---|---|
@@ -285,7 +285,7 @@ Each physical material maps to a bullet impact effect, a bullet decal, an explos
 
 ---
 
-## 8. Post-Process Effects (`DT_PostProcessEffects`, DataTable with 11 rows)
+## 8. Post-Process Effects ([`DT_PostProcessEffects`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/VFX/Postprocess/DT_PostProcessEffects.json), DataTable with 11 rows)
 
 Each row is a `WDPostProcessEffect` keyed by a gameplay tag. The material is `MI_PP_Damage` in 10 of 11 rows; `DeathState.CloseEyes` uses `MI_Postprocess_Death_Eyes`. The row shows its duration, its progress curves, the values applied at the start of the effect, and the values restored when it ends.
 
@@ -348,9 +348,9 @@ Each row is a `WDPostProcessEffect` keyed by a gameplay tag. The material is `MI
 
 **Notes**
 
-- Every landscape-response curve ends at 1. Apart from `LR_Leaf` (a constant 1), each starts at 0.2 (`LandscapeResponse_Default` starts at 0), so each ramps up to full strength over a short time window.
+- Every landscape-response curve ends at 1. Apart from [`LR_Leaf`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/VFX/VFXManager/LandscapeResponse/CurveAtlas/LR_Leaf.json) (a constant 1), each starts at 0.2 ([`LandscapeResponse_Default`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/VFX/VFXManager/LandscapeResponse/CurveAtlas/LandscapeResponse_Default.json) starts at 0), so each ramps up to full strength over a short time window.
 - Time ranges are small (0.0 to 0.8). The time axis is probably a normalized input, not seconds.
-- `C_KineticRemap` time axis runs to 2000, so its input is most likely a raw speed or energy value. The unit is not in the export.
+- [`C_KineticRemap`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/VFX/VFXManager/WeaponImpacts/C_KineticRemap.json) time axis runs to 2000, so its input is most likely a raw speed or energy value. The unit is not in the export.
 
 ---
 
@@ -365,7 +365,7 @@ Each row is a `WDPostProcessEffect` keyed by a gameplay tag. The material is `MI
 
 ## 11. Still Not Pulled / Limitations
 
-- **Object references only.** Recipe rows reference `B_CameraShake_*` blueprints and `NS_*` Niagara systems by path or class name. Only those references were pulled. The shake behavior and the Niagara internals are not in `Content/VFX` and are not in this doc.
+- **Object references only.** Recipe rows reference `B_CameraShake_*` blueprints and `NS_*` Niagara systems by path or class name. Only those references were pulled. The shake behavior and the Niagara internals are not in [`Content/VFX`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/VFX) and are not in this doc.
 - **Unit and meaning uncertainty.** Sizes, lifetimes, and offsets have no units in the export. Multiplier names (for example `Flash Size Multiplyer 1P`) are read literally, and how they stack at runtime is not verified.
 - **Unnamed enum.** `SmokeType = NewEnumerator1` on six smoke grenades does not say which behavior it selects.
 - **Obfuscated property names.** Some keys in the timing sequences are suffixed with hash tokens (for example `ExplosionData_9_FB01A97E496F...`). They were trimmed to their readable part. The mapping is one-to-one, so the meaning is unchanged, but the raw keys are not reproduced here.

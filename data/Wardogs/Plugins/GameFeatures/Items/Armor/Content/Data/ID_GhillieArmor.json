@@ -1,0 +1,187 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_GhillieArmor'",
+    "ObjectPath": "/Armor/Data/ID_GhillieArmor.4"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 5,
+      "Y": 4
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_GhillieArmor'",
+    "ObjectPath": "/Armor/Data/ID_GhillieArmor.4"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Characters/Player/Armour/Ghillie/002/SM/SM_Ghillie_002_Body_Drop.SM_Ghillie_002_Body_Drop",
+      "SubPathString": ""
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_Plant_GreenPlant_01_Ghillie'",
+        "ObjectPath": "/Game/Characters/Player/Armour/Ghillie/002/MAT/MI_Plant_GreenPlant_01_Ghillie.0"
+      },
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_Bush_Bramble_Clusters_01_Ghillie'",
+        "ObjectPath": "/Game/Characters/Player/Armour/Ghillie/002/MAT/MI_Bush_Bramble_Clusters_01_Ghillie.0"
+      },
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_Torso_007a'",
+        "ObjectPath": "/Game/Characters/Player/Torso/007/MAT/MI_Torso_007a.0"
+      }
+    ],
+    "Scale": {
+      "X": 1.0,
+      "Y": 1.0,
+      "Z": 1.0
+    },
+    "RelativeRotation": {
+      "Pitch": 90.0,
+      "Yaw": 0.0,
+      "Roll": 0.0
+    },
+    "bOverrideDroppedRelativeLocation": true,
+    "OverridedRelativeLocation": {
+      "X": -6.0,
+      "Y": 0.0,
+      "Z": -25.0
+    },
+    "bOverrideDroppedBoxExtent": true,
+    "OverridedBoxExtent": {
+      "X": 5.0,
+      "Y": 25.0,
+      "Z": 30.0
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_GhillieArmor'",
+    "ObjectPath": "/Armor/Data/ID_GhillieArmor.4"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_GhillieArmor'",
+    "ObjectPath": "/Armor/Data/ID_GhillieArmor.4"
+  },
+  "Properties": {
+    "Weight": 1.5
+  }
+}
+--- export: UPrimaryDataAsset / ID_GhillieArmor ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_GhillieArmor",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Armor/Data/ID_GhillieArmor",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.GhillieArmor"
+    },
+    "ItemContext": [
+      "Inventory.Slot.Armor",
+      "Item.Context.Equippable"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "7B0124DF4F26030A39999E9E58961751",
+      "SourceString": "Ghillie Suit",
+      "LocalizedString": "Ghillie Suit"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_GhillieArmor:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Armor/Data/ID_GhillieArmor.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_GhillieArmor:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/Armor/Data/ID_GhillieArmor.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_GhillieArmor:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Armor/Data/ID_GhillieArmor.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Armor'ID_GhillieArmor:WDInventoryFragment_Armor_0'",
+        "ObjectPath": "/Armor/Data/ID_GhillieArmor.5"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_GhillieArmor:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Armor/Data/ID_GhillieArmor.6"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_GhillieArmor:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Armor/Data/ID_GhillieArmor.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Armor_0 ---
+{
+  "Type": "WDInventoryFragment_Armor",
+  "Name": "WDInventoryFragment_Armor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Armor'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_GhillieArmor'",
+    "ObjectPath": "/Armor/Data/ID_GhillieArmor.4"
+  },
+  "Properties": {
+    "DamageContextTag": {
+      "TagName": "Meta.Damage.Armor.Ghillie"
+    },
+    "AppliedEffects": [
+      {
+        "ObjectName": "BlueprintGeneratedClass'GE_Player_Ghilli_Armor_C'",
+        "ObjectPath": "/Game/GameMechanics/GameplayEffects/Player/GE_Player_Ghilli_Armor.0"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'GE_Player_GhilliEffects_C'",
+        "ObjectPath": "/Game/GameMechanics/GameplayEffects/Player/GE_Player_GhilliEffects.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_GhillieArmor'",
+    "ObjectPath": "/Armor/Data/ID_GhillieArmor.4"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Armor_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Item/Data/ID_Armor_Audio.0"
+    }
+  }
+}

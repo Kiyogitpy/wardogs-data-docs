@@ -1,0 +1,34 @@
+--- export: UDataAsset / DA_VaultingMovement ---
+{
+  "Type": "BHVaultingData",
+  "Name": "DA_VaultingMovement",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHVaultingData'",
+  "Package": "/Game/MoverTesting/Settings/DA_VaultingMovement",
+  "Properties": {
+    "MovementSpeedInterpSpeed": 5.0,
+    "VaultDistance": 74.0,
+    "ClampedTraversalDirectionMask": 131,
+    "TransitionOffsetCurve": {
+      "ObjectName": "CurveVector'CRV_Vaulting_TransitionOffset'",
+      "ObjectPath": "/Game/MoverTesting/Curves/Traversing/CRV_Vaulting_TransitionOffset.0"
+    },
+    "TraversalHeightSpeedMultiplierCurve": {
+      "ObjectName": "CurveFloat'CRV_Vaulting_HeightSpeedMultiplier'",
+      "ObjectPath": "/Game/MoverTesting/Curves/Traversing/CRV_Vaulting_HeightSpeedMultiplier.0"
+    },
+    "TraversalSpeedMultiplierCurve": {
+      "ObjectName": "CurveFloat'CRV_Vaulting_SpeedMultiplier'",
+      "ObjectPath": "/Game/MoverTesting/Curves/Traversing/CRV_Vaulting_SpeedMultiplier.0"
+    },
+    "AnimMontageChooserTable": {
+      "ObjectName": "ChooserTable'CHT_Traversal_Vaulting_ThirdPerson'",
+      "ObjectPath": "/Game/Animation/Blueprints/Character/Chooser/CHT_Traversal_Vaulting_ThirdPerson.0"
+    },
+    "RootMotionAnimMontageChooserTable": {
+      "ObjectName": "ChooserTable'CHT_Traversal_Vaulting_ThirdPerson_RM'",
+      "ObjectPath": "/Game/Animation/Blueprints/Character/Chooser/CHT_Traversal_Vaulting_ThirdPerson_RM.0"
+    },
+    "BaseTraversalSpeed": 600.0
+  }
+}

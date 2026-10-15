@@ -1,0 +1,4497 @@
+--- export: UDataAsset / DA_Warehouse_03a_Decorator ---
+{
+  "Type": "BHDestructionBuildingDecoratorDefinitionDataAsset",
+  "Name": "DA_Warehouse_03a_Decorator",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDestructionBuildingDecoratorDefinitionDataAsset'",
+  "Package": "/Game/ExternalAssets/Flix/Blueprints/Industrial/Warehouse_03a/DA_Warehouse_03a_Decorator",
+  "Properties": {
+    "SaveID": "2CB2BDF8-4D006D5B-3B01A8B6-2FA8BE6B",
+    "RequiredCosmeticMeshes": [
+      {
+        "StaticMesh": {
+          "ObjectName": "StaticMesh'SM_Ind_Girder_Horizontal_24mx1m_01a'",
+          "ObjectPath": "/Game/Environment/Architecture/Industrial/Factory_Kit/Meshes/Girders/SM_Ind_Girder_Horizontal_24mx1m_01a.1"
+        },
+        "MaterialOverrideArray": [],
+        "PhysicalMaterialOverride": null,
+        "MeshCenter": {
+          "X": 0.0,
+          "Y": -1199.9998,
+          "Z": -0.00037002563
+        },
+        "RefCount": 49,
+        "StringISMOverrides": "",
+        "_aaaannogmmjnhbaabjhcj_$DE6CC9D710019729$_$13$": "EBHDestructionCPDInputStyle::Building"
+      },
+      {
+        "StaticMesh": {
+          "ObjectName": "StaticMesh'SM_Ind_Girder_Horizontal_4mx1m_01a'",
+          "ObjectPath": "/Game/Environment/Architecture/Industrial/Factory_Kit/Meshes/Girders/SM_Ind_Girder_Horizontal_4mx1m_01a.1"
+        },
+        "MaterialOverrideArray": [],
+        "PhysicalMaterialOverride": null,
+        "MeshCenter": {
+          "X": 0.0,
+          "Y": -249.99995,
+          "Z": -8.9645386E-05
+        },
+        "RefCount": 6,
+        "StringISMOverrides": "",
+        "_aaaannogmmjnhbaabjhcj_$DE6CC9D710019729$_$13$": "EBHDestructionCPDInputStyle::Building"
+      },
+      {
+        "StaticMesh": {
+          "ObjectName": "StaticMesh'SM_Ind_Girder_Horizontal_8mx1m_01a'",
+          "ObjectPath": "/Game/Environment/Architecture/Industrial/Factory_Kit/Meshes/Girders/SM_Ind_Girder_Horizontal_8mx1m_01a.1"
+        },
+        "MaterialOverrideArray": [],
+        "PhysicalMaterialOverride": null,
+        "MeshCenter": {
+          "X": 0.0,
+          "Y": -399.99994,
+          "Z": -0.00014305115
+        },
+        "RefCount": 8,
+        "StringISMOverrides": "",
+        "_aaaannogmmjnhbaabjhcj_$DE6CC9D710019729$_$13$": "EBHDestructionCPDInputStyle::Building"
+      },
+      {
+        "StaticMesh": {
+          "ObjectName": "StaticMesh'SM_Ind_Girder_Horizontal_8mx1m_01a'",
+          "ObjectPath": "/Game/Environment/Architecture/Industrial/Factory_Kit/Meshes/Girders/SM_Ind_Girder_Horizontal_8mx1m_01a.1"
+        },
+        "MaterialOverrideArray": [
+          {
+            "ObjectName": "MaterialInstanceConstant'MI_Trim_Industrial_Girders_Clean'",
+            "ObjectPath": "/Game/Environment/Materials/Trim/Industrial/MI_Trim_Industrial_Girders_Clean.0"
+          }
+        ],
+        "PhysicalMaterialOverride": null,
+        "MeshCenter": {
+          "X": 0.0,
+          "Y": -399.99994,
+          "Z": -0.00014305115
+        },
+        "RefCount": 5,
+        "StringISMOverrides": "",
+        "_aaaannogmmjnhbaabjhcj_$DE6CC9D710019729$_$13$": "EBHDestructionCPDInputStyle::Building"
+      },
+      {
+        "StaticMesh": {
+          "ObjectName": "StaticMesh'SM_Ind_Girder_Horizontal_4mx1m_01a'",
+          "ObjectPath": "/Game/Environment/Architecture/Industrial/Factory_Kit/Meshes/Girders/SM_Ind_Girder_Horizontal_4mx1m_01a.1"
+        },
+        "MaterialOverrideArray": [
+          {
+            "ObjectName": "MaterialInstanceConstant'MI_Trim_Industrial_Girders_Clean'",
+            "ObjectPath": "/Game/Environment/Materials/Trim/Industrial/MI_Trim_Industrial_Girders_Clean.0"
+          }
+        ],
+        "PhysicalMaterialOverride": null,
+        "MeshCenter": {
+          "X": 0.0,
+          "Y": -249.99995,
+          "Z": -8.9645386E-05
+        },
+        "RefCount": 5,
+        "StringISMOverrides": "",
+        "_aaaannogmmjnhbaabjhcj_$DE6CC9D710019729$_$13$": "EBHDestructionCPDInputStyle::Building"
+      },
+      {
+        "StaticMesh": {
+          "ObjectName": "StaticMesh'SM_Ind_Girder_Horizontal_24mx1m_01a'",
+          "ObjectPath": "/Game/Environment/Architecture/Industrial/Factory_Kit/Meshes/Girders/SM_Ind_Girder_Horizontal_24mx1m_01a.1"
+        },
+        "MaterialOverrideArray": [
+          {
+            "ObjectName": "MaterialInstanceConstant'MI_Trim_Industrial_Girders_Clean'",
+            "ObjectPath": "/Game/Environment/Materials/Trim/Industrial/MI_Trim_Industrial_Girders_Clean.0"
+          }
+        ],
+        "PhysicalMaterialOverride": null,
+        "MeshCenter": {
+          "X": 0.0,
+          "Y": -1199.9998,
+          "Z": -0.00037002563
+        },
+        "RefCount": 1,
+        "StringISMOverrides": "",
+        "_aaaannogmmjnhbaabjhcj_$DE6CC9D710019729$_$13$": "EBHDestructionCPDInputStyle::Building"
+      }
+    ],
+    "RequiredActorClasses": [
+      {
+        "SoftActorClass": {
+          "AssetPathName": "/Script/WDGame.WDDestructionAmbienceVolume",
+          "SubPathString": ""
+        },
+        "RefCount": 8
+      }
+    ],
+    "CosmeticDecoratorData": [
+      {
+        "OwningChunkIDs": [
+          "A89F00B1-4B3FEAE9-6F8F30B2-2CB61E8A",
+          "0FEF6667-4DE637EF-121807A5-71CE723B"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": -0.70710677,
+            "W": 0.70710677,
+            "IsNormalized": true,
+            "Size": 0.99999994,
+            "SizeSquared": 0.99999994
+          },
+          "Translation": {
+            "X": 0.27188474,
+            "Y": 12.231885,
+            "Z": 409.19342
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.3,
+            "Z": 0.3
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "A0C82AE7-42384C70-0F417093-9AE093E5"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": -0.70710677,
+            "W": 0.70710677,
+            "IsNormalized": true,
+            "Size": 0.99999994,
+            "SizeSquared": 0.99999994
+          },
+          "Translation": {
+            "X": -719.7281,
+            "Y": 12.231876,
+            "Z": 409.19342
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.3,
+            "Z": 0.3
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "2F948322-41875689-5A9D7384-2BB7B4C3"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": -0.70710677,
+            "W": 0.70710677,
+            "IsNormalized": true,
+            "Size": 0.99999994,
+            "SizeSquared": 0.99999994
+          },
+          "Translation": {
+            "X": -2159.728,
+            "Y": 12.231859,
+            "Z": 409.19342
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.3,
+            "Z": 0.3
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "5EE0A894-45C51E73-A7287BAB-395B6839"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": -0.70710677,
+            "W": 0.70710677,
+            "IsNormalized": true,
+            "Size": 0.99999994,
+            "SizeSquared": 0.99999994
+          },
+          "Translation": {
+            "X": -1439.7281,
+            "Y": 12.231868,
+            "Z": 409.19342
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.3,
+            "Z": 0.3
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "CEA406D2-45374F56-BB4AC38F-CFFC9C8B"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": -0.70710677,
+            "W": 0.70710677,
+            "IsNormalized": true,
+            "Size": 0.99999994,
+            "SizeSquared": 0.99999994
+          },
+          "Translation": {
+            "X": -3599.728,
+            "Y": 12.231841,
+            "Z": 409.19342
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.3,
+            "Z": 0.3
+          }
+        },
+        "AssetRefIndex": 2,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "610B3AFB-4D8B966A-057F3C92-C8C9DC4B",
+          "8F659225-49AAE045-46730CB9-3DA9CB15"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": -0.70710677,
+            "W": 0.70710677,
+            "IsNormalized": true,
+            "Size": 0.99999994,
+            "SizeSquared": 0.99999994
+          },
+          "Translation": {
+            "X": -2879.728,
+            "Y": 12.23185,
+            "Z": 409.19342
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.3,
+            "Z": 0.3
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "CEA406D2-45374F56-BB4AC38F-CFFC9C8B"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": -0.70710677,
+            "W": 0.70710677,
+            "IsNormalized": true,
+            "Size": 0.99999994,
+            "SizeSquared": 0.99999994
+          },
+          "Translation": {
+            "X": -3839.728,
+            "Y": 12.231838,
+            "Z": 409.19342
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.3,
+            "Z": 0.3
+          }
+        },
+        "AssetRefIndex": 1,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "0BC889ED-41584325-E783F5B1-C8000C2C",
+          "199E4627-4137F4F2-DA69BCBE-A9B9245C"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": -0.70710677,
+            "W": 0.70710677,
+            "IsNormalized": true,
+            "Size": 0.99999994,
+            "SizeSquared": 0.99999994
+          },
+          "Translation": {
+            "X": -4409.728,
+            "Y": 12.231832,
+            "Z": 409.19342
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.325,
+            "Z": 0.3
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "ED46A080-47890822-24B514A4-2CE76BB7",
+          "5C9DFAB8-4E2E0277-D5F80BBE-8F83A111"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": -0.70710677,
+            "W": 0.70710677,
+            "IsNormalized": true,
+            "Size": 0.99999994,
+            "SizeSquared": 0.99999994
+          },
+          "Translation": {
+            "X": -5609.728,
+            "Y": 12.231817,
+            "Z": 409.19342
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.325,
+            "Z": 0.3
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "A85BB212-434BA1BD-BACD409D-F68EE397",
+          "CF7BB4A6-4F3D0B9D-E33103AF-D46C7DC0"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": -0.70710677,
+            "W": 0.70710677,
+            "IsNormalized": true,
+            "Size": 0.99999994,
+            "SizeSquared": 0.99999994
+          },
+          "Translation": {
+            "X": -6809.728,
+            "Y": 12.231802,
+            "Z": 409.19342
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.33,
+            "Z": 0.3
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "FDFC87C2-4435F248-0F0710A9-2BFDDB82"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": -0.70710677,
+            "W": 0.70710677,
+            "IsNormalized": true,
+            "Size": 0.99999994,
+            "SizeSquared": 0.99999994
+          },
+          "Translation": {
+            "X": -4005.704,
+            "Y": 12.231836,
+            "Z": 197.88414
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.3,
+            "Z": 0.22946262
+          }
+        },
+        "AssetRefIndex": 3,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "FDFC87C2-4435F248-0F0710A9-2BFDDB82"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": -0.70710677,
+            "W": 0.70710677,
+            "IsNormalized": true,
+            "Size": 0.99999994,
+            "SizeSquared": 0.99999994
+          },
+          "Translation": {
+            "X": -4245.704,
+            "Y": 12.231833,
+            "Z": 197.88414
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.3,
+            "Z": 0.22946262
+          }
+        },
+        "AssetRefIndex": 4,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "344B7214-4731BFF9-C20C09B3-FABEBF72"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": -0.70710677,
+            "W": 0.70710677,
+            "IsNormalized": true,
+            "Size": 0.99999994,
+            "SizeSquared": 0.99999994
+          },
+          "Translation": {
+            "X": -5445.704,
+            "Y": 12.231819,
+            "Z": 197.88414
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.3,
+            "Z": 0.22946262
+          }
+        },
+        "AssetRefIndex": 4,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "344B7214-4731BFF9-C20C09B3-FABEBF72"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": -0.70710677,
+            "W": 0.70710677,
+            "IsNormalized": true,
+            "Size": 0.99999994,
+            "SizeSquared": 0.99999994
+          },
+          "Translation": {
+            "X": -5205.704,
+            "Y": 12.231822,
+            "Z": 197.88414
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.3,
+            "Z": 0.22946262
+          }
+        },
+        "AssetRefIndex": 3,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "4731D139-46E7C6B0-CEDD51A4-6BEC0923"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": -0.70710677,
+            "W": 0.70710677,
+            "IsNormalized": true,
+            "Size": 0.99999994,
+            "SizeSquared": 0.99999994
+          },
+          "Translation": {
+            "X": -6645.704,
+            "Y": 12.231804,
+            "Z": 197.88414
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.3,
+            "Z": 0.22946262
+          }
+        },
+        "AssetRefIndex": 4,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "4731D139-46E7C6B0-CEDD51A4-6BEC0923"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": -0.70710677,
+            "W": 0.70710677,
+            "IsNormalized": true,
+            "Size": 0.99999994,
+            "SizeSquared": 0.99999994
+          },
+          "Translation": {
+            "X": -6405.704,
+            "Y": 12.231807,
+            "Z": 197.88414
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.3,
+            "Z": 0.22946262
+          }
+        },
+        "AssetRefIndex": 3,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "3DE8C815-402BB8D8-FD8118AC-6EE7DC17",
+          "A7003A34-442BB9FF-2976E7BC-22FDE650"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": -0.70710677,
+            "W": 0.70710677,
+            "IsNormalized": true,
+            "Size": 0.99999994,
+            "SizeSquared": 0.99999994
+          },
+          "Translation": {
+            "X": 0.2719046,
+            "Y": -1617.0657,
+            "Z": 409.19342
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.3,
+            "Z": 0.3
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "CCD10AA0-400CA4C1-4D654CB4-61EB2304"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": -0.70710677,
+            "W": 0.70710677,
+            "IsNormalized": true,
+            "Size": 0.99999994,
+            "SizeSquared": 0.99999994
+          },
+          "Translation": {
+            "X": -719.7281,
+            "Y": -1617.0657,
+            "Z": 409.19342
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.3,
+            "Z": 0.3
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "69E2376B-4D98ADF5-65C3E985-1657A0B5"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": -0.70710677,
+            "W": 0.70710677,
+            "IsNormalized": true,
+            "Size": 0.99999994,
+            "SizeSquared": 0.99999994
+          },
+          "Translation": {
+            "X": -1439.7281,
+            "Y": -1617.0657,
+            "Z": 409.19342
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.3,
+            "Z": 0.3
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "82F7B6C3-463AE59B-17F5EA8C-058E5B85",
+          "A753B4F6-4A8B88D7-755AF481-30B48DF8"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": -0.70710677,
+            "W": 0.70710677,
+            "IsNormalized": true,
+            "Size": 0.99999994,
+            "SizeSquared": 0.99999994
+          },
+          "Translation": {
+            "X": -2879.728,
+            "Y": -1617.0657,
+            "Z": 409.19342
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.3,
+            "Z": 0.3
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "55B99AB6-442793AA-C40E2A95-8E4D515E"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": -0.70710677,
+            "W": 0.70710677,
+            "IsNormalized": true,
+            "Size": 0.99999994,
+            "SizeSquared": 0.99999994
+          },
+          "Translation": {
+            "X": -2159.728,
+            "Y": -1617.0657,
+            "Z": 409.19342
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.3,
+            "Z": 0.3
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "01D956F2-42A94744-D8611AAC-62462B8C",
+          "D3765FD5-4AA359EB-927FB7A0-BC7DD83F"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": -0.0,
+            "Y": 0.0,
+            "Z": -0.70710677,
+            "W": 0.70710677,
+            "IsNormalized": true,
+            "Size": 0.99999994,
+            "SizeSquared": 0.99999994
+          },
+          "Translation": {
+            "X": -4809.728,
+            "Y": -1617.0657,
+            "Z": 409.19342
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.33,
+            "Z": 0.3
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "D7645721-49AE4149-84D2A7BE-A5E8CD8A",
+          "C2EA9BEB-43E65239-26DDF487-04B79D32"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": -0.70710677,
+            "W": 0.70710677,
+            "IsNormalized": true,
+            "Size": 0.99999994,
+            "SizeSquared": 0.99999994
+          },
+          "Translation": {
+            "X": -6409.728,
+            "Y": -1617.0657,
+            "Z": 409.19342
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.3,
+            "Z": 0.3
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "C09A956B-46B87C4D-0C24838D-DAFFAADC"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": -0.70710677,
+            "W": 0.70710677,
+            "IsNormalized": true,
+            "Size": 0.99999994,
+            "SizeSquared": 0.99999994
+          },
+          "Translation": {
+            "X": -7129.728,
+            "Y": -1617.0657,
+            "Z": 409.19342
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.3,
+            "Z": 0.3
+          }
+        },
+        "AssetRefIndex": 2,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "C09A956B-46B87C4D-0C24838D-DAFFAADC"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": -0.0,
+            "Y": 0.0,
+            "Z": -0.70710677,
+            "W": 0.70710677,
+            "IsNormalized": true,
+            "Size": 0.99999994,
+            "SizeSquared": 0.99999994
+          },
+          "Translation": {
+            "X": -7369.728,
+            "Y": -1617.0657,
+            "Z": 409.19342
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.2902043,
+            "Z": 0.3
+          }
+        },
+        "AssetRefIndex": 2,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "8D776048-49EC49AB-7502B1B5-CC3123D3"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": -0.70710677,
+            "W": 0.70710677,
+            "IsNormalized": true,
+            "Size": 0.99999994,
+            "SizeSquared": 0.99999994
+          },
+          "Translation": {
+            "X": -4005.0972,
+            "Y": -1617.0657,
+            "Z": 409.19342
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.3,
+            "Z": 0.3
+          }
+        },
+        "AssetRefIndex": 1,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "8D776048-49EC49AB-7502B1B5-CC3123D3"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": -0.70710677,
+            "W": 0.70710677,
+            "IsNormalized": true,
+            "Size": 0.99999994,
+            "SizeSquared": 0.99999994
+          },
+          "Translation": {
+            "X": -4155.097,
+            "Y": -1617.0657,
+            "Z": 409.19342
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.3,
+            "Z": 0.3
+          }
+        },
+        "AssetRefIndex": 2,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "586C6488-4778B408-306665BC-EF06BC7B"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": -0.70710677,
+            "W": 0.70710677,
+            "IsNormalized": true,
+            "Size": 0.99999994,
+            "SizeSquared": 0.99999994
+          },
+          "Translation": {
+            "X": -3755.0972,
+            "Y": -1617.0657,
+            "Z": 199.11694
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.3,
+            "Z": 0.22946262
+          }
+        },
+        "AssetRefIndex": 3,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "586C6488-4778B408-306665BC-EF06BC7B"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": -0.70710677,
+            "W": 0.70710677,
+            "IsNormalized": true,
+            "Size": 0.99999994,
+            "SizeSquared": 0.99999994
+          },
+          "Translation": {
+            "X": -3605.0972,
+            "Y": -1617.0657,
+            "Z": 199.11694
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.3,
+            "Z": 0.22946262
+          }
+        },
+        "AssetRefIndex": 4,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "7F2EF2C9-4FAB0E59-D8B03CBC-0368FC1A"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": -0.70710677,
+            "W": 0.70710677,
+            "IsNormalized": true,
+            "Size": 0.99999994,
+            "SizeSquared": 0.99999994
+          },
+          "Translation": {
+            "X": -4555.097,
+            "Y": -1617.0657,
+            "Z": 199.11694
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.3,
+            "Z": 0.22946262
+          }
+        },
+        "AssetRefIndex": 3,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "7F2EF2C9-4FAB0E59-D8B03CBC-0368FC1A"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": -0.70710677,
+            "W": 0.70710677,
+            "IsNormalized": true,
+            "Size": 0.99999994,
+            "SizeSquared": 0.99999994
+          },
+          "Translation": {
+            "X": -4405.097,
+            "Y": -1617.0657,
+            "Z": 199.11694
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.3,
+            "Z": 0.22946262
+          }
+        },
+        "AssetRefIndex": 4,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "FACE3AF3-49477421-5FA1D1A4-3D637A3A",
+          "85E64679-4261F636-A27BD6B8-073A5801"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": -0.70710677,
+            "W": 0.70710677,
+            "IsNormalized": true,
+            "Size": 0.99999994,
+            "SizeSquared": 0.99999994
+          },
+          "Translation": {
+            "X": -5609.728,
+            "Y": -1617.0657,
+            "Z": 199.11694
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.325,
+            "Z": 0.22946262
+          }
+        },
+        "AssetRefIndex": 5,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "3F4A28DA-47F88854-E4838681-A58124F4"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 1.0,
+            "W": -1.2167963E-08,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -7612.0996,
+            "Y": -1617.0657,
+            "Z": 409.19342
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.325,
+            "Z": 0.3
+          }
+        },
+        "AssetRefIndex": 2,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "3F4A28DA-47F88854-E4838681-A58124F4"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 1.0,
+            "W": -1.2167963E-08,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -7612.0996,
+            "Y": -1357.0657,
+            "Z": 409.19342
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.325,
+            "Z": 0.3
+          }
+        },
+        "AssetRefIndex": 1,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "B5D6133A-49AAC88D-E56CCDB9-C4B5F2FA"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": -0.0,
+            "Y": 0.0,
+            "Z": -1.0,
+            "W": 1.2167963E-08,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -7612.0996,
+            "Y": -147.06573,
+            "Z": 409.19342
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.2956128,
+            "Z": 0.3
+          }
+        },
+        "AssetRefIndex": 1,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "B5D6133A-49AAC88D-E56CCDB9-C4B5F2FA"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 1.0,
+            "W": -1.2167963E-08,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -7612.0996,
+            "Y": -407.06573,
+            "Z": 409.19342
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.325,
+            "Z": 0.3
+          }
+        },
+        "AssetRefIndex": 2,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "94BB1E05-469827CE-2C508DB4-C918C5C3"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 1.0,
+            "W": -1.2167963E-08,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": 12.900209,
+            "Y": -1617.0656,
+            "Z": 409.19342
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.325,
+            "Z": 0.3
+          }
+        },
+        "AssetRefIndex": 2,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "94BB1E05-469827CE-2C508DB4-C918C5C3"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": -0.0,
+            "Y": 0.0,
+            "Z": -1.0,
+            "W": 1.2167963E-08,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": 12.900203,
+            "Y": -1357.0656,
+            "Z": 409.19342
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.31520426,
+            "Z": 0.3
+          }
+        },
+        "AssetRefIndex": 1,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "CD907F9C-40D8EAD7-390CACB7-CD298776"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 1.0,
+            "W": -1.2167963E-08,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": 12.900173,
+            "Y": -147.06555,
+            "Z": 409.19342
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.2956128,
+            "Z": 0.3
+          }
+        },
+        "AssetRefIndex": 1,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "CD907F9C-40D8EAD7-390CACB7-CD298776"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 1.0,
+            "W": -1.2167963E-08,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": 12.90018,
+            "Y": -407.06555,
+            "Z": 409.19342
+          },
+          "Scale3D": {
+            "X": 0.16970466,
+            "Y": 0.325,
+            "Z": 0.3
+          }
+        },
+        "AssetRefIndex": 2,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "A89F00B1-4B3FEAE9-6F8F30B2-2CB61E8A"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": -0.5,
+            "Y": -0.5,
+            "Z": -0.5,
+            "W": 0.5,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": 0.68702,
+            "Y": 5.064898,
+            "Z": 218.89595
+          },
+          "Scale3D": {
+            "X": 0.407323,
+            "Y": 0.1675,
+            "Z": 0.1675
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "A0C82AE7-42384C70-0F417093-9AE093E5"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.5,
+            "Y": 0.5,
+            "Z": 0.5,
+            "W": -0.5,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -799.313,
+            "Y": 5.064898,
+            "Z": 218.89595
+          },
+          "Scale3D": {
+            "X": 0.407323,
+            "Y": 0.1675,
+            "Z": 0.1675
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "5EE0A894-45C51E73-A7287BAB-395B6839"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.5,
+            "Y": 0.5,
+            "Z": 0.5,
+            "W": -0.5,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -1599.313,
+            "Y": 5.064898,
+            "Z": 218.89595
+          },
+          "Scale3D": {
+            "X": 0.407323,
+            "Y": 0.1675,
+            "Z": 0.1675
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "2F948322-41875689-5A9D7384-2BB7B4C3"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.5,
+            "Y": 0.5,
+            "Z": 0.5,
+            "W": -0.5,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -2389.313,
+            "Y": 5.064898,
+            "Z": 218.89595
+          },
+          "Scale3D": {
+            "X": 0.407323,
+            "Y": 0.1675,
+            "Z": 0.1675
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "610B3AFB-4D8B966A-057F3C92-C8C9DC4B"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.5,
+            "Y": 0.5,
+            "Z": 0.5,
+            "W": -0.5,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -3199.313,
+            "Y": 5.064898,
+            "Z": 218.89595
+          },
+          "Scale3D": {
+            "X": 0.407323,
+            "Y": 0.1675,
+            "Z": 0.1675
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "CEA406D2-45374F56-BB4AC38F-CFFC9C8B"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.5,
+            "Y": 0.5,
+            "Z": 0.5,
+            "W": -0.5,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -3601.313,
+            "Y": 5.064898,
+            "Z": 218.89595
+          },
+          "Scale3D": {
+            "X": 0.407323,
+            "Y": 0.1675,
+            "Z": 0.1675
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "55AAA638-425B54FB-9C689E98-B1354F06"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.5,
+            "Y": 0.5,
+            "Z": 0.5,
+            "W": -0.5,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -4003.313,
+            "Y": 5.064898,
+            "Z": 218.89595
+          },
+          "Scale3D": {
+            "X": 0.407323,
+            "Y": 0.1675,
+            "Z": 0.1675
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "F423DDC0-41691C9D-49151E9D-164CB930"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.5,
+            "Y": 0.5,
+            "Z": 0.5,
+            "W": -0.5,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -5209.313,
+            "Y": 5.064898,
+            "Z": 218.89595
+          },
+          "Scale3D": {
+            "X": 0.407323,
+            "Y": 0.1675,
+            "Z": 0.1675
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "199E4627-4137F4F2-DA69BCBE-A9B9245C"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.5,
+            "Y": 0.5,
+            "Z": 0.5,
+            "W": -0.5,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -4807.313,
+            "Y": 5.064898,
+            "Z": 218.89595
+          },
+          "Scale3D": {
+            "X": 0.407323,
+            "Y": 0.1675,
+            "Z": 0.1675
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "0BC889ED-41584325-E783F5B1-C8000C2C"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.5,
+            "Y": 0.5,
+            "Z": 0.5,
+            "W": -0.5,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -4405.313,
+            "Y": 5.064898,
+            "Z": 218.89595
+          },
+          "Scale3D": {
+            "X": 0.407323,
+            "Y": 0.1675,
+            "Z": 0.1675
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "77332B45-4CFD0B1E-3926AAB3-174D329B"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.5,
+            "Y": 0.5,
+            "Z": 0.5,
+            "W": -0.5,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -6415.313,
+            "Y": 5.064898,
+            "Z": 218.89595
+          },
+          "Scale3D": {
+            "X": 0.407323,
+            "Y": 0.1675,
+            "Z": 0.1675
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "5C9DFAB8-4E2E0277-D5F80BBE-8F83A111"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.5,
+            "Y": 0.5,
+            "Z": 0.5,
+            "W": -0.5,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -6013.313,
+            "Y": 5.064898,
+            "Z": 218.89595
+          },
+          "Scale3D": {
+            "X": 0.407323,
+            "Y": 0.1675,
+            "Z": 0.1675
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "ED46A080-47890822-24B514A4-2CE76BB7"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.5,
+            "Y": 0.5,
+            "Z": 0.5,
+            "W": -0.5,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -5611.313,
+            "Y": 5.064898,
+            "Z": 218.89595
+          },
+          "Scale3D": {
+            "X": 0.407323,
+            "Y": 0.1675,
+            "Z": 0.1675
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "A85BB212-434BA1BD-BACD409D-F68EE397"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.5,
+            "Y": 0.5,
+            "Z": 0.5,
+            "W": -0.5,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -6817.313,
+            "Y": 5.064898,
+            "Z": 218.89595
+          },
+          "Scale3D": {
+            "X": 0.407323,
+            "Y": 0.1675,
+            "Z": 0.1675
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "CF7BB4A6-4F3D0B9D-E33103AF-D46C7DC0"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": -0.5,
+            "Y": -0.5,
+            "Z": -0.5,
+            "W": 0.5,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -7219.313,
+            "Y": 5.064898,
+            "Z": 218.89595
+          },
+          "Scale3D": {
+            "X": 0.407323,
+            "Y": 0.161,
+            "Z": 0.1675
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "B5D6133A-49AAC88D-E56CCDB9-C4B5F2FA"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": -0.0,
+            "Y": -0.707107,
+            "Z": -0.0,
+            "W": 0.707107,
+            "IsNormalized": true,
+            "Size": 1.0000002,
+            "SizeSquared": 1.0000006
+          },
+          "Translation": {
+            "X": -7605.1357,
+            "Y": -3.615766,
+            "Z": 218.8987
+          },
+          "Scale3D": {
+            "X": 0.407323,
+            "Y": 0.1675,
+            "Z": 0.1675
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "3F4A28DA-47F88854-E4838681-A58124F4"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": -0.707107,
+            "Z": 0.0,
+            "W": 0.7071066,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -7605.1357,
+            "Y": -1201.6157,
+            "Z": 218.8987
+          },
+          "Scale3D": {
+            "X": 0.40732324,
+            "Y": 0.1675,
+            "Z": 0.16750011
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "C09A956B-46B87C4D-0C24838D-DAFFAADC"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.5,
+            "Y": 0.5,
+            "Z": -0.5,
+            "W": 0.5,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -7213.313,
+            "Y": -1608.7207,
+            "Z": 218.89868
+          },
+          "Scale3D": {
+            "X": 0.407323,
+            "Y": 0.1675,
+            "Z": 0.1675
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "A7003A34-442BB9FF-2976E7BC-22FDE650"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.5,
+            "Y": 0.5,
+            "Z": -0.5,
+            "W": 0.5,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -399.313,
+            "Y": -1608.7207,
+            "Z": 218.89868
+          },
+          "Scale3D": {
+            "X": 0.407323,
+            "Y": 0.1675,
+            "Z": 0.1675
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "85F3A08D-41E1518D-FA422389-2CD7FFD2"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.5,
+            "Y": 0.5,
+            "Z": -0.5,
+            "W": 0.5,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -1199.313,
+            "Y": -1608.7207,
+            "Z": 218.89868
+          },
+          "Scale3D": {
+            "X": 0.407323,
+            "Y": 0.1675,
+            "Z": 0.1675
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "69E2376B-4D98ADF5-65C3E985-1657A0B5"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.5,
+            "Y": 0.5,
+            "Z": -0.5,
+            "W": 0.5,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -1601.313,
+            "Y": -1608.7207,
+            "Z": 218.89868
+          },
+          "Scale3D": {
+            "X": 0.407323,
+            "Y": 0.1675,
+            "Z": 0.1675
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "55B99AB6-442793AA-C40E2A95-8E4D515E"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.5,
+            "Y": 0.5,
+            "Z": -0.5,
+            "W": 0.5,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -2394.313,
+            "Y": -1608.7207,
+            "Z": 218.89868
+          },
+          "Scale3D": {
+            "X": 0.407323,
+            "Y": 0.1675,
+            "Z": 0.1675
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "A753B4F6-4A8B88D7-755AF481-30B48DF8"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.5,
+            "Y": 0.5,
+            "Z": -0.5,
+            "W": 0.5,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -2796.313,
+            "Y": -1608.7207,
+            "Z": 218.89868
+          },
+          "Scale3D": {
+            "X": 0.407323,
+            "Y": 0.1675,
+            "Z": 0.1675
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "FEFF62E5-4AD31237-E2DDA5AD-51FA5289"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.5,
+            "Y": 0.5,
+            "Z": -0.5,
+            "W": 0.5,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -3600.313,
+            "Y": -1608.7207,
+            "Z": 218.89868
+          },
+          "Scale3D": {
+            "X": 0.407323,
+            "Y": 0.1675,
+            "Z": 0.1675
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "82F7B6C3-463AE59B-17F5EA8C-058E5B85"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.5,
+            "Y": 0.5,
+            "Z": -0.5,
+            "W": 0.5,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -3198.313,
+            "Y": -1608.7207,
+            "Z": 218.89868
+          },
+          "Scale3D": {
+            "X": 0.407323,
+            "Y": 0.1675,
+            "Z": 0.1675
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "C7242354-432FA28D-401BCC92-1B69356B"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.5,
+            "Y": 0.5,
+            "Z": -0.5,
+            "W": 0.5,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -4404.313,
+            "Y": -1608.7207,
+            "Z": 218.89868
+          },
+          "Scale3D": {
+            "X": 0.407323,
+            "Y": 0.1675,
+            "Z": 0.1675
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "8D776048-49EC49AB-7502B1B5-CC3123D3"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.5,
+            "Y": 0.5,
+            "Z": -0.5,
+            "W": 0.5,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -4002.313,
+            "Y": -1608.7207,
+            "Z": 218.89868
+          },
+          "Scale3D": {
+            "X": 0.407323,
+            "Y": 0.1675,
+            "Z": 0.1675
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "01D956F2-42A94744-D8611AAC-62462B8C"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.5,
+            "Y": 0.5,
+            "Z": -0.5,
+            "W": 0.5,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -4806.313,
+            "Y": -1608.7207,
+            "Z": 218.89868
+          },
+          "Scale3D": {
+            "X": 0.407323,
+            "Y": 0.165,
+            "Z": 0.1675
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "795EC14A-4BE29093-43F290BB-ED5977DB"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.5,
+            "Y": 0.5,
+            "Z": -0.5,
+            "W": 0.5,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -5605.313,
+            "Y": -1608.7207,
+            "Z": 218.89868
+          },
+          "Scale3D": {
+            "X": 0.407323,
+            "Y": 0.1675,
+            "Z": 0.1675
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "C8C35096-465928B8-869F9F9E-C2BD0644"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.5,
+            "Y": 0.5,
+            "Z": -0.5,
+            "W": 0.5,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -6007.313,
+            "Y": -1608.7207,
+            "Z": 218.89868
+          },
+          "Scale3D": {
+            "X": 0.407323,
+            "Y": 0.1675,
+            "Z": 0.1675
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "C2EA9BEB-43E65239-26DDF487-04B79D32"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.5,
+            "Y": 0.5,
+            "Z": -0.5,
+            "W": 0.5,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -6811.313,
+            "Y": -1608.7207,
+            "Z": 218.89868
+          },
+          "Scale3D": {
+            "X": 0.407323,
+            "Y": 0.1675,
+            "Z": 0.1675
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "D7645721-49AE4149-84D2A7BE-A5E8CD8A"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.5,
+            "Y": 0.5,
+            "Z": -0.5,
+            "W": 0.5,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -6409.313,
+            "Y": -1608.7207,
+            "Z": 218.89868
+          },
+          "Scale3D": {
+            "X": 0.407323,
+            "Y": 0.1675,
+            "Z": 0.1675
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "94BB1E05-469827CE-2C508DB4-C918C5C3"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.707107,
+            "Z": 0.0,
+            "W": 0.707107,
+            "IsNormalized": true,
+            "Size": 1.0000002,
+            "SizeSquared": 1.0000006
+          },
+          "Translation": {
+            "X": 5.713918,
+            "Y": -1194.934,
+            "Z": 218.8987
+          },
+          "Scale3D": {
+            "X": 0.407323,
+            "Y": 0.1675,
+            "Z": 0.1675
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "CD907F9C-40D8EAD7-390CACB7-CD298776"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.707107,
+            "Z": 0.0,
+            "W": 0.7071066,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": 5.713918,
+            "Y": 2.066047,
+            "Z": 218.8987
+          },
+          "Scale3D": {
+            "X": 0.40732324,
+            "Y": 0.1675,
+            "Z": 0.16750011
+          }
+        },
+        "AssetRefIndex": 0,
+        "ActorClassRefIndex": -1,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 1,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [
+          0.171441,
+          0.14996,
+          0.152926
+        ],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ],
+    "ActorDecoratorData": [
+      {
+        "OwningChunkIDs": [
+          "A89F00B1-4B3FEAE9-6F8F30B2-2CB61E8A",
+          "A0C82AE7-42384C70-0F417093-9AE093E5",
+          "5EE0A894-45C51E73-A7287BAB-395B6839",
+          "6685D220-43203E90-6DA8E4BD-11C72D83",
+          "B444F8F3-47BBCEA2-F6846C89-BF811183",
+          "B47D9D32-4659C2B6-097462A6-AF56503F",
+          "69E2376B-4D98ADF5-65C3E985-1657A0B5",
+          "85F3A08D-41E1518D-FA422389-2CD7FFD2",
+          "A7003A34-442BB9FF-2976E7BC-22FDE650",
+          "6582CDBB-497DF85F-7E64B4B6-DAC122CD",
+          "00CBA170-4ECE8573-69B5CDB7-95CCF004",
+          "1C47C55C-4F8A1426-E159158F-4814394E",
+          "AFCDA7DD-425FD7F2-84DE178E-30D4F09A"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0,
+            "W": 1.0,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -1228.2609,
+            "Y": -805.6018,
+            "Z": 385.53247
+          },
+          "Scale3D": {
+            "X": 38.41893,
+            "Y": 25.15,
+            "Z": 13.15021
+          }
+        },
+        "AssetRefIndex": -1,
+        "ActorClassRefIndex": 0,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "BoxComponent: /Script/Engine.BoxComponent'/Game/ExternalAssets/Flix/Blueprints/Industrial/Warehouse_03a/B_Warehouse_03a.Default__B_Warehouse_03a_C:EditorComponent.WDDestructionAmbienceVolume_0.BoxComponent'\n\tAreaClass: /Script/CoreUObject.Class'/Script/NavigationSystem.NavArea_Obstacle'\n\t\t~EndObject~\n\t~EndObject~\nAmbienceComponent: /Script/SweejAmbience.SweejAmbienceComponent'/Game/ExternalAssets/Flix/Blueprints/Industrial/Warehouse_03a/B_Warehouse_03a.Default__B_Warehouse_03a_C:EditorComponent.WDDestructionAmbienceVolume_0.AmbienceComponent'\n\tPriority: 10\n\tMaxWeight: 0.600000\n\tAreaType: (Name=\"E_Audio_AreaType::NewEnumerator0\")\n\t~EndObject~\nAttenuationDistance: 50.000000\nAmbienceDefinition: /Game/Audio/AlwaysCook/AmbienceDefinitions/AD_Hangar_Large.AD_Hangar_Large\nRootComponent: /Script/Engine.BoxComponent'/Game/ExternalAssets/Flix/Blueprints/Industrial/Warehouse_03a/B_Warehouse_03a.Default__B_Warehouse_03a_C:EditorComponent.WDDestructionAmbienceVolume_0.BoxComponent'\n\t~EndObject~\n~EndObject~\n",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 0,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "F656DBC3-4C315AAE-74FD0DA7-28CD94BD"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0,
+            "W": 1.0,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -12.037487,
+            "Y": -805.9415,
+            "Z": 256.4797
+          },
+          "Scale3D": {
+            "X": 3.2,
+            "Y": 12.7,
+            "Z": 8.8
+          }
+        },
+        "AssetRefIndex": -1,
+        "ActorClassRefIndex": 0,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "BoxComponent: /Script/Engine.BoxComponent'/Game/ExternalAssets/Flix/Blueprints/Industrial/Warehouse_03a/B_Warehouse_03a.Default__B_Warehouse_03a_C:EditorComponent.WDDestructionAmbienceVolume_0.BoxComponent'\n\tAreaClass: /Script/CoreUObject.Class'/Script/NavigationSystem.NavArea_Obstacle'\n\t\t~EndObject~\n\t~EndObject~\nAmbienceComponent: /Script/SweejAmbience.SweejAmbienceComponent'/Game/ExternalAssets/Flix/Blueprints/Industrial/Warehouse_03a/B_Warehouse_03a.Default__B_Warehouse_03a_C:EditorComponent.WDDestructionAmbienceVolume_0.AmbienceComponent'\n\tPriority: 5\n\tMaxWeight: 0.500000\n\tAreaType: (Name=\"E_Audio_AreaType::NewEnumerator0\")\n\t~EndObject~\nAttenuationDistance: 300.000000\nAmbienceDefinition: /Game/Audio/AlwaysCook/AmbienceDefinitions/AD_Hangar.AD_Hangar\nRootComponent: /Script/Engine.BoxComponent'/Game/ExternalAssets/Flix/Blueprints/Industrial/Warehouse_03a/B_Warehouse_03a.Default__B_Warehouse_03a_C:EditorComponent.WDDestructionAmbienceVolume_0.BoxComponent'\n\t~EndObject~\n~EndObject~\n",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 0,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "3DE8C815-402BB8D8-FD8118AC-6EE7DC17"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0,
+            "W": 1.0,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -199.03749,
+            "Y": -1608.9415,
+            "Z": 150.47969
+          },
+          "Scale3D": {
+            "X": 3.2,
+            "Y": 2.1,
+            "Z": 4.4
+          }
+        },
+        "AssetRefIndex": -1,
+        "ActorClassRefIndex": 0,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "BoxComponent: /Script/Engine.BoxComponent'/Game/ExternalAssets/Flix/Blueprints/Industrial/Warehouse_03a/B_Warehouse_03a.Default__B_Warehouse_03a_C:EditorComponent.WDDestructionAmbienceVolume_0.BoxComponent'\n\tAreaClass: /Script/CoreUObject.Class'/Script/NavigationSystem.NavArea_Obstacle'\n\t\t~EndObject~\n\t~EndObject~\nAmbienceComponent: /Script/SweejAmbience.SweejAmbienceComponent'/Game/ExternalAssets/Flix/Blueprints/Industrial/Warehouse_03a/B_Warehouse_03a.Default__B_Warehouse_03a_C:EditorComponent.WDDestructionAmbienceVolume_0.AmbienceComponent'\n\tPriority: 5\n\tMaxWeight: 0.500000\n\tAreaType: (Name=\"E_Audio_AreaType::NewEnumerator0\")\n\t~EndObject~\nAttenuationDistance: 200.000000\nAmbienceDefinition: /Game/Audio/AlwaysCook/AmbienceDefinitions/AD_Hangar_Large.AD_Hangar_Large\nRootComponent: /Script/Engine.BoxComponent'/Game/ExternalAssets/Flix/Blueprints/Industrial/Warehouse_03a/B_Warehouse_03a.Default__B_Warehouse_03a_C:EditorComponent.WDDestructionAmbienceVolume_0.BoxComponent'\n\t~EndObject~\n~EndObject~\n",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 0,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "10FE4BE0-476DE12E-BD87F685-E338559A"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0,
+            "W": 1.0,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -1402.0375,
+            "Y": 8.058491,
+            "Z": 137.47969
+          },
+          "Scale3D": {
+            "X": 5.9,
+            "Y": 2.2,
+            "Z": 4.9
+          }
+        },
+        "AssetRefIndex": -1,
+        "ActorClassRefIndex": 0,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "BoxComponent: /Script/Engine.BoxComponent'/Game/ExternalAssets/Flix/Blueprints/Industrial/Warehouse_03a/B_Warehouse_03a.Default__B_Warehouse_03a_C:EditorComponent.WDDestructionAmbienceVolume_0.BoxComponent'\n\tAreaClass: /Script/CoreUObject.Class'/Script/NavigationSystem.NavArea_Obstacle'\n\t\t~EndObject~\n\t~EndObject~\nAmbienceComponent: /Script/SweejAmbience.SweejAmbienceComponent'/Game/ExternalAssets/Flix/Blueprints/Industrial/Warehouse_03a/B_Warehouse_03a.Default__B_Warehouse_03a_C:EditorComponent.WDDestructionAmbienceVolume_0.AmbienceComponent'\n\tPriority: 5\n\tMaxWeight: 0.500000\n\tAreaType: (Name=\"E_Audio_AreaType::NewEnumerator0\")\n\t~EndObject~\nAttenuationDistance: 300.000000\nAmbienceDefinition: /Game/Audio/AlwaysCook/AmbienceDefinitions/AD_Hangar_Large.AD_Hangar_Large\nRootComponent: /Script/Engine.BoxComponent'/Game/ExternalAssets/Flix/Blueprints/Industrial/Warehouse_03a/B_Warehouse_03a.Default__B_Warehouse_03a_C:EditorComponent.WDDestructionAmbienceVolume_0.BoxComponent'\n\t~EndObject~\n~EndObject~\n",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 0,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "55AAA638-425B54FB-9C689E98-B1354F06",
+          "D30CB189-43E59EDD-DC21ECB2-332050FF",
+          "44E5EAA6-4F5E0695-D78A72B4-323F17A5",
+          "E935CCE5-44F19C6A-9612B3A1-03F27D80",
+          "8F659225-49AAE045-46730CB9-3DA9CB15",
+          "CEA406D2-45374F56-BB4AC38F-CFFC9C8B",
+          "0BC889ED-41584325-E783F5B1-C8000C2C",
+          "FEFF62E5-4AD31237-E2DDA5AD-51FA5289",
+          "55B99AB6-442793AA-C40E2A95-8E4D515E",
+          "82F7B6C3-463AE59B-17F5EA8C-058E5B85",
+          "8D776048-49EC49AB-7502B1B5-CC3123D3",
+          "C7242354-432FA28D-401BCC92-1B69356B",
+          "2F027659-41622548-18C9448A-B4E3F586",
+          "8161CBD6-4DDB124E-097851B0-5CA33100"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0,
+            "W": 1.0,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -3669.0376,
+            "Y": -799.9415,
+            "Z": 372.4797
+          },
+          "Scale3D": {
+            "X": 38.8,
+            "Y": 25.1,
+            "Z": 13.3
+          }
+        },
+        "AssetRefIndex": -1,
+        "ActorClassRefIndex": 0,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "BoxComponent: /Script/Engine.BoxComponent'/Game/ExternalAssets/Flix/Blueprints/Industrial/Warehouse_03a/B_Warehouse_03a.Default__B_Warehouse_03a_C:EditorComponent.WDDestructionAmbienceVolume_1.BoxComponent'\n\tAreaClass: /Script/CoreUObject.Class'/Script/NavigationSystem.NavArea_Obstacle'\n\t\t~EndObject~\n\t~EndObject~\nAmbienceComponent: /Script/SweejAmbience.SweejAmbienceComponent'/Game/ExternalAssets/Flix/Blueprints/Industrial/Warehouse_03a/B_Warehouse_03a.Default__B_Warehouse_03a_C:EditorComponent.WDDestructionAmbienceVolume_1.AmbienceComponent'\n\tPriority: 10\n\tMaxWeight: 0.600000\n\tAreaType: (Name=\"E_Audio_AreaType::NewEnumerator0\")\n\t~EndObject~\nAttenuationDistance: 50.000000\nAmbienceDefinition: /Game/Audio/AlwaysCook/AmbienceDefinitions/AD_Hangar_Large.AD_Hangar_Large\nRootComponent: /Script/Engine.BoxComponent'/Game/ExternalAssets/Flix/Blueprints/Industrial/Warehouse_03a/B_Warehouse_03a.Default__B_Warehouse_03a_C:EditorComponent.WDDestructionAmbienceVolume_1.BoxComponent'\n\t~EndObject~\n~EndObject~\n",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 0,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "7235BBA1-40851B5F-1D517EB8-BA5A55FD",
+          "F423DDC0-41691C9D-49151E9D-164CB930",
+          "77332B45-4CFD0B1E-3926AAB3-174D329B",
+          "CF7BB4A6-4F3D0B9D-E33103AF-D46C7DC0",
+          "ED46A080-47890822-24B514A4-2CE76BB7",
+          "199E4627-4137F4F2-DA69BCBE-A9B9245C",
+          "85E64679-4261F636-A27BD6B8-073A5801",
+          "C2EA9BEB-43E65239-26DDF487-04B79D32",
+          "780C336E-4161264F-B2D9ED8F-E68AB852",
+          "AF8FC2D6-4C508264-AC904493-E22C14DE",
+          "795EC14A-4BE29093-43F290BB-ED5977DB",
+          "C8C35096-465928B8-869F9F9E-C2BD0644"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0,
+            "W": 1.0,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -6251.0376,
+            "Y": -795.9415,
+            "Z": 369.4797
+          },
+          "Scale3D": {
+            "X": 42.2,
+            "Y": 25.0,
+            "Z": 13.7
+          }
+        },
+        "AssetRefIndex": -1,
+        "ActorClassRefIndex": 0,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "BoxComponent: /Script/Engine.BoxComponent'/Game/ExternalAssets/Flix/Blueprints/Industrial/Warehouse_03a/B_Warehouse_03a.Default__B_Warehouse_03a_C:EditorComponent.WDDestructionAmbienceVolume_2.BoxComponent'\n\tAreaClass: /Script/CoreUObject.Class'/Script/NavigationSystem.NavArea_Obstacle'\n\t\t~EndObject~\n\t~EndObject~\nAmbienceComponent: /Script/SweejAmbience.SweejAmbienceComponent'/Game/ExternalAssets/Flix/Blueprints/Industrial/Warehouse_03a/B_Warehouse_03a.Default__B_Warehouse_03a_C:EditorComponent.WDDestructionAmbienceVolume_2.AmbienceComponent'\n\tPriority: 10\n\tMaxWeight: 0.600000\n\tAreaType: (Name=\"E_Audio_AreaType::NewEnumerator0\")\n\t~EndObject~\nAttenuationDistance: 50.000000\nAmbienceDefinition: /Game/Audio/AlwaysCook/AmbienceDefinitions/AD_Hangar_Large.AD_Hangar_Large\nRootComponent: /Script/Engine.BoxComponent'/Game/ExternalAssets/Flix/Blueprints/Industrial/Warehouse_03a/B_Warehouse_03a.Default__B_Warehouse_03a_C:EditorComponent.WDDestructionAmbienceVolume_2.BoxComponent'\n\t~EndObject~\n~EndObject~\n",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 0,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "62857BE0-411CCB55-9F48A785-D3E6309F"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0,
+            "W": 1.0,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -7598.0376,
+            "Y": -803.9415,
+            "Z": 214.47969
+          },
+          "Scale3D": {
+            "X": 4.0,
+            "Y": 11.0,
+            "Z": 9.400001
+          }
+        },
+        "AssetRefIndex": -1,
+        "ActorClassRefIndex": 0,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "BoxComponent: /Script/Engine.BoxComponent'/Game/ExternalAssets/Flix/Blueprints/Industrial/Warehouse_03a/B_Warehouse_03a.Default__B_Warehouse_03a_C:EditorComponent.WDDestructionAmbienceVolume_0.BoxComponent'\n\tAreaClass: /Script/CoreUObject.Class'/Script/NavigationSystem.NavArea_Obstacle'\n\t\t~EndObject~\n\t~EndObject~\nAmbienceComponent: /Script/SweejAmbience.SweejAmbienceComponent'/Game/ExternalAssets/Flix/Blueprints/Industrial/Warehouse_03a/B_Warehouse_03a.Default__B_Warehouse_03a_C:EditorComponent.WDDestructionAmbienceVolume_0.AmbienceComponent'\n\tPriority: 5\n\tMaxWeight: 0.500000\n\tAreaType: (Name=\"E_Audio_AreaType::NewEnumerator0\")\n\t~EndObject~\nAttenuationDistance: 300.000000\nAmbienceDefinition: /Game/Audio/AlwaysCook/AmbienceDefinitions/AD_Hangar_Large.AD_Hangar_Large\nRootComponent: /Script/Engine.BoxComponent'/Game/ExternalAssets/Flix/Blueprints/Industrial/Warehouse_03a/B_Warehouse_03a.Default__B_Warehouse_03a_C:EditorComponent.WDDestructionAmbienceVolume_0.BoxComponent'\n\t~EndObject~\n~EndObject~\n",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 0,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "OwningChunkIDs": [
+          "D3765FD5-4AA359EB-927FB7A0-BC7DD83F"
+        ],
+        "Transform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0,
+            "W": 1.0,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": -5399.0376,
+            "Y": -1608.9415,
+            "Z": 150.47969
+          },
+          "Scale3D": {
+            "X": 6.3,
+            "Y": 2.6,
+            "Z": 5.1
+          }
+        },
+        "AssetRefIndex": -1,
+        "ActorClassRefIndex": 0,
+        "NiagaraAssetRefIndex": -1,
+        "SoundEmitterAssetRefIndex": -1,
+        "StringTemplateOverrides": "BoxComponent: /Script/Engine.BoxComponent'/Game/ExternalAssets/Flix/Blueprints/Industrial/Warehouse_03a/B_Warehouse_03a.Default__B_Warehouse_03a_C:EditorComponent.WDDestructionAmbienceVolume_0.BoxComponent'\n\tAreaClass: /Script/CoreUObject.Class'/Script/NavigationSystem.NavArea_Obstacle'\n\t\t~EndObject~\n\t~EndObject~\nAmbienceComponent: /Script/SweejAmbience.SweejAmbienceComponent'/Game/ExternalAssets/Flix/Blueprints/Industrial/Warehouse_03a/B_Warehouse_03a.Default__B_Warehouse_03a_C:EditorComponent.WDDestructionAmbienceVolume_0.AmbienceComponent'\n\tPriority: 5\n\tMaxWeight: 0.500000\n\tAreaType: (Name=\"E_Audio_AreaType::NewEnumerator0\")\n\t~EndObject~\nAttenuationDistance: 300.000000\nAmbienceDefinition: /Game/Audio/AlwaysCook/AmbienceDefinitions/AD_Hangar_Large.AD_Hangar_Large\nRootComponent: /Script/Engine.BoxComponent'/Game/ExternalAssets/Flix/Blueprints/Industrial/Warehouse_03a/B_Warehouse_03a.Default__B_Warehouse_03a_C:EditorComponent.WDDestructionAmbienceVolume_0.BoxComponent'\n\t~EndObject~\n~EndObject~\n",
+        "DecoratorNiagaraDataChannelParameters": {
+          "DebrisMeshType": {
+            "TagName": "None"
+          },
+          "DebrisShape": {
+            "TagName": "None"
+          },
+          "DebrisMaterial": {
+            "TagName": "None"
+          }
+        },
+        "Properties": 0,
+        "_aaabmjcklcgiagpimojki_$92AB26806F8CE9A8$_$28$": [],
+        "PrefabHash": 0,
+        "Prefab": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}

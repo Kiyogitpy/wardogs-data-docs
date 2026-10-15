@@ -1,0 +1,78 @@
+--- export: UDataAsset / AIC_Manticore_Marksman ---
+{
+  "Type": "WDAICharacterConfigData",
+  "Name": "AIC_Manticore_Marksman",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAICharacterConfigData'",
+  "Package": "/BaseScenario/AIConfigs/Manticore/AIC_Manticore_Marksman",
+  "Properties": {
+    "AICharacterClass": {
+      "AssetPathName": "/WDCore/Character/B_WDCore_MoverPlayerCharacter.B_WDCore_MoverPlayerCharacter_C",
+      "SubPathString": ""
+    },
+    "AIControllerClass": {
+      "AssetPathName": "/WDAIPvEAICore/BP_CoreAIController.BP_CoreAIController_C",
+      "SubPathString": ""
+    },
+    "ShootingConfigData": {
+      "FireModePriority": [
+        "EWDFireMode::Burst",
+        "EWDFireMode::Automatic",
+        "EWDFireMode::SemiAutomatic"
+      ]
+    },
+    "FactionTag": {
+      "TagName": "Meta.Alignment.Faction.Charlie"
+    },
+    "AIInventory": [
+      {
+        "Key": {
+          "TagName": "Id.Item.SVDM"
+        },
+        "Value": 1
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.LightArmor"
+        },
+        "Value": 1
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.LightHelmet"
+        },
+        "Value": 1
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.SVDMMagazine"
+        },
+        "Value": 2
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.6xScope"
+        },
+        "Value": 1
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.MZL_04"
+        },
+        "Value": 1
+      }
+    ],
+    "BehaviorTree": {
+      "ObjectName": "BehaviorTree'BT_WDAIPvECore_Base'",
+      "ObjectPath": "/WDAIPvEAICore/BehaviorTrees/BT_WDAIPvECore_Base.0"
+    },
+    "AlertStatesWithThreashold": {
+      "ObjectName": "WDAIAlertStateThresholdData'AlertStateThreashold_DataConfig'",
+      "ObjectPath": "/WDAIPvEAICore/DataAssets/AlertStateThreashold_DataConfig.0"
+    },
+    "AIInfluenceDataAsset": {
+      "ObjectName": "WDAIInfluenceData'AIInfluence_DataConfig'",
+      "ObjectPath": "/WDAIPvEAICore/DataAssets/AIInfluence_DataConfig.0"
+    }
+  }
+}

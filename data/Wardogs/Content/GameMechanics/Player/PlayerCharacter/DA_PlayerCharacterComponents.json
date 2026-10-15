@@ -1,0 +1,230 @@
+--- export: UDataAsset / DA_PlayerCharacterComponents ---
+{
+  "Type": "BHPerspectiveData",
+  "Name": "DA_PlayerCharacterComponents",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPerspectiveData'",
+  "Package": "/Game/GameMechanics/Player/PlayerCharacter/DA_PlayerCharacterComponents",
+  "Properties": {
+    "Templates": [
+      {
+        "Key": "FirstPersonBodyMesh",
+        "Value": {
+          "ObjectName": "SkeletalMeshComponent'DA_PlayerCharacterComponents:SkeletalMeshComponent_0'",
+          "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/DA_PlayerCharacterComponents.1"
+        }
+      },
+      {
+        "Key": "PlayerTransportMeshFP",
+        "Value": {
+          "ObjectName": "SkeletalMeshComponent'DA_PlayerCharacterComponents:SkeletalMeshComponent_2'",
+          "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/DA_PlayerCharacterComponents.3"
+        }
+      },
+      {
+        "Key": "PlayerTransportMeshTP",
+        "Value": {
+          "ObjectName": "SkeletalMeshComponent'DA_PlayerCharacterComponents:SkeletalMeshComponent_1'",
+          "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/DA_PlayerCharacterComponents.2"
+        }
+      },
+      {
+        "Key": "FirstPersonCamera",
+        "Value": {
+          "ObjectName": "WDFirstPersonCameraComponent'DA_PlayerCharacterComponents:WDFirstPersonCameraComponent_0'",
+          "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/DA_PlayerCharacterComponents.5"
+        }
+      },
+      {
+        "Key": "FirstPersonMeshComponent",
+        "Value": {
+          "ObjectName": "SkeletalMeshComponent'DA_PlayerCharacterComponents:SkeletalMeshComponent_3'",
+          "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/DA_PlayerCharacterComponents.4"
+        }
+      },
+      {
+        "Key": "WaveBreakerComponent",
+        "Value": {
+          "ObjectName": "WDWaveBreakerComponent'DA_PlayerCharacterComponents:WDWaveBreakerComponent_0'",
+          "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/DA_PlayerCharacterComponents.6"
+        }
+      }
+    ]
+  }
+}
+--- export: USkeletalMeshComponent / SkeletalMeshComponent_0 ---
+{
+  "Type": "SkeletalMeshComponent",
+  "Name": "SkeletalMeshComponent_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'SkeletalMeshComponent'",
+  "Outer": {
+    "ObjectName": "BHPerspectiveData'DA_PlayerCharacterComponents'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/DA_PlayerCharacterComponents.0"
+  },
+  "Properties": {
+    "AnimClass": {
+      "ObjectName": "AnimBlueprintGeneratedClass'ABP_TP_Character_Rework_C'",
+      "ObjectPath": "/Game/Animation/Blueprints/Character/ABP_TP_Character_Rework.1"
+    },
+    "SkeletalMesh": {
+      "ObjectName": "SkeletalMesh'SK_FP_Body_Reference_Character'",
+      "ObjectPath": "/Game/Characters/Default_PlayerMesh/FP/SK_FP_Body_Reference_Character.1"
+    },
+    "SkinnedAsset": {
+      "ObjectName": "SkeletalMesh'SK_FP_Body_Reference_Character'",
+      "ObjectPath": "/Game/Characters/Default_PlayerMesh/FP/SK_FP_Body_Reference_Character.1"
+    },
+    "BHFovShadowMode": "EBHFovShadowMode::Background",
+    "CastShadow": false,
+    "bAffectDynamicIndirectLighting": false,
+    "bAffectDistanceFieldLighting": false,
+    "LightingChannels": {
+      "bChannel1": true
+    },
+    "RelativeScale3D": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": -96.0
+    },
+    "ComponentVelocity": {
+      "X": 0.0,
+      "Y": -90.0,
+      "Z": 0.0
+    }
+  }
+}
+--- export: USkeletalMeshComponent / SkeletalMeshComponent_1 ---
+{
+  "Type": "SkeletalMeshComponent",
+  "Name": "SkeletalMeshComponent_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'SkeletalMeshComponent'",
+  "Outer": {
+    "ObjectName": "BHPerspectiveData'DA_PlayerCharacterComponents'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/DA_PlayerCharacterComponents.0"
+  },
+  "Properties": {
+    "bAffectDynamicIndirectLighting": false,
+    "bAffectDistanceFieldLighting": false,
+    "RelativeScale3D": {
+      "X": 15.628124,
+      "Y": 0.0,
+      "Z": -96.0
+    }
+  }
+}
+--- export: USkeletalMeshComponent / SkeletalMeshComponent_2 ---
+{
+  "Type": "SkeletalMeshComponent",
+  "Name": "SkeletalMeshComponent_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'SkeletalMeshComponent'",
+  "Outer": {
+    "ObjectName": "BHPerspectiveData'DA_PlayerCharacterComponents'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/DA_PlayerCharacterComponents.0"
+  },
+  "Properties": {
+    "bAffectDynamicIndirectLighting": false,
+    "bAffectDistanceFieldLighting": false,
+    "RelativeScale3D": {
+      "X": -8.464119,
+      "Y": 0.0,
+      "Z": -95.50413
+    }
+  }
+}
+--- export: USkeletalMeshComponent / SkeletalMeshComponent_3 ---
+{
+  "Type": "SkeletalMeshComponent",
+  "Name": "SkeletalMeshComponent_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'SkeletalMeshComponent'",
+  "Outer": {
+    "ObjectName": "BHPerspectiveData'DA_PlayerCharacterComponents'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/DA_PlayerCharacterComponents.0"
+  },
+  "Properties": {
+    "AnimClass": {
+      "ObjectName": "AnimBlueprintGeneratedClass'ABP_FPCharacter_Rework_C'",
+      "ObjectPath": "/Game/Animation/Blueprints/Character/ABP_FPCharacter_Rework.1"
+    },
+    "SkeletalMesh": {
+      "ObjectName": "SkeletalMesh'SK_Temp_Glove_arms'",
+      "ObjectPath": "/Game/Characters/Default_PlayerMesh/FP/SK_Temp_Glove_arms.1"
+    },
+    "SkinnedAsset": {
+      "ObjectName": "SkeletalMesh'SK_Temp_Glove_arms'",
+      "ObjectPath": "/Game/Characters/Default_PlayerMesh/FP/SK_Temp_Glove_arms.1"
+    },
+    "bSetMeshDeformer": true,
+    "MeshDeformer": {
+      "ObjectName": "OptimusDeformer'DG_DualQuat'",
+      "ObjectPath": "/Game/Characters/Default_PlayerMesh/FP/DG_DualQuat.7"
+    },
+    "BHFovShadowMode": "EBHFovShadowMode::Foreground",
+    "CastShadow": false,
+    "bAffectDynamicIndirectLighting": false,
+    "bAffectDistanceFieldLighting": false,
+    "FirstPersonPrimitiveType": "EFirstPersonPrimitiveType::FirstPerson",
+    "CustomPrimitiveData": {
+      "Data": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "BoundsScale": 2.0,
+    "RelativeScale3D": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": -171.5
+    },
+    "ComponentVelocity": {
+      "X": 0.0,
+      "Y": -90.0,
+      "Z": 0.0
+    }
+  }
+}
+--- export: UCameraComponent / WDFirstPersonCameraComponent_0 ---
+{
+  "Type": "WDFirstPersonCameraComponent",
+  "Name": "WDFirstPersonCameraComponent_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDFirstPersonCameraComponent'",
+  "Outer": {
+    "ObjectName": "BHPerspectiveData'DA_PlayerCharacterComponents'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/DA_PlayerCharacterComponents.0"
+  },
+  "Properties": {
+    "FieldOfView": 106.0,
+    "OrthoWidth": 512.0,
+    "bAutoCalculateOrthoPlanes": false,
+    "OrthoNearClipPlane": 0.0,
+    "RelativeLocation": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 68.11036
+    }
+  }
+}
+--- export: UActorComponent / WDWaveBreakerComponent_0 ---
+{
+  "Type": "WDWaveBreakerComponent",
+  "Name": "WDWaveBreakerComponent_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDWaveBreakerComponent'",
+  "Outer": {
+    "ObjectName": "BHPerspectiveData'DA_PlayerCharacterComponents'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/DA_PlayerCharacterComponents.0"
+  }
+}

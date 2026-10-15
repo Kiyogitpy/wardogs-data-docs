@@ -1,0 +1,28 @@
+--- export: UDataAsset / DA_DeadZoneTrigger ---
+{
+  "Type": "WDDeadZoneTriggerData",
+  "Name": "DA_DeadZoneTrigger",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDDeadZoneTriggerData'",
+  "Package": "/Game/UI/Features/Settings/Data/DA_DeadZoneTrigger",
+  "Properties": {
+    "LeftTriggerTestingText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Settings_Controls.STRINGS_Settings_Controls",
+      "Key": "Value.LeftTrigger.TestOutput",
+      "SourceString": "Trigger: {Percentage}%",
+      "LocalizedString": "Trigger: {Percentage}%"
+    },
+    "RightTriggerTestingText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Settings_Controls.STRINGS_Settings_Controls",
+      "Key": "Value.RightTrigger.TestOutput",
+      "SourceString": "Trigger: {Percentage}%",
+      "LocalizedString": "Trigger: {Percentage}%"
+    },
+    "DynamicImageMaterialViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIDynamicImageMaterialViewModel",
+        "SubPathString": ""
+      }
+    }
+  }
+}

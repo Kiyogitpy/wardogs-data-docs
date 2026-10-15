@@ -1,0 +1,59 @@
+--- export: UPrimaryDataAsset / AE_Jet_Fire ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Jet_Fire",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/FlyByManager/Audio/Jet_01/Events/AE_Jet_Fire",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Jet.Fire"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Jet_Fire:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/FlyByManager/Audio/Jet_01/Events/AE_Jet_Fire.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Jet_Fire:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/FlyByManager/Audio/Jet_01/Events/AE_Jet_Fire.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Jet_Fire'",
+    "ObjectPath": "/FlyByManager/Audio/Jet_01/Events/AE_Jet_Fire.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Weapon.Fire"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Jet_Fire'",
+    "ObjectPath": "/FlyByManager/Audio/Jet_01/Events/AE_Jet_Fire.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Vehicles_Jet_Firing'",
+      "ObjectPath": "/FlyByManager/Audio/Jet_01/MSS_Vehicles_Jet_Firing.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Weapon.Fire"
+    }
+  }
+}

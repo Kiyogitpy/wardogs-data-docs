@@ -1,0 +1,50 @@
+--- export: UDataAsset / DA_UI_BuildTool ---
+{
+  "Type": "WDUIBuildToolData",
+  "Name": "DA_UI_BuildTool",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIBuildToolData'",
+  "Package": "/Buildables/Data/BuildTool/DA_UI_BuildTool",
+  "Properties": {
+    "BuildingPlacementViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/BuildablesRuntime.WDUIBuildablePlacementViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Buildables/Data/Buildables/DA_UI_BuildablePlacementData.DA_UI_BuildablePlacementData",
+        "SubPathString": ""
+      }
+    },
+    "RadialWheelViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/BuildablesRuntime.WDUIBuildToolRadialWheelViewModel",
+        "SubPathString": ""
+      }
+    },
+    "BuildableStatusTextMap": [
+      {
+        "Key": {
+          "TagName": "Buildable.BuildableStatus.NotEnoughSupplies"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "Buildable.BuildableStatus.NotEnoughSupplies",
+          "SourceString": "Not Enough Supplies",
+          "LocalizedString": "Not Enough Supplies"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Buildable.BuildableStatus.Obstructed"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+          "Key": "Buildable.BuildStatus.Obstructed",
+          "SourceString": "Obstructed",
+          "LocalizedString": "Obstructed"
+        }
+      }
+    ]
+  }
+}

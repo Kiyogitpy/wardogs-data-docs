@@ -1,0 +1,124 @@
+--- export: UObject / WDActorBuildSpawner_0 ---
+{
+  "Type": "WDActorBuildSpawner",
+  "Name": "WDActorBuildSpawner_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDActorBuildSpawner'",
+  "Outer": {
+    "ObjectName": "WDBuildableDataAsset'DA_Buildable_RefuelStation'",
+    "ObjectPath": "/Buildables/Data/Buildables/RefuelStation/DA_Buildable_RefuelStation.1"
+  },
+  "Properties": {
+    "BaseBuildableClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_BuildableRefuelStation_C'",
+      "ObjectPath": "/Buildables/Data/Buildables/RefuelStation/B_BuildableRefuelStation.2"
+    }
+  }
+}
+--- export: UDataAsset / DA_Buildable_RefuelStation ---
+{
+  "Type": "WDBuildableDataAsset",
+  "Name": "DA_Buildable_RefuelStation",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDBuildableDataAsset'",
+  "Package": "/Buildables/Data/Buildables/RefuelStation/DA_Buildable_RefuelStation",
+  "Properties": {
+    "SpawnerOverride": {
+      "ObjectName": "WDActorBuildSpawner'DA_Buildable_RefuelStation:WDActorBuildSpawner_0'",
+      "ObjectPath": "/Buildables/Data/Buildables/RefuelStation/DA_Buildable_RefuelStation.0"
+    },
+    "EntityTag": {
+      "TagName": "Id.Buildable.RefuelStation"
+    },
+    "Cost": 200,
+    "_aaabfagpiegcpjedampen_$6F8462F9430CF4D$_$21$": 13.33,
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "444C46F54D42C5E5B417249C65F37B80",
+      "SourceString": "Refuel Station",
+      "LocalizedString": "Refuel Station"
+    },
+    "MaxHealth": 1600.0,
+    "bUseCurveToUpdateHealthVisuals": true,
+    "HealthVisualsPercentageCurve": {
+      "ExternalCurve": {
+        "ObjectName": "CurveFloat'C_DamageTintCurve'",
+        "ObjectPath": "/Buildables/Data/Buildables/C_DamageTintCurve.0"
+      }
+    },
+    "MaxStack": 100,
+    "PlacementFlags": 9,
+    "FoundationStaticMesh": {
+      "AssetPathName": "/Buildables/Data/Foundations/Meshes/SM_Foundation_Mistral.SM_Foundation_Mistral",
+      "SubPathString": ""
+    },
+    "BuildingStagesDefinition": {
+      "ObjectName": "BuildingStagesDefinition'DA_Buildable_RefuelStation_Stages'",
+      "ObjectPath": "/Buildables/Data/Buildables/RefuelStation/DA_Buildable_RefuelStation_Stages.0"
+    },
+    "BuildingStageChangedVFX": {
+      "AssetPathName": "/Buildables/Data/Buildables/NS_BuildStage_NoOffset.NS_BuildStage_NoOffset",
+      "SubPathString": ""
+    },
+    "NiagaraDataChannelAsset": {
+      "AssetPathName": "/Game/VFX/Building/DataChannel/NDC_Buildable.NDC_Buildable",
+      "SubPathString": ""
+    },
+    "FinalStageBoundingBox": {
+      "Min": {
+        "X": -153.08961,
+        "Y": -171.80075,
+        "Z": -72.72494
+      },
+      "Max": {
+        "X": 154.35075,
+        "Y": 154.14871,
+        "Z": 242.77756
+      },
+      "IsValid": 1
+    },
+    "ConstructedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Constructed"
+    },
+    "DestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Destroyed"
+    },
+    "PlacedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Placed"
+    },
+    "_aaabigdbeocppfeehmfch_$6314E2FF5447C527$_$24$": {
+      "TagName": "GameplayCue.Buildable.Dismantle"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Buildable.RefuelStation"
+      }
+    },
+    "PlacementConditions": [
+      {
+        "ObjectName": "Class'WDWithinFobBoundsPlacementCondition'",
+        "ObjectPath": "/Script/BuildablesRuntime"
+      },
+      {
+        "ObjectName": "Class'WDLimitedByFOBCondition'",
+        "ObjectPath": "/Script/BuildablesRuntime"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_WithinLadderBoundsPlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_WithinLadderBoundsPlacementCondition.1"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_SafeZonePlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_SafeZonePlacementCondition.1"
+      }
+    ],
+    "bRegisterWithFOB": true,
+    "AudioData": {
+      "ObjectName": "WDAudioData'DA_Buildable_Default_Audio'",
+      "ObjectPath": "/Buildables/Data/Buildables/Audio/DA_Buildable_Default_Audio.0"
+    },
+    "RadialWheelSlotTag": {
+      "TagName": "UI.RadialWheel.BuildTool.SlotType.RefuelStation"
+    }
+  }
+}

@@ -1,0 +1,90 @@
+--- export: UDataAsset / DA_Setting_SlowWalkSpeed ---
+{
+  "Type": "BHUserSettingDiscreteData",
+  "Name": "DA_Setting_SlowWalkSpeed",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingDiscreteData'",
+  "Package": "/Game/GameMechanics/Settings/General/DA_Setting_SlowWalkSpeed",
+  "Properties": {
+    "Parameters": {
+      "DefaultValues": {
+        "ObjectName": "BHUserSettingEnumDiscreteValues'DA_Setting_SlowWalkSpeed:BHUserSettingEnumDiscreteValues_0'",
+        "ObjectPath": "/Game/GameMechanics/Settings/General/DA_Setting_SlowWalkSpeed.1"
+      }
+    },
+    "DisplayType": {
+      "TagName": "UserSettings.Common.DisplayType.Discrete.Dropdown"
+    }
+  }
+}
+--- export: UObject / BHUserSettingEnumDiscreteValues_0 ---
+{
+  "Type": "BHUserSettingEnumDiscreteValues",
+  "Name": "BHUserSettingEnumDiscreteValues_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingEnumDiscreteValues'",
+  "Outer": {
+    "ObjectName": "BHUserSettingDiscreteData'DA_Setting_SlowWalkSpeed'",
+    "ObjectPath": "/Game/GameMechanics/Settings/General/DA_Setting_SlowWalkSpeed.0"
+  },
+  "Properties": {
+    "NamedValues": [
+      {
+        "Key": "EBHSlowWalkSettings::Slow",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Values.STRINGS_Settings_Values",
+          "Key": "Value.SlowWalkSpeed.Slow",
+          "SourceString": "SLOW",
+          "LocalizedString": "SLOW"
+        }
+      },
+      {
+        "Key": "EBHSlowWalkSettings::Moderate",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Values.STRINGS_Settings_Values",
+          "Key": "Value.SlowWalkSpeed.Moderate",
+          "SourceString": "MODERATE",
+          "LocalizedString": "MODERATE"
+        }
+      },
+      {
+        "Key": "EBHSlowWalkSettings::Fast",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Values.STRINGS_Settings_Values",
+          "Key": "Value.SlowWalkSpeed.Fast",
+          "SourceString": "FAST",
+          "LocalizedString": "FAST"
+        }
+      }
+    ],
+    "Values": [
+      {
+        "Key": "0",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Values.STRINGS_Settings_Values",
+          "Key": "Value.SlowWalkSpeed.Slow",
+          "SourceString": "SLOW",
+          "LocalizedString": "SLOW"
+        }
+      },
+      {
+        "Key": "1",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Values.STRINGS_Settings_Values",
+          "Key": "Value.SlowWalkSpeed.Moderate",
+          "SourceString": "MODERATE",
+          "LocalizedString": "MODERATE"
+        }
+      },
+      {
+        "Key": "2",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Values.STRINGS_Settings_Values",
+          "Key": "Value.SlowWalkSpeed.Fast",
+          "SourceString": "FAST",
+          "LocalizedString": "FAST"
+        }
+      }
+    ]
+  }
+}

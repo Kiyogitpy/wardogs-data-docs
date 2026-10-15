@@ -1,0 +1,98 @@
+--- export: UPrimaryDataAsset / Meta_Alignment_Faction_Alpha ---
+{
+  "Type": "WDFactionData",
+  "Name": "Meta_Alignment_Faction_Alpha",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDFactionData'",
+  "Package": "/Game/GameMechanics/Gamemode/Data/DataAssets/Meta_Alignment_Faction_Alpha",
+  "Properties": {
+    "FactionTag": {
+      "TagName": "Meta.Alignment.Faction.Alpha"
+    },
+    "FactionName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Misc.STRINGS_Misc",
+      "Key": "FactionName.Alpha",
+      "SourceString": "Lonestar",
+      "LocalizedString": "Lonestar"
+    },
+    "FactionShortName": {
+      "Namespace": "",
+      "Key": "2717DB414BCFAF4EE0F1CC801D28891D",
+      "SourceString": "L*",
+      "LocalizedString": "L*"
+    },
+    "FactionColor": {
+      "B": 239,
+      "G": 177,
+      "R": 76,
+      "A": 255,
+      "Hex": "4CB1EF"
+    },
+    "FactionColorSquad": {
+      "B": 20,
+      "G": 163,
+      "R": 237,
+      "A": 255,
+      "Hex": "EDA314"
+    },
+    "Icons": {
+      "FallbackIcon": {
+        "AssetPathName": "/Game/UI/Shared/Textures/Factions/T_UI_LonestarLogo.T_UI_LonestarLogo",
+        "SubPathString": ""
+      },
+      "TaggedIcons": [
+        {
+          "Key": "/Game/UI/Shared/Textures/Factions/T_UI_LonestarLogo.T_UI_LonestarLogo",
+          "Value": [
+            "UI.Icon.Default",
+            "UI.Icon.Inventory",
+            "UI.Icon.FactionSelect",
+            "UI.Icon.GameOver",
+            "UI.Icon.Tracker.TacticalMap.Spawn",
+            "UI.Icon.Scoreboard",
+            "UI.Icon.Killfeed",
+            "UI.Icon.EventFeed"
+          ]
+        },
+        {
+          "Key": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Textures/T_UI_SquadMarker_Icon.T_UI_SquadMarker_Icon",
+          "Value": [
+            "UI.Icon.Tracker.Spatial.Player.Squad",
+            "UI.Icon.Chatbox.Squad",
+            "UI.Icon.Passengers.Squad",
+            "UI.Icon.Killfeed.Squad",
+            "UI.Icon.EventFeed.Squad"
+          ]
+        },
+        {
+          "Key": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Textures/T_UI_Icon_Spatial_BluTeamSpawn_256px.T_UI_Icon_Spatial_BluTeamSpawn_256px",
+          "Value": [
+            "UI.Icon.Tracker.Spatial.Spawn"
+          ]
+        },
+        {
+          "Key": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Textures/T_UI_Lonestar_SpatialIcon.T_UI_Lonestar_SpatialIcon",
+          "Value": [
+            "UI.Icon.Tracker.Spatial.Player",
+            "UI.Icon.Passengers",
+            "UI.Icon.GameModeStatus",
+            "UI.Icon.Chatbox"
+          ]
+        }
+      ]
+    },
+    "BlockColorMaterials": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_WDPlayerBlue'",
+        "ObjectPath": "/Game/Characters/Default_PlayerMesh/TP/Materials/MI_WDPlayerBlue.0"
+      }
+    ],
+    "GenericTeamId": 0,
+    "SafeZoneTag": {
+      "TagName": "State.Location.SafeZone.Alpha"
+    },
+    "SafeZoneCameraTag": {
+      "TagName": "State.Player.Camera.SafeZone.Alpha"
+    }
+  }
+}

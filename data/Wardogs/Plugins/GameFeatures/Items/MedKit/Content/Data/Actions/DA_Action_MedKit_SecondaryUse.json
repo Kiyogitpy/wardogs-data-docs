@@ -1,0 +1,42 @@
+--- export: UPrimaryDataAsset / DA_Action_MedKit_SecondaryUse ---
+{
+  "Type": "BHActionDefinition",
+  "Name": "DA_Action_MedKit_SecondaryUse",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHActionDefinition'",
+  "Package": "/MedKit/Data/Actions/DA_Action_MedKit_SecondaryUse",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.Appliable.MedKit.SecondaryUse"
+    },
+    "ActionContext": [
+      "Action.Context.Holdable",
+      "Action.Context.Interaction",
+      "Action.Context.TwoHanded"
+    ],
+    "ActionClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Action_MedKit_SecondaryUse_C'",
+      "ObjectPath": "/MedKit/Data/Actions/B_Action_MedKit_SecondaryUse.1"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::Block",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Block",
+          "ActionResponses": [
+            "Action.MedKit.PrimaryUse"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      }
+    ],
+    "ActivationContextType": {
+      "ObjectName": "Class'WDAppliableItemActionContext'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  }
+}

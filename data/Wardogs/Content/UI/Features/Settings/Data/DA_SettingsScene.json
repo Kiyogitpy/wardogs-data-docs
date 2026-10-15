@@ -1,0 +1,292 @@
+--- export: UDataAsset / DA_SettingsScene ---
+{
+  "Type": "WDUISettingsData",
+  "Name": "DA_SettingsScene",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUISettingsData'",
+  "Package": "/Game/UI/Features/Settings/Data/DA_SettingsScene",
+  "Properties": {
+    "SettingsPanelParams": [
+      {
+        "Key": "EWDUISettingsPanel::General",
+        "Value": {
+          "ViewModelParams": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/WDGame.WDUISettingsPanelViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Game/UI/Features/Settings/Widgets/SettingPanel/Data/DA_SettingsPanel_General.DA_SettingsPanel_General",
+              "SubPathString": ""
+            }
+          },
+          "TabButtonParams": {
+            "Tag": {
+              "TagName": "UI.Settings.Tab.General"
+            },
+            "OverrideButtonClass": null,
+            "Action": null,
+            "Text": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Settings.STRINGS_Settings",
+              "Key": "Tab.General",
+              "SourceString": "Gameplay",
+              "LocalizedString": "Gameplay"
+            },
+            "MinimumSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Icon": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "bDisabled": false,
+            "DisabledReason": {
+              "CultureInvariantString": null
+            }
+          }
+        }
+      },
+      {
+        "Key": "EWDUISettingsPanel::Video",
+        "Value": {
+          "ViewModelParams": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/WDGame.WDUISettingsPanelViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Game/UI/Features/Settings/Widgets/SettingPanel/Data/DA_SettingsPanel_Video.DA_SettingsPanel_Video",
+              "SubPathString": ""
+            }
+          },
+          "TabButtonParams": {
+            "Tag": {
+              "TagName": "UI.Settings.Tab.Video"
+            },
+            "OverrideButtonClass": null,
+            "Action": null,
+            "Text": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Settings.STRINGS_Settings",
+              "Key": "Tab.Video",
+              "SourceString": "Video",
+              "LocalizedString": "Video"
+            },
+            "MinimumSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Icon": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "bDisabled": false,
+            "DisabledReason": {
+              "CultureInvariantString": null
+            }
+          }
+        }
+      },
+      {
+        "Key": "EWDUISettingsPanel::Audio",
+        "Value": {
+          "ViewModelParams": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/WDGame.WDUISettingsPanelViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Game/UI/Features/Settings/Widgets/SettingPanel/Data/DA_SettingsPanel_Audio.DA_SettingsPanel_Audio",
+              "SubPathString": ""
+            }
+          },
+          "TabButtonParams": {
+            "Tag": {
+              "TagName": "UI.Settings.Tab.Audio"
+            },
+            "OverrideButtonClass": null,
+            "Action": null,
+            "Text": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Settings.STRINGS_Settings",
+              "Key": "Tab.Audio",
+              "SourceString": "Audio",
+              "LocalizedString": "Audio"
+            },
+            "MinimumSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Icon": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "bDisabled": false,
+            "DisabledReason": {
+              "CultureInvariantString": null
+            }
+          }
+        }
+      },
+      {
+        "Key": "EWDUISettingsPanel::Controls",
+        "Value": {
+          "ViewModelParams": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/WDGame.WDUISettingsPanelViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Game/UI/Features/Settings/Widgets/SettingPanel/Data/DA_SettingsPanel_Controls.DA_SettingsPanel_Controls",
+              "SubPathString": ""
+            }
+          },
+          "TabButtonParams": {
+            "Tag": {
+              "TagName": "UI.Settings.Tab.Controls"
+            },
+            "OverrideButtonClass": null,
+            "Action": null,
+            "Text": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Settings.STRINGS_Settings",
+              "Key": "Tab.Controls",
+              "SourceString": "Controls",
+              "LocalizedString": "Controls"
+            },
+            "MinimumSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Icon": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "bDisabled": false,
+            "DisabledReason": {
+              "CultureInvariantString": null
+            }
+          }
+        }
+      },
+      {
+        "Key": "EWDUISettingsPanel::Controller",
+        "Value": {
+          "ViewModelParams": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/WDGame.WDUISettingsControllerPanelViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Game/UI/Features/Settings/Widgets/SettingControllerPanel/Data/DA_SettingControllerPanel.DA_SettingControllerPanel",
+              "SubPathString": ""
+            }
+          },
+          "TabButtonParams": {
+            "Tag": {
+              "TagName": "UI.Settings.Tab.Controller"
+            },
+            "OverrideButtonClass": null,
+            "Action": null,
+            "Text": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Settings.STRINGS_Settings",
+              "Key": "Tab.Gamepad",
+              "SourceString": "Gamepad",
+              "LocalizedString": "Gamepad"
+            },
+            "MinimumSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Icon": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "bDisabled": false,
+            "DisabledReason": {
+              "CultureInvariantString": null
+            }
+          }
+        }
+      },
+      {
+        "Key": "EWDUISettingsPanel::Accessibility",
+        "Value": {
+          "ViewModelParams": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/WDGame.WDUISettingsPanelViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Game/UI/Features/Settings/Widgets/SettingPanel/Data/DA_SettingsPanel_Accessibility.DA_SettingsPanel_Accessibility",
+              "SubPathString": ""
+            }
+          },
+          "TabButtonParams": {
+            "Tag": {
+              "TagName": "UI.Settings.Tab.Accessibility"
+            },
+            "OverrideButtonClass": null,
+            "Action": null,
+            "Text": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Settings.STRINGS_Settings",
+              "Key": "Tab.Accessibility",
+              "SourceString": "Interface",
+              "LocalizedString": "Interface"
+            },
+            "MinimumSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Icon": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "bDisabled": false,
+            "DisabledReason": {
+              "CultureInvariantString": null
+            }
+          }
+        }
+      },
+      {
+        "Key": "EWDUISettingsPanel::Extra",
+        "Value": {
+          "ViewModelParams": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/WDGame.WDUISettingsPanelViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Game/UI/Features/Settings/Widgets/SettingPanel/Data/DA_SettingsPanel_Extras.DA_SettingsPanel_Extras",
+              "SubPathString": ""
+            }
+          },
+          "TabButtonParams": {
+            "Tag": {
+              "TagName": "UI.Settings.Tab.Extras"
+            },
+            "OverrideButtonClass": null,
+            "Action": null,
+            "Text": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Settings_Extra.STRINGS_Settings_Extra",
+              "Key": "Button.Extras",
+              "SourceString": "Extras",
+              "LocalizedString": "Extras"
+            },
+            "MinimumSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Icon": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "bDisabled": false,
+            "DisabledReason": {
+              "CultureInvariantString": null
+            }
+          }
+        }
+      }
+    ]
+  }
+}

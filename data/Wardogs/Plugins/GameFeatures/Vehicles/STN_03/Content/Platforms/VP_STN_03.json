@@ -1,0 +1,520 @@
+--- export: UPrimaryDataAsset / VP_STN_03 ---
+{
+  "Type": "ModularVehiclePlatform",
+  "Name": "VP_STN_03",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePlatform'",
+  "Package": "/STN_03/Platforms/VP_STN_03",
+  "Properties": {
+    "ImplementationClass": {
+      "AssetPathName": "/Script/WDGame.WDStationaryVehicle",
+      "SubPathString": ""
+    },
+    "SpawnParams": {
+      "Min": {
+        "X": -225.03995,
+        "Y": -234.51027,
+        "Z": 0.0
+      },
+      "Max": {
+        "X": 238.54434,
+        "Y": 220.13538,
+        "Z": 163.99646
+      }
+    },
+    "Fragments": [
+      {
+        "Key": "Chassis",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_SkeletalMesh'VP_STN_03:MVF_SkeletalMesh_0'",
+            "ObjectPath": "/STN_03/Platforms/VP_STN_03.3"
+          }
+        }
+      },
+      {
+        "Key": "Health",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_HealthSections'VP_STN_03:MVF_HealthSections_0'",
+            "ObjectPath": "/STN_03/Platforms/VP_STN_03.2"
+          }
+        }
+      },
+      {
+        "Key": "Config",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_VehicleConfig'VP_STN_03:MVF_VehicleConfig_0'",
+            "ObjectPath": "/STN_03/Platforms/VP_STN_03.7"
+          }
+        }
+      },
+      {
+        "Key": "Interactions",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_Interactions'VP_STN_03:WD_MVF_Interactions_0'",
+            "ObjectPath": "/STN_03/Platforms/VP_STN_03.9"
+          }
+        }
+      },
+      {
+        "Key": "StorageInventorySlot",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_InventoryFragment'VP_STN_03:WD_MVF_InventoryFragment_0'",
+            "ObjectPath": "/STN_03/Platforms/VP_STN_03.10"
+          }
+        }
+      },
+      {
+        "Key": "Weapon",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_WeaponFragment'VP_STN_03:WD_MVF_WeaponFragment_0'",
+            "ObjectPath": "/STN_03/Platforms/VP_STN_03.11"
+          }
+        }
+      },
+      {
+        "Key": "CC_Mortar_Base",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_STN_03:MVF_StaticMesh_0'",
+            "ObjectPath": "/STN_03/Platforms/VP_STN_03.4"
+          }
+        }
+      },
+      {
+        "Key": "CC_Mortar",
+        "Value": {
+          "bEnabled": false,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_STN_03:MVF_StaticMesh_1'",
+            "ObjectPath": "/STN_03/Platforms/VP_STN_03.5"
+          }
+        }
+      },
+      {
+        "Key": "CC_Mortar_Bipod",
+        "Value": {
+          "bEnabled": false,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_STN_03:MVF_StaticMesh_2'",
+            "ObjectPath": "/STN_03/Platforms/VP_STN_03.6"
+          }
+        }
+      },
+      {
+        "Key": "Buildable",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_BuildableFragment'VP_STN_03:WD_MVF_BuildableFragment_0'",
+            "ObjectPath": "/STN_03/Platforms/VP_STN_03.8"
+          }
+        }
+      }
+    ],
+    "Slots": [
+      {
+        "Key": "Seats",
+        "Value": {
+          "bEnabled": true,
+          "Slot": {
+            "ObjectName": "ModularVehicleSlot'VP_STN_03:ModularVehicleSlot_0'",
+            "ObjectPath": "/STN_03/Platforms/VP_STN_03.1"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / ModularVehicleSlot_0 ---
+{
+  "Type": "ModularVehicleSlot",
+  "Name": "ModularVehicleSlot_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleSlot'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_STN_03'",
+    "ObjectPath": "/STN_03/Platforms/VP_STN_03.0"
+  },
+  "Properties": {
+    "CompatibilityTags": {
+      "RequireTags": [
+        "Vehicle.Seat"
+      ]
+    }
+  }
+}
+--- export: UObject / MVF_HealthSections_0 ---
+{
+  "Type": "MVF_HealthSections",
+  "Name": "MVF_HealthSections_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_HealthSections'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_STN_03'",
+    "ObjectPath": "/STN_03/Platforms/VP_STN_03.0"
+  },
+  "Properties": {
+    "HealthSections": [
+      {
+        "Key": {
+          "TagName": "Attribute.Gameplay.Health"
+        },
+        "Value": {
+          "MaxHealth": 3000.0,
+          "Tags": [
+            "Meta.Damage.HitLocation.Vehicle.MainBody"
+          ],
+          "_aaachppjniilchbhchfel_$FF9D88B27172754B$_$39$": false,
+          "PreDamageRouting": [],
+          "_aaacihkleekkmjpdiiofn_$7AB44AAC9F388E5D$_$40$": false,
+          "PostDamageRouting": [],
+          "_aaadailpdlfefdlnfieob_$8BF3B5453BD584E1$_$48$": false,
+          "SimultaneousDamageRouting": [],
+          "RepairInteractionContextTag": {
+            "TagName": "None"
+          },
+          "RepairInteractionTrackerPointTag": {
+            "TagName": "None"
+          }
+        }
+      }
+    ],
+    "ComplexSurfaceMappings": {
+      "SurfaceGroups": [
+        {
+          "Key": {
+            "TagName": "ComplexSurface.Group.Default"
+          },
+          "Value": {
+            "bUseDefault": true,
+            "Default": {
+              "TagName": "Attribute.Gameplay.Health"
+            },
+            "SlotMap": [
+              {
+                "Key": "CC_Main",
+                "Value": {
+                  "TagName": "Attribute.Gameplay.Health"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "PhysicsGroupMappings": [
+      {
+        "Key": {
+          "TagName": "Vehicle.PhysicsGroup.Engine"
+        },
+        "Value": {
+          "bExecuteCollisionEffects": true,
+          "CollisionDamageModifier": 1.0,
+          "DamageRouting": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": 5.0
+            }
+          ],
+          "SimultaneousDamageRouting": []
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.PhysicsGroup.MainBody"
+        },
+        "Value": {
+          "bExecuteCollisionEffects": true,
+          "CollisionDamageModifier": 1.0,
+          "DamageRouting": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": 2.5
+            }
+          ],
+          "SimultaneousDamageRouting": []
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.PhysicsGroup.MainBody.Rear"
+        },
+        "Value": {
+          "bExecuteCollisionEffects": true,
+          "CollisionDamageModifier": 1.0,
+          "DamageRouting": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.FuelTank"
+              },
+              "Value": 10.0
+            }
+          ],
+          "SimultaneousDamageRouting": []
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / MVF_SkeletalMesh_0 ---
+{
+  "Type": "MVF_SkeletalMesh",
+  "Name": "MVF_SkeletalMesh_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_SkeletalMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_STN_03'",
+    "ObjectPath": "/STN_03/Platforms/VP_STN_03.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "bAttachSource": true,
+      "Tags": [
+        "Chassis"
+      ]
+    },
+    "SkeletalMesh": {
+      "AssetPathName": "/STN_03/Meshes/SK_Deployable_Mortar.SK_Deployable_Mortar",
+      "SubPathString": ""
+    },
+    "AnimInstance": {
+      "AssetPathName": "/STN_03/Animation/ABP_STN_03.ABP_STN_03_C",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_Kinematic"
+      }
+    },
+    "PhysicsGroups": {
+      "bEnablePerShape": true,
+      "PerShapeOverrides": [
+        {
+          "Key": "MainBody",
+          "Value": {
+            "TagName": "Vehicle.PhysicsGroup.MainBody"
+          }
+        },
+        {
+          "Key": "Engine",
+          "Value": {
+            "TagName": "Vehicle.PhysicsGroup.Engine"
+          }
+        },
+        {
+          "Key": "Rear",
+          "Value": {
+            "TagName": "Vehicle.PhysicsGroup.MainBody.Rear"
+          }
+        }
+      ]
+    },
+    "WalkableSlopeOverride": {
+      "WalkableSlopeBehavior": "EWalkableSlopeBehavior::WalkableSlope_Default"
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_0 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_STN_03'",
+    "ObjectPath": "/STN_03/Platforms/VP_STN_03.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceID": "Chassis",
+        "SocketName": "root_J"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/STN_03/Meshes/ComplexCollisions/ComplexProxy/Mortar_Base_Proxy.Mortar_Base_Proxy",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    },
+    "WalkableSlopeOverride": {
+      "WalkableSlopeBehavior": "EWalkableSlopeBehavior::WalkableSlope_Default"
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_1 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_STN_03'",
+    "ObjectPath": "/STN_03/Platforms/VP_STN_03.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceID": "Chassis",
+        "SocketName": "mortar_J"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/STN_03/Meshes/ComplexCollisions/ComplexProxy/Mortar_Proxy.Mortar_Proxy",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    },
+    "WalkableSlopeOverride": {
+      "WalkableSlopeBehavior": "EWalkableSlopeBehavior::WalkableSlope_Default"
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_2 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_STN_03'",
+    "ObjectPath": "/STN_03/Platforms/VP_STN_03.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceID": "Chassis",
+        "SocketName": "bipod_J"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/STN_03/Meshes/ComplexCollisions/ComplexProxy/Mortar_Bipod_Proxy.Mortar_Bipod_Proxy",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    },
+    "WalkableSlopeOverride": {
+      "WalkableSlopeBehavior": "EWalkableSlopeBehavior::WalkableSlope_Default"
+    }
+  }
+}
+--- export: UObject / MVF_VehicleConfig_0 ---
+{
+  "Type": "MVF_VehicleConfig",
+  "Name": "MVF_VehicleConfig_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_VehicleConfig'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_STN_03'",
+    "ObjectPath": "/STN_03/Platforms/VP_STN_03.0"
+  },
+  "Properties": {
+    "VehicleConfig": {
+      "AssetPathName": "/STN_03/Data/DA_Config_STN_03.DA_Config_STN_03",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / WD_MVF_BuildableFragment_0 ---
+{
+  "Type": "WD_MVF_BuildableFragment",
+  "Name": "WD_MVF_BuildableFragment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_BuildableFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_STN_03'",
+    "ObjectPath": "/STN_03/Platforms/VP_STN_03.0"
+  },
+  "Properties": {
+    "SoftBuildableData": {
+      "AssetPathName": "/STN_03/BuildableData/DA_Buildable_STN_03.DA_Buildable_STN_03",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / WD_MVF_Interactions_0 ---
+{
+  "Type": "WD_MVF_Interactions",
+  "Name": "WD_MVF_Interactions_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_Interactions'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_STN_03'",
+    "ObjectPath": "/STN_03/Platforms/VP_STN_03.0"
+  },
+  "Properties": {
+    "VehicleInteractionsDataAsset": {
+      "AssetPathName": "/STN_03/Data/DA_VehicleInteractions_STN_03.DA_VehicleInteractions_STN_03",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / WD_MVF_InventoryFragment_0 ---
+{
+  "Type": "WD_MVF_InventoryFragment",
+  "Name": "WD_MVF_InventoryFragment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_InventoryFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_STN_03'",
+    "ObjectPath": "/STN_03/Platforms/VP_STN_03.0"
+  },
+  "Properties": {
+    "ItemDefinition": {
+      "AssetPathName": "/STN_03/Weapons/ID_STN_03_MainBarrel.ID_STN_03_MainBarrel",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / WD_MVF_WeaponFragment_0 ---
+{
+  "Type": "WD_MVF_WeaponFragment",
+  "Name": "WD_MVF_WeaponFragment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_WeaponFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_STN_03'",
+    "ObjectPath": "/STN_03/Platforms/VP_STN_03.0"
+  },
+  "Properties": {
+    "WeaponMeshTagName": "Chassis",
+    "WeaponDataAsset": {
+      "AssetPathName": "/STN_03/Weapons/W_STN_03_MainBarrel.W_STN_03_MainBarrel",
+      "SubPathString": ""
+    },
+    "RoleRequirements": {
+      "RequireTags": [
+        "State.Player.Vehicle.Role.Gunner"
+      ]
+    },
+    "AllowList": [
+      0
+    ]
+  }
+}

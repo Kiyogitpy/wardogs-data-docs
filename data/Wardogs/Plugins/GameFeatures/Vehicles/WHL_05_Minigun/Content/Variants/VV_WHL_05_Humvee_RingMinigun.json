@@ -1,0 +1,76 @@
+--- export: UPrimaryDataAsset / VV_WHL_05_Humvee_RingMinigun ---
+{
+  "Type": "ModularVehicleVariant",
+  "Name": "VV_WHL_05_Humvee_RingMinigun",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleVariant'",
+  "Package": "/WHL_05_Minigun/Variants/VV_WHL_05_Humvee_RingMinigun",
+  "Properties": {
+    "bIncludeInBuildCommandLine": true,
+    "VariantID": {
+      "TagName": "Vehicle.Variant.Land.Wheeled.Humvee.Minigun"
+    },
+    "SpawnParams": {
+      "Min": {
+        "X": -333.41745,
+        "Y": -169.0808,
+        "Z": -0.054968
+      },
+      "Max": {
+        "X": 317.55817,
+        "Y": 169.08083,
+        "Z": 259.09384
+      }
+    },
+    "bUseFixedBounds": true,
+    "FixedBounds": {
+      "Min": {
+        "X": -300.0,
+        "Y": -150.0,
+        "Z": 0.0
+      },
+      "Max": {
+        "X": 300.0,
+        "Y": 150.0,
+        "Z": 300.0
+      }
+    },
+    "AssemblyData": {
+      "VehicleBase": {
+        "ObjectName": "ModularVehiclePlatform'VP_WHL_05'",
+        "ObjectPath": "/WHL_05/Platforms/VP_WHL_05.0"
+      },
+      "CustomData": {
+        "SlotOverrides": [
+          {
+            "Path": {
+              "Path": "Seats"
+            },
+            "Part": {
+              "AssetPathName": "/WHL_05_Minigun/Parts/VP_WHL_05_Humvee_Minigun_Seats.VP_WHL_05_Humvee_Minigun_Seats",
+              "SubPathString": ""
+            }
+          },
+          {
+            "Path": {
+              "Path": "Config"
+            },
+            "Part": {
+              "AssetPathName": "/WHL_05_Minigun/Parts/VP_WHL_05_Config_Minigun.VP_WHL_05_Config_Minigun",
+              "SubPathString": ""
+            }
+          },
+          {
+            "Path": {
+              "Path": "Body"
+            },
+            "Part": {
+              "AssetPathName": "/WHL_05_Minigun/Parts/VP_WHL_05_MainBody_Minigun.VP_WHL_05_MainBody_Minigun",
+              "SubPathString": ""
+            }
+          }
+        ]
+      }
+    }
+  }
+}

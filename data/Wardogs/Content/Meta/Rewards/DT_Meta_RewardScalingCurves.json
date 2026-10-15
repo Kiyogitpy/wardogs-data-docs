@@ -1,0 +1,43 @@
+--- export: UDataTable / DT_Meta_RewardScalingCurves ---
+{
+  "Type": "DataTable",
+  "Name": "DT_Meta_RewardScalingCurves",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/Meta/Rewards/DT_Meta_RewardScalingCurves",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDLiveCurveTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Challenges.Rewards.PlayerCountCashScalar": {
+      "CurveAsset": {
+        "ObjectName": "CurveFloat'CRV_Meta_PlayerCountCashScalar'",
+        "ObjectPath": "/Game/Meta/Rewards/Curves/CRV_Meta_PlayerCountCashScalar.0"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.PlayerCountCashScalar"
+      }
+    },
+    "Challenges.Rewards.PlayerCountXPScalar": {
+      "CurveAsset": {
+        "ObjectName": "CurveFloat'CRV_Meta_PlayerCountCashScalar'",
+        "ObjectPath": "/Game/Meta/Rewards/Curves/CRV_Meta_PlayerCountCashScalar.0"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.PlayerCountXPScalar"
+      }
+    },
+    "Challenges.Rewards.MatchScoreScalar": {
+      "CurveAsset": {
+        "ObjectName": "CurveFloat'CRV_Meta_MatchScoreScalar'",
+        "ObjectPath": "/Game/Meta/Rewards/Curves/CRV_Meta_MatchScoreScalar.0"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.MatchScoreScalar"
+      }
+    }
+  }
+}

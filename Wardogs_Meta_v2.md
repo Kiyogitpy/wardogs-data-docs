@@ -4,7 +4,7 @@ parent: "Content"
 ---
 
 # Wardogs: Meta Data Reference (v2)
-*Extracted from cooked game data (`Wardogs/Content/Meta`, 67 files, UE 5.7 export to JSON). Values are the raw asset values. Interpretations are marked as inferred.*
+*Extracted from cooked game data ([`Wardogs/Content/Meta`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Meta), 67 files, UE 5.7 export to JSON). Values are the raw asset values. Interpretations are marked as inferred.*
 
 > **Scope:** the progression and meta-systems layer: role unlock trees, character skill effects, achievements and missions, currency and the gold market, and the reward scaling curves. The per-kill and per-event cash values are in [Wardogs_Rewards_and_Progression_v2.md](Wardogs_Rewards_and_Progression_v2.md). This doc links to that file and does not repeat those values.
 
@@ -14,29 +14,29 @@ parent: "Content"
 
 | Subfolder | Files | Contents |
 |---|---|---|
-| Challenges | 24 | End-of-match, session-event and demo tables; 20 curve tables under `RewardData/CurveTables` |
-| CharacterSkills | 13 | 6 skill tables (`DT_*Skills`), 6 curve tables (`CT_*Skills`), and the unlock tree `DT_MetaTree_Roles` |
-| Achievements | 11 | 10 achievement StateTrees; `DT_Achievements` (0 rows) |
-| Missions | 4 | 2 mission StateTrees; `DT_PassiveMissions` (3 rows); `DT_PassiveMissionChallenges` (0 rows) |
-| Rewards | 3 | `DT_Meta_RewardScalingCurves` and 2 scaling curves |
-| Cosmetics | 2 | `DT_CosmeticSets_Debug`: 11 cosmetic sets |
+| Challenges | 24 | End-of-match, session-event and demo tables; 20 curve tables under [`RewardData/CurveTables`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Meta/Challenges/RewardData/CurveTables) |
+| CharacterSkills | 13 | 6 skill tables (`DT_*Skills`), 6 curve tables (`CT_*Skills`), and the unlock tree [`DT_MetaTree_Roles`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/CharacterSkills/DT_MetaTree_Roles.json) |
+| Achievements | 11 | 10 achievement StateTrees; [`DT_Achievements`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Achievements/DT_Achievements.json) (0 rows) |
+| Missions | 4 | 2 mission StateTrees; [`DT_PassiveMissions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Missions/DT_PassiveMissions.json) (3 rows); [`DT_PassiveMissionChallenges`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Missions/DT_PassiveMissionChallenges.json) (0 rows) |
+| Rewards | 3 | [`DT_Meta_RewardScalingCurves`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Rewards/DT_Meta_RewardScalingCurves.json) and 2 scaling curves |
+| Cosmetics | 2 | [`DT_CosmeticSets_Debug`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Cosmetics/DT_CosmeticSets_Debug.json): 11 cosmetic sets |
 | Investments | 2 | 2 debug investment definitions (`DA_TestInvestment*`) |
-| (root) | 1 | `DT_SeasonDefinitions` (season 1, no season list) |
+| (root) | 1 | [`DT_SeasonDefinitions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/DT_SeasonDefinitions.json) (season 1, no season list) |
 | ClientHotConfigs | 1 | 3 INI-style client config blobs (subsystem settings) |
-| Collection | 1 | `DT_GoldMarket`: 20 gold-bar store entries |
+| Collection | 1 | [`DT_GoldMarket`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Collection/DT_GoldMarket.json): 20 gold-bar store entries |
 | CurrencyDefinitions | 1 | Cash and Gold Bars currency rows |
-| ExchangeDefinitions | 1 | `DT_ExchangeDefinitions`: Gold Bars row with no exchange rates |
-| Levels | 1 | `DT_RoleMasteryDefinitions`: role XP curves (in the rewards doc) |
-| MockInvestments | 1 | `DT_MockInvestments`: 2 placeholder entries |
-| Resources | 1 | `DT_Meta_ResourceEffects`: one GameplayEffect hook |
+| ExchangeDefinitions | 1 | [`DT_ExchangeDefinitions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/ExchangeDefinitions/DT_ExchangeDefinitions.json): Gold Bars row with no exchange rates |
+| Levels | 1 | [`DT_RoleMasteryDefinitions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Levels/Roles/DT_RoleMasteryDefinitions.json): role XP curves (in the rewards doc) |
+| MockInvestments | 1 | [`DT_MockInvestments`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/MockInvestments/DT_MockInvestments.json): 2 placeholder entries |
+| Resources | 1 | [`DT_Meta_ResourceEffects`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Resources/Effects/DT_Meta_ResourceEffects.json): one GameplayEffect hook |
 
 14 files hold more than one `--- export:` block (for example a StateTree plus its schema and helper blueprint classes). Each block is parsed separately.
 
 ---
 
-## 2. Role Unlock Trees (`DT_MetaTree_Roles`)
+## 2. Role Unlock Trees ([`DT_MetaTree_Roles`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/CharacterSkills/DT_MetaTree_Roles.json))
 
-Each role has a list of unlock nodes. A node is an item, vehicle or supply crate, keyed by its `ID` tag. Each node has one level entry with a **Cost** (cash) and a **Prerequisite** (a minimum level). The XP side of progression is in `DT_RoleMasteryDefinitions` (rewards doc, section 1).
+Each role has a list of unlock nodes. A node is an item, vehicle or supply crate, keyed by its `ID` tag. Each node has one level entry with a **Cost** (cash) and a **Prerequisite** (a minimum level). The XP side of progression is in [`DT_RoleMasteryDefinitions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Levels/Roles/DT_RoleMasteryDefinitions.json) (rewards doc, section 1).
 
 | Role | Nodes | Level gate | Cost per node (cash) | Zero-cost nodes | Cash to unlock all | Gate type |
 |---|---|---|---|---|---|---|
@@ -51,7 +51,7 @@ Each role has a list of unlock nodes. A node is an item, vehicle or supply crate
 **Notes**
 - The six combat roles gate each node with a `MinLevel` against that role's own `MetaId` and XP tag (`Attribute.Meta.XP.Role.<Role>`).
 - Tank and helicopter nodes are the most expensive: `Vehicle.Variant.Land.Tracked.TNK_01.Heavy` (Driver, 500,000 cash, L35) and `Vehicle.Variant.Air.Rotary.Havoc.Default` (Pilot, 500,000 cash, L35). Wardog's `Vehicle.Variant.Land.Tracked.TNK_01.Artillery` is also 500,000 cash.
-- **The Wardog tree is different.** Its 58 nodes have a `MinLevel` gate from L1 to L150 but no `MetaId` and no XP tag. The export does not name the level track that gates it. `DT_RoleMasteryDefinitions` has no Wardog row, and the XP table stops at level 100 (see section 12).
+- **The Wardog tree is different.** Its 58 nodes have a `MinLevel` gate from L1 to L150 but no `MetaId` and no XP tag. The export does not name the level track that gates it. [`DT_RoleMasteryDefinitions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Levels/Roles/DT_RoleMasteryDefinitions.json) has no Wardog row, and the XP table stops at level 100 (see section 12).
 - Most zero-cost nodes are magazines and ammo (for example `Id.Item.AK74MMagazine`, `Id.Item.Arrow`, `Id.Item.SV98Magazine`). A few are explosives or rounds (`Id.Item.C4Explosive`, `Id.Item.93mm`), so cost zero does not always mean ammo.
 
 ---
@@ -162,13 +162,13 @@ These curves scale the rewards documented in the rewards doc. The input axis is 
 | CRV_Meta_MatchScoreScalar | match score (18 to 30) | (18, 0.6), (21, 0.7), (24, 0.8), (27, 0.9), (30, 1) |
 | CRV_Meta_PlayerCountCashScalar | player count (0 to 60) | (0, 0), (10, 0), (10, 0.15), (20, 0.2), (25, 0.3), (30, 0.4), (35, 0.5), (40, 0.7), (45, 0.8), (50, 0.9), (60, 1) |
 
-**Flag:** `DT_Meta_RewardScalingCurves` row `Challenges.Rewards.PlayerCountXPScalar` points at `CRV_Meta_PlayerCountCashScalar`, the same asset as the cash row (`CRV_Meta_PlayerCountCashScalar`). The XP scalar may be a copy-paste reference rather than its own curve. The rewards doc lists `DT_Meta_RewardScalingCurves` as not yet pulled, so this scalar's effect is not documented there. Verify in-game before relying on an XP-specific scale.
+**Flag:** [`DT_Meta_RewardScalingCurves`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Rewards/DT_Meta_RewardScalingCurves.json) row `Challenges.Rewards.PlayerCountXPScalar` points at [`CRV_Meta_PlayerCountCashScalar`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Rewards/Curves/CRV_Meta_PlayerCountCashScalar.json), the same asset as the cash row ([`CRV_Meta_PlayerCountCashScalar`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Rewards/Curves/CRV_Meta_PlayerCountCashScalar.json)). The XP scalar may be a copy-paste reference rather than its own curve. The rewards doc lists [`DT_Meta_RewardScalingCurves`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Rewards/DT_Meta_RewardScalingCurves.json) as not yet pulled, so this scalar's effect is not documented there. Verify in-game before relying on an XP-specific scale.
 
 ---
 
-## 5. Achievements (`Achievements/`)
+## 5. Achievements ([`Achievements/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Meta/Achievements))
 
-`DT_Achievements` has **0 rows**. The 10 achievement StateTrees are the only achievement data here. Each one watches for a game event or a match stat, evaluates it, and moves to its unlock state. Threshold values are not serialized in the export (section 12), so this table lists the state count, the event tags and the classes each tree listens to, and the named nodes.
+[`DT_Achievements`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Achievements/DT_Achievements.json) has **0 rows**. The 10 achievement StateTrees are the only achievement data here. Each one watches for a game event or a match stat, evaluates it, and moves to its unlock state. Threshold values are not serialized in the export (section 12), so this table lists the state count, the event tags and the classes each tree listens to, and the named nodes.
 
 | StateTree | States | Event tags | Named nodes (first 7) |
 |---|---|---|---|
@@ -184,15 +184,15 @@ These curves scale the rewards documented in the rewards doc. The input axis is 
 | ST_Achievement_TutorialCompleted | 3 | Event.StateTree.TutorialCompleted | Listen for Event |
 
 **Notes**
-- `ST_Achievement_LongShot`, `ST_Achievement_RicochetKill` and `ST_Achievement_DefibrillatorKill` all listen to `WDPlayerVitalityChangedMessage`, each with its own event tag. These are kill-condition variants of one pattern.
-- `ST_Achievement_CleanSweep` reuses the `Evaluate TopCashEarner` state name from `ST_Achievement_TopCashEarner`, but its conditions are score-based (`Own Score Above Zero`, `Opposition Scoreless`).
+- [`ST_Achievement_LongShot`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Achievements/StateTrees/ST_Achievement_LongShot.json), [`ST_Achievement_RicochetKill`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Achievements/StateTrees/ST_Achievement_RicochetKill.json) and [`ST_Achievement_DefibrillatorKill`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Achievements/StateTrees/ST_Achievement_DefibrillatorKill.json) all listen to `WDPlayerVitalityChangedMessage`, each with its own event tag. These are kill-condition variants of one pattern.
+- [`ST_Achievement_CleanSweep`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Achievements/StateTrees/ST_Achievement_CleanSweep.json) reuses the `Evaluate TopCashEarner` state name from [`ST_Achievement_TopCashEarner`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Achievements/StateTrees/ST_Achievement_TopCashEarner.json), but its conditions are score-based (`Own Score Above Zero`, `Opposition Scoreless`).
 - All achievement trees use the `WDChallengeStateTreeSchema` schema, the same schema the missions use.
 
 ---
 
 ## 6. Missions (`Missions/`)
 
-`DT_PassiveMissions` has 3 rows. Each has five challenge tiers and a difficulty weight of 1, and no unlock prerequisite.
+[`DT_PassiveMissions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Missions/DT_PassiveMissions.json) has 3 rows. Each has five challenge tiers and a difficulty weight of 1, and no unlock prerequisite.
 
 | Passive mission | Challenge tiers | Difficulty weight | Unlock prerequisite |
 |---|---|---|---|
@@ -207,7 +207,7 @@ Two mission StateTrees track objective progress and auto-complete it:
 | ST_Challenge_EarnResource | 7 | none as a tag; listens to WDPlayerResourceChangedMessage | Load Objective Progress, Integer Expression, Wait for Event, B Update Value from Resource Event, Update Objective Progress, B Auto Complete, Integer Compare |
 | ST_Challenge_TimePlayed | 7 | none (timer driven: UTC now and time difference) | Load Objective Progress, Integer Expression, B Get Utc Now, Delay Task, B Get Time Diff, Update Objective Progress, B Auto Complete, B Check Time Diff |
 
-`DT_PassiveMissionChallenges` has **0 rows**, so the challenge tiers the passive missions reference (`Challenges.Challenge.Mission.Passive.*.1` to `.5`) are not defined in this folder.
+[`DT_PassiveMissionChallenges`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Missions/DT_PassiveMissionChallenges.json) has **0 rows**, so the challenge tiers the passive missions reference (`Challenges.Challenge.Mission.Passive.*.1` to `.5`) are not defined in this folder.
 
 ---
 
@@ -218,9 +218,9 @@ Two mission StateTrees track objective progress and auto-complete it:
 | Attribute.Meta.Currency.Cash | Cash | 10,000 |
 | Attribute.Meta.Currency.GoldBars | Gold Bars | 0 |
 
-`DT_ExchangeDefinitions` has one row for `Attribute.Meta.Currency.GoldBars` with ExchangeRates: an empty list. No cash-to-gold rate is set in this build.
+[`DT_ExchangeDefinitions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/ExchangeDefinitions/DT_ExchangeDefinitions.json) has one row for `Attribute.Meta.Currency.GoldBars` with ExchangeRates: an empty list. No cash-to-gold rate is set in this build.
 
-`DT_GoldMarket` has 20 entries worth **200 Gold Bars** in total. Expiration types: EXPIRATION_NO_END_TIME x1, NO_EXPIRATION x19. The `EXPIRATION_NO_END_TIME` name suggests the entry has no end time, but the export has no end-time value to confirm this.
+[`DT_GoldMarket`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Collection/DT_GoldMarket.json) has 20 entries worth **200 Gold Bars** in total. Expiration types: EXPIRATION_NO_END_TIME x1, NO_EXPIRATION x19. The `EXPIRATION_NO_END_TIME` name suggests the entry has no end time, but the export has no end-time value to confirm this.
 
 | Category | Items | Gold Bar cost | Total bars (all items) | Tile sizes |
 |---|---|---|---|---|
@@ -231,7 +231,7 @@ Two mission StateTrees track objective progress and auto-complete it:
 
 Gold-market entries are cosmetics: weapon skins, vehicle skins, a parachute skin, and emotes (`Id.Emote.*`).
 
-`DT_CosmeticSets_Debug` has 11 sets: `Meta.Cosmetic.Featured`, `Meta.Cosmetic.BlackAndGold`, `Meta.Cosmetic.Frogman`, `Meta.Cosmetic.DigitalWood`, `Meta.Cosmetic.TripleDesert`, `Meta.Cosmetic.DigitalFlora`, `Meta.Cosmetic.TwoToneDesert`, `Meta.Cosmetic.Emote`, `Meta.Cosmetic.Bobblehead`, `Meta.Cosmetic.Taxi`, `Meta.Cosmetic.FactionLogo`. The `_Debug` name suggests they are test data.
+[`DT_CosmeticSets_Debug`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Cosmetics/DT_CosmeticSets_Debug.json) has 11 sets: `Meta.Cosmetic.Featured`, `Meta.Cosmetic.BlackAndGold`, `Meta.Cosmetic.Frogman`, `Meta.Cosmetic.DigitalWood`, `Meta.Cosmetic.TripleDesert`, `Meta.Cosmetic.DigitalFlora`, `Meta.Cosmetic.TwoToneDesert`, `Meta.Cosmetic.Emote`, `Meta.Cosmetic.Bobblehead`, `Meta.Cosmetic.Taxi`, `Meta.Cosmetic.FactionLogo`. The `_Debug` name suggests they are test data.
 
 ---
 
@@ -242,7 +242,7 @@ Gold-market entries are cosmetics: weapon skins, vehicle skins, a parachute skin
 | Id.Investment.DebugOne | Debug One Title | 100 (Cash) |
 | Id.Investment.DebugTwo | Debug Two Title | 200 (Cash) |
 
-`DT_MockInvestments` has two placeholder entries. Their fields are named only by hashes, so the labels below are inferred from the values:
+[`DT_MockInvestments`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/MockInvestments/DT_MockInvestments.json) has two placeholder entries. Their fields are named only by hashes, so the labels below are inferred from the values:
 
 | Mock key | Item | Field A (hashed) | Field B (hashed) | Field C (hashed) |
 |---|---|---|---|---|
@@ -255,19 +255,19 @@ Inferred, not confirmed: Field A looks like a quantity (1 and 5), Field B like a
 
 ## 9. Season, Resource Effect, Demo Reward, Client Configs
 
-- **Season:** `DT_SeasonDefinitions` sets `CurrentSeasonNumber = 1` and an empty `SeasonDefinitions` list.
-- **Resource effect:** `DT_Meta_ResourceEffects` maps `Meta.Effect.Resource` to `GE_Meta_ResourceChange`, the GameplayEffect used for resource changes. Its magnitude is not in this table.
-- **Demo reward:** `DT_DemoRewards` row `Meta.Progression.Context.DefaultReward` gives `Attribute.Meta.Currency.Cash` a base of 100. It is divided by 2 when the context carries `Meta.Damage.Category.Friendly`. This looks like a template row, not a live reward.
-- **Client configs:** `DT_ClientHotConfigs` has three INI-style blobs. Values confirmed in the text: `ServerBrowserSubsystem` sets `MaxSelectedRegions=3`, `ServerIDLength=6` and `bAllowGlobalSearch=False`. `AuthSubsystem` sets `bEnableFulfillOrders=True`. `CommunicationSubsystem` sets `MaxLoginRetries=2`, `LoginRetryDelaySeconds=30.0`, `LoginRetryJitterFraction=0.25`, login give-up retry delays of 10 to 300 seconds, `LoginHangingTimeoutSeconds=60.0`, `LoginStuckTimeoutSeconds=90.0`, plus voice and channel join retry settings. The blob also holds commented-out voice endpoint overrides, which are not reproduced here.
+- **Season:** [`DT_SeasonDefinitions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/DT_SeasonDefinitions.json) sets `CurrentSeasonNumber = 1` and an empty `SeasonDefinitions` list.
+- **Resource effect:** [`DT_Meta_ResourceEffects`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Resources/Effects/DT_Meta_ResourceEffects.json) maps `Meta.Effect.Resource` to `GE_Meta_ResourceChange`, the GameplayEffect used for resource changes. Its magnitude is not in this table.
+- **Demo reward:** [`DT_DemoRewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/Demo/DT_DemoRewards.json) row `Meta.Progression.Context.DefaultReward` gives `Attribute.Meta.Currency.Cash` a base of 100. It is divided by 2 when the context carries `Meta.Damage.Category.Friendly`. This looks like a template row, not a live reward.
+- **Client configs:** [`DT_ClientHotConfigs`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/ClientHotConfigs/DT_ClientHotConfigs.json) has three INI-style blobs. Values confirmed in the text: `ServerBrowserSubsystem` sets `MaxSelectedRegions=3`, `ServerIDLength=6` and `bAllowGlobalSearch=False`. `AuthSubsystem` sets `bEnableFulfillOrders=True`. `CommunicationSubsystem` sets `MaxLoginRetries=2`, `LoginRetryDelaySeconds=30.0`, `LoginRetryJitterFraction=0.25`, login give-up retry delays of 10 to 300 seconds, `LoginHangingTimeoutSeconds=60.0`, `LoginStuckTimeoutSeconds=90.0`, plus voice and channel join retry settings. The blob also holds commented-out voice endpoint overrides, which are not reproduced here.
 
 ---
 
 ## 10. Challenge Tables Covered Elsewhere
 
-- `DT_ChallengeRewards_EndOfMatch` (4 rows: three placements and a `Bonus` row). Rewards doc, sections 10 and 14.
-- `DT_ChallengeRewards_SessionEvents_Shared` (161 rows, about 3.7 MB raw, the largest file in Meta). Rewards doc, section 15. Row tags cover `PlayerKill` (with assist variants), `VehicleDestroyed` (per vehicle, per assist type), `DestroyVehicleSection`, `HealPlayer`, `ZoneEntry` and `ZonePresence`.
-- `DT_RoleMasteryDefinitions` (6 role rows, 100 levels each). Rewards doc, section 1.
-- `DT_Challenges_SessionEvents_Shared`: **0 rows**. Its curve dependencies are in `Challenges/RewardData/`.
+- [`DT_ChallengeRewards_EndOfMatch`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/DT_ChallengeRewards_EndOfMatch.json) (4 rows: three placements and a `Bonus` row). Rewards doc, sections 10 and 14.
+- [`DT_ChallengeRewards_SessionEvents_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/DT_ChallengeRewards_SessionEvents_Shared.json) (161 rows, about 3.7 MB raw, the largest file in Meta). Rewards doc, section 15. Row tags cover `PlayerKill` (with assist variants), `VehicleDestroyed` (per vehicle, per assist type), `DestroyVehicleSection`, `HealPlayer`, `ZoneEntry` and `ZonePresence`.
+- [`DT_RoleMasteryDefinitions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Levels/Roles/DT_RoleMasteryDefinitions.json) (6 role rows, 100 levels each). Rewards doc, section 1.
+- [`DT_Challenges_SessionEvents_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/DT_Challenges_SessionEvents_Shared.json): **0 rows**. Its curve dependencies are in [`Challenges/RewardData/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Meta/Challenges/RewardData).
 
 ---
 
@@ -281,10 +281,10 @@ Inferred, not confirmed: Field A looks like a quantity (1 and 5), Field B like a
 
 ## 12. Still Not Pulled / Limitations
 
-- **Achievement and mission thresholds are not in the export.** The StateTrees reference parameters such as `DistanceThreshold` in `ST_Achievement_LongShot`, and integer comparisons in `LoadoutSpend`, `SingleLifeProfit` and `TopCashEarner`, but no values are serialized. `DT_Achievements` is empty, so achievement rewards and thresholds cannot be recovered from this folder.
+- **Achievement and mission thresholds are not in the export.** The StateTrees reference parameters such as `DistanceThreshold` in [`ST_Achievement_LongShot`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Achievements/StateTrees/ST_Achievement_LongShot.json), and integer comparisons in `LoadoutSpend`, `SingleLifeProfit` and `TopCashEarner`, but no values are serialized. [`DT_Achievements`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Achievements/DT_Achievements.json) is empty, so achievement rewards and thresholds cannot be recovered from this folder.
 - **Wardog level track is unexplained.** The Wardog tree gates on `MinLevel` up to 150 with no `MetaId`. No matching XP table or role row exists in this dump.
 - **Skill curve time axis is unlabeled.** The mapping from skill rank to curve `Time` is inferred.
-- **Hashed field names.** `DT_MockInvestments` and parts of the challenge tables use hashed property names. Their meaning is inferred from values only.
-- **Empty tables.** `DT_Achievements`, `DT_PassiveMissionChallenges`, `DT_Challenges_SessionEvents_Shared`, the exchange rates in `DT_ExchangeDefinitions`, and the season list in `DT_SeasonDefinitions` have no data, so they are noted as present but empty.
-- **Debug and template content.** `DA_TestInvestment*`, `DT_MockInvestments`, `DT_CosmeticSets_Debug` and `DT_DemoRewards` look like test data. They are listed for completeness and may not ship.
+- **Hashed field names.** [`DT_MockInvestments`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/MockInvestments/DT_MockInvestments.json) and parts of the challenge tables use hashed property names. Their meaning is inferred from values only.
+- **Empty tables.** [`DT_Achievements`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Achievements/DT_Achievements.json), [`DT_PassiveMissionChallenges`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Missions/DT_PassiveMissionChallenges.json), [`DT_Challenges_SessionEvents_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/DT_Challenges_SessionEvents_Shared.json), the exchange rates in [`DT_ExchangeDefinitions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/ExchangeDefinitions/DT_ExchangeDefinitions.json), and the season list in [`DT_SeasonDefinitions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/DT_SeasonDefinitions.json) have no data, so they are noted as present but empty.
+- **Debug and template content.** `DA_TestInvestment*`, [`DT_MockInvestments`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/MockInvestments/DT_MockInvestments.json), [`DT_CosmeticSets_Debug`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Cosmetics/DT_CosmeticSets_Debug.json) and [`DT_DemoRewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/Demo/DT_DemoRewards.json) look like test data. They are listed for completeness and may not ship.
 

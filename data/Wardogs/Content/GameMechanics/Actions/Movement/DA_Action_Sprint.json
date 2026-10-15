@@ -1,0 +1,174 @@
+--- export: UPrimaryDataAsset / DA_Action_Sprint ---
+{
+  "Type": "BHActionDefinition",
+  "Name": "DA_Action_Sprint",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHActionDefinition'",
+  "Package": "/Game/GameMechanics/Actions/Movement/DA_Action_Sprint",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.Player.Sprint"
+    },
+    "ActionClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Action_Sprint_C'",
+      "ObjectPath": "/Game/GameMechanics/Actions/Movement/B_Action_Sprint.1"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::Interrupt",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Interrupt",
+          "ActionResponses": [
+            "Action.Player.Crouch",
+            "Action.Player.Prone",
+            "Action.Weapon.ADS",
+            "Action.Item.Inspect",
+            "Action.Weapon.Fire",
+            "Action.Weapon.Reload",
+            "Action.BuildBuildable.Construct",
+            "Action.Appliable.PrimaryUse",
+            "Action.Appliable.SecondaryUse",
+            "Action.Appliable.AdrenalinePen.SecondaryUse",
+            "Action.Appliable.AdrenalinePen.PrimaryUse",
+            "Action.Appliable.Bandage.SecondaryUse",
+            "Action.Appliable.Bandage.PrimaryUse",
+            "Action.Appliable.Enox.SecondaryUse",
+            "Action.Appliable.Enox.PrimaryUse",
+            "Action.Appliable.FuelCan.Fill",
+            "Action.Appliable.FuelCan.Refuel",
+            "Action.Appliable.Injector.PrimaryUse",
+            "Action.Appliable.MedKit.SecondaryUse",
+            "Action.Appliable.Resuscitator.PrimaryUse",
+            "Action.Appliable.StimPen.SecondaryUse",
+            "Action.Appliable.StimPen.PrimaryUse",
+            "Action.Defibrillator.PrimaryUse",
+            "Action.Placeable.PrimaryUse",
+            "Action.FOBPlacement.PrimaryUse",
+            "Action.VehicleRepairTool.ContinuousUse",
+            "Action.VehicleRepairTool.Reload",
+            "Action.Player.Lean.Left",
+            "Action.Player.Lean.Right",
+            "Action.Player.SlowWalk",
+            "Action.Player.Emote.Surrender_Drop"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Block",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Block",
+          "ActionResponses": [
+            "Action.Item.Inspect",
+            "Action.Weapon.Bipod.Mount",
+            "Action.Player.SlowWalk"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Buffer",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Buffer",
+          "ActionResponses": [],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": [
+            {
+              "ActionTag": {
+                "TagName": "Action.Weapon.ChamberRound"
+              },
+              "BufferType": "EBHActionBufferType::FullBuffer",
+              "BufferTime": -10.0
+            },
+            {
+              "ActionTag": {
+                "TagName": "Action.Player.Lean.Right"
+              },
+              "BufferType": "EBHActionBufferType::PartialBuffer",
+              "BufferTime": 0.5
+            },
+            {
+              "ActionTag": {
+                "TagName": "Action.Player.Lean.Left"
+              },
+              "BufferType": "EBHActionBufferType::PartialBuffer",
+              "BufferTime": 0.5
+            }
+          ]
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::InterruptCategories",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::InterruptCategories",
+          "ActionResponses": [],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [
+            "Action.Context.Weapon.Fire",
+            "Action.Context.Emote"
+          ],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::InterruptBuffered",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::InterruptBuffered",
+          "ActionResponses": [
+            "Action.Weapon.Fire"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::BlockingStates",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::BlockingStates",
+          "ActionResponses": [],
+          "BlockingStates": [
+            "State.Player.Vehicle.Role.ActivePassenger",
+            "State.Player.Vehicle.Role.Driver",
+            "State.Player.Vehicle.Role.Gunner",
+            "State.Player.Vehicle.Role.PassivePassenger",
+            "State.Player.Weight.SuperHeavy"
+          ],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::BlockCategories",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::BlockCategories",
+          "ActionResponses": [],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [
+            "Action.Context.Emote"
+          ],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      }
+    ]
+  }
+}

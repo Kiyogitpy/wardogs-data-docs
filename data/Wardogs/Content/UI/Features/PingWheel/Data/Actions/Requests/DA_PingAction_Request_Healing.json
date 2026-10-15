@@ -1,0 +1,66 @@
+--- export: UObject / WDPingAction_AssistanceRequest_Healing_0 ---
+{
+  "Type": "WDPingAction_AssistanceRequest_Healing",
+  "Name": "WDPingAction_AssistanceRequest_Healing_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingAction_AssistanceRequest_Healing'",
+  "Outer": {
+    "ObjectName": "WDPingActionAsset'DA_PingAction_Request_Healing'",
+    "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_Healing.1"
+  },
+  "Properties": {
+    "PingActionChatLocText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_ChatBox_AssistanceRequests.STRINGS_ChatBox_AssistanceRequests",
+      "Key": "Type_Request_Healing_Other",
+      "SourceString": "Requesting healing",
+      "LocalizedString": "Requesting healing"
+    },
+    "PingActionChatLocTextWithLocation": {
+      "TableId": "/Game/UI/StringTables/STRINGS_ChatBox_AssistanceRequests.STRINGS_ChatBox_AssistanceRequests",
+      "Key": "Type_Request_Healing_Other_WithLoc",
+      "SourceString": "Requesting healing at X{X}, Y{Y}",
+      "LocalizedString": "Requesting healing at X{X}, Y{Y}"
+    }
+  }
+}
+--- export: UDataAsset / DA_PingAction_Request_Healing ---
+{
+  "Type": "WDPingActionAsset",
+  "Name": "DA_PingAction_Request_Healing",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingActionAsset'",
+  "Package": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_Healing",
+  "Properties": {
+    "Text": {
+      "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+      "Key": "Action.Request.Healing",
+      "SourceString": "Healing",
+      "LocalizedString": "Healing"
+    },
+    "NonTriggerableDescriptions": [
+      {
+        "Key": {
+          "TagName": "Tag.PingAction.NonTriggerable.FullHealth"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+          "Key": "Action.Request.Healing.NonTriggerable.FullHealth",
+          "SourceString": "Healing\r\nAlready full health",
+          "LocalizedString": "Healing\r\nAlready full health"
+        }
+      }
+    ],
+    "Icon": {
+      "AssetPathName": "/Game/UI/Features/PingWheel/Widgets/Action/Textures/T_UI_Icon_PingWheel_Healing_64x64.T_UI_Icon_PingWheel_Healing_64x64",
+      "SubPathString": ""
+    },
+    "bIsWorkInProgress": false,
+    "bRequestPlayerMapCoordinates": true,
+    "Actions": [
+      {
+        "ObjectName": "WDPingAction_AssistanceRequest_Healing'DA_PingAction_Request_Healing:WDPingAction_AssistanceRequest_Healing_0'",
+        "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_Healing.0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,256 @@
+--- export: UDataAsset / IMC_RotaryVehicles_JoystickActions ---
+{
+  "Type": "InputMappingContext",
+  "Name": "IMC_RotaryVehicles_JoystickActions",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputMappingContext'",
+  "Package": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_JoystickActions",
+  "Properties": {
+    "DefaultKeyMappings": {
+      "Mappings": [
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Weapon_Use'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_Use.0"
+          },
+          "Key": {
+            "KeyName": "HOTAS_Action_Fire"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Weapon_Reload'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_Reload.0"
+          },
+          "Key": {
+            "KeyName": "HOTAS_Action_Reload"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_FireFlares'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_FireFlares.0"
+          },
+          "Key": {
+            "KeyName": "HOTAS_Action_Flares"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_UseHorn'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_UseHorn.0"
+          },
+          "Key": {
+            "KeyName": "HOTAS_Action_Horn"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_RotaryVehicles_JoystickActions:InputTriggerPressed_0'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_JoystickActions.2"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Camera_ToggleMode'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Camera_ToggleMode.0"
+          },
+          "Key": {
+            "KeyName": "HOTAS_Action_ToggleCameraMode"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_RotaryVehicles_JoystickActions:InputTriggerPressed_1'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_JoystickActions.3"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_OpenGarageVendor'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_OpenGarageVendor.0"
+          },
+          "Key": {
+            "KeyName": "HOTAS_Action_GarageVendor"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_CycleLockState'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_CycleLockState.0"
+          },
+          "Key": {
+            "KeyName": "HOTAS_Action_CycleLockState"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Deploy_SupplyCrate'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Deploy_SupplyCrate.0"
+          },
+          "Key": {
+            "KeyName": "HOTAS_Action_DeploySupplyCrate"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_RotaryVehicles_JoystickActions:InputTriggerPressed_2'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_JoystickActions.4"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Ping'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Ping.0"
+          },
+          "Key": {
+            "KeyName": "HOTAS_Action_Ping"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerTap'IMC_RotaryVehicles_JoystickActions:InputTriggerTap_0'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_JoystickActions.6"
+            },
+            {
+              "ObjectName": "InputTriggerHold'IMC_RotaryVehicles_JoystickActions:InputTriggerHold_0'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_JoystickActions.1"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_VoiceChat_ToggleTalk'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_VoiceChat_ToggleTalk.0"
+          },
+          "Key": {
+            "KeyName": "HOTAS_Action_VoipToggleTalk"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_RotaryVehicles_JoystickActions:InputTriggerPressed_3'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_JoystickActions.5"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Camera_FreeLookReset'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Camera_FreeLookReset.0"
+          },
+          "Key": {
+            "KeyName": "HOTAS_Action_FreeLookReset"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        }
+      ]
+    }
+  }
+}
+--- export: UObject / InputTriggerHold_0 ---
+{
+  "Type": "InputTriggerHold",
+  "Name": "InputTriggerHold_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerHold'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_RotaryVehicles_JoystickActions'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_JoystickActions.0"
+  },
+  "Properties": {
+    "HoldTimeThreshold": 0.2,
+    "bIsOneShot": true
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_RotaryVehicles_JoystickActions'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_JoystickActions.0"
+  }
+}
+--- export: UObject / InputTriggerPressed_1 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_RotaryVehicles_JoystickActions'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_JoystickActions.0"
+  }
+}
+--- export: UObject / InputTriggerPressed_2 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_2",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_RotaryVehicles_JoystickActions'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_JoystickActions.0"
+  }
+}
+--- export: UObject / InputTriggerPressed_3 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_3",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_RotaryVehicles_JoystickActions'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_JoystickActions.0"
+  }
+}
+--- export: UObject / InputTriggerTap_0 ---
+{
+  "Type": "InputTriggerTap",
+  "Name": "InputTriggerTap_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerTap'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_RotaryVehicles_JoystickActions'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_JoystickActions.0"
+  }
+}

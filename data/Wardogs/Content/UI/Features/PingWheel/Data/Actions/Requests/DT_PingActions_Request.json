@@ -1,0 +1,233 @@
+--- export: UDataTable / DT_PingActions_Request ---
+{
+  "Type": "DataTable",
+  "Name": "DT_PingActions_Request",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DT_PingActions_Request",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUIPingAction'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "UI.Features.PingWheel.Action.Request.Backup": {
+      "Category": {
+        "TagName": "UI.Features.PingWheel.Category.Requests"
+      },
+      "RequiredPlayerStateGameplayTags": [],
+      "NotAllowedPlayerStateGameplayTags": [
+        "State.Player.Vehicle.Role.Driver"
+      ],
+      "PreferredPage": 1,
+      "PreferredSlot": 5,
+      "ActionAsset": {
+        "ObjectName": "WDPingActionAsset'DA_PingAction_Request_Backup'",
+        "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_Backup.1"
+      },
+      "GameplayCueTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "UI.Features.PingWheel.Action.Request.Backup"
+      }
+    },
+    "UI.Features.PingWheel.Action.Request.Ammo": {
+      "Category": {
+        "TagName": "UI.Features.PingWheel.Category.Requests"
+      },
+      "RequiredPlayerStateGameplayTags": [],
+      "NotAllowedPlayerStateGameplayTags": [
+        "State.Player.Vehicle.Role.Driver"
+      ],
+      "PreferredPage": 1,
+      "PreferredSlot": 2,
+      "ActionAsset": {
+        "ObjectName": "WDPingActionAsset'DA_PingAction_Request_Ammo'",
+        "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_Ammo.1"
+      },
+      "GameplayCueTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "UI.Features.PingWheel.Action.Request.Ammo"
+      }
+    },
+    "UI.Features.PingWheel.Action.Request.Healing": {
+      "Category": {
+        "TagName": "UI.Features.PingWheel.Category.Requests"
+      },
+      "RequiredPlayerStateGameplayTags": [],
+      "NotAllowedPlayerStateGameplayTags": [
+        "State.Player.Vehicle.Role.Driver"
+      ],
+      "PreferredPage": 1,
+      "PreferredSlot": 3,
+      "ActionAsset": {
+        "ObjectName": "WDPingActionAsset'DA_PingAction_Request_Healing'",
+        "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_Healing.1"
+      },
+      "GameplayCueTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "UI.Features.PingWheel.Action.Request.Healing"
+      }
+    },
+    "UI.Features.PingWheel.Action.Request.Repair": {
+      "Category": {
+        "TagName": "UI.Features.PingWheel.Category.Requests"
+      },
+      "RequiredPlayerStateGameplayTags": [
+        "State.Player.Vehicle.Role.Driver"
+      ],
+      "NotAllowedPlayerStateGameplayTags": [],
+      "PreferredPage": 1,
+      "PreferredSlot": 4,
+      "ActionAsset": {
+        "ObjectName": "WDPingActionAsset'DA_PingAction_Request_Repair'",
+        "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_Repair.1"
+      },
+      "GameplayCueTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "UI.Features.PingWheel.Action.Request.Repair"
+      }
+    },
+    "UI.Features.PingWheel.Action.Request.Refueling": {
+      "Category": {
+        "TagName": "UI.Features.PingWheel.Category.Requests"
+      },
+      "RequiredPlayerStateGameplayTags": [
+        "State.Player.Vehicle.Role.Driver"
+      ],
+      "NotAllowedPlayerStateGameplayTags": [],
+      "PreferredPage": 1,
+      "PreferredSlot": 2,
+      "ActionAsset": {
+        "ObjectName": "WDPingActionAsset'DA_PingAction_Request_Fuel'",
+        "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_Fuel.1"
+      },
+      "GameplayCueTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "UI.Features.PingWheel.Action.Request.Refueling"
+      }
+    },
+    "UI.Features.PingWheel.Action.Request.Pickup": {
+      "Category": {
+        "TagName": "UI.Features.PingWheel.Category.Requests"
+      },
+      "RequiredPlayerStateGameplayTags": [],
+      "NotAllowedPlayerStateGameplayTags": [
+        "State.Player.Vehicle.Role.ActivePassenger",
+        "State.Player.Vehicle.Role.Driver",
+        "State.Player.Vehicle.Role.Gunner",
+        "State.Player.Vehicle.Role.PassivePassenger",
+        "State.Player.Vehicle.Stationary"
+      ],
+      "PreferredPage": 1,
+      "PreferredSlot": 4,
+      "ActionAsset": {
+        "ObjectName": "WDPingActionAsset'DA_PingAction_Request_Pickup'",
+        "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_Pickup.1"
+      },
+      "GameplayCueTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "UI.Features.PingWheel.Action.Request.Pickup"
+      }
+    },
+    "UI.Features.PingWheel.Action.Request.Dropoff": {
+      "Category": {
+        "TagName": "UI.Features.PingWheel.Category.Requests"
+      },
+      "RequiredPlayerStateGameplayTags": [
+        "State.Player.Vehicle.Role.ActivePassenger",
+        "State.Player.Vehicle.Role.Gunner",
+        "State.Player.Vehicle.Role.PassivePassenger"
+      ],
+      "NotAllowedPlayerStateGameplayTags": [
+        "State.Player.Vehicle.Role.Driver",
+        "State.Player.Vehicle.Stationary"
+      ],
+      "PreferredPage": 1,
+      "PreferredSlot": 3,
+      "ActionAsset": {
+        "ObjectName": "WDPingActionAsset'DA_PingAction_Request_Dropoff'",
+        "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_Dropoff.1"
+      },
+      "GameplayCueTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "UI.Features.PingWheel.Action.Request.Dropoff"
+      }
+    },
+    "UI.Features.PingWheel.Action.Request.Getout": {
+      "Category": {
+        "TagName": "UI.Features.PingWheel.Category.Requests"
+      },
+      "RequiredPlayerStateGameplayTags": [
+        "State.Player.Vehicle.Role.Driver"
+      ],
+      "NotAllowedPlayerStateGameplayTags": [],
+      "PreferredPage": 1,
+      "PreferredSlot": 3,
+      "ActionAsset": {
+        "ObjectName": "WDPingActionAsset'DA_PingAction_Request_GetOut'",
+        "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_GetOut.1"
+      },
+      "GameplayCueTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "UI.Features.PingWheel.Action.Request.Getout"
+      }
+    },
+    "UI.Features.PingWheel.Action.Request.GetIn": {
+      "Category": {
+        "TagName": "UI.Features.PingWheel.Category.Requests"
+      },
+      "RequiredPlayerStateGameplayTags": [
+        "State.Player.Vehicle.Role.Driver"
+      ],
+      "NotAllowedPlayerStateGameplayTags": [],
+      "PreferredPage": 1,
+      "PreferredSlot": 5,
+      "ActionAsset": {
+        "ObjectName": "WDPingActionAsset'DA_PingAction_Request_GetIn'",
+        "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_GetIn.1"
+      },
+      "GameplayCueTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "UI.Features.PingWheel.Action.Request.GetIn"
+      }
+    },
+    "UI.Features.PingWheel.Action.Request.Supplies": {
+      "Category": {
+        "TagName": "UI.Features.PingWheel.Category.Requests"
+      },
+      "RequiredPlayerStateGameplayTags": [],
+      "NotAllowedPlayerStateGameplayTags": [],
+      "PreferredPage": 1,
+      "PreferredSlot": 1,
+      "ActionAsset": {
+        "ObjectName": "WDPingActionAsset'DA_PingAction_Request_Supplies'",
+        "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_Supplies.1"
+      },
+      "GameplayCueTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "UI.Features.PingWheel.Action.Request.Supplies"
+      }
+    }
+  }
+}

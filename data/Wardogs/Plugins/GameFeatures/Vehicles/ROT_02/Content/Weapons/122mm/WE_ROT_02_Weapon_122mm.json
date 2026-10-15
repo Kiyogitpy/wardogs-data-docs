@@ -1,0 +1,58 @@
+--- export: UDataAsset / WE_ROT_02_Weapon_122mm ---
+{
+  "Type": "WDVehicleWeaponExtensionDataAsset",
+  "Name": "WE_ROT_02_Weapon_122mm",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeaponExtensionDataAsset'",
+  "Package": "/ROT_02/Weapons/122mm/WE_ROT_02_Weapon_122mm",
+  "Properties": {
+    "WeaponExtensionTag": {
+      "TagName": "Id.Vehicle.WeaponExtension.ROT_02.122mm"
+    },
+    "WeaponItemId": {
+      "TagName": "ID.Item.VehicleHelicopterRockets"
+    },
+    "ItemSlotTag": {
+      "TagName": "Inventory.Slot.Vehicle.Weapon.ROT_02.MissilePods"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Weapon.Vehicle.HelicopterRocket"
+      }
+    },
+    "WeaponExtensionName": "122mm Rockets",
+    "WeaponStatsData": {
+      "ObjectName": "WDWeaponStatsData'DA_ROT_02_Weapon_122mm_Stats'",
+      "ObjectPath": "/ROT_02/Weapons/122mm/DA_ROT_02_Weapon_122mm_Stats.0"
+    },
+    "ReloadSetupData": {
+      "ReloadTime": 6.0,
+      "StartDelayTime": 1.0,
+      "LoopLoadRoundTime": 0.75
+    },
+    "bAutomaticallyReload": true,
+    "AmmoTag": {
+      "TagName": "Id.Item.122mm"
+    },
+    "AmmoCaliberTag": {
+      "TagName": "Item.Caliber.122mm"
+    },
+    "WeaponStartingInventoryItems": [
+      {
+        "Key": {
+          "TagName": "Id.Item.122mm"
+        },
+        "Value": 0
+      }
+    ],
+    "WeaponAudioData": {
+      "ObjectName": "WDAudioData'DA_ROT_02_Weapon_Audio'",
+      "ObjectPath": "/ROT_02/Weapons/DA_ROT_02_Weapon_Audio.0"
+    },
+    "bShakeOnWeaponFire": true,
+    "OperatorIdleSequence": {
+      "ObjectName": "BlueprintGeneratedClass'B_CameraShake_HeliFiring_C'",
+      "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/CameraShake/B_CameraShake_HeliFiring.1"
+    }
+  }
+}

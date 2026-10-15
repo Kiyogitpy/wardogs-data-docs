@@ -1,0 +1,71 @@
+--- export: UPrimaryDataAsset / DA_70mm_ProjectileData ---
+{
+  "Type": "WDProjectileData",
+  "Name": "DA_70mm_ProjectileData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDProjectileData'",
+  "Package": "/Game/GameMechanics/Inventory/Equipment/Caliber/70mm/DA_70mm_ProjectileData",
+  "Properties": {
+    "ProjectileId": {
+      "TagName": "Item.Caliber.70mm"
+    },
+    "ProjectileStats": {
+      "DamageEntityData": {
+        "Tag": {
+          "TagName": "Meta.Damage.Explosive.Rocket.60mm"
+        }
+      },
+      "DamageValues": {
+        "BaseDamage": 100.0,
+        "ExplosiveRadius": 1000.0,
+        "EffectiveExplosiveRadius": 400.0,
+        "ExplosiveDamageFallOff": 0.5,
+        "bPreferUpwardsTrace": false
+      },
+      "ProjectileDimensions": {
+        "Length": 137.0,
+        "Diameter": 12.0,
+        "Mass": 10.1,
+        "DragModel": {
+          "Curve": {
+            "CurveTable": {
+              "ObjectName": "CurveTable'CT_Projectile_DragCoefficients'",
+              "ObjectPath": "/Game/Items/Resources/Ammo/Curves/CT_Projectile_DragCoefficients.0"
+            },
+            "RowName": "GC (Cylinder)"
+          }
+        }
+      },
+      "ProjectileEffects": {
+        "GameplayCueTag": {
+          "TagName": "GameplayCue.Weapon.RocketProjectile"
+        },
+        "AudioEventTag": {
+          "TagName": "Audio.Event.Projectile.Rocket.Travel.Homing"
+        }
+      },
+      "SuppressionData": {
+        "DistanceFalloffCurve": {
+          "EditorCurveData": {}
+        }
+      },
+      "GuidanceData": {
+        "bGuidedProjectile": true,
+        "MaxTurnAngle": 1.0
+      },
+      "MaxProjectileLifetime": 100.00002,
+      "AttachedEffect": {
+        "AssetPathName": "/Game/VFX/Weapons/RocketLauncher/NS_ProjectileTrail_84mm.NS_ProjectileTrail_84mm",
+        "SubPathString": ""
+      },
+      "TracerChance": 1.0,
+      "TypicalSpeed": 22400.0,
+      "bShouldPenetrate": false,
+      "MinImpactAngleForRicochet": 100.0,
+      "bShouldPreSimulate": false,
+      "ThrustSpeed": 22000.0,
+      "bClientPredictive": false,
+      "IgnoreInstigatorVehicleTime": 0.5
+    }
+  }
+}

@@ -1,0 +1,34 @@
+--- export: UDataAsset / IA_Weapon_IncreaseZeroing ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Weapon_IncreaseZeroing",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Weapons/Input/IA_Weapon_IncreaseZeroing",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.HoldableItem.Weapon.IncreaseZeroing"
+    },
+    "bConsumeInput": false,
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerTap'IA_Weapon_IncreaseZeroing:InputTriggerTap_0'",
+        "ObjectPath": "/Game/Weapons/Input/IA_Weapon_IncreaseZeroing.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerTap_0 ---
+{
+  "Type": "InputTriggerTap",
+  "Name": "InputTriggerTap_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerTap'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Weapon_IncreaseZeroing'",
+    "ObjectPath": "/Game/Weapons/Input/IA_Weapon_IncreaseZeroing.0"
+  },
+  "Properties": {
+    "TapReleaseTimeThreshold": 0.4
+  }
+}

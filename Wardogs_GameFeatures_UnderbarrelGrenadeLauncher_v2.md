@@ -4,7 +4,7 @@ parent: "Game Features"
 ---
 
 # Wardogs — UnderbarrelGrenadeLauncher Game Feature Reference (v2)
-*Extracted from cooked game data (`Wardogs/Plugins/GameFeatures/UnderbarrelGrenadeLauncher`, 4 JSON files, all parsed). Build `++Wardogs+Live-CL-509546`, UE 5.7.*
+*Extracted from cooked game data ([`Wardogs/Plugins/GameFeatures/UnderbarrelGrenadeLauncher`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/UnderbarrelGrenadeLauncher), 4 JSON files, all parsed). Build `++Wardogs+Live-CL-509546`, UE 5.7.*
 
 > **Naming flag:** the launcher item is **`Id.Item.TestGrenadeLauncher`**, with display name **"TEST Grenade Launcher"**. It reads as a test or placeholder build, not a shipping item. The stats below are exported as-is, but the name and the magazine-audio reference suggest the item has not been finished.
 
@@ -14,14 +14,14 @@ parent: "Game Features"
 
 | Asset | Type | Role |
 |---|---|---|
-| `Content/UnderbarrelGrenadeLauncher` | `GameFeatureData` | Plugin root. Scans `/UnderbarrelGrenadeLauncher/Data` for `BH.Item` assets |
-| `Content/Data/GrenadeLauncher` | `BHInventoryItemDefinition` (7 exports) | The attachment item (`Id.Item.TestGrenadeLauncher`) |
-| `Content/Data/DA_GrenadeLauncher_Stats` | `WDWeaponStatsData` | Firing, recoil and ballistic stats |
-| `Content/Data/DA_GrenadeLauncher_Audio` | `WDAudioData` | Audio data asset. **Exported with no properties** |
+| [`Content/UnderbarrelGrenadeLauncher`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/UnderbarrelGrenadeLauncher/Content/UnderbarrelGrenadeLauncher.json) | `GameFeatureData` | Plugin root. Scans `/UnderbarrelGrenadeLauncher/Data` for `BH.Item` assets |
+| [`Content/Data/GrenadeLauncher`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/UnderbarrelGrenadeLauncher/Content/Data/GrenadeLauncher.json) | `BHInventoryItemDefinition` (7 exports) | The attachment item (`Id.Item.TestGrenadeLauncher`) |
+| [`Content/Data/DA_GrenadeLauncher_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/UnderbarrelGrenadeLauncher/Content/Data/DA_GrenadeLauncher_Stats.json) | `WDWeaponStatsData` | Firing, recoil and ballistic stats |
+| [`Content/Data/DA_GrenadeLauncher_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/UnderbarrelGrenadeLauncher/Content/Data/DA_GrenadeLauncher_Audio.json) | `WDAudioData` | Audio data asset. **Exported with no properties** |
 
 ---
 
-## 2. Attachment Item (`GrenadeLauncher`)
+## 2. Attachment Item ([`GrenadeLauncher`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/UnderbarrelGrenadeLauncher/Content/Data/GrenadeLauncher.json))
 
 | Field | Value |
 |---|---|
@@ -38,7 +38,7 @@ parent: "Game Features"
 | `WDInventoryFragment_Gunsmith` | `ItemType` = `EWDGunsmithItemType::Attachment` |
 | `BHInventoryFragment_SubSlotSupport` | Ammo container (section 4) |
 | `WDItemsmithDataFragment_CameraData` | Gunsmith camera parameters (section 5) |
-| `WDInventoryFragment_Audio` | Audio asset `ID_Magazine_Audio` (see note in section 6) |
+| `WDInventoryFragment_Audio` | Audio asset [`ID_Magazine_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Player/Item/Data/ID_Magazine_Audio.json) (see note in section 6) |
 
 ---
 
@@ -70,10 +70,10 @@ Both montages come from the **Universal Tool** animation set, not a grenade-laun
 All four firing montage slots are `null`. Firing relies on the weapon's own animation.
 
 ### 3d. Spread
-`SpreadValues` is keyed by stance and uses curve table `CT_Weapon_Spread`. The `Stand` entry has value 1.0.
+`SpreadValues` is keyed by stance and uses curve table [`CT_Weapon_Spread`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Curves/CT_Weapon_Spread.json). The `Stand` entry has value 1.0.
 
 ### 3e. Weapon stats reference
-Stats come from `WDWeaponStatsData` `DA_GrenadeLauncher_Stats` (section 6), and audio from `DA_GrenadeLauncher_Audio`.
+Stats come from `WDWeaponStatsData` [`DA_GrenadeLauncher_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/UnderbarrelGrenadeLauncher/Content/Data/DA_GrenadeLauncher_Stats.json) (section 6), and audio from [`DA_GrenadeLauncher_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/UnderbarrelGrenadeLauncher/Content/Data/DA_GrenadeLauncher_Audio.json).
 
 ---
 
@@ -115,7 +115,7 @@ Keyed on `Item.Attachment.Underbarrel`:
 
 ---
 
-## 6. Weapon Stats (`DA_GrenadeLauncher_Stats`)
+## 6. Weapon Stats ([`DA_GrenadeLauncher_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/UnderbarrelGrenadeLauncher/Content/Data/DA_GrenadeLauncher_Stats.json))
 
 | Stat | Value | Notes |
 |---|---|---|
@@ -139,11 +139,11 @@ Both `ViewKickCurve` and `RecoveryKickCurve` are two-key linear-to-cubic ramps:
 Both are normalised 0-to-1 ramps (time 0 to 1, value 0 to 1). The export does not show what scales them.
 
 ### Audio
-`DA_GrenadeLauncher_Audio` (`WDAudioData`) is exported with **no properties**. The launcher's sound therefore comes from the defaults or from whatever references it. The item's `WDInventoryFragment_Audio` points at `ID_Magazine_Audio`, a magazine asset, which suggests the item reuses magazine audio.
+[`DA_GrenadeLauncher_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/UnderbarrelGrenadeLauncher/Content/Data/DA_GrenadeLauncher_Audio.json) (`WDAudioData`) is exported with **no properties**. The launcher's sound therefore comes from the defaults or from whatever references it. The item's `WDInventoryFragment_Audio` points at [`ID_Magazine_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Player/Item/Data/ID_Magazine_Audio.json), a magazine asset, which suggests the item reuses magazine audio.
 
 ---
 
-## 7. Plugin Root (`UnderbarrelGrenadeLauncher`)
+## 7. Plugin Root ([`UnderbarrelGrenadeLauncher`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/UnderbarrelGrenadeLauncher/Content/UnderbarrelGrenadeLauncher.json))
 
 | Field | Value |
 |---|---|
@@ -170,7 +170,7 @@ Both are normalised 0-to-1 ramps (time 0 to 1, value 0 to 1). The export does no
 
 - **Damage and splash.** The 40mm round's damage and explosion data are not in this plugin.
 - **Unit for bullet speed and effective range** is not stated.
-- **`CT_Weapon_Spread` values** are referenced by name only. The curve table is outside this plugin.
+- **[`CT_Weapon_Spread`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Curves/CT_Weapon_Spread.json) values** are referenced by name only. The curve table is outside this plugin.
 - **Reload and firing montages** are referenced by path. Their timing is not in this dump.
-- **`DA_GrenadeLauncher_Audio` is empty** in the export. Whether that is intentional or a missing asset needs checking.
+- **[`DA_GrenadeLauncher_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/UnderbarrelGrenadeLauncher/Content/Data/DA_GrenadeLauncher_Audio.json) is empty** in the export. Whether that is intentional or a missing asset needs checking.
 - **Test naming:** whether `TestGrenadeLauncher` is shipped or only a test build cannot be confirmed from the dump. The name and magazine-audio reference are the evidence.

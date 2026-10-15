@@ -1,0 +1,346 @@
+--- export: UDataAsset / DA_EquippedItem ---
+{
+  "Type": "WDUIEquippedItemData",
+  "Name": "DA_EquippedItem",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIEquippedItemData'",
+  "Package": "/Game/UI/Features/HUD/EquippedItem/Data/DA_EquippedItem",
+  "Properties": {
+    "DefaultMagazineTexture": {
+      "AssetPathName": "/Game/UI/Features/HUD/EquippedItem/Textures/T_UI_Icon_Magazine_Standard_256px.T_UI_Icon_Magazine_Standard_256px",
+      "SubPathString": ""
+    },
+    "DefaultEmptyMagazineTexture": {
+      "AssetPathName": "/Game/UI/Features/HUD/EquippedItem/Textures/T_UI_Icon_Magazine_Standard_Empty_256px.T_UI_Icon_Magazine_Standard_Empty_256px",
+      "SubPathString": ""
+    },
+    "DefaultMissingMagazineTexture": {
+      "AssetPathName": "/Game/UI/Features/HUD/EquippedItem/Textures/T_UI_Icon_Magazine_Standard_None_256px.T_UI_Icon_Magazine_Standard_None_256px",
+      "SubPathString": ""
+    },
+    "FiringModeTextures": [
+      {
+        "Key": "EWDFireMode::Burst",
+        "Value": {
+          "AssetPathName": "/Game/UI/Features/HUD/EquippedItem/Textures/T_UI_Icon_FiringMode_Burst_32.T_UI_Icon_FiringMode_Burst_32",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": "EWDFireMode::Automatic",
+        "Value": {
+          "AssetPathName": "/Game/UI/Features/HUD/EquippedItem/Textures/T_UI_Icon_FiringMode_FullAuto_32.T_UI_Icon_FiringMode_FullAuto_32",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": "EWDFireMode::SemiAutomatic",
+        "Value": {
+          "AssetPathName": "/Game/UI/Features/HUD/EquippedItem/Textures/T_UI_Icon_FiringMode_SemiAuto_32.T_UI_Icon_FiringMode_SemiAuto_32",
+          "SubPathString": ""
+        }
+      }
+    ],
+    "DefaultBulletTexture": {
+      "AssetPathName": "/Game/UI/Features/HUD/EquippedItem/TexturesNew/T_UI_Icon_Shotgun_Round_256x256.T_UI_Icon_Shotgun_Round_256x256",
+      "SubPathString": ""
+    },
+    "BulletTextures": [
+      {
+        "Key": {
+          "TagName": "Id.Item.SKS"
+        },
+        "Value": {
+          "AssetPathName": "/Game/UI/Features/HUD/EquippedItem/TexturesNew/T_UI_Icon_Standard_Round_256x256.T_UI_Icon_Standard_Round_256x256",
+          "SubPathString": ""
+        }
+      }
+    ],
+    "DefaultMagazineMaterial": {
+      "AssetPathName": "/Game/UI/Features/HUD/EquippedItem/Materials/MI_UI_MagazineBase_Standard.MI_UI_MagazineBase_Standard",
+      "SubPathString": ""
+    },
+    "DefaultMissingMagazineMaterial": {
+      "AssetPathName": "/Game/UI/Features/HUD/EquippedItem/Materials/M_Magazine_None.M_Magazine_None",
+      "SubPathString": ""
+    },
+    "MagazineTypeMaterial": [
+      {
+        "Key": {
+          "TagName": "Item.Resource.Magazine.Standard"
+        },
+        "Value": {
+          "AssetPathName": "/Game/UI/Features/HUD/EquippedItem/Materials/MI_UI_MagazineBase_Standard.MI_UI_MagazineBase_Standard",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Item.Resource.Magazine.Small"
+        },
+        "Value": {
+          "AssetPathName": "/Game/UI/Features/HUD/EquippedItem/Materials/MI_UI_MagazineBase_Short.MI_UI_MagazineBase_Short",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Item.Resource.Magazine.Extended"
+        },
+        "Value": {
+          "AssetPathName": "/Game/UI/Features/HUD/EquippedItem/Materials/MI_UI_MagazineBase_Extended.MI_UI_MagazineBase_Extended",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Item.Resource.Magazine.Belt"
+        },
+        "Value": {
+          "AssetPathName": "/Game/UI/Features/HUD/EquippedItem/Materials/MI_UI_MagazineBase_Box.MI_UI_MagazineBase_Box",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Item.Resource.Magazine.Drum"
+        },
+        "Value": {
+          "AssetPathName": "/Game/UI/Features/HUD/EquippedItem/Materials/MI_UI_Magazine_Drum.MI_UI_Magazine_Drum",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Item.Resource.Magazine.Internal"
+        },
+        "Value": {
+          "AssetPathName": "/Game/UI/Features/HUD/EquippedItem/Materials/Archive/M_UI_InternalMagazineBase.M_UI_InternalMagazineBase",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Item.Resource.Magazine.Battery"
+        },
+        "Value": {
+          "AssetPathName": "/Game/UI/Features/HUD/EquippedItem/Materials/MI_UI_MagazineBase_Battery.MI_UI_MagazineBase_Battery",
+          "SubPathString": ""
+        }
+      }
+    ],
+    "DefaultChamberedRoundTexture": {
+      "AssetPathName": "/Game/UI/Features/HUD/EquippedItem/Textures/T_UI_ChamberedRound_Bullet.T_UI_ChamberedRound_Bullet",
+      "SubPathString": ""
+    },
+    "ChamberedRoundIcons": [
+      {
+        "Key": "/Game/UI/Features/HUD/EquippedItem/Textures/T_UI_ChamberedRound_Shotgun.T_UI_ChamberedRound_Shotgun",
+        "Value": [
+          "Item.Caliber.12g",
+          "Item.Caliber.7mmBuck"
+        ]
+      },
+      {
+        "Key": "/Game/UI/Features/HUD/EquippedItem/Textures/T_UI_ChamberedRound_Shell.T_UI_ChamberedRound_Shell",
+        "Value": [
+          "Item.Caliber.93mm",
+          "Item.Caliber.84mm",
+          "Item.Caliber.120x570mm"
+        ]
+      },
+      {
+        "Key": "/Game/UI/Features/HUD/EquippedItem/Textures/T_UI_ChamberedRound_Mortar.T_UI_ChamberedRound_Mortar",
+        "Value": [
+          "Item.Caliber.120x800mm"
+        ]
+      },
+      {
+        "Key": "/Game/UI/Features/HUD/EquippedItem/Textures/T_UI_ChamberedRound_Artillery.T_UI_ChamberedRound_Artillery",
+        "Value": [
+          "Item.Caliber.155mm"
+        ]
+      },
+      {
+        "Key": "/Game/UI/Features/HUD/EquippedItem/Textures/T_UI_ChamberedRound_Arrow.T_UI_ChamberedRound_Arrow",
+        "Value": [
+          "Item.Caliber.Arrow"
+        ]
+      },
+      {
+        "Key": "/Game/UI/Features/HUD/EquippedItem/Textures/T_UI_ChamberedRound_GrenadeRound.T_UI_ChamberedRound_GrenadeRound",
+        "Value": [
+          "Item.Caliber.40mm"
+        ]
+      },
+      {
+        "Key": "/Game/UI/Features/HUD/EquippedItem/Textures/T_UI_ChamberedRound_Missile.T_UI_ChamberedRound_Missile",
+        "Value": [
+          "Item.Caliber.72mm",
+          "Item.Caliber.122mm"
+        ]
+      },
+      {
+        "Key": "/Game/UI/Features/HUD/EquippedItem/Textures/T_UI_ChamberedRound_SmallRound.T_UI_ChamberedRound_SmallRound",
+        "Value": [
+          "Item.Caliber.9mm",
+          "Item.Caliber.45ACP",
+          "Item.Caliber.45Colt",
+          "Item.Caliber.50AE"
+        ]
+      },
+      {
+        "Key": "/Game/UI/Features/HUD/EquippedItem/Textures/T_UI_ChamberedRound_Drone.T_UI_ChamberedRound_Drone",
+        "Value": [
+          "Item.Caliber.DroneProjectile"
+        ]
+      }
+    ],
+    "DefaultResourceTypeTexture": {
+      "AssetPathName": "/Game/UI/Features/HUD/EquippedItem/Textures/T_UI_ChamberedRound_Bullet.T_UI_ChamberedRound_Bullet",
+      "SubPathString": ""
+    },
+    "ResourceTypeIcons": [
+      {
+        "Key": "/Game/UI/Features/HUD/EquippedItem/Textures/T_UI_ChamberedRound_Shotgun.T_UI_ChamberedRound_Shotgun",
+        "Value": [
+          "Item.Caliber.12g",
+          "Item.Caliber.7mmBuck"
+        ]
+      },
+      {
+        "Key": "/Game/UI/Features/HUD/EquippedItem/Textures/T_UI_ChamberedRound_Shell.T_UI_ChamberedRound_Shell",
+        "Value": [
+          "Item.Caliber.93mm",
+          "Item.Caliber.84mm"
+        ]
+      },
+      {
+        "Key": "/Game/UI/Features/HUD/EquippedItem/Textures/T_UI_ChamberedRound_Missile.T_UI_ChamberedRound_Missile",
+        "Value": [
+          "Item.Caliber.72mm",
+          "Item.Caliber.122mm"
+        ]
+      },
+      {
+        "Key": "/Game/UI/Features/HUD/EquippedItem/Textures/T_UI_ChamberedRound_Bullet.T_UI_ChamberedRound_Bullet",
+        "Value": [
+          "Item.Caliber.20x102mm"
+        ]
+      },
+      {
+        "Key": "/Game/UI/Features/HUD/EquippedItem/Textures/T_UI_ChamberedRound_Arrow.T_UI_ChamberedRound_Arrow",
+        "Value": [
+          "Item.Caliber.Arrow"
+        ]
+      },
+      {
+        "Key": "/Game/UI/Shared/Icons/Equipment/Killfeed/T_UI_Icon_Killfeed_C4.T_UI_Icon_Killfeed_C4",
+        "Value": [
+          "Item.Caliber.C4Charge",
+          "Item.Caliber.IEDCharge"
+        ]
+      },
+      {
+        "Key": "/Game/UI/Features/HUD/EquippedItem/Textures/T_UI_ChamberedRound_Drone.T_UI_ChamberedRound_Drone",
+        "Value": [
+          "Item.Caliber.DroneProjectile"
+        ]
+      },
+      {
+        "Key": "/Game/UI/Features/HUD/EquippedItem/Textures/T_UI_ChamberedRound_GrenadeRound.T_UI_ChamberedRound_GrenadeRound",
+        "Value": [
+          "Item.Caliber.40mm"
+        ]
+      }
+    ],
+    "ResourceTypesTextMap": [
+      {
+        "Key": "EWDEquippedItemResourceType::Supplies",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+          "Key": "HUD.EquippedItem.Resource.Resources",
+          "SourceString": "Resources",
+          "LocalizedString": "Resources"
+        }
+      }
+    ],
+    "EquippedItemNameTextFormat": {
+      "Namespace": "",
+      "Key": "667B2B1947AE23FB755F2B91639AED1B",
+      "SourceString": "{ItemDisplayName} // {ResourceDisplayName} // SN {SerialNumber}",
+      "LocalizedString": "{ItemDisplayName} // {ResourceDisplayName} // SN {SerialNumber}"
+    },
+    "ZeroingPromptTextFormat": {
+      "CultureInvariantString": "{IncreaseZeroing}"
+    },
+    "LowResourceFillPercent": 0.25,
+    "ColorLowCount": {
+      "R": 1.0,
+      "G": 1.0,
+      "B": 1.0,
+      "A": 0.85,
+      "Hex": "D9FFFFFF"
+    },
+    "ColorEmpty": {
+      "R": 0.46875,
+      "G": 0.46875,
+      "B": 0.46875,
+      "A": 0.5,
+      "Hex": "7FB6B6B6"
+    },
+    "TimeUntilFadeAfterAction": 5.0,
+    "ChamberedRoundColor": {
+      "R": 0.95,
+      "G": 0.95,
+      "B": 0.95,
+      "A": 0.75,
+      "Hex": "BFFAFAFA"
+    },
+    "ChamberEmptyColor": {
+      "R": 0.020833,
+      "G": 0.020833,
+      "B": 0.020833,
+      "A": 0.513043,
+      "Hex": "83272727"
+    },
+    "BipodFoldedIconColor": {
+      "R": 0.021219,
+      "G": 0.021219,
+      "B": 0.021219,
+      "A": 0.530435,
+      "Hex": "87282828"
+    },
+    "BipodUnfoldedIconColor": {
+      "R": 0.96875,
+      "G": 0.96875,
+      "B": 0.96875,
+      "A": 0.75,
+      "Hex": "BFFCFCFC"
+    },
+    "QuickSlotUnequippedColor": {
+      "R": 0.5,
+      "G": 0.5,
+      "B": 0.5,
+      "A": 0.6,
+      "Hex": "99BCBCBC"
+    },
+    "ExtensionTemplates": [
+      {
+        "ObjectName": "WDUIViewModelExtension_HideReasons'DA_EquippedItem:WDUIViewModelExtension_HideReasons_0'",
+        "ObjectPath": "/Game/UI/Features/HUD/EquippedItem/Data/DA_EquippedItem.1"
+      }
+    ]
+  }
+}
+--- export: UObject / WDUIViewModelExtension_HideReasons_0 ---
+{
+  "Type": "WDUIViewModelExtension_HideReasons",
+  "Name": "WDUIViewModelExtension_HideReasons_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIViewModelExtension_HideReasons'",
+  "Outer": {
+    "ObjectName": "WDUIEquippedItemData'DA_EquippedItem'",
+    "ObjectPath": "/Game/UI/Features/HUD/EquippedItem/Data/DA_EquippedItem.0"
+  }
+}

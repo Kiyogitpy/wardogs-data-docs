@@ -1,0 +1,725 @@
+--- export: UObject / BH_PrototypeMaskedScopes_ExtensionData_C_0 ---
+{
+  "Type": "BH_PrototypeMaskedScopes_ExtensionData_C",
+  "Name": "BH_PrototypeMaskedScopes_ExtensionData_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/PrototypeMaskedScopes/Data/BH_PrototypeMaskedScopes_ExtensionData.BH_PrototypeMaskedScopes_ExtensionData_C'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.7"
+  },
+  "Template": {
+    "ObjectName": "BH_PrototypeMaskedScopes_ExtensionData_C'Default__BH_PrototypeMaskedScopes_ExtensionData_C'",
+    "ObjectPath": "/PrototypeMaskedScopes/Data/BH_PrototypeMaskedScopes_ExtensionData.0"
+  },
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.RangeFinder.ADS"
+    },
+    "DefaultAdsZoom": 4.0,
+    "AdsZoomMin": 2.0,
+    "AdsZoomMax": 8.0,
+    "WeightedBlendables": {
+      "Array": [
+        {
+          "Weight": 1.0,
+          "Object": {
+            "ObjectName": "MaterialInstanceConstant'PPi_IR'",
+            "ObjectPath": "/Game/Materials/DiegeticPostProcesses/PPi_IR.0"
+          }
+        }
+      ]
+    },
+    "CharacterGearsToIgnore": [
+      [
+        "Id.Item.GhillieArmor",
+        "Id.Item.GhillieHelmet"
+      ],
+      [
+        "Id.Item.GhillieArmor.Dead",
+        "Id.Item.GhillieHelmet.Dead"
+      ],
+      [
+        "Id.Item.GhillieArmor",
+        "Id.Item.GhillieHelmet.Dead"
+      ],
+      [
+        "Id.Item.GhillieArmor.Dead",
+        "Id.Item.GhillieHelmet"
+      ]
+    ],
+    "MaskedScopeWidgetClass": {
+      "AssetPathName": "/PrototypeMaskedScopes/Data/UI/W_HUD_MaskedScope.W_HUD_MaskedScope_C",
+      "SubPathString": ""
+    },
+    "MaskedScopeCount": 2
+  }
+}
+--- export: UObject / BH_SpottingExtensionData_C_0 ---
+{
+  "Type": "BH_SpottingExtensionData_C",
+  "Name": "BH_SpottingExtensionData_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Spotting/Data/BH_SpottingExtensionData.BH_SpottingExtensionData_C'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.7"
+  },
+  "Template": {
+    "ObjectName": "BH_SpottingExtensionData_C'Default__BH_SpottingExtensionData_C'",
+    "ObjectPath": "/Spotting/Data/BH_SpottingExtensionData.0"
+  },
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.RangeFinder.ADS"
+    },
+    "TrackingBoundsDiameter": 350,
+    "bShowHitData": true,
+    "TargetData": [
+      {
+        "Key": "/Script/WDGame.WDMoverCharacter",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 0.5,
+          "SpotRefreshTime": 1.0,
+          "DecayTime": 30.0,
+          "PersistentSpotTime": 180.0
+        }
+      },
+      {
+        "Key": "/Script/WDGame.WDTargetDummy",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 0.5,
+          "SpotRefreshTime": 1.0,
+          "DecayTime": 30.0,
+          "PersistentSpotTime": 180.0
+        }
+      },
+      {
+        "Key": "/Script/WDGame.WDRotaryVehicle",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 0.75,
+          "SpotRefreshTime": 1.25,
+          "DecayTime": 60.0,
+          "PersistentSpotTime": 180.0
+        }
+      },
+      {
+        "Key": "/Script/WDGame.WDAirplaneVehicle",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 0.75,
+          "SpotRefreshTime": 1.25,
+          "DecayTime": 60.0,
+          "PersistentSpotTime": 180.0
+        }
+      },
+      {
+        "Key": "/Script/WDGame.WDTrackedVehicle",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 1.25,
+          "SpotRefreshTime": 1.5,
+          "DecayTime": 90.0,
+          "PersistentSpotTime": 180.0
+        }
+      },
+      {
+        "Key": "/Script/WDGame.WDWheeledVehiclePawn",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 0.75,
+          "SpotRefreshTime": 1.25,
+          "DecayTime": 60.0,
+          "PersistentSpotTime": 180.0
+        }
+      },
+      {
+        "Key": "/Script/WDGame.WDLandminePlaceable",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 1.5,
+          "SpotRefreshTime": 2.5,
+          "DecayTime": 3600.0,
+          "PersistentSpotTime": 3600.0
+        }
+      },
+      {
+        "Key": "/Buildables/Data/Buildables/ForwardOperatingBase/Buildables/B_Buildable_ForwardOperatingBase_Valkyra.B_Buildable_ForwardOperatingBase_Valkyra_C",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 2.5,
+          "SpotRefreshTime": 5.0,
+          "DecayTime": 3600.0,
+          "PersistentSpotTime": 3600.0
+        }
+      },
+      {
+        "Key": "/Buildables/Data/Buildables/ForwardOperatingBase/Buildables/B_Buildable_ForwardOperatingBase_Manticore.B_Buildable_ForwardOperatingBase_Manticore_C",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 2.5,
+          "SpotRefreshTime": 5.0,
+          "DecayTime": 3600.0,
+          "PersistentSpotTime": 3600.0
+        }
+      },
+      {
+        "Key": "/Buildables/Data/Buildables/ForwardOperatingBase/Buildables/B_Buildable_ForwardOperatingBase_Lonestar.B_Buildable_ForwardOperatingBase_Lonestar_C",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 2.5,
+          "SpotRefreshTime": 5.0,
+          "DecayTime": 3600.0,
+          "PersistentSpotTime": 3600.0
+        }
+      },
+      {
+        "Key": "/Buildables/Data/Buildables/Hotzone_Magnet/B_Buildable_HotzoneMagnet.B_Buildable_HotzoneMagnet_C",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 2.5,
+          "SpotRefreshTime": 5.0,
+          "DecayTime": 900.0,
+          "PersistentSpotTime": 900.0
+        }
+      },
+      {
+        "Key": "/Script/WDGame.WDVehicleSupplyCrate",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 2.5,
+          "SpotRefreshTime": 5.0,
+          "DecayTime": 3600.0,
+          "PersistentSpotTime": 3600.0
+        }
+      },
+      {
+        "Key": "/Script/WDGame.WDVehicleSupplyPallet",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 2.5,
+          "SpotRefreshTime": 5.0,
+          "DecayTime": 3600.0,
+          "PersistentSpotTime": 3600.0
+        }
+      },
+      {
+        "Key": "/Script/WDGame.WDStationaryVehicle",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 2.5,
+          "SpotRefreshTime": 5.0,
+          "DecayTime": 900.0,
+          "PersistentSpotTime": 900.0
+        }
+      },
+      {
+        "Key": "/Buildables/Data/Buildables/ForwardOperatingBase/B_ForwardOperatingBase_LoneStar.B_ForwardOperatingBase_LoneStar_C",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 2.5,
+          "SpotRefreshTime": 5.0,
+          "DecayTime": 3600.0,
+          "PersistentSpotTime": 3600.0
+        }
+      },
+      {
+        "Key": "/Buildables/Data/Buildables/ForwardOperatingBase/B_ForwardOperatingBase_Manticore.B_ForwardOperatingBase_Manticore_C",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 2.5,
+          "SpotRefreshTime": 5.0,
+          "DecayTime": 3600.0,
+          "PersistentSpotTime": 3600.0
+        }
+      },
+      {
+        "Key": "/Buildables/Data/Buildables/ForwardOperatingBase/B_ForwardOperatingBase_Valkyra.B_ForwardOperatingBase_Valkyra_C",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 2.5,
+          "SpotRefreshTime": 5.0,
+          "DecayTime": 3600.0,
+          "PersistentSpotTime": 3600.0
+        }
+      },
+      {
+        "Key": "/Buildables/Data/Buildables/RefuelStation/B_BuildableRefuelStation.B_BuildableRefuelStation_C",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 2.5,
+          "SpotRefreshTime": 5.0,
+          "DecayTime": 900.0,
+          "PersistentSpotTime": 900.0
+        }
+      },
+      {
+        "Key": "/Buildables/Data/Buildables/RepairStation/B_BuildableRepairStation.B_BuildableRepairStation_C",
+        "Value": {
+          "RequiredOwnerSkillTag": {
+            "TagName": "None"
+          },
+          "SpotTime": 2.5,
+          "SpotRefreshTime": 5.0,
+          "DecayTime": 900.0,
+          "PersistentSpotTime": 900.0
+        }
+      }
+    ],
+    "_aaabgomanahllknocifco_$EC0D07BBADE2852E$_$22$": [
+      "Vehicle.Variant.Stationary.Loudspeaker"
+    ],
+    "_aaabbnkhogljfbnnpgekg_$DA7E6B951DDF64A6$_$17$": [
+      "State.Location.SafeZone.Alpha",
+      "State.Location.SafeZone.Bravo",
+      "State.Location.SafeZone.Charlie"
+    ],
+    "SpottedTargetGameplayCueTag": {
+      "TagName": "GameplayCue.Player.SpottedTarget"
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_RangeFinder_Expensive'",
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.5"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 2,
+      "Y": 2
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_RangeFinder_Expensive'",
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.5"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/RangeFinder/Rangefinder_IR/Meshes/SM_RangefinderIR.SM_RangefinderIR",
+      "SubPathString": ""
+    },
+    "RelativeRotation": {
+      "Pitch": -90.0,
+      "Yaw": 0.0,
+      "Roll": 0.0
+    },
+    "bOverrideDroppedRelativeLocation": true,
+    "OverridedRelativeLocation": {
+      "X": -2.0,
+      "Y": 0.0,
+      "Z": -2.0
+    },
+    "bOverrideDroppedBoxExtent": true,
+    "OverridedBoxExtent": {
+      "X": 4.0,
+      "Y": 13.0,
+      "Z": 12.0
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_RangeFinder_Expensive'",
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.5"
+  },
+  "Properties": {
+    "Weight": 0.43
+  }
+}
+--- export: UPrimaryDataAsset / ID_RangeFinder_Expensive ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_RangeFinder_Expensive",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/RangeFinder/Data/ID_RangeFinder_Expensive",
+  "Properties": {
+    "ItemId": {
+      "TagName": "ID.Item.InfraredRangeFinder"
+    },
+    "ItemContext": [
+      "Item.Archetype.Spotting",
+      "Inventory.Slot.Specialist",
+      "Item.Context.Equippable",
+      "Item.Context.Animation.Type.RangeFinderIR",
+      "Item.Context.QuickSlot",
+      "Item.Context.UtilityItem",
+      "Item.Context.Animation.Archetype.Binoculars"
+    ],
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+      "Key": "Items.Utility.InfraredRangerFinder",
+      "SourceString": "Infrared Range Finder",
+      "LocalizedString": "Infrared Range Finder"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_ItemActor'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0'",
+        "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.7"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_RangeFinder_Expensive:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.4"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_RangeFinder_Expensive:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.3"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_RangeFinder_Expensive:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.6"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_RangeFinder_Expensive:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.2"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_RangeFinder_Expensive'",
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.5"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_InfraredRangeFinder_Audio'",
+      "ObjectPath": "/RangeFinder/Data/Audio/Infrared/ID_InfraredRangeFinder_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_ItemActor_0 ---
+{
+  "Type": "WDInventoryFragment_ItemActor",
+  "Name": "WDInventoryFragment_ItemActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_ItemActor'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_RangeFinder_Expensive'",
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.5"
+  },
+  "Properties": {
+    "ExtensionDataFragments": [
+      {
+        "ObjectName": "WDItemExtensionData_Holdable'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Holdable_0'",
+        "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.11"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Input'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+        "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.12"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_GameplayEffects'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0.WDItemExtensionData_AttributeExtension_1'",
+        "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.10"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Animation'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Animation_0'",
+        "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.8"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_AudioExtension'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0.WDItemExtensionData_AudioExtension_0'",
+        "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.9"
+      },
+      {
+        "ObjectName": "BH_PrototypeMaskedScopes_ExtensionData_C'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0.BH_PrototypeMaskedScopes_ExtensionData_C_0'",
+        "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.0"
+      },
+      {
+        "ObjectName": "BH_SpottingExtensionData_C'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0.BH_SpottingExtensionData_C_0'",
+        "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.1"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Inventory'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Inventory_0'",
+        "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.13"
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Animation_0 ---
+{
+  "Type": "WDItemExtensionData_Animation",
+  "Name": "WDItemExtensionData_Animation_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Animation'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.7"
+  },
+  "Properties": {
+    "AnimationSet": {
+      "ObjectName": "BHAnimationSet'AnimSet_RangeFinderExpensive'",
+      "ObjectPath": "/RangeFinder/Data/AnimSet_RangeFinderExpensive.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_AudioExtension_0 ---
+{
+  "Type": "WDItemExtensionData_AudioExtension",
+  "Name": "WDItemExtensionData_AudioExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_AudioExtension'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.7"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_InfraredRangeFinder_Audio'",
+      "ObjectPath": "/RangeFinder/Data/Audio/Infrared/ID_InfraredRangeFinder_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_AttributeExtension_1 ---
+{
+  "Type": "WDItemExtensionData_GameplayEffects",
+  "Name": "WDItemExtensionData_AttributeExtension_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_GameplayEffects'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.7"
+  }
+}
+--- export: UObject / WDItemExtensionData_Holdable_0 ---
+{
+  "Type": "WDItemExtensionData_Holdable",
+  "Name": "WDItemExtensionData_Holdable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Holdable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.7"
+  },
+  "Properties": {
+    "HoldableMesh": {
+      "ObjectName": "SkeletalMesh'SK_Rangefinder_IR'",
+      "ObjectPath": "/RangeFinder/Rangefinder_IR/Meshes/SK/SK_Rangefinder_IR.1"
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_Rangefinder_IR'",
+        "ObjectPath": "/RangeFinder/Rangefinder_IR/Materials/MI_Rangefinder_IR.0"
+      },
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_OPT_04_Lens'",
+        "ObjectPath": "/Game/Items/Attachments/Sights/OPT_04/Assets/Materials/MI_OPT_04_Lens.0"
+      }
+    ],
+    "MeshAnimClass": {
+      "ObjectName": "AnimBlueprintGeneratedClass'ABP_RangeFinder_IR_C'",
+      "ObjectPath": "/RangeFinder/Rangefinder_IR/Animation/Blueprints/ABP_RangeFinder_IR.1"
+    },
+    "EquipAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_RangeFinder_IR_Equip'",
+        "ObjectPath": "/RangeFinder/Rangefinder_IR/Animation/Character/Montages/AM_FP_RangeFinder_IR_Equip.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_EquipmentRH_Equip'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/EquipmentRH/Actions/AM_TP_Gen_EquipmentRH_Equip.0"
+      }
+    },
+    "HolsterAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_RangeFinder_IR_Holster'",
+        "ObjectPath": "/RangeFinder/Rangefinder_IR/Animation/Character/Montages/AM_FP_RangeFinder_IR_Holster.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_EquipmentRH_Holster'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/EquipmentRH/Actions/AM_TP_Gen_EquipmentRH_Holster.0"
+      }
+    },
+    "EquippedAnimSet": {
+      "DefaultFirstPersonLayer": {
+        "AssetPathName": "/RangeFinder/Rangefinder_IR/Animation/Blueprints/ABP_FP_RangeFinder_IR_Layer.ABP_FP_RangeFinder_IR_Layer_C",
+        "SubPathString": ""
+      },
+      "DefaultThirdPersonLayer": {
+        "AssetPathName": "/RangeFinder/Rangefinder_IR/Animation/Blueprints/ABP_TP_Rangefinder_IR_Layer_RW.ABP_TP_Rangefinder_IR_Layer_RW_C",
+        "SubPathString": ""
+      }
+    },
+    "FallbackMeshSignificanceThreshold": {
+      "Significance": 0.03
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_InputActionExtension_0 ---
+{
+  "Type": "WDItemExtensionData_Input",
+  "Name": "WDItemExtensionData_InputActionExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Input'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.7"
+  },
+  "Properties": {
+    "InputMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_Spotting'",
+      "ObjectPath": "/Spotting/Data/Input/IMC_Spotting.2"
+    },
+    "InputBehaviors": [
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.SecondaryUse"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_0'",
+          "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.14"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.SecondaryUse.Release"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_CompleteAction'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_CompleteAction_0'",
+          "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.16"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.Inspect"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_6'",
+          "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.15"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Inventory_0 ---
+{
+  "Type": "WDItemExtensionData_Inventory",
+  "Name": "WDItemExtensionData_Inventory_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Inventory'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.7"
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_0 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.12"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.RangeFinder.ADS"
+    },
+    "ActionBehaviorTag": {
+      "TagName": "UserSettings.Controls.ActionBehavior.ADS"
+    },
+    "GamepadActionBehaviorTag": {
+      "TagName": "UserSettings.Controls.ActionBehavior.Gamepad.ADS"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_6 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_6",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.12"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Item.Inspect"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_CompleteAction_0 ---
+{
+  "Type": "WDItemInputBehavior_CompleteAction",
+  "Name": "WDItemInputBehavior_CompleteAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_CompleteAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_RangeFinder_Expensive:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/RangeFinder/Data/ID_RangeFinder_Expensive.12"
+  },
+  "Properties": {
+    "ActionToComplete": {
+      "TagName": "Action.RangeFinder.ADS"
+    },
+    "ActionBehaviorTag": {
+      "TagName": "UserSettings.Controls.ActionBehavior.ADS"
+    },
+    "GamepadActionBehaviorTag": {
+      "TagName": "UserSettings.Controls.ActionBehavior.Gamepad.ADS"
+    }
+  }
+}

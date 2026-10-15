@@ -1,0 +1,62 @@
+--- export: UDataAsset / DA_SquadInvitePromptsBar ---
+{
+  "Type": "WDUIButtonPromptsBarData",
+  "Name": "DA_SquadInvitePromptsBar",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIButtonPromptsBarData'",
+  "Package": "/Game/UI/Features/HUD/SquadInvite/DA_SquadInvitePromptsBar",
+  "Properties": {
+    "ButtonPromptViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIButtonPromptViewModel",
+        "SubPathString": ""
+      }
+    },
+    "UIActionTags": [
+      {
+        "ActionPromptTag": {
+          "TagName": "UI.Action.Feature.SquadInvite.Accept"
+        },
+        "ChordedActionPromptTag": {
+          "TagName": "None"
+        },
+        "ActionPromptText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Squads.STRINGS_Squads",
+          "Key": "Text.Invite.Accept",
+          "SourceString": "Accept",
+          "LocalizedString": "Accept"
+        },
+        "IsHoldable": false,
+        "bUseActionShortName": false,
+        "bUseChordedActionShortName": false,
+        "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+        "ChordedActionPromptTag": [],
+        "ChordedActionPromptTag": [],
+        "_aaabhmnakckdbejpcmlmc_$CD0A2A3149F2CBC2$_$23$": [],
+        "_aaabhahinfhbanpdncpjc_$78D5710DF3D2F92$_$23$": []
+      },
+      {
+        "ActionPromptTag": {
+          "TagName": "UI.Action.Feature.SquadInvite.Reject"
+        },
+        "ChordedActionPromptTag": {
+          "TagName": "None"
+        },
+        "ActionPromptText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Squads.STRINGS_Squads",
+          "Key": "Text.Invite.Reject",
+          "SourceString": "Reject",
+          "LocalizedString": "Reject"
+        },
+        "IsHoldable": false,
+        "bUseActionShortName": false,
+        "bUseChordedActionShortName": false,
+        "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+        "ChordedActionPromptTag": [],
+        "ChordedActionPromptTag": [],
+        "_aaabhmnakckdbejpcmlmc_$CD0A2A3149F2CBC2$_$23$": [],
+        "_aaabhahinfhbanpdncpjc_$78D5710DF3D2F92$_$23$": []
+      }
+    ]
+  }
+}

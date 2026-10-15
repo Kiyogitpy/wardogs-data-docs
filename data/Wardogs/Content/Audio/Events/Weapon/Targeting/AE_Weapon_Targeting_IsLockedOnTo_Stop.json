@@ -1,0 +1,57 @@
+--- export: UPrimaryDataAsset / AE_Weapon_Targeting_IsLockedOnTo_Stop ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_Targeting_IsLockedOnTo_Stop",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Weapon/Targeting/AE_Weapon_Targeting_IsLockedOnTo_Stop",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.Targeting.IsLockedOnTo.Stop"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Weapon_Targeting_IsLockedOnTo_Stop:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Targeting/AE_Weapon_Targeting_IsLockedOnTo_Stop.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_Weapon_Targeting_IsLockedOnTo_Stop:CrosstalkAudioEventBehaviorStopSound_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Targeting/AE_Weapon_Targeting_IsLockedOnTo_Stop.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Targeting_IsLockedOnTo_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Targeting/AE_Weapon_Targeting_IsLockedOnTo_Stop.0"
+  },
+  "Properties": {
+    "ParameterName": "Stop Sound",
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Targeting.LockOnSystem"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Targeting_IsLockedOnTo_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Targeting/AE_Weapon_Targeting_IsLockedOnTo_Stop.0"
+  },
+  "Properties": {
+    "FadeOut": 0.2,
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Targeting.LockOnSystem"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+--- export: UDataAsset / DA_FrontAxle_WHL_05_Humvee ---
+{
+  "Type": "MWheeledVehicleAxlesDataAsset",
+  "Name": "DA_FrontAxle_WHL_05_Humvee",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MWheeledVehicleAxlesDataAsset'",
+  "Package": "/WHL_05/Data/AxleData/DA_FrontAxle_WHL_05_Humvee",
+  "Properties": {
+    "TireModelDataAsset": {
+      "ObjectName": "MWheeledVehicleTireModelSimpleDataAsset'DA_SimpleTireModel_WHL_05_Humvee'",
+      "ObjectPath": "/WHL_05/Data/AxleData/DA_SimpleTireModel_WHL_05_Humvee.0"
+    },
+    "WheelDataAsset": {
+      "ObjectName": "MWheeledVehicleWheelDataAsset'DA_FrontWheels_WHL_05_Humvee'",
+      "ObjectPath": "/WHL_05/Data/AxleData/DA_FrontWheels_WHL_05_Humvee.0"
+    },
+    "WheelSetup": [
+      {
+        "Side": "EMWheelSide::Left",
+        "BoneName": "frontLWheelSpin_J",
+        "WheelTags": [],
+        "TyreHealthAttribute": {
+          "TagName": "Attribute.Gameplay.Health.Wheel.Left.Front"
+        },
+        "DeflateThreshold": 0.5
+      },
+      {
+        "Side": "EMWheelSide::Right",
+        "BoneName": "frontRWheelSpin_J",
+        "WheelTags": [],
+        "TyreHealthAttribute": {
+          "TagName": "Attribute.Gameplay.Health.Wheel.Right.Front"
+        },
+        "DeflateThreshold": 0.5
+      }
+    ],
+    "DifferentialType": "EMDifferential::Open",
+    "DiffStrength": 0.6,
+    "TorqueShare": 0.7,
+    "MaxSteerAngle": 35.0
+  }
+}

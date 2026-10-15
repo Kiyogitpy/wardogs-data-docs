@@ -1,0 +1,81 @@
+--- export: UObject / BHPlayerMappableKeySettings_0 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_UIKeybinds_Registration'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IMC_UIKeybinds_Registration.2"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "UI.Action.Feature.Vendor.Vault.Toggle"
+    },
+    "Name": "UI.Action.Feature.Vendor.Vault.Toggle"
+  }
+}
+--- export: UObject / BHPlayerMappableKeySettings_1 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_UIKeybinds_Registration'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IMC_UIKeybinds_Registration.2"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "UI.Action.Feature.Vendor.Vault.Toggle"
+    },
+    "SlotContext": "EBHMappableSlotContext::NoSlot",
+    "Name": "UI.Action.Feature.Vendor.Vault.Toggle"
+  }
+}
+--- export: UDataAsset / IMC_UIKeybinds_Registration ---
+{
+  "Type": "InputMappingContext",
+  "Name": "IMC_UIKeybinds_Registration",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputMappingContext'",
+  "Package": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IMC_UIKeybinds_Registration",
+  "Properties": {
+    "DefaultKeyMappings": {
+      "Mappings": [
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_UI_VaultToggle'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_UI_VaultToggle.0"
+          },
+          "Key": {
+            "KeyName": "V"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_UIKeybinds_Registration:BHPlayerMappableKeySettings_0'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IMC_UIKeybinds_Registration.0"
+          }
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_UI_VaultToggle'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_UI_VaultToggle.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_FaceButton_Top"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_UIKeybinds_Registration:BHPlayerMappableKeySettings_1'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IMC_UIKeybinds_Registration.1"
+          }
+        }
+      ]
+    }
+  }
+}

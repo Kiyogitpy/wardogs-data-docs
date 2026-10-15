@@ -1,0 +1,102 @@
+--- export: UDataAsset / DA_InputControls_TNK_03 ---
+{
+  "Type": "MTrackedInputControlsDataAsset",
+  "Name": "DA_InputControls_TNK_03",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MTrackedInputControlsDataAsset'",
+  "Package": "/TNK_01/Data/AntiAir/DA_InputControls_TNK_03",
+  "Properties": {
+    "DriverInputMappingContexts": [
+      {
+        "ObjectName": "InputMappingContext'IMC_TrackedVehicles_Driver'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IMC_TrackedVehicles_Driver.25"
+      }
+    ],
+    "VehicleInputPromptActions": [
+      {
+        "Key": {
+          "TagName": "Vehicle.UI.InputPrompts.Driver"
+        },
+        "Value": {
+          "Map": [
+            {
+              "Key": {
+                "TagName": "Input.NamedActions.Vehicle.Camera.ToggleMode"
+              },
+              "Value": {
+                "TableId": "/Game/UI/StringTables/STRINGS_VehicleInputs.STRINGS_VehicleInputs",
+                "Key": "Vehicle.Input.ToggleCamera",
+                "SourceString": "Toggle Camera",
+                "LocalizedString": "Toggle Camera"
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Input.NamedActions.Vehicle.Camera.ToggleFreeLook"
+              },
+              "Value": {
+                "TableId": "/Game/UI/StringTables/STRINGS_VehicleInputs.STRINGS_VehicleInputs",
+                "Key": "Vehicle.Input.Freelook",
+                "SourceString": "Free Look",
+                "LocalizedString": "Free Look"
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Input.NamedActions.Vehicle.ChangeSeat.Next"
+              },
+              "Value": {
+                "TableId": "/Game/UI/StringTables/STRINGS_VehicleInputs.STRINGS_VehicleInputs",
+                "Key": "Vehicle.Input.ChangeSeat",
+                "SourceString": "Change Seat",
+                "LocalizedString": "Change Seat"
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Input.NamedActions.Vehicle.FireFlares"
+              },
+              "Value": {
+                "TableId": "/Game/UI/StringTables/STRINGS_VehicleInputs.STRINGS_VehicleInputs",
+                "Key": "Vehicle.Input.DeploySmoke",
+                "SourceString": "Deploy Smoke",
+                "LocalizedString": "Deploy Smoke"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.UI.InputPrompts.Gunner"
+        },
+        "Value": {
+          "Map": [
+            {
+              "Key": {
+                "TagName": "Input.NamedActions.Vehicle.WeaponExtension.Focus"
+              },
+              "Value": {
+                "TableId": "/Game/UI/StringTables/STRINGS_VehicleInputs.STRINGS_VehicleInputs",
+                "Key": "Vehicle.Input.ZoomWeapon",
+                "SourceString": "Zoom",
+                "LocalizedString": "Zoom"
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Input.NamedActions.Vehicle.ChangeSeat.Next"
+              },
+              "Value": {
+                "TableId": "/Game/UI/StringTables/STRINGS_VehicleInputs.STRINGS_VehicleInputs",
+                "Key": "Vehicle.Input.ChangeSeat",
+                "SourceString": "Change Seat",
+                "LocalizedString": "Change Seat"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

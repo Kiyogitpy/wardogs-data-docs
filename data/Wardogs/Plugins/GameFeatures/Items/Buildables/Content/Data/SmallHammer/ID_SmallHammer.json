@@ -1,0 +1,732 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SmallHammer'",
+    "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.5"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 2,
+      "Y": 1
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SmallHammer'",
+    "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.5"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Buildables/Data/SmallHammer/Meshes/SM_SmallHammer.SM_SmallHammer",
+      "SubPathString": ""
+    },
+    "bOverrideDroppedRelativeLocation": true,
+    "OverridedRelativeLocation": {
+      "X": -2.5,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "bOverrideDroppedBoxExtent": true,
+    "OverridedBoxExtent": {
+      "X": 4.0,
+      "Y": 9.0,
+      "Z": 11.0
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_1 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SmallHammer'",
+    "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.5"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Buildables/Data/SM_Buildtool_00a.SM_Buildtool_00a",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SmallHammer'",
+    "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.5"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SmallHammer'",
+    "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.5"
+  },
+  "Properties": {
+    "Weight": 0.32
+  }
+}
+--- export: UPrimaryDataAsset / ID_SmallHammer ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_SmallHammer",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Buildables/Data/SmallHammer/ID_SmallHammer",
+  "Properties": {
+    "ItemId": {
+      "TagName": "ID.Item.BuildTool.Hammer.Small"
+    },
+    "ItemContext": [
+      "Item.Context.UtilityItem",
+      "Item.Context.Equippable",
+      "Inventory.Slot.Secondary",
+      "Item.Context.Animation.Type.Unarmed",
+      "Item.Context.Animation.Archetype.EquipRightHand",
+      "Item.Context.QuickSlot",
+      "Item.Context.BuildingTool",
+      "Inventory.Slot.Specialist"
+    ],
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+      "Key": "Items.Utility.SmallHammer",
+      "SourceString": "Small Hammer",
+      "LocalizedString": "Small Hammer"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_SmallHammer:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.3"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_ItemActor'ID_SmallHammer:WDInventoryFragment_ItemActor_0'",
+        "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.8"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_SmallHammer:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.1"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_SmallHammer:BHInventoryFragment_Droppable_1'",
+        "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.2"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Durability'ID_SmallHammer:WDInventoryFragment_Durability_0'",
+        "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.7"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_SmallHammer:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.6"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_SmallHammer:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.0"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_SmallHammer:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.4"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SmallHammer'",
+    "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.5"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'DA_Item_BuildTool_SmallHammer_Audio'",
+      "ObjectPath": "/Buildables/Data/SmallHammer/Audio/DA_Item_BuildTool_SmallHammer_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Durability_0 ---
+{
+  "Type": "WDInventoryFragment_Durability",
+  "Name": "WDInventoryFragment_Durability_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Durability'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SmallHammer'",
+    "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.5"
+  },
+  "Properties": {
+    "ReplicatedData": {
+      "Durability": 800.0
+    },
+    "bIsVisibleOnEquippedUI": true
+  }
+}
+--- export: UObject / WDInventoryFragment_ItemActor_0 ---
+{
+  "Type": "WDInventoryFragment_ItemActor",
+  "Name": "WDInventoryFragment_ItemActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_ItemActor'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SmallHammer'",
+    "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.5"
+  },
+  "Properties": {
+    "ExtensionDataFragments": [
+      {
+        "ObjectName": "WDItemExtensionData_Holdable'ID_SmallHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Holdable_0'",
+        "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.15"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Input'ID_SmallHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+        "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.16"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Inventory'ID_SmallHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InventoryItem_0'",
+        "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.17"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_BuildTool'ID_SmallHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_BuildTool_0'",
+        "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.12"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_AudioExtension'ID_SmallHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_AudioExtension_0'",
+        "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.10"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_CriticalHitSpotManager'ID_SmallHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_CriticalHitSpotManager_0'",
+        "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.14"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Animation'ID_SmallHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Animation_0'",
+        "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.9"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_BuildableDismantle'ID_SmallHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_BuildableDismantle_0'",
+        "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.11"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_CharacterMelee'ID_SmallHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_CharacterMelee_0'",
+        "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.13"
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Animation_0 ---
+{
+  "Type": "WDItemExtensionData_Animation",
+  "Name": "WDItemExtensionData_Animation_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Animation'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_SmallHammer:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.8"
+  },
+  "Properties": {
+    "AnimationSet": {
+      "ObjectName": "BHAnimationSet'AnimSet_BuildToolHammerSmall'",
+      "ObjectPath": "/Buildables/Data/SmallHammer/AnimSet_BuildToolHammerSmall.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_AudioExtension_0 ---
+{
+  "Type": "WDItemExtensionData_AudioExtension",
+  "Name": "WDItemExtensionData_AudioExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_AudioExtension'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_SmallHammer:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.8"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'DA_Item_BuildTool_SmallHammer_Audio'",
+      "ObjectPath": "/Buildables/Data/SmallHammer/Audio/DA_Item_BuildTool_SmallHammer_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_BuildableDismantle_0 ---
+{
+  "Type": "WDItemExtensionData_BuildableDismantle",
+  "Name": "WDItemExtensionData_BuildableDismantle_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_BuildableDismantle'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_SmallHammer:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.8"
+  },
+  "Properties": {
+    "DismantleRatePerSecond": 150.0,
+    "DismantleRatePerHit": 150.0,
+    "DismantleModifiers": [
+      {
+        "Key": "ETeamAttitude::Neutral",
+        "Value": 0.5
+      },
+      {
+        "Key": "ETeamAttitude::Hostile",
+        "Value": 0.5
+      },
+      {
+        "Key": "ETeamAttitude::Friendly",
+        "Value": 1.0
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_BuildTool_0 ---
+{
+  "Type": "WDItemExtensionData_BuildTool",
+  "Name": "WDItemExtensionData_BuildTool_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_BuildTool'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_SmallHammer:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.8"
+  },
+  "Properties": {
+    "DataRegistryName": "Buildables_SmallHammer",
+    "BuildablePlacementData": {
+      "ObjectName": "WDBuildablePlacementDataAsset'DA_BuildablePlacementData'",
+      "ObjectPath": "/Buildables/Data/Buildables/DA_BuildablePlacementData.0"
+    },
+    "BuildAmount": 0.5,
+    "HitVFX": {
+      "AssetPathName": "/Game/VFX/Building/Systems/NS_VFX_Building_HitNorm_Small.NS_VFX_Building_HitNorm_Small",
+      "SubPathString": ""
+    },
+    "CritHitVFX": {
+      "AssetPathName": "/Game/VFX/Building/Systems/NS_VFX_Building_HitCrit_Large_designPass.NS_VFX_Building_HitCrit_Large_designPass",
+      "SubPathString": ""
+    },
+    "BuildAnimationTag": {
+      "TagName": "Animation.Asset.BuildTool.Hammer.Use"
+    },
+    "HitGameplayCueTag": {
+      "TagName": "GameplayCue.BuildTool.Hit"
+    },
+    "FovDeltaCurve": {
+      "ObjectName": "CurveFloat'C_BuildTool_CameraFovCurve_SmallHammer'",
+      "ObjectPath": "/Buildables/Data/BuildTool/C_BuildTool_CameraFovCurve_SmallHammer.0"
+    },
+    "MaxConstructTraceDistance": 300.0
+  }
+}
+--- export: UObject / WDItemExtensionData_CharacterMelee_0 ---
+{
+  "Type": "WDItemExtensionData_CharacterMelee",
+  "Name": "WDItemExtensionData_CharacterMelee_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_CharacterMelee'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_SmallHammer:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.8"
+  },
+  "Properties": {
+    "MeleeActions": [
+      {
+        "Key": {
+          "TagName": "Action.BuildBuildable.Construct"
+        },
+        "Value": {
+          "HitBoxSize": {
+            "X": 20.0,
+            "Y": 20.0,
+            "Z": 20.0
+          },
+          "Damage": 20.0,
+          "TraceDistance": 120.0
+        }
+      }
+    ],
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Utility.SmallHammer"
+      }
+    },
+    "ExtensionComponentClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_WDItemExtension_ItemMelee_C'",
+      "ObjectPath": "/Game/GameMechanics/ExtensionComponents/B_WDItemExtension_ItemMelee.1"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_CriticalHitSpotManager_0 ---
+{
+  "Type": "WDItemExtensionData_CriticalHitSpotManager",
+  "Name": "WDItemExtensionData_CriticalHitSpotManager_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_CriticalHitSpotManager'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_SmallHammer:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.8"
+  },
+  "Properties": {
+    "CriticalHitSpotDecalComponentClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_CriticalHitSpotDecalComponent_C'",
+      "ObjectPath": "/Buildables/Data/Buildables/B_CriticalHitSpotDecalComponent.1"
+    },
+    "BuildAmountWhenTargetIsHit": 3.0,
+    "CriticalHitSpotMaxDistanceAwayFromPlayerView": 290.0,
+    "CriticalHitSpotMaxDegreesFacingAwayFromCameraAtSpawn": 135.0,
+    "_aaaboeaeikifiilgaobjm_$4048A8588B60E19C$_$30$": 1056964608,
+    "CriticalHitSpotRotationLerpSpeed": 20.0,
+    "DefaultDecalColor": {
+      "B": 1,
+      "G": 0,
+      "R": 0,
+      "A": 0,
+      "Hex": "000001"
+    },
+    "CriticalHitSpotSpeed": "NaN",
+    "CriticalHitSpotRotationLerpSpeed": "NaN"
+  }
+}
+--- export: UObject / WDItemExtensionData_Holdable_0 ---
+{
+  "Type": "WDItemExtensionData_Holdable",
+  "Name": "WDItemExtensionData_Holdable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Holdable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_SmallHammer:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.8"
+  },
+  "Properties": {
+    "HoldableMesh": {
+      "ObjectName": "SkeletalMesh'SK_Small_Hammer'",
+      "ObjectPath": "/Buildables/Data/SmallHammer/Meshes/SK_Small_Hammer.1"
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_SmallHammer'",
+        "ObjectPath": "/Buildables/Data/SmallHammer/Materials/MI_SmallHammer.0"
+      },
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_SmallHammer'",
+        "ObjectPath": "/Buildables/Data/SmallHammer/Materials/MI_SmallHammer.0"
+      }
+    ],
+    "MeshAnimClass": {
+      "ObjectName": "AnimBlueprintGeneratedClass'ABP_SmallHammer_C'",
+      "ObjectPath": "/Buildables/Data/SmallHammer/Animations/Weapon/Blueprints/ABP_SmallHammer.1"
+    },
+    "bShowCrosshair": true,
+    "bOverrideDefaultCrosshairSettings": true,
+    "CrosshairSettings": {
+      "bShowDot": true,
+      "Type": "EWDCrosshairType::BuildTool",
+      "BuildableCheckRadius": 275.0
+    },
+    "EquipAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_Small_Hammer_Equip'",
+        "ObjectPath": "/Buildables/Data/SmallHammer/Animations/Character/Montages/AM_FP_Small_Hammer_Equip.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_EquipmentRH_Equip'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/EquipmentRH/Actions/AM_TP_Gen_EquipmentRH_Equip.0"
+      },
+      "FirstPersonItemAnimation": {
+        "ObjectName": "AnimMontage'AM_Weap_Small_Hammer_Equip'",
+        "ObjectPath": "/Buildables/Data/SmallHammer/Animations/Weapon/Montages/AM_Weap_Small_Hammer_Equip.0"
+      },
+      "ThirdPersonItemAnimation": {
+        "ObjectName": "AnimMontage'AM_Weap_Small_Hammer_Equip_3P'",
+        "ObjectPath": "/Buildables/Data/SmallHammer/Animations/Weapon/Montages/AM_Weap_Small_Hammer_Equip_3P.0"
+      }
+    },
+    "HolsterAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_Small_Hammer_Holster'",
+        "ObjectPath": "/Buildables/Data/SmallHammer/Animations/Character/Montages/AM_FP_Small_Hammer_Holster.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_EquipmentRH_Holster'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/EquipmentRH/Actions/AM_TP_Gen_EquipmentRH_Holster.0"
+      },
+      "FirstPersonItemAnimation": {
+        "ObjectName": "AnimMontage'AM_Weap_Small_Hammer_Holster'",
+        "ObjectPath": "/Buildables/Data/SmallHammer/Animations/Weapon/Montages/AM_Weap_Small_Hammer_Holster.0"
+      },
+      "ThirdPersonItemAnimation": {
+        "ObjectName": "AnimMontage'AM_Weap_Small_Hammer_Holster_3P'",
+        "ObjectPath": "/Buildables/Data/SmallHammer/Animations/Weapon/Montages/AM_Weap_Small_Hammer_Holster_3P.0"
+      }
+    },
+    "EquippedAnimSet": {
+      "DefaultFirstPersonLayer": {
+        "AssetPathName": "/Buildables/Data/SmallHammer/Animations/Character/Blueprints/ABP_FP_SmallHammer_Layer_RW.ABP_FP_SmallHammer_Layer_RW_C",
+        "SubPathString": ""
+      },
+      "DefaultThirdPersonLayer": {
+        "AssetPathName": "/Buildables/Data/SmallHammer/Animations/Character/Blueprints/ABP_TP_SmallHammer_Layer_RW.ABP_TP_SmallHammer_Layer_RW_C",
+        "SubPathString": ""
+      }
+    },
+    "FallbackMeshSignificanceThreshold": {
+      "Significance": 0.02
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_InputActionExtension_0 ---
+{
+  "Type": "WDItemExtensionData_Input",
+  "Name": "WDItemExtensionData_InputActionExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Input'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_SmallHammer:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.8"
+  },
+  "Properties": {
+    "InputMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_BuildTool'",
+      "ObjectPath": "/Game/Weapons/Input/IMC_BuildTool.11"
+    },
+    "InputBehaviors": [
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.Player.PrimaryUse"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateBuildToolAction'ID_SmallHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateBuildToolAction_0'",
+          "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.22"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.BuildTool.ToggleSnapping"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_SmallHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_3'",
+          "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.20"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.Player.SecondaryUse"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_SmallHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_1'",
+          "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.18"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.BuildTool.Rotate"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_SmallHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_4'",
+          "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.21"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.Inspect"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_SmallHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_2'",
+          "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.19"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.BuildTool.Dismantle"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateBuildToolAction'ID_SmallHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateBuildToolAction_1'",
+          "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.23"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_InventoryItem_0 ---
+{
+  "Type": "WDItemExtensionData_Inventory",
+  "Name": "WDItemExtensionData_InventoryItem_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Inventory'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_SmallHammer:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.8"
+  },
+  "Properties": {
+    "PrimaryUseTag": {
+      "TagName": "Action.BuildBuildable.Construct"
+    },
+    "ActionResourceRequirements": [
+      {
+        "Key": {
+          "TagName": "Action.BuildBuildable.Construct"
+        },
+        "Value": {
+          "RequiredResource": {
+            "TagName": "Id.Item.BuildToolSupply"
+          },
+          "ResourcesUsed": 1,
+          "bLimitSearchToItem": false,
+          "OptionalRequiredSubSlotCategory": {
+            "TagName": "None"
+          },
+          "ResourceType": {
+            "TagName": "Item.Resource.Supplies"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Action.BuildTool.PlaceSchematic"
+        },
+        "Value": {
+          "RequiredResource": {
+            "TagName": "Id.Item.BuildToolSupply"
+          },
+          "ResourcesUsed": 1,
+          "bLimitSearchToItem": false,
+          "OptionalRequiredSubSlotCategory": {
+            "TagName": "None"
+          },
+          "ResourceType": {
+            "TagName": "Id.Item.BuildToolSupply"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_1 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_SmallHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.16"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.BuildTool.SecondaryUse"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_2 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_SmallHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.16"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Item.Inspect"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_3 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_SmallHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.16"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.BuildTool.ToggleSnapping"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_4 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_SmallHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.16"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.BuildTool.Rotate"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateBuildToolAction_0 ---
+{
+  "Type": "WDItemInputBehavior_ActivateBuildToolAction",
+  "Name": "WDItemInputBehavior_ActivateBuildToolAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateBuildToolAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_SmallHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.16"
+  },
+  "Properties": {
+    "ActionsPerInteractionState": [
+      {
+        "Key": "EWDBuildToolInteractionState::Construction",
+        "Value": {
+          "TagName": "Action.BuildBuildable.Construct"
+        }
+      },
+      {
+        "Key": "EWDBuildToolInteractionState::Placement",
+        "Value": {
+          "TagName": "Action.BuildTool.PlaceSchematic"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateBuildToolAction_1 ---
+{
+  "Type": "WDItemInputBehavior_ActivateBuildToolAction",
+  "Name": "WDItemInputBehavior_ActivateBuildToolAction_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateBuildToolAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_SmallHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Buildables/Data/SmallHammer/ID_SmallHammer.16"
+  },
+  "Properties": {
+    "ActionsPerInteractionState": [
+      {
+        "Key": "EWDBuildToolInteractionState::Construction",
+        "Value": {
+          "TagName": "Action.BuildTool.Dismantle"
+        }
+      }
+    ]
+  }
+}

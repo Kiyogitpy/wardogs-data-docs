@@ -1,0 +1,263 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_AmmoCrate'",
+    "ObjectPath": "/Game/Items/Placeables/AmmoCrate/ID_AmmoCrate.4"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 2,
+      "Y": 2
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_AmmoCrate'",
+    "ObjectPath": "/Game/Items/Placeables/AmmoCrate/ID_AmmoCrate.4"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/ExternalAssets/GameplayPlaceholder/_Placeholder_AmmoCrate._Placeholder_AmmoCrate",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_AmmoCrate'",
+    "ObjectPath": "/Game/Items/Placeables/AmmoCrate/ID_AmmoCrate.4"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_AmmoCrate'",
+    "ObjectPath": "/Game/Items/Placeables/AmmoCrate/ID_AmmoCrate.4"
+  }
+}
+--- export: UPrimaryDataAsset / ID_AmmoCrate ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_AmmoCrate",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Placeables/AmmoCrate/ID_AmmoCrate",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.AmmoCrate"
+    },
+    "ItemContext": [
+      "Item.Context.QuickSlot",
+      "Item.Context.Animation.Type.Unarmed"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "386FB28C412BF2944042B7BDFFF6CCD2",
+      "SourceString": "Ammo Crate",
+      "LocalizedString": "Ammo Crate"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_ItemActor'ID_AmmoCrate:WDInventoryFragment_ItemActor_0'",
+        "ObjectPath": "/Game/Items/Placeables/AmmoCrate/ID_AmmoCrate.5"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_AmmoCrate:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/Game/Items/Placeables/AmmoCrate/ID_AmmoCrate.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_AmmoCrate:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Game/Items/Placeables/AmmoCrate/ID_AmmoCrate.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_AmmoCrate:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Game/Items/Placeables/AmmoCrate/ID_AmmoCrate.1"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_AmmoCrate:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Game/Items/Placeables/AmmoCrate/ID_AmmoCrate.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_ItemActor_0 ---
+{
+  "Type": "WDInventoryFragment_ItemActor",
+  "Name": "WDInventoryFragment_ItemActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_ItemActor'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_AmmoCrate'",
+    "ObjectPath": "/Game/Items/Placeables/AmmoCrate/ID_AmmoCrate.4"
+  },
+  "Properties": {
+    "ExtensionDataFragments": [
+      {
+        "ObjectName": "WDItemExtensionData_Holdable'ID_AmmoCrate:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Holdable_0'",
+        "ObjectPath": "/Game/Items/Placeables/AmmoCrate/ID_AmmoCrate.6"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Inventory'ID_AmmoCrate:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Inventory_0'",
+        "ObjectPath": "/Game/Items/Placeables/AmmoCrate/ID_AmmoCrate.8"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Input'ID_AmmoCrate:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+        "ObjectPath": "/Game/Items/Placeables/AmmoCrate/ID_AmmoCrate.7"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Placeable'ID_AmmoCrate:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Placeable_0'",
+        "ObjectPath": "/Game/Items/Placeables/AmmoCrate/ID_AmmoCrate.9"
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Holdable_0 ---
+{
+  "Type": "WDItemExtensionData_Holdable",
+  "Name": "WDItemExtensionData_Holdable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Holdable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_AmmoCrate:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Game/Items/Placeables/AmmoCrate/ID_AmmoCrate.5"
+  },
+  "Properties": {
+    "HoldableMesh": {
+      "ObjectName": "SkeletalMesh'SK_AmmoCrate_01'",
+      "ObjectPath": "/Game/Weapons/Utilities/AmmoCrate/SK_AmmoCrate_01.0"
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_Crate_01_FP'",
+        "ObjectPath": "/Game/Weapons/Utilities/AmmoCrate/Materials/MI_Crate_01_FP.0"
+      }
+    ],
+    "EquipAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_AmmoCrate_Equip'",
+        "ObjectPath": "/Game/Animation/Characters/Utilities/AmmoCrate/AM_FP_AmmoCrate_Equip.0"
+      }
+    },
+    "HolsterAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_AmmoCrate_Holster'",
+        "ObjectPath": "/Game/Animation/Characters/Utilities/AmmoCrate/AM_FP_AmmoCrate_Holster.0"
+      }
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_InputActionExtension_0 ---
+{
+  "Type": "WDItemExtensionData_Input",
+  "Name": "WDItemExtensionData_InputActionExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Input'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_AmmoCrate:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Game/Items/Placeables/AmmoCrate/ID_AmmoCrate.5"
+  },
+  "Properties": {
+    "InputMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_Appliable'",
+      "ObjectPath": "/Game/Items/ItemExtensionDefaults/IMC_Appliable.3"
+    },
+    "Actions": [
+      {
+        "Key": {
+          "TagName": "Action.Item.PrimaryUse"
+        },
+        "Value": {
+          "InputAction": {
+            "ObjectName": "BHInputAction'IA_Player_PrimaryUse'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_PrimaryUse.0"
+          },
+          "AnimationType": "EWDActionAnimationType::Simple",
+          "Animation": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AmmoCrate_Use'",
+              "ObjectPath": "/Game/Animation/Characters/Utilities/AmmoCrate/AM_FP_AmmoCrate_Use.0"
+            },
+            "ThirdPersonPlayerAnimation": null,
+            "FirstPersonItemAnimation": null,
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "ContextualAnimations": [],
+          "ActivationType": "EWDActionActivationType::OnAnimationNotify",
+          "ActivationInterval": 1.0,
+          "bQueryBeforeEveryActivation": false,
+          "bIncludeActivationOnButtonPress": false,
+          "ActivationAnimNotify": "Activate",
+          "ActionReleaseType": "EWDActionReleaseType::OnActivation",
+          "ReleaseAnimNotify": "None",
+          "bCustomResourceUsage": false,
+          "bCustomAnimationUsage": false
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Inventory_0 ---
+{
+  "Type": "WDItemExtensionData_Inventory",
+  "Name": "WDItemExtensionData_Inventory_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Inventory'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_AmmoCrate:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Game/Items/Placeables/AmmoCrate/ID_AmmoCrate.5"
+  }
+}
+--- export: UObject / WDItemExtensionData_Placeable_0 ---
+{
+  "Type": "WDItemExtensionData_Placeable",
+  "Name": "WDItemExtensionData_Placeable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Placeable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_AmmoCrate:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Game/Items/Placeables/AmmoCrate/ID_AmmoCrate.5"
+  },
+  "Properties": {
+    "PlacementCollisionSize": {
+      "X": 0.85,
+      "Y": 0.85,
+      "Z": 0.85
+    },
+    "PlaceableClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_AmmoCrate_C'",
+      "ObjectPath": "/Game/GameMechanics/WorldInteractable/Objects/Placeables/AmmoCrate/B_AmmoCrate.2"
+    },
+    "PlaceableInitData": {
+      "VitalityComponentParams": {
+        "bOverrideBaseHealth": true,
+        "BaseHealthOverride": 100.0,
+        "bOverrideMaxHealth": true,
+        "MaxHealthOverride": 100.0
+      },
+      "Lifetime": 20.0
+    }
+  }
+}

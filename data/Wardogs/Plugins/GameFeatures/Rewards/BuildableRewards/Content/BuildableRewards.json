@@ -1,0 +1,111 @@
+--- export: UObject / GameFeatureAction_DataRegistry_0 ---
+{
+  "Type": "GameFeatureAction_DataRegistry",
+  "Name": "GameFeatureAction_DataRegistry_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistry'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'BuildableRewards'",
+    "ObjectPath": "/BuildableRewards/BuildableRewards.2"
+  },
+  "Properties": {
+    "RegistriesToAdd": [
+      {
+        "AssetPathName": "/BuildableRewards/Rewards/LookupRegistries/DR_SessionEvent_BuildableDestroyed.DR_SessionEvent_BuildableDestroyed",
+        "SubPathString": ""
+      }
+    ],
+    "bPreloadInEditor": true
+  }
+}
+--- export: UObject / GameFeatureAction_DataRegistrySource_0 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'BuildableRewards'",
+    "ObjectPath": "/BuildableRewards/BuildableRewards.2"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "Challenges",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/BuildableRewards/Rewards/DT_Challenges_SessionEvents_Buildables.DT_Challenges_SessionEvents_Buildables",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "ChallengeRewards",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/BuildableRewards/Rewards/DT_ChallengeRewards_SessionEvents_Buildables.DT_ChallengeRewards_SessionEvents_Buildables",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "RewardFeed",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/BuildableRewards/Rewards/DT_ChallengesFeedActions_Building.DT_ChallengesFeedActions_Building",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "LiveCurves",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/BuildableRewards/Rewards/CurveTables/DT_Challenges_Curves_BuildableDestroyedAssist.DT_Challenges_Curves_BuildableDestroyedAssist",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / BuildableRewards ---
+{
+  "Type": "GameFeatureData",
+  "Name": "BuildableRewards",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/BuildableRewards/BuildableRewards",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'BuildableRewards:GameFeatureAction_DataRegistrySource_0'",
+        "ObjectPath": "/BuildableRewards/BuildableRewards.1"
+      },
+      {
+        "ObjectName": "GameFeatureAction_DataRegistry'BuildableRewards:GameFeatureAction_DataRegistry_0'",
+        "ObjectPath": "/BuildableRewards/BuildableRewards.0"
+      }
+    ]
+  }
+}

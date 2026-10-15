@@ -1,0 +1,43 @@
+--- export: UDataTable / DT_Reward_Cash_Refuel ---
+{
+  "Type": "DataTable",
+  "Name": "DT_Reward_Cash_Refuel",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/GameMechanics/Gamemode/Data/CashRewardsDataTable/Vehicle/DT_Reward_Cash_Refuel",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDCustomRewardTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Meta.Progression.Context.DefaultReward": {
+      "Description": {
+        "Namespace": "",
+        "Key": "C32741DC461BC3E7780000B1E4562730",
+        "SourceString": "Default fallback refuel value",
+        "LocalizedString": "Default fallback refuel value"
+      },
+      "ResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "base": 10.0,
+      "FriendlyModifier": 1.0,
+      "NeutralModifier": 1.0,
+      "OwnerModifier": 0.5,
+      "ModifierCZ": 1.5,
+      "ModifierHZ": 2.0,
+      "ModifierHZM": 2.0,
+      "InstigatorLocationRatioModifier": 0.0,
+      "TargetLocationRatioModifier": 1.0,
+      "AssistBaseModifier": 0.0,
+      "AssistScalingModifier": 0.0,
+      "CrewAssistModifier": 0.0,
+      "LogisticAssistModifier": 0.0,
+      "Tag": {
+        "TagName": "Meta.Progression.Context.DefaultReward"
+      }
+    }
+  }
+}

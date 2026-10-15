@@ -1,0 +1,80 @@
+--- export: UPrimaryDataAsset / ID_Pistol_01_HGD_02 ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_Pistol_01_HGD_02",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Weapons/Pistol/Glock17/Assets/Components/Switches/ID_Pistol_01_HGD_02",
+  "Properties": {
+    "ItemId": {
+      "TagName": "ID.Item.Pistol_01_HGD_02"
+    },
+    "ItemContext": [
+      "Item.Attachment.Handguard.Glock"
+    ],
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_Pistol_01_HGD_02:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/Game/Items/Weapons/Pistol/Glock17/Assets/Components/Switches/ID_Pistol_01_HGD_02.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_Pistol_01_HGD_02:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/Game/Items/Weapons/Pistol/Glock17/Assets/Components/Switches/ID_Pistol_01_HGD_02.2"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Pistol_01_HGD_02'",
+    "ObjectPath": "/Game/Items/Weapons/Pistol/Glock17/Assets/Components/Switches/ID_Pistol_01_HGD_02.0"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Handguard"
+      },
+      "AppliedEffects": [],
+      "AppliedCharacterEffects": [],
+      "bCanBeRemovedInGame": false,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Pistol_01_HGD_02'",
+    "ObjectPath": "/Game/Items/Weapons/Pistol/Glock17/Assets/Components/Switches/ID_Pistol_01_HGD_02.0"
+  },
+  "Properties": {
+    "TextureParamDefaults": [
+      {
+        "Key": {
+          "TagName": "Item.Flair.BaseTexture.Handguard"
+        },
+        "Value": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ],
+    "ItemType": "EWDGunsmithItemType::Attachment"
+  }
+}

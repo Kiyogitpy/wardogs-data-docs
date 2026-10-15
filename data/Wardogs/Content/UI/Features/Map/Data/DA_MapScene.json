@@ -1,0 +1,54 @@
+--- export: UDataAsset / DA_MapScene ---
+{
+  "Type": "WDUIMapData",
+  "Name": "DA_MapScene",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIMapData'",
+  "Package": "/Game/UI/Features/Map/Data/DA_MapScene",
+  "Properties": {
+    "TacticalMapViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUITacticalMapViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Map/Widgets/TacticalMap/Data/DA_TacticalMap.DA_TacticalMap",
+        "SubPathString": ""
+      }
+    },
+    "ButtonPromptsBarViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIButtonPromptsBarViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Map/Widgets/TacticalMap/Data/DA_TacticalMap_ButtonPromptsBar.DA_TacticalMap_ButtonPromptsBar",
+        "SubPathString": ""
+      }
+    },
+    "WidgetsToDisplay": [
+      "UI.HUD.Element.Chatbox",
+      "UI.HUD.Element.VoiceChat",
+      "UI.HUD.Element.Killfeed",
+      "UI.HUD.Element.GameModeStatus",
+      "UI.HUD.Element.EventFeed",
+      "UI.HUD.Element.Compass",
+      "UI.HUD.Element.SpatialTrackers",
+      "UI.HUD.Element.GameFeature.Scenario.QuestLog",
+      "UI.HUD.Element.SessionCash",
+      "UI.HUD.Element.RewardFeed"
+    ],
+    "InputTagCloseScene": {
+      "TagName": "UI.Action.Feature.Map.ToggleScene"
+    },
+    "EnterSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.UI.InGame.Minimap.Open"
+    },
+    "ExitSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.UI.InGame.Minimap.Close"
+    },
+    "AssociatedSceneAction": {
+      "TagName": "Action.Player.AccessTacticalMap"
+    }
+  }
+}

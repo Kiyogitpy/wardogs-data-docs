@@ -1,0 +1,103 @@
+--- export: UDataTable / DT_TrackerData_Map_SniperShowdown ---
+{
+  "Type": "DataTable",
+  "Name": "DT_TrackerData_Map_SniperShowdown",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/SniperShowdown/UI/DT_TrackerData_Map_SniperShowdown",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUITrackerDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Trackers.Type.SniperShowdownZoneActive": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPersistentDataTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhkjekddbhagijalc_$7A94A331706890B2$_$26$": true,
+      "bShouldRecreateOnFactionChange": false,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/SniperShowdown/UI/W_Tracker_Map_SniperShowdown_ActiveZone.W_Tracker_Map_SniperShowdown_ActiveZone_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/SniperShowdownRuntime.WDSniperShowdownZoneMapTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/SniperShowdown/UI/DA_Tracker_Map_SniperShowdownZone.DA_Tracker_Map_SniperShowdownZone",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.SniperShowdownZoneActive"
+      }
+    },
+    "Trackers.Type.SniperShowdownZonePassive": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPersistentDataTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhkjekddbhagijalc_$7A94A331706890B2$_$26$": true,
+      "bShouldRecreateOnFactionChange": false,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/SniperShowdown/UI/W_Tracker_Map_SniperShowdown_PassiveZone.W_Tracker_Map_SniperShowdown_PassiveZone_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/SniperShowdownRuntime.WDSniperShowdownZoneMapTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/SniperShowdown/UI/DA_Tracker_Map_SniperShowdownZone.DA_Tracker_Map_SniperShowdownZone",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.SniperShowdownZonePassive"
+      }
+    },
+    "Trackers.Type.ControlZone": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPersistentDataTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhkjekddbhagijalc_$7A94A331706890B2$_$26$": true,
+      "bShouldRecreateOnFactionChange": false,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/SniperShowdown/UI/W_Tracker_Map_SniperShowdown_ControlZone.W_Tracker_Map_SniperShowdown_ControlZone_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/ControlZoneRuntime.WDUIControlZoneMapTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/ControlZone/UI/Trackers/MapTrackers/Data/DA_Tracker_Map_ControlZone.DA_Tracker_Map_ControlZone",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.ControlZone"
+      }
+    }
+  }
+}

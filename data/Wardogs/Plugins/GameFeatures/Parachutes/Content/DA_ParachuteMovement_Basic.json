@@ -1,0 +1,34 @@
+--- export: UDataAsset / DA_ParachuteMovement_Basic ---
+{
+  "Type": "WDParachuteData",
+  "Name": "DA_ParachuteMovement_Basic",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDParachuteData'",
+  "Package": "/Parachutes/DA_ParachuteMovement_Basic",
+  "Properties": {
+    "ParachutingFloorTraceDistance": 1000000.0,
+    "HorizontalDragCoefficient": 1.0,
+    "HorizontalAcceleration": 300.0,
+    "GliderAcceleration": 0.0,
+    "PullUpDragAcceleration": 0.0,
+    "TurnAcceleration": 60.0,
+    "PitchSpeed": 1.0,
+    "RollSpeed": 1.0,
+    "MinPitch": -40.0,
+    "MaxPitch": 20.0,
+    "MaxRoll": 30.0,
+    "SwingForceMultiplier": 5.0,
+    "MaxPullUpStamina": 0.0,
+    "PullUpStaminaUsagePerSecond": 0.0,
+    "PullUpStaminaRegenPerSecond": 0.0,
+    "VelocityDamageLookup": {
+      "ObjectName": "CurveFloat'CRV_ParachutePunishment_Damage'",
+      "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Curves/CRV_ParachutePunishment_Damage.0"
+    },
+    "VelocityDamageType": {
+      "ObjectName": "Class'WDFallDamageType'",
+      "ObjectPath": "/Script/WDGame"
+    },
+    "MinFallHeightBeforeAbleToParachute": 100.0
+  }
+}

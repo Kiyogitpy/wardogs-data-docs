@@ -1,0 +1,35 @@
+--- export: UDataAsset / DA_Popup_GoldExchange ---
+{
+  "Type": "WDUIGoldExchangePopupData",
+  "Name": "DA_Popup_GoldExchange",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIGoldExchangePopupData'",
+  "Package": "/Game/UI/Features/Frontend/GoldExchange/Data/DA_Popup_GoldExchange",
+  "Properties": {
+    "ExchangeTextFormat": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+      "Key": "Text.ExchangeFormat",
+      "SourceString": "{ExchangeRate} = 1 gold bar",
+      "LocalizedString": "{ExchangeRate} = 1 gold bar"
+    },
+    "ExchangeButtonText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+      "Key": "Button.Exchange",
+      "SourceString": "Exchange",
+      "LocalizedString": "Exchange"
+    },
+    "MinimumAwaitResponseSeconds": 0.5,
+    "CancelButtonText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+      "Key": "Button.Cancel",
+      "SourceString": "Cancel",
+      "LocalizedString": "Cancel"
+    },
+    "CloseButtonText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+      "Key": "Button.OK",
+      "SourceString": "OK",
+      "LocalizedString": "OK"
+    }
+  }
+}

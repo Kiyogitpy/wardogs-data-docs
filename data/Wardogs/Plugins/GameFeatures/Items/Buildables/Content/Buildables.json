@@ -1,0 +1,1326 @@
+--- export: UObject / BHGameFeatureAction_AddGameplayCuePath_0 ---
+{
+  "Type": "BHGameFeatureAction_AddGameplayCuePath",
+  "Name": "BHGameFeatureAction_AddGameplayCuePath_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHGameFeatureAction_AddGameplayCuePath'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Buildables'",
+    "ObjectPath": "/Buildables/Buildables.4"
+  },
+  "Properties": {
+    "DirectoryPathsToAdd": [
+      {
+        "Path": "/Buildables"
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_AddComponents_0 ---
+{
+  "Type": "GameFeatureAction_AddComponents",
+  "Name": "GameFeatureAction_AddComponents_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddComponents'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Buildables'",
+    "ObjectPath": "/Buildables/Buildables.4"
+  },
+  "Properties": {
+    "ComponentList": [
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDMoverPlayerCharacter",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Script/BuildablesRuntime.WDPawnBuildableManager",
+          "SubPathString": ""
+        },
+        "bClientComponent": true,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      },
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDStationaryVehicle",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Script/BuildablesRuntime.WDVehicleBuildableComponent",
+          "SubPathString": ""
+        },
+        "bClientComponent": true,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_AddWorldPartitionContent_0 ---
+{
+  "Type": "GameFeatureAction_AddWorldPartitionContent",
+  "Name": "GameFeatureAction_AddWorldPartitionContent_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddWorldPartitionContent'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Buildables'",
+    "ObjectPath": "/Buildables/Buildables.4"
+  },
+  "Properties": {
+    "ExternalDataLayerAsset": {
+      "ObjectName": "ExternalDataLayerAsset'EDL_Buildables'",
+      "ObjectPath": "/Buildables/DataLayers/EDL_Buildables.0"
+    }
+  }
+}
+--- export: UObject / GameFeatureAction_DataRegistrySource_0 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Buildables'",
+    "ObjectPath": "/Buildables/Buildables.4"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "VendorData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Buildables/Data/DT_VendorData_Ext_Buildables.DT_VendorData_Ext_Buildables",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "RadialWheelSlotTypeRegistry",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Buildables/Data/BuildTool/DT_RadialWheelSlotType_BuildToolData.DT_RadialWheelSlotType_BuildToolData",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "RadialWheelTypeRegistry",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Buildables/Data/BuildTool/DT_RadialWheelType_BuildToolData.DT_RadialWheelType_BuildToolData",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "UIInteractionContextV1",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Buildables/Data/ForwardOperatingBase/DT_InteractionContext_ForwardOperatingBase.DT_InteractionContext_ForwardOperatingBase",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "EntityData_UI",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Buildables/Data/DT_EntityData_UI_Buildables.DT_EntityData_UI_Buildables",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "PlacementDisplayTexts",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Buildables/Data/ForwardOperatingBase/DT_ForwardOperatingBase_PlacementDisplayTexts.DT_ForwardOperatingBase_PlacementDisplayTexts",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "TrackerData_TacticalMap",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Buildables/Data/UI/DT_TrackerData_Map_Buildables.DT_TrackerData_Map_Buildables",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "TrackerData_MiniMap",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Buildables/Data/UI/DT_TrackerData_Map_Buildables.DT_TrackerData_Map_Buildables",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "TrackerData_Spatial",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Buildables/Data/UI/DT_TrackerData_Spatial_Buildables.DT_TrackerData_Spatial_Buildables",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "MaterialTrackersData_UI",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Buildables/Data/UI/DT_MaterialTrackerSettingsData_Buildables.DT_MaterialTrackerSettingsData_Buildables",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "GlobalDamageData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Buildables/Data/DT_GlobalDamage_BuildableData.DT_GlobalDamage_BuildableData",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "UIInteractionContextData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Buildables/Data/ForwardOperatingBase/DT_InteractionContextData_ForwardOperatingBase.DT_InteractionContextData_ForwardOperatingBase",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "LootedComponentTypes",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Buildables/Data/UI/DT_LootedComponentTypes_FOB.DT_LootedComponentTypes_FOB",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "PostProcessEffectsData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Buildables/Data/ForwardOperatingBase/DT_PostProcessEffects_FOB.DT_PostProcessEffects_FOB",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "UISceneData_Match",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": false,
+        "DataTableToAdd": {
+          "AssetPathName": "/Buildables/Data/UI/FobRefuelRepair/DT_SceneData_Match_Buildables.DT_SceneData_Match_Buildables",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "TooltipData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": false,
+        "DataTableToAdd": {
+          "AssetPathName": "/Buildables/Data/UI/Tooltips/DT_TooltipData_Buildables.DT_TooltipData_Buildables",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / Buildables ---
+{
+  "Type": "GameFeatureData",
+  "Name": "Buildables",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/Buildables/Buildables",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'Buildables:GameFeatureAction_DataRegistrySource_0'",
+        "ObjectPath": "/Buildables/Buildables.3"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+        "ObjectPath": "/Buildables/Buildables.5"
+      },
+      {
+        "ObjectName": "GameFeatureAction_AddComponents'Buildables:GameFeatureAction_AddComponents_0'",
+        "ObjectPath": "/Buildables/Buildables.1"
+      },
+      {
+        "ObjectName": "BHGameFeatureAction_AddGameplayCuePath'Buildables:BHGameFeatureAction_AddGameplayCuePath_0'",
+        "ObjectPath": "/Buildables/Buildables.0"
+      },
+      {
+        "ObjectName": "GameFeatureAction_AddWorldPartitionContent'Buildables:GameFeatureAction_AddWorldPartitionContent_0'",
+        "ObjectPath": "/Buildables/Buildables.2"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_RegisterFobSwappableActors'Buildables:WDGameFeatureAction_RegisterFobSwappableActors_0'",
+        "ObjectPath": "/Buildables/Buildables.62"
+      }
+    ],
+    "PrimaryAssetTypesToScan": [
+      {
+        "PrimaryAssetType": "BH.Item",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/BHInventory.BHInventoryItemDefinition",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/Buildables/Data"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::AlwaysCook"
+        }
+      },
+      {
+        "PrimaryAssetType": "BH.Action",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/BHActionSystem.BHActionDefinition",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/Buildables/Data/Actions"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::AlwaysCook"
+        }
+      },
+      {
+        "PrimaryAssetType": "CrosstalkAudioEvent",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/Crosstalk.CrosstalkAudioEvent",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/Buildables"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::Unknown"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_0 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements",
+  "Name": "WDGameFeatureAction_AddWidgetElements_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Buildables'",
+    "ObjectPath": "/Buildables/Buildables.4"
+  },
+  "Properties": {
+    "TaggedElements": [
+      {
+        "Key": {
+          "TagName": "UI.HUD.Element.BuildTool"
+        },
+        "Value": {
+          "WidgetClass": {
+            "AssetPathName": "/Buildables/Data/BuildTool/Widgets/W_BuildTool.W_BuildTool_C",
+            "SubPathString": ""
+          },
+          "ViewModelParams": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/BuildablesRuntime.WDUIBuildToolViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Buildables/Data/BuildTool/DA_UI_BuildTool.DA_UI_BuildTool",
+              "SubPathString": ""
+            }
+          },
+          "_aaabkjegcgkieanmehknm_$94626A840DC47ADC$_$26$": false
+        }
+      }
+    ],
+    "AddWidgetElementsInstances": [
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_0'",
+        "ObjectPath": "/Buildables/Buildables.6"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_1'",
+        "ObjectPath": "/Buildables/Buildables.7"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_2'",
+        "ObjectPath": "/Buildables/Buildables.18"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_3'",
+        "ObjectPath": "/Buildables/Buildables.29"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_4'",
+        "ObjectPath": "/Buildables/Buildables.40"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_5'",
+        "ObjectPath": "/Buildables/Buildables.51"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_6'",
+        "ObjectPath": "/Buildables/Buildables.58"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_7'",
+        "ObjectPath": "/Buildables/Buildables.59"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_8'",
+        "ObjectPath": "/Buildables/Buildables.60"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_9'",
+        "ObjectPath": "/Buildables/Buildables.61"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_10'",
+        "ObjectPath": "/Buildables/Buildables.8"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_11'",
+        "ObjectPath": "/Buildables/Buildables.9"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_12'",
+        "ObjectPath": "/Buildables/Buildables.10"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_13'",
+        "ObjectPath": "/Buildables/Buildables.11"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_14'",
+        "ObjectPath": "/Buildables/Buildables.12"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_15'",
+        "ObjectPath": "/Buildables/Buildables.13"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_16'",
+        "ObjectPath": "/Buildables/Buildables.14"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_17'",
+        "ObjectPath": "/Buildables/Buildables.15"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_18'",
+        "ObjectPath": "/Buildables/Buildables.16"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_19'",
+        "ObjectPath": "/Buildables/Buildables.17"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_20'",
+        "ObjectPath": "/Buildables/Buildables.19"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_21'",
+        "ObjectPath": "/Buildables/Buildables.20"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_22'",
+        "ObjectPath": "/Buildables/Buildables.21"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_23'",
+        "ObjectPath": "/Buildables/Buildables.22"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_24'",
+        "ObjectPath": "/Buildables/Buildables.23"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_25'",
+        "ObjectPath": "/Buildables/Buildables.24"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_26'",
+        "ObjectPath": "/Buildables/Buildables.25"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_27'",
+        "ObjectPath": "/Buildables/Buildables.26"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_28'",
+        "ObjectPath": "/Buildables/Buildables.27"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_29'",
+        "ObjectPath": "/Buildables/Buildables.28"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_30'",
+        "ObjectPath": "/Buildables/Buildables.30"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_31'",
+        "ObjectPath": "/Buildables/Buildables.31"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_32'",
+        "ObjectPath": "/Buildables/Buildables.32"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_33'",
+        "ObjectPath": "/Buildables/Buildables.33"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_34'",
+        "ObjectPath": "/Buildables/Buildables.34"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_35'",
+        "ObjectPath": "/Buildables/Buildables.35"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_36'",
+        "ObjectPath": "/Buildables/Buildables.36"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_37'",
+        "ObjectPath": "/Buildables/Buildables.37"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_38'",
+        "ObjectPath": "/Buildables/Buildables.38"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_39'",
+        "ObjectPath": "/Buildables/Buildables.39"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_40'",
+        "ObjectPath": "/Buildables/Buildables.41"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_41'",
+        "ObjectPath": "/Buildables/Buildables.42"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_42'",
+        "ObjectPath": "/Buildables/Buildables.43"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_43'",
+        "ObjectPath": "/Buildables/Buildables.44"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_44'",
+        "ObjectPath": "/Buildables/Buildables.45"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_45'",
+        "ObjectPath": "/Buildables/Buildables.46"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_46'",
+        "ObjectPath": "/Buildables/Buildables.47"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_47'",
+        "ObjectPath": "/Buildables/Buildables.48"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_48'",
+        "ObjectPath": "/Buildables/Buildables.49"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_49'",
+        "ObjectPath": "/Buildables/Buildables.50"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_50'",
+        "ObjectPath": "/Buildables/Buildables.52"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_51'",
+        "ObjectPath": "/Buildables/Buildables.53"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_52'",
+        "ObjectPath": "/Buildables/Buildables.54"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_53'",
+        "ObjectPath": "/Buildables/Buildables.55"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_54'",
+        "ObjectPath": "/Buildables/Buildables.56"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Buildables:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_55'",
+        "ObjectPath": "/Buildables/Buildables.57"
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_0 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_1 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_1",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_10 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_10",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_11 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_11",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_12 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_12",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_13 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_13",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_14 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_14",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_15 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_15",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_16 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_16",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_17 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_17",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_18 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_18",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_19 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_19",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_2 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_2",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_20 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_20",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_21 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_21",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_22 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_22",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_23 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_23",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_24 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_24",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_25 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_25",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_26 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_26",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_27 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_27",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_28 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_28",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_29 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_29",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_3 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_3",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_30 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_30",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_31 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_31",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_32 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_32",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_33 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_33",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_34 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_34",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_35 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_35",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_36 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_36",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_37 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_37",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_38 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_38",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_39 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_39",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_4 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_4",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_40 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_40",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_41 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_41",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_42 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_42",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_43 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_43",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_44 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_44",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_45 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_45",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_46 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_46",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_47 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_47",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_48 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_48",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_49 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_49",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_5 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_5",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_50 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_50",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_51 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_51",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_52 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_52",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_53 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_53",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_54 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_54",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_55 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_55",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_6 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_6",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_7 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_7",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_8 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_8",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_9 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_9",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Buildables:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Buildables/Buildables.5"
+  }
+}
+--- export: UObject / WDGameFeatureAction_RegisterFobSwappableActors_0 ---
+{
+  "Type": "WDGameFeatureAction_RegisterFobSwappableActors",
+  "Name": "WDGameFeatureAction_RegisterFobSwappableActors_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_RegisterFobSwappableActors'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Buildables'",
+    "ObjectPath": "/Buildables/Buildables.4"
+  },
+  "Properties": {
+    "_aaabfjdpjhpfndpekjboo_$93F97F5D3F4A91EE$_$21$": [
+      {
+        "ObjectName": "Class'WDStationaryVehicle'",
+        "ObjectPath": "/Script/WDGame"
+      },
+      {
+        "ObjectName": "Class'WDPlainBuildableActor'",
+        "ObjectPath": "/Script/BuildablesRuntime"
+      },
+      {
+        "ObjectName": "Class'WDBuildableSpawnedActor'",
+        "ObjectPath": "/Script/BuildablesRuntime"
+      },
+      {
+        "ObjectName": "Class'WDDoor'",
+        "ObjectPath": "/Script/WDGame"
+      }
+    ]
+  }
+}
