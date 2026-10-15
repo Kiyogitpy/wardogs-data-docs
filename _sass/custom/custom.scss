@@ -1,144 +1,263 @@
-// Data-plate styling on top of Just the Docs. Boldness lives in headings and tables.
+// Unreal Engine site look on top of Just the Docs:
+// charcoal base, rounded raised panels, bold tight white headings, white pill buttons, cyan-blue links.
 
-$plate-deep: #191c16;
-$plate-raised: #272c22;
-$plate-stripe: #23281f;
-$rule: #3b4231;
-$khaki-bright: #efe9d0;
-$khaki-dim: #a29e8a;
-$amber: #e0a43a;
-$display: "Barlow Condensed", "Arial Narrow", sans-serif-condensed, sans-serif;
+$ue-bg: #101014;
+$ue-sidebar: #0d0d10;
+$ue-panel: #18181c;
+$ue-panel-raised: #202024;
+$ue-panel-hover: #26262b;
+$ue-border: #2a2a30;
+$ue-border-strong: #3a3a42;
+$ue-text: #c9c9ce;
+$ue-text-dim: #8e8e96;
+$ue-white: #ffffff;
+$ue-blue: #26bbff;
+$radius-panel: 12px;
+$radius-small: 6px;
 
 body {
-  font-size: 1.0625rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.65;
   font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
 }
 
-// Prose stays readable even though the content column is wide for tables.
 .main-content {
   p, ul, ol, blockquote {
     max-width: 75ch;
   }
-}
 
-// Headings: condensed, large, tight. h1 sits on a short amber bar like a plate rivet line.
-.main-content {
   h1, h2, h3, h4 {
-    font-family: $display;
-    color: $khaki-bright;
-    letter-spacing: 0.005em;
-    line-height: 1.1;
+    color: $ue-white;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
   }
   h1 {
     font-size: 2.75rem;
-    font-weight: 700;
+    font-weight: 800;
+    letter-spacing: -0.03em;
     margin-top: 0.5rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 3px solid $amber;
-    display: inline-block;
+    margin-bottom: 1rem;
   }
   h2 {
-    font-size: 1.85rem;
-    font-weight: 600;
-    margin-top: 3rem;
-    padding-top: 1rem;
-    border-top: 1px solid $rule;
+    font-size: 1.75rem;
+    margin-top: 3.25rem;
   }
   h3 {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
     font-weight: 600;
     margin-top: 2rem;
   }
-  // The italic source line under each page title.
+  // Italic source line under each page title.
   h1 + p > em:only-child {
-    color: $khaki-dim;
+    color: $ue-text-dim;
+    font-style: normal;
     font-size: 0.95rem;
+  }
+  hr {
+    border-color: $ue-border;
+  }
+  a:not(.wd-card):not(.wd-btn) {
+    text-decoration: none;
+    &:hover { text-decoration: underline; }
   }
 }
 
-// Tables are the point of the site: plate header, striped rows, numbers aligned.
+// Tables sit on rounded raised panels.
 .main-content .table-wrapper {
-  border: 1px solid $rule;
-  border-radius: 4px;
+  background: $ue-panel;
+  border: 1px solid $ue-border;
+  border-radius: $radius-panel;
   box-shadow: none;
-  margin: 1.25rem 0 1.75rem;
+  margin: 1.25rem 0 2rem;
 }
 
 .main-content table {
-  font-size: 0.95rem;
+  font-size: 0.925rem;
   border-collapse: collapse;
 
   th, td {
-    border-bottom: 1px solid $rule;
+    background: transparent;
+    border-bottom: 1px solid $ue-border;
     border-left: 0;
-    padding: 0.5rem 0.9rem;
+    padding: 0.65rem 1rem;
     white-space: normal;
     min-width: 6rem;
   }
   thead th {
-    background: $plate-deep;
-    font-family: $display;
-    font-size: 1.05rem;
+    background: $ue-panel-raised;
+    color: $ue-white;
     font-weight: 600;
-    color: $khaki-bright;
-    border-bottom: 2px solid $rule;
+    font-size: 0.875rem;
+    border-bottom: 1px solid $ue-border-strong;
   }
-  tbody tr:nth-child(even) td {
-    background: $plate-stripe;
+  tbody tr:last-child td {
+    border-bottom: 0;
   }
   tbody tr:hover td {
-    background: $plate-raised;
+    background: $ue-panel-hover;
   }
   strong {
-    color: $khaki-bright;
+    color: $ue-white;
   }
 }
 
-// Asset and table names.
 code {
-  font-size: 0.86em;
-  padding: 0.1em 0.35em;
-  border: 1px solid $rule;
-  border-radius: 3px;
+  font-size: 0.85em;
+  padding: 0.12em 0.4em;
+  background: $ue-panel-raised;
+  border: 1px solid $ue-border;
+  border-radius: $radius-small;
 }
 
 pre.highlight,
 div.highlighter-rouge {
-  border: 1px solid $rule;
-  border-radius: 4px;
+  background: $ue-panel;
+  border: 1px solid $ue-border;
+  border-radius: $radius-panel;
 }
 
-// Sidebar and header.
+// Header, sidebar and search.
 .site-title {
-  font-family: $display;
-  font-weight: 700;
-  font-size: 1.35rem !important;
-  color: $khaki-bright;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: $ue-white;
 }
 
-.nav-list .nav-list-item .nav-list-link.active {
-  color: $amber;
-  font-weight: 600;
+.side-bar {
+  border-right: 1px solid $ue-border;
+}
+
+.nav-list .nav-list-item .nav-list-link {
+  border-radius: $radius-small;
+  &:hover {
+    background: $ue-panel-raised;
+  }
+  &.active {
+    color: $ue-white;
+    font-weight: 600;
+    background: $ue-panel-raised;
+  }
 }
 
 .search-input {
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
-.search-input:focus + .search-label .search-icon {
-  color: $amber;
+.search-results {
+  border-radius: 0 0 $radius-panel $radius-panel;
+}
+
+.search-result-title {
+  color: $ue-white;
+  font-weight: 600;
 }
 
 // Keyboard focus is always visible.
 a:focus-visible,
 button:focus-visible,
 input:focus-visible {
-  outline: 2px solid $amber;
+  outline: 2px solid $ue-blue;
   outline-offset: 2px;
 }
 
-.search-result-title {
-  font-family: $display;
-  font-size: 1.05rem;
+// Home page: hero, pill buttons, category cards.
+.wd-hero {
+  padding: 3rem 0 2.5rem;
+
+  h1 {
+    font-size: clamp(2.5rem, 6vw, 4.25rem);
+    max-width: 16ch;
+    margin: 0 0 1rem;
+  }
+  p {
+    font-size: 1.15rem;
+    color: $ue-text;
+    max-width: 60ch;
+    margin-bottom: 2rem;
+  }
+}
+
+.wd-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.wd-btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+
+  &.wd-btn-primary {
+    background: $ue-white;
+    color: #101014;
+    &:hover { background: #dcdce0; }
+  }
+  &.wd-btn-secondary {
+    background: transparent;
+    color: $ue-white;
+    border: 1px solid $ue-border-strong;
+    &:hover { background: $ue-panel-raised; }
+  }
+}
+
+.main-content .wd-section-intro {
+  color: $ue-text-dim;
+  margin-top: -0.25rem;
+}
+
+.wd-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 1rem;
+}
+
+.wd-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.25rem 1.35rem;
+  background: $ue-panel;
+  border: 1px solid $ue-border;
+  border-radius: $radius-panel;
+  color: $ue-text;
+  text-decoration: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+
+  &:hover {
+    background: $ue-panel-raised;
+    border-color: $ue-border-strong;
+    text-decoration: none;
+  }
+  .wd-card-name {
+    color: $ue-white;
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
+  }
+  .wd-card-desc {
+    color: $ue-text-dim;
+    font-size: 0.875rem;
+    line-height: 1.45;
+  }
+}
+
+.wd-card-featured {
+  grid-column: 1 / -1;
+  padding: 1.75rem 2rem;
+  background: linear-gradient(180deg, $ue-panel-raised, $ue-panel);
+
+  .wd-card-name { font-size: 1.4rem; }
+  .wd-card-desc { font-size: 0.95rem; max-width: 70ch; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wd-btn, .wd-card { transition: none; }
 }

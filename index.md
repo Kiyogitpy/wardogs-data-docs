@@ -3,96 +3,101 @@ title: Home
 nav_order: 1
 ---
 
-# Wardogs Data Reference
-
-Structured reference docs for Wardogs game data (build `++Wardogs+Live-CL-509546`, UE 5.7), one page per data category. Each page lists real values from the game's data assets and ends with a limitations section saying what was inferred or not covered.
+<div class="wd-hero" markdown="0">
+<h1>Every number in Wardogs, in one place</h1>
+<p>Reference pages for the game's data: weapon and vehicle stats, rewards, items, challenges and more, read straight from the game files (build <code>++Wardogs+Live-CL-509546</code>, UE 5.7). Search any value, asset name or table name from the bar at the top.</p>
+<div class="wd-actions">
+<a class="wd-btn wd-btn-primary" href="#content">Browse categories</a>
+<a class="wd-btn wd-btn-secondary" href="Wardogs_Rewards_and_Progression_v2.html">Rewards &amp; progression</a>
+</div>
+</div>
 
 ## Finding things
 
-- **Search** with the box at the top of every page (press `/` or `Ctrl+K` to jump to it). It searches the full text of every page, including tables, and takes you straight to the matching section.
-- **Search by asset or table name works on parts of the name.** `PlayerKill` finds `DT_Reward_Cash_PlayerKill`, and `Havoc` finds every page that mentions the Havoc.
-- **Browse** with the sidebar, grouped into Content, Game Features and Plugins, or use the tables below.
-- **Items, Weapons and Vehicles exist twice.** The Content pages hold base definitions; the "(feature)" pages under Game Features hold most of the per-item, per-weapon and per-vehicle data.
+- **Search** from the bar at the top of every page (press `/` or `Ctrl+K`). It covers the full text of every page, including tables, and opens the matching section.
+- **Asset and table names match on their parts.** `PlayerKill` finds `DT_Reward_Cash_PlayerKill`, and `Havoc` finds every page that mentions the Havoc.
+- **Items, Weapons and Vehicles appear twice.** Content holds the base definitions; Game Features holds most of the per-item, per-weapon and per-vehicle data.
+- **Every page ends with its limitations:** what was inferred, and what the game files don't contain.
 
-## Rewards & progression
+<h2 id="content">Content</h2>
 
-| Category | Page |
-|---|---|
-| Rewards and Progression | [Wardogs — Rewards & Progression Reference (v2, corrected)](Wardogs_Rewards_and_Progression_v2.html) |
+<p class="wd-section-intro">Core content folders: weapons, items, vehicles, audio, UI, environment, VFX and maps.</p>
 
-## Content categories
+<div class="wd-grid" markdown="0">
+<a class="wd-card" href="Wardogs_Animation_v2.html"><span class="wd-card-name">Animation</span><span class="wd-card-desc">Folder Map, Motion Matching, First-Person Mirroring, Animation Curves</span></a>
+<a class="wd-card" href="Wardogs_Audio_v2.html"><span class="wd-card-name">Audio</span><span class="wd-card-desc">Inventory, Event structure, Notable events, Player Damage, Movement and Item Audio</span></a>
+<a class="wd-card" href="Wardogs_Characters_v2.html"><span class="wd-card-name">Characters</span><span class="wd-card-desc">File Map, Third-Person LOD Policy, Ghillie Physics Constraints, How Values Combine</span></a>
+<a class="wd-card" href="Wardogs_Demolition_v2.html"><span class="wd-card-name">Demolition</span><span class="wd-card-desc">Asset Families, Demolition Assets, Component Settings, Remnant Meshes</span></a>
+<a class="wd-card" href="Wardogs_Destruction_v2.html"><span class="wd-card-name">Destruction</span><span class="wd-card-desc">Assets at a Glance, Normal Building Lookup, Anonymous Building Lookup, Score Curves</span></a>
+<a class="wd-card" href="Wardogs_Developers_v2.html"><span class="wd-card-name">Developers</span><span class="wd-card-desc">File Map, Demolition Component Settings</span></a>
+<a class="wd-card" href="Wardogs_Environment_v2.html"><span class="wd-card-name">Environment</span><span class="wd-card-desc">Inventory and folder map, How the vegetation and PCG data combines, MicroBiomes, Layers</span></a>
+<a class="wd-card" href="Wardogs_ExternalAssets_v2.html"><span class="wd-card-name">ExternalAssets</span><span class="wd-card-desc">File Inventory, Building Definitions, Decorator Definitions, Damage-Tag Whitelists</span></a>
+<a class="wd-card" href="Wardogs_FluidFlux_v2.html"><span class="wd-card-name">FluidFlux</span><span class="wd-card-desc">File Map, Waterline Gradient, How Values Combine</span></a>
+<a class="wd-card" href="Wardogs_GameMechanics_v2.html"><span class="wd-card-name">GameMechanics</span><span class="wd-card-desc">Folder Map, Damage System, Projectiles, Action Definitions</span></a>
+<a class="wd-card" href="Wardogs_GameplayCues_v2.html"><span class="wd-card-name">GameplayCues</span><span class="wd-card-desc">File Map, Smoke Screen Values, How Values Combine</span></a>
+<a class="wd-card" href="Wardogs_Items_v2.html"><span class="wd-card-name">Items</span><span class="wd-card-desc">How an Item Is Built, Attachments, Clothing and Equipment, Consumables and Medical Items</span></a>
+<a class="wd-card" href="Wardogs_Maps_v2.html"><span class="wd-card-name">Maps</span><span class="wd-card-desc">Inventory, Minimal Grid Test, Shooting-Range Moving Target, Water Gym</span></a>
+<a class="wd-card" href="Wardogs_Meta_v2.html"><span class="wd-card-name">Meta</span><span class="wd-card-desc">Folder Map, Role Unlock Trees, Character Skill Effects, Reward Scaling Curves</span></a>
+<a class="wd-card" href="Wardogs_MoverTesting_v2.html"><span class="wd-card-name">MoverTesting</span><span class="wd-card-desc">Inventory, Character Modifier States, Movement Settings, Curves</span></a>
+<a class="wd-card" href="Wardogs_Significance_v2.html"><span class="wd-card-name">Significance</span><span class="wd-card-desc">Asset Families, Settings Assets, Sphere Evaluators, FOV Evaluators</span></a>
+<a class="wd-card" href="Wardogs_Tests_v2.html"><span class="wd-card-name">Tests</span><span class="wd-card-desc">File Map, Server Profiles, Client Profiles</span></a>
+<a class="wd-card" href="Wardogs_Tools_v2.html"><span class="wd-card-name">Tools</span><span class="wd-card-desc">File Map, Text Styles</span></a>
+<a class="wd-card" href="Wardogs_UI_v2.html"><span class="wd-card-name">UI</span><span class="wd-card-desc">Inventory of the Category, Minimap and World Textures, Map and Minimap Trackers, Ping Wheel</span></a>
+<a class="wd-card" href="Wardogs_Vehicles_v2.html"><span class="wd-card-name">Vehicles</span><span class="wd-card-desc">Folder Inventory, Vehicle Identity, Rigid Body, Engine, Drag, Flight Characteristics</span></a>
+<a class="wd-card" href="Wardogs_VFX_v2.html"><span class="wd-card-name">VFX</span><span class="wd-card-desc">Inventory, Explosions, Explosion Sequences, Muzzle Flashes</span></a>
+<a class="wd-card" href="Wardogs_Weapons_v2.html"><span class="wd-card-name">Weapons</span><span class="wd-card-desc">Weapon Stat Assets, Aim Sway Curve Families, ADS Curves, Input Actions and Mapping Contexts</span></a>
+</div>
 
-| Category | Page |
-|---|---|
-| Animation | [Wardogs: Animation Data Reference (v2)](Wardogs_Animation_v2.html) |
-| Audio | [Wardogs — Audio Data Reference (v2)](Wardogs_Audio_v2.html) |
-| Characters | [Wardogs: Characters Data Reference (v2)](Wardogs_Characters_v2.html) |
-| Demolition | [Wardogs — Demolition Reference (v2)](Wardogs_Demolition_v2.html) |
-| Destruction | [Wardogs — Destruction Reference (v2)](Wardogs_Destruction_v2.html) |
-| Developers | [Wardogs: Developers Data Reference (v2)](Wardogs_Developers_v2.html) |
-| Environment | [Wardogs — Environment & PCG Reference (v2)](Wardogs_Environment_v2.html) |
-| ExternalAssets | [Wardogs — External Assets Reference (v2)](Wardogs_ExternalAssets_v2.html) |
-| FluidFlux | [Wardogs: FluidFlux Data Reference (v2)](Wardogs_FluidFlux_v2.html) |
-| GameMechanics | [Wardogs — Game Mechanics Reference (v2)](Wardogs_GameMechanics_v2.html) |
-| GameplayCues | [Wardogs: GameplayCues Data Reference (v2)](Wardogs_GameplayCues_v2.html) |
-| Items | [Wardogs — Items Reference (v2)](Wardogs_Items_v2.html) |
-| Maps | [Wardogs — Maps & Gym Data Reference (v2)](Wardogs_Maps_v2.html) |
-| Meta | [Wardogs: Meta Data Reference (v2)](Wardogs_Meta_v2.html) |
-| MoverTesting | [Wardogs — Mover & Character Movement Reference (v2)](Wardogs_MoverTesting_v2.html) |
-| Significance | [Wardogs — Significance Reference (v2)](Wardogs_Significance_v2.html) |
-| Tests | [Wardogs: Tests Data Reference (v2)](Wardogs_Tests_v2.html) |
-| Tools | [Wardogs: Tools Data Reference (v2)](Wardogs_Tools_v2.html) |
-| UI | [Wardogs — UI Data Reference (v2)](Wardogs_UI_v2.html) |
-| Vehicles | [Wardogs — Vehicles Reference (v2)](Wardogs_Vehicles_v2.html) |
-| VFX | [Wardogs — VFX Reference (v2)](Wardogs_VFX_v2.html) |
-| Weapons | [Wardogs — Weapons Reference (v2)](Wardogs_Weapons_v2.html) |
+<h2 id="game-features">Game Features</h2>
 
-## Game features
+<p class="wd-section-intro">Feature plugins. Most per-weapon, per-vehicle and per-item data lives here, along with challenges, control zones, spotting, AI and PvE.</p>
 
-| Category | Page |
-|---|---|
-| AccountWatermark | [Wardogs — GameFeatures: AccountWatermark (v2)](Wardogs_GameFeatures_AccountWatermark_v2.html) |
-| AI | [Wardogs — GameFeatures: AI (v2)](Wardogs_GameFeatures_AI_v2.html) |
-| AlternativeCriticalCamera | [Wardogs — GameFeatures: AlternativeCriticalCamera (v2)](Wardogs_GameFeatures_AlternativeCriticalCamera_v2.html) |
-| Ammo | [Wardogs — GameFeature: Ammo Reference (v2)](Wardogs_GameFeatures_Ammo_v2.html) |
-| Challenges KOTH | [Wardogs — GameFeature: Challenges_KOTH Reference (v2)](Wardogs_GameFeatures_Challenges_KOTH_v2.html) |
-| Character | [Wardogs — GameFeatures: Character (v2)](Wardogs_GameFeatures_Character_v2.html) |
-| ControlZone | [Wardogs — GameFeature: ControlZone Reference (v2)](Wardogs_GameFeatures_ControlZone_v2.html) |
-| ControlZoneRegions | [Wardogs — GameFeature: ControlZoneRegions Reference (v2)](Wardogs_GameFeatures_ControlZoneRegions_v2.html) |
-| Deathmatch | [Wardogs — GameFeatures: Deathmatch (v2)](Wardogs_GameFeatures_Deathmatch_v2.html) |
-| Emotes | [Wardogs: GameFeatures Emotes Reference (v2)](Wardogs_GameFeatures_Emotes_v2.html) |
-| Experiences | [Wardogs — GameFeatures: Experiences (v2)](Wardogs_GameFeatures_Experiences_v2.html) |
-| FactoryInvestment 01 | [Wardogs — GameFeatures: FactoryInvestment_01 (v2)](Wardogs_GameFeatures_FactoryInvestment_01_v2.html) |
-| FactoryInvestment | [Wardogs — GameFeatures: FactoryInvestment (v2)](Wardogs_GameFeatures_FactoryInvestment_v2.html) |
-| FlyByManager | [Wardogs — FlyByManager Game Feature Reference (v2)](Wardogs_GameFeatures_FlyByManager_v2.html) |
-| Gunsmith | [Wardogs — Gunsmith Game Feature Reference (v2)](Wardogs_GameFeatures_Gunsmith_v2.html) |
-| Items | [Wardogs: GameFeatures Items Reference (v2)](Wardogs_GameFeatures_Items_v2.html) |
-| Itemsmith | [Wardogs: GameFeatures Itemsmith Reference (v2)](Wardogs_GameFeatures_Itemsmith_v2.html) |
-| Parachutes | [Wardogs — Parachutes Game Feature Reference (v2)](Wardogs_GameFeatures_Parachutes_v2.html) |
-| PerformanceCaptures | [Wardogs — GameFeatures: PerformanceCaptures (v2)](Wardogs_GameFeatures_PerformanceCaptures_v2.html) |
-| PlayerHealthBar | [Wardogs — GameFeatures: PlayerHealthBar (v2)](Wardogs_GameFeatures_PlayerHealthBar_v2.html) |
-| PvE | [Wardogs — GameFeatures: PvE (v2)](Wardogs_GameFeatures_PvE_v2.html) |
-| Rewards | [Wardogs — GameFeature: Rewards (Buildables) Reference (v2)](Wardogs_GameFeatures_Rewards_v2.html) |
-| ShootingRange | [Wardogs — GameFeatures: ShootingRange (v2)](Wardogs_GameFeatures_ShootingRange_v2.html) |
-| ShootingRangeTutorial | [Wardogs — GameFeatures: ShootingRangeTutorial (v2)](Wardogs_GameFeatures_ShootingRangeTutorial_v2.html) |
-| Skins | [Wardogs: GameFeatures Skins Reference (v2)](Wardogs_GameFeatures_Skins_v2.html) |
-| Spotting | [Wardogs — GameFeature: Spotting Reference (v2)](Wardogs_GameFeatures_Spotting_v2.html) |
-| Taxi SkinsData | [Wardogs — GameFeatures: Taxi_SkinsData (v2)](Wardogs_GameFeatures_Taxi_SkinsData_v2.html) |
-| TeamkillTracking | [Wardogs — GameFeatures: TeamkillTracking (v2)](Wardogs_GameFeatures_TeamkillTracking_v2.html) |
-| UnderbarrelGrenadeLauncher | [Wardogs — UnderbarrelGrenadeLauncher Game Feature Reference (v2)](Wardogs_GameFeatures_UnderbarrelGrenadeLauncher_v2.html) |
-| Utility | [Wardogs — GameFeatures: Utility (v2)](Wardogs_GameFeatures_Utility_v2.html) |
-| Vehicles | [Wardogs — GameFeatures / Vehicles Reference (v2)](Wardogs_GameFeatures_Vehicles_v2.html) |
-| Vehiclesmith | [Wardogs — Vehiclesmith Game Feature Reference (v2)](Wardogs_GameFeatures_Vehiclesmith_v2.html) |
-| WDAutomation | [Wardogs — GameFeatures: WDAutomation (v2)](Wardogs_GameFeatures_WDAutomation_v2.html) |
-| WDCharacterComponents | [Wardogs — GameFeatures: WDCharacterComponents (v2)](Wardogs_GameFeatures_WDCharacterComponents_v2.html) |
-| WDCore | [Wardogs — GameFeatures: WDCore (v2)](Wardogs_GameFeatures_WDCore_v2.html) |
-| Weapons | [Wardogs — GameFeatures/Weapons Reference (v2)](Wardogs_GameFeatures_Weapons_v2.html) |
-| WorldFeatures | [Wardogs — GameFeatures: WorldFeatures (v2)](Wardogs_GameFeatures_WorldFeatures_v2.html) |
+<div class="wd-grid" markdown="0">
+<a class="wd-card" href="Wardogs_GameFeatures_AccountWatermark_v2.html"><span class="wd-card-name">AccountWatermark</span><span class="wd-card-desc">What This Folder Holds, Widget Setup, Data</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_AI_v2.html"><span class="wd-card-name">AI</span><span class="wd-card-desc">What This Folder Holds, Core AI Preset, Alert State Thresholds, Influence Maps</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_AlternativeCriticalCamera_v2.html"><span class="wd-card-name">AlternativeCriticalCamera</span><span class="wd-card-desc">What This Folder Holds, Feature Actions, Infantry Critical State, Vehicle Critical State</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_Ammo_v2.html"><span class="wd-card-name">Ammo</span><span class="wd-card-desc">Package Contents, Bundle-to-Layer Map, What Each Bundle Does, Relationship to the Other GameFeatures</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_Challenges_KOTH_v2.html"><span class="wd-card-name">Challenges KOTH</span><span class="wd-card-desc">What the Package Contains, How the Pieces Connect, State Tree Inventory, Reward Lookup Tables</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_Character_v2.html"><span class="wd-card-name">Character</span><span class="wd-card-desc">What This Folder Holds, Packs</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_ControlZone_v2.html"><span class="wd-card-name">ControlZone</span><span class="wd-card-desc">Package Contents, Zone Geometry Per Config, Hot Zone Movement, Balance: Contribution Modifiers</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_ControlZoneRegions_v2.html"><span class="wd-card-name">ControlZoneRegions</span><span class="wd-card-desc">Package Contents, Region Record Format, Per-Config Statistics, Region Names by Config</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_Deathmatch_v2.html"><span class="wd-card-name">Deathmatch</span><span class="wd-card-desc">What This Folder Holds, Match Flow, Components, Input, Registries and HUD</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_Emotes_v2.html"><span class="wd-card-name">Emotes</span><span class="wd-card-desc">Files, Emote Entities, Cosmetic Rows, Wiring</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_Experiences_v2.html"><span class="wd-card-name">Experiences</span><span class="wd-card-desc">What This Folder Holds, KOTH, SniperShowdown, How Values Combine</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_FactoryInvestment_01_v2.html"><span class="wd-card-name">FactoryInvestment 01</span><span class="wd-card-desc">What This Folder Holds, Investment Definition, Production Lines, Recipes</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_FactoryInvestment_v2.html"><span class="wd-card-name">FactoryInvestment</span><span class="wd-card-desc">What This Folder Holds, Recipe Registry, Upgrade Values</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_FlyByManager_v2.html"><span class="wd-card-name">FlyByManager</span><span class="wd-card-desc">Plugin Inventory, Plugin Root, Audio Events, How They Work Together</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_Gunsmith_v2.html"><span class="wd-card-name">Gunsmith</span><span class="wd-card-desc">Plugin Inventory, Root Game Feature, Frontend and Dev Map, Scene</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_Items_v2.html"><span class="wd-card-name">Items</span><span class="wd-card-desc">Layout and File Counts, Item Roster, Vendor Prices, Projectiles</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_Itemsmith_v2.html"><span class="wd-card-name">Itemsmith</span><span class="wd-card-desc">Layout and File Counts, Named Input Actions, Input Contexts and Key Bindings, Paint Palette</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_Parachutes_v2.html"><span class="wd-card-name">Parachutes</span><span class="wd-card-desc">Plugin Inventory, Movement Profiles, Inventory Items, Vendor Listings</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_PerformanceCaptures_v2.html"><span class="wd-card-name">PerformanceCaptures</span><span class="wd-card-desc">What This Folder Holds, Component, World Data, How Values Combine</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_PlayerHealthBar_v2.html"><span class="wd-card-name">PlayerHealthBar</span><span class="wd-card-desc">What This Folder Holds, HUD Widget, Data</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_PvE_v2.html"><span class="wd-card-name">PvE</span><span class="wd-card-desc">What This Folder Holds, Scenario Packs, AI Character Configs, Voice-Over Assets</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_Rewards_v2.html"><span class="wd-card-name">Rewards</span><span class="wd-card-desc">Package Contents, How the Calculator Works, Calculator Rows, Feed Strings</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_ShootingRange_v2.html"><span class="wd-card-name">ShootingRange</span><span class="wd-card-desc">What This Folder Holds, Match Flow and Components, How It Is Used</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_ShootingRangeTutorial_v2.html"><span class="wd-card-name">ShootingRangeTutorial</span><span class="wd-card-desc">What This Folder Holds, Match Flow and Components, Helicopter Fly-By, Quests and Text</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_Skins_v2.html"><span class="wd-card-name">Skins</span><span class="wd-card-desc">Layout, Cosmetic Rows, Skin Data Assets, Wiring</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_Spotting_v2.html"><span class="wd-card-name">Spotting</span><span class="wd-card-desc">What &quot;Spotting&quot; Covers, Package Contents, Challenge Calculator, Match-Score Payouts</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_Taxi_SkinsData_v2.html"><span class="wd-card-name">Taxi SkinsData</span><span class="wd-card-desc">What This Folder Holds, Registry and Scan, Cosmetic Row, Skin</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_TeamkillTracking_v2.html"><span class="wd-card-name">TeamkillTracking</span><span class="wd-card-desc">What This Folder Holds, How It Is Used</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_UnderbarrelGrenadeLauncher_v2.html"><span class="wd-card-name">UnderbarrelGrenadeLauncher</span><span class="wd-card-desc">Plugin Inventory, Attachment Item, Attachment Fragment: Weapon Setup, Ammo Container</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_Utility_v2.html"><span class="wd-card-name">Utility</span><span class="wd-card-desc">What This Folder Holds, Packs and Data Layers, How It Is Used</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_Vehicles_v2.html"><span class="wd-card-name">Vehicles</span><span class="wd-card-desc">Folder Layout and Family Map, Vehicle Chain: How the Assets Link, Vehicle Market, Vehicle Stats</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_Vehiclesmith_v2.html"><span class="wd-card-name">Vehiclesmith</span><span class="wd-card-desc">Plugin Inventory, Root Game Feature, Frontend Scene Entry, Dev Menu Map</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_WDAutomation_v2.html"><span class="wd-card-name">WDAutomation</span><span class="wd-card-desc">What This Folder Holds, Primary Asset Scan</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_WDCharacterComponents_v2.html"><span class="wd-card-name">WDCharacterComponents</span><span class="wd-card-desc">What This Folder Holds, Components Added</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_WDCore_v2.html"><span class="wd-card-name">WDCore</span><span class="wd-card-desc">What This Folder Holds, Components, Pawn Data Scan, Animation Set</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_Weapons_v2.html"><span class="wd-card-name">Weapons</span><span class="wd-card-desc">Folder layout, Weapon roster, Per-weapon ballistics, Default weapon attributes</span></a>
+<a class="wd-card" href="Wardogs_GameFeatures_WorldFeatures_v2.html"><span class="wd-card-name">WorldFeatures</span><span class="wd-card-desc">What This Folder Holds, HotZoneMagnet, Lootable, SpawnZoneTest</span></a>
+</div>
 
-## Plugins
+<h2 id="plugins">Plugins</h2>
 
-| Category | Page |
-|---|---|
-| BHAimAssist | [Wardogs — Plugin: BHAimAssist (v2)](Wardogs_Plugin_BHAimAssist_v2.html) |
-| BHFramework | [Wardogs — Plugin: BHFramework (v2)](Wardogs_Plugin_BHFramework_v2.html) |
-| BHSpectatorCamera | [Wardogs — Plugin: BHSpectatorCamera (v2)](Wardogs_Plugin_BHSpectatorCamera_v2.html) |
+<p class="wd-section-intro">Wardogs engine plugins: aim assist, framework settings and spectator camera.</p>
+
+<div class="wd-grid" markdown="0">
+<a class="wd-card" href="Wardogs_Plugin_BHAimAssist_v2.html"><span class="wd-card-name">BHAimAssist</span><span class="wd-card-desc">What This Plugin Holds, Pull Strength Curves, Slow Strength Curves, Reticle Edge Falloff</span></a>
+<a class="wd-card" href="Wardogs_Plugin_BHFramework_v2.html"><span class="wd-card-name">BHFramework</span><span class="wd-card-desc">What This Plugin Holds, Audio, Controls, General</span></a>
+<a class="wd-card" href="Wardogs_Plugin_BHSpectatorCamera_v2.html"><span class="wd-card-name">BHSpectatorCamera</span><span class="wd-card-desc">What This Plugin Holds, Input Actions, Key Bindings, How Values Combine</span></a>
+</div>
