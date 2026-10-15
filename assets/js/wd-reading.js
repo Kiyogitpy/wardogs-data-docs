@@ -15,7 +15,7 @@
   var WIDE_COLS = 5;           // this many columns or more: the first one stays in view
   var DUMP_LINES = 30;         // a code block longer than this starts collapsed
   var TOC_MIN_H2 = 4;          // pages with fewer sections get no "On this page"
-  var TOC_SIDE = "(min-width: 120rem)";
+  var TOC_SIDE = "(min-width: 66.5rem) and (min-height: 36rem)";   // the sidebar's lower part
   var NUMBER = /^[-+−~≈]?\d[\d,.\s]*(e[-+]?\d+)?\s*(%|x|×|s|ms|m|cm|km|kg|°|deg|mil|rpm|hp)?$/i;
   var BLANK = /^(|-|—|–|n\/a|none)$/i;
 
@@ -152,16 +152,23 @@
     details.appendChild(list);
     nav.appendChild(details);
 
-    // Under the title and its source line.
-    var h1 = main.querySelector("h1");
+    // Its place under the title and source line, kept for narrow screens.
+    var h1 = main.querySelector("h1"), home = document.createComment("wd-toc");
     var after = h1 && h1.nextElementSibling && h1.nextElementSibling.tagName === "P" ? h1.nextElementSibling : h1;
-    if (after) after.parentNode.insertBefore(nav, after.nextSibling);
-    else main.insertBefore(nav, main.firstChild);
+    if (after) after.parentNode.insertBefore(home, after.nextSibling);
+    else main.insertBefore(home, main.firstChild);
 
-    var side = window.matchMedia(TOC_SIDE);
+    var side = window.matchMedia(TOC_SIDE), sidebar = document.querySelector(".side-bar");
     function place() {
-      nav.classList.toggle("wd-toc-side", side.matches);
-      details.open = side.matches;
+      var inSidebar = side.matches && sidebar;
+      if (inSidebar) {
+        sidebar.insertBefore(nav, sidebar.querySelector(".wd-zone-toggle, .site-footer"));
+      } else {
+        home.parentNode.insertBefore(nav, home);
+      }
+      if (sidebar) sidebar.classList.toggle("wd-has-toc", !!inSidebar);
+      nav.classList.toggle("wd-toc-side", !!inSidebar);
+      details.open = !!inSidebar;
     }
     if (side.addEventListener) side.addEventListener("change", place); else side.addListener(place);
     place();
@@ -180,8 +187,9 @@
       if (i < 0) return;
       var a = links[i];
       a.classList.add("is-active");
-      if (side.matches && (a.offsetTop < list.scrollTop || a.offsetTop > list.scrollTop + list.clientHeight - a.offsetHeight)) {
-        list.scrollTop = a.offsetTop - list.clientHeight / 3;
+      if (nav.classList.contains("wd-toc-side")) {
+        var box = nav.getBoundingClientRect(), r = a.getBoundingClientRect();
+        if (r.top < box.top || r.bottom > box.bottom) nav.scrollTop += r.top - box.top - box.height / 3;
       }
     }
     window.addEventListener("scroll", function () {
