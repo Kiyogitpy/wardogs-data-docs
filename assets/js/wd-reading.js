@@ -190,11 +190,122 @@
     spy();
   }
 
+  /* Zone multiplier: a None / Zone / Prio zone switch in the sidebar. Tables of
+     challenge rewards (a "Row" and a "Resource" column) get a value column showing
+     each row's reward in that state, from assets/data/zone-rewards.json
+     (_tools/zone_rewards.py). The choice is remembered per browser. */
+  var ZONES = [["none", "None"], ["zone", "Zone"], ["prio", "Prio zone"]];
+  var ZONE_KEY = "wd-zone";
+  var SCRIPT_URL = document.currentScript && document.currentScript.src;
+
+  function savedZone() {
+    try {
+      var z = localStorage.getItem(ZONE_KEY);
+      if (z === "none" || z === "zone" || z === "prio") return z;
+    } catch (e) { /* storage blocked: default */ }
+    return "none";
+  }
+
+  function zoneTables(main) {
+    return Array.prototype.filter.call(main.querySelectorAll("table"), function (table) {
+      if (!table.tHead || !table.tBodies[0]) return false;
+      var heads = Array.prototype.map.call(table.tHead.rows[0].cells, function (c) { return c.textContent.trim(); });
+      return heads[0] === "Row" && heads[1] === "Resource";
+    });
+  }
+
+  function formatValue(entry, i) {
+    var v = entry.v[i];
+    var text = Math.abs(v) >= 100 || v === Math.round(v) ? Math.round(v).toLocaleString("en-US") : String(+v.toFixed(2));
+    return entry.per ? "×" + text : text;
+  }
+
+  function fillZoneColumns(tables, data) {
+    tables.forEach(function (table) {
+      var th = document.createElement("th");
+      th.textContent = "Value";
+      th.className = "num wd-zone-head";
+      table.tHead.rows[0].insertBefore(th, table.tHead.rows[0].cells[2] || null);
+      Array.prototype.forEach.call(table.tBodies[0].rows, function (row) {
+        var key = row.cells[0].textContent.trim() + "|" + row.cells[1].textContent.trim();
+        var entry = data[key], td = document.createElement("td");
+        td.className = "num wd-zone-cell";
+        if (entry) {
+          td._zone = entry;
+          if (entry.v[0] !== entry.v[1] || entry.v[0] !== entry.v[2]) td.classList.add("wd-zone-varies");
+          if (entry.per) td.title = "Times " + entry.per.join(", ") + " (set at runtime)";
+        } else {
+          td.textContent = "—";
+        }
+        row.insertBefore(td, row.cells[2] || null);
+      });
+    });
+  }
+
+  function showZone(zone) {
+    var i = ZONES.map(function (z) { return z[0]; }).indexOf(zone);
+    document.querySelectorAll(".wd-zone-cell").forEach(function (td) {
+      if (td._zone) td.textContent = formatValue(td._zone, i);
+    });
+    document.querySelectorAll(".wd-zone-toggle button").forEach(function (b) {
+      b.setAttribute("aria-checked", String(b.value === zone));
+    });
+    document.documentElement.setAttribute("data-wd-zone", zone);
+  }
+
+  function buildZoneToggle() {
+    var footer = document.querySelector(".side-bar .site-footer");
+    if (!footer) return;
+    var box = document.createElement("div"), label = document.createElement("div");
+    var group = document.createElement("div");
+    box.className = "wd-zone-toggle";
+    label.className = "wd-zone-label";
+    label.id = "wd-zone-label";
+    label.textContent = "Zone multiplier";
+    group.className = "wd-segmented";
+    group.setAttribute("role", "radiogroup");
+    group.setAttribute("aria-labelledby", "wd-zone-label");
+    ZONES.forEach(function (z) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.value = z[0];
+      b.textContent = z[1];
+      b.setAttribute("role", "radio");
+      b.addEventListener("click", function () {
+        try { localStorage.setItem(ZONE_KEY, z[0]); } catch (e) { /* not remembered */ }
+        showZone(z[0]);
+      });
+      group.appendChild(b);
+    });
+    // Arrow keys move along the three, as in any radio group.
+    group.addEventListener("keydown", function (e) {
+      var step = e.key === "ArrowRight" || e.key === "ArrowDown" ? 1 : e.key === "ArrowLeft" || e.key === "ArrowUp" ? -1 : 0;
+      if (!step) return;
+      e.preventDefault();
+      var buttons = group.querySelectorAll("button"), at = ZONES.map(function (z) { return z[0]; }).indexOf(document.documentElement.getAttribute("data-wd-zone"));
+      var next = buttons[(at + step + buttons.length) % buttons.length];
+      next.click();
+      next.focus();
+    });
+    box.appendChild(label);
+    box.appendChild(group);
+    footer.parentNode.insertBefore(box, footer);
+  }
+
   ready(function () {
     var main = document.querySelector(".main-content");
-    if (!main) return;
-    main.querySelectorAll(".table-wrapper > table").forEach(prepareTable);
-    collapseDumps(main);
-    buildToc(main);
+    buildZoneToggle();
+    if (main) {
+      main.querySelectorAll(".table-wrapper > table").forEach(prepareTable);
+      collapseDumps(main);
+      buildToc(main);
+    }
+    var tables = main ? zoneTables(main) : [];
+    showZone(savedZone());
+    if (!tables.length || !SCRIPT_URL) return;
+    fetch(new URL("../data/zone-rewards.json", SCRIPT_URL))
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (data) { fillZoneColumns(tables, data); showZone(savedZone()); })
+      .catch(function () { /* no values: the tables stay as written */ });
   });
 })();

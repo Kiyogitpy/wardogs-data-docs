@@ -573,3 +573,59 @@ $ue-btn-grey-hover: #46474a;
 @media (prefers-reduced-motion: reduce) {
   .wd-btn, .wd-card { transition: none; }
 }
+
+// Zone multiplier switch above the sidebar footer (assets/js/wd-reading.js). The chosen
+// side takes the matching section-pill gradient.
+.wd-zone-toggle {
+  width: 100%;
+  padding: 1rem 1rem 0;
+
+  @media (min-width: 50rem) { padding: 1rem 2rem 0; }
+  @media (min-width: 66.5rem) { width: $nav-width; }
+}
+
+.wd-zone-label {
+  margin-bottom: 0.4rem;
+  color: $ue-text-dim;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.wd-segmented {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  padding: 2px;
+  background: $ue-panel;
+  border: 1px solid $ue-border;
+  border-radius: 8px;
+
+  button {
+    padding: 0.45rem 0.1rem;
+    font: inherit;
+    font-size: 0.78rem;
+    white-space: nowrap;
+    font-weight: 500;
+    line-height: 1.2;
+    color: $ue-text;
+    background: transparent;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease;
+
+    &:hover { color: $ue-white; background: $ue-panel-raised; }
+    &[aria-checked="true"] { color: $ue-white; background: $ue-btn-grey; }
+    &[value="zone"][aria-checked="true"] { color: #000; background: linear-gradient(90deg, #4ebefe, #c0bbf9); }
+    &[value="prio"][aria-checked="true"] { color: #000; background: linear-gradient(90deg, #c576e7, #f0a6bc); }
+  }
+}
+
+// Values the zone changes stand out once a zone is chosen.
+[data-wd-zone="zone"] .main-content td.wd-zone-varies { color: #8fd3ff; font-weight: 600; }
+[data-wd-zone="prio"] .main-content td.wd-zone-varies { color: #f0a6bc; font-weight: 600; }
+
+@media (prefers-reduced-motion: reduce) {
+  .wd-segmented button { transition: none; }
+}

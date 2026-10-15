@@ -583,7 +583,7 @@ Same key set as table 15, mapped to `Spotting.Removed` reward tags.
 
 ## 17. Reward formulas (`DT_ChallengeRewards_SessionEvents_*`)
 
-Each row gives the currency tag and a formula for the reward. The formula variables (`BaseReward`, `KillStreakValue`, `CrewModifier` and others) are not defined in any pulled table; see the limitations below.
+Each row gives the currency tag and a formula for the reward. Most formula variables are literals inside the row itself (each resource's `Selectors` and `Variables`); the rest are runtime game values such as the event's base reward or kill streak. The **Value** column is each row evaluated as written, for the state picked with the **Zone multiplier** switch in the sidebar (you and the target both in a control zone, or both in a hot zone; `_tools/zone_rewards.py`). A value written as ×N is N times a runtime amount: hover it to see which.
 
 ### 17a. [`DT_ChallengeRewards_SessionEvents_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/DT_ChallengeRewards_SessionEvents_Shared.json) (161 rows)
 - **Package:** `Wardogs/Content/Meta/Challenges/DT_ChallengeRewards_SessionEvents_Shared.uasset`
@@ -1082,7 +1082,7 @@ Each row gives the currency tag and a formula for the reward. The formula variab
 
 ## 19. Still not pulled / limitations
 
-- **Formula variables:** `BaseReward`, `KillStreakValue`, `CrewModifier`, `LastVictimCount` and others appear only inside the formula strings. Their values are not in any table in this data, so the amounts a formula produces cannot be computed from these files.
+- **Formula variables:** literal values (`KillStreakValue`, `ControlZoneFactor`, `HotZoneFactor` and most others) are defined inside each row. Runtime game values (`LastVictimCount`, `KillStreak`, `CrewCount`, the event's base reward from the cash tables) and the `LiveCurves` scaling curves are not; the Value column takes a plain first kill with no repeat victim, a crew of one and a finished build, and shows rows that scale with a runtime amount as ×N.
 - **Shared definitions table:** [`DT_Challenges_SessionEvents_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/DT_Challenges_SessionEvents_Shared.json) has 0 rows in this build.
 - **Row fields:** the exported rows carry only the fields shown in each table (`Resources` and `Tag` for the reward tables; `RewardTag` and `Tag` for the lookup tables). No other fields exist in the export.
 - **Event triggers:** the file does not say which in-game action selects the destroy-vehicle, section or assist tables, or which heal and revive table applies to a given use.
