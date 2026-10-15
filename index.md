@@ -110,3 +110,12 @@ nav_order: 1
 <a class="wd-card" href="Wardogs_Plugin_BHFramework_v2.html"><span class="wd-card-name">BHFramework</span><span class="wd-card-desc">What This Plugin Holds, Audio, Controls, General</span></a>
 <a class="wd-card" href="Wardogs_Plugin_BHSpectatorCamera_v2.html"><span class="wd-card-name">BHSpectatorCamera</span><span class="wd-card-desc">What This Plugin Holds, Input Actions, Key Bindings, How Values Combine</span></a>
 </div>
+
+<div class="wd-kicker"><span class="wd-pill wd-pill-4">Analysis</span></div>
+<h2 id="balance-notes">Balance Notes</h2>
+
+<p class="wd-section-intro">Worked damage comparisons between game versions, calculated from the values on these pages.</p>
+
+<div class="wd-grid" markdown="0">
+<a class="wd-card" href="balance-notes.html"><span class="wd-card-name">Balance Notes</span><span class="wd-card-desc">Before/after damage per bullet, hits to kill and the multipliers behind each change</span></a>
+</div>

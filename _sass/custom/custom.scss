@@ -60,7 +60,7 @@ body {
   hr {
     border-color: $ue-border;
   }
-  a:not(.wd-card):not(.wd-btn) {
+  a:not(.wd-card):not(.wd-btn):not(.wd-note-card) {
     text-decoration: none;
     &:hover { text-decoration: underline; }
   }
@@ -641,4 +641,454 @@ $ue-btn-grey-hover: #46474a;
 
 @media (prefers-reduced-motion: reduce) {
   .wd-segmented button { transition: none; }
+}
+
+// Balance notes (_includes/note-*.html): a header with the headline figure, a before/after
+// comparison with damage bars and hits-to-kill pips, and the multiplication behind it.
+// "down" is pink, "up" is mint; the newer value takes the cyan section-pill gradient.
+$wd-down: #ff8a9e;
+$wd-up: #5fe0b8;
+$wd-new: #8fd3ff;
+$wd-new-grad: linear-gradient(90deg, #4ebefe, #c0bbf9);
+$wd-mono: "JetBrains Mono", ui-monospace, monospace;
+
+.wd-pill.wd-pill-4 { background: linear-gradient(90deg, #f0a6bc, #ffc79a); }
+
+.wd-note-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.5rem 3rem;
+  align-items: end;
+  padding: 2.5rem 0 0;
+
+  h1 { margin: 0.9rem 0 0.75rem; max-width: 22ch; }
+
+  @media (max-width: 50rem) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+.wd-note-kicker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.wd-note-status {
+  padding: 0.2rem 0.65rem;
+  border: 1px solid $ue-border-strong;
+  border-radius: 999px;
+  color: $ue-text-dim;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.main-content .wd-note-lede {
+  margin: 0 0 1rem;
+  font-size: 1.15rem;
+  color: $ue-text;
+  max-width: 60ch;
+}
+
+.main-content .wd-note-subject {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: $wd-mono;
+  font-size: 0.8rem;
+  color: $ue-text-dim;
+
+  li {
+    margin: 0;
+    &::before { content: none; }
+    + li::before { content: "·"; position: static; margin: 0 0.6rem; color: $ue-border-strong; }
+  }
+}
+
+// The headline number: big and tabular, in the tone colour.
+.wd-note-figure {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 14rem;
+  max-width: 20rem;
+  padding: 1.1rem 1.4rem 1.2rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: $radius-card;
+
+  .wd-note-figure-value {
+    font-family: $wd-mono;
+    font-size: clamp(2.75rem, 7vw, 4.25rem);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: $ue-white;
+  }
+  .wd-note-figure-label {
+    color: $ue-text-dim;
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  .is-down & .wd-note-figure-value { color: $wd-down; }
+  .is-up & .wd-note-figure-value { color: $wd-up; }
+
+  @media (max-width: 50rem) { max-width: none; }
+}
+
+// The model's assumptions: a quiet strip of chips under the header.
+.main-content .wd-note-model {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.9rem;
+  padding: 0.9rem 0 0;
+  border-top: 1px solid $ue-border;
+
+  .wd-note-model-label {
+    color: $ue-text-dim;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    margin: 0;
+    padding: 0.2rem 0.6rem;
+    background: $ue-panel-raised;
+    border-radius: $radius-small;
+    font-size: 0.82rem;
+    color: $ue-text;
+    &::before { content: none; }
+  }
+}
+
+// Before/after comparison: a grid of rows with ARIA table roles; on phones each row stacks.
+.wd-cmp {
+  --wd-cols: minmax(6.5rem, 0.7fr) minmax(12rem, 2.4fr) 6rem minmax(11rem, 1.3fr);
+  margin: 1.25rem 0 2rem;
+  padding: 0.5rem 0 0;
+  background: $ue-panel;
+  border: 1px solid $ue-border;
+  border-radius: $radius-panel;
+  font-size: 0.925rem;
+  overflow: hidden;
+}
+
+.wd-cmp-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.25rem;
+  padding: 0.5rem 1.25rem 0.75rem;
+  color: $ue-text-dim;
+  font-size: 0.8rem;
+
+  span { display: inline-flex; align-items: center; gap: 0.45rem; }
+  i { display: inline-block; width: 1.4rem; height: 0.55rem; border-radius: 2px; }
+  .wd-cmp-legend-hp { margin-left: auto; font-family: $wd-mono; }
+}
+
+// The earlier bar is hatched and the newer one solid on top of it: the hatching left
+// showing is what the change took away.
+.wd-swatch-from,
+.wd-bar-from {
+  background: repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.16) 0 2px, transparent 2px 5px);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+}
+.wd-swatch-to,
+.wd-bar-to {
+  background: $wd-new-grad;
+}
+
+.wd-cmp-head,
+.wd-cmp-row {
+  display: grid;
+  grid-template-columns: var(--wd-cols);
+  gap: 1.25rem;
+  align-items: center;
+  padding: 0.7rem 1.25rem;
+}
+
+.wd-cmp-head {
+  padding-block: 0.55rem;
+  background: $ue-panel-raised;
+  border-block: 1px solid $ue-border-strong;
+  color: $ue-white;
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  span:nth-child(3) { text-align: right; }
+}
+
+.wd-cmp-row {
+  position: relative;
+  border-bottom: 1px solid $ue-border;
+  &:last-child { border-bottom: 0; }
+  &:hover { background: $ue-panel-hover; }
+
+  // A changed hits-to-kill breakpoint gets an accent rule down the left edge.
+  &.is-break::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 3px;
+    border-radius: 0 3px 3px 0;
+    background: $wd-down;
+  }
+  &.is-break.is-up::before { background: $wd-up; }
+}
+
+.wd-cmp-label {
+  color: $ue-white;
+  font-weight: 600;
+}
+
+.wd-cmp-dmg {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.wd-cmp-bars {
+  position: relative;
+  flex: 1;
+  height: 1.1rem;
+
+  span {
+    position: absolute;
+    left: 0;
+    border-radius: 3px;
+  }
+  .wd-bar-from { top: 0; bottom: 0; }
+  .wd-bar-to { top: 0.25rem; bottom: 0.25rem; }
+}
+
+.wd-cmp-vals,
+.wd-cmp-hitnum {
+  font-family: $wd-mono;
+  font-size: 0.85rem;
+  white-space: nowrap;
+
+  .wd-was { color: $ue-text-dim; }
+  .wd-arrow { color: $ue-text-dim; opacity: 0.6; }
+  strong { color: $ue-white; font-weight: 500; }
+}
+.wd-cmp-vals { min-width: 8.5rem; text-align: right; }
+
+.wd-cmp-delta {
+  justify-self: end;
+  padding: 0.15rem 0.5rem;
+  border-radius: $radius-small;
+  font-family: $wd-mono;
+  font-size: 0.82rem;
+  white-space: nowrap;
+  color: $ue-text-dim;
+
+  .is-down > & { color: $wd-down; background: rgba(255, 138, 158, 0.1); }
+  .is-up > & { color: $wd-up; background: rgba(95, 224, 184, 0.1); }
+}
+
+// Hits to kill as pips, one per bullet: earlier hollow, newer filled. A bullet the change
+// adds is drawn in pink; one it saves stays as a mint ring on the earlier line.
+.wd-cmp-hits {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.wd-pips {
+  display: grid;
+  gap: 4px;
+
+  > span { display: flex; gap: 3px; }
+  i {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+  }
+  .wd-pips-from i { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35); }
+  .wd-pips-from i.is-gone { box-shadow: inset 0 0 0 1.5px $wd-up; }
+  .wd-pips-to i { background: $wd-new; }
+  .wd-pips-to i.is-extra { background: $wd-down; box-shadow: 0 0 0 2px rgba(255, 138, 158, 0.25); }
+}
+
+.wd-cmp-tag {
+  margin-left: 0.35rem;
+  font-style: normal;
+  font-size: 0.75rem;
+  color: $wd-down;
+  .is-up & { color: $wd-up; }
+}
+
+@media (max-width: 50rem) {
+  .wd-cmp-head { display: none; }
+  .wd-cmp-row {
+    grid-template-columns: 1fr auto;
+    gap: 0.55rem 1rem;
+    padding: 0.9rem 1rem;
+  }
+  .wd-cmp-dmg,
+  .wd-cmp-hits { grid-column: 1 / -1; }
+  .wd-cmp-delta { grid-row: 1; grid-column: 2; }
+  .wd-cmp-legend { padding-inline: 1rem; }
+}
+
+// The multiplication: each factor is a tile with its source below it. Changed factors
+// show what they were; the result ends the line on an outlined tile.
+.wd-formulas {
+  display: grid;
+  gap: 1rem;
+  margin: 1.25rem 0 2rem;
+}
+
+.wd-formula {
+  margin: 0;
+  padding: 1rem 1.25rem 1.25rem;
+  background: $ue-panel;
+  border: 1px solid $ue-border;
+  border-radius: $radius-panel;
+
+  figcaption {
+    margin-bottom: 0.75rem;
+    color: $ue-text-dim;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+}
+
+.wd-eq {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0.5rem;
+}
+
+.wd-op {
+  align-self: center;
+  padding: 0 0.1rem;
+  color: $ue-text-dim;
+  font-family: $wd-mono;
+  font-size: 1.1rem;
+}
+
+.wd-term {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 6.5rem;
+  padding: 0.6rem 0.8rem;
+  background: $ue-panel-raised;
+  border: 1px solid transparent;
+  border-radius: 8px;
+
+  b {
+    color: $ue-white;
+    font-family: $wd-mono;
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  small {
+    color: $ue-text-dim;
+    font-size: 0.78rem;
+    line-height: 1.3;
+    max-width: 14ch;
+  }
+  s {
+    text-decoration: none;
+    font-family: $wd-mono;
+    font-size: 0.72rem;
+  }
+  &.is-changed { border-color: rgba(255, 138, 158, 0.45); s { color: $wd-down; } }
+  &.is-new { border-color: rgba(143, 211, 255, 0.4); s { color: $wd-new; } }
+  &.is-result {
+    background: transparent;
+    border-color: $ue-border-strong;
+    s { color: $ue-text-dim; }
+  }
+}
+
+// "Bottom line" pull quote, and the template's placeholder notice.
+.main-content blockquote.wd-bottomline,
+.main-content blockquote.wd-note-placeholder {
+  margin: 1.25rem 0 1.5rem;
+  padding: 1.1rem 1.4rem;
+  border-radius: $radius-panel;
+  p { margin: 0; }
+}
+.main-content blockquote.wd-bottomline {
+  background: linear-gradient(90deg, rgba(78, 190, 254, 0.1), rgba(192, 187, 249, 0.04));
+  border: 1px solid rgba(143, 211, 255, 0.25);
+  border-left: 3px solid $wd-new;
+  color: $ue-white;
+  font-size: 1.05rem;
+}
+.main-content blockquote.wd-note-placeholder {
+  margin-top: 1.75rem;
+  background: rgba(255, 199, 154, 0.06);
+  border: 1px dashed rgba(255, 199, 154, 0.45);
+  color: $ue-text;
+}
+
+// Balance Notes index: one wide card per note, headline figure on the left.
+.wd-note-list {
+  display: grid;
+  gap: 1rem;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.wd-note-card {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.4rem 1.6rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: $radius-card;
+  color: $ue-text;
+  text-decoration: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.16);
+  }
+  .wd-note-card-figure {
+    font-family: $wd-mono;
+    font-size: 2rem;
+    letter-spacing: -0.04em;
+    color: $ue-white;
+  }
+  &.is-down .wd-note-card-figure { color: $wd-down; }
+  &.is-up .wd-note-card-figure { color: $wd-up; }
+  .wd-note-card-body { display: flex; flex-direction: column; gap: 0.25rem; }
+  .wd-note-card-meta { color: $ue-text-dim; font-size: 0.78rem; }
+  .wd-note-card-name { color: $ue-white; font-weight: 600; font-size: 1.1rem; letter-spacing: -0.01em; }
+  .wd-note-card-desc { color: $ue-text-dim; font-size: 0.9rem; line-height: 1.45; }
+
+  @media (max-width: 40rem) {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wd-note-card { transition: none; }
 }

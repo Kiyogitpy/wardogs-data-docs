@@ -1,0 +1,63 @@
+{%- comment -%}
+  Before/after damage comparison for a balance note, one row per armour tier (or any other case).
+  Reads page.note.compare:
+    hp            target health used for hits-to-kill (default 100)
+    from / to     column labels, e.g. "Season 1" / "Season 2"
+    rows          list of { label, from, to } with damage per bullet as quoted strings ("30.80"),
+                  so the page shows them exactly as written; the maths converts them to numbers.
+  Change and hits-to-kill are worked out here, so they always agree with the damage values.
+{%- endcomment -%}
+{%- assign c = page.note.compare -%}
+{%- assign hp = c.hp | default: 100 -%}
+{%- assign from_label = c.from | default: "Before" -%}
+{%- assign to_label = c.to | default: "After" -%}
+{%- assign max = 0 -%}
+{%- for r in c.rows -%}
+  {%- assign a = r.from | plus: 0 -%}
+  {%- assign b = r.to | plus: 0 -%}
+  {%- if a > max %}{% assign max = a %}{% endif -%}
+  {%- if b > max %}{% assign max = b %}{% endif -%}
+{%- endfor -%}
+<div class="wd-cmp" role="table" aria-label="Damage per bullet and hits to kill, {{ from_label }} to {{ to_label }}" markdown="0">
+  <div class="wd-cmp-legend" aria-hidden="true">
+    <span><i class="wd-swatch-from"></i>{{ from_label }}</span>
+    <span><i class="wd-swatch-to"></i>{{ to_label }}</span>
+    <span class="wd-cmp-legend-hp">{{ hp }} HP target</span>
+  </div>
+  <div class="wd-cmp-head" role="row">
+    <span role="columnheader">{{ c.label | default: "Case" }}</span>
+    <span role="columnheader">Damage per bullet</span>
+    <span role="columnheader">Change</span>
+    <span role="columnheader">Hits to kill</span>
+  </div>
+  {%- for r in c.rows %}
+  {%- assign a = r.from | plus: 0 -%}
+  {%- assign b = r.to | plus: 0 -%}
+  {%- assign d = b | minus: a | times: 100 | divided_by: a | round: 1 -%}
+  {%- assign ha = hp | divided_by: a | ceil -%}
+  {%- assign hb = hp | divided_by: b | ceil -%}
+  {%- assign hits_max = ha -%}
+  {%- if hb > ha %}{% assign hits_max = hb %}{% endif -%}
+  {%- if d < 0 %}{% assign tone = "down" %}{% elsif d > 0 %}{% assign tone = "up" %}{% else %}{% assign tone = "flat" %}{% endif %}
+  <div class="wd-cmp-row is-{{ tone }}{% if ha != hb %} is-break{% endif %}" role="row">
+    <span class="wd-cmp-label" role="rowheader">{{ r.label }}</span>
+    <span class="wd-cmp-dmg" role="cell">
+      <span class="wd-cmp-bars" aria-hidden="true">
+        <span class="wd-bar-from" style="width: {{ a | times: 100 | divided_by: max | round: 2 }}%"></span>
+        <span class="wd-bar-to" style="width: {{ b | times: 100 | divided_by: max | round: 2 }}%"></span>
+      </span>
+      <span class="wd-cmp-vals"><span class="wd-was">{{ r.from }}</span><span class="wd-arrow"> → </span><strong>{{ r.to }}</strong></span>
+    </span>
+    <span class="wd-cmp-delta" role="cell">{% if d < 0 %}−{{ d | abs }}%{% elsif d > 0 %}+{{ d }}%{% else %}no change{% endif %}</span>
+    <span class="wd-cmp-hits" role="cell">
+      <span class="wd-pips" aria-hidden="true">
+        <span class="wd-pips-from">{% for i in (1..ha) %}<i{% if i > hb %} class="is-gone"{% endif %}></i>{% endfor %}</span>
+        <span class="wd-pips-to">{% for i in (1..hb) %}<i{% if i > ha %} class="is-extra"{% endif %}></i>{% endfor %}</span>
+      </span>
+      <span class="wd-cmp-hitnum"><span class="wd-was">{{ ha }}</span><span class="wd-arrow"> → </span><strong>{{ hb }}</strong>
+        {%- if hb > ha %} <em class="wd-cmp-tag">+{{ hb | minus: ha }} hit</em>{% elsif hb < ha %} <em class="wd-cmp-tag">−{{ ha | minus: hb }} hit</em>{% endif -%}
+      </span>
+    </span>
+  </div>
+  {%- endfor %}
+</div>

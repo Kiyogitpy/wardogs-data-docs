@@ -1,0 +1,28 @@
+{%- comment -%}
+  Balance note header: season pill, title, lede, subject line, headline figure and the model's assumptions.
+  Reads page.note; the front matter of any page under Balance Notes shows the shape.
+{%- endcomment -%}
+{%- assign n = page.note -%}
+<header class="wd-note-head is-{{ n.tone | default: 'flat' }}" markdown="0">
+  <div class="wd-note-intro">
+    <div class="wd-note-kicker">
+      <span class="wd-pill wd-pill-4">{{ n.seasons }}</span>
+      {%- if n.status %}<span class="wd-note-status">{{ n.status }}</span>{% endif %}
+    </div>
+    <h1>{{ page.title }}</h1>
+    <p class="wd-note-lede">{{ n.lede }}</p>
+    {%- if n.subject %}
+    <ul class="wd-note-subject">{% for s in n.subject %}<li>{{ s }}</li>{% endfor %}</ul>
+    {%- endif %}
+  </div>
+  <div class="wd-note-figure">
+    <span class="wd-note-figure-value">{{ n.figure }}</span>
+    <span class="wd-note-figure-label">{{ n.figure_label }}</span>
+  </div>
+  {%- if n.assumptions %}
+  <div class="wd-note-model">
+    <span class="wd-note-model-label">Model</span>
+    <ul>{% for a in n.assumptions %}<li>{{ a }}</li>{% endfor %}</ul>
+  </div>
+  {%- endif %}
+</header>
