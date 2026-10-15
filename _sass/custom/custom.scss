@@ -79,9 +79,10 @@ body {
 
   th, td {
     background: transparent;
+    text-align: left;
     border-bottom: 1px solid $ue-border;
     border-left: 0;
-    padding: 0.65rem 1rem;
+    padding: 0.5rem 1rem;
     white-space: normal;
     min-width: 6rem;
   }
@@ -121,8 +122,19 @@ div.highlighter-rouge {
 // Header, sidebar and search.
 .site-title {
   font-weight: 800;
+  font-size: 1.1rem !important;
+  line-height: 1.2;
   letter-spacing: -0.02em;
   color: $ue-white;
+}
+
+// Top-level nav reads as quiet grey text; links inside pages stay blue.
+.nav-list .nav-list-item .nav-list-link {
+  color: $ue-text;
+}
+
+.nav-list .nav-list-item .nav-list-expander {
+  color: $ue-text-dim;
 }
 
 .side-bar {
@@ -176,6 +188,9 @@ input:focus-visible {
     color: $ue-text;
     max-width: 60ch;
     margin-bottom: 2rem;
+  }
+  code {
+    white-space: nowrap;
   }
 }
 
