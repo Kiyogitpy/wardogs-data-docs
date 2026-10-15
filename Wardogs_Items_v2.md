@@ -1,0 +1,450 @@
+# Wardogs — Items Reference (v2)
+*Extracted from cooked game data exported to JSON, source `Wardogs/Content/Items/` (254 files). Every number below comes from the exported properties; anything the dump does not contain is marked as such.*
+
+> **How the files are structured:** each `.json` file is not one object. It holds several export blocks, each starting with a `--- export: <Kind> / <Name> ---` header followed by its own JSON object. Across the category there are 1,384 blocks: 225 `UPrimaryDataAsset` roots (the items and assets people actually use), 1,130 `UObject` sub-objects (the "fragments" each item points to), 26 `UCurveFloat`, 2 `UCurveTable`, and 1 `UDataAsset`. A primary item lists its fragments in `DataFragments`; the fragment blocks in the same file hold the values.
+
+---
+
+## 1. Inventory Summary
+
+| Folder | Primary assets | Main type(s) | Notes |
+|---|---|---|---|
+| `Resources/Ammo` | 97 (93 items) | BHInventoryItemDefinition | Every caliber and round variant, plus 3 audio assets and 1 debug projectile |
+| `Attachments/Magazines` | 23 | BHInventoryItemDefinition | Magazines, drums, and internal cylinders/boxes (internal ones have no gunsmith entry) |
+| `Vehicles/Weapons` | 12 | BHInventoryItemDefinition | Vehicle turrets, mounted MGs, helicopter cannon/rocket pods |
+| `Clothing/Backpacks` | 10 | BHInventoryItemDefinition | Storage bags, pouch, and sling variants |
+| `Attachments/Sights` | 8 | BHInventoryItemDefinition | Optics, iron sights |
+| `Attachments/Muzzle_Devices` | 7 | BHInventoryItemDefinition | Suppressors and brakes |
+| `Weapons/AR` | 5 | BHInventoryItemDefinition | Components only (barrels, grip, handguard, stock) |
+| `Attachments/Foregrips` | 4 | BHInventoryItemDefinition | Foregrips and the Grip Pod bipod |
+| `Vehicles/Storage` | 4 | BHInventoryItemDefinition | Vehicle cargo containers |
+| `Weapons/Pistol` | 4 | BHInventoryItemDefinition | Pistol components |
+| `Clothing/Vests` | 3 | BHInventoryItemDefinition | Tac vests (quick-slot providers) |
+| `Weapons/SMG` | 3 | BHInventoryItemDefinition | SMG components |
+| `Consumables/Bandage` | 2 items + 4 support | BHInventoryItemDefinition, BHAnimationSet, WDAudioData | Bandage and IFAK |
+| `Throwable/Grenades` | 2 items + 3 support | BHInventoryItemDefinition, BHAnimationSet, WDAudioData | M67 frag and gold variant |
+| `Weapons/Launcher` | 2 items + 2 anim sets | BHInventoryItemDefinition | Two artillery/tank barrel test items |
+| `Attachments/Grips`, `Handguards`, `Stocks` | 1 each | BHInventoryItemDefinition | Single components |
+| `Placeables/AmmoCrate` | 1 | BHInventoryItemDefinition | Ammo Crate |
+| `Weapons/Fists` | 1 item + 2 support | BHInventoryItemDefinition, BHAnimationSet, WDAudioData | Unarmed |
+| `Weapons/LMG` | 1 | BHInventoryItemDefinition | LMG barrel component |
+| `Attachments/Archetypes` | 12 | WDAttachmentArchetype | Slot-type definitions (bone, tag) |
+| `Attachments/Utilities` | 1 | BHAnimationSet | Grip Pod animation set |
+| `Weapons/` (root) | 8 aim-assist settings + 1 filter | BHAimAssistSettingsData, BHAimAssistFilterData | One per weapon class |
+| `Resources/Ammo/Curves`, `Throwable/Curves`, `Weapons/Curves` | 28 | CurveFloat, CurveTable | See section 11 |
+
+**Totals:** 188 item definitions (`BHInventoryItemDefinition`), 225 primary assets in all, 254 files. 
+
+---
+
+## 2. How an Item Is Built (Fragment Model)
+
+An item is a `BHInventoryItemDefinition` with an `ItemId` tag, `ItemContext` tags, a `DisplayName`, and a `DataFragments` array. Each fragment is a separate block that supplies one aspect of the item:
+
+| Fragment type | Key properties | Blocks in dump | What it controls |
+|---|---|---|---|
+| `BHInventoryFragment_Weight` | `Weight` | 55 (46 with a value) | Carry weight. Unit not stated in dump. |
+| `BHInventoryFragment_Stackable` | `MaxStackSize`, `MaxStackSizeOverrides` (keyed by slot/type tag) | 93 | Inventory stack limit, with per-slot overrides |
+| `BHInventoryFragment_CustomShape` | `Dimensions` (X, Y) | 147 | Inventory grid footprint. X and Y read as columns and rows (not verified in-game). |
+| `BHInventoryFragment_Droppable` | `DroppedMesh`, `RelativeRotation`, `MaterialOverrides`, box/offset overrides | 145 | World drop appearance |
+| `BHInventoryFragment_UserInterface` | `bIsVisibleOnEquippedUI`, `DisplayedItems`, `bDisplayIncludeAllSlots` | 154 | Inventory and equipped-UI display |
+| `BHInventoryFragment_SubSlotSupport` | `Containers[]` (see below) | 58 | Child-slot storage: magazines in weapons, ammo in vehicles, pockets in packs |
+| `WDInventoryFragment_Attachment` | `AttachmentData` (type tag, applied GEs, removable flag, reload rate) | 54 | Gunsmith attachment behaviour |
+| `WDInventoryFragment_Gunsmith` | `ItemType` | 55 | Whether the item appears in the gunsmith (`EWDGunsmithItemType::Attachment`) |
+| `WDInventoryFragment_Projectile` | `ProjectileData` (object reference) | 93 | Links an ammo item to its `WDProjectileData` asset |
+| `WDInventoryFragment_Audio` | `AudioDataAsset` | 155 | Pickup and handling sounds |
+| `WDInventoryFragment_ItemActor` | `ExtensionDataFragments[]` | 8 | Groups the extension blocks for a holdable/consumable |
+| `WDInventoryFragment_QuickSlots` | `NumberOfAddedQuickSlots` | 3 | Extra quick slots granted by equipment |
+| `WDInventoryFragment_EquippedEffects` | `AppliedEffects` | 3 | Gameplay effects applied while worn |
+| `WDItemsmithDataFragment_CameraData` | `CameraParams` | 3 | Gunsmith preview camera |
+
+### 2a. Sub-slot container fields (`BHInventoryFragment_SubSlotSupport.Containers[]`)
+
+| Field | Meaning (as observed) |
+|---|---|
+| `ContainerIdentifier` | Tag for the slot family. Most backpack containers have `None` here. Attachment slots use `Item.Attachment.*` or `Item.Ammo` / `Inventory.Slot.Vehicle.Storage`. |
+| `Filter.SupportFilter` | `AllowList`, `BlockList`, or `BlockPriority`. Decides which items may enter. |
+| `Filter.AllowedSubSlotContext` | Context tags that pass the filter (e.g. `Item.Caliber.556mm`) |
+| `GridSize` | Size of that container in grid cells (X x Y) |
+| `MaxSlotAmountStackSize` | **Capacity for magazines.** Magazine names match this value exactly (30 RND = 30, 75 RND drum = 75, 200 RND box = 200, 130 RND = 130). Applied to vehicle ammo slots as well. |
+| `DefaultItems`, `DefaultContainerItems` | Items loaded on spawn. The M4 Standard Mag lists `Id.Item.556mm` in `DefaultItems` and `Id.Item.556mm.Tracer` in `DefaultContainerItems`. |
+
+### 2b. Item definition flags seen
+
+| Field | Values in dump |
+|---|---|
+| `ItemContext` | Ammo items carry `Item.Ammo` (92) and `Item.Context.ForceToStorage` (92). Equippable items carry `Item.Context.Equippable` (33). Attachments carry `Item.Attachment.<slot>`. |
+| `Item.Ammo.Type.*` | `FMJ.Tracer` (28), `HollowPoint` (12), `HollowPoint.Tracer` (12), `ArmorPiercing` (11), `ArmorPiercing.Tracer` (11) |
+| `DisplayName.SourceString` | Present on 174 of 188 items. The 14 without one are all attachment or weapon-component parts (3 attachment grips/handguards/stocks and 11 weapon components). |
+
+---
+
+## 3. Attachments
+
+### 3a. Attachment Archetypes (`Attachments/Archetypes`)
+
+Twelve `WDAttachmentArchetype` assets define each slot's `AttachmentId` tag, the skeletal bone it attaches to, and (in two cases) a bone offset.
+
+| Archetype | AttachmentId | Bone | Category | Bone offset |
+|---|---|---|---|---|
+| DA_BarrelAttachmentArchetype | Item.Attachment.Barrel | barrel_Attach | Component | - |
+| DA_GripAttachmentArchetype | Item.Attachment.Grip | grip_Attach | Component | - |
+| DA_HandguardAttachmentArchetype | Item.Attachment.Handguard | handguard_Attach | Component | (0, -3, 3) |
+| DA_MagazineAttachmentArchetype | Item.Attachment.Magazine | mag01_Attach | - | - |
+| DA_MountLeftAttachmentArchetype | Item.Attachment.MountLeft | leftRail_Attach | - | - |
+| DA_MountRightAttachmentArchetype | Item.Attachment.MountRight | rightRail_Attach | - | - |
+| DA_MountTopAttachmentArchetype | Item.Attachment.MountTop | topRail_Attach | - | - |
+| DA_MountUnderAttachmentArchetype | Item.Attachment.MountUnder | bottomRail_Attach | - | - |
+| DA_MuzzleAttachmentArchetype | Item.Attachment.Muzzle | muzzle_Attach | - | - |
+| DA_SightAttachmentArchetype | Item.Attachment.Sight | sight_Attach | - | - |
+| DA_StockAttachmentArchetype | Item.Attachment.Stock | stock_Attach | Component | - |
+| DA_UnderbarrelAttachmentArchetype | Item.Attachment.Underbarrel | underbarrel_Attach | - | (0, 2.5, 0) |
+
+Attachment categories on the item side (`AttachmentData.AttachmentType`, 54 items): Magazine 19, Sight 8, Muzzle 7, Grip 6, Barrel 5, Handguard 4, Stock 4, Bipod 1 (the Grip Pod).
+
+Across the 54 attachment items, `bCanBeRemovedInGame` is `True` on 34 and `False` on 20. `bDiscardWhenEmptyOnReload` is `False` on all 54.
+
+### 3b. Magazines (`Attachments/Magazines`, 23 items)
+
+Capacity is taken from the magazine's `MaxSlotAmountStackSize` (section 2a).
+
+| Asset | Display | Weight | Capacity | Grid | Caliber | Gunsmith |
+|---|---|---|---|---|---|---|
+| ID_556STANAG_Mag_Standard | STANAG 30 RND Magazine | 0.53 | 30 | 1x2 | 556mm | Yes |
+| ID_A91_Mag_Standard | A91 Standard Mag | - | 30 | 1x2 | 556mm | Yes |
+| ID_AK74M_Mag_Standard | AK74 30 RND Magazine | 0.55 | 30 | 1x2 | 545mm | Yes |
+| ID_AK74M_Mag_Extended | AK74 60 RND Magazine | 0.93 | 60 | 1x3 | 545mm | Yes |
+| ID_AK74M_Mag_75rnd | AK74 75 RND Drum Magazine | 2.08 | 75 | 2x2 | 545mm | Yes |
+| ID_AK74M_Mag_Plum_130rnd | AK74-M Extended Mag | - | 130 | 1x2 | 545mm | No |
+| ID_AR_Mag_Extended | AR Extended Mag | - | 45 | 1x2 | 545mm | Yes |
+| ID_Glock17_Mag_Standard | GGX 17 RND Magazine | 0.28 | 17 | - | 9mm | Yes |
+| ID_Glock17_Mag_Extended | Glock 17 Extended Mag | - | 30 | 2x1 | 9mm | Yes |
+| ID_KH2002_Mag_Standard | KH2002 Standard Mag | - | 30 | 1x2 | 556mm | Yes |
+| ID_KH2002_Mag_Extended | KH2002 Extended Mag | - | 45 | 1x2 | 556mm | Yes |
+| ID_M4_Mag_Standard | M4 Standard Mag | - | 30 | 1x2 | 556mm | Yes |
+| ID_M4_Mag_Extended | M4 Extended Mag | - | 45 | 1x2 | 556mm | Yes |
+| ID_STANAG_Mag_Extended90rd | M4 Extended Mag (90 rd) | - | 90 | 1x2 | 556mm | No |
+| ID_TAR21_Mag_Standard | TAR21 Standard Mag | - | 30 | 1x2 | 556mm | Yes |
+| ID_M249_Mag_Standard | M249 200 RND Box | 3.14 | 200 | 2x3 | 556mm | Yes |
+| ID_SKS_Mag_Extended | SKS Extended Mag | - | 20 | 1x2 | 762mm | Yes |
+| ID_SKS_Mag_Internal | SKS Internal Mag | - | 10 | - | 762mm | No |
+| ID_Mosin_Mag_Extended10rd | SV98 Extended Mag | - | 10 | 1x2 | 762x54mm | No |
+| ID_Mosin_Mag_Extended20rd | SV98 Extended Mag | - | 20 | 1x2 | 762x54mm | No |
+| ID_Judge_Mag_Internal | Judge Bullet Cylinder | - | 6 | - | 45Colt | No |
+| ID_M12G_Mag_Internal | M500 Internal Mag | - | 6 | - | 12g | No |
+| ID_MMGL_Mag_Internal | MMGL Internal Mag | - | 6 | - | 40mm | No |
+
+Notes: "Internal" magazines have no gunsmith entry and no grid. Two different items are both labelled "M4 Extended Mag" (`ID_M4_Mag_Extended` at 45 and `ID_STANAG_Mag_Extended90rd` at 90), and the two SV98 mags share one name. Display names are not unique keys; use the asset name.
+
+### 3c. Optics and Muzzle Devices
+
+| Asset | Display | Weight | Grid | Category |
+|---|---|---|---|---|
+| ID_10xScope | 6-10x Scope MRAD | 0.98 | 3x1 | Sight |
+| ID_10xScopeMoa | 6-10x Scope MOA | 0.98 | 3x1 | Sight |
+| ID_4xElcanSpectr | 4x Elcan Spectr | 0.66 | 2x1 | Sight |
+| ID_4xHybrid | 4x Hybrid | - | 2x1 | Sight |
+| ID_6xScope | 3-6x Scope | - | 2x1 | Sight |
+| ID_OPT_08 | 2.5x Combat Optic | 0.4 | 2x1 | Sight |
+| ID_EotechHoloSight | Holographic Sight | 0.25 | - | Sight |
+| ID_CantedIrons | CantedIrons | - | - | Sight |
+| ID_MZL_04 | GOL Multi-Caliber Suppressor | 0.75 | 1x2 | Muzzle |
+| ID_MZL_05 | SG Multi-Caliber Suppressor | 0.6 | 1x2 | Muzzle |
+| ID_MZL_06 | 12 Gauge Suppressor | 0.8 | 1x2 | Muzzle (has gunsmith camera data) |
+| ID_MZL_08 | Hexagon 762 Suppressor | 0.55 | 1x2 | Muzzle |
+| ID_MZL_09 | PBS-4 Suppressor | 0.8 | 1x2 | Muzzle |
+| ID_MZL_10 | TGP-A Suppressor 5.45 | 0.7 | 1x2 | Muzzle |
+| ID_PWSCQB74 | CQB 74 Brake | 0.22 | - | Muzzle |
+
+### 3d. Foregrips, Grips, Handguards, Stocks
+
+| Asset | Display | Weight | Category | Notes |
+|---|---|---|---|---|
+| ID_FGP_02 | TDG Vertical Foregrip | 0.13 | Grip | - |
+| ID_FGP_03 | AFG Angled Foregrip | 0.08 | Grip | - |
+| ID_FGP_04 | Grip Pod | 0.26 | Bipod | Grid 1x2; uses `AnimSet_FGP_04` (Attachments/Utilities) |
+| ID_RK6_Grip | RK6 Tactical Foregrip | 1.05 | Grip | - |
+| ID_AK74MIMIEGGrip | (no display) | - | Grip | ItemId `ID.Item.AK74MIMIEGGrip` |
+| ID_ZenitHandguard | (no display) | - | Handguard | Child slot accepts `Item.Attachment.Underbarrel` (BlockPriority) |
+| ID_ZenitStock | (no display) | - | Stock | - |
+
+### 3e. Weapon Components (test and in-development)
+
+These are the sub-parts a weapon is built from. The base weapon definitions (e.g. the M4 receiver) are **not** in this folder (see section 12).
+
+| Folder | Components |
+|---|---|
+| `Weapons/AR` | ID_AR_01_BRL_02 (barrel, muzzle child slot), ID_AR_02_BRL_01 (barrel), ID_AR_02_GRP_05 (grip), ID_AR_02_HGD_04 "LVOA Handguard" (underbarrel child slot), ID_AR_02_STK_04 (stock) |
+| `Weapons/SMG` | ID_SMG_01_BRL_03 (barrel), ID_SMG_01_HGD_01 (handguard), ID_RS2Stock "RS2 Slim" (stock, ItemId `ID.Item.SMG_01_STK_05`) |
+| `Weapons/Pistol` | ID_Pistol_01_BRL_07 (barrel), ID_Pistol_01_GRP_01 (grip), ID_Pistol_01_HGD_02 (handguard), ID_Pistol_01_STK_01 (stock) |
+| `Weapons/LMG` | ID_LMG_01_BRL_06 (barrel) |
+
+---
+
+## 4. Clothing and Equipment
+
+### 4a. Backpacks and Pouch (`Clothing/Backpacks`, 10 items)
+
+Container grid is listed as `X x Y` cells, and `Filter` is shown where present. "Sling" variants add a weapon-slot container (BlockPriority on Primary, Secondary, Sidearm, Specialist) with capacity 1.
+
+| Asset | Display | Weight | Item grid | Containers (grid, filter) |
+|---|---|---|---|---|
+| ID_Pouch | Pouch | 0.3 | 3x2 | 3 x 1x2 (BlockList) |
+| ID_SmallBackpack | Small Backpack | 0.5 | 2x4 | 1 x 2x4 |
+| ID_MediumBackpack | Medium Backpack | 0.88 | 3x5 | 1 x 3x5 |
+| ID_MediumSlingBackpack | Medium Backpack + Sling | 4.0 | 3x5 | 2x5 weapon-slot (BlockPriority, cap 1) + 3x5 |
+| ID_LargeBackpack | Large Backpack | 1.5 | 4x6 | 1 x 4x6 |
+| ID_LargeSlingBackpack | Large Backpack + Sling | 1.5 | 4x6 | 2x5 weapon-slot (cap 1) + 4x6 |
+| ID_ExtraLargeSlingBackpack | Large Backpack + 2 Slings | 1.5 | 5x6 | 2x5 (cap 1) + 4x6 + 1x2 (cap 1) |
+| ID_BPAK_005 | Field Backpack | 0.8 | 3x3 | 3 x 2x2 |
+| ID_BPAK_006 | Assault Backpack | 1.3 | 3x5 | 1x3, 3x5, 1x3 |
+| ID_BPAK_007 | Halftrack Backpack | 2.78 | 3x3 | 1x5, 4x5, 1x5 |
+
+Note: Medium Backpack + Sling reads 4.0 weight against 0.88 for the plain Medium. The sling variants' weight is far higher than the bag alone; the dump does not explain why.
+
+### 4b. Tac Vests (`Clothing/Vests`, 3 items)
+
+| Asset | Display | Weight | Grid | Extra quick slots | Equipped effect |
+|---|---|---|---|---|---|
+| ID_SmallTacVest | Small Tac Vest | 0.82 | 4x3 | 2 | GE_Item_SmallTacVest_C |
+| ID_MediumTacVest | Medium Tac Vest | 1.65 | 4x3 | 4 | GE_Item_MediumTacVest_C |
+| ID_LargeTacVest | Large Tac Vest | 3.6 | 4x3 | 6 | GE_Item_LargeTacVest_C |
+
+Vests give no container of their own; their capacity comes from the quick-slot count.
+
+---
+
+## 5. Consumables and Medical Items
+
+| Property | Bandage (`ID_Bandage`) | Individual First Aid Kit (`ID_SuperBandage`) |
+|---|---|---|
+| Display | Bandage | Individual First Aid Kit |
+| ItemId | Id.Item.Bandage | Id.Item.SuperBandage |
+| Weight | 0.08 | 0.16 |
+| Max stack | 5 | Not set |
+| Grid | not set (default) | not set (default) |
+| Heal (Attribute.Gameplay.Health) | **+35** per use, applied as delta | **+100** per use, applied as delta |
+| Continuous use | `bContinuousUse` = True | Not extracted |
+| Context tags | Appliable.Context.HealSelf, Appliable.Context.HealFriendly | Not extracted |
+| Applied effect | GE_UseAppliable_C | GE_UseAppliable_C |
+| Primary use tag | Action.Appliable.PrimaryUse | Not extracted |
+| Secondary use | Action.Appliable.Bandage.SecondaryUse, requires State.Player.Injured and State.Player.Vitality.Alive | Action.Appliable.Bandage.SecondaryUse (same requirements, not fully extracted) |
+| Holdable mesh | SK_Bandage_Long (material MI_Bandage_Long) | SK_Medkit_SuperBandage |
+| Animation set | AnimSet_Bandage | AnimSet_SuperBandage |
+| Audio | ID_Bandage_Audio | ID_IFAK_Audio |
+| Spatial tracker | Applies only to friendlies (`bShouldOnlyApplyToFriendly` = True); checks WorldGrid.Layer.Character | Same class, same friendly-only setting |
+
+Input behaviour is shared: the primary-use input (`Input.NamedActions.Appliable.PrimaryUse`) maps to `WDItemInputBehavior_ActivateAppliableAction` with `Action.Appliable.Bandage.PrimaryUse`, secondary use maps to `...SecondaryUse`, and the completion action is bound to the same two uses. Inspection (`Action.Item.Inspect`) is bound on the item too. The shared key set is `IMC_Appliable` (section 11).
+
+Other consumable item (not decoded further): `Placeables/AmmoCrate/ID_AmmoCrate` (2x2 grid, a `WDItemExtensionData_Placeable` with collision size, placeable class and init data). Those three values are present in the dump but were not extracted.
+
+---
+
+## 6. Throwables (`Throwable/Grenades`)
+
+| Asset | Display | Weight | ThrowableClass | Throw velocity | Resource used |
+|---|---|---|---|---|---|
+| ID_M67Grenade | M67 Frag Grenade | 0.4 | B_FragGrenade | 2500 | Id.Item.M67Grenade x1 |
+| ID_M67Grenade_Gold | Golden Grenade | - | B_GoldFragGrenade | 2200 | Id.Item.GoldM67Grenade x1 |
+
+Both throws use `Action.Throw.Primary`. Pitch and velocity curves: `CRV_ThrowPitch_Overarm`, `CRV_ThrowPitch_OverarmStrong`, `CRV_ThrowPitch_Underarm` (pitch), and `CRV_ThrowVelocity_OverarmStrong`, `CRV_ThrowVelocity_Underarm` (velocity). `DropSpawnOffset` is (0, 0, -40) on the M67. The gold variant has no `Weight` property. Its drop and throw data share the M67 audio (`ID_M67Grenade_Audio`). Full throw action fields (VelocityCurve reference, bUseConsistentVelocity) are present in the dump but only partly decoded here.
+
+---
+
+## 7. Ammunition (`Resources/Ammo`)
+
+### 7a. Calibers
+
+Max stack is the inventory stack limit (`MaxStackSize`). Overrides apply to a slot tag (vehicle storage, vehicle type). Grid is the item footprint. Caliber rows: 97 primary assets in the folder (93 items, 3 audio assets, 1 debug projectile).
+
+| Caliber folder | Variants | Display | Max stack | Overrides | Grid | Projectile asset |
+|---|---|---|---|---|---|---|
+| 120x570mm | 1 | 120x570mm | 5 | - | 3x2 | DA_120x570mm_ProjectileData |
+| 120x800mm | 1 | 120x800mm | 10 | - | 3x2 | DA_120x800mm_Standard_ProjectileData |
+| 122mm | 1 | 122mm | 3 | - | 6x2 | DA_122mm_ProjectileData |
+| 12Guage | 5 | 12g, 7mm Buckshot, Rifled Slug | 24 | - | 2x1 | DA_12g_RifledSlug, DA_7mmBuckshot |
+| 155mm | 6 | 155mm, 155mm Standard (+SB), 155mm Expensive (+SB), 155mm (SB) | 10 (SB Expensive: 30) | - | 3x2 | DA_155mm_Standard, DA_155mm_Expensive (+SB variants) |
+| 20x102mm | 1 | 20x102mm | 100 | - | 2x2 | DA_20x102mm |
+| 308 | 6 | .308 (+T, AP, AP T, HP, HP T) | 40 | Vehicle.Storage 150 | 2x1 | DA_308Winchester_ProjectileData |
+| 30mm | 1 | 30mm | 200 | - | not set | DA_30mm_ProjectileData |
+| 338NormaMagnum | 6 | .338 Winchester (+AP, HP, tracer variants) | 30 | - | 2x1 | DA_338Norman_ProjectileData |
+| 35x228mm | 1 | 35x228mm | 75 | - | 2x2 | DA_35x228mm_ProjectileData |
+| 40mm | 1 | 40mm | 1 | - | 2x1 | DA_40mm_ProjectileData |
+| 45ACP | 6 | .45 ACP (+AP, HP) | 60 | - | 2x1 | DA_45ACP_ProjectileData |
+| 45Colt | 6 | .45 Colt (+AP, HP, tracer) | 30 | - | not set | DA_45Colt_ProjectileData |
+| 50AE | 6 | .50 AE (+AP, HP, tracer) | 30 | - | 2x1 | DA_50AE_ProjectileData |
+| 50Cal | 6 | .50 Cal (+AP, HP, tracer) | 20 (AP variants 30) | - | 2x1 | DA_50Cal_ProjectileData |
+| 545mm | 6 | 5.45mm (+AP, HP, tracer) | 80 | - | 2x1 | DA_545mm_ProjectileData |
+| 556mm | 6 | 5.56mm (+AP, HP, tracer) | 80 | Vehicle.Storage 150 | 2x1 | DA_556mm_ProjectileData |
+| 70mm | 1 | 70mm | not set | - | 3x1 | DA_70mm_ProjectileData |
+| 72mm | 1 | 72mm | not set | - | 2x1 | DA_72mm_ProjectileData |
+| 762mm | 6 | 7.62mm (+AP, HP, tracer) | 60 | - | 2x1 | DA_762mm_ProjectileData |
+| 762x51mm | 6 | 7.62x51mm | 100 | Type.Vehicle 150 | 2x1 | DA_762x51mm_ProjectileData |
+| 762x54mm | 6 | 7.62x54mm (+AP, HP, tracer) | 40 | - | 2x1 | DA_762x54mm_ProjectileData |
+| 84mm | 1 | 84mm | not set | - | 2x1 | DA_84mm_ProjectileData |
+| 93mm | 1 | 93mm | not set | - | 3x1 | DA_93mm_ProjectileData |
+| 9mm | 6 | 9mm (+AP, HP, tracer) | 100 (some 80) | - | 2x1 | DA_9mm_ProjectileData |
+| DebugHomingRocket | 2 | RocketTesting 84mm | 99 | - | not set | DA_DebugHomingRocketData (see 7c) |
+| Rockets | 1 | (no display) | not set | - | not set | not set |
+
+Variant naming: the base round has no suffix, and the others add `_ArmorPiercing`, `_HollowPoint`, and `_Tracer`. Items with `Sandbox` in the ItemId (e.g. `ID.Item.155mm.Sandbox`, `ID_155mm_SB`) are test variants.
+
+Weight (`BHInventoryFragment_Weight`) is set on only a handful of rounds: 120x570mm 24.0, 35x228mm 1.56, 40mm 0.28, 155mm Expensive 42.0. The rest have no weight property. The unit is not stated.
+
+### 7b. Ammo Item Data
+
+Each round is a `BHInventoryItemDefinition` with a `BHInventoryFragment_Stackable`, a `WDInventoryFragment_Projectile` (pointing to a `WDProjectileData` in `GameMechanics`), a `WDInventoryFragment_Audio`, and a `CustomShape`. The projectile asset is **outside** this folder, so ballistics for ordinary rounds are not in this category.
+
+### 7c. The One Decoded Projectile (`DA_DebugHomingRocketData`)
+
+| Field | Value |
+|---|---|
+| ProjectileId | Item.Caliber.84mm |
+| BaseDamage | 47 |
+| Damage tag | Meta.Damage.Bullet.545mm |
+| Length / Diameter / Mass | 37 / 4 / 1 |
+| Drag model | `CT_Projectile_DragCoefficients` row "GC (Cylinder)" |
+| Typical speed / thrust speed | 100000 / 20000 |
+| Max lifetime / total fuel / burn rate | 20 s / 100 / 1.0 |
+| Guidance | Guided, MaxTurnAngle 2.0 |
+| Tracer chance / penetration | 1.0 / False |
+| Gravity | Not affected |
+
+---
+
+## 8. Vehicle Items
+
+### 8a. Vehicle Cargo (`Vehicles/Storage`)
+
+| Asset | Display | Container slot | Container grid | Filter |
+|---|---|---|---|---|
+| ID_VehicleStorageSmall | Small Vehicle Storage | Inventory.Slot.Vehicle.Storage | 1x1 | BlockList (none) |
+| ID_VehicleStorageMedium | Medium Vehicle Storage | Inventory.Slot.Vehicle.Storage | 1x1 | BlockList (none) |
+| ID_VehicleStorageIntermediate | Intermediate Vehicle Storage | Inventory.Slot.Vehicle.Storage | 4x2 | BlockList (none) |
+| ID_VehicleStorageLarge | Large Vehicle Storage | Inventory.Slot.Vehicle.Storage | 1x1 | BlockList (Item.Ammo) |
+
+The Large storage refuses ammo. Its container is listed as 1x1 in the dump, which is unexpected for a large bin; treat the grid as reported.
+
+### 8b. Vehicle Weapons and Turrets (`Vehicles/Weapons`, 12 items)
+
+Each turret item is a `BHInventoryItemDefinition` with a `BHInventoryFragment_SubSlotSupport` whose single container accepts one caliber (AllowList on `Item.Ammo` plus `Item.Caliber.*`). The stack value is the container's `MaxSlotAmountStackSize`, which reads as the ammo capacity for that mount (interpretation, see section 2a).
+
+| Asset | Display | Ammo caliber | Stack |
+|---|---|---|---|
+| ID_Heavy_MountedMachineGun | Machine Gun (Heavy tank MG) | 556mm | 150 |
+| ID_Humvee_RingTurret | Machine Gun (Humvee ring) | 556mm | 150 |
+| ID_Ural_Turret | Machine Gun (Ural) | 556mm | 150 |
+| ID_VehicleRingTurret | Machine Gun | 556mm | 150 |
+| ID_VehicleTurretMachineGun | Machine Gun | 308Win | 150 |
+| ID_VehicleHelicopterCannon | Machine Gun (helicopter cannon) | 30mm | 150 |
+| ID_VehicleHelicopterRockets | Rockets | 122mm | 12 |
+| ID_VehicleHelicopterRockets_ROT_03 | Rockets (ROT_03) | 122mm | 6 |
+| ID_VehicleTurretAntiair | Anti-Air Turret | 35x228mm | 150 |
+| ID_VehicleTurretArtillery | Artillery Turret | 155mm | 1 |
+| ID_VehicleTurretArtillery_SB | Artillery Turret (sandbox) | 155mm | 1 |
+| ID_VehicleTurretHeavy | Heavy Turret | 120x570mm | 1 |
+
+### 8c. Launcher Test Barrels (`Weapons/Launcher`)
+
+| Asset | Display | Weight | Notes |
+|---|---|---|---|
+| ID_ArtilleryBarrelTest | Artillery Barrel Test | 50 | Ranged-weapon extension: default `Attribute.Gameplay.Weapon.AimTime` 0.5, damage tag `Meta.Damage.Weapon.Vehicle.Turret.Artillery`, weapon stats asset `DA_ArtilleryBarrelTest_Stats` (not in dump) |
+| ID_TankBarrelTest | Tank Barrel Test (ItemId Id.Item.LeapordBarrel) | 50 | Chamber and muzzle child slots, AllowList |
+
+These two are the only items with a `WDItemExtensionData_RangedWeapon`, and their stats are in an external asset.
+
+### 8d. Fists (`Weapons/Fists`)
+
+ID_Fists (ItemId Id.Item.Fists). Melee damage tag `Meta.Damage.Utility.Fists`. Player effect `GE_Player_Fists`. Input context `IMC_Fists`. Animation set `AnimSet_Fists`. Aim-assist extension references `DA_AimAssistSettings_Melee` and `DA_AimAssistFilter`. The two test barrels in section 8c carry the same extension type.
+
+---
+
+## 9. Aim Assist (`Weapons/DA_AimAssistSettings_*`)
+
+Eight weapon-class settings and one shared filter. Values are as stored, with no units given. Blank means the key is absent for that class.
+
+| Key | Filter | AR | LMG | Melee | Pistol | RPG | SMG | SR | Shotgun |
+|---|---|---|---|---|---|---|---|---|---|
+| TargetRange | 30000 | 30000 | 50000 | 800 | - | 0 | 20000 | - | 15000 |
+| AssistInnerReticleWidth | - | 1900 | 2000 | 32 | 400 | 0 | 800 | 400 | 600 |
+| AssistInnerReticleHeight | - | 1620 | 1700 | 28 | 340 | 0 | 680 | 340 | 510 |
+| AssistOuterReticleWidth | - | 7000 | 9300 | 150 | 1860 | 0 | 3720 | 1860 | 2800 |
+| AssistOuterReticleHeight | - | 6000 | 8000 | 128 | 1600 | 0 | 3200 | 1600 | 2400 |
+| TargetingReticleWidth | - | 8400 | 14000 | 224 | 2800 | 0 | 5600 | 2800 | 4200 |
+| TargetingReticleHeight | - | 7200 | 12000 | 192 | 2400 | 0 | 4800 | 2400 | 3600 |
+| ReticleDepth | - | 60000 | 100000 | 1600 | 20000 | 0 | 40000 | 20000 | 30000 |
+| MaxNumberOfTargets | - | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 |
+| MinAssistWeight | - | 0.125 | 0.125 | 0.125 | 0.125 | 0.125 | 0.125 | 0.125 | 0.125 |
+| SensitivityScaleADS | - | 1.0 | 1.0 | 1.0 | 1.0 | 0 | 1.0 | 1.0 | 1.0 |
+| PullOuterStrengthHip | - | 1.4 | 1.5 | 3.0 | 4.0 | 0 | 3.0 | 0 | 3.0 |
+| PullInnerStrengthHip | - | 0.75 | 0.36 | 0 | 0.36 | 0 | 0.44 | 0.28 | 0.36 |
+| PullOuterStrengthAds | - | 6.0 | 6.0 | 0 | 4.0 | 0 | 6.0 | 4.0 | 6.0 |
+| PullInnerStrengthAds | - | 0.7 | 0.8 | 1.5 | 2.0 | 0 | 1.6 | 0 | 1.6 |
+| SlowOuterStrengthHip | - | 0.44 | 0.36 | 0.36 | 0.75 | 0 | 0.64 | 0 | 0.64 |
+| SlowInnerStrengthHip | - | 3.0 | 3.0 | 0 | 2.0 | 0 | 3.0 | 2.0 | 3.0 |
+| SlowOuterStrengthAds | - | 0.9 | 0.8 | 0 | 0.64 | 0 | 0.8 | 0.51 | 0.64 |
+| SlowInnerStrengthAds | - | 0.19 | 0.19 | 0.19 | 0.44 | 0 | 0.36 | 0 | 0.36 |
+| PullLerpInRate / OutRate | - | 30 / 12 | 30 / 12 | - | 30 / 12 | 0 | 30 / 12 | 30 / 12 | 30 / 12 |
+| SlowLerpInRate / OutRate | - | 6 / 5 | 5 / 5 | - | 5 / 5 | 0 | 5 / 5 | 5 / 5 | 5 / 5 |
+| PullMaxRotationRate | - | 120 | 120 | 90 | 90 | - | 135 | 135 | 135 |
+| SlowMinRotationRate | - | 15 | 15 | - | 60 | - | 15 | 120 | 60 |
+| PullMode | - | - | - | - | - | Off | - | Off | - |
+| PullModeADS | - | - | - | Off | - | Off | - | - | - |
+| TargetWeightCurve | - | C_AimAssistTargetWeightCurve (shared) | | | | | | | |
+
+Curves referenced per class (values not in this category): `PullStrengthDistanceCurve` (Hipfire and ADS variants per class), `SlowStrengthDistanceCurve` (Hipfire and ADS variants). The SR uses `C_AimAssistPullStrengthDistanceCurve_Sniper` for ADS. Two curve names have a missing underscore: `C_AimAssistSlowStrengthDistanceCurvePistol_ADS` and `C_AimAssistSlowStrengthDistanceCurveShotgun_ADS`. These are the names as stored.
+
+The RPG setting is zero across most fields, and both RPG and SR have `PullMode` set to `Off`. Whether assist is intentionally disabled for those classes cannot be confirmed from the dump.
+
+Other settings: `bFOVReticleScaling` is False for every class that sets it. `bApplySlowing`, `bUseDynamicSlow`, and `bApplyStrafePullScale` appear only on the RPG and are False. Every class sets `MaxNumberOfTargets` = 8.
+
+---
+
+## 10. Placed and Other Items
+
+| Asset | Display | Grid | Notes |
+|---|---|---|---|
+| ID_AmmoCrate | Ammo Crate | 2x2 | Placeable with collision size, placeable class and init data (values not extracted) |
+
+---
+
+## 11. Curves, Curve Tables, and Shared Input
+
+| Group | Count | Assets |
+|---|---|---|
+| Throw curves (`Throwable/Curves`) | 5 CurveFloat | CRV_ThrowPitch_Overarm (4 keys), CRV_ThrowPitch_OverarmStrong (4), CRV_ThrowPitch_Underarm (8), CRV_ThrowVelocity_OverarmStrong (3), CRV_ThrowVelocity_Underarm (4) |
+| ADS curves (`Weapons/Curves/ADS`) | 6 CurveFloat | CF_Animation_ADSIn_Curve, CF_Animation_ADSIn_Linear, CF_Animation_ADSOut_Curve, CF_Animation_ADSOut_Linear, CF_Animation_ADSIn_WEPN_029_Curve, and one more not listed in this pass |
+| Aim sway (`Weapons/Curves/AimSway/*`) | 15 CurveFloat | Per-class sway multipliers (`CRV_WeaponAnimSwayMultiplier_AR_Harsh`, `_AR_Moderate`, `_Bow`, `_DMR_Harsh`, `_LMG_Harsh`, `_Launcher`, `_SMG`, `_Shotgun`, and others), plus `CF_AimSway_Stabilization_PlayerSpeed` and `_SR` |
+| Curve tables | 2 | `CT_Weapon_Spread` (`Weapons/Curves`), with rows per stance: `Launcher.Stand`, `Launcher.Crouch`, `Launcher.Prone`. `CT_Projectile_DragCoefficients` (`Resources/Ammo/Curves`), with rows such as "GC (Cylinder)". |
+| Input mapping | 1 | `IMC_Appliable` (UDataAsset; primary-use, secondary-use and inspect keys for consumables) |
+
+---
+
+## 12. Combining Values
+
+- **Magazine rounds available** = the magazine's container `MaxSlotAmountStackSize` (section 2a). Ammo stacks inside the magazine's container and is limited by that container's allow list (the caliber tag).
+- **Inventory stack size for a round** = `MaxStackSize`, unless the slot tag is listed in `MaxStackSizeOverrides`. For ammo, `Vehicle.Storage` and `Type.Vehicle` override to 150 on the 308, 556mm and 762x51mm lines.
+- **Carry weight** = `BHInventoryFragment_Weight.Weight` (unit not stated). Items with no weight property have no value in the dump, so their total cannot be read from this category.
+- **Attachment on a weapon** = the attachment's `AttachmentType` tag must match a weapon child slot's `ContainerIdentifier`, and the attachment's bone comes from its archetype (section 3a).
+- **Aim assist per shot** = the weapon-class settings (section 9) combined with the class's distance curves; the curve values are outside this category.
+
+---
+
+## 13. Still Not Pulled / Limitations
+
+- **Base weapon definitions are absent.** `Weapons/AR` holds only components. The receiver and full gun items (M4, AK74-M, Glock 17, Vector, M249, and so on) are not in this folder, so per-weapon fire rate, damage, and recoil are not here.
+- **Weapon stats and projectile ballistics are external.** `WDWeaponStatsData` (e.g. `DA_ArtilleryBarrelTest_Stats`) and every `WDProjectileData` except `DA_DebugHomingRocketData` live in other folders, so damage and velocity for ordinary rounds are not in this category.
+- **Weight unit not stated.** The dump gives values (0.08 to 42.0) without a unit. Assume it is the game's internal weight unit until confirmed.
+- **Weight missing on most items.** Only 46 of 188 items have a weight value. The other items carry the fragment but no property, so the default is unknown.
+- **Grid orientation not confirmed.** `CustomShape.Dimensions` and `GridSize` are read as X x Y. Whether X is columns or rows is not verified.
+- **Magazine capacity is an inference.** `MaxSlotAmountStackSize` on a magazine container matches the magazine's name in every case checked, but the dump does not label it as capacity.
+- **Obfuscated property keys omitted.** Keys of the form `_aaa..._$HEX$_$N$` (several per aim-assist asset and a few on containers) are internal and were skipped. Their meaning is unknown.
+- **Display names missing on 14 items.** Some have no `DisplayName`, and where a `DisplayName` exists only the `SourceString` is shown; the localization table is not dumped.
+- **Holdable and placeable details not decoded.** Holdable mesh, animation and crosshair fields are only partly summarised. The ammo crate's placeable class and init data were not extracted.
+- **Full throw and consumable action data.** The `AppliableActionData` and `ThrowActions` arrays are present but only partly decoded (required states, velocity curve references).
+- **Aim-assist RPG and SR zeros.** Several fields are 0 or absent for RPG and SR. The dump does not say whether those classes are intentionally unassisted.
+- **Vehicle container sizes.** The Large Vehicle Storage container is reported as 1x1 with an ammo block. The dump does not say whether that matches the in-game footprint.
+
+---
+
+*Source files: `Wardogs/Content/Items/` (254 `.json`). Intermediate extraction scripts live in the session scratchpad only.*

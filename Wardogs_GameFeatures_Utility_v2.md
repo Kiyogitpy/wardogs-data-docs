@@ -1,0 +1,53 @@
+# Wardogs — GameFeatures: Utility (v2)
+*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/GameFeatures/Utility/` — 13 JSON files.*
+
+---
+
+## 1. What This Folder Holds
+
+Utility is a set of thin GameFeature packs. Each pack is one consumable, deployable, throwable or tool, and each one does only one thing: it adds an External Data Layer (EDL) that holds the item's world content. The items' gameplay data lives in the Items and Weapons folders, which other docs cover.
+
+| Metric | Value |
+|---|---|
+| Files | 13 |
+| GameFeatureData packs | 13 |
+| Actions per pack | 1 `GameFeatureAction_AddWorldPartitionContent` (12 packs) or none (`THRW_007`) |
+| Data layers referenced | 12 |
+
+---
+
+## 2. Packs and Data Layers
+
+| Category | Pack | Data layer (EDL) |
+|---|---|---|
+| Consumables | `CONS_001` | `EDL_CONS_001` |
+| Consumables | `CONS_002` | `EDL_CONS_002` |
+| Consumables | `CONS_003` | `EDL_CONS_003` |
+| Deployables | `DPLY_001` | `EDL_DPLY_001` |
+| Deployables | `DPLY_002` | `EDL_DPLY_002` |
+| Deployables | `DPLY_003` | `EDL_DPLY_003` |
+| Throwables | `THRW_001` | `EDL_THRW_001` |
+| Throwables | `THRW_002` | `EDL_THRW_002` |
+| Throwables | `THRW_007` | none (empty pack) |
+| Tools | `TOOL_001` | `EDL_TOOL_001` |
+| Tools | `TOOL_002` | `EDL_TOOL_002` |
+| Tools | `TOOL_003` | `EDL_TOOL_003` |
+| Tools | `TOOL_004` | `EDL_TOOL_004` |
+
+Each pack is a single GameFeatureData asset plus its action. The EDL name matches the pack name with an `EDL_` prefix.
+
+---
+
+## 3. How It Is Used
+
+- Loading a pack activates its data layer, which brings the item's world content into the level.
+- Packs are split by category so they can be loaded per item rather than all at once.
+- `THRW_007` has no action or data layer in this dump. It may be a placeholder or a throwable whose content is provided elsewhere. Not confirmed.
+
+---
+
+## 4. Still not pulled / limitations
+
+- **Layer contents.** The EDL assets themselves are not in this folder, so what each layer contains is not shown.
+- **Item linkage.** The mapping from a pack to the item tag (for example `Id.Item.*`) is not in this folder. It is in the Items and Weapons data.
+- **THRW_007.** Not explained by the dump.
