@@ -112,6 +112,15 @@ code {
   border-radius: $radius-small;
 }
 
+// Long asset names (GameFeatureAction_AddWorldPartitionContent...) must wrap, or phones scroll sideways.
+.main-content {
+  overflow-wrap: break-word;
+
+  p code, li code, td code, blockquote code {
+    overflow-wrap: anywhere;
+  }
+}
+
 pre.highlight,
 div.highlighter-rouge {
   background: $ue-panel;
@@ -189,7 +198,7 @@ input:focus-visible {
     max-width: 60ch;
     margin-bottom: 2rem;
   }
-  code {
+  p code {
     white-space: nowrap;
   }
 }
