@@ -58,6 +58,8 @@ Each `DT_Reward_Cash_*` row has a `base` cash value plus context modifiers appli
 
 **Effective reward = `base × relevant modifier(s)`.** Real example: destroying a Littlebird (`base`=800) inside a Hot Zone = 800 × 1.5 = **1,200 cash**.
 
+**Zone multiplier switch:** the switch in the sidebar shows each Base figure below as paid in a control zone (× its `ModifierCZ`) or a hot zone, the prio zone (× its `ModifierHZ`), with you and the target both in it. Figures that change are highlighted. Rows with no zone modifier (objectives, end of match, spotting, buildables) stay the same.
+
 ---
 
 ## 3. Player-Kill Cash Rewards ([`DT_Reward_Cash_PlayerKill`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/CashRewardsDataTable/KillScore/DT_Reward_Cash_PlayerKill.json))

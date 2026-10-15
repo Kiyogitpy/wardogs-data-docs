@@ -190,10 +190,11 @@
     spy();
   }
 
-  /* Zone multiplier: a None / Zone / Prio zone switch in the sidebar. Tables of
-     challenge rewards (a "Row" and a "Resource" column) get a value column showing
-     each row's reward in that state, from assets/data/zone-rewards.json
-     (_tools/zone_rewards.py). The choice is remembered per browser. */
+  /* Zone multiplier: a None / Zone / Prio zone switch in the sidebar, remembered per
+     browser. Values come from assets/data/zone-rewards.json (_tools/zone_rewards.py):
+     - tables of challenge rewards (a "Row" and a "Resource" column) get a Value column;
+     - base-cash tables under a heading that links a DT_Reward_Cash_* file have their
+       Base figures swapped for that row's zone value. */
   var ZONES = [["none", "None"], ["zone", "Zone"], ["prio", "Prio zone"]];
   var ZONE_KEY = "wd-zone";
   var SCRIPT_URL = document.currentScript && document.currentScript.src;
@@ -218,6 +219,41 @@
     var v = entry.v[i];
     var text = Math.abs(v) >= 100 || v === Math.round(v) ? Math.round(v).toLocaleString("en-US") : String(+v.toFixed(2));
     return entry.per ? "×" + text : text;
+  }
+
+  // Kramdown turns ' into a curly quote; the data keeps the source text.
+  function plainLabel(cell) {
+    return cell.textContent.trim().replace(/[‘’]/g, "'").replace(/[“”]/g, '"');
+  }
+
+  // The DT_Reward_Cash_* file named by the closest heading above a table, if any.
+  function cashTableOf(table) {
+    var el = table.closest(".table-pair") || table.closest(".table-wrapper") || table;
+    while ((el = el.previousElementSibling)) {
+      if (/^H[1-3]$/.test(el.tagName)) {
+        var m = el.innerHTML.match(/(DT_Reward_Cash_\w+)\.json/);
+        return m ? m[1] : null;
+      }
+    }
+    return null;
+  }
+
+  function markCashCells(main, cash) {
+    main.querySelectorAll("table").forEach(function (table) {
+      var rows = cash[cashTableOf(table)];
+      if (!rows || !table.tHead) return;
+      var heads = Array.prototype.map.call(table.tHead.rows[0].cells, function (c) { return c.textContent.trim(); });
+      var col = heads.indexOf("Base") >= 0 ? heads.indexOf("Base") : heads.indexOf("Base cash");
+      if (col < 0) return;
+      Array.prototype.forEach.call(table.tBodies[0].rows, function (row) {
+        var v = rows[plainLabel(row.cells[0])], td = row.cells[col];
+        if (!v || !td) return;
+        td._zone = { v: v };
+        td._zoneEl = td.querySelector("strong") || td;
+        td.classList.add("wd-zone-cell");
+        if (v[0] !== v[1] || v[0] !== v[2]) td.classList.add("wd-zone-varies");
+      });
+    });
   }
 
   function fillZoneColumns(tables, data) {
@@ -245,7 +281,7 @@
   function showZone(zone) {
     var i = ZONES.map(function (z) { return z[0]; }).indexOf(zone);
     document.querySelectorAll(".wd-zone-cell").forEach(function (td) {
-      if (td._zone) td.textContent = formatValue(td._zone, i);
+      if (td._zone) (td._zoneEl || td).textContent = formatValue(td._zone, i);
     });
     document.querySelectorAll(".wd-zone-toggle button").forEach(function (b) {
       b.setAttribute("aria-checked", String(b.value === zone));
@@ -301,11 +337,17 @@
       buildToc(main);
     }
     var tables = main ? zoneTables(main) : [];
+    var hasCash = main && /DT_Reward_Cash_\w+\.json/.test(Array.prototype.map.call(
+      main.querySelectorAll("h1, h2, h3"), function (h) { return h.innerHTML; }).join(" "));
     showZone(savedZone());
-    if (!tables.length || !SCRIPT_URL) return;
+    if ((!tables.length && !hasCash) || !SCRIPT_URL) return;
     fetch(new URL("../data/zone-rewards.json" + new URL(SCRIPT_URL).search, SCRIPT_URL))   // same build version as the script
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-      .then(function (data) { fillZoneColumns(tables, data); showZone(savedZone()); })
+      .then(function (data) {
+        fillZoneColumns(tables, data.challenges);
+        markCashCells(main, data.cash);
+        showZone(savedZone());
+      })
       .catch(function () { /* no values: the tables stay as written */ });
   });
 })();
