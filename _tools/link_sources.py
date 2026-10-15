@@ -3,7 +3,9 @@
 Every inline-code span in a Wardogs_*.md doc whose text is a dump file's name (with or
 without .json), the name of an object exported inside one, or a dump folder path
 becomes a link to that file or folder on GitHub. Names found in more than one file
-are left alone. Re-running is safe: spans already linked are skipped.
+are left alone, and a name mentioned more than REPEAT_MAX times in one doc (a source
+file named on every row of a table) is linked at its first mention only. Re-running is
+safe: spans already linked are skipped.
 
     python _tools/link_sources.py            # rewrite the docs
     python _tools/link_sources.py --dry-run  # only count what would be linked
@@ -20,6 +22,7 @@ DATA = os.path.join(ROOT, "data")
 REPO_URL = "https://github.com/Kiyogitpy/wardogs-data-docs"
 EXPORT = re.compile(r"^--- export: [^/\n]+/ (\S+) ---", re.M)
 # `x` not already the text of a [..](..) link
+REPEAT_MAX = 20
 CODE = re.compile(r"(?<!\[)`([^`\n]+)`(?!\]\()")
 
 
@@ -47,12 +50,12 @@ def url(kind, rel):
 
 
 def by_suffix(text, names, folders):
-    """A partial path (`Content/Data/X.json`, `/Game/Items/X`): the one file or folder it ends."""
+    """A partial path (`Content/Data/X.json`, `Tags/X.ini`, `/Game/Items/X`): the one file or folder it ends."""
     tail = text.strip("/")
     if tail.startswith("Game/"):
         tail = "Content/" + tail[len("Game/"):]
-    tail = "/" + (tail[:-len(".json")] if tail.endswith(".json") else tail)
-    files = {p for ps in names.values() for p in ps if ("/" + p[:-len(".json")]).endswith(tail)}
+    tail = "/" + (os.path.splitext(tail)[0] if tail.endswith((".json", ".ini")) else tail)
+    files = {p for ps in names.values() for p in ps if ("/" + os.path.splitext(p)[0]).endswith(tail)}
     dirs = {d for d in folders if ("/" + d).endswith(tail)}
     if len(files) == 1 and not dirs:
         return url("blob", files.pop())
@@ -85,12 +88,18 @@ def main():
         with open(doc, encoding="utf-8", newline="") as fh:
             text = fh.read()
         count = 0
+        mentions = collections.Counter(m.group(1) for m in CODE.finditer(text))
+        seen = set()
 
         def link(m):
             nonlocal count
-            href = target(m.group(1), names, folders)
+            name = m.group(1)
+            if mentions[name] > REPEAT_MAX and name in seen:
+                return m.group(0)
+            href = target(name, names, folders)
             if not href:
                 return m.group(0)
+            seen.add(name)
             count += 1
             return f"[`{m.group(1)}`]({href})"
 

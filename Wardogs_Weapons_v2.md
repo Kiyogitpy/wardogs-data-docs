@@ -6,7 +6,7 @@ parent: "Content"
 # Wardogs — Weapons Reference (v2)
 *Extracted from cooked game data (JSON export, [`Wardogs/Content/Weapons/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Weapons), 92 source files). Parsed with a Python script; 15 Input files contain several `--- export:` blocks each and were split on those headers. Numbers are the raw exported values.*
 
-> **Scope note:** this folder holds only **8 weapon stat assets** (`WDWeaponStatsData`). The main rifle, SMG, LMG, shotgun and pistol stat tables are not in this folder. Their aim-sway curves are here, so the stat tables are presumably elsewhere in the dump.
+> **Scope note:** this folder holds only **8 weapon stat assets** (`WDWeaponStatsData`). The main rifle, SMG, LMG, shotgun and pistol stat tables are not in this folder. Their aim-sway curves are here; the stat tables themselves live under [`Plugins/GameFeatures/Weapons`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Weapons), all 40 listed in [Infantry Weapon Stats](Wardogs_InfantryWeapons_Stats_v1.html).
 
 ---
 
@@ -216,7 +216,7 @@ The export lists the inputs to each system but not the formulas that combine the
 
 ## 6. Still Not Pulled / Limitations
 
-- The main AR, SMG, LMG, shotgun and pistol **stat tables** are not in this folder. Only their aim-sway and stabilisation curves are here.
+- The main AR, SMG, LMG, shotgun and pistol **stat tables** are not in this folder. Only their aim-sway and stabilisation curves are here. The stat tables are in [Infantry Weapon Stats](Wardogs_InfantryWeapons_Stats_v1.html).
 - **Units are not stated** in the export. Speeds are assumed to be cm/s and ranges to be metres, based on the falloff-curve and EffectiveRange check. That is an inference.
 - `IronSightsAimTime = 50,000` on the tank barrel and `WeaponAccuracy = 70 MOA` look like placeholders or unused tuning. The export gives no way to check.
 - Two properties on the SKS and Judge are obfuscated names (`_aaabijhbknckndgboaemo_…` and `_aaacamgpphfkeldlcaboo_…`), so their meaning is unknown. Values: SKS 1.0 and 2.5, Judge 2.0.

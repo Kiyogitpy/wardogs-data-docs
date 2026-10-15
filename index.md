@@ -24,8 +24,10 @@ nav_order: 1
 <p class="wd-section-intro">Core content folders: weapons, items, vehicles, audio, UI, environment, VFX and maps.</p>
 
 <div class="wd-grid" markdown="0">
+<a class="wd-card" href="Wardogs_AllVehicles_Stats_Damage_v1.html"><span class="wd-card-name">All-Vehicle Stat &amp; Damage Sheets</span><span class="wd-card-desc">Vehicle stat assets, mounted weapon stats, global damage tables, full property export</span></a>
 <a class="wd-card" href="Wardogs_Animation_v2.html"><span class="wd-card-name">Animation</span><span class="wd-card-desc">Folder Map, Motion Matching, First-Person Mirroring, Animation Curves</span></a>
 <a class="wd-card" href="Wardogs_Audio_v2.html"><span class="wd-card-name">Audio</span><span class="wd-card-desc">Inventory, Event structure, Notable events, Player Damage, Movement and Item Audio</span></a>
+<a class="wd-card" href="Wardogs_TreeRewardTrack_PlatformMastery_v1.html"><span class="wd-card-name">Battle-Pass Track &amp; Platform Mastery Rewards</span><span class="wd-card-desc">Reward track card, track and panel data, Platform Mastery rewards</span></a>
 <a class="wd-card" href="Wardogs_Characters_v2.html"><span class="wd-card-name">Characters</span><span class="wd-card-desc">File Map, Third-Person LOD Policy, Ghillie Physics Constraints, How Values Combine</span></a>
 <a class="wd-card" href="Wardogs_Demolition_v2.html"><span class="wd-card-name">Demolition</span><span class="wd-card-desc">Asset Families, Demolition Assets, Component Settings, Remnant Meshes</span></a>
 <a class="wd-card" href="Wardogs_Destruction_v2.html"><span class="wd-card-name">Destruction</span><span class="wd-card-desc">Assets at a Glance, Normal Building Lookup, Anonymous Building Lookup, Score Curves</span></a>
@@ -34,11 +36,15 @@ nav_order: 1
 <a class="wd-card" href="Wardogs_ExternalAssets_v2.html"><span class="wd-card-name">ExternalAssets</span><span class="wd-card-desc">File Inventory, Building Definitions, Decorator Definitions, Damage-Tag Whitelists</span></a>
 <a class="wd-card" href="Wardogs_FluidFlux_v2.html"><span class="wd-card-name">FluidFlux</span><span class="wd-card-desc">File Map, Waterline Gradient, How Values Combine</span></a>
 <a class="wd-card" href="Wardogs_GameMechanics_v2.html"><span class="wd-card-name">GameMechanics</span><span class="wd-card-desc">Folder Map, Damage System, Projectiles, Action Definitions</span></a>
+<a class="wd-card" href="Wardogs_GameplayTags_v1.html"><span class="wd-card-name">Gameplay Tags</span><span class="wd-card-desc">All 7,177 gameplay tags by source file, with dev comments</span></a>
 <a class="wd-card" href="Wardogs_GameplayCues_v2.html"><span class="wd-card-name">GameplayCues</span><span class="wd-card-desc">File Map, Smoke Screen Values, How Values Combine</span></a>
+<a class="wd-card" href="Wardogs_InfantryWeapons_Stats_v1.html"><span class="wd-card-name">Infantry Weapon Stats</span><span class="wd-card-desc">All 40 weapon stat assets, ADS curves, full raw property export</span></a>
 <a class="wd-card" href="Wardogs_Items_v2.html"><span class="wd-card-name">Items</span><span class="wd-card-desc">How an Item Is Built, Attachments, Clothing and Equipment, Consumables and Medical Items</span></a>
 <a class="wd-card" href="Wardogs_Maps_v2.html"><span class="wd-card-name">Maps</span><span class="wd-card-desc">Inventory, Minimal Grid Test, Shooting-Range Moving Target, Water Gym</span></a>
 <a class="wd-card" href="Wardogs_Meta_v2.html"><span class="wd-card-name">Meta</span><span class="wd-card-desc">Folder Map, Role Unlock Trees, Character Skill Effects, Reward Scaling Curves</span></a>
 <a class="wd-card" href="Wardogs_MoverTesting_v2.html"><span class="wd-card-name">MoverTesting</span><span class="wd-card-desc">Inventory, Character Modifier States, Movement Settings, Curves</span></a>
+<a class="wd-card" href="Wardogs_Season01_CosmeticUnlocks_v1.html"><span class="wd-card-name">Season 1 Cosmetic Unlocks</span><span class="wd-card-desc">Season definitions, Season 1 emotes and skins, skin data assets, emote entities</span></a>
+<a class="wd-card" href="Wardogs_RewardLookup_SessionEvents_v1.html"><span class="wd-card-name">Session-Event Reward Lookups</span><span class="wd-card-desc">Vehicle kills and assists, supply crates, buildables, spotting, challenge reward formulas</span></a>
 <a class="wd-card" href="Wardogs_Significance_v2.html"><span class="wd-card-name">Significance</span><span class="wd-card-desc">Asset Families, Settings Assets, Sphere Evaluators, FOV Evaluators</span></a>
 <a class="wd-card" href="Wardogs_Tests_v2.html"><span class="wd-card-name">Tests</span><span class="wd-card-desc">File Map, Server Profiles, Client Profiles</span></a>
 <a class="wd-card" href="Wardogs_Tools_v2.html"><span class="wd-card-name">Tools</span><span class="wd-card-desc">File Map, Text Styles</span></a>
