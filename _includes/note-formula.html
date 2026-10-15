@@ -1,0 +1,28 @@
+{%- comment -%}
+  The multiplication behind a balance note, one figure per entry in page.note.formulas:
+    label    caption, e.g. "Unarmoured, Season 2"
+    terms    list of { value, label, was (optional, the previous value), new (optional, true) }
+    result   the product; was_result (optional) is the previous product
+  Values are quoted strings so they print as written.
+{%- endcomment -%}
+<div class="wd-formulas" markdown="0">
+  {%- for f in page.note.formulas %}
+  <figure class="wd-formula">
+    <figcaption>{{ f.label }}</figcaption>
+    <div class="wd-eq">
+      {%- for t in f.terms %}
+      {%- unless forloop.first %}<span class="wd-op" aria-label="times">×</span>{% endunless %}
+      <span class="wd-term{% if t.was %} is-changed{% endif %}{% if t.new %} is-new{% endif %}">
+        <b>{{ t.value }}</b><small>{{ t.label }}</small>
+        {%- if t.was %}<s>was {{ t.was }}</s>{% elsif t.new %}<s>new</s>{% endif %}
+      </span>
+      {%- endfor %}
+      <span class="wd-op" aria-label="equals">=</span>
+      <span class="wd-term is-result">
+        <b>{{ f.result }}</b><small>{{ f.result_label | default: "Result" }}</small>
+        {%- if f.was_result %}<s>was {{ f.was_result }}</s>{% endif %}
+      </span>
+    </div>
+  </figure>
+  {%- endfor %}
+</div>

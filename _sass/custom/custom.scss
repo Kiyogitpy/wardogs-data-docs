@@ -1,0 +1,1094 @@
+// Unreal Engine site look on top of Just the Docs:
+// charcoal base, rounded raised panels, bold tight white headings, white pill buttons, cyan-blue links.
+
+$ue-bg: #101014;
+$ue-sidebar: #0d0d10;
+$ue-panel: #18181c;
+$ue-panel-raised: #202024;
+$ue-panel-hover: #26262b;
+$ue-panel-zebra: #1c1c21;
+$ue-border: #2a2a30;
+$ue-border-strong: #3a3a42;
+$ue-text: #c9c9ce;
+$ue-text-dim: #8e8e96;
+$ue-white: #ffffff;
+$ue-blue: #26bbff;
+$radius-panel: 12px;
+$radius-small: 6px;
+$radius-card: 24px;     // the Unreal site's step cards
+
+body {
+  font-size: 1rem;
+  line-height: 1.65;
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+}
+
+.main-content {
+  p, ul, ol, blockquote {
+    max-width: 75ch;
+  }
+
+  h1, h2, h3, h4 {
+    color: $ue-white;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+  h1 {
+    font-size: 2.75rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+    margin-top: 3.25rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 2rem;
+  }
+  // Italic source line under each page title.
+  h1 + p > em:only-child {
+    color: $ue-text-dim;
+    font-style: normal;
+    font-size: 0.95rem;
+  }
+  hr {
+    border-color: $ue-border;
+  }
+  a:not(.wd-card):not(.wd-btn):not(.wd-note-card) {
+    text-decoration: none;
+    &:hover { text-decoration: underline; }
+  }
+}
+
+// Unreal Engine download-page backdrop: a soft teal, indigo and magenta glow across
+// the page below the header bar, fading into the charcoal by ~40rem down. Drawn behind
+// the whole page (not just the content column) so its sides fade into the margins;
+// the sidebar and header bar are opaque and sit over it.
+body::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: $header-height;
+  left: 0;
+  right: 0;
+  height: 52rem;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 22% 70% at 73% 0, rgba(166, 69, 148, 0.32), rgba(166, 69, 148, 0.2) 40%, transparent 78%),
+    radial-gradient(ellipse 24% 72% at 59% 0, rgba(99, 69, 175, 0.26), rgba(99, 69, 175, 0.15) 40%, transparent 78%),
+    radial-gradient(ellipse 20% 65% at 46% 0, rgba(30, 120, 175, 0.12), transparent 75%);
+}
+
+.main {
+  position: relative;
+  isolation: isolate;
+}
+
+// Tables sit on rounded raised panels.
+.main-content .table-wrapper {
+  background: $ue-panel;
+  border: 1px solid $ue-border;
+  border-radius: $radius-panel;
+  box-shadow: none;
+  margin: 1.25rem 0 2rem;
+}
+
+// Wide screens: an app layout instead of Just the Docs' centred column. The sidebar sits
+// against the left edge and also holds "On this page" (assets/js/wd-reading.js), and the
+// content takes the rest of the width. Prose stays capped at 75ch; tables, grids and
+// code use the room. Narrower screens keep the theme's own layout.
+$wd-sidebar: 18rem;
+$wd-content-max: 160rem;   // fills a 2560-wide screen; prose is capped separately
+
+@media (min-width: 66.5rem) {
+  .side-bar {
+    width: $wd-sidebar;
+    min-width: 0;
+    align-items: stretch;
+
+    .site-header,
+    .site-nav,
+    .site-footer {
+      width: 100%;
+    }
+    // With the page list below it, the nav keeps its own height up to half the
+    // sidebar (then scrolls); the page list takes the rest.
+    &.wd-has-toc .site-nav {
+      flex: 0 1 auto;
+      max-height: 50%;
+      min-height: 7rem;
+    }
+  }
+  .side-bar + .main {
+    margin-left: $wd-sidebar;
+    margin-right: 0;
+    max-width: $wd-content-max;
+  }
+}
+
+// A long, narrow table split in two halves (assets/js/wd-reading.js): side by side
+// where there is room, stacked back into one column on narrow screens.
+.main-content .table-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.25rem 0 2rem;
+  align-items: start;
+
+  .table-wrapper { margin: 0; }
+  table { width: 100%; }
+
+  @media (max-width: 50rem) {
+    grid-template-columns: 1fr;
+    gap: 0;
+    .table-wrapper:first-child { border-bottom-left-radius: 0; border-bottom-right-radius: 0; border-bottom: 0; }
+    .table-wrapper:last-child { border-top-left-radius: 0; border-top-right-radius: 0; }
+    .table-wrapper:last-child thead { display: none; }
+  }
+}
+
+// Cells are opaque so pinned headers and first columns cover what scrolls under them.
+.main-content table {
+  font-size: 0.925rem;
+  border-collapse: separate;
+  border-spacing: 0;
+
+  th, td {
+    background: $ue-panel;
+    text-align: left;
+    border-bottom: 1px solid $ue-border;
+    border-left: 0;
+    padding: 0.5rem 1rem;
+    white-space: normal;
+    min-width: 6rem;
+  }
+  th.num, td.num {
+    text-align: right;
+    min-width: 4.5rem;
+    white-space: nowrap;
+  }
+  thead th {
+    background: $ue-panel-raised;
+    color: $ue-white;
+    font-weight: 600;
+    font-size: 0.875rem;
+    border-bottom: 1px solid $ue-border-strong;
+  }
+  tbody tr:nth-child(even) td {
+    background: $ue-panel-zebra;
+  }
+  tbody tr:last-child td {
+    border-bottom: 0;
+  }
+  tbody tr:hover td {
+    background: $ue-panel-hover;
+  }
+  tr[hidden] {
+    display: none;
+  }
+  strong {
+    color: $ue-white;
+  }
+}
+
+// Filtered rows lose their order, so the stripes would be random: plain while filtering.
+.main-content .wd-filtered table tbody tr:nth-child(even) td {
+  background: $ue-panel;
+}
+.main-content .wd-filtered table tbody tr:hover td {
+  background: $ue-panel-hover;
+}
+
+// A long table scrolls in its own box with the header pinned.
+.main-content .table-wrapper.wd-tall {
+  max-height: Min(75vh, 52rem);
+  overflow: auto;
+
+  thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+}
+
+// A wide table keeps its first column (the row's name) in view while scrolling sideways.
+.main-content .table-wrapper.wd-wide {
+  th:first-child,
+  td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    box-shadow: inset -1px 0 0 $ue-border-strong;
+  }
+  thead th:first-child {
+    z-index: 3;
+  }
+}
+
+// Row filter above a long table.
+.main-content .wd-filter {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.25rem 0 0.6rem;
+
+  input {
+    width: Min(24rem, 100%);
+    padding: 0.5rem 0.85rem;
+    font: inherit;
+    font-size: 0.9rem;
+    color: $ue-white;
+    background: $ue-panel;
+    border: 1px solid $ue-border-strong;
+    border-radius: $radius-small;
+
+    &::placeholder { color: $ue-text-dim; }
+    &:focus { border-color: $ue-blue; outline: none; }
+  }
+  .wd-filter-count {
+    color: $ue-text-dim;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+  + .table-wrapper,
+  + .table-pair {
+    margin-top: 0;
+  }
+}
+
+// Long code dumps start collapsed.
+.main-content .wd-dump {
+  margin: 1rem 0 1.5rem;
+  background: $ue-panel;
+  border: 1px solid $ue-border;
+  border-radius: $radius-panel;
+
+  > summary {
+    padding: 0.6rem 1rem;
+    color: $ue-text;
+    font-size: 0.9rem;
+    cursor: pointer;
+    &:hover { color: $ue-white; }
+  }
+  &[open] > summary {
+    border-bottom: 1px solid $ue-border;
+  }
+  div.highlighter-rouge,
+  pre.highlight {
+    margin: 0;
+    border: 0;
+    border-radius: 0 0 $radius-panel $radius-panel;
+  }
+}
+
+// "On this page": a collapsed block under the title, or the lower part of the sidebar
+// on wide screens.
+.wd-toc {
+  margin: 1.25rem 0 2rem;
+  max-width: 75ch;
+  background: $ue-panel;
+  border: 1px solid $ue-border;
+  border-radius: $radius-panel;
+  font-size: 0.875rem;
+  line-height: 1.4;
+
+  summary {
+    padding: 0.6rem 1rem;
+    color: $ue-white;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  ol {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0 0.5rem 0.75rem;
+  }
+  li {
+    margin: 0;
+    padding: 0;
+    &::before { content: none; }
+  }
+  a {
+    display: block;
+    padding: 0.25rem 0.6rem;
+    color: $ue-text-dim;
+    text-decoration: none;
+    border-left: 2px solid transparent;
+    border-radius: 0 $radius-small $radius-small 0;
+    &:hover { color: $ue-white; text-decoration: none; background: $ue-panel-raised; }
+    &.is-active { color: $ue-white; border-left-color: $ue-blue; background: $ue-panel-raised; }
+  }
+  .wd-toc-sub a {
+    padding-left: 1.4rem;
+    font-size: 0.82rem;
+  }
+
+  // In the sidebar the whole block scrolls (a <details> won't size its list as a flex item).
+  &.wd-toc-side {
+    flex: 1 1 0;
+    min-height: 7rem;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 1rem 1rem 0 1.4rem;
+    background: transparent;
+    border: 0;
+    border-top: 1px solid $ue-border;
+    border-radius: 0;
+
+    summary {
+      pointer-events: none;
+      list-style: none;
+      padding: 0 0.6rem 0.5rem;
+      color: $ue-text-dim;
+      font-size: 0.75rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      &::-webkit-details-marker { display: none; }
+    }
+    ol {
+      padding: 0 0 1rem;
+    }
+  }
+}
+
+code {
+  font-size: 0.85em;
+  padding: 0.12em 0.4em;
+  background: $ue-panel-raised;
+  border: 1px solid $ue-border;
+  border-radius: $radius-small;
+}
+
+// Long asset names (GameFeatureAction_AddWorldPartitionContent...) must wrap, or phones scroll sideways.
+.main-content {
+  overflow-wrap: break-word;
+
+  p code, li code, td code, blockquote code {
+    overflow-wrap: anywhere;
+  }
+}
+
+pre.highlight,
+div.highlighter-rouge {
+  background: $ue-panel;
+  border: 1px solid $ue-border;
+  border-radius: $radius-panel;
+}
+
+// Header, sidebar and search.
+.site-title {
+  font-weight: 800;
+  font-size: 1.1rem !important;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: $ue-white;
+}
+
+// Top-level nav reads as quiet grey text; links inside pages stay blue.
+.nav-list .nav-list-item .nav-list-link {
+  color: $ue-text;
+}
+
+.nav-list .nav-list-item .nav-list-expander {
+  color: $ue-text-dim;
+}
+
+.side-bar {
+  border-right: 1px solid $ue-border;
+}
+
+.nav-list .nav-list-item .nav-list-link {
+  border-radius: $radius-small;
+  &:hover {
+    background: $ue-panel-raised;
+  }
+  &.active {
+    color: $ue-white;
+    font-weight: 600;
+    background: $ue-panel-raised;
+  }
+}
+
+.search-input {
+  font-size: 0.95rem;
+}
+
+.search-results {
+  border-radius: 0 0 $radius-panel $radius-panel;
+}
+
+.search-result-title {
+  color: $ue-white;
+  font-weight: 600;
+}
+
+// Keyboard focus is always visible.
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid $ue-blue;
+  outline-offset: 2px;
+}
+
+// Home page: hero, pill buttons, category cards.
+.wd-hero {
+  padding: 3rem 0 2.5rem;
+
+  h1 {
+    font-size: clamp(2.5rem, 6vw, 4.25rem);
+    max-width: 16ch;
+    margin: 0 0 1rem;
+  }
+  p {
+    font-size: 1.15rem;
+    color: $ue-text;
+    max-width: 60ch;
+    margin-bottom: 2rem;
+  }
+  p code {
+    white-space: nowrap;
+  }
+}
+
+.wd-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+// Buttons as on the Unreal Engine site: solid cyan primary with dark text, flat grey
+// secondary, 8px corners.
+$ue-btn-grey: #343437;
+$ue-btn-grey-hover: #46474a;
+
+.wd-btn {
+  display: inline-block;
+  padding: 0.6rem 1.1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  line-height: 1.25;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+
+  &.wd-btn-primary {
+    background: $ue-blue;
+    color: $ue-bg;
+    &:hover { background: #6fd2ff; }
+  }
+  &.wd-btn-secondary {
+    background: $ue-btn-grey;
+    color: $ue-white;
+    &:hover { background: $ue-btn-grey-hover; }
+  }
+}
+
+// "View on GitHub" in the header reads as the grey "Sign in" button there.
+.aux-nav .aux-nav-list-item {
+  display: flex;
+  align-items: center;
+  padding-right: 1rem;
+}
+.aux-nav .aux-nav-list-item .site-button {
+  height: auto;
+  padding: 0.45rem 0.9rem;
+  background: $ue-btn-grey;
+  color: $ue-white;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.25;
+  &:hover { background: $ue-btn-grey-hover; background-image: none; text-decoration: none; }
+}
+
+// Gradient pills, as the Unreal site's "STEP 1/2/3" labels: one per home section.
+.main-content .wd-kicker {
+  margin: 3.5rem 0 -2.25rem;
+}
+.wd-pill {
+  display: inline-block;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  color: #000;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  &.wd-pill-1 { background: linear-gradient(90deg, #4ebefe, #c0bbf9); }
+  &.wd-pill-2 { background: linear-gradient(90deg, #9791f8, #e0b0e2); }
+  &.wd-pill-3 { background: linear-gradient(90deg, #c576e7, #f0a6bc); }
+}
+
+.main-content .wd-section-intro {
+  color: $ue-text-dim;
+  margin-top: -0.25rem;
+}
+
+.wd-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 1rem;
+}
+
+.wd-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.5rem 1.6rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: $radius-card;
+  color: $ue-text;
+  text-decoration: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.16);
+    text-decoration: none;
+  }
+  .wd-card-name {
+    color: $ue-white;
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
+  }
+  .wd-card-desc {
+    color: $ue-text-dim;
+    font-size: 0.875rem;
+    line-height: 1.45;
+  }
+}
+
+.wd-card-featured {
+  grid-column: 1 / -1;
+  padding: 1.75rem 2rem;
+  background: linear-gradient(180deg, $ue-panel-raised, $ue-panel);
+
+  .wd-card-name { font-size: 1.4rem; }
+  .wd-card-desc { font-size: 0.95rem; max-width: 70ch; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wd-btn, .wd-card { transition: none; }
+}
+
+// Zone multiplier switch above the sidebar footer (assets/js/wd-reading.js). The chosen
+// side takes the matching section-pill gradient.
+.wd-zone-toggle {
+  width: 100%;
+  padding: 1rem 1rem 0;
+
+  @media (min-width: 50rem) { padding: 1rem 2rem 0; }
+  @media (min-width: 66.5rem) { padding: 0.75rem 1rem 0 2rem; border-top: 1px solid $ue-border; }
+}
+
+.wd-zone-label {
+  margin-bottom: 0.4rem;
+  color: $ue-text-dim;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.wd-segmented {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  padding: 2px;
+  background: $ue-panel;
+  border: 1px solid $ue-border;
+  border-radius: 8px;
+
+  button {
+    padding: 0.45rem 0.1rem;
+    font: inherit;
+    font-size: 0.78rem;
+    white-space: nowrap;
+    font-weight: 500;
+    line-height: 1.2;
+    color: $ue-text;
+    background: transparent;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease;
+
+    &:hover { color: $ue-white; background: $ue-panel-raised; }
+    &[aria-checked="true"] { color: $ue-white; background: $ue-btn-grey; }
+    &[value="zone"][aria-checked="true"] { color: #000; background: linear-gradient(90deg, #4ebefe, #c0bbf9); }
+    &[value="prio"][aria-checked="true"] { color: #000; background: linear-gradient(90deg, #c576e7, #f0a6bc); }
+  }
+}
+
+// Values the zone changes stand out once a zone is chosen.
+[data-wd-zone="zone"] .main-content td.wd-zone-varies { color: #8fd3ff; font-weight: 600; }
+[data-wd-zone="prio"] .main-content td.wd-zone-varies { color: #f0a6bc; font-weight: 600; }
+
+@media (prefers-reduced-motion: reduce) {
+  .wd-segmented button { transition: none; }
+}
+
+// Balance notes (_includes/note-*.html): a header with the headline figure, a before/after
+// comparison with damage bars and hits-to-kill pips, and the multiplication behind it.
+// "down" is pink, "up" is mint; the newer value takes the cyan section-pill gradient.
+$wd-down: #ff8a9e;
+$wd-up: #5fe0b8;
+$wd-new: #8fd3ff;
+$wd-new-grad: linear-gradient(90deg, #4ebefe, #c0bbf9);
+$wd-mono: "JetBrains Mono", ui-monospace, monospace;
+
+.wd-pill.wd-pill-4 { background: linear-gradient(90deg, #f0a6bc, #ffc79a); }
+
+.wd-note-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.5rem 3rem;
+  align-items: end;
+  padding: 2.5rem 0 0;
+
+  h1 { margin: 0.9rem 0 0.75rem; max-width: 22ch; }
+
+  @media (max-width: 50rem) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+.wd-note-kicker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.wd-note-status {
+  padding: 0.2rem 0.65rem;
+  border: 1px solid $ue-border-strong;
+  border-radius: 999px;
+  color: $ue-text-dim;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.main-content .wd-note-lede {
+  margin: 0 0 1rem;
+  font-size: 1.15rem;
+  color: $ue-text;
+  max-width: 60ch;
+}
+
+.main-content .wd-note-subject {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: $wd-mono;
+  font-size: 0.8rem;
+  color: $ue-text-dim;
+
+  li {
+    margin: 0;
+    &::before { content: none; }
+    + li::before { content: "·"; position: static; margin: 0 0.6rem; color: $ue-border-strong; }
+  }
+}
+
+// The headline number: big and tabular, in the tone colour.
+.wd-note-figure {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 14rem;
+  max-width: 20rem;
+  padding: 1.1rem 1.4rem 1.2rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: $radius-card;
+
+  .wd-note-figure-value {
+    font-family: $wd-mono;
+    font-size: clamp(2.75rem, 7vw, 4.25rem);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: $ue-white;
+  }
+  .wd-note-figure-label {
+    color: $ue-text-dim;
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  .is-down & .wd-note-figure-value { color: $wd-down; }
+  .is-up & .wd-note-figure-value { color: $wd-up; }
+
+  @media (max-width: 50rem) { max-width: none; }
+}
+
+// The model's assumptions: a quiet strip of chips under the header.
+.main-content .wd-note-model {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.9rem;
+  padding: 0.9rem 0 0;
+  border-top: 1px solid $ue-border;
+
+  .wd-note-model-label {
+    color: $ue-text-dim;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    margin: 0;
+    padding: 0.2rem 0.6rem;
+    background: $ue-panel-raised;
+    border-radius: $radius-small;
+    font-size: 0.82rem;
+    color: $ue-text;
+    &::before { content: none; }
+  }
+}
+
+// Before/after comparison: a grid of rows with ARIA table roles; on phones each row stacks.
+.wd-cmp {
+  --wd-cols: minmax(6.5rem, 0.7fr) minmax(12rem, 2.4fr) 6rem minmax(11rem, 1.3fr);
+  margin: 1.25rem 0 2rem;
+  padding: 0.5rem 0 0;
+  background: $ue-panel;
+  border: 1px solid $ue-border;
+  border-radius: $radius-panel;
+  font-size: 0.925rem;
+  overflow: hidden;
+}
+
+.wd-cmp-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.25rem;
+  padding: 0.5rem 1.25rem 0.75rem;
+  color: $ue-text-dim;
+  font-size: 0.8rem;
+
+  span { display: inline-flex; align-items: center; gap: 0.45rem; }
+  i { display: inline-block; width: 1.4rem; height: 0.55rem; border-radius: 2px; }
+  .wd-cmp-legend-hp { margin-left: auto; font-family: $wd-mono; }
+}
+
+// The earlier bar is hatched and the newer one solid on top of it: the hatching left
+// showing is what the change took away.
+.wd-swatch-from,
+.wd-bar-from {
+  background: repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.16) 0 2px, transparent 2px 5px);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+}
+.wd-swatch-to,
+.wd-bar-to {
+  background: $wd-new-grad;
+}
+
+.wd-cmp-head,
+.wd-cmp-row {
+  display: grid;
+  grid-template-columns: var(--wd-cols);
+  gap: 1.25rem;
+  align-items: center;
+  padding: 0.7rem 1.25rem;
+}
+
+.wd-cmp-head {
+  padding-block: 0.55rem;
+  background: $ue-panel-raised;
+  border-block: 1px solid $ue-border-strong;
+  color: $ue-white;
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  span:nth-child(3) { text-align: right; }
+}
+
+.wd-cmp-row {
+  position: relative;
+  border-bottom: 1px solid $ue-border;
+  &:last-child { border-bottom: 0; }
+  &:hover { background: $ue-panel-hover; }
+
+  // A changed hits-to-kill breakpoint gets an accent rule down the left edge.
+  &.is-break::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 3px;
+    border-radius: 0 3px 3px 0;
+    background: $wd-down;
+  }
+  &.is-break.is-up::before { background: $wd-up; }
+}
+
+.wd-cmp-label {
+  color: $ue-white;
+  font-weight: 600;
+}
+
+.wd-cmp-dmg {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.wd-cmp-bars {
+  position: relative;
+  flex: 1;
+  height: 1.1rem;
+
+  span {
+    position: absolute;
+    left: 0;
+    border-radius: 3px;
+  }
+  .wd-bar-from { top: 0; bottom: 0; }
+  .wd-bar-to { top: 0.25rem; bottom: 0.25rem; }
+}
+
+.wd-cmp-vals,
+.wd-cmp-hitnum {
+  font-family: $wd-mono;
+  font-size: 0.85rem;
+  white-space: nowrap;
+
+  .wd-was { color: $ue-text-dim; }
+  .wd-arrow { color: $ue-text-dim; opacity: 0.6; }
+  strong { color: $ue-white; font-weight: 500; }
+}
+.wd-cmp-vals { min-width: 8.5rem; text-align: right; }
+
+.wd-cmp-delta {
+  justify-self: end;
+  padding: 0.15rem 0.5rem;
+  border-radius: $radius-small;
+  font-family: $wd-mono;
+  font-size: 0.82rem;
+  white-space: nowrap;
+  color: $ue-text-dim;
+
+  .is-down > & { color: $wd-down; background: rgba(255, 138, 158, 0.1); }
+  .is-up > & { color: $wd-up; background: rgba(95, 224, 184, 0.1); }
+}
+
+// Hits to kill as pips, one per bullet: earlier hollow, newer filled. A bullet the change
+// adds is drawn in pink; one it saves stays as a mint ring on the earlier line.
+.wd-cmp-hits {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.wd-pips {
+  display: grid;
+  gap: 4px;
+
+  > span { display: flex; gap: 3px; }
+  i {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+  }
+  .wd-pips-from i { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35); }
+  .wd-pips-from i.is-gone { box-shadow: inset 0 0 0 1.5px $wd-up; }
+  .wd-pips-to i { background: $wd-new; }
+  .wd-pips-to i.is-extra { background: $wd-down; box-shadow: 0 0 0 2px rgba(255, 138, 158, 0.25); }
+}
+
+.wd-cmp-tag {
+  margin-left: 0.35rem;
+  font-style: normal;
+  font-size: 0.75rem;
+  color: $wd-down;
+  .is-up & { color: $wd-up; }
+}
+
+@media (max-width: 50rem) {
+  .wd-cmp-head { display: none; }
+  .wd-cmp-row {
+    grid-template-columns: 1fr auto;
+    gap: 0.55rem 1rem;
+    padding: 0.9rem 1rem;
+  }
+  .wd-cmp-dmg,
+  .wd-cmp-hits { grid-column: 1 / -1; }
+  .wd-cmp-delta { grid-row: 1; grid-column: 2; }
+  .wd-cmp-legend { padding-inline: 1rem; }
+}
+
+// The multiplication: each factor is a tile with its source below it. Changed factors
+// show what they were; the result ends the line on an outlined tile.
+.wd-formulas {
+  display: grid;
+  gap: 1rem;
+  margin: 1.25rem 0 2rem;
+}
+
+.wd-formula {
+  margin: 0;
+  padding: 1rem 1.25rem 1.25rem;
+  background: $ue-panel;
+  border: 1px solid $ue-border;
+  border-radius: $radius-panel;
+
+  figcaption {
+    margin-bottom: 0.75rem;
+    color: $ue-text-dim;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+}
+
+.wd-eq {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0.5rem;
+}
+
+.wd-op {
+  align-self: center;
+  padding: 0 0.1rem;
+  color: $ue-text-dim;
+  font-family: $wd-mono;
+  font-size: 1.1rem;
+}
+
+.wd-term {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 6.5rem;
+  padding: 0.6rem 0.8rem;
+  background: $ue-panel-raised;
+  border: 1px solid transparent;
+  border-radius: 8px;
+
+  b {
+    color: $ue-white;
+    font-family: $wd-mono;
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  small {
+    color: $ue-text-dim;
+    font-size: 0.78rem;
+    line-height: 1.3;
+    max-width: 14ch;
+  }
+  s {
+    text-decoration: none;
+    font-family: $wd-mono;
+    font-size: 0.72rem;
+  }
+  &.is-changed { border-color: rgba(255, 138, 158, 0.45); s { color: $wd-down; } }
+  &.is-new { border-color: rgba(143, 211, 255, 0.4); s { color: $wd-new; } }
+  &.is-result {
+    background: transparent;
+    border-color: $ue-border-strong;
+    s { color: $ue-text-dim; }
+  }
+}
+
+// "Bottom line" pull quote, and the template's placeholder notice.
+.main-content blockquote.wd-bottomline,
+.main-content blockquote.wd-note-placeholder {
+  margin: 1.25rem 0 1.5rem;
+  padding: 1.1rem 1.4rem;
+  border-radius: $radius-panel;
+  p { margin: 0; }
+}
+.main-content blockquote.wd-bottomline {
+  background: linear-gradient(90deg, rgba(78, 190, 254, 0.1), rgba(192, 187, 249, 0.04));
+  border: 1px solid rgba(143, 211, 255, 0.25);
+  border-left: 3px solid $wd-new;
+  color: $ue-white;
+  font-size: 1.05rem;
+}
+.main-content blockquote.wd-note-placeholder {
+  margin-top: 1.75rem;
+  background: rgba(255, 199, 154, 0.06);
+  border: 1px dashed rgba(255, 199, 154, 0.45);
+  color: $ue-text;
+}
+
+// Balance Notes index: one wide card per note, headline figure on the left.
+.wd-note-list {
+  display: grid;
+  gap: 1rem;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.wd-note-card {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.4rem 1.6rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: $radius-card;
+  color: $ue-text;
+  text-decoration: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.16);
+  }
+  .wd-note-card-figure {
+    font-family: $wd-mono;
+    font-size: 2rem;
+    letter-spacing: -0.04em;
+    color: $ue-white;
+  }
+  &.is-down .wd-note-card-figure { color: $wd-down; }
+  &.is-up .wd-note-card-figure { color: $wd-up; }
+  .wd-note-card-body { display: flex; flex-direction: column; gap: 0.25rem; }
+  .wd-note-card-meta { color: $ue-text-dim; font-size: 0.78rem; }
+  .wd-note-card-name { color: $ue-white; font-weight: 600; font-size: 1.1rem; letter-spacing: -0.01em; }
+  .wd-note-card-desc { color: $ue-text-dim; font-size: 0.9rem; line-height: 1.45; }
+
+  @media (max-width: 40rem) {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wd-note-card { transition: none; }
+}
