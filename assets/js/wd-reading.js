@@ -303,7 +303,7 @@
     var tables = main ? zoneTables(main) : [];
     showZone(savedZone());
     if (!tables.length || !SCRIPT_URL) return;
-    fetch(new URL("../data/zone-rewards.json", SCRIPT_URL))
+    fetch(new URL("../data/zone-rewards.json" + new URL(SCRIPT_URL).search, SCRIPT_URL))   // same build version as the script
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
       .then(function (data) { fillZoneColumns(tables, data); showZone(savedZone()); })
       .catch(function () { /* no values: the tables stay as written */ });
