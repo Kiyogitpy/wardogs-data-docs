@@ -463,6 +463,7 @@ Other settings: `bFOVReticleScaling` is False for every class that sets it. `bAp
 - **Base weapon definitions are absent.** `Weapons/AR` holds only components. The receiver and full gun items (M4, AK74-M, Glock 17, Vector, M249, and so on) are not in this folder, so per-weapon fire rate, damage, and recoil are not here.
 - **Weapon stats and projectile ballistics are external.** `WDWeaponStatsData` (e.g. [`DA_ArtilleryBarrelTest_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/RocketLauncher/ArtilleryBarrelTest/Data/DA_ArtilleryBarrelTest_Stats.json)) and every `WDProjectileData` except [`DA_DebugHomingRocketData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/DebugHomingRocket/DA_DebugHomingRocketData.json) live in other folders, so damage and velocity for ordinary rounds are not in this category.
 - **Weight unit not stated.** The dump gives values (0.08 to 42.0) without a unit. Assume it is the game's internal weight unit until confirmed.
+  - **See [`docs/UNITS.md`](docs/UNITS.md)** for the project-wide units reference (UE 5.7 defaults + Wardogs-specific suffixes).
 - **Weight missing on most items.** Only 47 of 193 items have a weight value. The other items carry the fragment but no property, so the default is unknown.
 - **Grid orientation not confirmed.** `CustomShape.Dimensions` and `GridSize` are read as X x Y. Whether X is columns or rows is not verified.
 - **Magazine capacity is an inference.** `MaxSlotAmountStackSize` on a magazine container matches the magazine's name in every case checked, but the dump does not label it as capacity.
@@ -475,6 +476,7 @@ Other settings: `bFOVReticleScaling` is False for every class that sets it. `bAp
 - **Display names missing on 14 items.** Some have no `DisplayName`, and where a `DisplayName` exists only the `SourceString` is shown; the localization table is not dumped.
 - **Holdable and placeable details not decoded.** Holdable mesh, animation and crosshair fields are only partly summarised. The ammo crate's placeable class and init data were not extracted.
 - **Full throw and consumable action data.** The `AppliableActionData` and `ThrowActions` arrays are present but only partly decoded (required states, velocity curve references).
+  - **See [`docs/CROSS_REFERENCE.md`](docs/CROSS_REFERENCE.md)** for the project-wide cross-reference index of where referenced assets are defined.
 - **Aim-assist RPG and SR zeros.** Several fields are 0 or absent for RPG and SR. The dump does not say whether those classes are intentionally unassisted.
 - **Vehicle container sizes.** The Large Vehicle Storage container is reported as 1x1 with an ammo block. The dump does not say whether that matches the in-game footprint.
 

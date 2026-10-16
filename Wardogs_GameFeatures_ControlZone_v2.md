@@ -203,5 +203,6 @@ The purpose (where the AI teleports to) is inferred from the name and the tests.
 - **Zone regions** (the polygon data that says which areas of the map count as capturable) are in [`ControlZoneRegions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZoneRegions/Content/ControlZoneRegions.json), not here. See the sibling doc.
 - **The 15 HUD widget instances** in the root bundle are listed as entries in [`ControlZone.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/ControlZone.json). Only the main `W_GameModeStatus` element was resolved to a class in this pass. The other 14 instances were not individually mapped.
 - **Alternator weight 0 entries** (Europe Farmland, NorthAmerica SmallFactory, Africa North/East/West, Russia Bazaar/River/Hillside) are read as never selected. The game may use them elsewhere; this was not checked.
+  - **See [`docs/CROSS_REFERENCE.md`](docs/CROSS_REFERENCE.md)** for the project-wide cross-reference index of where referenced assets are defined.
 - **The NorthAmerica Hot Zone height** (85,000 against 50,000) is reported as found and not interpreted.
 - The Gym config's Hot Zone sizing is not defined in this folder.
