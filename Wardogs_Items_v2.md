@@ -467,6 +467,11 @@ Other settings: `bFOVReticleScaling` is False for every class that sets it. `bAp
 - **Grid orientation not confirmed.** `CustomShape.Dimensions` and `GridSize` are read as X x Y. Whether X is columns or rows is not verified.
 - **Magazine capacity is an inference.** `MaxSlotAmountStackSize` on a magazine container matches the magazine's name in every case checked, but the dump does not label it as capacity.
 - **Unnamed property keys omitted.** Keys of the form `_aaa..._$HEX$_$N$` (several per aim-assist asset and a few on containers) are internal and were skipped. Their meaning is unknown.
+  - **SDK (2026-10-16):** aim-assist asset classes live in [`BHAimAssist`](sdk/raw/BHAimAssist_structs.hpp). Key resolved types:
+    - [`EBHAimAssistPullMode`](sdk/raw/BHAimAssist_structs.hpp) enum (5 values): `All = 0`, `MovementOnly = 1`, `LookOnly = 2`, `Off = 3`, `EBHAimAssistPullMode_MAX = 4` — this is the enum behind any "pull mode" field in aim-assist exports
+    - [`FBHAimAssistTargetOptions`](sdk/raw/BHAimAssist_structs.hpp) struct (0x30 bytes): `AssociatedTags` (`FGameplayTagContainer`) + `bIsActive` (bool) + padding
+    - [`FBHAimAssistTargetData`](sdk/raw/BHAimAssist_structs.hpp) struct (0xA0 bytes): Dumper-7 was unable to resolve any inner field names — remains opaque via static means
+  - Per-asset `_aaa..._$HEX$_$N$` keys are Blueprint-generated property names that even Dumper-7 could not symbolicate against; resolving each would require per-asset context.
 - **Display names missing on 14 items.** Some have no `DisplayName`, and where a `DisplayName` exists only the `SourceString` is shown; the localization table is not dumped.
 - **Holdable and placeable details not decoded.** Holdable mesh, animation and crosshair fields are only partly summarised. The ammo crate's placeable class and init data were not extracted.
 - **Full throw and consumable action data.** The `AppliableActionData` and `ThrowActions` arrays are present but only partly decoded (required states, velocity curve references).

@@ -535,6 +535,17 @@ Rows: `Communication.Ping`, `Communication.Ping.Type.Context.Map.MarkCoordinates
 ## 15. Still Not Pulled / Limitations
 
 - **Unnamed fields.** Many struct fields have no readable name and are called unnamed fields here. These are the arm-class arrays in 2d, the seat-reduction arrays in 2h, the `Emote` flags in 12c, and some action fields. Their meaning was inferred from neighbouring values and is not confirmed.
+  - **SDK (2026-10-16) — Emote flags (12c):** [`FWDEmoteData`](sdk/raw/WDGame_structs.hpp#L14430) is a 0x30-byte struct (inherits from `FBHGameplayTaggedTableRow`) with 8 fields:
+    - `_aaaakmaiagceginhpgeoe` (bool, 0x10) — unresolved flag #1
+    - `_aaaamcjgaokphjebecjic` (bool, 0x11) — unresolved flag #2
+    - `PlayRate` (float, 0x14) — animation playback rate ✓
+    - `bHolsterWeapon` (bool, 0x18) — holster weapon during emote ✓
+    - `_aaabgjmmjbmjfbncaafch` (bool, 0x19) — unresolved flag #3
+    - `_aaabjdgjapjmbgmpamikg` (bool, 0x1A) — unresolved flag #4
+    - `_aaabelpijohgmmanaeoif` (`FGameplayTagContainer`, 0x20) — unresolved tag list (candidate: "allowed states" / "restricted contexts" / "required unlocks")
+  - 4 of 7 "Emote flag" bools remain Dumper-unresolved; 2 are resolved to `bHolsterWeapon` + `PlayRate`.
+  - **SDK (2026-10-16) — seat-reduction arrays (2h):** see [`Wardogs_DamagePipeline_v1.md`](Wardogs_DamagePipeline_v1.md#44-vehicleseatdamagereduction-occupant-protection-table) — the arrays belong to `UB_VehicleSeatDamageReduction_C` (one of 4 damage modifier blueprints), reading per-seat `FGameplayTag → float` map from a DataTable at runtime.
+  - Arm-class arrays (2d) and action fields are not yet matched to a specific SDK struct; follow-up pass needed.
 - **Operation semantics.** `Percentage_Ongoing` is the operation name on the modification entries. Its exact formula (additive, multiplicative, applied per tick or once) is not decoded.
 - **Arm-class naming.** `Meta.Damage.Arms.Small/Medium/High/Special` is the tag family used. Its meaning as armour class or penetration tier is an inference.
 - **Units.** Projectile speed, radius and mass units are not verified against the engine.
