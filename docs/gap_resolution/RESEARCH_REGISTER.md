@@ -17,7 +17,7 @@ proposed resolution path, status.
 | `TRIAGED` | Evidence source identified, resolution plan noted |
 | `STATIC_IN_PROGRESS` | Being resolved via SDK+IDA, no game session needed |
 | `STATIC_RESOLVED` | Resolved via static means — gap closed, doc patched |
-| `PASS_D_QUEUED` | Needs live-memory read; queued for next physical-access session |
+| `DEFERRED_DYNAMIC` | Needs runtime verification; deferred to next physical-access session (dynamic tooling held local-only) |
 | `DEFERRED` | Not actionable now (e.g., Season 03 data refresh needed) |
 | `SECURITY_ROUTED` | Finding has security implications; routed to [`../../SECURITY.md`](../../SECURITY.md) disclosure flow |
 
@@ -54,7 +54,7 @@ proposed resolution path, status.
 
 ## Notes for the triage pass
 
-**Scope guard:** documentation only. No `loader.exe` runs, no Pass D agent
+**Scope guard:** documentation only. No loader runs, no dynamic agent
 load, no game-process attachment. See [`../../CLAUDE.md`](../../CLAUDE.md)
 for scope posture.
 
@@ -72,7 +72,7 @@ for scope posture.
    function logic, IDA + `.idmap` resolves most "actual behavior" questions
    without running anything.
 
-4. **Mark as `PASS_D_QUEUED`** only if 1–3 all fail and the question
+4. **Mark as `DEFERRED_DYNAMIC`** only if 1–3 all fail and the question
    genuinely requires observing a running game. These accumulate for the
    next physical-access session's hypothesis-verification run.
 

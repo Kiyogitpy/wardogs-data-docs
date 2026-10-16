@@ -61,7 +61,7 @@ Resolution workflow (per data doc):
 4. Add a backlink from the SDK file to the data doc
 
 The gap-resolution pass covering the SDK bucket is tracked in
-`../pass_d/docs/gap_index_v2.csv` (SDK rows).
+[`../docs/gap_resolution/SDK.md`](../docs/gap_resolution/SDK.md).
 
 ## Generation methodology
 
@@ -69,8 +69,7 @@ See [`../docs/METHODOLOGY.md`](../docs/METHODOLOGY.md) for the full
 pipeline. Short version:
 
 1. Launch the game locally (author's own hardware, author's own copy)
-2. Attach UEDumper to the process (needs kernel-level read primitive —
-   see [`../tools/README.md`](../tools/README.md))
+2. Attach UEDumper to the process
 3. UEDumper walks `GUObjectArray` and `GNames` to produce the C++ headers
 4. Validate against known offsets from `.idmap` in `../mappings/`
 5. Commit the generated headers under `sdk/raw/`

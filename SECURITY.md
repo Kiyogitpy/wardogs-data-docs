@@ -28,8 +28,6 @@ A finding is in-scope for responsible disclosure when it affects:
   gameplay message handling
 - **Validator gaps** — gameplay effects / abilities missing
   server-side authorization checks
-- **Anti-cheat bypass primitives** — novel ways to defeat Elytra's
-  specific guarantees (not generic BYOVD, which is public)
 - **Account / inventory impact** — anything affecting player
   identity, cosmetics ownership, progression state
 - **Service disruption** — crash, hang, or amplification vectors
@@ -39,8 +37,7 @@ Not in scope for disclosure (handled publicly in the data docs):
 
 - Balance observations (DPS numbers, time-to-kill, weapon stats)
 - Non-security code behavior documentation
-- Public anti-cheat architecture notes (same posture as any
-  published EasyAntiCheat / BattlEye write-up)
+- Public engine-architecture notes
 
 ## Disclosure process
 
@@ -99,19 +96,20 @@ that's one of the intended outcomes), please:
 Either path is fine. The goal is "Embark hears about it before the
 internet does."
 
-## Scope boundary — anti-cheat research vs cheat development
+## Scope boundary — defensive research vs offensive distribution
 
-Research on Elytra's architecture, detection vectors, and
-limitations is in scope and public (same posture as any public
-BattlEye / EAC / Vanguard write-up). What's out of scope:
+This project documents game data, trust model, and architecture
+publicly. What's out of scope for public release:
 
-- Publishing *working* undetected cheat injection primitives
-- Publishing bypasses before Embark has been notified
-- Providing user-ready cheat loaders
+- Shipping user-ready tooling that would let others gain unfair
+  advantage in live play
+- Publishing concrete bypasses of the game's protection layer
+  before the developer has been notified
+- Any artifact that would serve as a plug-and-play cheat loader
 
-The distinction: documenting that Elytra uses `ObRegisterCallbacks`
-to strip handles is RE commentary. Shipping a one-click bypass tool
-is cheat development. We do the former, not the latter.
+Documentation and architectural RE commentary at the "how it works"
+level is in scope. One-click bypass tools are not. The former
+produces reference material; the latter produces cheats.
 
 ## Credit
 
