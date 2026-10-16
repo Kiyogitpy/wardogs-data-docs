@@ -10,13 +10,13 @@ Gaps where the data doc's statement is **inferred from reading, not confirmed fr
 
 1. **Static resolution (preferred first)** — many RUNTIME gaps can be resolved by **close reading of the SDK + IDA disassembly** without actually running the game. The classifier flagged them as runtime because the doc author hedged, but the answer may be deterministic from static inspection.
 
-2. **Dynamic verification (Pass D)** — only when static analysis is genuinely ambiguous. Pass D agent reads a specific VA during a controlled test (see [`../../pass_d/docs/next_session_runbook.md`](../../pass_d/docs/next_session_runbook.md) once ready). This is deferred to next physical-access session.
+2. **Dynamic verification (deferred)** — only when static analysis is genuinely ambiguous. Dynamic-verification tooling is held in the author's local workspace and is deferred to the next physical-access session. Entries that reach this stage are marked `DEFERRED_DYNAMIC` in the research register.
 
 ## Register format
 
 Each entry below should be moved to [`RESEARCH_REGISTER.md`](RESEARCH_REGISTER.md) with:
 - **Evidence source:** which SDK file / data asset / IDA function could resolve it statically
-- **Next step:** either `STATIC — <specific action>` or `PASS_D — <specific IOCTL + VA>` or `DEFER — <reason>`
+- **Next step:** either `STATIC — <specific action>` or `DEFERRED_DYNAMIC — <reason>`
 - **Status:** `OPEN` / `IN_PROGRESS` / `RESOLVED` / `DEFERRED`
 
 ## Catalogue

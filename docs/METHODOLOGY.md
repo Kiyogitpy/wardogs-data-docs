@@ -7,33 +7,32 @@ How the data documentation and reverse engineering work gets done.
 ## Pipeline overview
 
 ```
-┌─────────────────┐   ┌─────────────────┐   ┌─────────────────┐
-│  Shipped game   │   │  Game binary    │   │  Running game   │
-│  .pak / .ucas   │   │  .exe          │   │  (local only)   │
-└────────┬────────┘   └────────┬────────┘   └────────┬────────┘
-         │                     │                     │
-   CUE4Parse               UEDumper +             Pass D agent
-   extraction              IDA Pro + .usmap       (BYOVD kernel R/W)
-         │                     │                     │
-         ▼                     ▼                     ▼
-┌─────────────────┐   ┌─────────────────┐   ┌─────────────────┐
-│  JSON exports   │   │  CppSDK +       │   │  Hypothesis     │
-│  (data/*.json)  │   │  function RVAs  │   │  verification   │
-└────────┬────────┘   └────────┬────────┘   └────────┬────────┘
-         │                     │                     │
-         └──────────┬──────────┴──────────┬──────────┘
-                    │                     │
-         ┌──────────▼──────────┐  ┌───────▼──────────┐
-         │  Python parsers +   │  │  IDA Python +    │
-         │  cross-ref builders │  │  manual RE       │
-         └──────────┬──────────┘  └───────┬──────────┘
-                    │                     │
-                    └──────────┬──────────┘
-                               ▼
-                     ┌─────────────────┐
-                     │  Markdown docs  │
-                     │  (this repo)    │
-                     └─────────────────┘
+┌─────────────────┐   ┌─────────────────┐
+│  Shipped game   │   │  Game binary    │
+│  .pak / .ucas   │   │  .exe          │
+└────────┬────────┘   └────────┬────────┘
+         │                     │
+   CUE4Parse               UEDumper +
+   extraction              IDA Pro + .usmap
+         │                     │
+         ▼                     ▼
+┌─────────────────┐   ┌─────────────────┐
+│  JSON exports   │   │  CppSDK +       │
+│  (data/*.json)  │   │  function RVAs  │
+└────────┬────────┘   └────────┬────────┘
+         │                     │
+         └──────────┬──────────┘
+                    │
+         ┌──────────▼──────────┐
+         │  Python parsers +   │
+         │  cross-ref builders │
+         └──────────┬──────────┘
+                    │
+                    ▼
+          ┌─────────────────┐
+          │  Markdown docs  │
+          │  (this repo)    │
+          └─────────────────┘
 ```
 
 ## Toolchain
@@ -57,23 +56,11 @@ How the data documentation and reverse engineering work gets done.
 | **Jinja2** | Doc template rendering (where used) |
 | **Jekyll** | GitHub Pages static site generation |
 
-### Live hypothesis verification
+### Post-mortem analysis
 
 | Tool | Purpose |
 |---|---|
-| **kdmapper** (patched build in `tools/kdmapper/`) | BYOVD manual-map loader via iqvw64e |
-| **Pass D agent** (`tools/pass_d/`) | Kernel-mode cross-process R/W primitive |
-| **cdb.exe** / **WinDbg** | Minidump post-mortem analysis |
-
-### Research references
-
-| Doc | Covers |
-|---|---|
-| `research/references/hyperdbg/` | HyperDbg documentation archive |
-| `research/references/kdmapper/` | kdmapper + BYOVD background |
-| `research/references/byovd/` | CVE-2015-2291 (iqvw64e) exploit primitive |
-| `research/references/bootviewer/` | Measured-boot verifier |
-| `research/wardogs_analysis/DEBUGGER_ATTACHMENT_REPORT.md` | Full prior-work archive on debugger-attach vectors |
+| **cdb.exe** / **WinDbg** | Minidump post-mortem analysis of local crashes |
 
 ## Working method per doc
 
@@ -93,10 +80,7 @@ follows the same production flow:
    read these assets at runtime (via IDA + known FName hashes)
 6. **Formula documentation** — for each "How Values Combine"
    question, trace the function body in IDA, document the formula
-7. **Hypothesis verification** (Pass D, only when static RE is
-   ambiguous) — read one specific VA during a controlled test,
-   confirm the behavior matches the disasm
-8. **"Still Not Pulled / Limitations" section** — document what
+7. **"Still Not Pulled / Limitations" section** — document what
    you couldn't resolve, in what form, so future passes can target
    it precisely
 
@@ -150,24 +134,17 @@ dotnet run --project tools/cue4parse_extractor -- \
 
 The parse scripts in `tools/` turn the JSON into the markdown docs.
 
-## When static RE is enough vs. when you need Pass D
+## Static-only is almost always enough
 
-**Static is enough when:**
+**Questions resolvable from static analysis alone:**
 
-- The question is "what are the values in this asset" (CUE4Parse
-  answers)
-- The question is "what's the SDK structure of this class" (UEDumper
-  answers)
-- The question is "which function reads this asset" (IDA xref answers)
-- The question is "what does the function do" (IDA disasm answers)
+- "What are the values in this asset" → CUE4Parse answers
+- "What's the SDK structure of this class" → UEDumper answers
+- "Which function reads this asset" → IDA xref answers
+- "What does the function do" → IDA disassembly + decompile answer
 
-**Pass D is needed when:**
-
-- The function body in IDA has branches you can't resolve statically
-  (e.g., behavior depends on a GEnabled flag set at runtime)
-- You want to confirm a static conclusion against a live value
-- An asset's binary data (height grids, Houdini caches) needs decoding
-  against the runtime decoder in-memory
-
-Pass D is a verification tool, not a primary research tool. Most docs
-are built without ever running the game.
+For the small set of residual questions where static disassembly
+leaves branches ambiguous (behavior depends on a runtime-set flag,
+etc.), the doc author annotates `**Unverified:**` and moves on. The
+public documentation does not require dynamic verification to be
+useful.

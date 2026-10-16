@@ -54,9 +54,9 @@ Any security-relevant finding (server trust, replication,
 serialization, validator gaps, etc.) goes through
 [`SECURITY.md`](SECURITY.md), not a public PR.
 
-### ❌ Workaround removal of Elytra protections for distribution
+### ❌ Workaround removal of the game's protection layer for distribution
 
-Documenting how Elytra works: fine. Publishing a one-click bypass
+Documenting how the protection layer works at an architectural level: fine. Publishing a one-click bypass
 tool that would let others cheat: not fine. The distinction is in
 `CLAUDE.md`.
 

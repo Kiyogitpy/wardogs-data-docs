@@ -38,9 +38,6 @@ right thing to do.
   seen here apply to other UE5 titles
 - **Live service** — the game ships patches regularly, so there's a
   live data pipeline to track
-- **Novel anti-cheat (Elytra)** — Embark's in-house AC is less
-  publicly documented than EAC/BattlEye/Vanguard, giving the RE
-  work genuine informational value
 - **Author owns a copy** and has local hardware to run it
 - **Author plays the game** — direct feedback loop between playing,
   noticing data questions, and documenting them
@@ -64,34 +61,6 @@ Documentation is the one output that:
 Cheating fails all five tests. Mod development for a live-service
 multiplayer game fails most of them. Reskinning fails attribution.
 
-### Why kernel-mode tooling for a documentation project
-
-Most of the data documentation needs no live-game access at all —
-the cooked data is in the packaged `.uasset` files, parseable
-offline via CUE4Parse. That's where ~75% of the docs come from.
-
-The remaining 25% needs the game actually running:
-
-- Formulas that combine multiple data inputs — you have to see
-  which function gets called with which values at which time
-- Runtime state that isn't in cooked data (e.g., current player
-  loadout, current session state)
-- Validation of static-RE hypotheses — "I read the disasm and
-  believe damage multiplies by X; let me verify by observing one
-  live hit"
-
-The game is anti-cheat protected. Elytra specifically strips
-process handles via `ObRegisterCallbacks` — meaning normal admin
-tools (x64dbg, Process Hacker, even WinDbg user-mode) can't read
-the game's memory *even on the author's own machine*. The only way
-to observe runtime values on your own hardware is to go below the
-Ob-callback layer, which means kernel space.
-
-Hence Pass D (`tools/pass_d/`): a minimal kernel agent that reads
-specific addresses on request. Not a daemon, not a hook, not a
-persistent presence. Loader starts it, specific IOCTL asks a
-question, answer comes back, done.
-
 ### Why the security-disclosure path exists
 
 When you fully document a game's data model and the code that
@@ -104,8 +73,8 @@ consumes it, you tend to find:
 - Validator gaps
 - Deserialization issues with array lengths or type-confused unions
 
-Each of these is a potential cheat vector in the wild. Embark's
-anti-cheat team almost certainly knows about some of them.
+Each of these is a potential cheat vector in the wild. The game's
+security team almost certainly knows about some of them.
 Publishing a complete code↔data cross-reference would surface the
 ones they *don't* know about to the public internet in minutes.
 
