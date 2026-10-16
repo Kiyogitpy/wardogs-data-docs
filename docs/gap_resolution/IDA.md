@@ -4,12 +4,14 @@
 
 Gaps that need **static disassembly of the game binary** to answer — typically 'how does this formula combine', 'what order are modifiers applied', 'what's the stacking rule'. 32 total across the project.
 
-The IDA mapping is in [`../mappings/`](../mappings/).
+The sole IDA map is
+`E:/Reverse_Engineer/wardogs_analysis/IDAMappings/5.7.4-516586+++Wardogs+Live-Wardogs.idmap`.
+See the [mapping policy](../../mappings/README.md); use that file directly.
 
 Resolution workflow per gap:
 
 1. Load `WardogsClient-Win64-Shipping.exe` into IDA
-2. Import the `.idmap` from `mappings/`
+2. Read the sole external `.idmap` above with a compatible binary-v2 importer; validate selected records against the image before applying them
 3. Open the SDK class file for the asset involved (from `../sdk/raw/`)
 4. Find the UFunction that reads the asset (xref the FName hash)
 5. Follow the function body; document the formula or ordering

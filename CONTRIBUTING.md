@@ -3,8 +3,8 @@
 > **Project:** [`Kiyogitpy/wardogs-data-docs`](https://github.com/Kiyogitpy/wardogs-data-docs) · [Live site](https://kiyogitpy.github.io/wardogs-data-docs/)
 
 Thanks for your interest. This repository is a defensive-research
-documentation project — see [`CLAUDE.md`](CLAUDE.md) and
-[`docs/SCOPE.md`](docs/SCOPE.md) before contributing.
+documentation project — see [`docs/SCOPE.md`](docs/SCOPE.md) before
+contributing.
 
 ## What contributions are welcome
 
@@ -58,7 +58,7 @@ serialization, validator gaps, etc.) goes through
 
 Documenting how the protection layer works at an architectural level: fine. Publishing a one-click bypass
 tool that would let others cheat: not fine. The distinction is in
-`CLAUDE.md`.
+[`docs/SCOPE.md`](docs/SCOPE.md).
 
 ## PR workflow
 

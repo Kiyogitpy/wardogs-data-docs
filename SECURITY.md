@@ -4,15 +4,19 @@
 
 ## Posture
 
-This project reverse-engineers **Wardogs** (Embark Studios) as a
-defensive-research exercise. The research is designed to produce two
-kinds of output:
+This repository documents **Wardogs** (Embark Studios) as a
+defensive-research exercise. It is a documentation project: the
+published output is the markdown reference docs, mappings, and SDK
+dumps in this repository — not tooling.
+
+The research produces two kinds of output:
 
 1. **Public data documentation** — the markdown reference docs in
    this repository.
 2. **Private security findings** — issues in the game's trust model,
    serialization, replication, or state validation that are reported
-   privately to Embark Studios before any public mention.
+   privately to Embark Studios before any public mention. These are
+   not published here until coordinated disclosure completes.
 
 This document describes the disclosure process for the second kind.
 
@@ -96,20 +100,20 @@ that's one of the intended outcomes), please:
 Either path is fine. The goal is "Embark hears about it before the
 internet does."
 
-## Scope boundary — defensive research vs offensive distribution
+## Scope boundary — documentation vs tooling
 
-This project documents game data, trust model, and architecture
-publicly. What's out of scope for public release:
+This repository publishes documentation only: game data, trust model,
+and static code behavior. It does not publish tooling. Specifically
+out of scope for this repo:
 
-- Shipping user-ready tooling that would let others gain unfair
-  advantage in live play
-- Publishing concrete bypasses of the game's protection layer
-  before the developer has been notified
+- Runtime agents, memory-access primitives, loaders, or injectors
+- User-ready tooling that would let others gain unfair advantage in
+  live play
+- Concrete bypasses of the game's protection layer
 - Any artifact that would serve as a plug-and-play cheat loader
 
-Documentation and architectural RE commentary at the "how it works"
-level is in scope. One-click bypass tools are not. The former
-produces reference material; the latter produces cheats.
+Documentation and RE commentary at the "how it works" level is what
+this repo ships. It produces reference material, not programs.
 
 ## Credit
 

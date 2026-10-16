@@ -2,7 +2,7 @@
 
 [![Repo](https://img.shields.io/badge/repo-Kiyogitpy%2Fwardogs--data--docs-blue?logo=github)](https://github.com/Kiyogitpy/wardogs-data-docs)
 [![Site](https://img.shields.io/badge/pages-live-brightgreen)](https://kiyogitpy.github.io/wardogs-data-docs/)
-[![Scope](https://img.shields.io/badge/scope-defensive%20research-informational)](CLAUDE.md)
+[![Scope](https://img.shields.io/badge/scope-defensive%20research-informational)](docs/SCOPE.md)
 [![License](https://img.shields.io/badge/license-CC--BY--SA--4.0%20%2F%20MIT-lightgrey)](LICENSE)
 
 Comprehensive reference documentation for **Wardogs** (Embark Studios,
@@ -12,7 +12,6 @@ cross-referenced to the UE class hierarchy.
 
 - **Repository:** <https://github.com/Kiyogitpy/wardogs-data-docs>
 - **Live site:** <https://kiyogitpy.github.io/wardogs-data-docs/>
-- **AI-assistant context:** [`CLAUDE.md`](CLAUDE.md)
 - **Scope + intent:** [`docs/INTENT.md`](docs/INTENT.md) · [`docs/SCOPE.md`](docs/SCOPE.md)
 - **Methodology:** [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md)
 - **Security disclosure:** [`SECURITY.md`](SECURITY.md)
@@ -26,12 +25,10 @@ cross-referenced to the UE class hierarchy.
 | `*.md` (top-level) | 75 per-category reference docs (weapons, vehicles, items, game mechanics, UI, VFX, audio, animation, maps, meta, etc.) |
 | `data/Wardogs/` | Cooked data exports (JSON, parsed from `.uasset` via CUE4Parse) |
 | `sdk/` | CppSDK dump from UEDumper — UE class hierarchy mapping |
-| `mappings/` | IDA Pro mappings (`.idmap`, `.usmap`) — exported class/field offsets |
+| `mappings/` | Cooked-data `.usmap` and documentation of the sole external IDA map |
 | `docs/` | Scope, methodology, intent — project framing docs |
 | `tools/` | Research instrumentation (access-controlled; see `tools/README.md`) |
-| `research/` | Internal RE notes, debugger-attachment research |
 | `_includes/`, `_sass/`, `assets/` | Jekyll theme for the GitHub Pages site |
-| `CLAUDE.md` | AI-assistant context document — read this if you're an LLM working on the project |
 | `SECURITY.md` | Responsible disclosure policy |
 | `CONTRIBUTING.md` | How to contribute |
 | `LICENSE` | CC-BY-SA 4.0 for docs; MIT for any code |
@@ -44,8 +41,8 @@ published as a public artifact, with any security findings routed to
 Embark through responsible disclosure.
 
 **It is NOT a cheat development project.** See
-[`CLAUDE.md`](CLAUDE.md) for the detailed scope statement and
-[`docs/SCOPE.md`](docs/SCOPE.md) for what's in and out.
+[`docs/SCOPE.md`](docs/SCOPE.md) for the detailed scope statement and
+what's in and out.
 
 **Posture clarifier:** DMA FPGA cards cost $300-500 and are
 undetectable by Elytra. If the goal here were cheating, the author
@@ -56,16 +53,10 @@ disclosure is itself the scope signal.
 ## Reading order
 
 New to the project:
-1. [`CLAUDE.md`](CLAUDE.md) — what this project is and isn't (also used as AI-assistant context)
-2. [`docs/INTENT.md`](docs/INTENT.md) — why this exists
-3. [`docs/SCOPE.md`](docs/SCOPE.md) — what's in and what's out
-4. [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md) — how we work
-5. [`index.md`](index.md) — the public data docs landing page
-
-Specific research work:
-- Research posture + prior passes: `research/`
-- Anti-cheat technical notes: `research/debugger-attachment/`
-- Pass D kernel agent: `tools/pass_d/` (access-controlled)
+1. [`docs/INTENT.md`](docs/INTENT.md) — why this exists
+2. [`docs/SCOPE.md`](docs/SCOPE.md) — what's in and what's out
+3. [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md) — how we work
+4. [`index.md`](index.md) — the public data docs landing page
 
 Security disclosure:
 - [`SECURITY.md`](SECURITY.md) — how we handle findings
