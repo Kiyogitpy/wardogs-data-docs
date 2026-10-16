@@ -81,8 +81,10 @@ documentation, not undetectable in-game advantage.
 - **Not distributed to third parties.** Research tooling in `tools/`
   stays single-operator; no multi-user cheat marketplace.
 - **Not run against live multiplayer games with other real players.**
-  Research instrumentation runs in offline modes, custom lobbies, or
-  single-player tutorial content.
+  Debugging and research instrumentation must run offline or in isolated
+  sessions. Server-connected tutorials are permitted only when there is
+  no possibility of other players joining or sharing the session. If
+  that isolation is uncertain, do not proceed.
 - **Not an attempt to bypass anti-cheat for commercial gain.** No
   Patreon tier for "undetected Wardogs cheats", no Discord selling
   anything, no paid tier whatsoever.
