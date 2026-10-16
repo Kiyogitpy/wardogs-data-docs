@@ -133,6 +133,7 @@ Two exports: an `AnimCurveCompressionSettings` asset that points at an `AnimCurv
 
 - **No animation sequences and no `PSD_*` databases.** The normalization sets reference databases (for example `PSD_Rifle_Running_Loop`) that live outside this folder. The pose data itself cannot be read from this dump.
 - **Mirror table is not wired.** The `MirrorDataTable` field on every schema is `null`, so this table is not referenced by any motion-matching schema in this dump. It may be used by a different system (for example a control rig or first-person layer).
+  - **See [`docs/CROSS_REFERENCE.md`](docs/CROSS_REFERENCE.md)** for the project-wide cross-reference index of where referenced assets are defined.
 - **Skeleton mismatch.** The mirror table targets `SKEL_TPCharacter` and the schemas target `SKEL_TP_Character_Refactor`. Whether the names are an intentional rename is not in the export.
 - **Curve inputs unnamed.** The curves in section 4 have no input names. Their meanings are inferred from asset names.
 - **Channel flags.** Trajectory sample `Flags` values are exported as numbers and have no labels.

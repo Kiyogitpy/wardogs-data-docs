@@ -99,4 +99,5 @@ The vehicle variant uses tighter locks (30 degrees on both yaw and pitch, agains
 - **Curve values.** The four CurveFloat assets are present, but their key values were not extracted in this pass.
 - **Offset units.** The offsets are in the export's native units (Unreal cm is assumed, not confirmed).
 - **Post-process effect.** The [`DT_AlternativeCriticalCamera`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AlternativeCriticalCamera/Content/DT_AlternativeCriticalCamera.json) registry has no rows in this export; the `PostProcessEffect.DeathState.Killcam` tag is resolved elsewhere.
+  - **See [`docs/CROSS_REFERENCE.md`](docs/CROSS_REFERENCE.md)** for the project-wide cross-reference index of where referenced assets are defined.
 - **Critical trigger.** What sets `State.Player.Vitality.Critical` is in the character systems, not this folder.

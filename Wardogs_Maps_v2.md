@@ -274,6 +274,8 @@ Four baked data assets, one per map. Each has the same shape: a world reference,
 - **Level (`.umap`) data.** Actor placement, spawn points, and gameplay rules are not in [`Content/Maps`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Maps). Only the supporting assets are.
 - **Blueprint logic.** [`B_MovingTarget`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json) exports its function names, variables, and components, but not the graph nodes. The time-to-target formula and the damage response are not in the export.
 - **Units and meaning.** Health (1.0), DamageIncrease (3.5), the grid bounds, and the simulation values have no units in the export. The `Iteration` counter and the sample meaning of 65535 in the height grid are not verified.
+  - **See [`docs/UNITS.md`](docs/UNITS.md)** for the project-wide units reference (UE 5.7 defaults + Wardogs-specific suffixes).
 - **Unnamed fields.** Several properties in the height grid, the warmup manifests, and the sight blocker assets are unnamed fields. Their values were read and reported, but their names are not known. Those values are cited by position and value only.
 - **Water height decoding.** The mapping from the 16-bit samples to world heights is not in the export. The sentinel reading of 65535 is an inference from the distribution.
 - **Vertex factory and material paths.** The manifests reference materials and vertex factories by path and class name. The materials themselves are in other categories.
+  - **See [`docs/CROSS_REFERENCE.md`](docs/CROSS_REFERENCE.md)** for the project-wide cross-reference index of where referenced assets are defined.

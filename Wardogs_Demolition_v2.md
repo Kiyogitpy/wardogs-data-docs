@@ -204,6 +204,7 @@ Vehicle paths are `Vehicle.Variant.<Air|Land>.<Type>.<Model>.<Variant>` tags.
 
 - **Demolition behaviour is not in this folder.** The data shows what can demolish an asset and what it leaves, but not the impulse, mass, damage-to-break threshold, or fragment counts (only restitution is exported).
 - **Units are not stated.** Minimum distance, cull distances and fragment physics are used as exported. The cm assumption is an inference.
+  - **See [`docs/UNITS.md`](docs/UNITS.md)** for the project-wide units reference (UE 5.7 defaults + Wardogs-specific suffixes).
 - **Remnant `Offset` and `FarRepresentationData_Override`** are null in every entry, so their use cannot be documented.
 - **Mesh-level data** (`SourceMeshes` entries' `FarRepresentationData`, custom primitive colours) is not summarised beyond the mesh name.
 - **Zones** (`Important`, `Distant`) are not defined in this folder. Their meaning is an inference from the names.

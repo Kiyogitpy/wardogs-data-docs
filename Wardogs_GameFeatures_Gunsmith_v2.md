@@ -234,6 +234,7 @@ The large-MOA bands are on the asset but were not extracted. These read as displ
 - **Weapon balance is not here.** Damage, fire rate, recoil and spread live on the weapon items, which are outside this plugin.
 - **Large-MOA bands** on [`DA_GunsmithExpandedAccuracy`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Shared/Stats/ExpandedStats/Data/DA_GunsmithExpandedAccuracy.json) were not extracted.
 - **Texture and widget assets** (`T_Reticle_*`, `W_*`, `DL_Gunsmith_*`, `B_Gunsmith*`) are referenced by name or path only.
+  - **See [`docs/CROSS_REFERENCE.md`](docs/CROSS_REFERENCE.md)** for the project-wide cross-reference index of where referenced assets are defined.
 - **Localised strings** are referenced by key. The text is not in this export except where a `SourceString` was exported.
 - **Scope and sight item ids** (for example `Id.Item.OPT_08`) are referenced in the exclusivity and texture rows, but the item definitions are outside this plugin.
 - **Popup options** ([`DT_GunsmithPopupOptions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/Popups/DT_GunsmithPopupOptions.json)) hold five popup rows (see the Season 02 update). Popup text is referenced by key, and only some `SourceString` values are exported.

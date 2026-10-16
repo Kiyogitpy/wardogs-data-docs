@@ -384,7 +384,9 @@ Each row is a `WDPostProcessEffect` keyed by a gameplay tag. The material is `MI
 ## 11. Still Not Pulled / Limitations
 
 - **Object references only.** Recipe rows reference `B_CameraShake_*` blueprints and `NS_*` Niagara systems by path or class name. Only those references were pulled. The shake behavior and the Niagara internals are not in [`Content/VFX`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/VFX) and are not in this doc.
+  - **See [`docs/CROSS_REFERENCE.md`](docs/CROSS_REFERENCE.md)** for the project-wide cross-reference index of where referenced assets are defined.
 - **Unit and meaning uncertainty.** Sizes, lifetimes, and offsets have no units in the export. Multiplier names (for example `Flash Size Multiplyer 1P`) are read literally, and how they stack at runtime is not verified.
+  - **See [`docs/UNITS.md`](docs/UNITS.md)** for the project-wide units reference (UE 5.7 defaults + Wardogs-specific suffixes).
 - **Unnamed enum.** `SmokeType = NewEnumerator1` on six smoke grenades does not say which behavior it selects.
   - **SDK (2026-10-16):** enum type is [`ESmokeTypes`](sdk/raw/ESmokeTypes_structs.hpp) (3 values: `NewEnumerator0`, `NewEnumerator1`, `ESmokeTypes_MAX`). Dumper-7 did not resolve the symbolic value names either — the UserDefinedEnum ships without string labels. Behaviour mapping remains unresolved via static means; would need runtime observation to confirm which value triggers which smoke behavior.
 - **Unnamed property names.** Some keys in the timing sequences are suffixed with hash tokens (for example `ExplosionData_9_FB01A97E496F...`). They were trimmed to their readable part. The mapping is one-to-one, so the meaning is unchanged, but the raw keys are not reproduced here.

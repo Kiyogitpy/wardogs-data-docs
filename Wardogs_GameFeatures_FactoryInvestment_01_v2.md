@@ -102,5 +102,6 @@ The `Value` of 1.0 is the starting upgrade level. The curve turns that level int
 - **Discount meaning.** Whether `ProductionDiscount` 20.0 is a percent, and how it applies, is not confirmed.
 - **Recipe duration.** 10.0 is the value in the export; its unit (seconds assumed) is not stated.
 - **Icons and strings.** The display name and the map icon are localised or texture references; not resolved here.
+  - **See [`docs/CROSS_REFERENCE.md`](docs/CROSS_REFERENCE.md)** for the project-wide cross-reference index of where referenced assets are defined.
 - **Factory world content.** The factory's world layer and buildings are not in this folder.
 - **Source-string names.** The DisplayName is taken from the localised source string as-is.
