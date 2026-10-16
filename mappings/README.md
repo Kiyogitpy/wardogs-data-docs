@@ -5,11 +5,25 @@
 Compiled-binary mappings that let community tooling resolve names
 and offsets inside the shipped Wardogs client.
 
+## Authoritative IDA map
+
+The only IDA map for this project is the user-supplied file:
+
+`E:/Reverse_Engineer/wardogs_analysis/IDAMappings/5.7.4-516586+++Wardogs+Live-Wardogs.idmap`
+
+Size: 4,942,224 bytes. SHA-256:
+`f4b2942331061187454b625821f8a6119b267551d22dc1cabbdf1a4f3ee1afdb`.
+
+Use this file directly. The byte-identical checkout and temporary analysis
+copies were removed on 2026-10-17. Do not retain duplicate or alternative
+`.idmap` files for this project. This is a local workstation path, not a
+download bundled with the documentation. The `.usmap` below serves cooked
+asset extraction and remains a separate input.
+
 ## What's here
 
 | File | Size | Purpose |
 |---|---:|---|
-| `5.7.4-516586+++Wardogs+Live-Wardogs.idmap` | 4.9 MB | IDA Pro name map — one line per named address |
 | `5.7.4-516586+++Wardogs+Live-Wardogs.usmap` | 1.1 MB | UE class/property metadata used by CUE4Parse / FModel |
 
 ## Build identity
@@ -26,22 +40,24 @@ and offsets inside the shipped Wardogs client.
 
 ### `.idmap` — IDA name mapping
 
-Plain-text, one entry per line:
+The authoritative external artifact is **Dumper-7 binary mapping version 2**, with
+magic byte `0xD7`, a packed header, string data, and typed record sections.
+It is not an IDA Names-window text export. See the upstream
+[layout](https://github.com/Encryqed/Dumper-7/blob/main/Dumper/Generator/Public/Generators/IDAMappingLayouts.h)
+and [generator](https://github.com/Encryqed/Dumper-7/blob/main/Dumper/Generator/Private/Generators/IDAMappingGenerator.cpp).
 
-```
-<address> <name>
-<address> <name>
-...
-```
+The 2026-10-17 read-only decoder validated its section boundaries and
+string references. It contains 3,225 enum records, 21,282 structure/class
+records, 3 globals, 9,134 vtables, and **one native exec-function record**:
+`AActor::AddComponent`. Do not interpret this file as comprehensive native
+function coverage. Its exec-function record stores an RVA; the analysis
+image base and build correspondence must be established independently.
 
-Produced by exporting the IDA Pro Names list on a loaded game
-binary. Addresses are preferred-base relative — when the binary
-loads at `0x200000000` (its ImageBase), the addresses in this file
-are relative to that.
-
-Import into a fresh IDA session via the `Names` window → `Import...`
-or an IDA Python script that iterates lines and calls
-`idc.set_name(ea, name)`.
+The [initial damage IDA results](../docs/DAMAGE_IDA_RESULTS.md) record the
+failure to validate locations against an older reconstructed PE. The later
+[restored-input trace](../docs/DAMAGE_IDA_RESTORED.md) used selected validated
+vtable labels from this map. Format validity alone does not establish a
+mapping-to-image match.
 
 ### `.usmap` — UE class/property metadata
 
@@ -77,9 +93,8 @@ Short version:
 
 - `.usmap` is a prerequisite for parsing newer UE5 cooked data where
   property names are no longer stored in the asset itself
-- `.idmap` is a prerequisite for productive static RE on the shipped
-  binary — raw IDA without this gives you nothing but mangled Rtti
-  class names
+- `.idmap` supplies type/vtable names for static RE; native registration
+  strings and code remain useful where the map has limited coverage
 
 ## Usage with CUE4Parse
 
@@ -101,39 +116,28 @@ provider.SubmitKey(new FGuid(0, 0, 0, 0), new FAesKey("<derived AES key>"));
 
 ## Usage with IDA Pro
 
-```python
-# IDA Python - run from File > Script File...
-import idc
-idmap = r"<path to>\5.7.4-516586+++Wardogs+Live-Wardogs.idmap"
-with open(idmap) as f:
-    for line in f:
-        parts = line.strip().split(None, 1)
-        if len(parts) != 2: continue
-        try:
-            ea = int(parts[0], 16)
-            idc.set_name(ea, parts[1], idc.SN_NOWARN | idc.SN_NOCHECK)
-        except ValueError:
-            continue
-print("Done.")
-```
+Use the authoritative external path above with a reader/importer compatible
+with the binary version, then validate
+the selected records against the matching offline image before applying
+names or types to an owned analysis database. Do not parse this artifact
+as text or add an assumed image base to every field. The restored-input
+pass applied selected checked labels to an owned database; a working full
+importer is not claimed. Reading the canonical map directly does not
+require copying it beside each analysis database.
 
 ## Refresh policy
 
-The mappings are tied to the exact build (`CL-516586`). A patch
-that changes properties, classes, or enum values requires:
-
-1. Fresh UEDumper run → new `.usmap`
-2. Fresh IDA export → new `.idmap`
-3. Rename the files with the new build CL
-4. Commit alongside the previous build's files (so old data in
-   `data/` can still be parsed with the old mapping)
+The mappings are build-specific (`CL-516586`). Preserve the `.usmap` needed
+to parse the existing exports. Do not generate, substitute or archive
+additional IDA maps under the project's single-map policy. If a later
+binary no longer matches the authoritative map, record the mismatch;
+changing the designated map requires an explicit user instruction.
 
 ## Attribution
 
 - `.usmap` format: community spec, implementations across OutTheShade
   UnrealMappingsDumper, FModel, CUE4Parse
-- `.idmap` is a vendored IDA export convention — plain text, no spec
-  needed
+- `.idmap` format: Dumper-7's published binary mapping layout, linked above
 - Generation details for this build: see
   [`../docs/METHODOLOGY.md`](../docs/METHODOLOGY.md)
 

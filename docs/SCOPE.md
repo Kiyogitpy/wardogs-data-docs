@@ -3,7 +3,12 @@
 > **Project:** [`Kiyogitpy/wardogs-data-docs`](https://github.com/Kiyogitpy/wardogs-data-docs) · [Live site](https://kiyogitpy.github.io/wardogs-data-docs/)
 
 What this project does and doesn't cover. Read in conjunction with
-[`../CLAUDE.md`](../CLAUDE.md) and [`INTENT.md`](INTENT.md).
+[`INTENT.md`](INTENT.md).
+
+This repository is a **documentation project**. It contains reference docs
+for Wardogs' cooked data and static code paths, plus the mappings and SDK
+dumps needed to read them. It is not a tooling repository: no runtime
+agents, loaders, or instrumentation are published here.
 
 ## In scope
 
@@ -19,30 +24,17 @@ What this project does and doesn't cover. Read in conjunction with
 ### Static reverse engineering
 
 - Disassembly of `WardogsClient-Win64-Shipping.exe` using IDA Pro
-  and public `.idmap` / `.usmap` community mappings
+  and the community `.idmap` / `.usmap` mappings documented in
+  [`../mappings/`](../mappings/)
 - CppSDK generation via UEDumper
 - Function-level documentation of code paths that consume the
   documented data assets
 - Formula documentation ("how multipliers combine", "how damage
-  resolves", etc.) via static disassembly
+  resolves", etc.) via static disassembly of an owned, offline image
 
-### Anti-cheat architectural notes
-
-- Public documentation of Elytra's architecture at the level of
-  "which Windows mechanisms does it use" (handle stripping via
-  `ObRegisterCallbacks`, direct syscalls, kernel driver loading
-  via `ZwLoadDriver`, etc.)
-- Same posture as public write-ups of EasyAntiCheat, BattlEye,
-  Vanguard, Fairplay, FACEIT AC
-- Detection-vector documentation at the architecture level
-
-### Research instrumentation (private, single-operator)
-
-- Kernel-mode cross-process memory read primitive (Pass D agent)
-- Loader for the above (orchestrates kdmapper + IOCTLs)
-- Threat model and runbook for the research tooling
-- Used only on the author's own hardware with the author's own
-  purchased copy of the game, in offline modes or custom lobbies
+All RE here is static: reading a binary and its mappings on disk. No
+game process is executed or attached to for the documentation in this
+repo.
 
 ### Security findings pipeline
 
@@ -53,6 +45,16 @@ What this project does and doesn't cover. Read in conjunction with
 
 ## Out of scope — hard limits
 
+### Tooling and instrumentation
+
+- No runtime agents, memory-access primitives, loaders, or injectors
+  are published in this repository
+- Any private instrumentation used to produce or verify documentation
+  stays out of this repo: single-operator, on the author's own
+  hardware with an owned copy of the game, offline or in sessions where
+  no other player can join or share the session
+- This repo ships documentation, not programs
+
 ### Cheat tooling
 
 - No ESP overlay (DirectX hook, WPF window, external renderer, ANY)
@@ -62,20 +64,20 @@ What this project does and doesn't cover. Read in conjunction with
 
 ### Distribution
 
-- Research tooling (`tools/pass_d/`) is single-operator; **not**
-  packaged for general consumption
+- Nothing in this repo is packaged for general consumption
 - No installer, no auto-updater, no one-click bypass
 - Not shared on marketplaces, Discord cheat scenes, or similar
 
 ### Online multiplayer with real players
 
-- The research instrumentation is used in offline modes, tutorial
-  content, or custom lobbies the author controls
-- Not deployed against live matchmaking games with uninvolved
-  third-party players
-- If a research question requires live matchmaking (rare), the
-  observation is read-only, bounded, and reported to Embark
-  before any public write-up
+- Any observation that informs this documentation must run offline or
+  in isolated sessions. Server-connected tutorials are permitted only
+  when there is no possibility of other players joining or sharing the
+  session.
+- If that isolation is uncertain, do not proceed. Controlling a lobby
+  alone does not establish isolation.
+- There is no live-matchmaking exception, including read-only
+  observation.
 
 ### Monetization
 
@@ -105,16 +107,10 @@ Some topics are judgment calls. Default posture:
 
 ### Automation of RE tasks
 
-- A script that polls a value to help build the data docs: in scope
-- A script that polls values and acts on them to produce in-game
-  advantage: out of scope
-
-### Timing analysis
-
-- "How does Elytra time its integrity checks" — in scope as public
-  architectural research
-- "Here's a timing window to inject code" with working exploit:
-  out of scope (goes through disclosure)
+- A script that parses cooked data or a static binary to help build
+  the data docs: in scope
+- A script that reads or acts on a live game process to produce
+  in-game advantage: out of scope
 
 ## When in doubt
 

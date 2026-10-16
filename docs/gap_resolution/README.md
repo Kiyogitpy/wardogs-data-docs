@@ -16,10 +16,12 @@ work can be prioritized and parallelized.
 | [SDK](SDK.md) | 26 | Resolve hashed/unnamed names via `../sdk/raw/` | Ready — SDK committed |
 | [IDA](IDA.md) | 32 | Static disassembly using `../mappings/` | Ready — mappings committed |
 | EXPORT | 118 | Re-run CUE4Parse with better config | Scheduled for next data refresh |
-| RUNTIME | 25 | Verify static conclusions via Pass D | Deferred — requires physical access |
+| [RUNTIME](RUNTIME.md) | 25 original entries | Review exports and consumers before bounded runtime verification | Triaged — see register for evidence and next steps |
 | MISC | 240 | Needs reclassification | Lower priority |
 
-**Total gaps catalogued: 474**
+**Original classifier total: 474 entries.** These counts preserve the source
+classification; they are not a count of confirmed open questions or required
+runtime tests. The RUNTIME register records reclassifications separately.
 
 ## Prioritization
 
@@ -28,10 +30,13 @@ work can be prioritized and parallelized.
 3. **SDK** — requires reading SDK files per gap, but SDK is already committed
 4. **IDA** — slowest per gap but highest-information output; produces formula documentation
 5. **EXPORT** — bulk re-run of the data extraction pipeline
-6. **RUNTIME** — Pass D hypothesis-verification runs, requires physical-access session
+6. **RUNTIME** — follow the [triage register](RUNTIME.md), resolving static and
+   export questions before selecting an isolated observation session
 
 ## Source data
 
 Full gap classifier output: `../../pass_d/docs/gap_index_v2.csv`
-(local to the author's workspace; not in repo yet because it's
-derived data and would duplicate the per-bucket pages here).
+(local to the author's research workspace, outside this checkout). The
+[RUNTIME register](RUNTIME.md) preserves all 25 runtime-classified entries
+with source line numbers and a source-file hash so that this subset can be
+reviewed without the external CSV.
