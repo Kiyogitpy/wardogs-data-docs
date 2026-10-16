@@ -765,6 +765,16 @@ These four types are new to this doc. Their fields are not decoded here yet.
 - **Fluid Flux `Iteration`** (23,813 to 1,261,732 across states) has no label in the export. Its meaning (bake frame, simulation step, or version counter) is unknown.
 - **`AttenuationDistance`** (1000 on all 40 MicroBiomes that set it) and the other distance-like fields on MicroBiomes are not confirmed as cm cull or fade distances.
 - **Height grid arrays** (`WDWaterHeightGridAsset`) are binary data keyed by unnamed field names. Only metadata is reported here (world size, grid width, origin, linked state). Height values are not decoded.
+  - **SDK (2026-10-16):** [`UWDWaterHeightGridAsset`](sdk/raw/WDGame_classes.hpp#L33691) is a `UDataAsset` with 8 fields:
+    - `worldmin` (`FVector2D`, 0x30) — origin
+    - `WorldSize` (`FVector2D`, 0x40) — world size (cm, confirmed)
+    - `GridWidth` (`int32`, 0x50) — grid X dim
+    - `GridHeight` (`int32`, 0x54) — grid Y dim
+    - `_aaaajahedjfgkemenmnfj` (`double`, 0x58) — unresolved (Dumper-7)
+    - `_aaaajbpajedfcbkcoihjn` (`double`, 0x60) — unresolved
+    - `_aaabflcohlopnaadhglfk` (`FSoftObjectPath`, 0x68) — unresolved; **this is likely the "linked state" field** the doc references (points to a `PDA_FluxSimulationState_C`)
+    - `Heights` (`TArray<FNone_>`, 0x88) — the binary height data
+  - The two unresolved `double` fields are candidates for min/max height clip, scale factor, or sea-level offset; symbolic names remain unresolved via SDK, could be inferred by reading values across all 40 asset instances.
 - **North America fluid states** ([`DA_Flux_NorthAmerica_000`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Water/FluidFlux/NorthAmerica/DA_Flux_NorthAmerica_000.json) to `_013`, 14 assets) have no matching height grid in this dump and no `EncodeVelocityMax`. Their runtime role is unclear.
 - **Missing scale defaults.** Where a cluster, scatter, or PCG asset has no `ScaleMin` (shown as `?`), the engine default applies. That default is not in the export.
 - **Enum names** in [`DT_VehiclePropList`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Blueprints/VehiclePropTooling/DT_VehiclePropList.json) are cooked as `NewEnumeratorN`. Only the index is shown.

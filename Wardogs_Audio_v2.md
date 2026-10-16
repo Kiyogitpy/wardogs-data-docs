@@ -406,7 +406,15 @@ The `HDR` prefix is not explained in the dump. The time axis unit is not stored.
 
 - **Sound content.** MetaSoundSource graphs (`.uasset` internals), SoundWave durations, loudness and sample data are not in the JSON. Event durations and loudness cannot be stated.
 - **Behaviour logic.** The `AEB_*` and `WDAudioEventBehavior*` classes are Blueprint or C++ classes. Their code is not exported, so execution order, blending and what each behaviour does internally are inferred from property names.
+  - **SDK (2026-10-16):** audio-event behaviour helpers are in [`BFL_AudioEventBehaviorHelpers_classes.hpp`](sdk/raw/BFL_AudioEventBehaviorHelpers_classes.hpp) (`UBFL_AudioEventBehaviorHelpers_C`, a `UBlueprintFunctionLibrary`). It exposes 14 static/member functions including:
+    - `Evaluate_Restart_Behavior(AudioComp, Sound, ESoundRestartBehavior, ...)` — the restart-logic decision function (resolves "execution order" partially)
+    - `HandlePlaySound(Context, Sound, RestartBehavior, Only_If_In_Range, CancelFadeOut, _aaabfkmmjhhnafhaehpbd (double), AttachParent, SocketName, Location, ...)` — the main sound-dispatch function; one parameter (`double`) remains unnamed and is a candidate for the "reload-stage value 50.5" the doc flagged
+    - `GetSurfaceTypeCharacterIsStoodOn(Character, ..., Fluid_Depth, EWDAudioSurface, EPhysicalSurface, IsFromFoliage, Normal)` — resolves surface detection logic
+    - `DetermineHostilityOfCharacter(Character, ..., Friendly)` and `DeterminePerspetiveOfCharacter(Character, ..., FirstPerson)` — hostility + perspective evaluators
+    - `Handle_Helicopter_Audio_State_Change` — vehicle-specific audio state machine
+  - Inner Blueprint logic of specific `AEB_*` classes still not exported (Dumper-7 captures signatures, not implementation bytecode).
 - **Hashed property names.** The float on events (222 instances including behaviours), the bool and enum on DT_VoxData rows, and a list-valued hash on `WDAudioEventBehaviorApplyImpulseResonance` are unnamed. Their meaning is not confirmed. The reload-stage value 50.5 and comms value 80.0 are the most useful clues.
+  - **SDK (2026-10-16):** the 222-instance float is likely the `_aaabfkmmjhhnafhaehpbd` parameter on `HandlePlaySound` (double) — same hash pattern appears across the audio dispatch path. Without a resolved symbolic name from Dumper, static resolution hits its limit; next step is observational (what value is passed at specific event call-sites).
 - **Priority direction.** It is not stored whether higher or lower numbers win for vox group priorities or music priorities.
 - **Curve units.** Time and value units for the 42 curves are not stored. Distances in UE units are assumed to be centimetres but not verified.
 - **Vox Dialogue group.** Priority 4 exists in settings but has no DT_VoxData rows.
