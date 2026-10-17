@@ -185,10 +185,10 @@ a plain multiplicative chain. Neither is established, so it is withdrawn.
 
 ### What is still open
 
-1. **Ammo variants.** HP and AP use modified projectile stats that have
-   not been traced.
-2. **Speed after drag.** Damage also scales with impact speed below the
+1. **Speed after drag.** Damage also scales with impact speed below the
    reference speed; how fast each round slows is not modelled.
+
+Ammo types against armor are tabled in DamagePipeline §7.9.
 
 The base damage, the event tags, armor coverage (only the piece covering
 the hit counts, so the 12.7 applies to the torso, not a headshot),
