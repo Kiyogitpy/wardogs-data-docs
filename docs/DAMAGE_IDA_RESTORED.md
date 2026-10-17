@@ -80,11 +80,24 @@ adapter and sorting helpers decompiled.
 | Per-group sort / fallback | `0x6BB61A0` / `0x6BB5F40` | Signed comparisons of priority; swaps with no secondary key |
 | Custom dispatch adapter | `0x6BB7900` | Copies original input struct, supplies current amount separately, dispatches event/native override |
 | Reflected `exec_GetModificationAmount` | `0x6BB7B30` | Registration pair at `0xB322038`; virtual override call |
+| Base `GetModificationAmount` | `0x15B83B0` | Slot 86 of `0xB321D30`; returns 0.0 |
+| Armor-durability override | `0x6BB7E10` | Slot 86 of `0xB322140`; see [corpus cross-check](#corpus-cross-check) |
 
 The subsystem's bool parameter bypasses the selected evaluator on the
-inspected branch. Its gameplay name and all callers were not recovered.
-The selected-system predicate reads the base active field; this does not
-establish which system an actual gameplay event will select.
+inspected branch. The exec passes it as `popped bool != 0`. When it is
+set, the native method returns the leading float of its event argument
+unchanged. Its gameplay name was not recovered. The corpus records 17
+direct call sites to `0x6F02EC0`: the exec at `0x6F08B42` and 16 native
+callers whose roles are not traced.
+
+With the bool clear, the method returns the converted amount without
+evaluation when that amount is not positive, no system is selected, or
+the selected system is flagged as garbage. It broadcasts
+`OnDamageModified` on every path. The selected-system predicate reads the
+base active field through a slot-89 implementation (`0x178DF10`) that the
+linker shares with unrelated classes. Only the first such system is
+evaluated. This does not establish which system an actual gameplay event
+will select.
 
 ## B-1: selection and ordering
 
@@ -109,8 +122,10 @@ For entries passing that preliminary test:
 3. An empty hit-location container passes; a populated container requires
    at least one match against the hit tag's explicit or parent tags.
 4. The selected modification is copied into the target-tag group. The
-   collector replaces its copied `PriorityIndex` with the category lookup
-   result and stores the original row entry index separately.
+   match callback (`0x6BB6730`) replaces the copy's `PriorityIndex` with
+   the category lookup result. It stores the original row entry index in
+   the copy's trailing padding at offset `0x24`, which the SDK declares
+   only as `Pad_24`.
 
 Category lookup returns the **first exact tag match's zero-based array
 index**, or **-1** if missing. Each target-tag group's modifier array is
@@ -126,9 +141,14 @@ this order because the collector overwrites them.
 
 The evaluator visits the populated slots of a grouped sparse collection,
 then visits the sorted array in each slot. **This is not one global sort
-across all target-tag groups.** The tag hierarchy walk, registry fallback,
-group insertion order and duplicate-row effects need further tracing
-before claiming a total order for an arbitrary event. B-1 remains partial.
+across all target-tag groups.** The collector starts at the target
+entity tag and walks parent tags up to, but not including,
+`RootDamageTag`, looking up a registry row at each level. The instigator
+and source tags are added to their own context containers; the target tag
+is not. The parent-tag step (`0x395F4D0`) and group insertion
+(`0x6BB5ED0`) have no corpus body. Group order, registry fallback and
+duplicate-row effects therefore need further tracing before claiming a
+total order for an arbitrary event. B-1 remains partial.
 
 ## B-2: evaluator arithmetic
 
@@ -166,21 +186,89 @@ RVA 6BB73E7: maxss current, 0
 ```
 
 The nonempty-collection path clamps C to at least zero after all groups,
-not after each modification. The empty-collection path returns S without
-passing through that clamp. A non-custom delta is applied before its
-absolute magnitude is checked against approximately `1e-8` for recording
-in the event's result list; that threshold does not suppress its arithmetic.
+not after each modification. No upper bound is applied. The
+empty-collection path returns S without passing through that clamp. A
+non-custom delta is applied before its absolute magnitude is checked
+against approximately `1e-8` for recording in the event's result list;
+that threshold does not suppress its arithmetic. Custom deltas are
+recorded without the threshold. The result list's location and record
+layout come from types outside the validated set.
 
 Thus a selected non-custom ongoing amount of 0 has zero delta; -25 gives
 `C *= 0.75` algebraically, while +100 gives `C *= 2`. These are explanations
 of the native operator, not claims about a particular hit or the raw values
 inside an untraced custom helper. Arithmetic uses single-precision floats.
 
+## Corpus cross-check
+
+On 2026-10-17 this trace was rechecked against the
+[decompilation corpus](DECOMPILATION_CORPUS.md) for the same input hash.
+`corpus.sqlite` was opened read-only. Every claim needed a function body
+and RVA. A separate verifier checked each struct offset, field name and
+type against `validated_sdk_types.h` and `schema.json`. Claims resting on
+a type outside the 14 validated layouts stayed unverified. Some
+instruction, vtable and registration checks read the restored executable's
+bytes directly, read-only. No analysis database was opened.
+
+No verified finding contradicts the native locations, B-1 matching and
+sorting, or B-2 arithmetic above. The doc's statements are confirmed at
+these RVAs:
+
+- Exec to native method and bypass: `0x6F08A60`, `0x6F02EC0`.
+- First-active-system selection: `0x6EFFD40`.
+- Evaluator and collector slots 86/87: `0x6BB6FB0`, `0x6BB6A60`.
+- Entry skip, alignment and requirement matching: `0x6BB6730`, `0x6BB5D20`.
+- Category lookup: `0x6BB8970`.
+- Unstable ascending sort: `0x6BB61A0`, `0x6BB5F40`.
+- Operation arithmetic, including no change for `None` or an unknown
+  enum, and the final floor: `0x6BB6FB0`.
+- Custom dispatch with the running amount as a separate float:
+  `0x6BB7900`, `0x6BB7B30`.
+
+New findings:
+
+- **Base override:** `0x15B83B0` returns 0.0. A Blueprint operation that
+  does not override `GetModificationAmount` contributes no delta.
+- **Blueprint overrides:** the four `B_*_C` overrides are Blueprint
+  script. None of their bodies is in the native corpus.
+- **Armor durability (`0x6BB7E10`):** returns 0 when the target actor
+  (`FWDModifyDamageData+0x50`) is null or flagged as garbage. Otherwise it
+  walks the target context tags (`+0x60`), calls the actor's virtual
+  `+0x738`, and returns `value × -0.01 × current`. What that virtual
+  returns is not traced.
+- **Shared vtable:** `0xB321D30` serves both
+  `UWDCustomDamageModificationOperation` and
+  `UWDCustomAttributeModification`, because the linker merged the
+  identical tables.
+- **Schema gap:** `schema.json`'s `EObjectFlags` lacks `0x40000000`. The
+  SDK (`sdk/raw/Basic.hpp`) names it `MirroredGarbage`; it is the
+  garbage test used throughout these bodies.
+
+Still unverified:
+
+| Item | RVA | Reason |
+|---|---|---|
+| Event-to-`FWDModifyDamageData` conversion, so the relation between the event amount and S | `0x6EF8DE0` | No corpus body |
+| Event argument type and its leading `Amount` | `0x6F02EC0` | `FWDDamageEventData` not validated |
+| Result list at event `+0x190` and its record layout | `0x6BB6FB0` | Types not validated |
+| Default object at `UClass+0x110`; subclass check via `+0x30`/`+0x38` | `0x6BB6FB0` | `UClass`/`UStruct` not validated |
+| `+0xD4 & 0x80` as the native-class test | `0x6BB7900` | Engine-semantics inference |
+| Group order (insertion order would run most specific tag first) | `0x6BB6FB0`, `0x6BB5ED0` | Container internals; no body |
+| Registry row entries at `+0x10`; parent-tag step | `0x6BB6A60`, `0x395F4D0` | Row type not validated; no body |
+| Event alignment at input-struct `+0x60` | `0x6BB6730` | Input struct not validated |
+| Registry name and category asset from game settings `+888`/`+896` | `0x6BB6A60`, `0x6C03540` | Type not validated |
+| No other `GetModificationAmount` dispatch site | `0x6BB7C12`, `0x6BB7AC7` | 1,972 other `+0x2B0` sites untraced |
+| Delegate broadcast internals | `0x18FCDB0` | Container layout opaque |
+| Individual instruction anchors listed under B-2 | `0x6BB72DE`–`0x6BB73E7` | Only call site `0x6BB72F3` rechecked |
+
+The category order listed under B-1 comes from the exported asset and was
+not part of this code check.
+
 ## Remaining work
 
-Trace the four Blueprint helper bodies and native armor-durability
-override to determine their bindings, row selection, fallback and returned
-deltas (B-3/B-4). Finish the target-tag/registry/group-order trace before
+Trace the four Blueprint helper bodies, which are not in the native
+corpus, and the value behind the armor-durability override, to determine
+their bindings, row selection, fallback and returned deltas (B-3/B-4). Finish the target-tag/registry/group-order trace before
 producing an end-to-end infantry example. Vehicle/explosive caller paths,
 health application and server authority are outside this completed slice.
 Any security finding follows [SECURITY.md](../SECURITY.md).

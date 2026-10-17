@@ -11,7 +11,13 @@ could not recover usable code from the reconstructed dump. A later
 [restored-executable pass](DAMAGE_IDA_RESTORED.md) established B-2's
 native evaluator contract and partially resolved B-1: matching, category
 priority replacement, per-group sorting and unstable ties. Ordering between
-groups and B-3/B-4 helper bodies remain open.
+groups and B-3/B-4 helper bodies remain open. A read-only
+[corpus cross-check](DAMAGE_IDA_RESTORED.md#corpus-cross-check) then
+confirmed that contract. It also established the call edge from
+`ModifyDamage` to the global evaluator, identified the second
+`GetModificationAmount` float as the running amount, and recovered the
+native armor-durability override. The Blueprint helper bodies are not in
+the native corpus.
 
 ## What the export audit establishes
 
@@ -83,6 +89,10 @@ Starting points:
   declares `DamageRegistryName`, `DamageCategoriesDataAsset`, and
   `RootDamageTag`. These fields give consumer leads; they do not prove a
   call edge from `ModifyDamage` or identify the native orchestration method.
+  *Update:* the restored trace shows that edge. `ModifyDamage`
+  (`0x6F02EC0`) makes an indirect slot-86 call at `0x6F02F3A` on the
+  first active damage system. The global system's slot-86 implementation
+  is `0x6BB6FB0`, and its collector reads these three fields.
 - [`FWDDamageModificationEntry`](../sdk/raw/WDGame_structs.hpp#L4887)
   declares requirement containers, alignment, hit locations, and the
   output operation. [`FWDDamageModification`](../sdk/raw/WDGame_structs.hpp#L4870)
@@ -130,7 +140,9 @@ separate until their relationship is established.
 
 The interface [`GetModificationAmount`](../sdk/raw/WDGame_classes.hpp#L36510)
 returns a float and takes an unresolved second float parameter. Establish
-that parameter's source and meaning at the actual caller.
+that parameter's source and meaning at the actual caller. *Update:* the
+evaluator passes the running amount there, and adds the return value to
+it. See [B-2 in the restored trace](DAMAGE_IDA_RESTORED.md#b-2-evaluator-arithmetic).
 [`FWDDamageModificationDebugData`](../sdk/raw/WDGame_structs.hpp#L11152)
 contains `AmountBeforeCalculation`, `AdjustAmount`, and
 `AmountAfterCalculation`; these are useful static leads, not observations
@@ -174,7 +186,7 @@ and how are their raw fields converted into custom-operation results?
 |---|---|---|
 | `B_ArchetypeCaliberModifiers_C` | Declared `DataTable`; [archetype/caliber helper][archetype] | Bound table, source tag derivation, lookup and fallback, returned quantity |
 | `B_AmmoTypeEffectiveness_C` | [Pen helper][ammo-pen] has six rows and arm-group values; infantry entries 138–141 have armor/helmet requirements | Actual table binding and use of `Modifier` versus the arm-group map |
-| `WDDamageModificationOperation_PlayerArmorDurability` | Infantry entries 142–144 name the native class with target/source requirements | Branch selection, durability input source, return semantics |
+| `WDDamageModificationOperation_PlayerArmorDurability` | Infantry entries 142–144 name the native class with target/source requirements | Branch selection, durability input source, return semantics. Override recovered at `0x6BB7E10`; its input value is still untraced ([cross-check](DAMAGE_IDA_RESTORED.md#corpus-cross-check)) |
 | `B_VehicleSeatDamageReduction_C` | [Seat helper][seats] has variant rows and `State.Player.Vehicle.SeatDamageReduction` values | Bound table, variant/state matching, missing-row handling, return semantics |
 
 The ammo and seat subclass declarations do not expose their own `DataTable`
