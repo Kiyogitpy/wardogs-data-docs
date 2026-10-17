@@ -235,6 +235,8 @@ Variants that share a damage row and map are listed together. "none"
 means hits there never reach the main health. Rows marked "unreachable"
 are map keys that no registered component can produce (§3.2).
 
+Interactive: the [Vehicle Hitbox Viewer](vehicle-viewer.md) shows these slots on each vehicle's collision mesh.
+
 <!-- damage_tables --hitboxes -->
 | Vehicle (variants) | Collision slot | Section (max health) | Routing to main health | `556mm` | `50Cal` | `30mm` |
 |---|---|---|---|---:|---:|---:|

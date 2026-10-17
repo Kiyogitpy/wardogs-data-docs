@@ -16,7 +16,8 @@ tags. Entries that need instigator tags are counted as unknown instead of applie
     python _tools/damage_tables.py --vehicles # rule factor per vehicle row and caliber
     python _tools/damage_tables.py --survive  # hits to destroy every vehicle variant
     python _tools/damage_tables.py --hitboxes # collision slot -> section map and damage ratios per vehicle, unreachable keys marked
-    python _tools/damage_tables.py --write    # refresh every marked table in the docs after a data update
+    python _tools/damage_tables.py --json     # assets/data/vehicle-hitboxes.json for the hitbox viewer
+    python _tools/damage_tables.py --write    # refresh every marked table in the docs (and the JSON) after a data update
 
 The distance curve's Time axis is centimetres: the native code evaluates it with the
 straight-line distance between shot origin and hit point in engine units.
@@ -492,6 +493,36 @@ def vehicle_tables():
     return generic, vrows
 
 
+def variants():
+    """Every vehicle variant file, in name order."""
+    return sorted(glob.glob(os.path.join(DATA, "**", "Variants", "VV_*.json"), recursive=True))
+
+
+def vehicle_groups(vrows):
+    """Variants that share a damage tag and slot map, in variant order: [(damage tag, sections, slot map,
+    registered surfaces, variant names)]. Variants without a slot map or a damage tag are left out."""
+    seen = {}
+    for vpath in variants():
+        modules, _, _ = assemble(vpath)
+        secs, dtag, smap = sections(modules), damage_tag(modules), surface_maps(modules)
+        if not smap or not dtag:
+            continue
+        key = (dtag, tuple(sorted(smap.items())))
+        seen.setdefault(key, (dtag, secs, smap, registered(modules), []))[4].append(os.path.basename(vpath)[3:-5])
+    return list(seen.values())
+
+
+def hits_to_destroy(secs, sec, dmg, cap=5000):
+    """Direct hits of `dmg` on section `sec` until the main health reaches 0 (§4 order and routing),
+    or None when it never does (no damage, or the section does not route to the main health)."""
+    health = {k: v[0] for k, v in secs.items()}
+    hits = 0
+    while health.get(MAIN, 0) > 0 and hits < cap and dmg > 0:
+        apply_section(secs, health, sec, dmg)
+        hits += 1
+    return hits if dmg > 0 and hits < cap else None
+
+
 def hitbox_table(proj):
     """Collision slot -> section map per vehicle, with section health, routing to the main health and the
     rule factor per caliber at that hitbox. Variants sharing a damage row and map are listed once."""
@@ -500,15 +531,7 @@ def hitbox_table(proj):
     print("| Vehicle (variants) | Collision slot | Section (max health) | Routing to main health | "
           + " | ".join(f"`{c.replace('Item.Caliber.', '')}`" for c in cals) + " |")
     print("|---|---|---|---|" + "---:|" * len(cals))
-    seen = {}
-    for vpath in sorted(glob.glob(os.path.join(DATA, "**", "Variants", "VV_*.json"), recursive=True)):
-        modules, _, _ = assemble(vpath)
-        secs, dtag, smap = sections(modules), damage_tag(modules), surface_maps(modules)
-        if not smap or not dtag:
-            continue
-        key = (dtag, tuple(sorted(smap.items())))
-        seen.setdefault(key, [secs, smap, registered(modules)]).append(os.path.basename(vpath)[3:-5])
-    for (dtag, _), (secs, smap, reg, *names) in seen.items():
+    for dtag, secs, smap, reg, names in vehicle_groups(vrows):
         entries = row_entries(dtag, vrows) + generic
         own = "" if dtag in vrows else ", no row of its own"
         label = f"`{dtag.replace('Meta.Damage.Vehicle.', '')}` ({', '.join(names)}{own})"
@@ -528,15 +551,12 @@ def hitbox_table(proj):
 
 def survive_table(proj):
     """Hits to destroy every vehicle variant: main body, and the fastest section, per caliber."""
-    generic = rows("DT_GlobalDamage_VehicleData.json")["Meta.Damage.Vehicle"]["DamageModificationEntries"]
-    vrows = {}
-    for path in glob.glob(os.path.join(DATA, "Wardogs/Plugins/**/DT_GlobalDamage_VehicleData_*.json"), recursive=True):
-        vrows.update(exports(path)[0]["Rows"])
+    generic, vrows = vehicle_tables()
     cals = ["Item.Caliber.556mm", "Item.Caliber.50Cal", "Item.Caliber.20x102mm", "Item.Caliber.30mm"]
     print("| Variant | Damage row (`Meta.Damage.Vehicle.` omitted) | Main health | "
           + " | ".join(f"`{c.replace('Item.Caliber.', '')}`" for c in cals) + " |")
     print("|---|---|---:|" + "---|" * len(cals))
-    for vpath in sorted(glob.glob(os.path.join(DATA, "**", "Variants", "VV_*.json"), recursive=True)):
+    for vpath in variants():
         modules, missing, _ = assemble(vpath)
         secs, dtag = sections(modules), damage_tag(modules)
         if MAIN not in secs or not dtag:
@@ -544,30 +564,13 @@ def survive_table(proj):
         entries = row_entries(dtag, vrows) + generic
         cells = []
         for cal in cals:
-            src, ctx, base = proj[cal]
-            source = expand(ctx + [src, cal, "Meta.Damage.DamageType.Projectile"])
+            base = proj[cal][2]
             results = {}
             for sec, (hp, hit, *_) in secs.items():
                 if not hit:
                     continue
-                f = 1.0
-                for e in entries:
-                    m = e["OutModification"]
-                    if e["InstigatorRequirements"] or e["TargetRequirements"] or not e["SourceRequirements"]:
-                        continue
-                    if not set(e["SourceRequirements"]) <= source:
-                        continue
-                    if e["PossibleHitLocations"] and not set(e["PossibleHitLocations"]) & set(lineage(hit)):
-                        continue
-                    if m["Operation"].endswith("Percentage_Ongoing"):
-                        f *= 1 + m["Amount"] / 100
-                dmg = base * max(f, 0)
-                health = {k: v[0] for k, v in secs.items()}
-                hits = 0
-                while health.get(MAIN, 0) > 0 and hits < 5000 and dmg > 0:
-                    apply_section(secs, health, sec, dmg)
-                    hits += 1
-                if dmg > 0 and hits < 5000:
+                hits = hits_to_destroy(secs, sec, base * vehicle_rule_factor(entries, cal, hit, proj))
+                if hits is not None:
                     results[sec] = hits
             main = results.get(MAIN)
             best = min(results.items(), key=lambda kv: kv[1]) if results else None
@@ -579,8 +582,140 @@ def survive_table(proj):
         print(f"| `{name}` | `{dtag.replace('Meta.Damage.Vehicle.', '')}` | {secs[MAIN][0]:g} | " + " | ".join(cells) + " |")
 
 
+JSON_OUT = os.path.join(ROOT, "assets", "data", "vehicle-hitboxes.json")
+MODELS = "assets/models/vehicles"
+JSON_CALIBERS = {"Item.Caliber.556mm": "5.56mm", "Item.Caliber.762mm": "7.62mm", "Item.Caliber.50Cal": ".50Cal",
+                 "Item.Caliber.20x102mm": "20x102mm", "Item.Caliber.30mm": "30mm", "Item.Caliber.35x228mm": "35x228mm"}
+
+
+def glb_summary(path):
+    """(variants the GLB depicts and notes on it, from asset.extras; material name -> world-space bounding-box centre
+    [x, y, z] in metres, glTF axes, of the primitives that use it). Reads the GLB's JSON chunk alone: POSITION
+    accessors must carry min/max, so no buffer decoding."""
+    import struct
+    with open(path, "rb") as f:
+        f.seek(12)
+        size, kind = struct.unpack("<II", f.read(8))
+        gltf = json.loads(f.read(size)) if kind == 0x4E4F534A else {}
+    norm = {5120: 127, 5121: 255, 5122: 32767, 5123: 65535}
+
+    def mul(a, b):
+        return [[sum(a[i][k] * b[k][j] for k in range(4)) for j in range(4)] for i in range(4)]
+
+    def local(n):
+        if "matrix" in n:
+            m = n["matrix"]  # column-major
+            return [[m[c * 4 + r] for c in range(4)] for r in range(4)]
+        x, y, z, w = n.get("rotation", [0, 0, 0, 1])
+        sx, sy, sz = n.get("scale", [1, 1, 1])
+        tx, ty, tz = n.get("translation", [0, 0, 0])
+        r = [[1 - 2 * (y * y + z * z), 2 * (x * y - z * w), 2 * (x * z + y * w)],
+             [2 * (x * y + z * w), 1 - 2 * (x * x + z * z), 2 * (y * z - x * w)],
+             [2 * (x * z - y * w), 2 * (y * z + x * w), 1 - 2 * (x * x + y * y)]]
+        return [[r[i][0] * sx, r[i][1] * sy, r[i][2] * sz, (tx, ty, tz)[i]] for i in range(3)] + [[0, 0, 0, 1]]
+
+    boxes = {}
+
+    def visit(i, parent):
+        n = gltf["nodes"][i]
+        world = mul(parent, local(n))
+        for p in gltf["meshes"][n["mesh"]]["primitives"] if "mesh" in n else []:
+            if "material" not in p or "POSITION" not in p["attributes"]:
+                continue
+            acc = gltf["accessors"][p["attributes"]["POSITION"]]
+            d = norm.get(acc["componentType"]) if acc.get("normalized") else None
+            lo, hi = ([max(v / d, -1.0) if d else v for v in acc[k]] for k in ("min", "max"))
+            name = gltf["materials"][p["material"]].get("name", "")
+            box = boxes.setdefault(name, [[float("inf")] * 3, [float("-inf")] * 3])
+            for corner in ([(lo, hi)[(c >> a) & 1][a] for a in range(3)] for c in range(8)):
+                pt = [sum(world[r][k] * (corner + [1])[k] for k in range(4)) for r in range(3)]
+                box[0] = [min(a, b) for a, b in zip(box[0], pt)]
+                box[1] = [max(a, b) for a, b in zip(box[1], pt)]
+        for c in n.get("children", []):
+            visit(c, world)
+
+    identity = [[float(r == c) for c in range(4)] for r in range(4)]
+    for i in gltf.get("scenes", [{}])[gltf.get("scene", 0)].get("nodes", []):
+        visit(i, identity)
+    extras = gltf.get("asset", {}).get("extras", {})
+    return (extras.get("variants", []), extras.get("notes", []),
+            {k: [round((a + b) / 2, 4) for a, b in zip(*v)] for k, v in boxes.items()})
+
+
+def hitbox_json(proj):
+    """assets/data/vehicle-hitboxes.json for the hitbox viewer: the --hitboxes map with full routing, the rule
+    factor and the hits to destroy through each slot for every caliber, and the vehicle's GLBs (one per
+    distinct variant geometry, matched by the variants each GLB declares) with each slot's centre on them."""
+    import subprocess
+    glbs = {}
+    for p in sorted(glob.glob(os.path.join(ROOT, MODELS, "*.glb"))):
+        glbs[f"{MODELS}/{os.path.basename(p)}"] = glb_summary(p)
+    generic, vrows = vehicle_tables()
+    cals = [c for c in JSON_CALIBERS if c in proj]
+    # The data/ tree id names the exact input in any clone, shallow ones included (a commit lookup there can
+    # stop at the shallow boundary).
+    tree = subprocess.run(["git", "rev-parse", "HEAD:data"], cwd=ROOT, capture_output=True, text=True).stdout.strip() or None
+    out = {"meta": {
+        "source_data_tree": tree,
+        "source_data_tree_note": "git tree id of data/ when generated; equals `git rev-parse <commit>:data` for any commit with the same data",
+        "generator": "python _tools/damage_tables.py --json",
+        "assumptions": ["FMJ direct hit at point blank: no falloff, ricochet or penetration",
+                        "hostile instigator with no instigator tags; rules that need instigator or target tags are skipped",
+                        "section health stops at 0; routing as in Vehicle §4.2",
+                        "a hit takes the section of its triangle's slot as in Vehicle §3.1 (projectile and radial hits); "
+                        "unreachable names why no registered component can produce a slot key",
+                        "hits_to_destroy counts hits through that slot until the main health reaches 0; "
+                        "null when it never does (no damage, or no route to the main health)"],
+        "docs": {"hitboxes": "Wardogs_VehicleDamagePipeline_v1.html#31-hitboxes",
+                 "routing": "Wardogs_VehicleDamagePipeline_v1.html#42-routing-semantics",
+                 "hits_to_destroy": "Wardogs_VehicleDamagePipeline_v1.html#54-hits-to-destroy"},
+        "main_section": MAIN,
+        "calibers": [{"id": c, "label": JSON_CALIBERS[c], "base_damage": proj[c][2]} for c in cals]},
+        "vehicles": []}
+    groups = vehicle_groups(vrows)
+    shared = {d for d in (g[0] for g in groups) if sum(g[0] == d for g in groups) > 1}
+    for dtag, secs, smap, reg, names in groups:
+        entries = row_entries(dtag, vrows) + generic
+        # One file per damage row and slot map: a row with several maps adds its first variant's name.
+        slug = re.sub(r"[^a-z0-9]+", "-", (dtag.replace("Meta.Damage.Vehicle.", "")
+                                            + ("." + names[0] if dtag in shared else "")).lower())
+        # A GLB without declared variants counts as <id>.glb showing the group's first variant.
+        models = []
+        for path, (declared, notes, centres) in glbs.items():
+            shown = [n for n in names if n in (declared or ([names[0]] if path == f"{MODELS}/{slug}.glb" else []))]
+            if shown:
+                models.append((path, shown, notes, centres))
+        models.sort(key=lambda m: names.index(m[1][0]))
+        slots = []
+        for (group, slot), sec in sorted(smap.items(), key=lambda kv: (kv[0][1] == "(default)", kv[0])):
+            hp, hit, pre, post, simul = secs.get(sec, (None, None, [], [], []))
+            factors = {c: round(vehicle_rule_factor(entries, c, hit, proj), 6) for c in cals}
+            slots.append({
+                "slot": slot, "group": group, "section": sec, "max_health": hp, "hit_location": hit,
+                "unreachable": unreachable(group, "" if slot == "(default)" else slot, *reg),
+                "routing": {k: [{"to": t, "scalar": s, "only_when_depleted": d} for t, s, d in r]
+                            for k, r in (("pre", pre), ("post", post), ("simultaneous", simul))},
+                "rule_factor": factors,
+                "hits_to_destroy": {c: hits_to_destroy(secs, sec, proj[c][2] * factors[c]) if sec in secs else None
+                                    for c in cals}})
+        # GLB materials outside the Default surface group are named "<slot>|<Group>".
+        keys = [s["slot"] if s["group"] == "ComplexSurface.Group.Default"
+                else f"{s['slot']}|{s['group'].rsplit('.', 1)[-1]}" for s in slots]
+        out["vehicles"].append({"id": slug, "damage_row": dtag, "variants": names, "main_health": secs.get(MAIN, (None,))[0],
+                                "models": [{"variants": vs, "path": path, "notes": notes,
+                                            "centres": [centres.get(k) for k in keys]}
+                                           for path, vs, notes, centres in models],
+                                "slots": slots})
+    os.makedirs(os.path.dirname(JSON_OUT), exist_ok=True)
+    with open(JSON_OUT, "w", encoding="utf-8", newline="\n") as f:
+        json.dump(out, f, indent=1, ensure_ascii=False)
+        f.write("\n")
+    print(f"{os.path.relpath(JSON_OUT, ROOT)}: {len(out['vehicles'])} vehicles, "
+          f"{sum(len(v['slots']) for v in out['vehicles'])} slots, {sum(len(v['models']) for v in out['vehicles'])} models")
+
+
 BLOCK = re.compile(r"<!-- damage_tables (.+?) -->\r?\n.*?<!-- /damage_tables -->", re.S)
-DOCS = ["Wardogs_DamagePipeline_v2.md", "Wardogs_VehicleDamagePipeline_v1.md"]
+DOCS = ["Wardogs_DamagePipeline_v2.md", "Wardogs_VehicleDamagePipeline_v1.md", "vehicle-viewer.md"]
 
 
 def write_docs():
@@ -603,6 +738,7 @@ def write_docs():
         with open(path, "w", encoding="utf-8", newline="") as f:
             f.write(new)
         print(f"{doc}: {n} tables {'updated' if new != text else 'unchanged'}")
+    hitbox_json(projectiles())
 
 
 def main():
@@ -611,6 +747,9 @@ def main():
         write_docs()
         return
     proj = projectiles()
+    if "--json" in sys.argv:
+        hitbox_json(proj)
+        return
     if "--hitboxes" in sys.argv:
         hitbox_table(proj)
         return
