@@ -53,9 +53,11 @@ what counts as evidence are those of
    the disassembly and confirmed all 22 claims and both pages' counts.
    It recorded EV-21 and EV-22 as citation errors in the pipeline docs
    (notes below and on the effects page). The 20 RVAs added at `e057d26`
-   are round-5 claims for the same verifier. All of their `[exe]`
-   statuses rest on round-4 ledger rows, and the instruction at each
-   anchor was decoded again for this page.
+   went to the same verifier in round 5, which confirmed the RVA set,
+   every status and the counts. All of their `[exe]` statuses rest on
+   round-4 ledger rows, and the instruction at each anchor was decoded
+   again for this page. The verifier corrected one role (`0x538ABD0`,
+   which merges into `+0x180`, not `+0x1D0`).
 
 The corpus part is
 [`_tools/rva_status.py`](../../_tools/rva_status.py).
@@ -74,7 +76,9 @@ aliases and flags. It opens the corpus with `?mode=ro` and writes nothing.
 
 - **`corpus body`**: a decompiled `functions` row with no `JUMPOUT` or
   inline assembly. Misaligned rows and rows with Hex-Rays warnings are
-  flagged in the table.
+  flagged in the table. A body filed under a misaligned enclosing row
+  counts as `corpus body`; when that row carries a Hex-Rays warning, the
+  claim rests on the instructions (see the notes).
 - **`[exe]`**: instructions in the restored executable only. This covers
   functions with no row, failed or empty rows, and instruction anchors
   inside a body.
@@ -97,8 +101,9 @@ Every cited address is in `.text`. No cited RVA is itself a GObjects
 fact. The GObjects-backed values sit next to these RVAs: for example
 `MVF_HealthSections.ComplexSurfaceMappings` (`0x90`) and
 `PhysicsGroupMappings` (`0xE0`). The section registration `0x53214A0`
-merges them into the component's `+0x180` and, through `0x538ABD0`,
-`+0x1D0` (r3 V-3).
+merges them into the component's `+0x180` (through `0x538ABD0`) and
+`+0x1D0` (through `0x53167B0`) (r3 V-3, r5 T0-9). `0x53167B0` is not
+cited by the doc at `e057d26`.
 
 ## 3. Table
 
@@ -134,7 +139,7 @@ Sections are VehicleDamagePipeline sections; `L` numbers are its lines at
 | `0x533A750` | Health hook: clamps the new value to `[0, MaxHealth]` | §5.4 (L676), Change log (L771) | `corpus body`, flagged: Hex-Rays warning; see notes |
 | `0x5341430` | Reflected `ApplyDamageEvent` exec thunk | §4.1 (L446) | `corpus body` |
 | `0x5345EA0` | Reflected `QueryDamageZoneForComplexHit` thunk | §3.1 (L173) | `[exe]`: row failed, the enclosing row is an empty nullsub; see notes |
-| `0x538ABD0` | Merges `PhysicsGroupMappings` (fragment `+0xE0`) into `+0x1D0`; called from the section registration | §3.1 (L194) | `corpus body` |
+| `0x538ABD0` | Merges `ComplexSurfaceMappings` (fragment `+0x90`) into `+0x180`: per group, slot pairs added and the default overwritten; called from the section registration | §3.1 (L194) | `corpus body` |
 | `0x53952A0` | Section lookup by (surface group, slot) in `+0x180`, with the default and parent-group fallbacks | §3.1 (L179), §3.2 (L391) | `corpus body`, misaligned and flagged: the body is filed under row `0x539529D`; see notes |
 | `0x53A00C6` | Component registration check `cmp byte [rcx+0x28A], 0` (in `0x53A00C0`) | §3.2 (L392) | `[exe]` (r4 HB-3) |
 | `0x53B6190` | Variant config replacement (`MVFCustomData_VehicleConfig`) | §5.4 (L669) | `corpus body` |

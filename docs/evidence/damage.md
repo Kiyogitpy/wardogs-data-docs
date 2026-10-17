@@ -399,8 +399,9 @@ already gives the correct count.
 6. An independent verifier re-queried the corpus and re-read the bytes
    for every row (claims EV-1 to EV-12). It confirmed all of them,
    upgraded `0x5236E50` from `unverified` to `[exe]`, and confirmed the
-   two misaligned citations. The eight RVAs added after `d560d33` are
-   round-5 claims for the same verifier.
+   two misaligned citations. The eight RVAs added after `d560d33` went
+   to the same verifier in round 5, which confirmed their statuses and
+   the counts.
 
 The corpus part can be re-run with `python -I` from any directory:
 
