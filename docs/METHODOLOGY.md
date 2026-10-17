@@ -116,23 +116,34 @@ The game patches regularly. Each patch:
 
 ## Reproducibility
 
-Everything in `data/*.json` should be reproducible by anyone with
-their own copy of the game via:
+Everything in `data/*.json` comes from the game's own cooked paks,
+exported with a CUE4Parse pipeline and the build's usmap
+(`5.7.4-516586+++Wardogs+Live-Wardogs.usmap`). That extractor still lives
+in the author's workspace and is not packaged in this repository yet
+(see [`tools/README.md`](../tools/README.md)), so the export itself
+cannot be rerun from a fresh clone today. Anyone with their own copy of
+the game can reproduce it with CUE4Parse or FModel and the same usmap.
 
-```
-# Clone a fresh checkout
-git clone https://github.com/Kiyogitpy/wardogs-data-docs.git
-cd wardogs-data-docs
+**Keys and mappings stay local.** The pak AES key and the `.usmap` /
+`.idmap` mappings are never committed. Keep them in the checkout's root
+or `mappings/` if convenient; `.gitignore` excludes `aes.*`, `*.aes`,
+`*.usmap` and `*.idmap`. Derive the key from your own installed copy of
+the game. Both the key and the mappings belong to one build, so check
+them again after a game patch.
 
-# Set up CUE4Parse with the game's AES key
-# (See README for key - obtained via retoc from local game install)
-dotnet run --project tools/cue4parse_extractor -- \
-  --paks "C:/Program Files (x86)/Steam/steamapps/common/Wardogs/Wardogs/Content/Paks" \
-  --out "./data" \
-  --key "<your_locally_derived_aes_key>"
-```
+**From data to docs.** The scripts in [`_tools/`](../_tools/) rebuild
+generated parts of the docs from `data/` and `assets/data/`:
 
-The parse scripts in `tools/` turn the JSON into the markdown docs.
+| Script | What it does |
+|---|---|
+| `damage_tables.py` | Infantry and vehicle damage tables (per-weapon damage, falloff, ammo × armor, vehicle caliber factors, hits to destroy). `--write` refreshes every marked table in the damage and vehicle docs |
+| `ge_values.py` | The Gameplay Effect Values page, from `assets/data/ge-values.json` |
+| `vehicle_tables.py` | Sections 3 and 4 of the all-vehicle stats page |
+| `zone_rewards.py` | `assets/data/zone-rewards.json`: reward values with no zone, a zone and a priority zone, for the site's zone switch |
+| `link_sources.py` | Links asset names in the docs to their source JSON |
+| `check_links.py` | Fails on broken cross-references (files, anchors, `§` numbers) |
+
+After a data update: rerun the generators, then `check_links.py`.
 
 ## Static-only is almost always enough
 
