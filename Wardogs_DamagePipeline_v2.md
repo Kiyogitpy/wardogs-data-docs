@@ -115,6 +115,8 @@ Four more callers, so all 17 call sites are identified:
   `AWDMoverCharacter` slot 169). It skips dead characters; the source is
   the hitting actor's entity data plus `DamageType.Impact`.
 - `0x6F042A0`: a second back-blast path from `0x6B92900` (see the table).
+  The two are the branches of one if/else; what picks the branch is not
+  traced (O-8).
 - `0x76740F0`: vehicle collision
   ([VehicleDamagePipeline V-4](Wardogs_VehicleDamagePipeline_v1.md#7-open-questions)).
 - `0x76F5AE0`: periodic `WDDoor` damage, from `PostFixedSimTick`.
@@ -714,6 +716,15 @@ and tracer chance. FMJ has no asset, so its stats are the plain copy with
 no tag. Ammo type therefore changes damage only through that tag: the
 HP/AP rules and the ammo scalar in §7.3.
 
+The tag reaches the event from the projectile's ammo tag (instance
+`+0xF0`, empty from the constructor `0x6B8E100`), which `0x6F30E50` sets
+from the spawn parameters. On the fire path the weapon owner
+(`IWDWeaponOwner` `+0x90`, `0x6C98290`) builds
+`Meta.Damage.AmmoModifier.<type>` from the loaded round's item tag.
+Predicted simulations use `FWDProjectileSimulationSetup.AmmoModifierTag`
+(`0x6F2C450`). Which item-tag parts form `<type>` is only partly decoded
+(`0x6C98290`).
+
 **Derived**, `_tools/damage_tables.py --ammo M4`: M4 (5.56 mm,
 `Arms.Medium`, base 28), point blank, armor piece covering the hit:
 
@@ -842,6 +853,7 @@ is a percentage change, so -25 gives ×0.75 and -90 gives ×0.10.
 | O-5 | Four Blueprint bodies | **Closed** (§7.1–7.4), from the cooked bytecode |
 | O-6 | End-to-end number for one concrete hit | **Closed for bullets** (§7.6–7.9): every ammo type, armored or not, by distance. Only the speed scale after drag is not modelled |
 | O-7 | The health write | **Closed** (§10). Network authority stays open: role checks are visible in code, but server behaviour cannot be observed statically. Security-relevant findings go through [`SECURITY.md`](SECURITY.md), not this document |
+| O-8 | Which branch of `0x6B92900` runs for a back-blast: `0x6F042A0` (traced hits) or `0x6F06EB0` (a synthetic hit, [VehicleDamagePipeline §3.2](Wardogs_VehicleDamagePipeline_v1.md#32-from-a-hit-triangle-to-a-section)) | Open: the if/else condition in `0x6B92900` is not traced |
 
 ## 10. From damage to health (characters)
 
@@ -980,3 +992,4 @@ The restored image carries the UTF-16LE build marker
 | 2026-10-17 | Independent verifier pass: corrected the blunt-damage condition (flight time, instance byte `+0x101`), the direct-hit distance-scale evidence, armor filtering (first covering piece only) and the Penetrate/Throughput tags, the exploding-hit and custom-hit paths, the downed-character branch and the order of death handling; noted the four functions without corpus bodies. |
 | 2026-10-17 | Another independent verifier pass: `RootDamageTag` is `Meta.Damage` and is never evaluated (§5); corrected two citations that sat on misaligned corpus rows (`0x6EF9450`, `0x6F08CE0`); named the two player-character stubs from their FName initializers and noted that the decay-pool cut runs only for role 3 (§10); every function without a corpus body is listed and reproduced from disassembly; the three IDA notes are merged into [`docs/evidence/damage.md`](docs/evidence/damage.md) (§11). |
 | 2026-10-17 | Round-4 verifier pass: character health's hooks clamp through vitality slot 161 (§10); all 17 `ModifyDamage` call sites named (§1.1). |
+| 2026-10-17 | Round-5 verifier pass: the projectile's ammo tag (`+0xF0`) is set by `0x6F30E50` from the spawn parameters, built on the fire path by `0x6C98290` (§7.9); the `<type>` rule is only partly decoded. The two back-blast paths are branches of one if/else whose condition is open (O-8). |
