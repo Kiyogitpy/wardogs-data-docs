@@ -248,8 +248,8 @@ rules.
 | How many vehicles have per-class damage rules? | [`Wardogs_VehicleDamagePipeline_v1.md`](Wardogs_VehicleDamagePipeline_v1.md) §2.1 — 21 tables, 23 rows |
 | What's the GAS attribute system? | [`Wardogs_GameplayEffectsPipeline_v1.md`](Wardogs_GameplayEffectsPipeline_v1.md) §4 — tag-keyed records with double base/current values, no `UAttributeSet` |
 | How many GE_* effect classes ship? | [`Wardogs_GameplayEffectsPipeline_v1.md`](Wardogs_GameplayEffectsPipeline_v1.md) §2 — 338 total |
-| What are the units on `InitialBulletSpeed`? | [`UNITS.md`](UNITS.md) §1 — cm/s |
-| Where is `CT_Weapon_Spread` defined? | [`CROSS_REFERENCE.md`](CROSS_REFERENCE.md) `CT_*` section |
+| What are the units on `InitialBulletSpeed`? | [`UNITS.md`](docs/UNITS.md) §1 — cm/s |
+| Where is `CT_Weapon_Spread` defined? | [`CROSS_REFERENCE.md`](docs/CROSS_REFERENCE.md) `CT_*` section |
 
 ## Change log
 
