@@ -51,8 +51,9 @@ running damage by a factor, and the total is clamped at zero once at the
 end. Non-custom rules give `1 + Amount/100`. The bone operation gives
 `Universal × weapon row` for the hit location. Armor gives
 `1 − reduction% × ammo scalar / 100`. Because everything multiplies,
-the order of evaluation does not change the result. A worked example is
-in §7.6.
+the order of evaluation does not change the result. §7.7 gives damage per
+bullet for 33 weapons: an AK74M does 26 base, 61.1 to the head and 25.3
+to the upper torso of an unarmored target.
 
 ## 1. Call path
 
@@ -90,11 +91,25 @@ functions. The identifiable ones:
 | `UWDVehicleOperatorComponent` virtuals (slots 160, 161) | `0x7692B60`, `0x768ED20` | 0 |
 | `AWDMoverCharacter` / `AWDMoverPlayerCharacter` virtual (slot 417 / 422) | `0x6E6BD90` | 1 |
 
-The rest are unnamed functions (`0x6E72D90`, `0x6F042A0`, `0x76740F0`,
-`0x6F06540`, `0x6B53000`, `0x6F06EB0`, `0x76F5AE0`, `0x6CA8730`,
-`0x6B725B0` ×2, `0x6F03F60`, `0x6F08CDC`). `0x6E72D90` and `0x76F5AE0`
-also pass 1. Each caller builds the event (`0x6BB4D30`) itself, so `S` is
-whatever amount that caller supplies.
+Others are identified by the tags and classes they use:
+
+| Caller | RVA | Path |
+|---|---|---|
+| Projectile impact (two calls) | `0x6B725B0` | Bullets and other projectiles; builds the event in §7.6 |
+| Explosive actors (`AWDExplosive`, `AWDC4`, `AWDGrenade`, `AWDLandmine`, slot 236 via `0x6CAB030`) | `0x6CA8730` | Explosive detonation |
+| Radial damage, also behind reflected `SimulateRadialDamage` | `0x6F06540` | Uses `Meta.Damage.Explosive.Radius.Inner` / `.Outer` |
+| Back-blast | `0x6F06EB0` (from `0x6B92900`) | `Meta.Damage.DamageType.BackBlast` |
+| Armor break / crack | `0x6B53000` | `Hitmarker.Armor.Break` / `.Crack` |
+| Reflected `SimpleDamageActor` | `0x6F08CDC` | Blueprint-callable |
+| Vehicle supply containers (slot 127) | `0x6F03F60` | Via `0x7635EA0` |
+
+Still unnamed: `0x6E72D90`, `0x6F042A0`, `0x76740F0`, `0x76F5AE0`.
+`0x6E72D90` and `0x76F5AE0` also pass 1. Each caller builds its own event
+(`0x6BB4D30`), so `S` is whatever that caller supplies.
+
+The reflected `BP_DamageActor` (`0x6F07C10`) goes straight to the
+application step below without calling `ModifyDamage`. Damage dealt
+through it skips the rule tables entirely.
 
 Most callers then hand the result to the same two steps:
 
@@ -535,29 +550,81 @@ group's running amount halved by this operation. Bullet and cannon hits
 on armor and helmets go through `B_AmmoTypeEffectiveness_C` instead
 (entries 138–141, §7.3).
 
-### 7.6 Worked example: custom-operation factors for an AR hit
+### 7.6 The bullet event
 
-**Derived**, under stated assumptions about the event's tags. Those tags
-are set by the weapon code (§1.1), which has not been traced:
+**Native** (`0x6B725B0`, the projectile-impact path; it uses
+`Meta.Damage.DamageType.Projectile` and the `Kinetic.Impact` tags). For a
+direct hit it builds the event from the projectile data asset and the
+firing weapon:
 
-- source tag `Meta.Damage.Bullet.545mm` (so `Meta.Damage.Bullet`
-  requirements match through the parent);
-- source context contains `Meta.Damage.Weapon.AR` as its first tag with a
-  bone-table row, and no ammo-modifier tag, so FMJ is assumed;
-- for the armored case, target context contains `Meta.Damage.Armor.Heavy`;
-- the target is not in a vehicle.
+| Event field | Value | Evidence |
+|---|---|---|
+| Stats | `GetProjectileStats(AmmoModifierTag)`: the asset's `ProjectileStats` (`+0x38`), or the per-ammo-type variant in `CachedModifiedProjectileStats` (`+0x350`) | `0x6BBA900` |
+| `S` | `DamageValues.BaseDamage`; `ExplosiveBluntDamage` instead when the projectile has an arming delay and has flown less than `ArmingDelay` | stats `+0x30` / `+0x44`, `+0x180`, `+0x184` |
+| Source tag | stats `DamageEntityData.Tag`, e.g. `Meta.Damage.Bullet.545mm` | stats `+0x00` |
+| Source context, in order | stats `DamageEntityData.Context` (e.g. `Meta.Damage.Arms.Medium`); the firing weapon's damage tag (e.g. `Meta.Damage.Weapon.AR.A91`); `Kinetic.Impact.Ricochet` / `.Penetration` when flagged; the asset's `ProjectileId` (e.g. `Item.Caliber.545mm`); `Meta.Damage.DamageType.Projectile`; `Kinetic.Impact.ExplosiveBlunt` for projectiles with an arming delay | `0x6B725B0`; tag names from the static initializers |
 
-| Hit | Bone (§7.1) | Caliber (§7.2) | Armor (§7.3) | Custom product |
-|---|---:|---:|---:|---:|
-| Upper torso, no armor | 1.10 × 0.885 | 1.00 | — | **×0.9735** |
-| Upper torso, heavy armor | 1.10 × 0.885 | 1.00 | ×0.50 | **×0.4868** |
-| Head, no helmet | 1.0 × 2.35 | 1.00 | — | **×2.35** |
-| Upper arm, no armor | 0.60 × 0.90 | 1.00 | — | **×0.54** |
+The weapon tag is identified by value: the slot record supplies a tag,
+and every weapon item's `DamageEntityData.Tag` in the export is such a
+tag (`ID_A91` → `Meta.Damage.Weapon.AR.A91`). The table's own rule 97,
+which requires `Meta.Damage.Weapon.Pistol.M1911` in the source, only
+matches if the weapon tag is there.
 
-The final amount is `S` × this product × the factor of every non-custom
-entry the event also matches, clamped at zero. Which of the 74 non-custom
-entries match depends on the full event tag set, so they are left out
-here.
+Consequences for §7.1–7.2: the specific weapon tag has no row, so the
+one-level parent fallback lands on the archetype row
+(`Meta.Damage.Weapon.AR`). The caliber key is the source tag.
+
+### 7.7 Per-weapon damage per bullet
+
+**Derived**, generated by
+[`_tools/infantry_damage.py`](_tools/infantry_damage.py) from the export
+with the rules above. Assumptions: hostile alignment, FMJ (the base
+stats), a direct hit with no ricochet or penetration, an unarmored target
+outside any vehicle, and no instigator tags (no infantry entry needs
+them). Shotgun values are per pellet. Each cell shows damage per bullet
+and the total factor on `BaseDamage`. The last column lists the entries
+with a factor other than 1.
+
+| Weapon | Weapon tag | Caliber | Base | Head | Neck | Torso.Upper | Torso.Middle | Arm.Upper | Leg.Thigh | Entries applied |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|---|
+| A91 | `AR.A91` | `556mm` | 28 | 65.8 (×2.35) | 49.4 (×1.76) | 27.3 (×0.974) | 27.2 (×0.97) | 15.1 (×0.54) | 15.1 (×0.54) | 5 |
+| TAR21 | `AR.A91` | `556mm` | 28 | 65.8 (×2.35) | 49.4 (×1.76) | 27.3 (×0.974) | 27.2 (×0.97) | 15.1 (×0.54) | 15.1 (×0.54) | 5 |
+| WEPN_033 | `AR.A91` | `556mm` | 28 | 65.8 (×2.35) | 49.4 (×1.76) | 27.3 (×0.974) | 27.2 (×0.97) | 15.1 (×0.54) | 15.1 (×0.54) | 5 |
+| AK74M | `AR.AK47M` | `545mm` | 26 | 61.1 (×2.35) | 45.8 (×1.76) | 25.3 (×0.974) | 25.2 (×0.97) | 14.0 (×0.54) | 14.0 (×0.54) | 5 |
+| WEPN_030 | `AR.Fal` | `308Win` | 45 | 79.3 (×1.76) | 59.5 (×1.32) | 32.9 (×0.73) | 32.7 (×0.728) | 18.2 (×0.405) | 18.2 (×0.405) | 5, 6 |
+| WEPN_029 | `AR.Galil` | `556mm` | 28 | 65.8 (×2.35) | 49.4 (×1.76) | 27.3 (×0.974) | 27.2 (×0.97) | 15.1 (×0.54) | 15.1 (×0.54) | 5 |
+| KH2002 | `AR.KH2002` | `556mm` | 28 | 65.8 (×2.35) | 49.4 (×1.76) | 27.3 (×0.974) | 27.2 (×0.97) | 15.1 (×0.54) | 15.1 (×0.54) | 5 |
+| M4 | `AR.M4` | `556mm` | 28 | 65.8 (×2.35) | 49.4 (×1.76) | 27.3 (×0.974) | 27.2 (×0.97) | 15.1 (×0.54) | 15.1 (×0.54) | 5 |
+| WEPN_037 | `AR.WEPN_037` | `762mm` | 34 | 70.3 (×2.07) | 52.7 (×1.55) | 29.1 (×0.857) | 29.0 (×0.854) | 16.2 (×0.475) | 16.2 (×0.475) | 5, 6 |
+| RFB | `DMR.RFB` | `308Win` | 45 | 93.7 (×2.08) | 70.3 (×1.56) | 45.0 (×1) | 45.1 (×1) | 28.7 (×0.637) | 28.7 (×0.637) | 5, 6 |
+| SKS | `DMR.SKS` | `762mm` | 34 | 83.3 (×2.45) | 62.5 (×1.84) | 40.0 (×1.18) | 40.1 (×1.18) | 25.5 (×0.75) | 25.5 (×0.75) | 5 |
+| SVDM | `DMR.SVDM` | `762x54mm` | 44 | 86.2 (×1.96) | 64.7 (×1.47) | 41.4 (×0.942) | 41.5 (×0.944) | 26.4 (×0.6) | 26.4 (×0.6) | 5, 6 |
+| WEPN_034 | `DMR.WEPN_034` | `308Win` | 45 | 93.7 (×2.08) | 70.3 (×1.56) | 45.0 (×1) | 45.1 (×1) | 28.7 (×0.637) | 28.7 (×0.637) | 5, 6 |
+| LMG_02 | `LMG.LMG_02` | `762x54mm` | 44 | 77.6 (×1.76) | 58.2 (×1.32) | 32.1 (×0.73) | 32.0 (×0.728) | 17.8 (×0.405) | 17.8 (×0.405) | 5, 6 |
+| M249 | `LMG.M249` | `556mm` | 28 | 65.8 (×2.35) | 49.4 (×1.76) | 27.3 (×0.974) | 27.2 (×0.97) | 15.1 (×0.54) | 15.1 (×0.54) | 5 |
+| WEPN_036 | `LMG.WEPN_036` | `308Win` | 45 | 79.3 (×1.76) | 59.5 (×1.32) | 32.9 (×0.73) | 32.7 (×0.728) | 18.2 (×0.405) | 18.2 (×0.405) | 5, 6 |
+| WEPN_027 | `Pistol.Deagle` | `50AE` | 63 | 132.3 (×2.1) | 99.2 (×1.58) | 72.8 (×1.16) | 66.2 (×1.05) | 49.1 (×0.78) | 49.1 (×0.78) | 5 |
+| Glock17 | `Pistol.G60` | `9mm` | 22 | 46.2 (×2.1) | 34.7 (×1.58) | 25.4 (×1.16) | 23.1 (×1.05) | 17.2 (×0.78) | 17.2 (×0.78) | 5 |
+| WEPN_032 | `Pistol.G60` | `9mm` | 22 | 46.2 (×2.1) | 34.7 (×1.58) | 25.4 (×1.16) | 23.1 (×1.05) | 17.2 (×0.78) | 17.2 (×0.78) | 5 |
+| Judge | `Pistol.Judge` | `45Colt` | 45 | 94.5 (×2.1) | 70.9 (×1.58) | 52.0 (×1.16) | 47.2 (×1.05) | 35.1 (×0.78) | 35.1 (×0.78) | 5 |
+| WEPN_026 | `Pistol.M1911` | `45ACP` | 30 | 81.9 (×2.73) | 61.4 (×2.05) | 45.0 (×1.5) | 41.0 (×1.37) | 30.4 (×1.01) | 30.4 (×1.01) | 5, 97 |
+| WEPN_028 | `SMG.MP5` | `9mm` | 22 | 46.2 (×2.1) | 34.7 (×1.58) | 25.4 (×1.16) | 23.1 (×1.05) | 17.2 (×0.78) | 17.2 (×0.78) | 5 |
+| MP9 | `SMG.MP7` | `9mm` | 22 | 46.2 (×2.1) | 34.7 (×1.58) | 25.4 (×1.16) | 23.1 (×1.05) | 17.2 (×0.78) | 17.2 (×0.78) | 5 |
+| SMG_03 | `SMG.SMG3` | `9mm` | 22 | 46.2 (×2.1) | 34.7 (×1.58) | 25.4 (×1.16) | 23.1 (×1.05) | 17.2 (×0.78) | 17.2 (×0.78) | 5 |
+| Vector | `SMG.Vector` | `45ACP` | 30 | 63.0 (×2.1) | 47.3 (×1.58) | 34.7 (×1.16) | 31.5 (×1.05) | 23.4 (×0.78) | 23.4 (×0.78) | 5 |
+| WEPN_031 | `SMG.WEPN_031` | `9mm` | 22 | 46.2 (×2.1) | 34.7 (×1.58) | 25.4 (×1.16) | 23.1 (×1.05) | 17.2 (×0.78) | 17.2 (×0.78) | 5 |
+| M500 | `Shotgun.M12G` | `7mmBuck` | 25 | 37.5 (×1.5) | 28.1 (×1.12) | 24.8 (×0.99) | 22.5 (×0.9) | 15.8 (×0.63) | 15.8 (×0.63) | 5 |
+| MP43 | `Shotgun.M12G` | `7mmBuck` | 25 | 37.5 (×1.5) | 28.1 (×1.12) | 24.8 (×0.99) | 22.5 (×0.9) | 15.8 (×0.63) | 15.8 (×0.63) | 5 |
+| MK22 | `Sniper.MRAD` | `308Win` | 45 | 192.0 (×4.27) | 144.0 (×3.2) | 118.8 (×2.64) | 87.0 (×1.93) | 40.5 (×0.9) | 40.5 (×0.9) | 5 |
+| SR_04 | `Sniper.MRAD` | `50Cal` | 90 | 324.1 (×3.6) | 243.1 (×2.7) | 207.9 (×2.31) | 151.0 (×1.68) | 81.0 (×0.9) | 81.0 (×0.9) | 5, 124, 125, 126, 127 |
+| WEPN_017 | `Sniper.Mosin` | `762x54mm` | 44 | 187.7 (×4.27) | 140.8 (×3.2) | 116.2 (×2.64) | 85.1 (×1.93) | 39.6 (×0.9) | 39.6 (×0.9) | 5 |
+| SV98 | `Sniper.SV98` | `762x54mm` | 44 | 187.7 (×4.27) | 140.8 (×3.2) | 116.2 (×2.64) | 85.1 (×1.93) | 39.6 (×0.9) | 39.6 (×0.9) | 5 |
+| WEPN_035 | `Sniper.WEPN_035` | `556mm` | 28 | 119.5 (×4.27) | 89.6 (×3.2) | 73.9 (×2.64) | 54.1 (×1.93) | 25.2 (×0.9) | 25.2 (×0.9) | 5 |
+
+Armor scales these per §7.3: for example, FMJ into heavy armor halves the
+torso values. Ammo variants (HP, AP) use modified stats and add their
+ammo-modifier tag, so they need the `CachedModifiedProjectileStats` build
+traced before they can be tabled.
 
 ## 8. Helper table values
 
@@ -666,7 +733,7 @@ is a percentage change, so -25 gives ×0.75 and -90 gives ×0.10.
 | O-3 | Callers, origin of `S`, consumer of the result | **Closed** (§1.1). The bool's gameplay meaning stays open |
 | O-4 | Entry data never reaches custom operations | **Closed** (§2) |
 | O-5 | Four Blueprint bodies | **Closed** (§7.1–7.4), from the cooked bytecode |
-| O-6 | End-to-end number for one concrete hit | **Partly closed** (§7.6): the custom-operation factors are computable. Which non-custom entries match needs the exact event tags each weapon sets |
+| O-6 | End-to-end number for one concrete hit | **Closed for FMJ bullets on unarmored targets** (§7.6–7.7). Ammo variants need the `CachedModifiedProjectileStats` build; armored targets need the target-context producer (which armor tags a hit adds) |
 | O-7 | The health write inside `TakeDamage` overrides, and network authority | Open. The write belongs to the effects pipeline; server behaviour cannot be observed statically. Security-relevant findings go through [`SECURITY.md`](SECURITY.md), not this document |
 
 ## 10. Evidence and sources
@@ -716,3 +783,4 @@ The restored image carries the UTF-16LE build marker
 | 2026-10-17 | **v2:** single reference. Merged the native trace, GObjects Blueprint analysis and exe validation; added evidence labels, the custom-entry table, the commutativity result for non-custom entries, the dead custom literals, and the shared-category ties among custom operations. Corrected the GObjects reading of the operation's second parameter (running damage `C`, not starting damage). |
 | 2026-10-17 | Decompilation corpus (verify passed): closed O-1 (group order by target-tag hierarchy), O-2 (`PlayerArmorDurability` = `−(R/100) × C`, with per-item `R`), O-3 (callers; result flows into an Unreal damage event and `TakeDamage`) and O-4 (no entry data reaches custom operations). Added the collector's preconditions and the target-context matching rule. |
 | 2026-10-17 | Blueprint bytecode (cooked assets, read statically): closed O-5 with the four operation bodies. All five custom operations are factors on `C`, so the infantry result is order-independent. Added the ammo-vs-armor factor table and a worked example (§7.6). Bone `Universal` and weapon rows multiply. |
+| 2026-10-17 | Traced the projectile-impact path (`0x6B725B0`): the bullet event's starting amount and tags come from the projectile data asset and the firing weapon (§7.6). Added a per-weapon damage table for 33 weapons, generated by `_tools/infantry_damage.py` (§7.7). Named more `ModifyDamage` callers; `BP_DamageActor` bypasses the rule tables. |

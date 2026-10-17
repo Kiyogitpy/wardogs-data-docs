@@ -152,7 +152,9 @@ How far the pipelines get for one hit, and where the numbers stop.
 ### Pipeline execution
 
 ```
-S = <caliber-specific base damage for 5.45mm>   // starting amount in the event
+S = 26        // DA_545mm_ProjectileData BaseDamage; source tag
+              // Meta.Damage.Bullet.545mm, source context Arms.Medium +
+              // Weapon.AR.AK47M + Item.Caliber.545mm + DamageType.Projectile
 
 Step 1 — Attachments: GEs modify weapon attributes such as recoil, not
          the damage amount in the event.
@@ -168,7 +170,8 @@ Step 3 — Evaluate, C = S (every step is a factor, so order is irrelevant):
                                        [Torso.Upper] = 1.10 × 0.885 = 0.9735
   Armor on the torso (bullets):   C ×= 1 − DPR × AAS / 100
                                        e.g. heavy armor, FMJ  = 0.50
-  C = max(C, 0)
+  No non-custom entry with a factor other than 1 matches this hit.
+  C = max(C, 0)  →  26 × 0.9735 = 25.3 unarmored, 12.7 with heavy armor
 
 Step 4 — Hand-off: Unreal damage event (type from
          Meta.Damage.DamageType.Impact) → target TakeDamage.
@@ -180,17 +183,16 @@ Step 5 — Health write, replication, downed state: effects pipeline;
 The earlier `baseDamage × 1.10` result assumed the Universal bone row and
 a plain multiplicative chain. Neither is established, so it is withdrawn.
 
-### Open gaps still blocking a full numeric answer
+### What is still open
 
-1. **Base damage per caliber.** The caliber → base damage lookup is not
-   extracted yet.
-2. **Which non-custom entries match, and the exact event tags.** Both
-   depend on the source and context tags the calling weapon code sets.
-   The factors in step 3 assume `Meta.Damage.Weapon.AR` in the source
-   context and a `Meta.Damage.Bullet.545mm` source tag.
+1. **Armored targets.** Which armor tags a hit adds to the target
+   context (for example, only when the armor covers the hit location) is
+   not traced. The 12.7 above assumes the heavy-armor tag is present.
+2. **Ammo variants.** HP and AP use modified projectile stats that have
+   not been traced.
 
-Evaluation order, armor durability and the three Blueprint operations are
-no longer gaps: see DamagePipeline §5, §7 and the worked example in §7.6.
+The base damage, the event tags, evaluation order and every modifier are
+established: see DamagePipeline §5–7, with per-weapon numbers in §7.7.
 Armor durability only applies to explosive-blunt and melee hits; bullets
 on armor go through the ammo-type Blueprint.
 
