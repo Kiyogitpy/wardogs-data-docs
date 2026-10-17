@@ -1,4 +1,10 @@
-# Wardogs — Combat Data Flow Integration (v1)
+---
+title: "Combat Data Flow"
+parent: "Pipelines"
+nav_order: 4
+---
+
+# Wardogs — Combat Data Flow Integration
 
 > **Project:** [`Kiyogitpy/wardogs-data-docs`](https://github.com/Kiyogitpy/wardogs-data-docs) · [Live site](https://kiyogitpy.github.io/wardogs-data-docs/)
 
@@ -7,7 +13,7 @@ single trigger event (a weapon fire) and follows it through all three
 pipelines until the target's health changes.
 
 Companion to:
-- [`Wardogs_DamagePipeline_v1.md`](Wardogs_DamagePipeline_v1.md) — infantry damage modifier chain
+- [`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md) — infantry damage modifier chain
 - [`Wardogs_VehicleDamagePipeline_v1.md`](Wardogs_VehicleDamagePipeline_v1.md) — vehicle damage rule tables
 - [`Wardogs_GameplayEffectsPipeline_v1.md`](Wardogs_GameplayEffectsPipeline_v1.md) — BH-GAS effect application
 
@@ -57,56 +63,44 @@ Build: `++Wardogs+Live-CL-516586` · Engine: UE 5.7
             └───────────────┬───────────────┘                     │
                             │                                     │
             ┌───────────────▼───────────────┐                     │
-            │ HIT DETECTION                 │                     │
-            │ BHHitValidationWorldSubsystem │                     │
-            │ (server-side)                 │                     │
-            │   Resolves hit location tag   │                     │
-            │   Resolves target entity      │                     │
-            │   Builds FWDModifyDamageData  │                     │
-            └───────────────┬───────────────┘                     │
-                            │                                     │
-                   ┌────────▼────────┐                            │
-                   │  TARGET TYPE?   │                            │
-                   └────┬──────┬─────┘                            │
-                        │      │                                  │
-            ┌───────────▼─┐  ┌─▼──────────────────┐               │
-            │ INFANTRY    │  │ VEHICLE             │               │
-            │             │  │                     │               │
-            │ 5-modifier  │  │ Per-vehicle rule    │               │
-            │ chain:      │  │ table lookup:       │               │
-            │  AmmoType   │  │  Match on Source,   │               │
-            │  Caliber    │  │  Target, Instigator │               │
-            │  Bone(loc)  │  │  requirements       │               │
-            │  SeatRed    │  │                     │               │
-            │  ArmorDur   │  │ Each matched entry  │               │
-            │             │  │ applies Percentage  │               │
-            │ Each is     │  │ Ongoing mod         │               │
-            │ Percentage_ │  │ (-95% = reduce 95%, │               │
-            │ Ongoing     │  │  +400% = x5)        │               │
-            └──────┬──────┘  └────────┬────────────┘               │
-                   │                  │                            │
-                   └────────┬─────────┘                            │
-                            │                                     │
-            ┌───────────────▼───────────────┐                     │
-            │ MULTIPLICATIVE STACK          │                     │
-            │ finalAmount = baseDamage      │                     │
-            │   × (1 + mod1/100)            │                     │
-            │   × (1 + mod2/100)            │                     │
-            │   × ...                       │                     │
-            │                               │                     │
-            │ (Resolution order unverified; │                     │
-            │  §7.1 of DamagePipeline docs) │                     │
+            │ DAMAGE EVENT                  │                     │
+            │ The calling system builds     │                     │
+            │ FWDDamageEventData: amount S, │                     │
+            │ instigator/target/source tags │                     │
+            │ and context, hit location     │                     │
+            │ (hit-validation edge not      │                     │
+            │  traced)                      │                     │
             └───────────────┬───────────────┘                     │
                             │                                     │
             ┌───────────────▼───────────────┐                     │
-            │ ATTRIBUTE APPLICATION         │                     │
-            │ UBHGameplayEffectComponent    │                     │
-            │ ::SetAttributeBaseValue       │                     │
-            │   Attribute = Health.Current  │                     │
-            │   newbase = base - finalDmg   │                     │
-            │                               │                     │
-            │ Server-authoritative;         │                     │
-            │ triggers replication          │                     │
+            │ UWDDamageSubsystem::          │                     │
+            │   ModifyDamage                │                     │
+            │ Walk target tag → parents;    │                     │
+            │ each level's registry row     │                     │
+            │ contributes matching entries  │                     │
+            │ (infantry, vehicle and armor  │                     │
+            │  rule tables)                 │                     │
+            └───────────────┬───────────────┘                     │
+                            │                                     │
+            ┌───────────────▼───────────────┐                     │
+            │ EVALUATE  (C starts at S)     │                     │
+            │ order: tag level, then        │                     │
+            │        category index         │                     │
+            │ non-custom %: C ×= 1 + a/100  │                     │
+            │ custom op:    C += delta      │                     │
+            │   (bone, calibre, ammo, seat, │                     │
+            │    armor durability)          │                     │
+            │ once at end:  C = max(C, 0)   │                     │
+            └───────────────┬───────────────┘                     │
+                            │                                     │
+            ┌───────────────▼───────────────┐                     │
+            │ APPLY                         │                     │
+            │ Unreal damage event (type     │                     │
+            │ from damage-type tag) →       │                     │
+            │ target TakeDamage, or the     │                     │
+            │ WDDamageable path             │                     │
+            │ Health write inside: effects  │                     │
+            │ pipeline, not traced          │                     │
             └───────────────┬───────────────┘                     │
                             │                                     │
             ┌───────────────▼───────────────┐                     │
@@ -130,15 +124,16 @@ Build: `++Wardogs+Live-CL-516586` · Engine: UE 5.7
 |---|---|---|
 | **Weapon stats** (`DA_<Weapon>_Stats` JSON) | Fire mode, projectile physics, recoil pattern, caliber/archetype tags | [`Wardogs_InfantryWeapons_Stats_v1.md`](Wardogs_InfantryWeapons_Stats_v1.md) + [`Wardogs_Weapons_v2.md`](Wardogs_Weapons_v2.md) |
 | **Attachments GAS layer** (`GE_<Attachment>` applied via `UBHGameplayEffectComponent`) | Per-attachment modifiers to weapon attributes (ADS, recoil, mag capacity, etc.) | [`Wardogs_GameplayEffectsPipeline_v1.md`](Wardogs_GameplayEffectsPipeline_v1.md) |
-| **Hit validation** (`BHHitValidationWorldSubsystem`) | Server-side hit confirmation, hit-location resolution, `FWDModifyDamageData` construction | [`Wardogs_DamagePipeline_v1.md`](Wardogs_DamagePipeline_v1.md) §2 |
-| **Infantry damage** (5-modifier chain) | Caliber effectiveness, bone multipliers, ammo type, seat reduction, armor durability | [`Wardogs_DamagePipeline_v1.md`](Wardogs_DamagePipeline_v1.md) |
+| **Hit validation** (`BHHitValidationWorldSubsystem`) | Declared in the SDK; its edge into the damage event is not traced | — |
+| **Damage modification** (`UWDDamageSubsystem::ModifyDamage`) | Rule selection, ordering and arithmetic; five custom operations (bone, calibre, ammo type, seat, armor durability) | [`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md) §1–7 |
+| **Damage hand-off** | Unreal damage event and `TakeDamage` on the target | [`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md) §1.1 |
 | **Vehicle damage** (per-vehicle rule tables) | Per-vehicle class filter+percentage rules; 22 vehicles with 16-66 rules each | [`Wardogs_VehicleDamagePipeline_v1.md`](Wardogs_VehicleDamagePipeline_v1.md) |
-| **Attribute application** (`UBHGameplayEffectComponent::SetAttributeBaseValue`) | Health/Stamina/Shield deductions, replication, respect for `bAllowClientPredicted*` flags | [`Wardogs_GameplayEffectsPipeline_v1.md`](Wardogs_GameplayEffectsPipeline_v1.md) §4 |
+| **Attribute application** (`UBHGameplayEffectComponent`) | Attribute storage and replication. The edge from `TakeDamage` to the health write is not traced | [`Wardogs_GameplayEffectsPipeline_v1.md`](Wardogs_GameplayEffectsPipeline_v1.md) §4 |
 | **GameplayCue dispatch** | VFX, audio, animation playback on hit/damage events via `DA_CharacterEffectPresets` tag mapping | [`Wardogs_GameplayEffectsPipeline_v1.md`](Wardogs_GameplayEffectsPipeline_v1.md) §3 |
 
 ## Example — AK74M bullet to infantry torso
 
-Fully worked example tying the three pipelines together.
+How far the pipelines get for one hit, and where the numbers stop.
 
 ### Inputs
 
@@ -151,61 +146,53 @@ Fully worked example tying the three pipelines together.
 | Effective range | `1000.0` m | `EffectiveRange` |
 | Base damage | (lookup by caliber) | Caliber damage table |
 | Target | Enemy player, 100 HP | Game state |
-| Hit location | `Meta.Damage.HitLocation.Infantry.Torso.Upper` | `BHHitValidationWorldSubsystem` |
+| Hit location | `Meta.Damage.HitLocation.Infantry.Torso.Upper` | Damage event |
 | Ammo type | Standard (not AP/HP/Tracer) | Weapon mag content |
 
 ### Pipeline execution
 
 ```
-baseDamage = <caliber-specific base damage for 5.45mm>  // from DT lookup
-          
-Step 1 — Attachments shouldn't modify damage directly (GEs modify
-         weapon attributes like recoil, not projectile damage;
-         projectile damage comes from caliber + weapon stat).
-         
-Step 2 — Infantry damage modifier chain:
-  AmmoTypeEffectiveness(standard, 5.45mm) → ?        (needs DT_InfantryData_AmmoTypeEffectivenessPen table)
-  ArchetypeCaliberModifiers(AR, 5.45mm)  → 1.00×     (table says AR with 5.45 = 1.00)
-  BoneDamageModifiers(Torso.Upper)       → 1.10×     (table says Torso.Upper = 1.10)
-  VehicleSeatDamageReduction             → 1.0× skip (target not in vehicle)
-  PlayerArmorDurability                  → depends on armor state
+S = <caliber-specific base damage for 5.45mm>   // starting amount in the event
 
-Step 3 — Multiplicative stack:
-  finalDamage = baseDamage × 1.00 × 1.10 × (armor reduction) × ammoEff
-  ≈ baseDamage × 1.10 × (armor factor)
+Step 1 — Attachments: GEs modify weapon attributes such as recoil, not
+         the damage amount in the event.
 
-Step 4 — Apply:
-  UBHGameplayEffectComponent::SetAttributeBaseValue(
-    Attribute = Health.Current,
-    newbase = base - finalDamage
-  )
-  
-Step 5 — Replicate:
-  AttributeReplication container pushes new value to clients
-  
-Step 6 — If new base <= 0:
-  Grant tag Player.State.Downed
-  Apply GE_PlayerDowned_C
-  Trigger GameplayCue.Combat.PlayerDown (VFX/audio)
+Step 2 — ModifyDamage collects every infantry-row entry whose
+         requirements match this event (DamagePipeline §4) and sorts
+         them by category: Calibre, AmmoModifier, Bone, ...
+
+Step 3 — Evaluate, C = S (every step is a factor, so order is irrelevant):
+  Non-custom percentage entries   C ×= (1 + a/100) each
+  B_ArchetypeCaliberModifiers     C ×= AR row [5.45mm]          = 1.00
+  B_BoneDamageModifiers           C ×= Universal × AR row
+                                       [Torso.Upper] = 1.10 × 0.885 = 0.9735
+  Armor on the torso (bullets):   C ×= 1 − DPR × AAS / 100
+                                       e.g. heavy armor, FMJ  = 0.50
+  C = max(C, 0)
+
+Step 4 — Hand-off: Unreal damage event (type from
+         Meta.Damage.DamageType.Impact) → target TakeDamage.
+
+Step 5 — Health write, replication, downed state: effects pipeline;
+         the edge from TakeDamage is not traced.
 ```
+
+The earlier `baseDamage × 1.10` result assumed the Universal bone row and
+a plain multiplicative chain. Neither is established, so it is withdrawn.
 
 ### Open gaps still blocking a full numeric answer
 
-1. **Base damage per caliber** — the caliber → base damage table
-   lookup is not fully extracted yet. Likely in a caliber-specific
-   DataAsset.
-2. **Modifier evaluation order** — §7.1 of both pipeline docs.
-   Needed to confirm `×` order matches the stated multiplicative stack.
-3. **PlayerArmorDurability behaviour** — the 5th C++ modifier.
-   Reduces damage based on armor state; exact formula requires IDA RE.
-4. **AmmoTypeEffectivenessPen table** — ammo type modifier for standard
-   ammo not yet enumerated in this doc.
+1. **Base damage per caliber.** The caliber → base damage lookup is not
+   extracted yet.
+2. **Which non-custom entries match, and the exact event tags.** Both
+   depend on the source and context tags the calling weapon code sets.
+   The factors in step 3 assume `Meta.Damage.Weapon.AR` in the source
+   context and a `Meta.Damage.Bullet.545mm` source tag.
 
-Resolution of these gaps lives in:
-- Triage AI's `DAMAGE_IDA_TRACE.md` (not yet committed) — targets §7.1
-- Future EXPORT re-dump — targets gap 1
-- Future SDK pass 2 — targets gap 3
-- Immediate: can read `DT_Helpers/DT_InfantryData_AmmoTypeEffectivenessPen.json` for gap 4
+Evaluation order, armor durability and the three Blueprint operations are
+no longer gaps: see DamagePipeline §5, §7 and the worked example in §7.6.
+Armor durability only applies to explosive-blunt and melee hits; bullets
+on armor go through the ammo-type Blueprint.
 
 ## Example — rocket to tank
 
@@ -255,8 +242,8 @@ Step 6 — If section destroyed:
 
 | Question | See |
 |---|---|
-| What are the 5 damage modifiers? | [`Wardogs_DamagePipeline_v1.md`](Wardogs_DamagePipeline_v1.md) §2 |
-| What's the actual bone multiplier value for a specific hit location? | [`Wardogs_DamagePipeline_v1.md`](Wardogs_DamagePipeline_v1.md) §4.1 |
+| What are the 5 damage modifiers? | [`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md) §3.1, §7 |
+| What's the actual bone multiplier value for a specific hit location? | [`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md) §8.1 |
 | What's the damage profile for ROT_02 Havoc? | [`Wardogs_VehicleDamagePipeline_v1.md`](Wardogs_VehicleDamagePipeline_v1.md) §4 |
 | How many vehicles have per-class damage rules? | [`Wardogs_VehicleDamagePipeline_v1.md`](Wardogs_VehicleDamagePipeline_v1.md) §3 — 22 total |
 | What's the GAS attribute system? | [`Wardogs_GameplayEffectsPipeline_v1.md`](Wardogs_GameplayEffectsPipeline_v1.md) §4 — `TMap<FGameplayTag, float>` not `UAttributeSet` |
@@ -269,3 +256,4 @@ Step 6 — If section destroyed:
 | Date | Change |
 |---|---|
 | 2026-10-16 | v1 — First integration view. Covers end-to-end from fire event through damage pipelines to attribute application. Two worked examples: AK74M → infantry torso, 125mm rocket → tank front-plate. Remaining 4 blocking gaps catalogued for next-pass resolution. |
+| 2026-10-17 | Infantry path corrected against the damage pipeline: removed the "server-side" hit-validation claim and the untraced `SetAttributeBaseValue` write; replaced the multiplicative chain with the evaluator's arithmetic and the `TakeDamage` hand-off; withdrew the `× 1.10` example. Vehicle example unchanged pending the vehicle pass. |

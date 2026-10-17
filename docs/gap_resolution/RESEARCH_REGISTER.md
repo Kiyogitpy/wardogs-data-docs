@@ -82,7 +82,7 @@ for scope posture.
 
 **Avoid duplicating work the primary RE pipeline is doing.** As of this
 writing the primary pipeline has already produced:
-- [`../../Wardogs_DamagePipeline_v1.md`](../../Wardogs_DamagePipeline_v1.md)
+- [`../../Wardogs_DamagePipeline_v2.md`](../../Wardogs_DamagePipeline_v2.md)
   — damage pipeline, which pre-answers any RUNTIME gap tagged to damage
   modifiers.
 - SDK + mappings committed at commit `c65e83d`.

@@ -27,17 +27,17 @@ canonical doc where `<Thing>` IS covered.
 |---|---|
 | `DA_<Weapon>_Stats` | [`Wardogs_InfantryWeapons_Stats_v1.md`](Wardogs_InfantryWeapons_Stats_v1.md) (infantry), [`Wardogs_Weapons_v2.md`](Wardogs_Weapons_v2.md) (general) |
 | `DA_<Vehicle>_Stats` (e.g., `DA_WHL_07_Stats`, `DA_TNK_01_Stats`) | [`Wardogs_AllVehicles_Stats_Damage_v1.md`](Wardogs_AllVehicles_Stats_Damage_v1.md) |
-| `DA_AmmoModifier_*` | [`Wardogs_DamagePipeline_v1.md`](Wardogs_DamagePipeline_v1.md) §4.3 |
+| `DA_AmmoModifier_*` | [`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md) §4.3 |
 | `DA_Explosion_*` | [`Wardogs_VFX_v2.md`](Wardogs_VFX_v2.md) explosions section |
 | `DA_MuzzleFlash_*`, `DA_MF_MUZL_*` | [`Wardogs_VFX_v2.md`](Wardogs_VFX_v2.md) muzzle flashes section |
 | `DA_<Vehicle>_Exhaust` | [`Wardogs_VFX_v2.md`](Wardogs_VFX_v2.md) exhaust section |
-| `DA_AmmoModifier_<Type>` | [`Wardogs_DamagePipeline_v1.md`](Wardogs_DamagePipeline_v1.md) |
+| `DA_AmmoModifier_<Type>` | [`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md) |
 
 ### `DT_*` — DataTables
 
 | Prefix | Doc |
 |---|---|
-| `DT_GlobalDamage_InfantryData` + helpers | [`Wardogs_DamagePipeline_v1.md`](Wardogs_DamagePipeline_v1.md) §3 |
+| `DT_GlobalDamage_InfantryData` + helpers | [`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md) §3 |
 | `DT_GlobalDamage_VehicleData_<CODE>` | [`Wardogs_VehicleDamagePipeline_v1.md`](Wardogs_VehicleDamagePipeline_v1.md) §3 |
 | `DT_Challenges_*` | [`Wardogs_Meta_v2.md`](Wardogs_Meta_v2.md) challenges section |
 | `DT_RewardLookup_*` | [`Wardogs_GameFeatures_Rewards_v2.md`](Wardogs_GameFeatures_Rewards_v2.md) |
@@ -53,7 +53,7 @@ canonical doc where `<Thing>` IS covered.
 |---|---|
 | `B_CameraShake_*` | Referenced in [`Wardogs_VFX_v2.md`](Wardogs_VFX_v2.md); shake behaviour internals **not documented** (Blueprint bytecode not exported — SDK has only property offsets) |
 | `B_Gunsmith*` | [`Wardogs_GameFeatures_Gunsmith_v2.md`](Wardogs_GameFeatures_Gunsmith_v2.md) |
-| `B_ArchetypeCaliberModifiers_C`, `B_BoneDamageModifiers_C`, `B_AmmoTypeEffectiveness_C`, `B_VehicleSeatDamageReduction_C` | [`Wardogs_DamagePipeline_v1.md`](Wardogs_DamagePipeline_v1.md) §2 — the 4 damage modifier blueprints |
+| `B_ArchetypeCaliberModifiers_C`, `B_BoneDamageModifiers_C`, `B_AmmoTypeEffectiveness_C`, `B_VehicleSeatDamageReduction_C` | [`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md) §2 — the 4 damage modifier blueprints |
 | `CP_*_C` (prefab classes) | Referenced in [`Wardogs_Destruction_v2.md`](Wardogs_Destruction_v2.md) and [`Wardogs_ExternalAssets_v2.md`](Wardogs_ExternalAssets_v2.md); internals (debris/collision/thresholds) **not exported** in cooked data |
 
 ### `NS_*` — Niagara systems

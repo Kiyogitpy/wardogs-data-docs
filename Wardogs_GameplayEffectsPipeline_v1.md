@@ -1,11 +1,17 @@
-# Wardogs — Gameplay Effects Pipeline (v1)
+---
+title: "Gameplay Effects Pipeline"
+parent: "Pipelines"
+nav_order: 3
+---
+
+# Wardogs — Gameplay Effects Pipeline
 
 > **Project:** [`Kiyogitpy/wardogs-data-docs`](https://github.com/Kiyogitpy/wardogs-data-docs) · [Live site](https://kiyogitpy.github.io/wardogs-data-docs/)
 
 Complete code↔data trace of **gameplay effects (GEs)** in Wardogs — the
 system that models buffs, debuffs, weapon-attachment modifiers, status
 states, player skills, and timed cues. Third pipeline doc after
-[`Wardogs_DamagePipeline_v1.md`](Wardogs_DamagePipeline_v1.md) (infantry)
+[`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md) (infantry)
 and [`Wardogs_VehicleDamagePipeline_v1.md`](Wardogs_VehicleDamagePipeline_v1.md).
 
 Build: `++Wardogs+Live-CL-516586` · Engine: UE 5.7 · GAS fork: "BH"
@@ -308,7 +314,7 @@ documented at UE level but Wardogs-specific extensions may apply.
 - [`data/Wardogs/Plugins/GameFeatures/Items/StimPen/Content/Data/DA_CharacterModifierState_StimulantEffects.json`](data/Wardogs/Plugins/GameFeatures/Items/StimPen/Content/Data/DA_CharacterModifierState_StimulantEffects.json)
 
 ### Related reference docs
-- [`Wardogs_DamagePipeline_v1.md`](Wardogs_DamagePipeline_v1.md) — infantry damage uses GAS modifier chain
+- [`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md) — infantry damage uses GAS modifier chain
 - [`Wardogs_VehicleDamagePipeline_v1.md`](Wardogs_VehicleDamagePipeline_v1.md) — vehicle damage uses per-vehicle rules (not GAS)
 - [`Wardogs_GameMechanics_v2.md`](Wardogs_GameMechanics_v2.md) — broader mechanics context
 - [`Wardogs_GameplayTags_v1.md`](Wardogs_GameplayTags_v1.md) — tag catalog

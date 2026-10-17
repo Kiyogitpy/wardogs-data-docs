@@ -1,10 +1,16 @@
-# Wardogs — Vehicle Damage Pipeline, Full Trace (v1)
+---
+title: "Vehicle Damage Pipeline"
+parent: "Pipelines"
+nav_order: 2
+---
+
+# Wardogs — Vehicle Damage Pipeline, Full Trace
 
 > **Project:** [`Kiyogitpy/wardogs-data-docs`](https://github.com/Kiyogitpy/wardogs-data-docs) · [Live site](https://kiyogitpy.github.io/wardogs-data-docs/)
 
 Complete code↔data trace of how damage resolves against **vehicle
 targets** in Wardogs. Companion doc to
-[`Wardogs_DamagePipeline_v1.md`](Wardogs_DamagePipeline_v1.md) (infantry
+[`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md) (infantry
 targets) — but the vehicle architecture is **fundamentally different**.
 
 Build: `++Wardogs+Live-CL-516586` · Engine: UE 5.7
@@ -338,7 +344,7 @@ tracked internally.
 - Per-vehicle (22 files): `data/Wardogs/Plugins/GameFeatures/Vehicles/<CODE>/Content/*/DT_GlobalDamage_VehicleData_<CODE>.json`
 
 ### Related reference docs
-- [`Wardogs_DamagePipeline_v1.md`](Wardogs_DamagePipeline_v1.md) — infantry damage pipeline (companion, different architecture)
+- [`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md) — infantry damage pipeline (companion, different architecture)
 - [`Wardogs_AllVehicles_Stats_Damage_v1.md`](Wardogs_AllVehicles_Stats_Damage_v1.md) — per-vehicle stats and base damage values
 - [`Wardogs_GameFeatures_Vehicles_v2.md`](Wardogs_GameFeatures_Vehicles_v2.md) — vehicle game-feature loadouts
 

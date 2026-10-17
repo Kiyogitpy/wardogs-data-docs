@@ -17,7 +17,7 @@ got re-run through a context-aware classifier.
 | **BINARY_ASSET** | 13 | Confirmed not resolvable from JSON parse (textures/meshes/widgets/binary) |
 | **CROSS_REF_DONE** | 9 | Resolved by [`CROSS_REFERENCE.md`](../CROSS_REFERENCE.md) — add inline citation |
 | **BLUEPRINT_BINARY** | 4 | Blueprint internals (bytecode) not in Dumper-7 output — permanently gated |
-| **DAMAGE_PIPELINE_DONE** | 3 | Resolved by [`Wardogs_DamagePipeline_v1.md`](../../Wardogs_DamagePipeline_v1.md) + [`Wardogs_VehicleDamagePipeline_v1.md`](../../Wardogs_VehicleDamagePipeline_v1.md) |
+| **DAMAGE_PIPELINE_DONE** | 3 | Resolved by [`Wardogs_DamagePipeline_v2.md`](../../Wardogs_DamagePipeline_v2.md) + [`Wardogs_VehicleDamagePipeline_v1.md`](../../Wardogs_VehicleDamagePipeline_v1.md) |
 | **GAMEPLAYTAG** | 2 | Needs GameplayTag catalog pass — see [`Wardogs_GameplayTags_v1.md`](../../Wardogs_GameplayTags_v1.md) |
 | **EXPORT** | 2 | Scheduled for next CUE4Parse re-run |
 | **SECURITY** | 0 | None found — good news |
