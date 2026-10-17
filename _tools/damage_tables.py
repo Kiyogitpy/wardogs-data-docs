@@ -1,4 +1,4 @@
-"""Per-weapon infantry damage multipliers, rebuilt from data/ with the pipeline's own rules.
+"""Damage tables for the pipeline docs, rebuilt from data/ with the pipeline's own rules.
 
 Rebuilds the damage event a bullet hit produces (Wardogs_DamagePipeline_v2.md §7.7) and
 runs it through the infantry rule row the way the native collector and evaluator do
@@ -10,11 +10,12 @@ Assumptions, printed with the table: hostile alignment, FMJ ammo, a direct hit w
 ricochet or penetration, an unarmored target outside any vehicle, and no instigator
 tags. Entries that need instigator tags are counted as unknown instead of applied.
 
-    python _tools/infantry_damage.py            # per-location table (point blank)
-    python _tools/infantry_damage.py --falloff  # upper-torso damage by distance
-    python _tools/infantry_damage.py --ammo M4  # one weapon: ammo type x armor class
-    python _tools/infantry_damage.py --vehicles # rule factor per vehicle row and caliber
-    python _tools/infantry_damage.py --survive  # hits to destroy six vehicles, per section hit
+    python _tools/damage_tables.py            # per-location table (point blank)
+    python _tools/damage_tables.py --falloff  # upper-torso damage by distance
+    python _tools/damage_tables.py --ammo M4  # one weapon: ammo type x armor class
+    python _tools/damage_tables.py --vehicles # rule factor per vehicle row and caliber
+    python _tools/damage_tables.py --survive  # hits to destroy six vehicles, per section hit
+    python _tools/damage_tables.py --write    # refresh every marked table in the docs after a data update
 
 The distance curve's Time axis is centimetres: the native code evaluates it with the
 straight-line distance between shot origin and hit point in engine units.
@@ -381,8 +382,37 @@ def survive_table(proj):
             print(f"| `{key}` | {sec.replace('Attribute.Gameplay.', '')} ({hp:g}) | " + " | ".join(cells) + " |")
 
 
+BLOCK = re.compile(r"<!-- damage_tables (.+?) -->\r?\n.*?<!-- /damage_tables -->", re.S)
+DOCS = ["Wardogs_DamagePipeline_v2.md", "Wardogs_VehicleDamagePipeline_v1.md"]
+
+
+def write_docs():
+    """Regenerate every <!-- damage_tables MODE --> block in the docs in place."""
+    import subprocess
+    for doc in DOCS:
+        path = os.path.join(ROOT, doc)
+        with open(path, encoding="utf-8", newline="") as f:
+            text = f.read()
+        nl = "\r\n" if "\r\n" in text else "\n"
+
+        def regen(m):
+            mode = m.group(1)
+            args = [] if mode == "default" else mode.split()
+            out = subprocess.run([sys.executable, "-I", os.path.abspath(__file__)] + args,
+                                 capture_output=True, text=True, encoding="utf-8", check=True).stdout.strip()
+            return nl.join([f"<!-- damage_tables {mode} -->"] + out.split("\n") + ["<!-- /damage_tables -->"])
+
+        new, n = BLOCK.subn(regen, text)
+        with open(path, "w", encoding="utf-8", newline="") as f:
+            f.write(new)
+        print(f"{doc}: {n} tables {'updated' if new != text else 'unchanged'}")
+
+
 def main():
     sys.stdout.reconfigure(encoding="utf-8")
+    if "--write" in sys.argv:
+        write_docs()
+        return
     proj = projectiles()
     if "--survive" in sys.argv:
         survive_table(proj)
