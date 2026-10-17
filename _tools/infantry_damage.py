@@ -13,6 +13,7 @@ tags. Entries that need instigator tags are counted as unknown instead of applie
     python _tools/infantry_damage.py            # per-location table (point blank)
     python _tools/infantry_damage.py --falloff  # upper-torso damage by distance
     python _tools/infantry_damage.py --ammo M4  # one weapon: ammo type x armor class
+    python _tools/infantry_damage.py --vehicles # rule factor per vehicle row and caliber
 
 The distance curve's Time axis is centimetres: the native code evaluates it with the
 straight-line distance between shot origin and hit point in engine units.
@@ -252,9 +253,43 @@ def ammo_table(name, proj):
         print(f"| {ammo} | " + " | ".join(cells) + f" | {', '.join(map(str, sorted(used)))} |")
 
 
+VEHICLE_CALIBERS = ["Item.Caliber.556mm", "Item.Caliber.762mm", "Item.Caliber.762x54mm", "Item.Caliber.308Win",
+                    "Item.Caliber.50Cal", "Item.Caliber.20x102mm", "Item.Caliber.30mm", "Item.Caliber.35x228mm"]
+
+
+def vehicle_table(proj):
+    """Rule factor per vehicle row and caliber: FMJ direct hit, entries without a hit-location filter."""
+    vehicle_rows = []
+    for path in sorted(glob.glob(os.path.join(DATA, "Wardogs/Plugins/**/DT_GlobalDamage_VehicleData_*.json"), recursive=True)):
+        vehicle_rows += list(exports(path)[0]["Rows"].items())
+    generic = rows("DT_GlobalDamage_VehicleData.json")["Meta.Damage.Vehicle"]["DamageModificationEntries"]
+    cals = [c for c in VEHICLE_CALIBERS if c in proj]
+    print("| Vehicle row (`Meta.Damage.Vehicle.` omitted) | " + " | ".join(f"`{c.replace('Item.Caliber.', '')}`" for c in cals) + " |")
+    print("|---|" + "---:|" * len(cals))
+    for key, row in vehicle_rows:
+        cells = []
+        for cal in cals:
+            src, ctx, _ = proj[cal]
+            source = expand(ctx + [src, cal, "Meta.Damage.DamageType.Projectile"])
+            total = 1.0
+            for e in row["DamageModificationEntries"] + generic:  # own row, then the generic parent level
+                m = e["OutModification"]
+                if e["PossibleHitLocations"] or e["InstigatorRequirements"] or e["TargetRequirements"]:
+                    continue
+                if not e["SourceRequirements"] or not set(e["SourceRequirements"]) <= source:
+                    continue
+                if m["Operation"].endswith("Percentage_Ongoing"):
+                    total *= 1 + m["Amount"] / 100
+            cells.append(f"×{max(total, 0):.3g}")
+        print(f"| `{key.replace('Meta.Damage.Vehicle.', '')}` | " + " | ".join(cells) + " |")
+
+
 def main():
     sys.stdout.reconfigure(encoding="utf-8")
     proj = projectiles()
+    if "--vehicles" in sys.argv:
+        vehicle_table(proj)
+        return
     if "--ammo" in sys.argv:
         ammo_table(sys.argv[sys.argv.index("--ammo") + 1], proj)
         return
