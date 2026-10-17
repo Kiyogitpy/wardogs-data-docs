@@ -98,7 +98,7 @@ When the data doc shows a sun `Intensity` field without unit, assume
 | `DamageIncrease` fields (environmental hazards) | **multiplicative scalar** (unitless) |
 
 Full damage pipeline documented in
-[`Wardogs_DamagePipeline_v1.md`](Wardogs_DamagePipeline_v1.md) and
+[`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md) and
 [`Wardogs_VehicleDamagePipeline_v1.md`](Wardogs_VehicleDamagePipeline_v1.md).
 
 ## 8. Physics / simulation

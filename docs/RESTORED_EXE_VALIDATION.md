@@ -94,7 +94,7 @@ hierarchy. Slot 0 (`0x146BB69F0` etc.) is the class-specific
 - **First pointer:** `0x146BB7DB0` → into `.text` ✓
 - **Validation:** 8/8 pointers in `.text` — **valid vtable**
 
-**This is the 5th damage modifier** that was missed in `Wardogs_DamagePipeline_v1.md`'s original write-up. See the triage AI's audit of that doc for the correction. The vtable's first slot gives us the class-specific function pointer that implements the armor-durability damage modification.
+**This is the 5th damage modifier** that was missed in `Wardogs_DamagePipeline_v2.md`'s original write-up. See the triage AI's audit of that doc for the correction. The vtable's first slot gives us the class-specific function pointer that implements the armor-durability damage modification.
 
 ### 2.4 `UWDDamageSubsystem_VFT`
 
@@ -198,7 +198,7 @@ with this specific exe.
 - [`mappings/README.md`](../mappings/README.md) — idmap format spec
 - [`docs/DAMAGE_IDA_TRACE.md`](DAMAGE_IDA_TRACE.md) — IDA trace brief (triage AI, in flight)
 - [`docs/DAMAGE_IDA_RESULTS.md`](DAMAGE_IDA_RESULTS.md) — prior probe results (triage AI, in flight)
-- [`Wardogs_DamagePipeline_v1.md`](../Wardogs_DamagePipeline_v1.md) — being audited by triage AI
+- [`Wardogs_DamagePipeline_v2.md`](../Wardogs_DamagePipeline_v2.md) — being audited by triage AI
 - [`Wardogs_VehicleDamagePipeline_v1.md`](../Wardogs_VehicleDamagePipeline_v1.md)
 - [`Wardogs_GameplayEffectsPipeline_v1.md`](../Wardogs_GameplayEffectsPipeline_v1.md)
 - [`Wardogs_CombatDataFlow_v1.md`](../Wardogs_CombatDataFlow_v1.md)

@@ -112,11 +112,8 @@ Matches [`sdk/raw/WDGame_structs.hpp`](../sdk/raw/WDGame_structs.hpp) line 4646.
 | `0xC0` | `ClassToHitLocations` | MapProperty |
 | `0x110` | `ClassToHitLocations_Loaded` | MapProperty |
 
-**Note the `OnDamageModified` multicast delegate at `0x30`** — this is
-the project-wide damage-notification hook. Anything observing damage
-events subscribes here. Security-relevant: who has write access to this
-delegate's invocation list controls who sees every damage event in the
-game.
+`OnDamageModified` at `0x30` is a multicast delegate on the subsystem;
+which systems bind to it is not established by the dump.
 
 ### 3.3 `WDGlobalDamageSystem` (Class `0x16FE`)
 
@@ -264,17 +261,15 @@ these.
   decompiled addresses in the triage AI's trace.
 - Property offsets apply to the specific build captured in the dump
   (CL-516586). A patch may shift offsets.
-- No security-relevant findings claimed here. The `OnDamageModified`
-  multicast delegate observation is architectural; whether it has
-  server-authority gating is a §SECURITY question routed through
-  [`SECURITY.md`](../SECURITY.md).
+- No security-relevant findings claimed here; any such question routes
+  through [`SECURITY.md`](../SECURITY.md).
 - Blueprint-local-variable names are the **author's own names at
   Blueprint compile time**. They are hints at algorithm structure,
   not binding specifications of semantics.
 
 ## 7. Cross-references
 
-- [`Wardogs_DamagePipeline_v1.md`](../Wardogs_DamagePipeline_v1.md) — damage pipeline (being audited by triage AI)
+- [`Wardogs_DamagePipeline_v2.md`](../Wardogs_DamagePipeline_v2.md) — damage pipeline (being audited by triage AI)
 - [`docs/RESTORED_EXE_VALIDATION.md`](RESTORED_EXE_VALIDATION.md) — exe + idmap byte-level match
 - [`docs/DAMAGE_IDA_TRACE.md`](DAMAGE_IDA_TRACE.md) — triage AI's IDA trace brief (in flight)
 - [`docs/DAMAGE_IDA_RESULTS.md`](DAMAGE_IDA_RESULTS.md) — triage AI's IDA results (in flight)

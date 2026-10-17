@@ -3,7 +3,7 @@ title: "GameMechanics"
 parent: "Content"
 ---
 
-# Wardogs — Game Mechanics Reference (v2)
+# Wardogs — Game Mechanics Reference
 *Extracted from cooked game data under [`Content/GameMechanics`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics) (467 files, 898 export blocks, UE 5.7 build `++Wardogs+Live-CL-516586`). Numbers are the raw values stored in the DataAssets and DataTables. Where the meaning of a field is inferred or unknown, the doc says so.*
 
 > **Scope note:** The cash and reward tables ([`Gamemode/Data/DT_CashRewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_CashRewards.json), [`DT_Rewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_Rewards.json), [`DT_AssistCashRewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_AssistCashRewards.json), [`DT_CashRewardModifiers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_CashRewardModifiers.json), and everything under [`Gamemode/Data/CashRewardsDataTable/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/CashRewardsDataTable)) are covered in **`Wardogs_Rewards_and_Progression_v2.md`**. This doc does not repeat them. Note that [`DT_Rewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_Rewards.json) and [`DT_CashRewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_CashRewards.json) are the stale placeholder layer described in that doc.
@@ -544,7 +544,7 @@ Rows: `Communication.Ping`, `Communication.Ping.Type.Context.Map.MarkCoordinates
     - `_aaabjdgjapjmbgmpamikg` (bool, 0x1A) — unresolved flag #4
     - `_aaabelpijohgmmanaeoif` (`FGameplayTagContainer`, 0x20) — unresolved tag list (candidate: "allowed states" / "restricted contexts" / "required unlocks")
   - 4 of 7 "Emote flag" bools remain Dumper-unresolved; 2 are resolved to `bHolsterWeapon` + `PlayRate`.
-  - **SDK (2026-10-16) — seat-reduction arrays (2h):** see [`Wardogs_DamagePipeline_v1.md`](Wardogs_DamagePipeline_v1.md#44-vehicleseatdamagereduction-occupant-protection-table) — the arrays belong to `UB_VehicleSeatDamageReduction_C` (one of 4 damage modifier blueprints), reading per-seat `FGameplayTag → float` map from a DataTable at runtime.
+  - **SDK (2026-10-16) — seat-reduction arrays (2h):** see [`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md#84-vehicleseatdamagereduction-occupant-protection-table) — the arrays belong to `UB_VehicleSeatDamageReduction_C` (one of 4 damage modifier blueprints), reading per-seat `FGameplayTag → float` map from a DataTable at runtime.
   - Arm-class arrays (2d) and action fields are not yet matched to a specific SDK struct; follow-up pass needed.
 - **Operation semantics.** `Percentage_Ongoing` is the operation name on the modification entries. Its exact formula (additive, multiplicative, applied per tick or once) is not decoded.
 - **Arm-class naming.** `Meta.Damage.Arms.Small/Medium/High/Special` is the tag family used. Its meaning as armour class or penetration tier is an inference.

@@ -1,7 +1,7 @@
 # Damage modifier trace brief
 
 Prepared 2026-10-17 for path B, following the export audit of
-[DamagePipeline v1](../Wardogs_DamagePipeline_v1.md). This brief identifies
+[DamagePipeline v1](../Wardogs_DamagePipeline_v2.md). This brief identifies
 native/Blueprint implementation questions. Results are recorded separately;
 this brief records no runtime observation or server-validation result. The SDK gap sweep
 (path A) remains separate; this audit changes no SDK files.
