@@ -90,7 +90,7 @@ Key functions (abbreviated signatures):
 | `ModifyEffectStacks(..., Handle, Delta, Mode)` | Add/remove stacks on an existing effect |
 | `RemoveEffect(Handle, Mode)` | Remove an effect |
 | `FindOrAddAttribute(Attribute, InitialValue, ...)` | Attribute system entry point |
-| `SetAttributeBaseValue(..., Handle, newbase)` | Server-authoritative attribute set |
+| `SetAttributeBaseValue(..., Handle, newbase)` | Sets an attribute's base value. Native body `0x5236AF0`; its few callers are healing/appliable-item paths, not damage (see DamagePipeline O-7). Authority not established |
 | `ServerApplyEffect(request, SyncFrame)` | Server-side effect application (RPC) |
 | `ServerModifyEffect(Handle, PredictionKey, Delta, SyncFrame)` | Server-side modification (RPC) |
 | `UpdateGameplayTag(Tag, Delta, ...)` | Grant/revoke a tag |
@@ -218,8 +218,9 @@ represents attributes as a flat **map keyed by GameplayTag**:
 TMap<FGameplayTag, float> DefaultAttributes;    // UBHGameplayEffectComponent
 ```
 
-Each attribute is identified by its tag (e.g., `Attribute.Health.Max`,
-`Attribute.Stamina.Current`). Values are stored in
+Each attribute is identified by its tag (e.g., `Attribute.Gameplay.Health`,
+`Attribute.Gameplay.Health.Max`, `Attribute.Gameplay.Fuel`; names from the
+native tag initializers). Values are stored in
 `FBHGameplayAttributeRepContainer` (replicated).
 
 ### 4.2 Attribute access

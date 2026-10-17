@@ -810,7 +810,7 @@ is a percentage change, so -25 gives ×0.75 and -90 gives ×0.10.
 | O-4 | Entry data never reaches custom operations | **Closed** (§2) |
 | O-5 | Four Blueprint bodies | **Closed** (§7.1–7.4), from the cooked bytecode |
 | O-6 | End-to-end number for one concrete hit | **Closed for bullets** (§7.6–7.9): every ammo type, armored or not, by distance. Only the speed scale after drag is not modelled |
-| O-7 | The health write inside `TakeDamage` overrides, and network authority | Open. The write belongs to the effects pipeline; server behaviour cannot be observed statically. Security-relevant findings go through [`SECURITY.md`](SECURITY.md), not this document |
+| O-7 | The health write, and network authority | **Partly traced.** WD damage reaches characters through `IWDDamageable::ReceiveDamage` (dispatch `0x6C2A5F0`). A character's `TakeDamage` override (`0x6E77C40`) only converts an incoming Unreal damage event back into a WD event and the application step. Health is the attribute `Attribute.Gameplay.Health` in `BHGameplayEffectComponent`, mirrored by `UWDVitalityComponent` (`0x6B81CE0` binds to its changes). The native `SetAttributeBaseValue` (`0x5236AF0`) is only called from healing/appliable-item paths, so damage lowers health some other way, most likely an effect; the character's `ReceiveDamage` implementation is not located yet. Server behaviour cannot be observed statically. Security-relevant findings go through [`SECURITY.md`](SECURITY.md), not this document |
 
 ## 10. Evidence and sources
 
