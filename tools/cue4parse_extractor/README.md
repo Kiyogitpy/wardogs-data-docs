@@ -38,11 +38,15 @@ WdExtract <Paks> <keyfile> <usmap> <out> <Paks>\oo2core_9_win64.dll <mode> [args
 | `list GE_` | `<out>/files.txt`: every package whose name starts with the prefix |
 | `schema BHGameplay` | `<out>/usmap_schema.json`: usmap layouts whose name contains the text |
 | `dump <files.txt or package paths>` | `<out>/<name>.json` per package: all exports, Blueprint bytecode included; failures in `_failures.txt` |
+| `findname <path prefix> <text>` | `<out>/findname.txt`: packages under the prefix whose name map contains the text (IoStore imports are hashed, so this finds names an asset uses, not who references it) |
 
 `dump` first restores usmap property names that are hashed in this build and
-three array types the usmap leaves as `Unknown` (`BHGameplayEffect.Modifiers`,
-`GameplayTagQuery.TagDictionary`, `GameplayTagQuery.QueryTokenStream`), by
-property index against the SDK headers in `sdk/raw/`. What it changed is
+array types the usmap leaves as `Unknown`, by property index against the SDK
+headers in `sdk/raw/` and UE's declaration order: `BHGameplayEffect.Modifiers`,
+`GameplayTagQuery.TagDictionary` / `QueryTokenStream`, and for static meshes
+`StaticMaterials`, `Sockets`, `AssetUserData`, `ComplexCollisionMesh` and
+`StaticMaterial.MaterialSlotName` (without these a static mesh's render data
+fails to load). What it changed is
 written to `_usmap_patches.txt`.
 
 ## Post-processing

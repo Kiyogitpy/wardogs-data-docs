@@ -64,6 +64,27 @@ if (mode == "schema")
     Console.WriteLine($"schema entries: {res.Count}");
     return 0;
 }
+if (mode == "findname")
+{
+    // findname <pathPrefix> <text>: packages under the prefix whose name map contains the text.
+    var prefix = rest[0]; var needle = rest[1];
+    var hits = new List<string>();
+    foreach (var f in provider.Files.Values.Where(f => f.Path.StartsWith(prefix, StringComparison.OrdinalIgnoreCase)
+                                                    && (f.Extension.Equals("uasset", StringComparison.OrdinalIgnoreCase)
+                                                     || f.Extension.Equals("umap", StringComparison.OrdinalIgnoreCase))))
+    {
+        try
+        {
+            var pkg = provider.LoadPackage(f.PathWithoutExtension);
+            var names = pkg.NameMap.Select(n => n.Name).Where(n => n != null && n.Contains(needle, StringComparison.OrdinalIgnoreCase)).ToList();
+            if (names.Count > 0) hits.Add($"{f.PathWithoutExtension}\t{string.Join(", ", names)}");
+        }
+        catch (Exception e) { hits.Add($"{f.PathWithoutExtension}\tFAIL {e.GetType().Name}: {e.Message}"); }
+    }
+    File.WriteAllLines(Path.Combine(outDir, "findname.txt"), hits);
+    Console.WriteLine($"packages matching: {hits.Count}");
+    return 0;
+}
 if (mode != "dump") { Console.WriteLine($"unknown mode {mode}"); return 1; }
 
 // The 5.7.4 usmap hashes some property names and leaves some array inner types as Unknown. Restore them by
@@ -100,6 +121,18 @@ if (mode != "dump") { Console.WriteLine($"unknown mode {mode}"); return 1; }
     PatchArray("BHGameplayEffect", 4, "StructProperty", "BHAttributeModifier");   // TArray<FBHAttributeModifier> Modifiers
     PatchArray("GameplayTagQuery", 1, "StructProperty", "GameplayTag");           // TArray<FGameplayTag> TagDictionary
     PatchArray("GameplayTagQuery", 2, "ByteProperty", null);                      // TArray<uint8> QueryTokenStream
+    // Static meshes: without these, StaticMaterials misreads and the render data after it fails to load.
+    void Rename(string t, int idx, string name)
+    {
+        if (!types.TryGetValue(t, out var s) || idx >= s.Properties.Count) { log.Add($"{t}[{idx}] missing"); return; }
+        if (s.Properties[idx].Name != name) { log.Add($"{t}[{idx}] {s.Properties[idx].Name} -> {name}"); s.Properties[idx].Name = name; }
+    }
+    PatchArray("StaticMesh", 3, "StructProperty", "StaticMaterial");             // TArray<FStaticMaterial> StaticMaterials
+    PatchArray("StaticMesh", 23, "ObjectProperty", null);                        // TArray<UStaticMeshSocket*> Sockets
+    PatchArray("StaticMesh", 27, "ObjectProperty", null);                        // TArray<UAssetUserData*> AssetUserData
+    Rename("StaticMesh", 28, "ComplexCollisionMesh");                            // UE5 UStaticMesh order: ..., ComplexCollisionMesh, NavCollision
+    Rename("StaticMaterial", 1, "MaterialSlotName");
+    Rename("StaticMaterial", 3, "UVChannelData");
     File.WriteAllLines(Path.Combine(outDir, "_usmap_patches.txt"), log);
 }
 
