@@ -3,7 +3,7 @@ title: "BHSpectatorCamera"
 parent: "Plugins"
 ---
 
-# Wardogs — Plugin: BHSpectatorCamera (v2)
+# Wardogs — Plugin: BHSpectatorCamera
 *Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: [`Plugins/BHSpectatorCamera/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/BHSpectatorCamera) — 6 JSON files under [`Content/Inputs/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/BHSpectatorCamera/Content/Inputs): 5 input actions and 1 input mapping context.*
 
 ---

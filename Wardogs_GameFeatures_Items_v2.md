@@ -3,7 +3,7 @@ title: "Items (feature)"
 parent: "Game Features"
 ---
 
-# Wardogs: GameFeatures Items Reference (v2)
+# Wardogs: GameFeatures Items Reference
 *Source: exported JSON under [`Wardogs/Plugins/GameFeatures/Items`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Items) (541 files, 25 item folders). Numbers are read from the export; anything not confirmed is marked as unclear.*
 
 > **Scope note:** this covers the Items plugin only. Firearms, vehicles and the global reward/economy tables live in other plugins or Content folders and are not in this doc.

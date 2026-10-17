@@ -3,7 +3,7 @@ title: "AI (feature)"
 parent: "Game Features"
 ---
 
-# Wardogs — GameFeatures: AI (v2)
+# Wardogs — GameFeatures: AI
 *Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: [`Plugins/GameFeatures/AI/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/AI) — 39 JSON files. Each file was parsed as a sequence of `--- export:` blocks; the first block is the asset, later blocks are sub-objects (EQS options, tests, generators, data providers, goals). Values below are raw export values.*
 
 ---

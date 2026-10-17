@@ -3,7 +3,7 @@ title: "ExternalAssets"
 parent: "Content"
 ---
 
-# Wardogs — External Assets Reference (v2)
+# Wardogs — External Assets Reference
 *Extracted from cooked game data ([`Content/ExternalAssets`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/ExternalAssets), 147 JSON exports, UE 5.7 build `++Wardogs+Live-CL-516586`). Every number below was parsed from the export files by script. Where a field's meaning is inferred from its name rather than confirmed, the doc says so.*
 
 > **Scope note:** This folder is almost entirely **building destruction data** (`Flix/Blueprints/**`), plus two damage-tag whitelists and one VFX mapping. It holds no weapons, economy or progression data. All 147 files parsed without error.

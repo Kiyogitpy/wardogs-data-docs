@@ -3,7 +3,7 @@ title: "Session-Event Reward Lookups"
 parent: "Content"
 ---
 
-# Wardogs — Session-Event Reward Lookups Reference (v1)
+# Wardogs — Session-Event Reward Lookups Reference
 *Exported from the game's own asset files. These are the lookup layer feeding the per-kill/per-event reward calculator whose formulas are in section 17 (`DT_ChallengeRewards_SessionEvents_*`).*
 
 > **Scope:** **16 tables pulled**, covering KOTH challenge events ([`Challenges_KOTH`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/Challenges_KOTH.json)), buildable destruction ([`Rewards/BuildableRewards`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards)) and Spotting ([`Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Spotting.json)). Each table maps a row key (a vehicle variant, item or buildable ID) to a `Challenges.Rewards.*` reward tag. Reward amounts and the calculator that consumes these tags are outside this file.

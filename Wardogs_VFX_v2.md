@@ -3,7 +3,7 @@ title: "VFX"
 parent: "Content"
 ---
 
-# Wardogs — VFX Reference (v2)
+# Wardogs — VFX Reference
 *Extracted from the cooked JSON export under [`Content/VFX`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/VFX) (205 files, all parsed; 205 export blocks). Values are the raw asset properties. Where a property's meaning is inferred from its name, that is said explicitly. A "-" in a table means the property is absent from the export, so the engine default applies and that default is not in the dump.*
 
 > **Scope note:** this doc covers only [`Content/VFX`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/VFX). Balance numbers for weapons and vehicles live in other categories. Asset names in the tables match the export `Name` field, so they can be searched directly in the dump.

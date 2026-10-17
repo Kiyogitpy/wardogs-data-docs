@@ -3,7 +3,7 @@ title: "Destruction"
 parent: "Content"
 ---
 
-# Wardogs — Destruction Reference (v2)
+# Wardogs — Destruction Reference
 *Extracted from cooked game data (JSON export, [`Wardogs/Content/Destruction/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Destruction), 4 source files: 2 mesh-to-prefab lookup assets, 2 curves). Parsed with a Python script. Values are the raw exported values.*
 
 > **Scope note:** this folder is small. It holds the mesh-to-prefab lookup tables that tell the engine which building mesh swaps to which destruction prefab, and two score curves. It has no damage thresholds, debris counts or collapse timings.

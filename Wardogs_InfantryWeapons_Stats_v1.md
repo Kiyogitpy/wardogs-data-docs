@@ -3,7 +3,7 @@ title: "Infantry Weapon Stats"
 parent: "Content"
 ---
 
-# Wardogs — Infantry Weapon Stats, Full Roster (v1)
+# Wardogs — Infantry Weapon Stats, Full Roster
 
 *Corrects the v2 doc's note that main rifle/SMG/LMG/sniper stat tables "are not in this folder" — they live under `Plugins/GameFeatures/Weapons/{Platforms/WEPN_xxx,DMR,LMG,Launchers,Shotgun,SMG,Sniper}/Content/Data/DA_<Name>_Stats.uasset`, one GameFeature plugin per weapon platform, same pattern as the Vehicles plugins. The 8 utility/test weapons from the v2 doc (`Content/Weapons/.../Data/`) are separate and not re-listed here.*
 

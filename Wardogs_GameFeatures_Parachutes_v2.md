@@ -3,7 +3,7 @@ title: "Parachutes (feature)"
 parent: "Game Features"
 ---
 
-# Wardogs — Parachutes Game Feature Reference (v2)
+# Wardogs — Parachutes Game Feature Reference
 *Extracted from cooked game data ([`Wardogs/Plugins/GameFeatures/Parachutes`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Parachutes), 7 JSON files, all parsed). Build `++Wardogs+Live-CL-516586`, UE 5.7.*
 
 > **What this is:** two parachute items (Basic and Sport), each with a movement profile, a vendor listing, UI text, and an inventory definition. The plugin registers its vendor and UI rows through two data registry sources.

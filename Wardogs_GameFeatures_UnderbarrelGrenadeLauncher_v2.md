@@ -3,7 +3,7 @@ title: "UnderbarrelGrenadeLauncher (feature)"
 parent: "Game Features"
 ---
 
-# Wardogs — UnderbarrelGrenadeLauncher Game Feature Reference (v2)
+# Wardogs — UnderbarrelGrenadeLauncher Game Feature Reference
 *Extracted from cooked game data ([`Wardogs/Plugins/GameFeatures/UnderbarrelGrenadeLauncher`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/UnderbarrelGrenadeLauncher), 4 JSON files, all parsed). Build `++Wardogs+Live-CL-516586`, UE 5.7.*
 
 > **Naming flag:** the launcher item is **`Id.Item.TestGrenadeLauncher`**, with display name **"TEST Grenade Launcher"**. It reads as a test or placeholder build, not a shipping item. The stats below are exported as-is, but the name and the magazine-audio reference suggest the item has not been finished.

@@ -3,7 +3,7 @@ title: "All-Vehicle Stat & Damage Sheets"
 parent: "Content"
 ---
 
-# Wardogs — Every Vehicle's Stat/Damage Sheet Reference (v1, excl. TNK_01)
+# Wardogs — Every Vehicle's Stat/Damage Sheet Reference (excl. TNK_01)
 *Extracted from cooked game data.*
 
 > **Scope:** TNK_01 Artillery was already fully documented separately; this covers the rest of the roster: ROT_02 (Havoc), ROT_03 (Littlebird), ROT_04, SPW_01, STN_01-05, WHL_01, WHL_02, WHL_05 (Humvee + variants), WHL_06 (DuneBuggy), WHL_07 (Ural/SpawnVehicle).

@@ -3,7 +3,7 @@ title: "Audio"
 parent: "Content"
 ---
 
-# Wardogs — Audio Data Reference (v2)
+# Wardogs — Audio Data Reference
 *Extracted from cooked game data under `/Game/Audio/` (UE 5.7 export, 1002 JSON files in [`Wardogs/Content/Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio)). Every number below was counted by script over the whole folder. Behaviour meanings are inferred from property names unless marked as confirmed.*
 
 > **Format note:** the files are not one-object-per-file. Each `.json` holds one primary export (the asset named after the file) followed by its sub-objects (`UObject` exports for behaviours, template-linked blueprint instances). Every export starts with its own `--- export: <Kind> / <Name> ---` line, so the parser splits on those lines and then `json.loads` each block. 956 primary exports + 1,626 sub-objects = 2,582 export blocks, 0 parse errors.

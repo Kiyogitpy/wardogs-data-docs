@@ -3,7 +3,7 @@ title: "Weapons (feature)"
 parent: "Game Features"
 ---
 
-# Wardogs — GameFeatures/Weapons Reference (v2)
+# Wardogs — GameFeatures/Weapons Reference
 
 *Source: [`Wardogs/Plugins/GameFeatures/Weapons/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Weapons) (1013 JSON files, 3905 exported objects, 0 parse errors). Parsed with a Python script that splits each file on its `--- export:` headers, since many files hold several objects. Values are cooked data as exported. Where a meaning is inferred from a property name, the text says so.*
 

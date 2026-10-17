@@ -3,7 +3,7 @@ title: "Environment"
 parent: "Content"
 ---
 
-# Wardogs — Environment & PCG Reference (v2)
+# Wardogs — Environment & PCG Reference
 *Extracted from cooked game data ([`Wardogs/Content/Environment/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment), 419 JSON exports, UE 5.7). Values are the raw asset values. Positions and distances are Unreal units (cm) unless noted. Parsed with a Python script that strips the export header, normalises GUID-suffixed property names, and groups by folder and type.*
 
 > **Scope note:** this covers only [`Content/Environment`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment). Every `.json` in the folder was parsed (0 errors). Items marked *inferred* are guesses from names and value ranges. The export does not say what they mean.

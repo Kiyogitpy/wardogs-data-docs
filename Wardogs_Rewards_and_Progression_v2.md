@@ -3,7 +3,7 @@ title: "Rewards & Progression"
 nav_order: 2
 ---
 
-# Wardogs — Rewards & Progression Reference (v2, corrected)
+# Wardogs — Rewards & Progression Reference
 *Extracted from cooked game data (build `++Wardogs+Live-CL-516586`, UE 5.7.4). All numbers below come directly from the game's own DataTables.*
 
 > **Correction note:** v1 of this doc pulled from [`DT_Rewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_Rewards.json)/[`DT_CashRewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_CashRewards.json) — those tables turned out to be **stale/placeholder** (nearly everything reads `0`). The real, live numbers live in a separate, much bigger family of per-category tables (`DT_Reward_Cash_*`, `DT_ChallengeRewards_*`) under [`CashRewardsDataTable/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/CashRewardsDataTable). This version replaces those zeros with the actual base values, including per-item, per-vehicle, and per-buildable breakdowns that weren't in v1 at all.

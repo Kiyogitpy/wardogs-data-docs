@@ -3,7 +3,7 @@ title: "Ammo (feature)"
 parent: "Game Features"
 ---
 
-# Wardogs — GameFeature: Ammo Reference (v2)
+# Wardogs — GameFeature: Ammo Reference
 *Extracted from cooked game data (build `++Wardogs+Live-CL-516586`, UE 5.7.4). Source: [`Wardogs/Plugins/GameFeatures/Ammo/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Ammo) (23 JSON files). Every file was checked, and the one real export type was read in full.*
 
 > **Key finding:** this folder does **not** define ammo. It holds 23 GameFeature bundles, and each one does a single thing: it adds one **External Data Layer** (a world-partition streaming layer) to the world. No damage, count, magazine, or per-round values are stored here. Those values are elsewhere (section 5).

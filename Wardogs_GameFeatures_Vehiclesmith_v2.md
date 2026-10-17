@@ -3,7 +3,7 @@ title: "Vehiclesmith (feature)"
 parent: "Game Features"
 ---
 
-# Wardogs — Vehiclesmith Game Feature Reference (v2)
+# Wardogs — Vehiclesmith Game Feature Reference
 *Extracted from cooked game data ([`Wardogs/Plugins/GameFeatures/Vehiclesmith`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith), 12 JSON files, all parsed). Build `++Wardogs+Live-CL-516586`, UE 5.7.*
 
 > **What this is:** Vehiclesmith is the vehicle-customisation mode (the vehicle counterpart of Gunsmith), built on the shared **Itemsmith** UI framework. Almost everything here is UI configuration: scene layout, tabs, browser pages, camera modes, data layers and input bindings. There are no combat or balance numbers in this plugin.

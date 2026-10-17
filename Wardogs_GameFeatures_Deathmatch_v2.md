@@ -3,7 +3,7 @@ title: "Deathmatch (feature)"
 parent: "Game Features"
 ---
 
-# Wardogs — GameFeatures: Deathmatch (v2)
+# Wardogs — GameFeatures: Deathmatch
 *Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: [`Plugins/GameFeatures/Deathmatch/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Deathmatch) — 5 JSON files.*
 
 ---

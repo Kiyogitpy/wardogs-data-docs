@@ -3,7 +3,7 @@ title: "Itemsmith (feature)"
 parent: "Game Features"
 ---
 
-# Wardogs: GameFeatures Itemsmith Reference (v2)
+# Wardogs: GameFeatures Itemsmith Reference
 *Source: exported JSON under [`Wardogs/Plugins/GameFeatures/Itemsmith`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Itemsmith) (117 files, one folder: `Content`). Itemsmith is the paint, decal and attachment customisation screen. Numbers are read from the export; anything not confirmed is marked.*
 
 ---

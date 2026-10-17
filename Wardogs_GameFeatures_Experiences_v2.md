@@ -3,7 +3,7 @@ title: "Experiences (feature)"
 parent: "Game Features"
 ---
 
-# Wardogs — GameFeatures: Experiences (v2)
+# Wardogs — GameFeatures: Experiences
 *Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: [`Plugins/GameFeatures/Experiences/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Experiences) — 11 JSON files. Two experiences: [`KOTH`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Experiences/KOTH/Content/KOTH.json) (1 file) and [`SniperShowdown`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Experiences/SniperShowdown/Content/SniperShowdown.json) (10 files).*
 
 ---

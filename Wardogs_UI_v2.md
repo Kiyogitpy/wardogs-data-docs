@@ -3,7 +3,7 @@ title: "UI"
 parent: "Content"
 ---
 
-# Wardogs — UI Data Reference (v2)
+# Wardogs — UI Data Reference
 *Extracted from cooked game data ([`Wardogs/Content/UI`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI), 605 JSON files holding 793 export blocks: 501 UDataAsset, 188 UObject, 92 UDataTable, 11 curve assets, 1 common input table). Values are as exported; nothing here was checked in-game. Multi-export files were split on their `--- export:` headers before parsing.*
 
 > **Scope note:** this is the UI-layer data: HUD trackers and feeds, map and minimap setup, ping and radial wheels, vendor and inventory grids, tooltips, settings display, frontend scenes, localisation-tag tables, and UI audio. Gameplay numbers (cash, XP, weapon stats) live in other categories. Where a UI asset refers to a gameplay tag or entity, the tag is named but its gameplay value is not included here.

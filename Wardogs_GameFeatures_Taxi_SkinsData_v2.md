@@ -3,7 +3,7 @@ title: "Taxi SkinsData (feature)"
 parent: "Game Features"
 ---
 
-# Wardogs — GameFeatures: Taxi_SkinsData (v2)
+# Wardogs — GameFeatures: Taxi_SkinsData
 *Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: [`Plugins/GameFeatures/Taxi_SkinsData/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Taxi_SkinsData) — 3 JSON files.*
 
 ---

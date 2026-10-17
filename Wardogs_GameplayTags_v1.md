@@ -3,7 +3,7 @@ title: "Gameplay Tags"
 parent: "Content"
 ---
 
-# Wardogs — Gameplay Tag Definitions (v1)
+# Wardogs — Gameplay Tag Definitions
 *Extracted from the game's packed config files ([`Wardogs/Config/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Config)). Source copies are in `data/Wardogs/Config/`. Each entry is a `GameplayTagList` line.*
 
 > **Scope:** the tag names and dev comments defined in [`DefaultGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/DefaultGameplayTags.ini) and [`Config/Tags/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Config/Tags). Engine tags are not included. How tags match at runtime is engine logic and is not in these files.

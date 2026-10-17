@@ -3,7 +3,7 @@ title: "Meta"
 parent: "Content"
 ---
 
-# Wardogs: Meta Data Reference (v2)
+# Wardogs: Meta Data Reference
 *Extracted from cooked game data ([`Wardogs/Content/Meta`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Meta), 80 files, UE 5.7 export to JSON). Values are the raw asset values. Interpretations are marked as inferred.*
 
 > **Scope:** the progression and meta-systems layer: role unlock trees, character skill effects, achievements and missions, currency and the gold market, and the reward scaling curves. The per-kill and per-event cash values are in [Wardogs_Rewards_and_Progression_v2.md](Wardogs_Rewards_and_Progression_v2.md). This doc links to that file and does not repeat those values.

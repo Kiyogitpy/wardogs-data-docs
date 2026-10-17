@@ -3,7 +3,7 @@ title: "BHFramework"
 parent: "Plugins"
 ---
 
-# Wardogs — Plugin: BHFramework (v2)
+# Wardogs — Plugin: BHFramework
 *Extracted from cooked game data (UE 5.7 export JSON). Source folder: [`Plugins/BHFramework/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/BHFramework) — 47 JSON files, all under [`Content/Settings/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/BHFramework/Content/Settings). These are user-setting definitions (`BHUserSetting*`). Values are the export's defaults and ranges.*
 
 ---

@@ -3,7 +3,7 @@ title: "Spotting (feature)"
 parent: "Game Features"
 ---
 
-# Wardogs — GameFeature: Spotting Reference (v2)
+# Wardogs — GameFeature: Spotting Reference
 *Extracted from cooked game data (build `++Wardogs+Live-CL-516586`, UE 5.7.4). Source: [`Wardogs/Plugins/GameFeatures/Spotting/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Spotting) (28 JSON files).*
 
 > **Overlap with the main doc:** the flat Spotting cash min and max values (15 / 275 and 50 / 500) are in `Wardogs_Rewards_and_Progression_v2.md`, section 9. This doc adds the **per-target challenge formulas**, the **modifier table** behind those min and max values, the **variant lookups**, **skills**, **feed strings**, **trackers**, **input bindings** and **audio** for spotting.

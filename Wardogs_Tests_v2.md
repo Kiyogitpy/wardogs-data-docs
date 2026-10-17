@@ -3,7 +3,7 @@ title: "Tests"
 parent: "Content"
 ---
 
-# Wardogs: Tests Data Reference (v2)
+# Wardogs: Tests Data Reference
 *Extracted from cooked game data ([`Wardogs/Content/Tests`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Tests), 2 files). These are automated load-test profiles, not gameplay data.*
 
 > **Scope:** the load-test (bot) setup: how many clients to launch per server profile, and what each automated client does. These are the test profiles the Random Scatter orchestrator uses.

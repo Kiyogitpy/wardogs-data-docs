@@ -3,7 +3,7 @@ title: "Season 1 Cosmetic Unlocks"
 parent: "Content"
 ---
 
-# Wardogs — Season 1 Cosmetic/Item Unlock Reference (v1)
+# Wardogs — Season 1 Cosmetic/Item Unlock Reference
 
 *Extracted from the game's data assets. This is the data `TreeRewardTrack` UI widgets reference at runtime: the flat list of cosmetic rewards (skins, emotes) that exist for Season 1, each tagged to the item it skins and the archetype it belongs to.*
 
