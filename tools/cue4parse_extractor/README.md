@@ -38,16 +38,25 @@ WdExtract <Paks> <keyfile> <usmap> <out> <Paks>\oo2core_9_win64.dll <mode> [args
 | `list GE_` | `<out>/files.txt`: every package whose name starts with the prefix |
 | `schema BHGameplay` | `<out>/usmap_schema.json`: usmap layouts whose name contains the text |
 | `dump <files.txt or package paths>` | `<out>/<name>.json` per package: all exports, Blueprint bytecode included; failures in `_failures.txt` |
+| `deobfuscate <out.usmap> --names <donor.usmap>` | A deobfuscated copy of `<usmap>`: names and element types restored from the donor, then the hand patches; read back through CUE4Parse to check it. No paks or key are read (pass `-` for those arguments). Log in `<out>/_deobfuscate_log.txt` |
 | `findname <path prefix> <text>` | `<out>/findname.txt`: packages under the prefix whose name map contains the text (IoStore imports are hashed, so this finds names an asset uses, not who references it) |
 
 **`--names <usmap>`** (any mode) borrows property names and array element
-types from an unobfuscated usmap for every struct whose layout matches this
-build's property for property. The closed-beta usmap
-(`mappings/old-deobfuscated-507-ClosedBeta.usmap`, an older build) restores about 43,500
-hashed or `Unknown` properties in about 10,600 structs; structs that changed
-between builds are left alone. With it, skeletal meshes and physics assets
-decode too. Keep it in `mappings/` next to the live one; like it, it is gitignored and never committed.
-Checked: a GE re-dump with `--names` is byte-identical to the published export.
+types from an unobfuscated usmap, by the same rules as `deobfuscate` (see
+[`mappings/README.md`](../../mappings/README.md#how-deobfuscated-it-is)).
+Simpler: generate the deobfuscated usmap once and pass it as `<usmap>`:
+
+```
+WdExtract - - mappings.7.4-516586+++Wardogs+Live-Wardogs.usmap out - deobfuscate ^
+  mappings.7.4-516586+++Wardogs+Live-Wardogs.deobfuscated.usmap ^
+  --names mappings\old-deobfuscated-507-ClosedBeta.usmap
+```
+
+The donor is the closed-beta usmap (`mappings/old-deobfuscated-507-ClosedBeta.usmap`,
+an older build, not obfuscated). With the result, skeletal meshes, physics assets
+and data tables decode too. Keep both usmaps in `mappings/`; they are gitignored
+and never committed. Checked: all 341 GE assets re-dumped with the deobfuscated
+usmap are byte-identical to the published export.
 
 `dump` first restores usmap property names that are hashed in this build and
 array types the usmap leaves as `Unknown`, by property index against the SDK
