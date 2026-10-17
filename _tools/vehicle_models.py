@@ -217,16 +217,21 @@ MESH_NOTES = {
     "Browning_Mount_Proxy": "Only the gun mount is shown. The gun's own proxy (CC_Browning_Gun) attaches to a receiver_J "
                             "bone that SK_Browning_Mounted doesn't have, so where the game puts it is not traced.",
 }
+DESTROYED_NOTE = ("Damage state: every wheel destroyed (state 2 in Vehicle §3.2's wheel mesh swap). Each wheel shows its "
+                  "destroyed mesh's collision, which has no tyre slot. What sets a wheel's state is not traced.")
 
 
-def wheel_components(module_files):
+def wheel_components(module_files, state="intact"):
     """One component per wheel of an MVF_InstancedWheels fragment. The wheels are the WheelSetup entries of
     the vehicle config's AxleDataAssets, in axle order then WheelSetup order. That order is taken as the
     wheel's DataIndex, which the game appends to its IndexedSlotNames (CC_Wheel -> CC_Wheel_0, ...) through
     the instance remap. With every wheel active the remap is the identity; the TyreHealthAttribute check at the
     end of assemble_variant() flags any index that disagrees with the slot map. Each wheel sits at its
     BoneName on the Chassis skeleton. The single WheelMesh is authored for the right side; left wheels are
-    mirrored across the bone's XZ plane (bMirrorLeftHanded: class default, not in the export)."""
+    mirrored across the bone's XZ plane (bMirrorLeftHanded: class default, not in the export).
+    state "destroyed" is wheel damage state 2 (Vehicle §3.2 wheel mesh swap): with bSupportTyreDestruction and
+    DestroyedMeshMode All, each wheel moves to the destroyed ISM, which shows DestructionMesh and registers
+    like the intact one (same group, IndexedSlotNames and DataIndex)."""
     configs, frags = [], []
     for f in module_files:
         objs = {o.get("Name"): o for o in dt.exports(f)}
@@ -254,10 +259,14 @@ def wheel_components(module_files):
         per_wheel = p.get("PerWheelSurfaceGroups") or []
         if per_wheel:
             notes.append(f"{key}: PerWheelSurfaceGroups {per_wheel} not applied")
+        mesh = p["WheelMesh"]["AssetPathName"]
+        if (state == "destroyed" and p.get("bSupportTyreDestruction") and p.get("DestroyedMeshMode") == "ETyreMeshSwapMode::All"
+                and (p.get("DestructionMesh") or {}).get("AssetPathName")):
+            mesh = p["DestructionMesh"]["AssetPathName"]
         for i, w in enumerate(setup):
             comps.append({"module": module, "fragment": f"{key}[{i}]", "tags": set(), "kind": "static",
                           "source": None, "root_socket": True, "socket": w["BoneName"], "rel": np.eye(4),
-                          "mesh": p["WheelMesh"]["AssetPathName"], "register": p.get("bRegisterComplexSurface", True),
+                          "mesh": mesh, "register": p.get("bRegisterComplexSurface", True),
                           "group": explicit if explicit not in (None, "None") else WHEEL_GROUP,
                           "indexed": (set(p.get("IndexedSlotNames", [])), i), "mirror": w["Side"].endswith("Left"),
                           "wheel": {"index": i, "side": w["Side"].split("::")[-1], "bone": w["BoneName"],
@@ -438,12 +447,12 @@ def variant_file(name):
     return next(v for v in dt.variants() if os.path.basename(v) == f"VV_{name}.json")
 
 
-def assemble_variant(vehicle, variant, index, skel_dir):
-    """One variant's placed collision meshes: ([(name, (t, q, s), extras, prims)], notes)."""
+def assemble_variant(vehicle, variant, index, skel_dir, state="intact"):
+    """One variant's placed collision meshes in a wheel damage state: ([(name, (t, q, s), extras, prims)], notes)."""
     found, skipped, bones = index
     modules, missing, _ = dt.assemble(variant_file(variant))
     comps = components(modules)
-    wheels, wnotes = wheel_components(modules)
+    wheels, wnotes = wheel_components(modules, state)
     comps += wheels
     notes = wnotes + place(comps, skel_dir, bones) + [f"module not in data/: {m}" for m in missing]
     nodes, used = [], {}
@@ -516,20 +525,30 @@ def file_stem(vehicle, variant):
 
 def build(vehicle, index, skel_dir, raw_dir):
     """Every variant of one vehicle-hitboxes.json entry, variants with identical assemblies sharing a file.
-    Returns [(stem, raw path, variants, report)] in variant order of each file's first variant."""
+    Returns [(stem, raw path, variants, report)] in variant order of each file's first variant. Intact files
+    come first; a wheels-destroyed file (<stem>--wheels-destroyed, asset.extras.damage_state) is added only
+    where destroyed wheels change the geometry."""
     files = {}
-    for variant in vehicle["variants"]:
-        nodes, notes = assemble_variant(vehicle, variant, index, skel_dir)
-        entry = files.setdefault(signature(nodes), {"nodes": nodes, "notes": notes, "variants": []})
-        entry["variants"].append(variant)
+    for state in ("intact", "destroyed"):
+        for variant in vehicle["variants"]:
+            nodes, notes = assemble_variant(vehicle, variant, index, skel_dir, state)
+            entry = files.setdefault(signature(nodes), {"nodes": nodes, "notes": notes, "variants": [], "state": state})
+            if entry["state"] == state:
+                entry["variants"].append(variant)
     expected = {s["slot"] + ("" if s["group"] == DEFAULT_GROUP else "|" + s["group"].rsplit(".", 1)[-1])
                 for s in vehicle["slots"] if s["slot"] != "(default)"}
     out = []
     for f in files.values():
-        stem = file_stem(vehicle, f["variants"][0])
+        if not f["variants"]:  # destroyed wheels identical to an intact file
+            continue
+        destroyed = f["state"] == "destroyed"
+        stem = file_stem(vehicle, f["variants"][0]) + ("--wheels-destroyed" if destroyed else "")
         raw = os.path.join(raw_dir, stem + ".raw.glb")
         asset_extras = {"variants": f["variants"]}
-        notes = list(dict.fromkeys(MESH_NOTES[n[2]["render_mesh"]] for n in f["nodes"] if n[2]["render_mesh"] in MESH_NOTES))
+        notes = [DESTROYED_NOTE] if destroyed else []
+        if destroyed:
+            asset_extras["damage_state"] = "wheels_destroyed"
+        notes += dict.fromkeys(MESH_NOTES[n[2]["render_mesh"]] for n in f["nodes"] if n[2]["render_mesh"] in MESH_NOTES)
         if notes:
             asset_extras["notes"] = notes
         write_glb(raw, vehicle["id"], f["nodes"], asset_extras)
