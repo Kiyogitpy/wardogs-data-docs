@@ -22,11 +22,14 @@ weapon), [§4.2](Wardogs_GameplayEffectsPipeline_v1.md#42-modifiers) (stack scal
 - **Base.** The weapon item's `WDItemExtensionData_GameplayEffects.DefaultAttributes`. The `AimTime` in
   `WDItemExtensionData_RangedWeapon.DefaultAttributes` never changes it, so it is not used.
 - **On the weapon,** one application each: every equipped attachment's `AppliedEffects`; the selected
-  sight's `SightsData[name].AppliedEffects`; the bipod's unfolded list (`+0x138`) only with the bipod
-  unfolded (the tables use folded); and `StanceGameplayEffects[stance]` with the preset's stack count (1 in
-  all data; the tables use Stand).
-- **Not on the weapon.** `AppliedCharacterEffects` and the bipod's `+0x148` list go to the character. They
-  are listed as character effects and never enter a weapon value.
+  sight's `SightsData[name].AppliedEffects`, where the name starts as `S_Aim01` and changes only through
+  `CycleSights`; the bipod's unfolded list (`+0x138`) only with the bipod unfolded and not mounted, and
+  its `MountedAppliedEffects` (`+0x158`, applied by the Blueprint action `B_Action_MountBipod`) instead
+  of the unfolded lists while mounted (the tables use folded); and `StanceGameplayEffects[stance]` with
+  the preset's stack count (1 in all data; the tables use Stand).
+- **Not on the weapon.** `AppliedCharacterEffects`, the bipod's unfolded `+0x148` list and its mounted
+  `MountedAppliedCharacterEffects` (`+0x168`) go to the character. They are listed as character effects
+  and never enter a weapon value.
 - **Evaluation.** Each application is its own instance with `n = 1` (so an effect applied twice counts
   twice), every `Filter` is empty and no weapon attribute has a hook. Magnitudes are read as the asset's
   floats, so 0.7 enters as 0.699999988. If an Override is active, the first one in the attribute's
@@ -43,11 +46,13 @@ weapon), [§4.2](Wardogs_GameplayEffectsPipeline_v1.md#42-modifiers) (stack scal
 - **Assumption: application order.** The Override lists are taken to be in application order: the
   weapon's sub-slots in data order, each attachment followed by the sub-slots it brings (a barrel's muzzle
   slot, a handguard's underbarrel slot); per attachment its `AppliedEffects`, then the selected sight's
-  effects, then the unfolded bipod list; the stance effect last. The native equip path walks the
+  effects, then the unfolded or mounted bipod list; the stance effect last. The native equip path walks the
   replicated attachment map, whose order is not traced. Where two Overrides with different values reach
   one attribute, the weapon's notes say so.
-- **Assumption: initial sight.** Which `SightsData` entry is selected first is not traced. §1 and §2 use the
-  first entry in data order; §3 lists every entry.
+- **Data: initial sight.** §1 and §2 use the `SightsData` entry `S_Aim01`, per
+  [Effects §7.1](Wardogs_GameplayEffectsPipeline_v1.md#71-what-applies-to-a-weapon); §3 lists every entry.
+  `ID_CantedIrons`, whose only entry is `S_AimCanted1`, has no `S_Aim01`; the tool falls back to the
+  first entry and flags it (no weapon accepts that item).
 - **Data: default loadout.** Each sub-slot's `DefaultContainerItems` (or `DefaultItems` when that is
   empty), first item, and the defaults of the sub-slots that item brings. `None` leaves the slot empty.
   Ammunition in chamber and magazine slots carries no effects and is left out.
@@ -65,7 +70,8 @@ python _tools/weapon_attributes.py --write
 
 `--with` puts each attachment into the first free sub-slot that accepts it, replacing the default item
 there, and stops with an error when no free sub-slot accepts it. `--sight NAME` picks a `SightsData`
-entry, `--bipod` unfolds a bipod. The command prints the loadout, the applications in Override order, the
+entry (default `S_Aim01`), `--bipod` unfolds a bipod and `--mounted` mounts it (implying unfolded),
+which replaces the unfolded lists with the mounted ones. The command prints the loadout, the applications in Override order, the
 character effects, and each attribute's modifiers and final value at full precision.
 
 **Reading the tables.** Attribute names drop `Attribute.Gameplay.Weapon.`. Operations: `+` Add, `×`
@@ -995,7 +1001,7 @@ Item `Id.Item.SV98`, [`ID_SV98.json`](https://github.com/Kiyogitpy/wardogs-data-
 
 ## 3. Attachments
 
-The 246 attachment items at least one weapon accepts, grouped by `AttachmentType`. **On the weapon** lists the modifiers of `AppliedEffects`; **Sight** those of each `SightsData` entry in data order; **Bipod unfolded** those of the unfolded list (`+0x138`). **Character** names the effects that go to the character instead (`AppliedCharacterEffects`, and the bipod's `+0x148` list). **Accepted by** lists the weapons with a sub-slot that accepts the item, on the weapon itself or on an attachment it accepts (a muzzle on a barrel, an underbarrel on a handguard).
+The 246 attachment items at least one weapon accepts, grouped by `AttachmentType`. **On the weapon** lists the modifiers of `AppliedEffects`; **Sight** those of each `SightsData` entry in data order; **Bipod unfolded** those of the unfolded list (`+0x138`); **Bipod mounted** those of `MountedAppliedEffects` (`+0x158`), which replace the unfolded lists while mounted. **Character** names the effects that go to the character instead (`AppliedCharacterEffects`, the bipod's unfolded `+0x148` list and its mounted `MountedAppliedCharacterEffects`, `+0x168`). **Accepted by** lists the weapons with a sub-slot that accepts the item, on the weapon itself or on an attachment it accepts (a muzzle on a barrel, an underbarrel on a handguard).
 
 ### Barrel (36)
 
@@ -1042,15 +1048,15 @@ The 246 attachment items at least one weapon accepts, grouped by `AttachmentType
 
 | Attachment | Weapon-side modifiers | Character | Accepted by |
 |---|---|---|---|
-| Grip Pod (`ID_FGP_04`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.88, HorizontalRecoilMultiplier ×c 0.9, SpreadMultiplier ×c 0.94, AimTime ×c 1.1, EquipSpeedMultiplier ×c 0.98<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05 | `GE_FGP_04_NonBipodState_CharacterEffects`, `GE_FGP_04_UnfoldedBipodState_CharacterEffects` | AK74M, M249, M4, MP9, SMG_03, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_036, WEPN_037 |
-| PKM Bipod (`ID_FGRP_008`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05 | `GE_FGRP_008_UnfoldedBipodState_CharacterEffects` | LMG_02 |
-| SV98 Bipod (`ID_FGRP_009`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05 | `GE_FGRP_009_UnfoldedBipodState_CharacterEffects` | SV98 |
-| SKS Bipod (`ID_FGRP_010`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05 | `GE_FGRP_010_UnfoldedBipodState_CharacterEffects` | SKS |
-| SVD Bipod (`ID_FGRP_011`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05 | `GE_FGRP_011_UnfoldedBipodState_CharacterEffects` | SVDM |
-| M249 Bipod (`ID_FGRP_012`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05 | `GE_FGRP_012_UnfoldedBipodState_CharacterEffects` | M249 |
-| Pro Tilt Bipod (`ID_FGRP_013`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05 | `GE_FGRP_013_UnfoldedBipodState_CharacterEffects` | MK22, RFB, SR_04 |
-| Evo-3 Ultra Bipod (`ID_FGRP_019`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05 | `GE_FGRP_019_UnfoldedBipodState_CharacterEffects` | WEPN_036 |
-| M14 Bipod (`ID_FGRP_020`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05 | `GE_FGRP_020_UnfoldedBipodState_CharacterEffects` | WEPN_034 |
+| Grip Pod (`ID_FGP_04`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.88, HorizontalRecoilMultiplier ×c 0.9, SpreadMultiplier ×c 0.94, AimTime ×c 1.1, EquipSpeedMultiplier ×c 0.98<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05<br>**Bipod mounted:** VerticalRecoilMultiplier ×c 0.25, HorizontalRecoilMultiplier ×c 0.28, SpreadMultiplier ×c 0.45, AimTime ×c 0.92 | `GE_FGP_04_NonBipodState_CharacterEffects`, `GE_FGP_04_UnfoldedBipodState_CharacterEffects`, `GE_FGP_04_BipodState_CharacterEffects` | AK74M, M249, M4, MP9, SMG_03, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_036, WEPN_037 |
+| PKM Bipod (`ID_FGRP_008`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05<br>**Bipod mounted:** VerticalRecoilMultiplier ×c 0.2, HorizontalRecoilMultiplier ×c 0.22, SpreadMultiplier ×c 1, AimTime ×c 0.88 | `GE_FGRP_008_UnfoldedBipodState_CharacterEffects`, `GE_FGRP_008_BipodState_CharacterEffects` | LMG_02 |
+| SV98 Bipod (`ID_FGRP_009`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05<br>**Bipod mounted:** VerticalRecoilMultiplier ×c 0.45, HorizontalRecoilMultiplier ×c 0.35, SpreadMultiplier ×c 0.45, AimTime ×c 0.84 | `GE_FGRP_009_UnfoldedBipodState_CharacterEffects`, `GE_FGRP_009_BipodState_CharacterEffects` | SV98 |
+| SKS Bipod (`ID_FGRP_010`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05<br>**Bipod mounted:** VerticalRecoilMultiplier ×c 0.65, HorizontalRecoilMultiplier ×c 0.4, SpreadMultiplier ×c 0.45, AimTime ×c 0.86 | `GE_FGRP_010_UnfoldedBipodState_CharacterEffects`, `GE_FGRP_010_BipodState_CharacterEffects` | SKS |
+| SVD Bipod (`ID_FGRP_011`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05<br>**Bipod mounted:** VerticalRecoilMultiplier ×c 0.65, HorizontalRecoilMultiplier ×c 0.35, SpreadMultiplier ×c 0.45, AimTime ×c 0.86 | `GE_FGRP_011_UnfoldedBipodState_CharacterEffects`, `GE_FGRP_011_BipodState_CharacterEffects` | SVDM |
+| M249 Bipod (`ID_FGRP_012`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05<br>**Bipod mounted:** VerticalRecoilMultiplier ×c 0.2, HorizontalRecoilMultiplier ×c 0.25, SpreadMultiplier ×c 1, AimTime ×c 0.88 | `GE_FGRP_012_UnfoldedBipodState_CharacterEffects`, `GE_FGRP_012_BipodState_CharacterEffects` | M249 |
+| Pro Tilt Bipod (`ID_FGRP_013`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05<br>**Bipod mounted:** VerticalRecoilMultiplier ×c 0.65, HorizontalRecoilMultiplier ×c 0.5, SpreadMultiplier ×c 0.45, AimTime ×c 0.83 | `GE_FGRP_013_UnfoldedBipodState_CharacterEffects`, `GE_FGRP_013_BipodState_CharacterEffects` | MK22, RFB, SR_04 |
+| Evo-3 Ultra Bipod (`ID_FGRP_019`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05<br>**Bipod mounted:** VerticalRecoilMultiplier ×c 0.4, HorizontalRecoilMultiplier ×c 0.3, SpreadMultiplier ×c 1, AimTime ×c 0.88 | `GE_FGRP_019_UnfoldedBipodState_CharacterEffects`, `GE_FGRP_019_BipodState_CharacterEffects` | WEPN_036 |
+| M14 Bipod (`ID_FGRP_020`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05<br>**Bipod mounted:** VerticalRecoilMultiplier ×c 0.6, HorizontalRecoilMultiplier ×c 0.35, SpreadMultiplier ×c 1, AimTime ×c 0.88 | `GE_FGRP_020_UnfoldedBipodState_CharacterEffects`, `GE_FGRP_020_BipodState_CharacterEffects` | WEPN_034 |
 
 ### Grip (26)
 
@@ -1287,7 +1293,8 @@ The 246 attachment items at least one weapon accepts, grouped by `AttachmentType
 
 Results above that rest on something not traced or on an odd piece of data.
 
-- **Several sights.** `ID_4xElcanSpectr` (S_Aim01, S_Aim02); `ID_SGHT_030` (S_Aim01, S_Aim02); `ID_SGHT_036` (S_Aim01, S_Aim02). §1 and §2 use the first entry; §3 lists each.
+- **Several sights.** `ID_4xElcanSpectr` (S_Aim01, S_Aim02); `ID_SGHT_030` (S_Aim01, S_Aim02); `ID_SGHT_036` (S_Aim01, S_Aim02). §1 and §2 use `S_Aim01`, per Effects §7.1; §3 lists each.
+- **No `S_Aim01` sight** (the tool falls back to the first entry): `ID_CantedIrons` (S_AimCanted1).
 - **No weapon accepts these attachments** that carry effects: `ID_CantedIrons`.
 - **Same effect on the weapon and the character:** `ID_MAGZ_065` lists `GE_MAGZ_065` in both `AppliedEffects` and `AppliedCharacterEffects`; `ID_MAGZ_066` lists `GE_MAGZ_066` in both `AppliedEffects` and `AppliedCharacterEffects`.
 - **Attribute-backed** (7 effects, capture timing not traced): `GE_RedDot` on `ID_RedDot`; `GE_SGHT_009` on `ID_SGHT_009`; `GE_SGHT_016` on `ID_SGHT_016`; `GE_SGHT_023` on `ID_SGHT_023`; `GE_SGHT_025` on `ID_SGHT_025`; `GE_SGHT_027` on `ID_SGHT_027`; `GE_SGHT_038` on `ID_SGHT_038`. Each overrides `MaxZeroingRange` with the current `MinZeroingRange`; the tool uses the final `MinZeroingRange`. None is in a default loadout.
@@ -1307,10 +1314,8 @@ Results above that rest on something not traced or on an odd piece of data.
 
 ## 5. Not traced
 
-- Which sight name is selected first (the tables use the first in data order).
 - The order of a weapon's Override lists beyond the application order assumed above.
 - When the attribute-backed zeroing magnitude is captured (at application, or live).
-- How the bipod's `MountedAppliedEffects` (`+0x158`) apply; the mounted state is not modelled.
 - The sub-slot filter code (`EBHSupportFilterMethod`); the semantics above are inferred from the data.
 - Attachment `AppliedEffects` that never reach a weapon value because no weapon accepts the attachment.
 
@@ -1319,3 +1324,4 @@ Results above that rest on something not traced or on an odd piece of data.
 | Date | Change |
 |---|---|
 | 2026-10-17 | v1: generated per-weapon base and final values with the default loadout, per-attachment weapon-side modifiers and accepting weapons, from the §7.1 rules; `_tools/weapon_attributes.py` added. |
+| 2026-10-17 | Round-5 verifier pass: the initial sight is `S_Aim01` (Effects §7.1), with a fallback to the first entry for `ID_CantedIrons`; `--mounted` models a mounted bipod (`MountedAppliedEffects` on the weapon, `MountedAppliedCharacterEffects` on the character, unfolded lists removed), and §3 lists the mounted lists. No §1 value changed. |

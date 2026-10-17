@@ -293,8 +293,12 @@ only if a component flag (`+0x280`) is clear, `Mode` is not
 Enable, otherwise to `0x5219C70`.
 
 Every `ApplyEffect` call creates its own instance: applying the same
-effect twice gives two instances, never one with more stacks. The
-effect's stacking policies are read only in `0x52317F0`.
+effect twice gives two instances, never one with more stacks.
+`StackDurationRefreshPolicy` is read only in `0x52317F0`;
+`StackExpirationPolicy` is also read when a multi-stack instance's
+duration ends (`0x522D260`), which removes the instance
+(`ClearEntireStack`) or takes one stack off through `0x52317F0`
+(`RemoveSingleStackAndRefreshDuration`).
 
 These are code facts. What they mean for authority, and how rollback
 works, are **Open**; the doc makes no server-authority claim, and
@@ -331,17 +335,17 @@ These rules give a weapon's final attributes for an attachment set. [Weapon Attr
 - **Base.** The weapon item's `WDItemExtensionData_GameplayEffects.DefaultAttributes`, installed into the item's own component (`OnRegister` `0x6C692E0`). The `AimTime` in `WDItemExtensionData_RangedWeapon.DefaultAttributes` never changes the base: it is installed later with overwrite off (`0x6C9AFB0`).
 - **Effects on the weapon** (the item's component, `+0xF0`), one stack each:
   - every equipped attachment's `AppliedEffects`;
-  - the selected sight's `SightsData[name].AppliedEffects`;
-  - with an underbarrel bipod unfolded, also its unfolded list (`FWDBipodAttachmentData` `+0x138`, `0x6C9F6E0`);
+  - the selected sight's `SightsData[name].AppliedEffects`, where the name starts as `S_Aim01` (`0x6C90DE0`, called at `0x6C91859`; restored on every attachment change, `0x6C9DC7B`) and changes only through `CycleSights`;
+  - with an underbarrel bipod unfolded and not mounted, also its unfolded list (`FWDBipodAttachmentData` `+0x138`, `0x6C9F6E0`); while mounted (`SetBipodMounted`, `0x6CA1AE0`), `0x6C9F6E0` removes the unfolded lists and the Blueprint action `B_Action_MountBipod` applies `MountedAppliedEffects` (`+0x158`) to the weapon and `MountedAppliedCharacterEffects` (`+0x168`) to the character, one stack each, removing them on unmount. The native part is checked in the executable; the Blueprint part rests on a bytecode dump of `B_Action_MountBipod`;
   - the stance preset `StanceGameplayEffects[stance]`, applied by `OnStanceChanged` (`0x6C9A420`, mode `AuthorityOnly`) with the preset's stack count, which is 1 in all data.
 - **Not on the weapon.** `AppliedCharacterEffects` and the bipod's `+0x148` list go to the owning character's component (`WDMoverCharacter` `+0x740`), following the equip state.
-- **Evaluation.** Each application is its own instance; the stacking policies act only in `0x52317F0`. Every modifier `Filter` is empty, and no weapon-related effect has requirements, a duration or `MaxStacks`. So every modifier counts with `n = 1`, and the §4.4 formula applies with no hook.
+- **Evaluation.** Each application is its own instance; the stacking policies act only in `0x52317F0` and on duration expiry (`0x522D260`), and weapon effects have no duration. Every modifier `Filter` is empty, and no weapon-related effect has requirements, a duration or `MaxStacks`. So every modifier counts with `n = 1`, and the §4.4 formula applies with no hook.
 - **Data exceptions.**
   - `ID_MAGZ_065` and `ID_MAGZ_066` list the same effect in `AppliedEffects` and `AppliedCharacterEffects`.
   - The stance maps are keyed by stance, and two use mismatched effects: `ID_A91` maps Stand to `AR_Prone` (×c 0.7) and Crouch and Prone to `AR_Standing`, and `ID_WEPN_037` maps Prone to `AR_Standing`.
   - Seven sight effects override `MaxZeroingRange` with the current `MinZeroingRange` (an attribute-backed modifier).
 
-Not traced: which sight name is selected first, how the bipod's `MountedAppliedEffects` (`+0x158`) apply, and when the attribute-backed zeroing magnitude is captured.
+Not traced: when the attribute-backed zeroing magnitude is captured.
 
 ## 8. Open questions
 
@@ -351,7 +355,7 @@ Not traced: which sight name is selected first, how the bipod's `MountedAppliedE
 | E-2 | Duration semantics beyond 0 (for example whether −1 means infinite) |
 | E-3 | Rollback mechanism and the role of `UNetworkPredictionWorldManager` |
 | E-4 | **Closed**: every effect's modifiers, durations, stacks and granted tags are on [Gameplay Effect Values](Wardogs_GameplayEffect_Values_v1.md) |
-| E-5 | **Closed** (§7): `0x6C9F1A0` / `0x6C9E190` apply attachment and sight effects to the weapon item's own component |
+| E-5 | **Closed** (§7): `0x6C9F1A0` / `0x6C9E190` apply attachment and sight effects to the weapon item's own component; the initial sight (`S_Aim01`) and the mounted-bipod lists are closed in §7.1. Open: when the attribute-backed zeroing magnitude is captured |
 | E-6 | Vehicle health via effects: `GE_Vehicle_Health` and vehicle-side callers of `0x52311D0` (`0x7665D60`, and the `Auth_RefillFuel` exec thunk `0x7667280`; the corpus row `0x766727F` is an empty nullsub one byte early) are not traced |
 | E-7 | **Closed**: `+0x150` = `OngoingRequirements` not met (`0x52330B0`, `0x522CB40`), so the effect's modifiers are excluded; `+0x3C` = pending predicted stack delta (`0x52313E0`, `0x5231DA0`); `+0x100` / `+0x12C` = `Num` / `NumFreeIndices` of the pending predicted-removal key set at `+0xF8` (equal = empty) |
 
@@ -372,3 +376,4 @@ Not traced: which sight name is selected first, how the bipod's `MountedAppliedE
 | 2026-10-17 | Effect values exported from the paks and published on Gameplay Effect Values; E-4 closed; the scope example uses the real modifiers. |
 | 2026-10-17 | Independent verifier pass: closed E-1 with the combining formula (§4.4); stack scaling is linear per operation, not a curve (§4.2); `Fixed` with a curve row returns `Value × Curve(0)`; the attribute hooks and their three registrants (§4.3); E-7 added. |
 | 2026-10-17 | Round-4 verifier pass: E-5 closed (§7) with what applies to a weapon (§7.1); E-7 closed; no weapon attribute has a hook; character health's hook clamps; `ApplyEffect` stacks are clamped and every call is a new instance (§5); E-6 citation corrected. |
+| 2026-10-17 | Round-5 verifier pass: `StackExpirationPolicy` is also read on duration expiry (`0x522D260`, §5 and §7.1); the initial sight is `S_Aim01` and the mounted bipod's lists are applied by `B_Action_MountBipod` (§7.1); E-5 updated. |

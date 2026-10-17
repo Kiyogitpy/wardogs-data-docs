@@ -25,13 +25,13 @@ The method is the one on the [vehicle evidence page](vehicles.md#1-method):
 
 1. Every `0x` token in
    [`Wardogs_GameplayEffectsPipeline_v1.md`](../../Wardogs_GameplayEffectsPipeline_v1.md)
-   at `main` `e057d26` was extracted, and values below `0x100000`
-   (record offsets such as `+0x378`, class sizes, enum values) were
-   dropped. That left **53 RVAs**. The page was first built at `479c6c1`
-   (36 RVAs). Round 4's corrections added 18, and `0x5230770` is no
-   longer cited.
+   at commit `34e97c2` (round 5 applied on `e057d26`) was extracted, and
+   values below `0x100000` (record offsets such as `+0x378`, class sizes,
+   enum values) were dropped. That left **58 RVAs**. The page was first
+   built at `479c6c1` (36 RVAs). Round 4's corrections added 18, and
+   `0x5230770` is no longer cited (53 at `e057d26`). Round 5 added 5.
 2. Each RVA was tagged with its citing section and the doc's line numbers
-   at `e057d26`.
+   at `34e97c2`.
 3. `corpus.sqlite` was queried read-only for the exact `functions` row,
    `traits`, the enclosing row, direct calls and aliases. Bodies were
    searched for `JUMPOUT`, `__asm` and Hex-Rays warnings, and empty
@@ -51,12 +51,16 @@ The method is the one on the [vehicle evidence page](vehicles.md#1-method):
    confirmed the RVA set, every status and the counts; their four `[exe]`
    statuses rest on round-4 ledger rows. The verifier corrected one role
    (`0x52317F0` is not the only reader of the stacking policies).
+   The 5 RVAs added in round 5 (`0x522D260`, `0x6C90DE0`, `0x6C91859`,
+   `0x6C9DC7B`, `0x6CA1AE0`) come from the verifier's round-5 rows T0-15,
+   T3-9 and T3-10, which checked each against the instructions; this page
+   decoded each again and marks them verifier-confirmed (round 5).
 
 Re-run the corpus part with `python -I` from the repository root
 ([`_tools/rva_status.py`](../../_tools/rva_status.py)):
 
 ```text
-python -I _tools/rva_status.py Wardogs_GameplayEffectsPipeline_v1.md --rev e057d26 --exe
+python -I _tools/rva_status.py Wardogs_GameplayEffectsPipeline_v1.md --rev 34e97c2 --exe
 ```
 
 The status key is the one on the
@@ -66,12 +70,12 @@ The status key is the one on the
 
 | Status | RVAs |
 |---|---:|
-| `corpus body` | 40 (1 with a Hex-Rays warning) |
-| `[exe]` | 13 (1 of them a misaligned citation) |
+| `corpus body` | 43 (1 with a Hex-Rays warning) |
+| `[exe]` | 15 (13 code entries, 1 of them a misaligned citation; 2 instruction anchors) |
 | `GObjects` | 0 |
 | vtable/data | 0 |
 | `unverified` | 0 |
-| **Total** | **53** |
+| **Total** | **58** |
 
 Every cited address is in `.text`, and none is itself a GObjects fact.
 The GObjects-backed values sit next to them: for example the actor's
@@ -81,12 +85,12 @@ The GObjects-backed values sit next to them: for example the actor's
 ## 3. Table
 
 Sections are GameplayEffectsPipeline sections; `L` numbers are its lines
-at `e057d26`.
+at `34e97c2`.
 
 | RVA | Role | Cited in | Verification status |
 |---|---|---|---|
 | `0x3CA8630` | Component role check: returns the owner's `Role` | §5 (L288) | `[exe]`: no functions row; see notes |
-| `0x4C45DC0` | Cue call made by the revive handler | §6 (L308) | `corpus body` |
+| `0x4C45DC0` | Cue call made by the revive handler | §6 (L312) | `corpus body` |
 | `0x5219AB0` | Predicted apply, `ClientInstigated` branch | §5 (L291) | `corpus body` |
 | `0x5219C70` | Predicted apply, other branch | §5 (L293) | `corpus body` |
 | `0x521B800` | Reflected `ServerApplyEffect` thunk | §1.2 (L86) | `corpus body` |
@@ -96,16 +100,17 @@ at `e057d26`.
 | `0x522A800` | Default evaluator lambda | §4.2 (L211) | `corpus body` |
 | `0x522B1B0` | Clamps `Stacks` to `[1, MaxStacks]` (`MaxStacks` 0 = 65535) | §1.2 (L81) | `[exe]`: no functions row (r4 WA-5) |
 | `0x522B7D0` | Stack scaling | §4.2 (L200) | `corpus body` |
-| `0x522C4F0` | Dirty-attribute flush | §4.2 (L209), §4.3 (L222), §8 (L350) | `corpus body` |
-| `0x522CB40` | Re-checks and updates the `OngoingRequirements` flag `+0x150` (E-7) | §8 (L356) | `corpus body` |
-| `0x522E5C0` | Combining function | §4.2 (L208), §4.4 (L258), §8 (L350) | `corpus body` |
+| `0x522C4F0` | Dirty-attribute flush | §4.2 (L209), §4.3 (L222), §8 (L354) | `corpus body` |
+| `0x522CB40` | Re-checks and updates the `OngoingRequirements` flag `+0x150` (E-7) | §8 (L360) | `corpus body` |
+| `0x522D260` | Duration-expiry pass: reads `StackExpirationPolicy` (`0x522D57A` `movzx edx, byte [rax+0x37]`) for a multi-stack instance; `ClearEntireStack` removes it, `RemoveSingleStackAndRefreshDuration` calls `0x52317F0` | §5 (L299), §7.1 (L342), Change log (L379) | `corpus body`; verifier-confirmed (round 5, T0-15) |
+| `0x522E5C0` | Combining function | §4.2 (L208), §4.4 (L258), §8 (L354) | `corpus body` |
 | `0x522E960` | Scalar evaluator | §4.2 (L192) | `corpus body` |
 | `0x522F8F0` | `FindOrAddAttribute` | §1.2 (L84), §4.3 (L221) | `corpus body` |
-| `0x52311D0` | Adds a delta and calls `SetAttributeBaseValue` | §1.2 (L85), §4.3 (L248), §8 (L355) | `[exe]`: no functions row (r2 HP-10, r3 V-6) |
-| `0x52313E0` | Predicted stack change: pending delta `+0x3C` and the removal key set `+0xF8` (E-7) | §8 (L356) | `[exe]`: no functions row (r4 WA-9) |
-| `0x52317F0` | Stack modification; reads `StackDurationRefreshPolicy` (only here) and `StackExpirationPolicy` (also read on expiry by `0x522D260`) | §5 (L297), §7.1 (L338) | `corpus body` |
-| `0x5231DA0` | Lowers the pending predicted stack delta `+0x3C` (E-7) | §8 (L356) | `corpus body` |
-| `0x52330B0` | Sets `+0x150` when `OngoingRequirements` are not met (E-7) | §8 (L356) | `[exe]`: no functions row (r4 WA-8) |
+| `0x52311D0` | Adds a delta and calls `SetAttributeBaseValue` | §1.2 (L85), §4.3 (L248), §8 (L359) | `[exe]`: no functions row (r2 HP-10, r3 V-6) |
+| `0x52313E0` | Predicted stack change: pending delta `+0x3C` and the removal key set `+0xF8` (E-7) | §8 (L360) | `[exe]`: no functions row (r4 WA-9) |
+| `0x52317F0` | Stack modification; reads `StackDurationRefreshPolicy` (only here) and `StackExpirationPolicy` (also read on expiry by `0x522D260`) | §5 (L297,300), §7.1 (L342) | `corpus body` |
+| `0x5231DA0` | Lowers the pending predicted stack delta `+0x3C` (E-7) | §8 (L360) | `corpus body` |
+| `0x52330B0` | Sets `+0x150` when `OngoingRequirements` are not met (E-7) | §8 (L360) | `[exe]`: no functions row (r4 WA-8) |
 | `0x5233C00` | Replication receive handler | §4.1 (L170), §4.3 (L221) | `corpus body` |
 | `0x5236070` | `ServerApplyEffect` target after the check | §1.2 (L86) | `corpus body` |
 | `0x5236230` | `ServerApplyEffect` check | §1.2 (L86) | `corpus body` |
@@ -126,18 +131,22 @@ at `e057d26`.
 | `0x6B83360` | Reflected `Auth_Heal` | §4.3 (L250) | `corpus body` |
 | `0x6B83560` | Reflected `ResetHealth` | §4.3 (L251) | `corpus body` |
 | `0x6C66540` | Reflected `Auth_DecreaseContainerAmount` | §4.3 (L252) | `corpus body` |
-| `0x6C692E0` | `WDItemExtension_GameplayEffects` `OnRegister` (slot 110): installs `DefaultAttributes` | §7.1 (L331) | `corpus body` |
-| `0x6C9A420` | `OnStanceChanged`: applies the stance preset (`AuthorityOnly`) | §7.1 (L336) | `corpus body` |
-| `0x6C9AFB0` | `WDItemExtension_RangedWeapon` slot 159: installs its `DefaultAttributes` with overwrite off | §7.1 (L331) | `corpus body` |
-| `0x6C9D170` | Attachment refresh; the only caller of `0x6C9F1A0` and `0x6C9E190` | §7 (L323) | `corpus body` |
-| `0x6C9E190` | Applies the selected sight's effects | §7 (L320), §8 (L354) | `corpus body` |
-| `0x6C9F1A0` | Applies an attachment's `AppliedEffects` on equip | §7 (L319), §8 (L354) | `corpus body` |
-| `0x6C9F6E0` | Bipod unfolded effect list (`FWDBipodAttachmentData` `+0x138`) | §7.1 (L335) | `corpus body` |
-| `0x6E75620` | Revive handler (character slot 323) | §4.3 (L253), §6 (L308) | `corpus body` |
-| `0x7665D60` | Vehicle-side caller of `0x52311D0` | §8 (L355) | `corpus body` |
+| `0x6C692E0` | `WDItemExtension_GameplayEffects` `OnRegister` (slot 110): installs `DefaultAttributes` | §7.1 (L335) | `corpus body` |
+| `0x6C90DE0` | Sight-state initializer: sets `+0xA4` to FName `S_Aim01` (`0x6C90DF7`, `0x6C90E7B`) | §7.1 (L338) | `corpus body`; verifier-confirmed (round 5, T3-9) |
+| `0x6C91859` | `call 0x6C90DE0` on `+0x3D0` in the `WDItemExtension_RangedWeapon` constructor (in `0x6C91510`) | §7.1 (L338) | `[exe]` instruction anchor; verifier-confirmed (round 5, T3-9) |
+| `0x6C9A420` | `OnStanceChanged`: applies the stance preset (`AuthorityOnly`) | §7.1 (L340) | `corpus body` |
+| `0x6C9AFB0` | `WDItemExtension_RangedWeapon` slot 159: installs its `DefaultAttributes` with overwrite off | §7.1 (L335) | `corpus body` |
+| `0x6C9D170` | Attachment refresh; the only caller of `0x6C9F1A0` and `0x6C9E190` | §7 (L327) | `corpus body` |
+| `0x6C9DC7B` | `mov [r14+0x440], rdx`: copies the initial sight name `+0x474` back to the selected-sight key on attachment apply (in `0x6C9D170`) | §7.1 (L338) | `[exe]` instruction anchor; verifier-confirmed (round 5, T3-9) |
+| `0x6C9E190` | Applies the selected sight's effects | §7 (L324), §8 (L358) | `corpus body` |
+| `0x6C9F1A0` | Applies an attachment's `AppliedEffects` on equip | §7 (L323), §8 (L358) | `corpus body` |
+| `0x6C9F6E0` | Bipod unfolded effect list (`FWDBipodAttachmentData` `+0x138`); removes the bipod handles first and applies nothing while mounted (`+0x4F2`) | §7.1 (L339) | `corpus body` |
+| `0x6CA1AE0` | `SetBipodMounted`: writes the mounted flag `+0x4F2` (`0x6CA1B56`) and calls `0x6C9F6E0` (`0x6CA1B5F`) | §7.1 (L339) | `corpus body`; verifier-confirmed (round 5, T3-10) |
+| `0x6E75620` | Revive handler (character slot 323) | §4.3 (L253), §6 (L312) | `corpus body` |
+| `0x7665D60` | Vehicle-side caller of `0x52311D0` | §8 (L359) | `corpus body` |
 | `0x7666070` | Vehicle fuel hook registration (fuel component slot 126) | §4.3 (L239) | `corpus body` |
-| `0x766727F` | Vehicle-side caller of `0x52311D0` | §8 (L355) | `[exe]`, misaligned: the entry is `0x7667280` (`Auth_RefillFuel`); see notes |
-| `0x7667280` | `Auth_RefillFuel` exec thunk (the real entry behind `0x766727F`) | §8 (L355) | `[exe]`: row failed; the enclosing row `0x766727F` is an empty nullsub (r4 EV-21) |
+| `0x766727F` | Vehicle-side caller of `0x52311D0` | §8 (L359) | `[exe]`, misaligned: the entry is `0x7667280` (`Auth_RefillFuel`); see notes |
+| `0x7667280` | `Auth_RefillFuel` exec thunk (the real entry behind `0x766727F`) | §8 (L359) | `[exe]`: row failed; the enclosing row `0x766727F` is an empty nullsub (r4 EV-21) |
 
 ## 4. Notes on particular rows
 
@@ -190,6 +199,13 @@ at `e057d26`.
   round 4 (r4 WA-5, WA-9, WA-8). This page only confirmed that they still
   have no usable row and start on a `.pdata` entry with a normal
   prologue.
+- **Round-5 rows.** `0x522D260`, `0x6C90DE0` and `0x6CA1AE0` have clean
+  corpus bodies; the verifier also read the cited instructions in the
+  executable (T0-15, T3-9, T3-10). `0x6C91859` and `0x6C9DC7B` are
+  instruction anchors inside the corpus bodies `0x6C91510` and
+  `0x6C9D170`, decoded for this page to the instructions in the table.
+  The `B_Action_MountBipod` part of §7.1 rests on a Blueprint bytecode
+  dump, not on a native address, so it has no row here.
 - **`0x5230770`.** The stack-count function was cited at `479c6c1` (§8,
   as a `corpus body`) and is no longer cited.
 
