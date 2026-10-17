@@ -31,7 +31,7 @@ output), **Data** (export), **Derived** (arithmetic on both), **Open**.
 | Rule data: 21 vehicle files, 23 rows, 665 entries (581 selectable), no custom operations, 5 `Add` entries | **Data** | §2 |
 | Hit location: the hit section's `Meta.Damage.HitLocation.*` tag | **Native** | §3 |
 | Section application: pick section → Pre routing → own health → section-damaged handling → Simultaneous → Post | **Native** | §4 |
-| Worked examples: ROT_02 profile, TNK_01 125 mm hit, caliber factors for every vehicle | **Derived** | §5 |
+| Worked examples: ROT_02 profile, TNK_01 125 mm hit, caliber factors, hits to destroy | **Derived** | §5 |
 
 ## 1. Same evaluator, different target
 
@@ -331,6 +331,72 @@ general ones: on most rows `.308Win` gets both the general bullet rule
 and its own −70 %, which is why it scores below 5.56 mm. Tanks take ×0
 from small arms.
 
+### 5.4 Hits to destroy
+
+**Derived**, `_tools/infantry_damage.py --survive`: how many direct hits
+on one section destroy the vehicle (main `Attribute.Gameplay.Health`
+reaching 0), simulating the rules (§1–2, including that section's
+hit-location rules) and the section order and routing of §4. Base damage
+at point blank, FMJ. "—" means hitting only that section can never
+destroy the vehicle: either the rules reduce the damage to 0, or the
+section does not route to the main health.
+
+Assumptions:
+
+- **Modules:** a vehicle is assembled from several `VP_*` platform
+  modules. The ones used here were chosen by name (for example `VP_WHL_01`
+  plus `VP_WHL_01_Wheels`); the asset that composes them is not traced.
+- **Health stops at 0:** a section absorbs at most its remaining health,
+  and the rest is left for post routing. The attribute hook that would
+  clamp it is not traced, but the depleted-only post routes in the data
+  only carry damage this way.
+- Point hits only (radial flags do not apply); the section-requirement
+  filter, repair and regeneration are ignored.
+
+| Vehicle | Section hit (max health) | `556mm` | `50Cal` | `20x102mm` | `30mm` |
+|---|---|---:|---:|---:|---:|
+| `Land.Wheeled.Bobcat` | Health (200) | 96 | 30 | 14 | 2 |
+| `Land.Wheeled.Bobcat` | Health.Engine (200) | — | — | — | — |
+| `Land.Wheeled.Bobcat` | Health.FuelTank (100) | — | — | — | — |
+| `Land.Wheeled.Bobcat` | Health.Wheel.Left.Front (75) | 64 | 20 | 54 | 8 |
+| `Land.Wheeled.Bobcat` | Health.Wheel.Left.Rear (75) | 64 | 20 | 54 | 8 |
+| `Land.Wheeled.Bobcat` | Health.Wheel.Right.Front (75) | 64 | 20 | 54 | 8 |
+| `Land.Wheeled.Bobcat` | Health.Wheel.Right.Rear (75) | 64 | 20 | 54 | 8 |
+| `Land.Wheeled.Humvee.Default` | Health (500) | 715 | 223 | 56 | 17 |
+| `Land.Wheeled.Humvee.Default` | Health.Engine (400) | — | — | — | — |
+| `Land.Wheeled.Humvee.Default` | Health.FuelTank (400) | 129 | 40 | 100 | 30 |
+| `Land.Wheeled.Humvee.Default` | Health.Wheel.Left.Front (75) | 239 | 74 | 222 | 67 |
+| `Land.Wheeled.Humvee.Default` | Health.Wheel.Left.Rear (75) | 239 | 74 | 222 | 67 |
+| `Land.Wheeled.Humvee.Default` | Health.Wheel.Right.Front (75) | 239 | 74 | 222 | 67 |
+| `Land.Wheeled.Humvee.Default` | Health.Wheel.Right.Rear (75) | 239 | 74 | 222 | 67 |
+| `Land.Wheeled.Ural` | Health (700) | 1000 | 312 | 94 | 12 |
+| `Land.Wheeled.Ural` | Health.Engine (400) | — | — | — | — |
+| `Land.Wheeled.Ural` | Health.FuelTank (400) | 175 | 55 | 147 | 19 |
+| `Land.Wheeled.Ural` | Health.Wheel.Left.Front (75) | 445 | 139 | 373 | 47 |
+| `Land.Wheeled.Ural` | Health.Wheel.Left.Middle (75) | 445 | 139 | 373 | 47 |
+| `Land.Wheeled.Ural` | Health.Wheel.Left.Rear (75) | 445 | 139 | 373 | 47 |
+| `Land.Wheeled.Ural` | Health.Wheel.Right.Front (75) | 445 | 139 | 373 | 47 |
+| `Land.Wheeled.Ural` | Health.Wheel.Right.Middle (75) | 445 | 139 | 373 | 47 |
+| `Land.Wheeled.Ural` | Health.Wheel.Right.Rear (75) | 445 | 139 | 373 | 47 |
+| `Air.Rotary.Havoc` | Health (800) | 1143 | 356 | 182 | 42 |
+| `Air.Rotary.Havoc` | Health.FuelTank (200) | — | — | — | — |
+| `Air.Rotary.Havoc` | Health.Engine (200) | — | — | — | — |
+| `Air.Rotary.Havoc` | Health.Rotor.Tail (300) | 1143 | 356 | 182 | 42 |
+| `Air.Rotary.Havoc` | Health.Rotor.Main (400) | 1429 | 445 | 227 | 52 |
+| `Air.Rotary.Havoc` | Health.Wheel.Left.Front (100) | 643 | 200 | 205 | 47 |
+| `Air.Rotary.Havoc` | Health.Wheel.Right.Front (100) | 643 | 200 | 205 | 47 |
+| `Air.Rotary.LittleBird` | Health (400) | 191 | 60 | 71 | 7 |
+| `Air.Rotary.LittleBird` | Health.FuelTank (200) | — | — | — | — |
+| `Air.Rotary.LittleBird` | Health.Engine (200) | — | — | — | — |
+| `Air.Rotary.LittleBird` | Health.Rotor.Tail (300) | 191 | 60 | 71 | 7 |
+| `Air.Rotary.LittleBird` | Health.Rotor.Main (400) | 286 | 89 | 106 | 11 |
+| `Land.Tracked.TNK_01.Heavy` | Health (800) | — | — | 312 | 47 |
+| `Land.Tracked.TNK_01.Heavy` | Health.FuelTank (150) | — | — | — | — |
+| `Land.Tracked.TNK_01.Heavy` | Health.Engine (150) | — | — | 312 | 47 |
+| `Land.Tracked.TNK_01.Heavy` | Health.Tracks.Left (125) | — | — | 578 | 87 |
+| `Land.Tracked.TNK_01.Heavy` | Health.Tracks.Right (125) | — | — | 578 | 87 |
+| `Land.Tracked.TNK_01.Heavy` | Health.Body.StrongArea (350) | — | — | 442 | 67 |
+
 ## 6. Top damage source tags
 
 **Data**, counted over selectable entries in all 23 rows:
@@ -377,3 +443,4 @@ Every row has a `Meta.Damage.Bullet` rule.
 | 2026-10-16 | v1: first trace of the per-vehicle tables, ROT_02 profile and section structures. |
 | 2026-10-17 | Rewritten against the decompilation corpus and the damage doc. Vehicles use the same rule pipeline as infantry (the "fundamentally different" claim is withdrawn); target tag from `VehicleDamageTag`; the generic row is a parent level, not a fallback; `PriorityIndex` is overwritten (array order decides nothing); 5 `Add` entries; corrected counts (21 files, 23 rows, 665 entries) and row keys; ROT_02 duplicates explained by hit locations; section order and routing semantics traced; STN_06 keying and nine unreachable entries flagged. |
 | 2026-10-17 | Added caliber factors for every vehicle row (§5.3), generated by `_tools/infantry_damage.py --vehicles`. |
+| 2026-10-17 | Added hits to destroy for six vehicles (§5.4): rules plus section routing, simulated by `--survive`. |
