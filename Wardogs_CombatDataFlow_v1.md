@@ -130,7 +130,7 @@ Build: `++Wardogs+Live-CL-516586` · Engine: UE 5.7
 | **Damage hand-off** | Unreal damage event and `TakeDamage` on the target | [`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md) §1.1 |
 | **Vehicle damage** (same rule pipeline, per-vehicle rows) | 21 vehicle tables (23 rows, 581 selectable entries) through the same evaluator, then the section health model | [`Wardogs_VehicleDamagePipeline_v1.md`](Wardogs_VehicleDamagePipeline_v1.md) |
 | **Attribute application** (`UBHGameplayEffectComponent`) | Attribute storage and replication. Character damage writes the `Attribute.Gameplay.Health` base value directly (DamagePipeline §10) | [`Wardogs_GameplayEffectsPipeline_v1.md`](Wardogs_GameplayEffectsPipeline_v1.md) §4 |
-| **GameplayCue dispatch** | VFX, audio, animation playback on hit/damage events via `DA_CharacterEffectPresets` tag mapping | [`Wardogs_GameplayEffectsPipeline_v1.md`](Wardogs_GameplayEffectsPipeline_v1.md) §3 |
+| **GameplayCue dispatch** | VFX, audio and animation cues through `UWDGameplayCueComponent`, separate from effects | [`Wardogs_GameplayEffectsPipeline_v1.md`](Wardogs_GameplayEffectsPipeline_v1.md) §6 |
 
 ## Example — AK74M bullet to infantry torso
 
@@ -246,7 +246,7 @@ rules.
 | What's the actual bone multiplier value for a specific hit location? | [`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md) §8.1 |
 | What's the damage profile for ROT_02 Havoc? | [`Wardogs_VehicleDamagePipeline_v1.md`](Wardogs_VehicleDamagePipeline_v1.md) §5.1 |
 | How many vehicles have per-class damage rules? | [`Wardogs_VehicleDamagePipeline_v1.md`](Wardogs_VehicleDamagePipeline_v1.md) §2.1 — 21 tables, 23 rows |
-| What's the GAS attribute system? | [`Wardogs_GameplayEffectsPipeline_v1.md`](Wardogs_GameplayEffectsPipeline_v1.md) §4 — `TMap<FGameplayTag, float>` not `UAttributeSet` |
+| What's the GAS attribute system? | [`Wardogs_GameplayEffectsPipeline_v1.md`](Wardogs_GameplayEffectsPipeline_v1.md) §4 — tag-keyed records with double base/current values, no `UAttributeSet` |
 | How many GE_* effect classes ship? | [`Wardogs_GameplayEffectsPipeline_v1.md`](Wardogs_GameplayEffectsPipeline_v1.md) §2 — 338 total |
 | What are the units on `InitialBulletSpeed`? | [`UNITS.md`](UNITS.md) §1 — cm/s |
 | Where is `CT_Weapon_Spread` defined? | [`CROSS_REFERENCE.md`](CROSS_REFERENCE.md) `CT_*` section |
