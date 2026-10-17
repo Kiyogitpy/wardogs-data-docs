@@ -127,7 +127,7 @@ Build: `++Wardogs+Live-CL-516586` · Engine: UE 5.7
 | **Hit validation** (`BHHitValidationWorldSubsystem`) | Declared in the SDK; its edge into the damage event is not traced | — |
 | **Damage modification** (`UWDDamageSubsystem::ModifyDamage`) | Rule selection, ordering and arithmetic; five custom operations (bone, calibre, ammo type, seat, armor durability) | [`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md) §1–7 |
 | **Damage hand-off** | Unreal damage event and `TakeDamage` on the target | [`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md) §1.1 |
-| **Vehicle damage** (per-vehicle rule tables) | Per-vehicle class filter+percentage rules; 22 vehicles with 16-66 rules each | [`Wardogs_VehicleDamagePipeline_v1.md`](Wardogs_VehicleDamagePipeline_v1.md) |
+| **Vehicle damage** (same rule pipeline, per-vehicle rows) | 21 vehicle tables (23 rows, 581 selectable entries) through the same evaluator, then the section health model | [`Wardogs_VehicleDamagePipeline_v1.md`](Wardogs_VehicleDamagePipeline_v1.md) |
 | **Attribute application** (`UBHGameplayEffectComponent`) | Attribute storage and replication. The edge from `TakeDamage` to the health write is not traced | [`Wardogs_GameplayEffectsPipeline_v1.md`](Wardogs_GameplayEffectsPipeline_v1.md) §4 |
 | **GameplayCue dispatch** | VFX, audio, animation playback on hit/damage events via `DA_CharacterEffectPresets` tag mapping | [`Wardogs_GameplayEffectsPipeline_v1.md`](Wardogs_GameplayEffectsPipeline_v1.md) §3 |
 
@@ -203,43 +203,38 @@ on armor go through the ammo-type Blueprint.
 
 | Input | Value | Source |
 |---|---|---|
-| Weapon | AT-launcher firing 125mm rocket | Weapon stat |
+| Weapon | Launcher firing a 125mm rocket | Weapon stat |
 | Damage source tags | `Meta.Damage.Explosive.Rocket.125mm`, `Meta.Damage.Explosive.Radius.Inner` | Projectile config |
-| Target | TNK_01 (tank), full health | Game state |
-| Hit location | Front-plate armor section | Section resolution |
+| Target | TNK_01 Heavy, full health | Game state |
+| Hit section | `Body.StrongArea` | Section resolution |
 
 ### Pipeline execution
 
 ```
-baseDamage = <125mm rocket base damage>
+S = <125mm rocket damage>
 
-Step 1 — Vehicle damage rule lookup:
-  Load DT_GlobalDamage_VehicleData_TNK_01, row Meta.Damage.Vehicle.<Tank Model>
-  
-Step 2 — Filter 66 rules by Source + Target + HitLocation:
-  Matches on Source: "Explosive.Rocket.125mm"
-  Matches on Source: "Explosive.Radius.Inner" (if inner hit)
-  Matches on HitLocation: front-plate section tag
-  
-Step 3 — Each matched rule applies Percentage_Ongoing mod:
-  Example matches:
-    Rule 18: Explosive.Rocket.125mm (base 125mm handling) → +150%
-    (If more rules match, stack multiplicatively)
-    
-  Final mod stack: baseDamage × 2.5
+Step 1 — Rules (same evaluator as infantry):
+  Target tag = VehicleDamageTag = Meta.Damage.Vehicle.Land.Tracked.TNK_01.Heavy
+  Walk: TNK_01.Heavy row → parent rows → generic Meta.Damage.Vehicle row
 
-Step 4 — Vehicle section routing:
-  Front-plate section PreDamageRouting:
-    Partial damage to engine section if front-plate is depleted
-    (configured via FVehicleHealthSection.PreDamageRouting map)
-    
-Step 5 — Apply damage to section:
-  front_plate.CurrentHealth -= finalDamage
-  
-Step 6 — If section destroyed:
-  PostDamageRouting applies overflow to connected sections
-  Dispatch FMVehicleSectionDestroyedMessage
+Step 2 — Matching entries (TNK_01.Heavy):
+  Explosive.Rocket.125mm               +31.5   → ×1.315
+  Explosive.Rocket + Radius.Inner      +17.5   → ×1.175
+  #12 Rocket, HitLocation.Vehicle        0     → ×1
+  Generic row: nothing for a non-HollowPoint rocket
+  C = S × 1.545   (AntiAir row ×1.645, Artillery ×1.351)
+
+Step 3 — Section application (VP_TNK_01_Heavy):
+  Body.StrongArea PreDamageRouting: 0.4 × C to main Health
+  The section takes the rest
+  Section-damaged handling: message if depleted (main Health depleted
+    → vehicle destroyed, no post routing)
+  PostDamageRouting once depleted: overflow ×1.0 to main Health
 ```
+
+The earlier "Rule 18 +150 % → ×2.5" came from ROT_02's 120 mm entry, not
+TNK_01. See VehicleDamagePipeline §4–5 for the section order and routing
+rules.
 
 ## Cross-section quick reference
 
@@ -247,8 +242,8 @@ Step 6 — If section destroyed:
 |---|---|
 | What are the 5 damage modifiers? | [`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md) §3.1, §7 |
 | What's the actual bone multiplier value for a specific hit location? | [`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md) §8.1 |
-| What's the damage profile for ROT_02 Havoc? | [`Wardogs_VehicleDamagePipeline_v1.md`](Wardogs_VehicleDamagePipeline_v1.md) §4 |
-| How many vehicles have per-class damage rules? | [`Wardogs_VehicleDamagePipeline_v1.md`](Wardogs_VehicleDamagePipeline_v1.md) §3 — 22 total |
+| What's the damage profile for ROT_02 Havoc? | [`Wardogs_VehicleDamagePipeline_v1.md`](Wardogs_VehicleDamagePipeline_v1.md) §5.1 |
+| How many vehicles have per-class damage rules? | [`Wardogs_VehicleDamagePipeline_v1.md`](Wardogs_VehicleDamagePipeline_v1.md) §2.1 — 21 tables, 23 rows |
 | What's the GAS attribute system? | [`Wardogs_GameplayEffectsPipeline_v1.md`](Wardogs_GameplayEffectsPipeline_v1.md) §4 — `TMap<FGameplayTag, float>` not `UAttributeSet` |
 | How many GE_* effect classes ship? | [`Wardogs_GameplayEffectsPipeline_v1.md`](Wardogs_GameplayEffectsPipeline_v1.md) §2 — 338 total |
 | What are the units on `InitialBulletSpeed`? | [`UNITS.md`](UNITS.md) §1 — cm/s |
@@ -260,3 +255,4 @@ Step 6 — If section destroyed:
 |---|---|
 | 2026-10-16 | v1 — First integration view. Covers end-to-end from fire event through damage pipelines to attribute application. Two worked examples: AK74M → infantry torso, 125mm rocket → tank front-plate. Remaining 4 blocking gaps catalogued for next-pass resolution. |
 | 2026-10-17 | Infantry path corrected against the damage pipeline: removed the "server-side" hit-validation claim and the untraced `SetAttributeBaseValue` write; replaced the multiplicative chain with the evaluator's arithmetic and the `TakeDamage` hand-off; withdrew the `× 1.10` example. Vehicle example unchanged pending the vehicle pass. |
+| 2026-10-17 | Rocket-to-tank example rewritten from the vehicle audit: same rule evaluator, real TNK_01 Heavy matches (×1.545), real section routing. |

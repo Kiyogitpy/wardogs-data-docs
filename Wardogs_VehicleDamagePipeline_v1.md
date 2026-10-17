@@ -4,352 +4,333 @@ parent: "Pipelines"
 nav_order: 2
 ---
 
-# Wardogs — Vehicle Damage Pipeline, Full Trace
+# Wardogs — Vehicle Damage Pipeline
 
 > **Project:** [`Kiyogitpy/wardogs-data-docs`](https://github.com/Kiyogitpy/wardogs-data-docs) · [Live site](https://kiyogitpy.github.io/wardogs-data-docs/)
 
-Complete code↔data trace of how damage resolves against **vehicle
-targets** in Wardogs. Companion doc to
-[`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md) (infantry
-targets) — but the vehicle architecture is **fundamentally different**.
+How damage resolves against vehicles. Vehicles use **the same rule
+pipeline as infantry**: the same `ModifyDamage` call, collector,
+sorting and arithmetic described in
+[`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md) §1–6.
+There are two differences. Vehicle rows contain no custom operations,
+and the modified amount goes to a section-based health model instead of
+`TakeDamage`.
 
-Build: `++Wardogs+Live-CL-516586` · Engine: UE 5.7
+Build: `++Wardogs+Live-CL-516586` · Engine: UE 5.7 · Native addresses are
+file RVAs in the restored executable (see the damage doc §10). Labels as in
+the damage doc: **Native** (code, RVA cited, unreviewed decompiler
+output), **Data** (export), **Derived** (arithmetic on both), **Open**.
 
 ---
 
-## TL;DR
+## At a glance
 
-Vehicle damage does **NOT** use the infantry-style 5-modifier blueprint
-chain. Instead, each vehicle class has its **own damage rule table**
-(`DT_GlobalDamage_VehicleData_<CODE>.json`) containing 16–66 individual
-rules. Each rule is a **filter + percentage modifier**: match the hit
-by source tags (damage type, caliber, hit location), then apply a
-multiplicative percentage change.
+| Stage | Status | Section |
+|---|---|---|
+| Rules: same evaluator; target tag = the vehicle's `VehicleDamageTag`; parent walk reaches the generic `Meta.Damage.Vehicle` row | **Native** + **Data** | §1 |
+| Rule data: 21 vehicle files, 23 rows, 665 entries (581 selectable), no custom operations, 5 `Add` entries | **Data** | §2 |
+| Hit location: the hit section's `Meta.Damage.HitLocation.*` tag | **Native** | §3 |
+| Section application: pick section → Pre routing → own health → section-damaged handling → Simultaneous → Post | **Native** | §4 |
+| Worked examples: ROT_02 profile, TNK_01 125 mm hit | **Derived** | §5 |
 
-The modifier chain pattern seen in infantry is absent — zero vehicle
-rules use `CustomOperationClass`; all are literal `Percentage_Ongoing`
-operations with requirement filters.
+## 1. Same evaluator, different target
 
-**22 per-vehicle DTs ship in Season 02.** Together they define
-~500 individual damage rules, organized into **7 priority categories**:
-Calibre, Armor, Bone, CaliberEffectiveness, AmmoModifier, Ricochet, Melee.
+**Native.** A vehicle hit reaches `UWDDamageSubsystem::ModifyDamage`
+(`0x6F02EC0`) and the global evaluator (`0x6BB6FB0`) exactly as an
+infantry hit does. The projectile path (`0x6B725B0`, at `0x6B733AC`) and
+the radial paths (`0x6F06540`, `0x6F042A0`, `0x76740F0`) fetch the
+vehicle hit tag through `0x6B80230` before the call. The result is
+dispatched through `IWDDamageable` (`0x6C2A5F0`) to the vehicle class's
+interface slot (Rotary slot 370 at `0x76B7E80`; Wheeled 375, Tracked 367,
+Stationary 366, Airplane 367), which calls `ApplyWDDamage` (`0x6B7FE50`)
+with the modified amount as `FWDDamageContext.CurrentDamage`.
 
-## 1. Architecture overview
+`UWDVehicleOperatorComponent` slots 160/161 (`0x7692B60`, `0x768ED20`)
+are a different path: they build events whose *source* is the vehicle
+(`Meta.Damage.Explosive.VehicleExplosion` / `DamageType.Explosive`, and
+`Meta.Damage.Vehicle` / `DamageType.Enviroment`), most likely for damage
+to occupants.
 
-### 1.1 Where the data lives
+**The target tag.** The vehicle pawn constructor (`0x76B5560`) creates a
+damage entity component with the default tag `Meta.Damage.Vehicle`.
+`UWDVehicleGameplaySystemsComponent` slot 161 (`0x767BC40`) overwrites it
+(`0x6B18E70`) with `DA_GameplaySystems_*.DamageEntitySettings.VehicleDamageTag`.
+For 20 of the 21 vehicles that tag equals the vehicle row key exactly
+(STN_06 is the exception, §2.2).
 
-| Table | Purpose |
-|---|---|
-| [`DT_GlobalDamage_VehicleData`](data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_VehicleData.json) | **Fallback** table with 1 row `Meta.Damage.Vehicle`, 10 placeholder entries (all zero / none) — the base dispatch when a vehicle hits don't have a per-vehicle override |
-| `DT_GlobalDamage_VehicleData_<CODE>.json` | **Per-vehicle override** — one file per vehicle class, one row keyed by that vehicle's gameplay tag |
+**The walk** (damage doc §5). The collector evaluates every level of the
+target tag's parent chain that has a registry row, most specific first,
+stopping at `RootDamageTag`. Vehicle tables use the same
+`FWDDamageableEntityTableRow` and are added to the `GlobalDamageData`
+registry by each vehicle's GameFeature (for example
+`Vehicles/ROT_02/Content/ROT_02.json`, `RegistryToAddTo: GlobalDamageData`).
+So a Havoc hit evaluates its own row (`…Air.Rotary.Havoc`), then any
+parent rows, then the generic `Meta.Damage.Vehicle` row, unless
+`RootDamageTag` is `Meta.Damage.Vehicle` itself (**Open**). The generic
+row is a parent level evaluated after each vehicle's own row, **not a
+fallback**. Its live entries are two HollowPoint rules, −40 and +40,
+which together give ×0.84; the Bullet (`None`) and Ricochet (0) entries
+change nothing. Supply crates use several levels:
+`…SupplyCrate.Large.Armoured` → `.Large` (empty) → `.SupplyCrate` →
+`Meta.Damage.Vehicle`.
 
-Per-vehicle DT locations:
+**Arithmetic** (damage doc §6). `Percentage_Ongoing` multiplies the
+running amount by `1 + Amount/100`: −95 leaves 5 %, +400 gives ×5. Within
+a level, entries sort by category index (`DA_GlobalDamage_Categories`,
+no tie-breaker; `PriorityIndex` is overwritten, so array order decides
+nothing). Because five vehicle entries use `Add` (§2.1), **order
+matters for those rows**: entries sorting after the `Add` scale the flat
++1000, entries before it do not. The clamp `max(C, 0)` happens once, at
+the end.
 
+## 2. Rule data
+
+### 2.1 Inventory
+
+**Data.** 21 files under `Plugins/GameFeatures/Vehicles/<CODE>/Content/DataTables/`
+(`DataTable/` for STN_03 and STN_05), plus the generic
+[`DT_GlobalDamage_VehicleData`](data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_VehicleData.json).
+"Selectable" excludes entries the collector skips (no requirements and
+amount 0, damage doc §4).
+
+| File (`DT_GlobalDamage_VehicleData_…`) | Row key (`Meta.Damage.Vehicle.` omitted) | Entries | Selectable | Ongoing amount range | Other ops |
+|---|---|---:|---:|---|---|
+| `ROT_02` | `Air.Rotary.Havoc` | 35 | 31 | −95 … +450 | — |
+| `ROT_03` | `Air.Rotary.LittleBird` | 33 | 30 | −95 … +500 | — |
+| `ROT_04` | `Air.Rotary.ROT_04` | 33 | 29 | −95 … +450 | — |
+| `SPW_01` | `Land.Tracked.Leopard.Spawn` | 32 | 27 | −100 … +500 | — |
+| `STN_01` | `Stationary.Mistral` | 26 | 22 | −100 … +1500 | 1 Add |
+| `STN_02` | `Stationary.Phalanx` | 26 | 22 | −100 … +2000 | 1 Add |
+| `STN_03` | `Stationary.Mortar` | 24 | 20 | −100 … +650 | 1 Add |
+| `STN_04` | `Stationary.RadioTower` | 27 | 24 | −95 … +250 | — |
+| `STN_05` | `Stationary.STN_05` | 24 | 20 | −100 … +650 | 1 Add |
+| `STN_06` | `Stationary.STN_05` | 24 | 20 | −100 … +650 | 1 Add |
+| `TNK_01` | `Land.Tracked.TNK_01.AntiAir` | 29 | 24 | −100 … +450 | — |
+| `TNK_01` | `Land.Tracked.TNK_01.Artillery` | 29 | 24 | −100 … +500 | — |
+| `TNK_01` | `Land.Tracked.TNK_01.Heavy` | 29 | 24 | −100 … +450 | — |
+| `TNK_04` | `Land.Tracked.TNK_04.Default` | 30 | 25 | −100 … +450 | — |
+| `WHL_01` | `Land.Wheeled.Bobcat` | 20 | 19 | −95 … +500 | — |
+| `WHL_02` | `Land.Wheeled.Patriot.Kodiak` | 29 | 26 | −95 … +700 | — |
+| `WHL_05_Humvee` | `Land.Wheeled.Humvee.Default` | 31 | 28 | −95 … +500 | — |
+| `WHL_05_Minigun` | `Land.Wheeled.Humvee.Minigun` | 31 | 28 | −97.5 … +800 | — |
+| `WHL_05_RingTurret` | `Land.Wheeled.Humvee.MachineGun` | 31 | 28 | −96 … +650 | — |
+| `WHL_06_DuneBuggy` | `Land.Wheeled.DuneBuggy` | 30 | 27 | −95 … +500 | — |
+| `WHL_07_Ural` | `Land.Wheeled.Ural` | 30 | 27 | −95 … +500 | — |
+| `WHL_08` | `Land.Wheeled.WHL_08.Default` | 31 | 28 | −95 … +600 | — |
+| `WHL_08_RingTurret` | `Land.Wheeled.WHL_08.MachineGun` | 31 | 28 | −95.5 … +600 | — |
+
+Totals: 665 entries, 581 selectable. Operations: 576 `Percentage_Ongoing`,
+84 `None`, **5 `Add` +1000** (STN_01, 02, 03, 05, 06; source
+`Meta.Damage.Vehicle.Land.Tracked`, category Bone). No custom operations.
+
+Selectable entries by category: Calibre 328, Armor 108, Bone 45, CaliberEffectiveness 44, AmmoModifier 23, Ricochet 18, Melee 10, None 5. The five
+category-`None` entries are the stationary Melee −80 rules; a missing
+category sorts first (index −1).
+
+### 2.2 Data issues
+
+- **STN_06 is probably wrongly keyed.** Its table is a byte-identical copy
+  of STN_05's (row `…Stationary.STN_05`), but its `VehicleDamageTag` is
+  `Meta.Damage.Vehicle.Stationary.MGNest`
+  (`DA_GameplaySystems_STN_06.json`). That tag appears neither in the
+  exported tag config nor among the native tag globals, and two sources
+  register the same STN_05 row. STN_06 most likely never reaches its own
+  rules.
+- **Nine entries can never match.** Their `PossibleHitLocations` list only
+  `Attribute.Gameplay.Health.*` tags, but the event's hit location is a
+  `Meta.Damage.HitLocation.*` tag (§3). Affected: ROT_03 #4 and #5,
+  SPW_01 #16, STN_04 #16 and #18, TNK_01 #14 (all three rows), TNK_04 #14.
+
+## 3. Hit location
+
+**Native** (`0x6B80230`). The event's hit location is the first
+`Meta.Damage.HitLocation.*` tag in the hit section's `Tags`. Rules with
+`PossibleHitLocations` such as `…Vehicle.MainRotor` match against it.
+
+## 4. Section application
+
+### 4.1 Order
+
+**Native.** After the rules, `ApplyWDDamage` hands the amount to the
+vehicle damage model:
+
+1. **Pick the section** (`ApplyDamageEvent`, `0x53202B0`, thunk
+   `0x5341430`). Point damage uses the zone query `0x5338730` on the hit
+   info; radial damage uses the first component hit; anything else falls
+   back to `Attribute.Gameplay.Health`.
+2. **PreDamageRouting.**
+3. The section-requirement filter.
+4. **The section's own attribute** is reduced by the remainder
+   (`0x52311D0`).
+5. **Section-damaged handling** (vtable `+0x510`; base `0x532F730`, WD
+   override `0x6B802D0`). It broadcasts the section-damaged delegate,
+   then:
+   - section still alive: returns 1;
+   - main `Attribute.Gameplay.Health` depleted: calls `DestroyVehicle`
+     (`0x53D8E20`) and returns 0, so no post routing;
+   - any other section depleted: broadcasts
+     `MVehicleSectionDestroyedMessage` (`0x5307ED0`) and returns 1.
+6. **SimultaneousDamageRouting.**
+7. **PostDamageRouting**, only if step 5 returned 1.
+
+So the destroyed-section message goes out **before** post routing.
+Sections are keyed by attribute tags (`Attribute.Gameplay.Health.*`).
+
+### 4.2 Routing semantics
+
+**Native** (`0x53205D0` ApplyDamageToSection, `0x5339DD0`
+RerouteDamageInternal). Structures:
+[`FVehicleHealthSection`](sdk/raw/Mechanized_structs.hpp#L523) and
+[`FVehicleDamageRouting`](sdk/raw/Mechanized_structs.hpp#L511).
+
+```cpp
+struct FVehicleHealthSection final {       // 0x140
+    float MaxHealth;                                    // 0x00
+    FGameplayTagContainer Tags;                         // 0x08 — includes the hit-location tag (§3)
+    bool  _aaachkphmgcampdlhdkkf;                       // 0x28 — skip Pre routing for radial events
+    TMap<FGameplayTag, FVehicleDamageRouting> PreDamageRouting;          // 0x30
+    bool  _aaacikmpjffpcggjhonpl;                       // 0x80 — skip Post routing for radial events
+    TMap<FGameplayTag, FVehicleDamageRouting> PostDamageRouting;         // 0x88
+    bool  _aaadafjbjhkkggmmjaeba;                       // 0xD8 — skip Simultaneous routing for radial events
+    TMap<FGameplayTag, FVehicleDamageRouting> SimultaneousDamageRouting; // 0xE0
+    FGameplayTag RepairInteractionContextTag;           // 0x130
+    FGameplayTag RepairInteractionTrackerPointTag;      // 0x138
+};
+
+struct FVehicleDamageRouting final {       // 0x30
+    FBHScalableFloat Scalar;               // 0x00
+    bool bUseAbsoluteHealth;               // 0x28 — scalar input is absolute health, not a fraction
+    bool bOnlyWhenDepleted;                // 0x29
+};
 ```
-data/Wardogs/Plugins/GameFeatures/Vehicles/<CODE>/Content/DataTables/
-data/Wardogs/Plugins/GameFeatures/Vehicles/<CODE>/Content/DataTable/   (STN_03 only)
-```
 
-### 1.2 Row structure
+- **Pre/Post routing:** each target section receives
+  `(D − amount already handled) × clamp(Scalar(h), 0, 1)`, where `h` is
+  the section's health as a fraction of `MaxHealth`, or its absolute
+  health when `bUseAbsoluteHealth` is set. The flag picks the scalar's
+  input; it does not route "to absolute health".
+- **`bOnlyWhenDepleted`:** set routes only when the section's health is
+  ≤ 0; clear routes only while it is > 0.
+- **Simultaneous routing copies, it does not split:** the target gets
+  `clamp(Scalar) ×` the amount this section actually absorbed, in a fresh
+  context, and its return value is ignored.
+- **Radial flags:** the three unnamed bools skip the Pre, Post or
+  Simultaneous map when the event is radial (`FDamageEvent` class ID 2).
+- **Loop guard:** routing aborts once a section has been re-entered 10
+  times.
 
-Row key = the vehicle's identity tag:
+**Data**, across 96 sections: 35 Pre routes, 54 Post routes (all
+depleted-only), 20 Simultaneous routes. No scalar uses a curve and none
+uses absolute health. The radial skip-simultaneous flag is set on 10
+sections (the tracks).
 
-| Vehicle code | Row key |
-|---|---|
-| ROT_02 | `Meta.Damage.Vehicle.Air.Rotary.Havoc` |
-| ROT_03 | `Meta.Damage.Vehicle.Air.Rotary.<model>` |
-| TNK_01 | `Meta.Damage.Vehicle.Ground.Tank.<model>` |
-| WHL_05_Humvee | `Meta.Damage.Vehicle.Ground.Wheeled.Humvee` |
-| STN_01-06 | `Meta.Damage.Vehicle.Stationary.<model>` |
+## 5. Worked examples
 
-The row contains a `DamageModificationEntries` list of
-`FWDDamageModificationEntry` structs (same type as infantry uses, but
-populated differently).
+### 5.1 ROT_02 Havoc profile
 
-### 1.3 Entry structure
+**Data**, row `Meta.Damage.Vehicle.Air.Rotary.Havoc`, selectable entries
+(zero-based index; hit locations omit `Meta.Damage.HitLocation.Vehicle.`):
 
-Each entry is a (filter, modifier) rule:
+| # | Category | Op | Amount | Source requires (`Meta.Damage.` omitted) | Hit locations |
+|---:|---|---|---:|---|---|
+| 1 | Armor | Ongoing | −95 | `Bullet` | any |
+| 2 | Armor | Ongoing | −70 | `Cannon` | any |
+| 3 | Ricochet | Ongoing | +0 | `Kinetic.Impact.Ricochet` | any |
+| 4 | Calibre | Ongoing | +400 | `Explosive.Rocket`, `Explosive.Radius.Inner` | any |
+| 5 | Calibre | Ongoing | −20 | `Explosive.Grenade`, `Explosive.Radius.Inner` | any |
+| 6 | Armor | Ongoing | −70 | `Bullet.308Win` | any |
+| 7 | Calibre | Ongoing | +200 | `Explosive.Utility.ATMine` | any |
+| 8 | Armor | Ongoing | −15 | `Explosive.Utility.C4` | any |
+| 9 | Armor | Ongoing | +45 | `Explosive.Utility.IED` | any |
+| 10 | Armor | Ongoing | −75 | `Explosive.Utility.Claymore` | any |
+| 11 | Calibre | Ongoing | −35 | `Cannon.30mm` | any |
+| 12 | Calibre | Ongoing | −46 | `Cannon.35x228mm` | any |
+| 13 | Calibre | Ongoing | −60 | `Explosive.Rocket.72mm` | any |
+| 14 | Calibre | Ongoing | −30 | `Explosive.Rocket.93mm` | any |
+| 15 | Calibre | Ongoing | −45 | `Explosive.Rocket.93mm` | MainRotor, TailRotor, Tail |
+| 16 | Calibre | Ongoing | −10 | `Explosive.Rocket.120x800mm` | any |
+| 17 | Calibre | Ongoing | +30 | `Explosive.Rocket.84mm` | any |
+| 18 | Calibre | Ongoing | −5 | `Explosive.Rocket.84mm` | MainRotor, TailRotor, Tail |
+| 19 | Calibre | Ongoing | +150 | `Explosive.Rocket.120mm` | any |
+| 20 | Calibre | Ongoing | −75.5 | `Cannon.20x102mm` | any |
+| 21 | Calibre | Ongoing | −85 | `Explosive.Rocket.122mm` | any |
+| 22 | Calibre | Ongoing | −30 | `Explosive.Grenade.40mm` | any |
+| 23 | Calibre | Ongoing | +0 | `Explosive.Rocket.155mm` | any |
+| 26 | Calibre | Ongoing | +50 | `Explosive.Rocket` | TailRotor |
+| 27 | Calibre | Ongoing | +0 | `Explosive.Rocket` | MainRotor |
+| 28 | Calibre | Ongoing | +0 | `Explosive.Rocket` | Tail |
+| 29 | Calibre | Ongoing | +0 | `Explosive.Rocket` | Engine |
+| 31 | Bone | Ongoing | +300 | `Bullet` | FuelTank |
+| 32 | Bone | Ongoing | −50 | `Bullet` | Attribute.Gameplay.Health, Attribute.Gameplay.Health.Skids, Attribute.Gameplay.Health.Tail, MainBody, MainRotor, Skids, Tail, TailRotor |
+| 33 | Calibre | Ongoing | +450 | `Explosive.Drone` | any |
+| 34 | Calibre | Ongoing | +150 | `Explosive.Rocket.125mm` | any |
 
-```json
-{
-  "InstigatorRequirements": [...],   // tags required on the shooter
-  "TargetRequirements": [...],       // tags required on the vehicle's state
-  "SourceRequirements": [...],       // tags required on the damage source
-  "AlignmentRequired": "EWDDamageAlignment::None",
-  "PossibleHitLocations": [...],     // which hit locations trigger
-  "OutModification": {
-    "bUseCustomOperation": false,    // zero vehicles use custom ops
-    "Operation": "Percentage_Ongoing",
-    "Amount": <float>,               // percentage change (positive = amp, negative = reduce)
-    "PriorityCategory": {
-      "TagName": "Meta.Damage.Category.<Category>"
-    },
-    "PriorityIndex": -1              // not used; array order wins
-  }
-}
-```
+**Derived.** Every matching entry applies, so entries with the same source
+stack:
 
-**Reading the Amount:**
-- `-95` → damage reduced to **5%** of input
-- `-50` → damage reduced to **50%**
-- `0` → no change
-- `+200` → damage amplified to **300%**
-- `+400` → damage amplified to **500%**
+- a 93 mm rocket hit on a rotor or the tail gets 0.70 (#14) × 0.55 (#15);
+  elsewhere only 0.70;
+- an 84 mm rocket on a rotor or the tail gets 1.30 (#17) × 0.95 (#18);
+- the generic rocket +50 % (#26) applies to tail-rotor hits only;
+- bullets: −95 % armor (#1), then +300 % on the FuelTank (#31) or −50 %
+  on the body, rotors, tail and skids (#32).
 
-Equivalent: `finalAmount = inputAmount × (1 + Amount/100)`.
+### 5.2 TNK_01 Heavy, inner-radius 125 mm rocket
 
-## 2. The 7 priority categories
+**Derived.** TNK_01 has three rows (AntiAir, Artillery, Heavy). Its 125 mm
+rule is +40, +15 or +31.5 respectively. An inner-radius 125 mm event
+also matches Rocket + Inner (+17.5) and #12 (Rocket, `HitLocation.Vehicle`,
+0). Result: Heavy 1.315 × 1.175 ≈ **×1.545**; AntiAir ×1.645;
+Artillery ×1.351. The generic row adds nothing for a non-HollowPoint
+rocket.
 
-Rules group into these categories (from an aggregation across all 22
-vehicle DTs — 531 total rules):
+The amount then goes to a section. For example, TNK_01's
+`Body.StrongArea` first pre-routes 0.4 × D to the main health, takes the
+rest itself, and once depleted overflows ×1.0 to the main health
+(`VP_TNK_01_Heavy.json`).
 
-| Category | Count | Role |
-|---|---:|---|
-| `Calibre` | 299 | Specific caliber/weapon-type modifiers (bullets, cannon rounds, specific rocket types) |
-| `Armor` | 104 | Armor-class damage reduction (broad damage-type reductions) |
-| `Bone` | 44 | Hit-location modifiers (same as infantry's bone system) |
-| `CaliberEffectiveness` | 30 | Caliber-vs-vehicle effectiveness scaling |
-| `AmmoModifier` | 23 | Ammo-type modifiers (AP/HE/HP effectiveness per vehicle) |
-| `Ricochet` | 16 | Ricochet handling for angled hits |
-| `Melee` | 10 | Melee damage against vehicles |
+## 6. Top damage source tags
 
-The categories control grouping/precedence — the actual execution order
-is a §7 open question deferred to IDA RE (same as infantry's §7.1).
+**Data**, counted over selectable entries in all 23 rows:
 
-## 3. Vehicle inventory and damage profile summary
-
-All 22 vehicles with their rule count and amount range:
-
-| Code | Entries | Amount range | Notes |
-|---|---:|:---|---|
-| ROT_02 | 26 | `[-95%, +450%]` | Attack helicopter (Havoc) |
-| ROT_03 | 24 | `[-95%, +500%]` | Attack helicopter variant |
-| ROT_04 | 23 | `[-95%, +450%]` | Transport helicopter |
-| SPW_01 | 24 | `[-100%, +500%]` | Spawn point / support |
-| STN_01 | 18 | `[-100%, +1500%]` | Stationary emplacement — large weak-spot amp |
-| STN_02 | 18 | `[-100%, +2000%]` | Stationary emplacement — max weak-spot amp |
-| STN_03 | 18 | `[-100%, +1000%]` | Stationary emplacement |
-| STN_04 | 23 | `[-95%, +250%]` | Stationary — different profile |
-| STN_05 | 18 | `[-100%, +1000%]` | Stationary emplacement |
-| STN_06 | 18 | `[-100%, +1000%]` | Stationary emplacement |
-| TNK_01 | **66** | `[-100%, +500%]` | Tank — most-detailed profile (66 rules) |
-| TNK_04 | 23 | `[-100%, +450%]` | Tank variant |
-| WHL_01 | 16 | `[-95%, +500%]` | Wheeled vehicle — simplest (16 rules) |
-| WHL_02 | 23 | `[-95%, +700%]` | Wheeled |
-| WHL_05_Humvee | 28 | `[-95%, +500%]` | Humvee base |
-| WHL_05_Minigun | 28 | `[-98%, +800%]` | Humvee minigun variant |
-| WHL_05_RingTurret | 28 | `[-96%, +650%]` | Humvee ring turret variant |
-| WHL_06_DuneBuggy | 26 | `[-95%, +500%]` | Dune buggy |
-| WHL_07_Ural | 27 | `[-95%, +500%]` | Ural truck |
-| WHL_08 | 28 | `[-95%, +600%]` | Wheeled |
-| WHL_08_RingTurret | 28 | `[-96%, +600%]` | Wheeled turret variant |
-
-## 4. Worked example — ROT_02 Havoc (26 rules)
-
-Full damage profile for the Havoc attack helicopter. Rules execute in
-array order (per §7.1 of the infantry doc — same resolution-order
-assumption applies). Each row is: category / source-tag filter →
-Amount.
-
-| # | Category | Source filter | Amount | Interpretation |
-|---|---|---|---:|---|
-| 1 | Armor | `Meta.Damage.Bullet` | **-95%** | Heavy armor vs any bullet |
-| 2 | Armor | `Meta.Damage.Cannon` | **-70%** | Resistant to any cannon round |
-| 3 | Calibre | `Explosive.Rocket` + `Radius.Inner` | **+400%** | **5x damage** on inner-radius rocket hit |
-| 4 | Calibre | `Explosive.Grenade` + `Radius.Inner` | -20% | Grenade splash resistance |
-| 5 | Armor | `Bullet.308Win` | -70% | .308Win-specific override (less reduced than base bullet) |
-| 6 | Calibre | `Explosive.Utility.ATMine` | **+200%** | **3x damage** on AT mine |
-| 7 | Armor | `Explosive.Utility.C4` | -15% | Light C4 resistance |
-| 8 | Armor | `Explosive.Utility.IED` | +45% | IED amplification |
-| 9 | Armor | `Explosive.Utility.Claymore` | -75% | Claymore ineffective |
-| 10 | Calibre | `Cannon.30mm` | -35% | 30mm cannon less effective |
-| 11 | Calibre | `Cannon.35x228mm` | -46% | 35mm less effective |
-| 12 | Calibre | `Explosive.Rocket.72mm` | -60% | Small rocket less effective |
-| 13 | Calibre | `Explosive.Rocket.93mm` | -30% | 93mm partial reduction |
-| 14 | Calibre | `Explosive.Rocket.93mm` | -45% | **Second 93mm entry** — stacks or overrides? (§7 open) |
-| 15 | Calibre | `Explosive.Rocket.120x800mm` | -10% | Large tank rocket slight reduction |
-| 16 | Calibre | `Explosive.Rocket.84mm` | +30% | 84mm amplification |
-| 17 | Calibre | `Explosive.Rocket.84mm` | -5% | **Second 84mm entry** — stacks or overrides? |
-| 18 | Calibre | `Explosive.Rocket.120mm` | **+150%** | **2.5x** on 120mm rocket |
-| 19 | Calibre | `Cannon.20x102mm` | -76% | 20mm cannon weak |
-| 20 | Calibre | `Explosive.Rocket.122mm` | -85% | 122mm rocket weirdly weak (data check candidate) |
-| 21 | Calibre | `Explosive.Grenade.40mm` | -30% | 40mm GL reduction |
-| 22 | Calibre | `Explosive.Rocket` | +50% | Generic rocket amplification |
-| 23 | **Bone** | `Meta.Damage.Bullet` | **+300%** | **4x damage** on specific hit location (likely crewseats/windshield) |
-| 24 | **Bone** | `Meta.Damage.Bullet` | -50% | Second bone rule for bullets, reduction (likely armor-plated section) |
-| 25 | Calibre | `Explosive.Drone` | **+450%** | **5.5x** on kamikaze drone — biggest amplifier |
-| 26 | Calibre | `Explosive.Rocket.125mm` | +150% | 125mm tank rocket amplification |
-
-**Observations:**
-- Multiple entries for the same source tag (rules 13/14 for 93mm, 16/17 for 84mm) imply **PossibleHitLocations** or other filters differentiate them. Need to re-dump with those filter fields included.
-- Max amplifier is `+450%` for drone strikes — matches gameplay expectation of kamikaze drones being effective
-- Bone rules (23, 24) show hit-location-based mod: the +300% is likely the pilot cockpit; the -50% is likely the armored underside
-
-## 5. Top damage source tags (across all 22 vehicles)
-
-| Tag | Occurrence count |
+| Source tag | Entries |
 |---|---:|
-| `Meta.Damage.Bullet` | 94 |
-| `Meta.Damage.Explosive.Rocket` | 42 |
-| `Meta.Damage.Explosive.Radius.Inner` | 34 |
+| `Meta.Damage.Bullet` | 95 |
+| `Meta.Damage.Explosive.Rocket` | 57 |
+| `Meta.Damage.Explosive.Radius.Inner` | 36 |
 | `Meta.Damage.Cannon.20x102mm` | 24 |
+| `Meta.Damage.Explosive.Grenade` | 23 |
 | `Meta.Damage.Explosive.Utility.IED` | 23 |
+| `Meta.Damage.Cannon.30mm` | 23 |
 | `Meta.Damage.Cannon.35x228mm` | 23 |
 | `Meta.Damage.Explosive.Rocket.120mm` | 23 |
 | `Meta.Damage.Explosive.Rocket.125mm` | 23 |
-| `Meta.Damage.Cannon.30mm` | 22 |
+| `Meta.Damage.Explosive.Utility.C4` | 22 |
 | `Meta.Damage.Explosive.Rocket.120x800mm` | 22 |
 
-Every vehicle has a `Meta.Damage.Bullet` rule (universal baseline),
-and the top rockets/cannons appear across most vehicles. This creates
-the **damage matrix** — the data model that answers "how much damage
-does weapon X do to vehicle Y."
+Every row has a `Meta.Damage.Bullet` rule.
 
-## 6. Vehicle section/health model (SDK)
+## 7. Open questions
 
-Vehicles are divided into **health sections** (engine, cockpit, fuel
-tank, wheels, etc.), each with its own health pool and damage routing.
-
-### 6.1 `FVehicleHealthSection` (0x140 bytes)
-
-[`sdk/raw/Mechanized_structs.hpp#L523`](sdk/raw/Mechanized_structs.hpp#L523):
-
-```cpp
-struct FVehicleHealthSection final {
-    float MaxHealth;                                 // 0x00
-    FGameplayTagContainer Tags;                      // 0x08 — section identity tags
-    bool _aaachkphmgcampdlhdkkf;                     // 0x28 — unresolved flag
-    TMap<FGameplayTag, FVehicleDamageRouting> PreDamageRouting;        // 0x30
-    bool _aaacikmpjffpcggjhonpl;                     // 0x80 — unresolved flag
-    TMap<FGameplayTag, FVehicleDamageRouting> PostDamageRouting;       // 0x88
-    bool _aaadafjbjhkkggmmjaeba;                     // 0xD8 — unresolved flag
-    TMap<FGameplayTag, FVehicleDamageRouting> SimultaneousDamageRouting; // 0xE0
-    FGameplayTag RepairInteractionContextTag;        // 0x130
-    FGameplayTag RepairInteractionTrackerPointTag;   // 0x138
-};
-```
-
-**Three damage routing maps** — each keyed by damage-type tag,
-pointing to a routing rule:
-
-- **PreDamageRouting** — damage routed *before* applying to this section
-- **PostDamageRouting** — damage routed *after* applying (overflow /
-  spillover to connected sections)
-- **SimultaneousDamageRouting** — damage split simultaneously across
-  multiple sections
-
-### 6.2 `FVehicleDamageRouting` (0x30 bytes)
-
-```cpp
-struct FVehicleDamageRouting final {
-    FBHScalableFloat Scalar;             // 0x00 — multiplier applied to routed damage
-    bool bUseAbsoluteHealth;             // 0x28 — route to absolute health vs section
-    bool bOnlyWhenDepleted;              // 0x29 — only route when section is depleted
-};
-```
-
-**Interpretation:** when a section takes damage, its routing maps
-determine how damage propagates. For example, a hit to the main rotor
-section might `PostDamageRouting` 50% of damage into the hull section
-when the rotor is depleted (`bOnlyWhenDepleted = true`).
-
-### 6.3 How this ties to §4's rule table
-
-Open question: the per-vehicle DT's rules apply **before** reaching the
-section routing, or **after**. Likely:
-
-```
-raw damage from hit
-  → per-vehicle DT rule chain (§4)
-  → section identification (hitbox → section tag)
-  → section's PreDamageRouting map (route to connected sections if any)
-  → apply to section MaxHealth
-  → section's PostDamageRouting (spillover if section destroyed)
-```
-
-This is a §7 IDA-RE question.
-
-## 7. Still Not Pulled / Open Questions
-
-### 7.1 Duplicate-tag entries (`IDA` + `EXPORT`-fillable)
-ROT_02 has two entries for `Explosive.Rocket.93mm` (-30% and -45%)
-and two for `.84mm` (+30% and -5%). The differentiator is either
-`PossibleHitLocations` (hit-location-specific sub-rules) or an
-`InstigatorRequirements` filter. Current export shows these fields as
-empty for both duplicates, but they must differ somehow — the duplicates
-would otherwise be unreachable. Possibilities:
-- Export dropped non-empty filters
-- Rules are resolved by some secondary matching mechanism not visible
-  in the raw data
-
-Resolve by re-dumping with full nested properties, or by IDA tracing
-the rule-selection function.
-
-### 7.2 Rule execution order per entry (`IDA`-fillable)
-Same question as infantry §7.1 — all `PriorityIndex` are `-1`, so
-rules apply in array order. Needs IDA confirmation on the
-`FDamageModificationEntry` consumer in the orchestrator.
-
-### 7.3 Section routing vs rule chain order (`IDA`-fillable)
-Where in the pipeline does the §4 rule chain run relative to the §6
-section routing? Candidates:
-- Rules apply, result goes to section → section routes to others
-- Section identification happens first → then rules filter → then route
-- Rules + routing interleave per section
-
-Needs IDA RE of the vehicle damage subsystem.
-
-### 7.4 Universal fallback vs per-vehicle override (`IDA`-fillable)
-When no per-vehicle DT exists (e.g., a new vehicle shipped without
-its DT), does the game fall back to `DT_GlobalDamage_VehicleData`'s
-placeholder row, or crash? The placeholder row has all-zero entries,
-suggesting a "no-op" fallback is intended.
-
-### 7.5 PriorityCategory purpose (`SDK`-fillable, follow-up)
-7 priority categories group rules, but with `PriorityIndex=-1` on all
-entries, the categories don't drive ordering. Candidates for their
-role:
-- UI display grouping ("here are all armor rules")
-- Debug filtering
-- Future-use rule-set extension points
-- Server-authority rule-set subset selection
-
-Needs SDK trace of consumers of `PriorityCategory`.
-
-### 7.6 Multi-vehicle variants (`EXPORT`-fillable)
-`WHL_05_Humvee` + `WHL_05_Minigun` + `WHL_05_RingTurret` all represent
-Humvee variants with slightly different profiles. Need to confirm:
-- Does the game pick a DT based on loaded weapon/attachment?
-- Or does each variant have its own class and tag?
-
-### 7.7 Server-authoritative rule evaluation (`SECURITY`-flagged)
-Open security question (does **not** go in a public PR — route through
-[`SECURITY.md`](SECURITY.md)):
-- Does the rule evaluation happen server-side with trusted hit data?
-- Does the client send a damage amount or just a hit event?
-- Where in the pipeline is network authority asserted?
-
-Addressed per the project's responsible-disclosure policy — details
-tracked internally.
+| # | Question | What closes it |
+|---|---|---|
+| V-1 | `RootDamageTag`'s value, which decides whether the generic `Meta.Damage.Vehicle` row is evaluated | The `UWDGlobalDamageSystem` instance's config (not in the export) |
+| V-2 | How `ModifyDamage` copies the entity component's tag into the target tag | `0x6EF8DE0` / `0x6F01BB0`, which did not decompile; disassembly |
+| V-3 | What happens when the zone query resolves to no section | `0x5338730` and the section lookup |
+| V-4 | Which source tags a vehicle collision event carries, which the stationary `Add` entries depend on | The collision damage caller |
+| V-5 | Whether a HollowPoint tag ever reaches a vehicle event | Projectile path with ammo variants against vehicles |
+| V-6 | Network authority | Not observable statically; security questions go through [`SECURITY.md`](SECURITY.md) |
 
 ## 8. Cross-references
 
-### SDK files cited
-- [`sdk/raw/Mechanized_structs.hpp`](sdk/raw/Mechanized_structs.hpp) — line 511 (`FVehicleDamageRouting`), 523 (`FVehicleHealthSection`), 694 (`FVehicleDamagePhysicsData`)
-- [`sdk/raw/WDGame_structs.hpp`](sdk/raw/WDGame_structs.hpp) — line 4646 (`FWDModifyDamageData`), 4870 (`FWDDamageModification`), 4887 (`FWDDamageModificationEntry`)
-- Related: `GC_DamagedVehicle_*_classes.hpp` (visual damage states, Niagara/VFX response)
-
-### Data files cited
-- Fallback: `data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_VehicleData.json`
-- Per-vehicle (22 files): `data/Wardogs/Plugins/GameFeatures/Vehicles/<CODE>/Content/*/DT_GlobalDamage_VehicleData_<CODE>.json`
-
-### Related reference docs
-- [`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md) — infantry damage pipeline (companion, different architecture)
-- [`Wardogs_AllVehicles_Stats_Damage_v1.md`](Wardogs_AllVehicles_Stats_Damage_v1.md) — per-vehicle stats and base damage values
-- [`Wardogs_GameFeatures_Vehicles_v2.md`](Wardogs_GameFeatures_Vehicles_v2.md) — vehicle game-feature loadouts
+- [`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md): the shared rule pipeline (§1–6)
+- [`Wardogs_AllVehicles_Stats_Damage_v1.md`](Wardogs_AllVehicles_Stats_Damage_v1.md): per-vehicle stats and the damage tables entry by entry
+- [`Wardogs_GameFeatures_Vehicles_v2.md`](Wardogs_GameFeatures_Vehicles_v2.md): vehicle game-feature loadouts
+- [`sdk/raw/Mechanized_structs.hpp`](sdk/raw/Mechanized_structs.hpp): `FVehicleDamageRouting` (L511), `FVehicleHealthSection` (L523)
 
 ## Change log
 
 | Date | Change |
 |---|---|
-| 2026-10-16 | v1 — First complete trace. Found that vehicle damage architecture is distinct from infantry: per-vehicle rule tables with literal operations + requirement filters, not a central modifier blueprint chain. Full ROT_02 Havoc profile extracted (26 rules). Summary of all 22 vehicles' profiles. §6 section/health model documented from `Mechanized_structs.hpp`. §7 open questions distinct from infantry pipeline. |
+| 2026-10-16 | v1: first trace of the per-vehicle tables, ROT_02 profile and section structures. |
+| 2026-10-17 | Rewritten against the decompilation corpus and the damage doc. Vehicles use the same rule pipeline as infantry (the "fundamentally different" claim is withdrawn); target tag from `VehicleDamageTag`; the generic row is a parent level, not a fallback; `PriorityIndex` is overwritten (array order decides nothing); 5 `Add` entries; corrected counts (21 files, 23 rows, 665 entries) and row keys; ROT_02 duplicates explained by hit locations; section order and routing semantics traced; STN_06 keying and nine unreachable entries flagged. |
