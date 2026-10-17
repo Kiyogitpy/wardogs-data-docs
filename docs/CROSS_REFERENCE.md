@@ -38,7 +38,7 @@ canonical doc where `<Thing>` IS covered.
 | Prefix | Doc |
 |---|---|
 | `DT_GlobalDamage_InfantryData` + helpers | [`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md) §3 |
-| `DT_GlobalDamage_VehicleData_<CODE>` | [`Wardogs_VehicleDamagePipeline_v1.md`](Wardogs_VehicleDamagePipeline_v1.md) §3 |
+| `DT_GlobalDamage_VehicleData_<CODE>` | [`Wardogs_VehicleDamagePipeline_v1.md`](Wardogs_VehicleDamagePipeline_v1.md) §2.1 |
 | `DT_Challenges_*` | [`Wardogs_Meta_v2.md`](Wardogs_Meta_v2.md) challenges section |
 | `DT_RewardLookup_*` | [`Wardogs_GameFeatures_Rewards_v2.md`](Wardogs_GameFeatures_Rewards_v2.md) |
 | `DT_VehicleMarket` | [`Wardogs_GameFeatures_Vehicles_v2.md`](Wardogs_GameFeatures_Vehicles_v2.md) vendor section |
