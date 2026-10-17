@@ -171,6 +171,9 @@ def plan(repo, files_txt, out_root, ids):
                 continue
             if r["meshType"].endswith("SkeletalMesh") or r["registerComplexSurface"] is not False or r["fragmentType"] == "MVF_StaticMesh":
                 inputs.append(r["meshPackage"])
+            # The destroyed-tyre mesh (Vehicle §3.2 wheel mesh swap), for the viewer's damage-state models.
+            if r["fragmentType"] == "MVF_InstancedWheels" and r.get("destructionMesh"):
+                inputs.append(pkgs.get(r["destructionMesh"].split(".")[0].lower()) or r["destructionMesh"])
         d = os.path.join(out_root, v["id"]); os.makedirs(d, exist_ok=True)
         open(os.path.join(d, "_inputs.txt"), "w", encoding="utf-8").write("\n".join(dict.fromkeys(inputs)) + "\n")
         p = {"vehicle": v["id"], "variant": v["variants"][0], "variants": v["variants"], "damageRow": v["damage_row"],
