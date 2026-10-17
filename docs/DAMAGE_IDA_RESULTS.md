@@ -83,6 +83,10 @@ introduced by this IDA load for those samples. They do not identify whether
 the underlying limitation is protection, incomplete reconstruction, a build
 mismatch, or another cause. The samples do not support treating these
 locations as working function-pointer tables for the requested trace.
+In the later [restored executable](DAMAGE_IDA_RESTORED.md), which has a
+different hash, slot 86 of `0xB321D30` and `0xB322140` holds valid code
+pointers (`0x15B83B0` and `0x6BB7E10`). That points to a limitation
+specific to this input, without identifying its cause.
 
 The first 64 KiB samples of `.text`, `.rdata`, and `.pdata` each measured
 approximately 7.997 bits of entropy per byte. This corroborates unusual
