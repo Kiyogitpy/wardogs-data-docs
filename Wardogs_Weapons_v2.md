@@ -225,6 +225,7 @@ The export lists the inputs to each system but not the formulas that combine the
 
 - **Recoil:** §5a.
 - **Aim sway and focus energy:** §5b.
+- **Evidence:** [`docs/evidence/weapons.md`](docs/evidence/weapons.md): a verification status for every native address §5a and §5b cite.
 - **Distance falloff (SKS):** `DistanceDamageFalloffCurve` is a multiplier indexed by distance. The falloff times are centimetres of distance, confirmed in code; per-weapon damage by distance is in [DamagePipeline §7.8](Wardogs_DamagePipeline_v2.md#78-damage-over-distance).
 
 ### 5a. Recoil
