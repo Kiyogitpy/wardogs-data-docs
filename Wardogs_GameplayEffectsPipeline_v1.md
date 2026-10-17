@@ -108,8 +108,11 @@ are referenced somewhere in the export. One of them,
 `DT_Skills_Lockpicking.json`), has no SDK header, and eight SDK classes are
 never referenced.
 
-Grouped by filename prefix. The descriptions say only what the class
-names show; effect values are not in the export (§7).
+Grouped by filename prefix. Each effect's actual modifiers are on
+[Gameplay Effect Values](Wardogs_GameplayEffect_Values_v1.md), exported
+from the paks: 341 packages, the 338 SDK classes plus
+`GE_GrantSkill_Lockpicking`, `GE_Meta_ResourceChange` and
+`GE_MolotovBurning`.
 
 | Prefix | Count | What the names show |
 |---|---:|---|
@@ -240,9 +243,11 @@ is fired by a direct call (`0x6E75620` → `0x4C45DC0`).
 
 **Data.** `ID_6xScope.json` lists `GE_6xScope_C` in
 `AttachmentData.AppliedEffects`, and `GE_6xScope_MainSight_C` per sight.
-The code that applies them on equip is not traced, and the effects'
-modifier values are not in the export (the `GE_*` assets were not
-exported).
+From the effect export ([Gameplay Effect Values](Wardogs_GameplayEffect_Values_v1.md)):
+`GE_6xScope` sets `Weapon.AdsZoomMultiplier = 3`, adds 0.2 to
+`Weapon.AimTime`, and sets the zeroing range to 100–500;
+`GE_6xScope_MainSight` sets `Weapon.AdsZoomMultiplier = 3`. The code that
+applies them on equip is not traced.
 
 ## 8. Open questions
 
@@ -251,7 +256,7 @@ exported).
 | E-1 | How `EBHAttributeModOp` operations and channels combine into the current value |
 | E-2 | Duration semantics beyond 0 (for example whether −1 means infinite) |
 | E-3 | Rollback mechanism and the role of `UNetworkPredictionWorldManager` |
-| E-4 | `GE_*` asset values (modifiers, durations, granted tags): needs the assets exported |
+| E-4 | **Closed**: every effect's modifiers, durations, stacks and granted tags are on [Gameplay Effect Values](Wardogs_GameplayEffect_Values_v1.md) |
 | E-5 | The equip code path that applies attachment effects |
 | E-6 | Vehicle health via effects: `GE_Vehicle_Health` and vehicle-side callers of `0x52311D0` (`0x7665D60`, `0x766727F`) are not traced |
 
