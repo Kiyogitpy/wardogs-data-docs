@@ -221,19 +221,85 @@ The 25-entry [`IMC_BaseWeapon`](https://github.com/Kiyogitpy/wardogs-data-docs/b
 
 ## 5. How Values Combine
 
-The export lists the inputs to each system but not the formulas that combine them. The points below are the likely roles, not confirmed behaviour.
+The export lists the inputs to each system but not the formulas that combine them. Recoil and the per-shot focus values are traced in code (§5a). The other points below are likely roles, not confirmed behaviour.
 
 - **Aim sway (likely):** the class speed curve, the horizontal and vertical movement curves, and the `AimSwayData` multipliers (crouch, prone, camera offset, no-focus speed) appear to feed one sway offset. The combination method is unknown.
-- **Recoil (likely):** `RecoilPattern` gives per-shot X/Y offsets, `RandomDeviationDegree` adds random deviation, and the post-pattern yaw and pitch ranges add random kick afterwards. `RecoilPatternResetTime` probably controls when the pattern restarts.
+- **Recoil:** traced, §5a.
 - **Distance falloff (SKS):** `DistanceDamageFalloffCurve` is a multiplier indexed by distance. The falloff times are centimetres of distance, confirmed in code; per-weapon damage by distance is in [DamagePipeline §7.8](Wardogs_DamagePipeline_v2.md#78-damage-over-distance).
-- **Focus energy (SKS, Judge):** `FocusEnergyReductionPerShot` and `RecoilReductionWhenFocussing` are per-shot values. `NoFocusEnergySpeedMultiplier` is probably a sway-speed scalar used when focus is empty. Neither is confirmed.
+- **Focus energy:** `FocusEnergyReductionPerShot` and `RecoilReductionWhenFocussing` are traced (§5a). `NoFocusEnergySpeedMultiplier` is probably a sway-speed scalar used when focus is empty; not confirmed.
+
+### 5a. Recoil
+
+**Native.** Recoil is a kick to the player's view (the control rotation), in degrees: X is yaw (positive turns right) and Y is pitch (positive looks up).
+
+1. **Which pattern point.** The fire routine (`0x6B93610`) computes a kick per shot, but only when the weapon owner's controller is a local `WDPlayerController` (`0x6B96C20`, which ends in `APlayerController::IsLocalController`, `0x42CD0B0`). The weapon component keeps a shot counter (`+0xFF0`) that starts at −1 (constructor `0x6B8E5A0`). Shot `n` = counter + 1 uses pattern point `n`, then the counter moves on. Every shot restarts a timer of `RecoilPatternResetTime` seconds, and when the timer runs out the counter goes back to −1 (`0x6B97550`). So the pattern starts over after any pause longer than the reset time.
+2. **The kick** (`0x6B95C50`):
+   - Inside the pattern: `RecoilPattern[n]`, turned by a random angle between −`RandomDeviationDegree` and +`RandomDeviationDegree` degrees. The turn changes the kick's direction, not its size.
+   - Past the end of the pattern, and on every shot of a weapon without one: yaw uniform between the two values of `PostPatternRandomYawRecoil`, pitch uniform between the two values of `PostPatternRandomPitchRecoil`.
+   - Then yaw × the weapon's `HorizontalRecoilMultiplier` and pitch × its `VerticalRecoilMultiplier`. These are the current values of the `Attribute.Gameplay.Weapon.*RecoilMultiplier` attributes on the weapon item, or 1 if it has none (`0x6C979A0`, `0x6C989A0`, the item extension's `IWDWeaponOwner` at `+0xF0`). Both start at 1.0 on every weapon ([GameFeatures Weapons §4](Wardogs_GameFeatures_Weapons_v2.md#4-default-weapon-attributes-wditemextensiondata_gameplayeffects)); attachment and stance effects change them by the [effect formula](Wardogs_GameplayEffectsPipeline_v1.md#44-current-value).
+   - The random numbers come from the C runtime's `rand()`. `RecoilPatternYawMinMax` and `RecoilPatternPitchMax` are not read here.
+3. **Focus and size** (weapon behavior component, `0x6B85D30`):
+   - While focusing (the focus blend is above `MinFocusInterpRequiredForRecoilReduction` / 100), the kick shrinks by `RecoilReductionWhenFocussing` percent.
+   - While focusing, and for a short window after it (an unnamed stats field at `+0x98`: default 0.5 s, set by no weapon), each shot drains `FocusEnergyReductionPerShot` percent of `MaxFocusEnergy`, down to 0.
+   - The kick is then multiplied by `ViewKickMagnitudeMultiplier` and queued.
+4. **Applying it** (`TickComponent` `0x6B891F0` → `0x6B89A20` → `0x6B89BB0`), for a pawn with a player controller. Each queued kick follows `ViewKickCurve`, read as a value between 0 and 1. Every frame, pitch and yaw move by (curve value now − curve value last frame) × kick. A curve that rises from 0 to 1 therefore applies the whole kick over the curve's length. A curve that falls back hands part of the kick back: the SKS curve reaches 1 at 0.15 s and 0.75 at 0.4 s, so a quarter of each kick returns. Pitch is kept within the camera's pitch limits, and any part cut off there is remembered.
+5. **Recovery.** When a kick's curve ends, the kick (less any pitch that was cut off) is added to a recovery amount, and the view moves back along `RecoveryKickCurve` the same way. A kick that ends during a recovery restarts it with the rest of the old amount plus the new kick. Every firearm's `RecoveryKickCurve` is a single key at 0, so no firearm recovers by itself: the player pulls the view back. Three launchers (the grenade launcher, `Launcher_04`, `RPG7`) return the whole kick, over 1 s or 0.35 s; the MMGL does not. Outside the table, the M2 Browning returns 20% of each kick over 0.3 s and the fists all of it over 0.3 s.
+
+**Example.** An AK-74M without attachments, standing, not focusing. Both multipliers are 1: the AR stance effect is ×1 standing, ×0.85 crouched and ×0.7 prone. Shot 1 is `RecoilPattern[0]` = (0.01, 0.718) × 1.1: a kick of about 0.79°, pointing up to 13° either side of the pattern's direction (almost straight up), applied over 0.18 s. Shots 31 and on kick yaw −0.31 … 0.31° and pitch 0.50 … 0.83° (the post-pattern ranges × 1.1). Pausing longer than 0.65 s restarts the pattern.
+
+The table gives each weapon's inputs. Yaw and pitch are in degrees. A dagger (†) marks the native default from the `FWDWeaponStats` constructor (`0x699E6C0`), which the asset does not store. Attachment and stance multipliers are not applied. Curve values outside 0 … 1 count as 0 or 1: the `Launcher_04` and `RPG7` kick curves rise to 8, so their whole kick lands before 0.2 s.
+
+<!-- recoil_table -->
+| Weapon | Pattern shots | Shot 1 (yaw, pitch) | Deviation (°) | After pattern: yaw | After pattern: pitch | Reset (s) | Kick × | Kick curve | Recovery | Focus: recoil cut % / energy % per shot |
+|---|---:|---|---:|---|---|---:|---:|---|---|---|
+| `SKS` | 20 | -0.025538, 2.375 | ±5.5 | -0.28 … 0.38 | 0.55 … 0.85 | 0.95 | ×1† | 1 at 0.15 s, 0.75 at 0.4 s | none | 30 / 50 |
+| `Judge` | 1 | 0.09, 2.24775 | ±10 | -0.5 … 0.5 | 0.5 … 1 | 0.5† | ×1† | 1 at 0.15 s | none | 10 / 40 |
+| `AT4` | 0 | — | ±5† | -1 … 1† | 1 … 2† | 0.5† | ×1† | none (no curve) | none | 0† / 0† |
+| `CombatBow` | 0 | — | ±4 | -1 … 1† | 2 … 3 | 0.2 | ×0 | 1 at 0.15 s, 0.5 at 0.4 s | none | 80 / 100 |
+| `GrenadeLauncher` | 0 | — | ±5† | -1 … 1† | 1 … 2† | 0.5† | ×1† | 1 at 1 s | 100% over 1 s | 0† / 0† |
+| `RFB` | 20 | 0.15, 2.34 | ±10 | -0.28 … 0.34 | 0.74 … 0.98 | 1 | ×1† | 1 at 0.15 s | none | 30 / 50 |
+| `SVDM` | 9 | -0.283, 3.683 | ±10 | 0.05 … 0.32 | 0.65 … 1.1 | 1.1 | ×1† | 1 at 0.15 s, 0.75 at 0.4 s | none | 30 / 50 |
+| `LMG_02` | 30 | 0.13, 1.68 | ±20 | -0.62 … 0.72 | 1.1 … 1.95 | 0.9 | ×1.25 | 1 at 0.3 s | none | 50 / 10 |
+| `Launcher_04` | 0 | — | ±5† | -1 … 1† | 1 … 2† | 0.5† | ×1† | 8 at 0.2 s | 100% over 0.35 s | 0† / 0† |
+| `RPG7` | 0 | — | ±5† | -1 … 1† | 1 … 2† | 0.5† | ×1† | 8 at 0.2 s | 100% over 0.35 s | 0† / 0† |
+| `AK74M` | 30 | 0.01, 0.717554 | ±13 | -0.28 … 0.28 | 0.45 … 0.75 | 0.65 | ×1.1 | 1 at 0.18 s | none | 20 / 25 |
+| `M4` | 30 | 0.037, 0.693 | ±10 | -0.26 … 0.26 | 0.4 … 0.65 | 0.55 | ×1.08 | 1 at 0.15 s | none | 20 / 25 |
+| `KH2002` | 30 | 0, 0.85 | ±15 | -0.25 … 0.25 | 0.5 … 0.72 | 0.78 | ×1† | 1 at 0.15 s | none | 30 / 40 |
+| `A91` | 30 | 0, 0.85 | ±15 | -0.25 … 0.25 | 0.5 … 0.72 | 0.78 | ×1† | 1 at 0.15 s | none | 0† / 0† |
+| `TAR21` | 30 | 0, 0.7 | ±15 | -0.22 … 0.22 | 0.55 … 0.8 | 0.8 | ×1.1 | 1 at 0.15 s | none | 30 / 40 |
+| `Vector` | 55 | 0.09, 0.267748 | ±35 | -0.05 … 0.05 | -0.08 … 0.12 | 0.48 | ×1† | 1 at 0.15 s | none | 15 / 25 |
+| `SV98` | 0 | — | ±4 | -1 … 1† | 1 … 2† | 0.5† | ×1.3 | 1 at 0.15 s | none | 0† / 100 |
+| `M249` | 7 | 1.10714, 2.40603 | ±20 | -0.5 … 0.5 | 0.5 … 1.5 | 0.5† | ×1.2 | 1 at 0.3 s | none | 50 / 10 |
+| `Glock17` | 0 | — | ±10 | -0.5 … 0.5 | 0.5 … 1 | 0.5† | ×1.5 | 1 at 0.15 s | none | 10 / 40 |
+| `M12G (M500)` | 7 | 0.11, 1.8 | ±24 | -0.5 … 0.5 | 0.9 … 1.6 | 1 | ×1.6 | 1 at 0.5 s | none | 0† / 0† |
+| `MMGL` | 0 | — | ±5† | -1 … 1† | 1 … 2† | 0.5† | ×1† | 1 at 1 s | none | 0† / 0† |
+| `CGM4` | 0 | — | ±5† | -1 … 1† | 1 … 2† | 0.5† | ×1† | none (no curve) | none | 0† / 0† |
+| `MP9` | 30 | 0.01815, 0.6292 | ±15 | -0.3 … 0.3 | 0.3 … 0.55 | 0.55 | ×1.1 | 1 at 0.1 s | none | 15 / 25 |
+| `WEPN_017 (Mosin)` | 0 | — | ±4 | -1 … 1† | 2 … 3 | 0.2 | ×0.8 | 1 at 0.15 s | none | 0† / 100 |
+| `WEPN_026` | 0 | — | ±10 | -0.5 … 0.5 | 0.5 … 1 | 0.5† | ×1.85 | 1 at 0.15 s | none | 10 / 40 |
+| `WEPN_027` | 15 | 0, 1.16775 | ±5† | 0.25 … 1 | 0.25 … 1 | 0.5† | ×1† | 1 at 0.15 s | none | 10 / 40 |
+| `WEPN_028` | 30 | -0.088829, 0.7161 | ±20 | -0.32 … 0.32 | 0.35 … 0.58 | 0.5† | ×1.15 | 1 at 0.1 s | none | 15 / 25 |
+| `WEPN_029` | 30 | -0.01, 0.3969 | ±12 | -0.3 … 0.3 | 0.5 … 0.78 | 0.8 | ×0.95 | 1 at 0.18 s | none | 20 / 25 |
+| `WEPN_030` | 20 | 0.055, 1.09725 | ±16 | -0.35 … 0.35 | 0.7 … 1.1 | 0.7 | ×1† | 1 at 0.15 s | none | 20 / 25 |
+| `WEPN_031` | 30 | 0.0345, 1.13949 | ±17 | -0.2 … 0.2 | 0.4 … 0.62 | 0.6 | ×1† | 1 at 0.15 s | none | 30 / 50 |
+| `WEPN_032` | 50 | 0.0360022, 1.53 | ±10 | -0.5 … 0.5 | 0.5 … 1 | 0.5† | ×1† | 1 at 0.15 s | none | 10 / 40 |
+| `WEPN_033 (TAR21)` | 30 | 0, 0.85 | ±15 | -0.25 … 0.25 | 0.5 … 0.72 | 0.78 | ×1† | 1 at 0.15 s | none | 30 / 40 |
+| `WEPN_034` | 32 | 0, 3.06 | ±10 | 0.05 … 0.32 | 0.65 … 1.1 | 1.1 | ×1† | 0.806773 at 0.0578813 s, 1 at 0.15 s | none | 30 / 50 |
+| `WEPN_035` | 0 | — | ±4 | -1 … 1† | 1 … 2† | 0.5† | ×0.3 | 1 at 0.15 s | none | 0† / 100 |
+| `WEPN_036` | 40 | 0, 2.5306 | ±15 | -0.22 … 0.22 | 1.35 … 1.7 | 0.75 | ×1† | 1 at 0.15 s | none | 50 / 10 |
+| `WEPN_037` | 30 | 0.0154, 1.07484 | ±14 | -0.34 … 0.34 | 0.62 … 0.95 | 0.5† | ×0.9 | 1 at 0.15 s | none | 30 / 50 |
+| `SMG_03` | 30 | 0.033, 1.08994 | ±17 | -0.2 … 0.2 | 0.4 … 0.62 | 0.55 | ×1† | 1 at 0.1 s | none | 30 / 50 |
+| `MP43` | 2 | 0.840004, 1.71 | ±28 | -0.45 … 0.45 | 0.8 … 1.4 | 1.2 | ×1.15 | 1 at 0.15 s | none | 0† / 0† |
+| `MK22` | 0 | — | ±4 | -1 … 1† | 1 … 2† | 0.5† | ×1.4 | 1 at 0.15 s | none | 0† / 100 |
+| `SR_04` | 0 | — | ±4 | -1 … 1† | 1 … 2.5 | 0.5† | ×1.45 | 1 at 0.124178 s | none | 0† / 100 |
+<!-- /recoil_table -->
 
 ---
 
 ## 6. Still Not Pulled / Limitations
 
 - The main AR, SMG, LMG, shotgun and pistol **stat tables** are not in this folder. Only their aim-sway and stabilisation curves are here. The stat tables are in [Infantry Weapon Stats](Wardogs_InfantryWeapons_Stats_v1.html).
-- **Units are not stated** in the export. Speeds are assumed to be cm/s and ranges to be metres, based on the falloff-curve and EffectiveRange check. That is an inference.
+- **Units are not stated** in the export. Speeds are assumed to be cm/s and ranges to be metres, based on the falloff-curve and EffectiveRange check. That is an inference. Recoil values are degrees of view rotation, confirmed in code (§5a).
 - `IronSightsAimTime = 50,000` on the tank barrel and `WeaponAccuracy = 70 MOA` look like placeholders or unused tuning. The export gives no way to check.
 - Two unnamed fields on the SKS and Judge have no known meaning. Values: SKS 1.0 and 2.5, Judge 2.0.
 - `CF_*_ADS_Curve` and [`ADS_Blur_Curve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/ADS_Blur_Curve.json) have no stated output meaning.
