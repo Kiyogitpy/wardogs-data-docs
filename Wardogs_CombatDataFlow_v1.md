@@ -99,8 +99,9 @@ Build: `++Wardogs+Live-CL-516586` · Engine: UE 5.7
             │ from damage-type tag) →       │                     │
             │ target TakeDamage, or the     │                     │
             │ WDDamageable path             │                     │
-            │ Health write inside: effects  │                     │
-            │ pipeline, not traced          │                     │
+            │ Characters: ReceiveDamage →   │                     │
+            │ vitality → base value of      │                     │
+            │ Attribute.Gameplay.Health     │                     │
             └───────────────┬───────────────┘                     │
                             │                                     │
             ┌───────────────▼───────────────┐                     │
@@ -128,7 +129,7 @@ Build: `++Wardogs+Live-CL-516586` · Engine: UE 5.7
 | **Damage modification** (`UWDDamageSubsystem::ModifyDamage`) | Rule selection, ordering and arithmetic; five custom operations (bone, calibre, ammo type, seat, armor durability) | [`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md) §1–7 |
 | **Damage hand-off** | Unreal damage event and `TakeDamage` on the target | [`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md) §1.1 |
 | **Vehicle damage** (same rule pipeline, per-vehicle rows) | 21 vehicle tables (23 rows, 581 selectable entries) through the same evaluator, then the section health model | [`Wardogs_VehicleDamagePipeline_v1.md`](Wardogs_VehicleDamagePipeline_v1.md) |
-| **Attribute application** (`UBHGameplayEffectComponent`) | Attribute storage and replication. The edge from `TakeDamage` to the health write is not traced | [`Wardogs_GameplayEffectsPipeline_v1.md`](Wardogs_GameplayEffectsPipeline_v1.md) §4 |
+| **Attribute application** (`UBHGameplayEffectComponent`) | Attribute storage and replication. Character damage writes the `Attribute.Gameplay.Health` base value directly (DamagePipeline §10) | [`Wardogs_GameplayEffectsPipeline_v1.md`](Wardogs_GameplayEffectsPipeline_v1.md) §4 |
 | **GameplayCue dispatch** | VFX, audio, animation playback on hit/damage events via `DA_CharacterEffectPresets` tag mapping | [`Wardogs_GameplayEffectsPipeline_v1.md`](Wardogs_GameplayEffectsPipeline_v1.md) §3 |
 
 ## Example — AK74M bullet to infantry torso
@@ -173,11 +174,12 @@ Step 3 — Evaluate, C = S (every step is a factor, so order is irrelevant):
   No non-custom entry with a factor other than 1 matches this hit.
   C = max(C, 0)  →  26 × 0.9735 = 25.3 unarmored, 12.7 with heavy armor
 
-Step 4 — Hand-off: Unreal damage event (type from
-         Meta.Damage.DamageType.Impact) → target TakeDamage.
+Step 4 — Hand-off: the target is WDDamageable, so IWDDamageable::ReceiveDamage
+         → character vitality component (0x6B17760 → 0x6B82520).
 
-Step 5 — Health write, replication, downed state: effects pipeline;
-         the edge from TakeDamage is not traced.
+Step 5 — Health write: Attribute.Gameplay.Health base value −= C via
+         SetAttributeBaseValue; death when the current value reaches 0.
+         Downed characters take no health write (DamagePipeline §10).
 ```
 
 The earlier `baseDamage × 1.10` result assumed the Universal bone row and

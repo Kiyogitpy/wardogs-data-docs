@@ -17,7 +17,7 @@ and the modified amount goes to a section-based health model instead of
 `TakeDamage`.
 
 Build: `++Wardogs+Live-CL-516586` · Engine: UE 5.7 · Native addresses are
-file RVAs in the restored executable (see the damage doc §10). Labels as in
+file RVAs in the restored executable (see the damage doc §11). Labels as in
 the damage doc: **Native** (code, RVA cited, unreviewed decompiler
 output), **Data** (export), **Derived** (arithmetic on both), **Open**.
 

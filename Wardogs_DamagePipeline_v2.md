@@ -13,11 +13,11 @@ to the game: which rules are selected, in what order, and with what
 arithmetic. This is the single reference for the infantry damage
 pipeline. It folds in the native trace, the GObjects Blueprint analysis
 and the restored-executable validation; those reports remain as evidence
-(§10).
+(§11).
 
 Build: `++Wardogs+Live-CL-516586` · Engine: UE 5.7 · GAS fork: "BH"
 (Embark's internal GAS variant) · Native addresses are file RVAs in the
-restored executable, SHA-256 `a5c3db10…2b4f0cc37` (§10).
+restored executable, SHA-256 `a5c3db10…2b4f0cc37` (§11).
 
 Every claim carries one of these labels:
 
@@ -44,7 +44,8 @@ Every claim carries one of these labels:
 | Operation arithmetic, custom-delta contract, final clamp | **Native** | §6 |
 | Four Blueprint operations: bone, caliber, ammo vs armor, vehicle seat | **Bytecode** | §7.1–7.4 |
 | `PlayerArmorDurability`: `−(armor reduction %) × C` from the equipped item | **Native** + **Data** | §7.5 |
-| Health write inside `TakeDamage` overrides; network authority | **Open** | §9 |
+| Character health write: `ReceiveDamage` → vitality → base value of `Attribute.Gameplay.Health` | **Native** | §10 |
+| Network authority | **Open** | §9 |
 
 The short version: every selected rule, custom or not, multiplies the
 running damage by a factor, and the total is clamped at zero once at the
@@ -126,9 +127,9 @@ Most callers then hand the result to the same two steps:
    `TakeDamage(damage, event, instigator, causer)`, called through
    vtable `+0x6B0`.
 
-So this pipeline ends where Unreal's standard damage call begins. The
-health write happens inside the targets' `TakeDamage` overrides and the
-effects pipeline, not here.
+For characters and vehicles the `WDDamageable` path is the one taken; the
+character's health write is traced in §10, the vehicle section model in
+[VehicleDamagePipeline §4](Wardogs_VehicleDamagePipeline_v1.md).
 
 ## 2. The data passed to custom operations
 
@@ -810,9 +811,38 @@ is a percentage change, so -25 gives ×0.75 and -90 gives ×0.10.
 | O-4 | Entry data never reaches custom operations | **Closed** (§2) |
 | O-5 | Four Blueprint bodies | **Closed** (§7.1–7.4), from the cooked bytecode |
 | O-6 | End-to-end number for one concrete hit | **Closed for bullets** (§7.6–7.9): every ammo type, armored or not, by distance. Only the speed scale after drag is not modelled |
-| O-7 | The health write, and network authority | **Partly traced.** WD damage reaches characters through `IWDDamageable::ReceiveDamage` (dispatch `0x6C2A5F0`). A character's `TakeDamage` override (`0x6E77C40`) only converts an incoming Unreal damage event back into a WD event and the application step. Health is the attribute `Attribute.Gameplay.Health` in `BHGameplayEffectComponent`, mirrored by `UWDVitalityComponent` (`0x6B81CE0` binds to its changes). The native `SetAttributeBaseValue` (`0x5236AF0`) is only called from healing/appliable-item paths, so damage lowers health some other way, most likely an effect; the character's `ReceiveDamage` implementation is not located yet. Server behaviour cannot be observed statically. Security-relevant findings go through [`SECURITY.md`](SECURITY.md), not this document |
+| O-7 | The health write | **Closed** (§10). Network authority stays open: role checks are visible in code, but server behaviour cannot be observed statically. Security-relevant findings go through [`SECURITY.md`](SECURITY.md), not this document |
 
-## 10. Evidence and sources
+## 10. From damage to health (characters)
+
+**Native.** For a character, the application step (§1.1) dispatches
+through `IWDDamageable` (`0x6C2A5F0`) and health is written directly as an
+attribute base value. No gameplay effect is applied.
+
+1. `AWDMoverCharacter` carries `IWDDamageable` at object `+0x640`
+   (interface vtables `0xB40C038`, and `0xB410D20` for the player class).
+   Slot 2, `ReceiveDamage`, is `0x6E74C40` in both. It jumps to the
+   vitality component (object `+0x748`), vtable `+0x500`.
+2. `UWDCharacterVitalityComponent` (`0x6B17760`) returns 0 for damage
+   ≤ 0. A character without `State.Player.Vitality.Alive` (downed) gets a
+   damage event sent through a `ProcessEvent` stub and no health write.
+   Otherwise it calls the base `UWDVitalityComponent` (`0x6B82520`).
+3. `0x6B82520` calls `0x52311D0` on the `Attribute.Gameplay.Health`
+   handle (component `+0x140`, created in `0x6B81CE0`) with
+   `−CurrentDamage`. `0x52311D0` adds that delta to the attribute's
+   stored value and calls `SetAttributeBaseValue` (`0x5236AF0`), whose
+   setter (`0x5236E50`) runs a per-attribute hook, stores the new base
+   and pushes it into the replicated attribute array.
+4. Back in `0x6B82520`: death when the current value is ≤ 0, then the
+   `OnDamageTaken` and regeneration-timer delegates.
+
+A character's `TakeDamage` override (`0x6E77C40`) does not write health:
+it converts an incoming Unreal damage event into a WD event and re-enters
+the application step. The role checks on this path (`0x6B82520` and
+`0x5236AF0` both gate on a role value of 3) are code facts; what they mean
+for server behaviour is not established here.
+
+## 11. Evidence and sources
 
 ### Evidence reports
 
@@ -861,4 +891,5 @@ The restored image carries the UTF-16LE build marker
 | 2026-10-17 | Blueprint bytecode (cooked assets, read statically): closed O-5 with the four operation bodies. All five custom operations are factors on `C`, so the infantry result is order-independent. Added the ammo-vs-armor factor table and a worked example (§7.6). Bone `Universal` and weapon rows multiply. |
 | 2026-10-17 | Traced the projectile-impact path (`0x6B725B0`): the bullet event's starting amount and tags come from the projectile data asset and the firing weapon (§7.6). Added a per-weapon damage table for 33 weapons, generated by `_tools/infantry_damage.py` (§7.7). Named more `ModifyDamage` callers; `BP_DamageActor` bypasses the rule tables. |
 | 2026-10-17 | Starting amount scales by impact speed and the weapon's distance curve (cm); armor tags are filtered to the piece covering the hit location before `ModifyDamage` (§7.6). Added damage over distance (§7.8). `UNITS.md` corrected: the falloff curve's `Time` is cm, not metres. |
+| 2026-10-17 | Health write traced (§10): `ReceiveDamage` → vitality component → base-value write on `Attribute.Gameplay.Health`; no effect involved. Corrects the earlier note that `SetAttributeBaseValue` is only used by healing (its helper `0x52311D0` had no corpus function entry, so its calls were not indexed). |
 | 2026-10-17 | Ammo variants: the modified stats add the ammo-modifier tag and change no damage value (§7.9). Generator gained real armor values and an `--ammo` mode; added the ammo × armor table. |
