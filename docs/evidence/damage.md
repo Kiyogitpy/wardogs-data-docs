@@ -376,9 +376,11 @@ already gives the correct count.
 
 1. Every `0x` token in
    [`Wardogs_DamagePipeline_v2.md`](../../Wardogs_DamagePipeline_v2.md) at
-   `main` `d560d33` was extracted with a regular expression. Values below
+   `main` `e057d26` was extracted with a regular expression. Values below
    `0x100000` are offsets, sizes or enum values and were dropped, as was
-   the flag `0x40000000`. That left **85 RVAs**.
+   the flag `0x40000000`. That left **93 RVAs**. The table was first
+   built at `d560d33` (85 RVAs). Round 3's corrections added six and
+   round 4's two; none was dropped.
 2. Each RVA was tagged with the numbered section (`##`/`###` heading)
    that cites it.
 3. For each RVA, `corpus.sqlite` was queried read-only for:
@@ -397,7 +399,8 @@ already gives the correct count.
 6. An independent verifier re-queried the corpus and re-read the bytes
    for every row (claims EV-1 to EV-12). It confirmed all of them,
    upgraded `0x5236E50` from `unverified` to `[exe]`, and confirmed the
-   two misaligned citations.
+   two misaligned citations. The eight RVAs added after `d560d33` are
+   round-5 claims for the same verifier.
 
 The corpus part can be re-run with `python -I` from any directory:
 
@@ -417,6 +420,14 @@ for v in rvas:
     print(f"0x{v:X}", "body" if body else "-", fn, tr, inside and f"in 0x{inside[0]:X}")
 ```
 
+The same query, with section and line numbers and the PE section, is
+[`_tools/rva_status.py`](../../_tools/rva_status.py), shared with the
+[vehicle](vehicles.md) and [effects](effects.md) pages:
+
+```text
+python -I _tools/rva_status.py Wardogs_DamagePipeline_v2.md --rev e057d26 --exe
+```
+
 Status key:
 
 - **`corpus body`**: a `functions` row with a body at that exact RVA,
@@ -431,17 +442,18 @@ Status key:
 
 | Status | RVAs |
 |---|---:|
-| `corpus body` | 50 (2 of them on misaligned rows) |
-| `[exe]` | 35 (28 code, 7 data) |
+| `corpus body` | 56 (4 of them cite or sit on the two misaligned rows) |
+| `[exe]` | 37 (30 code, 7 data) |
 | `GObjects` | 0 |
 | `unverified` | 0 |
-| **Total** | **85** |
+| **Total** | **93** |
 
-These are the RVAs DamagePipeline cited at `d560d33`. The corrections
-applied afterwards cite six more, checked the same way: `0x6EF9450` and
-`0x6F08CE0` (the real entries behind the two misaligned rows, whose
-bodies they are), `0x6B8E100` and `0x6BB6160` (`corpus body`), and
-`0x12CC0D0` and `0x12CC0F0` (`[exe]`, FName initializers).
+These are the RVAs DamagePipeline cites at `e057d26`. The eight cited
+after `d560d33` were checked the same way and are in the table:
+`0x6EF9450` and `0x6F08CE0` (the real entries behind the two misaligned
+rows, whose bodies they are), `0x6B8E100`, `0x6BB6160`, `0x6B17D20` and
+`0x6B83270` (`corpus body`), and `0x12CC0D0` and `0x12CC0F0` (`[exe]`,
+FName initializers).
 
 No cited RVA is itself a GObjects fact. The GObjects-backed items are
 offsets that sit next to these RVAs. Examples are the event's `Amount`
@@ -452,20 +464,23 @@ offsets that sit next to these RVAs. Examples are the event's `Amount`
 
 ### Table
 
-Sections are DamagePipeline sections. Rows marked "(data)" are not
-functions.
+Sections are DamagePipeline sections at `e057d26`. Rows marked "(data)"
+are not functions.
 
 | RVA | Role | Cited in | Verification status |
 |---|---|---|---|
+| `0x12CC0D0` | FName initializer: `Client_ForceTakeHitCue` (UTF-16 at `0xB40F740`) | §10 | `[exe]`: `lea rdx, [rip+…]; lea rcx, [rip+…]; jmp 0x1725770` |
+| `0x12CC0F0` | FName initializer: `Client_TriggerHitMarker` (UTF-16 at `0xB40F7E8`) | §10 | `[exe]`: same shape as `0x12CC0D0` |
 | `0x1587900` | `TSparseArray::AddUninitialized`; it appends, so groups run in insertion order | §11 | `corpus body` |
 | `0x395ADE0` | `UGameplayTagsManager::Get`, called by the parent-tag step | §11 | `corpus body` |
 | `0x395F4D0` | Parent-tag step, `FGameplayTag::RequestDirectParent` | §11 | `[exe]`: no functions row; calls `0x395ADE0` at `0x395F4EB` |
 | `0x3A93090` | `AActor` slot 231, `FindComponentByClass` (the armor op's `+0x738` call) | §11 | `corpus body` |
 | `0x52311D0` | Adds the delta to the attribute value, then calls `SetAttributeBaseValue` | §10, §11, Change log | `[exe]`: no functions row (r2 HP-10) |
 | `0x5236AF0` | `SetAttributeBaseValue` | §10, §11 | `[exe]`: no functions row (r2 HP-10, HP-14b) |
-| `0x5236E50` | Base-value setter: hook, store, replication push | §10 | `[exe]`: no aligned row (`0x5236E4A` is misaligned); reproduced by the verifier for this page (r2 HP-11 had left it unverified) |
+| `0x5236E50` | Base-value setter: hook, store, replication push | §10, §11 | `[exe]`: no aligned row (`0x5236E4A` is misaligned); reproduced by the verifier for this page (r2 HP-11 had left it unverified) |
 | `0x53202B0` | Vehicle section pick (`ApplyDamageEvent`); §11 lists it as having no body | §11 | `[exe]`: no aligned row (`0x53202AB` is junk); sole caller `0x6B7FE50` |
 | `0x6B17760` | `UWDCharacterVitalityComponent` damage handler | §10 | `corpus body` |
+| `0x6B17D20` | Character health hook (`UWDCharacterVitalityComponent` slot 161): clamp to `[0, MaxHealth + MaxOverhealHealth + MaxDecayHealth]`, at least 1 while `bInvincible` | §10 | `corpus body` |
 | `0x6B52A40` | `Auth_GetArmorDamageEvent`: target hook that filters armor tags | §7.6 | `corpus body` |
 | `0x6B53000` | Armor break/crack caller of `ModifyDamage` | §1.1 | `corpus body` |
 | `0x6B70D80` | Distance-falloff scale, direct hit | §7.6 | `corpus body` |
@@ -475,12 +490,15 @@ functions.
 | `0x6B7330C` | Call site of `0x6B70D80` for the direct hit (inside `0x6B725B0`) | §7.6 | `[exe]` |
 | `0x6B81CE0` | Creates the `Attribute.Gameplay.Health` handle (`+0x140`) | §10 | `corpus body` |
 | `0x6B82520` | `UWDVitalityComponent` base damage: the health write | §10 | `corpus body` |
+| `0x6B83270` | Base health hook (`UWDVitalityComponent` slot 161): clamp to `[0, MaxHealth]` | §10 | `corpus body` (a leaf with no `.pdata` entry) |
+| `0x6B8E100` | Projectile instance constructor; sets the `+0x101` byte to 1 | §7.6 | `corpus body` |
 | `0x6B92900` | Back-blast source; calls `0x6F06EB0` | §1.1 | `corpus body` |
 | `0x6BB4D30` | Builds a WD damage event; used by every caller | §1.1 | `corpus body` |
 | `0x6BB5D20` | Requirement-container match | §1, §4 | `corpus body` |
 | `0x6BB5DC0` | `TSet::Emplace` | §11 | `corpus body` |
 | `0x6BB5ED0` | Group insertion | §11 | `[exe]`: no functions row; tail-jumps to `0x6BB5DC0` at `0x6BB5F2C` |
 | `0x6BB5F40` | Fallback sort | §1 | `corpus body` |
+| `0x6BB6160` | `UWDGlobalDamageSystem` constructor; sets `RootDamageTag` to `Meta.Damage` | §5 | `corpus body` |
 | `0x6BB61A0` | Per-group sort | §1, §5 | `corpus body` |
 | `0x6BB6730` | Match a row's entries and append the selected ones | §1, §4 | `corpus body` |
 | `0x6BB6A50` | Callback thunk to `0x6BB6730` | §1 | `corpus body` |
@@ -515,20 +533,22 @@ functions.
 | `0x6E77C40` | Character `TakeDamage` override | §10 | `corpus body` |
 | `0x6E7F0B0` | `ProcessEvent` stub, parameter shape of `Client_ForceTakeHitCue` | §10 | `corpus body` |
 | `0x6E7F420` | `ProcessEvent` stub, parameter shape of `Client_TriggerHitMarker` | §10 | `corpus body` |
-| `0x6EF8DE0` | Event to `FWDModifyDamageData` conversion | §1, Change log | `[exe]`: no functions row; sole caller `0x6F02EC0` |
+| `0x6EF8DE0` | Event to `FWDModifyDamageData` conversion | §1, §11, Change log | `[exe]`: no functions row; sole caller `0x6F02EC0` |
 | `0x6EF8E2C` | Loads the event's `Amount` (`+0x0`) (in `0x6EF8DE0`) | §1 | `[exe]` |
 | `0x6EF8E37` | Stores it as `ModifyDamageData.Amount` (in `0x6EF8DE0`) | §1 | `[exe]` |
 | `0x6EF944F` | Builds the Unreal damage event | §1.1 | `corpus body`, misaligned: the entry is `0x6EF9450` |
+| `0x6EF9450` | Real entry of the Unreal damage-event builder (row `0x6EF944F`) | §1.1, Change log | `corpus body`, misaligned: filed under row `0x6EF944F` |
 | `0x6EF9840` | Apply step: `WDDamageable` path or `TakeDamage` | §1.1 | `corpus body` |
 | `0x6EFFD40` | Selects the first active damage system | §1 | `corpus body` |
 | `0x6F02EC0` | Native `UWDDamageSubsystem::ModifyDamage` | §1, §1.1 | `corpus body` |
 | `0x6F03F60` | Vehicle-supply-container caller | §1.1 | `corpus body` |
-| `0x6F042A0` | Unnamed caller | §1.1 | `[exe]`: row status `failed` (call analysis failed); call at `0x6F0526C` |
+| `0x6F042A0` | Unnamed caller | §1.1, §11 | `[exe]`: row status `failed` (call analysis failed); call at `0x6F0526C` |
 | `0x6F06540` | Radial-damage caller | §1.1 | `corpus body` |
 | `0x6F06EB0` | Back-blast caller | §1.1 | `corpus body` |
 | `0x6F07C10` | Reflected `BP_DamageActor`; skips `ModifyDamage` | §1.1 | `corpus body` |
 | `0x6F08A60` | Reflected `exec_ModifyDamage` | §1, §1.1 | `corpus body` |
 | `0x6F08CDC` | Reflected `SimpleDamageActor` | §1.1 | `corpus body`, misaligned: the registered entry is `0x6F08CE0` |
+| `0x6F08CE0` | Registered entry of the reflected `SimpleDamageActor` (row `0x6F08CDC`) | §1.1, Change log | `corpus body`, misaligned: filed under row `0x6F08CDC` |
 | `0x6F09210` | Reflected `SimpleDamageActorWithInstigatorController` | §1.1 | `corpus body` |
 | `0x7635EA0` | Vehicle supply containers' slot 127; calls `0x6F03F60` | §1.1 | `corpus body` |
 | `0x76740F0` | Unnamed caller | §1.1 | `corpus body` |
@@ -624,6 +644,7 @@ directories.
 | 2026-10-17 08:14 | Round-2 verifier corrections (`d560d33`) | Corrected the bullet-event and health-write details; marked four functions without corpus bodies as disassembly-only |
 | 2026-10-17 | This page | Merged the three notes; built the RVA status table (§3); found the two misaligned rows and corrected the call-site count |
 | 2026-10-17 | Round-3 corrections applied to DamagePipeline | Cites `0x6EF9450` and `0x6F08CE0`; §11 lists every body-less function; `RootDamageTag`, the `+0x101` byte, the two player-character stubs and the role-3 decay-pool cut added |
+| 2026-10-17 20:54 | Round-4 corrections (`e057d26`) | Cite the two vitality slot-161 clamps (`0x6B17D20`, `0x6B83270`); this table refreshed at `e057d26` (93 RVAs), with the six round-3 additions folded in |
 
 ## 5. Open items
 
