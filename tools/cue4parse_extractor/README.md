@@ -47,8 +47,8 @@ types from an unobfuscated usmap, by the same rules as `deobfuscate` (see
 Simpler: generate the deobfuscated usmap once and pass it as `<usmap>`:
 
 ```
-WdExtract - - mappings.7.4-516586+++Wardogs+Live-Wardogs.usmap out - deobfuscate ^
-  mappings.7.4-516586+++Wardogs+Live-Wardogs.deobfuscated.usmap ^
+WdExtract - - mappings\5.7.4-516586+++Wardogs+Live-Wardogs.usmap out - deobfuscate ^
+  mappings\5.7.4-516586+++Wardogs+Live-Wardogs.deobfuscated.usmap ^
   --names mappings\old-deobfuscated-507-ClosedBeta.usmap
 ```
 
