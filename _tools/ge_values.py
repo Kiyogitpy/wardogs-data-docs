@@ -72,8 +72,8 @@ def main():
         "another attribute). How effects and attributes work is in the "
         "[Gameplay Effects Pipeline](Wardogs_GameplayEffectsPipeline_v1.md).", "",
         "**Source.** A static export of each effect's cooked class default object from the game's paks "
-        "(CUE4Parse with the 5.7.4 usmap; three usmap array types were corrected so the modifiers and tag "
-        "queries decode). The data is in [`assets/data/ge-values.json`](assets/data/ge-values.json); this page "
+        "([`tools/cue4parse_extractor`](tools/cue4parse_extractor/README.md): CUE4Parse with the 5.7.4 usmap; three usmap "
+        "array types were corrected so the modifiers and tag queries decode). The data is in [`assets/data/ge-values.json`](assets/data/ge-values.json); this page "
         "is generated from it by [`_tools/ge_values.py`](_tools/ge_values.py).", "",
         "**Reading the tables.** Attribute names drop `Attribute.Gameplay.`. Operations: `+` Add, `×` Multiply, "
         "`÷` Divide, `×c` MultiplyCompound, `+f` AddFinal, `=` Override. `@StackCount` and the like name the "

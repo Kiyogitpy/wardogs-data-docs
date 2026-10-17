@@ -10,7 +10,7 @@ nav_order: 3.5
 
 What every `GE_*` gameplay effect does: 341 effects, 1069 modifiers (962 fixed values, 82 set by the caller, 25 backed by another attribute). How effects and attributes work is in the [Gameplay Effects Pipeline](Wardogs_GameplayEffectsPipeline_v1.md).
 
-**Source.** A static export of each effect's cooked class default object from the game's paks (CUE4Parse with the 5.7.4 usmap; three usmap array types were corrected so the modifiers and tag queries decode). The data is in [`assets/data/ge-values.json`](assets/data/ge-values.json); this page is generated from it by [`_tools/ge_values.py`](_tools/ge_values.py).
+**Source.** A static export of each effect's cooked class default object from the game's paks ([`tools/cue4parse_extractor`](tools/cue4parse_extractor/README.md): CUE4Parse with the 5.7.4 usmap; three usmap array types were corrected so the modifiers and tag queries decode). The data is in [`assets/data/ge-values.json`](assets/data/ge-values.json); this page is generated from it by [`_tools/ge_values.py`](_tools/ge_values.py).
 
 **Reading the tables.** Attribute names drop `Attribute.Gameplay.`. Operations: `+` Add, `×` Multiply, `÷` Divide, `×c` MultiplyCompound, `+f` AddFinal, `=` Override. `@StackCount` and the like name the curve indexing ([pipeline §4.2](Wardogs_GameplayEffectsPipeline_v1.md#42-modifiers)). Cooked objects only store values that differ from the native default, so a blank duration or stack count means the native default, which is not in the paks. How the operations combine into an attribute's current value is not traced yet (pipeline E-1), so the tables give each modifier, not a combined result.
 

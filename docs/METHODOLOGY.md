@@ -117,12 +117,14 @@ The game patches regularly. Each patch:
 ## Reproducibility
 
 Everything in `data/*.json` comes from the game's own cooked paks,
-exported with a CUE4Parse pipeline and the build's usmap
-(`5.7.4-516586+++Wardogs+Live-Wardogs.usmap`). That extractor still lives
-in the author's workspace and is not packaged in this repository yet
-(see [`tools/README.md`](../tools/README.md)), so the export itself
-cannot be rerun from a fresh clone today. Anyone with their own copy of
-the game can reproduce it with CUE4Parse or FModel and the same usmap.
+exported with CUE4Parse and the build's usmap
+(`5.7.4-516586+++Wardogs+Live-Wardogs.usmap`). The exporter behind the
+gameplay effect values and the Blueprint bytecode is packaged in
+[`tools/cue4parse_extractor/`](../tools/cue4parse_extractor/README.md),
+with build and run steps. The older pipeline that produced `data/*.json`
+is still in the author's workspace; anyone with their own copy of the
+game can reproduce that export with CUE4Parse or FModel and the same
+usmap.
 
 **Keys and mappings stay local.** The pak AES key and the `.usmap` /
 `.idmap` mappings are never committed. Keep them in the checkout's root
