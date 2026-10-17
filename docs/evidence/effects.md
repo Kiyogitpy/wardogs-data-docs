@@ -47,8 +47,10 @@ The method is the one on the [vehicle evidence page](vehicles.md#1-method):
    independent verifier as claims EV-1 to EV-22, shared with the vehicle
    page. The verifier confirmed all 22 claims and both pages' counts, and
    recorded EV-21 (`0x766727F`) as a citation error in the doc. The 18
-   RVAs added at `e057d26` are round-5 claims for the same verifier; their
-   four `[exe]` statuses rest on round-4 ledger rows.
+   RVAs added at `e057d26` went to the same verifier in round 5, which
+   confirmed the RVA set, every status and the counts; their four `[exe]`
+   statuses rest on round-4 ledger rows. The verifier corrected one role
+   (`0x52317F0` is not the only reader of the stacking policies).
 
 Re-run the corpus part with `python -I` from the repository root
 ([`_tools/rva_status.py`](../../_tools/rva_status.py)):
@@ -101,7 +103,7 @@ at `e057d26`.
 | `0x522F8F0` | `FindOrAddAttribute` | §1.2 (L84), §4.3 (L221) | `corpus body` |
 | `0x52311D0` | Adds a delta and calls `SetAttributeBaseValue` | §1.2 (L85), §4.3 (L248), §8 (L355) | `[exe]`: no functions row (r2 HP-10, r3 V-6) |
 | `0x52313E0` | Predicted stack change: pending delta `+0x3C` and the removal key set `+0xF8` (E-7) | §8 (L356) | `[exe]`: no functions row (r4 WA-9) |
-| `0x52317F0` | The only reader of the stacking policies | §5 (L297), §7.1 (L338) | `corpus body` |
+| `0x52317F0` | Stack modification; reads `StackDurationRefreshPolicy` (only here) and `StackExpirationPolicy` (also read on expiry by `0x522D260`) | §5 (L297), §7.1 (L338) | `corpus body` |
 | `0x5231DA0` | Lowers the pending predicted stack delta `+0x3C` (E-7) | §8 (L356) | `corpus body` |
 | `0x52330B0` | Sets `+0x150` when `OngoingRequirements` are not met (E-7) | §8 (L356) | `[exe]`: no functions row (r4 WA-8) |
 | `0x5233C00` | Replication receive handler | §4.1 (L170), §4.3 (L221) | `corpus body` |

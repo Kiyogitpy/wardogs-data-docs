@@ -45,8 +45,9 @@ The method is the one on the [vehicle evidence page](vehicles.md#1-method):
    `E8`/`E9` and RIP-relative operands, and compared with the corpus
    `calls` table.
 6. The statuses that are not a plain corpus body, and the flagged body,
-   are claims EV-W1 to EV-W4 (notes below) for the round-5 independent
-   verifier.
+   went to an independent verifier as claims EV-W1 to EV-W4 (notes
+   below). The verifier re-ran the script and the disassembly and
+   confirmed all four claims, the page's counts and every table row.
 
 Re-run the corpus part with `python -I` from the repository root
 ([`_tools/rva_status.py`](../../_tools/rva_status.py)):
