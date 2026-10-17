@@ -15,6 +15,7 @@ tags. Entries that need instigator tags are counted as unknown instead of applie
     python _tools/damage_tables.py --ammo M4  # one weapon: ammo type x armor class
     python _tools/damage_tables.py --vehicles # rule factor per vehicle row and caliber
     python _tools/damage_tables.py --survive  # hits to destroy every vehicle variant
+    python _tools/damage_tables.py --hitboxes # collision slot -> section map and damage ratios per vehicle
     python _tools/damage_tables.py --write    # refresh every marked table in the docs after a data update
 
 The distance curve's Time axis is centimetres: the native code evaluates it with the
@@ -398,6 +399,83 @@ def apply_section(secs, health, key, amount, depth=0):
     return handled
 
 
+def vehicle_rule_factor(entries, cal, hit, proj):
+    """Product of the vehicle-row (and generic-row) factors for an FMJ direct hit of caliber `cal` on a
+    section whose hit-location tag is `hit` (entries without instigator/target requirements)."""
+    src, ctx, _ = proj[cal]
+    source = expand(ctx + [src, cal, "Meta.Damage.DamageType.Projectile"])
+    f = 1.0
+    for e in entries:
+        m = e["OutModification"]
+        if e["InstigatorRequirements"] or e["TargetRequirements"] or not e["SourceRequirements"]:
+            continue
+        if not set(e["SourceRequirements"]) <= source:
+            continue
+        if e["PossibleHitLocations"] and not (hit and set(e["PossibleHitLocations"]) & set(lineage(hit))):
+            continue
+        if m["Operation"].endswith("Percentage_Ongoing"):
+            f *= 1 + m["Amount"] / 100
+    return max(f, 0.0)
+
+
+def surface_maps(module_files):
+    """(surface group, collision slot or '(default)') -> section tag, from enabled health fragments."""
+    out = {}
+    for f in module_files:
+        objs = {o.get("Name"): o for o in exports(f)}
+        owner = next((o for o in objs.values() if o.get("Type") in ("ModularVehiclePlatform", "ModularVehiclePart")), None)
+        for fr in (owner or {}).get("Properties", {}).get("Fragments", []):
+            obj = objs.get(fr["Value"]["Fragment"]["ObjectName"].split(":")[-1].rstrip("'"), {})
+            if not fr["Value"].get("bEnabled", True) or obj.get("Type") != "MVF_HealthSections":
+                continue
+            for g in obj.get("Properties", {}).get("ComplexSurfaceMappings", {}).get("SurfaceGroups", []):
+                group, val = tag(g["Key"]), g["Value"]
+                for s in val.get("SlotMap", []):
+                    out[(group, s["Key"])] = tag(s["Value"])
+                if val.get("bUseDefault"):
+                    out[(group, "(default)")] = tag(val.get("Default"))
+    return out
+
+
+def vehicle_tables():
+    generic = rows("DT_GlobalDamage_VehicleData.json")["Meta.Damage.Vehicle"]["DamageModificationEntries"]
+    vrows = {}
+    for path in glob.glob(os.path.join(DATA, "Wardogs/Plugins/**/DT_GlobalDamage_VehicleData_*.json"), recursive=True):
+        vrows.update(exports(path)[0]["Rows"])
+    return generic, vrows
+
+
+def hitbox_table(proj):
+    """Collision slot -> section map per vehicle, with section health, routing to the main health and the
+    rule factor per caliber at that hitbox. Variants sharing a damage row and map are listed once."""
+    generic, vrows = vehicle_tables()
+    cals = ["Item.Caliber.556mm", "Item.Caliber.50Cal", "Item.Caliber.30mm"]
+    print("| Vehicle (variants) | Collision slot | Section (max health) | Routing to main health | "
+          + " | ".join(f"`{c.replace('Item.Caliber.', '')}`" for c in cals) + " |")
+    print("|---|---|---|---|" + "---:|" * len(cals))
+    seen = {}
+    for vpath in sorted(glob.glob(os.path.join(DATA, "**", "Variants", "VV_*.json"), recursive=True)):
+        modules, _, _ = assemble(vpath)
+        secs, dtag, smap = sections(modules), damage_tag(modules), surface_maps(modules)
+        if not smap or dtag not in vrows:
+            continue
+        key = (dtag, tuple(sorted(smap.items())))
+        seen.setdefault(key, [secs, smap, dtag]).append(os.path.basename(vpath)[3:-5])
+    for (dtag, _), (secs, smap, _, *names) in seen.items():
+        entries = vrows[dtag]["DamageModificationEntries"] + generic
+        label = f"`{dtag.replace('Meta.Damage.Vehicle.', '')}` ({', '.join(names)})"
+        for (group, slot), sec in sorted(smap.items(), key=lambda kv: (kv[0][1] == "(default)", kv[0])):
+            hp, hit, pre, post, simul = secs.get(sec, (None, None, [], [], []))
+            routes = [f"pre {s:g}" for t2, s, _ in pre if t2 == MAIN] +                      [f"post {s:g} when depleted" if d else f"post {s:g}" for t2, s, d in post if t2 == MAIN] +                      [f"simultaneous {s:g}" for t2, s, _ in simul if t2 == MAIN]
+            routing = "is the main health" if sec == MAIN else (", ".join(routes) or "none")
+            cells = [f"×{vehicle_rule_factor(entries, c, hit, proj):.3g}" for c in cals]
+            grp = "" if group == "ComplexSurface.Group.Default" else f" [{group.replace('ComplexSurface.Group.', '')}]"
+            hp_s = f"{hp:g}" if hp is not None else "?"
+            print(f"| {label} | `{slot}`{grp} | {sec.replace('Attribute.Gameplay.', '')} ({hp_s}) | {routing} | "
+                  + " | ".join(cells) + " |")
+            label = ""
+
+
 def survive_table(proj):
     """Hits to destroy every vehicle variant: main body, and the fastest section, per caliber."""
     generic = rows("DT_GlobalDamage_VehicleData.json")["Meta.Damage.Vehicle"]["DamageModificationEntries"]
@@ -483,6 +561,9 @@ def main():
         write_docs()
         return
     proj = projectiles()
+    if "--hitboxes" in sys.argv:
+        hitbox_table(proj)
+        return
     if "--survive" in sys.argv:
         survive_table(proj)
         return

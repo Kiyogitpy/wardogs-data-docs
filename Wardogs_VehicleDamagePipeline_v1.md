@@ -29,7 +29,7 @@ output), **Data** (export), **Derived** (arithmetic on both), **Open**.
 |---|---|---|
 | Rules: same evaluator; target tag = the vehicle's `VehicleDamageTag`; parent walk reaches the generic `Meta.Damage.Vehicle` row | **Native** + **Data** | §1 |
 | Rule data: 21 vehicle files, 23 rows, 665 entries (581 selectable), no custom operations, 5 `Add` entries | **Data** | §2 |
-| Hit location: the hit section's `Meta.Damage.HitLocation.*` tag | **Native** | §3 |
+| Hit location: the hit section's `Meta.Damage.HitLocation.*` tag; hitboxes are collision-mesh slots mapped to sections | **Native** + **Data** | §3 |
 | Section application: pick section → Pre routing → own health → section-damaged handling → Simultaneous → Post | **Native** | §4 |
 | Worked examples: ROT_02 profile, TNK_01 125 mm hit, caliber factors, hits to destroy | **Derived** | §5 |
 
@@ -150,6 +150,193 @@ category sorts first (index −1).
 **Native** (`0x6B80230`). The event's hit location is the first
 `Meta.Damage.HitLocation.*` tag in the hit section's `Tags`. Rules with
 `PossibleHitLocations` such as `…Vehicle.MainRotor` match against it.
+
+### 3.1 Hitboxes
+
+**Native.** A point hit picks its section through the vehicle's complex
+surface, not physics bodies. The zone query `0x5338730` (used by
+`ApplyDamageEvent` and by the projectile hit-tag fetch `0x6B80230`) and
+the reflected `QueryDamageZoneForComplexHit` thunk `0x5345EA0`, which
+inlines the same three calls, do the lookup. Every triangle of the vehicle's
+collision mesh belongs to a named **collision slot**. The
+`BHComplexSurfaceComponent` (vehicle pawn `+0x340`, reached through the
+interface at `+0x338`) resolves the hit to its slot (`0x50BF880`), and the
+damage model looks the slot up in its slot-to-section table (component
+`+0x180`). When the query misses on a point or radial hit, the section tag
+is empty (§4.1). The vehicle's physics asset (for example `PA_ROT_02`, one
+body with collision disabled) plays no part.
+
+**Data.** The table comes from `MVF_HealthSections.ComplexSurfaceMappings`
+in the platform and part files: per surface group, a slot map
+(`CC_FuelTank` → `Attribute.Gameplay.Health.FuelTank`, …), and a default
+section (usually the main health) for every slot not listed. Which code
+fills the component's table from this struct is not traced; the struct is
+the only slot-to-section data in the export. The slot names are collision
+material slots on the vehicle meshes. Where each slot sits on the model
+needs the mesh geometry, which this export does not decode (the mesh's
+material and LOD data come back empty).
+
+**Derived**, `_tools/damage_tables.py --hitboxes`: every vehicle's map,
+with the section's maximum health, how the section passes damage to the
+main health (§4.2), and the rule factor at that hitbox for an FMJ direct
+hit (§1–2; the section's hit-location tag selects location rules).
+Variants that share a damage row and map are listed together. "none"
+means hits there never reach the main health.
+
+<!-- damage_tables --hitboxes -->
+| Vehicle (variants) | Collision slot | Section (max health) | Routing to main health | `556mm` | `50Cal` | `30mm` |
+|---|---|---|---|---:|---:|---:|
+| `Air.Rotary.Havoc` (Attack_ROT_02) | `CC_Engine` | Health.Engine (200) | none | ×0.05 | ×0.05 | ×0.195 |
+|  | `CC_FuelTank` | Health.FuelTank (200) | none | ×0.2 | ×0.2 | ×0.195 |
+|  | `CC_MainRotor` | Health.Rotor.Main (400) | post 1 when depleted, simultaneous 0.5 | ×0.025 | ×0.025 | ×0.195 |
+|  | `CC_TailRotor` | Health.Rotor.Tail (300) | post 1 when depleted, simultaneous 1 | ×0.025 | ×0.025 | ×0.195 |
+|  | `CC_Wheel_0` | Health.Wheel.Left.Front (100) | post 1 when depleted | ×0.05 | ×0.05 | ×0.195 |
+|  | `CC_Wheel_1` | Health.Wheel.Right.Front (100) | post 1 when depleted | ×0.05 | ×0.05 | ×0.195 |
+|  | `(default)` | Health (800) | is the main health | ×0.025 | ×0.025 | ×0.195 |
+| `Air.Rotary.LittleBird` (ROT_03_Default, ROT_03_MachineGuns, ROT_03_RocketPods) | `CC_Engine` | Health.Engine (200) | none | ×0.075 | ×0.075 | ×0.595 |
+|  | `CC_FuelTank` | Health.FuelTank (200) | none | ×0.075 | ×0.075 | ×0.595 |
+|  | `CC_MainRotor` | Health.Rotor.Main (400) | post 1 when depleted, simultaneous 0.5 | ×0.075 | ×0.075 | ×0.595 |
+|  | `CC_TailRotor` | Health.Rotor.Tail (300) | post 1 when depleted, simultaneous 1 | ×0.075 | ×0.075 | ×0.595 |
+|  | `(default)` | Health (400) | is the main health | ×0.075 | ×0.075 | ×0.595 |
+| `Air.Rotary.ROT_04` (ROT_04_Default, ROT_04_MountedMachineGuns) | `CC_Engine` | Health.Engine (200) | none | ×0.05 | ×0.05 | ×0.255 |
+|  | `CC_FuelTank` | Health.FuelTank (200) | none | ×0.225 | ×0.225 | ×0.255 |
+|  | `CC_MainRotor` | Health.Rotor.Main (400) | post 1 when depleted, simultaneous 0.5 | ×0.05 | ×0.05 | ×0.255 |
+|  | `CC_TailRotor` | Health.Rotor.Tail (300) | post 1 when depleted, simultaneous 1 | ×0.05 | ×0.05 | ×0.255 |
+|  | `(default)` | Health (600) | is the main health | ×0.025 | ×0.025 | ×0.255 |
+| `Land.Tracked.Leopard.Spawn` (SPW_01) | `CC_FuelTank` | Health.FuelTank (100) | none | ×0 | ×0 | ×0.21 |
+|  | `CC_MainBody` | Health (1000) | is the main health | ×0 | ×0 | ×0.21 |
+|  | `CC_Radar` | Health.Radar (100) | none | ×0.05 | ×0.05 | ×0.21 |
+|  | `CC_Tracks_L` | Health.Tracks.Left (125) | post 0.5 when depleted, simultaneous 1 | ×0 | ×0 | ×0.21 |
+|  | `CC_Tracks_R` | Health.Tracks.Right (125) | post 0.5 when depleted, simultaneous 1 | ×0 | ×0 | ×0.21 |
+|  | `CC_Radar` [Radar] | Health.Radar (100) | none | ×0.05 | ×0.05 | ×0.21 |
+|  | `(default)` | Health (1000) | is the main health | ×0 | ×0 | ×0.21 |
+| `Land.Tracked.Leopard.Spawn` (SPW_02, SPW_03) | `CC_FuelTank` | Health.FuelTank (100) | none | ×0 | ×0 | ×0.21 |
+|  | `CC_MainBody` | Health (1000) | is the main health | ×0 | ×0 | ×0.21 |
+|  | `CC_Radar` | Health.Radar (100) | none | ×0.05 | ×0.05 | ×0.21 |
+|  | `CC_Tracks_L` | Health.Tracks.Left (125) | post 0.5 when depleted, simultaneous 1 | ×0 | ×0 | ×0.21 |
+|  | `CC_Tracks_R` | Health.Tracks.Right (125) | post 0.5 when depleted, simultaneous 1 | ×0 | ×0 | ×0.21 |
+|  | `CC_Radar` [Radar] | Health.Radar (100) | none | ×0.05 | ×0.05 | ×0.21 |
+|  | `(default)` | Health (1000) | is the main health | ×0 | ×0 | ×0.21 |
+|  | `(default)` [Radar] | Health.Radar (100) | none | ×0.05 | ×0.05 | ×0.21 |
+| `Stationary.Mistral` (STN_01) | `CC_Main` | Health (3000) | is the main health | ×0.15 | ×0.15 | ×0.5 |
+|  | `(default)` | Health (3000) | is the main health | ×0.15 | ×0.15 | ×0.5 |
+| `Stationary.Phalanx` (STN_02) | `CC_Main` | Health (5000) | is the main health | ×0.15 | ×0.15 | ×0.5 |
+|  | `(default)` | Health (5000) | is the main health | ×0.15 | ×0.15 | ×0.5 |
+| `Stationary.Mortar` (STN_03) | `CC_Main` | Health (3000) | is the main health | ×0.15 | ×0.15 | ×0.5 |
+|  | `(default)` | Health (3000) | is the main health | ×0.15 | ×0.15 | ×0.5 |
+| `Stationary.RadioTower` (STN_04) | `CC_Main` | Health (1000) | is the main health | ×0.05 | ×0.05 | ×0.85 |
+|  | `(default)` | Health (1000) | is the main health | ×0.05 | ×0.05 | ×0.85 |
+| `Land.Tracked.TNK_01.AntiAir` (TNK_01_AntiAir) | `CC_Engine` | Health.Engine (150) | post 1 when depleted, simultaneous 1 | ×0 | ×0 | ×0.18 |
+|  | `CC_FuelTank` | Health.FuelTank (150) | none | ×0 | ×0 | ×0.18 |
+|  | `CC_MainBody` | Health (800) | is the main health | ×0 | ×0 | ×0.18 |
+|  | `CC_Tracks_L` | Health.Tracks.Left (125) | post 0.5 when depleted, simultaneous 1 | ×0 | ×0 | ×0.18 |
+|  | `CC_Tracks_R` | Health.Tracks.Right (125) | post 0.5 when depleted, simultaneous 1 | ×0 | ×0 | ×0.18 |
+|  | `(default)` | Health (800) | is the main health | ×0 | ×0 | ×0.18 |
+| `Land.Tracked.TNK_01.Artillery` (TNK_01_Artillery) | `CC_Engine` | Health.Engine (150) | post 1 when depleted, simultaneous 1 | ×0 | ×0 | ×0.18 |
+|  | `CC_FuelTank` | Health.FuelTank (100) | none | ×0 | ×0 | ×0.18 |
+|  | `CC_MainBody` | Health (650) | is the main health | ×0 | ×0 | ×0.18 |
+|  | `CC_Tracks_L` | Health.Tracks.Left (125) | post 0.5 when depleted, simultaneous 1 | ×0 | ×0 | ×0.18 |
+|  | `CC_Tracks_R` | Health.Tracks.Right (125) | post 0.5 when depleted, simultaneous 1 | ×0 | ×0 | ×0.18 |
+|  | `(default)` | Health (650) | is the main health | ×0 | ×0 | ×0.18 |
+| `Land.Tracked.TNK_01.Heavy` (TNK_01_Heavy) | `CC_Engine` | Health.Engine (150) | post 1 when depleted, simultaneous 1 | ×0 | ×0 | ×0.18 |
+|  | `CC_FuelTank` | Health.FuelTank (150) | none | ×0 | ×0 | ×0.18 |
+|  | `CC_MainBody` | Health (800) | is the main health | ×0 | ×0 | ×0.18 |
+|  | `CC_StrongArea` | Health.Body.StrongArea (350) | pre 0.4, post 1 when depleted | ×0 | ×0 | ×0.18 |
+|  | `CC_Tracks_L` | Health.Tracks.Left (125) | post 0.5 when depleted, simultaneous 1 | ×0 | ×0 | ×0.18 |
+|  | `CC_Tracks_R` | Health.Tracks.Right (125) | post 0.5 when depleted, simultaneous 1 | ×0 | ×0 | ×0.18 |
+|  | `(default)` | Health (800) | is the main health | ×0 | ×0 | ×0.18 |
+| `Land.Tracked.TNK_04.Default` (TNK_04) | `CC_Engine` | Health.Engine (150) | post 1 when depleted, simultaneous 1 | ×0 | ×0 | ×0.21 |
+|  | `CC_FuelTank` | Health.FuelTank (150) | none | ×0 | ×0 | ×0.21 |
+|  | `CC_MainBody` | Health (750) | is the main health | ×0 | ×0 | ×0.21 |
+|  | `CC_Tracks_L` | Health.Tracks.Left (125) | post 0.85 when depleted, simultaneous 1 | ×0 | ×0 | ×0.21 |
+|  | `CC_Tracks_R` | Health.Tracks.Right (125) | post 0.85 when depleted, simultaneous 1 | ×0 | ×0 | ×0.21 |
+|  | `(default)` | Health (750) | is the main health | ×0 | ×0 | ×0.21 |
+| `Land.Wheeled.Bobcat` (WHL_01_Default) | `CC_Engine` | Health (200) | is the main health | ×0.075 | ×0.075 | ×1 |
+|  | `CC_FuelTank` | Health.FuelTank (100) | none | ×0.075 | ×0.075 | ×1 |
+|  | `CC_Wheel_0` [Wheel] | Health.Wheel.Left.Front (75) | pre 0.25, post 0.25 when depleted | ×0.45 | ×0.45 | ×1 |
+|  | `CC_Wheel_1` [Wheel] | Health.Wheel.Right.Front (75) | pre 0.25, post 0.25 when depleted | ×0.45 | ×0.45 | ×1 |
+|  | `CC_Wheel_2` [Wheel] | Health.Wheel.Left.Rear (75) | pre 0.25, post 0.25 when depleted | ×0.45 | ×0.45 | ×1 |
+|  | `CC_Wheel_3` [Wheel] | Health.Wheel.Right.Rear (75) | pre 0.25, post 0.25 when depleted | ×0.45 | ×0.45 | ×1 |
+|  | `(default)` | Health (200) | is the main health | ×0.075 | ×0.075 | ×1 |
+| `Land.Wheeled.Patriot.Kodiak` (WHL_02_Default, WHL_02_Pickup, WHL_02_SUV_RingTurret) | `CC_Engine` | Health (400) | is the main health | ×0.025 | ×0.025 | ×0.5 |
+|  | `CC_FuelTank` | Health.FuelTank (400) | none | ×0.15 | ×0.15 | ×0.5 |
+|  | `CC_Wheel_0` [Wheel] | Health.Wheel.Left.Front (75) | pre 0.25, post 0.25 when depleted | ×0.4 | ×0.4 | ×0.5 |
+|  | `CC_Wheel_1` [Wheel] | Health.Wheel.Right.Front (75) | pre 0.25, post 0.25 when depleted | ×0.4 | ×0.4 | ×0.5 |
+|  | `CC_Wheel_2` [Wheel] | Health.Wheel.Left.Rear (75) | pre 0.25, post 0.25 when depleted | ×0.4 | ×0.4 | ×0.5 |
+|  | `CC_Wheel_3` [Wheel] | Health.Wheel.Right.Rear (75) | pre 0.25, post 0.25 when depleted | ×0.4 | ×0.4 | ×0.5 |
+|  | `(default)` | Health (400) | is the main health | ×0.025 | ×0.025 | ×0.5 |
+| `Land.Wheeled.Humvee.Default` (WHL_05_Humvee_Default) | `CC_Engine` | Health (500) | is the main health | ×0.025 | ×0.025 | ×0.3 |
+|  | `CC_FuelTank` | Health.FuelTank (400) | pre 0.25, post 1 when depleted | ×0.25 | ×0.25 | ×0.3 |
+|  | `CC_Tyre_0` [Wheel] | Health.Wheel.Left.Front (75) | pre 0.25, post 0.25 when depleted | ×0.3 | ×0.3 | ×0.3 |
+|  | `CC_Tyre_1` [Wheel] | Health.Wheel.Right.Front (75) | pre 0.25, post 0.25 when depleted | ×0.3 | ×0.3 | ×0.3 |
+|  | `CC_Tyre_2` [Wheel] | Health.Wheel.Left.Rear (75) | pre 0.25, post 0.25 when depleted | ×0.3 | ×0.3 | ×0.3 |
+|  | `CC_Tyre_3` [Wheel] | Health.Wheel.Right.Rear (75) | pre 0.25, post 0.25 when depleted | ×0.3 | ×0.3 | ×0.3 |
+|  | `CC_Wheel_0` [Wheel] | Health.Wheel.Left.Front (75) | pre 0.25, post 0.25 when depleted | ×0.3 | ×0.3 | ×0.3 |
+|  | `CC_Wheel_1` [Wheel] | Health.Wheel.Right.Front (75) | pre 0.25, post 0.25 when depleted | ×0.3 | ×0.3 | ×0.3 |
+|  | `CC_Wheel_2` [Wheel] | Health.Wheel.Left.Rear (75) | pre 0.25, post 0.25 when depleted | ×0.3 | ×0.3 | ×0.3 |
+|  | `CC_Wheel_3` [Wheel] | Health.Wheel.Right.Rear (75) | pre 0.25, post 0.25 when depleted | ×0.3 | ×0.3 | ×0.3 |
+|  | `(default)` | Health (500) | is the main health | ×0.025 | ×0.025 | ×0.3 |
+| `Land.Wheeled.Humvee.Minigun` (WHL_05_Humvee_RingMinigun) | `CC_Engine` | Health (500) | is the main health | ×0.0125 | ×0.0125 | ×0.25 |
+|  | `CC_FuelTank` | Health.FuelTank (400) | pre 0.25, post 1 when depleted | ×0.125 | ×0.125 | ×0.25 |
+|  | `CC_Tyre_0` [Wheel] | Health.Wheel.Left.Front (75) | pre 0.25, post 0.25 when depleted | ×0.225 | ×0.225 | ×0.25 |
+|  | `CC_Tyre_1` [Wheel] | Health.Wheel.Right.Front (75) | pre 0.25, post 0.25 when depleted | ×0.225 | ×0.225 | ×0.25 |
+|  | `CC_Tyre_2` [Wheel] | Health.Wheel.Left.Rear (75) | pre 0.25, post 0.25 when depleted | ×0.225 | ×0.225 | ×0.25 |
+|  | `CC_Tyre_3` [Wheel] | Health.Wheel.Right.Rear (75) | pre 0.25, post 0.25 when depleted | ×0.225 | ×0.225 | ×0.25 |
+|  | `CC_Wheel_0` [Wheel] | Health.Wheel.Left.Front (75) | pre 0.25, post 0.25 when depleted | ×0.225 | ×0.225 | ×0.25 |
+|  | `CC_Wheel_1` [Wheel] | Health.Wheel.Right.Front (75) | pre 0.25, post 0.25 when depleted | ×0.225 | ×0.225 | ×0.25 |
+|  | `CC_Wheel_2` [Wheel] | Health.Wheel.Left.Rear (75) | pre 0.25, post 0.25 when depleted | ×0.225 | ×0.225 | ×0.25 |
+|  | `CC_Wheel_3` [Wheel] | Health.Wheel.Right.Rear (75) | pre 0.25, post 0.25 when depleted | ×0.225 | ×0.225 | ×0.25 |
+|  | `(default)` | Health (500) | is the main health | ×0.0125 | ×0.0125 | ×0.25 |
+| `Land.Wheeled.Humvee.MachineGun` (WHL_05_Humvee_RingTurret) | `CC_Engine` | Health (500) | is the main health | ×0.02 | ×0.02 | ×0.225 |
+|  | `CC_FuelTank` | Health.FuelTank (400) | pre 0.25, post 1 when depleted | ×0.2 | ×0.2 | ×0.225 |
+|  | `CC_Tyre_0` [Wheel] | Health.Wheel.Left.Front (75) | pre 0.25, post 0.25 when depleted | ×0.3 | ×0.3 | ×0.225 |
+|  | `CC_Tyre_1` [Wheel] | Health.Wheel.Right.Front (75) | pre 0.25, post 0.25 when depleted | ×0.3 | ×0.3 | ×0.225 |
+|  | `CC_Tyre_2` [Wheel] | Health.Wheel.Left.Rear (75) | pre 0.25, post 0.25 when depleted | ×0.3 | ×0.3 | ×0.225 |
+|  | `CC_Tyre_3` [Wheel] | Health.Wheel.Right.Rear (75) | pre 0.25, post 0.25 when depleted | ×0.3 | ×0.3 | ×0.225 |
+|  | `CC_Wheel_0` [Wheel] | Health.Wheel.Left.Front (75) | pre 0.25, post 0.25 when depleted | ×0.3 | ×0.3 | ×0.225 |
+|  | `CC_Wheel_1` [Wheel] | Health.Wheel.Right.Front (75) | pre 0.25, post 0.25 when depleted | ×0.3 | ×0.3 | ×0.225 |
+|  | `CC_Wheel_2` [Wheel] | Health.Wheel.Left.Rear (75) | pre 0.25, post 0.25 when depleted | ×0.3 | ×0.3 | ×0.225 |
+|  | `CC_Wheel_3` [Wheel] | Health.Wheel.Right.Rear (75) | pre 0.25, post 0.25 when depleted | ×0.3 | ×0.3 | ×0.225 |
+|  | `(default)` | Health (500) | is the main health | ×0.02 | ×0.02 | ×0.225 |
+| `Land.Wheeled.DuneBuggy` (WHL_06_DuneBuggy_Default) | `CC_Engine` | Health (400) | is the main health | ×0.05 | ×0.05 | ×0.4 |
+|  | `CC_FuelTank` | Health.FuelTank (300) | post 1 when depleted | ×0.3 | ×0.3 | ×0.4 |
+|  | `CC_Tyre_0` [Wheel] | Health.Wheel.Left.Front (75) | pre 0.25, post 0.25 when depleted | ×0.375 | ×0.375 | ×0.4 |
+|  | `CC_Tyre_1` [Wheel] | Health.Wheel.Right.Front (75) | pre 0.25, post 0.25 when depleted | ×0.375 | ×0.375 | ×0.4 |
+|  | `CC_Tyre_2` [Wheel] | Health.Wheel.Left.Rear (75) | pre 0.25, post 0.25 when depleted | ×0.375 | ×0.375 | ×0.4 |
+|  | `CC_Tyre_3` [Wheel] | Health.Wheel.Right.Rear (75) | pre 0.25, post 0.25 when depleted | ×0.375 | ×0.375 | ×0.4 |
+|  | `CC_Wheel_0` [Wheel] | Health.Wheel.Left.Front (75) | pre 0.25, post 0.25 when depleted | ×0.375 | ×0.375 | ×0.4 |
+|  | `CC_Wheel_1` [Wheel] | Health.Wheel.Right.Front (75) | pre 0.25, post 0.25 when depleted | ×0.375 | ×0.375 | ×0.4 |
+|  | `CC_Wheel_2` [Wheel] | Health.Wheel.Left.Rear (75) | pre 0.25, post 0.25 when depleted | ×0.375 | ×0.375 | ×0.4 |
+|  | `CC_Wheel_3` [Wheel] | Health.Wheel.Right.Rear (75) | pre 0.25, post 0.25 when depleted | ×0.375 | ×0.375 | ×0.4 |
+|  | `(default)` | Health (400) | is the main health | ×0.05 | ×0.05 | ×0.4 |
+| `Land.Wheeled.Ural` (WHL_07_Battle, WHL_07_Default, WHL_07_ArmouredBattle) | `CC_Engine` | Health (700) | is the main health | ×0.025 | ×0.025 | ×0.6 |
+|  | `CC_Flatbed` | Health.Body.ModerateArea (1) | pre 0.25, post 0.35 when depleted | ×0.05 | ×0.05 | ×0.6 |
+|  | `CC_FuelTank` | Health.FuelTank (400) | pre 0.25, post 1 when depleted | ×0.225 | ×0.225 | ×0.6 |
+|  | `CC_Tyre_0` [Wheel] | Health.Wheel.Left.Front (75) | pre 0.25, post 0.25 when depleted | ×0.225 | ×0.225 | ×0.6 |
+|  | `CC_Tyre_1` [Wheel] | Health.Wheel.Right.Front (75) | pre 0.25, post 0.25 when depleted | ×0.225 | ×0.225 | ×0.6 |
+|  | `CC_Tyre_2` [Wheel] | Health.Wheel.Left.Rear (75) | pre 0.25, post 0.25 when depleted | ×0.225 | ×0.225 | ×0.6 |
+|  | `CC_Tyre_3` [Wheel] | Health.Wheel.Right.Rear (75) | pre 0.25, post 0.25 when depleted | ×0.225 | ×0.225 | ×0.6 |
+|  | `CC_Tyre_4` [Wheel] | Health.Wheel.Left.Middle (75) | pre 0.25, post 0.25 when depleted | ×0.225 | ×0.225 | ×0.6 |
+|  | `CC_Tyre_5` [Wheel] | Health.Wheel.Right.Middle (75) | pre 0.25, post 0.25 when depleted | ×0.225 | ×0.225 | ×0.6 |
+|  | `CC_Wheel_0` [Wheel] | Health.Wheel.Left.Front (75) | pre 0.25, post 0.25 when depleted | ×0.225 | ×0.225 | ×0.6 |
+|  | `CC_Wheel_1` [Wheel] | Health.Wheel.Right.Front (75) | pre 0.25, post 0.25 when depleted | ×0.225 | ×0.225 | ×0.6 |
+|  | `CC_Wheel_2` [Wheel] | Health.Wheel.Left.Rear (75) | pre 0.25, post 0.25 when depleted | ×0.225 | ×0.225 | ×0.6 |
+|  | `CC_Wheel_3` [Wheel] | Health.Wheel.Right.Rear (75) | pre 0.25, post 0.25 when depleted | ×0.225 | ×0.225 | ×0.6 |
+|  | `CC_Wheel_4` [Wheel] | Health.Wheel.Left.Middle (75) | pre 0.25, post 0.25 when depleted | ×0.225 | ×0.225 | ×0.6 |
+|  | `CC_Wheel_5` [Wheel] | Health.Wheel.Right.Middle (75) | pre 0.25, post 0.25 when depleted | ×0.225 | ×0.225 | ×0.6 |
+|  | `(default)` | Health (700) | is the main health | ×0.025 | ×0.025 | ×0.6 |
+| `Land.Wheeled.WHL_08.Default` (WHL_08_Default, WHL_08_RingTurret) | `CC_Engine` | Health (500) | is the main health | ×0.025 | ×0.025 | ×0.4 |
+|  | `CC_FuelTank` | Health.FuelTank (400) | none | ×0.2 | ×0.2 | ×0.4 |
+|  | `CC_Tyre_0` [Wheel] | Health.Wheel.Left.Front (75) | pre 0.25, post 0.25 when depleted | ×0.35 | ×0.35 | ×0.4 |
+|  | `CC_Tyre_1` [Wheel] | Health.Wheel.Right.Front (75) | pre 0.25, post 0.25 when depleted | ×0.35 | ×0.35 | ×0.4 |
+|  | `CC_Tyre_2` [Wheel] | Health.Wheel.Left.Rear (75) | pre 0.25, post 0.25 when depleted | ×0.35 | ×0.35 | ×0.4 |
+|  | `CC_Tyre_3` [Wheel] | Health.Wheel.Right.Rear (75) | pre 0.25, post 0.25 when depleted | ×0.35 | ×0.35 | ×0.4 |
+|  | `CC_Wheel_0` [Wheel] | Health.Wheel.Left.Front (75) | pre 0.25, post 0.25 when depleted | ×0.35 | ×0.35 | ×0.4 |
+|  | `CC_Wheel_1` [Wheel] | Health.Wheel.Right.Front (75) | pre 0.25, post 0.25 when depleted | ×0.35 | ×0.35 | ×0.4 |
+|  | `CC_Wheel_2` [Wheel] | Health.Wheel.Left.Rear (75) | pre 0.25, post 0.25 when depleted | ×0.35 | ×0.35 | ×0.4 |
+|  | `CC_Wheel_3` [Wheel] | Health.Wheel.Right.Rear (75) | pre 0.25, post 0.25 when depleted | ×0.35 | ×0.35 | ×0.4 |
+|  | `(default)` | Health (500) | is the main health | ×0.025 | ×0.025 | ×0.4 |
+<!-- /damage_tables -->
 
 ## 4. Section application
 
@@ -462,3 +649,4 @@ Every row has a `Meta.Damage.Bullet` rule.
 | 2026-10-17 | Added hits to destroy for six vehicles (§5.4): rules plus section routing, simulated by `--survive`. |
 | 2026-10-17 | §5.4 now covers all 30 variants with a damage row, assembled from the variant data (platform, slots, overrides) instead of hand-picked modules; flagged the unreachable `WHL_08.MachineGun` row. |
 | 2026-10-17 | Independent verifier pass: the destroy routine is not the reflected `DestroyVehicle`; when post routing runs; simultaneous routing fires at any health when `bOnlyWhenDepleted` is clear; the section pick's pre-gate, zone-miss case and thunk path. |
+| 2026-10-17 | Added §3.1 Hitboxes: hits resolve through the complex-surface collision slots, mapped to sections by `ComplexSurfaceMappings`; per-vehicle slot map with section health, routing and rule factors (`--hitboxes`). |
