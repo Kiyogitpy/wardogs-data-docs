@@ -19,6 +19,7 @@ DOC = "Wardogs_Weapons_v2.md"
 BLOCK = re.compile(r"<!-- recoil_table -->.*?<!-- /recoil_table -->", re.S)
 # Vehicle, stationary and test weapons get their multipliers elsewhere; fists never fire.
 SKIP = re.compile(r"Vehicles|VehicleWeaponry|Stationary|Gunsmith|BarrelTest|BuildTool|Fists")
+FOCUS_WINDOW = "_aaabijhbknckndgboaemo_$971AD2AD361E04CE$_$24$"  # stats +0x98
 DEFAULTS = {  # FWDWeaponStats constructor 0x699E6C0
     "RandomDeviationDegree": 5.0,
     "RecoilPatternResetTime": 0.5,
@@ -27,6 +28,8 @@ DEFAULTS = {  # FWDWeaponStats constructor 0x699E6C0
     "PostPatternRandomPitchRecoil": {"X": 1.0, "Y": 2.0},
     "RecoilReductionWhenFocussing": 0.0,
     "FocusEnergyReductionPerShot": 0.0,
+    # +0x98, unnamed: the focus-drain window after focus ends (s)
+    FOCUS_WINDOW: 0.5,
 }
 
 
@@ -88,19 +91,20 @@ def rows():
         pitch, pitch_d = value(ws, "PostPatternRandomPitchRecoil")
         cut, cut_d = value(ws, "RecoilReductionWhenFocussing")
         drain, drain_d = value(ws, "FocusEnergyReductionPerShot")
+        window, window_d = value(ws, FOCUS_WINDOW)
         d = lambda flag: "†" if flag else ""
         first = f"{num(pattern[0]['X'])}, {num(pattern[0]['Y'])}" if pattern else "—"
         out.append(
             f"| `{name}` | {len(pattern)} | {first} | ±{num(dev)}{d(dev_d)} "
             f"| {num(yaw['X'])} … {num(yaw['Y'])}{d(yaw_d)} | {num(pitch['X'])} … {num(pitch['Y'])}{d(pitch_d)} "
             f"| {num(reset)}{d(reset_d)} | ×{num(mult)}{d(mult_d)} | {kick_curve(ws)} | {recovery(ws)} "
-            f"| {num(cut)}{d(cut_d)} / {num(drain)}{d(drain_d)} |")
+            f"| {num(cut)}{d(cut_d)} / {num(drain)}{d(drain_d)} / {num(window)}{d(window_d)} |")
     return out
 
 
 def table():
     head = ["| Weapon | Pattern shots | Shot 1 (yaw, pitch) | Deviation (°) | After pattern: yaw | After pattern: pitch "
-            "| Reset (s) | Kick × | Kick curve | Recovery | Focus: recoil cut % / energy % per shot |",
+            "| Reset (s) | Kick × | Kick curve | Recovery | Focus: recoil cut % / energy % per shot / drain window (s) |",
             "|---|---:|---|---:|---|---|---:|---:|---|---|---|"]
     return "\n".join(head + rows())
 
