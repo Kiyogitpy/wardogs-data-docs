@@ -14,6 +14,7 @@ tags. Entries that need instigator tags are counted as unknown instead of applie
     python _tools/infantry_damage.py --falloff  # upper-torso damage by distance
     python _tools/infantry_damage.py --ammo M4  # one weapon: ammo type x armor class
     python _tools/infantry_damage.py --vehicles # rule factor per vehicle row and caliber
+    python _tools/infantry_damage.py --survive  # hits to destroy six vehicles, per section hit
 
 The distance curve's Time axis is centimetres: the native code evaluates it with the
 straight-line distance between shot origin and hit point in engine units.
@@ -284,9 +285,108 @@ def vehicle_table(proj):
         print(f"| `{key.replace('Meta.Damage.Vehicle.', '')}` | " + " | ".join(cells) + " |")
 
 
+# Platform modules assembled per vehicle (chosen by name; the composition asset is not traced).
+SURVIVE = {
+    "Land.Wheeled.Bobcat": ["VP_WHL_01", "VP_WHL_01_Wheels"],
+    "Land.Wheeled.Humvee.Default": ["VP_WHL_05", "VP_WHL_05_MainBody_Default", "VP_WHL_05_Wheels_Humvee"],
+    "Land.Wheeled.Ural": ["VP_WHL_07", "VP_WHL_07_MainBody_Default", "VP_WHL_07_Rearback", "VP_WHL_07_Wheels"],
+    "Air.Rotary.Havoc": ["VP_ROT_02", "VP_ROT_02_MainBody_Default"],
+    "Air.Rotary.LittleBird": ["VP_ROT_03", "VP_ROT_03_Body"],
+    "Land.Tracked.TNK_01.Heavy": ["VP_TNK_01_Heavy", "VP_TNK_01_Turret_Heavy"],
+}
+MAIN = "Attribute.Gameplay.Health"
+
+
+def sections(modules):
+    """Section tag -> (max health, hit-location tag, pre, post, simultaneous) from the platform modules."""
+    files = {os.path.basename(p)[:-5]: p for p in glob.glob(os.path.join(DATA, "**/VP_*.json"), recursive=True)}
+    out = {}
+    for name in modules:
+        for o in exports(files[name]):
+            for kv in o.get("Properties", {}).get("HealthSections", []):
+                v = kv["Value"]
+                routes = lambda key: [(tag(r["Key"]), r["Value"]["Scalar"]["Value"], r["Value"]["bOnlyWhenDepleted"])
+                                      for r in v.get(key, [])]
+                hit = next((t for t in v.get("Tags", []) if t.startswith("Meta.Damage.HitLocation.")), None)
+                out[tag(kv["Key"])] = (v["MaxHealth"], hit, routes("PreDamageRouting"),
+                                       routes("PostDamageRouting"), routes("SimultaneousDamageRouting"))
+    return out
+
+
+def apply_section(secs, health, key, amount, depth=0):
+    """One point-damage application to a section (0x53205D0 / 0x5339DD0); returns the amount absorbed.
+
+    Assumes section health stops at 0 (the attribute hook is not traced; the depleted-only post
+    routes in the data only carry damage if it does)."""
+    if key not in secs or depth > 10 or amount <= 0:
+        return 0.0
+    _, _, pre, post, simul = secs[key]
+    handled = 0.0
+
+    def reroute(routes):
+        nonlocal handled
+        for target, scalar, only_depleted in routes:
+            if (health[key] <= 0) == only_depleted and amount - handled > 0:
+                handled += apply_section(secs, health, target, (amount - handled) * min(max(scalar, 0), 1), depth + 1)
+
+    reroute(pre)
+    own = min(max(amount - handled, 0), max(health[key], 0))
+    health[key] -= own
+    handled += own
+    if key == MAIN and health[MAIN] <= 0:
+        return handled  # vehicle destroyed: no simultaneous or post routing
+    for target, scalar, only_depleted in simul:
+        if not only_depleted or health[key] <= 0:
+            apply_section(secs, health, target, own * min(max(scalar, 0), 1), depth + 1)
+    reroute(post)
+    return handled
+
+
+def survive_table(proj):
+    generic = rows("DT_GlobalDamage_VehicleData.json")["Meta.Damage.Vehicle"]["DamageModificationEntries"]
+    vrows = {}
+    for path in glob.glob(os.path.join(DATA, "Wardogs/Plugins/**/DT_GlobalDamage_VehicleData_*.json"), recursive=True):
+        vrows.update(exports(path)[0]["Rows"])
+    cals = ["Item.Caliber.556mm", "Item.Caliber.50Cal", "Item.Caliber.20x102mm", "Item.Caliber.30mm"]
+    print("| Vehicle | Section hit (max health) | " + " | ".join(f"`{c.replace('Item.Caliber.', '')}`" for c in cals) + " |")
+    print("|---|---|" + "---:|" * len(cals))
+    for key, modules in SURVIVE.items():
+        secs = sections(modules)
+        entries = vrows["Meta.Damage.Vehicle." + key]["DamageModificationEntries"] + generic
+        for sec, (hp, hit, *_) in secs.items():
+            if not hit:
+                continue
+            cells = []
+            for cal in cals:
+                src, ctx, base = proj[cal]
+                source = expand(ctx + [src, cal, "Meta.Damage.DamageType.Projectile"])
+                f = 1.0
+                for e in entries:
+                    m = e["OutModification"]
+                    if e["InstigatorRequirements"] or e["TargetRequirements"] or not e["SourceRequirements"]:
+                        continue
+                    if not set(e["SourceRequirements"]) <= source:
+                        continue
+                    if e["PossibleHitLocations"] and not set(e["PossibleHitLocations"]) & set(lineage(hit)):
+                        continue
+                    if m["Operation"].endswith("Percentage_Ongoing"):
+                        f *= 1 + m["Amount"] / 100
+                dmg = base * max(f, 0)
+                health = {k: v[0] for k, v in secs.items()}
+                hits = 0
+                while health.get(MAIN, 0) > 0 and hits < 2000 and dmg > 0:
+                    apply_section(secs, health, sec, dmg)
+                    hits += 1
+                cells.append("—" if dmg <= 0 or hits >= 2000 else str(hits))
+            print(f"| `{key}` | {sec.replace('Attribute.Gameplay.', '')} ({hp:g}) | " + " | ".join(cells) + " |")
+
+
 def main():
     sys.stdout.reconfigure(encoding="utf-8")
     proj = projectiles()
+    if "--survive" in sys.argv:
+        survive_table(proj)
+        return
     if "--vehicles" in sys.argv:
         vehicle_table(proj)
         return
