@@ -12,7 +12,10 @@ Frame. The bodies are placed on the reference pose of SK_DefaultCharacter (compo
 the mesh component's RelativeRotation (Yaw -90) so the character faces the actor's forward. Axes are those of
 the vehicle models: (x, y, z) = (-Y, Z, X)_UE / 100, metres, +Y up, the character facing +Z. The origin is the
 mesh component's origin, at the feet; the actor (capsule centre) is 0.96 m above it (RelativeLocation Z -96).
-Each node's translation and rotation are its bone's frame; the node's mesh is in that frame.
+In the uncompressed file each node's translation and rotation are its bone's frame and the mesh is in that
+frame; meshopt's quantization then folds a scale and offset into each node, so read world positions, not
+node transforms, from the published file. phys_material (asset.extras.bodies, node.extras) is the body's
+PhysMaterialOverride, else its PhysMaterial.
 
 UE conventions used: a sphyl's Length is its cylinder part and runs along the element's local Z; a tapered
 capsule has Radius0 at +Z and Radius1 at -Z (in this asset that puts the thick end at the joint on all six
@@ -56,7 +59,6 @@ NOTES = [
     "Origin at the feet (mesh component origin); the actor origin is 0.96 m higher. Facing +Z.",
     "Helmets: MUT_TP_Character also lists five helmet physics assets (PA_Helmet_*), each with one body on head."
     " Whether Mutable merges them into the runtime physics asset is not visible in the cooked data; they are not shown.",
-    "clavicle_l and clavicle_r have no PhysMaterialOverride (phys_material null); the other bodies name theirs.",
 ]
 
 
@@ -270,7 +272,10 @@ def build(physics):
                   "physics_type": body["physicsType"].split("::")[-1], "collision_response": body["collisionResponse"].split("::")[-1]}
         nodes.append((name, t, q, extras, prims))
         bodies.append({"bone": name, "shapes": [s["type"] for s in body["shapes"]], "phys_material": pm})
-    extras = {"physics_asset": PHYSICS_ASSET, "skeletal_mesh": SKELETAL_MESH, "bodies": bodies, "notes": NOTES}
+    bare = [b["bone"] for b in bodies if not b["phys_material"]]
+    notes = NOTES + ([f"{', '.join(bare)}: no PhysMaterialOverride and no PhysMaterial (phys_material null), so the"
+                      " engine's default physical material applies; every other body names its own."] if bare else [])
+    extras = {"physics_asset": PHYSICS_ASSET, "skeletal_mesh": SKELETAL_MESH, "bodies": bodies, "notes": notes}
     return nodes, extras
 
 
