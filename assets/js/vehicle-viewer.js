@@ -43,7 +43,8 @@
   var GHOST = 0.13;                  // alpha of the other slots while one is selected (see-through)
 
   var root, data, mainSection, base, els = {};
-  var state = { vehicle: null, model: -1, caliber: null, mode: "section", selected: -1, picked: null, labels: true, xray: true };
+  var state = { vehicle: null, model: -1, caliber: null, mode: "section", selected: -1, picked: null, labels: true, xray: true,
+                wheels: "intact" };
   var viewer = null, mvState = "pending", materials = [], loadToken = 0, fallbackText = null;
 
   function $(id) { return document.getElementById(id); }
@@ -100,9 +101,11 @@
                             centres: v.slots.map(function (s) { return s.centre || null; }) }] : [];
   }
 
+  // models[].wheels_destroyed: the same model with every wheel destroyed (damage state 2), shown by the
+  // Wheels control; same variants and slots, its own GLB, centres and notes.
   function currentModel() {
-    var v = state.vehicle;
-    return v && state.model >= 0 ? v.models[state.model] || null : null;
+    var v = state.vehicle, m = v && state.model >= 0 ? v.models[state.model] || null : null;
+    return m && state.wheels === "destroyed" && m.wheels_destroyed ? m.wheels_destroyed : m;
   }
 
   function modelLabel(m) { return m.variants.join(", "); }
@@ -715,7 +718,8 @@
     if (fallbackText) showFallback(fallbackText);
     if (viewer && state.vehicle) {
       var m = currentModel();
-      viewer.alt = "Collision mesh of " + vehicleLabel(state.vehicle) + (m && state.vehicle.models.length > 1 ? ", " + modelLabel(m) : "") + ", coloured by " +
+      viewer.alt = "Collision mesh of " + vehicleLabel(state.vehicle) + (m && state.vehicle.models.length > 1 ? ", " + modelLabel(m) : "") +
+        (m && m.path.indexOf("--wheels-destroyed") >= 0 ? ", wheels destroyed" : "") + ", coloured by " +
         (state.mode === "section" ? "health section" : state.mode === "hits" ? "hits to destroy" : "rule factor");
     }
   }
@@ -755,6 +759,10 @@
     });
     sel.value = String(state.model);
     els.variantField.hidden = v.models.length < 2;
+    var m = v.models[state.model], damaged = !!(m && m.wheels_destroyed);
+    if (!damaged) state.wheels = "intact";
+    els.wheels.value = state.wheels;
+    els.wheelsField.hidden = !damaged;
   }
 
   function setVehicle(id, variant, fromHash) {
@@ -822,11 +830,12 @@
     root = $("vv");
     if (!root) return;
     base = root.getAttribute("data-base") || "/";
-    ["vehicle", "caliber", "mode", "stage", "status", "fallback", "legend", "slots", "labels", "xray", "variant", "notes"].forEach(function (k) {
+    ["vehicle", "caliber", "mode", "stage", "status", "fallback", "legend", "slots", "labels", "xray", "variant", "wheels", "notes"].forEach(function (k) {
       els[k] = $("vv-" + k);
     });
     els.panelBody = $("vv-panel-body");
     els.variantField = $("vv-variant-field");
+    els.wheelsField = $("vv-wheels-field");
     viewer = $("vv-model");
     status("Loading the hitbox data…");
 
@@ -844,6 +853,13 @@
         els.variant.addEventListener("change", function () {
           var m = state.vehicle.models[+els.variant.value];
           setVehicle(state.vehicle.id, m ? m.variants[0] : null, false);
+        });
+        els.wheels.addEventListener("change", function () {
+          state.wheels = els.wheels.value;
+          state.picked = null;
+          updateNotes();
+          loadModel();
+          repaint();
         });
         els.caliber.addEventListener("change", function () {
           state.caliber = data.meta.calibers.filter(function (c) { return c.id === els.caliber.value; })[0];

@@ -589,8 +589,9 @@ JSON_CALIBERS = {"Item.Caliber.556mm": "5.56mm", "Item.Caliber.762mm": "7.62mm",
 
 
 def glb_summary(path):
-    """(variants the GLB depicts and notes on it, from asset.extras; material name -> world-space bounding-box centre
-    [x, y, z] in metres, glTF axes, of the primitives that use it). Reads the GLB's JSON chunk alone: POSITION
+    """(variants the GLB depicts, notes on it, from asset.extras; material name -> world-space bounding-box centre
+    [x, y, z] in metres, glTF axes, of the primitives that use it; asset.extras.damage_state or None). Reads the
+    GLB's JSON chunk alone: POSITION
     accessors must carry min/max, so no buffer decoding."""
     import struct
     with open(path, "rb") as f:
@@ -639,7 +640,7 @@ def glb_summary(path):
         visit(i, identity)
     extras = gltf.get("asset", {}).get("extras", {})
     return (extras.get("variants", []), extras.get("notes", []),
-            {k: [round((a + b) / 2, 4) for a, b in zip(*v)] for k, v in boxes.items()})
+            {k: [round((a + b) / 2, 4) for a, b in zip(*v)] for k, v in boxes.items()}, extras.get("damage_state"))
 
 
 def hitbox_json(proj):
@@ -680,11 +681,11 @@ def hitbox_json(proj):
         slug = re.sub(r"[^a-z0-9]+", "-", (dtag.replace("Meta.Damage.Vehicle.", "")
                                             + ("." + names[0] if dtag in shared else "")).lower())
         # A GLB without declared variants counts as <id>.glb showing the group's first variant.
-        models = []
-        for path, (declared, notes, centres) in glbs.items():
+        models, damaged = [], []
+        for path, (declared, notes, centres, damage) in glbs.items():
             shown = [n for n in names if n in (declared or ([names[0]] if path == f"{MODELS}/{slug}.glb" else []))]
             if shown:
-                models.append((path, shown, notes, centres))
+                (damaged if damage else models).append((path, shown, notes, centres, damage))
         models.sort(key=lambda m: names.index(m[1][0]))
         slots = []
         for (group, slot), sec in sorted(smap.items(), key=lambda kv: (kv[0][1] == "(default)", kv[0])):
@@ -701,11 +702,16 @@ def hitbox_json(proj):
         # GLB materials outside the Default surface group are named "<slot>|<Group>".
         keys = [s["slot"] if s["group"] == "ComplexSurface.Group.Default"
                 else f"{s['slot']}|{s['group'].rsplit('.', 1)[-1]}" for s in slots]
+        entries_out = []
+        for path, vs, notes, centres, _ in models:
+            m = {"variants": vs, "path": path, "notes": notes, "centres": [centres.get(k) for k in keys]}
+            # The same model with every wheel destroyed (a GLB with damage_state declaring its first variant).
+            d = next((x for x in damaged if x[4] == "wheels_destroyed" and vs[0] in x[1]), None)
+            if d:
+                m["wheels_destroyed"] = {"variants": vs, "path": d[0], "notes": d[2], "centres": [d[3].get(k) for k in keys]}
+            entries_out.append(m)
         out["vehicles"].append({"id": slug, "damage_row": dtag, "variants": names, "main_health": secs.get(MAIN, (None,))[0],
-                                "models": [{"variants": vs, "path": path, "notes": notes,
-                                            "centres": [centres.get(k) for k in keys]}
-                                           for path, vs, notes, centres in models],
-                                "slots": slots})
+                                "models": entries_out, "slots": slots})
     os.makedirs(os.path.dirname(JSON_OUT), exist_ok=True)
     with open(JSON_OUT, "w", encoding="utf-8", newline="\n") as f:
         json.dump(out, f, indent=1, ensure_ascii=False)
