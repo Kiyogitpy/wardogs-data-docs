@@ -4,7 +4,7 @@
 //   schema <substr...>             -> <outDir>/usmap_schema.json: usmap struct/enum layouts whose name contains a substring
 //   findname <pathPrefix> <text>   -> <outDir>/findname.txt: packages under the prefix whose name map contains the text
 //   dump <listFile | asset...>     -> <outDir>/<name>.json per package (all exports, Blueprint bytecode included)
-//   deobfuscate <out.usmap>        -> writes a deobfuscated copy of <usmap> (needs --names); no paks are read
+//   deobfuscate <out.usmap>        -> writes a deobfuscated copy of <usmap> (needs --names; --sdk <sdk/raw> adds the SDK pass); no paks are read
 // The AES key is read from <aesKeyFile> (hex, one line) and never printed. Oodle is loaded from <oodleDll>;
 // nothing is downloaded. The game is not run.
 using System.Text;
@@ -28,17 +28,22 @@ var rest = args.Skip(6).ToList();
 string namesUsmap = null;
 var ni = rest.IndexOf("--names");
 if (ni >= 0) { namesUsmap = rest[ni + 1]; rest.RemoveRange(ni, 2); }
+string sdkDir = null;  // deobfuscate only: Dumper-style SDK headers (sdk/raw) of this same build
+var si = rest.IndexOf("--sdk");
+if (si >= 0) { sdkDir = rest[si + 1]; rest.RemoveRange(si, 2); }
 Log.Logger = new LoggerConfiguration().MinimumLevel.Warning().WriteTo.Console().CreateLogger();
 Directory.CreateDirectory(outDir);
 
 if (mode == "deobfuscate")
 {
-    if (namesUsmap == null || rest.Count < 1) { Console.WriteLine("usage: ... deobfuscate <out.usmap> --names <donor.usmap>"); return 1; }
+    if (namesUsmap == null || rest.Count < 1) { Console.WriteLine("usage: ... deobfuscate <out.usmap> --names <donor.usmap> [--sdk <sdk/raw>]"); return 1; }
     var live = new UsmapParser(usmap).Mappings;
     var donor = new UsmapParser(namesUsmap).Mappings;
     var before = UsmapStats.Count(live);
     var log = new List<string>();
+    var rawNames = SdkNames.Snapshot(live);  // this build's own names, before anything is borrowed
     NameDonor.Apply(live, donor, log);
+    if (sdkDir != null) SdkNames.Apply(live, rawNames, sdkDir, log);
     KnownPatches.Apply(live.Types, log);
     UsmapWriter.Write(live, rest[0]);
     var check = new UsmapParser(rest[0]).Mappings;  // round trip through CUE4Parse's own reader
@@ -229,7 +234,7 @@ static class NameDonor
         return realBase.Length == len;
     }
 
-    static bool HasUnknown(PropertyType t) => t != null && (t.Type == "Unknown" || HasUnknown(t.InnerType) || HasUnknown(t.ValueType));
+    public static bool HasUnknown(PropertyType t) => t != null && (t.Type == "Unknown" || HasUnknown(t.InnerType) || HasUnknown(t.ValueType));
 
     // Exact type equality; Unknown on this build's side matches anything.
     static bool StrictSame(PropertyType a, PropertyType b)
@@ -401,6 +406,393 @@ static class NameDonor
         }
         log.Insert(0, $"donor: {names} names and {types} element types in {structs} structs; {globalNames} more names from the token dictionary " +
                       $"({dict.Count} tokens, {alignCandidates} alignment candidates considered); {lengthRejects} positional names rejected by the length check; {enumValues} enum values");
+    }
+}
+
+// Restores names (and Unknown element types) from the Dumper-style SDK headers of this same build: sdk/raw/
+// *_classes.hpp and *_structs.hpp list each class's and struct's own properties with real names, C++ types and
+// offsets. Each usmap struct is matched to the declaration whose "// ScriptStruct Pkg.Name" (or Class, ...) header
+// has its name. This build's own readable names, and tokens printed by both, are anchors; the properties between
+// two anchors are paired in order only when both sides have the same count and every pair agrees: compatible type,
+// same static-array size, same readable name, same token, and an SDK name of the length the token encodes. Any
+// disagreement rejects the whole segment. Pairs feed a token dictionary (one token = one name), which is applied
+// everywhere; a token given two names, or a name claimed by two tokens (including names the donor gave), is
+// dropped. Where the donor (an older build, paired by position) gave a token a different name than the SDK does at
+// the same offset, the SDK name wins: the donor cannot see fields that were reordered between builds.
+static class SdkNames
+{
+    record Member(string Type, string Name, int Dim, bool Bit);
+    class Decl { public string Kind; public List<Member> Members = new(); }
+
+    static readonly System.Text.RegularExpressions.Regex Hdr = new(@"^// (\w+) (\S+\.\S+)$");
+    static readonly System.Text.RegularExpressions.Regex CppDecl = new(@"^(?:struct|class) (\S+?)(?: final)?(?: :.*)?$");
+    static readonly System.Text.RegularExpressions.Regex Mem = new(@"^\t(.+?)\s+(\w+)(\[0x([0-9A-Fa-f]+)\])?(\s*:\s*1)?;\s*// 0x[0-9A-Fa-f]+\(0x[0-9A-Fa-f]+\)(.*)$");
+    static readonly System.Text.RegularExpressions.Regex Token = new(@"^(_[a-p]{21})(_\d+)?$");
+    static readonly System.Text.RegularExpressions.Regex Generic = new(@"^(\w+)<(.*)>$");
+    static readonly System.Text.RegularExpressions.Regex NonIdent = new(@"[^A-Za-z0-9_]");
+
+    public static Dictionary<string, List<(int key, string name)>> Snapshot(TypeMappings m) =>
+        m.Types.ToDictionary(kv => kv.Key, kv => kv.Value.Properties.Where(p => p.Value.Index == 0).OrderBy(p => p.Key)
+            .Select(p => (p.Key, p.Value.Name)).ToList());
+
+    static Dictionary<string, Decl> Load(string dir, HashSet<string> ambiguous, Dictionary<string, string> cppToUe)
+    {
+        var decls = new Dictionary<string, Decl>(StringComparer.Ordinal);
+        var cppDup = new HashSet<string>();
+        var files = Directory.GetFiles(dir, "*.hpp").Where(f => f.EndsWith("_classes.hpp") || f.EndsWith("_structs.hpp"))
+            .OrderBy(f => f, StringComparer.Ordinal);
+        foreach (var f in files)
+        {
+            Decl cur = null; string ue = null; bool wantCpp = false;
+            foreach (var line in File.ReadLines(f))
+            {
+                var h = Hdr.Match(line);
+                if (h.Success)
+                {
+                    var kind = h.Groups[1].Value; var full = h.Groups[2].Value;
+                    cur = null; wantCpp = false;
+                    if (!(kind.EndsWith("Class") || kind.EndsWith("Struct") || kind == "PropertyBag")) continue;
+                    ue = full[(full.LastIndexOf('.') + 1)..];
+                    cur = new Decl { Kind = kind }; wantCpp = true;
+                    if (!decls.TryAdd(ue, cur)) ambiguous.Add(ue);
+                    continue;
+                }
+                if (cur == null) continue;
+                if (wantCpp && CppDecl.Match(line) is { Success: true } c)
+                {
+                    var cpp = c.Groups[1].Value;
+                    if (cppToUe.TryGetValue(cpp, out var prev) && prev != ue) cppDup.Add(cpp); else cppToUe[cpp] = ue;
+                    wantCpp = false; continue;
+                }
+                if (line.StartsWith("};")) { cur = null; continue; }
+                var m = Mem.Match(line);
+                if (!m.Success) continue;
+                var name = m.Groups[2].Value;
+                if ((name.StartsWith("Pad_") || name.StartsWith("BitPad_")) && m.Groups[6].Value.Contains("Dumper-7")) continue;
+                cur.Members.Add(new Member(m.Groups[1].Value.Trim(), name,
+                    m.Groups[4].Success ? Convert.ToInt32(m.Groups[4].Value, 16) : 1, m.Groups[5].Success));
+            }
+        }
+        foreach (var d in cppDup) cppToUe.Remove(d);
+        return decls;
+    }
+
+    // The usmap type a declared C++ type stands for. "Any" = the SDK does not know (FNone_); null = not understood.
+    static PropertyType ToType(string t, bool bit, Dictionary<string, string> cppToUe)
+    {
+        t = t.Trim();
+        if (bit) return new PropertyType("BoolProperty");
+        switch (t)
+        {
+            case "FNone_": return new PropertyType("Any");
+            case "bool": return new PropertyType("BoolProperty");
+            case "float": return new PropertyType("FloatProperty");
+            case "double": return new PropertyType("DoubleProperty");
+            case "uint8": return new PropertyType("ByteProperty");
+            case "int8": return new PropertyType("Int8Property");
+            case "int16": return new PropertyType("Int16Property");
+            case "uint16": return new PropertyType("UInt16Property");
+            case "int32": return new PropertyType("IntProperty");
+            case "uint32": return new PropertyType("UInt32Property");
+            case "int64": return new PropertyType("Int64Property");
+            case "uint64": return new PropertyType("UInt64Property");
+            case "class FName": return new PropertyType("NameProperty");
+            case "class FString": return new PropertyType("StrProperty");
+            case "class FText": return new PropertyType("TextProperty");
+            case "FUtf8String": return new PropertyType("Utf8StrProperty");
+            case "FAnsiString": return new PropertyType("AnsiStrProperty");
+            case "FMulticastSparseDelegateProperty_": return new PropertyType("MulticastDelegateProperty");
+        }
+        if (t.StartsWith("struct "))
+        {
+            var cpp = t[7..].Trim();
+            if (!cppToUe.TryGetValue(cpp, out var ue)) ue = cpp.StartsWith('F') ? cpp[1..] : cpp;
+            return new PropertyType("StructProperty", ue);
+        }
+        if (t.StartsWith("class ") && t.EndsWith("*") && !t[6..^1].Contains(' ')) return new PropertyType("ObjectProperty");
+        var g = Generic.Match(t);
+        if (g.Success)
+        {
+            var arg = g.Groups[2].Value;
+            switch (g.Groups[1].Value)
+            {
+                case "TArray": case "TSet": case "TOptional":
+                    var inner = ToType(arg, false, cppToUe);
+                    if (inner == null) return null;
+                    return new PropertyType(g.Groups[1].Value == "TArray" ? "ArrayProperty" : g.Groups[1].Value == "TSet" ? "SetProperty" : "OptionalProperty", null, inner);
+                case "TMap":
+                    int depth = 0, split = -1;
+                    for (int i = 0; i < arg.Length; i++)
+                    {
+                        if (arg[i] == '<') depth++; else if (arg[i] == '>') depth--;
+                        else if (arg[i] == ',' && depth == 0) { split = i; break; }
+                    }
+                    if (split < 0) return null;
+                    var k = ToType(arg[..split], false, cppToUe); var v = ToType(arg[(split + 1)..], false, cppToUe);
+                    return k == null || v == null ? null : new PropertyType("MapProperty", null, k, v);
+                case "TSubclassOf": return new PropertyType("ObjectProperty");
+                case "TSoftObjectPtr": case "TSoftClassPtr": return new PropertyType("SoftObjectProperty");
+                case "TWeakObjectPtr": return new PropertyType("WeakObjectProperty");
+                case "TLazyObjectPtr": return new PropertyType("LazyObjectProperty");
+                case "TScriptInterface": return new PropertyType("InterfaceProperty");
+                case "TDelegate": return new PropertyType("DelegateProperty");
+                case "TMulticastInlineDelegate": return new PropertyType("MulticastDelegateProperty");
+                case "TFieldPath": return new PropertyType("FieldPathProperty");
+            }
+            return null;
+        }
+        if (System.Text.RegularExpressions.Regex.IsMatch(t, @"^E\w+$")) return new PropertyType("EnumProperty", enumName: t);
+        return null;
+    }
+
+    static bool Compatible(PropertyType u, PropertyType s)
+    {
+        if (u == null || s == null) return u == null && s == null;
+        if (s.Type == "Any" || u.Type == "Unknown") return true;
+        if (s.Type == "EnumProperty") return u.Type == "ByteProperty" || (u.Type == "EnumProperty" && u.EnumName == s.EnumName);
+        if (u.Type != s.Type) return false;
+        if (u.Type == "StructProperty") return string.Equals(u.StructType, s.StructType, StringComparison.OrdinalIgnoreCase);
+        return Compatible(u.InnerType, s.InnerType) && Compatible(u.ValueType, s.ValueType);
+    }
+
+    // Replaces Unknown parts of u with what the SDK declares, when that is fully known and exists in the usmap.
+    static PropertyType Fill(PropertyType u, PropertyType s, TypeMappings live, Dictionary<string, PropertyType> enumInner)
+    {
+        if (u == null || s == null) return null;
+        if (u.Type == "Unknown") return Known(s, live, enumInner);
+        if (u.Type is not ("ArrayProperty" or "SetProperty" or "OptionalProperty" or "MapProperty")) return null;
+        var i = Fill(u.InnerType, s.InnerType, live, enumInner);
+        var v = Fill(u.ValueType, s.ValueType, live, enumInner);
+        if (i == null && v == null) return null;
+        return new PropertyType(u.Type, u.StructType, i ?? u.InnerType, v ?? u.ValueType, u.EnumName, u.IsEnumAsByte, u.Bool);
+    }
+
+    static PropertyType Known(PropertyType s, TypeMappings live, Dictionary<string, PropertyType> enumInner)
+    {
+        switch (s.Type)
+        {
+            case "Any": return null;
+            case "StructProperty":
+                var hit = live.Types.Keys.Where(k => string.Equals(k, s.StructType, StringComparison.OrdinalIgnoreCase)).ToList();
+                return hit.Count == 1 ? new PropertyType("StructProperty", hit[0]) : null;
+            case "EnumProperty":
+                return live.Enums.ContainsKey(s.EnumName) && enumInner.TryGetValue(s.EnumName, out var ei)
+                    ? new PropertyType("EnumProperty", null, ei, null, s.EnumName) : null;
+            case "ArrayProperty": case "SetProperty": case "OptionalProperty": case "MapProperty":
+                return null;  // UE has no nested containers here; leave them alone
+            default: return new PropertyType(s.Type);
+        }
+    }
+
+    static bool NameEq(string u, string s, string structName)
+    {
+        if (string.Equals(u, s, StringComparison.OrdinalIgnoreCase)) return true;
+        var san = NonIdent.Replace(u, "_");  // Dumper-7 turns characters C++ cannot hold (spaces, '?') into '_'
+        if (string.Equals(san, s, StringComparison.OrdinalIgnoreCase)) return true;
+        if (!s.StartsWith(san + "_", StringComparison.OrdinalIgnoreCase)) return false;
+        var rest = s[(san.Length + 1)..];  // ... and suffixes names that collide: _0, _<Class>
+        return rest.All(char.IsDigit) || structName.Contains(rest, StringComparison.OrdinalIgnoreCase) || rest.Contains(structName, StringComparison.OrdinalIgnoreCase);
+    }
+
+    public static void Apply(TypeMappings live, Dictionary<string, List<(int key, string name)>> raw, string dir, List<string> log)
+    {
+        var ambiguous = new HashSet<string>();
+        var cppToUe = new Dictionary<string, string>(StringComparer.Ordinal);
+        var decls = Load(dir, ambiguous, cppToUe);
+        var enumInner = new Dictionary<string, PropertyType>();
+        void CollectEnum(PropertyType t)
+        {
+            if (t == null) return;
+            if (t.Type == "EnumProperty" && t.EnumName != null && t.InnerType != null && !enumInner.ContainsKey(t.EnumName)) enumInner[t.EnumName] = t.InnerType;
+            CollectEnum(t.InnerType); CollectEnum(t.ValueType);
+        }
+        foreach (var s in live.Types.Values) foreach (var p in s.Properties.Values) CollectEnum(p.MappingType);
+
+        var cand = new Dictionary<string, HashSet<string>>(StringComparer.Ordinal);  // base token -> SDK names
+        var direct = new HashSet<(string, int)>();
+        var retypes = new List<(string s, int key, PropertyType t)>();
+        int matched = 0, segOk = 0, segRejected = 0, caseOnly = 0, outOfOrder = 0, unalignedTokens = 0, bpUnderscore = 0, unparsed = 0, anchorTypeMismatch = 0;
+        var rejectWhy = new Dictionary<string, int>();
+        foreach (var (structName, s) in live.Types)
+        {
+            if (ambiguous.Contains(structName) || !decls.TryGetValue(structName, out var d)) continue;
+            matched++;
+            var keys = raw[structName];
+            var lp = keys.Select(k => s.Properties[k.key]).ToList();
+            var sp = d.Members;
+            var spT = sp.Select(m => ToType(m.Type, m.Bit, cppToUe)).ToList();
+            unparsed += spT.Count(t => t == null);
+            bool blueprint = d.Kind.Contains("Blueprint") || d.Kind.StartsWith("UserDefined") || structName.EndsWith("_C");
+
+            var anchors = new List<(int l, int d)>();
+            for (int i = 0; i < lp.Count; i++)
+            {
+                var r = keys[i].name;
+                int j = -1, hits = 0;
+                for (int k = 0; k < sp.Count; k++)
+                    if (NameDonor.Hashed(r) ? sp[k].Name == r : NameEq(r, sp[k].Name, structName)) { j = k; hits++; }
+                if (hits != 1) continue;
+                if (anchors.Count == 0 || j > anchors[^1].d) { anchors.Add((i, j)); if (!NameDonor.Hashed(r) && r != sp[j].Name && string.Equals(r, sp[j].Name, StringComparison.OrdinalIgnoreCase)) caseOnly++; }
+                else outOfOrder++;
+            }
+            anchors.Add((lp.Count, sp.Count));
+
+            int ls = 0, ds = 0;
+            foreach (var (la, da) in anchors)
+            {
+                int len = la - ls;
+                if (len > 0 && len != da - ds)
+                {
+                    unalignedTokens += Enumerable.Range(ls, len).Count(i => NameDonor.Hashed(keys[i].name));
+                }
+                else if (len > 0)
+                {
+                    string why = null;
+                    var pairs = new List<(string token, string name, int key)>();
+                    for (int k = 0; k < len && why == null; k++)
+                    {
+                        var r = keys[ls + k].name; var cur = lp[ls + k]; var m = sp[ds + k]; var mt = spT[ds + k];
+                        if (mt == null) why = "SDK type not understood";
+                        else if ((cur.ArraySize ?? 1) != m.Dim) why = "static array size";
+                        else if (!Compatible(cur.MappingType, mt)) why = "type";
+                        else if (!NameDonor.Hashed(r)) { if (!NameEq(r, m.Name, structName)) why = "readable names differ"; }
+                        else if (Token.Match(r) is not { Success: true } tm) why = "unrecognised token";
+                        else if (NameDonor.Hashed(m.Name)) { if (m.Name != r) why = "tokens differ"; }
+                        else
+                        {
+                            var suffix = tm.Groups[2].Success ? tm.Groups[2].Value : "";
+                            if (!m.Name.EndsWith(suffix)) { why = "FName number"; break; }
+                            var baseName = m.Name[..^suffix.Length];
+                            if (baseName.Length != NameDonor.TokenLength(r)) why = "length";
+                            else pairs.Add((tm.Groups[1].Value, baseName, keys[ls + k].key));
+                        }
+                    }
+                    if (why != null)
+                    {
+                        segRejected++; rejectWhy[why] = rejectWhy.GetValueOrDefault(why) + 1;
+                        log.Add($"sdk reject {structName}[{keys[ls].key}..{keys[la - 1].key}]: {why}");
+                    }
+                    else
+                    {
+                        segOk++;
+                        foreach (var (token, name, key) in pairs)
+                        {
+                            if (blueprint && name.Contains('_')) { bpUnderscore++; log.Add($"sdk skip {structName}[{key}] {token} -> {name}: Blueprint name with '_' may be sanitized"); continue; }
+                            if (!cand.TryGetValue(token, out var set)) cand[token] = set = new HashSet<string>(StringComparer.Ordinal);
+                            set.Add(name); direct.Add((structName, key));
+                        }
+                        for (int k = 0; k < len; k++)
+                            if (Fill(lp[ls + k].MappingType, spT[ds + k], live, enumInner) is { } nt) retypes.Add((structName, keys[ls + k].key, nt));
+                    }
+                }
+                if (la < lp.Count)
+                {
+                    var cur = lp[la]; var mt = spT[da];
+                    if (mt != null && Compatible(cur.MappingType, mt))
+                    {
+                        if (Fill(cur.MappingType, mt, live, enumInner) is { } nt) retypes.Add((structName, keys[la].key, nt));
+                    }
+                    else if (mt != null) { anchorTypeMismatch++; log.Add($"sdk anchor type mismatch {structName}[{keys[la].key}] {keys[la].name}"); }
+                }
+                ls = la + 1; ds = da + 1;
+            }
+        }
+
+        // token dictionary: one name per token, one token per name (counting names the donor gave other tokens)
+        var dict = new Dictionary<string, string>(StringComparer.Ordinal);
+        int multiName = 0;
+        foreach (var (t, set) in cand.OrderBy(kv => kv.Key, StringComparer.Ordinal))
+            if (set.Count == 1) dict[t] = set.First();
+            else { multiName++; log.Add($"sdk conflict: token {t} given {set.Count} names: {string.Join(", ", set.OrderBy(x => x, StringComparer.Ordinal))}"); }
+        var donorNames = new Dictionary<string, HashSet<string>>(StringComparer.Ordinal);
+        foreach (var (structName, s) in live.Types)
+            foreach (var (key, r) in raw[structName])
+                if (Token.Match(r) is { Success: true } tm && !NameDonor.Hashed(s.Properties[key].Name))
+                {
+                    var n = s.Properties[key].Name; var suffix = tm.Groups[2].Success ? tm.Groups[2].Value : "";
+                    if (!n.EndsWith(suffix)) continue;
+                    if (!donorNames.TryGetValue(tm.Groups[1].Value, out var set)) donorNames[tm.Groups[1].Value] = set = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+                    set.Add(n[..^suffix.Length]);
+                }
+        // Two SDK tokens with one name: both dropped. An SDK token and a token only the donor named: the SDK wins
+        // (it pairs by this build's offsets) and the donor's name is withdrawn, so that token is hashed again.
+        int nameClaimed = 0;
+        var withdraw = new HashSet<string>(StringComparer.Ordinal);
+        {
+            var sdkClaims = dict.GroupBy(kv => kv.Value, StringComparer.OrdinalIgnoreCase).Where(g => g.Count() > 1).ToList();
+            foreach (var g in sdkClaims.OrderBy(g => g.Key, StringComparer.Ordinal))
+            {
+                var ts = g.Select(kv => kv.Key).OrderBy(x => x, StringComparer.Ordinal).ToList();
+                nameClaimed += ts.Count;
+                log.Add($"sdk conflict: name {g.Key} claimed by SDK tokens {string.Join(", ", ts)}; all dropped");
+                foreach (var t in ts) dict.Remove(t);
+            }
+            var byName = dict.ToDictionary(kv => kv.Value, kv => kv.Key, StringComparer.OrdinalIgnoreCase);
+            foreach (var (t, set) in donorNames.OrderBy(kv => kv.Key, StringComparer.Ordinal))
+            {
+                if (dict.ContainsKey(t)) continue;
+                foreach (var n in set.OrderBy(x => x, StringComparer.Ordinal))
+                    if (byName.TryGetValue(n, out var st))
+                    {
+                        withdraw.Add(t);
+                        log.Add($"sdk conflict: name {n} is SDK token {st}'s; the donor's {t} -> {n} withdrawn");
+                    }
+            }
+        }
+        int withdrawn = 0;
+        foreach (var (structName, s) in live.Types)
+            foreach (var (key, r) in raw[structName])
+            {
+                if (Token.Match(r) is not { Success: true } tm || !withdraw.Contains(tm.Groups[1].Value)) continue;
+                var p = s.Properties[key];
+                if (p.Name == r) continue;
+                withdrawn++; log.Add($"sdk withdraw {structName}[{key}] {p.Name} -> {r}");
+                for (int e = 0; e < (p.ArraySize ?? 1); e++)
+                    if (s.Properties.TryGetValue(key + e, out var el)) s.Properties[key + e] = new PropertyInfo(el.Index, r, el.MappingType, el.ArraySize);
+            }
+
+        int aligned = 0, propagated = 0, corrected = 0, confirmed = 0, dupReverts = 0;
+        foreach (var (structName, s) in live.Types)
+        {
+            var change = new Dictionary<int, string>();
+            foreach (var (key, r) in raw[structName])
+            {
+                if (Token.Match(r) is not { Success: true } tm || !dict.TryGetValue(tm.Groups[1].Value, out var n)) continue;
+                var newName = n + (tm.Groups[2].Success ? tm.Groups[2].Value : "");
+                // FNames compare without case, and the SDK prints the casing the name pool stored first (CONSTANT, ability):
+                // a name that differs only in case is the same name, so the donor's casing is kept.
+                if (string.Equals(s.Properties[key].Name, newName, StringComparison.OrdinalIgnoreCase)) { confirmed++; continue; }
+                change[key] = newName;
+            }
+            if (change.Count == 0) continue;
+            var names = raw[structName].Select(x => change.TryGetValue(x.key, out var c) ? c : s.Properties[x.key].Name).ToList();
+            var dups = names.GroupBy(x => x, StringComparer.OrdinalIgnoreCase).Where(g => g.Count() > 1).Select(g => g.Key).ToHashSet(StringComparer.OrdinalIgnoreCase);
+            foreach (var key in change.Keys.OrderBy(k => k).ToList())
+            {
+                var p = s.Properties[key]; var newName = change[key];
+                if (dups.Contains(newName)) { dupReverts++; log.Add($"sdk conflict: {structName}[{key}] {newName} would repeat a name in the struct; kept {p.Name}"); continue; }
+                if (NameDonor.Hashed(p.Name)) { if (direct.Contains((structName, key))) aligned++; else propagated++; log.Add($"sdk {(direct.Contains((structName, key)) ? "name" : "global")} {structName}[{key}] {p.Name} -> {newName}"); }
+                else { corrected++; log.Add($"sdk correct {structName}[{key}] {p.Name} -> {newName} (donor name replaced)"); }
+                for (int e = 0; e < (p.ArraySize ?? 1); e++)
+                    if (s.Properties.TryGetValue(key + e, out var el)) s.Properties[key + e] = new PropertyInfo(el.Index, newName, el.MappingType, el.ArraySize);
+            }
+        }
+
+        int typesFixed = 0;
+        foreach (var (structName, key, t) in retypes.Distinct())
+        {
+            var s = live.Types[structName]; var p = s.Properties[key];
+            if (!NameDonor.HasUnknown(p.MappingType)) continue;
+            for (int e = 0; e < (p.ArraySize ?? 1); e++)
+                if (s.Properties.TryGetValue(key + e, out var el)) s.Properties[key + e] = new PropertyInfo(el.Index, el.Name, t, el.ArraySize);
+            typesFixed++; log.Add($"sdk type {structName}[{key}] {p.Name}: Unknown -> SDK");
+        }
+        log.Insert(1, $"sdk: {matched} structs matched to SDK declarations ({ambiguous.Count} SDK names ambiguous, skipped); segments {segOk} paired, {segRejected} rejected " +
+                      $"({string.Join(", ", rejectWhy.OrderBy(kv => kv.Key, StringComparer.Ordinal).Select(kv => $"{kv.Key} {kv.Value}"))}); {unalignedTokens} tokens in unequal segments; " +
+                      $"{outOfOrder} anchors out of order (skipped); {caseOnly} anchors that differ only in case; {unparsed} SDK types not understood; {anchorTypeMismatch} anchor type mismatches; {bpUnderscore} Blueprint names with '_' skipped; " +
+                      $"dictionary {dict.Count} tokens ({multiName} given two names and {nameClaimed} sharing a name: dropped; {withdraw.Count} donor tokens whose name the SDK gives another token: {withdrawn} names withdrawn); " +
+                      $"names: {aligned} by alignment, {propagated} by the dictionary, {corrected} donor names corrected, {confirmed} confirmed, {dupReverts} kept to avoid a repeated name; " +
+                      $"{typesFixed} Unknown element types filled");
     }
 }
 
