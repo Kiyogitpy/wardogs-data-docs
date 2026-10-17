@@ -42,14 +42,14 @@ proposed resolution path, status.
 | 15 | `Wardogs_GameFeatures_Rewards_v2.md` | 7. Limitations | **Runtime inputs are unknown.** `BuildProgress`, `BuildCost`, `BuildAmount`, `CashSpent`, `BuildSuppliesDeposited`, `Las | TBD | TBD | OPEN |
 | 16 | `Wardogs_GameFeatures_Rewards_v2.md` | 7. Limitations | **The assist path is inferred.** No `BuildableDestroyed.Assist` calculator row exists (section 3c). The assist credit is | TBD | TBD | OPEN |
 | 17 | `Wardogs_GameFeatures_ShootingRangeTutorial_v2.md` | 6. Still not pulled / limitations | **Units.** Seat offsets are in native units (cm assumed). | TBD | TBD | OPEN |
-| 18 | `Wardogs_GameFeatures_UnderbarrelGrenadeLauncher_v2.md` | 8. How Values Combine | **Damage:** no damage value is in this plugin. Damage is presumably on the 40mm projectile, which is outside this dump. | TBD | TBD | OPEN |
+| 18 | `Wardogs_GameFeatures_UnderbarrelGrenadeLauncher_v2.md` | 8. How Values Combine | **Damage:** no damage value is in this plugin. Damage is presumably on the 40mm projectile, which is outside this dump. | Export: `Caliber/40mm/DA_40mm_ProjectileData.json` | Doc corrected (2026-10-17) | STATIC_RESOLVED |
 | 19 | `Wardogs_Plugin_BHFramework_v2.md` | 7. How Values Combine | Each setting's effective value is the player's saved choice, or the default if none is saved. Discrete settings with a d | TBD | TBD | OPEN |
 | 20 | `Wardogs_Plugin_BHFramework_v2.md` | 8. Still not pulled / limitations | **Dynamic defaults.** How the dynamic default is picked for display, resolution, device and upscaling is in the runtime  | TBD | TBD | OPEN |
 | 21 | `Wardogs_UI_v2.md` | 16. Still not pulled / limitations | **Field meanings not confirmed:** `ZOrder` direction (higher drawn on top is inferred from values), `RemovalTime` and `D | TBD | TBD | OPEN |
 | 22 | `Wardogs_Vehicles_v2.md` | 13. Still Not Pulled / Limitations | **Default-valued fields are omitted** from exports. Where a property is missing (for example `Basic`-class fields), the  | TBD | TBD | OPEN |
 | 23 | `Wardogs_Weapons_v2.md` | 5. How Values Combine | **Aim sway (likely):** the class speed curve, the horizontal and vertical movement curves, and the `AimSwayData` multipl | TBD | TBD | OPEN |
 | 24 | `Wardogs_Weapons_v2.md` | 5. How Values Combine | **Recoil (likely):** `RecoilPattern` gives per-shot X/Y offsets, `RandomDeviationDegree` adds random deviation, and the  | TBD | TBD | OPEN |
-| 25 | `Wardogs_Weapons_v2.md` | 5. How Values Combine | **Distance falloff (SKS):** `DistanceDamageFalloffCurve` is a multiplier indexed by distance. The falloff times are pres | TBD | TBD | OPEN |
+| 25 | `Wardogs_Weapons_v2.md` | 5. How Values Combine | **Distance falloff (SKS):** `DistanceDamageFalloffCurve` is a multiplier indexed by distance. The falloff times are pres | Native: projectile path `0x6B725B0` evaluates the curve with distance in cm; [DamagePipeline §7.6](../../Wardogs_DamagePipeline_v2.md#76-the-bullet-event) | Doc corrected (2026-10-17) | STATIC_RESOLVED |
 
 
 ## Notes for the triage pass
