@@ -12,6 +12,7 @@ tags. Entries that need instigator tags are counted as unknown instead of applie
 
     python _tools/infantry_damage.py            # per-location table (point blank)
     python _tools/infantry_damage.py --falloff  # upper-torso damage by distance
+    python _tools/infantry_damage.py --ammo M4  # one weapon: ammo type x armor class
 
 The distance curve's Time axis is centimetres: the native code evaluates it with the
 straight-line distance between shot origin and hit point in engine units.
@@ -87,6 +88,27 @@ ENTRIES = rows("DT_GlobalDamage_InfantryData.json")["Meta.Damage.Infantry"]["Dam
 BONE = {k: tag_map(v["HitLocations"]) for k, v in rows("DT_Helpers/DT_InfantryData_BoneDamageModifiers.json").items()}
 CALIBER = {k: tag_map(next(x for f, x in v.items() if f.startswith("_aaabapbnbhiopifeenjml")))
            for k, v in rows("DT_Helpers/DT_InfantryData_ArchetypeCaliberModifiers.json").items()}
+PEN = {k: (v.get("Modifier", 1.0), tag_map(next((x for f, x in v.items() if f.startswith("_aaabckamhakccdhbomlfj")), [])))
+       for k, v in rows("DT_Helpers/DT_InfantryData_AmmoTypeEffectivenessPen.json").items()}
+
+
+def armor_reduction():
+    """Armor context tag -> DamagePercentageReduction (every item's stages share one value)."""
+    out = {}
+    for path in glob.glob(os.path.join(DATA, "Wardogs/Plugins/GameFeatures/Items/Armor/Content/Data/ID_*.json")):
+        for o in exports(path):
+            if o.get("Type") == "WDInventoryFragment_Armor":
+                p = o["Properties"]
+                stages = p.get("DurabilityStagesSetupData", [])
+                out[tag(p.get("DamageContextTag"))] = stages[0].get("DamagePercentageReduction", 0.0) if stages else 0.0
+    return out
+
+
+ARMOR = armor_reduction()
+
+
+def first_under(tags, roots):
+    return next((t for t in tags if any(t == r or t.startswith(r + ".") for r in roots)), None)
 
 
 def projectiles():
@@ -150,7 +172,7 @@ def matches(e, source, target, hit, alignment="Hostile"):
     return not locs or bool(set(locs) & set(lineage(hit)))
 
 
-def factor(e, hit, source_tag, context):
+def factor(e, hit, source_tag, context, target=()):
     m = e["OutModification"]
     if not m["bUseCustomOperation"]:
         return 1 + m["Amount"] / 100 if m["Operation"].endswith("Percentage_Ongoing") else 1.0
@@ -167,11 +189,23 @@ def factor(e, hit, source_tag, context):
         if row is None:
             return 1.0
         return row.get(source_tag, row.get(parent(source_tag), 1.0))
-    return 1.0  # ammo/armor, seat and armor durability: no armor, not in a vehicle
+    piece = first_under(target, ("Meta.Damage.Armor", "Meta.Damage.Helmet"))
+    r = ARMOR.get(piece, 0.0) if piece else 0.0
+    if "B_AmmoTypeEffectiveness" in cls:
+        ammo = first_under(context, ("Meta.Damage.AmmoModifier",)) or "Meta.Damage.AmmoModifier.FMJ"
+        if ammo not in PEN:
+            return 1 - r / 100
+        modifier, overrides = PEN[ammo]
+        arms = first_under(context, ("Meta.Damage.Arms",))
+        return 1 - r * overrides.get(arms, modifier) / 100
+    if "PlayerArmorDurability" in cls:
+        return 1 - r / 100
+    return 1.0  # vehicle seat: target not in a vehicle
 
 
-def evaluate(source_tag, context, hit):
-    source = expand(context + [source_tag])
+def evaluate(source_tag, context, hit, target=()):
+    """Factor on S for one hit; target lists the covering armor tag, if any."""
+    source, tgt = expand(context + [source_tag]), expand(target)
     total, unknown, applied = 1.0, 0, []
     for i, e in enumerate(ENTRIES):
         m = e["OutModification"]
@@ -179,12 +213,12 @@ def evaluate(source_tag, context, hit):
                                        "SourceRequirements", "PossibleHitLocations"))
         if empty and m["Amount"] == 0:
             continue
-        if not matches(e, source, set(), hit):
+        if not matches(e, source, tgt, hit):
             continue
         if e["InstigatorRequirements"]:
             unknown += 1
             continue
-        f = factor(e, hit, source_tag, context)
+        f = factor(e, hit, source_tag, context, list(target))
         if f != 1.0:
             applied.append(i)
         total *= f
@@ -192,11 +226,38 @@ def evaluate(source_tag, context, hit):
 
 
 RANGES_M = [50, 100, 200, 400, 800, 1200]
+AMMO = ["FMJ", "Tracer", "HollowPoint", "ArmorPiercing"]
+CLASSES = ["Light", "Medium", "Heavy", "SuperHeavy"]
+
+
+def ammo_table(name, proj):
+    """One weapon: damage per ammo type against each armor class (torso) and helmet class (head)."""
+    w = next(w for w in weapons() if w[0] == name)
+    cal = next(c for c in w[2] if c in proj)
+    src, ctx, base = proj[cal]
+    cols = [("Torso.Upper", None)] + [("Torso.Upper", f"Meta.Damage.Armor.{c}") for c in CLASSES] \
+        + [("Head", None)] + [("Head", f"Meta.Damage.Helmet.{c}") for c in CLASSES]
+    print("| Ammo | Torso, no armor | " + " | ".join(f"Torso, {c}" for c in CLASSES)
+          + " | Head, no helmet | " + " | ".join(f"Head, {c} helmet" for c in CLASSES) + " | Entries applied |")
+    print("|---|" + "---:|" * len(cols) + "---|")
+    for ammo in AMMO:
+        # FMJ has no ammo-modifier asset, so its stats are the plain copy without a tag.
+        extra = [] if ammo == "FMJ" else [f"Meta.Damage.AmmoModifier.{ammo}"]
+        context = ctx + extra + [w[1], cal, "Meta.Damage.DamageType.Projectile"]
+        cells, used = [], set()
+        for loc, piece in cols:
+            f, _, applied = evaluate(src, context, HIT + loc, [piece] if piece else [])
+            used.update(applied)
+            cells.append(f"{base * f:.1f}")
+        print(f"| {ammo} | " + " | ".join(cells) + f" | {', '.join(map(str, sorted(used)))} |")
 
 
 def main():
     sys.stdout.reconfigure(encoding="utf-8")
     proj = projectiles()
+    if "--ammo" in sys.argv:
+        ammo_table(sys.argv[sys.argv.index("--ammo") + 1], proj)
+        return
     by_range = "--falloff" in sys.argv
     if by_range:
         print("| Weapon | Curve keys (m → ×) | " + " | ".join(f"{r} m" for r in RANGES_M) + " |")
