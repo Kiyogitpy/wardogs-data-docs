@@ -91,9 +91,9 @@ records, 3 globals, 9,134 vtables, and **one native exec-function record**:
 function coverage. Its exec-function record stores an RVA; the analysis
 image base and build correspondence must be established independently.
 
-The [initial damage IDA results](../docs/DAMAGE_IDA_RESULTS.md) record the
+The [failed first damage pass](../docs/evidence/damage.md#22-failed-pass-on-the-dump-reconstructed-pe) records the
 failure to validate locations against an older reconstructed PE. The later
-[restored-input trace](../docs/DAMAGE_IDA_RESTORED.md) used selected validated
+[restored-input trace](../docs/evidence/damage.md#23-restored-executable-trace) used selected validated
 vtable labels from this map. Format validity alone does not establish a
 mapping-to-image match.
 

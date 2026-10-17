@@ -79,8 +79,9 @@ def main():
         "`÷` Divide, `×c` MultiplyCompound, `+f` AddFinal, `=` Override. `@StackCount` and the like name the "
         "curve indexing ([pipeline §4.2](Wardogs_GameplayEffectsPipeline_v1.md#42-modifiers)). Cooked objects only "
         "store values that differ from the native default, so a blank duration or stack count means the native "
-        "default, which is not in the paks. How the operations combine into an attribute's current value is not "
-        "traced yet (pipeline E-1), so the tables give each modifier, not a combined result.", "",
+        "default, which is not in the paks. The tables give each modifier, not a combined result; how the "
+        "operations combine into an attribute's current value is in "
+        "[pipeline §4.4](Wardogs_GameplayEffectsPipeline_v1.md#44-current-value).", "",
         "Three effects ship in the paks but not in the SDK headers: `GE_GrantSkill_Lockpicking`, "
         "`GE_Meta_ResourceChange` and `GE_MolotovBurning`.", "",
     ]

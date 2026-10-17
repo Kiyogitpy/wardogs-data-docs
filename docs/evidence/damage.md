@@ -437,6 +437,12 @@ Status key:
 | `unverified` | 0 |
 | **Total** | **85** |
 
+These are the RVAs DamagePipeline cited at `d560d33`. The corrections
+applied afterwards cite six more, checked the same way: `0x6EF9450` and
+`0x6F08CE0` (the real entries behind the two misaligned rows, whose
+bodies they are), `0x6B8E100` and `0x6BB6160` (`corpus body`), and
+`0x12CC0D0` and `0x12CC0F0` (`[exe]`, FName initializers).
+
 No cited RVA is itself a GObjects fact. The GObjects-backed items are
 offsets that sit next to these RVAs. Examples are the event's `Amount`
 (`+0x0`) and `ModificationResults` (`+0x190`), read at `0x6F02EC0` and
@@ -544,13 +550,13 @@ functions.
   `mov [rsp+8], rbx`. Decoding from `0x6EF944F` gives a bogus first
   instruction, and Hex-Rays warns that "positive sp value has been
   detected, the output may be wrong". The rest of the body decodes the
-  same code. DamagePipeline §1.1 should cite `0x6EF9450`.
+  same code. DamagePipeline §1.1 now cites `0x6EF9450`.
 - **`0x6F08CDC` (misaligned).** The reflected `SimpleDamageActor`
   registration points at `0x6F08CE0`. The corpus row at `0x6F08CE0` failed
   with "Candidate entry lies inside another function at RVA `0x6F08CDC`",
   and the bytes at `0x6F08CDC` are not a prologue. The body at
   `0x6F08CDC` does contain the `ModifyDamage` call at `0x6F090F1`.
-  DamagePipeline §1.1 should cite `0x6F08CE0`.
+  DamagePipeline §1.1 now cites `0x6F08CE0`.
 - **`0x5236E50`.** The only corpus row nearby (`0x5236E4A`) is
   misaligned, so there is no body. Round 2 left the setter unverified (r2
   HP-11). For this page the verifier reproduced it from the disassembly:
@@ -567,15 +573,15 @@ functions.
   that `0x53202B0` itself calls `0x5320400` (at `0x53203D0`). The exec
   thunk `0x5341430` repeats the section pick inline and calls `0x5320400`
   directly; it does not reach it through `0x53202B0`. The vehicle
-  pipeline's §4 step 1 says otherwise and needs correcting.
+  pipeline's §4 step 1 now says so.
 - **Disassembly-only functions.** `0x52311D0`, `0x5236AF0` and
   `0x6C255B0` keep the round-2 tag "UNVERIFIED (exe-corroborated)" (r2
   HP-10, HP-14b, BE-4), which this table records as `[exe]`.
-- **DamagePipeline §11's body-less list is incomplete.** It says "Four
-  functions have no corpus body" and names `0x53202B0`, `0x52311D0`,
-  `0x5236AF0` and `0x6C255B0`. Four more cited functions have no corpus
-  body at their entry: `0x5236E50`, `0x6EF8DE0`, `0x6BB5ED0` and
-  `0x395F4D0`. A fifth, `0x6F042A0`, has a row that failed to decompile.
+- **DamagePipeline §11's body-less list.** It first named only
+  `0x53202B0`, `0x52311D0`, `0x5236AF0` and `0x6C255B0`. It now also
+  names the four other cited functions with no corpus body at their
+  entry (`0x5236E50`, `0x6EF8DE0`, `0x6BB5ED0`, `0x395F4D0`) and
+  `0x6F042A0`, whose row failed to decompile.
 
 ### RVAs cited only by the evidence notes
 
@@ -617,6 +623,7 @@ directories.
 | 2026-10-17 07:39 | Restored and brief notes updated (`89cbd41`, branch `docs/close-crosscheck-items`, not merged) | The same closures applied to the notes; only `0x18FCDB0` left open |
 | 2026-10-17 08:14 | Round-2 verifier corrections (`d560d33`) | Corrected the bullet-event and health-write details; marked four functions without corpus bodies as disassembly-only |
 | 2026-10-17 | This page | Merged the three notes; built the RVA status table (§3); found the two misaligned rows and corrected the call-site count |
+| 2026-10-17 | Round-3 corrections applied to DamagePipeline | Cites `0x6EF9450` and `0x6F08CE0`; §11 lists every body-less function; `RootDamageTag`, the `+0x101` byte, the two player-character stubs and the role-3 decay-pool cut added |
 
 ## 5. Open items
 
@@ -626,8 +633,6 @@ directories.
 - The gameplay meaning of `ModifyDamage`'s bool, and which damage system
   an actual event selects, are open
   ([DamagePipeline §1](../../Wardogs_DamagePipeline_v2.md#1-call-path)).
-- DamagePipeline §11 should list all body-less functions (§3 notes).
-- DamagePipeline §1.1 should cite `0x6EF9450` and `0x6F08CE0` (§3 notes).
 - Network authority is outside static analysis
   ([DamagePipeline §9](../../Wardogs_DamagePipeline_v2.md#9-open-questions-and-what-closes-them)).
 

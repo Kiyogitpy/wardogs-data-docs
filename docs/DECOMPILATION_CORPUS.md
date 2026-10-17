@@ -88,7 +88,7 @@ remain visible. Pseudocode can contain guessed types, compiler artifacts,
 inline assembly or jumps even when decompilation succeeds. It requires
 review before being cited as implementation behavior.
 
-The [damage trace](DAMAGE_IDA_RESTORED.md) remains the reviewed behavioral
+The [damage trace](evidence/damage.md#23-restored-executable-trace) remains the reviewed behavioral
 slice. This export does not recover Blueprint bytecode from the cooked
 assets or establish final health application or server behavior. No game
 execution, live attachment or service testing is part of this work.

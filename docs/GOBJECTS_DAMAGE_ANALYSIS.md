@@ -271,8 +271,7 @@ these.
 
 - [`Wardogs_DamagePipeline_v2.md`](../Wardogs_DamagePipeline_v2.md) — damage pipeline (being audited by triage AI)
 - [`docs/RESTORED_EXE_VALIDATION.md`](RESTORED_EXE_VALIDATION.md) — exe + idmap byte-level match
-- [`docs/DAMAGE_IDA_TRACE.md`](DAMAGE_IDA_TRACE.md) — triage AI's IDA trace brief (in flight)
-- [`docs/DAMAGE_IDA_RESULTS.md`](DAMAGE_IDA_RESULTS.md) — triage AI's IDA results (in flight)
+- [`docs/evidence/damage.md`](evidence/damage.md) — the IDA trace brief, the failed first pass and the restored-exe trace, merged, with a status for every cited RVA
 - [`sdk/raw/`](../sdk/raw/) — Dumper-7 CppSDK (static view)
 - [`mappings/`](../mappings/) — IDA + usmap mappings
 - GObjects dumps (local-only, 16MB + 25MB — not committed due to size): `wardogs_analysis/GObjects-Dump*.txt`
