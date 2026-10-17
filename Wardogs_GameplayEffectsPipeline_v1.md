@@ -8,320 +8,263 @@ nav_order: 3
 
 > **Project:** [`Kiyogitpy/wardogs-data-docs`](https://github.com/Kiyogitpy/wardogs-data-docs) · [Live site](https://kiyogitpy.github.io/wardogs-data-docs/)
 
-Complete code↔data trace of **gameplay effects (GEs)** in Wardogs — the
-system that models buffs, debuffs, weapon-attachment modifiers, status
-states, player skills, and timed cues. Third pipeline doc after
-[`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md) (infantry)
-and [`Wardogs_VehicleDamagePipeline_v1.md`](Wardogs_VehicleDamagePipeline_v1.md).
+How gameplay effects (GEs) and attributes work in Wardogs: weapon
+attachment modifiers, player movement and stance modifiers, skills, and
+the attribute store that also holds health. Companion to
+[`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md) and
+[`Wardogs_VehicleDamagePipeline_v1.md`](Wardogs_VehicleDamagePipeline_v1.md).
 
 Build: `++Wardogs+Live-CL-516586` · Engine: UE 5.7 · GAS fork: "BH"
-(Embark Studios in-house GAS variant)
+(Embark's in-house GAS variant) · Native addresses are file RVAs in the
+restored executable (damage doc §11). Labels: **Native** (code, RVA cited,
+unreviewed decompiler output), **SDK**, **Data**, **Open**.
 
 ---
 
 ## TL;DR
 
-Wardogs uses Embark's custom **BH-GAS fork** rather than Unreal's
-vanilla GameplayAbilitySystem. Core architecture:
-
-- **`UBHGameplayEffect`** = effect definition (duration, stacks,
-  modifiers, grant tags, requirement tags)
-- **`UBHGameplayEffectComponent`** = actor component carrying active
-  effects + attributes
-- **`UBHTaggedGameplayEffects`** = data asset that maps GameplayTag →
-  specific effect preset
-- **338 GE_* subclasses** in the SDK, each a specific gameplay effect
-  (weapon attachments, player states, cues, etc.)
-
-**No `UAttributeSet` subclasses** — attributes are implemented as a
-`TMap<FGameplayTag, float>` on the component rather than typed C++
-fields. This is the key BH-GAS divergence from vanilla UE GAS.
+- **`UBHGameplayEffect`** defines an effect: duration, stacking,
+  modifiers, granted tags, requirement tags.
+- **`UBHGameplayEffectComponent`** carries the active effects and the
+  attributes of an actor.
+- **Attributes are records keyed by gameplay tag**, each with a double
+  base value and current value, replicated as a fast array. There are no
+  game `UAttributeSet` subclasses. `DefaultAttributes`
+  (`TMap<FGameplayTag, float>`) only holds initial values.
+- **338 `GE_*` classes** ship in the SDK, all `: public UBHGameplayEffect`.
+- **Damage does not go through effects.** Character damage writes the
+  `Attribute.Gameplay.Health` base value directly (DamagePipeline §10).
 
 ## 1. The core classes
 
 ### 1.1 `UBHGameplayEffect` (0x270 bytes)
 
-Base class for all gameplay effects. Defined in
-[`sdk/raw/BHGameplayEffects_classes.hpp`](sdk/raw/BHGameplayEffects_classes.hpp).
+**SDK**, [`BHGameplayEffects_classes.hpp`](sdk/raw/BHGameplayEffects_classes.hpp):
 
-Properties:
-
-| Offset | Field | Type | Purpose |
+| Offset | Field | Type | Notes |
 |---|---|---|---|
-| 0x30 | `Duration` | `float` | Effect duration in seconds (0 = instant, -1 = infinite) |
-| 0x34 | `MaxStacks` | `uint16` | Max concurrent stacks on target |
-| 0x36 | `StackDurationRefreshPolicy` | `enum` | How duration refreshes on re-apply |
-| 0x37 | `StackExpirationPolicy` | `enum` | What happens when a stack expires |
-| 0x38 | `Modifiers` | `TArray<FNone_>` | List of attribute modifications (Dumper-opaque) |
-| 0x48 | `GrantedTags` | `FGameplayTagContainer` | Tags given to the target while effect is active |
-| 0x68 | `ApplicationRequirements` | `FBHGameplayTagRequirements` | Tags required on target to apply |
-| 0xF0 | `OngoingRequirements` | `FBHGameplayTagRequirements` | Tags that must stay present for effect to remain |
-| 0x178 | `RemovalRequirements` | `FBHGameplayTagRequirements` | Tags that trigger removal |
-| 0x200 | `Tags` | `FGameplayTagContainer` | Tags identifying the effect itself |
-| 0x220 | `bAllowClientPredictedApplication` | `bool` | Client-side prediction for apply |
-| 0x221 | `bAllowClientPredictedModification` | `bool` | Client-side prediction for modify |
-
-The three enum stacking/expiration policies and the opaque `Modifiers`
-list are documented in `BHGameplayEffects_structs.hpp`.
+| 0x30 | `Duration` | `float` | The Duration-indexed scalar returns 0 when this is 0 (§4.2); "−1 = infinite" is not verified |
+| 0x34 | `MaxStacks` | `uint16` | |
+| 0x36 | `StackDurationRefreshPolicy` | enum | |
+| 0x37 | `StackExpirationPolicy` | enum | |
+| 0x38 | `Modifiers` | `TArray<FBHAttributeModifier>` | Dumper shows `TArray<FNone_>`; the element type is in §4.2 |
+| 0x48 | `GrantedTags` | `FGameplayTagContainer` | |
+| 0x68 | `ApplicationRequirements` | `FBHGameplayTagRequirements` | |
+| 0xF0 | `OngoingRequirements` | `FBHGameplayTagRequirements` | |
+| 0x178 | `RemovalRequirements` | `FBHGameplayTagRequirements` | |
+| 0x200 | `Tags` | `FGameplayTagContainer` | |
+| 0x220 | `bAllowClientPredictedApplication` | `bool` | Read by `ApplyEffect` (§5) |
+| 0x221 | `bAllowClientPredictedModification` | `bool` | |
+| 0x222 | `ClientInstigatedApplicationPolicy` | enum | Read by `ApplyEffect` (§5) |
 
 ### 1.2 `UBHGameplayEffectComponent` (0xCD0 bytes)
 
-The actor component that owns + applies effects. Defined in
-[`sdk/raw/BHGameplayEffects_classes.hpp`](sdk/raw/BHGameplayEffects_classes.hpp).
+**SDK.** Inherits `UBHGameplayPredictionComponent`.
 
-Key properties:
-
-| Offset | Field | Purpose |
+| Offset | Field | Notes |
 |---|---|---|
-| 0x288 | `DefaultAttributes` | `TMap<FGameplayTag, float>` — initial attribute values |
-| 0x3D8 | `AttributeReplication` | Net-replicated attribute container |
-| 0x508 | `EffectContainer` | Active effects on this component |
-| 0x998 | `TagSerializer_AllCounts` | Full tag-count replication state |
-| 0xB18 | `TagSerializer_ReplicatedOnly` | Replicated subset of tag counts |
-| 0xC98 | `NetworkPredictionWorldManager` | Points to the global prediction system |
+| 0x288 | `DefaultAttributes` | `TMap<FGameplayTag, float>`: initial values only |
+| 0x378 | per-attribute hook map | Run by the base-value setter (§4.3) |
+| 0x3D8 | `AttributeReplication` | Fast array of `FBHGameplayAttributeRepData` |
+| 0x508 | `EffectContainer` | Active effects |
+| 0x998 | `TagSerializer_AllCounts` | |
+| 0xB18 | `TagSerializer_ReplicatedOnly` | |
+| 0xC98 | `NetworkPredictionWorldManager` | Pointer; its role in rollback is not traced |
 
-Key functions (abbreviated signatures):
+Functions (reflected names; native bodies where traced):
 
-| Function | Role |
+| Function | Notes |
 |---|---|
-| `ApplyEffect(Effect, ..., CustomMagnitudes, Mode)` | Apply an effect with optional per-magnitude overrides |
-| `ApplyLocalEffect(Effect, ..., CustomMagnitudes, LocalHandle)` | Client-only effect (predicted) |
-| `ModifyEffectCustomMagnitude(Handle, Tag, DeltaValue)` | Modify an active effect's magnitude at runtime |
-| `ModifyEffectStacks(..., Handle, Delta, Mode)` | Add/remove stacks on an existing effect |
-| `RemoveEffect(Handle, Mode)` | Remove an effect |
-| `FindOrAddAttribute(Attribute, InitialValue, ...)` | Attribute system entry point |
-| `SetAttributeBaseValue(..., Handle, newbase)` | Sets an attribute's base value. Native body `0x5236AF0`; its few callers are healing/appliable-item paths, not damage (see DamagePipeline O-7). Authority not established |
-| `ServerApplyEffect(request, SyncFrame)` | Server-side effect application (RPC) |
-| `ServerModifyEffect(Handle, PredictionKey, Delta, SyncFrame)` | Server-side modification (RPC) |
-| `UpdateGameplayTag(Tag, Delta, ...)` | Grant/revoke a tag |
+| `ApplyEffect(Effect, …, CustomMagnitudes, Mode)` | Native `0x5227F20`; prediction branches in §5 |
+| `ApplyLocalEffect(…)` | "Client-only" is not verified |
+| `ModifyEffectCustomMagnitude`, `ModifyEffectStacks`, `RemoveEffect` | |
+| `FindOrAddAttribute(Attribute, InitialValue, …)` | Native `0x522F8F0` |
+| `SetAttributeBaseValue(…, Handle, newbase)` | Native `0x5236AF0`, gated on a role check; calls the setter `0x5236E50`. Used by the damage path through `0x52311D0` (§4.3) |
+| `ServerApplyEffect(request, SyncFrame)` | Thunk `0x521B800` runs a check (`0x5236230`, prediction-key fields and effect class) before `0x5236070` |
+| `ServerModifyEffect`, `UpdateGameplayTag` | |
 
-**Prediction architecture:** `UBHGameplayEffectComponent` inherits from
-`UBHGameplayPredictionComponent` and uses UE's
-`UNetworkPredictionWorldManager` — this is a **networked-prediction**
-model with client prediction + server reconciliation, not pure
-server-authoritative dispatch. Open security implications in §6.
+### 1.3 `UBHGameplayEffectLibrary`
 
-### 1.3 `UBHGameplayEffectLibrary` — Blueprint utility functions
-
-Static blueprint functions for querying attribute values + applying
-local effects:
-
-| Function | Purpose |
+| Function | Notes |
 |---|---|
-| `GetValues(Handle, base, Current, ...)` | Read base + current value of an attribute |
-| `ModifyBase(Delta, Handle, Value, ...)` | Modify base attribute |
-| `SetBase(Delta, Handle, newbase)` | Set base attribute |
-| `MakeLocalEffectHandle(...)` | Create a prediction handle for local effects |
+| `GetValues(Handle, Base, Current, …)` | Reads base and current |
+| `ModifyBase(…)` | Native `0x523A560` |
+| `SetBase(…)` | Native `0x523AB10` |
+| `MakeLocalEffectHandle(…)` | |
 
-### 1.4 `UBHTaggedGameplayEffects` — Data asset preset
+### 1.4 `UBHTaggedGameplayEffects`
 
-The data-asset wrapper. Each instance holds a `TMap<GameplayTag,
-FBHGameplayEffectPreset>` where the preset specifies:
-- `Effect` — TSoftClassPtr to a specific `GE_*` subclass
-- `Stacks` — stack count to apply
-- `CustomMagnitudes` — array of magnitude overrides
+A data asset holding `TMap<GameplayTag, FBHGameplayEffectPreset>`. The
+preset's `Effect` is a `TSubclassOf` (not a soft pointer), `Stacks` is
+`int32`, and `CustomMagnitudes` lists magnitude overrides. The soft class
+pointer belongs to a different struct, `FBHGameplayEffectTaggedTableRow.GameplayEffect`.
 
-## 2. The effect catalog — 338 GE_* subclasses
+## 2. The effect catalog
 
-Grouped by filename prefix (second underscore-delimited token):
+**SDK.** 338 `sdk/raw/GE_*_classes.hpp` files, every class
+`: public UBHGameplayEffect`. **Data:** 332 distinct `GE_*_C` class names
+are referenced somewhere in the export. One of them,
+`GE_GrantSkill_Lockpicking` (from the Lockpicking feature's
+`DT_Skills_Lockpicking.json`), has no SDK header, and eight SDK classes are
+never referenced.
 
-| Prefix | Count | Purpose |
+Grouped by filename prefix. The descriptions say only what the class
+names show; effect values are not in the export (§7).
+
+| Prefix | Count | What the names show |
 |---|---:|---|
-| `GE_MAGZ_*` | 60 | Magazine attachment effects (capacity, reload speed) |
-| `GE_FGRP_*` | 54 | Foregrip attachment effects (recoil control, stability) |
-| `GE_MUZL_*` | 47 | Muzzle attachment effects (flash, sound, dispersion) |
-| `GE_SGHT_*` | 34 | Sight / scope attachment effects (ADS speed, zoom modifier) |
-| `GE_Player_*` | 30 | Player-wide status effects (stimulant, bleed, stun, etc.) |
-| `GE_Weapon_*` | 25 | Weapon-generic effects (AimTime, EquipSpeedMultiplier, Recoil, per-stance recoil) |
-| `GE_MAG_*` | 15 | Short-prefix magazine variants |
-| `GE_FGP_*` | 10 | Short-prefix foregrip variants |
-| `GE_MZL_*` | 7 | Short-prefix muzzle variants |
-| `GE_AK74_*` | 6 | AK74-specific effects (weapon-specific attachment chain) |
-| `GE_Item_*` | 4 | Item-usage effects |
-| `GE_4xElcanSpectr_*` | 4 | 4x Elcan sight effects (specific scope with sub-effects) |
-| `GE_Vehicle_*` | 3 | Vehicle-interaction effects (seat occupied, driver bonus) |
-| `GE_Spotting_*` | 3 | Spotting system (mark enemy, friendly mark) |
-| `GE_TankHelmet_*` | 2 | Tank helmet attachment |
-| `GE_Stanag_*` | 2 | STANAG magazine effects |
-| `GE_RK6_*` | 2 | RK6 helmet |
+| `GE_MAGZ_*` | 60 | Magazine attachments |
+| `GE_FGRP_*` | 54 | Foregrip attachments |
+| `GE_MUZL_*` | 47 | Muzzle attachments |
+| `GE_SGHT_*` | 34 | Sights and scopes |
+| `GE_Player_*` | 30 | Movement, stance, weight, ghillie, jump and mantle modifiers (no stimulant, bleed or stun effects) |
+| `GE_Weapon_*` | 25 | Aim time, equip speed, recoil, per-stance recoil |
+| `GE_MAG_*` | 15 | Short-prefix magazines |
+| `GE_FGP_*` | 10 | Short-prefix foregrips |
+| `GE_MZL_*` | 7 | Short-prefix muzzles |
+| `GE_AK74_*` | 6 | AK74-specific attachments |
+| `GE_Item_*` | 4 | Three tac vests and `UsageRateMultiplier` |
+| `GE_4xElcanSpectr_*` | 4 | 4× Elcan sight |
+| `GE_Vehicle_*` | 3 | `FuelUsageReductionMultiplier`, `Health`, `ImpactReductionMultiplier` |
+| `GE_Spotting_*` | 3 | `CustomDepthStencilValue`, `IncreasedSpottedTime`, `IncreasedSpottingDuration` |
+| `GE_TankHelmet_*` | 2 | Tank helmet |
+| `GE_Stanag_*` | 2 | STANAG magazine |
+| `GE_RK6_*` | 2 | RK6 foregrip (`ID_RK6_Grip.json`) |
 | `GE_PilotHelmet_*` | 2 | Pilot helmet |
-| `GE_GrantSkill_*` | 2 | Skill-unlock effects |
-| `GE_6xScope_*` | 2 | 6x scope effects |
+| `GE_GrantSkill_*` | 2 | Skill grants |
+| `GE_6xScope_*` | 2 | 6× scope |
 
-Full list of 338 is enumerable from
-`ls sdk/raw/GE_*_classes.hpp`.
-
-### 2.1 Representative example — `GE_Weapon_StanceRecoil_*`
-
-20 effects for per-stance recoil mod (archetype × stance):
-
-```
-GE_Weapon_StanceRecoil_AR_Crouch        GE_Weapon_StanceRecoil_DMR_Prone
-GE_Weapon_StanceRecoil_AR_Prone         GE_Weapon_StanceRecoil_DMR_Standing
-GE_Weapon_StanceRecoil_AR_Standing      GE_Weapon_StanceRecoil_LMG_Crouch
-GE_Weapon_StanceRecoil_DMR_Crouch       (...)
-```
-
-**Observation:** per-stance × per-archetype recoil is modeled as
-individual GE classes rather than parameterized data on a single
-effect. This is a Blueprint-friendly design (each GE is a
-`BlueprintGeneratedClass`) but produces large catalog counts.
+`GE_Weapon_StanceRecoil_*` is 21 classes: 7 weapon archetypes × 3 stances
+(Standing, Crouch, Prone).
 
 ## 3. The data presets
 
-### 3.1 `DA_CharacterEffectPresets.json`
+**Data.**
 
-Location: [`data/Wardogs/Content/GameMechanics/GameplayEffects/Presets/DA_CharacterEffectPresets.json`](data/Wardogs/Content/GameMechanics/GameplayEffects/Presets/DA_CharacterEffectPresets.json)
-
-Row structure (per `UBHTaggedGameplayEffects`):
-
-```json
-{
-  "Data": [
-    {
-      "Key": { "TagName": "GameplayCue.Door.Breach" },
-      "Value": {
-        "Effect": { "ObjectName": "GE_DoorBreach_C", "ObjectPath": "..." },
-        "Stacks": 1,
-        "CustomMagnitudes": []
-      }
-    }
-    // ... more entries
-  ]
-}
-```
-
-Each tag like `GameplayCue.Door.Breach` triggers the mapped GE_*
-class with the specified stacks and (optional) magnitude overrides.
-
-### 3.2 `DA_DefaultPlayerEffects.json`
-
-Default effects applied on player spawn. Maps initial-state tags to
-baseline effects (e.g., default breathing, aim steady, movement
-stamina). Same structure as `DA_CharacterEffectPresets`.
-
-### 3.3 `DA_CharacterModifierState_StimulantEffects.json`
-
-Stimulant / healing item effect catalog. Specific to the StimPen plugin.
-
-Location: [`data/Wardogs/Plugins/GameFeatures/Items/StimPen/Content/Data/DA_CharacterModifierState_StimulantEffects.json`](data/Wardogs/Plugins/GameFeatures/Items/StimPen/Content/Data/DA_CharacterModifierState_StimulantEffects.json)
+- [`DA_CharacterEffectPresets`](data/Wardogs/Content/GameMechanics/GameplayEffects/Presets/DA_CharacterEffectPresets.json):
+  one row, `GameplayCue.Door.Breach` → `GE_DoorBreach_C`, 1 stack.
+- [`DA_DefaultPlayerEffects`](data/Wardogs/Content/GameMechanics/GameplayEffects/Presets/DA_DefaultPlayerEffects.json):
+  one row, `Skill.DoorBreach` → `GE_GrantSkill_DoorBreach_C`, 1 stack.
+  When it is applied (for example on spawn) is not traced.
+- [`DA_CharacterModifierState_StimulantEffects`](data/Wardogs/Plugins/GameFeatures/Items/StimPen/Content/Data/DA_CharacterModifierState_StimulantEffects.json)
+  is not an effect catalog. It is a `WDCharacterModifierStateDefinition`:
+  an FOV camera modifier (×1.05) gated on
+  `State.Player.Stimulant.UnlimitedTacSprint` and ignored while
+  `State.Player.Vitality.Critical`. It contains no GEs.
 
 ## 4. The attribute system
 
-### 4.1 Attributes-as-tags design
+### 4.1 Attribute records
 
-**Divergence from vanilla GAS:** instead of `UAttributeSet` C++
-subclasses with typed properties (vanilla GAS pattern), Wardogs
-represents attributes as a flat **map keyed by GameplayTag**:
+**Native + SDK.** At runtime each attribute is a record keyed by its tag,
+holding a **double** base value (record `+0x28`) and current value
+(`+0x30`) and its owning component (`+0x18`). Records replicate through
+`AttributeReplication` as
+`FBHGameplayAttributeRepData {AttributeTag, double BaseValue @0x18, double CurrentValue @0x20}`;
+the receive handler is `0x5233C00`. `DefaultAttributes` supplies the
+initial floats.
 
-```cpp
-TMap<FGameplayTag, float> DefaultAttributes;    // UBHGameplayEffectComponent
-```
+Attribute tags come from the native tag initializers, for example
+`Attribute.Gameplay.Health`, `Attribute.Gameplay.Health.Max`,
+`Attribute.Gameplay.Fuel` and the vehicle part healths
+`Attribute.Gameplay.Health.Engine`, `.Tail`, `.Tracks`. No
+`Attribute.Weapon.*` tags exist.
 
-Each attribute is identified by its tag (e.g., `Attribute.Gameplay.Health`,
-`Attribute.Gameplay.Health.Max`, `Attribute.Gameplay.Fuel`; names from the
-native tag initializers). Values are stored in
-`FBHGameplayAttributeRepContainer` (replicated).
+### 4.2 Modifiers
 
-### 4.2 Attribute access
+**SDK.** Each entry of `UBHGameplayEffect::Modifiers` is an
+`FBHAttributeModifier`:
 
-Blueprint-exposed APIs on `UBHGameplayEffectLibrary`:
+| Field | Type |
+|---|---|
+| `Attribute` (0x00) | `FGameplayTag` |
+| `Operation` (0x08) | `EBHAttributeModOp`: `Add`, `Multiply`, `Divide`, `MultiplyCompound`, `AddFinal`, `Override` |
+| `Channel` (0x09) | `EBHAttributeModChannel` |
+| `Modifier` (0x10) | `FInstancedStruct`: one of `FBHAttributeMod_Scalar`, `FBHAttributeMod_Attribute`, `FBHAttributeMod_SetByCaller` |
+| `Filter` (0x20) | `FBHGameplayTagRequirements` |
 
-```cpp
-GetValues(Handle, base, Current, ...)   // read base + current
-ModifyBase(Delta, Handle, Value, ...)   // additive modification
-SetBase(Delta, Handle, newbase)         // absolute set
-```
+**Native.** The Scalar evaluator (`0x522E960`) switches on
+`CurveIndexing` (`EBHAttributeScalarIndex`): `Fixed` returns the plain
+value; `StackCount` evaluates the curve at the stack count;
+`StackCountNRM` uses the stack count normalised by the effect's settings;
+`Lifetime` and `Duration` index by time (Duration returns 0 when the
+effect's `Duration` is 0). **Stack scaling is therefore a per-modifier
+curve set in data**, not a fixed linear or multiplicative rule.
 
-### 4.3 Attribute → modifier chain
+How the operations and channels combine into the current value is
+**Open**: the combining function is not located.
 
-When a GE applies, its `Modifiers` list (opaque in SDK) iterates and
-calls `ModifyBase` or `SetBase` on the target component's attributes.
-The exact iteration order and whether multiple modifiers for the
-same attribute multiply or add is a §6 open question.
+### 4.3 Base-value writes
 
-## 5. End-to-end example — equipping a 6x scope
+**Native.** The base setter `0x5236E50` runs the per-attribute hook (map
+at `+0x378`, probably a clamp), stores the new base, and pushes it into
+`AttributeReplication` (`0x52382E0`) under a role check. Its direct
+callers are `SetAttributeBaseValue` (`0x5236AF0`), the library
+`ModifyBase` (`0x523A560`) and `SetBase` (`0x523AB10`),
+`FindOrAddAttribute` (`0x522F8F0`) and the replication handler
+(`0x5233C00`). No effect-apply function calls it, so modifiers most
+likely feed the current value instead.
 
-1. Player equips a weapon attachment configured with a `GE_6xScope_C` reference
-2. The attachment Blueprint calls `UBHGameplayEffectComponent::ApplyEffect(GE_6xScope_C, 1, [], Mode)`
-3. `ApplyEffect` creates a prediction handle, pushes to `EffectContainer`
-4. The GE's `Modifiers` iterate — e.g., modifies `Attribute.Weapon.ADSZoom` from 1.0 to 6.0
-5. The GE's `GrantedTags` apply — e.g., grants `Weapon.State.Scoped.Long`
-6. Client renders scoped view based on `GrantedTags`
-7. On unequip, the handle is removed, modifiers roll back, tags revoked
+`SetAttributeBaseValue` is reached through two helpers:
 
-Same mechanism applies to:
-- Weapon attachments (magazine, foregrip, muzzle, sight)
-- Player status effects (stim pen, bleed, exhaustion)
-- Vehicle driver bonuses
-- Spotting marks
+- `0x52311D0` adds a delta to the attribute's stored value and calls it.
+  Used by **character damage** (vitality `0x6B82520`, DamagePipeline §10),
+  `Auth_Heal` (`0x6B83360`), the vehicle fuel component and others.
+- `0x5236DE0`, a convenience wrapper, used by `ResetHealth` (`0x6B83560`),
+  `Auth_DecreaseContainerAmount` (`0x6C66540`), the character's revive
+  handler (`0x6E75620`, which writes `Attribute.Gameplay.PreTipValue`),
+  the tipping component and vehicle weapon code.
 
-## 6. Still Not Pulled / Open Questions
+## 5. Application and prediction
 
-### 6.1 Modifier array internal structure (`SDK`-gated)
-`UBHGameplayEffect::Modifiers` is `TArray<FNone_>` — Dumper-7 could
-not resolve the per-modifier struct type. Needs:
-- Deeper SDK regeneration with more context, OR
-- Static IDA RE of the modifier iterator in `ApplyEffect`
+**Native** (`ApplyEffect`, `0x5227F20`). When the component's role check
+(`0x3CA8630`) does not return 3, a local predicted instance is created
+only if a component flag (`+0x280`) is clear, `Mode` is not
+`AuthorityOnly`, and the effect's `bAllowClientPredictedApplication`
+(`+0x220`) is set. It then goes to `0x5219AB0` when `Mode` is
+`ClientInstigated` and `ClientInstigatedApplicationPolicy` (`+0x222`) is
+Enable, otherwise to `0x5219C70`.
 
-### 6.2 Stacking math (`IDA`-fillable)
-When `MaxStacks > 1` and the same effect applies multiple times, the
-math on `Modifiers` output is not documented. Candidates:
-- Linear (stack 2 = 2× modifier)
-- Multiplicative (stack 2 = modifier²)
-- Capped by `StackDurationRefreshPolicy` enum
+These are code facts. What they mean for authority, and how rollback
+works, are **Open**; the doc makes no server-authority claim, and
+security questions go through [`SECURITY.md`](SECURITY.md).
 
-### 6.3 Attribute iteration order (`IDA`-fillable)
-When multiple GEs modify the same attribute, the resolution order
-needs IDA RE of the `AttributeReplication` consumer.
+## 6. Gameplay cues
 
-### 6.4 Client-prediction authority model (`SECURITY`-flagged)
-`bAllowClientPredictedApplication` and
-`bAllowClientPredictedModification` toggles exist on each GE. This
-means:
-- Some effects are client-predicted and server-reconciled
-- Some effects are server-authoritative only
+**Native.** Cues are handled by a separate component,
+`UWDGameplayCueComponent` (module WDGameplayCue), with multicast invoke
+RPCs. Not every cue comes from an effect: `GameplayCue.Player.ReviveAlly`
+is fired by a direct call (`0x6E75620` → `0x4C45DC0`).
 
-The threat-model question: does the reconciliation always roll back
-illegitimate predictions, or does the client's optimistic state
-persist until a server mismatch is detected?
+## 7. Example: a scope attachment
 
-**Routing:** this is a server-authority question that goes through
-[`SECURITY.md`](SECURITY.md), not public write-up.
+**Data.** `ID_6xScope.json` lists `GE_6xScope_C` in
+`AttachmentData.AppliedEffects`, and `GE_6xScope_MainSight_C` per sight.
+The code that applies them on equip is not traced, and the effects'
+modifier values are not in the export (the `GE_*` assets were not
+exported).
 
-### 6.5 Full GE_* catalog values (`EXPORT`-fillable)
-Only the structural signatures of the 338 GE_* subclasses are
-captured. The actual configured values (duration, stack count,
-modifier amounts, granted tags) require per-asset extraction. Each
-GE_* has an associated `.uasset` that CUE4Parse can parse — not yet
-in current dump.
+## 8. Open questions
 
-### 6.6 Prediction conflict resolution (`IDA`-fillable)
-`UNetworkPredictionWorldManager` handles rollback. The specific
-rollback mechanism (snapshot + replay vs forward-correction) is
-documented at UE level but Wardogs-specific extensions may apply.
+| # | Question |
+|---|---|
+| E-1 | How `EBHAttributeModOp` operations and channels combine into the current value |
+| E-2 | Duration semantics beyond 0 (for example whether −1 means infinite) |
+| E-3 | Rollback mechanism and the role of `UNetworkPredictionWorldManager` |
+| E-4 | `GE_*` asset values (modifiers, durations, granted tags): needs the assets exported |
+| E-5 | The equip code path that applies attachment effects |
+| E-6 | Vehicle health via effects: `GE_Vehicle_Health` and vehicle-side callers of `0x52311D0` (`0x7665D60`, `0x766727F`) are not traced |
 
-## 7. Cross-references
+## 9. Cross-references
 
-### SDK files cited
-- [`sdk/raw/BHGameplayEffects_classes.hpp`](sdk/raw/BHGameplayEffects_classes.hpp) — `UBHGameplayEffect`, `UBHGameplayEffectComponent`, `UBHGameplayEffectLibrary`, `UBHTaggedGameplayEffects`
-- [`sdk/raw/BHGameplayEffects_structs.hpp`](sdk/raw/BHGameplayEffects_structs.hpp) — effect stacking enums, `FBHGameplayEffectPreset`, `FBHGameplayEffectHandle`, `FBHAttributeHandle`
-- [`sdk/raw/BHGameplayPrediction_classes.hpp`](sdk/raw/BHGameplayPrediction_classes.hpp) — the prediction component base
-- `sdk/raw/GE_*_classes.hpp` (338 files) — individual effect subclasses
-
-### Data files cited
-- [`data/Wardogs/Content/GameMechanics/GameplayEffects/Presets/DA_CharacterEffectPresets.json`](data/Wardogs/Content/GameMechanics/GameplayEffects/Presets/DA_CharacterEffectPresets.json)
-- [`data/Wardogs/Content/GameMechanics/GameplayEffects/Presets/DA_DefaultPlayerEffects.json`](data/Wardogs/Content/GameMechanics/GameplayEffects/Presets/DA_DefaultPlayerEffects.json)
-- [`data/Wardogs/Plugins/GameFeatures/Items/StimPen/Content/Data/DA_CharacterModifierState_StimulantEffects.json`](data/Wardogs/Plugins/GameFeatures/Items/StimPen/Content/Data/DA_CharacterModifierState_StimulantEffects.json)
-
-### Related reference docs
-- [`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md) — infantry damage uses GAS modifier chain
-- [`Wardogs_VehicleDamagePipeline_v1.md`](Wardogs_VehicleDamagePipeline_v1.md) — vehicle damage uses per-vehicle rules (not GAS)
-- [`Wardogs_GameMechanics_v2.md`](Wardogs_GameMechanics_v2.md) — broader mechanics context
-- [`Wardogs_GameplayTags_v1.md`](Wardogs_GameplayTags_v1.md) — tag catalog
+- [`BHGameplayEffects_classes.hpp`](sdk/raw/BHGameplayEffects_classes.hpp), [`BHGameplayEffects_structs.hpp`](sdk/raw/BHGameplayEffects_structs.hpp), [`BHGameplayPrediction_classes.hpp`](sdk/raw/BHGameplayPrediction_classes.hpp), `sdk/raw/GE_*_classes.hpp` (338 files)
+- [`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md): the rule pipeline and the character health write (§10)
+- [`Wardogs_VehicleDamagePipeline_v1.md`](Wardogs_VehicleDamagePipeline_v1.md): vehicle sections, which reduce `Attribute.Gameplay.Health.*` attributes
+- [`Wardogs_GameplayTags_v1.md`](Wardogs_GameplayTags_v1.md): tag catalog
 
 ## Change log
 
 | Date | Change |
 |---|---|
-| 2026-10-16 | v1 — First complete trace of BH-GAS architecture. 338 GE_* classes catalogued by prefix. Attribute system documented as `TMap<FGameplayTag, float>` divergence from vanilla GAS. Prediction + server-reconciliation security question flagged (§6.4). |
+| 2026-10-16 | v1: BH-GAS architecture, 338 GE classes by prefix, attribute map, prediction question. |
+| 2026-10-17 | Corrected against the decompilation corpus, SDK and data: attributes are double base/current records (the map is only defaults); `Modifiers` element type and operations documented; stacking is a per-modifier curve; base-value writes and the damage path traced; preset types, catalog descriptions, StanceRecoil count (21), the three preset files and the example rewritten from data; authority language removed; cues are a separate component. |
