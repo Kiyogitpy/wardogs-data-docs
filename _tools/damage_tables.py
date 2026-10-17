@@ -14,7 +14,7 @@ tags. Entries that need instigator tags are counted as unknown instead of applie
     python _tools/damage_tables.py --falloff  # upper-torso damage by distance
     python _tools/damage_tables.py --ammo M4  # one weapon: ammo type x armor class
     python _tools/damage_tables.py --vehicles # rule factor per vehicle row and caliber
-    python _tools/damage_tables.py --survive  # hits to destroy six vehicles, per section hit
+    python _tools/damage_tables.py --survive  # hits to destroy every vehicle variant
     python _tools/damage_tables.py --write    # refresh every marked table in the docs after a data update
 
 The distance curve's Time axis is centimetres: the native code evaluates it with the
@@ -286,32 +286,87 @@ def vehicle_table(proj):
         print(f"| `{key.replace('Meta.Damage.Vehicle.', '')}` | " + " | ".join(cells) + " |")
 
 
-# Platform modules assembled per vehicle (chosen by name; the composition asset is not traced).
-SURVIVE = {
-    "Land.Wheeled.Bobcat": ["VP_WHL_01", "VP_WHL_01_Wheels"],
-    "Land.Wheeled.Humvee.Default": ["VP_WHL_05", "VP_WHL_05_MainBody_Default", "VP_WHL_05_Wheels_Humvee"],
-    "Land.Wheeled.Ural": ["VP_WHL_07", "VP_WHL_07_MainBody_Default", "VP_WHL_07_Rearback", "VP_WHL_07_Wheels"],
-    "Air.Rotary.Havoc": ["VP_ROT_02", "VP_ROT_02_MainBody_Default"],
-    "Air.Rotary.LittleBird": ["VP_ROT_03", "VP_ROT_03_Body"],
-    "Land.Tracked.TNK_01.Heavy": ["VP_TNK_01_Heavy", "VP_TNK_01_Turret_Heavy"],
-}
 MAIN = "Attribute.Gameplay.Health"
+_FILES = {}
 
 
-def sections(modules):
-    """Section tag -> (max health, hit-location tag, pre, post, simultaneous) from the platform modules."""
-    files = {os.path.basename(p)[:-5]: p for p in glob.glob(os.path.join(DATA, "**/VP_*.json"), recursive=True)}
+def asset_file(path_or_name):
+    """Export file for an asset path like /WHL_05/Parts/VP_X.VP_X or a bare asset name."""
+    if not _FILES:
+        for p in glob.glob(os.path.join(DATA, "**", "*.json"), recursive=True):
+            _FILES.setdefault(os.path.basename(p)[:-5], p)
+    name = path_or_name.rsplit("/", 1)[-1].split(".")[0]
+    return _FILES.get(name)
+
+
+def assemble(variant_path):
+    """A variant's modules: its platform plus every slot's part (variant override, else the slot default),
+    recursing into parts' own slots. Override paths are dotted slot names (e.g. Rearback.Chassis)."""
+    v = next(o for o in exports(variant_path) if o.get("Type") == "ModularVehicleVariant")["Properties"]
+    data = v["AssemblyData"]
+    overrides = {s["Path"]["Path"]: s["Part"]["AssetPathName"]
+                 for s in data.get("CustomData", {}).get("SlotOverrides", [])}
+    modules, missing = [], []
+
+    def visit(path, prefix):
+        f = asset_file(path)
+        if not f:
+            missing.append(path)
+            return
+        modules.append(f)
+        objs = {o.get("Name"): o for o in exports(f)}
+        owner = next((o for o in objs.values() if o.get("Type") in ("ModularVehiclePlatform", "ModularVehiclePart")), None)
+        for s in (owner or {}).get("Properties", {}).get("Slots", []):
+            if not s["Value"].get("bEnabled", True):
+                continue
+            name = prefix + s["Key"]
+            slot = objs.get(s["Value"]["Slot"]["ObjectName"].split(":")[-1].rstrip("'"), {})
+            part = overrides.get(name) or slot.get("Properties", {}).get("DefaultPart", {}).get("AssetPathName")
+            if part:
+                visit(part, name + ".")
+
+    visit(data["VehicleBase"]["ObjectPath"].split(".")[0], "")
+    return modules, missing, tag(v["VariantID"])
+
+
+def sections(module_files):
+    """Section tag -> (max health, hit-location tag, pre, post, simultaneous) from enabled health fragments."""
     out = {}
-    for name in modules:
-        for o in exports(files[name]):
-            for kv in o.get("Properties", {}).get("HealthSections", []):
-                v = kv["Value"]
+    for f in module_files:
+        objs = {o.get("Name"): o for o in exports(f)}
+        owner = next((o for o in objs.values() if o.get("Type") in ("ModularVehiclePlatform", "ModularVehiclePart")), None)
+        for fr in (owner or {}).get("Properties", {}).get("Fragments", []):
+            obj = objs.get(fr["Value"]["Fragment"]["ObjectName"].split(":")[-1].rstrip("'"), {})
+            if not fr["Value"].get("bEnabled", True) or obj.get("Type") != "MVF_HealthSections":
+                continue
+            for kv in obj.get("Properties", {}).get("HealthSections", []):
+                val = kv["Value"]
                 routes = lambda key: [(tag(r["Key"]), r["Value"]["Scalar"]["Value"], r["Value"]["bOnlyWhenDepleted"])
-                                      for r in v.get(key, [])]
-                hit = next((t for t in v.get("Tags", []) if t.startswith("Meta.Damage.HitLocation.")), None)
-                out[tag(kv["Key"])] = (v["MaxHealth"], hit, routes("PreDamageRouting"),
+                                      for r in val.get(key, [])]
+                hit = next((t for t in val.get("Tags", []) if t.startswith("Meta.Damage.HitLocation.")), None)
+                out[tag(kv["Key"])] = (val["MaxHealth"], hit, routes("PreDamageRouting"),
                                        routes("PostDamageRouting"), routes("SimultaneousDamageRouting"))
     return out
+
+
+def damage_tag(module_files):
+    """VehicleDamageTag from DA_GameplaySystems_*, found through the modules' DA_*Config references."""
+    seen = set()
+    queue = list(module_files)
+    while queue:
+        f = queue.pop(0)
+        if f in seen or not f:
+            continue
+        seen.add(f)
+        if "GameplaySystems" in os.path.basename(f):
+            for o in exports(f):
+                t = next(walk(o, "VehicleDamageTag"), None)
+                if t:
+                    return tag(t)
+        text = open(f, encoding="utf-8").read()
+        for ref in set(re.findall(r"(DA_[A-Za-z0-9_]*(?:Config|GameplaySystems)[A-Za-z0-9_]*)", text)):
+            queue.append(asset_file(ref))
+    return None
 
 
 def apply_section(secs, health, key, amount, depth=0):
@@ -344,23 +399,29 @@ def apply_section(secs, health, key, amount, depth=0):
 
 
 def survive_table(proj):
+    """Hits to destroy every vehicle variant: main body, and the fastest section, per caliber."""
     generic = rows("DT_GlobalDamage_VehicleData.json")["Meta.Damage.Vehicle"]["DamageModificationEntries"]
     vrows = {}
     for path in glob.glob(os.path.join(DATA, "Wardogs/Plugins/**/DT_GlobalDamage_VehicleData_*.json"), recursive=True):
         vrows.update(exports(path)[0]["Rows"])
     cals = ["Item.Caliber.556mm", "Item.Caliber.50Cal", "Item.Caliber.20x102mm", "Item.Caliber.30mm"]
-    print("| Vehicle | Section hit (max health) | " + " | ".join(f"`{c.replace('Item.Caliber.', '')}`" for c in cals) + " |")
-    print("|---|---|" + "---:|" * len(cals))
-    for key, modules in SURVIVE.items():
-        secs = sections(modules)
-        entries = vrows["Meta.Damage.Vehicle." + key]["DamageModificationEntries"] + generic
-        for sec, (hp, hit, *_) in secs.items():
-            if not hit:
-                continue
-            cells = []
-            for cal in cals:
-                src, ctx, base = proj[cal]
-                source = expand(ctx + [src, cal, "Meta.Damage.DamageType.Projectile"])
+    print("| Variant | Damage row (`Meta.Damage.Vehicle.` omitted) | Main health | "
+          + " | ".join(f"`{c.replace('Item.Caliber.', '')}`" for c in cals) + " |")
+    print("|---|---|---:|" + "---|" * len(cals))
+    for vpath in sorted(glob.glob(os.path.join(DATA, "**", "Variants", "VV_*.json"), recursive=True)):
+        modules, missing, _ = assemble(vpath)
+        secs, dtag = sections(modules), damage_tag(modules)
+        if MAIN not in secs or dtag not in vrows:
+            continue  # no health model or no damage row for this variant
+        entries = vrows[dtag]["DamageModificationEntries"] + generic
+        cells = []
+        for cal in cals:
+            src, ctx, base = proj[cal]
+            source = expand(ctx + [src, cal, "Meta.Damage.DamageType.Projectile"])
+            results = {}
+            for sec, (hp, hit, *_) in secs.items():
+                if not hit:
+                    continue
                 f = 1.0
                 for e in entries:
                     m = e["OutModification"]
@@ -375,11 +436,19 @@ def survive_table(proj):
                 dmg = base * max(f, 0)
                 health = {k: v[0] for k, v in secs.items()}
                 hits = 0
-                while health.get(MAIN, 0) > 0 and hits < 2000 and dmg > 0:
+                while health.get(MAIN, 0) > 0 and hits < 5000 and dmg > 0:
                     apply_section(secs, health, sec, dmg)
                     hits += 1
-                cells.append("—" if dmg <= 0 or hits >= 2000 else str(hits))
-            print(f"| `{key}` | {sec.replace('Attribute.Gameplay.', '')} ({hp:g}) | " + " | ".join(cells) + " |")
+                if dmg > 0 and hits < 5000:
+                    results[sec] = hits
+            main = results.get(MAIN)
+            best = min(results.items(), key=lambda kv: kv[1]) if results else None
+            cell = "—" if main is None else str(main)
+            if best and best[0] != MAIN and (main is None or best[1] < main):
+                cell += f" / {best[1]} ({best[0].replace(MAIN + '.', '')})"
+            cells.append(cell)
+        name = os.path.basename(vpath)[3:-5]
+        print(f"| `{name}` | `{dtag.replace('Meta.Damage.Vehicle.', '')}` | {secs[MAIN][0]:g} | " + " | ".join(cells) + " |")
 
 
 BLOCK = re.compile(r"<!-- damage_tables (.+?) -->\r?\n.*?<!-- /damage_tables -->", re.S)

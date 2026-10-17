@@ -136,6 +136,10 @@ category sorts first (index −1).
   exported tag config nor among the native tag globals, and two sources
   register the same STN_05 row. STN_06 most likely never reaches its own
   rules.
+- **`Land.Wheeled.WHL_08.MachineGun` is never used.** No gameplay-systems
+  asset assigns that tag; the WHL_08 ring-turret variant carries the
+  `WHL_08.Default` tag through its config, so the MachineGun row's rules
+  are unreachable.
 - **Nine entries can never match.** Their `PossibleHitLocations` list only
   `Attribute.Gameplay.Health.*` tags, but the event's hit location is a
   `Meta.Damage.HitLocation.*` tag (§3). Affected: ROT_03 #4 and #5,
@@ -335,19 +339,28 @@ from small arms.
 
 ### 5.4 Hits to destroy
 
-**Derived**, `_tools/damage_tables.py --survive`: how many direct hits
-on one section destroy the vehicle (main `Attribute.Gameplay.Health`
-reaching 0), simulating the rules (§1–2, including that section's
+**Derived**, `_tools/damage_tables.py --survive`: for every vehicle
+variant, how many direct hits destroy it (main `Attribute.Gameplay.Health`
+reaching 0), simulating the rules (§1–2, including the hit section's
 hit-location rules) and the section order and routing of §4. Base damage
-at point blank, FMJ. "—" means hitting only that section can never
-destroy the vehicle: either the rules reduce the damage to 0, or the
-section does not route to the main health.
+at point blank, FMJ. Each cell gives the hits on the main body, then,
+when some other section is faster, the fewest hits through any one
+section and which section. "—" means that section can never destroy the
+vehicle: the rules reduce the damage to 0, or it does not route to the
+main health.
+
+**Data, assembly.** Each variant (`Variants/VV_*`) names a platform
+(`AssemblyData.VehicleBase`). Every enabled slot of the platform, and of
+each part placed in it, holds the variant's `SlotOverrides` part for that
+dotted slot path (for example `Body`, `Rearback.Chassis`), otherwise the
+slot's `DefaultPart`. Health sections come from every enabled
+`MVF_HealthSections` fragment of the assembled modules. The damage row is
+the `VehicleDamageTag` in the variant's `*GameplaySystems*` asset, reached
+through the modules' `DA_*Config` references. STN_06 is left out: its tag
+has no row (§2.2).
 
 Assumptions:
 
-- **Modules:** a vehicle is assembled from several `VP_*` platform
-  modules. The ones used here were chosen by name (for example `VP_WHL_01`
-  plus `VP_WHL_01_Wheels`); the asset that composes them is not traced.
 - **Health stops at 0:** a section absorbs at most its remaining health,
   and the rest is left for post routing. The attribute hook that would
   clamp it is not traced, but the depleted-only post routes in the data
@@ -356,49 +369,38 @@ Assumptions:
   filter, repair and regeneration are ignored.
 
 <!-- damage_tables --survive -->
-| Vehicle | Section hit (max health) | `556mm` | `50Cal` | `20x102mm` | `30mm` |
-|---|---|---:|---:|---:|---:|
-| `Land.Wheeled.Bobcat` | Health (200) | 96 | 30 | 14 | 2 |
-| `Land.Wheeled.Bobcat` | Health.Engine (200) | — | — | — | — |
-| `Land.Wheeled.Bobcat` | Health.FuelTank (100) | — | — | — | — |
-| `Land.Wheeled.Bobcat` | Health.Wheel.Left.Front (75) | 64 | 20 | 54 | 8 |
-| `Land.Wheeled.Bobcat` | Health.Wheel.Left.Rear (75) | 64 | 20 | 54 | 8 |
-| `Land.Wheeled.Bobcat` | Health.Wheel.Right.Front (75) | 64 | 20 | 54 | 8 |
-| `Land.Wheeled.Bobcat` | Health.Wheel.Right.Rear (75) | 64 | 20 | 54 | 8 |
-| `Land.Wheeled.Humvee.Default` | Health (500) | 715 | 223 | 56 | 17 |
-| `Land.Wheeled.Humvee.Default` | Health.Engine (400) | — | — | — | — |
-| `Land.Wheeled.Humvee.Default` | Health.FuelTank (400) | 129 | 40 | 100 | 30 |
-| `Land.Wheeled.Humvee.Default` | Health.Wheel.Left.Front (75) | 239 | 74 | 222 | 67 |
-| `Land.Wheeled.Humvee.Default` | Health.Wheel.Left.Rear (75) | 239 | 74 | 222 | 67 |
-| `Land.Wheeled.Humvee.Default` | Health.Wheel.Right.Front (75) | 239 | 74 | 222 | 67 |
-| `Land.Wheeled.Humvee.Default` | Health.Wheel.Right.Rear (75) | 239 | 74 | 222 | 67 |
-| `Land.Wheeled.Ural` | Health (700) | 1000 | 312 | 94 | 12 |
-| `Land.Wheeled.Ural` | Health.Engine (400) | — | — | — | — |
-| `Land.Wheeled.Ural` | Health.FuelTank (400) | 175 | 55 | 147 | 19 |
-| `Land.Wheeled.Ural` | Health.Wheel.Left.Front (75) | 445 | 139 | 373 | 47 |
-| `Land.Wheeled.Ural` | Health.Wheel.Left.Middle (75) | 445 | 139 | 373 | 47 |
-| `Land.Wheeled.Ural` | Health.Wheel.Left.Rear (75) | 445 | 139 | 373 | 47 |
-| `Land.Wheeled.Ural` | Health.Wheel.Right.Front (75) | 445 | 139 | 373 | 47 |
-| `Land.Wheeled.Ural` | Health.Wheel.Right.Middle (75) | 445 | 139 | 373 | 47 |
-| `Land.Wheeled.Ural` | Health.Wheel.Right.Rear (75) | 445 | 139 | 373 | 47 |
-| `Air.Rotary.Havoc` | Health (800) | 1143 | 356 | 182 | 42 |
-| `Air.Rotary.Havoc` | Health.FuelTank (200) | — | — | — | — |
-| `Air.Rotary.Havoc` | Health.Engine (200) | — | — | — | — |
-| `Air.Rotary.Havoc` | Health.Rotor.Tail (300) | 1143 | 356 | 182 | 42 |
-| `Air.Rotary.Havoc` | Health.Rotor.Main (400) | 1429 | 445 | 227 | 52 |
-| `Air.Rotary.Havoc` | Health.Wheel.Left.Front (100) | 643 | 200 | 205 | 47 |
-| `Air.Rotary.Havoc` | Health.Wheel.Right.Front (100) | 643 | 200 | 205 | 47 |
-| `Air.Rotary.LittleBird` | Health (400) | 191 | 60 | 71 | 7 |
-| `Air.Rotary.LittleBird` | Health.FuelTank (200) | — | — | — | — |
-| `Air.Rotary.LittleBird` | Health.Engine (200) | — | — | — | — |
-| `Air.Rotary.LittleBird` | Health.Rotor.Tail (300) | 191 | 60 | 71 | 7 |
-| `Air.Rotary.LittleBird` | Health.Rotor.Main (400) | 286 | 89 | 106 | 11 |
-| `Land.Tracked.TNK_01.Heavy` | Health (800) | — | — | 312 | 47 |
-| `Land.Tracked.TNK_01.Heavy` | Health.FuelTank (150) | — | — | — | — |
-| `Land.Tracked.TNK_01.Heavy` | Health.Engine (150) | — | — | 312 | 47 |
-| `Land.Tracked.TNK_01.Heavy` | Health.Tracks.Left (125) | — | — | 578 | 87 |
-| `Land.Tracked.TNK_01.Heavy` | Health.Tracks.Right (125) | — | — | 578 | 87 |
-| `Land.Tracked.TNK_01.Heavy` | Health.Body.StrongArea (350) | — | — | 442 | 67 |
+| Variant | Damage row (`Meta.Damage.Vehicle.` omitted) | Main health | `556mm` | `50Cal` | `20x102mm` | `30mm` |
+|---|---|---:|---|---|---|---|
+| `Attack_ROT_02` | `Air.Rotary.Havoc` | 800 | 1143 / 643 (Wheel.Left.Front) | 356 / 200 (Wheel.Left.Front) | 182 | 42 |
+| `ROT_03_Default` | `Air.Rotary.LittleBird` | 400 | 191 | 60 | 71 | 7 |
+| `ROT_03_MachineGuns` | `Air.Rotary.LittleBird` | 400 | 191 | 60 | 71 | 7 |
+| `ROT_03_RocketPods` | `Air.Rotary.LittleBird` | 400 | 191 | 60 | 71 | 7 |
+| `ROT_04_Default` | `Air.Rotary.ROT_04` | 600 | 858 / 429 (Rotor.Tail) | 267 / 134 (Rotor.Tail) | 167 | 24 |
+| `ROT_04_MountedMachineGuns` | `Air.Rotary.ROT_04` | 600 | 858 / 429 (Rotor.Tail) | 267 / 134 (Rotor.Tail) | 167 | 24 |
+| `SPW_01` | `Land.Tracked.Leopard.Spawn` | 1000 | — | — | 366 | 51 |
+| `SPW_02` | `Land.Tracked.Leopard.Spawn` | 1000 | — | — | 366 | 51 |
+| `SPW_03` | `Land.Tracked.Leopard.Spawn` | 1000 | — | — | 366 | 51 |
+| `STN_01` | `Stationary.Mistral` | 3000 | 715 | 223 | 167 | 60 |
+| `STN_02` | `Stationary.Phalanx` | 5000 | 1191 | 371 | 278 | 100 |
+| `STN_03` | `Stationary.Mortar` | 3000 | 715 | 223 | 167 | 60 |
+| `STN_04` | `Stationary.RadioTower` | 1000 | 715 | 223 | 56 | 12 |
+| `TNK_01_AntiAir` | `Land.Tracked.TNK_01.AntiAir` | 800 | — | — | 312 | 47 |
+| `TNK_01_Artillery` | `Land.Tracked.TNK_01.Artillery` | 650 | — | — | 254 | 39 |
+| `TNK_01_Heavy` | `Land.Tracked.TNK_01.Heavy` | 800 | — | — | 312 | 47 |
+| `TNK_04` | `Land.Tracked.TNK_04.Default` | 750 | — | — | 176 | 38 |
+| `WHL_01_Default` | `Land.Wheeled.Bobcat` | 200 | 96 / 64 (Wheel.Left.Front) | 30 / 20 (Wheel.Left.Front) | 14 | 2 |
+| `WHL_02_Default` | `Land.Wheeled.Patriot.Kodiak` | 400 | 572 / 143 (Wheel.Left.Front) | 178 / 45 (Wheel.Left.Front) | 39 | 8 |
+| `WHL_02_Pickup` | `Land.Wheeled.Patriot.Kodiak` | 400 | 572 / 143 (Wheel.Left.Front) | 178 / 45 (Wheel.Left.Front) | 39 | 8 |
+| `WHL_02_SUV_RingTurret` | `Land.Wheeled.Patriot.Kodiak` | 400 | 572 / 143 (Wheel.Left.Front) | 178 / 45 (Wheel.Left.Front) | 39 | 8 |
+| `WHL_05_Humvee_Default` | `Land.Wheeled.Humvee.Default` | 500 | 715 / 129 (FuelTank) | 223 / 40 (FuelTank) | 56 | 17 |
+| `WHL_05_Humvee_RingMinigun` | `Land.Wheeled.Humvee.Minigun` | 500 | 1429 / 258 (FuelTank) | 445 / 80 (FuelTank) | 70 | 20 |
+| `WHL_05_Humvee_RingTurret` | `Land.Wheeled.Humvee.MachineGun` | 500 | 893 / 161 (FuelTank) | 278 / 50 (FuelTank) | 62 | 23 |
+| `WHL_06_DuneBuggy_Default` | `Land.Wheeled.DuneBuggy` | 400 | 286 / 84 (FuelTank) | 89 / 26 (FuelTank) | 27 | 10 |
+| `WHL_07_Battle` | `Land.Wheeled.Ural` | 700 | 1000 / 175 (FuelTank) | 312 / 55 (FuelTank) | 94 | 12 |
+| `WHL_07_Default` | `Land.Wheeled.Ural` | 700 | 1000 / 175 (FuelTank) | 312 / 55 (FuelTank) | 94 | 12 |
+| `WHL_07_ArmouredBattle` | `Land.Wheeled.Ural` | 700 | 1000 / 175 (FuelTank) | 312 / 55 (FuelTank) | 94 | 12 |
+| `WHL_08_Default` | `Land.Wheeled.WHL_08.Default` | 500 | 715 / 204 (Wheel.Left.Front) | 223 / 63 (Wheel.Left.Front) | 53 | 13 |
+| `WHL_08_RingTurret` | `Land.Wheeled.WHL_08.Default` | 500 | 715 / 204 (Wheel.Left.Front) | 223 / 63 (Wheel.Left.Front) | 53 | 13 |
 <!-- /damage_tables -->
 
 ## 6. Top damage source tags
@@ -448,3 +450,4 @@ Every row has a `Meta.Damage.Bullet` rule.
 | 2026-10-17 | Rewritten against the decompilation corpus and the damage doc. Vehicles use the same rule pipeline as infantry (the "fundamentally different" claim is withdrawn); target tag from `VehicleDamageTag`; the generic row is a parent level, not a fallback; `PriorityIndex` is overwritten (array order decides nothing); 5 `Add` entries; corrected counts (21 files, 23 rows, 665 entries) and row keys; ROT_02 duplicates explained by hit locations; section order and routing semantics traced; STN_06 keying and nine unreachable entries flagged. |
 | 2026-10-17 | Added caliber factors for every vehicle row (§5.3), generated by `_tools/damage_tables.py --vehicles`. |
 | 2026-10-17 | Added hits to destroy for six vehicles (§5.4): rules plus section routing, simulated by `--survive`. |
+| 2026-10-17 | §5.4 now covers all 30 variants with a damage row, assembled from the variant data (platform, slots, overrides) instead of hand-picked modules; flagged the unreachable `WHL_08.MachineGun` row. |
