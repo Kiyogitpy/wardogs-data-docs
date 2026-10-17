@@ -22,9 +22,13 @@ asset extraction and remains a separate input.
 
 ## What's here
 
-| File | Size | Purpose |
-|---|---:|---|
-| `5.7.4-516586+++Wardogs+Live-Wardogs.usmap` | 1.1 MB | UE class/property metadata used by CUE4Parse / FModel |
+| File | Size | In the repo | Purpose |
+|---|---:|---|---|
+| `5.7.4-516586+++Wardogs+Live-Wardogs.usmap` | 1.1 MB | No (local, gitignored) | The live build's class/property metadata for CUE4Parse / FModel. Obfuscated: many property names are hashed and some array element types are `Unknown` |
+| `old-deobfuscated-507-ClosedBeta.usmap` | 2.7 MB | No (local, gitignored) | The closed beta's usmap (build 507, 2026-08-23), originally `507_Wardogs_ClosedBeta.usmap`. Older than the live build, but **not obfuscated**. Use it as a name donor for the live usmap (`WdExtract --names`), not on its own: about 10,600 structs share a layout with the live build, and the rest changed between builds |
+
+SHA-256 of `old-deobfuscated-507-ClosedBeta.usmap`:
+`f422117901ec8661d688a30958843fde8d85c27ee65e1943dfbad69e38df7736`.
 
 ## Build identity
 

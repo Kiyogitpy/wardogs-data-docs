@@ -43,10 +43,10 @@ WdExtract <Paks> <keyfile> <usmap> <out> <Paks>\oo2core_9_win64.dll <mode> [args
 **`--names <usmap>`** (any mode) borrows property names and array element
 types from an unobfuscated usmap for every struct whose layout matches this
 build's property for property. The closed-beta usmap
-(`507_Wardogs_ClosedBeta.usmap`, an older build) restores about 43,500
+(`mappings/old-deobfuscated-507-ClosedBeta.usmap`, an older build) restores about 43,500
 hashed or `Unknown` properties in about 10,600 structs; structs that changed
 between builds are left alone. With it, skeletal meshes and physics assets
-decode too. Like the live usmap, it stays local and is never committed.
+decode too. Keep it in `mappings/` next to the live one; like it, it is gitignored and never committed.
 Checked: a GE re-dump with `--names` is byte-identical to the published export.
 
 `dump` first restores usmap property names that are hashed in this build and
