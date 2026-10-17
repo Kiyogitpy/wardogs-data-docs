@@ -71,7 +71,7 @@ Notes:
 | AimSway stabilisation | AdsStabilizeTime 2.0, two unnamed fields (both 9.0), CooldownRateMovingMultiplier 2.0, MovementProgressPenalty 0.75 |
 | Animation sway | ADSPitch/Yaw multiplier curves both [`CRV_WeaponAnimSwayMultiplier_DMR_Harsh`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Curves/AimSway/DMR/CRV_WeaponAnimSwayMultiplier_DMR_Harsh.json) |
 
-The distance falloff times line up with `EffectiveRange = 400` if the times are in cm (40,000 cm = 400 m). This is consistent with the unit inference above but not proven.
+The distance falloff times are in cm: the native projectile path evaluates the curve with the shot-origin-to-hit distance in engine units ([DamagePipeline §7.6](Wardogs_DamagePipeline_v2.md#76-the-bullet-event)). 40,000 cm = 400 m, matching `EffectiveRange = 400`.
 
 **DA_Judge_Stats** (pistol)
 
@@ -225,7 +225,7 @@ The export lists the inputs to each system but not the formulas that combine the
 
 - **Aim sway (likely):** the class speed curve, the horizontal and vertical movement curves, and the `AimSwayData` multipliers (crouch, prone, camera offset, no-focus speed) appear to feed one sway offset. The combination method is unknown.
 - **Recoil (likely):** `RecoilPattern` gives per-shot X/Y offsets, `RandomDeviationDegree` adds random deviation, and the post-pattern yaw and pitch ranges add random kick afterwards. `RecoilPatternResetTime` probably controls when the pattern restarts.
-- **Distance falloff (SKS):** `DistanceDamageFalloffCurve` is a multiplier indexed by distance. The falloff times are presumably in the same units as `InitialBulletSpeed`.
+- **Distance falloff (SKS):** `DistanceDamageFalloffCurve` is a multiplier indexed by distance. The falloff times are centimetres of distance, confirmed in code; per-weapon damage by distance is in [DamagePipeline §7.8](Wardogs_DamagePipeline_v2.md#78-damage-over-distance).
 - **Focus energy (SKS, Judge):** `FocusEnergyReductionPerShot` and `RecoilReductionWhenFocussing` are per-shot values. `NoFocusEnergySpeedMultiplier` is probably a sway-speed scalar used when focus is empty. Neither is confirmed.
 
 ---

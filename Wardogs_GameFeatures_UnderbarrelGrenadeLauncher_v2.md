@@ -162,7 +162,7 @@ Both are normalised 0-to-1 ramps (time 0 to 1, value 0 to 1). The export does no
 - **Ammo:** each shot uses 1 round of `Id.Item.40mm` (`ResourcesUsed` = 1). The container holds 1 round at a time (`MaxSlotAmountStackSize` = 1), so the launcher is effectively a single-shot magazine.
 - **Fire rate:** 75 RPM is about **0.8 s** between shots (60 / 75). Semi-automatic means one shot per trigger pull.
 - **Ballistics:** a 7,600 initial speed over an effective range of 300. Units are not stated, so the range-to-speed relation cannot be checked from this folder.
-- **Damage:** no damage value is in this plugin. Damage is presumably on the 40mm projectile, which is outside this dump.
+- **Damage:** no damage value is in this plugin. Damage is on the 40mm projectile asset, [`DA_40mm_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/40mm/DA_40mm_ProjectileData.json) (`BaseDamage` 100, `ExplosiveRadius` 1000).
 
 ---
 
