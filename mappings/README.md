@@ -76,7 +76,7 @@ given two names. Two things change v1 names:
   `Min`/`MaxTransitionDuration`; `MWheeledVehicleTransmissionData` `ClutchScaleMin`/`Max`;
   `BHAimAssistSettingsData` pull and slow strengths; `GameplayEffect`
   `InheritableGameplayEffectTags` (UE source order). There are 96 corrections in 41 structs.
-  `data/` exports made with v1 carry the old names for these fields.
+  `data/` now carries the v2 names; see [`data/` and the v2 usmap](#data-and-the-v2-usmap).
 - **12 withdrawn.** The SDK names a different token with the same name, so v1's names on 8
   tokens were withdrawn and those properties are hashed again. Example: `WDWeaponStats+0x15C`,
   which v1 called `bFirstFocalPlane`; the SDK gives that name to `WDSightData[29]`.
@@ -109,6 +109,46 @@ SHA-256 of v1 `5.7.4-516586+++Wardogs+Live-Wardogs.deobfuscated.usmap` (still re
 
 SHA-256 of `old-deobfuscated-507-ClosedBeta.usmap`:
 `f422117901ec8661d688a30958843fde8d85c27ee65e1943dfbad69e38df7736`.
+
+### `data/` and the v2 usmap
+
+`data/` uses the v2 names since 2026-10-18. The earlier `data/` (2026-10-15) was not read with v1.
+It was read with a usmap rebuilt from a memory dump of the live client, whose placeholders have the
+form `_<21 letters>_$<HASH>$_$<len>$`, and whose names were carried over from the closed beta by a
+separate alignment. With that usmap, the same exporter reproduces the old `data/` byte for byte
+(all 6,830 files).
+
+How `data/` was re-exported:
+
+- Same exporter, same output format (`--- export: <class> / <name> ---` and indented JSON per export).
+- The usmap is v2 with one change. 236 properties that v2 still types `Unknown` take their element
+  type from the memory-dump usmap, at the same index of a struct with the same property count. No
+  name was taken from it. v2 alone loses data in 223 files, because CUE4Parse stops reading a struct
+  at the first `Unknown` array (for example `WDItemExtensionData_Holdable.MaterialOverrides`). With
+  the types filled, it loses none.
+- [`_tools/check_data_renames.py`](../_tools/check_data_renames.py) walks the old and new trees of
+  every changed file in parallel. Member counts, order and every leaf value must be identical, and
+  only member names may differ. Result: 1,971 files changed, 0 value or shape differences, and
+  78,637 keys renamed. Each old name maps to one new name everywhere.
+
+| Rename class | Distinct | Keys |
+|---|---:|---:|
+| Placeholder → this build's token (`_…_$HASH$_$len$` → `_<21 letters>`) | 635 | 70,841 |
+| Placeholder → name (SDK restore; 1 donor) | 123 | 4,173 |
+| Name → name, SDK corrections | 33 | 819 |
+| Case only (`InstanceID`, `SourceID`, `EntryID`, `EntityID` → `…Id`) | 4 | 2,735 |
+| Name → hashed, SDK withdrawn (`bFirstFocalPlane`, `TargetScore_AssistWeight`, `bAllowsRestocking`) | 3 | 60 |
+| Name → hashed, not in v2 (`NumberOfAssisters`, `SupplyCrateValue`, `TotalFOBSupplies` on StateTree tasks) | 3 | 9 |
+
+SDK-corrected keys per struct: `WDAttributeThresholdEffectTrigger` 251, `WDBipodAttachmentStanceData` 189,
+`WDCharacterMovementEffect` 176, `MWheeledVehicleWheelDataAsset` 54, `BHAimAssistSettingsData` 53,
+`WDWeaponStats` 47, `WDVehicleWeaponExtensionDataAsset` 35, `MVehicleSpringArmDataAsset` 10,
+`MTrackedVehicleWheelData` 3, `BHRotaryFlightDataAsset` 1. The SKS `MinimumRandomFiringAnimationOffset`
+is now −0.2 (`+0xCF0`) and `DA_TNK_01_WheelData` `DampingCompress` is 12,000. The memory-dump usmap
+also had `WDCharacterMovementEffect` cue and flag pairs and `WDVehicleWeaponExtensionDataAsset`
+`OperatorIdleSequence` / `FireCameraShakeClass` swapped, as v1 did.
+
+The `WDWeaponStats+0x98` key that `_tools/recoil_table.py` reads is now `_aaabimbpohdlmnphjbidm`.
 
 ## Build identity
 

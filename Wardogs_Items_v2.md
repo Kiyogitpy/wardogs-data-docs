@@ -20,9 +20,9 @@ parent: "Content"
 - **Vehicle items:** 20 items gain `Item.Context.MovementBlocked`.
 - **Aim assist, reticles:** AR inner reticle width 1900 -> 900, AR reticle depth 60000 -> 30000, SMG reticle depth 40000 -> 20000, SR reticle depth 20000 -> 40000.
 - **Aim assist, range:** LMG target range 50000 -> 30000, Shotgun 15000 -> 20000, SR gains 40000.
-- **Aim assist, pull and slow:** PullLerp and SlowLerp rates become 10 / 8 for every class except RPG (were 30 / 12 for PullLerp, and 6 / 5 or 5 / 5 for SlowLerp). PullOuterStrengthHip becomes 1.0 for every class that sets it (was 1.4 to 4.0). PullOuterStrengthAds becomes 2.0 for AR, LMG, Pistol, SMG, SR and Shotgun (was 4.0 to 6.0).
+- **Aim assist, pull and slow:** PullLerp and SlowLerp rates become 10 / 8 for every class except RPG (were 30 / 12 for PullLerp, and 6 / 5 or 5 / 5 for SlowLerp). PullInnerStrengthHip becomes 1.0 for every class that sets it (was 1.4 to 4.0). PullInnerStrengthAds becomes 2.0 for AR, LMG, Pistol, SMG, SR and Shotgun (was 4.0 to 6.0).
 - **Aim assist, rotation:** PullMaxRotationRate becomes 90 for AR, LMG, SMG, SR and Shotgun (was 120 or 135).
-- **Aim assist, removed keys:** `PullInnerStrengthAds`, `SlowOuterStrengthHip` and `SlowMinRotationRate` are gone for most classes. SR no longer sets `PullMode`, and Melee no longer sets `PullModeADS`.
+- **Aim assist, removed keys:** `PullOuterStrengthHip`, `SlowInnerStrengthHip` and `SlowMinRotationRate` are gone for most classes. SR no longer sets `PullMode`, and Melee no longer sets `PullModeADS`.
 - **Aim assist, curves:** hipfire pull and slow curves for most classes now point to `_Default` curves (section 9).
 - **Counts:** 259 files, 230 primary assets, 193 item definitions (was 254, 225, 188).
 
@@ -404,14 +404,14 @@ Eight weapon-class settings and one shared filter. Values are as stored, with no
 | MaxNumberOfTargets | - | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 |
 | MinAssistWeight | - | 0.125 | 0.125 | 0.125 | 0.125 | 0.125 | 0.125 | 0.125 | 0.125 |
 | SensitivityScaleADS | - | 1.0 | 1.0 | 1.0 | 1.0 | 0 | 1.0 | 1.0 | 1.0 |
-| PullOuterStrengthHip | - | 1.0 | 1.0 | 1.0 | 1.0 | 0 | 1.0 | 0 | 1.0 |
-| PullInnerStrengthHip | - | 0.3 | 0.3 | 0 | 0.3 | 0 | 0.3 | 0.2 | 0.3 |
-| PullOuterStrengthAds | - | 2.0 | 2.0 | 0 | 2.0 | 0 | 2.0 | 2.0 | 2.0 |
-| PullInnerStrengthAds | - | - | - | - | - | 0 | - | 0 | - |
-| SlowOuterStrengthHip | - | - | - | 0.36 | - | 0 | - | 0 | - |
-| SlowInnerStrengthHip | - | 1.0 | 1.0 | 0 | 1.0 | 0 | 1.0 | 1.0 | 1.0 |
-| SlowOuterStrengthAds | - | 0.6 | 0.6 | 0 | 0.6 | 0 | 0.6 | 0.4 | 0.6 |
-| SlowInnerStrengthAds | - | 0.3 | 0.3 | 0.19 | 0.3 | 0 | 0.3 | 0 | 0.3 |
+| PullInnerStrengthHip | - | 1.0 | 1.0 | 1.0 | 1.0 | 0 | 1.0 | 0 | 1.0 |
+| SlowOuterStrengthAds | - | 0.3 | 0.3 | 0 | 0.3 | 0 | 0.3 | 0.2 | 0.3 |
+| PullInnerStrengthAds | - | 2.0 | 2.0 | 0 | 2.0 | 0 | 2.0 | 2.0 | 2.0 |
+| PullOuterStrengthHip | - | - | - | - | - | 0 | - | 0 | - |
+| SlowInnerStrengthHip | - | - | - | 0.36 | - | 0 | - | 0 | - |
+| PullOuterStrengthAds | - | 1.0 | 1.0 | 0 | 1.0 | 0 | 1.0 | 1.0 | 1.0 |
+| SlowInnerStrengthAds | - | 0.6 | 0.6 | 0 | 0.6 | 0 | 0.6 | 0.4 | 0.6 |
+| SlowOuterStrengthHip | - | 0.3 | 0.3 | 0.19 | 0.3 | 0 | 0.3 | 0 | 0.3 |
 | PullLerpInRate / OutRate | - | 10 / 8 | 10 / 8 | 10 / 8 | 10 / 8 | 0 | 10 / 8 | 10 / 8 | 10 / 8 |
 | SlowLerpInRate / OutRate | - | 10 / 8 | 10 / 8 | 10 / 8 | 10 / 8 | 0 | 10 / 8 | 10 / 8 | 10 / 8 |
 | PullMaxRotationRate | - | 90 | 90 | 90 | 90 | - | 90 | 90 | 90 |
@@ -467,12 +467,12 @@ Other settings: `bFOVReticleScaling` is False for every class that sets it. `bAp
 - **Weight missing on most items.** Only 47 of 193 items have a weight value. The other items carry the fragment but no property, so the default is unknown.
 - **Grid orientation not confirmed.** `CustomShape.Dimensions` and `GridSize` are read as X x Y. Whether X is columns or rows is not verified.
 - **Magazine capacity is an inference.** `MaxSlotAmountStackSize` on a magazine container matches the magazine's name in every case checked, but the dump does not label it as capacity.
-- **Unnamed property keys omitted.** Keys of the form `_aaa..._$HEX$_$N$` (several per aim-assist asset and a few on containers) are internal and were skipped. Their meaning is unknown.
+- **Unnamed property keys omitted.** Keys of the form `_aaa…` (21 letters a–p; `_aaa..._$HEX$_$N$` before 2026-10-18; several per aim-assist asset and a few on containers) are internal and were skipped. Their meaning is unknown.
   - **SDK (2026-10-16):** aim-assist asset classes live in [`BHAimAssist`](sdk/raw/BHAimAssist_structs.hpp). Key resolved types:
     - [`EBHAimAssistPullMode`](sdk/raw/BHAimAssist_structs.hpp) enum (5 values): `All = 0`, `MovementOnly = 1`, `LookOnly = 2`, `Off = 3`, `EBHAimAssistPullMode_MAX = 4` — this is the enum behind any "pull mode" field in aim-assist exports
     - [`FBHAimAssistTargetOptions`](sdk/raw/BHAimAssist_structs.hpp) struct (0x30 bytes): `AssociatedTags` (`FGameplayTagContainer`) + `bIsActive` (bool) + padding
     - [`FBHAimAssistTargetData`](sdk/raw/BHAimAssist_structs.hpp) struct (0xA0 bytes): Dumper-7 was unable to resolve any inner field names — remains opaque via static means
-  - Per-asset `_aaa..._$HEX$_$N$` keys are Blueprint-generated property names that even Dumper-7 could not symbolicate against; resolving each would require per-asset context.
+  - Per-asset `_aaa…` keys are Blueprint-generated property names that even Dumper-7 could not symbolicate against; resolving each would require per-asset context.
 - **Display names missing on 14 items.** Some have no `DisplayName`, and where a `DisplayName` exists only the `SourceString` is shown; the localization table is not dumped.
 - **Holdable and placeable details not decoded.** Holdable mesh, animation and crosshair fields are only partly summarised. The ammo crate's placeable class and init data were not extracted.
 - **Full throw and consumable action data.** The `AppliableActionData` and `ThrowActions` arrays are present but only partly decoded (required states, velocity curve references).
@@ -483,3 +483,9 @@ Other settings: `bFOVReticleScaling` is False for every class that sets it. `bAp
 ---
 
 *Source files: [`Wardogs/Content/Items/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items) (259 `.json`).*
+
+## Change log
+
+| Date | Change |
+|---|---|
+| 2026-10-18 | `data/` re-exported with the v2 usmap (names only; values unchanged): the aim-assist rows in §9 and the Season 02 notes use the corrected `Pull`/`Slow` `Inner`/`Outer` `Hip`/`Ads` names. The values did not move; the first export had put the wrong names on them. |

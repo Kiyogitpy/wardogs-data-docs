@@ -39,7 +39,7 @@ Entity rows `Rock`, `Paper` and `Scissors` exist as separate emotes. They are no
 
 Cosmetic rows are the purchasable or unlockable side. Three exist, one per emote that has a cosmetic entry. None of them has a `SkinDefinition`.
 
-| Row | Entity (EntityID) | Category | Archetype |
+| Row | Entity (EntityId) | Category | Archetype |
 |---|---|---|---|
 | Emote.Shh | Id.Emote.Shh | Meta.Cosmetic.Emote | None |
 | Emote.RockPaperScissors | Id.Emote.RockPaperScissors | Meta.Cosmetic.Emote | None |
@@ -66,3 +66,8 @@ The one registry source adds both tables: the entity table to `EntityData_UI` an
 - **Prices and unlock rules** for emote cosmetics are not in this folder.
 - **Emote trigger and playback logic** (what runs when an emote is used) is not decoded.
 
+## Change log
+
+| Date | Change |
+|---|---|
+| 2026-10-18 | `data/` re-exported with the v2 usmap (names only; values unchanged): the row key is spelled `EntityId`. |

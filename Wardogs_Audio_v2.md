@@ -157,7 +157,7 @@ Example. `WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware` on the ragdo
 
 ### 2e. Hashed unnamed property
 
-Events and some behaviours carry a property whose name is an unresolved FName hash (`_aaabhonahgpdbjealfaaa_$ED076F31940B5000$_$23$`). It is always a float (226 instances: 185 on events, 41 on behaviours). Values cluster by family:
+Events and some behaviours carry a property whose name is an unresolved FName hash (`_aaabhgndclheajnnlnade`; `_aaabhonahgpdbjealfaaa_$ED076F31940B5000$_$23$` in exports before 2026-10-18). It is always a float (226 instances: 185 on events, 41 on behaviours). Values cluster by family:
 
 | Family (events) | Value |
 |---|---|
@@ -1199,3 +1199,9 @@ Generated from the census script (`events_summary.json`). Chain shows the first 
 | 673 | AE_Weapon_Vehicle_ADSIn | `Audio.Event.Vehicle.Shared.Weapon.ADSIn` | 3 | ActivateCBM(AM_CBM_ADS) -> PlayVehicleWeaponPerspectiveSound -> AttachToActor |
 | 674 | AE_Weapon_Vehicle_ADSOut | `Audio.Event.Vehicle.Shared.Weapon.ADSOut` | 4 | DeactivateCBM(AM_CBM_ADS) -> PlayVehicleWeaponPerspectiveSound -> AttachToActor -> ... |
 | 675 | AE_Weapon_Projectile_Rocket_Travel_125mm | `Audio.Event.Projectile.Rocket.Travel.125mm` | 3 | HandleProjectileSimulation -> HandleRocketWhizby -> AttachToActor |
+
+## Change log
+
+| Date | Change |
+|---|---|
+| 2026-10-18 | `data/` re-exported with the v2 usmap (names only; values unchanged): the unresolved float key is now `_aaabhgndclheajnnlnade`. |
