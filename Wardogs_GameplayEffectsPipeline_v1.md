@@ -273,3 +273,4 @@ applies them on equip is not traced.
 |---|---|
 | 2026-10-16 | v1: BH-GAS architecture, 338 GE classes by prefix, attribute map, prediction question. |
 | 2026-10-17 | Corrected against the decompilation corpus, SDK and data: attributes are double base/current records (the map is only defaults); `Modifiers` element type and operations documented; stacking is a per-modifier curve; base-value writes and the damage path traced; preset types, catalog descriptions, StanceRecoil count (21), the three preset files and the example rewritten from data; authority language removed; cues are a separate component. |
+| 2026-10-17 | Effect values exported from the paks and published on Gameplay Effect Values; E-4 closed; the scope example uses the real modifiers. |
