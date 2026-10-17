@@ -109,8 +109,17 @@ Others are identified by the tags and classes they use:
 | Reflected `SimpleDamageActor` | `0x6F08CE0` (corpus body under the misaligned row `0x6F08CDC`) | Blueprint-callable |
 | Vehicle supply containers (slot 127) | `0x6F03F60` | Via `0x7635EA0` |
 
-Still unnamed: `0x6E72D90`, `0x6F042A0`, `0x76740F0`, `0x76F5AE0`.
-`0x6E72D90` and `0x76F5AE0` also pass 1. Each caller builds its own event
+Four more callers, so all 17 call sites are identified:
+
+- `0x6E72D90`: a character hit by an actor (a delegate bound in
+  `AWDMoverCharacter` slot 169). It skips dead characters; the source is
+  the hitting actor's entity data plus `DamageType.Impact`.
+- `0x6F042A0`: a second back-blast path from `0x6B92900` (see the table).
+- `0x76740F0`: vehicle collision
+  ([VehicleDamagePipeline V-4](Wardogs_VehicleDamagePipeline_v1.md#7-open-questions)).
+- `0x76F5AE0`: periodic `WDDoor` damage, from `PostFixedSimTick`.
+
+`0x6E72D90` and `0x76F5AE0` pass 1. Each caller builds its own event
 (`0x6BB4D30`), so `S` is whatever that caller supplies.
 
 The reflected `BP_DamageActor` (`0x6F07C10`) goes straight to the
@@ -861,9 +870,14 @@ attribute base value. No gameplay effect is applied.
    handle (component `+0x140`, created in `0x6B81CE0`) with
    `−CurrentDamage`. `0x52311D0` adds that delta to the attribute's
    stored value and calls `SetAttributeBaseValue` (`0x5236AF0`), whose
-   setter (`0x5236E50`) runs the attribute's base-value hook (character
-   health registers one in `0x6B81CE0`; what it does is not traced),
-   stores the new base and pushes it into the replicated attribute array.
+   setter (`0x5236E50`) runs the attribute's base-value hook, stores the
+   new base and pushes it into the replicated attribute array. Character
+   health registers a base- and a current-value hook in `0x6B81CE0`, only
+   when the owner's role value is 3. Both call the vitality component's
+   virtual slot 161. For characters (`0x6B17D20`) it clamps the value to
+   `[0, MaxHealth + MaxOverhealHealth + MaxDecayHealth]`, and to at least
+   1 while the owning `WDMoverCharacter` has `bInvincible`. The base
+   component's version (`0x6B83270`) clamps to `[0, MaxHealth]`.
 4. Back in `0x6B82520`: if the applied change is zero it returns 0.
    Otherwise it records whether current health is now ≤ 0, broadcasts
    `OnDamageTaken` and `RegenTimer` (with `RegenDelay`), and sends
@@ -965,3 +979,4 @@ The restored image carries the UTF-16LE build marker
 | 2026-10-17 | Ammo variants: the modified stats add the ammo-modifier tag and change no damage value (§7.9). Generator gained real armor values and an `--ammo` mode; added the ammo × armor table. |
 | 2026-10-17 | Independent verifier pass: corrected the blunt-damage condition (flight time, instance byte `+0x101`), the direct-hit distance-scale evidence, armor filtering (first covering piece only) and the Penetrate/Throughput tags, the exploding-hit and custom-hit paths, the downed-character branch and the order of death handling; noted the four functions without corpus bodies. |
 | 2026-10-17 | Another independent verifier pass: `RootDamageTag` is `Meta.Damage` and is never evaluated (§5); corrected two citations that sat on misaligned corpus rows (`0x6EF9450`, `0x6F08CE0`); named the two player-character stubs from their FName initializers and noted that the decay-pool cut runs only for role 3 (§10); every function without a corpus body is listed and reproduced from disassembly; the three IDA notes are merged into [`docs/evidence/damage.md`](docs/evidence/damage.md) (§11). |
+| 2026-10-17 | Round-4 verifier pass: character health's hooks clamp through vitality slot 161 (§10); all 17 `ModifyDamage` call sites named (§1.1). |

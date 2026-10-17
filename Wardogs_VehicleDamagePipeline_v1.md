@@ -37,9 +37,10 @@ output), **Data** (export), **Derived** (arithmetic on both), **Open**.
 
 **Native.** A vehicle hit reaches `UWDDamageSubsystem::ModifyDamage`
 (`0x6F02EC0`) and the global evaluator (`0x6BB6FB0`) exactly as an
-infantry hit does. The projectile path (`0x6B725B0`, at `0x6B733AC`) and
-the radial paths (`0x6F06540`, `0x6F042A0`, `0x76740F0`) fetch the
-vehicle hit tag through `0x6B80230` before the call. The result is
+infantry hit does. The projectile path (`0x6B725B0`, at `0x6B733AC`),
+the radial path (`0x6F06540`), the back-blast path `0x6F042A0` and the
+collision path `0x76740F0` (V-4) fetch the vehicle hit tag through
+`0x6B80230` before the call. The result is
 dispatched through `IWDDamageable` (`0x6C2A5F0`) to the vehicle class's
 interface slot (Rotary slot 370 at `0x76B7E80`; Wheeled 375, Tracked 367,
 Stationary 366, Airplane 367), which calls `ApplyWDDamage` (`0x6B7FE50`)
@@ -54,7 +55,8 @@ to occupants.
 **The target tag.** The vehicle pawn constructor (`0x76B5560`) creates a
 damage entity component with the default tag `Meta.Damage.Vehicle`.
 `UWDVehicleGameplaySystemsComponent` slot 161 (`0x767BC40`) overwrites it
-(`0x6B18E70`) with `DA_GameplaySystems_*.DamageEntitySettings.VehicleDamageTag`.
+(`0x6B18E70`) with `DA_GameplaySystems_*.DamageEntitySettings.VehicleDamageTag`,
+only when that tag is not None.
 For 20 of the 21 vehicles that tag equals the vehicle row key exactly
 (STN_06 is the exception, §2.2).
 
@@ -130,17 +132,24 @@ category sorts first (index −1).
 
 ### 2.2 Data issues
 
-- **STN_06 is probably wrongly keyed.** Its table is a byte-identical copy
-  of STN_05's (row `…Stationary.STN_05`), but its `VehicleDamageTag` is
+- **STN_06 is wrongly keyed.** Its table is a byte-identical copy of
+  STN_05's (row `…Stationary.STN_05`), but its `VehicleDamageTag` is
   `Meta.Damage.Vehicle.Stationary.MGNest`
-  (`DA_GameplaySystems_STN_06.json`). No table has a row for that tag,
-  and two sources register the same STN_05 row, so STN_06 most likely
-  never reaches its own rules. The tag is also missing from the exported
-  tag config and the executable's strings, but so are tags that are in
-  use (`…WHL_08.Default`, `…TNK_04.Default`), so that proves nothing.
-  Whether STN_06's walk still reaches the generic `Meta.Damage.Vehicle`
-  row is not established: for a tag the tag manager does not know, the
-  parent step (`0x395F4D0`) returns an empty tag.
+  (`DA_GameplaySystems_STN_06.json`). The tag is registered: the shipped
+  `DefaultGameplayTags.ini` (in the paks) lists it, together with
+  `…WHL_08.Default` and `…TNK_04.Default`. The exported copy under
+  `data/Wardogs/Config/` is a different version of that file (3622 lines
+  against 3897) and lacks all three. No table has a `…Stationary` or
+  `…MGNest` row, so STN_06's walk is `…Stationary.MGNest` →
+  `…Stationary` → `Meta.Damage.Vehicle`. It never reaches the STN_05
+  rows; only the generic row applies: ×0.84 for HollowPoint ammo,
+  otherwise no change.
+- **STN_05's row is registered twice.** Both GameFeatures add their table
+  to `GlobalDamageData` at priority 0. Sources are kept in descending
+  priority by a stable sort, so ties stay in insertion order
+  (`0x46EC5B0` → `0x46EDC20` → `0x46E3930`), and the lookup takes the
+  first source that has the row (`0x46ED100`). The two rows are
+  byte-identical, so the load order does not matter.
 - **`Land.Wheeled.WHL_08.MachineGun` is never used.** No gameplay-systems
   asset assigns that tag; the WHL_08 ring-turret variant carries the
   `WHL_08.Default` tag through its config, so the MachineGun row's rules
@@ -165,11 +174,15 @@ the reflected `QueryDamageZoneForComplexHit` thunk `0x5345EA0`, which
 inlines the same three calls, do the lookup. Every triangle of the vehicle's
 collision mesh belongs to a named **collision slot**. The
 `BHComplexSurfaceComponent` (vehicle pawn `+0x340`, reached through the
-interface at `+0x338`) resolves the hit to its slot (`0x50BF880`), and the
-damage model looks the slot up in its slot-to-section table (component
-`+0x180`). When the query misses on a point or radial hit, the section tag
-is empty (§4.1). The vehicle's physics asset (for example `PA_ROT_02`, one
-body with collision disabled) plays no part.
+interface at `+0x338`) resolves the hit to its slot (`0x50BF880`). The
+damage model then looks up the pair (surface group, slot) in its table
+(component `+0x180`, `0x53952A0`): the slot's section if the group maps
+it, else the group's default section, else the same lookup in the parent
+group (while it is under `ComplexSurface.Group`), else no section. When
+the query misses on a point or radial hit, the section tag is empty
+(§4.1). The vehicle's physics asset (for example `PA_ROT_02`: one body,
+`body_J`, with 22 collision shapes) plays no part, because the slot
+lookup needs a static-mesh component. The exact rule is in §3.2.
 
 **Data.** The table comes from `MVF_HealthSections.ComplexSurfaceMappings`
 in the platform and part files: per surface group, a slot map
@@ -177,7 +190,13 @@ in the platform and part files: per surface group, a slot map
 section (usually the main health) for every slot not listed. The section
 registration (`0x53214A0`, run for each `MVF_HealthSections` fragment)
 merges this struct (fragment `+0x90`) into the component's table
-(`+0x180`), and `PhysicsGroupMappings` (`+0xE0`) into `+0x1D0`.
+(`+0x180`), and `PhysicsGroupMappings` (`+0xE0`) into `+0x1D0`
+(`0x538ABD0`). Per surface group, slot pairs are added (only values under
+`Attribute.Gameplay.Health`), and the group's default is overwritten, so
+the last fragment's default wins. The zone query never reads `+0x1D0`.
+`ApplyCollisionDamage` (slot 160, `0x531FC20`) and `0x532D4C0`, on the
+component-hit path (`0x767E640`), read it: they resolve a physics-group
+tag from the hit body (`0x50F41D0`) and walk parent tags.
 
 **Data, collision meshes.** The slots live on dedicated low-poly
 collision meshes, separate from the render models. Each render static mesh
@@ -187,7 +206,10 @@ main and rear rotor hubs and blades (9 collision meshes, under
 `Meshes/ComplexCollision/`); the missile pods and reticle have none. The
 rotors are placed by an `MVF_DestructibleMeshes` fragment
 (`Vehicle.DestructibleMesh.Rotor.Main` / `.Tail`), attached to the chassis
-skeleton's `mainRotorSpin_J` and `rearRotorSpin_J` bones. A
+skeleton's `mainRotorSpin_J` and `rearRotorSpin_J` bones. The rotor hub
+and blade meshes register in `ComplexSurface.Group.Default`, so
+`CC_MainRotor` / `CC_TailRotor` use the same map; the spinning meshes do
+not register (`VP_ROT_02.json`, `bRegisterComplexSurface`). A
 collision mesh's material slots are the `CC_*` names, each with a
 collision material (for example `CC_FuelTank` → `MI_VehicleCC_FuelTank`,
 `CC_Main` → `MI_VehicleCC_Metal_ReinforcedArmored`, `CC_TailRotor` →
@@ -204,7 +226,8 @@ with the section's maximum health, how the section passes damage to the
 main health (§4.2), and the rule factor at that hitbox for an FMJ direct
 hit (§1–2; the section's hit-location tag selects location rules).
 Variants that share a damage row and map are listed together. "none"
-means hits there never reach the main health.
+means hits there never reach the main health. Rows marked "unreachable"
+are map keys that no registered component can produce (§3.2).
 
 <!-- damage_tables --hitboxes -->
 | Vehicle (variants) | Collision slot | Section (max health) | Routing to main health | `556mm` | `50Cal` | `30mm` |
@@ -213,8 +236,8 @@ means hits there never reach the main health.
 |  | `CC_FuelTank` | Health.FuelTank (200) | none | ×0.2 | ×0.2 | ×0.195 |
 |  | `CC_MainRotor` | Health.Rotor.Main (400) | post 1 when depleted, simultaneous 0.5 | ×0.025 | ×0.025 | ×0.195 |
 |  | `CC_TailRotor` | Health.Rotor.Tail (300) | post 1 when depleted, simultaneous 1 | ×0.025 | ×0.025 | ×0.195 |
-|  | `CC_Wheel_0` | Health.Wheel.Left.Front (100) | post 1 when depleted | ×0.05 | ×0.05 | ×0.195 |
-|  | `CC_Wheel_1` | Health.Wheel.Right.Front (100) | post 1 when depleted | ×0.05 | ×0.05 | ×0.195 |
+|  | `CC_Wheel_0` (unreachable: an indexed name, but no instanced wheel indexes this slot) | Health.Wheel.Left.Front (100) | post 1 when depleted | ×0.05 | ×0.05 | ×0.195 |
+|  | `CC_Wheel_1` (unreachable: an indexed name, but no instanced wheel indexes this slot) | Health.Wheel.Right.Front (100) | post 1 when depleted | ×0.05 | ×0.05 | ×0.195 |
 |  | `(default)` | Health (800) | is the main health | ×0.025 | ×0.025 | ×0.195 |
 | `Air.Rotary.LittleBird` (ROT_03_Default, ROT_03_MachineGuns, ROT_03_RocketPods) | `CC_Engine` | Health.Engine (200) | none | ×0.075 | ×0.075 | ×0.595 |
 |  | `CC_FuelTank` | Health.FuelTank (200) | none | ×0.075 | ×0.075 | ×0.595 |
@@ -231,16 +254,16 @@ means hits there never reach the main health.
 |  | `CC_Radar` | Health.Radar (100) | none | ×0.05 | ×0.05 | ×0.21 |
 |  | `CC_Tracks_L` | Health.Tracks.Left (125) | post 0.5 when depleted, simultaneous 1 | ×0 | ×0 | ×0.21 |
 |  | `CC_Tracks_R` | Health.Tracks.Right (125) | post 0.5 when depleted, simultaneous 1 | ×0 | ×0 | ×0.21 |
-|  | `CC_Radar` [Radar] | Health.Radar (100) | none | ×0.05 | ×0.05 | ×0.21 |
+|  | `CC_Radar` [Radar] (unreachable: no component registers this group) | Health.Radar (100) | none | ×0.05 | ×0.05 | ×0.21 |
 |  | `(default)` | Health (1000) | is the main health | ×0 | ×0 | ×0.21 |
 | `Land.Tracked.Leopard.Spawn` (SPW_02, SPW_03) | `CC_FuelTank` | Health.FuelTank (100) | none | ×0 | ×0 | ×0.21 |
 |  | `CC_MainBody` | Health (1000) | is the main health | ×0 | ×0 | ×0.21 |
 |  | `CC_Radar` | Health.Radar (100) | none | ×0.05 | ×0.05 | ×0.21 |
 |  | `CC_Tracks_L` | Health.Tracks.Left (125) | post 0.5 when depleted, simultaneous 1 | ×0 | ×0 | ×0.21 |
 |  | `CC_Tracks_R` | Health.Tracks.Right (125) | post 0.5 when depleted, simultaneous 1 | ×0 | ×0 | ×0.21 |
-|  | `CC_Radar` [Radar] | Health.Radar (100) | none | ×0.05 | ×0.05 | ×0.21 |
+|  | `CC_Radar` [Radar] (unreachable: no component registers this group) | Health.Radar (100) | none | ×0.05 | ×0.05 | ×0.21 |
 |  | `(default)` | Health (1000) | is the main health | ×0 | ×0 | ×0.21 |
-|  | `(default)` [Radar] | Health.Radar (100) | none | ×0.05 | ×0.05 | ×0.21 |
+|  | `(default)` [Radar] (unreachable: no component registers this group) | Health.Radar (100) | none | ×0.05 | ×0.05 | ×0.21 |
 | `Stationary.Mistral` (STN_01) | `CC_Main` | Health (3000) | is the main health | ×0.15 | ×0.15 | ×0.5 |
 |  | `(default)` | Health (3000) | is the main health | ×0.15 | ×0.15 | ×0.5 |
 | `Stationary.Phalanx` (STN_02) | `CC_Main` | Health (5000) | is the main health | ×0.15 | ×0.15 | ×0.5 |
@@ -249,6 +272,8 @@ means hits there never reach the main health.
 |  | `(default)` | Health (3000) | is the main health | ×0.15 | ×0.15 | ×0.5 |
 | `Stationary.RadioTower` (STN_04) | `CC_Main` | Health (1000) | is the main health | ×0.05 | ×0.05 | ×0.85 |
 |  | `(default)` | Health (1000) | is the main health | ×0.05 | ×0.05 | ×0.85 |
+| `Stationary.MGNest` (STN_06, no row of its own) | `CC_Main` | Health (1800) | is the main health | ×1 | ×1 | ×1 |
+|  | `(default)` | Health (1800) | is the main health | ×1 | ×1 | ×1 |
 | `Land.Tracked.TNK_01.AntiAir` (TNK_01_AntiAir) | `CC_Engine` | Health.Engine (150) | post 1 when depleted, simultaneous 1 | ×0 | ×0 | ×0.18 |
 |  | `CC_FuelTank` | Health.FuelTank (150) | none | ×0 | ×0 | ×0.18 |
 |  | `CC_MainBody` | Health (800) | is the main health | ×0 | ×0 | ×0.18 |
@@ -360,6 +385,55 @@ means hits there never reach the main health.
 |  | `CC_Wheel_3` [Wheel] | Health.Wheel.Right.Rear (75) | pre 0.25, post 0.25 when depleted | ×0.35 | ×0.35 | ×0.4 |
 |  | `(default)` | Health (500) | is the main health | ×0.025 | ×0.025 | ×0.4 |
 <!-- /damage_tables -->
+
+### 3.2 From a hit triangle to a section
+
+**Native** (`0x50BF880`, `0x53952A0`, the component registrations
+`0x50F06E7` and `0x53A00C6`). For one hit, the inputs are the vehicle's
+registered static-mesh components, the component that was hit, the
+triangle index within that component's collision mesh and, for instanced
+wheels, the instance.
+
+1. **Component.** A hit on anything but a static-mesh component gives no
+   section: skeletal meshes, physics-asset bodies, weapons on skeletal
+   meshes. So does an unregistered component (`MVF_StaticMesh` with
+   `bRegisterComplexSurface` off, destructible entries with it off such as
+   the rotor spin meshes, a disabled fragment). `MVF_StaticMesh` and
+   `MVF_InstancedWheels` register by default; destructible entries use
+   their own flag.
+2. **Collision mesh.** The mesh's `ComplexCollisionMesh` if set, otherwise
+   the mesh itself.
+3. **Slot.** The material slot name of the hit triangle's material index:
+   `StaticMaterials[MyItem].MaterialSlotName`. The engine fills `MyItem`
+   from the triangle when the trace asks for face indices, which
+   projectile traces do (`0x6B8E2F4`, `0x6F30F70`). Physical materials and
+   bone names are not read.
+4. **Group.** The component's `SurfaceGroup`: `ComplexSurface.Group.Default`
+   for `MVF_StaticMesh` and `ComplexSurface.Group.Wheel` for
+   `MVF_InstancedWheels` unless set, the explicit value for destructible
+   entries, and an instanced wheel's per-instance override when set.
+5. **Indexed names, instanced wheels only.** A slot listed in the wheel
+   fragment's `IndexedSlotNames` gets the instance's index:
+   `CC_Wheel` → `CC_Wheel_2` (`0x50BF500`). Static meshes never get a
+   suffix.
+6. **Lookup.** In the merged map (§3.1), starting with the component's
+   group: the slot's section if the group maps the slot; else the group's
+   default section if it has one; else repeat in the parent group, while
+   that is still under `ComplexSurface.Group`; else no section, an empty
+   section tag, which is not the main health (§4.1).
+   `ComplexSurface.Group.Default` is not a parent of
+   `ComplexSurface.Group.Wheel`, so unmapped wheel slots do not take the
+   default group's default.
+
+This is confirmed for projectile hits. A hit without a face index, which
+a radial "first component hit" may be, would give no section; that path
+is not traced. In the data, ROT_02's wheels are static meshes, so their
+slots (`CC_Wheel`, `CC_Main`) resolve to the main health and the map keys
+`CC_Wheel_0` / `CC_Wheel_1` never match. WHL_* wheel slots `CC_Wheel` and
+`CC_Tyre` become `CC_Wheel_n` and `CC_Tyre_n`. No component registers
+`ComplexSurface.Group.Radar`, so the SPW radar rows cannot be hit. How a
+wheel moves between the intact and destroyed wheel meshes, and how a
+wheel's index relates to its position, are not traced.
 
 ## 4. Section application
 
@@ -578,8 +652,9 @@ dotted slot path (for example `Body`, `Rearback.Chassis`), otherwise the
 slot's `DefaultPart`. Health sections come from every enabled
 `MVF_HealthSections` fragment of the assembled modules. The damage row is
 the `VehicleDamageTag` in the variant's `*GameplaySystems*` asset, reached
-through the modules' `DA_*Config` references. STN_06 is left out: its tag
-has no row (§2.2).
+through the modules' `DA_*Config` references, together with the rows on
+that tag's parent walk. STN_06 has no row of its own, so only the generic
+row applies (§2.2).
 
 **Native, assembly** (`0x50E7200`, `0x50E7140`; disassembly only, no
 corpus bodies). The game follows the same chain, with three points that
@@ -622,6 +697,7 @@ section-requirement filter, repair and regeneration are ignored.
 | `STN_02` | `Stationary.Phalanx` | 5000 | 1191 | 371 | 278 | 100 |
 | `STN_03` | `Stationary.Mortar` | 3000 | 715 | 223 | 167 | 60 |
 | `STN_04` | `Stationary.RadioTower` | 1000 | 715 | 223 | 56 | 12 |
+| `STN_06` | `Stationary.MGNest` | 1800 | 65 | 20 | 30 | 18 |
 | `TNK_01_AntiAir` | `Land.Tracked.TNK_01.AntiAir` | 800 | — | — | 312 | 47 |
 | `TNK_01_Artillery` | `Land.Tracked.TNK_01.Artillery` | 650 | — | — | 254 | 39 |
 | `TNK_01_Heavy` | `Land.Tracked.TNK_01.Heavy` | 800 | — | — | 312 | 47 |
@@ -667,10 +743,10 @@ Every row has a `Meta.Damage.Bullet` rule.
 | # | Question | What closes it |
 |---|---|---|
 | V-1 | **Closed** (§1): `RootDamageTag` is `Meta.Damage` and is never evaluated, so the walk reaches the generic `Meta.Damage.Vehicle` row | Constructor `0x6BB6160`; the walk in `0x6BB6A60` |
-| V-2 | How `ModifyDamage` copies the entity component's tag into the target tag | `0x6EF8DE0` / `0x6F01BB0`, which did not decompile; disassembly |
+| V-2 | **Closed**: `0x6EF8DE0` keeps the event's `TargetEntityData` when its tag is set. Only when the tag is None does it resolve the target actor (`TargetEventData.Actor`, else the controller's pawn), find its `UWDDamageEntityComponent` (`0x6F01820`) and copy that component's `DamageEntityData` (`+0xE0`: tag, context and cause tag) into the target data. Inside the same branch, an empty hit-location tag is filled from `ClassToHitLocations` by bone name (`0x6F01BB0`). The instigator data always comes from the instigator's component, and the source data is copied from the event | `0x6EF8DE0` (disassembly), `0x6F01820` (disassembly), `0x6F01BB0` |
 | V-3 | What happens when the zone query resolves to no section | `0x5338730` and the section lookup |
-| V-4 | Which source tags a vehicle collision event carries, which the stationary `Add` entries depend on | The collision damage caller |
-| V-5 | Whether a HollowPoint tag ever reaches a vehicle event | Projectile path with ammo variants against vehicles |
+| V-4 | **Closed**: the collision path (`OnMeshHitEvent` `0x768A280` → `0x767E640` → `0x76736C0` → `0x76740F0`) uses the ramming vehicle's own `DamageEntityData` as the source (tag = its `VehicleDamageTag`, or `Meta.Damage.Landscape` when empty) and adds `Meta.Damage.DamageType.Impact` to the source context. So the stationary `Add +1000` entries (source `Meta.Damage.Vehicle.Land.Tracked`) fire when a tracked vehicle rams the stationary | `0x76740F0` (`0x7674428`, `0x7674435`) |
+| V-5 | **Closed** (static): the projectile path copies the ammo-variant stats' context, which holds the ammo-modifier tag ([DamagePipeline §7.9](Wardogs_DamagePipeline_v2.md#79-ammo-type-against-armor)), into the source context before the vehicle branch, and no vehicle class has a pre-`ModifyDamage` hook that strips it. So HollowPoint rounds meet the generic ×0.84 pair and the per-vehicle Bullet+HollowPoint entries. Which code sets the projectile's ammo tag (instance `+0xF0`) is not traced | `0x6B725B0` |
 | V-6 | Network authority | Not observable statically; security questions go through [`SECURITY.md`](SECURITY.md) |
 
 ## 8. Cross-references
@@ -693,3 +769,4 @@ Every row has a `Meta.Damage.Bullet` rule.
 | 2026-10-17 | Independent verifier pass: the destroy routine is not the reflected `DestroyVehicle`; when post routing runs; simultaneous routing fires at any health when `bOnlyWhenDepleted` is clear; the section pick's pre-gate, zone-miss case and thunk path. |
 | 2026-10-17 | Added §3.1 Hitboxes: hits resolve through the complex-surface collision slots, mapped to sections by `ComplexSurfaceMappings`; per-vehicle slot map with section health, routing and rule factors (`--hitboxes`). |
 | 2026-10-17 | Another independent verifier pass: closed V-1 (`RootDamageTag` is `Meta.Damage`); the exec thunk does not pass through `0x53202B0`; the health clamp is traced (`0x533A750`), so "health stops at 0" is native, not an assumption; native assembly adds two unused override layers, first-registered section wins and config replacement (§5.4); the STN_06 tag-absence argument is softened; the code that fills the slot-to-section table is `0x53214A0` (§3.1). The §5.4 chain for all variants and the Main health column were confirmed. |
+| 2026-10-17 | Round-4 verifier pass: STN_06's tag is registered (shipped `DefaultGameplayTags.ini`), so only the generic row applies; it is now in §3.1 and §5.4. STN_05's duplicate row resolved. The slot lookup is keyed by (surface group, slot) with defaults and a parent-group walk; new §3.2 gives the exact face-to-section rule; `--hitboxes` marks unreachable keys (ROT_02 `CC_Wheel_0`/`_1`, the SPW radar group). V-2, V-4 and V-5 closed; physics-group table readers and rotor registration added. |

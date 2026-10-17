@@ -78,7 +78,7 @@ Functions (reflected names; native bodies where traced):
 
 | Function | Notes |
 |---|---|
-| `ApplyEffect(Effect, …, CustomMagnitudes, Mode)` | Native `0x5227F20`; prediction branches in §5 |
+| `ApplyEffect(Effect, Stacks, CustomMagnitudes, Mode)` | Native `0x5227F20`. `Stacks` is clamped to `[1, MaxStacks]` (`MaxStacks` 0 = 65535) by `0x522B1B0`; every call creates a new instance (§5) |
 | `ApplyLocalEffect(…)` | "Client-only" is not verified |
 | `ModifyEffectCustomMagnitude`, `ModifyEffectStacks`, `RemoveEffect` | |
 | `FindOrAddAttribute(Attribute, InitialValue, …)` | Native `0x522F8F0` |
@@ -232,11 +232,16 @@ helpers:
 
 - vehicle health sections: `0x533A750` clamps to `[0, MaxHealth]`
   ([VehicleDamagePipeline §5.4](Wardogs_VehicleDamagePipeline_v1.md#54-hits-to-destroy));
-- character health (`0x6B81CE0`; the hook body is not read);
+- character health (`0x6B81CE0`, role 3 only): virtual slot 161, which
+  clamps to `[0, MaxHealth + MaxOverhealHealth + MaxDecayHealth]` for
+  characters (`0x6B17D20`; at least 1 while `bInvincible`) and to
+  `[0, MaxHealth]` otherwise (`0x6B83270`);
 - vehicle fuel (`0x7666070`).
 
-No other direct call exists. Registration by another path is not ruled
-out.
+No other path registers a hook: the two helpers have no other call or
+pointer reference, and the map insert (`0x5223670`, emplace `0x521FDE0`)
+is reached only from them. No `Attribute.Gameplay.Weapon.*` attribute has
+a hook.
 
 `SetAttributeBaseValue` is reached through two helpers:
 
@@ -274,9 +279,8 @@ D       = 1 + Σ(Divide − 1), or 1 when |D| ≤ 1e-8
 **Example.** `VerticalRecoilMultiplier` starts at 1.0 on every weapon
 ([Weapons §4](Wardogs_GameFeatures_Weapons_v2.md#4-default-weapon-attributes-wditemextensiondata_gameplayeffects)).
 With `GE_FGRP_006` (×c 0.75) and `GE_Weapon_StanceRecoil_AR_Prone`
-(×c 0.7), one stack each: 1.0 × 0.75 × 0.699999988 = 0.5249999911. This
-assumes the attribute has no hook; none is registered for a weapon
-attribute by a direct call (§4.3).
+(×c 0.7), one stack each: 1.0 × 0.75 × 0.699999988 = 0.5249999911. No
+weapon attribute has a hook (§4.3).
 
 ## 5. Application and prediction
 
@@ -287,6 +291,10 @@ only if a component flag (`+0x280`) is clear, `Mode` is not
 (`+0x220`) is set. It then goes to `0x5219AB0` when `Mode` is
 `ClientInstigated` and `ClientInstigatedApplicationPolicy` (`+0x222`) is
 Enable, otherwise to `0x5219C70`.
+
+Every `ApplyEffect` call creates its own instance: applying the same
+effect twice gives two instances, never one with more stacks. The
+effect's stacking policies are read only in `0x52317F0`.
 
 These are code facts. What they mean for authority, and how rollback
 works, are **Open**; the doc makes no server-authority claim, and
@@ -306,8 +314,34 @@ is fired by a direct call (`0x6E75620` → `0x4C45DC0`).
 From the effect export ([Gameplay Effect Values](Wardogs_GameplayEffect_Values_v1.md)):
 `GE_6xScope` sets `Weapon.AdsZoomMultiplier = 3`, adds 0.2 to
 `Weapon.AimTime`, and sets the zeroing range to 100–500;
-`GE_6xScope_MainSight` sets `Weapon.AdsZoomMultiplier = 3`. The code that
-applies them on equip is not traced.
+`GE_6xScope_MainSight` sets `Weapon.AdsZoomMultiplier = 3`.
+
+**Native.** On equip, `0x6C9F1A0` applies the attachment's
+`AppliedEffects`, and `0x6C9E190` the selected sight's effects, to the
+weapon item's own effect component (`WDItemExtension_GameplayEffects`
+`+0xF0`), one stack each, after removing that slot's earlier handles.
+The calls come from `0x6C9D170`, which is reached from
+`SetPredictedAttachment`, `OnRep_ReplicatedAttachmentMap` and a delegate
+bound in slot 159.
+
+### 7.1 What applies to a weapon
+
+These rules give a weapon's final attributes for an attachment set.
+
+- **Base.** The weapon item's `WDItemExtensionData_GameplayEffects.DefaultAttributes`, installed into the item's own component (`OnRegister` `0x6C692E0`). The `AimTime` in `WDItemExtensionData_RangedWeapon.DefaultAttributes` never changes the base: it is installed later with overwrite off (`0x6C9AFB0`).
+- **Effects on the weapon** (the item's component, `+0xF0`), one stack each:
+  - every equipped attachment's `AppliedEffects`;
+  - the selected sight's `SightsData[name].AppliedEffects`;
+  - with an underbarrel bipod unfolded, also its unfolded list (`FWDBipodAttachmentData` `+0x138`, `0x6C9F6E0`);
+  - the stance preset `StanceGameplayEffects[stance]`, applied by `OnStanceChanged` (`0x6C9A420`, mode `AuthorityOnly`) with the preset's stack count, which is 1 in all data.
+- **Not on the weapon.** `AppliedCharacterEffects` and the bipod's `+0x148` list go to the owning character's component (`WDMoverCharacter` `+0x740`), following the equip state.
+- **Evaluation.** Each application is its own instance; the stacking policies act only in `0x52317F0`. Every modifier `Filter` is empty, and no weapon-related effect has requirements, a duration or `MaxStacks`. So every modifier counts with `n = 1`, and the §4.4 formula applies with no hook.
+- **Data exceptions.**
+  - `ID_MAGZ_065` and `ID_MAGZ_066` list the same effect in `AppliedEffects` and `AppliedCharacterEffects`.
+  - The stance maps are keyed by stance, and two use mismatched effects: `ID_A91` maps Stand to `AR_Prone` (×c 0.7) and Crouch and Prone to `AR_Standing`, and `ID_WEPN_037` maps Prone to `AR_Standing`.
+  - Seven sight effects override `MaxZeroingRange` with the current `MinZeroingRange` (an attribute-backed modifier).
+
+Not traced: which sight name is selected first, how the bipod's `MountedAppliedEffects` (`+0x158`) apply, and when the attribute-backed zeroing magnitude is captured.
 
 ## 8. Open questions
 
@@ -317,9 +351,9 @@ applies them on equip is not traced.
 | E-2 | Duration semantics beyond 0 (for example whether −1 means infinite) |
 | E-3 | Rollback mechanism and the role of `UNetworkPredictionWorldManager` |
 | E-4 | **Closed**: every effect's modifiers, durations, stacks and granted tags are on [Gameplay Effect Values](Wardogs_GameplayEffect_Values_v1.md) |
-| E-5 | The equip code path that applies attachment effects |
-| E-6 | Vehicle health via effects: `GE_Vehicle_Health` and vehicle-side callers of `0x52311D0` (`0x7665D60`, `0x766727F`) are not traced |
-| E-7 | Effect-instance fields the stack logic reads: `+0x150` (when set, the effect's modifiers are excluded, `0x522B7D0`) and `+0x3C`, `+0x100`, `+0x12C` in the stack count (`0x5230770`) |
+| E-5 | **Closed** (§7): `0x6C9F1A0` / `0x6C9E190` apply attachment and sight effects to the weapon item's own component |
+| E-6 | Vehicle health via effects: `GE_Vehicle_Health` and vehicle-side callers of `0x52311D0` (`0x7665D60`, and the `Auth_RefillFuel` exec thunk `0x7667280`; the corpus row `0x766727F` is an empty nullsub one byte early) are not traced |
+| E-7 | **Closed**: `+0x150` = `OngoingRequirements` not met (`0x52330B0`, `0x522CB40`), so the effect's modifiers are excluded; `+0x3C` = pending predicted stack delta (`0x52313E0`, `0x5231DA0`); `+0x100` / `+0x12C` = `Num` / `NumFreeIndices` of the pending predicted-removal key set at `+0xF8` (equal = empty) |
 
 ## 9. Cross-references
 
@@ -337,3 +371,4 @@ applies them on equip is not traced.
 | 2026-10-17 | Corrected against the decompilation corpus, SDK and data: attributes are double base/current records (the map is only defaults); `Modifiers` element type and operations documented; stacking is a per-modifier curve; base-value writes and the damage path traced; preset types, catalog descriptions, StanceRecoil count (21), the three preset files and the example rewritten from data; authority language removed; cues are a separate component. |
 | 2026-10-17 | Effect values exported from the paks and published on Gameplay Effect Values; E-4 closed; the scope example uses the real modifiers. |
 | 2026-10-17 | Independent verifier pass: closed E-1 with the combining formula (§4.4); stack scaling is linear per operation, not a curve (§4.2); `Fixed` with a curve row returns `Value × Curve(0)`; the attribute hooks and their three registrants (§4.3); E-7 added. |
+| 2026-10-17 | Round-4 verifier pass: E-5 closed (§7) with what applies to a weapon (§7.1); E-7 closed; no weapon attribute has a hook; character health's hook clamps; `ApplyEffect` stacks are clamped and every call is a new instance (§5); E-6 citation corrected. |

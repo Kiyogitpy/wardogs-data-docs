@@ -183,9 +183,9 @@ Sections are VehicleDamagePipeline sections; `L` numbers are its lines at
   `0x6F01BB0`, which did not decompile". Only `0x6EF8DE0` lacks a row;
   `0x6F01BB0` has a decompiled body (668 bytes, no warning, 7 direct
   calls). The verifier's replacement for that cell is "`0x6EF8DE0` (no
-  corpus row; disassembly) and `0x6F01BB0` (corpus body)" (EV-22). This
-  page does not change the doc; V-2 is round-4 Track 3's question and may
-  be rewritten there.
+  corpus row; disassembly) and `0x6F01BB0` (corpus body)" (EV-22).
+  Corrected in the doc: round 4 closed V-2 (TT-1) and rewrote the row,
+  citing `0x6F01BB0` as a body.
 - **Ledger-backed `[exe]` rows.** `0x395F4D0`, `0x50E7140`, `0x50E7200`,
   `0x52311D0`, `0x5236990`, `0x5236C70`, `0x53202B0`, `0x6EF8DE0` and
   `0x6F042A0` were reproduced from the instructions in round 2 or 3 (or
