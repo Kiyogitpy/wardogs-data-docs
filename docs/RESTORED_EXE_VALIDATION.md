@@ -162,9 +162,9 @@ With the restored exe + validated idmap:
   |---|---|---|
   | Modifier evaluation order | `UWDDamageSubsystem::ModifyDamage` + xref from `UWDGlobalDamageSystem_VFT` | DamagePipeline §5 / evidence page B-1 |
   | PlayerArmorDurability algorithm | Vtable slot 0 of `UWDDamageModificationOperation_PlayerArmorDurability_VFT` at `0x146BB7DB0` | DamagePipeline §7.5 / integration-doc gap 3 |
-  | Stacking math on Modifiers | `UBHGameplayEffectComponent::ApplyEffect` xref chain | GameplayEffectsPipeline §6.2 |
-  | Prediction rollback mechanism | `UBHGameplayEffectComponent::ClientPredictionFailed` + `NetworkPredictionWorldManager` xref | GameplayEffectsPipeline §6.6 |
-  | Vehicle section routing vs rule chain order | `FVehicleHealthSection` consumer (search for xref to `PreDamageRouting` field) | VehicleDamagePipeline §7.3 |
+  | Stacking math on Modifiers | `UBHGameplayEffectComponent::ApplyEffect` xref chain | GameplayEffectsPipeline §4.2 and §4.4 (closed, E-1) |
+  | Prediction rollback mechanism | `UBHGameplayEffectComponent::ClientPredictionFailed` + `NetworkPredictionWorldManager` xref | GameplayEffectsPipeline §5 / E-3 (open) |
+  | Vehicle section routing vs rule chain order | `FVehicleHealthSection` consumer (search for xref to `PreDamageRouting` field) | VehicleDamagePipeline §4.1 and §4.2 |
 
 ## 6. Hashes and integrity
 

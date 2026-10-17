@@ -128,8 +128,8 @@ at `479c6c1`.
   corpus body `0x7665D60` makes the same call (`0x7665D7F`). The
   verifier's replacement for the E-6 citation (EV-21) is "(`0x7665D60`,
   and the `Auth_RefillFuel` exec thunk `0x7667280`; the corpus row
-  `0x766727F` is an empty nullsub one byte early)". This page does not
-  change the doc.
+  `0x766727F` is an empty nullsub one byte early)". Corrected in the
+  doc with that text.
 - **`0x3CA8630`.** No functions row; it is a leaf with no `.pdata` entry
   of its own:
   `mov rax, [rcx+0xC8]; test rax, rax; je; movzx eax, byte [rax+0x170]; ret`.

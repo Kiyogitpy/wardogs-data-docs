@@ -15,7 +15,7 @@ tags. Entries that need instigator tags are counted as unknown instead of applie
     python _tools/damage_tables.py --ammo M4  # one weapon: ammo type x armor class
     python _tools/damage_tables.py --vehicles # rule factor per vehicle row and caliber
     python _tools/damage_tables.py --survive  # hits to destroy every vehicle variant
-    python _tools/damage_tables.py --hitboxes # collision slot -> section map and damage ratios per vehicle
+    python _tools/damage_tables.py --hitboxes # collision slot -> section map and damage ratios per vehicle, unreachable keys marked
     python _tools/damage_tables.py --write    # refresh every marked table in the docs after a data update
 
 The distance curve's Time axis is centimetres: the native code evaluates it with the
@@ -418,23 +418,70 @@ def vehicle_rule_factor(entries, cal, hit, proj):
     return max(f, 0.0)
 
 
-def surface_maps(module_files):
-    """(surface group, collision slot or '(default)') -> section tag, from enabled health fragments."""
-    out = {}
+def fragments(module_files):
+    """The enabled fragment objects of the assembled modules."""
     for f in module_files:
         objs = {o.get("Name"): o for o in exports(f)}
         owner = next((o for o in objs.values() if o.get("Type") in ("ModularVehiclePlatform", "ModularVehiclePart")), None)
         for fr in (owner or {}).get("Properties", {}).get("Fragments", []):
-            obj = objs.get(fr["Value"]["Fragment"]["ObjectName"].split(":")[-1].rstrip("'"), {})
-            if not fr["Value"].get("bEnabled", True) or obj.get("Type") != "MVF_HealthSections":
-                continue
-            for g in obj.get("Properties", {}).get("ComplexSurfaceMappings", {}).get("SurfaceGroups", []):
-                group, val = tag(g["Key"]), g["Value"]
-                for s in val.get("SlotMap", []):
-                    out[(group, s["Key"])] = tag(s["Value"])
-                if val.get("bUseDefault"):
-                    out[(group, "(default)")] = tag(val.get("Default"))
+            if fr["Value"].get("bEnabled", True):
+                yield objs.get(fr["Value"]["Fragment"]["ObjectName"].split(":")[-1].rstrip("'"), {})
+
+
+def surface_maps(module_files):
+    """(surface group, collision slot or '(default)') -> section tag, from enabled health fragments."""
+    out = {}
+    for obj in fragments(module_files):
+        if obj.get("Type") != "MVF_HealthSections":
+            continue
+        for g in obj.get("Properties", {}).get("ComplexSurfaceMappings", {}).get("SurfaceGroups", []):
+            group, val = tag(g["Key"]), g["Value"]
+            for s in val.get("SlotMap", []):
+                out[(group, s["Key"])] = tag(s["Value"])
+            if val.get("bUseDefault"):
+                out[(group, "(default)")] = tag(val.get("Default"))
     return out
+
+
+def registered(module_files):
+    """Surface groups registered by the variant's mesh components and by its instanced wheels, and
+    the slot names the wheels suffix with their DataIndex (VehicleDamagePipeline §3.2)."""
+    meshes, wheels, indexed = set(), set(), set()
+    for obj in fragments(module_files):
+        kind, p = obj.get("Type"), obj.get("Properties", {})
+        if kind == "MVF_StaticMesh" and p.get("bRegisterComplexSurface", True):
+            meshes.add(tag(p.get("SurfaceGroup")) or "ComplexSurface.Group.Default")
+        elif kind == "MVF_InstancedWheels":
+            wheels.add("ComplexSurface.Group.Wheel")
+            indexed.update(p.get("IndexedSlotNames", []))
+        elif kind == "MVF_DestructibleMeshes":
+            for d in p.get("DestructibleMeshesData", []):
+                for s in d.get("DestructibleMeshesSettings", []):
+                    if s.get("bRegisterComplexSurface") and tag(s.get("SurfaceGroup")) not in (None, "None"):
+                        meshes.add(tag(s.get("SurfaceGroup")))
+    return meshes, wheels, indexed
+
+
+def unreachable(group, slot, meshes, wheels, indexed):
+    """Why no registered component can produce this map key, or None. A lookup starts at the hit
+    component's group and walks up to parent groups, so the key's group must be on such a walk.
+    Wheel hits on an indexed slot always carry the instance suffix; mesh hits never do."""
+    by_mesh = any(group in lineage(g) for g in meshes)
+    by_wheel = any(group in lineage(g) for g in wheels)
+    if not by_mesh and not by_wheel:
+        return "no component registers this group"
+    base = re.sub(r"_\d+$", "", slot)
+    if base != slot:
+        if not (by_wheel and base in indexed):
+            return "an indexed name, but no instanced wheel indexes this slot"
+    elif slot in indexed and not by_mesh:
+        return "instanced wheels add their index to this slot"
+    return None
+
+
+def row_entries(dtag, vrows):
+    """The entries of every per-vehicle row on the target tag's parent walk, most specific first."""
+    return [e for t in lineage(dtag) if t in vrows for e in vrows[t]["DamageModificationEntries"]]
 
 
 def vehicle_tables():
@@ -457,21 +504,24 @@ def hitbox_table(proj):
     for vpath in sorted(glob.glob(os.path.join(DATA, "**", "Variants", "VV_*.json"), recursive=True)):
         modules, _, _ = assemble(vpath)
         secs, dtag, smap = sections(modules), damage_tag(modules), surface_maps(modules)
-        if not smap or dtag not in vrows:
+        if not smap or not dtag:
             continue
         key = (dtag, tuple(sorted(smap.items())))
-        seen.setdefault(key, [secs, smap, dtag]).append(os.path.basename(vpath)[3:-5])
-    for (dtag, _), (secs, smap, _, *names) in seen.items():
-        entries = vrows[dtag]["DamageModificationEntries"] + generic
-        label = f"`{dtag.replace('Meta.Damage.Vehicle.', '')}` ({', '.join(names)})"
+        seen.setdefault(key, [secs, smap, registered(modules)]).append(os.path.basename(vpath)[3:-5])
+    for (dtag, _), (secs, smap, reg, *names) in seen.items():
+        entries = row_entries(dtag, vrows) + generic
+        own = "" if dtag in vrows else ", no row of its own"
+        label = f"`{dtag.replace('Meta.Damage.Vehicle.', '')}` ({', '.join(names)}{own})"
         for (group, slot), sec in sorted(smap.items(), key=lambda kv: (kv[0][1] == "(default)", kv[0])):
             hp, hit, pre, post, simul = secs.get(sec, (None, None, [], [], []))
             routes = [f"pre {s:g}" for t2, s, _ in pre if t2 == MAIN] +                      [f"post {s:g} when depleted" if d else f"post {s:g}" for t2, s, d in post if t2 == MAIN] +                      [f"simultaneous {s:g}" for t2, s, _ in simul if t2 == MAIN]
             routing = "is the main health" if sec == MAIN else (", ".join(routes) or "none")
             cells = [f"×{vehicle_rule_factor(entries, c, hit, proj):.3g}" for c in cals]
             grp = "" if group == "ComplexSurface.Group.Default" else f" [{group.replace('ComplexSurface.Group.', '')}]"
+            why = unreachable(group, slot, *reg) if slot != "(default)" else unreachable(group, "", *reg)
+            note = f" (unreachable: {why})" if why else ""
             hp_s = f"{hp:g}" if hp is not None else "?"
-            print(f"| {label} | `{slot}`{grp} | {sec.replace('Attribute.Gameplay.', '')} ({hp_s}) | {routing} | "
+            print(f"| {label} | `{slot}`{grp}{note} | {sec.replace('Attribute.Gameplay.', '')} ({hp_s}) | {routing} | "
                   + " | ".join(cells) + " |")
             label = ""
 
@@ -489,9 +539,9 @@ def survive_table(proj):
     for vpath in sorted(glob.glob(os.path.join(DATA, "**", "Variants", "VV_*.json"), recursive=True)):
         modules, missing, _ = assemble(vpath)
         secs, dtag = sections(modules), damage_tag(modules)
-        if MAIN not in secs or dtag not in vrows:
-            continue  # no health model or no damage row for this variant
-        entries = vrows[dtag]["DamageModificationEntries"] + generic
+        if MAIN not in secs or not dtag:
+            continue  # no health model or no damage tag for this variant
+        entries = row_entries(dtag, vrows) + generic
         cells = []
         for cal in cals:
             src, ctx, base = proj[cal]
