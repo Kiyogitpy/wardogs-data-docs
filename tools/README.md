@@ -9,8 +9,8 @@ in this repository.
 
 | Tool | Purpose | Status |
 |---|---|---|
-| `cue4parse_extractor/` | CUE4Parse wrapper that produces `data/*.json` from `.pak` files | TBD — pipeline exists in author's workspace, not yet packaged |
-| `doc_generators/` | Python scripts that turn JSON exports into reference MDs | TBD |
+| [`cue4parse_extractor/`](cue4parse_extractor/README.md) | CUE4Parse exporter (WdExtract): GE effect values and Blueprint bytecode | Packaged. The older pipeline behind `data/*.json` is still in the author's workspace |
+| [`../_tools/`](../_tools/) | Python scripts that turn the exports into doc tables and pages | In use |
 | `cross_ref_builder/` | Produces cross-reference indexes between docs | TBD |
 | `ida_scripts/` | IDA Python scripts for repeatable analysis passes | TBD |
 
