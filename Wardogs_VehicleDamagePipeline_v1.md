@@ -178,7 +178,10 @@ collision meshes, separate from the render models. Each render static mesh
 names its collision mesh in `UStaticMesh.ComplexCollisionMesh`. For the
 Havoc: `SM_ROT_02_Body` → `CC_ROT_02_Body_01a`, plus the wheels, doors,
 main and rear rotor hubs and blades (9 collision meshes, under
-`Meshes/ComplexCollision/`); the missile pods and reticle have none. A
+`Meshes/ComplexCollision/`); the missile pods and reticle have none. The
+rotors are placed by an `MVF_DestructibleMeshes` fragment
+(`Vehicle.DestructibleMesh.Rotor.Main` / `.Tail`), attached to the chassis
+skeleton's `mainRotorSpin_J` and `rearRotorSpin_J` bones. A
 collision mesh's material slots are the `CC_*` names, each with a
 collision material (for example `CC_FuelTank` → `MI_VehicleCC_FuelTank`,
 `CC_Main` → `MI_VehicleCC_Metal_ReinforcedArmored`, `CC_TailRotor` →

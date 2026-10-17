@@ -30,7 +30,7 @@ dotnet build -c Release -p:CUE4ParseProject=<path>\CUE4Parse\CUE4Parse.csproj
 ## Run
 
 ```
-WdExtract <Paks> <keyfile> <usmap> <out> <Paks>\oo2core_9_win64.dll <mode> [args]
+WdExtract <Paks> <keyfile> <usmap> <out> <Paks>\oo2core_9_win64.dll <mode> [args] [--names <usmap>]
 ```
 
 | Mode | Writes |
@@ -39,6 +39,15 @@ WdExtract <Paks> <keyfile> <usmap> <out> <Paks>\oo2core_9_win64.dll <mode> [args
 | `schema BHGameplay` | `<out>/usmap_schema.json`: usmap layouts whose name contains the text |
 | `dump <files.txt or package paths>` | `<out>/<name>.json` per package: all exports, Blueprint bytecode included; failures in `_failures.txt` |
 | `findname <path prefix> <text>` | `<out>/findname.txt`: packages under the prefix whose name map contains the text (IoStore imports are hashed, so this finds names an asset uses, not who references it) |
+
+**`--names <usmap>`** (any mode) borrows property names and array element
+types from an unobfuscated usmap for every struct whose layout matches this
+build's property for property. The closed-beta usmap
+(`507_Wardogs_ClosedBeta.usmap`, an older build) restores about 43,500
+hashed or `Unknown` properties in about 10,600 structs; structs that changed
+between builds are left alone. With it, skeletal meshes and physics assets
+decode too. Like the live usmap, it stays local and is never committed.
+Checked: a GE re-dump with `--names` is byte-identical to the published export.
 
 `dump` first restores usmap property names that are hashed in this build and
 array types the usmap leaves as `Unknown`, by property index against the SDK

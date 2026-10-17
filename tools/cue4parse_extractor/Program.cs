@@ -19,7 +19,12 @@ if (args.Length < 6)
     return 1;
 }
 string paksDir = args[0], keyFile = args[1], usmap = args[2], outDir = args[3], oodle = args[4], mode = args[5];
-var rest = args.Skip(6).ToArray();
+var rest = args.Skip(6).ToList();
+// Optional: --names <usmap>  borrow property names and array element types from an unobfuscated usmap
+// (e.g. an older build's) for every struct whose layout matches this build's property for property.
+string namesUsmap = null;
+var ni = rest.IndexOf("--names");
+if (ni >= 0) { namesUsmap = rest[ni + 1]; rest.RemoveRange(ni, 2); }
 Log.Logger = new LoggerConfiguration().MinimumLevel.Warning().WriteTo.Console().CreateLogger();
 if (!File.Exists(oodle)) { Console.WriteLine("oodle dll missing"); return 1; }
 OodleHelper.Initialize(new OodleDotNet.Oodle(oodle));
@@ -32,9 +37,38 @@ provider.SubmitKey(new FGuid(), new FAesKey(File.ReadAllText(keyFile).Trim()));
 Console.WriteLine($"Mounted {provider.MountedVfs.Count} vfs, {provider.Files.Count} files");
 Directory.CreateDirectory(outDir);
 
+if (namesUsmap != null)
+{
+    var live = provider.MappingsForGame.Types;
+    var donor = new CUE4Parse.MappingsProvider.Usmap.FileUsmapTypeMappingsProvider(namesUsmap).MappingsForGame.Types;
+    int structs = 0, props = 0, skipped = 0;
+    foreach (var (name, s) in live)
+    {
+        if (!donor.TryGetValue(name, out var d) || d.Properties.Count != s.Properties.Count) { skipped++; continue; }
+        bool same = true;
+        for (int i = 0; i < s.Properties.Count && same; i++)
+            same = s.Properties.ContainsKey(i) && d.Properties.ContainsKey(i) && s.Properties[i].MappingType.Type == d.Properties[i].MappingType.Type;
+        if (!same) { skipped++; continue; }
+        bool changed = false;
+        for (int i = 0; i < s.Properties.Count; i++)
+        {
+            var lp = s.Properties[i]; var dp = d.Properties[i];
+            bool unknownInner = lp.MappingType.InnerType?.Type == "Unknown" || lp.MappingType.ValueType?.Type == "Unknown";
+            if (lp.Name != dp.Name || unknownInner)
+            {
+                s.Properties[i] = new CUE4Parse.MappingsProvider.PropertyInfo(lp.Index, dp.Name,
+                    unknownInner ? dp.MappingType : lp.MappingType, lp.ArraySize);
+                props++; changed = true;
+            }
+        }
+        if (changed) structs++;
+    }
+    Console.WriteLine($"--names: {props} properties restored in {structs} structs; {skipped} structs left as they are (missing or different layout)");
+}
+
 if (mode == "list")
 {
-    var prefix = rest.Length > 0 ? rest[0] : "";
+    var prefix = rest.Count > 0 ? rest[0] : "";
     var files = provider.Files.Values
         .Where(f => f.Extension.Equals("uasset", StringComparison.OrdinalIgnoreCase)
                  && f.NameWithoutExtension.StartsWith(prefix, StringComparison.OrdinalIgnoreCase))
@@ -136,7 +170,7 @@ if (mode != "dump") { Console.WriteLine($"unknown mode {mode}"); return 1; }
     File.WriteAllLines(Path.Combine(outDir, "_usmap_patches.txt"), log);
 }
 
-var assets = rest.Length == 1 && File.Exists(rest[0]) ? File.ReadAllLines(rest[0]).Where(l => l.Trim().Length > 0).ToArray() : rest;
+var assets = rest.Count == 1 && File.Exists(rest[0]) ? File.ReadAllLines(rest[0]).Where(l => l.Trim().Length > 0).ToArray() : rest.ToArray();
 int ok = 0, fail = 0;
 var failures = new List<string>();
 foreach (var a in assets)
