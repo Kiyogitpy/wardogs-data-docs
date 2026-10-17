@@ -59,7 +59,11 @@ suffix wins over the default.
 **distance** (not time). Known cases:
 
 - [`Wardogs_Plugin_BHAimAssist_v2.md`](Wardogs_Plugin_BHAimAssist_v2.md) — aim-assist curves use `Time` as distance in cm (key values 150 to 30000 → 1.5m to 300m range)
-- Weapon falloff curves (`CF_*_ADS_Curve`, falloff curves) — `Time` axis represents distance in metres (falloff over range)
+- Weapon `DistanceDamageFalloffCurve` — `Time` is distance in **cm**. The native
+  projectile path evaluates it with the shot-origin-to-hit distance in engine
+  units ([DamagePipeline §7.6](../Wardogs_DamagePipeline_v2.md#76-the-bullet-event)),
+  so a key at 50000 is 500 m.
+- `CF_*_ADS_Curve` — `Time` is a distance; its unit has not been traced in code
 
 When a curve's `Time` key values are large (>10) and the curve is
 named for distance context (ADS, falloff, aim-assist), it's a

@@ -185,14 +185,15 @@ a plain multiplicative chain. Neither is established, so it is withdrawn.
 
 ### What is still open
 
-1. **Armored targets.** Which armor tags a hit adds to the target
-   context (for example, only when the armor covers the hit location) is
-   not traced. The 12.7 above assumes the heavy-armor tag is present.
-2. **Ammo variants.** HP and AP use modified projectile stats that have
+1. **Ammo variants.** HP and AP use modified projectile stats that have
    not been traced.
+2. **Speed after drag.** Damage also scales with impact speed below the
+   reference speed; how fast each round slows is not modelled.
 
-The base damage, the event tags, evaluation order and every modifier are
-established: see DamagePipeline §5–7, with per-weapon numbers in §7.7.
+The base damage, the event tags, armor coverage (only the piece covering
+the hit counts, so the 12.7 applies to the torso, not a headshot),
+evaluation order, every modifier and the distance falloff are
+established: see DamagePipeline §5–7, with per-weapon numbers in §7.7–7.8.
 Armor durability only applies to explosive-blunt and melee hits; bullets
 on armor go through the ammo-type Blueprint.
 
