@@ -24,20 +24,26 @@ what counts as evidence are those of
 The method is the one on the [vehicle evidence page](vehicles.md#1-method):
 
 1. Every `0x` token in
-   [`Wardogs_Weapons_v2.md`](../../Wardogs_Weapons_v2.md) at `main`
-   `e057d26` was extracted, and values below `0x100000` (component
-   offsets such as `+0xFF0` and `+0x408`) were dropped. That left
-   **17 RVAs**, all in §5a and §5b.
+   [`Wardogs_Weapons_v2.md`](../../Wardogs_Weapons_v2.md) at
+   `0f16271` (branch `r5/wpn`, the round-5 corrections) was extracted,
+   and values below `0x100000` (component offsets such as `+0xFF0` and
+   `+0x408`) were dropped. That left **33 RVAs**, in §2a, §5a and §5b.
+   The page was first built at `e057d26` (17 RVAs); the round-5
+   corrections added 16 and removed none.
 2. Each RVA was tagged with its citing section and the doc's line numbers
-   at `e057d26`.
+   at `0f16271`.
 3. `corpus.sqlite` was queried read-only for the exact `functions` row,
    `traits`, the enclosing row, direct calls and aliases. Bodies were
    searched for `JUMPOUT`, `__asm` and Hex-Rays warnings, and empty
    nullsub rows were flagged.
 4. The first instructions at every RVA were decoded from the restored
    executable (`pefile`, Capstone 5.0.7, read-only) to check that each
-   row starts on a real entry. Fifteen RVAs are `.pdata` starts with a
-   normal prologue. The other two are covered in the notes.
+   row starts on a real entry. Twenty-five RVAs are `.pdata` starts with
+   a normal prologue, and `0x6B8AC90` is a leaf (the reflected
+   `GetWallCollisionAlpha` thunk) with its own corpus row. The other
+   seven are covered in the notes: four sit
+   one to fifteen bytes after a misaligned `.pdata` start, two are leaves
+   with no `.pdata` entry, and one is an engine leaf with no row.
 5. The weapons doc was not covered by the round-2 to round-4 ledgers or
    the [damage evidence table](damage.md#table), so every RVA without a
    usable body was disassembled for this page. The direct callers of
@@ -48,16 +54,21 @@ The method is the one on the [vehicle evidence page](vehicles.md#1-method):
    went to an independent verifier as claims EV-W1 to EV-W4 (notes
    below). The verifier re-ran the script and the disassembly and
    confirmed all four claims, the page's counts and every table row.
+   The 16 RVAs added at `0f16271` come from the round-5 ledger rows
+   T2-1, T2-4, T2-16 and T2-20 to T2-31, where the same verifier
+   reproduced the instructions; their table rows say "verifier-confirmed
+   round 5". The one exception is `0x166D220`, which no ledger row
+   checks (notes).
 
 Re-run the corpus part with `python -I` from the repository root
 ([`_tools/rva_status.py`](../../_tools/rva_status.py)):
 
 ```text
-python -I _tools/rva_status.py Wardogs_Weapons_v2.md --rev e057d26 --exe
+python -I _tools/rva_status.py Wardogs_Weapons_v2.md --rev 0f16271 --exe
 ```
 
 The script's section column prints the heading text ("5a. Recoil") for
-these two sections, because it only shortens numeric headings to `§N`.
+these sections, because it only shortens numeric headings to `§N`.
 
 The status key is the one on the
 [vehicle evidence page](vehicles.md#status-key).
@@ -66,12 +77,12 @@ The status key is the one on the
 
 | Status | RVAs |
 |---|---:|
-| `corpus body` | 15 (1 with Hex-Rays warnings) |
-| `[exe]` | 2 (1 behind a misaligned row, 1 leaf with no row) |
+| `corpus body` | 25 (1 with Hex-Rays warnings) |
+| `[exe]` | 8 (4 behind a misaligned row, 2 leaves with no row, 2 engine helpers with no row) |
 | `GObjects` | 0 |
 | vtable/data | 0 |
 | `unverified` | 0 |
-| **Total** | **17** |
+| **Total** | **33** |
 
 Every cited address is in `.text`, and none is itself a GObjects fact.
 The GObjects-backed values sit next to them. In `WDWeaponBehaviorComponent`
@@ -84,27 +95,43 @@ are not reflected properties; those offsets rest on the instructions only.
 
 ## 3. Table
 
-Sections are Weapons sections; `L` numbers are its lines at `e057d26`.
+Sections are Weapons sections; `L` numbers are its lines at `0f16271`.
 
 | RVA | Role | Cited in | Verification status |
 |---|---|---|---|
-| `0x42CD0B0` | `APlayerController` vtable slot 254 (the doc's `IsLocalController`), reached by a virtual call from `0x6B96C20` | §5a (L234) | `corpus body`; no direct calls, see notes |
-| `0x699E6C0` | `FWDWeaponStats` constructor: the native defaults behind the recoil table's † | §5a (L249) | `corpus body` |
-| `0x6B84E80` | `UWDWeaponBehaviorComponent` constructor: component defaults, `AimSwayMode` | §5b (L298) | `corpus body` |
-| `0x6B85D30` | Focus cut, focus drain and `ViewKickMagnitudeMultiplier`; called from the fire routine (`0x6B9438D`) | §5a (L240) | `corpus body` |
-| `0x6B87260` | Pattern wrap: rebuilds the two deviation curves | §5b (L311) | `[exe]`: no row of its own; the enclosing row `0x6B8725D` is an empty nullsub; see notes |
-| `0x6B88310` | Stops focus when the energy runs out | §5b (L300) | `corpus body` |
-| `0x6B884D0` | Aim sway and focus energy tick | §5b (L298) | `corpus body`, flagged: Hex-Rays warnings; see notes |
-| `0x6B891F0` | `UWDWeaponBehaviorComponent` slot 131 (`TickComponent`): calls `0x6B89A20` (`0x6B8920C`) and `0x6B884D0` (`0x6B8922B`) | §5a (L244) | `corpus body` |
-| `0x6B89A20` | Kick playback step; calls `0x6B89BB0` (`0x6B89B4C`) | §5a (L244) | `corpus body` |
-| `0x6B89BB0` | Kick playback: curve deltas, pitch limits, recovery | §5a (L244) | `corpus body` |
-| `0x6B8E5A0` | `UWDWeaponComponent` constructor: shot counter `+0xFF0` = −1 | §5a (L234) | `corpus body` |
-| `0x6B93610` | Fire routine | §5a (L234) | `corpus body` |
-| `0x6B95C50` | Per-shot kick: pattern point or post-pattern ranges | §5a (L235) | `corpus body` |
-| `0x6B96C20` | Local-player gate | §5a (L234) | `corpus body` |
-| `0x6B97550` | Pattern reset: shot counter back to −1 | §5a (L234) | `[exe]`: no functions row, no `.pdata` entry; see notes |
-| `0x6C979A0` | Recoil-multiplier getter, `UWDItemExtension_RangedWeapon` slot 196 | §5a (L238) | `corpus body` |
-| `0x6C989A0` | Recoil-multiplier getter, `UWDItemExtension_RangedWeapon` slot 197 | §5a (L238) | `corpus body` |
+| `0x1669260` | Jitter noise helper, named Perlin noise from call shape only; called twice from `0x6A7F070` | §5b (L327, L331) | `[exe]`: no functions row, no `.pdata` entry (a leaf); verifier-confirmed round 5 (T2-29, name inferred) |
+| `0x166D220` | Rotator → quaternion helper by call shape only; called from `0x6A80880` (`0x6A813C9`) | §5b (L327, L331) | `[exe]`: no functions row; not checked by a ledger row, see notes |
+| `0x3D84130` | Called with the attach point and a rotator (`SetRelativeRotation` by call shape only) | §5b (L316, L331) | `[exe]`: no aligned row; the enclosing row `0x3D84121` is a misaligned `.pdata` start; verifier-confirmed round 5 (T2-16, T2-24) |
+| `0x42CD0B0` | `APlayerController` vtable slot 254 (the doc's `IsLocalController`), reached by a virtual call from `0x6B96C20` | §5a (L236) | `corpus body`; no direct calls, see notes |
+| `0x699E6C0` | `FWDWeaponStats` constructor: the native defaults behind the recoil table's † | §5a (L251) | `corpus body` |
+| `0x6A7F070` | Sight-sway jitter: two noise calls per jitter, fading as the weapon stabilizes | §5b (L327) | `[exe]`: no aligned row; the enclosing row `0x6A7F06A` is a misaligned `.pdata` start; verifier-confirmed round 5 (T2-29) |
+| `0x6A7F870` | `UWDFirstPersonAnimInstance` slot 101; jumps to `0x6A80880` (`0x6A7FBC8`) | §5b (L327) | `corpus body`; verifier-confirmed round 5 (T2-28) |
+| `0x6A80880` | Weapon-model sway: builds `SightSwayTransform`; reads the `CurveVector` X / Y | §2a (L156), §5b (L327) | `corpus body`; verifier-confirmed round 5 (T2-28, T2-30) |
+| `0x6B84540` | `FWDWeaponAimSwayData` constructor: native defaults | §5b (L325) | `corpus body`; verifier-confirmed round 5 (T2-20) |
+| `0x6B84E80` | `UWDWeaponBehaviorComponent` constructor: component defaults, `AimSwayMode` native default | §5b (L302) | `corpus body` |
+| `0x6B85D30` | Focus cut, focus drain and `ViewKickMagnitudeMultiplier`; called from the fire routine (`0x6B9438D`) | §5a (L242) | `corpus body` |
+| `0x6B86470` | `WDHoldableEquipStateUpdated` listener: writes the equip byte `+0xC11` | §5b (L302) | `[exe]`: no functions row, no `.pdata` entry (a leaf); verifier-confirmed round 5 (T2-1) |
+| `0x6B86860` | Binds the eleven sway attribute handles `+0xC18` … `+0xCC0` | §5b (L302) | `corpus body`; verifier-confirmed round 5 (T2-4) |
+| `0x6B87260` | Pattern wrap: rebuilds the two deviation curves | §5b (L315) | `[exe]`: no row of its own; the enclosing row `0x6B8725D` is an empty nullsub; see notes |
+| `0x6B88310` | Stops focus when the energy runs out | §5b (L304) | `corpus body` |
+| `0x6B884D0` | Aim sway and focus energy tick | §5b (L302, L317) | `corpus body`, flagged: Hex-Rays warnings; see notes |
+| `0x6B88DD0` | Aim blend `+0x3E4`; called from `0x6B88F20` (`0x6B88F4C`) | §5b (L322) | `[exe]`: no aligned row; the enclosing row `0x6B88DCF` is a misaligned `.pdata` start; verifier-confirmed round 5 (T2-25) |
+| `0x6B88F20` | Stabilization timer `+0x408` and the ADS FOV blend | §5b (L319, L323) | `corpus body`; verifier-confirmed round 5 (T2-21, T2-31) |
+| `0x6B891F0` | `UWDWeaponBehaviorComponent` slot 131 (`TickComponent`): calls `0x6B89A20` (`0x6B8920C`), `0x6B88F20` (`0x6B89217`) and, when `+0xC11` is set, `0x6B884D0` (`0x6B8922B`) | §5a (L246), §5b (L302) | `corpus body`; the `+0xC11` gate verifier-confirmed round 5 (T2-1) |
+| `0x6B89250` | Async muzzle trace | §5b (L329) | `corpus body`; verifier-confirmed round 5 (T2-26) |
+| `0x6B89A20` | Kick playback step; calls `0x6B89BB0` (`0x6B89B4C`) | §5a (L246) | `corpus body` |
+| `0x6B89BB0` | Kick playback: curve deltas, pitch limits, recovery, the `+0x3D0` total | §5a (L246, L247) | `corpus body`; `+0x3D0` verifier-confirmed round 5 (T1-26) |
+| `0x6B8A2F0` | Async "WallCollision" sweep | §5b (L329) | `corpus body`; verifier-confirmed round 5 (T2-27) |
+| `0x6B8A700` | Movement factor m `+0xC04` | §5b (L321) | `corpus body`; verifier-confirmed round 5 (T2-22) |
+| `0x6B8AC90` | `GetWallCollisionAlpha`: reads `+0x41C` | §5b (L329) | `corpus body`; verifier-confirmed round 5 (T2-27) |
+| `0x6B8E5A0` | `UWDWeaponComponent` constructor: shot counter `+0xFF0` = −1 | §5a (L236) | `corpus body` |
+| `0x6B93610` | Fire routine | §5a (L236), §5b (L333) | `corpus body` |
+| `0x6B95C50` | Per-shot kick: pattern point or post-pattern ranges | §5a (L237) | `corpus body` |
+| `0x6B96C20` | Local-player gate | §5a (L236) | `corpus body` |
+| `0x6B97550` | Pattern reset: shot counter back to −1 | §5a (L236) | `[exe]`: no functions row, no `.pdata` entry; see notes |
+| `0x6C979A0` | Horizontal recoil-multiplier getter, `IWDWeaponOwner` interface slot 22 of `UWDItemExtension_RangedWeapon` (the corpus alias reads it as main-table slot 196) | §5a (L240), §5b (L333) | `corpus body`; slot verifier-confirmed round 5 (T1-8) |
+| `0x6C989A0` | Vertical recoil-multiplier getter, interface slot 23 (corpus alias slot 197) | §5a (L240), §5b (L333) | `corpus body`; slot verifier-confirmed round 5 (T1-8) |
+| `0x6D54190` | Camera-mode write of the new control rotation (role by call shape only) | §5b (L316, L331) | `corpus body`; the call verifier-confirmed round 5 (T2-16) |
 
 ## 4. Notes on particular rows
 
@@ -174,19 +201,55 @@ Sections are Weapons sections; `L` numbers are its lines at `e057d26`.
   has no row covering that chunk, so it has no calls rows for those two
   sites. They do not change any status.
 
+- **Round-5 misaligned rows (`0x6B88DD0`, `0x6A7F070`, `0x3D84130`).**
+  Like `0x6B87260`, each starts a few bytes after a `.pdata` start that
+  the corpus uses as its row. Decoded from the row, the first
+  instructions are junk; decoded from the cited RVA, they are a normal
+  prologue:
+  - `0x6B88DCF` gives `add dword [rax+0x53], eax`; `0x6B88DD0` gives
+    `push rbx; sub rsp, 0x70`. Its caller is `0x6B88F4C` in
+    `0x6B88F20` (r5 T2-25).
+  - `0x6A7F06A` gives `lodsd; ret`; `0x6A7F070` gives
+    `mov rax, rsp; …; push rdi; sub rsp, 0x80`. It is called at
+    `0x6A80F93` and `0x6A81209` in `0x6A80880` (r5 T2-29).
+  - `0x3D84121` gives `mov [rsp+0x20], rax; push rsi; movsx …`;
+    `0x3D84130` gives `mov rax, rsp; …; push rdi; sub rsp, 0xA0`. The
+    sway tick calls it at `0x6B88C30` and `0x6B88D7B` (r5 T2-16, T2-24).
+- **Leaves (`0x6B86470`, `0x1669260`).** Neither has a `.pdata` entry.
+  `0x6B86470` is the whole function
+  `cmp byte [rdx], 1; sete al; mov [rcx+0xC11], al; ret`; its one code
+  reference is a `lea` at `0x6B866B2` in `0x6B86480`, which binds it to
+  `WDHoldableEquipStateUpdated` (r5 T2-1). `0x1669260` starts
+  `movaps xmm5, xmm0; lea rdx, [rip-…]; …; roundps`, an engine helper
+  with many callers; the Perlin-noise name is inferred (r5 T2-29).
+- **`0x166D220`.** A `.pdata` start with a normal prologue
+  (`push rbx; sub rsp, 0x80`) but no functions row. The verifier's
+  disassembly of `0x6A80880` shows three calls to it (`0x6A813C9`,
+  `0x6A814B1`, `0x6A819D4`), the first just before the
+  `SightSwayTransform` rotation is stored. No ledger row checks what it
+  does; the rotator → quaternion name rests on call shape only, and the
+  doc says so.
+
 ### Other addresses in these notes
 
 The other addresses in the notes are call sites, callees and anchors
 that were read for this page; the weapons doc does not cite them, and they
 are not part of the counts. The callees are `0x6B86480`, `0x3E0DF10`,
 `0x3DFF510`, `0x3AB8810`, `0x6BBD5B0`, `0x3A9B050`, `0x3A97B50` and
-`0x3EAA8F0`. `0x6BBD5E0`, the stance accessor, is checked by round 5
-as part of §5b.
+`0x3EAA8F0`. `0x6BBD5E0`, the stance accessor, was checked by round 5
+as part of §5b (r5 T2-10). The round-5 call sites and anchors in the
+notes above (`0x6B88F4C`, `0x6A80F93`, `0x6A81209`, `0x6B88C30`,
+`0x6B88D7B`, `0x6B866B2`, `0x6A813C9`, `0x6A814B1`, `0x6A819D4`) are
+not cited by the doc either.
 
 ## 5. Open items
 
-- §5a and §5b have not been verified claim by claim. Round 5 checks them
-  separately. A status table settles where the code is, not what it does.
-- The stabilization timer (`+0x408`, `AdsStabilizeCooldownRate`), the
-  weapon-model sway and the `Weapon` sway mode stay open in
-  [Weapons §5b](../../Wardogs_Weapons_v2.md#5b-aim-sway-and-focus-energy).
+- Round 5 checked §5a and §5b claim by claim; the doc carries its
+  corrections at `0f16271`. A status table settles where the code is,
+  not what it does.
+- Still open in
+  [Weapons §5b](../../Wardogs_Weapons_v2.md#5b-aim-sway-and-focus-energy):
+  the source of the ADS time (`+0x3E8`) and of the starting focus zoom
+  (`+0x3FC`), the sight-multiplier data path, the reader of `+0x3D0`,
+  and (unverified) the recoil multipliers of vehicle and stationary
+  weapons and whether fists reach `0x6B93610`.
