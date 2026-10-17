@@ -225,6 +225,7 @@ The export lists the inputs to each system but not the formulas that combine the
 
 - **Recoil:** §5a.
 - **Aim sway and focus energy:** §5b.
+- **Attachment and stance multipliers:** each weapon's final `Attribute.Gameplay.Weapon.*` values (recoil and spread multipliers, `AimTime`, zoom, zeroing) with its default attachments, and what each attachment changes, are on [Weapon Attributes](Wardogs_WeaponAttributes_v1.md).
 - **Distance falloff (SKS):** `DistanceDamageFalloffCurve` is a multiplier indexed by distance. The falloff times are centimetres of distance, confirmed in code; per-weapon damage by distance is in [DamagePipeline §7.8](Wardogs_DamagePipeline_v2.md#78-damage-over-distance).
 
 ### 5a. Recoil
