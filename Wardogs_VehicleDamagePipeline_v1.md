@@ -171,10 +171,24 @@ in the platform and part files: per surface group, a slot map
 (`CC_FuelTank` → `Attribute.Gameplay.Health.FuelTank`, …), and a default
 section (usually the main health) for every slot not listed. Which code
 fills the component's table from this struct is not traced; the struct is
-the only slot-to-section data in the export. The slot names are collision
-material slots on the vehicle meshes. Where each slot sits on the model
-needs the mesh geometry, which this export does not decode (the mesh's
-material and LOD data come back empty).
+the only slot-to-section data in the export.
+
+**Data, collision meshes.** The slots live on dedicated low-poly
+collision meshes, separate from the render models. Each render static mesh
+names its collision mesh in `UStaticMesh.ComplexCollisionMesh`. For the
+Havoc: `SM_ROT_02_Body` → `CC_ROT_02_Body_01a`, plus the wheels, doors,
+main and rear rotor hubs and blades (9 collision meshes, under
+`Meshes/ComplexCollision/`); the missile pods and reticle have none. A
+collision mesh's material slots are the `CC_*` names, each with a
+collision material (for example `CC_FuelTank` → `MI_VehicleCC_FuelTank`,
+`CC_Main` → `MI_VehicleCC_Metal_ReinforcedArmored`, `CC_TailRotor` →
+`MI_VehicleCC_Metal_Weak`), and its render data holds the triangles per
+slot (`CC_ROT_02_Body_01a`: about 1,450 triangles over 7 slots). Slots not
+in the map, such as `CC_Main`, `CC_Glass` and `CC_Fabric`, take the
+default section. Stationary vehicles place such proxies directly as mesh
+fragments (`Meshes/ComplexCollisions/ComplexProxy/`). Decoding these
+meshes needs the static-mesh usmap fixes in
+[`tools/cue4parse_extractor`](tools/cue4parse_extractor/README.md).
 
 **Derived**, `_tools/damage_tables.py --hitboxes`: every vehicle's map,
 with the section's maximum health, how the section passes damage to the
