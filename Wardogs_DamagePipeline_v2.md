@@ -572,12 +572,13 @@ firing weapon:
 | Event field | Value | Evidence |
 |---|---|---|
 | Stats | `GetProjectileStats(AmmoModifierTag)`: the asset's `ProjectileStats` (`+0x38`), or the per-ammo-type variant in `CachedModifiedProjectileStats` (`+0x350`) | `0x6BBA900` |
-| `S` | `DamageValues.BaseDamage`; `ExplosiveBluntDamage` instead when the projectile has an arming delay and has flown less than `ArmingDelay`. Then scaled twice, below | stats `+0x30` / `+0x44`, `+0x180`, `+0x184` |
-| Speed scale | `× clamp(impact speed / reference speed, 0, 1)`. Reference is the weapon's `TypicalSpeed` when `bOverrideTypicalSpeed` is set, else the projectile's `TypicalSpeed` | `0x6C255B0`; weapon `+0xA0`/`+0xA4`, stats `+0x1FC` |
-| Distance scale | `× DistanceDamageFalloffCurve(distance)` when the weapon's `bUseDistanceDamageFalloffCurve` is set; distance is shot origin to hit point in **centimetres** | `0x6B72D53`–`0x6B72DCB`; weapon `+0xA8`/`+0xB0` |
-| Armor in target context | The target's hook (vtable `+0x20`) runs before `ModifyDamage`. For characters it calls `Auth_GetArmorDamageEvent`, which copies the target's entity data and then **removes every armor tag whose piece does not cover the hit location** (`CoveredHitLocations`). Only the covering piece reaches §7.3 and §7.5 | `0x6B52A40`; callers `AWDMoverCharacter` slot 390, `AWDTargetDummy` slot 242 |
+| `S` | `DamageValues.BaseDamage`; `ExplosiveBluntDamage` instead when the projectile has an arming delay and its flight time (`FWDProjectileInstance.ElapsedTime`, seconds) is below `ArmingDelay − 0.0001`, or when an unnamed instance byte (`+0x101`) is clear. Then scaled twice, below | stats `+0x30` / `+0x44`, `+0x180`, `+0x184`; instance `+0x290`, `+0x101` |
+| Speed scale | `× clamp(impact speed / reference speed, 0, 1)`. Reference is the weapon's `TypicalSpeed` when `bOverrideTypicalSpeed` is set and that value is > 0, else the projectile's `TypicalSpeed` | `0x6C255B0`; weapon `+0xA0`/`+0xA4`, stats `+0x1FC` |
+| Distance scale | `× DistanceDamageFalloffCurve(distance)` when the weapon's `bUseDistanceDamageFalloffCurve` is set; distance is shot origin to hit point in **centimetres** | `0x6B70D80` (direct hit, called at `0x6B7330C`); `0x6B72D53`–`0x6B72DCB` per custom hit; weapon `+0xA8`/`+0xB0`; hit `ImpactPoint` `+0x28`, `ProjectileOrigin` `+0x110` |
+| Armor in target context | The target's hook (`IWDDamageable` sub-vtable `+0x20`) runs before `ModifyDamage`. For characters it calls `Auth_GetArmorDamageEvent`, which copies the target's entity data and then **removes every armor tag except the first one (in context order) whose piece's `CoveredHitLocations` contains the hit-location tag** (derived from the hit bone and written to `HitLocationTag`, event `+0x1A0`). With no resolved hit location, all armor tags are removed. Only the covering piece reaches §7.3 and §7.5. When the projectile has `bShouldPenetrate` and the covering piece passes the hook's checks, it then appends `Meta.Damage.Armor.Penetrate` (penetration test passes) or `Meta.Damage.Armor.Throughput` to the source context; the armor rule table (`DT_GlobalDamage_ArmorData`) keys on `Armor.Penetrate` | `0x6B52A40`; alias labels `AWDMoverCharacter` slot 390, `AWDTargetDummy` slot 242 |
 | Source tag | stats `DamageEntityData.Tag`, e.g. `Meta.Damage.Bullet.545mm` | stats `+0x00` |
-| Source context, in order | stats `DamageEntityData.Context` (e.g. `Meta.Damage.Arms.Medium`); the firing weapon's damage tag (e.g. `Meta.Damage.Weapon.AR.A91`); `Kinetic.Impact.Ricochet` / `.Penetration` when flagged; the asset's `ProjectileId` (e.g. `Item.Caliber.545mm`); `Meta.Damage.DamageType.Projectile`; `Kinetic.Impact.ExplosiveBlunt` for projectiles with an arming delay | `0x6B725B0`; tag names from the static initializers |
+| Source context, in order | stats `DamageEntityData.Context` (e.g. `Meta.Damage.Arms.Medium`); the firing weapon's damage tag (e.g. `Meta.Damage.Weapon.AR.A91`); `Kinetic.Impact.Ricochet` / `.Penetration` when bit (HitCount − 2) of `RicochetBitMap` / `PenetrationBitMap` is set; the asset's `ProjectileId` (e.g. `Item.Caliber.545mm`); then, only if the hit is not `bExploding`, `Meta.Damage.DamageType.Projectile` and (with an arming delay, armed or not) `Kinetic.Impact.ExplosiveBlunt`. An exploding hit skips both scales, the hook and `ModifyDamage` here. The source `CauseEntityTag` (event `+0x88`) is overwritten from the slot record (`+0x1C`) | `0x6B725B0`; tag names from the static initializers |
+| Custom hits | If the hit carries `CustomHitResults`, each custom hit gets its own copy of the event (distance scale, hook, `ModifyDamage`). The one with the highest result above 0 is kept and the direct-hit `ModifyDamage` is skipped. The direct path runs only when there are no custom hits or none scores above 0 | `0x6B725B0` |
 
 The weapon tag is identified by value: the slot record supplies a tag,
 and every weapon item's `DamageEntityData.Tag` in the export is such a
@@ -841,17 +842,30 @@ attribute base value. No gameplay effect is applied.
    Slot 2, `ReceiveDamage`, is `0x6E74C40` in both. It jumps to the
    vitality component (object `+0x748`), vtable `+0x500`.
 2. `UWDCharacterVitalityComponent` (`0x6B17760`) returns 0 for damage
-   ≤ 0. A character without `State.Player.Vitality.Alive` (downed) gets a
-   damage event sent through a `ProcessEvent` stub and no health write.
-   Otherwise it calls the base `UWDVitalityComponent` (`0x6B82520`).
+   ≤ 0. A character without `State.Player.Vitality.Alive` (downed or
+   dead; the code does not distinguish) gets no health write, and 0 is
+   returned. Only an `AWDMoverPlayerCharacter` owner gets more: it receives
+   the damage event through a `ProcessEvent` stub (`0x6E7F0B0`, parameter
+   shape of `Client_ForceTakeHitCue`), and when the instigating
+   controller's pawn is a player character, that pawn receives it too
+   (`0x6E7F420`, shape of `Client_TriggerHitMarker`, with a
+   `State.Player.Vitality.Critical` tag container). The two function names
+   are inferred from parameter shape only. Otherwise it calls the base
+   `UWDVitalityComponent` (`0x6B82520`), then reduces a decay pool at
+   `+0x17C`.
 3. `0x6B82520` calls `0x52311D0` on the `Attribute.Gameplay.Health`
    handle (component `+0x140`, created in `0x6B81CE0`) with
    `−CurrentDamage`. `0x52311D0` adds that delta to the attribute's
    stored value and calls `SetAttributeBaseValue` (`0x5236AF0`), whose
    setter (`0x5236E50`) runs a per-attribute hook, stores the new base
    and pushes it into the replicated attribute array.
-4. Back in `0x6B82520`: death when the current value is ≤ 0, then the
-   `OnDamageTaken` and regeneration-timer delegates.
+4. Back in `0x6B82520`: if the applied change is zero it returns 0.
+   Otherwise it records whether current health is now ≤ 0, broadcasts
+   `OnDamageTaken` and `RegenTimer` (with `RegenDelay`), and sends
+   `WDEvent_Damage`. Only then, if health was ≤ 0, it broadcasts
+   `OnBeforeKilled` and `OnKilled` and sends `WDEvent_Killed`. It returns
+   the size of the applied change, which the caller writes back to
+   `CurrentDamage`.
 
 A character's `TakeDamage` override (`0x6E77C40`) does not write health:
 it converts an incoming Unreal damage event into a WD event and re-enters
@@ -895,6 +909,12 @@ corpus's validated types):
 | Category order | Calibre, AmmoModifier, CaliberEffectiveness, Bone, PenetrationEffectiveness, Tracer, Weapon, Armor, Melee, Ricochet, Penetration, Friendly | `DA_GlobalDamage_Categories.json` |
 | Garbage flag `0x40000000` | `RF_MirroredGarbage` (UE5's replacement for `RF_PendingKill`); `sdk/raw/Basic.hpp` has it, the corpus `schema.json` enum import omits it | SDK, UE `ObjectMacros.h` |
 
+Four functions have no corpus body: `0x53202B0`, `0x52311D0`,
+`0x5236AF0` and `0x6C255B0`. Claims that rest on them (the section pick,
+the base-value write, the speed scale) are backed by disassembly only,
+and an independent verifier pass keeps them marked unverified on that
+basis.
+
 The evaluator's instruction anchors (§6) were each checked against the
 disassembly; `0x6BB72E1` replaces an earlier `0x6BB72DE`, which is the
 instruction before it.
@@ -937,3 +957,4 @@ The restored image carries the UTF-16LE build marker
 | 2026-10-17 | Closed the cross-check items: `S` is the event amount (`0x6EF8DE0`); the evaluator is skipped for `S ≤ 0`; recording rules; registry/category fallback to `WDGameSettings`; offsets confirmed by runtime reflection (§11); anchor `0x6BB72E1`. |
 | 2026-10-17 | Health write traced (§10): `ReceiveDamage` → vitality component → base-value write on `Attribute.Gameplay.Health`; no effect involved. Corrects the earlier note that `SetAttributeBaseValue` is only used by healing (its helper `0x52311D0` had no corpus function entry, so its calls were not indexed). |
 | 2026-10-17 | Ammo variants: the modified stats add the ammo-modifier tag and change no damage value (§7.9). Generator gained real armor values and an `--ammo` mode; added the ammo × armor table. |
+| 2026-10-17 | Independent verifier pass: corrected the blunt-damage condition (flight time, instance byte `+0x101`), the direct-hit distance-scale evidence, armor filtering (first covering piece only) and the Penetrate/Throughput tags, the exploding-hit and custom-hit paths, the downed-character branch and the order of death handling; noted the four functions without corpus bodies. |
