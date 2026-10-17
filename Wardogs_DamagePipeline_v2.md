@@ -75,8 +75,13 @@ to the upper torso of an unarmored target.
 | 11 | Reflected `exec_GetModificationAmount` (pair at `0xB322038`) | `0x6BB7B30` |
 
 `ModifyDamage` takes `FWDDamageEventData&` and a bool, and returns a
-float. On the inspected branch the bool bypasses the evaluator; its
-gameplay meaning is **Open**. Which system an actual event selects is
+float (reflected parameters: event at `0x0`, size `0x1D0`; bool at
+`0x1D0`; return at `0x1D4`). It first converts the event into
+`FWDModifyDamageData` (`0x6EF8DE0`), copying the event's `Amount` (`+0x0`)
+into `ModifyDamageData.Amount` unchanged (`0x6EF8E2C`/`0x6EF8E37`), so
+**`S` is the event's amount**. With the bool set it returns the event's
+amount without evaluating; its gameplay meaning is **Open**. Without it,
+the evaluator only runs when `S > 0`; otherwise `S` is returned as is. Which system an actual event selects is
 also **Open**: step 3 reads the base active field and returns the first
 match.
 
@@ -162,7 +167,7 @@ float GetModificationAmount(const FWDModifyDamageData& ModifyDamageData,
 ```
 
 **Native.** The adapter at `0x6BB7900` receives the class default object,
-the original struct and the running amount `C` (`xmm2`, `0x6BB72DE`).
+the original struct and the running amount `C` (`xmm2`, `0x6BB72E1`).
 For a native override it calls vtable slot 86 (`+0x2B0`) directly. For a
 Blueprint it fills the function's parameter block (struct copy at `0x00`,
 `C` at `0xC8`, return at `0xCC`) and calls `ProcessEvent`.
@@ -298,7 +303,10 @@ both tags.
 of the target's tag hierarchy:
 
 1. Start at the event's target tag.
-2. Look that tag up in the damage data registry (`DamageRegistryName`).
+2. Look that tag up in the damage data registry (`DamageRegistryName`;
+   when unset, the collector fills it and the category asset from
+   `WDGameSettings.DamageSystemSettings.GlobalDamageDataRegistryName` /
+   `GlobalDamageCategoryDataAsset`, `+0x378`/`+0x380`).
    If a `FWDDamageableEntityTableRow` exists, match its entries (§4) and
    file the selected ones under that tag. A group is created when its
    first entry is selected.
@@ -340,12 +348,15 @@ start with `C = S`. For each selected modification, in the order of §5:
   unavailable class is skipped.
 - After **all** groups, the non-empty path clamps once: `C = max(C, 0)`
   (`0x6BB73E7`). With nothing selected, `S` is returned unclamped.
-- A non-custom delta is applied first and only then compared with about
-  `1e-8` to decide whether it is recorded in the event's result list. The
-  threshold never suppresses arithmetic.
+- Every term is recorded in the event's `ModificationResults` list
+  (`FWDDamageEventData +0x190`). A custom term is appended before its call,
+  unconditionally; a non-custom delta is applied first and recorded only
+  when `|delta| > 1e-8` (abs mask and threshold loaded at `0x6BB7153`/
+  `0x6BB715C`, compare at `0x6BB7344`). The threshold never suppresses
+  arithmetic.
 - All arithmetic is single-precision float.
 
-Instruction anchors: `0x6BB72DE` current amount into the adapter,
+Instruction anchors: `0x6BB72E1` current amount into `xmm2` for the adapter,
 `0x6BB72F8` custom return stored, `0x6BB72FD` `addss` custom delta,
 `0x6BB7306` enum switch, `0x6BB7324`/`0x6BB7329` ongoing scale,
 `0x6BB732F`/`0x6BB7334` starting scale, `0x6BB733C` `addss` delta,
@@ -856,6 +867,32 @@ for server behaviour is not established here.
 | [`docs/DAMAGE_IDA_TRACE.md`](docs/DAMAGE_IDA_TRACE.md) | Original question set B-1 to B-4 |
 | [`docs/DAMAGE_IDA_RESULTS.md`](docs/DAMAGE_IDA_RESULTS.md) | Failed pass on the earlier dump-reconstructed exe (different hash) |
 
+### Offsets and engine details cross-checked
+
+Offsets the code relies on, confirmed against the runtime reflection data
+in the GObjects property dump (independent of the SDK headers and of the
+corpus's validated types):
+
+| Item | Value | Source |
+|---|---|---|
+| `FWDDamageEventData.Amount` / `.ModificationResults` | `0x0` / `0x190` (size `0x1D0`) | GObjects `WDDamageEventData`; `ModifyDamage` parameter block |
+| `FWDDamageableEntityTableRow.DamageModificationEntries` | `0x10` | GObjects `WDDamageableEntityTableRow` |
+| `FWDDamageModificationInputData` contexts / `Alignment` / `HitLocation` | `0x0`, `0x20`, `0x40` / `0x60` / `0x64` | GObjects `WDDamageModificationInputData` |
+| `UWDGameSettings` `+0x378` / `+0x380` | `DamageSystemSettings` (`0x338`) `.GlobalDamageDataRegistryName` (`+0x40`) / `.GlobalDamageCategoryDataAsset` (`+0x48`) | SDK and GObjects agree |
+| `UClass` default object | `+0x110` | SDK `CoreUObject_classes.hpp` |
+| Subclass check `+0x30`/`+0x38` | UE5's struct base chain (`StructBaseChainArray`, `NumStructBasesInChainMinusOne`), the engine's fast `IsChildOf` | Code pattern in `0x6BB6A60`, `0x6BB7E10` |
+| Adapter's `+0xD4 & 0x80` | `UClass::ClassFlags` bit `CLASS_Native` (`0x80`): native override → direct virtual call, otherwise `ProcessEvent` | UE `EClassFlags`; `CastFlags` follows at `0xD8` in the SDK |
+| Group order = insertion order | `0x6BB5ED0` → `TSet::Emplace` `0x6BB5DC0` → `TSparseArray::AddUninitialized` `0x1587900`, which appends unless the free count (`+0x34`) is non-zero. The evaluator builds the map with none and the collector never removes | Code |
+| Parent-tag step `0x395F4D0` | `UGameplayTagsManager::Get` (`0x395ADE0`) then the manager lookup: `FGameplayTag::RequestDirectParent` | Code |
+| Armor op's `+0x738` | A virtual call, `AActor` slot 231 (`0x3A93090`): `FindComponentByClass` over the actor's components (`+0x240`), here with `WDPlayerInventoryComponent` | Code |
+| Only dispatcher of `GetModificationAmount` by name | The `GetModificationAmount` name global is referenced only by the adapter `0x6BB7900` | Corpus full-text search |
+| Category order | Calibre, AmmoModifier, CaliberEffectiveness, Bone, PenetrationEffectiveness, Tracer, Weapon, Armor, Melee, Ricochet, Penetration, Friendly | `DA_GlobalDamage_Categories.json` |
+| Garbage flag `0x40000000` | `RF_MirroredGarbage` (UE5's replacement for `RF_PendingKill`); `sdk/raw/Basic.hpp` has it, the corpus `schema.json` enum import omits it | SDK, UE `ObjectMacros.h` |
+
+The evaluator's instruction anchors (§6) were each checked against the
+disassembly; `0x6BB72E1` replaces an earlier `0x6BB72DE`, which is the
+instruction before it.
+
 ### Binary identity
 
 | Artifact | SHA-256 | Size |
@@ -891,5 +928,6 @@ The restored image carries the UTF-16LE build marker
 | 2026-10-17 | Blueprint bytecode (cooked assets, read statically): closed O-5 with the four operation bodies. All five custom operations are factors on `C`, so the infantry result is order-independent. Added the ammo-vs-armor factor table and a worked example (§7.6). Bone `Universal` and weapon rows multiply. |
 | 2026-10-17 | Traced the projectile-impact path (`0x6B725B0`): the bullet event's starting amount and tags come from the projectile data asset and the firing weapon (§7.6). Added a per-weapon damage table for 33 weapons, generated by `_tools/infantry_damage.py` (§7.7). Named more `ModifyDamage` callers; `BP_DamageActor` bypasses the rule tables. |
 | 2026-10-17 | Starting amount scales by impact speed and the weapon's distance curve (cm); armor tags are filtered to the piece covering the hit location before `ModifyDamage` (§7.6). Added damage over distance (§7.8). `UNITS.md` corrected: the falloff curve's `Time` is cm, not metres. |
+| 2026-10-17 | Closed the cross-check items: `S` is the event amount (`0x6EF8DE0`); the evaluator is skipped for `S ≤ 0`; recording rules; registry/category fallback to `WDGameSettings`; offsets confirmed by runtime reflection (§11); anchor `0x6BB72E1`. |
 | 2026-10-17 | Health write traced (§10): `ReceiveDamage` → vitality component → base-value write on `Attribute.Gameplay.Health`; no effect involved. Corrects the earlier note that `SetAttributeBaseValue` is only used by healing (its helper `0x52311D0` had no corpus function entry, so its calls were not indexed). |
 | 2026-10-17 | Ammo variants: the modified stats add the ammo-modifier tag and change no damage value (§7.9). Generator gained real armor values and an `--ammo` mode; added the ammo × armor table. |
