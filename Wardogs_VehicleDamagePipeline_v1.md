@@ -679,6 +679,7 @@ Every row has a `Meta.Damage.Bullet` rule.
 - [`Wardogs_AllVehicles_Stats_Damage_v1.md`](Wardogs_AllVehicles_Stats_Damage_v1.md): per-vehicle stats and the damage tables entry by entry
 - [`Wardogs_GameFeatures_Vehicles_v2.md`](Wardogs_GameFeatures_Vehicles_v2.md): vehicle game-feature loadouts
 - [`sdk/raw/Mechanized_structs.hpp`](sdk/raw/Mechanized_structs.hpp): `FVehicleDamageRouting` (L511), `FVehicleHealthSection` (L523)
+- [`docs/evidence/vehicles.md`](docs/evidence/vehicles.md): evidence behind the native addresses, with a verification status for every RVA this page cites
 
 ## Change log
 
