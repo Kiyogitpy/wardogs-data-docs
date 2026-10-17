@@ -326,7 +326,7 @@ bound in slot 159.
 
 ### 7.1 What applies to a weapon
 
-These rules give a weapon's final attributes for an attachment set.
+These rules give a weapon's final attributes for an attachment set. [Weapon Attributes](Wardogs_WeaponAttributes_v1.md) applies them to every weapon and attachment.
 
 - **Base.** The weapon item's `WDItemExtensionData_GameplayEffects.DefaultAttributes`, installed into the item's own component (`OnRegister` `0x6C692E0`). The `AimTime` in `WDItemExtensionData_RangedWeapon.DefaultAttributes` never changes the base: it is installed later with overwrite off (`0x6C9AFB0`).
 - **Effects on the weapon** (the item's component, `+0xF0`), one stack each:
