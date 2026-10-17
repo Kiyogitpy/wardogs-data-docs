@@ -111,7 +111,7 @@ nav_order: 1
 <a class="wd-card" href="Wardogs_Plugin_BHSpectatorCamera_v2.html"><span class="wd-card-name">BHSpectatorCamera</span><span class="wd-card-desc">What This Plugin Holds, Input Actions, Key Bindings, How Values Combine</span></a>
 </div>
 
-<div class="wd-kicker"><span class="wd-pill wd-pill-4">5 pages</span></div>
+<div class="wd-kicker"><span class="wd-pill wd-pill-4">6 pages</span></div>
 <h2 id="pipelines">Pipelines</h2>
 
 <p class="wd-section-intro">How the systems process an event end to end, traced through the game code and data.</p>
@@ -119,6 +119,7 @@ nav_order: 1
 <div class="wd-grid" markdown="0">
 <a class="wd-card" href="Wardogs_DamagePipeline_v2.html"><span class="wd-card-name">Damage Pipeline</span><span class="wd-card-desc">Rule selection, ordering and arithmetic from hit to modified damage, custom operations, helper tables</span></a>
 <a class="wd-card" href="Wardogs_VehicleDamagePipeline_v1.html"><span class="wd-card-name">Vehicle Damage Pipeline</span><span class="wd-card-desc">How damage resolves against vehicle targets and their health sections</span></a>
+<a class="wd-card" href="vehicle-viewer.html"><span class="wd-card-name">Vehicle Hitbox Viewer</span><span class="wd-card-desc">3D collision meshes coloured by health section, routing and hits to destroy per caliber</span></a>
 <a class="wd-card" href="Wardogs_GameplayEffectsPipeline_v1.html"><span class="wd-card-name">Gameplay Effects Pipeline</span><span class="wd-card-desc">Effects, attributes, modifiers, stacking and the health attribute</span></a>
 <a class="wd-card" href="Wardogs_GameplayEffect_Values_v1.html"><span class="wd-card-name">Gameplay Effect Values</span><span class="wd-card-desc">What all 341 effects do: every attachment, stance and movement modifier</span></a>
 <a class="wd-card" href="Wardogs_CombatDataFlow_v1.html"><span class="wd-card-name">Combat Data Flow</span><span class="wd-card-desc">One weapon shot followed through every pipeline to the health change</span></a>

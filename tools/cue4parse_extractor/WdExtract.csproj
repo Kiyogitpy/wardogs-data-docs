@@ -6,8 +6,11 @@
     <Nullable>disable</Nullable>
     <!-- Path to a CUE4Parse checkout (FabianFG/CUE4Parse at 0415fe2 is known to work). Override with -p:CUE4ParseProject=... -->
     <CUE4ParseProject Condition="'$(CUE4ParseProject)' == ''">..\..\..\CUE4Parse\CUE4Parse\CUE4Parse.csproj</CUE4ParseProject>
+    <!-- CUE4Parse-Conversion from the same checkout (mesh mode). Override with -p:CUE4ParseConversionProject=... -->
+    <CUE4ParseConversionProject Condition="'$(CUE4ParseConversionProject)' == ''">$([System.IO.Path]::GetDirectoryName($(CUE4ParseProject)))\..\CUE4Parse-Conversion\CUE4Parse-Conversion.csproj</CUE4ParseConversionProject>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="$(CUE4ParseProject)" />
+    <ProjectReference Include="$(CUE4ParseConversionProject)" />
   </ItemGroup>
 </Project>

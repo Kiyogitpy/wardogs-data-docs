@@ -1,0 +1,505 @@
+// Vehicle hitbox viewer (vehicle-viewer.md, assets/js/vehicle-viewer.js). Imported at the end of
+// custom.scss, so the $ue-* tokens are in scope. The site is dark only.
+
+$vv-none: #3b3b42;   // "can't destroy": matches NONE_COLOUR in the script
+$vv-hatch: repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.34) 0 2px, transparent 2px 5px);
+
+// With JavaScript the viewer replaces the static table; without it only the table shows.
+// The `js` class is set in the head (_includes/head_custom.html), so neither flashes.
+.js .vv-nojs { display: none; }
+html:not(.js) .vv { display: none; }
+
+.vv {
+  margin: 1.5rem 0 2.5rem;
+}
+
+// Vehicle gets the widest share (its names are long); the Variant list joins it when a vehicle
+// has several models. Everything wraps onto its own line on narrow screens.
+.vv-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.75rem 1rem;
+  margin-bottom: 1rem;
+
+  > .vv-field { flex: 1 1 12rem; }
+  > .vv-field:first-child { flex: 2.2 1 20rem; }
+  > #vv-variant-field { flex: 1.6 1 16rem; }
+  > .vv-field-mode { flex: 1.5 1 17rem; }
+  > [hidden] { display: none; }
+}
+
+.vv-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.35rem;
+  min-width: 0;
+
+  > label,
+  .vv-label {
+    color: $ue-text-dim;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  select {
+    width: 100%;
+    min-width: 0;
+    padding: 0.5rem 0.75rem;
+    font: inherit;
+    font-size: 0.9rem;
+    color: $ue-white;
+    background: $ue-panel;
+    border: 1px solid $ue-border-strong;
+    border-radius: $radius-small;
+    color-scheme: dark;
+    cursor: pointer;
+
+    &:hover { border-color: $ue-text-dim; }
+    &:focus-visible { outline: 2px solid $ue-blue; outline-offset: 2px; }
+    &:disabled { cursor: default; color: $ue-text-dim; }
+  }
+}
+
+
+
+.vv .wd-segmented button {
+  white-space: normal;
+  font-size: 0.82rem;
+  padding: 0.45rem 0.4rem;
+}
+
+// Viewer and side panel: side by side on wide screens, stacked below 56rem.
+.vv-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 22rem;
+  gap: 1rem;
+  align-items: start;
+
+  @media (max-width: 56rem) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.vv-stage {
+  min-width: 0;
+  background: $ue-panel;
+  border: 1px solid $ue-border;
+  border-radius: $radius-panel;
+  overflow: hidden;
+}
+
+// A fixed-ratio box: the page does not move when the model arrives.
+.vv-box {
+  position: relative;
+  aspect-ratio: unquote("4 / 3");
+  background: radial-gradient(ellipse 70% 60% at 50% 45%, $ue-panel-raised, $ue-panel);
+
+  @media (min-width: 90rem) { aspect-ratio: unquote("16 / 10"); }
+}
+
+.vv-model {
+  display: block;
+  width: 100%;
+  height: 100%;
+  --poster-color: transparent;
+  --progress-bar-color: #{$ue-blue};
+  background: transparent;
+}
+
+.vv-status {
+  position: absolute;
+  left: 0.75rem;
+  bottom: 0.75rem;
+  margin: 0;
+  padding: 0.3rem 0.7rem;
+  max-width: calc(100% - 1.5rem);
+  background: rgba(16, 16, 20, 0.85);
+  border: 1px solid $ue-border;
+  border-radius: 999px;
+  color: $ue-text;
+  font-size: 0.8rem;
+  pointer-events: none;
+
+  &[hidden], &:empty { display: none; }
+}
+
+// Notes the model carries (models[].notes): under the box, in 3D and table view alike.
+.main-content .vv-notes {
+  padding: 0.6rem 0.9rem;
+  border-top: 1px solid $ue-border;
+  background: rgba(255, 199, 154, 0.06);
+  color: $ue-text;
+  font-size: 0.85rem;
+  line-height: 1.45;
+
+  p { margin: 0; max-width: none; }
+  p + p { margin-top: 0.35rem; }
+  &[hidden] { display: none; }
+}
+
+.vv-stage-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem 1rem;
+  padding: 0.55rem 0.9rem;
+  border-top: 1px solid $ue-border;
+  font-size: 0.82rem;
+  color: $ue-text-dim;
+}
+
+.vv-checks {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.1rem;
+}
+
+.vv-hint {
+  flex: 1 1 100%;
+  line-height: 1.4;
+}
+
+.vv-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: $ue-text;
+  cursor: pointer;
+
+  input {
+    width: 1rem;
+    height: 1rem;
+    margin: 0;
+    accent-color: $ue-blue;
+    &:focus-visible { outline: 2px solid $ue-blue; outline-offset: 2px; }
+  }
+}
+
+// The theme's mobile gutter is 1rem of a 14px root (14px); this page keeps 16px.
+@media (max-width: 49.99rem) {
+  .main-content-wrap:has(.vv) {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}
+
+// No 3D (no WebGL, no model-viewer, or no exported model): the table takes the box's place.
+.vv-stage.is-fallback {
+  .vv-box { aspect-ratio: auto; background: none; }
+  .vv-model { display: none; }
+  .vv-stage-bar { display: none; }
+}
+
+.vv-fallback {
+  padding: 1rem 1rem 0.25rem;
+
+  .vv-fallback-note {
+    margin: 0 0 0.75rem;
+    color: $ue-text;
+    font-size: 0.9rem;
+  }
+  .table-wrapper {
+    margin: 0 0 0.75rem;
+    overflow-x: auto;
+  }
+}
+
+// Labels on the model, one per slot with a centre. model-viewer centres each label on its
+// point; the shift puts the swatch on the point instead, and --vv-dy (set by the script)
+// pushes overlapping labels down, with a leader line back to the point.
+.vv-hotspot {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.15rem 0.5rem 0.15rem 0.35rem;
+  background: rgba(16, 16, 20, 0.86);
+  border: 1px solid $ue-border-strong;
+  border-radius: 999px;
+  color: $ue-white;
+  font: inherit;
+  font-size: 0.72rem;
+  line-height: 1.3;
+  white-space: nowrap;
+  cursor: pointer;
+  transform: translate(calc(50% - 0.65rem), var(--vv-dy, 0px));
+  transition: opacity 0.2s ease;
+
+  .vv-swatch { width: 0.6rem; height: 0.6rem; }
+  &:hover { border-color: $ue-text-dim; }
+  &.is-selected { border-color: $ue-blue; box-shadow: 0 0 0 1px $ue-blue; }
+  &:not([data-visible]) { opacity: 0.3; }
+
+  &.is-moved::before,
+  &.is-moved::after {
+    content: "";
+    position: absolute;
+    left: calc(0.65rem - 1px);
+    pointer-events: none;
+  }
+  &.is-moved::before {
+    top: calc(50% - var(--vv-dy, 0px));
+    height: calc(var(--vv-dy, 0px) - 0.45rem);
+    width: 1px;
+    background: rgba(255, 255, 255, 0.55);
+  }
+  &.is-moved::after {
+    top: calc(50% - var(--vv-dy, 0px) - 2px);
+    left: calc(0.65rem - 3px);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: $ue-white;
+  }
+}
+
+.vv-no-labels .vv-hotspot { display: none; }
+
+// Side panel: what the selected slot does.
+.vv-panel {
+  min-width: 0;
+  padding: 1rem 1.15rem 0.5rem;
+  background: $ue-panel;
+  border: 1px solid $ue-border;
+  border-radius: $radius-panel;
+  font-size: 0.9rem;
+
+  .main-content & h2.vv-panel-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 0 0.75rem;
+    font-family: $mono-font-family;
+    font-size: 1rem !important;   // the theme sizes h2 with !important
+    font-weight: 500;
+    letter-spacing: 0;
+    overflow-wrap: anywhere;
+
+    .vv-swatch { width: 0.9rem; height: 0.9rem; flex: none; }
+    &.is-empty { font-family: $body-font-family; font-weight: 600; }
+  }
+  .vv-panel-empty {
+    color: $ue-text-dim;
+    margin: 0 0 0.75rem;
+  }
+}
+
+// Label above value: the panel is narrow. Overrides the theme's two-column <dl>.
+.main-content dl.vv-facts {
+  display: block;
+  margin: 0 0 0.9rem;
+
+  dt {
+    margin: 0;
+    color: $ue-text-dim;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-align: left;
+    text-transform: uppercase;
+    &::after { content: none; }
+  }
+  dd {
+    margin: 0.1rem 0 0.65rem;
+    color: $ue-white;
+    overflow-wrap: break-word;
+  }
+}
+
+.main-content .vv-routes {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin: 0 0 0.3rem;
+    padding-left: 0.9rem;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      margin: 0;
+      top: 0.6em;
+      width: 0.35rem;
+      height: 1px;
+      background: $ue-text-dim;
+    }
+  }
+}
+
+.main-content .vv-panel-links {
+  margin: 0 0 0.6rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid $ue-border;
+  font-size: 0.82rem;
+  color: $ue-text-dim;
+}
+
+// Swatches carry colour; text beside them carries the meaning. "None" is hatched.
+.vv-swatch {
+  display: inline-block;
+  flex: none;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+
+  &.is-none {
+    background: $vv-hatch, $vv-none;
+  }
+}
+
+.vv-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.1rem;
+  margin: 1rem 0 0;
+  padding: 0.7rem 1rem;
+  background: $ue-panel;
+  border: 1px solid $ue-border;
+  border-radius: $radius-panel;
+  font-size: 0.82rem;
+  color: $ue-text;
+  min-height: 2.9rem;   // reserved before the data arrives: no shift
+}
+
+.vv-legend-title {
+  color: $ue-text-dim;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.vv-key {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.vv-ramp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.vv-ramp-bar {
+  display: inline-block;
+  width: 9rem;
+  height: 0.6rem;
+  border-radius: 3px;
+}
+
+.vv-tick {
+  font-family: $mono-font-family;
+  font-size: 0.78rem;
+  color: $ue-white;
+}
+
+.vv-legend-note {
+  color: $ue-text-dim;
+}
+
+.main-content h2.vv-slots-title {
+  margin-top: 2rem;
+  font-size: 1.25rem !important;
+}
+
+// Slot list: the keyboard route to every slot, in step with the model.
+.main-content .vv-slots {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 0.5rem;
+  max-width: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+
+  > li {
+    margin: 0;
+    padding: 0;
+    &::before { content: none; }
+  }
+}
+
+// Swatch, then the slot name over its value: nothing truncates in a narrow card.
+.vv-slot {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.15rem 0.6rem;
+  width: 100%;
+  padding: 0.55rem 0.8rem;
+  font: inherit;
+  font-size: 0.85rem;
+  text-align: left;
+  color: $ue-text;
+  background: $ue-panel;
+  border: 1px solid $ue-border;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+
+  &:hover { background: $ue-panel-hover; color: $ue-white; }
+  &[aria-pressed="true"] {
+    background: $ue-panel-raised;
+    border-color: $ue-blue;
+    color: $ue-white;
+  }
+  &.is-absent { color: $ue-text-dim; }
+}
+
+.vv-slot-name {
+  font-family: $mono-font-family;
+  font-size: 0.8rem;
+  overflow-wrap: anywhere;
+}
+
+.vv-slot-group {
+  display: block;
+  font-family: $body-font-family;
+  font-size: 0.72rem;
+  color: $ue-text-dim;
+}
+
+.vv-slot-absent {
+  display: block;
+  font-family: $body-font-family;
+  font-size: 0.72rem;
+  font-style: italic;
+  color: $ue-text-dim;
+
+  &[hidden] { display: none; }
+}
+
+.main-content .vv-note {
+  margin: 0 0 0.9rem;
+  padding: 0.6rem 0.75rem;
+  background: rgba(255, 199, 154, 0.06);
+  border: 1px dashed rgba(255, 199, 154, 0.45);
+  border-radius: $radius-small;
+  color: $ue-text;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.vv-slot-value {
+  grid-column: 2;
+  font-size: 0.78rem;
+  color: $ue-text-dim;
+  [aria-pressed="true"] > & { color: $ue-text; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vv-slot, .vv-hotspot { transition: none; }
+}
+
+@media (forced-colors: active) {
+  .vv-swatch { forced-color-adjust: none; }
+  .vv-slot[aria-pressed="true"] { outline: 2px solid Highlight; }
+}

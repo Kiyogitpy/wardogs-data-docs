@@ -1,0 +1,7140 @@
+{
+ "meta": {
+  "source_data_tree": "f9830eaf8f6fb326ba5d5ab3aa937602ce283ef9",
+  "source_data_tree_note": "git tree id of data/ when generated; equals `git rev-parse <commit>:data` for any commit with the same data",
+  "generator": "python _tools/damage_tables.py --json",
+  "assumptions": [
+   "FMJ direct hit at point blank: no falloff, ricochet or penetration",
+   "hostile instigator with no instigator tags; rules that need instigator or target tags are skipped",
+   "section health stops at 0; routing as in Vehicle §4.2",
+   "a hit takes the section of its triangle's slot as in Vehicle §3.1 (projectile and radial hits); unreachable names why no registered component can produce a slot key",
+   "hits_to_destroy counts hits through that slot until the main health reaches 0; null when it never does (no damage, or no route to the main health)"
+  ],
+  "docs": {
+   "hitboxes": "Wardogs_VehicleDamagePipeline_v1.html#31-hitboxes",
+   "routing": "Wardogs_VehicleDamagePipeline_v1.html#42-routing-semantics",
+   "hits_to_destroy": "Wardogs_VehicleDamagePipeline_v1.html#54-hits-to-destroy"
+  },
+  "main_section": "Attribute.Gameplay.Health",
+  "calibers": [
+   {
+    "id": "Item.Caliber.556mm",
+    "label": "5.56mm",
+    "base_damage": 28.0
+   },
+   {
+    "id": "Item.Caliber.762mm",
+    "label": "7.62mm",
+    "base_damage": 34.0
+   },
+   {
+    "id": "Item.Caliber.50Cal",
+    "label": ".50Cal",
+    "base_damage": 90.0
+   },
+   {
+    "id": "Item.Caliber.20x102mm",
+    "label": "20x102mm",
+    "base_damage": 60.0
+   },
+   {
+    "id": "Item.Caliber.30mm",
+    "label": "30mm",
+    "base_damage": 100.0
+   },
+   {
+    "id": "Item.Caliber.35x228mm",
+    "label": "35x228mm",
+    "base_damage": 60.0
+   }
+  ]
+ },
+ "vehicles": [
+  {
+   "id": "air-rotary-havoc",
+   "damage_row": "Meta.Damage.Vehicle.Air.Rotary.Havoc",
+   "variants": [
+    "Attack_ROT_02"
+   ],
+   "main_health": 800.0,
+   "models": [
+    {
+     "variants": [
+      "Attack_ROT_02"
+     ],
+     "path": "assets/models/vehicles/air-rotary-havoc.glb",
+     "notes": [],
+     "centres": [
+      [
+       -0.028,
+       2.4298,
+       -0.8866
+      ],
+      [
+       0.0132,
+       1.5002,
+       0.6906
+      ],
+      [
+       0.0,
+       4.0153,
+       0.0935
+      ],
+      [
+       0.6191,
+       2.7212,
+       -7.581
+      ],
+      null,
+      null,
+      null
+     ]
+    }
+   ],
+   "slots": [
+    {
+     "slot": "CC_Engine",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.Engine",
+     "max_health": 200.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Engine",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.05,
+      "Item.Caliber.762mm": 0.05,
+      "Item.Caliber.50Cal": 0.05,
+      "Item.Caliber.20x102mm": 0.0735,
+      "Item.Caliber.30mm": 0.195,
+      "Item.Caliber.35x228mm": 0.162
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": null,
+      "Item.Caliber.30mm": null,
+      "Item.Caliber.35x228mm": null
+     }
+    },
+    {
+     "slot": "CC_FuelTank",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.FuelTank",
+     "max_health": 200.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.FuelTank",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.2,
+      "Item.Caliber.762mm": 0.2,
+      "Item.Caliber.50Cal": 0.2,
+      "Item.Caliber.20x102mm": 0.0735,
+      "Item.Caliber.30mm": 0.195,
+      "Item.Caliber.35x228mm": 0.162
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": null,
+      "Item.Caliber.30mm": null,
+      "Item.Caliber.35x228mm": null
+     }
+    },
+    {
+     "slot": "CC_MainRotor",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.Rotor.Main",
+     "max_health": 400.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainRotor",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.5,
+        "only_when_depleted": false
+       }
+      ]
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.025,
+      "Item.Caliber.762mm": 0.025,
+      "Item.Caliber.50Cal": 0.025,
+      "Item.Caliber.20x102mm": 0.0735,
+      "Item.Caliber.30mm": 0.195,
+      "Item.Caliber.35x228mm": 0.162
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 1429,
+      "Item.Caliber.762mm": 1177,
+      "Item.Caliber.50Cal": 445,
+      "Item.Caliber.20x102mm": 227,
+      "Item.Caliber.30mm": 52,
+      "Item.Caliber.35x228mm": 103
+     }
+    },
+    {
+     "slot": "CC_TailRotor",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.Rotor.Tail",
+     "max_health": 300.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Tail",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": false
+       }
+      ]
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.025,
+      "Item.Caliber.762mm": 0.025,
+      "Item.Caliber.50Cal": 0.025,
+      "Item.Caliber.20x102mm": 0.0735,
+      "Item.Caliber.30mm": 0.195,
+      "Item.Caliber.35x228mm": 0.162
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 1143,
+      "Item.Caliber.762mm": 942,
+      "Item.Caliber.50Cal": 356,
+      "Item.Caliber.20x102mm": 182,
+      "Item.Caliber.30mm": 42,
+      "Item.Caliber.35x228mm": 83
+     }
+    },
+    {
+     "slot": "CC_Wheel_0",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.Wheel.Left.Front",
+     "max_health": 100.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Left",
+     "unreachable": "an indexed name, but no instanced wheel indexes this slot",
+     "routing": {
+      "pre": [],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.05,
+      "Item.Caliber.762mm": 0.05,
+      "Item.Caliber.50Cal": 0.05,
+      "Item.Caliber.20x102mm": 0.0735,
+      "Item.Caliber.30mm": 0.195,
+      "Item.Caliber.35x228mm": 0.162
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 643,
+      "Item.Caliber.762mm": 530,
+      "Item.Caliber.50Cal": 200,
+      "Item.Caliber.20x102mm": 205,
+      "Item.Caliber.30mm": 47,
+      "Item.Caliber.35x228mm": 93
+     }
+    },
+    {
+     "slot": "CC_Wheel_1",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.Wheel.Right.Front",
+     "max_health": 100.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Right",
+     "unreachable": "an indexed name, but no instanced wheel indexes this slot",
+     "routing": {
+      "pre": [],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.05,
+      "Item.Caliber.762mm": 0.05,
+      "Item.Caliber.50Cal": 0.05,
+      "Item.Caliber.20x102mm": 0.0735,
+      "Item.Caliber.30mm": 0.195,
+      "Item.Caliber.35x228mm": 0.162
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 643,
+      "Item.Caliber.762mm": 530,
+      "Item.Caliber.50Cal": 200,
+      "Item.Caliber.20x102mm": 205,
+      "Item.Caliber.30mm": 47,
+      "Item.Caliber.35x228mm": 93
+     }
+    },
+    {
+     "slot": "(default)",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 800.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.025,
+      "Item.Caliber.762mm": 0.025,
+      "Item.Caliber.50Cal": 0.025,
+      "Item.Caliber.20x102mm": 0.0735,
+      "Item.Caliber.30mm": 0.195,
+      "Item.Caliber.35x228mm": 0.162
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 1143,
+      "Item.Caliber.762mm": 942,
+      "Item.Caliber.50Cal": 356,
+      "Item.Caliber.20x102mm": 182,
+      "Item.Caliber.30mm": 42,
+      "Item.Caliber.35x228mm": 83
+     }
+    }
+   ]
+  },
+  {
+   "id": "air-rotary-littlebird",
+   "damage_row": "Meta.Damage.Vehicle.Air.Rotary.LittleBird",
+   "variants": [
+    "ROT_03_Default",
+    "ROT_03_MachineGuns",
+    "ROT_03_RocketPods"
+   ],
+   "main_health": 400.0,
+   "models": [
+    {
+     "variants": [
+      "ROT_03_Default"
+     ],
+     "path": "assets/models/vehicles/air-rotary-littlebird.glb",
+     "notes": [],
+     "centres": [
+      [
+       -0.0062,
+       2.0748,
+       -0.9009
+      ],
+      [
+       -0.0187,
+       1.1225,
+       -1.161
+      ],
+      [
+       -0.0001,
+       2.5099,
+       -0.354
+      ],
+      [
+       -0.151,
+       1.7893,
+       -3.7762
+      ],
+      null
+     ]
+    },
+    {
+     "variants": [
+      "ROT_03_MachineGuns"
+     ],
+     "path": "assets/models/vehicles/air-rotary-littlebird--rot-03-machineguns.glb",
+     "notes": [],
+     "centres": [
+      [
+       -0.0061,
+       2.0748,
+       -0.9009
+      ],
+      [
+       -0.0189,
+       1.1225,
+       -1.161
+      ],
+      [
+       -0.0001,
+       2.5099,
+       -0.354
+      ],
+      [
+       -0.151,
+       1.7893,
+       -3.7762
+      ],
+      null
+     ]
+    },
+    {
+     "variants": [
+      "ROT_03_RocketPods"
+     ],
+     "path": "assets/models/vehicles/air-rotary-littlebird--rot-03-rocketpods.glb",
+     "notes": [],
+     "centres": [
+      [
+       -0.0061,
+       2.0748,
+       -0.9009
+      ],
+      [
+       -0.0189,
+       1.1225,
+       -1.161
+      ],
+      [
+       -0.0001,
+       2.5099,
+       -0.354
+      ],
+      [
+       -0.151,
+       1.7893,
+       -3.7762
+      ],
+      null
+     ]
+    }
+   ],
+   "slots": [
+    {
+     "slot": "CC_Engine",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.Engine",
+     "max_health": 200.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Engine",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.075,
+      "Item.Caliber.762mm": 0.075,
+      "Item.Caliber.50Cal": 0.075,
+      "Item.Caliber.20x102mm": 0.0945,
+      "Item.Caliber.30mm": 0.595,
+      "Item.Caliber.35x228mm": 0.2135
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": null,
+      "Item.Caliber.30mm": null,
+      "Item.Caliber.35x228mm": null
+     }
+    },
+    {
+     "slot": "CC_FuelTank",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.FuelTank",
+     "max_health": 200.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.FuelTank",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.075,
+      "Item.Caliber.762mm": 0.075,
+      "Item.Caliber.50Cal": 0.075,
+      "Item.Caliber.20x102mm": 0.0945,
+      "Item.Caliber.30mm": 0.595,
+      "Item.Caliber.35x228mm": 0.2135
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": null,
+      "Item.Caliber.30mm": null,
+      "Item.Caliber.35x228mm": null
+     }
+    },
+    {
+     "slot": "CC_MainRotor",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.Rotor.Main",
+     "max_health": 400.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainRotor",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.5,
+        "only_when_depleted": false
+       }
+      ]
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.075,
+      "Item.Caliber.762mm": 0.075,
+      "Item.Caliber.50Cal": 0.075,
+      "Item.Caliber.20x102mm": 0.0945,
+      "Item.Caliber.30mm": 0.595,
+      "Item.Caliber.35x228mm": 0.2135
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 286,
+      "Item.Caliber.762mm": 236,
+      "Item.Caliber.50Cal": 89,
+      "Item.Caliber.20x102mm": 106,
+      "Item.Caliber.30mm": 11,
+      "Item.Caliber.35x228mm": 47
+     }
+    },
+    {
+     "slot": "CC_TailRotor",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.Rotor.Tail",
+     "max_health": 300.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Tail",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": false
+       }
+      ]
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.075,
+      "Item.Caliber.762mm": 0.075,
+      "Item.Caliber.50Cal": 0.075,
+      "Item.Caliber.20x102mm": 0.0945,
+      "Item.Caliber.30mm": 0.595,
+      "Item.Caliber.35x228mm": 0.2135
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 191,
+      "Item.Caliber.762mm": 157,
+      "Item.Caliber.50Cal": 60,
+      "Item.Caliber.20x102mm": 71,
+      "Item.Caliber.30mm": 7,
+      "Item.Caliber.35x228mm": 32
+     }
+    },
+    {
+     "slot": "(default)",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 400.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.075,
+      "Item.Caliber.762mm": 0.075,
+      "Item.Caliber.50Cal": 0.075,
+      "Item.Caliber.20x102mm": 0.0945,
+      "Item.Caliber.30mm": 0.595,
+      "Item.Caliber.35x228mm": 0.2135
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 191,
+      "Item.Caliber.762mm": 157,
+      "Item.Caliber.50Cal": 60,
+      "Item.Caliber.20x102mm": 71,
+      "Item.Caliber.30mm": 7,
+      "Item.Caliber.35x228mm": 32
+     }
+    }
+   ]
+  },
+  {
+   "id": "air-rotary-rot-04",
+   "damage_row": "Meta.Damage.Vehicle.Air.Rotary.ROT_04",
+   "variants": [
+    "ROT_04_Default",
+    "ROT_04_MountedMachineGuns"
+   ],
+   "main_health": 600.0,
+   "models": [
+    {
+     "variants": [
+      "ROT_04_Default"
+     ],
+     "path": "assets/models/vehicles/air-rotary-rot-04.glb",
+     "notes": [],
+     "centres": [
+      [
+       0.0,
+       2.7846,
+       -1.4089
+      ],
+      [
+       0.0218,
+       1.4514,
+       -2.1028
+      ],
+      [
+       0.0118,
+       3.5808,
+       1.3969
+      ],
+      [
+       0.0,
+       2.7246,
+       -7.5816
+      ],
+      null
+     ]
+    },
+    {
+     "variants": [
+      "ROT_04_MountedMachineGuns"
+     ],
+     "path": "assets/models/vehicles/air-rotary-rot-04--rot-04-mountedmachineguns.glb",
+     "notes": [],
+     "centres": [
+      [
+       0.0,
+       2.7846,
+       -1.4089
+      ],
+      [
+       0.0218,
+       1.4514,
+       -2.1028
+      ],
+      [
+       0.0118,
+       3.5808,
+       1.3969
+      ],
+      [
+       0.0,
+       2.7246,
+       -7.5816
+      ],
+      null
+     ]
+    }
+   ],
+   "slots": [
+    {
+     "slot": "CC_Engine",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.Engine",
+     "max_health": 200.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Engine",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.05,
+      "Item.Caliber.762mm": 0.05,
+      "Item.Caliber.50Cal": 0.05,
+      "Item.Caliber.20x102mm": 0.06,
+      "Item.Caliber.30mm": 0.255,
+      "Item.Caliber.35x228mm": 0.12825
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": null,
+      "Item.Caliber.30mm": null,
+      "Item.Caliber.35x228mm": null
+     }
+    },
+    {
+     "slot": "CC_FuelTank",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.FuelTank",
+     "max_health": 200.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.FuelTank",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.225,
+      "Item.Caliber.762mm": 0.225,
+      "Item.Caliber.50Cal": 0.225,
+      "Item.Caliber.20x102mm": 0.06,
+      "Item.Caliber.30mm": 0.255,
+      "Item.Caliber.35x228mm": 0.12825
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": null,
+      "Item.Caliber.30mm": null,
+      "Item.Caliber.35x228mm": null
+     }
+    },
+    {
+     "slot": "CC_MainRotor",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.Rotor.Main",
+     "max_health": 400.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainRotor",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.5,
+        "only_when_depleted": false
+       }
+      ]
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.05,
+      "Item.Caliber.762mm": 0.05,
+      "Item.Caliber.50Cal": 0.05,
+      "Item.Caliber.20x102mm": 0.06,
+      "Item.Caliber.30mm": 0.255,
+      "Item.Caliber.35x228mm": 0.12825
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 572,
+      "Item.Caliber.762mm": 471,
+      "Item.Caliber.50Cal": 178,
+      "Item.Caliber.20x102mm": 223,
+      "Item.Caliber.30mm": 32,
+      "Item.Caliber.35x228mm": 104
+     }
+    },
+    {
+     "slot": "CC_TailRotor",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.Rotor.Tail",
+     "max_health": 300.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Tail",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": false
+       }
+      ]
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.05,
+      "Item.Caliber.762mm": 0.05,
+      "Item.Caliber.50Cal": 0.05,
+      "Item.Caliber.20x102mm": 0.06,
+      "Item.Caliber.30mm": 0.255,
+      "Item.Caliber.35x228mm": 0.12825
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 429,
+      "Item.Caliber.762mm": 353,
+      "Item.Caliber.50Cal": 134,
+      "Item.Caliber.20x102mm": 167,
+      "Item.Caliber.30mm": 24,
+      "Item.Caliber.35x228mm": 78
+     }
+    },
+    {
+     "slot": "(default)",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 600.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.025,
+      "Item.Caliber.762mm": 0.025,
+      "Item.Caliber.50Cal": 0.025,
+      "Item.Caliber.20x102mm": 0.06,
+      "Item.Caliber.30mm": 0.255,
+      "Item.Caliber.35x228mm": 0.12825
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 858,
+      "Item.Caliber.762mm": 706,
+      "Item.Caliber.50Cal": 267,
+      "Item.Caliber.20x102mm": 167,
+      "Item.Caliber.30mm": 24,
+      "Item.Caliber.35x228mm": 78
+     }
+    }
+   ]
+  },
+  {
+   "id": "land-tracked-leopard-spawn-spw-01",
+   "damage_row": "Meta.Damage.Vehicle.Land.Tracked.Leopard.Spawn",
+   "variants": [
+    "SPW_01"
+   ],
+   "main_health": 1000.0,
+   "models": [
+    {
+     "variants": [
+      "SPW_01"
+     ],
+     "path": "assets/models/vehicles/land-tracked-leopard-spawn-spw-01.glb",
+     "notes": [],
+     "centres": [
+      null,
+      [
+       -0.0022,
+       1.6256,
+       0.0255
+      ],
+      [
+       0.024,
+       3.0459,
+       0.4678
+      ],
+      [
+       1.3598,
+       0.6348,
+       0.1356
+      ],
+      [
+       -1.3597,
+       0.6348,
+       0.1356
+      ],
+      null,
+      null
+     ]
+    }
+   ],
+   "slots": [
+    {
+     "slot": "CC_FuelTank",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.FuelTank",
+     "max_health": 100.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.FuelTank",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0,
+      "Item.Caliber.762mm": 0.0,
+      "Item.Caliber.50Cal": 0.0,
+      "Item.Caliber.20x102mm": 0.048,
+      "Item.Caliber.30mm": 0.21,
+      "Item.Caliber.35x228mm": 0.048
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": null,
+      "Item.Caliber.30mm": null,
+      "Item.Caliber.35x228mm": null
+     }
+    },
+    {
+     "slot": "CC_MainBody",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 1000.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health.FuelTank",
+        "scalar": 0.05,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0,
+      "Item.Caliber.762mm": 0.0,
+      "Item.Caliber.50Cal": 0.0,
+      "Item.Caliber.20x102mm": 0.048,
+      "Item.Caliber.30mm": 0.21,
+      "Item.Caliber.35x228mm": 0.048
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": 366,
+      "Item.Caliber.30mm": 51,
+      "Item.Caliber.35x228mm": 366
+     }
+    },
+    {
+     "slot": "CC_Radar",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.Radar",
+     "max_health": 100.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Radar",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.05,
+      "Item.Caliber.762mm": 0.05,
+      "Item.Caliber.50Cal": 0.05,
+      "Item.Caliber.20x102mm": 0.048,
+      "Item.Caliber.30mm": 0.21,
+      "Item.Caliber.35x228mm": 0.048
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": null,
+      "Item.Caliber.30mm": null,
+      "Item.Caliber.35x228mm": null
+     }
+    },
+    {
+     "slot": "CC_Tracks_L",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.Tracks.Left",
+     "max_health": 125.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Tracks.Left",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.5,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": false
+       }
+      ]
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0,
+      "Item.Caliber.762mm": 0.0,
+      "Item.Caliber.50Cal": 0.0,
+      "Item.Caliber.20x102mm": 0.048,
+      "Item.Caliber.30mm": 0.21,
+      "Item.Caliber.35x228mm": 0.048
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": 688,
+      "Item.Caliber.30mm": 95,
+      "Item.Caliber.35x228mm": 688
+     }
+    },
+    {
+     "slot": "CC_Tracks_R",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.Tracks.Right",
+     "max_health": 125.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Tracks.Right",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.5,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": false
+       }
+      ]
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0,
+      "Item.Caliber.762mm": 0.0,
+      "Item.Caliber.50Cal": 0.0,
+      "Item.Caliber.20x102mm": 0.048,
+      "Item.Caliber.30mm": 0.21,
+      "Item.Caliber.35x228mm": 0.048
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": 688,
+      "Item.Caliber.30mm": 95,
+      "Item.Caliber.35x228mm": 688
+     }
+    },
+    {
+     "slot": "CC_Radar",
+     "group": "ComplexSurface.Group.Radar",
+     "section": "Attribute.Gameplay.Health.Radar",
+     "max_health": 100.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Radar",
+     "unreachable": "no component registers this group",
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.05,
+      "Item.Caliber.762mm": 0.05,
+      "Item.Caliber.50Cal": 0.05,
+      "Item.Caliber.20x102mm": 0.048,
+      "Item.Caliber.30mm": 0.21,
+      "Item.Caliber.35x228mm": 0.048
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": null,
+      "Item.Caliber.30mm": null,
+      "Item.Caliber.35x228mm": null
+     }
+    },
+    {
+     "slot": "(default)",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 1000.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health.FuelTank",
+        "scalar": 0.05,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0,
+      "Item.Caliber.762mm": 0.0,
+      "Item.Caliber.50Cal": 0.0,
+      "Item.Caliber.20x102mm": 0.048,
+      "Item.Caliber.30mm": 0.21,
+      "Item.Caliber.35x228mm": 0.048
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": 366,
+      "Item.Caliber.30mm": 51,
+      "Item.Caliber.35x228mm": 366
+     }
+    }
+   ]
+  },
+  {
+   "id": "land-tracked-leopard-spawn-spw-02",
+   "damage_row": "Meta.Damage.Vehicle.Land.Tracked.Leopard.Spawn",
+   "variants": [
+    "SPW_02",
+    "SPW_03"
+   ],
+   "main_health": 1000.0,
+   "models": [
+    {
+     "variants": [
+      "SPW_02"
+     ],
+     "path": "assets/models/vehicles/land-tracked-leopard-spawn-spw-02.glb",
+     "notes": [],
+     "centres": [
+      null,
+      [
+       -0.0022,
+       1.6256,
+       0.0255
+      ],
+      [
+       0.004,
+       2.9758,
+       0.337
+      ],
+      [
+       1.3598,
+       0.6348,
+       0.1356
+      ],
+      [
+       -1.3597,
+       0.6348,
+       0.1356
+      ],
+      null,
+      null,
+      null
+     ]
+    },
+    {
+     "variants": [
+      "SPW_03"
+     ],
+     "path": "assets/models/vehicles/land-tracked-leopard-spawn-spw-02--spw-03.glb",
+     "notes": [],
+     "centres": [
+      null,
+      [
+       -0.0022,
+       1.6256,
+       0.0255
+      ],
+      [
+       0.0012,
+       3.0331,
+       0.8852
+      ],
+      [
+       1.3598,
+       0.6348,
+       0.1356
+      ],
+      [
+       -1.3597,
+       0.6348,
+       0.1356
+      ],
+      null,
+      null,
+      null
+     ]
+    }
+   ],
+   "slots": [
+    {
+     "slot": "CC_FuelTank",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.FuelTank",
+     "max_health": 100.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.FuelTank",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0,
+      "Item.Caliber.762mm": 0.0,
+      "Item.Caliber.50Cal": 0.0,
+      "Item.Caliber.20x102mm": 0.048,
+      "Item.Caliber.30mm": 0.21,
+      "Item.Caliber.35x228mm": 0.048
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": null,
+      "Item.Caliber.30mm": null,
+      "Item.Caliber.35x228mm": null
+     }
+    },
+    {
+     "slot": "CC_MainBody",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 1000.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health.FuelTank",
+        "scalar": 0.05,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0,
+      "Item.Caliber.762mm": 0.0,
+      "Item.Caliber.50Cal": 0.0,
+      "Item.Caliber.20x102mm": 0.048,
+      "Item.Caliber.30mm": 0.21,
+      "Item.Caliber.35x228mm": 0.048
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": 366,
+      "Item.Caliber.30mm": 51,
+      "Item.Caliber.35x228mm": 366
+     }
+    },
+    {
+     "slot": "CC_Radar",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.Radar",
+     "max_health": 100.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Radar",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.05,
+      "Item.Caliber.762mm": 0.05,
+      "Item.Caliber.50Cal": 0.05,
+      "Item.Caliber.20x102mm": 0.048,
+      "Item.Caliber.30mm": 0.21,
+      "Item.Caliber.35x228mm": 0.048
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": null,
+      "Item.Caliber.30mm": null,
+      "Item.Caliber.35x228mm": null
+     }
+    },
+    {
+     "slot": "CC_Tracks_L",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.Tracks.Left",
+     "max_health": 125.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Tracks.Left",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.5,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": false
+       }
+      ]
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0,
+      "Item.Caliber.762mm": 0.0,
+      "Item.Caliber.50Cal": 0.0,
+      "Item.Caliber.20x102mm": 0.048,
+      "Item.Caliber.30mm": 0.21,
+      "Item.Caliber.35x228mm": 0.048
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": 688,
+      "Item.Caliber.30mm": 95,
+      "Item.Caliber.35x228mm": 688
+     }
+    },
+    {
+     "slot": "CC_Tracks_R",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.Tracks.Right",
+     "max_health": 125.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Tracks.Right",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.5,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": false
+       }
+      ]
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0,
+      "Item.Caliber.762mm": 0.0,
+      "Item.Caliber.50Cal": 0.0,
+      "Item.Caliber.20x102mm": 0.048,
+      "Item.Caliber.30mm": 0.21,
+      "Item.Caliber.35x228mm": 0.048
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": 688,
+      "Item.Caliber.30mm": 95,
+      "Item.Caliber.35x228mm": 688
+     }
+    },
+    {
+     "slot": "CC_Radar",
+     "group": "ComplexSurface.Group.Radar",
+     "section": "Attribute.Gameplay.Health.Radar",
+     "max_health": 100.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Radar",
+     "unreachable": "no component registers this group",
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.05,
+      "Item.Caliber.762mm": 0.05,
+      "Item.Caliber.50Cal": 0.05,
+      "Item.Caliber.20x102mm": 0.048,
+      "Item.Caliber.30mm": 0.21,
+      "Item.Caliber.35x228mm": 0.048
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": null,
+      "Item.Caliber.30mm": null,
+      "Item.Caliber.35x228mm": null
+     }
+    },
+    {
+     "slot": "(default)",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 1000.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health.FuelTank",
+        "scalar": 0.05,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0,
+      "Item.Caliber.762mm": 0.0,
+      "Item.Caliber.50Cal": 0.0,
+      "Item.Caliber.20x102mm": 0.048,
+      "Item.Caliber.30mm": 0.21,
+      "Item.Caliber.35x228mm": 0.048
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": 366,
+      "Item.Caliber.30mm": 51,
+      "Item.Caliber.35x228mm": 366
+     }
+    },
+    {
+     "slot": "(default)",
+     "group": "ComplexSurface.Group.Radar",
+     "section": "Attribute.Gameplay.Health.Radar",
+     "max_health": 100.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Radar",
+     "unreachable": "no component registers this group",
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.05,
+      "Item.Caliber.762mm": 0.05,
+      "Item.Caliber.50Cal": 0.05,
+      "Item.Caliber.20x102mm": 0.048,
+      "Item.Caliber.30mm": 0.21,
+      "Item.Caliber.35x228mm": 0.048
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": null,
+      "Item.Caliber.30mm": null,
+      "Item.Caliber.35x228mm": null
+     }
+    }
+   ]
+  },
+  {
+   "id": "stationary-mistral",
+   "damage_row": "Meta.Damage.Vehicle.Stationary.Mistral",
+   "variants": [
+    "STN_01"
+   ],
+   "main_health": 3000.0,
+   "models": [
+    {
+     "variants": [
+      "STN_01"
+     ],
+     "path": "assets/models/vehicles/stationary-mistral.glb",
+     "notes": [],
+     "centres": [
+      [
+       0.2454,
+       0.9106,
+       -0.3492
+      ],
+      null
+     ]
+    }
+   ],
+   "slots": [
+    {
+     "slot": "CC_Main",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 3000.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.15,
+      "Item.Caliber.762mm": 0.15,
+      "Item.Caliber.50Cal": 0.15,
+      "Item.Caliber.20x102mm": 0.3,
+      "Item.Caliber.30mm": 0.5,
+      "Item.Caliber.35x228mm": 0.3
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 715,
+      "Item.Caliber.762mm": 589,
+      "Item.Caliber.50Cal": 223,
+      "Item.Caliber.20x102mm": 167,
+      "Item.Caliber.30mm": 60,
+      "Item.Caliber.35x228mm": 167
+     }
+    },
+    {
+     "slot": "(default)",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 3000.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.15,
+      "Item.Caliber.762mm": 0.15,
+      "Item.Caliber.50Cal": 0.15,
+      "Item.Caliber.20x102mm": 0.3,
+      "Item.Caliber.30mm": 0.5,
+      "Item.Caliber.35x228mm": 0.3
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 715,
+      "Item.Caliber.762mm": 589,
+      "Item.Caliber.50Cal": 223,
+      "Item.Caliber.20x102mm": 167,
+      "Item.Caliber.30mm": 60,
+      "Item.Caliber.35x228mm": 167
+     }
+    }
+   ]
+  },
+  {
+   "id": "stationary-phalanx",
+   "damage_row": "Meta.Damage.Vehicle.Stationary.Phalanx",
+   "variants": [
+    "STN_02"
+   ],
+   "main_health": 5000.0,
+   "models": [
+    {
+     "variants": [
+      "STN_02"
+     ],
+     "path": "assets/models/vehicles/stationary-phalanx.glb",
+     "notes": [],
+     "centres": [
+      [
+       -0.0,
+       2.1066,
+       0.0468
+      ],
+      null
+     ]
+    }
+   ],
+   "slots": [
+    {
+     "slot": "CC_Main",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 5000.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.15,
+      "Item.Caliber.762mm": 0.15,
+      "Item.Caliber.50Cal": 0.15,
+      "Item.Caliber.20x102mm": 0.3,
+      "Item.Caliber.30mm": 0.5,
+      "Item.Caliber.35x228mm": 0.3
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 1191,
+      "Item.Caliber.762mm": 981,
+      "Item.Caliber.50Cal": 371,
+      "Item.Caliber.20x102mm": 278,
+      "Item.Caliber.30mm": 100,
+      "Item.Caliber.35x228mm": 278
+     }
+    },
+    {
+     "slot": "(default)",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 5000.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.15,
+      "Item.Caliber.762mm": 0.15,
+      "Item.Caliber.50Cal": 0.15,
+      "Item.Caliber.20x102mm": 0.3,
+      "Item.Caliber.30mm": 0.5,
+      "Item.Caliber.35x228mm": 0.3
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 1191,
+      "Item.Caliber.762mm": 981,
+      "Item.Caliber.50Cal": 371,
+      "Item.Caliber.20x102mm": 278,
+      "Item.Caliber.30mm": 100,
+      "Item.Caliber.35x228mm": 278
+     }
+    }
+   ]
+  },
+  {
+   "id": "stationary-mortar",
+   "damage_row": "Meta.Damage.Vehicle.Stationary.Mortar",
+   "variants": [
+    "STN_03"
+   ],
+   "main_health": 3000.0,
+   "models": [
+    {
+     "variants": [
+      "STN_03"
+     ],
+     "path": "assets/models/vehicles/stationary-mortar.glb",
+     "notes": [],
+     "centres": [
+      null,
+      null
+     ]
+    }
+   ],
+   "slots": [
+    {
+     "slot": "CC_Main",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 3000.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.15,
+      "Item.Caliber.762mm": 0.15,
+      "Item.Caliber.50Cal": 0.15,
+      "Item.Caliber.20x102mm": 0.3,
+      "Item.Caliber.30mm": 0.5,
+      "Item.Caliber.35x228mm": 0.3
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 715,
+      "Item.Caliber.762mm": 589,
+      "Item.Caliber.50Cal": 223,
+      "Item.Caliber.20x102mm": 167,
+      "Item.Caliber.30mm": 60,
+      "Item.Caliber.35x228mm": 167
+     }
+    },
+    {
+     "slot": "(default)",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 3000.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.15,
+      "Item.Caliber.762mm": 0.15,
+      "Item.Caliber.50Cal": 0.15,
+      "Item.Caliber.20x102mm": 0.3,
+      "Item.Caliber.30mm": 0.5,
+      "Item.Caliber.35x228mm": 0.3
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 715,
+      "Item.Caliber.762mm": 589,
+      "Item.Caliber.50Cal": 223,
+      "Item.Caliber.20x102mm": 167,
+      "Item.Caliber.30mm": 60,
+      "Item.Caliber.35x228mm": 167
+     }
+    }
+   ]
+  },
+  {
+   "id": "stationary-radiotower",
+   "damage_row": "Meta.Damage.Vehicle.Stationary.RadioTower",
+   "variants": [
+    "STN_04"
+   ],
+   "main_health": 1000.0,
+   "models": [
+    {
+     "variants": [
+      "STN_04"
+     ],
+     "path": "assets/models/vehicles/stationary-radiotower.glb",
+     "notes": [],
+     "centres": [
+      [
+       0.0,
+       4.0963,
+       -0.0
+      ],
+      null
+     ]
+    }
+   ],
+   "slots": [
+    {
+     "slot": "CC_Main",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 1000.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.05,
+      "Item.Caliber.762mm": 0.05,
+      "Item.Caliber.50Cal": 0.05,
+      "Item.Caliber.20x102mm": 0.3,
+      "Item.Caliber.30mm": 0.85,
+      "Item.Caliber.35x228mm": 0.3
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 715,
+      "Item.Caliber.762mm": 589,
+      "Item.Caliber.50Cal": 223,
+      "Item.Caliber.20x102mm": 56,
+      "Item.Caliber.30mm": 12,
+      "Item.Caliber.35x228mm": 56
+     }
+    },
+    {
+     "slot": "(default)",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 1000.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.05,
+      "Item.Caliber.762mm": 0.05,
+      "Item.Caliber.50Cal": 0.05,
+      "Item.Caliber.20x102mm": 0.3,
+      "Item.Caliber.30mm": 0.85,
+      "Item.Caliber.35x228mm": 0.3
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 715,
+      "Item.Caliber.762mm": 589,
+      "Item.Caliber.50Cal": 223,
+      "Item.Caliber.20x102mm": 56,
+      "Item.Caliber.30mm": 12,
+      "Item.Caliber.35x228mm": 56
+     }
+    }
+   ]
+  },
+  {
+   "id": "stationary-mgnest",
+   "damage_row": "Meta.Damage.Vehicle.Stationary.MGNest",
+   "variants": [
+    "STN_06"
+   ],
+   "main_health": 1800.0,
+   "models": [
+    {
+     "variants": [
+      "STN_06"
+     ],
+     "path": "assets/models/vehicles/stationary-mgnest.glb",
+     "notes": [
+      "Only the gun mount is shown. The gun's own proxy (CC_Browning_Gun) attaches to a receiver_J bone that SK_Browning_Mounted doesn't have, so where the game puts it is not traced."
+     ],
+     "centres": [
+      null,
+      null
+     ]
+    }
+   ],
+   "slots": [
+    {
+     "slot": "CC_Main",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 1800.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 1.0,
+      "Item.Caliber.762mm": 1.0,
+      "Item.Caliber.50Cal": 1.0,
+      "Item.Caliber.20x102mm": 1.0,
+      "Item.Caliber.30mm": 1.0,
+      "Item.Caliber.35x228mm": 1.0
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 65,
+      "Item.Caliber.762mm": 53,
+      "Item.Caliber.50Cal": 20,
+      "Item.Caliber.20x102mm": 30,
+      "Item.Caliber.30mm": 18,
+      "Item.Caliber.35x228mm": 30
+     }
+    },
+    {
+     "slot": "(default)",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 1800.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 1.0,
+      "Item.Caliber.762mm": 1.0,
+      "Item.Caliber.50Cal": 1.0,
+      "Item.Caliber.20x102mm": 1.0,
+      "Item.Caliber.30mm": 1.0,
+      "Item.Caliber.35x228mm": 1.0
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 65,
+      "Item.Caliber.762mm": 53,
+      "Item.Caliber.50Cal": 20,
+      "Item.Caliber.20x102mm": 30,
+      "Item.Caliber.30mm": 18,
+      "Item.Caliber.35x228mm": 30
+     }
+    }
+   ]
+  },
+  {
+   "id": "land-tracked-tnk-01-antiair",
+   "damage_row": "Meta.Damage.Vehicle.Land.Tracked.TNK_01.AntiAir",
+   "variants": [
+    "TNK_01_AntiAir"
+   ],
+   "main_health": 800.0,
+   "models": [
+    {
+     "variants": [
+      "TNK_01_AntiAir"
+     ],
+     "path": "assets/models/vehicles/land-tracked-tnk-01-antiair.glb",
+     "notes": [],
+     "centres": [
+      [
+       0.0,
+       1.1421,
+       -2.9135
+      ],
+      [
+       0.0,
+       1.2273,
+       -1.5122
+      ],
+      [
+       0.0,
+       1.7018,
+       0.2131
+      ],
+      [
+       1.2952,
+       0.6249,
+       0.1355
+      ],
+      [
+       -1.2952,
+       0.6253,
+       0.1355
+      ],
+      null
+     ]
+    }
+   ],
+   "slots": [
+    {
+     "slot": "CC_Engine",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.Engine",
+     "max_health": 150.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Engine",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": false
+       }
+      ]
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0,
+      "Item.Caliber.762mm": 0.0,
+      "Item.Caliber.50Cal": 0.0,
+      "Item.Caliber.20x102mm": 0.045,
+      "Item.Caliber.30mm": 0.18,
+      "Item.Caliber.35x228mm": 0.036
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": 312,
+      "Item.Caliber.30mm": 47,
+      "Item.Caliber.35x228mm": 390
+     }
+    },
+    {
+     "slot": "CC_FuelTank",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.FuelTank",
+     "max_health": 150.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.FuelTank",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0,
+      "Item.Caliber.762mm": 0.0,
+      "Item.Caliber.50Cal": 0.0,
+      "Item.Caliber.20x102mm": 0.045,
+      "Item.Caliber.30mm": 0.18,
+      "Item.Caliber.35x228mm": 0.036
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": null,
+      "Item.Caliber.30mm": null,
+      "Item.Caliber.35x228mm": null
+     }
+    },
+    {
+     "slot": "CC_MainBody",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 800.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health.FuelTank",
+        "scalar": 0.05,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0,
+      "Item.Caliber.762mm": 0.0,
+      "Item.Caliber.50Cal": 0.0,
+      "Item.Caliber.20x102mm": 0.045,
+      "Item.Caliber.30mm": 0.18,
+      "Item.Caliber.35x228mm": 0.036
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": 312,
+      "Item.Caliber.30mm": 47,
+      "Item.Caliber.35x228mm": 390
+     }
+    },
+    {
+     "slot": "CC_Tracks_L",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.Tracks.Left",
+     "max_health": 125.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Tracks.Left",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.5,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": false
+       }
+      ]
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0,
+      "Item.Caliber.762mm": 0.0,
+      "Item.Caliber.50Cal": 0.0,
+      "Item.Caliber.20x102mm": 0.045,
+      "Item.Caliber.30mm": 0.18,
+      "Item.Caliber.35x228mm": 0.036
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": 578,
+      "Item.Caliber.30mm": 87,
+      "Item.Caliber.35x228mm": 722
+     }
+    },
+    {
+     "slot": "CC_Tracks_R",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.Tracks.Right",
+     "max_health": 125.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Tracks.Right",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.5,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": false
+       }
+      ]
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0,
+      "Item.Caliber.762mm": 0.0,
+      "Item.Caliber.50Cal": 0.0,
+      "Item.Caliber.20x102mm": 0.045,
+      "Item.Caliber.30mm": 0.18,
+      "Item.Caliber.35x228mm": 0.036
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": 578,
+      "Item.Caliber.30mm": 87,
+      "Item.Caliber.35x228mm": 722
+     }
+    },
+    {
+     "slot": "(default)",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 800.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health.FuelTank",
+        "scalar": 0.05,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0,
+      "Item.Caliber.762mm": 0.0,
+      "Item.Caliber.50Cal": 0.0,
+      "Item.Caliber.20x102mm": 0.045,
+      "Item.Caliber.30mm": 0.18,
+      "Item.Caliber.35x228mm": 0.036
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": 312,
+      "Item.Caliber.30mm": 47,
+      "Item.Caliber.35x228mm": 390
+     }
+    }
+   ]
+  },
+  {
+   "id": "land-tracked-tnk-01-artillery",
+   "damage_row": "Meta.Damage.Vehicle.Land.Tracked.TNK_01.Artillery",
+   "variants": [
+    "TNK_01_Artillery"
+   ],
+   "main_health": 650.0,
+   "models": [
+    {
+     "variants": [
+      "TNK_01_Artillery"
+     ],
+     "path": "assets/models/vehicles/land-tracked-tnk-01-artillery.glb",
+     "notes": [],
+     "centres": [
+      [
+       0.0,
+       1.0825,
+       -2.7428
+      ],
+      [
+       0.0,
+       1.3387,
+       -1.671
+      ],
+      [
+       0.0,
+       1.8566,
+       1.5461
+      ],
+      [
+       1.2951,
+       0.6346,
+       0.1356
+      ],
+      [
+       -1.2951,
+       0.6346,
+       0.1356
+      ],
+      null
+     ]
+    }
+   ],
+   "slots": [
+    {
+     "slot": "CC_Engine",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.Engine",
+     "max_health": 150.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Engine",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": false
+       }
+      ]
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0,
+      "Item.Caliber.762mm": 0.0,
+      "Item.Caliber.50Cal": 0.0,
+      "Item.Caliber.20x102mm": 0.045,
+      "Item.Caliber.30mm": 0.18,
+      "Item.Caliber.35x228mm": 0.027
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": 254,
+      "Item.Caliber.30mm": 39,
+      "Item.Caliber.35x228mm": 423
+     }
+    },
+    {
+     "slot": "CC_FuelTank",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.FuelTank",
+     "max_health": 100.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.FuelTank",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0,
+      "Item.Caliber.762mm": 0.0,
+      "Item.Caliber.50Cal": 0.0,
+      "Item.Caliber.20x102mm": 0.045,
+      "Item.Caliber.30mm": 0.18,
+      "Item.Caliber.35x228mm": 0.027
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": null,
+      "Item.Caliber.30mm": null,
+      "Item.Caliber.35x228mm": null
+     }
+    },
+    {
+     "slot": "CC_MainBody",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 650.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health.FuelTank",
+        "scalar": 0.05,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0,
+      "Item.Caliber.762mm": 0.0,
+      "Item.Caliber.50Cal": 0.0,
+      "Item.Caliber.20x102mm": 0.045,
+      "Item.Caliber.30mm": 0.18,
+      "Item.Caliber.35x228mm": 0.027
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": 254,
+      "Item.Caliber.30mm": 39,
+      "Item.Caliber.35x228mm": 423
+     }
+    },
+    {
+     "slot": "CC_Tracks_L",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.Tracks.Left",
+     "max_health": 125.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Tracks.Left",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.5,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": false
+       }
+      ]
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0,
+      "Item.Caliber.762mm": 0.0,
+      "Item.Caliber.50Cal": 0.0,
+      "Item.Caliber.20x102mm": 0.045,
+      "Item.Caliber.30mm": 0.18,
+      "Item.Caliber.35x228mm": 0.027
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": 461,
+      "Item.Caliber.30mm": 70,
+      "Item.Caliber.35x228mm": 768
+     }
+    },
+    {
+     "slot": "CC_Tracks_R",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.Tracks.Right",
+     "max_health": 125.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Tracks.Right",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.5,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": false
+       }
+      ]
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0,
+      "Item.Caliber.762mm": 0.0,
+      "Item.Caliber.50Cal": 0.0,
+      "Item.Caliber.20x102mm": 0.045,
+      "Item.Caliber.30mm": 0.18,
+      "Item.Caliber.35x228mm": 0.027
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": 461,
+      "Item.Caliber.30mm": 70,
+      "Item.Caliber.35x228mm": 768
+     }
+    },
+    {
+     "slot": "(default)",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 650.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health.FuelTank",
+        "scalar": 0.05,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0,
+      "Item.Caliber.762mm": 0.0,
+      "Item.Caliber.50Cal": 0.0,
+      "Item.Caliber.20x102mm": 0.045,
+      "Item.Caliber.30mm": 0.18,
+      "Item.Caliber.35x228mm": 0.027
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": 254,
+      "Item.Caliber.30mm": 39,
+      "Item.Caliber.35x228mm": 423
+     }
+    }
+   ]
+  },
+  {
+   "id": "land-tracked-tnk-01-heavy",
+   "damage_row": "Meta.Damage.Vehicle.Land.Tracked.TNK_01.Heavy",
+   "variants": [
+    "TNK_01_Heavy"
+   ],
+   "main_health": 800.0,
+   "models": [
+    {
+     "variants": [
+      "TNK_01_Heavy"
+     ],
+     "path": "assets/models/vehicles/land-tracked-tnk-01-heavy.glb",
+     "notes": [],
+     "centres": [
+      [
+       0.0,
+       1.1549,
+       -3.4437
+      ],
+      [
+       0.0,
+       1.4798,
+       -2.3709
+      ],
+      null,
+      [
+       0.0,
+       1.571,
+       3.6504
+      ],
+      [
+       1.2951,
+       0.6347,
+       0.1356
+      ],
+      [
+       -1.2951,
+       0.6347,
+       0.1356
+      ],
+      null
+     ]
+    }
+   ],
+   "slots": [
+    {
+     "slot": "CC_Engine",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.Engine",
+     "max_health": 150.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Engine",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": false
+       }
+      ]
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0,
+      "Item.Caliber.762mm": 0.0,
+      "Item.Caliber.50Cal": 0.0,
+      "Item.Caliber.20x102mm": 0.045,
+      "Item.Caliber.30mm": 0.18,
+      "Item.Caliber.35x228mm": 0.036
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": 312,
+      "Item.Caliber.30mm": 47,
+      "Item.Caliber.35x228mm": 390
+     }
+    },
+    {
+     "slot": "CC_FuelTank",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.FuelTank",
+     "max_health": 150.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.FuelTank",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0,
+      "Item.Caliber.762mm": 0.0,
+      "Item.Caliber.50Cal": 0.0,
+      "Item.Caliber.20x102mm": 0.045,
+      "Item.Caliber.30mm": 0.18,
+      "Item.Caliber.35x228mm": 0.036
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": null,
+      "Item.Caliber.30mm": null,
+      "Item.Caliber.35x228mm": null
+     }
+    },
+    {
+     "slot": "CC_MainBody",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 800.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health.FuelTank",
+        "scalar": 0.05,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0,
+      "Item.Caliber.762mm": 0.0,
+      "Item.Caliber.50Cal": 0.0,
+      "Item.Caliber.20x102mm": 0.045,
+      "Item.Caliber.30mm": 0.18,
+      "Item.Caliber.35x228mm": 0.036
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": 312,
+      "Item.Caliber.30mm": 47,
+      "Item.Caliber.35x228mm": 390
+     }
+    },
+    {
+     "slot": "CC_StrongArea",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.Body.StrongArea",
+     "max_health": 350.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.4,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0,
+      "Item.Caliber.762mm": 0.0,
+      "Item.Caliber.50Cal": 0.0,
+      "Item.Caliber.20x102mm": 0.045,
+      "Item.Caliber.30mm": 0.18,
+      "Item.Caliber.35x228mm": 0.036
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": 442,
+      "Item.Caliber.30mm": 67,
+      "Item.Caliber.35x228mm": 552
+     }
+    },
+    {
+     "slot": "CC_Tracks_L",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.Tracks.Left",
+     "max_health": 125.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Tracks.Left",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.5,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": false
+       }
+      ]
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0,
+      "Item.Caliber.762mm": 0.0,
+      "Item.Caliber.50Cal": 0.0,
+      "Item.Caliber.20x102mm": 0.045,
+      "Item.Caliber.30mm": 0.18,
+      "Item.Caliber.35x228mm": 0.036
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": 578,
+      "Item.Caliber.30mm": 87,
+      "Item.Caliber.35x228mm": 722
+     }
+    },
+    {
+     "slot": "CC_Tracks_R",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.Tracks.Right",
+     "max_health": 125.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Tracks.Right",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.5,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": false
+       }
+      ]
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0,
+      "Item.Caliber.762mm": 0.0,
+      "Item.Caliber.50Cal": 0.0,
+      "Item.Caliber.20x102mm": 0.045,
+      "Item.Caliber.30mm": 0.18,
+      "Item.Caliber.35x228mm": 0.036
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": 578,
+      "Item.Caliber.30mm": 87,
+      "Item.Caliber.35x228mm": 722
+     }
+    },
+    {
+     "slot": "(default)",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 800.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health.FuelTank",
+        "scalar": 0.05,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0,
+      "Item.Caliber.762mm": 0.0,
+      "Item.Caliber.50Cal": 0.0,
+      "Item.Caliber.20x102mm": 0.045,
+      "Item.Caliber.30mm": 0.18,
+      "Item.Caliber.35x228mm": 0.036
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": 312,
+      "Item.Caliber.30mm": 47,
+      "Item.Caliber.35x228mm": 390
+     }
+    }
+   ]
+  },
+  {
+   "id": "land-tracked-tnk-04-default",
+   "damage_row": "Meta.Damage.Vehicle.Land.Tracked.TNK_04.Default",
+   "variants": [
+    "TNK_04"
+   ],
+   "main_health": 750.0,
+   "models": [
+    {
+     "variants": [
+      "TNK_04"
+     ],
+     "path": "assets/models/vehicles/land-tracked-tnk-04-default.glb",
+     "notes": [],
+     "centres": [
+      [
+       0.0,
+       1.0813,
+       -2.6036
+      ],
+      [
+       -1.5379,
+       1.4041,
+       -0.1174
+      ],
+      [
+       0.0,
+       1.9099,
+       1.4648
+      ],
+      [
+       1.4924,
+       0.6456,
+       0.2149
+      ],
+      [
+       -1.4924,
+       0.6456,
+       0.2149
+      ],
+      null
+     ]
+    }
+   ],
+   "slots": [
+    {
+     "slot": "CC_Engine",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.Engine",
+     "max_health": 150.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Engine",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": false
+       }
+      ]
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0,
+      "Item.Caliber.762mm": 0.0,
+      "Item.Caliber.50Cal": 0.0,
+      "Item.Caliber.20x102mm": 0.075,
+      "Item.Caliber.30mm": 0.21,
+      "Item.Caliber.35x228mm": 0.048
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": 176,
+      "Item.Caliber.30mm": 38,
+      "Item.Caliber.35x228mm": 275
+     }
+    },
+    {
+     "slot": "CC_FuelTank",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.FuelTank",
+     "max_health": 150.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.FuelTank",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0,
+      "Item.Caliber.762mm": 0.0,
+      "Item.Caliber.50Cal": 0.0,
+      "Item.Caliber.20x102mm": 0.075,
+      "Item.Caliber.30mm": 0.21,
+      "Item.Caliber.35x228mm": 0.048
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": null,
+      "Item.Caliber.30mm": null,
+      "Item.Caliber.35x228mm": null
+     }
+    },
+    {
+     "slot": "CC_MainBody",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 750.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health.FuelTank",
+        "scalar": 0.05,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0,
+      "Item.Caliber.762mm": 0.0,
+      "Item.Caliber.50Cal": 0.0,
+      "Item.Caliber.20x102mm": 0.075,
+      "Item.Caliber.30mm": 0.21,
+      "Item.Caliber.35x228mm": 0.048
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": 176,
+      "Item.Caliber.30mm": 38,
+      "Item.Caliber.35x228mm": 275
+     }
+    },
+    {
+     "slot": "CC_Tracks_L",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.Tracks.Left",
+     "max_health": 125.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Tracks.Left",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.85,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": false
+       }
+      ]
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0,
+      "Item.Caliber.762mm": 0.0,
+      "Item.Caliber.50Cal": 0.0,
+      "Item.Caliber.20x102mm": 0.075,
+      "Item.Caliber.30mm": 0.21,
+      "Item.Caliber.35x228mm": 0.048
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": 202,
+      "Item.Caliber.30mm": 44,
+      "Item.Caliber.35x228mm": 315
+     }
+    },
+    {
+     "slot": "CC_Tracks_R",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.Tracks.Right",
+     "max_health": 125.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Tracks.Right",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.85,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": false
+       }
+      ]
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0,
+      "Item.Caliber.762mm": 0.0,
+      "Item.Caliber.50Cal": 0.0,
+      "Item.Caliber.20x102mm": 0.075,
+      "Item.Caliber.30mm": 0.21,
+      "Item.Caliber.35x228mm": 0.048
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": 202,
+      "Item.Caliber.30mm": 44,
+      "Item.Caliber.35x228mm": 315
+     }
+    },
+    {
+     "slot": "(default)",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 750.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health.FuelTank",
+        "scalar": 0.05,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0,
+      "Item.Caliber.762mm": 0.0,
+      "Item.Caliber.50Cal": 0.0,
+      "Item.Caliber.20x102mm": 0.075,
+      "Item.Caliber.30mm": 0.21,
+      "Item.Caliber.35x228mm": 0.048
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": 176,
+      "Item.Caliber.30mm": 38,
+      "Item.Caliber.35x228mm": 275
+     }
+    }
+   ]
+  },
+  {
+   "id": "land-wheeled-bobcat",
+   "damage_row": "Meta.Damage.Vehicle.Land.Wheeled.Bobcat",
+   "variants": [
+    "WHL_01_Default"
+   ],
+   "main_health": 200.0,
+   "models": [
+    {
+     "variants": [
+      "WHL_01_Default"
+     ],
+     "path": "assets/models/vehicles/land-wheeled-bobcat.glb",
+     "notes": [],
+     "centres": [
+      [
+       0.0067,
+       0.6,
+       0.0026
+      ],
+      [
+       0.0,
+       0.9696,
+       0.2586
+      ],
+      [
+       0.529,
+       0.3545,
+       0.7289
+      ],
+      [
+       -0.526,
+       0.3546,
+       0.7289
+      ],
+      [
+       0.4748,
+       0.3544,
+       -0.7288
+      ],
+      [
+       -0.4718,
+       0.3544,
+       -0.7288
+      ],
+      null
+     ]
+    }
+   ],
+   "slots": [
+    {
+     "slot": "CC_Engine",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 200.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.075,
+      "Item.Caliber.762mm": 0.075,
+      "Item.Caliber.50Cal": 0.075,
+      "Item.Caliber.20x102mm": 0.25,
+      "Item.Caliber.30mm": 1.0,
+      "Item.Caliber.35x228mm": 0.6
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 96,
+      "Item.Caliber.762mm": 79,
+      "Item.Caliber.50Cal": 30,
+      "Item.Caliber.20x102mm": 14,
+      "Item.Caliber.30mm": 2,
+      "Item.Caliber.35x228mm": 6
+     }
+    },
+    {
+     "slot": "CC_FuelTank",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.FuelTank",
+     "max_health": 100.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.FuelTank",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.075,
+      "Item.Caliber.762mm": 0.075,
+      "Item.Caliber.50Cal": 0.075,
+      "Item.Caliber.20x102mm": 0.25,
+      "Item.Caliber.30mm": 1.0,
+      "Item.Caliber.35x228mm": 0.6
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": null,
+      "Item.Caliber.30mm": null,
+      "Item.Caliber.35x228mm": null
+     }
+    },
+    {
+     "slot": "CC_Wheel_0",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Left.Front",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Left.Front",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.45,
+      "Item.Caliber.762mm": 0.45,
+      "Item.Caliber.50Cal": 0.45,
+      "Item.Caliber.20x102mm": 0.25,
+      "Item.Caliber.30mm": 1.0,
+      "Item.Caliber.35x228mm": 0.6
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 64,
+      "Item.Caliber.762mm": 52,
+      "Item.Caliber.50Cal": 20,
+      "Item.Caliber.20x102mm": 54,
+      "Item.Caliber.30mm": 8,
+      "Item.Caliber.35x228mm": 23
+     }
+    },
+    {
+     "slot": "CC_Wheel_1",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Right.Front",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Right.Front",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.45,
+      "Item.Caliber.762mm": 0.45,
+      "Item.Caliber.50Cal": 0.45,
+      "Item.Caliber.20x102mm": 0.25,
+      "Item.Caliber.30mm": 1.0,
+      "Item.Caliber.35x228mm": 0.6
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 64,
+      "Item.Caliber.762mm": 52,
+      "Item.Caliber.50Cal": 20,
+      "Item.Caliber.20x102mm": 54,
+      "Item.Caliber.30mm": 8,
+      "Item.Caliber.35x228mm": 23
+     }
+    },
+    {
+     "slot": "CC_Wheel_2",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Left.Rear",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Left.Rear",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.45,
+      "Item.Caliber.762mm": 0.45,
+      "Item.Caliber.50Cal": 0.45,
+      "Item.Caliber.20x102mm": 0.25,
+      "Item.Caliber.30mm": 1.0,
+      "Item.Caliber.35x228mm": 0.6
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 64,
+      "Item.Caliber.762mm": 52,
+      "Item.Caliber.50Cal": 20,
+      "Item.Caliber.20x102mm": 54,
+      "Item.Caliber.30mm": 8,
+      "Item.Caliber.35x228mm": 23
+     }
+    },
+    {
+     "slot": "CC_Wheel_3",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Right.Rear",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Right.Rear",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.45,
+      "Item.Caliber.762mm": 0.45,
+      "Item.Caliber.50Cal": 0.45,
+      "Item.Caliber.20x102mm": 0.25,
+      "Item.Caliber.30mm": 1.0,
+      "Item.Caliber.35x228mm": 0.6
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 64,
+      "Item.Caliber.762mm": 52,
+      "Item.Caliber.50Cal": 20,
+      "Item.Caliber.20x102mm": 54,
+      "Item.Caliber.30mm": 8,
+      "Item.Caliber.35x228mm": 23
+     }
+    },
+    {
+     "slot": "(default)",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 200.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.075,
+      "Item.Caliber.762mm": 0.075,
+      "Item.Caliber.50Cal": 0.075,
+      "Item.Caliber.20x102mm": 0.25,
+      "Item.Caliber.30mm": 1.0,
+      "Item.Caliber.35x228mm": 0.6
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 96,
+      "Item.Caliber.762mm": 79,
+      "Item.Caliber.50Cal": 30,
+      "Item.Caliber.20x102mm": 14,
+      "Item.Caliber.30mm": 2,
+      "Item.Caliber.35x228mm": 6
+     }
+    }
+   ]
+  },
+  {
+   "id": "land-wheeled-patriot-kodiak",
+   "damage_row": "Meta.Damage.Vehicle.Land.Wheeled.Patriot.Kodiak",
+   "variants": [
+    "WHL_02_Default",
+    "WHL_02_Pickup",
+    "WHL_02_SUV_RingTurret"
+   ],
+   "main_health": 400.0,
+   "models": [
+    {
+     "variants": [
+      "WHL_02_Default"
+     ],
+     "path": "assets/models/vehicles/land-wheeled-patriot-kodiak.glb",
+     "notes": [],
+     "centres": [
+      [
+       0.0,
+       1.1257,
+       2.111
+      ],
+      [
+       0.0,
+       0.7736,
+       -2.3981
+      ],
+      [
+       1.028,
+       0.4805,
+       1.8662
+      ],
+      [
+       -1.028,
+       0.4805,
+       1.8662
+      ],
+      [
+       1.028,
+       0.4805,
+       -1.8673
+      ],
+      [
+       -1.028,
+       0.4805,
+       -1.8673
+      ],
+      null
+     ]
+    },
+    {
+     "variants": [
+      "WHL_02_Pickup"
+     ],
+     "path": "assets/models/vehicles/land-wheeled-patriot-kodiak--whl-02-pickup.glb",
+     "notes": [],
+     "centres": [
+      [
+       0.0,
+       1.1257,
+       2.111
+      ],
+      [
+       0.0,
+       0.7736,
+       -2.3981
+      ],
+      [
+       1.028,
+       0.4805,
+       1.8662
+      ],
+      [
+       -1.028,
+       0.4805,
+       1.8662
+      ],
+      [
+       1.028,
+       0.4805,
+       -1.8673
+      ],
+      [
+       -1.028,
+       0.4805,
+       -1.8673
+      ],
+      null
+     ]
+    },
+    {
+     "variants": [
+      "WHL_02_SUV_RingTurret"
+     ],
+     "path": "assets/models/vehicles/land-wheeled-patriot-kodiak--whl-02-suv-ringturret.glb",
+     "notes": [],
+     "centres": [
+      [
+       0.0,
+       1.1257,
+       2.111
+      ],
+      [
+       0.0,
+       0.7736,
+       -2.3981
+      ],
+      [
+       1.028,
+       0.4805,
+       1.8662
+      ],
+      [
+       -1.028,
+       0.4805,
+       1.8662
+      ],
+      [
+       1.028,
+       0.4805,
+       -1.8673
+      ],
+      [
+       -1.028,
+       0.4805,
+       -1.8673
+      ],
+      null
+     ]
+    }
+   ],
+   "slots": [
+    {
+     "slot": "CC_Engine",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 400.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.025,
+      "Item.Caliber.762mm": 0.025,
+      "Item.Caliber.50Cal": 0.025,
+      "Item.Caliber.20x102mm": 0.175,
+      "Item.Caliber.30mm": 0.5,
+      "Item.Caliber.35x228mm": 0.3
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 572,
+      "Item.Caliber.762mm": 471,
+      "Item.Caliber.50Cal": 178,
+      "Item.Caliber.20x102mm": 39,
+      "Item.Caliber.30mm": 8,
+      "Item.Caliber.35x228mm": 23
+     }
+    },
+    {
+     "slot": "CC_FuelTank",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.FuelTank",
+     "max_health": 400.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.FuelTank",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.15,
+      "Item.Caliber.762mm": 0.15,
+      "Item.Caliber.50Cal": 0.15,
+      "Item.Caliber.20x102mm": 0.175,
+      "Item.Caliber.30mm": 0.5,
+      "Item.Caliber.35x228mm": 0.3
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": null,
+      "Item.Caliber.30mm": null,
+      "Item.Caliber.35x228mm": null
+     }
+    },
+    {
+     "slot": "CC_Wheel_0",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Left.Front",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Left.Front",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.4,
+      "Item.Caliber.762mm": 0.4,
+      "Item.Caliber.50Cal": 0.4,
+      "Item.Caliber.20x102mm": 0.175,
+      "Item.Caliber.30mm": 0.5,
+      "Item.Caliber.35x228mm": 0.3
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 143,
+      "Item.Caliber.762mm": 118,
+      "Item.Caliber.50Cal": 45,
+      "Item.Caliber.20x102mm": 153,
+      "Item.Caliber.30mm": 32,
+      "Item.Caliber.35x228mm": 89
+     }
+    },
+    {
+     "slot": "CC_Wheel_1",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Right.Front",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Right.Front",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.4,
+      "Item.Caliber.762mm": 0.4,
+      "Item.Caliber.50Cal": 0.4,
+      "Item.Caliber.20x102mm": 0.175,
+      "Item.Caliber.30mm": 0.5,
+      "Item.Caliber.35x228mm": 0.3
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 143,
+      "Item.Caliber.762mm": 118,
+      "Item.Caliber.50Cal": 45,
+      "Item.Caliber.20x102mm": 153,
+      "Item.Caliber.30mm": 32,
+      "Item.Caliber.35x228mm": 89
+     }
+    },
+    {
+     "slot": "CC_Wheel_2",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Left.Rear",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Left.Rear",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.4,
+      "Item.Caliber.762mm": 0.4,
+      "Item.Caliber.50Cal": 0.4,
+      "Item.Caliber.20x102mm": 0.175,
+      "Item.Caliber.30mm": 0.5,
+      "Item.Caliber.35x228mm": 0.3
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 143,
+      "Item.Caliber.762mm": 118,
+      "Item.Caliber.50Cal": 45,
+      "Item.Caliber.20x102mm": 153,
+      "Item.Caliber.30mm": 32,
+      "Item.Caliber.35x228mm": 89
+     }
+    },
+    {
+     "slot": "CC_Wheel_3",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Right.Rear",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Right.Rear",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.4,
+      "Item.Caliber.762mm": 0.4,
+      "Item.Caliber.50Cal": 0.4,
+      "Item.Caliber.20x102mm": 0.175,
+      "Item.Caliber.30mm": 0.5,
+      "Item.Caliber.35x228mm": 0.3
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 143,
+      "Item.Caliber.762mm": 118,
+      "Item.Caliber.50Cal": 45,
+      "Item.Caliber.20x102mm": 153,
+      "Item.Caliber.30mm": 32,
+      "Item.Caliber.35x228mm": 89
+     }
+    },
+    {
+     "slot": "(default)",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 400.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.025,
+      "Item.Caliber.762mm": 0.025,
+      "Item.Caliber.50Cal": 0.025,
+      "Item.Caliber.20x102mm": 0.175,
+      "Item.Caliber.30mm": 0.5,
+      "Item.Caliber.35x228mm": 0.3
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 572,
+      "Item.Caliber.762mm": 471,
+      "Item.Caliber.50Cal": 178,
+      "Item.Caliber.20x102mm": 39,
+      "Item.Caliber.30mm": 8,
+      "Item.Caliber.35x228mm": 23
+     }
+    }
+   ]
+  },
+  {
+   "id": "land-wheeled-humvee-default",
+   "damage_row": "Meta.Damage.Vehicle.Land.Wheeled.Humvee.Default",
+   "variants": [
+    "WHL_05_Humvee_Default"
+   ],
+   "main_health": 500.0,
+   "models": [
+    {
+     "variants": [
+      "WHL_05_Humvee_Default"
+     ],
+     "path": "assets/models/vehicles/land-wheeled-humvee-default.glb",
+     "notes": [],
+     "centres": [
+      [
+       0.0,
+       1.2817,
+       1.6663
+      ],
+      [
+       -0.4718,
+       1.0438,
+       -1.1889
+      ],
+      [
+       1.0881,
+       0.5376,
+       1.9076
+      ],
+      [
+       -1.0881,
+       0.5376,
+       1.9076
+      ],
+      [
+       1.0644,
+       0.5376,
+       -1.8336
+      ],
+      [
+       -1.0644,
+       0.5376,
+       -1.8336
+      ],
+      [
+       1.0881,
+       0.5376,
+       1.9076
+      ],
+      [
+       -1.0881,
+       0.5376,
+       1.9076
+      ],
+      [
+       1.0644,
+       0.5376,
+       -1.8336
+      ],
+      [
+       -1.0644,
+       0.5376,
+       -1.8336
+      ],
+      null
+     ]
+    }
+   ],
+   "slots": [
+    {
+     "slot": "CC_Engine",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 500.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.025,
+      "Item.Caliber.762mm": 0.025,
+      "Item.Caliber.50Cal": 0.025,
+      "Item.Caliber.20x102mm": 0.15,
+      "Item.Caliber.30mm": 0.3,
+      "Item.Caliber.35x228mm": 0.15
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 715,
+      "Item.Caliber.762mm": 589,
+      "Item.Caliber.50Cal": 223,
+      "Item.Caliber.20x102mm": 56,
+      "Item.Caliber.30mm": 17,
+      "Item.Caliber.35x228mm": 56
+     }
+    },
+    {
+     "slot": "CC_FuelTank",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.FuelTank",
+     "max_health": 400.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.FuelTank",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.25,
+      "Item.Caliber.762mm": 0.25,
+      "Item.Caliber.50Cal": 0.25,
+      "Item.Caliber.20x102mm": 0.15,
+      "Item.Caliber.30mm": 0.3,
+      "Item.Caliber.35x228mm": 0.15
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 129,
+      "Item.Caliber.762mm": 106,
+      "Item.Caliber.50Cal": 40,
+      "Item.Caliber.20x102mm": 100,
+      "Item.Caliber.30mm": 30,
+      "Item.Caliber.35x228mm": 100
+     }
+    },
+    {
+     "slot": "CC_Tyre_0",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Left.Front",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Left.Front",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.3,
+      "Item.Caliber.762mm": 0.3,
+      "Item.Caliber.50Cal": 0.3,
+      "Item.Caliber.20x102mm": 0.15,
+      "Item.Caliber.30mm": 0.3,
+      "Item.Caliber.35x228mm": 0.15
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 239,
+      "Item.Caliber.762mm": 196,
+      "Item.Caliber.50Cal": 74,
+      "Item.Caliber.20x102mm": 222,
+      "Item.Caliber.30mm": 67,
+      "Item.Caliber.35x228mm": 222
+     }
+    },
+    {
+     "slot": "CC_Tyre_1",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Right.Front",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Right.Front",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.3,
+      "Item.Caliber.762mm": 0.3,
+      "Item.Caliber.50Cal": 0.3,
+      "Item.Caliber.20x102mm": 0.15,
+      "Item.Caliber.30mm": 0.3,
+      "Item.Caliber.35x228mm": 0.15
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 239,
+      "Item.Caliber.762mm": 196,
+      "Item.Caliber.50Cal": 74,
+      "Item.Caliber.20x102mm": 222,
+      "Item.Caliber.30mm": 67,
+      "Item.Caliber.35x228mm": 222
+     }
+    },
+    {
+     "slot": "CC_Tyre_2",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Left.Rear",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Left.Rear",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.3,
+      "Item.Caliber.762mm": 0.3,
+      "Item.Caliber.50Cal": 0.3,
+      "Item.Caliber.20x102mm": 0.15,
+      "Item.Caliber.30mm": 0.3,
+      "Item.Caliber.35x228mm": 0.15
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 239,
+      "Item.Caliber.762mm": 196,
+      "Item.Caliber.50Cal": 74,
+      "Item.Caliber.20x102mm": 222,
+      "Item.Caliber.30mm": 67,
+      "Item.Caliber.35x228mm": 222
+     }
+    },
+    {
+     "slot": "CC_Tyre_3",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Right.Rear",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Right.Rear",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.3,
+      "Item.Caliber.762mm": 0.3,
+      "Item.Caliber.50Cal": 0.3,
+      "Item.Caliber.20x102mm": 0.15,
+      "Item.Caliber.30mm": 0.3,
+      "Item.Caliber.35x228mm": 0.15
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 239,
+      "Item.Caliber.762mm": 196,
+      "Item.Caliber.50Cal": 74,
+      "Item.Caliber.20x102mm": 222,
+      "Item.Caliber.30mm": 67,
+      "Item.Caliber.35x228mm": 222
+     }
+    },
+    {
+     "slot": "CC_Wheel_0",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Left.Front",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Left.Front",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.3,
+      "Item.Caliber.762mm": 0.3,
+      "Item.Caliber.50Cal": 0.3,
+      "Item.Caliber.20x102mm": 0.15,
+      "Item.Caliber.30mm": 0.3,
+      "Item.Caliber.35x228mm": 0.15
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 239,
+      "Item.Caliber.762mm": 196,
+      "Item.Caliber.50Cal": 74,
+      "Item.Caliber.20x102mm": 222,
+      "Item.Caliber.30mm": 67,
+      "Item.Caliber.35x228mm": 222
+     }
+    },
+    {
+     "slot": "CC_Wheel_1",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Right.Front",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Right.Front",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.3,
+      "Item.Caliber.762mm": 0.3,
+      "Item.Caliber.50Cal": 0.3,
+      "Item.Caliber.20x102mm": 0.15,
+      "Item.Caliber.30mm": 0.3,
+      "Item.Caliber.35x228mm": 0.15
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 239,
+      "Item.Caliber.762mm": 196,
+      "Item.Caliber.50Cal": 74,
+      "Item.Caliber.20x102mm": 222,
+      "Item.Caliber.30mm": 67,
+      "Item.Caliber.35x228mm": 222
+     }
+    },
+    {
+     "slot": "CC_Wheel_2",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Left.Rear",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Left.Rear",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.3,
+      "Item.Caliber.762mm": 0.3,
+      "Item.Caliber.50Cal": 0.3,
+      "Item.Caliber.20x102mm": 0.15,
+      "Item.Caliber.30mm": 0.3,
+      "Item.Caliber.35x228mm": 0.15
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 239,
+      "Item.Caliber.762mm": 196,
+      "Item.Caliber.50Cal": 74,
+      "Item.Caliber.20x102mm": 222,
+      "Item.Caliber.30mm": 67,
+      "Item.Caliber.35x228mm": 222
+     }
+    },
+    {
+     "slot": "CC_Wheel_3",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Right.Rear",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Right.Rear",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.3,
+      "Item.Caliber.762mm": 0.3,
+      "Item.Caliber.50Cal": 0.3,
+      "Item.Caliber.20x102mm": 0.15,
+      "Item.Caliber.30mm": 0.3,
+      "Item.Caliber.35x228mm": 0.15
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 239,
+      "Item.Caliber.762mm": 196,
+      "Item.Caliber.50Cal": 74,
+      "Item.Caliber.20x102mm": 222,
+      "Item.Caliber.30mm": 67,
+      "Item.Caliber.35x228mm": 222
+     }
+    },
+    {
+     "slot": "(default)",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 500.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.025,
+      "Item.Caliber.762mm": 0.025,
+      "Item.Caliber.50Cal": 0.025,
+      "Item.Caliber.20x102mm": 0.15,
+      "Item.Caliber.30mm": 0.3,
+      "Item.Caliber.35x228mm": 0.15
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 715,
+      "Item.Caliber.762mm": 589,
+      "Item.Caliber.50Cal": 223,
+      "Item.Caliber.20x102mm": 56,
+      "Item.Caliber.30mm": 17,
+      "Item.Caliber.35x228mm": 56
+     }
+    }
+   ]
+  },
+  {
+   "id": "land-wheeled-humvee-minigun",
+   "damage_row": "Meta.Damage.Vehicle.Land.Wheeled.Humvee.Minigun",
+   "variants": [
+    "WHL_05_Humvee_RingMinigun"
+   ],
+   "main_health": 500.0,
+   "models": [
+    {
+     "variants": [
+      "WHL_05_Humvee_RingMinigun"
+     ],
+     "path": "assets/models/vehicles/land-wheeled-humvee-minigun.glb",
+     "notes": [],
+     "centres": [
+      null,
+      [
+       -1.1914,
+       1.2638,
+       -1.3444
+      ],
+      [
+       1.0881,
+       0.5376,
+       1.9076
+      ],
+      [
+       -1.0881,
+       0.5376,
+       1.9076
+      ],
+      [
+       1.0644,
+       0.5376,
+       -1.8336
+      ],
+      [
+       -1.0644,
+       0.5376,
+       -1.8336
+      ],
+      [
+       1.0881,
+       0.5376,
+       1.9076
+      ],
+      [
+       -1.0881,
+       0.5376,
+       1.9076
+      ],
+      [
+       1.0644,
+       0.5376,
+       -1.8336
+      ],
+      [
+       -1.0644,
+       0.5376,
+       -1.8336
+      ],
+      null
+     ]
+    }
+   ],
+   "slots": [
+    {
+     "slot": "CC_Engine",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 500.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0125,
+      "Item.Caliber.762mm": 0.0125,
+      "Item.Caliber.50Cal": 0.0125,
+      "Item.Caliber.20x102mm": 0.12,
+      "Item.Caliber.30mm": 0.25,
+      "Item.Caliber.35x228mm": 0.12
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 1429,
+      "Item.Caliber.762mm": 1177,
+      "Item.Caliber.50Cal": 445,
+      "Item.Caliber.20x102mm": 70,
+      "Item.Caliber.30mm": 20,
+      "Item.Caliber.35x228mm": 70
+     }
+    },
+    {
+     "slot": "CC_FuelTank",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.FuelTank",
+     "max_health": 400.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.FuelTank",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.125,
+      "Item.Caliber.762mm": 0.125,
+      "Item.Caliber.50Cal": 0.125,
+      "Item.Caliber.20x102mm": 0.12,
+      "Item.Caliber.30mm": 0.25,
+      "Item.Caliber.35x228mm": 0.12
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 258,
+      "Item.Caliber.762mm": 212,
+      "Item.Caliber.50Cal": 80,
+      "Item.Caliber.20x102mm": 125,
+      "Item.Caliber.30mm": 36,
+      "Item.Caliber.35x228mm": 125
+     }
+    },
+    {
+     "slot": "CC_Tyre_0",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Left.Front",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Left.Front",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.225,
+      "Item.Caliber.762mm": 0.225,
+      "Item.Caliber.50Cal": 0.225,
+      "Item.Caliber.20x102mm": 0.12,
+      "Item.Caliber.30mm": 0.25,
+      "Item.Caliber.35x228mm": 0.12
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 318,
+      "Item.Caliber.762mm": 261,
+      "Item.Caliber.50Cal": 99,
+      "Item.Caliber.20x102mm": 278,
+      "Item.Caliber.30mm": 80,
+      "Item.Caliber.35x228mm": 278
+     }
+    },
+    {
+     "slot": "CC_Tyre_1",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Right.Front",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Right.Front",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.225,
+      "Item.Caliber.762mm": 0.225,
+      "Item.Caliber.50Cal": 0.225,
+      "Item.Caliber.20x102mm": 0.12,
+      "Item.Caliber.30mm": 0.25,
+      "Item.Caliber.35x228mm": 0.12
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 318,
+      "Item.Caliber.762mm": 261,
+      "Item.Caliber.50Cal": 99,
+      "Item.Caliber.20x102mm": 278,
+      "Item.Caliber.30mm": 80,
+      "Item.Caliber.35x228mm": 278
+     }
+    },
+    {
+     "slot": "CC_Tyre_2",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Left.Rear",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Left.Rear",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.225,
+      "Item.Caliber.762mm": 0.225,
+      "Item.Caliber.50Cal": 0.225,
+      "Item.Caliber.20x102mm": 0.12,
+      "Item.Caliber.30mm": 0.25,
+      "Item.Caliber.35x228mm": 0.12
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 318,
+      "Item.Caliber.762mm": 261,
+      "Item.Caliber.50Cal": 99,
+      "Item.Caliber.20x102mm": 278,
+      "Item.Caliber.30mm": 80,
+      "Item.Caliber.35x228mm": 278
+     }
+    },
+    {
+     "slot": "CC_Tyre_3",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Right.Rear",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Right.Rear",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.225,
+      "Item.Caliber.762mm": 0.225,
+      "Item.Caliber.50Cal": 0.225,
+      "Item.Caliber.20x102mm": 0.12,
+      "Item.Caliber.30mm": 0.25,
+      "Item.Caliber.35x228mm": 0.12
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 318,
+      "Item.Caliber.762mm": 261,
+      "Item.Caliber.50Cal": 99,
+      "Item.Caliber.20x102mm": 278,
+      "Item.Caliber.30mm": 80,
+      "Item.Caliber.35x228mm": 278
+     }
+    },
+    {
+     "slot": "CC_Wheel_0",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Left.Front",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Left.Front",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.225,
+      "Item.Caliber.762mm": 0.225,
+      "Item.Caliber.50Cal": 0.225,
+      "Item.Caliber.20x102mm": 0.12,
+      "Item.Caliber.30mm": 0.25,
+      "Item.Caliber.35x228mm": 0.12
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 318,
+      "Item.Caliber.762mm": 261,
+      "Item.Caliber.50Cal": 99,
+      "Item.Caliber.20x102mm": 278,
+      "Item.Caliber.30mm": 80,
+      "Item.Caliber.35x228mm": 278
+     }
+    },
+    {
+     "slot": "CC_Wheel_1",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Right.Front",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Right.Front",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.225,
+      "Item.Caliber.762mm": 0.225,
+      "Item.Caliber.50Cal": 0.225,
+      "Item.Caliber.20x102mm": 0.12,
+      "Item.Caliber.30mm": 0.25,
+      "Item.Caliber.35x228mm": 0.12
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 318,
+      "Item.Caliber.762mm": 261,
+      "Item.Caliber.50Cal": 99,
+      "Item.Caliber.20x102mm": 278,
+      "Item.Caliber.30mm": 80,
+      "Item.Caliber.35x228mm": 278
+     }
+    },
+    {
+     "slot": "CC_Wheel_2",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Left.Rear",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Left.Rear",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.225,
+      "Item.Caliber.762mm": 0.225,
+      "Item.Caliber.50Cal": 0.225,
+      "Item.Caliber.20x102mm": 0.12,
+      "Item.Caliber.30mm": 0.25,
+      "Item.Caliber.35x228mm": 0.12
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 318,
+      "Item.Caliber.762mm": 261,
+      "Item.Caliber.50Cal": 99,
+      "Item.Caliber.20x102mm": 278,
+      "Item.Caliber.30mm": 80,
+      "Item.Caliber.35x228mm": 278
+     }
+    },
+    {
+     "slot": "CC_Wheel_3",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Right.Rear",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Right.Rear",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.225,
+      "Item.Caliber.762mm": 0.225,
+      "Item.Caliber.50Cal": 0.225,
+      "Item.Caliber.20x102mm": 0.12,
+      "Item.Caliber.30mm": 0.25,
+      "Item.Caliber.35x228mm": 0.12
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 318,
+      "Item.Caliber.762mm": 261,
+      "Item.Caliber.50Cal": 99,
+      "Item.Caliber.20x102mm": 278,
+      "Item.Caliber.30mm": 80,
+      "Item.Caliber.35x228mm": 278
+     }
+    },
+    {
+     "slot": "(default)",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 500.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.0125,
+      "Item.Caliber.762mm": 0.0125,
+      "Item.Caliber.50Cal": 0.0125,
+      "Item.Caliber.20x102mm": 0.12,
+      "Item.Caliber.30mm": 0.25,
+      "Item.Caliber.35x228mm": 0.12
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 1429,
+      "Item.Caliber.762mm": 1177,
+      "Item.Caliber.50Cal": 445,
+      "Item.Caliber.20x102mm": 70,
+      "Item.Caliber.30mm": 20,
+      "Item.Caliber.35x228mm": 70
+     }
+    }
+   ]
+  },
+  {
+   "id": "land-wheeled-humvee-machinegun",
+   "damage_row": "Meta.Damage.Vehicle.Land.Wheeled.Humvee.MachineGun",
+   "variants": [
+    "WHL_05_Humvee_RingTurret"
+   ],
+   "main_health": 500.0,
+   "models": [
+    {
+     "variants": [
+      "WHL_05_Humvee_RingTurret"
+     ],
+     "path": "assets/models/vehicles/land-wheeled-humvee-machinegun.glb",
+     "notes": [],
+     "centres": [
+      null,
+      [
+       -1.1915,
+       1.2638,
+       -1.3446
+      ],
+      [
+       1.0881,
+       0.5376,
+       1.9076
+      ],
+      [
+       -1.0881,
+       0.5376,
+       1.9076
+      ],
+      [
+       1.0644,
+       0.5376,
+       -1.8336
+      ],
+      [
+       -1.0644,
+       0.5376,
+       -1.8336
+      ],
+      [
+       1.0881,
+       0.5376,
+       1.9076
+      ],
+      [
+       -1.0881,
+       0.5376,
+       1.9076
+      ],
+      [
+       1.0644,
+       0.5376,
+       -1.8336
+      ],
+      [
+       -1.0644,
+       0.5376,
+       -1.8336
+      ],
+      null
+     ]
+    }
+   ],
+   "slots": [
+    {
+     "slot": "CC_Engine",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 500.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.02,
+      "Item.Caliber.762mm": 0.02,
+      "Item.Caliber.50Cal": 0.02,
+      "Item.Caliber.20x102mm": 0.135,
+      "Item.Caliber.30mm": 0.225,
+      "Item.Caliber.35x228mm": 0.135
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 893,
+      "Item.Caliber.762mm": 736,
+      "Item.Caliber.50Cal": 278,
+      "Item.Caliber.20x102mm": 62,
+      "Item.Caliber.30mm": 23,
+      "Item.Caliber.35x228mm": 62
+     }
+    },
+    {
+     "slot": "CC_FuelTank",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.FuelTank",
+     "max_health": 400.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.FuelTank",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.2,
+      "Item.Caliber.762mm": 0.2,
+      "Item.Caliber.50Cal": 0.2,
+      "Item.Caliber.20x102mm": 0.135,
+      "Item.Caliber.30mm": 0.225,
+      "Item.Caliber.35x228mm": 0.135
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 161,
+      "Item.Caliber.762mm": 133,
+      "Item.Caliber.50Cal": 50,
+      "Item.Caliber.20x102mm": 112,
+      "Item.Caliber.30mm": 40,
+      "Item.Caliber.35x228mm": 112
+     }
+    },
+    {
+     "slot": "CC_Tyre_0",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Left.Front",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Left.Front",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.3,
+      "Item.Caliber.762mm": 0.3,
+      "Item.Caliber.50Cal": 0.3,
+      "Item.Caliber.20x102mm": 0.135,
+      "Item.Caliber.30mm": 0.225,
+      "Item.Caliber.35x228mm": 0.135
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 239,
+      "Item.Caliber.762mm": 196,
+      "Item.Caliber.50Cal": 74,
+      "Item.Caliber.20x102mm": 247,
+      "Item.Caliber.30mm": 89,
+      "Item.Caliber.35x228mm": 247
+     }
+    },
+    {
+     "slot": "CC_Tyre_1",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Right.Front",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Right.Front",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.3,
+      "Item.Caliber.762mm": 0.3,
+      "Item.Caliber.50Cal": 0.3,
+      "Item.Caliber.20x102mm": 0.135,
+      "Item.Caliber.30mm": 0.225,
+      "Item.Caliber.35x228mm": 0.135
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 239,
+      "Item.Caliber.762mm": 196,
+      "Item.Caliber.50Cal": 74,
+      "Item.Caliber.20x102mm": 247,
+      "Item.Caliber.30mm": 89,
+      "Item.Caliber.35x228mm": 247
+     }
+    },
+    {
+     "slot": "CC_Tyre_2",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Left.Rear",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Left.Rear",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.3,
+      "Item.Caliber.762mm": 0.3,
+      "Item.Caliber.50Cal": 0.3,
+      "Item.Caliber.20x102mm": 0.135,
+      "Item.Caliber.30mm": 0.225,
+      "Item.Caliber.35x228mm": 0.135
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 239,
+      "Item.Caliber.762mm": 196,
+      "Item.Caliber.50Cal": 74,
+      "Item.Caliber.20x102mm": 247,
+      "Item.Caliber.30mm": 89,
+      "Item.Caliber.35x228mm": 247
+     }
+    },
+    {
+     "slot": "CC_Tyre_3",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Right.Rear",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Right.Rear",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.3,
+      "Item.Caliber.762mm": 0.3,
+      "Item.Caliber.50Cal": 0.3,
+      "Item.Caliber.20x102mm": 0.135,
+      "Item.Caliber.30mm": 0.225,
+      "Item.Caliber.35x228mm": 0.135
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 239,
+      "Item.Caliber.762mm": 196,
+      "Item.Caliber.50Cal": 74,
+      "Item.Caliber.20x102mm": 247,
+      "Item.Caliber.30mm": 89,
+      "Item.Caliber.35x228mm": 247
+     }
+    },
+    {
+     "slot": "CC_Wheel_0",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Left.Front",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Left.Front",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.3,
+      "Item.Caliber.762mm": 0.3,
+      "Item.Caliber.50Cal": 0.3,
+      "Item.Caliber.20x102mm": 0.135,
+      "Item.Caliber.30mm": 0.225,
+      "Item.Caliber.35x228mm": 0.135
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 239,
+      "Item.Caliber.762mm": 196,
+      "Item.Caliber.50Cal": 74,
+      "Item.Caliber.20x102mm": 247,
+      "Item.Caliber.30mm": 89,
+      "Item.Caliber.35x228mm": 247
+     }
+    },
+    {
+     "slot": "CC_Wheel_1",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Right.Front",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Right.Front",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.3,
+      "Item.Caliber.762mm": 0.3,
+      "Item.Caliber.50Cal": 0.3,
+      "Item.Caliber.20x102mm": 0.135,
+      "Item.Caliber.30mm": 0.225,
+      "Item.Caliber.35x228mm": 0.135
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 239,
+      "Item.Caliber.762mm": 196,
+      "Item.Caliber.50Cal": 74,
+      "Item.Caliber.20x102mm": 247,
+      "Item.Caliber.30mm": 89,
+      "Item.Caliber.35x228mm": 247
+     }
+    },
+    {
+     "slot": "CC_Wheel_2",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Left.Rear",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Left.Rear",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.3,
+      "Item.Caliber.762mm": 0.3,
+      "Item.Caliber.50Cal": 0.3,
+      "Item.Caliber.20x102mm": 0.135,
+      "Item.Caliber.30mm": 0.225,
+      "Item.Caliber.35x228mm": 0.135
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 239,
+      "Item.Caliber.762mm": 196,
+      "Item.Caliber.50Cal": 74,
+      "Item.Caliber.20x102mm": 247,
+      "Item.Caliber.30mm": 89,
+      "Item.Caliber.35x228mm": 247
+     }
+    },
+    {
+     "slot": "CC_Wheel_3",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Right.Rear",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Right.Rear",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.3,
+      "Item.Caliber.762mm": 0.3,
+      "Item.Caliber.50Cal": 0.3,
+      "Item.Caliber.20x102mm": 0.135,
+      "Item.Caliber.30mm": 0.225,
+      "Item.Caliber.35x228mm": 0.135
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 239,
+      "Item.Caliber.762mm": 196,
+      "Item.Caliber.50Cal": 74,
+      "Item.Caliber.20x102mm": 247,
+      "Item.Caliber.30mm": 89,
+      "Item.Caliber.35x228mm": 247
+     }
+    },
+    {
+     "slot": "(default)",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 500.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.02,
+      "Item.Caliber.762mm": 0.02,
+      "Item.Caliber.50Cal": 0.02,
+      "Item.Caliber.20x102mm": 0.135,
+      "Item.Caliber.30mm": 0.225,
+      "Item.Caliber.35x228mm": 0.135
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 893,
+      "Item.Caliber.762mm": 736,
+      "Item.Caliber.50Cal": 278,
+      "Item.Caliber.20x102mm": 62,
+      "Item.Caliber.30mm": 23,
+      "Item.Caliber.35x228mm": 62
+     }
+    }
+   ]
+  },
+  {
+   "id": "land-wheeled-dunebuggy",
+   "damage_row": "Meta.Damage.Vehicle.Land.Wheeled.DuneBuggy",
+   "variants": [
+    "WHL_06_DuneBuggy_Default"
+   ],
+   "main_health": 400.0,
+   "models": [
+    {
+     "variants": [
+      "WHL_06_DuneBuggy_Default"
+     ],
+     "path": "assets/models/vehicles/land-wheeled-dunebuggy.glb",
+     "notes": [],
+     "centres": [
+      [
+       -0.0288,
+       1.1554,
+       -1.9291
+      ],
+      [
+       -0.0086,
+       0.7359,
+       -1.7332
+      ],
+      [
+       1.1141,
+       0.4491,
+       1.8069
+      ],
+      [
+       -1.114,
+       0.4491,
+       1.8069
+      ],
+      [
+       1.1342,
+       0.4449,
+       -1.4158
+      ],
+      [
+       -1.1346,
+       0.4448,
+       -1.4145
+      ],
+      [
+       1.1141,
+       0.4491,
+       1.8069
+      ],
+      [
+       -1.114,
+       0.4491,
+       1.8069
+      ],
+      [
+       1.1342,
+       0.4449,
+       -1.4158
+      ],
+      [
+       -1.1346,
+       0.4448,
+       -1.4145
+      ],
+      null
+     ]
+    }
+   ],
+   "slots": [
+    {
+     "slot": "CC_Engine",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 400.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.05,
+      "Item.Caliber.762mm": 0.05,
+      "Item.Caliber.50Cal": 0.05,
+      "Item.Caliber.20x102mm": 0.25,
+      "Item.Caliber.30mm": 0.4,
+      "Item.Caliber.35x228mm": 0.35
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 286,
+      "Item.Caliber.762mm": 236,
+      "Item.Caliber.50Cal": 89,
+      "Item.Caliber.20x102mm": 27,
+      "Item.Caliber.30mm": 10,
+      "Item.Caliber.35x228mm": 20
+     }
+    },
+    {
+     "slot": "CC_FuelTank",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.FuelTank",
+     "max_health": 300.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.FuelTank",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.3,
+      "Item.Caliber.762mm": 0.3,
+      "Item.Caliber.50Cal": 0.3,
+      "Item.Caliber.20x102mm": 0.25,
+      "Item.Caliber.30mm": 0.4,
+      "Item.Caliber.35x228mm": 0.35
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 84,
+      "Item.Caliber.762mm": 69,
+      "Item.Caliber.50Cal": 26,
+      "Item.Caliber.20x102mm": 47,
+      "Item.Caliber.30mm": 18,
+      "Item.Caliber.35x228mm": 34
+     }
+    },
+    {
+     "slot": "CC_Tyre_0",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Left.Front",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Left.Front",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.375,
+      "Item.Caliber.762mm": 0.375,
+      "Item.Caliber.50Cal": 0.375,
+      "Item.Caliber.20x102mm": 0.25,
+      "Item.Caliber.30mm": 0.4,
+      "Item.Caliber.35x228mm": 0.35
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 153,
+      "Item.Caliber.762mm": 126,
+      "Item.Caliber.50Cal": 48,
+      "Item.Caliber.20x102mm": 107,
+      "Item.Caliber.30mm": 40,
+      "Item.Caliber.35x228mm": 77
+     }
+    },
+    {
+     "slot": "CC_Tyre_1",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Right.Front",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Right.Front",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.375,
+      "Item.Caliber.762mm": 0.375,
+      "Item.Caliber.50Cal": 0.375,
+      "Item.Caliber.20x102mm": 0.25,
+      "Item.Caliber.30mm": 0.4,
+      "Item.Caliber.35x228mm": 0.35
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 153,
+      "Item.Caliber.762mm": 126,
+      "Item.Caliber.50Cal": 48,
+      "Item.Caliber.20x102mm": 107,
+      "Item.Caliber.30mm": 40,
+      "Item.Caliber.35x228mm": 77
+     }
+    },
+    {
+     "slot": "CC_Tyre_2",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Left.Rear",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Left.Rear",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.375,
+      "Item.Caliber.762mm": 0.375,
+      "Item.Caliber.50Cal": 0.375,
+      "Item.Caliber.20x102mm": 0.25,
+      "Item.Caliber.30mm": 0.4,
+      "Item.Caliber.35x228mm": 0.35
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 153,
+      "Item.Caliber.762mm": 126,
+      "Item.Caliber.50Cal": 48,
+      "Item.Caliber.20x102mm": 107,
+      "Item.Caliber.30mm": 40,
+      "Item.Caliber.35x228mm": 77
+     }
+    },
+    {
+     "slot": "CC_Tyre_3",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Right.Rear",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Right.Rear",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.375,
+      "Item.Caliber.762mm": 0.375,
+      "Item.Caliber.50Cal": 0.375,
+      "Item.Caliber.20x102mm": 0.25,
+      "Item.Caliber.30mm": 0.4,
+      "Item.Caliber.35x228mm": 0.35
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 153,
+      "Item.Caliber.762mm": 126,
+      "Item.Caliber.50Cal": 48,
+      "Item.Caliber.20x102mm": 107,
+      "Item.Caliber.30mm": 40,
+      "Item.Caliber.35x228mm": 77
+     }
+    },
+    {
+     "slot": "CC_Wheel_0",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Left.Front",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Left.Front",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.375,
+      "Item.Caliber.762mm": 0.375,
+      "Item.Caliber.50Cal": 0.375,
+      "Item.Caliber.20x102mm": 0.25,
+      "Item.Caliber.30mm": 0.4,
+      "Item.Caliber.35x228mm": 0.35
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 153,
+      "Item.Caliber.762mm": 126,
+      "Item.Caliber.50Cal": 48,
+      "Item.Caliber.20x102mm": 107,
+      "Item.Caliber.30mm": 40,
+      "Item.Caliber.35x228mm": 77
+     }
+    },
+    {
+     "slot": "CC_Wheel_1",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Right.Front",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Right.Front",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.375,
+      "Item.Caliber.762mm": 0.375,
+      "Item.Caliber.50Cal": 0.375,
+      "Item.Caliber.20x102mm": 0.25,
+      "Item.Caliber.30mm": 0.4,
+      "Item.Caliber.35x228mm": 0.35
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 153,
+      "Item.Caliber.762mm": 126,
+      "Item.Caliber.50Cal": 48,
+      "Item.Caliber.20x102mm": 107,
+      "Item.Caliber.30mm": 40,
+      "Item.Caliber.35x228mm": 77
+     }
+    },
+    {
+     "slot": "CC_Wheel_2",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Left.Rear",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Left.Rear",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.375,
+      "Item.Caliber.762mm": 0.375,
+      "Item.Caliber.50Cal": 0.375,
+      "Item.Caliber.20x102mm": 0.25,
+      "Item.Caliber.30mm": 0.4,
+      "Item.Caliber.35x228mm": 0.35
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 153,
+      "Item.Caliber.762mm": 126,
+      "Item.Caliber.50Cal": 48,
+      "Item.Caliber.20x102mm": 107,
+      "Item.Caliber.30mm": 40,
+      "Item.Caliber.35x228mm": 77
+     }
+    },
+    {
+     "slot": "CC_Wheel_3",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Right.Rear",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Right.Rear",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.375,
+      "Item.Caliber.762mm": 0.375,
+      "Item.Caliber.50Cal": 0.375,
+      "Item.Caliber.20x102mm": 0.25,
+      "Item.Caliber.30mm": 0.4,
+      "Item.Caliber.35x228mm": 0.35
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 153,
+      "Item.Caliber.762mm": 126,
+      "Item.Caliber.50Cal": 48,
+      "Item.Caliber.20x102mm": 107,
+      "Item.Caliber.30mm": 40,
+      "Item.Caliber.35x228mm": 77
+     }
+    },
+    {
+     "slot": "(default)",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 400.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.05,
+      "Item.Caliber.762mm": 0.05,
+      "Item.Caliber.50Cal": 0.05,
+      "Item.Caliber.20x102mm": 0.25,
+      "Item.Caliber.30mm": 0.4,
+      "Item.Caliber.35x228mm": 0.35
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 286,
+      "Item.Caliber.762mm": 236,
+      "Item.Caliber.50Cal": 89,
+      "Item.Caliber.20x102mm": 27,
+      "Item.Caliber.30mm": 10,
+      "Item.Caliber.35x228mm": 20
+     }
+    }
+   ]
+  },
+  {
+   "id": "land-wheeled-ural",
+   "damage_row": "Meta.Damage.Vehicle.Land.Wheeled.Ural",
+   "variants": [
+    "WHL_07_Battle",
+    "WHL_07_Default",
+    "WHL_07_ArmouredBattle"
+   ],
+   "main_health": 700.0,
+   "models": [
+    {
+     "variants": [
+      "WHL_07_Battle"
+     ],
+     "path": "assets/models/vehicles/land-wheeled-ural.glb",
+     "notes": [],
+     "centres": [
+      [
+       0.0099,
+       1.4011,
+       2.5884
+      ],
+      [
+       -0.0,
+       2.4087,
+       -1.9097
+      ],
+      [
+       0.8273,
+       1.0455,
+       0.209
+      ],
+      [
+       1.2635,
+       0.6828,
+       2.6512
+      ],
+      [
+       -1.2635,
+       0.6828,
+       2.6512
+      ],
+      [
+       1.2317,
+       0.69,
+       -3.019
+      ],
+      [
+       -1.2278,
+       0.6938,
+       -3.0152
+      ],
+      [
+       1.2317,
+       0.6895,
+       -1.4613
+      ],
+      [
+       -1.2222,
+       0.6861,
+       -1.4553
+      ],
+      [
+       1.2545,
+       0.6828,
+       2.6512
+      ],
+      [
+       -1.2545,
+       0.6828,
+       2.6512
+      ],
+      [
+       1.2227,
+       0.69,
+       -3.019
+      ],
+      [
+       -1.2188,
+       0.6938,
+       -3.0152
+      ],
+      [
+       1.2227,
+       0.6895,
+       -1.4613
+      ],
+      [
+       -1.2132,
+       0.6861,
+       -1.4553
+      ],
+      null
+     ]
+    },
+    {
+     "variants": [
+      "WHL_07_Default"
+     ],
+     "path": "assets/models/vehicles/land-wheeled-ural--whl-07-default.glb",
+     "notes": [],
+     "centres": [
+      [
+       0.0099,
+       1.4011,
+       2.5884
+      ],
+      [
+       -0.0,
+       1.9301,
+       -1.9097
+      ],
+      [
+       0.8273,
+       1.0455,
+       0.209
+      ],
+      [
+       1.2635,
+       0.6828,
+       2.6512
+      ],
+      [
+       -1.2635,
+       0.6828,
+       2.6512
+      ],
+      [
+       1.2317,
+       0.69,
+       -3.019
+      ],
+      [
+       -1.2278,
+       0.6938,
+       -3.0152
+      ],
+      [
+       1.2317,
+       0.6895,
+       -1.4613
+      ],
+      [
+       -1.2222,
+       0.6861,
+       -1.4553
+      ],
+      [
+       1.2545,
+       0.6828,
+       2.6512
+      ],
+      [
+       -1.2545,
+       0.6828,
+       2.6512
+      ],
+      [
+       1.2227,
+       0.69,
+       -3.019
+      ],
+      [
+       -1.2188,
+       0.6938,
+       -3.0152
+      ],
+      [
+       1.2227,
+       0.6895,
+       -1.4613
+      ],
+      [
+       -1.2132,
+       0.6861,
+       -1.4553
+      ],
+      null
+     ]
+    },
+    {
+     "variants": [
+      "WHL_07_ArmouredBattle"
+     ],
+     "path": "assets/models/vehicles/land-wheeled-ural--whl-07-armouredbattle.glb",
+     "notes": [],
+     "centres": [
+      [
+       0.0099,
+       1.4011,
+       2.5884
+      ],
+      [
+       -0.0,
+       2.3263,
+       -0.1363
+      ],
+      [
+       0.8273,
+       1.0455,
+       0.209
+      ],
+      [
+       1.2635,
+       0.6828,
+       2.6512
+      ],
+      [
+       -1.2635,
+       0.6828,
+       2.6512
+      ],
+      [
+       1.2317,
+       0.69,
+       -3.019
+      ],
+      [
+       -1.2278,
+       0.6938,
+       -3.0152
+      ],
+      [
+       1.2317,
+       0.6895,
+       -1.4613
+      ],
+      [
+       -1.2222,
+       0.6861,
+       -1.4553
+      ],
+      [
+       1.2545,
+       0.6828,
+       2.6512
+      ],
+      [
+       -1.2545,
+       0.6828,
+       2.6512
+      ],
+      [
+       1.2227,
+       0.69,
+       -3.019
+      ],
+      [
+       -1.2188,
+       0.6938,
+       -3.0152
+      ],
+      [
+       1.2227,
+       0.6895,
+       -1.4613
+      ],
+      [
+       -1.2132,
+       0.6861,
+       -1.4553
+      ],
+      null
+     ]
+    }
+   ],
+   "slots": [
+    {
+     "slot": "CC_Engine",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 700.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.025,
+      "Item.Caliber.762mm": 0.025,
+      "Item.Caliber.50Cal": 0.025,
+      "Item.Caliber.20x102mm": 0.125,
+      "Item.Caliber.30mm": 0.6,
+      "Item.Caliber.35x228mm": 0.125
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 1000,
+      "Item.Caliber.762mm": 824,
+      "Item.Caliber.50Cal": 312,
+      "Item.Caliber.20x102mm": 94,
+      "Item.Caliber.30mm": 12,
+      "Item.Caliber.35x228mm": 94
+     }
+    },
+    {
+     "slot": "CC_Flatbed",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.Body.ModerateArea",
+     "max_health": 1.0,
+     "hit_location": null,
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.35,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.05,
+      "Item.Caliber.762mm": 0.05,
+      "Item.Caliber.50Cal": 0.05,
+      "Item.Caliber.20x102mm": 0.125,
+      "Item.Caliber.30mm": 0.6,
+      "Item.Caliber.35x228mm": 0.125
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 1429,
+      "Item.Caliber.762mm": 1177,
+      "Item.Caliber.50Cal": 445,
+      "Item.Caliber.20x102mm": 267,
+      "Item.Caliber.30mm": 33,
+      "Item.Caliber.35x228mm": 267
+     }
+    },
+    {
+     "slot": "CC_FuelTank",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.FuelTank",
+     "max_health": 400.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.FuelTank",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 1.0,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.225,
+      "Item.Caliber.762mm": 0.225,
+      "Item.Caliber.50Cal": 0.225,
+      "Item.Caliber.20x102mm": 0.125,
+      "Item.Caliber.30mm": 0.6,
+      "Item.Caliber.35x228mm": 0.125
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 175,
+      "Item.Caliber.762mm": 144,
+      "Item.Caliber.50Cal": 55,
+      "Item.Caliber.20x102mm": 147,
+      "Item.Caliber.30mm": 19,
+      "Item.Caliber.35x228mm": 147
+     }
+    },
+    {
+     "slot": "CC_Tyre_0",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Left.Front",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Left.Front",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.225,
+      "Item.Caliber.762mm": 0.225,
+      "Item.Caliber.50Cal": 0.225,
+      "Item.Caliber.20x102mm": 0.125,
+      "Item.Caliber.30mm": 0.6,
+      "Item.Caliber.35x228mm": 0.125
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 445,
+      "Item.Caliber.762mm": 366,
+      "Item.Caliber.50Cal": 139,
+      "Item.Caliber.20x102mm": 373,
+      "Item.Caliber.30mm": 47,
+      "Item.Caliber.35x228mm": 373
+     }
+    },
+    {
+     "slot": "CC_Tyre_1",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Right.Front",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Right.Front",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.225,
+      "Item.Caliber.762mm": 0.225,
+      "Item.Caliber.50Cal": 0.225,
+      "Item.Caliber.20x102mm": 0.125,
+      "Item.Caliber.30mm": 0.6,
+      "Item.Caliber.35x228mm": 0.125
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 445,
+      "Item.Caliber.762mm": 366,
+      "Item.Caliber.50Cal": 139,
+      "Item.Caliber.20x102mm": 373,
+      "Item.Caliber.30mm": 47,
+      "Item.Caliber.35x228mm": 373
+     }
+    },
+    {
+     "slot": "CC_Tyre_2",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Left.Rear",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Left.Rear",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.225,
+      "Item.Caliber.762mm": 0.225,
+      "Item.Caliber.50Cal": 0.225,
+      "Item.Caliber.20x102mm": 0.125,
+      "Item.Caliber.30mm": 0.6,
+      "Item.Caliber.35x228mm": 0.125
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 445,
+      "Item.Caliber.762mm": 366,
+      "Item.Caliber.50Cal": 139,
+      "Item.Caliber.20x102mm": 373,
+      "Item.Caliber.30mm": 47,
+      "Item.Caliber.35x228mm": 373
+     }
+    },
+    {
+     "slot": "CC_Tyre_3",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Right.Rear",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Right.Rear",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.225,
+      "Item.Caliber.762mm": 0.225,
+      "Item.Caliber.50Cal": 0.225,
+      "Item.Caliber.20x102mm": 0.125,
+      "Item.Caliber.30mm": 0.6,
+      "Item.Caliber.35x228mm": 0.125
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 445,
+      "Item.Caliber.762mm": 366,
+      "Item.Caliber.50Cal": 139,
+      "Item.Caliber.20x102mm": 373,
+      "Item.Caliber.30mm": 47,
+      "Item.Caliber.35x228mm": 373
+     }
+    },
+    {
+     "slot": "CC_Tyre_4",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Left.Middle",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Left.Middle",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.225,
+      "Item.Caliber.762mm": 0.225,
+      "Item.Caliber.50Cal": 0.225,
+      "Item.Caliber.20x102mm": 0.125,
+      "Item.Caliber.30mm": 0.6,
+      "Item.Caliber.35x228mm": 0.125
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 445,
+      "Item.Caliber.762mm": 366,
+      "Item.Caliber.50Cal": 139,
+      "Item.Caliber.20x102mm": 373,
+      "Item.Caliber.30mm": 47,
+      "Item.Caliber.35x228mm": 373
+     }
+    },
+    {
+     "slot": "CC_Tyre_5",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Right.Middle",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Right.Middle",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.225,
+      "Item.Caliber.762mm": 0.225,
+      "Item.Caliber.50Cal": 0.225,
+      "Item.Caliber.20x102mm": 0.125,
+      "Item.Caliber.30mm": 0.6,
+      "Item.Caliber.35x228mm": 0.125
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 445,
+      "Item.Caliber.762mm": 366,
+      "Item.Caliber.50Cal": 139,
+      "Item.Caliber.20x102mm": 373,
+      "Item.Caliber.30mm": 47,
+      "Item.Caliber.35x228mm": 373
+     }
+    },
+    {
+     "slot": "CC_Wheel_0",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Left.Front",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Left.Front",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.225,
+      "Item.Caliber.762mm": 0.225,
+      "Item.Caliber.50Cal": 0.225,
+      "Item.Caliber.20x102mm": 0.125,
+      "Item.Caliber.30mm": 0.6,
+      "Item.Caliber.35x228mm": 0.125
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 445,
+      "Item.Caliber.762mm": 366,
+      "Item.Caliber.50Cal": 139,
+      "Item.Caliber.20x102mm": 373,
+      "Item.Caliber.30mm": 47,
+      "Item.Caliber.35x228mm": 373
+     }
+    },
+    {
+     "slot": "CC_Wheel_1",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Right.Front",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Right.Front",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.225,
+      "Item.Caliber.762mm": 0.225,
+      "Item.Caliber.50Cal": 0.225,
+      "Item.Caliber.20x102mm": 0.125,
+      "Item.Caliber.30mm": 0.6,
+      "Item.Caliber.35x228mm": 0.125
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 445,
+      "Item.Caliber.762mm": 366,
+      "Item.Caliber.50Cal": 139,
+      "Item.Caliber.20x102mm": 373,
+      "Item.Caliber.30mm": 47,
+      "Item.Caliber.35x228mm": 373
+     }
+    },
+    {
+     "slot": "CC_Wheel_2",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Left.Rear",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Left.Rear",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.225,
+      "Item.Caliber.762mm": 0.225,
+      "Item.Caliber.50Cal": 0.225,
+      "Item.Caliber.20x102mm": 0.125,
+      "Item.Caliber.30mm": 0.6,
+      "Item.Caliber.35x228mm": 0.125
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 445,
+      "Item.Caliber.762mm": 366,
+      "Item.Caliber.50Cal": 139,
+      "Item.Caliber.20x102mm": 373,
+      "Item.Caliber.30mm": 47,
+      "Item.Caliber.35x228mm": 373
+     }
+    },
+    {
+     "slot": "CC_Wheel_3",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Right.Rear",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Right.Rear",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.225,
+      "Item.Caliber.762mm": 0.225,
+      "Item.Caliber.50Cal": 0.225,
+      "Item.Caliber.20x102mm": 0.125,
+      "Item.Caliber.30mm": 0.6,
+      "Item.Caliber.35x228mm": 0.125
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 445,
+      "Item.Caliber.762mm": 366,
+      "Item.Caliber.50Cal": 139,
+      "Item.Caliber.20x102mm": 373,
+      "Item.Caliber.30mm": 47,
+      "Item.Caliber.35x228mm": 373
+     }
+    },
+    {
+     "slot": "CC_Wheel_4",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Left.Middle",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Left.Middle",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.225,
+      "Item.Caliber.762mm": 0.225,
+      "Item.Caliber.50Cal": 0.225,
+      "Item.Caliber.20x102mm": 0.125,
+      "Item.Caliber.30mm": 0.6,
+      "Item.Caliber.35x228mm": 0.125
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 445,
+      "Item.Caliber.762mm": 366,
+      "Item.Caliber.50Cal": 139,
+      "Item.Caliber.20x102mm": 373,
+      "Item.Caliber.30mm": 47,
+      "Item.Caliber.35x228mm": 373
+     }
+    },
+    {
+     "slot": "CC_Wheel_5",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Right.Middle",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Right.Middle",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.225,
+      "Item.Caliber.762mm": 0.225,
+      "Item.Caliber.50Cal": 0.225,
+      "Item.Caliber.20x102mm": 0.125,
+      "Item.Caliber.30mm": 0.6,
+      "Item.Caliber.35x228mm": 0.125
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 445,
+      "Item.Caliber.762mm": 366,
+      "Item.Caliber.50Cal": 139,
+      "Item.Caliber.20x102mm": 373,
+      "Item.Caliber.30mm": 47,
+      "Item.Caliber.35x228mm": 373
+     }
+    },
+    {
+     "slot": "(default)",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 700.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.025,
+      "Item.Caliber.762mm": 0.025,
+      "Item.Caliber.50Cal": 0.025,
+      "Item.Caliber.20x102mm": 0.125,
+      "Item.Caliber.30mm": 0.6,
+      "Item.Caliber.35x228mm": 0.125
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 1000,
+      "Item.Caliber.762mm": 824,
+      "Item.Caliber.50Cal": 312,
+      "Item.Caliber.20x102mm": 94,
+      "Item.Caliber.30mm": 12,
+      "Item.Caliber.35x228mm": 94
+     }
+    }
+   ]
+  },
+  {
+   "id": "land-wheeled-whl-08-default",
+   "damage_row": "Meta.Damage.Vehicle.Land.Wheeled.WHL_08.Default",
+   "variants": [
+    "WHL_08_Default",
+    "WHL_08_RingTurret"
+   ],
+   "main_health": 500.0,
+   "models": [
+    {
+     "variants": [
+      "WHL_08_Default"
+     ],
+     "path": "assets/models/vehicles/land-wheeled-whl-08-default.glb",
+     "notes": [],
+     "centres": [
+      [
+       -0.011,
+       1.0123,
+       1.6574
+      ],
+      [
+       -0.7828,
+       0.7295,
+       -0.4356
+      ],
+      [
+       0.8204,
+       0.4218,
+       1.6719
+      ],
+      [
+       -0.8204,
+       0.4218,
+       1.6719
+      ],
+      [
+       0.8204,
+       0.4218,
+       -1.2493
+      ],
+      [
+       -0.8216,
+       0.4224,
+       -1.2493
+      ],
+      [
+       0.8204,
+       0.4218,
+       1.6719
+      ],
+      [
+       -0.8204,
+       0.4218,
+       1.6719
+      ],
+      [
+       0.8204,
+       0.4218,
+       -1.2493
+      ],
+      [
+       -0.8216,
+       0.4224,
+       -1.2493
+      ],
+      null
+     ]
+    },
+    {
+     "variants": [
+      "WHL_08_RingTurret"
+     ],
+     "path": "assets/models/vehicles/land-wheeled-whl-08-default--whl-08-ringturret.glb",
+     "notes": [
+      "The turret housing's collision mesh (CC_WHL_08_TurretHousing) is authored in vehicle space, but the data attaches it at the turret socket like a socket-local mesh, so its hitbox sits about 2 m above the roof. Shown where the data places it; whether the game corrects this is not traced."
+     ],
+     "centres": [
+      [
+       -0.011,
+       1.0123,
+       1.6574
+      ],
+      [
+       -0.7828,
+       0.7295,
+       -0.4356
+      ],
+      [
+       0.8204,
+       0.4218,
+       1.6719
+      ],
+      [
+       -0.8204,
+       0.4218,
+       1.6719
+      ],
+      [
+       0.8204,
+       0.4218,
+       -1.2493
+      ],
+      [
+       -0.8216,
+       0.4224,
+       -1.2493
+      ],
+      [
+       0.8204,
+       0.4218,
+       1.6719
+      ],
+      [
+       -0.8204,
+       0.4218,
+       1.6719
+      ],
+      [
+       0.8204,
+       0.4218,
+       -1.2493
+      ],
+      [
+       -0.8216,
+       0.4224,
+       -1.2493
+      ],
+      null
+     ]
+    }
+   ],
+   "slots": [
+    {
+     "slot": "CC_Engine",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 500.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.025,
+      "Item.Caliber.762mm": 0.025,
+      "Item.Caliber.50Cal": 0.025,
+      "Item.Caliber.20x102mm": 0.16,
+      "Item.Caliber.30mm": 0.4,
+      "Item.Caliber.35x228mm": 0.315
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 715,
+      "Item.Caliber.762mm": 589,
+      "Item.Caliber.50Cal": 223,
+      "Item.Caliber.20x102mm": 53,
+      "Item.Caliber.30mm": 13,
+      "Item.Caliber.35x228mm": 27
+     }
+    },
+    {
+     "slot": "CC_FuelTank",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health.FuelTank",
+     "max_health": 400.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.FuelTank",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.2,
+      "Item.Caliber.762mm": 0.2,
+      "Item.Caliber.50Cal": 0.2,
+      "Item.Caliber.20x102mm": 0.16,
+      "Item.Caliber.30mm": 0.4,
+      "Item.Caliber.35x228mm": 0.315
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": null,
+      "Item.Caliber.762mm": null,
+      "Item.Caliber.50Cal": null,
+      "Item.Caliber.20x102mm": null,
+      "Item.Caliber.30mm": null,
+      "Item.Caliber.35x228mm": null
+     }
+    },
+    {
+     "slot": "CC_Tyre_0",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Left.Front",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Left.Front",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.35,
+      "Item.Caliber.762mm": 0.35,
+      "Item.Caliber.50Cal": 0.35,
+      "Item.Caliber.20x102mm": 0.16,
+      "Item.Caliber.30mm": 0.4,
+      "Item.Caliber.35x228mm": 0.315
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 204,
+      "Item.Caliber.762mm": 168,
+      "Item.Caliber.50Cal": 63,
+      "Item.Caliber.20x102mm": 208,
+      "Item.Caliber.30mm": 50,
+      "Item.Caliber.35x228mm": 106
+     }
+    },
+    {
+     "slot": "CC_Tyre_1",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Right.Front",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Right.Front",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.35,
+      "Item.Caliber.762mm": 0.35,
+      "Item.Caliber.50Cal": 0.35,
+      "Item.Caliber.20x102mm": 0.16,
+      "Item.Caliber.30mm": 0.4,
+      "Item.Caliber.35x228mm": 0.315
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 204,
+      "Item.Caliber.762mm": 168,
+      "Item.Caliber.50Cal": 63,
+      "Item.Caliber.20x102mm": 208,
+      "Item.Caliber.30mm": 50,
+      "Item.Caliber.35x228mm": 106
+     }
+    },
+    {
+     "slot": "CC_Tyre_2",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Left.Rear",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Left.Rear",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.35,
+      "Item.Caliber.762mm": 0.35,
+      "Item.Caliber.50Cal": 0.35,
+      "Item.Caliber.20x102mm": 0.16,
+      "Item.Caliber.30mm": 0.4,
+      "Item.Caliber.35x228mm": 0.315
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 204,
+      "Item.Caliber.762mm": 168,
+      "Item.Caliber.50Cal": 63,
+      "Item.Caliber.20x102mm": 208,
+      "Item.Caliber.30mm": 50,
+      "Item.Caliber.35x228mm": 106
+     }
+    },
+    {
+     "slot": "CC_Tyre_3",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Right.Rear",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Right.Rear",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.35,
+      "Item.Caliber.762mm": 0.35,
+      "Item.Caliber.50Cal": 0.35,
+      "Item.Caliber.20x102mm": 0.16,
+      "Item.Caliber.30mm": 0.4,
+      "Item.Caliber.35x228mm": 0.315
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 204,
+      "Item.Caliber.762mm": 168,
+      "Item.Caliber.50Cal": 63,
+      "Item.Caliber.20x102mm": 208,
+      "Item.Caliber.30mm": 50,
+      "Item.Caliber.35x228mm": 106
+     }
+    },
+    {
+     "slot": "CC_Wheel_0",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Left.Front",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Left.Front",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.35,
+      "Item.Caliber.762mm": 0.35,
+      "Item.Caliber.50Cal": 0.35,
+      "Item.Caliber.20x102mm": 0.16,
+      "Item.Caliber.30mm": 0.4,
+      "Item.Caliber.35x228mm": 0.315
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 204,
+      "Item.Caliber.762mm": 168,
+      "Item.Caliber.50Cal": 63,
+      "Item.Caliber.20x102mm": 208,
+      "Item.Caliber.30mm": 50,
+      "Item.Caliber.35x228mm": 106
+     }
+    },
+    {
+     "slot": "CC_Wheel_1",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Right.Front",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Right.Front",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.35,
+      "Item.Caliber.762mm": 0.35,
+      "Item.Caliber.50Cal": 0.35,
+      "Item.Caliber.20x102mm": 0.16,
+      "Item.Caliber.30mm": 0.4,
+      "Item.Caliber.35x228mm": 0.315
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 204,
+      "Item.Caliber.762mm": 168,
+      "Item.Caliber.50Cal": 63,
+      "Item.Caliber.20x102mm": 208,
+      "Item.Caliber.30mm": 50,
+      "Item.Caliber.35x228mm": 106
+     }
+    },
+    {
+     "slot": "CC_Wheel_2",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Left.Rear",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Left.Rear",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.35,
+      "Item.Caliber.762mm": 0.35,
+      "Item.Caliber.50Cal": 0.35,
+      "Item.Caliber.20x102mm": 0.16,
+      "Item.Caliber.30mm": 0.4,
+      "Item.Caliber.35x228mm": 0.315
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 204,
+      "Item.Caliber.762mm": 168,
+      "Item.Caliber.50Cal": 63,
+      "Item.Caliber.20x102mm": 208,
+      "Item.Caliber.30mm": 50,
+      "Item.Caliber.35x228mm": 106
+     }
+    },
+    {
+     "slot": "CC_Wheel_3",
+     "group": "ComplexSurface.Group.Wheel",
+     "section": "Attribute.Gameplay.Health.Wheel.Right.Rear",
+     "max_health": 75.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.Wheel.Right.Rear",
+     "unreachable": null,
+     "routing": {
+      "pre": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": false
+       }
+      ],
+      "post": [
+       {
+        "to": "Attribute.Gameplay.Health",
+        "scalar": 0.25,
+        "only_when_depleted": true
+       }
+      ],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.35,
+      "Item.Caliber.762mm": 0.35,
+      "Item.Caliber.50Cal": 0.35,
+      "Item.Caliber.20x102mm": 0.16,
+      "Item.Caliber.30mm": 0.4,
+      "Item.Caliber.35x228mm": 0.315
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 204,
+      "Item.Caliber.762mm": 168,
+      "Item.Caliber.50Cal": 63,
+      "Item.Caliber.20x102mm": 208,
+      "Item.Caliber.30mm": 50,
+      "Item.Caliber.35x228mm": 106
+     }
+    },
+    {
+     "slot": "(default)",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 500.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.025,
+      "Item.Caliber.762mm": 0.025,
+      "Item.Caliber.50Cal": 0.025,
+      "Item.Caliber.20x102mm": 0.16,
+      "Item.Caliber.30mm": 0.4,
+      "Item.Caliber.35x228mm": 0.315
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 715,
+      "Item.Caliber.762mm": 589,
+      "Item.Caliber.50Cal": 223,
+      "Item.Caliber.20x102mm": 53,
+      "Item.Caliber.30mm": 13,
+      "Item.Caliber.35x228mm": 27
+     }
+    }
+   ]
+  }
+ ]
+}
