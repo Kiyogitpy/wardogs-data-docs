@@ -376,11 +376,11 @@ already gives the correct count.
 
 1. Every `0x` token in
    [`Wardogs_DamagePipeline_v2.md`](../../Wardogs_DamagePipeline_v2.md) at
-   `main` `e057d26` was extracted with a regular expression. Values below
-   `0x100000` are offsets, sizes or enum values and were dropped, as was
-   the flag `0x40000000`. That left **93 RVAs**. The table was first
-   built at `d560d33` (85 RVAs). Round 3's corrections added six and
-   round 4's two; none was dropped.
+   `349104e` (branch `r5/veh`) was extracted with a regular expression.
+   Values below `0x100000` are offsets, sizes or enum values and were
+   dropped, as was the flag `0x40000000`. That left **96 RVAs**. The
+   table was first built at `d560d33` (85 RVAs). Round 3's corrections
+   added six, round 4's two and round 5's three; none was dropped.
 2. Each RVA was tagged with the numbered section (`##`/`###` heading)
    that cites it.
 3. For each RVA, `corpus.sqlite` was queried read-only for:
@@ -401,7 +401,9 @@ already gives the correct count.
    upgraded `0x5236E50` from `unverified` to `[exe]`, and confirmed the
    two misaligned citations. The eight RVAs added after `d560d33` went
    to the same verifier in round 5, which confirmed their statuses and
-   the counts.
+   the counts. The three round-5 additions (`0x6C98290`, `0x6F2C450`,
+   `0x6F30E50`) are `corpus body` rows checked with `rva_status.py` at
+   `349104e`; their roles come from the round-5 ledger (r5 T3-8).
 
 The corpus part can be re-run with `python -I` from any directory:
 
@@ -426,7 +428,7 @@ The same query, with section and line numbers and the PE section, is
 [vehicle](vehicles.md) and [effects](effects.md) pages:
 
 ```text
-python -I _tools/rva_status.py Wardogs_DamagePipeline_v2.md --rev e057d26 --exe
+python -I _tools/rva_status.py Wardogs_DamagePipeline_v2.md --rev 349104e --exe
 ```
 
 Status key:
@@ -443,13 +445,13 @@ Status key:
 
 | Status | RVAs |
 |---|---:|
-| `corpus body` | 56 (4 of them cite or sit on the two misaligned rows) |
+| `corpus body` | 59 (4 of them cite or sit on the two misaligned rows) |
 | `[exe]` | 37 (30 code, 7 data) |
 | `GObjects` | 0 |
 | `unverified` | 0 |
-| **Total** | **93** |
+| **Total** | **96** |
 
-These are the RVAs DamagePipeline cites at `e057d26`. The eight cited
+These are the RVAs DamagePipeline cites at `349104e`. The eight cited
 after `d560d33` were checked the same way and are in the table:
 `0x6EF9450` and `0x6F08CE0` (the real entries behind the two misaligned
 rows, whose bodies they are), `0x6B8E100`, `0x6BB6160`, `0x6B17D20` and
@@ -465,7 +467,7 @@ offsets that sit next to these RVAs. Examples are the event's `Amount`
 
 ### Table
 
-Sections are DamagePipeline sections at `e057d26`. Rows marked "(data)"
+Sections are DamagePipeline sections at `349104e`. Rows marked "(data)"
 are not functions.
 
 | RVA | Role | Cited in | Verification status |
@@ -492,8 +494,8 @@ are not functions.
 | `0x6B81CE0` | Creates the `Attribute.Gameplay.Health` handle (`+0x140`) | §10 | `corpus body` |
 | `0x6B82520` | `UWDVitalityComponent` base damage: the health write | §10 | `corpus body` |
 | `0x6B83270` | Base health hook (`UWDVitalityComponent` slot 161): clamp to `[0, MaxHealth]` | §10 | `corpus body` (a leaf with no `.pdata` entry) |
-| `0x6B8E100` | Projectile instance constructor; sets the `+0x101` byte to 1 | §7.6 | `corpus body` |
-| `0x6B92900` | Back-blast source; calls `0x6F06EB0` | §1.1 | `corpus body` |
+| `0x6B8E100` | Projectile instance constructor; sets the `+0x101` byte to 1 and the empty ammo tag at `+0xF0` | §7.6, §7.9 | `corpus body` |
+| `0x6B92900` | Back-blast source; one if/else calls `0x6F042A0` or `0x6F06EB0` | §1.1, §9 | `corpus body` |
 | `0x6BB4D30` | Builds a WD damage event; used by every caller | §1.1 | `corpus body` |
 | `0x6BB5D20` | Requirement-container match | §1, §4 | `corpus body` |
 | `0x6BB5DC0` | `TSet::Emplace` | §11 | `corpus body` |
@@ -526,6 +528,7 @@ are not functions.
 | `0x6BBA900` | `GetProjectileStats(AmmoModifierTag)` | §7.6, §7.9 | `corpus body` |
 | `0x6C255B0` | Impact-speed scale | §7.6, §11 | `[exe]`: no functions row (r2 BE-4) |
 | `0x6C2A5F0` | `IWDDamageable` dispatch on the apply path | §1.1, §10 | `corpus body` |
+| `0x6C98290` | `IWDWeaponOwner` `+0x90` (ranged-weapon slot 192): builds `Meta.Damage.AmmoModifier.<type>` from the loaded round's item tag | §7.9, Change log | `corpus body`; [exe] interface table `0xB389AB8+0x90` (r5 T3-8, verifier-confirmed round 5) |
 | `0x6CA8730` | Explosive-actor caller of `ModifyDamage` | §1.1 | `corpus body` |
 | `0x6CAB030` | Explosive actors' slot 236; calls `0x6CA8730` | §1.1 | `corpus body` |
 | `0x6E6BD90` | `AWDMoverCharacter` / `AWDMoverPlayerCharacter` caller (slot 417 / 422), bool 1 | §1.1 | `corpus body` |
@@ -543,14 +546,16 @@ are not functions.
 | `0x6EFFD40` | Selects the first active damage system | §1 | `corpus body` |
 | `0x6F02EC0` | Native `UWDDamageSubsystem::ModifyDamage` | §1, §1.1 | `corpus body` |
 | `0x6F03F60` | Vehicle-supply-container caller | §1.1 | `corpus body` |
-| `0x6F042A0` | Unnamed caller | §1.1, §11 | `[exe]`: row status `failed` (call analysis failed); call at `0x6F0526C` |
+| `0x6F042A0` | Back-blast caller, second branch of `0x6B92900` | §1.1, §9, §11 | `[exe]`: row status `failed` (call analysis failed); call at `0x6F0526C` |
 | `0x6F06540` | Radial-damage caller | §1.1 | `corpus body` |
-| `0x6F06EB0` | Back-blast caller | §1.1 | `corpus body` |
+| `0x6F06EB0` | Back-blast caller | §1.1, §9 | `corpus body` |
 | `0x6F07C10` | Reflected `BP_DamageActor`; skips `ModifyDamage` | §1.1 | `corpus body` |
 | `0x6F08A60` | Reflected `exec_ModifyDamage` | §1, §1.1 | `corpus body` |
 | `0x6F08CDC` | Reflected `SimpleDamageActor` | §1.1 | `corpus body`, misaligned: the registered entry is `0x6F08CE0` |
 | `0x6F08CE0` | Registered entry of the reflected `SimpleDamageActor` (row `0x6F08CDC`) | §1.1, Change log | `corpus body`, misaligned: filed under row `0x6F08CDC` |
 | `0x6F09210` | Reflected `SimpleDamageActorWithInstigatorController` | §1.1 | `corpus body` |
+| `0x6F2C450` | Predicted projectile simulation: ammo tag from `FWDProjectileSimulationSetup.AmmoModifierTag` | §7.9 | `corpus body` (r5 O-8; the verifier accepted the text) |
+| `0x6F30E50` | Projectile spawn: copies the ammo tag from the spawn parameters (`+0x40`) to instance `+0xF0` | §7.9, Change log | `corpus body` (L22; r5 T3-8, verifier-confirmed round 5) |
 | `0x7635EA0` | Vehicle supply containers' slot 127; calls `0x6F03F60` | §1.1 | `corpus body` |
 | `0x76740F0` | Unnamed caller | §1.1 | `corpus body` |
 | `0x768ED20` | `UWDVehicleOperatorComponent` slot 161 caller | §1.1 | `corpus body` |
@@ -646,6 +651,7 @@ directories.
 | 2026-10-17 | This page | Merged the three notes; built the RVA status table (§3); found the two misaligned rows and corrected the call-site count |
 | 2026-10-17 | Round-3 corrections applied to DamagePipeline | Cites `0x6EF9450` and `0x6F08CE0`; §11 lists every body-less function; `RootDamageTag`, the `+0x101` byte, the two player-character stubs and the role-3 decay-pool cut added |
 | 2026-10-17 20:54 | Round-4 corrections (`e057d26`) | Cite the two vitality slot-161 clamps (`0x6B17D20`, `0x6B83270`); this table refreshed at `e057d26` (93 RVAs), with the six round-3 additions folded in |
+| 2026-10-17 | Round-5 corrections (`349104e`) | The ammo-tag writer `0x6F30E50`, the fire-path builder `0x6C98290` and the simulation path `0x6F2C450` (§7.9); back-blast branch question O-8; this table refreshed at `349104e` (96 RVAs) |
 
 ## 5. Open items
 
