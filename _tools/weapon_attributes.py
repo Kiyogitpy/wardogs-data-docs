@@ -5,11 +5,14 @@ weapon) with the stack scaling of §4.2 and the current-value formula of §4.4, 
 item data in data/ and the effect modifiers in assets/data/ge-values.json.
 
     python _tools/weapon_attributes.py --weapon ID_WEPN_037 [--with ID_X ...]
-        [--sight NAME] [--stance Stand|Crouch|Prone] [--bipod]
+        [--sight NAME] [--stance Stand|Crouch|Prone] [--bipod | --mounted]
     python _tools/weapon_attributes.py --write   # refresh the marked block in the page
 
 Without --with the weapon carries its default loadout. Each --with attachment goes into
-the first free sub-slot that accepts it, replacing the default item there.
+the first free sub-slot that accepts it, replacing the default item there. The sight
+defaults to the `SightsData` entry `S_Aim01` (Effects §7.1), or the first entry when an
+attachment has none. --mounted mounts the bipod (it implies unfolded): the unfolded lists are
+removed and the mounted lists apply instead.
 """
 import argparse
 import collections
@@ -31,9 +34,15 @@ BLOCK = re.compile(r"<!-- BEGIN weapon_attributes -->\r?\n.*?<!-- END weapon_att
 EXPORT = re.compile(r"^--- export:.*---\s*$", re.M)
 SKIP = re.compile(r"BarrelTest")  # vehicle barrel test items, as in recoil_table.py
 # FWDBipodAttachmentData +0x138 (unfolded, on the weapon) and +0x148 (unfolded, on the
-# character); the cooked names are obfuscated, the SDK gives the order.
+# character); the cooked names are obfuscated, the SDK gives the order. +0x158 / +0x168 are
+# the mounted lists, applied by the Blueprint action B_Action_MountBipod (Effects §7.1).
 BIPOD_WEAPON = "_aaabgocclgplfdmmfjefm_$E22B6FB53CC5945C$_$22$"
 BIPOD_CHARACTER = "_aaabpgfgnkcdbhhlgdhmb_$656DA23177B637C1$_$31$"
+MOUNTED_WEAPON = "MountedAppliedEffects"
+MOUNTED_CHARACTER = "MountedAppliedCharacterEffects"
+# The sight name the weapon starts with and returns to on every attachment change
+# (0x6C90DE0, 0x6C9DC7B; Effects §7.1).
+DEFAULT_SIGHT = "S_Aim01"
 STANCES = ("Stand", "Crouch", "Prone")
 EPS = 1e-8
 
@@ -92,7 +101,8 @@ class Item:
         self.attachment = ad is not None
         ad = ad or {}
         self.att_type = (ad.get("AttachmentType") or {}).get("TagName", "")
-        self.null_refs = sum(1 for k in ("AppliedEffects", "AppliedCharacterEffects", BIPOD_WEAPON, BIPOD_CHARACTER)
+        self.null_refs = sum(1 for k in ("AppliedEffects", "AppliedCharacterEffects", BIPOD_WEAPON, BIPOD_CHARACTER,
+                                       MOUNTED_WEAPON, MOUNTED_CHARACTER)
                              for r in ad.get(k, []) if not r)
         self.applied = [ge_name(r) for r in ad.get("AppliedEffects", []) if r]
         self.character = [ge_name(r) for r in ad.get("AppliedCharacterEffects", []) if r]
@@ -101,7 +111,12 @@ class Item:
         self.is_bipod = BIPOD_WEAPON in ad
         self.bipod_weapon = [ge_name(r) for r in ad.get(BIPOD_WEAPON, []) if r]
         self.bipod_character = [ge_name(r) for r in ad.get(BIPOD_CHARACTER, []) if r]
-        self.mounted = [ge_name(r) for r in ad.get("MountedAppliedEffects", []) if r]
+        self.mounted_weapon = [ge_name(r) for r in ad.get(MOUNTED_WEAPON, []) if r]
+        self.mounted_character = [ge_name(r) for r in ad.get(MOUNTED_CHARACTER, []) if r]
+
+    def default_sight(self):
+        """`S_Aim01` if the attachment has it, otherwise its first `SightsData` entry."""
+        return DEFAULT_SIGHT if DEFAULT_SIGHT in self.sights else next(iter(self.sights))
 
     def label(self):
         return f"{self.display} (`{self.asset}`)" if self.display else f"`{self.asset}`"
@@ -241,25 +256,32 @@ class Application:
         self.effect, self.stacks, self.source = effect, stacks, source
 
 
-def applications(data, loadout, sight=None, stance="Stand", bipod=False):
+def applications(data, loadout, sight=None, stance="Stand", bipod=False, mounted=False):
     """Weapon-side applications in the order used for the Override lists, and the character-side effects."""
     weapon_side, character_side, notes = [], [], []
     for _, it in loadout.attachments():
         for e in it.applied:
             weapon_side.append(Application(e, 1, it.asset))
         if it.sights:
-            name = sight if sight in it.sights else next(iter(it.sights))
+            name = sight if sight in it.sights else it.default_sight()
             if sight and sight not in it.sights:
-                notes.append(f"{it.asset} has no sight {sight!r}; used {name!r}")
+                notes.append(f"`{it.asset}` has no sight `{sight}`; used `{name}`")
+            elif not sight and name != DEFAULT_SIGHT:
+                notes.append(f"`{it.asset}` has no `{DEFAULT_SIGHT}` sight; used its first entry `{name}`")
             for e in it.sights[name]:
                 weapon_side.append(Application(e, 1, f"{it.asset} sight {name}"))
-        if bipod and it.is_bipod:
+        if mounted and it.is_bipod:
+            # Mounted: 0x6C9F6E0 removes the unfolded lists; B_Action_MountBipod applies these.
+            for e in it.mounted_weapon:
+                weapon_side.append(Application(e, 1, f"{it.asset} bipod mounted"))
+            character_side += [(e, f"{it.asset} bipod mounted") for e in it.mounted_character]
+        elif bipod and it.is_bipod:
             for e in it.bipod_weapon:
                 weapon_side.append(Application(e, 1, f"{it.asset} bipod unfolded"))
             character_side += [(e, f"{it.asset} bipod unfolded") for e in it.bipod_character]
         character_side += [(e, it.asset) for e in it.character]
-    if bipod and not any(it.is_bipod for _, it in loadout.attachments()):
-        notes.append("--bipod given but no bipod attachment is equipped")
+    if (bipod or mounted) and not any(it.is_bipod for _, it in loadout.attachments()):
+        notes.append(f"--{'mounted' if mounted else 'bipod'} given but no bipod attachment is equipped")
     for e, stacks, custom in loadout.weapon.stance.get(stance, []):
         weapon_side.append(Application(e, stacks, f"stance {stance}"))
         if custom:
@@ -380,9 +402,9 @@ def evaluate(data, weapon, apps):
     return collections.OrderedDict((a, result[a]) for a in contrib), flags
 
 
-def compute(data, weapon, extra=(), sight=None, stance="Stand", bipod=False):
+def compute(data, weapon, extra=(), sight=None, stance="Stand", bipod=False, mounted=False):
     loadout = Loadout(data, weapon, extra)
-    apps, char, notes = applications(data, loadout, sight, stance, bipod)
+    apps, char, notes = applications(data, loadout, sight, stance, bipod or mounted, mounted)
     attrs, flags = evaluate(data, weapon, apps)
     return loadout, apps, char, attrs, sorted(loadout.flags) + notes + flags
 
@@ -398,8 +420,9 @@ def cli(args):
     if weapon not in data.weapons:
         raise SystemExit(f"error: {weapon.asset} is not a weapon with DefaultAttributes")
     extra = [data.find(n) for n in args.with_ or []]
-    loadout, apps, char, attrs, flags = compute(data, weapon, extra, args.sight, args.stance, args.bipod)
-    print(f"{weapon.display} ({weapon.asset}), stance {args.stance}, bipod {'unfolded' if args.bipod else 'folded'}")
+    loadout, apps, char, attrs, flags = compute(data, weapon, extra, args.sight, args.stance, args.bipod, args.mounted)
+    state = "mounted" if args.mounted else "unfolded" if args.bipod else "folded"
+    print(f"{weapon.display} ({weapon.asset}), stance {args.stance}, bipod {state}")
     print("Loadout:")
     for tag, it in loadout.attachments():
         print(f"  {short_slot(tag):<12} {it.asset} ({it.display})")
@@ -503,10 +526,11 @@ def page(data):
         out.append("")
         lo = [f"{short_slot(t)}: `{it.asset}`" for t, it in loadout.attachments()]
         out.append("- **Loadout:** " + ("; ".join(lo) if lo else "no attachments") + ".")
-        sights = [(it, next(iter(it.sights))) for _, it in loadout.attachments() if it.sights]
+        sights = [(it, it.default_sight()) for _, it in loadout.attachments() if it.sights]
         if sights:
             out.append("- **Sight:** " + "; ".join(
-                f"`{it.asset}` `{name}`" + (f" (first of {len(it.sights)})" if len(it.sights) > 1 else "")
+                f"`{it.asset}` `{name}`" + (f" (of {len(it.sights)})" if len(it.sights) > 1 else "")
+                + ("" if name == DEFAULT_SIGHT else f" (no `{DEFAULT_SIGHT}`; first entry)")
                 for it, name in sights) + ".")
         st = w.stance.get("Stand")
         out.append("- **Stance (Stand):** " + (", ".join(f"`{e}`" + (f" ×{n}" if n != 1 else "") for e, n, _ in st)
@@ -533,7 +557,7 @@ def page(data):
     groups = collections.OrderedDict()
     orphans = []
     for it in sorted(data.attachments, key=lambda it: (it.att_type.lower(), it.asset.lower())):
-        side = it.applied or it.sights or it.bipod_weapon
+        side = it.applied or it.sights or it.bipod_weapon or it.mounted_weapon
         if not accepts_by[it.key]:
             if side or it.character:
                 orphans.append(it)
@@ -543,9 +567,11 @@ def page(data):
     out += ["## 3. Attachments", "",
             f"The {listed} attachment items at least one weapon accepts, grouped by `AttachmentType`. "
             "**On the weapon** lists the modifiers of `AppliedEffects`; **Sight** those of each "
-            "`SightsData` entry in data order; **Bipod unfolded** those of the unfolded list (`+0x138`). "
-            "**Character** names the effects that go to the character instead (`AppliedCharacterEffects`, and "
-            "the bipod's `+0x148` list). **Accepted by** lists the weapons with a sub-slot that accepts the item, "
+            "`SightsData` entry in data order; **Bipod unfolded** those of the unfolded list (`+0x138`); "
+            "**Bipod mounted** those of `MountedAppliedEffects` (`+0x158`), which replace the unfolded lists "
+            "while mounted. **Character** names the effects that go to the character instead "
+            "(`AppliedCharacterEffects`, the bipod's unfolded `+0x148` list and its mounted "
+            "`MountedAppliedCharacterEffects`, `+0x168`). **Accepted by** lists the weapons with a sub-slot that accepts the item, "
             "on the weapon itself or on an attachment it accepts (a muzzle on a barrel, an underbarrel on a "
             "handguard).", ""]
     for grp, items in groups.items():
@@ -559,7 +585,8 @@ def page(data):
                 parts.append(f"**Sight `{name}`:** " + (", ".join(compact(data, effs)) or "no effects"))
             if it.is_bipod:
                 parts.append("**Bipod unfolded:** " + (", ".join(compact(data, it.bipod_weapon)) or "no effects"))
-            char = it.character + it.bipod_character
+                parts.append("**Bipod mounted:** " + (", ".join(compact(data, it.mounted_weapon)) or "no effects"))
+            char = it.character + it.bipod_character + it.mounted_character
             ws = ", ".join(sorted(w.asset.replace("ID_", "") for w in accepts_by[it.key]))
             out.append(f"| {it.label()} | {'<br>'.join(parts) or '—'} | "
                        f"{', '.join(f'`{e}`' for e in char) or '—'} | {ws} |")
@@ -571,7 +598,11 @@ def page(data):
     multi = [it for it in data.attachments if len(it.sights) > 1]
     if multi:
         out.append("- **Several sights.** " + "; ".join(f"`{it.asset}` ({', '.join(it.sights)})" for it in multi)
-                   + ". §1 and §2 use the first entry; §3 lists each.")
+                   + f". §1 and §2 use `{DEFAULT_SIGHT}`, per Effects §7.1; §3 lists each.")
+    no_default = [it for it in data.attachments if it.sights and DEFAULT_SIGHT not in it.sights]
+    if no_default:
+        out.append(f"- **No `{DEFAULT_SIGHT}` sight** (the tool falls back to the first entry): " + "; ".join(
+            f"`{it.asset}` ({', '.join(it.sights)})" for it in no_default) + ".")
     if orphans:
         out.append("- **No weapon accepts these attachments** that carry effects: "
                    + ", ".join(f"`{it.asset}`" for it in orphans) + ".")
@@ -582,7 +613,7 @@ def page(data):
             "`AppliedEffects` and `AppliedCharacterEffects`" for it in dup) + ".")
     backed = collections.defaultdict(set)
     for it in data.attachments:
-        for e in it.applied + [e for effs in it.sights.values() for e in effs] + it.bipod_weapon:
+        for e in it.applied + [e for effs in it.sights.values() for e in effs] + it.bipod_weapon + it.mounted_weapon:
             if any(m["kind"] == "Attribute" for m in data.effects.get(e, {}).get("modifiers", [])):
                 backed[e].add(it.asset)
     in_default = sorted({w.asset for w in weapons for _, it in results[w.key][0].attachments()
@@ -642,9 +673,11 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("--weapon", help="weapon asset name (ID_WEPN_037) or ItemId")
     ap.add_argument("--with", dest="with_", nargs="+", metavar="ID", help="attachments to equip, in order")
-    ap.add_argument("--sight", help="SightsData entry to select (default: the first in data order)")
+    ap.add_argument("--sight", help=f"SightsData entry to select (default: {DEFAULT_SIGHT}, else the first entry)")
     ap.add_argument("--stance", choices=STANCES, default="Stand")
     ap.add_argument("--bipod", action="store_true", help="bipod unfolded (default folded)")
+    ap.add_argument("--mounted", action="store_true",
+                    help="bipod mounted (implies unfolded): the mounted lists replace the unfolded ones")
     ap.add_argument("--write", action="store_true", help=f"refresh the marked block in {os.path.basename(PAGE)}")
     args = ap.parse_args()
     if args.write:
