@@ -10,7 +10,11 @@ Assumptions, printed with the table: hostile alignment, FMJ ammo, a direct hit w
 ricochet or penetration, an unarmored target outside any vehicle, and no instigator
 tags. Entries that need instigator tags are counted as unknown instead of applied.
 
-    python _tools/infantry_damage.py            # markdown table on stdout
+    python _tools/infantry_damage.py            # per-location table (point blank)
+    python _tools/infantry_damage.py --falloff  # upper-torso damage by distance
+
+The distance curve's Time axis is centimetres: the native code evaluates it with the
+straight-line distance between shot origin and hit point in engine units.
 """
 import glob
 import json
@@ -114,9 +118,26 @@ def weapons():
         ref = re.search(r"WDWeaponStatsData'(DA_\w+_Stats)'", text)
         if not wtag or not ref or ref.group(1) not in stats:
             continue
-        cals = next((c for o in exports(stats[ref.group(1)]) for c in walk(o, "SupportedCaliber")), [])
-        out.append((os.path.basename(path)[3:-5], wtag, cals))
+        st = exports(stats[ref.group(1)])
+        cals = next((c for o in st for c in walk(o, "SupportedCaliber")), [])
+        use = next((b for o in st for b in walk(o, "bUseDistanceDamageFalloffCurve")), False)
+        curve = next((c for o in st for c in walk(o, "DistanceDamageFalloffCurve")), {})
+        keys = curve.get("EditorCurveData", {}).get("Keys", []) if use else []
+        out.append((os.path.basename(path)[3:-5], wtag, cals, keys))
     return out
+
+
+def falloff(keys, cm):
+    """Linear evaluation of the distance curve (exact for RCIM_Linear keys), clamped at the ends."""
+    if not keys:
+        return 1.0
+    pts = sorted((k["Time"], k["Value"]) for k in keys)
+    if cm <= pts[0][0]:
+        return pts[0][1]
+    for (t0, v0), (t1, v1) in zip(pts, pts[1:]):
+        if cm <= t1:
+            return v0 + (v1 - v0) * (cm - t0) / (t1 - t0)
+    return pts[-1][1]
 
 
 def matches(e, source, target, hit, alignment="Hostile"):
@@ -170,17 +191,32 @@ def evaluate(source_tag, context, hit):
     return max(total, 0.0), unknown, applied
 
 
+RANGES_M = [50, 100, 200, 400, 800, 1200]
+
+
 def main():
     sys.stdout.reconfigure(encoding="utf-8")
     proj = projectiles()
-    print("| Weapon | Weapon tag | Caliber | Base | " + " | ".join(LOCATIONS) + " | Entries applied |")
-    print("|---|---|---|---:|" + "---:|" * len(LOCATIONS) + "---|")
-    for name, wtag, cals in sorted(weapons(), key=lambda w: (w[1], w[0])):
+    by_range = "--falloff" in sys.argv
+    if by_range:
+        print("| Weapon | Curve keys (m → ×) | " + " | ".join(f"{r} m" for r in RANGES_M) + " |")
+        print("|---|---|" + "---:|" * len(RANGES_M))
+    else:
+        print("| Weapon | Weapon tag | Caliber | Base | " + " | ".join(LOCATIONS) + " | Entries applied |")
+        print("|---|---|---|---:|" + "---:|" * len(LOCATIONS) + "---|")
+    for name, wtag, cals, keys in sorted(weapons(), key=lambda w: (w[1], w[0])):
         cal = next((c for c in cals if c in proj), None)  # first supported caliber with projectile data
         if not cal or not (proj[cal][0] or "").startswith("Meta.Damage.Bullet"):
             continue  # launchers: their direct impact is not the bullet case
         src, ctx, base = proj[cal]
         context = ctx + [wtag, cal, "Meta.Damage.DamageType.Projectile"]
+        if by_range:
+            torso = base * evaluate(src, context, HIT + "Torso.Upper")[0]
+            cubic = "†" if any(k.get("InterpMode") != "RCIM_Linear" for k in keys) else ""
+            shown = ", ".join(f"{k['Time'] / 100:g}: {k['Value']:g}" for k in sorted(keys, key=lambda k: k["Time"])) or "none"
+            cells = [f"{torso * falloff(keys, r * 100):.1f}" for r in RANGES_M]
+            print(f"| {name}{cubic} | {shown} | " + " | ".join(cells) + " |")
+            continue
         cells, used, unk = [], set(), 0
         for loc in LOCATIONS:
             f, unk, applied = evaluate(src, context, HIT + loc)
