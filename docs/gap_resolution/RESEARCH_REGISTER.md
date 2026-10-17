@@ -48,7 +48,7 @@ proposed resolution path, status.
 | 21 | `Wardogs_UI_v2.md` | 16. Still not pulled / limitations | **Field meanings not confirmed:** `ZOrder` direction (higher drawn on top is inferred from values), `RemovalTime` and `D | TBD | TBD | OPEN |
 | 22 | `Wardogs_Vehicles_v2.md` | 13. Still Not Pulled / Limitations | **Default-valued fields are omitted** from exports. Where a property is missing (for example `Basic`-class fields), the  | TBD | TBD | OPEN |
 | 23 | `Wardogs_Weapons_v2.md` | 5. How Values Combine | **Aim sway (likely):** the class speed curve, the horizontal and vertical movement curves, and the `AimSwayData` multipl | TBD | TBD | OPEN |
-| 24 | `Wardogs_Weapons_v2.md` | 5. How Values Combine | **Recoil (likely):** `RecoilPattern` gives per-shot X/Y offsets, `RandomDeviationDegree` adds random deviation, and the  | TBD | TBD | OPEN |
+| 24 | `Wardogs_Weapons_v2.md` | 5. How Values Combine | **Recoil (likely):** `RecoilPattern` gives per-shot X/Y offsets, `RandomDeviationDegree` adds random deviation, and the  | Native: fire routine `0x6B93610` → kick `0x6B95C50` → behavior component `0x6B85D30` → playback `0x6B89BB0`; [Weapons §5a](../../Wardogs_Weapons_v2.md#5a-recoil) | Doc corrected (2026-10-17) | STATIC_RESOLVED |
 | 25 | `Wardogs_Weapons_v2.md` | 5. How Values Combine | **Distance falloff (SKS):** `DistanceDamageFalloffCurve` is a multiplier indexed by distance. The falloff times are pres | Native: projectile path `0x6B725B0` evaluates the curve with distance in cm; [DamagePipeline §7.6](../../Wardogs_DamagePipeline_v2.md#76-the-bullet-event) | Doc corrected (2026-10-17) | STATIC_RESOLVED |
 
 
