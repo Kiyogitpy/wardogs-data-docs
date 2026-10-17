@@ -221,12 +221,11 @@ The 25-entry [`IMC_BaseWeapon`](https://github.com/Kiyogitpy/wardogs-data-docs/b
 
 ## 5. How Values Combine
 
-The export lists the inputs to each system but not the formulas that combine them. Recoil and the per-shot focus values are traced in code (§5a). The other points below are likely roles, not confirmed behaviour.
+The export lists the inputs to each system but not the formulas that combine them. Recoil (§5a), aim sway and focus energy (§5b) are traced in code.
 
-- **Aim sway (likely):** the class speed curve, the horizontal and vertical movement curves, and the `AimSwayData` multipliers (crouch, prone, camera offset, no-focus speed) appear to feed one sway offset. The combination method is unknown.
-- **Recoil:** traced, §5a.
+- **Recoil:** §5a.
+- **Aim sway and focus energy:** §5b.
 - **Distance falloff (SKS):** `DistanceDamageFalloffCurve` is a multiplier indexed by distance. The falloff times are centimetres of distance, confirmed in code; per-weapon damage by distance is in [DamagePipeline §7.8](Wardogs_DamagePipeline_v2.md#78-damage-over-distance).
-- **Focus energy:** `FocusEnergyReductionPerShot` and `RecoilReductionWhenFocussing` are traced (§5a). `NoFocusEnergySpeedMultiplier` is probably a sway-speed scalar used when focus is empty; not confirmed.
 
 ### 5a. Recoil
 
@@ -239,8 +238,8 @@ The export lists the inputs to each system but not the formulas that combine the
    - Then yaw × the weapon's `HorizontalRecoilMultiplier` and pitch × its `VerticalRecoilMultiplier`. These are the current values of the `Attribute.Gameplay.Weapon.*RecoilMultiplier` attributes on the weapon item, or 1 if it has none (`0x6C979A0`, `0x6C989A0`, the item extension's `IWDWeaponOwner` at `+0xF0`). Both start at 1.0 on every weapon ([GameFeatures Weapons §4](Wardogs_GameFeatures_Weapons_v2.md#4-default-weapon-attributes-wditemextensiondata_gameplayeffects)); attachment and stance effects change them by the [effect formula](Wardogs_GameplayEffectsPipeline_v1.md#44-current-value).
    - The random numbers come from the C runtime's `rand()`. `RecoilPatternYawMinMax` and `RecoilPatternPitchMax` are not read here.
 3. **Focus and size** (weapon behavior component, `0x6B85D30`):
-   - While focusing (the focus blend is above `MinFocusInterpRequiredForRecoilReduction` / 100), the kick shrinks by `RecoilReductionWhenFocussing` percent.
-   - While focusing, and for a short window after it (an unnamed stats field at `+0x98`: default 0.5 s, set by no weapon), each shot drains `FocusEnergyReductionPerShot` percent of `MaxFocusEnergy`, down to 0.
+   - While focusing (the focus blend is above `MinFocusInterpRequiredForRecoilReduction` / 100; that field is 80 by default and no asset changes it), the kick shrinks by `RecoilReductionWhenFocussing` percent.
+   - While focusing, and for a short window after it (an unnamed stats field at `+0x98`: default 0.5 s, set by no weapon), each shot drains `FocusEnergyReductionPerShot` percent of `MaxFocusEnergy` (10), down to 0.
    - The kick is then multiplied by `ViewKickMagnitudeMultiplier` and queued.
 4. **Applying it** (`TickComponent` `0x6B891F0` → `0x6B89A20` → `0x6B89BB0`), for a pawn with a player controller. Each queued kick follows `ViewKickCurve`, read as a value between 0 and 1. Every frame, pitch and yaw move by (curve value now − curve value last frame) × kick. A curve that rises from 0 to 1 therefore applies the whole kick over the curve's length. A curve that falls back hands part of the kick back: the SKS curve reaches 1 at 0.15 s and 0.75 at 0.4 s, so a quarter of each kick returns. Pitch is kept within the camera's pitch limits, and any part cut off there is remembered.
 5. **Recovery.** When a kick's curve ends, the kick (less any pitch that was cut off) is added to a recovery amount, and the view moves back along `RecoveryKickCurve` the same way. A kick that ends during a recovery restarts it with the rest of the old amount plus the new kick. Every firearm's `RecoveryKickCurve` is a single key at 0, so no firearm recovers by itself: the player pulls the view back. Three launchers (the grenade launcher, `Launcher_04`, `RPG7`) return the whole kick, over 1 s or 0.35 s; the MMGL does not. Outside the table, the M2 Browning returns 20% of each kick over 0.3 s and the fists all of it over 0.3 s.
@@ -293,6 +292,26 @@ The table gives each weapon's inputs. Yaw and pitch are in degrees. A dagger (�
 | `MK22` | 0 | — | ±4 | -1 … 1† | 1 … 2† | 0.5† | ×1.4 | 1 at 0.15 s | none | 0† / 100 |
 | `SR_04` | 0 | — | ±4 | -1 … 1† | 1 … 2.5 | 0.5† | ×1.45 | 1 at 0.124178 s | none | 0† / 100 |
 <!-- /recoil_table -->
+
+### 5b. Aim sway and focus energy
+
+**Native** (weapon behavior component, `0x6B884D0`, run from `TickComponent` every frame). While aiming down sights (`IsAiming`, component `+0x3E0`), the view drifts along a looping pattern. The component's `AimSwayMode` is `Camera` (constructor `0x6B84E80`; no asset changes it), so the drift moves the control rotation. Every attribute below is a character or weapon attribute that counts as 1 when absent.
+
+1. **Focus energy.** While focusing and aiming, focus energy drains at the weapon's `Attribute.Gameplay.Weapon.FocusEnergyUsageMultiplier` per second. Otherwise it refills at 1 per second up to `MaxFocusEnergy`, which is 10 (component defaults). At the default rate a full bar lasts 10 s, and shots drain it too (§5a). When it reaches 0, focus stops (`0x6B88310`) and the pawn's action system is called with `Action.Player.Focus`.
+2. **Sway size.** A scale eases toward its target with `FInterpTo`, at `SwayScaleIncreaseCorrectionSpeed` when growing and `SwayScaleDecreaseCorrectionSpeed` when shrinking. The target is the product of:
+   - the character's `AimSwayScaleMultiplier`;
+   - the stance's `StandOffsetMultiplier`, `CrouchOffsetMultiplier` or `ProneOffsetMultiplier`;
+   - `AdsAimSwayScaleCurve` at the stabilization progress;
+   - `FocusOffsetMultiplier`, while focusing.
+3. **Sway speed.** A speed eases the same way, at `SwaySpeedIncreaseCorrectionSpeed` / `SwaySpeedDecreaseCorrectionSpeed`. Its target is the product of:
+   - `AimSwaySpeedCurve` at the pattern time;
+   - `AdsAimSwaySpeedCurve` at the stabilization progress;
+   - the character's `AimSwaySpeedMultiplier`;
+   - when not focusing, a factor that runs linearly from `NoFocusEnergySpeedMultiplier` with an empty focus bar to 1 with a full one.
+4. **Pattern.** Pattern time advances by speed × frame time and wraps at `TotalPatternDuration`. At each wrap (`0x6B87260`), two deviation curves are rebuilt. Each gets one random key per key of its movement curve, at the same time, with a value uniform in `HorizontalDeviationRange` or `VerticalDeviationRange`. Every loop follows the same timing with new random amplitudes.
+5. **Offset.** Yaw = `HorizontalAimSwayMovementCurve` × the horizontal deviation curve × the character's `AimSwayHorizontalMovementMultiplier` × scale, with both curves read at the pattern time. Pitch works the same way with the vertical curves and `AimSwayVerticalMovementMultiplier`. Each frame, the change in this offset × `PlayerCameraOffsetMultiplier` is added to the control rotation.
+
+The stabilization progress is the component's stabilization timer (`+0x408`) divided by `AdsStabilizeTime`, kept between 0 and 1. The two `AdsAimSway…Curve`s count as 1 when they have no keys. How the timer itself runs (`AdsStabilizeCooldownRate` and the other stabilization fields) is not traced. Neither are the weapon-model sway (the `WeaponSway.*` attributes, idle and stabilization sway, jitter) or the `Weapon` mode. `bPersistentValues` and `PersistentData` are not read by this code.
 
 ---
 
