@@ -31,6 +31,9 @@ unreviewed decompiler output), **SDK**, **Data**, **Open**.
   base value and current value, replicated as a fast array. There are no
   game `UAttributeSet` subclasses. `DefaultAttributes`
   (`TMap<FGameplayTag, float>`) only holds initial values.
+- **Current value** = `((Base + ΣAdd) × (1 + Σ(Multiply − 1)) / D) × ΠMultiplyCompound + ΣAddFinal`,
+  unless an Override is active. Stacks scale each modifier linearly
+  (§4.2, §4.4).
 - **338 `GE_*` classes** ship in the SDK, all `: public UBHGameplayEffect`.
 - **Damage does not go through effects.** Character damage writes the
   `Attribute.Gameplay.Health` base value directly (DamagePipeline §10).
@@ -188,25 +191,52 @@ Attribute tags come from the native tag initializers, for example
 
 **Native.** The Scalar evaluator (`0x522E960`) switches on
 `CurveIndexing` (`EBHAttributeScalarIndex`): `Fixed` returns the plain
-value; `StackCount` evaluates the curve at the stack count;
-`StackCountNRM` uses the stack count normalised by the effect's settings;
-`Lifetime` and `Duration` index by time (Duration returns 0 when the
-effect's `Duration` is 0). **Stack scaling is therefore a per-modifier
-curve set in data**, not a fixed linear or multiplicative rule.
+value when no curve row is set, otherwise `Value × Curve(0)`;
+`StackCount` evaluates the curve at the stack count; `StackCountNRM` uses
+the stack count normalised by the effect's settings; `Lifetime` and
+`Duration` index by time (Duration returns 0 when the effect's `Duration`
+is 0).
 
-How the operations and channels combine into the current value is
-**Open**: the combining function is not located.
+**Stack scaling** (`0x522B7D0`) then applies to each modifier's
+magnitude `m` for `n` stacks: `m' = (m − I) × n + I`, with `I = 0` for
+Add, AddFinal and MultiplyCompound and `I = 1` for Multiply and Divide.
+It is skipped for Override and for Scalars indexed by `StackCount` or
+`StackCountNRM`, whose curve already uses the stacks. A modifier with 0
+stacks is excluded. So `n` stacks of a ×1.1 Multiply give ×(1 + 0.1n),
+and `n` stacks of a MultiplyCompound `v` give `v × n`, not `vⁿ`.
+
+The combining function is `0x522E5C0`. The dirty-attribute flush
+`0x522C4F0` starts from the base value (`+0x28`), runs each channel block
+(record `+0x40`, stride `0x60`) through it (via the default evaluator
+lambda `0x522A800`), and writes the result through `0x5237050` into the
+current value (`+0x30`). The formula is in §4.4.
 
 ### 4.3 Base-value writes
 
-**Native.** The base setter `0x5236E50` runs the per-attribute hook (map
-at `+0x378`, probably a clamp), stores the new base, and pushes it into
-`AttributeReplication` (`0x52382E0`) under a role check. Its direct
-callers are `SetAttributeBaseValue` (`0x5236AF0`), the library
-`ModifyBase` (`0x523A560`) and `SetBase` (`0x523AB10`),
-`FindOrAddAttribute` (`0x522F8F0`) and the replication handler
-(`0x5233C00`). No effect-apply function calls it, so modifiers most
-likely feed the current value instead.
+**Native.** The base setter `0x5236E50` runs the attribute's base-value
+hook, stores the new base, and pushes it into `AttributeReplication`
+(`0x52382E0`) under a role check. Its direct callers are
+`SetAttributeBaseValue` (`0x5236AF0`), the library `ModifyBase`
+(`0x523A560`) and `SetBase` (`0x523AB10`), `FindOrAddAttribute`
+(`0x522F8F0`) and the replication handler (`0x5233C00`). No effect-apply
+function calls it, so modifiers feed only the current value; `0x522C4F0`
+recomputes it from the base after every base write (§4.4).
+
+**Hooks.** The component keeps hooks per attribute in a map at `+0x378`.
+Each entry holds a base-value hook (registered through `0x5236990`, run
+by the base setter) and a current-value hook (registered through
+`0x5236C70`, run by the current-value setter `0x5237050`). The setters
+pass the value to a hook as a float and take a float back, so a hooked
+value loses double precision. Three functions call the two registration
+helpers:
+
+- vehicle health sections: `0x533A750` clamps to `[0, MaxHealth]`
+  ([VehicleDamagePipeline §5.4](Wardogs_VehicleDamagePipeline_v1.md#54-hits-to-destroy));
+- character health (`0x6B81CE0`; the hook body is not read);
+- vehicle fuel (`0x7666070`).
+
+No other direct call exists. Registration by another path is not ruled
+out.
 
 `SetAttributeBaseValue` is reached through two helpers:
 
@@ -217,6 +247,36 @@ likely feed the current value instead.
   `Auth_DecreaseContainerAmount` (`0x6C66540`), the character's revive
   handler (`0x6E75620`, which writes `Attribute.Gameplay.PreTipValue`),
   the tipping component and vehicle weapon code.
+
+### 4.4 Current value
+
+**Native** (`0x522E5C0`). When any Override modifier is active, the first
+active one in the attribute's Override list wins and nothing else counts.
+Otherwise:
+
+```
+Current = ((Base + ΣAdd) × (1 + Σ(Multiply − 1)) / D) × ΠMultiplyCompound + ΣAddFinal
+D       = 1 + Σ(Divide − 1), or 1 when |D| ≤ 1e-8
+```
+
+- The sums and the product run over the stack-scaled magnitudes (§4.2).
+- Multiply and Divide add up among themselves: ×1.1 and ×1.2 give ×1.3,
+  not ×1.32. Only MultiplyCompound multiplies.
+- Only the `Default` channel exists (`EBHAttributeModChannel` has
+  `Default` and `COUNT`), so every attribute has one block.
+- The per-operation arrays live in the attribute record at
+  `+0x40 + 0x60 × Channel + 0x10 × Op` (element stride `0x20`). An element
+  counts only when its Filter passed (`+0x18`) and it has a magnitude
+  (`+0x10`).
+- The arithmetic is in doubles, but the magnitudes come from floats in
+  the asset, so 0.7 enters as 0.699999988.
+
+**Example.** `VerticalRecoilMultiplier` starts at 1.0 on every weapon
+([Weapons §4](Wardogs_GameFeatures_Weapons_v2.md#4-default-weapon-attributes-wditemextensiondata_gameplayeffects)).
+With `GE_FGRP_006` (×c 0.75) and `GE_Weapon_StanceRecoil_AR_Prone`
+(×c 0.7), one stack each: 1.0 × 0.75 × 0.699999988 = 0.5249999911. This
+assumes the attribute has no hook; none is registered for a weapon
+attribute by a direct call (§4.3).
 
 ## 5. Application and prediction
 
@@ -253,12 +313,13 @@ applies them on equip is not traced.
 
 | # | Question |
 |---|---|
-| E-1 | How `EBHAttributeModOp` operations and channels combine into the current value |
+| E-1 | **Closed** (§4.4): the combining function is `0x522E5C0`, run by the flush `0x522C4F0` after every base write; stack scaling is linear per operation (§4.2) |
 | E-2 | Duration semantics beyond 0 (for example whether −1 means infinite) |
 | E-3 | Rollback mechanism and the role of `UNetworkPredictionWorldManager` |
 | E-4 | **Closed**: every effect's modifiers, durations, stacks and granted tags are on [Gameplay Effect Values](Wardogs_GameplayEffect_Values_v1.md) |
 | E-5 | The equip code path that applies attachment effects |
 | E-6 | Vehicle health via effects: `GE_Vehicle_Health` and vehicle-side callers of `0x52311D0` (`0x7665D60`, `0x766727F`) are not traced |
+| E-7 | Effect-instance fields the stack logic reads: `+0x150` (when set, the effect's modifiers are excluded, `0x522B7D0`) and `+0x3C`, `+0x100`, `+0x12C` in the stack count (`0x5230770`) |
 
 ## 9. Cross-references
 
@@ -274,3 +335,4 @@ applies them on equip is not traced.
 | 2026-10-16 | v1: BH-GAS architecture, 338 GE classes by prefix, attribute map, prediction question. |
 | 2026-10-17 | Corrected against the decompilation corpus, SDK and data: attributes are double base/current records (the map is only defaults); `Modifiers` element type and operations documented; stacking is a per-modifier curve; base-value writes and the damage path traced; preset types, catalog descriptions, StanceRecoil count (21), the three preset files and the example rewritten from data; authority language removed; cues are a separate component. |
 | 2026-10-17 | Effect values exported from the paks and published on Gameplay Effect Values; E-4 closed; the scope example uses the real modifiers. |
+| 2026-10-17 | Independent verifier pass: closed E-1 with the combining formula (§4.4); stack scaling is linear per operation, not a curve (§4.2); `Fixed` with a curve row returns `Value × Curve(0)`; the attribute hooks and their three registrants (§4.3); E-7 added. |

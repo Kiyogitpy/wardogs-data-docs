@@ -105,7 +105,7 @@ hierarchy. Slot 0 (`0x146BB69F0` etc.) is the class-specific
 
 This is the top-level damage orchestrator. Its `ModifyDamage` method
 is the next-session entry point for resolving modifier evaluation
-order (B-1 question in [`docs/DAMAGE_IDA_TRACE.md`](DAMAGE_IDA_TRACE.md)).
+order (question B-1 on [the damage evidence page](evidence/damage.md#21-questions-b-1-to-b-4)).
 
 ## 3. UE object array globals
 
@@ -160,8 +160,8 @@ With the restored exe + validated idmap:
 
   | Question | Entry point | Doc section |
   |---|---|---|
-  | Modifier evaluation order | `UWDDamageSubsystem::ModifyDamage` + xref from `UWDGlobalDamageSystem_VFT` | DamagePipeline §7.1 / DAMAGE_IDA_TRACE B-1 |
-  | PlayerArmorDurability algorithm | Vtable slot 0 of `UWDDamageModificationOperation_PlayerArmorDurability_VFT` at `0x146BB7DB0` | DamagePipeline §7.4 / integration-doc gap 3 |
+  | Modifier evaluation order | `UWDDamageSubsystem::ModifyDamage` + xref from `UWDGlobalDamageSystem_VFT` | DamagePipeline §5 / evidence page B-1 |
+  | PlayerArmorDurability algorithm | Vtable slot 0 of `UWDDamageModificationOperation_PlayerArmorDurability_VFT` at `0x146BB7DB0` | DamagePipeline §7.5 / integration-doc gap 3 |
   | Stacking math on Modifiers | `UBHGameplayEffectComponent::ApplyEffect` xref chain | GameplayEffectsPipeline §6.2 |
   | Prediction rollback mechanism | `UBHGameplayEffectComponent::ClientPredictionFailed` + `NetworkPredictionWorldManager` xref | GameplayEffectsPipeline §6.6 |
   | Vehicle section routing vs rule chain order | `FVehicleHealthSection` consumer (search for xref to `PreDamageRouting` field) | VehicleDamagePipeline §7.3 |
@@ -196,8 +196,7 @@ with this specific exe.
 ## 8. Related docs
 
 - [`mappings/README.md`](../mappings/README.md) — idmap format spec
-- [`docs/DAMAGE_IDA_TRACE.md`](DAMAGE_IDA_TRACE.md) — IDA trace brief (triage AI, in flight)
-- [`docs/DAMAGE_IDA_RESULTS.md`](DAMAGE_IDA_RESULTS.md) — prior probe results (triage AI, in flight)
+- [`docs/evidence/damage.md`](evidence/damage.md) — the IDA trace brief, the failed first pass and the restored-exe trace, merged
 - [`Wardogs_DamagePipeline_v2.md`](../Wardogs_DamagePipeline_v2.md) — being audited by triage AI
 - [`Wardogs_VehicleDamagePipeline_v1.md`](../Wardogs_VehicleDamagePipeline_v1.md)
 - [`Wardogs_GameplayEffectsPipeline_v1.md`](../Wardogs_GameplayEffectsPipeline_v1.md)

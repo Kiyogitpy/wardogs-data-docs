@@ -106,7 +106,7 @@ Others are identified by the tags and classes they use:
 | Radial damage, also behind reflected `SimulateRadialDamage` | `0x6F06540` | Uses `Meta.Damage.Explosive.Radius.Inner` / `.Outer` |
 | Back-blast | `0x6F06EB0` (from `0x6B92900`) | `Meta.Damage.DamageType.BackBlast` |
 | Armor break / crack | `0x6B53000` | `Hitmarker.Armor.Break` / `.Crack` |
-| Reflected `SimpleDamageActor` | `0x6F08CDC` | Blueprint-callable |
+| Reflected `SimpleDamageActor` | `0x6F08CE0` (corpus body under the misaligned row `0x6F08CDC`) | Blueprint-callable |
 | Vehicle supply containers (slot 127) | `0x6F03F60` | Via `0x7635EA0` |
 
 Still unnamed: `0x6E72D90`, `0x6F042A0`, `0x76740F0`, `0x76F5AE0`.
@@ -119,7 +119,8 @@ through it skips the rule tables entirely.
 
 Most callers then hand the result to the same two steps:
 
-1. **Build an Unreal damage event** (`0x6EF944F`): damage = the modified
+1. **Build an Unreal damage event** (`0x6EF9450`; the corpus row
+   `0x6EF944F` starts one byte early): damage = the modified
    amount; the hit result is copied in; shot direction = the normalised
    trace; the `UDamageType` class is looked up by damage-type tag in the
    subsystem's `DamageTypes` map, with the base class as fallback.
@@ -311,7 +312,9 @@ of the target's tag hierarchy:
    file the selected ones under that tag. A group is created when its
    first entry is selected.
 3. Move to the tag's direct parent and repeat. Stop on reaching
-   `RootDamageTag` or when there is no parent.
+   `RootDamageTag` or when there is no parent. `RootDamageTag` is
+   `Meta.Damage`, set by the system's constructor (`0x6BB6160`) from a
+   native tag global, and is itself never evaluated.
 
 The evaluator builds a fresh group map for every evaluation and walks it
 in slot order, which for a freshly built Unreal map is insertion order.
@@ -572,7 +575,7 @@ firing weapon:
 | Event field | Value | Evidence |
 |---|---|---|
 | Stats | `GetProjectileStats(AmmoModifierTag)`: the asset's `ProjectileStats` (`+0x38`), or the per-ammo-type variant in `CachedModifiedProjectileStats` (`+0x350`) | `0x6BBA900` |
-| `S` | `DamageValues.BaseDamage`; `ExplosiveBluntDamage` instead when the projectile has an arming delay and its flight time (`FWDProjectileInstance.ElapsedTime`, seconds) is below `ArmingDelay − 0.0001`, or when an unnamed instance byte (`+0x101`) is clear. Then scaled twice, below | stats `+0x30` / `+0x44`, `+0x180`, `+0x184`; instance `+0x290`, `+0x101` |
+| `S` | `DamageValues.BaseDamage`; `ExplosiveBluntDamage` instead when the projectile has an arming delay and its flight time (`FWDProjectileInstance.ElapsedTime`, seconds) is below `ArmingDelay − 0.0001`, or when an unnamed instance byte (`+0x101`) is clear. That byte is unreflected (no name in GObjects); the instance constructor sets it to 1, and no writer that clears it was found. Then scaled twice, below | stats `+0x30` / `+0x44`, `+0x180`, `+0x184`; instance `+0x290`, `+0x101` (constructor `0x6B8E100`) |
 | Speed scale | `× clamp(impact speed / reference speed, 0, 1)`. Reference is the weapon's `TypicalSpeed` when `bOverrideTypicalSpeed` is set and that value is > 0, else the projectile's `TypicalSpeed` | `0x6C255B0`; weapon `+0xA0`/`+0xA4`, stats `+0x1FC` |
 | Distance scale | `× DistanceDamageFalloffCurve(distance)` when the weapon's `bUseDistanceDamageFalloffCurve` is set; distance is shot origin to hit point in **centimetres** | `0x6B70D80` (direct hit, called at `0x6B7330C`); `0x6B72D53`–`0x6B72DCB` per custom hit; weapon `+0xA8`/`+0xB0`; hit `ImpactPoint` `+0x28`, `ProjectileOrigin` `+0x110` |
 | Armor in target context | The target's hook (`IWDDamageable` sub-vtable `+0x20`) runs before `ModifyDamage`. For characters it calls `Auth_GetArmorDamageEvent`, which copies the target's entity data and then **removes every armor tag except the first one (in context order) whose piece's `CoveredHitLocations` contains the hit-location tag** (derived from the hit bone and written to `HitLocationTag`, event `+0x1A0`). With no resolved hit location, all armor tags are removed. Only the covering piece reaches §7.3 and §7.5. When the projectile has `bShouldPenetrate` and the covering piece passes the hook's checks, it then appends `Meta.Damage.Armor.Penetrate` (penetration test passes) or `Meta.Damage.Armor.Throughput` to the source context; the armor rule table (`DT_GlobalDamage_ArmorData`) keys on `Armor.Penetrate` | `0x6B52A40`; alias labels `AWDMoverCharacter` slot 390, `AWDTargetDummy` slot 242 |
@@ -845,20 +848,22 @@ attribute base value. No gameplay effect is applied.
    ≤ 0. A character without `State.Player.Vitality.Alive` (downed or
    dead; the code does not distinguish) gets no health write, and 0 is
    returned. Only an `AWDMoverPlayerCharacter` owner gets more: it receives
-   the damage event through a `ProcessEvent` stub (`0x6E7F0B0`, parameter
-   shape of `Client_ForceTakeHitCue`), and when the instigating
-   controller's pawn is a player character, that pawn receives it too
-   (`0x6E7F420`, shape of `Client_TriggerHitMarker`, with a
-   `State.Player.Vitality.Critical` tag container). The two function names
-   are inferred from parameter shape only. Otherwise it calls the base
-   `UWDVitalityComponent` (`0x6B82520`), then reduces a decay pool at
-   `+0x17C`.
+   the damage event through the `ProcessEvent` stub
+   `AWDMoverPlayerCharacter::Client_ForceTakeHitCue` (`0x6E7F0B0`), and
+   when the instigating controller's pawn is a player character, that pawn
+   receives it too through `::Client_TriggerHitMarker` (`0x6E7F420`, with
+   a `State.Player.Vitality.Critical` tag container). The names come from
+   the functions' FName initializers (`0x12CC0D0`, `0x12CC0F0`). Otherwise
+   it calls the base `UWDVitalityComponent` (`0x6B82520`), then, only when
+   the owning actor's role value is 3, reduces a decay pool at `+0x17C` by
+   the damage, at most to 0.
 3. `0x6B82520` calls `0x52311D0` on the `Attribute.Gameplay.Health`
    handle (component `+0x140`, created in `0x6B81CE0`) with
    `−CurrentDamage`. `0x52311D0` adds that delta to the attribute's
    stored value and calls `SetAttributeBaseValue` (`0x5236AF0`), whose
-   setter (`0x5236E50`) runs a per-attribute hook, stores the new base
-   and pushes it into the replicated attribute array.
+   setter (`0x5236E50`) runs the attribute's base-value hook (character
+   health registers one in `0x6B81CE0`; what it does is not traced),
+   stores the new base and pushes it into the replicated attribute array.
 4. Back in `0x6B82520`: if the applied change is zero it returns 0.
    Otherwise it records whether current health is now ≤ 0, broadcasts
    `OnDamageTaken` and `RegenTimer` (with `RegenDelay`), and sends
@@ -879,13 +884,11 @@ for server behaviour is not established here.
 
 | Report | What it holds |
 |---|---|
-| [`docs/DAMAGE_IDA_RESTORED.md`](docs/DAMAGE_IDA_RESTORED.md) | Native trace of §1 and §4–6: method, loader limits, instruction anchors |
+| [`docs/evidence/damage.md`](docs/evidence/damage.md) | Evidence behind §1 and §4–6: input hashes, the three native passes (questions B-1 to B-4, the failed pass on the dump-reconstructed exe, the restored-exe trace with its instruction anchors), the corpus cross-check, and a verification status for every RVA this page cites |
 | [`docs/GOBJECTS_DAMAGE_ANALYSIS.md`](docs/GOBJECTS_DAMAGE_ANALYSIS.md) | Runtime class catalog and struct offsets (§2). Its Blueprint-locals reading is superseded by §7 |
 | Blueprint bytecode (local, not committed) | Raw CUE4Parse exports with `ScriptBytecode`, a statement listing with byte offsets, and annotated pseudocode for each of the four `B_*` classes (§7.1–7.4) |
 | [`docs/RESTORED_EXE_VALIDATION.md`](docs/RESTORED_EXE_VALIDATION.md) | Restored exe ↔ idmap match; damage vtables valid |
 | [`docs/DECOMPILATION_CORPUS.md`](docs/DECOMPILATION_CORPUS.md) | The local corpus behind §1.1, §5 and §7.5; queried read-only with `corpus_q.py` (body, callers, callees, vtable slots) |
-| [`docs/DAMAGE_IDA_TRACE.md`](docs/DAMAGE_IDA_TRACE.md) | Original question set B-1 to B-4 |
-| [`docs/DAMAGE_IDA_RESULTS.md`](docs/DAMAGE_IDA_RESULTS.md) | Failed pass on the earlier dump-reconstructed exe (different hash) |
 
 ### Offsets and engine details cross-checked
 
@@ -909,11 +912,14 @@ corpus's validated types):
 | Category order | Calibre, AmmoModifier, CaliberEffectiveness, Bone, PenetrationEffectiveness, Tracer, Weapon, Armor, Melee, Ricochet, Penetration, Friendly | `DA_GlobalDamage_Categories.json` |
 | Garbage flag `0x40000000` | `RF_MirroredGarbage` (UE5's replacement for `RF_PendingKill`); `sdk/raw/Basic.hpp` has it, the corpus `schema.json` enum import omits it | SDK, UE `ObjectMacros.h` |
 
-Four functions have no corpus body: `0x53202B0`, `0x52311D0`,
-`0x5236AF0` and `0x6C255B0`. Claims that rest on them (the section pick,
-the base-value write, the speed scale) are backed by disassembly only,
-and an independent verifier pass keeps them marked unverified on that
-basis.
+Several cited functions have no aligned corpus body: `0x53202B0`,
+`0x52311D0`, `0x5236AF0`, `0x5236E50`, `0x6C255B0`, `0x6EF8DE0`,
+`0x6BB5ED0` and `0x395F4D0`; `0x6F042A0` has a failed row. Claims that
+rest on them (the section pick, the base-value write, the speed scale,
+the conversion, group order, the parent-tag step) are backed by
+disassembly (`[exe]`) only. Each was reproduced from the instructions;
+none is left unverified
+([status table](docs/evidence/damage.md#3-rva-status-table)).
 
 The evaluator's instruction anchors (§6) were each checked against the
 disassembly; `0x6BB72E1` replaces an earlier `0x6BB72DE`, which is the
@@ -958,3 +964,4 @@ The restored image carries the UTF-16LE build marker
 | 2026-10-17 | Health write traced (§10): `ReceiveDamage` → vitality component → base-value write on `Attribute.Gameplay.Health`; no effect involved. Corrects the earlier note that `SetAttributeBaseValue` is only used by healing (its helper `0x52311D0` had no corpus function entry, so its calls were not indexed). |
 | 2026-10-17 | Ammo variants: the modified stats add the ammo-modifier tag and change no damage value (§7.9). Generator gained real armor values and an `--ammo` mode; added the ammo × armor table. |
 | 2026-10-17 | Independent verifier pass: corrected the blunt-damage condition (flight time, instance byte `+0x101`), the direct-hit distance-scale evidence, armor filtering (first covering piece only) and the Penetrate/Throughput tags, the exploding-hit and custom-hit paths, the downed-character branch and the order of death handling; noted the four functions without corpus bodies. |
+| 2026-10-17 | Another independent verifier pass: `RootDamageTag` is `Meta.Damage` and is never evaluated (§5); corrected two citations that sat on misaligned corpus rows (`0x6EF9450`, `0x6F08CE0`); named the two player-character stubs from their FName initializers and noted that the decay-pool cut runs only for role 3 (§10); every function without a corpus body is listed and reproduced from disassembly; the three IDA notes are merged into [`docs/evidence/damage.md`](docs/evidence/damage.md) (§11). |

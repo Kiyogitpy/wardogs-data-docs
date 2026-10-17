@@ -60,13 +60,14 @@ For 20 of the 21 vehicles that tag equals the vehicle row key exactly
 
 **The walk** (damage doc §5). The collector evaluates every level of the
 target tag's parent chain that has a registry row, most specific first,
-stopping at `RootDamageTag`. Vehicle tables use the same
+stopping before `RootDamageTag`, which is `Meta.Damage` (set in the
+system's constructor `0x6BB6160`). Vehicle tables use the same
 `FWDDamageableEntityTableRow` and are added to the `GlobalDamageData`
 registry by each vehicle's GameFeature (for example
 `Vehicles/ROT_02/Content/ROT_02.json`, `RegistryToAddTo: GlobalDamageData`).
 So a Havoc hit evaluates its own row (`…Air.Rotary.Havoc`), then any
-parent rows, then the generic `Meta.Damage.Vehicle` row, unless
-`RootDamageTag` is `Meta.Damage.Vehicle` itself (**Open**). The generic
+parent rows, then the generic `Meta.Damage.Vehicle` row, since the walk
+runs up to the root `Meta.Damage` above it. The generic
 row is a parent level evaluated after each vehicle's own row, **not a
 fallback**. Its live entries are two HollowPoint rules, −40 and +40,
 which together give ×0.84; the Bullet (`None`) and Ricochet (0) entries
@@ -132,10 +133,14 @@ category sorts first (index −1).
 - **STN_06 is probably wrongly keyed.** Its table is a byte-identical copy
   of STN_05's (row `…Stationary.STN_05`), but its `VehicleDamageTag` is
   `Meta.Damage.Vehicle.Stationary.MGNest`
-  (`DA_GameplaySystems_STN_06.json`). That tag appears neither in the
-  exported tag config nor among the native tag globals, and two sources
-  register the same STN_05 row. STN_06 most likely never reaches its own
-  rules.
+  (`DA_GameplaySystems_STN_06.json`). No table has a row for that tag,
+  and two sources register the same STN_05 row, so STN_06 most likely
+  never reaches its own rules. The tag is also missing from the exported
+  tag config and the executable's strings, but so are tags that are in
+  use (`…WHL_08.Default`, `…TNK_04.Default`), so that proves nothing.
+  Whether STN_06's walk still reaches the generic `Meta.Damage.Vehicle`
+  row is not established: for a tag the tag manager does not know, the
+  parent step (`0x395F4D0`) returns an empty tag.
 - **`Land.Wheeled.WHL_08.MachineGun` is never used.** No gameplay-systems
   asset assigns that tag; the WHL_08 ring-turret variant carries the
   `WHL_08.Default` tag through its config, so the MachineGun row's rules
@@ -169,9 +174,10 @@ body with collision disabled) plays no part.
 **Data.** The table comes from `MVF_HealthSections.ComplexSurfaceMappings`
 in the platform and part files: per surface group, a slot map
 (`CC_FuelTank` → `Attribute.Gameplay.Health.FuelTank`, …), and a default
-section (usually the main health) for every slot not listed. Which code
-fills the component's table from this struct is not traced; the struct is
-the only slot-to-section data in the export.
+section (usually the main health) for every slot not listed. The section
+registration (`0x53214A0`, run for each `MVF_HealthSections` fragment)
+merges this struct (fragment `+0x90`) into the component's table
+(`+0x180`), and `PhysicsGroupMappings` (`+0xE0`) into `+0x1D0`.
 
 **Data, collision meshes.** The slots live on dedicated low-poly
 collision meshes, separate from the render models. Each render static mesh
@@ -362,8 +368,10 @@ means hits there never reach the main health.
 **Native.** After the rules, `ApplyWDDamage` hands the amount to the
 vehicle damage model:
 
-1. **Pick the section** (`ApplyDamageEvent`, `0x53202B0`; the exec thunk
-   `0x5341430` reaches it through `0x5320400`). A pre-gate requires the
+1. **Pick the section** (`ApplyDamageEvent`, `0x53202B0`, which then
+   calls `0x5320400`; the reflected exec thunk `0x5341430` repeats the
+   pick inline and calls `0x5320400` directly, without passing through
+   `0x53202B0`). A pre-gate requires the
    authority role, an amount above `1e-8` and two owner checks. Point
    damage uses the zone query `0x5338730` on the hit info; radial damage
    uses the first component hit; any other event falls back to
@@ -573,14 +581,30 @@ the `VehicleDamageTag` in the variant's `*GameplaySystems*` asset, reached
 through the modules' `DA_*Config` references. STN_06 is left out: its tag
 has no row (§2.2).
 
-Assumptions:
+**Native, assembly** (`0x50E7200`, `0x50E7140`; disassembly only, no
+corpus bodies). The game follows the same chain, with three points that
+no data exercises:
 
-- **Health stops at 0:** a section absorbs at most its remaining health,
-  and the rest is left for post routing. The attribute hook that would
-  clamp it is not traced, but the depleted-only post routes in the data
-  only carry damage this way.
-- Point hits only (radial flags do not apply); the section-requirement
-  filter, repair and regeneration are ignored.
+- Two more override layers: a variant can be built on another variant
+  (`0x50E7140` recurses into it), and the vehicle actor's own
+  `AssemblyData` (`+0x3A0`) is applied last.
+- When two health sections share a key, the first one registered wins
+  (`0x53214A0`). No variant repeats a key.
+- A variant's `CustomFragmentData` can replace the vehicle config
+  (`0x53B6190`). The 10 variants that have any only override meshes and
+  materials.
+
+**Health stops at 0** (native): a section absorbs at most its remaining
+health, and the rest is left for post routing. Each section attribute
+gets a base-value and a current-value hook (registered in `0x53214A0`
+through `0x5236990` / `0x5236C70`, map at the attribute component's
+`+0x378`), both bound to `0x533A750`, which clamps the new value to
+`[0, MaxHealth]`. The reduction helper `0x52311D0` returns the change
+actually applied, so the absorbed amount never exceeds the remaining
+health.
+
+Assumption: point hits only (radial flags do not apply); the
+section-requirement filter, repair and regeneration are ignored.
 
 <!-- damage_tables --survive -->
 | Variant | Damage row (`Meta.Damage.Vehicle.` omitted) | Main health | `556mm` | `50Cal` | `20x102mm` | `30mm` |
@@ -642,7 +666,7 @@ Every row has a `Meta.Damage.Bullet` rule.
 
 | # | Question | What closes it |
 |---|---|---|
-| V-1 | `RootDamageTag`'s value, which decides whether the generic `Meta.Damage.Vehicle` row is evaluated | The `UWDGlobalDamageSystem` instance's config (not in the export) |
+| V-1 | **Closed** (§1): `RootDamageTag` is `Meta.Damage` and is never evaluated, so the walk reaches the generic `Meta.Damage.Vehicle` row | Constructor `0x6BB6160`; the walk in `0x6BB6A60` |
 | V-2 | How `ModifyDamage` copies the entity component's tag into the target tag | `0x6EF8DE0` / `0x6F01BB0`, which did not decompile; disassembly |
 | V-3 | What happens when the zone query resolves to no section | `0x5338730` and the section lookup |
 | V-4 | Which source tags a vehicle collision event carries, which the stationary `Add` entries depend on | The collision damage caller |
@@ -667,3 +691,4 @@ Every row has a `Meta.Damage.Bullet` rule.
 | 2026-10-17 | §5.4 now covers all 30 variants with a damage row, assembled from the variant data (platform, slots, overrides) instead of hand-picked modules; flagged the unreachable `WHL_08.MachineGun` row. |
 | 2026-10-17 | Independent verifier pass: the destroy routine is not the reflected `DestroyVehicle`; when post routing runs; simultaneous routing fires at any health when `bOnlyWhenDepleted` is clear; the section pick's pre-gate, zone-miss case and thunk path. |
 | 2026-10-17 | Added §3.1 Hitboxes: hits resolve through the complex-surface collision slots, mapped to sections by `ComplexSurfaceMappings`; per-vehicle slot map with section health, routing and rule factors (`--hitboxes`). |
+| 2026-10-17 | Another independent verifier pass: closed V-1 (`RootDamageTag` is `Meta.Damage`); the exec thunk does not pass through `0x53202B0`; the health clamp is traced (`0x533A750`), so "health stops at 0" is native, not an assumption; native assembly adds two unused override layers, first-registered section wins and config replacement (§5.4); the STN_06 tag-absence argument is softened; the code that fills the slot-to-section table is `0x53214A0` (§3.1). The §5.4 chain for all variants and the Main health column were confirmed. |
