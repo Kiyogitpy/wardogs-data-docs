@@ -3,7 +3,7 @@ title: "Vehicles"
 parent: "Content"
 ---
 
-# Wardogs — Vehicles Reference (v2)
+# Wardogs — Vehicles Reference
 *Extracted from cooked game data ([`Wardogs/Content/Vehicles`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Vehicles), 121 JSON files, all parsed). Multi-object files were split on each `--- export:` header; the first export is the asset, later exports are its sub-objects (input triggers, modifiers, curve keys, etc.). Build `++Wardogs+Live-CL-516586`, UE 5.7.*
 
 > **Scope note:** this folder defines **one complete vehicle**: the **FWG_01 fixed-wing airplane** (platform [`VP_FWG_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Vehicles/Platforms/Air/VP_FWG_01.json), variant [`VV_FWG_01_Default`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Vehicles/Variants/Air/VV_FWG_01_Default.json)). It also holds the shared vehicle input mappings, interaction contexts, camera spring arms, a free-vehicle spawner rule set, and helicopter/tracked-vehicle *curves* that are referenced by the airplane or left unused. Stats for Humvee, Kodiak, Littlebird, tanks etc. are **not** in this folder (see section 12).

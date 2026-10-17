@@ -3,7 +3,7 @@ title: "Challenges KOTH (feature)"
 parent: "Game Features"
 ---
 
-# Wardogs — GameFeature: Challenges_KOTH Reference (v2)
+# Wardogs — GameFeature: Challenges_KOTH Reference
 *Extracted from cooked game data (build `++Wardogs+Live-CL-516586`, UE 5.7.4). Source: [`Wardogs/Plugins/GameFeatures/Challenges_KOTH/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH) (75 JSON files). Scripted pass over every file, then spot-checked against representative files.*
 
 > **Scope note:** this folder holds the **wiring** for the KOTH challenge set: which state tree runs for which session event, which reward tag it grants, and which lookup table turns a vehicle/item variant into a reward tag. The **reward values** (cash, XP) live in the shared challenge tables outside this folder. See `Wardogs_Rewards_and_Progression_v2.md` (sections 10, 13, 15) and the sibling doc `Wardogs_GameFeatures_Rewards_v2.md`.

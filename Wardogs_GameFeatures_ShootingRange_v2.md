@@ -3,7 +3,7 @@ title: "ShootingRange (feature)"
 parent: "Game Features"
 ---
 
-# Wardogs — GameFeatures: ShootingRange (v2)
+# Wardogs — GameFeatures: ShootingRange
 *Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: [`Plugins/GameFeatures/ShootingRange/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/ShootingRange) — 1 JSON file ([`Content/ShootingRange.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ShootingRange/Content/ShootingRange.json), 6 exports).*
 
 ---

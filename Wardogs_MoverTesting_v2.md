@@ -3,7 +3,7 @@ title: "MoverTesting"
 parent: "Content"
 ---
 
-# Wardogs — Mover & Character Movement Reference (v2)
+# Wardogs — Mover & Character Movement Reference
 *Extracted from the cooked JSON export under `Content/MoverTesting` (78 files, 177 export blocks). Values are raw asset properties. Where a meaning comes from a property name rather than from the export, it is marked as inferred. A "-" in a table means the property is absent from the export.*
 
 > **Scope note:** the folder is named "MoverTesting", but it holds the live character movement stack: ground, falling, parachute, climbing, ladder, mantling, vaulting, swimming, ragdoll, body dragging, weight classes, camera-lock modifier states, and the input map. The name is kept as it is in the dump.

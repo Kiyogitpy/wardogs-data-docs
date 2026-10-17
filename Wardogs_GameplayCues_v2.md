@@ -3,7 +3,7 @@ title: "GameplayCues"
 parent: "Content"
 ---
 
-# Wardogs: GameplayCues Data Reference (v2)
+# Wardogs: GameplayCues Data Reference
 *Extracted from cooked game data ([`Wardogs/Content/GameplayCues`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameplayCues), 1 file). Values are raw asset values.*
 
 > **Scope:** one VFX data asset for the vehicle countermeasure smoke screen. The folder name says gameplay cue, but the asset is a smoke-grenade VFX configuration instance.

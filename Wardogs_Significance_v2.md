@@ -3,7 +3,7 @@ title: "Significance"
 parent: "Content"
 ---
 
-# Wardogs — Significance Reference (v2)
+# Wardogs — Significance Reference
 *Extracted from cooked game data (JSON export, [`Wardogs/Content/Significance/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Significance), 15 source files: 8 significance settings, 2 FOV evaluators, 5 sphere evaluators). Parsed with a Python script. Values are the raw exported values.*
 
 > **What this is:** the significance system decides how often each object type updates, based on distance and (for some types) whether it is in view. Each **settings** asset is one object category. It lists which **evaluators** to use and gives a timing row per significance level. The evaluators hold the distance and cone thresholds that place an object in a level.

@@ -3,7 +3,7 @@ title: "FluidFlux"
 parent: "Content"
 ---
 
-# Wardogs: FluidFlux Data Reference (v2)
+# Wardogs: FluidFlux Data Reference
 *Extracted from cooked game data ([`Wardogs/Content/FluidFlux`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/FluidFlux), 2 files). Values are raw curve keys.*
 
 > **Scope:** the underwater surface waterline gradient. FluidFlux is a fluid-simulation plugin, and this folder holds only its waterline colour data. No simulation settings are present.

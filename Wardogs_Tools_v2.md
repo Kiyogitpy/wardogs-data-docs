@@ -3,7 +3,7 @@ title: "Tools"
 parent: "Content"
 ---
 
-# Wardogs: Tools Data Reference (v2)
+# Wardogs: Tools Data Reference
 *Extracted from cooked game data ([`Wardogs/Content/Tools`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Tools), 1 file). Editor UI text styles, not gameplay data.*
 
 > **Scope:** one editor-UI text-style table. It is used by the editor tooling and does not affect the game.

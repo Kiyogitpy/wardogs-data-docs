@@ -3,7 +3,7 @@ title: "ControlZone (feature)"
 parent: "Game Features"
 ---
 
-# Wardogs — GameFeature: ControlZone Reference (v2)
+# Wardogs — GameFeature: ControlZone Reference
 *Extracted from cooked game data (build `++Wardogs+Live-CL-516586`, UE 5.7.4). Source: [`Wardogs/Plugins/GameFeatures/ControlZone/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/ControlZone) (21 JSON files). Scripted pass over every file, then spot-checked against the configs and tables.*
 
 > **Scope:** this folder defines **how Control Zones are shaped, placed and moved** per map, and the HUD, placement and reward-feed plumbing around them. The per-tick **reward cash values** for Control Zone and Hot Zone (contested, owned, entered, passenger events) are in `Wardogs_Rewards_and_Progression_v2.md`, section 6a. The **map-level zone regions** are in the sibling doc `Wardogs_GameFeatures_ControlZoneRegions_v2.md`.

@@ -3,7 +3,7 @@ title: "AlternativeCriticalCamera (feature)"
 parent: "Game Features"
 ---
 
-# Wardogs — GameFeatures: AlternativeCriticalCamera (v2)
+# Wardogs — GameFeatures: AlternativeCriticalCamera
 *Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: [`Plugins/GameFeatures/AlternativeCriticalCamera/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/AlternativeCriticalCamera) — 8 JSON files.*
 
 ---

@@ -3,7 +3,7 @@ title: "Skins (feature)"
 parent: "Game Features"
 ---
 
-# Wardogs: GameFeatures Skins Reference (v2)
+# Wardogs: GameFeatures Skins Reference
 *Source: exported JSON under [`Wardogs/Plugins/GameFeatures/Skins`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Skins) (16 files, 5 folders). Numbers and tags are read from the export. Meanings of fields that are not named in the export are marked as unconfirmed.*
 
 ---

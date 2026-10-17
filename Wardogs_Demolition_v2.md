@@ -3,7 +3,7 @@ title: "Demolition"
 parent: "Content"
 ---
 
-# Wardogs — Demolition Reference (v2)
+# Wardogs — Demolition Reference
 *Extracted from cooked game data (JSON export, [`Wardogs/Content/Demolition/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Demolition), 86 source files: 39 demolition assets, 9 component settings, 19 remnant-mesh assets, 19 rulesets). Parsed with a Python script. The 19 ruleset files each contain several `--- export:` blocks and were split on those headers. Values are the raw exported values.*
 
 > **How the parts link:** each `BHDemolitionDataAsset` (one per destructible prop) points at one **component settings** asset (rendering/collision), one **ruleset** (which damage sources or vehicles may demolish it), one or more **remnant mesh** assets (what is left behind), plus VFX, a crosstalk audio tag, and fragment physics.

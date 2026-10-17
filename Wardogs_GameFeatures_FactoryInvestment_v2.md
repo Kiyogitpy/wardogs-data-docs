@@ -3,7 +3,7 @@ title: "FactoryInvestment (feature)"
 parent: "Game Features"
 ---
 
-# Wardogs — GameFeatures: FactoryInvestment (v2)
+# Wardogs — GameFeatures: FactoryInvestment
 *Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: [`Plugins/GameFeatures/FactoryInvestment/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/FactoryInvestment) — 2 JSON files. The Factory 01 investment is in the FactoryInvestment_01 doc.*
 
 ---

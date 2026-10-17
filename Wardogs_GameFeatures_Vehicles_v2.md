@@ -3,7 +3,7 @@ title: "Vehicles (feature)"
 parent: "Game Features"
 ---
 
-# Wardogs — GameFeatures / Vehicles Reference (v2)
+# Wardogs — GameFeatures / Vehicles Reference
 *Extracted from cooked game data as JSON. Source: [`Wardogs/Plugins/GameFeatures/Vehicles`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Vehicles) — 1,006 files, 2,936 export objects, 0 parse errors. Values are shown exactly as stored unless noted.*
 
 > **Scope note:** This doc covers the vehicle *plugin* data: GameFeature wrappers, vehicle market and stats tables, modular platform/variant/part assets, health pools, seats, weapons, buildables, supply crates, and physics configs. The [`Content/Vehicles`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Vehicles) folder is covered elsewhere and is not described here.

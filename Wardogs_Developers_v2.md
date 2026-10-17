@@ -3,7 +3,7 @@ title: "Developers"
 parent: "Content"
 ---
 
-# Wardogs: Developers Data Reference (v2)
+# Wardogs: Developers Data Reference
 *Extracted from cooked game data ([`Wardogs/Content/Developers`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Developers), 1 file). This is a single developer-owned settings asset.*
 
 > **Scope:** one asset. It is a personal developer folder with no shared content, so this doc is short.

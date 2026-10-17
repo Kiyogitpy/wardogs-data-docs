@@ -3,7 +3,7 @@ title: "Gunsmith (feature)"
 parent: "Game Features"
 ---
 
-# Wardogs — Gunsmith Game Feature Reference (v2)
+# Wardogs — Gunsmith Game Feature Reference
 *Extracted from cooked game data ([`Wardogs/Plugins/GameFeatures/Gunsmith`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Gunsmith), 18 JSON files, all parsed). Build `++Wardogs+Live-CL-516586`, UE 5.7.*
 
 > **What this is:** the weapon-customisation mode (reticles, optics, attachments, flair) built on the shared **Itemsmith** UI framework, the same base as Vehiclesmith. Almost all of it is UI configuration: pages, browser lists, reticle definitions, accuracy display and textures. The weapon balance numbers (damage, RPM, recoil) are **not** in this plugin. Those live on the weapon items elsewhere.

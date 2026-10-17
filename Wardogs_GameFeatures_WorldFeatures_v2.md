@@ -3,7 +3,7 @@ title: "WorldFeatures (feature)"
 parent: "Game Features"
 ---
 
-# Wardogs — GameFeatures: WorldFeatures (v2)
+# Wardogs — GameFeatures: WorldFeatures
 *Extracted from cooked game data (UE 5.7 export JSON). Source folder: [`Plugins/GameFeatures/WorldFeatures/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures) — 31 JSON files. Values are raw export values. StateTree internals were summarised, not decoded.*
 
 ---

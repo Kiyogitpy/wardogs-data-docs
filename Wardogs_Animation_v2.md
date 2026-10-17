@@ -3,7 +3,7 @@ title: "Animation"
 parent: "Content"
 ---
 
-# Wardogs: Animation Data Reference (v2)
+# Wardogs: Animation Data Reference
 *Extracted from cooked game data ([`Wardogs/Content/Animation`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Animation), 10 files). Motion-matching and mirroring tables are read directly; curve semantics are inferred from asset names unless stated.*
 
 > **Scope:** the animation support data: motion-matching schemas and databases, the first-person mirroring table, animation curves and the curve-compression setting. The actual animation sequences and `PSD_*` pose-search databases are not in this folder (see section 7).

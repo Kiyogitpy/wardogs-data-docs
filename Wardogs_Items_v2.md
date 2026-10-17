@@ -3,7 +3,7 @@ title: "Items"
 parent: "Content"
 ---
 
-# Wardogs — Items Reference (v2)
+# Wardogs — Items Reference
 *Extracted from cooked game data exported to JSON, source [`Wardogs/Content/Items/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items) (259 files). Every number below comes from the exported properties; anything the dump does not contain is marked as such.*
 
 > **How the files are structured:** each `.json` file is not one object. It holds several export blocks, each starting with a `--- export: <Kind> / <Name> ---` header followed by its own JSON object. Across the category there are 1,401 blocks: 230 `UPrimaryDataAsset` roots (the items and assets people actually use), 1,142 `UObject` sub-objects (the "fragments" each item points to), 26 `UCurveFloat`, 2 `UCurveTable`, and 1 `UDataAsset`. A primary item lists its fragments in `DataFragments`; the fragment blocks in the same file hold the values.

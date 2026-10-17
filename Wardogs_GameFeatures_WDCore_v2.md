@@ -3,7 +3,7 @@ title: "WDCore (feature)"
 parent: "Game Features"
 ---
 
-# Wardogs — GameFeatures: WDCore (v2)
+# Wardogs — GameFeatures: WDCore
 *Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: [`Plugins/GameFeatures/WDCore/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/WDCore) — 3 JSON files.*
 
 ---

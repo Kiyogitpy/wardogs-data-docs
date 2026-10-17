@@ -3,7 +3,7 @@ title: "PlayerHealthBar (feature)"
 parent: "Game Features"
 ---
 
-# Wardogs — GameFeatures: PlayerHealthBar (v2)
+# Wardogs — GameFeatures: PlayerHealthBar
 *Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: [`Plugins/GameFeatures/PlayerHealthBar/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/PlayerHealthBar) — 2 JSON files.*
 
 ---

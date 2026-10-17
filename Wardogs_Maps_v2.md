@@ -3,7 +3,7 @@ title: "Maps"
 parent: "Content"
 ---
 
-# Wardogs — Maps & Gym Data Reference (v2)
+# Wardogs — Maps & Gym Data Reference
 *Extracted from the cooked JSON export under [`Content/Maps`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Maps) (12 files, 48 export blocks). Values are raw asset properties. Anything inferred from a name rather than from the export is marked as inferred. The `.umap` level files are not in this category, so this doc covers the data assets that sit beside the maps.*
 
 > **Scope note:** this is the supporting data for the test gyms ([`Gyms/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Maps/Gyms)) and the per-map shader warmup manifests ([`PSOWarming/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Maps/PSOWarming)). The actual level layouts, actor placement, and gameplay rules are not in the export.

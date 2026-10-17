@@ -3,7 +3,7 @@ title: "Weapons"
 parent: "Content"
 ---
 
-# Wardogs — Weapons Reference (v2)
+# Wardogs — Weapons Reference
 *Extracted from cooked game data (JSON export, [`Wardogs/Content/Weapons/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Weapons), 92 source files). Parsed with a Python script; 15 Input files contain several `--- export:` blocks each and were split on those headers. Numbers are the raw exported values.*
 
 > **Scope note:** this folder holds only **8 weapon stat assets** (`WDWeaponStatsData`). The main rifle, SMG, LMG, shotgun and pistol stat tables are not in this folder. Their aim-sway curves are here; the stat tables themselves live under [`Plugins/GameFeatures/Weapons`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Weapons), all 45 listed in [Infantry Weapon Stats](Wardogs_InfantryWeapons_Stats_v1.html).

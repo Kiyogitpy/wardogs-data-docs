@@ -3,7 +3,7 @@ title: "Rewards (feature)"
 parent: "Game Features"
 ---
 
-# Wardogs — GameFeature: Rewards (Buildables) Reference (v2)
+# Wardogs — GameFeature: Rewards (Buildables) Reference
 *Extracted from cooked game data (build `++Wardogs+Live-CL-516586`, UE 5.7.4). Source: [`Wardogs/Plugins/GameFeatures/Rewards/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Rewards) (18 JSON files). Scripted pass over every file, then spot-checked against representative rows.*
 
 > **Overlap with the main doc:** the flat per-structure cash values (Built / Placed / Destroyed) are in `Wardogs_Rewards_and_Progression_v2.md`, section 7. This doc covers what that doc does not: the **formula structure** of the buildable reward calculator, the **variable and modifier selectors** it uses, the **feed/UI strings** that announce each reward, the **variant-to-reward lookup** for destroyed buildables, and the **assist damage curve**.

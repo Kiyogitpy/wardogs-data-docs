@@ -3,7 +3,7 @@ title: "TeamkillTracking (feature)"
 parent: "Game Features"
 ---
 
-# Wardogs — GameFeatures: TeamkillTracking (v2)
+# Wardogs — GameFeatures: TeamkillTracking
 *Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/GameFeatures/TeamkillTracking/`. The folder is no longer in the game data as of Season 02 (2026-10-15).*
 
 ---
