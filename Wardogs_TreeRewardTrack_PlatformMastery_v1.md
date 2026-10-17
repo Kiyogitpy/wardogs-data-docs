@@ -177,7 +177,7 @@ parent: "Content"
     "SourceString": "{CurrentRewards}/{MaxRewards}",
     "LocalizedString": "{CurrentRewards}/{MaxRewards}"
   },
-  "_aaabdnldffopfccceenbo_$DB355EF522244D1E$_$19$": {
+  "UnselectedTextColor": {
     "R": 1.0,
     "G": 1.0,
     "B": 1.0,
@@ -229,7 +229,7 @@ parent: "Content"
   "IconType": {
     "TagName": "UI.Icon.Gunsmith"
   },
-  "_aaabejkombelopgfdkigh_$9AEC14BEF653A867$_$20$": {
+  "_aaabeldgebdhiiiacflnh": {
     "TableId": "/Game/UI/StringTables/STRINGS_TooltipDescriptions.STRINGS_TooltipDescriptions",
     "Key": "TooltipDescription.RoleXP.Formatting",
     "SourceString": "\r\nREWARDS {Emoji} {RoleName} XP",
@@ -254,5 +254,11 @@ parent: "Content"
 
 - **Per-level cosmetic schedule:** not in these assets. The Season 1 cosmetic content list is in `Wardogs_Season01_CosmeticUnlocks_v1.md`; its "Honest gap" note explains that `DT_SeasonDefinitions.SeasonDefinitions` is empty in this build, so which battle-pass level unlocks which item has not been authored yet.
 - **Mastery rewards:** no per-role reward entries appear in [`DA_UI_PlatformMastery_RewardData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Mastery/Platforms/Data/DA_UI_PlatformMastery_RewardData.json) as extracted here.
-- **Hashed keys:** several keys (for example `10B5F07C…`, `_aaabdnld…`) are not localization keys: none of the 121 `STRINGS_*` tables pulled contain them. They look like Blueprint property names. Their meaning is not resolved in this doc.
+- **Hashed keys:** several keys (for example `10B5F07C…`) are not localization keys: none of the 121 `STRINGS_*` tables pulled contain them. They look like Blueprint property names. Their meaning is not resolved in this doc.
 - **Localized text:** the asset listing has no other-locale copies of the string tables, so only the source strings exist in this data.
+
+## Change log
+
+| Date | Change |
+|---|---|
+| 2026-10-18 | `data/` re-exported with the v2 usmap (names only; values unchanged): `_aaabdnld…` is now named `UnselectedTextColor`; the other hashed key is `_aaabeldgebdhiiiacflnh`. |

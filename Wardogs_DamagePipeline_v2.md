@@ -465,7 +465,7 @@ caliber in the source tag. There is no `Universal` row here.
 [`DT_InfantryData_AmmoTypeEffectivenessPen`](data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_AmmoTypeEffectivenessPen.json),
 not a class variable; row struct `WDAmmoTypeEffectivenessData`, fields
 `Modifier` and `ArmsClassOverrides` (the export's
-`_aaabckamhakccdhbomlfj`).
+`_aaabcfjheicbfejiaihii`; `_aaabckamhakccdhbomlfj…` before 2026-10-18).
 
 ```text
 if target actor invalid → return 0
@@ -508,9 +508,10 @@ FMJ. Helmets use the same arithmetic with their own `R` (§7.5).
 **Bytecode.** Table: a function-local reference to
 [`DT_InfantryData_VehicleSeatDamageReduction`](data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_VehicleSeatDamageReduction.json).
 Rows hold `DamageSourceGroups[]`, each with `DamageSources` (arms tags)
-and `VehicleSeats` (seat tag → percent); the export shows these as
-`_aaabcmifdcijaclkbgcnk`, `_aaaanjpnkielfelgbcjma` and
-`_aaaamdojmnlcookpbppgb`.
+and `VehicleSeats` (seat tag → percent); the export names `DamageSources` and
+`VehicleSeats` and shows `DamageSourceGroups` as the hashed
+`_aaabcpelbmpimhadngldm` (before 2026-10-18 all three were hashed:
+`_aaabcmifdcijaclkbgcnk…`, `_aaaanjpnkielfelgbcjma…`, `_aaaamdojmnlcookpbppgb…`).
 
 ```text
 arms = first source-context tag under Meta.Damage.Arms      (none → return 0)
@@ -993,3 +994,4 @@ The restored image carries the UTF-16LE build marker
 | 2026-10-17 | Another independent verifier pass: `RootDamageTag` is `Meta.Damage` and is never evaluated (§5); corrected two citations that sat on misaligned corpus rows (`0x6EF9450`, `0x6F08CE0`); named the two player-character stubs from their FName initializers and noted that the decay-pool cut runs only for role 3 (§10); every function without a corpus body is listed and reproduced from disassembly; the three IDA notes are merged into [`docs/evidence/damage.md`](docs/evidence/damage.md) (§11). |
 | 2026-10-17 | Round-4 verifier pass: character health's hooks clamp through vitality slot 161 (§10); all 17 `ModifyDamage` call sites named (§1.1). |
 | 2026-10-17 | Round-5 verifier pass: the projectile's ammo tag (`+0xF0`) is set by `0x6F30E50` from the spawn parameters, built on the fire path by `0x6C98290` (§7.9); the `<type>` rule is only partly decoded. The two back-blast paths are branches of one if/else whose condition is open (O-8). |
+| 2026-10-18 | `data/` re-exported with the v2 usmap (names only; values unchanged): §7.3 `ArmsClassOverrides` key is `_aaabcfjheicbfejiaihii`; §7.4 `DamageSources` and `VehicleSeats` are named in the export. |

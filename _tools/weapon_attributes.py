@@ -36,8 +36,8 @@ SKIP = re.compile(r"BarrelTest")  # vehicle barrel test items, as in recoil_tabl
 # FWDBipodAttachmentData +0x138 (unfolded, on the weapon) and +0x148 (unfolded, on the
 # character); the cooked names are obfuscated, the SDK gives the order. +0x158 / +0x168 are
 # the mounted lists, applied by the Blueprint action B_Action_MountBipod (Effects §7.1).
-BIPOD_WEAPON = "_aaabgocclgplfdmmfjefm_$E22B6FB53CC5945C$_$22$"
-BIPOD_CHARACTER = "_aaabpgfgnkcdbhhlgdhmb_$656DA23177B637C1$_$31$"
+BIPOD_WEAPON = "_aaabgkhkknepnbcppjkao"
+BIPOD_CHARACTER = "_aaabpbaanpfnnepnbpekp"
 MOUNTED_WEAPON = "MountedAppliedEffects"
 MOUNTED_CHARACTER = "MountedAppliedCharacterEffects"
 # The sight name the weapon starts with and returns to on every attachment change

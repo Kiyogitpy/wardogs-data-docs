@@ -62,11 +62,11 @@ Resolution workflow per gap:
 
 ### [Wardogs_InfantryWeapons_Stats_v1.md](Wardogs_InfantryWeapons_Stats_v1.html)
 
-- **5. Still not pulled / limitations**  →  _**Unnamed fields.** Some properties are listed without a readable name, such as `_aaabijhbknckndgboaemo_$971AD2AD361E04CE$_$24$` (mostly `1.0`). Their meaning is not stated in the data._
+- **5. Still not pulled / limitations**  →  _**Unnamed fields.** Some properties are listed without a readable name, such as `_aaabimbpohdlmnphjbidm` (mostly `1.0`). Their meaning is not stated in the data._
 
 ### [Wardogs_Items_v2.md](Wardogs_Items_v2.html)
 
-- **13. Still Not Pulled / Limitations**  →  _**Unnamed property keys omitted.** Keys of the form `_aaa..._$HEX$_$N$` (several per aim-assist asset and a few on containers) are internal and were skipped. Their meaning is unknown._
+- **13. Still Not Pulled / Limitations**  →  _**Unnamed property keys omitted.** Keys of the form `_aaa…` (21 letters a–p; `_aaa..._$HEX$_$N$` before 2026-10-18) (several per aim-assist asset and a few on containers) are internal and were skipped. Their meaning is unknown._
 
 ### [Wardogs_Maps_v2.md](Wardogs_Maps_v2.html)
 
@@ -91,7 +91,7 @@ Resolution workflow per gap:
 
 ### [Wardogs_TreeRewardTrack_PlatformMastery_v1.md](Wardogs_TreeRewardTrack_PlatformMastery_v1.html)
 
-- **6. Still not pulled / limitations**  →  _**Hashed keys:** several keys (for example `10B5F07C…`, `_aaabdnld…`) are not localization keys: none of the 121 `STRINGS_*` tables pulled contain them. They look like Blueprint property names. Their meaning is not resolved in this doc._
+- **6. Still not pulled / limitations**  →  _**Hashed keys:** several keys (for example `10B5F07C…`) are not localization keys: none of the 121 `STRINGS_*` tables pulled contain them. They look like Blueprint property names. Their meaning is not resolved in this doc._
 
 ### [Wardogs_VFX_v2.md](Wardogs_VFX_v2.html)
 
@@ -101,3 +101,9 @@ Resolution workflow per gap:
 ### [Wardogs_Weapons_v2.md](Wardogs_Weapons_v2.html)
 
 - **6. Still Not Pulled / Limitations**  →  _Two unnamed fields on the SKS and Judge have no known meaning. Values: SKS 1.0 and 2.5, Judge 2.0._
+
+## Change log
+
+| Date | Change |
+|---|---|
+| 2026-10-18 | `data/` re-exported with the v2 usmap (names only; values unchanged): the cited hashed keys and key forms are updated. |

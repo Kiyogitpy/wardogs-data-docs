@@ -337,7 +337,7 @@ The rule-field meanings are read from enum names. Runtime behaviour (what "spawn
 - **Disabled systems.** Max angular velocity limit (83 deg/s) and ground effect strength (0%) are present but off.
 - **Spawner rule references.** The spawner references `Vehicle.Variant.Land.Wheeled.Kodiak.Pickup` and `Vehicle.Variant.Air.Rotary.ROT_04.Default`. Neither asset is defined in this folder, and what [`ROT_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04/Content/ROT_04.json) is was not checked.
 - **Unused curve.** [`CRV_TrackedVehicle_TorqueCurve_APC`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Vehicles/Pawns/Tracked/Curves/CRV_TrackedVehicle_TorqueCurve_APC.json) is in [`Pawns/Tracked/Curves`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Vehicles/Pawns/Tracked/Curves) but nothing in this dump refers to it.
-- **Stripped or hashed property names.** Several exports carry internal hash keys such as `_aaabelnajgoacnpmnokoe_$...`. These are unnamed properties and are not interpreted here.
+- **Stripped or hashed property names.** Several exports carry internal hash keys such as `_aaabefidebfnobnbphclo` (`_aaabelnajgoacnpmnokoe_$...` before 2026-10-18). These are unnamed properties and are not interpreted here.
 
 ---
 
@@ -349,3 +349,9 @@ The rule-field meanings are read from enum names. Runtime behaviour (what "spawn
 - **Assist and control graph.** The `BHRotaryMovementControl` assist bodies (PID, damping, smoothed influence) are present as sub-objects but only their labels and top-level modes were summarised.
 - **Input sub-objects.** Modifier and trigger parameters (dead zones, scalars, actuation thresholds) are present on each action but were only spot-checked (for example Airbrake `InputTriggerReleased` ActuationThreshold 0.1).
 - **Shared curves.** The collision and damage-multiplier curves are exported with no input-unit suffix; their meaning is inferred from the names.
+
+## Change log
+
+| Date | Change |
+|---|---|
+| 2026-10-18 | `data/` re-exported with the v2 usmap (names only; values unchanged): the example hashed key is now `_aaabefidebfnobnbphclo`. |

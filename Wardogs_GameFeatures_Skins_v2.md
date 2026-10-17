@@ -33,9 +33,9 @@ parent: "Game Features"
 
 ## 2. Cosmetic Rows
 
-Each `WDCosmeticData` row links a cosmetic tag to the item or vehicle it applies to (`EntityID`) and to a skin asset (`SkinDefinition`). Table tags are shown without the `Meta.Cosmetic.` prefix.
+Each `WDCosmeticData` row links a cosmetic tag to the item or vehicle it applies to (`EntityId`) and to a skin asset (`SkinDefinition`). Table tags are shown without the `Meta.Cosmetic.` prefix.
 
-| Table | Row | Applies to (EntityID) | Archetype | Skin asset |
+| Table | Row | Applies to (EntityId) | Archetype | Skin asset |
 |---|---|---|---|---|
 | FactionLogo | FactionLogo.WEPN_033 | Id.Item.WEPN_033 | Item.Archetype.AR | Skin_Supporter_Lonestar |
 | FactionLogo | FactionLogo.KH2002 | Id.Item.KH2002 | Item.Archetype.AR | Skin_Supporter_Manticore |
@@ -103,7 +103,7 @@ Override targets for [`Skin_ChocolateChip`](https://github.com/Kiyogitpy/wardogs
 
 ## 5. How the Values Combine
 
-- Equipping a cosmetic: the row's `EntityID` gives the item; the row's `SkinDefinition` gives the skin asset.
+- Equipping a cosmetic: the row's `EntityId` gives the item; the row's `SkinDefinition` gives the skin asset.
 - Applying the skin to a specific item: the `DefaultCPD` block applies, and a matching `CPD_Overrides` entry for that item replaces the fields it sets.
 - Cosmetic rows are read through the `CosmeticData` registry, which the two DataRegistrySource actions add to.
 
@@ -116,3 +116,8 @@ Override targets for [`Skin_ChocolateChip`](https://github.com/Kiyogitpy/wardogs
 - **`CPD` field meanings.** The UV, wear and mastery field names are as exported. Their effect on rendering is not confirmed.
 - **Component class** `WDActorSkinComponent` and the [`SkinsInSession`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/SkinsInSession/Content/SkinsInSession.json) runtime are only named here, not decoded.
 
+## Change log
+
+| Date | Change |
+|---|---|
+| 2026-10-18 | `data/` re-exported with the v2 usmap (names only; values unchanged): the row key is spelled `EntityId`. |

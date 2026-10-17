@@ -46,7 +46,7 @@ Three Season 1 emotes. Each row has category `Meta.Cosmetic.Emote`, archetype `N
 
 - **Package:** `Wardogs/Plugins/GameFeatures/Emotes/Season01_EmotesData/Content/Data/DT_Cosmetics_Season01_Emotes.uasset`
 
-| Row key | EntityID | Category | Archetype | Skin/Emote definition asset |
+| Row key | EntityId | Category | Archetype | Skin/Emote definition asset |
 |---|---|---|---|---|
 | `Meta.Cosmetic.Emote.Shh` | Id.Emote.Shh | Meta.Cosmetic.Emote | None | `—` |
 | `Meta.Cosmetic.Emote.RockPaperScissors` | Id.Emote.RockPaperScissors | Meta.Cosmetic.Emote | None | `—` |
@@ -58,7 +58,7 @@ Three Season 1 emotes. Each row has category `Meta.Cosmetic.Emote`, archetype `N
 
 - **Package:** `Wardogs/Plugins/GameFeatures/Skins/Season01_SkinsData/Content/Data/DT_Cosmetics_Season01_Skins.uasset`
 
-| Row key | EntityID | Category | Archetype | Skin/Emote definition asset |
+| Row key | EntityId | Category | Archetype | Skin/Emote definition asset |
 |---|---|---|---|---|
 | `Meta.Cosmetic.BlackAndGold.AK74` | Id.Item.AK74M | Meta.Cosmetic.BlackAndGold | Item.Archetype.AR | `/Season01_SkinsData/Data/Skin_BlackAndGold.Skin_BlackAndGold` |
 | `Meta.Cosmetic.DigitalWood.GGX17` | Id.Item.Glock17 | Meta.Cosmetic.DigitalWood | Item.Archetype.Pistol | `/Season01_SkinsData/Data/Skin_DigitalWood.Skin_DigitalWood` |
@@ -162,7 +162,7 @@ UI textures in the same Season 1 skin plugin (17 assets, names only): `T_UI_A-91
 ## 7. How the values combine
 
 - **Row key:** `Meta.Cosmetic.<Set>.<Target>`. The `<Set>` part matches the Category column (for example `Meta.Cosmetic.TwoToneDesert`), and the target is the item or vehicle the skin is for.
-- **EntityID:** the item, vehicle variant or emote the cosmetic attaches to (`Id.Item.*`, `Vehicle.Variant.*`, `Id.Emote.*`).
+- **EntityId:** the item, vehicle variant or emote the cosmetic attaches to (`Id.Item.*`, `Vehicle.Variant.*`, `Id.Emote.*`).
 - **Archetype:** the class of that entity (for example `Item.Archetype.AR`, `Item.Archetype.Sniper`, `Vehicle.Archetype.Land.Wheeled`). Emotes have `None`.
 - **Skin/Emote definition asset:** one asset per set. All 12 Two-Tone Desert rows point at [`Skin_TwoTone_Desert`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season01_SkinsData/Content/Data/Skin_TwoTone_Desert.json), all 4 Digital Wood rows at [`Skin_DigitalWood`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season01_SkinsData/Content/Data/Skin_DigitalWood.json), and the single Black and Gold row at [`Skin_BlackAndGold`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season01_SkinsData/Content/Data/Skin_BlackAndGold.json). Emotes have no asset.
 - The same entity can appear in more than one set. `Id.Item.M4` has a Digital Wood row and a Two-Tone Desert row, each with its own row key.
@@ -177,3 +177,9 @@ UI textures in the same Season 1 skin plugin (17 assets, names only): `T_UI_A-91
 - **Skin rendering:** section 5 gives the pattern, LUT and UV values. What a skin looks like on a model is not decoded here.
 - **Skin entity data:** no Season 1 skin entity table was found in the asset listing (searched the `DT_EntityData_Ext_*` names). The skins are linked only by their `Skin_*` assets.
 - **Role levels:** [`DA_RoleLevelData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Shared/Widgets/Meta/Data/DA_RoleLevelData.json) has no numeric level or XP table. Role XP thresholds are not in the data (see the TreeRewardTrack doc).
+
+## Change log
+
+| Date | Change |
+|---|---|
+| 2026-10-18 | `data/` re-exported with the v2 usmap (names only; values unchanged): the row key is spelled `EntityId`. |

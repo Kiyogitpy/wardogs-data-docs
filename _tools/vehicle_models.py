@@ -9,7 +9,7 @@ for a mesh it places, a note for the viewer in asset.extras.notes.
 A variant is assembled the way its modules place their meshes (Wardogs_VehicleDamagePipeline_v1.md §3.1).
 damage_tables.assemble() gives the variant's platform and parts. Every enabled
 MVF_StaticMesh fragment, and every MVF_DestructibleMeshes entry with bRegisterComplexSurface, places a
-render mesh at AttachQuery.SocketName on the component whose tag is AttachQuery.SourceID (usually the
+render mesh at AttachQuery.SocketName on the component whose tag is AttachQuery.SourceId (usually the
 Chassis skeletal mesh). Destructible entries add their RelativeTransform; static-mesh fragments have
 none. The render mesh's collision mesh (UStaticMesh.ComplexCollisionMesh) shares the render mesh's local
 frame, so the GLB from `WdExtract mesh` for that collision mesh goes at the same transform. The rotor hubs
@@ -182,7 +182,7 @@ def components(module_files):
             cs = p.get("ComponentSettings", {})
             aq = cs.get("AttachQuery", {})
             base = {"module": os.path.basename(f)[:-5], "fragment": fr["Key"], "tags": set(cs.get("Tags", [])),
-                    "source": aq.get("SourceID"), "socket": aq.get("SocketName"), "rel": np.eye(4)}
+                    "source": aq.get("SourceId"), "socket": aq.get("SocketName"), "rel": np.eye(4)}
             if kind == "MVF_SkeletalMesh":
                 comps.append(dict(base, kind="skeletal", mesh=p.get("SkeletalMesh", {}).get("AssetPathName"),
                                   register=False, group=None))
@@ -199,7 +199,7 @@ def components(module_files):
                         mtype = s.get("MeshType", "").split("::")[-1]
                         comps.append({"module": base["module"], "fragment": f"{fr['Key']}/{dt.tag(s.get('MeshTag'))}",
                                       "tags": set(scs.get("Tags", [])), "kind": "skeletal" if mtype == "SkeletalMesh" else "static",
-                                      "source": saq.get("SourceID"), "socket": saq.get("SocketName"),
+                                      "source": saq.get("SourceId"), "socket": saq.get("SocketName"),
                                       "rel": ftransform(s.get("RelativeTransform")),
                                       "mesh": (s.get("Mesh") or {}).get("AssetPathName"),
                                       "register": s.get("bRegisterComplexSurface", False),
@@ -267,7 +267,7 @@ def wheel_components(module_files):
 
 def place(comps, skel_dir, bones=None):
     """World (actor-space, UE cm) 4x4 per component; components that cannot be resolved get None and a note.
-    AttachQuery.SourceID names the parent by component tag or fragment key; "Mesh" (SourceMode Explicit) is
+    AttachQuery.SourceId names the parent by component tag or fragment key; "Mesh" (SourceMode Explicit) is
     the pawn's own mesh, the root Chassis skeletal mesh. Socket names match bones/sockets ignoring case, as
     FNames do."""
     skeletons = {}

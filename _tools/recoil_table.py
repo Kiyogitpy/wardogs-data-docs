@@ -19,7 +19,7 @@ DOC = "Wardogs_Weapons_v2.md"
 BLOCK = re.compile(r"<!-- recoil_table -->.*?<!-- /recoil_table -->", re.S)
 # Vehicle, stationary and test weapons get their multipliers elsewhere; fists never fire.
 SKIP = re.compile(r"Vehicles|VehicleWeaponry|Stationary|Gunsmith|BarrelTest|BuildTool|Fists")
-FOCUS_WINDOW = "_aaabijhbknckndgboaemo_$971AD2AD361E04CE$_$24$"  # stats +0x98
+FOCUS_WINDOW = "_aaabimbpohdlmnphjbidm"  # stats +0x98 (hashed in this build; v2 usmap token)
 DEFAULTS = {  # FWDWeaponStats constructor 0x699E6C0
     "RandomDeviationDegree": 5.0,
     "RecoilPatternResetTime": 0.5,

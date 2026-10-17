@@ -20,7 +20,7 @@ parent: "Content"
 - **Recoil pattern reworked on [`DA_SKS_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/DMR/SKS/Data/DA_SKS_Stats.json):** all 20 pattern entries changed. Entry 0 Y: 0.95 -> 2.375, entry 19 Y: 1.05 -> 2.625; X values now include negatives (entry 0 X: -0.055 -> -0.025538). The DMR recoil pass also touches [`DA_RFB_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/RFB/Content/Data/DA_RFB_Stats.json) and [`DA_SVDM_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/SVDM/Content/Data/DA_SVDM_Stats.json).
 - **`SuppressionMultiplier` added or changed:** SVDM 0.4 -> 0.8, LMG_02 0.45 -> 0.9. New values: SKS 1.1, M2Browning 0.8, AK74M 1.05, M4 0.95, Vector 0.8, SV98 1.5, WEPN_035 1.5, MK22 1.6, SR_04 2.0.
 - **`ViewKickMagnitudeMultiplier` removed:** SKS (was 1.1), RFB (was 1.15), SVDM (was 0.7). WEPN_028 changed 1.1 -> 1.15.
-- **ADS stabilization rates:** the `AdsStabilizeCooldownRate` and `AdsStabilizeExitGracePeriod` entries are now unnamed fields. Cooldown rate changed on SV98 (14.0 -> 2.5), MK22 (14.0 -> 2.5) and SR_04 (14.0 -> 3.0).
+- **ADS stabilization rates:** the `AdsStabilizeCooldownRate` and `AdsStabilizeExitGracePeriod` entries were unnamed in the first Season 02 export; the v2 usmap names them again (2026-10-18). Cooldown rate changed on SV98 (14.0 -> 2.5), MK22 (14.0 -> 2.5) and SR_04 (14.0 -> 3.0).
 - **[`DA_MMGL_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_012/Content/Data/DA_MMGL_Stats.json) `InitialBulletSpeed`:** 10000.0 -> 7500.0.
 - **[`DA_Vector_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_006/Content/Data/DA_Vector_Stats.json) distance falloff curve:** key 3 moved from Time 120000.0 -> 10000.0 and Value 0.2 -> 0.4.
 - **Unchanged:** RPM, fire modes and accuracy for all existing stats assets.
@@ -127,7 +127,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       }
     },
     "FocusEnergyReductionPerShot": 50.0,
-    "_aaabijhbknckndgboaemo_$971AD2AD361E04CE$_$24$": 1.0,
+    "_aaabimbpohdlmnphjbidm": 1.0,
     "RecoilReductionWhenFocussing": 30.0,
     "bUseDistanceDamageFalloffCurve": true,
     "DistanceDamageFalloffCurve": {
@@ -272,12 +272,12 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "StabilizationHoldTime": 0.5,
       "AdsStabilizationData": {
         "AdsStabilizeTime": 2.0,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 0.2,
+        "AdsStabilizeCooldownRate": 0.2,
         "AdsStabilizeCooldownRateMovingMultiplier": 2.0,
         "AdsStabilizeMovementProgressPenalty": 0.75,
-        "_aaacamgpphfkeldlcaboo_$C6FF75A4B3B201EE$_$32$": 2.5,
-        "_aaablccoleojpkdkeghnk_$22EB4E9FA3A467DA$_$27$": 9.0,
-        "_aaabiaflojcopmfgdolfd_$5BE92EFC563EB53$_$24$": 9.0
+        "_aaacalknjllchnkieahdj": 2.5,
+        "_aaablccoleojpkdkeghnk": 9.0,
+        "_aaabiaflojcopmfgdolfd": 9.0
       }
     },
     "ViewKickCurve": {
@@ -495,11 +495,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
     },
     "RandomDeviationDegree": 5.5,
     "RecoilPatternResetTime": 0.95,
-    "MaximumRandomFiringAnimationOffset": {
+    "MinimumRandomFiringAnimationOffset": {
       "X": -0.2,
       "Y": -0.2
     },
-    "MinimumRandomFiringAnimationOffset": {
+    "MaximumRandomFiringAnimationOffset": {
       "X": 0.2,
       "Y": 0.2
     },
@@ -709,10 +709,10 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "StabilizationHoldTime": 0.5,
       "AdsStabilizationData": {
         "AdsStabilizeTime": 1.5,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 0.1,
-        "_aaacamgpphfkeldlcaboo_$C6FF75A4B3B201EE$_$32$": 2.0,
-        "_aaablccoleojpkdkeghnk_$22EB4E9FA3A467DA$_$27$": 4.0,
-        "_aaabiaflojcopmfgdolfd_$5BE92EFC563EB53$_$24$": 4.0
+        "AdsStabilizeCooldownRate": 0.1,
+        "_aaacalknjllchnkieahdj": 2.0,
+        "_aaablccoleojpkdkeghnk": 4.0,
+        "_aaabiaflojcopmfgdolfd": 4.0
       }
     },
     "ViewKickCurve": {
@@ -860,7 +860,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
     "SupportedFireModes": [
       "EWDFireMode::SemiAutomatic"
     ],
-    "bFirstFocalPlane": false,
+    "_aaabaehmmeimejkapkogn": false,
     "bSpawnProjectileFromCameraWhenAds": false,
     "AimSwayData": {
       "bPersistentValues": false,
@@ -912,7 +912,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
     ],
     "RoundsPerBurst": 1,
     "IronSightsAimTime": 12.0,
-    "bFirstFocalPlane": false,
+    "_aaabaehmmeimejkapkogn": false,
     "MaxZeroingRange": 1000,
     "bSpawnProjectileFromCameraWhenAds": false,
     "SupportedCaliber": [
@@ -1167,7 +1167,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "EWDFireMode::SemiAutomatic"
     ],
     "RoundsPerBurst": 1,
-    "bFirstFocalPlane": false,
+    "_aaabaehmmeimejkapkogn": false,
     "bSpawnProjectileFromCameraWhenAds": false,
     "ViewKickCurve": {
       "EditorCurveData": {
@@ -1290,7 +1290,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       }
     },
     "FocusEnergyReductionPerShot": 50.0,
-    "_aaabijhbknckndgboaemo_$971AD2AD361E04CE$_$24$": 1.0,
+    "_aaabimbpohdlmnphjbidm": 1.0,
     "RecoilReductionWhenFocussing": 30.0,
     "bOverrideTypicalSpeed": true,
     "TypicalSpeed": 60000.0,
@@ -1870,12 +1870,12 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "StabilizationHoldTime": 1.0,
       "AdsStabilizationData": {
         "AdsStabilizeTime": 2.0,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 0.7,
-        "_aaablfmcnialkpednlben_$5C2D80BAF43DB14D$_$27$": 0.1,
+        "AdsStabilizeCooldownRate": 0.7,
+        "AdsStabilizeExitGracePeriod": 0.1,
         "AdsStabilizeMovementProgressPenalty": 0.8,
-        "_aaacamgpphfkeldlcaboo_$C6FF75A4B3B201EE$_$32$": 2.5,
-        "_aaablccoleojpkdkeghnk_$22EB4E9FA3A467DA$_$27$": 9.0,
-        "_aaabiaflojcopmfgdolfd_$5BE92EFC563EB53$_$24$": 9.0
+        "_aaacalknjllchnkieahdj": 2.5,
+        "_aaablccoleojpkdkeghnk": 9.0,
+        "_aaabiaflojcopmfgdolfd": 9.0
       }
     },
     "ViewKickCurve": {
@@ -2083,11 +2083,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
     },
     "RandomDeviationDegree": 10.0,
     "RecoilPatternResetTime": 1.0,
-    "MaximumRandomFiringAnimationOffset": {
+    "MinimumRandomFiringAnimationOffset": {
       "X": -0.35,
       "Y": -0.1
     },
-    "MinimumRandomFiringAnimationOffset": {
+    "MaximumRandomFiringAnimationOffset": {
       "X": 0.35,
       "Y": 0.1
     },
@@ -2163,7 +2163,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       }
     },
     "FocusEnergyReductionPerShot": 50.0,
-    "_aaabijhbknckndgboaemo_$971AD2AD361E04CE$_$24$": 1.0,
+    "_aaabimbpohdlmnphjbidm": 1.0,
     "RecoilReductionWhenFocussing": 30.0,
     "bOverrideTypicalSpeed": true,
     "TypicalSpeed": 35000.0,
@@ -2743,12 +2743,12 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "StabilizationHoldTime": 0.8,
       "AdsStabilizationData": {
         "AdsStabilizeTime": 1.75,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 0.65,
-        "_aaablfmcnialkpednlben_$5C2D80BAF43DB14D$_$27$": 0.1,
+        "AdsStabilizeCooldownRate": 0.65,
+        "AdsStabilizeExitGracePeriod": 0.1,
         "AdsStabilizeMovementProgressPenalty": 0.8,
-        "_aaacamgpphfkeldlcaboo_$C6FF75A4B3B201EE$_$32$": 2.5,
-        "_aaablccoleojpkdkeghnk_$22EB4E9FA3A467DA$_$27$": 9.0,
-        "_aaabiaflojcopmfgdolfd_$5BE92EFC563EB53$_$24$": 9.0
+        "_aaacalknjllchnkieahdj": 2.5,
+        "_aaablccoleojpkdkeghnk": 9.0,
+        "_aaabiaflojcopmfgdolfd": 9.0
       }
     },
     "ViewKickCurve": {
@@ -2924,11 +2924,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
     "RandomDeviationDegree": 10.0,
     "RecoilPatternResetTime": 1.1,
     "FiringAnimationOffsetType": "EWDFiringAnimationOffsetType::Procedural",
-    "MaximumRandomFiringAnimationOffset": {
+    "MinimumRandomFiringAnimationOffset": {
       "X": 0.2,
       "Y": 0.2
     },
-    "MinimumRandomFiringAnimationOffset": {
+    "MaximumRandomFiringAnimationOffset": {
       "X": 0.5,
       "Y": 0.5
     },
@@ -3790,12 +3790,12 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
           }
         },
         "AdsStabilizeTime": 3.5,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 1.0,
-        "_aaablfmcnialkpednlben_$5C2D80BAF43DB14D$_$27$": 0.05,
+        "AdsStabilizeCooldownRate": 1.0,
+        "AdsStabilizeExitGracePeriod": 0.05,
         "AdsStabilizeCooldownRateMovingMultiplier": 4.0,
-        "_aaacamgpphfkeldlcaboo_$C6FF75A4B3B201EE$_$32$": 3.5,
-        "_aaablccoleojpkdkeghnk_$22EB4E9FA3A467DA$_$27$": 8.0,
-        "_aaabiaflojcopmfgdolfd_$5BE92EFC563EB53$_$24$": 8.0
+        "_aaacalknjllchnkieahdj": 3.5,
+        "_aaablccoleojpkdkeghnk": 8.0,
+        "_aaabiaflojcopmfgdolfd": 8.0
       }
     },
     "ViewKickCurve": {
@@ -4132,7 +4132,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "EWDFireMode::SemiAutomatic"
     ],
     "IronSightsAimTime": 50000.0,
-    "bFirstFocalPlane": false,
+    "_aaabaehmmeimejkapkogn": false,
     "MaxZeroingRange": 1000,
     "bSpawnProjectileFromCameraWhenAds": false,
     "AnimationSwayData": {
@@ -4681,12 +4681,12 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "StabilizationHoldTime": 1.0,
       "AdsStabilizationData": {
         "AdsStabilizeTime": 2.0,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 0.8,
+        "AdsStabilizeCooldownRate": 0.8,
         "AdsStabilizeCooldownRateMovingMultiplier": 2.0,
         "AdsStabilizeMovementProgressPenalty": 0.5,
-        "_aaacamgpphfkeldlcaboo_$C6FF75A4B3B201EE$_$32$": 2.5,
-        "_aaablccoleojpkdkeghnk_$22EB4E9FA3A467DA$_$27$": 7.0,
-        "_aaabiaflojcopmfgdolfd_$5BE92EFC563EB53$_$24$": 7.0
+        "_aaacalknjllchnkieahdj": 2.5,
+        "_aaablccoleojpkdkeghnk": 7.0,
+        "_aaabiaflojcopmfgdolfd": 7.0
       }
     },
     "ViewKickCurve": {
@@ -4760,11 +4760,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
   },
   "BackBlast": {
     "bEnabled": true,
-    "_aaabbimiiilcdfoomjnam_$8C888B235EEC9D0C$_$17$": 35.0,
-    "_aaaanmkcmbhkgfkehiein_$CA2C17A65A47848D$_$13$": 200.0,
-    "_aaaapohdjlohblghiohhc_$E739BE71B678E772$_$15$": 80.0,
-    "_aaaaolcmejbplajnlalio_$B2C491FB09DB0B8E$_$14$": 15.0,
-    "_aaabephbgdkpefpjpddlm_$F7163AF45F9F33BC$_$20$": {
+    "_aaabbilmgpjejlkjoeibh": 35.0,
+    "_aaaanghlhocankbgenpld": 200.0,
+    "_aaaaplhbefklkbekbplbj": 80.0,
+    "_aaaaocboicpblkhflbiho": 15.0,
+    "_aaabeflbnagdhkfoiahod": {
       "EditorCurveData": {
         "Keys": [
           {
@@ -4803,11 +4803,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
         ]
       }
     },
-    "_aaabcckhjelabepjnleeb_$2A794B014F9DB441$_$18$": 120.0,
-    "_aaabcopmedhimibieefkp_$EFC4378C818445AF$_$18$": 70.0,
-    "_aaabchghkcfnfeiomefee_$767A25D548EC4544$_$18$": 300.0,
-    "_aaabcfmcajopdpafcppnb_$5C209EF3F052FFD1$_$18$": 0.9,
-    "_aaabjicdbikfgmbkconnh_$82318A56C1A2EDD7$_$25$": {
+    "_aaabcoaaehkocllnogilf": 120.0,
+    "_aaabchpookgdohdgippli": 70.0,
+    "_aaabcbmocdkdakedpapbc": 300.0,
+    "_aaabcdpjamclikdeliacj": 0.9,
+    "_aaabjjnlflmigemoolnjn": {
       "EditorCurveData": {
         "Keys": [
           {
@@ -4846,23 +4846,23 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
         ]
       }
     },
-    "_aaabjkcbplndgmpeebifo_$A21FBD36CF44185E$_$25$": 80.0,
-    "_aaabkbjcbbmpnkfeeookk_$19211CFDA544EEAA$_$26$": 400.0,
-    "_aaabhfpkjkpoeogimelim_$5FA9AFE4E68C4B8C$_$23$": 0.3,
-    "_aaabgflanljgpgeecaapf_$5B0DB96F644200F5$_$22$": 350.0,
-    "_aaabmhialipidgfkmjjkc_$780B8F8365AC99A2$_$28$": [
+    "_aaabjahhcpihfglgfpabp": 80.0,
+    "_aaabkjfknhegjhlhobkef": 400.0,
+    "_aaabhjchepijkbbnkmohg": 0.3,
+    "_aaabggmjgbgjgfmhkhdel": 350.0,
+    "_aaabmpbdomcapkhlelhgb": [
       25.0,
       55.0,
       85.0
     ],
-    "_aaabhkajlnfminhbfbofl_$A09BD5C8D7151E5B$_$23$": 4,
-    "_aaabkdgmcmckhnkilegah_$36C2C2A7DA8B4607$_$26$": 0.75,
-    "_aaabgghfnpjagjlpmjmfg_$675DF9069BFC9C56$_$22$": 0.15,
-    "_aaabioagkmgkacpdmklbm_$E06AC6A02F3CAB1C$_$24$": 0.8,
-    "_aaabdmmpeincifchmoaae_$CCF48D28527CE004$_$19$": 0.2,
-    "_aaabelkgogplmmbkfechj_$BA6E6FBCC1A54279$_$20$": 0.7,
-    "_aaabgjgoliedacochlhcl_$96EB84302E27B72B$_$22$": 1.0,
-    "_aaabefhheefppggepflhk_$577445FF664F5B7A$_$20$": [
+    "_aaabhmbemimmdompoaila": 4,
+    "_aaabkedlmlcimnkcaondl": 0.75,
+    "_aaabggncnbdkfbnbgoiha": 0.15,
+    "_aaabifhdhkfifjodcdgha": 0.8,
+    "_aaabdonlmpcdkfklfnpef": 0.2,
+    "_aaabehjheokmcdgcbjgkg": 0.7,
+    "_aaabgpobchhagbhokmiba": 1.0,
+    "_aaabemendcoeglbmnhbld": [
       {
         "Key": {
           "TagName": "Attribute.Gameplay.Health.Rotor.Main"
@@ -4876,17 +4876,17 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
         "Value": 80.0
       }
     ],
-    "_aaabanngehgbceoodleje_$DD6476124EE3B494$_$16$": [
+    "VehicleOverrides": [
       {
         "Key": {
           "TagName": "Vehicle.Variant.Land.Wheeled.Bobcat.Default"
         },
         "Value": {
-          "_aaabgjgoliedacochlhcl_$96EB84302E27B72B$_$22$": 0.0,
-          "_aaabgfafdhfagoiihmijg_$50537506E887C896$_$22$": {
+          "_aaabgpobchhagbhokmiba": 0.0,
+          "_aaabgfddoddncncddnaco": {
             "Effects": []
           },
-          "_aaabefhheefppggepflhk_$577445FF664F5B7A$_$20$": []
+          "_aaabemendcoeglbmnhbld": []
         }
       },
       {
@@ -4894,15 +4894,15 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
           "TagName": "Vehicle.Variant.Land.Wheeled.DuneBuggy.Default"
         },
         "Value": {
-          "_aaabgjgoliedacochlhcl_$96EB84302E27B72B$_$22$": 0.0,
-          "_aaabgfafdhfagoiihmijg_$50537506E887C896$_$22$": {
+          "_aaabgpobchhagbhokmiba": 0.0,
+          "_aaabgfddoddncncddnaco": {
             "Effects": []
           },
-          "_aaabefhheefppggepflhk_$577445FF664F5B7A$_$20$": []
+          "_aaabemendcoeglbmnhbld": []
         }
       }
     ],
-    "_aaaananklammgcfejkdmm_$DAB0CC62549A3CC$_$13$": 10.0
+    "DebugDrawTime": 10.0
   }
 }
 ```
@@ -5523,12 +5523,12 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "StabilizationHoldTime": 0.7,
       "AdsStabilizationData": {
         "AdsStabilizeTime": 1.5,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 0.6,
+        "AdsStabilizeCooldownRate": 0.6,
         "AdsStabilizeCooldownRateMovingMultiplier": 2.0,
         "AdsStabilizeMovementProgressPenalty": 0.5,
-        "_aaacamgpphfkeldlcaboo_$C6FF75A4B3B201EE$_$32$": 2.5,
-        "_aaablccoleojpkdkeghnk_$22EB4E9FA3A467DA$_$27$": 7.0,
-        "_aaabiaflojcopmfgdolfd_$5BE92EFC563EB53$_$24$": 7.0
+        "_aaacalknjllchnkieahdj": 2.5,
+        "_aaablccoleojpkdkeghnk": 7.0,
+        "_aaabiaflojcopmfgdolfd": 7.0
       }
     },
     "ViewKickCurve": {
@@ -5604,11 +5604,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
   },
   "BackBlast": {
     "bEnabled": true,
-    "_aaabbimiiilcdfoomjnam_$8C888B235EEC9D0C$_$17$": 40.0,
-    "_aaaanmkcmbhkgfkehiein_$CA2C17A65A47848D$_$13$": 500.0,
-    "_aaaapohdjlohblghiohhc_$E739BE71B678E772$_$15$": 130.0,
-    "_aaaaolcmejbplajnlalio_$B2C491FB09DB0B8E$_$14$": 30.0,
-    "_aaabephbgdkpefpjpddlm_$F7163AF45F9F33BC$_$20$": {
+    "_aaabbilmgpjejlkjoeibh": 40.0,
+    "_aaaanghlhocankbgenpld": 500.0,
+    "_aaaaplhbefklkbekbplbj": 130.0,
+    "_aaaaocboicpblkhflbiho": 30.0,
+    "_aaabeflbnagdhkfoiahod": {
       "EditorCurveData": {
         "Keys": [
           {
@@ -5647,10 +5647,10 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
         ]
       }
     },
-    "_aaabcckhjelabepjnleeb_$2A794B014F9DB441$_$18$": 120.0,
-    "_aaabchghkcfnfeiomefee_$767A25D548EC4544$_$18$": 1000.0,
-    "_aaabcfmcajopdpafcppnb_$5C209EF3F052FFD1$_$18$": 1.2,
-    "_aaabjicdbikfgmbkconnh_$82318A56C1A2EDD7$_$25$": {
+    "_aaabcoaaehkocllnogilf": 120.0,
+    "_aaabcbmocdkdakedpapbc": 1000.0,
+    "_aaabcdpjamclikdeliacj": 1.2,
+    "_aaabjjnlflmigemoolnjn": {
       "EditorCurveData": {
         "Keys": [
           {
@@ -5689,22 +5689,22 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
         ]
       }
     },
-    "_aaabjkcbplndgmpeebifo_$A21FBD36CF44185E$_$25$": 80.0,
-    "_aaabkbjcbbmpnkfeeookk_$19211CFDA544EEAA$_$26$": 450.0,
-    "_aaabhfpkjkpoeogimelim_$5FA9AFE4E68C4B8C$_$23$": 0.7,
-    "_aaabgflanljgpgeecaapf_$5B0DB96F644200F5$_$22$": 300.0,
-    "_aaabmhialipidgfkmjjkc_$780B8F8365AC99A2$_$28$": [
+    "_aaabjahhcpihfglgfpabp": 80.0,
+    "_aaabkjfknhegjhlhobkef": 450.0,
+    "_aaabhjchepijkbbnkmohg": 0.7,
+    "_aaabggmjgbgjgfmhkhdel": 300.0,
+    "_aaabmpbdomcapkhlelhgb": [
       25.0,
       55.0,
       85.0
     ],
-    "_aaabhkajlnfminhbfbofl_$A09BD5C8D7151E5B$_$23$": 4,
-    "_aaabgghfnpjagjlpmjmfg_$675DF9069BFC9C56$_$22$": 0.1,
-    "_aaabioagkmgkacpdmklbm_$E06AC6A02F3CAB1C$_$24$": 2.2,
-    "_aaabdmmpeincifchmoaae_$CCF48D28527CE004$_$19$": 0.015,
-    "_aaabelkgogplmmbkfechj_$BA6E6FBCC1A54279$_$20$": 0.065,
-    "_aaabgjgoliedacochlhcl_$96EB84302E27B72B$_$22$": 0.8,
-    "_aaabefhheefppggepflhk_$577445FF664F5B7A$_$20$": [
+    "_aaabhmbemimmdompoaila": 4,
+    "_aaabggncnbdkfbnbgoiha": 0.1,
+    "_aaabifhdhkfifjodcdgha": 2.2,
+    "_aaabdonlmpcdkfklfnpef": 0.015,
+    "_aaabehjheokmcdgcbjgkg": 0.065,
+    "_aaabgpobchhagbhokmiba": 0.8,
+    "_aaabemendcoeglbmnhbld": [
       {
         "Key": {
           "TagName": "Attribute.Gameplay.Health.Rotor.Main"
@@ -5718,17 +5718,17 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
         "Value": 100.0
       }
     ],
-    "_aaabanngehgbceoodleje_$DD6476124EE3B494$_$16$": [
+    "VehicleOverrides": [
       {
         "Key": {
           "TagName": "Vehicle.Variant.Land.Wheeled.Bobcat.Default"
         },
         "Value": {
-          "_aaabgjgoliedacochlhcl_$96EB84302E27B72B$_$22$": 0.0,
-          "_aaabgfafdhfagoiihmijg_$50537506E887C896$_$22$": {
+          "_aaabgpobchhagbhokmiba": 0.0,
+          "_aaabgfddoddncncddnaco": {
             "Effects": []
           },
-          "_aaabefhheefppggepflhk_$577445FF664F5B7A$_$20$": []
+          "_aaabemendcoeglbmnhbld": []
         }
       },
       {
@@ -5736,15 +5736,15 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
           "TagName": "Vehicle.Variant.Land.Wheeled.DuneBuggy.Default"
         },
         "Value": {
-          "_aaabgjgoliedacochlhcl_$96EB84302E27B72B$_$22$": 0.0,
-          "_aaabgfafdhfagoiihmijg_$50537506E887C896$_$22$": {
+          "_aaabgpobchhagbhokmiba": 0.0,
+          "_aaabgfddoddncncddnaco": {
             "Effects": []
           },
-          "_aaabefhheefppggepflhk_$577445FF664F5B7A$_$20$": []
+          "_aaabemendcoeglbmnhbld": []
         }
       }
     ],
-    "_aaaananklammgcfejkdmm_$DAB0CC62549A3CC$_$13$": 10.0
+    "DebugDrawTime": 10.0
   }
 }
 ```
@@ -6437,11 +6437,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "StabilizationHoldTime": 0.4,
       "AdsStabilizationData": {
         "AdsStabilizeTime": 1.2,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 0.5,
+        "AdsStabilizeCooldownRate": 0.5,
         "AdsStabilizeCooldownRateMovingMultiplier": 2.0,
         "AdsStabilizeMovementProgressPenalty": 0.6,
-        "_aaablccoleojpkdkeghnk_$22EB4E9FA3A467DA$_$27$": 6.0,
-        "_aaabiaflojcopmfgdolfd_$5BE92EFC563EB53$_$24$": 6.0
+        "_aaablccoleojpkdkeghnk": 6.0,
+        "_aaabiaflojcopmfgdolfd": 6.0
       }
     },
     "ViewKickCurve": {
@@ -6700,11 +6700,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
     },
     "RandomDeviationDegree": 13.0,
     "RecoilPatternResetTime": 0.65,
-    "MaximumRandomFiringAnimationOffset": {
+    "MinimumRandomFiringAnimationOffset": {
       "X": -0.15,
       "Y": -0.05
     },
-    "MinimumRandomFiringAnimationOffset": {
+    "MaximumRandomFiringAnimationOffset": {
       "X": 0.0,
       "Y": 0.05
     },
@@ -7408,11 +7408,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "ADSStabilizationMovementSpeedRateDown": 2.0,
       "AdsStabilizationData": {
         "AdsStabilizeTime": 1.0,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 0.5,
+        "AdsStabilizeCooldownRate": 0.5,
         "AdsStabilizeCooldownRateMovingMultiplier": 2.0,
         "AdsStabilizeMovementProgressPenalty": 0.6,
-        "_aaablccoleojpkdkeghnk_$22EB4E9FA3A467DA$_$27$": 6.0,
-        "_aaabiaflojcopmfgdolfd_$5BE92EFC563EB53$_$24$": 6.0
+        "_aaablccoleojpkdkeghnk": 6.0,
+        "_aaabiaflojcopmfgdolfd": 6.0
       }
     },
     "ViewKickCurve": {
@@ -7693,11 +7693,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
     },
     "RandomDeviationDegree": 10.0,
     "RecoilPatternResetTime": 0.55,
-    "MaximumRandomFiringAnimationOffset": {
+    "MinimumRandomFiringAnimationOffset": {
       "X": -0.35,
       "Y": -0.1
     },
-    "MinimumRandomFiringAnimationOffset": {
+    "MaximumRandomFiringAnimationOffset": {
       "X": 0.35,
       "Y": 0.1
     },
@@ -8407,11 +8407,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "StabilizationHoldTime": 0.35,
       "AdsStabilizationData": {
         "AdsStabilizeTime": 1.1,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 0.5,
+        "AdsStabilizeCooldownRate": 0.5,
         "AdsStabilizeCooldownRateMovingMultiplier": 2.0,
         "AdsStabilizeMovementProgressPenalty": 0.6,
-        "_aaablccoleojpkdkeghnk_$22EB4E9FA3A467DA$_$27$": 6.0,
-        "_aaabiaflojcopmfgdolfd_$5BE92EFC563EB53$_$24$": 6.0
+        "_aaablccoleojpkdkeghnk": 6.0,
+        "_aaabiaflojcopmfgdolfd": 6.0
       }
     },
     "ViewKickCurve": {
@@ -8670,11 +8670,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
     },
     "RandomDeviationDegree": 15.0,
     "RecoilPatternResetTime": 0.78,
-    "MaximumRandomFiringAnimationOffset": {
+    "MinimumRandomFiringAnimationOffset": {
       "X": -0.2,
       "Y": -0.2
     },
-    "MinimumRandomFiringAnimationOffset": {
+    "MaximumRandomFiringAnimationOffset": {
       "X": 0.2,
       "Y": 0.2
     },
@@ -9374,11 +9374,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "ADSStabilizationMovementSpeedRateDown": 2.0,
       "AdsStabilizationData": {
         "AdsStabilizeTime": 0.9,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 0.45,
+        "AdsStabilizeCooldownRate": 0.45,
         "AdsStabilizeCooldownRateMovingMultiplier": 2.0,
         "AdsStabilizeMovementProgressPenalty": 0.6,
-        "_aaablccoleojpkdkeghnk_$22EB4E9FA3A467DA$_$27$": 6.0,
-        "_aaabiaflojcopmfgdolfd_$5BE92EFC563EB53$_$24$": 6.0
+        "_aaablccoleojpkdkeghnk": 6.0,
+        "_aaabiaflojcopmfgdolfd": 6.0
       }
     },
     "ViewKickCurve": {
@@ -10332,11 +10332,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "ADSStabilizationMovementSpeedRateDown": 2.0,
       "AdsStabilizationData": {
         "AdsStabilizeTime": 1.0,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 0.45,
+        "AdsStabilizeCooldownRate": 0.45,
         "AdsStabilizeCooldownRateMovingMultiplier": 2.0,
         "AdsStabilizeMovementProgressPenalty": 0.6,
-        "_aaablccoleojpkdkeghnk_$22EB4E9FA3A467DA$_$27$": 6.0,
-        "_aaabiaflojcopmfgdolfd_$5BE92EFC563EB53$_$24$": 6.0
+        "_aaablccoleojpkdkeghnk": 6.0,
+        "_aaabiaflojcopmfgdolfd": 6.0
       }
     },
     "ViewKickCurve": {
@@ -10596,11 +10596,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
     },
     "RandomDeviationDegree": 15.0,
     "RecoilPatternResetTime": 0.8,
-    "MaximumRandomFiringAnimationOffset": {
+    "MinimumRandomFiringAnimationOffset": {
       "X": -0.2,
       "Y": -0.2
     },
-    "MinimumRandomFiringAnimationOffset": {
+    "MaximumRandomFiringAnimationOffset": {
       "X": 0.2,
       "Y": 0.2
     },
@@ -11356,13 +11356,13 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "StabilizationHoldTime": 0.15,
       "AdsStabilizationData": {
         "AdsStabilizeTime": 0.65,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 0.3,
-        "_aaablfmcnialkpednlben_$5C2D80BAF43DB14D$_$27$": 0.2,
+        "AdsStabilizeCooldownRate": 0.3,
+        "AdsStabilizeExitGracePeriod": 0.2,
         "AdsStabilizeCooldownRateMovingMultiplier": 1.5,
         "AdsStabilizeMovementProgressPenalty": 0.3,
-        "_aaacamgpphfkeldlcaboo_$C6FF75A4B3B201EE$_$32$": 2.5,
-        "_aaablccoleojpkdkeghnk_$22EB4E9FA3A467DA$_$27$": 5.0,
-        "_aaabiaflojcopmfgdolfd_$5BE92EFC563EB53$_$24$": 5.0
+        "_aaacalknjllchnkieahdj": 2.5,
+        "_aaablccoleojpkdkeghnk": 5.0,
+        "_aaabiaflojcopmfgdolfd": 5.0
       }
     },
     "ViewKickCurve": {
@@ -11743,11 +11743,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
     },
     "RandomDeviationDegree": 35.0,
     "RecoilPatternResetTime": 0.48,
-    "MaximumRandomFiringAnimationOffset": {
+    "MinimumRandomFiringAnimationOffset": {
       "X": -0.3,
       "Y": -0.3
     },
-    "MinimumRandomFiringAnimationOffset": {
+    "MaximumRandomFiringAnimationOffset": {
       "X": 0.3,
       "Y": 0.3
     },
@@ -11823,7 +11823,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       }
     },
     "FocusEnergyReductionPerShot": 100.0,
-    "_aaabijhbknckndgboaemo_$971AD2AD361E04CE$_$24$": 1.0,
+    "_aaabimbpohdlmnphjbidm": 1.0,
     "bOverrideTypicalSpeed": true,
     "TypicalSpeed": 41500.0,
     "bUseDistanceDamageFalloffCurve": true,
@@ -12462,13 +12462,13 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "StabilizationHoldTime": 1.25,
       "AdsStabilizationData": {
         "AdsStabilizeTime": 0.8,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 2.5,
-        "_aaablfmcnialkpednlben_$5C2D80BAF43DB14D$_$27$": 0.1,
+        "AdsStabilizeCooldownRate": 2.5,
+        "AdsStabilizeExitGracePeriod": 0.1,
         "AdsStabilizeCooldownRateMovingMultiplier": 6.0,
         "AdsStabilizeMovementProgressPenalty": 0.75,
-        "_aaacamgpphfkeldlcaboo_$C6FF75A4B3B201EE$_$32$": 1.15,
-        "_aaablccoleojpkdkeghnk_$22EB4E9FA3A467DA$_$27$": 10.0,
-        "_aaabiaflojcopmfgdolfd_$5BE92EFC563EB53$_$24$": 14.0
+        "_aaacalknjllchnkieahdj": 1.15,
+        "_aaablccoleojpkdkeghnk": 10.0,
+        "_aaabiaflojcopmfgdolfd": 14.0
       }
     },
     "ViewKickCurve": {
@@ -12564,7 +12564,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
     },
     "RecoilPatternPitchMax": 45.0,
     "RandomDeviationDegree": 4.0,
-    "MinimumRandomFiringAnimationOffset": {
+    "MaximumRandomFiringAnimationOffset": {
       "X": 0.2,
       "Y": 0.2
     },
@@ -13358,12 +13358,12 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "StabilizationHoldTime": 1.5,
       "AdsStabilizationData": {
         "AdsStabilizeTime": 3.0,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 1.0,
-        "_aaablfmcnialkpednlben_$5C2D80BAF43DB14D$_$27$": 0.05,
+        "AdsStabilizeCooldownRate": 1.0,
+        "AdsStabilizeExitGracePeriod": 0.05,
         "AdsStabilizeCooldownRateMovingMultiplier": 4.0,
-        "_aaacamgpphfkeldlcaboo_$C6FF75A4B3B201EE$_$32$": 3.5,
-        "_aaablccoleojpkdkeghnk_$22EB4E9FA3A467DA$_$27$": 8.0,
-        "_aaabiaflojcopmfgdolfd_$5BE92EFC563EB53$_$24$": 8.0
+        "_aaacalknjllchnkieahdj": 3.5,
+        "_aaablccoleojpkdkeghnk": 8.0,
+        "_aaabiaflojcopmfgdolfd": 8.0
       }
     },
     "ViewKickCurve": {
@@ -13529,11 +13529,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "Y": 1.5
     },
     "RandomDeviationDegree": 20.0,
-    "MaximumRandomFiringAnimationOffset": {
+    "MinimumRandomFiringAnimationOffset": {
       "X": -0.5,
       "Y": -0.5
     },
-    "MinimumRandomFiringAnimationOffset": {
+    "MaximumRandomFiringAnimationOffset": {
       "X": 0.5,
       "Y": 0.5
     },
@@ -14192,13 +14192,13 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "StabilizationHoldTime": 0.2,
       "AdsStabilizationData": {
         "AdsStabilizeTime": 0.6,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 0.35,
-        "_aaablfmcnialkpednlben_$5C2D80BAF43DB14D$_$27$": 0.25,
+        "AdsStabilizeCooldownRate": 0.35,
+        "AdsStabilizeExitGracePeriod": 0.25,
         "AdsStabilizeCooldownRateMovingMultiplier": 1.5,
         "AdsStabilizeMovementProgressPenalty": 0.2,
-        "_aaacamgpphfkeldlcaboo_$C6FF75A4B3B201EE$_$32$": 2.0,
-        "_aaablccoleojpkdkeghnk_$22EB4E9FA3A467DA$_$27$": 4.0,
-        "_aaabiaflojcopmfgdolfd_$5BE92EFC563EB53$_$24$": 4.0
+        "_aaacalknjllchnkieahdj": 2.0,
+        "_aaablccoleojpkdkeghnk": 4.0,
+        "_aaabiaflojcopmfgdolfd": 4.0
       }
     },
     "ViewKickCurve": {
@@ -15009,8 +15009,8 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "StabilizationHoldTime": 0.4,
       "AdsStabilizationData": {
         "AdsStabilizeTime": 1.1,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 0.55,
-        "_aaablfmcnialkpednlben_$5C2D80BAF43DB14D$_$27$": 0.2,
+        "AdsStabilizeCooldownRate": 0.55,
+        "AdsStabilizeExitGracePeriod": 0.2,
         "AdsStabilizeCooldownRateMovingMultiplier": 2.0,
         "AdsStabilizeMovementProgressPenalty": 0.4
       }
@@ -15158,11 +15158,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
     },
     "RandomDeviationDegree": 24.0,
     "RecoilPatternResetTime": 1.0,
-    "MaximumRandomFiringAnimationOffset": {
+    "MinimumRandomFiringAnimationOffset": {
       "X": -0.35,
       "Y": -0.35
     },
-    "MinimumRandomFiringAnimationOffset": {
+    "MaximumRandomFiringAnimationOffset": {
       "X": 0.35,
       "Y": 0.35
     },
@@ -15807,12 +15807,12 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "StabilizationHoldTime": 0.7,
       "AdsStabilizationData": {
         "AdsStabilizeTime": 1.5,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 0.5,
+        "AdsStabilizeCooldownRate": 0.5,
         "AdsStabilizeCooldownRateMovingMultiplier": 2.0,
         "AdsStabilizeMovementProgressPenalty": 0.5,
-        "_aaacamgpphfkeldlcaboo_$C6FF75A4B3B201EE$_$32$": 2.5,
-        "_aaablccoleojpkdkeghnk_$22EB4E9FA3A467DA$_$27$": 7.0,
-        "_aaabiaflojcopmfgdolfd_$5BE92EFC563EB53$_$24$": 7.0
+        "_aaacalknjllchnkieahdj": 2.5,
+        "_aaablccoleojpkdkeghnk": 7.0,
+        "_aaabiaflojcopmfgdolfd": 7.0
       }
     },
     "ViewKickCurve": {
@@ -16497,12 +16497,12 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "StabilizationHoldTime": 0.8,
       "AdsStabilizationData": {
         "AdsStabilizeTime": 1.75,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 0.7,
+        "AdsStabilizeCooldownRate": 0.7,
         "AdsStabilizeCooldownRateMovingMultiplier": 2.0,
         "AdsStabilizeMovementProgressPenalty": 0.5,
-        "_aaacamgpphfkeldlcaboo_$C6FF75A4B3B201EE$_$32$": 2.5,
-        "_aaablccoleojpkdkeghnk_$22EB4E9FA3A467DA$_$27$": 7.0,
-        "_aaabiaflojcopmfgdolfd_$5BE92EFC563EB53$_$24$": 7.0
+        "_aaacalknjllchnkieahdj": 2.5,
+        "_aaablccoleojpkdkeghnk": 7.0,
+        "_aaabiaflojcopmfgdolfd": 7.0
       }
     },
     "FOVShiftingType": "EWDWeaponFOVShiftingType::Constant",
@@ -16522,11 +16522,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
   },
   "BackBlast": {
     "bEnabled": true,
-    "_aaabbimiiilcdfoomjnam_$8C888B235EEC9D0C$_$17$": 45.0,
-    "_aaaanmkcmbhkgfkehiein_$CA2C17A65A47848D$_$13$": 600.0,
-    "_aaaapohdjlohblghiohhc_$E739BE71B678E772$_$15$": 150.0,
-    "_aaaaolcmejbplajnlalio_$B2C491FB09DB0B8E$_$14$": 40.0,
-    "_aaabephbgdkpefpjpddlm_$F7163AF45F9F33BC$_$20$": {
+    "_aaabbilmgpjejlkjoeibh": 45.0,
+    "_aaaanghlhocankbgenpld": 600.0,
+    "_aaaaplhbefklkbekbplbj": 150.0,
+    "_aaaaocboicpblkhflbiho": 40.0,
+    "_aaabeflbnagdhkfoiahod": {
       "EditorCurveData": {
         "Keys": [
           {
@@ -16565,10 +16565,10 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
         ]
       }
     },
-    "_aaabcckhjelabepjnleeb_$2A794B014F9DB441$_$18$": 120.0,
-    "_aaabchghkcfnfeiomefee_$767A25D548EC4544$_$18$": 1200.0,
-    "_aaabcfmcajopdpafcppnb_$5C209EF3F052FFD1$_$18$": 1.5,
-    "_aaabjicdbikfgmbkconnh_$82318A56C1A2EDD7$_$25$": {
+    "_aaabcoaaehkocllnogilf": 120.0,
+    "_aaabcbmocdkdakedpapbc": 1200.0,
+    "_aaabcdpjamclikdeliacj": 1.5,
+    "_aaabjjnlflmigemoolnjn": {
       "EditorCurveData": {
         "Keys": [
           {
@@ -16607,23 +16607,23 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
         ]
       }
     },
-    "_aaabjkcbplndgmpeebifo_$A21FBD36CF44185E$_$25$": 75.0,
-    "_aaabkbjcbbmpnkfeeookk_$19211CFDA544EEAA$_$26$": 400.0,
-    "_aaabhfpkjkpoeogimelim_$5FA9AFE4E68C4B8C$_$23$": 0.45,
-    "_aaabgflanljgpgeecaapf_$5B0DB96F644200F5$_$22$": 450.0,
-    "_aaabmhialipidgfkmjjkc_$780B8F8365AC99A2$_$28$": [
+    "_aaabjahhcpihfglgfpabp": 75.0,
+    "_aaabkjfknhegjhlhobkef": 400.0,
+    "_aaabhjchepijkbbnkmohg": 0.45,
+    "_aaabggmjgbgjgfmhkhdel": 450.0,
+    "_aaabmpbdomcapkhlelhgb": [
       25.0,
       55.0,
       85.0
     ],
-    "_aaabhkajlnfminhbfbofl_$A09BD5C8D7151E5B$_$23$": 4,
-    "_aaabkdgmcmckhnkilegah_$36C2C2A7DA8B4607$_$26$": 0.75,
-    "_aaabgghfnpjagjlpmjmfg_$675DF9069BFC9C56$_$22$": 0.2,
-    "_aaabioagkmgkacpdmklbm_$E06AC6A02F3CAB1C$_$24$": 1.55,
-    "_aaabdmmpeincifchmoaae_$CCF48D28527CE004$_$19$": 0.08,
-    "_aaabelkgogplmmbkfechj_$BA6E6FBCC1A54279$_$20$": 0.13,
-    "_aaabgjgoliedacochlhcl_$96EB84302E27B72B$_$22$": 0.8,
-    "_aaabefhheefppggepflhk_$577445FF664F5B7A$_$20$": [
+    "_aaabhmbemimmdompoaila": 4,
+    "_aaabkedlmlcimnkcaondl": 0.75,
+    "_aaabggncnbdkfbnbgoiha": 0.2,
+    "_aaabifhdhkfifjodcdgha": 1.55,
+    "_aaabdonlmpcdkfklfnpef": 0.08,
+    "_aaabehjheokmcdgcbjgkg": 0.13,
+    "_aaabgpobchhagbhokmiba": 0.8,
+    "_aaabemendcoeglbmnhbld": [
       {
         "Key": {
           "TagName": "Attribute.Gameplay.Health.Rotor.Main"
@@ -16637,17 +16637,17 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
         "Value": 100.0
       }
     ],
-    "_aaabanngehgbceoodleje_$DD6476124EE3B494$_$16$": [
+    "VehicleOverrides": [
       {
         "Key": {
           "TagName": "Vehicle.Variant.Land.Wheeled.Bobcat.Default"
         },
         "Value": {
-          "_aaabgjgoliedacochlhcl_$96EB84302E27B72B$_$22$": 0.0,
-          "_aaabgfafdhfagoiihmijg_$50537506E887C896$_$22$": {
+          "_aaabgpobchhagbhokmiba": 0.0,
+          "_aaabgfddoddncncddnaco": {
             "Effects": []
           },
-          "_aaabefhheefppggepflhk_$577445FF664F5B7A$_$20$": []
+          "_aaabemendcoeglbmnhbld": []
         }
       },
       {
@@ -16655,15 +16655,15 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
           "TagName": "Vehicle.Variant.Land.Wheeled.DuneBuggy.Default"
         },
         "Value": {
-          "_aaabgjgoliedacochlhcl_$96EB84302E27B72B$_$22$": 0.0,
-          "_aaabgfafdhfagoiihmijg_$50537506E887C896$_$22$": {
+          "_aaabgpobchhagbhokmiba": 0.0,
+          "_aaabgfddoddncncddnaco": {
             "Effects": []
           },
-          "_aaabefhheefppggepflhk_$577445FF664F5B7A$_$20$": []
+          "_aaabemendcoeglbmnhbld": []
         }
       }
     ],
-    "_aaaananklammgcfejkdmm_$DAB0CC62549A3CC$_$13$": 10.0
+    "DebugDrawTime": 10.0
   }
 }
 ```
@@ -17356,13 +17356,13 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "StabilizationHoldTime": 0.15,
       "AdsStabilizationData": {
         "AdsStabilizeTime": 0.6,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 0.35,
-        "_aaablfmcnialkpednlben_$5C2D80BAF43DB14D$_$27$": 0.2,
+        "AdsStabilizeCooldownRate": 0.35,
+        "AdsStabilizeExitGracePeriod": 0.2,
         "AdsStabilizeCooldownRateMovingMultiplier": 1.5,
         "AdsStabilizeMovementProgressPenalty": 0.3,
-        "_aaacamgpphfkeldlcaboo_$C6FF75A4B3B201EE$_$32$": 2.5,
-        "_aaablccoleojpkdkeghnk_$22EB4E9FA3A467DA$_$27$": 5.0,
-        "_aaabiaflojcopmfgdolfd_$5BE92EFC563EB53$_$24$": 5.0
+        "_aaacalknjllchnkieahdj": 2.5,
+        "_aaablccoleojpkdkeghnk": 5.0,
+        "_aaabiaflojcopmfgdolfd": 5.0
       }
     },
     "ViewKickCurve": {
@@ -17639,11 +17639,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
     },
     "RandomDeviationDegree": 15.0,
     "RecoilPatternResetTime": 0.55,
-    "MaximumRandomFiringAnimationOffset": {
+    "MinimumRandomFiringAnimationOffset": {
       "X": -0.3,
       "Y": -0.3
     },
-    "MinimumRandomFiringAnimationOffset": {
+    "MaximumRandomFiringAnimationOffset": {
       "X": 0.3,
       "Y": 0.3
     },
@@ -17717,7 +17717,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       }
     },
     "FocusEnergyReductionPerShot": 100.0,
-    "_aaabijhbknckndgboaemo_$971AD2AD361E04CE$_$24$": 1.0,
+    "_aaabimbpohdlmnphjbidm": 1.0,
     "bOverrideTypicalSpeed": true,
     "TypicalSpeed": 37200.0,
     "bUseDistanceDamageFalloffCurve": true,
@@ -18331,13 +18331,13 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "StabilizationHoldTime": 1.25,
       "AdsStabilizationData": {
         "AdsStabilizeTime": 0.7,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 2.5,
-        "_aaablfmcnialkpednlben_$5C2D80BAF43DB14D$_$27$": 0.1,
+        "AdsStabilizeCooldownRate": 2.5,
+        "AdsStabilizeExitGracePeriod": 0.1,
         "AdsStabilizeCooldownRateMovingMultiplier": 6.0,
         "AdsStabilizeMovementProgressPenalty": 0.8,
-        "_aaacamgpphfkeldlcaboo_$C6FF75A4B3B201EE$_$32$": 1.15,
-        "_aaablccoleojpkdkeghnk_$22EB4E9FA3A467DA$_$27$": 10.0,
-        "_aaabiaflojcopmfgdolfd_$5BE92EFC563EB53$_$24$": 14.0
+        "_aaacalknjllchnkieahdj": 1.15,
+        "_aaablccoleojpkdkeghnk": 10.0,
+        "_aaabiaflojcopmfgdolfd": 14.0
       }
     },
     "ViewKickCurve": {
@@ -19093,13 +19093,13 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "StabilizationHoldTime": 0.2,
       "AdsStabilizationData": {
         "AdsStabilizeTime": 0.75,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 0.4,
-        "_aaablfmcnialkpednlben_$5C2D80BAF43DB14D$_$27$": 0.25,
+        "AdsStabilizeCooldownRate": 0.4,
+        "AdsStabilizeExitGracePeriod": 0.25,
         "AdsStabilizeCooldownRateMovingMultiplier": 1.5,
         "AdsStabilizeMovementProgressPenalty": 0.2,
-        "_aaacamgpphfkeldlcaboo_$C6FF75A4B3B201EE$_$32$": 2.0,
-        "_aaablccoleojpkdkeghnk_$22EB4E9FA3A467DA$_$27$": 5.0,
-        "_aaabiaflojcopmfgdolfd_$5BE92EFC563EB53$_$24$": 5.0
+        "_aaacalknjllchnkieahdj": 2.0,
+        "_aaablccoleojpkdkeghnk": 5.0,
+        "_aaabiaflojcopmfgdolfd": 5.0
       }
     },
     "ViewKickCurve": {
@@ -19214,11 +19214,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "Y": 1.0
     },
     "RandomDeviationDegree": 10.0,
-    "MaximumRandomFiringAnimationOffset": {
+    "MinimumRandomFiringAnimationOffset": {
       "X": -0.3,
       "Y": -0.3
     },
-    "MinimumRandomFiringAnimationOffset": {
+    "MaximumRandomFiringAnimationOffset": {
       "X": 0.3,
       "Y": 0.3
     },
@@ -19870,13 +19870,13 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "ADSStabilizationMovementSpeedRateDown": 2.5,
       "AdsStabilizationData": {
         "AdsStabilizeTime": 0.9,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 0.5,
-        "_aaablfmcnialkpednlben_$5C2D80BAF43DB14D$_$27$": 0.25,
+        "AdsStabilizeCooldownRate": 0.5,
+        "AdsStabilizeExitGracePeriod": 0.25,
         "AdsStabilizeCooldownRateMovingMultiplier": 1.5,
         "AdsStabilizeMovementProgressPenalty": 0.2,
-        "_aaacamgpphfkeldlcaboo_$C6FF75A4B3B201EE$_$32$": 2.0,
-        "_aaablccoleojpkdkeghnk_$22EB4E9FA3A467DA$_$27$": 4.0,
-        "_aaabiaflojcopmfgdolfd_$5BE92EFC563EB53$_$24$": 4.0
+        "_aaacalknjllchnkieahdj": 2.0,
+        "_aaablccoleojpkdkeghnk": 4.0,
+        "_aaabiaflojcopmfgdolfd": 4.0
       }
     },
     "ViewKickCurve": {
@@ -20094,11 +20094,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "X": 0.25,
       "Y": 1.0
     },
-    "MaximumRandomFiringAnimationOffset": {
+    "MinimumRandomFiringAnimationOffset": {
       "X": -0.35,
       "Y": -0.1
     },
-    "MinimumRandomFiringAnimationOffset": {
+    "MaximumRandomFiringAnimationOffset": {
       "X": 0.35,
       "Y": 0.1
     },
@@ -20833,13 +20833,13 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "StabilizationHoldTime": 0.2,
       "AdsStabilizationData": {
         "AdsStabilizeTime": 0.7,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 0.35,
-        "_aaablfmcnialkpednlben_$5C2D80BAF43DB14D$_$27$": 0.2,
+        "AdsStabilizeCooldownRate": 0.35,
+        "AdsStabilizeExitGracePeriod": 0.2,
         "AdsStabilizeCooldownRateMovingMultiplier": 1.5,
         "AdsStabilizeMovementProgressPenalty": 0.3,
-        "_aaacamgpphfkeldlcaboo_$C6FF75A4B3B201EE$_$32$": 2.5,
-        "_aaablccoleojpkdkeghnk_$22EB4E9FA3A467DA$_$27$": 5.0,
-        "_aaabiaflojcopmfgdolfd_$5BE92EFC563EB53$_$24$": 5.0
+        "_aaacalknjllchnkieahdj": 2.5,
+        "_aaablccoleojpkdkeghnk": 5.0,
+        "_aaabiaflojcopmfgdolfd": 5.0
       }
     },
     "ViewKickCurve": {
@@ -21120,11 +21120,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "Y": 0.58
     },
     "RandomDeviationDegree": 20.0,
-    "MaximumRandomFiringAnimationOffset": {
+    "MinimumRandomFiringAnimationOffset": {
       "X": -0.3,
       "Y": -0.3
     },
-    "MinimumRandomFiringAnimationOffset": {
+    "MaximumRandomFiringAnimationOffset": {
       "X": 0.3,
       "Y": 0.3
     },
@@ -21801,11 +21801,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "StabilizationHoldTime": 0.4,
       "AdsStabilizationData": {
         "AdsStabilizeTime": 1.25,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 0.55,
+        "AdsStabilizeCooldownRate": 0.55,
         "AdsStabilizeCooldownRateMovingMultiplier": 2.0,
         "AdsStabilizeMovementProgressPenalty": 0.6,
-        "_aaablccoleojpkdkeghnk_$22EB4E9FA3A467DA$_$27$": 6.0,
-        "_aaabiaflojcopmfgdolfd_$5BE92EFC563EB53$_$24$": 6.0
+        "_aaablccoleojpkdkeghnk": 6.0,
+        "_aaabiaflojcopmfgdolfd": 6.0
       }
     },
     "ViewKickCurve": {
@@ -22064,11 +22064,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
     },
     "RandomDeviationDegree": 12.0,
     "RecoilPatternResetTime": 0.8,
-    "MaximumRandomFiringAnimationOffset": {
+    "MinimumRandomFiringAnimationOffset": {
       "X": -0.15,
       "Y": -0.05
     },
-    "MinimumRandomFiringAnimationOffset": {
+    "MaximumRandomFiringAnimationOffset": {
       "X": 0.0,
       "Y": 0.05
     },
@@ -22768,11 +22768,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "StabilizationHoldTime": 0.45,
       "AdsStabilizationData": {
         "AdsStabilizeTime": 1.35,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 0.55,
+        "AdsStabilizeCooldownRate": 0.55,
         "AdsStabilizeCooldownRateMovingMultiplier": 2.0,
         "AdsStabilizeMovementProgressPenalty": 0.6,
-        "_aaablccoleojpkdkeghnk_$22EB4E9FA3A467DA$_$27$": 6.0,
-        "_aaabiaflojcopmfgdolfd_$5BE92EFC563EB53$_$24$": 6.0
+        "_aaablccoleojpkdkeghnk": 6.0,
+        "_aaabiaflojcopmfgdolfd": 6.0
       }
     },
     "ViewKickCurve": {
@@ -22980,11 +22980,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
     },
     "RandomDeviationDegree": 16.0,
     "RecoilPatternResetTime": 0.7,
-    "MaximumRandomFiringAnimationOffset": {
+    "MinimumRandomFiringAnimationOffset": {
       "X": -0.35,
       "Y": -0.1
     },
-    "MinimumRandomFiringAnimationOffset": {
+    "MaximumRandomFiringAnimationOffset": {
       "X": 0.35,
       "Y": 0.1
     },
@@ -23720,13 +23720,13 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "StabilizationHoldTime": 0.25,
       "AdsStabilizationData": {
         "AdsStabilizeTime": 0.8,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 0.3,
-        "_aaablfmcnialkpednlben_$5C2D80BAF43DB14D$_$27$": 0.2,
+        "AdsStabilizeCooldownRate": 0.3,
+        "AdsStabilizeExitGracePeriod": 0.2,
         "AdsStabilizeCooldownRateMovingMultiplier": 1.5,
         "AdsStabilizeMovementProgressPenalty": 0.3,
-        "_aaacamgpphfkeldlcaboo_$C6FF75A4B3B201EE$_$32$": 2.5,
-        "_aaablccoleojpkdkeghnk_$22EB4E9FA3A467DA$_$27$": 5.0,
-        "_aaabiaflojcopmfgdolfd_$5BE92EFC563EB53$_$24$": 5.0
+        "_aaacalknjllchnkieahdj": 2.5,
+        "_aaablccoleojpkdkeghnk": 5.0,
+        "_aaabiaflojcopmfgdolfd": 5.0
       }
     },
     "ViewKickCurve": {
@@ -24008,11 +24008,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
     "RandomDeviationDegree": 17.0,
     "RecoilPatternResetTime": 0.6,
     "FiringAnimationOffsetType": "EWDFiringAnimationOffsetType::Procedural",
-    "MaximumRandomFiringAnimationOffset": {
+    "MinimumRandomFiringAnimationOffset": {
       "X": 1.0,
       "Y": -1.0
     },
-    "MinimumRandomFiringAnimationOffset": {
+    "MaximumRandomFiringAnimationOffset": {
       "X": 0.3,
       "Y": 0.3
     },
@@ -24672,13 +24672,13 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "StabilizationHoldTime": 0.15,
       "AdsStabilizationData": {
         "AdsStabilizeTime": 0.55,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 0.3,
-        "_aaablfmcnialkpednlben_$5C2D80BAF43DB14D$_$27$": 0.25,
+        "AdsStabilizeCooldownRate": 0.3,
+        "AdsStabilizeExitGracePeriod": 0.25,
         "AdsStabilizeCooldownRateMovingMultiplier": 1.5,
         "AdsStabilizeMovementProgressPenalty": 0.2,
-        "_aaacamgpphfkeldlcaboo_$C6FF75A4B3B201EE$_$32$": 2.0,
-        "_aaablccoleojpkdkeghnk_$22EB4E9FA3A467DA$_$27$": 4.0,
-        "_aaabiaflojcopmfgdolfd_$5BE92EFC563EB53$_$24$": 4.0
+        "_aaacalknjllchnkieahdj": 2.0,
+        "_aaablccoleojpkdkeghnk": 4.0,
+        "_aaabiaflojcopmfgdolfd": 4.0
       }
     },
     "ViewKickCurve": {
@@ -25693,11 +25693,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "ADSStabilizationMovementSpeedRateDown": 2.0,
       "AdsStabilizationData": {
         "AdsStabilizeTime": 1.05,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 0.5,
+        "AdsStabilizeCooldownRate": 0.5,
         "AdsStabilizeCooldownRateMovingMultiplier": 2.0,
         "AdsStabilizeMovementProgressPenalty": 0.6,
-        "_aaablccoleojpkdkeghnk_$22EB4E9FA3A467DA$_$27$": 6.0,
-        "_aaabiaflojcopmfgdolfd_$5BE92EFC563EB53$_$24$": 6.0
+        "_aaablccoleojpkdkeghnk": 6.0,
+        "_aaabiaflojcopmfgdolfd": 6.0
       }
     },
     "ViewKickCurve": {
@@ -25956,11 +25956,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
     },
     "RandomDeviationDegree": 15.0,
     "RecoilPatternResetTime": 0.78,
-    "MaximumRandomFiringAnimationOffset": {
+    "MinimumRandomFiringAnimationOffset": {
       "X": -0.2,
       "Y": -0.2
     },
-    "MinimumRandomFiringAnimationOffset": {
+    "MaximumRandomFiringAnimationOffset": {
       "X": 0.2,
       "Y": 0.2
     },
@@ -26040,7 +26040,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       }
     },
     "FocusEnergyReductionPerShot": 50.0,
-    "_aaabijhbknckndgboaemo_$971AD2AD361E04CE$_$24$": 1.0,
+    "_aaabimbpohdlmnphjbidm": 1.0,
     "RecoilReductionWhenFocussing": 30.0,
     "bOverrideTypicalSpeed": true,
     "TypicalSpeed": 60300.0,
@@ -26373,12 +26373,12 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "StabilizationHoldTime": 0.5,
       "AdsStabilizationData": {
         "AdsStabilizeTime": 2.0,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 0.2,
+        "AdsStabilizeCooldownRate": 0.2,
         "AdsStabilizeCooldownRateMovingMultiplier": 2.0,
         "AdsStabilizeMovementProgressPenalty": 0.75,
-        "_aaacamgpphfkeldlcaboo_$C6FF75A4B3B201EE$_$32$": 2.5,
-        "_aaablccoleojpkdkeghnk_$22EB4E9FA3A467DA$_$27$": 9.0,
-        "_aaabiaflojcopmfgdolfd_$5BE92EFC563EB53$_$24$": 9.0
+        "_aaacalknjllchnkieahdj": 2.5,
+        "_aaablccoleojpkdkeghnk": 9.0,
+        "_aaabiaflojcopmfgdolfd": 9.0
       }
     },
     "ViewKickCurve": {
@@ -26645,11 +26645,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
     },
     "RandomDeviationDegree": 10.0,
     "RecoilPatternResetTime": 1.1,
-    "MaximumRandomFiringAnimationOffset": {
+    "MinimumRandomFiringAnimationOffset": {
       "X": 0.2,
       "Y": 0.2
     },
-    "MinimumRandomFiringAnimationOffset": {
+    "MaximumRandomFiringAnimationOffset": {
       "X": 0.5,
       "Y": 0.5
     },
@@ -26735,7 +26735,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       }
     },
     "FocusEnergyReductionPerShot": 100.0,
-    "_aaabijhbknckndgboaemo_$971AD2AD361E04CE$_$24$": 0.001,
+    "_aaabimbpohdlmnphjbidm": 0.001,
     "bOverrideTypicalSpeed": true,
     "TypicalSpeed": 57100.0,
     "bUseDistanceDamageFalloffCurve": true,
@@ -27376,13 +27376,13 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "StabilizationHoldTime": 1.25,
       "AdsStabilizationData": {
         "AdsStabilizeTime": 0.55,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 2.5,
-        "_aaablfmcnialkpednlben_$5C2D80BAF43DB14D$_$27$": 0.1,
+        "AdsStabilizeCooldownRate": 2.5,
+        "AdsStabilizeExitGracePeriod": 0.1,
         "AdsStabilizeCooldownRateMovingMultiplier": 6.0,
         "AdsStabilizeMovementProgressPenalty": 0.75,
-        "_aaacamgpphfkeldlcaboo_$C6FF75A4B3B201EE$_$32$": 1.15,
-        "_aaablccoleojpkdkeghnk_$22EB4E9FA3A467DA$_$27$": 10.0,
-        "_aaabiaflojcopmfgdolfd_$5BE92EFC563EB53$_$24$": 14.0
+        "_aaacalknjllchnkieahdj": 1.15,
+        "_aaablccoleojpkdkeghnk": 10.0,
+        "_aaabiaflojcopmfgdolfd": 14.0
       }
     },
     "ViewKickCurve": {
@@ -27477,11 +27477,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
     },
     "RecoilPatternPitchMax": 45.0,
     "RandomDeviationDegree": 4.0,
-    "MaximumRandomFiringAnimationOffset": {
+    "MinimumRandomFiringAnimationOffset": {
       "X": -0.35,
       "Y": -0.1
     },
-    "MinimumRandomFiringAnimationOffset": {
+    "MaximumRandomFiringAnimationOffset": {
       "X": 0.35,
       "Y": 0.1
     },
@@ -28341,13 +28341,13 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
           }
         },
         "AdsStabilizeTime": 4.0,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 0.05,
-        "_aaablfmcnialkpednlben_$5C2D80BAF43DB14D$_$27$": 0.1,
+        "AdsStabilizeCooldownRate": 0.05,
+        "AdsStabilizeExitGracePeriod": 0.1,
         "AdsStabilizeCooldownRateMovingMultiplier": 4.0,
         "AdsStabilizeMovementProgressPenalty": 0.6,
-        "_aaacamgpphfkeldlcaboo_$C6FF75A4B3B201EE$_$32$": 2.0,
-        "_aaablccoleojpkdkeghnk_$22EB4E9FA3A467DA$_$27$": 6.0,
-        "_aaabiaflojcopmfgdolfd_$5BE92EFC563EB53$_$24$": 6.0
+        "_aaacalknjllchnkieahdj": 2.0,
+        "_aaablccoleojpkdkeghnk": 6.0,
+        "_aaabiaflojcopmfgdolfd": 6.0
       }
     },
     "ViewKickCurve": {
@@ -28722,7 +28722,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       }
     },
     "FocusEnergyReductionPerShot": 50.0,
-    "_aaabijhbknckndgboaemo_$971AD2AD361E04CE$_$24$": 1.0,
+    "_aaabimbpohdlmnphjbidm": 1.0,
     "RecoilReductionWhenFocussing": 30.0,
     "bOverrideTypicalSpeed": true,
     "TypicalSpeed": 35000.0,
@@ -29349,11 +29349,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "ADSStabilizationMovementSpeedRateDown": 2.0,
       "AdsStabilizationData": {
         "AdsStabilizeTime": 1.0,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 0.5,
+        "AdsStabilizeCooldownRate": 0.5,
         "AdsStabilizeCooldownRateMovingMultiplier": 2.0,
         "AdsStabilizeMovementProgressPenalty": 0.6,
-        "_aaablccoleojpkdkeghnk_$22EB4E9FA3A467DA$_$27$": 6.0,
-        "_aaabiaflojcopmfgdolfd_$5BE92EFC563EB53$_$24$": 6.0
+        "_aaablccoleojpkdkeghnk": 6.0,
+        "_aaabiaflojcopmfgdolfd": 6.0
       }
     },
     "ViewKickCurve": {
@@ -29634,11 +29634,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "Y": 0.95
     },
     "RandomDeviationDegree": 14.0,
-    "MaximumRandomFiringAnimationOffset": {
+    "MinimumRandomFiringAnimationOffset": {
       "X": 0.2,
       "Y": 0.2
     },
-    "MinimumRandomFiringAnimationOffset": {
+    "MaximumRandomFiringAnimationOffset": {
       "X": 0.5,
       "Y": 0.5
     },
@@ -30384,13 +30384,13 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "StabilizationHoldTime": 0.25,
       "AdsStabilizationData": {
         "AdsStabilizeTime": 0.8,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 0.3,
-        "_aaablfmcnialkpednlben_$5C2D80BAF43DB14D$_$27$": 0.2,
+        "AdsStabilizeCooldownRate": 0.3,
+        "AdsStabilizeExitGracePeriod": 0.2,
         "AdsStabilizeCooldownRateMovingMultiplier": 1.5,
         "AdsStabilizeMovementProgressPenalty": 0.3,
-        "_aaacamgpphfkeldlcaboo_$C6FF75A4B3B201EE$_$32$": 2.5,
-        "_aaablccoleojpkdkeghnk_$22EB4E9FA3A467DA$_$27$": 5.0,
-        "_aaabiaflojcopmfgdolfd_$5BE92EFC563EB53$_$24$": 5.0
+        "_aaacalknjllchnkieahdj": 2.5,
+        "_aaablccoleojpkdkeghnk": 5.0,
+        "_aaabiaflojcopmfgdolfd": 5.0
       }
     },
     "ViewKickCurve": {
@@ -30672,11 +30672,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
     "RandomDeviationDegree": 17.0,
     "RecoilPatternResetTime": 0.55,
     "FiringAnimationOffsetType": "EWDFiringAnimationOffsetType::Procedural",
-    "MaximumRandomFiringAnimationOffset": {
+    "MinimumRandomFiringAnimationOffset": {
       "X": 1.0,
       "Y": -1.0
     },
-    "MinimumRandomFiringAnimationOffset": {
+    "MaximumRandomFiringAnimationOffset": {
       "X": 0.3,
       "Y": 0.3
     },
@@ -31385,8 +31385,8 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "StabilizationHoldTime": 0.35,
       "AdsStabilizationData": {
         "AdsStabilizeTime": 1.0,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 0.6,
-        "_aaablfmcnialkpednlben_$5C2D80BAF43DB14D$_$27$": 0.2,
+        "AdsStabilizeCooldownRate": 0.6,
+        "AdsStabilizeExitGracePeriod": 0.2,
         "AdsStabilizeCooldownRateMovingMultiplier": 2.0,
         "AdsStabilizeMovementProgressPenalty": 0.4
       }
@@ -31514,11 +31514,11 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
     },
     "RandomDeviationDegree": 28.0,
     "RecoilPatternResetTime": 1.2,
-    "MaximumRandomFiringAnimationOffset": {
+    "MinimumRandomFiringAnimationOffset": {
       "X": -0.35,
       "Y": -0.35
     },
-    "MinimumRandomFiringAnimationOffset": {
+    "MaximumRandomFiringAnimationOffset": {
       "X": 0.35,
       "Y": 0.35
     },
@@ -31602,7 +31602,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       }
     },
     "FocusEnergyReductionPerShot": 100.0,
-    "_aaabijhbknckndgboaemo_$971AD2AD361E04CE$_$24$": 1.0,
+    "_aaabimbpohdlmnphjbidm": 1.0,
     "bOverrideTypicalSpeed": true,
     "TypicalSpeed": 42500.0,
     "bUseDistanceDamageFalloffCurve": true,
@@ -32253,13 +32253,13 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "StabilizationHoldTime": 1.5,
       "AdsStabilizationData": {
         "AdsStabilizeTime": 0.7,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 2.5,
-        "_aaablfmcnialkpednlben_$5C2D80BAF43DB14D$_$27$": 0.1,
+        "AdsStabilizeCooldownRate": 2.5,
+        "AdsStabilizeExitGracePeriod": 0.1,
         "AdsStabilizeCooldownRateMovingMultiplier": 6.0,
         "AdsStabilizeMovementProgressPenalty": 0.8,
-        "_aaacamgpphfkeldlcaboo_$C6FF75A4B3B201EE$_$32$": 1.15,
-        "_aaablccoleojpkdkeghnk_$22EB4E9FA3A467DA$_$27$": 10.0,
-        "_aaabiaflojcopmfgdolfd_$5BE92EFC563EB53$_$24$": 14.0
+        "_aaacalknjllchnkieahdj": 1.15,
+        "_aaablccoleojpkdkeghnk": 10.0,
+        "_aaabiaflojcopmfgdolfd": 14.0
       }
     },
     "ViewKickCurve": {
@@ -32430,7 +32430,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       }
     },
     "FocusEnergyReductionPerShot": 100.0,
-    "_aaabijhbknckndgboaemo_$971AD2AD361E04CE$_$24$": 1.0,
+    "_aaabimbpohdlmnphjbidm": 1.0,
     "bOverrideTypicalSpeed": true,
     "TypicalSpeed": 31300.0,
     "bUseDistanceDamageFalloffCurve": true,
@@ -33080,13 +33080,13 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "StabilizationHoldTime": 2.0,
       "AdsStabilizationData": {
         "AdsStabilizeTime": 0.9,
-        "_aaabiaciljpgmdljkgmdj_$28B9F6C3B9A6C39$_$24$": 3.0,
-        "_aaablfmcnialkpednlben_$5C2D80BAF43DB14D$_$27$": 0.1,
+        "AdsStabilizeCooldownRate": 3.0,
+        "AdsStabilizeExitGracePeriod": 0.1,
         "AdsStabilizeCooldownRateMovingMultiplier": 6.0,
         "AdsStabilizeMovementProgressPenalty": 0.8,
-        "_aaacamgpphfkeldlcaboo_$C6FF75A4B3B201EE$_$32$": 1.1,
-        "_aaablccoleojpkdkeghnk_$22EB4E9FA3A467DA$_$27$": 10.0,
-        "_aaabiaflojcopmfgdolfd_$5BE92EFC563EB53$_$24$": 14.0
+        "_aaacalknjllchnkieahdj": 1.1,
+        "_aaablccoleojpkdkeghnk": 10.0,
+        "_aaabiaflojcopmfgdolfd": 14.0
       }
     },
     "ViewKickCurve": {
@@ -33248,7 +33248,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
       "EWDFireMode::Automatic"
     ],
     "RoundsPerBurst": 1,
-    "bFirstFocalPlane": false,
+    "_aaabaehmmeimejkapkogn": false,
     "bSpawnProjectileFromCameraWhenAds": false,
     "bAnimationSwayEnabled": false,
     "PostPatternRandomYawRecoil": {
@@ -33421,7 +33421,13 @@ The 12 `CurveFloat` assets that `ExternalCurve` entries in section 2 point to. E
 
 ## 5. Still not pulled / limitations
 
-- **Unnamed fields.** Some properties are listed without a readable name, such as `_aaabijhbknckndgboaemo_$971AD2AD361E04CE$_$24$` (mostly `1.0`). Their meaning is not stated in the data.
+- **Unnamed fields.** Some properties are listed without a readable name, such as `_aaabimbpohdlmnphjbidm` (mostly `1.0`; the focus-drain window, see Weapons §5a). Their meaning is not stated in the data.
 - **Units.** The export does not state units for RPM, accuracy or curve values.
 - **Scope mismatch with v2.** v2 section 2 counts 33 ranged weapons; this doc lists 40 `WDWeaponStatsData` assets, including non-ranged entries such as [`DA_BuildTool_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/BuildTool/Data/DA_BuildTool_Stats.json). The two lists are not reconciled here.
 - **Unresolved provenance.** The first eight rows use `Content/Weapons` paths. Whether they are the same set as v2's utility/test weapons is not established.
+
+## Change log
+
+| Date | Change |
+|---|---|
+| 2026-10-18 | `data/` re-exported with the v2 usmap (names only; values unchanged): the stats listings carry the corrected names. `MinimumRandomFiringAnimationOffset` / `MaximumRandomFiringAnimationOffset` were swapped (the SKS minimum is −0.2), `bFirstFocalPlane` on the stats is hashed again (`_aaabaehmmeimejkapkogn`), and `AdsStabilizeCooldownRate` / `AdsStabilizeExitGracePeriod` are named. |

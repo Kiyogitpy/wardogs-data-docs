@@ -33,7 +33,7 @@ The cosmetic data for the taxi (a Little Bird helicopter). One cosmetic entry, o
 
 | Row | Field | Value |
 |---|---|---|
-| `Meta.Cosmetic.Taxi.Littlebird` | EntityID | `Vehicle.Variant.Air.Rotary.Littlebird.Default` |
+| `Meta.Cosmetic.Taxi.Littlebird` | EntityId | `Vehicle.Variant.Air.Rotary.Littlebird.Default` |
 | | Category | `Meta.Cosmetic.Taxi` |
 | | Archetype | `Vehicle.Archetype.Air.Rotary` |
 | | UITextures | `FallbackIcon` set (path in export) |
@@ -58,3 +58,9 @@ A material-swap skin replaces the listed materials on the vehicle rather than ch
 - **Material overrides.** The list of material swaps is in the export but was not expanded.
 - **Icon path.** The `FallbackIcon` path is in the export; the texture itself is in the UI assets.
 - **Other taxi variants.** Only one taxi cosmetic exists in this folder. Other vehicle skins are in the Skins and Vehicles docs.
+
+## Change log
+
+| Date | Change |
+|---|---|
+| 2026-10-18 | `data/` re-exported with the v2 usmap (names only; values unchanged): the row key is spelled `EntityId`. |
