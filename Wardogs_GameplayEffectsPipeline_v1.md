@@ -327,6 +327,7 @@ applies them on equip is not traced.
 - [`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md): the rule pipeline and the character health write (§10)
 - [`Wardogs_VehicleDamagePipeline_v1.md`](Wardogs_VehicleDamagePipeline_v1.md): vehicle sections, which reduce `Attribute.Gameplay.Health.*` attributes
 - [`Wardogs_GameplayTags_v1.md`](Wardogs_GameplayTags_v1.md): tag catalog
+- [`docs/evidence/effects.md`](docs/evidence/effects.md): evidence behind the native addresses, with a verification status for every RVA this page cites
 
 ## Change log
 
