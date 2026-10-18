@@ -10,9 +10,10 @@ item data in data/ and the effect modifiers in assets/data/ge-values.json.
 
 Without --with the weapon carries its default loadout. Each --with attachment goes into
 the first free sub-slot that accepts it, replacing the default item there. The sight
-defaults to the `SightsData` entry `S_Aim01` (Effects §7.1), or the first entry when an
-attachment has none. --mounted mounts the bipod (it implies unfolded): the unfolded lists are
-removed and the mounted lists apply instead.
+defaults to the `SightsData` entry `S_Aim01` (Effects §7.1). An attachment without that
+entry gets no sight effects: natively there is no first-entry fallback (0x6C9E190). --mounted
+mounts the bipod (it implies unfolded): the unfolded lists are removed and the mounted lists
+apply instead.
 """
 import argparse
 import collections
@@ -36,8 +37,10 @@ SKIP = re.compile(r"BarrelTest")  # vehicle barrel test items, as in recoil_tabl
 # FWDBipodAttachmentData +0x138 (unfolded, on the weapon) and +0x148 (unfolded, on the
 # character); the cooked names are obfuscated, the SDK gives the order. +0x158 / +0x168 are
 # the mounted lists, applied by the Blueprint action B_Action_MountBipod (Effects §7.1).
-BIPOD_WEAPON = "_aaabgkhkknepnbcppjkao"
-BIPOD_CHARACTER = "_aaabpbaanpfnnepnbpekp"
+# The bipod struct is detected by its named MountedAppliedEffects key, so a usmap rename of
+# the two hashed keys stops the tool (Item.__init__) instead of silently emptying the lists.
+BIPOD_WEAPON = "_aaabgkhkknepnbcppjkao"  # v2 usmap; _aaabgocclgplfdmmfjefm_$E22B6FB53CC5945C$_$22$ before
+BIPOD_CHARACTER = "_aaabpbaanpfnnepnbpekp"  # v2 usmap; _aaabpgfgnkcdbhhlgdhmb_$656DA23177B637C1$_$31$ before
 MOUNTED_WEAPON = "MountedAppliedEffects"
 MOUNTED_CHARACTER = "MountedAppliedCharacterEffects"
 # The sight name the weapon starts with and returns to on every attachment change
@@ -85,7 +88,11 @@ class Item:
         self.containers = (ss[0].get("Properties", {}).get("Containers", []) if ss else [])
         ge = [o for o in by_type.get("WDItemExtensionData_GameplayEffects", []) if o.get("Properties", {}).get("DefaultAttributes")]
         pairs = [(kv["Key"]["TagName"], kv["Value"]) for kv in (ge[0]["Properties"]["DefaultAttributes"] if ge else [])]
-        self.base = collections.OrderedDict(pairs)  # a repeated key keeps its last value
+        # A repeated key keeps its first value: the map load keeps both pairs, and OnRegister
+        # (0x6C692E0) installs them in order with overwrite off (0x522F8F0).
+        self.base = collections.OrderedDict()
+        for k, v in pairs:
+            self.base.setdefault(k, v)
         seen = collections.defaultdict(list)
         for k, v in pairs:
             seen[k].append(v)
@@ -108,15 +115,23 @@ class Item:
         self.character = [ge_name(r) for r in ad.get("AppliedCharacterEffects", []) if r]
         self.sights = collections.OrderedDict(
             (s["Key"], [ge_name(r) for r in s["Value"].get("AppliedEffects", []) if r]) for s in ad.get("SightsData", []))
-        self.is_bipod = BIPOD_WEAPON in ad
+        self.is_bipod = MOUNTED_WEAPON in ad or MOUNTED_CHARACTER in ad
+        if self.is_bipod:
+            known = {BIPOD_WEAPON, BIPOD_CHARACTER, MOUNTED_WEAPON, MOUNTED_CHARACTER, "AppliedEffects",
+                     "AppliedCharacterEffects"}
+            unknown = [k for k, v in ad.items() if k not in known and isinstance(v, list) and any(
+                isinstance(r, dict) and "BlueprintGeneratedClass" in r.get("ObjectName", "") for r in v)]
+            if unknown:
+                raise SystemExit(f"error: {self.path}: bipod effect list under unknown key(s) {', '.join(unknown)}; "
+                                 "update BIPOD_WEAPON / BIPOD_CHARACTER")
         self.bipod_weapon = [ge_name(r) for r in ad.get(BIPOD_WEAPON, []) if r]
         self.bipod_character = [ge_name(r) for r in ad.get(BIPOD_CHARACTER, []) if r]
         self.mounted_weapon = [ge_name(r) for r in ad.get(MOUNTED_WEAPON, []) if r]
         self.mounted_character = [ge_name(r) for r in ad.get(MOUNTED_CHARACTER, []) if r]
 
     def default_sight(self):
-        """`S_Aim01` if the attachment has it, otherwise its first `SightsData` entry."""
-        return DEFAULT_SIGHT if DEFAULT_SIGHT in self.sights else next(iter(self.sights))
+        """`S_Aim01` if the attachment has it, else None: no sight effects (no native first-entry fallback)."""
+        return DEFAULT_SIGHT if DEFAULT_SIGHT in self.sights else None
 
     def label(self):
         return f"{self.display} (`{self.asset}`)" if self.display else f"`{self.asset}`"
@@ -155,7 +170,7 @@ def tag_match(tag, wanted):
 
 
 def accepts(container, item):
-    """Whether a sub-slot filter lets the item in (semantics assumed, see the page)."""
+    """Whether a sub-slot filter lets the item in (native 0x67A2B40, see the page)."""
     fl = container.get("Filter", {})
     allowed = item.key in {x.lower() for x in fl.get("AllowedSubSlotItems", [])} or any(
         tag_match(t, a) for t in item.context for a in fl.get("AllowedSubSlotContext", []))
@@ -172,28 +187,32 @@ def accepts(container, item):
 
 
 class Slot:
-    def __init__(self, data, owner, container, flags):
+    def __init__(self, data, owner, container):
         self.data, self.owner, self.container = data, owner, container
         self.tag = container["ContainerIdentifier"]["TagName"]
         self.user = False
         self.item = None
         self.children = []
-        for d in (container.get("DefaultContainerItems") or []) + [{"Item": x} for x in container.get("DefaultItems") or []]:
+        self.flag = None  # a missing default item; dropped when the slot is replaced
+        # DefaultItems are used only when DefaultContainerItems is empty (0x6784010).
+        dci = container.get("DefaultContainerItems") or []
+        for d in dci or [{"Item": x} for x in container.get("DefaultItems") or []]:
             tag = (d.get("Item") or {}).get("TagName", "None")
             if tag == "None":
                 continue
             it = data.items.get(tag.lower())
             if it is None:
-                flags.add(f"{short_slot(self.tag)} default `{tag}` (on `{owner.asset}`) has no item definition in data/; "
-                          "any effects it has are not included")
+                self.flag = (f"{short_slot(self.tag)} default `{tag}` (on `{owner.asset}`) has no item definition in "
+                             "data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects")
                 break
             if it.attachment:
-                self.place(it, flags)
+                self.place(it)
             break
 
-    def place(self, item, flags):
+    def place(self, item):
         self.item = item
-        self.children = [Slot(self.data, item, c, flags) for c in item.containers]
+        self.flag = None
+        self.children = [Slot(self.data, item, c) for c in item.containers]
 
     def walk(self):
         yield self
@@ -206,12 +225,15 @@ def short_slot(tag):
 
 
 class Loadout:
-    def __init__(self, data, weapon, extra=(), flags=None):
+    def __init__(self, data, weapon, extra=()):
         self.data, self.weapon = data, weapon
-        self.flags = flags if flags is not None else set()
-        self.slots = [Slot(data, weapon, c, self.flags) for c in weapon.containers]
+        self.slots = [Slot(data, weapon, c) for c in weapon.containers]
         for it in extra:
             self.add(it)
+
+    @property
+    def flags(self):
+        return {s.flag for s in self.walk() if s.flag}
 
     def walk(self):
         for s in self.slots:
@@ -222,7 +244,7 @@ class Loadout:
             raise SystemExit(f"error: {item.asset} is not an attachment")
         for s in self.walk():
             if not s.user and accepts(s.container, item):
-                s.place(item, self.flags)
+                s.place(item)
                 s.user = True
                 return
         free = [short_slot(s.tag) for s in self.walk() if not s.user]
@@ -265,10 +287,11 @@ def applications(data, loadout, sight=None, stance="Stand", bipod=False, mounted
         if it.sights:
             name = sight if sight in it.sights else it.default_sight()
             if sight and sight not in it.sights:
-                notes.append(f"`{it.asset}` has no sight `{sight}`; used `{name}`")
-            elif not sight and name != DEFAULT_SIGHT:
-                notes.append(f"`{it.asset}` has no `{DEFAULT_SIGHT}` sight; used its first entry `{name}`")
-            for e in it.sights[name]:
+                notes.append(f"`{it.asset}` has no sight `{sight}`; used " + (f"`{name}`" if name else "no sight effects"))
+            elif name is None:
+                notes.append(f"`{it.asset}` has no `{DEFAULT_SIGHT}` sight; no sight effects applied "
+                             "(natively no first-entry fallback)")
+            for e in it.sights.get(name, []):
                 weapon_side.append(Application(e, 1, f"{it.asset} sight {name}"))
         if mounted and it.is_bipod:
             # Mounted: 0x6C9F6E0 removes the unfolded lists; B_Action_MountBipod applies these.
@@ -352,9 +375,9 @@ def evaluate(data, weapon, apps):
                     v = current(backing)
                 else:
                     v = f32(weapon.base[backing]) if backing in weapon.base else None
-                c.flag = "capture timing not traced"
+                c.flag = "evaluated live (Effects §4.2)"
                 notes.append(f"`{c.app.effect}` {short(attr)} {OPS[m['op']]} current {short(backing)}: "
-                             "evaluated against its final value; capture timing not traced")
+                             "evaluated against its final value; the game re-evaluates it live (Effects §4.2)")
                 if v is None:
                     continue
             else:
@@ -376,7 +399,8 @@ def evaluate(data, weapon, apps):
             distinct = {fmt(c.magnitude) for c in overrides}
             if len(distinct) > 1:
                 notes.append(f"{len(overrides)} Overrides with different values ({', '.join(sorted(distinct))}); "
-                             "the first in application order is used")
+                             "the native order depends on the equip history (not determinable from data); "
+                             "the tool used the first in its own order")
         elif base is None:
             final = None
             if live:
@@ -529,8 +553,8 @@ def page(data):
         sights = [(it, it.default_sight()) for _, it in loadout.attachments() if it.sights]
         if sights:
             out.append("- **Sight:** " + "; ".join(
-                f"`{it.asset}` `{name}`" + (f" (of {len(it.sights)})" if len(it.sights) > 1 else "")
-                + ("" if name == DEFAULT_SIGHT else f" (no `{DEFAULT_SIGHT}`; first entry)")
+                (f"`{it.asset}` `{name}`" if name else f"`{it.asset}` no `{DEFAULT_SIGHT}` (no sight effects)")
+                + (f" (of {len(it.sights)})" if len(it.sights) > 1 else "")
                 for it, name in sights) + ".")
         st = w.stance.get("Stand")
         out.append("- **Stance (Stand):** " + (", ".join(f"`{e}`" + (f" ×{n}" if n != 1 else "") for e, n, _ in st)
@@ -601,7 +625,8 @@ def page(data):
                    + f". §1 and §2 use `{DEFAULT_SIGHT}`, per Effects §7.1; §3 lists each.")
     no_default = [it for it in data.attachments if it.sights and DEFAULT_SIGHT not in it.sights]
     if no_default:
-        out.append(f"- **No `{DEFAULT_SIGHT}` sight** (the tool falls back to the first entry): " + "; ".join(
+        out.append(f"- **No `{DEFAULT_SIGHT}` sight** (natively no first-entry fallback; the tool applies no sight "
+                   "effects): " + "; ".join(
             f"`{it.asset}` ({', '.join(it.sights)})" for it in no_default) + ".")
     if orphans:
         out.append("- **No weapon accepts these attachments** that carry effects: "
@@ -619,7 +644,7 @@ def page(data):
     in_default = sorted({w.asset for w in weapons for _, it in results[w.key][0].attachments()
                          if any(it.asset in v for v in backed.values())})
     if backed:
-        out.append(f"- **Attribute-backed** ({len(backed)} effects, capture timing not traced): " + "; ".join(
+        out.append(f"- **Attribute-backed** ({len(backed)} effects, evaluated live, Effects §4.2): " + "; ".join(
             f"`{e}` on {', '.join(f'`{a}`' for a in sorted(backed[e]))}" for e in sorted(backed))
             + ". Each overrides `MaxZeroingRange` with the current `MinZeroingRange`; the tool uses the final "
             "`MinZeroingRange`. " + (f"In a default loadout on: {', '.join(in_default)}." if in_default
@@ -630,7 +655,11 @@ def page(data):
                       for k, v in w.repeated.items() if len(set(v)) > 1]
             out.append(f"- **Repeated `DefaultAttributes` keys** on {w.label()}: {len(w.repeated)} keys appear twice"
                        + (f", with different values for {', '.join(differ)}" if differ else "")
-                       + ". **Assumption:** the last value is used, as a map load that adds each pair in turn keeps it.")
+                       + ". The map load keeps both pairs (`FMapProperty::SerializeItem` adds each entry without a "
+                       "lookup when the archetype's map is empty), and `OnRegister` (`0x6C692E0`) installs them in order "
+                       "with overwrite off (`0x522F8F0`), so the first value is used"
+                       + (": " + ", ".join(f"`{short(k).replace('Weapon.', '')}` {num(v[0])}"
+                                           for k, v in w.repeated.items() if len(set(v)) > 1) if differ else "") + ".")
     nulls = [it for it in data.attachments if it.null_refs]
     if nulls:
         out.append("- **Empty effect references** (skipped): " + ", ".join(f"`{it.asset}`" for it in nulls) + ".")
@@ -673,7 +702,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("--weapon", help="weapon asset name (ID_WEPN_037) or ItemId")
     ap.add_argument("--with", dest="with_", nargs="+", metavar="ID", help="attachments to equip, in order")
-    ap.add_argument("--sight", help=f"SightsData entry to select (default: {DEFAULT_SIGHT}, else the first entry)")
+    ap.add_argument("--sight", help=f"SightsData entry to select (default: {DEFAULT_SIGHT}; without it, no sight effects)")
     ap.add_argument("--stance", choices=STANCES, default="Stand")
     ap.add_argument("--bipod", action="store_true", help="bipod unfolded (default folded)")
     ap.add_argument("--mounted", action="store_true",
