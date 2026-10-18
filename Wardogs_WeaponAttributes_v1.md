@@ -13,6 +13,7 @@ attachment changes on the weapon. The values are computed from the cooked data w
 Effect modifiers come from [Gameplay Effect Values](Wardogs_GameplayEffect_Values_v1.md). Labels: **Data**
 for what the export says, **Native** for what the traced code does, **Assumption** for a choice this page
 makes where the code is not traced.
+To try any other loadout (attachments, sight, stance, bipod), use the [Weapon Loadout Calculator](loadout-calculator.md).
 
 ## Rules
 
@@ -1346,3 +1347,4 @@ Results above that rest on something not traced or on an odd piece of data.
 | 2026-10-17 | Round-5 verifier pass: the initial sight is `S_Aim01` (Effects §7.1), with a fallback to the first entry for `ID_CantedIrons`; `--mounted` models a mounted bipod (`MountedAppliedEffects` on the weapon, `MountedAppliedCharacterEffects` on the character, unfolded lists removed), and §3 lists the mounted lists. No §1 value changed. |
 | 2026-10-18 | Round-6 verifier corrections: a repeated `DefaultAttributes` key keeps its first value (`OnRegister` installs with overwrite off), so the 9K333 Verba `Length` is 100, not 80 (the only §1 change); no native first-entry sight fallback, so the tool applies no sight effects for `ID_CantedIrons`; Override order, default loadout (`0x6784010`, `DefaultItems` only when `DefaultContainerItems` is empty) and sub-slot filters (`0x67A2B40`) are now traced and labelled Data / Native; stance effect and equip path wording; attribute-backed magnitudes are evaluated live (Effects §4.2); missing default items are absent from the paks too; the tool detects the bipod struct by `MountedAppliedEffects` and drops a missing-default flag when `--with` replaces that slot. |
 | 2026-10-18 | Round-7 correction: 16 magazine ammo slots also differ between the two default lists (no attribute change). |
+| 2026-10-18 | Interactive loadout calculator page added (`loadout-calculator.md`): choose a weapon, attachments, sight, stance and bipod state and see base, modifiers and final for every `Attribute.Gameplay.Weapon.*` value. It runs `assets/js/loadout-eval.js`, a port of this tool's evaluation over `assets/data/weapon-loadouts.json` (`--json`); `--check` compares the two on every default loadout and 400 seeded random loadouts. No §1 value changed. |
