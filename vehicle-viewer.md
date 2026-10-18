@@ -10,6 +10,8 @@ nav_order: 2.5
 
 Every vehicle's collision mesh, coloured by the health section each collision slot feeds. Pick a slot on the model or in the list to see its section, how it passes damage to the main health, and how many hits of a caliber destroy the vehicle through it. How slots and routing work: [Vehicle Damage Pipeline](Wardogs_VehicleDamagePipeline_v1.md#31-hitboxes) §3.1 (hitboxes), [§4.2](Wardogs_VehicleDamagePipeline_v1.md#42-routing-semantics) (routing) and [§5.4](Wardogs_VehicleDamagePipeline_v1.md#54-hits-to-destroy) (hits to destroy).
 
+For soldiers, the [Infantry Hitbox Viewer](infantry-viewer.md) shows the player's physics bodies by hit location.
+
 <div class="vv" id="vv" markdown="0" data-json="{{ '/assets/data/vehicle-hitboxes.json' | relative_url }}?v={{ site.time | date: '%s' }}" data-base="{{ '/' | relative_url }}">
   <div class="vv-controls">
     <div class="vv-field">
