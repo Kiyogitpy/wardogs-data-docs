@@ -87,7 +87,7 @@ The models come from [`_tools/vehicle_models.py`](https://github.com/Kiyogitpy/w
 
 ## Hitbox table
 
-The viewer needs JavaScript; this is the same data as a table. Every vehicle's collision slots, the section each one feeds (with its maximum health), how that section passes damage to the main health, and the rule factor at that slot for three calibers ([Vehicle Damage Pipeline](Wardogs_VehicleDamagePipeline_v1.md#31-hitboxes) §3.1).
+The viewer needs JavaScript; this is the same data as a table. Every vehicle's collision slots, the section each one feeds (with its maximum health), how that section passes damage to the main health, and the rule factor at that slot for three calibers (the viewer itself offers every caliber in the data, grouped; [Vehicle Damage Pipeline](Wardogs_VehicleDamagePipeline_v1.md#31-hitboxes) §3.1).
 
 <!-- damage_tables --hitboxes -->
 | Vehicle (variants) | Collision slot | Section (max health) | Routing to main health | `556mm` | `50Cal` | `30mm` |

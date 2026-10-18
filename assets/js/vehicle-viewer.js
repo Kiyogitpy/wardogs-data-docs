@@ -234,10 +234,13 @@
   function fillCalibers() {
     var sel = els.caliber;
     sel.textContent = "";
+    var groups = {};
     data.meta.calibers.forEach(function (c) {
-      var o = el("option", null, c.label + " (base " + num(c.base_damage) + ")");
+      var g = c.group || "Calibers";
+      if (!groups[g]) { groups[g] = document.createElement("optgroup"); groups[g].label = g; sel.appendChild(groups[g]); }
+      var o = el("option", null, c.label + (c.unused ? " [unused]" : "") + " (base " + num(c.base_damage) + ")");
       o.value = c.id;
-      sel.appendChild(o);
+      groups[g].appendChild(o);
     });
     sel.disabled = false;
   }
@@ -454,6 +457,7 @@
     row(dl, "Damage per hit", num(cal.base_damage) + " × " + num(f) + " = " + num(cal.base_damage * f));
     row(dl, "Hits to destroy", h == null ? "can't destroy the vehicle through this slot" : num(h));
     body.appendChild(dl);
+    if (cal.note) body.appendChild(el("p", "vv-caliber-note", cal.note));
 
     var links = el("p", "vv-panel-links");
     links.appendChild(docLink(data.meta.docs.hitboxes, "Hitboxes (§3.1)"));
