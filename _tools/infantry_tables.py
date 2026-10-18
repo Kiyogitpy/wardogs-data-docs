@@ -14,6 +14,7 @@ the docs do not trace shows what the data says and is listed under not_traced in
     python _tools/infantry_tables.py --explosives # launcher, cannon and shell rounds: direct and radial data
     python _tools/infantry_tables.py --armor      # helmet and armor items: tag, durability, R, coverage
     python _tools/infantry_tables.py --not-traced # the paths the docs leave open, with the data
+    python _tools/infantry_tables.py --verified   # round-6 verifier answers cited by RVA (doc text pending)
     python _tools/infantry_tables.py --json       # assets/data/infantry-hitboxes.json for the viewer
     python _tools/infantry_tables.py --check      # compare the JSON with the doc tables
     python _tools/infantry_tables.py --write      # refresh <!-- infantry_tables MODE --> blocks and the JSON
@@ -54,9 +55,6 @@ REQS = ("InstigatorRequirements", "TargetRequirements", "SourceRequirements", "P
 LABELS = {"Head": "Head", "Neck": "Neck", "Torso.Upper": "Upper torso", "Torso.Middle": "Middle torso",
           "Torso.Lower": "Lower torso", "Pelvis": "Pelvis", "Arm.Upper": "Upper arm", "Arm.Lower": "Lower arm",
           "Arm.Hand": "Hand", "Leg.Thigh": "Thigh", "Leg.Calf": "Calf", "Leg.Foot": "Foot"}
-RADIAL_FIELDS = ("BaseDamage", "ExplosiveRadius", "EffectiveExplosiveRadius", "ExplosiveDamageFallOff",
-                 "MinimumExplosiveDamage")
-
 
 def rel(path):
     return os.path.relpath(path, ROOT).replace(os.sep, "/")
@@ -322,66 +320,74 @@ def entry_note(i):
             "custom": m["bUseCustomOperation"], "change": change}
 
 
-# --- not traced ---------------------------------------------------------------------------------
+# --- verified and not traced --------------------------------------------------------------------
+
+R6 = "verifier round 6 (doc text pending)"
+
+
+def verified():
+    """Round-6 verifier answers, cited by RVA until the DamagePipeline text lands."""
+    return [
+        {"id": "hit-location-asset", "rvas": ["0x6F01BB0"],
+         "text": "The hit-location asset is picked by the target actor's class (ClassToHitLocations)."},
+        {"id": "bone-lookup", "rvas": ["0x6BB8D00"],
+         "text": "The hit location is an exact FName match of the raw FHitResult.BoneName in DamageHitLocations: no "
+                 "parent walk, and an unmapped bone gives an empty tag (no hit location)."},
+        {"id": "impact-remap", "rvas": ["0x6BB8D40"],
+         "text": "DamageImpactRemap is never applied for damage: its reader has 3 callers, all animation or ragdoll. "
+                 "spine_05 is Torso.Upper for damage."},
+        {"id": "physics-asset", "rvas": [],
+         "text": "The hit bodies are PA_TPCharacter_Simplified's; all 20 map to a hit location. spine_01 and spine_02 have "
+                 "no body, so a live player never produces them. Mutable adds each helmet's single head body, which "
+                 "maps to Head."},
+        {"id": "radial-hits", "rvas": ["0x6F06540", "0x6E6DCC0"],
+         "text": "Radial damage: the gathered hits pass the character's IWDDamageable filter (dropped in one seat state, "
+                 "otherwise one hit per component). Each kept hit is its own evaluation, tagged Radius.Inner or .Outer, "
+                 "with that hit's bone as the hit location."},
+        {"id": "blunt-direct-only", "rvas": ["0x6B725B0"],
+         "text": "Kinetic.Impact.ExplosiveBlunt is added only on a projectile's direct-impact path, so entries 7, 117, "
+                 "142 and 143 never apply to blast damage; entries 102–116 do."},
+        {"id": "thrown-contact", "rvas": ["0x6CA8730"],
+         "text": "Against a character, the explosive-actor path is the thrown object's contact damage (source "
+                 "Kinetic.Impact.Throwable, DamageType.Impact), applied once per contact on the contacted bone."},
+        {"id": "backblast-paths", "rvas": ["0x6F042A0", "0x6F06EB0"],
+         "text": "On foot, 0x6F042A0 traces the back-blast cone. In a seat, 0x6F06EB0 hits the occupants of the shooter's "
+                 "vehicle with synthetic hits, the shooter included. Only Launcher_04, RPG7 and CGM4 enable back-blast."},
+    ]
+
 
 def not_traced():
-    bones, remap = hit_map()
-    remap_txt = ", ".join(f"{a} → {b}" for a, b in remap.items())
     return [
-        {"id": "bone-lookup",
-         "text": "How the hit bone becomes the event's hit-location tag: exact bone name only, a walk up the skeleton's "
-                 "parent bones, or a default for an unmapped bone. DamagePipeline §7.6 says only that the tag is "
-                 "\"derived from the hit bone\"; VehicleDamagePipeline V-2 says 0x6EF8DE0 fills an empty hit-location tag "
-                 "from ClassToHitLocations by bone name (0x6F01BB0), inside the branch taken when the event's target tag "
-                 "is None. GameMechanics §2b lists the map without the rule.",
-         "data": f"DamageHitLocations maps {len(bones)} bone names to {len(set(bones.values()))} tags ({data_path(HITLOC_FILE)})."},
-        {"id": "impact-remap",
-         "text": "When DamageImpactRemap applies: before the bone lookup (changing the damage hit location) or only for "
-                 "impact effects. GameMechanics §2b lists the entries; no doc traces a reader.",
-         "data": f"DamageImpactRemap: {remap_txt}. Applied before the lookup, spine_01 would read Pelvis instead of "
-                 "Torso.Lower and spine_05 Torso.Middle instead of Torso.Upper."},
-        {"id": "unmapped-bone",
-         "text": "What a hit on a body whose bone has no map entry gets. If no hit-location tag results, §4 rule 4 drops "
-                 "every entry with a hit-location filter (among them 5, 6, 7, 10 and 138–143) and §7.6 removes all armor tags, but "
-                 "whether such a hit gets no tag, a parent's tag or a default is the bone-lookup question.",
-         "data": "Only the bones in DamageHitLocations carry a tag in the data."},
         {"id": "radial-amount",
-         "text": "The radial path (0x6F06540, §1.1): which DamageValues field is the starting amount, how damage falls off "
-                 "with distance, and which radius separates Meta.Damage.Explosive.Radius.Inner from .Outer. GameMechanics "
-                 "§14 says BaseDamage and ExplosiveRadius feed the Calibre rules and falloff is ExplosiveDamageFallOff, "
-                 "without a formula.",
+         "text": "Blast damage: which DamageValues field is the starting amount, the falloff arithmetic, and which radius "
+                 "separates Meta.Damage.Explosive.Radius.Inner from .Outer. GameMechanics §14 says BaseDamage and "
+                 "ExplosiveRadius feed the Calibre rules and falloff is ExplosiveDamageFallOff, without a formula.",
          "data": "Projectile assets carry BaseDamage, ExplosiveRadius, EffectiveExplosiveRadius, ExplosiveDamageFallOff "
-                 "and on some MinimumExplosiveDamage and ExplosiveBluntDamage (values per source below)."},
+                 "and on some MinimumExplosiveDamage (values per source)."},
         {"id": "radial-split",
-         "text": "How one explosion's damage lands on a character: once per character, per overlapped body or per traced "
-                 "hit, and from which point the distance is measured. VehicleDamagePipeline §3.2 traces the radial gather "
-                 "(0x6EFFDC0) for vehicles only: one Visibility line trace per overlapped component.",
-         "data": "No data field describes the split."},
-        {"id": "radial-hit-location",
-         "text": "Whether a radial event carries an infantry hit location. VehicleDamagePipeline §4.1 says the rule's "
-                 "hit-location tag comes from each hit (0x6F06540) for vehicles; DamagePipeline is silent for characters. "
-                 "With a tag, a bone entry whose source matches (5 Bullet, 10 Cannon) and the hit-location-filtered armor "
-                 "entries could select; without one they cannot (§4 rule 4).",
-         "data": "Rule entries 108–116 key on Radius.Inner / .Outer and have no hit-location filter."},
+         "text": "Which of the character's components the radial gather hits. Known (" + R6 + "): one hit per component "
+                 "after the IWDDamageable filter 0x6E6DCC0, each hit its own evaluation with its bone's hit location.",
+         "data": "No data field describes the gather."},
         {"id": "radial-context",
-         "text": "Which tags the radial event's source context carries besides the projectile's source tag and the radius "
-                 "tag (weapon tag, caliber id, ExplosiveBlunt). The radial factors here use the source tag, the "
-                 "projectile's DamageEntityData.Context and the radius tag only.",
+         "text": "Which tags a blast hit's source context carries besides the source tag and the radius tag (weapon tag, "
+                 "caliber id). The blast factors here use the projectile's source tag, its DamageEntityData.Context and "
+                 "the radius tag, so the bone factor's W is 1 on blast hits.",
          "data": "Entries 108–116 need only the source tag and a radius tag."},
         {"id": "exploding-hit",
          "text": "When a projectile hit is bExploding. §7.6: an exploding hit skips both scales, the armor hook and "
-                 "ModifyDamage on the projectile path; what sets bExploding is not stated. So whether an armed launcher "
-                 "or cannon round ever deals the direct-hit amount is open.",
+                 "ModifyDamage on the projectile path; what sets bExploding is not stated, so whether an armed launcher, "
+                 "shell or cannon round ever deals the direct-hit amount is open.",
          "data": "Projectile assets carry bHasArmingDelay and ArmingDelay (seconds of flight time, §7.6)."},
         {"id": "explosive-actors",
-         "text": "Grenade, C4, mine, claymore, IED and Molotov damage: the explosive-actor path (0x6CA8730, §1.1) is named, "
-                 "but its amount, source tags and hit location are not traced.",
+         "text": "Detonation damage of grenades, C4, mines, claymores, IEDs and the Molotov. Against a character "
+                 "0x6CA8730 is only the thrown object's contact damage (" + R6 + "); the detonation's path, amount and "
+                 "tags are not traced.",
          "data": "The items reference actor Blueprints (B_FragGrenade, B_ThrowableC4, B_AT_Mine, B_Claymore, B_Molotov) "
                  "that are not in the data export, so no damage value is in data/."},
         {"id": "armor-hook-paths",
-         "text": "Whether the target hook Auth_GetArmorDamageEvent (§7.6) runs on paths other than the projectile path "
-                 "(radial, explosive actors, melee, impact). It decides whether an armor tag reaches entries 102–106, "
-                 "138–144.",
+         "text": "Whether the target hook Auth_GetArmorDamageEvent (§7.6) runs on paths other than the projectile's "
+                 "direct impact (blast, back-blast, melee, actor impact, thrown contact). It decides whether an armor tag "
+                 "reaches entries 102–106 and 138–144.",
          "data": "Armor items list CoveredHitLocations (see armor)."},
         {"id": "armor-data-rows",
          "text": "Whether DT_GlobalDamage_ArmorData's rows are evaluated for a character hit. §5's walk for a character "
@@ -402,12 +408,12 @@ def not_traced():
                  "entry 144 requires Meta.Damage.DamageType.Melee; BoneDamageModifiers has a "
                  "Meta.Damage.DamageType.Melee row that no bone entry (5, 7, 10) selects for a melee-only source."},
         {"id": "impact-amount",
-         "text": "Actor impact (0x6E72D90, §1.1): the starting amount and what the hitting actor's entity data holds "
-                 "(for a vehicle running a character over, or a thrown object).",
-         "data": "No infantry rule entry requires Meta.Damage.DamageType.Impact."},
+         "text": "The starting amount of actor impact (0x6E72D90, §1.1) and of a thrown object's contact (0x6CA8730), and "
+                 "what the hitting actor's entity data holds.",
+         "data": "No infantry rule entry requires Meta.Damage.DamageType.Impact or Kinetic.Impact.Throwable."},
         {"id": "backblast",
-         "text": "Back-blast (0x6F06EB0 / 0x6F042A0 from 0x6B92900, §1.1): the event's source tag and amount, and which "
-                 "branch runs (O-8).",
+         "text": "Back-blast: the event's source tag and amount, and the hit location of the seated path's synthetic "
+                 "hits. The two paths are known (" + R6 + ").",
          "data": "Launcher stats carry a BackBlast config (FWDBackBlastConfig) whose field names are hashed in the "
                  "export and the SDK; no infantry rule entry requires Meta.Damage.DamageType.BackBlast."},
         {"id": "occupant-damage",
@@ -415,11 +421,17 @@ def not_traced():
                  "§1): the amount and hit location.",
          "data": "Source tags Meta.Damage.Explosive.VehicleExplosion + DamageType.Explosive, and Meta.Damage.Vehicle + "
                  "DamageType.Enviroment."},
-        {"id": "helmet-physics-assets",
-         "text": "Whether Mutable merges the helmet physics assets into the character's runtime physics asset, which "
-                 "would add a helmet body on head. No doc traces it, so the model shows PA_TPCharacter_Simplified only.",
-         "data": "MUT_TP_Character lists five helmet physics assets (PA_Helmet_*), each with one body on head "
+        {"id": "helmet-merge",
+         "text": "The rule by which Mutable merges a helmet's physics asset into the character's. Known (" + R6 + "): each "
+                 "helmet adds its single head body, which maps to Head. The model shows PA_TPCharacter_Simplified "
+                 "without helmet bodies.",
+         "data": "MUT_TP_Character lists five helmet physics assets (PA_Helmet_*), one Sphyl body on head each "
                  f"({MODEL} asset.extras.notes; MUT_TP_Character is not in the data/ JSON export)."},
+        {"id": "tapered-capsule-query",
+         "text": "Whether Chaos builds query shapes from tapered-capsule bodies, i.e. whether these six bodies can be hit "
+                 "by a trace at all.",
+         "data": "calf_l, calf_r, lowerarm_l, lowerarm_r, thigh_l and thigh_r are TaperedCapsule bodies "
+                 f"(QueryAndPhysics) in PA_TPCharacter_Simplified ({MODEL} asset.extras.bodies[].shapes)."},
         {"id": "collision-channels",
          "text": "Which trace channels hit the character's bodies. The CharacterMesh component uses collision profile "
                  "Custom, whose per-channel responses are native class defaults, not stored in the cooked Blueprint.",
@@ -435,119 +447,160 @@ def not_traced():
          "text": "Whether a weapon whose SupportedCaliber is a parent tag fires the child projectiles: the bow lists "
                  "Item.Caliber.Arrow (child Arrow.Explosive), the M500 / MP43 Item.Caliber.12g (child 12g.RifledSlug), "
                  "the artillery Item.Caliber.155mm (155mm.Standard, .Expensive), STN_03 Item.Caliber.120x800mm "
-                 "(120x800mm.Standard). How SupportedCaliber is matched is not traced.",
+                 "(120x800mm.Standard), CGM4 Item.Caliber.84mm (child 84mm.TVGuided). How SupportedCaliber is matched "
+                 "is not traced.",
          "data": "No WDProjectileData asset has ProjectileId Item.Caliber.12g, .155mm or .120x800mm; the child ids "
                  "each have one (Sandbox copies left out)."},
     ]
 
 
 # --- sources ------------------------------------------------------------------------------------
+#
+# Compact encoding. Zone lists follow hit_locations order. A source's zone_multiplier {"row": R} means
+# B[z] = Universal[z] x bone_rows[R][z] (R null: Universal[z] alone); null means B[z] = 1. A factor {"k": k}
+# means factor[z] = k x B[z]; {"zones": [...]} lists the 12 factors. Damage = S x factor. An armor item's
+# {"k": k} multiplies the unarmored factor on the hit locations the item covers. File references are
+# [index into meta.files, field].
 
-def zone_block(src, context, s, armor=True):
-    """Damage at each hit location for one event, and with each armor piece on the locations it covers
-    (Auth_GetArmorDamageEvent keeps only the covering piece, §7.6)."""
-    zones, used = {}, set()
-    for z in ZONES:
-        sel, f = selected(src, context, z)
-        used.update(i for i, _ in sel)
-        zones[z] = {"damage": rnd(s * f), "factor": rnd(f), "entries": [i for i, x in sel if x != 1.0]}
-    with_armor, armor_used = {}, set()
-    for a in ARMOR_ITEMS if armor else []:
-        cells = {}
-        for z in a["covers"]:
-            sel, f = selected(src, context, z, [a["tag"]])
-            armor_used.update(i for i, _ in sel if dt.ENTRIES[i]["TargetRequirements"])
-            cells[z] = {"damage": rnd(s * f), "factor": rnd(f), "entries": [i for i, x in sel if x != 1.0]}
-        if cells:
-            with_armor[a["item"]] = cells
-    return zones, with_armor, sorted(used), sorted(armor_used)
+FILES = []
 
 
-def bone_factor(src, context):
-    """U × W per hit location (§7.1) when a bone entry selects for this event, else None."""
-    sel = {i for z in ZONES for i, _ in selected(src, context, z)[0]}
+def ref(path, field=None):
+    if not path:
+        return None
+    if path not in FILES:
+        FILES.append(path)
+    return [FILES.index(path), field] if field else FILES.index(path)
+
+
+def same(xs):
+    return all(abs(x - xs[0]) <= 1e-12 * max(1.0, abs(xs[0])) for x in xs)
+
+
+def bone_vector(src, context, sel):
+    """(B per hit location, zone_multiplier) for an event whose selected entries are `sel` (§7.1)."""
     if not sel & set(BONE_ENTRIES) or src == DRONE:
-        return None, None
+        return [1.0] * len(ZONES), None
     row = bone_row(context)
-    w = dt.BONE[row] if row else {}
-    return {z: rnd(dt.BONE["Universal"].get(z, 0.0) * (w.get(z, 0.0) if row else 1.0)) for z in ZONES}, row
+    return ([dt.BONE["Universal"][z] * (dt.BONE[row][z] if row else 1.0) for z in ZONES], {"row": row})
 
 
-def cite(proj, field):
-    return f"{data_path(proj['path'][5:])}: ProjectileStats.DamageValues.{field}" if proj["path"].startswith("data/") else None
+def encode_zones(src, context, armored=True):
+    """Factors of one event on every hit location, and per armor piece on the locations it covers (the covering
+    piece alone reaches the rules, §7.6), in the compact encoding. Also returns the full-precision factors."""
+    fs, applied, sel = [], [], set()
+    for z in ZONES:
+        s_, f = selected(src, context, z)
+        fs.append(f)
+        applied.append({i for i, x in s_ if x != 1.0 or i in BONE_ENTRIES})
+        sel.update(i for i, _ in s_)
+    b, zm = bone_vector(src, context, sel)
+    ks = [f / x for f, x in zip(fs, b)]
+    enc = {"factor": {"k": ks[0]} if same(ks) else {"zones": fs}}
+    common = set.intersection(*applied)
+    enc["entries"] = sorted(common)
+    extra = {short(z): sorted(a - common) for z, a in zip(ZONES, applied) if a - common}
+    if extra:
+        enc["zone_entries"] = extra
+    armor, aused = {}, set()
+    for a in ARMOR_ITEMS if armored else []:
+        idx = [ZONES.index(z) for z in a["covers"]]
+        if not idx:
+            continue
+        fa, ea = [], set()
+        for i in idx:
+            s_, f = selected(src, context, ZONES[i], [a["tag"]])
+            fa.append(f)
+            ea.update(j for j, x in s_ if x != 1.0 and j not in applied[i])
+            aused.update(j for j, _ in s_ if dt.ENTRIES[j]["TargetRequirements"])
+        ka = [x / fs[i] if fs[i] else 0.0 for x, i in zip(fa, idx)]
+        if same(ka) and ka[0] == 1.0 and not ea:
+            continue
+        armor[a["item"]] = dict({"k": ka[0]} if same(ka) else {"zones": {short(ZONES[i]): x for x, i in zip(fa, idx)}},
+                                entries=sorted(ea))
+    if armor:
+        enc["armor"] = armor
+    return enc, zm, sel, aused, fs
+
+
+def decode(enc, zm, bone_rows):
+    """The 12 factors of an encoded event (the page's arithmetic)."""
+    if "zones" in enc["factor"]:
+        return list(enc["factor"]["zones"])
+    u = bone_rows["Universal"]
+    b = [u[z] * (bone_rows[zm["row"]][z] if zm["row"] else 1.0) for z in ZONES] if zm else [1.0] * len(ZONES)
+    return [enc["factor"]["k"] * x for x in b]
 
 
 def projectile_source(w, cal, category, label, sub, nt_extra=()):
     proj = PROJ[cal]
     src, vals = proj["source_tag"], proj["values"]
-    ctx = proj["context"] + ([w["wtag"]] if w["wtag"] else []) + [cal, PROJECTILE] + ([BLUNT] if proj["has_arming_delay"] else [])
+    blunt = [BLUNT] if proj["has_arming_delay"] else []  # §7.6: direct-impact path only (blunt-direct-only)
+    ctx = proj["context"] + ([w["wtag"]] if w["wtag"] else []) + [cal, PROJECTILE] + blunt
+    explosive = vals.get("ExplosiveRadius", 0) > 0  # an absent ExplosiveRadius is the class default 0: no blast
     cases = []
     if proj["has_arming_delay"] and "ExplosiveBluntDamage" in vals:
         cases.append(("before_arming", "Before arming (flight time below ArmingDelay): S = ExplosiveBluntDamage",
                       "ExplosiveBluntDamage"))
-    if src.startswith("Meta.Damage.Bullet") and not ("ExplosiveRadius" in vals or "EffectiveExplosiveRadius" in vals):
-        cases.append(("direct", "Direct hit: S = BaseDamage", "BaseDamage"))
-    else:
-        cases.append(("direct_not_exploding", "Direct hit that is not exploding: S = BaseDamage (when a hit explodes is "
-                      "not traced)", "BaseDamage"))
-    direct, rule_entries, armor_entries = [], set(), set()
-    for cid, text, field in cases:
-        s = vals.get(field)
-        zones, with_armor, used, aused = zone_block(src, ctx, s)
-        rule_entries.update(used)
-        armor_entries.update(aused)
-        direct.append({"case": cid, "label": text, "S": s, "S_path": cite(proj, field), "context": ctx,
-                       "zones": zones, "armor": with_armor})
-    zm, row = bone_factor(src, ctx)
-    keys = sorted(((k["Time"], k["Value"]) for k in w["keys"]))
-    falloff = {"path": f"{w['stats']}: DistanceDamageFalloffCurve" if w["keys"] else None,
-               "keys_m": [[t / 100, v] for t, v in keys],
-               "cubic": any(k.get("InterpMode") != "RCIM_Linear" for k in w["keys"]),
-               "points": [{"m": r, "factor": rnd(dt.falloff(w["keys"], r * 100)),
-                           "torso_upper": rnd(direct[-1]["zones"][HIT + "Torso.Upper"]["damage"] * dt.falloff(w["keys"], r * 100))}
-                          for r in dt.RANGES_M]}
-    radial = None
+    cases.append(("direct_not_exploding", "Direct hit that is not exploding: S = BaseDamage (when a hit explodes is "
+                  "not traced)", "BaseDamage") if explosive or proj["has_arming_delay"]
+                 else ("direct", "Direct hit: S = BaseDamage", "BaseDamage"))
+    enc, zm, sel, aused, fs = encode_zones(src, ctx)  # S does not enter the factors, so the cases share them
+    direct = [{"case": cid, "S": vals.get(field), "S_src": ref(proj["path"], f"ProjectileStats.DamageValues.{field}")}
+              for cid, text, field in cases]
+    falloff = {"src": ref(w["stats"], "DistanceDamageFalloffCurve") if w["keys"] else None,
+               "keys_m": [[t / 100, v] for t, v in sorted((k["Time"], k["Value"]) for k in w["keys"])],
+               "cubic": any(k.get("InterpMode") != "RCIM_Linear" for k in w["keys"])}
+    radial, rsel, rzm = None, set(), None
     nt = list(nt_extra)
-    if "ExplosiveRadius" in vals or "EffectiveExplosiveRadius" in vals:
-        radial = {"fields": {k: {"value": vals[k], "path": cite(proj, k)} for k in RADIAL_FIELDS if k in vals}, "rings": {}}
+    if explosive:
+        rings = {}
         for name, rtag in (("inner", INNER), ("outer", OUTER)):
-            sel, f = selected(src, proj["context"] + [rtag], "")
-            armored = {a["item"]: rnd(selected(src, proj["context"] + [rtag], "", [a["tag"]])[1]) for a in ARMOR_ITEMS}
-            radial["rings"][name] = {"tag": rtag, "entries": [i for i, _ in sel], "factor": rnd(f),
-                                     "factor_with_armor_tag": armored}
-        nt += ["radial-amount", "radial-split", "radial-hit-location", "radial-context", "exploding-hit", "armor-hook-paths"]
+            r_enc, r_zm, r_sel, r_aused, _ = encode_zones(src, proj["context"] + [rtag])
+            rsel |= r_sel | r_aused
+            rzm = r_zm
+            rings[name] = dict(tag=rtag, **r_enc)
+        radial = {"zone_multiplier": rzm, "rings": rings}
+        nt += ["radial-amount", "radial-split", "radial-context", "exploding-hit", "armor-hook-paths"]
     if proj["has_arming_delay"] and "exploding-hit" not in nt:
         nt.append("exploding-hit")
+    kind = "Bullet" if src.startswith("Meta.Damage.Bullet") else "Cannon" if src.startswith("Meta.Damage.Cannon") else "ExplosiveBlunt"
     if zm is not None:
-        why = (f"Entry {next(i for i in BONE_ENTRIES if i in rule_entries)} selects the bone operation for this source "
-               f"({'Bullet' if src.startswith('Meta.Damage.Bullet') else 'Cannon' if src.startswith('Meta.Damage.Cannon') else 'ExplosiveBlunt'}), "
+        row = zm["row"]
+        why = (f"Entry {next(i for i in BONE_ENTRIES if i in sel)} selects the bone operation for a direct hit ({kind}), "
                f"so the hit location sets the factor Universal × {'row ' + row if row else 'W = 1 (no row matches)'} (§7.1).")
     elif src == DRONE:
         why = "Entry 7 matches the blunt hit, but §7.1 exempts the source tag Meta.Damage.Explosive.Drone: the bone factor is 1 everywhere."
     else:
-        why = ("No bone entry matches: entries 5, 7 and 10 need Meta.Damage.Bullet, Kinetic.Impact.ExplosiveBlunt or "
-               "Meta.Damage.Cannon in the source (§3.1), so every hit location gets the same rule factor.")
+        why = ("No bone entry matches a direct hit: entries 5, 7 and 10 need Meta.Damage.Bullet, Kinetic.Impact.ExplosiveBlunt "
+               "or Meta.Damage.Cannon in the source (§3.1), so every hit location gets the same rule factor.")
     if radial:
-        why += " The blast part goes through the radial path; whether it carries a hit location is not traced."
+        why += (" Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not "
+                "apply to them (" + R6 + ")" + (f"; entry {next(i for i in (5, 10) if i in rsel)} still gives the bone "
+                                                "factor, with W = 1." if rzm else "."))
     sid = re.sub(r"[^a-z0-9]+", "-", f"{category}-{label}".lower()).strip("-")
     return {"id": sid, "category": category, "group": sub, "label": label,
-            "damage_tags": sorted({src} | ({BLUNT} if proj["has_arming_delay"] else set())),
-            "uses_hit_location": zm is not None, "why": why,
-            "rule_entries": sorted(rule_entries), "armor_entries": sorted(armor_entries),
-            "zone_multiplier": zm, "bone_row": row,
-            "values": {"weapon": w["path"], "weapon_tag": w["wtag"], "stats": w["stats"], "caliber": cal,
-                       "projectile": proj["path"], "source_tag": src, "source_context": proj["context"],
+            "damage_tags": sorted({src} | set(blunt)),
+            "uses_hit_location": zm is not None, "radial_uses_hit_location": rzm is not None if radial else None,
+            "why": why,
+            "rule_entries": sorted(i for i in sel if not dt.ENTRIES[i]["TargetRequirements"]),
+            "armor_entries": sorted(aused),
+            "radial_entries": sorted(rsel) if radial else [],
+            "zone_multiplier": zm,
+            "values": {"weapon": ref(w["path"]), "weapon_tag": w["wtag"], "stats": ref(w["stats"]), "caliber": cal,
+                       "projectile": ref(proj["path"]), "source_tag": src, "source_context": proj["context"],
                        "has_arming_delay": proj["has_arming_delay"], "arming_delay": proj["arming_delay"],
-                       "direct": direct, "falloff": falloff, "radial": radial},
-            "not_traced": sorted(set(nt)), "doc": doc("bullet_event")}
+                       "damage_values": vals, "damage_values_src": ref(proj["path"], "ProjectileStats.DamageValues"),
+                       "direct": direct, "direct_zones": enc, "falloff": falloff, "radial": radial},
+            "not_traced": sorted(set(nt)), "doc": "bullet_event", "_fs": fs}
 
 
-def tagged_source(sid, category, group, label, tags, why, values, nt, docref, extra=()):
+def tagged_source(sid, category, group, label, tags, why, values, nt, docref, extra=(), uses_hit=False):
     hostile, armor, friendly = candidates(tags, extra)
     return {"id": sid, "category": category, "group": group, "label": label, "damage_tags": list(tags),
-            "uses_hit_location": False, "why": why, "rule_entries": hostile, "armor_entries": armor,
-            "friendly_entries": friendly, "zone_multiplier": None, "bone_row": None,
-            "values": values, "not_traced": nt, "doc": doc(docref)}
+            "uses_hit_location": uses_hit, "why": why, "rule_entries": hostile, "armor_entries": armor,
+            "friendly_entries": friendly, "zone_multiplier": None,
+            "values": values, "not_traced": nt, "doc": docref}
 
 
 def child_calibers(w):
@@ -570,7 +623,8 @@ def sources():
         elif cal:
             out.append(projectile_source(w, cal, "explosives", w["name"], "Launcher"))
         for child in child_calibers(w):
-            cat = "bullets" if (PROJ[child]["source_tag"] or "").startswith("Meta.Damage.Bullet") and                 "ExplosiveRadius" not in PROJ[child]["values"] else "explosives"
+            cat = "bullets" if (PROJ[child]["source_tag"] or "").startswith("Meta.Damage.Bullet") \
+                and not PROJ[child]["values"].get("ExplosiveRadius", 0) > 0 else "explosives"
             out.append(projectile_source(w, child, cat, f"{w['name']} ({child.replace('Item.Caliber.', '')})",
                                          w["wtag"].split(".")[3], ["caliber-parent-match"]))
     seen, oth = {}, other_weapons()
@@ -586,16 +640,18 @@ def sources():
             nt.append("underbarrel-weapon-tag")
         if cal not in w["cals"]:
             nt.append("caliber-parent-match")
-        label = names[0].replace("_", " ") + f" ({cal.replace('Item.Caliber.', '')})" +             (f" +{len(names) - 1} more" if len(names) > 1 else "")
+        label = names[0].replace("_", " ") + f" ({cal.replace('Item.Caliber.', '')})" \
+            + (f" +{len(names) - 1} more" if len(names) > 1 else "")
         bow = wtag == "Meta.Damage.Weapon.CombatBow"
-        if src.startswith("Meta.Damage.Bullet") and "ExplosiveRadius" not in PROJ[cal]["values"]:
+        if src.startswith("Meta.Damage.Bullet") and not PROJ[cal]["values"].get("ExplosiveRadius", 0) > 0:
             s = projectile_source(w, cal, "bullets", label, "Bow" if bow else "Vehicle", nt)
         else:
-            sub = "Cannon" if src.startswith("Meta.Damage.Cannon") else "Bow" if bow else                 "Launcher" if "underbarrel-weapon-tag" in nt else "Vehicle"
+            sub = "Cannon" if src.startswith("Meta.Damage.Cannon") else "Bow" if bow else \
+                "Launcher" if "underbarrel-weapon-tag" in nt else "Vehicle"
             s = projectile_source(w, cal, "explosives", label, sub, nt)
-        s["values"]["items"] = [x["path"] for x in ws]
+        s["values"]["items"] = [ref(x["path"]) for x in ws]
         out.append(s)
-    # Explosive actors: no damage values in the export.
+    # Thrown and placed explosives: their detonation is not traced and their values are not in the export.
     actors = [("M67 frag grenade", "Wardogs/Content/Items/Throwable/Grenades/M67_Grenade/ID_M67Grenade.json", "Meta.Damage.Explosive.Grenade"),
               ("C4", "Wardogs/Plugins/GameFeatures/Items/C4/Content/Data/ID_C4_Trigger.json", "Meta.Damage.Explosive.Utility.C4"),
               ("AT mine", "Wardogs/Plugins/GameFeatures/Items/AT_mine/Content/Data/ID_AT_Mine.json", "Meta.Damage.Explosive.Utility.ATMine"),
@@ -604,26 +660,31 @@ def sources():
               ("Molotov", "Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Data/ID_Molotov.json", "Meta.Damage.Explosive.Utility.Molotov")]
     for label, path, t in actors:
         kind, cls = actor_class(os.path.join(DATA, path))
-        values = {"item": data_path(path), "actor_class_field": kind, "actor_class": cls,
-                  "actor_class_in_data": False,
+        values = {"item": ref(data_path(path)), "actor_class_field": kind, "actor_class": cls, "actor_class_in_data": False,
                   "tag": t, "tag_in_DefaultGameplayTags": tag_defined(t),
                   "entries_naming_tag": [i for i, e in enumerate(dt.ENTRIES) if t in e["SourceRequirements"]],
-                  "tag_note": "the gameplay tag named after this item; which tags the detonation event carries is not traced",
+                  "tag_note": "the gameplay tag named after this item; which tags the detonation carries is not traced",
                   "ring_entries": {"inner": candidates([t], [INNER])[0], "outer": candidates([t], [OUTER])[0]}}
-        out.append(tagged_source(re.sub(r"[^a-z0-9]+", "-", f"explosives-{label}".lower()).strip("-"), "explosives", "Thrown and placed",
-                                 label, [t], "The explosive-actor path (§1.1) is not traced: no amount, tags or hit location. "
-                                 "The entries listed are those whose source requirements this tag meets.",
-                                 values, ["explosive-actors", "radial-hit-location", "armor-hook-paths"], "callers", [INNER, OUTER]))
+        out.append(tagged_source(re.sub(r"[^a-z0-9]+", "-", f"explosives-{label}".lower()).strip("-"), "explosives",
+                                 "Thrown and placed", label, [t],
+                                 "The detonation is not traced: no amount, tags or path (0x6CA8730 against a character is "
+                                 "only the thrown object's contact, see Thrown object contact). The entries listed are "
+                                 "those whose source requirements this tag meets.",
+                                 values, ["explosive-actors", "armor-hook-paths"], "callers", [INNER, OUTER]))
     for w in sorted(inf + oth, key=lambda w: w["name"]):
         if w["backblast"] is not None:
-            out.append(tagged_source(re.sub(r"[^a-z0-9]+", "-", f"explosives-backblast-{w['name']}".lower()), "explosives", "Back-blast",
-                                     f"{w['name']} back-blast", ["Meta.Damage.DamageType.BackBlast"],
-                                     "No infantry rule entry requires Meta.Damage.DamageType.BackBlast, and the event's "
-                                     "source tag and amount are not traced (§1.1, O-8).",
-                                     {"weapon": w["path"], "config": f"{w['stats']}: BackBlast",
+            out.append(tagged_source(re.sub(r"[^a-z0-9]+", "-", f"explosives-backblast-{w['name']}".lower()), "explosives",
+                                     "Back-blast", f"{w['name']} back-blast", ["Meta.Damage.DamageType.BackBlast"],
+                                     "On foot the back-blast traces a cone (0x6F042A0); in a seat it hits the occupants of "
+                                     "the shooter's vehicle, the shooter included, with synthetic hits (0x6F06EB0) (" + R6 +
+                                     "). No infantry rule entry requires Meta.Damage.DamageType.BackBlast; the source tag "
+                                     "and amount are not traced.",
+                                     {"weapon": ref(w["path"]), "config": ref(w["stats"], "BackBlast"),
                                       "enabled": bool(w["backblast"].get("bEnabled")),
+                                      "on_foot": "0x6F042A0: cone trace", "seated": "0x6F06EB0: synthetic hits on the "
+                                      "occupants of the shooter's vehicle, shooter included",
                                       "field_names": "hashed in the export and the SDK (FWDBackBlastConfig)"},
-                                     ["backblast"], "callers"))
+                                     ["backblast", "armor-hook-paths"], "callers"))
     out.append(tagged_source("explosives-vehicle-explosion-occupants", "explosives", "Vehicle", "Vehicle explosion (occupants)",
                              ["Meta.Damage.Explosive.VehicleExplosion", "Meta.Damage.DamageType.Explosive"],
                              "Built by UWDVehicleOperatorComponent (§1.1, VehicleDamagePipeline §1); amount and hit location "
@@ -637,17 +698,26 @@ def sources():
                                  "§3.1), so the body takes the same factor everywhere. Entry 144 applies armor durability "
                                  "(1 − R/100, §7.5) to an armored target if the DamageType.Melee tag and the armor tag reach "
                                  "the event, which is not traced.",
-                                 {"item": m["path"], "actions": [dict(a, path=f"{m['path']}: WDItemExtensionData_CharacterMelee."
-                                                                     f"MeleeActions[{a['action']}].Damage") for a in m["actions"]],
-                                  "armor_factor_entry_144": {a["item"]: rnd(1 - a["reduction_pct"] / 100)
-                                                             for a in ARMOR_ITEMS if a["kind"] == "armor"}},
+                                 {"item": ref(m["path"]),
+                                  "actions": [{"action": a["action"], "damage": a["damage"],
+                                               "src": ref(m["path"], f"WDItemExtensionData_CharacterMelee.MeleeActions[{a['action']}].Damage")}
+                                              for a in m["actions"]],
+                                  "armor_factor_entry_144": {a["item"]: 1 - a["reduction_pct"] / 100
+                                                             for a in ARMOR_ITEMS if a["kind"] == "armor" and a["covers"]}},
                                  ["melee-path", "armor-hook-paths"], "armor_durability"))
+    out.append(tagged_source("other-thrown-contact", "other", "Impact", "Thrown object contact",
+                             ["Meta.Damage.Kinetic.Impact.Throwable", "Meta.Damage.DamageType.Impact"],
+                             "0x6CA8730 against a character is the thrown object's contact damage, applied once per contact on "
+                             "the contacted bone (" + R6 + "). No infantry entry requires these tags, so the hit location "
+                             "changes no factor. The amount is not traced.",
+                             {"caller": "0x6CA8730 (AWDExplosive, AWDC4, AWDGrenade, AWDLandmine slot 236)"},
+                             ["impact-amount", "armor-hook-paths"], "callers"))
     out.append(tagged_source("other-actor-impact", "other", "Impact", "Actor or vehicle impact",
                              ["Meta.Damage.DamageType.Impact"],
                              "0x6E72D90 (§1.1) builds the event from the hitting actor's entity data plus DamageType.Impact; "
                              "no infantry entry requires Impact, so nothing depends on the hit location. The amount is not traced.",
                              {"caller": "0x6E72D90 (AWDMoverCharacter slot 169 delegate); skips dead characters"},
-                             ["impact-amount"], "callers"))
+                             ["impact-amount", "armor-hook-paths"], "callers"))
     order = {"bullets": 0, "explosives": 1, "other": 2}
     return sorted(out, key=lambda x: order[x["category"]])
 
@@ -734,11 +804,12 @@ def model():
 # --- JSON ---------------------------------------------------------------------------------------
 
 def build():
+    """The viewer JSON at full precision (write_json rounds when serialising; --check reads this)."""
+    FILES.clear()
     bones, remap = hit_map()
     mdl = model()
     bodies = set(mdl["bodies"]) if mdl else set()
-    names = list(bones) + [b for b in list(remap) + list(remap.values()) if b not in bones]
-    names += sorted(b for b in bodies if b not in names)
+    names = list(bones) + sorted(b for b in bodies if b not in bones)
     if mdl:
         mdl["mapped_without_body"] = [b for b in bones if b not in bodies]
         mdl["bodies_without_mapping"] = [b for b in mdl["bodies"] if b not in bones]
@@ -746,27 +817,45 @@ def build():
     srcs = sources()
     armor = [{k: a[k] for k in ("item", "tag", "kind", "covers", "max_durability", "reduction_pct", "stage_reductions",
                                 "entries", "custom_entries", "path")} for a in ARMOR_ITEMS]
-    used_entries = sorted({i for s in srcs for i in s["rule_entries"] + s["armor_entries"] + s.get("friendly_entries", [])}
-                          | {i for a in ARMOR_ITEMS for i in a["entries"]})
+    used_entries = sorted({i for s in srcs for i in s["rule_entries"] + s["armor_entries"] + s.get("radial_entries", [])
+                           + s.get("friendly_entries", [])} | {i for a in ARMOR_ITEMS for i in a["entries"]})
     return {
         "meta": {
             "source_data_tree": tree,
             "source_data_tree_note": "git tree id of data/ when generated; equals `git rev-parse <commit>:data` for any commit with the same data",
             "generator": "python _tools/infantry_tables.py --json",
+            "encoding": "Zone lists follow hit_locations order. zone_multiplier {row: R}: B[z] = bone_rows.Universal[z] × "
+                        "bone_rows[R][z] (R null: Universal alone); zone_multiplier null: B[z] = 1. A factor {k} gives "
+                        "factor[z] = k × B[z]; {zones} lists the 12 factors. Damage = S × factor[z] (× the falloff curve "
+                        "at the distance, keys in metres). Armor {k} multiplies the unarmored factor on the hit locations the "
+                        "item covers; {zones} gives those factors. entries are the entries with a factor other than 1 on "
+                        "every hit location, zone_entries the extra ones per hit location. A file reference is "
+                        "[index into meta.files, field] or an index. A source's doc is a key of meta.docs and a direct case's "
+                        "case a key of meta.cases. A direct hit's source context is source_context, weapon_tag, caliber, "
+                        "Meta.Damage.DamageType.Projectile and, when has_arming_delay, Kinetic.Impact.ExplosiveBlunt (§7.6); "
+                        "a blast hit's is source_context and the ring's radius tag. Blast armor factors apply only if the "
+                        "armor tag reaches a blast hit (armor-hook-paths). Numbers are rounded to 6 significant digits.",
+            "files": FILES,
+            "cases": {"direct": "Direct hit: S = BaseDamage",
+                      "direct_not_exploding": "Direct hit that is not exploding: S = BaseDamage (when a hit explodes "
+                                              "is not traced)",
+                      "before_arming": "Before arming (flight time below ArmingDelay): S = ExplosiveBluntDamage"},
             "docs": {k: doc(k) for k in DOCS},
+            "verified": {"status": R6, "items": verified()},
             "assumptions": [
                 "rules from DamagePipeline §4-§7 only, through _tools/damage_tables.py: every selected entry multiplies "
                 "the running amount, the total is clamped at 0 (§6)",
                 "§7.7 event: hostile alignment, FMJ (no ammo-modifier tag), a direct hit with no ricochet or penetration, "
-                "no instigator tags, target outside any vehicle; point blank unless a falloff point says otherwise",
+                "no instigator tags, target outside any vehicle; point blank unless the falloff curve is applied",
                 "speed scale left at 1 (§7.8)",
                 "armor: only the piece whose CoveredHitLocations holds the hit location reaches the rules "
                 "(Auth_GetArmorDamageEvent, §7.6); every durability stage has the same R in the data (§7.5)",
                 "an absent cooked property is its class default (bHasArmingDelay false)",
                 "bone factor U × W: U from row Universal, W from the first source-context tag naming a row or its "
                 "direct parent, 1.0 with none (§7.1); Meta.Damage.Explosive.Drone is exempt",
-                "radial factors use the projectile's source tag, its DamageEntityData.Context and the radius tag only, "
-                "with no hit location (radial-context, radial-hit-location are not traced)",
+                "blast hits: one evaluation per hit with that hit's bone as the hit location and no ExplosiveBlunt (" + R6 +
+                "); source context = the projectile's source tag, DamageEntityData.Context and the radius tag "
+                "(radial-context), so W = 1; the blast amount itself is not traced (radial-amount)",
                 "shotgun values are per pellet"],
             "not_traced": not_traced(),
             "categories": [
@@ -775,16 +864,17 @@ def build():
                          "scale × distance curve. Entry 5 multiplies by Universal × weapon row for the hit location (§7.1); "
                          "a covering helmet or armor piece adds entries 138/140 (§7.3)."},
                 {"id": "explosives", "label": "Explosives and launchers",
-                 "note": "Launcher, cannon and shell rounds hit through the same projectile path. Before arming, S is "
-                         "ExplosiveBluntDamage and the source carries Kinetic.Impact.ExplosiveBlunt, so entry 7 applies the "
-                         "bone factor and entries 142–143 armor durability. Cannon rounds take entry 10. An exploding hit "
-                         "skips ModifyDamage there (§7.6); the blast goes through the radial path (§1.1) with "
-                         "Radius.Inner or .Outer. How the blast amount is computed and split over a body is not traced. "
-                         "Grenades, C4 and mines use the explosive-actor path, whose values are not in the export."},
+                 "note": "A direct impact goes through the projectile path: before arming S is ExplosiveBluntDamage and the "
+                         "source carries Kinetic.Impact.ExplosiveBlunt, so entry 7 applies the bone factor and entries "
+                         "142–143 armor durability; cannon rounds take entry 10. An exploding hit skips ModifyDamage there "
+                         "(§7.6). The blast goes through the radial path: one evaluation per hit component, tagged "
+                         "Radius.Inner or .Outer, with the hit bone's location and without ExplosiveBlunt, so entries 7, "
+                         "117, 142 and 143 never apply to it and 102–116 do (" + R6 + "). The blast amount and falloff are "
+                         "not traced. Grenades, C4 and mines detonate through a path that is not traced."},
                 {"id": "other", "label": "Other",
-                 "note": "Melee and impact events match no bone entry (5, 7, 10 need Bullet, ExplosiveBlunt or Cannon, "
-                         "§3.1), so the factor is the same on every hit location. Entry 144 reduces melee damage on an "
-                         "armored target by R (§7.5)."}],
+                 "note": "Melee, actor impact and thrown-object contact match no bone entry (5, 7, 10 need Bullet, "
+                         "ExplosiveBlunt or Cannon, §3.1), so the factor is the same on every hit location. Entry 144 "
+                         "reduces melee damage on an armored target by R (§7.5)."}],
             "entries": {str(i): entry_note(i) for i in used_entries},
         },
         "model": mdl,
@@ -793,12 +883,16 @@ def build():
                            "bones": [b for b, t in bones.items() if t == z],
                            "covered_by": [a["item"] for a in ARMOR_ITEMS if z in a["covers"]]} for z in ZONES],
         "bones": [{"bone": b, "hit_location": bones.get(b), "impact_remap": remap.get(b),
-                   "hit_location_if_remapped": bones.get(remap[b]) if b in remap else None,
                    "has_body": (b in bodies) if mdl else None} for b in names],
-        "bone_rule": {"data": f"{data_path(HITLOC_FILE)}: DamageHitLocations maps {len(bones)} bone names to tags; "
-                              f"DamageImpactRemap maps " + ", ".join(f"{a} → {b}" for a, b in remap.items()),
-                      "runtime": "not traced: exact bone, parent walk, a default for unmapped bones, and when "
-                                 "DamageImpactRemap applies (bone-lookup, impact-remap, unmapped-bone)",
+        "bone_rule": {"data": f"DamageHitLocations maps {len(bones)} bone names to tags",
+                      "runtime": "exact FName match of FHitResult.BoneName in the asset picked by the actor's class; no "
+                                 "parent walk; an unmapped bone gives no hit location (0x6F01BB0, 0x6BB8D00; " + R6 + ")",
+                      "unmapped": "with no hit location, entries with a hit-location filter are not selected (§4 rule 4) "
+                                  "and all armor tags are removed (§7.6)",
+                      "impact_remap": "DamageImpactRemap (" + ", ".join(f"{a} → {b}" for a, b in remap.items()) +
+                                      ") is used by animation and ragdoll only, never for damage (0x6BB8D40; " + R6 + ")",
+                      "live_player": "spine_01 and spine_02 have no body in PA_TPCharacter_Simplified, so a live player "
+                                     "never produces them; a helmet adds its own head body, which maps to Head (" + R6 + ")",
                       "path": data_path(HITLOC_FILE)},
         "bone_rows": {k: dict(v) for k, v in dt.BONE.items()},
         "bone_rows_path": data_path(BONE_FILE),
@@ -808,18 +902,47 @@ def build():
     }
 
 
+def sig(o):
+    """Round every float to 6 significant digits and drop private (_) keys, for serialising only."""
+    if isinstance(o, float):
+        return float(f"{o:.6g}")
+    if isinstance(o, dict):
+        return {k: sig(v) for k, v in o.items() if not k.startswith("_")}
+    if isinstance(o, list):
+        return [sig(v) for v in o]
+    return o
+
+
+def dumps(o, level=0):
+    """Indented JSON with lists of scalars and small flat objects kept on one line."""
+    flat = json.dumps(o, ensure_ascii=False, separators=(", ", ": "))
+    scalar = lambda v: not isinstance(v, (dict, list))
+    if scalar(o) or not o:
+        return flat
+    vals = list(o.values()) if isinstance(o, dict) else o
+    simple = all(scalar(v) or (isinstance(v, list) and all(scalar(x) for x in v)) for v in vals)
+    if simple and (isinstance(o, list) or len(flat) <= 700):
+        return flat
+    if isinstance(o, list) and all(isinstance(v, list) and all(scalar(x) for x in v) for v in o) and len(flat) <= 100:
+        return flat
+    pad, inner = " " * level, " " * (level + 1)
+    if isinstance(o, dict):
+        body = (f"{inner}{json.dumps(k, ensure_ascii=False)}: {dumps(v, level + 1)}" for k, v in o.items())
+        return "{\n" + ",\n".join(body) + "\n" + pad + "}"
+    return "[\n" + ",\n".join(inner + dumps(v, level + 1) for v in o) + "\n" + pad + "]"
+
+
 def write_json():
     out = build()
     os.makedirs(os.path.dirname(JSON_OUT), exist_ok=True)
     with open(JSON_OUT, "w", encoding="utf-8", newline="\n") as f:
-        json.dump(out, f, indent=1, ensure_ascii=False)
-        f.write("\n")
+        f.write(dumps(sig(out)) + "\n")
     cats = {}
     for s in out["sources"]:
         cats[s["category"]] = cats.get(s["category"], 0) + 1
-    print(f"{rel(JSON_OUT)}: {len(out['hit_locations'])} hit locations, {len(out['bones'])} bones, "
-          f"{len(out['sources'])} sources ({', '.join(f'{k} {v}' for k, v in cats.items())}), {len(out['armor'])} armor items, "
-          f"{len(out['meta']['not_traced'])} not traced, model {'yes' if out['model'] else 'none'}")
+    print(f"{rel(JSON_OUT)}: {os.path.getsize(JSON_OUT) / 1024:.0f} KiB, {len(out['hit_locations'])} hit locations, "
+          f"{len(out['bones'])} bones, {len(out['sources'])} sources ({', '.join(f'{k} {v}' for k, v in cats.items())}), "
+          f"{len(out['armor'])} armor items, {len(out['meta']['not_traced'])} not traced, model {'yes' if out['model'] else 'none'}")
     return out
 
 
@@ -830,24 +953,23 @@ def short(z):
 
 
 def zones_table():
-    bones, remap = hit_map()
+    bones, _ = hit_map()
     print("| Hit location (`Meta.Damage.HitLocation.Infantry.*`) | Bones | `Universal` | Covered by |")
     print("|---|---|---:|---|")
     for z in ZONES:
-        bs = ", ".join(f"`{b}`" + (f" (remap → `{remap[b]}`)" if b in remap else "") for b, t in bones.items() if t == z)
+        bs = ", ".join(f"`{b}`" for b, t in bones.items() if t == z)
         cov = ", ".join(a["item"].replace("ID_", "") for a in ARMOR_ITEMS if z in a["covers"]) or "—"
         print(f"| `{short(z)}` | {bs} | {dt.BONE['Universal'][z]:g} | {cov} |")
 
 
 def bones_table():
     out = build()
-    print("| Bone | Hit location | `DamageImpactRemap` | Hit location after the remap | Physics body |")
-    print("|---|---|---|---|---|")
+    print("| Bone | Hit location | `DamageImpactRemap` (animation and ragdoll only) | Physics body |")
+    print("|---|---|---|---|")
     for b in out["bones"]:
         body = "—" if b["has_body"] is None else ("yes" if b["has_body"] else "**no**")
         print(f"| `{b['bone']}` | {('`' + short(b['hit_location']) + '`') if b['hit_location'] else '**none**'} | "
-              f"{('`' + b['impact_remap'] + '`') if b['impact_remap'] else '—'} | "
-              f"{('`' + short(b['hit_location_if_remapped']) + '`') if b['hit_location_if_remapped'] else '—'} | {body} |")
+              f"{('`' + b['impact_remap'] + '`') if b['impact_remap'] else '—'} | {body} |")
 
 
 def multipliers_table():
@@ -859,39 +981,52 @@ def multipliers_table():
         print(f"| `{k.replace('Meta.Damage.', '')}` | " + " | ".join(cells) + " |")
 
 
+def zm_text(zm):
+    if zm is None:
+        return "no"
+    return f"yes (`{zm['row'].replace('Meta.Damage.', '')}` row)" if zm["row"] else "yes (W = 1)"
+
+
 def sources_table():
     out = build()
     cat = {c["id"]: c["label"] for c in out["meta"]["categories"]}
-    print("| Category | Source | Damage tags | Hit location matters | Rule entries | Armor entries | Not traced |")
-    print("|---|---|---|---|---|---|---|")
+    print("| Category | Source | Damage tags | Hit location matters (direct) | Rule entries | Armor entries | "
+          "Blast entries | Not traced |")
+    print("|---|---|---|---|---|---|---|---|")
     for s in out["sources"]:
         tags = ", ".join(f"`{t.replace('Meta.Damage.', '')}`" for t in s["damage_tags"])
-        hl = f"yes (`{s['bone_row'].replace('Meta.Damage.', '')}` row)" if s["uses_hit_location"] and s["bone_row"] else \
-            ("yes (W = 1)" if s["uses_hit_location"] else "no")
-        print(f"| {cat[s['category']]} | {s['label']} | {tags} | {hl} | {', '.join(map(str, s['rule_entries'])) or '—'} | "
-              f"{', '.join(map(str, s['armor_entries'])) or '—'} | {', '.join(s['not_traced']) or '—'} |")
+        print(f"| {cat[s['category']]} | {s['label']} | {tags} | {zm_text(s['zone_multiplier'])} | "
+              f"{', '.join(map(str, s['rule_entries'])) or '—'} | {', '.join(map(str, s['armor_entries'])) or '—'} | "
+              f"{', '.join(map(str, s.get('radial_entries', []))) or '—'} | {', '.join(s['not_traced']) or '—'} |")
 
 
 def explosives_table():
     out = build()
     print("| Source | Projectile | Source tag | Blunt S (before arming) | Direct S | Arming delay (s) | `ExplosiveRadius` | "
-          "`EffectiveExplosiveRadius` | `ExplosiveDamageFallOff` | `MinimumExplosiveDamage` | Inner: factor (entries) | "
-          "Outer: factor (entries) |")
-    print("|---|---|---|---:|---:|---:|---:|---:|---:|---:|---|---|")
+          "`EffectiveExplosiveRadius` | `ExplosiveDamageFallOff` | `MinimumExplosiveDamage` | Blast bone factor | "
+          "Inner: factor (entries) | Outer: factor (entries) |")
+    print("|---|---|---|---:|---:|---:|---:|---:|---:|---:|---|---|---|")
     for s in out["sources"]:
         v = s["values"]
         if s["category"] != "explosives" or "direct" not in v:
             continue
         cases = {c["case"]: c["S"] for c in v["direct"]}
-        r = v["radial"] or {"fields": {}, "rings": {}}
-        f = lambda k: f"{r['fields'][k]['value']:g}" if k in r["fields"] else "—"
-        ring = lambda k: (f"×{r['rings'][k]['factor']:.3g} ({', '.join(map(str, r['rings'][k]['entries'])) or '—'})"
-                          if k in r["rings"] else "—")
+        r = v["radial"] or {"rings": {}, "zone_multiplier": None}
+        f = lambda k: f"{v['damage_values'][k]:g}" if k in v["damage_values"] else "—"
+
+        def ring(k):
+            if k not in r["rings"]:
+                return "—"
+            g = r["rings"][k]
+            fac = f"×{g['factor']['k']:.3g}" if "k" in g["factor"] else "per hit location"
+            return f"{fac} ({', '.join(map(str, g['entries'])) or '—'})"
+
         blunt = cases.get("before_arming")
         print(f"| {s['label']} | `{v['caliber'].replace('Item.Caliber.', '')}` | `{v['source_tag'].replace('Meta.Damage.', '')}` | "
               f"{'—' if blunt is None else f'{blunt:g}'} | {cases.get('direct_not_exploding', cases.get('direct')):g} | "
               f"{v['arming_delay'] if v['has_arming_delay'] else '—'} | {f('ExplosiveRadius')} | {f('EffectiveExplosiveRadius')} | "
-              f"{f('ExplosiveDamageFallOff')} | {f('MinimumExplosiveDamage')} | {ring('inner')} | {ring('outer')} |")
+              f"{f('ExplosiveDamageFallOff')} | {f('MinimumExplosiveDamage')} | "
+              f"{zm_text(r['zone_multiplier']) if v['radial'] else '—'} | {ring('inner')} | {ring('outer')} |")
 
 
 def armor_table():
@@ -902,6 +1037,13 @@ def armor_table():
         print(f"| `{a['item']}` | `{a['tag']}` | {a['kind']} | {format(a['max_durability'], 'g') if a['max_durability'] is not None else '—'} | "
               f"{a['reduction_pct']:g}{'' if a['stage_reductions'] else ' (no stages)'} | "
               f"{', '.join(short(z) for z in a['covers']) or '—'} | {ent or '—'} |")
+
+
+def verified_table():
+    print("| Id | Fact (" + R6 + ") | RVAs |")
+    print("|---|---|---|")
+    for v in verified():
+        print(f"| `{v['id']}` | {v['text']} | {', '.join(f'`{r}`' for r in v['rvas']) or '—'} |")
 
 
 def not_traced_table():
@@ -1048,7 +1190,7 @@ def check():
             c.eq(f"§3.1 entry {i} class", True, cls.strip("`").replace("_C", "") in obj)
     for i, need in ((5, "Meta.Damage.Bullet"), (7, BLUNT), (10, "Meta.Damage.Cannon")):
         c.eq(f"§3.1 entry {i} source", [need], dt.ENTRIES[i]["SourceRequirements"])
-    # DamagePipeline §7.7 and §7.8: the bullet values this JSON reuses.
+    # DamagePipeline §7.7 and §7.8: the bullet values this JSON reuses, decoded from the compact encoding.
     bullets = {s["label"]: s for s in out["sources"] if s.get("in_doc_table")}
     doc77 = block(DP, "default")
     c.eq("§7.7 weapon set", sorted(r[0] for r in doc77), sorted(bullets))
@@ -1056,19 +1198,32 @@ def check():
         s = bullets.get(r[0])
         if not s:
             continue
-        d0 = s["values"]["direct"][0]
-        c.eq(f"§7.7 {r[0]} base", True, num_eq(r[3], d0["S"]))
+        S, fz = s["values"]["direct"][0]["S"], decode(s["values"]["direct_zones"], s["zone_multiplier"], out["bone_rows"])
+        c.eq(f"§7.7 {r[0]} base", True, num_eq(r[3], S))
         for loc, cell in zip(dt.LOCATIONS, r[4:10]):
-            z = d0["zones"][HIT + loc]
-            c.eq(f"§7.7 {r[0]} {loc}", cell, f"{z['damage']:.1f} (×{z['factor']:.3g})")
-    doc78 = block(DP, "--falloff")
-    for r in doc78:
+            f = fz[ZONES.index(HIT + loc)]
+            c.eq(f"§7.7 {r[0]} {loc}", cell, f"{S * f:.1f} (×{f:.3g})")
+    for r in block(DP, "--falloff"):
         s = bullets.get(r[0].rstrip("†"))
         if not s:
             c.eq(f"§7.8 {r[0]}", "present", "missing")
             continue
-        for pt, cell in zip(s["values"]["falloff"]["points"], r[2:]):
-            c.eq(f"§7.8 {r[0]} {pt['m']} m", cell, f"{pt['torso_upper']:.1f}")
+        v = s["values"]
+        torso = v["direct"][0]["S"] * decode(v["direct_zones"], s["zone_multiplier"], out["bone_rows"])[ZONES.index(HIT + "Torso.Upper")]
+        keys = [{"Time": t * 100, "Value": x} for t, x in v["falloff"]["keys_m"]]
+        for m, cell in zip(dt.RANGES_M, r[2:]):
+            c.eq(f"§7.8 {r[0]} {m} m", cell, f"{torso * dt.falloff(keys, m * 100):.1f}")
+    # Internal: the compact encoding gives back every factor the rules give, for every projectile source.
+    for s in out["sources"]:
+        if "_fs" in s:
+            got = decode(s["values"]["direct_zones"], s["zone_multiplier"], out["bone_rows"])
+            c.eq(f"encoding {s['id']}", True, all(abs(a - b) <= 1e-12 * max(1, abs(b)) for a, b in zip(got, s["_fs"])))
+    # Round 6: blast hits never carry ExplosiveBlunt, so entries 7, 117, 142, 143 are absent from every blast;
+    # back-blast is enabled on Launcher_04, RPG7 and CGM4 only.
+    blast = [s for s in out["sources"] if s["values"].get("radial")]
+    c.eq("blast sources without entries 7/117/142/143", [], [s["id"] for s in blast if set(s["radial_entries"]) & {7, 117, 142, 143}])
+    bb = sorted(s["label"].replace(" back-blast", "") for s in out["sources"] if s["group"] == "Back-blast" and s["values"]["enabled"])
+    c.eq("back-blast enabled (round 6)", ["CGM4", "Launcher_04", "RPG7"], bb)
     # Internal: the projectile loader agrees with damage_tables.projectiles() on every caliber it knows.
     for pid, (src, ctx, base) in dt.projectiles().items():
         p = PROJ.get(pid)
@@ -1117,7 +1272,8 @@ def check():
 
 BLOCK = re.compile(r"<!-- infantry_tables (.+?) -->\r?\n.*?<!-- /infantry_tables -->", re.S)
 MODES = {"--zones": zones_table, "--bones": bones_table, "--multipliers": multipliers_table, "--sources": sources_table,
-         "--explosives": explosives_table, "--armor": armor_table, "--not-traced": not_traced_table}
+         "--explosives": explosives_table, "--armor": armor_table, "--not-traced": not_traced_table,
+         "--verified": verified_table}
 
 
 def write_docs():
