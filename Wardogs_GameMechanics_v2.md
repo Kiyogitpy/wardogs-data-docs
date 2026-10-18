@@ -531,7 +531,7 @@ Rows: `Communication.Ping`, `Communication.Ping.Type.Context.Map.MarkCoordinates
 - **Infantry hit damage:** the bone multiplier (2c) is chosen by damage-type row, then the hit location. The `Universal` value and the weapon row's value multiply ([DamagePipeline §7.1](Wardogs_DamagePipeline_v2.md#71-b_bonedamagemodifiers_c-entries-5-7-10)). Infantry modification rules (2f, 2g) then adjust the result. The rules run in category order ([DamagePipeline §5](Wardogs_DamagePipeline_v2.md#5-ordering)) and combine as in 2f ([§6](Wardogs_DamagePipeline_v2.md#6-arithmetic)).
 - **Armour-piercing and hollow-point:** the ammo-modifier assets (2e) multiply penetration effectiveness, range and exit speed. The per-arm penetration table (2d) then scales damage per armour class.
 - **Vehicle occupants:** seat reduction (2h) is a flat percentage by vehicle variant and arm class.
-- **Explosives:** `BaseDamage` and `ExplosiveRadius` (section 3) feed the Calibre rules (2f). The radial falloff arithmetic is not traced; `ExplosiveDamageFallOff` is the data field that likely drives it.
+- **Explosives:** `BaseDamage` and `ExplosiveRadius` (section 3) feed the Calibre rules (2f). The radial falloff is verified (`0x6F06540`): `BaseDamage` out to `EffectiveExplosiveRadius`, then linear to `BaseDamage` x (1 - `ExplosiveDamageFallOff`) at `ExplosiveRadius`, 0 beyond, floored at `MinimumExplosiveDamage` ([Damage pipeline §1.1](Wardogs_DamagePipeline_v2.html#11-callers-and-where-the-result-goes)). What the distance is measured between is not traced.
 - **Vendor price:** `Price` is per variation. The vendor UI applies the `LevelToUnlock` gate and the `LifeTimeBuyLimit`.
 
 ---
@@ -569,4 +569,5 @@ Rows: `Communication.Ping`, `Communication.Ping.Type.Context.Map.MarkCoordinates
 | Date | Change |
 |---|---|
 | 2026-10-18 | Round-6 verifier pass: the hit location is an exact bone-name lookup with no parent walk and no remap for damage (2b; `DamageImpactRemap` only drives the ragdoll impulse and hit-reaction animation); the live player physics asset `PA_TPCharacter_Simplified` and its 20 bodies (2b); the asset is picked by actor class (2i); the `Universal` and weapon bone rows multiply (14). |
+| 2026-10-18 | §14 Explosives: radial falloff rule replaces "not traced". |
 | 2026-10-18 | Infantry viewer findings: §2c row keys are source-context tags (the `MWSY_001` row is `Meta.Damage.Weapon.HMG.MWSY_001`); §2f alignment, ordering, arithmetic and ignored custom literals per DamagePipeline §5–§7; §2j is a caliber map (§7.2); §2a order per §5; §14 aligned, radial falloff marked not traced. |
