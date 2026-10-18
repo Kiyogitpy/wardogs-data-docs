@@ -211,6 +211,26 @@ The combining function is `0x522E5C0`. The dirty-attribute flush
 lambda `0x522A800`), and writes the result through `0x5237050` into the
 current value (`+0x30`). The formula is in §4.4.
 
+**Re-evaluation.** Each instance caches its modifier magnitudes (instance
+`+0x58`, or a heap array at `+0x98`). They are re-evaluated in two cases:
+
+1. **When a backing attribute changes.** An attribute-backed modifier
+   (`FBHAttributeMod_Attribute`, vtable `0xAABC030`, evaluator
+   `0x522E760`) depends on its backing attribute (slot 2). Whenever that
+   attribute's current value changes on the same component (`0x5237050` →
+   `0x5238840` → `0x5238A10`), its magnitude is evaluated again, so it
+   follows the backing attribute live.
+2. **On the duration pass.** `0x522D260`, the pass that also handles
+   duration expiry (§5), runs when the effect has a time-dependent
+   modifier (an unreflected flag on the default object, `+0x268`). It
+   re-evaluates the modifiers whose evaluator reports itself
+   time-dependent (slot 3): a Scalar with a curve indexed by `Lifetime` or
+   `Duration` (`0x5230C80`), or an attribute-backed one with
+   `bScaleByDuration` set (byte `+0x28`, `0x178DF10`). For
+   attribute-backed modifiers this pass covers only `bScaleByDuration`.
+
+A changed value is stored back.
+
 ### 4.3 Base-value writes
 
 **Native.** The base setter `0x5236E50` runs the attribute's base-value
@@ -273,6 +293,13 @@ D       = 1 + Σ(Divide − 1), or 1 when |D| ≤ 1e-8
   `+0x40 + 0x60 × Channel + 0x10 × Op` (element stride `0x20`). An element
   counts only when its Filter passed (`+0x18`) and it has a magnitude
   (`+0x10`).
+- Each applied instance appends its modifiers to the end of the
+  per-operation arrays (`0x5227C20`). Removing an instance swaps the last
+  element into the freed slot (`RemoveAtSwap`, `0x52357B0`). So "first in
+  the Override list" is application order only until a modifier in that
+  array is removed; after that, the order depends on the equip history.
+  In the current data this changes no value: no loadout carries two
+  different Overrides on one attribute.
 - The arithmetic is in doubles, but the magnitudes come from floats in
   the asset, so 0.7 enters as 0.699999988.
 
@@ -345,7 +372,14 @@ These rules give a weapon's final attributes for an attachment set. [Weapon Attr
   - The stance maps are keyed by stance, and two use mismatched effects: `ID_A91` maps Stand to `AR_Prone` (×c 0.7) and Crouch and Prone to `AR_Standing`, and `ID_WEPN_037` maps Prone to `AR_Standing`.
   - Seven sight effects override `MaxZeroingRange` with the current `MinZeroingRange` (an attribute-backed modifier).
 
-Not traced: when the attribute-backed zeroing magnitude is captured.
+**Attribute-backed magnitudes are live.** `FBHAttributeMod_Attribute`
+(`0x522E760`) reads the backing attribute through a shared reference to
+the target component's attribute record (`0x5227A00`). It is evaluated on
+application (`0x5239540`) and again whenever that attribute's current
+value changes on the same component (`0x5237050` → `0x5238840` →
+`0x5238A10`, §4.2). Time-based re-evaluation (`0x522D260`) only applies to
+`bScaleByDuration`. So the seven sight overrides follow `MinZeroingRange`
+and settle on its final value.
 
 ## 8. Open questions
 
@@ -355,7 +389,7 @@ Not traced: when the attribute-backed zeroing magnitude is captured.
 | E-2 | Duration semantics beyond 0 (for example whether −1 means infinite) |
 | E-3 | Rollback mechanism and the role of `UNetworkPredictionWorldManager` |
 | E-4 | **Closed**: every effect's modifiers, durations, stacks and granted tags are on [Gameplay Effect Values](Wardogs_GameplayEffect_Values_v1.md) |
-| E-5 | **Closed** (§7): `0x6C9F1A0` / `0x6C9E190` apply attachment and sight effects to the weapon item's own component; the initial sight (`S_Aim01`) and the mounted-bipod lists are closed in §7.1. Open: when the attribute-backed zeroing magnitude is captured |
+| E-5 | **Closed** (§7): `0x6C9F1A0` / `0x6C9E190` apply attachment and sight effects to the weapon item's own component; the initial sight (`S_Aim01`) and the mounted-bipod lists are closed in §7.1; attribute-backed magnitudes, including the zeroing overrides, are evaluated live (§4.2, §7.1) |
 | E-6 | Vehicle health via effects: `GE_Vehicle_Health` and vehicle-side callers of `0x52311D0` (`0x7665D60`, and the `Auth_RefillFuel` exec thunk `0x7667280`; the corpus row `0x766727F` is an empty nullsub one byte early) are not traced |
 | E-7 | **Closed**: `+0x150` = `OngoingRequirements` not met (`0x52330B0`, `0x522CB40`), so the effect's modifiers are excluded; `+0x3C` = pending predicted stack delta (`0x52313E0`, `0x5231DA0`); `+0x100` / `+0x12C` = `Num` / `NumFreeIndices` of the pending predicted-removal key set at `+0xF8` (equal = empty) |
 
@@ -377,3 +411,4 @@ Not traced: when the attribute-backed zeroing magnitude is captured.
 | 2026-10-17 | Independent verifier pass: closed E-1 with the combining formula (§4.4); stack scaling is linear per operation, not a curve (§4.2); `Fixed` with a curve row returns `Value × Curve(0)`; the attribute hooks and their three registrants (§4.3); E-7 added. |
 | 2026-10-17 | Round-4 verifier pass: E-5 closed (§7) with what applies to a weapon (§7.1); E-7 closed; no weapon attribute has a hook; character health's hook clamps; `ApplyEffect` stacks are clamped and every call is a new instance (§5); E-6 citation corrected. |
 | 2026-10-17 | Round-5 verifier pass: `StackExpirationPolicy` is also read on duration expiry (`0x522D260`, §5 and §7.1); the initial sight is `S_Aim01` and the mounted bipod's lists are applied by `B_Action_MountBipod` (§7.1); E-5 updated. |
+| 2026-10-18 | Round-6 verifier pass: magnitude re-evaluation (§4.2): attribute-backed magnitudes follow their backing attribute live, and the duration pass `0x522D260` re-evaluates only time-dependent modifiers; the zeroing-capture question is closed (§7.1, E-5); Override arrays are swap-removed, so "first" is application order only until a removal (§4.4). |
