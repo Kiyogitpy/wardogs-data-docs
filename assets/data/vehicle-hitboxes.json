@@ -64,7 +64,7 @@
      ],
      "path": "assets/models/vehicles/air-rotary-havoc.glb",
      "notes": [
-      "Rotor blades (\"no section\"): their WDRotorCollision profile blocks bullets, but a blade hit finds no section and does nothing to the vehicle. Projectile sweeps ignore the blades. Hubs are normal hitboxes."
+      "Rotor blades use the WDRotorCollision profile: it blocks Visibility and WDProjectile traces, so bullets hit the blades, which resolve by their slot like any part. ProjectileSweep sweeps ignore them."
      ],
      "centres": [
       [
@@ -84,8 +84,8 @@
       ],
       [
        0.6191,
-       1.9172,
-       -7.1434
+       2.7212,
+       -7.581
       ],
       null,
       null,
@@ -351,7 +351,7 @@
      ],
      "path": "assets/models/vehicles/air-rotary-littlebird.glb",
      "notes": [
-      "Rotor blades (\"no section\"): their WDRotorCollision profile blocks bullets, but a blade hit finds no section and does nothing to the vehicle. Projectile sweeps ignore the blades. Hubs are normal hitboxes."
+      "Rotor blades use the WDRotorCollision profile: it blocks Visibility and WDProjectile traces, so bullets hit the blades, which resolve by their slot like any part. ProjectileSweep sweeps ignore them."
      ],
      "centres": [
       [
@@ -365,13 +365,13 @@
        -1.161
       ],
       [
-       0.0,
-       2.6811,
-       -0.3709
+       -0.0001,
+       2.5099,
+       -0.354
       ],
       [
        -0.151,
-       1.8254,
+       1.7893,
        -3.7762
       ],
       null
@@ -383,7 +383,7 @@
      ],
      "path": "assets/models/vehicles/air-rotary-littlebird--rot-03-machineguns.glb",
      "notes": [
-      "Rotor blades (\"no section\"): their WDRotorCollision profile blocks bullets, but a blade hit finds no section and does nothing to the vehicle. Projectile sweeps ignore the blades. Hubs are normal hitboxes."
+      "Rotor blades use the WDRotorCollision profile: it blocks Visibility and WDProjectile traces, so bullets hit the blades, which resolve by their slot like any part. ProjectileSweep sweeps ignore them."
      ],
      "centres": [
       [
@@ -397,13 +397,13 @@
        -1.161
       ],
       [
-       0.0,
-       2.6811,
-       -0.3709
+       -0.0001,
+       2.5099,
+       -0.354
       ],
       [
        -0.151,
-       1.8254,
+       1.7893,
        -3.7762
       ],
       null
@@ -415,7 +415,7 @@
      ],
      "path": "assets/models/vehicles/air-rotary-littlebird--rot-03-rocketpods.glb",
      "notes": [
-      "Rotor blades (\"no section\"): their WDRotorCollision profile blocks bullets, but a blade hit finds no section and does nothing to the vehicle. Projectile sweeps ignore the blades. Hubs are normal hitboxes."
+      "Rotor blades use the WDRotorCollision profile: it blocks Visibility and WDProjectile traces, so bullets hit the blades, which resolve by their slot like any part. ProjectileSweep sweeps ignore them."
      ],
      "centres": [
       [
@@ -429,13 +429,13 @@
        -1.161
       ],
       [
-       0.0,
-       2.6811,
-       -0.3709
+       -0.0001,
+       2.5099,
+       -0.354
       ],
       [
        -0.151,
-       1.8254,
+       1.7893,
        -3.7762
       ],
       null
@@ -629,7 +629,7 @@
      ],
      "path": "assets/models/vehicles/air-rotary-rot-04.glb",
      "notes": [
-      "Rotor blades (\"no section\"): their WDRotorCollision profile blocks bullets, but a blade hit finds no section and does nothing to the vehicle. Projectile sweeps ignore the blades. Hubs are normal hitboxes."
+      "Rotor blades use the WDRotorCollision profile: it blocks Visibility and WDProjectile traces, so bullets hit the blades, which resolve by their slot like any part. ProjectileSweep sweeps ignore them."
      ],
      "centres": [
       [
@@ -643,14 +643,14 @@
        -2.1028
       ],
       [
-       -0.0326,
+       0.0118,
        3.5808,
-       0.7662
+       1.3969
       ],
       [
        0.0,
-       2.0462,
-       -7.0212
+       2.7246,
+       -7.5816
       ],
       null
      ]
@@ -661,7 +661,7 @@
      ],
      "path": "assets/models/vehicles/air-rotary-rot-04--rot-04-mountedmachineguns.glb",
      "notes": [
-      "Rotor blades (\"no section\"): their WDRotorCollision profile blocks bullets, but a blade hit finds no section and does nothing to the vehicle. Projectile sweeps ignore the blades. Hubs are normal hitboxes."
+      "Rotor blades use the WDRotorCollision profile: it blocks Visibility and WDProjectile traces, so bullets hit the blades, which resolve by their slot like any part. ProjectileSweep sweeps ignore them."
      ],
      "centres": [
       [
@@ -675,14 +675,14 @@
        -2.1028
       ],
       [
-       -0.0326,
+       0.0118,
        3.5808,
-       0.7662
+       1.3969
       ],
       [
        0.0,
-       2.0462,
-       -7.0212
+       2.7246,
+       -7.5816
       ],
       null
      ]
