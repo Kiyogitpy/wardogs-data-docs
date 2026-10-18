@@ -32,12 +32,18 @@ if (ni >= 0) { namesUsmap = rest[ni + 1]; rest.RemoveRange(ni, 2); }
 string sdkDir = null;  // deobfuscate only: Dumper-style SDK headers (sdk/raw) of this same build
 var si = rest.IndexOf("--sdk");
 if (si >= 0) { sdkDir = rest[si + 1]; rest.RemoveRange(si, 2); }
+string typesUsmap = null;  // deobfuscate only: fill Unknown element types from this usmap (export usmap)
+var ti = rest.IndexOf("--types");
+if (ti >= 0) { typesUsmap = rest[ti + 1]; rest.RemoveRange(ti, 2); }
+string fillNamesUsmap = null;  // deobfuscate only: names for tokens still hashed, from this usmap (export usmap)
+var fi = rest.IndexOf("--fill-names");
+if (fi >= 0) { fillNamesUsmap = rest[fi + 1]; rest.RemoveRange(fi, 2); }
 Log.Logger = new LoggerConfiguration().MinimumLevel.Warning().WriteTo.Console().CreateLogger();
 Directory.CreateDirectory(outDir);
 
 if (mode == "deobfuscate")
 {
-    if (namesUsmap == null || rest.Count < 1) { Console.WriteLine("usage: ... deobfuscate <out.usmap> --names <donor.usmap> [--sdk <sdk/raw>]"); return 1; }
+    if (namesUsmap == null || rest.Count < 1) { Console.WriteLine("usage: ... deobfuscate <out.usmap> --names <donor.usmap> [--sdk <sdk/raw>] [--types <usmap>] [--fill-names <usmap>]"); return 1; }
     var live = new UsmapParser(usmap).Mappings;
     var donor = new UsmapParser(namesUsmap).Mappings;
     var before = UsmapStats.Count(live);
@@ -47,6 +53,14 @@ if (mode == "deobfuscate")
     if (sdkDir != null) SdkNames.Apply(live, rawNames, sdkDir, log);
     KnownPatches.Apply(live.Types, log);
     UsmapWriter.Write(live, rest[0]);
+    if (typesUsmap != null || fillNamesUsmap != null)
+    {
+        // The export usmap: the file above, read back, then the fills, written over it.
+        var baseUsmap = new UsmapParser(rest[0]).Mappings;
+        if (typesUsmap != null) ExportFill.Types(baseUsmap, new UsmapParser(typesUsmap).Mappings, log);
+        if (fillNamesUsmap != null) ExportFill.Names(baseUsmap, rawNames, new UsmapParser(fillNamesUsmap).Mappings, log);
+        UsmapWriter.Write(baseUsmap, rest[0]);
+    }
     var check = new UsmapParser(rest[0]).Mappings;  // round trip through CUE4Parse's own reader
     var after = UsmapStats.Count(check);
     File.WriteAllLines(Path.Combine(outDir, "_deobfuscate_log.txt"), log);
@@ -228,7 +242,7 @@ static class NameDonor
         return len;
     }
 
-    static bool LengthOk(string hashed, string real)
+    public static bool LengthOk(string hashed, string real)
     {
         var len = TokenLength(hashed);
         if (len == null) return true;  // not a plain token (e.g. Blueprint names with GUID suffixes): no check possible
@@ -796,6 +810,95 @@ static class SdkNames
                       $"dictionary {dict.Count} tokens ({multiName} given two names and {nameClaimed} sharing a name: dropped; {withdraw.Count} donor tokens whose name the SDK gives another token: {withdrawn} names withdrawn); " +
                       $"names: {aligned} by alignment, {propagated} by the dictionary, {corrected} donor names corrected, {confirmed} confirmed, {dupReverts} kept to avoid a repeated name; " +
                       $"{typesFixed} Unknown element types filled");
+    }
+}
+
+// Turns the deobfuscated usmap into the one data/ is exported with. Both fills compare a struct only with the
+// same-named struct of the other usmap that has the same number of property entries, key by key, and need
+// the same outer property type (and static-array size, and struct type when this side names one).
+//   Types: a property whose type still contains Unknown takes the other side's fully known type. Without this,
+//          CUE4Parse stops reading a struct at its first Unknown array and the rest of the export is lost.
+//   Names: a property whose name is still a plain token takes the other side's readable name, if the name has
+//          the length the token encodes, is not readable anywhere in this build's own usmap (such names are
+//          not obfuscated, so no token can stand for them), is not given by the deobfuscated usmap to another
+//          token, is not already in the struct, and the token gets one name and the name one token across all
+//          structs. A name the deobfuscated usmap already has is never replaced.
+static class ExportFill
+{
+    static readonly System.Text.RegularExpressions.Regex Plain = new(@"^_[a-p]{21}$");
+
+    static bool SameSlot(PropertyInfo a, PropertyInfo b) =>
+        a.MappingType.Type == b.MappingType.Type && a.ArraySize == b.ArraySize
+        && (a.MappingType.StructType == null || a.MappingType.StructType == b.MappingType.StructType);
+
+    public static void Types(TypeMappings m, TypeMappings donor, List<string> log)
+    {
+        int filled = 0, left = 0;
+        foreach (var (sn, st) in m.Types)
+        {
+            donor.Types.TryGetValue(sn, out var dt);
+            foreach (var key in st.Properties.Keys.ToList())
+            {
+                var pa = st.Properties[key];
+                if (!NameDonor.HasUnknown(pa.MappingType)) continue;
+                PropertyInfo pb = null;
+                bool ok = dt != null && dt.Properties.Count == st.Properties.Count
+                    && dt.Properties.TryGetValue(key, out pb) && !NameDonor.HasUnknown(pb.MappingType) && SameSlot(pa, pb);
+                if (!ok) { left++; continue; }
+                st.Properties[key] = new PropertyInfo(pa.Index, pa.Name, pb.MappingType, pa.ArraySize);
+                filled++; log.Add($"export type {sn}[{key}] {pa.Name}: Unknown -> donor");
+            }
+        }
+        log.Add($"export types: {filled} filled, {left} left Unknown");
+    }
+
+    public static void Names(TypeMappings m, Dictionary<string, List<(int key, string name)>> raw, TypeMappings donor, List<string> log)
+    {
+        var readableLive = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        var owner = new Dictionary<string, HashSet<string>>(StringComparer.OrdinalIgnoreCase);  // name -> raw tokens
+        foreach (var (sn, list) in raw)
+            foreach (var (key, name) in list)
+            {
+                if (!NameDonor.Hashed(name)) { readableLive.Add(name); continue; }
+                if (m.Types.TryGetValue(sn, out var st) && st.Properties.TryGetValue(key, out var p) && !NameDonor.Hashed(p.Name))
+                {
+                    if (!owner.TryGetValue(p.Name, out var set)) owner[p.Name] = set = new HashSet<string>();
+                    set.Add(name);
+                }
+            }
+        var cands = new List<(string sn, int key, string token, string name)>();
+        int lengthRejects = 0, liveRejects = 0, ownerRejects = 0, dupRejects = 0;
+        foreach (var (sn, st) in m.Types)
+        {
+            if (!donor.Types.TryGetValue(sn, out var dt) || dt.Properties.Count != st.Properties.Count) continue;
+            var inStruct = new HashSet<string>(st.Properties.Values.Select(p => p.Name), StringComparer.OrdinalIgnoreCase);
+            foreach (var (key, pa) in st.Properties.Where(kv => kv.Value.Index == 0).OrderBy(kv => kv.Key))
+            {
+                if (!Plain.IsMatch(pa.Name ?? "") || !dt.Properties.TryGetValue(key, out var pb)) continue;
+                if (pb.Name == null || NameDonor.Hashed(pb.Name) || !SameSlot(pa, pb)) continue;
+                if (!NameDonor.LengthOk(pa.Name, pb.Name)) { lengthRejects++; continue; }
+                if (readableLive.Contains(pb.Name)) { liveRejects++; continue; }
+                if (owner.TryGetValue(pb.Name, out var owners) && !(owners.Count == 1 && owners.Contains(pa.Name))) { ownerRejects++; continue; }
+                if (inStruct.Contains(pb.Name)) { dupRejects++; continue; }
+                cands.Add((sn, key, pa.Name, pb.Name));
+            }
+        }
+        var tokenNames = cands.GroupBy(c => c.token).ToDictionary(g => g.Key, g => g.Select(c => c.name).Distinct(StringComparer.OrdinalIgnoreCase).Count());
+        var nameTokens = cands.GroupBy(c => c.name, StringComparer.OrdinalIgnoreCase).ToDictionary(g => g.Key, g => g.Select(c => c.token).Distinct().Count(), StringComparer.OrdinalIgnoreCase);
+        int named = 0, inconsistent = 0;
+        var tokens = new HashSet<string>();
+        foreach (var (sn, key, token, name) in cands)
+        {
+            if (tokenNames[token] > 1 || nameTokens[name] > 1) { inconsistent++; log.Add($"export name rejected (not one-to-one) {sn}[{key}] {token} -> {name}"); continue; }
+            var st = m.Types[sn];
+            var pa = st.Properties[key];
+            for (int e = 0; e < (pa.ArraySize ?? 1); e++)
+                if (st.Properties.TryGetValue(key + e, out var el))
+                    st.Properties[key + e] = new PropertyInfo(el.Index, name, el.MappingType, el.ArraySize);
+            named++; tokens.Add(token);
+            log.Add($"export name {sn}[{key}] {token} -> {name}");
+        }
+        log.Add($"export names: {named} properties ({tokens.Count} tokens) named; rejected: length {lengthRejects}, readable in this build {liveRejects}, given to another token {ownerRejects}, already in the struct {dupRejects}, not one-to-one {inconsistent}");
     }
 }
 

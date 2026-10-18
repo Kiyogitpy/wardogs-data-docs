@@ -40,7 +40,7 @@ WdExtract <Paks> <keyfile> <usmap> <out> <Paks>\oo2core_9_win64.dll <mode> [args
 | `list GE_` | `<out>/files.txt`: every package whose name starts with the prefix |
 | `schema BHGameplay` | `<out>/usmap_schema.json`: usmap layouts whose name contains the text |
 | `dump <files.txt or package paths>` | `<out>/<name>.json` per package: all exports, Blueprint bytecode included; failures in `_failures.txt` |
-| `deobfuscate <out.usmap> --names <donor.usmap> [--sdk <sdk/raw>]` | A deobfuscated copy of `<usmap>`: names and element types restored from the donor, then (with `--sdk`) from this build's SDK headers, then the hand patches; read back through CUE4Parse to check it. No paks or key are read (pass `-` for those arguments). Log in `<out>/_deobfuscate_log.txt` |
+| `deobfuscate <out.usmap> --names <donor.usmap> [--sdk <sdk/raw>] [--types <usmap>] [--fill-names <usmap>]` | A deobfuscated copy of `<usmap>`: names and element types restored from the donor, then (with `--sdk`) from this build's SDK headers, then the hand patches; read back through CUE4Parse to check it. `--types` / `--fill-names` then make the export usmap (see below). No paks or key are read (pass `-` for those arguments). Log in `<out>/_deobfuscate_log.txt` |
 | `findname <path prefix> <text>` | `<out>/findname.txt`: packages under the prefix whose name map contains the text (IoStore imports are hashed, so this finds names an asset uses, not who references it) |
 | `mesh <files.txt or package paths>` | `<out>/<collision mesh>.glb` per vehicle collision mesh, plus `manifest.json`; failures in `_failures.txt` (see [Collision meshes](#collision-meshes-mesh)) |
 
@@ -62,6 +62,17 @@ length. It corrects closed-beta names where fields were reordered between builds
 donor name when the SDK gives that name to another token. The log lines start with `sdk`; the
 method and counts are in [`mappings/README.md`](../../mappings/README.md#how-deobfuscated-it-is).
 Without `--sdk` the output is the v1 file, byte for byte.
+
+**`--types <usmap>` / `--fill-names <usmap>`** (`deobfuscate` only) turn the result into the usmap
+`data/` is exported with. Both compare each struct only with the same-named struct of the other usmap
+when the two have the same number of property entries, key by key, and need the same property type
+(and static-array size, and struct type). `--types` gives a property whose type still contains
+`Unknown` the other side's fully known type; without it CUE4Parse stops reading a struct at its first
+`Unknown` array. `--fill-names` gives a property whose name is still a plain token the other side's
+name, only if the name has the length the token encodes, is readable nowhere in this build's own
+usmap, is not given to another token, is not already in the struct, and token and name are one to
+one across all structs. A name already present is never replaced. The log lines start with
+`export`. The exact commands are in [`mappings/README.md`](../../mappings/README.md#data-and-the-v2-usmap).
 
 The donor is the closed-beta usmap (`mappings/old-deobfuscated-507-ClosedBeta.usmap`,
 an older build, not obfuscated). With the result, skeletal meshes, physics assets
