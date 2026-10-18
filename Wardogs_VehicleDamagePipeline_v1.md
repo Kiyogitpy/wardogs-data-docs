@@ -520,8 +520,12 @@ read as rear.
 deactivated on the intact ISM and activated on the destroyed ISM at state
 2, or at state 1 when `DeflatedMeshMode` is `All` (`0x539B6E7`).
 `CollisionOnly` switches the intact ISM to the alternative collision hull
-instead. That hull is the `DestructionMesh`'s simple collision (its
-`BodySetup`, `0x5389A46`). `SetupWheels` receives it for the intact ISM
+instead. That hull is the `DestructionMesh`'s `BodySetup` (`0x5389A46`): its
+simple shapes plus the complex trimesh cooked from its
+`ComplexCollisionMesh` (inferred from cooked sizes; the blob is not parsed).
+A hit on it takes the slot name from the hit component's own collision
+mesh and the index from the hull triangle, which is 0 on WHL_05 and WHL_08
+(`0x50BF880`), so a deflated wheel there gives `CC_Wheel_n`. `SetupWheels` receives it for the intact ISM
 when `bSupportTyreDestruction` is set and either mode is `CollisionOnly`
 (`0x5389990`); the destroyed ISM gets none, and no asset names the hull
 separately. Every wheeled vehicle uses the defaults (deflated
@@ -894,3 +898,4 @@ Every row has a `Meta.Damage.Bullet` rule.
 | 2026-10-17 | Round-4 verifier pass: STN_06's tag is registered (shipped `DefaultGameplayTags.ini`), so only the generic row applies; it is now in §3.1 and §5.4. STN_05's duplicate row resolved. The slot lookup is keyed by (surface group, slot) with defaults and a parent-group walk; new §3.2 gives the exact face-to-section rule; `--hitboxes` marks unreachable keys (ROT_02 `CC_Wheel_0`/`_1`, the SPW radar group). V-2, V-4 and V-5 closed; physics-group table readers and rotor registration added. |
 | 2026-10-17 | Round-5 verifier pass: the wheel suffix is the wheel's `DataIndex`, not the instance's position (§3.2 step 5); ROT_02's left wheel has `CC_Tyre`; the `+0x180` / `+0x1D0` merge citations were swapped (§3.1). Radial and `0x6F042A0` back-blast hits carry face indices; the `0x6F06EB0` back-blast uses a synthetic hit on material slot 0. Radial damage takes its section from `ComponentHits[0]` after one hit per component (§4.1). Added the wheel index order, the wheel mesh swap, the rotor hub profile and the ammo-tag writer (V-5). New open rows V-7 to V-10. |
 | 2026-10-18 | Round-6 verifier pass: the `0x6F06EB0` back-blast runs only for a seated shooter and hits that vehicle's occupants, not the vehicle (corrects round 5); the branch is the shooter's seat (V-8 closed). Physics-contact hits carry the hitter's body index in `MyItem`, so a single-body hitter finds no section (V-7 closed for contacts). A hit with no section does nothing (V-3 closed). Wheels: the state-byte writer and rule (deflated at 55%, destroyed at 0), the setup / runtime lists line up for two-wheel axles, WHL_07's index caveat and the deflated hull (V-10 closed). Rotors: blades block bullet traces; the rotor default profile is never applied. STN_06's gun proxy is probably never attached. V-5 points to DamagePipeline §7.9. |
+| 2026-10-18 | Round-7 BA-2/BA-3: the deflated hull is the destruction mesh's `BodySetup` with its trimesh; slot name from the hit component's mesh, index from the hull (`0x50BF880`). |

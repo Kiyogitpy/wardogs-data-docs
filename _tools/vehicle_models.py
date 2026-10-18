@@ -220,10 +220,10 @@ MESH_NOTES = {
                             "(0x50EF920) it is likely never attached.",
 }
 DESTROYED_NOTE = ("Damage state: every wheel deflated (state 1) or destroyed (state 2), Vehicle §3.2's wheel mesh swap. "
-                  "Destroyed shows the destruction mesh; deflated keeps the intact look but traces against the "
-                  "destruction mesh's collision (AlternativeCollisionHull, 0x5389A46), so both give this hitbox. "
-                  "Each wheel's slot is CC_Wheel, which is material 0 on the intact and destroyed collision meshes "
-                  "alike (assuming the hull keeps the destroyed mesh's material indices). A wheel deflates at "
+                  "Destroyed shows the destruction mesh; deflated keeps the intact look and traces the "
+                  "destruction mesh's hull (AlternativeCollisionHull, 0x5389A46). The slot name comes from the hit "
+                  "component's own collision mesh and the index from the hull triangle, which is always 0 (0x50BF880), "
+                  "so a deflated hit gives CC_Wheel, slot 0 of the intact mesh: both states give this hitbox. A wheel deflates at "
                   "TyreHealth / max ≤ 0.55 and is destroyed at TyreHealth ≤ 0 (0x537C580).")
 # Rotor blades register like any part (bRegisterComplexSurface, Group.Default) and resolve by their slot; their
 # WDRotorCollision profile blocks Visibility and WDProjectile, but ProjectileSweep sweeps ignore it.
