@@ -238,7 +238,7 @@
     data.meta.calibers.forEach(function (c) {
       var g = c.group || "Calibers";
       if (!groups[g]) { groups[g] = document.createElement("optgroup"); groups[g].label = g; sel.appendChild(groups[g]); }
-      var o = el("option", null, c.label + (c.unused ? " [unused]" : "") + " (base " + num(c.base_damage) + ")");
+      var o = el("option", null, c.label + (c.unused ? " [not hand-held]" : "") + " (base " + num(c.base_damage) + ")");
       o.value = c.id;
       groups[g].appendChild(o);
     });
