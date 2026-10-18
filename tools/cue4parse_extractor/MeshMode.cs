@@ -26,11 +26,11 @@ using SharpGLTF.Schema2;
 static class MeshMode
 {
     // UE cm (left-handed, Z up) -> glTF m (right-handed, Y up).
-    static Vector3 ToGltf(FVector v) => new(-v.Y / 100f, v.Z / 100f, v.X / 100f);
+    internal static Vector3 ToGltf(FVector v) => new(-v.Y / 100f, v.Z / 100f, v.X / 100f);
     // Rotations: R' = M R M^T. For det M = -1 the quaternion's vector part maps by -M: (x,y,z,w) -> (y,-z,-x,w).
-    static Quaternion ToGltf(FQuat q) => new(q.Y, -q.Z, -q.X, q.W);
+    internal static Quaternion ToGltf(FQuat q) => new(q.Y, -q.Z, -q.X, q.W);
 
-    static string PackageOf(UObject o) => o.Owner?.Name ?? o.GetPathName();
+    internal static string PackageOf(UObject o) => o.Owner?.Name ?? o.GetPathName();
 
     public static int Run(AbstractFileProvider provider, string[] assets, string outDir)
     {
@@ -147,7 +147,7 @@ static class MeshMode
     }
 
     // A transform in the glTF frame: p' = t + q * (s * p). Then(child) composes like UE's child * parent.
-    readonly record struct Xf(Vector3 T, Quaternion Q, Vector3 S)
+    internal readonly record struct Xf(Vector3 T, Quaternion Q, Vector3 S)
     {
         public static readonly Xf Identity = new(Vector3.Zero, Quaternion.Identity, Vector3.One);
         // CUE4Parse's FQuat.Normalize uses an approximate InvSqrt, so normalize here in double precision.
@@ -164,7 +164,7 @@ static class MeshMode
         public Xf Then(Xf c) => new(T + Vector3.Transform(S * c.T, Q), Quaternion.Normalize(Q * c.Q), S * c.S);
     }
 
-    static Dictionary<string, object> Socket(string name, string bone, Xf x)
+    internal static Dictionary<string, object> Socket(string name, string bone, Xf x)
     {
         var m = Matrix4x4.CreateScale(x.S) * Matrix4x4.CreateFromQuaternion(x.Q); m.Translation = x.T;   // row-vector layout
         var d = new Dictionary<string, object> { ["name"] = name };
@@ -178,7 +178,7 @@ static class MeshMode
 
     // Reference pose in component space, converted to the glTF frame above; the chain is composed there
     // (R -> M R M^T commutes with composition). Sockets: the mesh's and its skeleton's, placed on their bone.
-    static object Bones(USkeletalMesh sk)
+    internal static object Bones(USkeletalMesh sk)
     {
         var info = sk.ReferenceSkeleton.FinalRefBoneInfo; var pose = sk.ReferenceSkeleton.FinalRefBonePose;
         var comp = new Xf[info.Length]; var res = new List<object>();
@@ -210,7 +210,7 @@ static class MeshMode
                      space = "component, reference pose", bones = res, sockets };
     }
 
-    static double R(float v) => Math.Round(v, 5);
+    internal static double R(float v) => Math.Round(v, 5);
 
     // Stable colour per slot name (viewers recolour by section anyway).
     static Vector4 SlotColor(string slot)
