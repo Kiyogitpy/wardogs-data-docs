@@ -181,7 +181,8 @@ def factor(e, hit, source_tag, context, target=()):
     m = e["OutModification"]
     if not m["bUseCustomOperation"]:
         return 1 + m["Amount"] / 100 if m["Operation"].endswith("Percentage_Ongoing") else 1.0
-    cls = (m["CustomOperationClass"] or {}).get("ObjectPath", "")
+    # The native class (PlayerArmorDurability) is named only in ObjectName; its ObjectPath is /Script/WDGame.
+    cls = " ".join((m["CustomOperationClass"] or {}).get(k, "") for k in ("ObjectPath", "ObjectName"))
     if "B_BoneDamageModifiers" in cls:
         if source_tag == "Meta.Damage.Explosive.Drone":
             return 1.0
