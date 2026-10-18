@@ -420,11 +420,14 @@ def apply_section(secs, health, key, amount, depth=0):
     return handled
 
 
-def vehicle_rule_factor(entries, cal, hit, proj):
+def vehicle_rule_factor(entries, cal, hit, proj, radius=None):
     """Product of the vehicle-row (and generic-row) factors for an FMJ direct hit of caliber `cal` on a
-    section whose hit-location tag is `hit` (entries without instigator/target requirements)."""
+    section whose hit-location tag is `hit` (entries without instigator/target requirements). With radius
+    "Inner" or "Outer" it is a radial hit instead (Damage §1.1): tagged Meta.Damage.Explosive.Radius.<radius>,
+    without the projectile path's caliber id and DamageType.Projectile (no vehicle rule requires either)."""
     src, ctx, _ = proj[cal]
-    source = expand(ctx + [src, cal, "Meta.Damage.DamageType.Projectile"])
+    extra = ["Meta.Damage.Explosive.Radius." + radius] if radius else [cal, "Meta.Damage.DamageType.Projectile"]
+    source = expand(ctx + [src] + extra)
     f = 1.0
     for e in entries:
         m = e["OutModification"]
@@ -609,8 +612,10 @@ JSON_CALIBERS = {"Item.Caliber.556mm": "5.56mm", "Item.Caliber.762mm": "7.62mm",
 # Readable names for the viewer's full caliber list; the rest are derived from the id.
 CALIBER_LABELS = {"Item.Caliber.7mmBuck": "7mm buckshot (12g)", "Item.Caliber.12g.RifledSlug": "12g rifled slug"}
 CALIBER_GROUPS = ["Bullets", "Cannon", "Rockets & launchers", "Grenades & explosives"]
-DIRECT_NOTE = ("Direct impact only in this view. The blast (radial) part is applied separately per component "
-               "(Vehicle §4.1); pick \"Blast at distance\" for its falloff amount.")
+DIRECT_NOTE = ("A blast hit is tagged Explosive.Radius.Inner (within the effective radius) or .Outer, so it meets "
+               "different rules than the direct impact (Damage §1.1); some vehicle rows multiply Rocket + Radius.Inner "
+               "(Kodiak +400%). \"Blast at distance\" uses the blast factor; one radial application per hit, though the "
+               "game applies one per overlapped component (Vehicle §4.1). \"Direct impact\" is the projectile hit alone.")
 
 
 def caliber_catalog(proj):
@@ -727,6 +732,8 @@ def hitbox_json(proj):
         "source_data_tree_note": "git tree id of data/ when generated; equals `git rev-parse <commit>:data` for any commit with the same data",
         "generator": "python _tools/damage_tables.py --json",
         "assumptions": ["FMJ direct hit at point blank: no falloff, ricochet or penetration",
+                        "blast_factor is [Radius.Inner, Radius.Outer] for a radial hit (Damage §1.1); Inner within "
+                        "EffectiveExplosiveRadius, Outer beyond (the Outer tag is not traced)",
                         "hostile instigator with no instigator tags; rules that need instigator or target tags are skipped",
                         "section health stops at 0; routing as in Vehicle §4.2",
                         "a hit takes the section of its triangle's slot as in Vehicle §3.1 (projectile and radial hits); "
@@ -757,12 +764,15 @@ def hitbox_json(proj):
         for (group, slot), sec in sorted(smap.items(), key=lambda kv: (kv[0][1] == "(default)", kv[0])):
             hp, hit, pre, post, simul = secs.get(sec, (None, None, [], [], []))
             factors = {c: round(vehicle_rule_factor(entries, c, hit, proj), 6) for c in cals}
+            blast = {c["id"]: [round(vehicle_rule_factor(entries, c["id"], hit, proj, r), 6) for r in ("Inner", "Outer")]
+                     for c in catalog if c.get("blast")}
             slots.append({
                 "slot": slot, "group": group, "section": sec, "max_health": hp, "hit_location": hit,
                 "unreachable": unreachable(group, "" if slot == "(default)" else slot, *reg),
                 "routing": {k: [{"to": t, "scalar": s, "only_when_depleted": d} for t, s, d in r]
                             for k, r in (("pre", pre), ("post", post), ("simultaneous", simul))},
                 "rule_factor": factors,
+                "blast_factor": blast,
                 "hits_to_destroy": {c: hits_to_destroy(secs, sec, proj[c][2] * factors[c]) if sec in secs else None
                                     for c in cals}})
         # GLB materials outside the Default surface group are named "<slot>|<Group>".

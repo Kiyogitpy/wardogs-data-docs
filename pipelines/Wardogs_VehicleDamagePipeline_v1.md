@@ -572,6 +572,12 @@ vehicle damage model:
    while the rule's hit-location tag comes from each hit (`0x6F06540`).
    Each radial amount is the falloff amount of the round's radii, not
    `BaseDamage` ([Damage pipeline §1.1](Wardogs_DamagePipeline_v2.html#11-callers-and-where-the-result-goes)).
+   Each application is tagged `Explosive.Radius.Inner` or `.Outer` instead of
+   `DamageType.Projectile`, so it meets different rules than the direct
+   impact. **Derived:** the Kodiak row's Rocket + `Radius.Inner` entry (+400 %)
+   makes an 84 mm blast within 4 m ×6.5 instead of the direct ×1.3: 650
+   against 400 main health, one hit. The viewer's `blast_factor` holds both
+   factors per slot.
    Any other event falls back to `Attribute.Gameplay.Health`.
    When the zone query misses on a point or radial hit, the section tag is
    empty rather than the main health. That application then does nothing:
@@ -902,4 +908,5 @@ Every row has a `Meta.Damage.Bullet` rule.
 | 2026-10-17 | Round-5 verifier pass: the wheel suffix is the wheel's `DataIndex`, not the instance's position (§3.2 step 5); ROT_02's left wheel has `CC_Tyre`; the `+0x180` / `+0x1D0` merge citations were swapped (§3.1). Radial and `0x6F042A0` back-blast hits carry face indices; the `0x6F06EB0` back-blast uses a synthetic hit on material slot 0. Radial damage takes its section from `ComponentHits[0]` after one hit per component (§4.1). Added the wheel index order, the wheel mesh swap, the rotor hub profile and the ammo-tag writer (V-5). New open rows V-7 to V-10. |
 | 2026-10-18 | Round-6 verifier pass: the `0x6F06EB0` back-blast runs only for a seated shooter and hits that vehicle's occupants, not the vehicle (corrects round 5); the branch is the shooter's seat (V-8 closed). Physics-contact hits carry the hitter's body index in `MyItem`, so a single-body hitter finds no section (V-7 closed for contacts). A hit with no section does nothing (V-3 closed). Wheels: the state-byte writer and rule (deflated at 55%, destroyed at 0), the setup / runtime lists line up for two-wheel axles, WHL_07's index caveat and the deflated hull (V-10 closed). Rotors: blades block bullet traces; the rotor default profile is never applied. STN_06's gun proxy is probably never attached. V-5 points to DamagePipeline §7.9. |
 | 2026-10-18 | Radial amount is the verified falloff (Damage pipeline §1.1); the vehicle viewer has a "Blast at distance" view. |
+| 2026-10-18 | Radial hits take the `Radius.Inner` / `.Outer` rule factor, not the direct-hit one (§4.1); the viewer defaults explosive calibers to the blast at 0 m. Fixes the Kodiak showing 4 MAAWS hits where the game one-shots it. |
 | 2026-10-18 | Round-7 BA-2/BA-3: the deflated hull is the destruction mesh's `BodySetup` with its trimesh; slot name from the hit component's mesh, index from the hull (`0x50BF880`). |

@@ -43,7 +43,7 @@
   var GHOST = 0.13;                  // alpha of the other slots while one is selected (see-through)
 
   var root, data, mainSection, base, els = {};
-  var state = { vehicle: null, model: -1, caliber: null, blast: false, dist: 0, mode: "section", selected: -1, picked: null, labels: true, xray: true,
+  var state = { vehicle: null, model: -1, caliber: null, blast: true, dist: 0, mode: "section", selected: -1, picked: null, labels: true, xray: true,
                 wheels: "intact" };
   var viewer = null, mvState = "pending", materials = [], loadToken = 0, fallbackText = null;
 
@@ -173,8 +173,16 @@
     return hits < 5000 ? hits : null;
   }
 
+  // The slot's rule factor: a blast hit is tagged Radius.Inner within E, else Radius.Outer (Damage §1.1),
+  // and meets different rules than the direct impact.
+  function factorOf(s, cal) {
+    var b = useBlast() && s.blast_factor && s.blast_factor[cal.id];
+    if (!b) return s.rule_factor[cal.id];
+    return state.dist <= ((cal.blast && cal.blast.effective_radius) || 0) ? b[0] : b[1];
+  }
+
   // Rule-factor-scaled damage and hits to destroy for a slot; the direct view reads the precomputed values.
-  function dmgOf(s, cal) { return perHit(cal) * s.rule_factor[cal.id]; }
+  function dmgOf(s, cal) { return perHit(cal) * factorOf(s, cal); }
   function hitsOf(s, cal) {
     return useBlast() ? simHits(state.vehicle, s, dmgOf(s, cal)) : s.hits_to_destroy[cal.id];
   }
@@ -187,7 +195,7 @@
   }
 
   function scale() {
-    var v = state.vehicle, cal = state.caliber.id;
+    var v = state.vehicle;
     if (state.mode === "hits") {
       var r = range(v.slots.map(function (s) { return hitsOf(s, state.caliber); }));
       return { range: r, t: function (x) {     // fewer hits: brighter
@@ -195,7 +203,7 @@
         return 1 - (Math.log(x) - Math.log(r.min)) / (Math.log(r.max) - Math.log(r.min));
       } };
     }
-    var f = range(v.slots.map(function (s) { return s.rule_factor[cal]; }));
+    var f = range(v.slots.map(function (s) { return factorOf(s, state.caliber); }));
     return { range: f, t: function (x) {       // more damage let through: brighter
       if (!f || f.max === f.min) return 1;
       return (x - f.min) / (f.max - f.min);
@@ -206,18 +214,17 @@
   function paint(s, sc) {
     if (!s) return { colour: NONE_COLOUR, none: true };   // a material with no section
     if (state.mode === "section") return { colour: familyOf(s.section).colour, none: false };
-    var x = state.mode === "hits" ? hitsOf(s, state.caliber) : s.rule_factor[state.caliber.id];
+    var x = state.mode === "hits" ? hitsOf(s, state.caliber) : factorOf(s, state.caliber);
     if (x == null || !(x > 0)) return { colour: NONE_COLOUR, none: true };
     return { colour: ramp(sc.t(x)), none: false };
   }
 
   function valueText(s) {
-    var cal = state.caliber.id;
     if (state.mode === "hits") {
       var h = hitsOf(s, state.caliber);
       return h == null ? "can't destroy" : num(h) + (h === 1 ? " hit" : " hits");
     }
-    if (state.mode === "factor") return "×" + num(s.rule_factor[cal]);
+    if (state.mode === "factor") return "×" + num(factorOf(s, state.caliber));
     return shortSection(s.section) + (s.max_health != null ? " · " + num(s.max_health) + " HP" : "");
   }
 
@@ -509,8 +516,8 @@
     var ul = el("ul", "vv-routes");
     routing(s).forEach(function (line) { ul.appendChild(el("li", null, line)); });
     row(dl, "Routing", ul);
-    var f = s.rule_factor[cal.id], h = hitsOf(s, cal), amt = perHit(cal);
-    row(dl, "Rule factor (" + cal.label + ")", "×" + num(f));
+    var f = factorOf(s, cal), h = hitsOf(s, cal), amt = perHit(cal);
+    row(dl, "Rule factor (" + cal.label + (useBlast() ? ", blast" : "") + ")", "×" + num(f));
     row(dl, useBlast() ? "Blast amount (" + num(state.dist / 100) + " m)" : "Damage per hit", num(amt) + " × " + num(f) + " = " + num(amt * f));
     row(dl, "Hits to destroy", h == null ? "can't destroy the vehicle through this slot" : num(h));
     body.appendChild(dl);
@@ -580,7 +587,7 @@
     });
     var tb = t.createTBody();
     state.vehicle.slots.forEach(function (s) {
-      var r = tb.insertRow(), f = s.rule_factor[cal.id], h = hitsOf(s, cal);
+      var r = tb.insertRow(), f = factorOf(s, cal), h = hitsOf(s, cal);
       var c0 = r.insertCell();
       c0.appendChild(code(slotName(s)));
       if (s.group !== DEFAULT_GROUP) c0.appendChild(document.createTextNode(" [" + shortGroup(s.group) + "]"));
