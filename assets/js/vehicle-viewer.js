@@ -1,9 +1,10 @@
 /* Vehicle hitbox viewer (vehicle-viewer.md; styles in _sass/custom/vehicle-viewer.scss).
    Data: assets/data/vehicle-hitboxes.json (python _tools/damage_tables.py --json).
    - each vehicle's collision mesh is a GLB with one material per collision slot, named as the
-     slot ("CC_FuelTank"), or "<slot>|<Group>" outside the Default surface group ("CC_Main|Radar");
+     slot ("CC_FuelTank"), or "<slot>|<Group>" outside the Default surface group ("CC_Main|Radar"),
+     or "<slot>|NoSection" where hits find no section (rotor blades);
    - a material resolves to a slot entry as the game does (resolve below): (group, slot), else the
-     group's "(default)", else the parent group's, else no section;
+     group's "(default)", else the parent group's, else no section (painted grey, clickable);
    - slots are coloured by section family, hits to destroy (log scale) or rule factor; a click on
      the model, a label or the slot list selects a slot and the side panel explains it;
    - without WebGL, model-viewer or an exported model, the selected vehicle's hitbox table is
@@ -43,7 +44,8 @@
   var GHOST = 0.13;                  // alpha of the other slots while one is selected (see-through)
 
   var root, data, mainSection, base, els = {};
-  var state = { vehicle: null, model: -1, caliber: null, mode: "section", selected: -1, picked: null, labels: true, xray: true };
+  var state = { vehicle: null, model: -1, caliber: null, mode: "section", selected: -1, picked: null, labels: true, xray: true,
+                wheels: "intact" };
   var viewer = null, mvState = "pending", materials = [], loadToken = 0, fallbackText = null;
 
   function $(id) { return document.getElementById(id); }
@@ -100,9 +102,11 @@
                             centres: v.slots.map(function (s) { return s.centre || null; }) }] : [];
   }
 
+  // models[].wheels_destroyed: the same model with every wheel destroyed (damage state 2), shown by the
+  // Wheels control; same variants and slots, its own GLB, centres and notes.
   function currentModel() {
-    var v = state.vehicle;
-    return v && state.model >= 0 ? v.models[state.model] || null : null;
+    var v = state.vehicle, m = v && state.model >= 0 ? v.models[state.model] || null : null;
+    return m && state.wheels === "destroyed" && m.wheels_destroyed ? m.wheels_destroyed : m;
   }
 
   function modelLabel(m) { return m.variants.join(", "); }
@@ -144,7 +148,7 @@
 
   // { colour, none } for a slot entry in the current mode; none: can't destroy / no damage.
   function paint(s, sc) {
-    if (!s) return { colour: MAIN.colour, none: false };
+    if (!s) return { colour: NONE_COLOUR, none: true };   // a material with no section
     if (state.mode === "section") return { colour: familyOf(s.section).colour, none: false };
     var x = state.mode === "hits" ? s.hits_to_destroy[state.caliber.id] : s.rule_factor[state.caliber.id];
     if (x == null || !(x > 0)) return { colour: NONE_COLOUR, none: true };
@@ -325,6 +329,7 @@
       v.slots.forEach(function (s) { seen[familyOf(s.section).key] = true; });
       seen.Main = true;
       FAMILIES.concat([MAIN]).forEach(function (f) { if (seen[f.key]) lg.appendChild(key(f.colour, f.label)); });
+      if (noSection()) lg.appendChild(key(NONE_COLOUR, "no section: hits do nothing", true));
       return;
     }
     var hits = state.mode === "hits";
@@ -345,7 +350,10 @@
       lg.appendChild(el("span", "vv-legend-note", hits ? "log scale; brighter = fewer hits" : "brighter = more damage gets through"));
     }
     if (anyNone || !sc.range) lg.appendChild(key(NONE_COLOUR, hits ? "can't destroy the vehicle" : "no damage", true));
+    if (noSection()) lg.appendChild(key(NONE_COLOUR, "no section: hits do nothing", true));
   }
+
+  function noSection() { return materials.some(function (m) { return m.index < 0; }); }
 
   function row(dl, term, value) {
     dl.appendChild(el("dt", null, term));
@@ -382,6 +390,13 @@
   function fillPanel(body, v) {
     var title = el("h2", "vv-panel-title no_anchor");
     body.appendChild(title);
+    if (state.selected < 0 && state.picked) {   // a material that resolves to no section
+      title.textContent = state.picked;
+      title.insertBefore(swatch({ colour: NONE_COLOUR, none: true }), title.firstChild);
+      body.appendChild(el("p", "vv-note", "This surface resolves to no health section, so a hit on it does nothing " +
+        "to the vehicle. The note under the model says why."));
+      return;
+    }
     if (state.selected < 0) {
       title.className += " is-empty";
       title.textContent = "No slot selected";
@@ -715,7 +730,8 @@
     if (fallbackText) showFallback(fallbackText);
     if (viewer && state.vehicle) {
       var m = currentModel();
-      viewer.alt = "Collision mesh of " + vehicleLabel(state.vehicle) + (m && state.vehicle.models.length > 1 ? ", " + modelLabel(m) : "") + ", coloured by " +
+      viewer.alt = "Collision mesh of " + vehicleLabel(state.vehicle) + (m && state.vehicle.models.length > 1 ? ", " + modelLabel(m) : "") +
+        (m && m.path.indexOf("--wheels-destroyed") >= 0 ? ", wheels destroyed" : "") + ", coloured by " +
         (state.mode === "section" ? "health section" : state.mode === "hits" ? "hits to destroy" : "rule factor");
     }
   }
@@ -755,6 +771,10 @@
     });
     sel.value = String(state.model);
     els.variantField.hidden = v.models.length < 2;
+    var m = v.models[state.model], damaged = !!(m && m.wheels_destroyed);
+    if (!damaged) state.wheels = "intact";
+    els.wheels.value = state.wheels;
+    els.wheelsField.hidden = !damaged;
   }
 
   function setVehicle(id, variant, fromHash) {
@@ -805,7 +825,13 @@
       var m = viewer.materialFromPoint(r.left + p[0], r.top + p[1]);
       if (!m) { if (state.selected >= 0) select(-1, null); return; }
       var hit = materials.filter(function (x) { return x.material === m || x.material.index === m.index; })[0];
-      if (!hit || hit.index < 0) return;
+      if (!hit) return;
+      if (hit.index < 0) {   // no section: explain it in the panel, nothing to select
+        state.selected = -1;
+        state.picked = ghosting() ? null : hit.name;
+        repaint();
+        return;
+      }
       // See-through: clicks still land on the faded outer shell first, so a click on a faded
       // part clears the selection; inner parts are picked from the labels or the list.
       if (ghosting()) {
@@ -822,11 +848,12 @@
     root = $("vv");
     if (!root) return;
     base = root.getAttribute("data-base") || "/";
-    ["vehicle", "caliber", "mode", "stage", "status", "fallback", "legend", "slots", "labels", "xray", "variant", "notes"].forEach(function (k) {
+    ["vehicle", "caliber", "mode", "stage", "status", "fallback", "legend", "slots", "labels", "xray", "variant", "wheels", "notes"].forEach(function (k) {
       els[k] = $("vv-" + k);
     });
     els.panelBody = $("vv-panel-body");
     els.variantField = $("vv-variant-field");
+    els.wheelsField = $("vv-wheels-field");
     viewer = $("vv-model");
     status("Loading the hitbox data…");
 
@@ -844,6 +871,13 @@
         els.variant.addEventListener("change", function () {
           var m = state.vehicle.models[+els.variant.value];
           setVehicle(state.vehicle.id, m ? m.variants[0] : null, false);
+        });
+        els.wheels.addEventListener("change", function () {
+          state.wheels = els.wheels.value;
+          state.picked = null;
+          updateNotes();
+          loadModel();
+          repaint();
         });
         els.caliber.addEventListener("change", function () {
           state.caliber = data.meta.calibers.filter(function (c) { return c.id === els.caliber.value; })[0];
