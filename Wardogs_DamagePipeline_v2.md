@@ -785,6 +785,8 @@ Consumed by §7.1, which multiplies the `Universal` value by the weapon
 row's value. An AR upper-torso hit therefore gets 1.10 × 0.885 = 0.9735,
 and an AR headshot 1.0 × 2.35 = 2.35.
 
+Interactive: the [Infantry Hitbox Viewer](infantry-viewer.md) shows these hit locations and multipliers on the player's physics bodies.
+
 ### 8.2 ArchetypeCaliberModifiers (weapon type × caliber)
 
 [`DT_InfantryData_ArchetypeCaliberModifiers`](data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_ArchetypeCaliberModifiers.json),

@@ -43,6 +43,7 @@ WdExtract <Paks> <keyfile> <usmap> <out> <Paks>\oo2core_9_win64.dll <mode> [args
 | `deobfuscate <out.usmap> --names <donor.usmap> [--sdk <sdk/raw>]` | A deobfuscated copy of `<usmap>`: names and element types restored from the donor, then (with `--sdk`) from this build's SDK headers, then the hand patches; read back through CUE4Parse to check it. No paks or key are read (pass `-` for those arguments). Log in `<out>/_deobfuscate_log.txt` |
 | `findname <path prefix> <text>` | `<out>/findname.txt`: packages under the prefix whose name map contains the text (IoStore imports are hashed, so this finds names an asset uses, not who references it) |
 | `mesh <files.txt or package paths>` | `<out>/<collision mesh>.glb` per vehicle collision mesh, plus `manifest.json`; failures in `_failures.txt` (see [Collision meshes](#collision-meshes-mesh)) |
+| `physics <files.txt or package paths>` | `<out>/physics.json`: each physics asset's bodies (collision primitives) and each skeletal mesh's reference skeleton; failures in `_failures.txt` (see [Physics assets](#physics-assets-physics)) |
 
 **`--names <usmap>`** (any mode) borrows property names and array element
 types from an unobfuscated usmap, by the same rules as `deobfuscate` (see
@@ -133,6 +134,45 @@ triangles, vertices), `boundsMin` / `boundsMax` (metres,
 glTF axes) and `signedVolumeM3`. `bones` holds, per skeletal mesh, every
 bone's component-space reference pose in the same frame: `translation`,
 `rotation` (glTF quaternion), `scale` and a glTF column-major `matrix`.
+
+## Physics assets (`physics`)
+
+Exports the bodies of a `UPhysicsAsset`, which are collision primitives only, and the reference
+skeleton that places them. This is the source of the infantry hitbox model
+(`_tools/infantry_model.py`). Run it with `--names`, since skeletal meshes and physics assets do not
+decode without it.
+
+- A physics asset goes to `physicsAssets`: `name`, `package`, `bodyCount`, `shapeCounts`,
+  `boundsBodies`, the number of `constraints`, and `bodies` in `SkeletalBodySetups` order. Each body
+  has its `index`, `bodySetup` (export name) and `boneName`, and the collision settings as cooked:
+  `physicsType`, `collisionResponse` (UE's `CollisionReponse`), `collisionTraceFlag`,
+  `physMaterial`, `physMaterialOverride` and the raw `defaultInstance`. A value the asset leaves
+  out is the class default and is written with `(default)` after it.
+- Each body's `shapes` come from `AggGeom`. `type` is `sphyl`, `sphere`, `box`, `taperedCapsule`
+  or `convex`; any other non-empty element array (level sets, skinned meshes) fails the asset. Each
+  shape also has `name`, `collisionEnabled` and `local`, its frame relative to the bone in the
+  glTF axes of `mesh` (metres, `translation`, `rotation`, `scale`). Sizes are in metres too:
+  `radius` and `length` (the cylinder part of a sphyl, along the element's UE Z, which is glTF
+  local +Y), `radius0` / `radius1` (a tapered capsule's +Z and -Z ends), and a box's `size` as
+  full extents in glTF local x, y, z (UE Y, Z, X). A convex element has `vertices` (glTF, element
+  frame) and `indices` (UE order). `ue` keeps the element's cooked values: centimetres, FRotator
+  degrees, bone-local.
+- A skeletal mesh goes to `skeletalMeshes` with its `physicsAsset`, `shadowPhysicsAsset`,
+  `skeleton`, and `bones` in component space. Bones are written as in `mesh`'s manifest
+  (translation, glTF rotation, scale, column-major matrix and parent). To place a shape, compose the
+  bone's frame with the shape's `local`.
+
+Checked on 2026-10-18: `PA_TPCharacter_Simplified` gives 20 bodies (9 box, 1 sphere, 6 sphyl,
+6 tapered capsule), `PA_TPCharacter` 20 (19 convex, 2 sphyl), `PA_TPCharacter_Simplified_Physics`
+21 (6 box, 15 sphyl). `SK_DefaultCharacter` and `SK_TP_Male_000` have the same 177 bones and the
+same reference pose on every bone that has a body.
+
+```
+WdExtract <Paks> <keyfile> <usmap> out\physics <Paks>\oo2core_9_win64.dll physics ^
+  Wardogs/Content/Characters/Default_PlayerMesh/TP/PA_TPCharacter_Simplified ^
+  Wardogs/Content/Characters/Player/SK_DefaultCharacter --names <closed-beta usmap>
+python -I _tools/infantry_model.py --physics out\physics\physics.json
+```
 
 ## Post-processing
 
