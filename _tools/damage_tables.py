@@ -134,6 +134,25 @@ def projectiles():
     return out
 
 
+def blast_params():
+    """ProjectileId -> {radius, effective_radius, falloff, minimum} (cm), only for the fields present in DamageValues,
+    from the same asset projectiles() picks."""
+    out = {}
+    keys = (("radius", "ExplosiveRadius"), ("effective_radius", "EffectiveExplosiveRadius"),
+            ("falloff", "ExplosiveDamageFallOff"), ("minimum", "MinimumExplosiveDamage"))
+    pattern = os.path.join(DATA, "Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/**/DA_*.json")
+    for path in sorted(glob.glob(pattern, recursive=True)):
+        for o in exports(path):
+            props = o.get("Properties", {})
+            pid, stats = tag(props.get("ProjectileId")), props.get("ProjectileStats")
+            if not pid or not stats:
+                continue
+            dv = stats.get("DamageValues", {})
+            if pid not in out or os.path.basename(path).count("_") <= 2:
+                out[pid] = {k: dv[v] for k, v in keys if v in dv}
+    return out
+
+
 def weapons():
     """(item name, weapon damage tag, supported calibers) for every weapon item."""
     stats = {os.path.basename(p)[:-5]: p for p in glob.glob(os.path.join(DATA, "**/DA_*_Stats.json"), recursive=True)}
@@ -590,13 +609,14 @@ JSON_CALIBERS = {"Item.Caliber.556mm": "5.56mm", "Item.Caliber.762mm": "7.62mm",
 # Readable names for the viewer's full caliber list; the rest are derived from the id.
 CALIBER_LABELS = {"Item.Caliber.7mmBuck": "7mm buckshot (12g)", "Item.Caliber.12g.RifledSlug": "12g rifled slug"}
 CALIBER_GROUPS = ["Bullets", "Cannon", "Rockets & launchers", "Grenades & explosives"]
-DIRECT_NOTE = ("Direct impact only. The blast (radial) part is applied separately per component (Vehicle §4.1) "
-               "and its falloff is not traced, so real hits can do more.")
+DIRECT_NOTE = ("Direct impact only in this view. The blast (radial) part is applied separately per component "
+               "(Vehicle §4.1); pick \"Blast at distance\" for its falloff amount.")
 
 
 def caliber_catalog(proj):
     """All calibers in projectiles(): id, label, group, weapons that list it, variant note. Same math as JSON_CALIBERS."""
     users = {}
+    blast = blast_params()
     for name, _, cals, _ in weapons():
         for c in cals:
             users.setdefault(c, []).append(name)
@@ -625,7 +645,8 @@ def caliber_catalog(proj):
         if not ws:
             notes.append("Unused: no weapon item in the data lists this caliber as supported (vehicle-mounted weapons are not traced).")
         out.append({"id": cid, "label": label, "group": group, "base_damage": base, "source_tag": src,
-                    "weapons": ws, "unused": not ws, "note": " ".join(notes) or None})
+                    "weapons": ws, "unused": not ws, "note": " ".join(notes) or None,
+                    **({"blast": blast[cid]} if group in CALIBER_GROUPS[2:] and blast.get(cid) else {})})
     order = {c: i for i, c in enumerate(JSON_CALIBERS)}
     out.sort(key=lambda c: (CALIBER_GROUPS.index(c["group"]), order.get(c["id"], 99) if c["group"] == "Bullets" else 0,
                             c["base_damage"] or 0, c["id"]))
@@ -756,7 +777,9 @@ def hitbox_json(proj):
                 m["wheels_destroyed"] = {"variants": vs, "path": d[0], "notes": d[2], "centres": [d[3].get(k) for k in keys]}
             entries_out.append(m)
         out["vehicles"].append({"id": slug, "damage_row": dtag, "variants": names, "main_health": secs.get(MAIN, (None,))[0],
-                                "models": entries_out, "slots": slots})
+                                "models": entries_out, "slots": slots,
+                                "sections": {k: {"max_health": v[0], "pre": v[2], "post": v[3], "simultaneous": v[4]}
+                                             for k, v in secs.items()}})
     os.makedirs(os.path.dirname(JSON_OUT), exist_ok=True)
     with open(JSON_OUT, "w", encoding="utf-8", newline="\n") as f:
         json.dump(out, f, indent=1, ensure_ascii=False)
