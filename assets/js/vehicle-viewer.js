@@ -1,8 +1,7 @@
 /* Vehicle hitbox viewer (vehicle-viewer.md; styles in _sass/custom/vehicle-viewer.scss).
    Data: assets/data/vehicle-hitboxes.json (python _tools/damage_tables.py --json).
    - each vehicle's collision mesh is a GLB with one material per collision slot, named as the
-     slot ("CC_FuelTank"), or "<slot>|<Group>" outside the Default surface group ("CC_Main|Radar"),
-     or "<slot>|NoSection" where hits find no section (rotor blades);
+     slot ("CC_FuelTank"), or "<slot>|<Group>" outside the Default surface group ("CC_Main|Radar");
    - a material resolves to a slot entry as the game does (resolve below): (group, slot), else the
      group's "(default)", else the parent group's, else no section (painted grey, clickable);
    - slots are coloured by section family, hits to destroy (log scale) or rule factor; a click on
