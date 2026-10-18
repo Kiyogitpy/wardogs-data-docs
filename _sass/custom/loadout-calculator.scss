@@ -1,0 +1,328 @@
+// Weapon loadout calculator (loadout-calculator.md, assets/js/loadout-calculator.js). Imported at the end
+// of custom.scss, after vehicle-viewer.scss: the page's root is `.vv.lc`, so it takes the vehicle viewer's
+// field, select and segmented styles (and its JS-off and 16px-gutter rules); this file adds the slot
+// list, the cards and the attribute table. The site is dark only.
+
+$lc-changed: #8fd3ff;                     // the balance notes' "new value" cyan
+$lc-changed-bg: rgba(38, 187, 255, 0.08);
+$lc-warn: #ffc79a;                        // the vehicle viewer's note colour
+
+// Weapon picker takes the room; the reset button sits at its end and wraps under it on narrow screens.
+.vv-controls.lc-controls {
+  > .lc-field-weapon { flex: 3 1 18rem; }
+  > .lc-actions { flex: 0 1 auto; display: flex; align-items: flex-end; }
+}
+
+.lc-btn {
+  padding: 0.5rem 0.9rem;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.25;
+  color: $ue-white;
+  background: $ue-btn-grey;
+  border: 1px solid $ue-border-strong;
+  border-radius: $radius-small;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.15s ease;
+
+  &:hover:not(:disabled) { background: $ue-btn-grey-hover; }
+  &:focus-visible { outline: 2px solid $ue-blue; outline-offset: 2px; }
+  &:disabled { cursor: default; color: $ue-text-dim; background: $ue-panel; }
+}
+
+.main-content .lc-status {
+  margin: 0 0 1rem;
+  padding: 0.5rem 0.9rem;
+  max-width: none;
+  background: $ue-panel;
+  border: 1px solid $ue-border;
+  border-radius: $radius-small;
+  color: $ue-text;
+  font-size: 0.85rem;
+
+  &[hidden], &:empty { display: none; }
+}
+
+// Loadout on the left, the table on the right; stacked below 62rem.
+.lc-layout {
+  display: grid;
+  grid-template-columns: minmax(16rem, 22rem) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+
+  @media (max-width: 62rem) { grid-template-columns: minmax(0, 1fr); }
+}
+
+.lc-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+  align-items: start;
+
+  @media (max-width: 56rem) { grid-template-columns: minmax(0, 1fr); }
+}
+
+.lc-card {
+  min-width: 0;
+  padding: 1rem 1.15rem 0.75rem;
+  background: $ue-panel;
+  border: 1px solid $ue-border;
+  border-radius: $radius-panel;
+  font-size: 0.9rem;
+
+  .main-content & h2.lc-card-title {
+    margin: 0 0 0.6rem;
+    color: $ue-text-dim;
+    font-size: 0.75rem !important;   // the theme sizes h2 with !important
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .main-content & p { max-width: none; }
+  .main-content & .lc-card-lead {
+    margin: 0 0 0.85rem;
+    color: $ue-text-dim;
+    font-size: 0.85rem;
+  }
+}
+
+.lc-cli { margin-top: 1rem; }
+
+// One field per open sub-slot. A slot that an attachment brings is indented under it with a rule.
+.lc-slots {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+}
+
+.vv-field.lc-slot-child {
+  margin-left: calc(0.85rem * var(--lc-depth, 1));
+  padding-left: 0.7rem;
+  border-left: 2px solid $ue-border-strong;
+}
+
+.lc-slot-on {
+  text-transform: none;
+  letter-spacing: 0;
+  color: $ue-text-dim;
+  overflow-wrap: anywhere;
+}
+
+.lc-mods {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid $ue-border;
+}
+
+.main-content .lc-hint {
+  margin: 0;
+  color: $ue-text-dim;
+  font-size: 0.8rem;
+  line-height: 1.4;
+
+  &:empty { display: none; }
+  &.lc-warn { color: $lc-warn; }
+}
+
+.lc .wd-segmented[aria-disabled="true"] button {
+  cursor: not-allowed;
+  color: $ue-text-dim;
+  opacity: 0.6;
+
+  &:hover { background: transparent; color: $ue-text-dim; }
+  &[aria-checked="true"] { background: $ue-panel-raised; }
+}
+
+.main-content .lc-empty,
+.main-content .lc-none { color: $ue-text-dim; margin: 0; }
+
+// Attribute table: full width of its card; on narrow screens every row becomes a block.
+.lc-table-wrap {
+  margin: 0 0 0.75rem;
+  border: 1px solid $ue-border;
+  border-radius: $radius-small;
+  overflow: hidden;
+}
+
+.main-content table.lc-table {
+  width: 100%;
+  margin: 0;
+  font-size: 0.875rem;
+
+  th, td { min-width: 0; padding: 0.45rem 0.7rem; vertical-align: top; }
+  .lc-num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  tbody th {
+    font-family: $mono-font-family;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: $ue-white;
+    white-space: nowrap;
+  }
+  tbody tr.lc-changed td,
+  tbody tr.lc-changed th { background: $lc-changed-bg; }
+  tbody tr.lc-changed:hover td,
+  tbody tr.lc-changed:hover th { background: $ue-panel-hover; }
+  tbody tr.lc-changed .lc-final-val { color: $lc-changed; font-weight: 700; }
+}
+
+.lc-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.main-content ul.lc-steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.1rem 0.4rem;
+    margin: 0;
+    padding: 0;
+    &::before { display: none; }
+  }
+  li + li { margin-top: 0.2rem; }
+}
+
+.lc-op {
+  min-width: 1.4rem;
+  font-family: $mono-font-family;
+  color: $ue-white;
+}
+.lc-mag { font-variant-numeric: tabular-nums; color: $ue-white; }
+.lc-stacks { color: $ue-text-dim; font-size: 0.8rem; }
+.main-content code.lc-effect { font-size: 0.78rem; overflow-wrap: anywhere; }
+.lc-src {
+  color: $ue-text-dim;
+  font-size: 0.8rem;
+  overflow-wrap: anywhere;
+  &::before { content: "from "; }
+}
+.lc-flag {
+  color: $lc-warn;
+  font-size: 0.8rem;
+  &::before { content: "† "; }
+}
+.main-content .lc-row-note {
+  margin: 0.3rem 0 0;
+  color: $lc-warn;
+  font-size: 0.8rem;
+}
+
+.lc-final-val { display: block; }
+.lc-was {
+  display: block;
+  color: $ue-text-dim;
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.main-content .lc-legend {
+  margin: 0;
+  color: $ue-text-dim;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+.lc-changed-key {
+  padding: 0 0.3rem;
+  color: $lc-changed;
+  font-weight: 700;
+  background: $lc-changed-bg;
+  border-radius: 3px;
+}
+
+@media (max-width: 40rem) {
+  .main-content table.lc-table {
+    thead { display: none; }
+    tbody, tr, th, td { display: block; }
+    tbody tr {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto auto;
+      align-items: baseline;
+      column-gap: 0.75rem;
+      border-bottom: 1px solid $ue-border;
+    }
+    tbody tr:last-child { border-bottom: 0; }
+    tbody th, tbody td { border-bottom: 0; padding: 0.35rem 0.7rem; background: transparent; }
+    tbody th { white-space: normal; overflow-wrap: anywhere; }
+    tbody tr.lc-changed { background: $lc-changed-bg; }
+    tbody tr.lc-changed td, tbody tr.lc-changed th,
+    tbody tr:nth-child(even) td, tbody tr:nth-child(even) th,
+    tbody tr:hover td, tbody tr:hover th { background: transparent; }
+    td.lc-base { grid-column: 2; grid-row: 1; color: $ue-text-dim; }
+    td.lc-base::after { content: " →"; }
+    td.lc-final { grid-column: 3; grid-row: 1; }
+    td.lc-mods-cell { grid-column: 1 / -1; grid-row: 2; padding-top: 0; padding-bottom: 0.55rem; }
+  }
+}
+
+// Character effects and notes.
+.main-content ul.lc-list {
+  margin: 0 0 0.25rem;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin: 0 0 0.45rem;
+    padding: 0;
+    overflow-wrap: anywhere;
+    &::before { display: none; }
+  }
+  .lc-src { margin-left: 0.4rem; }
+}
+
+// The equivalent command: wraps rather than scrolls, so it stays readable at 360 px.
+.lc-cli-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+.main-content pre.lc-cli-code {
+  flex: 1 1 20rem;
+  min-width: 0;
+  margin: 0;
+  padding: 0.6rem 0.8rem;
+  background: $ue-bg;
+  border: 1px solid $ue-border;
+  border-radius: $radius-small;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+
+  code { font-size: 0.82rem; background: none; border: 0; padding: 0; white-space: inherit; }
+  .lc-arg { white-space: nowrap; }
+  &:focus-visible { outline: 2px solid $ue-blue; outline-offset: 2px; }
+}
+
+.lc-no-data .lc-layout,
+.lc-no-data .lc-cards,
+.lc-no-data .lc-cli { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .lc-btn { transition: none; }
+}
+
+@media (forced-colors: active) {
+  .main-content table.lc-table tbody tr.lc-changed .lc-final-val { text-decoration: underline; }
+}
+
+.lc-char-mods {
+  display: block;
+  margin-top: 0.15rem;
+  color: $ue-text;
+  font-size: 0.8rem;
+}

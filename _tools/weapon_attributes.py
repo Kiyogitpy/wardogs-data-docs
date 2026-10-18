@@ -18,10 +18,16 @@ apply instead.
 import argparse
 import collections
 import glob
+import hashlib
 import json
+import math
 import os
+import random
 import re
+import shlex
+import shutil
 import struct
+import subprocess
 import sys
 from urllib.parse import quote
 
@@ -53,6 +59,27 @@ EPS = 1e-8
 def f32(x):
     """The value as the float the asset stores, widened to a double (§4.4)."""
     return struct.unpack("<f", struct.pack("<f", x))[0]
+
+
+def nsum(xs):
+    """sum() of floats exactly as CPython 3.12+ does it (Neumaier-compensated), on any Python.
+
+    Written out so the result does not depend on the Python version and so the page's evaluator
+    (assets/js/loadout-eval.js) can reproduce it bit for bit."""
+    it = iter(xs)
+    for x in it:
+        hi, lo = 0 + x, 0.0
+        break
+    else:
+        return 0
+    for x in it:
+        t = hi + x
+        if abs(hi) >= abs(x):
+            lo += (hi - t) + x
+        else:
+            lo += (x - t) + hi
+        hi = t
+    return hi + lo if lo and math.isfinite(lo) else hi
 
 
 def fmt(x, digits=6):
@@ -187,9 +214,13 @@ def accepts(container, item):
 
 
 class Slot:
-    def __init__(self, data, owner, container):
+    def __init__(self, data, owner, container, parent=None):
         self.data, self.owner, self.container = data, owner, container
         self.tag = container["ContainerIdentifier"]["TagName"]
+        self.parent = parent  # the parent slot's key, None on the weapon
+        # The page's slot key: the label path from the weapon down ("Barrel/Muzzle"). Sibling
+        # sub-slots never share a tag in the data (export() checks it).
+        self.key = f"{parent}/{short_slot(self.tag)}" if parent else short_slot(self.tag)
         self.user = False
         self.item = None
         self.children = []
@@ -212,7 +243,7 @@ class Slot:
     def place(self, item):
         self.item = item
         self.flag = None
-        self.children = [Slot(self.data, item, c) for c in item.containers]
+        self.children = [Slot(self.data, item, c, self.key) for c in item.containers]
 
     def walk(self):
         yield self
@@ -250,6 +281,27 @@ class Loadout:
         free = [short_slot(s.tag) for s in self.walk() if not s.user]
         raise SystemExit(f"error: {item.asset} (context {', '.join(item.context_tags) or 'none'}) is not allowed in any free "
                          f"sub-slot of {self.weapon.asset} (free: {', '.join(free) or 'none'})")
+
+    def choose(self, choices):
+        """Explicit choices {slot key: item, or None for empty}, as the page makes them.
+
+        Applied in walk order, so a choice in a sub-slot applies to the sub-slot the chosen (or
+        default) parent item brings. Keys of slots that are not open are ignored. Choosing None
+        empties the slot; only placing an item drops a missing-default flag (Slot.place)."""
+        def visit(slots):
+            for s in slots:
+                if s.key in choices:
+                    it = choices[s.key]
+                    if it is None:
+                        s.item, s.children = None, []
+                    elif not it.attachment or not accepts(s.container, it):
+                        raise SystemExit(f"error: {it.asset} is not allowed in sub-slot {s.key} of {self.weapon.asset}")
+                    else:
+                        s.place(it)
+                    s.user = True
+                visit(s.children)
+        visit(self.slots)
+        return self
 
     def attachments(self):
         return [(s.tag, s.item) for s in self.walk() if s.item is not None]
@@ -304,7 +356,7 @@ def applications(data, loadout, sight=None, stance="Stand", bipod=False, mounted
             character_side += [(e, f"{it.asset} bipod unfolded") for e in it.bipod_character]
         character_side += [(e, it.asset) for e in it.character]
     if (bipod or mounted) and not any(it.is_bipod for _, it in loadout.attachments()):
-        notes.append(f"--{'mounted' if mounted else 'bipod'} given but no bipod attachment is equipped")
+        notes.append(f"bipod {'mounted' if mounted else 'unfolded'} but no bipod attachment is equipped")
     for e, stacks, custom in loadout.weapon.stance.get(stance, []):
         weapon_side.append(Application(e, stacks, f"stance {stance}"))
         if custom:
@@ -407,14 +459,14 @@ def evaluate(data, weapon, apps):
                 notes.append(f"{short(attr)} is modified but has no base value on this weapon; not evaluated")
         else:
             s = {op: [c.magnitude for c in live if c.mod["op"] == op] for op in OPS}
-            mul = 1.0 + sum(v - 1.0 for v in s["Multiply"])
-            div = 1.0 + sum(v - 1.0 for v in s["Divide"])
+            mul = 1.0 + nsum(v - 1.0 for v in s["Multiply"])
+            div = 1.0 + nsum(v - 1.0 for v in s["Divide"])
             if abs(div) <= EPS:
                 div = 1.0
             comp = 1.0
             for v in s["MultiplyCompound"]:
                 comp *= v
-            final = ((base + sum(s["Add"])) * mul / div) * comp + sum(s["AddFinal"])
+            final = ((base + nsum(s["Add"])) * mul / div) * comp + nsum(s["AddFinal"])
         if any(c.magnitude is None for c in contrib.get(attr, [])) and final is not None:
             notes.append(f"{short(attr)}: some modifiers were not evaluated, so the final value is partial")
         busy.discard(attr)
@@ -426,8 +478,10 @@ def evaluate(data, weapon, apps):
     return collections.OrderedDict((a, result[a]) for a in contrib), flags
 
 
-def compute(data, weapon, extra=(), sight=None, stance="Stand", bipod=False, mounted=False):
+def compute(data, weapon, extra=(), sight=None, stance="Stand", bipod=False, mounted=False, choices=None):
     loadout = Loadout(data, weapon, extra)
+    if choices:
+        loadout.choose(choices)
     apps, char, notes = applications(data, loadout, sight, stance, bipod or mounted, mounted)
     attrs, flags = evaluate(data, weapon, apps)
     return loadout, apps, char, attrs, sorted(loadout.flags) + notes + flags
@@ -698,7 +752,433 @@ def write():
     print(f"{'wrote' if new != text else 'unchanged'} {os.path.basename(PAGE)}")
 
 
-def main():
+# ------------------------------------------------------------------ page data (--json)
+
+
+JSON_OUT = os.path.join(ROOT, "assets", "data", "weapon-loadouts.json")
+EVAL_JS = os.path.join(ROOT, "assets", "js", "loadout-eval.js")
+RUNNER_JS = os.path.join(ROOT, "_tools", "loadout_check.js")
+VECTORS = os.path.join(ROOT, "_tools", "loadout_vectors.json")
+FILTER_KEYS = (("AllowedSubSlotItems", "allowItems"), ("AllowedSubSlotContext", "allowContext"),
+               ("BlockedSubSlotItems", "blockItems"), ("BlockedSubSlotContext", "blockContext"))
+DOCS = {
+    "rules": "Wardogs_WeaponAttributes_v1.md#rules",
+    "choices": "Wardogs_WeaponAttributes_v1.md#choices-this-page-makes",
+    "tool": "Wardogs_WeaponAttributes_v1.md#using-the-tool",
+    "applies": "Wardogs_GameplayEffectsPipeline_v1.md#71-what-applies-to-a-weapon",
+    "modifiers": "Wardogs_GameplayEffectsPipeline_v1.md#42-modifiers",
+    "current_value": "Wardogs_GameplayEffectsPipeline_v1.md#44-current-value",
+}
+
+
+def git(*args):
+    try:
+        return subprocess.run(["git", "-C", ROOT, *args], capture_output=True, text=True, check=True).stdout.strip()
+    except (OSError, subprocess.CalledProcessError):
+        return None
+
+
+def blob_id(path):
+    """The git blob id of a file's content with LF line ends (what a commit stores)."""
+    with open(path, "rb") as f:
+        b = f.read().replace(b"\r\n", b"\n")
+    return hashlib.sha1(b"blob %d\0" % len(b) + b).hexdigest()
+
+
+def data_tree():
+    tree = git("rev-parse", "HEAD:data")
+    if tree is None:
+        return "unknown"
+    return tree + ("+dirty" if git("status", "--porcelain", "--", "data") else "")
+
+
+def export(data):
+    """Everything assets/js/loadout-eval.js needs to reproduce compute() (schema in that file)."""
+    filters, filter_ix, stances, stance_ix, used, attrs = [], {}, [], {}, [], {}
+
+    def attr(tag):  # attribute tags are stored once, in "attributes"; the rest refers by index
+        return attrs.setdefault(tag, len(attrs))
+
+    def slots(owner):
+        tags = [c["ContainerIdentifier"]["TagName"] for c in owner.containers]
+        if len(set(tags)) != len(tags):
+            raise SystemExit(f"error: {owner.asset} has two sub-slots with one tag; the slot keys need them distinct")
+        out = []
+        for c in owner.containers:
+            fl = c.get("Filter", {})
+            f = {"mode": fl.get("SupportFilter", "EBHSupportFilterMethod::AllowList").split("::")[-1]}
+            f.update({j: list(fl[k]) for k, j in FILTER_KEYS if fl.get(k)})
+            key = json.dumps(f, sort_keys=True)
+            if key not in filter_ix:
+                filter_ix[key] = len(filters)
+                filters.append(f)
+            s = Slot(data, owner, c)
+            e = {"tag": s.tag, "filter": filter_ix[key]}
+            if s.item is not None:
+                e["default"] = s.item.asset
+            if s.flag:
+                e["flag"] = s.flag
+            out.append(e)
+        return out
+
+    def effects(names):
+        names = list(names)
+        used.extend(names)
+        return names
+
+    items = collections.OrderedDict()
+    for w in data.weapons:
+        st = {k: [[e, n, 1 if custom else 0] for e, n, custom in v] for k, v in w.stance.items()}
+        for v in w.stance.values():
+            effects(e for e, _, _ in v)
+        key = json.dumps(st, sort_keys=True)
+        if key not in stance_ix:
+            stance_ix[key] = len(stances)
+            stances.append(st)
+        e = {"itemId": w.item_id, "display": w.display, "archetype": w.archetype,
+             "base": [[attr(k), f32(v)] for k, v in w.base.items()], "stance": stance_ix[key]}
+        if w.containers:
+            e["slots"] = slots(w)
+        items[w.asset] = e
+    for it in data.attachments:
+        if it.asset in items:
+            raise SystemExit(f"error: {it.asset} is both a weapon and an attachment; the page data keeps one entry per item")
+        e = {"itemId": it.item_id, "display": it.display, "type": it.att_type}
+        if it.context_tags:
+            e["context"] = it.context_tags
+        for k, v in (("applied", it.applied), ("character", it.character)):
+            if v:
+                e[k] = effects(v)
+        if it.sights:
+            e["sights"] = [[name, effects(v)] for name, v in it.sights.items()]
+        if it.is_bipod:
+            e["bipod"] = {"weapon": effects(it.bipod_weapon), "character": effects(it.bipod_character),
+                          "mountedWeapon": effects(it.mounted_weapon), "mountedCharacter": effects(it.mounted_character)}
+        if it.containers:
+            e["slots"] = slots(it)
+        items[it.asset] = e
+
+    mods = collections.OrderedDict()
+    for name in sorted(set(n for n in used if n in data.effects)):
+        out = []
+        for m in data.effects[name]["modifiers"]:
+            x = {"attr": attr(m["attribute"]), "op": m["op"], "kind": m["kind"]}
+            if m["kind"] == "Scalar":
+                x["value"] = f32(m.get("value", 0.0))
+            if m.get("channel", "Default") != "Default":
+                x["channel"] = m["channel"]
+            if m.get("curve"):
+                x["curve"] = True
+            if m.get("curve_indexing", "Fixed") != "Fixed":
+                x["indexing"] = m["curve_indexing"]
+            if m["kind"] == "Attribute":
+                x["backing"] = attr(m["backing_attribute"]) if m.get("backing_attribute") else None
+                if "attribute_mode" in m:
+                    x["mode"] = m["attribute_mode"]
+            if m["kind"] not in ("Scalar", "Attribute") and m.get("allow_fallback"):
+                x["fallback"] = f32(m.get("fallback_value", 0.0))
+            out.append(x)
+        mods[name] = out
+    meta = collections.OrderedDict([
+        ("generator", "python -I _tools/weapon_attributes.py --json"),
+        ("source", {"data_tree": data_tree(), "ge_values_blob": blob_id(SRC)}),
+        ("docs", DOCS),
+        ("counts", {"weapons": len(data.weapons), "attachments": len(data.attachments), "effects": len(mods),
+                    "filters": len(filters), "stance_presets": len(stances)}),
+        ("notes", [
+            "Attribute tags are in attributes; base entries [attr, value] and modifiers (attr, backing) "
+            "refer to them by index.",
+            "Numbers are the f32 values the assets store, widened to doubles (Effects §4.4): base values and "
+            "Scalar/fallback magnitudes; loadout-eval.js Math.fround()s them again, which changes nothing.",
+            "Item ids are asset names (ID_WEPN_037); filters match the ItemId tag (itemId) exactly and context "
+            "tags hierarchically, both case-insensitively (WeaponAttributes, Choices: sub-slot filters).",
+            "A slot's default is the first real item of DefaultContainerItems, or of DefaultItems when that "
+            "is empty; only attachments are placed (ammunition is left out); flag notes a missing item.",
+            f"Sight null means {DEFAULT_SIGHT}; an attachment without it gets no sight effects (no first-entry "
+            "fallback). Bipod lists: weapon/character = unfolded (+0x138/+0x148), mounted* = "
+            "MountedAppliedEffects/MountedAppliedCharacterEffects (+0x158/+0x168), which replace the "
+            "unfolded lists while mounted.",
+            "Character-side lists (character, bipod character lists) are listed, never evaluated.",
+            "Effects referenced by an item but missing here are not in ge-values.json; the evaluator flags them.",
+        ]),
+    ])
+    return collections.OrderedDict([
+        ("meta", meta), ("defaultSight", DEFAULT_SIGHT), ("stances", list(STANCES)), ("eps", EPS),
+        ("weapons", [w.asset for w in data.weapons]), ("attachments", [it.asset for it in data.attachments]),
+        ("attributes", list(attrs)), ("filters", filters), ("stancePresets", stances), ("effects", mods),
+        ("items", items)])
+
+
+def dump_json(obj):
+    """Deterministic text: one line per filter, stance preset, effect and item; compact inside."""
+    def one(v):
+        return json.dumps(v, ensure_ascii=False, separators=(",", ":"), allow_nan=False)
+    parts = []
+    for k, v in obj.items():
+        if k in ("effects", "items", "filters", "stancePresets"):
+            rows = [one(x) for x in v] if isinstance(v, list) else [f"{one(ik)}:{one(iv)}" for ik, iv in v.items()]
+            o, c = ("[", "]") if isinstance(v, list) else ("{", "}")
+            parts.append(f"{one(k)}:{o}\n" + ",\n".join(rows) + f"\n{c}")
+        else:
+            parts.append(f"{one(k)}:{one(v)}")
+    text = "{\n" + ",\n".join(parts) + "\n}\n"
+    assert json.loads(text) == json.loads(one(obj))
+    return text
+
+
+def write_if_changed(path, text):
+    old = None
+    if os.path.exists(path):
+        with open(path, encoding="utf-8", newline="") as f:
+            old = f.read()
+    if old is not None and old.replace("\r\n", "\n") == text:
+        return False
+    with open(path, "w", encoding="utf-8", newline="\n") as f:
+        f.write(text)
+    return True
+
+
+def write_json():
+    text = dump_json(export(Data()))
+    changed = write_if_changed(JSON_OUT, text)
+    print(f"{'wrote' if changed else 'unchanged'} {os.path.relpath(JSON_OUT, ROOT)} ({len(text.encode('utf-8'))} bytes)")
+
+
+# --------------------------------------------------------------- parity (--check)
+
+
+CHECK_SEED = 20261018
+CHECK_RANDOM = 400
+CHECK_WITH = 200
+BIPOD_STATES = ("folded", "unfolded", "mounted")
+
+
+def hexf(x):
+    """A number as the hex of its double, so the comparison is bit-exact and format-free."""
+    return None if x is None else struct.pack(">d", float(x)).hex()
+
+
+def canonical(loadout, apps, char, attrs, flags):
+    """compute()'s result in the shape of loadout-eval.js evaluate(), numbers as hexf()."""
+    return {
+        "weapon": [{"tag": a, "base": hexf(r["base"]), "final": hexf(r["final"]), "notes": r["notes"],
+                    "steps": [{"source": c.app.source, "effect": c.app.effect, "op": c.mod["op"], "kind": c.mod["kind"],
+                               "stacks": hexf(c.app.stacks), "magnitude": hexf(c.magnitude), "flag": c.flag}
+                              for c in r["contrib"]]} for a, r in attrs.items()],
+        "character": [{"effect": e, "source": s} for e, s in char],
+        "applications": [{"effect": a.effect, "stacks": hexf(a.stacks), "source": a.source} for a in apps],
+        "attachments": [{"key": s.key, "tag": s.tag, "item": s.item.asset} for s in loadout.walk() if s.item is not None],
+        "hasBipod": any(it.is_bipod for _, it in loadout.attachments()),
+        "notes": flags,
+    }
+
+
+def run_case(data, case):
+    choices = {k: (data.by_asset[v.lower()] if v else None) for k, v in case["items"].items()}
+    w = data.by_asset[case["weapon"].lower()]
+    return canonical(*compute(data, w, (), case["sight"], case["stance"], case["bipod"] == "unfolded",
+                              case["bipod"] == "mounted", choices))
+
+
+def run_args(data, args):
+    """The CLI path: the same parser and compute() call as `cli()`."""
+    a = parser().parse_args(args)
+    w = data.find(a.weapon)
+    return canonical(*compute(data, w, [data.find(n) for n in a.with_ or []], a.sight, a.stance, a.bipod, a.mounted))
+
+
+def check_cases(data):
+    """Every weapon's default loadout, CHECK_RANDOM random valid loadouts and CHECK_WITH --with lists."""
+    rng = random.Random(CHECK_SEED)
+    acc_cache = {}
+
+    def acc(c):
+        if id(c) not in acc_cache:
+            acc_cache[id(c)] = [it for it in data.attachments if accepts(c, it)]
+        return acc_cache[id(c)]
+
+    cases = [{"weapon": w.asset, "items": {}, "sight": None, "stance": "Stand", "bipod": "folded"} for w in data.weapons]
+    for _ in range(CHECK_RANDOM):
+        w = rng.choice(data.weapons)
+        lo, items = Loadout(data, w), {}
+
+        def visit(slots):
+            for s in slots:
+                opts, r = acc(s.container), rng.random()
+                if r < 0.2:
+                    pass  # keep the default (key left out)
+                elif r < 0.35 or not opts:
+                    items[s.key] = None
+                    s.item, s.children = None, []
+                else:
+                    it = rng.choice(opts)
+                    items[s.key] = it.asset
+                    s.place(it)
+                visit(s.children)
+        visit(lo.slots)
+        names = list(dict.fromkeys(n for _, it in lo.attachments() for n in it.sights))
+        cases.append({"weapon": w.asset, "items": items, "sight": rng.choice([None] + names),
+                      "stance": rng.choice(STANCES), "bipod": rng.choice(BIPOD_STATES)})
+    withs = []
+    for _ in range(CHECK_WITH):
+        w = rng.choice(data.weapons)
+        pool = sorted({it.asset for c in reachable_containers(data, w) for it in acc(c)})
+        withs.append({"weapon": w.asset, "ids": rng.sample(pool, min(len(pool), rng.randint(1, 4))) if pool else []})
+    return cases, withs
+
+
+def py_with(data, case):
+    try:
+        lo = Loadout(data, data.by_asset[case["weapon"].lower()], [data.by_asset[i.lower()] for i in case["ids"]])
+    except SystemExit:
+        return "error"
+    return {s.key: (s.item.asset if s.item else None) for s in lo.walk()}
+
+
+def py_accepts(data):
+    return {f"{o.asset}#{i}": [it.asset for it in data.attachments if accepts(c, it)]
+            for o in data.weapons + data.attachments for i, c in enumerate(o.containers)}
+
+
+def py_defaults(data):
+    return {w.asset: {s.key: (s.item.asset if s.item else None) for s in Loadout(data, w).walk()} for w in data.weapons}
+
+
+def sha(obj):
+    return hashlib.sha256(json.dumps(obj, sort_keys=True, ensure_ascii=False, separators=(",", ":")).encode()).hexdigest()
+
+
+def first_diff(a, b, path=""):
+    if type(a) is not type(b):
+        return f"{path}: {a!r} != {b!r}"
+    if isinstance(a, dict):
+        for k in list(a) + [k for k in b if k not in a]:
+            if k not in a or k not in b:
+                return f"{path}.{k}: only on one side"
+            d = first_diff(a[k], b[k], f"{path}.{k}")
+            if d:
+                return d
+    elif isinstance(a, list):
+        for i, (x, y) in enumerate(zip(a, b)):
+            d = first_diff(x, y, f"{path}[{i}]")
+            if d:
+                return d
+        if len(a) != len(b):
+            return f"{path}: length {len(a)} != {len(b)}"
+    elif a != b:
+        return f"{path}: {a!r} != {b!r}"
+    return None
+
+
+def check():
+    """Python vs loadout-eval.js, bit for bit; node runs the JS, else the committed vectors stand in."""
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
+    data = Data()
+    ok = bad = shown = 0
+
+    def tally(label, good, n_bad, extra=""):
+        nonlocal ok, bad
+        ok += good
+        bad += n_bad
+        print(f"{label}: ok={good} mismatched={n_bad}{extra}")
+
+    def show(msg):
+        nonlocal shown
+        if shown < 10:
+            print("  mismatch " + msg)
+        shown += 1
+
+    fresh = dump_json(export(data))
+    on_disk = None
+    if os.path.exists(JSON_OUT):
+        with open(JSON_OUT, encoding="utf-8") as f:
+            on_disk = f.read().replace("\r\n", "\n")
+    stale = on_disk != fresh
+    tally("weapon-loadouts.json matches --json", 0 if stale else 1, 1 if stale else 0, " (run --json)" if stale else "")
+
+    cases, withs = check_cases(data)
+    py = [run_case(data, c) for c in cases]
+    py_w = [py_with(data, c) for c in withs]
+    pa, pd = py_accepts(data), py_defaults(data)
+    cases_sha = sha([cases, withs])
+    node = shutil.which("node")
+    if node:
+        print(f"mode: node ({node}) runs {os.path.relpath(RUNNER_JS, ROOT)}")
+        proc = subprocess.run([node, RUNNER_JS], input=json.dumps({"json": JSON_OUT, "cases": cases, "with": withs}),
+                              capture_output=True, text=True, encoding="utf-8", cwd=ROOT)
+        if proc.returncode:
+            raise SystemExit(f"error: node runner failed:\n{proc.stderr}")
+        js = json.loads(proc.stdout)
+        res, clis, jw, ja, jd, kept = js["results"], js["cli"], js["with"], js["accepts"], js["defaults"], js["normalized"]
+        vectors = {"meta": {"note": "loadout-eval.js outputs for --check where node is missing; "
+                                    "rewritten by --check where node is installed",
+                            "cases_sha256": cases_sha, "json_blob": blob_id(JSON_OUT), "js_blob": blob_id(EVAL_JS),
+                            "runner_blob": blob_id(RUNNER_JS)},
+                   "results": [sha(r) for r in res], "cli": [[c["args"], c["exact"]] for c in clis],
+                   "with": [sha(x) for x in jw], "accepts": sha(ja), "defaults": sha(jd), "normalized": kept}
+        wrote = write_if_changed(VECTORS, json.dumps(vectors, indent=1) + "\n")
+        print(f"{'wrote' if wrote else 'unchanged'} {os.path.relpath(VECTORS, ROOT)}")
+        diff = lambda i: first_diff(py[i], res[i])  # noqa: E731
+        w_diff = lambda i: first_diff(py_w[i], jw[i])  # noqa: E731
+        a_diff, d_diff = first_diff(pa, ja), first_diff(pd, jd)
+    else:
+        print(f"mode: vectors ({os.path.relpath(VECTORS, ROOT)}; node not found)")
+        with open(VECTORS, encoding="utf-8") as f:
+            vec = json.load(f)
+        m = vec["meta"]
+        for what, want, have in (("the cases", m["cases_sha256"], cases_sha),
+                                 ("weapon-loadouts.json", m["json_blob"], blob_id(JSON_OUT)),
+                                 ("loadout-eval.js", m["js_blob"], blob_id(EVAL_JS))):
+            if want != have:
+                raise SystemExit(f"error: the vectors are stale ({what} changed); rerun --check where node is installed")
+        clis = [{"args": a, "exact": e} for a, e in vec["cli"]]
+        kept = vec["normalized"]
+        diff = lambda i: None if sha(py[i]) == vec["results"][i] else "result hash differs"  # noqa: E731
+        w_diff = lambda i: None if sha(py_w[i]) == vec["with"][i] else "placement hash differs"  # noqa: E731
+        a_diff = None if sha(pa) == vec["accepts"] else "accept lists hash differs"
+        d_diff = None if sha(pd) == vec["defaults"] else "default trees hash differs"
+
+    n_def = len(data.weapons)
+    diffs = [diff(i) for i in range(len(cases))]
+    for i, d in enumerate(diffs):
+        if d:
+            show(f"loadout {i} {json.dumps(cases[i])}: {d}")
+    n_bipod = sum(1 for r in py if r["hasBipod"])
+    tally(f"default loadouts ({n_def})", sum(1 for d in diffs[:n_def] if not d), sum(1 for d in diffs[:n_def] if d))
+    tally(f"random loadouts ({len(cases) - n_def}, seed {CHECK_SEED}; {n_bipod} with a bipod)",
+          sum(1 for d in diffs[n_def:] if not d), sum(1 for d in diffs[n_def:] if d))
+    tally(f"normalize() keeps the valid loadouts ({len(cases)})", sum(1 for k in kept if k), sum(1 for k in kept if not k))
+    w_diffs = [w_diff(i) for i in range(len(withs))]
+    for i, d in enumerate(w_diffs):
+        if d:
+            show(f"--with placement {json.dumps(withs[i])}: {d}")
+    tally(f"--with placements ({len(withs)}; {sum(1 for x in py_w if x == 'error')} rejected by both)",
+          sum(1 for d in w_diffs if not d), sum(1 for d in w_diffs if d))
+    if a_diff:
+        show(f"accept lists: {a_diff}")
+    tally(f"sub-slot accept lists ({len(pa)})", 0 if a_diff else len(pa), len(pa) if a_diff else 0)
+    if d_diff:
+        show(f"default slot trees: {d_diff}")
+    tally(f"default slot trees ({len(pd)})", 0 if d_diff else len(pd), len(pd) if d_diff else 0)
+    good = n_bad = inexact = 0
+    for i, c in enumerate(clis):
+        if not c["exact"]:
+            inexact += 1
+            continue
+        d = first_diff(py[i], run_args(data, shlex.split(c["args"])))
+        if d:
+            n_bad += 1
+            show(f"cli {c['args']!r} vs loadout {i}: {d}")
+        else:
+            good += 1
+    tally(f"cli() args round-trip through compute() ({good + n_bad} exact, {inexact} not expressible)", good, n_bad)
+    print(f"checks ok={ok} mismatched={bad}")
+    if bad:
+        raise SystemExit(1)
+
+
+def parser():
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("--weapon", help="weapon asset name (ID_WEPN_037) or ItemId")
     ap.add_argument("--with", dest="with_", nargs="+", metavar="ID", help="attachments to equip, in order")
@@ -708,13 +1188,28 @@ def main():
     ap.add_argument("--mounted", action="store_true",
                     help="bipod mounted (implies unfolded): the mounted lists replace the unfolded ones")
     ap.add_argument("--write", action="store_true", help=f"refresh the marked block in {os.path.basename(PAGE)}")
+    ap.add_argument("--json", action="store_true",
+                    help=f"write {os.path.relpath(JSON_OUT, ROOT)} for the loadout calculator")
+    ap.add_argument("--check", action="store_true",
+                    help=f"compare this tool with {os.path.relpath(EVAL_JS, ROOT)} on every default loadout and "
+                         "seeded random loadouts (node if installed, else the committed vectors)")
+    return ap
+
+
+def main():
+    ap = parser()
     args = ap.parse_args()
-    if args.write:
-        write()
+    if args.write or args.json or args.check:
+        if args.write:
+            write()
+        if args.json:
+            write_json()
+        if args.check:
+            check()
     elif args.weapon:
         cli(args)
     else:
-        ap.error("give --weapon or --write")
+        ap.error("give --weapon, --write, --json or --check")
 
 
 if __name__ == "__main__":
