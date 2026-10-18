@@ -66,7 +66,7 @@ def attach(cs):
     q = (cs or {}).get("AttachQuery")
     if not q:
         return None
-    return {k: q[k] for k in ("SourceMode", "SourceID", "SocketMode", "SocketName") if k in q}
+    return {k: q[k] for k in ("SourceMode", "SourceId", "SocketMode", "SocketName") if k in q}
 
 
 MESH_KEYS = ("StaticMesh", "Mesh", "WheelMesh", "SkeletalMesh")

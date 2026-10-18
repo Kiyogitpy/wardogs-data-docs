@@ -313,8 +313,8 @@ Sections are VehicleDamagePipeline sections; `L` numbers are its lines at
   and it starts with `mov rax, rsp` and has five direct calls.
   `0x76AB5F0` is a leaf with no `.pdata` entry; its whole body
   (`cmp ecx, 2; setge al; and cl, 1; mov [rdx], al; mov [r8], cl; ret`)
-  was decoded for this page. The verifier accepted its reading from the
-  teammate (O-6) without re-running it.
+  was decoded for this page, and the round-6 verifier re-disassembled it
+  (T0-15).
 - **`0x3A90520` (failed row).** The exact row failed ("inside another
   function at RVA `0x3A90514`"). The row `0x3A90514` is a `__spoils`
   stub whose listing starts in the previous function's epilogue, so it

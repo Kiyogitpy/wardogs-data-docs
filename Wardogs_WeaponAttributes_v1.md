@@ -69,9 +69,10 @@ weapon), [§4.2](Wardogs_GameplayEffectsPipeline_v1.md#42-modifiers) (stack scal
   when `DefaultContainerItems` is empty, and the defaults of the sub-slots that item brings. `None` leaves
   the slot empty. The tool takes the first real item; natively every entry is added, and no weapon or
   attachment sub-slot lists more than one. Ammunition in chamber and magazine slots carries no effects and
-  is left out. The lists differ only in `ID_CGM4`'s sight (`DefaultItems` `BasicRedDot` = `ID_RedDot`;
-  `DefaultContainerItems` `ID_SGHT_033`), whose `AllowList` admits only `SGHT_033`; with `ID_RedDot` the
-  MAAWS AimTime would be 0.45.
+  is left out. Among attachment sub-slots the lists differ only in `ID_CGM4`'s sight (`DefaultItems`
+  `BasicRedDot` = `ID_RedDot`; `DefaultContainerItems` `ID_SGHT_033`), whose `AllowList` admits only `SGHT_033`;
+  with `ID_RedDot` the MAAWS AimTime would be 0.45. Sixteen magazine ammo slots also differ (the plain round in
+  `DefaultItems`, its `.Tracer` round in `DefaultContainerItems`), which changes no attribute.
 - **Native: sub-slot filters** (`0x67A2B40`, run per container by `0x67A2790`). `ItemId` is matched exactly
   against the item lists; context tags hierarchically (`HasAny`, `0x395BE30`: the item's tag or a child of
   it). `AllowList` = allowed (block lists ignored; one weapon's default chamber round is on both lists);
@@ -1344,3 +1345,4 @@ Results above that rest on something not traced or on an odd piece of data.
 | 2026-10-17 | v1: generated per-weapon base and final values with the default loadout, per-attachment weapon-side modifiers and accepting weapons, from the §7.1 rules; `_tools/weapon_attributes.py` added. |
 | 2026-10-17 | Round-5 verifier pass: the initial sight is `S_Aim01` (Effects §7.1), with a fallback to the first entry for `ID_CantedIrons`; `--mounted` models a mounted bipod (`MountedAppliedEffects` on the weapon, `MountedAppliedCharacterEffects` on the character, unfolded lists removed), and §3 lists the mounted lists. No §1 value changed. |
 | 2026-10-18 | Round-6 verifier corrections: a repeated `DefaultAttributes` key keeps its first value (`OnRegister` installs with overwrite off), so the 9K333 Verba `Length` is 100, not 80 (the only §1 change); no native first-entry sight fallback, so the tool applies no sight effects for `ID_CantedIrons`; Override order, default loadout (`0x6784010`, `DefaultItems` only when `DefaultContainerItems` is empty) and sub-slot filters (`0x67A2B40`) are now traced and labelled Data / Native; stance effect and equip path wording; attribute-backed magnitudes are evaluated live (Effects §4.2); missing default items are absent from the paks too; the tool detects the bipod struct by `MountedAppliedEffects` and drops a missing-default flag when `--with` replaces that slot. |
+| 2026-10-18 | Round-7 correction: 16 magazine ammo slots also differ between the two default lists (no attribute change). |

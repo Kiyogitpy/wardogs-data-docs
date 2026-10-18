@@ -414,7 +414,7 @@ The `HDR` prefix is not explained in the dump. The time axis unit is not stored.
     - `Handle_Helicopter_Audio_State_Change` — vehicle-specific audio state machine
   - Inner Blueprint logic of specific `AEB_*` classes still not exported (Dumper-7 captures signatures, not implementation bytecode).
 - **Hashed property names.** The float on events (222 instances including behaviours), the bool and enum on DT_VoxData rows, and a list-valued hash on `WDAudioEventBehaviorApplyImpulseResonance` are unnamed. Their meaning is not confirmed. The reload-stage value 50.5 and comms value 80.0 are the most useful clues.
-  - **SDK (2026-10-16):** the 222-instance float is likely the `_aaabfkmmjhhnafhaehpbd` parameter on `HandlePlaySound` (double) — same hash pattern appears across the audio dispatch path. Without a resolved symbolic name from Dumper, static resolution hits its limit; next step is observational (what value is passed at specific event call-sites).
+  - **SDK (2026-10-16, re-checked 2026-10-18):** the float is the native property `_aaabhgndclheajnnlnade` on `UCrosstalkAudioEvent` (`+0x4C`) and `UCrosstalkAudioEventBehavior` (`+0xBC`); its name is still hashed in this build. It is not the `HandlePlaySound` parameter `_aaabfkmmjhhnafhaehpbd`, a different (21-character) name. Without a resolved symbolic name from Dumper, static resolution hits its limit; next step is observational (what value is passed at specific event call-sites).
 - **Priority direction.** It is not stored whether higher or lower numbers win for vox group priorities or music priorities.
 - **Curve units.** Time and value units for the 42 curves are not stored. Distances in UE units are assumed to be centimetres but not verified.
 - **Vox Dialogue group.** Priority 4 exists in settings but has no DT_VoxData rows.
@@ -1205,3 +1205,4 @@ Generated from the census script (`events_summary.json`). Chain shows the first 
 | Date | Change |
 |---|---|
 | 2026-10-18 | `data/` re-exported with the v2 usmap (names only; values unchanged): the unresolved float key is now `_aaabhgndclheajnnlnade`. |
+| 2026-10-18 | Round-7 correction: the 222-instance float is the property `_aaabhgndclheajnnlnade`, not the `HandlePlaySound` parameter (different token length). |
