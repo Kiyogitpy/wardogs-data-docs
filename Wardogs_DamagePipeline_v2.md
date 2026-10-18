@@ -104,10 +104,27 @@ Others are identified by the tags and classes they use:
 | Projectile impact (two calls) | `0x6B725B0` | Bullets and other projectiles; builds the event in §7.6 |
 | Explosive actors (`AWDExplosive`, `AWDC4`, `AWDGrenade`, `AWDLandmine`, slot 236 via `0x6CAB030`) | `0x6CA8730` | Explosive detonation |
 | Radial damage, also behind reflected `SimulateRadialDamage` | `0x6F06540` | Uses `Meta.Damage.Explosive.Radius.Inner` / `.Outer` |
-| Back-blast | `0x6F06EB0` (from `0x6B92900`) | `Meta.Damage.DamageType.BackBlast` |
+| Back-blast | `0x6F042A0` on foot, `0x6F06EB0` seated in a vehicle (both from `0x6B92900`) | `Meta.Damage.DamageType.BackBlast` |
 | Armor break / crack | `0x6B53000` | `Hitmarker.Armor.Break` / `.Crack` |
 | Reflected `SimpleDamageActor` | `0x6F08CE0` (corpus body under the misaligned row `0x6F08CDC`) | Blueprint-callable |
 | Vehicle supply containers (slot 127) | `0x6F03F60` | Via `0x7635EA0` |
+
+**On a character.** `0x6F06540` hands the gathered hits to the
+character's `IWDDamageable` filter (`0x6E6DCC0`). It drops them all while
+the character is held by a seat whose flag (`+0x3D0`) is clear
+(`0x6E6DCC0`), and otherwise keeps one hit per component (`0x6C2A790`).
+Each kept hit becomes its own damage evaluation, tagged `Radius.Inner`
+(within the inner radius) or `Radius.Outer`, with the hit's bone giving
+the hit location. The radial path adds no
+`Kinetic.Impact.ExplosiveBlunt`, so entries 7, 117, 142-143 apply only to
+direct blunt impacts (`0x6B725B0` adds `Kinetic.Impact.ExplosiveBlunt`
+when the projectile asks for it), never to blast damage; the
+`Explosive.*` / `Radius.*` Calibre entries 102-116 do apply. `0x6CA8730`
+is the thrown explosive's contact damage (`Kinetic.Impact.Throwable`,
+`DamageType.Impact`), applied once per contact on the contacted bone. The
+per-hit Inner / Outer loop was not re-derived by the verifier. Which
+character components the radial gather hits, and the falloff arithmetic,
+are not traced.
 
 Four more callers, so all 17 call sites are identified:
 
@@ -115,8 +132,15 @@ Four more callers, so all 17 call sites are identified:
   `AWDMoverCharacter` slot 169). It skips dead characters; the source is
   the hitting actor's entity data plus `DamageType.Impact`.
 - `0x6F042A0`: a second back-blast path from `0x6B92900` (see the table).
-  The two are the branches of one if/else; what picks the branch is not
-  traced (O-8).
+  The shooter's seat picks the branch: `0x6E6EBA0` returns the vehicle
+  whose seat the shooter occupies (`VehicleOperatorComponent.CurrentSeat`,
+  whose owner must be a `BHBaseVehiclePawn`). On foot, `0x6F042A0` traces
+  the cone. In a vehicle seat, `0x6F06EB0` hits only that vehicle's
+  occupants (synthetic hits, shooter included), and `0x6B92900` applies
+  the per-attribute self-damage map straight to the vehicle. Both use
+  `BackBlast.VehicleOverrides[<vehicle variant tag>]` when there is one.
+  Back-blast needs `BackBlast.bEnabled` (Launcher_04, RPG7, CGM4); all
+  three set Bobcat and DuneBuggy to zero (O-8).
 - `0x76740F0`: vehicle collision
   ([VehicleDamagePipeline V-4](Wardogs_VehicleDamagePipeline_v1.md#7-open-questions)).
 - `0x76F5AE0`: periodic `WDDoor` damage, from `PostFixedSimTick`.
@@ -590,7 +614,7 @@ firing weapon:
 | `S` | `DamageValues.BaseDamage`; `ExplosiveBluntDamage` instead when the projectile has an arming delay and its flight time (`FWDProjectileInstance.ElapsedTime`, seconds) is below `ArmingDelay − 0.0001`, or when an unnamed instance byte (`+0x101`) is clear. That byte is unreflected (no name in GObjects); the instance constructor sets it to 1, and no writer that clears it was found. Then scaled twice, below | stats `+0x30` / `+0x44`, `+0x180`, `+0x184`; instance `+0x290`, `+0x101` (constructor `0x6B8E100`) |
 | Speed scale | `× clamp(impact speed / reference speed, 0, 1)`. Reference is the weapon's `TypicalSpeed` when `bOverrideTypicalSpeed` is set and that value is > 0, else the projectile's `TypicalSpeed` | `0x6C255B0`; weapon `+0xA0`/`+0xA4`, stats `+0x1FC` |
 | Distance scale | `× DistanceDamageFalloffCurve(distance)` when the weapon's `bUseDistanceDamageFalloffCurve` is set; distance is shot origin to hit point in **centimetres** | `0x6B70D80` (direct hit, called at `0x6B7330C`); `0x6B72D53`–`0x6B72DCB` per custom hit; weapon `+0xA8`/`+0xB0`; hit `ImpactPoint` `+0x28`, `ProjectileOrigin` `+0x110` |
-| Armor in target context | The target's hook (`IWDDamageable` sub-vtable `+0x20`) runs before `ModifyDamage`. For characters it calls `Auth_GetArmorDamageEvent`, which copies the target's entity data and then **removes every armor tag except the first one (in context order) whose piece's `CoveredHitLocations` contains the hit-location tag** (derived from the hit bone and written to `HitLocationTag`, event `+0x1A0`). With no resolved hit location, all armor tags are removed. Only the covering piece reaches §7.3 and §7.5. When the projectile has `bShouldPenetrate` and the covering piece passes the hook's checks, it then appends `Meta.Damage.Armor.Penetrate` (penetration test passes) or `Meta.Damage.Armor.Throughput` to the source context; the armor rule table (`DT_GlobalDamage_ArmorData`) keys on `Armor.Penetrate` | `0x6B52A40`; alias labels `AWDMoverCharacter` slot 390, `AWDTargetDummy` slot 242 |
+| Armor in target context | The target's hook (`IWDDamageable` sub-vtable `+0x20`) runs before `ModifyDamage`. For characters it calls `Auth_GetArmorDamageEvent`, which copies the target's entity data and then **removes every armor tag except the first one (in context order) whose piece's `CoveredHitLocations` contains the hit-location tag** (looked up from the hit's `BoneName` by exact match in `DA_GlobalDamage_HitLocations_Player`, with no remap, and written to `HitLocationTag`, event `+0x1A0`; `0x6F01BB0`). With no resolved hit location, all armor tags are removed. Only the covering piece reaches §7.3 and §7.5. When the projectile has `bShouldPenetrate` and the covering piece passes the hook's checks, it then appends `Meta.Damage.Armor.Penetrate` (penetration test passes) or `Meta.Damage.Armor.Throughput` to the source context; the armor rule table (`DT_GlobalDamage_ArmorData`) keys on `Armor.Penetrate` | `0x6B52A40`; alias labels `AWDMoverCharacter` slot 390, `AWDTargetDummy` slot 242 |
 | Source tag | stats `DamageEntityData.Tag`, e.g. `Meta.Damage.Bullet.545mm` | stats `+0x00` |
 | Source context, in order | stats `DamageEntityData.Context` (e.g. `Meta.Damage.Arms.Medium`); the firing weapon's damage tag (e.g. `Meta.Damage.Weapon.AR.A91`); `Kinetic.Impact.Ricochet` / `.Penetration` when bit (HitCount − 2) of `RicochetBitMap` / `PenetrationBitMap` is set; the asset's `ProjectileId` (e.g. `Item.Caliber.545mm`); then, only if the hit is not `bExploding`, `Meta.Damage.DamageType.Projectile` and (with an arming delay, armed or not) `Kinetic.Impact.ExplosiveBlunt`. An exploding hit skips both scales, the hook and `ModifyDamage` here. The source `CauseEntityTag` (event `+0x88`) is overwritten from the slot record (`+0x1C`) | `0x6B725B0`; tag names from the static initializers |
 | Custom hits | If the hit carries `CustomHitResults`, each custom hit gets its own copy of the event (distance scale, hook, `ModifyDamage`). The one with the highest result above 0 is kept and the direct-hit `ModifyDamage` is skipped. The direct path runs only when there are no custom hits or none scores above 0 | `0x6B725B0` |
@@ -723,8 +747,14 @@ from the spawn parameters. On the fire path the weapon owner
 (`IWDWeaponOwner` `+0x90`, `0x6C98290`) builds
 `Meta.Damage.AmmoModifier.<type>` from the loaded round's item tag.
 Predicted simulations use `FWDProjectileSimulationSetup.AmmoModifierTag`
-(`0x6F2C450`). Which item-tag parts form `<type>` is only partly decoded
-(`0x6C98290`).
+(`0x6F2C450`). `<type>` is the item tag's last name, or for a five-level
+tag (`Id.Item.<caliber>.<type>.Tracer`) its last two names
+(`0x6C98496`). It resolves only through the projectile subsystem's fixed
+map (`0x6F35300`, filled in `0x6F2AAA0`): `Tracer`, `HollowPoint`,
+`HollowPoint.Tracer`, `ArmorPiercing`, `ArmorPiercing.Tracer`; anything
+else gives no tag. So plain rounds carry none, as FMJ should, and the
+.338 Norma AP rounds (tagged `ArmourPiercing`) also carry none, so they
+behave as FMJ.
 
 **Derived**, `_tools/damage_tables.py --ammo M4`: M4 (5.56 mm,
 `Arms.Medium`, base 28), point blank, armor piece covering the hit:
@@ -854,7 +884,7 @@ is a percentage change, so -25 gives ×0.75 and -90 gives ×0.10.
 | O-5 | Four Blueprint bodies | **Closed** (§7.1–7.4), from the cooked bytecode |
 | O-6 | End-to-end number for one concrete hit | **Closed for bullets** (§7.6–7.9): every ammo type, armored or not, by distance. Only the speed scale after drag is not modelled |
 | O-7 | The health write | **Closed** (§10). Network authority stays open: role checks are visible in code, but server behaviour cannot be observed statically. Security-relevant findings go through [`SECURITY.md`](SECURITY.md), not this document |
-| O-8 | Which branch of `0x6B92900` runs for a back-blast: `0x6F042A0` (traced hits) or `0x6F06EB0` (a synthetic hit, [VehicleDamagePipeline §3.2](Wardogs_VehicleDamagePipeline_v1.md#32-from-a-hit-triangle-to-a-section)) | Open: the if/else condition in `0x6B92900` is not traced |
+| O-8 | Which branch of `0x6B92900` runs for a back-blast: `0x6F042A0` (traced hits) or `0x6F06EB0` (synthetic hits, [VehicleDamagePipeline §3.2](Wardogs_VehicleDamagePipeline_v1.md#32-from-a-hit-triangle-to-a-section)) | **Closed** (§1.1): the shooter's seat (`0x6E6EBA0`). On foot `0x6F042A0` traces the cone; seated in a vehicle `0x6F06EB0` hits that vehicle's occupants, and the vehicle takes the self-damage map directly |
 
 ## 10. From damage to health (characters)
 
@@ -995,3 +1025,4 @@ The restored image carries the UTF-16LE build marker
 | 2026-10-17 | Round-4 verifier pass: character health's hooks clamp through vitality slot 161 (§10); all 17 `ModifyDamage` call sites named (§1.1). |
 | 2026-10-17 | Round-5 verifier pass: the projectile's ammo tag (`+0xF0`) is set by `0x6F30E50` from the spawn parameters, built on the fire path by `0x6C98290` (§7.9); the `<type>` rule is only partly decoded. The two back-blast paths are branches of one if/else whose condition is open (O-8). |
 | 2026-10-18 | `data/` re-exported with the v2 usmap (names only; values unchanged): §7.3 `ArmsClassOverrides` key is `_aaabcfjheicbfejiaihii`; §7.4 `DamageSources` and `VehicleSeats` are named in the export. |
+| 2026-10-18 | Round-6 verifier pass: the back-blast branch is the shooter's seat, on foot `0x6F042A0`, seated `0x6F06EB0` on the vehicle's occupants (§1.1; O-8 closed); radial damage on characters: per-component filter, one evaluation per kept hit, no `ExplosiveBlunt` on blast damage (§1.1); the `<type>` rule decoded, .338 Norma AP rounds carry no tag (§7.9); the armor hook's hit location is an exact bone lookup with no remap (§7.6). |
