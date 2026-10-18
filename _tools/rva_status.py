@@ -4,8 +4,8 @@ Extracts every 0x token from the doc, drops values below 0x100000 (offsets, size
 enum values) and the flag 0x40000000, and queries the decompilation corpus read-only for
 each remaining RVA. Used for the RVA status tables on the docs/evidence/ pages.
 
-    python -I _tools/rva_status.py Wardogs_VehicleDamagePipeline_v1.md
-    python -I _tools/rva_status.py Wardogs_GameplayEffectsPipeline_v1.md --rev 479c6c1 --exe
+    python -I _tools/rva_status.py pipelines/Wardogs_VehicleDamagePipeline_v1.md
+    python -I _tools/rva_status.py pipelines/Wardogs_GameplayEffectsPipeline_v1.md --rev 479c6c1 --exe
 
 One tab-separated line per RVA:
 

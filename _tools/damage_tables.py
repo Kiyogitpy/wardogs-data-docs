@@ -1,6 +1,6 @@
 """Damage tables for the pipeline docs, rebuilt from data/ with the pipeline's own rules.
 
-Rebuilds the damage event a bullet hit produces (Wardogs_DamagePipeline_v2.md §7.7) and
+Rebuilds the damage event a bullet hit produces (pipelines/Wardogs_DamagePipeline_v2.md §7.7) and
 runs it through the infantry rule row the way the native collector and evaluator do
 (§4-§7): requirement matching on explicit-or-parent tags, every non-custom entry as
 1 + Amount/100, and each custom operation's factor. Everything multiplies, so order
@@ -789,7 +789,7 @@ def hitbox_json(proj):
 
 
 BLOCK = re.compile(r"<!-- damage_tables (.+?) -->\r?\n.*?<!-- /damage_tables -->", re.S)
-DOCS = ["Wardogs_DamagePipeline_v2.md", "Wardogs_VehicleDamagePipeline_v1.md", "vehicle-viewer.md"]
+DOCS = ["pipelines/Wardogs_DamagePipeline_v2.md", "pipelines/Wardogs_VehicleDamagePipeline_v1.md", "pipelines/vehicle-viewer.md"]
 
 
 def write_docs():

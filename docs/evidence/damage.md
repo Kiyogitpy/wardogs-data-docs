@@ -10,7 +10,7 @@ input-validation pass (`DAMAGE_IDA_RESULTS.md`) and the restored-executable
 trace (`DAMAGE_IDA_RESTORED.md`). It includes the restored-trace updates
 from commit `89cbd41`, which was never merged into `main`.
 
-Behaviour is described in [DamagePipeline](../../Wardogs_DamagePipeline_v2.md).
+Behaviour is described in [DamagePipeline](../../pipelines/Wardogs_DamagePipeline_v2.md).
 This page gives the evidence behind it and does not restate the rules.
 Nothing here is a runtime observation. No game was executed and no
 process or service was contacted. No claim is made about server
@@ -25,7 +25,7 @@ says so.
 ## 1. Binary identity and hashes
 
 Hashes are copied from the earlier notes, from
-[DamagePipeline §11](../../Wardogs_DamagePipeline_v2.md#binary-identity)
+[DamagePipeline §11](../../pipelines/Wardogs_DamagePipeline_v2.md#binary-identity)
 and from the corpus's own identity files. Nothing was recomputed for this
 page.
 
@@ -127,10 +127,10 @@ data. The audit established the data shape only:
 
 | Question | Asked | Where it was answered |
 |---|---|---|
-| B-1 | Which code selects and orders matching entries | Pass 2 and the corpus cross-check; [DamagePipeline §4–5](../../Wardogs_DamagePipeline_v2.md#4-entry-selection) |
-| B-2 | How operations and custom returns update the amount | Pass 2; [DamagePipeline §6](../../Wardogs_DamagePipeline_v2.md#6-arithmetic) |
-| B-3 | Bone row selection and fallback in `B_BoneDamageModifiers_C` | Blueprint bytecode, not native code; [DamagePipeline §7.1](../../Wardogs_DamagePipeline_v2.md#71-b_bonedamagemodifiers_c-entries-5-7-10) |
-| B-4 | Bindings of the other custom operations | Bytecode for the three Blueprints; native code for `PlayerArmorDurability` ([DamagePipeline §7.2–7.5](../../Wardogs_DamagePipeline_v2.md#7-custom-operations)) |
+| B-1 | Which code selects and orders matching entries | Pass 2 and the corpus cross-check; [DamagePipeline §4–5](../../pipelines/Wardogs_DamagePipeline_v2.md#4-entry-selection) |
+| B-2 | How operations and custom returns update the amount | Pass 2; [DamagePipeline §6](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic) |
+| B-3 | Bone row selection and fallback in `B_BoneDamageModifiers_C` | Blueprint bytecode, not native code; [DamagePipeline §7.1](../../pipelines/Wardogs_DamagePipeline_v2.md#71-b_bonedamagemodifiers_c-entries-5-7-10) |
+| B-4 | Bindings of the other custom operations | Bytecode for the three Blueprints; native code for `PlayerArmorDurability` ([DamagePipeline §7.2–7.5](../../pipelines/Wardogs_DamagePipeline_v2.md#7-custom-operations)) |
 
 The brief also fixed some reading rules that still apply. The generated
 `ModifyDamage` wrapper ([`WDGame_functions.cpp`](../../sdk/raw/WDGame_functions.cpp#L48948))
@@ -227,7 +227,7 @@ Pass 2 used IDA 9.3, embedded IDAPython 3.13.7 and Hex-Rays
   registration supplies them.
 
 Pass 2 established the native call path
-([DamagePipeline §1](../../Wardogs_DamagePipeline_v2.md#1-call-path)), entry
+([DamagePipeline §1](../../pipelines/Wardogs_DamagePipeline_v2.md#1-call-path)), entry
 selection (DamagePipeline §4), ordering within a target-tag group (§5)
 and the evaluator arithmetic (§6). Every address it relied on is in the §3 table.
 The subsystem's bool parameter returns the event's amount unchanged when
@@ -267,7 +267,7 @@ Duplicate-row effects remain untraced.
 #### B-2: evaluator arithmetic
 
 Pass 2 established the operation table in
-[DamagePipeline §6](../../Wardogs_DamagePipeline_v2.md#6-arithmetic).
+[DamagePipeline §6](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
 Custom entries ignore their serialized enum and literal amount. The
 original amount `S` stays in the struct passed to the operation, and the
 running amount `C` is passed as a separate float. A single clamp at
@@ -314,7 +314,7 @@ and sorting, or the B-2 arithmetic. New findings from the cross-check:
 - **Blueprint overrides.** The four `B_*_C` overrides are Blueprint
   script, not native code. Their bodies were later read from cooked
   bytecode
-  ([DamagePipeline §7.1–7.4](../../Wardogs_DamagePipeline_v2.md#7-custom-operations)).
+  ([DamagePipeline §7.1–7.4](../../pipelines/Wardogs_DamagePipeline_v2.md#7-custom-operations)).
 - **Armor durability.** The override at `0x6BB7E10` returns
   `value × -0.01 × C`. Its virtual `+0x738` is `AActor` slot 231
   (`0x3A93090`), `FindComponentByClass`, called with
@@ -335,7 +335,7 @@ The items the cross-check first left unverified were closed afterwards
 were confirmed against the runtime reflection data in the GObjects
 property dump; engine details were confirmed from code. Values and
 sources are in the
-[DamagePipeline cross-check table](../../Wardogs_DamagePipeline_v2.md#offsets-and-engine-details-cross-checked).
+[DamagePipeline cross-check table](../../pipelines/Wardogs_DamagePipeline_v2.md#offsets-and-engine-details-cross-checked).
 One item remains open, and no document depends on it: the delegate
 broadcast internals (`0x18FCDB0`), because the container layout is opaque.
 
@@ -375,7 +375,7 @@ already gives the correct count.
 ### How the table was built
 
 1. Every `0x` token in
-   [`Wardogs_DamagePipeline_v2.md`](../../Wardogs_DamagePipeline_v2.md) at
+   [`Wardogs_DamagePipeline_v2.md`](../../pipelines/Wardogs_DamagePipeline_v2.md) at
    `ac9b4b16` (branch `r6/veh`) was extracted with a regular expression.
    Values below `0x100000` are offsets, sizes or enum values and were
    dropped, as was the flag `0x40000000`. That left **103 RVAs**. The
@@ -469,7 +469,7 @@ offsets that sit next to these RVAs. Examples are the event's `Amount`
 (`+0x0`) and `ModificationResults` (`+0x190`), read at `0x6F02EC0` and
 `0x6BB6FB0`, and the game-settings fallback `+0x378`/`+0x380`, read at
 `0x6BB6A60`. They are listed with their sources in
-[DamagePipeline §11](../../Wardogs_DamagePipeline_v2.md#offsets-and-engine-details-cross-checked).
+[DamagePipeline §11](../../pipelines/Wardogs_DamagePipeline_v2.md#offsets-and-engine-details-cross-checked).
 
 ### Table
 
@@ -607,7 +607,7 @@ are not functions.
   It is now `[exe]`.
 - **`0x53202B0`.** DamagePipeline cites it only in §11, as a function
   without a corpus body; its behaviour belongs to the
-  [vehicle pipeline](../../Wardogs_VehicleDamagePipeline_v1.md). Its only
+  [vehicle pipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md). Its only
   indexed caller is `0x6B7FE50` (site `0x6B7FF49`). The verifier found
   that `0x53202B0` itself calls `0x5320400` (at `0x53203D0`). The exec
   thunk `0x5341430` repeats the section pick inline and calls `0x5320400`
@@ -674,9 +674,9 @@ directories.
 - Duplicate-row effects in the collector are not traced.
 - The gameplay meaning of `ModifyDamage`'s bool, and which damage system
   an actual event selects, are open
-  ([DamagePipeline §1](../../Wardogs_DamagePipeline_v2.md#1-call-path)).
+  ([DamagePipeline §1](../../pipelines/Wardogs_DamagePipeline_v2.md#1-call-path)).
 - Network authority is outside static analysis
-  ([DamagePipeline §9](../../Wardogs_DamagePipeline_v2.md#9-open-questions-and-what-closes-them)).
+  ([DamagePipeline §9](../../pipelines/Wardogs_DamagePipeline_v2.md#9-open-questions-and-what-closes-them)).
 
 [infantry]: https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_InfantryData.json
 [categories]: https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DA_GlobalDamage_Categories.json

@@ -3,7 +3,7 @@
 > **Project:** [`Kiyogitpy/wardogs-data-docs`](https://github.com/Kiyogitpy/wardogs-data-docs) · [Live site](https://kiyogitpy.github.io/wardogs-data-docs/)
 
 This page records how strong the evidence is for each native address that
-[Weapons](../../Wardogs_Weapons_v2.md) cites. All of them are in its
+[Weapons](../../content/Wardogs_Weapons_v2.md) cites. All of them are in its
 recoil (§5a) and aim sway (§5b) sections. It follows the method of the
 [damage evidence page](damage.md#3-rva-status-table) and does not restate
 the recoil or sway rules. Nothing here is a runtime observation: no game
@@ -24,7 +24,7 @@ what counts as evidence are those of
 The method is the one on the [vehicle evidence page](vehicles.md#1-method):
 
 1. Every `0x` token in
-   [`Wardogs_Weapons_v2.md`](../../Wardogs_Weapons_v2.md) at
+   [`Wardogs_Weapons_v2.md`](../../content/Wardogs_Weapons_v2.md) at
    `770c47d4` (branch `r6/wpn`, the round-6 corrections) was extracted,
    and values below `0x100000` (component offsets such as `+0xFF0` and
    `+0x408`) were dropped. That left **42 RVAs**, in §2a, §5a and §5b.
@@ -273,7 +273,7 @@ not cited by the doc either.
   corrections at `770c47d4`. A status table settles where the code is,
   not what it does.
 - Still open in
-  [Weapons §5b](../../Wardogs_Weapons_v2.md#5b-aim-sway-and-focus-energy):
+  [Weapons §5b](../../content/Wardogs_Weapons_v2.md#5b-aim-sway-and-focus-energy):
   the sight-multiplier data path and the reader of `+0x3D0`. Blueprint
   implementers of `IWDWeaponOwner` were not searched, and the caller
   around `0x8633CD4` is not identified.

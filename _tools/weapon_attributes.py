@@ -1,6 +1,6 @@
 """Final Attribute.Gameplay.Weapon.* values for a weapon and an attachment set.
 
-Applies the rules of Wardogs_GameplayEffectsPipeline_v1.md §7.1 (what applies to a
+Applies the rules of pipelines/Wardogs_GameplayEffectsPipeline_v1.md §7.1 (what applies to a
 weapon) with the stack scaling of §4.2 and the current-value formula of §4.4, to the
 item data in data/ and the effect modifiers in assets/data/ge-values.json.
 
@@ -36,7 +36,7 @@ from ge_values import OPS, SRC, num, short  # noqa: E402
 
 BLOB = "https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PAGE = os.path.join(ROOT, "Wardogs_WeaponAttributes_v1.md")
+PAGE = os.path.join(ROOT, "content/Wardogs_WeaponAttributes_v1.md")
 BLOCK = re.compile(r"<!-- BEGIN weapon_attributes -->\r?\n.*?<!-- END weapon_attributes -->", re.S)
 EXPORT = re.compile(r"^--- export:.*---\s*$", re.M)
 SKIP = re.compile(r"BarrelTest")  # vehicle barrel test items, as in recoil_table.py
@@ -765,9 +765,9 @@ DOCS = {
     "rules": "Wardogs_WeaponAttributes_v1.md#rules",
     "choices": "Wardogs_WeaponAttributes_v1.md#choices-this-page-makes",
     "tool": "Wardogs_WeaponAttributes_v1.md#using-the-tool",
-    "applies": "Wardogs_GameplayEffectsPipeline_v1.md#71-what-applies-to-a-weapon",
-    "modifiers": "Wardogs_GameplayEffectsPipeline_v1.md#42-modifiers",
-    "current_value": "Wardogs_GameplayEffectsPipeline_v1.md#44-current-value",
+    "applies": "../pipelines/Wardogs_GameplayEffectsPipeline_v1.md#71-what-applies-to-a-weapon",
+    "modifiers": "../pipelines/Wardogs_GameplayEffectsPipeline_v1.md#42-modifiers",
+    "current_value": "../pipelines/Wardogs_GameplayEffectsPipeline_v1.md#44-current-value",
 }
 
 

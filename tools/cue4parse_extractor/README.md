@@ -4,9 +4,9 @@ Offline static export of cooked Wardogs assets with
 [CUE4Parse](https://github.com/FabianFG/CUE4Parse). It reads the game's own
 `.pak`/`.utoc` files; it never runs the game or contacts a service. This is
 the tool behind [`assets/data/ge-values.json`](../../assets/data/ge-values.json)
-(the [Gameplay Effect Values](../../Wardogs_GameplayEffect_Values_v1.md) page)
+(the [Gameplay Effect Values](../../pipelines/Wardogs_GameplayEffect_Values_v1.md) page)
 and the Blueprint bytecode in
-[DamagePipeline §7](../../Wardogs_DamagePipeline_v2.md#7-custom-operations).
+[DamagePipeline §7](../../pipelines/Wardogs_DamagePipeline_v2.md#7-custom-operations).
 
 ## You need
 
@@ -93,7 +93,7 @@ written to `_usmap_patches.txt`.
 ## Collision meshes (`mesh`)
 
 Exports the low-poly collision meshes that carry a vehicle's hitbox slots
-(`CC_FuelTank`, `CC_Main`, …; [VehicleDamagePipeline §3.1](../../Wardogs_VehicleDamagePipeline_v1.md#31-hitboxes)),
+(`CC_FuelTank`, `CC_Main`, …; [VehicleDamagePipeline §3.1](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md#31-hitboxes)),
 never a render mesh:
 
 - a static mesh with `ComplexCollisionMesh` set: that collision mesh is written,

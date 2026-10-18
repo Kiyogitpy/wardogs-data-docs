@@ -58,10 +58,10 @@ suffix wins over the default.
 **Curve time-axis exception:** some curves use the `Time` axis as a
 **distance** (not time). Known cases:
 
-- [`Wardogs_Plugin_BHAimAssist_v2.md`](../Wardogs_Plugin_BHAimAssist_v2.md) — aim-assist curves use `Time` as distance in cm (key values 150 to 30000 → 1.5m to 300m range)
+- [`Wardogs_Plugin_BHAimAssist_v2.md`](../plugins/Wardogs_Plugin_BHAimAssist_v2.md) — aim-assist curves use `Time` as distance in cm (key values 150 to 30000 → 1.5m to 300m range)
 - Weapon `DistanceDamageFalloffCurve` — `Time` is distance in **cm**. The native
   projectile path evaluates it with the shot-origin-to-hit distance in engine
-  units ([DamagePipeline §7.6](../Wardogs_DamagePipeline_v2.md#76-the-bullet-event)),
+  units ([DamagePipeline §7.6](../pipelines/Wardogs_DamagePipeline_v2.md#76-the-bullet-event)),
   so a key at 50000 is 500 m.
 - `CF_*_ADS_Curve` — `Time` is a distance; its unit has not been traced in code
 
@@ -91,7 +91,7 @@ Loadout limits (per-slot and total) use the same unit. Treat it as
 
 When the data doc shows a sun `Intensity` field without unit, assume
 **lux** (DirectionalLight default). Reference:
-[Wardogs_Environment_v2.md](../Wardogs_Environment_v2.md) sky system.
+[Wardogs_Environment_v2.md](../content/Wardogs_Environment_v2.md) sky system.
 
 ## 7. Damage
 
@@ -102,8 +102,8 @@ When the data doc shows a sun `Intensity` field without unit, assume
 | `DamageIncrease` fields (environmental hazards) | **multiplicative scalar** (unitless) |
 
 Full damage pipeline documented in
-[`Wardogs_DamagePipeline_v2.md`](../Wardogs_DamagePipeline_v2.md) and
-[`Wardogs_VehicleDamagePipeline_v1.md`](../Wardogs_VehicleDamagePipeline_v1.md).
+[`Wardogs_DamagePipeline_v2.md`](../pipelines/Wardogs_DamagePipeline_v2.md) and
+[`Wardogs_VehicleDamagePipeline_v1.md`](../pipelines/Wardogs_VehicleDamagePipeline_v1.md).
 
 ## 8. Physics / simulation
 

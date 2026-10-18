@@ -84,7 +84,7 @@ def main():
         raise SystemExit(f"no {DATA}: copy the dump's Wardogs/ and Engine/ folders there first")
     names, folders = index(DATA)
     total = 0
-    for doc in sorted(glob.glob(os.path.join(ROOT, "Wardogs_*.md"))):
+    for doc in sorted(g for d in ("game-features", "content", "pipelines", "plugins") for g in glob.glob(os.path.join(ROOT, d, "Wardogs_*.md"))):
         with open(doc, encoding="utf-8", newline="") as fh:
             text = fh.read()
         count = 0

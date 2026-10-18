@@ -42,8 +42,8 @@ RULE_FILE = DS + "DamageDataTables/DT_GlobalDamage_InfantryData.json"
 ARMOR_GLOB = "Wardogs/Plugins/GameFeatures/Items/Armor/Content/Data/ID_*.json"
 JSON_OUT = os.path.join(ROOT, "assets", "data", "infantry-hitboxes.json")
 MODEL = "assets/models/infantry/player.glb"
-PAGE = "infantry-viewer.md"
-DP, GM, VDP = "Wardogs_DamagePipeline_v2.md", "Wardogs_GameMechanics_v2.md", "Wardogs_VehicleDamagePipeline_v1.md"
+PAGE = "pipelines/infantry-viewer.md"
+DP, GM, VDP = "pipelines/Wardogs_DamagePipeline_v2.md", "content/Wardogs_GameMechanics_v2.md", "pipelines/Wardogs_VehicleDamagePipeline_v1.md"
 
 HIT = dt.HIT
 PROJECTILE = "Meta.Damage.DamageType.Projectile"
@@ -90,7 +90,8 @@ def section(page, number):
 
 
 def anchor(page, number):
-    return f"{page[:-3]}.html#{slug(section(page, number)[0])}"
+    rel = os.path.relpath(page, os.path.dirname(PAGE)).replace(os.sep, "/")  # page-relative, like the viewer page
+    return f"{rel[:-3]}.html#{slug(section(page, number)[0])}"
 
 
 DOCS = {"callers": (DP, "1.1"), "custom_entries": (DP, "3.1"), "selection": (DP, "4"), "arithmetic": (DP, "6"),

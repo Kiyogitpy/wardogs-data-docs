@@ -6,7 +6,7 @@ others <id>--<first variant in the file, lowercased, non-alphanumerics as '-'>.g
 its variants in asset.extras.variants (the VV_ names without the prefix) and, when MESH_NOTES has one
 for a mesh it places, a note for the viewer in asset.extras.notes.
 
-A variant is assembled the way its modules place their meshes (Wardogs_VehicleDamagePipeline_v1.md §3.1).
+A variant is assembled the way its modules place their meshes (pipelines/Wardogs_VehicleDamagePipeline_v1.md §3.1).
 damage_tables.assemble() gives the variant's platform and parts. Every enabled
 MVF_StaticMesh fragment, and every MVF_DestructibleMeshes entry with bRegisterComplexSurface, places a
 render mesh at AttachQuery.SocketName on the component whose tag is AttachQuery.SourceId (usually the
