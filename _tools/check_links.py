@@ -33,7 +33,9 @@ def headings(path):
 
 
 def main():
-    pages = [p for p in glob.glob(os.path.join(ROOT, "*.md")) + glob.glob(os.path.join(ROOT, "docs", "**", "*.md"), recursive=True)]
+    pages = glob.glob(os.path.join(ROOT, "*.md"))
+    for d in ("game-features", "content", "pipelines", "plugins", "docs"):
+        pages += glob.glob(os.path.join(ROOT, d, "**", "*.md"), recursive=True)
     cache, broken = {}, []
     for page in sorted(pages):
         with open(page, encoding="utf-8") as f:

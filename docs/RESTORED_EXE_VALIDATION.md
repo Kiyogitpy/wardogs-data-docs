@@ -197,7 +197,7 @@ with this specific exe.
 
 - [`mappings/README.md`](../mappings/README.md) — idmap format spec
 - [`docs/evidence/damage.md`](evidence/damage.md) — the IDA trace brief, the failed first pass and the restored-exe trace, merged
-- [`Wardogs_DamagePipeline_v2.md`](../Wardogs_DamagePipeline_v2.md) — being audited by triage AI
-- [`Wardogs_VehicleDamagePipeline_v1.md`](../Wardogs_VehicleDamagePipeline_v1.md)
-- [`Wardogs_GameplayEffectsPipeline_v1.md`](../Wardogs_GameplayEffectsPipeline_v1.md)
-- [`Wardogs_CombatDataFlow_v1.md`](../Wardogs_CombatDataFlow_v1.md)
+- [`Wardogs_DamagePipeline_v2.md`](../pipelines/Wardogs_DamagePipeline_v2.md) — being audited by triage AI
+- [`Wardogs_VehicleDamagePipeline_v1.md`](../pipelines/Wardogs_VehicleDamagePipeline_v1.md)
+- [`Wardogs_GameplayEffectsPipeline_v1.md`](../pipelines/Wardogs_GameplayEffectsPipeline_v1.md)
+- [`Wardogs_CombatDataFlow_v1.md`](../pipelines/Wardogs_CombatDataFlow_v1.md)

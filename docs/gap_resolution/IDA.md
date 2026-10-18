@@ -22,7 +22,7 @@ Resolution workflow per gap:
 ### [Wardogs_AllVehicles_Stats_Damage_v1.md](Wardogs_AllVehicles_Stats_Damage_v1.html)
 
 - **6. Still not pulled / limitations**  →  _**Priority order:** with every `PriorityIndex` at -1, the order applied when several entries match is not shown._
-- **6. Still not pulled / limitations**  →  _**Tag definitions:** the tag names and their hierarchy are in the config files; see [Wardogs_GameplayTags_v1.md](../../Wardogs_GameplayTags_v1.md). How a requirement tag matches its child tags is engine logic and is not in those files._
+- **6. Still not pulled / limitations**  →  _**Tag definitions:** the tag names and their hierarchy are in the config files; see [Wardogs_GameplayTags_v1.md](../../content/Wardogs_GameplayTags_v1.md). How a requirement tag matches its child tags is engine logic and is not in those files._
 
 ### [Wardogs_Demolition_v2.md](Wardogs_Demolition_v2.html)
 

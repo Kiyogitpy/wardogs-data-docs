@@ -12,7 +12,7 @@ including the updates from commit `89cbd41`:
   [§2.3](evidence/damage.md#23-restored-executable-trace).
 - Every cited RVA and its verification status:
   [§3](evidence/damage.md#3-rva-status-table).
-- Behaviour: [DamagePipeline](../Wardogs_DamagePipeline_v2.md).
+- Behaviour: [DamagePipeline](../pipelines/Wardogs_DamagePipeline_v2.md).
 
 ## B-2: evaluator arithmetic
 

@@ -47,9 +47,9 @@ proposed resolution path, status.
 | 20 | `Wardogs_Plugin_BHFramework_v2.md` | 8. Still not pulled / limitations | **Dynamic defaults.** How the dynamic default is picked for display, resolution, device and upscaling is in the runtime  | TBD | TBD | OPEN |
 | 21 | `Wardogs_UI_v2.md` | 16. Still not pulled / limitations | **Field meanings not confirmed:** `ZOrder` direction (higher drawn on top is inferred from values), `RemovalTime` and `D | TBD | TBD | OPEN |
 | 22 | `Wardogs_Vehicles_v2.md` | 13. Still Not Pulled / Limitations | **Default-valued fields are omitted** from exports. Where a property is missing (for example `Basic`-class fields), the  | TBD | TBD | OPEN |
-| 23 | `Wardogs_Weapons_v2.md` | 5. How Values Combine | **Aim sway (likely):** the class speed curve, the horizontal and vertical movement curves, and the `AimSwayData` multipl | Native: behavior component `0x6B884D0` (camera-mode sway, focus energy), pattern wrap `0x6B87260`; [Weapons §5b](../../Wardogs_Weapons_v2.md#5b-aim-sway-and-focus-energy). Weapon-model sway and the stabilization timer not traced | Doc corrected (2026-10-17) | STATIC_RESOLVED |
-| 24 | `Wardogs_Weapons_v2.md` | 5. How Values Combine | **Recoil (likely):** `RecoilPattern` gives per-shot X/Y offsets, `RandomDeviationDegree` adds random deviation, and the  | Native: fire routine `0x6B93610` → kick `0x6B95C50` → behavior component `0x6B85D30` → playback `0x6B89BB0`; [Weapons §5a](../../Wardogs_Weapons_v2.md#5a-recoil) | Doc corrected (2026-10-17) | STATIC_RESOLVED |
-| 25 | `Wardogs_Weapons_v2.md` | 5. How Values Combine | **Distance falloff (SKS):** `DistanceDamageFalloffCurve` is a multiplier indexed by distance. The falloff times are pres | Native: projectile path `0x6B725B0` evaluates the curve with distance in cm; [DamagePipeline §7.6](../../Wardogs_DamagePipeline_v2.md#76-the-bullet-event) | Doc corrected (2026-10-17) | STATIC_RESOLVED |
+| 23 | `Wardogs_Weapons_v2.md` | 5. How Values Combine | **Aim sway (likely):** the class speed curve, the horizontal and vertical movement curves, and the `AimSwayData` multipl | Native: behavior component `0x6B884D0` (camera-mode sway, focus energy), pattern wrap `0x6B87260`; [Weapons §5b](../../content/Wardogs_Weapons_v2.md#5b-aim-sway-and-focus-energy). Weapon-model sway and the stabilization timer not traced | Doc corrected (2026-10-17) | STATIC_RESOLVED |
+| 24 | `Wardogs_Weapons_v2.md` | 5. How Values Combine | **Recoil (likely):** `RecoilPattern` gives per-shot X/Y offsets, `RandomDeviationDegree` adds random deviation, and the  | Native: fire routine `0x6B93610` → kick `0x6B95C50` → behavior component `0x6B85D30` → playback `0x6B89BB0`; [Weapons §5a](../../content/Wardogs_Weapons_v2.md#5a-recoil) | Doc corrected (2026-10-17) | STATIC_RESOLVED |
+| 25 | `Wardogs_Weapons_v2.md` | 5. How Values Combine | **Distance falloff (SKS):** `DistanceDamageFalloffCurve` is a multiplier indexed by distance. The falloff times are pres | Native: projectile path `0x6B725B0` evaluates the curve with distance in cm; [DamagePipeline §7.6](../../pipelines/Wardogs_DamagePipeline_v2.md#76-the-bullet-event) | Doc corrected (2026-10-17) | STATIC_RESOLVED |
 
 
 ## Notes for the triage pass
@@ -82,7 +82,7 @@ for scope posture.
 
 **Avoid duplicating work the primary RE pipeline is doing.** As of this
 writing the primary pipeline has already produced:
-- [`../../Wardogs_DamagePipeline_v2.md`](../../Wardogs_DamagePipeline_v2.md)
+- [`../../Wardogs_DamagePipeline_v2.md`](../../pipelines/Wardogs_DamagePipeline_v2.md)
   — damage pipeline, which pre-answers any RUNTIME gap tagged to damage
   modifiers.
 - SDK + mappings committed at commit `c65e83d`.

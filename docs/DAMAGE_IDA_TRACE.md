@@ -11,4 +11,4 @@ It has been merged into [the damage evidence page](evidence/damage.md):
   [§2.1](evidence/damage.md#21-questions-b-1-to-b-4).
 - Exported input hashes:
   [§1](evidence/damage.md#exported-data-inputs).
-- Behaviour: [DamagePipeline](../Wardogs_DamagePipeline_v2.md).
+- Behaviour: [DamagePipeline](../pipelines/Wardogs_DamagePipeline_v2.md).

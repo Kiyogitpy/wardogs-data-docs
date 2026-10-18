@@ -3,7 +3,7 @@
 > **Project:** [`Kiyogitpy/wardogs-data-docs`](https://github.com/Kiyogitpy/wardogs-data-docs) · [Live site](https://kiyogitpy.github.io/wardogs-data-docs/)
 
 This page records how strong the evidence is for each native address that
-[VehicleDamagePipeline](../../Wardogs_VehicleDamagePipeline_v1.md) cites.
+[VehicleDamagePipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md) cites.
 It follows the method of the
 [damage evidence page](damage.md#3-rva-status-table) and does not restate
 the vehicle rules. Nothing here is a runtime observation: no game was run
@@ -22,7 +22,7 @@ what counts as evidence are those of
 ## 1. Method
 
 1. Every `0x` token in
-   [`Wardogs_VehicleDamagePipeline_v1.md`](../../Wardogs_VehicleDamagePipeline_v1.md)
+   [`Wardogs_VehicleDamagePipeline_v1.md`](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md)
    at `ac9b4b16` (branch `r6/veh`) was extracted. Values below `0x100000`
    are struct offsets, sizes or enum values and were dropped. That left
    **112 RVAs**. The page was first built at `479c6c1` (42 RVAs). Round 4's
@@ -340,5 +340,5 @@ Sections are VehicleDamagePipeline sections; `L` numbers are its lines at
 - V-3, V-8 and V-10 are closed in round 6, and V-7 is closed for
   physics contacts. V-6, V-7 (sweep-sourced hits, `0x3A902D0`) and V-9
   stay open in
-  [VehicleDamagePipeline §7](../../Wardogs_VehicleDamagePipeline_v1.md#7-open-questions).
+  [VehicleDamagePipeline §7](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md#7-open-questions).
   A status table settles where the code is, not what it does.

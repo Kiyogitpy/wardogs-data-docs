@@ -3,7 +3,7 @@
 > **Project:** [`Kiyogitpy/wardogs-data-docs`](https://github.com/Kiyogitpy/wardogs-data-docs) · [Live site](https://kiyogitpy.github.io/wardogs-data-docs/)
 
 This page records how strong the evidence is for each native address that
-[GameplayEffectsPipeline](../../Wardogs_GameplayEffectsPipeline_v1.md)
+[GameplayEffectsPipeline](../../pipelines/Wardogs_GameplayEffectsPipeline_v1.md)
 cites. It follows the method of the
 [damage evidence page](damage.md#3-rva-status-table) and does not restate
 the effect rules. Nothing here is a runtime observation: no game was run
@@ -24,7 +24,7 @@ what counts as evidence are those of
 The method is the one on the [vehicle evidence page](vehicles.md#1-method):
 
 1. Every `0x` token in
-   [`Wardogs_GameplayEffectsPipeline_v1.md`](../../Wardogs_GameplayEffectsPipeline_v1.md)
+   [`Wardogs_GameplayEffectsPipeline_v1.md`](../../pipelines/Wardogs_GameplayEffectsPipeline_v1.md)
    at commit `06302cd` (round 6 applied on `c5428af`) was extracted, and
    values below `0x100000` (record offsets such as `+0x378`, class sizes,
    enum values) were dropped. That left **68 RVAs**. The page was first
@@ -241,5 +241,5 @@ at `06302cd`.
 ## 5. Open items
 
 - E-2, E-3 and E-6 stay open in
-  [GameplayEffectsPipeline §8](../../Wardogs_GameplayEffectsPipeline_v1.md#8-open-questions).
+  [GameplayEffectsPipeline §8](../../pipelines/Wardogs_GameplayEffectsPipeline_v1.md#8-open-questions).
   A status table settles where the code is, not what the fields mean.

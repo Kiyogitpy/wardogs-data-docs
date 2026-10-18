@@ -1,4 +1,4 @@
-"""Readable sections 3 and 4 of Wardogs_AllVehicles_Stats_Damage_v1.md, rebuilt from data/.
+"""Readable sections 3 and 4 of content/Wardogs_AllVehicles_Stats_Damage_v1.md, rebuilt from data/.
 
 Section 3: each DT_GlobalDamage_VehicleData* table as one table of its damage entries
 (category, source tags, hit locations, change), numbered from 0 in file order as the
@@ -20,7 +20,7 @@ import os
 import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DOC = os.path.join(ROOT, "Wardogs_AllVehicles_Stats_Damage_v1.md")
+DOC = os.path.join(ROOT, "content/Wardogs_AllVehicles_Stats_Damage_v1.md")
 REPO_DATA = "https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/"
 EXPORT = re.compile(r"^--- export: .* ---\n", re.M)
 HEADING = re.compile(r"^### (.*\]\(" + re.escape(REPO_DATA) + r"(\S+?\.json)\))$", re.M)

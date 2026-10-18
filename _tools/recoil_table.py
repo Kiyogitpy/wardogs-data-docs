@@ -1,4 +1,4 @@
-"""Per-weapon recoil table for Wardogs_Weapons_v2.md §5a, rebuilt from data/.
+"""Per-weapon recoil table for content/Wardogs_Weapons_v2.md §5a, rebuilt from data/.
 
 Reads each infantry weapon's WDWeaponStatsData asset. Cooked assets omit fields that
 keep the native default, so those come from the FWDWeaponStats constructor
@@ -15,7 +15,7 @@ import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DOC = "Wardogs_Weapons_v2.md"
+DOC = "content/Wardogs_Weapons_v2.md"
 BLOCK = re.compile(r"<!-- recoil_table -->.*?<!-- /recoil_table -->", re.S)
 # Vehicle, stationary and test weapons are left out. Vehicle-extension and mounted weapons use the
 # IWDWeaponOwner default (x1, 0x19A4A50); fists have no ranged-weapon extension (Weapons §5b).
