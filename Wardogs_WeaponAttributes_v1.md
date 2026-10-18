@@ -13,6 +13,7 @@ attachment changes on the weapon. The values are computed from the cooked data w
 Effect modifiers come from [Gameplay Effect Values](Wardogs_GameplayEffect_Values_v1.md). Labels: **Data**
 for what the export says, **Native** for what the traced code does, **Assumption** for a choice this page
 makes where the code is not traced.
+To try any other loadout (attachments, sight, stance, bipod), use the [Weapon Loadout Calculator](loadout-calculator.md).
 
 ## Rules
 

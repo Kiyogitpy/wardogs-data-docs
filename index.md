@@ -19,7 +19,7 @@ nav_order: 1
 - **Items, Weapons and Vehicles appear twice.** Content holds the base definitions; Game Features holds most of the per-item, per-weapon and per-vehicle data.
 - **Every page ends with its limitations:** what was inferred, and what the game files don't contain.
 
-<div class="wd-kicker"><span class="wd-pill wd-pill-1">28 pages</span></div>
+<div class="wd-kicker"><span class="wd-pill wd-pill-1">29 pages</span></div>
 <h2 id="content">Content</h2>
 
 <p class="wd-section-intro">Core content folders: weapons, items, vehicles, audio, UI, environment, VFX and maps.</p>
@@ -52,6 +52,7 @@ nav_order: 1
 <a class="wd-card" href="Wardogs_UI_v2.html"><span class="wd-card-name">UI</span><span class="wd-card-desc">Inventory of the Category, Minimap and World Textures, Map and Minimap Trackers, Ping Wheel</span></a>
 <a class="wd-card" href="Wardogs_Vehicles_v2.html"><span class="wd-card-name">Vehicles</span><span class="wd-card-desc">Folder Inventory, Vehicle Identity, Rigid Body, Engine, Drag, Flight Characteristics</span></a>
 <a class="wd-card" href="Wardogs_VFX_v2.html"><span class="wd-card-name">VFX</span><span class="wd-card-desc">Inventory, Explosions, Explosion Sequences, Muzzle Flashes</span></a>
+<a class="wd-card" href="loadout-calculator.html"><span class="wd-card-name">Weapon Loadout Calculator</span><span class="wd-card-desc">Any weapon with any attachments, sight, stance and bipod state: every weapon attribute, its modifiers and final value</span></a>
 <a class="wd-card" href="Wardogs_Weapons_v2.html"><span class="wd-card-name">Weapons</span><span class="wd-card-desc">Weapon Stat Assets, Aim Sway Curve Families, ADS Curves, Input Actions and Mapping Contexts</span></a>
 </div>
 
