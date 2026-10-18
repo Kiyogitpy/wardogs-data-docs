@@ -587,6 +587,49 @@ JSON_OUT = os.path.join(ROOT, "assets", "data", "vehicle-hitboxes.json")
 MODELS = "assets/models/vehicles"
 JSON_CALIBERS = {"Item.Caliber.556mm": "5.56mm", "Item.Caliber.762mm": "7.62mm", "Item.Caliber.50Cal": ".50Cal",
                  "Item.Caliber.20x102mm": "20x102mm", "Item.Caliber.30mm": "30mm", "Item.Caliber.35x228mm": "35x228mm"}
+# Readable names for the viewer's full caliber list; the rest are derived from the id.
+CALIBER_LABELS = {"Item.Caliber.7mmBuck": "7mm buckshot (12g)", "Item.Caliber.12g.RifledSlug": "12g rifled slug"}
+CALIBER_GROUPS = ["Bullets", "Cannon", "Rockets & launchers", "Grenades & explosives"]
+DIRECT_NOTE = ("Direct impact only. The blast (radial) part is applied separately per component (Vehicle §4.1) "
+               "and its falloff is not traced, so real hits can do more.")
+
+
+def caliber_catalog(proj):
+    """All calibers in projectiles(): id, label, group, weapons that list it, variant note. Same math as JSON_CALIBERS."""
+    users = {}
+    for name, _, cals, _ in weapons():
+        for c in cals:
+            users.setdefault(c, []).append(name)
+    friendly = {"CGM4": "MAAWS", "RPG7": "RPG-7", "MMGL": "MMGL"}
+    out = []
+    for cid, (src, _, base) in proj.items():
+        src = src or ""
+        group = (CALIBER_GROUPS[1] if ".Cannon" in "." + src else CALIBER_GROUPS[3] if "Explosive.Grenade" in src
+                 else CALIBER_GROUPS[2] if "Explosive" in src else CALIBER_GROUPS[0])
+        short = cid.replace("Item.Caliber.", "")
+        label = CALIBER_LABELS.get(cid) or JSON_CALIBERS.get(cid) or short
+        if cid == "Item.Caliber.50Cal":
+            label = ".50Cal"
+        ws = users.get(cid, [])
+        if ws and group in CALIBER_GROUPS[2:]:
+            label += " (" + ", ".join(friendly.get(w, w) for w in ws) + ")"
+        base_id = ".".join(cid.split(".")[:3])
+        sibs = sorted(k for k in proj if k != cid and (k == base_id or k.startswith(base_id + ".") or base_id.startswith(k + ".")))
+        notes = []
+        if group in CALIBER_GROUPS[2:]:
+            notes.append(DIRECT_NOTE)
+        if sibs or cid != base_id:
+            notes.append("Variants in the data: " + ", ".join(k.replace("Item.Caliber.", "") for k in sorted(sibs + [cid]))
+                         + "; this entry is " + short + " (" + ("the plain asset is preferred where one exists"
+                         if cid == base_id else "variant asset") + ").")
+        if not ws:
+            notes.append("Unused: no weapon item in the data lists this caliber as supported (vehicle-mounted weapons are not traced).")
+        out.append({"id": cid, "label": label, "group": group, "base_damage": base, "source_tag": src,
+                    "weapons": ws, "unused": not ws, "note": " ".join(notes) or None})
+    order = {c: i for i, c in enumerate(JSON_CALIBERS)}
+    out.sort(key=lambda c: (CALIBER_GROUPS.index(c["group"]), order.get(c["id"], 99) if c["group"] == "Bullets" else 0,
+                            c["base_damage"] or 0, c["id"]))
+    return out
 
 
 def glb_summary(path):
@@ -653,7 +696,8 @@ def hitbox_json(proj):
     for p in sorted(glob.glob(os.path.join(ROOT, MODELS, "*.glb"))):
         glbs[f"{MODELS}/{os.path.basename(p)}"] = glb_summary(p)
     generic, vrows = vehicle_tables()
-    cals = [c for c in JSON_CALIBERS if c in proj]
+    catalog = caliber_catalog(proj)
+    cals = [c["id"] for c in catalog]
     # The data/ tree id names the exact input in any clone, shallow ones included (a commit lookup there can
     # stop at the shallow boundary).
     tree = subprocess.run(["git", "rev-parse", "HEAD:data"], cwd=ROOT, capture_output=True, text=True).stdout.strip() or None
@@ -672,7 +716,7 @@ def hitbox_json(proj):
                  "routing": "Wardogs_VehicleDamagePipeline_v1.html#42-routing-semantics",
                  "hits_to_destroy": "Wardogs_VehicleDamagePipeline_v1.html#54-hits-to-destroy"},
         "main_section": MAIN,
-        "calibers": [{"id": c, "label": JSON_CALIBERS[c], "base_damage": proj[c][2]} for c in cals]},
+        "calibers": catalog},
         "vehicles": []}
     groups = vehicle_groups(vrows)
     shared = {d for d in (g[0] for g in groups) if sum(g[0] == d for g in groups) > 1}
