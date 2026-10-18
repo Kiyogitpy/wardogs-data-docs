@@ -17,7 +17,8 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOC = "Wardogs_Weapons_v2.md"
 BLOCK = re.compile(r"<!-- recoil_table -->.*?<!-- /recoil_table -->", re.S)
-# Vehicle, stationary and test weapons get their multipliers elsewhere; fists never fire.
+# Vehicle, stationary and test weapons are left out. Vehicle-extension and mounted weapons use the
+# IWDWeaponOwner default (x1, 0x19A4A50); fists have no ranged-weapon extension (Weapons §5b).
 SKIP = re.compile(r"Vehicles|VehicleWeaponry|Stationary|Gunsmith|BarrelTest|BuildTool|Fists")
 FOCUS_WINDOW = "_aaabimbpohdlmnphjbidm"  # stats +0x98 (hashed in this build; v2 usmap token)
 DEFAULTS = {  # FWDWeaponStats constructor 0x699E6C0

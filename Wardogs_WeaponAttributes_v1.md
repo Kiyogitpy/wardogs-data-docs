@@ -11,7 +11,8 @@ Each weapon's final `Attribute.Gameplay.Weapon.*` values with its default attach
 attachment changes on the weapon. The values are computed from the cooked data with the rules of the
 [Gameplay Effects Pipeline](Wardogs_GameplayEffectsPipeline_v1.md); nothing here was measured in the game.
 Effect modifiers come from [Gameplay Effect Values](Wardogs_GameplayEffect_Values_v1.md). Labels: **Data**
-for what the export says, **Assumption** for a choice this page makes where the code is not traced.
+for what the export says, **Native** for what the traced code does, **Assumption** for a choice this page
+makes where the code is not traced.
 
 ## Rules
 
@@ -37,29 +38,45 @@ weapon), [§4.2](Wardogs_GameplayEffectsPipeline_v1.md#42-modifiers) (stack scal
   `Current = ((Base + ΣAdd) × (1 + Σ(Multiply − 1)) / D) × ΠMultiplyCompound + ΣAddFinal`, with
   `D = 1 + Σ(Divide − 1)`, or 1 when |D| ≤ 1e-8. Only the `Default` channel exists.
 - **Attribute-backed modifiers** (seven sight effects override `MaxZeroingRange` with the current
-  `MinZeroingRange`) are evaluated against the final value of the backing attribute and marked †.
+  `MinZeroingRange`) are evaluated against the final value of the backing attribute and marked †. The
+  game does the same: such magnitudes are re-evaluated whenever the backing attribute's current value
+  changes ([Effects §4.2](Wardogs_GameplayEffectsPipeline_v1.md#42-modifiers)).
   No weapon-side modifier has a curve row, non-`Fixed` indexing or a set-by-caller magnitude; the tool
   marks one if it appears.
 
 ## Choices this page makes
 
-- **Assumption: application order.** The Override lists are taken to be in application order: the
-  weapon's sub-slots in data order, each attachment followed by the sub-slots it brings (a barrel's muzzle
-  slot, a handguard's underbarrel slot); per attachment its `AppliedEffects`, then the selected sight's
-  effects, then the unfolded or mounted bipod list; the stance effect last. The native equip path walks the
-  replicated attachment map, whose order is not traced. Where two Overrides with different values reach
-  one attribute, the weapon's notes say so.
+- **Data: Override order does not matter.** No two attachments that fit one weapon at the same time
+  override the same attribute with different values, and stance effects have no Override. Native order
+  (append on apply, swap on removal, [Effects §4.4](Wardogs_GameplayEffectsPipeline_v1.md#44-current-value))
+  depends on the equip history, so the tool flags any future conflict rather than trust its choice (it
+  uses the first Override in its own order and marks the value †). That order is the weapon's sub-slots in data order, each attachment
+  followed by the sub-slots it brings (a barrel's muzzle slot, a handguard's underbarrel slot); per
+  attachment its `AppliedEffects`, then the selected sight's effects, then the unfolded or mounted bipod
+  list; and the stance effect (applied at registration and re-appended on every stance change; it has no
+  Override modifier, so its place does not matter). On the authority the equip path follows the sub-slot
+  update messages (`WDItemSubslotUpdated`, `0x6C99030`), slot by slot; the attachment array is replayed in
+  array order at registration and on replication (`0x6C9A330`), which changes only slots whose item
+  differs. The order across the weapon and its attachments is not traced.
 - **Data: initial sight.** §1 and §2 use the `SightsData` entry `S_Aim01`, per
   [Effects §7.1](Wardogs_GameplayEffectsPipeline_v1.md#71-what-applies-to-a-weapon); §3 lists every entry.
-  `ID_CantedIrons`, whose only entry is `S_AimCanted1`, has no `S_Aim01`; the tool falls back to the
-  first entry and flags it (no weapon accepts that item).
-- **Data: default loadout.** Each sub-slot's `DefaultContainerItems` (or `DefaultItems` when that is
-  empty), first item, and the defaults of the sub-slots that item brings. `None` leaves the slot empty.
-  Ammunition in chamber and magazine slots carries no effects and is left out.
-- **Assumption: sub-slot filters.** An item matches a context tag when one of its `ItemContext` tags is that
-  tag or a child of it. `AllowList` accepts what the allow lists match and ignores the block lists (one
-  weapon's default chamber round is on both lists); `BlockPriority` accepts what the allow lists match unless
-  a block list matches; `BlockList` accepts anything not blocked. The filter code is not traced.
+  `ID_CantedIrons`, whose only entry is `S_AimCanted1`, has no `S_Aim01`. Natively there is no first-entry
+  fallback: its `AppliedEffects` apply only when it replaces another attachment in the slot (`0x6C9D170`),
+  and its sight effects come from the weapon's sight table entry for `S_Aim01` (`+0x438`, left by another
+  sight), or none (`0x6C9E190`). The tool applies no sight effects for it; no weapon accepts the item, so
+  this affects no table.
+- **Native (`0x6784010`): default loadout.** Each sub-slot's `DefaultContainerItems`, or `DefaultItems` only
+  when `DefaultContainerItems` is empty, and the defaults of the sub-slots that item brings. `None` leaves
+  the slot empty. The tool takes the first real item; natively every entry is added, and no weapon or
+  attachment sub-slot lists more than one. Ammunition in chamber and magazine slots carries no effects and
+  is left out. The lists differ only in `ID_CGM4`'s sight (`DefaultItems` `BasicRedDot` = `ID_RedDot`;
+  `DefaultContainerItems` `ID_SGHT_033`), whose `AllowList` admits only `SGHT_033`; with `ID_RedDot` the
+  MAAWS AimTime would be 0.45.
+- **Native: sub-slot filters** (`0x67A2B40`, run per container by `0x67A2790`). `ItemId` is matched exactly
+  against the item lists; context tags hierarchically (`HasAny`, `0x395BE30`: the item's tag or a child of
+  it). `AllowList` = allowed (block lists ignored; one weapon's default chamber round is on both lists);
+  `BlockList` = not blocked; `BlockPriority` = allowed and not blocked; `AllowPriority` = allowed or not
+  blocked.
 
 ## Using the tool
 
@@ -104,7 +121,7 @@ Default loadout, Stand stance, bipod folded. A cell shows `base → final` where
 | [Evo-3 Ultra](#evo-3-ultra-id_wepn_036) | 1 | 1 | 1 | 1 | 0.64 | 1.2 | 100 | 500 | 1 | 1 | 80 |
 | [M249 SAW](#m249-saw-id_m249) | 1 → **1.17** | 1 → **1.17** | 1 | 1 | 0.68 → **0.816** | 1.2 | 200 | 1200 | 0.95 → **0.8835** | 0.95 | 80 |
 | [PKM](#pkm-id_lmg_02) | 1 | 1 | 1 | 1 | 0.73 → **0.803** | 1.2 | 100 | 1500 | 0.95 | 1 | 80 |
-| [9K333 Verba](#9k333-verba-id_launcher_04) | 1 | 1 | 1 | 1 | 0.5 | 1.2 | 100 | 1000 |  | 1.15 | 80 |
+| [9K333 Verba](#9k333-verba-id_launcher_04) | 1 | 1 | 1 | 1 | 0.5 | 1.2 | 100 | 1000 |  | 1.15 | 100 |
 | [MAAWS](#maaws-id_cgm4) | 1 | 1 | 1 | 1 | 0.5 | 1.2 | 100 | 100 | 0.95 | 1 | 80 |
 | [MGL-40](#mgl-40-id_mmgl) | 1 | 1 | 1 | 1 | 0.4 | 1.2 | 50 | 400 | 0.95 | 1 | 80 |
 | [RPG-7](#rpg-7-id_rpg7) | 1 | 1 | 1 | 1 | 0.5 | 1.2 | 100 | 500 | 0.95 | 1 | 80 |
@@ -220,7 +237,7 @@ Item `Id.Item.WEPN_030`, [`ID_WEPN_030.json`](https://github.com/Kiyogitpy/wardo
 | EquipSpeedMultiplier | 0.95 | — | 0.95 |
 | HolsterSpeedMultiplier | 1 | — | 1 |
 
-† Sight default `Id.Item.IRNS_002` (on `ID_WEPN_030`) has no item definition in data/; any effects it has are not included.
+† Sight default `Id.Item.IRNS_002` (on `ID_WEPN_030`) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
 
 #### Galil (ID_WEPN_029)
 
@@ -288,7 +305,7 @@ Item `Id.Item.M4`, [`ID_M4.json`](https://github.com/Kiyogitpy/wardogs-data-docs
 | EquipSpeedMultiplier | 0.95 | ×c 0.98 `GE_Stanag_30Rounds` | 0.931 |
 | HolsterSpeedMultiplier | 1.1 | — | 1.1 |
 
-† Sight default `Id.Item.IRNS_006` (on `ID_M4`) has no item definition in data/; any effects it has are not included.
+† Sight default `Id.Item.IRNS_006` (on `ID_M4`) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
 
 #### T-21 (ID_TAR21)
 
@@ -358,7 +375,7 @@ Item `Id.Item.RFB`, [`ID_RFB.json`](https://github.com/Kiyogitpy/wardogs-data-do
 | EquipSpeedMultiplier | 0.92 | ×c 1.24 `GE_MAG_FAL_10rd` | 1.1408 |
 | HolsterSpeedMultiplier | 1 | — | 1 |
 
-† Sight default `Id.Item.ARMIrons` (on `ID_RFB`) has no item definition in data/; any effects it has are not included.
+† Sight default `Id.Item.ARMIrons` (on `ID_RFB`) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
 
 #### M14 (ID_WEPN_034)
 
@@ -404,7 +421,7 @@ Item `Id.Item.SKS`, [`ID_SKS.json`](https://github.com/Kiyogitpy/wardogs-data-do
 | EquipSpeedMultiplier | 1.15 | — | 1.15 |
 | HolsterSpeedMultiplier | 1.1 | — | 1.1 |
 
-† Grip default `Id.Item.SKSPistolGrip` (on `ID_SKS`) has no item definition in data/; any effects it has are not included.
+† Grip default `Id.Item.SKSPistolGrip` (on `ID_SKS`) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
 
 #### SVD (ID_SVDM)
 
@@ -496,7 +513,7 @@ Item `Id.Item.M249`, [`ID_M249.json`](https://github.com/Kiyogitpy/wardogs-data-
 | EquipSpeedMultiplier | 0.95 | ×c 0.93 `GE_MAG_M249_200rd` | 0.8835 |
 | HolsterSpeedMultiplier | 0.95 | — | 0.95 |
 
-† Grip default `Id.Item.RK3PistolGrip` (on `ID_M249`) has no item definition in data/; any effects it has are not included.
+† Grip default `Id.Item.RK3PistolGrip` (on `ID_M249`) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
 
 #### PKM (ID_LMG_02)
 
@@ -538,7 +555,7 @@ Item `Id.Item.Launcher_04`, [`ID_Launcher_04.json`](https://github.com/Kiyogitpy
 | AimTime | 0.5 | — | 0.5 |
 | SpreadMultiplier | 1 | — | 1 |
 | AccuracyMultiplier | 1 | — | 1 |
-| Length | 80 | — | 80 |
+| Length | 100 | — | 100 |
 | MinZeroingRange | 100 | — | 100 |
 | MaxZeroingRange | 1000 | — | 1000 |
 | HolsterSpeedMultiplier | 1.15 | — | 1.15 |
@@ -905,7 +922,7 @@ Item `Id.Item.SR_04`, [`ID_SR_04.json`](https://github.com/Kiyogitpy/wardogs-dat
 | EquipSpeedMultiplier | 0.9 | — | 0.9 |
 | HolsterSpeedMultiplier | 1.15 | — | 1.15 |
 
-† Sight default `Id.Item.ARMIrons` (on `ID_SR_04`) has no item definition in data/; any effects it has are not included.
+† Sight default `Id.Item.ARMIrons` (on `ID_SR_04`) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
 
 #### MK22 (ID_MK22)
 
@@ -929,7 +946,7 @@ Item `Id.Item.MK22`, [`ID_MK22.json`](https://github.com/Kiyogitpy/wardogs-data-
 | EquipSpeedMultiplier | 1.05 | ×c 0.9 `GE_MAG_MK22_10rd` | 0.945 |
 | HolsterSpeedMultiplier | 1.17 | — | 1.17 |
 
-† Sight default `Id.Item.ARMIrons` (on `ID_MK22`) has no item definition in data/; any effects it has are not included.
+† Sight default `Id.Item.ARMIrons` (on `ID_MK22`) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
 
 #### Mosin Nagant (ID_WEPN_017)
 
@@ -975,7 +992,7 @@ Item `Id.Item.WEPN_035`, [`ID_WEPN_035.json`](https://github.com/Kiyogitpy/wardo
 | EquipSpeedMultiplier | 1 | — | 1 |
 | HolsterSpeedMultiplier | 1 | — | 1 |
 
-† Sight default `Id.Item.IRNS_008` (on `ID_WEPN_035`) has no item definition in data/; any effects it has are not included.
+† Sight default `Id.Item.IRNS_008` (on `ID_WEPN_035`) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
 
 #### SV98 (ID_SV98)
 
@@ -1294,29 +1311,30 @@ The 246 attachment items at least one weapon accepts, grouped by `AttachmentType
 Results above that rest on something not traced or on an odd piece of data.
 
 - **Several sights.** `ID_4xElcanSpectr` (S_Aim01, S_Aim02); `ID_SGHT_030` (S_Aim01, S_Aim02); `ID_SGHT_036` (S_Aim01, S_Aim02). §1 and §2 use `S_Aim01`, per Effects §7.1; §3 lists each.
-- **No `S_Aim01` sight** (the tool falls back to the first entry): `ID_CantedIrons` (S_AimCanted1).
+- **No `S_Aim01` sight** (natively no first-entry fallback; the tool applies no sight effects): `ID_CantedIrons` (S_AimCanted1).
 - **No weapon accepts these attachments** that carry effects: `ID_CantedIrons`.
 - **Same effect on the weapon and the character:** `ID_MAGZ_065` lists `GE_MAGZ_065` in both `AppliedEffects` and `AppliedCharacterEffects`; `ID_MAGZ_066` lists `GE_MAGZ_066` in both `AppliedEffects` and `AppliedCharacterEffects`.
-- **Attribute-backed** (7 effects, capture timing not traced): `GE_RedDot` on `ID_RedDot`; `GE_SGHT_009` on `ID_SGHT_009`; `GE_SGHT_016` on `ID_SGHT_016`; `GE_SGHT_023` on `ID_SGHT_023`; `GE_SGHT_025` on `ID_SGHT_025`; `GE_SGHT_027` on `ID_SGHT_027`; `GE_SGHT_038` on `ID_SGHT_038`. Each overrides `MaxZeroingRange` with the current `MinZeroingRange`; the tool uses the final `MinZeroingRange`. None is in a default loadout.
-- **Repeated `DefaultAttributes` keys** on 9K333 Verba (`ID_Launcher_04`): 9 keys appear twice, with different values for `Length` 100 then 80. **Assumption:** the last value is used, as a map load that adds each pair in turn keeps it.
+- **Attribute-backed** (7 effects, evaluated live, Effects §4.2): `GE_RedDot` on `ID_RedDot`; `GE_SGHT_009` on `ID_SGHT_009`; `GE_SGHT_016` on `ID_SGHT_016`; `GE_SGHT_023` on `ID_SGHT_023`; `GE_SGHT_025` on `ID_SGHT_025`; `GE_SGHT_027` on `ID_SGHT_027`; `GE_SGHT_038` on `ID_SGHT_038`. Each overrides `MaxZeroingRange` with the current `MinZeroingRange`; the tool uses the final `MinZeroingRange`. None is in a default loadout.
+- **Repeated `DefaultAttributes` keys** on 9K333 Verba (`ID_Launcher_04`): 9 keys appear twice, with different values for `Length` 100 then 80. The map load keeps both pairs (`FMapProperty::SerializeItem` adds each entry without a lookup when the archetype's map is empty), and `OnRegister` (`0x6C692E0`) installs them in order with overwrite off (`0x522F8F0`), so the first value is used: `Length` 100.
 - **Empty effect references** (skipped): `ID_MUZL_064`.
 - **Stance map** of A-91 (`ID_A91`): Stand → `GE_Weapon_StanceRecoil_AR_Prone`, Crouch → `GE_Weapon_StanceRecoil_AR_Standing`, Prone → `GE_Weapon_StanceRecoil_AR_Standing` (taken as in data).
 - **Stance map** of TCX-SPR (`ID_WEPN_037`): Prone → `GE_Weapon_StanceRecoil_AR_Standing` (taken as in data).
-- FAL (`ID_WEPN_030`): Sight default `Id.Item.IRNS_002` (on `ID_WEPN_030`) has no item definition in data/; any effects it has are not included.
-- M4 (`ID_M4`): Sight default `Id.Item.IRNS_006` (on `ID_M4`) has no item definition in data/; any effects it has are not included.
-- BMR-308 (`ID_RFB`): Sight default `Id.Item.ARMIrons` (on `ID_RFB`) has no item definition in data/; any effects it has are not included.
-- SKS (`ID_SKS`): Grip default `Id.Item.SKSPistolGrip` (on `ID_SKS`) has no item definition in data/; any effects it has are not included.
-- M249 SAW (`ID_M249`): Grip default `Id.Item.RK3PistolGrip` (on `ID_M249`) has no item definition in data/; any effects it has are not included.
-- AMR 50 (`ID_SR_04`): Sight default `Id.Item.ARMIrons` (on `ID_SR_04`) has no item definition in data/; any effects it has are not included.
-- MK22 (`ID_MK22`): Sight default `Id.Item.ARMIrons` (on `ID_MK22`) has no item definition in data/; any effects it has are not included.
-- Scout Rifle TD (`ID_WEPN_035`): Sight default `Id.Item.IRNS_008` (on `ID_WEPN_035`) has no item definition in data/; any effects it has are not included.
+- FAL (`ID_WEPN_030`): Sight default `Id.Item.IRNS_002` (on `ID_WEPN_030`) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
+- M4 (`ID_M4`): Sight default `Id.Item.IRNS_006` (on `ID_M4`) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
+- BMR-308 (`ID_RFB`): Sight default `Id.Item.ARMIrons` (on `ID_RFB`) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
+- SKS (`ID_SKS`): Grip default `Id.Item.SKSPistolGrip` (on `ID_SKS`) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
+- M249 SAW (`ID_M249`): Grip default `Id.Item.RK3PistolGrip` (on `ID_M249`) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
+- AMR 50 (`ID_SR_04`): Sight default `Id.Item.ARMIrons` (on `ID_SR_04`) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
+- MK22 (`ID_MK22`): Sight default `Id.Item.ARMIrons` (on `ID_MK22`) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
+- Scout Rifle TD (`ID_WEPN_035`): Sight default `Id.Item.IRNS_008` (on `ID_WEPN_035`) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
 <!-- END weapon_attributes -->
 
 ## 5. Not traced
 
-- The order of a weapon's Override lists beyond the application order assumed above.
-- When the attribute-backed zeroing magnitude is captured (at application, or live).
-- The sub-slot filter code (`EBHSupportFilterMethod`); the semantics above are inferred from the data.
+- The order of the sub-slot update messages across the weapon and its attachments (no value depends on
+  it, see Override order above).
+- Which caller grants the default loadout at spawn, and whether a saved preset replaces the defaults
+  (`0x6784010` adds them only when the create-defaults flag is set; `0x6BD5860` sets it).
 - Attachment `AppliedEffects` that never reach a weapon value because no weapon accepts the attachment.
 
 ## Change log
@@ -1325,3 +1343,4 @@ Results above that rest on something not traced or on an odd piece of data.
 |---|---|
 | 2026-10-17 | v1: generated per-weapon base and final values with the default loadout, per-attachment weapon-side modifiers and accepting weapons, from the §7.1 rules; `_tools/weapon_attributes.py` added. |
 | 2026-10-17 | Round-5 verifier pass: the initial sight is `S_Aim01` (Effects §7.1), with a fallback to the first entry for `ID_CantedIrons`; `--mounted` models a mounted bipod (`MountedAppliedEffects` on the weapon, `MountedAppliedCharacterEffects` on the character, unfolded lists removed), and §3 lists the mounted lists. No §1 value changed. |
+| 2026-10-18 | Round-6 verifier corrections: a repeated `DefaultAttributes` key keeps its first value (`OnRegister` installs with overwrite off), so the 9K333 Verba `Length` is 100, not 80 (the only §1 change); no native first-entry sight fallback, so the tool applies no sight effects for `ID_CantedIrons`; Override order, default loadout (`0x6784010`, `DefaultItems` only when `DefaultContainerItems` is empty) and sub-slot filters (`0x67A2B40`) are now traced and labelled Data / Native; stance effect and equip path wording; attribute-backed magnitudes are evaluated live (Effects §4.2); missing default items are absent from the paks too; the tool detects the bipod struct by `MountedAppliedEffects` and drops a missing-default flag when `--with` replaces that slot. |

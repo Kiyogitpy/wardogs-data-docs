@@ -86,11 +86,11 @@ An item is a `BHInventoryItemDefinition` with an `ItemId` tag, `ItemContext` tag
 | Field | Meaning (as observed) |
 |---|---|
 | `ContainerIdentifier` | Tag for the slot family. Most backpack containers have `None` here. Attachment slots use `Item.Attachment.*` or `Item.Ammo` / `Inventory.Slot.Vehicle.Storage`. |
-| `Filter.SupportFilter` | `AllowList`, `BlockList`, or `BlockPriority`. Decides which items may enter. |
+| `Filter.SupportFilter` | `AllowList`, `BlockList`, `BlockPriority` or `AllowPriority` (the last is unused in data). Decides which items may enter. |
 | `Filter.AllowedSubSlotContext` | Context tags that pass the filter (e.g. `Item.Caliber.556mm`) |
 | `GridSize` | Size of that container in grid cells (X x Y) |
 | `MaxSlotAmountStackSize` | **Capacity for magazines.** Magazine names match this value exactly (30 RND = 30, 75 RND drum = 75, 200 RND box = 200, 130 RND = 130). Applied to vehicle ammo slots as well. |
-| `DefaultItems`, `DefaultContainerItems` | Items loaded on spawn. The M4 Standard Mag lists `Id.Item.556mm` in `DefaultItems` and `Id.Item.556mm.Tracer` in `DefaultContainerItems`. |
+| `DefaultItems`, `DefaultContainerItems` | Items added when the item is created with defaults (`0x6784010`). `DefaultContainerItems` wins: `DefaultItems` is used only when `DefaultContainerItems` is empty, so the M4 Standard Mag loads `Id.Item.556mm.Tracer`. Each `DefaultContainerItems` entry is added with its `Amount` if set, else `MaxSlotAmountStackSize` when > 0, else the item's `MaxStackSize`, else 1. |
 
 ### 2b. Item definition flags seen
 
@@ -489,3 +489,4 @@ Other settings: `bFOVReticleScaling` is False for every class that sets it. `bAp
 | Date | Change |
 |---|---|
 | 2026-10-18 | `data/` re-exported with the v2 usmap (names only; values unchanged): the aim-assist rows in §9 and the Season 02 notes use the corrected `Pull`/`Slow` `Inner`/`Outer` `Hip`/`Ads` names. The values did not move; the first export had put the wrong names on them. |
+| 2026-10-18 | Round-6 verifier corrections: `SupportFilter` has a fourth mode, `AllowPriority` (unused in data); `DefaultItems` is used only when `DefaultContainerItems` is empty (`0x6784010`), so the M4 Standard Mag loads `Id.Item.556mm.Tracer`. |
