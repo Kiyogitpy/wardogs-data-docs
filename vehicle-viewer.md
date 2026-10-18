@@ -20,6 +20,10 @@ Every vehicle's collision mesh, coloured by the health section each collision sl
       <label for="vv-variant">Variant</label>
       <select id="vv-variant"></select>
     </div>
+    <div class="vv-field" id="vv-wheels-field" hidden>
+      <label for="vv-wheels">Wheels (damage state)</label>
+      <select id="vv-wheels"><option value="intact">Intact</option><option value="destroyed">Deflated or destroyed</option></select>
+    </div>
     <div class="vv-field">
       <label for="vv-caliber">Caliber</label>
       <select id="vv-caliber" disabled><option>…</option></select>
@@ -71,9 +75,9 @@ The models come from [`_tools/vehicle_models.py`](https://github.com/Kiyogitpy/w
 - **One model per distinct variant geometry.** Variants that share a damage map but differ in turrets, rear boxes or mounts each get their own model (the Variant list).
 - **Left wheels are mirrored copies** of the right-side wheel mesh. The mirroring flag isn't in the export, so this is assumed.
 - **Slots resolve as the game resolves them** ([Vehicle §3.2](Wardogs_VehicleDamagePipeline_v1.md#32-from-a-hit-triangle-to-a-section)). Only registered static meshes count. Instanced wheels are in the Wheel surface group and add the wheel's DataIndex (`CC_Wheel` becomes `CC_Wheel_2`), which runs axle by axle. Every other mesh is in the Default group and keeps its slot name as is. A slot missing from its group's map takes that group's default section. Projectile hits and explosions resolve this way; an explosion takes each part's section from its first hit on that part.
-- **Wheels are shown intact and all active.** A deflated or destroyed wheel swaps in other collision, which isn't shown.
-- **Rotor blades are shown with the hubs.** Both register, but only the hubs are known to block projectiles; whether the blades' `WDRotorCollision` profile does is not traced.
-- **Parts that can't be placed are left out**, with a note on the model. The MG nest's gun proxy attaches to a `receiver_J` bone that its skeleton doesn't have.
+- **Wheels are shown intact unless you pick a damage state.** Destroyed (state 2 in [Vehicle §3.2](Wardogs_VehicleDamagePipeline_v1.md#32-from-a-hit-triangle-to-a-section)'s wheel mesh swap) shows every wheel's destroyed-mesh collision, which has no tyre slot. Deflated (state 1) keeps the intact look but traces against the destruction mesh's collision, so it gives the same hitbox; a wheel deflates at tyre health / max ≤ 0.55 and is destroyed at 0. The Wheels control appears only on the Humvee (WHL_05) and WHL_08, the vehicles whose destroyed wheels have their own collision mesh; on the others both states keep the intact hitbox.
+- **Rotor blades have no section.** Bullets hit them (their `WDRotorCollision` profile blocks projectile traces), but a blade hit finds no section and does nothing to the vehicle; they are shown in grey. The hubs are normal hitboxes.
+- **Parts that can't be placed are left out**, with a note on the model. The MG nest's gun proxy attaches to a `receiver_J` bone that its skeleton doesn't have, so it is likely never attached.
 - **Meshes without a collision mesh of their own aren't shown**, such as the MG nest's sandbags. Their collision profile isn't traced, and showing them would mean publishing render geometry.
 - **The SPW radar is shown stowed.** No exported data creates its deployed pivot.
 

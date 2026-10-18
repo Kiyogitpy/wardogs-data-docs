@@ -92,7 +92,7 @@ The asset also has 2 `DamageImpactRemap` entries: `spine_01` is remapped to `pel
 
 ### 2c. Bone Damage Multipliers ([`DT_InfantryData_BoneDamageModifiers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_BoneDamageModifiers.json))
 
-Each row is a damage-type tag. Values are the per-hit-location multiplier. The `Universal` row is the fallback for anything not listed separately (inferred from the row name).
+Each row is a damage-type tag. Values are the per-hit-location multiplier. The `Universal` row is not a fallback: every hit multiplies the `Universal` value by the value from the source's weapon row (1.0 when no row matches), as traced in [DamagePipeline §7.1](Wardogs_DamagePipeline_v2.md#71-b_bonedamagemodifiers_c-entries-5-7-10).
 
 | Row | Head | Neck | Torso.Up | Torso.Mid | Torso.Low | Pelvis | Arm.Up | Arm.Low | Arm.Hand | Leg.Thigh | Leg.Calf | Leg.Foot |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
