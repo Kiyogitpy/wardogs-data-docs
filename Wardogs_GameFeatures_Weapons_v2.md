@@ -199,7 +199,7 @@ Column meanings are inferred from property names. `FocusEnergyReductionPerShot` 
 
 ## 4. Default weapon attributes (`WDItemExtensionData_GameplayEffects`)
 
-Each weapon stores a list of `Attribute.Gameplay.Weapon.*` defaults. Five multipliers are identical on all 37 weapons: `VerticalRecoilMultiplier` 1.0, `HorizontalRecoilMultiplier` 1.0, `AdsZoomMultiplier` 1.2, `SpreadMultiplier` 1.0, `AccuracyMultiplier` 1.0. `Length` is 80.0 on all 37. The varying attributes are below.
+Each weapon stores a list of `Attribute.Gameplay.Weapon.*` defaults. Five multipliers are identical on all 37 weapons: `VerticalRecoilMultiplier` 1.0, `HorizontalRecoilMultiplier` 1.0, `AdsZoomMultiplier` 1.2, `SpreadMultiplier` 1.0, `AccuracyMultiplier` 1.0. `Length` is 80.0 on every weapon except `ID_Launcher_04`, which lists it twice (100, then 80); the first value, 100, is installed (see [Weapon Attributes §4](Wardogs_WeaponAttributes_v1.md#4-flagged-cases)). The varying attributes are below.
 
 | ID | AimTime | EquipSpeedMult | HolsterSpeedMult | MinZeroingRange | MaxZeroingRange |
 |---|---|---|---|---|---|
