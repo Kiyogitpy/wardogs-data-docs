@@ -10,6 +10,8 @@ nav_order: 2.5
 
 Every vehicle's collision mesh, coloured by the health section each collision slot feeds. Pick a slot on the model or in the list to see its section, how it passes damage to the main health, and how many hits of a caliber destroy the vehicle through it. How slots and routing work: [Vehicle Damage Pipeline](Wardogs_VehicleDamagePipeline_v1.md#31-hitboxes) §3.1 (hitboxes), [§4.2](Wardogs_VehicleDamagePipeline_v1.md#42-routing-semantics) (routing) and [§5.4](Wardogs_VehicleDamagePipeline_v1.md#54-hits-to-destroy) (hits to destroy).
 
+For soldiers, the [Infantry Hitbox Viewer](infantry-viewer.md) shows the player's physics bodies by hit location.
+
 <div class="vv" id="vv" markdown="0" data-json="{{ '/assets/data/vehicle-hitboxes.json' | relative_url }}?v={{ site.time | date: '%s' }}" data-base="{{ '/' | relative_url }}">
   <div class="vv-controls">
     <div class="vv-field">
@@ -76,7 +78,7 @@ The models come from [`_tools/vehicle_models.py`](https://github.com/Kiyogitpy/w
 - **Left wheels are mirrored copies** of the right-side wheel mesh. The mirroring flag isn't in the export, so this is assumed.
 - **Slots resolve as the game resolves them** ([Vehicle §3.2](Wardogs_VehicleDamagePipeline_v1.md#32-from-a-hit-triangle-to-a-section)). Only registered static meshes count. Instanced wheels are in the Wheel surface group and add the wheel's DataIndex (`CC_Wheel` becomes `CC_Wheel_2`), which runs axle by axle. Every other mesh is in the Default group and keeps its slot name as is. A slot missing from its group's map takes that group's default section. Projectile hits and explosions resolve this way; an explosion takes each part's section from its first hit on that part.
 - **Wheels are shown intact unless you pick a damage state.** Destroyed (state 2 in [Vehicle §3.2](Wardogs_VehicleDamagePipeline_v1.md#32-from-a-hit-triangle-to-a-section)'s wheel mesh swap) shows every wheel's destroyed-mesh collision, which has no tyre slot. Deflated (state 1) keeps the intact look but traces against the destruction mesh's collision, so it gives the same hitbox; a wheel deflates at tyre health / max ≤ 0.55 and is destroyed at 0. The Wheels control appears only on the Humvee (WHL_05) and WHL_08, the vehicles whose destroyed wheels have their own collision mesh; on the others both states keep the intact hitbox.
-- **Rotor blades have no section.** Bullets hit them (their `WDRotorCollision` profile blocks projectile traces), but a blade hit finds no section and does nothing to the vehicle; they are shown in grey. The hubs are normal hitboxes.
+- **Rotor blades are hitboxes like the hubs.** They register and resolve by their slot (`CC_MainRotor` / `CC_TailRotor`). Their `WDRotorCollision` profile blocks bullet traces; projectile sweeps ignore it.
 - **Parts that can't be placed are left out**, with a note on the model. The MG nest's gun proxy attaches to a `receiver_J` bone that its skeleton doesn't have, so it is likely never attached.
 - **Meshes without a collision mesh of their own aren't shown**, such as the MG nest's sandbags. Their collision profile isn't traced, and showing them would mean publishing render geometry.
 - **The SPW radar is shown stowed.** No exported data creates its deployed pivot.
