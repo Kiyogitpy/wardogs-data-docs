@@ -162,7 +162,7 @@ shape differences, 78,628 keys renamed. Each old name maps to the same new name 
 | Placeholder → this build's token (`_…_$HASH$_$len$` → `_<21 letters>`) | 635 | 70,841 |
 | Placeholder → name (SDK restore; 1 donor) | 123 | 4,173 |
 | Name → name, SDK corrections | 33 | 819 |
-| Case only (`InstanceID`, `SourceID`, `EntryID`, `EntityID` → `…Id`) | 4 | 2,735 |
+| Case only (`InstanceId` → `InstanceID`; `SourceID`, `EntryID`, `EntityID` → `…Id`) | 4 | 2,735 |
 | Name → hashed, SDK withdrawn (`bFirstFocalPlane`, `TargetScore_AssistWeight`, `bAllowsRestocking`) | 3 | 60 |
 
 SDK-corrected keys per struct: `WDAttributeThresholdEffectTrigger` 251, `WDBipodAttachmentStanceData` 189,

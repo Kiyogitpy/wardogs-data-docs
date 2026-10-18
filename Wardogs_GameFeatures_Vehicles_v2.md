@@ -220,7 +220,7 @@ Stationary body health matches the buildable `MaxHealth` (section 10). Exception
 |---|---|---|
 | Body `Health` | 55, 25, 10 | ROT_02, ROT_03, ROT_04, SPW_01 (55, 10 only), TNK_01 (all three), WHL_01, WHL_02, WHL_05, WHL_06, WHL_07 |
 | `Health.FuelTank` | 90 / 80, 55, 0 (or 10, 0 on ROT_03) | WHL_01, SPW_01, TNK_01, WHL_05_RingTurret, ROT_03 |
-| `Health.Tracks.Left/Right` | 0 (dead), 55 (below) | SPW_01, TNK_01 (the "below 55%" trigger has 2 effects) |
+| `Health.Tracks.Left/Right` | 0 (below: dead), 55 (above) | SPW_01, TNK_01 (incl. TNK_03 AntiAir), TNK_04 (the "above 55%" trigger has 2 effects) |
 | Wheel parts (`Health.Wheel.*`) | 55, 0 | WHL_01, WHL_02, WHL_05, WHL_05_RingTurret, WHL_07 (incl. Middle wheels) |
 | `Health.Engine` | 20 (WHL_01), 55 (TNK_01, WHL_05_RingTurret), 0 | WHL_01, TNK_01, WHL_05_RingTurret |
 | `Health.Rotor.Main` / `Tail` | 55 (above and below), 0 | ROT_02 |
