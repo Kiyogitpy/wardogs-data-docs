@@ -69,6 +69,8 @@ Used as `PriorityCategory` on modification entries. The list order is the catego
 
 The skeleton bone names map to 12 hit-location classes. These classes are the columns of the bone table in 2c.
 
+The lookup is an exact match on the hit bone name (`FHitResult.BoneName`) in `DamageHitLocations`. There is no walk up parent bones. A bone without an entry, or a hit with no bone, gets no hit location (the empty tag). The asset is found per actor class through the damage subsystem's `ClassToHitLocations` (`0x6F01BB0` → `0x6BB8D00`). With no hit location, the entries that require `Meta.Damage.HitLocation.Infantry` do not apply ([DamagePipeline §4](Wardogs_DamagePipeline_v2.md#4-entry-selection) rule 4; entries 5-7, 10, 138-143), and the armor hook removes all armor tags ([DamagePipeline §7.6](Wardogs_DamagePipeline_v2.md#76-the-bullet-event)).
+
 | Bone(s) | Hit location class |
 |---|---|
 | `head` | Head |
@@ -84,7 +86,9 @@ The skeleton bone names map to 12 hit-location classes. These classes are the co
 | `calf_l`, `calf_r` | Leg.Calf |
 | `foot_l`, `foot_r` | Leg.Foot |
 
-The asset also has 2 `DamageImpactRemap` entries: `spine_01` is remapped to `pelvis`, and `spine_05` to `spine_04`.
+Bodies that can be hit: the live player's physics asset `PA_TPCharacter_Simplified` has 20 bodies, one per bone in this table except `spine_01` and `spine_02`, so every traced body gets a hit location and those two entries are never produced. The ragdoll asset (`PA_TPCharacter_Simplified_Physics`) adds `spine_02` and a collision-disabled `root` body and drops `spine_05`.
+
+The asset also has 2 `DamageImpactRemap` entries: `spine_01` is remapped to `pelvis`, and `spine_05` to `spine_04`. The remap is not used for damage. Damage looks up the hit bone as traced (`0x6F01BB0`, called with `FHitResult.BoneName` by the armor hook `0x6B52A40`, by `0x6EF8DE0` and by three more damage-side callers; none applies the remap), so a hit on the `spine_05` body is `Torso.Upper`. A sixth caller, `AWDMoverPlayerCharacter` slot 330 (`0x6E830E0`), does not remap either; its role is not traced. The remap (`0x6F01530` → `0x6BB8D40`) is applied in two other places: when a ragdoll starts, to choose the body that receives the hit impulse (`0x6EF8460`); and in the character anim instance (`0x6A7AC00`, `0x6A7B2C0`), which remaps first and then looks up the hit location for the hit-reaction animation (so there `spine_05` gives `Torso.Middle`).
 
 ### 2c. Bone Damage Multipliers ([`DT_InfantryData_BoneDamageModifiers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_BoneDamageModifiers.json))
 
@@ -211,7 +215,7 @@ The Havoc is the only seat row with a Special entry. The Humvee, Littlebird and 
 
 ### 2i. Hit-Location Asset for Infantry Damage
 
-[`DA_GlobalDamage_HitLocations_Player`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/HitLocationDataAssets/DA_GlobalDamage_HitLocations_Player.json) holds the bone-to-class map in 2b. The bone table in 2c is keyed by the damage-type tag, and each row uses the 12 classes.
+[`DA_GlobalDamage_HitLocations_Player`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/HitLocationDataAssets/DA_GlobalDamage_HitLocations_Player.json) holds the bone-to-class map in 2b; the damage subsystem picks it by the hit actor's class (`ClassToHitLocations`, `0x6F01BB0`). Where the `ClassToHitLocations` keys are registered is unverified (only one hit-location asset exists). The bone table in 2c is keyed by the damage-type tag, and each row uses the 12 classes.
 
 ---
 
@@ -524,7 +528,7 @@ Rows: `Communication.Ping`, `Communication.Ping.Type.Context.Map.MarkCoordinates
 
 ## 14. How Values Combine
 
-- **Infantry hit damage:** the bone multiplier (2c) is chosen by damage-type row, then the hit location. The Universal row is the fallback. Infantry modification rules (2f, 2g) then adjust the result. The rules are sorted by `PriorityCategory` and `PriorityIndex`. The exact combination (additive percentages vs multiplicative) is not verified.
+- **Infantry hit damage:** the bone multiplier (2c) is chosen by damage-type row, then the hit location. The `Universal` value and the weapon row's value multiply ([DamagePipeline §7.1](Wardogs_DamagePipeline_v2.md#71-b_bonedamagemodifiers_c-entries-5-7-10)). Infantry modification rules (2f, 2g) then adjust the result. The rules are sorted by `PriorityCategory` and `PriorityIndex`. The exact combination (additive percentages vs multiplicative) is not verified.
 - **Armour-piercing and hollow-point:** the ammo-modifier assets (2e) multiply penetration effectiveness, range and exit speed. The per-arm penetration table (2d) then scales damage per armour class.
 - **Vehicle occupants:** seat reduction (2h) is a flat percentage by vehicle variant and arm class.
 - **Explosives:** `BaseDamage` and `ExplosiveRadius` (section 3) feed the Calibre rules (2f). Falloff is the `ExplosiveDamageFallOff` field.
@@ -557,3 +561,11 @@ Rows: `Communication.Ping`, `Communication.Ping.Type.Context.Map.MarkCoordinates
 - **Player curves.** The 9 `CurveFloat` and 4 `CurveVector` assets in [`Player/PlayerCharacter/Curves/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves) were not decoded.
 - **Reward tables.** [`Gamemode/Data/DT_CashRewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_CashRewards.json) (49 rows), [`DT_Rewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_Rewards.json) (78 rows), [`DT_AssistCashRewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_AssistCashRewards.json) (9), [`DT_CashRewardModifiers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_CashRewardModifiers.json) (9) and the [`CashRewardsDataTable/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/CashRewardsDataTable) tree are covered in `Wardogs_Rewards_and_Progression_v2.md`, not here.
 - **EQS details.** The EQS query contents (generators, tests and scoring equations) were listed by name only.
+
+---
+
+## Change log
+
+| Date | Change |
+|---|---|
+| 2026-10-18 | Round-6 verifier pass: the hit location is an exact bone-name lookup with no parent walk and no remap for damage (2b; `DamageImpactRemap` only drives the ragdoll impulse and hit-reaction animation); the live player physics asset `PA_TPCharacter_Simplified` and its 20 bodies (2b); the asset is picked by actor class (2i); the `Universal` and weapon bone rows multiply (14). |
