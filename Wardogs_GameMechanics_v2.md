@@ -48,7 +48,7 @@ parent: "Content"
 
 ### 2a. Damage Categories ([`DA_GlobalDamage_Categories`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DA_GlobalDamage_Categories.json))
 
-Used as `PriorityCategory` on modification entries. The list order is the category list in the asset (exact resolution order not verified).
+Used as `PriorityCategory` on modification entries. Entries sort by the zero-based index of their category in this list ([DamagePipeline §5](Wardogs_DamagePipeline_v2.md#5-ordering)).
 
 | # | Category tag |
 |---|---|
@@ -92,7 +92,7 @@ The asset also has 2 `DamageImpactRemap` entries: `spine_01` is remapped to `pel
 
 ### 2c. Bone Damage Multipliers ([`DT_InfantryData_BoneDamageModifiers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_BoneDamageModifiers.json))
 
-Each row is a damage-type tag. Values are the per-hit-location multiplier. The `Universal` row is not a fallback: every hit multiplies the `Universal` value by the value from the source's weapon row (1.0 when no row matches), as traced in [DamagePipeline §7.1](Wardogs_DamagePipeline_v2.md#71-b_bonedamagemodifiers_c-entries-5-7-10).
+Each row is keyed by a source-context tag: `Universal`, 18 weapon tags (`Meta.Damage.Weapon.*`, shortened below) and `Meta.Damage.DamageType.Melee`. Values are the per-hit-location multiplier. The `DamageType.Melee` row is never used for a melee-only source, because the bone entries (5, 7, 10) need a Bullet, ExplosiveBlunt or Cannon source ([DamagePipeline §3.1](Wardogs_DamagePipeline_v2.md#31-the-custom-entries)). The `Universal` row is not a fallback: every hit multiplies the `Universal` value by the value from the source's weapon row (1.0 when no row matches), as traced in [DamagePipeline §7.1](Wardogs_DamagePipeline_v2.md#71-b_bonedamagemodifiers_c-entries-5-7-10).
 
 | Row | Head | Neck | Torso.Up | Torso.Mid | Torso.Low | Pelvis | Arm.Up | Arm.Low | Arm.Hand | Leg.Thigh | Leg.Calf | Leg.Foot |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -113,7 +113,7 @@ Each row is a damage-type tag. Values are the per-hit-location multiplier. The `
 | Vehicle.Turret.Artillery | 2.35 | 2.35 | 0.885 | 0.97 | 0.97 | 1.0 | 0.9 | 0.9 | 0.9 | 0.9 | 0.9 | 0.9 |
 | Vehicle.Turret.Heavy | 2.35 | 2.35 | 0.885 | 0.97 | 0.97 | 1.0 | 0.9 | 0.9 | 0.9 | 0.9 | 0.9 | 0.9 |
 | Vehicle.Turret.STN_06 | 2.2 | 2.2 | 1.2 | 1.0 | 1.0 | 1.0 | 1.0 | 1.0 | 1.0 | 1.0 | 1.0 | 1.0 |
-| Vehicle.Turret.HMG.MWSY_001 | 2.2 | 2.2 | 1.2 | 1.0 | 1.0 | 1.0 | 1.0 | 1.0 | 1.0 | 1.0 | 1.0 | 1.0 |
+| HMG.MWSY_001 | 2.2 | 2.2 | 1.2 | 1.0 | 1.0 | 1.0 | 1.0 | 1.0 | 1.0 | 1.0 | 1.0 | 1.0 |
 | Vehicle.HelicopterCannon | 3.2 | 3.2 | 1.8 | 1.8 | 1.8 | 1.3 | 1.2 | 1.2 | 1.2 | 1.2 | 1.2 | 1.2 |
 | Vehicle.HelicopterRocket | 1.5 | 1.5 | 1.0 | 0.6 | 0.6 | 0.6 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8 |
 
@@ -185,7 +185,7 @@ The row has 146 entries. Most are no-op rows (60 entries with no requirements an
 | PenetrationEffectiveness | 50Cal | Heavy / SuperHeavy | −10% / −12.5% and −10% / −20% | New in this update |
 | PenetrationEffectiveness | Bullet, Cannon, ExplosiveBlunt (hits Infantry) | Armor / Helmet | 0% | Custom operation |
 
-Friendly-fire and melee rules use the `Friendly` alignment. The rules are evaluated by `PriorityCategory` and `PriorityIndex`. The exact evaluation order and whether percentages stack additively or multiplicatively is not verified from the data.
+Two entries (8 and 9) use the `Friendly` alignment; the melee armor entry (144) has none. Entries run in category order, then by index ([DamagePipeline §5](Wardogs_DamagePipeline_v2.md#5-ordering)). Each delta is added to a running amount: `Percentage_Starting` deltas are taken from the starting amount, so they add; `Percentage_Ongoing` deltas from the running amount, so they multiply ([DamagePipeline §6](Wardogs_DamagePipeline_v2.md#6-arithmetic)). The −75% and −50% shown for custom-operation rows are literals the evaluator ignores; the custom operation computes the change ([DamagePipeline §6](Wardogs_DamagePipeline_v2.md#6-arithmetic), §7).
 
 ### 2g. Armour and Helmet Rules ([`DT_GlobalDamage_ArmorData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_ArmorData.json))
 
@@ -221,7 +221,7 @@ The Havoc is the only seat row with a Special entry. The Humvee, Littlebird and 
 
 ### 2j. Archetype Caliber Modifiers ([`DT_InfantryData_ArchetypeCaliberModifiers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_ArchetypeCaliberModifiers.json), new)
 
-Each row is a weapon archetype with per-hit-location values stored under an unnamed field. Rows: `AR`, `DMR`, `LMG`, `Sniper`, `Pistol`, `SMG`, `Shotgun`, [`CombatBow`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/CombatBow/Content/CombatBow.json), `HMG.MWSY_001`, `Vehicle.Turret.MachineGun`, `Vehicle.Turret.Minigun` and `Vehicle.Turret.STN_06`. The Bullet calibre rule in 2f uses the `B_ArchetypeCaliberModifiers` operation, which is most likely the reader of this table. The values are not listed here.
+Each row is a weapon archetype with a `CaliberModifiers` map (caliber tag → multiplier; the export's `_aaabapbnbhiopifeenjml`), read by `B_ArchetypeCaliberModifiers` with a one-level parent fallback ([DamagePipeline §7.2](Wardogs_DamagePipeline_v2.md#72-b_archetypecalibermodifiers_c-entry-6), [§8.2](Wardogs_DamagePipeline_v2.md#82-archetypecalibermodifiers-weapon-type--caliber)). Rows: `AR`, `DMR`, `LMG`, `Sniper`, `Pistol`, `SMG`, `Shotgun`, [`CombatBow`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/CombatBow/Content/CombatBow.json), `HMG.MWSY_001`, `Vehicle.Turret.MachineGun`, `Vehicle.Turret.Minigun` and `Vehicle.Turret.STN_06`. The Bullet calibre rule in 2f (entry 6) is its reader. The values are not listed here.
 
 ### 2k. Suppression Curves (`Inventory/CR_SuppressionCurve_*`, new)
 
@@ -528,10 +528,10 @@ Rows: `Communication.Ping`, `Communication.Ping.Type.Context.Map.MarkCoordinates
 
 ## 14. How Values Combine
 
-- **Infantry hit damage:** the bone multiplier (2c) is chosen by damage-type row, then the hit location. The `Universal` value and the weapon row's value multiply ([DamagePipeline §7.1](Wardogs_DamagePipeline_v2.md#71-b_bonedamagemodifiers_c-entries-5-7-10)). Infantry modification rules (2f, 2g) then adjust the result. The rules are sorted by `PriorityCategory` and `PriorityIndex`. The exact combination (additive percentages vs multiplicative) is not verified.
+- **Infantry hit damage:** the bone multiplier (2c) is chosen by damage-type row, then the hit location. The `Universal` value and the weapon row's value multiply ([DamagePipeline §7.1](Wardogs_DamagePipeline_v2.md#71-b_bonedamagemodifiers_c-entries-5-7-10)). Infantry modification rules (2f, 2g) then adjust the result. The rules run in category order ([DamagePipeline §5](Wardogs_DamagePipeline_v2.md#5-ordering)) and combine as in 2f ([§6](Wardogs_DamagePipeline_v2.md#6-arithmetic)).
 - **Armour-piercing and hollow-point:** the ammo-modifier assets (2e) multiply penetration effectiveness, range and exit speed. The per-arm penetration table (2d) then scales damage per armour class.
 - **Vehicle occupants:** seat reduction (2h) is a flat percentage by vehicle variant and arm class.
-- **Explosives:** `BaseDamage` and `ExplosiveRadius` (section 3) feed the Calibre rules (2f). Falloff is the `ExplosiveDamageFallOff` field.
+- **Explosives:** `BaseDamage` and `ExplosiveRadius` (section 3) feed the Calibre rules (2f). The radial falloff arithmetic is not traced; `ExplosiveDamageFallOff` is the data field that likely drives it.
 - **Vendor price:** `Price` is per variation. The vendor UI applies the `LevelToUnlock` gate and the `LifeTimeBuyLimit`.
 
 ---
@@ -569,3 +569,4 @@ Rows: `Communication.Ping`, `Communication.Ping.Type.Context.Map.MarkCoordinates
 | Date | Change |
 |---|---|
 | 2026-10-18 | Round-6 verifier pass: the hit location is an exact bone-name lookup with no parent walk and no remap for damage (2b; `DamageImpactRemap` only drives the ragdoll impulse and hit-reaction animation); the live player physics asset `PA_TPCharacter_Simplified` and its 20 bodies (2b); the asset is picked by actor class (2i); the `Universal` and weapon bone rows multiply (14). |
+| 2026-10-18 | Infantry viewer findings: §2c row keys are source-context tags (the `MWSY_001` row is `Meta.Damage.Weapon.HMG.MWSY_001`); §2f alignment, ordering, arithmetic and ignored custom literals per DamagePipeline §5–§7; §2j is a caliber map (§7.2); §2a order per §5; §14 aligned, radial falloff marked not traced. |
