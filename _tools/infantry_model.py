@@ -59,6 +59,7 @@ NOTES = [
     "Origin at the feet (mesh component origin); the actor origin is 0.96 m higher. Facing +Z.",
     "Helmets: MUT_TP_Character also lists five helmet physics assets (PA_Helmet_*), each with one body on head."
     " Whether Mutable merges them into the runtime physics asset is not visible in the cooked data; they are not shown.",
+    "Whether Chaos builds query shapes from the six tapered-capsule bodies is unverified.",
 ]
 
 
