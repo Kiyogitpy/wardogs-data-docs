@@ -63,7 +63,9 @@
       "Attack_ROT_02"
      ],
      "path": "assets/models/vehicles/air-rotary-havoc.glb",
-     "notes": [],
+     "notes": [
+      "Rotor blades (\"no section\"): their WDRotorCollision profile blocks bullets, but a blade hit finds no section and does nothing to the vehicle. Projectile sweeps ignore the blades. Hubs are normal hitboxes."
+     ],
      "centres": [
       [
        -0.028,
@@ -82,8 +84,8 @@
       ],
       [
        0.6191,
-       2.7212,
-       -7.581
+       1.9172,
+       -7.1434
       ],
       null,
       null,
@@ -348,7 +350,9 @@
       "ROT_03_Default"
      ],
      "path": "assets/models/vehicles/air-rotary-littlebird.glb",
-     "notes": [],
+     "notes": [
+      "Rotor blades (\"no section\"): their WDRotorCollision profile blocks bullets, but a blade hit finds no section and does nothing to the vehicle. Projectile sweeps ignore the blades. Hubs are normal hitboxes."
+     ],
      "centres": [
       [
        -0.0062,
@@ -361,13 +365,13 @@
        -1.161
       ],
       [
-       -0.0001,
-       2.5099,
-       -0.354
+       0.0,
+       2.6811,
+       -0.3709
       ],
       [
        -0.151,
-       1.7893,
+       1.8254,
        -3.7762
       ],
       null
@@ -378,7 +382,9 @@
       "ROT_03_MachineGuns"
      ],
      "path": "assets/models/vehicles/air-rotary-littlebird--rot-03-machineguns.glb",
-     "notes": [],
+     "notes": [
+      "Rotor blades (\"no section\"): their WDRotorCollision profile blocks bullets, but a blade hit finds no section and does nothing to the vehicle. Projectile sweeps ignore the blades. Hubs are normal hitboxes."
+     ],
      "centres": [
       [
        -0.0061,
@@ -391,13 +397,13 @@
        -1.161
       ],
       [
-       -0.0001,
-       2.5099,
-       -0.354
+       0.0,
+       2.6811,
+       -0.3709
       ],
       [
        -0.151,
-       1.7893,
+       1.8254,
        -3.7762
       ],
       null
@@ -408,7 +414,9 @@
       "ROT_03_RocketPods"
      ],
      "path": "assets/models/vehicles/air-rotary-littlebird--rot-03-rocketpods.glb",
-     "notes": [],
+     "notes": [
+      "Rotor blades (\"no section\"): their WDRotorCollision profile blocks bullets, but a blade hit finds no section and does nothing to the vehicle. Projectile sweeps ignore the blades. Hubs are normal hitboxes."
+     ],
      "centres": [
       [
        -0.0061,
@@ -421,13 +429,13 @@
        -1.161
       ],
       [
-       -0.0001,
-       2.5099,
-       -0.354
+       0.0,
+       2.6811,
+       -0.3709
       ],
       [
        -0.151,
-       1.7893,
+       1.8254,
        -3.7762
       ],
       null
@@ -620,7 +628,9 @@
       "ROT_04_Default"
      ],
      "path": "assets/models/vehicles/air-rotary-rot-04.glb",
-     "notes": [],
+     "notes": [
+      "Rotor blades (\"no section\"): their WDRotorCollision profile blocks bullets, but a blade hit finds no section and does nothing to the vehicle. Projectile sweeps ignore the blades. Hubs are normal hitboxes."
+     ],
      "centres": [
       [
        0.0,
@@ -633,14 +643,14 @@
        -2.1028
       ],
       [
-       0.0118,
+       -0.0326,
        3.5808,
-       1.3969
+       0.7662
       ],
       [
        0.0,
-       2.7246,
-       -7.5816
+       2.0462,
+       -7.0212
       ],
       null
      ]
@@ -650,7 +660,9 @@
       "ROT_04_MountedMachineGuns"
      ],
      "path": "assets/models/vehicles/air-rotary-rot-04--rot-04-mountedmachineguns.glb",
-     "notes": [],
+     "notes": [
+      "Rotor blades (\"no section\"): their WDRotorCollision profile blocks bullets, but a blade hit finds no section and does nothing to the vehicle. Projectile sweeps ignore the blades. Hubs are normal hitboxes."
+     ],
      "centres": [
       [
        0.0,
@@ -663,14 +675,14 @@
        -2.1028
       ],
       [
-       0.0118,
+       -0.0326,
        3.5808,
-       1.3969
+       0.7662
       ],
       [
        0.0,
-       2.7246,
-       -7.5816
+       2.0462,
+       -7.0212
       ],
       null
      ]
@@ -1828,7 +1840,7 @@
      ],
      "path": "assets/models/vehicles/stationary-mgnest.glb",
      "notes": [
-      "Only the gun mount is shown. The gun's own proxy (CC_Browning_Gun) attaches to a receiver_J bone that SK_Browning_Mounted doesn't have, so where the game puts it is not traced."
+      "Only the gun mount is shown. The gun's own proxy (CC_Browning_Gun) attaches to a receiver_J bone that SK_Browning_Mounted doesn't have; with partial attachments not enabled (0x50EF920) it is likely never attached."
      ],
      "centres": [
       null,
@@ -3776,7 +3788,7 @@
       ],
       "path": "assets/models/vehicles/land-wheeled-humvee-default--wheels-destroyed.glb",
       "notes": [
-       "Damage state: every wheel destroyed (state 2 in Vehicle §3.2's wheel mesh swap). Each wheel shows its destroyed mesh's collision, which has no tyre slot. What sets a wheel's state is not traced."
+       "Damage state: every wheel deflated (state 1) or destroyed (state 2), Vehicle §3.2's wheel mesh swap. Destroyed shows the destruction mesh; deflated keeps the intact look but traces against the destruction mesh's collision (AlternativeCollisionHull, 0x5389A46), so both give this hitbox. Each wheel's slot is CC_Wheel, which is material 0 on the intact and destroyed collision meshes alike (assuming the hull keeps the destroyed mesh's material indices). A wheel deflates at TyreHealth / max ≤ 0.55 and is destroyed at TyreHealth ≤ 0 (0x537C580)."
       ],
       "centres": [
        [
@@ -4317,7 +4329,7 @@
       ],
       "path": "assets/models/vehicles/land-wheeled-humvee-minigun--wheels-destroyed.glb",
       "notes": [
-       "Damage state: every wheel destroyed (state 2 in Vehicle §3.2's wheel mesh swap). Each wheel shows its destroyed mesh's collision, which has no tyre slot. What sets a wheel's state is not traced."
+       "Damage state: every wheel deflated (state 1) or destroyed (state 2), Vehicle §3.2's wheel mesh swap. Destroyed shows the destruction mesh; deflated keeps the intact look but traces against the destruction mesh's collision (AlternativeCollisionHull, 0x5389A46), so both give this hitbox. Each wheel's slot is CC_Wheel, which is material 0 on the intact and destroyed collision meshes alike (assuming the hull keeps the destroyed mesh's material indices). A wheel deflates at TyreHealth / max ≤ 0.55 and is destroyed at TyreHealth ≤ 0 (0x537C580)."
       ],
       "centres": [
        null,
@@ -4854,7 +4866,7 @@
       ],
       "path": "assets/models/vehicles/land-wheeled-humvee-machinegun--wheels-destroyed.glb",
       "notes": [
-       "Damage state: every wheel destroyed (state 2 in Vehicle §3.2's wheel mesh swap). Each wheel shows its destroyed mesh's collision, which has no tyre slot. What sets a wheel's state is not traced."
+       "Damage state: every wheel deflated (state 1) or destroyed (state 2), Vehicle §3.2's wheel mesh swap. Destroyed shows the destruction mesh; deflated keeps the intact look but traces against the destruction mesh's collision (AlternativeCollisionHull, 0x5389A46), so both give this hitbox. Each wheel's slot is CC_Wheel, which is material 0 on the intact and destroyed collision meshes alike (assuming the hull keeps the destroyed mesh's material indices). A wheel deflates at TyreHealth / max ≤ 0.55 and is destroyed at TyreHealth ≤ 0 (0x537C580)."
       ],
       "centres": [
        null,
@@ -6790,7 +6802,7 @@
       ],
       "path": "assets/models/vehicles/land-wheeled-whl-08-default--wheels-destroyed.glb",
       "notes": [
-       "Damage state: every wheel destroyed (state 2 in Vehicle §3.2's wheel mesh swap). Each wheel shows its destroyed mesh's collision, which has no tyre slot. What sets a wheel's state is not traced."
+       "Damage state: every wheel deflated (state 1) or destroyed (state 2), Vehicle §3.2's wheel mesh swap. Destroyed shows the destruction mesh; deflated keeps the intact look but traces against the destruction mesh's collision (AlternativeCollisionHull, 0x5389A46), so both give this hitbox. Each wheel's slot is CC_Wheel, which is material 0 on the intact and destroyed collision meshes alike (assuming the hull keeps the destroyed mesh's material indices). A wheel deflates at TyreHealth / max ≤ 0.55 and is destroyed at TyreHealth ≤ 0 (0x537C580)."
       ],
       "centres": [
        [
@@ -6898,7 +6910,7 @@
       ],
       "path": "assets/models/vehicles/land-wheeled-whl-08-default--whl-08-ringturret--wheels-destroyed.glb",
       "notes": [
-       "Damage state: every wheel destroyed (state 2 in Vehicle §3.2's wheel mesh swap). Each wheel shows its destroyed mesh's collision, which has no tyre slot. What sets a wheel's state is not traced.",
+       "Damage state: every wheel deflated (state 1) or destroyed (state 2), Vehicle §3.2's wheel mesh swap. Destroyed shows the destruction mesh; deflated keeps the intact look but traces against the destruction mesh's collision (AlternativeCollisionHull, 0x5389A46), so both give this hitbox. Each wheel's slot is CC_Wheel, which is material 0 on the intact and destroyed collision meshes alike (assuming the hull keeps the destroyed mesh's material indices). A wheel deflates at TyreHealth / max ≤ 0.55 and is destroyed at TyreHealth ≤ 0 (0x537C580).",
        "The turret housing's collision mesh (CC_WHL_08_TurretHousing) is authored in vehicle space, but the data attaches it at the turret socket like a socket-local mesh, so its hitbox sits about 2 m above the roof. Shown where the data places it; whether the game corrects this is not traced."
       ],
       "centres": [

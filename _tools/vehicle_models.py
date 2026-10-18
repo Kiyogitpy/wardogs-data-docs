@@ -24,7 +24,8 @@ component space. A skeletal-mesh socket adds its RelativeLocation and RelativeRo
 degrees) on its bone. The Chassis component is the actor root, at identity.
 
 Materials: one per collision slot, named as the slot, or "<slot>|<Group>" when the mesh registers
-outside ComplexSurface.Group.Default. Untextured: baseColorFactor only. Node names are the
+outside ComplexSurface.Group.Default, or "<slot>|NoSection" on meshes whose hits find no section (rotor
+blades, NO_SECTION_PROFILES). Untextured: baseColorFactor only. Node names are the
 collision-mesh names. node.extras records the render mesh, module, attach point and surface group. The
 merged GLB is compressed with meshopt by a pinned glTF-Transform CLI (npx, Node.js needed). Viewers must
 supply a meshopt decoder.
@@ -203,7 +204,8 @@ def components(module_files):
                                       "rel": ftransform(s.get("RelativeTransform")),
                                       "mesh": (s.get("Mesh") or {}).get("AssetPathName"),
                                       "register": s.get("bRegisterComplexSurface", False),
-                                      "group": dt.tag(s.get("SurfaceGroup")) if dt.tag(s.get("SurfaceGroup")) not in (None, "None") else None})
+                                      "group": dt.tag(s.get("SurfaceGroup")) if dt.tag(s.get("SurfaceGroup")) not in (None, "None") else None,
+                                      "profile": ((s.get("CollisionProfile") or {}).get("Settings") or {}).get("Profile")})
     return comps
 
 
@@ -215,10 +217,20 @@ MESH_NOTES = {
                                "hitbox sits about 2 m above the roof. Shown where the data places it; whether the game "
                                "corrects this is not traced.",
     "Browning_Mount_Proxy": "Only the gun mount is shown. The gun's own proxy (CC_Browning_Gun) attaches to a receiver_J "
-                            "bone that SK_Browning_Mounted doesn't have, so where the game puts it is not traced.",
+                            "bone that SK_Browning_Mounted doesn't have; with partial attachments not enabled "
+                            "(0x50EF920) it is likely never attached.",
 }
-DESTROYED_NOTE = ("Damage state: every wheel destroyed (state 2 in Vehicle §3.2's wheel mesh swap). Each wheel shows its "
-                  "destroyed mesh's collision, which has no tyre slot. What sets a wheel's state is not traced.")
+DESTROYED_NOTE = ("Damage state: every wheel deflated (state 1) or destroyed (state 2), Vehicle §3.2's wheel mesh swap. "
+                  "Destroyed shows the destruction mesh; deflated keeps the intact look but traces against the "
+                  "destruction mesh's collision (AlternativeCollisionHull, 0x5389A46), so both give this hitbox. "
+                  "Each wheel's slot is CC_Wheel, which is material 0 on the intact and destroyed collision meshes "
+                  "alike (assuming the hull keeps the destroyed mesh's material indices). A wheel deflates at "
+                  "TyreHealth / max ≤ 0.55 and is destroyed at TyreHealth ≤ 0 (0x537C580).")
+# Rotor blades: WDRotorCollision blocks Visibility and WDProjectile, so bullets hit them, but the hit finds no
+# section (round-6 verifier). Their materials are named "<slot>|NoSection", which the page resolves to no section.
+NO_SECTION_PROFILES = {"WDRotorCollision"}
+BLADE_NOTE = ("Rotor blades (\"no section\"): their WDRotorCollision profile blocks bullets, but a blade hit finds no "
+              "section and does nothing to the vehicle. Projectile sweeps ignore the blades. Hubs are normal hitboxes.")
 
 
 def wheel_components(module_files, state="intact"):
@@ -475,6 +487,8 @@ def assemble_variant(vehicle, variant, index, skel_dir, state="intact"):
         cc, glb = found[render]
         group = c["group"] or DEFAULT_GROUP
         suffix = "" if group == DEFAULT_GROUP else "|" + group.rsplit(".", 1)[-1]
+        if c.get("profile") in NO_SECTION_PROFILES:
+            suffix = "|NoSection"
         names, index_ = c.get("indexed", (set(), None))
         prims = []
         for slot, color, pos, idx in read_glb(glb):
@@ -491,6 +505,8 @@ def assemble_variant(vehicle, variant, index, skel_dir, state="intact"):
         extras = {"render_mesh": render, "module": c["module"],
                   "attach": f"{c['source'] or 'Chassis'}:{c['socket']}" if c["source"] or c.get("root_socket") else None,
                   "surface_group": group}
+        if c.get("profile") in NO_SECTION_PROFILES:
+            extras["no_section"] = c["profile"]
         if c.get("wheel"):
             extras["wheel"] = dict(c["wheel"], mirrored=c["mirror"])
         nodes.append((name, to_gltf(c["world"]), extras, prims))
@@ -549,6 +565,8 @@ def build(vehicle, index, skel_dir, raw_dir):
         if destroyed:
             asset_extras["damage_state"] = "wheels_destroyed"
         notes += dict.fromkeys(MESH_NOTES[n[2]["render_mesh"]] for n in f["nodes"] if n[2]["render_mesh"] in MESH_NOTES)
+        if any(n[2].get("no_section") for n in f["nodes"]):
+            notes.append(BLADE_NOTE)
         if notes:
             asset_extras["notes"] = notes
         write_glb(raw, vehicle["id"], f["nodes"], asset_extras)
