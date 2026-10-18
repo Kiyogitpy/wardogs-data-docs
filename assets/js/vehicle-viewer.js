@@ -43,7 +43,7 @@
   var GHOST = 0.13;                  // alpha of the other slots while one is selected (see-through)
 
   var root, data, mainSection, base, els = {};
-  var state = { vehicle: null, model: -1, caliber: null, mode: "section", selected: -1, picked: null, labels: true, xray: true,
+  var state = { vehicle: null, model: -1, caliber: null, blast: false, dist: 0, mode: "section", selected: -1, picked: null, labels: true, xray: true,
                 wheels: "intact" };
   var viewer = null, mvState = "pending", materials = [], loadToken = 0, fallbackText = null;
 
@@ -122,6 +122,63 @@
     return rgbToHex(a.map(function (x, k) { return x + (b[k] - x) * f; }));
   }
 
+  /* ---------- blast falloff (Damage pipeline §1.1: 0x6F06540) ---------- */
+
+  // Radial amount at distance d (cm): Base inside E, 0 at R and beyond, else Base * ((1 - F) + F * t) with t = 1 at E
+  // and 0 at R; never below MinimumExplosiveDamage. Missing fields are 0. What d is measured between is not traced.
+  function blastAmount(cal, d) {
+    var b = cal.blast || {}, R = b.radius || 0, E = b.effective_radius || 0, F = b.falloff || 0, mn = b.minimum || 0;
+    var base = cal.base_damage || 0, a;
+    if (d <= E) a = base;
+    else if (d >= R) a = 0;
+    else {
+      var t = Math.abs(E - R) <= 1e-8 ? (d >= E ? 1 : 0) : Math.min(Math.max((d - R) / (E - R), 0), 1);
+      a = base * ((1 - F) + F * t);
+    }
+    return Math.max(a, mn);
+  }
+
+  function useBlast() { return state.blast && state.caliber && !!state.caliber.blast; }
+  function perHit(cal) { return useBlast() ? blastAmount(cal, state.dist) : cal.base_damage; }
+
+  // Port of apply_section in damage_tables.py (Vehicle §4): one point application to a section.
+  function applySection(secs, health, key, amount, depth) {
+    var sec = secs[key], handled = 0;
+    if (!sec || depth > 10 || !(amount > 0)) return 0;
+    function clamp01(x) { return Math.min(Math.max(x, 0), 1); }
+    function reroute(routes) {
+      routes.forEach(function (r) {
+        if ((health[key] <= 0) === !!r[2] && amount - handled > 0)
+          handled += applySection(secs, health, r[0], (amount - handled) * clamp01(r[1]), depth + 1);
+      });
+    }
+    reroute(sec.pre);
+    var own = Math.min(Math.max(amount - handled, 0), Math.max(health[key], 0));
+    health[key] -= own;
+    handled += own;
+    if (key === data.meta.main_section && health[key] <= 0) return handled;
+    sec.simultaneous.forEach(function (r) {
+      if (!r[2] || health[key] <= 0) applySection(secs, health, r[0], own * clamp01(r[1]), depth + 1);
+    });
+    reroute(sec.post);
+    return handled;
+  }
+
+  // Hits of `dmg` on the slot's section until the main health reaches 0, or null.
+  function simHits(v, s, dmg) {
+    var secs = v.sections, main = data.meta.main_section, health = {}, hits = 0;
+    if (!secs || !secs[s.section] || !(dmg > 0)) return null;
+    Object.keys(secs).forEach(function (k) { health[k] = secs[k].max_health; });
+    while (health[main] > 0 && hits < 5000) { applySection(secs, health, s.section, dmg, 0); hits++; }
+    return hits < 5000 ? hits : null;
+  }
+
+  // Rule-factor-scaled damage and hits to destroy for a slot; the direct view reads the precomputed values.
+  function dmgOf(s, cal) { return perHit(cal) * s.rule_factor[cal.id]; }
+  function hitsOf(s, cal) {
+    return useBlast() ? simHits(state.vehicle, s, dmgOf(s, cal)) : s.hits_to_destroy[cal.id];
+  }
+
   // The selected vehicle's value range for the current caliber, ignoring nulls.
   function range(values) {
     var known = values.filter(function (x) { return x != null && x > 0; });
@@ -132,7 +189,7 @@
   function scale() {
     var v = state.vehicle, cal = state.caliber.id;
     if (state.mode === "hits") {
-      var r = range(v.slots.map(function (s) { return s.hits_to_destroy[cal]; }));
+      var r = range(v.slots.map(function (s) { return hitsOf(s, state.caliber); }));
       return { range: r, t: function (x) {     // fewer hits: brighter
         if (!r || r.max === r.min) return 1;
         return 1 - (Math.log(x) - Math.log(r.min)) / (Math.log(r.max) - Math.log(r.min));
@@ -149,7 +206,7 @@
   function paint(s, sc) {
     if (!s) return { colour: NONE_COLOUR, none: true };   // a material with no section
     if (state.mode === "section") return { colour: familyOf(s.section).colour, none: false };
-    var x = state.mode === "hits" ? s.hits_to_destroy[state.caliber.id] : s.rule_factor[state.caliber.id];
+    var x = state.mode === "hits" ? hitsOf(s, state.caliber) : s.rule_factor[state.caliber.id];
     if (x == null || !(x > 0)) return { colour: NONE_COLOUR, none: true };
     return { colour: ramp(sc.t(x)), none: false };
   }
@@ -157,7 +214,7 @@
   function valueText(s) {
     var cal = state.caliber.id;
     if (state.mode === "hits") {
-      var h = s.hits_to_destroy[cal];
+      var h = hitsOf(s, state.caliber);
       return h == null ? "can't destroy" : num(h) + (h === 1 ? " hit" : " hits");
     }
     if (state.mode === "factor") return "×" + num(s.rule_factor[cal]);
@@ -452,9 +509,9 @@
     var ul = el("ul", "vv-routes");
     routing(s).forEach(function (line) { ul.appendChild(el("li", null, line)); });
     row(dl, "Routing", ul);
-    var f = s.rule_factor[cal.id], h = s.hits_to_destroy[cal.id];
+    var f = s.rule_factor[cal.id], h = hitsOf(s, cal), amt = perHit(cal);
     row(dl, "Rule factor (" + cal.label + ")", "×" + num(f));
-    row(dl, "Damage per hit", num(cal.base_damage) + " × " + num(f) + " = " + num(cal.base_damage * f));
+    row(dl, useBlast() ? "Blast amount (" + num(state.dist / 100) + " m)" : "Damage per hit", num(amt) + " × " + num(f) + " = " + num(amt * f));
     row(dl, "Hits to destroy", h == null ? "can't destroy the vehicle through this slot" : num(h));
     body.appendChild(dl);
     if (cal.note) body.appendChild(el("p", "vv-caliber-note", cal.note));
@@ -523,13 +580,13 @@
     });
     var tb = t.createTBody();
     state.vehicle.slots.forEach(function (s) {
-      var r = tb.insertRow(), f = s.rule_factor[cal.id], h = s.hits_to_destroy[cal.id];
+      var r = tb.insertRow(), f = s.rule_factor[cal.id], h = hitsOf(s, cal);
       var c0 = r.insertCell();
       c0.appendChild(code(slotName(s)));
       if (s.group !== DEFAULT_GROUP) c0.appendChild(document.createTextNode(" [" + shortGroup(s.group) + "]"));
       r.insertCell().textContent = shortSection(s.section) + " (" + num(s.max_health) + ")";
       r.insertCell().textContent = routing(s).join("; ");
-      [["×" + num(f)], [num(cal.base_damage * f)], [h == null ? "can't destroy" : num(h)]].forEach(function (x) {
+      [["×" + num(f)], [num(perHit(cal) * f)], [h == null ? "can't destroy" : num(h)]].forEach(function (x) {
         var c = r.insertCell();
         c.className = "num";
         c.textContent = x[0];
@@ -722,6 +779,24 @@
 
   /* ---------- state changes ---------- */
 
+  // Show the blast controls for a caliber with blast data; the slider runs 0 to its ExplosiveRadius.
+  function syncBlast() {
+    var b = state.caliber && state.caliber.blast;
+    els.blastField.hidden = !b;
+    if (!b) return;
+    var max = (b.radius || 0) / 100;
+    els.dist.max = max;
+    els.dist.step = 0.5;
+    if (state.dist > max * 100) state.dist = max * 100;
+    els.dist.value = state.dist / 100;
+    els.dist.disabled = !state.blast;
+    els.distOut.textContent = num(state.dist / 100) + " m";
+    els.blastNote.textContent = state.blast
+      ? "Falloff: full damage within " + num((b.effective_radius || 0) / 100) + " m, none at " + num(max) + " m (Damage pipeline §1.1). " +
+        "Amount at this distance: " + num(blastAmount(state.caliber, state.dist)) + ". What the distance is measured between is not traced."
+      : "";
+  }
+
   function repaint() {
     if (!state.vehicle) return;
     var sc = scale();
@@ -851,7 +926,7 @@
     root = $("vv");
     if (!root) return;
     base = root.getAttribute("data-base") || "/";
-    ["vehicle", "caliber", "mode", "stage", "status", "fallback", "legend", "slots", "labels", "xray", "variant", "wheels", "notes"].forEach(function (k) {
+    ["vehicle", "caliber", "mode", "stage", "status", "fallback", "legend", "slots", "labels", "xray", "variant", "wheels", "notes", "blastField", "blastMode", "dist", "distOut", "blastNote"].forEach(function (k) {
       els[k] = $("vv-" + k);
     });
     els.panelBody = $("vv-panel-body");
@@ -869,6 +944,7 @@
         state.caliber = data.meta.calibers[0];
         fillVehicles();
         fillCalibers();
+        syncBlast();
         setupMode();
         els.vehicle.addEventListener("change", function () { setVehicle(els.vehicle.value, null, false); });
         els.variant.addEventListener("change", function () {
@@ -884,8 +960,11 @@
         });
         els.caliber.addEventListener("change", function () {
           state.caliber = data.meta.calibers.filter(function (c) { return c.id === els.caliber.value; })[0];
+          syncBlast();
           repaint();
         });
+        els.blastMode.addEventListener("change", function () { state.blast = els.blastMode.value === "blast"; syncBlast(); repaint(); });
+        els.dist.addEventListener("input", function () { state.dist = +els.dist.value * 100; syncBlast(); repaint(); });
         els.labels.addEventListener("change", function () { state.labels = els.labels.checked; repaint(); });
         els.xray.addEventListener("change", function () { state.xray = els.xray.checked; repaint(); });
         document.addEventListener("keydown", function (e) {

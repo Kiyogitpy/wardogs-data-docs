@@ -30,6 +30,13 @@ For soldiers, the [Infantry Hitbox Viewer](infantry-viewer.md) shows the player'
       <label for="vv-caliber">Caliber</label>
       <select id="vv-caliber" disabled><option>…</option></select>
     </div>
+    <div class="vv-field" id="vv-blastField" hidden>
+      <label for="vv-blastMode">Explosive hit</label>
+      <select id="vv-blastMode"><option value="direct">Direct impact</option><option value="blast">Blast at distance</option></select>
+      <label for="vv-dist">Distance from blast (m) <output id="vv-distOut"></output></label>
+      <input type="range" id="vv-dist" min="0" max="10" step="0.5" value="0" disabled>
+      <small id="vv-blastNote"></small>
+    </div>
     <div class="vv-field vv-field-mode">
       <span class="vv-label" id="vv-mode-label">Colour by</span>
       <div class="wd-segmented vv-mode" id="vv-mode" role="radiogroup" aria-labelledby="vv-mode-label">

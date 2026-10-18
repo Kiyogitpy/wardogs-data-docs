@@ -123,8 +123,9 @@ when the projectile asks for it), never to blast damage; the
 is the thrown explosive's contact damage (`Kinetic.Impact.Throwable`,
 `DamageType.Impact`), applied once per contact on the contacted bone. The
 per-hit Inner / Outer loop was not re-derived by the verifier. Which
-character components the radial gather hits, and the falloff arithmetic,
-are not traced.
+character components the radial gather hits is not traced.
+
+**Radial falloff.** **Native**, `0x6F06540` (instructions `0x6F06792`-`0x6F06831`; constants `0x9AADA78` = 1.0, `0x9AADA28` = 1.0f, `0x9AC2180` = 1e-8; SDK `WDGame_structs.hpp`:3727-3731). The round's damage struct holds `BaseDamage` (`+0x0`), `ExplosiveRadius` R (`+0x4`), `MinimumExplosiveDamage` (`+0x8`), `EffectiveExplosiveRadius` E (`+0xC`) and `ExplosiveDamageFallOff` F (`+0x10`). With d the distance float the radial gather stores in each hit (`+8`): d <= E gives `BaseDamage` and the hit is Inner; d >= R gives 0; otherwise t = clamp((d - R) / (E - R), 0, 1) (t = 1 at E, 0 at R; if |E - R| <= 1e-8, t = 1 when d >= E, else 0) and the amount is `BaseDamage` x ((1 - F) + F x t). The curve is linear, and just inside R it is `BaseDamage` x (1 - F), not 0. In every branch the amount is then raised to `MinimumExplosiveDamage` if lower (missing fields read as 0). The amount goes through `ModifyDamage` (`0x6F02EC0`), so the vehicle and infantry rule factors multiply it, and each component gets its own evaluation tagged `Radius.Inner` or `.Outer`. Units are cm. **Open:** what d is measured between is not traced, and so is the Inner / Outer tag for Outer hits. The [vehicle viewer](vehicle-viewer.html) applies this rule.
 
 Four more callers, so all 17 call sites are identified:
 
@@ -1027,4 +1028,5 @@ The restored image carries the UTF-16LE build marker
 | 2026-10-17 | Round-4 verifier pass: character health's hooks clamp through vitality slot 161 (§10); all 17 `ModifyDamage` call sites named (§1.1). |
 | 2026-10-17 | Round-5 verifier pass: the projectile's ammo tag (`+0xF0`) is set by `0x6F30E50` from the spawn parameters, built on the fire path by `0x6C98290` (§7.9); the `<type>` rule is only partly decoded. The two back-blast paths are branches of one if/else whose condition is open (O-8). |
 | 2026-10-18 | `data/` re-exported with the v2 usmap (names only; values unchanged): §7.3 `ArmsClassOverrides` key is `_aaabcfjheicbfejiaihii`; §7.4 `DamageSources` and `VehicleSeats` are named in the export. |
+| 2026-10-18 | Radial falloff verified in the exe (`0x6F06540`, `0x6F06792`-`0x6F06831`; §1.1): linear from `BaseDamage` at E to `BaseDamage` x (1 - F) at R, 0 at R and beyond, floored at `MinimumExplosiveDamage`. Distance origin and the Outer tag stay open. |
 | 2026-10-18 | Round-6 verifier pass: the back-blast branch is the shooter's seat, on foot `0x6F042A0`, seated `0x6F06EB0` on the vehicle's occupants (§1.1; O-8 closed); radial damage on characters: per-component filter, one evaluation per kept hit, no `ExplosiveBlunt` on blast damage (§1.1); the `<type>` rule decoded, .338 Norma AP rounds carry no tag (§7.9); the armor hook's hit location is an exact bone lookup with no remap (§7.6). |
