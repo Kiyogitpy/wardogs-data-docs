@@ -1,7 +1,7 @@
 /* Infantry hitbox viewer (infantry-viewer.md; styles in _sass/custom/infantry-viewer.scss, on top of
    the vehicle viewer's .vv-* styles). Data: assets/data/infantry-hitboxes.json
    (python _tools/infantry_tables.py --json).
-   - the model is the player's physics asset: one GLB node and one material per body, both named
+   - the model is the baseline PA_TPCharacter_Simplified asset: one GLB node and one material per body, both named
      after the body's bone;
    - a bone gives a hit location (bones[].hit_location), the hit location gives the selected source's
      multiplier (sources[].zone_multiplier; null: the source doesn't use hit locations and is uniform);
@@ -66,7 +66,7 @@
       ["§7.1", SEC.bone], ". Armor and helmets act on bullets through ammo-type effectiveness ", ["§7.3", SEC.ammo], ", ",
       ["§7.9", SEC.ammoArmor], "."] },
     { id: "explosives", label: "Explosives and launchers", note: [
-      "An explosive deals a direct-hit amount to what it strikes and a radial amount to what is within its radius (the values below). " +
+      "An explosive projectile uses its direct-hit path when it is not exploding. A blast evaluates each kept component hit separately (values below). " +
       "Whether the hit-location rule applies depends on the tags the hit carries ", ["§7.1", SEC.bone],
       "; armor and helmets cut explosive blunt damage by their reduction ", ["§7.5", SEC.armor], "."] },
     { id: "other", label: "Other (melee, impact)", note: [
@@ -74,12 +74,14 @@
       "; one that doesn't is the same on every body part. Armor cuts melee hits by its reduction ", ["§7.5", SEC.armor], "."] }
   ];
 
-  // Helmets: Mutable adds the helmet's one body (on head) to the character; the model leaves it out.
-  var HELMET_FACT = "A helmet adds its own single body on head (Mutable merges its physics asset, PA_Helmet_*, into the " +
-    "character), which is still the Head hit location. The model shows the character's bodies only.";
-  var HELMET_NOTE = "The rule Mutable uses to merge a helmet's physics asset into the character's is not traced.";
-  var TAPERED_NOTE = "Whether Chaos builds query shapes from tapered-capsule bodies (lower arms, calves, thighs) is unverified, " +
-    "so how closely hits follow these six shapes is too.";
+  var HELMET_FACT = "The compiled Mutable model selects tagged physics assets by helmet, faction and view conditions. " +
+    "It deduplicates selected assets, reuses a sole asset when generated bodies are unmodified, and otherwise builds " +
+    "a combined asset with at most one body setup per bone. Combined-body geometry comes from the generated Mutable body; " +
+    "the source setup used to create each result bone supplies selected body properties. The normal CharacterMesh override defaults to null, so its getter " +
+    "uses the assigned mesh's physics asset. Runtime parameter values and later mutations are unknown. This viewer " +
+    "shows PA_TPCharacter_Simplified only.";
+  var TAPERED_NOTE = "The model shows the authored tapered shape. Native simple collision uses a straight capsule " +
+    "with the mean of its two scaled radii; query/channel filters still apply.";
   var REMAP_NOTE = "animation and ragdoll only; not used for damage (0x6BB8D40)";
 
   var REPO = "https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/";   // data/ is browsed on GitHub
@@ -192,16 +194,6 @@
   function notTracedOf(s) {
     return (s.not_traced || []).map(function (x) { return typeof x === "string" ? ntById[x] || { id: x, text: x } : x; });
   }
-
-  // A meta.not_traced item whose id matches, else the page's own note (no id: listed by the page).
-  function noteFor(re, text) {
-    var id = Object.keys(ntById).filter(function (k) { return re.test(k); })[0];
-    return id ? ntById[id] : { text: text };
-  }
-
-  function helmetNotes() { return [noteFor(/helmet/, HELMET_NOTE)]; }
-
-  function taperedNote() { return noteFor(/taper/, TAPERED_NOTE); }
 
   function isTapered(bone) {
     var info = bodyInfo(bone), sh = info && info.shapes;
@@ -372,14 +364,16 @@
       }
       if (v.falloff && v.falloff.src !== undefined && v.falloff.path === undefined) { v.falloff.path = v.falloff.src; delete v.falloff.src; }
       var r = v.radial;
-      if (r && r.fields && r.fields_src !== undefined) {
-        var fields = {};
-        Object.keys(r.fields).forEach(function (k) {
-          var x = r.fields[k];
-          fields[k] = x && typeof x === "object" ? x : { value: x, path: r.fields_src ? r.fields_src + "." + k : null };
-        });
-        r.fields = fields;
-        delete r.fields_src;
+      if (r) {
+        if (r.fields && r.fields_src !== undefined) {
+          var fields = {};
+          Object.keys(r.fields).forEach(function (k) {
+            var x = r.fields[k];
+            fields[k] = x && typeof x === "object" ? x : { value: x, path: r.fields_src ? r.fields_src + "." + k : null };
+          });
+          r.fields = fields;
+          delete r.fields_src;
+        }
         var RB = boneFactors(r.zone_multiplier);
         Object.keys(r.rings || {}).forEach(function (k) {
           var g = r.rings[k];
@@ -392,7 +386,7 @@
             g.factor_with_armor_tag = {};
             Object.keys(g.armor).forEach(function (item) {
               var a = g.armor[item] || {};
-              g.factor_with_armor_tag[item] = simple && a.k != null ? spec.k * a.k : a.k != null ? "×" + num(a.k) + " on covered" : "varies";
+              g.factor_with_armor_tag[item] = simple && a.k != null ? spec.k * a.k : a.k != null ? "×" + num(a.k) + " with this tag" : "varies by hit location";
             });
             delete g.armor;
           }
@@ -722,7 +716,7 @@
         (data.bone_rule && data.bone_rule.unmapped ? ". " + data.bone_rule.unmapped.charAt(0).toUpperCase() + data.bone_rule.unmapped.slice(1) : ""));
     }
     var why = absence({ bone: bone });
-    row(dl, "Body", why === "no body" ? "none in the physics asset: a live player is never hit on this bone"
+    row(dl, "Body", why === "no body" ? "none in the viewer's baseline physics asset; generated runtime assets can differ"
       : why ? "listed in the data but not in this model" : loaded ? "on the model" : "…");
     var info = bodyInfo(bone);
     if (info) {
@@ -739,7 +733,7 @@
     if (rule && boneRuleTraced()) row(dl, "Bone match", rule);
     body.appendChild(dl);
     if (rule && !boneRuleTraced()) body.appendChild(untracedNote({ text: rule }));
-    if (isTapered(bone)) body.appendChild(untracedNote(taperedNote()));
+    if (isTapered(bone)) body.appendChild(el("p", "vv-note", TAPERED_NOTE));
 
     dl = el("dl", "vv-facts");
     row(dl, "Source", s.label + (s.group ? " (" + s.group + ")" : ""));
@@ -1098,9 +1092,7 @@
         : "None of this item's entries are among this source's armor entries (" + entriesText(s.armor_entries) + ")."));
     }
     if (a.kind === "helmet") {
-      var hn = helmetNotes();
-      if (!hn[0].id) body.appendChild(el("p", "iv-card-lead", HELMET_FACT));   // the data's own note says it otherwise
-      hn.forEach(function (n) { body.appendChild(untracedNote(n)); });
+      body.appendChild(el("p", "iv-card-lead", HELMET_FACT));
     }
     if (a.path) {
       var p = el("p", "vv-panel-links");
@@ -1110,8 +1102,7 @@
     }
   }
 
-  // Every not-traced item once: meta.not_traced, the bone rule's runtime, source-only items, and the
-  // helmet note when the data has none of its own; each with the sources that refer to it.
+  // Every not-traced item once: meta.not_traced, the bone rule's runtime, and source-only items.
   function updateUntraced() {
     var list = els.untracedList, items = [];
     list.textContent = "";
@@ -1120,13 +1111,6 @@
     data.sources.forEach(function (s) {
       (s.not_traced || []).forEach(function (x) { if (typeof x === "object" && !(x.id && ntById[x.id])) items.push({ n: x, title: s.label }); });
     });
-    if ((data.armor || []).some(function (a) { return a.kind === "helmet"; })) {
-      helmetNotes().forEach(function (n) { if (!n.id) items.push({ n: n, title: "Helmets" }); });
-    }
-    if (entries.some(function (it) { return isTapered(it.bone); })) {
-      var tn = taperedNote();
-      if (!tn.id) items.push({ n: tn, title: "Tapered capsules" });
-    }
     items.forEach(function (it) {
       var li = el("li"), n = it.n;
       li.appendChild(badge());

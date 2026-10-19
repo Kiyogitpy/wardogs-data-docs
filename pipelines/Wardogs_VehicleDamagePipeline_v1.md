@@ -228,8 +228,12 @@ native code applies it, so the hubs keep the registration's
 destructible-group toggle (`0x53BC420`, bound by `0x53C1490`). When the
 component's damage-model group is destroyed, or the vehicle is
 (`bIsVehicleDestroyed`), it hides the component and sets `NoCollision`;
-when shown again it re-applies the stored profile. Whether the rotor hubs
-belong to such a group is not traced. A collision mesh's material slots are the `CC_*` names, each
+when shown again it re-applies the stored profile. Native setup registers
+the cooked hub/base and blade entries in their Main/Tail groups; the health
+callback selects that group and the visibility callback visits every member.
+Thus hubs and blades toggle together, each restoring its own saved profile.
+See [the registration/selector trace](../docs/evidence/round8-rotor-toggle.md).
+A collision mesh's material slots are the `CC_*` names, each
 with a collision material (for example `CC_FuelTank` → `MI_VehicleCC_FuelTank`,
 `CC_Main` → `MI_VehicleCC_Metal_ReinforcedArmored`, `CC_TailRotor` →
 `MI_VehicleCC_Metal_Weak`), and its render data holds the triangles per
@@ -242,9 +246,13 @@ fragments (`Meshes/ComplexCollisions/ComplexProxy/`). STN_06's gun proxy
 name. The attach code (`0x50EE770`) then reports a partial match
 (`0x50EBDE0`). That attaches at the skeleton component's origin only if
 the vehicle allows partial attachments (`bEnablePartialAttachments`,
-`0x50EF920`); otherwise the proxy is never attached. Nothing in `data/`
-sets that flag, so the proxy is probably never attached; the flag's
-runtime value is unverified. The proxy is query-only `VehicleQueryProxy`
+`0x50EF920`); otherwise the proxy is not attached by this path. The native
+attach-manager constructor explicitly initializes the flag **false**
+(`0x50E08C5`), and the stationary-vehicle constructor chain and STN_06
+platform do not override it. Thus the default rejects this partial match;
+later runtime mutation remains untraced. See the
+[constructor evidence](../docs/evidence/round8-stn06-attachments.md).
+The proxy is query-only `VehicleQueryProxy`
 and registers, so it is hittable wherever it ends up; that position is
 not traced. Decoding these
 meshes needs the static-mesh usmap fixes in
@@ -485,7 +493,16 @@ and `MyItem` = the hitting body's `InstanceBodyIndex` (`0x42D9EF0`), not a
 material index. A single-body hitter (a thrown explosive's mesh) gives −1,
 which fails the slot lookup (`0x50BF9FD`): no section. A skeletal vehicle
 body gives its body index, read as a material slot of the damaged mesh.
-Hits from movement sweeps (`0x3A902D0`) are not traced.
+For movement sweeps, native immediate/deferred dispatch reaches
+`0x3A902D0` in both actor directions. The moving actor keeps the other
+component in the hit; the struck actor receives swapped `MyItem`/`Item`
+and bone names. Native scene-query conversion identifies sweep `Item` as
+the struck body/instance index. The ordinary mesh move query leaves
+face-return disabled, keeping `FaceIndex` and pre-reversal `MyItem` at −1;
+the reversed single-body target therefore lacks a usable section index.
+Nonnegative instance indices may select a slot by numerical coincidence,
+not triangle material. This is the ordinary traced path; custom queries
+that request faces are separate. See the [sweep investigation](../docs/evidence/round8-vehicle-sweep.md).
 
 In the data, ROT_02's wheels are static meshes, so their slots (`CC_Wheel`
 on the right wheel, `CC_Tyre` on the left, `CC_Main` on both) resolve to
@@ -879,7 +896,7 @@ Every row has a `Meta.Damage.Bullet` rule.
 | V-4 | **Closed**: the collision path (`OnMeshHitEvent` `0x768A280` → `0x767E640` → `0x76736C0` → `0x76740F0`) uses the ramming vehicle's own `DamageEntityData` as the source (tag = its `VehicleDamageTag`, or `Meta.Damage.Landscape` when empty) and adds `Meta.Damage.DamageType.Impact` to the source context. So the stationary `Add +1000` entries (source `Meta.Damage.Vehicle.Land.Tracked`) fire when a tracked vehicle rams the stationary | `0x76740F0` (`0x7674428`, `0x7674435`) |
 | V-5 | **Closed** (static): the projectile path copies the ammo-variant stats' context, which holds the ammo-modifier tag ([DamagePipeline §7.9](Wardogs_DamagePipeline_v2.md#79-ammo-type-against-armor)), into the source context before the vehicle branch, and no vehicle class has a pre-`ModifyDamage` hook that strips it. So HollowPoint rounds meet the generic ×0.84 pair and the per-vehicle Bullet+HollowPoint entries. The ammo tag (instance `+0xF0`, empty from the constructor `0x6B8E100`) is set by `0x6F30E50` from the spawn parameters. On the fire path the weapon owner (`IWDWeaponOwner` `+0x90`, `0x6C98290`) builds `Meta.Damage.AmmoModifier.<type>` from the loaded round's item tag; predicted simulations use `FWDProjectileSimulationSetup.AmmoModifierTag` (`0x6F2C450`). The `<type>` rule is in [DamagePipeline §7.9](Wardogs_DamagePipeline_v2.md#79-ammo-type-against-armor) | `0x6B725B0`; `0x6F30E50`; `0x6C98290` |
 | V-6 | Network authority | Not observable statically; security questions go through [`SECURITY.md`](../SECURITY.md) |
-| V-7 | **Closed** for physics contacts (§3.2): `0x3A90520` builds the `OnComponentHit` hit with `FaceIndex` 0 and `MyItem` = the hitting body's `InstanceBodyIndex` (`0x42D9EF0`), so a single-body hitter gives −1 and no section. Open: sweep-sourced hits (`0x3A902D0`) | Engine code that builds sweep hits (`0x3A902D0`) |
+| V-7 | **Closed** for physics contacts and ordinary movement sweeps (§3.2): contacts use the hitter's body index; sweeps preserve body/instance indices with face-return disabled and reverse Item/MyItem for the struck actor. Ordinary single-body cases give −1 and no section. Custom face-return queries are distinct. | [Native sweep conversion](../docs/evidence/round8-vehicle-sweep.md) |
 | V-8 | **Closed** (§3.2): the shooter's seat picks the branch of `0x6B92900`. `0x6E6EBA0` returns the vehicle whose seat the shooter occupies (`VehicleOperatorComponent.CurrentSeat`, owner a `BHBaseVehiclePawn`). On foot, `0x6F042A0` traces the cone; seated, `0x6F06EB0` hits only that vehicle's occupants, and `0x6B92900` applies the self-damage map straight to the vehicle ([DamagePipeline §1.1](Wardogs_DamagePipeline_v2.md#11-callers-and-where-the-result-goes)) | `0x6E6EBA0`, `0x532DD70`, `0x6F06EB0` |
 | V-9 | Whether a literally numbered material slot (such as `CC_Wheel_0`) ever exists on a static mesh. The generator assumes not, which holds for the decoded ROT_02 wheel meshes | Decode every registered static mesh's collision mesh |
 | V-10 | **Closed** (§3.2): the wheel index order, the `DataIndex` assignment and the mesh swap are traced. The state byte (`+0x9B0`) is written only by `0x537C580` from the wheel's `TyreHealthAttribute` (2 at ≤ 0, 1 at ≤ `DeflateThreshold` 0.55 of max), and the runtime wheels are built one per setup entry, in order, for two-wheel axles (`0x53999B0`, `0x53999CF`); every shipped axle has two | `0x537C580`, `0x53999B0` |

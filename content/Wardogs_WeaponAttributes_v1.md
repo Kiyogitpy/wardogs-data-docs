@@ -1336,8 +1336,12 @@ Results above that rest on something not traced or on an odd piece of data.
 
 - The order of the sub-slot update messages across the weapon and its attachments (no value depends on
   it, see Override order above).
-- Which caller grants the default loadout at spawn, and whether a saved preset replaces the defaults
+- The normal spawn grant path and whether a custom saved preset replaces defaults. Both Cash and StorageVault branches of `Server_ApplyLoadout` can reach a validated vendor purchase continuation; on success `0x6BD5860` calls default helper `0x6784010` at `0x6BD604C`. This is not a proven spawn hook ([Round-8 evidence](../docs/evidence/round8-loadout.md)). The separate [rejoin restore path](../docs/evidence/round8-loadout-restore.md) rebuilds the player inventory map and restores economy metadata from duplicated session state, after an initialization/wait callback requests restoration; it does not identify a custom preset or establish ordering against spawn defaults.
   (`0x6784010` adds them only when the create-defaults flag is set; `0x6BD5860` sets it).
+  The separate [player registration hook](../docs/evidence/round8-loadout-initialization.md)
+  inserts configured container defaults, but concrete first-spawn provisioning
+  remains unresolved. SniperShowdown also has a mode-specific BeginPlay grant
+  attempt; it does not establish the normal player's universal starting items.
 - Attachment `AppliedEffects` that never reach a weapon value because no weapon accepts the attachment.
 
 ## Change log
@@ -1349,3 +1353,4 @@ Results above that rest on something not traced or on an odd piece of data.
 | 2026-10-18 | Round-6 verifier corrections: a repeated `DefaultAttributes` key keeps its first value (`OnRegister` installs with overwrite off), so the 9K333 Verba `Length` is 100, not 80 (the only §1 change); no native first-entry sight fallback, so the tool applies no sight effects for `ID_CantedIrons`; Override order, default loadout (`0x6784010`, `DefaultItems` only when `DefaultContainerItems` is empty) and sub-slot filters (`0x67A2B40`) are now traced and labelled Data / Native; stance effect and equip path wording; attribute-backed magnitudes are evaluated live (Effects §4.2); missing default items are absent from the paks too; the tool detects the bipod struct by `MountedAppliedEffects` and drops a missing-default flag when `--with` replaces that slot. |
 | 2026-10-18 | Round-7 correction: 16 magazine ammo slots also differ between the two default lists (no attribute change). |
 | 2026-10-18 | Interactive loadout calculator page added (`loadout-calculator.md`): choose a weapon, attachments, sight, stance and bipod state and see base, modifiers and final for every `Attribute.Gameplay.Weapon.*` value. It runs `assets/js/loadout-eval.js`, a port of this tool's evaluation over `assets/data/weapon-loadouts.json` (`--json`); `--check` compares the two on every default loadout and 400 seeded random loadouts. No §1 value changed. |
+| 2026-10-18 | Round 8: §5 distinguishes the known defaults-helper call from the unestablished top-level spawn caller and saved-preset replacement order. |

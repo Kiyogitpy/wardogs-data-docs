@@ -12,9 +12,10 @@ the docs do not trace shows what the data says and is listed under not_traced in
     python _tools/infantry_tables.py --multipliers  # bone factor Universal x row, per BoneDamageModifiers row
     python _tools/infantry_tables.py --sources    # every damage source: rule entries, hit location, armor
     python _tools/infantry_tables.py --explosives # launcher, cannon and shell rounds: direct and radial data
+    python _tools/infantry_tables.py --actor-explosives # reviewed thrown/placed explosive defaults
     python _tools/infantry_tables.py --armor      # helmet and armor items: tag, durability, R, coverage
     python _tools/infantry_tables.py --not-traced # the paths the docs leave open, with the data
-    python _tools/infantry_tables.py --verified   # round-6 verifier answers cited by RVA (doc text pending)
+    python _tools/infantry_tables.py --verified   # reviewed static answers and explicit remaining conditions
     python _tools/infantry_tables.py --json       # assets/data/infantry-hitboxes.json for the viewer
     python _tools/infantry_tables.py --check      # compare the JSON with the doc tables
     python _tools/infantry_tables.py --write      # refresh <!-- infantry_tables MODE --> blocks and the JSON
@@ -323,14 +324,15 @@ def entry_note(i):
 
 # --- verified and not traced --------------------------------------------------------------------
 
-R6 = "verifier round 6 (doc text pending)"
+R6 = "verified native trace (rounds 6 and 8)"
 
 
 def verified():
-    """Round-6 verifier answers, cited by RVA until the DamagePipeline text lands."""
+    """Reviewed static answers; remaining path conditions stay explicit."""
     return [
         {"id": "hit-location-asset", "rvas": ["0x6F01BB0"],
-         "text": "The hit-location asset is picked by the target actor's class (ClassToHitLocations)."},
+         "text": "ClassToHitLocations maps BHMoverPawn and WDTargetDummy to DA_GlobalDamage_HitLocations_Player. "
+                 "The shipped keys have disjoint inheritance branches, so they cannot compete for one target."},
         {"id": "bone-lookup", "rvas": ["0x6BB8D00"],
          "text": "The hit location is an exact FName match of the raw FHitResult.BoneName in DamageHitLocations: no "
                  "parent walk, and an unmapped bone gives an empty tag (no hit location)."},
@@ -338,9 +340,9 @@ def verified():
          "text": "DamageImpactRemap is never applied for damage: its reader has 3 callers, all animation or ragdoll. "
                  "spine_05 is Torso.Upper for damage."},
         {"id": "physics-asset", "rvas": [],
-         "text": "The hit bodies are PA_TPCharacter_Simplified's; all 20 map to a hit location. spine_01 and spine_02 have "
-                 "no body, so a live player never produces them. Mutable adds each helmet's single head body, which "
-                 "maps to Head."},
+         "text": "The viewer model uses PA_TPCharacter_Simplified; all 20 bodies map to a hit location. spine_01 and "
+                 "spine_02 have no body. Mutable's compiled model selects tagged physics assets by helmet/faction/view "
+                 "branches; see helmet-merge for the verified normal merge and component-default policy."},
         {"id": "radial-hits", "rvas": ["0x6F06540", "0x6E6DCC0"],
          "text": "Radial damage: the gathered hits pass the character's IWDDamageable filter (dropped in one seat state, "
                  "otherwise one hit per component). Each kept hit is its own evaluation, tagged Radius.Inner or .Outer, "
@@ -354,104 +356,105 @@ def verified():
         {"id": "backblast-paths", "rvas": ["0x6F042A0", "0x6F06EB0"],
          "text": "On foot, 0x6F042A0 traces the back-blast cone. In a seat, 0x6F06EB0 hits the occupants of the shooter's "
                  "vehicle with synthetic hits, the shooter included. Only Launcher_04, RPG7 and CGM4 enable back-blast."},
+        {"id": "radial-amount", "rvas": ["0x6F06540", "0x6F03720"],
+         "text": "Blast starts at BaseDamage through EffectiveExplosiveRadius (Inner), then falls linearly toward "
+                 "BaseDamage × (1 − ExplosiveDamageFallOff) just inside ExplosiveRadius (Outer), with 0 at or beyond "
+                 "that radius, all floored at MinimumExplosiveDamage. The Inner branch takes priority if E > R. "
+                 "Center, Disc and Points gather distance is original blast origin to accepted ImpactPoint, or the "
+                 "candidate point for a synthetic hit. Native default is Points with first-unoccluded-point termination."},
+        {"id": "radial-context", "rvas": ["0x6B725B0", "0x6B70E20", "0x6F06540"],
+         "text": "Exploding projectiles retain stats context, the weapon damage tag and ProjectileId, then add "
+                 "DamageType.Explosive and Radius.Inner/Outer. They skip the direct path's Projectile/ExplosiveBlunt "
+                 "additions. A mapped hit bone can therefore use the weapon bone row; this assumes valid equipment "
+                 "and the converter's target-discovery path."},
+        {"id": "armor-data-rows", "rvas": ["0x6B53000", "0x6BB4EB0"],
+         "text": "Armor rows run in a separate armor-target event starting from the original event amount. They do "
+                 "not join the character health event's Infantry group. The trace establishes evaluation/queuing, "
+                 "not the final durability write."},
+        {"id": "occupant-damage", "rvas": ["0x7692B60", "0x768ED20"],
+         "text": "Vehicle-operator slot 160 starts at 1000 and appends VehicleExplosion + DamageType.Explosive; "
+                 "slot 161 forwards its caller's float and appends Vehicle + DamageType.Enviroment. Both use a "
+                 "zeroed synthetic hit with no bone or explicit hit-location tag, then ModifyDamage."},
+        {"id": "armor-hook-paths", "rvas": ["0x6B53580", "0x6B67870"],
+         "text": "Radial/back-blast use the general armor hook with empty bone/location. Melee Blueprints call it "
+                 "with Torso for separate armor events, but ignore its returned copy and evaluate the original "
+                 "health event. Thrown-contact and actor-impact native bodies call neither armor hook."},
+        {"id": "melee-path", "rvas": ["0x6B67870", "0x6F07C10"],
+         "text": "Cooked B_Action_Melee, MeleeBash and ItemMelee character paths evaluate the original event with "
+                 "DamageType.Melee (or extension override), no hit bone and no hit-location tag. Amount is selected "
+                 "MeleeAction.Damage, or WeaponStats.MeleeDamage for bash. The source root is ItemId on the actions "
+                 "and extension DamageEntityData.Tag on ItemMelee; source context is replaced by the singleton damage type."},
+        {"id": "explosive-actors", "rvas": ["0x6CA8D20", "0x6F06540"],
+         "text": "Frag, C4, AT mine, Claymore, IED and Molotov burst defaults and detonation routes were extracted "
+                 "from cooked Blueprints and native constructor inheritance. Reviewed numerical inputs are in "
+                 "assets/data/explosive-actors.json. Molotov fire separately starts at 15 player damage or 2 vehicle "
+                 "health per eligible 0.4-second loop; full patch geometry/lifetime remains open."},
+        {"id": "backblast", "rvas": ["0x6B92900", "0x76C3EB0", "0x76C4120"],
+         "text": "Normal handheld back-blast copies the weapon extension entity and appends DamageType.BackBlast; "
+                 "all three enabled launchers use Weapon.Launcher.AT4 as root. On-foot health uses minimum/base "
+                 "and distance/angle curves. Seated health uses base × health scalar × clamped vehicle scalar × "
+                 "distance curve; synthetic hits have no bone/location. Vehicle attribute self-damage is separate."},
+        {"id": "vehicle-weapon-tag", "rvas": ["0x76478D0", "0x6B72030", "0x6B725B0"],
+         "text": "The vehicle weapon extension copies WeaponExtensionDataAsset.DamageEntityData into its damage "
+                 "component; IWDWeaponOwner supplies that component's root tag to projectile record +0x10, which "
+                 "the damage builder appends to source context. Thus configured WE weapon tags reach bone-row selection."},
+        {"id": "collision-channels", "rvas": [],
+         "text": "Packed CharacterMesh configuration blocks Visibility, WDProjectile, WDMeleeHit and WDExplosive; "
+                 "ignores Pawn, Vehicle and PhysicsBody; overlaps WDVehicleCamera, WDBuildablePlacement and WDRotor. "
+                 "The cooked player mesh is Custom/QueryOnly with no response-array override, inheriting those "
+                 "responses. This establishes static channel responses, not shape registration or later runtime changes."},
+        {"id": "tapered-capsule-query", "rvas": ["0x423A2C0", "0x422A320", "0x42333F0"],
+         "text": "The simple-geometry builder converts tapered elements to straight capsules using the mean of "
+                 "their scaled/clamped radii and registers query-capable shapes. QueryOnly body plus QueryAndPhysics "
+                 "element preserves queries. The viewer shows authored tapered geometry; simple-geometry selection "
+                 "and channel filters still govern actual hits."},
+        {"id": "physical-material", "rvas": ["0x6F2F740", "0x6F36190", "0x6F36F40"],
+         "text": "Physical materials affect penetration geometry/capacity, exit velocity and history tags. "
+                 "The current hit uses pre-exit ImpactVelocity; later hits may lose starting damage through the "
+                 "speed scale. Head/Body surface speed modifiers and ricochet chances are zero; their densities "
+                 "differ (0.2/1). Their ignore-list entries suppress history marking, not velocity loss. No extra "
+                 "direct SurfaceType health scalar is established in the traced bullet calculation."},
+        {"id": "exploding-hit", "rvas": ["0x6B721B0", "0x6F391F0", "0x76CFEB0"],
+         "text": "bExploding requires positive radius, arming eligibility, instance +0x101 and no ricochet/penetration. "
+                 "The instance gate defaults true; the camera-projectile path updates it from vehicle-candidate "
+                 "acquisition time/threshold and clears it outside that controller state. A positive threshold can "
+                 "retain eligibility through loss grace. This covers the concrete traced mutation, not every possible writer."},
+        {"id": "impact-amount", "rvas": ["0x6E6B670", "0x529AB10", "0x6CA8730"],
+         "text": "Actor impact starts at abs(overlap volume in m³ × cached substep seconds × "
+                 "UnresolvedCollisionDamageMultiplier), with native float conversion order and invalid/empty guards. "
+                 "Ground/BodyDragging cache FMoverTimeStep.StepMs × 0.001. It bypasses rules. Thrown contact uses "
+                 "ImpactDamage, inherited as 10 by Frag, C4, IED and Molotov; the hitting actor supplies source entity data."},
+        {"id": "radial-split", "rvas": ["0x6E6DCC0", "0x6E6AFBE", "0x6B44E60"],
+         "text": "Normal player setup has one eligible third-person CharacterMesh component: capsule ignores "
+                 "Visibility and first-person meshes use NoCollision. Mutable associates with the existing mesh, "
+                 "changing its asset/bodies rather than adding a third-person query primitive. The filter keeps "
+                 "one valid hit per component, not one per body. LOS, sampling, body state and protected-seat "
+                 "rejection can still leave no hit; this is not an invariant for arbitrary runtime component mutations."},
+        {"id": "helmet-merge", "rvas": ["0x66C05F0", "0x66BAD60", "0x6699D70", "0x66D20A0", "0x3D5E200", "0x3D71170"],
+         "text": "Mutable resolves __PA tags to indexed physics assets and deduplicates selected pointers. It reuses a "
+                 "sole selected asset when generated bodies are unmodified; otherwise it builds a combined asset with "
+                 "at most one body setup per bone. In the combined path, AggGeom comes from the generated Mutable body "
+                 "record, while the source setup used when a result bone is first created supplies selected body "
+                 "properties; duplicate head setups do not duplicate "
+                 "the result body or append geometry. The compiled program has root-reachable base __PA:0 plus "
+                 "helmet tags selected by helmet/faction/view conditions. The normal CharacterMesh override defaults "
+                 "null and its getter falls back to the assigned mesh's physics asset. Runtime parameter values and "
+                 "later override/replacement mutations remain unknown; attached-parent replacement is a separate "
+                 "default-off flag."},
+        {"id": "caliber-parent-match", "rvas": ["0x67A2B40", "0x6792CB0", "0x6C98290", "0x7645A30"],
+         "text": "Normal reload filters compare exact item IDs or child item context against parent filters; firing "
+                 "uses the actual loaded item's projectile fragment. Reviewed child associations are M500/MP43 slug, "
+                 "STN03 Standard and artillery Standard/Expensive. SupportedCaliber is not a universal admission gate. "
+                 "Prefix-only bow Explosive, CGM4 TVGuided and ROT02/03 Havoc pairings are excluded: the reviewed "
+                 "default chamber/item mappings do not select those projectile assets. Other runtime actions remain conditional."},
     ]
 
 
 def not_traced():
     return [
-        {"id": "radial-amount",
-         "text": "Blast damage: which DamageValues field is the starting amount, the falloff arithmetic, and which radius "
-                 "separates Meta.Damage.Explosive.Radius.Inner from .Outer. GameMechanics §14 says BaseDamage and "
-                 "ExplosiveRadius feed the Calibre rules and falloff is ExplosiveDamageFallOff, without a formula.",
-         "data": "Projectile assets carry BaseDamage, ExplosiveRadius, EffectiveExplosiveRadius, ExplosiveDamageFallOff "
-                 "and on some MinimumExplosiveDamage (values per source)."},
-        {"id": "radial-split",
-         "text": "Which of the character's components the radial gather hits. Known (" + R6 + "): one hit per component "
-                 "after the IWDDamageable filter 0x6E6DCC0, each hit its own evaluation with its bone's hit location.",
-         "data": "No data field describes the gather."},
-        {"id": "radial-context",
-         "text": "Which tags a blast hit's source context carries besides the source tag and the radius tag (weapon tag, "
-                 "caliber id). The blast factors here use the projectile's source tag, its DamageEntityData.Context and "
-                 "the radius tag, so the bone factor's W is 1 on blast hits.",
-         "data": "Entries 108–116 need only the source tag and a radius tag."},
-        {"id": "exploding-hit",
-         "text": "When a projectile hit is bExploding. §7.6: an exploding hit skips both scales, the armor hook and "
-                 "ModifyDamage on the projectile path; what sets bExploding is not stated, so whether an armed launcher, "
-                 "shell or cannon round ever deals the direct-hit amount is open.",
-         "data": "Projectile assets carry bHasArmingDelay and ArmingDelay (seconds of flight time, §7.6)."},
-        {"id": "explosive-actors",
-         "text": "Detonation damage of grenades, C4, mines, claymores, IEDs and the Molotov. Against a character "
-                 "0x6CA8730 is only the thrown object's contact damage (" + R6 + "); the detonation's path, amount and "
-                 "tags are not traced.",
-         "data": "The items reference actor Blueprints (B_FragGrenade, B_ThrowableC4, B_AT_Mine, B_Claymore, B_Molotov) "
-                 "that are not in the data export, so no damage value is in data/."},
-        {"id": "armor-hook-paths",
-         "text": "Whether the target hook Auth_GetArmorDamageEvent (§7.6) runs on paths other than the projectile's "
-                 "direct impact (blast, back-blast, melee, actor impact, thrown contact). It decides whether an armor tag "
-                 "reaches entries 102–106 and 138–144.",
-         "data": "Armor items list CoveredHitLocations (see armor)."},
-        {"id": "armor-data-rows",
-         "text": "Whether DT_GlobalDamage_ArmorData's rows are evaluated for a character hit. §5's walk for a character "
-                 "starts at Meta.Damage.Infantry and gives one group; the armor rows are keyed by armor tags.",
-         "data": "DT_GlobalDamage_ArmorData has rows Meta.Damage.Armor, Meta.Damage.Helmet and the two Ghillie rows."},
-        {"id": "vehicle-weapon-tag",
-         "text": "Whether a vehicle weapon extension (WE_*) puts its DamageEntityData.Tag into the source context as a "
-                 "weapon item does. §7.6 identifies the weapon tag by value for weapon items; the vehicle rows of "
-                 "BoneDamageModifiers are only reached if it does.",
-         "data": "Every WE_* file carries a Meta.Damage.Weapon.* tag (values per source)."},
         {"id": "underbarrel-weapon-tag",
          "text": "Which weapon tag an underbarrel grenade launcher shot carries.",
          "data": "GrenadeLauncher.json has no Meta.Damage.Weapon tag; its stats are DA_GrenadeLauncher_Stats."},
-        {"id": "melee-path",
-         "text": "The melee caller: §1.1 names no melee path, so the event's source (the item's Utility tag, whether "
-                 "Meta.Damage.DamageType.Melee is added), its hit location and the armor hook are not traced.",
-         "data": "Melee items carry WDItemExtensionData_CharacterMelee.MeleeActions[].Damage and DamageEntityData.Tag; "
-                 "entry 144 requires Meta.Damage.DamageType.Melee; BoneDamageModifiers has a "
-                 "Meta.Damage.DamageType.Melee row that no bone entry (5, 7, 10) selects for a melee-only source."},
-        {"id": "impact-amount",
-         "text": "The starting amount of actor impact (0x6E72D90, §1.1) and of a thrown object's contact (0x6CA8730), and "
-                 "what the hitting actor's entity data holds.",
-         "data": "No infantry rule entry requires Meta.Damage.DamageType.Impact or Kinetic.Impact.Throwable."},
-        {"id": "backblast",
-         "text": "Back-blast: the event's source tag and amount, and the hit location of the seated path's synthetic "
-                 "hits. The two paths are known (" + R6 + ").",
-         "data": "Launcher stats carry a BackBlast config (FWDBackBlastConfig) whose field names are hashed in the "
-                 "export and the SDK; no infantry rule entry requires Meta.Damage.DamageType.BackBlast."},
-        {"id": "occupant-damage",
-         "text": "Damage to vehicle occupants from UWDVehicleOperatorComponent slots 160/161 (§1.1; VehicleDamagePipeline "
-                 "§1): the amount and hit location.",
-         "data": "Source tags Meta.Damage.Explosive.VehicleExplosion + DamageType.Explosive, and Meta.Damage.Vehicle + "
-                 "DamageType.Enviroment."},
-        {"id": "helmet-merge",
-         "text": "The rule by which Mutable merges a helmet's physics asset into the character's. Known (" + R6 + "): each "
-                 "helmet adds its single head body, which maps to Head. The model shows PA_TPCharacter_Simplified "
-                 "without helmet bodies.",
-         "data": "MUT_TP_Character lists five helmet physics assets (PA_Helmet_*), one Sphyl body on head each "
-                 f"({MODEL} asset.extras.notes; MUT_TP_Character is not in the data/ JSON export)."},
-        {"id": "tapered-capsule-query",
-         "text": "Whether Chaos builds query shapes from tapered-capsule bodies, i.e. whether these six bodies can be hit "
-                 "by a trace at all.",
-         "data": "calf_l, calf_r, lowerarm_l, lowerarm_r, thigh_l and thigh_r are TaperedCapsule bodies "
-                 f"(QueryAndPhysics) in PA_TPCharacter_Simplified ({MODEL} asset.extras.bodies[].shapes)."},
-        {"id": "collision-channels",
-         "text": "Which trace channels hit the character's bodies. The CharacterMesh component uses collision profile "
-                 "Custom, whose per-channel responses are native class defaults, not stored in the cooked Blueprint.",
-         "data": "CharacterMesh.BodyInstance.CollisionEnabled is QueryOnly (profile Custom); every body is "
-                 f"QueryAndPhysics with BodyCollision_Enabled ({MODEL} asset.extras.notes and node extras)."},
-        {"id": "physical-material",
-         "text": "Data only, no documented use: no doc uses a body's physical material or surface type for infantry "
-                 "damage (VFX uses physical materials for impact effects; VehicleDamagePipeline §3.2 says vehicle hits "
-                 "read neither physical materials nor bone names).",
-         "data": f"The head body uses PM_Head, the other 19 bodies PM_Body ({MODEL} asset.extras.bodies[].phys_material; "
-                 "the body export gives SurfaceType17 and SurfaceType3; the PM_* assets are not in the data/ JSON export)."},
-        {"id": "caliber-parent-match",
-         "text": "Whether a weapon whose SupportedCaliber is a parent tag fires the child projectiles: the bow lists "
-                 "Item.Caliber.Arrow (child Arrow.Explosive), the M500 / MP43 Item.Caliber.12g (child 12g.RifledSlug), "
-                 "the artillery Item.Caliber.155mm (155mm.Standard, .Expensive), STN_03 Item.Caliber.120x800mm "
-                 "(120x800mm.Standard), CGM4 Item.Caliber.84mm (child 84mm.TVGuided). How SupportedCaliber is matched "
-                 "is not traced.",
-         "data": "No WDProjectileData asset has ProjectileId Item.Caliber.12g, .155mm or .120x800mm; the child ids "
-                 "each have one (Sandbox copies left out)."},
     ]
 
 
@@ -486,9 +489,9 @@ def bone_vector(src, context, sel):
     return ([dt.BONE["Universal"][z] * (dt.BONE[row][z] if row else 1.0) for z in ZONES], {"row": row})
 
 
-def encode_zones(src, context, armored=True):
-    """Factors of one event on every hit location, and per armor piece on the locations it covers (the covering
-    piece alone reaches the rules, §7.6), in the compact encoding. Also returns the full-precision factors."""
+def encode_zones(src, context, armored=True, all_armor_locations=False):
+    """Factors of one event and each armor tag alone. Direct impacts use coverage; radial callers can
+    retain valid armor tags everywhere. Also returns the full-precision unarmored factors."""
     fs, applied, sel = [], [], set()
     for z in ZONES:
         s_, f = selected(src, context, z)
@@ -505,7 +508,7 @@ def encode_zones(src, context, armored=True):
         enc["zone_entries"] = extra
     armor, aused = {}, set()
     for a in ARMOR_ITEMS if armored else []:
-        idx = [ZONES.index(z) for z in a["covers"]]
+        idx = list(range(len(ZONES))) if all_armor_locations else [ZONES.index(z) for z in a["covers"]]
         if not idx:
             continue
         fa, ea = [], set()
@@ -543,8 +546,8 @@ def projectile_source(w, cal, category, label, sub, nt_extra=()):
     if proj["has_arming_delay"] and "ExplosiveBluntDamage" in vals:
         cases.append(("before_arming", "Before arming (flight time below ArmingDelay): S = ExplosiveBluntDamage",
                       "ExplosiveBluntDamage"))
-    cases.append(("direct_not_exploding", "Direct hit that is not exploding: S = BaseDamage (when a hit explodes is "
-                  "not traced)", "BaseDamage") if explosive or proj["has_arming_delay"]
+    cases.append(("direct_not_exploding", "Direct hit that is not exploding: S = BaseDamage (the remaining unnamed "
+                  "explosion gate is documented)", "BaseDamage") if explosive or proj["has_arming_delay"]
                  else ("direct", "Direct hit: S = BaseDamage", "BaseDamage"))
     enc, zm, sel, aused, fs = encode_zones(src, ctx)  # S does not enter the factors, so the cases share them
     direct = [{"case": cid, "S": vals.get(field), "S_src": ref(proj["path"], f"ProjectileStats.DamageValues.{field}")}
@@ -556,15 +559,16 @@ def projectile_source(w, cal, category, label, sub, nt_extra=()):
     nt = list(nt_extra)
     if explosive:
         rings = {}
+        blast_context = proj["context"] + ([w["wtag"]] if w["wtag"] else []) + [cal, "Meta.Damage.DamageType.Explosive"]
         for name, rtag in (("inner", INNER), ("outer", OUTER)):
-            r_enc, r_zm, r_sel, r_aused, _ = encode_zones(src, proj["context"] + [rtag])
+            r_enc, r_zm, r_sel, r_aused, _ = encode_zones(src, blast_context + [rtag], all_armor_locations=True)
             rsel |= r_sel | r_aused
             rzm = r_zm
             rings[name] = dict(tag=rtag, **r_enc)
-        radial = {"zone_multiplier": rzm, "rings": rings}
-        nt += ["radial-amount", "radial-split", "radial-context", "exploding-hit", "armor-hook-paths"]
-    if proj["has_arming_delay"] and "exploding-hit" not in nt:
-        nt.append("exploding-hit")
+        radial = {"zone_multiplier": rzm, "rings": rings,
+                  "source_context": blast_context,
+                  "armor_scope": "Each valid retained armor tag is evaluated at every hit location, without coverage "
+                                 "filtering. Each listed item is evaluated alone; combined equipment needs joint evaluation."}
     kind = "Bullet" if src.startswith("Meta.Damage.Bullet") else "Cannon" if src.startswith("Meta.Damage.Cannon") else "ExplosiveBlunt"
     if zm is not None:
         row = zm["row"]
@@ -578,7 +582,7 @@ def projectile_source(w, cal, category, label, sub, nt_extra=()):
     if radial:
         why += (" Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not "
                 "apply to them (" + R6 + ")" + (f"; entry {next(i for i in (5, 10) if i in rsel)} still gives the bone "
-                                                "factor, with W = 1." if rzm else "."))
+                                                "factor using the retained weapon row (Universal alone if no row matches)." if rzm else "."))
     sid = re.sub(r"[^a-z0-9]+", "-", f"{category}-{label}".lower()).strip("-")
     return {"id": sid, "category": category, "group": sub, "label": label,
             "damage_tags": sorted({src} | set(blunt)),
@@ -605,11 +609,18 @@ def tagged_source(sid, category, group, label, tags, why, values, nt, docref, ex
 
 
 def child_calibers(w):
-    """Projectile ids under a supported caliber tag that the weapon does not list exactly (12g -> 12g.RifledSlug,
-    155mm -> 155mm.Standard). Sandbox copies are left out."""
+    """Reviewed loading associations, not compatibility inferred from projectile-id prefixes.
+
+    See docs/evidence/round8-weapon-context.md for filters and actual ammo fragments.
+    """
+    reviewed = {
+        "M500": ("Item.Caliber.12g.RifledSlug",),
+        "MP43": ("Item.Caliber.12g.RifledSlug",),
+        "WE_STN_03_Heavy_MainBarrel": ("Item.Caliber.120x800mm.Standard",),
+        "WE_TNK_01_Artillery": ("Item.Caliber.155mm.Expensive", "Item.Caliber.155mm.Standard"),
+    }
     exact = set(w["cals"])
-    return [pid for pid in sorted(PROJ) if pid not in exact and "Sandbox" not in pid
-            and any(pid.startswith(c + ".") for c in w["cals"])]
+    return [pid for pid in reviewed.get(w["name"], ()) if pid in PROJ and pid not in exact]
 
 
 def sources():
@@ -627,7 +638,7 @@ def sources():
             cat = "bullets" if (PROJ[child]["source_tag"] or "").startswith("Meta.Damage.Bullet") \
                 and not PROJ[child]["values"].get("ExplosiveRadius", 0) > 0 else "explosives"
             out.append(projectile_source(w, child, cat, f"{w['name']} ({child.replace('Item.Caliber.', '')})",
-                                         w["wtag"].split(".")[3], ["caliber-parent-match"]))
+                                         w["wtag"].split(".")[3]))
     seen, oth = {}, other_weapons()
     for w in oth:
         for cal in [c for c in w["cals"] if c in PROJ][:1] + child_calibers(w):
@@ -636,11 +647,9 @@ def sources():
         w = ws[0]
         names = [x["name"].replace("WE_", "").replace("ID_", "") for x in ws]
         src = PROJ[cal]["source_tag"] or ""
-        nt = ["vehicle-weapon-tag"] if "/Vehicles/" in w["path"] else []
+        nt = []
         if not wtag:
             nt.append("underbarrel-weapon-tag")
-        if cal not in w["cals"]:
-            nt.append("caliber-parent-match")
         label = names[0].replace("_", " ") + f" ({cal.replace('Item.Caliber.', '')})" \
             + (f" +{len(names) - 1} more" if len(names) > 1 else "")
         bow = wtag == "Meta.Damage.Weapon.CombatBow"
@@ -652,73 +661,119 @@ def sources():
             s = projectile_source(w, cal, "explosives", label, sub, nt)
         s["values"]["items"] = [ref(x["path"]) for x in ws]
         out.append(s)
-    # Thrown and placed explosives: their detonation is not traced and their values are not in the export.
-    actors = [("M67 frag grenade", "Wardogs/Content/Items/Throwable/Grenades/M67_Grenade/ID_M67Grenade.json", "Meta.Damage.Explosive.Grenade"),
-              ("C4", "Wardogs/Plugins/GameFeatures/Items/C4/Content/Data/ID_C4_Trigger.json", "Meta.Damage.Explosive.Utility.C4"),
-              ("AT mine", "Wardogs/Plugins/GameFeatures/Items/AT_mine/Content/Data/ID_AT_Mine.json", "Meta.Damage.Explosive.Utility.ATMine"),
-              ("Claymore", "Wardogs/Plugins/GameFeatures/Items/Claymore/Content/Data/ID_Claymore.json", "Meta.Damage.Explosive.Utility.Claymore"),
-              ("IED", "Wardogs/Plugins/GameFeatures/Items/IED/Content/Data/ID_IED_Explosive.json", "Meta.Damage.Explosive.Utility.IED"),
-              ("Molotov", "Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Data/ID_Molotov.json", "Meta.Damage.Explosive.Utility.Molotov")]
-    for label, path, t in actors:
+    # Publish reviewed scalar defaults, keeping the raw cooked Blueprint exports local.
+    actor_values_path = "assets/data/explosive-actors.json"
+    with open(os.path.join(ROOT, actor_values_path), encoding="utf-8") as f:
+        actor_defaults = json.load(f)["actors"]
+    actors = [("M67 frag grenade", "Wardogs/Content/Items/Throwable/Grenades/M67_Grenade/ID_M67Grenade.json"),
+              ("C4", "Wardogs/Plugins/GameFeatures/Items/C4/Content/Data/ID_C4_Trigger.json"),
+              ("AT mine", "Wardogs/Plugins/GameFeatures/Items/AT_mine/Content/Data/ID_AT_Mine.json"),
+              ("Claymore", "Wardogs/Plugins/GameFeatures/Items/Claymore/Content/Data/ID_Claymore.json"),
+              ("IED", "Wardogs/Plugins/GameFeatures/Items/IED/Content/Data/ID_IED_Explosive.json"),
+              ("Molotov", "Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Data/ID_Molotov.json")]
+    for label, path in actors:
         kind, cls = actor_class(os.path.join(DATA, path))
+        defaults = actor_defaults[label]
+        t, ctx = defaults["source_tag"], defaults["source_context"]
+        rings, selected_entries = {}, set()
+        for ring, tag in (("inner", INNER), ("outer", OUTER)):
+            enc, zm, sel, aused, _ = encode_zones(t, ctx + [tag], all_armor_locations=True)
+            rings[ring] = dict(tag=tag, **enc)
+            selected_entries |= sel | aused
         values = {"item": ref(data_path(path)), "actor_class_field": kind, "actor_class": cls, "actor_class_in_data": False,
                   "tag": t, "tag_in_DefaultGameplayTags": tag_defined(t),
                   "entries_naming_tag": [i for i, e in enumerate(dt.ENTRIES) if t in e["SourceRequirements"]],
-                  "tag_note": "the gameplay tag named after this item; which tags the detonation carries is not traced",
-                  "ring_entries": {"inner": candidates([t], [INNER])[0], "outer": candidates([t], [OUTER])[0]}}
-        out.append(tagged_source(re.sub(r"[^a-z0-9]+", "-", f"explosives-{label}".lower()).strip("-"), "explosives",
-                                 "Thrown and placed", label, [t],
-                                 "The detonation is not traced: no amount, tags or path (0x6CA8730 against a character is "
-                                 "only the thrown object's contact, see Thrown object contact). The entries listed are "
-                                 "those whose source requirements this tag meets.",
-                                 values, ["explosive-actors", "armor-hook-paths"], "callers", [INNER, OUTER]))
+                  "source_context": ctx, "damage_values": defaults["damage_values"], "reviewed_blueprint": defaults["blueprint"],
+                  "reviewed_defaults_src": ref(actor_values_path, f"actors.{label}"),
+                  "radial": {"zone_multiplier": zm, "rings": rings,
+                             "source_context": ctx,
+                             "armor_scope": "Retained armor tags apply without coverage filtering; each item is evaluated alone."}}
+        if "sustained_fire" in defaults:
+            values["sustained_fire"] = defaults["sustained_fire"]
+        actor_source = tagged_source(re.sub(r"[^a-z0-9]+", "-", f"explosives-{label}".lower()).strip("-"), "explosives",
+                                    "Thrown and placed", label, [t] + ctx,
+                                    "Detonation defaults include native inheritance and reach the shared radial "
+                                    "evaluator. Apply the traced amount/falloff per kept component hit, then its "
+                                    "rule factor. Source root and appended context remain distinct; frag retains "
+                                    "its inherited 60mm context. Trigger timing and complete Molotov patch "
+                                    "geometry/lifetime are not modelled.",
+                                    values, [], "callers", [INNER, OUTER])
+        actor_source["radial_entries"] = sorted(selected_entries)
+        actor_source["radial_uses_hit_location"] = zm is not None
+        out.append(actor_source)
     for w in sorted(inf + oth, key=lambda w: w["name"]):
         if w["backblast"] is not None:
+            bb = w["backblast"]
+            fields = {"angle_limit_degrees": "_aaabbilmgpjejlkjoeibh", "distance_limit_cm": "_aaaanghlhocankbgenpld",
+                      "base": "_aaaaplhbefklkbekbplbj", "minimum": "_aaaaocboicpblkhflbiho",
+                      "seated_distance_divisor_cm": "_aaabcbmocdkdakedpapbc", "seated_health_scalar": "_aaabhjchepijkbbnkmohg",
+                      "vehicle_scalar": "_aaabgpobchhagbhokmiba"}
+            parameters = {name: bb.get(key) for name, key in fields.items()}
             out.append(tagged_source(re.sub(r"[^a-z0-9]+", "-", f"explosives-backblast-{w['name']}".lower()), "explosives",
-                                     "Back-blast", f"{w['name']} back-blast", ["Meta.Damage.DamageType.BackBlast"],
+                                     "Back-blast", f"{w['name']} back-blast", [w["wtag"], "Meta.Damage.DamageType.BackBlast"],
                                      "On foot the back-blast traces a cone (0x6F042A0); in a seat it hits the occupants of "
                                      "the shooter's vehicle, the shooter included, with synthetic hits (0x6F06EB0) (" + R6 +
-                                     "). No infantry rule entry requires Meta.Damage.DamageType.BackBlast; the source tag "
-                                     "and amount are not traced.",
+                                     "). Normal handheld source is the ranged fragment's damage entity plus BackBlast; "
+                                     "no caliber is appended. On foot S = minimum + (base − minimum) × clamped distance/angle "
+                                     "curve product, subject to cone/range guards. Seated S uses base × health scalar × "
+                                     "clamped vehicle scalar × distance curve; synthetic hit has no bone. The reflected/"
+                                     "secondary foot branch and full gather are not modelled.",
                                      {"weapon": ref(w["path"]), "config": ref(w["stats"], "BackBlast"),
-                                      "enabled": bool(w["backblast"].get("bEnabled")),
+                                      "enabled": bool(bb.get("bEnabled")), "parameters": parameters,
+                                      "on_foot_formula": "S = M + (B − M) × clamp(Fd(d/D) × Fa(angle/A), 0, 1); d <= 0.0001 or outside cone/range gives 0",
+                                      "seated_formula": "S = max(B × K × clamp(C,0,1) × Fc(clamp(actorRootDistance/Dc,0,1)),0); P <= 0 or Dc <= 0 gives 0",
                                       "on_foot": "0x6F042A0: cone trace", "seated": "0x6F06EB0: synthetic hits on the "
                                       "occupants of the shooter's vehicle, shooter included",
-                                      "field_names": "hashed in the export and the SDK (FWDBackBlastConfig)"},
-                                     ["backblast", "armor-hook-paths"], "callers"))
+                                      "vehicle_overrides": bb.get("VehicleOverrides", []),
+                                      "evidence": "docs/evidence/round8-backblast.md"},
+                                     [], "callers"))
     out.append(tagged_source("explosives-vehicle-explosion-occupants", "explosives", "Vehicle", "Vehicle explosion (occupants)",
                              ["Meta.Damage.Explosive.VehicleExplosion", "Meta.Damage.DamageType.Explosive"],
-                             "Built by UWDVehicleOperatorComponent (§1.1, VehicleDamagePipeline §1); amount and hit location "
-                             "are not traced. No bone entry matches these tags.",
-                             {"caller": "UWDVehicleOperatorComponent slots 160/161 (0x7692B60, 0x768ED20)"},
-                             ["occupant-damage", "armor-hook-paths"], "callers"))
+                             "Vehicle-operator slot 160 starts at 1000 before ModifyDamage. Its synthetic hit has no "
+                             "bone or explicit hit location, so no bone rule applies. The appended tags are context, "
+                             "in addition to the copied source actor entity.",
+                             {"caller": "UWDVehicleOperatorComponent slot 160 (0x7692B60)", "starting_amount": 1000},
+                             [], "callers"))
+    out.append(tagged_source("other-vehicle-occupants", "other", "Impact", "Vehicle environment (occupants)",
+                             ["Meta.Damage.Vehicle", "Meta.Damage.DamageType.Enviroment"],
+                             "Vehicle-operator slot 161 forwards the caller's float before ModifyDamage. The synthetic "
+                             "hit has no bone or explicit hit location. Appended context tags supplement the copied "
+                             "source actor entity; the amount is not a fixed cooked weapon value.",
+                             {"caller": "UWDVehicleOperatorComponent slot 161 (0x768ED20)", "starting_amount": "caller supplied"},
+                             [], "callers"))
     for m in melee_items():
         out.append(tagged_source(re.sub(r"[^a-z0-9]+", "-", f"other-melee-{m['item']}".lower()), "other", "Melee",
                                  m["item"].replace("ID_", ""), [m["tag"], "Meta.Damage.DamageType.Melee"],
                                  "No bone entry matches a melee source (entries 5, 7, 10 need Bullet, ExplosiveBlunt or Cannon, "
-                                 "§3.1), so the body takes the same factor everywhere. Entry 144 applies armor durability "
-                                 "(1 − R/100, §7.5) to an armored target if the DamageType.Melee tag and the armor tag reach "
-                                 "the event, which is not traced.",
+                                 "§3.1). The traced character melee Blueprints supply no hit bone/location and evaluate "
+                                 "the original event, ignoring the armor hook's returned copy. DamageType.Melee reaches "
+                                 "entry 144 unless the extension overrides it. The full target context is recovered; "
+                                 "combined equipment needs its real context order, not projectile coverage selection.",
                                  {"item": ref(m["path"]),
                                   "actions": [{"action": a["action"], "damage": a["damage"],
                                                "src": ref(m["path"], f"WDItemExtensionData_CharacterMelee.MeleeActions[{a['action']}].Damage")}
                                               for a in m["actions"]],
                                   "armor_factor_entry_144": {a["item"]: 1 - a["reduction_pct"] / 100
                                                              for a in ARMOR_ITEMS if a["kind"] == "armor" and a["covers"]}},
-                                 ["melee-path", "armor-hook-paths"], "armor_durability"))
+                                 [], "armor_durability"))
     out.append(tagged_source("other-thrown-contact", "other", "Impact", "Thrown object contact",
                              ["Meta.Damage.Kinetic.Impact.Throwable", "Meta.Damage.DamageType.Impact"],
                              "0x6CA8730 against a character is the thrown object's contact damage, applied once per contact on "
                              "the contacted bone (" + R6 + "). No infantry entry requires these tags, so the hit location "
-                             "changes no factor. The amount is not traced.",
-                             {"caller": "0x6CA8730 (AWDExplosive, AWDC4, AWDGrenade, AWDLandmine slot 236)"},
-                             ["impact-amount", "armor-hook-paths"], "callers"))
+                             "changes no factor. Starting amount is the actor's ImpactDamage: Frag, C4, IED and Molotov "
+                             "inherit the native default 10. Other actor-specific contact paths need their own defaults.",
+                             {"caller": "0x6CA8730 (AWDExplosive, AWDC4, AWDGrenade, AWDLandmine slot 236)",
+                              "starting_amount": "AWDExplosive.ImpactDamage (+0x550)"},
+                             [], "callers"))
     out.append(tagged_source("other-actor-impact", "other", "Impact", "Actor or vehicle impact",
                              ["Meta.Damage.DamageType.Impact"],
                              "0x6E72D90 (§1.1) builds the event from the hitting actor's entity data plus DamageType.Impact; "
-                             "no infantry entry requires Impact, so nothing depends on the hit location. The amount is not traced.",
-                             {"caller": "0x6E72D90 (AWDMoverCharacter slot 169 delegate); skips dead characters"},
-                             ["impact-amount", "armor-hook-paths"], "callers"))
+                             "amount is abs(overlap volume in m³ × cached substep seconds × "
+                             "UnresolvedCollisionDamageMultiplier), with native conversion order/guards. "
+                             "ModifyDamage bool 1 bypasses rules; current geometry, mode and settings supply the values.",
+                             {"caller": "0x6E72D90 (AWDMoverCharacter slot 169 delegate); skips dead characters",
+                              "starting_amount": "abs(overlap_m3 × cached_substep_seconds × UnresolvedCollisionDamageMultiplier)"},
+                             [], "callers"))
     order = {"bullets": 0, "explosives": 1, "other": 2}
     return sorted(out, key=lambda x: order[x["category"]])
 
@@ -828,35 +883,39 @@ def build():
             "encoding": "Zone lists follow hit_locations order. zone_multiplier {row: R}: B[z] = bone_rows.Universal[z] × "
                         "bone_rows[R][z] (R null: Universal alone); zone_multiplier null: B[z] = 1. A factor {k} gives "
                         "factor[z] = k × B[z]; {zones} lists the 12 factors. Damage = S × factor[z] (× the falloff curve "
-                        "at the distance, keys in metres). Armor {k} multiplies the unarmored factor on the hit locations the "
-                        "item covers; {zones} gives those factors. entries are the entries with a factor other than 1 on "
+                        "at the distance, keys in metres). Armor {k} multiplies the unarmored factor on covered direct-hit "
+                        "locations, or every radial location with a retained tag; {zones} gives those factors. entries are the entries with a factor other than 1 on "
                         "every hit location, zone_entries the extra ones per hit location. A file reference is "
                         "[index into meta.files, field] or an index. A source's doc is a key of meta.docs and a direct case's "
                         "case a key of meta.cases. A direct hit's source context is source_context, weapon_tag, caliber, "
                         "Meta.Damage.DamageType.Projectile and, when has_arming_delay, Kinetic.Impact.ExplosiveBlunt (§7.6); "
-                        "a blast hit's is source_context and the ring's radius tag. Blast armor factors apply only if the "
-                        "armor tag reaches a blast hit (armor-hook-paths). Numbers are rounded to 6 significant digits.",
+                        "a blast hit's context is radial.source_context plus the ring's radius tag. Blast armor tags are "
+                        "evaluated individually; combined equipment needs joint evaluation. Numbers are rounded to 6 significant digits.",
             "files": FILES,
             "cases": {"direct": "Direct hit: S = BaseDamage",
-                      "direct_not_exploding": "Direct hit that is not exploding: S = BaseDamage (when a hit explodes "
-                                              "is not traced)",
+                      "direct_not_exploding": "Direct hit that is not exploding: S = BaseDamage when the traced detonation predicate is false",
                       "before_arming": "Before arming (flight time below ArmingDelay): S = ExplosiveBluntDamage"},
             "docs": {k: doc(k) for k in DOCS},
             "verified": {"status": R6, "items": verified()},
             "assumptions": [
+                "baseline weapon/projectile pairs use the first SupportedCaliber tag with projectile data as a modelling "
+                "choice; not every baseline item's loading path has been audited. Extra child-caliber pairs are limited "
+                "to the named loading associations reviewed in docs/evidence/round8-weapon-context.md",
                 "rules from DamagePipeline §4-§7 only, through _tools/damage_tables.py: every selected entry multiplies "
                 "the running amount, the total is clamped at 0 (§6)",
                 "§7.7 event: hostile alignment, FMJ (no ammo-modifier tag), a direct hit with no ricochet or penetration, "
                 "no instigator tags, target outside any vehicle; point blank unless the falloff curve is applied",
                 "speed scale left at 1 (§7.8)",
-                "armor: only the piece whose CoveredHitLocations holds the hit location reaches the rules "
-                "(Auth_GetArmorDamageEvent, §7.6); every durability stage has the same R in the data (§7.5)",
+                "direct projectile armor: only the first covering piece reaches the rules (Auth_GetArmorDamageEvent, "
+                "§7.6); radial armor: every valid retained piece can participate without coverage filtering; each listed "
+                "item is evaluated alone, not as combined equipment; every durability stage has the same R (§7.5)",
                 "an absent cooked property is its class default (bHasArmingDelay false)",
                 "bone factor U × W: U from row Universal, W from the first source-context tag naming a row or its "
                 "direct parent, 1.0 with none (§7.1); Meta.Damage.Explosive.Drone is exempt",
-                "blast hits: one evaluation per hit with that hit's bone as the hit location and no ExplosiveBlunt (" + R6 +
-                "); source context = the projectile's source tag, DamageEntityData.Context and the radius tag "
-                "(radial-context), so W = 1; the blast amount itself is not traced (radial-amount)",
+                "projectile blast: retain stats context, weapon tag and caliber id, add DamageType.Explosive and radius; "
+                "do not add Projectile/ExplosiveBlunt; one evaluation per kept hit; bone-dependent factors assume a "
+                "mapped gathered bone and valid equipment leaving the target-discovery fallback available; invalid "
+                "armor tags can suppress that fallback; total damage over multiple components is not modelled",
                 "shotgun values are per pellet"],
             "not_traced": not_traced(),
             "categories": [
@@ -870,8 +929,9 @@ def build():
                          "142–143 armor durability; cannon rounds take entry 10. An exploding hit skips ModifyDamage there "
                          "(§7.6). The blast goes through the radial path: one evaluation per hit component, tagged "
                          "Radius.Inner or .Outer, with the hit bone's location and without ExplosiveBlunt, so entries 7, "
-                         "117, 142 and 143 never apply to it and 102–116 do (" + R6 + "). The blast amount and falloff are "
-                         "not traced. Grenades, C4 and mines detonate through a path that is not traced."},
+                         "117, 142 and 143 never apply to it. Matching radial rules still depend on the retained context (" + R6 + "). "
+                         "Amount/falloff and the six reviewed explosive actors' native/cooked detonation routes are traced; "
+                         "per-hit geometry, visibility and runtime trigger state determine actual application."},
                 {"id": "other", "label": "Other",
                  "note": "Melee, actor impact and thrown-object contact match no bone entry (5, 7, 10 need Bullet, "
                          "ExplosiveBlunt or Cannon, §3.1), so the factor is the same on every hit location. Entry 144 "
@@ -892,8 +952,10 @@ def build():
                                   "and all armor tags are removed (§7.6)",
                       "impact_remap": "DamageImpactRemap (" + ", ".join(f"{a} → {b}" for a, b in remap.items()) +
                                       ") is used by animation and ragdoll only, never for damage (0x6BB8D40; " + R6 + ")",
-                      "live_player": "spine_01 and spine_02 have no body in PA_TPCharacter_Simplified, so a live player "
-                                     "never produces them; a helmet adds its own head body, which maps to Head (" + R6 + ")",
+                      "live_player": "spine_01 and spine_02 have no body in PA_TPCharacter_Simplified; "
+                                     "referenced helmet head bodies map to Head, "
+                                     "and Mutable's compiled selection plus normal merge policy are verified; "
+                                     "runtime parameter values and later mutations remain open",
                       "path": data_path(HITLOC_FILE)},
         "bone_rows": {k: dict(v) for k, v in dt.BONE.items()},
         "bone_rows_path": data_path(BONE_FILE),
@@ -1028,6 +1090,19 @@ def explosives_table():
               f"{v['arming_delay'] if v['has_arming_delay'] else '—'} | {f('ExplosiveRadius')} | {f('EffectiveExplosiveRadius')} | "
               f"{f('ExplosiveDamageFallOff')} | {f('MinimumExplosiveDamage')} | "
               f"{zm_text(r['zone_multiplier']) if v['radial'] else '—'} | {ring('inner')} | {ring('outer')} |")
+
+
+def actor_explosives_table():
+    print("| Actor | Source root | Base | Outer radius (cm) | Inner radius (cm) | Minimum | Falloff | Appended context (before radius) |")
+    print("|---|---|---:|---:|---:|---:|---:|---|")
+    for s in build()["sources"]:
+        v = s["values"]
+        if "reviewed_defaults_src" not in v:
+            continue
+        d = v["damage_values"]
+        values = " | ".join(f"{d[k]:g}" for k in ("BaseDamage", "ExplosiveRadius", "EffectiveExplosiveRadius",
+                                                  "MinimumExplosiveDamage", "ExplosiveDamageFallOff"))
+        print(f"| {s['label']} | `{v['tag']}` | {values} | " + ", ".join(f"`{t}`" for t in v["source_context"]) + " |")
 
 
 def armor_table():
@@ -1223,6 +1298,48 @@ def check():
     # back-blast is enabled on Launcher_04, RPG7 and CGM4 only.
     blast = [s for s in out["sources"] if s["values"].get("radial")]
     c.eq("blast sources without entries 7/117/142/143", [], [s["id"] for s in blast if set(s["radial_entries"]) & {7, 117, 142, 143}])
+    # Round 8: data-backed sentinels detect losing the native blast weapon context.
+    for caliber, row, head, foot in (
+            ("Item.Caliber.30mm", "Meta.Damage.Weapon.Vehicle.HelicopterCannon", 3.2, 0.36),):
+        s = next(s for s in blast if s["values"]["caliber"] == caliber)
+        r = s["values"]["radial"]
+        c.eq(f"blast {caliber} weapon row", row, r["zone_multiplier"]["row"])
+        c.eq(f"blast {caliber} retained caliber", True, caliber in r["source_context"])
+        c.eq(f"blast {caliber} explosive context", True, "Meta.Damage.DamageType.Explosive" in r["source_context"])
+        for name, ring in r["rings"].items():
+            c.eq(f"blast {caliber} {name} radius tag", {"inner": INNER, "outer": OUTER}[name], ring["tag"])
+            factors = decode(ring, r["zone_multiplier"], out["bone_rows"])
+            c.eq(f"blast {caliber} {name} head", True, num_eq(str(head), factors[ZONES.index(HIT + "Head")]))
+            c.eq(f"blast {caliber} {name} foot", True, num_eq(str(foot), factors[ZONES.index(HIT + "Leg.Foot")]))
+        c.eq(f"blast {caliber} excludes direct-only tags", [],
+             sorted(set(r["source_context"]) & {PROJECTILE, BLUNT}))
+    source_pairs = {(s["values"].get("weapon_tag"), s["values"].get("caliber")) for s in out["sources"]}
+    for weapon, caliber in (
+            ("Meta.Damage.Weapon.CombatBow", "Item.Caliber.Arrow.Explosive"),
+            ("Meta.Damage.Weapon.Launcher.AT4", "Item.Caliber.84mm.TVGuided"),
+            ("Meta.Damage.Weapon.Vehicle.HelicopterRocket", "Item.Caliber.122mm.Havoc")):
+        c.eq(f"exclude prefix-only pairing {weapon}/{caliber}", False, (weapon, caliber) in source_pairs)
+    for weapon, caliber in (
+            ("Meta.Damage.Weapon.Shotgun.M12G", "Item.Caliber.12g.RifledSlug"),
+            ("Meta.Damage.Weapon.Vehicle.Turret.STN_02", "Item.Caliber.120x800mm.Standard"),
+            ("Meta.Damage.Weapon.Vehicle.Turret.Artillery", "Item.Caliber.155mm.Standard"),
+            ("Meta.Damage.Weapon.Vehicle.Turret.Artillery", "Item.Caliber.155mm.Expensive")):
+        c.eq(f"retain reviewed loading pairing {weapon}/{caliber}", True, (weapon, caliber) in source_pairs)
+    known_nt = {x["id"] for x in out["meta"]["not_traced"]}
+    c.eq("source limitations reference open items", [],
+         sorted({n for s in out["sources"] for n in s["not_traced"] if n not in known_nt}))
+    with open(os.path.join(ROOT, "docs/evidence/round8-explosive-actors.md"), encoding="utf-8") as f:
+        actor_rows = table_rows(f.read(), "| Actor |")
+    actors = {s["values"]["reviewed_blueprint"].rsplit("/", 1)[-1]: s["values"]
+              for s in out["sources"] if "reviewed_blueprint" in s["values"]}
+    c.eq("reviewed actor evidence row count", len(actors), len(actor_rows))
+    for row in actor_rows:
+        bp = re.search(r"`(B_[^`]+)`", row[0]).group(1)
+        v = actors[bp]
+        c.eq(f"actor {bp} source root", row[1].strip("`"), v["tag"])
+        for key, cell in zip(("BaseDamage", "ExplosiveRadius", "EffectiveExplosiveRadius",
+                              "MinimumExplosiveDamage", "ExplosiveDamageFallOff"), row[2:]):
+            c.eq(f"actor {bp} {key}", True, num_eq(cell, v["damage_values"][key]))
     bb = sorted(s["label"].replace(" back-blast", "") for s in out["sources"] if s["group"] == "Back-blast" and s["values"]["enabled"])
     c.eq("back-blast enabled (round 6)", ["CGM4", "Launcher_04", "RPG7"], bb)
     # Internal: the projectile loader agrees with damage_tables.projectiles() on every caliber it knows.
@@ -1235,7 +1352,8 @@ def check():
         contradictions.append("GameMechanics §2f: \"The exact evaluation order and whether percentages stack additively or "
                               "multiplicatively is not verified from the data.\" DamagePipeline §5-§6 (Native): every entry "
                               "multiplies, order does not change an infantry result")
-    if re.search(r"\| Bone \| Bullet \(hits Infantry\) \| — \| −75% \| Custom operation", gm2f):
+    if re.search(r"\| Bone \| Bullet \(hits Infantry\) \| — \| −75% \| Custom operation", gm2f) and \
+            "literals the evaluator ignores" not in gm2f:
         contradictions.append("GameMechanics §2f lists the custom entries' literals as changes (Bone −75%, Penetration "
                               "−50%, Melee/Armor −50%); DamagePipeline §2: those literals have no effect, the operation "
                               "decides (§7.1, §7.4, §7.5)")
@@ -1273,7 +1391,8 @@ def check():
 
 BLOCK = re.compile(r"<!-- infantry_tables (.+?) -->\r?\n.*?<!-- /infantry_tables -->", re.S)
 MODES = {"--zones": zones_table, "--bones": bones_table, "--multipliers": multipliers_table, "--sources": sources_table,
-         "--explosives": explosives_table, "--armor": armor_table, "--not-traced": not_traced_table,
+         "--explosives": explosives_table, "--actor-explosives": actor_explosives_table,
+         "--armor": armor_table, "--not-traced": not_traced_table,
          "--verified": verified_table}
 
 
@@ -1287,8 +1406,13 @@ def write_docs():
         def regen(m):
             mode = m.group(1)
             args = [] if mode == "default" else mode.split()
-            res = subprocess.run([sys.executable, "-I", os.path.abspath(__file__)] + args,
-                                 capture_output=True, text=True, encoding="utf-8", check=True).stdout.strip()
+            try:
+                res = subprocess.run([sys.executable, "-I", os.path.abspath(__file__)] + args,
+                                     capture_output=True, text=True, encoding="utf-8", check=True).stdout.strip()
+            except subprocess.CalledProcessError as error:
+                if error.stderr:
+                    sys.stderr.write(error.stderr)
+                raise
             return nl.join([f"<!-- infantry_tables {mode} -->"] + res.split("\n") + ["<!-- /infantry_tables -->"])
 
         new, n = BLOCK.subn(regen, text)

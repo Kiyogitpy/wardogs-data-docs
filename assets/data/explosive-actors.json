@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "build": "++Wardogs+Live-CL-516586",
+    "evidence": "docs/evidence/round8-explosive-actors.md",
+    "provenance": "Reviewed cooked Blueprint defaults plus native constructor inheritance; raw exports remain local.",
+    "units": "Damage values are starting amounts; radii are centimetres. Each kept component hit is evaluated separately."
+  },
+  "actors": {
+    "M67 frag grenade": {
+      "blueprint": "/Game/Weapons/Grenades/B_FragGrenade",
+      "source_tag": "Meta.Damage.Grenade",
+      "source_context": ["Meta.Damage.Explosive.Rocket.60mm", "Meta.Damage.DamageType.Explosive"],
+      "damage_values": {"BaseDamage": 100, "ExplosiveRadius": 1000, "EffectiveExplosiveRadius": 500, "MinimumExplosiveDamage": 10, "ExplosiveDamageFallOff": 1}
+    },
+    "C4": {
+      "blueprint": "/C4/Data/Blueprints/B_ThrowableC4",
+      "source_tag": "Meta.Damage.Explosive.Utility.C4",
+      "source_context": ["Meta.Damage.Explosive.Utility.C4", "Meta.Damage.DamageType.Explosive"],
+      "damage_values": {"BaseDamage": 250, "ExplosiveRadius": 600, "EffectiveExplosiveRadius": 250, "MinimumExplosiveDamage": 20, "ExplosiveDamageFallOff": 1}
+    },
+    "AT mine": {
+      "blueprint": "/AT_mine/Data/Blueprints/B_AT_Mine",
+      "source_tag": "Meta.Damage.Explosive.Utility.ATMine",
+      "source_context": ["Meta.Damage.Explosive.Utility.ATMine"],
+      "damage_values": {"BaseDamage": 300, "ExplosiveRadius": 750, "EffectiveExplosiveRadius": 375, "MinimumExplosiveDamage": 50, "ExplosiveDamageFallOff": 0.5}
+    },
+    "Claymore": {
+      "blueprint": "/Claymore/Data/Blueprints/B_Claymore",
+      "source_tag": "Meta.Damage.Explosive.Utility.Claymore",
+      "source_context": ["Meta.Damage.DamageType.Explosive"],
+      "damage_values": {"BaseDamage": 150, "ExplosiveRadius": 300, "EffectiveExplosiveRadius": 150, "MinimumExplosiveDamage": 30, "ExplosiveDamageFallOff": 0.5}
+    },
+    "IED": {
+      "blueprint": "/IED/Blueprints/B_ThrowableIED",
+      "source_tag": "Meta.Damage.Explosive.Utility.IED",
+      "source_context": ["Meta.Damage.Explosive.Utility.IED", "Meta.Damage.DamageType.Explosive"],
+      "damage_values": {"BaseDamage": 300, "ExplosiveRadius": 800, "EffectiveExplosiveRadius": 400, "MinimumExplosiveDamage": 60, "ExplosiveDamageFallOff": 1}
+    },
+    "Molotov": {
+      "blueprint": "/Molotov/Data/Blueprints/B_Molotov",
+      "source_tag": "Meta.Damage.Molotov",
+      "source_context": ["Meta.Damage.Molotov", "Meta.Damage.DamageType.Explosive"],
+      "damage_values": {"BaseDamage": 40, "ExplosiveRadius": 500, "EffectiveExplosiveRadius": 250, "MinimumExplosiveDamage": 10, "ExplosiveDamageFallOff": 1},
+      "sustained_fire": {"player_starting_damage": 15, "vehicle_health_delta": 2, "timer_period_seconds": 0.4, "player_damage_type": "Meta.Damage.DamageType.Enviroment", "condition": "Eligible actor in the fire-field loop; full patch geometry/lifetime not traced."}
+    }
+  }
+}

@@ -1,11 +1,11 @@
 {
  "meta": {
-  "source_data_tree": "f9830eaf8f6fb326ba5d5ab3aa937602ce283ef9",
+  "source_data_tree": "a93c4f5d6bfc85e4230e3135edc19329e2c32669",
   "source_data_tree_note": "git tree id of data/ when generated; equals `git rev-parse <commit>:data` for any commit with the same data",
   "generator": "python _tools/infantry_tables.py --json",
-  "encoding": "Zone lists follow hit_locations order. zone_multiplier {row: R}: B[z] = bone_rows.Universal[z] × bone_rows[R][z] (R null: Universal alone); zone_multiplier null: B[z] = 1. A factor {k} gives factor[z] = k × B[z]; {zones} lists the 12 factors. Damage = S × factor[z] (× the falloff curve at the distance, keys in metres). Armor {k} multiplies the unarmored factor on the hit locations the item covers; {zones} gives those factors. entries are the entries with a factor other than 1 on every hit location, zone_entries the extra ones per hit location. A file reference is [index into meta.files, field] or an index. A source's doc is a key of meta.docs and a direct case's case a key of meta.cases. A direct hit's source context is source_context, weapon_tag, caliber, Meta.Damage.DamageType.Projectile and, when has_arming_delay, Kinetic.Impact.ExplosiveBlunt (§7.6); a blast hit's is source_context and the ring's radius tag. Blast armor factors apply only if the armor tag reaches a blast hit (armor-hook-paths). Numbers are rounded to 6 significant digits.",
-  "files": ["data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/556mm/DA_556mm_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_004/Content/Data/DA_A91_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_004/Content/Data/ID_A91.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_005/Content/Data/DA_TAR21_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_005/Content/Data/ID_TAR21.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_033/Content/Data/DA_WEPN_033_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_033/Content/Data/ID_WEPN_033.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/545mm/DA_545mm_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_001/Content/Data/DA_AK74M_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_001/Content/Data/ID_AK74M.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/308Winchester/DA_308Winchester_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_030/Content/Data/DA_WEPN_030_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_030/Content/Data/ID_WEPN_030.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_029/Content/Data/DA_WEPN_029_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_029/Content/Data/ID_WEPN_029.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_003/Content/Data/DA_KH2002_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_003/Content/Data/ID_KH2002.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_002/Content/Data/DA_M4_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_002/Content/Data/ID_M4.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/762mm/DA_762mm_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_037/Content/Data/DA_WEPN_037_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_037/Content/Data/ID_WEPN_037.json", "data/Wardogs/Plugins/GameFeatures/Weapons/DMR/RFB/Content/Data/DA_RFB_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/DMR/RFB/Content/Data/ID_RFB.json", "data/Wardogs/Content/Weapons/DMR/SKS/Data/DA_SKS_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_007/Content/Data/ID_SKS.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/762x54mm/DA_762x54mm_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Weapons/DMR/SVDM/Content/Data/DA_SVDM_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/DMR/SVDM/Content/Data/ID_SVDM.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_034/Content/Data/DA_WEPN_034_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_034/Content/Data/ID_WEPN_034.json", "data/Wardogs/Plugins/GameFeatures/Weapons/LMG/LMG_02/Content/Data/DA_LMG_02_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/LMG/LMG_02/Content/Data/ID_LMG_02.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_009/Content/Data/DA_M249_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_009/Content/Data/ID_M249.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_036/Content/Data/DA_WEPN_036_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_036/Content/Data/ID_WEPN_036.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/84mm/DA_84mm_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_013/Content/Data/ID_CGM4.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_013/Content/Data/DA_CGM4_Stats.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/DA_TVGuidedMissile_Data.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/72mm/DA_72mm_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/Launcher_04/Content/Data/ID_Launcher_04.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/Launcher_04/Content/Data/DA_Launcher_04_Stats.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/40mm/DA_40mm_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_012/Content/Data/ID_MMGL.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_012/Content/Data/DA_MMGL_Stats.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/93mm/DA_93mm_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/RPG7/Content/Data/ID_RPG7.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/RPG7/Content/Data/DA_RPG7_Stats.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/50AE/DA_50AE_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_027/Content/Data/DA_WEPN_027_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_027/Content/Data/ID_WEPN_027.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/9mm/DA_9mm_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_010/Content/Data/DA_Glock17_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_010/Content/Data/ID_Glock17.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_032/Content/Data/DA_WEPN_032_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_032/Content/Data/ID_WEPN_032.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/45Colt/DA_45Colt_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Pistols/Pistol_02/Content/Data/ID_Judge.json", "data/Wardogs/Content/Weapons/Pistol/Judge/Data/DA_Judge_Stats.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/45ACP/DA_45ACP_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_026/Content/Data/DA_WEPN_026_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_026/Content/Data/ID_WEPN_026.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_028/Content/Data/DA_WEPN_028_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_028/Content/Data/ID_WEPN_028.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_014/Content/Data/DA_MP9_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_014/Content/Data/ID_MP9.json", "data/Wardogs/Plugins/GameFeatures/Weapons/SMG/SMG_03/Content/Data/DA_SMG_03_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/SMG/SMG_03/Content/Data/ID_SMG_03.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_006/Content/Data/DA_Vector_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_006/Content/Data/ID_Vector.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_031/Content/Data/DA_WEPN_031_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_031/Content/Data/ID_WEPN_031.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/7mm_Buckshot/DA_7mmBuckshot_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_011/Content/Data/ID_M500.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_011/Content/Data/DA_M12G_Stats.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/7mm_Buckshot/DA_12g_RifledSlug_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Shotgun/MP43/Content/Data/ID_MP43.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Shotgun/MP43/Content/Data/DA_MP43_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/MK22/Content/Data/DA_MK22_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/MK22/Content/Data/ID_MK22.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/50Cal/DA_50Cal_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/SR_04/Content/Data/DA_SR_04_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/SR_04/Content/Data/ID_SR_04.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/DA_WEPN_017_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/ID_WEPN_017.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_008/Content/Data/DA_SV98_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_008/Content/Data/ID_SV98.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_035/Content/Data/DA_WEPN_035_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_035/Content/Data/ID_WEPN_035.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/120x570mm/DA_120x570mm_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/Heavy/WE_TNK_01_Heavy.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/Heavy/DA_TNK_01_Heavy_Weapon_Stats.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/120x800mm/DA_120x800mm_Standard_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/STN_03/Content/Weapons/WeaponExtensions/WE_STN_03_Heavy_MainBarrel.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/STN_03/Content/Weapons/DA_STN_03_Heavy_MainBarrel_Stats.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/122mm/DA_122mm_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/Weapons/122mm/WE_ROT_02_Weapon_122mm.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/Weapons/122mm/DA_ROT_02_Weapon_122mm_Stats.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03_WeaponVariants/Content/Weapons/WE_ROT_03_Weapon_122mm.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03_WeaponVariants/Content/Weapons/DA_ROT_03_Weapon_122mm_Stats.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/122mm/DA_122_mm_HAVOC_ProjectileData.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/125x570mm/DA_125x570mm_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/Weapons/WeaponExtensions/WE_TNK_04.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/Weapons/WeaponExtensions/DA_TNK_04_Weapon_Stats.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/155mm/DA_155mm_Expensive_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/Artillery/WE_TNK_01_Artillery.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/Artillery/DA_TNK_01_Artillery_Weapon_Stats.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/155mm/DA_155mm_Standard_ProjectileData.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/20x102mm/DA_20x102mm.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/STN_02/Content/Weapons/WeaponExtensions/WE_STN_02_Heavy_MainCannon.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/STN_02/Content/Weapons/DA_STN_02_Heavy_MainCannon_Stats.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/MachineGun/WE_TNK_01_MachineGun.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/MachineGun/DA_TNK_01_MachineGun_Weapon_Stats.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03_WeaponVariants/Content/Weapons/WE_ROT_03_AttachedMachineGuns.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03_WeaponVariants/Content/Weapons/DA_ROT_03_AttachedMachineGuns_Stats.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04_MachineGun/Content/Weapons/WE_ROT_04_MountedMachineGun.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04_MachineGun/Content/Weapons/DA_ROT_04_MountedMachineGun_Stats.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04_MachineGun/Content/Weapons/WE_ROT_04_MountedMachineGun_L.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05_Minigun/Content/Weapons/WeaponExtensions/WE_WHL_05_RingMinigun.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05_Minigun/Content/Weapons/WeaponExtensions/DA_WHL_05_RingMinigun_Stats.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/30mm/DA_30mm_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/Weapons/Cannon/WE_ROT_02_Weapon_30mmCannon.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/Weapons/Cannon/DA_ROT_02_Weapon_30mmCannon_Stats.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/35x228mm/DA_35x228mm_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/AntiAir/WE_TNK_03.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/AntiAir/DA_TNK_03_Weapon_Stats.json", "data/Wardogs/Plugins/GameFeatures/UnderbarrelGrenadeLauncher/Content/Data/GrenadeLauncher.json", "data/Wardogs/Plugins/GameFeatures/UnderbarrelGrenadeLauncher/Content/Data/DA_GrenadeLauncher_Stats.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/Weapons/WeaponExtensions/MountedMachineGun/WE_TNK_04_MountedMachineGun.json", "data/Wardogs/Plugins/GameFeatures/Weapons/VehicleWeaponry/MWSY_001/Content/Weapons/DA_MWSY_001_Heavy_MountedMachineGun_Stats.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08_RingTurret/Content/Weapons/WeaponExtensions/WE_WHL_08_RingTurret.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/STN_06/Content/Weapons/WeaponExtensions/WE_STN_06_MountedMachineGun.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/Heavy/Mounted_MachineGun/WE_TNK_01_Heavy_MountedMachineGun.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_02_RingTurret/Content/Weapons/WeaponExtensions/SUV_RingTurret/WE_WHL_02_RingTurret.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05_RingTurret/Content/Weapons/WeaponExtensions/WE_WHL_05_RingTurret.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07_ArmouredBattle/Content/Weapons/WeaponExtensions/WE_WHL_07_Turret.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/STN_01/Content/Weapon/WeaponExtensions/WE_STN_01_Heavy_MountedMachineGun.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/STN_01/Content/Weapon/DA_STN_01_Heavy_MountedMachineGun_Stats.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/Weapons/WeaponExtensions/MachineGun/WE_TNK_04_MachineGun.json", "data/Wardogs/Plugins/GameFeatures/Items/CombatBow/Content/Data/DataAssets/Arrow/DA_Arrow_Combat_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Items/CombatBow/Content/Data/DataAssets/DA_CombatBow_Stats.json", "data/Wardogs/Plugins/GameFeatures/Items/CombatBow/Content/Data/DataAssets/ID_CombatBow.json", "data/Wardogs/Plugins/GameFeatures/Items/CombatBow/Content/Data/DataAssets/Arrow/DA_Arrow_Explosive_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/Data/Projectile/DA_Drone_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/Weapons/WeaponExtensions/WE_STN_05_Heavy_MainBarrel.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/Weapons/DA_STN_05_Heavy_MainBarrel_Stats.json", "data/Wardogs/Content/Items/Throwable/Grenades/M67_Grenade/ID_M67Grenade.json", "data/Wardogs/Plugins/GameFeatures/Items/C4/Content/Data/ID_C4_Trigger.json", "data/Wardogs/Plugins/GameFeatures/Items/AT_mine/Content/Data/ID_AT_Mine.json", "data/Wardogs/Plugins/GameFeatures/Items/Claymore/Content/Data/ID_Claymore.json", "data/Wardogs/Plugins/GameFeatures/Items/IED/Content/Data/ID_IED_Explosive.json", "data/Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Data/ID_Molotov.json", "data/Wardogs/Content/Items/Weapons/Fists/ID_Fists.json", "data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/LargeHammer/ID_LargeHammer.json", "data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/MediumHammer/ID_MediumHammer.json", "data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/SmallHammer/ID_SmallHammer.json", "data/Wardogs/Plugins/GameFeatures/Items/Crowbar/Content/Data/ID_Crowbar.json", "data/Wardogs/Plugins/GameFeatures/Items/VehicleRepairTool/Content/Data/ID_HeavyDrill_RepairTool.json", "data/Wardogs/Plugins/GameFeatures/Items/VehicleRepairTool/Content/Data/ID_LightDrill_RepairTool.json"],
-  "cases": {"direct": "Direct hit: S = BaseDamage", "direct_not_exploding": "Direct hit that is not exploding: S = BaseDamage (when a hit explodes is not traced)", "before_arming": "Before arming (flight time below ArmingDelay): S = ExplosiveBluntDamage"},
+  "encoding": "Zone lists follow hit_locations order. zone_multiplier {row: R}: B[z] = bone_rows.Universal[z] × bone_rows[R][z] (R null: Universal alone); zone_multiplier null: B[z] = 1. A factor {k} gives factor[z] = k × B[z]; {zones} lists the 12 factors. Damage = S × factor[z] (× the falloff curve at the distance, keys in metres). Armor {k} multiplies the unarmored factor on covered direct-hit locations, or every radial location with a retained tag; {zones} gives those factors. entries are the entries with a factor other than 1 on every hit location, zone_entries the extra ones per hit location. A file reference is [index into meta.files, field] or an index. A source's doc is a key of meta.docs and a direct case's case a key of meta.cases. A direct hit's source context is source_context, weapon_tag, caliber, Meta.Damage.DamageType.Projectile and, when has_arming_delay, Kinetic.Impact.ExplosiveBlunt (§7.6); a blast hit's context is radial.source_context plus the ring's radius tag. Blast armor tags are evaluated individually; combined equipment needs joint evaluation. Numbers are rounded to 6 significant digits.",
+  "files": ["data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/556mm/DA_556mm_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_004/Content/Data/DA_A91_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_004/Content/Data/ID_A91.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_005/Content/Data/DA_TAR21_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_005/Content/Data/ID_TAR21.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_033/Content/Data/DA_WEPN_033_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_033/Content/Data/ID_WEPN_033.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/545mm/DA_545mm_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_001/Content/Data/DA_AK74M_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_001/Content/Data/ID_AK74M.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/308Winchester/DA_308Winchester_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_030/Content/Data/DA_WEPN_030_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_030/Content/Data/ID_WEPN_030.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_029/Content/Data/DA_WEPN_029_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_029/Content/Data/ID_WEPN_029.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_003/Content/Data/DA_KH2002_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_003/Content/Data/ID_KH2002.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_002/Content/Data/DA_M4_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_002/Content/Data/ID_M4.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/762mm/DA_762mm_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_037/Content/Data/DA_WEPN_037_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_037/Content/Data/ID_WEPN_037.json", "data/Wardogs/Plugins/GameFeatures/Weapons/DMR/RFB/Content/Data/DA_RFB_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/DMR/RFB/Content/Data/ID_RFB.json", "data/Wardogs/Content/Weapons/DMR/SKS/Data/DA_SKS_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_007/Content/Data/ID_SKS.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/762x54mm/DA_762x54mm_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Weapons/DMR/SVDM/Content/Data/DA_SVDM_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/DMR/SVDM/Content/Data/ID_SVDM.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_034/Content/Data/DA_WEPN_034_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_034/Content/Data/ID_WEPN_034.json", "data/Wardogs/Plugins/GameFeatures/Weapons/LMG/LMG_02/Content/Data/DA_LMG_02_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/LMG/LMG_02/Content/Data/ID_LMG_02.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_009/Content/Data/DA_M249_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_009/Content/Data/ID_M249.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_036/Content/Data/DA_WEPN_036_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_036/Content/Data/ID_WEPN_036.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/84mm/DA_84mm_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_013/Content/Data/ID_CGM4.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_013/Content/Data/DA_CGM4_Stats.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/72mm/DA_72mm_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/Launcher_04/Content/Data/ID_Launcher_04.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/Launcher_04/Content/Data/DA_Launcher_04_Stats.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/40mm/DA_40mm_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_012/Content/Data/ID_MMGL.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_012/Content/Data/DA_MMGL_Stats.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/93mm/DA_93mm_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/RPG7/Content/Data/ID_RPG7.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/RPG7/Content/Data/DA_RPG7_Stats.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/50AE/DA_50AE_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_027/Content/Data/DA_WEPN_027_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_027/Content/Data/ID_WEPN_027.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/9mm/DA_9mm_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_010/Content/Data/DA_Glock17_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_010/Content/Data/ID_Glock17.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_032/Content/Data/DA_WEPN_032_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_032/Content/Data/ID_WEPN_032.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/45Colt/DA_45Colt_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Pistols/Pistol_02/Content/Data/ID_Judge.json", "data/Wardogs/Content/Weapons/Pistol/Judge/Data/DA_Judge_Stats.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/45ACP/DA_45ACP_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_026/Content/Data/DA_WEPN_026_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_026/Content/Data/ID_WEPN_026.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_028/Content/Data/DA_WEPN_028_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_028/Content/Data/ID_WEPN_028.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_014/Content/Data/DA_MP9_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_014/Content/Data/ID_MP9.json", "data/Wardogs/Plugins/GameFeatures/Weapons/SMG/SMG_03/Content/Data/DA_SMG_03_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/SMG/SMG_03/Content/Data/ID_SMG_03.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_006/Content/Data/DA_Vector_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_006/Content/Data/ID_Vector.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_031/Content/Data/DA_WEPN_031_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_031/Content/Data/ID_WEPN_031.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/7mm_Buckshot/DA_7mmBuckshot_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_011/Content/Data/ID_M500.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_011/Content/Data/DA_M12G_Stats.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/7mm_Buckshot/DA_12g_RifledSlug_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Shotgun/MP43/Content/Data/ID_MP43.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Shotgun/MP43/Content/Data/DA_MP43_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/MK22/Content/Data/DA_MK22_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/MK22/Content/Data/ID_MK22.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/50Cal/DA_50Cal_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/SR_04/Content/Data/DA_SR_04_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/SR_04/Content/Data/ID_SR_04.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/DA_WEPN_017_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/ID_WEPN_017.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_008/Content/Data/DA_SV98_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_008/Content/Data/ID_SV98.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_035/Content/Data/DA_WEPN_035_Stats.json", "data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_035/Content/Data/ID_WEPN_035.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/120x570mm/DA_120x570mm_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/Heavy/WE_TNK_01_Heavy.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/Heavy/DA_TNK_01_Heavy_Weapon_Stats.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/120x800mm/DA_120x800mm_Standard_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/STN_03/Content/Weapons/WeaponExtensions/WE_STN_03_Heavy_MainBarrel.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/STN_03/Content/Weapons/DA_STN_03_Heavy_MainBarrel_Stats.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/122mm/DA_122mm_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/Weapons/122mm/WE_ROT_02_Weapon_122mm.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/Weapons/122mm/DA_ROT_02_Weapon_122mm_Stats.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03_WeaponVariants/Content/Weapons/WE_ROT_03_Weapon_122mm.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03_WeaponVariants/Content/Weapons/DA_ROT_03_Weapon_122mm_Stats.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/125x570mm/DA_125x570mm_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/Weapons/WeaponExtensions/WE_TNK_04.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/Weapons/WeaponExtensions/DA_TNK_04_Weapon_Stats.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/155mm/DA_155mm_Expensive_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/Artillery/WE_TNK_01_Artillery.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/Artillery/DA_TNK_01_Artillery_Weapon_Stats.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/155mm/DA_155mm_Standard_ProjectileData.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/20x102mm/DA_20x102mm.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/STN_02/Content/Weapons/WeaponExtensions/WE_STN_02_Heavy_MainCannon.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/STN_02/Content/Weapons/DA_STN_02_Heavy_MainCannon_Stats.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/MachineGun/WE_TNK_01_MachineGun.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/MachineGun/DA_TNK_01_MachineGun_Weapon_Stats.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03_WeaponVariants/Content/Weapons/WE_ROT_03_AttachedMachineGuns.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03_WeaponVariants/Content/Weapons/DA_ROT_03_AttachedMachineGuns_Stats.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04_MachineGun/Content/Weapons/WE_ROT_04_MountedMachineGun.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04_MachineGun/Content/Weapons/DA_ROT_04_MountedMachineGun_Stats.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04_MachineGun/Content/Weapons/WE_ROT_04_MountedMachineGun_L.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05_Minigun/Content/Weapons/WeaponExtensions/WE_WHL_05_RingMinigun.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05_Minigun/Content/Weapons/WeaponExtensions/DA_WHL_05_RingMinigun_Stats.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/30mm/DA_30mm_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/Weapons/Cannon/WE_ROT_02_Weapon_30mmCannon.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/Weapons/Cannon/DA_ROT_02_Weapon_30mmCannon_Stats.json", "data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/35x228mm/DA_35x228mm_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/AntiAir/WE_TNK_03.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/AntiAir/DA_TNK_03_Weapon_Stats.json", "data/Wardogs/Plugins/GameFeatures/UnderbarrelGrenadeLauncher/Content/Data/GrenadeLauncher.json", "data/Wardogs/Plugins/GameFeatures/UnderbarrelGrenadeLauncher/Content/Data/DA_GrenadeLauncher_Stats.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/Weapons/WeaponExtensions/MountedMachineGun/WE_TNK_04_MountedMachineGun.json", "data/Wardogs/Plugins/GameFeatures/Weapons/VehicleWeaponry/MWSY_001/Content/Weapons/DA_MWSY_001_Heavy_MountedMachineGun_Stats.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08_RingTurret/Content/Weapons/WeaponExtensions/WE_WHL_08_RingTurret.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/STN_06/Content/Weapons/WeaponExtensions/WE_STN_06_MountedMachineGun.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/Heavy/Mounted_MachineGun/WE_TNK_01_Heavy_MountedMachineGun.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_02_RingTurret/Content/Weapons/WeaponExtensions/SUV_RingTurret/WE_WHL_02_RingTurret.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05_RingTurret/Content/Weapons/WeaponExtensions/WE_WHL_05_RingTurret.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07_ArmouredBattle/Content/Weapons/WeaponExtensions/WE_WHL_07_Turret.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/STN_01/Content/Weapon/WeaponExtensions/WE_STN_01_Heavy_MountedMachineGun.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/STN_01/Content/Weapon/DA_STN_01_Heavy_MountedMachineGun_Stats.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/Weapons/WeaponExtensions/MachineGun/WE_TNK_04_MachineGun.json", "data/Wardogs/Plugins/GameFeatures/Items/CombatBow/Content/Data/DataAssets/Arrow/DA_Arrow_Combat_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Items/CombatBow/Content/Data/DataAssets/DA_CombatBow_Stats.json", "data/Wardogs/Plugins/GameFeatures/Items/CombatBow/Content/Data/DataAssets/ID_CombatBow.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/Data/Projectile/DA_Drone_ProjectileData.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/Weapons/WeaponExtensions/WE_STN_05_Heavy_MainBarrel.json", "data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/Weapons/DA_STN_05_Heavy_MainBarrel_Stats.json", "data/Wardogs/Content/Items/Throwable/Grenades/M67_Grenade/ID_M67Grenade.json", "assets/data/explosive-actors.json", "data/Wardogs/Plugins/GameFeatures/Items/C4/Content/Data/ID_C4_Trigger.json", "data/Wardogs/Plugins/GameFeatures/Items/AT_mine/Content/Data/ID_AT_Mine.json", "data/Wardogs/Plugins/GameFeatures/Items/Claymore/Content/Data/ID_Claymore.json", "data/Wardogs/Plugins/GameFeatures/Items/IED/Content/Data/ID_IED_Explosive.json", "data/Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Data/ID_Molotov.json", "data/Wardogs/Content/Items/Weapons/Fists/ID_Fists.json", "data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/LargeHammer/ID_LargeHammer.json", "data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/MediumHammer/ID_MediumHammer.json", "data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/SmallHammer/ID_SmallHammer.json", "data/Wardogs/Plugins/GameFeatures/Items/Crowbar/Content/Data/ID_Crowbar.json", "data/Wardogs/Plugins/GameFeatures/Items/VehicleRepairTool/Content/Data/ID_HeavyDrill_RepairTool.json", "data/Wardogs/Plugins/GameFeatures/Items/VehicleRepairTool/Content/Data/ID_LightDrill_RepairTool.json"],
+  "cases": {"direct": "Direct hit: S = BaseDamage", "direct_not_exploding": "Direct hit that is not exploding: S = BaseDamage when the traced detonation predicate is false", "before_arming": "Before arming (flight time below ArmingDelay): S = ExplosiveBluntDamage"},
   "docs": {
    "callers": "Wardogs_DamagePipeline_v2.html#11-callers-and-where-the-result-goes",
    "custom_entries": "Wardogs_DamagePipeline_v2.html#31-the-custom-entries",
@@ -27,45 +27,49 @@
    "vehicle_open_questions": "Wardogs_VehicleDamagePipeline_v1.html#7-open-questions"
   },
   "verified": {
-   "status": "verifier round 6 (doc text pending)",
+   "status": "verified native trace (rounds 6 and 8)",
    "items": [
-    {"id": "hit-location-asset", "rvas": ["0x6F01BB0"], "text": "The hit-location asset is picked by the target actor's class (ClassToHitLocations)."},
+    {"id": "hit-location-asset", "rvas": ["0x6F01BB0"], "text": "ClassToHitLocations maps BHMoverPawn and WDTargetDummy to DA_GlobalDamage_HitLocations_Player. The shipped keys have disjoint inheritance branches, so they cannot compete for one target."},
     {"id": "bone-lookup", "rvas": ["0x6BB8D00"], "text": "The hit location is an exact FName match of the raw FHitResult.BoneName in DamageHitLocations: no parent walk, and an unmapped bone gives an empty tag (no hit location)."},
     {"id": "impact-remap", "rvas": ["0x6BB8D40"], "text": "DamageImpactRemap is never applied for damage: its reader has 3 callers, all animation or ragdoll. spine_05 is Torso.Upper for damage."},
-    {"id": "physics-asset", "rvas": [], "text": "The hit bodies are PA_TPCharacter_Simplified's; all 20 map to a hit location. spine_01 and spine_02 have no body, so a live player never produces them. Mutable adds each helmet's single head body, which maps to Head."},
+    {"id": "physics-asset", "rvas": [], "text": "The viewer model uses PA_TPCharacter_Simplified; all 20 bodies map to a hit location. spine_01 and spine_02 have no body. Mutable's compiled model selects tagged physics assets by helmet/faction/view branches; see helmet-merge for the verified normal merge and component-default policy."},
     {"id": "radial-hits", "rvas": ["0x6F06540", "0x6E6DCC0"], "text": "Radial damage: the gathered hits pass the character's IWDDamageable filter (dropped in one seat state, otherwise one hit per component). Each kept hit is its own evaluation, tagged Radius.Inner or .Outer, with that hit's bone as the hit location."},
     {"id": "blunt-direct-only", "rvas": ["0x6B725B0"], "text": "Kinetic.Impact.ExplosiveBlunt is added only on a projectile's direct-impact path, so entries 7, 117, 142 and 143 never apply to blast damage; entries 102–116 do."},
     {"id": "thrown-contact", "rvas": ["0x6CA8730"], "text": "Against a character, the explosive-actor path is the thrown object's contact damage (source Kinetic.Impact.Throwable, DamageType.Impact), applied once per contact on the contacted bone."},
-    {"id": "backblast-paths", "rvas": ["0x6F042A0", "0x6F06EB0"], "text": "On foot, 0x6F042A0 traces the back-blast cone. In a seat, 0x6F06EB0 hits the occupants of the shooter's vehicle with synthetic hits, the shooter included. Only Launcher_04, RPG7 and CGM4 enable back-blast."}
+    {"id": "backblast-paths", "rvas": ["0x6F042A0", "0x6F06EB0"], "text": "On foot, 0x6F042A0 traces the back-blast cone. In a seat, 0x6F06EB0 hits the occupants of the shooter's vehicle with synthetic hits, the shooter included. Only Launcher_04, RPG7 and CGM4 enable back-blast."},
+    {"id": "radial-amount", "rvas": ["0x6F06540", "0x6F03720"], "text": "Blast starts at BaseDamage through EffectiveExplosiveRadius (Inner), then falls linearly toward BaseDamage × (1 − ExplosiveDamageFallOff) just inside ExplosiveRadius (Outer), with 0 at or beyond that radius, all floored at MinimumExplosiveDamage. The Inner branch takes priority if E > R. Center, Disc and Points gather distance is original blast origin to accepted ImpactPoint, or the candidate point for a synthetic hit. Native default is Points with first-unoccluded-point termination."},
+    {"id": "radial-context", "rvas": ["0x6B725B0", "0x6B70E20", "0x6F06540"], "text": "Exploding projectiles retain stats context, the weapon damage tag and ProjectileId, then add DamageType.Explosive and Radius.Inner/Outer. They skip the direct path's Projectile/ExplosiveBlunt additions. A mapped hit bone can therefore use the weapon bone row; this assumes valid equipment and the converter's target-discovery path."},
+    {"id": "armor-data-rows", "rvas": ["0x6B53000", "0x6BB4EB0"], "text": "Armor rows run in a separate armor-target event starting from the original event amount. They do not join the character health event's Infantry group. The trace establishes evaluation/queuing, not the final durability write."},
+    {"id": "occupant-damage", "rvas": ["0x7692B60", "0x768ED20"], "text": "Vehicle-operator slot 160 starts at 1000 and appends VehicleExplosion + DamageType.Explosive; slot 161 forwards its caller's float and appends Vehicle + DamageType.Enviroment. Both use a zeroed synthetic hit with no bone or explicit hit-location tag, then ModifyDamage."},
+    {"id": "armor-hook-paths", "rvas": ["0x6B53580", "0x6B67870"], "text": "Radial/back-blast use the general armor hook with empty bone/location. Melee Blueprints call it with Torso for separate armor events, but ignore its returned copy and evaluate the original health event. Thrown-contact and actor-impact native bodies call neither armor hook."},
+    {"id": "melee-path", "rvas": ["0x6B67870", "0x6F07C10"], "text": "Cooked B_Action_Melee, MeleeBash and ItemMelee character paths evaluate the original event with DamageType.Melee (or extension override), no hit bone and no hit-location tag. Amount is selected MeleeAction.Damage, or WeaponStats.MeleeDamage for bash. The source root is ItemId on the actions and extension DamageEntityData.Tag on ItemMelee; source context is replaced by the singleton damage type."},
+    {"id": "explosive-actors", "rvas": ["0x6CA8D20", "0x6F06540"], "text": "Frag, C4, AT mine, Claymore, IED and Molotov burst defaults and detonation routes were extracted from cooked Blueprints and native constructor inheritance. Reviewed numerical inputs are in assets/data/explosive-actors.json. Molotov fire separately starts at 15 player damage or 2 vehicle health per eligible 0.4-second loop; full patch geometry/lifetime remains open."},
+    {"id": "backblast", "rvas": ["0x6B92900", "0x76C3EB0", "0x76C4120"], "text": "Normal handheld back-blast copies the weapon extension entity and appends DamageType.BackBlast; all three enabled launchers use Weapon.Launcher.AT4 as root. On-foot health uses minimum/base and distance/angle curves. Seated health uses base × health scalar × clamped vehicle scalar × distance curve; synthetic hits have no bone/location. Vehicle attribute self-damage is separate."},
+    {"id": "vehicle-weapon-tag", "rvas": ["0x76478D0", "0x6B72030", "0x6B725B0"], "text": "The vehicle weapon extension copies WeaponExtensionDataAsset.DamageEntityData into its damage component; IWDWeaponOwner supplies that component's root tag to projectile record +0x10, which the damage builder appends to source context. Thus configured WE weapon tags reach bone-row selection."},
+    {"id": "collision-channels", "rvas": [], "text": "Packed CharacterMesh configuration blocks Visibility, WDProjectile, WDMeleeHit and WDExplosive; ignores Pawn, Vehicle and PhysicsBody; overlaps WDVehicleCamera, WDBuildablePlacement and WDRotor. The cooked player mesh is Custom/QueryOnly with no response-array override, inheriting those responses. This establishes static channel responses, not shape registration or later runtime changes."},
+    {"id": "tapered-capsule-query", "rvas": ["0x423A2C0", "0x422A320", "0x42333F0"], "text": "The simple-geometry builder converts tapered elements to straight capsules using the mean of their scaled/clamped radii and registers query-capable shapes. QueryOnly body plus QueryAndPhysics element preserves queries. The viewer shows authored tapered geometry; simple-geometry selection and channel filters still govern actual hits."},
+    {"id": "physical-material", "rvas": ["0x6F2F740", "0x6F36190", "0x6F36F40"], "text": "Physical materials affect penetration geometry/capacity, exit velocity and history tags. The current hit uses pre-exit ImpactVelocity; later hits may lose starting damage through the speed scale. Head/Body surface speed modifiers and ricochet chances are zero; their densities differ (0.2/1). Their ignore-list entries suppress history marking, not velocity loss. No extra direct SurfaceType health scalar is established in the traced bullet calculation."},
+    {"id": "exploding-hit", "rvas": ["0x6B721B0", "0x6F391F0", "0x76CFEB0"], "text": "bExploding requires positive radius, arming eligibility, instance +0x101 and no ricochet/penetration. The instance gate defaults true; the camera-projectile path updates it from vehicle-candidate acquisition time/threshold and clears it outside that controller state. A positive threshold can retain eligibility through loss grace. This covers the concrete traced mutation, not every possible writer."},
+    {"id": "impact-amount", "rvas": ["0x6E6B670", "0x529AB10", "0x6CA8730"], "text": "Actor impact starts at abs(overlap volume in m³ × cached substep seconds × UnresolvedCollisionDamageMultiplier), with native float conversion order and invalid/empty guards. Ground/BodyDragging cache FMoverTimeStep.StepMs × 0.001. It bypasses rules. Thrown contact uses ImpactDamage, inherited as 10 by Frag, C4, IED and Molotov; the hitting actor supplies source entity data."},
+    {"id": "radial-split", "rvas": ["0x6E6DCC0", "0x6E6AFBE", "0x6B44E60"], "text": "Normal player setup has one eligible third-person CharacterMesh component: capsule ignores Visibility and first-person meshes use NoCollision. Mutable associates with the existing mesh, changing its asset/bodies rather than adding a third-person query primitive. The filter keeps one valid hit per component, not one per body. LOS, sampling, body state and protected-seat rejection can still leave no hit; this is not an invariant for arbitrary runtime component mutations."},
+    {
+     "id": "helmet-merge",
+     "rvas": ["0x66C05F0", "0x66BAD60", "0x6699D70", "0x66D20A0", "0x3D5E200", "0x3D71170"],
+     "text": "Mutable resolves __PA tags to indexed physics assets and deduplicates selected pointers. It reuses a sole selected asset when generated bodies are unmodified; otherwise it builds a combined asset with at most one body setup per bone. In the combined path, AggGeom comes from the generated Mutable body record, while the source setup used when a result bone is first created supplies selected body properties; duplicate head setups do not duplicate the result body or append geometry. The compiled program has root-reachable base __PA:0 plus helmet tags selected by helmet/faction/view conditions. The normal CharacterMesh override defaults null and its getter falls back to the assigned mesh's physics asset. Runtime parameter values and later override/replacement mutations remain unknown; attached-parent replacement is a separate default-off flag."
+    },
+    {"id": "caliber-parent-match", "rvas": ["0x67A2B40", "0x6792CB0", "0x6C98290", "0x7645A30"], "text": "Normal reload filters compare exact item IDs or child item context against parent filters; firing uses the actual loaded item's projectile fragment. Reviewed child associations are M500/MP43 slug, STN03 Standard and artillery Standard/Expensive. SupportedCaliber is not a universal admission gate. Prefix-only bow Explosive, CGM4 TVGuided and ROT02/03 Havoc pairings are excluded: the reviewed default chamber/item mappings do not select those projectile assets. Other runtime actions remain conditional."}
    ]
   },
-  "assumptions": ["rules from DamagePipeline §4-§7 only, through _tools/damage_tables.py: every selected entry multiplies the running amount, the total is clamped at 0 (§6)", "§7.7 event: hostile alignment, FMJ (no ammo-modifier tag), a direct hit with no ricochet or penetration, no instigator tags, target outside any vehicle; point blank unless the falloff curve is applied", "speed scale left at 1 (§7.8)", "armor: only the piece whose CoveredHitLocations holds the hit location reaches the rules (Auth_GetArmorDamageEvent, §7.6); every durability stage has the same R in the data (§7.5)", "an absent cooked property is its class default (bHasArmingDelay false)", "bone factor U × W: U from row Universal, W from the first source-context tag naming a row or its direct parent, 1.0 with none (§7.1); Meta.Damage.Explosive.Drone is exempt", "blast hits: one evaluation per hit with that hit's bone as the hit location and no ExplosiveBlunt (verifier round 6 (doc text pending)); source context = the projectile's source tag, DamageEntityData.Context and the radius tag (radial-context), so W = 1; the blast amount itself is not traced (radial-amount)", "shotgun values are per pellet"],
+  "assumptions": ["baseline weapon/projectile pairs use the first SupportedCaliber tag with projectile data as a modelling choice; not every baseline item's loading path has been audited. Extra child-caliber pairs are limited to the named loading associations reviewed in docs/evidence/round8-weapon-context.md", "rules from DamagePipeline §4-§7 only, through _tools/damage_tables.py: every selected entry multiplies the running amount, the total is clamped at 0 (§6)", "§7.7 event: hostile alignment, FMJ (no ammo-modifier tag), a direct hit with no ricochet or penetration, no instigator tags, target outside any vehicle; point blank unless the falloff curve is applied", "speed scale left at 1 (§7.8)", "direct projectile armor: only the first covering piece reaches the rules (Auth_GetArmorDamageEvent, §7.6); radial armor: every valid retained piece can participate without coverage filtering; each listed item is evaluated alone, not as combined equipment; every durability stage has the same R (§7.5)", "an absent cooked property is its class default (bHasArmingDelay false)", "bone factor U × W: U from row Universal, W from the first source-context tag naming a row or its direct parent, 1.0 with none (§7.1); Meta.Damage.Explosive.Drone is exempt", "projectile blast: retain stats context, weapon tag and caliber id, add DamageType.Explosive and radius; do not add Projectile/ExplosiveBlunt; one evaluation per kept hit; bone-dependent factors assume a mapped gathered bone and valid equipment leaving the target-discovery fallback available; invalid armor tags can suppress that fallback; total damage over multiple components is not modelled", "shotgun values are per pellet"],
   "not_traced": [
-   {"id": "radial-amount", "text": "Blast damage: which DamageValues field is the starting amount, the falloff arithmetic, and which radius separates Meta.Damage.Explosive.Radius.Inner from .Outer. GameMechanics §14 says BaseDamage and ExplosiveRadius feed the Calibre rules and falloff is ExplosiveDamageFallOff, without a formula.", "data": "Projectile assets carry BaseDamage, ExplosiveRadius, EffectiveExplosiveRadius, ExplosiveDamageFallOff and on some MinimumExplosiveDamage (values per source)."},
-   {"id": "radial-split", "text": "Which of the character's components the radial gather hits. Known (verifier round 6 (doc text pending)): one hit per component after the IWDDamageable filter 0x6E6DCC0, each hit its own evaluation with its bone's hit location.", "data": "No data field describes the gather."},
-   {"id": "radial-context", "text": "Which tags a blast hit's source context carries besides the source tag and the radius tag (weapon tag, caliber id). The blast factors here use the projectile's source tag, its DamageEntityData.Context and the radius tag, so the bone factor's W is 1 on blast hits.", "data": "Entries 108–116 need only the source tag and a radius tag."},
-   {"id": "exploding-hit", "text": "When a projectile hit is bExploding. §7.6: an exploding hit skips both scales, the armor hook and ModifyDamage on the projectile path; what sets bExploding is not stated, so whether an armed launcher, shell or cannon round ever deals the direct-hit amount is open.", "data": "Projectile assets carry bHasArmingDelay and ArmingDelay (seconds of flight time, §7.6)."},
-   {"id": "explosive-actors", "text": "Detonation damage of grenades, C4, mines, claymores, IEDs and the Molotov. Against a character 0x6CA8730 is only the thrown object's contact damage (verifier round 6 (doc text pending)); the detonation's path, amount and tags are not traced.", "data": "The items reference actor Blueprints (B_FragGrenade, B_ThrowableC4, B_AT_Mine, B_Claymore, B_Molotov) that are not in the data export, so no damage value is in data/."},
-   {"id": "armor-hook-paths", "text": "Whether the target hook Auth_GetArmorDamageEvent (§7.6) runs on paths other than the projectile's direct impact (blast, back-blast, melee, actor impact, thrown contact). It decides whether an armor tag reaches entries 102–106 and 138–144.", "data": "Armor items list CoveredHitLocations (see armor)."},
-   {"id": "armor-data-rows", "text": "Whether DT_GlobalDamage_ArmorData's rows are evaluated for a character hit. §5's walk for a character starts at Meta.Damage.Infantry and gives one group; the armor rows are keyed by armor tags.", "data": "DT_GlobalDamage_ArmorData has rows Meta.Damage.Armor, Meta.Damage.Helmet and the two Ghillie rows."},
-   {"id": "vehicle-weapon-tag", "text": "Whether a vehicle weapon extension (WE_*) puts its DamageEntityData.Tag into the source context as a weapon item does. §7.6 identifies the weapon tag by value for weapon items; the vehicle rows of BoneDamageModifiers are only reached if it does.", "data": "Every WE_* file carries a Meta.Damage.Weapon.* tag (values per source)."},
-   {"id": "underbarrel-weapon-tag", "text": "Which weapon tag an underbarrel grenade launcher shot carries.", "data": "GrenadeLauncher.json has no Meta.Damage.Weapon tag; its stats are DA_GrenadeLauncher_Stats."},
-   {"id": "melee-path", "text": "The melee caller: §1.1 names no melee path, so the event's source (the item's Utility tag, whether Meta.Damage.DamageType.Melee is added), its hit location and the armor hook are not traced.", "data": "Melee items carry WDItemExtensionData_CharacterMelee.MeleeActions[].Damage and DamageEntityData.Tag; entry 144 requires Meta.Damage.DamageType.Melee; BoneDamageModifiers has a Meta.Damage.DamageType.Melee row that no bone entry (5, 7, 10) selects for a melee-only source."},
-   {"id": "impact-amount", "text": "The starting amount of actor impact (0x6E72D90, §1.1) and of a thrown object's contact (0x6CA8730), and what the hitting actor's entity data holds.", "data": "No infantry rule entry requires Meta.Damage.DamageType.Impact or Kinetic.Impact.Throwable."},
-   {"id": "backblast", "text": "Back-blast: the event's source tag and amount, and the hit location of the seated path's synthetic hits. The two paths are known (verifier round 6 (doc text pending)).", "data": "Launcher stats carry a BackBlast config (FWDBackBlastConfig) whose field names are hashed in the export and the SDK; no infantry rule entry requires Meta.Damage.DamageType.BackBlast."},
-   {"id": "occupant-damage", "text": "Damage to vehicle occupants from UWDVehicleOperatorComponent slots 160/161 (§1.1; VehicleDamagePipeline §1): the amount and hit location.", "data": "Source tags Meta.Damage.Explosive.VehicleExplosion + DamageType.Explosive, and Meta.Damage.Vehicle + DamageType.Enviroment."},
-   {"id": "helmet-merge", "text": "The rule by which Mutable merges a helmet's physics asset into the character's. Known (verifier round 6 (doc text pending)): each helmet adds its single head body, which maps to Head. The model shows PA_TPCharacter_Simplified without helmet bodies.", "data": "MUT_TP_Character lists five helmet physics assets (PA_Helmet_*), one Sphyl body on head each (assets/models/infantry/player.glb asset.extras.notes; MUT_TP_Character is not in the data/ JSON export)."},
-   {"id": "tapered-capsule-query", "text": "Whether Chaos builds query shapes from tapered-capsule bodies, i.e. whether these six bodies can be hit by a trace at all.", "data": "calf_l, calf_r, lowerarm_l, lowerarm_r, thigh_l and thigh_r are TaperedCapsule bodies (QueryAndPhysics) in PA_TPCharacter_Simplified (assets/models/infantry/player.glb asset.extras.bodies[].shapes)."},
-   {"id": "collision-channels", "text": "Which trace channels hit the character's bodies. The CharacterMesh component uses collision profile Custom, whose per-channel responses are native class defaults, not stored in the cooked Blueprint.", "data": "CharacterMesh.BodyInstance.CollisionEnabled is QueryOnly (profile Custom); every body is QueryAndPhysics with BodyCollision_Enabled (assets/models/infantry/player.glb asset.extras.notes and node extras)."},
-   {"id": "physical-material", "text": "Data only, no documented use: no doc uses a body's physical material or surface type for infantry damage (VFX uses physical materials for impact effects; VehicleDamagePipeline §3.2 says vehicle hits read neither physical materials nor bone names).", "data": "The head body uses PM_Head, the other 19 bodies PM_Body (assets/models/infantry/player.glb asset.extras.bodies[].phys_material; the body export gives SurfaceType17 and SurfaceType3; the PM_* assets are not in the data/ JSON export)."},
-   {"id": "caliber-parent-match", "text": "Whether a weapon whose SupportedCaliber is a parent tag fires the child projectiles: the bow lists Item.Caliber.Arrow (child Arrow.Explosive), the M500 / MP43 Item.Caliber.12g (child 12g.RifledSlug), the artillery Item.Caliber.155mm (155mm.Standard, .Expensive), STN_03 Item.Caliber.120x800mm (120x800mm.Standard), CGM4 Item.Caliber.84mm (child 84mm.TVGuided). How SupportedCaliber is matched is not traced.", "data": "No WDProjectileData asset has ProjectileId Item.Caliber.12g, .155mm or .120x800mm; the child ids each have one (Sandbox copies left out)."}
+   {"id": "underbarrel-weapon-tag", "text": "Which weapon tag an underbarrel grenade launcher shot carries.", "data": "GrenadeLauncher.json has no Meta.Damage.Weapon tag; its stats are DA_GrenadeLauncher_Stats."}
   ],
   "categories": [
    {"id": "bullets", "label": "Bullets", "note": "One event per hit from the projectile data and the firing weapon (§7.6): S = BaseDamage × speed scale × distance curve. Entry 5 multiplies by Universal × weapon row for the hit location (§7.1); a covering helmet or armor piece adds entries 138/140 (§7.3)."},
    {
     "id": "explosives",
     "label": "Explosives and launchers",
-    "note": "A direct impact goes through the projectile path: before arming S is ExplosiveBluntDamage and the source carries Kinetic.Impact.ExplosiveBlunt, so entry 7 applies the bone factor and entries 142–143 armor durability; cannon rounds take entry 10. An exploding hit skips ModifyDamage there (§7.6). The blast goes through the radial path: one evaluation per hit component, tagged Radius.Inner or .Outer, with the hit bone's location and without ExplosiveBlunt, so entries 7, 117, 142 and 143 never apply to it and 102–116 do (verifier round 6 (doc text pending)). The blast amount and falloff are not traced. Grenades, C4 and mines detonate through a path that is not traced."
+    "note": "A direct impact goes through the projectile path: before arming S is ExplosiveBluntDamage and the source carries Kinetic.Impact.ExplosiveBlunt, so entry 7 applies the bone factor and entries 142–143 armor durability; cannon rounds take entry 10. An exploding hit skips ModifyDamage there (§7.6). The blast goes through the radial path: one evaluation per hit component, tagged Radius.Inner or .Outer, with the hit bone's location and without ExplosiveBlunt, so entries 7, 117, 142 and 143 never apply to it. Matching radial rules still depend on the retained context (verified native trace (rounds 6 and 8)). Amount/falloff and the six reviewed explosive actors' native/cooked detonation routes are traced; per-hit geometry, visibility and runtime trigger state determine actual application."
    },
    {"id": "other", "label": "Other", "note": "Melee, actor impact and thrown-object contact match no bone entry (5, 7, 10 need Bullet, ExplosiveBlunt or Cannon, §3.1), so the factor is the same on every hit location. Entry 144 reduces melee damage on an armored target by R (§7.5)."}
   ],
@@ -228,10 +232,10 @@
  ],
  "bone_rule": {
   "data": "DamageHitLocations maps 22 bone names to tags",
-  "runtime": "exact FName match of FHitResult.BoneName in the asset picked by the actor's class; no parent walk; an unmapped bone gives no hit location (0x6F01BB0, 0x6BB8D00; verifier round 6 (doc text pending))",
+  "runtime": "exact FName match of FHitResult.BoneName in the asset picked by the actor's class; no parent walk; an unmapped bone gives no hit location (0x6F01BB0, 0x6BB8D00; verified native trace (rounds 6 and 8))",
   "unmapped": "with no hit location, entries with a hit-location filter are not selected (§4 rule 4) and all armor tags are removed (§7.6)",
-  "impact_remap": "DamageImpactRemap (spine_01 → pelvis, spine_05 → spine_04) is used by animation and ragdoll only, never for damage (0x6BB8D40; verifier round 6 (doc text pending))",
-  "live_player": "spine_01 and spine_02 have no body in PA_TPCharacter_Simplified, so a live player never produces them; a helmet adds its own head body, which maps to Head (verifier round 6 (doc text pending))",
+  "impact_remap": "DamageImpactRemap (spine_01 → pelvis, spine_05 → spine_04) is used by animation and ragdoll only, never for damage (0x6BB8D40; verified native trace (rounds 6 and 8))",
+  "live_player": "spine_01 and spine_02 have no body in PA_TPCharacter_Simplified; referenced helmet head bodies map to Head, and Mutable's compiled selection plus normal merge policy are verified; runtime parameter values and later mutations remain open",
   "path": "data/Wardogs/Content/GameMechanics/DamageSystem/HitLocationDataAssets/DA_GlobalDamage_HitLocations_Player.json"
  },
  "bone_rows": {
@@ -1153,19 +1157,19 @@
    "radial_entries": [],
    "zone_multiplier": {"row": "Meta.Damage.Weapon.Pistol"},
    "values": {
-    "weapon": 52,
+    "weapon": 51,
     "weapon_tag": "Meta.Damage.Weapon.Pistol.Deagle",
-    "stats": 51,
+    "stats": 50,
     "caliber": "Item.Caliber.50AE",
-    "projectile": 50,
+    "projectile": 49,
     "source_tag": "Meta.Damage.Bullet.50AE",
     "source_context": ["Meta.Damage.Arms.High"],
     "has_arming_delay": false,
     "arming_delay": null,
     "damage_values": {"BaseDamage": 63.0},
-    "damage_values_src": [50, "ProjectileStats.DamageValues"],
+    "damage_values_src": [49, "ProjectileStats.DamageValues"],
     "direct": [
-     {"case": "direct", "S": 63.0, "S_src": [50, "ProjectileStats.DamageValues.BaseDamage"]}
+     {"case": "direct", "S": 63.0, "S_src": [49, "ProjectileStats.DamageValues.BaseDamage"]}
     ],
     "direct_zones": {
      "factor": {"k": 1.0},
@@ -1184,7 +1188,7 @@
      }
     },
     "falloff": {
-     "src": [51, "DistanceDamageFalloffCurve"],
+     "src": [50, "DistanceDamageFalloffCurve"],
      "keys_m": [[0.0, 1.0], [100.0, 1.0], [1200.0, 0.2]],
      "cubic": false
     },
@@ -1208,19 +1212,19 @@
    "radial_entries": [],
    "zone_multiplier": {"row": "Meta.Damage.Weapon.Pistol"},
    "values": {
-    "weapon": 55,
+    "weapon": 54,
     "weapon_tag": "Meta.Damage.Weapon.Pistol.G60",
-    "stats": 54,
+    "stats": 53,
     "caliber": "Item.Caliber.9mm",
-    "projectile": 53,
+    "projectile": 52,
     "source_tag": "Meta.Damage.Bullet.9mm",
     "source_context": ["Meta.Damage.Arms.Small"],
     "has_arming_delay": false,
     "arming_delay": null,
     "damage_values": {"BaseDamage": 22.0},
-    "damage_values_src": [53, "ProjectileStats.DamageValues"],
+    "damage_values_src": [52, "ProjectileStats.DamageValues"],
     "direct": [
-     {"case": "direct", "S": 22.0, "S_src": [53, "ProjectileStats.DamageValues.BaseDamage"]}
+     {"case": "direct", "S": 22.0, "S_src": [52, "ProjectileStats.DamageValues.BaseDamage"]}
     ],
     "direct_zones": {
      "factor": {"k": 1.0},
@@ -1239,7 +1243,7 @@
      }
     },
     "falloff": {
-     "src": [54, "DistanceDamageFalloffCurve"],
+     "src": [53, "DistanceDamageFalloffCurve"],
      "keys_m": [[0.0, 1.0], [50.0, 1.0], [1200.0, 0.3]],
      "cubic": false
     },
@@ -1263,19 +1267,19 @@
    "radial_entries": [],
    "zone_multiplier": {"row": "Meta.Damage.Weapon.Pistol"},
    "values": {
-    "weapon": 57,
+    "weapon": 56,
     "weapon_tag": "Meta.Damage.Weapon.Pistol.G60",
-    "stats": 56,
+    "stats": 55,
     "caliber": "Item.Caliber.9mm",
-    "projectile": 53,
+    "projectile": 52,
     "source_tag": "Meta.Damage.Bullet.9mm",
     "source_context": ["Meta.Damage.Arms.Small"],
     "has_arming_delay": false,
     "arming_delay": null,
     "damage_values": {"BaseDamage": 22.0},
-    "damage_values_src": [53, "ProjectileStats.DamageValues"],
+    "damage_values_src": [52, "ProjectileStats.DamageValues"],
     "direct": [
-     {"case": "direct", "S": 22.0, "S_src": [53, "ProjectileStats.DamageValues.BaseDamage"]}
+     {"case": "direct", "S": 22.0, "S_src": [52, "ProjectileStats.DamageValues.BaseDamage"]}
     ],
     "direct_zones": {
      "factor": {"k": 1.0},
@@ -1294,7 +1298,7 @@
      }
     },
     "falloff": {
-     "src": [56, "DistanceDamageFalloffCurve"],
+     "src": [55, "DistanceDamageFalloffCurve"],
      "keys_m": [[0.0, 1.0], [50.0, 1.0], [1200.0, 0.3]],
      "cubic": false
     },
@@ -1318,19 +1322,19 @@
    "radial_entries": [],
    "zone_multiplier": {"row": "Meta.Damage.Weapon.Pistol"},
    "values": {
-    "weapon": 59,
+    "weapon": 58,
     "weapon_tag": "Meta.Damage.Weapon.Pistol.Judge",
-    "stats": 60,
+    "stats": 59,
     "caliber": "Item.Caliber.45Colt",
-    "projectile": 58,
+    "projectile": 57,
     "source_tag": "Meta.Damage.Bullet.45Colt",
     "source_context": ["Meta.Damage.Arms.Small"],
     "has_arming_delay": false,
     "arming_delay": null,
     "damage_values": {"BaseDamage": 45.0},
-    "damage_values_src": [58, "ProjectileStats.DamageValues"],
+    "damage_values_src": [57, "ProjectileStats.DamageValues"],
     "direct": [
-     {"case": "direct", "S": 45.0, "S_src": [58, "ProjectileStats.DamageValues.BaseDamage"]}
+     {"case": "direct", "S": 45.0, "S_src": [57, "ProjectileStats.DamageValues.BaseDamage"]}
     ],
     "direct_zones": {
      "factor": {"k": 1.0},
@@ -1369,19 +1373,19 @@
    "radial_entries": [],
    "zone_multiplier": {"row": "Meta.Damage.Weapon.Pistol"},
    "values": {
-    "weapon": 63,
+    "weapon": 62,
     "weapon_tag": "Meta.Damage.Weapon.Pistol.M1911",
-    "stats": 62,
+    "stats": 61,
     "caliber": "Item.Caliber.45ACP",
-    "projectile": 61,
+    "projectile": 60,
     "source_tag": "Meta.Damage.Bullet.45ACP",
     "source_context": ["Meta.Damage.Arms.Small"],
     "has_arming_delay": false,
     "arming_delay": null,
     "damage_values": {"BaseDamage": 30.0},
-    "damage_values_src": [61, "ProjectileStats.DamageValues"],
+    "damage_values_src": [60, "ProjectileStats.DamageValues"],
     "direct": [
-     {"case": "direct", "S": 30.0, "S_src": [61, "ProjectileStats.DamageValues.BaseDamage"]}
+     {"case": "direct", "S": 30.0, "S_src": [60, "ProjectileStats.DamageValues.BaseDamage"]}
     ],
     "direct_zones": {
      "factor": {"k": 1.3},
@@ -1400,7 +1404,7 @@
      }
     },
     "falloff": {
-     "src": [62, "DistanceDamageFalloffCurve"],
+     "src": [61, "DistanceDamageFalloffCurve"],
      "keys_m": [[0.0, 1.0], [50.0, 1.0], [1200.0, 0.3]],
      "cubic": false
     },
@@ -1424,19 +1428,19 @@
    "radial_entries": [],
    "zone_multiplier": {"row": "Meta.Damage.Weapon.SMG"},
    "values": {
-    "weapon": 65,
+    "weapon": 64,
     "weapon_tag": "Meta.Damage.Weapon.SMG.MP5",
-    "stats": 64,
+    "stats": 63,
     "caliber": "Item.Caliber.9mm",
-    "projectile": 53,
+    "projectile": 52,
     "source_tag": "Meta.Damage.Bullet.9mm",
     "source_context": ["Meta.Damage.Arms.Small"],
     "has_arming_delay": false,
     "arming_delay": null,
     "damage_values": {"BaseDamage": 22.0},
-    "damage_values_src": [53, "ProjectileStats.DamageValues"],
+    "damage_values_src": [52, "ProjectileStats.DamageValues"],
     "direct": [
-     {"case": "direct", "S": 22.0, "S_src": [53, "ProjectileStats.DamageValues.BaseDamage"]}
+     {"case": "direct", "S": 22.0, "S_src": [52, "ProjectileStats.DamageValues.BaseDamage"]}
     ],
     "direct_zones": {
      "factor": {"k": 1.0},
@@ -1455,7 +1459,7 @@
      }
     },
     "falloff": {
-     "src": [64, "DistanceDamageFalloffCurve"],
+     "src": [63, "DistanceDamageFalloffCurve"],
      "keys_m": [[0.0, 1.0], [200.0, 1.0], [300.0, 0.6], [1200.0, 0.1]],
      "cubic": true
     },
@@ -1479,19 +1483,19 @@
    "radial_entries": [],
    "zone_multiplier": {"row": "Meta.Damage.Weapon.SMG"},
    "values": {
-    "weapon": 67,
+    "weapon": 66,
     "weapon_tag": "Meta.Damage.Weapon.SMG.MP7",
-    "stats": 66,
+    "stats": 65,
     "caliber": "Item.Caliber.9mm",
-    "projectile": 53,
+    "projectile": 52,
     "source_tag": "Meta.Damage.Bullet.9mm",
     "source_context": ["Meta.Damage.Arms.Small"],
     "has_arming_delay": false,
     "arming_delay": null,
     "damage_values": {"BaseDamage": 22.0},
-    "damage_values_src": [53, "ProjectileStats.DamageValues"],
+    "damage_values_src": [52, "ProjectileStats.DamageValues"],
     "direct": [
-     {"case": "direct", "S": 22.0, "S_src": [53, "ProjectileStats.DamageValues.BaseDamage"]}
+     {"case": "direct", "S": 22.0, "S_src": [52, "ProjectileStats.DamageValues.BaseDamage"]}
     ],
     "direct_zones": {
      "factor": {"k": 1.0},
@@ -1510,7 +1514,7 @@
      }
     },
     "falloff": {
-     "src": [66, "DistanceDamageFalloffCurve"],
+     "src": [65, "DistanceDamageFalloffCurve"],
      "keys_m": [[0.0, 1.0], [100.0, 1.0], [200.0, 0.6], [1200.0, 0.1]],
      "cubic": true
     },
@@ -1534,19 +1538,19 @@
    "radial_entries": [],
    "zone_multiplier": {"row": "Meta.Damage.Weapon.SMG"},
    "values": {
-    "weapon": 69,
+    "weapon": 68,
     "weapon_tag": "Meta.Damage.Weapon.SMG.SMG3",
-    "stats": 68,
+    "stats": 67,
     "caliber": "Item.Caliber.9mm",
-    "projectile": 53,
+    "projectile": 52,
     "source_tag": "Meta.Damage.Bullet.9mm",
     "source_context": ["Meta.Damage.Arms.Small"],
     "has_arming_delay": false,
     "arming_delay": null,
     "damage_values": {"BaseDamage": 22.0},
-    "damage_values_src": [53, "ProjectileStats.DamageValues"],
+    "damage_values_src": [52, "ProjectileStats.DamageValues"],
     "direct": [
-     {"case": "direct", "S": 22.0, "S_src": [53, "ProjectileStats.DamageValues.BaseDamage"]}
+     {"case": "direct", "S": 22.0, "S_src": [52, "ProjectileStats.DamageValues.BaseDamage"]}
     ],
     "direct_zones": {
      "factor": {"k": 1.0},
@@ -1565,7 +1569,7 @@
      }
     },
     "falloff": {
-     "src": [68, "DistanceDamageFalloffCurve"],
+     "src": [67, "DistanceDamageFalloffCurve"],
      "keys_m": [[0.0, 1.0], [200.0, 1.0], [300.0, 0.6], [1200.0, 0.1]],
      "cubic": true
     },
@@ -1589,19 +1593,19 @@
    "radial_entries": [],
    "zone_multiplier": {"row": "Meta.Damage.Weapon.SMG"},
    "values": {
-    "weapon": 71,
+    "weapon": 70,
     "weapon_tag": "Meta.Damage.Weapon.SMG.Vector",
-    "stats": 70,
+    "stats": 69,
     "caliber": "Item.Caliber.45ACP",
-    "projectile": 61,
+    "projectile": 60,
     "source_tag": "Meta.Damage.Bullet.45ACP",
     "source_context": ["Meta.Damage.Arms.Small"],
     "has_arming_delay": false,
     "arming_delay": null,
     "damage_values": {"BaseDamage": 30.0},
-    "damage_values_src": [61, "ProjectileStats.DamageValues"],
+    "damage_values_src": [60, "ProjectileStats.DamageValues"],
     "direct": [
-     {"case": "direct", "S": 30.0, "S_src": [61, "ProjectileStats.DamageValues.BaseDamage"]}
+     {"case": "direct", "S": 30.0, "S_src": [60, "ProjectileStats.DamageValues.BaseDamage"]}
     ],
     "direct_zones": {
      "factor": {"k": 1.0},
@@ -1620,7 +1624,7 @@
      }
     },
     "falloff": {
-     "src": [70, "DistanceDamageFalloffCurve"],
+     "src": [69, "DistanceDamageFalloffCurve"],
      "keys_m": [[0.0, 1.0], [50.0, 1.0], [70.0, 0.6], [100.0, 0.4], [150.0, 0.3], [1200.0, 0.2]],
      "cubic": false
     },
@@ -1644,19 +1648,19 @@
    "radial_entries": [],
    "zone_multiplier": {"row": "Meta.Damage.Weapon.SMG"},
    "values": {
-    "weapon": 73,
+    "weapon": 72,
     "weapon_tag": "Meta.Damage.Weapon.SMG.WEPN_031",
-    "stats": 72,
+    "stats": 71,
     "caliber": "Item.Caliber.9mm",
-    "projectile": 53,
+    "projectile": 52,
     "source_tag": "Meta.Damage.Bullet.9mm",
     "source_context": ["Meta.Damage.Arms.Small"],
     "has_arming_delay": false,
     "arming_delay": null,
     "damage_values": {"BaseDamage": 22.0},
-    "damage_values_src": [53, "ProjectileStats.DamageValues"],
+    "damage_values_src": [52, "ProjectileStats.DamageValues"],
     "direct": [
-     {"case": "direct", "S": 22.0, "S_src": [53, "ProjectileStats.DamageValues.BaseDamage"]}
+     {"case": "direct", "S": 22.0, "S_src": [52, "ProjectileStats.DamageValues.BaseDamage"]}
     ],
     "direct_zones": {
      "factor": {"k": 1.0},
@@ -1675,7 +1679,7 @@
      }
     },
     "falloff": {
-     "src": [72, "DistanceDamageFalloffCurve"],
+     "src": [71, "DistanceDamageFalloffCurve"],
      "keys_m": [[0.0, 1.0], [200.0, 1.0], [300.0, 0.6], [1200.0, 0.1]],
      "cubic": true
     },
@@ -1699,19 +1703,19 @@
    "radial_entries": [],
    "zone_multiplier": {"row": "Meta.Damage.Weapon.Shotgun"},
    "values": {
-    "weapon": 75,
+    "weapon": 74,
     "weapon_tag": "Meta.Damage.Weapon.Shotgun.M12G",
-    "stats": 76,
+    "stats": 75,
     "caliber": "Item.Caliber.7mmBuck",
-    "projectile": 74,
+    "projectile": 73,
     "source_tag": "Meta.Damage.Bullet.12g.7mmBuckshot",
     "source_context": ["Meta.Damage.Arms.Small"],
     "has_arming_delay": false,
     "arming_delay": null,
     "damage_values": {"BaseDamage": 25.0},
-    "damage_values_src": [74, "ProjectileStats.DamageValues"],
+    "damage_values_src": [73, "ProjectileStats.DamageValues"],
     "direct": [
-     {"case": "direct", "S": 25.0, "S_src": [74, "ProjectileStats.DamageValues.BaseDamage"]}
+     {"case": "direct", "S": 25.0, "S_src": [73, "ProjectileStats.DamageValues.BaseDamage"]}
     ],
     "direct_zones": {
      "factor": {"k": 1.0},
@@ -1750,19 +1754,19 @@
    "radial_entries": [],
    "zone_multiplier": {"row": "Meta.Damage.Weapon.Shotgun"},
    "values": {
-    "weapon": 75,
+    "weapon": 74,
     "weapon_tag": "Meta.Damage.Weapon.Shotgun.M12G",
-    "stats": 76,
+    "stats": 75,
     "caliber": "Item.Caliber.12g.RifledSlug",
-    "projectile": 77,
+    "projectile": 76,
     "source_tag": "Meta.Damage.Bullet.12g.RifledSlug",
     "source_context": ["Meta.Damage.Arms.Small"],
     "has_arming_delay": false,
     "arming_delay": null,
     "damage_values": {"BaseDamage": 105.0},
-    "damage_values_src": [77, "ProjectileStats.DamageValues"],
+    "damage_values_src": [76, "ProjectileStats.DamageValues"],
     "direct": [
-     {"case": "direct", "S": 105.0, "S_src": [77, "ProjectileStats.DamageValues.BaseDamage"]}
+     {"case": "direct", "S": 105.0, "S_src": [76, "ProjectileStats.DamageValues.BaseDamage"]}
     ],
     "direct_zones": {
      "factor": {"k": 1.0},
@@ -1783,7 +1787,7 @@
     "falloff": {"src": null, "keys_m": [], "cubic": false},
     "radial": null
    },
-   "not_traced": ["caliber-parent-match"],
+   "not_traced": [],
    "doc": "bullet_event"
   },
   {
@@ -1800,19 +1804,19 @@
    "radial_entries": [],
    "zone_multiplier": {"row": "Meta.Damage.Weapon.Shotgun"},
    "values": {
-    "weapon": 78,
+    "weapon": 77,
     "weapon_tag": "Meta.Damage.Weapon.Shotgun.M12G",
-    "stats": 79,
+    "stats": 78,
     "caliber": "Item.Caliber.7mmBuck",
-    "projectile": 74,
+    "projectile": 73,
     "source_tag": "Meta.Damage.Bullet.12g.7mmBuckshot",
     "source_context": ["Meta.Damage.Arms.Small"],
     "has_arming_delay": false,
     "arming_delay": null,
     "damage_values": {"BaseDamage": 25.0},
-    "damage_values_src": [74, "ProjectileStats.DamageValues"],
+    "damage_values_src": [73, "ProjectileStats.DamageValues"],
     "direct": [
-     {"case": "direct", "S": 25.0, "S_src": [74, "ProjectileStats.DamageValues.BaseDamage"]}
+     {"case": "direct", "S": 25.0, "S_src": [73, "ProjectileStats.DamageValues.BaseDamage"]}
     ],
     "direct_zones": {
      "factor": {"k": 1.0},
@@ -1851,19 +1855,19 @@
    "radial_entries": [],
    "zone_multiplier": {"row": "Meta.Damage.Weapon.Shotgun"},
    "values": {
-    "weapon": 78,
+    "weapon": 77,
     "weapon_tag": "Meta.Damage.Weapon.Shotgun.M12G",
-    "stats": 79,
+    "stats": 78,
     "caliber": "Item.Caliber.12g.RifledSlug",
-    "projectile": 77,
+    "projectile": 76,
     "source_tag": "Meta.Damage.Bullet.12g.RifledSlug",
     "source_context": ["Meta.Damage.Arms.Small"],
     "has_arming_delay": false,
     "arming_delay": null,
     "damage_values": {"BaseDamage": 105.0},
-    "damage_values_src": [77, "ProjectileStats.DamageValues"],
+    "damage_values_src": [76, "ProjectileStats.DamageValues"],
     "direct": [
-     {"case": "direct", "S": 105.0, "S_src": [77, "ProjectileStats.DamageValues.BaseDamage"]}
+     {"case": "direct", "S": 105.0, "S_src": [76, "ProjectileStats.DamageValues.BaseDamage"]}
     ],
     "direct_zones": {
      "factor": {"k": 1.0},
@@ -1884,7 +1888,7 @@
     "falloff": {"src": null, "keys_m": [], "cubic": false},
     "radial": null
    },
-   "not_traced": ["caliber-parent-match"],
+   "not_traced": [],
    "doc": "bullet_event"
   },
   {
@@ -1901,9 +1905,9 @@
    "radial_entries": [],
    "zone_multiplier": {"row": "Meta.Damage.Weapon.Sniper"},
    "values": {
-    "weapon": 81,
+    "weapon": 80,
     "weapon_tag": "Meta.Damage.Weapon.Sniper.MRAD",
-    "stats": 80,
+    "stats": 79,
     "caliber": "Item.Caliber.308Win",
     "projectile": 10,
     "source_tag": "Meta.Damage.Bullet.308Win",
@@ -1932,7 +1936,7 @@
      }
     },
     "falloff": {
-     "src": [80, "DistanceDamageFalloffCurve"],
+     "src": [79, "DistanceDamageFalloffCurve"],
      "keys_m": [[0.0, 1.0], [500.0, 1.0], [1000.0, 1.0], [1600.0, 0.4]],
      "cubic": false
     },
@@ -1956,19 +1960,19 @@
    "radial_entries": [],
    "zone_multiplier": {"row": "Meta.Damage.Weapon.Sniper"},
    "values": {
-    "weapon": 84,
+    "weapon": 83,
     "weapon_tag": "Meta.Damage.Weapon.Sniper.MRAD",
-    "stats": 83,
+    "stats": 82,
     "caliber": "Item.Caliber.50Cal",
-    "projectile": 82,
+    "projectile": 81,
     "source_tag": "Meta.Damage.Bullet.50Cal",
     "source_context": ["Meta.Damage.Arms.Special"],
     "has_arming_delay": false,
     "arming_delay": null,
     "damage_values": {"BaseDamage": 90.0},
-    "damage_values_src": [82, "ProjectileStats.DamageValues"],
+    "damage_values_src": [81, "ProjectileStats.DamageValues"],
     "direct": [
-     {"case": "direct", "S": 90.0, "S_src": [82, "ProjectileStats.DamageValues.BaseDamage"]}
+     {"case": "direct", "S": 90.0, "S_src": [81, "ProjectileStats.DamageValues.BaseDamage"]}
     ],
     "direct_zones": {
      "factor": {"zones": [3.60109, 2.70082, 2.31, 1.67737, 1.5935, 1.55997, 0.9, 0.75, 0.45, 0.9, 0.75, 0.45]},
@@ -1988,7 +1992,7 @@
      }
     },
     "falloff": {
-     "src": [83, "DistanceDamageFalloffCurve"],
+     "src": [82, "DistanceDamageFalloffCurve"],
      "keys_m": [[0.0, 1.0], [500.0, 1.0], [2000.0, 1.0], [2500.0, 0.4]],
      "cubic": false
     },
@@ -2012,9 +2016,9 @@
    "radial_entries": [],
    "zone_multiplier": {"row": "Meta.Damage.Weapon.Sniper"},
    "values": {
-    "weapon": 86,
+    "weapon": 85,
     "weapon_tag": "Meta.Damage.Weapon.Sniper.Mosin",
-    "stats": 85,
+    "stats": 84,
     "caliber": "Item.Caliber.762x54mm",
     "projectile": 26,
     "source_tag": "Meta.Damage.Bullet.762x54mm",
@@ -2043,7 +2047,7 @@
      }
     },
     "falloff": {
-     "src": [85, "DistanceDamageFalloffCurve"],
+     "src": [84, "DistanceDamageFalloffCurve"],
      "keys_m": [[0.0, 1.0], [500.0, 1.0], [1200.0, 0.4]],
      "cubic": false
     },
@@ -2067,9 +2071,9 @@
    "radial_entries": [],
    "zone_multiplier": {"row": "Meta.Damage.Weapon.Sniper"},
    "values": {
-    "weapon": 88,
+    "weapon": 87,
     "weapon_tag": "Meta.Damage.Weapon.Sniper.SV98",
-    "stats": 87,
+    "stats": 86,
     "caliber": "Item.Caliber.762x54mm",
     "projectile": 26,
     "source_tag": "Meta.Damage.Bullet.762x54mm",
@@ -2098,7 +2102,7 @@
      }
     },
     "falloff": {
-     "src": [87, "DistanceDamageFalloffCurve"],
+     "src": [86, "DistanceDamageFalloffCurve"],
      "keys_m": [[0.0, 1.0], [1000.0, 1.0], [1500.0, 0.4]],
      "cubic": false
     },
@@ -2122,9 +2126,9 @@
    "radial_entries": [],
    "zone_multiplier": {"row": "Meta.Damage.Weapon.Sniper"},
    "values": {
-    "weapon": 90,
+    "weapon": 89,
     "weapon_tag": "Meta.Damage.Weapon.Sniper.WEPN_035",
-    "stats": 89,
+    "stats": 88,
     "caliber": "Item.Caliber.556mm",
     "projectile": 0,
     "source_tag": "Meta.Damage.Bullet.556mm",
@@ -2153,7 +2157,7 @@
      }
     },
     "falloff": {
-     "src": [89, "DistanceDamageFalloffCurve"],
+     "src": [88, "DistanceDamageFalloffCurve"],
      "keys_m": [[0.0, 1.0], [300.0, 1.0], [1200.0, 0.2]],
      "cubic": false
     },
@@ -2177,8 +2181,59 @@
    "radial_entries": [],
    "zone_multiplier": {"row": "Meta.Damage.Weapon.Vehicle.Turret.MachineGun"},
    "values": {
-    "weapon": 113,
+    "weapon": 111,
     "weapon_tag": "Meta.Damage.Weapon.Vehicle.Turret.MachineGun",
+    "stats": 112,
+    "caliber": "Item.Caliber.308Win",
+    "projectile": 10,
+    "source_tag": "Meta.Damage.Bullet.308Win",
+    "source_context": ["Meta.Damage.Arms.High"],
+    "has_arming_delay": false,
+    "arming_delay": null,
+    "damage_values": {"BaseDamage": 45.0},
+    "damage_values_src": [10, "ProjectileStats.DamageValues"],
+    "direct": [
+     {"case": "direct", "S": 45.0, "S_src": [10, "ProjectileStats.DamageValues.BaseDamage"]}
+    ],
+    "direct_zones": {
+     "factor": {"k": 1.0},
+     "entries": [5],
+     "armor": {
+      "ID_HeavyArmor": {"k": 0.5, "entries": [138]},
+      "ID_HeavyHelmet": {"k": 0.5, "entries": [140]},
+      "ID_LightArmor": {"k": 0.7, "entries": [138]},
+      "ID_LightHelmet": {"k": 0.7, "entries": [140]},
+      "ID_MediumArmor": {"k": 0.6, "entries": [138]},
+      "ID_MediumHelmet": {"k": 0.6, "entries": [140]},
+      "ID_PilotHelmet": {"k": 0.7, "entries": [140]},
+      "ID_SuperHeavyArmor": {"k": 0.4, "entries": [138]},
+      "ID_SuperHeavyHelmet": {"k": 0.4, "entries": [140]},
+      "ID_TankHelmet": {"k": 0.45, "entries": [140]}
+     }
+    },
+    "falloff": {"src": null, "keys_m": [], "cubic": false},
+    "radial": null,
+    "items": [111]
+   },
+   "not_traced": [],
+   "doc": "bullet_event"
+  },
+  {
+   "id": "bullets-rot-03-attachedmachineguns-308win",
+   "category": "bullets",
+   "group": "Vehicle",
+   "label": "ROT 03 AttachedMachineGuns (308Win)",
+   "damage_tags": ["Meta.Damage.Bullet.308Win"],
+   "uses_hit_location": true,
+   "radial_uses_hit_location": null,
+   "why": "Entry 5 selects the bone operation for a direct hit (Bullet), so the hit location sets the factor Universal × row Meta.Damage.Weapon.Vehicle.Turret.Minigun (§7.1).",
+   "rule_entries": [5, 6, 145],
+   "armor_entries": [138, 140],
+   "radial_entries": [],
+   "zone_multiplier": {"row": "Meta.Damage.Weapon.Vehicle.Turret.Minigun"},
+   "values": {
+    "weapon": 113,
+    "weapon_tag": "Meta.Damage.Weapon.Vehicle.Turret.Minigun",
     "stats": 114,
     "caliber": "Item.Caliber.308Win",
     "projectile": 10,
@@ -2211,14 +2266,14 @@
     "radial": null,
     "items": [113]
    },
-   "not_traced": ["vehicle-weapon-tag"],
+   "not_traced": [],
    "doc": "bullet_event"
   },
   {
-   "id": "bullets-rot-03-attachedmachineguns-308win",
+   "id": "bullets-rot-04-mountedmachinegun-308win-1-more",
    "category": "bullets",
    "group": "Vehicle",
-   "label": "ROT 03 AttachedMachineGuns (308Win)",
+   "label": "ROT 04 MountedMachineGun (308Win) +1 more",
    "damage_tags": ["Meta.Damage.Bullet.308Win"],
    "uses_hit_location": true,
    "radial_uses_hit_location": null,
@@ -2260,60 +2315,9 @@
     },
     "falloff": {"src": null, "keys_m": [], "cubic": false},
     "radial": null,
-    "items": [115]
+    "items": [115, 117]
    },
-   "not_traced": ["vehicle-weapon-tag"],
-   "doc": "bullet_event"
-  },
-  {
-   "id": "bullets-rot-04-mountedmachinegun-308win-1-more",
-   "category": "bullets",
-   "group": "Vehicle",
-   "label": "ROT 04 MountedMachineGun (308Win) +1 more",
-   "damage_tags": ["Meta.Damage.Bullet.308Win"],
-   "uses_hit_location": true,
-   "radial_uses_hit_location": null,
-   "why": "Entry 5 selects the bone operation for a direct hit (Bullet), so the hit location sets the factor Universal × row Meta.Damage.Weapon.Vehicle.Turret.Minigun (§7.1).",
-   "rule_entries": [5, 6, 145],
-   "armor_entries": [138, 140],
-   "radial_entries": [],
-   "zone_multiplier": {"row": "Meta.Damage.Weapon.Vehicle.Turret.Minigun"},
-   "values": {
-    "weapon": 117,
-    "weapon_tag": "Meta.Damage.Weapon.Vehicle.Turret.Minigun",
-    "stats": 118,
-    "caliber": "Item.Caliber.308Win",
-    "projectile": 10,
-    "source_tag": "Meta.Damage.Bullet.308Win",
-    "source_context": ["Meta.Damage.Arms.High"],
-    "has_arming_delay": false,
-    "arming_delay": null,
-    "damage_values": {"BaseDamage": 45.0},
-    "damage_values_src": [10, "ProjectileStats.DamageValues"],
-    "direct": [
-     {"case": "direct", "S": 45.0, "S_src": [10, "ProjectileStats.DamageValues.BaseDamage"]}
-    ],
-    "direct_zones": {
-     "factor": {"k": 1.0},
-     "entries": [5],
-     "armor": {
-      "ID_HeavyArmor": {"k": 0.5, "entries": [138]},
-      "ID_HeavyHelmet": {"k": 0.5, "entries": [140]},
-      "ID_LightArmor": {"k": 0.7, "entries": [138]},
-      "ID_LightHelmet": {"k": 0.7, "entries": [140]},
-      "ID_MediumArmor": {"k": 0.6, "entries": [138]},
-      "ID_MediumHelmet": {"k": 0.6, "entries": [140]},
-      "ID_PilotHelmet": {"k": 0.7, "entries": [140]},
-      "ID_SuperHeavyArmor": {"k": 0.4, "entries": [138]},
-      "ID_SuperHeavyHelmet": {"k": 0.4, "entries": [140]},
-      "ID_TankHelmet": {"k": 0.45, "entries": [140]}
-     }
-    },
-    "falloff": {"src": null, "keys_m": [], "cubic": false},
-    "radial": null,
-    "items": [117, 119]
-   },
-   "not_traced": ["vehicle-weapon-tag"],
+   "not_traced": [],
    "doc": "bullet_event"
   },
   {
@@ -2330,9 +2334,9 @@
    "radial_entries": [],
    "zone_multiplier": {"row": "Meta.Damage.Weapon.Vehicle.Turret.Minigun"},
    "values": {
-    "weapon": 120,
+    "weapon": 118,
     "weapon_tag": "Meta.Damage.Weapon.Vehicle.Turret.Minigun",
-    "stats": 121,
+    "stats": 119,
     "caliber": "Item.Caliber.308Win",
     "projectile": 10,
     "source_tag": "Meta.Damage.Bullet.308Win",
@@ -2362,9 +2366,9 @@
     },
     "falloff": {"src": null, "keys_m": [], "cubic": false},
     "radial": null,
-    "items": [120]
+    "items": [118]
    },
-   "not_traced": ["vehicle-weapon-tag"],
+   "not_traced": [],
    "doc": "bullet_event"
   },
   {
@@ -2381,19 +2385,19 @@
    "radial_entries": [],
    "zone_multiplier": {"row": "Meta.Damage.Weapon.HMG.MWSY_001"},
    "values": {
-    "weapon": 130,
+    "weapon": 128,
     "weapon_tag": "Meta.Damage.Weapon.HMG.MWSY_001",
-    "stats": 131,
+    "stats": 129,
     "caliber": "Item.Caliber.50Cal",
-    "projectile": 82,
+    "projectile": 81,
     "source_tag": "Meta.Damage.Bullet.50Cal",
     "source_context": ["Meta.Damage.Arms.Special"],
     "has_arming_delay": false,
     "arming_delay": null,
     "damage_values": {"BaseDamage": 90.0},
-    "damage_values_src": [82, "ProjectileStats.DamageValues"],
+    "damage_values_src": [81, "ProjectileStats.DamageValues"],
     "direct": [
-     {"case": "direct", "S": 90.0, "S_src": [82, "ProjectileStats.DamageValues.BaseDamage"]}
+     {"case": "direct", "S": 90.0, "S_src": [81, "ProjectileStats.DamageValues.BaseDamage"]}
     ],
     "direct_zones": {
      "factor": {"zones": [1.8568, 1.3926, 1.155, 0.86762, 0.824239, 0.9, 0.6, 0.5, 0.3, 0.6, 0.5, 0.3]},
@@ -2414,9 +2418,9 @@
     },
     "falloff": {"src": null, "keys_m": [], "cubic": false},
     "radial": null,
-    "items": [130, 132]
+    "items": [128, 130]
    },
-   "not_traced": ["vehicle-weapon-tag"],
+   "not_traced": [],
    "doc": "bullet_event"
   },
   {
@@ -2433,19 +2437,19 @@
    "radial_entries": [],
    "zone_multiplier": {"row": "Meta.Damage.Weapon.Vehicle.Turret.STN_06"},
    "values": {
-    "weapon": 133,
+    "weapon": 131,
     "weapon_tag": "Meta.Damage.Weapon.Vehicle.Turret.STN_06",
-    "stats": 131,
+    "stats": 129,
     "caliber": "Item.Caliber.50Cal",
-    "projectile": 82,
+    "projectile": 81,
     "source_tag": "Meta.Damage.Bullet.50Cal",
     "source_context": ["Meta.Damage.Arms.Special"],
     "has_arming_delay": false,
     "arming_delay": null,
     "damage_values": {"BaseDamage": 90.0},
-    "damage_values_src": [82, "ProjectileStats.DamageValues"],
+    "damage_values_src": [81, "ProjectileStats.DamageValues"],
     "direct": [
-     {"case": "direct", "S": 90.0, "S_src": [82, "ProjectileStats.DamageValues.BaseDamage"]}
+     {"case": "direct", "S": 90.0, "S_src": [81, "ProjectileStats.DamageValues.BaseDamage"]}
     ],
     "direct_zones": {
      "factor": {"zones": [1.8568, 1.3926, 1.155, 0.86762, 0.824239, 0.9, 0.6, 0.5, 0.3, 0.6, 0.5, 0.3]},
@@ -2466,9 +2470,9 @@
     },
     "falloff": {"src": null, "keys_m": [], "cubic": false},
     "radial": null,
-    "items": [133]
+    "items": [131]
    },
-   "not_traced": ["vehicle-weapon-tag"],
+   "not_traced": [],
    "doc": "bullet_event"
   },
   {
@@ -2485,7 +2489,7 @@
    "radial_entries": [],
    "zone_multiplier": {"row": "Meta.Damage.Weapon.LMG"},
    "values": {
-    "weapon": 134,
+    "weapon": 132,
     "weapon_tag": "Meta.Damage.Weapon.LMG.M249",
     "stats": 33,
     "caliber": "Item.Caliber.556mm",
@@ -2521,9 +2525,9 @@
      "cubic": false
     },
     "radial": null,
-    "items": [134, 135, 136, 137]
+    "items": [132, 133, 134, 135]
    },
-   "not_traced": ["vehicle-weapon-tag"],
+   "not_traced": [],
    "doc": "bullet_event"
   },
   {
@@ -2540,7 +2544,7 @@
    "radial_entries": [],
    "zone_multiplier": {"row": "Meta.Damage.Weapon.Vehicle.Turret.MachineGun"},
    "values": {
-    "weapon": 140,
+    "weapon": 138,
     "weapon_tag": "Meta.Damage.Weapon.Vehicle.Turret.MachineGun",
     "stats": 31,
     "caliber": "Item.Caliber.762x54mm",
@@ -2576,9 +2580,9 @@
      "cubic": false
     },
     "radial": null,
-    "items": [140]
+    "items": [138]
    },
-   "not_traced": ["vehicle-weapon-tag"],
+   "not_traced": [],
    "doc": "bullet_event"
   },
   {
@@ -2595,19 +2599,19 @@
    "radial_entries": [],
    "zone_multiplier": {"row": "Meta.Damage.Weapon.CombatBow"},
    "values": {
-    "weapon": 143,
+    "weapon": 141,
     "weapon_tag": "Meta.Damage.Weapon.CombatBow",
-    "stats": 142,
+    "stats": 140,
     "caliber": "Item.Caliber.Arrow",
-    "projectile": 141,
+    "projectile": 139,
     "source_tag": "Meta.Damage.Bullet.Arrow",
     "source_context": ["Meta.Damage.Arms.High"],
     "has_arming_delay": false,
     "arming_delay": null,
     "damage_values": {"BaseDamage": 77.0},
-    "damage_values_src": [141, "ProjectileStats.DamageValues"],
+    "damage_values_src": [139, "ProjectileStats.DamageValues"],
     "direct": [
-     {"case": "direct", "S": 77.0, "S_src": [141, "ProjectileStats.DamageValues.BaseDamage"]}
+     {"case": "direct", "S": 77.0, "S_src": [139, "ProjectileStats.DamageValues.BaseDamage"]}
     ],
     "direct_zones": {
      "factor": {"k": 1.0},
@@ -2626,12 +2630,12 @@
      }
     },
     "falloff": {
-     "src": [142, "DistanceDamageFalloffCurve"],
+     "src": [140, "DistanceDamageFalloffCurve"],
      "keys_m": [[0.0, 1.0], [100.0, 1.0], [500.0, 0.0], [1200.0, 0.0]],
      "cubic": true
     },
     "radial": null,
-    "items": [143]
+    "items": [141]
    },
    "not_traced": [],
    "doc": "bullet_event"
@@ -2644,7 +2648,7 @@
    "damage_tags": ["Meta.Damage.Explosive.Rocket.84mm", "Meta.Damage.Kinetic.Impact.ExplosiveBlunt"],
    "uses_hit_location": true,
    "radial_uses_hit_location": false,
-   "why": "Entry 7 selects the bone operation for a direct hit (ExplosiveBlunt), so the hit location sets the factor Universal × row Meta.Damage.Weapon.Launcher (§7.1). Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not apply to them (verifier round 6 (doc text pending)).",
+   "why": "Entry 7 selects the bone operation for a direct hit (ExplosiveBlunt), so the hit location sets the factor Universal × row Meta.Damage.Weapon.Launcher (§7.1). Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not apply to them (verified native trace (rounds 6 and 8)).",
    "rule_entries": [7],
    "armor_entries": [102, 103, 104, 105, 142, 143],
    "radial_entries": [102, 103, 104, 105, 113, 114],
@@ -2707,80 +2711,12 @@
         "ID_SuperHeavyArmor": {"k": 0.5, "entries": [105]}
        }
       }
-     }
+     },
+     "source_context": ["Meta.Damage.Weapon.Launcher.AT4", "Item.Caliber.84mm", "Meta.Damage.DamageType.Explosive"],
+     "armor_scope": "Each valid retained armor tag is evaluated at every hit location, without coverage filtering. Each listed item is evaluated alone; combined equipment needs joint evaluation."
     }
    },
-   "not_traced": ["armor-hook-paths", "exploding-hit", "radial-amount", "radial-context", "radial-split"],
-   "doc": "bullet_event"
-  },
-  {
-   "id": "explosives-cgm4-84mm-tvguided",
-   "category": "explosives",
-   "group": "Launcher",
-   "label": "CGM4 (84mm.TVGuided)",
-   "damage_tags": ["Meta.Damage.Explosive.Rocket.60mm"],
-   "uses_hit_location": false,
-   "radial_uses_hit_location": false,
-   "why": "No bone entry matches a direct hit: entries 5, 7 and 10 need Meta.Damage.Bullet, Kinetic.Impact.ExplosiveBlunt or Meta.Damage.Cannon in the source (§3.1), so every hit location gets the same rule factor. Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not apply to them (verifier round 6 (doc text pending)).",
-   "rule_entries": [],
-   "armor_entries": [102, 103, 104, 105],
-   "radial_entries": [102, 103, 104, 105],
-   "zone_multiplier": null,
-   "values": {
-    "weapon": 38,
-    "weapon_tag": "Meta.Damage.Weapon.Launcher.AT4",
-    "stats": 39,
-    "caliber": "Item.Caliber.84mm.TVGuided",
-    "projectile": 40,
-    "source_tag": "Meta.Damage.Explosive.Rocket.60mm",
-    "source_context": [],
-    "has_arming_delay": false,
-    "arming_delay": null,
-    "damage_values": {"BaseDamage": 100.0, "ExplosiveRadius": 1000.0, "EffectiveExplosiveRadius": 400.0, "ExplosiveDamageFallOff": 0.5},
-    "damage_values_src": [40, "ProjectileStats.DamageValues"],
-    "direct": [
-     {"case": "direct_not_exploding", "S": 100.0, "S_src": [40, "ProjectileStats.DamageValues.BaseDamage"]}
-    ],
-    "direct_zones": {
-     "factor": {"k": 1.0},
-     "entries": [],
-     "armor": {
-      "ID_HeavyArmor": {"k": 0.65, "entries": [104]},
-      "ID_LightArmor": {"k": 0.85, "entries": [102]},
-      "ID_MediumArmor": {"k": 0.75, "entries": [103]},
-      "ID_SuperHeavyArmor": {"k": 0.5, "entries": [105]}
-     }
-    },
-    "falloff": {"src": null, "keys_m": [], "cubic": false},
-    "radial": {
-     "zone_multiplier": null,
-     "rings": {
-      "inner": {
-       "tag": "Meta.Damage.Explosive.Radius.Inner",
-       "factor": {"k": 1.0},
-       "entries": [],
-       "armor": {
-        "ID_HeavyArmor": {"k": 0.65, "entries": [104]},
-        "ID_LightArmor": {"k": 0.85, "entries": [102]},
-        "ID_MediumArmor": {"k": 0.75, "entries": [103]},
-        "ID_SuperHeavyArmor": {"k": 0.5, "entries": [105]}
-       }
-      },
-      "outer": {
-       "tag": "Meta.Damage.Explosive.Radius.Outer",
-       "factor": {"k": 1.0},
-       "entries": [],
-       "armor": {
-        "ID_HeavyArmor": {"k": 0.65, "entries": [104]},
-        "ID_LightArmor": {"k": 0.85, "entries": [102]},
-        "ID_MediumArmor": {"k": 0.75, "entries": [103]},
-        "ID_SuperHeavyArmor": {"k": 0.5, "entries": [105]}
-       }
-      }
-     }
-    }
-   },
-   "not_traced": ["armor-hook-paths", "caliber-parent-match", "exploding-hit", "radial-amount", "radial-context", "radial-split"],
+   "not_traced": [],
    "doc": "bullet_event"
   },
   {
@@ -2791,26 +2727,26 @@
    "damage_tags": ["Meta.Damage.Explosive.Rocket.72mm", "Meta.Damage.Kinetic.Impact.ExplosiveBlunt"],
    "uses_hit_location": true,
    "radial_uses_hit_location": false,
-   "why": "Entry 7 selects the bone operation for a direct hit (ExplosiveBlunt), so the hit location sets the factor Universal × row Meta.Damage.Weapon.Launcher (§7.1). Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not apply to them (verifier round 6 (doc text pending)).",
+   "why": "Entry 7 selects the bone operation for a direct hit (ExplosiveBlunt), so the hit location sets the factor Universal × row Meta.Damage.Weapon.Launcher (§7.1). Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not apply to them (verified native trace (rounds 6 and 8)).",
    "rule_entries": [7],
    "armor_entries": [102, 103, 104, 105, 142, 143],
    "radial_entries": [102, 103, 104, 105],
    "zone_multiplier": {"row": "Meta.Damage.Weapon.Launcher"},
    "values": {
-    "weapon": 42,
+    "weapon": 41,
     "weapon_tag": "Meta.Damage.Weapon.Launcher.AT4",
-    "stats": 43,
+    "stats": 42,
     "caliber": "Item.Caliber.72mm",
-    "projectile": 41,
+    "projectile": 40,
     "source_tag": "Meta.Damage.Explosive.Rocket.72mm",
     "source_context": [],
     "has_arming_delay": true,
     "arming_delay": 0.13,
     "damage_values": {"BaseDamage": 200.0, "ExplosiveRadius": 1080.0, "EffectiveExplosiveRadius": 200.0, "ExplosiveDamageFallOff": 0.8, "ExplosiveBluntDamage": 120.0},
-    "damage_values_src": [41, "ProjectileStats.DamageValues"],
+    "damage_values_src": [40, "ProjectileStats.DamageValues"],
     "direct": [
-     {"case": "before_arming", "S": 120.0, "S_src": [41, "ProjectileStats.DamageValues.ExplosiveBluntDamage"]},
-     {"case": "direct_not_exploding", "S": 200.0, "S_src": [41, "ProjectileStats.DamageValues.BaseDamage"]}
+     {"case": "before_arming", "S": 120.0, "S_src": [40, "ProjectileStats.DamageValues.ExplosiveBluntDamage"]},
+     {"case": "direct_not_exploding", "S": 200.0, "S_src": [40, "ProjectileStats.DamageValues.BaseDamage"]}
     ],
     "direct_zones": {
      "factor": {"k": 1.0},
@@ -2854,10 +2790,12 @@
         "ID_SuperHeavyArmor": {"k": 0.5, "entries": [105]}
        }
       }
-     }
+     },
+     "source_context": ["Meta.Damage.Weapon.Launcher.AT4", "Item.Caliber.72mm", "Meta.Damage.DamageType.Explosive"],
+     "armor_scope": "Each valid retained armor tag is evaluated at every hit location, without coverage filtering. Each listed item is evaluated alone; combined equipment needs joint evaluation."
     }
    },
-   "not_traced": ["armor-hook-paths", "exploding-hit", "radial-amount", "radial-context", "radial-split"],
+   "not_traced": [],
    "doc": "bullet_event"
   },
   {
@@ -2868,26 +2806,26 @@
    "damage_tags": ["Meta.Damage.Explosive.Grenade.40mm", "Meta.Damage.Kinetic.Impact.ExplosiveBlunt"],
    "uses_hit_location": true,
    "radial_uses_hit_location": false,
-   "why": "Entry 7 selects the bone operation for a direct hit (ExplosiveBlunt), so the hit location sets the factor Universal × row Meta.Damage.Weapon.Launcher (§7.1). Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not apply to them (verifier round 6 (doc text pending)).",
+   "why": "Entry 7 selects the bone operation for a direct hit (ExplosiveBlunt), so the hit location sets the factor Universal × row Meta.Damage.Weapon.Launcher (§7.1). Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not apply to them (verified native trace (rounds 6 and 8)).",
    "rule_entries": [7],
    "armor_entries": [105, 142, 143],
    "radial_entries": [105, 115],
    "zone_multiplier": {"row": "Meta.Damage.Weapon.Launcher"},
    "values": {
-    "weapon": 45,
+    "weapon": 44,
     "weapon_tag": "Meta.Damage.Weapon.Launcher.AT4",
-    "stats": 46,
+    "stats": 45,
     "caliber": "Item.Caliber.40mm",
-    "projectile": 44,
+    "projectile": 43,
     "source_tag": "Meta.Damage.Explosive.Grenade.40mm",
     "source_context": [],
     "has_arming_delay": true,
     "arming_delay": 0.07,
     "damage_values": {"BaseDamage": 100.0, "ExplosiveRadius": 1000.0, "EffectiveExplosiveRadius": 250.0, "ExplosiveDamageFallOff": 1.0, "ExplosiveBluntDamage": 80.0},
-    "damage_values_src": [44, "ProjectileStats.DamageValues"],
+    "damage_values_src": [43, "ProjectileStats.DamageValues"],
     "direct": [
-     {"case": "before_arming", "S": 80.0, "S_src": [44, "ProjectileStats.DamageValues.ExplosiveBluntDamage"]},
-     {"case": "direct_not_exploding", "S": 100.0, "S_src": [44, "ProjectileStats.DamageValues.BaseDamage"]}
+     {"case": "before_arming", "S": 80.0, "S_src": [43, "ProjectileStats.DamageValues.ExplosiveBluntDamage"]},
+     {"case": "direct_not_exploding", "S": 100.0, "S_src": [43, "ProjectileStats.DamageValues.BaseDamage"]}
     ],
     "direct_zones": {
      "factor": {"k": 1.0},
@@ -2925,10 +2863,12 @@
         "ID_SuperHeavyArmor": {"k": 0.5, "entries": [105]}
        }
       }
-     }
+     },
+     "source_context": ["Meta.Damage.Weapon.Launcher.AT4", "Item.Caliber.40mm", "Meta.Damage.DamageType.Explosive"],
+     "armor_scope": "Each valid retained armor tag is evaluated at every hit location, without coverage filtering. Each listed item is evaluated alone; combined equipment needs joint evaluation."
     }
    },
-   "not_traced": ["armor-hook-paths", "exploding-hit", "radial-amount", "radial-context", "radial-split"],
+   "not_traced": [],
    "doc": "bullet_event"
   },
   {
@@ -2939,26 +2879,26 @@
    "damage_tags": ["Meta.Damage.Explosive.Rocket.93mm", "Meta.Damage.Kinetic.Impact.ExplosiveBlunt"],
    "uses_hit_location": true,
    "radial_uses_hit_location": false,
-   "why": "Entry 7 selects the bone operation for a direct hit (ExplosiveBlunt), so the hit location sets the factor Universal × row Meta.Damage.Weapon.Launcher (§7.1). Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not apply to them (verifier round 6 (doc text pending)).",
+   "why": "Entry 7 selects the bone operation for a direct hit (ExplosiveBlunt), so the hit location sets the factor Universal × row Meta.Damage.Weapon.Launcher (§7.1). Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not apply to them (verified native trace (rounds 6 and 8)).",
    "rule_entries": [7],
    "armor_entries": [102, 103, 104, 105, 142, 143],
    "radial_entries": [102, 103, 104, 105, 112],
    "zone_multiplier": {"row": "Meta.Damage.Weapon.Launcher"},
    "values": {
-    "weapon": 48,
+    "weapon": 47,
     "weapon_tag": "Meta.Damage.Weapon.Launcher.AT4",
-    "stats": 49,
+    "stats": 48,
     "caliber": "Item.Caliber.93mm",
-    "projectile": 47,
+    "projectile": 46,
     "source_tag": "Meta.Damage.Explosive.Rocket.93mm",
     "source_context": [],
     "has_arming_delay": true,
     "arming_delay": 0.099,
     "damage_values": {"BaseDamage": 110.0, "ExplosiveRadius": 1200.0, "EffectiveExplosiveRadius": 250.0, "ExplosiveDamageFallOff": 0.9, "ExplosiveBluntDamage": 120.0},
-    "damage_values_src": [47, "ProjectileStats.DamageValues"],
+    "damage_values_src": [46, "ProjectileStats.DamageValues"],
     "direct": [
-     {"case": "before_arming", "S": 120.0, "S_src": [47, "ProjectileStats.DamageValues.ExplosiveBluntDamage"]},
-     {"case": "direct_not_exploding", "S": 110.0, "S_src": [47, "ProjectileStats.DamageValues.BaseDamage"]}
+     {"case": "before_arming", "S": 120.0, "S_src": [46, "ProjectileStats.DamageValues.ExplosiveBluntDamage"]},
+     {"case": "direct_not_exploding", "S": 110.0, "S_src": [46, "ProjectileStats.DamageValues.BaseDamage"]}
     ],
     "direct_zones": {
      "factor": {"k": 1.0},
@@ -3002,10 +2942,12 @@
         "ID_SuperHeavyArmor": {"k": 0.5, "entries": [105]}
        }
       }
-     }
+     },
+     "source_context": ["Meta.Damage.Weapon.Launcher.AT4", "Item.Caliber.93mm", "Meta.Damage.DamageType.Explosive"],
+     "armor_scope": "Each valid retained armor tag is evaluated at every hit location, without coverage filtering. Each listed item is evaluated alone; combined equipment needs joint evaluation."
     }
    },
-   "not_traced": ["armor-hook-paths", "exploding-hit", "radial-amount", "radial-context", "radial-split"],
+   "not_traced": [],
    "doc": "bullet_event"
   },
   {
@@ -3016,25 +2958,25 @@
    "damage_tags": ["Meta.Damage.Explosive.Rocket.120mm"],
    "uses_hit_location": false,
    "radial_uses_hit_location": false,
-   "why": "No bone entry matches a direct hit: entries 5, 7 and 10 need Meta.Damage.Bullet, Kinetic.Impact.ExplosiveBlunt or Meta.Damage.Cannon in the source (§3.1), so every hit location gets the same rule factor. Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not apply to them (verifier round 6 (doc text pending)).",
+   "why": "No bone entry matches a direct hit: entries 5, 7 and 10 need Meta.Damage.Bullet, Kinetic.Impact.ExplosiveBlunt or Meta.Damage.Cannon in the source (§3.1), so every hit location gets the same rule factor. Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not apply to them (verified native trace (rounds 6 and 8)).",
    "rule_entries": [],
    "armor_entries": [102, 103, 104, 105],
    "radial_entries": [102, 103, 104, 105, 111],
    "zone_multiplier": null,
    "values": {
-    "weapon": 92,
+    "weapon": 91,
     "weapon_tag": "Meta.Damage.Weapon.Vehicle.Turret.Heavy",
-    "stats": 93,
+    "stats": 92,
     "caliber": "Item.Caliber.120x570mm",
-    "projectile": 91,
+    "projectile": 90,
     "source_tag": "Meta.Damage.Explosive.Rocket.120mm",
     "source_context": [],
     "has_arming_delay": false,
     "arming_delay": 0.01,
     "damage_values": {"BaseDamage": 150.0, "ExplosiveRadius": 750.0, "MinimumExplosiveDamage": 30.0, "EffectiveExplosiveRadius": 420.0, "ExplosiveDamageFallOff": 0.3, "ExplosiveBluntDamage": 150.0},
-    "damage_values_src": [91, "ProjectileStats.DamageValues"],
+    "damage_values_src": [90, "ProjectileStats.DamageValues"],
     "direct": [
-     {"case": "direct_not_exploding", "S": 150.0, "S_src": [91, "ProjectileStats.DamageValues.BaseDamage"]}
+     {"case": "direct_not_exploding", "S": 150.0, "S_src": [90, "ProjectileStats.DamageValues.BaseDamage"]}
     ],
     "direct_zones": {
      "factor": {"k": 1.0},
@@ -3072,11 +3014,13 @@
         "ID_SuperHeavyArmor": {"k": 0.5, "entries": [105]}
        }
       }
-     }
+     },
+     "source_context": ["Meta.Damage.Weapon.Vehicle.Turret.Heavy", "Item.Caliber.120x570mm", "Meta.Damage.DamageType.Explosive"],
+     "armor_scope": "Each valid retained armor tag is evaluated at every hit location, without coverage filtering. Each listed item is evaluated alone; combined equipment needs joint evaluation."
     },
-    "items": [92]
+    "items": [91]
    },
-   "not_traced": ["armor-hook-paths", "exploding-hit", "radial-amount", "radial-context", "radial-split", "vehicle-weapon-tag"],
+   "not_traced": [],
    "doc": "bullet_event"
   },
   {
@@ -3087,26 +3031,26 @@
    "damage_tags": ["Meta.Damage.Explosive.Rocket.120x800mm", "Meta.Damage.Kinetic.Impact.ExplosiveBlunt"],
    "uses_hit_location": true,
    "radial_uses_hit_location": false,
-   "why": "Entry 7 selects the bone operation for a direct hit (ExplosiveBlunt), so the hit location sets the factor Universal × W = 1 (no row matches) (§7.1). Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not apply to them (verifier round 6 (doc text pending)).",
+   "why": "Entry 7 selects the bone operation for a direct hit (ExplosiveBlunt), so the hit location sets the factor Universal × W = 1 (no row matches) (§7.1). Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not apply to them (verified native trace (rounds 6 and 8)).",
    "rule_entries": [7],
    "armor_entries": [102, 103, 104, 105, 142, 143],
    "radial_entries": [102, 103, 104, 105],
    "zone_multiplier": {"row": null},
    "values": {
-    "weapon": 95,
+    "weapon": 94,
     "weapon_tag": "Meta.Damage.Weapon.Vehicle.Turret.STN_02",
-    "stats": 96,
+    "stats": 95,
     "caliber": "Item.Caliber.120x800mm.Standard",
-    "projectile": 94,
+    "projectile": 93,
     "source_tag": "Meta.Damage.Explosive.Rocket.120x800mm",
     "source_context": [],
     "has_arming_delay": true,
     "arming_delay": 0.1,
     "damage_values": {"BaseDamage": 120.0, "ExplosiveRadius": 1000.0, "MinimumExplosiveDamage": 15.0, "EffectiveExplosiveRadius": 500.0, "ExplosiveDamageFallOff": 0.45, "ExplosiveBluntDamage": 120.0},
-    "damage_values_src": [94, "ProjectileStats.DamageValues"],
+    "damage_values_src": [93, "ProjectileStats.DamageValues"],
     "direct": [
-     {"case": "before_arming", "S": 120.0, "S_src": [94, "ProjectileStats.DamageValues.ExplosiveBluntDamage"]},
-     {"case": "direct_not_exploding", "S": 120.0, "S_src": [94, "ProjectileStats.DamageValues.BaseDamage"]}
+     {"case": "before_arming", "S": 120.0, "S_src": [93, "ProjectileStats.DamageValues.ExplosiveBluntDamage"]},
+     {"case": "direct_not_exploding", "S": 120.0, "S_src": [93, "ProjectileStats.DamageValues.BaseDamage"]}
     ],
     "direct_zones": {
      "factor": {"k": 1.0},
@@ -3150,11 +3094,13 @@
         "ID_SuperHeavyArmor": {"k": 0.5, "entries": [105]}
        }
       }
-     }
+     },
+     "source_context": ["Meta.Damage.Weapon.Vehicle.Turret.STN_02", "Item.Caliber.120x800mm.Standard", "Meta.Damage.DamageType.Explosive"],
+     "armor_scope": "Each valid retained armor tag is evaluated at every hit location, without coverage filtering. Each listed item is evaluated alone; combined equipment needs joint evaluation."
     },
-    "items": [95]
+    "items": [94]
    },
-   "not_traced": ["armor-hook-paths", "caliber-parent-match", "exploding-hit", "radial-amount", "radial-context", "radial-split", "vehicle-weapon-tag"],
+   "not_traced": [],
    "doc": "bullet_event"
   },
   {
@@ -3165,25 +3111,25 @@
    "damage_tags": ["Meta.Damage.Explosive.Rocket.122mm"],
    "uses_hit_location": false,
    "radial_uses_hit_location": false,
-   "why": "No bone entry matches a direct hit: entries 5, 7 and 10 need Meta.Damage.Bullet, Kinetic.Impact.ExplosiveBlunt or Meta.Damage.Cannon in the source (§3.1), so every hit location gets the same rule factor. Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not apply to them (verifier round 6 (doc text pending)).",
+   "why": "No bone entry matches a direct hit: entries 5, 7 and 10 need Meta.Damage.Bullet, Kinetic.Impact.ExplosiveBlunt or Meta.Damage.Cannon in the source (§3.1), so every hit location gets the same rule factor. Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not apply to them (verified native trace (rounds 6 and 8)).",
    "rule_entries": [110],
    "armor_entries": [102, 103, 104, 105],
    "radial_entries": [102, 103, 104, 105, 110],
    "zone_multiplier": null,
    "values": {
-    "weapon": 98,
+    "weapon": 97,
     "weapon_tag": "Meta.Damage.Weapon.Vehicle.HelicopterRocket",
-    "stats": 99,
+    "stats": 98,
     "caliber": "Item.Caliber.122mm",
-    "projectile": 97,
+    "projectile": 96,
     "source_tag": "Meta.Damage.Explosive.Rocket.122mm",
     "source_context": [],
     "has_arming_delay": false,
     "arming_delay": null,
     "damage_values": {"BaseDamage": 100.0, "ExplosiveRadius": 600.0, "MinimumExplosiveDamage": 10.0, "EffectiveExplosiveRadius": 200.0, "ExplosiveDamageFallOff": 1.0, "ExplosiveBluntDamage": 50.0},
-    "damage_values_src": [97, "ProjectileStats.DamageValues"],
+    "damage_values_src": [96, "ProjectileStats.DamageValues"],
     "direct": [
-     {"case": "direct_not_exploding", "S": 100.0, "S_src": [97, "ProjectileStats.DamageValues.BaseDamage"]}
+     {"case": "direct_not_exploding", "S": 100.0, "S_src": [96, "ProjectileStats.DamageValues.BaseDamage"]}
     ],
     "direct_zones": {
      "factor": {"k": 0.55},
@@ -3221,11 +3167,13 @@
         "ID_SuperHeavyArmor": {"k": 0.5, "entries": [105]}
        }
       }
-     }
+     },
+     "source_context": ["Meta.Damage.Weapon.Vehicle.HelicopterRocket", "Item.Caliber.122mm", "Meta.Damage.DamageType.Explosive"],
+     "armor_scope": "Each valid retained armor tag is evaluated at every hit location, without coverage filtering. Each listed item is evaluated alone; combined equipment needs joint evaluation."
     },
-    "items": [98]
+    "items": [97]
    },
-   "not_traced": ["armor-hook-paths", "exploding-hit", "radial-amount", "radial-context", "radial-split", "vehicle-weapon-tag"],
+   "not_traced": [],
    "doc": "bullet_event"
   },
   {
@@ -3236,25 +3184,25 @@
    "damage_tags": ["Meta.Damage.Explosive.Rocket.122mm"],
    "uses_hit_location": false,
    "radial_uses_hit_location": false,
-   "why": "No bone entry matches a direct hit: entries 5, 7 and 10 need Meta.Damage.Bullet, Kinetic.Impact.ExplosiveBlunt or Meta.Damage.Cannon in the source (§3.1), so every hit location gets the same rule factor. Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not apply to them (verifier round 6 (doc text pending)).",
+   "why": "No bone entry matches a direct hit: entries 5, 7 and 10 need Meta.Damage.Bullet, Kinetic.Impact.ExplosiveBlunt or Meta.Damage.Cannon in the source (§3.1), so every hit location gets the same rule factor. Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not apply to them (verified native trace (rounds 6 and 8)).",
    "rule_entries": [110],
    "armor_entries": [102, 103, 104, 105],
    "radial_entries": [102, 103, 104, 105, 110],
    "zone_multiplier": null,
    "values": {
-    "weapon": 100,
+    "weapon": 99,
     "weapon_tag": "Meta.Damage.Weapon.Vehicle.HelicopterRocket",
-    "stats": 101,
+    "stats": 100,
     "caliber": "Item.Caliber.122mm",
-    "projectile": 97,
+    "projectile": 96,
     "source_tag": "Meta.Damage.Explosive.Rocket.122mm",
     "source_context": [],
     "has_arming_delay": false,
     "arming_delay": null,
     "damage_values": {"BaseDamage": 100.0, "ExplosiveRadius": 600.0, "MinimumExplosiveDamage": 10.0, "EffectiveExplosiveRadius": 200.0, "ExplosiveDamageFallOff": 1.0, "ExplosiveBluntDamage": 50.0},
-    "damage_values_src": [97, "ProjectileStats.DamageValues"],
+    "damage_values_src": [96, "ProjectileStats.DamageValues"],
     "direct": [
-     {"case": "direct_not_exploding", "S": 100.0, "S_src": [97, "ProjectileStats.DamageValues.BaseDamage"]}
+     {"case": "direct_not_exploding", "S": 100.0, "S_src": [96, "ProjectileStats.DamageValues.BaseDamage"]}
     ],
     "direct_zones": {
      "factor": {"k": 0.55},
@@ -3292,153 +3240,13 @@
         "ID_SuperHeavyArmor": {"k": 0.5, "entries": [105]}
        }
       }
-     }
+     },
+     "source_context": ["Meta.Damage.Weapon.Vehicle.HelicopterRocket", "Item.Caliber.122mm", "Meta.Damage.DamageType.Explosive"],
+     "armor_scope": "Each valid retained armor tag is evaluated at every hit location, without coverage filtering. Each listed item is evaluated alone; combined equipment needs joint evaluation."
     },
-    "items": [100]
+    "items": [99]
    },
-   "not_traced": ["armor-hook-paths", "exploding-hit", "radial-amount", "radial-context", "radial-split", "vehicle-weapon-tag"],
-   "doc": "bullet_event"
-  },
-  {
-   "id": "explosives-rot-02-weapon-122mm-122mm-havoc",
-   "category": "explosives",
-   "group": "Vehicle",
-   "label": "ROT 02 Weapon 122mm (122mm.Havoc)",
-   "damage_tags": ["Meta.Damage.Explosive.Rocket.122mm"],
-   "uses_hit_location": false,
-   "radial_uses_hit_location": false,
-   "why": "No bone entry matches a direct hit: entries 5, 7 and 10 need Meta.Damage.Bullet, Kinetic.Impact.ExplosiveBlunt or Meta.Damage.Cannon in the source (§3.1), so every hit location gets the same rule factor. Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not apply to them (verifier round 6 (doc text pending)).",
-   "rule_entries": [110],
-   "armor_entries": [102, 103, 104, 105],
-   "radial_entries": [102, 103, 104, 105, 110],
-   "zone_multiplier": null,
-   "values": {
-    "weapon": 98,
-    "weapon_tag": "Meta.Damage.Weapon.Vehicle.HelicopterRocket",
-    "stats": 99,
-    "caliber": "Item.Caliber.122mm.Havoc",
-    "projectile": 102,
-    "source_tag": "Meta.Damage.Explosive.Rocket.122mm",
-    "source_context": [],
-    "has_arming_delay": false,
-    "arming_delay": null,
-    "damage_values": {"BaseDamage": 300.0, "ExplosiveRadius": 300.0, "EffectiveExplosiveRadius": 600.0, "ExplosiveDamageFallOff": 0.6},
-    "damage_values_src": [102, "ProjectileStats.DamageValues"],
-    "direct": [
-     {"case": "direct_not_exploding", "S": 300.0, "S_src": [102, "ProjectileStats.DamageValues.BaseDamage"]}
-    ],
-    "direct_zones": {
-     "factor": {"k": 0.55},
-     "entries": [110],
-     "armor": {
-      "ID_HeavyArmor": {"k": 0.65, "entries": [104]},
-      "ID_LightArmor": {"k": 0.85, "entries": [102]},
-      "ID_MediumArmor": {"k": 0.75, "entries": [103]},
-      "ID_SuperHeavyArmor": {"k": 0.5, "entries": [105]}
-     }
-    },
-    "falloff": {"src": null, "keys_m": [], "cubic": false},
-    "radial": {
-     "zone_multiplier": null,
-     "rings": {
-      "inner": {
-       "tag": "Meta.Damage.Explosive.Radius.Inner",
-       "factor": {"k": 0.55},
-       "entries": [110],
-       "armor": {
-        "ID_HeavyArmor": {"k": 0.65, "entries": [104]},
-        "ID_LightArmor": {"k": 0.85, "entries": [102]},
-        "ID_MediumArmor": {"k": 0.75, "entries": [103]},
-        "ID_SuperHeavyArmor": {"k": 0.5, "entries": [105]}
-       }
-      },
-      "outer": {
-       "tag": "Meta.Damage.Explosive.Radius.Outer",
-       "factor": {"k": 0.55},
-       "entries": [110],
-       "armor": {
-        "ID_HeavyArmor": {"k": 0.65, "entries": [104]},
-        "ID_LightArmor": {"k": 0.85, "entries": [102]},
-        "ID_MediumArmor": {"k": 0.75, "entries": [103]},
-        "ID_SuperHeavyArmor": {"k": 0.5, "entries": [105]}
-       }
-      }
-     }
-    },
-    "items": [98]
-   },
-   "not_traced": ["armor-hook-paths", "caliber-parent-match", "exploding-hit", "radial-amount", "radial-context", "radial-split", "vehicle-weapon-tag"],
-   "doc": "bullet_event"
-  },
-  {
-   "id": "explosives-rot-03-weapon-122mm-122mm-havoc",
-   "category": "explosives",
-   "group": "Vehicle",
-   "label": "ROT 03 Weapon 122mm (122mm.Havoc)",
-   "damage_tags": ["Meta.Damage.Explosive.Rocket.122mm"],
-   "uses_hit_location": false,
-   "radial_uses_hit_location": false,
-   "why": "No bone entry matches a direct hit: entries 5, 7 and 10 need Meta.Damage.Bullet, Kinetic.Impact.ExplosiveBlunt or Meta.Damage.Cannon in the source (§3.1), so every hit location gets the same rule factor. Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not apply to them (verifier round 6 (doc text pending)).",
-   "rule_entries": [110],
-   "armor_entries": [102, 103, 104, 105],
-   "radial_entries": [102, 103, 104, 105, 110],
-   "zone_multiplier": null,
-   "values": {
-    "weapon": 100,
-    "weapon_tag": "Meta.Damage.Weapon.Vehicle.HelicopterRocket",
-    "stats": 101,
-    "caliber": "Item.Caliber.122mm.Havoc",
-    "projectile": 102,
-    "source_tag": "Meta.Damage.Explosive.Rocket.122mm",
-    "source_context": [],
-    "has_arming_delay": false,
-    "arming_delay": null,
-    "damage_values": {"BaseDamage": 300.0, "ExplosiveRadius": 300.0, "EffectiveExplosiveRadius": 600.0, "ExplosiveDamageFallOff": 0.6},
-    "damage_values_src": [102, "ProjectileStats.DamageValues"],
-    "direct": [
-     {"case": "direct_not_exploding", "S": 300.0, "S_src": [102, "ProjectileStats.DamageValues.BaseDamage"]}
-    ],
-    "direct_zones": {
-     "factor": {"k": 0.55},
-     "entries": [110],
-     "armor": {
-      "ID_HeavyArmor": {"k": 0.65, "entries": [104]},
-      "ID_LightArmor": {"k": 0.85, "entries": [102]},
-      "ID_MediumArmor": {"k": 0.75, "entries": [103]},
-      "ID_SuperHeavyArmor": {"k": 0.5, "entries": [105]}
-     }
-    },
-    "falloff": {"src": null, "keys_m": [], "cubic": false},
-    "radial": {
-     "zone_multiplier": null,
-     "rings": {
-      "inner": {
-       "tag": "Meta.Damage.Explosive.Radius.Inner",
-       "factor": {"k": 0.55},
-       "entries": [110],
-       "armor": {
-        "ID_HeavyArmor": {"k": 0.65, "entries": [104]},
-        "ID_LightArmor": {"k": 0.85, "entries": [102]},
-        "ID_MediumArmor": {"k": 0.75, "entries": [103]},
-        "ID_SuperHeavyArmor": {"k": 0.5, "entries": [105]}
-       }
-      },
-      "outer": {
-       "tag": "Meta.Damage.Explosive.Radius.Outer",
-       "factor": {"k": 0.55},
-       "entries": [110],
-       "armor": {
-        "ID_HeavyArmor": {"k": 0.65, "entries": [104]},
-        "ID_LightArmor": {"k": 0.85, "entries": [102]},
-        "ID_MediumArmor": {"k": 0.75, "entries": [103]},
-        "ID_SuperHeavyArmor": {"k": 0.5, "entries": [105]}
-       }
-      }
-     }
-    },
-    "items": [100]
-   },
-   "not_traced": ["armor-hook-paths", "caliber-parent-match", "exploding-hit", "radial-amount", "radial-context", "radial-split", "vehicle-weapon-tag"],
+   "not_traced": [],
    "doc": "bullet_event"
   },
   {
@@ -3449,25 +3257,25 @@
    "damage_tags": ["Meta.Damage.Explosive.Rocket.125mm"],
    "uses_hit_location": false,
    "radial_uses_hit_location": false,
-   "why": "No bone entry matches a direct hit: entries 5, 7 and 10 need Meta.Damage.Bullet, Kinetic.Impact.ExplosiveBlunt or Meta.Damage.Cannon in the source (§3.1), so every hit location gets the same rule factor. Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not apply to them (verifier round 6 (doc text pending)).",
+   "why": "No bone entry matches a direct hit: entries 5, 7 and 10 need Meta.Damage.Bullet, Kinetic.Impact.ExplosiveBlunt or Meta.Damage.Cannon in the source (§3.1), so every hit location gets the same rule factor. Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not apply to them (verified native trace (rounds 6 and 8)).",
    "rule_entries": [],
    "armor_entries": [102, 103, 104, 105],
    "radial_entries": [102, 103, 104, 105, 109],
    "zone_multiplier": null,
    "values": {
-    "weapon": 104,
+    "weapon": 102,
     "weapon_tag": "Meta.Damage.Weapon.Vehicle.Turret.Heavy",
-    "stats": 105,
+    "stats": 103,
     "caliber": "Item.Caliber.125x570mm",
-    "projectile": 103,
+    "projectile": 101,
     "source_tag": "Meta.Damage.Explosive.Rocket.125mm",
     "source_context": [],
     "has_arming_delay": false,
     "arming_delay": 0.01,
     "damage_values": {"BaseDamage": 150.0, "ExplosiveRadius": 750.0, "MinimumExplosiveDamage": 30.0, "EffectiveExplosiveRadius": 420.0, "ExplosiveDamageFallOff": 0.3, "ExplosiveBluntDamage": 150.0},
-    "damage_values_src": [103, "ProjectileStats.DamageValues"],
+    "damage_values_src": [101, "ProjectileStats.DamageValues"],
     "direct": [
-     {"case": "direct_not_exploding", "S": 150.0, "S_src": [103, "ProjectileStats.DamageValues.BaseDamage"]}
+     {"case": "direct_not_exploding", "S": 150.0, "S_src": [101, "ProjectileStats.DamageValues.BaseDamage"]}
     ],
     "direct_zones": {
      "factor": {"k": 1.0},
@@ -3505,11 +3313,13 @@
         "ID_SuperHeavyArmor": {"k": 0.5, "entries": [105]}
        }
       }
-     }
+     },
+     "source_context": ["Meta.Damage.Weapon.Vehicle.Turret.Heavy", "Item.Caliber.125x570mm", "Meta.Damage.DamageType.Explosive"],
+     "armor_scope": "Each valid retained armor tag is evaluated at every hit location, without coverage filtering. Each listed item is evaluated alone; combined equipment needs joint evaluation."
     },
-    "items": [104]
+    "items": [102]
    },
-   "not_traced": ["armor-hook-paths", "exploding-hit", "radial-amount", "radial-context", "radial-split", "vehicle-weapon-tag"],
+   "not_traced": [],
    "doc": "bullet_event"
   },
   {
@@ -3520,26 +3330,26 @@
    "damage_tags": ["Meta.Damage.Explosive.Rocket.155mm", "Meta.Damage.Kinetic.Impact.ExplosiveBlunt"],
    "uses_hit_location": true,
    "radial_uses_hit_location": false,
-   "why": "Entry 7 selects the bone operation for a direct hit (ExplosiveBlunt), so the hit location sets the factor Universal × row Meta.Damage.Weapon.Vehicle.Turret.Artillery (§7.1). Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not apply to them (verifier round 6 (doc text pending)).",
+   "why": "Entry 7 selects the bone operation for a direct hit (ExplosiveBlunt), so the hit location sets the factor Universal × row Meta.Damage.Weapon.Vehicle.Turret.Artillery (§7.1). Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not apply to them (verified native trace (rounds 6 and 8)).",
    "rule_entries": [7],
    "armor_entries": [102, 103, 104, 105, 142, 143],
    "radial_entries": [102, 103, 104, 105, 108],
    "zone_multiplier": {"row": "Meta.Damage.Weapon.Vehicle.Turret.Artillery"},
    "values": {
-    "weapon": 107,
+    "weapon": 105,
     "weapon_tag": "Meta.Damage.Weapon.Vehicle.Turret.Artillery",
-    "stats": 108,
+    "stats": 106,
     "caliber": "Item.Caliber.155mm.Expensive",
-    "projectile": 106,
+    "projectile": 104,
     "source_tag": "Meta.Damage.Explosive.Rocket.155mm",
     "source_context": [],
     "has_arming_delay": true,
     "arming_delay": 1.3,
     "damage_values": {"BaseDamage": 450.0, "ExplosiveRadius": 2000.0, "EffectiveExplosiveRadius": 1000.0, "ExplosiveDamageFallOff": 0.93, "ExplosiveBluntDamage": 100.0},
-    "damage_values_src": [106, "ProjectileStats.DamageValues"],
+    "damage_values_src": [104, "ProjectileStats.DamageValues"],
     "direct": [
-     {"case": "before_arming", "S": 100.0, "S_src": [106, "ProjectileStats.DamageValues.ExplosiveBluntDamage"]},
-     {"case": "direct_not_exploding", "S": 450.0, "S_src": [106, "ProjectileStats.DamageValues.BaseDamage"]}
+     {"case": "before_arming", "S": 100.0, "S_src": [104, "ProjectileStats.DamageValues.ExplosiveBluntDamage"]},
+     {"case": "direct_not_exploding", "S": 450.0, "S_src": [104, "ProjectileStats.DamageValues.BaseDamage"]}
     ],
     "direct_zones": {
      "factor": {"k": 1.0},
@@ -3583,11 +3393,13 @@
         "ID_SuperHeavyArmor": {"k": 0.5, "entries": [105]}
        }
       }
-     }
+     },
+     "source_context": ["Meta.Damage.Weapon.Vehicle.Turret.Artillery", "Item.Caliber.155mm.Expensive", "Meta.Damage.DamageType.Explosive"],
+     "armor_scope": "Each valid retained armor tag is evaluated at every hit location, without coverage filtering. Each listed item is evaluated alone; combined equipment needs joint evaluation."
     },
-    "items": [107]
+    "items": [105]
    },
-   "not_traced": ["armor-hook-paths", "caliber-parent-match", "exploding-hit", "radial-amount", "radial-context", "radial-split", "vehicle-weapon-tag"],
+   "not_traced": [],
    "doc": "bullet_event"
   },
   {
@@ -3598,25 +3410,25 @@
    "damage_tags": ["Meta.Damage.Explosive.Rocket.155mm"],
    "uses_hit_location": false,
    "radial_uses_hit_location": false,
-   "why": "No bone entry matches a direct hit: entries 5, 7 and 10 need Meta.Damage.Bullet, Kinetic.Impact.ExplosiveBlunt or Meta.Damage.Cannon in the source (§3.1), so every hit location gets the same rule factor. Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not apply to them (verifier round 6 (doc text pending)).",
+   "why": "No bone entry matches a direct hit: entries 5, 7 and 10 need Meta.Damage.Bullet, Kinetic.Impact.ExplosiveBlunt or Meta.Damage.Cannon in the source (§3.1), so every hit location gets the same rule factor. Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not apply to them (verified native trace (rounds 6 and 8)).",
    "rule_entries": [],
    "armor_entries": [102, 103, 104, 105],
    "radial_entries": [102, 103, 104, 105, 108],
    "zone_multiplier": null,
    "values": {
-    "weapon": 107,
+    "weapon": 105,
     "weapon_tag": "Meta.Damage.Weapon.Vehicle.Turret.Artillery",
-    "stats": 108,
+    "stats": 106,
     "caliber": "Item.Caliber.155mm.Standard",
-    "projectile": 109,
+    "projectile": 107,
     "source_tag": "Meta.Damage.Explosive.Rocket.155mm",
     "source_context": [],
     "has_arming_delay": false,
     "arming_delay": null,
     "damage_values": {"BaseDamage": 450.0, "ExplosiveRadius": 2000.0, "EffectiveExplosiveRadius": 750.0, "ExplosiveDamageFallOff": 0.5},
-    "damage_values_src": [109, "ProjectileStats.DamageValues"],
+    "damage_values_src": [107, "ProjectileStats.DamageValues"],
     "direct": [
-     {"case": "direct_not_exploding", "S": 450.0, "S_src": [109, "ProjectileStats.DamageValues.BaseDamage"]}
+     {"case": "direct_not_exploding", "S": 450.0, "S_src": [107, "ProjectileStats.DamageValues.BaseDamage"]}
     ],
     "direct_zones": {
      "factor": {"k": 1.0},
@@ -3654,11 +3466,13 @@
         "ID_SuperHeavyArmor": {"k": 0.5, "entries": [105]}
        }
       }
-     }
+     },
+     "source_context": ["Meta.Damage.Weapon.Vehicle.Turret.Artillery", "Item.Caliber.155mm.Standard", "Meta.Damage.DamageType.Explosive"],
+     "armor_scope": "Each valid retained armor tag is evaluated at every hit location, without coverage filtering. Each listed item is evaluated alone; combined equipment needs joint evaluation."
     },
-    "items": [107]
+    "items": [105]
    },
-   "not_traced": ["armor-hook-paths", "caliber-parent-match", "exploding-hit", "radial-amount", "radial-context", "radial-split", "vehicle-weapon-tag"],
+   "not_traced": [],
    "doc": "bullet_event"
   },
   {
@@ -3675,19 +3489,19 @@
    "radial_entries": [],
    "zone_multiplier": {"row": null},
    "values": {
-    "weapon": 111,
+    "weapon": 109,
     "weapon_tag": "Meta.Damage.Weapon.Vehicle.Turret.STN_02",
-    "stats": 112,
+    "stats": 110,
     "caliber": "Item.Caliber.20x102mm",
-    "projectile": 110,
+    "projectile": 108,
     "source_tag": "Meta.Damage.Cannon.20x102mm",
     "source_context": [],
     "has_arming_delay": false,
     "arming_delay": 0.01,
     "damage_values": {"BaseDamage": 60.0, "EffectiveExplosiveRadius": 375.0, "ExplosiveDamageFallOff": 0.7},
-    "damage_values_src": [110, "ProjectileStats.DamageValues"],
+    "damage_values_src": [108, "ProjectileStats.DamageValues"],
     "direct": [
-     {"case": "direct", "S": 60.0, "S_src": [110, "ProjectileStats.DamageValues.BaseDamage"]}
+     {"case": "direct", "S": 60.0, "S_src": [108, "ProjectileStats.DamageValues.BaseDamage"]}
     ],
     "direct_zones": {
      "factor": {"k": 0.7},
@@ -3707,9 +3521,9 @@
     },
     "falloff": {"src": null, "keys_m": [], "cubic": false},
     "radial": null,
-    "items": [111]
+    "items": [109]
    },
-   "not_traced": ["vehicle-weapon-tag"],
+   "not_traced": [],
    "doc": "bullet_event"
   },
   {
@@ -3720,25 +3534,25 @@
    "damage_tags": ["Meta.Damage.Cannon.30mm"],
    "uses_hit_location": true,
    "radial_uses_hit_location": true,
-   "why": "Entry 10 selects the bone operation for a direct hit (Cannon), so the hit location sets the factor Universal × row Meta.Damage.Weapon.Vehicle.HelicopterCannon (§7.1). Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not apply to them (verifier round 6 (doc text pending)); entry 10 still gives the bone factor, with W = 1.",
+   "why": "Entry 10 selects the bone operation for a direct hit (Cannon), so the hit location sets the factor Universal × row Meta.Damage.Weapon.Vehicle.HelicopterCannon (§7.1). Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not apply to them (verified native trace (rounds 6 and 8)); entry 10 still gives the bone factor using the retained weapon row (Universal alone if no row matches).",
    "rule_entries": [10],
    "armor_entries": [139, 141],
    "radial_entries": [10, 105, 139, 141],
    "zone_multiplier": {"row": "Meta.Damage.Weapon.Vehicle.HelicopterCannon"},
    "values": {
-    "weapon": 123,
+    "weapon": 121,
     "weapon_tag": "Meta.Damage.Weapon.Vehicle.HelicopterCannon",
-    "stats": 124,
+    "stats": 122,
     "caliber": "Item.Caliber.30mm",
-    "projectile": 122,
+    "projectile": 120,
     "source_tag": "Meta.Damage.Cannon.30mm",
     "source_context": ["Meta.Damage.Arms.High"],
     "has_arming_delay": false,
     "arming_delay": null,
     "damage_values": {"BaseDamage": 100.0, "ExplosiveRadius": 300.0, "MinimumExplosiveDamage": 20.0, "EffectiveExplosiveRadius": 100.0, "ExplosiveDamageFallOff": 1.0},
-    "damage_values_src": [122, "ProjectileStats.DamageValues"],
+    "damage_values_src": [120, "ProjectileStats.DamageValues"],
     "direct": [
-     {"case": "direct_not_exploding", "S": 100.0, "S_src": [122, "ProjectileStats.DamageValues.BaseDamage"]}
+     {"case": "direct_not_exploding", "S": 100.0, "S_src": [120, "ProjectileStats.DamageValues.BaseDamage"]}
     ],
     "direct_zones": {
      "factor": {"k": 1.0},
@@ -3758,7 +3572,7 @@
     },
     "falloff": {"src": null, "keys_m": [], "cubic": false},
     "radial": {
-     "zone_multiplier": {"row": null},
+     "zone_multiplier": {"row": "Meta.Damage.Weapon.Vehicle.HelicopterCannon"},
      "rings": {
       "inner": {
        "tag": "Meta.Damage.Explosive.Radius.Inner",
@@ -3794,11 +3608,13 @@
         "ID_TankHelmet": {"k": 0.45, "entries": [141]}
        }
       }
-     }
+     },
+     "source_context": ["Meta.Damage.Arms.High", "Meta.Damage.Weapon.Vehicle.HelicopterCannon", "Item.Caliber.30mm", "Meta.Damage.DamageType.Explosive"],
+     "armor_scope": "Each valid retained armor tag is evaluated at every hit location, without coverage filtering. Each listed item is evaluated alone; combined equipment needs joint evaluation."
     },
-    "items": [123]
+    "items": [121]
    },
-   "not_traced": ["armor-hook-paths", "exploding-hit", "radial-amount", "radial-context", "radial-split", "vehicle-weapon-tag"],
+   "not_traced": [],
    "doc": "bullet_event"
   },
   {
@@ -3815,19 +3631,19 @@
    "radial_entries": [],
    "zone_multiplier": {"row": "Meta.Damage.Weapon.Vehicle.Cannon"},
    "values": {
-    "weapon": 126,
+    "weapon": 124,
     "weapon_tag": "Meta.Damage.Weapon.Vehicle.Cannon",
-    "stats": 127,
+    "stats": 125,
     "caliber": "Item.Caliber.35x228mm",
-    "projectile": 125,
+    "projectile": 123,
     "source_tag": "Meta.Damage.Cannon.35x228mm",
     "source_context": [],
     "has_arming_delay": false,
     "arming_delay": 0.01,
     "damage_values": {"BaseDamage": 60.0, "EffectiveExplosiveRadius": 375.0, "ExplosiveDamageFallOff": 0.7},
-    "damage_values_src": [125, "ProjectileStats.DamageValues"],
+    "damage_values_src": [123, "ProjectileStats.DamageValues"],
     "direct": [
-     {"case": "direct", "S": 60.0, "S_src": [125, "ProjectileStats.DamageValues.BaseDamage"]}
+     {"case": "direct", "S": 60.0, "S_src": [123, "ProjectileStats.DamageValues.BaseDamage"]}
     ],
     "direct_zones": {
      "factor": {"k": 0.7},
@@ -3847,9 +3663,9 @@
     },
     "falloff": {"src": null, "keys_m": [], "cubic": false},
     "radial": null,
-    "items": [126]
+    "items": [124]
    },
-   "not_traced": ["vehicle-weapon-tag"],
+   "not_traced": [],
    "doc": "bullet_event"
   },
   {
@@ -3860,26 +3676,26 @@
    "damage_tags": ["Meta.Damage.Explosive.Grenade.40mm", "Meta.Damage.Kinetic.Impact.ExplosiveBlunt"],
    "uses_hit_location": true,
    "radial_uses_hit_location": false,
-   "why": "Entry 7 selects the bone operation for a direct hit (ExplosiveBlunt), so the hit location sets the factor Universal × W = 1 (no row matches) (§7.1). Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not apply to them (verifier round 6 (doc text pending)).",
+   "why": "Entry 7 selects the bone operation for a direct hit (ExplosiveBlunt), so the hit location sets the factor Universal × W = 1 (no row matches) (§7.1). Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not apply to them (verified native trace (rounds 6 and 8)).",
    "rule_entries": [7],
    "armor_entries": [105, 142, 143],
    "radial_entries": [105, 115],
    "zone_multiplier": {"row": null},
    "values": {
-    "weapon": 128,
+    "weapon": 126,
     "weapon_tag": null,
-    "stats": 129,
+    "stats": 127,
     "caliber": "Item.Caliber.40mm",
-    "projectile": 44,
+    "projectile": 43,
     "source_tag": "Meta.Damage.Explosive.Grenade.40mm",
     "source_context": [],
     "has_arming_delay": true,
     "arming_delay": 0.07,
     "damage_values": {"BaseDamage": 100.0, "ExplosiveRadius": 1000.0, "EffectiveExplosiveRadius": 250.0, "ExplosiveDamageFallOff": 1.0, "ExplosiveBluntDamage": 80.0},
-    "damage_values_src": [44, "ProjectileStats.DamageValues"],
+    "damage_values_src": [43, "ProjectileStats.DamageValues"],
     "direct": [
-     {"case": "before_arming", "S": 80.0, "S_src": [44, "ProjectileStats.DamageValues.ExplosiveBluntDamage"]},
-     {"case": "direct_not_exploding", "S": 100.0, "S_src": [44, "ProjectileStats.DamageValues.BaseDamage"]}
+     {"case": "before_arming", "S": 80.0, "S_src": [43, "ProjectileStats.DamageValues.ExplosiveBluntDamage"]},
+     {"case": "direct_not_exploding", "S": 100.0, "S_src": [43, "ProjectileStats.DamageValues.BaseDamage"]}
     ],
     "direct_zones": {
      "factor": {"k": 1.0},
@@ -3917,11 +3733,13 @@
         "ID_SuperHeavyArmor": {"k": 0.5, "entries": [105]}
        }
       }
-     }
+     },
+     "source_context": ["Item.Caliber.40mm", "Meta.Damage.DamageType.Explosive"],
+     "armor_scope": "Each valid retained armor tag is evaluated at every hit location, without coverage filtering. Each listed item is evaluated alone; combined equipment needs joint evaluation."
     },
-    "items": [128]
+    "items": [126]
    },
-   "not_traced": ["armor-hook-paths", "exploding-hit", "radial-amount", "radial-context", "radial-split", "underbarrel-weapon-tag"],
+   "not_traced": ["underbarrel-weapon-tag"],
    "doc": "bullet_event"
   },
   {
@@ -3932,26 +3750,26 @@
    "damage_tags": ["Meta.Damage.Explosive.Rocket.72mm", "Meta.Damage.Kinetic.Impact.ExplosiveBlunt"],
    "uses_hit_location": true,
    "radial_uses_hit_location": false,
-   "why": "Entry 7 selects the bone operation for a direct hit (ExplosiveBlunt), so the hit location sets the factor Universal × W = 1 (no row matches) (§7.1). Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not apply to them (verifier round 6 (doc text pending)).",
+   "why": "Entry 7 selects the bone operation for a direct hit (ExplosiveBlunt), so the hit location sets the factor Universal × W = 1 (no row matches) (§7.1). Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not apply to them (verified native trace (rounds 6 and 8)).",
    "rule_entries": [7],
    "armor_entries": [102, 103, 104, 105, 142, 143],
    "radial_entries": [102, 103, 104, 105],
    "zone_multiplier": {"row": null},
    "values": {
-    "weapon": 138,
+    "weapon": 136,
     "weapon_tag": "Meta.Damage.Weapon.Vehicle.Turret.STN_01",
-    "stats": 139,
+    "stats": 137,
     "caliber": "Item.Caliber.72mm",
-    "projectile": 41,
+    "projectile": 40,
     "source_tag": "Meta.Damage.Explosive.Rocket.72mm",
     "source_context": [],
     "has_arming_delay": true,
     "arming_delay": 0.13,
     "damage_values": {"BaseDamage": 200.0, "ExplosiveRadius": 1080.0, "EffectiveExplosiveRadius": 200.0, "ExplosiveDamageFallOff": 0.8, "ExplosiveBluntDamage": 120.0},
-    "damage_values_src": [41, "ProjectileStats.DamageValues"],
+    "damage_values_src": [40, "ProjectileStats.DamageValues"],
     "direct": [
-     {"case": "before_arming", "S": 120.0, "S_src": [41, "ProjectileStats.DamageValues.ExplosiveBluntDamage"]},
-     {"case": "direct_not_exploding", "S": 200.0, "S_src": [41, "ProjectileStats.DamageValues.BaseDamage"]}
+     {"case": "before_arming", "S": 120.0, "S_src": [40, "ProjectileStats.DamageValues.ExplosiveBluntDamage"]},
+     {"case": "direct_not_exploding", "S": 200.0, "S_src": [40, "ProjectileStats.DamageValues.BaseDamage"]}
     ],
     "direct_zones": {
      "factor": {"k": 1.0},
@@ -3995,104 +3813,13 @@
         "ID_SuperHeavyArmor": {"k": 0.5, "entries": [105]}
        }
       }
-     }
+     },
+     "source_context": ["Meta.Damage.Weapon.Vehicle.Turret.STN_01", "Item.Caliber.72mm", "Meta.Damage.DamageType.Explosive"],
+     "armor_scope": "Each valid retained armor tag is evaluated at every hit location, without coverage filtering. Each listed item is evaluated alone; combined equipment needs joint evaluation."
     },
-    "items": [138]
+    "items": [136]
    },
-   "not_traced": ["armor-hook-paths", "exploding-hit", "radial-amount", "radial-context", "radial-split", "vehicle-weapon-tag"],
-   "doc": "bullet_event"
-  },
-  {
-   "id": "explosives-combatbow-arrow-explosive",
-   "category": "explosives",
-   "group": "Bow",
-   "label": "CombatBow (Arrow.Explosive)",
-   "damage_tags": ["Meta.Damage.Bullet.Arrow.Explosive"],
-   "uses_hit_location": true,
-   "radial_uses_hit_location": true,
-   "why": "Entry 5 selects the bone operation for a direct hit (Bullet), so the hit location sets the factor Universal × row Meta.Damage.Weapon.CombatBow (§7.1). Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not apply to them (verifier round 6 (doc text pending)); entry 5 still gives the bone factor, with W = 1.",
-   "rule_entries": [5, 6, 25, 145],
-   "armor_entries": [26, 27, 28, 29, 30, 31, 138, 140],
-   "radial_entries": [5, 6, 25, 26, 27, 28, 29, 30, 31, 105, 138, 140, 145],
-   "zone_multiplier": {"row": "Meta.Damage.Weapon.CombatBow"},
-   "values": {
-    "weapon": 143,
-    "weapon_tag": "Meta.Damage.Weapon.CombatBow",
-    "stats": 142,
-    "caliber": "Item.Caliber.Arrow.Explosive",
-    "projectile": 144,
-    "source_tag": "Meta.Damage.Bullet.Arrow.Explosive",
-    "source_context": ["Meta.Damage.Arms.High"],
-    "has_arming_delay": false,
-    "arming_delay": null,
-    "damage_values": {"BaseDamage": 150.0, "ExplosiveRadius": 400.0, "EffectiveExplosiveRadius": 200.0, "ExplosiveDamageFallOff": 1.0},
-    "damage_values_src": [144, "ProjectileStats.DamageValues"],
-    "direct": [
-     {"case": "direct_not_exploding", "S": 150.0, "S_src": [144, "ProjectileStats.DamageValues.BaseDamage"]}
-    ],
-    "direct_zones": {
-     "factor": {"k": 1.0},
-     "entries": [5],
-     "armor": {
-      "ID_HeavyArmor": {"k": 0.45, "entries": [26, 138]},
-      "ID_HeavyHelmet": {"k": 0.45, "entries": [30, 140]},
-      "ID_LightArmor": {"k": 0.7, "entries": [138]},
-      "ID_LightHelmet": {"k": 0.7, "entries": [140]},
-      "ID_MediumArmor": {"k": 0.6, "entries": [138]},
-      "ID_MediumHelmet": {"k": 0.6, "entries": [140]},
-      "ID_PilotHelmet": {"k": 0.7, "entries": [140]},
-      "ID_SuperHeavyArmor": {"k": 0.264, "entries": [27, 138]},
-      "ID_SuperHeavyHelmet": {"k": 0.264, "entries": [31, 140]},
-      "ID_TankHelmet": {"k": 0.45, "entries": [140]}
-     }
-    },
-    "falloff": {
-     "src": [142, "DistanceDamageFalloffCurve"],
-     "keys_m": [[0.0, 1.0], [100.0, 1.0], [500.0, 0.0], [1200.0, 0.0]],
-     "cubic": true
-    },
-    "radial": {
-     "zone_multiplier": {"row": null},
-     "rings": {
-      "inner": {
-       "tag": "Meta.Damage.Explosive.Radius.Inner",
-       "factor": {"k": 1.0},
-       "entries": [5],
-       "armor": {
-        "ID_HeavyArmor": {"k": 0.45, "entries": [26, 138]},
-        "ID_HeavyHelmet": {"k": 0.45, "entries": [30, 140]},
-        "ID_LightArmor": {"k": 0.7, "entries": [138]},
-        "ID_LightHelmet": {"k": 0.7, "entries": [140]},
-        "ID_MediumArmor": {"k": 0.6, "entries": [138]},
-        "ID_MediumHelmet": {"k": 0.6, "entries": [140]},
-        "ID_PilotHelmet": {"k": 0.7, "entries": [140]},
-        "ID_SuperHeavyArmor": {"k": 0.132, "entries": [27, 105, 138]},
-        "ID_SuperHeavyHelmet": {"k": 0.264, "entries": [31, 140]},
-        "ID_TankHelmet": {"k": 0.45, "entries": [140]}
-       }
-      },
-      "outer": {
-       "tag": "Meta.Damage.Explosive.Radius.Outer",
-       "factor": {"k": 1.0},
-       "entries": [5],
-       "armor": {
-        "ID_HeavyArmor": {"k": 0.45, "entries": [26, 138]},
-        "ID_HeavyHelmet": {"k": 0.45, "entries": [30, 140]},
-        "ID_LightArmor": {"k": 0.7, "entries": [138]},
-        "ID_LightHelmet": {"k": 0.7, "entries": [140]},
-        "ID_MediumArmor": {"k": 0.6, "entries": [138]},
-        "ID_MediumHelmet": {"k": 0.6, "entries": [140]},
-        "ID_PilotHelmet": {"k": 0.7, "entries": [140]},
-        "ID_SuperHeavyArmor": {"k": 0.132, "entries": [27, 105, 138]},
-        "ID_SuperHeavyHelmet": {"k": 0.264, "entries": [31, 140]},
-        "ID_TankHelmet": {"k": 0.45, "entries": [140]}
-       }
-      }
-     }
-    },
-    "items": [143]
-   },
-   "not_traced": ["armor-hook-paths", "caliber-parent-match", "exploding-hit", "radial-amount", "radial-context", "radial-split"],
+   "not_traced": [],
    "doc": "bullet_event"
   },
   {
@@ -4103,26 +3830,26 @@
    "damage_tags": ["Meta.Damage.Explosive.Drone", "Meta.Damage.Kinetic.Impact.ExplosiveBlunt"],
    "uses_hit_location": false,
    "radial_uses_hit_location": false,
-   "why": "Entry 7 matches the blunt hit, but §7.1 exempts the source tag Meta.Damage.Explosive.Drone: the bone factor is 1 everywhere. Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not apply to them (verifier round 6 (doc text pending)).",
+   "why": "Entry 7 matches the blunt hit, but §7.1 exempts the source tag Meta.Damage.Explosive.Drone: the bone factor is 1 everywhere. Blast hits carry the hit bone's location but never ExplosiveBlunt, so entries 7, 117, 142 and 143 do not apply to them (verified native trace (rounds 6 and 8)).",
    "rule_entries": [7, 117],
    "armor_entries": [105, 142, 143],
    "radial_entries": [105],
    "zone_multiplier": null,
    "values": {
-    "weapon": 146,
+    "weapon": 143,
     "weapon_tag": "Meta.Damage.Weapon.Vehicle.Turret.STN_05",
-    "stats": 147,
+    "stats": 144,
     "caliber": "Item.Caliber.DroneProjectile",
-    "projectile": 145,
+    "projectile": 142,
     "source_tag": "Meta.Damage.Explosive.Drone",
     "source_context": [],
     "has_arming_delay": true,
     "arming_delay": 0.1,
     "damage_values": {"BaseDamage": 120.0, "ExplosiveRadius": 1000.0, "MinimumExplosiveDamage": 15.0, "EffectiveExplosiveRadius": 500.0, "ExplosiveDamageFallOff": 0.45, "ExplosiveBluntDamage": 100.0},
-    "damage_values_src": [145, "ProjectileStats.DamageValues"],
+    "damage_values_src": [142, "ProjectileStats.DamageValues"],
     "direct": [
-     {"case": "before_arming", "S": 100.0, "S_src": [145, "ProjectileStats.DamageValues.ExplosiveBluntDamage"]},
-     {"case": "direct_not_exploding", "S": 120.0, "S_src": [145, "ProjectileStats.DamageValues.BaseDamage"]}
+     {"case": "before_arming", "S": 100.0, "S_src": [142, "ProjectileStats.DamageValues.ExplosiveBluntDamage"]},
+     {"case": "direct_not_exploding", "S": 120.0, "S_src": [142, "ProjectileStats.DamageValues.BaseDamage"]}
     ],
     "direct_zones": {
      "factor": {"k": 6.0},
@@ -4160,11 +3887,13 @@
         "ID_SuperHeavyArmor": {"k": 0.5, "entries": [105]}
        }
       }
-     }
+     },
+     "source_context": ["Meta.Damage.Weapon.Vehicle.Turret.STN_05", "Item.Caliber.DroneProjectile", "Meta.Damage.DamageType.Explosive"],
+     "armor_scope": "Each valid retained armor tag is evaluated at every hit location, without coverage filtering. Each listed item is evaluated alone; combined equipment needs joint evaluation."
     },
-    "items": [146]
+    "items": [143]
    },
-   "not_traced": ["armor-hook-paths", "exploding-hit", "radial-amount", "radial-context", "radial-split", "vehicle-weapon-tag"],
+   "not_traced": [],
    "doc": "bullet_event"
   },
   {
@@ -4172,171 +3901,360 @@
    "category": "explosives",
    "group": "Thrown and placed",
    "label": "M67 frag grenade",
-   "damage_tags": ["Meta.Damage.Explosive.Grenade"],
+   "damage_tags": ["Meta.Damage.Grenade", "Meta.Damage.Explosive.Rocket.60mm", "Meta.Damage.DamageType.Explosive"],
    "uses_hit_location": false,
-   "why": "The detonation is not traced: no amount, tags or path (0x6CA8730 against a character is only the thrown object's contact, see Thrown object contact). The entries listed are those whose source requirements this tag meets.",
+   "why": "Detonation defaults include native inheritance and reach the shared radial evaluator. Apply the traced amount/falloff per kept component hit, then its rule factor. Source root and appended context remain distinct; frag retains its inherited 60mm context. Trigger timing and complete Molotov patch geometry/lifetime are not modelled.",
    "rule_entries": [],
-   "armor_entries": [105],
+   "armor_entries": [102, 103, 104, 105],
    "friendly_entries": [],
    "zone_multiplier": null,
    "values": {
-    "item": 148,
+    "item": 145,
     "actor_class_field": "ThrowableClass",
     "actor_class": "/Game/Weapons/Grenades/B_FragGrenade.B_FragGrenade_C",
     "actor_class_in_data": false,
-    "tag": "Meta.Damage.Explosive.Grenade",
+    "tag": "Meta.Damage.Grenade",
     "tag_in_DefaultGameplayTags": false,
     "entries_naming_tag": [],
-    "tag_note": "the gameplay tag named after this item; which tags the detonation carries is not traced",
-    "ring_entries": {"inner": [], "outer": []}
+    "source_context": ["Meta.Damage.Explosive.Rocket.60mm", "Meta.Damage.DamageType.Explosive"],
+    "damage_values": {"BaseDamage": 100, "ExplosiveRadius": 1000, "EffectiveExplosiveRadius": 500, "MinimumExplosiveDamage": 10, "ExplosiveDamageFallOff": 1},
+    "reviewed_blueprint": "/Game/Weapons/Grenades/B_FragGrenade",
+    "reviewed_defaults_src": [146, "actors.M67 frag grenade"],
+    "radial": {
+     "zone_multiplier": null,
+     "rings": {
+      "inner": {
+       "tag": "Meta.Damage.Explosive.Radius.Inner",
+       "factor": {"k": 1.0},
+       "entries": [],
+       "armor": {
+        "ID_HeavyArmor": {"k": 0.65, "entries": [104]},
+        "ID_LightArmor": {"k": 0.85, "entries": [102]},
+        "ID_MediumArmor": {"k": 0.75, "entries": [103]},
+        "ID_SuperHeavyArmor": {"k": 0.5, "entries": [105]}
+       }
+      },
+      "outer": {
+       "tag": "Meta.Damage.Explosive.Radius.Outer",
+       "factor": {"k": 1.0},
+       "entries": [],
+       "armor": {
+        "ID_HeavyArmor": {"k": 0.65, "entries": [104]},
+        "ID_LightArmor": {"k": 0.85, "entries": [102]},
+        "ID_MediumArmor": {"k": 0.75, "entries": [103]},
+        "ID_SuperHeavyArmor": {"k": 0.5, "entries": [105]}
+       }
+      }
+     },
+     "source_context": ["Meta.Damage.Explosive.Rocket.60mm", "Meta.Damage.DamageType.Explosive"],
+     "armor_scope": "Retained armor tags apply without coverage filtering; each item is evaluated alone."
+    }
    },
-   "not_traced": ["explosive-actors", "armor-hook-paths"],
-   "doc": "callers"
+   "not_traced": [],
+   "doc": "callers",
+   "radial_entries": [102, 103, 104, 105],
+   "radial_uses_hit_location": false
   },
   {
    "id": "explosives-c4",
    "category": "explosives",
    "group": "Thrown and placed",
    "label": "C4",
-   "damage_tags": ["Meta.Damage.Explosive.Utility.C4"],
+   "damage_tags": ["Meta.Damage.Explosive.Utility.C4", "Meta.Damage.Explosive.Utility.C4", "Meta.Damage.DamageType.Explosive"],
    "uses_hit_location": false,
-   "why": "The detonation is not traced: no amount, tags or path (0x6CA8730 against a character is only the thrown object's contact, see Thrown object contact). The entries listed are those whose source requirements this tag meets.",
+   "why": "Detonation defaults include native inheritance and reach the shared radial evaluator. Apply the traced amount/falloff per kept component hit, then its rule factor. Source root and appended context remain distinct; frag retains its inherited 60mm context. Trigger timing and complete Molotov patch geometry/lifetime are not modelled.",
    "rule_entries": [116],
    "armor_entries": [105],
    "friendly_entries": [],
    "zone_multiplier": null,
    "values": {
-    "item": 149,
+    "item": 147,
     "actor_class_field": "ThrowableClass",
     "actor_class": "/C4/Data/Blueprints/B_ThrowableC4.B_ThrowableC4_C",
     "actor_class_in_data": false,
     "tag": "Meta.Damage.Explosive.Utility.C4",
     "tag_in_DefaultGameplayTags": true,
     "entries_naming_tag": [116],
-    "tag_note": "the gameplay tag named after this item; which tags the detonation carries is not traced",
-    "ring_entries": {"inner": [], "outer": [116]}
+    "source_context": ["Meta.Damage.Explosive.Utility.C4", "Meta.Damage.DamageType.Explosive"],
+    "damage_values": {"BaseDamage": 250, "ExplosiveRadius": 600, "EffectiveExplosiveRadius": 250, "MinimumExplosiveDamage": 20, "ExplosiveDamageFallOff": 1},
+    "reviewed_blueprint": "/C4/Data/Blueprints/B_ThrowableC4",
+    "reviewed_defaults_src": [146, "actors.C4"],
+    "radial": {
+     "zone_multiplier": null,
+     "rings": {
+      "inner": {
+       "tag": "Meta.Damage.Explosive.Radius.Inner",
+       "factor": {"k": 1.0},
+       "entries": [],
+       "armor": {
+        "ID_SuperHeavyArmor": {"k": 0.5, "entries": [105]}
+       }
+      },
+      "outer": {
+       "tag": "Meta.Damage.Explosive.Radius.Outer",
+       "factor": {"k": 0.6},
+       "entries": [116],
+       "armor": {
+        "ID_SuperHeavyArmor": {"k": 0.5, "entries": [105]}
+       }
+      }
+     },
+     "source_context": ["Meta.Damage.Explosive.Utility.C4", "Meta.Damage.DamageType.Explosive"],
+     "armor_scope": "Retained armor tags apply without coverage filtering; each item is evaluated alone."
+    }
    },
-   "not_traced": ["explosive-actors", "armor-hook-paths"],
-   "doc": "callers"
+   "not_traced": [],
+   "doc": "callers",
+   "radial_entries": [105, 116],
+   "radial_uses_hit_location": false
   },
   {
    "id": "explosives-at-mine",
    "category": "explosives",
    "group": "Thrown and placed",
    "label": "AT mine",
-   "damage_tags": ["Meta.Damage.Explosive.Utility.ATMine"],
+   "damage_tags": ["Meta.Damage.Explosive.Utility.ATMine", "Meta.Damage.Explosive.Utility.ATMine"],
    "uses_hit_location": false,
-   "why": "The detonation is not traced: no amount, tags or path (0x6CA8730 against a character is only the thrown object's contact, see Thrown object contact). The entries listed are those whose source requirements this tag meets.",
+   "why": "Detonation defaults include native inheritance and reach the shared radial evaluator. Apply the traced amount/falloff per kept component hit, then its rule factor. Source root and appended context remain distinct; frag retains its inherited 60mm context. Trigger timing and complete Molotov patch geometry/lifetime are not modelled.",
    "rule_entries": [],
    "armor_entries": [105],
    "friendly_entries": [],
    "zone_multiplier": null,
    "values": {
-    "item": 150,
+    "item": 148,
     "actor_class_field": "PlaceableClass",
     "actor_class": "BlueprintGeneratedClass'B_AT_Mine_C'",
     "actor_class_in_data": false,
     "tag": "Meta.Damage.Explosive.Utility.ATMine",
     "tag_in_DefaultGameplayTags": true,
     "entries_naming_tag": [],
-    "tag_note": "the gameplay tag named after this item; which tags the detonation carries is not traced",
-    "ring_entries": {"inner": [], "outer": []}
+    "source_context": ["Meta.Damage.Explosive.Utility.ATMine"],
+    "damage_values": {"BaseDamage": 300, "ExplosiveRadius": 750, "EffectiveExplosiveRadius": 375, "MinimumExplosiveDamage": 50, "ExplosiveDamageFallOff": 0.5},
+    "reviewed_blueprint": "/AT_mine/Data/Blueprints/B_AT_Mine",
+    "reviewed_defaults_src": [146, "actors.AT mine"],
+    "radial": {
+     "zone_multiplier": null,
+     "rings": {
+      "inner": {
+       "tag": "Meta.Damage.Explosive.Radius.Inner",
+       "factor": {"k": 1.0},
+       "entries": [],
+       "armor": {
+        "ID_SuperHeavyArmor": {"k": 0.5, "entries": [105]}
+       }
+      },
+      "outer": {
+       "tag": "Meta.Damage.Explosive.Radius.Outer",
+       "factor": {"k": 1.0},
+       "entries": [],
+       "armor": {
+        "ID_SuperHeavyArmor": {"k": 0.5, "entries": [105]}
+       }
+      }
+     },
+     "source_context": ["Meta.Damage.Explosive.Utility.ATMine"],
+     "armor_scope": "Retained armor tags apply without coverage filtering; each item is evaluated alone."
+    }
    },
-   "not_traced": ["explosive-actors", "armor-hook-paths"],
-   "doc": "callers"
+   "not_traced": [],
+   "doc": "callers",
+   "radial_entries": [105],
+   "radial_uses_hit_location": false
   },
   {
    "id": "explosives-claymore",
    "category": "explosives",
    "group": "Thrown and placed",
    "label": "Claymore",
-   "damage_tags": ["Meta.Damage.Explosive.Utility.Claymore"],
+   "damage_tags": ["Meta.Damage.Explosive.Utility.Claymore", "Meta.Damage.DamageType.Explosive"],
    "uses_hit_location": false,
-   "why": "The detonation is not traced: no amount, tags or path (0x6CA8730 against a character is only the thrown object's contact, see Thrown object contact). The entries listed are those whose source requirements this tag meets.",
+   "why": "Detonation defaults include native inheritance and reach the shared radial evaluator. Apply the traced amount/falloff per kept component hit, then its rule factor. Source root and appended context remain distinct; frag retains its inherited 60mm context. Trigger timing and complete Molotov patch geometry/lifetime are not modelled.",
    "rule_entries": [],
    "armor_entries": [105],
    "friendly_entries": [],
    "zone_multiplier": null,
    "values": {
-    "item": 151,
+    "item": 149,
     "actor_class_field": "PlaceableClass",
     "actor_class": "BlueprintGeneratedClass'B_Claymore_C'",
     "actor_class_in_data": false,
     "tag": "Meta.Damage.Explosive.Utility.Claymore",
     "tag_in_DefaultGameplayTags": true,
     "entries_naming_tag": [],
-    "tag_note": "the gameplay tag named after this item; which tags the detonation carries is not traced",
-    "ring_entries": {"inner": [], "outer": []}
+    "source_context": ["Meta.Damage.DamageType.Explosive"],
+    "damage_values": {"BaseDamage": 150, "ExplosiveRadius": 300, "EffectiveExplosiveRadius": 150, "MinimumExplosiveDamage": 30, "ExplosiveDamageFallOff": 0.5},
+    "reviewed_blueprint": "/Claymore/Data/Blueprints/B_Claymore",
+    "reviewed_defaults_src": [146, "actors.Claymore"],
+    "radial": {
+     "zone_multiplier": null,
+     "rings": {
+      "inner": {
+       "tag": "Meta.Damage.Explosive.Radius.Inner",
+       "factor": {"k": 1.0},
+       "entries": [],
+       "armor": {
+        "ID_SuperHeavyArmor": {"k": 0.5, "entries": [105]}
+       }
+      },
+      "outer": {
+       "tag": "Meta.Damage.Explosive.Radius.Outer",
+       "factor": {"k": 1.0},
+       "entries": [],
+       "armor": {
+        "ID_SuperHeavyArmor": {"k": 0.5, "entries": [105]}
+       }
+      }
+     },
+     "source_context": ["Meta.Damage.DamageType.Explosive"],
+     "armor_scope": "Retained armor tags apply without coverage filtering; each item is evaluated alone."
+    }
    },
-   "not_traced": ["explosive-actors", "armor-hook-paths"],
-   "doc": "callers"
+   "not_traced": [],
+   "doc": "callers",
+   "radial_entries": [105],
+   "radial_uses_hit_location": false
   },
   {
    "id": "explosives-ied",
    "category": "explosives",
    "group": "Thrown and placed",
    "label": "IED",
-   "damage_tags": ["Meta.Damage.Explosive.Utility.IED"],
+   "damage_tags": ["Meta.Damage.Explosive.Utility.IED", "Meta.Damage.Explosive.Utility.IED", "Meta.Damage.DamageType.Explosive"],
    "uses_hit_location": false,
-   "why": "The detonation is not traced: no amount, tags or path (0x6CA8730 against a character is only the thrown object's contact, see Thrown object contact). The entries listed are those whose source requirements this tag meets.",
+   "why": "Detonation defaults include native inheritance and reach the shared radial evaluator. Apply the traced amount/falloff per kept component hit, then its rule factor. Source root and appended context remain distinct; frag retains its inherited 60mm context. Trigger timing and complete Molotov patch geometry/lifetime are not modelled.",
    "rule_entries": [],
    "armor_entries": [105],
    "friendly_entries": [],
    "zone_multiplier": null,
    "values": {
-    "item": 152,
+    "item": 150,
     "actor_class_field": null,
     "actor_class": null,
     "actor_class_in_data": false,
     "tag": "Meta.Damage.Explosive.Utility.IED",
     "tag_in_DefaultGameplayTags": true,
     "entries_naming_tag": [],
-    "tag_note": "the gameplay tag named after this item; which tags the detonation carries is not traced",
-    "ring_entries": {"inner": [], "outer": []}
+    "source_context": ["Meta.Damage.Explosive.Utility.IED", "Meta.Damage.DamageType.Explosive"],
+    "damage_values": {"BaseDamage": 300, "ExplosiveRadius": 800, "EffectiveExplosiveRadius": 400, "MinimumExplosiveDamage": 60, "ExplosiveDamageFallOff": 1},
+    "reviewed_blueprint": "/IED/Blueprints/B_ThrowableIED",
+    "reviewed_defaults_src": [146, "actors.IED"],
+    "radial": {
+     "zone_multiplier": null,
+     "rings": {
+      "inner": {
+       "tag": "Meta.Damage.Explosive.Radius.Inner",
+       "factor": {"k": 1.0},
+       "entries": [],
+       "armor": {
+        "ID_SuperHeavyArmor": {"k": 0.5, "entries": [105]}
+       }
+      },
+      "outer": {
+       "tag": "Meta.Damage.Explosive.Radius.Outer",
+       "factor": {"k": 1.0},
+       "entries": [],
+       "armor": {
+        "ID_SuperHeavyArmor": {"k": 0.5, "entries": [105]}
+       }
+      }
+     },
+     "source_context": ["Meta.Damage.Explosive.Utility.IED", "Meta.Damage.DamageType.Explosive"],
+     "armor_scope": "Retained armor tags apply without coverage filtering; each item is evaluated alone."
+    }
    },
-   "not_traced": ["explosive-actors", "armor-hook-paths"],
-   "doc": "callers"
+   "not_traced": [],
+   "doc": "callers",
+   "radial_entries": [105],
+   "radial_uses_hit_location": false
   },
   {
    "id": "explosives-molotov",
    "category": "explosives",
    "group": "Thrown and placed",
    "label": "Molotov",
-   "damage_tags": ["Meta.Damage.Explosive.Utility.Molotov"],
+   "damage_tags": ["Meta.Damage.Molotov", "Meta.Damage.Molotov", "Meta.Damage.DamageType.Explosive"],
    "uses_hit_location": false,
-   "why": "The detonation is not traced: no amount, tags or path (0x6CA8730 against a character is only the thrown object's contact, see Thrown object contact). The entries listed are those whose source requirements this tag meets.",
+   "why": "Detonation defaults include native inheritance and reach the shared radial evaluator. Apply the traced amount/falloff per kept component hit, then its rule factor. Source root and appended context remain distinct; frag retains its inherited 60mm context. Trigger timing and complete Molotov patch geometry/lifetime are not modelled.",
    "rule_entries": [],
-   "armor_entries": [105, 106],
+   "armor_entries": [105],
    "friendly_entries": [],
    "zone_multiplier": null,
    "values": {
-    "item": 153,
+    "item": 151,
     "actor_class_field": "ThrowableClass",
     "actor_class": "/Molotov/Data/Blueprints/B_Molotov.B_Molotov_C",
     "actor_class_in_data": false,
-    "tag": "Meta.Damage.Explosive.Utility.Molotov",
+    "tag": "Meta.Damage.Molotov",
     "tag_in_DefaultGameplayTags": false,
-    "entries_naming_tag": [106],
-    "tag_note": "the gameplay tag named after this item; which tags the detonation carries is not traced",
-    "ring_entries": {"inner": [], "outer": []}
+    "entries_naming_tag": [],
+    "source_context": ["Meta.Damage.Molotov", "Meta.Damage.DamageType.Explosive"],
+    "damage_values": {"BaseDamage": 40, "ExplosiveRadius": 500, "EffectiveExplosiveRadius": 250, "MinimumExplosiveDamage": 10, "ExplosiveDamageFallOff": 1},
+    "reviewed_blueprint": "/Molotov/Data/Blueprints/B_Molotov",
+    "reviewed_defaults_src": [146, "actors.Molotov"],
+    "radial": {
+     "zone_multiplier": null,
+     "rings": {
+      "inner": {
+       "tag": "Meta.Damage.Explosive.Radius.Inner",
+       "factor": {"k": 1.0},
+       "entries": [],
+       "armor": {
+        "ID_SuperHeavyArmor": {"k": 0.5, "entries": [105]}
+       }
+      },
+      "outer": {
+       "tag": "Meta.Damage.Explosive.Radius.Outer",
+       "factor": {"k": 1.0},
+       "entries": [],
+       "armor": {
+        "ID_SuperHeavyArmor": {"k": 0.5, "entries": [105]}
+       }
+      }
+     },
+     "source_context": ["Meta.Damage.Molotov", "Meta.Damage.DamageType.Explosive"],
+     "armor_scope": "Retained armor tags apply without coverage filtering; each item is evaluated alone."
+    },
+    "sustained_fire": {"player_starting_damage": 15, "vehicle_health_delta": 2, "timer_period_seconds": 0.4, "player_damage_type": "Meta.Damage.DamageType.Enviroment", "condition": "Eligible actor in the fire-field loop; full patch geometry/lifetime not traced."}
    },
-   "not_traced": ["explosive-actors", "armor-hook-paths"],
-   "doc": "callers"
+   "not_traced": [],
+   "doc": "callers",
+   "radial_entries": [105],
+   "radial_uses_hit_location": false
   },
   {
    "id": "explosives-backblast-cgm4",
    "category": "explosives",
    "group": "Back-blast",
    "label": "CGM4 back-blast",
-   "damage_tags": ["Meta.Damage.DamageType.BackBlast"],
+   "damage_tags": ["Meta.Damage.Weapon.Launcher.AT4", "Meta.Damage.DamageType.BackBlast"],
    "uses_hit_location": false,
-   "why": "On foot the back-blast traces a cone (0x6F042A0); in a seat it hits the occupants of the shooter's vehicle, the shooter included, with synthetic hits (0x6F06EB0) (verifier round 6 (doc text pending)). No infantry rule entry requires Meta.Damage.DamageType.BackBlast; the source tag and amount are not traced.",
+   "why": "On foot the back-blast traces a cone (0x6F042A0); in a seat it hits the occupants of the shooter's vehicle, the shooter included, with synthetic hits (0x6F06EB0) (verified native trace (rounds 6 and 8)). Normal handheld source is the ranged fragment's damage entity plus BackBlast; no caliber is appended. On foot S = minimum + (base − minimum) × clamped distance/angle curve product, subject to cone/range guards. Seated S uses base × health scalar × clamped vehicle scalar × distance curve; synthetic hit has no bone. The reflected/secondary foot branch and full gather are not modelled.",
    "rule_entries": [],
    "armor_entries": [],
    "friendly_entries": [],
    "zone_multiplier": null,
-   "values": {"weapon": 38, "config": [39, "BackBlast"], "enabled": true, "on_foot": "0x6F042A0: cone trace", "seated": "0x6F06EB0: synthetic hits on the occupants of the shooter's vehicle, shooter included", "field_names": "hashed in the export and the SDK (FWDBackBlastConfig)"},
-   "not_traced": ["backblast", "armor-hook-paths"],
+   "values": {
+    "weapon": 38,
+    "config": [39, "BackBlast"],
+    "enabled": true,
+    "parameters": {"angle_limit_degrees": 45.0, "distance_limit_cm": 600.0, "base": 150.0, "minimum": 40.0, "seated_distance_divisor_cm": 1200.0, "seated_health_scalar": 0.45, "vehicle_scalar": 0.8},
+    "on_foot_formula": "S = M + (B − M) × clamp(Fd(d/D) × Fa(angle/A), 0, 1); d <= 0.0001 or outside cone/range gives 0",
+    "seated_formula": "S = max(B × K × clamp(C,0,1) × Fc(clamp(actorRootDistance/Dc,0,1)),0); P <= 0 or Dc <= 0 gives 0",
+    "on_foot": "0x6F042A0: cone trace",
+    "seated": "0x6F06EB0: synthetic hits on the occupants of the shooter's vehicle, shooter included",
+    "vehicle_overrides": [
+     {
+      "Key": {"TagName": "Vehicle.Variant.Land.Wheeled.Bobcat.Default"},
+      "Value": {}
+     },
+     {
+      "Key": {"TagName": "Vehicle.Variant.Land.Wheeled.DuneBuggy.Default"},
+      "Value": {}
+     }
+    ],
+    "evidence": "docs/evidence/round8-backblast.md"
+   },
+   "not_traced": [],
    "doc": "callers"
   },
   {
@@ -4344,15 +4262,35 @@
    "category": "explosives",
    "group": "Back-blast",
    "label": "Launcher_04 back-blast",
-   "damage_tags": ["Meta.Damage.DamageType.BackBlast"],
+   "damage_tags": ["Meta.Damage.Weapon.Launcher.AT4", "Meta.Damage.DamageType.BackBlast"],
    "uses_hit_location": false,
-   "why": "On foot the back-blast traces a cone (0x6F042A0); in a seat it hits the occupants of the shooter's vehicle, the shooter included, with synthetic hits (0x6F06EB0) (verifier round 6 (doc text pending)). No infantry rule entry requires Meta.Damage.DamageType.BackBlast; the source tag and amount are not traced.",
+   "why": "On foot the back-blast traces a cone (0x6F042A0); in a seat it hits the occupants of the shooter's vehicle, the shooter included, with synthetic hits (0x6F06EB0) (verified native trace (rounds 6 and 8)). Normal handheld source is the ranged fragment's damage entity plus BackBlast; no caliber is appended. On foot S = minimum + (base − minimum) × clamped distance/angle curve product, subject to cone/range guards. Seated S uses base × health scalar × clamped vehicle scalar × distance curve; synthetic hit has no bone. The reflected/secondary foot branch and full gather are not modelled.",
    "rule_entries": [],
    "armor_entries": [],
    "friendly_entries": [],
    "zone_multiplier": null,
-   "values": {"weapon": 42, "config": [43, "BackBlast"], "enabled": true, "on_foot": "0x6F042A0: cone trace", "seated": "0x6F06EB0: synthetic hits on the occupants of the shooter's vehicle, shooter included", "field_names": "hashed in the export and the SDK (FWDBackBlastConfig)"},
-   "not_traced": ["backblast", "armor-hook-paths"],
+   "values": {
+    "weapon": 41,
+    "config": [42, "BackBlast"],
+    "enabled": true,
+    "parameters": {"angle_limit_degrees": 35.0, "distance_limit_cm": 200.0, "base": 80.0, "minimum": 15.0, "seated_distance_divisor_cm": 300.0, "seated_health_scalar": 0.3, "vehicle_scalar": 1.0},
+    "on_foot_formula": "S = M + (B − M) × clamp(Fd(d/D) × Fa(angle/A), 0, 1); d <= 0.0001 or outside cone/range gives 0",
+    "seated_formula": "S = max(B × K × clamp(C,0,1) × Fc(clamp(actorRootDistance/Dc,0,1)),0); P <= 0 or Dc <= 0 gives 0",
+    "on_foot": "0x6F042A0: cone trace",
+    "seated": "0x6F06EB0: synthetic hits on the occupants of the shooter's vehicle, shooter included",
+    "vehicle_overrides": [
+     {
+      "Key": {"TagName": "Vehicle.Variant.Land.Wheeled.Bobcat.Default"},
+      "Value": {}
+     },
+     {
+      "Key": {"TagName": "Vehicle.Variant.Land.Wheeled.DuneBuggy.Default"},
+      "Value": {}
+     }
+    ],
+    "evidence": "docs/evidence/round8-backblast.md"
+   },
+   "not_traced": [],
    "doc": "callers"
   },
   {
@@ -4360,15 +4298,35 @@
    "category": "explosives",
    "group": "Back-blast",
    "label": "RPG7 back-blast",
-   "damage_tags": ["Meta.Damage.DamageType.BackBlast"],
+   "damage_tags": ["Meta.Damage.Weapon.Launcher.AT4", "Meta.Damage.DamageType.BackBlast"],
    "uses_hit_location": false,
-   "why": "On foot the back-blast traces a cone (0x6F042A0); in a seat it hits the occupants of the shooter's vehicle, the shooter included, with synthetic hits (0x6F06EB0) (verifier round 6 (doc text pending)). No infantry rule entry requires Meta.Damage.DamageType.BackBlast; the source tag and amount are not traced.",
+   "why": "On foot the back-blast traces a cone (0x6F042A0); in a seat it hits the occupants of the shooter's vehicle, the shooter included, with synthetic hits (0x6F06EB0) (verified native trace (rounds 6 and 8)). Normal handheld source is the ranged fragment's damage entity plus BackBlast; no caliber is appended. On foot S = minimum + (base − minimum) × clamped distance/angle curve product, subject to cone/range guards. Seated S uses base × health scalar × clamped vehicle scalar × distance curve; synthetic hit has no bone. The reflected/secondary foot branch and full gather are not modelled.",
    "rule_entries": [],
    "armor_entries": [],
    "friendly_entries": [],
    "zone_multiplier": null,
-   "values": {"weapon": 48, "config": [49, "BackBlast"], "enabled": true, "on_foot": "0x6F042A0: cone trace", "seated": "0x6F06EB0: synthetic hits on the occupants of the shooter's vehicle, shooter included", "field_names": "hashed in the export and the SDK (FWDBackBlastConfig)"},
-   "not_traced": ["backblast", "armor-hook-paths"],
+   "values": {
+    "weapon": 47,
+    "config": [48, "BackBlast"],
+    "enabled": true,
+    "parameters": {"angle_limit_degrees": 40.0, "distance_limit_cm": 500.0, "base": 130.0, "minimum": 30.0, "seated_distance_divisor_cm": 1000.0, "seated_health_scalar": 0.7, "vehicle_scalar": 0.8},
+    "on_foot_formula": "S = M + (B − M) × clamp(Fd(d/D) × Fa(angle/A), 0, 1); d <= 0.0001 or outside cone/range gives 0",
+    "seated_formula": "S = max(B × K × clamp(C,0,1) × Fc(clamp(actorRootDistance/Dc,0,1)),0); P <= 0 or Dc <= 0 gives 0",
+    "on_foot": "0x6F042A0: cone trace",
+    "seated": "0x6F06EB0: synthetic hits on the occupants of the shooter's vehicle, shooter included",
+    "vehicle_overrides": [
+     {
+      "Key": {"TagName": "Vehicle.Variant.Land.Wheeled.Bobcat.Default"},
+      "Value": {}
+     },
+     {
+      "Key": {"TagName": "Vehicle.Variant.Land.Wheeled.DuneBuggy.Default"},
+      "Value": {}
+     }
+    ],
+    "evidence": "docs/evidence/round8-backblast.md"
+   },
+   "not_traced": [],
    "doc": "callers"
   },
   {
@@ -4378,13 +4336,29 @@
    "label": "Vehicle explosion (occupants)",
    "damage_tags": ["Meta.Damage.Explosive.VehicleExplosion", "Meta.Damage.DamageType.Explosive"],
    "uses_hit_location": false,
-   "why": "Built by UWDVehicleOperatorComponent (§1.1, VehicleDamagePipeline §1); amount and hit location are not traced. No bone entry matches these tags.",
+   "why": "Vehicle-operator slot 160 starts at 1000 before ModifyDamage. Its synthetic hit has no bone or explicit hit location, so no bone rule applies. The appended tags are context, in addition to the copied source actor entity.",
    "rule_entries": [],
    "armor_entries": [105],
    "friendly_entries": [],
    "zone_multiplier": null,
-   "values": {"caller": "UWDVehicleOperatorComponent slots 160/161 (0x7692B60, 0x768ED20)"},
-   "not_traced": ["occupant-damage", "armor-hook-paths"],
+   "values": {"caller": "UWDVehicleOperatorComponent slot 160 (0x7692B60)", "starting_amount": 1000},
+   "not_traced": [],
+   "doc": "callers"
+  },
+  {
+   "id": "other-vehicle-occupants",
+   "category": "other",
+   "group": "Impact",
+   "label": "Vehicle environment (occupants)",
+   "damage_tags": ["Meta.Damage.Vehicle", "Meta.Damage.DamageType.Enviroment"],
+   "uses_hit_location": false,
+   "why": "Vehicle-operator slot 161 forwards the caller's float before ModifyDamage. The synthetic hit has no bone or explicit hit location. Appended context tags supplement the copied source actor entity; the amount is not a fixed cooked weapon value.",
+   "rule_entries": [],
+   "armor_entries": [],
+   "friendly_entries": [],
+   "zone_multiplier": null,
+   "values": {"caller": "UWDVehicleOperatorComponent slot 161 (0x768ED20)", "starting_amount": "caller supplied"},
+   "not_traced": [],
    "doc": "callers"
   },
   {
@@ -4394,20 +4368,20 @@
    "label": "Fists",
    "damage_tags": ["Meta.Damage.Utility.Fists", "Meta.Damage.DamageType.Melee"],
    "uses_hit_location": false,
-   "why": "No bone entry matches a melee source (entries 5, 7, 10 need Bullet, ExplosiveBlunt or Cannon, §3.1), so the body takes the same factor everywhere. Entry 144 applies armor durability (1 − R/100, §7.5) to an armored target if the DamageType.Melee tag and the armor tag reach the event, which is not traced.",
+   "why": "No bone entry matches a melee source (entries 5, 7, 10 need Bullet, ExplosiveBlunt or Cannon, §3.1). The traced character melee Blueprints supply no hit bone/location and evaluate the original event, ignoring the armor hook's returned copy. DamageType.Melee reaches entry 144 unless the extension overrides it. The full target context is recovered; combined equipment needs its real context order, not projectile coverage selection.",
    "rule_entries": [],
    "armor_entries": [144],
    "friendly_entries": [],
    "zone_multiplier": null,
    "values": {
-    "item": 154,
+    "item": 152,
     "actions": [
-     {"action": "Action.Player.Melee.PrimaryUse", "damage": 25.0, "src": [154, "WDItemExtensionData_CharacterMelee.MeleeActions[Action.Player.Melee.PrimaryUse].Damage"]},
-     {"action": "Action.Player.Melee.SecondaryUse", "damage": 25.0, "src": [154, "WDItemExtensionData_CharacterMelee.MeleeActions[Action.Player.Melee.SecondaryUse].Damage"]}
+     {"action": "Action.Player.Melee.PrimaryUse", "damage": 25.0, "src": [152, "WDItemExtensionData_CharacterMelee.MeleeActions[Action.Player.Melee.PrimaryUse].Damage"]},
+     {"action": "Action.Player.Melee.SecondaryUse", "damage": 25.0, "src": [152, "WDItemExtensionData_CharacterMelee.MeleeActions[Action.Player.Melee.SecondaryUse].Damage"]}
     ],
     "armor_factor_entry_144": {"ID_HeavyArmor": 0.5, "ID_LightArmor": 0.7, "ID_MediumArmor": 0.6, "ID_SuperHeavyArmor": 0.4}
    },
-   "not_traced": ["melee-path", "armor-hook-paths"],
+   "not_traced": [],
    "doc": "armor_durability"
   },
   {
@@ -4417,19 +4391,19 @@
    "label": "LargeHammer",
    "damage_tags": ["Meta.Damage.Utility.LargeHammer", "Meta.Damage.DamageType.Melee"],
    "uses_hit_location": false,
-   "why": "No bone entry matches a melee source (entries 5, 7, 10 need Bullet, ExplosiveBlunt or Cannon, §3.1), so the body takes the same factor everywhere. Entry 144 applies armor durability (1 − R/100, §7.5) to an armored target if the DamageType.Melee tag and the armor tag reach the event, which is not traced.",
+   "why": "No bone entry matches a melee source (entries 5, 7, 10 need Bullet, ExplosiveBlunt or Cannon, §3.1). The traced character melee Blueprints supply no hit bone/location and evaluate the original event, ignoring the armor hook's returned copy. DamageType.Melee reaches entry 144 unless the extension overrides it. The full target context is recovered; combined equipment needs its real context order, not projectile coverage selection.",
    "rule_entries": [],
    "armor_entries": [144],
    "friendly_entries": [9],
    "zone_multiplier": null,
    "values": {
-    "item": 155,
+    "item": 153,
     "actions": [
-     {"action": "Action.BuildBuildable.Construct", "damage": 150.0, "src": [155, "WDItemExtensionData_CharacterMelee.MeleeActions[Action.BuildBuildable.Construct].Damage"]}
+     {"action": "Action.BuildBuildable.Construct", "damage": 150.0, "src": [153, "WDItemExtensionData_CharacterMelee.MeleeActions[Action.BuildBuildable.Construct].Damage"]}
     ],
     "armor_factor_entry_144": {"ID_HeavyArmor": 0.5, "ID_LightArmor": 0.7, "ID_MediumArmor": 0.6, "ID_SuperHeavyArmor": 0.4}
    },
-   "not_traced": ["melee-path", "armor-hook-paths"],
+   "not_traced": [],
    "doc": "armor_durability"
   },
   {
@@ -4439,19 +4413,19 @@
    "label": "MediumHammer",
    "damage_tags": ["Meta.Damage.Utility.MediumHammer", "Meta.Damage.DamageType.Melee"],
    "uses_hit_location": false,
-   "why": "No bone entry matches a melee source (entries 5, 7, 10 need Bullet, ExplosiveBlunt or Cannon, §3.1), so the body takes the same factor everywhere. Entry 144 applies armor durability (1 − R/100, §7.5) to an armored target if the DamageType.Melee tag and the armor tag reach the event, which is not traced.",
+   "why": "No bone entry matches a melee source (entries 5, 7, 10 need Bullet, ExplosiveBlunt or Cannon, §3.1). The traced character melee Blueprints supply no hit bone/location and evaluate the original event, ignoring the armor hook's returned copy. DamageType.Melee reaches entry 144 unless the extension overrides it. The full target context is recovered; combined equipment needs its real context order, not projectile coverage selection.",
    "rule_entries": [],
    "armor_entries": [144],
    "friendly_entries": [],
    "zone_multiplier": null,
    "values": {
-    "item": 156,
+    "item": 154,
     "actions": [
-     {"action": "Action.BuildBuildable.Construct", "damage": 35.0, "src": [156, "WDItemExtensionData_CharacterMelee.MeleeActions[Action.BuildBuildable.Construct].Damage"]}
+     {"action": "Action.BuildBuildable.Construct", "damage": 35.0, "src": [154, "WDItemExtensionData_CharacterMelee.MeleeActions[Action.BuildBuildable.Construct].Damage"]}
     ],
     "armor_factor_entry_144": {"ID_HeavyArmor": 0.5, "ID_LightArmor": 0.7, "ID_MediumArmor": 0.6, "ID_SuperHeavyArmor": 0.4}
    },
-   "not_traced": ["melee-path", "armor-hook-paths"],
+   "not_traced": [],
    "doc": "armor_durability"
   },
   {
@@ -4461,19 +4435,19 @@
    "label": "SmallHammer",
    "damage_tags": ["Meta.Damage.Utility.SmallHammer", "Meta.Damage.DamageType.Melee"],
    "uses_hit_location": false,
-   "why": "No bone entry matches a melee source (entries 5, 7, 10 need Bullet, ExplosiveBlunt or Cannon, §3.1), so the body takes the same factor everywhere. Entry 144 applies armor durability (1 − R/100, §7.5) to an armored target if the DamageType.Melee tag and the armor tag reach the event, which is not traced.",
+   "why": "No bone entry matches a melee source (entries 5, 7, 10 need Bullet, ExplosiveBlunt or Cannon, §3.1). The traced character melee Blueprints supply no hit bone/location and evaluate the original event, ignoring the armor hook's returned copy. DamageType.Melee reaches entry 144 unless the extension overrides it. The full target context is recovered; combined equipment needs its real context order, not projectile coverage selection.",
    "rule_entries": [],
    "armor_entries": [144],
    "friendly_entries": [],
    "zone_multiplier": null,
    "values": {
-    "item": 157,
+    "item": 155,
     "actions": [
-     {"action": "Action.BuildBuildable.Construct", "damage": 20.0, "src": [157, "WDItemExtensionData_CharacterMelee.MeleeActions[Action.BuildBuildable.Construct].Damage"]}
+     {"action": "Action.BuildBuildable.Construct", "damage": 20.0, "src": [155, "WDItemExtensionData_CharacterMelee.MeleeActions[Action.BuildBuildable.Construct].Damage"]}
     ],
     "armor_factor_entry_144": {"ID_HeavyArmor": 0.5, "ID_LightArmor": 0.7, "ID_MediumArmor": 0.6, "ID_SuperHeavyArmor": 0.4}
    },
-   "not_traced": ["melee-path", "armor-hook-paths"],
+   "not_traced": [],
    "doc": "armor_durability"
   },
   {
@@ -4483,19 +4457,19 @@
    "label": "Crowbar",
    "damage_tags": ["Meta.Damage.Utility.Crowbar", "Meta.Damage.DamageType.Melee"],
    "uses_hit_location": false,
-   "why": "No bone entry matches a melee source (entries 5, 7, 10 need Bullet, ExplosiveBlunt or Cannon, §3.1), so the body takes the same factor everywhere. Entry 144 applies armor durability (1 − R/100, §7.5) to an armored target if the DamageType.Melee tag and the armor tag reach the event, which is not traced.",
+   "why": "No bone entry matches a melee source (entries 5, 7, 10 need Bullet, ExplosiveBlunt or Cannon, §3.1). The traced character melee Blueprints supply no hit bone/location and evaluate the original event, ignoring the armor hook's returned copy. DamageType.Melee reaches entry 144 unless the extension overrides it. The full target context is recovered; combined equipment needs its real context order, not projectile coverage selection.",
    "rule_entries": [],
    "armor_entries": [144],
    "friendly_entries": [],
    "zone_multiplier": null,
    "values": {
-    "item": 158,
+    "item": 156,
     "actions": [
-     {"action": "Action.Crowbar.PrimaryUse", "damage": 100.0, "src": [158, "WDItemExtensionData_CharacterMelee.MeleeActions[Action.Crowbar.PrimaryUse].Damage"]}
+     {"action": "Action.Crowbar.PrimaryUse", "damage": 100.0, "src": [156, "WDItemExtensionData_CharacterMelee.MeleeActions[Action.Crowbar.PrimaryUse].Damage"]}
     ],
     "armor_factor_entry_144": {"ID_HeavyArmor": 0.5, "ID_LightArmor": 0.7, "ID_MediumArmor": 0.6, "ID_SuperHeavyArmor": 0.4}
    },
-   "not_traced": ["melee-path", "armor-hook-paths"],
+   "not_traced": [],
    "doc": "armor_durability"
   },
   {
@@ -4505,19 +4479,19 @@
    "label": "HeavyDrill_RepairTool",
    "damage_tags": ["Meta.Damage.Utility.LargeDrill", "Meta.Damage.DamageType.Melee"],
    "uses_hit_location": false,
-   "why": "No bone entry matches a melee source (entries 5, 7, 10 need Bullet, ExplosiveBlunt or Cannon, §3.1), so the body takes the same factor everywhere. Entry 144 applies armor durability (1 − R/100, §7.5) to an armored target if the DamageType.Melee tag and the armor tag reach the event, which is not traced.",
+   "why": "No bone entry matches a melee source (entries 5, 7, 10 need Bullet, ExplosiveBlunt or Cannon, §3.1). The traced character melee Blueprints supply no hit bone/location and evaluate the original event, ignoring the armor hook's returned copy. DamageType.Melee reaches entry 144 unless the extension overrides it. The full target context is recovered; combined equipment needs its real context order, not projectile coverage selection.",
    "rule_entries": [],
    "armor_entries": [144],
    "friendly_entries": [],
    "zone_multiplier": null,
    "values": {
-    "item": 159,
+    "item": 157,
     "actions": [
-     {"action": "Action.VehicleRepairTool.ContinuousUse", "damage": 10.0, "src": [159, "WDItemExtensionData_CharacterMelee.MeleeActions[Action.VehicleRepairTool.ContinuousUse].Damage"]}
+     {"action": "Action.VehicleRepairTool.ContinuousUse", "damage": 10.0, "src": [157, "WDItemExtensionData_CharacterMelee.MeleeActions[Action.VehicleRepairTool.ContinuousUse].Damage"]}
     ],
     "armor_factor_entry_144": {"ID_HeavyArmor": 0.5, "ID_LightArmor": 0.7, "ID_MediumArmor": 0.6, "ID_SuperHeavyArmor": 0.4}
    },
-   "not_traced": ["melee-path", "armor-hook-paths"],
+   "not_traced": [],
    "doc": "armor_durability"
   },
   {
@@ -4527,19 +4501,19 @@
    "label": "LightDrill_RepairTool",
    "damage_tags": ["Meta.Damage.Utility.MediumDrill", "Meta.Damage.DamageType.Melee"],
    "uses_hit_location": false,
-   "why": "No bone entry matches a melee source (entries 5, 7, 10 need Bullet, ExplosiveBlunt or Cannon, §3.1), so the body takes the same factor everywhere. Entry 144 applies armor durability (1 − R/100, §7.5) to an armored target if the DamageType.Melee tag and the armor tag reach the event, which is not traced.",
+   "why": "No bone entry matches a melee source (entries 5, 7, 10 need Bullet, ExplosiveBlunt or Cannon, §3.1). The traced character melee Blueprints supply no hit bone/location and evaluate the original event, ignoring the armor hook's returned copy. DamageType.Melee reaches entry 144 unless the extension overrides it. The full target context is recovered; combined equipment needs its real context order, not projectile coverage selection.",
    "rule_entries": [],
    "armor_entries": [144],
    "friendly_entries": [],
    "zone_multiplier": null,
    "values": {
-    "item": 160,
+    "item": 158,
     "actions": [
-     {"action": "Action.VehicleRepairTool.ContinuousUse", "damage": 5.0, "src": [160, "WDItemExtensionData_CharacterMelee.MeleeActions[Action.VehicleRepairTool.ContinuousUse].Damage"]}
+     {"action": "Action.VehicleRepairTool.ContinuousUse", "damage": 5.0, "src": [158, "WDItemExtensionData_CharacterMelee.MeleeActions[Action.VehicleRepairTool.ContinuousUse].Damage"]}
     ],
     "armor_factor_entry_144": {"ID_HeavyArmor": 0.5, "ID_LightArmor": 0.7, "ID_MediumArmor": 0.6, "ID_SuperHeavyArmor": 0.4}
    },
-   "not_traced": ["melee-path", "armor-hook-paths"],
+   "not_traced": [],
    "doc": "armor_durability"
   },
   {
@@ -4549,13 +4523,13 @@
    "label": "Thrown object contact",
    "damage_tags": ["Meta.Damage.Kinetic.Impact.Throwable", "Meta.Damage.DamageType.Impact"],
    "uses_hit_location": false,
-   "why": "0x6CA8730 against a character is the thrown object's contact damage, applied once per contact on the contacted bone (verifier round 6 (doc text pending)). No infantry entry requires these tags, so the hit location changes no factor. The amount is not traced.",
+   "why": "0x6CA8730 against a character is the thrown object's contact damage, applied once per contact on the contacted bone (verified native trace (rounds 6 and 8)). No infantry entry requires these tags, so the hit location changes no factor. Starting amount is the actor's ImpactDamage: Frag, C4, IED and Molotov inherit the native default 10. Other actor-specific contact paths need their own defaults.",
    "rule_entries": [],
    "armor_entries": [],
    "friendly_entries": [],
    "zone_multiplier": null,
-   "values": {"caller": "0x6CA8730 (AWDExplosive, AWDC4, AWDGrenade, AWDLandmine slot 236)"},
-   "not_traced": ["impact-amount", "armor-hook-paths"],
+   "values": {"caller": "0x6CA8730 (AWDExplosive, AWDC4, AWDGrenade, AWDLandmine slot 236)", "starting_amount": "AWDExplosive.ImpactDamage (+0x550)"},
+   "not_traced": [],
    "doc": "callers"
   },
   {
@@ -4565,13 +4539,13 @@
    "label": "Actor or vehicle impact",
    "damage_tags": ["Meta.Damage.DamageType.Impact"],
    "uses_hit_location": false,
-   "why": "0x6E72D90 (§1.1) builds the event from the hitting actor's entity data plus DamageType.Impact; no infantry entry requires Impact, so nothing depends on the hit location. The amount is not traced.",
+   "why": "0x6E72D90 (§1.1) builds the event from the hitting actor's entity data plus DamageType.Impact; amount is abs(overlap volume in m³ × cached substep seconds × UnresolvedCollisionDamageMultiplier), with native conversion order/guards. ModifyDamage bool 1 bypasses rules; current geometry, mode and settings supply the values.",
    "rule_entries": [],
    "armor_entries": [],
    "friendly_entries": [],
    "zone_multiplier": null,
-   "values": {"caller": "0x6E72D90 (AWDMoverCharacter slot 169 delegate); skips dead characters"},
-   "not_traced": ["impact-amount", "armor-hook-paths"],
+   "values": {"caller": "0x6E72D90 (AWDMoverCharacter slot 169 delegate); skips dead characters", "starting_amount": "abs(overlap_m3 × cached_substep_seconds × UnresolvedCollisionDamageMultiplier)"},
+   "not_traced": [],
    "doc": "callers"
   }
  ],
