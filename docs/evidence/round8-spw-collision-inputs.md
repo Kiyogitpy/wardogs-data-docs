@@ -150,3 +150,24 @@ Validation artifacts under the external root:
 | `browser-root-final/` harness run | All three SPW front clicks, detonation/impact labels, Gepard routed fuel regression, 23 vehicle legends, 154 slot routing panels, 30 mm controls and 360-pixel layout passed |
 
 The browser harness serves local assets with deployed theme CSS; it does not replace a Jekyll build. Publication is recorded in Git history. The earlier viewer fixes were published as `bdf5d8a2`; publication and in-game accuracy are separate checks.
+
+## Follow-up verification after `7a53decf`
+
+The initial sampling and detonation changes were pushed as `7a53decf`; its GitHub Pages build and deployment passed. Further checks keep the low-hit contacts open:
+
+- **Interior occlusion is not an eligible fix.** Adding the decoded interior removes several extra radar contacts in a conditional visibility probe. However, its authored QueryProxy flags are zero. Packed `DefaultGame.ini` lines 682–684 maps flag bit 0 to Visibility, Camera and GameTraceChannel1. Native `0x50E66C0` and `0x50E6950` set the configured channels to Block for a set flag and Ignore for an unset flag; `0x50E6BD0` applies this mask after the profile. Thus an interior Visibility blocker would contradict the recovered settings.
+- **Triangle culling alone does not resolve the issue.** Nineteen CC meshes match their fresh GLBs, with 2,059 triangles opposite in winding after the coordinate reflection. Correctly transformed one-sided tests preserve or worsen several low-shot radar contacts. The body cooked payloads have a separately validated geometric prefix; their complete decoder runs stop at nonfinite UV data. No complete body-payload decode is claimed. The reproduced low-shot path uses cloud index 1, which starts 0.5 m above the blast and skips the origin-to-start pretrace. That start can lie inside the sloped hull. Missing chassis query geometry and runtime state remain open.
+- **Load-time bounds replacement is unproved.** Native `0x44BE3F0` can rebuild ExtendedBounds from render data plus positive/negative extensions. The decoded StaticMesh PostLoad candidate `0x44CC530` has no direct call to it; the only other explicit caller in the indexed corpus is `0x8DC8940`, whose sequence resembles the different-build local Interchange import helper. Local UE PostLoad recomputation is editor-gated. This bounded check does not establish an unconditional shipping-load overwrite or exclude inlined/indirect mutations; it supplies no reason to replace the authored SPW bounds fixture.
+- **Critical entry does not itself reset health.** The callback bound at `0x767BA46–6F` adds the critical tag when current Main health is at most the configured threshold. WD slot 162 calls base `0x532F730` at `0x6B8050E`. The base broadcasts the callback (`0x532F752–771`), reads current health (`0x532F79B–7BC`), and on nonpositive Main health continues through the depletion delegate and owner path (`0x532F7FA–82B` → `0x53D8E20`). Critical tag entry alone therefore does not establish a fourth finishing-shot requirement. Effective attribute modifiers and actual shot contacts remain separate uncertainties.
+
+The contact counter now says **not reached**, because it includes candidates rejected by distance or angle as well as blocked traces. Calling every such result occluded implied a visibility test that might never have run. The browser harness rechecked all three SPW front hits and their labels, all 23 legends and 154 routing panels, Gepard fuel routing, 30 mm controls and the 360-pixel layout.
+
+Restart artifacts under the external SPW evidence root:
+
+| Artifact | SHA-256 |
+|---|---|
+| `low-hit-visibility-review-v1.json` | `d6af4e6407ed635c8bdd900b947531fa1fbba2cd2392839ba40ffafa23b5b8ba` |
+| `root-bounds-lifecycle-review.json` | `d79491b99c9cdde6964edbdd772925754acea734518fe751de7f26090b8a4789` |
+| `critical-entry-zero-review.md` | `9935fff87ceb699c597101b2b939794920276d1d6a1e9ac2d5318af12cee787b` |
+
+The visibility report points to the interior and culling probe scripts, raw instruction checks, payload decoder and per-mesh comparisons. No damage factors or collision blockers were changed to fit the reported four-shot result.

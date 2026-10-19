@@ -910,7 +910,7 @@
         num(state.caliber.blast.impact_backoff_cm) + " cm back from the impact along that path."));
     row(dl, "Main health damage", num(result.mainDamage));
     row(dl, "Main health remaining", num(result.mainRemaining) + " / " + num(state.vehicle.sections[mainSection].max_health));
-    row(dl, "Blast contacts", result.hits.length + " reached; " + result.occluded + " occluded");
+    row(dl, "Blast contacts", result.hits.length + " reached; " + result.occluded + " not reached");
     row(dl, "Damage applications", result.applications.length + " unique hit locations; " +
       (result.hits.length - result.applications.length) + " repeat contacts skipped");
     if (result.firstSection) row(dl, "Preview first section", shortSection(result.firstSection));
