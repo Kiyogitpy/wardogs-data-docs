@@ -13,6 +13,56 @@ from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://kiyogitpy.github.io/wardogs-data-docs"
+MAIN_SECTION = "Attribute.Gameplay.Health"
+
+
+def section_label(section):
+    return "Main health" if section == MAIN_SECTION else section.removeprefix(MAIN_SECTION + ".")
+
+
+def ui_number(value):
+    magnitude = abs(value)
+    if magnitude >= 100:
+        rendered = f"{value:.0f}"
+    elif magnitude >= 10:
+        rendered = f"{value:.1f}"
+    elif magnitude >= 1:
+        rendered = f"{value:.2f}"
+    else:
+        rendered = f"{value:.3g}"
+    return rendered.rstrip("0").rstrip(".") if "." in rendered else rendered
+
+
+def expected_routing(slot):
+    if slot.get("section") == MAIN_SECTION:
+        return ["is the main health: the vehicle is destroyed when it reaches 0"]
+    routing = slot.get("routing") or {}
+    lines = []
+    to_main = False
+
+    def target(tag):
+        return "the main health" if tag == MAIN_SECTION else "the " + section_label(tag)
+
+    for entry in routing.get("pre", []):
+        to_main |= entry["to"] == MAIN_SECTION
+        prefix = "once destroyed, passes " if entry.get("only_when_depleted") else "passes "
+        lines.append(prefix + ui_number(entry["scalar"] * 100) + "% of each hit to " + target(entry["to"]) + " first")
+    for entry in routing.get("simultaneous", []):
+        to_main |= entry["to"] == MAIN_SECTION
+        suffix = " once destroyed" if entry.get("only_when_depleted") else ""
+        lines.append("copies " + ui_number(entry["scalar"] * 100) + "% of the damage it absorbs to " + target(entry["to"]) + suffix)
+    for entry in routing.get("post", []):
+        to_main |= entry["to"] == MAIN_SECTION
+        if entry.get("only_when_depleted"):
+            text = "passes " + ui_number(entry["scalar"] * 100) + "% of further damage to " + target(entry["to"]) + " once destroyed"
+        else:
+            text = "passes " + ui_number(entry["scalar"] * 100) + "% of the damage it doesn't absorb to " + target(entry["to"])
+        lines.append(text)
+    if not lines:
+        lines.append("never passes damage to the main health")
+    elif not to_main:
+        lines.append("does not pass damage to the main health directly")
+    return lines
 
 
 def main():
@@ -21,6 +71,12 @@ def main():
     parser.add_argument("--no-screenshots", action="store_true")
     args = parser.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)
+    vehicle_data = json.loads((ROOT / "assets/data/vehicle-hitboxes.json").read_text(encoding="utf-8"))
+    viewer_js = (ROOT / "assets/js/vehicle-viewer.js").read_text(encoding="utf-8")
+    palette = dict(re.findall(r'"(Attribute\.Gameplay\.Health(?:\.[A-Za-z0-9]+)*)": "(#[0-9a-fA-F]{6})"', viewer_js))
+    all_sections = {section for vehicle in vehicle_data["vehicles"] for section in vehicle["sections"]}
+    assert all_sections <= palette.keys(), f"Unmapped health sections: {sorted(all_sections - palette.keys())}"
+    assert len({palette[section] for section in all_sections}) == len(all_sections), "Health section colors are not unique"
     deployed = urllib.request.urlopen(SITE + "/pipelines/vehicle-viewer.html").read().decode()
     styles = re.findall(r'<link[^>]+href="([^"]+\.css[^\"]*)"', deployed)
     page = (ROOT / "pipelines/vehicle-viewer.md").read_text(encoding="utf-8")
@@ -113,9 +169,93 @@ def main():
         page.select_option("#vv-caliber", "Item.Caliber.556mm")
         assert page.locator("#vv-impactControls").is_hidden()
         assert page.locator("#vv-blastMode").count() == 0
+
+        # The reviewed front-surface MAAWS hit also exercises health routing into a hidden FuelTank.
+        gepard = next(v for v in vehicle_data["vehicles"] if v["id"] == "land-tracked-tnk-01-antiair")
+        gepard_model = gepard["models"][0]["path"]
+        page.select_option("#vv-vehicle", gepard["id"])
+        page.select_option("#vv-caliber", "Item.Caliber.84mm")
+        page.wait_for_function("(path) => { const m=document.querySelector('#vv-model'); return m.loaded && m.getAttribute('src') && m.getAttribute('src').endsWith(path); }",
+                               arg=gepard_model, timeout=45000)
+        page.wait_for_function("!document.querySelector('#vv-placeGround').disabled", timeout=20000)
+        front = page.evaluate("""async () => {
+          const base=document.querySelector('#vv').dataset.base;
+          const buffer=await (await fetch(base+'assets/models/vehicles/land-tracked-tnk-01-antiair.glb')).arrayBuffer();
+          const geometry=await VehicleImpactGeometry.load(buffer, window.MeshoptDecoder);
+          const hit=geometry.ray([0,1,8],[0,0,-1]);
+          return hit && {position:Array.from(hit.position), material:hit.material.name};
+        }""")
+        assert front and front["material"] == "CC_MainBody", front
+        projection = page.evaluate("""async (position) => {
+          const m=document.querySelector('#vv-model'), b=document.createElement('button');
+          b.type='button'; b.slot='hotspot-impact-check'; b.dataset.position=position.join(' ');
+          b.dataset.normal='0 0 1'; b.dataset.visibilityAttribute='visible';
+          b.style.cssText='width:24px;height:24px;padding:0;border:0;opacity:.01'; m.appendChild(b);
+          await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+          const h=m.queryHotspot(b.slot); return h && h.canvasPosition;
+        }""", front["position"])
+        assert projection and projection["z"] < 1, f"Gepard front point is not visible: {projection}"
+        rect = page.locator("#vv-model").bounding_box()
+        page.mouse.click(rect["x"] + projection["x"], rect["y"] + projection["y"])
+        assert summary.inner_text().startswith("Direct hit"), summary.inner_text()
+        facts = dict(zip(page.locator("#vv-impactSummary dt").all_text_contents(),
+                         page.locator("#vv-impactSummary dd").all_text_contents()))
+        assert facts.get("Damage applications", "").startswith("1 unique hit locations; 4 repeat contacts skipped"), facts
+        # The UI rounds values >= 100 to whole damage; the numerical fixture check retains 267.9.
+        assert facts.get("Main health damage") == "268", facts
+        fuel = next((line for line in page.locator("#vv-impactSummary li").all_text_contents() if line.startswith("FuelTank:")), "")
+        assert "14.1 damage routed from Main health" in fuel, fuel
+
+        # Every published vehicle renders its own full section list, with unique colors and slot swatches.
+        page.select_option("#vv-caliber", "Item.Caliber.556mm")
+        for vehicle in vehicle_data["vehicles"]:
+            page.select_option("#vv-vehicle", vehicle["id"])
+            page.wait_for_function("args => document.querySelector('#vv-vehicle').value===args.id && document.querySelectorAll('#vv-slots .vv-slot').length===args.slots",
+                                   arg={"id": vehicle["id"], "slots": len(vehicle["slots"])})
+            if not vehicle["models"]:
+                assert page.locator("#vv-fallback").is_visible(), (vehicle["id"], "fallback table not visible")
+                assert page.locator("#vv-placeGround").is_disabled(), (vehicle["id"], "impact placement should be disabled without a model")
+            expected_tags = set(vehicle["sections"])
+            expected_tags.update(s["section"] for s in vehicle["slots"] if s.get("section") and s["section"] != "None")
+            expected_labels = [section_label(tag) for tag in sorted(expected_tags, key=lambda tag: (tag != MAIN_SECTION, section_label(tag)))]
+            rendered = page.locator("#vv-legend .vv-key").evaluate_all("els => els.map(e => { const s=e.querySelector('.vv-swatch'); return {label:e.textContent.trim(), color:s.style.backgroundColor, computed:getComputedStyle(s).background}; })")
+            rendered = [entry for entry in rendered if entry["label"] != "no section: hits do nothing"]
+            assert [entry["label"] for entry in rendered] == expected_labels, (vehicle["id"], expected_labels, rendered)
+            colors = [entry["color"] for entry in rendered]
+            assert len(set(colors)) == len(expected_labels), (vehicle["id"], rendered)
+            assert all(entry["computed"] and entry["computed"].startswith("rgb(") for entry in rendered), (vehicle["id"], rendered)
+            expected_color = {section_label(tag): "rgb({}, {}, {})".format(*[int(palette[tag][i:i+2], 16) for i in (1, 3, 5)])
+                              for tag in expected_tags}
+            assert all(entry["color"] == expected_color[entry["label"]] for entry in rendered), (vehicle["id"], rendered)
+            slot_colors = page.locator("#vv-slots .vv-slot").evaluate_all("els => els.map(e => ({index:+e.dataset.slot, color:e.querySelector('.vv-swatch').style.backgroundColor}))")
+            for slot in slot_colors:
+                section = vehicle["slots"][slot["index"]].get("section")
+                if section and section != "None":
+                    assert slot["color"] == expected_color[section_label(section)], (vehicle["id"], slot, section)
+            for index, slot in enumerate(vehicle["slots"]):
+                page.locator("#vv-slots .vv-slot").nth(index).click()
+                actual = page.locator("#vv-panel-body").evaluate("root => { const facts=[...root.querySelectorAll('.vv-facts')]; const sectionRow=facts.flatMap(dl=>[...dl.querySelectorAll('dt')].map(dt=>[dt,dt.nextElementSibling])).find(([dt])=>dt.textContent==='Section'); const routingRow=facts.flatMap(dl=>[...dl.querySelectorAll('dt')].map(dt=>[dt,dt.nextElementSibling])).find(([dt])=>dt.textContent==='Routing'); return {section:sectionRow && sectionRow[1].textContent, routing:routingRow && [...routingRow[1].querySelectorAll('li')].map(li=>li.textContent)}; }")
+                section = slot.get("section") or "?"
+                assert actual["section"] == section, (vehicle["id"], index, section, actual)
+                assert actual["routing"] == expected_routing(slot), (vehicle["id"], index, slot.get("routing"), actual)
+
+        # 30 mm's newly restored blast entry must expose impact placement in the fresh page state.
+        page.select_option("#vv-caliber", "Item.Caliber.30mm")
+        assert page.locator("#vv-blastField").is_visible(), "30 mm blast interaction selector is hidden"
+        assert page.locator("#vv-interaction option[value='impact']").count() == 1
+        page.select_option("#vv-interaction", "impact")
+        page.wait_for_function("!document.querySelector('#vv-placeGround').disabled", timeout=20000)
+        page.fill("#vv-impactX", "0")
+        page.fill("#vv-impactZ", "0")
+        page.click("#vv-placeGround")
+        assert "Splash" in summary.inner_text(), summary.inner_text()
         browser.close()
     assert not errors, errors
-    print(json.dumps({"browser": "passed", "desktop": 1440, "mobile": 360, "screenshots": str(args.out)}))
+    print(json.dumps({"browser": "passed", "desktop": 1440, "mobile": 360,
+                      "section_vehicles": len(vehicle_data["vehicles"]), "gepard_84mm_transfer": "passed",
+                      "routing_slots": sum(len(v["slots"]) for v in vehicle_data["vehicles"]),
+                      "30mm_blast_ui": "passed",
+                      "screenshots": str(args.out)}))
 
 
 if __name__ == "__main__":

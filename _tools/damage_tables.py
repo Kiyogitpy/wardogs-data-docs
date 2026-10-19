@@ -570,7 +570,9 @@ def vehicle_tables():
 
 def variants():
     """Every vehicle variant file, in name order."""
-    return sorted(glob.glob(os.path.join(DATA, "**", "Variants", "VV_*.json"), recursive=True))
+    # Shipped assets also use nested Variants/Air and the STN_05 spelling Varient.
+    return [path for path in sorted(glob.glob(os.path.join(DATA, "**", "VV_*.json"), recursive=True))
+            if any(obj.get("Type") == "ModularVehicleVariant" for obj in exports(path))]
 
 
 def vehicle_groups(vrows):
@@ -695,7 +697,7 @@ def caliber_catalog(proj):
         base_id = ".".join(cid.split(".")[:3])
         sibs = sorted(k for k in proj if k != cid and (k == base_id or k.startswith(base_id + ".") or base_id.startswith(k + ".")))
         notes = []
-        if group in CALIBER_GROUPS[2:]:
+        if blast.get(cid, {}).get("radius", 0) > 0:
             notes.append(DIRECT_NOTE)
         if sibs or cid != base_id:
             notes.append("Variants in the data: " + ", ".join(k.replace("Item.Caliber.", "") for k in sorted(sibs + [cid]))
@@ -706,7 +708,7 @@ def caliber_catalog(proj):
         out.append({"id": cid, "label": label, "group": group, "base_damage": base, "source_tag": src,
                     "source_context": ctx, "weapon_context_unknown": True,
                     "weapons": ws, "weapon_association_unknown": not bool(ws), "note": " ".join(notes) or None,
-                    **({"blast": blast[cid]} if group in CALIBER_GROUPS[2:] and blast.get(cid) else {})})
+                    **({"blast": blast[cid]} if blast.get(cid, {}).get("radius", 0) > 0 else {})})
     order = {c: i for i, c in enumerate(JSON_CALIBERS)}
     out.sort(key=lambda c: (CALIBER_GROUPS.index(c["group"]), order.get(c["id"], 99) if c["group"] == "Bullets" else 0,
                             c["base_damage"] or 0, c["id"]))

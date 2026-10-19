@@ -12,6 +12,45 @@ const metadata = JSON.parse(fs.readFileSync(path.join(root, "assets/data/vehicle
 const MAIN = "Attribute.Gameplay.Health";
 const near = (actual, expected) => assert.ok(Math.abs(actual - expected) < 1e-7, `${actual} != ${expected}`);
 
+function verifyShot(vehicle, source, result) {
+  const context = `${vehicle.id}: ${source.id}`;
+  const tags = result.applications.map(hit => hit.hitLocation).filter(Boolean);
+  assert.equal(tags.length, new Set(tags).size, `Repeated damage tag: ${context}`);
+  assert.equal(result.incomplete, 0, `Missing component metadata: ${context}`);
+  const ledger = {};
+  for (const transfer of result.transfers) {
+    assert.ok(vehicle.sections[transfer.section], `Unknown route target: ${context}`);
+    assert.ok(Number.isFinite(transfer.amount) && transfer.amount > 0, context);
+    if (transfer.via) assert.ok(vehicle.sections[transfer.via.section], context);
+    ledger[transfer.section] = (ledger[transfer.section] || 0) + transfer.amount;
+  }
+  for (const [key, section] of Object.entries(vehicle.sections)) {
+    assert.ok(Number.isFinite(result.health[key]) && result.health[key] >= 0 &&
+      result.health[key] <= section.max_health, `Invalid section health: ${context}: ${key}`);
+    near(result.sectionDamage[key], ledger[key] || 0);
+    near(result.sectionDamage[key] + result.health[key], section.max_health);
+  }
+  for (const hit of result.hits) {
+    assert.ok(hit.slotIndex >= 0, `Unresolved slot ${hit.material.name}: ${context}`);
+    assert.ok(Number.isFinite(hit.factor), `Missing explosive rule factor: ${context}`);
+    near(hit.amount, hit.base * hit.factor);
+  }
+}
+
+function placements(mesh) {
+  const b = mesh.bounds, result = [];
+  for (let axis = 0; axis < 3; axis++) for (const sign of [-1, 1]) {
+    const origin = b.center.slice(), direction = [0, 0, 0];
+    origin[axis] = (sign < 0 ? b.min[axis] : b.max[axis]) + sign * 2;
+    direction[axis] = -sign;
+    const hit = mesh.ray(origin, direction);
+    if (hit) result.push({kind: `surface-${axis}-${sign}`, point: hit.position});
+  }
+  for (const sign of [-1, 1]) result.push({kind: `ground-${sign}`,
+    point: [b.center[0], b.min[1], (sign < 0 ? b.min[2] : b.max[2]) + sign]});
+  return result;
+}
+
 async function main() {
   const cal = {base_damage: 100, blast: {radius: 1000, effective_radius: 500, minimum: 10, falloff: 1}};
   near(impact.blastAmount(cal, 0), 100);
@@ -36,8 +75,39 @@ async function main() {
   assert.deepEqual(starts[1], [0, 0.5, 0]); // UE up -> displayed +Y.
   starts.slice(1).forEach(p => near(Math.hypot(...p), 0.5));
   assert.deepEqual(impact.cloud([0, 0, 0], true)[0], starts[1]);
+  const dedupVehicle = {slots: [
+    {section: "One", hit_location: "Vehicle.Main"},
+    {section: "Two", hit_location: "Vehicle.Main"},
+    {section: "One", hit_location: "Vehicle.Wheel"},
+    {section: "Unknown", hit_location: null}
+  ]};
+  const dedup = impact.damageApplications(dedupVehicle, [0, 1, 2, 3, 3].map(slotIndex => ({slotIndex})));
+  assert.deepEqual(dedup.map(hit => hit.slotIndex), [0, 2, 3, 3]); // Key is the tag, not section or component.
 
-  let models = 0, nodes = 0, triangles = 0, shots = 0;
+  let sectionChecks = 0;
+  for (const vehicle of data.vehicles) for (const [key, section] of Object.entries(vehicle.sections)) {
+    for (const amount of [1, section.max_health / 2, section.max_health * 2]) {
+      const health = impact.freshHealth(vehicle), transfers = [], sectionDamage = {};
+      impact.applyRadial(vehicle.sections, health, key, amount, 0, transfers);
+      for (const [target, targetSection] of Object.entries(vehicle.sections))
+        sectionDamage[target] = targetSection.max_health - health[target];
+      verifyShot(vehicle, {id: `section-${key}-${amount}`}, {
+        applications: [], incomplete: 0, health, transfers, sectionDamage, hits: []
+      });
+      sectionChecks++;
+    }
+  }
+  console.log(`routing verification: ${data.vehicles.length} profiles, ${sectionChecks} fresh section applications passed`);
+  if (process.argv.includes("--routing-only")) return;
+
+  let models = 0, nodes = 0, triangles = 0, shots = 0, catalogShots = 0;
+  let sources = data.meta.calibers.filter(c => c.blast).concat(data.meta.explosives);
+  const sourceIndex = process.argv.indexOf("--source");
+  if (sourceIndex >= 0) {
+    sources = sources.filter(source => source.id === process.argv[sourceIndex + 1]);
+    assert.equal(sources.length, 1, "--source must name one exported explosive source");
+  }
+  const coverage = [];
   const source = data.meta.calibers.find(c => c.id === "Item.Caliber.84mm");
   assert.ok(source && source.blast, "Reviewed MAAWS projectile missing");
   const before = JSON.stringify(data);
@@ -52,6 +122,41 @@ async function main() {
         assert.ok(mapping[component.nodeIndex]?.component, `Missing component: ${model.path}:${component.nodeIndex}`);
       }
       models++; nodes += mesh.components.length; triangles += mesh.triangles.length;
+      const points = placements(mesh);
+      const row = {vehicle: vehicle.id, model: model.path, sources: sources.length,
+        surfacePlacements: points.filter(p => p.kind.startsWith("surface")).length,
+        groundPlacements: 2, shots: 0, damagingShots: 0};
+      assert.ok(row.surfacePlacements > 0, `No surface placement: ${model.path}`);
+      for (const explosive of sources) {
+        for (const placement of points) {
+          const result = impact.simulate(mesh, vehicle, explosive, placement.point, mapping);
+          verifyShot(vehicle, explosive, result);
+          row.shots++; catalogShots++;
+          if (Object.values(result.sectionDamage).some(amount => amount > 0)) row.damagingShots++;
+        }
+        const outside = [mesh.bounds.max[0] + explosive.blast.radius / 100 + 5,
+          mesh.bounds.center[1], mesh.bounds.center[2]];
+        const miss = impact.simulate(mesh, vehicle, explosive, outside, mapping);
+        verifyShot(vehicle, explosive, miss);
+        assert.equal(miss.hits.length, 0, `Out-of-range contact: ${model.path}: ${explosive.id}`);
+        assert.ok(Object.values(miss.sectionDamage).every(amount => amount === 0));
+        row.shots++; catalogShots++;
+      }
+      coverage.push(row);
+      if (vehicle.damage_row.endsWith(".TNK_01.AntiAir")) {
+        const front = mesh.ray([0, 1, 8], [0, 0, -1]);
+        assert.ok(front && front.material.name === "CC_MainBody");
+        const result = impact.simulate(mesh, vehicle, source, front.position, mapping);
+        assert.equal(result.hits.length, 5, "Retain exposed component contacts for inspection");
+        assert.equal(result.applications.length, 1, "Main-hit contacts must not multiply blast damage");
+        near(result.mainDamage, 267.9);
+        const fuel = MAIN + ".FuelTank";
+        near(result.sectionDamage[fuel], 14.1);
+        assert.ok(result.hits.every(hit => hit.material.name !== "CC_FuelTank"), "Fuel surface must stay occluded");
+        const fuelTransfer = result.transfers.filter(entry => entry.section === fuel);
+        assert.ok(fuelTransfer.every(entry => entry.via && entry.via.section === MAIN));
+        near(fuelTransfer.reduce((sum, entry) => sum + entry.amount, 0), 14.1);
+      }
       if (!model.path.endsWith("--wheels-destroyed.glb")) {
         const bounds = mesh.bounds;
         const origin = [bounds.max[0] + 1, bounds.min[1], bounds.center[2]];
@@ -76,5 +181,16 @@ async function main() {
   assert.equal(JSON.stringify(data), before, "Shots must not mutate exported health/data");
   assert.equal(models, 36);
   console.log(`impact preview: ${models} models, ${nodes} nodes, ${triangles} triangles, ${shots} fresh/out-of-range shots passed`);
+  console.log(`catalog verification: ${data.vehicles.length} vehicle profiles, ${sources.length} explosive sources, ${catalogShots} shots passed`);
+  const reportIndex = process.argv.indexOf("--report");
+  if (reportIndex >= 0) {
+    assert.ok(process.argv[reportIndex + 1], "--report requires a path");
+    fs.writeFileSync(process.argv[reportIndex + 1], JSON.stringify({
+      scope: "Offline reference-pose software checks; no runtime collision parity established",
+      vehicleProfiles: data.vehicles.length, models, sectionChecks,
+      profilesWithoutGeometry: data.vehicles.filter(v => !v.models.length).map(v => v.id),
+      sources: sources.map(s => s.id), shots: catalogShots, coverage
+    }, null, 2) + "\n", {flag: "wx"});
+  }
 }
 main().catch(error => { console.error(error); process.exitCode = 1; });
