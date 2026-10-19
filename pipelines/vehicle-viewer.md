@@ -104,6 +104,7 @@ The models come from [`_tools/vehicle_models.py`](https://github.com/Kiyogitpy/w
 - **Parts that can't be placed are left out**, with a note on the model. The MG nest's gun proxy attaches to a `receiver_J` bone that its skeleton doesn't have, so it is likely never attached.
 - **Meshes without a collision mesh of their own aren't shown**, such as the MG nest's sandbags. Their collision profile isn't traced, and showing them would mean publishing render geometry.
 - **The SPW radar is shown stowed.** No exported data creates its deployed pivot.
+- **Blast sampling is partly reconstructed.** SPW uses authored bounds; other models still sample display surfaces. The [fresh input census](../docs/evidence/round8-vehicle-sampling-census.md) covers all 33 source variants and distinguishes available damage-query sockets from verified viewer behavior.
 
 <div class="vv-nojs" markdown="1">
 
