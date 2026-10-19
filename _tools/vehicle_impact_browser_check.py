@@ -244,6 +244,7 @@ def main():
                 facts = dict(zip(page.locator("#vv-impactSummary dt").all_text_contents(),
                                  page.locator("#vv-impactSummary dd").all_text_contents()))
                 assert facts.get("Damage applications", "").startswith("1 unique hit locations"), (model["path"], facts)
+                assert facts.get("Blast contacts", "").endswith("not reached"), facts
                 assert facts.get("Main health damage") == "361", (model["path"], facts)
                 fuel = next((line for line in page.locator("#vv-impactSummary li").all_text_contents() if line.startswith("FuelTank:")), "")
                 assert "19 damage routed from Main health" in fuel, fuel
