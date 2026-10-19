@@ -88,7 +88,7 @@ For soldiers, the [Infantry Hitbox Viewer](infantry-viewer.md) shows the player'
 <script src="{{ '/assets/js/vehicle-impact.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
 <script src="{{ '/assets/js/vehicle-viewer.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
 
-For explosives, choose **Place impact** and click the vehicle (**Direct hit**) or nearby ground (**Splash**). You can also enter ground X/Z coordinates in metres. Each placement starts with full health. Projectile shots travel from the current view toward that point; the blast centre moves back by half the authored projectile length, as in the traced impact path. Placed explosive actors use the selected point. The result is a **reference-pose estimate** from exported collision triangles and traced damage routing: component order, moving parts and the live scene can change the result. SPW spawn variants use their authored component bounds for blast candidates; other models retain sampled display surfaces. Inspect slots retains the direct-hit rule and repeated-hit comparison for individual slots.
+For explosives, choose **Place impact** and click the vehicle (**Direct hit**) or nearby ground (**Splash**). You can also enter ground X/Z coordinates in metres. Each placement starts with full health. Projectile shots travel from the current view toward that point; the blast centre moves back by half the authored projectile length, as in the traced impact path. Placed explosive actors use the selected point. The result is a **reference-pose estimate** from exported collision triangles and traced damage routing: component order, moving parts and the live scene can change the result. Gepard uses its authored damage-query sockets and SPW spawn variants use their authored component bounds; other models retain sampled display surfaces. Inspect slots retains the direct-hit rule and repeated-hit comparison for individual slots.
 
 ## How the models are built
 
@@ -104,7 +104,7 @@ The models come from [`_tools/vehicle_models.py`](https://github.com/Kiyogitpy/w
 - **Parts that can't be placed are left out**, with a note on the model. The MG nest's gun proxy attaches to a `receiver_J` bone that its skeleton doesn't have, so it is likely never attached.
 - **Meshes without a collision mesh of their own aren't shown**, such as the MG nest's sandbags. Their collision profile isn't traced, and showing them would mean publishing render geometry.
 - **The SPW radar is shown stowed.** No exported data creates its deployed pivot.
-- **Blast sampling is partly reconstructed.** SPW uses authored bounds; other models still sample display surfaces. The [fresh input census](../docs/evidence/round8-vehicle-sampling-census.md) covers all 33 source variants and distinguishes available damage-query sockets from verified viewer behavior.
+- **Blast sampling is partly reconstructed.** [Gepard uses authored sockets](../docs/evidence/round8-gepard-sampling-viewer.md) and SPW uses authored bounds; other models still sample display surfaces. The [fresh input census](../docs/evidence/round8-vehicle-sampling-census.md) covers all 33 source variants and distinguishes available damage-query sockets from verified viewer behavior.
 
 <div class="vv-nojs" markdown="1">
 

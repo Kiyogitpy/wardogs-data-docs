@@ -154,9 +154,11 @@ async function main() {
       }
       coverage.push(row);
       if (vehicle.damage_row.endsWith(".TNK_01.AntiAir")) {
+        assert.equal(Object.values(mapping).reduce((sum, node) => sum + node.point_sampling.points.length, 0), 89);
         const front = mesh.ray([0, 1, 8], [0, 0, -1]);
         assert.ok(front && front.material.name === "CC_MainBody");
         const result = impact.simulate(mesh, vehicle, source, front.position, mapping);
+        assert.equal(result.samplingMode, "native-sockets");
         assert.equal(result.hits.length, 5, "Retain exposed component contacts for inspection");
         assert.equal(result.applications.length, 1, "Main-hit contacts must not multiply blast damage");
         near(result.mainDamage, 267.9);
@@ -166,6 +168,12 @@ async function main() {
         const fuelTransfer = result.transfers.filter(entry => entry.section === fuel);
         assert.ok(fuelTransfer.every(entry => entry.via && entry.via.section === MAIN));
         near(fuelTransfer.reduce((sum, entry) => sum + entry.amount, 0), 14.1);
+        const backed = impact.simulate(mesh, vehicle, source,
+          impact.detonationOrigin(source, front.position, [0, 0, -1]), mapping);
+        // Stopping at the first accepted socket gives 31.8 cm and 193.7 cm respectively.
+        assert.ok(backed.hits.find(hit => hit.nativeComponent.endsWith(":MainBody")).distance < 11);
+        assert.ok(backed.hits.find(hit => hit.nativeComponent.endsWith(":TurretSpin")).distance < 174);
+        near(backed.mainDamage, 267.9);
       }
       if (vehicle.id.startsWith("land-tracked-leopard-spawn-")) {
         const front = mesh.ray([0, 1, mesh.bounds.max[2] + 2], [0, 0, -1]);

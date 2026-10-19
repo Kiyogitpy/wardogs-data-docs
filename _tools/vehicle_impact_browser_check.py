@@ -200,6 +200,7 @@ def main():
         assert summary.inner_text().startswith("Direct hit"), summary.inner_text()
         facts = dict(zip(page.locator("#vv-impactSummary dt").all_text_contents(),
                          page.locator("#vv-impactSummary dd").all_text_contents()))
+        assert "using authored damage-query sockets" in summary.inner_text()
         assert facts.get("Damage applications", "").startswith("1 unique hit locations; 4 repeat contacts skipped"), facts
         # The UI rounds values >= 100 to whole damage; the numerical fixture check retains 267.9.
         assert facts.get("Main health damage") == "268", facts

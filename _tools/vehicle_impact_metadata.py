@@ -17,6 +17,7 @@ import vehicle_models as models
 
 SAMPLING_FIXTURE = Path(__file__).resolve().with_name("vehicle-impact-sampling.json")
 SPW_VARIANTS = {"SPW_01", "SPW_02", "SPW_03"}
+SAMPLING_VARIANTS = SPW_VARIANTS | {"TNK_01_AntiAir"}
 
 
 def sha256(path):
@@ -33,6 +34,14 @@ def validate_point(value, label):
         raise ValueError(f"Invalid finite 3-vector for {label}")
 
 
+def validate_evidence(evidence, label):
+    if not isinstance(evidence, dict) or not {"path", "sha256"} <= evidence.keys():
+        raise ValueError(f"Missing point-sampling source evidence: {label}")
+    path = Path(evidence["path"])
+    if not path.is_file() or sha256(path) != evidence["sha256"]:
+        raise ValueError(f"Stale or missing point-sampling source evidence: {path}")
+
+
 def load_sampling_fixture(root, vehicles):
     if not SAMPLING_FIXTURE.is_file():
         raise ValueError(f"Missing required sampling fixture: {SAMPLING_FIXTURE}")
@@ -41,22 +50,17 @@ def load_sampling_fixture(root, vehicles):
         raise ValueError("Unsupported point-sampling fixture format")
     expected = {
         model["path"]: model
-        for vehicle in vehicles if vehicle["id"].startswith("land-tracked-leopard-spawn-spw-")
-        for model in vehicle["models"] if set(model["variants"]) & SPW_VARIANTS
+        for vehicle in vehicles
+        for model in vehicle["models"] if set(model["variants"]) & SAMPLING_VARIANTS
     }
     models_fixture = fixture.get("models")
     if not isinstance(models_fixture, dict) or set(models_fixture) != set(expected):
-        raise ValueError("SPW point-sampling fixture paths do not match the published SPW models")
+        raise ValueError("Point-sampling fixture paths do not match the covered published models")
 
     sources = fixture.get("source", {})
     required_sources = ("reference_inputs", "static_mesh_socket_manifest", "collision_manifest", "skeletal_manifest")
     for name in required_sources:
-        evidence = sources.get(name)
-        if not isinstance(evidence, dict) or not {"path", "sha256"} <= evidence.keys():
-            raise ValueError(f"Missing point-sampling source evidence: {name}")
-        path = Path(evidence["path"])
-        if not path.is_file() or sha256(path) != evidence.get("sha256"):
-            raise ValueError(f"Stale or missing point-sampling source evidence: {path}")
+        validate_evidence(sources.get(name), name)
     socket_manifest = json.loads(Path(sources["static_mesh_socket_manifest"]["path"]).read_text(encoding="utf-8"))
     if socket_manifest.get("staticMeshSockets") != {}:
         raise ValueError("SPW no-socket policy does not match the fresh mesh manifest")
@@ -68,19 +72,37 @@ def load_sampling_fixture(root, vehicles):
             raise ValueError(f"Stale or missing point-sampling GLB: {model_path}")
         if sampling.get("variants") != model["variants"]:
             raise ValueError(f"Stale point-sampling variant identity: {model_path}")
+        if set(model["variants"]) - SPW_VARIANTS:
+            for name in ("reference_inputs", "static_mesh_socket_manifest"):
+                validate_evidence(sampling.get("source", {}).get(name), f"{model_path}:{name}")
         for component in sampling.get("components", {}).values():
             raw_dump = Path(component["source_static_mesh_dump"])
             if not raw_dump.is_file() or sha256(raw_dump) != component.get("source_static_mesh_sha256"):
                 raise ValueError(f"Stale or missing source static-mesh dump: {raw_dump}")
             validate_point(component.get("bounds_origin"), model_path)
             points = component.get("points")
-            if not isinstance(points, list) or len(points) != 1:
-                raise ValueError(f"Expected one native bounds point for {model_path}")
-            validate_point(points[0], model_path)
-            if points[0] != component["bounds_origin"]:
-                raise ValueError(f"Point does not match the native bounds origin for {model_path}")
-            if (component.get("method") != "native-bounds" or component.get("angle_degrees") != 10 or
-                    component.get("socket_count") != 0):
+            if not isinstance(points, list) or not points:
+                raise ValueError(f"Missing native sampling points for {model_path}")
+            for point in points:
+                validate_point(point, model_path)
+            method, count = component.get("method"), component.get("socket_count")
+            if method == "native-bounds":
+                if count != 0 or points != [component["bounds_origin"]]:
+                    raise ValueError(f"Invalid bounds fallback for {model_path}")
+            elif method == "native-sockets":
+                raw = json.loads(raw_dump.read_text(encoding="utf-8"))
+                mesh = next(o for o in raw if o.get("Type") == "StaticMesh")
+                sockets = []
+                for ref in mesh.get("Properties", {}).get("Sockets", []):
+                    name = ref["ObjectName"].split(":")[-1].rstrip("'")
+                    socket = next(o for o in raw if o.get("Name") == name)
+                    if re.fullmatch(r"DamageQuerySocket(?:_[0-9]+)?", socket.get("Properties", {}).get("SocketName", "")):
+                        sockets.append(socket)
+                if not sockets or count != len(sockets) or len(points) != count:
+                    raise ValueError(f"Socket sampling count differs from raw mesh for {model_path}")
+            else:
+                raise ValueError(f"Unexpected sampling method for {model_path}")
+            if component.get("angle_degrees") != 10:
                 raise ValueError(f"Unexpected native point-sampling policy for {model_path}")
     return fixture
 
@@ -95,7 +117,7 @@ def attach_point_sampling(root, path, gltf, metadata_nodes, fixture_model, varia
             continue
         record = metadata_nodes.get(str(index))
         if not record or not record.get("component"):
-            raise ValueError(f"Unmapped SPW model node cannot receive sampling metadata: {path}:{index}")
+            raise ValueError(f"Unmapped model node cannot receive sampling metadata: {path}:{index}")
         key = record["component"]
         sample = components.get(key)
         extras = node.get("extras", {})
@@ -103,7 +125,7 @@ def attach_point_sampling(root, path, gltf, metadata_nodes, fixture_model, varia
                 sample.get("module") != extras.get("module") or
                 sample.get("render_mesh") != extras.get("render_mesh") or
                 sample.get("fragment") != record.get("fragment")):
-            raise ValueError(f"SPW sampling identity mismatch for {path}:{index}:{key}")
+            raise ValueError(f"Sampling identity mismatch for {path}:{index}:{key}")
         expected_indices.add(index)
         record["point_sampling"] = {
             "bounds_origin": sample["bounds_origin"],
@@ -113,10 +135,10 @@ def attach_point_sampling(root, path, gltf, metadata_nodes, fixture_model, varia
             "socket_count": sample["socket_count"],
         }
     if len(expected_indices) != fixture_model.get("represented_node_count"):
-        raise ValueError(f"SPW represented node count changed for {path}")
+        raise ValueError(f"Sampling represented node count changed for {path}")
     fixture_indices = {sample.get("node_index") for sample in components.values()}
     if fixture_indices != expected_indices:
-        raise ValueError(f"SPW fixture has missing or extra component nodes for {path}")
+        raise ValueError(f"Sampling fixture has missing or extra component nodes for {path}")
 
 
 def glb_json(path):
@@ -182,7 +204,7 @@ def main():
                             sample = sampling_fixture["models"][path]["components"].get(component_key)
                             if (sample is None or sample.get("module") != c["module"] or
                                     sample.get("fragment") != c["fragment"] or sample.get("source_asset") != c.get("mesh")):
-                                raise ValueError(f"SPW source component mismatch for {path}:{index}:{component_key}")
+                                raise ValueError(f"Sampling source component mismatch for {path}:{index}:{component_key}")
                         nodes[str(index)] = {"component": component_key,
                                              "fragment": c["fragment"], "wheel_instance": c.get("wheel", {}).get("index")}
                     if path in sampling_fixture["models"]:

@@ -57,7 +57,7 @@ Static assets and socket counts are counted once per distinct reference within e
 
 ## What reaches the viewer
 
-The [SPW continuation](round8-spw-collision-inputs.md) implements authored bounds candidates for the three SPW models. Other models still use sampled display surfaces. The new census makes additional authored inputs available for placement and sampler verification; it does not silently enable unverified socket coordinates or declare the other vehicles accurate.
+The [SPW continuation](round8-spw-collision-inputs.md) implements authored bounds candidates for the three SPW models. The [Gepard continuation](round8-gepard-sampling-viewer.md) adds its 89 placed damage-query sockets. Other models still use sampled display surfaces. The new census makes additional authored inputs available for placement and sampler verification; it does not silently enable unverified socket coordinates or declare the other vehicles accurate.
 
 The next implementation needs to place matching mesh-local sockets using source reference transforms, retain component bounds for the native angle gate, and select the nearest accepted hit after the per-candidate cloud traces. Each supported model must have complete, identity-bound inputs. Query filtering, registered scene bodies and actual component order remain separate from the candidate coordinates.
 
