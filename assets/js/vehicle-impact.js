@@ -50,29 +50,45 @@
   }
 
   // Radial event routing differs from the viewer's point-hit inspection calculation.
-  function applyRadial(sections, health, key, amount, depth) {
+  function applyRadial(sections, health, key, amount, depth, transfers, via) {
     var section = sections[key];
     if (!section || !(amount > 0) || (depth || 0) > 10) return 0;
     var handled = 0, skips = section.radial_routing_skips || {};
-    function reroute(routes) {
+    function reroute(routes, phase) {
       (routes || []).forEach(function (route) {
         if ((health[key] <= 0) === !!route[2] && amount > handled) {
           handled += applyRadial(sections, health, route[0],
-            (amount - handled) * Math.max(0, Math.min(1, route[1])), (depth || 0) + 1);
+            (amount - handled) * Math.max(0, Math.min(1, route[1])), (depth || 0) + 1,
+            transfers, {section: key, phase: phase});
         }
       });
     }
-    if (!skips.pre) reroute(section.pre);
+    if (!skips.pre) reroute(section.pre, "pre");
     var own = Math.min(Math.max(amount - handled, 0), Math.max(health[key], 0));
     health[key] -= own;
     handled += own;
+    if (transfers && own > 0) transfers.push({section: key, amount: own, via: via || null});
     if (key === MAIN && health[key] <= 0) return handled;
     if (!skips.simultaneous) (section.simultaneous || []).forEach(function (route) {
       if (!route[2] || health[key] <= 0)
-        applyRadial(sections, health, route[0], own * Math.max(0, Math.min(1, route[1])), (depth || 0) + 1);
+        applyRadial(sections, health, route[0], own * Math.max(0, Math.min(1, route[1])), (depth || 0) + 1,
+          transfers, {section: key, phase: "simultaneous"});
     });
-    if (!skips.post) reroute(section.post);
+    if (!skips.post) reroute(section.post, "post");
     return handled;
+  }
+
+  // Native 0x6F06B10–13 skips a previously processed nonempty vehicle hit-location tag.
+  // This preview contains one target actor; contact collection and damage application are separate.
+  function damageApplications(vehicle, contacts) {
+    var seen = new Set();
+    return contacts.filter(function (hit) {
+      var slot = vehicle.slots[hit.slotIndex], tag = slot && slot.hit_location;
+      hit.hitLocation = tag || null;
+      hit.suppressed = !!tag && seen.has(tag);
+      if (tag) seen.add(tag);
+      return !hit.suppressed;
+    });
   }
 
   // Native cloud order, converted UE (X,Y,Z) -> displayed (-Y,Z,X), metres.
@@ -142,8 +158,9 @@
     });
     var first = hits[0], firstSlot = first && vehicle.slots[first.slotIndex];
     var firstSection = firstSlot ? firstSlot.section : null, health = freshHealth(vehicle);
+    var applications = damageApplications(vehicle, hits), transfers = [];
     // Native radial section choice is ComponentHits[0], even for subsequent per-hit rule locations.
-    hits.forEach(function (hit) { applyRadial(vehicle.sections, health, firstSection, hit.amount); });
+    applications.forEach(function (hit) { applyRadial(vehicle.sections, health, firstSection, hit.amount, 0, transfers); });
     var alternatives = Array.from(new Set(hits.map(function (hit) {
       var slot = vehicle.slots[hit.slotIndex]; return slot ? slot.section : null;
     })));
@@ -152,18 +169,21 @@
     var scenarios = hits.map(function (first, index) {
       var slot = vehicle.slots[first.slotIndex], next = freshHealth(vehicle);
       var sequence = [first].concat(hits.filter(function (_, i) { return i !== index; }));
-      sequence.forEach(function (hit) { applyRadial(vehicle.sections, next, slot ? slot.section : null, hit.amount); });
+      damageApplications(vehicle, sequence.map(function (hit) { return Object.assign({}, hit); })).forEach(function (hit) {
+        applyRadial(vehicle.sections, next, slot ? slot.section : null, hit.amount);
+      });
       return (vehicle.sections[MAIN] ? vehicle.sections[MAIN].max_health : 0) - (next[MAIN] || 0);
     });
-    return {hits: hits, occluded: occluded, incomplete: incomplete, health: health, sectionDamage: damage,
+    return {hits: hits, applications: applications, transfers: transfers, occluded: occluded, incomplete: incomplete,
+      health: health, sectionDamage: damage,
       firstSection: firstSection, firstSectionAlternatives: alternatives, orderSensitive: alternatives.length > 1,
       mainDamage: damage[MAIN] || 0, mainRemaining: health[MAIN] || 0,
       scenarioMainDamage: {min: scenarios.length ? Math.min.apply(Math, scenarios) : 0,
         max: scenarios.length ? Math.max.apply(Math, scenarios) : 0},
       tracePreferenceUnknown: caliber.blast.prefer_upwards == null,
-      baseAmount: hits.reduce(function (sum, hit) { return sum + hit.base; }, 0),
+      baseAmount: applications.reduce(function (sum, hit) { return sum + hit.base; }, 0),
       orderingNote: "Reference-pose estimate: sampled display surfaces and GLB component order; live collision bodies, terrain and query order can change the result."};
   }
   return {simulate: simulate, blastAmount: blastAmount, applyRadial: applyRadial,
-    freshHealth: freshHealth, slotOf: slotOf, cloud: cloud};
+    freshHealth: freshHealth, slotOf: slotOf, cloud: cloud, damageApplications: damageApplications};
 }));

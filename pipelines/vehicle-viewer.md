@@ -154,6 +154,8 @@ The viewer needs JavaScript; this is the same data as a table. Every vehicle's c
 |  | `(default)` | Health (3000) | is the main health | ×0.15 | ×0.15 | ×0.5 |
 | `Stationary.RadioTower` (STN_04) | `CC_Main` | Health (1000) | is the main health | ×0.05 | ×0.05 | ×0.85 |
 |  | `(default)` | Health (1000) | is the main health | ×0.05 | ×0.05 | ×0.85 |
+| `Stationary.STN_05` (STN_05) | `CC_Main` | Health (3000) | is the main health | ×0.15 | ×0.15 | ×0.5 |
+|  | `(default)` | Health (3000) | is the main health | ×0.15 | ×0.15 | ×0.5 |
 | `Stationary.MGNest` (STN_06, no row of its own) | `CC_Main` | Health (1800) | is the main health | ×1 | ×1 | ×1 |
 |  | `(default)` | Health (1800) | is the main health | ×1 | ×1 | ×1 |
 | `Land.Tracked.TNK_01.AntiAir` (TNK_01_AntiAir) | `CC_Engine` | Health.Engine (150) | post 1 when depleted, simultaneous 1 | ×0 | ×0 | ×0.18 |

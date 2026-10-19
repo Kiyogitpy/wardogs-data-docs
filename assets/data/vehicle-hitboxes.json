@@ -294,7 +294,14 @@
     "weapon_context_unknown": true,
     "weapons": [],
     "weapon_association_unknown": true,
-    "note": "No mapped weapon item lists this caliber as supported; vehicle-mounted weapon associations are not represented here."
+    "note": "For an armed projectile that qualifies for explosive handling, select the radial application rather than adding a separate direct-hit factor. This is an isolated vehicle-rule factor, not the full explosion damage: this catalog does not model blast falloff, line of sight, overlap/component multiplicity, or weapon-specific context. Current vehicle rows have no weapon-tag requirements, so unknown weapon context does not change these factors (Damage section 1.1; Vehicle section 4.1). No mapped weapon item lists this caliber as supported; vehicle-mounted weapon associations are not represented here.",
+    "blast": {
+     "radius": 300.0,
+     "effective_radius": 100.0,
+     "falloff": 1.0,
+     "minimum": 20.0,
+     "prefer_upwards": false
+    }
    },
    {
     "id": "Item.Caliber.122mm",
@@ -798,6 +805,10 @@
       "Item.Caliber.40mm": 0.7
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.195,
+       0.195
+      ],
       "Item.Caliber.122mm": [
        0.75,
        0.15
@@ -972,6 +983,10 @@
       "Item.Caliber.40mm": 0.7
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.195,
+       0.195
+      ],
       "Item.Caliber.122mm": [
        0.75,
        0.15
@@ -1158,6 +1173,10 @@
       "Item.Caliber.40mm": 0.7
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.195,
+       0.195
+      ],
       "Item.Caliber.122mm": [
        0.75,
        0.15
@@ -1344,6 +1363,10 @@
       "Item.Caliber.40mm": 0.7
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.195,
+       0.195
+      ],
       "Item.Caliber.122mm": [
        0.75,
        0.15
@@ -1524,6 +1547,10 @@
       "Item.Caliber.40mm": 0.7
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.195,
+       0.195
+      ],
       "Item.Caliber.122mm": [
        0.75,
        0.15
@@ -1704,6 +1731,10 @@
       "Item.Caliber.40mm": 0.7
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.195,
+       0.195
+      ],
       "Item.Caliber.122mm": [
        0.75,
        0.15
@@ -1878,6 +1909,10 @@
       "Item.Caliber.40mm": 0.7
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.195,
+       0.195
+      ],
       "Item.Caliber.122mm": [
        0.75,
        0.15
@@ -2316,6 +2351,10 @@
       "Item.Caliber.40mm": 0.6
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.595,
+       0.595
+      ],
       "Item.Caliber.122mm": [
        1.0,
        0.2
@@ -2490,6 +2529,10 @@
       "Item.Caliber.40mm": 0.6
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.595,
+       0.595
+      ],
       "Item.Caliber.122mm": [
        1.0,
        0.2
@@ -2676,6 +2719,10 @@
       "Item.Caliber.40mm": 0.6
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.595,
+       0.595
+      ],
       "Item.Caliber.122mm": [
        1.0,
        0.2
@@ -2862,6 +2909,10 @@
       "Item.Caliber.40mm": 0.6
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.595,
+       0.595
+      ],
       "Item.Caliber.122mm": [
        3.0,
        0.6
@@ -3036,6 +3087,10 @@
       "Item.Caliber.40mm": 0.6
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.595,
+       0.595
+      ],
       "Item.Caliber.122mm": [
        1.0,
        0.2
@@ -3451,6 +3506,10 @@
       "Item.Caliber.40mm": 0.8
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.255,
+       0.255
+      ],
       "Item.Caliber.122mm": [
        0.6,
        0.2
@@ -3625,6 +3684,10 @@
       "Item.Caliber.40mm": 0.8
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.255,
+       0.255
+      ],
       "Item.Caliber.122mm": [
        0.6,
        0.2
@@ -3811,6 +3874,10 @@
       "Item.Caliber.40mm": 0.8
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.255,
+       0.255
+      ],
       "Item.Caliber.122mm": [
        0.6,
        0.2
@@ -3997,6 +4064,10 @@
       "Item.Caliber.40mm": 0.8
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.255,
+       0.255
+      ],
       "Item.Caliber.122mm": [
        0.6,
        0.2
@@ -4171,6 +4242,10 @@
       "Item.Caliber.40mm": 0.8
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.255,
+       0.255
+      ],
       "Item.Caliber.122mm": [
        0.6,
        0.2
@@ -4526,6 +4601,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.21,
+       0.21
+      ],
       "Item.Caliber.122mm": [
        0.9,
        0.45
@@ -4706,6 +4785,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.21,
+       0.21
+      ],
       "Item.Caliber.122mm": [
        0.9,
        0.45
@@ -4880,6 +4963,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.21,
+       0.21
+      ],
       "Item.Caliber.122mm": [
        0.9,
        0.45
@@ -5066,6 +5153,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.21,
+       0.21
+      ],
       "Item.Caliber.122mm": [
        0.9,
        0.45
@@ -5252,6 +5343,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.21,
+       0.21
+      ],
       "Item.Caliber.122mm": [
        0.9,
        0.45
@@ -5426,6 +5521,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.21,
+       0.21
+      ],
       "Item.Caliber.122mm": [
        0.9,
        0.45
@@ -5606,6 +5705,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.21,
+       0.21
+      ],
       "Item.Caliber.122mm": [
        0.9,
        0.45
@@ -5975,6 +6078,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.21,
+       0.21
+      ],
       "Item.Caliber.122mm": [
        0.9,
        0.45
@@ -6155,6 +6262,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.21,
+       0.21
+      ],
       "Item.Caliber.122mm": [
        0.9,
        0.45
@@ -6329,6 +6440,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.21,
+       0.21
+      ],
       "Item.Caliber.122mm": [
        0.9,
        0.45
@@ -6515,6 +6630,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.21,
+       0.21
+      ],
       "Item.Caliber.122mm": [
        0.9,
        0.45
@@ -6701,6 +6820,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.21,
+       0.21
+      ],
       "Item.Caliber.122mm": [
        0.9,
        0.45
@@ -6875,6 +6998,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.21,
+       0.21
+      ],
       "Item.Caliber.122mm": [
        0.9,
        0.45
@@ -7055,6 +7182,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.21,
+       0.21
+      ],
       "Item.Caliber.122mm": [
        0.9,
        0.45
@@ -7229,6 +7360,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.21,
+       0.21
+      ],
       "Item.Caliber.122mm": [
        0.9,
        0.45
@@ -7573,6 +7708,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.5,
+       0.5
+      ],
       "Item.Caliber.122mm": [
        2.25,
        2.25
@@ -7747,6 +7886,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.5,
+       0.5
+      ],
       "Item.Caliber.122mm": [
        2.25,
        2.25
@@ -7970,6 +8113,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.5,
+       0.5
+      ],
       "Item.Caliber.122mm": [
        2.625,
        2.625
@@ -8144,6 +8291,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.5,
+       0.5
+      ],
       "Item.Caliber.122mm": [
        2.625,
        2.625
@@ -8363,6 +8514,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.5,
+       0.5
+      ],
       "Item.Caliber.122mm": [
        2.625,
        2.625
@@ -8537,6 +8692,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.5,
+       0.5
+      ],
       "Item.Caliber.122mm": [
        2.625,
        2.625
@@ -8760,6 +8919,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.85,
+       0.85
+      ],
       "Item.Caliber.122mm": [
        1.8,
        0.6
@@ -8934,6 +9097,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.85,
+       0.85
+      ],
       "Item.Caliber.122mm": [
        1.8,
        0.6
@@ -9081,6 +9248,395 @@
    }
   },
   {
+   "id": "stationary-stn-05",
+   "damage_row": "Meta.Damage.Vehicle.Stationary.STN_05",
+   "variants": [
+    "STN_05"
+   ],
+   "main_health": 3000.0,
+   "models": [],
+   "slots": [
+    {
+     "slot": "CC_Main",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 3000.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "radial_routing_skips": {
+      "pre": false,
+      "post": false,
+      "simultaneous": false
+     },
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.15,
+      "Item.Caliber.762mm": 0.15,
+      "Item.Caliber.50Cal": 0.15,
+      "Item.Caliber.9mm": 0.15,
+      "Item.Caliber.7mmBuck": 0.15,
+      "Item.Caliber.545mm": 0.15,
+      "Item.Caliber.45ACP": 0.15,
+      "Item.Caliber.762x54mm": 0.15,
+      "Item.Caliber.308Win": 0.15,
+      "Item.Caliber.45Colt": 0.15,
+      "Item.Caliber.762x51mm": 0.15,
+      "Item.Caliber.50AE": 0.15,
+      "Item.Caliber.12g.RifledSlug": 0.15,
+      "Item.Caliber.338Nor": 0.15,
+      "Item.Caliber.20x102mm": 0.3,
+      "Item.Caliber.35x228mm": 0.3,
+      "Item.Caliber.30mm": 0.5,
+      "Item.Caliber.122mm": 2.625,
+      "Item.Caliber.70mm": 7.5,
+      "Item.Caliber.84mm": 7.5,
+      "Item.Caliber.84mm.TVGuided": 7.5,
+      "Item.Caliber.93mm": 7.5,
+      "Item.Caliber.120x800mm.Standard": 13.5,
+      "Item.Caliber.120x570mm": 3.75,
+      "Item.Caliber.125x570mm": 3.75,
+      "Item.Caliber.72mm": 7.5,
+      "Item.Caliber.122mm.Havoc": 2.625,
+      "Item.Caliber.155mm.Expensive": 1.5,
+      "Item.Caliber.155mm.Expensive.Sandbox": 1.5,
+      "Item.Caliber.155mm.Standard": 1.5,
+      "Item.Caliber.155mm.Standard.Sandbox": 1.5,
+      "Item.Caliber.40mm": 1.0
+     },
+     "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.5,
+       0.5
+      ],
+      "Item.Caliber.122mm": [
+       2.625,
+       2.625
+      ],
+      "Item.Caliber.70mm": [
+       7.5,
+       7.5
+      ],
+      "Item.Caliber.84mm": [
+       7.5,
+       7.5
+      ],
+      "Item.Caliber.84mm.TVGuided": [
+       7.5,
+       7.5
+      ],
+      "Item.Caliber.93mm": [
+       7.5,
+       7.5
+      ],
+      "Item.Caliber.120x800mm.Standard": [
+       13.5,
+       13.5
+      ],
+      "Item.Caliber.120x570mm": [
+       3.75,
+       3.75
+      ],
+      "Item.Caliber.125x570mm": [
+       3.75,
+       3.75
+      ],
+      "Item.Caliber.72mm": [
+       7.5,
+       7.5
+      ],
+      "Item.Caliber.122mm.Havoc": [
+       2.625,
+       2.625
+      ],
+      "Item.Caliber.155mm.Expensive": [
+       1.5,
+       1.5
+      ],
+      "Item.Caliber.155mm.Expensive.Sandbox": [
+       1.5,
+       1.5
+      ],
+      "Item.Caliber.155mm.Standard": [
+       1.5,
+       1.5
+      ],
+      "Item.Caliber.155mm.Standard.Sandbox": [
+       1.5,
+       1.5
+      ],
+      "Item.Caliber.40mm": [
+       1.0,
+       1.0
+      ]
+     },
+     "explosion_factor": {
+      "Actor.m67-frag-grenade": [
+       7.5,
+       7.5
+      ],
+      "Actor.c4": [
+       4.0,
+       4.0
+      ],
+      "Actor.at-mine": [
+       1.0,
+       1.0
+      ],
+      "Actor.claymore": [
+       1.0,
+       1.0
+      ],
+      "Actor.ied": [
+       5.0,
+       5.0
+      ],
+      "Actor.molotov": [
+       1.0,
+       1.0
+      ]
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 715,
+      "Item.Caliber.762mm": 589,
+      "Item.Caliber.50Cal": 223,
+      "Item.Caliber.9mm": 910,
+      "Item.Caliber.7mmBuck": 800,
+      "Item.Caliber.545mm": 770,
+      "Item.Caliber.45ACP": 667,
+      "Item.Caliber.762x54mm": 455,
+      "Item.Caliber.308Win": 445,
+      "Item.Caliber.45Colt": 445,
+      "Item.Caliber.762x51mm": 334,
+      "Item.Caliber.50AE": 318,
+      "Item.Caliber.12g.RifledSlug": 191,
+      "Item.Caliber.338Nor": 191,
+      "Item.Caliber.20x102mm": 167,
+      "Item.Caliber.35x228mm": 167,
+      "Item.Caliber.30mm": 60,
+      "Item.Caliber.122mm": 12,
+      "Item.Caliber.70mm": 4,
+      "Item.Caliber.84mm": 4,
+      "Item.Caliber.84mm.TVGuided": 4,
+      "Item.Caliber.93mm": 4,
+      "Item.Caliber.120x800mm.Standard": 2,
+      "Item.Caliber.120x570mm": 6,
+      "Item.Caliber.125x570mm": 6,
+      "Item.Caliber.72mm": 2,
+      "Item.Caliber.122mm.Havoc": 4,
+      "Item.Caliber.155mm.Expensive": 5,
+      "Item.Caliber.155mm.Expensive.Sandbox": 5,
+      "Item.Caliber.155mm.Standard": 5,
+      "Item.Caliber.155mm.Standard.Sandbox": 5,
+      "Item.Caliber.40mm": 30
+     }
+    },
+    {
+     "slot": "(default)",
+     "group": "ComplexSurface.Group.Default",
+     "section": "Attribute.Gameplay.Health",
+     "max_health": 3000.0,
+     "hit_location": "Meta.Damage.HitLocation.Vehicle.MainBody",
+     "unreachable": null,
+     "radial_routing_skips": {
+      "pre": false,
+      "post": false,
+      "simultaneous": false
+     },
+     "routing": {
+      "pre": [],
+      "post": [],
+      "simultaneous": []
+     },
+     "rule_factor": {
+      "Item.Caliber.556mm": 0.15,
+      "Item.Caliber.762mm": 0.15,
+      "Item.Caliber.50Cal": 0.15,
+      "Item.Caliber.9mm": 0.15,
+      "Item.Caliber.7mmBuck": 0.15,
+      "Item.Caliber.545mm": 0.15,
+      "Item.Caliber.45ACP": 0.15,
+      "Item.Caliber.762x54mm": 0.15,
+      "Item.Caliber.308Win": 0.15,
+      "Item.Caliber.45Colt": 0.15,
+      "Item.Caliber.762x51mm": 0.15,
+      "Item.Caliber.50AE": 0.15,
+      "Item.Caliber.12g.RifledSlug": 0.15,
+      "Item.Caliber.338Nor": 0.15,
+      "Item.Caliber.20x102mm": 0.3,
+      "Item.Caliber.35x228mm": 0.3,
+      "Item.Caliber.30mm": 0.5,
+      "Item.Caliber.122mm": 2.625,
+      "Item.Caliber.70mm": 7.5,
+      "Item.Caliber.84mm": 7.5,
+      "Item.Caliber.84mm.TVGuided": 7.5,
+      "Item.Caliber.93mm": 7.5,
+      "Item.Caliber.120x800mm.Standard": 13.5,
+      "Item.Caliber.120x570mm": 3.75,
+      "Item.Caliber.125x570mm": 3.75,
+      "Item.Caliber.72mm": 7.5,
+      "Item.Caliber.122mm.Havoc": 2.625,
+      "Item.Caliber.155mm.Expensive": 1.5,
+      "Item.Caliber.155mm.Expensive.Sandbox": 1.5,
+      "Item.Caliber.155mm.Standard": 1.5,
+      "Item.Caliber.155mm.Standard.Sandbox": 1.5,
+      "Item.Caliber.40mm": 1.0
+     },
+     "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.5,
+       0.5
+      ],
+      "Item.Caliber.122mm": [
+       2.625,
+       2.625
+      ],
+      "Item.Caliber.70mm": [
+       7.5,
+       7.5
+      ],
+      "Item.Caliber.84mm": [
+       7.5,
+       7.5
+      ],
+      "Item.Caliber.84mm.TVGuided": [
+       7.5,
+       7.5
+      ],
+      "Item.Caliber.93mm": [
+       7.5,
+       7.5
+      ],
+      "Item.Caliber.120x800mm.Standard": [
+       13.5,
+       13.5
+      ],
+      "Item.Caliber.120x570mm": [
+       3.75,
+       3.75
+      ],
+      "Item.Caliber.125x570mm": [
+       3.75,
+       3.75
+      ],
+      "Item.Caliber.72mm": [
+       7.5,
+       7.5
+      ],
+      "Item.Caliber.122mm.Havoc": [
+       2.625,
+       2.625
+      ],
+      "Item.Caliber.155mm.Expensive": [
+       1.5,
+       1.5
+      ],
+      "Item.Caliber.155mm.Expensive.Sandbox": [
+       1.5,
+       1.5
+      ],
+      "Item.Caliber.155mm.Standard": [
+       1.5,
+       1.5
+      ],
+      "Item.Caliber.155mm.Standard.Sandbox": [
+       1.5,
+       1.5
+      ],
+      "Item.Caliber.40mm": [
+       1.0,
+       1.0
+      ]
+     },
+     "explosion_factor": {
+      "Actor.m67-frag-grenade": [
+       7.5,
+       7.5
+      ],
+      "Actor.c4": [
+       4.0,
+       4.0
+      ],
+      "Actor.at-mine": [
+       1.0,
+       1.0
+      ],
+      "Actor.claymore": [
+       1.0,
+       1.0
+      ],
+      "Actor.ied": [
+       5.0,
+       5.0
+      ],
+      "Actor.molotov": [
+       1.0,
+       1.0
+      ]
+     },
+     "hits_to_destroy": {
+      "Item.Caliber.556mm": 715,
+      "Item.Caliber.762mm": 589,
+      "Item.Caliber.50Cal": 223,
+      "Item.Caliber.9mm": 910,
+      "Item.Caliber.7mmBuck": 800,
+      "Item.Caliber.545mm": 770,
+      "Item.Caliber.45ACP": 667,
+      "Item.Caliber.762x54mm": 455,
+      "Item.Caliber.308Win": 445,
+      "Item.Caliber.45Colt": 445,
+      "Item.Caliber.762x51mm": 334,
+      "Item.Caliber.50AE": 318,
+      "Item.Caliber.12g.RifledSlug": 191,
+      "Item.Caliber.338Nor": 191,
+      "Item.Caliber.20x102mm": 167,
+      "Item.Caliber.35x228mm": 167,
+      "Item.Caliber.30mm": 60,
+      "Item.Caliber.122mm": 12,
+      "Item.Caliber.70mm": 4,
+      "Item.Caliber.84mm": 4,
+      "Item.Caliber.84mm.TVGuided": 4,
+      "Item.Caliber.93mm": 4,
+      "Item.Caliber.120x800mm.Standard": 2,
+      "Item.Caliber.120x570mm": 6,
+      "Item.Caliber.125x570mm": 6,
+      "Item.Caliber.72mm": 2,
+      "Item.Caliber.122mm.Havoc": 4,
+      "Item.Caliber.155mm.Expensive": 5,
+      "Item.Caliber.155mm.Expensive.Sandbox": 5,
+      "Item.Caliber.155mm.Standard": 5,
+      "Item.Caliber.155mm.Standard.Sandbox": 5,
+      "Item.Caliber.40mm": 30
+     }
+    }
+   ],
+   "radial_routing_skips_by_variant": {
+    "STN_05": {
+     "Attribute.Gameplay.Health": {
+      "pre": false,
+      "post": false,
+      "simultaneous": false
+     }
+    }
+   },
+   "sections": {
+    "Attribute.Gameplay.Health": {
+     "max_health": 3000.0,
+     "pre": [],
+     "post": [],
+     "simultaneous": [],
+     "radial_routing_skips": {
+      "pre": false,
+      "post": false,
+      "simultaneous": false
+     }
+    }
+   }
+  },
+  {
    "id": "stationary-mgnest",
    "damage_row": "Meta.Damage.Vehicle.Stationary.MGNest",
    "variants": [
@@ -9155,6 +9711,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       1.0,
+       1.0
+      ],
       "Item.Caliber.122mm": [
        1.0,
        1.0
@@ -9329,6 +9889,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       1.0,
+       1.0
+      ],
       "Item.Caliber.122mm": [
        1.0,
        1.0
@@ -9584,6 +10148,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.18,
+       0.18
+      ],
       "Item.Caliber.122mm": [
        0.705,
        0.6
@@ -9758,6 +10326,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.18,
+       0.18
+      ],
       "Item.Caliber.122mm": [
        0.705,
        0.6
@@ -9938,6 +10510,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.18,
+       0.18
+      ],
       "Item.Caliber.122mm": [
        0.705,
        0.6
@@ -10124,6 +10700,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.18,
+       0.18
+      ],
       "Item.Caliber.122mm": [
        0.705,
        0.6
@@ -10310,6 +10890,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.18,
+       0.18
+      ],
       "Item.Caliber.122mm": [
        0.705,
        0.6
@@ -10490,6 +11074,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.18,
+       0.18
+      ],
       "Item.Caliber.122mm": [
        0.705,
        0.6
@@ -10851,6 +11439,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.18,
+       0.18
+      ],
       "Item.Caliber.122mm": [
        0.705,
        0.6
@@ -11025,6 +11617,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.18,
+       0.18
+      ],
       "Item.Caliber.122mm": [
        0.705,
        0.6
@@ -11205,6 +11801,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.18,
+       0.18
+      ],
       "Item.Caliber.122mm": [
        0.705,
        0.6
@@ -11391,6 +11991,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.18,
+       0.18
+      ],
       "Item.Caliber.122mm": [
        0.705,
        0.6
@@ -11577,6 +12181,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.18,
+       0.18
+      ],
       "Item.Caliber.122mm": [
        0.705,
        0.6
@@ -11757,6 +12365,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.18,
+       0.18
+      ],
       "Item.Caliber.122mm": [
        0.705,
        0.6
@@ -12119,6 +12731,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.18,
+       0.18
+      ],
       "Item.Caliber.122mm": [
        0.705,
        0.6
@@ -12293,6 +12909,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.18,
+       0.18
+      ],
       "Item.Caliber.122mm": [
        0.705,
        0.6
@@ -12473,6 +13093,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.18,
+       0.18
+      ],
       "Item.Caliber.122mm": [
        0.705,
        0.6
@@ -12659,6 +13283,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.18,
+       0.18
+      ],
       "Item.Caliber.122mm": [
        0.705,
        0.6
@@ -12845,6 +13473,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.18,
+       0.18
+      ],
       "Item.Caliber.122mm": [
        0.705,
        0.6
@@ -13031,6 +13663,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.18,
+       0.18
+      ],
       "Item.Caliber.122mm": [
        0.705,
        0.6
@@ -13211,6 +13847,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.18,
+       0.18
+      ],
       "Item.Caliber.122mm": [
        0.705,
        0.6
@@ -13600,6 +14240,10 @@
       "Item.Caliber.40mm": 0.06
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.21,
+       0.21
+      ],
       "Item.Caliber.122mm": [
        0.88125,
        0.75
@@ -13774,6 +14418,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.21,
+       0.21
+      ],
       "Item.Caliber.122mm": [
        0.88125,
        0.75
@@ -13954,6 +14602,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.21,
+       0.21
+      ],
       "Item.Caliber.122mm": [
        0.88125,
        0.75
@@ -14140,6 +14792,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.21,
+       0.21
+      ],
       "Item.Caliber.122mm": [
        0.88125,
        0.75
@@ -14326,6 +14982,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.21,
+       0.21
+      ],
       "Item.Caliber.122mm": [
        0.88125,
        0.75
@@ -14506,6 +15166,10 @@
       "Item.Caliber.40mm": 1.2
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.21,
+       0.21
+      ],
       "Item.Caliber.122mm": [
        0.88125,
        0.75
@@ -14860,6 +15524,10 @@
       "Item.Caliber.40mm": 2.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       2.0,
+       2.0
+      ],
       "Item.Caliber.122mm": [
        2.0,
        2.0
@@ -15034,6 +15702,10 @@
       "Item.Caliber.40mm": 2.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       2.0,
+       2.0
+      ],
       "Item.Caliber.122mm": [
        2.0,
        2.0
@@ -15220,6 +15892,10 @@
       "Item.Caliber.40mm": 2.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       2.0,
+       2.0
+      ],
       "Item.Caliber.122mm": [
        2.0,
        2.0
@@ -15406,6 +16082,10 @@
       "Item.Caliber.40mm": 2.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       2.0,
+       2.0
+      ],
       "Item.Caliber.122mm": [
        2.0,
        2.0
@@ -15592,6 +16272,10 @@
       "Item.Caliber.40mm": 2.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       2.0,
+       2.0
+      ],
       "Item.Caliber.122mm": [
        2.0,
        2.0
@@ -15778,6 +16462,10 @@
       "Item.Caliber.40mm": 2.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       2.0,
+       2.0
+      ],
       "Item.Caliber.122mm": [
        2.0,
        2.0
@@ -15952,6 +16640,10 @@
       "Item.Caliber.40mm": 2.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       2.0,
+       2.0
+      ],
       "Item.Caliber.122mm": [
        2.0,
        2.0
@@ -16426,6 +17118,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.5,
+       0.5
+      ],
       "Item.Caliber.122mm": [
        5.0,
        1.0
@@ -16600,6 +17296,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.5,
+       0.5
+      ],
       "Item.Caliber.122mm": [
        5.0,
        1.0
@@ -16786,6 +17486,10 @@
       "Item.Caliber.40mm": 4.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.5,
+       0.5
+      ],
       "Item.Caliber.122mm": [
        5.0,
        1.0
@@ -16972,6 +17676,10 @@
       "Item.Caliber.40mm": 4.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.5,
+       0.5
+      ],
       "Item.Caliber.122mm": [
        5.0,
        1.0
@@ -17158,6 +17866,10 @@
       "Item.Caliber.40mm": 4.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.5,
+       0.5
+      ],
       "Item.Caliber.122mm": [
        5.0,
        1.0
@@ -17344,6 +18056,10 @@
       "Item.Caliber.40mm": 4.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.5,
+       0.5
+      ],
       "Item.Caliber.122mm": [
        5.0,
        1.0
@@ -17518,6 +18234,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.5,
+       0.5
+      ],
       "Item.Caliber.122mm": [
        5.0,
        1.0
@@ -18050,6 +18770,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.3,
+       0.3
+      ],
       "Item.Caliber.122mm": [
        1.35,
        0.45
@@ -18236,6 +18960,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.3,
+       0.3
+      ],
       "Item.Caliber.122mm": [
        1.35,
        0.45
@@ -18422,6 +19150,10 @@
       "Item.Caliber.40mm": 1.75
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.3,
+       0.3
+      ],
       "Item.Caliber.122mm": [
        1.72125,
        0.57375
@@ -18608,6 +19340,10 @@
       "Item.Caliber.40mm": 1.75
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.3,
+       0.3
+      ],
       "Item.Caliber.122mm": [
        1.72125,
        0.57375
@@ -18794,6 +19530,10 @@
       "Item.Caliber.40mm": 1.75
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.3,
+       0.3
+      ],
       "Item.Caliber.122mm": [
        1.9575,
        0.6525
@@ -18980,6 +19720,10 @@
       "Item.Caliber.40mm": 1.75
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.3,
+       0.3
+      ],
       "Item.Caliber.122mm": [
        1.9575,
        0.6525
@@ -19166,6 +19910,10 @@
       "Item.Caliber.40mm": 1.75
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.3,
+       0.3
+      ],
       "Item.Caliber.122mm": [
        1.72125,
        0.57375
@@ -19352,6 +20100,10 @@
       "Item.Caliber.40mm": 1.75
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.3,
+       0.3
+      ],
       "Item.Caliber.122mm": [
        1.72125,
        0.57375
@@ -19538,6 +20290,10 @@
       "Item.Caliber.40mm": 1.75
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.3,
+       0.3
+      ],
       "Item.Caliber.122mm": [
        1.9575,
        0.6525
@@ -19724,6 +20480,10 @@
       "Item.Caliber.40mm": 1.75
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.3,
+       0.3
+      ],
       "Item.Caliber.122mm": [
        1.9575,
        0.6525
@@ -19898,6 +20658,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.3,
+       0.3
+      ],
       "Item.Caliber.122mm": [
        1.35,
        0.45
@@ -20360,6 +21124,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.25,
+       0.25
+      ],
       "Item.Caliber.122mm": [
        1.05,
        0.35
@@ -20546,6 +21314,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.25,
+       0.25
+      ],
       "Item.Caliber.122mm": [
        1.05,
        0.35
@@ -20732,6 +21504,10 @@
       "Item.Caliber.40mm": 1.75
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.25,
+       0.25
+      ],
       "Item.Caliber.122mm": [
        1.33875,
        0.44625
@@ -20918,6 +21694,10 @@
       "Item.Caliber.40mm": 1.75
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.25,
+       0.25
+      ],
       "Item.Caliber.122mm": [
        1.33875,
        0.44625
@@ -21104,6 +21884,10 @@
       "Item.Caliber.40mm": 1.75
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.25,
+       0.25
+      ],
       "Item.Caliber.122mm": [
        1.5225,
        0.5075
@@ -21290,6 +22074,10 @@
       "Item.Caliber.40mm": 1.75
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.25,
+       0.25
+      ],
       "Item.Caliber.122mm": [
        1.5225,
        0.5075
@@ -21476,6 +22264,10 @@
       "Item.Caliber.40mm": 1.75
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.25,
+       0.25
+      ],
       "Item.Caliber.122mm": [
        1.33875,
        0.44625
@@ -21662,6 +22454,10 @@
       "Item.Caliber.40mm": 1.75
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.25,
+       0.25
+      ],
       "Item.Caliber.122mm": [
        1.33875,
        0.44625
@@ -21848,6 +22644,10 @@
       "Item.Caliber.40mm": 1.75
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.25,
+       0.25
+      ],
       "Item.Caliber.122mm": [
        1.5225,
        0.5075
@@ -22034,6 +22834,10 @@
       "Item.Caliber.40mm": 1.75
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.25,
+       0.25
+      ],
       "Item.Caliber.122mm": [
        1.5225,
        0.5075
@@ -22208,6 +23012,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.25,
+       0.25
+      ],
       "Item.Caliber.122mm": [
        1.05,
        0.35
@@ -22670,6 +23478,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.225,
+       0.225
+      ],
       "Item.Caliber.122mm": [
        1.2,
        0.4
@@ -22856,6 +23668,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.225,
+       0.225
+      ],
       "Item.Caliber.122mm": [
        1.2,
        0.4
@@ -23042,6 +23858,10 @@
       "Item.Caliber.40mm": 1.75
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.225,
+       0.225
+      ],
       "Item.Caliber.122mm": [
        1.53,
        0.51
@@ -23228,6 +24048,10 @@
       "Item.Caliber.40mm": 1.75
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.225,
+       0.225
+      ],
       "Item.Caliber.122mm": [
        1.53,
        0.51
@@ -23414,6 +24238,10 @@
       "Item.Caliber.40mm": 1.75
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.225,
+       0.225
+      ],
       "Item.Caliber.122mm": [
        1.74,
        0.58
@@ -23600,6 +24428,10 @@
       "Item.Caliber.40mm": 1.75
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.225,
+       0.225
+      ],
       "Item.Caliber.122mm": [
        1.74,
        0.58
@@ -23786,6 +24618,10 @@
       "Item.Caliber.40mm": 1.75
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.225,
+       0.225
+      ],
       "Item.Caliber.122mm": [
        1.53,
        0.51
@@ -23972,6 +24808,10 @@
       "Item.Caliber.40mm": 1.75
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.225,
+       0.225
+      ],
       "Item.Caliber.122mm": [
        1.53,
        0.51
@@ -24158,6 +24998,10 @@
       "Item.Caliber.40mm": 1.75
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.225,
+       0.225
+      ],
       "Item.Caliber.122mm": [
        1.74,
        0.58
@@ -24344,6 +25188,10 @@
       "Item.Caliber.40mm": 1.75
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.225,
+       0.225
+      ],
       "Item.Caliber.122mm": [
        1.74,
        0.58
@@ -24518,6 +25366,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.225,
+       0.225
+      ],
       "Item.Caliber.122mm": [
        1.2,
        0.4
@@ -24942,6 +25794,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.4,
+       0.4
+      ],
       "Item.Caliber.122mm": [
        3.0,
        1.0
@@ -25122,6 +25978,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.4,
+       0.4
+      ],
       "Item.Caliber.122mm": [
        3.0,
        1.0
@@ -25308,6 +26168,10 @@
       "Item.Caliber.40mm": 4.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.4,
+       0.4
+      ],
       "Item.Caliber.122mm": [
        3.825,
        1.275
@@ -25494,6 +26358,10 @@
       "Item.Caliber.40mm": 4.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.4,
+       0.4
+      ],
       "Item.Caliber.122mm": [
        3.825,
        1.275
@@ -25680,6 +26548,10 @@
       "Item.Caliber.40mm": 4.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.4,
+       0.4
+      ],
       "Item.Caliber.122mm": [
        4.35,
        1.45
@@ -25866,6 +26738,10 @@
       "Item.Caliber.40mm": 4.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.4,
+       0.4
+      ],
       "Item.Caliber.122mm": [
        4.35,
        1.45
@@ -26052,6 +26928,10 @@
       "Item.Caliber.40mm": 4.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.4,
+       0.4
+      ],
       "Item.Caliber.122mm": [
        3.825,
        1.275
@@ -26238,6 +27118,10 @@
       "Item.Caliber.40mm": 4.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.4,
+       0.4
+      ],
       "Item.Caliber.122mm": [
        3.825,
        1.275
@@ -26424,6 +27308,10 @@
       "Item.Caliber.40mm": 4.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.4,
+       0.4
+      ],
       "Item.Caliber.122mm": [
        4.35,
        1.45
@@ -26610,6 +27498,10 @@
       "Item.Caliber.40mm": 4.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.4,
+       0.4
+      ],
       "Item.Caliber.122mm": [
        4.35,
        1.45
@@ -26784,6 +27676,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.4,
+       0.4
+      ],
       "Item.Caliber.122mm": [
        3.0,
        1.0
@@ -27405,6 +28301,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.6,
+       0.6
+      ],
       "Item.Caliber.122mm": [
        1.35,
        0.45
@@ -27591,6 +28491,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.6,
+       0.6
+      ],
       "Item.Caliber.122mm": [
        1.35,
        0.45
@@ -27777,6 +28681,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.6,
+       0.6
+      ],
       "Item.Caliber.122mm": [
        1.35,
        0.45
@@ -27963,6 +28871,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.6,
+       0.6
+      ],
       "Item.Caliber.122mm": [
        1.72125,
        0.57375
@@ -28149,6 +29061,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.6,
+       0.6
+      ],
       "Item.Caliber.122mm": [
        1.72125,
        0.57375
@@ -28335,6 +29251,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.6,
+       0.6
+      ],
       "Item.Caliber.122mm": [
        1.9575,
        0.6525
@@ -28521,6 +29441,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.6,
+       0.6
+      ],
       "Item.Caliber.122mm": [
        1.9575,
        0.6525
@@ -28707,6 +29631,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.6,
+       0.6
+      ],
       "Item.Caliber.122mm": [
        1.35,
        0.45
@@ -28893,6 +29821,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.6,
+       0.6
+      ],
       "Item.Caliber.122mm": [
        1.35,
        0.45
@@ -29079,6 +30011,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.6,
+       0.6
+      ],
       "Item.Caliber.122mm": [
        1.72125,
        0.57375
@@ -29265,6 +30201,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.6,
+       0.6
+      ],
       "Item.Caliber.122mm": [
        1.72125,
        0.57375
@@ -29451,6 +30391,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.6,
+       0.6
+      ],
       "Item.Caliber.122mm": [
        1.9575,
        0.6525
@@ -29637,6 +30581,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.6,
+       0.6
+      ],
       "Item.Caliber.122mm": [
        1.9575,
        0.6525
@@ -29823,6 +30771,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.6,
+       0.6
+      ],
       "Item.Caliber.122mm": [
        1.35,
        0.45
@@ -30009,6 +30961,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.6,
+       0.6
+      ],
       "Item.Caliber.122mm": [
        1.35,
        0.45
@@ -30183,6 +31139,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.6,
+       0.6
+      ],
       "Item.Caliber.122mm": [
        1.35,
        0.45
@@ -30951,6 +31911,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.4,
+       0.4
+      ],
       "Item.Caliber.122mm": [
        1.8,
        0.45
@@ -31125,6 +32089,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.4,
+       0.4
+      ],
       "Item.Caliber.122mm": [
        1.8,
        0.45
@@ -31311,6 +32279,10 @@
       "Item.Caliber.40mm": 2.875
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.4,
+       0.4
+      ],
       "Item.Caliber.122mm": [
        2.052,
        0.513
@@ -31497,6 +32469,10 @@
       "Item.Caliber.40mm": 2.875
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.4,
+       0.4
+      ],
       "Item.Caliber.122mm": [
        2.052,
        0.513
@@ -31683,6 +32659,10 @@
       "Item.Caliber.40mm": 2.875
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.4,
+       0.4
+      ],
       "Item.Caliber.122mm": [
        2.205,
        0.55125
@@ -31869,6 +32849,10 @@
       "Item.Caliber.40mm": 2.875
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.4,
+       0.4
+      ],
       "Item.Caliber.122mm": [
        2.205,
        0.55125
@@ -32055,6 +33039,10 @@
       "Item.Caliber.40mm": 2.875
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.4,
+       0.4
+      ],
       "Item.Caliber.122mm": [
        2.052,
        0.513
@@ -32241,6 +33229,10 @@
       "Item.Caliber.40mm": 2.875
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.4,
+       0.4
+      ],
       "Item.Caliber.122mm": [
        2.052,
        0.513
@@ -32427,6 +33419,10 @@
       "Item.Caliber.40mm": 2.875
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.4,
+       0.4
+      ],
       "Item.Caliber.122mm": [
        2.205,
        0.55125
@@ -32613,6 +33609,10 @@
       "Item.Caliber.40mm": 2.875
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.4,
+       0.4
+      ],
       "Item.Caliber.122mm": [
        2.205,
        0.55125
@@ -32787,6 +33787,10 @@
       "Item.Caliber.40mm": 1.0
      },
      "blast_factor": {
+      "Item.Caliber.30mm": [
+       0.4,
+       0.4
+      ],
       "Item.Caliber.122mm": [
        1.8,
        0.45

@@ -22,19 +22,26 @@
   var ROW = "Meta.Damage.Vehicle.";
   var PILOT = "air-rotary-havoc";
 
-  // Section families: the dataviz reference palette's dark categorical steps, assigned so the
-  // families that share a vehicle stay apart (validated against the panel surface #18181c).
-  // Body areas and the main health stay neutral: no further hue clears every vehicle's pairs.
-  var FAMILIES = [
-    { key: "FuelTank", label: "Fuel tank", colour: "#c98500" },
-    { key: "Engine", label: "Engine", colour: "#d55181" },
-    { key: "Rotor", label: "Rotors", colour: "#008300" },
-    { key: "Wheel", label: "Wheels", colour: "#3987e5" },
-    { key: "Tracks", label: "Tracks", colour: "#9085e9" },
-    { key: "Radar", label: "Radar", colour: "#199e70" },
-    { key: "Body", label: "Body areas", colour: "#a9a9b2" }
-  ];
-  var MAIN = { key: "Main", label: "Main health", colour: "#6c6c75" };
+  // Stable colours keyed by full health-section tag, so sections keep their identity across vehicles.
+  var SECTION_COLOURS = {
+    "Attribute.Gameplay.Health": "#8b8b96",
+    "Attribute.Gameplay.Health.FuelTank": "#c98500",
+    "Attribute.Gameplay.Health.Engine": "#d55181",
+    "Attribute.Gameplay.Health.Rotor.Main": "#b56ed8",
+    "Attribute.Gameplay.Health.Rotor.Tail": "#8f2eef",
+    "Attribute.Gameplay.Health.Wheel.Left.Front": "#e41111",
+    "Attribute.Gameplay.Health.Wheel.Right.Front": "#2eefbf",
+    "Attribute.Gameplay.Health.Wheel.Left.Middle": "#dfef2e",
+    "Attribute.Gameplay.Health.Wheel.Right.Middle": "#e411c1",
+    "Attribute.Gameplay.Health.Wheel.Left.Rear": "#2eef2e",
+    "Attribute.Gameplay.Health.Wheel.Right.Rear": "#9ad86e",
+    "Attribute.Gameplay.Health.Tracks.Left": "#2e7fef",
+    "Attribute.Gameplay.Health.Tracks.Right": "#d8896e",
+    "Attribute.Gameplay.Health.Radar": "#2ecfef",
+    "Attribute.Gameplay.Health.Body.StrongArea": "#d8be6e",
+    "Attribute.Gameplay.Health.Body.ModerateArea": "#3386c1"
+  };
+  var UNKNOWN_SECTION_COLOURS = ["#8f2eef", "#2eefbf", "#2e7fef", "#e41111", "#dfef2e", "#2ecfef"];
   var NONE_COLOUR = "#3b3b42";       // "can't destroy" (hatched in the legend and list)
   // Sequential blue, dark mode: step 600 (dimmest allowed on dark) up to step 100.
   var RAMP = ["#184f95", "#1c5cab", "#256abf", "#2a78d6", "#3987e5", "#5598e7",
@@ -85,11 +92,18 @@
 
   function pct(scalar) { return num(scalar * 100) + "%"; }
 
-  function familyOf(section) {
-    if (!section || section === mainSection) return MAIN;
-    var head = section.replace(mainSection + ".", "").split(".")[0];
-    for (var i = 0; i < FAMILIES.length; i++) if (FAMILIES[i].key === head) return FAMILIES[i];
-    return MAIN;
+  function unknownSectionColour(section) {
+    var hash = 2166136261;
+    for (var i = 0; i < section.length; i++) hash = Math.imul(hash ^ section.charCodeAt(i), 16777619);
+    return UNKNOWN_SECTION_COLOURS[(hash >>> 0) % UNKNOWN_SECTION_COLOURS.length];
+  }
+
+  function sectionOf(section) {
+    if (!section || section === mainSection) {
+      return { tag: mainSection, label: "Main health", colour: SECTION_COLOURS[mainSection] || "#8b8b96" };
+    }
+    return { tag: section, label: shortSection(section),
+             colour: SECTION_COLOURS[section] || unknownSectionColour(section) };
   }
 
   function vehicleLabel(v) {
@@ -164,7 +178,7 @@
   // { colour, none } for a slot entry in the current mode; none: can't destroy / no damage.
   function paint(s, sc) {
     if (!s) return { colour: NONE_COLOUR, none: true };   // a material with no section
-    if (state.mode === "section") return { colour: familyOf(s.section).colour, none: false };
+    if (state.mode === "section") return { colour: sectionOf(s.section).colour, none: false };
     var x = state.mode === "hits" ? hitsOf(s, state.caliber) : factorOf(s, state.caliber);
     if (x == null || !(x > 0)) return { colour: NONE_COLOUR, none: true };
     return { colour: ramp(sc.t(x)), none: false };
@@ -346,11 +360,19 @@
     lg.textContent = "";
     if (state.mode === "section") {
       lg.appendChild(el("span", "vv-legend-title", "Section"));
-      var seen = {};
-      FAMILIES.concat([MAIN]).forEach(function (f) { seen[f.key] = false; });
-      v.slots.forEach(function (s) { seen[familyOf(s.section).key] = true; });
-      seen.Main = true;
-      FAMILIES.concat([MAIN]).forEach(function (f) { if (seen[f.key]) lg.appendChild(key(f.colour, f.label)); });
+      var seen = Object.create(null);
+      Object.keys(v.sections || {}).forEach(function (section) { if (section) seen[section] = true; });
+      v.slots.forEach(function (s) { if (s.section && s.section !== "None") seen[s.section] = true; });
+      if (mainSection) seen[mainSection] = true;
+      Object.keys(seen).sort(function (a, b) {
+        if (a === mainSection) return -1;
+        if (b === mainSection) return 1;
+        var left = shortSection(a), right = shortSection(b);
+        return left < right ? -1 : left > right ? 1 : 0;
+      }).forEach(function (section) {
+        var entry = sectionOf(section);
+        lg.appendChild(key(entry.colour, entry.label));
+      });
       if (noSection()) lg.appendChild(key(NONE_COLOUR, "no section: hits do nothing", true));
       return;
     }
@@ -881,6 +903,8 @@
     row(dl, "Main health damage", num(result.mainDamage));
     row(dl, "Main health remaining", num(result.mainRemaining) + " / " + num(state.vehicle.sections[mainSection].max_health));
     row(dl, "Blast contacts", result.hits.length + " reached; " + result.occluded + " occluded");
+    row(dl, "Damage applications", result.applications.length + " unique hit locations; " +
+      (result.hits.length - result.applications.length) + " repeat contacts skipped");
     if (result.firstSection) row(dl, "Preview first section", shortSection(result.firstSection));
     if (result.scenarioMainDamage && result.scenarioMainDamage.min !== result.scenarioMainDamage.max) {
       row(dl, "First-choice examples", num(result.scenarioMainDamage.min) + "–" + num(result.scenarioMainDamage.max) + " main damage");
@@ -891,7 +915,13 @@
     });
     if (changed.length) {
       var list = el("ul", "vv-routes");
-      changed.forEach(function (key) { list.appendChild(el("li", null, shortSection(key) + ": " + num(result.health[key]) + " / " + num(state.vehicle.sections[key].max_health) + " HP")); });
+      changed.forEach(function (key) {
+        var routed = (result.transfers || []).filter(function (entry) { return entry.section === key && entry.via; });
+        var note = routed.length ? " (" + num(routed.reduce(function (sum, entry) { return sum + entry.amount; }, 0)) +
+          " damage routed from " + Array.from(new Set(routed.map(function (entry) { return shortSection(entry.via.section); }))).join(", ") + ")" : "";
+        list.appendChild(el("li", null, shortSection(key) + ": " + num(result.health[key]) + " / " +
+          num(state.vehicle.sections[key].max_health) + " HP" + note));
+      });
       box.appendChild(list);
     }
     if (!result.hits.length) box.appendChild(el("p", "vv-note", "No visible collision component is reached by this blast."));
