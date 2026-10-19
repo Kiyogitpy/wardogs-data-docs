@@ -2,6 +2,8 @@
 // Usage: WdExtract <paksDir> <aesKeyFile> <usmap> <outDir> <oodleDll> <mode> [args...] [--names <donor.usmap>]
 //   list <prefix>                  -> <outDir>/files.txt: every .uasset whose name starts with <prefix> (e.g. GE_)
 //   schema <substr...>             -> <outDir>/usmap_schema.json: usmap struct/enum layouts whose name contains a substring
+//   recover-bp-types <new.usmap>    -> fills unknown array elements from matching cooked Blueprint fields; never overwrites a map
+//   recover-rigvm-types <new.usmap> -> fills unknown arrays from exact hashed RigVM property-bag descriptors
 //   findname <pathPrefix> <text>   -> <outDir>/findname.txt: packages under the prefix whose name map contains the text
 //   dump <listFile | asset...>     -> <outDir>/<name>.json per package (all exports, Blueprint bytecode included)
 //   mesh <listFile | asset...>     -> <outDir>/<collision mesh>.glb + manifest.json: collision meshes only (MeshMode.cs)
@@ -22,7 +24,7 @@ using Serilog;
 
 if (args.Length < 6)
 {
-    Console.WriteLine("usage: WdExtract <paksDir> <aesKeyFile> <usmap> <outDir> <oodleDll> <list|schema|findname|dump|mesh|physics|deobfuscate> [args...] [--names <usmap>]");
+    Console.WriteLine("usage: WdExtract <paksDir> <aesKeyFile> <usmap> <outDir> <oodleDll> <list|schema|findname|dump|mesh|physics|deobfuscate|recover-bp-types|recover-rigvm-types> [args...] [--names <usmap>]");
     return 1;
 }
 string paksDir = args[0], keyFile = args[1], usmap = args[2], outDir = args[3], oodle = args[4], mode = args[5];
@@ -70,6 +72,11 @@ if (mode == "deobfuscate")
     return 0;
 }
 
+if ((mode == "recover-bp-types" || mode == "recover-rigvm-types") && (rest.Count != 1 || File.Exists(rest[0]) || namesUsmap != null))
+{
+    Console.Error.WriteLine($"{mode} requires one new output usmap path (existing files and --names are refused)");
+    return 1;
+}
 if (!File.Exists(oodle)) { Console.WriteLine("oodle dll missing"); return 1; }
 OodleHelper.Initialize(new OodleDotNet.Oodle(oodle));
 var provider = new DefaultFileProvider(paksDir, SearchOption.TopDirectoryOnly, new VersionContainer(EGame.GAME_UE5_7));
@@ -85,6 +92,18 @@ if (namesUsmap != null)
     NameDonor.Apply(provider.MappingsForGame, new UsmapParser(namesUsmap).Mappings, log);
     Console.WriteLine($"--names: {log.Count} changes (see _names_log.txt)");
     File.WriteAllLines(Path.Combine(outDir, "_names_log.txt"), log);
+}
+
+if (mode == "recover-bp-types" || mode == "recover-rigvm-types")
+{
+    var mappings = new UsmapParser(usmap).Mappings;
+    var log = new List<string>();
+    var filled = mode == "recover-bp-types" ? BlueprintTypes.Apply(provider, mappings, log) : RigVMTypes.Apply(provider, mappings, log);
+    UsmapWriter.Write(mappings, rest[0], overwrite: false);
+    var remaining = UsmapStats.Count(new UsmapParser(rest[0]).Mappings).unknown;
+    File.WriteAllLines(Path.Combine(outDir, mode == "recover-bp-types" ? "_blueprint_types_log.txt" : "_rigvm_types_log.txt"), log);
+    Console.WriteLine($"{mode}: {filled} filled, {remaining} unknown slots remain");
+    return 0;
 }
 
 if (mode == "list")
@@ -925,7 +944,7 @@ static class UsmapStats
 // no compression. Mirrors UsmapParser / UsmapProperties field for field.
 static class UsmapWriter
 {
-    public static void Write(TypeMappings m, string path)
+    public static void Write(TypeMappings m, string path, bool overwrite = true)
     {
         var names = new List<string>();
         var index = new Dictionary<string, int>(StringComparer.Ordinal);
@@ -972,7 +991,7 @@ static class UsmapWriter
             w.Write(payload.ToArray());
         }
         var data = body.ToArray();
-        using var f = new BinaryWriter(File.Create(path));
+        using var f = new BinaryWriter(new FileStream(path, overwrite ? FileMode.Create : FileMode.CreateNew, FileAccess.Write));
         f.Write((ushort)0x30C4);
         f.Write((byte)EUsmapVersion.ExplicitEnumValues);
         f.Write(0);                        // no package versioning (UE bool: 4 bytes)

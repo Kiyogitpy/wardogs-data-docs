@@ -122,11 +122,80 @@ direct blunt impacts (`0x6B725B0` adds `Kinetic.Impact.ExplosiveBlunt`
 when the projectile asks for it), never to blast damage; the
 `Explosive.*` / `Radius.*` Calibre entries 102-116 do apply. `0x6CA8730`
 is the thrown explosive's contact damage (`Kinetic.Impact.Throwable`,
-`DamageType.Impact`), applied once per contact on the contacted bone. The
-per-hit Inner / Outer loop was not re-derived by the verifier. Which
-character components the radial gather hits is not traced.
+`DamageType.Impact`), applied once per contact on the contacted bone. Its
+starting amount is `AWDExplosive.ImpactDamage` (`+0x550`, load
+`0x6CA8881`, builder call `0x6CA895C`), not the detonation amount.
+The gather mechanism and its remaining limits are described below.
 
-**Radial falloff.** **Native**, `0x6F06540` (instructions `0x6F06792`-`0x6F06831`; constants `0x9AADA78` = 1.0, `0x9AADA28` = 1.0f, `0x9AC2180` = 1e-8; SDK `WDGame_structs.hpp`:3727-3731). The round's damage struct holds `BaseDamage` (`+0x0`), `ExplosiveRadius` R (`+0x4`), `MinimumExplosiveDamage` (`+0x8`), `EffectiveExplosiveRadius` E (`+0xC`) and `ExplosiveDamageFallOff` F (`+0x10`). With d the distance float the radial gather stores in each hit (`+8`): d <= E gives `BaseDamage` and the hit is Inner; d >= R gives 0; otherwise t = clamp((d - R) / (E - R), 0, 1) (t = 1 at E, 0 at R; if |E - R| <= 1e-8, t = 1 when d >= E, else 0) and the amount is `BaseDamage` x ((1 - F) + F x t). The curve is linear, and just inside R it is `BaseDamage` x (1 - F), not 0. In every branch the amount is then raised to `MinimumExplosiveDamage` if lower (missing fields read as 0). The amount goes through `ModifyDamage` (`0x6F02EC0`), so the vehicle and infantry rule factors multiply it, and each component gets its own evaluation tagged `Radius.Inner` or `.Outer`. Units are cm. **Open:** what d is measured between is not traced, and so is the Inner / Outer tag for Outer hits. The [vehicle viewer](vehicle-viewer.html) applies this rule.
+**Radial falloff. Native**, `0x6F06540` (instructions
+`0x6F06792`–`0x6F06831`; constants `0x9AADA78` = 1.0,
+`0x9AADA28` = 1.0f, `0x9AC2180` = 1e-8). The round's damage struct
+holds `BaseDamage` B (`+0x0`), `ExplosiveRadius` R (`+0x4`),
+`MinimumExplosiveDamage` M (`+0x8`), `EffectiveExplosiveRadius` E
+(`+0xC`) and `ExplosiveDamageFallOff` F (`+0x10`). The ordered branches
+are: d <= E gives B and `Radius.Inner`; otherwise the hit is
+`Radius.Outer`, with amount 0 when d >= R and
+`B × ((1 − F) + F × clamp((d − R)/(E − R), 0, 1))` otherwise.
+For |E − R| <= 1e-8, the interpolation factor is 1 when d >= E,
+else 0. Every branch is then floored at M (missing fields read as 0).
+Thus the curve approaches `B × (1 − F)` just inside R; the E branch
+takes priority if E > R. The amount then goes through `ModifyDamage`.
+The tag-selection instructions `0x6F0686D`–`0x6F06884` choose Inner
+global `0xD36A498` or Outer `0xD36A4A0`; their initializers are
+`0x127A650` and `0x127A6F0`.
+
+**Radial distance and gather. Native.** In the ordinary point/disc
+gather, d is the blast origin to the accepted collision hit's
+`ImpactPoint`, or to the candidate point for an accepted synthetic hit.
+The distance writer is `0x6F03720` (`0x6F03983`–`0x6F039C7`), whose
+corpus row is misaligned at `0x6F0371F`; its empty pseudocode is not
+evidence. The value is a float in cm at `FHitResult.Distance` (`+0x8`).
+It is not necessarily actor-center or closest-surface distance. The
+gather (`0x6F01E50` → `0x6EFFDC0`) uses a sphere of radius R and
+`ECC_Visibility`, requires a valid damageable actor/component, samples
+sockets or body/component positions, and checks LOS/radius/component
+conditions before the target's hit-array filter. Follow-up traces Center,
+Disc and Points to the same original-origin distance writer. Native
+defaults select Points and stop at the first unoccluded start; they do
+not promise a globally closest point. Static character defaults support
+one eligible third-person mesh; capsule and first-person meshes are
+excluded by their responses. The exact set after later Mutable/attachment
+changes remains **Open**. See the [point-mode/component trace](../docs/evidence/round8-radial-points-components.md)
+and [original radial evidence](../docs/evidence/round8-radial.md).
+
+**Projectile blast context. Native.** An exploding projectile carries
+the stats entity/context, weapon damage tag and ProjectileId into its
+deferred event (`0x6B72808`–`0x6B728F6`, `0x6B717C0`). The radial
+caller passes that source unchanged (`0x6B71032`–`0x6B71077`), then
+`0x6F06540` appends `DamageType.Explosive` and the radius tag. The
+exploding branch skips the direct path's `DamageType.Projectile` and
+`ExplosiveBlunt` additions (`0x6B729A3`–`0x6B72A0A`). Thus blast context
+is not just the projectile asset's default context: a retained weapon
+tag can select its bone row when a hit location resolves. This is a
+caller-specific result, not a claim about every Blueprint radial caller.
+The [vehicle viewer](vehicle-viewer.html) applies the falloff rule.
+
+**Armor processing outside projectile impacts. Native.** Radial and
+both back-blast paths invoke `IWDDamageable +0x18` before health
+evaluation. On characters this reaches `BP_TryDamageArmorSimple`
+(`0x6E74A20` → `0x6B53580`), distinct from projectile
+`Auth_GetArmorDamageEvent` (`+0x20`). These callers supply an empty
+explicit location and bone, so the general hook accepts every valid
+equipped armor/helmet piece without testing its coverage. Each piece
+gets a separate armor-target event (`0x6B53000` → `0x6BB4EB0` →
+`ModifyDamage`); `DT_GlobalDamage_ArmorData` is evaluated against that
+armor/helmet target root, not added to the character's Infantry group.
+The event amount starts as the original event's amount. Final queue
+consumption and durability writes are not established by this trace.
+
+The general hook only copies a filtered target entity when rejected
+armor-family tags remain (`0x6B53919`–`0x6B5393D`). Otherwise the health
+converter can resolve the raw hit bone. A prepopulated target root skips
+that fallback (`0x6EF90B9`–`0x6EF91B3`), so hit-location-dependent
+blast factors assume valid equipment and a mapped gathered bone. Thrown
+contact and character actor-impact bodies do not dispatch either armor
+hook. The [armor evidence](../docs/evidence/round8-armor.md) records the
+per-source matrix, coverage distinction and remaining melee question.
 
 Four more callers, so all 17 call sites are identified:
 
@@ -173,6 +242,75 @@ Most callers then hand the result to the same two steps:
 For characters and vehicles the `WDDamageable` path is the one taken; the
 character's health write is traced in §10, the vehicle section model in
 [VehicleDamagePipeline §4](Wardogs_VehicleDamagePipeline_v1.md).
+
+### 1.2 Blueprint melee and occupant events
+
+**Bytecode + Native.** The character `DamagePlayer` functions in
+`B_Action_Melee`, `B_Action_MeleeBash` and
+`B_WDItemExtension_ItemMelee` construct the event, call
+`ModifyDamage(EventData, false)`, then `BP_DamageActor`. The starting
+amount is selected `MeleeAction.Damage`, or `WeaponStats.MeleeDamage`
+for bash. The action paths use the held `ItemId` as source root; the
+extension path uses its `DamageEntityData.Tag`. Source context is
+replaced with the singleton `DamageType.Melee`, or the extension's
+valid damage-type override. See the [reviewed bytecode offsets and
+export hashes](../docs/evidence/round8-melee.md).
+
+All three first call `BP_TryDamageArmorSimple` with explicit Torso and
+bone `None`, but **discard its returned event copy**. The reflected
+native thunk deep-copies its input (`0x6B679AC`), processes that copy
+(`0x6B679C1`) and returns it (`0x6B679D0`). Armor side effects still
+occur, but the original health event has no bone or hit-location tag
+and recovers the actor's unfiltered target context. Do not apply
+projectile-style coverage filtering or a Torso bone multiplier to
+melee health. Entry 144 can use the retained armor tag; combined
+equipment requires its actual context order (§7.5).
+
+**Native.** Vehicle-operator slot 160 (`0x7692B60`) starts at 1000
+before `ModifyDamage`, appending `Explosive.VehicleExplosion` and
+`DamageType.Explosive` to copied source context. Slot 161
+(`0x768ED20`) forwards its incoming float and appends `Vehicle` and
+`DamageType.Enviroment` (shipped spelling). Both use a zeroed synthetic
+hit with no bone or explicit hit-location tag. These are event-entry
+amounts, not final health loss; see the [instruction and tag-initializer
+evidence](../docs/evidence/round8-occupants.md).
+
+**Native.** Character actor-impact (`0x6E72D90`) obtains its event
+amount from `0x6E6B670` (`0x6E7308B` → builder `0x6E730C3`) and calls
+`ModifyDamage` with bool 1 (`0x6E730D5`), bypassing rules. The amount is
+the absolute transformed AABB overlap volume × approximately 1e-6 ×
+mode `+0x70` × `UnresolvedCollisionDamageMultiplier`. The mode field
+caches substep seconds: native timestep copies identify input `+0x40`
+as `FMoverTimeStep.StepMs`, and the ground/BodyDragging simulation path
+multiplies it by 0.001. Actual geometry, current mode and settings supply
+the per-event values; the formula is not a fixed impact-damage constant.
+Frag, C4, IED and Molotov separately
+inherit thrown-contact `ImpactDamage=10`; see the
+[impact evidence](../docs/evidence/round8-impact.md).
+
+**Bytecode + Native.** Reviewed explosive actor defaults are now in
+[`explosive-actors.json`](../assets/data/explosive-actors.json), with
+the [class-default inheritance and detonation evidence](../docs/evidence/round8-explosive-actors.md).
+Frag, C4, AT mine, Claymore, IED and Molotov burst use the shared radial
+arithmetic. Keep root source tag separate from appended context: frag
+inherits `Meta.Damage.Grenade` as root and a `Rocket.60mm` context tag;
+AT mine supplies its own utility tag as the radial damage-type argument.
+Molotov sustained fire separately attempts 15 starting player damage or
+2 vehicle health per eligible 0.4-second loop. Its full patch geometry
+and lifetime are not established by those timer values.
+
+**Native + Data.** Normal handheld back-blast preserves the ranged
+fragment's damage entity and appends `DamageType.BackBlast`. All three
+enabled launchers' fragments use `Weapon.Launcher.AT4` as root. On foot,
+`0x76C3EB0` computes `M + (B − M) × clamp(Fd(d/D) × Fa(angle/A),0,1)`
+within its cone/range guards (including a zero-distance exclusion).
+Seated `0x76C4120` uses `max(B × K × clamp(C,0,1) × Fc(t),0)`, with
+`t = clamp(actorRootDistance/Dc,0,1)` and guards on the product/divisor.
+The synthetic seated hit has no bone/location. Vehicle attribute
+self-damage is a separate map, not occupant health damage; the
+[back-blast evidence](../docs/evidence/round8-backblast.md) maps each
+hashed field, curve fallback and vehicle override. Secondary/reflected
+foot branches and all gather conditions remain outside that closure.
 
 ## 2. The data passed to custom operations
 
@@ -613,7 +751,7 @@ firing weapon:
 | Event field | Value | Evidence |
 |---|---|---|
 | Stats | `GetProjectileStats(AmmoModifierTag)`: the asset's `ProjectileStats` (`+0x38`), or the per-ammo-type variant in `CachedModifiedProjectileStats` (`+0x350`) | `0x6BBA900` |
-| `S` | `DamageValues.BaseDamage`; `ExplosiveBluntDamage` instead when the projectile has an arming delay and its flight time (`FWDProjectileInstance.ElapsedTime`, seconds) is below `ArmingDelay − 0.0001`, or when an unnamed instance byte (`+0x101`) is clear. That byte is unreflected (no name in GObjects); the instance constructor sets it to 1, and no writer that clears it was found. Then scaled twice, below | stats `+0x30` / `+0x44`, `+0x180`, `+0x184`; instance `+0x290`, `+0x101` (constructor `0x6B8E100`) |
+| `S` | `DamageValues.BaseDamage`; `ExplosiveBluntDamage` instead when the projectile has an arming delay and its flight time (`FWDProjectileInstance.ElapsedTime`, seconds) is below `ArmingDelay − 0.0001`, or when an unnamed instance byte (`+0x101`) is clear. The byte defaults to 1; the camera-projectile path changes it through `0x6F391F0`, including an explicit clear. Then scaled twice, below | stats `+0x30` / `+0x44`, `+0x180`, `+0x184`; instance `+0x290`, `+0x101` (constructor `0x6B8E100`) |
 | Speed scale | `× clamp(impact speed / reference speed, 0, 1)`. Reference is the weapon's `TypicalSpeed` when `bOverrideTypicalSpeed` is set and that value is > 0, else the projectile's `TypicalSpeed` | `0x6C255B0`; weapon `+0xA0`/`+0xA4`, stats `+0x1FC` |
 | Distance scale | `× DistanceDamageFalloffCurve(distance)` when the weapon's `bUseDistanceDamageFalloffCurve` is set; distance is shot origin to hit point in **centimetres** | `0x6B70D80` (direct hit, called at `0x6B7330C`); `0x6B72D53`–`0x6B72DCB` per custom hit; weapon `+0xA8`/`+0xB0`; hit `ImpactPoint` `+0x28`, `ProjectileOrigin` `+0x110` |
 | Armor in target context | The target's hook (`IWDDamageable` sub-vtable `+0x20`) runs before `ModifyDamage`. For characters it calls `Auth_GetArmorDamageEvent`, which copies the target's entity data and then **removes every armor tag except the first one (in context order) whose piece's `CoveredHitLocations` contains the hit-location tag** (looked up from the hit's `BoneName` by exact match in `DA_GlobalDamage_HitLocations_Player`, with no remap, and written to `HitLocationTag`, event `+0x1A0`; `0x6F01BB0`). With no resolved hit location, all armor tags are removed. Only the covering piece reaches §7.3 and §7.5. When the projectile has `bShouldPenetrate` and the covering piece passes the hook's checks, it then appends `Meta.Damage.Armor.Penetrate` (penetration test passes) or `Meta.Damage.Armor.Throughput` to the source context; the armor rule table (`DT_GlobalDamage_ArmorData`) keys on `Armor.Penetrate` | `0x6B52A40`; alias labels `AWDMoverCharacter` slot 390, `AWDTargetDummy` slot 242 |
@@ -630,6 +768,49 @@ matches if the weapon tag is there.
 Consequences for §7.1–7.2: the specific weapon tag has no row, so the
 one-level parent fallback lands on the archetype row
 (`Meta.Damage.Weapon.AR`). The caliber key is the source tag.
+
+**Exploding-hit writer. Native.** `0x6B721B0` resets
+`FWDProjectileHitData.bExploding` (`+0x18A`) then, with resolved stats
+and positive `ExplosiveRadius`, sets it only when the projectile is
+armed (`!bHasArmingDelay` or `ElapsedTime >= float(ArmingDelay − 0.0001f)`),
+the instance byte `+0x101` is set, and the hit is neither ricocheted nor
+penetrated (`0x6B7224B`–`0x6B722C6`). The constructor defaults the
+unnamed byte to true (`0x6B8E23C`). The camera-projectile controller can
+set or clear it through `0x6F391F0`: a positive acquisition threshold
+uses accumulated candidate time and loss grace; otherwise it uses the
+current accepted vehicle candidate. Outside that controller state it
+clears the gate. Arming alone is not a complete explosion predicate. See
+the [gate mutation trace](../docs/evidence/round8-exploding-gate.md) and
+[radial evidence](../docs/evidence/round8-radial.md) for the concrete
+paths and remaining broadphase/exhaustive-writer limits.
+
+**Hit-location asset registration. Native.** Subsystem initialization
+`0x6F02260` starts loading the configured soft class/asset pairs in
+`ClassToHitLocations` (`+0xC0`). The completion paths `0x6EF2F70` and
+`0x6EF30C0` call `0x6F03C40`, which resolves each pair and inserts it
+into `ClassToHitLocations_Loaded` (`+0x110`, insertion at
+`0x6F03F0C`). Reader `0x6F01BB0` uses the loaded map and class
+inheritance tests. Packed config maps `BHMoverPawn` and `WDTargetDummy`
+to `DA_GlobalDamage_HitLocations_Player`. Their inheritance branches are
+disjoint, so these shipped keys do not compete for one target. See the
+[registration evidence](../docs/evidence/round8-armor.md#hit-location-map-writer)
+and [packed mappings](../docs/evidence/round8-config.md#classtohitlocations-entries-and-precedence).
+
+#### Physical materials and later impacts
+
+**Native + config.** Physical materials affect exit geometry and
+density-based penetration capacity. Successful penetration updates
+post-impact velocity through projectile and SurfaceType settings
+(`0x6F36190`). The current event keeps its pre-exit `ImpactVelocity`
+(`0x6F36FF1` → `0x6F3572E`); later impacts use the updated velocity
+and may lose starting damage through `0x6B72AB9` → `0x6C255B0`.
+Packed SurfaceType3/17 exit-speed modifiers and ricochet chances are zero,
+but density and the thickness/capacity term still matter. PM_Body and
+PM_Head's penetration ignore-list entries suppress the history bitmap,
+not the preceding velocity change. No extra direct SurfaceType health
+scalar is established in this traced bullet calculation. See the
+[downstream trace](../docs/evidence/round8-physical-material-downstream.md)
+for formulas, config and the current-hit/later-hit distinction.
 
 ### 7.7 Per-weapon damage per bullet
 
@@ -740,8 +921,11 @@ the base stats with the ammo-modifier tag added to
 multipliers applied. None of the five assets touches a damage value: they
 change penetration effectiveness, effective range, penetration exit speed
 and tracer chance. FMJ has no asset, so its stats are the plain copy with
-no tag. Ammo type therefore changes damage only through that tag: the
-HP/AP rules and the ammo scalar in §7.3.
+no tag. For a direct hit with the same impact speed and distance scale,
+the damage change comes through that tag: the HP/AP rules and the ammo
+scalar in §7.3. Penetration-related stat changes can additionally alter
+post-exit velocity and therefore the starting amount at a later impact;
+see the physical-material trace in §7.6.
 
 The tag reaches the event from the projectile's ammo tag (instance
 `+0xF0`, empty from the constructor `0x6B8E100`), which `0x6F30E50` sets
@@ -889,7 +1073,7 @@ is a percentage change, so -25 gives ×0.75 and -90 gives ×0.10.
 | O-6 | End-to-end number for one concrete hit | **Closed for bullets** (§7.6–7.9): every ammo type, armored or not, by distance. Only the speed scale after drag is not modelled |
 | O-7 | The health write | **Closed** (§10). Network authority stays open: role checks are visible in code, but server behaviour cannot be observed statically. Security-relevant findings go through [`SECURITY.md`](../SECURITY.md), not this document |
 | O-8 | Which branch of `0x6B92900` runs for a back-blast: `0x6F042A0` (traced hits) or `0x6F06EB0` (synthetic hits, [VehicleDamagePipeline §3.2](Wardogs_VehicleDamagePipeline_v1.md#32-from-a-hit-triangle-to-a-section)) | **Closed** (§1.1): the shooter's seat (`0x6E6EBA0`). On foot `0x6F042A0` traces the cone; seated in a vehicle `0x6F06EB0` hits that vehicle's occupants, and the vehicle takes the self-damage map directly |
-| O-9 | `122mm.Havoc` blast radii look swapped | **Closed: unused data, no gameplay effect.** [`DA_122_mm_HAVOC_ProjectileData.json`](../data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/122mm/DA_122_mm_HAVOC_ProjectileData.json) sets `EffectiveExplosiveRadius` 600 above `ExplosiveRadius` 300 (`BaseDamage` 300, `ExplosiveDamageFallOff` 0.6). Under §1.1 that would mean full damage to 600 and none beyond, and it is the only one of 11 rounds with the radii this way. Nothing fires it: a `WdExtract findname` scan of every package in the paks finds `Item.Caliber.122mm.Havoc` only in the asset itself and two UI tables (`DT_Calibers_TaggedIcons`, `DT_GameplayTagToText_Calibers`), and the exe has no reference to it. The Havoc helicopter's `122mm Rockets` (`WE_ROT_02_Weapon_122mm`) fire plain `Item.Caliber.122mm` ([`DA_122mm_ProjectileData.json`](../data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/122mm/DA_122mm_ProjectileData.json): Base 100, E 200, R 600, FallOff 1.0) |
+| O-9 | `122mm.Havoc` blast radii look swapped | **Closed for the reviewed default mapping.** [`DA_122_mm_HAVOC_ProjectileData.json`](../data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/122mm/DA_122_mm_HAVOC_ProjectileData.json) sets `EffectiveExplosiveRadius` 600 above `ExplosiveRadius` 300 (`BaseDamage` 300, `ExplosiveDamageFallOff` 0.6). Under §1.1 that would mean full damage to 600 and none beyond, and it is the only one of 11 rounds with the radii this way. The bounded package-name and executable searches found no firing consumer; the reviewed ROT_02/ROT_03 default ammo item instead references plain `Item.Caliber.122mm` ([`DA_122mm_ProjectileData.json`](../data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/122mm/DA_122mm_ProjectileData.json): Base 100, E 200, R 600, FallOff 1.0). The [loaded-item trace](../docs/evidence/round8-weapon-context.md) verifies that default mapping; other runtime actions are not ruled out by these negative searches. |
 
 ## 10. From damage to health (characters)
 
@@ -1015,6 +1199,8 @@ The restored image carries the UTF-16LE build marker
 
 | Date | Change |
 |---|---|
+| 2026-10-18 | Round 8 actor and back-blast follow-through: inherited six-actor burst defaults/context, separate Molotov fire loop, normal handheld back-blast formulas and no-bone seated events (§1.2). |
+| 2026-10-18 | Round 8: ordinary/disc blast distance, Inner/Outer assignment and retained projectile context; general armor hook and separate armor-target evaluation; melee bytecode and ignored event return; occupant starting amounts/tags/no-bone hits; contact amount, explosion predicate and hit-location map writer. Remaining conditions are explicit; see §1.1–1.2 and §7.6. |
 | 2026-10-16 | v1: initial SDK/data map. |
 | 2026-10-17 | v1 evidence audit; failed IDA pass on the dump-reconstructed exe; restored-exe trace of selection, per-group ordering and arithmetic. |
 | 2026-10-17 | **v2:** single reference. Merged the native trace, GObjects Blueprint analysis and exe validation; added evidence labels, the custom-entry table, the commutativity result for non-custom entries, the dead custom literals, and the shared-category ties among custom operations. Corrected the GObjects reading of the operation's second parameter (running damage `C`, not starting damage). |

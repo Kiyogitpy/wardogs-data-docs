@@ -372,6 +372,19 @@ already gives the correct count.
 
 ## 3. RVA status table
 
+**Round-8 continuation:** the table below remains the explicitly versioned
+`ac9b4b16` snapshot. The current local pipeline has 154 cited RVA anchors,
+51 additional to that historical evidence inventory, checked with
+`rva_status.py --exe`. Instruction anchors are not standalone function
+bodies; `0x6F03720`, `0x6EF30C0` and `0x76C4120` require the real-entry
+disassembly rather than their misaligned corpus rows. The reviewed
+continuation evidence is in [radial](round8-radial.md),
+[armor/registration](round8-armor.md), [melee](round8-melee.md),
+[occupants](round8-occupants.md), [impact](round8-impact.md),
+[explosive actors](round8-explosive-actors.md), [back-blast](round8-backblast.md)
+and [weapon context](round8-weapon-context.md). Those reports distinguish
+instruction corroboration, data, inference and remaining limits.
+
 ### How the table was built
 
 1. Every `0x` token in

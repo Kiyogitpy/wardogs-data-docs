@@ -39,13 +39,38 @@ WdExtract <Paks> <keyfile> <usmap> <out> <Paks>\oo2core_9_win64.dll <mode> [args
 |---|---|
 | `list GE_` | `<out>/files.txt`: every package whose name starts with the prefix |
 | `schema BHGameplay` | `<out>/usmap_schema.json`: usmap layouts whose name contains the text |
+| `recover-bp-types <new.usmap>` | New map with unknown array element types recovered from cooked Blueprint `ChildProperties`; refuses an existing output map. Audit log in `<out>/_blueprint_types_log.txt`. |
+| `recover-rigvm-types <new.usmap>` | New map with unknown array element types recovered from exact RigVM property-bag descriptor hashes; refuses an existing output map. Audit log in `<out>/_rigvm_types_log.txt`. |
 | `dump <files.txt or package paths>` | `<out>/<name>.json` per package: all exports, Blueprint bytecode included; failures in `_failures.txt` |
 | `deobfuscate <out.usmap> --names <donor.usmap> [--sdk <sdk/raw>] [--types <usmap>] [--fill-names <usmap>]` | A deobfuscated copy of `<usmap>`: names and element types restored from the donor, then (with `--sdk`) from this build's SDK headers, then the hand patches; read back through CUE4Parse to check it. `--types` / `--fill-names` then make the export usmap (see below). No paks or key are read (pass `-` for those arguments). Log in `<out>/_deobfuscate_log.txt` |
 | `findname <path prefix> <text>` | `<out>/findname.txt`: packages under the prefix whose name map contains the text (IoStore imports are hashed, so this finds names an asset uses, not who references it) |
 | `mesh <files.txt or package paths>` | `<out>/<collision mesh>.glb` per vehicle collision mesh, plus `manifest.json`; failures in `_failures.txt` (see [Collision meshes](#collision-meshes-mesh)) |
 | `physics <files.txt or package paths>` | `<out>/physics.json`: each physics asset's bodies (collision primitives) and each skeletal mesh's reference skeleton; failures in `_failures.txt` (see [Physics assets](#physics-assets-physics)) |
 
-**`--names <usmap>`** (any mode) borrows property names and array element
+`recover-bp-types` reads serialized Blueprint `UStruct.ChildProperties`,
+including the embedded `FArrayProperty.Inner` field. It requires a unique
+matching package and generated-class export, matching static-array dimensions
+and complete inner-type metadata. A property-name miss can match only a unique
+ASCII-case-equivalent cooked name after the complete ordered owner property
+names, static dimensions and cumulative schema slots align. This fallback
+preserves the usmap spelling; folded-name equality alone is insufficient.
+Generated property bags are outside this pass.
+
+`recover-rigvm-types` restores generated property-bag array types only after
+reconstructing an exact descriptor hash for an existing owner and matching its
+ordered names, slot count, static dimensions and already-known types. Both
+modes fill only unknown array element types. Each takes a pre-deobfuscated
+input map and a new output path; `--names` is refused and the original input
+map is preserved. Existing output paths are refused, but an I/O failure may
+leave a partial newly-created output file. On CL516586, Blueprint recovery
+fills **83** slots and RigVM recovery fills **79**. Applied in sequence to the
+v2 export, the resulting `wardogs.recovered.usmap` is **3,046,707** bytes,
+SHA-256 `277ba0cd32445ec5abb0f5842452316644dabc283c0f41ae91fa384a8fd20380`;
+it retains **2,690** hashed names and leaves **53** unknown types across
+**36** other generated property-bag owners. See the [Blueprint mapping audit](../../docs/evidence/round8-mapping-gaps.md)
+and [property-bag recovery evidence](../../docs/evidence/round8-propertybag-types.md).
+
+**`--names <usmap>`** (except `recover-bp-types` and `recover-rigvm-types`) borrows property names and array element
 types from an unobfuscated usmap, by the same rules as `deobfuscate` (see
 [`mappings/README.md`](../../mappings/README.md#how-deobfuscated-it-is)).
 Simpler: generate the deobfuscated usmap once and pass it as `<usmap>`:

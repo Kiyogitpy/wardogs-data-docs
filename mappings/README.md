@@ -245,6 +245,46 @@ Short version:
 - `.idmap` supplies type/vtable names for static RE; native registration
   strings and code remain useful where the map has limited coverage
 
+## Additional cooked generated type recovery
+
+Two extractor modes recover unknown array element types from independent cooked
+metadata. `recover-bp-types <new.usmap>` reads serialized Blueprint
+`ChildProperties` and the embedded `FArrayProperty.Inner`. The
+`recover-rigvm-types <new.usmap>` mode reconstructs exact hashes from RigVM
+property-bag descriptors and joins only existing map owners. Starting from the
+v2 export, the Blueprint pass fills **83** slots and RigVM fills **79**;
+together they fill **162** and leave
+**2,690 hashed names / 53 unknown types**. The remaining 53 slots belong to
+**36** other generated property-bag owners.
+
+The Blueprint pass requires a unique package and generated-class export,
+matching static dimensions and complete element metadata. Its two former
+`hitactor`/`HitActor` misses resolve only through a unique ASCII-case-equivalent
+cooked name plus a complete ordered owner layout match: property names may
+differ only in ASCII case, static dimensions and cumulative schema slots must
+align, and schema slot counts must equal the summed dimensions. The fallback
+preserves the usmap field name; case-folded equality alone does not establish
+identity. The RigVM pass requires an exact descriptor hash for an existing
+owner, ordered names, slot count, dimensions and agreement of known types.
+
+Run each mode with a new output path, using the prior output as the next input;
+the original map is preserved and an existing destination is refused. An I/O
+failure may leave a partial newly-created output. The resulting
+`wardogs.recovered.usmap` is **3,046,707** bytes, SHA-256
+`277ba0cd32445ec5abb0f5842452316644dabc283c0f41ae91fa384a8fd20380`.
+See the [Blueprint mapping audit](../docs/evidence/round8-mapping-gaps.md),
+[RigVM property-bag evidence](../docs/evidence/round8-propertybag-types.md),
+and [extractor documentation](../tools/cue4parse_extractor/README.md).
+
+Example first pass from the v2 export:
+
+```text
+WdExtract <Paks> <key-path> <v2-export.usmap> <outside-audit-dir> <oodle-dll> recover-bp-types <outside-new.usmap>
+```
+
+Then use `<outside-new.usmap>` as the input to `recover-rigvm-types` and write
+to a second new path. Both orders produce the same validated final map.
+
 ## Usage with CUE4Parse
 
 ```csharp
