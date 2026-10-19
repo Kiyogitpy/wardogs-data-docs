@@ -28,15 +28,12 @@ For soldiers, the [Infantry Hitbox Viewer](infantry-viewer.md) shows the player'
       <select id="vv-wheels"><option value="intact">Intact</option><option value="destroyed">Deflated or destroyed</option></select>
     </div>
     <div class="vv-field">
-      <label for="vv-caliber">Caliber</label>
+      <label for="vv-caliber">Projectile / explosive</label>
       <select id="vv-caliber" disabled><option>…</option></select>
     </div>
     <div class="vv-field" id="vv-blastField" hidden>
-      <label for="vv-blastMode">Explosive hit</label>
-      <select id="vv-blastMode"><option value="direct">Direct impact</option><option value="blast" selected>Blast at distance</option></select>
-      <label for="vv-dist">Distance from blast (m) <output id="vv-distOut"></output></label>
-      <input type="range" id="vv-dist" min="0" max="10" step="0.5" value="0" disabled>
-      <small id="vv-blastNote"></small>
+      <label for="vv-interaction">Interaction</label>
+      <select id="vv-interaction"><option value="inspect">Inspect slots</option><option value="impact">Place impact</option></select>
     </div>
     <div class="vv-field vv-field-mode">
       <span class="vv-label" id="vv-mode-label">Colour by</span>
@@ -51,10 +48,21 @@ For soldiers, the [Infantry Hitbox Viewer](infantry-viewer.md) shows the player'
     <div class="vv-stage" id="vv-stage">
       <div class="vv-box">
         <model-viewer id="vv-model" class="vv-model" loading="lazy" reveal="auto" poster="{{ '/assets/images/vehicle-viewer-poster.svg' | relative_url }}" camera-controls touch-action="pan-y" interaction-prompt="none" shadow-intensity="0" exposure="1.1" camera-orbit="-35deg 70deg auto" alt="Collision mesh of the selected vehicle, coloured by health section"></model-viewer>
+        <svg id="vv-impactOverlay" class="vv-impact-overlay" aria-hidden="true" hidden></svg>
         <p class="vv-status" id="vv-status" role="status"></p>
         <div class="vv-fallback" id="vv-fallback" hidden></div>
       </div>
       <div class="vv-notes" id="vv-notes" role="note" hidden></div>
+      <div class="vv-impact-controls" id="vv-impactControls" hidden>
+        <p id="vv-impactHelp" role="status">Choose an explosive caliber, then place an impact on the vehicle or nearby ground.</p>
+        <form id="vv-groundForm" class="vv-ground-form">
+          <label for="vv-impactX">Ground X (m)<input id="vv-impactX" type="number" step="0.1" value="0" required></label>
+          <label for="vv-impactZ">Ground Z (m)<input id="vv-impactZ" type="number" step="0.1" value="0" required></label>
+          <button type="submit" id="vv-placeGround" disabled>Place on ground</button>
+          <button type="button" id="vv-clearImpact" disabled>Clear impact</button>
+        </form>
+        <p class="vv-impact-key">Solid ring: outer radius. Dashed ring: full damage radius. Rings show a sphere's three planes.</p>
+      </div>
       <div class="vv-stage-bar">
         <span class="vv-checks"><label class="vv-check"><input type="checkbox" id="vv-labels" checked> Show labels</label>
         <label class="vv-check"><input type="checkbox" id="vv-xray" checked> See-through selection</label></span>
@@ -62,6 +70,7 @@ For soldiers, the [Infantry Hitbox Viewer](infantry-viewer.md) shows the player'
       </div>
     </div>
     <aside class="vv-panel" id="vv-panel" aria-label="Selected slot">
+      <div id="vv-impactSummary" class="vv-impact-summary" aria-live="polite" hidden></div>
       <div id="vv-panel-body" aria-live="polite">
         <h2 class="vv-panel-title no_anchor is-empty">No slot selected</h2>
         <p class="vv-panel-empty">Click a part of the model, or pick a slot from the list below.</p>
@@ -74,7 +83,12 @@ For soldiers, the [Infantry Hitbox Viewer](infantry-viewer.md) shows the player'
 </div>
 
 <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4.3.1/dist/model-viewer.min.js" integrity="sha384-cprcVQt7wbUl0xngF3PGP6yBB7n4/t+4AoAMG9biiMCGFiWOdzUH10Ie2COTqFNW" crossorigin="anonymous" onerror="document.documentElement.classList.add('vv-mv-failed')"></script>
+<script src="{{ '/assets/js/vendor/meshopt_decoder-1.2.0.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/vehicle-impact-geometry.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
+<script src="{{ '/assets/js/vehicle-impact.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
 <script src="{{ '/assets/js/vehicle-viewer.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
+
+For explosives, choose **Place impact** and click the vehicle (**Direct hit**) or nearby ground (**Splash**). You can also enter ground X/Z coordinates in metres. Each placement starts with full health. The result is a **reference-pose estimate** from exported collision triangles and traced damage routing: component order, moving parts and the live scene can change the result. Inspect slots retains the direct-hit rule and repeated-hit comparison for individual slots.
 
 ## How the models are built
 
@@ -84,7 +98,7 @@ The models come from [`_tools/vehicle_models.py`](https://github.com/Kiyogitpy/w
 - **Placed in the reference pose.** Each part sits on the bone or socket it attaches to; doors and landing gear are shown in the reference pose too.
 - **One model per distinct variant geometry.** Variants that share a damage map but differ in turrets, rear boxes or mounts each get their own model (the Variant list).
 - **Left wheels are mirrored copies** of the right-side wheel mesh. The mirroring flag isn't in the export, so this is assumed.
-- **Slots resolve as the game resolves them** ([Vehicle §3.2](Wardogs_VehicleDamagePipeline_v1.md#32-from-a-hit-triangle-to-a-section)). Only registered static meshes count. Instanced wheels are in the Wheel surface group and add the wheel's DataIndex (`CC_Wheel` becomes `CC_Wheel_2`), which runs axle by axle. Every other mesh is in the Default group and keeps its slot name as is. A slot missing from its group's map takes that group's default section. Projectile hits and explosions resolve this way; an explosion takes each part's section from its first hit on that part.
+- **Slots resolve as the game resolves them** ([Vehicle §3.2](Wardogs_VehicleDamagePipeline_v1.md#32-from-a-hit-triangle-to-a-section)). Only registered static meshes count. Instanced wheels are in the Wheel surface group and add the wheel's DataIndex (`CC_Wheel` becomes `CC_Wheel_2`), which runs axle by axle. Every other mesh is in the Default group and keeps its slot name as is. A slot missing from its group's map takes that group's default section. Projectile hits resolve their own triangle's section. For an explosion, the vehicle's first component hit selects the section for every radial application on that vehicle; each component hit still supplies its own location tag to the damage rules.
 - **Wheels are shown intact unless you pick a damage state.** Destroyed (state 2 in [Vehicle §3.2](Wardogs_VehicleDamagePipeline_v1.md#32-from-a-hit-triangle-to-a-section)'s wheel mesh swap) shows every wheel's destroyed-mesh collision, which has no tyre slot. Deflated (state 1) keeps the intact look and traces the destruction mesh's hull. The slot name still comes from the intact wheel's collision mesh and the hull's triangles all give index 0, so a deflated hit gives `CC_Wheel`, the same hitbox; a wheel deflates at tyre health / max ≤ 0.55 and is destroyed at 0. The Wheels control appears only on the Humvee (WHL_05) and WHL_08, the vehicles whose destroyed wheels have their own collision mesh; on the others both states keep the intact hitbox.
 - **Rotor blades are hitboxes like the hubs.** They register and resolve by their slot (`CC_MainRotor` / `CC_TailRotor`). Their `WDRotorCollision` profile blocks bullet traces; projectile sweeps ignore it.
 - **Parts that can't be placed are left out**, with a note on the model. The MG nest's gun proxy attaches to a `receiver_J` bone that its skeleton doesn't have, so it is likely never attached.

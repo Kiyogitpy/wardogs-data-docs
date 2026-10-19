@@ -43,9 +43,12 @@
   var GHOST = 0.13;                  // alpha of the other slots while one is selected (see-through)
 
   var root, data, mainSection, base, els = {};
-  var state = { vehicle: null, model: -1, caliber: null, blast: true, dist: 0, mode: "section", selected: -1, picked: null, labels: true, xray: true,
-                wheels: "intact" };
+  var state = { vehicle: null, model: -1, caliber: null, interaction: "inspect", shot: null,
+                mode: "section", selected: -1, picked: null, labels: true, xray: true, wheels: "intact" };
   var viewer = null, mvState = "pending", materials = [], loadToken = 0, fallbackText = null;
+  var geometryCache = new Map(), impactGeometry = null, impactMetadata = null, metadataPromise = null;
+  var impactToken = 0, impactLoading = false, impactError = null;
+  var inspectHint = "";
 
   function $(id) { return document.getElementById(id); }
 
@@ -122,69 +125,17 @@
     return rgbToHex(a.map(function (x, k) { return x + (b[k] - x) * f; }));
   }
 
-  /* ---------- blast falloff (Damage pipeline §1.1: 0x6F06540) ---------- */
+  /* ---------- per-slot direct-hit inspection ---------- */
 
-  // Radial amount at distance d (cm): Base inside E, 0 at R and beyond, else Base * ((1 - F) + F * t) with t = 1 at E
-  // and 0 at R; never below MinimumExplosiveDamage. Missing fields are 0. What d is measured between is not traced.
-  function blastAmount(cal, d) {
-    var b = cal.blast || {}, R = b.radius || 0, E = b.effective_radius || 0, F = b.falloff || 0, mn = b.minimum || 0;
-    var base = cal.base_damage || 0, a;
-    if (d <= E) a = base;
-    else if (d >= R) a = 0;
-    else {
-      var t = Math.abs(E - R) <= 1e-8 ? (d >= E ? 1 : 0) : Math.min(Math.max((d - R) / (E - R), 0), 1);
-      a = base * ((1 - F) + F * t);
-    }
-    return Math.max(a, mn);
-  }
-
-  function useBlast() { return state.blast && state.caliber && !!state.caliber.blast; }
-  function perHit(cal) { return useBlast() ? blastAmount(cal, state.dist) : cal.base_damage; }
-
-  // Port of apply_section in damage_tables.py (Vehicle §4): one point application to a section.
-  function applySection(secs, health, key, amount, depth) {
-    var sec = secs[key], handled = 0;
-    if (!sec || depth > 10 || !(amount > 0)) return 0;
-    function clamp01(x) { return Math.min(Math.max(x, 0), 1); }
-    function reroute(routes) {
-      routes.forEach(function (r) {
-        if ((health[key] <= 0) === !!r[2] && amount - handled > 0)
-          handled += applySection(secs, health, r[0], (amount - handled) * clamp01(r[1]), depth + 1);
-      });
-    }
-    reroute(sec.pre);
-    var own = Math.min(Math.max(amount - handled, 0), Math.max(health[key], 0));
-    health[key] -= own;
-    handled += own;
-    if (key === data.meta.main_section && health[key] <= 0) return handled;
-    sec.simultaneous.forEach(function (r) {
-      if (!r[2] || health[key] <= 0) applySection(secs, health, r[0], own * clamp01(r[1]), depth + 1);
-    });
-    reroute(sec.post);
-    return handled;
-  }
-
-  // Hits of `dmg` on the slot's section until the main health reaches 0, or null.
-  function simHits(v, s, dmg) {
-    var secs = v.sections, main = data.meta.main_section, health = {}, hits = 0;
-    if (!secs || !secs[s.section] || !(dmg > 0)) return null;
-    Object.keys(secs).forEach(function (k) { health[k] = secs[k].max_health; });
-    while (health[main] > 0 && hits < 5000) { applySection(secs, health, s.section, dmg, 0); hits++; }
-    return hits < 5000 ? hits : null;
-  }
-
-  // The slot's rule factor: a blast hit is tagged Radius.Inner within E, else Radius.Outer (Damage §1.1),
-  // and meets different rules than the direct impact.
+  function perHit(cal) { return cal.base_damage; }
   function factorOf(s, cal) {
-    var b = useBlast() && s.blast_factor && s.blast_factor[cal.id];
-    if (!b) return s.rule_factor[cal.id];
-    return state.dist <= ((cal.blast && cal.blast.effective_radius) || 0) ? b[0] : b[1];
+    var factors = cal.source_type === "actor" && s.explosion_factor && s.explosion_factor[cal.id];
+    return factors ? factors[0] : (s.rule_factor || {})[cal.id];
   }
 
   // Rule-factor-scaled damage and hits to destroy for a slot; the direct view reads the precomputed values.
-  function dmgOf(s, cal) { return perHit(cal) * factorOf(s, cal); }
   function hitsOf(s, cal) {
-    return useBlast() ? simHits(state.vehicle, s, dmgOf(s, cal)) : s.hits_to_destroy[cal.id];
+    return cal.source_type === "actor" ? null : s.hits_to_destroy[cal.id];
   }
 
   // The selected vehicle's value range for the current caliber, ignoring nulls.
@@ -299,7 +250,7 @@
     var sel = els.caliber;
     sel.textContent = "";
     var groups = {};
-    data.meta.calibers.forEach(function (c) {
+    sources().forEach(function (c) {
       var g = c.group || "Calibers";
       if (!groups[g]) { groups[g] = document.createElement("optgroup"); groups[g].label = g; sel.appendChild(groups[g]); }
       var o = el("option", null, c.label + (c.unused ? " [not hand-held]" : "") + " (base " + num(c.base_damage) + ")");
@@ -309,9 +260,12 @@
     sel.disabled = false;
   }
 
+  function sources() { return data.meta.calibers.concat(data.meta.explosives || []); }
+
   function setupMode() {
     var group = els.mode, buttons = group.querySelectorAll("button");
     function choose(b, focus) {
+      if (b.disabled) return;
       state.mode = b.value;
       Array.prototype.forEach.call(buttons, function (x) {
         x.setAttribute("aria-checked", String(x === b));
@@ -329,7 +283,9 @@
       e.preventDefault();
       var list = Array.prototype.slice.call(buttons);
       var at = list.indexOf(group.querySelector('[aria-checked="true"]'));
-      choose(list[(at + step + list.length) % list.length], true);
+      var next = (at + step + list.length) % list.length;
+      while (list[next].disabled && next !== at) next = (next + step + list.length) % list.length;
+      choose(list[next], true);
     });
   }
 
@@ -517,9 +473,15 @@
     routing(s).forEach(function (line) { ul.appendChild(el("li", null, line)); });
     row(dl, "Routing", ul);
     var f = factorOf(s, cal), h = hitsOf(s, cal), amt = perHit(cal);
-    row(dl, "Rule factor (" + cal.label + (useBlast() ? ", blast" : "") + ")", "×" + num(f));
-    row(dl, useBlast() ? "Blast amount (" + num(state.dist / 100) + " m)" : "Damage per hit", num(amt) + " × " + num(f) + " = " + num(amt * f));
-    row(dl, "Hits to destroy", h == null ? "can't destroy the vehicle through this slot" : num(h));
+    if (cal.source_type === "actor") {
+      row(dl, "Explosion factor (full damage radius)", "×" + num(f));
+      body.appendChild(el("p", "vv-note", "This source has no projectile impact. Place its explosion to estimate damage across the model."));
+    } else {
+      row(dl, "Rule factor (" + cal.label + ", direct)", "×" + num(f));
+      row(dl, "Damage per direct hit", num(amt) + " × " + num(f) + " = " + num(amt * f));
+      row(dl, "Hits to destroy", h == null ? "can't destroy the vehicle through this slot" : num(h));
+      if (cal.blast) body.appendChild(el("p", "vv-note", "These are independent direct projectile hits through this slot. Place impact estimates one armed shot's blast separately."));
+    }
     body.appendChild(dl);
     if (cal.note) body.appendChild(el("p", "vv-caliber-note", cal.note));
 
@@ -573,14 +535,15 @@
 
   function showFallback(reason) {
     fallbackText = reason;
+    clearImpact();
     els.stage.classList.add("is-fallback");
     els.fallback.hidden = false;
     els.fallback.textContent = "";
     els.fallback.appendChild(el("p", "vv-fallback-note", reason));
     var wrap = el("div", "table-wrapper"), t = el("table"), cal = state.caliber;
     var head = t.createTHead().insertRow();
-    ["Collision slot", "Section (max health)", "Routing", "Rule factor (" + cal.label + ")",
-     "Damage per hit", "Hits to destroy"].forEach(function (h, i) {
+    ["Collision slot", "Section (max health)", "Routing", "Rule factor (" + cal.label + (cal.source_type === "actor" ? ", inner radius" : "") + ")",
+     cal.source_type === "actor" ? "Explosion" : "Damage per hit", "Hits to destroy"].forEach(function (h, i) {
       var th = el("th", i >= 3 ? "num" : null, h);
       th.scope = "col";
       head.appendChild(th);
@@ -593,7 +556,8 @@
       if (s.group !== DEFAULT_GROUP) c0.appendChild(document.createTextNode(" [" + shortGroup(s.group) + "]"));
       r.insertCell().textContent = shortSection(s.section) + " (" + num(s.max_health) + ")";
       r.insertCell().textContent = routing(s).join("; ");
-      [["×" + num(f)], [num(perHit(cal) * f)], [h == null ? "can't destroy" : num(h)]].forEach(function (x) {
+      [["×" + num(f)], [cal.source_type === "actor" ? "place explosion" : num(perHit(cal) * f)],
+       [cal.source_type === "actor" ? "not a projectile" : h == null ? "can't destroy" : num(h)]].forEach(function (x) {
         var c = r.insertCell();
         c.className = "num";
         c.textContent = x[0];
@@ -601,6 +565,7 @@
     });
     wrap.appendChild(t);
     els.fallback.appendChild(wrap);
+    syncImpactControls();
   }
 
   function hideFallback() {
@@ -617,6 +582,12 @@
 
   function loadModel() {
     var v = state.vehicle;
+    impactToken++;
+    impactGeometry = null;
+    impactMetadata = null;
+    impactLoading = false;
+    impactError = null;
+    clearImpact();
     materials = [];
     clearHotspots();
     if (mvState === "pending") { status("Loading the 3D viewer…"); return; }   // whenModelViewer() calls back
@@ -650,6 +621,7 @@
     buildHotspots();
     repaint();
     status("");
+    prepareImpact();
   }
 
   // Fit the model's bounding box to the stage from the default view angle: for each box corner,
@@ -720,7 +692,7 @@
   function queueDeclutter() {
     if (declutterQueued) return;
     declutterQueued = true;
-    requestAnimationFrame(function () { requestAnimationFrame(function () { declutterQueued = false; declutter(); }); });
+    requestAnimationFrame(function () { requestAnimationFrame(function () { declutterQueued = false; declutter(); drawImpact(); }); });
   }
 
   function declutter() {
@@ -750,7 +722,7 @@
 
   function updateHotspots(sc) {
     if (!viewer) return;
-    viewer.classList.toggle("vv-no-labels", !state.labels);
+    viewer.classList.toggle("vv-no-labels", !state.labels || placingImpact());
     Array.prototype.forEach.call(viewer.querySelectorAll(".vv-hotspot"), function (b) {
       var i = +b.dataset.slot, p = paint(state.vehicle.slots[i], sc);
       b.replaceChild(swatch(p), b.firstChild);
@@ -766,7 +738,7 @@
     });
   }
 
-  function ghosting() { return state.xray && state.selected >= 0 && materials.length > 0; }
+  function ghosting() { return !placingImpact() && state.xray && state.selected >= 0 && materials.length > 0; }
 
   // Colour every material; with a slot selected and "See-through selection" on, the others fade
   // to a faint tint of their colour so parts inside the body (fuel tank, engine) show through.
@@ -784,24 +756,227 @@
     });
   }
 
+  /* ---------- one-shot impact placement ---------- */
+
+  function placingImpact() { return !!(state.caliber && state.caliber.blast && state.interaction === "impact"); }
+
+  function syncImpactControls() {
+    var active = placingImpact(), available = active && !!impactGeometry && !fallbackText;
+    els.impactControls.hidden = !active;
+    els.placeGround.disabled = !available;
+    els.impactX.disabled = !available;
+    els.impactZ.disabled = !available;
+    els.clearImpact.disabled = !state.shot;
+    els.panelBody.hidden = active;
+    els.impactSummary.hidden = !active;
+    if (active && !state.shot) renderImpactSummary();
+    root.classList.toggle("vv-is-placing", active && !fallbackText);
+    els.hint.textContent = active ? "Drag to turn, scroll or pinch to zoom. Click a surface to place a Direct hit or nearby ground for Splash; press Esc to clear the impact." : inspectHint;
+    if (!active) return;
+    els.impactHelp.textContent = fallbackText ? "Impact placement needs the 3D model. The inspection table is available below."
+      : impactError ? "Impact geometry could not be loaded: " + impactError + ". Switch to Inspect slots to continue."
+      : !available ? "Loading collision triangles for impact placement…"
+      : "Click the vehicle for a Direct hit, or nearby ground for Splash. Each shot starts at full health. Ground is the model's lowest point; X is left/right and Z is front/back.";
+  }
+
+  function clearImpact() {
+    state.shot = null;
+    if (els.impactSummary) { els.impactSummary.hidden = true; els.impactSummary.textContent = ""; }
+    if (els.impactOverlay) { els.impactOverlay.toggleAttribute("hidden", true); els.impactOverlay.textContent = ""; }
+    if (els.clearImpact) els.clearImpact.disabled = true;
+  }
+
+  function prepareImpact() {
+    if (!placingImpact() || mvState !== "ok" || !materials.length || fallbackText || impactGeometry || impactLoading) {
+      syncImpactControls(); return;
+    }
+    var model = currentModel();
+    if (!model) return;
+    var path = model.path, token = ++impactToken;
+    impactLoading = true;
+    impactError = null;
+    syncImpactControls();
+    if (!metadataPromise) {
+      metadataPromise = fetch(base + "assets/data/vehicle-impact-components.json").then(function (r) {
+        if (!r.ok) throw new Error("component metadata HTTP " + r.status);
+        return r.json();
+      }).catch(function (error) { metadataPromise = null; throw error; });
+    }
+    if (!geometryCache.has(path)) {
+      geometryCache.set(path, fetch(base + path).then(function (r) {
+        if (!r.ok) throw new Error("collision mesh HTTP " + r.status);
+        return r.arrayBuffer();
+      }).then(function (buffer) {
+        if (!window.VehicleImpactGeometry || !window.VehicleImpact || !window.MeshoptDecoder) throw new Error("impact scripts are unavailable");
+        return window.VehicleImpactGeometry.load(buffer, window.MeshoptDecoder);
+      }).catch(function (error) { geometryCache.delete(path); throw error; }));
+    }
+    Promise.all([geometryCache.get(path), metadataPromise]).then(function (loaded) {
+      if (token !== impactToken || !currentModel() || currentModel().path !== path) return;
+      var metadata = loaded[1].models && loaded[1].models[path];
+      if (!metadata) throw new Error("no native component map for this assembly");
+      impactGeometry = loaded[0];
+      impactMetadata = metadata;
+      impactLoading = false;
+      els.impactX.value = String(Math.round(impactGeometry.bounds.center[0] * 10) / 10);
+      els.impactZ.value = String(Math.round(impactGeometry.bounds.center[2] * 10) / 10);
+      syncImpactControls();
+    }).catch(function (error) {
+      if (token !== impactToken) return;
+      impactLoading = false;
+      impactError = error.message;
+      syncImpactControls();
+    });
+  }
+
+  // Public model-viewer APIs expose the orbit in radians and the target in model metres.
+  function impactCamera() {
+    var G = window.VehicleImpactGeometry, orbit = viewer.getCameraOrbit(), target = viewer.getCameraTarget();
+    var back = [Math.sin(orbit.phi) * Math.sin(orbit.theta), Math.cos(orbit.phi), Math.sin(orbit.phi) * Math.cos(orbit.theta)];
+    var right = [Math.cos(orbit.theta), 0, -Math.sin(orbit.theta)], up = G.cross(back, right);
+    return { position: G.add([target.x, target.y, target.z], G.scale(back, orbit.radius)), back: back, right: right, up: up,
+      width: viewer.clientWidth, height: viewer.clientHeight, tan: Math.tan(viewer.getFieldOfView() * Math.PI / 360) };
+  }
+
+  function groundFromPixel(pixel) {
+    var G = window.VehicleImpactGeometry, camera = impactCamera();
+    var x = (2 * pixel[0] / camera.width - 1) * camera.tan * camera.width / camera.height;
+    var y = (1 - 2 * pixel[1] / camera.height) * camera.tan;
+    var direction = G.normalize(G.add(G.scale(camera.back, -1), G.add(G.scale(camera.right, x), G.scale(camera.up, y))));
+    if (Math.abs(direction[1]) < 1e-9) return null;
+    var distance = (impactGeometry.bounds.min[1] - camera.position[1]) / direction[1];
+    return distance >= 0 && distance < 1000 ? G.add(camera.position, G.scale(direction, distance)) : null;
+  }
+
+  function placeImpact(position, label) {
+    if (!placingImpact() || !impactGeometry || fallbackText) return;
+    if (!position || !position.every(Number.isFinite)) {
+      els.impactHelp.textContent = "That point does not meet the ground plane. Turn the camera downward or use ground X/Z.";
+      return;
+    }
+    try {
+      var result = window.VehicleImpact.simulate(impactGeometry, state.vehicle, state.caliber, position, impactMetadata);
+      state.shot = { origin: position, label: label, result: result };
+      syncImpactControls();
+      renderImpactSummary();
+      drawImpact();
+    } catch (error) {
+      clearImpact();
+      els.impactHelp.textContent = "This impact could not be estimated: " + error.message;
+    }
+  }
+
+  function renderImpactSummary() {
+    var box = els.impactSummary, shot = state.shot;
+    box.textContent = "";
+    box.hidden = !placingImpact();
+    if (!shot) {
+      box.appendChild(el("h2", "vv-panel-title no_anchor", "Place an impact"));
+      box.appendChild(el("p", "vv-panel-empty", fallbackText ? "Use Inspect slots to explore the available hitbox data." : "Click the vehicle or ground, or enter ground X/Z to preview one explosion."));
+      return;
+    }
+    var result = shot.result, dl = el("dl", "vv-facts");
+    box.appendChild(el("h2", "vv-panel-title no_anchor", shot.label));
+    box.appendChild(el("p", "vv-note", "Reference-pose estimate from sampled display surfaces. Live collision and order can differ. Full health per shot."));
+    row(dl, "Main health damage", num(result.mainDamage));
+    row(dl, "Main health remaining", num(result.mainRemaining) + " / " + num(state.vehicle.sections[mainSection].max_health));
+    row(dl, "Blast contacts", result.hits.length + " reached; " + result.occluded + " occluded");
+    if (result.firstSection) row(dl, "Preview first section", shortSection(result.firstSection));
+    if (result.scenarioMainDamage && result.scenarioMainDamage.min !== result.scenarioMainDamage.max) {
+      row(dl, "First-choice examples", num(result.scenarioMainDamage.min) + "–" + num(result.scenarioMainDamage.max) + " main damage");
+    }
+    box.appendChild(dl);
+    var changed = Object.keys(result.health).filter(function (key) {
+      return key !== mainSection && result.health[key] < state.vehicle.sections[key].max_health;
+    });
+    if (changed.length) {
+      var list = el("ul", "vv-routes");
+      changed.forEach(function (key) { list.appendChild(el("li", null, shortSection(key) + ": " + num(result.health[key]) + " / " + num(state.vehicle.sections[key].max_health) + " HP")); });
+      box.appendChild(list);
+    }
+    if (!result.hits.length) box.appendChild(el("p", "vv-note", "No visible collision component is reached by this blast."));
+    var assumptions = el("details", "vv-impact-assumptions");
+    assumptions.appendChild(el("summary", null, "Model assumptions"));
+    assumptions.appendChild(el("p", "vv-note", result.orderingNote || "The first component selects the blast's health section. Native overlap order is unknown; this preview uses GLB component order."));
+    assumptions.appendChild(el("p", "vv-note", "Origin (m): " + shot.origin.map(num).join(", ") + ". " + (shot.label === "Direct hit" ? "Armed blast on the collision surface." : "Blast on the isolated ground plane.")));
+    if (result.scenarioMainDamage && result.scenarioMainDamage.min !== result.scenarioMainDamage.max) {
+      assumptions.appendChild(el("p", "vv-note", "First-choice examples reuse the same sampled hits. They are not exhaustive and do not bound the game's results."));
+    }
+    if (result.firstSectionAlternatives && result.firstSectionAlternatives.length > 1) {
+      assumptions.appendChild(el("p", "vv-note", "Sampled first-hit sections: " + result.firstSectionAlternatives.map(shortSection).join(", ") + "."));
+    }
+    var actorNote = state.caliber.source_note || state.caliber.note;
+    if (state.caliber.source_type === "actor" && actorNote) assumptions.appendChild(el("p", "vv-note", actorNote));
+    if (result.tracePreferenceUnknown) {
+      assumptions.appendChild(el("p", "vv-note", "This source's upward trace preference is unknown; the preview uses the ordinary cloud order."));
+    }
+    box.appendChild(assumptions);
+  }
+
+  function svgElement(tag, attributes) {
+    var node = document.createElementNS("http://www.w3.org/2000/svg", tag);
+    Object.keys(attributes).forEach(function (key) { node.setAttribute(key, attributes[key]); });
+    return node;
+  }
+
+  function drawImpact() {
+    var svg = els.impactOverlay, shot = state.shot;
+    svg.textContent = "";
+    var hidden = !shot || !placingImpact() || !!fallbackText;
+    svg.toggleAttribute("hidden", hidden);
+    if (hidden || !viewer.clientWidth || !viewer.clientHeight) return;
+    var G = window.VehicleImpactGeometry, camera = impactCamera();
+    svg.setAttribute("viewBox", "0 0 " + camera.width + " " + camera.height);
+    function project(position) {
+      var delta = G.sub(position, camera.position), depth = -G.dot(delta, camera.back);
+      if (depth <= 0.01) return null;
+      var f = camera.height / (2 * camera.tan * depth);
+      return [camera.width / 2 + G.dot(delta, camera.right) * f, camera.height / 2 - G.dot(delta, camera.up) * f];
+    }
+    function ring(radius, plane, cls) {
+      if (!(radius > 0)) return;
+      var path = "", connected = false;
+      for (var i = 0; i <= 80; i++) {
+        var angle = i * Math.PI / 40, offset = [0, 0, 0];
+        offset[plane[0]] = Math.cos(angle) * radius; offset[plane[1]] = Math.sin(angle) * radius;
+        var p = project(G.add(shot.origin, offset));
+        if (!p) { connected = false; continue; }
+        path += (connected ? "L" : "M") + p[0].toFixed(1) + " " + p[1].toFixed(1); connected = true;
+      }
+      svg.appendChild(svgElement("path", { d: path, class: cls }));
+    }
+    [[0, 2], [0, 1], [1, 2]].forEach(function (plane) {
+      ring((state.caliber.blast.radius || 0) / 100, plane, "vv-blast-outer");
+      ring((state.caliber.blast.effective_radius || 0) / 100, plane, "vv-blast-effective");
+    });
+    shot.result.hits.forEach(function (hit) {
+      var p = project(hit.position);
+      if (p) svg.appendChild(svgElement("circle", { cx: p[0], cy: p[1], r: 3, class: "vv-blast-contact" }));
+    });
+    var origin = project(shot.origin);
+    if (origin) {
+      svg.appendChild(svgElement("circle", { cx: origin[0], cy: origin[1], r: 7, class: "vv-blast-origin" }));
+      var label = svgElement("text", { x: origin[0] + 12, y: origin[1] - 12, class: "vv-blast-label" });
+      label.textContent = shot.label; svg.appendChild(label);
+    }
+  }
+
   /* ---------- state changes ---------- */
 
-  // Show the blast controls for a caliber with blast data; the slider runs 0 to its ExplosiveRadius.
   function syncBlast() {
-    var b = state.caliber && state.caliber.blast;
-    els.blastField.hidden = !b;
-    if (!b) return;
-    var max = (b.radius || 0) / 100;
-    els.dist.max = max;
-    els.dist.step = 0.5;
-    if (state.dist > max * 100) state.dist = max * 100;
-    els.dist.value = state.dist / 100;
-    els.dist.disabled = !state.blast;
-    els.distOut.textContent = num(state.dist / 100) + " m";
-    els.blastNote.textContent = state.blast
-      ? "Falloff: full damage within " + num((b.effective_radius || 0) / 100) + " m, none at " + num(max) + " m (Damage pipeline §1.1). " +
-        "Amount at this distance: " + num(blastAmount(state.caliber, state.dist)) + ". What the distance is measured between is not traced."
-      : "";
+    var explosive = !!(state.caliber && state.caliber.blast);
+    els.blastField.hidden = !explosive;
+    if (!explosive) state.interaction = "inspect";
+    els.interaction.value = state.interaction;
+    var actor = state.caliber && state.caliber.source_type === "actor";
+    if (actor && state.mode === "hits") state.mode = "section";
+    Array.prototype.forEach.call(els.mode.querySelectorAll("button"), function (button) {
+      button.disabled = !!(actor && button.value === "hits");
+      button.setAttribute("aria-checked", String(button.value === state.mode));
+      button.tabIndex = button.value === state.mode ? 0 : -1;
+    });
+    syncImpactControls();
+    prepareImpact();
   }
 
   function repaint() {
@@ -812,6 +987,8 @@
     updateList(sc);
     updateLegend(sc);
     updatePanel();
+    syncImpactControls();
+    drawImpact();
     if (fallbackText) showFallback(fallbackText);
     if (viewer && state.vehicle) {
       var m = currentModel();
@@ -897,6 +1074,10 @@
   /* ---------- picking ---------- */
 
   function setupPicking() {
+    // Cancel browser autoscroll without blocking model-viewer's pointer controls.
+    viewer.addEventListener("mousedown", function (event) {
+      if (event.button === 1) event.preventDefault();
+    }, true);
     // Pointer position relative to the viewer: focusing the viewer on press can scroll the page,
     // so the click's client coordinates may no longer be over the part that was pressed.
     var down = null;
@@ -907,6 +1088,14 @@
       var up = at(e);
       if (down && Math.abs(up[0] - down[0]) + Math.abs(up[1] - down[1]) > 6) return;   // a drag
       var r = viewer.getBoundingClientRect(), p = down || up;
+      if (placingImpact()) {
+        if (!impactGeometry) return;
+        // In pinned 4.3.1 getNDC subtracts the element rect despite the API's relative-pixel comment.
+        var surface = viewer.positionAndNormalFromPoint(r.left + p[0], r.top + p[1]);
+        var origin = surface ? [surface.position.x, surface.position.y, surface.position.z] : groundFromPixel(p);
+        placeImpact(origin, surface ? "Direct hit" : "Splash");
+        return;
+      }
       var m = viewer.materialFromPoint(r.left + p[0], r.top + p[1]);
       if (!m) { if (state.selected >= 0) select(-1, null); return; }
       var hit = materials.filter(function (x) { return x.material === m || x.material.index === m.index; })[0];
@@ -933,13 +1122,14 @@
     root = $("vv");
     if (!root) return;
     base = root.getAttribute("data-base") || "/";
-    ["vehicle", "caliber", "mode", "stage", "status", "fallback", "legend", "slots", "labels", "xray", "variant", "wheels", "notes", "blastField", "blastMode", "dist", "distOut", "blastNote"].forEach(function (k) {
+    ["vehicle", "caliber", "mode", "stage", "status", "fallback", "legend", "slots", "labels", "xray", "hint", "variant", "wheels", "notes", "blastField", "interaction", "impactControls", "impactHelp", "impactX", "impactZ", "groundForm", "placeGround", "clearImpact", "impactSummary", "impactOverlay"].forEach(function (k) {
       els[k] = $("vv-" + k);
     });
     els.panelBody = $("vv-panel-body");
     els.variantField = $("vv-variant-field");
     els.wheelsField = $("vv-wheels-field");
     viewer = $("vv-model");
+    inspectHint = els.hint.textContent;
     status("Loading the hitbox data…");
 
     fetch(root.getAttribute("data-json"))
@@ -966,15 +1156,28 @@
           repaint();
         });
         els.caliber.addEventListener("change", function () {
-          state.caliber = data.meta.calibers.filter(function (c) { return c.id === els.caliber.value; })[0];
+          state.caliber = sources().filter(function (c) { return c.id === els.caliber.value; })[0];
+          clearImpact();
+          state.interaction = state.caliber.blast ? "impact" : "inspect";
           syncBlast();
           repaint();
         });
-        els.blastMode.addEventListener("change", function () { state.blast = els.blastMode.value === "blast"; syncBlast(); repaint(); });
-        els.dist.addEventListener("input", function () { state.dist = +els.dist.value * 100; syncBlast(); repaint(); });
+        els.interaction.addEventListener("change", function () {
+          state.interaction = els.interaction.value;
+          clearImpact(); syncBlast(); repaint();
+        });
+        els.clearImpact.addEventListener("click", function () { clearImpact(); syncImpactControls(); });
+        els.groundForm.addEventListener("submit", function (event) {
+          event.preventDefault();
+          if (!impactGeometry) return;
+          placeImpact([els.impactX.valueAsNumber, impactGeometry.bounds.min[1], els.impactZ.valueAsNumber], "Splash");
+        });
         els.labels.addEventListener("change", function () { state.labels = els.labels.checked; repaint(); });
         els.xray.addEventListener("change", function () { state.xray = els.xray.checked; repaint(); });
         document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && state.shot && !/^(INPUT|SELECT|TEXTAREA)$/.test(e.target.tagName)) {
+            clearImpact(); syncImpactControls(); return;
+          }
           if (e.key !== "Escape" || state.selected < 0 || e.target.tagName === "SELECT") return;
           select(-1, null);
         });

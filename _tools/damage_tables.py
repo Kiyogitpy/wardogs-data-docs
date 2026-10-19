@@ -135,11 +135,11 @@ def projectiles():
 
 
 def blast_params():
-    """ProjectileId -> {radius, effective_radius, falloff, minimum} (cm), only for the fields present in DamageValues,
-    from the same asset projectiles() picks."""
+    """ProjectileId -> blast fields from the same asset projectiles() picks; omitted trace preference stays unknown."""
     out = {}
     keys = (("radius", "ExplosiveRadius"), ("effective_radius", "EffectiveExplosiveRadius"),
-            ("falloff", "ExplosiveDamageFallOff"), ("minimum", "MinimumExplosiveDamage"))
+            ("falloff", "ExplosiveDamageFallOff"), ("minimum", "MinimumExplosiveDamage"),
+            ("prefer_upwards", "bPreferUpwardsTrace"))
     pattern = os.path.join(DATA, "Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/**/DA_*.json")
     for path in sorted(glob.glob(pattern, recursive=True)):
         for o in exports(path):
@@ -149,7 +149,7 @@ def blast_params():
                 continue
             dv = stats.get("DamageValues", {})
             if pid not in out or os.path.basename(path).count("_") <= 2:
-                out[pid] = {k: dv[v] for k, v in keys if v in dv}
+                out[pid] = {k: dv.get(v) for k, v in keys if v in dv or k == "prefer_upwards"}
     return out
 
 
@@ -371,6 +371,23 @@ def sections(module_files):
     return out
 
 
+def section_radial_flags(module_files):
+    """Section tag -> (skip pre, skip post, skip simultaneous) radial-routing flags."""
+    fields = ("_aaachkphmgcampdlhdkkf", "_aaacikmpjffpcggjhonpl", "_aaadafjbjhkkggmmjaeba")
+    out = {}
+    for f in module_files:
+        objs = {o.get("Name"): o for o in exports(f)}
+        owner = next((o for o in objs.values() if o.get("Type") in ("ModularVehiclePlatform", "ModularVehiclePart")), None)
+        for fr in (owner or {}).get("Properties", {}).get("Fragments", []):
+            obj = objs.get(fr["Value"]["Fragment"]["ObjectName"].split(":")[-1].rstrip("'"), {})
+            if not fr["Value"].get("bEnabled", True) or obj.get("Type") != "MVF_HealthSections":
+                continue
+            for kv in obj.get("Properties", {}).get("HealthSections", []):
+                val = kv["Value"]
+                out[tag(kv["Key"])] = tuple(bool(val.get(field, False)) for field in fields)
+    return out
+
+
 def damage_tag(module_files):
     """VehicleDamageTag from DA_GameplaySystems_*, found through the modules' DA_*Config references."""
     seen = set()
@@ -420,14 +437,9 @@ def apply_section(secs, health, key, amount, depth=0):
     return handled
 
 
-def vehicle_rule_factor(entries, cal, hit, proj, radius=None):
-    """Product of the vehicle-row (and generic-row) factors for an FMJ direct hit of caliber `cal` on a
-    section whose hit-location tag is `hit` (entries without instigator/target requirements). With radius
-    "Inner" or "Outer" it is a radial hit instead (Damage §1.1): tagged Meta.Damage.Explosive.Radius.<radius>,
-    without the projectile path's caliber id and DamageType.Projectile (no vehicle rule requires either)."""
-    src, ctx, _ = proj[cal]
-    extra = ["Meta.Damage.Explosive.Radius." + radius] if radius else [cal, "Meta.Damage.DamageType.Projectile"]
-    source = expand(ctx + [src] + extra)
+def source_rule_factor(entries, source_tags, hit):
+    """Product of the vehicle-row (and generic-row) percentage factors for explicit source tags and hit location."""
+    source = expand(source_tags)
     f = 1.0
     for e in entries:
         m = e["OutModification"]
@@ -440,6 +452,46 @@ def vehicle_rule_factor(entries, cal, hit, proj, radius=None):
         if m["Operation"].endswith("Percentage_Ongoing"):
             f *= 1 + m["Amount"] / 100
     return max(f, 0.0)
+
+
+def vehicle_rule_factor(entries, cal, hit, proj, radius=None):
+    """Vehicle factor for direct projectile hits or radial projectile applications."""
+    src, ctx, _ = proj[cal]
+    extra = ([cal, "Meta.Damage.DamageType.Explosive", "Meta.Damage.Explosive.Radius." + radius]
+             if radius else [cal, "Meta.Damage.DamageType.Projectile"])
+    return source_rule_factor(entries, ctx + [src] + extra, hit)
+
+
+def actor_explosives():
+    """Reviewed thrown/placed explosive actors from the local fixture, without adding inferred context tags."""
+    path = os.path.join(ROOT, "assets", "data", "explosive-actors.json")
+    with open(path, encoding="utf-8") as f:
+        fixture = json.load(f)
+    out = []
+    for label, actor in fixture["actors"].items():
+        slug = re.sub(r"[^a-z0-9]+", "-", label.lower()).strip("-")
+        dv = actor["damage_values"]
+        row = {
+            "id": "Actor." + slug,
+            "label": "Molotov (initial burst only)" if label == "Molotov" else label,
+            "group": "Placed & thrown explosives",
+            "source_type": "actor",
+            "blueprint": actor["blueprint"],
+            "base_damage": dv["BaseDamage"],
+            "source_tag": actor["source_tag"],
+            "source_context": actor["source_context"],
+            "blast": {
+                "radius": dv["ExplosiveRadius"],
+                "effective_radius": dv["EffectiveExplosiveRadius"],
+                "minimum": dv["MinimumExplosiveDamage"],
+                "falloff": dv["ExplosiveDamageFallOff"],
+                "prefer_upwards": None,
+            },
+        }
+        if label == "Molotov":
+            row["source_note"] = "Initial burst only; sustained fire is excluded."
+        out.append(row)
+    return out
 
 
 def fragments(module_files):
@@ -528,9 +580,10 @@ def vehicle_groups(vrows):
     for vpath in variants():
         modules, _, _ = assemble(vpath)
         secs, dtag, smap = sections(modules), damage_tag(modules), surface_maps(modules)
+        radial_flags = section_radial_flags(modules)
         if not smap or not dtag:
             continue
-        key = (dtag, tuple(sorted(smap.items())))
+        key = (dtag, tuple(sorted(smap.items())), tuple(sorted(radial_flags.items())))
         seen.setdefault(key, (dtag, secs, smap, registered(modules), []))[4].append(os.path.basename(vpath)[3:-5])
     return list(seen.values())
 
@@ -612,10 +665,11 @@ JSON_CALIBERS = {"Item.Caliber.556mm": "5.56mm", "Item.Caliber.762mm": "7.62mm",
 # Readable names for the viewer's full caliber list; the rest are derived from the id.
 CALIBER_LABELS = {"Item.Caliber.7mmBuck": "7mm buckshot (12g)", "Item.Caliber.12g.RifledSlug": "12g rifled slug"}
 CALIBER_GROUPS = ["Bullets", "Cannon", "Rockets & launchers", "Grenades & explosives"]
-DIRECT_NOTE = ("A blast hit is tagged Explosive.Radius.Inner (within the effective radius) or .Outer, so it meets "
-               "different rules than the direct impact (Damage §1.1); some vehicle rows multiply Rocket + Radius.Inner "
-               "(Kodiak +400%). \"Blast at distance\" uses the blast factor; one radial application per hit, though the "
-               "game applies one per overlapped component (Vehicle §4.1). \"Direct impact\" is the projectile hit alone.")
+DIRECT_NOTE = ("For an armed projectile that qualifies for explosive handling, select the radial application rather "
+               "than adding a separate direct-hit factor. This is an isolated vehicle-rule factor, not the full "
+               "explosion damage: this catalog does not model blast falloff, line of sight, overlap/component "
+               "multiplicity, or weapon-specific context. Current vehicle rows have no weapon-tag requirements, so "
+               "unknown weapon context does not change these factors (Damage section 1.1; Vehicle section 4.1).")
 
 
 def caliber_catalog(proj):
@@ -627,7 +681,7 @@ def caliber_catalog(proj):
             users.setdefault(c, []).append(name)
     friendly = {"CGM4": "MAAWS", "RPG7": "RPG-7", "MMGL": "MMGL"}
     out = []
-    for cid, (src, _, base) in proj.items():
+    for cid, (src, ctx, base) in proj.items():
         src = src or ""
         group = (CALIBER_GROUPS[1] if ".Cannon" in "." + src else CALIBER_GROUPS[3] if "Explosive.Grenade" in src
                  else CALIBER_GROUPS[2] if "Explosive" in src else CALIBER_GROUPS[0])
@@ -648,9 +702,10 @@ def caliber_catalog(proj):
                          + "; this entry is " + short + " (" + ("the plain asset is preferred where one exists"
                          if cid == base_id else "variant asset") + ").")
         if not ws:
-            notes.append("Unused: no weapon item in the data lists this caliber as supported (vehicle-mounted weapons are not traced).")
+            notes.append("No mapped weapon item lists this caliber as supported; vehicle-mounted weapon associations are not represented here.")
         out.append({"id": cid, "label": label, "group": group, "base_damage": base, "source_tag": src,
-                    "weapons": ws, "unused": not ws, "note": " ".join(notes) or None,
+                    "source_context": ctx, "weapon_context_unknown": True,
+                    "weapons": ws, "weapon_association_unknown": not bool(ws), "note": " ".join(notes) or None,
                     **({"blast": blast[cid]} if group in CALIBER_GROUPS[2:] and blast.get(cid) else {})})
     order = {c: i for i, c in enumerate(JSON_CALIBERS)}
     out.sort(key=lambda c: (CALIBER_GROUPS.index(c["group"]), order.get(c["id"], 99) if c["group"] == "Bullets" else 0,
@@ -723,6 +778,7 @@ def hitbox_json(proj):
         glbs[f"{MODELS}/{os.path.basename(p)}"] = glb_summary(p)
     generic, vrows = vehicle_tables()
     catalog = caliber_catalog(proj)
+    explosives = actor_explosives()
     cals = [c["id"] for c in catalog]
     # The data/ tree id names the exact input in any clone, shallow ones included (a commit lookup there can
     # stop at the shallow boundary).
@@ -733,10 +789,12 @@ def hitbox_json(proj):
         "generator": "python _tools/damage_tables.py --json",
         "assumptions": ["FMJ direct hit at point blank: no falloff, ricochet or penetration",
                         "blast_factor is [Radius.Inner, Radius.Outer] for a radial hit (Damage §1.1); Inner within "
-                        "EffectiveExplosiveRadius, Outer beyond (the Outer tag is not traced)",
+                        "EffectiveExplosiveRadius; Outer is beyond that radius. Both radius tags are evaluated.",
                         "hostile instigator with no instigator tags; rules that need instigator or target tags are skipped",
                         "section health stops at 0; routing as in Vehicle §4.2",
-                        "a hit takes the section of its triangle's slot as in Vehicle §3.1 (projectile and radial hits); "
+                        "projectile hits take the section of their triangle's slot as in Vehicle §3.1; radial applications "
+                        "use the section resolved from the vehicle's first component hit, while each hit's own hit-location "
+                        "tag still drives its rule factor; "
                         "unreachable names why no registered component can produce a slot key",
                         "hits_to_destroy counts hits through that slot until the main health reaches 0; "
                         "null when it never does (no damage, or no route to the main health)"],
@@ -744,7 +802,8 @@ def hitbox_json(proj):
                  "routing": "Wardogs_VehicleDamagePipeline_v1.html#42-routing-semantics",
                  "hits_to_destroy": "Wardogs_VehicleDamagePipeline_v1.html#54-hits-to-destroy"},
         "main_section": MAIN,
-        "calibers": catalog},
+        "calibers": catalog,
+        "explosives": explosives},
         "vehicles": []}
     groups = vehicle_groups(vrows)
     shared = {d for d in (g[0] for g in groups) if sum(g[0] == d for g in groups) > 1}
@@ -761,18 +820,34 @@ def hitbox_json(proj):
                 (damaged if damage else models).append((path, shown, notes, centres, damage))
         models.sort(key=lambda m: names.index(m[1][0]))
         slots = []
+        modules, _, _ = assemble(next(p for p in variants() if os.path.basename(p)[3:-5] == names[0]))
+        radial_flags = section_radial_flags(modules)
+        radial_flags_out = {
+            name: {section: dict(zip(("pre", "post", "simultaneous"), flags))
+                   for section, flags in radial_flags.items()}
+            for name in names
+        }
         for (group, slot), sec in sorted(smap.items(), key=lambda kv: (kv[0][1] == "(default)", kv[0])):
             hp, hit, pre, post, simul = secs.get(sec, (None, None, [], [], []))
             factors = {c: round(vehicle_rule_factor(entries, c, hit, proj), 6) for c in cals}
             blast = {c["id"]: [round(vehicle_rule_factor(entries, c["id"], hit, proj, r), 6) for r in ("Inner", "Outer")]
                      for c in catalog if c.get("blast")}
+            actor_factors = {
+                actor["id"]: [round(source_rule_factor(
+                    entries,
+                    actor["source_context"] + [actor["source_tag"], "Meta.Damage.Explosive.Radius." + radius],
+                    hit), 6) for radius in ("Inner", "Outer")]
+                for actor in explosives
+            }
             slots.append({
                 "slot": slot, "group": group, "section": sec, "max_health": hp, "hit_location": hit,
                 "unreachable": unreachable(group, "" if slot == "(default)" else slot, *reg),
+                "radial_routing_skips": dict(zip(("pre", "post", "simultaneous"), radial_flags.get(sec, (False, False, False)))),
                 "routing": {k: [{"to": t, "scalar": s, "only_when_depleted": d} for t, s, d in r]
                             for k, r in (("pre", pre), ("post", post), ("simultaneous", simul))},
                 "rule_factor": factors,
                 "blast_factor": blast,
+                "explosion_factor": actor_factors,
                 "hits_to_destroy": {c: hits_to_destroy(secs, sec, proj[c][2] * factors[c]) if sec in secs else None
                                     for c in cals}})
         # GLB materials outside the Default surface group are named "<slot>|<Group>".
@@ -788,7 +863,9 @@ def hitbox_json(proj):
             entries_out.append(m)
         out["vehicles"].append({"id": slug, "damage_row": dtag, "variants": names, "main_health": secs.get(MAIN, (None,))[0],
                                 "models": entries_out, "slots": slots,
-                                "sections": {k: {"max_health": v[0], "pre": v[2], "post": v[3], "simultaneous": v[4]}
+                                "radial_routing_skips_by_variant": radial_flags_out,
+                                "sections": {k: {"max_health": v[0], "pre": v[2], "post": v[3], "simultaneous": v[4],
+                                                 "radial_routing_skips": dict(zip(("pre", "post", "simultaneous"), radial_flags.get(k, (False, False, False))))}
                                              for k, v in secs.items()}})
     os.makedirs(os.path.dirname(JSON_OUT), exist_ok=True)
     with open(JSON_OUT, "w", encoding="utf-8", newline="\n") as f:
