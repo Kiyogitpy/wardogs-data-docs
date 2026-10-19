@@ -1,0 +1,583 @@
+{
+  "format": 1,
+  "build": "Wardogs CL-516586",
+  "coordinate_space": "Published GLB scene coordinates, metres; x=-UE Y, y=UE Z, z=UE X.",
+  "sampling_policy": "One native bounds-origin point per represented static mesh component; no DamageQuerySocket entries were observed on the 20 fresh render static meshes.",
+  "source": {
+    "reference_inputs": {
+      "path": "E:\\Reverse_Engineer\\wardogs_analysis\\round8_spw_explosive_20261019\\reference-inputs-root.json",
+      "sha256": "4c3884394230c2249d003d1779b5316acf636420d87651e171aadf31e8ff3083"
+    },
+    "static_mesh_socket_manifest": {
+      "path": "E:\\Reverse_Engineer\\wardogs_analysis\\round8_spw_explosive_20261019\\socket-mesh\\manifest.json",
+      "sha256": "c1565150153e936f96e9d8f110d7caa9e6861b092ff163f5c2afce9264c34e63"
+    },
+    "collision_manifest": {
+      "path": "E:\\Reverse_Engineer\\wardogs_analysis\\round8_spw_explosive_20261019\\cooked-v1\\collision.json",
+      "sha256": "83937717970a0e886cb470a70cb7233c75c4ecf0b43176cc53e511892f1ee613"
+    },
+    "skeletal_manifest": {
+      "path": "E:\\Reverse_Engineer\\wardogs_analysis\\round8_spw_explosive_20261019\\skeleton-mesh\\manifest.json",
+      "sha256": "13a5e00f00f0b9be263ffec80aeff946cd44444877869f68dced41e50bb2c232"
+    },
+    "socket_observation": {
+      "render_static_meshes_inspected": 20,
+      "positive_socket_entries": 0,
+      "damage_query_sockets": 0
+    }
+  },
+  "models": {
+    "assets/models/vehicles/land-tracked-leopard-spawn-spw-01.glb": {
+      "variants": [
+        "SPW_01"
+      ],
+      "glb_sha256": "d5022b411d50484aa3a443d0e224fcf4774977f0e069e8080301ea451f5958c0",
+      "represented_node_count": 8,
+      "components": {
+        "VP_SPW:MainBody": {
+          "node_index": 1,
+          "component": "VP_SPW:MainBody",
+          "module": "VP_SPW",
+          "fragment": "MainBody",
+          "render_mesh": "SM_SPW_Body",
+          "source_asset": "/SPW_01/StaticMeshes/SM_SPW_Body.SM_SPW_Body",
+          "bounds_origin": [
+            6.866455e-07,
+            1.6323268999999998,
+            0.05454605
+          ],
+          "points": [
+            [
+              6.866455e-07,
+              1.6323268999999998,
+              0.05454605
+            ]
+          ],
+          "angle_degrees": 10,
+          "method": "native-bounds",
+          "socket_count": 0,
+          "source_static_mesh_dump": "E:\\Reverse_Engineer\\wardogs_analysis\\round8_spw_explosive_20261019\\dump-v2\\SM_SPW_Body.json",
+          "source_static_mesh_sha256": "c67151e1649247f409de8e404ffb0e814d931a6a5ccb27507b20c3d33d303324"
+        },
+        "VP_SPW_Radar:DestructibleMeshes/Vehicle.DestructibleMesh.Radar.RotatorCore": {
+          "node_index": 2,
+          "component": "VP_SPW_Radar:DestructibleMeshes/Vehicle.DestructibleMesh.Radar.RotatorCore",
+          "module": "VP_SPW_Radar",
+          "fragment": "DestructibleMeshes/Vehicle.DestructibleMesh.Radar.RotatorCore",
+          "render_mesh": "SPW_01_RotatorCore",
+          "source_asset": "/SPW_01/ComplexCollision/Valkyra/SPW_01_RotatorCore.SPW_01_RotatorCore",
+          "bounds_origin": [
+            -1.796e-06,
+            3.05823695,
+            0.34343985000000005
+          ],
+          "points": [
+            [
+              -1.796e-06,
+              3.05823695,
+              0.34343985000000005
+            ]
+          ],
+          "angle_degrees": 10,
+          "method": "native-bounds",
+          "socket_count": 0,
+          "source_static_mesh_dump": "E:\\Reverse_Engineer\\wardogs_analysis\\round8_spw_explosive_20261019\\dump-v2\\SPW_01_RotatorCore.json",
+          "source_static_mesh_sha256": "f1978b8f086aae9534140ea49dc1a1e6a1ace704e3e7e8a179b5c7a75e174a3f"
+        },
+        "VP_SPW_Radar:DestructibleMeshes/Vehicle.DestructibleMesh.Radar": {
+          "node_index": 3,
+          "component": "VP_SPW_Radar:DestructibleMeshes/Vehicle.DestructibleMesh.Radar",
+          "module": "VP_SPW_Radar",
+          "fragment": "DestructibleMeshes/Vehicle.DestructibleMesh.Radar",
+          "render_mesh": "SPW_01_Rotator",
+          "source_asset": "/SPW_01/ComplexCollision/Valkyra/SPW_01_Rotator.SPW_01_Rotator",
+          "bounds_origin": [
+            -2.684e-06,
+            2.63716047,
+            0.075165153
+          ],
+          "points": [
+            [
+              -2.684e-06,
+              2.63716047,
+              0.075165153
+            ]
+          ],
+          "angle_degrees": 10,
+          "method": "native-bounds",
+          "socket_count": 0,
+          "source_static_mesh_dump": "E:\\Reverse_Engineer\\wardogs_analysis\\round8_spw_explosive_20261019\\dump-v2\\SPW_01_Rotator.json",
+          "source_static_mesh_sha256": "f7731a5d554f46d18ce7513af3d9c536517c6d6c248713350af1b798a7a7f09b"
+        },
+        "VP_SPW_Radar:DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Flap03": {
+          "node_index": 4,
+          "component": "VP_SPW_Radar:DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Flap03",
+          "module": "VP_SPW_Radar",
+          "fragment": "DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Flap03",
+          "render_mesh": "SPW_01_Flap_03",
+          "source_asset": "/SPW_01/ComplexCollision/Valkyra/SPW_01_Flap_03.SPW_01_Flap_03",
+          "bounds_origin": [
+            0.3413508,
+            2.9152555,
+            0.59463303
+          ],
+          "points": [
+            [
+              0.3413508,
+              2.9152555,
+              0.59463303
+            ]
+          ],
+          "angle_degrees": 10,
+          "method": "native-bounds",
+          "socket_count": 0,
+          "source_static_mesh_dump": "E:\\Reverse_Engineer\\wardogs_analysis\\round8_spw_explosive_20261019\\dump-v2\\SPW_01_Flap_03.json",
+          "source_static_mesh_sha256": "63ba1ad02bbd67e65916f4e0c1862067cbd973ccb3fcfd5ad454b6fd642b7fc8"
+        },
+        "VP_SPW_Radar:DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Flap02": {
+          "node_index": 5,
+          "component": "VP_SPW_Radar:DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Flap02",
+          "module": "VP_SPW_Radar",
+          "fragment": "DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Flap02",
+          "render_mesh": "SPW_01_Flap_02",
+          "source_asset": "/SPW_01/ComplexCollision/Valkyra/SPW_01_Flap_02.SPW_01_Flap_02",
+          "bounds_origin": [
+            -0.34139342999999994,
+            2.9152074399999997,
+            0.59464165
+          ],
+          "points": [
+            [
+              -0.34139342999999994,
+              2.9152074399999997,
+              0.59464165
+            ]
+          ],
+          "angle_degrees": 10,
+          "method": "native-bounds",
+          "socket_count": 0,
+          "source_static_mesh_dump": "E:\\Reverse_Engineer\\wardogs_analysis\\round8_spw_explosive_20261019\\dump-v2\\SPW_01_Flap_02.json",
+          "source_static_mesh_sha256": "9bac93787f5ea4bd11ff547e84c2f682d708d595d29af830defa99b8a67a1ce5"
+        },
+        "VP_SPW_Radar:DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Flap01": {
+          "node_index": 6,
+          "component": "VP_SPW_Radar:DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Flap01",
+          "module": "VP_SPW_Radar",
+          "fragment": "DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Flap01",
+          "render_mesh": "SPW_01_Flap_01",
+          "source_asset": "/SPW_01/ComplexCollision/Valkyra/SPW_01_Flap_01.SPW_01_Flap_01",
+          "bounds_origin": [
+            4.800000000000001e-07,
+            3.14270484,
+            1.02979595
+          ],
+          "points": [
+            [
+              4.800000000000001e-07,
+              3.14270484,
+              1.02979595
+            ]
+          ],
+          "angle_degrees": 10,
+          "method": "native-bounds",
+          "socket_count": 0,
+          "source_static_mesh_dump": "E:\\Reverse_Engineer\\wardogs_analysis\\round8_spw_explosive_20261019\\dump-v2\\SPW_01_Flap_01.json",
+          "source_static_mesh_sha256": "c69f58731c969d029f08140b5e710ad4ed410a27496d8fa0f7a8ac4bceb67629"
+        },
+        "VP_SPW_Radar:DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Base": {
+          "node_index": 7,
+          "component": "VP_SPW_Radar:DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Base",
+          "module": "VP_SPW_Radar",
+          "fragment": "DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Base",
+          "render_mesh": "SPW_01_Base",
+          "source_asset": "/SPW_01/ComplexCollision/Valkyra/SPW_01_Base.SPW_01_Base",
+          "bounds_origin": [
+            0.0,
+            2.46832,
+            0.07424
+          ],
+          "points": [
+            [
+              0.0,
+              2.46832,
+              0.07424
+            ]
+          ],
+          "angle_degrees": 10,
+          "method": "native-bounds",
+          "socket_count": 0,
+          "source_static_mesh_dump": "E:\\Reverse_Engineer\\wardogs_analysis\\round8_spw_explosive_20261019\\dump-v2\\SPW_01_Base.json",
+          "source_static_mesh_sha256": "e457e33edd3892f1740ffb7f5b80f060a03b272dab9ec98a5f436c80279663ed"
+        },
+        "VP_SPW_Radar:DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Antenna": {
+          "node_index": 8,
+          "component": "VP_SPW_Radar:DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Antenna",
+          "module": "VP_SPW_Radar",
+          "fragment": "DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Antenna",
+          "render_mesh": "SPW_01_Antenna",
+          "source_asset": "/SPW_01/ComplexCollision/Valkyra/SPW_01_Antenna.SPW_01_Antenna",
+          "bounds_origin": [
+            -1.7259999999999999e-06,
+            2.6014207999999996,
+            0.3632033
+          ],
+          "points": [
+            [
+              -1.7259999999999999e-06,
+              2.6014207999999996,
+              0.3632033
+            ]
+          ],
+          "angle_degrees": 10,
+          "method": "native-bounds",
+          "socket_count": 0,
+          "source_static_mesh_dump": "E:\\Reverse_Engineer\\wardogs_analysis\\round8_spw_explosive_20261019\\dump-v2\\SPW_01_Antenna.json",
+          "source_static_mesh_sha256": "232230e04ece21a906f7ab85ebf7886faee92ef8d5ca3ad9478c6faaf60ebadb"
+        }
+      }
+    },
+    "assets/models/vehicles/land-tracked-leopard-spawn-spw-02.glb": {
+      "variants": [
+        "SPW_02"
+      ],
+      "glb_sha256": "96616c65f8eb55b5013814d795983570f1f475ecaed75dd5d08ed08ef5e6c07c",
+      "represented_node_count": 6,
+      "components": {
+        "VP_SPW:MainBody": {
+          "node_index": 1,
+          "component": "VP_SPW:MainBody",
+          "module": "VP_SPW",
+          "fragment": "MainBody",
+          "render_mesh": "SM_SPW_Body",
+          "source_asset": "/SPW_01/StaticMeshes/SM_SPW_Body.SM_SPW_Body",
+          "bounds_origin": [
+            6.866455e-07,
+            1.6323268999999998,
+            0.05454605
+          ],
+          "points": [
+            [
+              6.866455e-07,
+              1.6323268999999998,
+              0.05454605
+            ]
+          ],
+          "angle_degrees": 10,
+          "method": "native-bounds",
+          "socket_count": 0,
+          "source_static_mesh_dump": "E:\\Reverse_Engineer\\wardogs_analysis\\round8_spw_explosive_20261019\\dump-v2\\SM_SPW_Body.json",
+          "source_static_mesh_sha256": "c67151e1649247f409de8e404ffb0e814d931a6a5ccb27507b20c3d33d303324"
+        },
+        "VP_SPW_Radar_Manticore:DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Antenna": {
+          "node_index": 2,
+          "component": "VP_SPW_Radar_Manticore:DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Antenna",
+          "module": "VP_SPW_Radar_Manticore",
+          "fragment": "DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Antenna",
+          "render_mesh": "SPW_02_Antenna",
+          "source_asset": "/SPW_01/ComplexCollision/Manticore/SPW_02_Antenna.SPW_02_Antenna",
+          "bounds_origin": [
+            -2.918e-06,
+            2.70576911,
+            0.004585810000000006
+          ],
+          "points": [
+            [
+              -2.918e-06,
+              2.70576911,
+              0.004585810000000006
+            ]
+          ],
+          "angle_degrees": 10,
+          "method": "native-bounds",
+          "socket_count": 0,
+          "source_static_mesh_dump": "E:\\Reverse_Engineer\\wardogs_analysis\\round8_spw_explosive_20261019\\dump-v2\\SPW_02_Antenna.json",
+          "source_static_mesh_sha256": "c24f05ffadfe9f8efd3626bc5434c7472dde75d40bd0043cbea13f35aff1e5db"
+        },
+        "VP_SPW_Radar_Manticore:DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Base": {
+          "node_index": 3,
+          "component": "VP_SPW_Radar_Manticore:DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Base",
+          "module": "VP_SPW_Radar_Manticore",
+          "fragment": "DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Base",
+          "render_mesh": "SPW_02_Base",
+          "source_asset": "/SPW_01/ComplexCollision/Manticore/SPW_02_Base.SPW_02_Base",
+          "bounds_origin": [
+            0.0,
+            2.37484,
+            0.07424
+          ],
+          "points": [
+            [
+              0.0,
+              2.37484,
+              0.07424
+            ]
+          ],
+          "angle_degrees": 10,
+          "method": "native-bounds",
+          "socket_count": 0,
+          "source_static_mesh_dump": "E:\\Reverse_Engineer\\wardogs_analysis\\round8_spw_explosive_20261019\\dump-v2\\SPW_02_Base.json",
+          "source_static_mesh_sha256": "254bae7512ccf2e2ee5fa3a81dd6992ac71d7db16d1af15a2b4838efe5c1197e"
+        },
+        "VP_SPW_Radar_Manticore:DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Rotator": {
+          "node_index": 4,
+          "component": "VP_SPW_Radar_Manticore:DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Rotator",
+          "module": "VP_SPW_Radar_Manticore",
+          "fragment": "DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Rotator",
+          "render_mesh": "SPW_02_Rotator_01",
+          "source_asset": "/SPW_01/ComplexCollision/Manticore/SPW_02_Rotator_01.SPW_02_Rotator_01",
+          "bounds_origin": [
+            -2.6810000000000003e-06,
+            2.56043913,
+            0.07600489
+          ],
+          "points": [
+            [
+              -2.6810000000000003e-06,
+              2.56043913,
+              0.07600489
+            ]
+          ],
+          "angle_degrees": 10,
+          "method": "native-bounds",
+          "socket_count": 0,
+          "source_static_mesh_dump": "E:\\Reverse_Engineer\\wardogs_analysis\\round8_spw_explosive_20261019\\dump-v2\\SPW_02_Rotator_01.json",
+          "source_static_mesh_sha256": "7d56368799a77f79a8d9a32f630305b7ee3f4bf71cf3187779e435486f6adca8"
+        },
+        "VP_SPW_Radar_Manticore:DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Rotator02": {
+          "node_index": 5,
+          "component": "VP_SPW_Radar_Manticore:DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Rotator02",
+          "module": "VP_SPW_Radar_Manticore",
+          "fragment": "DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Rotator02",
+          "render_mesh": "SPW_02_Rotator_02",
+          "source_asset": "/SPW_01/ComplexCollision/Manticore/SPW_02_Rotator_02.SPW_02_Rotator_02",
+          "bounds_origin": [
+            -1.538e-06,
+            2.65366822,
+            -0.24913623999999998
+          ],
+          "points": [
+            [
+              -1.538e-06,
+              2.65366822,
+              -0.24913623999999998
+            ]
+          ],
+          "angle_degrees": 10,
+          "method": "native-bounds",
+          "socket_count": 0,
+          "source_static_mesh_dump": "E:\\Reverse_Engineer\\wardogs_analysis\\round8_spw_explosive_20261019\\dump-v2\\SPW_02_Rotator_02.json",
+          "source_static_mesh_sha256": "8e51ce997056a6e7aa7cd1fb3b2a5d96a3cf133601aee28a0989ab662013a5a3"
+        },
+        "VP_SPW_Radar_Manticore:DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Rotator03": {
+          "node_index": 6,
+          "component": "VP_SPW_Radar_Manticore:DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Rotator03",
+          "module": "VP_SPW_Radar_Manticore",
+          "fragment": "DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Rotator03",
+          "render_mesh": "SPW_02_Rotator_03",
+          "source_asset": "/SPW_01/ComplexCollision/Manticore/SPW_02_Rotator_03.SPW_02_Rotator_03",
+          "bounds_origin": [
+            -2.9750000000000003e-06,
+            2.83656787,
+            -0.012585349999999993
+          ],
+          "points": [
+            [
+              -2.9750000000000003e-06,
+              2.83656787,
+              -0.012585349999999993
+            ]
+          ],
+          "angle_degrees": 10,
+          "method": "native-bounds",
+          "socket_count": 0,
+          "source_static_mesh_dump": "E:\\Reverse_Engineer\\wardogs_analysis\\round8_spw_explosive_20261019\\dump-v2\\SPW_02_Rotator_03.json",
+          "source_static_mesh_sha256": "77b7c74473e20ffaf5bb6852e320eb105af16a7be5a1511dc62a347fb9c691bd"
+        }
+      }
+    },
+    "assets/models/vehicles/land-tracked-leopard-spawn-spw-02--spw-03.glb": {
+      "variants": [
+        "SPW_03"
+      ],
+      "glb_sha256": "02b97e300c86bb58edaeb21a81642013e4e41a7f5b3bc35a9691fcc485985778",
+      "represented_node_count": 7,
+      "components": {
+        "VP_SPW:MainBody": {
+          "node_index": 1,
+          "component": "VP_SPW:MainBody",
+          "module": "VP_SPW",
+          "fragment": "MainBody",
+          "render_mesh": "SM_SPW_Body",
+          "source_asset": "/SPW_01/StaticMeshes/SM_SPW_Body.SM_SPW_Body",
+          "bounds_origin": [
+            6.866455e-07,
+            1.6323268999999998,
+            0.05454605
+          ],
+          "points": [
+            [
+              6.866455e-07,
+              1.6323268999999998,
+              0.05454605
+            ]
+          ],
+          "angle_degrees": 10,
+          "method": "native-bounds",
+          "socket_count": 0,
+          "source_static_mesh_dump": "E:\\Reverse_Engineer\\wardogs_analysis\\round8_spw_explosive_20261019\\dump-v2\\SM_SPW_Body.json",
+          "source_static_mesh_sha256": "c67151e1649247f409de8e404ffb0e814d931a6a5ccb27507b20c3d33d303324"
+        },
+        "VP_SPW_Radar_Lonestar:DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Antenna": {
+          "node_index": 2,
+          "component": "VP_SPW_Radar_Lonestar:DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Antenna",
+          "module": "VP_SPW_Radar_Lonestar",
+          "fragment": "DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Antenna",
+          "render_mesh": "SPW_03_Antenna",
+          "source_asset": "/SPW_01/ComplexCollision/Lonestar/SPW_03_Antenna.SPW_03_Antenna",
+          "bounds_origin": [
+            -2.74e-07,
+            2.64855636,
+            0.8032645
+          ],
+          "points": [
+            [
+              -2.74e-07,
+              2.64855636,
+              0.8032645
+            ]
+          ],
+          "angle_degrees": 10,
+          "method": "native-bounds",
+          "socket_count": 0,
+          "source_static_mesh_dump": "E:\\Reverse_Engineer\\wardogs_analysis\\round8_spw_explosive_20261019\\dump-v2\\SPW_03_Antenna.json",
+          "source_static_mesh_sha256": "40070b81c91300df7a335adaea435028ae557f8922eb3d6bf4481bac26ad8d4a"
+        },
+        "VP_SPW_Radar_Lonestar:DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Base": {
+          "node_index": 3,
+          "component": "VP_SPW_Radar_Lonestar:DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Base",
+          "module": "VP_SPW_Radar_Lonestar",
+          "fragment": "DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Base",
+          "render_mesh": "SPW_03_Base",
+          "source_asset": "/SPW_01/ComplexCollision/Lonestar/SPW_03_Base.SPW_03_Base",
+          "bounds_origin": [
+            0.0,
+            2.46832,
+            0.07424
+          ],
+          "points": [
+            [
+              0.0,
+              2.46832,
+              0.07424
+            ]
+          ],
+          "angle_degrees": 10,
+          "method": "native-bounds",
+          "socket_count": 0,
+          "source_static_mesh_dump": "E:\\Reverse_Engineer\\wardogs_analysis\\round8_spw_explosive_20261019\\dump-v2\\SPW_03_Base.json",
+          "source_static_mesh_sha256": "47781e9016d11453f6e014ca823f5af0bdf0b0dff9d5ed6c7b44d3b8c1a36193"
+        },
+        "VP_SPW_Radar_Lonestar:DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Flap01": {
+          "node_index": 4,
+          "component": "VP_SPW_Radar_Lonestar:DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Flap01",
+          "module": "VP_SPW_Radar_Lonestar",
+          "fragment": "DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Flap01",
+          "render_mesh": "SPW_03_Flap_01",
+          "source_asset": "/SPW_01/ComplexCollision/Lonestar/SPW_03_Flap_01.SPW_03_Flap_01",
+          "bounds_origin": [
+            0.7051696,
+            3.04101386,
+            0.7747578
+          ],
+          "points": [
+            [
+              0.7051696,
+              3.04101386,
+              0.7747578
+            ]
+          ],
+          "angle_degrees": 10,
+          "method": "native-bounds",
+          "socket_count": 0,
+          "source_static_mesh_dump": "E:\\Reverse_Engineer\\wardogs_analysis\\round8_spw_explosive_20261019\\dump-v2\\SPW_03_Flap_01.json",
+          "source_static_mesh_sha256": "7754580e6f7c199a2506e61c9f26b3ea65fb47c8202028d1c88429a56dad8e2c"
+        },
+        "VP_SPW_Radar_Lonestar:DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Flap02": {
+          "node_index": 5,
+          "component": "VP_SPW_Radar_Lonestar:DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Flap02",
+          "module": "VP_SPW_Radar_Lonestar",
+          "fragment": "DestructibleMeshes/Vehicle.DestructibleMesh.Radar.Flap02",
+          "render_mesh": "SPW_03_Flap_02",
+          "source_asset": "/SPW_01/ComplexCollision/Lonestar/SPW_03_Flap_02.SPW_03_Flap_02",
+          "bounds_origin": [
+            -0.7051734999999999,
+            3.04101386,
+            0.77476246
+          ],
+          "points": [
+            [
+              -0.7051734999999999,
+              3.04101386,
+              0.77476246
+            ]
+          ],
+          "angle_degrees": 10,
+          "method": "native-bounds",
+          "socket_count": 0,
+          "source_static_mesh_dump": "E:\\Reverse_Engineer\\wardogs_analysis\\round8_spw_explosive_20261019\\dump-v2\\SPW_03_Flap_02.json",
+          "source_static_mesh_sha256": "29f471abe133f10b90788587ee44c95831d894852f65ddbc40f186347754067b"
+        },
+        "VP_SPW_Radar_Lonestar:DestructibleMeshes/Vehicle.DestructibleMesh.Radar.RotatorCore": {
+          "node_index": 6,
+          "component": "VP_SPW_Radar_Lonestar:DestructibleMeshes/Vehicle.DestructibleMesh.Radar.RotatorCore",
+          "module": "VP_SPW_Radar_Lonestar",
+          "fragment": "DestructibleMeshes/Vehicle.DestructibleMesh.Radar.RotatorCore",
+          "render_mesh": "SPW_03_Rotator_01",
+          "source_asset": "/SPW_01/ComplexCollision/Lonestar/SPW_03_Rotator_01.SPW_03_Rotator_01",
+          "bounds_origin": [
+            -2.703e-06,
+            2.64213327,
+            0.06942998
+          ],
+          "points": [
+            [
+              -2.703e-06,
+              2.64213327,
+              0.06942998
+            ]
+          ],
+          "angle_degrees": 10,
+          "method": "native-bounds",
+          "socket_count": 0,
+          "source_static_mesh_dump": "E:\\Reverse_Engineer\\wardogs_analysis\\round8_spw_explosive_20261019\\dump-v2\\SPW_03_Rotator_01.json",
+          "source_static_mesh_sha256": "8a675193449f4d28f43ccb1a585c6f9b31924947dd5ba8872e9ad74a8d6e7191"
+        },
+        "VP_SPW_Radar_Lonestar:DestructibleMeshes/Vehicle.DestructibleMesh.Radar": {
+          "node_index": 7,
+          "component": "VP_SPW_Radar_Lonestar:DestructibleMeshes/Vehicle.DestructibleMesh.Radar",
+          "module": "VP_SPW_Radar_Lonestar",
+          "fragment": "DestructibleMeshes/Vehicle.DestructibleMesh.Radar",
+          "render_mesh": "SPW_03_Rotator_02",
+          "source_asset": "/SPW_01/ComplexCollision/Lonestar/SPW_03_Rotator_02.SPW_03_Rotator_02",
+          "bounds_origin": [
+            -8.629999999999999e-07,
+            2.91833698,
+            0.6253067
+          ],
+          "points": [
+            [
+              -8.629999999999999e-07,
+              2.91833698,
+              0.6253067
+            ]
+          ],
+          "angle_degrees": 10,
+          "method": "native-bounds",
+          "socket_count": 0,
+          "source_static_mesh_dump": "E:\\Reverse_Engineer\\wardogs_analysis\\round8_spw_explosive_20261019\\dump-v2\\SPW_03_Rotator_02.json",
+          "source_static_mesh_sha256": "be25bfb9828df40baee6a16bb3f4b08889bc6404f76374cf9430845ba7b46f5d"
+        }
+      }
+    }
+  }
+}
