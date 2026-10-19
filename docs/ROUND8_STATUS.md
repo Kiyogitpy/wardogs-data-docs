@@ -234,6 +234,19 @@ not proved an exact descriptor-to-owner join. Details are in the
 [mapping audit](evidence/round8-mapping-gaps.md) and
 [property-bag proof](evidence/round8-propertybag-types.md).
 
+## Vehicle impact preview, 2026-10-19
+
+The user prioritized rocket/explosive viewer correctness before the open
+underbarrel item. The local [impact audit and implementation](evidence/round8-explosive-viewer-audit.md)
+adds vehicle/ground placement, Direct hit / Splash location labels,
+fresh-shot routing and six reviewed actor explosives. Armed exploding
+projectiles use radial damage instead of adding a second direct term.
+The result is explicitly a reference-pose estimate: native body sampling
+and live first-hit ordering are not recovered from the display GLBs.
+36 models / 204 nodes / 156,447 triangles and 62 shot checks pass;
+the installed Edge harness passes at 1440 px and 360 px. Publication is
+recorded in Git history; the reference-pose limitations remain explicit.
+
 ## Next bounded leads
 
 Continue the unchecked rows above; do not repeat the closed Round-7/loadout

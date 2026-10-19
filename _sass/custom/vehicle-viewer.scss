@@ -108,6 +108,103 @@ html:not(.js) .vv { display: none; }
   background: transparent;
 }
 
+.vv-is-placing .vv-model { cursor: crosshair; }
+.vv-is-placing .vv-hotspot { pointer-events: none; }
+
+.vv-impact-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+
+  &[hidden] { display: none; }
+  path { fill: none; vector-effect: non-scaling-stroke; }
+  .vv-blast-outer { stroke: #ffbd85; stroke-width: 1.5; opacity: 0.8; }
+  .vv-blast-effective { stroke: #9ec5f4; stroke-width: 1.5; stroke-dasharray: 5 4; opacity: 0.9; }
+  .vv-blast-contact { fill: #ffbd85; stroke: #18181c; stroke-width: 1; }
+  .vv-blast-origin { fill: #18181c; stroke: #fff; stroke-width: 2; }
+  .vv-blast-label {
+    fill: #fff;
+    stroke: #18181c;
+    stroke-width: 3;
+    paint-order: stroke;
+    font-size: 13px;
+    font-weight: 600;
+  }
+}
+
+.vv-impact-controls {
+  padding: 0.75rem 0.9rem;
+  border-top: 1px solid $ue-border;
+  color: $ue-text;
+  font-size: 0.85rem;
+
+  &[hidden] { display: none; }
+  p { margin: 0 0 0.7rem; }
+  .vv-impact-key { margin: 0.7rem 0 0; color: $ue-text-dim; font-size: 0.78rem; }
+}
+
+.vv-ground-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.65rem;
+
+  label { display: flex; flex: 1 1 7rem; flex-direction: column; gap: 0.3rem; min-width: 0; }
+  input {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    padding: 0.5rem 0.6rem;
+    color: $ue-white;
+    background: $ue-panel;
+    border: 1px solid $ue-border-strong;
+    border-radius: $radius-small;
+    font: inherit;
+    font-variant-numeric: tabular-nums;
+    color-scheme: dark;
+    caret-color: $ue-blue;
+  }
+  button {
+    padding: 0.5rem 0.7rem;
+    color: $ue-white;
+    background: $ue-panel-raised;
+    border: 1px solid $ue-border-strong;
+    border-radius: $radius-small;
+    font: inherit;
+    cursor: pointer;
+
+    &:hover:not(:disabled) { border-color: $ue-text-dim; }
+  }
+  input:focus-visible, button:focus-visible { outline: 2px solid $ue-blue; outline-offset: 2px; }
+  :disabled { color: $ue-text-dim; cursor: default; }
+}
+
+.vv-impact-summary {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid $ue-border;
+  font-variant-numeric: tabular-nums;
+
+  &[hidden] { display: none; }
+}
+
+.vv-impact-assumptions {
+  margin-top: 0.75rem;
+  summary {
+    padding: 0.3rem 0;
+    color: $ue-text;
+    cursor: pointer;
+    &:hover { color: $ue-white; }
+    &:focus-visible { outline: 2px solid $ue-blue; outline-offset: 2px; }
+  }
+  p { margin: 0.55rem 0 0; }
+}
+
+#vv-panel-body[hidden] { display: none; }
+
 .vv-status {
   position: absolute;
   left: 0.75rem;
