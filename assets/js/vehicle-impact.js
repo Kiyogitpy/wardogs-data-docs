@@ -140,8 +140,10 @@
     var supplied = geometry.components.filter(function (component) {
       return metadata && metadata[String(component.nodeIndex)] && metadata[String(component.nodeIndex)].point_sampling;
     });
-    var nativeBounds = supplied.length > 0;
-    if (nativeBounds && supplied.length !== geometry.components.length)
+    var authored = supplied.length > 0, hasSockets = supplied.some(function (component) {
+      return metadata[String(component.nodeIndex)].point_sampling.method === "native-sockets";
+    });
+    if (authored && supplied.length !== geometry.components.length)
       throw new Error("Incomplete authored component sampling inputs.");
     var tested = new Set(), blocked = new Set();
     geometry.components.forEach(function (component) {
@@ -151,18 +153,22 @@
       var closest = geometry.closestPoint(origin, component);
       if (!closest || closest.distance > radius + 1e-7) return;
       var sampling = mapped.point_sampling;
-      if (nativeBounds && (sampling.method !== "native-bounds" || !Array.isArray(sampling.points) || sampling.points.length !== 1 ||
-          !finiteVector(sampling.bounds_origin) || !finiteVector(sampling.points[0]) ||
+      if (authored && (["native-bounds", "native-sockets"].indexOf(sampling.method) < 0 ||
+          !Array.isArray(sampling.points) || !sampling.points.length ||
+          !finiteVector(sampling.bounds_origin) || !sampling.points.every(finiteVector) ||
           !Number.isFinite(sampling.angle_degrees))) throw new Error("Invalid authored component sampling inputs.");
-      var found = null, targets = nativeBounds ? sampling.points.map(function (point) { return {position: point}; })
+      var found = null, targets = authored ? sampling.points.map(function (point) { return {position: point}; }).sort(function (a, b) {
+        return distance(origin, a.position) - distance(origin, b.position);
+      })
         : candidates(geometry, component, origin);
-      for (var t = 0; t < targets.length && !found; t++) {
-        if (nativeBounds && distance(origin, targets[t].position) > radius + 1) continue;
-        for (var s = 0; s < starts.length && !found; s++) {
+      for (var t = 0; t < targets.length && (!found || authored); t++) {
+        if (authored && distance(origin, targets[t].position) > radius + 1) continue;
+        var accepted = null;
+        for (var s = 0; s < starts.length && !accepted; s++) {
           var start = starts[s], target = targets[t], delta = sub(target.position, start), length = Math.hypot.apply(Math, delta);
-          if (nativeBounds && s >= 2 && angleRejected(origin, start, sampling.bounds_origin, sampling.angle_degrees)) continue;
+          if (authored && s >= 2 && angleRejected(origin, start, sampling.bounds_origin, sampling.angle_degrees)) continue;
           // Native 0x6F0341D exempts cloud index 1 from the origin-to-start pretrace.
-          if (nativeBounds) {
+          if (authored) {
             // Tested-clear starts still run each component callback; only the pretrace is cached.
             if (s !== 1 && !tested.has(s)) {
               tested.add(s);
@@ -171,13 +177,15 @@
             }
             if (blocked.has(s)) continue;
           } else if (s !== 1 && distance(origin, start) > 1e-7 && !clearSegment(geometry, origin, start)) continue;
-          if (length < 1e-7) { if (!nativeBounds) found = target; continue; }
+          if (length < 1e-7) { if (!authored) accepted = target; continue; }
           // Authored traces retain their exact starts; moving inside a surface can bypass the hull.
           var direction = mul(delta, 1 / length), epsilon = Math.min(1e-5, length / 100);
-          var trace = nativeBounds ? geometry.ray(start, direction, length)
+          var trace = authored ? geometry.ray(start, direction, length)
             : geometry.ray(add(start, mul(direction, epsilon)), direction, length + epsilon);
-          if (trace && trace.component === component && distance(origin, trace.position) <= radius + 1e-7) found = trace;
+          if (trace && trace.component === component && distance(origin, trace.position) <= radius + 1e-7) accepted = trace;
         }
+        // Tracked vehicles continue through all candidates and keep the nearest accepted hit.
+        if (accepted && (!found || distance(origin, accepted.position) < distance(origin, found.position))) found = accepted;
       }
       if (!found) { occluded++; return; }
       retained.add(mapped.component);
@@ -216,10 +224,10 @@
       scenarioMainDamage: {min: scenarios.length ? Math.min.apply(Math, scenarios) : 0,
         max: scenarios.length ? Math.max.apply(Math, scenarios) : 0},
       tracePreferenceUnknown: caliber.blast.prefer_upwards == null,
-      samplingMode: nativeBounds ? "native-bounds" : "sampled-surfaces",
+      samplingMode: authored ? (hasSockets ? "native-sockets" : "native-bounds") : "sampled-surfaces",
       baseAmount: applications.reduce(function (sum, hit) { return sum + hit.base; }, 0),
-      orderingNote: nativeBounds
-        ? "Reference-pose estimate: authored component bounds, native angle gate and trace-cloud cache; visibility uses display geometry and GLB component order. Live collision bodies, terrain and query order can change the result."
+      orderingNote: authored
+        ? "Reference-pose estimate: authored component sampling points, native angle gate and trace-cloud cache; visibility uses display geometry and GLB component order. Live collision bodies, terrain and query order can change the result."
         : "Reference-pose estimate: sampled display surfaces and GLB component order; live collision bodies, terrain and query order can change the result."};
   }
   return {simulate: simulate, detonationOrigin: detonationOrigin, blastAmount: blastAmount, applyRadial: applyRadial,

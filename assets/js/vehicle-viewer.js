@@ -903,7 +903,8 @@
     box.appendChild(el("h2", "vv-panel-title no_anchor", shot.label));
     box.appendChild(el("p", "vv-note", (result.samplingMode === "native-bounds"
       ? "Reference-pose estimate using authored component bounds. "
-      : "Reference-pose estimate from sampled display surfaces. ") +
+      : result.samplingMode === "native-sockets" ? "Reference-pose estimate using authored damage-query sockets. "
+        : "Reference-pose estimate from sampled display surfaces. ") +
       "Live collision and order can differ. Full health per shot."));
     if (state.caliber.blast.impact_backoff_cm > 0)
       box.appendChild(el("p", "vv-note", "Shot direction follows the view. Detonation is " +
