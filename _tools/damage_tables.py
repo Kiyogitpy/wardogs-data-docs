@@ -150,6 +150,9 @@ def blast_params():
             dv = stats.get("DamageValues", {})
             if pid not in out or os.path.basename(path).count("_") <= 2:
                 out[pid] = {k: dv.get(v) for k, v in keys if v in dv or k == "prefer_upwards"}
+                length = stats.get("ProjectileDimensions", {}).get("Length")
+                if out[pid].get("radius", 0) > 0 and isinstance(length, (int, float)):
+                    out[pid]["impact_backoff_cm"] = length / 2
     return out
 
 

@@ -206,6 +206,51 @@ def main():
         fuel = next((line for line in page.locator("#vv-impactSummary li").all_text_contents() if line.startswith("FuelTank:")), "")
         assert "14.1 damage routed from Main health" in fuel, fuel
 
+        # All three SPW radar assemblies use authored bounds rather than exposed CC corners.
+        page.set_viewport_size({"width": 1440, "height": 1100})
+        spw_models = 0
+        for vehicle in vehicle_data["vehicles"]:
+            if not vehicle["id"].startswith("land-tracked-leopard-spawn-"):
+                continue
+            page.select_option("#vv-vehicle", vehicle["id"])
+            for index, model in enumerate(vehicle["models"]):
+                if len(vehicle["models"]) > 1:
+                    page.select_option("#vv-variant", str(index))
+                page.wait_for_function("path => { const m=document.querySelector('#vv-model'); return m.loaded && m.getAttribute('src').endsWith(path); }",
+                                       arg=model["path"], timeout=45000)
+                page.wait_for_function("!document.querySelector('#vv-placeGround').disabled", timeout=20000)
+                page.locator("#vv-model").scroll_into_view_if_needed()
+                projection = page.evaluate("""async path => {
+                  const m=document.querySelector('#vv-model'), base=document.querySelector('#vv').dataset.base;
+                  const buffer=await (await fetch(base+path)).arrayBuffer();
+                  const g=await VehicleImpactGeometry.load(buffer, window.MeshoptDecoder);
+                  const hit=g.ray([0,1,g.bounds.max[2]+2],[0,0,-1]);
+                  if(!hit || hit.material.name!=='CC_MainBody') return null;
+                  const b=document.createElement('button'); b.type='button'; b.slot='hotspot-spw-check';
+                  b.dataset.position=hit.position.join(' '); b.dataset.normal='0 0 1';
+                  b.dataset.visibilityAttribute='visible';
+                  b.style.cssText='width:24px;height:24px;padding:0;border:0;opacity:.01'; m.appendChild(b);
+                  await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+                  const h=m.queryHotspot(b.slot); return h && h.canvasPosition;
+                }""", model["path"])
+                assert projection and projection["z"] < 1, (model["path"], projection)
+                rect = page.locator("#vv-model").bounding_box()
+                page.mouse.click(rect["x"] + projection["x"], rect["y"] + projection["y"])
+                assert summary.inner_text().startswith("Direct hit"), summary.inner_text()
+                assert "using authored component bounds" in summary.inner_text()
+                assert "Detonation is 12.7 cm back" in summary.inner_text()
+                assert "Impact point (m):" in summary.text_content() and "Detonation centre (m):" in summary.text_content()
+                assert page.locator("#vv-impactOverlay .vv-blast-label").text_content() == "Detonation"
+                facts = dict(zip(page.locator("#vv-impactSummary dt").all_text_contents(),
+                                 page.locator("#vv-impactSummary dd").all_text_contents()))
+                assert facts.get("Damage applications", "").startswith("1 unique hit locations"), (model["path"], facts)
+                assert facts.get("Main health damage") == "361", (model["path"], facts)
+                fuel = next((line for line in page.locator("#vv-impactSummary li").all_text_contents() if line.startswith("FuelTank:")), "")
+                assert "19 damage routed from Main health" in fuel, fuel
+                page.locator("[slot='hotspot-spw-check']").evaluate("e => e.remove()")
+                spw_models += 1
+        assert spw_models == 3
+
         # Every published vehicle renders its own full section list, with unique colors and slot swatches.
         page.select_option("#vv-caliber", "Item.Caliber.556mm")
         for vehicle in vehicle_data["vehicles"]:
@@ -253,6 +298,7 @@ def main():
     assert not errors, errors
     print(json.dumps({"browser": "passed", "desktop": 1440, "mobile": 360,
                       "section_vehicles": len(vehicle_data["vehicles"]), "gepard_84mm_transfer": "passed",
+                      "spw_84mm_front_models": spw_models,
                       "routing_slots": sum(len(v["slots"]) for v in vehicle_data["vehicles"]),
                       "30mm_blast_ui": "passed",
                       "screenshots": str(args.out)}))

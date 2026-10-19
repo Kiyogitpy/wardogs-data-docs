@@ -75,6 +75,11 @@ async function main() {
   assert.deepEqual(starts[1], [0, 0.5, 0]); // UE up -> displayed +Y.
   starts.slice(1).forEach(p => near(Math.hypot(...p), 0.5));
   assert.deepEqual(impact.cloud([0, 0, 0], true)[0], starts[1]);
+  const offsetCaliber = {blast: {impact_backoff_cm: 12.7}};
+  assert.deepEqual(impact.detonationOrigin(offsetCaliber, [1, 2, 3], [0, 0, -10]), [1, 2, 3.127]);
+  assert.deepEqual(impact.detonationOrigin(offsetCaliber, [1, 2, 3], [0, 0, 0]), [1, 2, 3]);
+  assert.deepEqual(impact.detonationOrigin(offsetCaliber, [1, 2, 3], [0, 0, 1e-7]), [1, 2, 3]);
+  assert.deepEqual(impact.detonationOrigin({blast: {}}, [1, 2, 3], [0, 0, -10]), [1, 2, 3]);
   const dedupVehicle = {slots: [
     {section: "One", hit_location: "Vehicle.Main"},
     {section: "Two", hit_location: "Vehicle.Main"},
@@ -108,10 +113,15 @@ async function main() {
     assert.equal(sources.length, 1, "--source must name one exported explosive source");
   }
   const coverage = [];
+  const vehicleIndex = process.argv.indexOf("--vehicle-prefix");
+  const vehicles = vehicleIndex < 0 ? data.vehicles
+    : data.vehicles.filter(vehicle => vehicle.id.startsWith(process.argv[vehicleIndex + 1] || "__missing__"));
+  assert.ok(vehicles.length, "--vehicle-prefix must match an exported vehicle");
   const source = data.meta.calibers.find(c => c.id === "Item.Caliber.84mm");
   assert.ok(source && source.blast, "Reviewed MAAWS projectile missing");
+  near(source.blast.impact_backoff_cm, 12.7);
   const before = JSON.stringify(data);
-  for (const vehicle of data.vehicles) {
+  for (const vehicle of vehicles) {
     for (const base of vehicle.models) for (const model of [base, base.wheels_destroyed].filter(Boolean)) {
       const buffer = fs.readFileSync(path.join(root, model.path));
       const mesh = await geometryAPI.load(buffer.buffer.slice(buffer.byteOffset, buffer.byteOffset + buffer.byteLength), decoder);
@@ -157,6 +167,36 @@ async function main() {
         assert.ok(fuelTransfer.every(entry => entry.via && entry.via.section === MAIN));
         near(fuelTransfer.reduce((sum, entry) => sum + entry.amount, 0), 14.1);
       }
+      if (vehicle.id.startsWith("land-tracked-leopard-spawn-")) {
+        const front = mesh.ray([0, 1, mesh.bounds.max[2] + 2], [0, 0, -1]);
+        assert.ok(front && front.material.name === "CC_MainBody");
+        for (const backoff of [0, 0.127]) {
+          const origin = front.position.map((value, i) => value + (i === 2 ? backoff : 0));
+          const result = impact.simulate(mesh, vehicle, source, origin, mapping);
+          assert.equal(result.samplingMode, "native-bounds");
+          assert.equal(result.applications.length, 1, "SPW front hit must not acquire a false radar application");
+          assert.ok(result.hits.every(hit => hit.material.name !== "CC_Radar"), "SPW radar bounds target is occluded");
+          near(result.mainDamage, 361);
+          near(result.sectionDamage[MAIN + ".FuelTank"], 19);
+          near(result.health[MAIN + ".Radar"], 100);
+        }
+        const side = mesh.ray([mesh.bounds.max[0] + 2, 0.5, 0], [-1, 0, 0]);
+        assert.ok(side && side.material.name === "CC_Tracks_L");
+        const track = impact.simulate(mesh, vehicle, source,
+          impact.detonationOrigin(source, side.position, [-1, 0, 0]), mapping);
+        assert.equal(track.firstSection, MAIN + ".Tracks.Left");
+        assert.equal(track.applications.length, 1);
+        near(track.sectionDamage[MAIN + ".Tracks.Left"], 125);
+        near(track.mainDamage, 121.125);
+        near(track.sectionDamage[MAIN + ".FuelTank"], 6.375);
+        // Conditional fixed-contact sequence; collision/deployment changes are not simulated.
+        const running = impact.freshHealth(vehicle);
+        for (const section of [MAIN + ".Tracks.Left", MAIN, MAIN])
+          impact.applyRadial(vehicle.sections, running, section, 380);
+        near(running[MAIN], 156.875);
+        impact.applyRadial(vehicle.sections, running, MAIN, 380);
+        near(running[MAIN], 0);
+      }
       if (!model.path.endsWith("--wheels-destroyed.glb")) {
         const bounds = mesh.bounds;
         const origin = [bounds.max[0] + 1, bounds.min[1], bounds.center[2]];
@@ -179,16 +219,18 @@ async function main() {
     }
   }
   assert.equal(JSON.stringify(data), before, "Shots must not mutate exported health/data");
-  assert.equal(models, 36);
+  const expectedModels = vehicles.reduce((sum, vehicle) => sum + vehicle.models.reduce((count, model) =>
+    count + 1 + (model.wheels_destroyed ? 1 : 0), 0), 0);
+  assert.equal(models, expectedModels);
   console.log(`impact preview: ${models} models, ${nodes} nodes, ${triangles} triangles, ${shots} fresh/out-of-range shots passed`);
-  console.log(`catalog verification: ${data.vehicles.length} vehicle profiles, ${sources.length} explosive sources, ${catalogShots} shots passed`);
+  console.log(`catalog verification: ${vehicles.length} vehicle profiles, ${sources.length} explosive sources, ${catalogShots} shots passed`);
   const reportIndex = process.argv.indexOf("--report");
   if (reportIndex >= 0) {
     assert.ok(process.argv[reportIndex + 1], "--report requires a path");
     fs.writeFileSync(process.argv[reportIndex + 1], JSON.stringify({
       scope: "Offline reference-pose software checks; no runtime collision parity established",
-      vehicleProfiles: data.vehicles.length, models, sectionChecks,
-      profilesWithoutGeometry: data.vehicles.filter(v => !v.models.length).map(v => v.id),
+      vehicleProfiles: vehicles.length, models, sectionChecks,
+      profilesWithoutGeometry: vehicles.filter(v => !v.models.length).map(v => v.id),
       sources: sources.map(s => s.id), shots: catalogShots, coverage
     }, null, 2) + "\n", {flag: "wx"});
   }

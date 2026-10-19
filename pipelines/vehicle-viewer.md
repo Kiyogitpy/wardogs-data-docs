@@ -88,7 +88,7 @@ For soldiers, the [Infantry Hitbox Viewer](infantry-viewer.md) shows the player'
 <script src="{{ '/assets/js/vehicle-impact.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
 <script src="{{ '/assets/js/vehicle-viewer.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
 
-For explosives, choose **Place impact** and click the vehicle (**Direct hit**) or nearby ground (**Splash**). You can also enter ground X/Z coordinates in metres. Each placement starts with full health. The result is a **reference-pose estimate** from exported collision triangles and traced damage routing: component order, moving parts and the live scene can change the result. Inspect slots retains the direct-hit rule and repeated-hit comparison for individual slots.
+For explosives, choose **Place impact** and click the vehicle (**Direct hit**) or nearby ground (**Splash**). You can also enter ground X/Z coordinates in metres. Each placement starts with full health. Projectile shots travel from the current view toward that point; the blast centre moves back by half the authored projectile length, as in the traced impact path. Placed explosive actors use the selected point. The result is a **reference-pose estimate** from exported collision triangles and traced damage routing: component order, moving parts and the live scene can change the result. SPW spawn variants use their authored component bounds for blast candidates; other models retain sampled display surfaces. Inspect slots retains the direct-hit rule and repeated-hit comparison for individual slots.
 
 ## How the models are built
 

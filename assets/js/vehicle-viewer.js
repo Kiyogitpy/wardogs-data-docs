@@ -877,8 +877,10 @@
       return;
     }
     try {
-      var result = window.VehicleImpact.simulate(impactGeometry, state.vehicle, state.caliber, position, impactMetadata);
-      state.shot = { origin: position, label: label, result: result };
+      var incoming = window.VehicleImpactGeometry.sub(position, impactCamera().position);
+      var origin = window.VehicleImpact.detonationOrigin(state.caliber, position, incoming);
+      var result = window.VehicleImpact.simulate(impactGeometry, state.vehicle, state.caliber, origin, impactMetadata);
+      state.shot = { origin: origin, impactPosition: position, label: label, result: result };
       syncImpactControls();
       renderImpactSummary();
       drawImpact();
@@ -899,7 +901,13 @@
     }
     var result = shot.result, dl = el("dl", "vv-facts");
     box.appendChild(el("h2", "vv-panel-title no_anchor", shot.label));
-    box.appendChild(el("p", "vv-note", "Reference-pose estimate from sampled display surfaces. Live collision and order can differ. Full health per shot."));
+    box.appendChild(el("p", "vv-note", (result.samplingMode === "native-bounds"
+      ? "Reference-pose estimate using authored component bounds. "
+      : "Reference-pose estimate from sampled display surfaces. ") +
+      "Live collision and order can differ. Full health per shot."));
+    if (state.caliber.blast.impact_backoff_cm > 0)
+      box.appendChild(el("p", "vv-note", "Shot direction follows the view. Detonation is " +
+        num(state.caliber.blast.impact_backoff_cm) + " cm back from the impact along that path."));
     row(dl, "Main health damage", num(result.mainDamage));
     row(dl, "Main health remaining", num(result.mainRemaining) + " / " + num(state.vehicle.sections[mainSection].max_health));
     row(dl, "Blast contacts", result.hits.length + " reached; " + result.occluded + " occluded");
@@ -928,7 +936,9 @@
     var assumptions = el("details", "vv-impact-assumptions");
     assumptions.appendChild(el("summary", null, "Model assumptions"));
     assumptions.appendChild(el("p", "vv-note", result.orderingNote || "The first component selects the blast's health section. Native overlap order is unknown; this preview uses GLB component order."));
-    assumptions.appendChild(el("p", "vv-note", "Origin (m): " + shot.origin.map(num).join(", ") + ". " + (shot.label === "Direct hit" ? "Armed blast on the collision surface." : "Blast on the isolated ground plane.")));
+    assumptions.appendChild(el("p", "vv-note", "Impact point (m): " + shot.impactPosition.map(num).join(", ") + ". " +
+      (shot.label === "Direct hit" ? "Selected collision surface." : "Selected isolated ground plane.")));
+    assumptions.appendChild(el("p", "vv-note", "Detonation centre (m): " + shot.origin.map(num).join(", ") + "."));
     if (result.scenarioMainDamage && result.scenarioMainDamage.min !== result.scenarioMainDamage.max) {
       assumptions.appendChild(el("p", "vv-note", "First-choice examples reuse the same sampled hits. They are not exhaustive and do not bound the game's results."));
     }
@@ -987,7 +997,7 @@
     if (origin) {
       svg.appendChild(svgElement("circle", { cx: origin[0], cy: origin[1], r: 7, class: "vv-blast-origin" }));
       var label = svgElement("text", { x: origin[0] + 12, y: origin[1] - 12, class: "vv-blast-label" });
-      label.textContent = shot.label; svg.appendChild(label);
+      label.textContent = "Detonation"; svg.appendChild(label);
     }
   }
 

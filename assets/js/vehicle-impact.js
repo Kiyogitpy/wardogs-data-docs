@@ -11,6 +11,19 @@
   function add(a, b) { return a.map(function (v, i) { return v + b[i]; }); }
   function mul(a, k) { return a.map(function (v) { return v * k; }); }
   function distance(a, b) { return Math.hypot.apply(Math, sub(a, b)); }
+  function finiteVector(value) { return Array.isArray(value) && value.length === 3 && value.every(Number.isFinite); }
+  function detonationOrigin(caliber, position, incoming) {
+    if (!finiteVector(position) || !finiteVector(incoming)) throw new Error("Invalid projectile impact direction.");
+    var length = Math.hypot.apply(Math, incoming), backoff = caliber.blast && caliber.blast.impact_backoff_cm;
+    if (!(length > 1e-6) || !(backoff > 0)) return position.slice();
+    return sub(position, mul(incoming, backoff / 100 / length));
+  }
+  function angleRejected(origin, start, boundsOrigin, threshold) {
+    var a = sub(boundsOrigin, origin), b = sub(start, origin);
+    var magnitude = Math.hypot.apply(Math, a) * Math.hypot.apply(Math, b);
+    var dot = magnitude > 0 ? a.reduce(function (sum, value, i) { return sum + value * b[i]; }, 0) / magnitude : 0;
+    return Math.acos(Math.max(-1, Math.min(1, dot))) * 180 / Math.PI > threshold;
+  }
   function clearSegment(geometry, start, end) {
     var delta = sub(end, start), length = Math.hypot.apply(Math, delta);
     if (length < 2e-5) return true;
@@ -103,8 +116,7 @@
     return starts;
   }
 
-  // The live game samples loaded collision bodies. Here candidate targets are sampled
-  // from the published triangle surface and its bounds; the UI labels this approximation.
+  // Models without authored sampling metadata use this display-surface approximation.
   function candidates(geometry, component, origin) {
     var b = component.bounds, middle = b.min.map(function (v, i) { return (v + b.max[i]) / 2; });
     var points = [origin, middle];
@@ -125,22 +137,45 @@
     if (!Array.isArray(origin) || origin.length !== 3 || !origin.every(Number.isFinite)) throw new Error("Invalid impact position.");
     var radius = caliber.blast.radius / 100, hits = [], occluded = 0, retained = new Set();
     var starts = cloud(origin, caliber.blast.prefer_upwards === true), incomplete = 0;
+    var supplied = geometry.components.filter(function (component) {
+      return metadata && metadata[String(component.nodeIndex)] && metadata[String(component.nodeIndex)].point_sampling;
+    });
+    var nativeBounds = supplied.length > 0;
+    if (nativeBounds && supplied.length !== geometry.components.length)
+      throw new Error("Incomplete authored component sampling inputs.");
+    var tested = new Set(), blocked = new Set();
     geometry.components.forEach(function (component) {
       var mapped = metadata && metadata[String(component.nodeIndex)];
       if (!mapped || !mapped.component) { incomplete++; return; }
       if (retained.has(mapped.component)) return;
       var closest = geometry.closestPoint(origin, component);
       if (!closest || closest.distance > radius + 1e-7) return;
-      var found = null, targets = candidates(geometry, component, origin);
+      var sampling = mapped.point_sampling;
+      if (nativeBounds && (sampling.method !== "native-bounds" || !Array.isArray(sampling.points) || sampling.points.length !== 1 ||
+          !finiteVector(sampling.bounds_origin) || !finiteVector(sampling.points[0]) ||
+          !Number.isFinite(sampling.angle_degrees))) throw new Error("Invalid authored component sampling inputs.");
+      var found = null, targets = nativeBounds ? sampling.points.map(function (point) { return {position: point}; })
+        : candidates(geometry, component, origin);
       for (var t = 0; t < targets.length && !found; t++) {
+        if (nativeBounds && distance(origin, targets[t].position) > radius + 1) continue;
         for (var s = 0; s < starts.length && !found; s++) {
           var start = starts[s], target = targets[t], delta = sub(target.position, start), length = Math.hypot.apply(Math, delta);
+          if (nativeBounds && s >= 2 && angleRejected(origin, start, sampling.bounds_origin, sampling.angle_degrees)) continue;
           // Native 0x6F0341D exempts cloud index 1 from the origin-to-start pretrace.
-          if (s !== 1 && distance(origin, start) > 1e-7 && !clearSegment(geometry, origin, start)) continue;
-          if (length < 1e-7) { found = target; break; }
-          // Step inward from the trace start by a numerical epsilon, never add it to damage distance.
+          if (nativeBounds) {
+            // Tested-clear starts still run each component callback; only the pretrace is cached.
+            if (s !== 1 && !tested.has(s)) {
+              tested.add(s);
+              var pretraceLength = distance(origin, start);
+              if (pretraceLength > 0 && geometry.ray(origin, sub(start, origin), pretraceLength)) blocked.add(s);
+            }
+            if (blocked.has(s)) continue;
+          } else if (s !== 1 && distance(origin, start) > 1e-7 && !clearSegment(geometry, origin, start)) continue;
+          if (length < 1e-7) { if (!nativeBounds) found = target; continue; }
+          // Authored traces retain their exact starts; moving inside a surface can bypass the hull.
           var direction = mul(delta, 1 / length), epsilon = Math.min(1e-5, length / 100);
-          var trace = geometry.ray(add(start, mul(direction, epsilon)), direction, length + epsilon);
+          var trace = nativeBounds ? geometry.ray(start, direction, length)
+            : geometry.ray(add(start, mul(direction, epsilon)), direction, length + epsilon);
           if (trace && trace.component === component && distance(origin, trace.position) <= radius + 1e-7) found = trace;
         }
       }
@@ -181,9 +216,12 @@
       scenarioMainDamage: {min: scenarios.length ? Math.min.apply(Math, scenarios) : 0,
         max: scenarios.length ? Math.max.apply(Math, scenarios) : 0},
       tracePreferenceUnknown: caliber.blast.prefer_upwards == null,
+      samplingMode: nativeBounds ? "native-bounds" : "sampled-surfaces",
       baseAmount: applications.reduce(function (sum, hit) { return sum + hit.base; }, 0),
-      orderingNote: "Reference-pose estimate: sampled display surfaces and GLB component order; live collision bodies, terrain and query order can change the result."};
+      orderingNote: nativeBounds
+        ? "Reference-pose estimate: authored component bounds, native angle gate and trace-cloud cache; visibility uses display geometry and GLB component order. Live collision bodies, terrain and query order can change the result."
+        : "Reference-pose estimate: sampled display surfaces and GLB component order; live collision bodies, terrain and query order can change the result."};
   }
-  return {simulate: simulate, blastAmount: blastAmount, applyRadial: applyRadial,
+  return {simulate: simulate, detonationOrigin: detonationOrigin, blastAmount: blastAmount, applyRadial: applyRadial,
     freshHealth: freshHealth, slotOf: slotOf, cloud: cloud, damageApplications: damageApplications};
 }));
