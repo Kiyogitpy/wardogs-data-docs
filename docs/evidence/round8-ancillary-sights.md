@@ -11,7 +11,14 @@ were independently checked against executable instructions with Capstone.
 No game process, service, debugger session or IDA database was opened.
 The verified sight path was also integrated into Weapons §5b.
 
-## Underbarrel weapon tag remains open
+## Underbarrel weapon tag: historical investigation
+
+The [Round 9 continuation](round9-underbarrel.md) establishes a scoped
+unsupported disposition for the shipped test attachment on the verified
+M4/default-input path. Its selected input maps contain no ancillary binding;
+the exact resolver returns null. The earlier negative searches below are
+preserved as history, not the basis of that conclusion. An alternate firing
+owner and shot tag remain unproved.
 
 The actual ancillary `UWDWeaponComponent` creation and its `IWDWeaponOwner`
 have still not been established. Consequently this investigation does not
