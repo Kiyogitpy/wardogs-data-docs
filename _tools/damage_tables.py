@@ -134,8 +134,16 @@ def projectiles():
     return out
 
 
+def projectile_trace_preference(damage_values, export_type):
+    if "bPreferUpwardsTrace" in damage_values:
+        return damage_values["bPreferUpwardsTrace"]
+    if export_type == "WDProjectileData":
+        return True
+    return None
+
+
 def blast_params():
-    """ProjectileId -> blast fields from the same asset projectiles() picks; omitted trace preference stays unknown."""
+    """ProjectileId -> blast fields from the same asset projectiles() picks."""
     out = {}
     keys = (("radius", "ExplosiveRadius"), ("effective_radius", "EffectiveExplosiveRadius"),
             ("falloff", "ExplosiveDamageFallOff"), ("minimum", "MinimumExplosiveDamage"),
@@ -149,7 +157,11 @@ def blast_params():
                 continue
             dv = stats.get("DamageValues", {})
             if pid not in out or os.path.basename(path).count("_") <= 2:
-                out[pid] = {k: dv.get(v) for k, v in keys if v in dv or k == "prefer_upwards"}
+                values = {k: dv.get(v) for k, v in keys if v in dv or k == "prefer_upwards"}
+                # UWDProjectileData -> FWDProjectileStats constructors write true (0x6BB97B0 -> 0x699DEE0,
+                # word at stats +0x60, 0x699DF4A); do not apply that default to another class.
+                values["prefer_upwards"] = projectile_trace_preference(dv, o.get("Type"))
+                out[pid] = values
                 length = stats.get("ProjectileDimensions", {}).get("Length")
                 if out[pid].get("radius", 0) > 0 and isinstance(length, (int, float)):
                     out[pid]["impact_backoff_cm"] = length / 2
@@ -488,7 +500,7 @@ def actor_explosives():
                 "effective_radius": dv["EffectiveExplosiveRadius"],
                 "minimum": dv["MinimumExplosiveDamage"],
                 "falloff": dv["ExplosiveDamageFallOff"],
-                "prefer_upwards": None,
+                "prefer_upwards": dv["bPreferUpwardsTrace"],
             },
         }
         if label == "Molotov":

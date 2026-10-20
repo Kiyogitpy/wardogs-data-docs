@@ -16,8 +16,6 @@ import vehicle_models as models
 
 
 SAMPLING_FIXTURE = Path(__file__).resolve().with_name("vehicle-impact-sampling.json")
-SPW_VARIANTS = {"SPW_01", "SPW_02", "SPW_03"}
-REQUIRED_SAMPLING_VARIANTS = SPW_VARIANTS | {"TNK_01_AntiAir"}
 
 
 def sha256(path):
@@ -46,22 +44,24 @@ def load_sampling_fixture(root, vehicles):
     if not SAMPLING_FIXTURE.is_file():
         raise ValueError(f"Missing required sampling fixture: {SAMPLING_FIXTURE}")
     fixture = json.loads(SAMPLING_FIXTURE.read_text(encoding="utf-8"))
-    if fixture.get("format") != 1:
+    if fixture.get("format") != 2:
         raise ValueError("Unsupported point-sampling fixture format")
     published = {selected["path"]: selected for vehicle in vehicles for model in vehicle["models"]
                  for selected in [model, model.get("wheels_destroyed")] if selected}
-    required = {path for path, model in published.items() if set(model["variants"]) & REQUIRED_SAMPLING_VARIANTS
-                and not path.endswith("--wheels-destroyed.glb")}
     models_fixture = fixture.get("models")
-    if (not isinstance(models_fixture, dict) or not required <= set(models_fixture) or
-            not set(models_fixture) <= set(published)):
-        raise ValueError("Point-sampling fixture has missing required models or unknown published paths")
+    if not isinstance(models_fixture, dict) or set(models_fixture) != set(published):
+        raise ValueError("Point-sampling fixture must cover every published model exactly")
     expected = {path: published[path] for path in models_fixture}
 
     sources = fixture.get("source", {})
     required_sources = ("reference_inputs", "static_mesh_socket_manifest", "collision_manifest", "skeletal_manifest")
     for name in required_sources:
         validate_evidence(sources.get(name), name)
+    validate_evidence(fixture.get("native_sampling_policy"), "native_sampling_policy")
+    policy = fixture.get("angle_policy", {})
+    if (policy.get("outside_degrees") != 90 or policy.get("inside_degrees") != 180 or
+            policy.get("exempt_cloud_indices") != [0, 1]):
+        raise ValueError("Unexpected Points cloud angle policy")
     socket_manifest = json.loads(Path(sources["static_mesh_socket_manifest"]["path"]).read_text(encoding="utf-8"))
     if socket_manifest.get("staticMeshSockets") != {}:
         raise ValueError("SPW no-socket policy does not match the fresh mesh manifest")
@@ -73,17 +73,19 @@ def load_sampling_fixture(root, vehicles):
             raise ValueError(f"Stale or missing point-sampling GLB: {model_path}")
         if sampling.get("variants") != model["variants"]:
             raise ValueError(f"Stale point-sampling variant identity: {model_path}")
-        if set(model["variants"]) - SPW_VARIANTS:
-            model_sources = sampling.get("source", {})
-            for name in ("reference_inputs", "static_mesh_socket_manifest"):
-                validate_evidence(model_sources.get(name), f"{model_path}:{name}")
-            for name, evidence in model_sources.items():
-                validate_evidence(evidence, f"{model_path}:{name}")
+        model_sources = sampling.get("source", {})
+        for name in ("reference_inputs", "native_sampling_policy"):
+            validate_evidence(model_sources.get(name), f"{model_path}:{name}")
+        for name, evidence in model_sources.items():
+            validate_evidence(evidence, f"{model_path}:{name}")
         for component in sampling.get("components", {}).values():
             raw_dump = Path(component["source_static_mesh_dump"])
             if not raw_dump.is_file() or sha256(raw_dump) != component.get("source_static_mesh_sha256"):
                 raise ValueError(f"Stale or missing source static-mesh dump: {raw_dump}")
             validate_point(component.get("bounds_origin"), model_path)
+            radius = component.get("bounds_sphere_radius")
+            if not isinstance(radius, (int, float)) or not math.isfinite(radius) or radius < 0:
+                raise ValueError(f"Invalid component bounds sphere for {model_path}")
             points = component.get("points")
             if not isinstance(points, list) or not points:
                 raise ValueError(f"Missing native sampling points for {model_path}")
@@ -91,6 +93,8 @@ def load_sampling_fixture(root, vehicles):
                 validate_point(point, model_path)
             raw = json.loads(raw_dump.read_text(encoding="utf-8"))
             mesh = next(o for o in raw if o.get("Type") == "StaticMesh")
+            if component.get("source_extended_bounds_ue_cm") != mesh.get("Properties", {}).get("ExtendedBounds"):
+                raise ValueError(f"Authored bounds do not match source mesh for {model_path}")
             sockets = []
             for ref in mesh.get("Properties", {}).get("Sockets", []):
                 name = ref["ObjectName"].split(":")[-1].rstrip("'")
@@ -98,16 +102,37 @@ def load_sampling_fixture(root, vehicles):
                 if re.fullmatch(r"DamageQuerySocket(?:_[0-9]+)?", socket.get("Properties", {}).get("SocketName", "")):
                     sockets.append(socket)
             method, count = component.get("method"), component.get("socket_count")
-            if method == "native-bounds":
-                if sockets or count != 0 or points != [component["bounds_origin"]]:
+            instanced = method in ("native-instance-bounds", "native-instance-sockets")
+            if instanced and (type(component.get("instance_index")) is not int or component["instance_index"] < 0):
+                raise ValueError(f"Invalid source instance index for {model_path}")
+            if method in ("native-bounds", "native-instance-bounds"):
+                origin = component.get("instance_bounds", {}).get("origin") if instanced else component["bounds_origin"]
+                validate_point(origin, model_path)
+                # Equivalent source transforms can differ by a final floating-point ULP.
+                if (sockets or count != 0 or len(points) != 1 or not isinstance(origin, list) or
+                        any(abs(a - b) > 1e-12 for a, b in zip(points[0], origin))):
                     raise ValueError(f"Invalid bounds fallback for {model_path}")
-            elif method == "native-sockets":
+            elif method in ("native-sockets", "native-instance-sockets"):
                 if not sockets or count != len(sockets) or len(points) != count:
                     raise ValueError(f"Socket sampling count differs from raw mesh for {model_path}")
             else:
                 raise ValueError(f"Unexpected sampling method for {model_path}")
-            if component.get("angle_degrees") != 10:
-                raise ValueError(f"Unexpected native point-sampling policy for {model_path}")
+        grouped = {}
+        for component in sampling.get("components", {}).values():
+            if component.get("instance_index") is not None:
+                grouped.setdefault(component["component"], []).append(component)
+        if set(grouped) != set(sampling.get("instance_groups", {})):
+            raise ValueError(f"Missing or unexpected instance groups for {model_path}")
+        for key, members in grouped.items():
+            group = sampling["instance_groups"][key]
+            if (group.get("component") != key or group.get("node_indices") != [m["node_index"] for m in members] or
+                    group.get("instance_indices") != [m["instance_index"] for m in members] or
+                    len(set(group["instance_indices"])) != len(members)):
+                raise ValueError(f"Source instance membership differs for {model_path}:{key}")
+            bounds = group["aggregate_bounds"]
+            if any(m["bounds_origin"] != bounds["origin"] or m["bounds_sphere_radius"] != bounds["sphere_radius"]
+                   for m in members):
+                raise ValueError(f"Shared native component has inconsistent angle bounds: {model_path}:{key}")
     return fixture
 
 
@@ -123,20 +148,22 @@ def attach_point_sampling(root, path, gltf, metadata_nodes, fixture_model, varia
         if not record or not record.get("component"):
             raise ValueError(f"Unmapped model node cannot receive sampling metadata: {path}:{index}")
         key = record["component"]
-        sample = components.get(key)
+        instance = record.get("wheel_instance")
+        sample = components.get(f"{key}[{instance}]" if instance is not None else key)
         extras = node.get("extras", {})
         if (sample is None or sample.get("node_index") != index or sample.get("component") != key or
                 sample.get("module") != extras.get("module") or
                 sample.get("render_mesh") != extras.get("render_mesh") or
-                sample.get("fragment") != record.get("fragment")):
+                sample.get("fragment") != record.get("fragment") or sample.get("instance_index") != instance):
             raise ValueError(f"Sampling identity mismatch for {path}:{index}:{key}")
         expected_indices.add(index)
         record["point_sampling"] = {
             "bounds_origin": sample["bounds_origin"],
             "points": sample["points"],
-            "angle_degrees": sample["angle_degrees"],
+            "bounds_sphere_radius": sample["bounds_sphere_radius"],
             "method": sample["method"],
             "socket_count": sample["socket_count"],
+            "instance_index": sample.get("instance_index"),
         }
     if len(expected_indices) != fixture_model.get("represented_node_count"):
         raise ValueError(f"Sampling represented node count changed for {path}")
@@ -205,7 +232,9 @@ def main():
                         fragment = re.sub(r"\[\d+\]$", "", c["fragment"]) if c.get("wheel") else c["fragment"]
                         component_key = c["module"] + ":" + fragment
                         if path in sampling_fixture["models"]:
-                            sample = sampling_fixture["models"][path]["components"].get(component_key)
+                            instance = c.get("wheel", {}).get("index")
+                            sample_key = f"{component_key}[{instance}]" if instance is not None else component_key
+                            sample = sampling_fixture["models"][path]["components"].get(sample_key)
                             if (sample is None or sample.get("module") != c["module"] or
                                     sample.get("fragment") != c["fragment"] or sample.get("source_asset") != c.get("mesh")):
                                 raise ValueError(f"Sampling source component mismatch for {path}:{index}:{component_key}")
