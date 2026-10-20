@@ -375,7 +375,7 @@ What the docs leave open, with what the data shows.
 <!-- infantry_tables --not-traced -->
 | Id | Open question | What the data says |
 |---|---|---|
-| `underbarrel-weapon-tag` | Which weapon tag an underbarrel grenade launcher shot carries. | GrenadeLauncher.json has no Meta.Damage.Weapon tag; its stats are DA_GrenadeLauncher_Stats. |
+| `underbarrel-weapon-tag` | The shipped test underbarrel launcher has no firing binding on the verified M4/default-input path; an alternate firing owner and shot tag remain unproved. | H maps to ToggleAncillaryFire, but the selected input maps supply no binding. GrenadeLauncher.json supplies stats, not a firing component or Meta.Damage.Weapon tag. This source is data-only. |
 <!-- /infantry_tables -->
 
 </div>

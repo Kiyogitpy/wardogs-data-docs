@@ -149,7 +149,7 @@ Finished after this handoff was first written. `content/loadout-calculator.md` i
   - node may be used only if it is already installed, with no npx;
   - the page works at 360 px and gives a fallback with JS off.
 
-### 2.4 Round-8 queue: 17 of the original 18 research entries resolved locally
+### 2.4 Round-8 queue: 17 resolved and one scoped unsupported
 
 The [active register](ROUND8_STATUS.md) links each result to evidence and
 tracks integration/validation separately. Publication of these continuation
@@ -166,7 +166,7 @@ changes is recorded in Git history; the unchecked research items remain open.
 - [x] Occupant-damage starting amounts, source tags and no-bone synthetic hits.
 - [x] Normal player radial component set and Mutable association: one eligible TP mesh; retained hits are per component, not per body, with explicit acceptance/state conditions.
 - [x] `bExploding` expression/default and concrete camera-projectile gate mutation, with acquisition/loss-grace arithmetic.
-- [ ] Underbarrel weapon-tag provenance.
+- [x] Underbarrel: [scoped unsupported on the shipped M4/default-input path](evidence/round9-underbarrel.md). The test attachment has no firing binding there; no alternate firing owner or shot tag is assigned. This is not proof of universal feature absence.
 - [x] Actor-impact overlap-volume/substep-time formula and four thrown contact defaults.
 - [x] Helmet compiled selection, native merge policy and normal CharacterMesh asset resolution; runtime parameters/later mutations remain conditional.
 - [x] Tapered-capsule query-shape construction: native mean-radius straight capsules; viewer approximation identified.

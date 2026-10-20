@@ -193,7 +193,7 @@ The meaning of the curve value (for example, FOV or blend fraction) is not state
 | IA_Weapon_MeleeBash | `…Weapon.MeleeBash` | Pressed | |
 | IA_Weapon_MountBipod | `…Weapon.Bipod.Mount` | Tap | |
 | IA_Weapon_ToggleBipodFold | `…Weapon.Bipod.ToggleFold` | Hold | |
-| IA_Weapon_ToggleAncillaryFire | `…Weapon.ToggleAncillaryFire` | Pressed | |
+| IA_Weapon_ToggleAncillaryFire | `…Weapon.ToggleAncillaryFire` | Pressed | H is mapped, but the shipped M4/default input maps have no firing binding; [bounded trace](../docs/evidence/round9-underbarrel.md). |
 | IA_BuildTool_Rotate | `…HoldableItem.BuildTool.Rotate` | Pressed | |
 | IA_BuildTool_ToggleSnapping | `…BuildTool.ToggleSnapping` | Pressed | |
 | IA_BuildTool_Dismantle / _Release | `…BuildTool.Dismantle` / `.Release` | Pressed / Released | |
