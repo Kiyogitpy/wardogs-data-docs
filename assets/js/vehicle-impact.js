@@ -184,7 +184,7 @@
             : geometry.ray(add(start, mul(direction, epsilon)), direction, length + epsilon);
           if (trace && trace.component === component && distance(origin, trace.position) <= radius + 1e-7) accepted = trace;
         }
-        // Tracked vehicles continue through all candidates and keep the nearest accepted hit.
+        // Reviewed native vehicle families continue through candidates and retain the nearest hit.
         if (accepted && (!found || distance(origin, accepted.position) < distance(origin, found.position))) found = accepted;
       }
       if (!found) { occluded++; return; }

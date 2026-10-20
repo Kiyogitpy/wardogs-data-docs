@@ -9,6 +9,14 @@ Research date: 2026-10-18. Build CL-516586. The original restored executable was
 
 ## Findings and closure
 
+**2026-10-19 correction:** a retained component hit is not necessarily a
+separate damage application. `0x6F06540` also maintains an actor-keyed set
+of selected hit-location tags; a later contact with the same nonempty tag
+branches past event creation/application at `0x6F06B13`. The
+[vehicle follow-up](round8-explosive-viewer-audit.md#correction-hit-location-deduplication-and-routed-fuel-damage)
+records the raw instruction checks and Gepard reproduction. Earlier
+per-component wording describes contact filtering only.
+
 The [point-mode/component follow-up](round8-radial-points-components.md)
 supersedes this pass's alternate-mode and unnamed-selector gaps: the routine
 previously called voxelized is shipped **Points**, the native default.

@@ -311,6 +311,8 @@ Interactive: the [Vehicle Hitbox Viewer](vehicle-viewer.md) shows these slots on
 |  | `(default)` | Health (3000) | is the main health | ×0.15 | ×0.15 | ×0.5 |
 | `Stationary.RadioTower` (STN_04) | `CC_Main` | Health (1000) | is the main health | ×0.05 | ×0.05 | ×0.85 |
 |  | `(default)` | Health (1000) | is the main health | ×0.05 | ×0.05 | ×0.85 |
+| `Stationary.STN_05` (STN_05) | `CC_Main` | Health (3000) | is the main health | ×0.15 | ×0.15 | ×0.5 |
+|  | `(default)` | Health (3000) | is the main health | ×0.15 | ×0.15 | ×0.5 |
 | `Stationary.MGNest` (STN_06, no row of its own) | `CC_Main` | Health (1800) | is the main health | ×1 | ×1 | ×1 |
 |  | `(default)` | Health (1800) | is the main health | ×1 | ×1 | ×1 |
 | `Land.Tracked.TNK_01.AntiAir` (TNK_01_AntiAir) | `CC_Engine` | Health.Engine (150) | post 1 when depleted, simultaneous 1 | ×0 | ×0 | ×0.18 |
@@ -510,8 +512,11 @@ the main health and the map keys `CC_Wheel_0` / `CC_Wheel_1` never match.
 That assumes no static mesh has a slot literally named `CC_Wheel_0`; the
 decoded ROT_02 wheel meshes do not, and the other meshes are not checked
 (V-9). WHL_* wheel slots `CC_Wheel` (and `CC_Tyre` on WHL_05 to WHL_08)
-become `CC_Wheel_n` and `CC_Tyre_n`. No component registers
-`ComplexSurface.Group.Radar`, so the SPW radar rows cannot be hit.
+become `CC_Wheel_n` and `CC_Tyre_n`. The inspected SPW radar proxies register
+Default, leaving their part-level `ComplexSurface.Group.Radar` rows unused.
+The platform's Default-group `CC_Radar` row still resolves Radar health;
+this does not make the radar unhittable. See the
+[SPW source settings](../docs/evidence/round8-spw-collision-inputs.md#sockets-placement-and-authored-settings).
 
 **Wheel index.** The wheel index is the movement component's order: axle
 by axle, then the axle's own wheel order (`0x5370A40`). The
@@ -584,7 +589,12 @@ vehicle damage model:
    damage uses the zone query `0x5338730` on the hit info. Radial damage
    uses it on `ComponentHits[0]` (`0x5320394`). Before that, the vehicle's
    `IWDDamageable` slot 8 (`0x6C2A790`) keeps one hit per component, so an
-   instanced-wheel component contributes one wheel. Every application from
+   instanced-wheel component contributes one wheel. **A later gate also
+   suppresses repeated nonempty hit-location tags on the same actor**
+   (`0x6F06AE6`–`0x6F06B13`): the first encountered tag wins; subsequent
+   same-tag contacts skip event creation and application. An empty tag is
+   not deduplicated. Component contacts therefore do not each imply a
+   separate health application. Every application from
    one explosion on one vehicle takes its section from that first hit,
    while the rule's hit-location tag comes from each hit (`0x6F06540`).
    Each radial amount is the falloff amount of the round's radii, not
@@ -652,7 +662,7 @@ struct FVehicleDamageRouting final {       // 0x30
 
 - **Pre/Post routing:** each target section receives
   `(D − amount already handled) × clamp(Scalar(h), 0, 1)`, where `h` is
-  the section's health as a fraction of `MaxHealth`, or its absolute
+  the **source section's** health as a fraction of `MaxHealth`, or its absolute
   health when `bUseAbsoluteHealth` is set. The flag picks the scalar's
   input; it does not route "to absolute health".
 - **`bOnlyWhenDepleted`:** set routes only when the section's health is
@@ -667,10 +677,17 @@ struct FVehicleDamageRouting final {       // 0x30
 - **Loop guard:** routing aborts once a section has been re-entered 10
   times.
 
-**Data**, across 96 sections: 35 Pre routes, 54 Post routes (all
-depleted-only), 20 Simultaneous routes. No scalar uses a curve and none
-uses absolute health. The radial skip-simultaneous flag is set on 10
-sections (the tracks).
+Routing targets are arbitrary registered health-section tags, not only
+main health. For example, Gepard's MainBody routes 5% to FuelTank before
+its own health loss while MainBody is alive. That transfer does not require
+a FuelTank collision hit and does not establish blast penetration. See the
+[explosive audit correction](../docs/evidence/round8-explosive-viewer-audit.md#correction-hit-location-deduplication-and-routed-fuel-damage).
+
+**Data**, across the 23 exported damage profiles: 113 section instances,
+46 Pre routes, 66 Post routes (all depleted-only), and 22 Simultaneous
+routes. Shared source sections are counted again in each profile. No
+scalar uses a curve and none uses absolute health. The radial
+skip-simultaneous flag is set on 12 section instances (the tracks).
 
 ## 5. Worked examples
 
@@ -845,6 +862,7 @@ section-requirement filter, repair and regeneration are ignored.
 | `STN_02` | `Stationary.Phalanx` | 5000 | 1191 | 371 | 278 | 100 |
 | `STN_03` | `Stationary.Mortar` | 3000 | 715 | 223 | 167 | 60 |
 | `STN_04` | `Stationary.RadioTower` | 1000 | 715 | 223 | 56 | 12 |
+| `STN_05` | `Stationary.STN_05` | 3000 | 715 | 223 | 167 | 60 |
 | `STN_06` | `Stationary.MGNest` | 1800 | 65 | 20 | 30 | 18 |
 | `TNK_01_AntiAir` | `Land.Tracked.TNK_01.AntiAir` | 800 | — | — | 312 | 47 |
 | `TNK_01_Artillery` | `Land.Tracked.TNK_01.Artillery` | 650 | — | — | 254 | 39 |

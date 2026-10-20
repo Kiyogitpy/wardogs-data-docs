@@ -127,6 +127,15 @@ starting amount is `AWDExplosive.ImpactDamage` (`+0x550`, load
 `0x6CA8881`, builder call `0x6CA895C`), not the detonation amount.
 The gather mechanism and its remaining limits are described below.
 
+**On a vehicle.** Keeping one contact per component is only the first
+filter. The radial evaluator additionally skips a repeated nonempty
+hit-location tag on the same actor (`0x6F06B10`–`0x6F06B13`). Separate
+hull, turret and barrel contacts sharing MainBody therefore need not
+produce separate damage applications. Each event still carries the full
+filtered contact array; vehicle section selection reads its first hit.
+See [Vehicle §4.1](Wardogs_VehicleDamagePipeline_v1.md#41-order) and the
+[corrected explosive audit](../docs/evidence/round8-explosive-viewer-audit.md#correction-hit-location-deduplication-and-routed-fuel-damage).
+
 **Radial falloff. Native**, `0x6F06540` (instructions
 `0x6F06792`–`0x6F06831`; constants `0x9AADA78` = 1.0,
 `0x9AADA28` = 1.0f, `0x9AC2180` = 1e-8). The round's damage struct
