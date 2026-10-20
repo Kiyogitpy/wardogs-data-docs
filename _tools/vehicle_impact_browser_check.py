@@ -201,7 +201,8 @@ def main():
         facts = dict(zip(page.locator("#vv-impactSummary dt").all_text_contents(),
                          page.locator("#vv-impactSummary dd").all_text_contents()))
         assert "using authored damage-query sockets" in summary.inner_text()
-        assert facts.get("Damage applications", "").startswith("1 unique hit locations; 4 repeat contacts skipped"), facts
+        assert "Some contacts are reached from an offset blast trace" in summary.text_content()
+        assert facts.get("Damage applications", "").startswith("1 applied; 4 repeat contacts skipped"), facts
         # The UI rounds values >= 100 to whole damage; the numerical fixture check retains 267.9.
         assert facts.get("Main health damage") == "268", facts
         fuel = next((line for line in page.locator("#vv-impactSummary li").all_text_contents() if line.startswith("FuelTank:")), "")
@@ -244,7 +245,7 @@ def main():
                 assert page.locator("#vv-impactOverlay .vv-blast-label").text_content() == "Detonation"
                 facts = dict(zip(page.locator("#vv-impactSummary dt").all_text_contents(),
                                  page.locator("#vv-impactSummary dd").all_text_contents()))
-                assert facts.get("Damage applications", "").startswith("1 unique hit locations"), (model["path"], facts)
+                assert facts.get("Damage applications", "").startswith("1 applied;"), (model["path"], facts)
                 assert facts.get("Blast contacts", "").endswith("not reached"), facts
                 assert facts.get("Main health damage") == "361", (model["path"], facts)
                 fuel = next((line for line in page.locator("#vv-impactSummary li").all_text_contents() if line.startswith("FuelTank:")), "")

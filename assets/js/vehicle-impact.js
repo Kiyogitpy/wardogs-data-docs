@@ -24,12 +24,6 @@
     var dot = magnitude > 0 ? a.reduce(function (sum, value, i) { return sum + value * b[i]; }, 0) / magnitude : 0;
     return Math.acos(Math.max(-1, Math.min(1, dot))) * 180 / Math.PI > threshold;
   }
-  function clearSegment(geometry, start, end) {
-    var delta = sub(end, start), length = Math.hypot.apply(Math, delta);
-    if (length < 2e-5) return true;
-    return !geometry.ray(add(start, mul(delta, 1e-5 / length)), delta, length - 2e-5);
-  }
-
   function blastAmount(caliber, centimetres) {
     var b = caliber.blast || {}, r = b.radius || 0, e = b.effective_radius || 0;
     var base = caliber.base_damage || 0, amount;
@@ -104,6 +98,23 @@
     });
   }
 
+  // Native actor-hit sort precedes the vehicle's swap-removal of repeated components.
+  function vehicleContacts(contacts) {
+    var hits = contacts.slice().sort(function (a, b) { return Math.fround(a.distance) - Math.fround(b.distance); });
+    var seen = new Set(), index = 0;
+    while (index < hits.length) {
+      var hit = hits[index];
+      if (seen.has(hit.nativeComponent)) {
+        hits[index] = hits[hits.length - 1];
+        hits.pop();
+      } else {
+        seen.add(hit.nativeComponent);
+        index++;
+      }
+    }
+    return hits;
+  }
+
   // Native cloud order, converted UE (X,Y,Z) -> displayed (-Y,Z,X), metres.
   function cloud(origin, preferUpwards) {
     var d = [[0, 0, 1], [1, 0, 0], [0, 1, 0], [0, -1, 0], [0, 0, -1], [-1, 0, 0]];
@@ -116,89 +127,70 @@
     return starts;
   }
 
-  // Models without authored sampling metadata use this display-surface approximation.
-  function candidates(geometry, component, origin) {
-    var b = component.bounds, middle = b.min.map(function (v, i) { return (v + b.max[i]) / 2; });
-    var points = [origin, middle];
-    [0, 1].forEach(function (x) { [0, 1].forEach(function (y) { [0, 1].forEach(function (z) {
-      points.push([b[x ? "max" : "min"][0], b[y ? "max" : "min"][1], b[z ? "max" : "min"][2]]);
-    }); }); });
-    var seen = new Set();
-    return points.map(function (p) { return geometry.closestPoint(p, component); }).filter(function (hit) {
-      if (!hit) return false;
-      var key = hit.position.map(function (v) { return v.toFixed(6); }).join(",");
-      if (seen.has(key)) return false;
-      seen.add(key); return true;
-    }).sort(function (a, b) { return distance(a.position, origin) - distance(b.position, origin); });
-  }
-
   function simulate(geometry, vehicle, caliber, origin, metadata) {
     if (!caliber.blast || !(caliber.blast.radius > 0)) throw new Error("Choose an explosive projectile.");
     if (!Array.isArray(origin) || origin.length !== 3 || !origin.every(Number.isFinite)) throw new Error("Invalid impact position.");
-    var radius = caliber.blast.radius / 100, hits = [], occluded = 0, retained = new Set();
+    var radius = caliber.blast.radius / 100, hits = [], eligible = new Set();
     var starts = cloud(origin, caliber.blast.prefer_upwards === true), incomplete = 0;
     var supplied = geometry.components.filter(function (component) {
       return metadata && metadata[String(component.nodeIndex)] && metadata[String(component.nodeIndex)].point_sampling;
     });
-    var authored = supplied.length > 0, hasSockets = supplied.some(function (component) {
-      return metadata[String(component.nodeIndex)].point_sampling.method === "native-sockets";
+    var hasSockets = supplied.some(function (component) {
+      return /sockets$/.test(metadata[String(component.nodeIndex)].point_sampling.method);
     });
-    if (authored && supplied.length !== geometry.components.length)
+    if (!supplied.length || supplied.length !== geometry.components.length)
       throw new Error("Incomplete authored component sampling inputs.");
     var tested = new Set(), blocked = new Set();
     geometry.components.forEach(function (component) {
       var mapped = metadata && metadata[String(component.nodeIndex)];
       if (!mapped || !mapped.component) { incomplete++; return; }
-      if (retained.has(mapped.component)) return;
       var closest = geometry.closestPoint(origin, component);
       if (!closest || closest.distance > radius + 1e-7) return;
+      eligible.add(mapped.component);
       var sampling = mapped.point_sampling;
-      if (authored && (["native-bounds", "native-sockets"].indexOf(sampling.method) < 0 ||
+      if (["native-bounds", "native-sockets", "native-instance-bounds", "native-instance-sockets"].indexOf(sampling.method) < 0 ||
           !Array.isArray(sampling.points) || !sampling.points.length ||
           !finiteVector(sampling.bounds_origin) || !sampling.points.every(finiteVector) ||
-          !Number.isFinite(sampling.angle_degrees))) throw new Error("Invalid authored component sampling inputs.");
-      var found = null, targets = authored ? sampling.points.map(function (point) { return {position: point}; }).sort(function (a, b) {
+          !Number.isFinite(sampling.bounds_sphere_radius) || sampling.bounds_sphere_radius < 0)
+        throw new Error("Invalid authored component sampling inputs.");
+      var angle = distance(origin, sampling.bounds_origin) <= sampling.bounds_sphere_radius + 1e-6 ? 180 : 90;
+      var targets = sampling.points.map(function (point) { return {position: point}; }).sort(function (a, b) {
         return distance(origin, a.position) - distance(origin, b.position);
-      })
-        : candidates(geometry, component, origin);
-      for (var t = 0; t < targets.length && (!found || authored); t++) {
-        if (authored && distance(origin, targets[t].position) > radius + 1) continue;
+      });
+      for (var t = 0; t < targets.length; t++) {
+        if (distance(origin, targets[t].position) > radius + 1) continue;
         var accepted = null;
         for (var s = 0; s < starts.length && !accepted; s++) {
           var start = starts[s], target = targets[t], delta = sub(target.position, start), length = Math.hypot.apply(Math, delta);
-          if (authored && s >= 2 && angleRejected(origin, start, sampling.bounds_origin, sampling.angle_degrees)) continue;
+          if (s >= 2 && angleRejected(origin, start, sampling.bounds_origin, angle)) continue;
           // Native 0x6F0341D exempts cloud index 1 from the origin-to-start pretrace.
-          if (authored) {
-            // Tested-clear starts still run each component callback; only the pretrace is cached.
-            if (s !== 1 && !tested.has(s)) {
-              tested.add(s);
-              var pretraceLength = distance(origin, start);
-              if (pretraceLength > 0 && geometry.ray(origin, sub(start, origin), pretraceLength)) blocked.add(s);
-            }
-            if (blocked.has(s)) continue;
-          } else if (s !== 1 && distance(origin, start) > 1e-7 && !clearSegment(geometry, origin, start)) continue;
-          if (length < 1e-7) { if (!authored) accepted = target; continue; }
+          // Tested-clear starts still run each component callback; only the pretrace is cached.
+          if (s !== 1 && !tested.has(s)) {
+            tested.add(s);
+            var pretraceLength = distance(origin, start);
+            if (pretraceLength > 0 && geometry.ray(origin, sub(start, origin), pretraceLength)) blocked.add(s);
+          }
+          if (blocked.has(s) || length < 1e-7) continue;
           // Authored traces retain their exact starts; moving inside a surface can bypass the hull.
-          var direction = mul(delta, 1 / length), epsilon = Math.min(1e-5, length / 100);
-          var trace = authored ? geometry.ray(start, direction, length)
-            : geometry.ray(add(start, mul(direction, epsilon)), direction, length + epsilon);
-          if (trace && trace.component === component && distance(origin, trace.position) <= radius + 1e-7) accepted = trace;
+          var direction = mul(delta, 1 / length), trace = geometry.ray(start, direction, length);
+          if (trace && trace.component === component && distance(origin, trace.position) <= radius + 1e-7)
+            accepted = Object.assign({}, trace, {traceStart: start.slice(), cloudIndex: s});
         }
-        // Reviewed native vehicle families continue through candidates and retain the nearest hit.
-        if (accepted && (!found || distance(origin, accepted.position) < distance(origin, found.position))) found = accepted;
+        if (!accepted) continue;
+        var slotIndex = slotOf(vehicle, accepted.material), slot = vehicle.slots[slotIndex];
+        var cm = Math.fround(distance(origin, accepted.position) * 100);
+        var ring = cm <= (caliber.blast.effective_radius || 0) ? 0 : 1;
+        var table = slot && (caliber.source_type === "actor" ? slot.explosion_factor : slot.blast_factor);
+        var factors = table && table[caliber.id];
+        var factor = factors ? factors[ring] : null;
+        hits.push({position: accepted.position, component: component, material: accepted.material,
+          traceStart: accepted.traceStart, cloudIndex: accepted.cloudIndex,
+          nativeComponent: mapped.component, slotIndex: slotIndex, distance: cm,
+          factor: factor, base: blastAmount(caliber, cm), amount: factor === null ? 0 : blastAmount(caliber, cm) * factor});
       }
-      if (!found) { occluded++; return; }
-      retained.add(mapped.component);
-      var slotIndex = slotOf(vehicle, found.material), slot = vehicle.slots[slotIndex];
-      var cm = distance(origin, found.position) * 100;
-      var ring = cm <= (caliber.blast.effective_radius || 0) ? 0 : 1;
-      var table = slot && (caliber.source_type === "actor" ? slot.explosion_factor : slot.blast_factor);
-      var factors = table && table[caliber.id];
-      var factor = factors ? factors[ring] : null;
-      hits.push({position: found.position, component: component, material: found.material,
-        nativeComponent: mapped.component, slotIndex: slotIndex, distance: cm,
-        factor: factor, base: blastAmount(caliber, cm), amount: factor === null ? 0 : blastAmount(caliber, cm) * factor});
     });
+    hits = vehicleContacts(hits);
+    var occluded = eligible.size - new Set(hits.map(function (hit) { return hit.nativeComponent; })).size;
     var first = hits[0], firstSlot = first && vehicle.slots[first.slotIndex];
     var firstSection = firstSlot ? firstSlot.section : null, health = freshHealth(vehicle);
     var applications = damageApplications(vehicle, hits), transfers = [];
@@ -224,12 +216,11 @@
       scenarioMainDamage: {min: scenarios.length ? Math.min.apply(Math, scenarios) : 0,
         max: scenarios.length ? Math.max.apply(Math, scenarios) : 0},
       tracePreferenceUnknown: caliber.blast.prefer_upwards == null,
-      samplingMode: authored ? (hasSockets ? "native-sockets" : "native-bounds") : "sampled-surfaces",
+      samplingMode: hasSockets ? "native-sockets" : "native-bounds",
       baseAmount: applications.reduce(function (sum, hit) { return sum + hit.base; }, 0),
-      orderingNote: authored
-        ? "Reference-pose estimate: authored component sampling points, native angle gate and trace-cloud cache; visibility uses display geometry and GLB component order. Live collision bodies, terrain and query order can change the result."
-        : "Reference-pose estimate: sampled display surfaces and GLB component order; live collision bodies, terrain and query order can change the result."};
+      orderingNote: "Reference-pose estimate: authored sampling, native cloud gate/cache, actor-hit distance sorting and component filtering; visibility uses display geometry. Live collision bodies, terrain, active instances and equal-distance ordering can change the result."};
   }
   return {simulate: simulate, detonationOrigin: detonationOrigin, blastAmount: blastAmount, applyRadial: applyRadial,
-    freshHealth: freshHealth, slotOf: slotOf, cloud: cloud, damageApplications: damageApplications};
+    freshHealth: freshHealth, slotOf: slotOf, cloud: cloud, damageApplications: damageApplications,
+    vehicleContacts: vehicleContacts};
 }));

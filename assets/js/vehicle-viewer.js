@@ -903,8 +903,7 @@
     box.appendChild(el("h2", "vv-panel-title no_anchor", shot.label));
     box.appendChild(el("p", "vv-note", (result.samplingMode === "native-bounds"
       ? "Reference-pose estimate using authored component bounds. "
-      : result.samplingMode === "native-sockets" ? "Reference-pose estimate using authored damage-query sockets. "
-        : "Reference-pose estimate from sampled display surfaces. ") +
+      : "Reference-pose estimate using authored damage-query sockets. ") +
       "Live collision and order can differ. Full health per shot."));
     if (state.caliber.blast.impact_backoff_cm > 0)
       box.appendChild(el("p", "vv-note", "Shot direction follows the view. Detonation is " +
@@ -912,8 +911,10 @@
     row(dl, "Main health damage", num(result.mainDamage));
     row(dl, "Main health remaining", num(result.mainRemaining) + " / " + num(state.vehicle.sections[mainSection].max_health));
     row(dl, "Blast contacts", result.hits.length + " reached; " + result.occluded + " not reached");
-    row(dl, "Damage applications", result.applications.length + " unique hit locations; " +
-      (result.hits.length - result.applications.length) + " repeat contacts skipped");
+    var untagged = result.applications.filter(function (hit) { return !hit.hitLocation; }).length;
+    row(dl, "Damage applications", result.applications.length + " applied; " +
+      (result.hits.length - result.applications.length) + " repeat contacts skipped" +
+      (untagged ? "; " + untagged + " untagged" : ""));
     if (result.firstSection) row(dl, "Preview first section", shortSection(result.firstSection));
     if (result.scenarioMainDamage && result.scenarioMainDamage.min !== result.scenarioMainDamage.max) {
       row(dl, "First-choice examples", num(result.scenarioMainDamage.min) + "–" + num(result.scenarioMainDamage.max) + " main damage");
@@ -936,7 +937,10 @@
     if (!result.hits.length) box.appendChild(el("p", "vv-note", "No visible collision component is reached by this blast."));
     var assumptions = el("details", "vv-impact-assumptions");
     assumptions.appendChild(el("summary", null, "Model assumptions"));
-    assumptions.appendChild(el("p", "vv-note", result.orderingNote || "The first component selects the blast's health section. Native overlap order is unknown; this preview uses GLB component order."));
+    assumptions.appendChild(el("p", "vv-note", result.orderingNote || "The first filtered contact selects the blast's health section. Collision and equal-distance ordering remain estimates."));
+    if (result.hits.some(function (hit) {
+      return hit.traceStart && window.VehicleImpactGeometry.length(window.VehicleImpactGeometry.sub(hit.traceStart, shot.origin)) > 1e-6;
+    })) assumptions.appendChild(el("p", "vv-note", "Some contacts are reached from an offset blast trace. Their straight path from the detonation may be blocked."));
     assumptions.appendChild(el("p", "vv-note", "Impact point (m): " + shot.impactPosition.map(num).join(", ") + ". " +
       (shot.label === "Direct hit" ? "Selected collision surface." : "Selected isolated ground plane.")));
     assumptions.appendChild(el("p", "vv-note", "Detonation centre (m): " + shot.origin.map(num).join(", ") + "."));
@@ -948,6 +952,8 @@
     }
     var actorNote = state.caliber.source_note || state.caliber.note;
     if (state.caliber.source_type === "actor" && actorNote) assumptions.appendChild(el("p", "vv-note", actorNote));
+    if (state.caliber.source_type === "actor") assumptions.appendChild(el("p", "vv-note",
+      "The selected point is the detonation centre. Actor placement and triggering are not simulated."));
     if (result.tracePreferenceUnknown) {
       assumptions.appendChild(el("p", "vv-note", "This source's upward trace preference is unknown; the preview uses the ordinary cloud order."));
     }

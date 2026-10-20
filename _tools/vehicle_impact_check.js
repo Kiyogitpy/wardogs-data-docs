@@ -6,6 +6,7 @@ const path = require("node:path");
 const geometryAPI = require("../assets/js/vehicle-impact-geometry.js");
 const impact = require("../assets/js/vehicle-impact.js");
 const decoder = require("../assets/js/vendor/meshopt_decoder-1.2.0.js");
+const queryIndex = require("./vehicle_query_index.js");
 const root = path.join(__dirname, "..");
 const data = JSON.parse(fs.readFileSync(path.join(root, "assets/data/vehicle-hitboxes.json")));
 const metadata = JSON.parse(fs.readFileSync(path.join(root, "assets/data/vehicle-impact-components.json")));
@@ -18,6 +19,8 @@ function verifyShot(vehicle, source, result) {
   const tags = result.applications.map(hit => hit.hitLocation).filter(Boolean);
   assert.equal(tags.length, new Set(tags).size, `Repeated damage tag: ${context}`);
   assert.equal(result.incomplete, 0, `Missing component metadata: ${context}`);
+  const components = result.hits.map(hit => hit.nativeComponent);
+  assert.equal(components.length, new Set(components).size, `Repeated native component: ${context}`);
   const ledger = {};
   for (const transfer of result.transfers) {
     assert.ok(vehicle.sections[transfer.section], `Unknown route target: ${context}`);
@@ -89,6 +92,28 @@ async function main() {
   ]};
   const dedup = impact.damageApplications(dedupVehicle, [0, 1, 2, 3, 3].map(slotIndex => ({slotIndex})));
   assert.deepEqual(dedup.map(hit => hit.slotIndex), [0, 2, 3, 3]); // Key is the tag, not section or component.
+  const contacts = ["A0", "A1", "A2", "B0", "B1", "C0"].map((id, i) =>
+    ({id, nativeComponent: id[0], distance: i + 1}));
+  assert.deepEqual(impact.vehicleContacts(contacts).map(h => h.id), ["A0", "C0", "B1"]);
+  assert.equal(contacts.length, 6, "Component filtering must not mutate gathered input");
+  assert.deepEqual(impact.vehicleContacts([contacts[5], contacts[0]]).map(h => h.id), ["A0", "C0"]);
+  const gateComponent = {nodeIndex: 0};
+  const gateVehicle = {sections: {[MAIN]: {max_health: 1000, pre: [], post: [], simultaneous: []}}, slots: [
+    {slot: "CC_MainBody", group: "ComplexSurface.Group.Default", section: MAIN,
+      hit_location: "Vehicle.Main", blast_factor: {gate: [1, 1]}}
+  ]};
+  const gateSource = {id: "gate", base_damage: 100,
+    blast: {radius: 2000, effective_radius: 1500, falloff: 1, prefer_upwards: false}};
+  function angleShot(sphere, acceptedStart) {
+    const geometry = {components: [gateComponent], closestPoint: () => ({distance: 1}),
+      ray: start => start.every((v, i) => v === acceptedStart[i])
+        ? {position: [10, 0, 0], component: gateComponent, material: {name: "CC_MainBody"}} : null};
+    return impact.simulate(geometry, gateVehicle, gateSource, [0, 0, 0], {0: {component: "Fixture:Body",
+      point_sampling: {method: "native-bounds", bounds_origin: [10, 0, 0], bounds_sphere_radius: sphere, points: [[10, 0, 0]]}}});
+  }
+  assert.equal(angleShot(0.1, [0, 0, 0.5]).hits[0].cloudIndex, 2, "Outside sphere accepts the 90-degree start");
+  assert.equal(angleShot(0.1, [-0.5, 0, 0]).hits.length, 0, "Outside sphere rejects the opposite hemisphere");
+  assert.equal(angleShot(20, [-0.5, 0, 0]).hits[0].cloudIndex, 3, "Inside sphere accepts 180-degree starts");
 
   let sectionChecks = 0;
   for (const vehicle of data.vehicles) for (const [key, section] of Object.entries(vehicle.sections)) {
@@ -108,6 +133,10 @@ async function main() {
 
   let models = 0, nodes = 0, triangles = 0, shots = 0, catalogShots = 0;
   let sources = data.meta.calibers.filter(c => c.blast).concat(data.meta.explosives);
+  const upwards = new Set(["Item.Caliber.120x800mm.Standard", "Item.Caliber.155mm.Expensive",
+    "Item.Caliber.155mm.Expensive.Sandbox", "Item.Caliber.155mm.Standard", "Item.Caliber.155mm.Standard.Sandbox",
+    "Actor.m67-frag-grenade", "Actor.at-mine", "Actor.claymore", "Actor.molotov"]);
+  for (const source of sources) assert.equal(source.blast.prefer_upwards, upwards.has(source.id), `Trace preference: ${source.id}`);
   const sourceIndex = process.argv.indexOf("--source");
   if (sourceIndex >= 0) {
     sources = sources.filter(source => source.id === process.argv[sourceIndex + 1]);
@@ -129,13 +158,13 @@ async function main() {
     for (const base of vehicle.models) for (const model of [base, base.wheels_destroyed].filter(Boolean)) {
       const buffer = fs.readFileSync(path.join(root, model.path));
       const mesh = await geometryAPI.load(buffer.buffer.slice(buffer.byteOffset, buffer.byteOffset + buffer.byteLength), decoder);
+      queryIndex.attach(mesh);
       assert.ok(mesh.bounds.min.concat(mesh.bounds.max).every(Number.isFinite));
       const mapping = metadata.models[model.path];
       assert.ok(mapping, model.path);
       const sampling = samplingFixture.models[model.path];
-      const expectedSamplingMode = sampling
-        ? (Object.values(sampling.components).some(c => c.method === "native-sockets") ? "native-sockets" : "native-bounds")
-        : "sampled-surfaces";
+      assert.ok(sampling, `Missing authored sampling fixture: ${model.path}`);
+      const expectedSamplingMode = Object.values(sampling.components).some(c => /sockets$/.test(c.method)) ? "native-sockets" : "native-bounds";
       for (const component of mesh.components) {
         assert.ok(mapping[component.nodeIndex]?.component, `Missing component: ${model.path}:${component.nodeIndex}`);
         if (sampling) assert.ok(mapping[component.nodeIndex].point_sampling, `Missing authored sampling: ${model.path}`);
@@ -171,6 +200,8 @@ async function main() {
         delete partial[firstIndex].point_sampling;
         assert.throws(() => impact.simulate(mesh, vehicle, source, mesh.bounds.center, partial),
           /Incomplete authored component sampling inputs/);
+        assert.throws(() => impact.simulate(mesh, vehicle, source, mesh.bounds.center, {}),
+          /Incomplete authored component sampling inputs/);
       }
       if (vehicle.damage_row.endsWith(".TNK_01.AntiAir")) {
         assert.equal(Object.values(mapping).reduce((sum, node) => sum + node.point_sampling.points.length, 0), 89);
@@ -189,9 +220,10 @@ async function main() {
         near(fuelTransfer.reduce((sum, entry) => sum + entry.amount, 0), 14.1);
         const backed = impact.simulate(mesh, vehicle, source,
           impact.detonationOrigin(source, front.position, [0, 0, -1]), mapping);
-        // Stopping at the first accepted socket gives 31.8 cm and 193.7 cm respectively.
+        // Global sorting retains the nearest first hit; swap removal can retain a farther later component.
         assert.ok(backed.hits.find(hit => hit.nativeComponent.endsWith(":MainBody")).distance < 11);
-        assert.ok(backed.hits.find(hit => hit.nativeComponent.endsWith(":TurretSpin")).distance < 174);
+        const spinDistance = backed.hits.find(hit => hit.nativeComponent.endsWith(":TurretSpin")).distance;
+        assert.ok(spinDistance > 280 && spinDistance < 285, "Preserve native swap-filter ordering");
         near(backed.mainDamage, 267.9);
       }
       if (vehicle.id.startsWith("land-tracked-leopard-spawn-")) {
