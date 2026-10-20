@@ -9,6 +9,7 @@ const decoder = require("../assets/js/vendor/meshopt_decoder-1.2.0.js");
 const root = path.join(__dirname, "..");
 const data = JSON.parse(fs.readFileSync(path.join(root, "assets/data/vehicle-hitboxes.json")));
 const metadata = JSON.parse(fs.readFileSync(path.join(root, "assets/data/vehicle-impact-components.json")));
+const samplingFixture = JSON.parse(fs.readFileSync(path.join(root, "_tools/vehicle-impact-sampling.json")));
 const MAIN = "Attribute.Gameplay.Health";
 const near = (actual, expected) => assert.ok(Math.abs(actual - expected) < 1e-7, `${actual} != ${expected}`);
 
@@ -120,6 +121,9 @@ async function main() {
   const source = data.meta.calibers.find(c => c.id === "Item.Caliber.84mm");
   assert.ok(source && source.blast, "Reviewed MAAWS projectile missing");
   near(source.blast.impact_backoff_cm, 12.7);
+  // Authored MAAWS: full amount to 4 m, then a linear decrease to zero at 10 m.
+  for (const cm of [0, 100, 399.99, 400, 400.01, 500, 700, 900, 999.99, 1000])
+    near(impact.blastAmount(source, cm), cm <= 400 ? 100 : Math.max(0, (1000 - cm) / 6));
   const before = JSON.stringify(data);
   for (const vehicle of vehicles) {
     for (const base of vehicle.models) for (const model of [base, base.wheels_destroyed].filter(Boolean)) {
@@ -128,18 +132,24 @@ async function main() {
       assert.ok(mesh.bounds.min.concat(mesh.bounds.max).every(Number.isFinite));
       const mapping = metadata.models[model.path];
       assert.ok(mapping, model.path);
+      const sampling = samplingFixture.models[model.path];
+      const expectedSamplingMode = sampling
+        ? (Object.values(sampling.components).some(c => c.method === "native-sockets") ? "native-sockets" : "native-bounds")
+        : "sampled-surfaces";
       for (const component of mesh.components) {
         assert.ok(mapping[component.nodeIndex]?.component, `Missing component: ${model.path}:${component.nodeIndex}`);
+        if (sampling) assert.ok(mapping[component.nodeIndex].point_sampling, `Missing authored sampling: ${model.path}`);
       }
       models++; nodes += mesh.components.length; triangles += mesh.triangles.length;
       const points = placements(mesh);
       const row = {vehicle: vehicle.id, model: model.path, sources: sources.length,
         surfacePlacements: points.filter(p => p.kind.startsWith("surface")).length,
-        groundPlacements: 2, shots: 0, damagingShots: 0};
+        groundPlacements: 2, samplingMode: expectedSamplingMode, shots: 0, damagingShots: 0};
       assert.ok(row.surfacePlacements > 0, `No surface placement: ${model.path}`);
       for (const explosive of sources) {
         for (const placement of points) {
           const result = impact.simulate(mesh, vehicle, explosive, placement.point, mapping);
+          assert.equal(result.samplingMode, expectedSamplingMode, `Sampling fallback changed: ${model.path}`);
           verifyShot(vehicle, explosive, result);
           row.shots++; catalogShots++;
           if (Object.values(result.sectionDamage).some(amount => amount > 0)) row.damagingShots++;
@@ -153,6 +163,15 @@ async function main() {
         row.shots++; catalogShots++;
       }
       coverage.push(row);
+      if (vehicle.id === "land-tracked-tnk-04-default") {
+        assert.equal(Object.values(mapping).reduce((sum, node) => sum + node.point_sampling.points.length, 0), 147);
+        const partial = {...mapping};
+        const firstIndex = mesh.components[0].nodeIndex;
+        partial[firstIndex] = {...partial[firstIndex]};
+        delete partial[firstIndex].point_sampling;
+        assert.throws(() => impact.simulate(mesh, vehicle, source, mesh.bounds.center, partial),
+          /Incomplete authored component sampling inputs/);
+      }
       if (vehicle.damage_row.endsWith(".TNK_01.AntiAir")) {
         assert.equal(Object.values(mapping).reduce((sum, node) => sum + node.point_sampling.points.length, 0), 89);
         const front = mesh.ray([0, 1, 8], [0, 0, -1]);

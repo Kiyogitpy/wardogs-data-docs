@@ -17,7 +17,7 @@ import vehicle_models as models
 
 SAMPLING_FIXTURE = Path(__file__).resolve().with_name("vehicle-impact-sampling.json")
 SPW_VARIANTS = {"SPW_01", "SPW_02", "SPW_03"}
-SAMPLING_VARIANTS = SPW_VARIANTS | {"TNK_01_AntiAir"}
+REQUIRED_SAMPLING_VARIANTS = SPW_VARIANTS | {"TNK_01_AntiAir"}
 
 
 def sha256(path):
@@ -48,14 +48,15 @@ def load_sampling_fixture(root, vehicles):
     fixture = json.loads(SAMPLING_FIXTURE.read_text(encoding="utf-8"))
     if fixture.get("format") != 1:
         raise ValueError("Unsupported point-sampling fixture format")
-    expected = {
-        model["path"]: model
-        for vehicle in vehicles
-        for model in vehicle["models"] if set(model["variants"]) & SAMPLING_VARIANTS
-    }
+    published = {selected["path"]: selected for vehicle in vehicles for model in vehicle["models"]
+                 for selected in [model, model.get("wheels_destroyed")] if selected}
+    required = {path for path, model in published.items() if set(model["variants"]) & REQUIRED_SAMPLING_VARIANTS
+                and not path.endswith("--wheels-destroyed.glb")}
     models_fixture = fixture.get("models")
-    if not isinstance(models_fixture, dict) or set(models_fixture) != set(expected):
-        raise ValueError("Point-sampling fixture paths do not match the covered published models")
+    if (not isinstance(models_fixture, dict) or not required <= set(models_fixture) or
+            not set(models_fixture) <= set(published)):
+        raise ValueError("Point-sampling fixture has missing required models or unknown published paths")
+    expected = {path: published[path] for path in models_fixture}
 
     sources = fixture.get("source", {})
     required_sources = ("reference_inputs", "static_mesh_socket_manifest", "collision_manifest", "skeletal_manifest")
@@ -73,8 +74,11 @@ def load_sampling_fixture(root, vehicles):
         if sampling.get("variants") != model["variants"]:
             raise ValueError(f"Stale point-sampling variant identity: {model_path}")
         if set(model["variants"]) - SPW_VARIANTS:
+            model_sources = sampling.get("source", {})
             for name in ("reference_inputs", "static_mesh_socket_manifest"):
-                validate_evidence(sampling.get("source", {}).get(name), f"{model_path}:{name}")
+                validate_evidence(model_sources.get(name), f"{model_path}:{name}")
+            for name, evidence in model_sources.items():
+                validate_evidence(evidence, f"{model_path}:{name}")
         for component in sampling.get("components", {}).values():
             raw_dump = Path(component["source_static_mesh_dump"])
             if not raw_dump.is_file() or sha256(raw_dump) != component.get("source_static_mesh_sha256"):
@@ -85,19 +89,19 @@ def load_sampling_fixture(root, vehicles):
                 raise ValueError(f"Missing native sampling points for {model_path}")
             for point in points:
                 validate_point(point, model_path)
+            raw = json.loads(raw_dump.read_text(encoding="utf-8"))
+            mesh = next(o for o in raw if o.get("Type") == "StaticMesh")
+            sockets = []
+            for ref in mesh.get("Properties", {}).get("Sockets", []):
+                name = ref["ObjectName"].split(":")[-1].rstrip("'")
+                socket = next(o for o in raw if o.get("Name") == name)
+                if re.fullmatch(r"DamageQuerySocket(?:_[0-9]+)?", socket.get("Properties", {}).get("SocketName", "")):
+                    sockets.append(socket)
             method, count = component.get("method"), component.get("socket_count")
             if method == "native-bounds":
-                if count != 0 or points != [component["bounds_origin"]]:
+                if sockets or count != 0 or points != [component["bounds_origin"]]:
                     raise ValueError(f"Invalid bounds fallback for {model_path}")
             elif method == "native-sockets":
-                raw = json.loads(raw_dump.read_text(encoding="utf-8"))
-                mesh = next(o for o in raw if o.get("Type") == "StaticMesh")
-                sockets = []
-                for ref in mesh.get("Properties", {}).get("Sockets", []):
-                    name = ref["ObjectName"].split(":")[-1].rstrip("'")
-                    socket = next(o for o in raw if o.get("Name") == name)
-                    if re.fullmatch(r"DamageQuerySocket(?:_[0-9]+)?", socket.get("Properties", {}).get("SocketName", "")):
-                        sockets.append(socket)
                 if not sockets or count != len(sockets) or len(points) != count:
                     raise ValueError(f"Socket sampling count differs from raw mesh for {model_path}")
             else:

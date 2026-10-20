@@ -5,8 +5,10 @@ nav_exclude: true
 
 # Rocket impact and splash: native behavior versus the vehicle viewer
 
-Audit date: 2026-10-19, installed CL516586. This compares the previously
-reviewed offline native evidence with the viewer at commit `6213d969`.
+Audit date: 2026-10-19, installed CL516586. The initial comparison below
+used the viewer at commit `6213d969`; the implementation shipped in
+`e864a136`. The correction below records the subsequent native re-read
+and local changes following the reported Gepard overcount.
 It does not claim runtime validation or a completed explosion simulator.
 
 ## A surface impact does not imply two damage terms
@@ -29,7 +31,7 @@ Thrown explosives and Molotov have their own [actor
 paths](round8-explosive-actors.md), rather than inheriting this conclusion
 solely from a UI category.
 
-## Current viewer gaps
+## Initial viewer gaps at `6213d969`
 
 | Area | Verified behavior and current limitation |
 |---|---|
@@ -48,7 +50,7 @@ hits and their order, per-hit contexts/distances, the first-hit section
 selection, and radial routing flags. Geometry published for display
 cannot by itself prove parity with the game's collision and LOS queries.
 
-The current catalog contains 15 blast-enabled projectile entries: 14 in
+The initial catalog contained 15 blast-enabled projectile entries: 14 in
 Rockets & launchers and the 40 mm grenade. Its `weapons` arrays are
 supported-caliber associations, not established loaded-ammunition or
 weapon-context bindings. Model `centres` are merged per slot material,
@@ -101,8 +103,9 @@ origin-to-start pretrace; the preview preserves that exception.
 
 The native candidate producer still depends on loaded body transforms,
 overlap item/body arrays and shape sampling (`0x6EFD9C0`), which these
-triangle GLBs do not encode. The preview instead samples published
-surfaces and checks visibility against that displayed geometry. It uses
+triangle GLBs do not encode. Covered models now use authored bounds/socket
+candidates; uncovered models sample published surfaces. Both check visibility
+against displayed geometry. The preview uses
 GLB component order for its first section. Alternative first choices
 reuse those fixed sampled hits; their displayed examples are neither
 exhaustive permutations nor bounds on actual game damage. The isolated
@@ -125,3 +128,97 @@ live overlap order and external occluders can change the result.
   for the new rules; it is not a full Jekyll/Sass build.
 - JavaScript syntax, links and whitespace checks pass. No game process,
   account, game service or runtime collision state was accessed.
+
+## Correction: hit-location deduplication and routed fuel damage
+
+The subsequent [every-vehicle pass](round8-vehicle-explosive-pass.md)
+covers all 33 source variants, source/export comparisons and the remaining
+geometry gaps. It also corrects the omitted STN_05 profile and 30 mm
+projectile blast entry, bringing the active blast catalog to 16 projectiles
+plus six actor explosives.
+
+The original implementation incorrectly treated every retained component
+contact as a separate application. A full re-read of `0x6F06540` revealed
+a second gate after the per-component filter: an actor-keyed set of
+already processed selected hit-location tags. At `0x6F06AE6`, the selected
+tag is loaded; an empty tag bypasses duplicate search. `0x6F06B10` compares
+it with previous entries and `0x6F06B13` jumps to `0x6F06D37` when equal,
+skipping tag append, event construction (`0x6F06B7D`) and application
+(`0x6F06C9F`). The first encountered same-tag contact wins, not the
+highest-damage contact. Independent raw-instruction checks agree.
+
+Vehicle tag getter `0x6B80230` resolves the contact's section and selects
+its first `Meta.Damage.HitLocation` tag. Global `0xD36A788` is that family
+(`0x127ADD0`–`0x127AE46`, string `0xB348E10`). The deduplication key is
+**actor plus hit-location tag**, not health section, material or component.
+Each event still receives the complete filtered contact array, and
+`0x5320382`–`0x5320398` selects its section from `ComponentHits[0]`.
+
+The offline front-Gepard reproduction uses MAAWS's `Item.Caliber.84mm`,
+a ray from display coordinates `[0,1,8]` in direction `[0,0,-1]`, and a
+surface impact at `[0,1,3.7272073545342943]` metres. The reference geometry
+accepts MainBody, TurretSpin, TurretPitch and both barrels. All five map
+to `Meta.Damage.HitLocation.Vehicle.MainBody`, giving **one application**
+rather than five. Its current rule-scaled amount is 282. The cooked
+AntiAir platform's MainBody pre-route sends 5% to FuelTank, leaving
+**267.9 main-health loss and 14.1 FuelTank loss** in this preview. There
+is no accepted FuelTank material contact in this reproduction. These are
+static preview results, not measured gameplay damage.
+
+Routing is not limited to main HP: `0x5339DD0` uses the map key as the
+destination section for recursive `0x53205D0`. Its depletion condition
+reads the **source/current section's** health (`0x5320735` supplies it;
+`0x5339FE6`–`0x5339FFC` tests it). A hidden component can lose routed
+health without the explosion penetrating to its surface. The corrected
+preview retains contact markers but applies each nonempty hit-location
+tag once and explains routed section loss separately.
+
+## Additional explosive inputs recovered
+
+The armed projectile's native blast origin is not necessarily the clicked
+surface point. `0x6B717C0` retains `FWDProjectileHitData.ImpactVelocity`
+at deferred record `+0x2E8`. `0x6B70F27` normalizes it and
+`0x6B70F73`–`0x6B70FD3` computes:
+
+```text
+blastOrigin = ImpactPoint - 0.5 * ProjectileDimensions.Length * SafeNormal(ImpactVelocity)
+```
+
+The 84 mm projectile length is 25.4 cm, so the offset is 12.7 cm back
+along incoming velocity. A near-zero velocity normalizes to zero in this
+build (constant `0xCCA3468`; squared-length threshold about `1e-8`),
+leaving the origin at ImpactPoint. The local viewer continuation now uses
+the current view-to-impact direction and exports half-length offsets for
+all 16 positive-radius projectile entries. It labels that direction
+assumption beside the result; it does not simulate an actual projectile
+trajectory. Placed explosive actors keep the selected point. See the
+[SPW continuation](round8-spw-collision-inputs.md#bounds-based-viewer-continuation).
+
+The LOS helper uses a **complex Visibility** query (`0x6F0377D` /
+`0x6F03785` → `0x3CAB670` → `0x3CAE910`; `bTraceComplex` set at
+`0x6EFFFCF`). Packed `DefaultGame.ini` lists only
+`WDDestructionBuilding` for the skip-LOS class setting; Gepard inherits
+`WDTrackedVehicle`, and its target-root exception slot returns false.
+Those two shortcuts therefore do not justify tracing through its front
+hull. With no accepted precomputed samples, plain static mesh components
+seed the native Points candidate list with their component bounds origin.
+Gepard instead has 89 authored socket candidates, now integrated; the
+[sampling trace](round8-gepard-native-sampling.md) documents that branch.
+Actual query geometry and accepted order remain unverified.
+
+Fresh Gepard packages recovered five SM and five dedicated CC BodySetups,
+the base/turret skeletal meshes and their two physics assets. The new
+extractor `collision` mode exported **13 bodies and 11 Chaos payloads**,
+with zero failures; the two skeletal mesh inputs are explicitly skipped
+by this mode and handled by `physics`. It also records native static
+mesh render bounds and authored bounds extensions. Payload bytes
+were initially preserved with SHA-256 without decoding. The subsequent
+[Chaos decoding pass](round8-gepard-chaos-decode.md) fully consumes all
+11 payloads and verifies the five raw collision-mesh/material sets.
+[Native bounds and filter inputs](round8-gepard-collision-inputs.md) and
+[the sampling trace](round8-gepard-native-sampling.md) separately narrow
+their use in explosions. Evidence remains outside the
+repo in `E:/Reverse_Engineer/wardogs_analysis/round8_gepard_explosive_collision_20261019/`
+(`cooked-v2/collision.json`, `physics/physics.json`, input lists and logs).
+Acquisition and decoding of these frozen inputs are now verified;
+scene-query parity remains open.

@@ -12,6 +12,27 @@ answers stay unchecked; a blocked item records the missing input.
 
 Baseline: checkout `38eb2443`. No live-game or service testing is used.
 
+The [SPW sampling continuation](evidence/round8-spw-collision-inputs.md#bounds-based-viewer-continuation)
+replaces surface/corner candidates with authored bounds for all three spawn
+models and adds view-directed projectile detonation backoff. Numerical and
+browser checks pass; these changes shipped as `7a53decf` with Pages green. The user's roughly four
+MAAWS main-body hits remain an open in-game parity check: a fresh reference
+shot gives 361 main damage against 1,000 HP. A track-first reference shot
+gives 121.125 main damage; one track-first plus three main applications is a
+conditional four-shot example. Low front/rear radar contacts remain unresolved.
+Critical-state and bleed-out entry are not yet an explanation for the
+reported shot count. This does not close the broader explosive parity work.
+
+The [Gepard socket continuation](evidence/round8-gepard-sampling-viewer.md)
+shipped as `e6eb7122`: all 89 authored points are placed and the sampler
+continues through candidates to retain each component's nearest accepted hit.
+The front fixture remains one MainBody-tag application with 267.9 main damage
+and 14.1 routed fuel damage. All-model MAAWS checks, 22-source Gepard checks,
+source audit and browser checks pass. The [fresh socket census](evidence/round8-vehicle-sampling-census.md)
+loads all 121 distinct references for 33 source variants with zero failures.
+It supplies inputs for the remaining models; their placement and native-query
+parity are still open. No game or service was used.
+
 ## Already completed before this continuation
 
 - [x] Round-7 documentation corrections (handoff §2.1).
@@ -36,7 +57,7 @@ Baseline: checkout `38eb2443`. No live-game or service testing is used.
 | [x] | `armor-hook-paths` | Projectile/general hooks and named source paths traced; melee's returned copy is ignored. [Armor](evidence/round8-armor.md), [melee](evidence/round8-melee.md). |
 | [x] | `armor-data-rows` | Separate armor-target event, not additional health-event rows. Final queue consumption/durability writes remain outside this closure. [Evidence](evidence/round8-armor.md). |
 | [x] | `vehicle-weapon-tag` | Extension data → damage component → owner interface → projectile record → source context traced. [Evidence](evidence/round8-weapon-context.md). |
-| [ ] | `underbarrel-weapon-tag` | No firing consumer/owner found for the data-only test attachment. Generic lifecycle only handles audio/animation; full cooked script-import audit supplies no Blueprint consumer. A concrete ancillary factory or fire-action binding is required before assigning a shot tag. [Evidence](evidence/round8-ancillary-sights.md). |
+| [x] | `underbarrel-weapon-tag` | Scoped unsupported: the shipped test attachment has no firing binding on the verified M4/default-input path. The exact resolver returns null; no alternate firing owner or shot tag is assigned. This does not prove universal feature absence. [Round 9 evidence](evidence/round9-underbarrel.md). |
 | [x] | `melee-path` | Three cooked character paths traced: amount, source/context, no bone, ignored armor-event return and health application. [Evidence](evidence/round8-melee.md). |
 | [x] | `impact-amount` | Four thrown actors inherit contact amount 10; actor-impact overlap/transform formula, substep-seconds input and settings multiplier traced. Rules bypassed; per-hit geometry/state supply actual numbers. [Evidence](evidence/round8-impact.md). |
 | [x] | `backblast` | Normal handheld source, foot/seated formulas, overrides and seated no-bone hit traced. Reflected/secondary foot gather remains scoped out. [Evidence](evidence/round8-backblast.md). |
@@ -128,7 +149,8 @@ Baseline: checkout `38eb2443`. No live-game or service testing is used.
 
 ## Validation
 
-**Current checkpoint:** 17/18 original research entries closed and six
+**Current checkpoint:** 17 original entries resolved plus one scoped unsupported
+([underbarrel activation](evidence/round9-underbarrel.md)), and six
 Round-6 carryovers closed. Latest artifact check **962/0**; radial decoder
 **42 rings / 132 armor factors**; loadout parity **1,752/0**; links **0 broken**; JS syntax and diff
 whitespace checks pass. Snapshot-rendered tables are unchanged on a second
@@ -180,8 +202,10 @@ field provenance. It is fixed; the new offline Node regression check
 passes **50 rings and 176 armor factors**, failing on the prior code.
 Run it with `node _tools/infantry_viewer_check.js`.
 
-After the final helmet/caliber integration, one original viewer limitation
-remains: ancillary shot ownership. The normal helmet merge/default policy
+At the historical helmet/caliber checkpoint, one original viewer limitation
+remained: ancillary shot ownership. Round 9 now bounds its shipped activation
+path as unsupported; the hypothetical shot tag remains unproved and flagged.
+The normal helmet merge/default policy
 is verified. Four unsupported weapon/projectile pairings were removed;
 their standalone projectile data was retained. The reviewed loading pairs
 replace prefix inference. Current checks are **962/0**, radial decoding
@@ -241,19 +265,75 @@ underbarrel item. The local [impact audit and implementation](evidence/round8-ex
 adds vehicle/ground placement, Direct hit / Splash location labels,
 fresh-shot routing and six reviewed actor explosives. Armed exploding
 projectiles use radial damage instead of adding a second direct term.
-The result is explicitly a reference-pose estimate: native body sampling
-and live first-hit ordering are not recovered from the display GLBs.
+The result is explicitly a reference-pose estimate. SPW bounds and Gepard
+socket sampling are now recovered from authored inputs; live query geometry
+and first-hit ordering are not recovered from the display GLBs.
 36 models / 204 nodes / 156,447 triangles and 62 shot checks pass;
 the installed Edge harness passes at 1440 px and 360 px. Publication is
 recorded in Git history; the reference-pose limitations remain explicit.
+
+The subsequent [every-vehicle audit](evidence/round8-vehicle-explosive-pass.md)
+inspects all 33 exported variant definitions: 32 map to 23 viewer profiles;
+FWG has no health/slot definition and remains unsupported. STN_05 is now
+table-only, and 30 mm now exposes its authored blast. Native re-reading
+corrected a real overcount: radial applications deduplicate nonempty
+hit-location tags per actor after component filtering. Gepard's one accepted
+MainBody application can route 5% to FuelTank without a fuel contact.
+The audit records 28 registered components absent from display geometry
+across 14 variants. Native collision parity remains open for every vehicle;
+raw BodySetup/Chaos acquisition covers Gepard and the SPW packages; complete
+payload decoding is verified for Gepard. These newer
+viewer corrections were pushed as `bdf5d8a2`; the broader coverage and
+collision research artifacts remain local and unpushed.
+Validation now includes 6,864 surface/ground/out-of-range shot simulations
+across 36 models and 22 explosive sources, 339 fresh section applications,
+and Edge checks of all 23 profiles / 154 slot routing descriptions. The
+source audit has zero mismatches; that is distinct from native physics parity.
+
+### Gepard collision continuation
+
+The [Chaos decoder](evidence/round8-gepard-chaos-decode.md) now fully
+consumes all 11 recovered payloads (seven distinct hashes). Five raw
+collision-mesh/material sets match one-to-one within 1e-6 m; corrupt,
+truncated and unsupported-layout inputs are rejected. The lead agent
+reran that decode/comparison into a separate output directory successfully.
+No raw geometry is added to the repository.
+
+The [native input trace](evidence/round8-gepard-collision-inputs.md)
+establishes authored ExtendedBounds as the static-mesh seed source, the
+reference transforms and the shipped collision-complexity default chain.
+The [sampling trace](evidence/round8-gepard-native-sampling.md) separates
+per-candidate cloud-start stopping from Gepard's continued candidate search,
+including its angle rejection and pretrace cache. Runtime overlap sample
+records, registration/filter state, actual pose and level geometry still
+bound the result. The covered models use authored candidate points, while
+display-based visibility and overlap approximation remain. Other models
+retain fallback sampling until their source inputs are integrated.
+
+The native socket producer is now established: `DamageQuerySocket` FNames
+on **render** SM assets, including numbered instances, generate precomputed
+candidate transforms. Gepard has 89 authored points (59/14/10/3/3); its
+bounds-only branch is a fallback, not its actual ordinary sample set.
+The conditional cooked-triangle probe reproduces five static contacts,
+one MainBody application and routed FuelTank loss, retaining explicit
+pose, query-filter/Item and overlap-order assumptions. Main and cloud
+pretraces both inherit complex-query params on the shipped nonempty Points
+branch; the constructor's initial simple flag is superseded by `0x6F00FD1`.
+
+The older five-model socket inventory is superseded by the
+[fresh census](evidence/round8-vehicle-sampling-census.md): all 121 exact
+static-mesh references across 33 variants load with zero failures. The
+[Round 9 register](ROUND9_STATUS.md) tracks source placement and integration
+separately. Input availability is not collision completeness.
 
 ## Next bounded leads
 
 Continue the unchecked rows above; do not repeat the closed Round-7/loadout
 work. In particular:
 
-- Underbarrel: locate live ancillary-component creation/owner; then follow
-  the already-known owner interface and projectile-record tag writer.
+- Underbarrel: reopen an alternate firing path only when a concrete binding
+  or component supplies positive evidence; the verified M4/default path is
+  scoped unsupported. Do not assign a hypothetical shot tag.
 - Loadout: the recovered defaults-helper path requires purchase-request
   data and checks Cart/Restock tags. Normal spawn granting remains unproved;
   do not label that purchase continuation a spawn hook. The saved-preset
