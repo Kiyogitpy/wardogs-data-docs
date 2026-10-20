@@ -5,6 +5,12 @@ nav_exclude: true
 
 # Gepard blast sampling: static control flow
 
+**Round 10 correction:** the [complete native ordering and bounds trace](round10-native-vehicle-sampling.md)
+supersedes this pass's per-component-minimum interpretation and 10-degree
+Points assumption. The default Points angle is 90/180 degrees. Per-target
+results are actor-sorted and component-filtered with swap removal; the
+nearest replacement below is local to one target's cloud traversal.
+
 Static CL-516586 executable review, 2026-10-19. This narrows [the Points-mode trace](round8-radial-points-components.md) for the Gepard (`VP_TNK_01_AntiAir`). Evidence is the offline restored executable SHA-256 `a5c3db107c29bfd92c3b5f317033f698a0c3a84dad712f32990ae302b4f0cc37`, its read-only decompilation corpus, the cooked platform/Blueprint exports and SDK. RVA ranges below were checked against original executable instructions. No game process or scene query was run.
 
 ## Candidate construction and order
@@ -36,7 +42,9 @@ if Points selected and generated cloud is nonempty:
           mark this start occluded; continue
         trace Visibility from start toward candidate with complex-query params
         if a valid accepted hit is retained and PointDiscardMode == 2: stop starts
-      for Gepard, continue to the next candidate and keep nearer accepted hit
+      append this target's accepted result; continue to the next candidate
+  sort all actor hits by float Distance
+  filter duplicate components with RemoveAtSwap, then deduplicate hit-location tags
 ```
 
 The cloud iterator `6F03340` reads offsets at context `+0x18`, count at `+0x20`, and adds each to the original origin at `6F033C4–6F03412`. Of its three bitmasks, `+0x00` marks starts whose origin pretrace blocked, `+0x08` marks starts already pretraced, and `+0x10` marks angle-rejected starts. A tested-clear start bypasses **only the repeat pretrace**, then still reaches the candidate callback (`6F03418–6F0348A`); blocked and angle-rejected starts skip the callback. Index 1 bypasses the origin-to-start pretrace at `6F0341D–6F03420`; other eligible offsets call the Visibility pretrace `3CAB860` at `6F0344F`. The callback runs at `6F0348A`, and a true stop return exits at `6F0348C–6F0348E`. The alternative precomputed-start loop uses `6EF8A90` and callback `6F03691` with the analogous stop test. The packed defaults are Points=2, PointDiscardMode=2, AngleDiscardThreshold=10 degrees, PointCloudRadius=50 cm and QueryPointEarlyRejectionDistance=100 cm ([selector table](round8-radial-points-components.md#selector-and-shipped-defaults)); they are initial binary/config values, not observed live state.

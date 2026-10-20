@@ -5,6 +5,12 @@ nav_exclude: true
 
 # Rocket impact and splash: native behavior versus the vehicle viewer
 
+The [Round 10 continuation](round10-vehicle-blast-audit.md) supersedes the
+historical viewer implementation below: all 36 published models use authored
+inputs, all 22 trace preferences are resolved, and default Points uses the
+native 90/180-degree gate plus actor sorting/swap filtering. Live collision
+parity remains open.
+
 Audit date: 2026-10-19, installed CL516586. The initial comparison below
 used the viewer at commit `6213d969`; the implementation shipped in
 `e864a136`. The correction below records the subsequent native re-read

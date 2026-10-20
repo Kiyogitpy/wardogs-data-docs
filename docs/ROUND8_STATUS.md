@@ -12,6 +12,12 @@ answers stay unchecked; a blocked item records the missing input.
 
 Baseline: checkout `38eb2443`. No live-game or service testing is used.
 
+The [Round 10 explosive continuation](ROUND10_STATUS.md) supersedes this
+register's older vehicle-sampling assumptions: all 36 published models now
+have authored inputs, source preferences are resolved, and the default Points
+angle/order policy is corrected. Older numerical checkpoints below remain
+historical; they do not establish live collision parity.
+
 The [SPW sampling continuation](evidence/round8-spw-collision-inputs.md#bounds-based-viewer-continuation)
 replaces surface/corner candidates with authored bounds for all three spawn
 models and adds view-directed projectile detonation backoff. Numerical and
@@ -25,7 +31,9 @@ reported shot count. This does not close the broader explosive parity work.
 
 The [Gepard socket continuation](evidence/round8-gepard-sampling-viewer.md)
 shipped as `e6eb7122`: all 89 authored points are placed and the sampler
-continues through candidates to retain each component's nearest accepted hit.
+then continued through candidates using a per-component nearest-hit model.
+Round 10 replaces that incomplete retention model with actor sorting and
+native swap filtering.
 The front fixture remains one MainBody-tag application with 267.9 main damage
 and 14.1 routed fuel damage. All-model MAAWS checks, 22-source Gepard checks,
 source audit and browser checks pass. The [fresh socket census](evidence/round8-vehicle-sampling-census.md)

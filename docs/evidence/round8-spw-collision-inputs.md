@@ -126,7 +126,14 @@ The viewer previously chose nearest displayed surfaces and CC-box corners as can
 
 Fresh no-socket evidence permits the native bounds-origin fallback for the three SPW models. `_tools/vehicle-impact-sampling.json` binds all **21 represented components (8/6/7)** to exact GLB hashes, source render meshes, placed bounds origins and source evidence hashes. Placement includes the chassis `body_RadarSocket` from the shared skeleton. Interior and unresolved deployed components are excluded. The generator requires complete model coverage and preserves the shared-variant comparison.
 
-The SPW branch uses one authored bounds point per represented component, the traced 10-degree angle gate, the shared tested/blocked cloud cache and exact trace starts. Moving a start a small distance inside the hull can bypass a surface obstruction; the bounds branch no longer applies that display-sampler offset. Both visibility and the initial overlap approximation still use published triangles. Missing scene bodies, Item filters, pose and actual engine ordering remain unresolved.
+The initial SPW branch used one authored bounds point per represented component,
+a 10-degree angle assumption, the shared tested/blocked cloud cache and exact
+trace starts. The [Round 10 trace](round10-native-vehicle-sampling.md) corrects
+that gate to 90/180 degrees and supplies actor sorting plus swap filtering.
+Moving a start a small distance inside the hull can bypass a surface obstruction;
+the authored branch does not apply that display-sampler offset. Visibility and
+initial overlap still use published triangles; live scene bodies, Item state
+and pose remain unresolved.
 
 The armed projectile path separately backs the blast origin away from the impact by half the projectile length. In the frozen PE, `0x6B717C0` retains ImpactVelocity at deferred-record `+0x2E8`, `0x6B70F27` normalizes it, and `0x6B70F73`–`0x6B70FD3` calculates `ImpactPoint - 0.5 * Length * SafeNormal(ImpactVelocity)`. The generator now exports this distance for the 16 positive-radius projectile entries. MAAWS is **12.7 cm**. The viewer assumes the incoming direction runs from the current camera to the selected point, states that assumption beside the result, and centres the blast marker on the resulting detonation point. Placed explosive actors retain the selected point. This approximates a shot direction; it does not simulate projectile travel or arming time.
 

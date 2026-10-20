@@ -588,8 +588,14 @@ vehicle damage model:
    authority role, an amount above `1e-8` and two owner checks. Point
    damage uses the zone query `0x5338730` on the hit info. Radial damage
    uses it on `ComponentHits[0]` (`0x5320394`). Before that, the vehicle's
-   `IWDDamageable` slot 8 (`0x6C2A790`) keeps one hit per component, so an
-   instanced-wheel component contributes one wheel. **A later gate also
+   actor hit array is sorted by float Distance (`0x6B6FFD0`). The vehicle's
+   `IWDDamageable` slot 8 (`0x6C2A790`) then keeps one hit per component by
+   removing duplicates with a last-entry swap, so an instanced-wheel
+   component contributes one wheel. Swaps can reorder later components and
+   select a farther contact for one of them; this is not independent nearest
+   selection for every component. See the
+   [complete sampling trace](../docs/evidence/round10-native-vehicle-sampling.md).
+   **A later gate also
    suppresses repeated nonempty hit-location tags on the same actor**
    (`0x6F06AE6`–`0x6F06B13`): the first encountered tag wins; subsequent
    same-tag contacts skip event creation and application. An empty tag is
