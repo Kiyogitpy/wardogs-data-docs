@@ -154,6 +154,8 @@ Finished after this handoff was first written. `content/loadout-calculator.md` i
 The [active register](ROUND8_STATUS.md) links each result to evidence and
 tracks integration/validation separately. Publication of these continuation
 changes is recorded in Git history; the unchecked research items remain open.
+The later [all-vehicle explosive checkpoint](ROUND10_STATUS.md) records the
+36-model/22-source continuation and its remaining collision-parity limits.
 
 - [x] Radial amount/falloff, Center/Disc/Points distance and Inner/Outer tags.
 - [x] Projectile blast context and retained weapon/caliber tags.

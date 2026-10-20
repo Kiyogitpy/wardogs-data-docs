@@ -9,6 +9,13 @@ Static CL-516586 investigation, 2026-10-18. This supplements [round8-radial.md](
 
 ## Result
 
+The [Round 10 native trace](round10-native-vehicle-sampling.md) completes the
+vehicle ordering: per-target results are actor-sorted, then component-filtered
+with swap removal before hit-location deduplication. Nearest replacement in
+`0x6EF70D0` is local to a target's cloud traversal. The registered 10-degree
+setting below must not be substituted for the default Points path's actual
+90/180-degree component-bounds gate.
+
 The alternate routine `0x6EFD9C0` is the **Points / point-cloud occlusion** mode named by the shipped console variable, rather than a separately named voxel damage model. It reaches the same `0x6F03720` accepted-hit builder and distance writer as Center and Disc. Moving the occlusion ray's start does **not** move the distance reference away from the original blast origin. The shipped native default selects Points, with first-success termination of a candidate's cloud-start search; it does not guarantee the globally closest collision point. The later [Gepard trace](round8-gepard-native-sampling.md) distinguishes this from candidate-list termination: the tracked-vehicle hook continues through candidates and retains a nearer accepted hit for the same overlap index.
 
 The fresh `B_WDMoverPlayerCharacter` default subobjects contain two primitives: CharacterCapsule and CharacterMesh. The capsule's native response ignores Visibility; CharacterMesh's inherited shipped response blocks it. The Blueprint adds an AI perception source, not another primitive. Native first-person setup can instantiate two additional skeletal meshes, but explicitly applies NoCollision to both. Thus one third-person CharacterMesh is the supported ordinary default character candidate, conditional on its loaded bodies and query state. This does not establish one successful hit for every blast or an invariant component count for every runtime player actor.

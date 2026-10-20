@@ -5,6 +5,10 @@ nav_exclude: true
 
 # Round 9: coverage and integration
 
+Historical checkpoint. The [Round 10 continuation](ROUND10_STATUS.md) now
+covers all 36 published models and 22 explosive sources, correcting the
+angle, preference and contact-order assumptions recorded below.
+
 This continuation starts at `e6eb7122`, after the reviewed SPW/Gepard viewer changes.
 The original [Round 8 register](ROUND8_STATUS.md) now records 17 resolved entries
 plus one scoped unsupported disposition. Pass 9 delivers the bounded integration

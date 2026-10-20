@@ -5,6 +5,11 @@ nav_exclude: true
 
 # Gepard: native bounds and collision-filter inputs
 
+The [Round 10 native correction](round10-native-vehicle-sampling.md) supersedes
+the conditional probe's 10-degree gate and per-component-minimum policy below.
+Its exported geometry/bounds evidence remains useful; its historical contact
+selection must not be treated as the current native ordering model.
+
 Offline CL-516586 investigation, 2026-10-19. The restored executable and
 existing read-only corpus were inspected; no game process or IDA database
 was opened. This supplements the [explosive audit](round8-explosive-viewer-audit.md).

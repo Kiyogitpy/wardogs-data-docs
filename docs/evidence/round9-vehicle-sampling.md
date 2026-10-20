@@ -5,6 +5,10 @@ nav_exclude: true
 
 # Authored sampling across 18 vehicle models
 
+Historical Pass 9 checkpoint. [Round 10](round10-vehicle-blast-audit.md) extends
+coverage to all 36 models and supersedes the per-component nearest-contact,
+10-degree cloud-gate and unresolved-preference assumptions below.
+
 Offline CL-516586 continuation, verified 2026-10-20. The viewer now uses
 authored socket/bounds candidates for **18 of 36 physical models**, up from
 four. This includes all seven published tracked models, six rotary models and

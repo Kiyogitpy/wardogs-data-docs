@@ -5,6 +5,12 @@ nav_exclude: true
 
 # Gepard authored blast sampling in the viewer
 
+**Historical implementation checkpoint.** The [Round 10 correction](round10-native-vehicle-sampling.md)
+now covers all 36 models and replaces the 10-degree/per-component-minimum
+policy described below. Native actor sorting followed by swap removal can
+retain a farther contact for a later component. The socket acquisition and
+placement evidence remains valid.
+
 The Gepard viewer now uses its **89 authored damage-query sockets** across five static components, replacing its sampled display-surface targets. The three SPW variants keep their authored bounds fallback. Other models retain the display-surface approximation; the [roster census](round8-vehicle-sampling-census.md) records which additional source inputs are available.
 
 This improves reference-pose candidate sampling. It does not establish parity with the game's registered collision bodies, skeletal chassis participation, moving parts, scene occluders or overlap ordering. Visibility still uses the published triangle geometry.
