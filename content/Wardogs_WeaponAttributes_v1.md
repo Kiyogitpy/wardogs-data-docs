@@ -11,7 +11,7 @@ redirect_from: ["/Wardogs_WeaponAttributes_v1.html", "/Wardogs_WeaponAttributes_
 Each weapon's final `Attribute.Gameplay.Weapon.*` values with its default attachments, and what every
 attachment changes on the weapon. The values are computed from the cooked data with the rules of the
 [Gameplay Effects Pipeline](../pipelines/Wardogs_GameplayEffectsPipeline_v1.md); nothing here was measured in the game.
-Effect modifiers come from [Gameplay Effect Values](../pipelines/Wardogs_GameplayEffect_Values_v1.md). Labels: **Data**
+Effect modifiers come from [Gameplay Effect Values](../pipelines/Wardogs_GameplayEffect_Values_v1.md). Prices, unlock levels, names and fitting weapons are in [Weapon Shop and Parts](../game-features/Wardogs_WeaponShop_v1.md). Labels: **Data**
 for what the export says, **Native** for what the traced code does, **Assumption** for a choice this page
 makes where the code is not traced.
 To try any other loadout (attachments, sight, stance, bipod), use the [Weapon Loadout Calculator](loadout-calculator.md).

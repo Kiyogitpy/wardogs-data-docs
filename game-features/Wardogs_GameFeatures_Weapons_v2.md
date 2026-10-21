@@ -313,7 +313,7 @@ Grouped by folder. "Vendor-priced" counts items that have a `WDVendorData` row. 
 | Dust Covers | 3 | 0 | - | - | 0 | None |
 | Triggers | 3 | 0 | - | - | 0 | Handguard, None |
 
-Every vendor-priced attachment carries a `GE_*` gameplay effect in `AppliedEffects`. The numeric effects are inside those `GE_*` assets, which are not in this folder. Per-attachment stat deltas therefore cannot be given from this dump.
+Every vendor-priced attachment carries a `GE_*` gameplay effect in `AppliedEffects`. The numeric effects are inside those `GE_*` assets, which are not in this folder. Per-attachment stat deltas therefore cannot be given from this dump. Per-item price, unlock level, name, slot and fitting weapons are tabulated in [Weapon Shop and Parts](Wardogs_WeaponShop_v1.md).
 
 **Magazine class tags** (on the item context, across all item definitions): Extended (12), Standard (10), Small (7), Drum (4), Belt (3), Internal (1). These are tags only. Round counts appear in item names, for example "AK74 30 RND Magazine".
 
