@@ -481,6 +481,113 @@ Other settings: `bFOVReticleScaling` is False for every class that sets it. `bAp
 - **Aim-assist RPG and SR zeros.** Several fields are 0 or absent for RPG and SR. The dump does not say whether those classes are intentionally unassisted.
 - **Vehicle container sizes.** The Large Vehicle Storage container is reported as 1x1 with an ammo block. The dump does not say whether that matches the in-game footprint.
 
+## Resources and ammunition
+
+The `Resources` folder holds 94 item definitions, almost all ammunition, plus 5 support assets (3 audio data assets, one projectile data asset and one curve table) that are not items and have no row. The table lists each item definition with its tag, display name, stack size, inventory shape, weight, caliber and vendor price where the data sets them.
+
+**Data** (generated from the JSON; `—` means the value is not in the export, not zero):
+
+<!-- resource_tables items -->
+| Asset | Folder | Item tag | Display name | Kind | Max stack | Inventory (X x Y) | Weight | Caliber tag | Vendor price |
+|---|---|---|---|---|---|---|---|---|---|
+| `ID_120x570mm` | Ammo/120x570mm | `ID.Item.120x570mm` | 120mm HEAT-MP Shell | ammo | 5 | 3 x 2 | 24 | Item.Caliber.120x570mm | 210 |
+| `ID_120x800mm` | Ammo/120x800mm | `Id.Item.120x800mm` | 81mm | ammo | 10 | 3 x 2 | — | Item.Caliber.120x800mm | 600 |
+| `ID_122mm` | Ammo/122mm | `Id.Item.122mm` | 122mm HE Rocket | ammo | 3 | 6 x 2 | — | Item.Caliber.122mm | 450 |
+| `ID_125x570mm` | Ammo/125x570mm | `ID.Item.125x570mm` | 125mm HEAT-MP Shell | ammo | 5 | 3 x 2 | 24 | Item.Caliber.125x570mm | 210 |
+| `ID_12g` | Ammo/12Guage | `Id.Item.12g` | 12g | ammo | 24 | 2 x 1 | — | Item.Caliber.12g | — |
+| `ID_7mmBuckshot` | Ammo/12Guage/7mmBuck | `Id.Item.12g.7mmBuck` | 12g 7mm Buckshot  | ammo | 24 | 2 x 1 | — | Item.Caliber.12g | 60 |
+| `ID_12g_RifledSlug` | Ammo/12Guage/Slug | `Id.Item.12g.RifledSlug` | 12g Rifled Slug | ammo | 24 | 2 x 1 | — | Item.Caliber.12g | 200 |
+| `ID_155mm` | Ammo/155mm | `ID.Item.155mm` | 155mm HE Shell | ammo | — | 3 x 2 | — | Item.Caliber.155mm | 200 |
+| `ID_155mm_Expensive` | Ammo/155mm | `ID.Item.155mm.Expensive` | 155mm HE Shell | ammo | — | 3 x 2 | 42 | Item.Caliber.155mm.Expensive | 120 |
+| `ID_155mm_Expensive_SB` | Ammo/155mm | `ID.Item.155mm.Expensive.Sandbox` | 155mm Expensive (SB) | ammo | 30 | 3 x 2 | — | Item.Caliber.155mm.Expensive | 600 |
+| `ID_155mm_SB` | Ammo/155mm | `ID.Item.155mm.Sandbox` | 155mm (SB) | ammo | 10 | 3 x 2 | — | Item.Caliber.155mm | 600 |
+| `ID_155mm_Standard` | Ammo/155mm | `ID.Item.155mm.Standard` | 155mm HE Shell | ammo | 10 | 3 x 2 | — | Item.Caliber.155mm.Standard | 120 |
+| `ID_155mm_Standard_SB` | Ammo/155mm | `ID.Item.155mm.Standard.Sandbox` | 155mm Standard (SB) | ammo | 10 | 3 x 2 | — | Item.Caliber.155mm.Standard | 600 |
+| `ID_20x102mm` | Ammo/20x102mm | `Id.Item.20x102mm` | 20x102mm | ammo | 100 | 2 x 2 | — | Item.Caliber.20x102mm | 600 |
+| `ID_308` | Ammo/308 | `Id.Item.308Win` | .308 Win  | ammo | 40 (overrides: Inventory.Slot.Vehicle.Storage 150, Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.308Win | 40 |
+| `ID_308_ArmorPiercing` | Ammo/308 | `Id.Item.308Win.ArmorPiercing` | .308 Win Armor Piercing (AP) | ammo | 40 (overrides: Inventory.Slot.Vehicle.Storage 150, Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.308Win | 180 |
+| `ID_308_ArmorPiercing_Tracer` | Ammo/308 | `Id.Item.308Win.ArmorPiercing.Tracer` | .308 Win Armor Piercing (AP) | ammo | 40 (overrides: Inventory.Slot.Vehicle.Storage 150, Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.308Win | 180 |
+| `ID_308_HollowPoint` | Ammo/308 | `Id.Item.308Win.HollowPoint` | .308 Win  | ammo | 40 (overrides: Inventory.Slot.Vehicle.Storage 150, Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.308Win | 70 |
+| `ID_308_HollowPoint_Tracer` | Ammo/308 | `Id.Item.308Win.HollowPoint.Tracer` | .308 Win Flesh Damage (HP) | ammo | 40 (overrides: Inventory.Slot.Vehicle.Storage 150, Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.308Win | 70 |
+| `ID_308_Tracer` | Ammo/308 | `Id.Item.308Win.Tracer` | .308 Win Standard (FMJ) | ammo | 40 (overrides: Inventory.Slot.Vehicle.Storage 150, Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.308Win | 40 |
+| `ID_30mm` | Ammo/30mm | `Id.Item.30mm` | 30mm HE Cannon | ammo | 50 (overrides: Inventory.Slot.Vehicle.Storage 200) | 2 x 2 | — | Item.Caliber.30mm | 500 |
+| `ID_338Nor_ArmorPiercing` | Ammo/338NormaMagnum | `Id.Item.338Nor.ArmourPiercing` | .338 AP | ammo | 30 | 2 x 1 | — | Item.Caliber.338Nor | — |
+| `ID_338Nor_HollowPoint` | Ammo/338NormaMagnum | `Id.Item.338Nor.HollowPoint` | .338 HP | ammo | 30 | 2 x 1 | — | Item.Caliber.338Nor | — |
+| `ID_338Nor_HollowPoint_Tracer` | Ammo/338NormaMagnum | `Id.Item.338Nor.HollowPoint.Tracer` | .338 HP (T) | ammo | 30 | 2 x 1 | — | Item.Caliber.338Nor | — |
+| `ID_338Nor_Tracer` | Ammo/338NormaMagnum | `Id.Item.338Nor.Tracer` | .338 (T) | ammo | 30 | 2 x 1 | — | Item.Caliber.338Nor | — |
+| `ID_338Norm_ArmorPiercing_Tracer` | Ammo/338NormaMagnum | `Id.Item.338Nor.ArmourPiercing.Tracer` | .338 AP (T) | ammo | 30 | 2 x 1 | — | Item.Caliber.338Nor | — |
+| `ID_338NormaMagnum` | Ammo/338NormaMagnum | `Id.Item.338Nor` | .338 | ammo | 30 | 2 x 1 | — | Item.Caliber.338Nor | — |
+| `ID_35x228mm` | Ammo/35x228mm | `ID.Item.35x228mm` | 35x228mm Anti-Air Cannon | ammo | 75 | 2 x 2 | 1.56 | Item.Caliber.35x228mm | 200 |
+| `ID_40mm` | Ammo/40mm | `Id.Item.40mm` | 40mm  | ammo | 1 | 2 x 1 | 0.28 | Item.Caliber.40mm | 100 |
+| `ID_45ACP` | Ammo/45ACP | `Id.Item.45ACP` | .45 ACP | ammo | 60 | 2 x 1 | — | Item.Caliber.45ACP | 10 |
+| `ID_45ACP_ArmorPiercing` | Ammo/45ACP | `Id.Item.45ACP.ArmorPiercing` | .45 ACP Armor Piercing (AP) | ammo | 60 | 2 x 1 | — | Item.Caliber.45ACP | 20 |
+| `ID_45ACP_ArmorPiercingTracer` | Ammo/45ACP | `Id.Item.45ACP.ArmorPiercing.Tracer` | .45 ACP Armor Piercing (AP) | ammo | 60 | 2 x 1 | — | Item.Caliber.45ACP | 20 |
+| `ID_45ACP_HollowPoint` | Ammo/45ACP | `Id.Item.45ACP.HollowPoint` | .45 ACP Flesh Damage (HP) | ammo | 60 | 2 x 1 | — | Item.Caliber.45ACP | 15 |
+| `ID_45ACP_HollowPointTracer` | Ammo/45ACP | `Id.Item.45ACP.HollowPoint.Tracer` | .45 ACP Flesh Damage (HP) | ammo | 60 | 2 x 1 | — | Item.Caliber.45ACP | 15 |
+| `ID_45ACP_Tracer` | Ammo/45ACP | `Id.Item.45ACP.Tracer` | .45 ACP Standard (FMJ) | ammo | 60 | 2 x 1 | — | Item.Caliber.45ACP | 10 |
+| `ID_45Colt` | Ammo/45Colt | `Id.Item.45Colt` | .45 Colt | ammo | 30 | — | — | Item.Caliber.45Colt | 33 |
+| `ID_45Colt_ArmorPiercing` | Ammo/45Colt | `Id.Item.45Colt.ArmorPiercing` | .45 Colt Armor Piercing (AP) | ammo | 30 | — | — | Item.Caliber.45Colt | 66 |
+| `ID_45Colt_ArmorPiercing_Tracer` | Ammo/45Colt | `Id.Item.45Colt.ArmorPiercing.Tracer` | .45 Colt Armor Piercing (AP) | ammo | 30 | — | — | Item.Caliber.45Colt | 66 |
+| `ID_45Colt_HollowPoint` | Ammo/45Colt | `Id.Item.45Colt.HollowPoint` | .45 Colt Flesh Damage (HP) | ammo | 30 | — | — | Item.Caliber.45Colt | 50 |
+| `ID_45Colt_HollowPoint_Tracer` | Ammo/45Colt | `Id.Item.45Colt.HollowPoint.Tracer` | .45 Colt Flesh Damage (HP) | ammo | 30 | — | — | Item.Caliber.45Colt | 50 |
+| `ID_45Colt_Tracer` | Ammo/45Colt | `Id.Item.45Colt.Tracer` | .45 Colt Standard (FMJ) | ammo | 30 | — | — | Item.Caliber.45Colt | 33 |
+| `ID_50AE` | Ammo/50AE | `Id.Item.50AE` | 50AE | ammo | 30 | 2 x 1 | — | Item.Caliber.50AE | 20 |
+| `ID_50AE_ArmorPiercing` | Ammo/50AE | `Id.Item.50AE.ArmorPiercing` | 50AE Armor Piercing (AP) | ammo | 30 | 2 x 1 | — | Item.Caliber.50AE | 90 |
+| `ID_50AE_ArmorPiercing_Tracer` | Ammo/50AE | `Id.Item.50AE.ArmorPiercing.Tracer` | 50AE Armor Piercing (AP) | ammo | 30 | 2 x 1 | — | Item.Caliber.50AE | 90 |
+| `ID_50AE_HollowPoint` | Ammo/50AE | `Id.Item.50AE.HollowPoint` | 50AE Flesh Damage (HP) | ammo | 30 | 2 x 1 | — | Item.Caliber.50AE | 35 |
+| `ID_50AE_HollowPoint_Tracer` | Ammo/50AE | `Id.Item.50AE.HollowPoint.Tracer` | 50AE Flesh Damage (HP) | ammo | 30 | 2 x 1 | — | Item.Caliber.50AE | 35 |
+| `ID_50AE_Tracer` | Ammo/50AE | `Id.Item.50AE.Tracer` | 50AE Standard (FMJ) | ammo | 30 | 2 x 1 | — | Item.Caliber.50AE | 20 |
+| `ID_50Cal` | Ammo/50Cal | `Id.Item.50Cal` | .50Cal | ammo | 20 | 2 x 1 | — | Item.Caliber.50Cal | 250 |
+| `ID_50Cal_ArmorPiercing` | Ammo/50Cal | `Id.Item.50Cal.ArmorPiercing` | .50 Cal AP | ammo | 30 | 2 x 1 | — | Item.Caliber.50Cal | 500 |
+| `ID_50Cal_ArmorPiercing_Tracer` | Ammo/50Cal | `Id.Item.50Cal.ArmorPiercing.Tracer` | .50 Cal AP (T) | ammo | 30 | 2 x 1 | — | Item.Caliber.50Cal | 500 |
+| `ID_50Cal_HollowPoint` | Ammo/50Cal | `Id.Item.50Cal.HollowPoint` | .50 Cal HP | ammo | 30 | 2 x 1 | — | Item.Caliber.50Cal | 375 |
+| `ID_50Cal_HollowPoint_Tracer` | Ammo/50Cal | `Id.Item.50Cal.HollowPoint.Tracer` | .50 Cal HP (T) | ammo | 30 | 2 x 1 | — | Item.Caliber.50Cal | 375 |
+| `ID_50Cal_Tracer` | Ammo/50Cal | `Id.Item.50Cal.Tracer` | .50Cal Standard (FMJ) | ammo | 20 (overrides: Inventory.Slot.Vehicle.Storage 50, Inventory.Type.Vehicle 50) | 2 x 1 | — | Item.Caliber.50Cal | 250 |
+| `ID_545mm` | Ammo/545mm | `Id.Item.545mm` | 5.45x39mm | ammo | 80 | 2 x 1 | — | Item.Caliber.545mm | 15 |
+| `ID_545mm_ArmorPiercing` | Ammo/545mm | `Id.Item.545mm.ArmorPiercing` | 5.45mm Armor Piercing (AP) | ammo | 80 | 2 x 1 | — | Item.Caliber.545mm | 40 |
+| `ID_545mm_ArmorPiercing_Tracer` | Ammo/545mm | `Id.Item.545mm.ArmorPiercing.Tracer` | 5.45mm Armor Piercing (AP) | ammo | 80 | 2 x 1 | — | Item.Caliber.545mm | 40 |
+| `ID_545mm_HollowPoint` | Ammo/545mm | `Id.Item.545mm.HollowPoint` | 5.45mm Flesh Damage (HP) | ammo | 80 | 2 x 1 | — | Item.Caliber.545mm | 25 |
+| `ID_545mm_HollowPoint_Tracer` | Ammo/545mm | `Id.Item.545mm.HollowPoint.Tracer` | 5.45mm Flesh Damage (HP) | ammo | 80 | 2 x 1 | — | Item.Caliber.545mm | 25 |
+| `ID_545mm_Tracer` | Ammo/545mm | `Id.Item.545mm.Tracer` | 5.45mm Standard (FMJ) | ammo | 80 | 2 x 1 | — | Item.Caliber.545mm | 15 |
+| `ID_556mm` | Ammo/556mm | `Id.Item.556mm` | 5.56x45mm | ammo | 80 (overrides: Inventory.Slot.Vehicle.Storage 150) | 2 x 1 | — | Item.Caliber.556mm | 15 |
+| `ID_556mm_ArmorPiercing` | Ammo/556mm | `Id.Item.556mm.ArmorPiercing` | 5.56mm Armor Piercing (AP) | ammo | 80 (overrides: Inventory.Slot.Vehicle.Storage 150) | 2 x 1 | — | Item.Caliber.556mm | 40 |
+| `ID_556mm_ArmorPiercing_Tracer` | Ammo/556mm | `Id.Item.556mm.ArmorPiercing.Tracer` | 5.56mm Armor Piercing (AP) | ammo | 80 (overrides: Inventory.Slot.Vehicle.Storage 150) | 2 x 1 | — | Item.Caliber.556mm | 40 |
+| `ID_556mm_HollowPoint` | Ammo/556mm | `Id.Item.556mm.HollowPoint` | 5.56mm Flesh Damage (HP) | ammo | 80 (overrides: Inventory.Slot.Vehicle.Storage 150) | 2 x 1 | — | Item.Caliber.556mm | 25 |
+| `ID_556mm_HollowPoint_Tracer` | Ammo/556mm | `Id.Item.556mm.HollowPoint.Tracer` | 5.56mm Flesh Damage (HP) | ammo | 80 (overrides: Inventory.Slot.Vehicle.Storage 150) | 2 x 1 | — | Item.Caliber.556mm | 25 |
+| `ID_556mm_Tracer` | Ammo/556mm | `Id.Item.556mm.Tracer` | 5.56mm Standard (FMJ) | ammo | 80 (overrides: Inventory.Slot.Vehicle.Storage 150) | 2 x 1 | — | Item.Caliber.556mm | 15 |
+| `ID_70mm` | Ammo/70mm | `ID.Item.70mm` | 70mm | ammo | — | 3 x 1 | — | Item.Caliber.70mm | — |
+| `ID_72mm` | Ammo/72mm | `Id.Item.72mm` | 72mm | ammo | — | 2 x 1 | — | Item.Caliber.72mm | 600 |
+| `ID_762mm` | Ammo/762mm | `Id.Item.762mm` | 7.62x39mm | ammo | 60 | 2 x 1 | — | Item.Caliber.762mm | 40 |
+| `ID_762mm_ArmorPiercing` | Ammo/762mm | `Id.Item.762mm.ArmorPiercing` | 7.62mm Armor Piercing (AP) | ammo | 60 | 2 x 1 | — | Item.Caliber.762mm | 150 |
+| `ID_762mm_ArmorPiercing_Tracer` | Ammo/762mm | `Id.Item.762mm.ArmorPiercing.Tracer` | 7.62mm Armor Piercing (AP) | ammo | 60 | 2 x 1 | — | Item.Caliber.762mm | 150 |
+| `ID_762mm_HollowPoint` | Ammo/762mm | `Id.Item.762mm.HollowPoint` | 7.62mm Flesh Damage (HP) | ammo | 60 | 2 x 1 | — | Item.Caliber.762mm | 90 |
+| `ID_762mm_HollowPoint_Tracer` | Ammo/762mm | `Id.Item.762mm.HollowPoint.Tracer` | 7.62mm Flesh Damage (HP) | ammo | 60 | 2 x 1 | — | Item.Caliber.762mm | 90 |
+| `ID_762mm_Tracer` | Ammo/762mm | `Id.Item.762mm.Tracer` | 7.62mm Standard (FMJ) | ammo | 60 | 2 x 1 | — | Item.Caliber.762mm | 40 |
+| `ID_762x51mm` | Ammo/762x51mm | `Id.Item.762x51mm` | 7.62x51mm | ammo | 100 (overrides: Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.762x51mm | 300 |
+| `ID_762x51mm_ArmorPiercing` | Ammo/762x51mm | `Id.Item.762x51mm.ArmorPiercing` | 7.62x51mm Armor Piercing (AP) | ammo | 100 (overrides: Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.762x51mm | — |
+| `ID_762x51mm_ArmorPiercing_Tracer` | Ammo/762x51mm | `Id.Item.762x51mm.ArmorPiercing.Tracer` | 7.62x51mm Armor Piercing (AP) | ammo | 100 (overrides: Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.762x51mm | 250 |
+| `ID_762x51mm_HollowPoint` | Ammo/762x51mm | `Id.Item.762x51mm.HollowPoint` | 762x51mm Flesh Damage (HP) | ammo | 100 (overrides: Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.762x51mm | — |
+| `ID_762x51mm_HollowPoint_Tracer` | Ammo/762x51mm | `Id.Item.762x51mm.HollowPoint.Tracer` | 762x51mm Flesh Damage (HP) | ammo | 100 (overrides: Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.762x51mm | — |
+| `ID_762x51mm_Tracer` | Ammo/762x51mm | `Id.Item.762x51mm.Tracer` | 7.62x51mm Standard (FMJ) | ammo | 100 (overrides: Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.762x51mm | 200 |
+| `ID_762x54mm` | Ammo/762x54mm | `Id.Item.762x54mm` | 7.62x54mm | ammo | 40 | 2 x 1 | — | Item.Caliber.762x54mm | 30 |
+| `ID_762x54mm_ArmorPiercing` | Ammo/762x54mm | `Id.Item.762x54mm.ArmorPiercing` | 7.62x54mm Armor Piercing (AP) | ammo | 40 | 2 x 1 | — | Item.Caliber.762x54mm | 90 |
+| `ID_762x54mm_ArmorPiercing_Tracer` | Ammo/762x54mm | `Id.Item.762x54mm.ArmorPiercing.Tracer` | 7.62x54mm Armor Piercing (AP) | ammo | 40 (overrides: Inventory.Slot.Vehicle.Storage 150, Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.762x54mm | 90 |
+| `ID_762x54mm_HollowPoint` | Ammo/762x54mm | `Id.Item.762x54mm.HollowPoint` | 7.62x54mm Flesh Damage (HP) | ammo | 40 | 2 x 1 | — | Item.Caliber.762x54mm | 55 |
+| `ID_762x54mm_HollowPoint_Tracer` | Ammo/762x54mm | `Id.Item.762x54mm.HollowPoint.Tracer` | 7.62x54mm Flesh Damage (HP) | ammo | 40 (overrides: Inventory.Slot.Vehicle.Storage 150, Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.762x54mm | 55 |
+| `ID_762x54mm_Tracer` | Ammo/762x54mm | `Id.Item.762x54mm.Tracer` | 7.62x54mm Standard (FMJ) | ammo | 40 (overrides: Inventory.Slot.Vehicle.Storage 150, Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.762x54mm | 30 |
+| `ID_84mm` | Ammo/84mm | `Id.Item.84mm` | 84mm | ammo | — | 2 x 1 | 3.5 | Item.Caliber.84mm | 200 |
+| `ID_93mm` | Ammo/93mm | `Id.Item.93mm` | 93mm | ammo | — | 3 x 1 | 2.6 | Item.Caliber.93mm | 200 |
+| `ID_9mm` | Ammo/9mm | `Id.Item.9mm` | 9x19mm | ammo | 80 | 2 x 1 | — | Item.Caliber.9mm | 10 |
+| `ID_9mm_ArmorPiercing` | Ammo/9mm | `Id.Item.9mm.ArmorPiercing` | 9mm Armor Piercing (AP) | ammo | 100 | 2 x 1 | — | Item.Caliber.9mm | 20 |
+| `ID_9mm_ArmorPiercing_Tracer` | Ammo/9mm | `Id.Item.9mm.ArmorPiercing.Tracer` | 9mm Armor Piercing (AP) | ammo | 100 | 2 x 1 | — | Item.Caliber.9mm | 20 |
+| `ID_9mm_HollowPoint` | Ammo/9mm | `Id.Item.9mm.HollowPoint` | 9mm Flesh Damage (HP) | ammo | 100 | 2 x 1 | — | Item.Caliber.9mm | 15 |
+| `ID_9mm_HollowPoint_Tracer` | Ammo/9mm | `Id.Item.9mm.HollowPoint.Tracer` | 9mm Flesh Damage (HP) | ammo | 100 | 2 x 1 | — | Item.Caliber.9mm | 15 |
+| `ID_9mm_Tracer` | Ammo/9mm | `Id.Item.9mm.Tracer` | 9mm Standard (FMJ) | ammo | 100 | 2 x 1 | — | Item.Caliber.9mm | 10 |
+| `ID_DebugHomingRocket_Ammo` | Ammo/DebugHomingRocket | `Id.Item.DebugHomingRocketAmmo` | RocketTesting 84mm | ammo | 99 | — | — | Item.Caliber.84mm | — |
+<!-- /resource_tables -->
+
+*Source: [`Wardogs/Content/Items/Resources/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Resources) (99 `.json`, 94 item definitions). Display names from [`Wardogs/Content/UI/Data/Entities/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Data/Entities) and prices from the vendor tables under [`NPCs/Vendor/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/WorldInteractable/NPCs/Vendor). Generated by `_tools/resource_tables.py`.*
+
 ---
 
 *Source files: [`Wardogs/Content/Items/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items) (259 `.json`).*
@@ -490,4 +597,5 @@ Other settings: `bFOVReticleScaling` is False for every class that sets it. `bAp
 | Date | Change |
 |---|---|
 | 2026-10-18 | `data/` re-exported with the v2 usmap (names only; values unchanged): the aim-assist rows in §9 and the Season 02 notes use the corrected `Pull`/`Slow` `Inner`/`Outer` `Hip`/`Ads` names. The values did not move; the first export had put the wrong names on them. |
+| 2026-10-22 | Added the Resources and ammunition section: one row per item definition in `Items/Resources/`, generated by `_tools/resource_tables.py`. |
 | 2026-10-18 | Round-6 verifier corrections: `SupportFilter` has a fourth mode, `AllowPriority` (unused in data); `DefaultItems` is used only when `DefaultContainerItems` is empty (`0x6784010`), so the M4 Standard Mag loads `Id.Item.556mm.Tracer`. |
