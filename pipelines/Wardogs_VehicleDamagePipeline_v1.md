@@ -876,40 +876,40 @@ Assumption: point hits only (radial flags do not apply); the
 section-requirement filter, repair and regeneration are ignored.
 
 <!-- damage_tables --survive -->
-| Variant | Damage row (`Meta.Damage.Vehicle.` omitted) | Main health | `556mm` | `50Cal` | `20x102mm` | `30mm` |
-|---|---|---:|---|---|---|---|
-| `Attack_ROT_02` | `Air.Rotary.Havoc` | 800 | 1143 / 643 (Wheel.Left.Front) | 356 / 200 (Wheel.Left.Front) | 182 | 42 |
-| `ROT_03_Default` | `Air.Rotary.LittleBird` | 400 | 191 | 60 | 71 | 7 |
-| `ROT_03_MachineGuns` | `Air.Rotary.LittleBird` | 400 | 191 | 60 | 71 | 7 |
-| `ROT_03_RocketPods` | `Air.Rotary.LittleBird` | 400 | 191 | 60 | 71 | 7 |
-| `ROT_04_Default` | `Air.Rotary.ROT_04` | 600 | 858 / 429 (Rotor.Tail) | 267 / 134 (Rotor.Tail) | 167 | 24 |
-| `ROT_04_MountedMachineGuns` | `Air.Rotary.ROT_04` | 600 | 858 / 429 (Rotor.Tail) | 267 / 134 (Rotor.Tail) | 167 | 24 |
-| `SPW_01` | `Land.Tracked.Leopard.Spawn` | 1000 | — | — | 366 | 51 |
-| `SPW_02` | `Land.Tracked.Leopard.Spawn` | 1000 | — | — | 366 | 51 |
-| `SPW_03` | `Land.Tracked.Leopard.Spawn` | 1000 | — | — | 366 | 51 |
-| `STN_01` | `Stationary.Mistral` | 3000 | 715 | 223 | 167 | 60 |
-| `STN_02` | `Stationary.Phalanx` | 5000 | 1191 | 371 | 278 | 100 |
-| `STN_03` | `Stationary.Mortar` | 3000 | 715 | 223 | 167 | 60 |
-| `STN_04` | `Stationary.RadioTower` | 1000 | 715 | 223 | 56 | 12 |
-| `STN_05` | `Stationary.STN_05` | 3000 | 715 | 223 | 167 | 60 |
-| `STN_06` | `Stationary.MGNest` | 1800 | 65 | 20 | 30 | 18 |
-| `TNK_01_AntiAir` | `Land.Tracked.TNK_01.AntiAir` | 800 | — | — | 312 | 47 |
-| `TNK_01_Artillery` | `Land.Tracked.TNK_01.Artillery` | 650 | — | — | 254 | 39 |
-| `TNK_01_Heavy` | `Land.Tracked.TNK_01.Heavy` | 800 | — | — | 312 | 47 |
-| `TNK_04` | `Land.Tracked.TNK_04.Default` | 750 | — | — | 176 | 38 |
-| `WHL_01_Default` | `Land.Wheeled.Bobcat` | 200 | 96 / 64 (Wheel.Left.Front) | 30 / 20 (Wheel.Left.Front) | 14 | 2 |
-| `WHL_02_Default` | `Land.Wheeled.Patriot.Kodiak` | 400 | 572 / 143 (Wheel.Left.Front) | 178 / 45 (Wheel.Left.Front) | 39 | 8 |
-| `WHL_02_Pickup` | `Land.Wheeled.Patriot.Kodiak` | 400 | 572 / 143 (Wheel.Left.Front) | 178 / 45 (Wheel.Left.Front) | 39 | 8 |
-| `WHL_02_SUV_RingTurret` | `Land.Wheeled.Patriot.Kodiak` | 400 | 572 / 143 (Wheel.Left.Front) | 178 / 45 (Wheel.Left.Front) | 39 | 8 |
-| `WHL_05_Humvee_Default` | `Land.Wheeled.Humvee.Default` | 500 | 715 / 129 (FuelTank) | 223 / 40 (FuelTank) | 56 | 17 |
-| `WHL_05_Humvee_RingMinigun` | `Land.Wheeled.Humvee.Minigun` | 500 | 1429 / 258 (FuelTank) | 445 / 80 (FuelTank) | 70 | 20 |
-| `WHL_05_Humvee_RingTurret` | `Land.Wheeled.Humvee.MachineGun` | 500 | 893 / 161 (FuelTank) | 278 / 50 (FuelTank) | 62 | 23 |
-| `WHL_06_DuneBuggy_Default` | `Land.Wheeled.DuneBuggy` | 400 | 286 / 84 (FuelTank) | 89 / 26 (FuelTank) | 27 | 10 |
-| `WHL_07_Battle` | `Land.Wheeled.Ural` | 700 | 1000 / 175 (FuelTank) | 312 / 55 (FuelTank) | 94 | 12 |
-| `WHL_07_Default` | `Land.Wheeled.Ural` | 700 | 1000 / 175 (FuelTank) | 312 / 55 (FuelTank) | 94 | 12 |
-| `WHL_07_ArmouredBattle` | `Land.Wheeled.Ural` | 700 | 1000 / 175 (FuelTank) | 312 / 55 (FuelTank) | 94 | 12 |
-| `WHL_08_Default` | `Land.Wheeled.WHL_08.Default` | 500 | 715 / 204 (Wheel.Left.Front) | 223 / 63 (Wheel.Left.Front) | 53 | 13 |
-| `WHL_08_RingTurret` | `Land.Wheeled.WHL_08.Default` | 500 | 715 / 204 (Wheel.Left.Front) | 223 / 63 (Wheel.Left.Front) | 53 | 13 |
+| Variant | Damage row (`Meta.Damage.Vehicle.` omitted) | Main health | `556mm` | `762x54mm` | `308Win` | `50Cal` | `20x102mm` | `30mm` |
+|---|---|---:|---|---|---|---|---|---|
+| `Attack_ROT_02` | `Air.Rotary.Havoc` | 800 | 1143 / 643 (Wheel.Left.Front) | 728 / 410 (Wheel.Left.Front) | 2371 / 1334 (Wheel.Left.Front) | 356 / 200 (Wheel.Left.Front) | 182 | 42 |
+| `ROT_03_Default` | `Air.Rotary.LittleBird` | 400 | 191 | 122 | 264 | 60 | 71 | 7 |
+| `ROT_03_MachineGuns` | `Air.Rotary.LittleBird` | 400 | 191 | 122 | 264 | 60 | 71 | 7 |
+| `ROT_03_RocketPods` | `Air.Rotary.LittleBird` | 400 | 191 | 122 | 264 | 60 | 71 | 7 |
+| `ROT_04_Default` | `Air.Rotary.ROT_04` | 600 | 858 / 429 (Rotor.Tail) | 546 / 273 (Rotor.Tail) | 1334 / 667 (Rotor.Tail) | 267 / 134 (Rotor.Tail) | 167 | 24 |
+| `ROT_04_MountedMachineGuns` | `Air.Rotary.ROT_04` | 600 | 858 / 429 (Rotor.Tail) | 546 / 273 (Rotor.Tail) | 1334 / 667 (Rotor.Tail) | 267 / 134 (Rotor.Tail) | 167 | 24 |
+| `SPW_01` | `Land.Tracked.Leopard.Spawn` | 1000 | — | — | — | — | 366 | 51 |
+| `SPW_02` | `Land.Tracked.Leopard.Spawn` | 1000 | — | — | — | — | 366 | 51 |
+| `SPW_03` | `Land.Tracked.Leopard.Spawn` | 1000 | — | — | — | — | 366 | 51 |
+| `STN_01` | `Stationary.Mistral` | 3000 | 715 | 455 | 445 | 223 | 167 | 60 |
+| `STN_02` | `Stationary.Phalanx` | 5000 | 1191 | 758 | 741 | 371 | 278 | 100 |
+| `STN_03` | `Stationary.Mortar` | 3000 | 715 | 455 | 445 | 223 | 167 | 60 |
+| `STN_04` | `Stationary.RadioTower` | 1000 | 715 | 455 | 445 | 223 | 56 | 12 |
+| `STN_05` | `Stationary.STN_05` | 3000 | 715 | 455 | 445 | 223 | 167 | 60 |
+| `STN_06` | `Stationary.MGNest` | 1800 | 65 | 41 | 40 | 20 | 30 | 18 |
+| `TNK_01_AntiAir` | `Land.Tracked.TNK_01.AntiAir` | 800 | — | — | — | — | 312 | 47 |
+| `TNK_01_Artillery` | `Land.Tracked.TNK_01.Artillery` | 650 | — | — | — | — | 254 | 39 |
+| `TNK_01_Heavy` | `Land.Tracked.TNK_01.Heavy` | 800 | — | — | — | — | 312 | 47 |
+| `TNK_04` | `Land.Tracked.TNK_04.Default` | 750 | — | — | — | — | 176 | 38 |
+| `WHL_01_Default` | `Land.Wheeled.Bobcat` | 200 | 96 / 64 (Wheel.Left.Front) | 61 / 40 (Wheel.Left.Front) | 170 / 113 (Wheel.Left.Front) | 30 / 20 (Wheel.Left.Front) | 14 | 2 |
+| `WHL_02_Default` | `Land.Wheeled.Patriot.Kodiak` | 400 | 572 / 143 (Wheel.Left.Front) | 364 / 91 (Wheel.Left.Front) | 712 / 178 (Wheel.Left.Front) | 178 / 45 (Wheel.Left.Front) | 39 | 8 |
+| `WHL_02_Pickup` | `Land.Wheeled.Patriot.Kodiak` | 400 | 572 / 143 (Wheel.Left.Front) | 364 / 91 (Wheel.Left.Front) | 712 / 178 (Wheel.Left.Front) | 178 / 45 (Wheel.Left.Front) | 39 | 8 |
+| `WHL_02_SUV_RingTurret` | `Land.Wheeled.Patriot.Kodiak` | 400 | 572 / 143 (Wheel.Left.Front) | 364 / 91 (Wheel.Left.Front) | 712 / 178 (Wheel.Left.Front) | 178 / 45 (Wheel.Left.Front) | 39 | 8 |
+| `WHL_05_Humvee_Default` | `Land.Wheeled.Humvee.Default` | 500 | 715 / 129 (FuelTank) | 455 / 82 (FuelTank) | 889 / 160 (FuelTank) | 223 / 40 (FuelTank) | 56 | 17 |
+| `WHL_05_Humvee_RingMinigun` | `Land.Wheeled.Humvee.Minigun` | 500 | 1429 / 258 (FuelTank) | 910 / 164 (FuelTank) | 1778 / 320 (FuelTank) | 445 / 80 (FuelTank) | 70 | 20 |
+| `WHL_05_Humvee_RingTurret` | `Land.Wheeled.Humvee.MachineGun` | 500 | 893 / 161 (FuelTank) | 569 / 103 (FuelTank) | 1112 / 200 (FuelTank) | 278 / 50 (FuelTank) | 62 | 23 |
+| `WHL_06_DuneBuggy_Default` | `Land.Wheeled.DuneBuggy` | 400 | 286 / 84 (FuelTank) | 182 / 54 (FuelTank) | 324 / 95 (FuelTank) | 89 / 26 (FuelTank) | 27 | 10 |
+| `WHL_07_Battle` | `Land.Wheeled.Ural` | 700 | 1000 / 175 (FuelTank) | 637 / 112 (FuelTank) | 1778 / 311 (FuelTank) | 312 / 55 (FuelTank) | 94 | 12 |
+| `WHL_07_Default` | `Land.Wheeled.Ural` | 700 | 1000 / 175 (FuelTank) | 637 / 112 (FuelTank) | 1778 / 311 (FuelTank) | 312 / 55 (FuelTank) | 94 | 12 |
+| `WHL_07_ArmouredBattle` | `Land.Wheeled.Ural` | 700 | 1000 / 175 (FuelTank) | 637 / 112 (FuelTank) | 1778 / 311 (FuelTank) | 312 / 55 (FuelTank) | 94 | 12 |
+| `WHL_08_Default` | `Land.Wheeled.WHL_08.Default` | 500 | 715 / 204 (Wheel.Left.Front) | 455 / 130 (Wheel.Left.Front) | 889 / 254 (Wheel.Left.Front) | 223 / 63 (Wheel.Left.Front) | 53 | 13 |
+| `WHL_08_RingTurret` | `Land.Wheeled.WHL_08.Default` | 500 | 715 / 204 (Wheel.Left.Front) | 455 / 130 (Wheel.Left.Front) | 889 / 254 (Wheel.Left.Front) | 223 / 63 (Wheel.Left.Front) | 53 | 13 |
 <!-- /damage_tables -->
 
 ## 6. Top damage source tags
