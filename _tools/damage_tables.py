@@ -687,7 +687,8 @@ def hitbox_table(proj):
 def survive_table(proj):
     """Hits to destroy every vehicle variant: main body, and the fastest section, per caliber."""
     generic, vrows = vehicle_tables()
-    cals = ["Item.Caliber.556mm", "Item.Caliber.50Cal", "Item.Caliber.20x102mm", "Item.Caliber.30mm"]
+    cals = ["Item.Caliber.556mm", "Item.Caliber.762x54mm", "Item.Caliber.308Win", "Item.Caliber.50Cal",
+            "Item.Caliber.20x102mm", "Item.Caliber.30mm"]
     print("| Variant | Damage row (`Meta.Damage.Vehicle.` omitted) | Main health | "
           + " | ".join(f"`{c.replace('Item.Caliber.', '')}`" for c in cals) + " |")
     print("|---|---|---:|" + "---|" * len(cals))
