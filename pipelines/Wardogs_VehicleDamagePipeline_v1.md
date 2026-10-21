@@ -17,6 +17,19 @@ There are two differences. Vehicle rows contain no custom operations,
 and the modified amount goes to a section-based health model instead of
 `TakeDamage`.
 
+Offline native replay now covers event conversion, configured system
+activation and ModifyDamage dispatch for all 63 retained critical blast
+contacts, matching final float32 amounts and modification records. These
+fixtures supply UObject, registry and lifecycle services; see the
+[round 11 evidence boundaries](../docs/ROUND11_STATUS.md#native-event-conversion-activation-and-dispatch).
+The later handoff replay also covers 20 complete retained health sequences
+(46 applications), through native context copy, interface fallback and section
+routing. Its supplied world/lifecycle and context-attachment boundaries are
+recorded in the [handoff evidence](../docs/ROUND11_STATUS.md#native-damage-context-dispatch-through-vehicle-health).
+The complete radial caller now also runs from entry to return with an owned
+one-actor gather, including filtering and typed context assembly; see the
+[radial caller scope](../docs/ROUND11_STATUS.md#complete-radial-caller-assembly-after-owned-gathering).
+
 Build: `++Wardogs+Live-CL-516586` · Engine: UE 5.7 · Native addresses are
 file RVAs in the restored executable (see the damage doc §11). Labels as in
 the damage doc: **Native** (code, RVA cited, unreviewed decompiler
@@ -165,6 +178,16 @@ category sorts first (index −1).
 **Native** (`0x6B80230`). The event's hit location is the first
 `Meta.Damage.HitLocation.*` tag in the hit section's `Tags`. Rules with
 `PossibleHitLocations` such as `…Vehicle.MainRotor` match against it.
+Native parent matching also accepts the exact `Meta.Damage.HitLocation`
+root. Round 11 replay verifies all 154 exported slots and the root/default/
+inheritance boundaries; the export compiler now includes that root case.
+
+The replayed vehicle acceptance method (`0x76B63E0`) permits a target outside
+`State.Location.SafeZone`, or inside `State.Location.SafeZone.Hostile`.
+Its native cached-tag query follows explicit and parent tags. This is one
+vehicle interface table with owned cached state, not captured runtime state
+for every vehicle class; see the
+[lookup and acceptance evidence](../docs/ROUND11_STATUS.md#native-hit-location-lookup-and-safe-zone-acceptance).
 
 ### 3.1 Hitboxes
 
@@ -922,7 +945,7 @@ Every row has a `Meta.Damage.Bullet` rule.
 | V-6 | Network authority | Not observable statically; security questions go through [`SECURITY.md`](../SECURITY.md) |
 | V-7 | **Closed** for physics contacts and ordinary movement sweeps (§3.2): contacts use the hitter's body index; sweeps preserve body/instance indices with face-return disabled and reverse Item/MyItem for the struck actor. Ordinary single-body cases give −1 and no section. Custom face-return queries are distinct. | [Native sweep conversion](../docs/evidence/round8-vehicle-sweep.md) |
 | V-8 | **Closed** (§3.2): the shooter's seat picks the branch of `0x6B92900`. `0x6E6EBA0` returns the vehicle whose seat the shooter occupies (`VehicleOperatorComponent.CurrentSeat`, owner a `BHBaseVehiclePawn`). On foot, `0x6F042A0` traces the cone; seated, `0x6F06EB0` hits only that vehicle's occupants, and `0x6B92900` applies the self-damage map straight to the vehicle ([DamagePipeline §1.1](Wardogs_DamagePipeline_v2.md#11-callers-and-where-the-result-goes)) | `0x6E6EBA0`, `0x532DD70`, `0x6F06EB0` |
-| V-9 | Whether a literally numbered material slot (such as `CC_Wheel_0`) ever exists on a static mesh. The generator assumes not, which holds for the decoded ROT_02 wheel meshes | Decode every registered static mesh's collision mesh |
+| V-9 | **Closed for the frozen authored census**: all 276 registered static component/state rows resolve to 217 own/collision meshes. None has a literal numbered slot whose base is `CC_Wheel` or `CC_Tyre`. Runtime mesh/material overrides are outside this asset audit. | `numbered-material-slot-audit-v1.json`; [round 11 audit](../docs/ROUND11_STATUS.md#numbered-material-slots-and-native-collision-damage) |
 | V-10 | **Closed** (§3.2): the wheel index order, the `DataIndex` assignment and the mesh swap are traced. The state byte (`+0x9B0`) is written only by `0x537C580` from the wheel's `TyreHealthAttribute` (2 at ≤ 0, 1 at ≤ `DeflateThreshold` 0.55 of max), and the runtime wheels are built one per setup entry, in order, for two-wheel axles (`0x53999B0`, `0x53999CF`); every shipped axle has two | `0x537C580`, `0x53999B0` |
 
 ## 8. Cross-references
@@ -951,3 +974,1126 @@ Every row has a `Meta.Damage.Bullet` rule.
 | 2026-10-18 | Radial amount is the verified falloff (Damage pipeline §1.1); the vehicle viewer has a "Blast at distance" view. |
 | 2026-10-18 | Radial hits take the `Radius.Inner` / `.Outer` rule factor, not the direct-hit one (§4.1); the viewer defaults explosive calibers to the blast at 0 m. Fixes the Kodiak showing 4 MAAWS hits where the game one-shots it. |
 | 2026-10-18 | Round-7 BA-2/BA-3: the deflated hull is the destruction mesh's `BodySetup` with its trimesh; slot name from the hit component's mesh, index from the hull (`0x50BF880`). |
+
+
+### Shipped collision curves and omitted native defaults
+
+`shipped-collision-curves-native-v1.json` executes the native settings and
+data-asset constructors, runtime external/inline curve lookup, rich-curve
+evaluator and unweighted interpolation, followed by the full collision
+magnitude helper. **23 settings assets / 38 curves cover all 33 variants** by
+authored reference reachability. **534 curve samples and 3,312 magnitude checks
+pass**, including serialized keys, constant bounds and exact float32 composition.
+There is no supplied curve-value callback. This compares native standalone
+curve evaluation with native magnitude composition; it is not an independent
+cubic oracle or a live-game comparison.
+
+All 23 assets omit the relevant scalar properties. Native constructor defaults
+are HighSpeedThreshold 30, bCrushDamageAtHighSpeed true, SpeedCrushFactor
+float32(0.8), CrushPenetrationThreshold 20, CrushDamageMultiplier 1000 and
+VehicleDamageCooldownTimer 0.5. SDK layout now binds these names to component
+fields +0x5F8 through +0x60C. Empty inline curves use the native MAX_FLT default
+sentinel and return the caller default. All 38 exported curves are unweighted.
+The native rich-curve VFT points to the executed evaluator at slot 17.
+
+A fresh read-only CUE4Parse export from the installed PAKs matches the exact
+DamageEntitySettings / FloatCurve properties for all **61 packages**. All
+**35** previously frozen skeletal-package identities also match. This binds
+the data to the same installed asset set; it does not capture live overrides.
+Serialized property overlay, base/unrelated targeting-constructor services,
+native gameplay configuration copy/precedence and runtime loading remain
+supplied or unverified. Component construction and contact callbacks are not
+established by this receipt.
+
+A second label correction applies to the radial fixture: `event_face` and
+`typed_hit_faces` were owned opaque IDs stored in **FHitResult.MyItem +0xA4**,
+not FaceIndex +0. `full-radial-hit-id-label-correction-v1.json` renames those
+fields to `event_my_item` / `typed_hit_my_items`. The original receipt remains
+preserved, and reversing all 144 label instances reproduces it exactly.
+Filtering, order, hit-copy and numeric results are unchanged. This correction
+is derived evidence, not another native execution.
+
+`shipped-curves-checkpoint-validation-v1.json` binds the frozen EXE, native CFG
+and constant bytes, producer/fixture identities, SDK/source inputs, fresh PAK
+exports and the reversible label correction. `FIRST_TRACK_AUDIT_v3.md` records
+the remaining first-track boundaries. Next: native contact admission at
+0x76736C0 / 0x767E640, configuration precedence and class/caller attribution.
+Track one remains incomplete; tracks two through five remain pending in order.
+Calculator code/data are unchanged, so UI/arithmetic checks were not repeated.
+
+
+### Native contact admission and mesh-hit vector derivation
+
+`contact-admission-native-v2.json` executes the complete native 0x76736C0
+helper with the shipped settings and native curve evaluator. **1,242 catalog
+cases pass, with 894 forwarding positive amounts**, plus **17 boundary cases**.
+Null/garbage targets, non-authority owner roles, missing class/interface,
+existing cooldown and selected secondary-set/seat-list conditions suppress
+contacts before magnitude evaluation. An admitted positive amount inserts a
+cooldown entry and requests a non-looping **0.5-second** timer. The damage caller
+receives the other actor as target and the owner as both source and instigator.
+The final damage caller is supplied on this receipt; it has separate native
+execution evidence and is not yet joined here.
+
+Native class-registration arguments bind 0x53CAB60 to BHBaseVehiclePawn,
+0x527B100 to BHMoverPawn and 0x6E65DE0 to WDMoverCharacter. The helper selects
+component curve +0x460 for vehicle ancestry, +0x570 for mover-pawn ancestry,
+and +0x4E8 otherwise. Only the mover-pawn branch requests crush scaling.
+The native +0x758 getter executes and the SDK identifies VehicleSeatComponent;
+the related-actor list acquisition remains supplied. V1 fixtures used misleading
+`driver` object labels. V2 corrects those labels, executes the seat getter and
+retains every prior numeric result; both versions remain preserved.
+
+`mesh-hit-contact-native-v2.json` runs selected complete entry/return paths of
+0x767E640 through vector derivation and the actual contact helper: **276 catalog
+cases and 266 boundary cases pass**, with **536 contact-helper calls**. It tests
+the owner velocity squared, converted to float32, against 100; values at or
+below the threshold return before contact handling. WDMoverCharacter targets
+also return early. Valid movable primitives that pass the supplied simulation
+query contribute their supplied float32 mass. When their float32 mass sum is
+at least 1, native code divides the impulse by that sum in double precision;
+otherwise it keeps the impulse. The resulting vector drives actual native
+curve/magnitude/contact handling.
+
+These mesh-hit paths end naturally at a supplied positive duplicate-cache
+gate after contact handling. Later self-damage, effects and propagation branches
+remain unexecuted. Owner velocity, virtual physics queries/masses, reflection,
+weak-object creation, set storage/lookup/removal, related-actor acquisition,
+timer manager/scheduling, allocation and final damage dispatch remain supplied.
+No actual world physics, cache lifecycle or server behavior is established.
+`contact-admission-checkpoint-validation-v1.json` binds both current receipts,
+the seat getter, static class names, native CFG/constants and their input chain.
+`FIRST_TRACK_AUDIT_v4.md` keeps the whole first-track objective open. Next work
+is later mesh-hit branches, native configuration copy/precedence and remaining
+class/caller boundaries. Tracks two through five remain pending in order.
+No calculator code/data changed; no UI/arithmetic rerun or push was performed.
+
+
+### Native gameplay-config copy joined to contact handling
+
+`gameplay-config-copy-native-v2.json` executes complete entry/return paths of
+0x767BC40 with an owned vehicle owner at Role 0 and explicit setup services.
+**46 shipped-settings cases and eight boundary/override cases pass**, including
+**235 native runtime-curve copies** through 0x36269E0. Native code selects the
+supplied candidate, writes GameplayConfig +0xF0, and transfers the damage tag,
+all five curves and the six collision scalar fields into DamageEntitySettings
++0x3D0. The source data asset is populated by the fixture from verified native
+defaults and shipped serialized collision properties. Unrelated source settings
+remain at their native defaults.
+
+A missing/garbage container preserves the earlier config pointer; a missing or
+incompatible candidate clears it. A garbage candidate is assigned to +0xF0 but
+its settings are not copied. Missing/garbage owners return before selection.
+Owned non-default scalar values also copy exactly, so this behavior does not
+rely on constructor values coincidentally matching in both objects. Both GC
+flag states are covered with supplied barriers.
+
+`config-contact-joined-native-v1.json` then runs native contact handling in
+the same emulator state after each of **23 native configuration copies**.
+All **1,242 contacts / 894 positive forwards** match the separate contact
+receipt exactly in amount, curve choice, admission and timer requests. There
+are no component damage-settings writes between native BeginPlay and native
+contact handling. The fixture changes the supplied owner Role from 0 to 3
+before contact handling; this does not establish authority BeginPlay behavior.
+A null cached world pointer takes the native fallback lookup, whose result is
+supplied, before scheduling a timer.
+
+Contact receipt V3 corrects an aliasing bug in trace recording: later standalone
+oracle evaluations could append to an earlier case's `curve_samples` list.
+`contact-admission-native-v3.json` snapshots that list and proves exactly one
+native curve sample per catalog contact. V1/V2 remain preserved; every amount,
+curve selection, admission and timer result is unchanged. V3 is the current
+contact receipt. Mesh-hit V2 results do not retain that sample list and are
+unaffected. The correction changes fixture trace storage, not native code.
+
+The native settings copy is now executed and joined. Module/asset acquisition,
+class compatibility, source property deserialization, delegate/setup services,
+optional components/subsystems, unrelated targeting/final continuations,
+engine storage/timers and final damage dispatch remain supplied. Actual module
+assembly/loading precedence, authority setup, complete BeginPlay effects and
+later mesh-hit effects/self-damage/propagation remain unverified.
+`config-contact-checkpoint-validation-v1.json` binds these results and verifies
+that the V3 correction leaves prior numeric outcomes unchanged.
+`FIRST_TRACK_AUDIT_v5.md` and `RESUME_CHECKPOINT_v32.md` preserve the next work.
+Track one is still incomplete; tracks two through five remain pending in order.
+No calculator changes, UI/arithmetic rerun, live access, commit or push occurred.
+
+
+### Native settings/contact and mesh-hit joined through health (checkpoint v33)
+
+`config-contact-damage-joined-native-v2.json` joins native BeginPlay collision
+settings copy, contact admission, magnitude and curves to the complete native
+0x76740F0 damage caller, point event/context construction, rule evaluation,
+interface dispatch, baseline section health, cleanup and cooldown scheduling
+in **one emulator and allocator**. **1,242 settings/contact cases, 414 cases
+across all 23 catalog vehicle rows (22 distinct damage tags), and four suppression cases pass**, producing
+**1,308 applications** checked against separate native rule/health runs.
+Tracked, wheeled and empty source tags, both GC flag states and all three
+contact-class branches are included. Health clipping is checked natively.
+
+`config-mesh-damage-joined-native-v1.json` additionally connects the native
+mesh-hit vector derivation to that damage path after native settings copy.
+Its **276 catalog and 266 boundary cases pass**, with **479 applications**.
+Vector, virtual-query selection, curve, incoming amount and timer results
+match the isolated mesh/contact receipt. Component damage settings remain
+unchanged between native setup and the mesh-hit callback.
+
+There is no manual event/context/amount bridge on either joined path. Shared
+engine-service PE code/global images switch at native caller boundaries;
+fixture heap, call arguments and contexts are not copied at those switches.
+Unicorn translation-cache flushing is required after these switches: without
+it, an earlier translated stub can survive a byte restoration. The successful
+fixtures flush the cache. `joined-service-image-code-audit-v1.json` separately
+checks **57 protected native spans** against the frozen code across both
+images and the return transition.
+
+Source property population, module/class lookup, Role-0 setup followed by
+supplied Role-3 contacts, reflection, hit/zone resolution, physics state and
+virtual queries/masses, weak objects, set/cache/timer/allocation/typed cleanup,
+and baseline no-modifier/lifecycle services remain supplied. The mesh callback
+still returns naturally at a supplied positive duplicate-cache gate after the
+contact path. Later self-damage/effects/propagation, actual cache semantics,
+module loading precedence, authority setup and runtime class/world installation
+remain open. The separate native final-damage-caller boundary is now joined;
+this does not close those other boundaries.
+
+`config-damage-joined-checkpoint-validation-v1.json`, `FIRST_TRACK_AUDIT_v6.md`
+and `RESUME_CHECKPOINT_v33.md` bind the results and next work. Track one remains
+incomplete; tracks two through five remain queued in order. No product code
+changed, so UI checks were not repeated. No live access, commit or push occurred.
+
+
+### Native mesh duplicate cache and component selection (checkpoint v34)
+
+`mesh-duplicate-cache-native-v1.json` executes the native 273-byte key hash,
+set lookup/insertion, weak-handle equality/validity and the expiry callback's
+full hash unlink plus sparse-slot release. **1,024 uint32 hash-model cases,
+54 weak-handle cases and 74 cache operations pass**. Owned chunked object slots
+exercise index, serial and packed flag checks. Forced hash chains cover
+duplicate insertion, deletion and free-slot reuse with four inline buckets or
+64 external buckets. The key is an ordered pair of weak handles plus
+**FHitResult.Item +0xA8**. This differs from the earlier radial fixture's opaque
+IDs stored in MyItem +0xA4.
+
+Sparse removal alone is not full set deletion: it leaves hash-chain links
+behind. The actual expiry wrapper at 0x7677E80 enters 0x766C4B0, which unlinks
+the hash chain before sparse release. The mesh callback constructs the matching
+delegate VFT; slot 11 points to that wrapper. This executes native expiry logic
+under owned invocation, not elapsed-time scheduling or timer-manager behavior.
+Storage is preallocated for 32 elements; allocation/growth/rehash paths remain
+unexecuted and memmove is supplied.
+
+`mesh-native-cache-joined-v1.json` removes the supplied duplicate-gate result
+from the shared settings/mesh/contact/damage/health fixture. **276 catalog and
+266 boundary cases retain exact damage, health, vector and timer results**,
+and **six seeded cache cases pass**, totaling **485 applications**. Native
+hash/lookup now runs in the mesh callback. On misses, native 0x76696D0 selects
+the damage-model class through its cached native getter; the optional virtual
+component lookup is supplied as null and the callback returns naturally.
+An exact cache hit skips that later selection. Changed Item, reversed handles
+and a deliberately colliding valid handle miss; native expiry makes an exact
+key eligible for selection again. Contact damage occurs before this gate, so
+those cache choices do not undo the preceding contact damage.
+
+Native registration arguments identify the requested class as
+WDVehicleDamageModelComponent, bound by `contact-class-labels-v2.json`.
+Its virtual receiver at 0x6B7FCD0 is now captured as 321 bytes despite the
+corpus row having failed. Capture alone is not receiver execution or corpus
+repair. Non-null receiver behavior, later own-damage/effects/secondary paths,
+callback-driven cache insertion and actual timer execution remain next work.
+Object/class tables, component discovery, property/setup/physics/reflection,
+hit/engine/lifecycle services retain their declared owned boundaries.
+
+`mesh-cache-checkpoint-validation-v1.json`, `FIRST_TRACK_AUDIT_v7.md` and
+`RESUME_CHECKPOINT_v34.md` bind these results. Track one remains incomplete;
+tracks two through five remain queued in order. No product code changed,
+UI checks were not repeated, and no live access, commit or push occurred.
+
+
+### Native WD collision receiver and constructor attribution (checkpoint v35)
+
+`own-collision-receiver-native-v1.json` executes the recovered 321-byte
+0x6B7FCD0 WD receiver, the 1,621-byte base 0x531FC20 receiver and native
+0x53205D0 baseline section health. **720 finite cases and five owned boundary
+cases pass**, checked against **17 separate native health oracles**. Inputs
+cover negative/zero/epsilon/ordinary/clipped amounts, double factors followed
+by float32 conversion, owner roles, damageability and stats/inventory branches.
+The receiver is invoked directly; it is not yet the non-null component returned
+to the mesh callback.
+
+Native base code clamps the incoming float amount at zero, multiplies by the
+native double attribute result and converts to float32 before its epsilon
+check. Its Role-3, bCanBeDamaged and supplied enable predicate gates control
+entry to section health. The WD wrapper optionally changes the temporary
+`+0x2B8` cause through supplied stats/interface discovery and an inventory-cause
+result, then restores the prior cause in every case. Positive handled damage
+and vehicle ancestry control its notification call. A supplied garbage owner
+with an accepting base enable predicate can still reach that notification;
+the wrapper's cause-override garbage check is not a general notification gate.
+This describes owned branch inputs, not actual object-lifetime behavior.
+
+The native 187-byte WD object constructor also executes with its base constructor
+and final lifecycle helper supplied. Guard canaries are preserved. It installs
+primary VFT `0xB30DFF8`; the actual native pointer at `+0x500` (`0xB30E4F8`)
+points to `0x6B7FCD0`. This strengthens receiver/table attribution beyond corpus
+aliases. The class initializer at `0x6B80930` is distinct from the object
+constructor at `0x6B7FB50`.
+
+Surface resolution is supplied as a fallback to the main health section;
+class/stats/inventory lookup, enable predicate, optional operator discovery,
+attribute/requirement services, notifications and lifecycle remain supplied.
+Owner non-null is an input precondition. Actual runtime class installation,
+all surface-routing branches, non-null mesh integration and later mesh effects
+remain unverified. No corpus row was rewritten: a failed decompiler row has
+usable captured/executed native code, which is a different result.
+
+`own-receiver-checkpoint-validation-v1.json`, `FIRST_TRACK_AUDIT_v8.md` and
+`RESUME_CHECKPOINT_v35.md` bind this checkpoint. Next: return an owned non-null
+model component to the mesh callback, execute the own-vehicle and rotation
+curve paths into this receiver, then later effects/cache/timer boundaries.
+Track one remains incomplete; tracks two through five remain queued. No product
+code changed, UI checks were not repeated, and no live access or push occurred.
+
+
+### Non-null mesh collision receiver joined (checkpoint v36)
+
+`nonnull-mesh-receiver-native-v1.json` joins native settings copy, the mesh
+callback, target contact/point/rules/health, and the separate owner's collision
+curve/receiver/health path in one emulator. **621 catalog cases and four
+boundary cases pass** across 23 settings assets, three contact classes, three
+owner velocities and three impact normals. They include **622 owner receiver
+calls, 177 positive owner-health changes and 495 target applications**, checked
+against 37 separate native owner-health results. Target health/events remain
+identical to the previously validated contact path while owner results vary
+with the impact-normal projection.
+
+Native code projects the owner velocity onto Hit.ImpactNormal, takes the
+projected vector norm, multiplies by 0.036 and converts to float32 for
+VehicleCollisionCurve at component +0x3D8. The selected ray-miss/no-secondary
+branch supplies native multipliers of one; float32 composition agrees exactly
+with the amount received by 0x6B7FCD0. Its base receiver and section health run
+natively, with a separate owner model and health state. No gameplay event,
+context or amount is rebuilt between these paths.
+
+The callback now reaches native duplicate insertion and constructs its actual
+64-byte expiry closure. Native 0x158B640 also builds populated three/four-unit
+(48/64-byte) delegate descriptors; the low-level allocator and timer service
+remain supplied. The service records and consumes the descriptor, not elapsed
+time. Earlier fixture versions supplied allocation storage without populating
+that descriptor; their timer calls established request arguments, not complete
+delegate assembly. The current replay includes the populated descriptor.
+
+A native repeat/expiry sequence uses the **actual constructed closure**, with
+its full native VFT mapped. An exact repeated key skips owner damage after the
+already-tested target contact. Invoking the closure through VFT +0x58 runs
+native hash unlink/expiry; a following callback applies owner damage again.
+The contact cooldown lookup is deliberately reset by the owned fixture between
+calls, so this does not establish cumulative real-time cooldown behavior.
+Health baselines are also reset between independent observations.
+
+`nonnull-service-image-audit-v2.json` checks 22 protected native spans/data
+across upstream, owner-receiver and return service images. Version 1 of that
+image audit and its fixture remain preserved; V2 maps the whole expiry VFT
+needed for the real indirect closure call. PE service-image switching flushes
+Unicorn's translation cache and leaves gameplay heap/context state intact.
+
+This path supplies a ray miss, nonmatching secondary class, base-vehicle
+callback/filter results, physics/virtual state, source property/setup and
+reflection/component discovery, attributes/notifications/lifecycle, allocation
+and timer-manager services. Ray-hit/rotation, matching secondary propagation,
+base effects, allocator growth, actual timing/world/authority and runtime class
+installation remain open. `nonnull-mesh-checkpoint-validation-v1.json`,
+`FIRST_TRACK_AUDIT_v9.md` and `RESUME_CHECKPOINT_v36.md` bind the checkpoint.
+Track one remains incomplete; tracks two through five stay queued. No product
+code changed, UI checks were not repeated, and no live access or push occurred.
+
+
+### Native ray-hit rotation multiplier joined (checkpoint v37)
+
+`mesh-rotation-native-v1.json` executes the selected ray-hit branch through
+native root up-vector calculation, between-vector quaternion, quaternion-to-
+rotator conversion, axis normalization and the actual rotation curve, followed
+by the already-native owner receiver/health/cache/timer-descriptor path.
+**621 catalog cases and two ray/root boundaries pass**: 23 settings assets and
+27 orientations, including pitch/roll tilts, quarter turns, opposite up vectors,
+rotated roots, a diagonal normal and mixed gimbal lock. There are **299 positive
+owner-health changes and 434 target applications**, with **61 separate native
+owner-health results**. Target health/events stay unchanged across orientations.
+
+The caller normalizes each angle to its signed axis range and evaluates
+RotationDamageMultiplier at component +0x648 using **abs(Pitch) + abs(Roll)**,
+converted to float32. Yaw is excluded. The default curve value is one, including
+empty inline curves. Native up vectors and quaternion mapping agree with a
+unit-quaternion model; native Euler output agrees with an independent branch
+model, including the singularity cases. Curve input and final float32 amount
+composition agree exactly. For an identity owner and a ground normal tilted
+30 degrees, the shipped example multiplier is approximately 1.35.
+
+Ray result/normal and owner transform are owned inputs. Native helpers execute
+around three supplied numeric library boundaries: atan2, fmod and asin use
+Python math callbacks. Their PE import thunks are verified against the frozen
+CRT import directory. This does not prove those library implementations or an
+actual world trace. `rotation-service-image-audit-v1.json` checks 16 protected
+native spans across upstream/owner/return service images.
+
+`demolition-multiplier-static-labels-v1.json` identifies the next branch from
+native registration arguments: BHDemolitionCellRepresentation,
+InstancedStaticMeshComponent and BHDemolitionDataFragment_VehicleDamage.
+The captured caller selects a matching fragment and uses its first float as
+the XMM9 collision multiplier. The earlier generic description as a secondary
+propagation branch was too broad; this is a demolition data-fragment multiplier
+path. Its matching branch/query and authored data remain unexecuted/unbound.
+
+Actual trace traversal, demolition-fragment/query behavior, base-vehicle
+filter/effects, allocation growth, timer scheduling, module loading, authority,
+class installation and runtime world/lifecycle state remain open.
+`rotation-mesh-checkpoint-validation-v1.json`, `FIRST_TRACK_AUDIT_v10.md` and
+`RESUME_CHECKPOINT_v37.md` bind the checkpoint. Track one remains incomplete;
+tracks two through five remain queued. No product code changed, UI checks were
+not repeated, and no live access, commit or push occurred.
+
+
+### Checkpoint v38: native demolition lookup and typed fragment multiplier
+
+The selected native 52FD760 read-only query now executes with its membership,
+component-to-ID and ID-to-asset map lookups. The native 767E640 caller selects
+the first matching VehicleDamage fragment (including derived types), composes
+the multiplier and reaches native owner health in the same emulator.
+
+Fresh PAK headers recover the dynamic FInstancedStruct types that ordinary
+JSON exports omit: 39 VehicleImpulse fragments and four VehicleDamage fragments
+across the 39 currently exported demolition assets. The mapping identifies
+these as sibling types. RestitutionImpulseMultiplier is not a damage multiplier.
+The four DamageMultiplier values are zero; 35 assets have no matching fragment.
+For these lists, successful query/predicate selection yields multiplier zero;
+query rejection falls back to one. These are conditional outcomes: every asset
+references a ruleset and the ruleset predicate is still a supplied callback.
+
+mesh-demolition-native-v1.json covers 23 settings x39 assets x2 predicate
+outcomes (1,794 cases), plus25 owned guard/type/order/scalar cases. Separate
+native owner-health results verify final amounts; target health/events remain
+unchanged across asset/predicate choices. demolition-service-image-audit-v1.json
+checks30 protected native spans across upstream/owner/return images.
+
+World, class installation, representation maps, source loading, physics,
+allocation/timing and engine services remain supplied. The read-only query
+skips demolition mutation. Actual ruleset eligibility is next: authoring
+reference closure finds19 packages, not yet freshly compared or executed.
+Native base effects/filtering, growth/rehash, other caller integration and
+runtime world/lifecycle boundaries also remain open. Track one is incomplete;
+tracks two through five remain queued. No product code changed, UI checks were
+not repeated, and no live access, commit or push occurred.
+
+demolition-mesh-checkpoint-validation-v1.json binds this evidence closure;
+FIRST_TRACK_AUDIT_v11.md and RESUME_CHECKPOINT_v38.md preserve the next work.
+
+
+### Checkpoint v39: native vehicle-context demolition rules
+
+Fresh installed PAK exports match all66 objects in19 referenced rule packages
+by export index, name, type and properties. Native Or/Ruleset/Vehicle predicates,
+class casts, cached class getters, actor variant getter and tag-container match
+now execute in a separate owned vehicle-context fixture. Native explosion and
+buildable predicates execute their missing-context rejection paths.
+
+`demolition-rules-native-v1.json` passes2,574 catalog cases:39 demolition assets
+x33 authored variant tags x2 supplied contact flags.1,254 permit and1,320 reject;
+11 additional actor/class/variant/tag/cycle guard cases pass. The native match
+checks the input tag against permitted explicit and parent entries. Parent
+container construction and tag identities remain supplied. Do not infer a
+standard tag direction from the names alone. Both authored contact bits are
+true; individual-bit meaning is not established by this catalog replay.
+
+The prior mesh demolition lookup/multiplier receipt still uses a supplied
+predicate outcome. Joining actual rules into that same emulator is next.
+Positive explosion/buildable context paths, class/variant installation,
+property loading, actual world participation, growth and lifecycle remain
+separate boundaries. No complete-track or live-parity claim is made.
+`demolition-rules-checkpoint-validation-v1.json`, FIRST_TRACK_AUDIT_v12.md and
+RESUME_CHECKPOINT_v39.md bind this increment. Track1 remains incomplete;2-5
+remain queued in order. No product code, live access, commit or push.
+
+
+### Checkpoint v40: native rules-to-damage join and positive metadata graphs
+
+`rules-mesh-native-v2.json` joins actual authored native rules to the52FD760
+query,767E640 typed fragment multiplier and native owner health in one emulator.
+It passes3,003 catalog cases:39assets x33variant tags at one configuration, plus
+22other configurations x39assets xone permitting/one rejecting variant. This is
+not the full23x39x33matrix.1,485permit,1,518reject;1,050cases change owner health.
+Seven independent native owner-health results check final amounts. Native
+configuration copies and target health/events match the frozen conditional
+baseline; the supplied predicate callback never executes.
+
+V2 also passes184regressions across23configurations, four contact categories
+(other/vehicle/pawn/special) and permitting/rejecting variants. The first joined
+fixture installed a second owned vehicle-class identity and misclassified
+vehicle contacts outside its selected-other catalog. V2 reuses the original
+contact class. `rules-class-identity-correction-v1.json` retains eight direct
+comparisons, including the two affected vehicle outcomes, and proves the fix.
+Configuration setup retains its supplied class/config services; native code
+is restored before mesh handling. The current image audit verifies50protected
+spans after setup and across owner/return images.
+
+`demolition-metadata-native-v1.json` proves270authored/boundary and44owned
+positive/negative typed metadata cases. Native explosion code evaluates the
+shipped ANY tag-query bytecode and accepts matching finite Distance<=the
+configured threshold. Native buildable code checks explicit/parent blocklists
+and inverts the match. Four native constructor cases additionally prove the
+omitted buildable blocklist defaults to empty, initialize the explosion query
+and bind both VFT+2B0 predicate slots. UObject/base initialization is supplied.
+`demolition-metadata-graph-native-v1.json` then passes7,761cases over all39asset
+rule graphs, including source tags/children, thresholds/nextfloatabove and
+buildable metadata.3,081permit. These graphs are separate from an explosion
+caller/world/damage join. The metadata code audit verifies36protected spans.
+
+Correction to earlier boolean labels:SDK EBHDemolitionType is Blocking=0 and
+Overlap=1; context byte+8 is the enum, not a blocking-hit boolean. Native200case
+truth table verifies bit0 permitsOverlap andbit1 permitsBlocking. Existing
+`blocking`/`blocking_hit` boolean fields storebool(rawtype), so true meansOverlap.
+The mesh query supplies raw1Overlap. `demolition-type-label-correction-v1.json`
+binds59,706legacy field occurrences across four frozen receipts without changing
+numeric results. Both authored permit bits were true, so catalog outcomes stand.
+
+Native graph/query/health execution uses supplied object/class/variant/map and
+property population, tag identities/parent-container construction, world,
+physics, CRT, allocator, registry/locks/reference lifetime and timer services.
+The read-only query skips actual demolition mutation; graph growth is untested.
+Base53C7AC0callback/effects and532D4C0filter remain supplied; their full selected
+CFGs are now captured but unexecuted. Actual explosion caller/world integration,
+loading/authority/class/runtime lifecycle, allocation growth and scheduling also
+remain open. Track1 remains incomplete;2-5 remain queued. No live access, product
+code change, commit or push.
+
+`rules-mesh-metadata-checkpoint-validation-v2.json`, FIRST_TRACK_AUDIT_v13.md and
+RESUME_CHECKPOINT_v40.md preserve this checkpoint and its next steps.
+
+
+### Checkpoint v41: native collision physics lookup/gate and base callback
+
+The former532D4C0filter shortcut is now a native hit-to-physics-group and
+VehicleDamagePhysicsData lookup. Native50F41D0 checks component membership,
+resolves body-setup weak pointers, selects one of nine geometry arrays, applies
+optional shape-name overrides and chooses a group by body-result index. Native
+532D4C0/48A9940 select exact or nearest-parent physics data, including the
+bExecuteCollisionEffects byte. Native FName hashing and parent-manager wrapper
+execute; object/map/geometry installation, registry lookup, locks and reference
+lifetime remain supplied.
+
+Fresh PAK exports match15explicit MVF_HealthSections objects and all40authored
+PhysicsGroupMappings rows. One disables collision effects and39enable them.
+These are explicit exports; inherited/omitted fragments and active module
+applicability are not established. `collision-physics-native-v1.json` passes
+220authored queries plus37weak-reference/index/geometry/override/parent cases.
+The populated fields cover flag/modifier selection, not damage routing.
+
+`filter-rules-mesh-native-v1.json` embeds that native lookup into767E640 without
+a gameplay answer bridge.3,680cases cover23settings x40rows xexact/child query
+xpermitting/rejecting demolition variants; four missing-map/nomatch cases also
+pass. The false flag suppresses the callback in92catalog cases; the remaining
+3,588reach it. Missing physics data also reaches it. Prior target/owner health
+and events match. The base53C7AC0body remains a suppliednoop in this joined
+receipt; the owner-receiver phase retains its previous supplied group fallback.
+The service-image audit verifies70native spans after setup/upstream/owner/return.
+
+Separately, `base-collision-callback-native-v1.json` executes the full selected
+53C7AC0body, native impulse normalization/up-vector math, vehicle-class alias,
+4C46730cue wrapper and the cached4C47EB0provider/TLS path.1,068finite arithmetic
+cases and30guards/handoffs pass, producing735owned manager-receiver dispatches.
+The pawn branch compares impulse squared length strictly above a supplied
+character threshold and records impulse length as RawMagnitude. The general
+branch uses float32(abs(relative velocity dot Hit.Normal)) strictly above a
+supplied threshold. Native orientation gating and recursive two-vehicle handoff
+are covered. Location, Normal, instigator/causer handles and physical material
+are checked at the FWDGameplayCueParameters receiver boundary. Engine physics,
+weak-key creation, class/config inputs and the already initialized provider/
+manager receiver are supplied; actual cue rendering/replication is untested.
+Authored base-config threshold/default acquisition remains open.
+
+The separate filter/callback code audit checks124native spans; together with
+the joined audit this is194checks. Side-selector clarification:
+`collision-physics-side-labels-v1.json` binds the legacyown_side field to the
+raw fifth50F41D0argument: false selects MyBoneName+F8/MyItem+A4, true selects
+BoneName+F0/Item+A8.532D4C0usesfalse. Hit.ElementIndex+AC, notFaceIndex, selects
+the geometry element. Earlier frozen numeric receipts are unchanged.
+
+Next is replacing the mesh's supplied53C7AC0callback with the verified native
+body. That integration must enlarge the owned actor allocation safely, preserve
+component/stats/owner pointers and reconcile class identities and service
+images. Physics routing under the owner receiver, actual base-config loading,
+explosion caller/world integration, growth/scheduling and runtime class/world/
+lifecycle inputs remain open. Track1is incomplete;2-5 remain queued. No live
+access, product-code change, commit or push.
+
+`filter-base-callback-checkpoint-validation-v2.json`, FIRST_TRACK_AUDIT_v14.md
+and RESUME_CHECKPOINT_v41.md preserve the evidence and continuation.
+
+
+### Checkpoint v42: native base callback joined through cue parameters
+
+`full-callback-mesh-native-v1.json` removes the supplied53C7AC0callback from the
+selected767E640path. Native complex-hit/physics-data lookup, base callback,
+cue wrapper/cached provider path, demolition rules/fragment factor and owner/
+target health now execute in the same emulator.3,680catalog cases and736contact
+category/simulation/flag/demolition regressions pass. The catalog produces3,588
+owned cue-manager dispatches; the category regressions produce276. Six separate
+native callback results check the typed cue fields. Health, events and selected
+source/context fields match the previous conditional-callback baseline.
+
+Both owned actor objects were copied into guarded0xAD0allocations, with owner,
+component, stats, controller and cache references updated. Guards hold in every
+case. The joined class-marker views now use one pawn identity across contact,
+query, point-event and callback services. The old contact/point/query pawn
+indices were2/1/3; current pawn/vehicle/special markers are0/1/2. Callback and
+contact classify vehicles as pawns consistently. This proves the supplied
+marker profile, not actual runtime UClass installation or inheritance state.
+The post-setup service-image audit verifies80protected native spans.
+
+The callback receives the native mass-adjusted collision vector, not the
+original mesh-hit impulse. With owned impulse(1000,2000,3000) and masses10/20,
+the observed callback argument is(33.333333333333336,66.66666666666667,100).
+The frozen input field remains namedimpulse. Cue position/normal, magnitude,
+instigator/causer and physical-material copy are checked independently; padding
+bytes are not treated as semantic fields.
+
+`callback-config-defaults-native-v1.json` executes the native base constructor
+and four derived config constructors, including null initializer guards. Nine
+cases prove the common callback threshold+128defaults30, character threshold
++12Cdefaults10 and default cue tagNone. Native registration name/size/constructor
+arguments bind all five classes. Base UObject and derived lifetime/delegate
+services remain supplied. Fresh PAK exports match25complete config Properties
+objects covering references to all23settings rows.19explicitly provide collision
+cue tags; six retainNone. Two rotary configs override the separate public
+CollisionEffectImpactThreshold+124to10; neither overrides callback+128.
+
+`authored-callback-mesh-native-v1.json` replays these effective candidate fields
+in300same-emulator cases: general20/30/31boundaries, pawn squared-vector9/16
+boundaries, recursive vehicle handoff and two demolition outcomes. All pass,
+with152cue dispatches and preserved health results. This is a reference-linked
+candidate replay: active variant/config selection, native property loading,
+runtime actor cue overrides and actual rendering/replication remain unproven.
+
+Next is native physics-group routing in the owner collision receiver. Its
+53C9A90/53CA690mesh discovery and50F41D0group fallback are still supplied, and
+its populated routing-map branch has not been joined. Config/module loading
+precedence, explosion caller/world integration, growth/scheduling and actual
+runtime world/class/lifecycle state also remain open. Track1remains incomplete;
+2-5remain queued in order. No live access, product-code change, commit or push.
+
+`full-callback-config-checkpoint-validation-v1.json`, FIRST_TRACK_AUDIT_v15.md
+and RESUME_CHECKPOINT_v42.md preserve this checkpoint.
+
+
+### Checkpoint v43: native owner physics section routing joined
+
+The full mesh callback now reaches native owner physics-group selection,
+collision modifier, sequential and simultaneous health routing. The new
+`full-routed-mesh-native-v1.json` passes 3,680 cases: 23 gameplay settings,
+40 explicit physics rows, exact and child tags, and two demolition outcomes.
+Target health, events, selected source/context fields and 3,588 cue dispatches
+match the frozen callback baseline. Owner health and handled return match an
+independent native receiver replay using the amount produced by mesh code.
+The gameplay path shares one emulator; the replay is verification only.
+
+`physics-routing-receiver-native-v1.json` passes 1,120 catalog cases and
+26 owned guard/variant cases against a stateful native section-health oracle.
+The source has 32 rows with one sequential route, six with one sequential and
+two simultaneous routes, and two with two sequential routes. Sequential routes
+multiply the remaining amount and accumulate handled damage. Simultaneous
+routes multiply the original scaled amount and do not add their handled result
+to the function return. Both can change health. Routing entries have a 20-byte
+stride. Sparse inline/external allocation bits and holes are exercised.
+Four health sections are declared owned inputs: main, fuel tank and both front
+wheels. This does not establish installed runtime attribute sets or map order.
+
+Correction to v42: 53C9A90 and 53CA690 resolve seat occupants/fallback pawns;
+they are not mesh discovery. Missing occupants do not skip physics lookup.
+Native 531FC20 still reaches 50F41D0 using MyBone/MyItem hit fields, resolves
+the nearest parent physics row and applies native 53984A0 before routing.
+The authored row with collision effects disabled still applies collision
+damage; its coefficient is 18.5, so an admitted 100-unit input damages main
+health by 1,850. The effect flag controls the cue callback, not damage admission.
+
+`full-routed-driver-native-v1.json` passes 280 joined cases: 40 physics rows
+and seven owned seat/pawn/controller states. The same pawn marker is used by
+contact, callback, query and driver cast. Valid drivers supply causer/controller;
+absent or non-pawn occupants supply neither. A garbage pawn pointer can remain
+in the causer field while controller is zero. This records native output,
+without asserting that such a pointer is valid. Positive historical-seat/world
+fallback remains untested. Code bytes are checked in upstream, owner, restored
+upstream and post-catalog phases; successful producers and fixtures are frozen.
+
+Remaining track 1 work includes config/module selection and loading precedence,
+inherited/omitted fragment application, explosion caller/world integration,
+cache growth/rehash and timer scheduling, and actual world/class/lifecycle/
+animation/history inputs. Engine attribute, registry, requirement and lifetime
+services remain supplied. Track 1 is incomplete; tracks 2-5 remain queued in
+order. No live access, product behavior change, commit or push.
+
+`full-routed-mesh-checkpoint-validation-v1.json`, FIRST_TRACK_AUDIT_v16.md,
+RESUME_CHECKPOINT_v43.md and checkpoint-integrity-v43.json preserve this result.
+
+
+### Checkpoint v44: native config override/fallback selection
+
+`vehicle-config-selection-native-v1.json` verifies native 53CBBC0 application
+at UMVF_VehicleConfig VFT slot 89, with native typed-metadata helper 53B6190
+and config/pawn class getters. Frozen VFT bytes bind that slot and metadata
+slot 88 (53CE640). The helper's registration-name argument binds the label
+MVFCustomData_VehicleConfig, matching the SDK OverrideVehicleConfig field;
+the module's fallback VehicleConfig soft reference is at +40.
+
+2,400 cases cover override and fallback resolution states, metadata presence
+and exact/derived/unrelated types, target class/presence, GC mode and declared
+cold/warm metadata registration. Sixteen further cases change the override
+between its two resolution calls. Native selection prefers a typed override;
+an absent, unresolved or unrelated override uses the module fallback. A typed
+override whose object is marked garbage is selected first, then fails the
+final validity guard without trying the fallback. A changed second resolution
+also fails without falling back when null, unrelated or garbage. Only a valid
+selected config and valid target class cause pawn+A78 installation and the
+VFT+8E0 notification dispatch. Failure preserves the previous config pointer.
+
+This proves native control flow for supplied soft-reference results, class
+marker profiles and target context. The engine resolver, metadata registration,
+target-context service and notification body remain supplied. It does not prove
+PAK asset loading, module ordering, inherited fragment application or complete
+config acquisition through the full mesh. Track 1 remains incomplete; tracks
+2-5 remain queued in order. No live access, product-code change, commit or push.
+
+Next native leads are metadata selection 53CE640 and the actual pawn config
+notification 53C0080 (ABHBaseVehiclePawn VFT slot 284 / +8E0), followed by
+linking selected config fields to the existing callback/routing path. Remaining
+explosion caller/world, cache/timer and runtime input gaps stay separate.
+
+`vehicle-config-selection-checkpoint-validation-v1.json`, FIRST_TRACK_AUDIT_v17.md,
+RESUME_CHECKPOINT_v44.md and checkpoint-integrity-v44.json preserve this result.
+
+
+### Checkpoint v45: native config metadata and base notification
+
+`vehicle-config-metadata-native-v1.json` passes 600 metadata/path guard cases
+and 75 source-linked request cases for 25 explicit MVF_VehicleConfig exports.
+Native 53CE640 chooses a typed override with a non-empty package field or the
+module fallback. Native 17A4E20 deep-copies the soft path, including UTF-8
+subpaths, and 1603EE0 destroys temporary path strings. The request pair is
+moved into the output, the temporary pair is zeroed and the valid flag is set.
+That flag records a request handle, not proof that the asset exists or loaded.
+48AC720 remains a recording asset-request engine boundary. Fresh PAK decoding
+in `config-module-pak-v1/manifest.json` subsequently matches all 25 complete
+module Properties objects at their names/types/export indices. No VehicleConfig
+field was omitted in this explicit module set. Active module order and inherited
+fragment application remain unproven.
+
+`vehicle-config-notification-native-v1.json` replaces the selection fixture's
+notification shortcut with actual base-pawn 53C0080. Native camera guards and
+53A4630 install camera assets; 26CCE10 copies five arrays of 8-byte input names.
+Native role-3 history arithmetic clamps rate/scale, allocates 44-byte entries,
+moves the buffer and releases the old one. 324 camera/input/event-guard cases,
+192 history cases and 400 selection/notification cases pass. Frozen base-pawn
+VFT bytes bind slot 284/+8E0 to 53C0080 and slot 311/+9B8 to the native default
+return. Engine camera transform/activation, allocation/copy/free, scale, lifecycle
+and registration services are supplied. Positive event maps and new network
+physics settings creation have not been exercised.
+
+Correction to the v44 corpus lead: actor +788 is VehicleEventComponent, not
+the operator component; config +60 is EventMappings. Actor +768/+770 are third-
+and first-person spring arms. SDK offsets and native field accesses bind these
+labels. The current notification fixture intentionally exercises missing or
+garbage event components. It does not replace the event mapping body with a
+successful result.
+
+Derived notification overrides are distinct: airplane 53BFEE0, rotary 53C0540,
+tracked 53C06E0 and wheeled/WD-wheeled 53C0B50. Their direct CFGs are captured
+but not executed by this base-pawn suite. These overrides, positive event/
+network branches and linking native selected config into the full mesh remain
+next. Explosion caller/world integration, cache/timer behavior and genuine
+runtime input gaps remain open. Track 1 is incomplete; tracks 2-5 remain queued
+in order. No live access, product-code change, commit or push.
+
+`config-metadata-notification-checkpoint-validation-v1.json`, FIRST_TRACK_AUDIT_v18.md,
+RESUME_CHECKPOINT_v45.md and checkpoint-integrity-v45.json preserve this result.
+
+
+### Checkpoint v46: native wheeled config notification and axle construction
+
+`wheeled-config-notification-native-v1.json` joins native config selection and
+installation to actual wheeled 53C0B50, the base notification and seven native
+wheeled setter helpers. Frozen VFT entries bind both MWheeledVehiclePawn and
+WDWheeledVehiclePawn slot 284 to this body. 486 component/asset guards, 216
+rate/axle/wheel cases and 256 selection cases pass their expected outcomes.
+The guard suite includes 54 explicitly expected native read faults, rather
+than 486 successful applications: the input setter 536F090 does not guard a
+null input asset. Garbage-marked input assets are also copied. Other individual
+asset setters have their own guards. A fault can occur after earlier settings
+have already changed; no rollback is asserted.
+
+Native characteristics update rate clamps to 50..1000, with timestep 1/rate;
+mass, engine/transmission fields and three gear ratios are installed. Native
+axle construction uses 112-byte records and deep-copies 64-byte wheel
+configuration records, preserving owned names, physics tags and indices.
+Non-empty axle/wheel arrays, native temporary destructors and selected pointer
+storage execute. Wheel tag containers and runtime wheel-state arrays are empty
+in these owned profiles. Allocation/copy/free, weak-handle registration and
+component/profile virtual activation remain supplied engine services.
+
+The derived actor component lives at +AD0, so the old base fixture allocation
+cannot contain it. The new fixture uses a separately guarded C00-byte actor
+and a guarded 2000-byte physics allocation; both retain their end guards.
+These capacities are fixture allocations, not claims about actual UClass size.
+No actual asset loading, physics world registration or config-to-mesh join is
+claimed. Air/rotary/tracked overrides, positive event/network branches, full
+config acquisition, explosion caller/world and cache/timer gaps remain open.
+Track 1 is incomplete; tracks 2-5 remain queued in order. No live access,
+product-code change, commit or push.
+
+`wheeled-notification-checkpoint-validation-v1.json`, FIRST_TRACK_AUDIT_v19.md,
+RESUME_CHECKPOINT_v46.md and checkpoint-integrity-v46.json preserve this result.
+
+
+### Checkpoint v47: native wheeled config-to-collision join
+
+`configured-routed-mesh-native-v1.json` connects the native wheeled/base config
+constructors, module selection, wheeled/base notification and axle construction,
+gameplay settings copy, and full collision/cue/health path in one emulator.
+Nine source-linked wheeled configs pass 2,880 catalog cases (40 physics rows,
+exact/child tags, two demolition outcomes and override/fallback selection).
+Their target/owner damage results match the frozen routed-mesh baseline.
+2,808 catalog cue dispatches match independent native callback replays using
+the selected config's actual cue tag and native 30/10 threshold defaults.
+216 further cases verify equality/above-threshold, pawn-vector and recursive
+vehicle behavior against the prior authored-config suite.
+
+The settings-copy path now executes native 53CB340 to read the selected actor
++A78 pointer, native 188F5C0 to check the selected config's GameplayConfigDataAsset
+reference, and native 767BC40/36269E0 to install settings. The old supplied
+container/getter shortcuts are absent in this phase. The actor's config pointer,
+its callback fields, its gameplay reference and copied component settings remain
+unchanged through collision. The callback does not reinstall a substitute config
+or rewrite its thresholds/tags. Native-copy preservation already present in the
+mesh fixture remains enabled. The actor uses guarded C00 storage and an A00
+owned VFT; previous owner/component/cue/controller/stats/cache references are
+updated explicitly.
+
+36 rejected-reference cases exercise null or unrelated gameplay assets through
+both selection routes. Native setup clears component +F0 and does not copy
+settings. Actor +A78 still holds the selected vehicle config. The harness does
+not invoke collision for these cases; its ready_for_collision flag is an
+orchestration decision, not a newly discovered native collision guard.
+
+Source cue fields and the GameplayConfig reference are supplied property
+overlays after native construction. UObject/delegate initialization, class
+markers, soft resolution, physical world, movement/input profiles and engine
+lifecycle services remain owned inputs. The movement profile used for setter/
+axle activation is synthetic, distinct from each config's authored subassets;
+primitive mass/pose queries are still supplied. This proves a native control-
+and-data join, not actual UObject loading, active variant/module ordering or
+physical installation in a game world. Air/rotary/tracked notifications,
+positive event/network branches, explosion caller/world integration and cache/
+timer gaps remain open. Track 1 is incomplete; tracks 2-5 remain queued in order.
+No live access, product-code change, commit or push.
+
+`configured-routed-mesh-checkpoint-validation-v1.json`, FIRST_TRACK_AUDIT_v20.md,
+RESUME_CHECKPOINT_v47.md and checkpoint-integrity-v47.json preserve this result.
+
+
+### Native throwable-contact impact caller checkpoint v48
+
+The frozen build's native `6CA8730` throwable-contact caller now executes through
+point-event assembly, source rules and target health in an owned fixture.
+1,840 cases span 23 canonical targets, four declared source profiles, five damage
+amounts, driver presence and GC variants. 1,380 nonempty-root cases match an
+independent native collision point-caller replay with equivalent enriched source.
+The 460 empty-root cases have no paired oracle: the throwable caller preserves
+`None`, while the older collision caller substitutes `Landscape`.
+
+Native source/controller getters execute. The caller uniquely adds Throwable
+and Impact contexts and replaces source cause with actor EntityId. Hit location
+remains `None`. 18 guards, 83 timing cases and two repeat sequences pass; 85 code
+image checks preserve 17 captured functions. Positive handled damage sets the
+repeat latch. A latched positive cooldown compares float32(double world time
+minus stored float) with the cooldown; equality admits. This function leaves the
+stored timestamp unchanged. External scheduling effects remain unproven.
+
+World/mode/target/interface lookup and engine tag/lifetime services are supplied;
+mode codes remain raw values. This is throwable contact impact, distinct from
+radial detonation. Radial gather `6F01E50` and upstream `6EFFDC0` are CFG-captured
+but unexecuted. Actual world/multi-actor/lifecycle integration, asset installation,
+derived notification/event/network branches, cache growth and timers remain open.
+Track 1 is incomplete; tracks 2-5 remain queued in order. No commit or push.
+
+Private restart: `RESUME_CHECKPOINT_v48.md`, `FIRST_TRACK_AUDIT_v21.md`,
+`explosive-impact-checkpoint-validation-v1.json`, `checkpoint-integrity-v48.json`
+under `round11_collision_parity_20261020`.
+
+
+### Native radial gather builder checkpoint v49
+
+Native `6F01E50` now iterates supplied sparse world results and constructs actor/
+radial-event records through native constructors and deep hit-array copies.
+20 critical scenes (63 contacts) and 24 owned guard/filter cases preserve the
+prior full-radial damage and health results. 102 standalone gather cases verify
+multi-actor construction across 0–137 slots, inline/heap bitmaps, holes and
+occupied null/garbage actors. Joined health cases still contain one valid actor.
+
+Native event construction copies base damage into both leading damage fields;
+the outer caller still computes per-contact falloff from the original inputs.
+This replaces the prior shortcut's assumptions about constructed event fields.
+3,818 native image checks pass. Upstream `6EFFDC0` additionally executes through
+the radial caller for 16 empty-query/invalid-world cases with 16 image checks.
+The engine query boundary observes shape 2/radius 2000; query results are supplied
+empty. Nonempty native grouping, component geometry/LOS, actual world identity,
+multi-actor health and lifecycle remain open. Engine setup and lifetime services
+remain owned; empty-query options setup is a no-op, not a native-copy proof.
+
+Track 1 remains incomplete; tracks 2–5 remain queued in order. Private restart:
+`RESUME_CHECKPOINT_v49.md`, `FIRST_TRACK_AUDIT_v22.md`,
+`native-radial-gather-checkpoint-validation-v1.json`, `checkpoint-integrity-v49.json`
+under `round11_collision_parity_20261020`. No commit or push.
+
+
+### Native nonempty overlap grouping checkpoint v50
+
+A bounded native `6EFFDC0` window now processes supplied nonempty engine overlaps
+into actor/component groups. 64 cases verify first-seen order, repeated item
+append, invalid actor/component/interface handling, bone selection and native
+transform copying, including growth to 20 actors, nine components, 11 items and
+nine transforms. 1,792 native image checks pass; input overlap records stay intact.
+
+Execution stops explicitly at `6F0088C`, before LOS, final contact/map construction,
+cleanup, return or damage. Engine query/weak/class/config/bone/pose data and
+allocation/rehash services remain supplied. The actual vehicle virtual disables
+the special distance path, leaving its distance field at FLTMAX. This proves
+native grouping/copy behavior, not actual geometry/LOS or complete world parity.
+
+Track 1 remains incomplete; tracks 2–5 stay queued. Private restart:
+`RESUME_CHECKPOINT_v50.md`, `FIRST_TRACK_AUDIT_v23.md`,
+`nonempty-world-group-checkpoint-validation-v1.json`, `checkpoint-integrity-v50.json`
+under `round11_collision_parity_20261020`. No commit or push.
+
+
+### Native nonempty world gather return checkpoint v51
+
+Native `6EFFDC0` now completes its nonempty world-gather return for declared
+mode-0 pose-class and engine-trace inputs. 140 cases cover 440 supplied traces;
+5,600 native code-image checks pass. Execution extends the prior grouping window
+through native sampler/lazy initialization, LOS admission, contact insertion,
+distance sorting, final sparse-map ownership transfer and intermediate cleanup.
+The same UC frame is paused to install supplied class/owner views, then resumed.
+
+Native sample initialization produces the 15-point pattern and later calls use
+its cache. Range equality admits; misses, wrong components and far impacts reject.
+Equal-distance contacts can reorder during native sorting; actual receipt order
+is retained. Original overlap bytes remain intact and source hit arrays clear
+after native ownership transfer. Distinct actor contacts are constructed, while
+outer radial damage and independent actor health remain unjoined.
+
+Mode 0 explicitly overrides the frozen default 2. Other modes/classes, real
+physics, query-option copying and engine lifecycle remain unproven. Engine
+queries/traces, class/weak/config/bone/pose, allocation/rehash/free and thread-guard
+services remain supplied. Track 1 is incomplete; tracks 2–5 remain queued.
+Private restart: `RESUME_CHECKPOINT_v51.md`, `FIRST_TRACK_AUDIT_v24.md`,
+`complete-world-gather-checkpoint-validation-v2.json`, `checkpoint-integrity-v51.json`
+under `round11_collision_parity_20261020`. No commit or push.
+
+
+### Native world-to-radial independent health checkpoint v52
+
+The nonempty native world gather now feeds native gather-event construction,
+radial filtering/falloff, source rules, typed dispatch and independent actor
+health in one UC. 288 mode-0 cases across 23 damage target tags match 1,104
+separate per-actor native radial replays. Distinct model/interface/tag-owner/
+attribute objects preserve per-actor health, events and damage causes. Owned
+actor/component views are prepared before entry; no grouping pause or synthesized
+gather output is used. Models here have one synthetic main health attribute.
+
+The joined fixture now uses one shared settings object for world and damage,
+and native query setup/copy replaces no-op options handling. Four direct audit
+replays verify both fixes. Algorithm 1 additionally passes 32 comparison cases
+across three damage tags against a separate mode-0 joined fixture. Together,
+13,002 native code-image checks pass. Native query inputs use empty ignore lists.
+
+Modes 0/1 override frozen default 2. Default-mode execution, other component
+classes, authored multi-section health/config joins and actual engine geometry,
+identity/lifecycle remain open. Physics queries/traces, class/weak/property/pose/
+hit-location views and allocator/rehash/name/thread/free services remain supplied.
+The 23 damage tags do not establish 23 native physics subclasses. Track 1 stays
+incomplete; tracks 2–5 remain queued. Private restart: `RESUME_CHECKPOINT_v52.md`,
+`FIRST_TRACK_AUDIT_v25.md`, `joined-world-radial-checkpoint-validation-v1.json`,
+`checkpoint-integrity-v52.json` under `round11_collision_parity_20261020`.
+No commit or push.
+
+
+### Frozen-default world query checkpoint v53
+
+Native selector 2, the frozen PE default, now runs the SkinnedMesh pose path
+through visibility masks/callbacks, contact construction, radial rules and
+independent actor health. All 288 cases match the frozen mode-0 joined dataset
+across 23 damage tags. 552 visibility-cache reuses are directly observed.
+32 additional cases cover blocked/clear misses, cache reuse, bounds variation,
+radius equality/outside and GC/order. Together, 18,880 code-image checks pass.
+
+The remaining branch getters are now statically name-bound to
+SkeletalMeshComponent, InstancedStaticMeshComponent and ShapeComponent. Their
+positive paths, authored multi-section health/config joins and actual engine
+geometry/identity/lifecycle remain open. Engine bounds/queries, class/pose/weak/
+property views and allocator/runtime services remain supplied. Static default
+selection does not prove live config, and image counts are not branch coverage.
+
+Track 1 remains incomplete; tracks 2–5 stay queued. Private restart:
+`RESUME_CHECKPOINT_v53.md`, `FIRST_TRACK_AUDIT_v26.md`,
+`default-world-checkpoint-validation-v1.json`, `checkpoint-integrity-v53.json`
+under `round11_collision_parity_20261020`. No commit or push.
+
+### Native component branches checkpoint v54
+
+The frozen default selector 2 now has 64 owned component cases (16 scenarios,
+GC on/off, trace hit/miss): Skinned pose/empty, generic center, Skeletal default
+and indexed body handles, InstancedStaticMesh identity/translation/index bounds/
+empty pose/item filtering, and Shape raw codes 1/2/3 candidate points. Analytic
+world point sets and a separate native radial-to-health oracle match; 4,288
+code-image checks and guarded component allocations pass. Skeletal sampling
+passes no item filter, while the instanced route rejects a wrong Hit.Item.
+
+Class metadata, body handles/poses, shape values, physics and runtime services
+remain supplied. Unit component transforms and translated instances are tested;
+rotation/scale breadth, real engine views and authored multi-section config joins
+remain open. Code-image counts are not branch coverage. Track 1 is incomplete;
+tracks 2-5 remain queued. Private restart: RESUME_CHECKPOINT_v54.md,
+FIRST_TRACK_AUDIT_v27.md, component-branches-checkpoint-validation-v1.json,
+checkpoint-integrity-v54.json under round11_collision_parity_20261020.
+No live server access, commit or push.
+
+### Authored section health checkpoint v55
+
+226 native world-to-health cases passed across 23 vehicle damage-row groups:
+113 exported section views with GC off/on, 452 independent actor health oracles,
+and 15,142 code-image checks. Two actors retain distinct authored health limits
+and routing state. Source checks bind 139 files and match enabled health
+fragments for all 32 included variants. These prove config arithmetic under
+supplied initialization and section resolution; native asset loading/module
+order and actual physics remain open. Track 1 is incomplete; tracks 2-5 queued.
+
+Private restart: RESUME_CHECKPOINT_v55.md, FIRST_TRACK_AUDIT_v28.md,
+world-authored-sections-checkpoint-validation-v1.json, checkpoint-integrity-v55.json.
+A separate 308-case native surface/section resolver run is pending and excluded
+from this checkpoint's proof. No live access, commit or push.
+
+### Native surface/section join checkpoint v56
+
+All 154 catalog slots passed through native component-registry/face/item lookup,
+surface group/slot resolution, section and hit-location selection, damage rules
+and authored section health: 308 cases with GC off/on and two actors. Another
+46 guard/item/numbered-slot cases passed. Across these, 662 separate native health
+oracles match. The former supplied 6B80230/5338730/50BF880 answers now execute
+natively. StaticMeshComponent is PE-name-bound; runtime metadata remains owned.
+
+Eight empty-fragment cases also pass native discovery/dead-object gates and the
+WD/base apply continuation. Total: 28,738 code-image checks. Populated fragment
+installation, attribute/delegate creation, actual asset loading/registration,
+geometry and remaining runtime/lifecycle gaps stay open. Catalog registry/face
+views and engine services are supplied; counts do not imply branch coverage.
+Track 1 remains incomplete; tracks 2-5 stay queued.
+
+Private restart: RESUME_CHECKPOINT_v56.md, FIRST_TRACK_AUDIT_v29.md,
+world-surface-resolver-checkpoint-validation-v1.json, checkpoint-integrity-v56.json.
+All capture jobs are terminal. No live access, commit or push.
+
+### Native fragment installation checkpoint v57
+
+46 source-ordered installation setups and 308 downstream slot-damage cases passed.
+Native insertion starts from empty preallocated section and complex-surface maps;
+source config identities are preserved. Enabled fragments are applied separately,
+and all 32 variant health/complex views match their 23 source templates. Native
+world-to-health results match separate native health oracles. Total: 26,512
+code-image checks, which do not imply branch coverage.
+
+Attribute handles, registration/notification backends and engine runtime services
+remain supplied. Physics-group maps are empty in this dataset; the next prototype
+copies real source physics rows natively. Runtime module order, real attributes,
+callback delivery, geometry and lifecycle remain open. Track 1 is incomplete;
+tracks 2-5 queued. Private restart: RESUME_CHECKPOINT_v57.md, FIRST_TRACK_AUDIT_v30.md,
+populated-fragment-checkpoint-validation-v1.json, checkpoint-integrity-v57.json.
+No live access, commit or push.
+
+### Corrected native physics installation checkpoint v58
+
+All three source health-fragment maps now install natively: health sections,
+complex-surface mappings and physics-group routing. The corrected run passed
+46 setups and 308 downstream slot-damage cases, installing 92 physics groups
+across 23 templates with GC off/on. Total: 26,834 code-image checks.
+
+Physics tag/float entries are 20 bytes. The initial new fixture incorrectly used
+24 bytes and its partial run was stopped before a success receipt. A native
+consumer regression now rejects that malformed layout and matches independent
+native health results after correction (two cases, 160 additional image checks).
+The two labels select installation GC; they do not independently toggle consumer
+GC. Historical physics-prototype claims are superseded by the private layout
+correction. v57's health/complex validation is unaffected.
+
+Geometry, real attribute/delegate/notification backends and runtime module order
+remain open. Track 1 is incomplete; tracks 2-5 queued. Private restart:
+RESUME_CHECKPOINT_v58.md, FIRST_TRACK_AUDIT_v31.md,
+physics-fragment-checkpoint-validation-v1.json, checkpoint-integrity-v58.json.
+No live access, commit or push.
+
+### Installed physics to native collision health checkpoint v59
+
+46 native source installations now feed native primitive/body group lookup,
+parent-group selection, physics routing and authored section health. All 416
+cases passed across 23 templates: exact/child group queries, small/depletion-sized
+damage, and explicitly observed consumer GC off/on. No group or section-result
+injection is used. Native health oracles match; 13,534 code-image checks pass.
+
+Physics routes may reference globally named tags absent from a model's health
+map. The independent oracle now preserves those names while keeping the health
+sections absent; health/event behavior matches. Shape reachability remains an
+owned input. Primitive/body/weak registration, real runtime backends and asset
+loading remain open. Track 1 is incomplete; tracks 2-5 queued. Next is joining
+native-installed maps to the full mesh/contact callback chain.
+
+Private restart: RESUME_CHECKPOINT_v59.md, FIRST_TRACK_AUDIT_v32.md,
+installed-geometry-checkpoint-validation-v1.json, checkpoint-integrity-v59.json.
+All capture jobs are terminal. No live access, commit or push.
+
+### Installed maps through native contact callback checkpoint v60
+
+All 416 source-linked contact cases passed across 23 templates and 46 native
+installations, with installation/contact GC off/on. Native-installed health,
+complex and physics map identities survive the full owned mesh/contact/filter/
+base-callback/cue/rules/owner-health chain; contact setup reads the physics map
+without reseeding it. Owner health uses authored maxima. Separate native full
+callback and section-health fixtures match upstream/target outputs and authored
+owner health/events/returns/recursive calls. 5,860 image integrity checks pass.
+
+Settings linkage is static; native active configuration selection remains the
+next catalog join. A separate Humvee configuration prototype passes GC off/on,
+but does not establish catalog completion. Owned geometry/registry, attribute/
+delegate/notification/timer backends and actual engine lifecycle remain open.
+Track 1 is incomplete; tracks 2-5 queued. Private restart: RESUME_CHECKPOINT_v60.md,
+FIRST_TRACK_AUDIT_v33.md, installed-contact-checkpoint-validation-v1.json,
+checkpoint-integrity-v60.json. All capture jobs terminal. No live access or push.
+
+### Native selected configuration and installed contact checkpoint v61
+
+All 576 cases passed: nine authored wheeled configurations/eight templates,
+18 native source installations and 36 override/fallback selection setups. Native
+configuration construction/selection/notification and linked settings copy now
+precede the full owned contact chain and source-installed owner health/physics
+maps in one emulator. Config/map identities and copied settings survive. Separate
+configured callback and section-health fixtures match target/cue/config outputs
+and authored owner health/events/returns/recursive requests. 7,290 code-image
+integrity checks pass. Installation/contact GC is varied; configuration-stage GC
+is not independently varied. First exact group adds low/high speed boundaries.
+
+Real attribute/delegate/notification backends, auxiliary gameplay/module lifecycle,
+actual geometry/loading/order and network/event/cache/timer delivery remain open.
+Static backend leads and raw CFGs are saved privately, without execution claims.
+Track 1 is incomplete; tracks 2-5 queued. Private restart: RESUME_CHECKPOINT_v61.md,
+FIRST_TRACK_AUDIT_v34.md, ATTRIBUTE_BACKEND_NEXT_v1.md,
+installed-configured-checkpoint-validation-v1.json, checkpoint-integrity-v61.json.
+All capture jobs terminal. No live access, commit or push.
+
+The v61 high-speed cases do not deplete owner sections under these authored
+curve/routing outputs; they do not establish destruction behavior. The validator
+records 308 nonpositive owner requests and zero depleted cases.

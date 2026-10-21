@@ -13,6 +13,40 @@ html:not(.js) .vv { display: none; }
   margin: 1.5rem 0 2.5rem;
 }
 
+.vv-reference {
+  margin: 0 0 1rem;
+  color: $ue-text;
+  font-size: 0.85rem;
+
+  summary { padding: 0.35rem 0; cursor: pointer; }
+  summary:focus-visible { outline: 2px solid $ue-blue; outline-offset: 2px; }
+  p { max-width: 72ch; margin: 0.5rem 0; }
+  #vv-referenceStatus { color: $ue-text-dim; }
+}
+
+.vv-reference-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.65rem 1rem;
+
+  label { display: flex; flex: 1 1 20rem; flex-direction: column; gap: 0.35rem; min-width: 0; }
+  input { max-width: 100%; color: $ue-text; font: inherit; }
+  button, input::file-selector-button {
+    padding: 0.45rem 0.65rem;
+    color: $ue-white;
+    background: $ue-panel-raised;
+    border: 1px solid $ue-border-strong;
+    border-radius: $radius-small;
+    font: inherit;
+    cursor: pointer;
+  }
+  input::file-selector-button { margin-right: 0.65rem; }
+  button:hover, input::file-selector-button:hover { border-color: $ue-text-dim; }
+  button:focus-visible, input:focus-visible { outline: 2px solid $ue-blue; outline-offset: 2px; }
+  button:disabled { color: $ue-text-dim; cursor: default; }
+}
+
 // Vehicle gets the widest share (its names are long); the Variant list joins it when a vehicle
 // has several models. Everything wraps onto its own line on narrow screens.
 .vv-controls {

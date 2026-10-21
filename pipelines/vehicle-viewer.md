@@ -44,6 +44,15 @@ For soldiers, the [Infantry Hitbox Viewer](infantry-viewer.md) shows the player'
       </div>
     </div>
   </div>
+  <details class="vv-reference">
+    <summary>Local reference geometry</summary>
+    <p>Load a private cooked-reference pack to use its collision meshes and query model. Files stay in this browser. Activation, pose and component order are supplied reference inputs, not a captured game scene.</p>
+    <div class="vv-reference-actions">
+      <label for="vv-referenceFile">Load reference pack (.json or .json.gz)<input id="vv-referenceFile" type="file" accept=".json,.gz,application/json,application/gzip"></label>
+      <button type="button" id="vv-referenceReset" disabled>Use published geometry</button>
+    </div>
+    <p id="vv-referenceStatus" role="status" aria-live="polite">Published geometry in use.</p>
+  </details>
   <div class="vv-layout">
     <div class="vv-stage" id="vv-stage">
       <div class="vv-box">
@@ -86,9 +95,15 @@ For soldiers, the [Infantry Hitbox Viewer](infantry-viewer.md) shows the player'
 <script src="{{ '/assets/js/vendor/meshopt_decoder-1.2.0.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/vehicle-impact-geometry.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
 <script src="{{ '/assets/js/vehicle-impact.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
+<script src="{{ '/assets/js/vehicle-cooked-queries.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
+<script src="{{ '/assets/js/vehicle-reference-pack.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
 <script src="{{ '/assets/js/vehicle-viewer.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
 
 For explosives, choose **Place impact** and click the vehicle (**Direct hit**) or nearby ground (**Splash**). You can also enter ground X/Z coordinates in metres. Each placement starts with full health. Projectile shots travel from the current view toward that point; the blast centre moves back by half the authored projectile length, as in the traced impact path. Placed explosive actors use the selected point. The result is a **reference-pose estimate** from exported collision triangles and traced damage routing: component order, moving parts and the live scene can change the result. Gepard uses its authored damage-query sockets and SPW spawn variants use their authored component bounds; other models retain sampled display surfaces. Inspect slots retains the direct-hit rule and repeated-hit comparison for individual slots.
+
+**Local reference packs** also replace the displayed mesh and component sampling metadata. They use the frozen build's cooked triangle/BVH query model and retain their supplied scene order. They do not provide terrain, moving poses, active physics state or other players, and are released when you return to published geometry or close the page.
+
+Blast amounts apply the selected rules in native order with single-precision rounding, then follow the traced section routing. Displayed rule factors remain summaries. The calculation uses the exported source context and declared target assumptions; runtime registry overrides and extra actor context are not captured. The [Round 11 verification](../docs/ROUND11_STATUS.md) records the native comparisons and their limits.
 
 ## How the models are built
 
