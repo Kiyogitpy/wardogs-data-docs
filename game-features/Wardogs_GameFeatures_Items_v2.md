@@ -361,6 +361,8 @@ Each `BHActionDefinition` / `WDActionDefinition` binds an action tag to a Bluepr
 
 ## 6. Buildables
 
+> **Per-structure inventory:** costs, health, placement rules, rewards, the FOB and all 206 file names are on [Buildables (inventory)](Wardogs_Buildables_v1.md). This section keeps the hammer lists, geometry and the damage matrix.
+
 ### 6.1 Build tools and what they can place
 
 Each hammer is a `WDBuildableDataTableRow` table. A buildable can only be placed by a tool that lists it.
