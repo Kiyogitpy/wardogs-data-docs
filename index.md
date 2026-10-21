@@ -40,6 +40,7 @@ nav_order: 1
 <a class="wd-card" href="content/Wardogs_GameplayTags_v1.html"><span class="wd-card-name">Gameplay Tags</span><span class="wd-card-desc">All 7,177 gameplay tags by source file, with dev comments</span></a>
 <a class="wd-card" href="content/Wardogs_GameplayCues_v2.html"><span class="wd-card-name">GameplayCues</span><span class="wd-card-desc">File Map, Smoke Screen Values, How Values Combine</span></a>
 <a class="wd-card" href="content/Wardogs_InfantryWeapons_Stats_v1.html"><span class="wd-card-name">Infantry Weapon Stats</span><span class="wd-card-desc">All 40 weapon stat assets, ADS curves, full raw property export</span></a>
+<a class="wd-card" href="content/Wardogs_ItemActions_v1.html"><span class="wd-card-name">Item Actions</span><span class="wd-card-desc">All 155 action definitions by item family, conflict rules, item bindings and use data</span></a>
 <a class="wd-card" href="content/Wardogs_Items_v2.html"><span class="wd-card-name">Items</span><span class="wd-card-desc">How an Item Is Built, Attachments, Clothing and Equipment, Consumables and Medical Items</span></a>
 <a class="wd-card" href="content/Wardogs_Maps_v2.html"><span class="wd-card-name">Maps</span><span class="wd-card-desc">Inventory, Minimal Grid Test, Shooting-Range Moving Target, Water Gym</span></a>
 <a class="wd-card" href="content/Wardogs_Meta_v2.html"><span class="wd-card-name">Meta</span><span class="wd-card-desc">Folder Map, Role Unlock Trees, Character Skill Effects, Reward Scaling Curves</span></a>
