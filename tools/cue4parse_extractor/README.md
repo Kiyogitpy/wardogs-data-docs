@@ -46,6 +46,7 @@ WdExtract <Paks> <keyfile> <usmap> <out> <Paks>\oo2core_9_win64.dll <mode> [args
 | `findname <path prefix> <text>` | `<out>/findname.txt`: packages under the prefix whose name map contains the text (IoStore imports are hashed, so this finds names an asset uses, not who references it) |
 | `mesh <files.txt or package paths>` | `<out>/<collision mesh>.glb` per vehicle collision mesh, plus `manifest.json`; failures in `_failures.txt` (see [Collision meshes](#collision-meshes-mesh)) |
 | `physics <files.txt or package paths>` | `<out>/physics.json`: each physics asset's bodies (collision primitives) and each skeletal mesh's reference skeleton; failures in `_failures.txt` (see [Physics assets](#physics-assets-physics)) |
+| `collision <files.txt or package paths>` | `<out>/collision.json`: BodySetup properties, primitive metadata, static-mesh bounds and SHA-256-indexed cooked collision payload files. Collision formats remain undecoded. Refuses existing metadata or payload files; failures return exit code 2. |
 
 `recover-bp-types` reads serialized Blueprint `UStruct.ChildProperties`,
 including the embedded `FArrayProperty.Inner` field. It requires a unique

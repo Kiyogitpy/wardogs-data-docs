@@ -12,6 +12,8 @@ const inputs = Object.fromEntries(["assets/js/vehicle-impact.js", "assets/js/veh
   [p, crypto.createHash("sha256").update(fs.readFileSync(path.join(root, p))).digest("hex")]));
 function option(name) { const i = process.argv.indexOf(name); return i < 0 ? null : process.argv[i + 1]; }
 function near(a, b) { assert.ok(Math.abs(a - b) < 1e-7, `${a} != ${b}`); }
+// Damage amounts are evaluated in native float32 steps; compare them against float64 within a few ulps.
+function nearF32(a, b, scale = b) { assert.ok(Math.abs(a - b) <= 1e-5 * Math.max(1, Math.abs(scale)), `${a} != ${b}`); }
 function identity(hit) { return hit && [hit.component.nodeIndex, hit.primitiveIndex, hit.triangle.index]; }
 function compare(a, b) {
   assert.deepEqual(identity(a), identity(b), "Indexed query changed the selected triangle");
@@ -38,8 +40,8 @@ function checkShot(vehicle, source, result) {
   assert.equal(tags.length, new Set(tags).size);
   for (const hit of result.hits) {
     assert.ok(Number.isFinite(hit.factor) && hit.slotIndex >= 0);
-    near(hit.amount, hit.base * hit.factor);
-    near(hit.base, impact.blastAmount(source, hit.distance));
+    nearF32(hit.amount, hit.base * hit.factor);
+    nearF32(hit.base, impact.blastAmount(source, hit.distance));
   }
   for (const [key, section] of Object.entries(vehicle.sections)) {
     assert.ok(result.health[key] >= 0 && result.health[key] <= section.max_health);
@@ -66,7 +68,8 @@ function scalarCheck(source) {
   for (const {cm, amount} of samples) {
     let expected = cm <= e ? source.base_damage : cm >= r ? 0
       : source.base_damage * (1 - f * ((cm - e) / (r - e)));
-    near(amount, Math.max(expected, m));
+    // Scaled by base damage: float32 distances near the radius cancel.
+    nearF32(amount, Math.max(expected, m), source.base_damage);
   }
   if (r >= e && f >= 0 && f <= 1) for (let i = 1; i < samples.length; i++) assert.ok(samples[i].amount <= samples[i - 1].amount + 1e-7);
   return {id: source.id, blast: source.blast, samples};

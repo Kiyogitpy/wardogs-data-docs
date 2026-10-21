@@ -5,6 +5,10 @@ nav_exclude: true
 
 # All-vehicle explosive continuation
 
+The [Round 11 continuation](ROUND11_STATUS.md) acquires collision resources
+across all variant assemblies and corrects equal-distance actor-hit sorting.
+Native scene-query parity remains open.
+
 Checkpoint: 2026-10-20, starting from `51559177`. The user's instruction was to
 extend the T-72 contact, occlusion and falloff review across every vehicle and
 explosive type. This pass covers all **36 published models and 22 exported

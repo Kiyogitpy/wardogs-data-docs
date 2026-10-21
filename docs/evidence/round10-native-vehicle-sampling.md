@@ -64,7 +64,12 @@ Vehicle filter `0x6C2A790` records the first encountered component pointer from 
 
 This supersedes the Round 8/9 claim that nearest accepted retention across all component targets fully described the native result. The first retained valid actor hit is distance-derived, rather than based on GLB node order; subsequent order can change through swap removal. Hit-location tag deduplication then retains applications according to that filtered order. The damage application path's actor/tag gate at `0x6F06B10` must not be replaced with one application per display node.
 
-Target sort keys and hit Distance are floats. Equal keys, native unstable sort behavior, overlap encounter order and subsequent swaps remain ordering limits. Reference fixtures cannot recover a live equal-distance ordering from source data alone.
+Target sort keys and hit Distance are floats. The [Round 11 replay](../ROUND11_STATUS.md)
+now establishes the actor-hit unstable sort and corrects the preview's stable
+sort assumption. It also verifies target-point sorting with 783 native arrays
+and 1,029 float32 squared-distance keys in UE centimetres; the preview now
+uses that ordering. Original overlap encounter order and subsequent component
+swaps remain inputs; source fixtures cannot recover live encounter order.
 
 ## Artifacts, validation and limits
 
@@ -79,3 +84,9 @@ The fixture hash-binds source inputs and native proof. `README.md`, `summary-v2.
 Source frames come from fresh skeletal exports and serialized component/socket metadata, without using compressed GLB node matrices. Skeletal reference matrices round to five decimal places in glTF units. Prior placement checks cover all 204 node/variant rows, with maximum published-geometry bound difference **0.573 mm**. Shared variants have equal source rows; this is reference-pose placement validation, not exact runtime transform provenance.
 
 Instance indices describe homogeneous **all-intact or all-destroyed** wheel states. Partial tyre destruction can remap native indices and is unsupported here. Native overlap membership and encounter order remain runtime inputs; display CC overlap tests and LOS remain approximations. Steering, suspension, deployment, collision masks, omitted query components, special actor acceptance and synthetic no-hit policies can change actual contacts. Complete authored-input coverage and recovered ordering do not close those boundaries or establish game parity.
+
+The private [Round 11 backend](../ROUND11_STATUS.md) now computes cooked sphere
+membership and native ray queries under supplied reference poses and eligible
+candidates. Its sphere membership/traversal matches 744 native scene queries;
+captured world state and overlap-result identity conversion remain unproven.
+This does not change the default display geometry's evidence boundary.

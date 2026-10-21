@@ -191,6 +191,12 @@ static class MeshMode
             comp[i] = p >= 0 ? comp[p].Then(local) : local;
             var b = Socket(info[i].Name.Text, null, comp[i]);
             b["parent"] = p >= 0 ? info[p].Name.Text : null;
+            b["decoded_ue_local"] = new {
+                parent_index = p,
+                translation_cm = DecodedScalars(pose[i].Translation.X, pose[i].Translation.Y, pose[i].Translation.Z),
+                rotation_xyzw = DecodedScalars(pose[i].Rotation.X, pose[i].Rotation.Y, pose[i].Rotation.Z, pose[i].Rotation.W),
+                scale = DecodedScalars(pose[i].Scale3D.X, pose[i].Scale3D.Y, pose[i].Scale3D.Z)
+            };
             res.Add(b);
         }
         var sockets = new List<object>();
@@ -204,10 +210,25 @@ static class MeshMode
                 var x = parent.Then(Xf.FromUe(k.RelativeLocation, k.RelativeRotation.Quaternion(), k.RelativeScale));
                 var d = Socket(k.SocketName.Text, bone, x);
                 d["source"] = src; d["boneFound"] = idx.ContainsKey(bone);
+                d["decoded_ue_local"] = new {
+                    translation_cm = DecodedScalars(k.RelativeLocation.X, k.RelativeLocation.Y, k.RelativeLocation.Z),
+                    rotation_degrees_pitch_yaw_roll = DecodedScalars(k.RelativeRotation.Pitch, k.RelativeRotation.Yaw, k.RelativeRotation.Roll),
+                    scale = DecodedScalars(k.RelativeScale.X, k.RelativeScale.Y, k.RelativeScale.Z)
+                };
                 sockets.Add(d);
             }
         return new { skeletalMesh = PackageOf(sk), skeleton = skel != null ? PackageOf(skel) : null,
-                     space = "component, reference pose", bones = res, sockets };
+                     space = "component, reference pose", bones = res, sockets,
+                     decoded_ue_local_format = "CUE4Parse binary32 values before exporter rounding; bit patterns authoritative for signed zero. Not original serialized precision." };
+    }
+
+    static object DecodedScalars(params float[] values)
+    {
+        if (values.Any(v => !float.IsFinite(v))) throw new Exception("Non-finite decoded reference-pose scalar");
+        return new {
+            values = values.Select(v => (double)v).ToArray(),
+            ieee754_binary32 = values.Select(v => BitConverter.SingleToUInt32Bits(v).ToString("x8")).ToArray()
+        };
     }
 
     internal static double R(float v) => Math.Round(v, 5);

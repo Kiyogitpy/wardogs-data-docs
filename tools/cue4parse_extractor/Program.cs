@@ -8,6 +8,7 @@
 //   dump <listFile | asset...>     -> <outDir>/<name>.json per package (all exports, Blueprint bytecode included)
 //   mesh <listFile | asset...>     -> <outDir>/<collision mesh>.glb + manifest.json: collision meshes only (MeshMode.cs)
 //   physics <listFile | asset...>  -> <outDir>/physics.json: physics-asset bodies (primitives) and skeletal-mesh ref skeletons (PhysicsMode.cs)
+//   collision <listFile | asset...> -> <outDir>/collision.json + cooked BodySetup collision payloads (CollisionMode.cs)
 //   deobfuscate <out.usmap>        -> writes a deobfuscated copy of <usmap> (needs --names; --sdk <sdk/raw> adds the SDK pass); no paks are read
 // The AES key is read from <aesKeyFile> (hex, one line) and never printed. Oodle is loaded from <oodleDll>;
 // nothing is downloaded. The game is not run.
@@ -24,7 +25,7 @@ using Serilog;
 
 if (args.Length < 6)
 {
-    Console.WriteLine("usage: WdExtract <paksDir> <aesKeyFile> <usmap> <outDir> <oodleDll> <list|schema|findname|dump|mesh|physics|deobfuscate|recover-bp-types|recover-rigvm-types> [args...] [--names <usmap>]");
+    Console.WriteLine("usage: WdExtract <paksDir> <aesKeyFile> <usmap> <outDir> <oodleDll> <list|schema|findname|dump|mesh|physics|collision|deobfuscate|recover-bp-types|recover-rigvm-types> [args...] [--names <usmap>]");
     return 1;
 }
 string paksDir = args[0], keyFile = args[1], usmap = args[2], outDir = args[3], oodle = args[4], mode = args[5];
@@ -158,9 +159,9 @@ if (mode == "findname")
     Console.WriteLine($"packages matching: {hits.Count}");
     return 0;
 }
-if (mode != "dump" && mode != "mesh" && mode != "physics") { Console.WriteLine($"unknown mode {mode}"); return 1; }
+if (mode != "dump" && mode != "mesh" && mode != "physics" && mode != "collision") { Console.WriteLine($"unknown mode {mode}"); return 1; }
 
-// dump, mesh and physics share the known usmap patches (KnownPatches below).
+// dump, mesh, physics and collision share the known usmap patches (KnownPatches below).
 {
     var log = new List<string>();
     KnownPatches.Apply(provider.MappingsForGame.Types, log);
@@ -169,6 +170,7 @@ if (mode != "dump" && mode != "mesh" && mode != "physics") { Console.WriteLine($
 var assets = rest.Count == 1 && File.Exists(rest[0]) ? File.ReadAllLines(rest[0]).Where(l => l.Trim().Length > 0).ToArray() : rest.ToArray();
 if (mode == "mesh") return MeshMode.Run(provider, assets, outDir);
 if (mode == "physics") return PhysicsMode.Run(provider, assets, outDir);
+if (mode == "collision") return CollisionMode.Run(provider, assets, outDir);
 int ok = 0, fail = 0;
 var failures = new List<string>();
 foreach (var a in assets)

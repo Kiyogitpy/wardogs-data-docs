@@ -55,6 +55,7 @@
   var viewer = null, mvState = "pending", materials = [], loadToken = 0, fallbackText = null;
   var geometryCache = new Map(), impactGeometry = null, impactMetadata = null, metadataPromise = null;
   var impactToken = 0, impactLoading = false, impactError = null;
+  var referencePack = null, referenceLoading = false;
   var inspectHint = "";
 
   function $(id) { return document.getElementById(id); }
@@ -123,6 +124,51 @@
   function currentModel() {
     var v = state.vehicle, m = v && state.model >= 0 ? v.models[state.model] || null : null;
     return m && state.wheels === "destroyed" && m.wheels_destroyed ? m.wheels_destroyed : m;
+  }
+
+  function currentReference() {
+    var model = currentModel();
+    return referencePack && model ? referencePack.sceneFor(model.path) : null;
+  }
+
+  function syncReferenceControls(message) {
+    els.referenceFile.disabled = referenceLoading;
+    els.referenceReset.disabled = referenceLoading || !referencePack;
+    els.referenceStatus.textContent = message || (currentReference()
+      ? "Cooked reference active. Frozen-build queries with supplied activation, pose and order."
+      : referencePack ? "This vehicle is not included in the local pack. Published geometry in use."
+      : "Published geometry in use.");
+  }
+
+  function setupReferenceImport() {
+    els.referenceFile.addEventListener("change", async function () {
+      var file = els.referenceFile.files[0];
+      if (!file) return;
+      referenceLoading = true;
+      syncReferenceControls("Verifying local reference geometry…");
+      try {
+        if (!window.VehicleReferencePack) throw new Error("Reference scripts are unavailable. Reload the page.");
+        var loaded = await window.VehicleReferencePack.open(file);
+        if (referencePack) referencePack.dispose();
+        referencePack = loaded;
+        geometryCache.clear();
+        loadModel();
+      } catch (error) {
+        syncReferenceControls("Could not load reference pack: " + error.message);
+      } finally {
+        referenceLoading = false;
+        els.referenceFile.value = "";
+        els.referenceFile.disabled = false;
+        els.referenceReset.disabled = !referencePack;
+      }
+    });
+    els.referenceReset.addEventListener("click", function () {
+      if (referencePack) referencePack.dispose();
+      referencePack = null;
+      geometryCache.clear();
+      loadModel();
+    });
+    syncReferenceControls();
   }
 
   function modelLabel(m) { return m.variants.join(", "); }
@@ -604,6 +650,7 @@
 
   function loadModel() {
     var v = state.vehicle;
+    syncReferenceControls();
     impactToken++;
     impactGeometry = null;
     impactMetadata = null;
@@ -611,6 +658,7 @@
     impactError = null;
     clearImpact();
     materials = [];
+    syncImpactControls();
     clearHotspots();
     if (mvState === "pending") { status("Loading the 3D viewer…"); return; }   // whenModelViewer() calls back
     var model = currentModel();
@@ -623,7 +671,7 @@
     status("Loading the collision mesh…");
     var token = ++loadToken;
     viewer.dataset.token = token;
-    var src = base + model.path;
+    var reference = currentReference(), src = reference ? reference.url : base + model.path;
     if (viewer.getAttribute("src") === src) onLoad();
     else viewer.setAttribute("src", src);
   }
@@ -814,26 +862,28 @@
     }
     var model = currentModel();
     if (!model) return;
-    var path = model.path, token = ++impactToken;
+    var path = model.path, reference = currentReference(), token = ++impactToken;
     impactLoading = true;
     impactError = null;
     syncImpactControls();
-    if (!metadataPromise) {
+    if (!reference && !metadataPromise) {
       metadataPromise = fetch(base + "assets/data/vehicle-impact-components.json").then(function (r) {
         if (!r.ok) throw new Error("component metadata HTTP " + r.status);
         return r.json();
       }).catch(function (error) { metadataPromise = null; throw error; });
     }
     if (!geometryCache.has(path)) {
-      geometryCache.set(path, fetch(base + path).then(function (r) {
+      geometryCache.set(path, fetch(reference ? reference.url : base + path).then(function (r) {
         if (!r.ok) throw new Error("collision mesh HTTP " + r.status);
         return r.arrayBuffer();
       }).then(function (buffer) {
         if (!window.VehicleImpactGeometry || !window.VehicleImpact || !window.MeshoptDecoder) throw new Error("impact scripts are unavailable");
-        return window.VehicleImpactGeometry.load(buffer, window.MeshoptDecoder);
+        return window.VehicleImpactGeometry.load(buffer, window.MeshoptDecoder).then(function (geometry) {
+          return reference ? reference.attach(geometry) : geometry;
+        });
       }).catch(function (error) { geometryCache.delete(path); throw error; }));
     }
-    Promise.all([geometryCache.get(path), metadataPromise]).then(function (loaded) {
+    Promise.all([geometryCache.get(path), reference ? Promise.resolve({models: { [path]: reference.scene.metadata }}) : metadataPromise]).then(function (loaded) {
       if (token !== impactToken || !currentModel() || currentModel().path !== path) return;
       var metadata = loaded[1].models && loaded[1].models[path];
       if (!metadata) throw new Error("no native component map for this assembly");
@@ -901,7 +951,9 @@
     }
     var result = shot.result, dl = el("dl", "vv-facts");
     box.appendChild(el("h2", "vv-panel-title no_anchor", shot.label));
-    box.appendChild(el("p", "vv-note", (result.samplingMode === "native-bounds"
+    box.appendChild(el("p", "vv-note", currentReference()
+      ? "Cooked-reference estimate using supplied activation, pose and component order. Full health per shot."
+      : (result.samplingMode === "native-bounds"
       ? "Reference-pose estimate using authored component bounds. "
       : "Reference-pose estimate using authored damage-query sockets. ") +
       "Live collision and order can differ. Full health per shot."));
@@ -1169,7 +1221,7 @@
     root = $("vv");
     if (!root) return;
     base = root.getAttribute("data-base") || "/";
-    ["vehicle", "caliber", "mode", "stage", "status", "fallback", "legend", "slots", "labels", "xray", "hint", "variant", "wheels", "notes", "blastField", "interaction", "impactControls", "impactHelp", "impactX", "impactZ", "groundForm", "placeGround", "clearImpact", "impactSummary", "impactOverlay"].forEach(function (k) {
+    ["vehicle", "caliber", "mode", "stage", "status", "fallback", "legend", "slots", "labels", "xray", "hint", "variant", "wheels", "notes", "blastField", "interaction", "impactControls", "impactHelp", "impactX", "impactZ", "groundForm", "placeGround", "clearImpact", "impactSummary", "impactOverlay", "referenceFile", "referenceReset", "referenceStatus"].forEach(function (k) {
       els[k] = $("vv-" + k);
     });
     els.panelBody = $("vv-panel-body");
@@ -1190,6 +1242,7 @@
         fillCalibers();
         syncBlast();
         setupMode();
+        setupReferenceImport();
         els.vehicle.addEventListener("change", function () { setVehicle(els.vehicle.value, null, false); });
         els.variant.addEventListener("change", function () {
           var m = state.vehicle.models[+els.variant.value];

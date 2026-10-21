@@ -37,7 +37,10 @@ function verifyShot(vehicle, source, result) {
   for (const hit of result.hits) {
     assert.ok(hit.slotIndex >= 0, `Unresolved slot ${hit.material.name}: ${context}`);
     assert.ok(Number.isFinite(hit.factor), `Missing explosive rule factor: ${context}`);
-    near(hit.amount, hit.base * hit.factor);
+    assert.ok(Number.isFinite(hit.amount) && hit.amount >= 0, `Invalid modified amount: ${context}`);
+    if (vehicle.blast_rule_recipes)
+      assert.equal(hit.amount, Math.fround(hit.amount), `Modified amount must be float32: ${context}`);
+    else near(hit.amount, hit.base * hit.factor);
   }
 }
 
@@ -56,6 +59,16 @@ function placements(mesh) {
 }
 
 async function main() {
+  const havoc = data.vehicles.find(vehicle => vehicle.id === "air-rotary-havoc");
+  const rocket72 = data.meta.calibers.find(source => source.id === "Item.Caliber.72mm");
+  assert.equal(impact.blastDamage(havoc, 0, rocket72, 0, 200), 400.0000305175781);
+  assert.equal(impact.blastDamage(havoc, 0, rocket72, 1, 200), 80.00000762939453);
+  assert.equal(impact.evaluateBlastRecipe({clamp: true, operations: [[3, 10], [2, 100]]}, 100), 220);
+  assert.equal(impact.evaluateBlastRecipe({clamp: true, operations: [[2, 100], [3, 10]]}, 100), 210);
+  assert.throws(() => impact.blastDamage({...havoc, blast_rule_recipes: []}, 0, rocket72, 0, 200),
+    /Missing native blast rule recipe/);
+  assert.equal(impact.blastDamage({slots: [{blast_factor: {legacy: [0.3, 0.3]}}]},
+    0, {id: "legacy"}, 0, 0.1), 0.03, "Preserve factor-only vehicle inputs");
   const cal = {base_damage: 100, blast: {radius: 1000, effective_radius: 500, minimum: 10, falloff: 1}};
   near(impact.blastAmount(cal, 0), 100);
   near(impact.blastAmount(cal, 500), 100);
@@ -74,6 +87,21 @@ async function main() {
   health = impact.freshHealth({sections});
   impact.applyRadial(sections, health, "Track", 150);
   near(health[MAIN], 850);
+  const cycling = {A: {max_health: 100, pre: [["B", 1, false]]},
+    B: {max_health: 100, pre: [["A", 1, false]]}};
+  health = impact.freshHealth({sections: cycling});
+  assert.equal(impact.applyRadial(cycling, health, "A", 40), 0);
+  assert.deepEqual(health, {A: 100, B: 100}, "Native visit-limit abort must propagate through pre routing");
+  const chain = Object.fromEntries(Array.from({length: 12}, (_, i) => ["S" + i,
+    {max_health: 1, post: i < 11 ? [["S" + (i + 1), 1, true]] : []}]));
+  health = impact.freshHealth({sections: chain});
+  assert.equal(impact.applyRadial(chain, health, "S0", 20), 12);
+  assert.ok(Object.values(health).every(value => value === 0), "Distinct sections have separate native visit counts");
+  const mainCopy = {[MAIN]: {max_health: 100, simultaneous: [["Fuel", 0.5, false]]},
+    Fuel: {max_health: 100}};
+  health = impact.freshHealth({sections: mainCopy});
+  assert.equal(impact.applyRadial(mainCopy, health, MAIN, 100), 100);
+  assert.equal(health.Fuel, 50, "Simultaneous routing precedes the depleted-main post-route gate");
   const starts = impact.cloud([0, 0, 0], false);
   assert.equal(starts.length, 15);
   assert.deepEqual(starts[1], [0, 0.5, 0]); // UE up -> displayed +Y.
@@ -97,6 +125,19 @@ async function main() {
   assert.deepEqual(impact.vehicleContacts(contacts).map(h => h.id), ["A0", "C0", "B1"]);
   assert.equal(contacts.length, 6, "Component filtering must not mutate gathered input");
   assert.deepEqual(impact.vehicleContacts([contacts[5], contacts[0]]).map(h => h.id), ["A0", "C0"]);
+  // Raw native-sort replay: even the short-array path swaps equal keys.
+  const tied = ["A", "B", "C"].map(id => ({id, nativeComponent: id, distance: 1}));
+  assert.deepEqual(impact.vehicleContacts(tied.slice(0, 2)).map(h => h.id), ["B", "A"]);
+  assert.deepEqual(impact.vehicleContacts(tied).map(h => h.id), ["B", "C", "A"]);
+  const roundedTie = [{id: "A", nativeComponent: "A", distance: 1},
+    {id: "B", nativeComponent: "B", distance: 1 + 1e-8}];
+  assert.deepEqual(impact.vehicleContacts(roundedTie).map(h => h.id), ["B", "A"]);
+  assert.deepEqual(tied.map(h => h.id), ["A", "B", "C"]);
+  const targetTie = [[1,0,0],[-1,0,0],[0,1,0]];
+  assert.deepEqual(impact.targetPoints(targetTie,[0,0,0]).map(t => targetTie.indexOf(t.position)),[1,2,0]);
+  const targetRoundedTie = [[1,0,0],[1+1e-8,0,0]];
+  assert.deepEqual(impact.targetPoints(targetRoundedTie,[0,0,0]).map(t => targetRoundedTie.indexOf(t.position)),[1,0]);
+  assert.deepEqual(targetTie,[[1,0,0],[-1,0,0],[0,1,0]],"Target sorting must preserve supplied point order");
   const gateComponent = {nodeIndex: 0};
   const gateVehicle = {sections: {[MAIN]: {max_health: 1000, pre: [], post: [], simultaneous: []}}, slots: [
     {slot: "CC_MainBody", group: "ComplexSurface.Group.Default", section: MAIN,
@@ -114,6 +155,34 @@ async function main() {
   assert.equal(angleShot(0.1, [0, 0, 0.5]).hits[0].cloudIndex, 2, "Outside sphere accepts the 90-degree start");
   assert.equal(angleShot(0.1, [-0.5, 0, 0]).hits.length, 0, "Outside sphere rejects the opposite hemisphere");
   assert.equal(angleShot(20, [-0.5, 0, 0]).hits[0].cloudIndex, 3, "Inside sphere accepts 180-degree starts");
+
+  const exactTarget = [10+1e-13, 2-1e-13, 3], segmentCalls = [], exactOrigin = [0,0,0];
+  const segmentGeometry = {components: [gateComponent], closestPoint: () => ({distance: 1}),
+    ray: () => { throw new Error("Segment backend must receive original endpoints"); },
+    traceSegment: (start,end) => {
+      segmentCalls.push({start: start.slice(), end: end.slice()});
+      if (end === exactTarget && start[2] === .5) return {position: exactTarget,component: gateComponent,material: {name: "CC_MainBody"}};
+      return null;
+    }};
+  const exactShot = impact.simulate(segmentGeometry, gateVehicle, gateSource, exactOrigin,
+    {0: {component: "Fixture:Body",point_sampling: {method: "native-bounds",bounds_origin: exactTarget,
+      bounds_sphere_radius: 20,points: [exactTarget]}}});
+  assert.equal(exactShot.hits[0].cloudIndex, 2);
+  assert.ok(segmentCalls.some(call => call.start.every((v,i) => v === exactOrigin[i]) && call.end[2] === .5),
+    "Origin-to-cloud pretrace uses the segment backend");
+  assert.deepEqual(segmentCalls[segmentCalls.length-1].end, exactTarget, "Target coordinates must survive without endpoint reconstruction");
+  segmentGeometry.closestPoint = () => { throw new Error("Sphere backend supplies overlap membership"); };
+  segmentGeometry.overlapSphere = (origin,radius) => {
+    assert.deepEqual(origin,exactOrigin);assert.equal(radius,20);
+    return [gateComponent];
+  };
+  const sphereMetadata = {0: {component: "Fixture:Body",point_sampling: {method: "native-bounds",bounds_origin: exactTarget,
+    bounds_sphere_radius: 20,points: [exactTarget]}}};
+  assert.equal(impact.simulate(segmentGeometry,gateVehicle,gateSource,exactOrigin,sphereMetadata).hits.length,1);
+  segmentGeometry.overlapSphere = () => [];
+  const tracedBeforeMiss = segmentCalls.length;
+  assert.equal(impact.simulate(segmentGeometry,gateVehicle,gateSource,exactOrigin,sphereMetadata).hits.length,0);
+  assert.equal(segmentCalls.length,tracedBeforeMiss,"An empty sphere result must skip contact traces");
 
   let sectionChecks = 0;
   for (const vehicle of data.vehicles) for (const [key, section] of Object.entries(vehicle.sections)) {
@@ -150,9 +219,15 @@ async function main() {
   const source = data.meta.calibers.find(c => c.id === "Item.Caliber.84mm");
   assert.ok(source && source.blast, "Reviewed MAAWS projectile missing");
   near(source.blast.impact_backoff_cm, 12.7);
-  // Authored MAAWS: full amount to 4 m, then a linear decrease to zero at 10 m.
-  for (const cm of [0, 100, 399.99, 400, 400.01, 500, 700, 900, 999.99, 1000])
-    near(impact.blastAmount(source, cm), cm <= 400 ? 100 : Math.max(0, (1000 - cm) / 6));
+  // Frozen native 6F06792–6F06837 results, including float-rounded boundary inputs.
+  for (const [cm, expected] of [[0, 100], [100, 100], [399.99, 100], [400, 100],
+    [400.01, 99.99832916259766], [500, 83.33332824707031], [700, 50],
+    [900, 16.666667938232422], [999.99, 0.0016682943096384406], [1000, 0]])
+    assert.equal(impact.blastAmount(source, cm), expected);
+  const tiny = {base_damage: 333.3,
+    blast: {radius: 2e-9, effective_radius: 1e-9, minimum: 0.01, falloff: 0.1}};
+  assert.equal(impact.blastAmount(tiny, 1.5e-9), 333.29998779296875);
+  assert.equal(impact.blastAmount(tiny, 2e-9), 0.009999999776482582);
   const before = JSON.stringify(data);
   for (const vehicle of vehicles) {
     for (const base of vehicle.models) for (const model of [base, base.wheels_destroyed].filter(Boolean)) {
@@ -211,20 +286,20 @@ async function main() {
         assert.equal(result.samplingMode, "native-sockets");
         assert.equal(result.hits.length, 5, "Retain exposed component contacts for inspection");
         assert.equal(result.applications.length, 1, "Main-hit contacts must not multiply blast damage");
-        near(result.mainDamage, 267.9);
+        assert.equal(result.mainDamage, 267.9000244140625);
         const fuel = MAIN + ".FuelTank";
-        near(result.sectionDamage[fuel], 14.1);
+        assert.equal(result.sectionDamage[fuel], 14.100006103515625);
         assert.ok(result.hits.every(hit => hit.material.name !== "CC_FuelTank"), "Fuel surface must stay occluded");
         const fuelTransfer = result.transfers.filter(entry => entry.section === fuel);
         assert.ok(fuelTransfer.every(entry => entry.via && entry.via.section === MAIN));
-        near(fuelTransfer.reduce((sum, entry) => sum + entry.amount, 0), 14.1);
+        assert.equal(fuelTransfer.reduce((sum, entry) => sum + entry.amount, 0), 14.100006103515625);
         const backed = impact.simulate(mesh, vehicle, source,
           impact.detonationOrigin(source, front.position, [0, 0, -1]), mapping);
         // Global sorting retains the nearest first hit; swap removal can retain a farther later component.
         assert.ok(backed.hits.find(hit => hit.nativeComponent.endsWith(":MainBody")).distance < 11);
         const spinDistance = backed.hits.find(hit => hit.nativeComponent.endsWith(":TurretSpin")).distance;
         assert.ok(spinDistance > 280 && spinDistance < 285, "Preserve native swap-filter ordering");
-        near(backed.mainDamage, 267.9);
+        assert.equal(backed.mainDamage, 267.9000244140625);
       }
       if (vehicle.id.startsWith("land-tracked-leopard-spawn-")) {
         const front = mesh.ray([0, 1, mesh.bounds.max[2] + 2], [0, 0, -1]);
@@ -265,7 +340,7 @@ async function main() {
         assert.equal(ids.length, new Set(ids).size, "A native component was counted twice");
         result.hits.forEach(hit => {
           assert.ok(hit.distance <= source.blast.radius + 1e-5);
-          near(hit.amount, hit.base * hit.factor);
+          assert.equal(hit.amount, Math.fround(hit.amount));
         });
         if (result.hits.length) {
           const first = vehicle.slots[result.hits[0].slotIndex];

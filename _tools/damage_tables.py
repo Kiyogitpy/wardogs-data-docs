@@ -26,6 +26,7 @@ import glob
 import json
 import os
 import re
+import struct
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -380,7 +381,7 @@ def sections(module_files):
                 val = kv["Value"]
                 routes = lambda key: [(tag(r["Key"]), r["Value"]["Scalar"]["Value"], r["Value"]["bOnlyWhenDepleted"])
                                       for r in val.get(key, [])]
-                hit = next((t for t in val.get("Tags", []) if t.startswith("Meta.Damage.HitLocation.")), None)
+                hit = next((t for t in val.get("Tags", []) if t == "Meta.Damage.HitLocation" or t.startswith("Meta.Damage.HitLocation.")), None)
                 out[tag(kv["Key"])] = (val["MaxHealth"], hit, routes("PreDamageRouting"),
                                        routes("PostDamageRouting"), routes("SimultaneousDamageRouting"))
     return out
@@ -475,6 +476,47 @@ def vehicle_rule_factor(entries, cal, hit, proj, radius=None):
     extra = ([cal, "Meta.Damage.DamageType.Explosive", "Meta.Damage.Explosive.Radius." + radius]
              if radius else [cal, "Meta.Damage.DamageType.Projectile"])
     return source_rule_factor(entries, ctx + [src] + extra, hit)
+
+
+def source_rule_recipe(groups, source_tags, hit, categories):
+    """Native ordered non-custom operations for the preview's declared blast context."""
+    source = expand(source_tags)
+    hit_tags = set(lineage(hit)) if hit else set()
+    instigator = set(lineage("Meta.Damage"))
+    operations = []
+    selected_any = False
+    enums = {"None": 0, "Percentage_Starting": 1, "Percentage_Ongoing": 2, "Add": 3}
+    for entries in groups:
+        selected = []
+        for entry in entries:
+            modification = entry["OutModification"]
+            if not any(entry[k] for k in ("InstigatorRequirements", "TargetRequirements",
+                                          "SourceRequirements", "PossibleHitLocations")) and modification["Amount"] == 0:
+                continue
+            if entry["AlignmentRequired"].split("::")[-1] not in ("None", "Hostile"):
+                continue
+            if (not set(entry["InstigatorRequirements"]) <= instigator or entry["TargetRequirements"]
+                    or not set(entry["SourceRequirements"]) <= source):
+                continue
+            if entry["PossibleHitLocations"] and not hit_tags.intersection(entry["PossibleHitLocations"]):
+                continue
+            if modification["bUseCustomOperation"]:
+                raise ValueError("Blast recipes require a verified custom-operation implementation")
+            priority = categories.get(tag(modification["PriorityCategory"]), -1)
+            amount = struct.unpack("<f", struct.pack("<f", modification["Amount"]))[0]
+            selected.append((priority, [enums[modification["Operation"].split("::")[-1]], amount]))
+        # Native 6BB61A0 uses this selection path through eight records, including unstable ties.
+        if len(selected) > 8:
+            raise ValueError("Blast recipe group exceeds the verified native short-sort path")
+        for last in range(len(selected) - 1, 0, -1):
+            largest = 0
+            for index in range(1, last + 1):
+                if selected[largest][0] < selected[index][0]:
+                    largest = index
+            selected[largest], selected[last] = selected[last], selected[largest]
+        selected_any |= bool(selected)
+        operations.extend(operation for _, operation in selected)
+    return {"clamp": selected_any, "operations": operations}
 
 
 def actor_explosives():
@@ -796,6 +838,10 @@ def hitbox_json(proj):
     generic, vrows = vehicle_tables()
     catalog = caliber_catalog(proj)
     explosives = actor_explosives()
+    category_asset = exports(os.path.join(DATA, "Wardogs/Content/GameMechanics/DamageSystem/DA_GlobalDamage_Categories.json"))[0]
+    categories = {}
+    for index, value in enumerate(category_asset["Properties"]["DamageCategories"]):
+        categories.setdefault(tag(value), index)
     cals = [c["id"] for c in catalog]
     # The data/ tree id names the exact input in any clone, shallow ones included (a commit lookup there can
     # stop at the shallow boundary).
@@ -804,6 +850,10 @@ def hitbox_json(proj):
         "source_data_tree": tree,
         "source_data_tree_note": "git tree id of data/ when generated; equals `git rev-parse <commit>:data` for any commit with the same data",
         "generator": "python _tools/damage_tables.py --json",
+        "blast_rule_recipe_format": 1,
+        "blast_rule_recipe_scope": "Ordered non-custom float32 operations; hostile alignment, Meta.Damage instigator "
+                                   "with empty context, empty target context and reviewed source tags. "
+                                   "No runtime registry overrides or additional actor/weapon context.",
         "assumptions": ["FMJ direct hit at point blank: no falloff, ricochet or penetration",
                         "blast_factor is [Radius.Inner, Radius.Outer] for a radial hit (Damage §1.1); Inner within "
                         "EffectiveExplosiveRadius; Outer is beyond that radius. Both radius tags are evaluated.",
@@ -826,6 +876,8 @@ def hitbox_json(proj):
     shared = {d for d in (g[0] for g in groups) if sum(g[0] == d for g in groups) > 1}
     for dtag, secs, smap, reg, names in groups:
         entries = row_entries(dtag, vrows) + generic
+        rule_groups = [vrows[level]["DamageModificationEntries"] for level in lineage(dtag) if level in vrows] + [generic]
+        recipes, recipe_indexes = [], {}
         # One file per damage row and slot map: a row with several maps adds its first variant's name.
         slug = re.sub(r"[^a-z0-9]+", "-", (dtag.replace("Meta.Damage.Vehicle.", "")
                                             + ("." + names[0] if dtag in shared else "")).lower())
@@ -856,6 +908,20 @@ def hitbox_json(proj):
                     hit), 6) for radius in ("Inner", "Outer")]
                 for actor in explosives
             }
+            recipe_ids = {}
+            for source in [value for value in catalog if value.get("blast")] + explosives:
+                pair = []
+                for radius in ("Inner", "Outer"):
+                    context = source["source_context"] + [source["source_tag"], "Meta.Damage.Explosive.Radius." + radius]
+                    if source.get("source_type") != "actor":
+                        context += [source["id"], "Meta.Damage.DamageType.Explosive"]
+                    recipe = source_rule_recipe(rule_groups, context, hit, categories)
+                    recipe_key = json.dumps(recipe, separators=(",", ":"))
+                    if recipe_key not in recipe_indexes:
+                        recipe_indexes[recipe_key] = len(recipes)
+                        recipes.append(recipe)
+                    pair.append(recipe_indexes[recipe_key])
+                recipe_ids[source["id"]] = pair
             slots.append({
                 "slot": slot, "group": group, "section": sec, "max_health": hp, "hit_location": hit,
                 "unreachable": unreachable(group, "" if slot == "(default)" else slot, *reg),
@@ -865,6 +931,7 @@ def hitbox_json(proj):
                 "rule_factor": factors,
                 "blast_factor": blast,
                 "explosion_factor": actor_factors,
+                "blast_rule_recipe_ids": recipe_ids,
                 "hits_to_destroy": {c: hits_to_destroy(secs, sec, proj[c][2] * factors[c]) if sec in secs else None
                                     for c in cals}})
         # GLB materials outside the Default surface group are named "<slot>|<Group>".
@@ -879,7 +946,7 @@ def hitbox_json(proj):
                 m["wheels_destroyed"] = {"variants": vs, "path": d[0], "notes": d[2], "centres": [d[3].get(k) for k in keys]}
             entries_out.append(m)
         out["vehicles"].append({"id": slug, "damage_row": dtag, "variants": names, "main_health": secs.get(MAIN, (None,))[0],
-                                "models": entries_out, "slots": slots,
+                                "models": entries_out, "slots": slots, "blast_rule_recipes": recipes,
                                 "radial_routing_skips_by_variant": radial_flags_out,
                                 "sections": {k: {"max_health": v[0], "pre": v[2], "post": v[3], "simultaneous": v[4],
                                                  "radial_routing_skips": dict(zip(("pre", "post", "simultaneous"), radial_flags.get(k, (False, False, False))))}

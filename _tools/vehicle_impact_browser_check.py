@@ -69,6 +69,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--no-screenshots", action="store_true")
+    parser.add_argument("--reference-pack", type=Path)
     args = parser.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)
     vehicle_data = json.loads((ROOT / "assets/data/vehicle-hitboxes.json").read_text(encoding="utf-8"))
@@ -85,7 +86,8 @@ def main():
     content = re.sub(r"{{.*?}}", "local", content)
     variables = dict(re.findall(r"\$([\w-]+):\s*([^;]+);", (ROOT / "_sass/custom/custom.scss").read_text()))
     css = (ROOT / "_sass/custom/vehicle-viewer.scss").read_text()
-    css = css[css.index(".vv-is-placing"):css.index(".vv-status {")]
+    reference_css = css[css.index(".vv-reference {"):css.index("// Vehicle gets")]
+    css = reference_css + css[css.index(".vv-is-placing"):css.index(".vv-status {")]
     css = re.sub(r"\$([\w-]+)", lambda m: variables[m[1]], css)
     content = markdown.markdown(content, extensions=["extra"])
     html = ('<!doctype html><html class="js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
@@ -203,7 +205,7 @@ def main():
         assert "using authored damage-query sockets" in summary.inner_text()
         assert "Some contacts are reached from an offset blast trace" in summary.text_content()
         assert facts.get("Damage applications", "").startswith("1 applied; 4 repeat contacts skipped"), facts
-        # The UI rounds values >= 100 to whole damage; the numerical fixture check retains 267.9.
+        # The UI rounds values >= 100 to whole damage; the numerical check uses the native float result.
         assert facts.get("Main health damage") == "268", facts
         fuel = next((line for line in page.locator("#vv-impactSummary li").all_text_contents() if line.startswith("FuelTank:")), "")
         assert "14.1 damage routed from Main health" in fuel, fuel
@@ -266,7 +268,7 @@ def main():
             expected_tags = set(vehicle["sections"])
             expected_tags.update(s["section"] for s in vehicle["slots"] if s.get("section") and s["section"] != "None")
             expected_labels = [section_label(tag) for tag in sorted(expected_tags, key=lambda tag: (tag != MAIN_SECTION, section_label(tag)))]
-            rendered = page.locator("#vv-legend .vv-key").evaluate_all("els => els.map(e => { const s=e.querySelector('.vv-swatch'); return {label:e.textContent.trim(), color:s.style.backgroundColor, computed:getComputedStyle(s).background}; })")
+            rendered = page.locator("#vv-legend .vv-key").evaluate_all("els => els.map(e => { const s=e.querySelector('.vv-swatch'); return {label:e.textContent.trim(), color:s.style.backgroundColor, computed:getComputedStyle(s).backgroundColor}; })")
             rendered = [entry for entry in rendered if entry["label"] != "no section: hits do nothing"]
             assert [entry["label"] for entry in rendered] == expected_labels, (vehicle["id"], expected_labels, rendered)
             colors = [entry["color"] for entry in rendered]
@@ -297,6 +299,52 @@ def main():
         page.fill("#vv-impactZ", "0")
         page.click("#vv-placeGround")
         assert "Splash" in summary.inner_text(), summary.inner_text()
+        reference_checks = None
+        if args.reference_pack:
+            page.set_viewport_size({"width": 1440, "height": 1100})
+            page.locator(".vv-reference summary").click()
+            page.locator("#vv-referenceFile").set_input_files(args.reference_pack)
+            page.wait_for_function("document.querySelector('#vv-referenceStatus').textContent.includes('Cooked reference active')", timeout=30000)
+            page.wait_for_function("document.querySelector('#vv-model').loaded && document.querySelector('#vv-model').getAttribute('src').startsWith('blob:') && !document.querySelector('#vv-placeGround').disabled", timeout=45000)
+            page.evaluate("""() => {
+              const simulate=VehicleImpact.simulate;
+              VehicleImpact.simulate=function(geometry,...args){
+                const result=simulate(geometry,...args);
+                window.referenceProbe={scope:geometry.nativeReferenceScope||null,components:geometry.components.length,mainDamage:result.mainDamage};
+                return result;
+              };
+            }""")
+            page.click("#vv-placeGround")
+            native_probe = page.evaluate("window.referenceProbe")
+            assert native_probe["scope"] and native_probe["components"] > 0, native_probe
+            assert "Cooked-reference estimate" in summary.inner_text()
+            native_url = page.locator("#vv-model").get_attribute("src")
+            page.locator("#vv-referenceFile").set_input_files({"name": "invalid.json", "mimeType": "application/json", "buffer": b"{}"})
+            page.wait_for_function("document.querySelector('#vv-referenceStatus').textContent.startsWith('Could not load reference pack:')")
+            assert page.locator("#vv-model").get_attribute("src") == native_url
+            page.click("#vv-placeGround")
+            assert page.evaluate("window.referenceProbe.scope")
+            page.select_option("#vv-vehicle", "land-wheeled-humvee-default")
+            page.wait_for_function("document.querySelector('#vv-model').loaded && !document.querySelector('#vv-placeGround').disabled", timeout=45000)
+            intact_url = page.locator("#vv-model").get_attribute("src")
+            page.select_option("#vv-wheels", "destroyed")
+            page.wait_for_function("old => document.querySelector('#vv-model').loaded && document.querySelector('#vv-model').getAttribute('src')!==old && !document.querySelector('#vv-placeGround').disabled", arg=intact_url, timeout=45000)
+            page.click("#vv-placeGround")
+            assert page.evaluate("window.referenceProbe.scope")
+            assert "Cooked reference active" in page.locator("#vv-referenceStatus").inner_text()
+            if not args.no_screenshots:
+                page.screenshot(path=args.out / "reference-desktop.png", full_page=True)
+            page.set_viewport_size({"width": 360, "height": 900})
+            assert page.evaluate("document.documentElement.scrollWidth <= window.innerWidth"), "Reference controls overflow at 360px"
+            if not args.no_screenshots:
+                page.screenshot(path=args.out / "reference-mobile.png", full_page=True)
+            page.click("#vv-referenceReset")
+            page.wait_for_function("document.querySelector('#vv-model').loaded && !document.querySelector('#vv-model').getAttribute('src').startsWith('blob:') && !document.querySelector('#vv-placeGround').disabled", timeout=45000)
+            page.click("#vv-placeGround")
+            assert page.evaluate("window.referenceProbe.scope") is None
+            assert page.locator("#vv-referenceReset").is_disabled()
+            assert "Published geometry in use" in page.locator("#vv-referenceStatus").inner_text()
+            reference_checks = {"import": "passed", "cooked_query_scope": native_probe["scope"], "invalid_file_preserves_active_pack": "passed", "wheel_swap": "passed", "reset": "passed"}
         browser.close()
     assert not errors, errors
     print(json.dumps({"browser": "passed", "desktop": 1440, "mobile": 360,
@@ -304,6 +352,7 @@ def main():
                       "spw_84mm_front_models": spw_models,
                       "routing_slots": sum(len(v["slots"]) for v in vehicle_data["vehicles"]),
                       "30mm_blast_ui": "passed",
+                      "local_reference": reference_checks,
                       "screenshots": str(args.out)}))
 
 
