@@ -9,6 +9,8 @@ redirect_from: ["/Wardogs_GameFeatures_Vehicles_v2.html", "/Wardogs_GameFeatures
 
 > **Scope note:** This doc covers the vehicle *plugin* data: GameFeature wrappers, vehicle market and stats tables, modular platform/variant/part assets, health pools, seats, weapons, buildables, supply crates, and physics configs. The [`Content/Vehicles`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Vehicles) folder is covered elsewhere and is not described here.
 >
+> **Parts and handling:** every `ModularVehiclePart` (93), the per-vehicle engine, gearbox, brake, steering and suspension numbers, and the network prediction thresholds are tabulated in [Vehicle parts and handling](Wardogs_VehicleHandling_v1.md).
+>
 > **Units:** the export does not state units for most fields. Where a unit is named in the property (for example `_mps`, `_kmh`, `_deg`, `_m`), it is given. Everything else is "as stored".
 
 ---

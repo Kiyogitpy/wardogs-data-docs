@@ -450,6 +450,65 @@ Interactive: the [Vehicle Hitbox Viewer](vehicle-viewer.md) shows these slots on
 |  | `(default)` | Health (500) | is the main health | ×0.025 | ×0.025 | ×0.4 |
 <!-- /damage_tables -->
 
+#### T-72 armor (TNK_04)
+
+**Data.** The T-72B3 has no explosive-reactive-armor (ERA) data. Case-sensitive
+searches of `data/` for `ERA` (whole word), `Kontakt`, `Relikt` and
+`ReactiveArmo` find nothing, and neither does the same search of the GObjects
+dump (`GObjects-Dump-WithProperties.txt`: 0 hits for `ERA` as a whole word,
+`Kontakt`, `Relikt`, `ReactiveArmor`). The only `Reactive` strings under the
+vehicle plugin are a wheeled steering curve (`CRV_SteerSpeed_Reactive`) and a
+dune-buggy input asset that names it. The tank has no armor-brick component,
+attribute or section: its sections are the six in the TNK_04 rows of the table
+above. So any ERA bricks on the model are cosmetic for damage.
+
+**Data.** Collision mesh `assets/models/vehicles/land-tracked-tnk-04-default.glb`
+(triangles per collision slot, summed from the glTF index counts):
+`CC_MainBody` 3,872, `CC_Tracks_L` 574 and `CC_Tracks_R` 577 (1,151 together),
+`CC_Engine` 56, `CC_FuelTank` 20, and `CC_Fabric` 166, `CC_Plastic` 142,
+`CC_Glass` 10 (318 together). `CC_Fabric`, `CC_Plastic` and `CC_Glass` have no
+entry in the slot-to-section map, so they fall to the default section, the main
+health (750). There is no `Body.StrongArea` section: TNK_01 Heavy has
+`CC_StrongArea` (378 triangles, 350 health, pre 0.4 to the main health) as a
+tougher hull zone; TNK_04 has nothing like it. Armor thickness or angle is not
+modelled either way (§3.2: a hit picks a section from its triangle).
+
+**Data.** The tank's protection is the 30-entry row
+`Meta.Damage.Vehicle.Land.Tracked.TNK_04.Default` in
+`DT_GlobalDamage_VehicleData_TNK_04`, keyed by damage type, not by where the
+tank is hit. Selected entries (percent amount, then the factor 1 + amount / 100):
+
+| Source tag | Amount (%) | Factor |
+|---|---:|---:|
+| `Bullet` | −100 | ×0 |
+| `Cannon` | −70 | ×0.3, then the caliber entry |
+| `Cannon.35x228mm` / `.20x102mm` / `.30mm` | −84 / −75 / −30 | ×0.16 / ×0.25 / ×0.7 on top of the cannon entry |
+| `Kinetic.Impact.Ricochet` | −95 | ×0.05 |
+| `Explosive.Drone` | +450 | ×5.5 |
+| `Explosive.Rocket.84mm` | +185 | ×2.85 |
+| `Explosive.Rocket.155mm` | +80 | ×1.8 |
+| `Explosive.Rocket.120mm` / `.125mm` / `.93mm` | +47.5 / +47.5 / +45.5 | ×1.475 / ×1.475 / ×1.455 |
+| `Explosive.Rocket.122mm` / `.120x800mm` | −25 / −10 | ×0.75 / ×0.9 |
+| `Explosive.Utility.ATMine` / `IED` / `C4` / `Claymore` | +145 / +30 / −25 / −95 | ×2.45 / ×1.3 / ×0.75 / ×0.05 |
+
+The factors multiply (§4.1). The generated tables in §3.1 and §5.3 hold the
+results per caliber.
+
+**Data.** Three entries carry a hit-location requirement and only one changes a
+result. `Explosive.Grenade.40mm` on `Meta.Damage.HitLocation.Vehicle.Engine` is
+−95 % (×0.05, on top of the generic 40 mm entry +20 %). `Bullet` on
+`Attribute.Gameplay.Health.FuelTank` is +200 %, but the plain `Bullet` entry
+already makes the factor ×0, so it stays 0. `Explosive.Rocket` on
+`Meta.Damage.HitLocation.Vehicle` is 0 %. Nothing in the row is keyed to a hull
+front, turret or side, so reactive-looking bricks cannot change a hit: the rules
+see the damage type and, for these three entries, the section hit.
+
+**Derived.** The difference between the T-72 and TNK_01 is therefore the
+damage-type numbers (§5.3), the 750 main health, and the missing `StrongArea`,
+not a reactive layer. Not traced: the visual meshes (`SM_TNK_04_*`) were not
+inspected for brick geometry; the claim is only that no damage data refers to
+any.
+
 ### 3.2 From a hit triangle to a section
 
 **Native** (`0x50BF880`, `0x53952A0`, the component registrations
