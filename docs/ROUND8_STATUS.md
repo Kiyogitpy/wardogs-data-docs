@@ -142,14 +142,14 @@ parity are still open. No game or service was used.
 - [ ] Remaining 2,698 hashed names: check available evidence before declaring
   the need for a new unobfuscated usmap or hash key. Current-source build
   reproduces base v2 and existing export fills: export remainder 2,690 hashed
-  occurrences, not 2,698. [Audit](evidence/round8-mapping-gaps.md).
+  occurrences, not 2,698. [Audit](evidence/round8-mapping-gaps.md). Round 12 found 45 of the 2,690 provable from cooked Blueprint classes (2,645 would remain once applied); the other 2,645 have no real-name evidence yet: [round 12 buckets](evidence/round12-mapping-residuals.md).
 - [ ] Remaining 451 unknown element types: retain ambiguity rather than
   inventing SDK types. Existing export fills cover 236, leaving 215 unknown
   arrays in the established export map. Independent package-metadata passes
   now fill **162** (83 Blueprint and 79 RigVM), leaving **53** unknowns across
   36 generated property-bag owners. The verified final map preserves the
   2,690 hashed-name count; see the [mapping audit](evidence/round8-mapping-gaps.md)
-  and [property-bag proof](evidence/round8-propertybag-types.md).
+  and [property-bag proof](evidence/round8-propertybag-types.md). Round 12 classified all 53: each has one complete candidate type from a native PCG settings layout (derived, not hash-proven; a map-only tool mode applies them on lead approval): [round 12 table](evidence/round12-mapping-residuals.md).
 - [x] Generated-document line endings: `.gitattributes` pins the two named
   documents to LF. Both generators match existing normalized content and
   are idempotent on task-created copies; existing documents were not rewritten.
