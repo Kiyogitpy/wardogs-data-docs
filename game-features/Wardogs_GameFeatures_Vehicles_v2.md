@@ -272,11 +272,11 @@ Seat assets with 0 setups (no seats defined in this asset): WHL_01, STN_01, the 
 | DA_ROT_03_AttachedMachineGuns_Stats | ROT_03 MGs | 1,500 | 1 | Automatic | 85,300 | 800 | 25.0 | 308Win |
 | DA_ROT_03_Weapon_122mm_Stats | ROT_03 rocket pods | 350 | 1 | Automatic | 45,000 | 1,000 | 6.0 | 122mm |
 | DA_ROT_04_MountedMachineGun_Stats | ROT_04 MG | 1,500 | 1 | Automatic | 85,300 | 1,500 | 10.0 | 308Win |
-| DA_STN_01_Heavy_MountedMachineGun_Stats | STN_01 Mistral AA | 100 | 1 | SemiAutomatic | 2,000 | 1,000 | n/a | 72mm |
+| DA_STN_01_Heavy_MountedMachineGun_Stats | STN_01 Mistral AA | 100 | 1 | SemiAutomatic | 2,000 | 1,000 | 1 (class default) | 72mm |
 | DA_STN_02_Heavy_MainCannon_Stats | STN_02 Phalanx | 1,800 | 1 | Automatic | 110,000 | 1,000 | 25.0 | 20x102mm |
 | DA_STN_03_Heavy_MainBarrel_Stats | STN_03 Mortar | 50 | 1 | SemiAutomatic | 80,000 | 1,000 | 50.0 | 120x800mm |
 | DA_STN_05_Heavy_MainBarrel_Stats | STN_05 Stingray | 50 | 1 | SemiAutomatic | 11,000 | 10,000 | 50.0 | DroneProjectile |
-| DA_TNK_03_Weapon_Stats | TNK_01 AntiAir | 1,100 | 1 | Automatic | 117,500 | 1,000 | n/a | 35x228mm |
+| DA_TNK_03_Weapon_Stats | TNK_01 AntiAir | 1,100 | 1 | Automatic | 117,500 | 1,000 | 1 (class default) | 35x228mm |
 | DA_TNK_01_Artillery_Weapon_Stats | TNK_01 Artillery | 50 | 1 | SemiAutomatic | 30,000 | 10,000 | 10.0 | 155mm |
 | DA_TNK_01_Heavy_Weapon_Stats | TNK_01 Heavy | 50 | 1 | SemiAutomatic | 60,000 | 10,000 | 30.0 | 120x570mm |
 | DA_TNK_01_MachineGun_Weapon_Stats | TNK_01 coax / MG | 650 | 1 | Automatic | 82,000 | 200 | 25.0 | 308Win |

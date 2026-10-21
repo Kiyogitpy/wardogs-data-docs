@@ -156,43 +156,49 @@ Column meanings are inferred from property names. `FocusEnergyReductionPerShot` 
 
 | ID | RPM | Muzzle spd | Eff. range | Accuracy | Deviation (deg) | Pitch recoil max | Focus / shot | Recoil relief | View kick x | ADS stab. (s) | Suppression x | Burst | Melee |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| A91 | 700 | 71500 | 300 | 1.5 | 15 | - | - | - | - | 0.9 | 1.3 | - | 35 |
-| AK74M | 650 | 88000 | 500 | 0.825 | 13 | 45 | 25 | 20 | 1.1 | 1.2 | 1.05 | - | 35 |
-| KH2002 | 700 | 71500 | 300 | 1.5 | 15 | 45 | 40 | 30 | - | 1.1 | 1.3 | - | 35 |
-| M4 | 800 | 91000 | 500 | 0.84 | 10 | 45 | 25 | 20 | 1.08 | 1 | 0.95 | - | 35 |
-| TAR21 | 750 | 91000 | 550 | 0.87 | 15 | 45 | 40 | 30 | 1.1 | 1 | - | - | 35 |
-| WEPN_029 | 650 | 95000 | 400 | 0.73 | 12 | 45 | 25 | 20 | 0.95 | 1.25 | - | - | 35 |
-| WEPN_030 | 650 | 84000 | 800 | 0.58 | 16 | 45 | 25 | 20 | - | 1.35 | 0.25 | - | 35 |
-| WEPN_033 | 700 | 71500 | 300 | 1.5 | 15 | 45 | 40 | 30 | - | 1.05 | 1.3 | - | 35 |
+| A91 | 700 | 71500 | 300 | 1.5 | 15 | 1* | 0* | 0* | 1* | 0.9 | 1.3 | 3* | 35 |
+| AK74M | 650 | 88000 | 500 | 0.825 | 13 | 45 | 25 | 20 | 1.1 | 1.2 | 1.05 | 3* | 35 |
+| KH2002 | 700 | 71500 | 300 | 1.5 | 15 | 45 | 40 | 30 | 1* | 1.1 | 1.3 | 3* | 35 |
+| M4 | 800 | 91000 | 500 | 0.84 | 10 | 45 | 25 | 20 | 1.08 | 1 | 0.95 | 3* | 35 |
+| TAR21 | 750 | 91000 | 550 | 0.87 | 15 | 45 | 40 | 30 | 1.1 | 1 | 1* | 3* | 35 |
+| WEPN_029 | 650 | 95000 | 400 | 0.73 | 12 | 45 | 25 | 20 | 0.95 | 1.25 | 1* | 3* | 35 |
+| WEPN_030 | 650 | 84000 | 800 | 0.58 | 16 | 45 | 25 | 20 | 1* | 1.35 | 0.25 | 3* | 35 |
+| WEPN_033 | 700 | 71500 | 300 | 1.5 | 15 | 45 | 40 | 30 | 1* | 1.05 | 1.3 | 3* | 35 |
 | WEPN_037 | 800 | 70000 | 400 | 0.58 | 14 | 45 | 50 | 30 | 0.9 | 1 | 0.4 | 1 | 35 |
-| RFB | 450 | 88000 | 500 | 0.69 | 10 | 45 | 50 | 30 | - | 2 | 0.6 | 1 | 35 |
-| SKS | - | - | - | - | - | - | - | - | - | - | - | - | - |
-| SVDM | 480 | 80000 | 800 | 0.45 | 10 | 45 | 50 | 30 | - | 1.75 | 0.8 | - | 35 |
-| WEPN_034 | 700 | 85300 | 500 | 0.73 | 10 | 45 | 50 | 30 | - | 2 | 0.5 | 1 | 35 |
-| LMG_02 | - | 82500 | 1000 | 2.5 | 20 | 45 | 10 | 50 | 1.25 | 3.5 | 0.9 | - | 40 |
-| M249 | 850 | 91500 | 700 | 4.3 | 20 | 45 | 10 | 50 | 1.2 | 3 | 1.25 | - | 40 |
-| WEPN_036 | 700 | 79000 | 1000 | 0.73 | 15 | 45 | 10 | 50 | - | 4 | 0.6 | - | 40 |
-| CGM4 | 100 | 23000 | 400 | 2.5 | - | - | - | - | - | 1.75 | - | - | 40 |
-| Launcher_04 | 100 | 2000 | 1000 | - | - | - | - | - | - | 2 | - | - | 40 |
-| MMGL | 75 | 7500 | 400 | 20 | - | 45 | - | - | - | 1.5 | - | - | 40 |
-| RPG7 | 100 | 10000 | 300 | 3 | - | - | - | - | - | 1.5 | - | - | 40 |
-| Glock17 | - | 37500 | 50 | 3.49 | 10 | - | 40 | 10 | 1.5 | 0.6 | - | - | 20 |
-| Judge | - | - | - | - | - | - | - | - | - | - | - | - | - |
-| WEPN_026 | 430 | 25300 | 50 | 2 | 10 | 45 | 40 | 10 | 1.85 | 0.75 | - | - | 20 |
-| WEPN_027 | 267 | 47000 | - | 0.84 | - | 45 | 40 | 10 | - | 0.9 | - | - | 20 |
-| WEPN_032 | 1200 | 37500 | 50 | 2 | 10 | 45 | 40 | 10 | - | 0.55 | - | - | 20 |
-| MP9 | 900 | 40000 | - | 2.1 | 15 | - | 25 | 15 | 1.1 | 0.6 | - | - | 20 |
-| SMG_03 | 800 | 38000 | 200 | 1.3 | 17 | 45 | 50 | 30 | - | 0.8 | - | - | 20 |
-| Vector | 1200 | 37500 | 50 | 2 | 35 | 45 | 25 | 15 | - | 0.65 | 0.8 | - | 20 |
-| WEPN_028 | 800 | 40000 | 200 | 1.16 | 20 | 45 | 25 | 15 | 1.15 | 0.7 | - | - | 20 |
-| WEPN_031 | 700 | 38000 | 200 | 1.3 | 17 | 45 | 50 | 30 | - | 0.8 | - | - | 20 |
-| M500 | 120 | 48000 | 70 | 1.5 | 24 | 45 | - | - | 1.6 | 1.1 | - | - | 35 |
-| MP43 | 900 | 39100 | - | 3.08 | 28 | 45 | - | - | 1.15 | 1 | - | - | 35 |
-| MK22 | 46 | 89400 | 1000 | 0.16 | 4 | 45 | 100 | - | 1.4 | 0.7 | 1.6 | - | 40 |
-| Mosin | 46 | 86500 | 500 | 0.78 | 4 | 45 | 100 | - | 0.8 | 0.7 | 1.5 | - | 40 |
-| SR_04 | 41.5 | 90000 | 2000 | 0.11 | 4 | 45 | 100 | - | 1.45 | 0.9 | 2.0 | - | 40 |
-| SV98 | 46 | 83000 | 1000 | 0.56 | 4 | 45 | 100 | - | 1.3 | 0.8 | 1.5 | - | 40 |
-| WEPN_035 | 46 | 97500 | 300 | 1.5 | 4 | 45 | 100 | - | 0.3 | 0.55 | 1.5 | - | 40 |
+| RFB | 450 | 88000 | 500 | 0.69 | 10 | 45 | 50 | 30 | 1* | 2 | 0.6 | 1 | 35 |
+| SKS | 420 | 73500 | 400 | 0.73 | 5.5 | 45 | 50 | 30 | 1* | 2 | 1.1 | 3* | 35 |
+| SVDM | 480 | 80000 | 800 | 0.45 | 10 | 45 | 50 | 30 | 1* | 1.75 | 0.8 | 3* | 35 |
+| WEPN_034 | 700 | 85300 | 500 | 0.73 | 10 | 45 | 50 | 30 | 1* | 2 | 0.5 | 1 | 35 |
+| LMG_02 | 600* | 82500 | 1000 | 2.5 | 20 | 45 | 10 | 50 | 1.25 | 3.5 | 0.9 | 3* | 40 |
+| M249 | 850 | 91500 | 700 | 4.3 | 20 | 45 | 10 | 50 | 1.2 | 3 | 1.25 | 3* | 40 |
+| WEPN_036 | 700 | 79000 | 1000 | 0.73 | 15 | 45 | 10 | 50 | 1* | 4 | 0.6 | 3* | 40 |
+| CGM4 | 100 | 23000 | 400 | 2.5 | 5* | 1* | 0* | 0* | 1* | 1.75 | 1* | 3* | 40 |
+| Launcher_04 | 100 | 2000 | 1000 | 1* | 5* | 1* | 0* | 0* | 1* | 2 | 1* | 3* | 40 |
+| MMGL | 75 | 7500 | 400 | 20 | 5* | 45 | 0* | 0* | 1* | 1.5 | 1* | 3* | 40 |
+| RPG7 | 100 | 10000 | 300 | 3 | 5* | 1* | 0* | 0* | 1* | 1.5 | 1* | 3* | 40 |
+| Glock17 | 600* | 37500 | 50 | 3.49 | 10 | 1* | 40 | 10 | 1.5 | 0.6 | 1* | 3* | 20 |
+| Judge | 200 | 33500 | 50 | 3.49 | 10 | 45 | 40 | 10 | 1* | 1.5 | 1* | 3* | 20 |
+| WEPN_026 | 430 | 25300 | 50 | 2 | 10 | 45 | 40 | 10 | 1.85 | 0.75 | 1* | 3* | 20 |
+| WEPN_027 | 267 | 47000 | 100* | 0.84 | 5* | 45 | 40 | 10 | 1* | 0.9 | 1* | 3* | 20 |
+| WEPN_032 | 1200 | 37500 | 50 | 2 | 10 | 45 | 40 | 10 | 1* | 0.55 | 1* | 3* | 20 |
+| MP9 | 900 | 40000 | 100* | 2.1 | 15 | 1* | 25 | 15 | 1.1 | 0.6 | 1* | 3* | 20 |
+| SMG_03 | 800 | 38000 | 200 | 1.3 | 17 | 45 | 50 | 30 | 1* | 0.8 | 1* | 3* | 20 |
+| Vector | 1200 | 37500 | 50 | 2 | 35 | 45 | 25 | 15 | 1* | 0.65 | 0.8 | 3* | 20 |
+| WEPN_028 | 800 | 40000 | 200 | 1.16 | 20 | 45 | 25 | 15 | 1.15 | 0.7 | 1* | 3* | 20 |
+| WEPN_031 | 700 | 38000 | 200 | 1.3 | 17 | 45 | 50 | 30 | 1* | 0.8 | 1* | 3* | 20 |
+| M500 | 120 | 48000 | 70 | 1.5 | 24 | 45 | 0* | 0* | 1.6 | 1.1 | 1* | 3* | 35 |
+| MP43 | 900 | 39100 | 100* | 3.08 | 28 | 45 | 0* | 0* | 1.15 | 1 | 1* | 3* | 35 |
+| MK22 | 46 | 89400 | 1000 | 0.16 | 4 | 45 | 100 | 0* | 1.4 | 0.7 | 1.6 | 3* | 40 |
+| Mosin | 46 | 86500 | 500 | 0.78 | 4 | 45 | 100 | 0* | 0.8 | 0.7 | 1.5 | 3* | 40 |
+| SR_04 | 41.5 | 90000 | 2000 | 0.11 | 4 | 45 | 100 | 0* | 1.45 | 0.9 | 2.0 | 3* | 40 |
+| SV98 | 46 | 83000 | 1000 | 0.56 | 4 | 45 | 100 | 0* | 1.3 | 0.8 | 1.5 | 3* | 40 |
+| WEPN_035 | 46 | 97500 | 300 | 1.5 | 4 | 45 | 100 | 0* | 0.3 | 0.55 | 1.5 | 3* | 40 |
+
+`*` marks a value the asset omits. An omitted property takes the class default, so these cells show the constructor value, not "no value" (**Data** for the omission, **Native** for the value; the `-` that remained are cells for properties this table does not read). SKS now shows its own values; the old row was all `-` although [`DA_SKS_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/DMR/SKS/Data/DA_SKS_Stats.json) carries them.
+
+**Native: class defaults of `WDWeaponStatsData`.** The export drops every property equal to the class default, so [`DA_LMG_02_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/LMG/LMG_02/Content/Data/DA_LMG_02_Stats.json) (PKM) has no `RoundsPerMinute` key and uses the default. `UWDWeaponStatsData` is 0x11D0 bytes with a `WDWeaponStats` struct (0xE48 bytes) at +0x38. The class constructor wrapper at RVA `0x6BBCDF0` sets the vtable (`0xB32BAB0`), copies a global tag (RVA `0xD2692F8`, not decoded) into `WeaponId` at +0x30, calls the struct constructor at RVA `0x699E6C0` for `WeaponStats`, then the `BackBlast` constructor at +0xE80. The struct constructor writes `RoundsPerMinute` (+0x138) = 600.0 (dword `0x44160000`) and these other defaults (struct offsets in brackets): `InitialBulletSpeed` 100000 [0xDA0], `EffectiveRange` 100 [0xDA4], `WeaponAccuracy.AccuracyValue` 1.0 [0x4], `RandomDeviationDegree` 5.0 [0xCE0], `RecoilPatternPitchMax` 1.0 [0xCB8], `FocusEnergyReductionPerShot` 0 [0x94], `RecoilReductionWhenFocussing` 0 [0x9C], `ViewKickMagnitudeMultiplier` 1.0 [0xB78], `AdsStabilizationData.AdsStabilizeTime` 0.5 [0xAC0], `SuppressionMultiplier` 1.0 [0xDA8], `RoundsPerBurst` 3 [0x150], `MeleeDamage` 25 [0xDAC], `Min/Max/ZeroingRange` 100 and `ZeroingStep` 100 [0x160-0x168]; `SupportedFireModes` is an empty array [0x140]. The exported default of the Blueprint copy of the struct (`B_Action_WeaponFire.Weapon Stats`, round-8 export, not published) independently shows `RoundsPerMinute` 600.0, `RoundsPerBurst` 3, `IronSightsAimTime` 0.2 and zeroing 100/100/100. Reproduce the cell fill with `python _tools/weapon_stats_defaults.py --check`.
+
+**PKM rate of fire.** **Derived:** the PKM's stats asset resolves to 600 rounds per minute (about 0.1 s between shots if the value is used as 60 / RPM). **Not traced:** the fire-time consumer. The `B_Action_WeaponFire` bytecode reads `TimeAfterFireToRechamber` and `FireChargeTime` from the ranged-weapon extension and never names `RoundsPerMinute` or its own `FireRateMs` variable, so the shot interval is applied somewhere else (not found). No `Attribute.Gameplay.*` fire-rate attribute or GameplayEffect in `data/` touches LMG_02 (search of the LMG_02 folder and of the attribute docs found none), so nothing was found that overrides the 600.
 
 `IronSightsAimTime` is set on several launchers to 50000 (for example RPG-7 and 9K333). That is not a plausible value in seconds, so the column is left out of the table. `TypicalSpeed` is present on 24 stats assets. Its relation to `InitialBulletSpeed` is not stated in the data.
 
