@@ -122,3 +122,21 @@ These three rows confirm the stillness mechanic: standing still reveals you; mov
 - **Music and timers.** Timer durations and music cues are not extracted.
 - **Leaderboard data.** Empty in the export.
 - **Unnamed keys.** Localised strings use `_aaa…` keys; their values are shown where the source string is present.
+
+---
+
+## 6. Item grants at spawn, by mode
+
+Static census in [Round-12 spawn provisioning](../docs/evidence/round12-spawn-provisioning.md). No data asset lists a universal starting kit.
+
+| Source | Where | Items | Label |
+|---|---|---|---|
+| Player inventory component defaults | Native constructor, 13 container setups | None (empty `DefaultContainerItems`) | Native |
+| SniperShowdown `B_SniperShowdown_LoadoutComponent` | Added to `WDMoverPlayerCharacter`, server only; BeginPlay | `Id.Item.SmallBackpack`, `Id.Item.Glock17` (context Looted, amount 1) | Data |
+| Deathmatch weapon selection and ammo components | Added to `WDMoverPlayerCharacter` | Chosen weapon plus magazines, selection-driven | Native + Data |
+| KOTH, ShootingRange, Tutorial spawn managers | `WDGameModeSession` | No path into the item-add chain found | Native (bounded) |
+| Normal gear (vendor purchase) | `Server_ApplyLoadout` continuation `0x6BD5860` | Purchased request rows | Native |
+| Stash records | `WDStorageVaultComponent` import `0x6CFE100` | `ITEMS` and `VEHICLES` records | Native |
+| Rejoin | `Server_RestoreInventory` | Rebuilt from the duplicated session | Native |
+
+Order of these routes on a first spawn is not traced.
