@@ -290,6 +290,8 @@ Notes:
 
 ## 4. Action Definitions (`Actions/`, 116 `BH`/`WD` action definitions)
 
+Per-asset tables (all 155 definitions by item family, conflict rules, item bindings, use data and the effects each action applies) are on [Item Actions](Wardogs_ItemActions_v1.md). The folder summary follows.
+
 Each action carries an `ActionTag`, an `ActionClass` (blueprint), an `ActivationContextType` and a list of `ActionContext` flags. The context flags (Holdable, TwoHanded, OneHanded, Weapon, Interaction, Movement, UI, Emote, FollowProjectile) determine when the action is valid.
 
 | Folder | Context | Count | Examples (tag) |
