@@ -3,7 +3,9 @@
 //   list <prefix>                  -> <outDir>/files.txt: every .uasset whose name starts with <prefix> (e.g. GE_)
 //   schema <substr...>             -> <outDir>/usmap_schema.json: usmap struct/enum layouts whose name contains a substring
 //   recover-bp-types <new.usmap>    -> fills unknown array elements from matching cooked Blueprint fields; never overwrites a map
+//   recover-bp-names <new.usmap>   -> names hashed properties of cooked Blueprint classes from their serialized ChildProperties (BlueprintNames.cs); never overwrites a map
 //   recover-rigvm-types <new.usmap> -> fills unknown arrays from exact hashed RigVM property-bag descriptors
+//   recover-pcg-layout-types <new.usmap> -> map-only: fills unknown PropertyBag_* array elements from the matching native PCGSettings layout (PcgLayoutTypes.cs); never overwrites a map
 //   findname <pathPrefix> <text>   -> <outDir>/findname.txt: packages under the prefix whose name map contains the text
 //   dump <listFile | asset...>     -> <outDir>/<name>.json per package (all exports, Blueprint bytecode included)
 //   mesh <listFile | asset...>     -> <outDir>/<collision mesh>.glb + manifest.json: collision meshes only (MeshMode.cs)
@@ -25,7 +27,7 @@ using Serilog;
 
 if (args.Length < 6)
 {
-    Console.WriteLine("usage: WdExtract <paksDir> <aesKeyFile> <usmap> <outDir> <oodleDll> <list|schema|findname|dump|mesh|physics|collision|deobfuscate|recover-bp-types|recover-rigvm-types> [args...] [--names <usmap>]");
+    Console.WriteLine("usage: WdExtract <paksDir> <aesKeyFile> <usmap> <outDir> <oodleDll> <list|schema|findname|dump|mesh|physics|collision|deobfuscate|recover-bp-types|recover-bp-names|recover-rigvm-types|recover-pcg-layout-types> [args...] [--names <usmap>]");
     return 1;
 }
 string paksDir = args[0], keyFile = args[1], usmap = args[2], outDir = args[3], oodle = args[4], mode = args[5];
@@ -73,7 +75,24 @@ if (mode == "deobfuscate")
     return 0;
 }
 
-if ((mode == "recover-bp-types" || mode == "recover-rigvm-types") && (rest.Count != 1 || File.Exists(rest[0]) || namesUsmap != null))
+if (mode == "recover-pcg-layout-types")
+{
+    if (rest.Count != 1 || File.Exists(rest[0]) || namesUsmap != null)
+    {
+        Console.Error.WriteLine("recover-pcg-layout-types requires one new output usmap path (existing files and --names are refused); <usmap> is the input map");
+        return 1;
+    }
+    var pcgMappings = new UsmapParser(usmap).Mappings;
+    var pcgLog = new List<string>();
+    var pcgFilled = PcgLayoutTypes.Apply(pcgMappings, pcgLog);
+    UsmapWriter.Write(pcgMappings, rest[0], overwrite: false);
+    var pcgRemaining = UsmapStats.Count(new UsmapParser(rest[0]).Mappings).unknown;
+    File.WriteAllLines(Path.Combine(outDir, "_pcg_layout_types_log.txt"), pcgLog);
+    Console.WriteLine($"recover-pcg-layout-types: {pcgFilled} filled, {pcgRemaining} unknown slots remain");
+    return 0;
+}
+
+if ((mode == "recover-bp-types" || mode == "recover-bp-names" || mode == "recover-rigvm-types") && (rest.Count != 1 || File.Exists(rest[0]) || namesUsmap != null))
 {
     Console.Error.WriteLine($"{mode} requires one new output usmap path (existing files and --names are refused)");
     return 1;
@@ -95,15 +114,15 @@ if (namesUsmap != null)
     File.WriteAllLines(Path.Combine(outDir, "_names_log.txt"), log);
 }
 
-if (mode == "recover-bp-types" || mode == "recover-rigvm-types")
+if (mode == "recover-bp-types" || mode == "recover-bp-names" || mode == "recover-rigvm-types")
 {
     var mappings = new UsmapParser(usmap).Mappings;
     var log = new List<string>();
-    var filled = mode == "recover-bp-types" ? BlueprintTypes.Apply(provider, mappings, log) : RigVMTypes.Apply(provider, mappings, log);
+    var filled = mode == "recover-bp-types" ? BlueprintTypes.Apply(provider, mappings, log) : mode == "recover-bp-names" ? BlueprintNames.Apply(provider, mappings, log) : RigVMTypes.Apply(provider, mappings, log);
     UsmapWriter.Write(mappings, rest[0], overwrite: false);
     var remaining = UsmapStats.Count(new UsmapParser(rest[0]).Mappings).unknown;
-    File.WriteAllLines(Path.Combine(outDir, mode == "recover-bp-types" ? "_blueprint_types_log.txt" : "_rigvm_types_log.txt"), log);
-    Console.WriteLine($"{mode}: {filled} filled, {remaining} unknown slots remain");
+    File.WriteAllLines(Path.Combine(outDir, mode == "recover-bp-types" ? "_blueprint_types_log.txt" : mode == "recover-bp-names" ? "_blueprint_names_log.txt" : "_rigvm_types_log.txt"), log);
+    Console.WriteLine($"{mode}: {filled} {(mode == "recover-bp-names" ? "renamed" : "filled")}, {remaining} unknown slots remain, {UsmapStats.Count(new UsmapParser(rest[0]).Mappings).hashedProps} hashed names remain");
     return 0;
 }
 

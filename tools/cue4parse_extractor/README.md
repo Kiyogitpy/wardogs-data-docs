@@ -41,6 +41,8 @@ WdExtract <Paks> <keyfile> <usmap> <out> <Paks>\oo2core_9_win64.dll <mode> [args
 | `schema BHGameplay` | `<out>/usmap_schema.json`: usmap layouts whose name contains the text |
 | `recover-bp-types <new.usmap>` | New map with unknown array element types recovered from cooked Blueprint `ChildProperties`; refuses an existing output map. Audit log in `<out>/_blueprint_types_log.txt`. |
 | `recover-rigvm-types <new.usmap>` | New map with unknown array element types recovered from exact RigVM property-bag descriptor hashes; refuses an existing output map. Audit log in `<out>/_rigvm_types_log.txt`. |
+| `recover-bp-names <new.usmap>` | New map whose hashed property tokens of cooked Blueprint (`_C`) classes are named from the package's serialized `ChildProperties` (same field count, same non-hashed names at each ordinal, same kind, name length equal to the token's); accepted tokens rename every other property that carries them unless the struct already has that name. Refuses an existing output map. Audit log in `<out>/_blueprint_names_log.txt`. |
+| `recover-pcg-layout-types <new.usmap>` | Map-only (no paks read; `<usmap>` is the input). Fills unknown array element types of `PropertyBag_*` owners from the native `PCGSettings` descendant whose ordered field layout they reproduce, when every matching class gives one complete type. Layout evidence, not a descriptor-hash proof; see [round 12](../../docs/evidence/round12-mapping-residuals.md). Refuses an existing output map. Audit log in `<out>/_pcg_layout_types_log.txt`. |
 | `dump <files.txt or package paths>` | `<out>/<name>.json` per package: all exports, Blueprint bytecode included; failures in `_failures.txt` |
 | `deobfuscate <out.usmap> --names <donor.usmap> [--sdk <sdk/raw>] [--types <usmap>] [--fill-names <usmap>]` | A deobfuscated copy of `<usmap>`: names and element types restored from the donor, then (with `--sdk`) from this build's SDK headers, then the hand patches; read back through CUE4Parse to check it. `--types` / `--fill-names` then make the export usmap (see below). No paks or key are read (pass `-` for those arguments). Log in `<out>/_deobfuscate_log.txt` |
 | `findname <path prefix> <text>` | `<out>/findname.txt`: packages under the prefix whose name map contains the text (IoStore imports are hashed, so this finds names an asset uses, not who references it) |
@@ -71,7 +73,7 @@ it retains **2,690** hashed names and leaves **53** unknown types across
 **36** other generated property-bag owners. See the [Blueprint mapping audit](../../docs/evidence/round8-mapping-gaps.md)
 and [property-bag recovery evidence](../../docs/evidence/round8-propertybag-types.md).
 
-**`--names <usmap>`** (except `recover-bp-types` and `recover-rigvm-types`) borrows property names and array element
+**`--names <usmap>`** (except `recover-bp-types`, `recover-bp-names`, `recover-rigvm-types` and `recover-pcg-layout-types`) borrows property names and array element
 types from an unobfuscated usmap, by the same rules as `deobfuscate` (see
 [`mappings/README.md`](../../mappings/README.md#how-deobfuscated-it-is)).
 Simpler: generate the deobfuscated usmap once and pass it as `<usmap>`:
