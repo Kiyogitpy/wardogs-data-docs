@@ -112,19 +112,22 @@ for c in COLOURS:
     S("fire_utility", "B_SmokeGrenade_" + c, "BaseFuseTime", unit="s", native=("AWDGrenade", "0x0620"))
     S("fire_utility", "DA_SmokeGrenade_" + c, "Total Duration", fallback=["PDA_SmokeGrenade"], unit="s")
     S("fire_utility", "DA_SmokeGrenade_" + c, "SpriteMaxSize", fallback=["PDA_SmokeGrenade"])
-S("fire_utility", "B_SmokeGrenade_White", "PostExplodeLifespan", unit="s")
+S("fire_utility", "B_SmokeGrenade_White", "PostExplodeLifespan", unit="s", native=("AWDExplosive", "0x4B4"))
 S("fire_utility", "B_WorldSmokeGrenade_White", "InitialLifeSpan", unit="s")
 S("fire_utility", "B_WorldSmokeGrenade_Red", "InitialLifeSpan", unit="s")
 for p in ("Fade In Time", "Fade Out Time", "Diameter"):
     S("fire_utility", "PDA_SmokeGrenade", p, unit="s" if "Time" in p else "")
-for p in ("Density", "Height", "SphereTraceRadius", "WallHitPosOffset", "OriginOffset"):
-    S("fire_utility", "BP_SmokeGrenadeVFX", p)
+for p, off in (("Density", None), ("Height", None), ("SphereTraceRadius", "0x2B8"), ("WallHitPosOffset", "0x2BC"),
+               ("OriginOffset", None)):
+    S("fire_utility", "BP_SmokeGrenadeVFX", p, native=("AWDSmokeGrenadeVFXActor", off) if off else None)
 S("fire_utility", "B_Molotov", "BaseFuseTime", unit="s", native=("AWDGrenade", "0x0620"))
 S("fire_utility", "B_Molotov", "bCanBeCooked", native=("AWDGrenade", "0x0624"))
 for p, off in (("_aaaakffacidhmniagfchm", "0x674"), ("_aaaakmpdngpdcdjfoghgn", "0x678"), ("_aaabclpkjcpbbjcpncgfa", "0x684")):
-    S("fire_utility", "B_Molotov", p, note="obfuscated AWDMolotovGrenade field at +" + off[2:].lstrip("0") + "; meaning not decoded")
+    S("fire_utility", "B_Molotov", p, native=("AWDMolotovGrenade", off),
+      note="obfuscated AWDMolotovGrenade field at +" + off[2:] + "; meaning not decoded")
 for p in ("FlatPlayerDamage", "FlatVehicleDamage", "InitialLifeSpan", "_aaaalampbnfacakccbbcd"):
-    S("fire_utility", "B_Molotov_FireField", p, unit="s" if p == "InitialLifeSpan" else "")
+    S("fire_utility", "B_Molotov_FireField", p, unit="s" if p == "InitialLifeSpan" else "",
+      native=("AWDMolotovFireField", "0x2D0") if p.startswith("_aaaalamp") else None)
 S("fire_utility", "B_Molotov_TriggerVolume", "InitialLifeSpan", unit="s")
 for p, off in (("Duration", "0x0030"), ("MaxStacks", "0x0034"), ("StackDurationRefreshPolicy", "0x0036")):
     S("fire_utility", "GE_MolotovBurning", p, native=("UBHGameplayEffect", off),
@@ -397,6 +400,8 @@ def _montage_has_rate(idx, stem):
 
 def _finish(base, o):
     base.pop("class_", None)
+    if o.get("native") and "native_class" not in base:
+        base["native_class"], base["sdk_offset"] = o["native"]
     if o.get("unit"):
         base["unit"] = o["unit"]
     if o.get("note"):
@@ -435,6 +440,31 @@ def sdk_check():
     return out
 
 
+def native_index():
+    path = os.path.join(ROOT, "assets", "data", "native-defaults.json")
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8") as f:
+        return {(e["class"], int(e["offset"], 16)): e for e in json.load(f)["entries"]}
+
+
+def join_native(entries):
+    """Attach the native constructor default (assets/data/native-defaults.json) to every entry that names a native
+    class. A native-pending entry whose value is found there becomes resolved_from 'native'."""
+    nd = native_index()
+    for e in entries:
+        if "sdk_offset" not in e:
+            continue
+        n = nd.get((e["native_class"], int(e["sdk_offset"], 16))) if e["sdk_offset"] != "?" else None
+        if n is None:
+            continue
+        e["native_default"] = n["value"]
+        e["native_ctor_rva"] = n["ctor_rva"]
+        if e["resolved_from"] == "native-pending":
+            e["value"] = n["value"]
+            e["resolved_from"] = "native"
+
+
 def build(dump):
     idx = Index(dump)
     entries, missing = [], []
@@ -446,6 +476,7 @@ def build(dump):
             missing.append((topic, asset, prop))
         else:
             entries.append(e)
+    join_native(entries)
     entries.sort(key=lambda e: (e["topic"], e["asset"], e["property"]))
     return entries, missing
 
@@ -468,7 +499,8 @@ def main():
                 "parent": "set on a parent Blueprint or the class Blueprint behind an item instance",
                 "bp-default": "declared by a Blueprint, never set: type default",
                 "engine-default": "engine property left at its engine default",
-                "native-pending": "not set by any Blueprint: native constructor default, see round 17 native defaults",
+                "native": "not set by any Blueprint: the native constructor default from assets/data/native-defaults.json (native_ctor_rva)",
+                "native-pending": "not set by any Blueprint and not in native-defaults.json",
             },
             "count": len(entries),
         },

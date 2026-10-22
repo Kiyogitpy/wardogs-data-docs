@@ -6,7 +6,8 @@
    "parent": "set on a parent Blueprint or the class Blueprint behind an item instance",
    "bp-default": "declared by a Blueprint, never set: type default",
    "engine-default": "engine property left at its engine default",
-   "native-pending": "not set by any Blueprint: native constructor default, see round 17 native defaults"
+   "native": "not set by any Blueprint: the native constructor default from assets/data/native-defaults.json (native_ctor_rva)",
+   "native-pending": "not set by any Blueprint and not in native-defaults.json"
   },
   "count": 261
  },
@@ -302,7 +303,11 @@
    "unit": "s",
    "resolved_from": "export",
    "from_asset": "B_FragGrenade",
-   "package": "Wardogs/Content/Weapons/Grenades/B_FragGrenade"
+   "native_class": "AWDGrenade",
+   "sdk_offset": "0x0620",
+   "package": "Wardogs/Content/Weapons/Grenades/B_FragGrenade",
+   "native_default": 5.0,
+   "native_ctor_rva": "0x6cadc90"
   },
   {
    "topic": "explosives",
@@ -324,6 +329,8 @@
    "value": true,
    "resolved_from": "export",
    "from_asset": "B_FragGrenade",
+   "native_class": "AWDGrenade",
+   "sdk_offset": "0x0624",
    "package": "Wardogs/Content/Weapons/Grenades/B_FragGrenade"
   },
   {
@@ -345,20 +352,26 @@
    "unit": "s",
    "resolved_from": "parent",
    "from_asset": "B_FragGrenade",
-   "package": "Wardogs/Content/Weapons/Grenades/B_GoldFragGrenade"
+   "native_class": "AWDGrenade",
+   "sdk_offset": "0x0620",
+   "package": "Wardogs/Content/Weapons/Grenades/B_GoldFragGrenade",
+   "native_default": 5.0,
+   "native_ctor_rva": "0x6cadc90"
   },
   {
    "topic": "explosives",
    "asset": "B_Molotov",
    "class": "B_Molotov_C",
    "property": "BaseFuseTime",
-   "value": null,
+   "value": 5.0,
    "unit": "s",
-   "resolved_from": "native-pending",
+   "resolved_from": "native",
    "from_asset": null,
    "native_class": "AWDGrenade",
    "sdk_offset": "0x0620",
-   "package": "Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Data/Blueprints/B_Molotov"
+   "package": "Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Data/Blueprints/B_Molotov",
+   "native_default": 5.0,
+   "native_ctor_rva": "0x6cadc90"
   },
   {
    "topic": "explosives",
@@ -369,7 +382,11 @@
    "unit": "s",
    "resolved_from": "export",
    "from_asset": "B_SmokeGrenade_Red",
-   "package": "Wardogs/Plugins/GameFeatures/Items/SmokeGrenade/Content/Data/ColourVariants/B_SmokeGrenade_Red"
+   "native_class": "AWDGrenade",
+   "sdk_offset": "0x0620",
+   "package": "Wardogs/Plugins/GameFeatures/Items/SmokeGrenade/Content/Data/ColourVariants/B_SmokeGrenade_Red",
+   "native_default": 5.0,
+   "native_ctor_rva": "0x6cadc90"
   },
   {
    "topic": "explosives",
@@ -479,7 +496,11 @@
    "value": 65.0,
    "resolved_from": "export",
    "from_asset": "BP_SmokeGrenadeVFX",
-   "package": "Wardogs/Content/VFX/Shared/BP_SmokeGrenadeVFX"
+   "native_class": "AWDSmokeGrenadeVFXActor",
+   "sdk_offset": "0x2B8",
+   "package": "Wardogs/Content/VFX/Shared/BP_SmokeGrenadeVFX",
+   "native_default": 65.0,
+   "native_ctor_rva": "0x869c200"
   },
   {
    "topic": "fire_utility",
@@ -489,20 +510,26 @@
    "value": 100.0,
    "resolved_from": "export",
    "from_asset": "BP_SmokeGrenadeVFX",
-   "package": "Wardogs/Content/VFX/Shared/BP_SmokeGrenadeVFX"
+   "native_class": "AWDSmokeGrenadeVFXActor",
+   "sdk_offset": "0x2BC",
+   "package": "Wardogs/Content/VFX/Shared/BP_SmokeGrenadeVFX",
+   "native_default": 100.0,
+   "native_ctor_rva": "0x869c200"
   },
   {
    "topic": "fire_utility",
    "asset": "B_Molotov",
    "class": "B_Molotov_C",
    "property": "BaseFuseTime",
-   "value": null,
+   "value": 5.0,
    "unit": "s",
-   "resolved_from": "native-pending",
+   "resolved_from": "native",
    "from_asset": null,
    "native_class": "AWDGrenade",
    "sdk_offset": "0x0620",
-   "package": "Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Data/Blueprints/B_Molotov"
+   "package": "Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Data/Blueprints/B_Molotov",
+   "native_default": 5.0,
+   "native_ctor_rva": "0x6cadc90"
   },
   {
    "topic": "fire_utility",
@@ -512,8 +539,12 @@
    "value": 1.5,
    "resolved_from": "export",
    "from_asset": "B_Molotov",
+   "native_class": "AWDMolotovGrenade",
+   "sdk_offset": "0x674",
    "package": "Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Data/Blueprints/B_Molotov",
-   "note": "obfuscated AWDMolotovGrenade field at +674; meaning not decoded"
+   "note": "obfuscated AWDMolotovGrenade field at +674; meaning not decoded",
+   "native_default": 0.5,
+   "native_ctor_rva": "0x86a0200"
   },
   {
    "topic": "fire_utility",
@@ -523,8 +554,12 @@
    "value": 15,
    "resolved_from": "export",
    "from_asset": "B_Molotov",
+   "native_class": "AWDMolotovGrenade",
+   "sdk_offset": "0x678",
    "package": "Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Data/Blueprints/B_Molotov",
-   "note": "obfuscated AWDMolotovGrenade field at +678; meaning not decoded"
+   "note": "obfuscated AWDMolotovGrenade field at +678; meaning not decoded",
+   "native_default": 12,
+   "native_ctor_rva": "0x86a0200"
   },
   {
    "topic": "fire_utility",
@@ -534,8 +569,12 @@
    "value": 100.0,
    "resolved_from": "export",
    "from_asset": "B_Molotov",
+   "native_class": "AWDMolotovGrenade",
+   "sdk_offset": "0x684",
    "package": "Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Data/Blueprints/B_Molotov",
-   "note": "obfuscated AWDMolotovGrenade field at +684; meaning not decoded"
+   "note": "obfuscated AWDMolotovGrenade field at +684; meaning not decoded",
+   "native_default": 40.0,
+   "native_ctor_rva": "0x86a0200"
   },
   {
    "topic": "fire_utility",
@@ -588,7 +627,11 @@
    "value": 2000.0,
    "resolved_from": "export",
    "from_asset": "B_Molotov_FireField",
-   "package": "Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Data/Blueprints/B_Molotov_FireField"
+   "native_class": "AWDMolotovFireField",
+   "sdk_offset": "0x2D0",
+   "package": "Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Data/Blueprints/B_Molotov_FireField",
+   "native_default": 250.0,
+   "native_ctor_rva": "0x86a0140"
   },
   {
    "topic": "fire_utility",
@@ -610,7 +653,11 @@
    "unit": "s",
    "resolved_from": "export",
    "from_asset": "B_SmokeGrenade_Black",
-   "package": "Wardogs/Plugins/GameFeatures/Items/SmokeGrenade/Content/Data/ColourVariants/B_SmokeGrenade_Black"
+   "native_class": "AWDGrenade",
+   "sdk_offset": "0x0620",
+   "package": "Wardogs/Plugins/GameFeatures/Items/SmokeGrenade/Content/Data/ColourVariants/B_SmokeGrenade_Black",
+   "native_default": 5.0,
+   "native_ctor_rva": "0x6cadc90"
   },
   {
    "topic": "fire_utility",
@@ -621,7 +668,11 @@
    "unit": "s",
    "resolved_from": "export",
    "from_asset": "B_SmokeGrenade_Blue",
-   "package": "Wardogs/Plugins/GameFeatures/Items/SmokeGrenade/Content/Data/ColourVariants/B_SmokeGrenade_Blue"
+   "native_class": "AWDGrenade",
+   "sdk_offset": "0x0620",
+   "package": "Wardogs/Plugins/GameFeatures/Items/SmokeGrenade/Content/Data/ColourVariants/B_SmokeGrenade_Blue",
+   "native_default": 5.0,
+   "native_ctor_rva": "0x6cadc90"
   },
   {
    "topic": "fire_utility",
@@ -632,7 +683,11 @@
    "unit": "s",
    "resolved_from": "export",
    "from_asset": "B_SmokeGrenade_Green",
-   "package": "Wardogs/Plugins/GameFeatures/Items/SmokeGrenade/Content/Data/ColourVariants/B_SmokeGrenade_Green"
+   "native_class": "AWDGrenade",
+   "sdk_offset": "0x0620",
+   "package": "Wardogs/Plugins/GameFeatures/Items/SmokeGrenade/Content/Data/ColourVariants/B_SmokeGrenade_Green",
+   "native_default": 5.0,
+   "native_ctor_rva": "0x6cadc90"
   },
   {
    "topic": "fire_utility",
@@ -643,7 +698,11 @@
    "unit": "s",
    "resolved_from": "export",
    "from_asset": "B_SmokeGrenade_Orange",
-   "package": "Wardogs/Plugins/GameFeatures/Items/SmokeGrenade/Content/Data/ColourVariants/B_SmokeGrenade_Orange"
+   "native_class": "AWDGrenade",
+   "sdk_offset": "0x0620",
+   "package": "Wardogs/Plugins/GameFeatures/Items/SmokeGrenade/Content/Data/ColourVariants/B_SmokeGrenade_Orange",
+   "native_default": 5.0,
+   "native_ctor_rva": "0x6cadc90"
   },
   {
    "topic": "fire_utility",
@@ -654,7 +713,11 @@
    "unit": "s",
    "resolved_from": "export",
    "from_asset": "B_SmokeGrenade_Purple",
-   "package": "Wardogs/Plugins/GameFeatures/Items/SmokeGrenade/Content/Data/ColourVariants/B_SmokeGrenade_Purple"
+   "native_class": "AWDGrenade",
+   "sdk_offset": "0x0620",
+   "package": "Wardogs/Plugins/GameFeatures/Items/SmokeGrenade/Content/Data/ColourVariants/B_SmokeGrenade_Purple",
+   "native_default": 5.0,
+   "native_ctor_rva": "0x6cadc90"
   },
   {
    "topic": "fire_utility",
@@ -665,7 +728,11 @@
    "unit": "s",
    "resolved_from": "export",
    "from_asset": "B_SmokeGrenade_Red",
-   "package": "Wardogs/Plugins/GameFeatures/Items/SmokeGrenade/Content/Data/ColourVariants/B_SmokeGrenade_Red"
+   "native_class": "AWDGrenade",
+   "sdk_offset": "0x0620",
+   "package": "Wardogs/Plugins/GameFeatures/Items/SmokeGrenade/Content/Data/ColourVariants/B_SmokeGrenade_Red",
+   "native_default": 5.0,
+   "native_ctor_rva": "0x6cadc90"
   },
   {
    "topic": "fire_utility",
@@ -676,7 +743,11 @@
    "unit": "s",
    "resolved_from": "export",
    "from_asset": "B_SmokeGrenade_White",
-   "package": "Wardogs/Plugins/GameFeatures/Items/SmokeGrenade/Content/Data/ColourVariants/B_SmokeGrenade_White"
+   "native_class": "AWDGrenade",
+   "sdk_offset": "0x0620",
+   "package": "Wardogs/Plugins/GameFeatures/Items/SmokeGrenade/Content/Data/ColourVariants/B_SmokeGrenade_White",
+   "native_default": 5.0,
+   "native_ctor_rva": "0x6cadc90"
   },
   {
    "topic": "fire_utility",
@@ -687,7 +758,11 @@
    "unit": "s",
    "resolved_from": "export",
    "from_asset": "B_SmokeGrenade_White",
-   "package": "Wardogs/Plugins/GameFeatures/Items/SmokeGrenade/Content/Data/ColourVariants/B_SmokeGrenade_White"
+   "native_class": "AWDExplosive",
+   "sdk_offset": "0x4B4",
+   "package": "Wardogs/Plugins/GameFeatures/Items/SmokeGrenade/Content/Data/ColourVariants/B_SmokeGrenade_White",
+   "native_default": 2.0,
+   "native_ctor_rva": "0x6ca7800"
   },
   {
    "topic": "fire_utility",
@@ -698,7 +773,11 @@
    "unit": "s",
    "resolved_from": "export",
    "from_asset": "B_SmokeGrenade_Yellow",
-   "package": "Wardogs/Plugins/GameFeatures/Items/SmokeGrenade/Content/Data/ColourVariants/B_SmokeGrenade_Yellow"
+   "native_class": "AWDGrenade",
+   "sdk_offset": "0x0620",
+   "package": "Wardogs/Plugins/GameFeatures/Items/SmokeGrenade/Content/Data/ColourVariants/B_SmokeGrenade_Yellow",
+   "native_default": 5.0,
+   "native_ctor_rva": "0x6cadc90"
   },
   {
    "topic": "fire_utility",
@@ -2615,7 +2694,11 @@
    "unit": "s",
    "resolved_from": "export",
    "from_asset": "B_WDCore_MoverPlayerCharacter",
-   "package": "Wardogs/Plugins/GameFeatures/WDCore/Content/Character/B_WDCore_MoverPlayerCharacter"
+   "native_class": "AWDMoverCharacter",
+   "sdk_offset": "0x0980",
+   "package": "Wardogs/Plugins/GameFeatures/WDCore/Content/Character/B_WDCore_MoverPlayerCharacter",
+   "native_default": 300.0,
+   "native_ctor_rva": "0x6e67160"
   },
   {
    "topic": "medical",
@@ -2625,7 +2708,11 @@
    "value": 100.00002,
    "resolved_from": "export",
    "from_asset": "B_WDCore_MoverPlayerCharacter",
-   "package": "Wardogs/Plugins/GameFeatures/WDCore/Content/Character/B_WDCore_MoverPlayerCharacter"
+   "native_class": "AWDMoverCharacter",
+   "sdk_offset": "0x0988",
+   "package": "Wardogs/Plugins/GameFeatures/WDCore/Content/Character/B_WDCore_MoverPlayerCharacter",
+   "native_default": 15.0,
+   "native_ctor_rva": "0x6e67160"
   },
   {
    "topic": "medical",
@@ -2635,58 +2722,70 @@
    "value": 20.0,
    "resolved_from": "export",
    "from_asset": "B_WDCore_MoverPlayerCharacter",
-   "package": "Wardogs/Plugins/GameFeatures/WDCore/Content/Character/B_WDCore_MoverPlayerCharacter"
+   "native_class": "AWDMoverCharacter",
+   "sdk_offset": "0x0970",
+   "package": "Wardogs/Plugins/GameFeatures/WDCore/Content/Character/B_WDCore_MoverPlayerCharacter",
+   "native_default": 2.0,
+   "native_ctor_rva": "0x6e67160"
   },
   {
    "topic": "medical",
    "asset": "B_WDCore_MoverPlayerCharacter",
    "class": "WDCharacterVitalityComponent",
    "property": "DecayMagnitude",
-   "value": null,
-   "resolved_from": "native-pending",
+   "value": 5.0,
+   "resolved_from": "native",
    "from_asset": null,
    "native_class": "UWDCharacterVitalityComponent",
    "sdk_offset": "0x0170",
    "package": "Wardogs/Plugins/GameFeatures/WDCore/Content/Character/B_WDCore_MoverPlayerCharacter",
-   "note": "VitalityComponent subobject"
+   "note": "VitalityComponent subobject",
+   "native_default": 5.0,
+   "native_ctor_rva": "0x6b16790"
   },
   {
    "topic": "medical",
    "asset": "B_WDCore_MoverPlayerCharacter",
    "class": "WDCharacterVitalityComponent",
    "property": "DecayRate",
-   "value": null,
-   "resolved_from": "native-pending",
+   "value": 5.0,
+   "resolved_from": "native",
    "from_asset": null,
    "native_class": "UWDCharacterVitalityComponent",
    "sdk_offset": "0x016C",
    "package": "Wardogs/Plugins/GameFeatures/WDCore/Content/Character/B_WDCore_MoverPlayerCharacter",
-   "note": "VitalityComponent subobject"
+   "note": "VitalityComponent subobject",
+   "native_default": 5.0,
+   "native_ctor_rva": "0x6b16790"
   },
   {
    "topic": "medical",
    "asset": "B_WDCore_MoverPlayerCharacter",
    "class": "B_WDCore_MoverPlayerCharacter_C",
    "property": "DefaultBleedOutRate",
-   "value": null,
-   "resolved_from": "native-pending",
+   "value": 1.0,
+   "resolved_from": "native",
    "from_asset": null,
    "native_class": "AWDMoverCharacter",
    "sdk_offset": "0x098C",
-   "package": "Wardogs/Plugins/GameFeatures/WDCore/Content/Character/B_WDCore_MoverPlayerCharacter"
+   "package": "Wardogs/Plugins/GameFeatures/WDCore/Content/Character/B_WDCore_MoverPlayerCharacter",
+   "native_default": 1.0,
+   "native_ctor_rva": "0x6e67160"
   },
   {
    "topic": "medical",
    "asset": "B_WDCore_MoverPlayerCharacter",
    "class": "WDCharacterVitalityComponent",
    "property": "DefaultHealthToReviveTo",
-   "value": null,
-   "resolved_from": "native-pending",
+   "value": 25.0,
+   "resolved_from": "native",
    "from_asset": null,
    "native_class": "UWDCharacterVitalityComponent",
    "sdk_offset": "0x0160",
    "package": "Wardogs/Plugins/GameFeatures/WDCore/Content/Character/B_WDCore_MoverPlayerCharacter",
-   "note": "VitalityComponent subobject"
+   "note": "VitalityComponent subobject",
+   "native_default": 25.0,
+   "native_ctor_rva": "0x6b16790"
   },
   {
    "topic": "medical",
@@ -2696,7 +2795,11 @@
    "value": 240.0,
    "resolved_from": "parent",
    "from_asset": "B_WDMoverPlayerCharacter",
-   "package": "Wardogs/Plugins/GameFeatures/WDCore/Content/Character/B_WDCore_MoverPlayerCharacter"
+   "native_class": "AWDMoverCharacter",
+   "sdk_offset": "0x0994",
+   "package": "Wardogs/Plugins/GameFeatures/WDCore/Content/Character/B_WDCore_MoverPlayerCharacter",
+   "native_default": 6.0,
+   "native_ctor_rva": "0x6e67160"
   },
   {
    "topic": "medical",
@@ -2706,7 +2809,11 @@
    "value": 0.5,
    "resolved_from": "export",
    "from_asset": "B_WDCore_MoverPlayerCharacter",
-   "package": "Wardogs/Plugins/GameFeatures/WDCore/Content/Character/B_WDCore_MoverPlayerCharacter"
+   "native_class": "AWDMoverCharacter",
+   "sdk_offset": "0x0990",
+   "package": "Wardogs/Plugins/GameFeatures/WDCore/Content/Character/B_WDCore_MoverPlayerCharacter",
+   "native_default": 0.1,
+   "native_ctor_rva": "0x6e67160"
   },
   {
    "topic": "medical",
@@ -2716,34 +2823,42 @@
    "value": 40.0,
    "resolved_from": "parent",
    "from_asset": "B_WDMoverPlayerCharacter",
+   "native_class": "UWDCharacterVitalityComponent",
+   "sdk_offset": "0x0168",
    "package": "Wardogs/Plugins/GameFeatures/WDCore/Content/Character/B_WDCore_MoverPlayerCharacter",
-   "note": "VitalityComponent subobject"
+   "note": "VitalityComponent subobject",
+   "native_default": 0.0,
+   "native_ctor_rva": "0x6b16790"
   },
   {
    "topic": "medical",
    "asset": "B_WDCore_MoverPlayerCharacter",
    "class": "WDCharacterVitalityComponent",
    "property": "MaxHealth",
-   "value": null,
-   "resolved_from": "native-pending",
+   "value": 100.0,
+   "resolved_from": "native",
    "from_asset": null,
    "native_class": "UWDVitalityComponent",
    "sdk_offset": "0x0134",
    "package": "Wardogs/Plugins/GameFeatures/WDCore/Content/Character/B_WDCore_MoverPlayerCharacter",
-   "note": "VitalityComponent subobject"
+   "note": "VitalityComponent subobject",
+   "native_default": 100.0,
+   "native_ctor_rva": "0x6b81720"
   },
   {
    "topic": "medical",
    "asset": "B_WDCore_MoverPlayerCharacter",
    "class": "WDCharacterVitalityComponent",
    "property": "MaxOverhealHealth",
-   "value": null,
-   "resolved_from": "native-pending",
+   "value": 0.0,
+   "resolved_from": "native",
    "from_asset": null,
    "native_class": "UWDCharacterVitalityComponent",
    "sdk_offset": "0x0164",
    "package": "Wardogs/Plugins/GameFeatures/WDCore/Content/Character/B_WDCore_MoverPlayerCharacter",
-   "note": "VitalityComponent subobject"
+   "note": "VitalityComponent subobject",
+   "native_default": 0.0,
+   "native_ctor_rva": "0x6b16790"
   },
   {
    "topic": "medical",
@@ -2754,20 +2869,26 @@
    "unit": "s",
    "resolved_from": "export",
    "from_asset": "B_WDCore_MoverPlayerCharacter",
-   "package": "Wardogs/Plugins/GameFeatures/WDCore/Content/Character/B_WDCore_MoverPlayerCharacter"
+   "native_class": "AWDMoverCharacter",
+   "sdk_offset": "0x0984",
+   "package": "Wardogs/Plugins/GameFeatures/WDCore/Content/Character/B_WDCore_MoverPlayerCharacter",
+   "native_default": 60.0,
+   "native_ctor_rva": "0x6e67160"
   },
   {
    "topic": "medical",
    "asset": "B_WDCore_MoverPlayerCharacter",
    "class": "WDCharacterVitalityComponent",
    "property": "RegenDelay",
-   "value": null,
-   "resolved_from": "native-pending",
+   "value": 10.0,
+   "resolved_from": "native",
    "from_asset": null,
    "native_class": "UWDVitalityComponent",
    "sdk_offset": "0x0138",
    "package": "Wardogs/Plugins/GameFeatures/WDCore/Content/Character/B_WDCore_MoverPlayerCharacter",
-   "note": "VitalityComponent subobject"
+   "note": "VitalityComponent subobject",
+   "native_default": 10.0,
+   "native_ctor_rva": "0x6b81720"
   },
   {
    "topic": "medical",
