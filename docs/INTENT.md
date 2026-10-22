@@ -52,7 +52,7 @@ Documentation is the one output that:
    fair-use research posture
 3. **Serves multiple audiences** — new players, speedrunners,
    theorycrafters, modders of related games, security researchers,
-   Embark themselves
+   the developers themselves
 4. **Doesn't require persistence** — the output is static markdown,
    not a running tool
 5. **Has a natural end state** — "I've documented everything"
@@ -81,8 +81,8 @@ ones they *don't* know about to the public internet in minutes.
 The responsible path is to:
 
 1. Find them during the documentation work
-2. Report them privately to Embark
-3. Give Embark a reasonable fix window
+2. Report them privately to the responsible vendor
+3. Give the vendor a reasonable fix window
 4. Publish the write-up after the fix ships
 
 That's the standard CVE process applied to a game security context.
@@ -113,7 +113,7 @@ Three reasons:
 ### Why this document exists
 
 Anyone reading this project — whether a human contributor, an AI
-assistant, Embark's security team, or someone wondering if this
+assistant, the vendor's security team, or someone wondering if this
 is a cheat repository in disguise — should be able to understand
 the intent from reading one document. This is that document.
 

@@ -39,7 +39,7 @@ repo.
 ### Security findings pipeline
 
 - Private tracking of security-relevant findings
-- Coordinated disclosure to Embark Studios
+- Coordinated disclosure to the responsible vendor (Bulkhead/Team17, or Embark for Elytra)
 - Public write-up only after remediation (see
   [`../SECURITY.md`](../SECURITY.md))
 
@@ -114,7 +114,7 @@ Some topics are judgment calls. Default posture:
 
 ## When in doubt
 
-Ask: "If Embark's security team read this contribution tomorrow,
+Ask: "If the vendor's security team read this contribution tomorrow,
 would they thank me or sue me?" If the answer isn't clearly
 "thank me", route it through [`../SECURITY.md`](../SECURITY.md)
 instead of publishing it.
