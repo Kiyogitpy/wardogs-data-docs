@@ -255,7 +255,7 @@ Armor and helmets come from `DT_VendorData_Ext_Armor`, vests and backpacks from 
 
 ## 3. Medical
 
-Bandages are sold by `DT_UtilityMarket`; the rest come from per-item plugin tables. The `Applies` values are the item's own `WDItemExtensionData_Appliable` value; heal rate and timing live in the item's action data and gameplay effects, which are not decoded here.
+Bandages are sold by `DT_UtilityMarket`; the rest come from per-item plugin tables. The `Applies` values are the item's own `WDItemExtensionData_Appliable` value; heal rate, timing, side effects and the downed and revive rules are on [Medical and Healing](Wardogs_Medical_v1.md).
 
 <!-- item_shop_tables shop_medical -->
 | Item id | Name | Subtitle | Description | Category | Price | Unlock lvl | Req. items | Buy limit | Amount | Variations | Tables |
