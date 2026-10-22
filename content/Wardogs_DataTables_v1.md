@@ -569,7 +569,7 @@ redirect_from: ["/Wardogs_DataTables_v1.html", "/Wardogs_DataTables_v1"]
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| [`DT_CharacterSkillNodes_Data`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_CharacterSkillNodes_Data.json) | 131 | `UI/Data` | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md), [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
+| [`DT_CharacterSkillNodes_Data`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_CharacterSkillNodes_Data.json) | 131 | `UI/Data` | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md), [Wardogs_Medical_v1](../game-features/Wardogs_Medical_v1.md), [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
 
 #### WDCustomRewardTableRow
 
@@ -737,7 +737,7 @@ redirect_from: ["/Wardogs_DataTables_v1.html", "/Wardogs_DataTables_v1"]
 |---|---|---|---|
 | [`DT_DriverSkills`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/CharacterSkills/DT_DriverSkills.json) | 6 | `Meta/CharacterSkills` | [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
 | [`DT_InfantrySkills`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/CharacterSkills/DT_InfantrySkills.json) | 17 | `Meta/CharacterSkills` | [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
-| [`DT_MedicSkills`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/CharacterSkills/DT_MedicSkills.json) | 4 | `Meta/CharacterSkills` | [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
+| [`DT_MedicSkills`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/CharacterSkills/DT_MedicSkills.json) | 4 | `Meta/CharacterSkills` | [Wardogs_Medical_v1](../game-features/Wardogs_Medical_v1.md), [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
 | [`DT_PilotSkills`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/CharacterSkills/DT_PilotSkills.json) | 6 | `Meta/CharacterSkills` | [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
 | [`DT_ReconSkills`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/CharacterSkills/DT_ReconSkills.json) | 13 | `Meta/CharacterSkills` | [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
 | [`DT_Skills_C4`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/C4/Content/Data/Skills/DT_Skills_C4.json) | 1 | `GF/Items/C4/Data/Skills` | [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
@@ -754,9 +754,9 @@ redirect_from: ["/Wardogs_DataTables_v1.html", "/Wardogs_DataTables_v1"]
 |---|---|---|---|
 | [`DT_GlobalDamage_ArmorData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_ArmorData.json) | 4 | `GameMechanics/DamageSystem/DamageDataTables` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [round8-armor](../docs/evidence/round8-armor.md), [Wardogs_GameFeatures_Ammo_v2](../game-features/Wardogs_GameFeatures_Ammo_v2.md) (+1) |
 | [`DT_GlobalDamage_BuildableData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/DT_GlobalDamage_BuildableData.json) | 20 | `GF/Items/Buildables/Data` | [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md), [Wardogs_GameFeatures_Items_v2](../game-features/Wardogs_GameFeatures_Items_v2.md) |
-| [`DT_GlobalDamage_InfantryData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_InfantryData.json) | 1 | `GameMechanics/DamageSystem/DamageDataTables` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [CROSS_REFERENCE](../docs/CROSS_REFERENCE.md), [damage](../docs/evidence/damage.md) (+2) |
+| [`DT_GlobalDamage_InfantryData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_InfantryData.json) | 1 | `GameMechanics/DamageSystem/DamageDataTables` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [CROSS_REFERENCE](../docs/CROSS_REFERENCE.md), [damage](../docs/evidence/damage.md) (+3) |
 | [`DT_GlobalDamage_SupplyCrate`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/SupplyCrates/Content/DataTables/DT_GlobalDamage_SupplyCrate.json) | 5 | `GF/Vehicles/SupplyCrates/DataTables` | [Wardogs_GameFeatures_Vehicles_v2](../game-features/Wardogs_GameFeatures_Vehicles_v2.md) |
-| [`DT_GlobalDamage_VehicleData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_VehicleData.json) | 1 | `GameMechanics/DamageSystem/DamageDataTables` | [Wardogs_AllVehicles_Stats_Damage_v1](../content/Wardogs_AllVehicles_Stats_Damage_v1.md), [Wardogs_DamagePipeline_v2](../pipelines/Wardogs_DamagePipeline_v2.md), [Wardogs_VehicleDamagePipeline_v1](../pipelines/Wardogs_VehicleDamagePipeline_v1.md) |
+| [`DT_GlobalDamage_VehicleData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_VehicleData.json) | 1 | `GameMechanics/DamageSystem/DamageDataTables` | [Wardogs_AllVehicles_Stats_Damage_v1](../content/Wardogs_AllVehicles_Stats_Damage_v1.md), [Wardogs_Explosives_v1](../game-features/Wardogs_Explosives_v1.md), [Wardogs_DamagePipeline_v2](../pipelines/Wardogs_DamagePipeline_v2.md) (+1) |
 | [`DT_GlobalDamage_VehicleData_ROT_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/DataTables/DT_GlobalDamage_VehicleData_ROT_02.json) | 1 | `GF/Vehicles/ROT_02/DataTables` | [Wardogs_AllVehicles_Stats_Damage_v1](../content/Wardogs_AllVehicles_Stats_Damage_v1.md), [Wardogs_GameFeatures_Vehicles_v2](../game-features/Wardogs_GameFeatures_Vehicles_v2.md) |
 | [`DT_GlobalDamage_VehicleData_ROT_03`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03/Content/DataTables/DT_GlobalDamage_VehicleData_ROT_03.json) | 1 | `GF/Vehicles/ROT_03/DataTables` | [Wardogs_AllVehicles_Stats_Damage_v1](../content/Wardogs_AllVehicles_Stats_Damage_v1.md) |
 | [`DT_GlobalDamage_VehicleData_ROT_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04/Content/DataTables/DT_GlobalDamage_VehicleData_ROT_04.json) | 1 | `GF/Vehicles/ROT_04/DataTables` | [Wardogs_AllVehicles_Stats_Damage_v1](../content/Wardogs_AllVehicles_Stats_Damage_v1.md) |
@@ -1028,14 +1028,14 @@ redirect_from: ["/Wardogs_DataTables_v1.html", "/Wardogs_DataTables_v1"]
 
 #### WDPostProcessEffect
 
-5 table(s), 15 rows, 3 named in docs. UI widget table, not expanded.
+5 table(s), 15 rows, 4 named in docs. UI widget table, not expanded.
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
 | [`DT_AlternativeCriticalCamera`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AlternativeCriticalCamera/Content/DT_AlternativeCriticalCamera.json) | 1 | `GF/AlternativeCriticalCamera/Content` | [CROSS_REFERENCE](../docs/CROSS_REFERENCE.md), [CROSS_REF](../docs/gap_resolution/CROSS_REF.md), [Wardogs_GameFeatures_AlternativeCriticalCamera_v2](../game-features/Wardogs_GameFeatures_AlternativeCriticalCamera_v2.md) |
 | [`DT_PostProcessEffects`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/VFX/Postprocess/DT_PostProcessEffects.json) | 11 | `VFX/Postprocess` | [Wardogs_VFX_v2](../content/Wardogs_VFX_v2.md) |
 | [`DT_PostProcessEffects_FOB`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/ForwardOperatingBase/DT_PostProcessEffects_FOB.json) | 1 | `GF/Items/Buildables/Data/ForwardOperatingBase` | [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md) |
-| [`DT_PostProcessEffects_Molotov`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Data/DT_PostProcessEffects_Molotov.json) | 1 | `GF/Items/Molotov/Data` | not named |
+| [`DT_PostProcessEffects_Molotov`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Data/DT_PostProcessEffects_Molotov.json) | 1 | `GF/Items/Molotov/Data` | [Wardogs_FireAndUtility_v1](../game-features/Wardogs_FireAndUtility_v1.md) |
 | [`DT_PostProcessEffects_StimPen`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/StimPen/Content/Data/DT_PostProcessEffects_StimPen.json) | 1 | `GF/Items/StimPen/Data` | not named |
 
 #### WDUIUserSettingDisplayDataTableRow
