@@ -24,7 +24,7 @@ The [Item Shop](Wardogs_ItemShop_v1.md) lists what medical items cost and the [I
 - **Healing is per use, not a rate, except for the Medical Bag.** The bandage adds 35 health and the Individual First Aid Kit adds 100 per use (**Data**). The Medical Bag is the only item with a stated duration: 35 over 5 s on yourself, 15 over 1.5 s on a teammate (**Data**).
 - **There is no damage-over-time bleeding.** "Bleed" in the game is the downed bleed-out timer (section 6). No medical item definition has a cure or removal tag, and no effect below changes health over time (**Data**). No splint or tourniquet item exists in the data.
 - **Using an item slows you.** The bandage, First Aid Kit, Medical Bag, stim and resuscitator apply `GE_UseAppliable`, which multiplies max speed by 0.5 (**Data**).
-- **Use time in seconds is not in the data.** Most items use `AnimationLength`, so the time is the length of an animation montage. The montage assets are not exported, so the seconds are not traced. The Medical Bag and the resuscitator run until the item is empty or the target is full.
+- **Use time in seconds is the length of the animation montage.** Most items use `AnimationLength`; the base action reads the length of the item's animation (`CalculateTotalInteractionTime` in `B_Action_Appliable_Base`, **Data (Blueprint bytecode)**), or the position of a named notify for `AnimationNotifier`. The montage lengths are in the use table below (**Data (Blueprint CDO)**, round 17 export, [evidence](../docs/evidence/round17-blueprint-defaults.md)): bandage 5.23 s on yourself and 4.83 s on a teammate, First Aid Kit 5.23 s with the heal at 4.73 s, Enox 2.17 s, Stim Pen 2 s. Every montage has play rate 1.0. The Medical Bag and the resuscitator run until the item is empty or the target is full.
 - **Natural regeneration for infantry was not found.** The vitality component only starts a 10 s regen delay timer after damage (**Native**); the one regen component in the data belongs to Deathmatch and its values are blueprint (not traced).
 
 ## 2. Items: use and consumption
@@ -32,19 +32,19 @@ The [Item Shop](Wardogs_ItemShop_v1.md) lists what medical items cost and the [I
 How the use is timed, what it consumes and what the user and target must be. The primary use targets another player and the secondary use targets yourself.
 
 <!-- medical_tables use -->
-| Item | Use | Time method | Animation (first-person montage) | Consumed per use | Stack or charges | Owner must be | Target must be |
-|---|---|---|---|---|---|---|---|
-| Bandage (`Id.Item.Bandage`) | `Action.Appliable.Bandage.SecondaryUse` (self) | `AnimationLength` | `AM_FP_Bandage_Self_Heal` | 1 | stack of 5 | `Injured`, `Vitality.Alive` | - |
-| Bandage (`Id.Item.Bandage`) | `Action.Appliable.Bandage.PrimaryUse` (other player) | `AnimationLength` | `AM_FP_Bandage_Teammate_Heal` | 1 | stack of 5 | `Vitality.Alive` | `Injured`, `Vitality.Alive` |
-| Individual First Aid Kit (`Id.Item.SuperBandage`) | `Action.Appliable.Bandage.SecondaryUse` (self) | `AnimationNotifier`, notifier `Heal` | `AM_FP_IFAK_Self_Heal` | 1 | single item | `Vitality.Alive`, `Injured` | - |
-| Individual First Aid Kit (`Id.Item.SuperBandage`) | `Action.Appliable.Bandage.PrimaryUse` (other player) | `AnimationLength`, notifier `Heal` | `AM_FP_IFAK_Teammate_Heal` | 1 | single item | `Vitality.Alive` | `Vitality.Alive`, `Injured` |
-| Medical Bag (`ID.Item.MedKit.Standard`) | `Action.MedKit.PrimaryUse` (other player) | `UntilItemEmptyOrTargetFull` | `AM_FP_Medkit_Use` | durability (see medkit table) | durability 150 | `Vitality.Alive` | - |
-| Medical Bag (`ID.Item.MedKit.Standard`) | `Action.Appliable.MedKit.SecondaryUse` (self) | `UntilItemEmptyOrTargetFull` | `AM_FP_Medkit_Use_Self` | durability (see medkit table) | durability 150 | `Injured`, `Vitality.Alive` | - |
-| Enox (`ID.Item.Enox.Standard`) | `Action.Appliable.Enox.SecondaryUse` (self) | `AnimationLength` | `AM_FP_Enox_Use` | 1 | single item | `Vitality.Alive`, `Injured` | - |
-| Stim Pen (`Id.Item.StimPen`) | `Action.Appliable.StimPen.SecondaryUse` (self) | `AnimationLength` | `AM_FP_StimPen_Use` | 1 | stack of 3 | `Vitality.Alive` | - |
-| Stim Pen (`Id.Item.StimPen`) | `Action.Appliable.StimPen.PrimaryUse` (other player) | `AnimationLength` | `AM_FP_StimPen_Use_Teammate` | 1 | stack of 3 | `Vitality.Alive` | `Vitality.Alive` |
-| Emergency Resuscitator (`Id.Item.Resuscitator.Cheap`) | `Action.Appliable.Resuscitator.PrimaryUse` (other player) | `UntilItemEmptyOrTargetFull` | `AM_Resuscitator_Use` | 1 (container unit) | single item | `Vitality.Alive` | - |
-| Field Resuscitator (`Id.Item.Resuscitator.Standard`) | `Action.Appliable.Resuscitator.PrimaryUse` (other player) | `UntilItemEmptyOrTargetFull` | `AM_Resuscitator_Use` | 1 (container unit) | single item | `Vitality.Alive` | - |
+| Item | Use | Time method | Animation (first-person montage) | Seconds (**Data**, montage) | Consumed per use | Stack or charges | Owner must be | Target must be |
+|---|---|---|---|---|---|---|---|---|
+| Bandage (`Id.Item.Bandage`) | `Action.Appliable.Bandage.SecondaryUse` (self) | `AnimationLength` | `AM_FP_Bandage_Self_Heal` | 5.23 s | 1 | stack of 5 | `Injured`, `Vitality.Alive` | - |
+| Bandage (`Id.Item.Bandage`) | `Action.Appliable.Bandage.PrimaryUse` (other player) | `AnimationLength` | `AM_FP_Bandage_Teammate_Heal` | 4.83 s | 1 | stack of 5 | `Vitality.Alive` | `Injured`, `Vitality.Alive` |
+| Individual First Aid Kit (`Id.Item.SuperBandage`) | `Action.Appliable.Bandage.SecondaryUse` (self) | `AnimationNotifier`, notifier `Heal` | `AM_FP_IFAK_Self_Heal` | 5.23 s; `Heal` notify at 4.73 s | 1 | single item | `Vitality.Alive`, `Injured` | - |
+| Individual First Aid Kit (`Id.Item.SuperBandage`) | `Action.Appliable.Bandage.PrimaryUse` (other player) | `AnimationLength`, notifier `Heal` | `AM_FP_IFAK_Teammate_Heal` | 5.23 s; `Heal` notify at 5.18 s | 1 | single item | `Vitality.Alive` | `Vitality.Alive`, `Injured` |
+| Medical Bag (`ID.Item.MedKit.Standard`) | `Action.MedKit.PrimaryUse` (other player) | `UntilItemEmptyOrTargetFull` | `AM_FP_Medkit_Use` | 7.4 s (loop 1.47 to 5.7 s; the use lasts until the item or target is done) | durability (see medkit table) | durability 150 | `Vitality.Alive` | - |
+| Medical Bag (`ID.Item.MedKit.Standard`) | `Action.Appliable.MedKit.SecondaryUse` (self) | `UntilItemEmptyOrTargetFull` | `AM_FP_Medkit_Use_Self` | 7.4 s (loop 1.47 to 5.7 s; the use lasts until the item or target is done) | durability (see medkit table) | durability 150 | `Injured`, `Vitality.Alive` | - |
+| Enox (`ID.Item.Enox.Standard`) | `Action.Appliable.Enox.SecondaryUse` (self) | `AnimationLength` | `AM_FP_Enox_Use` | 2.17 s | 1 | single item | `Vitality.Alive`, `Injured` | - |
+| Stim Pen (`Id.Item.StimPen`) | `Action.Appliable.StimPen.SecondaryUse` (self) | `AnimationLength` | `AM_FP_StimPen_Use` | 2 s | 1 | stack of 3 | `Vitality.Alive` | - |
+| Stim Pen (`Id.Item.StimPen`) | `Action.Appliable.StimPen.PrimaryUse` (other player) | `AnimationLength` | `AM_FP_StimPen_Use_Teammate` | 1.27 s | 1 | stack of 3 | `Vitality.Alive` | `Vitality.Alive` |
+| Emergency Resuscitator (`Id.Item.Resuscitator.Cheap`) | `Action.Appliable.Resuscitator.PrimaryUse` (other player) | `UntilItemEmptyOrTargetFull` | `AM_Resuscitator_Use` | 2.17 s | 1 (container unit) | single item | `Vitality.Alive` | - |
+| Field Resuscitator (`Id.Item.Resuscitator.Standard`) | `Action.Appliable.Resuscitator.PrimaryUse` (other player) | `UntilItemEmptyOrTargetFull` | `AM_Resuscitator_Use` | 2.17 s | 1 (container unit) | single item | `Vitality.Alive` | - |
 <!-- /medical_tables -->
 
 Charge and container data for the items that revive (they have no `AppliableActionData`, or use a container instead of a count):
@@ -52,9 +52,9 @@ Charge and container data for the items that revive (they have no `AppliableActi
 <!-- medical_tables container -->
 | Item | Attribute and amount | Container start / max | Update time | Update amount | Derived reading |
 |---|---|---|---|---|---|
-| Defibrillator (`Id.Item.Defibrillator.Standard`) | `Appliable.Amount` 35 | - | 0.2 s | 1 | if a full charge is the 35 amount: 7 s to charge (the threshold is not confirmed); `ChargesPerSecondConsumption` is 0, battery cost per charge not traced |
-| Emergency Resuscitator (`Id.Item.Resuscitator.Cheap`) | `Appliable.Amount` 10 (delta) | 10 / 10 | 4 s | 1 | 10 units emptied at 1 per 4 s = 40 s to empty; whether a revive needs all 10 units is not traced |
-| Field Resuscitator (`Id.Item.Resuscitator.Standard`) | `Appliable.Amount` 10 (delta) | 10 / 10 | 4 s | 1 | 10 units emptied at 1 per 4 s = 40 s to empty; whether a revive needs all 10 units is not traced |
+| Defibrillator (`Id.Item.Defibrillator.Standard`) | `Appliable.Amount` 35 | - | 0.2 s | 1 | **Data (Blueprint CDO)**: the action starts a timer of `ChargeDuration` 4 s and the discharge spends `BatteryChargesUsed` 25 battery charges (`BH_Defibrillator_WattsExtensionData`); the 35 is the revive health, so the container reading (7 s) is not the charge time; `ChargesPerSecondConsumption` is 0 |
+| Emergency Resuscitator (`Id.Item.Resuscitator.Cheap`) | `Appliable.Amount` 10 (delta) | 10 / 10 | 4 s | 1 | 10 units emptied at 1 per 4 s; **Derived** from the base action formula `CalculateInteractionTimeToReachValue` = (amount / update amount + 1) x update time = 44 s to empty (**Data (Blueprint bytecode)**, `B_Action_Appliable_Base`); whether a revive needs all 10 units is not traced |
+| Field Resuscitator (`Id.Item.Resuscitator.Standard`) | `Appliable.Amount` 10 (delta) | 10 / 10 | 4 s | 1 | 10 units emptied at 1 per 4 s; **Derived** from the base action formula `CalculateInteractionTimeToReachValue` = (amount / update amount + 1) x update time = 44 s to empty (**Data (Blueprint bytecode)**, `B_Action_Appliable_Base`); whether a revive needs all 10 units is not traced |
 
 Batteries that feed the defibrillator (**Data**, `Plugins/GameFeatures/Items/Battery`): `Id.Item.Battery` holds up to 100 `Id.Item.BatteryCharge`, `Id.Item.LargeBattery` up to 250 (`MaxSlotAmountStackSize` of the charge container). The defibrillator takes a battery as its magazine (`Item.Attachment.Magazine.Battery`) and starts with one `Id.Item.Battery`.
 <!-- /medical_tables -->
@@ -69,7 +69,7 @@ Batteries that feed the defibrillator (**Data**, `Plugins/GameFeatures/Items/Bat
 | Medical Bag (`ID.Item.MedKit.Standard`) | self 35 over 5 s; other 15 over 1.5 s | self 7 HP/s; other 10 HP/s (Derived: amount / duration) | 50 health (durability 10) | no cure or removal tags in data (no bleed, splint or poison state exists to cure) | `GE_UseAppliable` | movement speed x0.5 while using (`GE_UseAppliable`, no duration set; removal by the action, not traced) | no cooldown in data; durability 150 is the limit |
 | Enox (`ID.Item.Enox.Standard`) | +40 as decaying health (`DecayHealAmount` 40) | decays after use; pool size and decay delta not traced (see states) | - | no cure or removal tags in data (no bleed, splint or poison state exists to cure) | - | - | requires Injured; no cooldown in data |
 | Stim Pen (`Id.Item.StimPen`) | - | - | - | no cure or removal tags in data (no bleed, splint or poison state exists to cure) | `GE_UnlimitedTacSprint`, `GE_UseAppliable` | movement speed x0.5 while using (`GE_UseAppliable`, no duration set; removal by the action, not traced); 60 s: tac sprint stamina use x0, focus energy use x0; tags `Stimulant.UnlimitedTacSprint`, `InhibitWeight.StepDown` (equipment weight class one step lower); camera FOV x1.05 (ignored while Critical) | carry up to 3; effect `Stacks` 1; `max_stacks` and refresh policy are not set in data (native default not traced); the two stim uses block each other |
-| Defibrillator (`Id.Item.Defibrillator.Standard`) | - | - | instant revive; revive health not traced | no cure or removal tags in data (no bleed, splint or poison state exists to cure) | `GE_Defib` | `GE_Defib` (from the action) grants tag `Reviving.Friendly` (no modifiers); watts extension `Damage` 100 (what it applies to is not traced) | cannot be used while the user is Critical |
+| Defibrillator (`Id.Item.Defibrillator.Standard`) | - | - | instant revive to 35 health (`AttributeValue`, passed to `RevivePlayer` by `BH_Defibrillator_WattsExtensionComponent.ReviveCharacter`; **Data (Blueprint CDO)**) | no cure or removal tags in data (no bleed, splint or poison state exists to cure) | `GE_Defib` | `GE_Defib` (from the action) grants tag `Reviving.Friendly` (no modifiers); watts extension `Damage` 100 (what it applies to is not traced) | cannot be used while the user is Critical |
 | Emergency Resuscitator (`Id.Item.Resuscitator.Cheap`) | - | - | revive; health after revive not traced | no cure or removal tags in data (no bleed, splint or poison state exists to cure) | `GE_UseAppliable` | movement speed x0.5 while using (`GE_UseAppliable`, no duration set; removal by the action, not traced) | single use per purchase (shop text) |
 | Field Resuscitator (`Id.Item.Resuscitator.Standard`) | - | - | revive; health after revive not traced | no cure or removal tags in data (no bleed, splint or poison state exists to cure) | `GE_UseAppliable` | movement speed x0.5 while using (`GE_UseAppliable`, no duration set; removal by the action, not traced) | single use per purchase (shop text) |
 <!-- /medical_tables -->
@@ -127,21 +127,24 @@ Only `GE_UnlimitedTacSprint` carries a duration among the item effects: **60 s**
 What the tutorial says (**Data**, `DA_Tutorials_Health`): "When your health reaches zero, you enter the critical state. If you aren't revived in time, you'll bleed out and respawn at Headquarters." and "Reviving with no medical gear takes time, so watch your surroundings." A critical player can be dragged by a friend. `IA_Player_DownedHoldOn`, `IA_Player_DownedGiveUp` and `IA_Player_DownedCallForHelp` are the downed inputs (**Data**).
 
 <!-- medical_tables states -->
-| Mechanic | Value | Source (**Native**) |
+| Mechanic | Value | Source |
 |---|---|---|
-| Base bleed-out time | 300 s | `AWDMoverCharacter` constructor `0x6E67160` writes `BaseBleedOutTime` (+0x980) = 300.0; the timer start `0x6E75540` copies it into total (+0x814) and remaining (+0x828) |
-| Minimum bleed-out time after a revive | 60 s | constructor `0x6E67160` writes `MinBleedOutTime` (+0x984) = 60.0; `0x6E75540` uses `max(MinBleedOutTime, remaining)` when the revive counter byte (+0xA70) is nonzero, so a character that was revived once and goes down again restarts from at least 60 s, not 300 s |
-| Bleed-out drain | dt x rate; kill at 0 | tick `0x6E780D0` subtracts `dt * rate` from the remaining time (floored at 0) and, with role byte 3, calls the kill path `0x6E71400` when it reaches 0. The rate it reads in the normal state is the float at +0x990 (SDK name `HoldOnBleedOutRate`, native default 0.1); in give-up state (byte +0x820 = 2) it reads +0x994 (`GiveUpBleedOutRate`, default 6.0). `DefaultBleedOutRate` (+0x98C, default 1.0) has no native reader, so the blueprint presumably sets +0x990 per state: the effective rate in each state is not traced |
-| Damage while critical | none | the bleed tick never calls the damage or health path; `UWDCharacterVitalityComponent` (`0x6B17760`) returns 0 and writes no health when the character lacks `State.Player.Vitality.Alive`. There is no damage-over-time bleeding |
-| Revive health (component default) | 25 | `UWDCharacterVitalityComponent` constructor `0x6B16790` writes `DefaultHealthToReviveTo` (+0x160) = 25.0. The revive handler (`AWDMoverCharacter` vtable slot 323, `0x6E75620`) sets the Alive tag, bumps the revive counter, restarts the bleed timer and calls `ResetHealth` (`0x6B16E80`); which function applies the 25 (or the Medical Bag's 50) is not traced, the revive call `RevivePlayer(..., float, ...)` is blueprint-implemented |
-| Max health | 100 | `UWDVitalityComponent` constructor `0x6B81720` writes `BaseHealth` = `MaxHealth` = 100.0 (the player blueprint may override; the cooked player blueprint is not in `data/`) |
-| Regeneration delay | 10 s | same constructor: `RegenDelay` (+0x138) = 10.0. The damage path (`0x6B82520`) only broadcasts the `RegenTimer` delegate with this delay; no native tick that adds health to infantry was found. The only regeneration component in the data is `WDHealthRegenComponent`, added by the Deathmatch game feature (`OnRegenTimerStarted` `0x84965F0` is a ProcessEvent stub, so its logic and values are blueprint: not traced) |
-| Overheal pool | max 0 | `MaxOverhealHealth` (+0x164) defaults to 0 in the constructor `0x6B16790`; the character clamp is `[0, MaxHealth + MaxOverhealHealth + MaxDecayHealth]` (`0x6B17D20`) |
-| Decay pool (Enox) | max 0; DecayRate 5, DecayMagnitude 5 | constructor `0x6B16790`: `MaxDecayHealth` (+0x168) = 0, `DecayRate` (+0x16C) = 5.0, `DecayMagnitude` (+0x170) = 5.0. `Auth_CharacterHeal` (`0x6B168B0`) with a decay amount > 0 caps the heal at `MaxHealth + MaxDecay - health`, writes the decay pool (+0x17C) and starts a timer with period `DecayRate` whose callback `0x6B16EC0` subtracts a delta from health and the pool. That delta is not visible in the decompile (assumed `DecayMagnitude`, not confirmed). With `MaxDecayHealth` 0 the pool cannot hold anything, so the Enox only works if the blueprint raises it: not traced |
-| Damage reduces the decay pool | by the damage | `0x6B17760`, server role only: damage lowers the pool at +0x17C by the damage taken, at most to 0 |
+| Base bleed-out time | 360 s | **Data (Blueprint CDO)**: `B_WDCore_MoverPlayerCharacter` sets `BaseBleedOutTime` 360; the **Native** default is 300 (constructor `0x6E67160`, +0x980). The timer start `0x6E75540` copies the field into total (+0x814) and remaining (+0x828) |
+| Minimum bleed-out time after a revive | 30 s | **Data (Blueprint CDO)**: `B_WDCore_MoverPlayerCharacter` sets `MinBleedOutTime` 30; **Native** default 60 (+0x984). `0x6E75540` uses `max(MinBleedOutTime, remaining)` when the revive counter byte (+0xA70) is nonzero, so a character that was revived once and goes down again restarts from at least this time |
+| Bleed-out drain | dt x rate; kill at 0; normal state rate 0.5, give-up rate 240 | **Native**: tick `0x6E780D0` subtracts `dt * rate` from the remaining time (floored at 0) and, with role byte 3, calls the kill path `0x6E71400` at 0. Normal state reads +0x990 (`HoldOnBleedOutRate`), give-up state (byte +0x820 = 2) reads +0x994 (`GiveUpBleedOutRate`). **Data (Blueprint CDO)**: `HoldOnBleedOutRate` 0.5 (`B_WDCore_MoverPlayerCharacter`; native default 0.1), `GiveUpBleedOutRate` 240 (`B_WDMoverPlayerCharacter`; native default 6). `DefaultBleedOutRate` is not set by any Blueprint, so it stays at the native 1 (no native reader). No function in the two player Blueprints writes these fields at runtime (**Data (Blueprint bytecode)**). **Derived**: a full timer lasts 720 s in the normal state (360 / 0.5), 60 s after a revive restart (30 / 0.5) and 1.5 s once the player gives up (360 / 240) |
+| Damage while critical | none | **Native**: the bleed tick never calls the damage or health path; `UWDCharacterVitalityComponent` (`0x6B17760`) returns 0 and writes no health when the character lacks `State.Player.Vitality.Alive`. There is no damage-over-time bleeding |
+| Revive health (component default) | 25 (no Blueprint override) | `UWDCharacterVitalityComponent` constructor `0x6B16790` writes `DefaultHealthToReviveTo` (+0x160) = 25.0 and no Blueprint sets it (**Data (Blueprint CDO)**: the player `VitalityComponent` sets only `MaxDecayHealth`). The revive handler (`AWDMoverCharacter` vtable slot 323, `0x6E75620`) sets the Alive tag, bumps the revive counter, restarts the bleed timer and calls `ResetHealth` (`0x6B16E80`). The revive call `RevivePlayer(..., float, ...)` is Blueprint-implemented and each reviver passes a health: the defibrillator 35 (`AttributeValue`), the Medical Bag 50 (`ReviveOtherHealthAmount`). The value passed by the base revive and the resuscitator is not traced |
+| Max health | 100 | **Native**: `UWDVitalityComponent` constructor `0x6B81720` writes `BaseHealth` = `MaxHealth` = 100.0 (**Data (Blueprint CDO)**: neither player Blueprint sets `MaxHealth`, so 100 stands) |
+| Regeneration delay | 10 s | **Native**: same constructor: `RegenDelay` (+0x138) = 10.0. The damage path (`0x6B82520`) only broadcasts the `RegenTimer` delegate with this delay; no native tick that adds health to infantry was found. The only regeneration component in the data is `WDHealthRegenComponent`, added by the Deathmatch game feature (`OnRegenTimerStarted` `0x84965F0` is a ProcessEvent stub, so its logic and values are blueprint: not traced) |
+| Overheal pool | max 0 | **Native**: `MaxOverhealHealth` (+0x164) defaults to 0 in the constructor `0x6B16790`; the character clamp is `[0, MaxHealth + MaxOverhealHealth + MaxDecayHealth]` (`0x6B17D20`) |
+| Decay pool (Enox) | max 40; DecayRate 5, DecayMagnitude 5 | **Data (Blueprint CDO)**: the `VitalityComponent` of `B_WDMoverPlayerCharacter` sets `MaxDecayHealth` 40 (native default 0), inherited by `B_WDCore_MoverPlayerCharacter`; `DecayRate` and `DecayMagnitude` are not set, so they stay at the **Native** 5 and 5 (constructor `0x6B16790`, +0x16C, +0x170). `Auth_CharacterHeal` (`0x6B168B0`) with a decay amount > 0 caps the heal at `MaxHealth + MaxDecay - health`, writes the decay pool (+0x17C) and starts a timer with period `DecayRate` whose callback `0x6B16EC0` subtracts a delta from health and the pool. That delta is not visible in the decompile (assumed `DecayMagnitude`, not confirmed). The Enox `DecayHealAmount` 40 equals the pool size 40, so one use can fill it. **Derived** if the delta is `DecayMagnitude`: 5 health every 5 s, so 40 empties in 40 s |
+| Damage reduces the decay pool | by the damage | **Native**: `0x6B17760`, server role only: damage lowers the pool at +0x17C by the damage taken, at most to 0 |
+| Bleed-out revive penalty offset | 100 | **Data (Blueprint CDO)**: `BleedOutRevivePenaltyOffset` 100 on `B_WDCore_MoverPlayerCharacter` (+0x988; **Native** default 15). Its use in the timer restart is not decoded |
+| Critical revive hold threshold | 20 | **Data (Blueprint CDO)**: `CriticalReviveHoldThreshold` 20 on `B_WDCore_MoverPlayerCharacter` (its parent `B_WDMoverPlayerCharacter` sets 10); **Native** default 2 (+0x970). What it gates is not decoded |
+| Base revive hold time (no equipment) | 20 s | **Data (Blueprint CDO)**: `B_Action_Revive.ReviveHoldTime` 20; the first-person montage `AM_FP_Revive` is 20.5 s with a `Complete` notify at 20 s |
 <!-- /medical_tables -->
 
-Derived reading of the bleed-out values: at a drain rate of 1.0 the timer is 300 s, and after a revive it restarts at no less than 60 s. If give-up uses the rate 6.0 the remaining time empties six times faster. These sums depend on the rate the blueprint sets, which is not traced.
+Reading of the bleed-out values (**Derived** from the player Blueprint defaults above): the timer starts at 360 s and drains at 0.5 per second in the normal critical state, so a downed player lasts 720 s unless someone helps; a player who was revived once and goes down again restarts at no less than 30 s, which drains in 60 s. Giving up switches the rate to 240 per second, so a full timer ends in 1.5 s. The game defaults (300 s, 60 s, 0.1, 6.0) are overridden by the Blueprint. What the `IncreaseBleedTime` skill changes is not traced.
 
 ## 7. Medic skills that change these numbers
 
@@ -184,18 +187,18 @@ Start at 20 health, goal 100 (assumed max health, **Native** default; need 80). 
 
 | Method | Uses needed | Time | Items or durability spent | Notes |
 |---|---|---|---|---|
-| Bandage (self) | 3 | 3 x one bandage animation (seconds not traced) | 3 of a stack of 5 | +35 each; the last one is clamped at max health |
-| Individual First Aid Kit (self) | 1 | 1 x one use (seconds not traced) | 1 kit | +100 clamps at max health |
+| Bandage (self) | 3 | 3 x 5.23 s = 15.7 s (montage length, **Data**) | 3 of a stack of 5 | +35 each; the last one is clamped at max health |
+| Individual First Aid Kit (self) | 1 | 4.73 s (the heal lands at the `Heal` notify; montage 5.23 s, **Data**) | 1 kit | +100 clamps at max health |
 | Medical Bag (self) | continuous | 11.43 s | 57.14 durability (38.1 % of 150) | assumes the 35 HP is spread evenly over 5 s and durability is spent in proportion; if cost is charged per full 5 s step instead it is 75 |
 | Medical Bag (self), skill curve value 0.8 | continuous | 11.43 s | 45.71 durability | assumes `UsageRateMultiplier` scales the cost (not traced) |
 | Medical Bag (self), skill curve value 0.7 | continuous | 11.43 s | 40 durability | assumes `UsageRateMultiplier` scales the cost (not traced) |
 | Medical Bag (self), skill curve value 0.6 | continuous | 11.43 s | 34.29 durability | assumes `UsageRateMultiplier` scales the cost (not traced) |
 | Medical Bag (teammate) | continuous | 8 s | 10.67 durability | 10 HP/s, cheap per HP; heals stop if the user moves away (tutorial text) |
-| Enox | 1 | one use (seconds not traced) | 1 | gives 40 health as decaying health, not permanent; pool limits not traced |
+| Enox | 1 | 2.17 s (montage length, **Data**) | 1 | gives 40 health as decaying health, not permanent; the pool holds 40 (Blueprint `MaxDecayHealth`) |
 | Natural regeneration | - | - | - | no infantry regen tick traced outside Deathmatch |
 <!-- /medical_tables -->
 
-Reading it: the bandage and the First Aid Kit are counted in uses because their seconds are not in the data. The Medical Bag is the only method with a data-backed rate. It is the cheapest on teammates (10 HP/s at about 1.3 durability per 10 HP) and the most expensive on yourself (7 HP/s at about 7 durability per 10 HP).
+Reading it: the bandage and the First Aid Kit are counted in uses and in montage seconds (the heal-time skills, which have no data row, are not applied). The Medical Bag is the only method with a data-backed rate. It is the cheapest on teammates (10 HP/s at about 1.3 durability per 10 HP) and the most expensive on yourself (7 HP/s at about 7 durability per 10 HP).
 
 ## 9. Coverage and open items
 
@@ -209,12 +212,13 @@ Reading it: the bandage and the First Aid Kit are counted in uses because their 
 | GameplayEffects resolved | 7 of 7 |
 <!-- /medical_tables -->
 
+Settled in round 17 (**Data (Blueprint CDO)**, [evidence](../docs/evidence/round17-blueprint-defaults.md)): the seconds of every `AnimationLength` use (montage lengths) and the `Heal` notify time; the defibrillator charge time (`ChargeDuration` 4 s) and battery cost (`BatteryChargesUsed` 25 per discharge); the player bleed-out values (360 s, 30 s, rates 0.5 and 240); the Enox pool (`MaxDecayHealth` 40); the defibrillator revive health (35).
+
 Open (not traced):
 
-- Seconds for every `AnimationLength` use (montages are not exported), the defibrillator charge threshold and the resuscitator revive duration.
-- Where in the animation or action the bandage and kit amounts are applied.
-- The effective bleed-out drain rate per state, and where `Meta.Role.Medic.IncreaseBleedTime` acts.
-- Which code sets the health a revived player gets (25 is a component default; the Medical Bag lists 50; the Defibrillator and resuscitators list none), and what `HealthierRevive` adds.
-- The decay pool of the Enox: maximum, delta per tick and who sets `MaxDecayHealth` (default 0).
-- How `UsageRateMultiplier` reduces Medical Bag durability, and the battery cost of a defibrillator charge.
+- The resuscitator revive duration: the container formula gives 44 s to empty, but what ends a resuscitator revive earlier, and the health it passes to `RevivePlayer`, were not traced (the resuscitator Blueprint is the base appliable action with no revive code).
+- Where in the animation or action the bandage amount is applied (the kit applies at its `Heal` notify).
+- Where `Meta.Role.Medic.IncreaseBleedTime` acts, and what `HealthierRevive` adds.
+- The value the base revive passes as health, and what `CriticalReviveHoldThreshold` (20, native default 2) and `BleedOutRevivePenaltyOffset` (100, native default 15) gate in native code.
+- How `UsageRateMultiplier` reduces Medical Bag durability.
 - What applies `GE_Player_RessedByEnemy` (60 s tag), and the Deathmatch regen values.
