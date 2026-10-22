@@ -10,6 +10,7 @@ Sources, all read from the exported JSON:
     python _tools/action_tables.py --family medical     # definitions + response rules for one family
     python _tools/action_tables.py --appliables         # per-item use data of WDItemExtensionData_Appliable
     python _tools/action_tables.py --effects            # ActionEffects resolved against ge-values.json
+    python _tools/action_tables.py --montages           # use, throw and place montage seconds (assets/data/bp-defaults.json)
     python _tools/action_tables.py --fields             # property / flag census
     python _tools/action_tables.py --write              # refresh <!-- action_tables MODE --> blocks
 
@@ -24,6 +25,9 @@ import subprocess
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import bp_defaults as bpd  # noqa: E402
+
 DATA = os.path.join(ROOT, "data")
 GE_JSON = os.path.join(ROOT, "assets", "data", "ge-values.json")
 PAGE = "content/Wardogs_ItemActions_v1.md"
@@ -414,12 +418,52 @@ def unbound_table():
 BLOCK = re.compile(r"<!-- action_tables (.+?) -->\r?\n.*?<!-- /action_tables -->", re.S)
 
 
+MONTAGE_GROUPS = [
+    ("Use (medical)", [
+        ("Bandage, self", "AM_FP_Bandage_Self_Heal"), ("Bandage, teammate", "AM_FP_Bandage_Teammate_Heal"),
+        ("Individual First Aid Kit, self", "AM_FP_IFAK_Self_Heal"), ("Individual First Aid Kit, teammate", "AM_FP_IFAK_Teammate_Heal"),
+        ("Medical Bag, other", "AM_FP_Medkit_Use"), ("Medical Bag, self", "AM_FP_Medkit_Use_Self"),
+        ("Enox, self", "AM_FP_Enox_Use"), ("Stim Pen, self", "AM_FP_StimPen_Use"), ("Stim Pen, teammate", "AM_FP_StimPen_Use_Teammate"),
+        ("Resuscitator", "AM_Resuscitator_Use"), ("Defibrillator", "AM_FP_Defib_Use"), ("Base revive (bare hands)", "AM_FP_Revive")]),
+    ("Throw", [
+        ("M67 frag, primary (overhand)", "AM_FP_Grenade_Throw_Overhand"), ("M67 frag, secondary (underhand)", "AM_FP_Grenade_Throw_Underhand"),
+        ("M67 frag, throw back", "AM_FP_Grenade_Throw_It_Back"), ("Smoke, primary", "AM_FP_SmokeGrenade_Throw_Overarm"),
+        ("Smoke, secondary", "AM_FP_SmokeGrenade_Throw_Underarm"), ("Molotov, primary", "AM_FP_Molotov_Throw_Overarm"),
+        ("Molotov, secondary", "AM_FP_Molotov_Throw_Underarm"), ("C4 charge", "AM_FP_C4_Throw")]),
+    ("Place", [
+        ("AT mine", "AM_FP_AT_Mine_Place"), ("Claymore", "AM_FP_Claymore_Deploy"), ("IED (place)", "AM_FP_IED_Plant"),
+        ("IED trigger (dial and ring)", "AM_FP_IED_Dial_and_Ring"), ("C4 detonator", "AM_FP_C4_Use")]),
+]
+
+
+def montage_points(asset):
+    pts = []
+    for e in bpd.topic_entries("item_actions"):
+        if e["asset"] == asset and e["property"].startswith(("Notify:", "Section:")):
+            pts.append((e["value"], e["property"].split(":", 1)[1] if e["property"].startswith("Notify:") else "section " + e["property"].split(":", 1)[1]))
+    pts.sort(key=lambda x: (x[0], x[1]))
+    return ", ".join("%s %s" % (n, bpd.fmt(round(t, 2))) for t, n in pts) or "-"
+
+
+def montages_table():
+    out = ["| Group | Action | First-person montage | Length (s) | Play rate | Timed points (s) |", "|---|---|---|---:|---:|---|"]
+    for grp, rows in MONTAGE_GROUPS:
+        for label, m in rows:
+            ln = bpd.get("item_actions", m, "SequenceLength")
+            rt = bpd.get("item_actions", m, "RateScale")
+            if ln is None:
+                continue
+            out.append("| %s | %s | `%s` | %s | %s | %s |" % (grp, label, m, bpd.fmt(round(ln["value"], 2)), bpd.fmt(rt["value"]) if rt else "-", montage_points(m)))
+    return "\n".join(out)
+
+
 def render(mode):
     args = mode.split()
     if args[:1] == ["family"]:
         return family_table(args[1])
     return {"summary": summary_table, "fields": fields_table, "effects": effects_table,
-            "appliables": appliables_table, "bindings": bindings_table, "unbound": unbound_table}[args[0]]()
+            "appliables": appliables_table, "bindings": bindings_table, "unbound": unbound_table,
+            "montages": montages_table}[args[0]]()
 
 
 def write_docs():

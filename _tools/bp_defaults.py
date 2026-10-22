@@ -174,6 +174,13 @@ S("item_actions", "AM_FP_C4_Use", "RateScale", kind="rate")
 for m in MED_MONTAGES:
     S("item_actions", m, "SequenceLength", kind="len", unit="s")
     S("item_actions", m, "RateScale", kind="rate")
+for m, nm in (("AM_FP_IFAK_Self_Heal", "Heal"), ("AM_FP_IFAK_Self_Heal", "Activate"), ("AM_FP_IFAK_Teammate_Heal", "Heal"),
+              ("AM_FP_Revive", "Complete")):
+    S("item_actions", m, "Notify:" + nm, kind="notify:" + nm, unit="s")
+for m, sec in (("AM_FP_Defib_Use", "LoopStart"), ("AM_FP_Defib_Use", "LoopEnd"), ("AM_FP_Medkit_Use", "LoopStart"),
+               ("AM_FP_Medkit_Use", "LoopEnd"), ("AM_FP_Medkit_Use_Self", "LoopStart"), ("AM_FP_Medkit_Use_Self", "LoopEnd"),
+               ("AM_FP_Enox_Use", "LoopStart"), ("AM_FP_Enox_Use", "LoopEnd")):
+    S("item_actions", m, "Section:" + sec, kind="section:" + sec, unit="s")
 S("item_actions", "B_Action_Appliable_Base", "AppliableContainerData")
 S("item_actions", "B_Action_ThrowExplosive", "BaseFuseTime", unit="s")
 
