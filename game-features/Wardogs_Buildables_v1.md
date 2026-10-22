@@ -91,7 +91,19 @@ Things the inventory shows (**Derived** from the table):
 
 ## 3. Build stages
 
-Stages are progress thresholds from 0 to 1. A stage becomes visible when the build progress reaches its `RequiredBuildingProgress`. The export carries **no build time per stage**; build speed comes from the hammer ("Fast", "Moderate", "Slow" in the item text) and the construct action [`DA_Action_Buildable_Construct`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Actions/DA_Action_Buildable_Construct.json) (the rate itself is **not traced**). Supplies spent per stage are also not in the stage files.
+Stages are progress thresholds from 0 to 1. A stage becomes visible when the build progress reaches its `RequiredBuildingProgress`. The export carries **no build time per stage**; build speed comes from the hammer ("Fast", "Moderate", "Slow" in the item text) and the construct action [`DA_Action_Buildable_Construct`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Actions/DA_Action_Buildable_Construct.json). The per-hit build amount and the swing animation times of each hammer are in the table below (**Data**, [round 17 evidence](../docs/evidence/round17-blueprint-defaults.md)). Supplies spent per stage are not in the stage files.
+
+**Hammer swing and build amount** (`buildable_tables hammer_speed`). Build amount per hit is `WDItemExtensionData_BuildTool.BuildAmount` on the hammer item; the critical-spot amount is `BuildAmountWhenTargetIsHit` (**Data**). The swing times are the first-person use montage: the swing loops between the `LoopStart` and `LoopEnd` sections while the button is held and the `Hit` notify marks the blow (**Data (Blueprint CDO)**).
+
+<!-- buildable_tables hammer_speed -->
+| Hammer | Shop text | Build amount per hit | Critical-spot hit amount | Use montage | Montage (s) | Hit notify (s) | Swing loop (s) | Dismantle per hit |
+|---|---|---:|---:|---|---:|---:|---:|---:|
+| Large (`ID_LargeHammer`) | Fast Build Speed | 1.5 | 8 | `AM_FP_Large_Hammer_Use` | 1.43 | 0.45 | 0.883 | 250 |
+| Medium (`ID_MediumHammer`) | Moderate Build Speed | 1 | 5 | `AM_FP_BuildTool_Use` | 1.67 | 0.25 | 0.567 | 200 |
+| Small (`ID_SmallHammer`) | Slow Build Speed | 0.5 | 3 | `AM_FP_Small_Hammer_Use` | 1.27 | 0.24 | 0.567 | 150 |
+<!-- /buildable_tables -->
+
+**Derived**, if the loop section is the swing period and one `BuildAmount` is added per hit: Large 1.5 per 0.88 s (about 1.7 per second), Medium 1.0 per 0.57 s (about 1.76 per second), Small 0.5 per 0.57 s (about 0.88 per second). That puts Large and Medium about equal, although the shop text calls the Large hammer fast and the Medium hammer moderate. So either the swing period is not the loop length, or the scale of `BuildAmount` against the 0 to 1 stage progress is set elsewhere (the buildable's own build total is native and not decoded). The native defaults page lists `BuildAmount` 3.0 and `BuildAmountPerSecond` 3.0 for the separate extension class `UWDItemExtensionData_BuildBuildable`; whether the hammer path uses it is not traced. The large hammer also carries `DismantleRatePerSecond` 250, medium 200, small 150 (equal to the per-hit values).
 
 - Most structures use 0, 0.25, 0.5, 0.75, 1. The Door uses 0, 0.3, 0.6, 0.8, 1 and the WoodBase uses 0, 0.2, 0.45, 0.7, 1.
 - Parts (floors, roofs, gate halves, door halves) have one stage at 1, so they appear complete.
@@ -464,7 +476,7 @@ Total: 206 files.
 
 ## 11. Open items
 
-- How `Cost` turns into Build Supplies spent, and the build rate of each hammer (native construct action and the thunks at `0x8593E80`, `0x8593FB0`, `0x85940E0`).
+- How `Cost` turns into Build Supplies spent, and how a hammer's `BuildAmount` scales against the stage progress (the per-hit amounts and swing times are in section 3; the progress arithmetic is native, thunks at `0x8593E80`, `0x8593FB0`, `0x85940E0`).
 - Meaning of `MaxStack`, `PlacementFlags`, `StackCheckOffset` and the unnamed (`_aaab...`) placement fields.
 - What `SafeZonePlacementCondition` and `WithinLadderBoundsPlacementCondition` test (Blueprint, not exported here).
 - Function of the Builder's Radio, and the exact rate of the Refuel and Repair stations.
