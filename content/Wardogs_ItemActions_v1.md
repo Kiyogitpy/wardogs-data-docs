@@ -570,7 +570,7 @@ Doors, tracker, projectile follow, admin scene, smart-object computer use and th
 
 How to read it:
 
-- **Heal / attribute.** The attribute the item changes and the amount. `(delta)` means `bApplyAsDelta` is true (added to the current value). For the defibrillator the flag is not stored, so the mode is not confirmed. Heal amounts are also on [Items §5](Wardogs_Items_v2.md). **Data**.
+- **Heal / attribute.** The attribute the item changes and the amount. `(delta)` means `bApplyAsDelta` is true (added to the current value). For the defibrillator the flag is not stored, so the mode is not confirmed. Heal amounts are also on [Items §5](Wardogs_Items_v2.md). Heal rates, applied effects, use costs and the medic skills that change them are on [Medical and Healing](../game-features/Wardogs_Medical_v1.md). **Data**.
 - **Time method.** `AnimationLength`: the use lasts as long as the animation. `AnimationNotifier`: it completes at an animation notify (`Heal`). `UntilItemEmptyOrTargetFull`: the use continues until the item runs out or the target is full (fuel can, repair tool, resuscitator). The method name is **Data**; the seconds are in animation assets that are not decoded here (**not traced**).
 - **Consumed per use.** `AmountConsumedOnUse` (1 for almost all). **Data**.
 - **World interaction.** A context class names the interaction that targets another player or a vehicle (`WDHealPlayerInteractionContext`, `WDVehicleRepairInteractionContext`). **Data**.
