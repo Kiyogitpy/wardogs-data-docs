@@ -68,7 +68,8 @@ S("medical", "AM_FP_IFAK_Self_Heal", "Notify:Heal", kind="notify:Heal", unit="s"
 S("medical", "AM_FP_IFAK_Teammate_Heal", "Notify:Heal", kind="notify:Heal", unit="s")
 S("medical", "AM_FP_Revive", "Notify:Complete", kind="notify:Complete", unit="s")
 for m, sec in (("AM_FP_Defib_Use", "LoopStart"), ("AM_FP_Defib_Use", "LoopEnd"), ("AM_FP_Medkit_Use", "LoopStart"),
-               ("AM_FP_Medkit_Use", "LoopEnd"), ("AM_FP_Enox_Use", "LoopStart"), ("AM_FP_Enox_Use", "LoopEnd")):
+               ("AM_FP_Medkit_Use", "LoopEnd"), ("AM_FP_Medkit_Use_Self", "LoopStart"), ("AM_FP_Medkit_Use_Self", "LoopEnd"),
+               ("AM_FP_Enox_Use", "LoopStart"), ("AM_FP_Enox_Use", "LoopEnd")):
     S("medical", m, "Section:" + sec, kind="section:" + sec, unit="s")
 
 # ---- Medical: defibrillator ------------------------------------------------------------------------------------
