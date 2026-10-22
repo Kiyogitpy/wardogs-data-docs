@@ -19,6 +19,9 @@ import os
 import re
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import bp_defaults as bpd  # noqa: E402
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAGE = "game-features/Wardogs_Buildables_v1.md"
 REPO = "https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/"
@@ -384,7 +387,27 @@ def files(d):
     return "\n".join(out)
 
 
-MODES = {"inventory": inventory, "counts": counts, "placement": placement, "stages": stages, "damage": damage,
+def hammer_speed(d):
+    """Hammer swing montage times and build amounts per hit (assets/data/bp-defaults.json, round 17)."""
+    out = ["| Hammer | Shop text | Build amount per hit | Critical-spot hit amount | Use montage | Montage (s) | Hit notify (s) | Swing loop (s) | Dismantle per hit |",
+           "|---|---|---:|---:|---|---:|---:|---:|---:|"]
+    rows = (("Large", "ID_LargeHammer", "AM_FP_Large_Hammer_Use", "Fast Build Speed"),
+            ("Medium", "ID_MediumHammer", "AM_FP_BuildTool_Use", "Moderate Build Speed"),
+            ("Small", "ID_SmallHammer", "AM_FP_Small_Hammer_Use", "Slow Build Speed"))
+    g = lambda a, p: bpd.get("buildables", a, p)  # noqa: E731
+    for name, idn, mon, text in rows:
+        ba, bc, ln, hit = g(idn, "BuildAmount"), g(idn, "BuildAmountWhenTargetIsHit"), g(mon, "SequenceLength"), g(mon, "Notify:Hit")
+        ls, le, dis = g(mon, "Section:LoopStart"), g(mon, "Section:LoopEnd"), g(idn, "DismantleRatePerHit")
+        if not (ba and ln):
+            continue
+        loop = round(le["value"] - ls["value"], 3) if ls and le else None
+        out.append("| %s (`%s`) | %s | %s | %s | `%s` | %s | %s | %s | %s |" % (
+            name, idn, text, bpd.fmt(ba["value"]), bpd.fmt(bc["value"]) if bc else "-", mon, bpd.fmt(round(ln["value"], 2)),
+            bpd.fmt(round(hit["value"], 2)) if hit else "-", bpd.fmt(loop) if loop else "-", bpd.fmt(dis["value"]) if dis else "-"))
+    return "\n".join(out)
+
+
+MODES = {"hammer_speed": hammer_speed, "inventory": inventory, "counts": counts, "placement": placement, "stages": stages, "damage": damage,
          "rewards": rewards, "economy": economy, "special": special, "names": names, "files": files, "stationary": stationary}
 
 
