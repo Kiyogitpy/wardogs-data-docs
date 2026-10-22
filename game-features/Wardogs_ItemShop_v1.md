@@ -285,7 +285,7 @@ Bandages are sold by `DT_UtilityMarket`; the rest come from per-item plugin tabl
 
 ## 4. Throwables, mines and explosives
 
-Fire, smoke, throw curves, placement limits and mine and detonator trigger data for these items are on [Fire, Smoke and Mines](Wardogs_FireAndUtility_v1.md). Thrown items list the thrown actor class and the throw velocity of each throw action. Explosion damage and radius are not on the item definition; they live in the thrown or placed actor and its damage rows (see [Damage Pipeline](../pipelines/Wardogs_DamagePipeline_v2.md) and [Demolition](../content/Wardogs_Demolition_v2.md)).
+Fire, smoke, throw curves, placement limits and mine and detonator trigger data for these items are on [Fire, Smoke and Mines](Wardogs_FireAndUtility_v1.md). Thrown items list the thrown actor class and the throw velocity of each throw action. Explosion damage and radius are not on the item definition; they live in the thrown or placed actor and its damage rows. Every explosive's damage, radii, falloff, arming and damage to infantry and vehicles is in [Explosives](Wardogs_Explosives_v1.md) (see also [Damage Pipeline](../pipelines/Wardogs_DamagePipeline_v2.md) and [Demolition](../content/Wardogs_Demolition_v2.md)).
 
 <!-- item_shop_tables shop_explosives -->
 | Item id | Name | Subtitle | Description | Category | Price | Unlock lvl | Req. items | Buy limit | Amount | Variations | Tables |

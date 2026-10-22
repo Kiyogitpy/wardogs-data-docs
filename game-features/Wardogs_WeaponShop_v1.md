@@ -21,6 +21,8 @@ The vendor rows hold no currency field. "Price" is the `Price` of the first vari
 
 ## 1. Weapon platforms
 
+Launcher rows (9K333 Verba, MAAWS, MGL-40, RPG-7): the rocket and grenade damage, radii, falloff and damage to infantry and vehicles are in [Explosives](Wardogs_Explosives_v1.md).
+
 One row per weapon definition with a stats asset. Price, level and category come from the weapon's vendor row. Default attachments are the items the weapon's containers start with (`DefaultContainerItems`, else `DefaultItems`), including sub-slots of those items.
 
 <!-- weapon_vendor_tables platforms -->
