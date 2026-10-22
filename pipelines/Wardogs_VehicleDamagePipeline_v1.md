@@ -136,6 +136,8 @@ amount 0, damage doc §4).
 | `WHL_08` | `Land.Wheeled.WHL_08.Default` | 31 | 28 | −95 … +600 | — |
 | `WHL_08_RingTurret` | `Land.Wheeled.WHL_08.MachineGun` | 31 | 28 | −95.5 … +600 | — |
 
+The table above names files by their suffix. The full names of two that are easy to miss are `DT_GlobalDamage_VehicleData_STN_06` (the copy keyed `…Stationary.STN_05`, see section 2.2) and `DT_GlobalDamage_VehicleData_WHL_08_RingTurret` (row `…Wheeled.WHL_08.MachineGun`). `_tools/damage_tables.py` reads both: it globs `DT_GlobalDamage_VehicleData_*.json` under `Plugins`, so their rows are in the generated tables below (the STN_06 row under its STN_05 key).
+
 Totals: 665 entries, 581 selectable. Operations: 576 `Percentage_Ongoing`,
 84 `None`, **5 `Add` +1000** (STN_01, 02, 03, 05, 06; source
 `Meta.Damage.Vehicle.Land.Tracked`, category Bone). No custom operations.

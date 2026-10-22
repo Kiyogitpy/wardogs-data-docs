@@ -11,6 +11,7 @@ variant's vehicle config to the handling assets.
     python _tools/vehicle_part_tables.py --tracked    # tracked engine, dynamics and suspension
     python _tools/vehicle_part_tables.py --air        # rotary body mass, drag and engine asset
     python _tools/vehicle_part_tables.py --prediction # network-prediction resimulation thresholds
+    python _tools/vehicle_part_tables.py --seats      # seat-name overrides (WDVehicleSeatNameOverrideRow)
     python _tools/vehicle_part_tables.py --coverage   # part count and the parts no variant places
     python _tools/vehicle_part_tables.py --write      # refresh every marked block in the docs, in place
 
@@ -446,8 +447,33 @@ def prediction_table():
               f"{num(s.get('PosStabilityMultiplier'))} / {num(s.get('RotStabilityMultiplier'))} / {num(s.get('VelStabilityMultiplier'))} |")
 
 
+def seats_table():
+    """Seat-name overrides (WDVehicleSeatNameOverrideRow): one row per variant, one entry per seat index."""
+    def txt(t):
+        if not t:
+            return "-"
+        s = t.get("LocalizedString") or t.get("SourceString") or t.get("CultureInvariantString") or ""
+        return esc(s) if s else "-"
+
+    print("| Table | Variant tag | Seat index | Enter text | Exit text | Enter text key |")
+    print("|---|---|---:|---|---|---|")
+    for path in sorted(glob.glob(os.path.join(VEH, "**", "DT_VehicleSeatOverrides_*.json"), recursive=True)):
+        for o in exp(path):
+            if o.get("Type") != "DataTable":
+                continue
+            for tag, row in o["Rows"].items():
+                # the seat map's field name is obfuscated in the export: take the one list of {Key, Value} entries
+                seats = next((v for v in row.values() if isinstance(v, list)), [])
+                for ent in sorted(seats, key=lambda e: int(e["Key"])):
+                    v = ent["Value"]
+                    exit_t = v.get("ExitText")
+                    enter_t = next((x for k, x in v.items() if k != "ExitText" and isinstance(x, dict)), None)
+                    key = (enter_t or {}).get("Key") or "-"
+                    print(f"| `{o['Name']}` | `{tag}` | {ent['Key']} | {txt(enter_t)} | {txt(exit_t)} | `{key}` |")
+
+
 MODES = {"prediction": prediction_table, "parts": parts_table, "common": common_table, "wheeled": wheeled_tables,
-         "tracked": tracked_tables, "air": air_tables, "coverage": coverage}
+         "tracked": tracked_tables, "air": air_tables, "coverage": coverage, "seats": seats_table}
 
 
 def write_docs():

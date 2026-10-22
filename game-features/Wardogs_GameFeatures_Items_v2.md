@@ -9,6 +9,8 @@ redirect_from: ["/Wardogs_GameFeatures_Items_v2.html", "/Wardogs_GameFeatures_It
 
 > **Scope note:** this covers the Items plugin only. Firearms, vehicles and the global reward/economy tables live in other plugins or Content folders and are not in this doc.
 
+> **Generated shop tables:** every vendor row of these items (name, description, price, level, buy limit, weight, key stats) is in [Item Shop](Wardogs_ItemShop_v1.md).
+
 ## Season 02 update (2026-10-15)
 
 - **New item: Molotov** (new [`Molotov`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Molotov.json) folder). Vendor price 340 (`Utility.Type.Offensive`, unlock level 1), footprint 1 x 2. See sections 1, 2, 3 and 7.

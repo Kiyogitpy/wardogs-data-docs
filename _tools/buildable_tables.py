@@ -11,7 +11,7 @@ on the page. Rerun after a data update (idempotent):
     python _tools/buildable_tables.py --write       # refresh every block in place
     python _tools/buildable_tables.py MODE          # print one block (inventory, placement,
                                                     #   stages, damage, rewards, economy,
-                                                    #   special, names, files, counts)
+                                                    #   special, names, files, stationary, counts)
 """
 import glob
 import json
@@ -271,6 +271,52 @@ def names(d):
     return "\n".join(out)
 
 
+def stationary(d):
+    """Stationary weapons (Vehicles/STN_*): the buildable data tables, the registries they are added to, and the
+    buildable data asset each row points to."""
+    veh = os.path.join(ROOT, "data", "Wardogs", "Plugins", "GameFeatures", "Vehicles")
+    data = os.path.join(ROOT, "data")
+
+    def rel(p):
+        return os.path.relpath(p, data).replace(os.sep, "/")
+
+    def find(pdir, name):
+        return next(iter(glob.glob(os.path.join(pdir, "**", name + ".json"), recursive=True)), None)
+    out = ["| Plugin | Table | Added to registries | Row tag | Data asset | Name | Cost | Max health | Repair multiplier | Max stack | Stages | Vehicle tag | Placement conditions |",
+           "|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
+    for pdir in sorted(glob.glob(os.path.join(veh, "STN_*"))):
+        plug = os.path.basename(pdir)
+        feature = next(e for e in exports(f"Wardogs/Plugins/GameFeatures/Vehicles/{plug}/Content/{plug}.json")
+                       if e["Type"] == "GameFeatureAction_DataRegistrySource")
+        by_table = {}
+        for src in feature["Properties"]["SourcesToAdd"]:
+            if src["RegistryToAddTo"].startswith("Buildables_"):
+                tname = src["DataTableToAdd"]["AssetPathName"].rsplit("/", 1)[-1].split(".")[0]
+                by_table.setdefault(tname, []).append(src["RegistryToAddTo"])
+        for tname, regs in by_table.items():
+            trel = rel(find(pdir, tname))
+            for tag, row in table(trel).items():
+                dname = row["BuildableData"]["ObjectName"].split("'")[1]
+                drel = rel(find(pdir, dname))
+                ex = exports(drel)
+                da = next(e for e in ex if e["Type"] == "WDBuildableDataAsset")["Properties"]
+                sp = next((e for e in ex if e["Type"] == "WDVehicleBuildSpawner"), None)
+                vtag = sp["Properties"]["VehicleTag"]["TagName"] if sp else "-"
+                stages = "-"
+                if da.get("BuildingStagesDefinition"):
+                    spath = find(pdir, da["BuildingStagesDefinition"]["ObjectName"].split("'")[1])
+                    if spath:
+                        sl = next(e for e in exports(rel(spath)) if e["Type"] == "BuildingStagesDefinition")["Properties"]
+                        stages = str(len(sl.get("Stages", [])))
+                conds = ", ".join(f"`{cls(c)}`" for c in da.get("PlacementConditions", [])) or "-"
+                dn = da.get("DisplayName", {})
+                out.append(f"| `{plug}` | {link(trel)} | {', '.join('`' + r + '`' for r in regs)} | `{tag}` | {link(drel, dname)} | "
+                           f"{dn.get('SourceString') or dn.get('LocalizedString') or '-'} | {n(da.get('Cost', 0))} | {n(da.get('MaxHealth', 0))} | "
+                           f"{n(da['RepairSpeedMultiplier']) if 'RepairSpeedMultiplier' in da else '-'} | {n(da['MaxStack']) if 'MaxStack' in da else '-'} | "
+                           f"{stages} | `{vtag}` | {conds} |")
+    return "\n".join(out)
+
+
 def kind(rel):
     base = os.path.basename(rel)[:-5]
     low = rel.lower()
@@ -339,7 +385,7 @@ def files(d):
 
 
 MODES = {"inventory": inventory, "counts": counts, "placement": placement, "stages": stages, "damage": damage,
-         "rewards": rewards, "economy": economy, "special": special, "names": names, "files": files}
+         "rewards": rewards, "economy": economy, "special": special, "names": names, "files": files, "stationary": stationary}
 
 
 def write(d):
