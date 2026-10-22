@@ -35,8 +35,8 @@ Each JSON entry has: `topic` (page), `asset`, `class` (the export read), `proper
 | `parent` (set on a parent Blueprint or the class behind an item) | 25 |
 | `bp-default` (Blueprint variable never set: type default) | 4 |
 | `engine-default` (montage `RateScale` 1.0) | 41 |
-| `native` (native constructor default joined from `native-defaults.json`) | 15 |
-| `native-pending` (no Blueprint and not in `native-defaults.json`) | 4 |
+| `native` (native constructor default joined from `native-defaults.json`) | 19 |
+| `native-pending` (no Blueprint and not in `native-defaults.json`) | 0 |
 | **Total** | **281** |
 
 By page: medical 56, fire and utility 69, explosives 13, item actions 116, buildables 27 (the item-actions topic repeats the medical and throw montages so that page's generator reads one topic).
@@ -53,14 +53,17 @@ By page: medical 56, fire and utility 69, explosives 13, item actions 116, build
 
 ## What remains native-pending or not traced
 
-Native-pending (no Blueprint sets them and `native-defaults.json` has no row for them; `GE_MolotovBurning` is a class default object, not built by a constructor):
+Native-pending: none after round 18. The four items left open in round 17 were resolved in round 18 and joined from `native-defaults.json` (the effect is a class default object, but a Blueprint class takes its defaults from the native parent constructor). Evidence is the static-analysis image of the restored exe, which is decompiled, not devirtualized; decompilation is not equivalence proof.
 
-| Asset | Property | Native class | SDK offset | Note |
-|---|---|---|---|---|
-| `GE_MolotovBurning` | `Duration` | `UBHGameplayEffect` | `+0x30` | burning tag duration after leaving the fire |
-| `GE_MolotovBurning` | `MaxStacks` | `UBHGameplayEffect` | `+0x34` | |
-| `GE_MolotovBurning` | `StackDurationRefreshPolicy` | `UBHGameplayEffect` | `+0x36` | |
-| `B_Molotov` | `bCanBeCooked` | `AWDGrenade` | `+0x624` | the Fire page cites the constructor as false (a zero store) |
+| Asset | Property | Native class | SDK offset | Value | Constructor / store |
+|---|---|---|---|---|---|
+| `GE_MolotovBurning` | `Duration` | `UBHGameplayEffect` | `+0x30` | 0.0 | `0x5225C65` / `0x5225C82` |
+| `GE_MolotovBurning` | `MaxStacks` | `UBHGameplayEffect` | `+0x34` | 1 | `0x5225C65` / `0x5225C74` |
+| `GE_MolotovBurning` | `StackDurationRefreshPolicy` | `UBHGameplayEffect` | `+0x36` | 0 (`RefreshOnSuccessfulApplication`) | `0x5225C65` / `0x5225C74` |
+| `GE_MolotovBurning` | `StackExpirationPolicy` (also added) | `UBHGameplayEffect` | `+0x37` | 1 (`RemoveSingleStackAndRefreshDuration`) | `0x5225C65` / `0x5225C74` |
+| `B_Molotov` | `bCanBeCooked` | `AWDGrenade` | `+0x624` | false | `0x6CADC90` / `0x6CADCBB` (Molotov chain: `0x86A0200` calls `0x6CADED0`, store `0x6CADEEE`) |
+
+Still open: what `Duration` 0.0 means at run time. The duration pass `0x522D260` compares `Duration` with zero at `0x522D4B3` and branches away from the elapsed-time test when equal, which suggests no timed expiry; that is inferred from a decompiled branch and is not proven. What removes `State.Player.Molotov.Burning` after the player leaves the fire is not traced.
 
 Not traced (logic, not defaults):
 

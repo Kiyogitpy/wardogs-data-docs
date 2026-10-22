@@ -5,7 +5,7 @@ nav_exclude: true
 
 # Round 17 native constructor defaults
 
-Cooked Blueprints store only values that differ from their parent. When nothing overrides a property, the value is the native C++ constructor default. This page lists 171 such defaults read from the constructors in the restored executable (CL-516586, image base `0x140000000`). All addresses are RVAs. Source: [`assets/data/native-defaults.json`](../../assets/data/native-defaults.json). Verifier: `python _tools/native_defaults_check.py` re-disassembles all 18 constructors and asserts every value.
+Cooked Blueprints store only values that differ from their parent. When nothing overrides a property, the value is the native C++ constructor default. This page lists 176 such defaults (171 from round 17, 5 added in round 18) read from the constructors in the restored executable (CL-516586, image base `0x140000000`). All addresses are RVAs. Source: [`assets/data/native-defaults.json`](../../assets/data/native-defaults.json). Verifier: `python _tools/native_defaults_check.py` re-disassembles all 18 constructors and asserts every value.
 
 ## Method
 
@@ -171,6 +171,18 @@ There is no defibrillator or resuscitator class: no such class exists in the SDK
 | `AWDMolotovFireField` | `_aaabknhhcfikfkdfeephh` | `0x2d8` | float | 150 | `0x86a0140` | `0x86a01dd` |
 | `AWDMolotovFireField` | `_aaabakopnbgagdbajfflp` | `0x2dc` | int32 | 4 | `0x86a0140` | `0x86a01e7` |
 | `AWDMolotovFireField` | `_aaaanpgemjngemejijhnd` | `0x310` | float | 0 | `0x86a0140` | `0x86a01b2` |
+
+**Round 18 additions (Molotov-related).** Static-analysis image of the restored exe; decompilation is not equivalence proof and virtualized dispatch is not removed.
+
+| Class | Field | Offset | Type | Value | Ctor | Store |
+|---|---|---|---|---|---|---|
+| `AWDGrenade` | `bCanBeCooked` | `0x624` | bool | false | `0x6cadc90` | `0x6cadcbb` |
+| `UBHGameplayEffect` | `Duration` | `0x30` | float | 0 | `0x5225c65` | `0x5225c82` |
+| `UBHGameplayEffect` | `MaxStacks` | `0x34` | uint16 | 1 | `0x5225c65` | `0x5225c74` |
+| `UBHGameplayEffect` | `StackDurationRefreshPolicy` | `0x36` | uint8 | 0 (`RefreshOnSuccessfulApplication`) | `0x5225c65` | `0x5225c74` |
+| `UBHGameplayEffect` | `StackExpirationPolicy` | `0x37` | uint8 | 1 (`RemoveSingleStackAndRefreshDuration`) | `0x5225c65` | `0x5225c74` |
+
+The Molotov constructor `0x86a0200` calls the grenade base `0x6caded0`, which stores the same zero for `bCanBeCooked` at `0x6cadeee`. The `UBHGameplayEffect` constructor stores `0x220` as `0x101` (both client-prediction flags true) and ends at `+0x268`, matching the 0x270-byte class. What `Duration` 0.0 means at run time (the duration pass `0x522d260` compares it with zero at `0x522d4b3`) is inferred and open.
 | `AWDMolotovTriggerVolume` | `_aaaajgnjpicpffeijmmnj` | `0x998` | float | 100 | `0x86a0300` | `0x86a031d` |
 
 ## Buildables

@@ -331,7 +331,9 @@
    "from_asset": "B_FragGrenade",
    "native_class": "AWDGrenade",
    "sdk_offset": "0x0624",
-   "package": "Wardogs/Content/Weapons/Grenades/B_FragGrenade"
+   "package": "Wardogs/Content/Weapons/Grenades/B_FragGrenade",
+   "native_default": false,
+   "native_ctor_rva": "0x6cadc90"
   },
   {
    "topic": "explosives",
@@ -626,12 +628,14 @@
    "asset": "B_Molotov",
    "class": "B_Molotov_C",
    "property": "bCanBeCooked",
-   "value": null,
-   "resolved_from": "native-pending",
+   "value": false,
+   "resolved_from": "native",
    "from_asset": null,
    "native_class": "AWDGrenade",
    "sdk_offset": "0x0624",
-   "package": "Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Data/Blueprints/B_Molotov"
+   "package": "Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Data/Blueprints/B_Molotov",
+   "native_default": false,
+   "native_ctor_rva": "0x6cadc90"
   },
   {
    "topic": "fire_utility",
@@ -1097,39 +1101,45 @@
    "asset": "GE_MolotovBurning",
    "class": "GE_MolotovBurning_C",
    "property": "Duration",
-   "value": null,
-   "resolved_from": "native-pending",
+   "value": 0.0,
+   "resolved_from": "native",
    "from_asset": null,
    "native_class": "UBHGameplayEffect",
    "sdk_offset": "0x0030",
    "package": "Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Data/GameplayEffects/GE_MolotovBurning",
-   "note": "burning tag duration after leaving the fire; the Blueprint effect sets only GrantedTags"
+   "note": "burning tag duration after leaving the fire; the Blueprint effect sets only GrantedTags",
+   "native_default": 0.0,
+   "native_ctor_rva": "0x5225c65"
   },
   {
    "topic": "fire_utility",
    "asset": "GE_MolotovBurning",
    "class": "GE_MolotovBurning_C",
    "property": "MaxStacks",
-   "value": null,
-   "resolved_from": "native-pending",
+   "value": 1,
+   "resolved_from": "native",
    "from_asset": null,
    "native_class": "UBHGameplayEffect",
    "sdk_offset": "0x0034",
    "package": "Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Data/GameplayEffects/GE_MolotovBurning",
-   "note": "burning tag duration after leaving the fire; the Blueprint effect sets only GrantedTags"
+   "note": "burning tag duration after leaving the fire; the Blueprint effect sets only GrantedTags",
+   "native_default": 1,
+   "native_ctor_rva": "0x5225c65"
   },
   {
    "topic": "fire_utility",
    "asset": "GE_MolotovBurning",
    "class": "GE_MolotovBurning_C",
    "property": "StackDurationRefreshPolicy",
-   "value": null,
-   "resolved_from": "native-pending",
+   "value": 0,
+   "resolved_from": "native",
    "from_asset": null,
    "native_class": "UBHGameplayEffect",
    "sdk_offset": "0x0036",
    "package": "Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Data/GameplayEffects/GE_MolotovBurning",
-   "note": "burning tag duration after leaving the fire; the Blueprint effect sets only GrantedTags"
+   "note": "burning tag duration after leaving the fire; the Blueprint effect sets only GrantedTags",
+   "native_default": 0,
+   "native_ctor_rva": "0x5225c65"
   },
   {
    "topic": "fire_utility",
