@@ -57,7 +57,7 @@ Not in these tables: the two vehicle cannons `20x102mm` and `35x228mm` (they car
 
 ## 2. Fuse, arming and direct impact
 
-**Data**, `explosive_tables direct`. Projectiles arm after `ArmingDelay` seconds of flight when `bHasArmingDelay` is true; before that a direct hit does `ExplosiveBluntDamage` instead (Damage Pipeline section 7.6 and the `--explosives` table of `_tools/infantry_tables.py`). Frag, C4, IED and Molotov also inherit thrown-contact `ImpactDamage` 10 (**Native**, path `0x6CA8730`). The thrown and placed actors have no fuse time on the item; the grenade base class sets a default fuse of 5.0 s (**Native**, `0x6CADC90`). Mine triggers, C4 detonation range and the IED delay are on [Fire, Smoke and Mines](Wardogs_FireAndUtility_v1.md) ([evidence](../docs/evidence/round8-explosive-actors.md)).
+**Data**, `explosive_tables direct`. Projectiles arm after `ArmingDelay` seconds of flight when `bHasArmingDelay` is true; before that a direct hit does `ExplosiveBluntDamage` instead (Damage Pipeline section 7.6 and the `--explosives` table of `_tools/infantry_tables.py`). Frag, C4, IED and Molotov also inherit thrown-contact `ImpactDamage` 10 (**Native**, path `0x6CA8730`). The grenade base class sets a default fuse of 5.0 s (**Native**, `0x6CADC90`); the per-item overrides read from the Blueprints are in the fuse table below. Mine triggers, C4 detonation range and the IED delay are on [Fire, Smoke and Mines](Wardogs_FireAndUtility_v1.md) ([evidence](../docs/evidence/round8-explosive-actors.md)).
 
 <!-- explosive_tables direct -->
 | Source | Arming delay (s) | Direct-impact `ExplosiveBluntDamage` | Thrown contact (`ImpactDamage`) | Trigger |
@@ -189,8 +189,25 @@ Assumption, stated plainly: one radial application resolving to the main health 
 | `Molotov` | 40 | 10 (x1) | 13 (x1) | 20 (x1) | 27 (x1) |
 <!-- /explosive_tables -->
 
+### Fuse and arming values per item
+
+**Data (Blueprint CDO)**, `explosive_tables fuses` ([round 17 evidence](../docs/evidence/round17-blueprint-defaults.md)). Each value is resolved up the Blueprint parent chain; a value no Blueprint sets is the native default.
+
+<!-- explosive_tables fuses -->
+| Item | Timer | Seconds | Source | Notes |
+|---|---|---|---|---|
+| M67 frag grenade (`Id.Item.M67Grenade`) | `BaseFuseTime` (fuse after the throw) | 4 | **Data (Blueprint CDO)** `B_FragGrenade` | cookable (`bCanBeCooked` true) and throw-back allowed (`bCanThrowBack` true); the gold variant `B_GoldFragGrenade` inherits |
+| Smoke grenades, all 8 colours | `BaseFuseTime` | 3 | **Data (Blueprint CDO)** `B_SmokeGrenade_Red` | every colour sets 3.0 (the native base is 5.0); the smoke then lasts `PostExplodeLifespan` 10 s on the grenade actor, the smoke itself 180 s by default (see Fire page) |
+| Molotov (`Id.Item.Molotov`) | `BaseFuseTime` | 5 | **Native** (ctor `0x6CADC90`) | `B_Molotov` does not set it, so the grenade base class value stands; whether the Molotov bursts on impact or on the fuse is not traced |
+| C4 charge (`Id.Item.C4Explosive`) | `TimerBeforeExplosion` on the charge | 0.2 | **Data (Blueprint CDO)** `B_ThrowableC4` | set on the actor; `B_ThrowableIED` inherits it |
+| C4 detonator (`Id.Item.C4Trigger`) | `DelayTillExplosion` after the trigger press | 0 | **Data (Blueprint CDO)**, type default | the item and its Blueprint leave it unset, so it is the Blueprint variable's default 0 (immediate) |
+| IED detonator (`Id.Item.IED.Trigger`) | `DelayTillExplosion` after the trigger press | 3 | **Data (Blueprint CDO)** `ID_IED_Trigger` | set on the item instance |
+| AT mine (`ID.Item.ATMine`) | `ArmingDelay` after placement | 1 | **Data (Blueprint CDO)**, inherited `BH_AT_MineExtensionData` | from `BH_AT_MineExtensionData`; the item sets only the trigger box and `UniversalVehicleSpeed` |
+| Claymore (`Id.Item.Claymore`) | `ActivationDelayTimer` after placement | 2 | **Data (Blueprint CDO)**, inherited `BH_ClaymoreExtensionData` | from `BH_ClaymoreExtensionData`; the item sets only the trigger box |
+<!-- /explosive_tables -->
+
 ## Open items
 
-- Per-item fuse overrides and Blueprint-only trigger defaults (arming delay, Claymore vehicle flag) are not exported; see the open items of [Fire, Smoke and Mines](Wardogs_FireAndUtility_v1.md).
+- Per-item fuse overrides and the mine and Claymore trigger defaults are settled in round 17 (fuse table above, [Fire, Smoke and Mines](Wardogs_FireAndUtility_v1.md) section 5). Still open: whether a thrown Molotov bursts on impact or on its fuse, and what the frag `GrenadeInteractionData.MinimumRemainingFuseTime` 5.0 (above the 4.0 s fuse) gates.
 - Which vehicle weapons fire `70mm`, `84mm.TVGuided`, `122mm.Havoc` and the two sandbox shells is not mapped.
 - Armored targets and several-component blasts are not tabulated; use the [Infantry Viewer](../pipelines/infantry-viewer.md) and [Vehicle Viewer](../pipelines/vehicle-viewer.md).
