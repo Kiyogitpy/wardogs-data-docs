@@ -2054,6 +2054,70 @@
    "size": 8,
    "topic": "buildables",
    "obfuscated": true
+  },
+  {
+   "class": "AWDGrenade",
+   "property": "bCanBeCooked",
+   "offset": "0x624",
+   "value": false,
+   "type": "bool",
+   "ctor_rva": "0x6cadc90",
+   "store_rva": "0x6cadcbb",
+   "size": 1,
+   "topic": "fire",
+   "obfuscated": false,
+   "note": "zero store (xor ecx,ecx; mov [rdi+0x624],cl); the Molotov constructor 0x86a0200 calls the grenade base 0x6caded0, which stores the same zero at 0x6cadeee"
+  },
+  {
+   "class": "UBHGameplayEffect",
+   "property": "Duration",
+   "offset": "0x30",
+   "value": 0.0,
+   "type": "float",
+   "ctor_rva": "0x5225c65",
+   "store_rva": "0x5225c82",
+   "size": 4,
+   "topic": "fire",
+   "obfuscated": false,
+   "note": "class default for every GE_* that does not serialize Duration; the duration pass compares it with 0 at 0x522d4b3"
+  },
+  {
+   "class": "UBHGameplayEffect",
+   "property": "MaxStacks",
+   "offset": "0x34",
+   "value": 1,
+   "type": "uint16",
+   "ctor_rva": "0x5225c65",
+   "store_rva": "0x5225c74",
+   "size": 2,
+   "topic": "fire",
+   "obfuscated": false
+  },
+  {
+   "class": "UBHGameplayEffect",
+   "property": "StackDurationRefreshPolicy",
+   "offset": "0x36",
+   "value": 0,
+   "type": "uint8",
+   "ctor_rva": "0x5225c65",
+   "store_rva": "0x5225c74",
+   "size": 1,
+   "topic": "fire",
+   "obfuscated": false,
+   "note": "EBHGameplayEffectStackingDurationPolicy 0 = RefreshOnSuccessfulApplication"
+  },
+  {
+   "class": "UBHGameplayEffect",
+   "property": "StackExpirationPolicy",
+   "offset": "0x37",
+   "value": 1,
+   "type": "uint8",
+   "ctor_rva": "0x5225c65",
+   "store_rva": "0x5225c74",
+   "size": 1,
+   "topic": "fire",
+   "obfuscated": false,
+   "note": "EBHGameplayEffectStackingExpirationPolicy 1 = RemoveSingleStackAndRefreshDuration"
   }
  ]
 }

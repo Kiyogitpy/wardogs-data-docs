@@ -27,6 +27,8 @@ def main():
         from capstone.x86 import X86_OP_IMM, X86_OP_MEM, X86_OP_REG, X86_REG_RIP, X86_REG_RSP
         from capstone.x86 import X86_REG_RAX, X86_REG_RCX, X86_REG_RDX, X86_REG_R8, X86_REG_R9
         from capstone.x86 import X86_REG_XMM0, X86_REG_XMM1
+        from capstone.x86 import X86_REG_CL, X86_REG_ECX, X86_REG_DIL, X86_REG_EDI
+        alias = {X86_REG_CL: X86_REG_ECX, X86_REG_DIL: X86_REG_EDI}  # byte stores of a zeroed 32-bit register
     except ImportError as e:
         print(f"{e}; skipping native defaults check")
         return 0
@@ -70,8 +72,8 @@ def main():
                 v = None
                 if b.type == X86_OP_IMM:
                     v = b.imm & ((1 << (8 * a.size)) - 1)
-                elif b.type == X86_OP_REG and b.reg in vals:
-                    v = vals[b.reg] & ((1 << (8 * a.size)) - 1)
+                elif b.type == X86_OP_REG and alias.get(b.reg, b.reg) in vals:
+                    v = vals[alias.get(b.reg, b.reg)] & ((1 << (8 * a.size)) - 1)
                 if v is not None:
                     for k in range(a.size):
                         mem[a.mem.disp + k] = ((v >> (8 * k)) & 0xFF, i.address)
