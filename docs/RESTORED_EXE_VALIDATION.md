@@ -1,4 +1,4 @@
-# Restored exe validation — 2026-10-17
+# Restored exe validation — 2026-10-17 (scope note updated 2026-10-23)
 
 > **Project:** [`Kiyogitpy/wardogs-data-docs`](https://github.com/Kiyogitpy/wardogs-data-docs) · [Live site](https://kiyogitpy.github.io/wardogs-data-docs/)
 
@@ -9,6 +9,17 @@ validate; the restored exe succeeds.**
 
 Scope: static byte-level validation only. No IDA execution, no runtime
 observation, no decompilation performed in this validation.
+
+> **Evidence boundary (read first).** The artifact this page validates is a
+> **static-analysis image** — a byte-recovered copy of the shipping binary
+> suitable for loading into a disassembler. It is **not** a verified runnable
+> original: the original relocation table is not fully reconstructed, and the
+> protection layer's **virtualized dispatch is not removed** (no
+> devirtualization is claimed). A later rebuild produced an updated analysis
+> image with a vetted partial unwind table; that image is the one current IDA
+> work should load. Its structural validation matches what this page records,
+> but the scope limits here are unchanged. Treat every symbol-name claim below
+> as structural alignment, not proven semantics.
 
 ---
 
