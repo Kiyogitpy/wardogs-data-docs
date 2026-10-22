@@ -123,12 +123,16 @@ for p, off in (("Density", None), ("Height", None), ("SphereTraceRadius", "0x2B8
     S("fire_utility", "BP_SmokeGrenadeVFX", p, native=("AWDSmokeGrenadeVFXActor", off) if off else None)
 S("fire_utility", "B_Molotov", "BaseFuseTime", unit="s", native=("AWDGrenade", "0x0620"))
 S("fire_utility", "B_Molotov", "bCanBeCooked", native=("AWDGrenade", "0x0624"))
-for p, off in (("_aaaakffacidhmniagfchm", "0x674"), ("_aaaakmpdngpdcdjfoghgn", "0x678"), ("_aaabclpkjcpbbjcpncgfa", "0x684")):
+for p, off in (("_aaaamejojopeijafgdjkf", "0x670"), ("_aaaakffacidhmniagfchm", "0x674"), ("_aaaakmpdngpdcdjfoghgn", "0x678"),
+               ("_aaabefnnihkojobdfojbk", "0x67C"), ("_aaaamiahcncilelhidghh", "0x680"), ("_aaabclpkjcpbbjcpncgfa", "0x684")):
     S("fire_utility", "B_Molotov", p, native=("AWDMolotovGrenade", off),
       note="obfuscated AWDMolotovGrenade field at +" + off[2:] + "; meaning not decoded")
-for p in ("FlatPlayerDamage", "FlatVehicleDamage", "InitialLifeSpan", "_aaaalampbnfacakccbbcd"):
-    S("fire_utility", "B_Molotov_FireField", p, unit="s" if p == "InitialLifeSpan" else "",
-      native=("AWDMolotovFireField", "0x2D0") if p.startswith("_aaaalamp") else None)
+for p in ("FlatPlayerDamage", "FlatVehicleDamage", "InitialLifeSpan"):
+    S("fire_utility", "B_Molotov_FireField", p, unit="s" if p == "InitialLifeSpan" else "")
+for p, off in (("_aaaalampbnfacakccbbcd", "0x2D0"), ("_aaabdgioabebpkhhmcglm", "0x2D4"), ("_aaabknhhcfikfkdfeephh", "0x2D8"),
+               ("_aaabakopnbgagdbajfflp", "0x2DC")):
+    S("fire_utility", "B_Molotov_FireField", p, native=("AWDMolotovFireField", off),
+      note="obfuscated AWDMolotovFireField field at +" + off[2:] + "; meaning not decoded")
 S("fire_utility", "B_Molotov_TriggerVolume", "InitialLifeSpan", unit="s")
 for p, off in (("Duration", "0x0030"), ("MaxStacks", "0x0034"), ("StackDurationRefreshPolicy", "0x0036")):
     S("fire_utility", "GE_MolotovBurning", p, native=("UBHGameplayEffect", off),

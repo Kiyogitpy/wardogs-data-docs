@@ -26,7 +26,18 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data", "Wardogs")
 PAGE = os.path.join(ROOT, "game-features", "Wardogs_FireAndUtility_v1.md")
 ITEMS = os.path.join(DATA, "Plugins", "GameFeatures", "Items")
-BLOCKS = ["counts", "throw", "curves", "smoke", "molotov_pp", "molotov_state", "place", "trigger"]
+BLOCKS = ["counts", "throw", "curves", "smoke", "molotov_pp", "molotov_state", "molotov_bp", "place", "trigger"]
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import bp_defaults as bpd  # noqa: E402
+
+TOPIC = "fire_utility"
+
+
+def bpv(asset, prop):
+    """Entry from assets/data/bp-defaults.json (round 17) or None."""
+    return bpd.get(TOPIC, asset, prop)
+
 
 SPLIT = re.compile(r"^--- export: .*? ---$", re.M)
 
@@ -166,12 +177,15 @@ def smoke(items):
         var = name.replace("DA_SmokeGrenade_", "")
         it = names.get(var)
         item = ("`%s` (%s)" % (it[0].id, cell(it[0].name))) if it else ("vehicle countermeasure (`Id.Item.VehicleSmoke`)" if name == "DA_SmokeScreen" else "-")
+        td, sm = bpv(name, "Total Duration"), bpv(name, "SpriteMaxSize")
+        fi, fo = bpv("PDA_SmokeGrenade", "Fade In Time"), bpv("PDA_SmokeGrenade", "Fade Out Time")
         out.append("| `%s` | %s | %s | %s | %s | %s | %s |" % (
-            name, item, num(pr["Total Duration"]) if "Total Duration" in pr else "not serialized",
-            num(pr["SpriteMaxSize"]) if "SpriteMaxSize" in pr else "not serialized",
+            name, item, num(pr["Total Duration"]) if "Total Duration" in pr else ("%s (class default)" % num(td["value"]) if td else "not serialized"),
+            num(pr["SpriteMaxSize"]) if "SpriteMaxSize" in pr else ("%s (class default)" % num(sm["value"]) if sm else "not serialized"),
             "`%s`" % pr["SmokeType"].split("::")[-1] if pr.get("SmokeType") else "not serialized",
             ("%s, %s, %s, %s" % tuple(num(round(colour[k], 3)) for k in "RGBA")) if colour else "not serialized",
-            ("fade in %s / fade out %s" % (num(pr.get("Fade In Time", 0)), num(pr.get("Fade Out Time", 0)))) if "Fade In Time" in pr else "-"))
+            ("fade in %s / fade out %s" % (num(pr.get("Fade In Time", 0)), num(pr.get("Fade Out Time", 0)))) if "Fade In Time" in pr
+            else ("fade in %s / fade out %s (class default)" % (num(fi["value"]), num(fo["value"])) if fi and fo and name != "DA_SmokeScreen" else "-")))
     return "\n".join(out)
 
 
@@ -262,6 +276,15 @@ TRIGGER_FIELDS = {
 }
 
 
+def trigger_default(stem, f):
+    """Blueprint-resolved text for a field the item definition does not set (round 17), or None."""
+    e = bpv(stem, f[:-1] + "?" if f.endswith("_") else f)
+    if e is None or e["value"] is None:
+        return None
+    return "%s (Blueprint default, `%s`)" % (bpd.fmt(e["value"]) if not isinstance(e["value"], dict) else "(%s)" % vec(e["value"]),
+                                           e["from_asset"])
+
+
 def trigger(items):
     out = ["| Item id | Extension data class | Field | Value in the item definition |", "|---|---|---|---|"]
     n = 0
@@ -274,8 +297,27 @@ def trigger(items):
                     val = pr.get(f)
                     if isinstance(val, dict):
                         val = "(%s)" % vec(val)
-                    out.append("| `%s` | `%s` | `%s` | %s |" % (it.id, t, f, "not serialized (class default)" if f not in pr else num(val) if not isinstance(val, (list, str)) else cell(val)))
+                    dflt = trigger_default(os.path.splitext(os.path.basename(it.path))[0], f) if f not in pr else None
+                    out.append("| `%s` | `%s` | `%s` | %s |" % (it.id, t, f, (dflt or "not serialized (class default)") if f not in pr else num(val) if not isinstance(val, (list, str)) else cell(val)))
                     n += 1
+    return "\n".join(out)
+
+
+def molotov_bp():
+    """B_Molotov and B_Molotov_FireField Blueprint values against the native constructor defaults (round 17)."""
+    out = ["| Class | Field | Offset | Blueprint value | Native ctor default | Derived role (native page) |", "|---|---|---|---:|---:|---|"]
+    roles = {"0x670": "scale of the patch offset from the impact point", "0x674": "scale of the patch offset from the impact point",
+             "0x678": "patch count", "0x67C": "not matched to a use", "0x680": "scales a reduced count",
+             "0x684": "copied into each spawned patch"}
+    for asset, cls in (("B_Molotov", "AWDMolotovGrenade"), ("B_Molotov_FireField", "AWDMolotovFireField")):
+        for e in bpd.topic_entries(TOPIC):
+            if e["asset"] != asset or not e["property"].startswith("_aaa"):
+                continue
+            nd = e.get("native_default")
+            out.append("| `%s` | `%s` | `+%s` | %s (%s) | %s | %s |" % (
+                asset, e["property"], "0x%X" % int(e["sdk_offset"], 16),
+                bpd.fmt(e["value"]), "Blueprint CDO" if e["resolved_from"] == "export" else "native, not set in the Blueprint",
+                bpd.fmt(nd) if nd is not None else "-", roles.get("0x%X" % int(e["sdk_offset"], 16), "not decoded") if cls == "AWDMolotovGrenade" else "not decoded"))
     return "\n".join(out)
 
 
@@ -298,7 +340,7 @@ def counts(items):
 RENDER = {
     "counts": lambda it: counts(it), "throw": lambda it: throw(it), "curves": lambda it: curves(),
     "smoke": lambda it: smoke(it), "molotov_pp": lambda it: molotov_pp(), "molotov_state": lambda it: molotov_state(),
-    "place": lambda it: place(it), "trigger": lambda it: trigger(it),
+    "place": lambda it: place(it), "trigger": lambda it: trigger(it), "molotov_bp": lambda it: molotov_bp(),
 }
 
 
