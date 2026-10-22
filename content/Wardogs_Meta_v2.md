@@ -87,6 +87,8 @@ Each skill row holds a `SkillEffects` list. Each entry has:
 - one or more **magnitudes**, each an attribute tag (for example `Attribute.Gameplay.Weapon.AimTime`) with either a literal or a curve row in the matching `CT_*Skills` table;
 - an optional **gate** (`ItemApplicationRequirements`) that limits the effect to items with a given archetype or ID tag.
 
+The full skill list with display names, resolved GameplayEffect modifiers and level curves (all 62 rows, including the plugin tables) is on [Progression Tables](../game-features/Wardogs_Progression_v1.md). The live reward curves, currencies and cosmetic rows are there too.
+
 There are **57 effect entries** across six roles, using **18 distinct GE classes**. The `Revive.Target`, `Vehicle` and `SupplyCrate` slot names are read from the names only; their targets are not spelled out in the export.
 
 | Role | Skill row | Slot | GE | Attribute | Curve row / literal | Gate |
