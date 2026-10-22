@@ -239,7 +239,7 @@ def effect_of(it, d):
         rev = "-"
         if "Enox" in nm:
             heal = "+40 as decaying health (`DecayHealAmount` 40)"
-            hot = "decays after use; pool size and decay delta not traced (see states)"
+            hot = "decays after use; pool size 40 (Blueprint `MaxDecayHealth`), decay delta not decoded (see states)"
     else:
         heal, hot, rev = "-", "-", "-"
     return heal, hot, rev, ge_txt

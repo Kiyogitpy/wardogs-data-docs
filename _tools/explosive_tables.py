@@ -22,6 +22,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import damage_tables as dt  # noqa: E402
 import infantry_tables as it  # noqa: E402
+import bp_defaults as bpd  # noqa: E402
 
 ROOT = dt.ROOT
 PAGE = "game-features/Wardogs_Explosives_v1.md"
@@ -220,7 +221,52 @@ def t_vehicles(rows):
     return "\n".join(out)
 
 
+def t_fuses(rows):
+    """Fuse, timer and arming values per thrown or placed item, from assets/data/bp-defaults.json (round 17)."""
+    def g(asset, prop):
+        return bpd.get("explosives", asset, prop)
+
+    def val(e):
+        return None if e is None or e["value"] is None else e["value"]
+
+    def src(e):
+        if e is None:
+            return "not exported"
+        how = {"export": "**Data (Blueprint CDO)**", "parent": "**Data (Blueprint CDO)**, inherited", "bp-default": "**Data (Blueprint CDO)**, type default",
+               "native": "**Native**", "native-pending": "**Native**, see round 17 native defaults"}[e["resolved_from"]]
+        if e["resolved_from"] == "native" and e.get("native_ctor_rva"):
+            how += f" (ctor `{e['native_ctor_rva'].replace('0x', '0x').upper().replace('0X', '0x')}`)"
+        if e["resolved_from"] in ("export", "parent"):
+            how += f" `{e['from_asset']}`"
+        return how
+    out = ["| Item | Timer | Seconds | Source | Notes |", "|---|---|---|---|---|"]
+
+    def row(item, asset, prop, label, note):
+        e = g(asset, prop)
+        v = val(e)
+        txt = "-" if v is None else bpd.fmt(v)
+        out.append(f"| {item} | {label} | {txt} | {src(e)} | {note} |")
+    row("M67 frag grenade (`Id.Item.M67Grenade`)", "B_FragGrenade", "BaseFuseTime", "`BaseFuseTime` (fuse after the throw)",
+        "cookable (`bCanBeCooked` true) and throw-back allowed (`bCanThrowBack` true); the gold variant `B_GoldFragGrenade` inherits")
+    row("Smoke grenades, all 8 colours", "B_SmokeGrenade_Red", "BaseFuseTime", "`BaseFuseTime`",
+        "every colour sets 3.0 (the native base is 5.0); the smoke then lasts `PostExplodeLifespan` 10 s on the grenade actor, the smoke itself 180 s by default (see Fire page)")
+    row("Molotov (`Id.Item.Molotov`)", "B_Molotov", "BaseFuseTime", "`BaseFuseTime`",
+        "`B_Molotov` does not set it, so the grenade base class value stands; whether the Molotov bursts on impact or on the fuse is not traced")
+    row("C4 charge (`Id.Item.C4Explosive`)", "B_ThrowableC4", "TimerBeforeExplosion", "`TimerBeforeExplosion` on the charge",
+        "set on the actor; `B_ThrowableIED` inherits it")
+    row("C4 detonator (`Id.Item.C4Trigger`)", "ID_C4_Trigger", "DelayTillExplosion", "`DelayTillExplosion` after the trigger press",
+        "the item and its Blueprint leave it unset, so it is the Blueprint variable's default 0 (immediate)")
+    row("IED detonator (`Id.Item.IED.Trigger`)", "ID_IED_Trigger", "DelayTillExplosion", "`DelayTillExplosion` after the trigger press",
+        "set on the item instance")
+    row("AT mine (`ID.Item.ATMine`)", "ID_AT_Mine", "ArmingDelay", "`ArmingDelay` after placement",
+        "from `BH_AT_MineExtensionData`; the item sets only the trigger box and `UniversalVehicleSpeed`")
+    row("Claymore (`Id.Item.Claymore`)", "ID_Claymore", "ActivationDelayTimer", "`ActivationDelayTimer` after placement",
+        "from `BH_ClaymoreExtensionData`; the item sets only the trigger box")
+    return "\n".join(out)
+
+
 MODES = {"main": t_main, "direct": t_direct, "falloff": t_falloff, "infantry": t_infantry, "vehicles": t_vehicles,
+         "fuses": t_fuses,
          "counts": lambda rows: f"{len(rows)} explosive sources: {sum(r['kind'] == 'projectile' for r in rows)} projectile assets, "
                                 f"{sum(r['kind'] == 'actor' for r in rows)} thrown/placed actors"}
 
