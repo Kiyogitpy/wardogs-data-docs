@@ -136,6 +136,8 @@ filtered contact array; vehicle section selection reads its first hit.
 See [Vehicle §4.1](Wardogs_VehicleDamagePipeline_v1.md#41-order) and the
 [corrected explosive audit](../docs/evidence/round8-explosive-viewer-audit.md#correction-hit-location-deduplication-and-routed-fuel-damage).
 
+The per-explosive numbers (base, radii, falloff, minimum, and the damage they do to infantry and vehicles) are tabulated in [Explosives Reference](../game-features/Wardogs_Explosives_v1.md).
+
 **Radial falloff. Native**, `0x6F06540` (instructions
 `0x6F06792`–`0x6F06831`; constants `0x9AADA78` = 1.0,
 `0x9AADA28` = 1.0f, `0x9AC2180` = 1e-8). The round's damage struct
