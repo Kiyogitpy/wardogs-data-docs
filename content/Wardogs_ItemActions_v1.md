@@ -48,7 +48,7 @@ The counts include 39 definitions in game-feature plugins (`Plugins/GameFeatures
 |---|---|---|
 | `ActionTag` | The action's identity (`Action.Weapon.Reload`). Items, input behaviors and the response rules all refer to actions by this tag. | **Data** |
 | `ActionContext` | Context flags (`Holdable`, `Weapon`, `Interaction`, `TwoHanded`, `OneHanded`, `Movement`, `UI`, `Emote`, `FollowProjectile`). They describe the action and are also the *categories* that `BlockCategories` and `InterruptCategories` rules name. | **Data** for values; category use is **Derived** |
-| `ActionClass` | The blueprint (or the native `WDGameplayAction`) that runs the action. Shown by class name only. The `B_Action_*` blueprints are not in the exports, so durations, montages and cancel logic inside them are not traced. | **Data** (class name); logic **not traced** |
+| `ActionClass` | The blueprint (or the native `WDGameplayAction`) that runs the action. Shown by class name only. The medical, throw, place and build `B_Action_*` blueprints were exported in round 17 (durations are the montage lengths in section 6.1); cancel logic inside them is not traced. | **Data** (class name); logic **not traced** |
 | `ActivationContextType` | A struct type carrying what the action needs when it starts (`WDAppliableItemActionContext` for item use, `WDEmoteActivationContext` for emotes, `BHTraversingActivationContextData` for vault and mantle). | **Data** |
 | `ActionResponseData` | The conflict rules, a map from a response type to lists (section 3). | **Data** |
 | `ActionEffects` (`WDActionDefinition` only) | GameplayEffects tied to the action by a key name (section 8). | **Data** |
@@ -571,12 +571,46 @@ Doors, tracker, projectile follow, admin scene, smart-object computer use and th
 How to read it:
 
 - **Heal / attribute.** The attribute the item changes and the amount. `(delta)` means `bApplyAsDelta` is true (added to the current value). For the defibrillator the flag is not stored, so the mode is not confirmed. Heal amounts are also on [Items §5](Wardogs_Items_v2.md). Heal rates, applied effects, use costs and the medic skills that change them are on [Medical and Healing](../game-features/Wardogs_Medical_v1.md). **Data**.
-- **Time method.** `AnimationLength`: the use lasts as long as the animation. `AnimationNotifier`: it completes at an animation notify (`Heal`). `UntilItemEmptyOrTargetFull`: the use continues until the item runs out or the target is full (fuel can, repair tool, resuscitator). The method name is **Data**; the seconds are in animation assets that are not decoded here (**not traced**).
+- **Time method.** `AnimationLength`: the use lasts as long as the animation. `AnimationNotifier`: it completes at an animation notify (`Heal`). `UntilItemEmptyOrTargetFull`: the use continues until the item runs out or the target is full (fuel can, repair tool, resuscitator). The method name is **Data**; the seconds are the montage lengths in section 6.1 (**Data (Blueprint CDO)**, [round 17 evidence](../docs/evidence/round17-blueprint-defaults.md)).
 - **Consumed per use.** `AmountConsumedOnUse` (1 for almost all). **Data**.
 - **World interaction.** A context class names the interaction that targets another player or a vehicle (`WDHealPlayerInteractionContext`, `WDVehicleRepairInteractionContext`). **Data**.
 - **Container.** `bContainerAppliable` marks items that hold a quantity (fuel, repair charge). **Data**.
 
 ---
+
+### 6.1 Animation seconds for the main item actions
+
+The base appliable action reads the length of the item's animation for `AnimationLength` and the position of the named notify for `AnimationNotifier` (`CalculateTotalInteractionTime` in `B_Action_Appliable_Base`, **Data (Blueprint bytecode)**). The table gives the first-person montage length, the play rate and the notify and loop-section times (**Data (Blueprint CDO)**; every montage plays at rate 1.0, an engine default). Throwables hold in a loop section while the button is down: the loop section is 10 s long on the frag and smoke grenades, 3.33 s on the Molotov and 2.67 s on the C4 charge, and the `Throw` notify sits at the loop end, so the montage length is the longest hold plus the recovery, not the time to throw; how the game leaves the loop on release is not traced. [round 17 evidence](../docs/evidence/round17-blueprint-defaults.md).
+
+<!-- action_tables montages -->
+| Group | Action | First-person montage | Length (s) | Play rate | Timed points (s) |
+|---|---|---|---:|---:|---|
+| Use (medical) | Bandage, self | `AM_FP_Bandage_Self_Heal` | 5.23 | 1 | - |
+| Use (medical) | Bandage, teammate | `AM_FP_Bandage_Teammate_Heal` | 4.83 | 1 | - |
+| Use (medical) | Individual First Aid Kit, self | `AM_FP_IFAK_Self_Heal` | 5.23 | 1 | Activate 4.63, Heal 4.73 |
+| Use (medical) | Individual First Aid Kit, teammate | `AM_FP_IFAK_Teammate_Heal` | 5.23 | 1 | Heal 5.18 |
+| Use (medical) | Medical Bag, other | `AM_FP_Medkit_Use` | 7.4 | 1 | section LoopStart 1.47, section LoopEnd 5.7 |
+| Use (medical) | Medical Bag, self | `AM_FP_Medkit_Use_Self` | 7.4 | 1 | section LoopStart 1.47, section LoopEnd 5.7 |
+| Use (medical) | Enox, self | `AM_FP_Enox_Use` | 2.17 | 1 | section LoopStart 0.67, section LoopEnd 1.83 |
+| Use (medical) | Stim Pen, self | `AM_FP_StimPen_Use` | 2 | 1 | - |
+| Use (medical) | Stim Pen, teammate | `AM_FP_StimPen_Use_Teammate` | 1.27 | 1 | - |
+| Use (medical) | Resuscitator | `AM_Resuscitator_Use` | 2.17 | 1 | - |
+| Use (medical) | Defibrillator | `AM_FP_Defib_Use` | 9.15 | 1 | section LoopStart 0.27, section LoopEnd 8.2 |
+| Use (medical) | Base revive (bare hands) | `AM_FP_Revive` | 20.5 | 1 | Complete 20 |
+| Throw | M67 frag, primary (overhand) | `AM_FP_Grenade_Throw_Overhand` | 11.92 | 1 | Prime 0.44, Ready 0.67, section LoopStart 0.83, section LoopEnd 10.83, Throw 10.86, Complete 11.53 |
+| Throw | M67 frag, secondary (underhand) | `AM_FP_Grenade_Throw_Underhand` | 11.92 | 1 | Prime 0.4, Ready 0.63, section LoopStart 0.83, section LoopEnd 10.83, Throw 10.91, Complete 11.92 |
+| Throw | M67 frag, throw back | `AM_FP_Grenade_Throw_It_Back` | 1.17 | 1 | Ready 0, Throw 0.42, Complete 1.17 |
+| Throw | Smoke, primary | `AM_FP_SmokeGrenade_Throw_Overarm` | 11.92 | 1 | Prime 0.31, Ready 0.65, section LoopStart 0.83, Throw 10.83, section LoopEnd 10.83, Complete 11.86 |
+| Throw | Smoke, secondary | `AM_FP_SmokeGrenade_Throw_Underarm` | 11.92 | 1 | Prime 0.44, Ready 0.63, section LoopStart 0.83, Throw 10.83, section LoopEnd 10.83, Complete 11.92 |
+| Throw | Molotov, primary | `AM_FP_Molotov_Throw_Overarm` | 5.33 | 1 | Prime 0.67, Ready 1.17, section LoopStart 1.3, section LoopEnd 4.63, Throw 4.84, Complete 5.27 |
+| Throw | Molotov, secondary | `AM_FP_Molotov_Throw_Underarm` | 5.33 | 1 | Prime 0.71, Ready 1.21, section LoopStart 1.3, section LoopEnd 4.63, Throw 4.87, Complete 5.3 |
+| Throw | C4 charge | `AM_FP_C4_Throw` | 4.43 | 1 | Prime 0.07, Ready 0.2, section LoopStart 0.2, section LoopEnd 2.87, Throw 2.87, Complete 3.51 |
+| Place | AT mine | `AM_FP_AT_Mine_Place` | 2 | 1 | Activate 1.17 |
+| Place | Claymore | `AM_FP_Claymore_Deploy` | 3 | 1 | Activate 2.75 |
+| Place | IED (place) | `AM_FP_IED_Plant` | 2.73 | 1 | Activate 1.74 |
+| Place | IED trigger (dial and ring) | `AM_FP_IED_Dial_and_Ring` | 9.07 | 1 | Ring 3.67, Discard 7.5 |
+| Place | C4 detonator | `AM_FP_C4_Use` | 1 | 1 | - |
+<!-- /action_tables -->
 
 ## 7. Which items start which action
 
@@ -790,7 +824,7 @@ Plain reading of the main ones (**Derived** from the modifiers):
 
 ## 9. Open items
 
-- The `B_Action_*` blueprints (durations, cancel logic inside the action, montage selection) are not in the exports. **Not traced.**
+- The medical, throw, place and build `B_Action_*` blueprints were exported in round 17; their durations are the montage lengths in section 6.1. Cancel logic inside the actions is **not traced**, and the other `B_Action_*` blueprints (weapons, movement, UI) were not exported.
 - How the action system evaluates the response types (order, what `FullBuffer` versus `PartialBuffer` change, what `InterruptOnComplete` waits for) is **not traced**. The plain meanings in section 3 are **Derived**.
 - The two obfuscated booleans and `bRebufferAction` have no confirmed meaning.
 - Weapon, movement and UI actions have no data-side input binding in the exports; the character's mapping from input to action tags is **not traced**.
