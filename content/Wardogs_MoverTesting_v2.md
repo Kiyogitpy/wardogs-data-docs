@@ -2,6 +2,9 @@
 title: "MoverTesting"
 parent: "Content"
 redirect_from: ["/Wardogs_MoverTesting_v2.html", "/Wardogs_MoverTesting_v2"]
+
+> **See also.** Base `MaxSpeed`, sprint scales and other values the export omits (class defaults), speed per stance, and the curves and audio in `GameMechanics/Player` are on [Player Movement](Wardogs_PlayerMovement_v1.md).
+
 ---
 
 # Wardogs — Mover & Character Movement Reference
