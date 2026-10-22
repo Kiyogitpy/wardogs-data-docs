@@ -95,7 +95,7 @@ Keep it civil, keep it technical, keep it on-topic. The project is
 small enough that there's no formal CoC yet, but the above still
 applies:
 
-- No harassment of Embark, their employees, or any other party
+- No harassment of Bulkhead, Team17, Embark, their employees, or any other party
 - No doxxing, no personal attacks
 - Technical disagreement is fine; keep it to the technical content
 

@@ -4,7 +4,7 @@
 
 ## Posture
 
-This repository documents **Wardogs** (Embark Studios) as a
+This repository documents **Wardogs** (Bulkhead, published by Team17) as a
 defensive-research exercise. It is a documentation project: the
 published output is the markdown reference docs, mappings, and SDK
 dumps in this repository — not tooling.
@@ -15,7 +15,7 @@ The research produces two kinds of output:
    this repository.
 2. **Private security findings** — issues in the game's trust model,
    serialization, replication, or state validation that are reported
-   privately to Embark Studios before any public mention. These are
+   privately to the responsible vendor before any public mention. These are
    not published here until coordinated disclosure completes.
 
 This document describes the disclosure process for the second kind.
@@ -55,9 +55,11 @@ When a finding is identified:
    - Suggested mitigation if obvious
    - Date identified
 
-2. **Report to Embark Studios** via their security channel:
-   - **Primary:** https://www.embark-studios.com/security (if
-     published) or security contact listed on their site
+2. **Report to the responsible vendor** via their security channel
+   (Bulkhead/Team17 for game logic and trust-model issues; Embark
+   for Elytra anti-cheat issues):
+   - **Primary:** the security contact listed on the vendor's site (if
+     published) or the Steam store page support contact
    - **Secondary:** Steam support security form
    - **If no response in 7 days:** retry via a different channel
 
@@ -66,12 +68,12 @@ When a finding is identified:
    - **90 days by default**
    - **Extended on request** for genuinely complex fixes
    - **Shortened if the issue is being actively exploited** in
-     the wild (coordinated with Embark)
+     the wild (coordinated with the vendor)
 
 4. **Post-remediation**:
    - Finding moves from `_findings/_private/` to
      `_findings/disclosed/`
-   - Public write-up added, crediting Embark's fix
+   - Public write-up added, crediting the vendor's fix
    - CVE requested where applicable
 
 ## What this repo will NEVER publish
@@ -83,7 +85,7 @@ When a finding is identified:
 - **Account-takeover primitives** of any kind
 - **Payment / monetization bypass** techniques
 - **Any finding before coordinated disclosure window ends**, unless
-  Embark explicitly approves earlier publication
+  the vendor explicitly approves earlier publication
 
 ## Reporting a security issue you've found via this repo
 
@@ -93,11 +95,11 @@ that's one of the intended outcomes), please:
 1. **Do NOT open a public issue or PR describing it** on this
    repository.
 2. **Email the project author privately** (contact in GitHub profile)
-   so we can coordinate disclosure to Embark.
-3. **Alternatively, report directly to Embark** via their security
+   so we can coordinate disclosure to the vendor.
+3. **Alternatively, report directly to the vendor** via their security
    channel and leave this repo out of it entirely.
 
-Either path is fine. The goal is "Embark hears about it before the
+Either path is fine. The goal is "The vendor hears about it before the
 internet does."
 
 ## Scope boundary — documentation vs tooling
