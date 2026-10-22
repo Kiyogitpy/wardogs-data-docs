@@ -5,7 +5,7 @@
 [![Scope](https://img.shields.io/badge/scope-defensive%20research-informational)](docs/SCOPE.md)
 [![License](https://img.shields.io/badge/license-CC--BY--SA--4.0%20%2F%20MIT-lightgrey)](LICENSE)
 
-Comprehensive reference documentation for **Wardogs** (Embark Studios,
+Comprehensive reference documentation for **Wardogs** (Bulkhead, published by Team17,
 UE 5.7, build `++Wardogs+Live-CL-516586`): every number, table, curve
 and asset the game ships with, extracted from cooked data and
 cross-referenced to the UE class hierarchy.
@@ -38,7 +38,8 @@ cross-referenced to the UE class hierarchy.
 **One line:** This is a defensive-research and documentation project.
 The goal is a complete code↔data cross-reference of the game,
 published as a public artifact, with any security findings routed to
-Embark through responsible disclosure.
+the responsible vendor (Bulkhead/Team17 for the game, Embark for
+Elytra) through responsible disclosure.
 
 **It is NOT a cheat development project.** See
 [`docs/SCOPE.md`](docs/SCOPE.md) for the detailed scope statement and
@@ -66,11 +67,11 @@ Security disclosure:
 | Attribute | Value |
 |---|---|
 | Game | Wardogs |
-| Developer | Embark Studios |
+| Developer / publisher | Bulkhead / Team17 |
 | Engine | Unreal Engine 5.7 |
 | Build | `++Wardogs+Live-CL-516586` |
 | Platform | PC (Steam AppID 1867240) |
-| Anti-cheat | Elytra (Embark in-house, successor to the AC stack from THE FINALS / ARC Raiders) |
+| Anti-cheat | Elytra (Embark's in-house kernel-level anti-cheat, also used in THE FINALS / ARC Raiders) |
 | Season | Season 02 (data as of 2026-10-15) |
 
 ## Contributing
@@ -82,12 +83,11 @@ disclosure channel not public PRs.
 
 ## Attribution
 
-- **Wardogs** © Embark Studios AB
+- **Wardogs** © Bulkhead Ltd, published by Team17
+- **Elytra** anti-cheat © Embark Studios AB
 - **Unreal Engine 5.7** © Epic Games
-- Community tooling: UEDumper, CUE4Parse, FModel, IDA Pro
-- Research methodology references: HyperDbg CCS'22 paper
-  (Karvandi et al.), various public RE write-ups of
-  EasyAntiCheat / BattlEye / Vanguard
+- Community tooling: UEDumper, UnrealMappingsDumper, CUE4Parse,
+  FModel, IDA Pro
 
 ## License
 
