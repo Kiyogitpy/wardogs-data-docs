@@ -9,6 +9,8 @@ redirect_from: ["/Wardogs_RewardLookup_SessionEvents_v1.html", "/Wardogs_RewardL
 
 > **Scope:** **16 tables pulled**, covering KOTH challenge events ([`Challenges_KOTH`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/Challenges_KOTH.json)), buildable destruction ([`Rewards/BuildableRewards`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards)) and Spotting ([`Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Spotting.json)). Each table maps a row key (a vehicle variant, item or buildable ID) to a `Challenges.Rewards.*` reward tag. Reward amounts and the calculator that consumes these tags are outside this file.
 
+> **Challenges and state trees:** which event each challenge waits for, what its state tree does and which of these lookup and formula rows it feeds are on [Challenges and Session Events](../game-features/Wardogs_Challenges_v1.md). That page also answers the "Event triggers" gap in section 19 from the tree data (event tags and payloads), though the in-game code that raises them is not traced.
+
 ## Season 02 update (2026-10-15)
 
 - **Vehicle lookups (tables 2 to 6):** table 2 grows from 30 to 34 rows, and tables 3 to 6 from 24 to 28 rows. New keys: `Vehicle.Variant.Land.Wheeled.WHL_08.Default`, `WHL_08.MachineGun`, `Vehicle.Variant.Land.Tracked.TNK_04.Default` and `Vehicle.Variant.Stationary.MGNest`. Tables 3 to 6 also add `Vehicle.Variant.Land.Wheeled.Humvee.Minigun`.
