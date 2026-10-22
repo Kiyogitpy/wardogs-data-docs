@@ -87,7 +87,7 @@ Things the inventory shows (**Derived** from the table):
 - Small items cost 7 to 32 supplies, the Radio 20, the Hesco Wall 75 and the Door 80. The Gate, Bunker, Recon Tower, Indirect Fire Shelter and the Refuel and Repair stations cost 200, the Shelter 250 and the Drill Rig 2,750.
 - Only the Large Hammer can place the Bunker, Recon Tower, Indirect Fire Shelter, Bremer Wall, Refuel Station, Repair Station and Drill Rig.
 - The Forward Operating Base has no hammer entry. It comes from its own item (section 8).
-- Entity tags also exist for the Mortar, Loudspeaker, Talon 9K-SAM and Vanguard CIWS (section 6). They have no definition in this plugin.
+- Entity tags also exist for the Mortar, Loudspeaker, Talon 9K-SAM, Vanguard CIWS, Stingray and MG Nest. Their definitions are in the `Vehicles/STN_*` plugins (section 6, "Stationary weapons").
 
 ## 3. Build stages
 
@@ -269,7 +269,7 @@ Per-structure rules are in the table that follows. Plain meaning:
 | Refuel Station | Up to 1 per FOB. Registers with the FOB. A material tracker and a refuel start/stop sound exist. The Fuel Supplies item is described as "Resource Required to Refuel Vehicles. Requires FOB Radius to Use". The refuel rate is **not traced**. | **Data** |
 | Repair Station | Same shape as the Refuel Station, with Mechanical Supplies ("Resource Required to Repair Vehicles"). The repair rate is **not traced**. | **Data** |
 | Drill Rig (`HotzoneMagnet`) | Fuel-driven structure that works with a hot zone (settings below). | **Data** |
-| Mortar, Loudspeaker, Talon 9K-SAM, Vanguard CIWS | Entity names and cash rewards (Mortar only) exist, but there is no buildable definition in this plugin. They come from another plugin and are **not traced** here. | **Data** |
+| Mortar, Loudspeaker, Talon 9K-SAM, Vanguard CIWS, Stingray, MG Nest | Stationary weapons. Entity names and cash rewards (Mortar only) are here; the buildable definitions are in the `Vehicles/STN_*` plugins (table below). | **Data** |
 
 The Refuel and Repair stations also have a scene, [`DA_Scene_FobRefuelRepair`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/UI/FobRefuelRepair/DA_Scene_FobRefuelRepair.json), that lists the vehicle health parts shown per tracked vehicle variant (**Data**).
 
@@ -287,6 +287,23 @@ The Drill Rig has its own settings asset (`WDBuildableHotZoneMagnetDataAsset`), 
 <!-- /buildable_tables -->
 
 Plain reading (**Derived**, units are not stated in the export): after placing there is a 15 second start delay, the rig needs at least 2,000 fuel to run, each fuel unit buys 0.03 of run time (probably seconds), it holds at most 10,000 fuel and it recharges for 900 (probably seconds). What the "magnet" does to the hot zone is **not traced**.
+
+### Stationary weapons (`Vehicles/STN_*`)
+
+Six vehicle plugins (`STN_01` to `STN_06`) each ship a `WDBuildableDataTableRow` table with one row: a buildable tag and the `WDBuildableDataAsset` it uses. The plugin's `GameFeatureAction_DataRegistrySource` adds that table to a hammer registry (`Buildables_LargeHammer`; `STN_04` also to `Buildables_MediumHammer`), so the stationary weapon joins the hammer list at run time. The hammer tables inside this plugin do not list them (the Small, Medium and Large counts above are the plugin's own rows). Each data asset has a `WDVehicleBuildSpawner` that names the vehicle variant spawned (base actor `B_Buildable_StationaryVehicle_C`), a build-stage definition, and the same three placement conditions (`WDWithinFobBoundsPlacementCondition`, `WithinLadderBoundsPlacementCondition`, `SafeZonePlacementCondition`). **Data**: `Vehicles/STN_*/Content/{STN_nn.json, BuildableData, Data}`. The vehicle variants, their weapons, seats and damage rows are in [Vehicles](Wardogs_GameFeatures_Vehicles_v2.md), [Vehicle Handling](Wardogs_VehicleHandling_v1.md) and [Vehicle Damage Pipeline](../pipelines/Wardogs_VehicleDamagePipeline_v1.md).
+
+<!-- buildable_tables stationary -->
+| Plugin | Table | Added to registries | Row tag | Data asset | Name | Cost | Max health | Repair multiplier | Max stack | Stages | Vehicle tag | Placement conditions |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| `STN_01` | [`DT_STN_01_Buildable_Data`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_01/Content/Data/DT_STN_01_Buildable_Data.json) | `Buildables_LargeHammer` | `Id.Buildable.MistralAA` | [`DA_Buildable_MistralAA`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_01/Content/BuildableData/DA_Buildable_MistralAA.json) | Talon 9K-SAM | 650 | 3,000 | 66.67 | 6 | 5 | `Vehicle.Variant.Stationary.MistralAA` | `WDWithinFobBoundsPlacementCondition`, `WithinLadderBoundsPlacementCondition`, `SafeZonePlacementCondition` |
+| `STN_02` | [`DT_STN_02_Buildable_Data`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_02/Content/BuildableData/DT_STN_02_Buildable_Data.json) | `Buildables_LargeHammer` | `Id.Buildable.Phalanx` | [`DA_Buildable_STN_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_02/Content/BuildableData/DA_Buildable_STN_02.json) | Vanguard CIWS | 1,200 | 5,000 | 100 | 6 | 5 | `Vehicle.Variant.Stationary.Phalanx` | `WDWithinFobBoundsPlacementCondition`, `WithinLadderBoundsPlacementCondition`, `SafeZonePlacementCondition` |
+| `STN_03` | [`DT_STN_03_Buildable_Data`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_03/Content/BuildableData/DT_STN_03_Buildable_Data.json) | `Buildables_LargeHammer` | `Id.Buildable.Mortar` | [`DA_Buildable_STN_03`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_03/Content/BuildableData/DA_Buildable_STN_03.json) | L81 Mortar | 600 | 3,000 | 10 | 6 | 4 | `Vehicle.Variant.Stationary.Mortar` | `WDWithinFobBoundsPlacementCondition`, `WithinLadderBoundsPlacementCondition`, `SafeZonePlacementCondition` |
+| `STN_04` | [`DT_Buildables_STN_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_04/Content/BuildableData/DT_Buildables_STN_04.json) | `Buildables_MediumHammer`, `Buildables_LargeHammer` | `Id.Buildable.Loudspeaker` | [`DA_Buildable_STN_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_04/Content/BuildableData/DA_Buildable_STN_04.json) | Loudspeaker | 200 | 1,000 | 6.67 | - | 5 | `Vehicle.Variant.Stationary.Loudspeaker` | `WDWithinFobBoundsPlacementCondition`, `WithinLadderBoundsPlacementCondition`, `SafeZonePlacementCondition` |
+| `STN_05` | [`DT_STN_05_Buildable_Data`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/BuildableData/DT_STN_05_Buildable_Data.json) | `Buildables_LargeHammer` | `Id.Buildable.STN_05` | [`DA_Buildable_STN_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/BuildableData/DA_Buildable_STN_05.json) | Stingray | 650 | 3,000 | 10 | 6 | 4 | `Vehicle.Variant.Stationary.STN_05` | `WDWithinFobBoundsPlacementCondition`, `WithinLadderBoundsPlacementCondition`, `SafeZonePlacementCondition` |
+| `STN_06` | [`DT_Buildables_STN_06`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_06/Content/BuildableData/DT_Buildables_STN_06.json) | `Buildables_LargeHammer` | `Id.Buildable.MGNest` | [`DA_Buildable_MGNest`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_06/Content/BuildableData/DA_Buildable_MGNest.json) | MG Nest | 650 | 3,000 | - | 5 | 5 | `Vehicle.Variant.Stationary.MGNest` | `WDWithinFobBoundsPlacementCondition`, `WithinLadderBoundsPlacementCondition`, `SafeZonePlacementCondition` |
+<!-- /buildable_tables -->
+
+Source: `WDBuildableDataTableRow` tables `DT_STN_01_Buildable_Data`, `DT_STN_02_Buildable_Data`, `DT_STN_03_Buildable_Data`, `DT_Buildables_STN_04`, `DT_STN_05_Buildable_Data` and `DT_Buildables_STN_06`. What the hammer does with these rows (the native placement path) is **not traced**.
 
 ## 7. Names, descriptions and the vendor
 
@@ -451,6 +468,6 @@ Total: 206 files.
 - Meaning of `MaxStack`, `PlacementFlags`, `StackCheckOffset` and the unnamed (`_aaab...`) placement fields.
 - What `SafeZonePlacementCondition` and `WithinLadderBoundsPlacementCondition` test (Blueprint, not exported here).
 - Function of the Builder's Radio, and the exact rate of the Refuel and Repair stations.
-- Definitions for the Mortar, Loudspeaker, Talon 9K-SAM and Vanguard CIWS (outside this plugin), and cash rows for WoodBase and Shelter.
+- Cash rows for the Talon 9K-SAM, Loudspeaker, Vanguard CIWS, Stingray and MG Nest, and for WoodBase and Shelter. The stationary weapons' placement path through the hammer registry is not traced.
 - Whether the FOB spawns players, and how `Buildable.Damage.DoNotTakeDamage` combines with the FOB damage row.
 - Hit-count tables per structure: these need all matching damage entries (armor-piercing, hollow-point, calibers) and the instigator and target rules, not just the single-tag entries above.

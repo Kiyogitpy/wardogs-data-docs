@@ -67,6 +67,27 @@ Where the seat setups and `MaxSeats` differ (`WHL_05_Humvee_RingMinigun` 5 and 4
 | WHL_08_RingTurret | wheeled | 5 | 5 | 129 | 60 | 4 | 3,200 | 800 | `DA_Config_WHL_08` |
 <!-- /vehicle_part_tables -->
 
+### Seat names (`WDVehicleSeatNameOverrideRow`)
+
+**Data.** Each vehicle plugin's `GameFeatureAction_DataRegistrySource` adds a `DT_VehicleSeatOverrides_*` table to the `VehicleSeatNameOverrides` registry. A row is keyed by a variant tag and holds one entry per seat index (text shown when a player enters the seat and, optionally, when leaving). Only the rotary and stationary families have such tables: all 9 tables are below (12 rows). Wheeled and tracked variants have none. The seat-map field name is obfuscated in the export; the text keys (`...Enter.<Name>.OutcomeText`) show it is the enter text. Where the exit text is empty the table shows `-`. How the UI picks a row for a seat is **not traced**. Stationary weapon build data is on the [Buildables](Wardogs_Buildables_v1.md) page.
+
+<!-- vehicle_part_tables seats -->
+| Table | Variant tag | Seat index | Enter text | Exit text | Enter text key |
+|---|---|---:|---|---|---|
+| `DT_VehicleSeatOverrides_ROT_02` | `Vehicle.Variant.Air.Rotary.Havoc.Default` | 0 | Pilot | - | `Interaction.Context.Vehicle.Enter.Pilot.OutcomeText` |
+| `DT_VehicleSeatOverrides_ROT_03` | `Vehicle.Variant.Air.Rotary.Littlebird.Default` | 0 | Pilot | - | `Interaction.Context.Vehicle.Enter.Pilot.OutcomeText` |
+| `DT_VehicleSeatOverrides_ROT_03` | `Vehicle.Variant.Air.Rotary.Littlebird.RocketPods` | 0 | Pilot | - | `Interaction.Context.Vehicle.Enter.Pilot.OutcomeText` |
+| `DT_VehicleSeatOverrides_ROT_03` | `Vehicle.Variant.Air.Rotary.Littlebird.MountedMachineGuns` | 0 | Pilot | - | `Interaction.Context.Vehicle.Enter.Pilot.OutcomeText` |
+| `DT_VehicleSeatOverrides_ROT_04` | `Vehicle.Variant.Air.Rotary.ROT_04.Default` | 0 | Pilot | - | `Interaction.Context.Vehicle.Enter.Pilot.OutcomeText` |
+| `DT_VehicleSeatOverrides_ROT_04` | `Vehicle.Variant.Air.Rotary.ROT_04.MountedMachineGuns` | 0 | Pilot | - | `Interaction.Context.Vehicle.Enter.Pilot.OutcomeText` |
+| `DT_VehicleSeatOverrides_STN_01` | `Vehicle.Variant.Stationary.MistralAA` | 0 | Talon 9K-SAM | Talon 9K-SAM | `Interaction.Context.Vehicle.Enter.MistalAA.OutcomeText` |
+| `DT_VehicleSeatOverrides_STN_02` | `Vehicle.Variant.Stationary.Phalanx` | 0 | Vanguard CIWS | Vanguard CIWS | `Interaction.Context.Vehicle.Enter.Phalanx.OutcomeText` |
+| `DT_VehicleSeatOverrides_STN_03` | `Vehicle.Variant.Stationary.Mortar` | 0 | L81 Mortar | L81 Mortar | `Interaction.Context.Vehicle.Enter.Mortar.OutcomeText` |
+| `DT_VehicleSeatOverrides_STN_04` | `Vehicle.Variant.Stationary.Loudspeaker` | 0 | Loudspeaker | Loudspeaker | `Interaction.Context.Vehicle.Enter.Loudspeaker.OutcomeText` |
+| `DT_VehicleSeatOverrides_STN_05` | `Vehicle.Variant.Stationary.STN_05` | 0 | Stingray | Stingray | `Interaction.Context.Vehicle.Enter.Stingray.OutcomeText` |
+| `DT_VehicleSeatOverrides_STN_06` | `Vehicle.Variant.Stationary.MGNest` | 0 | MG Nest | MG Nest | `AB46D1FC4DB3F9EB2E14E5A655F39782` |
+<!-- /vehicle_part_tables -->
+
 ---
 
 ## 3. Wheeled vehicles
