@@ -3,13 +3,14 @@
 // the model to answer from those sections and returns the text. It keeps no state and no keys:
 // the model runs through the Workers AI binding, whose free daily allowance caps total use.
 
-const MODEL = "@cf/meta/llama-3.1-8b-instruct-fp8";
+const MODEL = "@cf/meta/llama-3.3-70b-instruct-fp8-fast";
 const MAX_QUESTION = 300;
 const MAX_SOURCES = 6;
 const MAX_SOURCE_CHARS = 2400;
 
 const SYSTEM = [
   "You answer questions about the game Wardogs using only the numbered excerpts from its data reference.",
+  "Start with a direct answer to the question in the first sentence, naming the thing and its number. If the answer depends on a condition such as the armor class, give the answer for each condition the excerpts show. Ranking tables list the best first, so the first row is the winner.",
   "Cite the excerpts you use as [1], [2] after the statement they support.",
   "Quote numbers exactly as written. Never guess or add facts that are not in the excerpts.",
   "If the excerpts answer only part of the question, say what they do show, with citations, and what is missing. Say they do not answer it only when they hold nothing relevant.",
