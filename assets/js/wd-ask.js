@@ -20,9 +20,9 @@
       var docs = Object.keys(data).map(function (k) { return data[k]; });
       var df = Object.create(null), total = 0;
       docs.forEach(function (d) {
-        // Page and section titles count three times as much as body text.
-        var head = tokens(d.doc + " " + d.title), tf = Object.create(null);
-        head.concat(head, head, tokens(d.content)).forEach(function (t) { tf[t] = (tf[t] || 0) + 1; });
+        // Page titles count six times and section titles three times as much as body text.
+        var page = tokens(d.doc), sect = tokens(d.title), tf = Object.create(null);
+        page.concat(page, page, page, page, page, sect, sect, sect, tokens(d.content)).forEach(function (t) { tf[t] = (tf[t] || 0) + 1; });
         d.tf = tf;
         d.len = 0;
         for (var t in tf) { d.len += tf[t]; df[t] = (df[t] || 0) + 1; }
@@ -34,16 +34,19 @@
   }
 
   function rank(ix, question) {
-    var q = tokens(question), n = ix.docs.length, k1 = 1.2, b = 0.75;
+    var q = tokens(question).filter(function (t, i, all) { return all.indexOf(t) === i; });
+    var n = ix.docs.length, k1 = 1.2, b = 0.75;
     var scored = ix.docs.map(function (d) {
-      var s = 0;
+      var s = 0, hit = 0;
       q.forEach(function (t) {
         var f = d.tf[t];
         if (!f) return;
+        hit++;
         var idf = Math.log(1 + (n - ix.df[t] + 0.5) / (ix.df[t] + 0.5));
         s += idf * (f * (k1 + 1)) / (f + k1 * (1 - b + b * d.len / ix.avg));
       });
-      return { d: d, s: s };
+      // Prefer sections that match most of the question's words over ones that match one word often.
+      return { d: d, s: s * Math.pow(hit / q.length, 2) };
     }).filter(function (x) { return x.s > 0; });
     scored.sort(function (a, b) { return b.s - a.s; });
     var seen = Object.create(null), res = [];
@@ -56,7 +59,7 @@
   }
 
   function snippet(d, terms) {
-    var text = d.content.replace(/\s+/g, " "), low = text.toLowerCase(), at = -1;
+    var text = d.content.replace(/[|\-:]{2,}/g, " ").replace(/\s*\|\s*/g, " · ").replace(/\s+/g, " "), low = text.toLowerCase(), at = -1;
     for (var i = 0; i < terms.length && at < 0; i++) at = low.indexOf(terms[i]);
     var from = Math.max(0, at - 60);
     return (from ? "… " : "") + text.slice(from, from + 220) + (text.length > from + 220 ? " …" : "");
