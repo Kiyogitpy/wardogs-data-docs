@@ -675,8 +675,7 @@ for hit number `HitCount - 2`, reads the speed from `ImpactVelocity` (`+0x128`) 
   (SDK; the implementations are virtual slots `0x500` and `0x4F8` of the component's vtable, `0x6B74770` and `0x6B72370`, reached from the exec thunks
   `0x69E93E0` and `0x69E8E50`; the sender is `0x69E86F0`). The result struct carries `ProjectileNetId`, `ClientHitIndex`, `ElapsedTime` and `bValidHit`; the
   instance has `ValidClientProjectileHitData` and `bFailedHitValidation` fields (SDK);
-- the hit record has `ServerTime` and `NetworkPrediction` fixed-tick fields (§5). No code that rewinds a target to a past time was found in the projectile path;
-  the writers and readers of those fields are **Open** (O-4).
+- the hit record has `ServerTime` and `NetworkPrediction` fixed-tick fields (§5); the writers and readers of those fields are **Open** (O-4).
 
 This page documents the flow, not its trust properties. What the server does with a forwarded hit is not described here (Damage Pipeline O-7 makes the
 same reservation); findings in that area follow [`SECURITY.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/SECURITY.md).
