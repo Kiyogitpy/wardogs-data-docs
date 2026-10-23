@@ -211,7 +211,7 @@ Other facts:
 - Shared damage tint: all definitions that set `bUseCurveToUpdateHealthVisuals` use the curve [`C_DamageTintCurve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/C_DamageTintCurve.json) to tint the mesh as health drops (**Data**).
 - The Forward Operating Base has `Buildable.Damage.DoNotTakeDamage` set in an unnamed field next to its health (**Data**). How that interacts with its damage row and its 15,000 health is **not traced**.
 - The Door and the Gate have door destruction definitions ([Items page section 6.5](Wardogs_GameFeatures_Items_v2.md)) and breach effects (`NS_BuildableDoorBreach`, `NS_BuildableGateBreach`).
-- Buildables are a ruleset in the demolition system (`BH_Demolition_RS_Buildables`), see the [Demolition page](../content/Wardogs_Demolition_v2.md).
+- Buildables are a ruleset in the demolition system (`BH_Demolition_RS_Buildables`), see the [Demolition page](../content/Wardogs_Demolition_v2.md).  Which props accept it: [Demolition Assets, rulesets](../content/Wardogs_DemolitionAssets_v1.md).
 
 ## 5. Placement rules
 

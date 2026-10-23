@@ -12,6 +12,8 @@ description: "Asset Families, Demolition Assets, Component Settings, Remnant Mes
 
 ---
 
+> **Row-level companion:** full asset names, per-mesh rows, component settings, resolved rulesets and crosstalk tags are generated on [Demolition Assets (row level)](Wardogs_DemolitionAssets_v1.md).
+
 ## Season 02 update (2026-10-15)
 
 - **New asset:** `Fences_Metal_03` (4 meshes, `Default_Tank` settings, `LargeAndMediumVehiclesAndExplosions` ruleset, remnant set `RM_Fence_Metal_Residential_03_01_A`).
