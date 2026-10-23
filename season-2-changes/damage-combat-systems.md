@@ -11,10 +11,10 @@ Damage tables, combat rules and demolition rule sets: what changed between Seaso
 
 - **Added:** 9 assets
 - **Removed:** 0 assets
-- **Modified with real changes:** 16 assets (11 more are noise-only and not listed: only renamed keys or shifted references)
+- **Modified with real changes:** 16 assets (11 more are noise-only: renamed keys, swapped key names or shifted references from the different Season 1 export, not listed)
 - **Moved:** 0 assets
-- **Property changes:** 160
-
+- **Property changes:** 160 in modified and moved assets
+- **Removed properties:** 0 values in 0 removed assets
 ## Headline changes
 
 ### Infantry bone damage modifiers (70 values)

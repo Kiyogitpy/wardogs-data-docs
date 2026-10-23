@@ -2,7 +2,7 @@
 title: "Player & Movement changes"
 parent: "Season 2 Changes"
 nav_order: 3
-description: "Parachutes, spotting challenge rewards and input mappings: 2 assets added, 25 modified with real changes, 706 property changes."
+description: "Parachutes, spotting challenge rewards and input mappings: 2 assets added, 24 modified with real changes, 656 property changes."
 ---
 
 # Player & Movement changes
@@ -11,10 +11,10 @@ Movement, parachutes, spotting challenge rewards and input mappings: what change
 
 - **Added:** 2 assets
 - **Removed:** 0 assets
-- **Modified with real changes:** 25 assets (13 more are noise-only and not listed: only renamed keys or shifted references)
+- **Modified with real changes:** 24 assets (14 more are noise-only: renamed keys, swapped key names or shifted references from the different Season 1 export, not listed)
 - **Moved:** 0 assets
-- **Property changes:** 706
-
+- **Property changes:** 656 in modified and moved assets
+- **Removed properties:** 0 values in 0 removed assets
 Movement effect and cue changes and compiled binding indexes are counted, not listed.
 
 ## Headline changes
@@ -37,7 +37,7 @@ Movement effect and cue changes and compiled binding indexes are counted, not li
 | DT_VendorData_Ext_Parachutes | Price (Parachute.Sport) | 1000.0 | 700.0 | −300.0 (−30.0%) |
 | DT_VendorData_Ext_Parachutes | Price (Parachute.Basic) | 100.0 | 500.0 | +400.0 (+400.0%) |
 
-[All 55 parachute changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=player-movement&q=Parachute)
+[All 13 parachute changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=player-movement&q=Parachute)
 
 ### Spotting challenge rewards (70 values changed)
 
@@ -111,26 +111,17 @@ Each row is one reward value: event (Added or Removed), challenge row, resource,
 
 [All 24 input mapping changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=player-movement&q=IMC_)
 
-### Player character components (12 rows)
+### Player character components (4 rows)
 
 | Asset | Property | Season 1 | Season 2 | Change |
 |---|---|---|---|---|
-| DA_PlayerCharacterComponents | SkeletalMeshComponent_0 · RelativeLocation | — | {"X": 0.0, "Y": 0.0, "Z": -96.0} | added |
 | DA_PlayerCharacterComponents | SkeletalMeshComponent_0 · RelativeRotation | — | {"Pitch": 0.0, "Yaw": -90.0, "Roll": 0.0} | added |
-| DA_PlayerCharacterComponents | SkeletalMeshComponent_0 · RelativeScale3D | {"X": 0.0, "Y": 0.0, "Z": -96.0} | — | removed |
 | DA_PlayerCharacterComponents | SkeletalMeshComponent_0 · ComponentVelocity | {"X": 0.0, "Y": -90.0, "Z": 0.0} | — | removed |
-| DA_PlayerCharacterComponents | SkeletalMeshComponent_1 · RelativeLocation | — | {"X": 15.628124, "Y": 0.0, "Z": -96.0} | added |
-| DA_PlayerCharacterComponents | SkeletalMeshComponent_1 · RelativeScale3D | {"X": 15.628124, "Y": 0.0, "Z": -96.0} | — | removed |
-| DA_PlayerCharacterComponents | SkeletalMeshComponent_2 · RelativeLocation | — | {"X": -8.464119, "Y": 0.0, "Z": -95.50413} | added |
-| DA_PlayerCharacterComponents | SkeletalMeshComponent_2 · RelativeScale3D | {"X": -8.464119, "Y": 0.0, "Z": -95.50413} | — | removed |
-| DA_PlayerCharacterComponents | SkeletalMeshComponent_3 · RelativeLocation | — | {"X": 0.0, "Y": 0.0, "Z": -171.5} | added |
 | DA_PlayerCharacterComponents | SkeletalMeshComponent_3 · RelativeRotation | — | {"Pitch": 0.0, "Yaw": -90.0, "Roll": 0.0} | added |
-| DA_PlayerCharacterComponents | SkeletalMeshComponent_3 · RelativeScale3D | {"X": 0.0, "Y": 0.0, "Z": -171.5} | — | removed |
 | DA_PlayerCharacterComponents | SkeletalMeshComponent_3 · ComponentVelocity | {"X": 0.0, "Y": -90.0, "Z": 0.0} | — | removed |
 
 ## Other changes
 
-- `DA_DefaultPlayerMovementAudioConfiguration` (WDCharacterMovementEffectsComponentConfigurationDataAsset): 42 changed.
 - `DA_MaterialTrackerData_Spotting` (WDUISpottingMaterialTrackerDataAsset): 3 added.
 - `DA_Tracker_Map_Spotting` (WDUISpottingTargetMapTrackerData): 2 added.
 - `DA_Tracker_Spatial_Spotting` (WDUISpottingSpatialTrackerData): 8 added, 1 changed, 31 removed.
@@ -143,13 +134,13 @@ Each row is one reward value: event (Added or Removed), challenge row, resource,
 
 The two `ST_Challenges_SessionEvents_KOTH_Spotting_*` state trees have 132 numeric values that change. They are compiled property-binding indexes and hashes, not balance changes. They are in the browser.
 
-The `DA_DefaultPlayerMovementAudioConfiguration` asset has 42 changes to effect and gameplay cue tags and effect flags. They are not listed here; they are in the browser.
+`DA_DefaultPlayerMovementAudioConfiguration` is now noise-only. Its 42 former effect and gameplay cue changes are 21 pairs of swapped key values, so they are not listed.
 
 [All 615 spotting changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=player-movement&q=Spotting)
 
-The UI tracker assets (DA_Tracker_* and DA_MaterialTrackerData_Spotting) have 45 changes, and DA_DefaultPlayerMovementAudioConfiguration has 42. Both are left out of the tables and are in the browser.
+The UI tracker assets (DA_Tracker_* and DA_MaterialTrackerData_Spotting) have 45 changes. They are left out of the tables and are in the browser.
 
-[All 45 UI tracker changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=player-movement&q=Tracker) · [All 42 audio configuration changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=player-movement&q=AudioConfiguration)
+[All 45 UI tracker changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=player-movement&q=Tracker)
 
 ## New in Season 2 (2 assets)
 
