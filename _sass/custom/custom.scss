@@ -443,19 +443,25 @@ input:focus-visible {
 
 // Home page: hero, pill buttons, category cards.
 .wd-hero {
-  padding: 3rem 0 2.5rem;
   display: grid;
-  gap: 2.5rem;
+  gap: 1rem 3rem;
   align-items: start;
+  padding: 2rem 0 1rem;
 
-  @media (min-width: 62rem) { grid-template-columns: minmax(0, 1fr) minmax(24rem, 34rem); }
+  // Text and "Finding things" stack on the left; the viewer previews run down the right.
+  @media (min-width: 62rem) {
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 24rem);
+    .wd-hero-text { grid-column: 1; grid-row: 1; }
+    .wd-hero-finding { grid-column: 1; grid-row: 2; }
+    .wd-hero-viewers { grid-column: 2; grid-row: 1 / span 2; }
+  }
 
   h1 {
     font-size: clamp(2.5rem, 6vw, 4.25rem);
     max-width: 16ch;
     margin: 0 0 1rem;
   }
-  p {
+  .wd-hero-text p {
     font-size: 1.15rem;
     color: $ue-text;
     max-width: 60ch;
@@ -467,11 +473,7 @@ input:focus-visible {
 }
 
 // Interactive-viewer teasers on the right of the hero.
-.wd-hero-viewers {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-  gap: 1rem;
-}
+.wd-hero-viewers { display: flex; flex-direction: column; gap: 1rem; }
 
 .wd-hero-viewer {
   display: flex;
@@ -487,7 +489,8 @@ input:focus-visible {
 
   &:hover { border-color: rgba(255, 255, 255, 0.2); text-decoration: none; }
   img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: $radius-card; }
-  .wd-hero-viewer-name { color: $ue-white; font-weight: 600; font-size: 1rem; padding: 0.4rem 0.7rem 0; }
+  .wd-hero-viewer-name { color: $ue-white; font-weight: 600; font-size: 1.1rem; padding: 0.4rem 0.7rem 0; }
+  .wd-hero-viewer-desc { color: $ue-text-dim; font-size: 0.85rem; line-height: 1.45; padding: 0 0.7rem; }
 }
 
 .wd-actions {
