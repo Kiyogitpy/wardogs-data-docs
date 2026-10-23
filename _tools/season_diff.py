@@ -774,9 +774,7 @@ def existing(out_dir):
         for f in os.listdir(out_dir):
             if f.endswith(".json"):
                 with open(os.path.join(out_dir, f), encoding="utf-8", newline="") as fh:
-                    out[f] = fh.read().replace("
-", "
-")   # git autocrlf may rewrite line endings
+                    out[f] = fh.read().replace(chr(13) + chr(10), chr(10))   # git autocrlf may rewrite line endings
     return out
 
 
