@@ -2,7 +2,7 @@
 title: "Items & Equipment changes"
 parent: "Season 2 Changes"
 nav_order: 5
-description: "Item and equipment changes from Season 1 to Season 2: 37 assets added, 4 removed, 212 modified with real changes, 1,454 property changes."
+description: "Item and equipment changes from Season 1 to Season 2: 37 assets added, 4 removed, 209 modified with real changes, 1,519 property changes."
 ---
 
 # Items & Equipment changes
@@ -15,12 +15,12 @@ Counts come from `assets/data/season-diff/index.json` and `items-equipment.json`
 |---|---|
 | Assets added | 37 |
 | Assets removed | 4 |
-| Assets modified with real changes | 212 |
-| Assets modified, noise only (skipped) | 99 |
+| Assets modified with real changes | 209 |
+| Assets modified, noise only (skipped) | 102 |
 | Assets moved | 0 |
-| Property changes (index.json) | 1,454 |
+| Property changes (index.json) | 1,519 |
 
-The change list holds 1,638 records. The index figure equals that total minus `removed_values` (184).
+The change list holds 1,703 records. The index figure equals that total minus `removed_values` (184).
 
 ## Headline changes
 
@@ -175,7 +175,7 @@ Showing 34 of 34 rows. Browser link: {{ '/season-2-changes/all-changes.html' | r
 
 ### Other numeric changes
 
-No other numeric changes in this area.
+One unnamed value in the audio event `AE_Player_Item_Defibrillator_DryFire` goes from 0.505 to 50.5. That looks like a rescale from a 0–1 range to 0–100, not a balance change.
 
 ### Non-numeric changes
 
@@ -196,7 +196,7 @@ No other numeric changes in this area.
 | ThirdPersonPlayerAnimation | 1 | AnimSet_CombatBow | — | {"ObjectName":"AnimMontage'AM_TP_Bow_Door_Interact'","ObjectPath":"/Game/Animation/Charac… |
 | unnamed property (`_aaabeinmoolajgaldgo`) | 1 | DA_Buildable_Gate | Id.Buildable.Gate | Id.Buildable.Gate.Ramp |
 
-`DT_EmoteData` has 48 change records. Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=items-equipment&q=DT_EmoteData
+`DT_EmoteData` has 120 change records: every one of the 24 emotes adds the same 5 items (`WEPN_031`, `WEPN_034`, `WEPN_036`, `WEPN_037`, `Molotov`) to the end of its unnamed item-tag list. Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=items-equipment&q=DT_EmoteData
 
 ## New in Season 2
 

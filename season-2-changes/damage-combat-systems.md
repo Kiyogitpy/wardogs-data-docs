@@ -2,7 +2,7 @@
 title: "Damage & Combat Systems changes"
 parent: "Season 2 Changes"
 nav_order: 2
-description: "Bone damage modifiers, global damage tables and demolition rules: 9 assets added, 16 modified with real changes, 151 property changes."
+description: "Bone damage modifiers, global damage tables and demolition rules: 9 assets added, 16 modified with real changes, 143 property changes."
 ---
 
 # Damage & Combat Systems changes
@@ -13,7 +13,7 @@ Damage tables, combat rules and demolition rule sets: what changed between Seaso
 - **Removed:** 0 assets
 - **Modified with real changes:** 16 assets (11 more are noise-only: renamed keys, swapped key names or shifted references from the different Season 1 export, not listed)
 - **Moved:** 0 assets
-- **Property changes:** 151 in modified and moved assets
+- **Property changes:** 143 in modified and moved assets
 - **Removed properties:** 0 values in 0 removed assets
 ## Headline changes
 
@@ -95,23 +95,28 @@ Added weapon entry: `HMG.MWSY_001` (no Season 1 value).
 
 [All 28 global damage changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=damage-combat-systems&q=GlobalDamage)
 
-### Vehicle seat damage reduction (11 rows)
+### Vehicle seat damage reduction (12 changes)
+
+Seated players in ROT_01 and Littlebird helicopters get half the protection from small and medium arms (−50% → −25%) and less from high-calibre arms (−20% → −15%). The new ROT_04 rows use the Season 2 values. The Havoc and Humvee rows are unchanged.
+
+The reduction field has no readable name, and its hashed name differs between the two seasons' exports. These rows are matched by position, and the browser marks them that way.
 
 | Asset | Property | Season 1 | Season 2 | Change |
 |---|---|---|---|---|
-| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.ROT_01.Default | — | added | added |
-| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.ROT_01.MountedMachineGuns | — | added | added |
-| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.Havoc.Default | — | added | added |
-| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.Littlebird.Default | — | added | added |
-| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.Littlebird.RocketPods | — | added | added |
-| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.Littlebird.MountedMachineGuns | — | added | added |
-| DT_InfantryData_VehicleSeatDamageReduction | Land.Wheeled.Humvee.Default | — | added | added |
-| DT_InfantryData_VehicleSeatDamageReduction | Land.Wheeled.Humvee.MachineGun | — | added | added |
-| DT_InfantryData_VehicleSeatDamageReduction | Land.Wheeled.Humvee.Minigun | — | added | added |
-| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.ROT_04.Default | — | added | added |
-| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.ROT_04.MountedMachineGuns | — | added | added |
+| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.ROT_01.Default · Small, Medium arms | -50.0 | -25.0 | +25.0 (+50.0%) |
+| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.ROT_01.Default · High arms | -20.0 | -15.0 | +5.0 (+25.0%) |
+| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.ROT_01.MountedMachineGuns · Small, Medium arms | -50.0 | -25.0 | +25.0 (+50.0%) |
+| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.ROT_01.MountedMachineGuns · High arms | -20.0 | -15.0 | +5.0 (+25.0%) |
+| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.Littlebird.Default · Small, Medium arms | -50.0 | -25.0 | +25.0 (+50.0%) |
+| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.Littlebird.Default · High arms | -20.0 | -15.0 | +5.0 (+25.0%) |
+| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.Littlebird.RocketPods · Small, Medium arms | -50.0 | -25.0 | +25.0 (+50.0%) |
+| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.Littlebird.RocketPods · High arms | -20.0 | -15.0 | +5.0 (+25.0%) |
+| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.Littlebird.MountedMachineGuns · Small, Medium arms | -50.0 | -25.0 | +25.0 (+50.0%) |
+| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.Littlebird.MountedMachineGuns · High arms | -20.0 | -15.0 | +5.0 (+25.0%) |
+| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.ROT_04.Default | — | Small, Medium -25.0; High -15.0 | added |
+| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.ROT_04.MountedMachineGuns | — | Small, Medium -25.0; High -15.0 | added |
 
-[All 20 vehicle seat damage changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=damage-combat-systems&q=VehicleSeatDamage)
+[All 12 vehicle seat damage changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=damage-combat-systems&q=VehicleSeatDamage)
 
 ### Demolition rule sets and other changes (31 rows)
 

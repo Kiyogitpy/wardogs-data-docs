@@ -2,7 +2,7 @@
 title: "Data Tables & Tags changes"
 parent: "Season 2 Changes"
 nav_order: 6
-description: "Data table and tag changes from Season 1 to Season 2: 12 assets added, 51 modified with real changes, 322 property changes, including attachment and gear market prices."
+description: "Data table and tag changes from Season 1 to Season 2: 12 assets added, 51 modified with real changes, 323 property changes, including attachment and gear market prices."
 ---
 
 # Data Tables & Tags changes
@@ -18,9 +18,9 @@ Counts come from `assets/data/season-diff/index.json` and `data-tables-tags.json
 | Assets modified with real changes | 51 |
 | Assets modified, noise only (skipped) | 21 |
 | Assets moved | 0 |
-| Property changes (index.json) | 322 |
+| Property changes (index.json) | 323 |
 
-The change list holds 322 records. The index figure equals that total minus `removed_values` (0).
+The change list holds 323 records. The index figure equals that total minus `removed_values` (0).
 
 ## Headline changes
 

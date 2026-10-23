@@ -2,7 +2,7 @@
 title: "Vehicles changes"
 parent: "Season 2 Changes"
 nav_order: 4
-description: "Vehicle changes from Season 1 to Season 2: 151 assets added, 1 removed, 263 modified with real changes, 3,942 property changes."
+description: "Vehicle changes from Season 1 to Season 2: 151 assets added, 1 removed, 261 modified with real changes, 3,926 property changes."
 ---
 
 # Vehicles changes
@@ -15,12 +15,12 @@ Counts come from `assets/data/season-diff/index.json` and `vehicles.json`. Value
 |---|---|
 | Assets added | 151 |
 | Assets removed | 1 |
-| Assets modified with real changes | 263 |
-| Assets modified, noise only (skipped) | 199 |
+| Assets modified with real changes | 261 |
+| Assets modified, noise only (skipped) | 201 |
 | Assets moved | 0 |
-| Property changes (index.json) | 3,942 |
+| Property changes (index.json) | 3,926 |
 
-The change list for these assets holds 3,960 records. The index figure equals that total minus `removed_values` (18).
+The change list for these assets holds 3,944 records. The index figure equals that total minus `removed_values` (18).
 
 ## Headline changes
 
@@ -217,13 +217,15 @@ Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=veh
 
 Showing 40 of 45 rows. The 2 rows with Season 1 values near 1e-38 or below have no percentage: `W_STN_01_MountedMachineGun`. Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=vehicles&q=Properties
 
+The audio event `AE_Vehicle_Exit_ROT_Littlebird` also has one unnamed value that goes from 0.505 to 50.5. That looks like a rescale from a 0–1 range to 0–100, so it is not in the table.
+
 ### Skin values
 
 `Skin_DigitalWood` has 59 numeric changes (UV and pattern values). They are not tabulated here. Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=vehicles&q=Skin_DigitalWood
 
 ### Non-numeric changes
 
-367 changed values are not numeric. The most common properties:
+366 changed values are not numeric. The most common properties:
 
 | Property | Changes | Example asset | Season 1 | Season 2 |
 |---|---|---|---|---|

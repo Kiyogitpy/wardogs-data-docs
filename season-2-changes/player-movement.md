@@ -2,7 +2,7 @@
 title: "Player & Movement changes"
 parent: "Season 2 Changes"
 nav_order: 3
-description: "Parachutes, spotting challenge rewards and input mappings: 2 assets added, 23 modified with real changes, 611 property changes."
+description: "Parachutes, spotting challenge rewards and input mappings: 2 assets added, 23 modified with real changes, 610 property changes."
 ---
 
 # Player & Movement changes
@@ -13,7 +13,7 @@ Movement, parachutes, spotting challenge rewards and input mappings: what change
 - **Removed:** 0 assets
 - **Modified with real changes:** 23 assets (15 more are noise-only: renamed keys, swapped key names or shifted references from the different Season 1 export, not listed)
 - **Moved:** 0 assets
-- **Property changes:** 611 in modified and moved assets
+- **Property changes:** 610 in modified and moved assets
 - **Removed properties:** 0 values in 0 removed assets
 Movement effect and cue changes and compiled binding indexes are counted, not listed.
 
@@ -118,9 +118,9 @@ Each row is one reward value: event (Added or Removed), challenge row, resource,
 
 ## Other changes
 
-- `DA_MaterialTrackerData_Spotting` (WDUISpottingMaterialTrackerDataAsset): 1 added, 1 removed.
+- `DA_MaterialTrackerData_Spotting` (WDUISpottingMaterialTrackerDataAsset): 3 added.
 - `DA_Tracker_Map_Spotting` (WDUISpottingTargetMapTrackerData): 2 added.
-- `DA_Tracker_Spatial_Spotting` (WDUISpottingSpatialTrackerData): 7 added, 3 removed.
+- `DA_Tracker_Spatial_Spotting` (WDUISpottingSpatialTrackerData): 5 added, 3 removed.
 - `DT_Challenges_SessionEvents_KOTH_Spotting` (DataTable): 2 added.
 - `DT_RewardLookup_SessionEvent_Spotting_Added` (DataTable): 4 added, 37 changed.
 - `DT_RewardLookup_SessionEvent_Spotting_Removed` (DataTable): 4 added, 37 changed.
@@ -131,11 +131,11 @@ The two `ST_Challenges_SessionEvents_KOTH_Spotting_*` state trees have 132 numer
 
 `DA_DefaultPlayerMovementAudioConfiguration` is now noise-only. Its 42 former effect and gameplay cue changes are swapped key values (42 swapped keys in the index), so they are not listed.
 
-[All 576 spotting changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=player-movement&q=Spotting)
+[All 575 spotting changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=player-movement&q=Spotting)
 
-The UI tracker assets (DA_Tracker_* and DA_MaterialTrackerData_Spotting) have 14 changes. They are left out of the tables and are in the browser.
+The UI tracker assets (DA_Tracker_* and DA_MaterialTrackerData_Spotting) have 13 changes. They are left out of the tables and are in the browser.
 
-[All 14 UI tracker changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=player-movement&q=Tracker)
+[All 13 UI tracker changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=player-movement&q=Tracker)
 
 ## New in Season 2 (2 assets)
 

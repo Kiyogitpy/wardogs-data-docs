@@ -2,7 +2,7 @@
 title: "Engine & Tooling Data changes"
 parent: "Season 2 Changes"
 nav_order: 10
-description: "Engine & Tooling Data: 20 assets added, 3 removed, 145 modified with real changes, 1 moved. Mostly UI widget data; a high ping kick feature and wagers UI are new."
+description: "Engine & Tooling Data: 20 assets added, 3 removed, 140 modified with real changes, 1 moved. Mostly UI widget data; a high ping kick feature and wagers UI are new."
 ---
 
 # Engine & Tooling Data changes
@@ -13,10 +13,10 @@ Season 1 to Season 2 changes for this area, from the area diff file. Audio and U
 |---|---:|
 | Assets added | 20 |
 | Assets removed | 3 |
-| Assets modified with real changes | 145 |
+| Assets modified with real changes | 140 |
 | Assets moved | 1 |
-| Noise-only modified assets (skipped: renamed keys, swapped key names or shifted references from the different Season 1 export) | 80 |
-| Property changes | 504 (changed 64, added 349, removed 91); 41 further entries are on the removed assets |
+| Noise-only modified assets (skipped: renamed keys, swapped key names or shifted references from the different Season 1 export) | 85 |
+| Property changes | 486 (changed 66, added 339, removed 81); 41 further entries are on the removed assets |
 
 ## Gameplay-relevant changes
 
