@@ -1,6 +1,7 @@
 ---
-title: Trust model notes (static analysis, unconfirmed)
-nav_exclude: true
+title: "Hit Registration and Smoke Authority: Trust Model Notes"
+parent: "Damage & Combat Systems"
+description: "Static-analysis, unconfirmed notes on client versus server authority for hit registration, bullet spread and smoke grenades"
 ---
 
 # Trust model notes
