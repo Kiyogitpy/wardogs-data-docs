@@ -2,7 +2,7 @@
 title: "Damage & Combat Systems changes"
 parent: "Season 2 Changes"
 nav_order: 2
-description: "Bone damage modifiers, global damage tables and demolition rules: 9 assets added, 16 modified with real changes, 162 property changes."
+description: "Bone damage modifiers, global damage tables and demolition rules: 9 assets added, 16 modified with real changes, 160 property changes."
 ---
 
 # Damage & Combat Systems changes
@@ -13,7 +13,7 @@ Damage tables, combat rules and demolition rule sets: what changed between Seaso
 - **Removed:** 0 assets
 - **Modified with real changes:** 16 assets (11 more are noise-only and not listed: only renamed keys or shifted references)
 - **Moved:** 0 assets
-- **Property changes:** 162
+- **Property changes:** 160
 
 ## Headline changes
 
@@ -131,7 +131,7 @@ Added weapon entry: `HMG.MWSY_001` (no Season 1 value).
 
 [All 12 vehicle seat damage changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=damage-combat-systems&q=VehicleSeatDamage)
 
-### Demolition rule sets and other changes (33 rows)
+### Demolition rule sets and other changes (31 rows)
 
 Most of these are object references and rule indexes. The full list is in the browser.
 
@@ -141,11 +141,9 @@ Most of these are object references and rule indexes. The full list is in the br
 | BH_Demolition_RS_AirVehicles | added | Properties.PermittedVehicles[7] | — | Vehicle.Variant.Air.Rotary.ROT_04.Default |
 | BH_Demolition_RS_Everything | changed | Name | BHDemolitionRule_Or_0 | BHDemolitionRule_Or_1 |
 | BH_Demolition_RS_Everything | changed | Flags | RF_Public \| RF_Transactional \| RF_WasLoaded \| RF_LoadComplet | RF_Transactional \| RF_WasLoaded \| RF_LoadCompleted |
-| BH_Demolition_RS_Everything | added | Everything:BHDemolitionRule_Or_1.BHDemolitionRule_Ruleset_0] | — | {"ObjectName": "BHDemolitionRule_Ruleset'BH_Demolition_RS_Ev |
-| BH_Demolition_RS_Everything | added | Everything:BHDemolitionRule_Or_1.BHDemolitionRule_Ruleset_1] | — | {"ObjectName": "BHDemolitionRule_Ruleset'BH_Demolition_RS_Ev |
-| BH_Demolition_RS_Everything | added | Everything:BHDemolitionRule_Or_1.BHDemolitionRule_Ruleset_2] | — | {"ObjectName": "BHDemolitionRule_Ruleset'BH_Demolition_RS_Ev |
-| BH_Demolition_RS_Everything | removed | Everything:BHDemolitionRule_Or_0.BHDemolitionRule_Ruleset_0] | {"ObjectName": "BHDemolitionRule_Ruleset'BH_Demolition_RS_Ev | — |
-| BH_Demolition_RS_Everything | removed | Everything:BHDemolitionRule_Or_0.BHDemolitionRule_Ruleset_1] | {"ObjectName": "BHDemolitionRule_Ruleset'BH_Demolition_RS_Ev | — |
+| BH_Demolition_RS_Everything | changed | Properties.Rules[0].ObjectName | BHDemolitionRule_Ruleset'BH_Demolition_RS_Everything:BHDemol | BHDemolitionRule_Ruleset'BH_Demolition_RS_Everything:BHDemol |
+| BH_Demolition_RS_Everything | changed | Properties.Rules[1].ObjectName | BHDemolitionRule_Ruleset'BH_Demolition_RS_Everything:BHDemol | BHDemolitionRule_Ruleset'BH_Demolition_RS_Everything:BHDemol |
+| BH_Demolition_RS_Everything | added | Properties.Rules[2] | — | {"ObjectName": "BHDemolitionRule_Ruleset'BH_Demolition_RS_Ev |
 | BH_Demolition_RS_Everything | changed | Flags | RF_Public \| RF_Transactional \| RF_WasLoaded \| RF_LoadComplet | RF_WasLoaded \| RF_LoadCompleted |
 | BH_Demolition_RS_Everything | changed | Outer.ObjectName | BHDemolitionRule_Or'BH_Demolition_RS_Everything:BHDemolition | BHDemolitionRule_Or'BH_Demolition_RS_Everything:BHDemolition |
 | BH_Demolition_RS_Everything | changed | Flags | RF_Public \| RF_Transactional \| RF_WasLoaded \| RF_LoadComplet | RF_WasLoaded \| RF_LoadCompleted |
@@ -171,7 +169,7 @@ Most of these are object references and rule indexes. The full list is in the br
 | DA_Demolition_Saplings | changed | Properties.DemolitionRuleSet.ObjectName | BHDemolitionRuleset'BH_Demolition_RS_Everything' | BHDemolitionRuleset'BH_Demolition_RS_EverythingAndMolotov' |
 | DA_Demolition_Saplings | changed | Properties.DemolitionRuleSet.ObjectPath | /Game/Demolition/RuleSets/BH_Demolition_RS_Everything.3 | /Game/Demolition/RuleSets/BH_Demolition_RS_EverythingAndMolo |
 
-[All 33 demolition changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=damage-combat-systems&q=Demolition)
+[All 31 demolition changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=damage-combat-systems&q=Demolition)
 
 ## New in Season 2 (9 assets)
 

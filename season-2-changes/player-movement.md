@@ -147,6 +147,10 @@ The `DA_DefaultPlayerMovementAudioConfiguration` asset has 42 changes to effect 
 
 [All 615 spotting changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=player-movement&q=Spotting)
 
+The UI tracker assets (DA_Tracker_* and DA_MaterialTrackerData_Spotting) have 45 changes, and DA_DefaultPlayerMovementAudioConfiguration has 42. Both are left out of the tables and are in the browser.
+
+[All 45 UI tracker changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=player-movement&q=Tracker) · [All 42 audio configuration changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=player-movement&q=AudioConfiguration)
+
 ## New in Season 2 (2 assets)
 
 | Asset | Type | Identification |
