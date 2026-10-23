@@ -37,6 +37,8 @@ Value comparison (diff_value).
     identical (any position), or, failing that, a key in the same gap between common keys with the same kind of
     value (then the pair is diffed as a normal property and the rename itself is noise). Counted in
     noise.renamed_keys; paths use the Season 2 name.
+    Season 1 duplicate keys: the occurrence matching Season 2's Key (by value, then by neighbouring common keys)
+    keeps the name Key; the others become rename candidates. An unpaired empty []/{}/"NaN" duplicate is noise.dup_keys.
   Object references: a dict with ObjectName and ObjectPath whose ObjectName is equal and whose ObjectPath differs
     only in the trailing export index (".123") is a REF SHIFT (noise.ref_shifts). If the name differs, or the
     path differs beyond the index, it is a real change.
@@ -67,6 +69,9 @@ import re
 import subprocess
 import sys
 
+SWITCHED = []
+CANDS = None   # list when --named-candidates is given
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 S1_DEFAULT = "E:/r22/s1/data"
 S2_DEFAULT = os.path.join(ROOT, "data")
@@ -79,7 +84,8 @@ HEADER = re.compile(r"^--- export: (.*?) ---\r?\n", re.M)
 HASHED = re.compile(r"^_aaa[a-z]{10,}(?:_\$[0-9A-F]+\$_\$\d+\$)?$")
 DUP_SUFFIX = re.compile(r"#\d+$")
 INDEX_SUFFIX = re.compile(r"\.\d+$")
-ID_KEYS = ("RowName", "Name", "Key", "Id", "ItemId", "Tag", "TagName", "GameplayTag", "ObjectName")
+ID_KEYS_OLD = ("RowName", "Name", "Key", "Id", "ItemId", "Tag", "TagName", "GameplayTag", "ObjectName")
+ID_KEYS = ID_KEYS_OLD + ("ID", "NodeId", "NodeID")
 
 AREAS = [
     ("weapons-ammo", "Weapons & Ammo"),
@@ -293,6 +299,10 @@ class Ctx:
         self.changes = []
         self.renamed = 0
         self.shifts = 0
+        self.dups = 0
+        self.cands = []
+        self.switched = []
+        self.collect = False
 
     def add(self, path, op, before, after):
         self.changes.append({"path": path, "op": op, "before": before, "after": after})
@@ -341,7 +351,70 @@ def kind(v):
     return "dict" if isinstance(v, dict) else "list" if isinstance(v, list) else "scalar"
 
 
+SHAPE_WORDS = ("scale", "location", "translation", "rotation", "extent", "offset", "size", "color")
+
+
+def shape_of(name):
+    n = name.lower()
+    return next((w for w in SHAPE_WORDS if w in n), None)
+
+
+def collect_named(a, b, only_a, only_b, pairs, path, ctx):
+    """Report-only: named-to-named keys with an identical value (not suppressed, see --named-candidates)."""
+    left_a = [k for k in only_a if k not in pairs and not unnamed(k)]
+    left_b = [k for k in only_b if k not in pairs.values() and not unnamed(k)]
+    for ka in left_a:
+        for kb in left_b:
+            if deep_same(a[ka], b[kb]):
+                v = a[ka]
+                sa, sb = shape_of(ka), shape_of(kb)
+                ctx.cands.append({
+                    "parent": path, "old_key": ka, "new_key": kb, "value": v,
+                    "trivial_value": not isinstance(v, (dict, list)) and v in (0, 1, True, False, "", "None", 0.0),
+                    "shape_mismatch": bool(sa and sb and sa != sb and isinstance(v, dict)),
+                })
+
+
+def resolve_dups(a, b):
+    """Season 1 duplicate keys (Key, Key#2, ...): pick the occurrence that corresponds to Season 2's Key.
+
+    Value match first, then the occurrence whose nearest earlier common key equals Season 2's. The chosen one is
+    renamed to Key and the others to Key#2.. so the rest become rename candidates for hashed Season 2 keys."""
+    ka = list(a)
+    groups = {}
+    for k in ka:
+        base = DUP_SUFFIX.sub("", k)
+        if base != k or any(x.startswith(k + "#") for x in ka):
+            groups.setdefault(base, []).append(k)
+    groups = {g: m for g, m in groups.items() if len(m) > 1 and g in b and g in a}
+    if not groups:
+        return a
+    kb = list(b)
+    members = {m for ms in groups.values() for m in ms}
+
+    def pred(keys, k, other):
+        i = keys.index(k)
+        for x in reversed(keys[:i]):
+            if x in other and x not in members:
+                return x
+        return None
+    rename = {}
+    for g, ms in groups.items():
+        chosen = next((m for m in ms if deep_same(a[m], b[g])), None)
+        if chosen is None:
+            want = pred(kb, g, a)
+            chosen = next((m for m in ms if pred(ka, m, b) == want), ms[0])
+        rest = [m for m in ms if m != chosen]
+        rename[chosen] = g
+        for n, m in enumerate(rest, 2):
+            rename[m] = "%s#%d" % (g, n)
+    if all(rename[k] == k for k in rename):
+        return a
+    return {rename.get(k, k): v for k, v in a.items()}
+
+
 def diff_dict(a, b, path, ctx):
+    a = resolve_dups(a, b)
     ka, kb = list(a), list(b)
     only_a = [k for k in ka if k not in b]
     only_b = [k for k in kb if k not in a]
@@ -351,6 +424,8 @@ def diff_dict(a, b, path, ctx):
         common_b = [k for k in kb if k in a]
         pairs = match_renames(a, b, only_a, only_b, common_a, common_b)
     new_to_old = {v: k for k, v in pairs.items()}
+    if ctx.collect:
+        collect_named(a, b, only_a, only_b, pairs, path, ctx)
     for k in kb:
         p = join(path, k)
         if k in a:
@@ -367,6 +442,9 @@ def diff_dict(a, b, path, ctx):
             ctx.add(p, "added", None, b[k])
     for k in only_a:
         if k not in pairs:
+            if DUP_SUFFIX.search(k) and a[k] in ([], {}, "NaN"):
+                ctx.dups += 1   # empty/NaN duplicate from the old usmap, no Season 2 counterpart
+                continue
             ctx.add(join(path, k), "removed", a[k], None)
 
 
@@ -387,7 +465,7 @@ def identity_key(a, b):
         return None
     if not all(isinstance(e, dict) for e in a) or not all(isinstance(e, dict) for e in b):
         return None
-    extra = [k for k in (a[0] if a else b[0]) if k not in ID_KEYS and k.endswith(("Tag", "Id", "Name"))]
+    extra = [k for k in (a[0] if a else b[0]) if k not in ID_KEYS and k.lower().endswith(("tag", "id", "name"))]
     for key in ID_KEYS + tuple(extra):
         ok = True
         for lst in (a, b):
@@ -395,6 +473,8 @@ def identity_key(a, b):
             if any(i is None for i in ids) or len(set(ids)) != len(ids):
                 ok = False
                 break
+        if ok and a and b and not ({ident(e[key]) for e in a} & {ident(e[key]) for e in b}):
+            ok = False   # disjoint ids: not an identity field across seasons
         if ok:
             return key
     return None
@@ -403,6 +483,9 @@ def identity_key(a, b):
 def diff_list(a, b, path, ctx):
     key = identity_key(a, b)
     if key:
+        if ctx.collect and (len(a) != len(b) or any(ident(x[key]) != ident(y[key]) for x, y in zip(a, b))):
+            ctx.switched.append({"path": path, "key": key, "new_rule": not (key in ID_KEYS_OLD or key.endswith(("Tag", "Id", "Name"))),
+                                 "s1_len": len(a), "s2_len": len(b)})
         ia = {ident(e[key]): e for e in a}
         ib = {ident(e[key]): e for e in b}
         for i, e in ib.items():
@@ -526,8 +609,9 @@ def prefixed(name, multi, path):
     return "%s::%s" % (name, path) if multi else path
 
 
-def diff_assets(ex1, ex2):
+def diff_assets(ex1, ex2, collect=False):
     ctx = Ctx()
+    ctx.collect = collect
     m1, m2 = export_map(ex1), export_map(ex2)
     multi = len(m1) > 1 or len(m2) > 1
     # exports renamed with their asset (DA_Mosin_Stats -> DA_WEPN_017_Stats): pair leftovers in order by Type
@@ -545,12 +629,20 @@ def diff_assets(ex1, ex2):
         if key in m1 or key in alias:
             o1 = m1[alias.get(key, key)]
             sub = Ctx()
+            sub.collect = collect
             diff_value(o1, o2, "", sub)
             for c in sub.changes:
                 c["path"] = prefixed(pre, multi, c["path"])
                 ctx.changes.append(c)
             ctx.renamed += sub.renamed
             ctx.shifts += sub.shifts
+            ctx.dups += sub.dups
+            for sw in sub.switched:
+                sw["path"] = prefixed(pre, multi, sw["path"])
+                ctx.switched.append(sw)
+            for cd in sub.cands:
+                cd["parent"] = prefixed(pre, multi, cd["parent"])
+                ctx.cands.append(cd)
         else:
             ctx.add(pre if multi else "", "added", None, o2)
     for key, o1 in m1.items():
@@ -606,17 +698,21 @@ def build(s1_dir, s2_dir, log=print):
         if err1 or err2:
             stats["unparsed"].append((rel, err1 or err2))
             assets.append(make(name, rel, None, "modified", main_type(rel, ex2), None, [],
-                               {"renamed_keys": 0, "ref_shifts": 0}, classify(rel, ex2),
+                               {"renamed_keys": 0, "ref_shifts": 0, "dup_keys": 0}, classify(rel, ex2),
                                note="not compared: " + (("Season 1 file is truncated in the source commit (%s)" % err1)
                                                          if err1 else ("Season 2 " + err2))))
             continue
-        ctx = diff_assets(ex1, ex2)
-        if not ctx.changes and not ctx.renamed and not ctx.shifts:
+        ctx = diff_assets(ex1, ex2, CANDS is not None)
+        for cd in ctx.cands:
+            CANDS.append(dict(asset=name, path=rel, **cd))
+        for sw in ctx.switched:
+            SWITCHED.append(dict(asset=name, file=rel, **sw))
+        if not ctx.changes and not ctx.renamed and not ctx.shifts and not ctx.dups:
             # equal up to formatting or float noise only
             stats["identical"] += 1
             continue
         assets.append(make(name, rel, None, "modified", main_type(rel, ex2), None, ctx.changes,
-                           {"renamed_keys": ctx.renamed, "ref_shifts": ctx.shifts}, classify(rel, ex2)))
+                           {"renamed_keys": ctx.renamed, "ref_shifts": ctx.shifts, "dup_keys": ctx.dups}, classify(rel, ex2)))
 
     # moved
     pairs = []   # (old, new, paired_by)
@@ -665,10 +761,10 @@ def build(s1_dir, s2_dir, log=print):
             stats["unparsed"].append((new, err1 or err2))
             ctx = Ctx()
         else:
-            ctx = diff_assets(ex1, ex2)
+            ctx = diff_assets(ex1, ex2, CANDS is not None)
         stats["paired"][new] = (old, how)
         assets.append(make(name, new, old, "moved", main_type(new, ex2), how, ctx.changes,
-                           {"renamed_keys": ctx.renamed, "ref_shifts": ctx.shifts}, classify(new, ex2)))
+                           {"renamed_keys": ctx.renamed, "ref_shifts": ctx.shifts, "dup_keys": ctx.dups}, classify(new, ex2)))
     stats["rejected_renames"] = rejected
 
     # added
@@ -676,7 +772,7 @@ def build(s1_dir, s2_dir, log=print):
         ex2, err2 = parsed(files2[rel])
         name = os.path.splitext(os.path.basename(rel))[0]
         assets.append(make(name, rel, None, "added", main_type(rel, ex2), None, [],
-                           {"renamed_keys": 0, "ref_shifts": 0}, classify(rel, ex2), exports=len(ex2)))
+                           {"renamed_keys": 0, "ref_shifts": 0, "dup_keys": 0}, classify(rel, ex2), exports=len(ex2)))
     # removed
     for rel in sorted(rem_left):
         ex1, err1 = parsed(files1[rel])
@@ -687,7 +783,7 @@ def build(s1_dir, s2_dir, log=print):
             pre = key[0] if key[1] == 0 else "%s#%d" % key
             flatten(o, pre if multi else "", out)
         assets.append(make(name, rel, None, "removed", main_type(rel, ex1), None, out,
-                           {"renamed_keys": 0, "ref_shifts": 0}, classify(rel, ex1)))
+                           {"renamed_keys": 0, "ref_shifts": 0, "dup_keys": 0}, classify(rel, ex1)))
     # Config check
     stats["config_same"] = config_same(s1_dir, s2_dir)
     return assets, stats
@@ -721,7 +817,7 @@ def render(assets):
     index_areas = []
     totals = {"assets_added": 0, "assets_removed": 0, "assets_modified": 0, "assets_moved": 0,
               "noise_only_assets": 0, "property_changes": 0, "removed_values": 0,
-              "noise_renamed_keys": 0, "noise_ref_shifts": 0}
+              "noise_renamed_keys": 0, "noise_ref_shifts": 0, "noise_dup_keys": 0}
     for aid, title in AREAS:
         mine = [a for a in assets if a["_area"] == aid]
         mine.sort(key=lambda a: (STATUS_ORDER[a["status"]], a["name"].lower(), a["path"]))
@@ -731,10 +827,11 @@ def render(assets):
             counts["property_changes"] += count_changes(a)
             if a["status"] == "removed":
                 counts["removed_values"] += len(a["changes"])
-            if a["status"] == "modified" and not a["changes"] and (a["noise"]["renamed_keys"] or a["noise"]["ref_shifts"]):
+            if a["status"] == "modified" and not a["changes"] and (a["noise"]["renamed_keys"] or a["noise"]["ref_shifts"] or a["noise"]["dup_keys"]):
                 totals["noise_only_assets"] += 1
             totals["noise_renamed_keys"] += a["noise"]["renamed_keys"]
             totals["noise_ref_shifts"] += a["noise"]["ref_shifts"]
+            totals["noise_dup_keys"] += a["noise"]["dup_keys"]
         lines = [dumps({k: v for k, v in a.items() if not k.startswith("_")}) for a in mine]
         # split if too big
         chunks, cur, size = [], [], 0
@@ -786,8 +883,19 @@ def main(argv=None):
     ap.add_argument("--write", action="store_true")
     ap.add_argument("--check", action="store_true")
     ap.add_argument("--stats", action="store_true")
+    ap.add_argument("--switched", metavar="FILE", help="write arrays whose index alignment would have misaligned identities")
+    ap.add_argument("--named-candidates", metavar="FILE", help="also write report-only named-to-named rename candidates")
     args = ap.parse_args(argv)
+    global CANDS
+    CANDS = [] if (args.named_candidates or args.switched) else None
     assets, stats = build(args.s1, args.s2)
+    if args.switched:
+        with open(args.switched, "w", encoding="utf-8") as fh:
+            json.dump(SWITCHED, fh, ensure_ascii=False, indent=1)
+    if args.named_candidates:
+        os.makedirs(os.path.dirname(os.path.abspath(args.named_candidates)), exist_ok=True)
+        with open(args.named_candidates, "w", encoding="utf-8") as fh:
+            json.dump(CANDS, fh, ensure_ascii=False, indent=1)
     files = render(assets)
     idx = json.loads(files["index.json"])
     t = idx["totals"]
