@@ -346,7 +346,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | [`DT_GarageMarket_SupplyCrates`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/SupplyCrates/Content/DataTables/DT_GarageMarket_SupplyCrates.json) | 8 | `GF/Vehicles/SupplyCrates/DataTables` | [Wardogs_GameFeatures_Vehicles_v2](../game-features/Wardogs_GameFeatures_Vehicles_v2.md), [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
 | [`DT_GearMarket`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/WorldInteractable/NPCs/Vendor/VendorEquipment/DT_GearMarket.json) | 13 | `GameMechanics/WorldInteractable/NPCs/Vendor/VendorEquipment` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
 | [`DT_UtilityMarket`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/WorldInteractable/NPCs/Vendor/VendorEquipment/DT_UtilityMarket.json) | 3 | `GameMechanics/WorldInteractable/NPCs/Vendor/VendorEquipment` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
-| [`DT_VehicleMarket`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/WorldInteractable/NPCs/Vendor/VendorVehicles/DT_VehicleMarket.json) | 0 | `GameMechanics/WorldInteractable/NPCs/Vendor/VendorVehicles` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [CROSS_REFERENCE](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/CROSS_REFERENCE.md), [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
+| [`DT_VehicleMarket`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/WorldInteractable/NPCs/Vendor/VendorVehicles/DT_VehicleMarket.json) | 0 | `GameMechanics/WorldInteractable/NPCs/Vendor/VendorVehicles` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [CROSS_REFERENCE](../docs/CROSS_REFERENCE.md), [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
 | [`DT_VehicleMarket_ROT_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/DataTables/DT_VehicleMarket_ROT_02.json) | 1 | `GF/Vehicles/ROT_02/DataTables` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
 | [`DT_VehicleMarket_ROT_03`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03/Content/DataTables/DT_VehicleMarket_ROT_03.json) | 1 | `GF/Vehicles/ROT_03/DataTables` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
 | [`DT_VehicleMarket_ROT_03_WeaponVariants`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03_WeaponVariants/Content/DataTables/DT_VehicleMarket_ROT_03_WeaponVariants.json) | 2 | `GF/Vehicles/ROT_03_WeaponVariants/DataTables` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
@@ -680,7 +680,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| [`DT_VoxData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Vox/General/DT_VoxData.json) | 81 | `Audio/Vox/General` | [Wardogs_Audio_v2](../content/Wardogs_Audio_v2.md), [SDK](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/gap_resolution/SDK.md) |
+| [`DT_VoxData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Vox/General/DT_VoxData.json) | 81 | `Audio/Vox/General` | [Wardogs_Audio_v2](../content/Wardogs_Audio_v2.md), [SDK](../docs/gap_resolution/SDK.md) |
 
 #### WDUITrackerDataTableRow
 
@@ -715,7 +715,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| [`DT_DeathmatchSceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Deathmatch/Content/UI/Scene/DT_DeathmatchSceneData_Match.json) | 1 | `GF/Deathmatch/UI/Scene` | [round8-loadout-deathmatch](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-loadout-deathmatch.md), [Wardogs_GameFeatures_Deathmatch_v2](../game-features/Wardogs_GameFeatures_Deathmatch_v2.md) |
+| [`DT_DeathmatchSceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Deathmatch/Content/UI/Scene/DT_DeathmatchSceneData_Match.json) | 1 | `GF/Deathmatch/UI/Scene` | [round8-loadout-deathmatch](../docs/evidence/round8-loadout-deathmatch.md), [Wardogs_GameFeatures_Deathmatch_v2](../game-features/Wardogs_GameFeatures_Deathmatch_v2.md) |
 | [`DT_SceneData_DefaultPvEScenario`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PvE/Scenarios/BaseScenario/Content/UI/DT_SceneData_DefaultPvEScenario.json) | 1 | `GF/PvE/Scenarios/BaseScenario/UI` | [Wardogs_GameFeatures_PvE_v2](../game-features/Wardogs_GameFeatures_PvE_v2.md) |
 | [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | 28 | `UI/Data/Scenes` | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md) |
 | [`DT_SceneData_Frontend_Gunsmith`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/Entities/DT_SceneData_Frontend_Gunsmith.json) | 1 | `GF/Gunsmith/UI/Data/Entities` | [Wardogs_GameFeatures_Gunsmith_v2](../game-features/Wardogs_GameFeatures_Gunsmith_v2.md) |
@@ -753,9 +753,9 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| [`DT_GlobalDamage_ArmorData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_ArmorData.json) | 4 | `GameMechanics/DamageSystem/DamageDataTables` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [round8-armor](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-armor.md), [Wardogs_GameFeatures_Ammo_v2](../game-features/Wardogs_GameFeatures_Ammo_v2.md) (+1) |
+| [`DT_GlobalDamage_ArmorData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_ArmorData.json) | 4 | `GameMechanics/DamageSystem/DamageDataTables` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [round8-armor](../docs/evidence/round8-armor.md), [Wardogs_GameFeatures_Ammo_v2](../game-features/Wardogs_GameFeatures_Ammo_v2.md) (+1) |
 | [`DT_GlobalDamage_BuildableData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/DT_GlobalDamage_BuildableData.json) | 20 | `GF/Items/Buildables/Data` | [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md), [Wardogs_GameFeatures_Items_v2](../game-features/Wardogs_GameFeatures_Items_v2.md) |
-| [`DT_GlobalDamage_InfantryData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_InfantryData.json) | 1 | `GameMechanics/DamageSystem/DamageDataTables` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [CROSS_REFERENCE](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/CROSS_REFERENCE.md), [damage](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/damage.md) (+3) |
+| [`DT_GlobalDamage_InfantryData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_InfantryData.json) | 1 | `GameMechanics/DamageSystem/DamageDataTables` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [CROSS_REFERENCE](../docs/CROSS_REFERENCE.md), [damage](../docs/evidence/damage.md) (+5) |
 | [`DT_GlobalDamage_SupplyCrate`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/SupplyCrates/Content/DataTables/DT_GlobalDamage_SupplyCrate.json) | 5 | `GF/Vehicles/SupplyCrates/DataTables` | [Wardogs_GameFeatures_Vehicles_v2](../game-features/Wardogs_GameFeatures_Vehicles_v2.md) |
 | [`DT_GlobalDamage_VehicleData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_VehicleData.json) | 1 | `GameMechanics/DamageSystem/DamageDataTables` | [Wardogs_AllVehicles_Stats_Damage_v1](../content/Wardogs_AllVehicles_Stats_Damage_v1.md), [Wardogs_Explosives_v1](../game-features/Wardogs_Explosives_v1.md), [Wardogs_DamagePipeline_v2](../pipelines/Wardogs_DamagePipeline_v2.md) (+1) |
 | [`DT_GlobalDamage_VehicleData_ROT_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/DataTables/DT_GlobalDamage_VehicleData_ROT_02.json) | 1 | `GF/Vehicles/ROT_02/DataTables` | [Wardogs_AllVehicles_Stats_Damage_v1](../content/Wardogs_AllVehicles_Stats_Damage_v1.md), [Wardogs_GameFeatures_Vehicles_v2](../game-features/Wardogs_GameFeatures_Vehicles_v2.md) |
@@ -905,7 +905,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| [`DT_VehiclePropList`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Blueprints/VehiclePropTooling/DT_VehiclePropList.json) | 29 | `Environment/Blueprints/VehiclePropTooling` | [Wardogs_Environment_v2](../content/Wardogs_Environment_v2.md), [CROSS_REFERENCE](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/CROSS_REFERENCE.md), [SDK](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/gap_resolution/SDK.md) |
+| [`DT_VehiclePropList`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Blueprints/VehiclePropTooling/DT_VehiclePropList.json) | 29 | `Environment/Blueprints/VehiclePropTooling` | [Wardogs_Environment_v2](../content/Wardogs_Environment_v2.md), [CROSS_REFERENCE](../docs/CROSS_REFERENCE.md), [SDK](../docs/gap_resolution/SDK.md) |
 
 #### WDEmoteData
 
@@ -929,7 +929,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| [`DT_InfantryData_BoneDamageModifiers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_BoneDamageModifiers.json) | 20 | `GameMechanics/DamageSystem/DamageDataTables/DT_Helpers` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [damage](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/damage.md), [Wardogs_GameFeatures_Ammo_v2](../game-features/Wardogs_GameFeatures_Ammo_v2.md) (+1) |
+| [`DT_InfantryData_BoneDamageModifiers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_BoneDamageModifiers.json) | 20 | `GameMechanics/DamageSystem/DamageDataTables/DT_Helpers` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [damage](../docs/evidence/damage.md), [Wardogs_GameFeatures_Ammo_v2](../game-features/Wardogs_GameFeatures_Ammo_v2.md) (+1) |
 
 #### WDDeathmatchWeaponData
 
@@ -937,7 +937,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| [`DT_DeathmatchWeaponSelect`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Deathmatch/Content/Data/DT_DeathmatchWeaponSelect.json) | 20 | `GF/Deathmatch/Data` | [ROUND8_STATUS](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/ROUND8_STATUS.md), [round8-loadout-deathmatch](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-loadout-deathmatch.md), [round8-loadout-initialization](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-loadout-initialization.md) (+1) |
+| [`DT_DeathmatchWeaponSelect`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Deathmatch/Content/Data/DT_DeathmatchWeaponSelect.json) | 20 | `GF/Deathmatch/Data` | [ROUND8_STATUS](../docs/ROUND8_STATUS.md), [round8-loadout-deathmatch](../docs/evidence/round8-loadout-deathmatch.md), [round8-loadout-initialization](../docs/evidence/round8-loadout-initialization.md) (+1) |
 
 #### WDUIActionSoundTableRow
 
@@ -1033,7 +1033,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| [`DT_AlternativeCriticalCamera`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AlternativeCriticalCamera/Content/DT_AlternativeCriticalCamera.json) | 1 | `GF/AlternativeCriticalCamera/Content` | [CROSS_REFERENCE](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/CROSS_REFERENCE.md), [CROSS_REF](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/gap_resolution/CROSS_REF.md), [Wardogs_GameFeatures_AlternativeCriticalCamera_v2](../game-features/Wardogs_GameFeatures_AlternativeCriticalCamera_v2.md) |
+| [`DT_AlternativeCriticalCamera`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AlternativeCriticalCamera/Content/DT_AlternativeCriticalCamera.json) | 1 | `GF/AlternativeCriticalCamera/Content` | [CROSS_REFERENCE](../docs/CROSS_REFERENCE.md), [CROSS_REF](../docs/gap_resolution/CROSS_REF.md), [Wardogs_GameFeatures_AlternativeCriticalCamera_v2](../game-features/Wardogs_GameFeatures_AlternativeCriticalCamera_v2.md) |
 | [`DT_PostProcessEffects`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/VFX/Postprocess/DT_PostProcessEffects.json) | 11 | `VFX/Postprocess` | [Wardogs_VFX_v2](../content/Wardogs_VFX_v2.md) |
 | [`DT_PostProcessEffects_FOB`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/ForwardOperatingBase/DT_PostProcessEffects_FOB.json) | 1 | `GF/Items/Buildables/Data/ForwardOperatingBase` | [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md) |
 | [`DT_PostProcessEffects_Molotov`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Data/DT_PostProcessEffects_Molotov.json) | 1 | `GF/Items/Molotov/Data` | [Wardogs_FireAndUtility_v1](../game-features/Wardogs_FireAndUtility_v1.md) |
@@ -1061,7 +1061,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| [`DT_InfantryData_ArchetypeCaliberModifiers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_ArchetypeCaliberModifiers.json) | 12 | `GameMechanics/DamageSystem/DamageDataTables/DT_Helpers` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [GOBJECTS_DAMAGE_ANALYSIS](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/GOBJECTS_DAMAGE_ANALYSIS.md), [Wardogs_GameFeatures_Ammo_v2](../game-features/Wardogs_GameFeatures_Ammo_v2.md) (+1) |
+| [`DT_InfantryData_ArchetypeCaliberModifiers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_ArchetypeCaliberModifiers.json) | 12 | `GameMechanics/DamageSystem/DamageDataTables/DT_Helpers` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [GOBJECTS_DAMAGE_ANALYSIS](../docs/GOBJECTS_DAMAGE_ANALYSIS.md), [Wardogs_GameFeatures_Ammo_v2](../game-features/Wardogs_GameFeatures_Ammo_v2.md) (+1) |
 
 #### WDAssistanceRequestData
 
@@ -1157,7 +1157,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| [`DT_InfantryData_VehicleSeatDamageReduction`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_VehicleSeatDamageReduction.json) | 11 | `GameMechanics/DamageSystem/DamageDataTables/DT_Helpers` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [damage](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/damage.md), [Wardogs_GameFeatures_Ammo_v2](../game-features/Wardogs_GameFeatures_Ammo_v2.md) (+1) |
+| [`DT_InfantryData_VehicleSeatDamageReduction`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_VehicleSeatDamageReduction.json) | 11 | `GameMechanics/DamageSystem/DamageDataTables/DT_Helpers` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [damage](../docs/evidence/damage.md), [Wardogs_GameFeatures_Ammo_v2](../game-features/Wardogs_GameFeatures_Ammo_v2.md) (+1) |
 
 #### WDAchievementDefinition
 
@@ -1181,7 +1181,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| [`DT_GunsmithPopupOptions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/Popups/DT_GunsmithPopupOptions.json) | 5 | `GF/Gunsmith/UI/Data/Popups` | [CROSS_REFERENCE](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/CROSS_REFERENCE.md), [CROSS_REF](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/gap_resolution/CROSS_REF.md), [Wardogs_GameFeatures_Gunsmith_v2](../game-features/Wardogs_GameFeatures_Gunsmith_v2.md) |
+| [`DT_GunsmithPopupOptions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/Popups/DT_GunsmithPopupOptions.json) | 5 | `GF/Gunsmith/UI/Data/Popups` | [CROSS_REFERENCE](../docs/CROSS_REFERENCE.md), [CROSS_REF](../docs/gap_resolution/CROSS_REF.md), [Wardogs_GameFeatures_Gunsmith_v2](../game-features/Wardogs_GameFeatures_Gunsmith_v2.md) |
 | [`DT_VehiclesmithPopupOptions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/UI/Scene/Data/DT_VehiclesmithPopupOptions.json) | 5 | `GF/Vehiclesmith/UI/Scene/Data` | [Wardogs_GameFeatures_Vehiclesmith_v2](../game-features/Wardogs_GameFeatures_Vehiclesmith_v2.md) |
 
 #### WDAssistResourceRewardTableRow

@@ -155,7 +155,7 @@ Values are the raw numbers from the stats assets. No unit conversion has been ap
 
 ## 3. Per-weapon ballistics (from the linked `WDWeaponStatsData`)
 
-Column meanings are inferred from property names. `FocusEnergyReductionPerShot` and `RecoilReductionWhenFocussing` are read as a focus-energy cost and recoil relief. `WeaponAccuracy.AccuracyValue` is read as spread, where lower is tighter. None of these are confirmed against code.
+Column meanings are inferred from property names. `FocusEnergyReductionPerShot` and `RecoilReductionWhenFocussing` are read as a focus-energy cost and recoil relief. `WeaponAccuracy.AccuracyValue` is the full angle of the accuracy cone (milliradians by default, minutes of angle when `AccuracyType` says so; lower is tighter), confirmed against code on [Weapon Spread](../pipelines/Wardogs_WeaponSpread_v1.md). The other columns are still inferred from property names.
 
 | ID | RPM | Muzzle spd | Eff. range | Accuracy | Deviation (deg) | Pitch recoil max | Focus / shot | Recoil relief | View kick x | ADS stab. (s) | Suppression x | Burst | Melee |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -292,7 +292,7 @@ Each weapon stores a list of `Attribute.Gameplay.Weapon.*` defaults. Five multip
 
 ### 5b. Spread, stance and holdable
 
-- **Spread:** every weapon has three `SpreadValues` entries (`EBHPlayerStance::Stand`, `Crouch`, `Prone`). Each points at a row of [`CT_Weapon_Spread`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Curves/CT_Weapon_Spread.json) named `<Class>.<Stance>` (for example `AR.Stand` or `Sniper.Prone`). All stance multipliers are `1.0`, so the live spread numbers are in the curve table, not here.
+- **Spread:** every weapon has three `SpreadValues` entries (`EBHPlayerStance::Stand`, `Crouch`, `Prone`). Each points at a row of [`CT_Weapon_Spread`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Curves/CT_Weapon_Spread.json) named `<Class>.<Stance>` (for example `AR.Stand` or `Sniper.Prone`). All stance multipliers are `1.0`, so the live spread numbers are in the curve table, not here. How the curve is evaluated (X is the planar speed over a per-stance reference speed, the result is a half-angle in degrees, smoothed at 25 per second, zero when fully aimed) is on [Weapon Spread §6](../pipelines/Wardogs_WeaponSpread_v1.md).
 - **Stance recoil:** weapons with a `StanceGameplayEffects` list point at `GE_Weapon_StanceRecoil_<Class>_<Stance>` effects, with a separate set per class. Launcher_04 has no list.
 - **Holdable:** `MeshFovAds` is 80.0 on 34 of the 37 weapons and 75.0 on the other 3. Hip offset (`ItemHipOffset`) varies per weapon. It is absent on [`Launcher_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/Launcher_04/Content/Launcher_04.json), [`RPG7`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/RPG7/Content/RPG7.json) and [`WEPN_033`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_033/Content/WEPN_033.json) through [`WEPN_037`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_037/Content/WEPN_037.json).
 - **Trace radius (`WeaponTraceRadius`):** 6.0 on most rifles, 8.0 on Launcher_04, 4.0 on the Deagle, 3.0 on the Judge.
@@ -372,7 +372,7 @@ Every vendor-priced attachment carries a `GE_*` gameplay effect in `AppliedEffec
 - **Price and unlock:** the shown vendor variation sets the price and `LevelToUnlock`. Hidden variations never appear in the shop.
 - **Attachments:** a fitted attachment applies the `GE_*` effects in its `AppliedEffects`. Those effects are not in this folder, so the net stat change of a build cannot be computed here.
 - **Ammo:** one unit of `RequiredResource` is spent per primary-fire shot, from the weapon's own magazine or ammo pool.
-- **Spread and recoil:** base values sit in `WDWeaponStatsData` and the [`CT_Weapon_Spread`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Curves/CT_Weapon_Spread.json) curve table. Attribute multipliers (all 1.0 except `AdsZoomMultiplier` at 1.2) apply on top. How the runtime combines them is not in this folder.
+- **Spread and recoil:** base values sit in `WDWeaponStatsData` and the [`CT_Weapon_Spread`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Curves/CT_Weapon_Spread.json) curve table. Attribute multipliers (all 1.0 except `AdsZoomMultiplier` at 1.2) apply on top. The runtime combination is on [Weapon Spread](../pipelines/Wardogs_WeaponSpread_v1.md).
 
 ---
 
