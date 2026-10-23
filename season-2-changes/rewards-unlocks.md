@@ -2,7 +2,7 @@
 title: "Rewards & Unlocks changes"
 parent: "Season 2 Changes"
 nav_order: 7
-description: "Rewards & Unlocks: 14 assets added, 105 modified with real changes, 4 noise-only, 9,867 property changes. Role XP, unlock-tree costs and challenge rewards changed."
+description: "Rewards & Unlocks: 14 assets added, 105 modified with real changes, 4 noise-only, 9,877 property changes. Role XP, unlock-tree costs and challenge rewards changed."
 ---
 
 # Rewards & Unlocks changes
@@ -16,7 +16,7 @@ Season 1 to Season 2 changes for the Rewards & Unlocks area, from the area diff 
 | Assets modified with real changes | 105 |
 | Assets moved | 0 |
 | Noise-only modified assets (skipped: renamed keys, swapped key names or shifted references from the different Season 1 export) | 4 |
-| Property changes | 9,867 (changed 7,505, added 2,067, removed 288) |
+| Property changes | 9,877 (changed 7,515, added 2,067, removed 288) |
 
 Full filterable list: [Rewards & Unlocks in the change browser]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=rewards-unlocks).
 
@@ -319,7 +319,7 @@ Cosmetic sort indexes in `DT_CosmeticSets_Debug` also changed (4 rows, each +1),
 
 | Group | State trees | Property changes |
 |---|---:|---:|
-| KOTH session-event state trees | 52 | 6,186 |
+| KOTH session-event state trees | 52 | 6,196 |
 | Buildable session-event state trees | 10 | 857 |
 | Other state trees | 20 | 465 |
 
