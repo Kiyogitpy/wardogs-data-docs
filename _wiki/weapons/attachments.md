@@ -32,6 +32,11 @@ Attachments are parts that fit onto a weapon. While a part is fitted, it changes
 
 Each weapon article lists its own slots and default parts under its Attachments section.
 
+## See also
+
+- [Spread and Recoil](../game-mechanics/spread-and-recoil.md), where bipods, muzzle devices and foregrips change spread
+- [Weapons](../weapons.md)
+
 ## Sources
 
 - [weapon-loadouts.json](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-loadouts.json): slot, part and effect data

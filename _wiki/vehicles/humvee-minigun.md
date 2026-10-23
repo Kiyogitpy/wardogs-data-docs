@@ -14,7 +14,7 @@ description: "Five-seat Humvee with a ring-mounted M134D minigun, the lowest rif
 | Unlock level | 0 |
 | Main health | 500 HP |
 | Top speed | 113.2 (as stored) |
-| Rifle damage taken | 2.5% |
+| Rifle damage taken (derived) | 2.5% |
 | Internal name | WHL_05 (minigun variant) |
 {: .wiki-infobox }
 
@@ -39,7 +39,7 @@ The Humvee [Minigun] is sold in the vehicle vendor under land transport, for 10,
 
 Main health is 500 HP, with the same engine, fuel tank and wheel health as the [Humvee](humvee.md). Rifle rounds do 2.5% of their damage against the hull.
 
-The fuel tank takes an extra 400% from bullets, and the wheels take an extra 800%. Full-power, point-blank hits needed to destroy the main health:
+The fuel tank takes an extra 400% from bullets, and the wheels take an extra 800%. Hits needed to destroy the main health. These counts are derived by simulating the damage rules with full-power, point-blank, standard (FMJ) hits; they are estimates from the data, not measured in game:
 
 | Ammunition | Hits to destroy | Faster route |
 |---|---:|---|

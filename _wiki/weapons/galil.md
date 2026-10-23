@@ -110,6 +110,10 @@ Default parts: magazine (Galil 35 RND Magazine), stock (Galil Stock), grip (Gali
 - [Weapons](../weapons.md)
 - [Ammunition](ammunition.md)
 - [Attachments](attachments.md)
+- [Choosing Ammo](../guides/choosing-ammo.md)
+- [Ballistics](../game-mechanics/ballistics.md)
+- [Health and Damage](../game-mechanics/health-and-damage.md)
+- [Spread and Recoil](../game-mechanics/spread-and-recoil.md)
 
 ## Sources
 

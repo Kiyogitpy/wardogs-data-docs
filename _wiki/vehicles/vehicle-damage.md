@@ -29,7 +29,7 @@ Vehicles take damage through the same rule set that infantry use, but the result
 
 The table gives the share of rifle damage (5.56 mm, full power, direct hit to the hull) that gets through. It is worked out from each vehicle's rules.
 
-| Vehicle type | Rifle damage taken |
+| Vehicle type | Rifle damage taken (derived) |
 |---|---|
 | Tanks (SPH-2, L2A6, Flakpanzer Gepard, T-72B3) | 0% |
 | M113 APC SV | 0% on hull and tracks |
@@ -38,7 +38,7 @@ The table gives the share of rifle damage (5.56 mm, full power, direct hit to th
 | Bobcat | 7.5% |
 | Dune Buggy | 10% |
 
-For destruction counts, the data simulates full-power, point-blank hits on the main health of each vehicle. The Havoc takes about 1,143 hits of 5.56 mm rifle fire to the hull, or 643 hits through its left front wheel, which is the faster route. Each vehicle article has its own table.
+For destruction counts, the wiki derives hit counts by simulating full-power, point-blank hits on the main health of each vehicle from the damage rules (derived, not measured in game). The Havoc takes about 1,143 hits of 5.56 mm rifle fire to the hull, or 643 hits through its left front wheel, which is the faster route. Each vehicle article has its own table.
 
 Some rules are large. On the Havoc, a rocket that bursts within the inner radius is multiplied by five. On the Humvee, bullets to the fuel tank get an extra 400% on top of the base rule.
 
@@ -56,6 +56,8 @@ Some rules are large. On the Havoc, a rocket that bursts within the inner radius
 - [Havoc](havoc.md) and [Z20 Lakota](z20-lakota.md), as examples of helicopter damage
 - [Humvee](humvee.md), as an example of a truck with fuel-tank and wheel weak points
 - [L2A6](l2a6.md), as an example of a tank with a tougher hull zone
+- [Grenades and Explosives](../equipment/grenades-and-explosives.md)
+- [Weapons](../weapons.md)
 
 ## Sources
 

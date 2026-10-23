@@ -63,6 +63,10 @@ Slots on this weapon: Sight. See [Attachments](attachments.md) for what each par
 - [Weapons](../weapons.md)
 - [Ammunition](ammunition.md)
 - [Attachments](attachments.md)
+- [Choosing Ammo](../guides/choosing-ammo.md)
+- [Ballistics](../game-mechanics/ballistics.md)
+- [Health and Damage](../game-mechanics/health-and-damage.md)
+- [Spread and Recoil](../game-mechanics/spread-and-recoil.md)
 
 ## Sources
 

@@ -79,6 +79,7 @@ Recoil patterns (the points that set each shot's kick) are different for each we
 - [Health and Damage](health-and-damage.md)
 - [Movement](movement.md)
 - [Beginner's Guide](../guides/beginners-guide.md)
+- [Weapon attachments](../weapons/attachments.md)
 
 ## Sources
 

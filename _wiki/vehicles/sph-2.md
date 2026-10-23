@@ -14,7 +14,7 @@ description: "Tracked artillery vehicle that fires 155 mm shells from a long-ran
 | Unlock level | 1 |
 | Main health | 650 HP |
 | Top speed | 65 (as stored) |
-| Rifle damage taken | 0% |
+| Rifle damage taken (derived) | 0% |
 | Internal name | TNK_01 (artillery variant) |
 {: .wiki-infobox }
 

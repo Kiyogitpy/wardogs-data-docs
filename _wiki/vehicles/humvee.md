@@ -14,7 +14,7 @@ description: "Four-seat light armored SUV with no weapons, built for off-road tr
 | Unlock level | 0 |
 | Main health | 500 HP |
 | Top speed | 113.2 (as stored) |
-| Rifle damage taken | 5% |
+| Rifle damage taken (derived) | 5% |
 | Internal name | WHL_05 (default variant) |
 {: .wiki-infobox }
 
@@ -41,7 +41,7 @@ Main health is 500 HP. The Humvee has separate health for its engine (400 HP), f
 
 Rifle rounds do 5% of their damage against the hull. The fuel tank takes an extra 400% from bullets, so it is the fastest route to destroy the vehicle.
 
-Full-power, point-blank hits needed to destroy the main health:
+Hits needed to destroy the main health. These counts are derived by simulating the damage rules with full-power, point-blank, standard (FMJ) hits; they are estimates from the data, not measured in game:
 
 | Ammunition | Hits to destroy | Faster route |
 |---|---:|---|

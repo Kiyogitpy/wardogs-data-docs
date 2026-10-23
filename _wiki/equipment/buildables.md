@@ -163,6 +163,7 @@ Several entries in the buildable damage table changed by 5 to 17 percentage poin
 - [Fire, Smoke and Flash](fire-smoke-and-flash.md), for the Molotov fire
 - [Utility Items](utility-items.md), for the Fuel and Mechanical Supplies, and the Light and Heavy Drills
 - [Vehicles data page](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md), for the vehicles that the Refuel and Repair Stations serve
+- [Vehicle damage](../vehicles/vehicle-damage.md)
 
 ## Sources
 

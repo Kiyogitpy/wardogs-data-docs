@@ -14,11 +14,11 @@ description: "Six-seat transport helicopter with no weapons, the base model of t
 | Unlock level | 1 |
 | Main health | 400 HP |
 | Top speed | 350 (as stored) |
-| Rifle damage taken | 7.5% |
+| Rifle damage taken (derived) | 7.5% |
 | Internal name | ROT_03 (default variant) |
 {: .wiki-infobox }
 
-The MH-6 is a small six-seat transport helicopter with no weapons. It is the base model of the Little Bird family, and the armed versions are the [AH-6M](ah-6m.md) and [AH-6R](ah-6r.md).
+The MH-6 is a small six-seat transport helicopter with no weapons. It is the base model of the Little Bird family, and the armed versions are the [AH-6M [Miniguns]](ah-6m-miniguns.md) and [AH-6R [Rockets]](ah-6r-rockets.md).
 
 ## Overview
 
@@ -41,7 +41,7 @@ Main health is 400 HP. The helicopter has separate health for its engine (200 HP
 
 Rifle rounds do 7.5% of their damage against the hull. Bullets that hit the fuel tank take an extra 200%. Rockets that hit the tail or tail rotor take an extra 200%.
 
-Full-power, point-blank hits needed to destroy the main health:
+Hits needed to destroy the main health. These counts are derived by simulating the damage rules with full-power, point-blank, standard (FMJ) hits; they are estimates from the data, not measured in game:
 
 | Ammunition | Hits to destroy |
 |---|---:|
@@ -58,7 +58,7 @@ The MH-6 has no weapons. Its six seats are for the pilot and passengers. The pil
 
 ## Handling
 
-- Rotor and flight settings are the same as the other Little Bird helicopters. See the [AH-6M](ah-6m.md) article for details.
+- Rotor and flight settings are the same as the other Little Bird helicopters. See the [AH-6M [Miniguns]](ah-6m-miniguns.md) article for details.
 - Maximum angular velocity 83 deg/s. Translational lift of 16% between 20 and 28 m/s.
 
 ## Season 2 changes
@@ -70,7 +70,7 @@ The MH-6 has no weapons. Its six seats are for the pilot and passengers. The pil
 
 ## See also
 
-- [AH-6M](ah-6m.md) and [AH-6R](ah-6r.md), the armed versions
+- [AH-6M [Miniguns]](ah-6m-miniguns.md) and [AH-6R [Rockets]](ah-6r-rockets.md), the armed versions
 - [Havoc](havoc.md) and [Z20 Lakota](z20-lakota.md), the other helicopters
 - [Vehicle damage](vehicle-damage.md)
 

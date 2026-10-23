@@ -36,17 +36,17 @@ The first factory investment sets up three lines and six recipes. It is passive:
 
 | Line | Recipes |
 |---|---|
-| Line 1 | AK-74M, M4 |
-| Line 2 | Super-45, MP9 |
+| Line 1 | AK74, M4 |
+| Line 2 | Super-45, AMP-9 |
 | Line 3 | 4x Elcan Spectr, Eotech Holographic |
 
 ### Recipe costs
 
 | Recipe | Cost |
 |---|---|
-| AK-74M | 640 |
+| AK74 | 640 |
 | M4 | 2,240 |
-| MP9 | 1,100 |
+| AMP-9 | 1,100 |
 | Super-45 | 4,480 |
 | 4x Elcan Spectr | 640 |
 | Eotech Holographic | 496 |
@@ -72,8 +72,8 @@ The investment starts with its upgrade at level 1 for each of the three queues a
 
 ## Season 2 changes
 
-- AK-74M's recipe cost went from 1,280 to 640.
-- MP9's recipe cost went from 720 to 1,100.
+- AK74's recipe cost went from 1,280 to 640.
+- AMP-9's recipe cost went from 720 to 1,100.
 - Super-45's recipe cost went from 2,080 to 4,480.
 
 ## See also

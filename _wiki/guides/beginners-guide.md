@@ -54,7 +54,7 @@ The full comparison is in [Choosing Ammo](choosing-ammo.md) and [Armor](../game-
 - **Individual First Aid Kit:** +100 HP, about 5 seconds to use.
 - **Medical Bag:** heals 35 HP over 5 seconds on yourself, or 15 HP over 1.5 seconds on a teammate.
 - **Health does not regenerate on its own.** The data shows no natural healing over time.
-- **At 0 HP you are downed.** You have 360 seconds on the bleed-out timer, which drains at half speed, so about 12 minutes. A teammate can revive you by holding for 20 seconds with no equipment.
+- **At 0 HP you are downed.** You have 360 seconds on the bleed-out timer, which drains at half speed, so about 12 minutes in total (derived from the player defaults). A teammate can revive you by holding for 20 seconds with no equipment.
 - **Defibrillator:** revives instantly to 35 HP, once it has charged and has a battery.
 - **Giving up** ends the wait in 1.5 seconds. Use it only when no help is coming.
 
@@ -87,6 +87,10 @@ Bullets that hit a teammate do half damage. Friendly fire still costs health, so
 - [Armor](../game-mechanics/armor.md)
 - [Choosing Ammo](choosing-ammo.md)
 - [Downed and Revive](../game-mechanics/downed-and-revive.md)
+- [Medical Items](../equipment/medical-items.md)
+- [Weapons](../weapons.md)
+- [Body armor](../equipment/body-armor.md)
+- [Vehicles](../vehicles.md)
 
 ## Sources
 

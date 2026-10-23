@@ -27,12 +27,12 @@ The server browser lists Deathmatch as a mode, but the data gives it no map name
 - **Match flow.** A match starts with the world loading, then a ready-up stage, then play, then the post-match screen. The ready-up stage is named in the data, but the exact trigger that starts the match is not in the sources.
 - **Weapon select.** Before each spawn, the player picks one of 20 weapons. The list is:
 
-  AK-74M, M4, SKS, KH-2002, A-91, GGX 17, M12G, MP9, SV98, PP-19 Vityaz, Judge, PKM, M249, MK22, MGL-40, BMR-308, AMR 50, SVD, T-21, Super-45.
+  AK74, M4, SKS, KH-2002, A-91, GGX 17, M500, AMP-9, SV98, PP-19 Vityaz, Judge, PKM, M249 SAW, MK22, MGL-40, BMR-308, AMR 50, SVD, T-21, Super-45.
 
   Each entry uses the weapon's normal name and icon.
 - **Health.** Players regenerate health. The regeneration rate is not in the data.
 - **Ammunition.** The loadout is built with ammunition for the chosen weapon. The amounts are not in the data.
-- **Spawning.** Spawns are handled by a Blueprint that is not decoded in the sources.
+- **Spawning.** How spawns are chosen is not yet known.
 - **Team sizes, match length and win condition.** Not yet known.
 
 ## Rewards

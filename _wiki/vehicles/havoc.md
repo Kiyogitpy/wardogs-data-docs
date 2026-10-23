@@ -14,7 +14,7 @@ description: "Two-seat attack helicopter with a 30 mm autocannon and B-13 rocket
 | Unlock level | 0 |
 | Main health | 800 HP |
 | Top speed | 400 (as stored) |
-| Rifle damage taken | 5% |
+| Rifle damage taken (derived) | 5% |
 | Internal name | ROT_02 |
 {: .wiki-infobox }
 
@@ -49,7 +49,7 @@ Main health is 800 HP. The helicopter also has separate health for each of these
 
 Rifle rounds do 5% of their damage against the hull. A round that hits the fuel tank gets an extra 300% on top of that, so it does about a fifth of its full damage. Rocket blasts that burst within the inner radius are multiplied by five.
 
-Full-power, point-blank hits needed to destroy the main health:
+Hits needed to destroy the main health. These counts are derived by simulating the damage rules with full-power, point-blank, standard (FMJ) hits; they are estimates from the data, not measured in game:
 
 | Ammunition | Hits to destroy | Faster route |
 |---|---:|---|
@@ -87,7 +87,7 @@ The seats are a driver (pilot) seat and one gunner seat.
 ## See also
 
 - [Vehicle damage](vehicle-damage.md)
-- [MH-6](mh-6.md), [AH-6M](ah-6m.md) and [AH-6R](ah-6r.md), the smaller Little Bird family helicopters
+- [MH-6](mh-6.md), [AH-6M [Miniguns]](ah-6m-miniguns.md) and [AH-6R [Rockets]](ah-6r-rockets.md), the smaller Little Bird family helicopters
 - [Vehicles](../vehicles.md)
 
 ## Sources

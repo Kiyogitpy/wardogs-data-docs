@@ -1,12 +1,12 @@
 ---
-title: "AH-6M"
+title: "AH-6M [Miniguns]"
 parent: "Vehicles"
 description: "Small attack helicopter of the Little Bird family with two M134D miniguns."
 ---
 
-# AH-6M
+# AH-6M [Miniguns]
 
-| AH-6M | |
+| AH-6M [Miniguns] | |
 |---|---|
 | Type | Combat helicopter (miniguns) |
 | Seats | 2 |
@@ -14,15 +14,15 @@ description: "Small attack helicopter of the Little Bird family with two M134D m
 | Unlock level | 1 |
 | Main health | 400 HP |
 | Top speed | 350 (as stored) |
-| Rifle damage taken | 7.5% |
+| Rifle damage taken (derived) | 7.5% |
 | Internal name | ROT_03 (miniguns variant) |
 {: .wiki-infobox }
 
-The AH-6M is the miniguns version of the small MH-6 helicopter. It carries two M134D miniguns on the sides, for close-range fire support.
+The AH-6M [Miniguns] is the miniguns version of the small MH-6 helicopter. It carries two M134D miniguns on the sides, for close-range fire support.
 
 ## Overview
 
-The AH-6M is sold in the vehicle vendor under air combat, for 12,000 cash, and unlocks at level 1. It has the same airframe and health as the [MH-6](mh-6.md), with two seats instead of six and a gun fit in place of the passenger seats.
+The AH-6M [Miniguns] is sold in the vehicle vendor under air combat, for 12,000 cash, and unlocks at level 1. It has the same airframe and health as the [MH-6](mh-6.md), with two seats instead of six and a gun fit in place of the passenger seats.
 
 ## Stats
 
@@ -41,7 +41,7 @@ Main health is 400 HP. The engine has 200 HP, the fuel tank 200 HP, the main rot
 
 Rifle rounds do 7.5% of their damage against the hull. Bullets that hit the fuel tank take an extra 200%. Rockets that hit the tail or tail rotor take an extra 200%.
 
-Full-power, point-blank hits needed to destroy the main health:
+Hits needed to destroy the main health. These counts are derived by simulating the damage rules with full-power, point-blank, standard (FMJ) hits; they are estimates from the data, not measured in game:
 
 | Ammunition | Hits to destroy |
 |---|---:|
@@ -75,7 +75,7 @@ The data does not say which of the two seats fires the miniguns. The seats are a
 ## See also
 
 - [MH-6](mh-6.md), the base transport model
-- [AH-6R](ah-6r.md), the rocket version
+- [AH-6R [Rockets]](ah-6r-rockets.md), the rocket version
 - [Vehicle damage](vehicle-damage.md)
 
 ## Sources

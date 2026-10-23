@@ -88,6 +88,8 @@ The sources list no Season 2 changes to the skill tables. Season 2 did change th
 - [Cash and Rewards](cash-and-rewards.md), including the role mastery XP curve
 - [Challenges](challenges.md)
 - [Shops](shops.md)
+- [Medical Items](../equipment/medical-items.md)
+- [Downed and Revive](../game-mechanics/downed-and-revive.md)
 
 ## Sources
 

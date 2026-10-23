@@ -14,12 +14,12 @@ The numbers come from the data pages and are shown as stored. The data does not 
 
 ## Overview
 
-| Vehicle | Type | Seats | Price (cash) | Main health (HP) | Top speed (as stored) | Rifle damage taken |
+| Vehicle | Type | Seats | Price (cash) | Main health (HP) | Top speed (as stored) | Rifle damage taken (derived) |
 |---|---|---:|---:|---:|---:|---:|
 | [Havoc](vehicles/havoc.md) | Combat helicopter | 2 | 28,000 | 800 | 400 | 5% |
 | [MH-6](vehicles/mh-6.md) | Transport helicopter | 6 | 6,250 | 400 | 350 | 7.5% |
-| [AH-6M](vehicles/ah-6m.md) | Combat helicopter (miniguns) | 2 | 12,000 | 400 | 350 | 7.5% |
-| [AH-6R](vehicles/ah-6r.md) | Combat helicopter (rockets) | 2 | 18,800 | 400 | 350 | 7.5% |
+| [AH-6M [Miniguns]](vehicles/ah-6m-miniguns.md) | Combat helicopter (miniguns) | 2 | 12,000 | 400 | 350 | 7.5% |
+| [AH-6R [Rockets]](vehicles/ah-6r-rockets.md) | Combat helicopter (rockets) | 2 | 18,800 | 400 | 350 | 7.5% |
 | [Z20 Lakota](vehicles/z20-lakota.md) | Transport helicopter | 13 | 7,400 | 600 | 445 | 5% |
 | [Z20 Lakota [Miniguns]](vehicles/z20-lakota-miniguns.md) | Combat helicopter | 13 | 15,000 | 600 | 445 | 5% |
 | [Fixed-wing airplane](vehicles/fixed-wing-airplane.md) | Airplane | 2 | Not sold | 150 at start | Not yet known | 7.5% |

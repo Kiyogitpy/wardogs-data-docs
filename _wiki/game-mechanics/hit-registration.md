@@ -26,7 +26,7 @@ In Wardogs, a bullet is a moving object, not an instant line from the gun to the
 - **Surfaces.** A hit on a surface can stop the bullet, bounce it off (ricochet) or let it pass through. The surface material decides the chance. See [Penetration and Ricochet](penetration-and-ricochet.md).
 - **Players.** A bullet that reaches a player counts as a hit on the body part it struck. Which part that is decides the damage (see [Health and Damage](health-and-damage.md)).
 - **Your own vehicle.** A shot fired from a vehicle is not stopped by that vehicle for a short time after you fire. The length of that time is not yet known.
-- **Friendly fire.** Bullets that hit a teammate, or the shooter, still count as hits, but they do half the damage. Nothing in the game stops the bullet from hitting a teammate.
+- **Friendly fire.** Bullets that hit a teammate still count as hits, but they do half the damage. Nothing in the game stops the bullet from hitting a teammate.
 - **Impact effects.** Each hit shows an impact effect on the surface it struck. These do not change the damage.
 - **Shotgun pellets.** Each pellet is a separate hit. A pellet that misses does no damage, and each one that hits does its own damage.
 

@@ -85,6 +85,7 @@ For a guide to choosing ammo for each armor class, see [Choosing Ammo](../guides
 - [Penetration and Ricochet](penetration-and-ricochet.md)
 - [Choosing Ammo](../guides/choosing-ammo.md)
 - [Body armor and helmets](../../content/Wardogs_Items_v2.md) (item data)
+- [Body armor](../equipment/body-armor.md)
 
 ## Sources
 

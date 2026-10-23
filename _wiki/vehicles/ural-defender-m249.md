@@ -14,7 +14,7 @@ description: "Armored Ural Defender with a mounted M249 machine gun, sold for 9,
 | Unlock level | 0 |
 | Main health | 700 HP |
 | Top speed | 79 (as stored) |
-| Rifle damage taken | 5% |
+| Rifle damage taken (derived) | 5% |
 | Internal name | WHL_07 (armored battle variant) |
 {: .wiki-infobox }
 

@@ -111,6 +111,10 @@ Default parts: magazine (MP5 30 RND Magazine), stock (MP5 Stock), barrel (MP5 Ba
 - [Weapons](../weapons.md)
 - [Ammunition](ammunition.md)
 - [Attachments](attachments.md)
+- [Choosing Ammo](../guides/choosing-ammo.md)
+- [Ballistics](../game-mechanics/ballistics.md)
+- [Health and Damage](../game-mechanics/health-and-damage.md)
+- [Spread and Recoil](../game-mechanics/spread-and-recoil.md)
 
 ## Sources
 

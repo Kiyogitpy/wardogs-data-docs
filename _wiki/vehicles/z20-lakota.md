@@ -14,7 +14,7 @@ description: "Large 13-seat transport helicopter with no weapons, the helicopter
 | Unlock level | 0 |
 | Main health | 600 HP |
 | Top speed | 445 (as stored) |
-| Rifle damage taken | 5% |
+| Rifle damage taken (derived) | 5% |
 | Internal name | ROT_04 (default variant) |
 {: .wiki-infobox }
 
@@ -41,7 +41,7 @@ Main health is 600 HP. The helicopter has separate health for its engine (200 HP
 
 Rifle rounds do 5% of their damage against the hull. The tail rotor is the weak point. Rifle fire destroys the helicopter after 858 hits to the body, or after 429 hits through the tail rotor.
 
-Full-power, point-blank hits needed to destroy the main health:
+Hits needed to destroy the main health. These counts are derived by simulating the damage rules with full-power, point-blank, standard (FMJ) hits; they are estimates from the data, not measured in game:
 
 | Ammunition | Hits to destroy | Faster route |
 |---|---:|---|

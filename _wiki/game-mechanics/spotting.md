@@ -68,6 +68,7 @@ Base payouts for each kind of target (vehicle, buildable, player and so on) are 
 - [Health and Damage](health-and-damage.md)
 - [Movement](movement.md)
 - [Season 2 Game Modes and Maps changes](../../season-2-changes/game-modes-maps.md)
+- [Cash and Rewards](../progression-and-economy/cash-and-rewards.md)
 
 ## Sources
 

@@ -22,7 +22,7 @@ Players buy gear, weapons, vehicles and supply crates from vendors inside a matc
 |---|---|---|
 | Gear | Armor, vests, backpacks and parachutes | Scout Backpack, Ruck Backpack |
 | Utility | Medical items, batteries, tools, throwables, mines and explosives | Bandage, Defibrillator, Battery |
-| Weapon | Weapons, attachments, magazines and ammunition | AK-74M, M4, T-21, Galil |
+| Weapon | Weapons, attachments, magazines and ammunition | AK74, M4, T-21, Galil |
 | Vehicle and garage | Vehicles, vehicle supply crates and pallets | Havoc, MH-6, Z20 Lakota, supply crates |
 | Gold Market | Cosmetics: skins, emotes and similar | Skins and emotes, priced in Gold Bars |
 
@@ -70,7 +70,7 @@ The weapon listings are on the weapon shop data page. Gear, medical items and ve
 | GGX 17 (pistol) | 200 | 1 |
 | Judge | 250 | 1 |
 | T-21 | 1,200 | 1 |
-| AK-74M | 800 | 1 |
+| AK74 | 800 | 1 |
 | Galil | 2,000 | 1 |
 | M4 | 2,800 | 1 |
 | FAL | 6,000 | 1 |
@@ -83,8 +83,8 @@ Attachments, magazines and the rest of the weapon catalogue are on the weapon sh
 | Item | Price | Unlock level |
 |---|---|---|
 | MH-6 (helicopter) | 6,250 | 1 |
-| AH-6M, miniguns | 12,000 | 1 |
-| AH-6R, rockets | 18,800 | 1 |
+| AH-6M [Miniguns] | 12,000 | 1 |
+| AH-6R [Rockets] | 18,800 | 1 |
 | Z20 Lakota (transport helicopter) | 7,400 | 0 |
 | Z20 Lakota, miniguns | 15,000 | 0 |
 | Havoc (attack helicopter) | 28,000 | 0 |
@@ -123,6 +123,10 @@ The full tree is not in the sources, so this page does not list every unlock.
 - [Factory Investment](factory-investment.md), which produces some weapons
 - [Cosmetics](cosmetics.md), which are sold for Gold Bars
 - [Skills](skills.md)
+- [Weapons](../weapons.md)
+- [Body armor](../equipment/body-armor.md)
+- [Medical Items](../equipment/medical-items.md)
+- [Vehicles](../vehicles.md)
 
 ## Sources
 

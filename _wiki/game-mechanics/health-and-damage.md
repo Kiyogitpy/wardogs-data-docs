@@ -10,7 +10,7 @@ description: "How much health a player has, which body parts count for more, and
 |---|---|
 | Max health | 100 HP |
 | Hit locations | 12 body parts |
-| Friendly fire | Bullet damage to a teammate or to yourself is halved |
+| Friendly fire | Bullet damage to a teammate is halved |
 | Health regeneration | No natural regeneration found in the data (see [Downed and Revive](downed-and-revive.md)) |
 {: .wiki-infobox }
 
@@ -27,7 +27,7 @@ A player can be hit in twelve places: the head, neck, three parts of the torso (
 3. Armor covering that body part reduces the result (see [Armor](armor.md)).
 4. The remaining damage comes off health. When health reaches zero the player is downed (see [Downed and Revive](downed-and-revive.md)).
 
-Friendly fire is part of the same system. A bullet that hits a teammate, or the shooter, does half the damage it would otherwise do.
+Friendly fire is part of the same system. A bullet that hits a teammate does half the damage it would otherwise do.
 
 ## Numbers
 
@@ -85,6 +85,8 @@ The same bullet does different damage to different weapons. A sniper rifle such 
 - [Penetration and Ricochet](penetration-and-ricochet.md)
 - [Downed and Revive](downed-and-revive.md)
 - [Hit Registration](hit-registration.md)
+- [Body armor](../equipment/body-armor.md)
+- [Medical Items](../equipment/medical-items.md)
 
 ## Sources
 

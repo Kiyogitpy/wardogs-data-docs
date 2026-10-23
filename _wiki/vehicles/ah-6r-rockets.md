@@ -1,12 +1,12 @@
 ---
-title: "AH-6R"
+title: "AH-6R [Rockets]"
 parent: "Vehicles"
 description: "Small attack helicopter of the Little Bird family with two B-13 rocket pods."
 ---
 
-# AH-6R
+# AH-6R [Rockets]
 
-| AH-6R | |
+| AH-6R [Rockets] | |
 |---|---|
 | Type | Combat helicopter (rockets) |
 | Seats | 2 |
@@ -14,15 +14,15 @@ description: "Small attack helicopter of the Little Bird family with two B-13 ro
 | Unlock level | 1 |
 | Main health | 400 HP |
 | Top speed | 350 (as stored) |
-| Rifle damage taken | 7.5% |
+| Rifle damage taken (derived) | 7.5% |
 | Internal name | ROT_03 (rocket pods variant) |
 {: .wiki-infobox }
 
-The AH-6R is the rocket pod version of the small MH-6 helicopter. It carries two B-13 rocket pods for attacks on ground targets.
+The AH-6R [Rockets] is the rocket pod version of the small MH-6 helicopter. It carries two B-13 rocket pods for attacks on ground targets.
 
 ## Overview
 
-The AH-6R is sold in the vehicle vendor under air combat, for 18,800 cash, and unlocks at level 1. It has the same airframe and health as the [MH-6](mh-6.md), with two seats instead of six.
+The AH-6R [Rockets] is sold in the vehicle vendor under air combat, for 18,800 cash, and unlocks at level 1. It has the same airframe and health as the [MH-6](mh-6.md), with two seats instead of six.
 
 ## Stats
 
@@ -41,7 +41,7 @@ Main health is 400 HP. The engine has 200 HP, the fuel tank 200 HP, the main rot
 
 Rifle rounds do 7.5% of their damage against the hull. Bullets that hit the fuel tank take an extra 200%. Rockets that hit the tail or tail rotor take an extra 200%.
 
-Full-power, point-blank hits needed to destroy the main health:
+Hits needed to destroy the main health. These counts are derived by simulating the damage rules with full-power, point-blank, standard (FMJ) hits; they are estimates from the data, not measured in game:
 
 | Ammunition | Hits to destroy |
 |---|---:|
@@ -75,7 +75,7 @@ The data does not give the reload time or starting rocket count for this variant
 ## See also
 
 - [MH-6](mh-6.md), the base transport model
-- [AH-6M](ah-6m.md), the miniguns version
+- [AH-6M [Miniguns]](ah-6m-miniguns.md), the miniguns version
 - [Vehicle damage](vehicle-damage.md)
 
 ## Sources

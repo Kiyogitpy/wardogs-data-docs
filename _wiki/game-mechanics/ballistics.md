@@ -79,6 +79,8 @@ The AMR 50 and MK22 keep most of their damage at long range, while the MP5 and S
 - [Penetration and Ricochet](penetration-and-ricochet.md)
 - [Spread and Recoil](spread-and-recoil.md)
 - [Hit Registration](hit-registration.md)
+- [Ammunition](../weapons/ammunition.md)
+- [Weapons](../weapons.md)
 
 ## Sources
 

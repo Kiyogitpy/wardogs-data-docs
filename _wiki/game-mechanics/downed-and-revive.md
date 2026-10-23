@@ -49,7 +49,7 @@ Healing items:
 | Medical Bag, yourself | 35 HP over 5 s | 7 HP per second | Costs 25 durability per use from 150 |
 | Medical Bag, teammate | 15 HP over 1.5 s | 10 HP per second | Costs 2 durability per use |
 | Enox | +40 HP as decaying health | 2.2 s | Pool of 40; the decay rate is not confirmed |
-| Stim Pen | No healing; unlimited tactical sprint for 60 s | 2 s on yourself, 1.3 s on a teammate | Stack of 3 |
+| Adrenaline Pen | No healing; unlimited tactical sprint for 60 s | 2 s on yourself, 1.3 s on a teammate | Stack of 3 |
 
 Using any of the healing items also halves your movement speed while you use it.
 
@@ -85,6 +85,7 @@ The other Medic skills have names and descriptions in the data, but the size of 
 - [Health and Damage](health-and-damage.md)
 - [Movement](movement.md)
 - [Beginner's Guide](../guides/beginners-guide.md)
+- [Medical Items](../equipment/medical-items.md)
 
 ## Sources
 
