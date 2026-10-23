@@ -56,7 +56,7 @@ Shown: the 24 points with the largest change. The other 55 points are in the bro
 | DA_RFB_Stats | RecoilPattern[4] (X, Y) | (0.235, 1.375) | (0.4, 3.06) | X +0.165, Y +1.685 |
 | DA_RFB_Stats | RecoilPattern[3] (X, Y) | (0.216, 1.47) | (0.7, 3.105) | X +0.484, Y +1.635 |
 
-[All 134 recoil pattern changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=weapons-ammo&q=RecoilPattern)
+[All 128 recoil pattern changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=weapons-ammo&q=RecoilPattern)
 
 ### Other weapon stats
 
@@ -271,7 +271,7 @@ Added `DefaultValue` on 3 curves: `C_AimAssistSlowStrengthDistanceCurve_LMG_ADS`
 
 Removed key entries: 36 (across 13 curves). Added key entries: 0.
 
-[All 0 aim assist curve changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=weapons-ammo&q=AimAssistCurve)
+[Aim assist curve changes in the browser →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=weapons-ammo&q=C_AimAssist&s=modified)
 
 ### New in Season 2 (162 assets)
 
@@ -309,9 +309,9 @@ Removed key entries: 36 (across 13 curves). Added key entries: 0.
 | [ID_MUZL_071](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_071/Content/Data/ID_MUZL_071.json) | BHInventoryItemDefinition | Id.Item.MUZL_071 |
 | [ID_MUZL_072](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_072/Content/Data/ID_MUZL_072.json) | BHInventoryItemDefinition | Id.Item.MUZL_072 |
 | [ID_Molotov](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Data/ID_Molotov.json) | BHInventoryItemDefinition | Id.Item.Molotov |
-| [ID_PGRP_042](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Pistol Grips/PGRP_042/Content/Data/ID_PGRP_042.json) | BHInventoryItemDefinition | Id.Item.PGRP_042 |
-| [ID_PGRP_043](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Pistol Grips/PGRP_043/Content/Data/ID_PGRP_043.json) | BHInventoryItemDefinition | Id.Item.PGRP_043 |
-| [ID_PGRP_044](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Pistol Grips/PGRP_044/Content/Data/ID_PGRP_044.json) | BHInventoryItemDefinition | Id.Item.PGRP_044 |
+| [ID_PGRP_042](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Pistol%20Grips/PGRP_042/Content/Data/ID_PGRP_042.json) | BHInventoryItemDefinition | Id.Item.PGRP_042 |
+| [ID_PGRP_043](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Pistol%20Grips/PGRP_043/Content/Data/ID_PGRP_043.json) | BHInventoryItemDefinition | Id.Item.PGRP_043 |
+| [ID_PGRP_044](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Pistol%20Grips/PGRP_044/Content/Data/ID_PGRP_044.json) | BHInventoryItemDefinition | Id.Item.PGRP_044 |
 | [ID_SGHT_038](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_038/Content/Data/ID_SGHT_038.json) | BHInventoryItemDefinition | Id.Item.SGHT_038 |
 | [ID_SGHT_039](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_039/Content/Data/ID_SGHT_039.json) | BHInventoryItemDefinition | Id.Item.SGHT_039 |
 | [ID_SGHT_040](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_040/Content/Data/ID_SGHT_040.json) | BHInventoryItemDefinition | Id.Item.SGHT_040 |
@@ -394,9 +394,9 @@ Removed key entries: 36 (across 13 curves). Added key entries: 0.
 | [HNDG_053](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Handguards/HNDG_053/Content/HNDG_053.json) | GameFeatureData | — |
 | [HNDG_054](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Handguards/HNDG_054/Content/HNDG_054.json) | GameFeatureData | — |
 | [HNDG_055](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Handguards/HNDG_055/Content/HNDG_055.json) | GameFeatureData | — |
-| [IRNS_009](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Default Sights/IRNS_009/Content/IRNS_009.json) | GameFeatureData | — |
-| [IRNS_010](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Default Sights/IRNS_010/Content/IRNS_010.json) | GameFeatureData | — |
-| [IRNS_011](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Default Sights/IRNS_011/Content/IRNS_011.json) | GameFeatureData | — |
+| [IRNS_009](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Default%20Sights/IRNS_009/Content/IRNS_009.json) | GameFeatureData | — |
+| [IRNS_010](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Default%20Sights/IRNS_010/Content/IRNS_010.json) | GameFeatureData | — |
+| [IRNS_011](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Default%20Sights/IRNS_011/Content/IRNS_011.json) | GameFeatureData | — |
 | [MAGZ_051](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_051/Content/MAGZ_051.json) | GameFeatureData | — |
 | [MAGZ_067](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_067/Content/MAGZ_067.json) | GameFeatureData | — |
 | [MAGZ_068](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_068/Content/MAGZ_068.json) | GameFeatureData | — |
@@ -413,9 +413,9 @@ Removed key entries: 36 (across 13 curves). Added key entries: 0.
 | [MUZL_071](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_071/Content/MUZL_071.json) | GameFeatureData | — |
 | [MUZL_072](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_072/Content/MUZL_072.json) | GameFeatureData | — |
 | [Molotov](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Molotov.json) | GameFeatureData | — |
-| [PGRP_042](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Pistol Grips/PGRP_042/Content/PGRP_042.json) | GameFeatureData | — |
-| [PGRP_043](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Pistol Grips/PGRP_043/Content/PGRP_043.json) | GameFeatureData | — |
-| [PGRP_044](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Pistol Grips/PGRP_044/Content/PGRP_044.json) | GameFeatureData | — |
+| [PGRP_042](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Pistol%20Grips/PGRP_042/Content/PGRP_042.json) | GameFeatureData | — |
+| [PGRP_043](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Pistol%20Grips/PGRP_043/Content/PGRP_043.json) | GameFeatureData | — |
+| [PGRP_044](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Pistol%20Grips/PGRP_044/Content/PGRP_044.json) | GameFeatureData | — |
 | [RAIL_010](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Rails/RAIL_010/Content/RAIL_010.json) | GameFeatureData | — |
 | [RAIL_011](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Rails/RAIL_011/Content/RAIL_011.json) | GameFeatureData | — |
 | [SGHT_038](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_038/Content/SGHT_038.json) | GameFeatureData | — |
