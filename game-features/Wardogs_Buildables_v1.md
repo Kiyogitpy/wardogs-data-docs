@@ -1,7 +1,8 @@
 ---
 title: "Buildables (inventory)"
-parent: "Game Features"
 redirect_from: ["/Wardogs_Buildables_v1.html", "/Wardogs_Buildables_v1"]
+parent: "Items & Equipment"
+description: "All buildable items: build stages, costs, build times and cash tables"
 ---
 
 # Wardogs: Buildables
@@ -91,7 +92,7 @@ Things the inventory shows (**Derived** from the table):
 
 ## 3. Build stages
 
-Stages are progress thresholds from 0 to 1. A stage becomes visible when the build progress reaches its `RequiredBuildingProgress`. The export carries **no build time per stage**; build speed comes from the hammer ("Fast", "Moderate", "Slow" in the item text) and the construct action [`DA_Action_Buildable_Construct`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Actions/DA_Action_Buildable_Construct.json). The per-hit build amount and the swing animation times of each hammer are in the table below (**Data**, [round 17 evidence](../docs/evidence/round17-blueprint-defaults.md)). Supplies spent per stage are not in the stage files.
+Stages are progress thresholds from 0 to 1. A stage becomes visible when the build progress reaches its `RequiredBuildingProgress`. The export carries **no build time per stage**; build speed comes from the hammer ("Fast", "Moderate", "Slow" in the item text) and the construct action [`DA_Action_Buildable_Construct`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Actions/DA_Action_Buildable_Construct.json). The per-hit build amount and the swing animation times of each hammer are in the table below (**Data**, [round 17 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round17-blueprint-defaults.md)). Supplies spent per stage are not in the stage files.
 
 **Hammer swing and build amount** (`buildable_tables hammer_speed`). Build amount per hit is `WDItemExtensionData_BuildTool.BuildAmount` on the hammer item; the critical-spot amount is `BuildAmountWhenTargetIsHit` (**Data**). The swing times are the first-person use montage: the swing loops between the `LoopStart` and `LoopEnd` sections while the button is held and the `Hit` notify marks the blow (**Data (Blueprint CDO)**).
 

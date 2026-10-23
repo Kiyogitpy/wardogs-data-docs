@@ -1,8 +1,8 @@
 ---
 title: "Vehicle Hitbox Viewer"
-parent: "Pipelines"
-nav_order: 2.5
 redirect_from: ["/vehicle-viewer.html", "/vehicle-viewer"]
+parent: "Damage & Combat Systems"
+description: "3D collision meshes coloured by health section, routing and hits to destroy per caliber"
 ---
 
 # Vehicle Hitbox Viewer
@@ -103,7 +103,7 @@ For explosives, choose **Place impact** and click the vehicle (**Direct hit**) o
 
 **Local reference packs** also replace the displayed mesh and component sampling metadata. They use the frozen build's cooked triangle/BVH query model and retain their supplied scene order. They do not provide terrain, moving poses, active physics state or other players, and are released when you return to published geometry or close the page.
 
-Blast amounts apply the selected rules in native order with single-precision rounding, then follow the traced section routing. Displayed rule factors remain summaries. The calculation uses the exported source context and declared target assumptions; runtime registry overrides and extra actor context are not captured. The [Round 11 verification](../docs/ROUND11_STATUS.md) records the native comparisons and their limits.
+Blast amounts apply the selected rules in native order with single-precision rounding, then follow the traced section routing. Displayed rule factors remain summaries. The calculation uses the exported source context and declared target assumptions; runtime registry overrides and extra actor context are not captured. The [Round 11 verification](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/ROUND11_STATUS.md) records the native comparisons and their limits.
 
 ## How the models are built
 
@@ -119,7 +119,7 @@ The models come from [`_tools/vehicle_models.py`](https://github.com/Kiyogitpy/w
 - **Parts that can't be placed are left out**, with a note on the model. The MG nest's gun proxy attaches to a `receiver_J` bone that its skeleton doesn't have, so it is likely never attached.
 - **Meshes without a collision mesh of their own aren't shown**, such as the MG nest's sandbags. Their collision profile isn't traced, and showing them would mean publishing render geometry.
 - **The SPW radar is shown stowed.** No exported data creates its deployed pivot.
-- **Blast sampling is partly reconstructed.** [Gepard uses authored sockets](../docs/evidence/round8-gepard-sampling-viewer.md) and SPW uses authored bounds; other models still sample display surfaces. The [fresh input census](../docs/evidence/round8-vehicle-sampling-census.md) covers all 33 source variants and distinguishes available damage-query sockets from verified viewer behavior.
+- **Blast sampling is partly reconstructed.** [Gepard uses authored sockets](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-gepard-sampling-viewer.md) and SPW uses authored bounds; other models still sample display surfaces. The [fresh input census](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-vehicle-sampling-census.md) covers all 33 source variants and distinguishes available damage-query sockets from verified viewer behavior.
 
 <div class="vv-nojs" markdown="1">
 

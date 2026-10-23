@@ -1,7 +1,8 @@
 ---
 title: "GameplayCues"
-parent: "Content"
 redirect_from: ["/Wardogs_GameplayCues_v2.html", "/Wardogs_GameplayCues_v2"]
+parent: "World, Visuals & Audio"
+description: "File Map, Smoke Screen Values, How Values Combine"
 ---
 
 # Wardogs: GameplayCues Data Reference

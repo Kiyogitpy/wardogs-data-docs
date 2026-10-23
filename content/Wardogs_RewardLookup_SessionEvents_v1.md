@@ -1,7 +1,8 @@
 ---
 title: "Session-Event Reward Lookups"
-parent: "Content"
 redirect_from: ["/Wardogs_RewardLookup_SessionEvents_v1.html", "/Wardogs_RewardLookup_SessionEvents_v1"]
+parent: "Rewards & Unlocks"
+description: "Vehicle kills and assists, supply crates, buildables, spotting, challenge reward formulas"
 ---
 
 # Wardogs — Session-Event Reward Lookups Reference

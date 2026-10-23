@@ -1,7 +1,8 @@
 ---
 title: "Significance"
-parent: "Content"
 redirect_from: ["/Wardogs_Significance_v2.html", "/Wardogs_Significance_v2"]
+parent: "World, Visuals & Audio"
+description: "Asset Families, Settings Assets, Sphere Evaluators, FOV Evaluators"
 ---
 
 # Wardogs — Significance Reference
@@ -103,7 +104,7 @@ Every one of the seven evaluators is referenced by at least one settings asset.
 ## 7. Still Not Pulled / Limitations
 
 - **Units are not stated.** Distances are assumed to be cm and timings seconds. Both are inferences.
-  - **See [`docs/UNITS.md`](../docs/UNITS.md)** for the project-wide units reference (UE 5.7 defaults + Wardogs-specific suffixes).
+  - **See [`docs/UNITS.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/UNITS.md)** for the project-wide units reference (UE 5.7 defaults + Wardogs-specific suffixes).
 - **The level-selection rule** (distance threshold or FOV check first, and whether it is hysteresis-based) is not in the export.
 - **The `TickRate = −1` meaning** is unconfirmed.
 - **Which systems consume each category** (for example, which actors use the NPP settings) is not in this folder. Only the category names are given.

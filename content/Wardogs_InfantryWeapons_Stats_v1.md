@@ -1,7 +1,8 @@
 ---
 title: "Infantry Weapon Stats"
-parent: "Content"
 redirect_from: ["/Wardogs_InfantryWeapons_Stats_v1.html", "/Wardogs_InfantryWeapons_Stats_v1"]
+parent: "Weapons & Ammo"
+description: "All 40 weapon stat assets, ADS curves, full raw property export"
 ---
 
 # Wardogs — Infantry Weapon Stats, Full Roster

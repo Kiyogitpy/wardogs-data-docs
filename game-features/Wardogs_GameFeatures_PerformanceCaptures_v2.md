@@ -1,7 +1,8 @@
 ---
 title: "PerformanceCaptures (feature)"
-parent: "Game Features"
 redirect_from: ["/Wardogs_GameFeatures_PerformanceCaptures_v2.html", "/Wardogs_GameFeatures_PerformanceCaptures_v2"]
+parent: "Engine & Tooling Data"
+description: "What This Folder Holds, Component, World Data, How Values Combine"
 ---
 
 # Wardogs — GameFeatures: PerformanceCaptures

@@ -1,8 +1,8 @@
 ---
 title: "Vehicle Damage Pipeline"
-parent: "Pipelines"
-nav_order: 2
 redirect_from: ["/Wardogs_VehicleDamagePipeline_v1.html", "/Wardogs_VehicleDamagePipeline_v1"]
+parent: "Damage & Combat Systems"
+description: "How damage resolves against vehicle targets and their health sections"
 ---
 
 # Wardogs — Vehicle Damage Pipeline
@@ -21,14 +21,14 @@ Offline native replay now covers event conversion, configured system
 activation and ModifyDamage dispatch for all 63 retained critical blast
 contacts, matching final float32 amounts and modification records. These
 fixtures supply UObject, registry and lifecycle services; see the
-[round 11 evidence boundaries](../docs/ROUND11_STATUS.md#native-event-conversion-activation-and-dispatch).
+[round 11 evidence boundaries](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/ROUND11_STATUS.md#native-event-conversion-activation-and-dispatch).
 The later handoff replay also covers 20 complete retained health sequences
 (46 applications), through native context copy, interface fallback and section
 routing. Its supplied world/lifecycle and context-attachment boundaries are
-recorded in the [handoff evidence](../docs/ROUND11_STATUS.md#native-damage-context-dispatch-through-vehicle-health).
+recorded in the [handoff evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/ROUND11_STATUS.md#native-damage-context-dispatch-through-vehicle-health).
 The complete radial caller now also runs from entry to return with an owned
 one-actor gather, including filtering and typed context assembly; see the
-[radial caller scope](../docs/ROUND11_STATUS.md#complete-radial-caller-assembly-after-owned-gathering).
+[radial caller scope](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/ROUND11_STATUS.md#complete-radial-caller-assembly-after-owned-gathering).
 
 Build: `++Wardogs+Live-CL-516586` · Engine: UE 5.7 · Native addresses are
 file RVAs in the restored executable (see the damage doc §11). Labels as in
@@ -189,7 +189,7 @@ The replayed vehicle acceptance method (`0x76B63E0`) permits a target outside
 Its native cached-tag query follows explicit and parent tags. This is one
 vehicle interface table with owned cached state, not captured runtime state
 for every vehicle class; see the
-[lookup and acceptance evidence](../docs/ROUND11_STATUS.md#native-hit-location-lookup-and-safe-zone-acceptance).
+[lookup and acceptance evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/ROUND11_STATUS.md#native-hit-location-lookup-and-safe-zone-acceptance).
 
 ### 3.1 Hitboxes
 
@@ -257,7 +257,7 @@ when shown again it re-applies the stored profile. Native setup registers
 the cooked hub/base and blade entries in their Main/Tail groups; the health
 callback selects that group and the visibility callback visits every member.
 Thus hubs and blades toggle together, each restoring its own saved profile.
-See [the registration/selector trace](../docs/evidence/round8-rotor-toggle.md).
+See [the registration/selector trace](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-rotor-toggle.md).
 A collision mesh's material slots are the `CC_*` names, each
 with a collision material (for example `CC_FuelTank` → `MI_VehicleCC_FuelTank`,
 `CC_Main` → `MI_VehicleCC_Metal_ReinforcedArmored`, `CC_TailRotor` →
@@ -276,12 +276,12 @@ attach-manager constructor explicitly initializes the flag **false**
 (`0x50E08C5`), and the stationary-vehicle constructor chain and STN_06
 platform do not override it. Thus the default rejects this partial match;
 later runtime mutation remains untraced. See the
-[constructor evidence](../docs/evidence/round8-stn06-attachments.md).
+[constructor evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-stn06-attachments.md).
 The proxy is query-only `VehicleQueryProxy`
 and registers, so it is hittable wherever it ends up; that position is
 not traced. Decoding these
 meshes needs the static-mesh usmap fixes in
-[`tools/cue4parse_extractor`](../tools/cue4parse_extractor/README.md).
+[`tools/cue4parse_extractor`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/tools/cue4parse_extractor/README.md).
 
 **Derived**, `_tools/damage_tables.py --hitboxes`: every vehicle's map,
 with the section's maximum health, how the section passes damage to the
@@ -588,7 +588,7 @@ face-return disabled, keeping `FaceIndex` and pre-reversal `MyItem` at −1;
 the reversed single-body target therefore lacks a usable section index.
 Nonnegative instance indices may select a slot by numerical coincidence,
 not triangle material. This is the ordinary traced path; custom queries
-that request faces are separate. See the [sweep investigation](../docs/evidence/round8-vehicle-sweep.md).
+that request faces are separate. See the [sweep investigation](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-vehicle-sweep.md).
 
 In the data, ROT_02's wheels are static meshes, so their slots (`CC_Wheel`
 on the right wheel, `CC_Tyre` on the left, `CC_Main` on both) resolve to
@@ -600,7 +600,7 @@ become `CC_Wheel_n` and `CC_Tyre_n`. The inspected SPW radar proxies register
 Default, leaving their part-level `ComplexSurface.Group.Radar` rows unused.
 The platform's Default-group `CC_Radar` row still resolves Radar health;
 this does not make the radar unhittable. See the
-[SPW source settings](../docs/evidence/round8-spw-collision-inputs.md#sockets-placement-and-authored-settings).
+[SPW source settings](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-spw-collision-inputs.md#sockets-placement-and-authored-settings).
 
 **Wheel index.** The wheel index is the movement component's order: axle
 by axle, then the axle's own wheel order (`0x5370A40`). The
@@ -678,7 +678,7 @@ vehicle damage model:
    component contributes one wheel. Swaps can reorder later components and
    select a farther contact for one of them; this is not independent nearest
    selection for every component. See the
-   [complete sampling trace](../docs/evidence/round10-native-vehicle-sampling.md).
+   [complete sampling trace](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round10-native-vehicle-sampling.md).
    **A later gate also
    suppresses repeated nonempty hit-location tags on the same actor**
    (`0x6F06AE6`–`0x6F06B13`): the first encountered tag wins; subsequent
@@ -726,8 +726,8 @@ Sections are keyed by attribute tags (`Attribute.Gameplay.Health.*`).
 
 **Native** (`0x53205D0` ApplyDamageToSection, `0x5339DD0`
 RerouteDamageInternal). Structures:
-[`FVehicleHealthSection`](../sdk/raw/Mechanized_structs.hpp#L523) and
-[`FVehicleDamageRouting`](../sdk/raw/Mechanized_structs.hpp#L511).
+[`FVehicleHealthSection`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/Mechanized_structs.hpp#L523) and
+[`FVehicleDamageRouting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/Mechanized_structs.hpp#L511).
 
 ```cpp
 struct FVehicleHealthSection final {       // 0x140
@@ -771,7 +771,7 @@ Routing targets are arbitrary registered health-section tags, not only
 main health. For example, Gepard's MainBody routes 5% to FuelTank before
 its own health loss while MainBody is alive. That transfer does not require
 a FuelTank collision hit and does not establish blast penetration. See the
-[explosive audit correction](../docs/evidence/round8-explosive-viewer-audit.md#correction-hit-location-deduplication-and-routed-fuel-damage).
+[explosive audit correction](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-explosive-viewer-audit.md#correction-hit-location-deduplication-and-routed-fuel-damage).
 
 **Data**, across the 23 exported damage profiles: 113 section instances,
 46 Pre routes, 66 Post routes (all depleted-only), and 22 Simultaneous
@@ -1003,10 +1003,10 @@ Every row has a `Meta.Damage.Bullet` rule.
 | V-3 | **Closed**: a zone-query miss gives an empty section tag (§3.1, §4.1), and `ApplyDamageToSection` (`0x53205D0`) finds no section for it in the component's section map (`+0x130`, `0x532B660`) and returns 0 at once (`0x5320670`), before PreDamageRouting. So such a hit does nothing to the vehicle | `0x53205D0`, `0x532B660` |
 | V-4 | **Closed**: the collision path (`OnMeshHitEvent` `0x768A280` → `0x767E640` → `0x76736C0` → `0x76740F0`) uses the ramming vehicle's own `DamageEntityData` as the source (tag = its `VehicleDamageTag`, or `Meta.Damage.Landscape` when empty) and adds `Meta.Damage.DamageType.Impact` to the source context. So the stationary `Add +1000` entries (source `Meta.Damage.Vehicle.Land.Tracked`) fire when a tracked vehicle rams the stationary | `0x76740F0` (`0x7674428`, `0x7674435`) |
 | V-5 | **Closed** (static): the projectile path copies the ammo-variant stats' context, which holds the ammo-modifier tag ([DamagePipeline §7.9](Wardogs_DamagePipeline_v2.md#79-ammo-type-against-armor)), into the source context before the vehicle branch, and no vehicle class has a pre-`ModifyDamage` hook that strips it. So HollowPoint rounds meet the generic ×0.84 pair and the per-vehicle Bullet+HollowPoint entries. The ammo tag (instance `+0xF0`, empty from the constructor `0x6B8E100`) is set by `0x6F30E50` from the spawn parameters. On the fire path the weapon owner (`IWDWeaponOwner` `+0x90`, `0x6C98290`) builds `Meta.Damage.AmmoModifier.<type>` from the loaded round's item tag; predicted simulations use `FWDProjectileSimulationSetup.AmmoModifierTag` (`0x6F2C450`). The `<type>` rule is in [DamagePipeline §7.9](Wardogs_DamagePipeline_v2.md#79-ammo-type-against-armor) | `0x6B725B0`; `0x6F30E50`; `0x6C98290` |
-| V-6 | Network authority | Not observable statically; security questions go through [`SECURITY.md`](../SECURITY.md) |
-| V-7 | **Closed** for physics contacts and ordinary movement sweeps (§3.2): contacts use the hitter's body index; sweeps preserve body/instance indices with face-return disabled and reverse Item/MyItem for the struck actor. Ordinary single-body cases give −1 and no section. Custom face-return queries are distinct. | [Native sweep conversion](../docs/evidence/round8-vehicle-sweep.md) |
+| V-6 | Network authority | Not observable statically; security questions go through [`SECURITY.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/SECURITY.md) |
+| V-7 | **Closed** for physics contacts and ordinary movement sweeps (§3.2): contacts use the hitter's body index; sweeps preserve body/instance indices with face-return disabled and reverse Item/MyItem for the struck actor. Ordinary single-body cases give −1 and no section. Custom face-return queries are distinct. | [Native sweep conversion](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-vehicle-sweep.md) |
 | V-8 | **Closed** (§3.2): the shooter's seat picks the branch of `0x6B92900`. `0x6E6EBA0` returns the vehicle whose seat the shooter occupies (`VehicleOperatorComponent.CurrentSeat`, owner a `BHBaseVehiclePawn`). On foot, `0x6F042A0` traces the cone; seated, `0x6F06EB0` hits only that vehicle's occupants, and `0x6B92900` applies the self-damage map straight to the vehicle ([DamagePipeline §1.1](Wardogs_DamagePipeline_v2.md#11-callers-and-where-the-result-goes)) | `0x6E6EBA0`, `0x532DD70`, `0x6F06EB0` |
-| V-9 | **Closed for the frozen authored census**: all 276 registered static component/state rows resolve to 217 own/collision meshes. None has a literal numbered slot whose base is `CC_Wheel` or `CC_Tyre`. Runtime mesh/material overrides are outside this asset audit. | `numbered-material-slot-audit-v1.json`; [round 11 audit](../docs/ROUND11_STATUS.md#numbered-material-slots-and-native-collision-damage) |
+| V-9 | **Closed for the frozen authored census**: all 276 registered static component/state rows resolve to 217 own/collision meshes. None has a literal numbered slot whose base is `CC_Wheel` or `CC_Tyre`. Runtime mesh/material overrides are outside this asset audit. | `numbered-material-slot-audit-v1.json`; [round 11 audit](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/ROUND11_STATUS.md#numbered-material-slots-and-native-collision-damage) |
 | V-10 | **Closed** (§3.2): the wheel index order, the `DataIndex` assignment and the mesh swap are traced. The state byte (`+0x9B0`) is written only by `0x537C580` from the wheel's `TyreHealthAttribute` (2 at ≤ 0, 1 at ≤ `DeflateThreshold` 0.55 of max), and the runtime wheels are built one per setup entry, in order, for two-wheel axles (`0x53999B0`, `0x53999CF`); every shipped axle has two | `0x537C580`, `0x53999B0` |
 
 ## 8. Cross-references
@@ -1014,8 +1014,8 @@ Every row has a `Meta.Damage.Bullet` rule.
 - [`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md): the shared rule pipeline (§1–6)
 - [`Wardogs_AllVehicles_Stats_Damage_v1.md`](../content/Wardogs_AllVehicles_Stats_Damage_v1.md): per-vehicle stats and the damage tables entry by entry
 - [`Wardogs_GameFeatures_Vehicles_v2.md`](../game-features/Wardogs_GameFeatures_Vehicles_v2.md): vehicle game-feature loadouts
-- [`sdk/raw/Mechanized_structs.hpp`](../sdk/raw/Mechanized_structs.hpp): `FVehicleDamageRouting` (L511), `FVehicleHealthSection` (L523)
-- [`docs/evidence/vehicles.md`](../docs/evidence/vehicles.md): evidence behind the native addresses, with a verification status for every RVA this page cites
+- [`sdk/raw/Mechanized_structs.hpp`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/Mechanized_structs.hpp): `FVehicleDamageRouting` (L511), `FVehicleHealthSection` (L523)
+- [`docs/evidence/vehicles.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/vehicles.md): evidence behind the native addresses, with a verification status for every RVA this page cites
 
 ## Change log
 

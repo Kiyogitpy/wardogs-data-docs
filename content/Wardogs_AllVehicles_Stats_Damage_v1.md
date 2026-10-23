@@ -1,7 +1,8 @@
 ---
 title: "All-Vehicle Stat & Damage Sheets"
-parent: "Content"
 redirect_from: ["/Wardogs_AllVehicles_Stats_Damage_v1.html", "/Wardogs_AllVehicles_Stats_Damage_v1"]
+parent: "Vehicles"
+description: "Vehicle stat assets, mounted weapon stats, global damage tables, full property export"
 ---
 
 # Wardogs — Every Vehicle's Stat/Damage Sheet Reference (excl. TNK_01)

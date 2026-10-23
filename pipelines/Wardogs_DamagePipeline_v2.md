@@ -1,8 +1,8 @@
 ---
 title: "Damage Pipeline"
-parent: "Pipelines"
-nav_order: 1
 redirect_from: ["/Wardogs_DamagePipeline_v2.html", "/Wardogs_DamagePipeline_v2"]
+parent: "Damage & Combat Systems"
+description: "Rule selection, ordering and arithmetic from hit to modified damage, custom operations, helper tables"
 ---
 
 # Wardogs — Damage Pipeline
@@ -134,7 +134,7 @@ hull, turret and barrel contacts sharing MainBody therefore need not
 produce separate damage applications. Each event still carries the full
 filtered contact array; vehicle section selection reads its first hit.
 See [Vehicle §4.1](Wardogs_VehicleDamagePipeline_v1.md#41-order) and the
-[corrected explosive audit](../docs/evidence/round8-explosive-viewer-audit.md#correction-hit-location-deduplication-and-routed-fuel-damage).
+[corrected explosive audit](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-explosive-viewer-audit.md#correction-hit-location-deduplication-and-routed-fuel-damage).
 
 The per-explosive numbers (base, radii, falloff, minimum, and the damage they do to infantry and vehicles) are tabulated in [Explosives Reference](../game-features/Wardogs_Explosives_v1.md).
 
@@ -171,8 +171,8 @@ defaults select Points and stop at the first unoccluded start; they do
 not promise a globally closest point. Static character defaults support
 one eligible third-person mesh; capsule and first-person meshes are
 excluded by their responses. The exact set after later Mutable/attachment
-changes remains **Open**. See the [point-mode/component trace](../docs/evidence/round8-radial-points-components.md)
-and [original radial evidence](../docs/evidence/round8-radial.md).
+changes remains **Open**. See the [point-mode/component trace](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-radial-points-components.md)
+and [original radial evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-radial.md).
 
 **Projectile blast context. Native.** An exploding projectile carries
 the stats entity/context, weapon damage tag and ProjectileId into its
@@ -205,7 +205,7 @@ converter can resolve the raw hit bone. A prepopulated target root skips
 that fallback (`0x6EF90B9`–`0x6EF91B3`), so hit-location-dependent
 blast factors assume valid equipment and a mapped gathered bone. Thrown
 contact and character actor-impact bodies do not dispatch either armor
-hook. The [armor evidence](../docs/evidence/round8-armor.md) records the
+hook. The [armor evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-armor.md) records the
 per-source matrix, coverage distinction and remaining melee question.
 
 Four more callers, so all 17 call sites are identified:
@@ -265,7 +265,7 @@ for bash. The action paths use the held `ItemId` as source root; the
 extension path uses its `DamageEntityData.Tag`. Source context is
 replaced with the singleton `DamageType.Melee`, or the extension's
 valid damage-type override. See the [reviewed bytecode offsets and
-export hashes](../docs/evidence/round8-melee.md).
+export hashes](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-melee.md).
 
 All three first call `BP_TryDamageArmorSimple` with explicit Torso and
 bone `None`, but **discard its returned event copy**. The reflected
@@ -284,7 +284,7 @@ before `ModifyDamage`, appending `Explosive.VehicleExplosion` and
 `DamageType.Enviroment` (shipped spelling). Both use a zeroed synthetic
 hit with no bone or explicit hit-location tag. These are event-entry
 amounts, not final health loss; see the [instruction and tag-initializer
-evidence](../docs/evidence/round8-occupants.md).
+evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-occupants.md).
 
 **Native.** Character actor-impact (`0x6E72D90`) obtains its event
 amount from `0x6E6B670` (`0x6E7308B` → builder `0x6E730C3`) and calls
@@ -297,11 +297,11 @@ multiplies it by 0.001. Actual geometry, current mode and settings supply
 the per-event values; the formula is not a fixed impact-damage constant.
 Frag, C4, IED and Molotov separately
 inherit thrown-contact `ImpactDamage=10`; see the
-[impact evidence](../docs/evidence/round8-impact.md).
+[impact evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-impact.md).
 
 **Bytecode + Native.** Reviewed explosive actor defaults are now in
 [`explosive-actors.json`](../assets/data/explosive-actors.json), with
-the [class-default inheritance and detonation evidence](../docs/evidence/round8-explosive-actors.md).
+the [class-default inheritance and detonation evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-explosive-actors.md).
 Frag, C4, AT mine, Claymore, IED and Molotov burst use the shared radial
 arithmetic. Keep root source tag separate from appended context: frag
 inherits `Meta.Damage.Grenade` as root and a `Rocket.60mm` context tag;
@@ -319,14 +319,14 @@ Seated `0x76C4120` uses `max(B × K × clamp(C,0,1) × Fc(t),0)`, with
 `t = clamp(actorRootDistance/Dc,0,1)` and guards on the product/divisor.
 The synthetic seated hit has no bone/location. Vehicle attribute
 self-damage is a separate map, not occupant health damage; the
-[back-blast evidence](../docs/evidence/round8-backblast.md) maps each
+[back-blast evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-backblast.md) maps each
 hashed field, curve fallback and vehicle override. Secondary/reflected
 foot branches and all gather conditions remain outside that closure.
 
 ## 2. The data passed to custom operations
 
 `FWDModifyDamageData`, declared in
-[`sdk/raw/WDGame_structs.hpp`](../sdk/raw/WDGame_structs.hpp#L4646). The
+[`sdk/raw/WDGame_structs.hpp`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/WDGame_structs.hpp#L4646). The
 GObjects dump's runtime property offsets match the SDK field for field.
 
 ```cpp
@@ -346,7 +346,7 @@ struct FWDModifyDamageData final {
 ```
 
 The operation interface,
-[`UWDCustomDamageModificationOperation`](../sdk/raw/WDGame_classes.hpp#L36507):
+[`UWDCustomDamageModificationOperation`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/WDGame_classes.hpp#L36507):
 
 ```cpp
 float GetModificationAmount(const FWDModifyDamageData& ModifyDamageData,
@@ -708,7 +708,7 @@ example `-70` on a Humvee gives ×0.30 and `-25` on a Littlebird gives
 
 The only native custom operation. Vtable `0xB322140`; its slot 86 override
 is `0x6BB7E10` (the base slot returns 0). Declaration
-[`WDGame_classes.hpp`](../sdk/raw/WDGame_classes.hpp#L36557).
+[`WDGame_classes.hpp`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/WDGame_classes.hpp#L36557).
 
 **Native.** Given the event and the running amount `C`:
 
@@ -793,8 +793,8 @@ set or clear it through `0x6F391F0`: a positive acquisition threshold
 uses accumulated candidate time and loss grace; otherwise it uses the
 current accepted vehicle candidate. Outside that controller state it
 clears the gate. Arming alone is not a complete explosion predicate. See
-the [gate mutation trace](../docs/evidence/round8-exploding-gate.md) and
-[radial evidence](../docs/evidence/round8-radial.md) for the concrete
+the [gate mutation trace](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-exploding-gate.md) and
+[radial evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-radial.md) for the concrete
 paths and remaining broadphase/exhaustive-writer limits.
 
 **Hit-location asset registration. Native.** Subsystem initialization
@@ -806,8 +806,8 @@ into `ClassToHitLocations_Loaded` (`+0x110`, insertion at
 inheritance tests. Packed config maps `BHMoverPawn` and `WDTargetDummy`
 to `DA_GlobalDamage_HitLocations_Player`. Their inheritance branches are
 disjoint, so these shipped keys do not compete for one target. See the
-[registration evidence](../docs/evidence/round8-armor.md#hit-location-map-writer)
-and [packed mappings](../docs/evidence/round8-config.md#classtohitlocations-entries-and-precedence).
+[registration evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-armor.md#hit-location-map-writer)
+and [packed mappings](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-config.md#classtohitlocations-entries-and-precedence).
 
 #### Physical materials and later impacts
 
@@ -822,7 +822,7 @@ but density and the thickness/capacity term still matter. PM_Body and
 PM_Head's penetration ignore-list entries suppress the history bitmap,
 not the preceding velocity change. No extra direct SurfaceType health
 scalar is established in this traced bullet calculation. See the
-[downstream trace](../docs/evidence/round8-physical-material-downstream.md)
+[downstream trace](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-physical-material-downstream.md)
 for formulas, config and the current-hit/later-hit distinction.
 
 ### 7.7 Per-weapon damage per bullet
@@ -1086,9 +1086,9 @@ is a percentage change, so -25 gives ×0.75 and -90 gives ×0.10.
 | O-4 | Entry data never reaches custom operations | **Closed** (§2) |
 | O-5 | Four Blueprint bodies | **Closed** (§7.1–7.4), from the cooked bytecode |
 | O-6 | End-to-end number for one concrete hit | **Closed for bullets** (§7.6–7.9): every ammo type, armored or not, by distance. Only the speed scale after drag is not applied in the tables (the drag model itself is in [Projectile Flight](Wardogs_ProjectileFlight_v1.md)) |
-| O-7 | The health write | **Closed** (§10). Network authority stays open: role checks are visible in code, but server behaviour cannot be observed statically. Security-relevant findings go through [`SECURITY.md`](../SECURITY.md), not this document |
+| O-7 | The health write | **Closed** (§10). Network authority stays open: role checks are visible in code, but server behaviour cannot be observed statically. Security-relevant findings go through [`SECURITY.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/SECURITY.md), not this document |
 | O-8 | Which branch of `0x6B92900` runs for a back-blast: `0x6F042A0` (traced hits) or `0x6F06EB0` (synthetic hits, [VehicleDamagePipeline §3.2](Wardogs_VehicleDamagePipeline_v1.md#32-from-a-hit-triangle-to-a-section)) | **Closed** (§1.1): the shooter's seat (`0x6E6EBA0`). On foot `0x6F042A0` traces the cone; seated in a vehicle `0x6F06EB0` hits that vehicle's occupants, and the vehicle takes the self-damage map directly |
-| O-9 | `122mm.Havoc` blast radii look swapped | **Closed for the reviewed default mapping.** [`DA_122_mm_HAVOC_ProjectileData.json`](../data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/122mm/DA_122_mm_HAVOC_ProjectileData.json) sets `EffectiveExplosiveRadius` 600 above `ExplosiveRadius` 300 (`BaseDamage` 300, `ExplosiveDamageFallOff` 0.6). Under §1.1 that would mean full damage to 600 and none beyond, and it is the only one of 11 rounds with the radii this way. The bounded package-name and executable searches found no firing consumer; the reviewed ROT_02/ROT_03 default ammo item instead references plain `Item.Caliber.122mm` ([`DA_122mm_ProjectileData.json`](../data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/122mm/DA_122mm_ProjectileData.json): Base 100, E 200, R 600, FallOff 1.0). The [loaded-item trace](../docs/evidence/round8-weapon-context.md) verifies that default mapping; other runtime actions are not ruled out by these negative searches. |
+| O-9 | `122mm.Havoc` blast radii look swapped | **Closed for the reviewed default mapping.** [`DA_122_mm_HAVOC_ProjectileData.json`](../data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/122mm/DA_122_mm_HAVOC_ProjectileData.json) sets `EffectiveExplosiveRadius` 600 above `ExplosiveRadius` 300 (`BaseDamage` 300, `ExplosiveDamageFallOff` 0.6). Under §1.1 that would mean full damage to 600 and none beyond, and it is the only one of 11 rounds with the radii this way. The bounded package-name and executable searches found no firing consumer; the reviewed ROT_02/ROT_03 default ammo item instead references plain `Item.Caliber.122mm` ([`DA_122mm_ProjectileData.json`](../data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/122mm/DA_122mm_ProjectileData.json): Base 100, E 200, R 600, FallOff 1.0). The [loaded-item trace](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-weapon-context.md) verifies that default mapping; other runtime actions are not ruled out by these negative searches. |
 
 ## 10. From damage to health (characters)
 
@@ -1145,11 +1145,11 @@ for server behaviour is not established here.
 
 | Report | What it holds |
 |---|---|
-| [`docs/evidence/damage.md`](../docs/evidence/damage.md) | Evidence behind §1 and §4–6: input hashes, the three native passes (questions B-1 to B-4, the failed pass on the dump-reconstructed exe, the restored-exe trace with its instruction anchors), the corpus cross-check, and a verification status for every RVA this page cites |
-| [`docs/GOBJECTS_DAMAGE_ANALYSIS.md`](../docs/GOBJECTS_DAMAGE_ANALYSIS.md) | Runtime class catalog and struct offsets (§2). Its Blueprint-locals reading is superseded by §7 |
+| [`docs/evidence/damage.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/damage.md) | Evidence behind §1 and §4–6: input hashes, the three native passes (questions B-1 to B-4, the failed pass on the dump-reconstructed exe, the restored-exe trace with its instruction anchors), the corpus cross-check, and a verification status for every RVA this page cites |
+| [`docs/GOBJECTS_DAMAGE_ANALYSIS.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/GOBJECTS_DAMAGE_ANALYSIS.md) | Runtime class catalog and struct offsets (§2). Its Blueprint-locals reading is superseded by §7 |
 | Blueprint bytecode (local, not committed) | Raw CUE4Parse exports with `ScriptBytecode`, a statement listing with byte offsets, and annotated pseudocode for each of the four `B_*` classes (§7.1–7.4) |
-| [`docs/RESTORED_EXE_VALIDATION.md`](../docs/RESTORED_EXE_VALIDATION.md) | Restored exe ↔ idmap match; damage vtables valid |
-| [`docs/DECOMPILATION_CORPUS.md`](../docs/DECOMPILATION_CORPUS.md) | The local corpus behind §1.1, §5 and §7.5; queried read-only with `corpus_q.py` (body, callers, callees, vtable slots) |
+| [`docs/RESTORED_EXE_VALIDATION.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/RESTORED_EXE_VALIDATION.md) | Restored exe ↔ idmap match; damage vtables valid |
+| [`docs/DECOMPILATION_CORPUS.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/DECOMPILATION_CORPUS.md) | The local corpus behind §1.1, §5 and §7.5; queried read-only with `corpus_q.py` (body, callers, callees, vtable slots) |
 
 ### Offsets and engine details cross-checked
 
@@ -1180,7 +1180,7 @@ rest on them (the section pick, the base-value write, the speed scale,
 the conversion, group order, the parent-tag step) are backed by
 disassembly (`[exe]`) only. Each was reproduced from the instructions;
 none is left unverified
-([status table](../docs/evidence/damage.md#3-rva-status-table)).
+([status table](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/damage.md#3-rva-status-table)).
 
 The evaluator's instruction anchors (§6) were each checked against the
 disassembly; `0x6BB72E1` replaces an earlier `0x6BB72DE`, which is the
@@ -1198,10 +1198,10 @@ The restored image carries the UTF-16LE build marker
 
 ### SDK
 
-- [`WDGame_classes.hpp`](../sdk/raw/WDGame_classes.hpp): operation base (L36507), `PlayerArmorDurability` (L36557), `UWDGlobalDamageSystem` (L36482), `UWDDamageSubsystem::ModifyDamage` (L44447)
-- [`WDGame_structs.hpp`](../sdk/raw/WDGame_structs.hpp): `FWDModifyDamageData` (L4646), `FWDDamageModification` (L4870), `FWDDamageModificationEntry` (L4887), `EWDDamageModificationOperation` (L1683), `FWDDamageModificationDebugData` (L11152)
-- Blueprint declarations: [`B_BoneDamageModifiers`](../sdk/raw/B_BoneDamageModifiers_classes.hpp), [`B_ArchetypeCaliberModifiers`](../sdk/raw/B_ArchetypeCaliberModifiers_classes.hpp), [`B_AmmoTypeEffectiveness`](../sdk/raw/B_AmmoTypeEffectiveness_classes.hpp), [`B_VehicleSeatDamageReduction`](../sdk/raw/B_VehicleSeatDamageReduction_classes.hpp)
-- [`WDGame_functions.cpp`](../sdk/raw/WDGame_functions.cpp#L48948): generated `ModifyDamage` `ProcessEvent` wrapper, not the implementation
+- [`WDGame_classes.hpp`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/WDGame_classes.hpp): operation base (L36507), `PlayerArmorDurability` (L36557), `UWDGlobalDamageSystem` (L36482), `UWDDamageSubsystem::ModifyDamage` (L44447)
+- [`WDGame_structs.hpp`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/WDGame_structs.hpp): `FWDModifyDamageData` (L4646), `FWDDamageModification` (L4870), `FWDDamageModificationEntry` (L4887), `EWDDamageModificationOperation` (L1683), `FWDDamageModificationDebugData` (L11152)
+- Blueprint declarations: [`B_BoneDamageModifiers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/B_BoneDamageModifiers_classes.hpp), [`B_ArchetypeCaliberModifiers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/B_ArchetypeCaliberModifiers_classes.hpp), [`B_AmmoTypeEffectiveness`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/B_AmmoTypeEffectiveness_classes.hpp), [`B_VehicleSeatDamageReduction`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/B_VehicleSeatDamageReduction_classes.hpp)
+- [`WDGame_functions.cpp`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/WDGame_functions.cpp#L48948): generated `ModifyDamage` `ProcessEvent` wrapper, not the implementation
 
 ### Related reference docs
 
@@ -1227,7 +1227,7 @@ The restored image carries the UTF-16LE build marker
 | 2026-10-17 | Health write traced (§10): `ReceiveDamage` → vitality component → base-value write on `Attribute.Gameplay.Health`; no effect involved. Corrects the earlier note that `SetAttributeBaseValue` is only used by healing (its helper `0x52311D0` had no corpus function entry, so its calls were not indexed). |
 | 2026-10-17 | Ammo variants: the modified stats add the ammo-modifier tag and change no damage value (§7.9). Generator gained real armor values and an `--ammo` mode; added the ammo × armor table. |
 | 2026-10-17 | Independent verifier pass: corrected the blunt-damage condition (flight time, instance byte `+0x101`), the direct-hit distance-scale evidence, armor filtering (first covering piece only) and the Penetrate/Throughput tags, the exploding-hit and custom-hit paths, the downed-character branch and the order of death handling; noted the four functions without corpus bodies. |
-| 2026-10-17 | Another independent verifier pass: `RootDamageTag` is `Meta.Damage` and is never evaluated (§5); corrected two citations that sat on misaligned corpus rows (`0x6EF9450`, `0x6F08CE0`); named the two player-character stubs from their FName initializers and noted that the decay-pool cut runs only for role 3 (§10); every function without a corpus body is listed and reproduced from disassembly; the three IDA notes are merged into [`docs/evidence/damage.md`](../docs/evidence/damage.md) (§11). |
+| 2026-10-17 | Another independent verifier pass: `RootDamageTag` is `Meta.Damage` and is never evaluated (§5); corrected two citations that sat on misaligned corpus rows (`0x6EF9450`, `0x6F08CE0`); named the two player-character stubs from their FName initializers and noted that the decay-pool cut runs only for role 3 (§10); every function without a corpus body is listed and reproduced from disassembly; the three IDA notes are merged into [`docs/evidence/damage.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/damage.md) (§11). |
 | 2026-10-17 | Round-4 verifier pass: character health's hooks clamp through vitality slot 161 (§10); all 17 `ModifyDamage` call sites named (§1.1). |
 | 2026-10-17 | Round-5 verifier pass: the projectile's ammo tag (`+0xF0`) is set by `0x6F30E50` from the spawn parameters, built on the fire path by `0x6C98290` (§7.9); the `<type>` rule is only partly decoded. The two back-blast paths are branches of one if/else whose condition is open (O-8). |
 | 2026-10-18 | `data/` re-exported with the v2 usmap (names only; values unchanged): §7.3 `ArmsClassOverrides` key is `_aaabcfjheicbfejiaihii`; §7.4 `DamageSources` and `VehicleSeats` are named in the export. |

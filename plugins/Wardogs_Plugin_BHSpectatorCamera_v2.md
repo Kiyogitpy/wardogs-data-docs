@@ -1,7 +1,8 @@
 ---
 title: "BHSpectatorCamera"
-parent: "Plugins"
 redirect_from: ["/Wardogs_Plugin_BHSpectatorCamera_v2.html", "/Wardogs_Plugin_BHSpectatorCamera_v2"]
+parent: "Player & Movement"
+description: "What This Plugin Holds, Input Actions, Key Bindings, How Values Combine"
 ---
 
 # Wardogs — Plugin: BHSpectatorCamera

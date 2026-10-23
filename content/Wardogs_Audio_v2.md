@@ -1,7 +1,8 @@
 ---
 title: "Audio"
-parent: "Content"
 redirect_from: ["/Wardogs_Audio_v2.html", "/Wardogs_Audio_v2"]
+parent: "World, Visuals & Audio"
+description: "Inventory, Event structure, Notable events, Player Damage, Movement and Item Audio"
 ---
 
 # Wardogs — Audio Data Reference
@@ -407,7 +408,7 @@ The `HDR` prefix is not explained in the dump. The time axis unit is not stored.
 
 - **Sound content.** MetaSoundSource graphs (`.uasset` internals), SoundWave durations, loudness and sample data are not in the JSON. Event durations and loudness cannot be stated.
 - **Behaviour logic.** The `AEB_*` and `WDAudioEventBehavior*` classes are Blueprint or C++ classes. Their code is not exported, so execution order, blending and what each behaviour does internally are inferred from property names.
-  - **SDK (2026-10-16):** audio-event behaviour helpers are in [`BFL_AudioEventBehaviorHelpers_classes.hpp`](../sdk/raw/BFL_AudioEventBehaviorHelpers_classes.hpp) (`UBFL_AudioEventBehaviorHelpers_C`, a `UBlueprintFunctionLibrary`). It exposes 14 static/member functions including:
+  - **SDK (2026-10-16):** audio-event behaviour helpers are in [`BFL_AudioEventBehaviorHelpers_classes.hpp`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/BFL_AudioEventBehaviorHelpers_classes.hpp) (`UBFL_AudioEventBehaviorHelpers_C`, a `UBlueprintFunctionLibrary`). It exposes 14 static/member functions including:
     - `Evaluate_Restart_Behavior(AudioComp, Sound, ESoundRestartBehavior, ...)` — the restart-logic decision function (resolves "execution order" partially)
     - `HandlePlaySound(Context, Sound, RestartBehavior, Only_If_In_Range, CancelFadeOut, _aaabfkmmjhhnafhaehpbd (double), AttachParent, SocketName, Location, ...)` — the main sound-dispatch function; one parameter (`double`) remains unnamed and is a candidate for the "reload-stage value 50.5" the doc flagged
     - `GetSurfaceTypeCharacterIsStoodOn(Character, ..., Fluid_Depth, EWDAudioSurface, EPhysicalSurface, IsFromFoliage, Normal)` — resolves surface detection logic

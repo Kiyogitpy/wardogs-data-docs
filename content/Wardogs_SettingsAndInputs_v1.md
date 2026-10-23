@@ -1,7 +1,7 @@
 ---
 title: "Settings and Inputs"
-parent: "Content"
-nav_order: 20
+parent: "Data Tables & Tags"
+description: "User-setting assets (options-menu rows) and every input action with its default key bindings"
 ---
 
 # Wardogs — Settings and Input Actions

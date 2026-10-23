@@ -1,7 +1,8 @@
 ---
 title: "WDAutomation (feature)"
-parent: "Game Features"
 redirect_from: ["/Wardogs_GameFeatures_WDAutomation_v2.html", "/Wardogs_GameFeatures_WDAutomation_v2"]
+parent: "Engine & Tooling Data"
+description: "What This Folder Holds, Primary Asset Scan"
 ---
 
 # Wardogs — GameFeatures: WDAutomation

@@ -1,7 +1,8 @@
 ---
 title: "Weapon Loadout Calculator"
-parent: "Content"
 redirect_from: ["/loadout-calculator.html", "/loadout-calculator"]
+parent: "Weapons & Ammo"
+description: "Any weapon with any attachments, sight, stance and bipod state: every weapon attribute, its modifiers and final value"
 ---
 
 # Weapon Loadout Calculator

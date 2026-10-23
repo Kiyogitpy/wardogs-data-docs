@@ -1,7 +1,8 @@
 ---
 title: "BHAimAssist"
-parent: "Plugins"
 redirect_from: ["/Wardogs_Plugin_BHAimAssist_v2.html", "/Wardogs_Plugin_BHAimAssist_v2"]
+parent: "Player & Movement"
+description: "What This Plugin Holds, Pull Strength Curves, Slow Strength Curves, Reticle Edge Falloff"
 ---
 
 # Wardogs — Plugin: BHAimAssist
@@ -121,7 +122,7 @@ Related setting: the BHFramework `AimAssistSensitivityMultiplier` (max 1.5, defa
 ## 7. Still not pulled / limitations
 
 - **Units.** The time axis is named "Time" in the curve, but it is used as distance (key values 150 to 30000). The unit is assumed to be Unreal units (cm). Not confirmed by the export.
-  - **See [`docs/UNITS.md`](../docs/UNITS.md)** for the project-wide units reference (UE 5.7 defaults + Wardogs-specific suffixes).
+  - **See [`docs/UNITS.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/UNITS.md)** for the project-wide units reference (UE 5.7 defaults + Wardogs-specific suffixes).
 - **Code path.** Which code reads each curve, and how the reticle and target inputs are normalised, is not in this folder.
 - **Weapon mapping.** How a weapon maps to a curve family (AR, LMG and so on) is in the weapon data, not here.
 - **Curve tangents.** Only key time and value are summarised. Tangents and interpolation modes were not reported.

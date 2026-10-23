@@ -1,8 +1,8 @@
 ---
 title: "Projectile Flight: Thrust, Drag and Gravity"
-parent: "Pipelines"
-nav_order: 3.75
 redirect_from: ["/Wardogs_ProjectileFlight_v1.html", "/Wardogs_ProjectileFlight_v1"]
+parent: "Damage & Combat Systems"
+description: "How a projectile moves from muzzle to hit: launch velocity, gravity, drag, thrust and wind"
 ---
 
 # Wardogs — Projectile flight: thrust, drag and gravity
@@ -38,7 +38,7 @@ the reading copy. The static-analysis image was byte-compared against it for
 every function cited here (§10): all are byte-identical except the weather
 wind getter `0x6F78270`, which begins with a protection-layer dispatch stub in
 the analysis image and is read from the restored image, as
-[IDA claim exposure](../docs/IDA_CLAIM_EXPOSURE.md) prescribes. The
+[IDA claim exposure](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/IDA_CLAIM_EXPOSURE.md) prescribes. The
 decompilation corpus was used read-only to locate functions and field names;
 the constants and offsets were re-read from the bytes with
 [`_tools/projectile_flight_check.py`](../_tools/projectile_flight_check.py).
@@ -447,7 +447,7 @@ These numbers hold only if the shell flies through the native force model
 
 Docs that said otherwise: [GameMechanics §3](../content/Wardogs_GameMechanics_v2.md)
 called `Thrust` "the sustained speed"; it is an acceleration (corrected there).
-[`docs/UNITS.md`](../docs/UNITS.md) already had `InitialBulletSpeed` in cm/s and
+[`docs/UNITS.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/UNITS.md) already had `InitialBulletSpeed` in cm/s and
 projectile `Mass` in kg; its curve-axis list now includes the drag curve.
 
 ---
@@ -572,4 +572,4 @@ WARDOGS_ANALYSIS_EXE=<analysis image> python _tools/projectile_flight_check.py
 
 Related: [Damage Pipeline §7.8](Wardogs_DamagePipeline_v2.md) (speed scale after
 drag), [Combat Data Flow](Wardogs_CombatDataFlow_v1.md),
-[Units](../docs/UNITS.md), [native defaults](../docs/evidence/round17-native-defaults.md).
+[Units](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/UNITS.md), [native defaults](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round17-native-defaults.md).

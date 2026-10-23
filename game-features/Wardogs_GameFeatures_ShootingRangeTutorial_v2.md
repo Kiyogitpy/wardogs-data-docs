@@ -1,7 +1,8 @@
 ---
 title: "ShootingRangeTutorial (feature)"
-parent: "Game Features"
 redirect_from: ["/Wardogs_GameFeatures_ShootingRangeTutorial_v2.html", "/Wardogs_GameFeatures_ShootingRangeTutorial_v2"]
+parent: "Game Modes & Maps"
+description: "What This Folder Holds, Match Flow and Components, Helicopter Fly-By, Quests and Text"
 ---
 
 # Wardogs — GameFeatures: ShootingRangeTutorial

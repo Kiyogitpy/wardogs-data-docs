@@ -1,7 +1,8 @@
 ---
 title: "Taxi SkinsData (feature)"
-parent: "Game Features"
 redirect_from: ["/Wardogs_GameFeatures_Taxi_SkinsData_v2.html", "/Wardogs_GameFeatures_Taxi_SkinsData_v2"]
+parent: "Vehicles"
+description: "What This Folder Holds, Registry and Scan, Cosmetic Row, Skin"
 ---
 
 # Wardogs — GameFeatures: Taxi_SkinsData

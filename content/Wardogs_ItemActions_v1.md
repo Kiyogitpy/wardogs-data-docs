@@ -1,7 +1,8 @@
 ---
 title: "Item Actions"
-parent: "Content"
 redirect_from: ["/Wardogs_ItemActions_v1.html", "/Wardogs_ItemActions_v1"]
+parent: "Items & Equipment"
+description: "All 155 action definitions by item family, conflict rules, item bindings and use data"
 ---
 
 # Wardogs — Item and Player Actions
@@ -571,7 +572,7 @@ Doors, tracker, projectile follow, admin scene, smart-object computer use and th
 How to read it:
 
 - **Heal / attribute.** The attribute the item changes and the amount. `(delta)` means `bApplyAsDelta` is true (added to the current value). For the defibrillator the flag is not stored, so the mode is not confirmed. Heal amounts are also on [Items §5](Wardogs_Items_v2.md). Heal rates, applied effects, use costs and the medic skills that change them are on [Medical and Healing](../game-features/Wardogs_Medical_v1.md). **Data**.
-- **Time method.** `AnimationLength`: the use lasts as long as the animation. `AnimationNotifier`: it completes at an animation notify (`Heal`). `UntilItemEmptyOrTargetFull`: the use continues until the item runs out or the target is full (fuel can, repair tool, resuscitator). The method name is **Data**; the seconds are the montage lengths in section 6.1 (**Data (Blueprint CDO)**, [round 17 evidence](../docs/evidence/round17-blueprint-defaults.md)).
+- **Time method.** `AnimationLength`: the use lasts as long as the animation. `AnimationNotifier`: it completes at an animation notify (`Heal`). `UntilItemEmptyOrTargetFull`: the use continues until the item runs out or the target is full (fuel can, repair tool, resuscitator). The method name is **Data**; the seconds are the montage lengths in section 6.1 (**Data (Blueprint CDO)**, [round 17 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round17-blueprint-defaults.md)).
 - **Consumed per use.** `AmountConsumedOnUse` (1 for almost all). **Data**.
 - **World interaction.** A context class names the interaction that targets another player or a vehicle (`WDHealPlayerInteractionContext`, `WDVehicleRepairInteractionContext`). **Data**.
 - **Container.** `bContainerAppliable` marks items that hold a quantity (fuel, repair charge). **Data**.
@@ -580,7 +581,7 @@ How to read it:
 
 ### 6.1 Animation seconds for the main item actions
 
-The base appliable action reads the length of the item's animation for `AnimationLength` and the position of the named notify for `AnimationNotifier` (`CalculateTotalInteractionTime` in `B_Action_Appliable_Base`, **Data (Blueprint bytecode)**). The table gives the first-person montage length, the play rate and the notify and loop-section times (**Data (Blueprint CDO)**; every montage plays at rate 1.0, an engine default). Throwables hold in a loop section while the button is down: the loop section is 10 s long on the frag and smoke grenades, 3.33 s on the Molotov and 2.67 s on the C4 charge, and the `Throw` notify sits at the loop end, so the montage length is the longest hold plus the recovery, not the time to throw; how the game leaves the loop on release is not traced. [round 17 evidence](../docs/evidence/round17-blueprint-defaults.md).
+The base appliable action reads the length of the item's animation for `AnimationLength` and the position of the named notify for `AnimationNotifier` (`CalculateTotalInteractionTime` in `B_Action_Appliable_Base`, **Data (Blueprint bytecode)**). The table gives the first-person montage length, the play rate and the notify and loop-section times (**Data (Blueprint CDO)**; every montage plays at rate 1.0, an engine default). Throwables hold in a loop section while the button is down: the loop section is 10 s long on the frag and smoke grenades, 3.33 s on the Molotov and 2.67 s on the C4 charge, and the `Throw` notify sits at the loop end, so the montage length is the longest hold plus the recovery, not the time to throw; how the game leaves the loop on release is not traced. [round 17 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round17-blueprint-defaults.md).
 
 <!-- action_tables montages -->
 | Group | Action | First-person montage | Length (s) | Play rate | Timed points (s) |

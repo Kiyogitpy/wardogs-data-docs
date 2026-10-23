@@ -1,7 +1,8 @@
 ---
 title: "Weapon Attributes"
-parent: "Content"
 redirect_from: ["/Wardogs_WeaponAttributes_v1.html", "/Wardogs_WeaponAttributes_v1"]
+parent: "Weapons & Ammo"
+description: "Each weapon's final attribute values with default attachments, and what every attachment changes"
 ---
 
 # Wardogs — Weapon Attributes
@@ -1337,9 +1338,9 @@ Results above that rest on something not traced or on an odd piece of data.
 
 - The order of the sub-slot update messages across the weapon and its attachments (no value depends on
   it, see Override order above).
-- The normal spawn grant path and whether a custom saved preset replaces defaults. Both Cash and StorageVault branches of `Server_ApplyLoadout` can reach a validated vendor purchase continuation; on success `0x6BD5860` calls default helper `0x6784010` at `0x6BD604C`. This is not a proven spawn hook ([Round-8 evidence](../docs/evidence/round8-loadout.md)). The separate [rejoin restore path](../docs/evidence/round8-loadout-restore.md) rebuilds the player inventory map and restores economy metadata from duplicated session state, after an initialization/wait callback requests restoration; it does not identify a custom preset or establish ordering against spawn defaults.
+- The normal spawn grant path and whether a custom saved preset replaces defaults. Both Cash and StorageVault branches of `Server_ApplyLoadout` can reach a validated vendor purchase continuation; on success `0x6BD5860` calls default helper `0x6784010` at `0x6BD604C`. This is not a proven spawn hook ([Round-8 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-loadout.md)). The separate [rejoin restore path](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-loadout-restore.md) rebuilds the player inventory map and restores economy metadata from duplicated session state, after an initialization/wait callback requests restoration; it does not identify a custom preset or establish ordering against spawn defaults.
   (`0x6784010` adds them only when the create-defaults flag is set; `0x6BD5860` sets it).
-  The separate [player registration hook](../docs/evidence/round8-loadout-initialization.md)
+  The separate [player registration hook](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-loadout-initialization.md)
   inserts configured container defaults, but concrete first-spawn provisioning
   remains unresolved. SniperShowdown also has a mode-specific BeginPlay grant
   attempt; it does not establish the normal player's universal starting items.

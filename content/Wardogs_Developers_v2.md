@@ -1,7 +1,8 @@
 ---
 title: "Developers"
-parent: "Content"
 redirect_from: ["/Wardogs_Developers_v2.html", "/Wardogs_Developers_v2"]
+parent: "Engine & Tooling Data"
+description: "File Map, Demolition Component Settings"
 ---
 
 # Wardogs: Developers Data Reference
@@ -36,6 +37,6 @@ The settings target the `BHDemolitionComponentSettings` class. The name suggests
 
 - **The demolition component and its instances are not in this dump.** The meshes, the destruction logic and the collision profile definition itself are outside this folder.
 - **Units are assumed to be Unreal units (cm by default).** The conversion to metres above is an assumption.
-  - **See [`docs/UNITS.md`](../docs/UNITS.md)** for the project-wide units reference (UE 5.7 defaults + Wardogs-specific suffixes).
+  - **See [`docs/UNITS.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/UNITS.md)** for the project-wide units reference (UE 5.7 defaults + Wardogs-specific suffixes).
 - **Single asset.** Nothing else in the Developers folder is available to cross-check.
 

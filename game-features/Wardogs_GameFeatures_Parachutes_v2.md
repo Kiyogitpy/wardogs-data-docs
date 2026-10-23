@@ -1,7 +1,8 @@
 ---
 title: "Parachutes (feature)"
-parent: "Game Features"
 redirect_from: ["/Wardogs_GameFeatures_Parachutes_v2.html", "/Wardogs_GameFeatures_Parachutes_v2"]
+parent: "Player & Movement"
+description: "Plugin Inventory, Movement Profiles, Inventory Items, Vendor Listings"
 ---
 
 # Wardogs — Parachutes Game Feature Reference

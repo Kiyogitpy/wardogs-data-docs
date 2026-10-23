@@ -1,7 +1,8 @@
 ---
 title: "FluidFlux"
-parent: "Content"
 redirect_from: ["/Wardogs_FluidFlux_v2.html", "/Wardogs_FluidFlux_v2"]
+parent: "World, Visuals & Audio"
+description: "File Map, Waterline Gradient, How Values Combine"
 ---
 
 # Wardogs: FluidFlux Data Reference

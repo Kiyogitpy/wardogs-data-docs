@@ -1,7 +1,8 @@
 ---
 title: "Character (feature)"
-parent: "Game Features"
 redirect_from: ["/Wardogs_GameFeatures_Character_v2.html", "/Wardogs_GameFeatures_Character_v2"]
+parent: "Player & Movement"
+description: "What This Folder Holds, Packs"
 ---
 
 # Wardogs — GameFeatures: Character

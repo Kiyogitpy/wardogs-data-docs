@@ -1,7 +1,8 @@
 ---
 title: "WorldFeatures (feature)"
-parent: "Game Features"
 redirect_from: ["/Wardogs_GameFeatures_WorldFeatures_v2.html", "/Wardogs_GameFeatures_WorldFeatures_v2"]
+parent: "Game Modes & Maps"
+description: "What This Folder Holds, HotZoneMagnet, Lootable, SpawnZoneTest"
 ---
 
 # Wardogs — GameFeatures: WorldFeatures

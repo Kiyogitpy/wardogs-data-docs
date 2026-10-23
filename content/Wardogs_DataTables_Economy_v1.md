@@ -1,8 +1,8 @@
 ---
 title: "Data Tables: Economy and Rewards"
-parent: "Data Tables"
-grand_parent: "Content"
 redirect_from: ["/Wardogs_DataTables_Economy_v1.html", "/Wardogs_DataTables_Economy_v1"]
+grand_parent: "Data Tables & Tags"
+description: "Economy tables: rewards, spotting rewards, cash and currency values"
 ---
 
 # Data Tables: Economy and Rewards

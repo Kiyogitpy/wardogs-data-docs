@@ -1,8 +1,8 @@
 ---
 title: "Data Tables: Combat, Vehicles and Scene Data"
-parent: "Data Tables"
-grand_parent: "Content"
 redirect_from: ["/Wardogs_DataTables_Combat_v1.html", "/Wardogs_DataTables_Combat_v1"]
+grand_parent: "Data Tables & Tags"
+description: "Combat, vehicle and scene tables: damage reduction, seat modifiers, deathmatch scenes and more"
 ---
 
 # Data Tables: Combat, Vehicles and Scene Data

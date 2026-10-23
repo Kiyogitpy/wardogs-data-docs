@@ -1,7 +1,8 @@
 ---
 title: "Player Movement"
-parent: "Content"
 redirect_from: ["/Wardogs_PlayerMovement_v1.html", "/Wardogs_PlayerMovement_v1"]
+parent: "Player & Movement"
+description: "Speed per stance with native defaults, fall damage and gun-bob curves, footstep audio, all 137 Player files"
 ---
 
 # Wardogs — Player Movement Numbers
@@ -423,7 +424,7 @@ Every file in the folder, grouped by sub-folder. Input action rows give the tag,
 
 ## 8. Open items
 
-- The stance modifier code is not decoded, so the stance times base-speed rule is Derived. `0x5288D80`, cited here earlier as its lambda, is a virtual-call thunk (`jmp [vtable+0x470]`), not the modifier body ([round 17 native defaults](../docs/evidence/round17-native-defaults.md)); the call site in `0x52820C0` dispatches through it.
+- The stance modifier code is not decoded, so the stance times base-speed rule is Derived. `0x5288D80`, cited here earlier as its lambda, is a virtual-call thunk (`jmp [vtable+0x470]`), not the modifier body ([round 17 native defaults](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round17-native-defaults.md)); the call site in `0x52820C0` dispatches through it.
 - How sprint, tactical sprint, slow walk and ADS speeds combine with the stance speed, and the swim speed cap, are not traced.
 - Units of the damage-curve inputs and of the slope curve input are not exported.
 - The consumers of `CRV_LandGunBob`, the look-acceleration curves and the ladder animation curves are not traced.

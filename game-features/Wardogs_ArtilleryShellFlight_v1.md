@@ -1,7 +1,8 @@
 ---
 title: "Artillery Shell Flight Data"
-parent: "Game Features"
 redirect_from: ["/Wardogs_ArtilleryShellFlight_v1.html", "/Wardogs_ArtilleryShellFlight_v1"]
+parent: "Weapons & Ammo"
+description: "155 mm artillery shell flight: Blueprint actors, mover modes, gravity and how the shell moves"
 ---
 
 # Wardogs: Artillery Shell Flight Data (what is and is not known)
@@ -75,5 +76,5 @@ Result: world gravity is the UE default of -980.0 cm/s^2 (9.8 m/s^2 downward), t
 
 ## 5. Reproduce
 
-1. Build `tools/cue4parse_extractor` ([README](../tools/cue4parse_extractor/README.md)); `list BP_` finds the actor packages, `dump <files.txt>` exports them and `rawfiles <text> --copy` writes the packed `.ini` files.
+1. Build `tools/cue4parse_extractor` ([README](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/tools/cue4parse_extractor/README.md)); `list BP_` finds the actor packages, `dump <files.txt>` exports them and `rawfiles <text> --copy` writes the packed `.ini` files.
 2. `python _tools/shell_actors.py --dump <dumpdir> --world <dir with world.json>` rewrites `assets/data/shell-actors.json`.

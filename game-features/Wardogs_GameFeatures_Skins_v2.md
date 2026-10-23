@@ -1,7 +1,8 @@
 ---
 title: "Skins (feature)"
-parent: "Game Features"
 redirect_from: ["/Wardogs_GameFeatures_Skins_v2.html", "/Wardogs_GameFeatures_Skins_v2"]
+parent: "Rewards & Unlocks"
+description: "Layout, Cosmetic Rows, Skin Data Assets, Wiring"
 ---
 
 # Wardogs: GameFeatures Skins Reference

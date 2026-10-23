@@ -1,7 +1,8 @@
 ---
 title: "TeamkillTracking (feature)"
-parent: "Game Features"
 redirect_from: ["/Wardogs_GameFeatures_TeamkillTracking_v2.html", "/Wardogs_GameFeatures_TeamkillTracking_v2"]
+parent: "Game Modes & Maps"
+description: "What This Folder Holds, How It Is Used"
 ---
 
 # Wardogs — GameFeatures: TeamkillTracking
