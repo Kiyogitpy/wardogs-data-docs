@@ -2,7 +2,7 @@
 title: "Weapons & Ammo changes"
 parent: "Season 2 Changes"
 nav_order: 1
-description: "Weapon stats, vendor prices, attachments and aim assist: 162 assets added, 16 removed, 174 modified, 11 moved, 1,240 property changes."
+description: "Weapon stats, vendor prices, attachments and aim assist: 162 assets added, 16 removed, 174 modified, 11 moved, 1,208 property changes."
 ---
 
 # Weapons & Ammo changes
@@ -13,7 +13,7 @@ Weapons, ammo, attachments and aim assist: what changed between Season 1 and Sea
 - **Removed:** 16 assets (all aim assist curves)
 - **Modified with real changes:** 174 assets (251 more are noise-only: renamed keys, swapped key names or shifted references from the different Season 1 export, not listed)
 - **Moved:** 11 assets (the Mosin folder moved to `WEPN_017`)
-- **Property changes:** 1,240 in modified and moved assets
+- **Property changes:** 1,208 in modified and moved assets
 - **Removed properties:** 989 values in 16 removed assets
 Vector rows show the signed change on each axis, for example `X −0.4, Y −0.4`.
 
@@ -163,13 +163,10 @@ Other numeric item values:
 
 | Asset | Property | Season 1 | Season 2 | Change |
 |---|---|---|---|---|
-| ID_4xElcanSpectr | AttachmentData.SightsData[Key=S_Aim02].Value.SightCameraOffsetOverridePerWeapon[0] | -30.0 | -1.6 | +28.4 (+94.7%) |
 | ID_EotechHoloSight | AttachmentData.SightsData[Key=S_Aim01].Value.SightCameraOffsetOverridePerWeapon[0] | -8.0 | -7.0 | +1.0 (+12.5%) |
-| ID_OPT_08 | AttachmentData.SightsData[Key=S_Aim01].Value.SightCameraOffsetOverridePerWeapon[0] | -20.548815 | -3.9 | +16.648815 (+81.0%) |
 | ID_SGHT_011 | AttachmentData.SightsData[Key=S_Aim01].Value.ScopeMaskScale.X | 0.015 | 0.02 | +0.005 (+33.3%) |
 | ID_SGHT_011 | AttachmentData.SightsData[Key=S_Aim01].Value.ScopeMaskScale.Y | 0.015 | 0.02 | +0.005 (+33.3%) |
 | ID_SGHT_011 | AttachmentData.SightsData[Key=S_Aim01].Value.ScopeMaskScale.Z | 0.015 | 0.02 | +0.005 (+33.3%) |
-| ID_SGHT_016 | AttachmentData.SightsData[Key=S_Aim01].Value.SightCameraOffsetOverridePerWeapon[0] | 10.0 | -5.0 | −15.0 (−150.0%) |
 | ID_SGHT_023 | AttachmentData.SightsData[Key=S_Aim01].Value.SightCameraOffsetOverridePerWeapon[0] | -8.0 | -2.0 | +6.0 (+75.0%) |
 | ID_SR_04 | TimeAfterFireToRechamber | 0.24 | 0.2 | −0.04 (−16.7%) |
 | ID_SV98 | TimeAfterFireToRechamber | 0.3 | 0.08 | −0.22 (−73.3%) |
@@ -191,9 +188,9 @@ Other numeric item values:
 | AnimSet_WEPN_035 | Animations[Animation.Asset.Weapon.Reload.Empty].Value.OverrideLength | 5.0 | 3.0 | −2.0 (−40.0%) |
 | AnimSet_WEPN_035 | Animations[Animation.Asset.Weapon.Reload.Tactical].Value.OverrideLength | 1.25 | 3.0 | +1.75 (+140.0%) |
 
-### Aim assist settings (141 numeric rows across 7 assets)
+### Aim assist settings (119 numeric rows across 7 assets)
 
-Shown: the 30 largest changes by percentage (values that start at 0 are listed first). The other 111 rows are in the browser.
+Shown: the 30 largest changes by percentage (values that start at 0 are listed first). The other 89 rows are in the browser.
 
 | Asset | Property | Season 1 | Season 2 | Change |
 |---|---|---|---|---|
@@ -201,11 +198,6 @@ Shown: the 30 largest changes by percentage (values that start at 0 are listed f
 | DA_AimAssistSettings_Melee | SlowInnerStrengthHip | 0.0 | 0.36 | +0.36 (n/a) |
 | DA_AimAssistSettings_SR | PullInnerStrengthAds | 0.0 | 2.0 | +2.0 (n/a) |
 | DA_AimAssistSettings_SR | SlowInnerStrengthAds | 0.0 | 0.4 | +0.4 (n/a) |
-| DA_AimAssistSettings_AR | unnamed property (`_aaabkejidmenonabgon`) | 0.5 | 2.5 | +2.0 (+400.0%) |
-| DA_AimAssistSettings_LMG | unnamed property (`_aaabkejidmenonabgon`) | 0.5 | 2.5 | +2.0 (+400.0%) |
-| DA_AimAssistSettings_Pistol | unnamed property (`_aaabkejidmenonabgon`) | 0.5 | 2.5 | +2.0 (+400.0%) |
-| DA_AimAssistSettings_Shotgun | unnamed property (`_aaabkejidmenonabgon`) | 0.5 | 2.5 | +2.0 (+400.0%) |
-| DA_AimAssistSettings_SR | unnamed property (`_aaabkejidmenonabgon`) | 0.5 | 2.5 | +2.0 (+400.0%) |
 | DA_AimAssistSettings_AR | SlowInnerStrengthAds | 0.19 | 0.6 | +0.41 (+215.8%) |
 | DA_AimAssistSettings_LMG | SlowInnerStrengthAds | 0.19 | 0.6 | +0.41 (+215.8%) |
 | DA_AimAssistSettings_SR | AssistInnerReticleWidth | 400.0 | 1200.0 | +800.0 (+200.0%) |
@@ -227,45 +219,50 @@ Shown: the 30 largest changes by percentage (values that start at 0 are listed f
 | DA_AimAssistSettings_SR | SlowLerpInRate | 5.0 | 10.0 | +5.0 (+100.0%) |
 | DA_AimAssistSettings_SR | ReticleDepth | 20000.0 | 40000.0 | +20000.0 (+100.0%) |
 | DA_AimAssistSettings_SR | AssistOuterReticleWidth | 1860.0 | 3600.0 | +1740.0 (+93.5%) |
+| DA_AimAssistSettings_AR | PullOuterStrengthAds | 6.0 | 1.0 | −5.0 (−83.3%) |
+| DA_AimAssistSettings_LMG | PullOuterStrengthAds | 6.0 | 1.0 | −5.0 (−83.3%) |
+| DA_AimAssistSettings_Shotgun | PullOuterStrengthAds | 6.0 | 1.0 | −5.0 (−83.3%) |
+| DA_AimAssistSettings_SMG | PullOuterStrengthAds | 6.0 | 1.0 | −5.0 (−83.3%) |
+| DA_AimAssistSettings_LMG | TargetingReticleHeight | 12000.0 | 2160.0 | −9840.0 (−82.0%) |
 
-[All 214 aim assist settings changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=weapons-ammo&q=AimAssistSettings)
+[All 236 aim assist settings changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=weapons-ammo&q=AimAssistSettings)
 
-### Aim assist curves (69 time and value rows across 14 curves)
+### Aim assist curves (49 time and value rows across 14 curves)
 
-Shown: the 30 largest changes by percentage (values that start at 0 are listed first). The other 39 rows, tangent values, and the removed and added keys are in the browser.
+Shown: the 30 largest changes by percentage (values that start at 0 are listed first). The other 19 rows, tangent values, and the removed and added keys are in the browser.
 
 | Asset | Property | Season 1 | Season 2 | Change |
 |---|---|---|---|---|
-| C_AimAssistPullStrengthDistanceCurve_AR_ADS | Keys[1].Value | 0.0 | 1.0 | +1.0 (n/a) |
-| C_AimAssistPullStrengthDistanceCurve_LMG_ADS | Keys[1].Value | 0.0 | 1.0 | +1.0 (n/a) |
-| C_AimAssistPullStrengthDistanceCurve_Pistol_ADS | Keys[1].Value | 0.0 | 1.0 | +1.0 (n/a) |
-| C_AimAssistPullStrengthDistanceCurve_Shotgun_ADS | Keys[1].Value | 0.0 | 1.0 | +1.0 (n/a) |
-| C_AimAssistPullStrengthDistanceCurve_SMG_ADS | Keys[1].Value | 0.0 | 1.0 | +1.0 (n/a) |
-| C_AimAssistSlowStrengthDistanceCurve_AR_ADS | Keys[1].Value | 0.0 | 0.8 | +0.8 (n/a) |
 | C_AimAssistSlowStrengthDistanceCurve_LMG_ADS | Keys[1].Value | 0.0 | 0.8 | +0.8 (n/a) |
 | C_AimAssistSlowStrengthDistanceCurve_SMG_ADS | Keys[1].Value | 0.0 | 0.8 | +0.8 (n/a) |
-| C_AimAssistSlowStrengthDistanceCurve_Sniper | Keys[1].Value | 0.0 | 1.0 | +1.0 (n/a) |
-| C_AimAssistSlowStrengthDistanceCurvePistol_ADS | Keys[1].Value | 0.0 | 0.8 | +0.8 (n/a) |
 | C_AimAssistSlowStrengthDistanceCurveShotgun_ADS | Keys[1].Value | 0.0 | 0.8 | +0.8 (n/a) |
-| C_AimAssistSlowStrengthDistanceCurve_Sniper | Keys[2].Time | 300.0 | 27500.0 | +27200.0 (+9066.7%) |
-| C_AimAssistPullStrengthDistanceCurve_AR_ADS | Keys[2].Time | 400.0 | 22500.0 | +22100.0 (+5525.0%) |
+| C_AimAssistSlowStrengthDistanceCurve_Sniper | Keys[3].Time | 150.0 | 30000.0 | +29850.0 (+19900.0%) |
+| C_AimAssistPullStrengthDistanceCurve_AR_ADS | Keys[3].Time | 150.0 | 25000.0 | +24850.0 (+16566.7%) |
+| C_AimAssistPullStrengthDistanceCurve_LMG_ADS | Keys[3].Time | 150.0 | 22500.0 | +22350.0 (+14900.0%) |
+| C_AimAssistPullStrengthDistanceCurve_Shotgun_ADS | Keys[3].Time | 150.0 | 20000.0 | +19850.0 (+13233.3%) |
+| C_AimAssistPullStrengthDistanceCurve_SMG_ADS | Keys[3].Time | 150.0 | 15000.0 | +14850.0 (+9900.0%) |
 | C_AimAssistPullStrengthDistanceCurve_Shotgun_ADS | Keys[2].Time | 400.0 | 17500.0 | +17100.0 (+4275.0%) |
-| C_AimAssistPullStrengthDistanceCurve_SMG_ADS | Keys[2].Time | 400.0 | 12500.0 | +12100.0 (+3025.0%) |
-| C_AimAssistPullStrengthDistanceCurve_Pistol_ADS | Keys[2].Time | 400.0 | 10000.0 | +9600.0 (+2400.0%) |
-| C_AimAssistSlowStrengthDistanceCurve_Sniper | Keys[3].Time | 1200.0 | 30000.0 | +28800.0 (+2400.0%) |
+| C_AimAssistSlowStrengthDistanceCurve_Sniper | Keys[2].Time | 1200.0 | 27500.0 | +26300.0 (+2191.7%) |
 | C_AimAssistSlowStrengthDistanceCurve_LMG_ADS | Keys[3].Time | 1200.0 | 20000.0 | +18800.0 (+1566.7%) |
 | C_AimAssistSlowStrengthDistanceCurveShotgun_ADS | Keys[3].Time | 1200.0 | 17500.0 | +16300.0 (+1358.3%) |
-| C_AimAssistSlowStrengthDistanceCurve_AR_ADS | Keys[1].Time | 150.0 | 2000.0 | +1850.0 (+1233.3%) |
 | C_AimAssistSlowStrengthDistanceCurve_LMG_ADS | Keys[1].Time | 150.0 | 2000.0 | +1850.0 (+1233.3%) |
-| C_AimAssistSlowStrengthDistanceCurve_LMG_ADS | Keys[2].Time | 300.0 | 4000.0 | +3700.0 (+1233.3%) |
 | C_AimAssistSlowStrengthDistanceCurve_SMG_ADS | Keys[1].Time | 150.0 | 2000.0 | +1850.0 (+1233.3%) |
-| C_AimAssistSlowStrengthDistanceCurve_SMG_ADS | Keys[2].Time | 300.0 | 4000.0 | +3700.0 (+1233.3%) |
-| C_AimAssistSlowStrengthDistanceCurve_Sniper | Keys[1].Time | 150.0 | 2000.0 | +1850.0 (+1233.3%) |
-| C_AimAssistSlowStrengthDistanceCurvePistol_ADS | Keys[1].Time | 150.0 | 2000.0 | +1850.0 (+1233.3%) |
 | C_AimAssistSlowStrengthDistanceCurvePistol_ADS | Keys[2].Time | 300.0 | 4000.0 | +3700.0 (+1233.3%) |
 | C_AimAssistSlowStrengthDistanceCurveShotgun_ADS | Keys[1].Time | 150.0 | 2000.0 | +1850.0 (+1233.3%) |
-| C_AimAssistSlowStrengthDistanceCurveShotgun_ADS | Keys[2].Time | 300.0 | 4000.0 | +3700.0 (+1233.3%) |
-| C_AimAssistSlowStrengthDistanceCurve_SMG_ADS | Keys[3].Time | 1200.0 | 15000.0 | +13800.0 (+1150.0%) |
+| C_AimAssistReticleEdgeFalloff_Default | Keys[0].Value | 0.05 | 0.2 | +0.15 (+300.0%) |
+| C_AimAssistSlowStrengthDistanceCurve_SMG_ADS | Keys[2].Time | 1200.0 | 4000.0 | +2800.0 (+233.3%) |
+| C_AimAssistPullStrengthDistanceCurve_Sniper | Keys[3].Time | 5000.0 | 15000.0 | +10000.0 (+200.0%) |
+| C_AimAssistSlowStrengthDistanceCurvePistol_ADS | Keys[1].Value | 0.3 | 0.8 | +0.5 (+166.7%) |
+| C_AimAssistPullStrengthDistanceCurve_Pistol_ADS | Keys[2].Time | 5000.0 | 10000.0 | +5000.0 (+100.0%) |
+| C_AimAssistPullStrengthDistanceCurve_Sniper | Keys[4].Time | 10000.0 | 20000.0 | +10000.0 (+100.0%) |
+| C_AimAssistSlowStrengthDistanceCurvePistol_ADS | Keys[2].Value | 0.5 | 1.0 | +0.5 (+100.0%) |
+| C_AimAssistTargetWeightCurve | Keys[1].Value | 0.5 | 1.0 | +0.5 (+100.0%) |
+| C_AimAssistPullStrengthDistanceCurve_Shotgun_ADS | Keys[1].Time | 7000.0 | 200.0 | −6800.0 (−97.1%) |
+| C_AimAssistPullStrengthDistanceCurve_AR_ADS | Keys[2].Time | 12000.0 | 22500.0 | +10500.0 (+87.5%) |
+| C_AimAssistSlowStrengthDistanceCurve_LMG_ADS | Keys[2].Time | 25000.0 | 4000.0 | −21000.0 (−84.0%) |
+| C_AimAssistTargetWeightCurve | Keys[1].Time | 0.05 | 0.01 | −0.04 (−80.0%) |
+| C_AimAssistSlowStrengthDistanceCurvePistol_ADS | Keys[1].Time | 9500.0 | 2000.0 | −7500.0 (−78.9%) |
+| C_AimAssistSlowStrengthDistanceCurve_AR_ADS | Keys[1].Value | 0.45 | 0.8 | +0.35 (+77.8%) |
 
 Added `DefaultValue` on 3 curves: `C_AimAssistSlowStrengthDistanceCurve_LMG_ADS` (0.0), `C_AimAssistSlowStrengthDistanceCurvePistol_ADS` (0.0), `C_AimAssistSlowStrengthDistanceCurveShotgun_ADS` (0.0).
 

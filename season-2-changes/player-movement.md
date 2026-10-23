@@ -2,7 +2,7 @@
 title: "Player & Movement changes"
 parent: "Season 2 Changes"
 nav_order: 3
-description: "Parachutes, spotting challenge rewards and input mappings: 2 assets added, 24 modified with real changes, 656 property changes."
+description: "Parachutes, spotting challenge rewards and input mappings: 2 assets added, 23 modified with real changes, 611 property changes."
 ---
 
 # Player & Movement changes
@@ -11,9 +11,9 @@ Movement, parachutes, spotting challenge rewards and input mappings: what change
 
 - **Added:** 2 assets
 - **Removed:** 0 assets
-- **Modified with real changes:** 24 assets (14 more are noise-only: renamed keys, swapped key names or shifted references from the different Season 1 export, not listed)
+- **Modified with real changes:** 23 assets (15 more are noise-only: renamed keys, swapped key names or shifted references from the different Season 1 export, not listed)
 - **Moved:** 0 assets
-- **Property changes:** 656 in modified and moved assets
+- **Property changes:** 611 in modified and moved assets
 - **Removed properties:** 0 values in 0 removed assets
 Movement effect and cue changes and compiled binding indexes are counted, not listed.
 
@@ -80,7 +80,7 @@ Each row is one reward value: event (Added or Removed), challenge row, resource,
 
 [All 308 spotting challenge changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=player-movement&q=SessionEvents_Spotting)
 
-### Input mappings (24 rows)
+### Input mappings (20 rows)
 
 | Asset | Property | Season 1 | Season 2 | Change |
 |---|---|---|---|---|
@@ -101,15 +101,11 @@ Each row is one reward value: event (Added or Removed), challenge row, resource,
 | IMC_PlayerController | DefaultKeyMappings.Mappings[14].SettingBehavior | EPlayerMappableKeySettingBehaviors::OverrideSettings | EPlayerMappableKeySettingBehaviors::IgnoreSettings | changed |
 | IMC_PlayerController | DefaultKeyMappings.Mappings[15].SettingBehavior | EPlayerMappableKeySettingBehaviors::OverrideSettings | EPlayerMappableKeySettingBehaviors::IgnoreSettings | changed |
 | IMC_PlayerController | DefaultKeyMappings.Mappings[32] | — | {"Triggers": [], "Modifiers": [], "Action": {"ObjectName": "BHInputAction'IA_UI_Map_ToggleZoomPreset'", "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_UI_Map_ToggleZoomPreset.0"}, "Key": {"KeyName": "Gamepad_Special_Left"}, "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction", "PlayerMappableKeySettings": null} | added |
-| IMC_Spotting | DefaultKeyMappings.Mappings[3] | — | {"Triggers": [], "Modifiers": [{"ObjectName": "WDDeadZoneInputModifier'IMC_Spotting:WDDeadZoneInputModifier_0'", "ObjectPath": "/Spotting/Data/Input/IMC_Spotting.3"}], "Action": {"ObjectName": "BHInputAction'IA_Player_Holdable_SecondaryUse_Release'", "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/TaggedActions/IA_Player_Holdable_SecondaryUse_Release.0"}, "Key": {"KeyName": "Gamepad_LeftTriggerAxis"}, "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction", "PlayerMappableKeySettings": null} | added |
-| IMC_Spotting | DefaultKeyMappings.Mappings[5].Modifiers[ObjectName=WDDeadZoneInputModifier'IMC_Spotting:WDDeadZoneInputModifier_0'] | {"ObjectName": "WDDeadZoneInputModifier'IMC_Spotting:WDDeadZoneInputModifier_0'", "ObjectPath": "/Spotting/Data/Input/IMC_Spotting.3"} | — | removed |
-| IMC_Spotting | DefaultKeyMappings.Mappings[5].Action.ObjectName | BHInputAction'IA_Player_Holdable_SecondaryUse_Release' | BHInputAction'IA_Weapon_Reload' | changed |
-| IMC_Spotting | DefaultKeyMappings.Mappings[5].Action.ObjectPath | /Game/GameMechanics/Player/PlayerCharacter/Inputs/TaggedActions/IA_Player_Holdable_SecondaryUse_Release.0 | /Game/Weapons/Input/IA_Weapon_Reload.0 | changed |
-| IMC_Spotting | DefaultKeyMappings.Mappings[5].Key.KeyName | Gamepad_LeftTriggerAxis | R | changed |
+| IMC_Spotting | DefaultKeyMappings.Mappings[5] | — | {"Triggers": [], "Modifiers": [], "Action": {"ObjectName": "BHInputAction'IA_Weapon_Reload'", "ObjectPath": "/Game/Weapons/Input/IA_Weapon_Reload.0"}, "Key": {"KeyName": "R"}, "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction", "PlayerMappableKeySettings": null} | added |
 | IMC_Spotting | DefaultKeyMappings.Mappings[6] | — | {"Triggers": [], "Modifiers": [], "Action": {"ObjectName": "BHInputAction'IA_Weapon_Reload'", "ObjectPath": "/Game/Weapons/Input/IA_Weapon_Reload.0"}, "Key": {"KeyName": "Gamepad_FaceButton_Left"}, "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction", "PlayerMappableKeySettings": null} | added |
 | IMC_Tipping | DefaultKeyMappings.Mappings[3] | — | {"Triggers": [], "Modifiers": [], "Action": {"ObjectName": "BHInputAction'IA_Tip_Reject'", "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_Tip_Reject.0"}, "Key": {"KeyName": "Gamepad_Special_Left"}, "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction", "PlayerMappableKeySettings": null} | added |
 
-[All 24 input mapping changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=player-movement&q=IMC_)
+[All 20 input mapping changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=player-movement&q=IMC_)
 
 ### Player character components (4 rows)
 
@@ -122,25 +118,24 @@ Each row is one reward value: event (Added or Removed), challenge row, resource,
 
 ## Other changes
 
-- `DA_MaterialTrackerData_Spotting` (WDUISpottingMaterialTrackerDataAsset): 3 added.
+- `DA_MaterialTrackerData_Spotting` (WDUISpottingMaterialTrackerDataAsset): 1 added, 1 removed.
 - `DA_Tracker_Map_Spotting` (WDUISpottingTargetMapTrackerData): 2 added.
-- `DA_Tracker_Spatial_Spotting` (WDUISpottingSpatialTrackerData): 8 added, 1 changed, 31 removed.
+- `DA_Tracker_Spatial_Spotting` (WDUISpottingSpatialTrackerData): 7 added, 3 removed.
 - `DT_Challenges_SessionEvents_KOTH_Spotting` (DataTable): 2 added.
-- `DT_Cosmetics_Season01_Emotes` (DataTable): 3 added, 3 removed.
 - `DT_RewardLookup_SessionEvent_Spotting_Added` (DataTable): 4 added, 37 changed.
 - `DT_RewardLookup_SessionEvent_Spotting_Removed` (DataTable): 4 added, 37 changed.
-- `ST_Challenges_SessionEvents_KOTH_Spotting_Added` (StateTree): 6 added, 79 changed, 1 removed.
-- `ST_Challenges_SessionEvents_KOTH_Spotting_Removed` (StateTree): 6 added, 79 changed, 1 removed.
+- `ST_Challenges_SessionEvents_KOTH_Spotting_Added` (StateTree): 5 added, 79 changed.
+- `ST_Challenges_SessionEvents_KOTH_Spotting_Removed` (StateTree): 5 added, 79 changed.
 
 The two `ST_Challenges_SessionEvents_KOTH_Spotting_*` state trees have 132 numeric values that change. They are compiled property-binding indexes and hashes, not balance changes. They are in the browser.
 
 `DA_DefaultPlayerMovementAudioConfiguration` is now noise-only. Its 42 former effect and gameplay cue changes are swapped key values (42 swapped keys in the index), so they are not listed.
 
-[All 615 spotting changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=player-movement&q=Spotting)
+[All 576 spotting changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=player-movement&q=Spotting)
 
-The UI tracker assets (DA_Tracker_* and DA_MaterialTrackerData_Spotting) have 45 changes. They are left out of the tables and are in the browser.
+The UI tracker assets (DA_Tracker_* and DA_MaterialTrackerData_Spotting) have 14 changes. They are left out of the tables and are in the browser.
 
-[All 45 UI tracker changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=player-movement&q=Tracker)
+[All 14 UI tracker changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=player-movement&q=Tracker)
 
 ## New in Season 2 (2 assets)
 
