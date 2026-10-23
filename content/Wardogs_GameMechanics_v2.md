@@ -243,7 +243,7 @@ The 125x570mm, 155mm Standard (and its `_SB` variants), 338 Norman Magnum, 762x5
 
 ## 3. Projectiles ([`Inventory/Equipment/Caliber/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber), 32 `WDProjectileData` assets)
 
-Units are not verified. The values are raw UE fields. Speed is `TypicalSpeed` (launch speed). `Thrust` is the sustained speed where present. Blank means the field is not set on the asset.
+The values are raw UE fields; units (cm, cm/s, kg) are confirmed in [Projectile Flight §9](../pipelines/Wardogs_ProjectileFlight_v1.md#9-units). `Speed` is `TypicalSpeed`, which is **not** the launch speed: the launch speed is the weapon's `InitialBulletSpeed`, and `TypicalSpeed` is a reference speed used by suppression (see [Projectile Flight §2](../pipelines/Wardogs_ProjectileFlight_v1.md#2-launch-velocity)). `Thrust` is `ThrustSpeed`, an acceleration in cm/s² along the velocity that applies only when `bShouldThrust` is set, not a sustained speed ([§6](../pipelines/Wardogs_ProjectileFlight_v1.md#6-thrust-fuel-and-wind)). `Drag` is the curve row; the model is in [§5](../pipelines/Wardogs_ProjectileFlight_v1.md#5-drag). Blank means the field is not set on the asset.
 
 | Asset | ProjectileId | Base dmg | Expl. radius | Eff. radius | Falloff | Speed | Thrust | Mass | Drag | Ricochet ° |
 |---|---|---|---|---|---|---|---|---|---|---|
