@@ -74,6 +74,7 @@ import sys
 
 SWITCHED = []
 SWAPS = []
+PERM_INSTANCES = []
 CANDS = None   # list when --named-candidates is given
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -305,6 +306,7 @@ class Ctx:
         self.shifts = 0
         self.dups = 0
         self.swapped = 0
+        self.perm_instances = []
         self.swaps = []
         self.cands = []
         self.switched = []
@@ -383,6 +385,7 @@ def collect_named(a, b, only_a, only_b, pairs, path, ctx):
 
 COMPONENT_KEYS = {"X", "Y", "Z", "W", "R", "G", "B", "A", "Pitch", "Yaw", "Roll"}
 KEPT_MINMAX = []
+OBS_ON = False
 
 
 def _greater(x, y):
@@ -403,27 +406,73 @@ def minmax_ok(k, j, a):
     return True
 
 
+LEARNED = []      # [{S1 name: S2 name}], one permutation per learned key set, filled between the two passes
+OBSERVED = []     # (key set, ((s1 name, s2 name), ...)) per exact cycle (pass 1)
+UNAFFECTED = []   # instances of a learned permutation left alone because S1 already matched S2 name for name
+
+
+def apply_learned(a, b, path, ctx):
+    """Rename S1 keys by the learned permutations, so real value changes survive under the right name.
+
+    A permutation applies to a parent that has at least one of its keys in S1 and at least one in S2 (so a
+    Min-only S1 against a Max-only S2 is covered). Skipped when every key in both is already unchanged."""
+    if not LEARNED:
+        return a
+    ren = {}
+    for perm in LEARNED:
+        in_a = [k for k in perm if k in a]
+        if not in_a or not any(k in b for k in perm):
+            continue
+        both = [k for k in perm if k in a and k in b]
+        if both and len(both) == len(in_a) and all(deep_same(a[k], b[k]) for k in both):
+            UNAFFECTED.append(path)
+            continue
+        ren.update({k: perm[k] for k in in_a})
+    if not ren:
+        return a
+    ctx.swapped += len(ren)
+    ctx.perm_instances.append({"parent": path, "mapping": dict(ren)})
+    return {ren.get(k, k): v for k, v in a.items()}
+
+
+def learn(observed):
+    """Accept a permutation seen >= 2 times exactly where no key of it maps to two different targets anywhere."""
+    support, targets = {}, {}
+    for ks, mp in observed:
+        support.setdefault((ks, mp), 0)
+        support[(ks, mp)] += 1
+        for k, j in mp:
+            targets.setdefault(k, set()).add(j)
+    learned, refused = [], []
+    for (ks, mp), n in sorted(support.items(), key=lambda kv: sorted(kv[0][0])):
+        bad = any(len(targets[k]) > 1 for k in ks)
+        if n >= 2 and not bad:
+            learned.append(dict(mp))
+        else:
+            refused.append({"keys": sorted(ks), "mapping": dict(mp), "count": n,
+                            "reason": "contradicting exact instances" if bad else "single exact instance"})
+    return learned, refused
+
+
 def find_swaps(a, b, path, ctx):
     """Sibling keys whose values are exchanged exactly between the seasons (S1 usmap misassigned the names).
 
     Only exact 2-cycles (A_old == B_new and B_old == A_new) and 3-cycles among common keys that changed are
-    suppressed; returns the set of keys involved and counts one swap per cycle in ctx.swapped."""
+    suppressed (Min*/Max* pairs only if S1 had Min > Max). Every exact cycle, suppressed or not, is recorded for
+    learning the per-schema permutation. Returns the keys suppressed; ctx.swapped counts keys."""
     ch = [k for k in a if k in b and not deep_same(a[k], b[k]) and k not in COMPONENT_KEYS]
     if len(ch) < 2 or len(ch) > 200:
         return set()
     to = {k: [j for j in ch if j != k and deep_same(a[k], b[j])] for k in ch}
-    used = set()
+    used, cycles, mp = set(), [], {}
     for k in ch:
         if k in used:
             continue
         for j in to[k]:
             if j not in used and k in to[j]:
-                if not minmax_ok(k, j, a):
-                    KEPT_MINMAX.append({"path": path, "keys": [k, j], "s1": [a[k], a[j]], "s2": [b[k], b[j]]})
-                    continue
                 used |= {k, j}
-                ctx.swapped += 1
-                ctx.swaps.append({"parent": path, "keys": [k, j], "s1": [a[k], a[j]], "s2": [b[k], b[j]]})
+                cycles.append([k, j])
+                mp[k], mp[j] = j, k
                 break
     for k in ch:
         if k in used:
@@ -434,13 +483,23 @@ def find_swaps(a, b, path, ctx):
             for m in to[j]:
                 if m not in used and m not in (k, j) and k in to[m]:
                     used |= {k, j, m}
-                    ctx.swapped += 1
-                    ctx.swaps.append({"parent": path, "keys": [k, j, m], "s1": [a[k], a[j], a[m]],
-                                      "s2": [b[k], b[j], b[m]]})
+                    cycles.append([k, j, m])
+                    mp[k], mp[j], mp[m] = j, m, k
                     break
             if k in used:
                 break
-    return used
+    if OBS_ON:
+        for cyc in cycles:
+            OBSERVED.append((frozenset(cyc), tuple(sorted((k, mp[k]) for k in cyc))))
+    skip = set()
+    for cyc in cycles:
+        if len(cyc) == 2 and not minmax_ok(cyc[0], cyc[1], a):
+            KEPT_MINMAX.append({"path": path, "keys": cyc, "s1": [a[k] for k in cyc], "s2": [b[k] for k in cyc]})
+            continue
+        skip |= set(cyc)
+        ctx.swapped += len(cyc)
+        ctx.swaps.append({"parent": path, "keys": cyc, "s1": [a[k] for k in cyc], "s2": [b[k] for k in cyc]})
+    return skip
 
 
 def resolve_dups(a, b):
@@ -483,6 +542,7 @@ def resolve_dups(a, b):
 
 def diff_dict(a, b, path, ctx):
     a = resolve_dups(a, b)
+    a = apply_learned(a, b, path, ctx)
     ka, kb = list(a), list(b)
     only_a = [k for k in ka if k not in b]
     only_b = [k for k in kb if k not in a]
@@ -715,6 +775,9 @@ def diff_assets(ex1, ex2, collect=False):
             ctx.shifts += sub.shifts
             ctx.dups += sub.dups
             ctx.swapped += sub.swapped
+            for pi in sub.perm_instances:
+                pi["parent"] = prefixed(pre, multi, pi["parent"])
+                ctx.perm_instances.append(pi)
             for sp in sub.swaps:
                 sp["parent"] = prefixed(pre, multi, sp["parent"])
                 ctx.swaps.append(sp)
@@ -786,6 +849,8 @@ def build(s1_dir, s2_dir, log=print):
         ctx = diff_assets(ex1, ex2, CANDS is not None)
         for cd in ctx.cands:
             CANDS.append(dict(asset=name, path=rel, **cd))
+        for pi in ctx.perm_instances:
+            PERM_INSTANCES.append(dict(asset=name, path=rel, **pi))
         for sp in ctx.swaps:
             SWAPS.append(dict(asset=name, path=rel, **sp))
         for sw in ctx.switched:
@@ -973,8 +1038,23 @@ def main(argv=None):
     args = ap.parse_args(argv)
     global CANDS
     CANDS = [] if (args.named_candidates or args.switched or args.swaps) else None
-    assets, stats = build(args.s1, args.s2)
+    global OBS_ON
+    OBS_ON = True                      # pass 1: learn the per-schema key permutations from exact cycles
+    build(args.s1, args.s2)
+    del LEARNED[:]
+    learned, refused = learn(OBSERVED)
+    LEARNED.extend(learned)
+    OBS_ON = False
+    for lst in (SWAPS, KEPT_MINMAX, SWITCHED, PERM_INSTANCES, UNAFFECTED, OBSERVED):
+        del lst[:]
+    if CANDS is not None:
+        del CANDS[:]
+    assets, stats = build(args.s1, args.s2)   # pass 2: apply them
     if args.swaps:
+        with open(args.swaps.replace(".json", "_permutations.json"), "w", encoding="utf-8") as fh:
+            json.dump({"learned": learned,
+                       "refused": refused, "instances_renamed": PERM_INSTANCES,
+                       "unaffected_instances": UNAFFECTED}, fh, ensure_ascii=False, indent=1)
         with open(args.swaps, "w", encoding="utf-8") as fh:
             json.dump(SWAPS, fh, ensure_ascii=False, indent=1)
         with open(args.swaps.replace(".json", "_kept_minmax.json"), "w", encoding="utf-8") as fh:
