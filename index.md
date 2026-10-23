@@ -4,12 +4,19 @@ nav_order: 1
 ---
 
 <div class="wd-hero" markdown="0">
+<div class="wd-hero-text">
 <h1>Every number in Wardogs, in one place</h1>
 <p>Reference pages for the game's data: weapon and vehicle stats, rewards, items, challenges and more, read straight from the game files (build <code>++Wardogs+Live-CL-516586</code>, UE 5.7). Search any value, asset name or table name from the bar at the top.</p>
 <div class="wd-actions">
-<a class="wd-btn wd-btn-primary" href="#content">Browse categories</a>
+<a class="wd-btn wd-btn-primary" href="#weapons-ammo">Browse categories</a>
 <a class="wd-btn wd-btn-secondary" href="Wardogs_Rewards_and_Progression_v2.html">Rewards &amp; progression</a>
 </div>
+</div>
+<a class="wd-hero-viewer" href="pipelines/vehicle-viewer.html">
+<img src="{{ '/assets/images/vehicle-viewer-preview.png' | relative_url }}" alt="3D collision mesh of the Havoc attack helicopter, coloured by health section" width="780" height="585">
+<span class="wd-hero-viewer-name">Vehicle Hitbox Viewer</span>
+<span class="wd-hero-viewer-desc">Every vehicle's collision mesh in 3D, coloured by health section. Pick a part to see how it routes damage and how many hits destroy the vehicle.</span>
+</a>
 </div>
 
 ## Finding things
@@ -18,15 +25,6 @@ nav_order: 1
 - **Asset and table names match on their parts.** `PlayerKill` finds `DT_Reward_Cash_PlayerKill`, and `Havoc` finds every page that mentions the Havoc.
 - **Items, Weapons and Vehicles appear in more than one category.** The base definitions and the per-item, per-weapon and per-vehicle data are separate pages, so check both.
 - **Every page ends with its limitations:** what was inferred, and what the game files don't contain.
-
-<h2 id="viewers">Interactive viewer</h2>
-
-<div class="wd-grid" markdown="0">
-<a class="wd-card wd-card-preview" href="pipelines/vehicle-viewer.html">
-<img src="{{ '/assets/images/vehicle-viewer-preview.png' | relative_url }}" alt="3D collision mesh of the Havoc attack helicopter, coloured by health section" width="780" height="585" loading="lazy">
-<span class="wd-card-body"><span class="wd-card-name">Vehicle Hitbox Viewer</span><span class="wd-card-desc">Every vehicle's collision mesh in 3D, coloured by the health section it feeds. Pick a part to see how it routes damage and how many hits of each caliber destroy the vehicle.</span></span>
-</a>
-</div>
 
 <div class="wd-kicker"><span class="wd-pill wd-pill-1">{{ site.pages | where_exp: "p", "p.parent" | size }} pages</span></div>
 {% assign cats = site.pages | where: "has_children", true | where_exp: "p", "p.path contains 'categories/'" | sort: "nav_order" %}
