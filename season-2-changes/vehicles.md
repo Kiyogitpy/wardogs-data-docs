@@ -207,8 +207,8 @@ Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=veh
 | WE_STN_01_Heavy_MountedMachineGun | RestockSuppliesNeeded | 50 | 200 | +150 (+300.0%) |
 | WE_STN_03_Heavy_MainBarrel | RestockSuppliesNeeded | 75 | 150 | +75 (+100.0%) |
 | W_STN_01_MountedMachineGun | GamepadRotationSensitivity | 30.0 | 100.0 | +70.0 (+233.3%) |
-| W_STN_01_MountedMachineGun | HUDScopeBlurAlpha | 2.4254257e-38 | 1.0 | +1.0 (+4122987564615976242944986667581790224384.0%) |
-| W_STN_01_MountedMachineGun | InitialWeaponPossessFovLerpTime | 1.83671e-40 | 0.22 | +0.22 (+119779388145107283385640262840580418043904.0%) |
+| W_STN_01_MountedMachineGun | HUDScopeBlurAlpha | 2.4254257e-38 | 1.0 | +1.0 |
+| W_STN_01_MountedMachineGun | InitialWeaponPossessFovLerpTime | 1.83671e-40 | 0.22 | +0.22 |
 | W_STN_02_MainCannon | GamepadRotationSensitivity | 50.0 | 90.0 | +40.0 (+80.0%) |
 | W_STN_03_MainBarrel | GamepadRotationSensitivity | 15.0 | 50.0 | +35.0 (+233.3%) |
 | W_STN_05_MainBarrel | GamepadRotationSensitivity | 15.0 | 50.0 | +35.0 (+233.3%) |
@@ -219,7 +219,7 @@ Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=veh
 | W_WHL_07_Ural_RingTurret_L | GamepadRotationSensitivity | 35.0 | 80.0 | +45.0 (+128.6%) |
 | W_WHL_07_Ural_RingTurret_R | GamepadRotationSensitivity | 35.0 | 80.0 | +45.0 (+128.6%) |
 
-Showing 40 of 49 rows. Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=vehicles&q=Properties
+Showing 40 of 49 rows. The two `W_STN_01_MountedMachineGun` rows with Season 1 values near 1e-38 have no percentage. Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=vehicles&q=Properties
 
 ### Skin values
 
@@ -416,10 +416,10 @@ None.
 
 ## See also
 
-- [Vehicle stats and damage tables]({{ '/content/Wardogs_AllVehicles_Stats_Damage_v1.html' | relative_url }}#season-02-update), Season 02 update
-- [Vehicles]({{ '/content/Wardogs_Vehicles_v2.html' | relative_url }}#season-02-update), Season 02 update
-- [Vehicles game feature]({{ '/game-features/Wardogs_GameFeatures_Vehicles_v2.html' | relative_url }}#season-02-update), Season 02 update
-- [Vehiclesmith game feature]({{ '/game-features/Wardogs_GameFeatures_Vehiclesmith_v2.html' | relative_url }}#season-02-update), Season 02 update
+- [Vehicle stats and damage tables]({{ '/content/Wardogs_AllVehicles_Stats_Damage_v1.html' | relative_url }}#season-02-update-2026-10-15), Season 02 update
+- [Vehicles]({{ '/content/Wardogs_Vehicles_v2.html' | relative_url }}#season-02-update-2026-10-15), Season 02 update
+- [Vehicles game feature]({{ '/game-features/Wardogs_GameFeatures_Vehicles_v2.html' | relative_url }}#season-02-update-2026-10-15), Season 02 update
+- [Vehiclesmith game feature]({{ '/game-features/Wardogs_GameFeatures_Vehiclesmith_v2.html' | relative_url }}#season-02-update-2026-10-15), Season 02 update
 
 Full change browser for this area: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=vehicles&q=
 

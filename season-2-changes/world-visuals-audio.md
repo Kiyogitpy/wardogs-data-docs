@@ -81,9 +81,9 @@ No assets were removed in this area.
 
 ## See also
 
-- [Environment]({{ '/content/Wardogs_Environment_v2.html' | relative_url }}#season-02-update)
-- [Destruction]({{ '/content/Wardogs_Destruction_v2.html' | relative_url }}#season-02-update)
-- [Demolition]({{ '/content/Wardogs_Demolition_v2.html' | relative_url }}#season-02-update)
-- [VFX]({{ '/content/Wardogs_VFX_v2.html' | relative_url }}#season-02-update)
-- [Audio]({{ '/content/Wardogs_Audio_v2.html' | relative_url }}#season-02-update)
+- [Environment]({{ '/content/Wardogs_Environment_v2.html' | relative_url }}#season-02-update-2026-10-15)
+- [Destruction]({{ '/content/Wardogs_Destruction_v2.html' | relative_url }}#season-02-update-2026-10-15)
+- [Demolition]({{ '/content/Wardogs_Demolition_v2.html' | relative_url }}#season-02-update-2026-10-15)
+- [VFX]({{ '/content/Wardogs_VFX_v2.html' | relative_url }}#season-02-update-2026-10-15)
+- [Audio]({{ '/content/Wardogs_Audio_v2.html' | relative_url }}#season-02-update-2026-10-15)
 

@@ -30,7 +30,7 @@ Other added assets are listed by folder below. Audio and UI are counted in the n
 
 | Class | Added | Modified with real changes | Noise-only | Removed | Browse |
 |---|---:|---:|---:|---:|---|
-| Audio | 0 | 1 | 0 | 0 | [audio changes]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=engine-tooling-data&q=CrosstalkAudioEvent) |
+| Audio | 0 | 1 | 0 | 0 | [audio changes]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=engine-tooling-data&q=DA_SettingsPanel_Audio) |
 | UI widgets | 19 | 137 | 84 | 3 | [ui widgets changes]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=engine-tooling-data&q=UI) |
 
 1 moved asset (ui class, count only): `DA_VehicleCountermeasure` moved from `Wardogs/Content/UI/Features/HUD/Vehicles/NEWHUD/Flares/Data/DA_VehicleFlares.json` → `Wardogs/Content/UI/Features/HUD/Vehicles/NEWHUD/Countermeasures/Data/DA_VehicleCountermeasure.json`. Browse it in the [change browser]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=engine-tooling-data&q=DA_VehicleCountermeasure).
@@ -50,6 +50,6 @@ Total in this table: 1 asset. Audio and UI added assets are counted above and ar
 
 ## See also
 
-- [UI]({{ '/content/Wardogs_UI_v2.html' | relative_url }}#season-02-update)
-- [External assets]({{ '/content/Wardogs_ExternalAssets_v2.html' | relative_url }}#season-02-update)
+- [UI]({{ '/content/Wardogs_UI_v2.html' | relative_url }}#season-02-update-2026-10-15)
+- [External assets]({{ '/content/Wardogs_ExternalAssets_v2.html' | relative_url }}#season-02-update-2026-10-15)
 

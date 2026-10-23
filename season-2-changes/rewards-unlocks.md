@@ -362,9 +362,9 @@ No assets were removed in this area. Row-level removals are listed under each ta
 
 ## See also
 
-- [Meta: unlock trees, achievements and rewards]({{ '/content/Wardogs_Meta_v2.html' | relative_url }}#season-02-update)
-- [Rewards: game-feature reward tables]({{ '/game-features/Wardogs_GameFeatures_Rewards_v2.html' | relative_url }}#season-02-update)
-- [Challenges KOTH: session-event state trees]({{ '/game-features/Wardogs_GameFeatures_Challenges_KOTH_v2.html' | relative_url }}#season-02-update)
-- [Reward lookup: session events]({{ '/content/Wardogs_RewardLookup_SessionEvents_v1.html' | relative_url }}#season-02-update)
-- [Tree reward track and platform mastery]({{ '/content/Wardogs_TreeRewardTrack_PlatformMastery_v1.html' | relative_url }}#season-02-update)
+- [Meta: unlock trees, achievements and rewards]({{ '/content/Wardogs_Meta_v2.html' | relative_url }}#season-02-update-2026-10-15)
+- [Rewards: game-feature reward tables]({{ '/game-features/Wardogs_GameFeatures_Rewards_v2.html' | relative_url }}#season-02-update-2026-10-15)
+- [Challenges KOTH: session-event state trees]({{ '/game-features/Wardogs_GameFeatures_Challenges_KOTH_v2.html' | relative_url }}#season-02-update-2026-10-15)
+- [Reward lookup: session events]({{ '/content/Wardogs_RewardLookup_SessionEvents_v1.html' | relative_url }}#season-02-update-2026-10-15)
+- [Tree reward track and platform mastery]({{ '/content/Wardogs_TreeRewardTrack_PlatformMastery_v1.html' | relative_url }}#season-02-update-2026-10-15)
 
