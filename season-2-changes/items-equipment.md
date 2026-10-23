@@ -193,7 +193,7 @@ No other numeric changes in this area.
 | ObjectName | 3 | DA_545mm_ProjectileData | CurveFloat'AR_SuppressionCurve' | CurveFloat'CR_SuppressionCurve_Medium' |
 | ObjectPath | 3 | DA_545mm_ProjectileData | /Game/GameMechanics/Inventory/AR_SuppressionCurve.0 | /Game/GameMechanics/Inventory/CR_SuppressionCurve_Medium.0 |
 | Hex | 3 | ID_LargeHammer | 000001 | FFCF02 |
-| ThirdPersonPlayerAnimation | 1 | AnimSet_CombatBow | — | {'ObjectName': "AnimMontage'AM_TP_Bow_Door_Interact'", 'ObjectPath': '/Game/Animation/Cha… |
+| ThirdPersonPlayerAnimation | 1 | AnimSet_CombatBow | — | {"ObjectName":"AnimMontage'AM_TP_Bow_Door_Interact'","ObjectPath":"/Game/Animation/Charac… |
 | unnamed property (`_aaabeinmoolajgaldgo`) | 1 | DA_Buildable_Gate | Id.Buildable.Gate | Id.Buildable.Gate.Ramp |
 
 `DT_EmoteData` has 48 change records. Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=items-equipment&q=DT_EmoteData
