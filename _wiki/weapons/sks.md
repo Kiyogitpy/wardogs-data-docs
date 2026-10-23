@@ -1,6 +1,7 @@
 ---
 title: "SKS"
 parent: "Weapons"
+group: "Marksman rifles"
 description: "The SKS marksman rifle: fire rate, damage by body part, range falloff, ammunition, attachments and Season 2 changes."
 ---
 
@@ -8,13 +9,16 @@ description: "The SKS marksman rifle: fire rate, damage by body part, range fall
 
 | SKS | |
 |---|---|
+| **General** |  |
 | Class | Marksman rifle |
 | Caliber | 7.62x39mm |
 | Fire modes | Semi-automatic |
+| **Performance** |  |
 | Fire rate | 420 rounds/min |
 | Muzzle velocity | 735 m/s |
 | Effective range | 400 m |
 | Standard magazine | SKS Internal Mag |
+| **Availability** |  |
 | Vendor price | 2400 |
 | Unlock level | 1 |
 | Internal name | SKS |

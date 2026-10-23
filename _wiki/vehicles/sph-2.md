@@ -1,6 +1,7 @@
 ---
 title: "SPH-2"
 parent: "Vehicles"
+group: "Armored vehicles"
 description: "Tracked artillery vehicle that fires 155 mm shells from a long-range turret, with a camera that follows the shell in flight."
 ---
 

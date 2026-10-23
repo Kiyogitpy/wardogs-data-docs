@@ -1,6 +1,7 @@
 ---
 title: "MP5"
 parent: "Weapons"
+group: "Submachine guns"
 description: "The MP5 submachine gun: fire rate, damage by body part, range falloff, ammunition, attachments and Season 2 changes."
 ---
 
@@ -8,13 +9,16 @@ description: "The MP5 submachine gun: fire rate, damage by body part, range fall
 
 | MP5 | |
 |---|---|
+| **General** |  |
 | Class | Submachine gun |
 | Caliber | 9x19mm |
 | Fire modes | Fully automatic and semi-automatic |
+| **Performance** |  |
 | Fire rate | 800 rounds/min |
 | Muzzle velocity | 400 m/s |
 | Effective range | 200 m |
 | Standard magazine | MP5 30 RND Magazine |
+| **Availability** |  |
 | Vendor price | 1800 |
 | Unlock level | 1 |
 | Internal name | WEPN_028 |

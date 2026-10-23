@@ -19,7 +19,9 @@ The wiki (`_wiki/`, served at `/wiki/`) turns the data pages into articles a pla
 
 - Article front matter: `title`, `parent` (exactly the hub title), `description` (one sentence, shown on cards). Add `has_children: true` and use `grand_parent` only if an article really has sub-articles.
 - Hub order: Weapons 1, Equipment 2, Vehicles 3, Game Mechanics 4, Game Modes & Maps 5, Progression & Economy 6, Guides 7, Patch Notes 8.
-- A hub page has a short intro, a sortable overview table of everything it covers (one row per article, linking to it), then `{% include wiki-cards.html parent="<hub title>" %}`.
+- A hub page has a short intro and an overview table of everything it covers (one row per article, linking to it). Hubs with groups (see below) use one `##` section and table per group, like a game wiki's weapon list. Every table with three or more rows gets click-to-sort headers automatically.
+- Groups: an article may set `group:` in its front matter (e.g. `group: "Assault rifles"`). The group names and their order per hub live in `_data/wiki_groups.yml`; the navbox at the bottom of every article (`_includes/wiki-navbox.html`, added by `_layouts/wiki.html`) shows one row per group. Articles without a group go in a final unlabelled row. Do not hand-write a list of sibling articles; the navbox does it.
+- Main page tiles are data: edit `_data/wiki_portals.yml` (label, Material Symbols icon name, site path).
 
 ## Voice
 
@@ -44,6 +46,7 @@ The wiki (`_wiki/`, served at `/wiki/`) turns the data pages into articles a pla
    {: .wiki-infobox }
    ```
 
+   Group rows inside the infobox are written `| **Performance** | |` (bold label, empty value) and are drawn as bands. Suggested bands: weapons General / Performance / Availability; vehicles General / Durability / Availability.
 3. Lead paragraph (2–4 sentences): what it is and its role.
 4. Sections with `##` headings, in this order where they apply:
    - Weapons: Overview, Stats, Damage (body parts, range falloff, armor), Ammunition, Attachments, Cost and unlocking, Season 2 changes, See also, Sources.

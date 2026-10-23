@@ -1,6 +1,7 @@
 ---
 title: "M113 APC SV"
 parent: "Vehicles"
+group: "Armored vehicles"
 description: "Ten-seat tracked armored personnel carrier that rifle fire cannot destroy, sold under three faction names as a spawn vehicle."
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Fixed-wing airplane"
 parent: "Vehicles"
+group: "Aircraft"
 description: "Fixed-wing airplane with a driver seat and one passenger seat; the data has its flight model but no shop listing or display name."
 ---
 

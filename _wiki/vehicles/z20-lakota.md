@@ -1,6 +1,7 @@
 ---
 title: "Z20 Lakota"
 parent: "Vehicles"
+group: "Helicopters"
 description: "Large 13-seat transport helicopter with no weapons, the helicopter with the most seats in the vehicle vendor."
 ---
 

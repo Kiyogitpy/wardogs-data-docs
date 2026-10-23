@@ -1,6 +1,7 @@
 ---
 title: "Ural Defender"
 parent: "Vehicles"
+group: "Cars and trucks"
 description: "Three-seat protected version of the Ural heavy truck with no weapons, sold for 7,200 cash."
 ---
 

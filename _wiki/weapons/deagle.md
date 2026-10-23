@@ -1,6 +1,7 @@
 ---
 title: "Deagle"
 parent: "Weapons"
+group: "Pistols"
 description: "The Deagle pistol: fire rate, damage by body part, range falloff, ammunition, attachments and Season 2 changes."
 ---
 
@@ -8,13 +9,16 @@ description: "The Deagle pistol: fire rate, damage by body part, range falloff, 
 
 | Deagle | |
 |---|---|
+| **General** |  |
 | Class | Pistol |
 | Caliber | 50AE |
 | Fire modes | Semi-automatic |
+| **Performance** |  |
 | Fire rate | 267 rounds/min |
 | Muzzle velocity | 470 m/s |
 | Effective range | not yet known |
 | Standard magazine | Deagle 7 RND Magazine |
+| **Availability** |  |
 | Vendor price | 750 |
 | Unlock level | 1 |
 | Internal name | WEPN_027 |

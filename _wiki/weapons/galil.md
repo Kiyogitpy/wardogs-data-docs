@@ -1,6 +1,7 @@
 ---
 title: "Galil"
 parent: "Weapons"
+group: "Assault rifles"
 description: "The Galil assault rifle: fire rate, damage by body part, range falloff, ammunition, attachments and Season 2 changes."
 ---
 
@@ -8,13 +9,16 @@ description: "The Galil assault rifle: fire rate, damage by body part, range fal
 
 | Galil | |
 |---|---|
+| **General** |  |
 | Class | Assault rifle |
 | Caliber | 5.56x45mm |
 | Fire modes | Fully automatic and semi-automatic |
+| **Performance** |  |
 | Fire rate | 650 rounds/min |
 | Muzzle velocity | 950 m/s |
 | Effective range | 400 m |
 | Standard magazine | Galil 35 RND Magazine |
+| **Availability** |  |
 | Vendor price | 2000 |
 | Unlock level | 1 |
 | Internal name | WEPN_029 |

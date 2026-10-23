@@ -44,6 +44,14 @@ CLASS_NAME = {
     "Pistol": "Pistol", "SMG": "Submachine gun", "Shotgun": "Shotgun",
     "Sniper": "Sniper rifle", "Launcher": "Launcher",
 }
+CLASS_ORDER = ["AR", "DMR", "LMG", "SMG", "Pistol", "Shotgun", "Sniper", "Launcher"]
+
+
+def class_group(arch):
+    """Navbox and hub group name; the order is set in _data/wiki_groups.yml."""
+    return CLASS_NAME[arch] + "s"
+
+
 CLASS_BLURB = {
     "AR": "Assault rifles are the AR class in the weapon data.",
     "DMR": "Marksman rifles are the DMR class in the weapon data. Most are semi-automatic rifles.",
@@ -275,18 +283,22 @@ def build_weapon(wid):
     cls_l = s["cls"].lower()
     art = "an" if cls_l[:1] in "aeiou" else "a"
 
+    # A ("**Band**", "") row is drawn as a group band inside the infobox.
     infobox_rows = [
+        ("**General**", ""),
         ("Class", s["cls"]),
         ("Caliber", s["cal"]),
         ("Fire modes", s["modes_cap"]),
+        ("**Performance**", ""),
         ("Fire rate", s["rpm"]),
         ("Muzzle velocity", s["speed"]),
         ("Effective range", s["range"]),
         ("Standard magazine", s["mag"]),
+        ("**Availability**", ""),
         ("Vendor price", s["price"] or "not yet known"),
         ("Unlock level", s["unlock"] or "not yet known"),
+        ("Internal name", code),
     ]
-    infobox_rows.append(("Internal name", code))
     infobox = [f"| {title} | |", "|---|---|"] + [f"| {a} | {b} |" for a, b in infobox_rows] + ["{: .wiki-infobox }"]
 
     if is_launcher:
@@ -407,8 +419,8 @@ def build_weapon(wid):
     return title, desc, "\n".join(out)
 
 
-def front_matter(title, desc):
-    return f"---\ntitle: \"{title}\"\nparent: \"Weapons\"\ndescription: \"{desc}\"\n---\n\n"
+def front_matter(title, desc, group):
+    return f"---\ntitle: \"{title}\"\nparent: \"Weapons\"\ngroup: \"{group}\"\ndescription: \"{desc}\"\n---\n\n"
 
 
 def ammo_page():
@@ -489,43 +501,45 @@ def attachments_page():
     return "\n".join(body)
 
 
-def hub_page(entries):
+def hub_page(sections):
     head = ("---\ntitle: Weapons\nnav_order: 1\nwiki_hub: true\nhas_children: true\n"
             "description: \"Every player weapon, the ammunition they use and the attachments that change them.\"\n---\n\n")
     body = ["# Weapons", "",
             "Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun, sniper rifle and launcher "
-            "in the weapon data that a player can get. Each name links to its article. Ammunition and attachments have their own pages.", "",
-            "| Weapon | Class | Caliber | Fire rate | Standard magazine | Vendor price |",
-            "|---|---|---|---|---|---|"]
-    body += entries
-    body += ["", "{% include wiki-cards.html parent=\"Weapons\" %}", ""]
+            "in the weapon data that a player can get, grouped by class. Each name links to its article; click a column heading to sort. "
+            "[Ammunition](weapons/ammunition.md) and [Attachments](weapons/attachments.md) have their own pages.", ""]
+    for arch in CLASS_ORDER:
+        if sections.get(arch):
+            body += [f"## {class_group(arch)}", "",
+                     "| Weapon | Caliber | Fire rate | Standard magazine | Vendor price |",
+                     "|---|---|---:|---|---:|"] + sections[arch] + [""]
     return head + "\n".join(body)
 
 
 def main():
     os.makedirs(OUT, exist_ok=True)
-    rows, count = [], 0
+    sections, count = {}, 0
     for wid in loadouts["weapons"]:
         code = code_for(wid)
         if code in SKIP:
             continue
         title, desc, text = build_weapon(wid)
         slug = slugify(title)
+        arch = loadouts["items"][wid]["archetype"]
         with open(os.path.join(OUT, slug + ".md"), "w", encoding="utf-8", newline="\n") as f:
-            f.write(front_matter(title, desc) + text)
+            f.write(front_matter(title, desc, class_group(arch)) + text)
         s = stats(wid)
-        rows.append(f"| [{title}](weapons/{slug}.md) | {s['cls']} | {s['cal']} | {s['rpm']} | {s['mag']} | {s['price'] or 'not yet known'} |")
+        sections.setdefault(arch, []).append(
+            f"| [{title}](weapons/{slug}.md) | {s['cal']} | {s['rpm']} | {s['mag']} | {s['price'] or 'not yet known'} |")
         count += 1
-    ammo = front_matter("Ammunition", "Bullet and shell types, what each does to armor and flesh, and which weapons use them.") + ammo_page()
+    ammo = front_matter("Ammunition", "Bullet and shell types, what each does to armor and flesh, and which weapons use them.", "Reference") + ammo_page()
     with open(os.path.join(OUT, "ammunition.md"), "w", encoding="utf-8", newline="\n") as f:
         f.write(ammo)
-    att = front_matter("Attachments", "The parts that fit on weapons, the slots they go into and what each category changes.") + attachments_page()
+    att = front_matter("Attachments", "The parts that fit on weapons, the slots they go into and what each category changes.", "Reference") + attachments_page()
     with open(os.path.join(OUT, "attachments.md"), "w", encoding="utf-8", newline="\n") as f:
         f.write(att)
-    rows.append("| [Ammunition](weapons/ammunition.md) | Bullet and shell types | - | - | - | - |")
-    rows.append("| [Attachments](weapons/attachments.md) | Muzzles, sights, magazines and more | - | - | - | - |")
     with open(os.path.join(WIKI, "weapons.md"), "w", encoding="utf-8", newline="\n") as f:
-        f.write(hub_page(rows))
+        f.write(hub_page(sections))
     print(f"wrote {count} weapon articles, ammunition, attachments and the hub")
 
 

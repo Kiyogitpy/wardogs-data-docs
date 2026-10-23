@@ -1,6 +1,7 @@
 ---
 title: "Dune Buggy"
 parent: "Vehicles"
+group: "Cars and trucks"
 description: "Light three-seat buggy with a rear-biased drive and no weapons, sold for 1,500 cash."
 ---
 

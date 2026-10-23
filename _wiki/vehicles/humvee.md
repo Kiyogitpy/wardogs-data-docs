@@ -1,6 +1,7 @@
 ---
 title: "Humvee"
 parent: "Vehicles"
+group: "Cars and trucks"
 description: "Four-seat light armored SUV with no weapons, built for off-road travel and the base model of the Humvee family."
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Evo-3 Ultra"
 parent: "Weapons"
+group: "Light machine guns"
 description: "The Evo-3 Ultra light machine gun: fire rate, damage by body part, range falloff, ammunition, attachments and Season 2 changes."
 ---
 
@@ -8,13 +9,16 @@ description: "The Evo-3 Ultra light machine gun: fire rate, damage by body part,
 
 | Evo-3 Ultra | |
 |---|---|
+| **General** |  |
 | Class | Light machine gun |
 | Caliber | .308 Win |
 | Fire modes | Fully automatic and semi-automatic |
+| **Performance** |  |
 | Fire rate | 700 rounds/min |
 | Muzzle velocity | 790 m/s |
 | Effective range | 1000 m |
 | Standard magazine | Evo-3 Ultra 50 RND Box |
+| **Availability** |  |
 | Vendor price | 7250 |
 | Unlock level | 1 |
 | Internal name | WEPN_036 |

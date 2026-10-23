@@ -1,6 +1,7 @@
 ---
 title: "Vehicle damage"
 parent: "Vehicles"
+group: "Reference"
 description: "How hits, explosions and part damage work on Wardogs vehicles, and which parts decide whether a vehicle is destroyed."
 ---
 

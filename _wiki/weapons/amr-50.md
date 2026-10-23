@@ -1,6 +1,7 @@
 ---
 title: "AMR 50"
 parent: "Weapons"
+group: "Sniper rifles"
 description: "The AMR 50 sniper rifle: fire rate, damage by body part, range falloff, ammunition, attachments and Season 2 changes."
 ---
 
@@ -8,13 +9,16 @@ description: "The AMR 50 sniper rifle: fire rate, damage by body part, range fal
 
 | AMR 50 | |
 |---|---|
+| **General** |  |
 | Class | Sniper rifle |
 | Caliber | .50Cal |
 | Fire modes | Semi-automatic |
+| **Performance** |  |
 | Fire rate | 41.5 rounds/min |
 | Muzzle velocity | 900 m/s |
 | Effective range | 2000 m |
 | Standard magazine | AMR 50 5 RND Magazine |
+| **Availability** |  |
 | Vendor price | 14800 |
 | Unlock level | 1 |
 | Internal name | SR_04 |

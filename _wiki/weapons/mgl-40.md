@@ -1,6 +1,7 @@
 ---
 title: "MGL-40"
 parent: "Weapons"
+group: "Launchers"
 description: "The MGL-40 launcher: fire rate, damage by body part, range falloff, ammunition, attachments and Season 2 changes."
 ---
 
@@ -8,13 +9,16 @@ description: "The MGL-40 launcher: fire rate, damage by body part, range falloff
 
 | MGL-40 | |
 |---|---|
+| **General** |  |
 | Class | Launcher |
 | Caliber | None (explosive) |
 | Fire modes | Semi-automatic |
+| **Performance** |  |
 | Fire rate | 75 rounds/min |
 | Muzzle velocity | not yet known |
 | Effective range | not yet known |
 | Standard magazine | MMGL Internal Mag |
+| **Availability** |  |
 | Vendor price | 7500 |
 | Unlock level | 1 |
 | Internal name | MMGL |

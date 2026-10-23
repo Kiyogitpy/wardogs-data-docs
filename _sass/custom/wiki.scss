@@ -1,0 +1,277 @@
+// Wardogs Wiki look, modelled on the Escape from Tarkov wiki's layout: olive header bands with
+// tan type over the site's charcoal, a banded infobox, portal boxes of icon tiles on the main
+// page and a navbox under every article. Everything is scoped to .wiki (_layouts/wiki.html).
+
+$wiki-band: #2a2e22;       // olive drab header bands
+$wiki-band-deep: #20231a;  // group cells, tile plates
+$wiki-edge: #3d4232;       // band and box borders
+$wiki-tan: #cdb98a;        // band type, group labels, focus
+$wiki-head: "Barlow Condensed", "Arial Narrow", sans-serif;
+
+.wiki {
+  h1, h2 {
+    font-family: $wiki-head;
+    letter-spacing: 0;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+  h2 {
+    font-size: 1.9rem;
+    font-weight: 600;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid $wiki-edge;
+    display: flow-root; // text wraps beside the infobox; the rule stops at its edge
+  }
+  h3 {
+    font-size: 1.15rem;
+    color: $wiki-tan;
+  }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid $wiki-tan;
+    outline-offset: 2px;
+  }
+}
+
+// One olive bar used by portal boxes, the navbox and the main page boxes.
+.wiki .wiki-band {
+  margin: 0;
+  padding: 0.45rem 0.9rem;
+  background: $wiki-band;
+  border-bottom: 1px solid $wiki-edge;
+  color: $wiki-tan;
+  font-family: $wiki-head;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+// Infobox. just-the-docs wraps every table in .table-wrapper, so the wrapper is what floats.
+.main-content .table-wrapper:has(> table.wiki-infobox) {
+  margin: 0 0 1.5rem;
+  border: 1px solid $wiki-edge;
+  border-radius: $radius-small;
+  box-shadow: none;
+  background: $ue-panel;
+
+  @media (min-width: 60rem) {
+    float: right;
+    width: 21rem;
+    margin: 0.4rem 0 1.25rem 1.75rem;
+  }
+}
+
+.main-content table.wiki-infobox {
+  min-width: 100%;
+  margin: 0;
+  background: none;
+
+  thead th {
+    background: $wiki-band;
+    border-bottom: 1px solid $wiki-edge;
+    color: $ue-white;
+    font-family: $wiki-head;
+    font-size: 1.45rem !important; // just-the-docs sets th/td sizes with !important
+    font-weight: 700;
+    line-height: 1.15;
+    padding: 0.6rem 0.9rem;
+    text-align: left;
+    &:empty { padding: 0; }
+  }
+  td {
+    background: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 0.4rem 0.9rem;
+    font-size: 0.9rem;
+    vertical-align: top;
+  }
+  td:first-child { color: $ue-text-dim; white-space: nowrap; }
+  td:last-child { color: $ue-white; }
+  tr:last-child td { border-bottom: 0; }
+
+  // A row like `| **Performance** | |` is a group band inside the box.
+  tr:has(> td:last-child:empty) td {
+    background: $wiki-band-deep;
+    color: $wiki-tan;
+    font-family: $wiki-head;
+    font-size: 1rem !important;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    strong { font-weight: 600; }
+  }
+}
+
+// Sortable table headers (assets/js/wiki.js).
+.wiki .wiki-sort {
+  all: unset;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+
+  &::after {
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    border: solid $ue-text-dim;
+    border-width: 0 1.5px 1.5px 0;
+    transform: rotate(45deg) scale(0.75);
+    opacity: 0.45;
+  }
+  &[aria-sort="ascending"]::after { transform: rotate(-135deg) scale(0.75); opacity: 1; border-color: $wiki-tan; }
+  &[aria-sort="descending"]::after { opacity: 1; border-color: $wiki-tan; }
+  &:focus-visible { outline: 2px solid $wiki-tan; outline-offset: 2px; }
+}
+
+// Navbox under each article: hub title band, then one row per group.
+.wiki .wiki-navbox {
+  clear: both;
+  margin: 3.5rem 0 1rem;
+  border: 1px solid $wiki-edge;
+  border-radius: $radius-small;
+  overflow: hidden;
+  font-size: 0.875rem;
+
+  .wiki-navbox-title {
+    @extend .wiki-band;
+    text-align: center;
+    a { color: $wiki-tan; }
+  }
+  .wiki-navbox-row {
+    display: grid;
+    grid-template-columns: 10.5rem 1fr;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    &:first-of-type { border-top: 0; }
+    @media (max-width: 40rem) { grid-template-columns: 1fr; }
+  }
+  .wiki-navbox-row > .wiki-navbox-links:only-child { grid-column: 1 / -1; }
+  .wiki-navbox-group {
+    padding: 0.45rem 0.8rem;
+    background: $wiki-band-deep;
+    color: $wiki-tan;
+    font-family: $wiki-head;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: right;
+    @media (max-width: 40rem) { text-align: left; }
+  }
+  .wiki-navbox-links {
+    padding: 0.45rem 0.8rem;
+    line-height: 1.7;
+    a { white-space: nowrap; }
+    a + a::before {
+      content: "\2022";
+      color: $ue-text-dim;
+      padding: 0 0.5rem;
+      display: inline-block;
+    }
+    a[aria-current="page"] { color: $ue-white; font-weight: 600; }
+  }
+}
+
+// Main page.
+.wiki .wiki-top {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+  @media (max-width: 60rem) { grid-template-columns: 1fr; }
+}
+
+.wiki .wiki-box {
+  border: 1px solid $wiki-edge;
+  border-radius: $radius-small;
+  background: $ue-panel;
+  overflow: hidden;
+
+  .wiki-box-body {
+    padding: 1rem 1.1rem 1.1rem;
+    p, ul { margin: 0 0 0.75rem; max-width: none; }
+    ul { padding-left: 1.1rem; }
+    li { margin-bottom: 0.35rem; font-size: 0.9rem; }
+    > :last-child { margin-bottom: 0; }
+  }
+}
+
+.wiki .wiki-welcome {
+  h1 { margin: 0 0 0.6rem; font-size: 3.4rem; }
+  .wiki-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.75rem;
+    margin: 0.9rem 0 0;
+    padding: 0.75rem 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 0.85rem;
+    div { display: flex; gap: 0.4rem; }
+    dt { color: $ue-text-dim; }
+    dd { margin: 0; color: $ue-white; }
+  }
+}
+
+.wiki .wiki-portals {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.wiki .wiki-portal {
+  @extend .wiki-box;
+}
+
+.wiki .wiki-tiles {
+  list-style: none;
+  margin: 0;
+  padding: 0.75rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(5.75rem, 1fr));
+  gap: 0.5rem;
+
+  li { margin: 0; }
+  li::before { content: none; }
+}
+
+.wiki .wiki-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  height: 100%;
+  padding: 0.6rem 0.3rem 0.55rem;
+  border: 1px solid transparent;
+  border-radius: $radius-small;
+  color: $ue-text;
+  font-size: 0.8rem;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+
+  .wiki-icon {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    background: $wiki-band-deep;
+    border: 1px solid $wiki-edge;
+    border-radius: 4px;
+    color: $wiki-tan;
+    font-family: "Material Symbols Sharp";
+    font-size: 1.6rem;
+    line-height: 1;
+    font-feature-settings: "liga";
+    -webkit-font-feature-settings: "liga";
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  &:hover {
+    border-color: $wiki-edge;
+    background: rgba(255, 255, 255, 0.03);
+    color: $ue-white;
+    text-decoration: none;
+    .wiki-icon { border-color: $wiki-tan; }
+  }
+}

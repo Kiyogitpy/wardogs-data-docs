@@ -1,6 +1,7 @@
 ---
 title: "Kodiak"
 parent: "Vehicles"
+group: "Cars and trucks"
 description: "Four-seat SUV with a driver and three passengers and no weapons, the base model of the Kodiak family."
 ---
 

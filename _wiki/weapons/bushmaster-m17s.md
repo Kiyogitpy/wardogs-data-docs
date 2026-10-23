@@ -1,6 +1,7 @@
 ---
 title: "Bushmaster M17S"
 parent: "Weapons"
+group: "Assault rifles"
 description: "The Bushmaster M17S assault rifle: fire rate, damage by body part, range falloff, ammunition, attachments and Season 2 changes."
 ---
 
@@ -8,13 +9,16 @@ description: "The Bushmaster M17S assault rifle: fire rate, damage by body part,
 
 | Bushmaster M17S | |
 |---|---|
+| **General** |  |
 | Class | Assault rifle |
 | Caliber | 5.56x45mm |
 | Fire modes | Semi-automatic and burst fire |
+| **Performance** |  |
 | Fire rate | 700 rounds/min |
 | Muzzle velocity | 715 m/s |
 | Effective range | 300 m |
 | Standard magazine | STANAG 20 RND Magazine |
+| **Availability** |  |
 | Vendor price | 0 |
 | Unlock level | 1 |
 | Internal name | WEPN_033 |

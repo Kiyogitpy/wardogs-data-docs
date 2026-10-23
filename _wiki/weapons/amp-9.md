@@ -1,6 +1,7 @@
 ---
 title: "AMP-9"
 parent: "Weapons"
+group: "Submachine guns"
 description: "The AMP-9 submachine gun: fire rate, damage by body part, range falloff, ammunition, attachments and Season 2 changes."
 ---
 
@@ -8,13 +9,16 @@ description: "The AMP-9 submachine gun: fire rate, damage by body part, range fa
 
 | AMP-9 | |
 |---|---|
+| **General** |  |
 | Class | Submachine gun |
 | Caliber | 9x19mm |
 | Fire modes | Fully automatic and semi-automatic |
+| **Performance** |  |
 | Fire rate | 900 rounds/min |
 | Muzzle velocity | 400 m/s |
 | Effective range | not yet known |
 | Standard magazine | AMP-9 30 RND Magazine |
+| **Availability** |  |
 | Vendor price | 1375 |
 | Unlock level | 1 |
 | Internal name | MP9 |

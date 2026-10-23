@@ -1,6 +1,7 @@
 ---
 title: "Judge"
 parent: "Weapons"
+group: "Pistols"
 description: "The Judge pistol: fire rate, damage by body part, range falloff, ammunition, attachments and Season 2 changes."
 ---
 
@@ -8,13 +9,16 @@ description: "The Judge pistol: fire rate, damage by body part, range falloff, a
 
 | Judge | |
 |---|---|
+| **General** |  |
 | Class | Pistol |
 | Caliber | .45 Colt |
 | Fire modes | Semi-automatic |
+| **Performance** |  |
 | Fire rate | 200 rounds/min |
 | Muzzle velocity | 335 m/s |
 | Effective range | 50 m |
 | Standard magazine | Judge Bullet Cylinder |
+| **Availability** |  |
 | Vendor price | 250 |
 | Unlock level | 1 |
 | Internal name | Judge |

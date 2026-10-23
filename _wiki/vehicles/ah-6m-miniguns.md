@@ -1,6 +1,7 @@
 ---
 title: "AH-6M [Miniguns]"
 parent: "Vehicles"
+group: "Helicopters"
 description: "Small attack helicopter of the Little Bird family with two M134D miniguns."
 ---
 

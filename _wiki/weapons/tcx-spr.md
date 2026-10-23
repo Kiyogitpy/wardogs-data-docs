@@ -1,6 +1,7 @@
 ---
 title: "TCX-SPR"
 parent: "Weapons"
+group: "Marksman rifles"
 description: "The TCX-SPR marksman rifle: fire rate, damage by body part, range falloff, ammunition, attachments and Season 2 changes."
 ---
 
@@ -8,13 +9,16 @@ description: "The TCX-SPR marksman rifle: fire rate, damage by body part, range 
 
 | TCX-SPR | |
 |---|---|
+| **General** |  |
 | Class | Marksman rifle |
 | Caliber | 7.62x39mm |
 | Fire modes | Fully automatic and semi-automatic |
+| **Performance** |  |
 | Fire rate | 800 rounds/min |
 | Muzzle velocity | 700 m/s |
 | Effective range | 400 m |
 | Standard magazine | TCX-SPR 28 RND Magazine |
+| **Availability** |  |
 | Vendor price | 3200 |
 | Unlock level | 1 |
 | Internal name | WEPN_037 |

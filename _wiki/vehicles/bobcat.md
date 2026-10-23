@@ -1,6 +1,7 @@
 ---
 title: "Bobcat"
 parent: "Vehicles"
+group: "Cars and trucks"
 description: "Two-seat quad bike, the cheapest wheeled vehicle in the vehicle vendor at 500 cash, with a light frame and low health."
 ---
 

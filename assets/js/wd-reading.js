@@ -99,6 +99,8 @@
   function prepareTable(table) {
     var head = table.tHead, body = table.tBodies[0];
     if (!head || !body || !head.rows.length) return;
+    // A wiki infobox is a fixed stat box, never split or filtered.
+    if (table.classList.contains("wiki-infobox")) return;
     var wrapper = table.parentNode;
     var cols = head.rows[0].cells.length, rows = body.rows.length;
     markNumberColumns(table);

@@ -1,6 +1,7 @@
 ---
 title: "SVD"
 parent: "Weapons"
+group: "Marksman rifles"
 description: "The SVD marksman rifle: fire rate, damage by body part, range falloff, ammunition, attachments and Season 2 changes."
 ---
 
@@ -8,13 +9,16 @@ description: "The SVD marksman rifle: fire rate, damage by body part, range fall
 
 | SVD | |
 |---|---|
+| **General** |  |
 | Class | Marksman rifle |
 | Caliber | 7.62x54mm |
 | Fire modes | Semi-automatic |
+| **Performance** |  |
 | Fire rate | 480 rounds/min |
 | Muzzle velocity | 800 m/s |
 | Effective range | 800 m |
 | Standard magazine | SVD 10 RND Magazine |
+| **Availability** |  |
 | Vendor price | 4800 |
 | Unlock level | 1 |
 | Internal name | SVDM |

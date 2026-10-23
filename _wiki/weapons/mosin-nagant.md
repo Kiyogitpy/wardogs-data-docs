@@ -1,6 +1,7 @@
 ---
 title: "Mosin Nagant"
 parent: "Weapons"
+group: "Sniper rifles"
 description: "The Mosin Nagant sniper rifle: fire rate, damage by body part, range falloff, ammunition, attachments and Season 2 changes."
 ---
 
@@ -8,13 +9,16 @@ description: "The Mosin Nagant sniper rifle: fire rate, damage by body part, ran
 
 | Mosin Nagant | |
 |---|---|
+| **General** |  |
 | Class | Sniper rifle |
 | Caliber | 7.62x54mm |
 | Fire modes | Semi-automatic |
+| **Performance** |  |
 | Fire rate | 46 rounds/min |
 | Muzzle velocity | 865 m/s |
 | Effective range | 500 m |
 | Standard magazine | Mosin Standard Mag |
+| **Availability** |  |
 | Vendor price | 4500 |
 | Unlock level | 1 |
 | Internal name | WEPN_017 |
