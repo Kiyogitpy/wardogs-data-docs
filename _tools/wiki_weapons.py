@@ -205,7 +205,7 @@ def code_for(wid):
 
 def page_title(wid):
     if code_for(wid) == "AK74M":
-        return "AK-74M"  # the player-facing name; the game displays it as AK74
+        return "AK74"  # the shop and in-game display name
     return loadouts["items"][wid]["display"]
 
 
@@ -286,8 +286,6 @@ def build_weapon(wid):
         ("Vendor price", s["price"] or "not yet known"),
         ("Unlock level", s["unlock"] or "not yet known"),
     ]
-    if code == "AK74M":
-        infobox_rows.append(("In-game name", "AK74"))
     infobox_rows.append(("Internal name", code))
     infobox = [f"| {title} | |", "|---|---|"] + [f"| {a} | {b} |" for a, b in infobox_rows] + ["{: .wiki-infobox }"]
 
@@ -393,7 +391,7 @@ def build_weapon(wid):
     else:
         out += ["The Season 2 changes page lists no changes for this weapon.", ""]
 
-    out += ["## See also", "", "- [Weapons](../weapons.md)", "- [Ammunition](ammunition.md)", "- [Attachments](attachments.md)", ""]
+    out += ["## See also", "", "- [Weapons](../weapons.md)", "- [Ammunition](ammunition.md)", "- [Attachments](attachments.md)", "- [Choosing Ammo](../guides/choosing-ammo.md)", "- [Ballistics](../game-mechanics/ballistics.md)", "- [Health and Damage](../game-mechanics/health-and-damage.md)", "- [Spread and Recoil](../game-mechanics/spread-and-recoil.md)", ""]
 
     out += ["## Sources", "",
             "- [Weapon Shop and Parts](../../game-features/Wardogs_WeaponShop_v1.md): price, unlock level, default magazine",
@@ -447,7 +445,12 @@ def ammo_page():
             f"[{page_title(wid)}]({slugify(page_title(wid))}.md)")
     for k in sorted(by_cal):
         body.append(f"| {k} | {', '.join(by_cal[k])} |")
-    body += ["", "## Sources", "",
+    body += ["", "## See also", "",
+             "- [Choosing Ammo](../guides/choosing-ammo.md), which round to load against each armor level",
+             "- [Armor](../game-mechanics/armor.md)",
+             "- [Penetration and Ricochet](../game-mechanics/penetration-and-ricochet.md)",
+             "- [Ballistics](../game-mechanics/ballistics.md)",
+             "", "## Sources", "",
              f"- [weapon-damage.json]({GH}assets/data/weapon-damage.json)",
              f"- [ammo-availability.json]({GH}assets/data/ammo-availability.json)",
              "- [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md)",
@@ -474,6 +477,10 @@ def attachments_page():
         else:
             body.append(f"- **{cat}**: no effect entries in the loadout data.")
     body += ["", "Each weapon article lists its own slots and default parts under its Attachments section.", "",
+             "## See also", "",
+             "- [Spread and Recoil](../game-mechanics/spread-and-recoil.md), where bipods, muzzle devices and foregrips change spread",
+             "- [Weapons](../weapons.md)",
+             "",
              "## Sources", "",
              f"- [weapon-loadouts.json]({GH}assets/data/weapon-loadouts.json): slot, part and effect data",
              "- [Attachments and Platforms](../../game-features/Wardogs_AttachmentsPlatforms_v1.md)",

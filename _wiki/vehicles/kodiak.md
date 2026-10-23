@@ -14,7 +14,7 @@ description: "Four-seat SUV with a driver and three passengers and no weapons, t
 | Unlock level | 0 |
 | Main health | 400 HP |
 | Top speed | 154 (as stored) |
-| Rifle damage taken | 5% |
+| Rifle damage taken (derived) | 5% |
 | Internal name | WHL_02 (default variant) |
 {: .wiki-infobox }
 
@@ -41,7 +41,7 @@ Main health is 400 HP. The Kodiak has separate health for its engine (400 HP), f
 
 Rifle rounds do 5% of their damage against the hull. Bullets that hit a wheel can destroy the vehicle faster than hits to the body.
 
-Full-power, point-blank hits needed to destroy the main health:
+Hits needed to destroy the main health. These counts are derived by simulating the damage rules with full-power, point-blank, standard (FMJ) hits; they are estimates from the data, not measured in game:
 
 | Ammunition | Hits to destroy | Faster route |
 |---|---:|---|

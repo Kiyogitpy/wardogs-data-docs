@@ -14,7 +14,7 @@ description: "Five-seat Kodiak SUV with a ring-mounted M249 machine gun, sold fo
 | Unlock level | 0 |
 | Main health | 400 HP |
 | Top speed | 154 (as stored) |
-| Rifle damage taken | 5% (from the Kodiak damage rules) |
+| Rifle damage taken (derived) | 5% (from the Kodiak damage rules) |
 | Internal name | WHL_02 (machine gun variant) |
 {: .wiki-infobox }
 

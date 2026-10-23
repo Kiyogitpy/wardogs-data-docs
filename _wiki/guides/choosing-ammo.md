@@ -77,6 +77,8 @@ For how armor works, see [Armor](../game-mechanics/armor.md). For how far a bull
 - [Armor](../game-mechanics/armor.md)
 - [Penetration and Ricochet](../game-mechanics/penetration-and-ricochet.md)
 - [Beginner's Guide](beginners-guide.md)
+- [Ammunition](../weapons/ammunition.md)
+- [Body armor](../equipment/body-armor.md)
 
 ## Sources
 

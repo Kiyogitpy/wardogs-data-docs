@@ -87,7 +87,7 @@ Base values for in-match actions are on [Cash and Rewards](cash-and-rewards.md).
 
 - The King of the Hill challenge table went from no rows to 60.
 - Vehicle destroyed rewards split by variant, for example Kodiak now has Default, Machine Gun and Pickup versions.
-- Four challenge state trees were added for wagers: passengers delivered, rewarded kills, rewarded revives and rewarded vehicles destroyed.
+- Four challenges were added for wagers: passengers delivered, rewarded kills, rewarded revives and rewarded vehicles destroyed.
 - Team Offence adds a punish challenge and a teamkill voter challenge. See [Team Offence](../game-modes-and-maps/team-offence.md).
 
 ## See also

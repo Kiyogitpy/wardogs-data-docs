@@ -14,7 +14,7 @@ description: "Six-seat pickup version of the Kodiak SUV with no weapons, sold fo
 | Unlock level | 0 |
 | Main health | 400 HP |
 | Top speed | 154 (as stored) |
-| Rifle damage taken | 5% |
+| Rifle damage taken (derived) | 5% |
 | Internal name | WHL_02 (pickup variant) |
 {: .wiki-infobox }
 

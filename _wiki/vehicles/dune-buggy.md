@@ -14,7 +14,7 @@ description: "Light three-seat buggy with a rear-biased drive and no weapons, so
 | Unlock level | 0 |
 | Main health | 400 HP |
 | Top speed | 130 (as stored) |
-| Rifle damage taken | 10% |
+| Rifle damage taken (derived) | 10% |
 | Internal name | WHL_06 |
 {: .wiki-infobox }
 
@@ -41,7 +41,7 @@ Main health is 400 HP. The buggy has separate health for its engine (400 HP), fu
 
 Rifle rounds do 10% of their damage against the hull, the highest share of any truck or SUV. The fuel tank takes an extra 200% from bullets.
 
-Full-power, point-blank hits needed to destroy the main health:
+Hits needed to destroy the main health. These counts are derived by simulating the damage rules with full-power, point-blank, standard (FMJ) hits; they are estimates from the data, not measured in game:
 
 | Ammunition | Hits to destroy | Faster route |
 |---|---:|---|

@@ -14,7 +14,7 @@ description: "Armed version of the Z20 Lakota helicopter with two M134D miniguns
 | Unlock level | 0 |
 | Main health | 600 HP |
 | Top speed | 445 (as stored) |
-| Rifle damage taken | 5% |
+| Rifle damage taken (derived) | 5% |
 | Internal name | ROT_04 (miniguns variant) |
 {: .wiki-infobox }
 
@@ -60,7 +60,7 @@ Rifle damage works as on the [Z20 Lakota](z20-lakota.md). The tail rotor is the 
 ## See also
 
 - [Z20 Lakota](z20-lakota.md), the transport model
-- [AH-6M](ah-6m.md), the smaller miniguns helicopter
+- [AH-6M [Miniguns]](ah-6m-miniguns.md), the smaller miniguns helicopter
 - [Vehicle damage](vehicle-damage.md)
 
 ## Sources

@@ -102,6 +102,9 @@ The Level 1 and Level 2 armor and helmets, and the Pilot and Tank helmets, did n
 - [Medical Items](medical-items.md)
 - [Utility Items](utility-items.md), including the Tactical Vests, which are not armor
 - [Grenades and Explosives](grenades-and-explosives.md)
+- [Armor (mechanic)](../game-mechanics/armor.md)
+- [Choosing Ammo](../guides/choosing-ammo.md)
+- [Health and Damage](../game-mechanics/health-and-damage.md)
 
 ## Sources
 

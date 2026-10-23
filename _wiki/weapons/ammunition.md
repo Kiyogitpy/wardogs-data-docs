@@ -42,12 +42,19 @@ Head hits follow the same pattern with higher numbers. Armor covers different bo
 | .45 Colt | [Judge](judge.md) |
 | .50Cal | [AMR 50](amr-50.md) |
 | 12g | [M500](m500.md), [MP43](mp43.md) |
-| 5.45x39mm | [AK-74M](ak-74m.md) |
+| 5.45x39mm | [AK74](ak74.md) |
 | 5.56x45mm | [A-91](a-91.md), [Bushmaster M17S](bushmaster-m17s.md), [Galil](galil.md), [KH-2002](kh-2002.md), [M4](m4.md), [T-21](t-21.md), [M249 SAW](m249-saw.md), [Scout Rifle TD](scout-rifle-td.md) |
 | 50AE | [Deagle](deagle.md) |
 | 7.62x39mm | [SKS](sks.md), [TCX-SPR](tcx-spr.md) |
 | 7.62x54mm | [SVD](svd.md), [PKM](pkm.md), [Mosin Nagant](mosin-nagant.md), [SV98](sv98.md) |
 | 9x19mm | [GGX 17](ggx-17.md), [GGX 18](ggx-18.md), [AMP-9](amp-9.md), [MP5](mp5.md), [PP-19 Bizon](pp-19-bizon.md), [PP-19 Vityaz](pp-19-vityaz.md) |
+
+## See also
+
+- [Choosing Ammo](../guides/choosing-ammo.md), which round to load against each armor level
+- [Armor](../game-mechanics/armor.md)
+- [Penetration and Ricochet](../game-mechanics/penetration-and-ricochet.md)
+- [Ballistics](../game-mechanics/ballistics.md)
 
 ## Sources
 

@@ -14,7 +14,7 @@ description: "Five-seat Wolf-110 SUV with a ring-mounted M2 Browning machine gun
 | Unlock level | 0 |
 | Main health | 500 HP |
 | Top speed | 129 (as stored) |
-| Rifle damage taken | 4.5% |
+| Rifle damage taken (derived) | 4.5% |
 | Internal name | WHL_08 (ring turret variant) |
 {: .wiki-infobox }
 

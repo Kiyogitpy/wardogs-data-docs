@@ -50,8 +50,8 @@ The per-kill calculator uses a different base for each kill type: default 300, h
 | Defibrillator | 1,000 |
 | Resuscitator | 1,000 |
 | Medical Bag | 800 |
-| StimPen | 400 |
-| AdrenalinePen | 100 |
+| Adrenaline Pen | 400 |
+| Adrenaline Pen (a separate reward row with the same name) | 100 |
 
 | Heal (cash to the healer) | Base cash |
 |---|---|
@@ -60,7 +60,7 @@ The per-kill calculator uses a different base for each kill type: default 300, h
 | Individual First Aid Kit | 1,000 |
 | Medical Bag | 100 |
 
-When a heal is the one that brings a downed player back, it pays 1,500 with a defibrillator or resuscitator, and 1,200 with an AdrenalinePen. Revives in a zone are multiplied by 1.2 to 2.0.
+When a heal is the one that brings a downed player back, it pays 1,500 with a defibrillator or resuscitator, and 1,200 with an Adrenaline Pen. Revives in a zone are multiplied by 1.2 to 2.0.
 
 ### Vehicles
 

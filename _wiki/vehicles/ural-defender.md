@@ -14,7 +14,7 @@ description: "Three-seat protected version of the Ural heavy truck with no weapo
 | Unlock level | 0 |
 | Main health | 700 HP |
 | Top speed | 79 (as stored) |
-| Rifle damage taken | 5% |
+| Rifle damage taken (derived) | 5% |
 | Internal name | WHL_07 (battle variant) |
 {: .wiki-infobox }
 

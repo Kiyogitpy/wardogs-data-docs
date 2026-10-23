@@ -14,7 +14,7 @@ description: "Five-seat Humvee with a ring-mounted M249 machine gun, sold for 8,
 | Unlock level | 0 |
 | Main health | 500 HP |
 | Top speed | 113.2 (as stored) |
-| Rifle damage taken | 4% |
+| Rifle damage taken (derived) | 4% |
 | Internal name | WHL_05 (machine gun variant) |
 {: .wiki-infobox }
 
@@ -39,7 +39,7 @@ The Humvee [M249] is sold in the vehicle vendor under land transport, for 8,500 
 
 Main health is 500 HP, with the same engine, fuel tank and wheel health as the [Humvee](humvee.md). Rifle rounds do 4% of their damage against the hull.
 
-Full-power, point-blank hits needed to destroy the main health:
+Hits needed to destroy the main health. These counts are derived by simulating the damage rules with full-power, point-blank, standard (FMJ) hits; they are estimates from the data, not measured in game:
 
 | Ammunition | Hits to destroy | Faster route |
 |---|---:|---|

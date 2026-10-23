@@ -4,7 +4,7 @@ The wiki (`_wiki/`, served at `/wiki/`) turns the data pages into articles a pla
 
 ## Files and front matter
 
-- Hub page for an area: `_wiki/<area>.md` (served at `/wiki/<area>/`). Articles in that area: `_wiki/<area>/<slug>.md`, with lowercase hyphenated slugs (`ak-74m.md`, `body-armor.md`).
+- Hub page for an area: `_wiki/<area>.md` (served at `/wiki/<area>/`). Articles in that area: `_wiki/<area>/<slug>.md`, with lowercase hyphenated slugs (`ak74.md`, `body-armor.md`).
 - Hub front matter:
 
   ```yaml
@@ -24,7 +24,7 @@ The wiki (`_wiki/`, served at `/wiki/`) turns the data pages into articles a pla
 ## Voice
 
 - Write for players, not reverse engineers. No RVAs, addresses, function names, class names like `UWDWeaponComponent`, or asset paths in the article text.
-- **Always call things by the name a player knows**: the in-game display name or the common real-world name ("UH-72 Lakota", "AK-74M", "Bandage"), never the internal code (`ROT_03`, `WEPN_028`, `BP_Item_Bandage`). This applies to titles, slugs, headings, prose, tables and links. Find display names on the Item Shop, Weapon Shop, Vehicles, Tag Display Text and Season 01 cosmetic pages and in the item data under `data/`. The internal code may appear only once, in the infobox row "Internal name", so people can search for it. If no display name exists anywhere, describe the thing in plain words ("unnamed test rifle") and keep the code in the infobox.
+- **Always call things by the name a player knows**: the in-game display name or the common real-world name ("UH-72 Lakota", "AK74", "Bandage"), never the internal code (`ROT_03`, `WEPN_028`, `BP_Item_Bandage`). This applies to titles, slugs, headings, prose, tables and links. Find display names on the Item Shop, Weapon Shop, Vehicles, Tag Display Text and Season 01 cosmetic pages and in the item data under `data/`. When the shop and a real-world name differ, the shop display name wins (the Weapon Shop shows "AK74", "AMP-9", "M249 SAW", "M500"; vehicle variants keep their bracket names such as "Humvee [M249]" and "AH-6M [Miniguns]"). The internal code may appear only once, in the infobox row "Internal name", so people can search for it. If no display name exists anywhere, describe the thing in plain words ("unnamed test rifle") and keep the code in the infobox.
 - Plain, encyclopedic, third person. Short paragraphs. Explain what a number means for play ("kills an unarmored player in 4 body shots up to 40 m").
 - Units always: m, s, rounds/min, HP, cash. Round sensibly (1 decimal for metres and seconds, whole numbers for damage unless the decimal matters).
 - Only state what the data pages or `assets/data/*.json` say. If something is unknown or not modeled, say so plainly ("not yet known"), never guess. Do not invent lore, release history or tips that the data doesn't support.
@@ -36,7 +36,7 @@ The wiki (`_wiki/`, served at `/wiki/`) turns the data pages into articles a pla
 2. Infobox: a two-column markdown table directly under the title, followed by `{: .wiki-infobox }` on the next line. Header row `| | |` can be left blank-labelled, e.g.
 
    ```markdown
-   | AK-74M | |
+   | AK74 | |
    |---|---|
    | Class | Assault rifle |
    | Caliber | 5.45x39mm |
@@ -55,6 +55,6 @@ The wiki (`_wiki/`, served at `/wiki/`) turns the data pages into articles a pla
 
 ## Links
 
-- Link other wiki articles and data pages with relative `.md` links (from `_wiki/weapons/ak-74m.md`, the data page is `../../game-features/Wardogs_WeaponDamage_v1.md`, a sibling article is `ak-74m.md`, another area is `../equipment/body-armor.md`).
+- Link other wiki articles and data pages with relative `.md` links (from `_wiki/weapons/ak74.md`, the data page is `../../game-features/Wardogs_WeaponDamage_v1.md`, a sibling article is `ak74.md`, another area is `../equipment/body-armor.md`).
 - Check with `python _tools/check_links.py` (it covers `_wiki/`).
 - Liquid is live in these files: never write `{{` or `{%` in prose.

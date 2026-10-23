@@ -51,7 +51,7 @@ Healing stops if the user moves away, according to the in-game tutorial text. Ho
 
 **Defibrillator.** Revives a downed teammate to 35 HP at once. It needs a battery: one discharge uses 25 battery charges, and the charge-up takes 4 s. It cannot be used while you yourself are downed. Batteries are in [Utility Items](utility-items.md).
 
-**Emergency Resuscitator and Field Resuscitator.** Revive a downed teammate. The shop text says each is a single-use item, and the Emergency Resuscitator is limited to one per life. The health a teammate has after revival, and the time a revive takes, are not yet known.
+**Emergency Resuscitator and Field Resuscitator.** Revive a downed teammate. The shop text says each is a single-use item, and the Emergency Resuscitator is limited to one per life. The health a teammate has after revival is not yet known. The use time works out to about 4 s (derived from the item's action).
 
 ### Downed and revive
 
@@ -118,6 +118,7 @@ No change to healing amounts, use times or the downed rules is listed in the Sea
 - [Body Armor](body-armor.md)
 - [Utility Items](utility-items.md), for the batteries that power the Defibrillator
 - [Progression and Economy](../../game-features/Wardogs_Progression_v1.md), for the Medic skill tables
+- [Downed and Revive](../game-mechanics/downed-and-revive.md)
 
 ## Sources
 

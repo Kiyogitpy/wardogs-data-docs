@@ -110,6 +110,10 @@ Default parts: magazine (FAL 20 RND Magazine), grip (FAL Pistol Grip), stock (FA
 - [Weapons](../weapons.md)
 - [Ammunition](ammunition.md)
 - [Attachments](attachments.md)
+- [Choosing Ammo](../guides/choosing-ammo.md)
+- [Ballistics](../game-mechanics/ballistics.md)
+- [Health and Damage](../game-mechanics/health-and-damage.md)
+- [Spread and Recoil](../game-mechanics/spread-and-recoil.md)
 
 ## Sources
 

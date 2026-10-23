@@ -14,7 +14,7 @@ description: "Fixed-wing airplane with a driver seat and one passenger seat; the
 | Unlock level | Not applicable |
 | Main health | 150 HP at start |
 | Top speed | Not yet known |
-| Rifle damage taken | 7.5% (derived from its damage rules) |
+| Rifle damage taken (derived) | 7.5% |
 | Internal name | FWG_01 |
 {: .wiki-infobox }
 

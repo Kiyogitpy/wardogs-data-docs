@@ -14,7 +14,7 @@ description: "Four-seat SUV added in Season 2, with the strongest torque curve o
 | Unlock level | 0 |
 | Main health | 500 HP |
 | Top speed | 129 (as stored) |
-| Rifle damage taken | 5% |
+| Rifle damage taken (derived) | 5% |
 | Internal name | WHL_08 (default variant) |
 {: .wiki-infobox }
 
@@ -41,7 +41,7 @@ Main health is 500 HP. The Wolf-110 has separate health for its engine (400 HP) 
 
 Rifle rounds do 5% of their damage against the hull. Hits to a wheel can destroy the vehicle faster than hits to the body.
 
-Full-power, point-blank hits needed to destroy the main health:
+Hits needed to destroy the main health. These counts are derived by simulating the damage rules with full-power, point-blank, standard (FMJ) hits; they are estimates from the data, not measured in game:
 
 | Ammunition | Hits to destroy | Faster route |
 |---|---:|---|

@@ -14,7 +14,7 @@ description: "Heavy three-seat truck with no weapons and the heaviest mass of th
 | Unlock level | 0 |
 | Main health | 700 HP |
 | Top speed | 79 (as stored) |
-| Rifle damage taken | 5% |
+| Rifle damage taken (derived) | 5% |
 | Internal name | WHL_07 (default variant) |
 {: .wiki-infobox }
 
@@ -41,7 +41,7 @@ Main health is 700 HP. The Ural has separate health for its engine (400 HP), fue
 
 Rifle rounds do 5% of their damage against the hull. The fuel tank takes an extra 350% from bullets.
 
-Full-power, point-blank hits needed to destroy the main health:
+Hits needed to destroy the main health. These counts are derived by simulating the damage rules with full-power, point-blank, standard (FMJ) hits; they are estimates from the data, not measured in game:
 
 | Ammunition | Hits to destroy | Faster route |
 |---|---:|---|

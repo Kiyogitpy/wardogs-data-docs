@@ -20,7 +20,7 @@ Season 2 changed the weapons, damage rules, vehicles, items, modes and progressi
 - **Base damage for .308 Winchester rounds fell from 60 to 45.** This applies to the FAL, BMR-308, M14, Evo-3 Ultra and MK22.
 - **Base damage for 7.62x54 mm rounds fell from 55 to 44.** This applies to the SVD, SV98, Mosin Nagant and PKM.
 - **Sniper rifles hit harder on the body.** Their multipliers for the head, neck, upper torso, middle torso and pelvis rose by about a third, and upper arms by a quarter. The sniper head multiplier went from 3.2 to 4.27.
-- **Suppression values changed on many weapons.** Several weapons gained a suppression value, and others were adjusted. Examples: MK22 1.6, AMR 50 2.0, SV98 1.5, Mosin Nagant 1.5, Scout Rifle TD 1.5, M249 1.25, AK74 1.05, SKS 1.1, M4 0.95, PKM 0.9 (up from 0.45), SVD 0.8 (up from 0.4).
+- **Suppression values changed on many weapons.** Several weapons gained a suppression value, and others were adjusted. Examples: MK22 1.6, AMR 50 2.0, SV98 1.5, Mosin Nagant 1.5, Scout Rifle TD 1.5, M249 SAW 1.25, AK74 1.05, SKS 1.1, M4 0.95, PKM 0.9 (up from 0.45), SVD 0.8 (up from 0.4).
 - **Aim assist curves were removed.** Sixteen curves for hip-fire and reticle-edge aim assist were removed across assault rifles, LMGs, pistols, shotguns, SMGs and melee.
 - **Recoil patterns changed on four weapons,** including the SKS and SVD, with many of the pattern points moved.
 - **The Super-45 falls off with distance differently.** It gained two falloff points, at 100 m (0.4) and 150 m (0.3).
@@ -33,7 +33,7 @@ Full lists: [Weapons & Ammo changes](../../season-2-changes/weapons-ammo.md).
 ## Damage and armor
 
 - **Heavy armor and Heavy helmets reduce less.** Reduction fell from 55% to 50%. Super heavy armor and Super heavy helmets fell from 65% to 60%. Light and Medium armor were not changed.
-- **Seated vehicle protection changed on the Venom and Littlebird helicopters.** Passengers get half the protection against small and medium arms (from 50% to 25%) and less against high-calibre arms (from 20% to 15%).
+- **Seated vehicle protection changed on the Little Bird family helicopters and the Venom helicopter.** Passengers get half the protection against small and medium arms (from 50% to 25%) and less against high-calibre arms (from 20% to 15%).
 - **A new seat rule covers the Z20 Lakota.** It gives 25% against small and medium arms and 15% against high-calibre arms.
 - **Vehicle turret weapons do less damage to infantry** on most body parts. The Minigun's upper-torso multiplier fell from 1.3 to 0.57.
 
@@ -45,7 +45,7 @@ Full lists: [Damage & Combat Systems changes](../../season-2-changes/damage-comb
 - **Several vehicle damage rules changed.** The Humvee's default rule went from -67% to -85%, the Ural's from -65% to -87.5%, and the Havoc's changed from +87.5 to -46.0. Negative amounts reduce damage.
 - **Humvee drive split changed.** Front torque share fell from 70% to 40%, and rear rose from 30% to 60%.
 - **Tyre deflate threshold rose from 0.5 to 0.55** on most wheeled vehicles.
-- **Market prices rose on most armed vehicles.** Examples: Havoc 18,000 to 28,000, Humvee minigun 4,500 to 10,000, Humvee machine gun 3,750 to 8,500, Littlebird machine guns 7,000 to 12,000, L2A6 heavy tank 14,000 to 22,000, Kodiak machine gun 3,750 to 6,750.
+- **Market prices rose on most armed vehicles.** Examples: Havoc 18,000 to 28,000, Humvee [Minigun] 4,500 to 10,000, Humvee [M249] 3,750 to 8,500, AH-6M [Miniguns] 7,000 to 12,000, L2A6 heavy tank 14,000 to 22,000, Kodiak [M249] 3,750 to 6,750.
 - **Two new vehicles were added:** the T-72B3 tracked tank and the Wolf-110, a wheeled vehicle with a machine-gun variant.
 
 Full lists: [Vehicles changes](../../season-2-changes/vehicles.md).
@@ -68,7 +68,7 @@ Full lists: [Items & Equipment changes](../../season-2-changes/items-equipment.m
 - **Spotting pay range is unchanged.** Spotting still pays 15 to 275 cash, and destroying a spotted target 50 to 500.
 - **Spotting challenges gained rows.** The calculator grew from 44 to 130 rows, with variant-level rows for each vehicle and new entries for buildables that scale with build progress.
 - **Vehicle destroyed rewards cover the new vehicles.**
-- **Team kill tracking was removed** from the game feature data, along with the MonkeyScore feature.
+- **Team kill tracking was removed** from the game feature data.
 
 Full lists: [Game Modes & Maps changes](../../season-2-changes/game-modes-maps.md) and [Rewards & Unlocks changes](../../season-2-changes/rewards-unlocks.md).
 
@@ -82,7 +82,7 @@ Full lists: [Player & Movement changes](../../season-2-changes/player-movement.m
 ## Progression
 
 - **Role mastery XP changed for all six roles.** Levels 10 to 100 use the same new values for every role. Level 10 went from 35,000 XP to 25,000 XP, and level 50 from 1,500,000 XP to 1,150,000 XP.
-- **Unlock costs changed on 54 items and vehicles.** Some rose sharply: the Humvee (Driver) from 25,000 to 75,000 cash, the Defibrillator (Medic) from 50,000 to 110,000, the Littlebird machine guns (Pilot) from 50,000 to 125,000, and the GGX 17 (Wardog) from 5,000 to 15,000.
+- **Unlock costs changed on 54 items and vehicles.** Some rose sharply: the Humvee (Driver) from 25,000 to 75,000 cash, the Defibrillator (Medic) from 50,000 to 110,000, the AH-6M [Miniguns] (Pilot) from 50,000 to 125,000, and the GGX 17 (Wardog) from 5,000 to 15,000.
 - **Level requirements changed on 118 unlocks,** and 50 unlocks were added while 19 were removed.
 - **Challenge reward tables changed** for shared and buildable challenges.
 

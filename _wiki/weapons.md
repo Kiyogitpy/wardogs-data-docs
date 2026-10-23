@@ -13,7 +13,7 @@ Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun,
 | Weapon | Class | Caliber | Fire rate | Standard magazine | Vendor price |
 |---|---|---|---|---|---|
 | [A-91](weapons/a-91.md) | Assault rifle | 5.56x45mm | 700 rounds/min | STANAG 20 RND Magazine | 0 |
-| [AK-74M](weapons/ak-74m.md) | Assault rifle | 5.45x39mm | 650 rounds/min | AK74 30 RND Magazine | 800 |
+| [AK74](weapons/ak74.md) | Assault rifle | 5.45x39mm | 650 rounds/min | AK74 30 RND Magazine | 800 |
 | [Bushmaster M17S](weapons/bushmaster-m17s.md) | Assault rifle | 5.56x45mm | 700 rounds/min | STANAG 20 RND Magazine | 0 |
 | [FAL](weapons/fal.md) | Assault rifle | .308 Win | 650 rounds/min | FAL 20 RND Magazine | 6000 |
 | [Galil](weapons/galil.md) | Assault rifle | 5.56x45mm | 650 rounds/min | Galil 35 RND Magazine | 2000 |

@@ -14,7 +14,7 @@ description: "Ten-seat tracked armored personnel carrier that rifle fire cannot 
 | Unlock level | Not applicable |
 | Main health | 1,000 HP |
 | Top speed | 71 (as stored) |
-| Rifle damage taken | 0% on hull and tracks |
+| Rifle damage taken (derived) | 0% on hull and tracks |
 | Internal name | SPW_01 (Lonestar, Manticore and Valkyra faction versions) |
 {: .wiki-infobox }
 

@@ -45,7 +45,7 @@ Cosmetics are grouped into sets. A skin set has one look, such as Digital Wood, 
 
 | Skin set | Item | Price |
 |---|---|---|
-| Black and Gold | AK-74M | Not listed |
+| Black and Gold | AK74 | Not listed |
 | Digital Wood | GGX 17 | 5 Gold Bars |
 | Digital Wood | Sport parachute | 15 Gold Bars |
 | Digital Wood | SV98 | 10 Gold Bars |
@@ -58,9 +58,9 @@ Cosmetics are grouped into sets. A skin set has one look, such as Digital Wood, 
 | Two-Tone Desert | Bushmaster M17S | 5 Gold Bars |
 | Two-Tone Desert | KH-2002 | 5 Gold Bars |
 | Two-Tone Desert | M4 | 10 Gold Bars |
-| Two-Tone Desert | M249 | 15 Gold Bars |
+| Two-Tone Desert | M249 SAW | 15 Gold Bars |
 | Two-Tone Desert | AMR 50 | 15 Gold Bars |
-| Two-Tone Desert | MP9 | 10 Gold Bars |
+| Two-Tone Desert | AMP-9 | 10 Gold Bars |
 | Two-Tone Desert | M500 | 10 Gold Bars |
 
 ### Season 2 skins
@@ -76,7 +76,7 @@ Cosmetics are grouped into sets. A skin set has one look, such as Digital Wood, 
 | Chocolate Chip | Evolys | 10 Gold Bars |
 | Chocolate Chip | TCX SPR | 10 Gold Bars |
 
-The Black and Gold AK-74M skin has no price in the data, so its price is not yet known.
+The Black and Gold AK74 skin has no price in the data, so its price is not yet known.
 
 ### Other cosmetic types
 
