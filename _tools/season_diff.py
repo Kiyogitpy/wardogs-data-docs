@@ -457,9 +457,8 @@ def learn(observed):
 def find_swaps(a, b, path, ctx):
     """Sibling keys whose values are exchanged exactly between the seasons (S1 usmap misassigned the names).
 
-    Only exact 2-cycles (A_old == B_new and B_old == A_new) and 3-cycles among common keys that changed are
-    suppressed (Min*/Max* pairs only if S1 had Min > Max). Every exact cycle, suppressed or not, is recorded for
-    learning the per-schema permutation. Returns the keys suppressed; ctx.swapped counts keys."""
+    Finds exact 2-cycles and 3-cycles among common keys that changed. Nothing is suppressed here: cycles feed
+    the learning pass (OBSERVED), and cycles still present in pass 2 (not learned) are only listed in ctx.swaps."""
     ch = [k for k in a if k in b and not deep_same(a[k], b[k]) and k not in COMPONENT_KEYS]
     if len(ch) < 2 or len(ch) > 200:
         return set()
@@ -491,15 +490,11 @@ def find_swaps(a, b, path, ctx):
     if OBS_ON:
         for cyc in cycles:
             OBSERVED.append((frozenset(cyc), tuple(sorted((k, mp[k]) for k in cyc))))
-    skip = set()
+    # Exact cycles of a key set that was not learned (one-off or contradicted) are NOT suppressed: they are diffed
+    # normally and only listed (in the --swaps file) so a reader can judge them.
     for cyc in cycles:
-        if len(cyc) == 2 and not minmax_ok(cyc[0], cyc[1], a):
-            KEPT_MINMAX.append({"path": path, "keys": cyc, "s1": [a[k] for k in cyc], "s2": [b[k] for k in cyc]})
-            continue
-        skip |= set(cyc)
-        ctx.swapped += len(cyc)
         ctx.swaps.append({"parent": path, "keys": cyc, "s1": [a[k] for k in cyc], "s2": [b[k] for k in cyc]})
-    return skip
+    return set()
 
 
 def resolve_dups(a, b):
