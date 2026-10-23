@@ -37,6 +37,9 @@ Value comparison (diff_value).
     identical (any position), or, failing that, a key in the same gap between common keys with the same kind of
     value (then the pair is diffed as a normal property and the rename itself is noise). Counted in
     noise.renamed_keys; paths use the Season 2 name.
+    Swapped keys: sibling keys whose values are exchanged exactly (2-cycles, 3-cycles) are noise.swapped_keys.
+    A vector-valued S1 key whose name says another shape (RelativeScale3D) paired with an identical S2 key
+    (RelativeLocation) is a renamed key.
     Season 1 duplicate keys: the occurrence matching Season 2's Key (by value, then by neighbouring common keys)
     keeps the name Key; the others become rename candidates. An unpaired empty []/{}/"NaN" duplicate is noise.dup_keys.
   Object references: a dict with ObjectName and ObjectPath whose ObjectName is equal and whose ObjectPath differs
@@ -70,6 +73,7 @@ import subprocess
 import sys
 
 SWITCHED = []
+SWAPS = []
 CANDS = None   # list when --named-candidates is given
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -300,6 +304,8 @@ class Ctx:
         self.renamed = 0
         self.shifts = 0
         self.dups = 0
+        self.swapped = 0
+        self.swaps = []
         self.cands = []
         self.switched = []
         self.collect = False
@@ -375,6 +381,68 @@ def collect_named(a, b, only_a, only_b, pairs, path, ctx):
                 })
 
 
+COMPONENT_KEYS = {"X", "Y", "Z", "W", "R", "G", "B", "A", "Pitch", "Yaw", "Roll"}
+KEPT_MINMAX = []
+
+
+def _greater(x, y):
+    if isinstance(x, dict) and isinstance(y, dict):
+        nums = [q for q in x if q in y and is_num(x[q]) and is_num(y[q])]
+        return bool(nums) and all(x[q] >= y[q] for q in nums) and any(x[q] > y[q] for q in nums)
+    return is_num(x) and is_num(y) and x > y
+
+
+def minmax_ok(k, j, a):
+    """A Min*/Max* pair is suppressed as a naming swap only if Season 1 had Min greater than Max."""
+    kl, jl = k.lower(), j.lower()
+    for lo, hi in ((k, j), (j, k)):
+        if "min" in lo.lower() and lo.lower().replace("min", "max", 1) == hi.lower().replace("imum", "imum"):
+            return _greater(a[lo], a[hi])
+        if "minimum" in lo.lower() and lo.lower().replace("minimum", "maximum", 1) == hi.lower():
+            return _greater(a[lo], a[hi])
+    return True
+
+
+def find_swaps(a, b, path, ctx):
+    """Sibling keys whose values are exchanged exactly between the seasons (S1 usmap misassigned the names).
+
+    Only exact 2-cycles (A_old == B_new and B_old == A_new) and 3-cycles among common keys that changed are
+    suppressed; returns the set of keys involved and counts one swap per cycle in ctx.swapped."""
+    ch = [k for k in a if k in b and not deep_same(a[k], b[k]) and k not in COMPONENT_KEYS]
+    if len(ch) < 2 or len(ch) > 200:
+        return set()
+    to = {k: [j for j in ch if j != k and deep_same(a[k], b[j])] for k in ch}
+    used = set()
+    for k in ch:
+        if k in used:
+            continue
+        for j in to[k]:
+            if j not in used and k in to[j]:
+                if not minmax_ok(k, j, a):
+                    KEPT_MINMAX.append({"path": path, "keys": [k, j], "s1": [a[k], a[j]], "s2": [b[k], b[j]]})
+                    continue
+                used |= {k, j}
+                ctx.swapped += 1
+                ctx.swaps.append({"parent": path, "keys": [k, j], "s1": [a[k], a[j]], "s2": [b[k], b[j]]})
+                break
+    for k in ch:
+        if k in used:
+            continue
+        for j in to[k]:
+            if j in used:
+                continue
+            for m in to[j]:
+                if m not in used and m not in (k, j) and k in to[m]:
+                    used |= {k, j, m}
+                    ctx.swapped += 1
+                    ctx.swaps.append({"parent": path, "keys": [k, j, m], "s1": [a[k], a[j], a[m]],
+                                      "s2": [b[k], b[j], b[m]]})
+                    break
+            if k in used:
+                break
+    return used
+
+
 def resolve_dups(a, b):
     """Season 1 duplicate keys (Key, Key#2, ...): pick the occurrence that corresponds to Season 2's Key.
 
@@ -423,11 +491,20 @@ def diff_dict(a, b, path, ctx):
         common_a = [k for k in ka if k in b]
         common_b = [k for k in kb if k in a]
         pairs = match_renames(a, b, only_a, only_b, common_a, common_b)
+    for ka in [k for k in only_a if k not in pairs and not unnamed(k)]:
+        for kb_ in [k for k in only_b if k not in pairs.values() and not unnamed(k)]:
+            sa, sb = shape_of(ka), shape_of(kb_)
+            if sa and sb and sa != sb and isinstance(a[ka], dict) and deep_same(a[ka], b[kb_]):
+                pairs[ka] = kb_   # S1 usmap misnamed a vector (RelativeScale3D holding a location)
+                break
     new_to_old = {v: k for k, v in pairs.items()}
+    skip = find_swaps(a, b, path, ctx)
     if ctx.collect:
         collect_named(a, b, only_a, only_b, pairs, path, ctx)
     for k in kb:
         p = join(path, k)
+        if k in skip:
+            continue
         if k in a:
             va, vb = a[k], b[k]
             if k == "ObjectPath" and isinstance(va, str) and isinstance(vb, str) and va != vb:
@@ -637,6 +714,10 @@ def diff_assets(ex1, ex2, collect=False):
             ctx.renamed += sub.renamed
             ctx.shifts += sub.shifts
             ctx.dups += sub.dups
+            ctx.swapped += sub.swapped
+            for sp in sub.swaps:
+                sp["parent"] = prefixed(pre, multi, sp["parent"])
+                ctx.swaps.append(sp)
             for sw in sub.switched:
                 sw["path"] = prefixed(pre, multi, sw["path"])
                 ctx.switched.append(sw)
@@ -698,21 +779,23 @@ def build(s1_dir, s2_dir, log=print):
         if err1 or err2:
             stats["unparsed"].append((rel, err1 or err2))
             assets.append(make(name, rel, None, "modified", main_type(rel, ex2), None, [],
-                               {"renamed_keys": 0, "ref_shifts": 0, "dup_keys": 0}, classify(rel, ex2),
+                               {"renamed_keys": 0, "ref_shifts": 0, "dup_keys": 0, "swapped_keys": 0}, classify(rel, ex2),
                                note="not compared: " + (("Season 1 file is truncated in the source commit (%s)" % err1)
                                                          if err1 else ("Season 2 " + err2))))
             continue
         ctx = diff_assets(ex1, ex2, CANDS is not None)
         for cd in ctx.cands:
             CANDS.append(dict(asset=name, path=rel, **cd))
+        for sp in ctx.swaps:
+            SWAPS.append(dict(asset=name, path=rel, **sp))
         for sw in ctx.switched:
             SWITCHED.append(dict(asset=name, file=rel, **sw))
-        if not ctx.changes and not ctx.renamed and not ctx.shifts and not ctx.dups:
+        if not ctx.changes and not ctx.renamed and not ctx.shifts and not ctx.dups and not ctx.swapped:
             # equal up to formatting or float noise only
             stats["identical"] += 1
             continue
         assets.append(make(name, rel, None, "modified", main_type(rel, ex2), None, ctx.changes,
-                           {"renamed_keys": ctx.renamed, "ref_shifts": ctx.shifts, "dup_keys": ctx.dups}, classify(rel, ex2)))
+                           {"renamed_keys": ctx.renamed, "ref_shifts": ctx.shifts, "dup_keys": ctx.dups, "swapped_keys": ctx.swapped}, classify(rel, ex2)))
 
     # moved
     pairs = []   # (old, new, paired_by)
@@ -764,7 +847,7 @@ def build(s1_dir, s2_dir, log=print):
             ctx = diff_assets(ex1, ex2, CANDS is not None)
         stats["paired"][new] = (old, how)
         assets.append(make(name, new, old, "moved", main_type(new, ex2), how, ctx.changes,
-                           {"renamed_keys": ctx.renamed, "ref_shifts": ctx.shifts, "dup_keys": ctx.dups}, classify(new, ex2)))
+                           {"renamed_keys": ctx.renamed, "ref_shifts": ctx.shifts, "dup_keys": ctx.dups, "swapped_keys": ctx.swapped}, classify(new, ex2)))
     stats["rejected_renames"] = rejected
 
     # added
@@ -772,7 +855,7 @@ def build(s1_dir, s2_dir, log=print):
         ex2, err2 = parsed(files2[rel])
         name = os.path.splitext(os.path.basename(rel))[0]
         assets.append(make(name, rel, None, "added", main_type(rel, ex2), None, [],
-                           {"renamed_keys": 0, "ref_shifts": 0, "dup_keys": 0}, classify(rel, ex2), exports=len(ex2)))
+                           {"renamed_keys": 0, "ref_shifts": 0, "dup_keys": 0, "swapped_keys": 0}, classify(rel, ex2), exports=len(ex2)))
     # removed
     for rel in sorted(rem_left):
         ex1, err1 = parsed(files1[rel])
@@ -783,7 +866,7 @@ def build(s1_dir, s2_dir, log=print):
             pre = key[0] if key[1] == 0 else "%s#%d" % key
             flatten(o, pre if multi else "", out)
         assets.append(make(name, rel, None, "removed", main_type(rel, ex1), None, out,
-                           {"renamed_keys": 0, "ref_shifts": 0, "dup_keys": 0}, classify(rel, ex1)))
+                           {"renamed_keys": 0, "ref_shifts": 0, "dup_keys": 0, "swapped_keys": 0}, classify(rel, ex1)))
     # Config check
     stats["config_same"] = config_same(s1_dir, s2_dir)
     return assets, stats
@@ -817,7 +900,7 @@ def render(assets):
     index_areas = []
     totals = {"assets_added": 0, "assets_removed": 0, "assets_modified": 0, "assets_moved": 0,
               "noise_only_assets": 0, "property_changes": 0, "removed_values": 0,
-              "noise_renamed_keys": 0, "noise_ref_shifts": 0, "noise_dup_keys": 0}
+              "noise_renamed_keys": 0, "noise_ref_shifts": 0, "noise_dup_keys": 0, "noise_swapped_keys": 0}
     for aid, title in AREAS:
         mine = [a for a in assets if a["_area"] == aid]
         mine.sort(key=lambda a: (STATUS_ORDER[a["status"]], a["name"].lower(), a["path"]))
@@ -827,11 +910,12 @@ def render(assets):
             counts["property_changes"] += count_changes(a)
             if a["status"] == "removed":
                 counts["removed_values"] += len(a["changes"])
-            if a["status"] == "modified" and not a["changes"] and (a["noise"]["renamed_keys"] or a["noise"]["ref_shifts"] or a["noise"]["dup_keys"]):
+            if a["status"] == "modified" and not a["changes"] and (a["noise"]["renamed_keys"] or a["noise"]["ref_shifts"] or a["noise"]["dup_keys"] or a["noise"]["swapped_keys"]):
                 totals["noise_only_assets"] += 1
             totals["noise_renamed_keys"] += a["noise"]["renamed_keys"]
             totals["noise_ref_shifts"] += a["noise"]["ref_shifts"]
             totals["noise_dup_keys"] += a["noise"]["dup_keys"]
+            totals["noise_swapped_keys"] += a["noise"]["swapped_keys"]
         lines = [dumps({k: v for k, v in a.items() if not k.startswith("_")}) for a in mine]
         # split if too big
         chunks, cur, size = [], [], 0
@@ -883,12 +967,18 @@ def main(argv=None):
     ap.add_argument("--write", action="store_true")
     ap.add_argument("--check", action="store_true")
     ap.add_argument("--stats", action="store_true")
+    ap.add_argument("--swaps", metavar="FILE", help="write the suppressed swapped-key cycles")
     ap.add_argument("--switched", metavar="FILE", help="write arrays whose index alignment would have misaligned identities")
     ap.add_argument("--named-candidates", metavar="FILE", help="also write report-only named-to-named rename candidates")
     args = ap.parse_args(argv)
     global CANDS
-    CANDS = [] if (args.named_candidates or args.switched) else None
+    CANDS = [] if (args.named_candidates or args.switched or args.swaps) else None
     assets, stats = build(args.s1, args.s2)
+    if args.swaps:
+        with open(args.swaps, "w", encoding="utf-8") as fh:
+            json.dump(SWAPS, fh, ensure_ascii=False, indent=1)
+        with open(args.swaps.replace(".json", "_kept_minmax.json"), "w", encoding="utf-8") as fh:
+            json.dump(KEPT_MINMAX, fh, ensure_ascii=False, indent=1)
     if args.switched:
         with open(args.switched, "w", encoding="utf-8") as fh:
             json.dump(SWITCHED, fh, ensure_ascii=False, indent=1)
