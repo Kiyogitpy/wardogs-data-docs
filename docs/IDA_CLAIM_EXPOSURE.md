@@ -32,9 +32,9 @@ A function listed below is not necessarily virtualized. The strongest signal is 
 
 | Function range or address | Category | Stub in body | Cited at |
 |---|---|---|---|
-| `0x395be30`–`0x395beb9` | stub | yes | `content/Wardogs_WeaponAttributes_v1.md` L79; `docs/evidence/round8-ancillary-sights.md` L211; `docs/evidence/round8-weapon-context.md` L157,165,167 |
-| `0x5230be0`–`0x5230c39` | stub | yes | `docs/ROUND11_STATUS.md` L1179 |
-| `0x6b74e30`–`0x6b74f79` | stub | yes | `docs/evidence/round8-weapon-context.md` L31,35 |
+| `0x395be30`–`0x395beb9` | stub; reverified r19 (a) unaffected: entry stub only, reference body matches claims | yes | `content/Wardogs_WeaponAttributes_v1.md` L79; `docs/evidence/round8-ancillary-sights.md` L211; `docs/evidence/round8-weapon-context.md` L157,165,167 |
+| `0x5230be0`–`0x5230c39` | stub; reverified r19 (a) unaffected: entry stub only, reference body matches claims | yes | `docs/ROUND11_STATUS.md` L1179 |
+| `0x6b74e30`–`0x6b74f79` | stub; reverified r19 (a) unaffected: entry stub only, reference body matches claims | yes | `docs/evidence/round8-weapon-context.md` L31,35 |
 | `0x6b8ac90`–`0x6b8acaf` | stub | yes | `content/Wardogs_Weapons_v2.md` L330; `docs/evidence/weapons.md` L43,138 |
 | `0x6bb8970`–`0x6bb89a3` | stub | yes | `docs/ROUND11_STATUS.md` L978; `docs/evidence/damage.md` L546; `pipelines/Wardogs_DamagePipeline_v2.md` L73,462 |
 | `0x157c320`–`0x157c468` | stub | no | `docs/evidence/round8-loadout-rebuy.md` L110 |
@@ -232,8 +232,8 @@ A function listed below is not necessarily virtualized. The strongest signal is 
 | `0x869bf50`–`0x869bfcb` | stub | no | `docs/evidence/round17-native-defaults.md` L55 |
 | `0x869bff0`–`0x869c1f9` | stub | no | `docs/evidence/round17-native-defaults.md` L59,65 |
 | `0x977e560`–`0x977ef14` | stub | no | `docs/evidence/damage.md` L46,653 |
-| `0x42333f0`–`0x42336d6` | differs | no | `docs/evidence/round8-tapered-query.md` L53,69,70; `pipelines/infantry-viewer.md` L362 |
-| `0x44176d0`–`0x441772e` | differs | no | `docs/ROUND11_STATUS.md` L655 |
+| `0x42333f0`–`0x42336d6` | differs; reverified r19 (a) unaffected: function bytes identical, page difference is the previous function's tail | no | `docs/evidence/round8-tapered-query.md` L53,69,70; `pipelines/infantry-viewer.md` L362 |
+| `0x44176d0`–`0x441772e` | differs; reverified r19 (a) unaffected: function bytes identical, page difference is the previous function's tail | no | `docs/ROUND11_STATUS.md` L655 |
 | `0x1921820` | stub | - | `docs/evidence/weapons.md` L142 |
 | `0x1c051c0` | stub | - | `docs/evidence/effects.md` L166 |
 | `0x246f800` | stub | - | `docs/ROUND11_STATUS.md` L312 |

@@ -356,3 +356,7 @@ complete Blueprint dumps are not published here.
 | WE_ROT_03_Weapon_122mm | `fd42c1139d7e6d61daa570a4eb149776fc9a64b81b3e6a8eae9da8005d0af197` |
 | ID_VehicleHelicopterRockets | `cb62f7f4ae6f11a9e3a52c92fe9d00001cd328134121335a0ebc67cb30dff2d3` |
 | ID_VehicleHelicopterRockets_ROT_03 | `530c45bbf48f5d0d1e81e53611230a580e05701071a503d6fe4a6eef687abac2` |
+
+> **Round 19 re-verification.** Evidence level: static-analysis image; virtualized dispatch not removed. Function `0x395BE30` begins with a protection-layer dispatch stub in the static-analysis image (`mov reg,[rip+x]` then `jmp [reg+disp]` through a runtime-filled global table, so its target is not statically resolvable); the older reference image holds the plain body, and it iterates the filter's explicit tags and searches each in the item context's explicit array (`+0`/`+8`) and cached parent array (`+0x10`/`+0x18`), the second loop at `0x395BE7E`–`0x395BE9E`, as claimed above. Classification: unaffected by the stub.
+>
+> **Round 19 re-verification.** Evidence level: static-analysis image; virtualized dispatch not removed. `0x6B74E30` likewise starts with a dispatch stub in the static-analysis image; the reference body hashes the byte id first (table lookup, `0x6B74E8E`–`0x6B74EC8`) and then a composite key `(proxy << 8) | id` (`0x6B74ED6`–`0x6B74F26`), writing the found record to the output, matching the claim. Unaffected.
