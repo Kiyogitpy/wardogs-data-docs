@@ -19,6 +19,15 @@ nav_order: 1
 - **Items, Weapons and Vehicles appear in more than one category.** The base definitions and the per-item, per-weapon and per-vehicle data are separate pages, so check both.
 - **Every page ends with its limitations:** what was inferred, and what the game files don't contain.
 
+<h2 id="viewers">Interactive viewer</h2>
+
+<div class="wd-grid" markdown="0">
+<a class="wd-card wd-card-preview" href="pipelines/vehicle-viewer.html">
+<img src="{{ '/assets/images/vehicle-viewer-preview.png' | relative_url }}" alt="3D collision mesh of the Havoc attack helicopter, coloured by health section" width="780" height="585" loading="lazy">
+<span class="wd-card-body"><span class="wd-card-name">Vehicle Hitbox Viewer</span><span class="wd-card-desc">Every vehicle's collision mesh in 3D, coloured by the health section it feeds. Pick a part to see how it routes damage and how many hits of each caliber destroy the vehicle.</span></span>
+</a>
+</div>
+
 <div class="wd-kicker"><span class="wd-pill wd-pill-1">{{ site.pages | where_exp: "p", "p.parent" | size }} pages</span></div>
 {% assign cats = site.pages | where: "has_children", true | where_exp: "p", "p.path contains 'categories/'" | sort: "nav_order" %}
 {%- for c in cats %}

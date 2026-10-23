@@ -1,6 +1,7 @@
 ---
 title: "Data Tables: Meta Progression and Cosmetics"
 redirect_from: ["/Wardogs_DataTables_Meta_v1.html", "/Wardogs_DataTables_Meta_v1"]
+parent: "Data Tables"
 grand_parent: "Data Tables & Tags"
 description: "Meta-progression and cosmetic tables: skill nodes, unlock trees and skins"
 ---
