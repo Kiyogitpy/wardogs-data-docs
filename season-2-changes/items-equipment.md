@@ -2,7 +2,7 @@
 title: "Items & Equipment changes"
 parent: "Season 2 Changes"
 nav_order: 5
-description: "Item and equipment changes from Season 1 to Season 2: 37 assets added, 4 removed, 209 modified with real changes, 1,870 property changes."
+description: "Item and equipment changes from Season 1 to Season 2: 37 assets added, 4 removed, 212 modified with real changes, 1,454 property changes."
 ---
 
 # Items & Equipment changes
@@ -15,16 +15,16 @@ Counts come from `assets/data/season-diff/index.json` and `items-equipment.json`
 |---|---|
 | Assets added | 37 |
 | Assets removed | 4 |
-| Assets modified with real changes | 209 |
-| Assets modified, noise only (skipped) | 102 |
+| Assets modified with real changes | 212 |
+| Assets modified, noise only (skipped) | 99 |
 | Assets moved | 0 |
-| Property changes (index.json) | 1,870 |
+| Property changes (index.json) | 1,454 |
 
-The change list holds 2,054 records. The index figure equals that total minus `removed_values` (184).
+The change list holds 1,638 records. The index figure equals that total minus `removed_values` (184).
 
 ## Headline changes
 
-Numeric changes are grouped by asset family. 818 numeric records in stage assets (`DA_Buildable_*_Stages`) are not tabulated. They are mostly `CriticalHitSpots` and `SnapTransforms` transform values compared by index, which is array churn.
+Numeric changes are grouped by asset family. 691 numeric records in stage assets (`DA_Buildable_*_Stages`) are not tabulated. They are mostly `CriticalHitSpots` and `SnapTransforms` transform values compared by index, which is array churn.
 
 ### Ammo and projectiles
 
@@ -51,6 +51,7 @@ Numeric changes are grouped by asset family. 818 numeric records in stage assets
 | DA_556mm_ProjectileData | ProjectileStats.SuppressionData.BaseSuppression | 0.12 | 0.3 | +0.18 (+150.0%) |
 | DA_556mm_ProjectileData | ProjectileStats.SuppressionData.DistanceFalloffRange.Min | 0.35 | 1.0 | +0.65 (+185.7%) |
 | DA_762mm_ProjectileData | ProjectileStats.SuppressionData.DistanceFalloffRange.Min | 0.5 | 1.0 | +0.5 (+100.0%) |
+| DA_762x54mm_ProjectileData | ProjectileStats.DamageValues.BaseDamage | 55.0 | 44.0 | −11.0 (−20.0%) |
 | DA_762x54mm_ProjectileData | ProjectileStats.SuppressionData.BaseSuppression | 0.9 | 0.65 | −0.25 (−27.8%) |
 | DA_762x54mm_ProjectileData | ProjectileStats.SuppressionData.DistanceFalloffRange.Min | 0.35 | 1.5 | +1.15 (+328.6%) |
 | DA_7mmBuckshot_ProjectileData | ProjectileStats.SuppressionData.BaseSuppression | 0.13 | 0.2 | +0.07 (+53.8%) |
@@ -67,11 +68,10 @@ Numeric changes are grouped by asset family. 818 numeric records in stage assets
 | DA_Arrow_Combat_ProjectileData | ProjectileStats.TypicalSpeed | 64200.0 | 15200.0 | −49000.0 (−76.3%) |
 | DA_CombatBow_Stats | …EditorCurveData.Keys[1].ArriveTangent | -2.413006e-05 | -1.070042e-05 | +1.34296e-05 (+55.7%) |
 | DA_CombatBow_Stats | …EditorCurveData.Keys[1].LeaveTangent | -2.4311637e-05 | -1.0786811e-05 | +1.35248e-05 (+55.6%) |
-| DA_CombatBow_Stats | WeaponStats.DistanceDamageFalloffCurve.EditorCurveData.Keys[2].Time | 120000.0 | 50000.0 | −70000.0 (−58.3%) |
-| DA_CombatBow_Stats | WeaponStats.DistanceDamageFalloffCurve.EditorCurveData.Keys[2].Value | 0.2 | 0.0 | −0.2 (−100.0%) |
+| DA_CombatBow_Stats | WeaponStats.DistanceDamageFalloffCurve.EditorCurveData.Keys[3].Value | 0.2 | 0.0 | −0.2 (−100.0%) |
 | DA_CombatBow_Stats | WeaponStats.InitialBulletSpeed | 65000.0 | 16000.0 | −49000.0 (−75.4%) |
 
-Showing 40 of 55 rows, sorted by significance. Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=items-equipment&q=ProjectileData
+Showing 40 of 54 rows, sorted by significance. Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=items-equipment&q=ProjectileData
 
 ### Armour, helmets and melee
 
@@ -92,18 +92,15 @@ Showing 40 of 55 rows, sorted by significance. Browser link: {{ '/season-2-chang
 | ID_LargeHammer | DefaultDecalColor.B | 1 | 2 | +1 (+100.0%) |
 | ID_LargeHammer | DefaultDecalColor.G | 0 | 207 | +207 |
 | ID_LargeHammer | DefaultDecalColor.R | 0 | 255 | +255 |
-| ID_LargeHammer | unnamed property (`_aaabelcphphddcjabdj`) | 1056964608 | 0.5 | −1056964607.5 (−100.0%) |
 | ID_MediumHammer | BuildAmountWhenTargetIsHit | 6.0 | 5.0 | −1.0 (−16.7%) |
 | ID_MediumHammer | DefaultDecalColor.A | 0 | 255 | +255 |
 | ID_MediumHammer | DefaultDecalColor.B | 1 | 2 | +1 (+100.0%) |
 | ID_MediumHammer | DefaultDecalColor.G | 0 | 207 | +207 |
 | ID_MediumHammer | DefaultDecalColor.R | 0 | 255 | +255 |
-| ID_MediumHammer | unnamed property (`_aaabelcphphddcjabdj`) | 1056964608 | 0.5 | −1056964607.5 (−100.0%) |
 | ID_SmallHammer | DefaultDecalColor.A | 0 | 255 | +255 |
 | ID_SmallHammer | DefaultDecalColor.B | 1 | 2 | +1 (+100.0%) |
 | ID_SmallHammer | DefaultDecalColor.G | 0 | 207 | +207 |
 | ID_SmallHammer | DefaultDecalColor.R | 0 | 255 | +255 |
-| ID_SmallHammer | unnamed property (`_aaabelcphphddcjabdj`) | 1056964608 | 0.5 | −1056964607.5 (−100.0%) |
 | ID_SuperHeavyArmor | DurabilityStagesSetupData[0].DamagePercentageReduction | 65.0 | 60.0 | −5.0 (−7.7%) |
 | ID_SuperHeavyArmor | DurabilityStagesSetupData[1].DamagePercentageReduction | 65.0 | 60.0 | −5.0 (−7.7%) |
 | ID_SuperHeavyArmor | DurabilityStagesSetupData[2].DamagePercentageReduction | 65.0 | 60.0 | −5.0 (−7.7%) |
@@ -178,11 +175,7 @@ Showing 34 of 34 rows. Browser link: {{ '/season-2-changes/all-changes.html' | r
 
 ### Other numeric changes
 
-| Asset | Property | Season 1 | Season 2 | Change |
-|---|---|---|---|---|
-| AE_Player_Item_Defibrillator_DryFire | unnamed property (`_aaabhgndclheajnnlna`) | 0.505 | 50.5 | +49.995 (+9900.0%) |
-
-Showing 1 of 1 rows. Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=items-equipment&q=DA_
+No other numeric changes in this area.
 
 ### Non-numeric changes
 
@@ -203,7 +196,7 @@ Showing 1 of 1 rows. Browser link: {{ '/season-2-changes/all-changes.html' | rel
 | ThirdPersonPlayerAnimation | 1 | AnimSet_CombatBow | — | {'ObjectName': "AnimMontage'AM_TP_Bow_Door_Interact'", 'ObjectPath': '/Game/Animation/Cha… |
 | unnamed property (`_aaabeinmoolajgaldgo`) | 1 | DA_Buildable_Gate | Id.Buildable.Gate | Id.Buildable.Gate.Ramp |
 
-`DT_EmoteData` has 120 change records. Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=items-equipment&q=DT_EmoteData
+`DT_EmoteData` has 48 change records. Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=items-equipment&q=DT_EmoteData
 
 ## New in Season 2
 
