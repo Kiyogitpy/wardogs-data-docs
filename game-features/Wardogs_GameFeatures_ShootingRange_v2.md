@@ -15,6 +15,8 @@ description: "What This Folder Holds, Match Flow and Components, How It Is Used"
 - Added a data registry source action that adds [`DT_SceneData_Match_ShootingRange`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ShootingRange/Content/ShootingRange.json) to the `UISceneData_Match` registry (client and server source, asset priority 0).
 - Export count in this file: 5 → 6.
 
+Full before/after list: [Season 2 Changes → Game Modes & Maps]({{ '/season-2-changes/game-modes-maps.html' | relative_url }}).
+
 ---
 
 ## 1. What This Folder Holds

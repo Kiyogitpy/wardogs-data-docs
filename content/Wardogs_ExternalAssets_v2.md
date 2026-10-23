@@ -25,6 +25,8 @@ description: "File Inventory, Building Definitions, Decorator Definitions, Damag
 - **Madrid reskins:** the same 7 of 9 pairs share chunk IDs. The two House pairs (Madrid 01 and 03) still differ from Bakurani.
 - **SaveIDs** changed on 97 existing files. Per-chunk prefab hashes and primitive-data values also changed; those fields are not decoded here, so no table records them.
 
+Full before/after list: [Season 2 Changes → World, Visuals & Audio]({{ '/season-2-changes/world-visuals-audio.html' | relative_url }}).
+
 ---
 
 ## 1. File Inventory

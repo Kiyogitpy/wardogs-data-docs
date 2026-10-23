@@ -23,11 +23,13 @@ description: "Folder Map, Damage System, Projectiles, Action Definitions"
 - **Armour and helmet:** new rule for Bullet from Sniper against the High arm class, +28% (Armor).
 - **Infantry rules:** RifledSlug vs Armor −13% → −30%. New rules: Molotov vs SuperHeavy −30%, Arrow vs Heavy −10% and SuperHeavy −34%, 50Cal per-location rules.
 - **Vehicle seat reduction:** ROT_01 and Littlebird Small/Medium −50% → −25%, High −20% → −15%. New [`ROT_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04/Content/ROT_04.json) row with the same values as ROT_01.
-- **Vendors:** AttachmentMarket top price 1800 → 1500 (`MZL_04`). GearMarket LargeBackpack 2400 → 1600, LargeSlingBackpack 3500 → 2400, ExtraLargeSlingBackpack 5000 → 4000. WeaponMarket gains `125x570mm` ammo at 210.
+- **Vendors:** AttachmentMarket `MZL_04` price 1800.0 → 1450.0 (it was the table's highest price in Season 1; the highest price in Season 2 is 1500.0 on `FGP_04`, unchanged). Nine of 17 rows changed price. GearMarket LargeBackpack 2400 → 1600, LargeSlingBackpack 3500 → 2400, ExtraLargeSlingBackpack 5000 → 4000. WeaponMarket gains `125x570mm` ammo at 210.
 - **Destructibles:** building definitions 8 → 14, decorators 7 → 9.
 - **Action definitions:** `BHActionDefinition` 98 → 100 (UI folder 15 → 17).
 - **Settings:** `Controls.LookAccelMaxMultiplier` minimum 0.5 → 1.2, maximum 10.0 → 5.0, default 1.6 → 1.5.
 - **Curves:** CurveFloat 60 → 66, player curves 8 → 9.
+
+Full before/after list: [Season 2 Changes → Damage & Combat Systems]({{ '/season-2-changes/damage-combat-systems.html' | relative_url }}).
 
 ---
 

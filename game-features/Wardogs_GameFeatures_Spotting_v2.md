@@ -15,7 +15,7 @@ description: "What 'Spotting' Covers, Package Contents, Challenge Calculator, Ma
 ## Season 02 update (2026-10-15)
 
 - **Challenge calculator:** 44 rows become 130 (22 Added and 22 Removed become 65 and 65). The new rows are variant-level entries, the new vehicles [`TNK_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/TNK_04.json) and [`WHL_08`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08/Content/WHL_08.json), and the stationary and buildable entries `Loudspeaker`, `MGNest`, [`STN_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/STN_05.json), `BuildableRadio`, `BuildableRepairStation` and `BuildableRefuelStation`.
-- **New `BuildProgress` factor:** 10 buildable and stationary rows now multiply by `BuildProgress` (section 3a). No other formula changed.
+- **New `BuildProgress` factor:** `BuildProgress` is a new factor in 10 buildable and stationary rows of each of the Added and Removed sets (20 rows). Four of those (`BuildableHotZoneMagnet`, `MistralAA`, `Mortar`, `Phalanx`) are existing rows that gained it, and six are new rows (section 3a). No other formula changed.
 - **Lookup tables:** 47 rows become 51 in both lookups. Every reward tag is now specific to one variant, and `MistralAA`, `Mortar` and [`STN_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/STN_05.json) no longer share a tag (section 5).
 - **Values, old -> new (Added):** TNK_01.Heavy XP 75 -> 60. TNK_01.Artillery cash 1500 -> 400 and XP 75 -> 60. MistralAA cash 200 -> 75 and XP 50 -> 20. Mortar cash 100 -> 75 and XP 50 -> 20.
 - **Values, old -> new (Removed):** TNK_01.Heavy cash 5000 -> 3300 and XP 375 -> 200. TNK_01.Artillery cash 8000 -> 1200. Phalanx cash 1500 -> 725 and XP 125 -> 100.
@@ -23,6 +23,8 @@ description: "What 'Spotting' Covers, Package Contents, Challenge Calculator, Ma
 - **Trackers:** the map and spatial trackers gain per-vehicle overrides for [`WHL_08`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08/Content/WHL_08.json) (reward tag `VehicleDestroyed.WHL_08`) and [`TNK_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/TNK_04.json) (reward tag `VehicleDestroyed.TNK_04.Default`). The material tracker gains icon entries for both.
 - **Input:** [`IMC_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Input/IMC_Spotting.json) adds reload bindings on `R` and gamepad face button left ([`IA_Weapon_Reload`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Input/IA_Weapon_Reload.json)).
 - **Unchanged:** state tree states (22 and 21), skills, feed strings, audio, and the match-score cash min and max values.
+
+Full before/after list: [Season 2 Changes → Game Modes & Maps]({{ '/season-2-changes/game-modes-maps.html' | relative_url }}).
 
 ---
 

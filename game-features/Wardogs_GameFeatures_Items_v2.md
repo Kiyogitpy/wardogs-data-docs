@@ -28,6 +28,8 @@ description: "Layout and File Counts, Item Roster, Vendor Prices, Projectiles"
 - **New action:** `Action.RangeFinder.Reload` ([`DA_Action_RangeFinder_Reload`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/RangeFinder/Content/Data/Actions/DA_Action_RangeFinder_Reload.json)). The Crowbar folder also gained four challenge reward files, which this doc does not cover.
 - **File count:** 495 -> 541 files (49 added, 3 removed). Item folders 24 -> 25.
 
+Full before/after list: [Season 2 Changes → Items & Equipment]({{ '/season-2-changes/items-equipment.html' | relative_url }}).
+
 ---
 
 ## 1. Layout and File Counts

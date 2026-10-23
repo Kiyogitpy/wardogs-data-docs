@@ -21,6 +21,8 @@ description: "Layout and File Counts, Named Input Actions, Input Contexts and Ke
   - a screen title (`Itemsmith.Flair.WeaponPaint.Title`) and `bShowBlueprintNameAsSubtitle` = true.
   The layout of this asset is not decoded in this doc.
 
+Full before/after list: [Season 2 Changes → Items & Equipment]({{ '/season-2-changes/items-equipment.html' | relative_url }}).
+
 ## 1. Layout and File Counts
 
 | Export Type | Files | Role |
