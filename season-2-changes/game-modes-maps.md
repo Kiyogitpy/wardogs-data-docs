@@ -15,9 +15,9 @@ Season 1 to Season 2 changes for the Game Modes & Maps area, from the area diff 
 | Assets removed | 2 |
 | Assets modified with real changes | 8 |
 | Assets modified, not compared (Season 1 source truncated) | 1 |
-| Noise-only modified assets (skipped, no real change) | 26 |
+| Noise-only modified assets (skipped: renamed keys, swapped key names or shifted references from the different Season 1 export) | 26 |
 | Assets moved | 0 |
-| Property changes | 5,331 (changed 967, added 1,511, removed 2,852, resequenced 1); 40 further entries are on the removed assets |
+| Property changes | 5,327 (changed 967, added 1,509, removed 2,850, resequenced 1); 40 further entries are on the removed assets |
 
 Full filterable list: [Game Modes & Maps in the change browser]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=game-modes-maps).
 
@@ -39,11 +39,11 @@ These two map files list shader and pipeline warm-up entries (graphics and compu
 | Asset | Property | Season 1 | Season 2 | Change |
 |---|---|---|---|---|
 | B_MovingTarget (range target) | Subsystem class on the knock-down path | Class'CrosstalkAudioEventSubsystem' | Class'GameplayMessageSubsystem' | changed |
-| B_MovingTarget (range target) | Child function and property entries | — | 30 added, 7 removed | changed |
+| B_MovingTarget (range target) | Child function and property entries | — | 28 added, 5 removed | changed |
 | ShootingRange | GameFeatureAction_DataRegistrySource_1 | — | added | added |
 | ShootingRangeTutorial | GameFeatureAction_DataRegistrySource_1 | — | added | added |
 
-B_MovingTarget has 30 entries added, 7 removed, 2 changed and 1 resequenced. Most of the added entries are audio event functions, which are not described here.
+B_MovingTarget has 28 entries added, 5 removed, 2 changed and 1 resequenced. Most of the added entries are audio event functions, which are not described here.
 
 ### Loot and rewards
 
