@@ -179,10 +179,13 @@ project's physics gravity, in cm/s². The x and y components are the zero
 vector (`0xCCA3468`, `0xCCA3478`). `bAffectedByGravity` defaults to **true**
 (`0x699DEE0`, store at `+0x2E0`), and the 155 mm assets do not override it.
 
-**Data gap.** `data/` contains no `DefaultEngine.ini`, so the value of
-`DefaultGravityZ` is not in this repository. UE's default is −980 cm/s². The
-Blueprint and world-gravity export is a separate task; until it lands the
-figure `G = −980` below is an assumption (§8).
+**Value.** `DefaultGravityZ` is −980.0 cm/s², read from
+`[/Script/Engine.PhysicsSettings]` in the engine base config packed in the game
+paks; the game's own `DefaultEngine.ini` sets no gravity key and the
+WorldSettings of the nine map files set no `bGlobalGravitySet` or
+`GlobalGravityZ` (see [Artillery shell flight data](../game-features/Wardogs_ArtilleryShellFlight_v1.md)).
+Not checked: gravity-override volumes in the world-partition cells of the four
+large maps.
 
 **Fuel curve.** While thrust is active (§6.1) and
 `S.FuelGravityAffect` (`+0x228`, a `FRuntimeFloatCurve`) has keys, gravity is
@@ -533,13 +536,18 @@ WARDOGS_ANALYSIS_EXE=<analysis image> python _tools/projectile_flight_check.py
 ## 12. What is open
 
 1. **Which mover mode `BP_155mm_Standard` uses, and what its Blueprint does.**
-   Whether the artillery shell flies by §7 or by Blueprint-side movement needs
-   the Blueprint export (a separate task). If the actor's Blueprint calls
+   The Blueprint export (see
+   [Artillery shell flight data](../game-features/Wardogs_ArtilleryShellFlight_v1.md))
+   shows `BP_155mm_Standard` uses mode `Mover.Mode.Projectile.Standard`
+   (`WDProjectileMove`, empty `DA_DummyMovement`) and its bytecode only spins
+   the mesh and computes travel-time fractions, so §7 applies to it.
+   `BP_155mm_Expensive` uses the `Artillery` mode (`WDArtilleryProjectileMove`)
+   with `InputMultiplier` 0.02, whose rotation step is not traced. If the actor's Blueprint calls
    `Set Velocity`, adds its own forces, or overrides the mode, §8 does not
    apply to it.
-2. **World gravity.** `DefaultGravityZ` is not in `data/`; −980 cm/s² is the
-   UE default. The Blueprint and world-gravity export should confirm it, and
-   whether any gravity-scale override exists on the actor.
+2. **World gravity.** Resolved: −980.0 cm/s² (§4). Open only: override volumes
+   in world-partition cells, and any gravity scale applied by the artillery
+   mode.
 3. **`Rate`.** The integer behind `floor(1000/Rate)` ms (tickable `+0x40C`) was not located; the
    step length in §3 is a formula, not a number.
 4. **Subsystem flag `+0xB0`.** When set, `Tick` only advances `ElapsedTime` and
