@@ -2,25 +2,25 @@
 title: "Vehicles changes"
 parent: "Season 2 Changes"
 nav_order: 4
-description: "Vehicle changes from Season 1 to Season 2: 151 assets added, 1 removed, 339 modified with real changes, 4,040 property changes."
+description: "Vehicle changes from Season 1 to Season 2: 151 assets added, 1 removed, 335 modified with real changes, 3,930 property changes."
 ---
 
 # Vehicles changes
 
 {{ page.description }}
 
-Counts come from `assets/data/season-diff/index.json` and `vehicles.json`. Values are copied as stored. Signed deltas and percentages are calculated from the stored values. Noise-only assets (renamed property keys or shifted reference indexes) are skipped.
+Counts come from `assets/data/season-diff/index.json` and `vehicles.json`. Values are copied as stored. Signed deltas and percentages are calculated from the stored values. Noise-only assets are skipped: renamed keys, swapped key names or shifted references from the different Season 1 export.
 
 | Measure | Count |
 |---|---|
 | Assets added | 151 |
 | Assets removed | 1 |
-| Assets modified with real changes | 339 |
-| Assets modified, noise only (skipped) | 123 |
+| Assets modified with real changes | 335 |
+| Assets modified, noise only (skipped) | 127 |
 | Assets moved | 0 |
-| Property changes (index.json) | 4,040 |
+| Property changes (index.json) | 3,930 |
 
-The change list for these assets holds 4,058 records. The index figure equals that total minus `removed_values` (18).
+The change list for these assets holds 3,948 records. The index figure equals that total minus `removed_values` (18).
 
 ## Headline changes
 
@@ -93,48 +93,48 @@ The asset was renamed and its type changed. The record is in `engine-tooling-dat
 
 | Asset | Property | Season 1 | Season 2 | Change |
 |---|---|---|---|---|
-| DA_FrontWheels_WHL_02 | RelaxationDamper.Values | 20.0 | 2500.0 | +2480.0 (+12400.0%) |
-| DA_FrontWheels_WHL_02 | RelaxationDamper.Values[1] | 20.0 | 2500.0 | +2480.0 (+12400.0%) |
-| DA_FrontWheels_WHL_02 | RelaxationDamper.Values[2] | 20.0 | 2500.0 | +2480.0 (+12400.0%) |
-| DA_FrontWheels_WHL_02_Pickup | RelaxationDamper.Values | 32.0 | 2500.0 | +2468.0 (+7712.5%) |
-| DA_FrontWheels_WHL_02_Pickup | RelaxationDamper.Values[1] | 32.0 | 2500.0 | +2468.0 (+7712.5%) |
-| DA_FrontWheels_WHL_02_Pickup | RelaxationDamper.Values[2] | 32.0 | 2500.0 | +2468.0 (+7712.5%) |
+| DA_FrontAxle_WHL_02 | WheelSetup[frontLWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
+| DA_FrontAxle_WHL_02 | WheelSetup[frontRWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
+| DA_FrontAxle_WHL_02_Pickup | WheelSetup[frontLWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
+| DA_FrontAxle_WHL_02_Pickup | WheelSetup[frontRWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
+| DA_FrontAxle_WHL_05_Humvee | TorqueShare | 0.7 | 0.4 | −0.3 (−42.9%) |
+| DA_FrontAxle_WHL_05_Humvee | WheelSetup[frontLWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
+| DA_FrontAxle_WHL_05_Humvee | WheelSetup[frontRWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
+| DA_FrontAxle_WHL_06_DuneBuggy | WheelSetup[frontLWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
+| DA_FrontAxle_WHL_06_DuneBuggy | WheelSetup[frontRWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
+| DA_FrontAxle_WHL_07 | WheelSetup[frontLWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
+| DA_FrontAxle_WHL_07 | WheelSetup[frontRWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
+| DA_FrontWheels_WHL_05_Humvee | PhysMatLerpValue.Values | 7000.0 | 0.5 | −6999.5 (−100.0%) |
+| DA_FrontWheels_WHL_05_Humvee | PhysMatLerpValue.Values[1] | 3200.0 | 0.65 | −3199.35 (−100.0%) |
+| DA_FrontWheels_WHL_05_Humvee | PhysMatLerpValue.Values[2] | 3200.0 | 0.85 | −3199.15 (−100.0%) |
+| DA_FrontWheels_WHL_05_Humvee | RelaxationDamper.Values | 80.0 | 5250.0 | +5170.0 (+6462.5%) |
+| DA_FrontWheels_WHL_05_Humvee | RelaxationDamper.Values[1] | 80.0 | 3200.0 | +3120.0 (+3900.0%) |
+| DA_FrontWheels_WHL_05_Humvee | RelaxationDamper.Values[2] | 80.0 | 3200.0 | +3120.0 (+3900.0%) |
 | DA_FrontWheels_WHL_05_Humvee | SuspensionSpring.Values | 0.5 | 80.0 | +79.5 (+15900.0%) |
 | DA_FrontWheels_WHL_05_Humvee | SuspensionSpring.Values[1] | 0.65 | 80.0 | +79.35 (+12207.7%) |
 | DA_FrontWheels_WHL_05_Humvee | SuspensionSpring.Values[2] | 0.85 | 80.0 | +79.15 (+9311.8%) |
-| DA_FrontWheels_WHL_06_DuneBuggy | RelaxationDamper.Values | 7.0 | 850.0 | +843.0 (+12042.9%) |
-| DA_FrontWheels_WHL_06_DuneBuggy | RelaxationDamper.Values[1] | 7.0 | 850.0 | +843.0 (+12042.9%) |
-| DA_FrontWheels_WHL_06_DuneBuggy | RelaxationDamper.Values[2] | 7.0 | 850.0 | +843.0 (+12042.9%) |
-| DA_FrontWheels_WHL_07 | RelaxationDamper.Values | 55.0 | 7500.0 | +7445.0 (+13536.4%) |
-| DA_FrontWheels_WHL_07 | RelaxationDamper.Values[1] | 48.0 | 6550.0 | +6502.0 (+13545.8%) |
-| DA_FrontWheels_WHL_07 | RelaxationDamper.Values[2] | 48.0 | 6550.0 | +6502.0 (+13545.8%) |
-| DA_FrontWheels_WHL_07 | SuspensionSpring.Values[1] | 0.65 | 48.0 | +47.35 (+7284.6%) |
-| DA_FrontWheels_WHL_07 | SuspensionSpring.Values[2] | 0.5 | 48.0 | +47.5 (+9500.0%) |
-| DA_RearWheels_WHL_02 | RelaxationDamper.Values | 32.0 | 3200.0 | +3168.0 (+9900.0%) |
-| DA_RearWheels_WHL_02 | RelaxationDamper.Values[1] | 32.0 | 3200.0 | +3168.0 (+9900.0%) |
-| DA_RearWheels_WHL_02 | RelaxationDamper.Values[2] | 32.0 | 3200.0 | +3168.0 (+9900.0%) |
-| DA_RearWheels_WHL_02_Pickup | RelaxationDamper.Values | 32.0 | 3200.0 | +3168.0 (+9900.0%) |
-| DA_RearWheels_WHL_02_Pickup | RelaxationDamper.Values[1] | 32.0 | 3200.0 | +3168.0 (+9900.0%) |
-| DA_RearWheels_WHL_02_Pickup | RelaxationDamper.Values[2] | 32.0 | 3200.0 | +3168.0 (+9900.0%) |
+| DA_RearAxle_WHL_05_Humvee | TorqueShare | 0.3 | 0.6 | +0.3 (+100.0%) |
+| DA_RearWheels_WHL_05_Humvee | PhysMatLerpValue.Values | 12000.0 | 0.5 | −11999.5 (−100.0%) |
+| DA_RearWheels_WHL_05_Humvee | PhysMatLerpValue.Values[1] | 2500.0 | 0.65 | −2499.35 (−100.0%) |
+| DA_RearWheels_WHL_05_Humvee | PhysMatLerpValue.Values[2] | 2500.0 | 0.85 | −2499.15 (−100.0%) |
 | DA_RearWheels_WHL_05_Humvee | RelaxationDamper.Values | 88.0 | 6250.0 | +6162.0 (+7002.3%) |
+| DA_RearWheels_WHL_05_Humvee | RelaxationDamper.Values[1] | 88.0 | 2500.0 | +2412.0 (+2740.9%) |
+| DA_RearWheels_WHL_05_Humvee | RelaxationDamper.Values[2] | 88.0 | 2500.0 | +2412.0 (+2740.9%) |
 | DA_RearWheels_WHL_05_Humvee | SuspensionSpring.Values | 0.5 | 88.0 | +87.5 (+17500.0%) |
 | DA_RearWheels_WHL_05_Humvee | SuspensionSpring.Values[1] | 0.65 | 88.0 | +87.35 (+13438.5%) |
 | DA_RearWheels_WHL_05_Humvee | SuspensionSpring.Values[2] | 0.85 | 88.0 | +87.15 (+10252.9%) |
-| DA_RearWheels_WHL_06_DuneBuggy | RelaxationDamper.Values | 7.0 | 850.0 | +843.0 (+12042.9%) |
-| DA_RearWheels_WHL_06_DuneBuggy | RelaxationDamper.Values[1] | 7.0 | 850.0 | +843.0 (+12042.9%) |
-| DA_RearWheels_WHL_06_DuneBuggy | RelaxationDamper.Values[2] | 7.0 | 850.0 | +843.0 (+12042.9%) |
-| DA_RearWheels_WHL_07 | RelaxationDamper.Values | 95.0 | 10500.0 | +10405.0 (+10952.6%) |
-| DA_RearWheels_WHL_07 | RelaxationDamper.Values[1] | 82.0 | 9300.0 | +9218.0 (+11241.5%) |
-| DA_RearWheels_WHL_07 | RelaxationDamper.Values[2] | 82.0 | 9300.0 | +9218.0 (+11241.5%) |
-| DA_RearWheels_WHL_07 | SuspensionSpring.Values | 0.5 | 95.0 | +94.5 (+18900.0%) |
-| DA_RearWheels_WHL_07 | SuspensionSpring.Values[1] | 0.65 | 82.0 | +81.35 (+12515.4%) |
-| DA_RearWheels_WHL_07 | SuspensionSpring.Values[2] | 0.85 | 82.0 | +81.15 (+9547.1%) |
+| DA_RearWheels_WHL_06_DuneBuggy | BrakeTorque.Values | 16000.0 | 13000.0 | −3000.0 (−18.8%) |
+| DA_RearWheels_WHL_06_DuneBuggy | BrakeTorque.Values[1] | 12000.0 | 9000.0 | −3000.0 (−25.0%) |
+| DA_SPW_01_WheelData | DampingRebound | 12000.0 | 17000.0 | +5000.0 (+41.7%) |
+| DA_TNK_01_WheelData | DampingRebound | 12000.0 | 17000.0 | +5000.0 (+41.7%) |
+| DA_WHL_01_FrontWheels | RelaxationDamper.Values | 6.5 | 450.0 | +443.5 (+6823.1%) |
 | DA_WHL_01_FrontWheels | RelaxationDamper.Values[1] | 5.0 | 400.0 | +395.0 (+7900.0%) |
 | DA_WHL_01_FrontWheels | RelaxationDamper.Values[2] | 5.0 | 400.0 | +395.0 (+7900.0%) |
+| DA_WHL_01_RearWheels | RelaxationDamper.Values | 6.5 | 450.0 | +443.5 (+6823.1%) |
 | DA_WHL_01_RearWheels | RelaxationDamper.Values[1] | 5.0 | 400.0 | +395.0 (+7900.0%) |
 | DA_WHL_01_RearWheels | RelaxationDamper.Values[2] | 5.0 | 400.0 | +395.0 (+7900.0%) |
 
-Showing 40 of 128 numeric changes in wheel, axle and suspension assets, sorted by significance. Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=vehicles&q=Wheel
+Showing 40 of 56 numeric changes in wheel, axle and suspension assets, sorted by significance. Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=vehicles&q=Wheel
 
 ### Vehicle market prices and buildable costs
 
@@ -233,13 +233,13 @@ Showing 40 of 49 rows. Browser link: {{ '/season-2-changes/all-changes.html' | r
 
 ### Non-numeric changes
 
-414 changed values are not numeric. The most common properties:
+378 changed values are not numeric. The most common properties:
 
 | Property | Changes | Example asset | Season 1 | Season 2 |
 |---|---|---|---|---|
 | bCheckIfAboveThreshold | 205 | DA_FWG_01_GameplaySystems | true | false |
-| ObjectPath | 96 | DA_Vehicle_BrakingSurface_WHL_06 | /WHL_06/Audio/Wavs/Skidding_WheelSpin_Braking/Dirt/SFX_Vehicles_Land_WHL01_DirtWheelBraki… | /Game/Audio/Vehicles/Shared/Surface/SFX_Vehicles_Land_WHL01_DirtWheelBraking_01.0 |
-| ObjectName | 51 | DA_Vehicle_Skidding_Fast_WHL_01 | SoundWave'SFX_Vehicles_Land_WHL_02_Skidding_Asphalt' | SoundWave'SFX_Vehicles_Land_WHL_02_Skidding_Asphalt1' |
+| ObjectPath | 78 | DA_Vehicle_BrakingSurface_WHL_06 | /WHL_06/Audio/Wavs/Skidding_WheelSpin_Braking/Dirt/SFX_Vehicles_Land_WHL01_DirtWheelBraki… | /Game/Audio/Vehicles/Shared/Surface/SFX_Vehicles_Land_WHL01_DirtWheelBraking_01.0 |
+| ObjectName | 33 | DA_Vehicle_Skidding_Fast_WHL_01 | SoundWave'SFX_Vehicles_Land_WHL_02_Skidding_Asphalt' | SoundWave'SFX_Vehicles_Land_WHL_02_Skidding_Asphalt1' |
 | TagName | 14 | DA_GameplaySystems_SPW | Id.Item.Flares | Id.Item.VehicleSmoke |
 | SettingBehavior | 8 | IMC_LandVehicles_Driver | EPlayerMappableKeySettingBehaviors::OverrideSettings | EPlayerMappableKeySettingBehaviors::IgnoreSettings |
 | YawJointSocket | 7 | W_ROT_04_MountedMachineGun_L | TurretSkeleton_L | turretYaw_J |
