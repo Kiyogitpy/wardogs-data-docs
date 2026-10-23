@@ -126,6 +126,22 @@ if (mode == "recover-bp-types" || mode == "recover-bp-names" || mode == "recover
     return 0;
 }
 
+if (mode == "rawfiles")
+{
+    // rawfiles <substring> [--copy]: list every file (any extension) whose path contains the text; with --copy also write the bytes
+    var needle = rest.Count > 0 ? rest[0] : "";
+    var raw = provider.Files.Values.Where(f => f.Path.Contains(needle, StringComparison.OrdinalIgnoreCase)).OrderBy(f => f.Path, StringComparer.OrdinalIgnoreCase).ToList();
+    File.WriteAllLines(Path.Combine(outDir, "rawfiles.txt"), raw.Select(f => f.Path));
+    if (rest.Contains("--copy"))
+        foreach (var f in raw)
+        {
+            var dest = Path.Combine(outDir, "raw", f.Path.Replace('/', Path.DirectorySeparatorChar));
+            Directory.CreateDirectory(Path.GetDirectoryName(dest)!);
+            File.WriteAllBytes(dest, f.Read());
+        }
+    Console.WriteLine($"{needle}: {raw.Count} files");
+    return 0;
+}
 if (mode == "list")
 {
     var prefix = rest.Count > 0 ? rest[0] : "";
