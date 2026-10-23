@@ -1,7 +1,8 @@
 ---
 title: "FlyByManager (feature)"
-parent: "Game Features"
 redirect_from: ["/Wardogs_GameFeatures_FlyByManager_v2.html", "/Wardogs_GameFeatures_FlyByManager_v2"]
+parent: "Game Modes & Maps"
+description: "Plugin Inventory, Plugin Root, Audio Events, How They Work Together"
 ---
 
 # Wardogs — FlyByManager Game Feature Reference
@@ -73,4 +74,4 @@ Note the asymmetry: Jet_01 has a dedicated fire event and a Doppler behaviour. J
 - **MetaSound contents** (`MSS_Vehicles_Jet`, `MSS_Vehicles_Jet_Firing`, `MSS_Vehicles_Jet_02`) are referenced by path. Their internal parameters are not in the dump.
 - **Trigger call sites** (which game code fires `Audio.Event.Vehicle.Jet.Fire` and the Jet02 events, and when) are not in this plugin.
 - **Stop-sound targets** are inferred from the context tag, not from an explicit sound reference, since the stop behaviour has no sound field.
-  - **See [`docs/CROSS_REFERENCE.md`](../docs/CROSS_REFERENCE.md)** for the project-wide cross-reference index of where referenced assets are defined.
+  - **See [`docs/CROSS_REFERENCE.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/CROSS_REFERENCE.md)** for the project-wide cross-reference index of where referenced assets are defined.

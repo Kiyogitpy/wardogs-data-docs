@@ -1,7 +1,8 @@
 ---
 title: "Vehiclesmith (feature)"
-parent: "Game Features"
 redirect_from: ["/Wardogs_GameFeatures_Vehiclesmith_v2.html", "/Wardogs_GameFeatures_Vehiclesmith_v2"]
+parent: "Vehicles"
+description: "Plugin Inventory, Root Game Feature, Frontend Scene Entry, Dev Menu Map"
 ---
 
 # Wardogs — Vehiclesmith Game Feature Reference
@@ -238,7 +239,7 @@ This plugin does not change vehicle stats. What it does:
 ## 10. Still Not Pulled / Limitations
 
 - **Vehicle stats and part lists** are not here. They are defined in the vehicle category (see the Vehicles reference).
-  - **See [`docs/CROSS_REFERENCE.md`](../docs/CROSS_REFERENCE.md)** for the project-wide cross-reference index of where referenced assets are defined.
+  - **See [`docs/CROSS_REFERENCE.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/CROSS_REFERENCE.md)** for the project-wide cross-reference index of where referenced assets are defined.
 - **String and icon assets** (`STRINGS_Vehiclesmith_*`, `W_VehiclesmithScene`, `T_UI_*`) are referenced by key or path. The text itself is not in this export.
 - **Lists of variant and filter ids** beyond the ones above (for example every `Vehicle.Archetype.*` tag) are not enumerated here.
 - **The 46 named-action entries** are summarised by group in section 2b rather than listed one by one.

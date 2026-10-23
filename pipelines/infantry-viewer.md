@@ -1,8 +1,8 @@
 ---
 title: "Infantry Hitbox Viewer"
-parent: "Pipelines"
-nav_order: 2.75
 redirect_from: ["/infantry-viewer.html", "/infantry-viewer"]
+parent: "Damage & Combat Systems"
+description: "The player's physics bodies coloured by hit location, multipliers per damage source, armor and helmet coverage"
 ---
 
 # Infantry Hitbox Viewer
@@ -75,9 +75,9 @@ The player's physics-asset bodies, coloured by the hit location each body's bone
 
 ## How this works
 
-Baseline weapon/projectile pairs use the first supported caliber with projectile data as a modelling choice; not every baseline loading path has been audited. Extra child-caliber pairings are restricted to the [reviewed item/filter associations](../docs/evidence/round8-weapon-context.md). A damage calculation for a pair does not by itself prove that a loadout can fire it.
+Baseline weapon/projectile pairs use the first supported caliber with projectile data as a modelling choice; not every baseline loading path has been audited. Extra child-caliber pairings are restricted to the [reviewed item/filter associations](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-weapon-context.md). A damage calculation for a pair does not by itself prove that a loadout can fire it.
 
-- **Bodies, not the render mesh.** The model shows the baseline `PA_TPCharacter_Simplified` asset: one untextured collision body per bone, placed in the reference pose. Each body is named, and its material named, after its bone. Six bodies (lower arms, calves and thighs) show authored tapered capsules. The native simple-geometry builder instead registers straight capsules with the mean of the scaled/clamped end radii; body/element modes permit queries, while geometry selection and channel filters still apply. See the [native construction trace](../docs/evidence/round8-tapered-query.md). This supersedes the model's older embedded unverified-query note.
+- **Bodies, not the render mesh.** The model shows the baseline `PA_TPCharacter_Simplified` asset: one untextured collision body per bone, placed in the reference pose. Each body is named, and its material named, after its bone. Six bodies (lower arms, calves and thighs) show authored tapered capsules. The native simple-geometry builder instead registers straight capsules with the mean of the scaled/clamped end radii; body/element modes permit queries, while geometry selection and channel filters still apply. See the [native construction trace](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-tapered-query.md). This supersedes the model's older embedded unverified-query note.
 - **A bone picks a hit location.** The hit-location asset maps 22 skeleton bones to 12 hit locations ([Game Mechanics](../content/Wardogs_GameMechanics_v2.md#2b-hit-locations-da_globaldamage_hitlocations_player) §2b). The game matches the hit bone's name exactly (`0x6BB8D00`): no walk up to parent bones, and a bone that isn't in the map gives no hit location. `spine_01` and `spine_02` are mapped but have no body in this baseline asset; generated runtime assets can differ. The asset's `DamageImpactRemap` (`spine_01` to `pelvis`, `spine_05` to `spine_04`) is read for animation and ragdoll only (`0x6BB8D40`), not for damage: `spine_05` counts as the upper torso.
 - **The hit location picks a multiplier.** The hit-location rule multiplies the running damage by the `Universal` row's value for the hit location times the value in the row named by the hit's weapon or damage-type tag, or by that tag's parent ([Damage Pipeline](Wardogs_DamagePipeline_v2.md#71-b_bonedamagemodifiers_c-entries-5-7-10) §7.1). The values are in [§8.1](Wardogs_DamagePipeline_v2.md#81-bonedamagemodifiers-hit-location-table). An assault-rifle headshot gets 1.0 × 2.35 = ×2.35.
 - **Not every source uses it.** A source that no hit-location entry selects, or one the rule exempts (drone explosives), has the same factor on every body part. A character explosion normally keeps one hit per component and evaluates it separately. Projectile blasts retain the weapon and caliber context, so a mapped hit bone can use that weapon's row. This assumes valid equipment and the converter's bone-lookup fallback; invalid armor tags can suppress it. The normal setup has one eligible TP mesh component; sampling, visibility, protected-seat rejection and later mutations still determine acceptance. The viewer models one mapped hit, not a guaranteed blast total.
@@ -294,7 +294,7 @@ These are starting blast values, including native inheritance, rather than
 final health loss. The source root and appended context are distinct.
 Each kept component hit is evaluated separately; trigger timing and the
 complete Molotov fire-patch geometry/lifetime are not modelled.
-See the [reviewed actor evidence](../docs/evidence/round8-explosive-actors.md).
+See the [reviewed actor evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-explosive-actors.md).
 
 <!-- infantry_tables --actor-explosives -->
 | Actor | Source root | Base | Outer radius (cm) | Inner radius (cm) | Minimum | Falloff | Appended context (before radius) |

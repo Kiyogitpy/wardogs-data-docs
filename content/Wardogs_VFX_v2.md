@@ -1,7 +1,8 @@
 ---
 title: "VFX"
-parent: "Content"
 redirect_from: ["/Wardogs_VFX_v2.html", "/Wardogs_VFX_v2"]
+parent: "World, Visuals & Audio"
+description: "Inventory, Explosions, Explosion Sequences, Muzzle Flashes"
 ---
 
 # Wardogs — VFX Reference
@@ -385,13 +386,13 @@ Each row is a `WDPostProcessEffect` keyed by a gameplay tag. The material is `MI
 ## 11. Still Not Pulled / Limitations
 
 - **Object references only.** Recipe rows reference `B_CameraShake_*` blueprints and `NS_*` Niagara systems by path or class name. Only those references were pulled. The shake behavior and the Niagara internals are not in [`Content/VFX`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/VFX) and are not in this doc.
-  - **See [`docs/CROSS_REFERENCE.md`](../docs/CROSS_REFERENCE.md)** for the project-wide cross-reference index of where referenced assets are defined.
+  - **See [`docs/CROSS_REFERENCE.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/CROSS_REFERENCE.md)** for the project-wide cross-reference index of where referenced assets are defined.
 - **Unit and meaning uncertainty.** Sizes, lifetimes, and offsets have no units in the export. Multiplier names (for example `Flash Size Multiplyer 1P`) are read literally, and how they stack at runtime is not verified.
-  - **See [`docs/UNITS.md`](../docs/UNITS.md)** for the project-wide units reference (UE 5.7 defaults + Wardogs-specific suffixes).
+  - **See [`docs/UNITS.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/UNITS.md)** for the project-wide units reference (UE 5.7 defaults + Wardogs-specific suffixes).
 - **Unnamed enum.** `SmokeType = NewEnumerator1` on six smoke grenades does not say which behavior it selects.
-  - **SDK (2026-10-16):** enum type is [`ESmokeTypes`](../sdk/raw/ESmokeTypes_structs.hpp) (3 values: `NewEnumerator0`, `NewEnumerator1`, `ESmokeTypes_MAX`). Dumper-7 did not resolve the symbolic value names either — the UserDefinedEnum ships without string labels. Behaviour mapping remains unresolved via static means; would need runtime observation to confirm which value triggers which smoke behavior.
+  - **SDK (2026-10-16):** enum type is [`ESmokeTypes`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/ESmokeTypes_structs.hpp) (3 values: `NewEnumerator0`, `NewEnumerator1`, `ESmokeTypes_MAX`). Dumper-7 did not resolve the symbolic value names either — the UserDefinedEnum ships without string labels. Behaviour mapping remains unresolved via static means; would need runtime observation to confirm which value triggers which smoke behavior.
 - **Unnamed property names.** Some keys in the timing sequences are suffixed with hash tokens (for example `ExplosionData_9_FB01A97E496F...`). They were trimmed to their readable part. The mapping is one-to-one, so the meaning is unchanged, but the raw keys are not reproduced here.
-  - **SDK (2026-10-16):** struct is [`FFExplosionTimingInfo`](../sdk/raw/FExplosionTimingInfo_structs.hpp) with three fields: `ExplosionData` (`UPDA_Explosion_C*`, 0x00), `Timing` (`double`, 0x08), `RootOffset` (`FVector`, 0x10). The hash suffixes (`_9_FB01A97E...`, `_2_4D3BBAEA...`, `_6_F64F6510...`) are Blueprint internal versioning GUIDs; the readable prefix is the actual symbolic field name. Doc's one-to-one assertion confirmed.
+  - **SDK (2026-10-16):** struct is [`FFExplosionTimingInfo`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/FExplosionTimingInfo_structs.hpp) with three fields: `ExplosionData` (`UPDA_Explosion_C*`, 0x00), `Timing` (`double`, 0x08), `RootOffset` (`FVector`, 0x10). The hash suffixes (`_9_FB01A97E...`, `_2_4D3BBAEA...`, `_6_F64F6510...`) are Blueprint internal versioning GUIDs; the readable prefix is the actual symbolic field name. Doc's one-to-one assertion confirmed.
 - **Default values not exported.** Any property shown as `-` is absent from the export. The engine default applies, and it is not in the dump.
 - **Material and decal assets not opened.** `MI_*`, `MM_*`, and `MI_Decal_*` paths are listed but their parameters are not in this category.
 - **Landscape-response and leaf gradients partially decoded.** The gradient key lists for the leaf types other than Ash and Beech, and the Landscape response in the CA atlas beyond the five curves, were not reproduced key by key.

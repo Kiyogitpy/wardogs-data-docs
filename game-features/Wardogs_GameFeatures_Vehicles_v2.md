@@ -1,7 +1,8 @@
 ---
 title: "Vehicles (feature)"
-parent: "Game Features"
 redirect_from: ["/Wardogs_GameFeatures_Vehicles_v2.html", "/Wardogs_GameFeatures_Vehicles_v2"]
+parent: "Vehicles"
+description: "Folder Layout and Family Map, Vehicle Chain: How the Assets Link, Vehicle Market, Vehicle Stats"
 ---
 
 # Wardogs — GameFeatures / Vehicles Reference
@@ -483,7 +484,7 @@ Stationary platforms use `BHBaseVehicleConfigDataAsset` (no physics). They carry
 
 - **Unnamed fields.** Some fields have no readable name. Their meanings are unknown and were skipped (for example, several flags on health triggers and vendor variations).
 - **Units.** Speed, fuel, FuelEconomy, muzzle speed, drag area and mass are not labelled in the export. Treat them as relative values until a reference confirms them. Only fields with a unit suffix (`_mps`, `_kmh`, `_deg`, `_m`) have a known unit.
-  - **See [`docs/CROSS_REFERENCE.md`](../docs/CROSS_REFERENCE.md)** for the project-wide cross-reference index of where referenced assets are defined.
+  - **See [`docs/CROSS_REFERENCE.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/CROSS_REFERENCE.md)** for the project-wide cross-reference index of where referenced assets are defined.
 - **Semantics inferred from names.** `LevelToUnlock` (vendor), `StartDelayTime` / `LoopLoadRoundTime` (reload), `RestockSuppliesNeeded`, and the above/below effect split on health triggers are read from names only.
 - **Health trigger effects.** Effect objects (`WDVehicleEngineEffect`, `WDFuelComponentEffect`, `WDVehicleTurretEffect`, `WDWheeledVehicleEffect` and so on, roughly 180 objects across the folder) are counted but their parameters are not decoded.
 - **Damage entries.** Damage tables are counted by operation. Each entry's `Amount`, requirements and priority are not summarized.

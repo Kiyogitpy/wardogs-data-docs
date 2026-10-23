@@ -1,7 +1,8 @@
 ---
 title: "Medical and Healing"
-parent: "Game Features"
 redirect_from: ["/Wardogs_Medical_v1.html", "/Wardogs_Medical_v1"]
+parent: "Damage & Combat Systems"
+description: "Every medical item: use time, healing amounts and the effects they apply"
 ---
 
 # Wardogs: Medical and Healing (what each item does, in numbers)
@@ -24,7 +25,7 @@ The [Item Shop](Wardogs_ItemShop_v1.md) lists what medical items cost and the [I
 - **Healing is per use, not a rate, except for the Medical Bag.** The bandage adds 35 health and the Individual First Aid Kit adds 100 per use (**Data**). The Medical Bag is the only item with a stated duration: 35 over 5 s on yourself, 15 over 1.5 s on a teammate (**Data**).
 - **There is no damage-over-time bleeding.** "Bleed" in the game is the downed bleed-out timer (section 6). No medical item definition has a cure or removal tag, and no effect below changes health over time (**Data**). No splint or tourniquet item exists in the data.
 - **Using an item slows you.** The bandage, First Aid Kit, Medical Bag, stim and resuscitator apply `GE_UseAppliable`, which multiplies max speed by 0.5 (**Data**).
-- **Use time in seconds is the length of the animation montage.** Most items use `AnimationLength`; the base action reads the length of the item's animation (`CalculateTotalInteractionTime` in `B_Action_Appliable_Base`, **Data (Blueprint bytecode)**), or the position of a named notify for `AnimationNotifier`. The montage lengths are in the use table below (**Data (Blueprint CDO)**, round 17 export, [evidence](../docs/evidence/round17-blueprint-defaults.md)): bandage 5.23 s on yourself and 4.83 s on a teammate, First Aid Kit 5.23 s with the heal at 4.73 s, Enox 2.17 s, Stim Pen 2 s. Every montage has play rate 1.0. The Medical Bag and the resuscitator run until the item is empty or the target is full.
+- **Use time in seconds is the length of the animation montage.** Most items use `AnimationLength`; the base action reads the length of the item's animation (`CalculateTotalInteractionTime` in `B_Action_Appliable_Base`, **Data (Blueprint bytecode)**), or the position of a named notify for `AnimationNotifier`. The montage lengths are in the use table below (**Data (Blueprint CDO)**, round 17 export, [evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round17-blueprint-defaults.md)): bandage 5.23 s on yourself and 4.83 s on a teammate, First Aid Kit 5.23 s with the heal at 4.73 s, Enox 2.17 s, Stim Pen 2 s. Every montage has play rate 1.0. The Medical Bag and the resuscitator run until the item is empty or the target is full.
 - **Natural regeneration for infantry was not found.** The vitality component only starts a 10 s regen delay timer after damage (**Native**); the one regen component in the data belongs to Deathmatch and its values are blueprint (not traced).
 
 ## 2. Items: use and consumption
@@ -212,7 +213,7 @@ Reading it: the bandage and the First Aid Kit are counted in uses and in montage
 | GameplayEffects resolved | 7 of 7 |
 <!-- /medical_tables -->
 
-Settled in round 17 (**Data (Blueprint CDO)**, [evidence](../docs/evidence/round17-blueprint-defaults.md)): the seconds of every `AnimationLength` use (montage lengths) and the `Heal` notify time; the defibrillator charge time (`ChargeDuration` 4 s) and battery cost (`BatteryChargesUsed` 25 per discharge); the player bleed-out values (360 s, 30 s, rates 0.5 and 240); the Enox pool (`MaxDecayHealth` 40); the defibrillator revive health (35).
+Settled in round 17 (**Data (Blueprint CDO)**, [evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round17-blueprint-defaults.md)): the seconds of every `AnimationLength` use (montage lengths) and the `Heal` notify time; the defibrillator charge time (`ChargeDuration` 4 s) and battery cost (`BatteryChargesUsed` 25 per discharge); the player bleed-out values (360 s, 30 s, rates 0.5 and 240); the Enox pool (`MaxDecayHealth` 40); the defibrillator revive health (35).
 
 Open (not traced):
 

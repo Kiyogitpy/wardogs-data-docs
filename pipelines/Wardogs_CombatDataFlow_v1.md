@@ -1,8 +1,8 @@
 ---
 title: "Combat Data Flow"
-parent: "Pipelines"
-nav_order: 4
 redirect_from: ["/Wardogs_CombatDataFlow_v1.html", "/Wardogs_CombatDataFlow_v1"]
+parent: "Damage & Combat Systems"
+description: "One weapon shot followed through every pipeline to the health change"
 ---
 
 # Wardogs — Combat Data Flow Integration
@@ -251,8 +251,8 @@ rules.
 | How many vehicles have per-class damage rules? | [`Wardogs_VehicleDamagePipeline_v1.md`](Wardogs_VehicleDamagePipeline_v1.md) §2.1 — 21 tables, 23 rows |
 | What's the GAS attribute system? | [`Wardogs_GameplayEffectsPipeline_v1.md`](Wardogs_GameplayEffectsPipeline_v1.md) §4 — tag-keyed records with double base/current values, no `UAttributeSet` |
 | How many GE_* effect classes ship? | [`Wardogs_GameplayEffectsPipeline_v1.md`](Wardogs_GameplayEffectsPipeline_v1.md) §2 — 338 total |
-| What are the units on `InitialBulletSpeed`? | [`UNITS.md`](../docs/UNITS.md) §1 — cm/s |
-| Where is `CT_Weapon_Spread` defined? | [`CROSS_REFERENCE.md`](../docs/CROSS_REFERENCE.md) `CT_*` section |
+| What are the units on `InitialBulletSpeed`? | [`UNITS.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/UNITS.md) §1 — cm/s |
+| Where is `CT_Weapon_Spread` defined? | [`CROSS_REFERENCE.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/CROSS_REFERENCE.md) `CT_*` section |
 
 ## Change log
 

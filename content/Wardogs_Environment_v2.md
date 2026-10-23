@@ -1,7 +1,8 @@
 ---
 title: "Environment"
-parent: "Content"
 redirect_from: ["/Wardogs_Environment_v2.html", "/Wardogs_Environment_v2"]
+parent: "World, Visuals & Audio"
+description: "Inventory and folder map, How the vegetation and PCG data combines, MicroBiomes, Layers"
 ---
 
 # Wardogs — Environment & PCG Reference
@@ -766,7 +767,7 @@ These four types are new to this doc. Their fields are not decoded here yet.
 - **Fluid Flux `Iteration`** (23,813 to 1,261,732 across states) has no label in the export. Its meaning (bake frame, simulation step, or version counter) is unknown.
 - **`AttenuationDistance`** (1000 on all 40 MicroBiomes that set it) and the other distance-like fields on MicroBiomes are not confirmed as cm cull or fade distances.
 - **Height grid arrays** (`WDWaterHeightGridAsset`) are binary data keyed by unnamed field names. Only metadata is reported here (world size, grid width, origin, linked state). Height values are not decoded.
-  - **SDK (2026-10-16):** [`UWDWaterHeightGridAsset`](../sdk/raw/WDGame_classes.hpp#L33691) is a `UDataAsset` with 8 fields:
+  - **SDK (2026-10-16):** [`UWDWaterHeightGridAsset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/WDGame_classes.hpp#L33691) is a `UDataAsset` with 8 fields:
     - `worldmin` (`FVector2D`, 0x30) — origin
     - `WorldSize` (`FVector2D`, 0x40) — world size (cm, confirmed)
     - `GridWidth` (`int32`, 0x50) — grid X dim
@@ -782,7 +783,7 @@ These four types are new to this doc. Their fields are not decoded here yet.
 - **Four vehicle assets are unlisted** (see section 10). Whether they are spawned another way is not in this folder.
 - **Usage links are not in the export.** It does not say which landscape material samples [`VC_Stratus`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Landscape/Materials/Kavkazi/VC_Stratus.json), [`VC_GrassTint`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Landscape/Materials/Kavkazi/VC_GrassTint.json), or the atlas, nor which mask texture the grass `ScatterMaskChannel` reads.
 - **Unit assumptions.** Distances are assumed to be Unreal cm. Sun `Intensity` is assumed to be lux. Neither is stated in the export.
-  - **See [`docs/UNITS.md`](../docs/UNITS.md)** for the project-wide units reference (UE 5.7 defaults + Wardogs-specific suffixes).
+  - **See [`docs/UNITS.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/UNITS.md)** for the project-wide units reference (UE 5.7 defaults + Wardogs-specific suffixes).
 - **`_Overkill` light presets.** Their purpose is not confirmed.
 - **Sampling of raw files.** Most values come from the script's normalised output. Raw JSON was spot-checked for [`MB_Pine_Treeline`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/MicroBiomes/Pine/MB_Pine_Treeline.json) and [`CP_River_Kavkazi`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Water/FluidFlux/Surface/CP_River_Kavkazi.json), and the headers of several other assets.
 - **Not in this folder.** The landscape material, the PCG graphs that consume these data assets, the mesh-material overrides, and the `BP_Interactable_GarageDoor_*` blueprints live elsewhere in the dump and are not covered here.

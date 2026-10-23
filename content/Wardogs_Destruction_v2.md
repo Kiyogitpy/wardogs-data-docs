@@ -1,7 +1,8 @@
 ---
 title: "Destruction"
-parent: "Content"
 redirect_from: ["/Wardogs_Destruction_v2.html", "/Wardogs_Destruction_v2"]
+parent: "World, Visuals & Audio"
+description: "Assets at a Glance, Normal Building Lookup, Anonymous Building Lookup, Score Curves"
 ---
 
 # Wardogs — Destruction Reference
@@ -111,7 +112,7 @@ Neither curve states what it scores. Both are plausibly multipliers on a buildin
 
 - **The consumer of each lookup is not in this folder.** The export does not show which system reads the lookup tables, or when.
 - **Prefab classes are referenced by name only.** The `CP_*_C` blueprint classes are not exported here, so their contents (debris, collision, damage thresholds) are unknown.
-  - **See [`docs/CROSS_REFERENCE.md`](../docs/CROSS_REFERENCE.md)** for the project-wide cross-reference index of where referenced assets are defined.
+  - **See [`docs/CROSS_REFERENCE.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/CROSS_REFERENCE.md)** for the project-wide cross-reference index of where referenced assets are defined.
 - **Curve input and output meanings are not stated.** The angle unit and the distance unit are inferred, not confirmed.
 - **No damage or collapse numbers** appear in this folder, so none are reported.
 - The **anonymous lookup has no prefab entries at all.** Whether it is unfinished or deliberately empty cannot be determined from the export.

@@ -1,8 +1,8 @@
 ---
 title: "Gameplay Effects Pipeline"
-parent: "Pipelines"
-nav_order: 3
 redirect_from: ["/Wardogs_GameplayEffectsPipeline_v1.html", "/Wardogs_GameplayEffectsPipeline_v1"]
+parent: "Damage & Combat Systems"
+description: "Effects, attributes, modifiers, stacking and the health attribute"
 ---
 
 # Wardogs — Gameplay Effects Pipeline
@@ -43,7 +43,7 @@ unreviewed decompiler output), **SDK**, **Data**, **Open**.
 
 ### 1.1 `UBHGameplayEffect` (0x270 bytes)
 
-**SDK**, [`BHGameplayEffects_classes.hpp`](../sdk/raw/BHGameplayEffects_classes.hpp):
+**SDK**, [`BHGameplayEffects_classes.hpp`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/BHGameplayEffects_classes.hpp):
 
 | Offset | Field | Type | Notes |
 |---|---|---|---|
@@ -330,7 +330,7 @@ duration ends (`0x522D260`), which removes the instance
 
 These are code facts. What they mean for authority, and how rollback
 works, are **Open**; the doc makes no server-authority claim, and
-security questions go through [`SECURITY.md`](../SECURITY.md).
+security questions go through [`SECURITY.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/SECURITY.md).
 
 ## 6. Gameplay cues
 
@@ -396,11 +396,11 @@ and settle on its final value.
 
 ## 9. Cross-references
 
-- [`BHGameplayEffects_classes.hpp`](../sdk/raw/BHGameplayEffects_classes.hpp), [`BHGameplayEffects_structs.hpp`](../sdk/raw/BHGameplayEffects_structs.hpp), [`BHGameplayPrediction_classes.hpp`](../sdk/raw/BHGameplayPrediction_classes.hpp), `sdk/raw/GE_*_classes.hpp` (338 files)
+- [`BHGameplayEffects_classes.hpp`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/BHGameplayEffects_classes.hpp), [`BHGameplayEffects_structs.hpp`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/BHGameplayEffects_structs.hpp), [`BHGameplayPrediction_classes.hpp`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/BHGameplayPrediction_classes.hpp), `sdk/raw/GE_*_classes.hpp` (338 files)
 - [`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md): the rule pipeline and the character health write (§10)
 - [`Wardogs_VehicleDamagePipeline_v1.md`](Wardogs_VehicleDamagePipeline_v1.md): vehicle sections, which reduce `Attribute.Gameplay.Health.*` attributes
 - [`Wardogs_GameplayTags_v1.md`](../content/Wardogs_GameplayTags_v1.md): tag catalog
-- [`docs/evidence/effects.md`](../docs/evidence/effects.md): evidence behind the native addresses, with a verification status for every RVA this page cites
+- [`docs/evidence/effects.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/effects.md): evidence behind the native addresses, with a verification status for every RVA this page cites
 
 ## Change log
 

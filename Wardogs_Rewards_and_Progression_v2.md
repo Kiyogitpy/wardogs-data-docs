@@ -1,6 +1,7 @@
 ---
 title: "Rewards & Progression"
-nav_order: 2
+parent: "Rewards & Unlocks"
+description: "Cash and XP rewards, kill and objective payouts, and the progression tables behind them"
 ---
 
 # Wardogs — Rewards & Progression Reference

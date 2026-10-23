@@ -1,7 +1,8 @@
 ---
 title: "Tests"
-parent: "Content"
 redirect_from: ["/Wardogs_Tests_v2.html", "/Wardogs_Tests_v2"]
+parent: "Engine & Tooling Data"
+description: "File Map, Server Profiles, Client Profiles"
 ---
 
 # Wardogs: Tests Data Reference

@@ -1,7 +1,8 @@
 ---
 title: "Challenges and Session Events"
-parent: "Game Features"
 redirect_from: ["/Wardogs_Challenges_v1.html", "/Wardogs_Challenges_v1"]
+parent: "Rewards & Unlocks"
+description: "Challenge definitions, state trees, rewards and session events"
 ---
 
 # Wardogs: Challenges and Session Events

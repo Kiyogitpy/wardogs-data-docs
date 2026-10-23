@@ -1,7 +1,8 @@
 ---
 title: "PvE (feature)"
-parent: "Game Features"
 redirect_from: ["/Wardogs_GameFeatures_PvE_v2.html", "/Wardogs_GameFeatures_PvE_v2"]
+parent: "Game Modes & Maps"
+description: "What This Folder Holds, Scenario Packs, AI Character Configs, Voice-Over Assets"
 ---
 
 # Wardogs — GameFeatures: PvE
@@ -121,5 +122,5 @@ Samples checked (`StrikeDisarm_Intro1`, `VIPEscort_Intro3`, `VIPEscort_Success`,
 - **Tracker rows.** Some tracker-table rows were not expanded.
 - **Voice-over durations.** Only the samples were checked. The 10.0 value is not confirmed across all 13 assets.
 - **Units.** Curve times and values, and the helicopter speed, have no stated units.
-  - **See [`docs/UNITS.md`](../docs/UNITS.md)** for the project-wide units reference (UE 5.7 defaults + Wardogs-specific suffixes).
+  - **See [`docs/UNITS.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/UNITS.md)** for the project-wide units reference (UE 5.7 defaults + Wardogs-specific suffixes).
 - **Scenario logic.** How quest objectives and the `ScenarioData` values drive the mission flow is in BP and runtime code, not in this folder.

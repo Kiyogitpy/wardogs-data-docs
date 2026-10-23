@@ -1,7 +1,8 @@
 ---
 title: "Progression Tables"
-parent: "Game Features"
 redirect_from: ["/Wardogs_Progression_v1.html", "/Wardogs_Progression_v1"]
+parent: "Rewards & Unlocks"
+description: "Progression tables: skill effects, live curves, currency definitions and cosmetic data"
 ---
 
 # Wardogs: Progression Tables (skills, live curves, currencies, cosmetics)

@@ -1,7 +1,8 @@
 ---
 title: "Deathmatch (feature)"
-parent: "Game Features"
 redirect_from: ["/Wardogs_GameFeatures_Deathmatch_v2.html", "/Wardogs_GameFeatures_Deathmatch_v2"]
+parent: "Game Modes & Maps"
+description: "What This Folder Holds, Match Flow, Components, Input, Registries and HUD"
 ---
 
 # Wardogs — GameFeatures: Deathmatch

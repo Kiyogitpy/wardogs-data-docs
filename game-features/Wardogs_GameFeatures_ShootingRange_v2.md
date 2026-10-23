@@ -1,7 +1,8 @@
 ---
 title: "ShootingRange (feature)"
-parent: "Game Features"
 redirect_from: ["/Wardogs_GameFeatures_ShootingRange_v2.html", "/Wardogs_GameFeatures_ShootingRange_v2"]
+parent: "Game Modes & Maps"
+description: "What This Folder Holds, Match Flow and Components, How It Is Used"
 ---
 
 # Wardogs — GameFeatures: ShootingRange

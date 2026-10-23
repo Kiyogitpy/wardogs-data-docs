@@ -1,7 +1,8 @@
 ---
 title: "PlayerHealthBar (feature)"
-parent: "Game Features"
 redirect_from: ["/Wardogs_GameFeatures_PlayerHealthBar_v2.html", "/Wardogs_GameFeatures_PlayerHealthBar_v2"]
+parent: "Player & Movement"
+description: "What This Folder Holds, HUD Widget, Data"
 ---
 
 # Wardogs — GameFeatures: PlayerHealthBar

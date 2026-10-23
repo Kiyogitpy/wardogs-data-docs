@@ -1,7 +1,8 @@
 ---
 title: "Tools"
-parent: "Content"
 redirect_from: ["/Wardogs_Tools_v2.html", "/Wardogs_Tools_v2"]
+parent: "Engine & Tooling Data"
+description: "File Map, Text Styles"
 ---
 
 # Wardogs: Tools Data Reference

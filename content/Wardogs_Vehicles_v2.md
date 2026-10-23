@@ -1,7 +1,8 @@
 ---
 title: "Vehicles"
-parent: "Content"
 redirect_from: ["/Wardogs_Vehicles_v2.html", "/Wardogs_Vehicles_v2"]
+parent: "Vehicles"
+description: "Folder Inventory, Vehicle Identity, Rigid Body, Engine, Drag, Flight Characteristics"
 ---
 
 # Wardogs — Vehicles Reference

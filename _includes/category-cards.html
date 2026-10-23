@@ -1,0 +1,6 @@
+<div class="wd-grid" markdown="0">
+{%- assign pages = site.pages | where: "parent", include.parent | sort: "title" -%}
+{%- for p in pages %}
+<a class="wd-card" href="{{ p.url | relative_url }}"><span class="wd-card-name">{{ p.title | escape }}</span><span class="wd-card-desc">{{ p.description | escape }}</span></a>
+{%- endfor %}
+</div>

@@ -1,7 +1,8 @@
 ---
 title: "Vehicle parts and handling"
-parent: "Game Features"
 redirect_from: ["/Wardogs_VehicleHandling_v1.html", "/Wardogs_VehicleHandling_v1"]
+parent: "Vehicles"
+description: "Vehicle parts and handling tables: engines, wheels, suspension and per-vehicle values"
 ---
 
 # Wardogs — Vehicle Parts and Handling

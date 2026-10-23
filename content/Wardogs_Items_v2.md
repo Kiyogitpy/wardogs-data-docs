@@ -1,7 +1,8 @@
 ---
 title: "Items"
-parent: "Content"
 redirect_from: ["/Wardogs_Items_v2.html", "/Wardogs_Items_v2"]
+parent: "Items & Equipment"
+description: "How an Item Is Built, Attachments, Clothing and Equipment, Consumables and Medical Items"
 ---
 
 # Wardogs — Items Reference
@@ -466,20 +467,20 @@ Other settings: `bFOVReticleScaling` is False for every class that sets it. `bAp
 - **Base weapon definitions are absent.** `Weapons/AR` holds only components. The receiver and full gun items (M4, AK74-M, Glock 17, Vector, M249, and so on) are not in this folder, so per-weapon fire rate, damage, and recoil are not here.
 - **Weapon stats and projectile ballistics are external.** `WDWeaponStatsData` (e.g. [`DA_ArtilleryBarrelTest_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/RocketLauncher/ArtilleryBarrelTest/Data/DA_ArtilleryBarrelTest_Stats.json)) and every `WDProjectileData` except [`DA_DebugHomingRocketData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/DebugHomingRocket/DA_DebugHomingRocketData.json) live in other folders, so damage and velocity for ordinary rounds are not in this category.
 - **Weight unit not stated.** The dump gives values (0.08 to 42.0) without a unit. Assume it is the game's internal weight unit until confirmed.
-  - **See [`docs/UNITS.md`](../docs/UNITS.md)** for the project-wide units reference (UE 5.7 defaults + Wardogs-specific suffixes).
+  - **See [`docs/UNITS.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/UNITS.md)** for the project-wide units reference (UE 5.7 defaults + Wardogs-specific suffixes).
 - **Weight missing on most items.** Only 47 of 193 items have a weight value. The other items carry the fragment but no property, so the default is unknown.
 - **Grid orientation not confirmed.** `CustomShape.Dimensions` and `GridSize` are read as X x Y. Whether X is columns or rows is not verified.
 - **Magazine capacity is an inference.** `MaxSlotAmountStackSize` on a magazine container matches the magazine's name in every case checked, but the dump does not label it as capacity.
 - **Unnamed property keys omitted.** Keys of the form `_aaa…` (21 letters a–p; `_aaa..._$HEX$_$N$` before 2026-10-18; several per aim-assist asset and a few on containers) are internal and were skipped. Their meaning is unknown.
-  - **SDK (2026-10-16):** aim-assist asset classes live in [`BHAimAssist`](../sdk/raw/BHAimAssist_structs.hpp). Key resolved types:
-    - [`EBHAimAssistPullMode`](../sdk/raw/BHAimAssist_structs.hpp) enum (5 values): `All = 0`, `MovementOnly = 1`, `LookOnly = 2`, `Off = 3`, `EBHAimAssistPullMode_MAX = 4` — this is the enum behind any "pull mode" field in aim-assist exports
-    - [`FBHAimAssistTargetOptions`](../sdk/raw/BHAimAssist_structs.hpp) struct (0x30 bytes): `AssociatedTags` (`FGameplayTagContainer`) + `bIsActive` (bool) + padding
-    - [`FBHAimAssistTargetData`](../sdk/raw/BHAimAssist_structs.hpp) struct (0xA0 bytes): Dumper-7 was unable to resolve any inner field names — remains opaque via static means
+  - **SDK (2026-10-16):** aim-assist asset classes live in [`BHAimAssist`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/BHAimAssist_structs.hpp). Key resolved types:
+    - [`EBHAimAssistPullMode`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/BHAimAssist_structs.hpp) enum (5 values): `All = 0`, `MovementOnly = 1`, `LookOnly = 2`, `Off = 3`, `EBHAimAssistPullMode_MAX = 4` — this is the enum behind any "pull mode" field in aim-assist exports
+    - [`FBHAimAssistTargetOptions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/BHAimAssist_structs.hpp) struct (0x30 bytes): `AssociatedTags` (`FGameplayTagContainer`) + `bIsActive` (bool) + padding
+    - [`FBHAimAssistTargetData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/BHAimAssist_structs.hpp) struct (0xA0 bytes): Dumper-7 was unable to resolve any inner field names — remains opaque via static means
   - Per-asset `_aaa…` keys are Blueprint-generated property names that even Dumper-7 could not symbolicate against; resolving each would require per-asset context.
 - **Display names missing on 14 items.** Some have no `DisplayName`, and where a `DisplayName` exists only the `SourceString` is shown; the localization table is not dumped.
 - **Holdable and placeable details not decoded.** Holdable mesh, animation and crosshair fields are only partly summarised. The ammo crate's placeable class and init data were not extracted.
 - **Full throw and consumable action data.** The `AppliableActionData` and `ThrowActions` arrays are present but only partly decoded (required states, velocity curve references).
-  - **See [`docs/CROSS_REFERENCE.md`](../docs/CROSS_REFERENCE.md)** for the project-wide cross-reference index of where referenced assets are defined.
+  - **See [`docs/CROSS_REFERENCE.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/CROSS_REFERENCE.md)** for the project-wide cross-reference index of where referenced assets are defined.
 - **Aim-assist RPG and SR zeros.** Several fields are 0 or absent for RPG and SR. The dump does not say whether those classes are intentionally unassisted.
 - **Vehicle container sizes.** The Large Vehicle Storage container is reported as 1x1 with an ammo block. The dump does not say whether that matches the in-game footprint.
 

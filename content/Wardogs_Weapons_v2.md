@@ -1,7 +1,8 @@
 ---
 title: "Weapons"
-parent: "Content"
 redirect_from: ["/Wardogs_Weapons_v2.html", "/Wardogs_Weapons_v2"]
+parent: "Weapons & Ammo"
+description: "Weapon Stat Assets, Aim Sway Curve Families, ADS Curves, Input Actions and Mapping Contexts"
 ---
 
 # Wardogs — Weapons Reference
@@ -193,7 +194,7 @@ The meaning of the curve value (for example, FOV or blend fraction) is not state
 | IA_Weapon_MeleeBash | `…Weapon.MeleeBash` | Pressed | |
 | IA_Weapon_MountBipod | `…Weapon.Bipod.Mount` | Tap | |
 | IA_Weapon_ToggleBipodFold | `…Weapon.Bipod.ToggleFold` | Hold | |
-| IA_Weapon_ToggleAncillaryFire | `…Weapon.ToggleAncillaryFire` | Pressed | H is mapped, but the shipped M4/default input maps have no firing binding; [bounded trace](../docs/evidence/round9-underbarrel.md). |
+| IA_Weapon_ToggleAncillaryFire | `…Weapon.ToggleAncillaryFire` | Pressed | H is mapped, but the shipped M4/default input maps have no firing binding; [bounded trace](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round9-underbarrel.md). |
 | IA_BuildTool_Rotate | `…HoldableItem.BuildTool.Rotate` | Pressed | |
 | IA_BuildTool_ToggleSnapping | `…BuildTool.ToggleSnapping` | Pressed | |
 | IA_BuildTool_Dismantle / _Release | `…BuildTool.Dismantle` / `.Release` | Pressed / Released | |
@@ -227,7 +228,7 @@ The export lists the inputs to each system but not the formulas that combine the
 - **Recoil:** §5a.
 - **Aim sway and focus energy:** §5b.
 - **Attachment and stance multipliers:** each weapon's final `Attribute.Gameplay.Weapon.*` values (recoil and spread multipliers, `AimTime`, zoom, zeroing) with its default attachments, and what each attachment changes, are on [Weapon Attributes](Wardogs_WeaponAttributes_v1.md).
-- **Evidence:** [`docs/evidence/weapons.md`](../docs/evidence/weapons.md): a verification status for every native address §5a and §5b cite.
+- **Evidence:** [`docs/evidence/weapons.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/weapons.md): a verification status for every native address §5a and §5b cite.
 - **Distance falloff (SKS):** `DistanceDamageFalloffCurve` is a multiplier indexed by distance. The falloff times are centimetres of distance, confirmed in code; per-weapon damage by distance is in [DamagePipeline §7.8](../pipelines/Wardogs_DamagePipeline_v2.md#78-damage-over-distance).
 
 ### 5a. Recoil
@@ -339,7 +340,7 @@ The names given to `0x6D54190` (control-rotation write), `0x3D84130` (`SetRelati
 
 **Sight multipliers.** `0x6A80880` resolves the sight entry in the held weapon's attachment map and validates its `WDInventoryFragment_Attachment.AttachmentData` as `FWDSightAttachmentData`. `0x6C977B0` selects its `SightsData` record by the ranged extension's current FName key; if that record is absent, it copies the cached socket's sight data, or constructs default `FWDSightData`. This is whole-record selection with fallback. The consumer filters the held item's explicit `ItemContext` tags under `Item.Archetype`, takes the first result, then looks up that exact tag in the selected record's `SightStabilizationOverrideMultipliers`. The value supplies translation and rotation multipliers at `+0` / `+4` (`0x6A80D74` / `0x6A80D79`).
 
-Both multipliers default to 1. They require valid sight attachment data, the selected record's `bOverrideWeaponSwayStabilizationData` flag and an exact archetype-map entry. Each multiplier is forced back to 1 while the stabilization fraction is nonpositive (`0x6A81007` / `0x6A8127D`); once positive, it scales the already assembled translation or rotation vector, including the preceding idle/offset contribution, before later attributes, length limits and smoothing. This applies after either the stabilization-curve branch or its fallback. For example, SGHT_034's main record sets Sniper translation/rotation to 1.2/1.2, while SGHT_030 sets 1.3/1.3 on its main record and disables the override on its secondary record. These are weapon-model sway multipliers; equip compatibility and the full sight-cycling state machine were not re-derived. [Instruction and cooked-data evidence](../docs/evidence/round8-ancillary-sights.md#sight-multiplier-data-path-resolved-for-native-first-person-sway).
+Both multipliers default to 1. They require valid sight attachment data, the selected record's `bOverrideWeaponSwayStabilizationData` flag and an exact archetype-map entry. Each multiplier is forced back to 1 while the stabilization fraction is nonpositive (`0x6A81007` / `0x6A8127D`); once positive, it scales the already assembled translation or rotation vector, including the preceding idle/offset contribution, before later attributes, length limits and smoothing. This applies after either the stabilization-curve branch or its fallback. For example, SGHT_034's main record sets Sniper translation/rotation to 1.2/1.2, while SGHT_030 sets 1.3/1.3 on its main record and disables the override on its secondary record. These are weapon-model sway multipliers; equip compatibility and the full sight-cycling state machine were not re-derived. [Instruction and cooked-data evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-ancillary-sights.md#sight-multiplier-data-path-resolved-for-native-first-person-sway).
 
 ---
 

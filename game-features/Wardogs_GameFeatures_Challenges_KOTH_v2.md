@@ -1,7 +1,8 @@
 ---
 title: "Challenges KOTH (feature)"
-parent: "Game Features"
 redirect_from: ["/Wardogs_GameFeatures_Challenges_KOTH_v2.html", "/Wardogs_GameFeatures_Challenges_KOTH_v2"]
+parent: "Rewards & Unlocks"
+description: "What the Package Contains, How the Pieces Connect, State Tree Inventory, Reward Lookup Tables"
 ---
 
 # Wardogs — GameFeature: Challenges_KOTH Reference

@@ -1,7 +1,8 @@
 ---
 title: "ExternalAssets"
-parent: "Content"
 redirect_from: ["/Wardogs_ExternalAssets_v2.html", "/Wardogs_ExternalAssets_v2"]
+parent: "World, Visuals & Audio"
+description: "File Inventory, Building Definitions, Decorator Definitions, Damage-Tag Whitelists"
 ---
 
 # Wardogs — External Assets Reference
@@ -353,7 +354,7 @@ So 7 of 9 pairs share chunk IDs. [`D_FootballStadium_Building_01a`](https://gith
 ## 8. Still not pulled / Limitations
 
 - **Unresolved property names.** Some properties appear only as GUID-style keys. On every `RequiredMeshes` entry the value is `EBHDestructionCPDInputStyle::Building`. Cosmetic decorator entries carry an unnamed list. Their meaning is not known from this export.
-  - **SDK (2026-10-16):** [`EBHDestructionCPDInputStyle`](../sdk/raw/BHDestruction_structs.hpp) is a 3-value enum: `Building = 0`, `TrimSheet = 1`, `None = 2`. The doc's observation that every `RequiredMeshes` entry carries `Building` is consistent with the enum's design — building meshes get the `Building` style, trimsheet meshes get `TrimSheet`. The GUID-style keys on cosmetic decorator entries remain unresolved via SDK (Dumper-7 could not label them).
+  - **SDK (2026-10-16):** [`EBHDestructionCPDInputStyle`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/BHDestruction_structs.hpp) is a 3-value enum: `Building = 0`, `TrimSheet = 1`, `None = 2`. The doc's observation that every `RequiredMeshes` entry carries `Building` is consistent with the enum's design — building meshes get the `Building` style, trimsheet meshes get `TrimSheet`. The GUID-style keys on cosmetic decorator entries remain unresolved via SDK (Dumper-7 could not label them).
 - **Bit and enum meanings not decoded.** The chunk `Properties` flag, `ChunkCustomPrimitiveData` (four floats) and `ChunkTraits` (empty in every sample) are reported as found, not interpreted.
 - **Connection semantics inferred.** "Vital" and "proportional" support links are read from property names. Runtime behaviour is not confirmed.
 - **Decorator-to-building link is by name.** Only the `OwningChunkIDs` GUIDs give a hard link, and they were spot-checked, not checked for every decorator.

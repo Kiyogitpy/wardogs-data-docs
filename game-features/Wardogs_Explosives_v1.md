@@ -1,7 +1,8 @@
 ---
 title: "Explosives Reference"
-parent: "Game Features"
 redirect_from: ["/Wardogs_Explosives_v1.html", "/Wardogs_Explosives_v1"]
+parent: "Weapons & Ammo"
+description: "Every explosion in the export: grenades, launcher rockets, vehicle shells, blast radii, falloff and fuses"
 ---
 
 # Wardogs: Explosives Reference (what every explosive does, in numbers)
@@ -12,7 +13,7 @@ One page for every explosion in the export: hand grenades, the 40 mm grenade, la
 
 | Label | Source |
 |---|---|
-| **Data** | Projectile assets (`WDProjectileData` under `Content/GameMechanics/Inventory/Equipment/Caliber`, plus the drone, arrow, 70 mm and TV-guided assets): `BaseDamage`, `ExplosiveRadius`, `EffectiveExplosiveRadius`, `ExplosiveDamageFallOff`, `MinimumExplosiveDamage`, `bPreferUpwardsTrace`, `ExplosiveBluntDamage`, `bHasArmingDelay` / `ArmingDelay`. Thrown and placed actors: the reviewed defaults in [`assets/data/explosive-actors.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/explosive-actors.json) ([evidence](../docs/evidence/round8-explosive-actors.md)). Rule rows: `DT_GlobalDamage_InfantryData`, `DT_GlobalDamage_VehicleData*`. |
+| **Data** | Projectile assets (`WDProjectileData` under `Content/GameMechanics/Inventory/Equipment/Caliber`, plus the drone, arrow, 70 mm and TV-guided assets): `BaseDamage`, `ExplosiveRadius`, `EffectiveExplosiveRadius`, `ExplosiveDamageFallOff`, `MinimumExplosiveDamage`, `bPreferUpwardsTrace`, `ExplosiveBluntDamage`, `bHasArmingDelay` / `ArmingDelay`. Thrown and placed actors: the reviewed defaults in [`assets/data/explosive-actors.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/explosive-actors.json) ([evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-explosive-actors.md)). Rule rows: `DT_GlobalDamage_InfantryData`, `DT_GlobalDamage_VehicleData*`. |
 | **Native** | The radial amount rule, the Inner/Outer ring tags, the line-of-sight and trace behavior, and thrown-contact damage: [Damage Pipeline](../pipelines/Wardogs_DamagePipeline_v2.md) section 1.1 (radial falloff, radial distance and gather, projectile blast context). Not repeated here. |
 | **Derived** | Every damage-to-target column: the amounts above run through the existing code paths (`_tools/infantry_tables.py` rule evaluation for characters, `_tools/damage_tables.py` rule factor and section routing for vehicles). |
 
@@ -22,7 +23,7 @@ Not in these tables: the two vehicle cannons `20x102mm` and `35x228mm` (they car
 
 ## 1. Blast numbers
 
-**Data**, `explosive_tables main`. Base is the amount from the centre out to the inner radius E. Beyond E the amount falls linearly toward Base x (1 - fall-off) at the outer radius R, floors at Minimum (a "-" is no floor) and is 0 at or beyond R (**Native**, Damage Pipeline section 1.1, "Radial falloff"). "Trace" is `bPreferUpwardsTrace`, the setting the gather reads; the line-of-sight behavior it feeds is described in the same section ("Radial distance and gather"). Thrown and placed actors pass line of sight true (**Native**, [explosive-actor evidence](../docs/evidence/round8-explosive-actors.md)).
+**Data**, `explosive_tables main`. Base is the amount from the centre out to the inner radius E. Beyond E the amount falls linearly toward Base x (1 - fall-off) at the outer radius R, floors at Minimum (a "-" is no floor) and is 0 at or beyond R (**Native**, Damage Pipeline section 1.1, "Radial falloff"). "Trace" is `bPreferUpwardsTrace`, the setting the gather reads; the line-of-sight behavior it feeds is described in the same section ("Radial distance and gather"). Thrown and placed actors pass line of sight true (**Native**, [explosive-actor evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-explosive-actors.md)).
 
 <!-- explosive_tables main -->
 | Source | Fired or placed by | Kind | Source tag | Base | Inner radius E (m) | Outer radius R (m) | Fall-off | Minimum | Trace |
@@ -57,7 +58,7 @@ Not in these tables: the two vehicle cannons `20x102mm` and `35x228mm` (they car
 
 ## 2. Fuse, arming and direct impact
 
-**Data**, `explosive_tables direct`. Projectiles arm after `ArmingDelay` seconds of flight when `bHasArmingDelay` is true; before that a direct hit does `ExplosiveBluntDamage` instead (Damage Pipeline section 7.6 and the `--explosives` table of `_tools/infantry_tables.py`). Frag, C4, IED and Molotov also inherit thrown-contact `ImpactDamage` 10 (**Native**, path `0x6CA8730`). The grenade base class sets a default fuse of 5.0 s (**Native**, `0x6CADC90`); the per-item overrides read from the Blueprints are in the fuse table below. Mine triggers, C4 detonation range and the IED delay are on [Fire, Smoke and Mines](Wardogs_FireAndUtility_v1.md) ([evidence](../docs/evidence/round8-explosive-actors.md)).
+**Data**, `explosive_tables direct`. Projectiles arm after `ArmingDelay` seconds of flight when `bHasArmingDelay` is true; before that a direct hit does `ExplosiveBluntDamage` instead (Damage Pipeline section 7.6 and the `--explosives` table of `_tools/infantry_tables.py`). Frag, C4, IED and Molotov also inherit thrown-contact `ImpactDamage` 10 (**Native**, path `0x6CA8730`). The grenade base class sets a default fuse of 5.0 s (**Native**, `0x6CADC90`); the per-item overrides read from the Blueprints are in the fuse table below. Mine triggers, C4 detonation range and the IED delay are on [Fire, Smoke and Mines](Wardogs_FireAndUtility_v1.md) ([evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-explosive-actors.md)).
 
 <!-- explosive_tables direct -->
 | Source | Arming delay (s) | Direct-impact `ExplosiveBluntDamage` | Thrown contact (`ImpactDamage`) | Trigger |
@@ -191,7 +192,7 @@ Assumption, stated plainly: one radial application resolving to the main health 
 
 ### Fuse and arming values per item
 
-**Data (Blueprint CDO)**, `explosive_tables fuses` ([round 17 evidence](../docs/evidence/round17-blueprint-defaults.md)). Each value is resolved up the Blueprint parent chain; a value no Blueprint sets is the native default.
+**Data (Blueprint CDO)**, `explosive_tables fuses` ([round 17 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round17-blueprint-defaults.md)). Each value is resolved up the Blueprint parent chain; a value no Blueprint sets is the native default.
 
 <!-- explosive_tables fuses -->
 | Item | Timer | Seconds | Source | Notes |

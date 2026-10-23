@@ -1,7 +1,8 @@
 ---
 title: "Emotes (feature)"
-parent: "Game Features"
 redirect_from: ["/Wardogs_GameFeatures_Emotes_v2.html", "/Wardogs_GameFeatures_Emotes_v2"]
+parent: "Rewards & Unlocks"
+description: "Files, Emote Entities, Cosmetic Rows, Wiring"
 ---
 
 # Wardogs: GameFeatures Emotes Reference

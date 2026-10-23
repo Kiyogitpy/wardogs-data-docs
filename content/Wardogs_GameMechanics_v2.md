@@ -1,7 +1,8 @@
 ---
 title: "GameMechanics"
-parent: "Content"
 redirect_from: ["/Wardogs_GameMechanics_v2.html", "/Wardogs_GameMechanics_v2"]
+parent: "Damage & Combat Systems"
+description: "Folder Map, Damage System, Projectiles, Action Definitions"
 ---
 
 # Wardogs — Game Mechanics Reference
@@ -87,7 +88,7 @@ The lookup is an exact match on the hit bone name (`FHitResult.BoneName`) in `Da
 | `calf_l`, `calf_r` | Leg.Calf |
 | `foot_l`, `foot_r` | Leg.Foot |
 
-Bodies in the viewer's baseline physics asset `PA_TPCharacter_Simplified`: 20 bodies, one per bone in this table except `spine_01` and `spine_02`. Every baseline body maps to a hit location; those two bones have no body in this asset. Mutable-generated runtime assets depend on selected parameters and later overrides, so this is not a universal exclusion of hits on those bones ([merge evidence](../docs/evidence/round8-helmet.md)). The ragdoll asset (`PA_TPCharacter_Simplified_Physics`) adds `spine_02` and a collision-disabled `root` body and drops `spine_05`.
+Bodies in the viewer's baseline physics asset `PA_TPCharacter_Simplified`: 20 bodies, one per bone in this table except `spine_01` and `spine_02`. Every baseline body maps to a hit location; those two bones have no body in this asset. Mutable-generated runtime assets depend on selected parameters and later overrides, so this is not a universal exclusion of hits on those bones ([merge evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-helmet.md)). The ragdoll asset (`PA_TPCharacter_Simplified_Physics`) adds `spine_02` and a collision-disabled `root` body and drops `spine_05`.
 
 The asset also has 2 `DamageImpactRemap` entries: `spine_01` is remapped to `pelvis`, and `spine_05` to `spine_04`. The remap is not used for damage. Damage looks up the hit bone as traced (`0x6F01BB0`, called with `FHitResult.BoneName` by the armor hook `0x6B52A40`, by `0x6EF8DE0` and by three more damage-side callers; none applies the remap), so a hit on the `spine_05` body is `Torso.Upper`. A sixth caller, `AWDMoverPlayerCharacter` slot 330 (`0x6E830E0`), does not remap either; its role is not traced. The remap (`0x6F01530` → `0x6BB8D40`) is applied in two other places: when a ragdoll starts, to choose the body that receives the hit impulse (`0x6EF8460`); and in the character anim instance (`0x6A7AC00`, `0x6A7B2C0`), which remaps first and then looks up the hit location for the hit-reaction animation (so there `spine_05` gives `Torso.Middle`).
 
@@ -544,7 +545,7 @@ Rows: `Communication.Ping`, `Communication.Ping.Type.Context.Map.MarkCoordinates
 ## 15. Still Not Pulled / Limitations
 
 - **Unnamed fields.** Many struct fields have no readable name and are called unnamed fields here. These are the arm-class arrays in 2d, the seat-reduction arrays in 2h, the `Emote` flags in 12c, and some action fields. Their meaning was inferred from neighbouring values and is not confirmed.
-  - **SDK (2026-10-16) — Emote flags (12c):** [`FWDEmoteData`](../sdk/raw/WDGame_structs.hpp#L14430) is a 0x30-byte struct (inherits from `FBHGameplayTaggedTableRow`) with 8 fields:
+  - **SDK (2026-10-16) — Emote flags (12c):** [`FWDEmoteData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/WDGame_structs.hpp#L14430) is a 0x30-byte struct (inherits from `FBHGameplayTaggedTableRow`) with 8 fields:
     - `_aaaakmaiagceginhpgeoe` (bool, 0x10) — unresolved flag #1
     - `_aaaamcjgaokphjebecjic` (bool, 0x11) — unresolved flag #2
     - `PlayRate` (float, 0x14) — animation playback rate ✓

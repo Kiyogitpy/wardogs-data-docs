@@ -1,7 +1,8 @@
 ---
 title: "Weapon Shop and Parts"
-parent: "Game Features"
 redirect_from: ["/Wardogs_WeaponShop_v1.html", "/Wardogs_WeaponShop_v1"]
+parent: "Weapons & Ammo"
+description: "Weapon bundles, attachments, components and platforms as structured tables"
 ---
 
 # Wardogs: Weapon Shop, Attachments and Components

@@ -1,7 +1,8 @@
 ---
 title: "Itemsmith (feature)"
-parent: "Game Features"
 redirect_from: ["/Wardogs_GameFeatures_Itemsmith_v2.html", "/Wardogs_GameFeatures_Itemsmith_v2"]
+parent: "Items & Equipment"
+description: "Layout and File Counts, Named Input Actions, Input Contexts and Key Bindings, Paint Palette"
 ---
 
 # Wardogs: GameFeatures Itemsmith Reference

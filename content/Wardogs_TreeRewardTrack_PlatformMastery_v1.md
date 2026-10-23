@@ -1,7 +1,8 @@
 ---
 title: "Battle-Pass Track & Platform Mastery Rewards"
-parent: "Content"
 redirect_from: ["/Wardogs_TreeRewardTrack_PlatformMastery_v1.html", "/Wardogs_TreeRewardTrack_PlatformMastery_v1"]
+parent: "Rewards & Unlocks"
+description: "Reward track card, track and panel data, Platform Mastery rewards"
 ---
 
 # Wardogs — TreeRewardTrack & Platform Mastery Reward Reference

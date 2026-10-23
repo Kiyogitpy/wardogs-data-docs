@@ -1,7 +1,8 @@
 ---
 title: "WDCore (feature)"
-parent: "Game Features"
 redirect_from: ["/Wardogs_GameFeatures_WDCore_v2.html", "/Wardogs_GameFeatures_WDCore_v2"]
+parent: "Engine & Tooling Data"
+description: "What This Folder Holds, Components, Pawn Data Scan, Animation Set"
 ---
 
 # Wardogs — GameFeatures: WDCore

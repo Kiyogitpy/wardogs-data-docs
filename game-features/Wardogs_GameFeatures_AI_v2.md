@@ -1,7 +1,8 @@
 ---
 title: "AI (feature)"
-parent: "Game Features"
 redirect_from: ["/Wardogs_GameFeatures_AI_v2.html", "/Wardogs_GameFeatures_AI_v2"]
+parent: "Game Modes & Maps"
+description: "What This Folder Holds, Core AI Preset, Alert State Thresholds, Influence Maps"
 ---
 
 # Wardogs — GameFeatures: AI

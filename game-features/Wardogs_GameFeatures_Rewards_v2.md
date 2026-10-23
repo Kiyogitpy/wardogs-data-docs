@@ -1,7 +1,8 @@
 ---
 title: "Rewards (feature)"
-parent: "Game Features"
 redirect_from: ["/Wardogs_GameFeatures_Rewards_v2.html", "/Wardogs_GameFeatures_Rewards_v2"]
+parent: "Rewards & Unlocks"
+description: "Package Contents, How the Calculator Works, Calculator Rows, Feed Strings"
 ---
 
 # Wardogs — GameFeature: Rewards (Buildables) Reference
@@ -225,7 +226,7 @@ The curve is wired to `AssistCurve` through the `DamageAssistCurve` option (sect
 ## 7. Limitations
 
 - **No numeric reward values in this folder.** The calculator uses option variables (`DismantleValue`, `HotZoneMagnetFactor`, `ControlZoneFactor`, `BaseReward`, `DefaultValue`, and so on). Their values are defined outside this folder, in the shared challenge tables covered by the main doc. This doc names them but does not give values.
-- **Input sources and ranges need tracing.** The producers and ranges of `BuildProgress`, `BuildCost`, `BuildAmount`, `CashSpent`, `BuildSuppliesDeposited` and `LastVictimCount` are not established here. `LastVictimCountMax` is a configured literal of 2.0 in all three variable definitions in [`DT_ChallengeRewards_SessionEvents_Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_ChallengeRewards_SessionEvents_Buildables.json), rather than an unknown event input in those definitions. See [runtime triage RT-015](../docs/gap_resolution/RUNTIME.md).
+- **Input sources and ranges need tracing.** The producers and ranges of `BuildProgress`, `BuildCost`, `BuildAmount`, `CashSpent`, `BuildSuppliesDeposited` and `LastVictimCount` are not established here. `LastVictimCountMax` is a configured literal of 2.0 in all three variable definitions in [`DT_ChallengeRewards_SessionEvents_Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_ChallengeRewards_SessionEvents_Buildables.json), rather than an unknown event input in those definitions. See [runtime triage RT-015](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/gap_resolution/RUNTIME.md).
 - **The assist path is inferred.** No `BuildableDestroyed.Assist` calculator row exists (section 3c). The assist credit is assumed to flow through `AssistCurve` and `AssistScalar`.
 - **The `Repair` key mismatch** in section 4 is a localisation quirk, not a gameplay issue. It was not checked in-game.
 - **The buildable challenge definitions table** [`DT_Challenges_SessionEvents_Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_Challenges_SessionEvents_Buildables.json) has zero rows. The active buildable challenge list is not visible from this folder.

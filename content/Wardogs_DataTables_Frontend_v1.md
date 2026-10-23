@@ -1,8 +1,8 @@
 ---
 title: "Data Tables: Frontend, Server and Test Data"
-parent: "Data Tables"
-grand_parent: "Content"
 redirect_from: ["/Wardogs_DataTables_Frontend_v1.html", "/Wardogs_DataTables_Frontend_v1"]
+grand_parent: "Data Tables & Tags"
+description: "Frontend, server and test tables: loading-screen tips and menu data"
 ---
 
 # Data Tables: Frontend, Server and Test Data

@@ -1,7 +1,8 @@
 ---
 title: "AccountWatermark (feature)"
-parent: "Game Features"
 redirect_from: ["/Wardogs_GameFeatures_AccountWatermark_v2.html", "/Wardogs_GameFeatures_AccountWatermark_v2"]
+parent: "Engine & Tooling Data"
+description: "What This Folder Holds, Widget Setup, Data"
 ---
 
 # Wardogs — GameFeatures: AccountWatermark

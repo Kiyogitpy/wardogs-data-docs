@@ -1,11 +1,12 @@
 ---
-title: "MoverTesting"
-parent: "Content"
+title: "Character Movement Settings (MoverTesting)"
 redirect_from: ["/Wardogs_MoverTesting_v2.html", "/Wardogs_MoverTesting_v2"]
+parent: "Player & Movement"
+description: "Character movement settings: ground, falling, parachute, climbing, ladder, mantling, swimming, modifier states and curves"
+---
 
 > **See also.** Base `MaxSpeed`, sprint scales and other values the export omits (class defaults), speed per stance, and the curves and audio in `GameMechanics/Player` are on [Player Movement](Wardogs_PlayerMovement_v1.md).
 
----
 
 # Wardogs — Mover & Character Movement Reference
 *Extracted from the cooked JSON export under `Content/MoverTesting` (78 files, 177 export blocks). Values are raw asset properties. Where a meaning comes from a property name rather than from the export, it is marked as inferred. A "-" in a table means the property is absent from the export.*
@@ -416,5 +417,5 @@ The middle and bottom segments share one mesh. This is a single ladder variant (
 - **Blueprint and referenced-only assets.** `B_CharacterModifier_IgnoreLookInput_C` and `B_CameraModifier_HeavyBreathing_C` are blueprints, so their logic is not in the export. Montage choosers (`CHT_*`), animations (`A_TP_*`), gameplay effects (`GE_*`), and the `BHFloatModifier_Operation` sub-objects are referenced but not expanded here.
 - **Query expansion.** The `AutoDescription` strings are the readable form of each state query. The encoded `QueryTokenStream` was not decoded, so the descriptions are the source of truth for the logic in this doc.
 - **Units.** Speeds, stamina, heights, weights, and curve time axes have no units in the export. Values are reported as stored.
-  - **See [`docs/UNITS.md`](../docs/UNITS.md)** for the project-wide units reference (UE 5.7 defaults + Wardogs-specific suffixes).
+  - **See [`docs/UNITS.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/UNITS.md)** for the project-wide units reference (UE 5.7 defaults + Wardogs-specific suffixes).
 - **Input resolution.** The export does not say how shared keys are resolved between actions (section 5).

@@ -1,7 +1,7 @@
 ---
 title: "Tag Display Text"
-parent: "Content"
-nav_order: 21
+parent: "Data Tables & Tags"
+description: "The names the UI shows for calibers, archetypes, ammunition, roles and other gameplay tags"
 ---
 
 # Wardogs — Gameplay Tag Display Text

@@ -1,7 +1,8 @@
 ---
 title: "Season 1 Cosmetic Unlocks"
-parent: "Content"
 redirect_from: ["/Wardogs_Season01_CosmeticUnlocks_v1.html", "/Wardogs_Season01_CosmeticUnlocks_v1"]
+parent: "Rewards & Unlocks"
+description: "Season definitions, Season 1 emotes and skins, skin data assets, emote entities"
 ---
 
 # Wardogs — Season 1 Cosmetic/Item Unlock Reference

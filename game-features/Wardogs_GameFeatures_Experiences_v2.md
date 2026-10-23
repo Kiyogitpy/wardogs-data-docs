@@ -1,7 +1,8 @@
 ---
 title: "Experiences (feature)"
-parent: "Game Features"
 redirect_from: ["/Wardogs_GameFeatures_Experiences_v2.html", "/Wardogs_GameFeatures_Experiences_v2"]
+parent: "Game Modes & Maps"
+description: "What This Folder Holds, KOTH, SniperShowdown, How Values Combine"
 ---
 
 # Wardogs — GameFeatures: Experiences
@@ -127,7 +128,7 @@ These three rows confirm the stillness mechanic: standing still reveals you; mov
 
 ## 6. Item grants at spawn, by mode
 
-Static census in [Round-12 spawn provisioning](../docs/evidence/round12-spawn-provisioning.md). No data asset lists a universal starting kit.
+Static census in [Round-12 spawn provisioning](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round12-spawn-provisioning.md). No data asset lists a universal starting kit.
 
 | Source | Where | Items | Label |
 |---|---|---|---|

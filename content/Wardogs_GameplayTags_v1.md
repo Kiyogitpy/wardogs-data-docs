@@ -1,7 +1,8 @@
 ---
 title: "Gameplay Tags"
-parent: "Content"
 redirect_from: ["/Wardogs_GameplayTags_v1.html", "/Wardogs_GameplayTags_v1"]
+parent: "Data Tables & Tags"
+description: "All 7,177 gameplay tags by source file, with dev comments"
 ---
 
 # Wardogs — Gameplay Tag Definitions
