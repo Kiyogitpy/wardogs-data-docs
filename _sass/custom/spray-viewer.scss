@@ -1,0 +1,132 @@
+// Spray viewer (spray-viewer.md, assets/js/spray-viewer.js). Imported at the end of custom.scss, after
+// vehicle-viewer.scss: the page root is `.vv.sv`, so it takes the vehicle viewer's layout, controls,
+// panel and legend styles. The site is dark only. Season colours are a colour-blind-safe pair
+// (blue / green) that also differ by marker shape (circle / square) and line dash.
+
+.sv {
+  --sv-s1: #5aa9ff;
+  --sv-s2: #3ecf8e;
+  --sv-grid: #2a2a30;
+  --sv-axis: #8e8e96;
+}
+
+.sv .wd-segmented { grid-template-columns: repeat(3, 1fr); }
+.sv .sv-field-season { flex: 1.4 1 16rem; }
+.sv .sv-field-stance { flex: 1.4 1 16rem; }
+
+.sv-provisional {
+  margin: 0 0 1rem;
+  padding: 0.6rem 0.9rem;
+  color: $ue-text;
+  background: $ue-panel;
+  border: 1px solid rgba(255, 199, 154, 0.45);
+  border-radius: $radius-small;
+  font-size: 0.85rem;
+}
+
+.sv-box { position: relative; padding: 0.25rem; background: $ue-panel; }
+.sv-svg { display: block; width: 100%; height: auto; max-height: 80vh; }
+.sv-svg:focus-visible { outline: 2px solid $ue-blue; outline-offset: -2px; }
+.sv-plot { min-height: 18rem; }
+.sv-grid { stroke: var(--sv-grid); stroke-width: 1; }
+.sv-zero { stroke: var(--sv-axis); stroke-width: 1; stroke-dasharray: 2 3; }
+.sv-frame { fill: none; stroke: $ue-border-strong; }
+.sv-text, .sv-num { fill: $ue-text; font-size: 12px; font-family: $body-font-family; }
+.sv-text2 { fill: $ue-text-dim; font-size: 11px; font-family: $body-font-family; }
+.sv-axis-title { fill: $ue-text-dim; font-size: 12px; letter-spacing: 0.04em; }
+.sv-axis-title2 { fill: $ue-text-dim; font-size: 11px; }
+.sv-tick2 { stroke: $ue-text-dim; }
+.sv-num { font-size: 10px; }
+.sv-rowname { font-weight: 600; }
+.sv-origin { fill: $ue-white; stroke: $ue-bg; stroke-width: 1.5; }
+
+.sv-s1 { --sv-c: var(--sv-s1); }
+.sv-s2 { --sv-c: var(--sv-s2); }
+.sv-s1, .sv-s2 {
+  .sv-line { fill: none; stroke: var(--sv-c); stroke-width: 1.8; stroke-linejoin: round; }
+  .sv-line.is-dashed { stroke-dasharray: 7 4; }
+  .sv-dot { fill: var(--sv-c); stroke: $ue-bg; stroke-width: 1; }
+  .sv-dot.is-random { fill: $ue-bg; stroke: var(--sv-c); stroke-width: 1.6; }
+  .sv-band { fill: var(--sv-c); fill-opacity: 0.18; stroke: var(--sv-c); stroke-opacity: 0.35; stroke-width: 0.5; }
+  .sv-fan { fill: var(--sv-c); fill-opacity: 0.1; stroke: none; }
+  .sv-reset { fill: var(--sv-c); fill-opacity: 0.16; stroke: var(--sv-c); stroke-dasharray: 3 3; }
+  .sv-end { stroke: var(--sv-c); stroke-width: 1.5; stroke-dasharray: 2 2; }
+}
+.sv-pick { fill: none; stroke: $ue-white; stroke-width: 1.5; }
+
+.sv-controls-2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1.4rem;
+  padding: 0.7rem 1rem;
+  font-size: 0.85rem;
+  border-top: 1px solid $ue-border;
+
+  input[type="number"] {
+    width: 5.5rem;
+    padding: 0.3rem 0.5rem;
+    color: $ue-white;
+    background: $ue-bg;
+    border: 1px solid $ue-border-strong;
+    border-radius: $radius-small;
+    font: inherit;
+    &:disabled { color: $ue-text-dim; }
+    &:focus-visible { outline: 2px solid $ue-blue; outline-offset: 2px; }
+  }
+  input[type="range"] { accent-color: $ue-blue; width: 9rem; max-width: 100%; }
+  label.sv-range { display: inline-flex; align-items: center; gap: 0.5rem; color: $ue-text; }
+}
+
+.sv-meta, .sv-note, .sv-facts, .sv-src { margin: 0 0 0.6rem; }
+.sv-meta { color: $ue-text-dim; }
+.sv-note { color: #ffc79a; }
+.sv-src { color: $ue-text-dim; font-size: 0.8rem; }
+.main-content h3.sv-h3 { margin: 1rem 0 0.4rem; font-size: 0.9rem !important; }
+.sv-table {
+  width: 100%;
+  margin: 0 0 0.75rem;
+  font-size: 0.8rem;
+  border-collapse: collapse;
+  th, td { padding: 0.25rem 0.4rem; text-align: left; border-bottom: 1px solid $ue-border; font-weight: 400; }
+  thead th { color: $ue-text-dim; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  td:not(:first-child), th:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; }
+}
+.sv-key-s1 { color: var(--sv-s1) !important; }
+.sv-key-s2 { color: var(--sv-s2) !important; }
+.sv-legend-key svg { overflow: visible; }
+
+.sv-tl-box { margin-top: 1rem; background: $ue-panel; border: 1px solid $ue-border; border-radius: $radius-panel; padding: 0.5rem; }
+
+.main-content h3.sv-grid-title { margin: 1.25rem 0 0.4rem; font-size: 0.8rem !important; color: $ue-text-dim; letter-spacing: 0.06em; text-transform: uppercase; }
+.sv-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(7.5rem, 1fr));
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.main-content .sv-tiles li { margin: 0; padding: 0; }
+.sv-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0.4rem 0.3rem 0.3rem;
+  color: $ue-text;
+  font: inherit;
+  background: $ue-panel;
+  border: 1px solid $ue-border;
+  border-radius: $radius-small;
+  cursor: pointer;
+  &:hover { border-color: $ue-text-dim; }
+  &:focus-visible { outline: 2px solid $ue-blue; outline-offset: 2px; }
+  &.is-current { border-color: $ue-blue; }
+  .sv-mini { width: 100%; max-height: 8rem; }
+  .sv-tile-name { margin-top: 0.2rem; font-size: 0.75rem; text-align: center; overflow-wrap: anywhere; }
+}
+
+@media (max-width: 56rem) {
+  .sv .sv-svg { max-height: none; }
+}
