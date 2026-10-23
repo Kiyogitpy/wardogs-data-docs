@@ -2,7 +2,7 @@
 title: "Engine & Tooling Data changes"
 parent: "Season 2 Changes"
 nav_order: 10
-description: "Engine & Tooling Data: 20 assets added, 3 removed, 140 modified with real changes, 1 moved. Mostly UI widget data; a high ping kick feature and wagers UI are new."
+description: "Engine & Tooling Data: 20 assets added, 3 removed, 145 modified with real changes, 1 moved. Mostly UI widget data; a high ping kick feature and wagers UI are new."
 ---
 
 # Engine & Tooling Data changes
@@ -13,10 +13,10 @@ Season 1 to Season 2 changes for this area, from the area diff file. Audio and U
 |---|---:|
 | Assets added | 20 |
 | Assets removed | 3 |
-| Assets modified with real changes | 140 |
+| Assets modified with real changes | 145 |
 | Assets moved | 1 |
-| Noise-only modified assets (skipped: renamed keys, swapped key names or shifted references from the different Season 1 export) | 85 |
-| Property changes | 1,049 (changed 83, added 615, removed 351); 41 further entries are on the removed assets |
+| Noise-only modified assets (skipped: renamed keys, swapped key names or shifted references from the different Season 1 export) | 80 |
+| Property changes | 504 (changed 64, added 349, removed 91); 41 further entries are on the removed assets |
 
 ## Gameplay-relevant changes
 
@@ -31,7 +31,7 @@ Other added assets are listed by folder below. Audio and UI are counted in the n
 | Class | Added | Modified with real changes | Noise-only | Removed | Browse |
 |---|---:|---:|---:|---:|---|
 | Audio | 0 | 1 | 0 | 0 | [audio changes]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=engine-tooling-data&q=DA_SettingsPanel_Audio) |
-| UI widgets | 19 | 137 | 84 | 3 | [ui widgets changes]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=engine-tooling-data&q=UI) |
+| UI widgets | 19 | 142 | 79 | 3 | [ui widgets changes]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=engine-tooling-data&q=UI) |
 
 1 moved asset (ui class, count only): `DA_VehicleCountermeasure` moved from `Wardogs/Content/UI/Features/HUD/Vehicles/NEWHUD/Flares/Data/DA_VehicleFlares.json` → `Wardogs/Content/UI/Features/HUD/Vehicles/NEWHUD/Countermeasures/Data/DA_VehicleCountermeasure.json`. Browse it in the [change browser]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=engine-tooling-data&q=DA_VehicleCountermeasure).
 
