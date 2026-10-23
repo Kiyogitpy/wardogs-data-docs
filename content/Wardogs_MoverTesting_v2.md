@@ -419,3 +419,5 @@ The middle and bottom segments share one mesh. This is a single ladder variant (
 - **Units.** Speeds, stamina, heights, weights, and curve time axes have no units in the export. Values are reported as stored.
   - **See [`docs/UNITS.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/UNITS.md)** for the project-wide units reference (UE 5.7 defaults + Wardogs-specific suffixes).
 - **Input resolution.** The export does not say how shared keys are resolved between actions (section 5).
+
+> **See also.** Row-level values for the character modifier state assets, controller binding presets and door assets not listed here: [Misc Gameplay Assets](Wardogs_MiscGameplayAssets_v1.md).
