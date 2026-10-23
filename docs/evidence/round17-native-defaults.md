@@ -182,7 +182,7 @@ There is no defibrillator or resuscitator class: no such class exists in the SDK
 | `UBHGameplayEffect` | `StackDurationRefreshPolicy` | `0x36` | uint8 | 0 (`RefreshOnSuccessfulApplication`) | `0x5225c65` | `0x5225c74` |
 | `UBHGameplayEffect` | `StackExpirationPolicy` | `0x37` | uint8 | 1 (`RemoveSingleStackAndRefreshDuration`) | `0x5225c65` | `0x5225c74` |
 
-The Molotov constructor `0x86a0200` calls the grenade base `0x6caded0`, which stores the same zero for `bCanBeCooked` at `0x6cadeee`. The `UBHGameplayEffect` constructor stores `0x220` as `0x101` (both client-prediction flags true) and ends at `+0x268`, matching the 0x270-byte class. What `Duration` 0.0 means at run time (the duration pass `0x522d260` compares it with zero at `0x522d4b3`) is inferred and open.
+The Molotov constructor `0x86a0200` calls the grenade base `0x6caded0`, which stores the same zero for `bCanBeCooked` at `0x6cadeee`. The `UBHGameplayEffect` constructor stores `0x220` as `0x101` (both client-prediction flags true) and ends at `+0x268`, matching the 0x270-byte class. What `Duration` 0.0 means at run time was resolved in round 20: the duration pass `0x522d260` compares it with zero at `0x522d4b3` and jumps to `0x522d700`, skipping timed expiry, so it is a standing effect removed by the trigger volume exit handler `0x76fc120` (see the [round 17 Blueprint defaults](round17-blueprint-defaults.md); static-analysis image, virtualized dispatch not removed).
 | `AWDMolotovTriggerVolume` | `_aaaajgnjpicpffeijmmnj` | `0x998` | float | 100 | `0x86a0300` | `0x86a031d` |
 
 ## Buildables
