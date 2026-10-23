@@ -2,7 +2,7 @@
 title: "Weapons & Ammo changes"
 parent: "Season 2 Changes"
 nav_order: 1
-description: "Weapon stats, vendor prices, attachments and aim assist: 162 assets added, 16 removed, 174 modified, 11 moved, 1,235 property changes."
+description: "Weapon stats, vendor prices, attachments and aim assist: 162 assets added, 16 removed, 174 modified, 11 moved, 1,240 property changes."
 ---
 
 # Weapons & Ammo changes
@@ -13,7 +13,7 @@ Weapons, ammo, attachments and aim assist: what changed between Season 1 and Sea
 - **Removed:** 16 assets (all aim assist curves)
 - **Modified with real changes:** 174 assets (251 more are noise-only: renamed keys, swapped key names or shifted references from the different Season 1 export, not listed)
 - **Moved:** 11 assets (the Mosin folder moved to `WEPN_017`)
-- **Property changes:** 1,235 in modified and moved assets
+- **Property changes:** 1,240 in modified and moved assets
 - **Removed properties:** 989 values in 16 removed assets
 Vector rows show the signed change on each axis, for example `X −0.4, Y −0.4`.
 
@@ -191,13 +191,15 @@ Other numeric item values:
 | AnimSet_WEPN_035 | Animations[Animation.Asset.Weapon.Reload.Empty].Value.OverrideLength | 5.0 | 3.0 | −2.0 (−40.0%) |
 | AnimSet_WEPN_035 | Animations[Animation.Asset.Weapon.Reload.Tactical].Value.OverrideLength | 1.25 | 3.0 | +1.75 (+140.0%) |
 
-### Aim assist settings (136 numeric rows across 7 assets)
+### Aim assist settings (141 numeric rows across 7 assets)
 
-Shown: the 30 largest changes by percentage (values that start at 0 are listed first). The other 106 rows are in the browser.
+Shown: the 30 largest changes by percentage (values that start at 0 are listed first). The other 111 rows are in the browser.
 
 | Asset | Property | Season 1 | Season 2 | Change |
 |---|---|---|---|---|
 | DA_AimAssistSettings_Melee | PullInnerStrengthHip | 0.0 | 1.0 | +1.0 (n/a) |
+| DA_AimAssistSettings_Melee | SlowInnerStrengthHip | 0.0 | 0.36 | +0.36 (n/a) |
+| DA_AimAssistSettings_SR | PullInnerStrengthAds | 0.0 | 2.0 | +2.0 (n/a) |
 | DA_AimAssistSettings_SR | SlowInnerStrengthAds | 0.0 | 0.4 | +0.4 (n/a) |
 | DA_AimAssistSettings_AR | unnamed property (`_aaabkejidmenonabgon`) | 0.5 | 2.5 | +2.0 (+400.0%) |
 | DA_AimAssistSettings_LMG | unnamed property (`_aaabkejidmenonabgon`) | 0.5 | 2.5 | +2.0 (+400.0%) |
@@ -216,19 +218,17 @@ Shown: the 30 largest changes by percentage (values that start at 0 are listed f
 | DA_AimAssistSettings_SMG | PullInnerStrengthHip | 0.44 | 1.0 | +0.56 (+127.3%) |
 | DA_AimAssistSettings_LMG | SlowLerpInRate | 5.0 | 10.0 | +5.0 (+100.0%) |
 | DA_AimAssistSettings_Melee | PullInnerStrengthAds | 1.5 | 0.0 | −1.5 (−100.0%) |
+| DA_AimAssistSettings_Melee | SlowInnerStrengthAds | 0.19 | 0.0 | −0.19 (−100.0%) |
 | DA_AimAssistSettings_Pistol | SlowLerpInRate | 5.0 | 10.0 | +5.0 (+100.0%) |
 | DA_AimAssistSettings_Shotgun | SlowLerpInRate | 5.0 | 10.0 | +5.0 (+100.0%) |
 | DA_AimAssistSettings_SMG | SlowLerpInRate | 5.0 | 10.0 | +5.0 (+100.0%) |
 | DA_AimAssistSettings_SR | PullInnerStrengthHip | 0.28 | 0.0 | −0.28 (−100.0%) |
+| DA_AimAssistSettings_SR | SlowInnerStrengthHip | 2.0 | 0.0 | −2.0 (−100.0%) |
 | DA_AimAssistSettings_SR | SlowLerpInRate | 5.0 | 10.0 | +5.0 (+100.0%) |
 | DA_AimAssistSettings_SR | ReticleDepth | 20000.0 | 40000.0 | +20000.0 (+100.0%) |
 | DA_AimAssistSettings_SR | AssistOuterReticleWidth | 1860.0 | 3600.0 | +1740.0 (+93.5%) |
-| DA_AimAssistSettings_AR | unnamed property (`_aaabiopcjcdaaocfaif`) | 1.0 | 0.1 | −0.9 (−90.0%) |
-| DA_AimAssistSettings_LMG | unnamed property (`_aaabiopcjcdaaocfaif`) | 1.0 | 0.1 | −0.9 (−90.0%) |
-| DA_AimAssistSettings_Pistol | unnamed property (`_aaabiopcjcdaaocfaif`) | 1.0 | 0.1 | −0.9 (−90.0%) |
-| DA_AimAssistSettings_Shotgun | unnamed property (`_aaabiopcjcdaaocfaif`) | 1.0 | 0.1 | −0.9 (−90.0%) |
 
-[All 209 aim assist settings changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=weapons-ammo&q=AimAssistSettings)
+[All 214 aim assist settings changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=weapons-ammo&q=AimAssistSettings)
 
 ### Aim assist curves (69 time and value rows across 14 curves)
 
