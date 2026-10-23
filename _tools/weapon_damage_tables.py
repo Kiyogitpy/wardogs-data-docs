@@ -66,8 +66,8 @@ EXCLUDED = [
     ("Fists", "Melee; no bullet or weapon damage tag"),
     ("BuildTool, Small/Medium/LargeHammer", "Build tools, not weapons with a caliber"),
     ("ArtilleryBarrelTest, TankBarrelTest", "Test and artillery/tank barrels (explosive rockets)"),
-    ("M2Browning (Stationary)", "Mounted weapon"),
-    ("MWSY_001_Heavy_MountedMachineGun and other vehicle weapons", "Mounted vehicle weapons"),
+    ("M2Browning (Stationary)", "Mounted weapon. It fires bullets; it is left out as a scope choice, not computed"),
+    ("MWSY_001_Heavy_MountedMachineGun and other vehicle weapons", "Mounted vehicle weapons. They fire bullets; left out as a scope choice, not computed"),
     ("CombatBow", "Fires arrows (Item.Caliber.Arrow), not bullets"),
 ]
 
@@ -235,16 +235,16 @@ def build():
             "hostile alignment; a direct hit at point blank: no distance falloff, no ricochet, no penetration",
             "target is a character outside any vehicle; one hit; no instigator tags (entries needing them are not applied)",
             "ammo type changes the result through the HP/AP rule entries and the ammo scalar against armor (DamagePipeline v2 sections 7.3, 7.9)",
-            "armor classes cover Torso.Upper (torso_armor) and Head (head_armor, helmets); the other locations are unarmored",
+            "armor classes are evaluated for Torso.Upper (torso_armor) and Head (head_armor, helmets); the location columns are for an unarmored target. In the game, vests also cover Torso.Middle and Torso.Lower, SuperHeavy armor also covers Pelvis and Arm.Upper, and Heavy, SuperHeavy and Tank helmets also cover Neck, so those locations take less damage on an armored target than their columns show",
             "damage is rounded to one decimal; damage_raw is unrounded",
             "rpm is RoundsPerMinute from the weapon's stats asset; null where the asset omits it (the class default, 600 per Wardogs_InfantryWeapons_Stats_v1, is not applied)"],
-        "rules": ("Armor piercing does not add damage: it removes most of the armor reduction (armor scalar 0.3 base, "
-                  "per-arms-class overrides) and lowers unarmored damage, so it wins against heavy armor and loses "
-                  "against none. Hollow point doubles unarmored flesh damage but armor scalar 1.5 makes armor count 1.5 times. "
+        "rules": ("Armor piercing does not add damage. Against an unarmored target it deals 0.8 times FMJ. Against armor it cuts the armor reduction by an amount that depends on the bullet's arms class (a per-class scalar), so it overtakes FMJ from Medium armor for rifle calibers and the Deagle (50AE) and from Heavy armor for 9mm, 45ACP and 45Colt. "
+                  "Where the arms class gives AP a scalar of 1.0 (the 50Cal SR_04) it never beats FMJ. "
+                  "Hollow point doubles unarmored damage, but the HP rule entries (-70, -55, -40 and -40 percent against the armor classes) together with armor scalar 1.5 make it far weaker than FMJ against any armor. "
                   "Tracer and FMJ are identical. Item tags spelled ArmourPiercing resolve to no modifier and behave as FMJ."),
         "locations": dt.LOCATIONS, "armor_classes": ARMOR_CLASSES,
         "ammo_availability": "derived from the ammo items under Content/Items/Resources/Ammo whose Item.Caliber tag is in the weapon's SupportedCaliber",
-        "excluded": [{"what": a, "why": b} for a, b in EXCLUDED] + [{"what": a, "why": b} for a, b in excluded]},
+        "excluded": [{"what": a, "why": b} for a, b in EXCLUDED] + [{"what": a, "why": b} for a, b in excluded if not any(a in what for what, _ in EXCLUDED)]},
         "weapons": weapons_out}
 
 
