@@ -79,7 +79,7 @@ The distance falloff times are in cm: the native projectile path evaluates the c
 
 | Field | Value |
 |---|---|
-| WeaponAccuracy | 3.49 (no AccuracyType set, so the default applies) |
+| WeaponAccuracy | 3.49 (no AccuracyType set, so the native default applies: milliradians, constructor `0x699E6C0`; see [Weapon Spread](../pipelines/Wardogs_WeaponSpread_v1.md)) |
 | FocusEnergyReductionPerShot | 40.0 |
 | RecoilReductionWhenFocussing | 10.0 |
 | Zeroing | Min 25, Max 25, Step 25 |
@@ -226,6 +226,7 @@ The 25-entry [`IMC_BaseWeapon`](https://github.com/Kiyogitpy/wardogs-data-docs/b
 The export lists the inputs to each system but not the formulas that combine them. Recoil (§5a), aim sway and focus energy (§5b) are traced in code.
 
 - **Recoil:** §5a.
+- **Spread, accuracy cone and shot direction:** [Weapon Spread](../pipelines/Wardogs_WeaponSpread_v1.md): hip spread from speed and stance, the `WeaponAccuracy` cone (milliradians unless the asset says `MinutesOfAngle`), the random cone, shotgun pellets and what the server receives. Recoil is applied after the shot is spawned.
 - **Aim sway and focus energy:** §5b.
 - **Attachment and stance multipliers:** each weapon's final `Attribute.Gameplay.Weapon.*` values (recoil and spread multipliers, `AimTime`, zoom, zeroing) with its default attachments, and what each attachment changes, are on [Weapon Attributes](Wardogs_WeaponAttributes_v1.md).
 - **Evidence:** [`docs/evidence/weapons.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/weapons.md): a verification status for every native address §5a and §5b cite.
