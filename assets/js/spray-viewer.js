@@ -98,7 +98,7 @@
   /* ---------- view ---------- */
 
   var NS = "http://www.w3.org/2000/svg";
-  var CATEGORY_LABEL = { infantry: "Infantry", vehicle: "Vehicle", stationary: "Stationary", other: "Other" };
+  var CATEGORY_LABEL = { infantry: "Infantry", vehicle: "Vehicle", stationary: "Stationary", test: "Test", tool: "Tools", other: "Other" };
   var root = document.getElementById("sv");
   var state = { data: null, weapon: null, season: "s2", stance: "stand", focus: false, attachments: false,
                 fan: true, band: true, metres: false, dist: 100, nShots: 30, inspect: 1, category: "infantry", sameScale: true };

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="640" height="372" viewBox="0 0 640 372" role="img" aria-labelledby="t d">
 <title id="t">AMR 50 spray pattern</title>
-<desc id="d">Cumulative pitch and yaw of each shot in the spray pattern. Season 2 only; no Season 1 data.</desc>
+<desc id="d">Cumulative pitch and yaw of each shot in the spray pattern. Season 1 is blue dashed; Season 2 is green solid.</desc>
 <style>
 .bg{fill:#ffffff;stroke:#8a8a8a;stroke-width:1}
 .plot{fill:none;stroke:#8a8a8a;stroke-width:1}
@@ -40,37 +40,135 @@
 </style>
 <rect class="bg" x="0.5" y="0.5" width="639" height="371" rx="6"/>
 <text class="ttl" x="70" y="26">AMR 50</text>
-<line class="ln2" x1="70" y1="46" x2="96" y2="46"/>
-<rect class="mk2" x="80" y="43" width="6" height="6"/>
-<text class="lbl" x="104" y="50">Season 2</text>
-<line class="grid" x1="107.93" y1="64" x2="107.93" y2="330"/>
-<text class="tick" x="107.93" y="345" text-anchor="middle">0</text>
-<line class="grid" x1="202.76" y1="64" x2="202.76" y2="330"/>
-<text class="tick" x="202.76" y="345" text-anchor="middle">0.2</text>
-<line class="grid" x1="297.59" y1="64" x2="297.59" y2="330"/>
-<text class="tick" x="297.59" y="345" text-anchor="middle">0.4</text>
-<line class="grid" x1="392.41" y1="64" x2="392.41" y2="330"/>
-<text class="tick" x="392.41" y="345" text-anchor="middle">0.6</text>
-<line class="grid" x1="487.24" y1="64" x2="487.24" y2="330"/>
-<text class="tick" x="487.24" y="345" text-anchor="middle">0.8</text>
-<line class="grid" x1="582.07" y1="64" x2="582.07" y2="330"/>
-<text class="tick" x="582.07" y="345" text-anchor="middle">1</text>
+<line class="ln1" x1="70" y1="46" x2="96" y2="46"/>
+<circle class="mk1" cx="83" cy="46" r="3.2"/>
+<text class="lbl" x="104" y="50">Season 1</text>
+<line class="ln2" x1="200" y1="46" x2="226" y2="46"/>
+<rect class="mk2" x="210" y="43" width="6" height="6"/>
+<text class="lbl" x="234" y="50">Season 2</text>
+<line class="grid" x1="137.73" y1="64" x2="137.73" y2="330"/>
+<text class="tick" x="137.73" y="345" text-anchor="middle">-4</text>
+<line class="grid" x1="240.31" y1="64" x2="240.31" y2="330"/>
+<text class="tick" x="240.31" y="345" text-anchor="middle">-2</text>
+<line class="grid" x1="342.90" y1="64" x2="342.90" y2="330"/>
+<text class="tick" x="342.90" y="345" text-anchor="middle">0</text>
+<line class="grid" x1="445.48" y1="64" x2="445.48" y2="330"/>
+<text class="tick" x="445.48" y="345" text-anchor="middle">2</text>
+<line class="grid" x1="548.07" y1="64" x2="548.07" y2="330"/>
+<text class="tick" x="548.07" y="345" text-anchor="middle">4</text>
 <line class="grid" x1="70" y1="311.66" x2="620" y2="311.66"/>
 <text class="tick" x="62" y="315.66" text-anchor="end">0</text>
-<line class="grid" x1="70" y1="265.79" x2="620" y2="265.79"/>
-<text class="tick" x="62" y="269.79" text-anchor="end">0.2</text>
-<line class="grid" x1="70" y1="219.93" x2="620" y2="219.93"/>
-<text class="tick" x="62" y="223.93" text-anchor="end">0.4</text>
-<line class="grid" x1="70" y1="174.07" x2="620" y2="174.07"/>
-<text class="tick" x="62" y="178.07" text-anchor="end">0.6</text>
-<line class="grid" x1="70" y1="128.21" x2="620" y2="128.21"/>
-<text class="tick" x="62" y="132.21" text-anchor="end">0.8</text>
-<line class="grid" x1="70" y1="82.34" x2="620" y2="82.34"/>
-<text class="tick" x="62" y="86.34" text-anchor="end">1</text>
+<line class="grid" x1="70" y1="249.37" x2="620" y2="249.37"/>
+<text class="tick" x="62" y="253.37" text-anchor="end">20</text>
+<line class="grid" x1="70" y1="187.08" x2="620" y2="187.08"/>
+<text class="tick" x="62" y="191.08" text-anchor="end">40</text>
+<line class="grid" x1="70" y1="124.79" x2="620" y2="124.79"/>
+<text class="tick" x="62" y="128.79" text-anchor="end">60</text>
 <rect class="plot" x="70" y="64" width="550" height="266"/>
-<line class="ref" x1="107.93" y1="64" x2="107.93" y2="330"/>
+<line class="ref" x1="342.90" y1="64" x2="342.90" y2="330"/>
 <line class="ref" x1="70" y1="311.66" x2="620" y2="311.66"/>
 <text class="lbl" x="345.0" y="364" text-anchor="middle">Yaw (degrees, right +)</text>
 <text class="lbl" transform="translate(18 197.0) rotate(-90)" text-anchor="middle">Pitch (degrees, up +)</text>
-<text class="note" x="345.0" y="197.0" text-anchor="middle">No recoil pattern in the exported data</text>
+<polygon class="band1" points="300.45,308.07 284.34,303.14 276.90,298.31 264.71,293.41 253.40,288.29 245.98,283.19 243.73,278.12 231.61,273.36 222.33,268.21 220.70,262.73 216.03,257.56 210.36,252.33 204.56,247.18 200.92,242.11 195.94,236.58 183.90,231.32 185.05,226.23 176.88,220.81 175.30,215.75 164.70,210.37 163.01,204.79 155.88,199.53 153.73,194.21 156.32,188.90 148.98,183.67 140.68,178.43 141.98,172.87 137.43,167.63 140.05,162.24 137.61,157.06 133.85,151.65 127.68,146.56 130.28,141.23 125.22,135.83 121.36,130.57 117.92,124.94 112.82,119.74 109.81,114.38 110.44,108.98 107.93,103.52 582.07,82.34 577.21,88.14 576.88,93.59 571.80,99.51 566.36,104.97 571.36,110.62 561.57,116.11 563.59,121.81 558.72,127.31 553.32,133.01 549.48,138.53 548.01,144.27 549.76,150.06 546.68,155.73 537.11,161.53 536.50,166.83 533.65,172.66 533.10,178.32 528.37,183.85 519.83,189.59 515.36,195.04 509.46,200.72 510.08,206.41 502.77,212.17 494.75,217.91 488.18,223.49 490.56,229.01 482.56,234.59 477.40,240.17 472.94,245.82 466.94,251.48 458.01,257.24 449.89,262.97 443.69,268.81 434.05,274.66 424.72,280.59 418.00,286.34 410.72,292.18 399.64,298.12 382.79,304.35"/>
+<polygon class="band2" points="300.45,308.07 284.34,303.14 276.90,298.31 264.71,293.41 253.40,288.29 245.98,283.19 243.73,278.12 231.61,273.36 222.33,268.21 220.70,262.73 216.03,257.56 210.36,252.33 204.56,247.18 200.92,242.11 195.94,236.58 183.90,231.32 185.05,226.23 176.88,220.81 175.30,215.75 164.70,210.37 163.01,204.79 155.88,199.53 153.73,194.21 156.32,188.90 148.98,183.67 140.68,178.43 141.98,172.87 137.43,167.63 140.05,162.24 137.61,157.06 133.85,151.65 127.68,146.56 130.28,141.23 125.22,135.83 121.36,130.57 117.92,124.94 112.82,119.74 109.81,114.38 110.44,108.98 107.93,103.52 582.07,82.34 577.21,88.14 576.88,93.59 571.80,99.51 566.36,104.97 571.36,110.62 561.57,116.11 563.59,121.81 558.72,127.31 553.32,133.01 549.48,138.53 548.01,144.27 549.76,150.06 546.68,155.73 537.11,161.53 536.50,166.83 533.65,172.66 533.10,178.32 528.37,183.85 519.83,189.59 515.36,195.04 509.46,200.72 510.08,206.41 502.77,212.17 494.75,217.91 488.18,223.49 490.56,229.01 482.56,234.59 477.40,240.17 472.94,245.82 466.94,251.48 458.01,257.24 449.89,262.97 443.69,268.81 434.05,274.66 424.72,280.59 418.00,286.34 410.72,292.18 399.64,298.12 382.79,304.35"/>
+<polyline class="ln1" points="342.90,306.20 342.90,300.75 342.90,295.30 342.90,289.85 342.90,284.40 342.90,278.95 342.90,273.50 342.90,268.05 342.90,262.60 342.90,257.15 342.90,251.70 342.90,246.25 342.90,240.80 342.90,235.35 342.90,229.90 342.90,224.45 342.90,219.00 342.90,213.55 342.90,208.10 342.90,202.65 342.90,197.20 342.90,191.75 342.90,186.30 342.90,180.85 342.90,175.40 342.90,169.95 342.90,164.50 342.90,159.05 342.90,153.60 342.90,148.14 342.90,142.69 342.90,137.24 342.90,131.79 342.90,126.34 342.90,120.89 342.90,115.44 342.90,109.99 342.90,104.54 342.90,99.09 342.90,93.64"/>
+<circle class="mk1" cx="342.90" cy="306.20" r="3.2"/>
+<text class="num1" x="347.90" y="300.20">1</text>
+<circle class="mk1" cx="342.90" cy="300.75" r="3.2"/>
+<circle class="mk1" cx="342.90" cy="295.30" r="3.2"/>
+<circle class="mk1" cx="342.90" cy="289.85" r="3.2"/>
+<circle class="mk1" cx="342.90" cy="284.40" r="3.2"/>
+<text class="num1" x="347.90" y="278.40">5</text>
+<circle class="mk1" cx="342.90" cy="278.95" r="3.2"/>
+<circle class="mk1" cx="342.90" cy="273.50" r="3.2"/>
+<circle class="mk1" cx="342.90" cy="268.05" r="3.2"/>
+<circle class="mk1" cx="342.90" cy="262.60" r="3.2"/>
+<circle class="mk1" cx="342.90" cy="257.15" r="3.2"/>
+<text class="num1" x="347.90" y="251.15">10</text>
+<circle class="mk1" cx="342.90" cy="251.70" r="3.2"/>
+<circle class="mk1" cx="342.90" cy="246.25" r="3.2"/>
+<circle class="mk1" cx="342.90" cy="240.80" r="3.2"/>
+<circle class="mk1" cx="342.90" cy="235.35" r="3.2"/>
+<circle class="mk1" cx="342.90" cy="229.90" r="3.2"/>
+<text class="num1" x="347.90" y="223.90">15</text>
+<circle class="mk1" cx="342.90" cy="224.45" r="3.2"/>
+<circle class="mk1" cx="342.90" cy="219.00" r="3.2"/>
+<circle class="mk1" cx="342.90" cy="213.55" r="3.2"/>
+<circle class="mk1" cx="342.90" cy="208.10" r="3.2"/>
+<circle class="mk1" cx="342.90" cy="202.65" r="3.2"/>
+<text class="num1" x="347.90" y="196.65">20</text>
+<circle class="mk1" cx="342.90" cy="197.20" r="3.2"/>
+<circle class="mk1" cx="342.90" cy="191.75" r="3.2"/>
+<circle class="mk1" cx="342.90" cy="186.30" r="3.2"/>
+<circle class="mk1" cx="342.90" cy="180.85" r="3.2"/>
+<circle class="mk1" cx="342.90" cy="175.40" r="3.2"/>
+<text class="num1" x="347.90" y="169.40">25</text>
+<circle class="mk1" cx="342.90" cy="169.95" r="3.2"/>
+<circle class="mk1" cx="342.90" cy="164.50" r="3.2"/>
+<circle class="mk1" cx="342.90" cy="159.05" r="3.2"/>
+<circle class="mk1" cx="342.90" cy="153.60" r="3.2"/>
+<circle class="mk1" cx="342.90" cy="148.14" r="3.2"/>
+<text class="num1" x="347.90" y="142.14">30</text>
+<circle class="mk1" cx="342.90" cy="142.69" r="3.2"/>
+<circle class="mk1" cx="342.90" cy="137.24" r="3.2"/>
+<circle class="mk1" cx="342.90" cy="131.79" r="3.2"/>
+<circle class="mk1" cx="342.90" cy="126.34" r="3.2"/>
+<circle class="mk1" cx="342.90" cy="120.89" r="3.2"/>
+<text class="num1" x="347.90" y="114.89">35</text>
+<circle class="mk1" cx="342.90" cy="115.44" r="3.2"/>
+<circle class="mk1" cx="342.90" cy="109.99" r="3.2"/>
+<circle class="mk1" cx="342.90" cy="104.54" r="3.2"/>
+<circle class="mk1" cx="342.90" cy="99.09" r="3.2"/>
+<circle class="mk1" cx="342.90" cy="93.64" r="3.2"/>
+<text class="num1" x="347.90" y="87.64">40</text>
+<polyline class="ln2" points="342.90,306.20 342.90,300.75 342.90,295.30 342.90,289.85 342.90,284.40 342.90,278.95 342.90,273.50 342.90,268.05 342.90,262.60 342.90,257.15 342.90,251.70 342.90,246.25 342.90,240.80 342.90,235.35 342.90,229.90 342.90,224.45 342.90,219.00 342.90,213.55 342.90,208.10 342.90,202.65 342.90,197.20 342.90,191.75 342.90,186.30 342.90,180.85 342.90,175.40 342.90,169.95 342.90,164.50 342.90,159.05 342.90,153.60 342.90,148.14 342.90,142.69 342.90,137.24 342.90,131.79 342.90,126.34 342.90,120.89 342.90,115.44 342.90,109.99 342.90,104.54 342.90,99.09 342.90,93.64"/>
+<rect class="mk2" x="339.90" y="303.20" width="6" height="6"/>
+<text class="num2" x="347.90" y="318.20">1</text>
+<rect class="mk2" x="339.90" y="297.75" width="6" height="6"/>
+<rect class="mk2" x="339.90" y="292.30" width="6" height="6"/>
+<rect class="mk2" x="339.90" y="286.85" width="6" height="6"/>
+<rect class="mk2" x="339.90" y="281.40" width="6" height="6"/>
+<text class="num2" x="347.90" y="296.40">5</text>
+<rect class="mk2" x="339.90" y="275.95" width="6" height="6"/>
+<rect class="mk2" x="339.90" y="270.50" width="6" height="6"/>
+<rect class="mk2" x="339.90" y="265.05" width="6" height="6"/>
+<rect class="mk2" x="339.90" y="259.60" width="6" height="6"/>
+<rect class="mk2" x="339.90" y="254.15" width="6" height="6"/>
+<text class="num2" x="347.90" y="269.15">10</text>
+<rect class="mk2" x="339.90" y="248.70" width="6" height="6"/>
+<rect class="mk2" x="339.90" y="243.25" width="6" height="6"/>
+<rect class="mk2" x="339.90" y="237.80" width="6" height="6"/>
+<rect class="mk2" x="339.90" y="232.35" width="6" height="6"/>
+<rect class="mk2" x="339.90" y="226.90" width="6" height="6"/>
+<text class="num2" x="347.90" y="241.90">15</text>
+<rect class="mk2" x="339.90" y="221.45" width="6" height="6"/>
+<rect class="mk2" x="339.90" y="216.00" width="6" height="6"/>
+<rect class="mk2" x="339.90" y="210.55" width="6" height="6"/>
+<rect class="mk2" x="339.90" y="205.10" width="6" height="6"/>
+<rect class="mk2" x="339.90" y="199.65" width="6" height="6"/>
+<text class="num2" x="347.90" y="214.65">20</text>
+<rect class="mk2" x="339.90" y="194.20" width="6" height="6"/>
+<rect class="mk2" x="339.90" y="188.75" width="6" height="6"/>
+<rect class="mk2" x="339.90" y="183.30" width="6" height="6"/>
+<rect class="mk2" x="339.90" y="177.85" width="6" height="6"/>
+<rect class="mk2" x="339.90" y="172.40" width="6" height="6"/>
+<text class="num2" x="347.90" y="187.40">25</text>
+<rect class="mk2" x="339.90" y="166.95" width="6" height="6"/>
+<rect class="mk2" x="339.90" y="161.50" width="6" height="6"/>
+<rect class="mk2" x="339.90" y="156.05" width="6" height="6"/>
+<rect class="mk2" x="339.90" y="150.60" width="6" height="6"/>
+<rect class="mk2" x="339.90" y="145.14" width="6" height="6"/>
+<text class="num2" x="347.90" y="160.14">30</text>
+<rect class="mk2" x="339.90" y="139.69" width="6" height="6"/>
+<rect class="mk2" x="339.90" y="134.24" width="6" height="6"/>
+<rect class="mk2" x="339.90" y="128.79" width="6" height="6"/>
+<rect class="mk2" x="339.90" y="123.34" width="6" height="6"/>
+<rect class="mk2" x="339.90" y="117.89" width="6" height="6"/>
+<text class="num2" x="347.90" y="132.89">35</text>
+<rect class="mk2" x="339.90" y="112.44" width="6" height="6"/>
+<rect class="mk2" x="339.90" y="106.99" width="6" height="6"/>
+<rect class="mk2" x="339.90" y="101.54" width="6" height="6"/>
+<rect class="mk2" x="339.90" y="96.09" width="6" height="6"/>
+<rect class="mk2" x="339.90" y="90.64" width="6" height="6"/>
+<text class="num2" x="347.90" y="105.64">40</text>
 </svg>

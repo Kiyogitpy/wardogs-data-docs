@@ -1,5 +1,5 @@
 /* Offline check for the spray viewer: its cumulative path must equal every weapon's expectedPath in
-   assets/data/spray-patterns.json (within 1e-6), and the helpers must behave. Run: node _tools/spray_viewer_check.js */
+   assets/data/spray-patterns.json (within 1e-3 (the file stores 5 decimals; paths accumulate rounding)), and the helpers must behave. Run: node _tools/spray_viewer_check.js */
 "use strict";
 const fs = require("fs");
 const path = require("path");
@@ -19,7 +19,7 @@ for (const w of data.weapons) {
     assert.equal(got.length, s.expectedPath.length, w.id + " " + k + " length");
     got.forEach((p, i) => {
       const e = s.expectedPath[i];
-      if (e.shot !== p.shot || Math.abs(e.x - p.x) > 1e-6 || Math.abs(e.y - p.y) > 1e-6) bad.push(w.id + " " + k + " shot " + (i + 1));
+      if (e.shot !== p.shot || Math.abs(e.x - p.x) > 1e-3 || Math.abs(e.y - p.y) > 1e-3) bad.push(w.id + " " + k + " shot " + (i + 1));
     });
     if (s.band) assert.ok(s.band.p10.length === s.band.p90.length && s.band.p10.length >= 1, w.id + " band");
     shots += got.length; seasons++;
