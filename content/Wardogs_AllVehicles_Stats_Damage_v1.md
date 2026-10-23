@@ -14,8 +14,8 @@ description: "Vehicle stat assets, mounted weapon stats, global damage tables, f
 
 ## Season 02 update (2026-10-15)
 
-- No vehicle stat assets (section 1) or weapon-stat rows (section 2) changed. No files were added or removed.
-- Damage entries went from 451 to 472 across the 17 tables. A new `Meta.Damage.Explosive.Rocket.125mm` entry was added to each of these 12 tables: Havoc (150.0), Little Bird (100.0), ROT_04 (150.0), Leopard (-10.0), Bobcat (250.0), Kodiak (250.0), Humvee Default, Minigun and MachineGun (250.0 each), Dune Buggy (250.0), Ural (75.0) and STN_05 (-50.0). Mistral, Phalanx, Mortar and Radio Tower each gained two entries.
+- No vehicle stat assets (section 1) or weapon-stat rows (section 2) changed in the columns shown. No files were added or removed. Two vehicle weapon stats assets changed fields outside those columns: `DA_STN_02_Heavy_MainCannon_Stats` `InitialBulletSpeed` 85000.0 → 110000.0, and `DA_STN_03_Heavy_MainBarrel_Stats` `WindupTime` 0.85 → 2.5.
+- Damage entries went from 451 to 472 across the 17 tables (21 entries added, none removed). A new `Meta.Damage.Explosive.Rocket.125mm` entry was added to 16 of the 17 tables (all except the base `DT_GlobalDamage_VehicleData`): Havoc (150.0), Little Bird (100.0), ROT_04 (150.0), Leopard (-10.0), Mistral (50.0), Phalanx (-20.0), Mortar (-50.0), Radio Tower (250.0), STN_05 (-50.0), Bobcat (250.0), Kodiak (250.0), Humvee Default, Minigun and MachineGun (250.0 each), Dune Buggy (250.0) and Ural (75.0). Mistral, Phalanx, Mortar, Radio Tower and STN_05 each gained a second new entry, a `Meta.Damage.Cannon.20x102mm` entry of -70.0, at entry 6 in Mistral, Phalanx, Mortar and STN_05 and at entry 24 in Radio Tower.
 - Humvee Default entry 13 `Amount`: -67.0 → -85.0.
 - Humvee Minigun entry 13 `Amount`: -71.0 → -88.0. Entry 27: -90.0 → -88.0.
 - Humvee MachineGun entry 13 `Amount`: -69.0 → -86.5. Entry 27: -87.5 → -86.5.
@@ -24,9 +24,10 @@ description: "Vehicle stat assets, mounted weapon stats, global damage tables, f
 - ROT_04 entry 12 `Amount`: -40.0 → -57.25.
 - Havoc entry 12 `Amount`: 87.5 → -46.0.
 - Leopard entry 25 `Amount`: -60.0 → -84.0.
-- Phalanx entry 12 `Amount`: 80.0 → -65.0.
-- Mistral, Phalanx, Mortar, Radio Tower and STN_05 entries were re-sequenced. Several changed their source tag, operation or priority category. The changes are in the tables below.
+- Because of the inserted entries, later entries in Mistral, Phalanx, Mortar, Radio Tower and STN_05 sit at new positions (for example Phalanx `Meta.Damage.Explosive.Rocket.122mm` -65.0 is now entry 12, where Season 1 entry 12 was `Explosive.Rocket.120x800mm` +80.0, now entry 13). No existing entry in these five tables changed its values. The tables below show the Season 2 entries.
 - Patch notes describe calibre reductions that apply to vehicle miniguns such as the Little Bird AH-6M Minigun and the Humvee Minigun.
+
+Full before/after list: [Season 2 Changes → Vehicles]({{ '/season-2-changes/vehicles.html' | relative_url }}).
 
 ---
 

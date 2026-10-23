@@ -19,6 +19,8 @@ description: "Layout, Cosmetic Rows, Skin Data Assets, Wiring"
 - **[`Skin_BlackAndGold`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season01_SkinsData/Content/Data/Skin_BlackAndGold.json):** overrides 1 → 3 (added [`WEPN_033`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_033/Content/WEPN_033.json) and `Vehicle.Variant.Air.Rotary.Havoc.Default`). Default accent UV Y 1.35187 → 0.1.
 - No skin assets or cosmetic rows were removed.
 
+Full before/after list: [Season 2 Changes → Rewards & Unlocks]({{ '/season-2-changes/rewards-unlocks.html' | relative_url }}).
+
 ---
 
 ## 1. Layout

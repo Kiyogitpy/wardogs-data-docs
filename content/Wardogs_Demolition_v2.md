@@ -23,6 +23,8 @@ description: "Asset Families, Demolition Assets, Component Settings, Remnant Mes
 - **Rulesets:** `Everything` now also includes [`Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Buildables.json); new [`Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Buildables.json) ruleset (single buildable rule).
 - **Vehicle rules:** AirVehicles 6 → 8 entries (ROT_04), TrackedVehicles 7 → 8 (TNK_04.Default), WheeledVehicles 11 → 13 (WHL_08), LargeWheeledVehicles 9 → 11 (WHL_08), LargeAndMediumWheeledVehicles 10 → 12 (WHL_08).
 
+Full before/after list: [Season 2 Changes → World, Visuals & Audio]({{ '/season-2-changes/world-visuals-audio.html' | relative_url }}).
+
 ## 1. Asset Families
 
 | Family | Count | Type | Path |

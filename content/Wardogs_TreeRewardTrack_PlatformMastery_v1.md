@@ -18,6 +18,8 @@ description: "Reward track card, track and panel data, Platform Mastery rewards"
 - [`DA_TreeRewardTrackPanel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Progression/Widgets/Widgets/TreeRewardTrackPanel/Data/DA_TreeRewardTrackPanel.json) `XPTextFormat` and `LockedLevelXPTextFormat`: keys `206BF79D…` → `TreeRewardTrackPanel.XPTextFormat` and `7D5C8577…` → `TreeRewardTrackPanel.LockedLevelXPTextFormat`; both now reference `STRINGS_Progression`.
 - Source strings are unchanged.
 
+Full before/after list: [Season 2 Changes → Rewards & Unlocks]({{ '/season-2-changes/rewards-unlocks.html' | relative_url }}).
+
 ---
 
 ## 1. [`DA_TreeRewardTrackCard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Progression/Widgets/Widgets/TreeRewardCard/Data/DA_TreeRewardTrackCard.json) (`WDUIUnlockTreeData`)

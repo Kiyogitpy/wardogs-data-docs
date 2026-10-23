@@ -18,6 +18,8 @@ description: "Package Contents, Zone Geometry Per Config, Hot Zone Movement, Bal
 - Africa and Russia are 55,000 × 55,000 × 15,000 cylinders with 8,500-unit Hot Zones and 25 s move delay. Each has four alternators, all Ellipse zones of 50,000 × 50,000 × 50,000: Africa `Kenya.Default` weight 1.0 (North, East, West 0.0); Russia `Sabartulo.Hospital` weight 1.0 (Bazaar, River, Hillside 0.0).
 - The two new Sniper configs are 35,000 × 35,000 × 17,000 cylinders with 7,500-unit Hot Zones, no alternators, zero first and move delay, default speed 1.5 and the same speed table as the Sniper Bakurani config.
 
+Full before/after list: [Season 2 Changes → Game Modes & Maps]({{ '/season-2-changes/game-modes-maps.html' | relative_url }}).
+
 ---
 
 ## 1. Package Contents

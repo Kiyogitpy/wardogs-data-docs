@@ -18,11 +18,13 @@ description: "Package Contents, How the Calculator Works, Calculator Rows, Feed 
 - New destroyed-variant rows: AirRaidShelter.Ceiling, AirRaidShelter.Floor, Bunker.Floor, Bunker.Roof, CrowsNest.BaseFloor, CrowsNest.FirstFloor, CrowsNest.Roof, Door, Door.TopSegment, Gate.Ramp, Loudspeaker, MistralAA, Mortar, Phalanx, RefuelStation, SV_Shelter, WoodBase.
 - New `FOBDoorClosed` row: cash only (no XP), feed text "FOB Door Closed", new state tree [`ST_Challenges_SessionEvents_Buildable_FOBDoorClosed`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/ST_Challenges_SessionEvents_Buildable_FOBDoorClosed.json). State trees 10 → 11. Feed strings 11 → 12.
 - Destroyed-variant lookup ([`DT_RewardLookup_SessionEvent_BuildableDestroyed`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_BuildableDestroyed.json)): 34 → 36 rows. Door, Gate.Ramp, and the floor and roof variants now have their own reward tags instead of sharing BarbedWire, Gate or BremmerWall. WoodBase and SV_Shelter are added.
-- Destroyed XP: `BaseReward` → `(BaseReward) * BuildProgress` on 35 rows.
+- Destroyed XP: `BaseReward` → `(BaseReward) * BuildProgress` on the 18 existing destroyed rows. The 17 new destroyed-variant rows use the new form from the start, so all 35 destroyed rows now have it.
 - FOB destroyed row: adds a supplies term, with `FOBSuppliesBonus` 7500 (cash) and 250 (XP), `FOBSuppliesMax` 25000.
 - `BaseValue` (cash) changes: Gate 500 → 200, RepairStation 400 → 200, HotZoneMagnet 4500 → 2750, HBlockQuadWall 150 → 75, HBlock 30 → 15, SandbagWall 30 → 15, TallHBlock 44 → 20, TankTrap 44 → 20, BarbedWire 14 → 5, CamoNetTent 14 → 5, FloorBoard 10 → 5, Radio 40 → 20, Ramp 40 → 20.
 - `FOBHacked` `BaseValue`: 2500 → 1000. New `HackerValue` option (2500) on `BaseValue` for buildables owned by the player.
 - New selectors: `TotalFOBSupplies`, `FOBSuppliesMax`, `FOBSuppliesBonus` (used by the FOB row).
+
+Full before/after list: [Season 2 Changes → Rewards & Unlocks]({{ '/season-2-changes/rewards-unlocks.html' | relative_url }}).
 
 ---
 
