@@ -371,10 +371,10 @@ None.
 
 ## See also
 
-- [Weapon market and tags]({{ '/content/Wardogs_Weapons_v2.html' | relative_url }}#season-02-update), Season 02 update
-- [Game mechanics, vendor markets]({{ '/content/Wardogs_GameMechanics_v2.html' | relative_url }}#season-02-update), Season 02 update
-- [Rewards and tags]({{ '/game-features/Wardogs_GameFeatures_Rewards_v2.html' | relative_url }}#season-02-update), Season 02 update
-- [Destruction]({{ '/content/Wardogs_Destruction_v2.html' | relative_url }}#season-02-update), Season 02 update
+- [Weapon market and tags]({{ '/content/Wardogs_Weapons_v2.html' | relative_url }}#season-02-update-2026-10-15), Season 02 update
+- [Game mechanics, vendor markets]({{ '/content/Wardogs_GameMechanics_v2.html' | relative_url }}#season-02-update-2026-10-15), Season 02 update
+- [Rewards and tags]({{ '/game-features/Wardogs_GameFeatures_Rewards_v2.html' | relative_url }}#season-02-update-2026-10-15), Season 02 update
+- [Destruction]({{ '/content/Wardogs_Destruction_v2.html' | relative_url }}#season-02-update-2026-10-15), Season 02 update
 
 Full change browser for this area: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=data-tables-tags&q=
 

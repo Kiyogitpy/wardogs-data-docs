@@ -2,7 +2,7 @@
 title: "Game Modes & Maps changes"
 parent: "Season 2 Changes"
 nav_order: 8
-description: "Game Modes & Maps: 30 assets added (TeamOffence and HotPotato modes), 2 removed, 8 modified with real changes, 5,331 property changes. Map warm-up data is most of the churn."
+description: "Game Modes & Maps: 30 assets added (TeamOffence and HotPotato modes), 2 removed, 8 modified with real changes, 5,327 property changes. Map warm-up data is most of the churn."
 ---
 
 # Game Modes & Maps changes
@@ -109,10 +109,10 @@ Team Offence and Hot Potato are new game-mode plugins. Team Offence adds challen
 
 ## See also
 
-- [Maps: map and mode details]({{ '/content/Wardogs_Maps_v2.html' | relative_url }}#season-02-update)
-- [Game mechanics: modes and scoring]({{ '/content/Wardogs_GameMechanics_v2.html' | relative_url }}#season-02-update)
-- [Control zone game feature]({{ '/game-features/Wardogs_GameFeatures_ControlZone_v2.html' | relative_url }}#season-02-update)
-- [Shooting range game feature]({{ '/game-features/Wardogs_GameFeatures_ShootingRange_v2.html' | relative_url }}#season-02-update)
-- [Shooting range tutorial game feature]({{ '/game-features/Wardogs_GameFeatures_ShootingRangeTutorial_v2.html' | relative_url }}#season-02-update)
-- [Teamkill tracking game feature]({{ '/game-features/Wardogs_GameFeatures_TeamkillTracking_v2.html' | relative_url }}#season-02-update)
+- [Maps: map and mode details]({{ '/content/Wardogs_Maps_v2.html' | relative_url }}#season-02-update-2026-10-15)
+- [Game mechanics: modes and scoring]({{ '/content/Wardogs_GameMechanics_v2.html' | relative_url }}#season-02-update-2026-10-15)
+- [Control zone game feature]({{ '/game-features/Wardogs_GameFeatures_ControlZone_v2.html' | relative_url }}#season-02-update-2026-10-15)
+- [Shooting range game feature]({{ '/game-features/Wardogs_GameFeatures_ShootingRange_v2.html' | relative_url }}#season-02-update-2026-10-15)
+- [Shooting range tutorial game feature]({{ '/game-features/Wardogs_GameFeatures_ShootingRangeTutorial_v2.html' | relative_url }}#season-02-update-2026-10-15)
+- [Teamkill tracking game feature]({{ '/game-features/Wardogs_GameFeatures_TeamkillTracking_v2.html' | relative_url }}#season-02-update-2026-10-15)
 
