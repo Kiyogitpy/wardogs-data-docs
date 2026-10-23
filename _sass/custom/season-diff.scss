@@ -1,0 +1,200 @@
+// Season 2 change browser (season-2-changes/all-changes.md) and landing totals
+// (categories/season-2-changes.md), both driven by assets/js/season-diff.js.
+// Imported at the end of custom.scss, so $ue-* and $wd-* tokens are in scope. The site is dark only.
+
+.sd, .sd-totals {
+  .sd-note { color: $ue-text-dim; }
+  .sd-meta { color: $ue-text-dim; font-size: 0.9rem; margin: 0 0 1rem; }
+}
+
+.sd-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  gap: 0.75rem;
+  margin: 0 0 1.5rem;
+  max-width: 60rem;
+}
+.sd-tile {
+  margin: 0;
+  padding: 0.9rem 1rem;
+  display: flex;
+  flex-direction: column-reverse;
+  background: $ue-panel;
+  border: 1px solid $ue-border;
+  border-radius: $radius-panel;
+  dd { margin: 0; color: $ue-white; font-family: $wd-mono; font-size: 1.6rem; letter-spacing: -0.03em; }
+  dt { color: $ue-text-dim; font-size: 0.8rem; }
+}
+
+// Controls
+.sd-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-end;
+  margin-bottom: 0.75rem;
+}
+.sd-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 0;
+  label, .sd-label { color: $ue-text-dim; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; }
+  select, input {
+    padding: 0.5rem 0.7rem;
+    background: $ue-bg;
+    color: $ue-white;
+    border: 1px solid $ue-border;
+    border-radius: 8px;
+    font: inherit;
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+}
+.sd-field-q { flex: 1 1 16rem; input { width: 100%; } }
+
+.sd-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.sd-chip, .sd-toggle, .sd-btn, .sd-more {
+  font: inherit;
+  cursor: pointer;
+  color: $ue-text;
+  background: $ue-panel;
+  border: 1px solid $ue-border-strong;
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.85rem;
+  &:hover { background: $ue-panel-hover; }
+}
+.sd-chip[aria-pressed="true"], .sd-toggle[aria-pressed="true"] {
+  color: $ue-white;
+  background: $ue-panel-raised;
+  border-color: $ue-blue;
+}
+.sd-chip[aria-pressed="false"] { opacity: 0.55; text-decoration: line-through; }
+.sd-toggle { border-radius: 8px; }
+.sd-btn { border-radius: 8px; padding: 0.5rem 1rem; margin-top: 0.75rem; }
+.sd-more { border-radius: 6px; padding: 0.1rem 0.5rem; margin-top: 0.3rem; font-size: 0.75rem; }
+
+.sd select:focus-visible, .sd input:focus-visible, .sd button:focus-visible,
+.sd summary:focus-visible, .sd a:focus-visible, .sd-table-wrap:focus-visible {
+  outline: 2px solid $ue-blue;
+  outline-offset: 2px;
+}
+
+.sd-summary { color: $ue-text-dim; font-size: 0.9rem; margin: 0.5rem 0 1rem; }
+.sd-more-wrap { margin: 1rem 0 2rem; }
+
+// Asset blocks
+.sd { min-width: 0; max-width: 100%; }
+.sd-list { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0.6rem; }
+.sd-asset {
+  background: $ue-panel;
+  border: 1px solid $ue-border;
+  border-left: 3px solid $ue-border-strong;
+  border-radius: $radius-panel;
+  min-width: 0;
+
+  &.sd-s-modified { border-left-color: $wd-new; }
+  &.sd-s-moved { border-left-color: #ffc79a; }
+  &.sd-s-added { border-left-color: $wd-up; }
+  &.sd-s-removed { border-left-color: $wd-down; }
+
+  > summary {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 0.7rem;
+    padding: 0.7rem 1rem;
+    cursor: pointer;
+    list-style-position: inside;
+    &:hover { background: $ue-panel-hover; border-radius: $radius-panel; }
+  }
+  .sd-name { color: $ue-white; font-weight: 600; overflow-wrap: anywhere; }
+  .sd-type { color: $ue-text-dim; font-size: 0.8rem; font-family: $wd-mono; overflow-wrap: anywhere; }
+  .sd-count { margin-left: auto; color: $ue-text-dim; font-size: 0.8rem; }
+}
+
+.sd-badge {
+  padding: 0.1rem 0.5rem;
+  border-radius: $radius-small;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: $ue-text;
+  background: $ue-panel-raised;
+  &.sd-s-modified { color: $wd-new; background: rgba(143, 211, 255, 0.1); }
+  &.sd-s-moved { color: #ffc79a; background: rgba(255, 199, 154, 0.1); }
+  &.sd-s-added { color: $wd-up; background: rgba(95, 224, 184, 0.1); }
+  &.sd-s-removed { color: $wd-down; background: rgba(255, 138, 158, 0.1); }
+  &.sd-inferred { color: #ffc79a; border: 1px dashed rgba(255, 199, 154, 0.5); }
+}
+.sd-chip.sd-s-modified[aria-pressed="true"] { border-color: $wd-new; }
+.sd-chip.sd-s-moved[aria-pressed="true"] { border-color: #ffc79a; }
+.sd-chip.sd-s-added[aria-pressed="true"] { border-color: $wd-up; }
+.sd-chip.sd-s-removed[aria-pressed="true"] { border-color: $wd-down; }
+
+.sd-body { padding: 0 1rem 1rem; min-width: 0; }
+.sd-meta-row {
+  margin-bottom: 0.75rem;
+  font-size: 0.85rem;
+  color: $ue-text-dim;
+  overflow-wrap: anywhere;
+  .sd-path { font-family: $wd-mono; font-size: 0.8rem; }
+  .sd-removed-note { margin-left: 0.6rem; color: $wd-down; }
+  .sd-old, .sd-noise { margin-top: 0.25rem; }
+  code { background: transparent; border: 0; padding: 0; color: inherit; font-size: 0.8rem; }
+}
+
+// Table scrolls inside its own container
+.sd-table-wrap {
+  overflow-x: auto;
+  border: 1px solid $ue-border;
+  border-radius: 8px;
+}
+.main-content .sd-table {
+  width: 100%;
+  min-width: 36rem;
+  margin: 0;
+  table-layout: auto;
+
+  th, td { vertical-align: top; padding: 0.45rem 0.75rem; font-size: 0.85rem; }
+  th[scope="col"] { color: $ue-text-dim; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; }
+  th[scope="row"] { font-weight: 400; color: $ue-text; }
+  code {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    font-family: $wd-mono;
+    font-size: 0.8rem;
+    color: inherit;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  .sd-prop { min-width: 12rem; max-width: 22rem; }
+  .sd-val { min-width: 8rem; max-width: 28rem; }
+  .sd-val code { color: $ue-text-dim; }
+  td:nth-child(3) code { color: $ue-white; }
+  .sd-none { color: $ue-text-dim; opacity: 0.6; }
+  .sd-chg { white-space: nowrap; }
+}
+.sd-delta {
+  padding: 0.15rem 0.5rem;
+  border-radius: $radius-small;
+  font-family: $wd-mono;
+  font-size: 0.82rem;
+  color: $ue-text-dim;
+  &.is-down { color: $wd-down; background: rgba(255, 138, 158, 0.1); }
+  &.is-up { color: $wd-up; background: rgba(95, 224, 184, 0.1); }
+}
+.sd-tag {
+  font-size: 0.75rem;
+  color: $ue-text-dim;
+  &.sd-tag-added { color: $wd-up; }
+  &.sd-tag-removed { color: $wd-down; }
+}
+
+@media (max-width: 40rem) {
+  .sd-asset > summary .sd-count { margin-left: 0; flex-basis: 100%; }
+  .sd-controls { gap: 0.75rem; }
+}
