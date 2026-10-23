@@ -1,0 +1,81 @@
+---
+title: "Kodiak [Pickup]"
+parent: "Vehicles"
+description: "Six-seat pickup version of the Kodiak SUV with no weapons, sold for 3,000 cash."
+---
+
+# Kodiak [Pickup]
+
+| Kodiak [Pickup] | |
+|---|---|
+| Type | Pickup |
+| Seats | 6 on the stats sheet (the base seat data lists 4) |
+| Price | 3,000 cash |
+| Unlock level | 0 |
+| Main health | 400 HP |
+| Top speed | 154 (as stored) |
+| Rifle damage taken | 5% |
+| Internal name | WHL_02 (pickup variant) |
+{: .wiki-infobox }
+
+The Kodiak [Pickup] is the pickup version of the [Kodiak](kodiak.md). It has a larger seating layout, six seats on the stats sheet, and no weapons.
+
+## Overview
+
+The Kodiak [Pickup] is sold in the vehicle vendor under land transport, for 3,000 cash, and unlocks at level 0. Its shop description lists six seats.
+
+## Stats
+
+| Stat | Value |
+|---|---|
+| Max speed | 154 (as stored) |
+| Fuel capacity | 50 (as stored) |
+| Fuel economy | 2.9 (as stored) |
+| Seats | 6 |
+| Mass | 2,750 (as stored, unit not stated) |
+| Countermeasures | Not stated |
+
+The stats sheet gives 6 seats. The base Kodiak seat data lists 4, and the data does not show where the other two come from.
+
+## Armor and damage
+
+Main health is 400 HP, with the same engine, fuel tank and wheel health as the [Kodiak](kodiak.md). Its rifle protection and destruction counts are the same as the base Kodiak's:
+
+| Ammunition | Hits to destroy | Faster route |
+|---|---:|---|
+| 5.56 mm rifle | 572 | 143 through the left front wheel |
+| 7.62×54 mm rifle | 364 | 91 through the left front wheel |
+| .308 Win | 712 | 178 through the left front wheel |
+| .50 cal | 178 | 45 through the left front wheel |
+| 20×102 mm cannon | 39 | None found |
+| 30 mm cannon | 8 | None found |
+
+## Weapons and seats
+
+The pickup has no weapons. Its seats are a driver and passengers.
+
+## Handling
+
+Handling matches the base Kodiak: mass 2,750, hand brake 50, front steering of 30 degrees, and the same engine and transmission.
+
+## Season 2 changes
+
+- The vehicle item changed size in inventory (height 4 to 3).
+- The wheel deflation threshold rose from 0.5 to 0.55 on both axles.
+- A new 125 mm rocket rule adds +250% to the Kodiak damage rules, which this variant shares.
+- Price is unchanged at 3,000.
+
+## See also
+
+- [Kodiak](kodiak.md), the base model
+- [Kodiak [M249]](kodiak-m249.md), the machine gun variant
+- [Vehicle damage](vehicle-damage.md)
+
+## Sources
+
+- [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
+- [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
+- [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md)
+- [Vehicle Damage Pipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md)
+- [Item Shop](../../game-features/Wardogs_ItemShop_v1.md)
+- [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
