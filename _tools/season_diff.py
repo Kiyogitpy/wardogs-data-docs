@@ -317,6 +317,7 @@ class Ctx:
         self.dups = 0
         self.swapped = 0
         self.reinterp = 0
+        self.mark = 0
         self.perm_instances = []
         self.swaps = []
         self.cands = []
@@ -324,7 +325,10 @@ class Ctx:
         self.collect = False
 
     def add(self, path, op, before, after):
-        self.changes.append({"path": path, "op": op, "before": before, "after": after})
+        row = {"path": path, "op": op, "before": before, "after": after}
+        if self.mark:
+            row["matched"] = "position"
+        self.changes.append(row)
 
 
 def unnamed(k):
@@ -336,12 +340,43 @@ def hash_body(k):
     return re.sub(r"_\$[0-9A-F]+\$_\$\d+\$$", "", k)
 
 
+def named_keys(d):
+    return frozenset(k for k in d if not unnamed(k))
+
+
+def _dict_shape(x, y):
+    """Same number of keys, and the named keys of one side are contained in the other's (hashed names are unknown)."""
+    nx, ny = named_keys(x), named_keys(y)
+    return len(x) == len(y) and (nx <= ny or ny <= nx)
+
+
+def shape_same(x, y):
+    """Same JSON shape: same type; objects the same key count with compatible named keys; struct arrays likewise."""
+    if isinstance(x, dict) or isinstance(y, dict):
+        return isinstance(x, dict) and isinstance(y, dict) and _dict_shape(x, y)
+    if isinstance(x, list) or isinstance(y, list):
+        if not (isinstance(x, list) and isinstance(y, list)):
+            return False
+        dx = [e for e in x if isinstance(e, dict)]
+        dy = [e for e in y if isinstance(e, dict)]
+        if dx and dy:
+            return _dict_shape(dx[0], dy[0])
+        return not dx and not dy or not x or not y
+    if x is None or y is None:
+        return x is y
+    for typ in (bool, str):
+        if isinstance(x, typ) or isinstance(y, typ):
+            return isinstance(x, typ) and isinstance(y, typ)
+    return is_num(x) and is_num(y)
+
+
 def match_renames(a, b, only_a, only_b, common_a, common_b):
     """Pair unnamed keys (hashed or Key#n) with their other-usmap counterparts. Returns {old_key: new_key}.
 
     Noise pairing needs equal values, except where identity is certain: the same hash body on both sides, or one
     named side and exactly one candidate in the gap. Otherwise the keys are left to show as removed + added."""
     pairs = {}
+    pos = set()    # pairs matched by position with differing values (flagged matched=position)
     used = set()
     # 0. same hash body (the hashed name differs only by the _$HEX$_$n$ suffix)
     for ka in only_a:
@@ -361,7 +396,14 @@ def match_renames(a, b, only_a, only_b, common_a, common_b):
                 pairs[ka] = kb
                 used.add(kb)
                 break
-    # 2. same gap between common keys, same kind of value, one named side, unambiguous
+    # 1b. each side has exactly one unpaired unknown key, with the same shape of value
+    rest_a = [k for k in only_a if k not in pairs and unnamed(k)]
+    rest_b = [k for k in only_b if k not in used and unnamed(k)]
+    if len(rest_a) == 1 and len(rest_b) == 1 and shape_same(a[rest_a[0]], b[rest_b[0]]):
+        pairs[rest_a[0]] = rest_b[0]
+        used.add(rest_b[0])
+        pos.add(rest_a[0])
+    # 2. same gap between common keys, same shape of value, one named side, unambiguous
     def gaps(keys, only, common):
         out = {}
         idx = {k: i for i, k in enumerate(common)}
@@ -376,12 +418,15 @@ def match_renames(a, b, only_a, only_b, common_a, common_b):
     gb = gaps(list(b), set(only_b) - used, common_b)
     for gap, la in ga.items():
         lb = gb.get(gap, [])
+        if any(k in pairs for k in la) or any(k in used for k in lb):
+            continue
         if len(la) == 1 and len(lb) == 1:
             ka, kb = la[0], lb[0]
             one_named = not HASHED.match(ka) or not HASHED.match(kb)
-            if (unnamed(ka) or unnamed(kb)) and one_named and kind(a[ka]) == kind(b[kb]):
+            if (unnamed(ka) or unnamed(kb)) and one_named and shape_same(a[ka], b[kb]):
                 pairs[ka] = kb
-    return pairs
+                pos.add(ka)
+    return pairs, pos
 
 
 def kind(v):
@@ -571,11 +616,11 @@ def diff_dict(a, b, path, ctx):
     ka, kb = list(a), list(b)
     only_a = [k for k in ka if k not in b]
     only_b = [k for k in kb if k not in a]
-    pairs = {}
+    pairs, pos = {}, set()
     if only_a and only_b:
         common_a = [k for k in ka if k in b]
         common_b = [k for k in kb if k in a]
-        pairs = match_renames(a, b, only_a, only_b, common_a, common_b)
+        pairs, pos = match_renames(a, b, only_a, only_b, common_a, common_b)
     for ka in [k for k in only_a if k not in pairs and not unnamed(k)]:
         for kb_ in [k for k in only_b if k not in pairs.values() and not unnamed(k)]:
             sa, sb = shape_of(ka), shape_of(kb_)
@@ -606,7 +651,10 @@ def diff_dict(a, b, path, ctx):
             diff_value(va, vb, p, ctx)
         elif k in new_to_old:
             ctx.renamed += 1
+            flagged = new_to_old[k] in pos
+            ctx.mark += flagged
             diff_value(a[new_to_old[k]], b[k], p, ctx)
+            ctx.mark -= flagged
         else:
             ctx.add(p, "added", None, b[k])
     for k in only_a:
@@ -725,6 +773,7 @@ def align_unmatched(a, b, ua, ub, path, ctx):
 def scratch_of(ctx):
     s = Ctx()
     s.collect = ctx.collect
+    s.mark = ctx.mark
     return s
 
 
