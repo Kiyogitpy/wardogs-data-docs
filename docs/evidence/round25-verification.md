@@ -245,3 +245,5 @@ Rests on native code or game behavior that I did not re-read or observe:
 - Whether `SimulationFrameRate` is the Rate in the step formula, the actual step scheme, gravity sensitivity (I did not rerun the 22 percent figure), and the maximum projectile lifetime.
 - The `GE_Player_Ghilli*` gameplay effects, slot exclusivity for vests and helmets, the mapping of world props to surface types and densities, and anything observed in a live game.
 - The ricochet and exit-speed tables are not in `data/`; they were verified from the offline extraction at the path above, which a plain clone cannot repeat.
+
+Corrections applied by the lead after this verification: the four REFUTED claims (17.8 percent instead of 18, six zero-ricochet surface types, Default as a zero exit-speed type, the spread of minimum ricochet angles) were rewritten in the falloff and ricochet evidence docs, the damage page and the Damage Pipeline note, and the step-length uncertainty and the Ghillie assumption were added to the page and the evidence docs. `_tools/verify_round25.py` still tests the original wording of those four claims, so it keeps reporting them as FAIL by design.

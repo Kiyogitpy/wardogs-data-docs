@@ -121,9 +121,9 @@ def build():
     tree = subprocess.run(["git", "rev-parse", "HEAD:data"], cwd=ROOT, capture_output=True, text=True).stdout.strip() or None
     meta = {"generator": "python _tools/weapon_damage_locations.py --json", "source_data_tree": tree,
             "unit": j["meta"]["unit"], "locations": LOCS,
-            "assumptions": [a for a in j["meta"]["assumptions"] if not a.startswith("armor classes are evaluated")] + [
+            "assumptions": [a for a in j["meta"]["assumptions"] if not a.startswith(("armor classes are evaluated", "rpm is"))] + [
                 "armor is applied at a location only when the armor item's CoveredHitLocations lists it (read from the item data); a vest and a helmet never cover the same location, so one covering piece is in play at a time",
-                "Ghillie armor and helmets have no stages and no covered locations: no effect at any location"],
+                "Ghillie armor and helmets carry no stages and no covered locations in the item data, so the armor rule cannot select them at any location. Their AppliedEffects are not in the export, and DT_GlobalDamage_ArmorData has Ghillie rows (Armor entry 7 at -10000 percent, Helmet entry 6 at -1000 percent, and -100 percent against explosive, cannon, impact and melee), so their real effect is not determined. These tables treat them as no armor"],
             "armor_items": ITEMS, "armor_effect": effect}
     return {"meta": meta, "weapons": weapons}
 

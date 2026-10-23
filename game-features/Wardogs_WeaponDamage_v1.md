@@ -404,7 +404,7 @@ The speed scale is `clamp(speed / reference, 0, 1)`. The reference is the weapon
 
 ### Four cubic SMG curves
 
-Four SMGs have cubic curves: the MP5 (WEPN_028), the AMP-9 (MP9), the PP-19 Vityaz (SMG_03) and the PP-19 Bizon (WEPN_031, which has the same curve as the Vityaz). Their keys store tangents, so the spline is exact. Read as linear between the same keys, the curve overstates these four by 18 percent or more between 400 and 1000 m. At 400 m the exact curve multipliers are 0.442 (MP5), 0.333 (AMP-9) and 0.462 (Vityaz and Bizon), against 0.544, 0.500 and 0.544 linear. At 800 m they are 0.133, 0.115 and 0.158, against 0.322, 0.300 and 0.322. These are curve values; the speed scale applies on top. The table gives the largest gap over 0 to 1200 m. The Vector has a steep curve, but its keys are all linear, so it is not cubic.
+Four SMGs have cubic curves: the MP5 (WEPN_028), the AMP-9 (MP9), the PP-19 Vityaz (SMG_03) and the PP-19 Bizon (WEPN_031, which has the same curve as the Vityaz). Their keys store tangents, so the spline is exact. Read as linear between the same keys, the curve overstates these four by 17.8 percent or more from 400 m to 1000 m. At 400 m the exact curve multipliers are 0.442 (MP5), 0.333 (AMP-9) and 0.462 (Vityaz and Bizon), against 0.544, 0.500 and 0.544 linear. At 800 m they are 0.133, 0.115 and 0.158, against 0.322, 0.300 and 0.322. These are curve values; the speed scale applies on top. The table gives the largest gap over 0 to 1200 m. The Vector has a steep curve, but its keys are all linear, so it is not cubic.
 
 <!-- weapon_damage_tables dist_cubic -->
 | Weapon | Largest gap between the linear and exact curve (multiplier) | At (m) |
@@ -430,14 +430,14 @@ Each cell is the reduction the item gives at that location. Only the locations t
 | ID_MediumArmor | vest | Medium |  |  | 40% | 40% | 40% |  |  |
 | ID_HeavyArmor | vest | Heavy |  |  | 50% | 50% | 50% |  |  |
 | ID_SuperHeavyArmor | vest | SuperHeavy |  |  | 60% | 60% | 60% | 60% | 60% |
-| ID_GhillieArmor, ID_GhillieArmorDry | vest | Ghillie (no effect) |  |  |  |  |  |  |  |
+| ID_GhillieArmor, ID_GhillieArmorDry | vest | Ghillie (effect not determined, treated as none) |  |  |  |  |  |  |  |
 | ID_LightHelmet | helmet | Light | 30% |  |  |  |  |  |  |
 | ID_MediumHelmet | helmet | Medium | 40% |  |  |  |  |  |  |
 | ID_PilotHelmet | helmet | Pilot | 30% |  |  |  |  |  |  |
 | ID_HeavyHelmet | helmet | Heavy | 50% | 50% |  |  |  |  |  |
 | ID_SuperHeavyHelmet | helmet | SuperHeavy | 60% | 60% |  |  |  |  |  |
 | ID_TankHelmet | helmet | Tank | 55% | 55% |  |  |  |  |  |
-| ID_GhillieHelmet, ID_GhillieHelmetDry | helmet | Ghillie (no effect) |  |  |  |  |  |  |  |
+| ID_GhillieHelmet, ID_GhillieHelmetDry | helmet | Ghillie (effect not determined, treated as none) |  |  |  |  |  |  |  |
 
 No location is covered by both a vest and a helmet.
 Covered by no item (5): Arm.Lower, Arm.Hand, Leg.Thigh, Leg.Calf, Leg.Foot.
@@ -586,6 +586,7 @@ At 35 degrees both rounds have an effectiveness of at least 2 (2.0 for FMJ, 3.6 
 - **Rate of fire** is shown only where the weapon's stats asset sets `RoundsPerMinute`. The LMG (PKM) and the Glock 17 do not set it, so no value is given for them. The class default is not applied.
 - **Excluded weapons.** Launchers (RPG-7, MAAWS, MGL-40, 9K333 Verba, the underbarrel grenade launcher and the AT4 asset) fire rockets or grenades, not bullets. The combat bow fires arrows. Fists, the build tools and the hammers are not weapons with a caliber. The artillery and tank barrel tests, the mounted M2 Browning and the vehicle weapons are excluded as well. See the [weapon damage evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round24-weapon-damage-engine.md).
 - **Items that are not determined.** These are listed in the evidence docs and are not settled by the game files:
+  - What the Ghillie suit does. Its armor items carry no stages and no covered locations, so the tables treat it as no armor. The damage tables do hold Ghillie rows (Armor entry 7 at -10000 percent, Helmet entry 6 at -1000 percent), and the suit's `AppliedEffects` are not in the export, so its real effect is not determined.
   - The `ArmourPiercing` item tag (the .338 Norma AP rounds) is not in the ammo-modifier map, so those rounds behave as FMJ. No weapon in the export chambers .338 Norma, so no row shows this.
   - The `545mm.Tracer` item has the caliber tag but no `Item.Ammo` context. Whether that stops it from loading is not determined. The table includes it.
   - Which vehicle weapons load 7.62x51 mm, .338 Norma, 20x102 mm, 30 mm, 35x228 mm and the tank calibers is not traced.
@@ -594,7 +595,7 @@ At 35 degrees both rounds have an effectiveness of at least 2 (2.0 for FMJ, 3.6 
   - The unit of wall thickness, so the ricochet and penetration loads are dimensionless.
   - The ricochet reflection, the deflection and the ratio gate. They are decoded from unreviewed pseudocode and marked New in section 7.
   - The hit limit for a projectile past hit 33, and the exit deflection after a pass.
-  - The game's step length for flight. The model steps 1 ms; the game steps by `floor(1000 / Rate)` ms, and the Rate is not read.
+  - The game's step length for flight. The model steps 1 ms; the game steps by `floor(1000 / Rate)` ms, and the Rate is not read. If the Rate is the config's `SimulationFrameRate` of 30 (33 ms steps), a plain Euler step would move the distance where the speed scale begins to bite by up to about 10 percent (M500 buckshot from 92 m to 83 m; 2.5 percent at 16 ms steps). That scheme is an exploratory check, not the game's, so every cell with a speed scale below 1 carries this uncertainty.
   - Native speed modifiers on modifier ammo. Tracer, HP and AP rows use the base projectile asset.
   - The M500 and MP43 curve enable flag. The stored shotgun curve is not applied in the model, and whether the game applies it is not determined.
   - Explosive and radial hits ignore location coverage: their armor hook accepts every equipped piece (round 8). The location tables cover direct bullet hits only.

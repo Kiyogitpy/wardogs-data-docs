@@ -896,7 +896,10 @@ weapon's muzzle speed, so it only bites once a round has slowed that far,
 which depends on drag. The drag model is read from native code in
 [Projectile Flight §5](Wardogs_ProjectileFlight_v1.md#5-drag); this table
 does not apply it. † marks a curve with
-cubic keys, where values between keys are a linear approximation.
+cubic keys, where values between keys are a linear approximation. The approximation overstates
+those four weapons (WEPN_028, MP9, SMG_03, WEPN_031): by 17.8% or more from 400 m to 1000 m and
+by more than 100% at 800 m. The exact curves, the drag-based speed scale and every ammo and armor
+class are on [Damage by Weapon and Ammo](../game-features/Wardogs_WeaponDamage_v1.md#5-damage-over-distance).
 
 <!-- damage_tables --falloff -->
 | Weapon | Curve keys (m → ×) | 50 m | 100 m | 200 m | 400 m | 800 m | 1200 m |
