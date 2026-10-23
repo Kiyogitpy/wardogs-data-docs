@@ -16,6 +16,14 @@ pipeline. It folds in the native trace, the GObjects Blueprint analysis
 and the restored-executable validation; those reports remain as evidence
 (§11).
 
+**Where a hit comes from.** This page starts at `ModifyDamage` (§1). The
+steps before it, from a projectile's trace to the hit record and the event
+that reaches `0x6B725B0`, are in
+[Hit Registration](Wardogs_HitRegistration_v1.md): trace shape and channel,
+ignore lists, ricochet and penetration, the `FWDProjectileHitData` record,
+the proxy-component hit handler and the alignment (friendly or hostile) that
+the rule table's `AlignmentRequired` reads.
+
 Build: `++Wardogs+Live-CL-516586` · Engine: UE 5.7 · GAS fork: "BH"
 (Embark's internal GAS variant) · Native addresses are file RVAs in the
 restored executable, SHA-256 `a5c3db10…2b4f0cc37` (§11).
@@ -102,7 +110,7 @@ Others are identified by the tags and classes they use:
 
 | Caller | RVA | Path |
 |---|---|---|
-| Projectile impact (two calls) | `0x6B725B0` | Bullets and other projectiles; builds the event in §7.6 |
+| Projectile impact (two calls) | `0x6B725B0` | Bullets and other projectiles; builds the event in §7.6. Reached from the proxy-component hit handler `0x6B73E90`; see [Hit Registration §6](Wardogs_HitRegistration_v1.md#6-from-the-hit-record-to-a-damage-event) |
 | Explosive actors (`AWDExplosive`, `AWDC4`, `AWDGrenade`, `AWDLandmine`, slot 236 via `0x6CAB030`) | `0x6CA8730` | Explosive detonation |
 | Radial damage, also behind reflected `SimulateRadialDamage` | `0x6F06540` | Uses `Meta.Damage.Explosive.Radius.Inner` / `.Outer` |
 | Back-blast | `0x6F042A0` on foot, `0x6F06EB0` seated in a vehicle (both from `0x6B92900`) | `Meta.Damage.DamageType.BackBlast` |
@@ -1205,6 +1213,7 @@ The restored image carries the UTF-16LE build marker
 
 ### Related reference docs
 
+- [`Wardogs_HitRegistration_v1.md`](Wardogs_HitRegistration_v1.md): projectile trace, ricochet, penetration and the hit record that feeds §7.6
 - [`Wardogs_VehicleDamagePipeline_v1.md`](Wardogs_VehicleDamagePipeline_v1.md): vehicle targets
 - [`Wardogs_GameplayEffectsPipeline_v1.md`](Wardogs_GameplayEffectsPipeline_v1.md): attribute application
 - [`Wardogs_CombatDataFlow_v1.md`](Wardogs_CombatDataFlow_v1.md): end-to-end flow
@@ -1216,6 +1225,7 @@ The restored image carries the UTF-16LE build marker
 |---|---|
 | 2026-10-18 | Round 8 actor and back-blast follow-through: inherited six-actor burst defaults/context, separate Molotov fire loop, normal handheld back-blast formulas and no-bone seated events (§1.2). |
 | 2026-10-18 | Round 8: ordinary/disc blast distance, Inner/Outer assignment and retained projectile context; general armor hook and separate armor-target evaluation; melee bytecode and ignored event return; occupant starting amounts/tags/no-bone hits; contact amount, explosion predicate and hit-location map writer. Remaining conditions are explicit; see §1.1–1.2 and §7.6. |
+| 2026-10-23 | Added the entry point to [Hit Registration](Wardogs_HitRegistration_v1.md) (trace to hit record to event) and the alignment source for `AlignmentRequired` (see its §6.4). |
 | 2026-10-16 | v1: initial SDK/data map. |
 | 2026-10-17 | v1 evidence audit; failed IDA pass on the dump-reconstructed exe; restored-exe trace of selection, per-group ordering and arithmetic. |
 | 2026-10-17 | **v2:** single reference. Merged the native trace, GObjects Blueprint analysis and exe validation; added evidence labels, the custom-entry table, the commutativity result for non-custom entries, the dead custom literals, and the shared-category ties among custom operations. Corrected the GObjects reading of the operation's second parameter (running damage `C`, not starting damage). |
