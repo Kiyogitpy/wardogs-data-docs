@@ -357,3 +357,5 @@ This page lists the user-setting assets (the options-menu rows) and every input 
 <!-- /settings_tables -->
 
 *Source: **Data**. Every `BHInputAction` asset under `data/` is listed, including `data/Wardogs/Content/Vehicles/Inputs/`, `data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Inputs/`, `data/Wardogs/Content/Weapons/Input/` and `data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/`. Default keys come from the `DefaultKeyMappings` of the `IMC_*` mapping contexts in the same tree.*
+
+> **See also.** Gamepad dead-zone presets, the look-axis config and every controller binding preset: [Misc Gameplay Assets](Wardogs_MiscGameplayAssets_v1.md).
