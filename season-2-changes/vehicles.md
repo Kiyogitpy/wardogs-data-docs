@@ -237,7 +237,7 @@ Showing 40 of 45 rows. The 2 rows with Season 1 values near 1e-38 or below have 
 | Key | 4 | DT_EntityData_UI_Vehicles_ROT_04 | Vehicle.Name.Rotary.Blackhawk | Vehicle.Name.Rotary.Z20 |
 | SourceString | 4 | DT_EntityData_UI_Vehicles_WHL_02_RingTurret | - 1 Driver + 4 Passengers  / - Optional Logistics Crates | - 2 Crew + 3 Passengers  / - Optional Logistics Crates |
 | LocalizedString | 4 | DT_EntityData_UI_Vehicles_WHL_02_RingTurret | - 1 Driver + 4 Passengers  / - Optional Logistics Crates | - 2 Crew + 3 Passengers  / - Optional Logistics Crates |
-| GroupRules | 3 | VP_SPW_Radar | — | {'_aaabbmnjfiefjaocbjbnl': {'TagName': 'Vehicle.DestructibleMesh.Radar.Deployed'}, '_aaaa… |
+| GroupRules | 3 | VP_SPW_Radar | — | {"_aaabbmnjfiefjaocbjbnl":{"TagName":"Vehicle.DestructibleMesh.Radar.Deployed"},"_aaaaomn… |
 | TangentMode | 2 | CRV_Torque | RCTM_Auto | RCTM_User |
 
 ## New in Season 2
