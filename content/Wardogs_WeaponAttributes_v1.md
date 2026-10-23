@@ -80,6 +80,7 @@ weapon), [§4.2](../pipelines/Wardogs_GameplayEffectsPipeline_v1.md#42-modifiers
   it). `AllowList` = allowed (block lists ignored; one weapon's default chamber round is on both lists);
   `BlockList` = not blocked; `BlockPriority` = allowed and not blocked; `AllowPriority` = allowed or not
   blocked.
+  Round 19 re-verification: the `0x395BE30` tag test was re-read in the reference image (the static-analysis image carries a dispatch stub at its entry; claim unaffected).
 
 ## Using the tool
 

@@ -270,3 +270,5 @@ accumulator `+0x3D0` remain open. Neither is answered by this animation
 trace. The global import audit above covers the mounted package set's explicit
 script imports and direct interface references; arbitrary implementation
 behavior outside the examined action listings remains untraced.
+
+> **Round 19 re-verification.** Evidence level: static-analysis image; virtualized dispatch not removed. Function `0x395BE30` begins with a protection-layer dispatch stub in the static-analysis image (`mov reg,[rip+x]` then `jmp [reg+disp]` through a runtime-filled global table, so its target is not statically resolvable); the older reference image holds the plain body, and it is the explicit-or-cached-parent membership test described above. Classification: unaffected by the stub.

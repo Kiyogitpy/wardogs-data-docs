@@ -83,3 +83,5 @@ native construction and query capability, not universal acceptance under
 every geometry mode, channel response or later runtime override. The
 viewer retains authored tapered primitives with an explicit approximation
 note; it does not claim to display the runtime mean-radius shape exactly.
+
+> **Round 19 re-verification.** Evidence level: static-analysis image; virtualized dispatch not removed. Query builder `0x42333F0` has byte-identical code in both images (no stub, no changed constant or branch); the page-level difference lies in the preceding function's tail at the page start (`0x4233000`–`0x4233053`, plausible code in the reference image, scrambled in the static-analysis image). Unaffected.
