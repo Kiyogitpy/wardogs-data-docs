@@ -266,12 +266,12 @@ None.
 
 ## See also
 
-- [Items]({{ '/game-features/Wardogs_GameFeatures_Items_v2.html' | relative_url }}#season-02-update), Season 02 update
-- [Itemsmith]({{ '/game-features/Wardogs_GameFeatures_Itemsmith_v2.html' | relative_url }}#season-02-update), Season 02 update
-- [Ammo]({{ '/game-features/Wardogs_GameFeatures_Ammo_v2.html' | relative_url }}#season-02-update), Season 02 update
-- [Weapons]({{ '/content/Wardogs_Weapons_v2.html' | relative_url }}#season-02-update), Season 02 update
-- [Items]({{ '/content/Wardogs_Items_v2.html' | relative_url }}#season-02-update), Season 02 update
-- [Destruction]({{ '/content/Wardogs_Destruction_v2.html' | relative_url }}#season-02-update), Season 02 update
+- [Items]({{ '/game-features/Wardogs_GameFeatures_Items_v2.html' | relative_url }}#season-02-update-2026-10-15), Season 02 update
+- [Itemsmith]({{ '/game-features/Wardogs_GameFeatures_Itemsmith_v2.html' | relative_url }}#season-02-update-2026-10-15), Season 02 update
+- [Ammo]({{ '/game-features/Wardogs_GameFeatures_Ammo_v2.html' | relative_url }}#season-02-update-2026-10-15), Season 02 update
+- [Weapons]({{ '/content/Wardogs_Weapons_v2.html' | relative_url }}#season-02-update-2026-10-15), Season 02 update
+- [Items]({{ '/content/Wardogs_Items_v2.html' | relative_url }}#season-02-update-2026-10-15), Season 02 update
+- [Destruction]({{ '/content/Wardogs_Destruction_v2.html' | relative_url }}#season-02-update-2026-10-15), Season 02 update
 
 Full change browser for this area: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=items-equipment&q=
 
