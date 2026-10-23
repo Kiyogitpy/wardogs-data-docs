@@ -63,6 +63,9 @@ suffix wins over the default.
   projectile path evaluates it with the shot-origin-to-hit distance in engine
   units ([DamagePipeline §7.6](../pipelines/Wardogs_DamagePipeline_v2.md#76-the-bullet-event)),
   so a key at 50000 is 500 m.
+- `CT_Projectile_DragCoefficients` — `Time` is the projectile **speed in m/s**. Native
+  code evaluates the row at `|v| × 0.01` with `v` in cm/s
+  ([Projectile Flight §5](../pipelines/Wardogs_ProjectileFlight_v1.md#5-drag))
 - `CF_*_ADS_Curve` — `Time` is a distance; its unit has not been traced in code
 
 When a curve's `Time` key values are large (>10) and the curve is
@@ -75,7 +78,8 @@ named for distance context (ADS, falloff, aim-assist), it's a
 |---|---|
 | Vehicle `Mass` | **kg** (UE physics default) |
 | Item `Weight` (0.08 to 42.0 range) | **in-game weight unit** — not kg; appears to be a gameplay-specific scalar used for loadout limits, not a physical kg value |
-| Projectile `Mass` | kg (UE physics) |
+| Projectile `Mass` | kg (UE physics); the native drag code divides force in newtons by it |
+| Projectile `Diameter`, `Length` | cm (the drag area is `π/4 · (Diameter/100)²` m²) |
 
 The item Weight scalar is a game-balance value, not a physics value.
 Loadout limits (per-slot and total) use the same unit. Treat it as
