@@ -2,7 +2,7 @@
 title: "Items & Equipment changes"
 parent: "Season 2 Changes"
 nav_order: 5
-description: "Item and equipment changes from Season 1 to Season 2: 37 assets added, 4 removed, 211 modified with real changes, 1,883 property changes."
+description: "Item and equipment changes from Season 1 to Season 2: 37 assets added, 4 removed, 209 modified with real changes, 1,870 property changes."
 ---
 
 # Items & Equipment changes
@@ -15,12 +15,12 @@ Counts come from `assets/data/season-diff/index.json` and `items-equipment.json`
 |---|---|
 | Assets added | 37 |
 | Assets removed | 4 |
-| Assets modified with real changes | 211 |
-| Assets modified, noise only (skipped) | 100 |
+| Assets modified with real changes | 209 |
+| Assets modified, noise only (skipped) | 102 |
 | Assets moved | 0 |
-| Property changes (index.json) | 1,883 |
+| Property changes (index.json) | 1,870 |
 
-The change list holds 2,067 records. The index figure equals that total minus `removed_values` (184).
+The change list holds 2,054 records. The index figure equals that total minus `removed_values` (184).
 
 ## Headline changes
 
@@ -191,17 +191,17 @@ Showing 1 of 1 rows. Browser link: {{ '/season-2-changes/all-changes.html' | rel
 | Property | Changes | Example asset | Season 1 | Season 2 |
 |---|---|---|---|---|
 | bShouldSpawnFoundations | 27 | DA_Buildable_AirRaidShelter_Stages | false | true |
-| Key | 22 | DA_Buildable_Bunker_Floor | 87DFBA84480B10D57E5455B5567D31A2 | Buildable.Bunker |
+| Key | 23 | DA_Buildable_Bunker_Floor | 87DFBA84480B10D57E5455B5567D31A2 | Buildable.Bunker |
 | SourceString | 21 | DA_Buildable_CrowsNest_BaseFloor | CrowsNest | — |
 | LocalizedString | 21 | DA_Buildable_CrowsNest_BaseFloor | CrowsNest |  |
 | TagName | 10 | DT_Ext_VendorData_MusicTape_01 | None | Audio.Event.UI.InGame.Vendor.Purchase |
-| AssetPathName | 5 | Crowbar | /Script/WDGame.WDDoor | /Buildables/Data/Buildables/HBlock_Gate_6x2/B_Door_Gate_Right.B_Door_Gate_Right_C |
+| AssetPathName | 6 | Crowbar | /Crowbar/Blueprints/Interaction/WIC_InteractionContext_ForceOpenDoor.WIC_InteractionConte… | /Crowbar/Blueprints/Interaction/WIC_InteractionContext_ForceOpenGate.WIC_InteractionConte… |
 | SaveID | 5 | D_BuildableDoor | 4A3D41E9-44BC5FE1-C5584BAE-88E50EC5 | 6A939B1C-48AB3604-C363B598-B3484C13 |
 | ObjectName | 3 | DA_545mm_ProjectileData | CurveFloat'AR_SuppressionCurve' | CurveFloat'CR_SuppressionCurve_Medium' |
 | ObjectPath | 3 | DA_545mm_ProjectileData | /Game/GameMechanics/Inventory/AR_SuppressionCurve.0 | /Game/GameMechanics/Inventory/CR_SuppressionCurve_Medium.0 |
 | Hex | 3 | ID_LargeHammer | 000001 | FFCF02 |
 | ThirdPersonPlayerAnimation | 1 | AnimSet_CombatBow | — | {'ObjectName': "AnimMontage'AM_TP_Bow_Door_Interact'", 'ObjectPath': '/Game/Animation/Cha… |
-| bShouldPenetrate | 1 | DA_Arrow_Explosive_ProjectileData | true | false |
+| unnamed property (`_aaabeinmoolajgaldgo`) | 1 | DA_Buildable_Gate | Id.Buildable.Gate | Id.Buildable.Gate.Ramp |
 
 `DT_EmoteData` has 120 change records. Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=items-equipment&q=DT_EmoteData
 

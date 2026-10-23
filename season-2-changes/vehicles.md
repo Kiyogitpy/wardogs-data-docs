@@ -2,7 +2,7 @@
 title: "Vehicles changes"
 parent: "Season 2 Changes"
 nav_order: 4
-description: "Vehicle changes from Season 1 to Season 2: 151 assets added, 1 removed, 341 modified with real changes, 5,020 property changes."
+description: "Vehicle changes from Season 1 to Season 2: 151 assets added, 1 removed, 339 modified with real changes, 4,040 property changes."
 ---
 
 # Vehicles changes
@@ -15,12 +15,12 @@ Counts come from `assets/data/season-diff/index.json` and `vehicles.json`. Value
 |---|---|
 | Assets added | 151 |
 | Assets removed | 1 |
-| Assets modified with real changes | 341 |
-| Assets modified, noise only (skipped) | 121 |
+| Assets modified with real changes | 339 |
+| Assets modified, noise only (skipped) | 123 |
 | Assets moved | 0 |
-| Property changes (index.json) | 5,020 |
+| Property changes (index.json) | 4,040 |
 
-The change list for these assets holds 5,038 records. The index figure equals that total minus `removed_values` (18).
+The change list for these assets holds 4,058 records. The index figure equals that total minus `removed_values` (18).
 
 ## Headline changes
 
@@ -192,9 +192,6 @@ Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=veh
 | DA_GameplaySystems_TNK_03 | ActiveZonesSettings.ActiveZones[1].WidgetLocation.Y | -40.0 | -85.0 | −45.0 (−112.5%) |
 | DA_GameplaySystems_TNK_03 | ActiveZonesSettings.ActiveZones[4].WidgetLocation.Y | 40.0 | 85.0 | +45.0 (+112.5%) |
 | DA_GameplaySystems_TNK_03 | …CountermeasureSettings.unnamed property (`_aaaanaajodikgainmio`).unnamed property (`_aaa… | 10.0 | 16.0 | +6.0 (+60.0%) |
-| DA_ROT_02_FlightCharacteristics | RotorSettings.TailRotorNeutralTorque | 0.3 | 600000000.0 | +599999999.7 (+199999999900.0%) |
-| DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight | RotorSettings.TailRotorNeutralTorque | 0.3 | 600000000.0 | +599999999.7 (+199999999900.0%) |
-| DA_ROT_04_FlightCharacteristicsDataAsset | RotorSettings.TailRotorNeutralTorque | 0.325 | 600000000.0 | +599999999.675 (+184615384515.4%) |
 | DA_STN_02_Heavy_MainCannon_Stats | WeaponStats.InitialBulletSpeed | 85000.0 | 110000.0 | +25000.0 (+29.4%) |
 | DA_STN_03_Heavy_MainBarrel_Stats | WeaponStats.WindupTime | 0.85 | 2.5 | +1.65 (+194.1%) |
 | DA_VehicleInteractions_TNK_01_Heavy | InteractionTrackerPoints[6].Location.Y | -40.0 | -85.0 | −45.0 (−112.5%) |
@@ -207,7 +204,10 @@ Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=veh
 | ID_TNK_01_AntiAir | Dimensions.X | 4 | 6 | +2 (+50.0%) |
 | ID_TNK_01_Artillery | Dimensions.X | 4 | 6 | +2 (+50.0%) |
 | ID_TNK_01_Heavy | Dimensions.X | 4 | 6 | +2 (+50.0%) |
+| ID_WHL_01_Default | Dimensions.X | 4 | 3 | −1 (−25.0%) |
 | ID_WHL_01_Default | Dimensions.Y | 4 | 2 | −2 (−50.0%) |
+| ID_WHL_02_Default | Dimensions.Y | 4 | 3 | −1 (−25.0%) |
+| ID_WHL_02_MachineGun | Dimensions.Y | 4 | 3 | −1 (−25.0%) |
 | Skin_BlackAndGold | Skin.DefaultCPD.AccentPrimaryUVInfo.Y | 1.35187 | 0.1 | −1.25187 (−92.6%) |
 | WE_STN_01_Heavy_MountedMachineGun | ReloadSetupData.ReloadTime | 2.0 | 5.0 | +3.0 (+150.0%) |
 | WE_STN_01_Heavy_MountedMachineGun | RestockSuppliesNeeded | 50 | 200 | +150 (+300.0%) |
@@ -225,7 +225,7 @@ Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=veh
 | W_WHL_07_Ural_RingTurret_L | GamepadRotationSensitivity | 35.0 | 80.0 | +45.0 (+128.6%) |
 | W_WHL_07_Ural_RingTurret_R | GamepadRotationSensitivity | 35.0 | 80.0 | +45.0 (+128.6%) |
 
-Showing 40 of 52 rows. Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=vehicles&q=Properties
+Showing 40 of 49 rows. Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=vehicles&q=Properties
 
 ### Skin values
 
@@ -233,13 +233,13 @@ Showing 40 of 52 rows. Browser link: {{ '/season-2-changes/all-changes.html' | r
 
 ### Non-numeric changes
 
-412 changed values are not numeric. The most common properties:
+414 changed values are not numeric. The most common properties:
 
 | Property | Changes | Example asset | Season 1 | Season 2 |
 |---|---|---|---|---|
 | bCheckIfAboveThreshold | 205 | DA_FWG_01_GameplaySystems | true | false |
-| ObjectPath | 95 | DA_Vehicle_BrakingSurface_WHL_06 | /WHL_06/Audio/Wavs/Skidding_WheelSpin_Braking/Dirt/SFX_Vehicles_Land_WHL01_DirtWheelBraki… | /Game/Audio/Vehicles/Shared/Surface/SFX_Vehicles_Land_WHL01_DirtWheelBraking_01.0 |
-| ObjectName | 50 | DA_Vehicle_Skidding_Fast_WHL_01 | SoundWave'SFX_Vehicles_Land_WHL_02_Skidding_Asphalt' | SoundWave'SFX_Vehicles_Land_WHL_02_Skidding_Asphalt1' |
+| ObjectPath | 96 | DA_Vehicle_BrakingSurface_WHL_06 | /WHL_06/Audio/Wavs/Skidding_WheelSpin_Braking/Dirt/SFX_Vehicles_Land_WHL01_DirtWheelBraki… | /Game/Audio/Vehicles/Shared/Surface/SFX_Vehicles_Land_WHL01_DirtWheelBraking_01.0 |
+| ObjectName | 51 | DA_Vehicle_Skidding_Fast_WHL_01 | SoundWave'SFX_Vehicles_Land_WHL_02_Skidding_Asphalt' | SoundWave'SFX_Vehicles_Land_WHL_02_Skidding_Asphalt1' |
 | TagName | 14 | DA_GameplaySystems_SPW | Id.Item.Flares | Id.Item.VehicleSmoke |
 | SettingBehavior | 8 | IMC_LandVehicles_Driver | EPlayerMappableKeySettingBehaviors::OverrideSettings | EPlayerMappableKeySettingBehaviors::IgnoreSettings |
 | YawJointSocket | 7 | W_ROT_04_MountedMachineGun_L | TurretSkeleton_L | turretYaw_J |
