@@ -885,7 +885,9 @@ from §7.7 times each weapon's distance curve. Curve keys are shown in
 metres (the stored `Time` is centimetres). The speed scale is left at 1.
 All 24 speed overrides in the data (13,000–60,300 cm/s) are below their
 weapon's muzzle speed, so it only bites once a round has slowed that far,
-which depends on drag and is not modelled here. † marks a curve with
+which depends on drag. The drag model is read from native code in
+[Projectile Flight §5](Wardogs_ProjectileFlight_v1.md#5-drag); this table
+does not apply it. † marks a curve with
 cubic keys, where values between keys are a linear approximation.
 
 <!-- damage_tables --falloff -->
@@ -1083,7 +1085,7 @@ is a percentage change, so -25 gives ×0.75 and -90 gives ×0.10.
 | O-3 | Callers, origin of `S`, consumer of the result | **Closed** (§1.1). The bool's gameplay meaning stays open |
 | O-4 | Entry data never reaches custom operations | **Closed** (§2) |
 | O-5 | Four Blueprint bodies | **Closed** (§7.1–7.4), from the cooked bytecode |
-| O-6 | End-to-end number for one concrete hit | **Closed for bullets** (§7.6–7.9): every ammo type, armored or not, by distance. Only the speed scale after drag is not modelled |
+| O-6 | End-to-end number for one concrete hit | **Closed for bullets** (§7.6–7.9): every ammo type, armored or not, by distance. Only the speed scale after drag is not applied in the tables (the drag model itself is in [Projectile Flight](Wardogs_ProjectileFlight_v1.md)) |
 | O-7 | The health write | **Closed** (§10). Network authority stays open: role checks are visible in code, but server behaviour cannot be observed statically. Security-relevant findings go through [`SECURITY.md`](../SECURITY.md), not this document |
 | O-8 | Which branch of `0x6B92900` runs for a back-blast: `0x6F042A0` (traced hits) or `0x6F06EB0` (synthetic hits, [VehicleDamagePipeline §3.2](Wardogs_VehicleDamagePipeline_v1.md#32-from-a-hit-triangle-to-a-section)) | **Closed** (§1.1): the shooter's seat (`0x6E6EBA0`). On foot `0x6F042A0` traces the cone; seated in a vehicle `0x6F06EB0` hits that vehicle's occupants, and the vehicle takes the self-damage map directly |
 | O-9 | `122mm.Havoc` blast radii look swapped | **Closed for the reviewed default mapping.** [`DA_122_mm_HAVOC_ProjectileData.json`](../data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/122mm/DA_122_mm_HAVOC_ProjectileData.json) sets `EffectiveExplosiveRadius` 600 above `ExplosiveRadius` 300 (`BaseDamage` 300, `ExplosiveDamageFallOff` 0.6). Under §1.1 that would mean full damage to 600 and none beyond, and it is the only one of 11 rounds with the radii this way. The bounded package-name and executable searches found no firing consumer; the reviewed ROT_02/ROT_03 default ammo item instead references plain `Item.Caliber.122mm` ([`DA_122mm_ProjectileData.json`](../data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/122mm/DA_122mm_ProjectileData.json): Base 100, E 200, R 600, FallOff 1.0). The [loaded-item trace](../docs/evidence/round8-weapon-context.md) verifies that default mapping; other runtime actions are not ruled out by these negative searches. |
