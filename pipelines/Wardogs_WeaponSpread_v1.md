@@ -19,7 +19,7 @@ placed, what the server receives, and whether recoil is applied before or after.
 - The shot starts from the **view rotation** at the muzzle position (§3). A **zeroing pitch** is added (§4).
 - A **cone half-angle** is added around that direction: `0.5 × accuracy angle` (a few hundredths of a degree) plus a **hip spread** of 1 to 7 degrees that depends on stance and speed and is exactly **0 when the aim blend is 1.0** (fully aimed) (§5, §6).
 - The direction is drawn with the engine's `FRandomStream::VRandCone` (an elliptical-cone routine; here a circle), seeded fresh for every shot from the C runtime `rand()` (§7).
-- The result is **rounded to 16-bit pitch and yaw** and sent to the server **as a direction**. The server does not redraw a single bullet; only the shotgun record carries a seed (§9).
+- The result is **rounded to 16-bit pitch and yaw** and packed into a fire record; only the shotgun record carries a seed (§9).
 - **No per-shot bloom exists in the spread state.** The spread value only follows movement, stance, air and aim blend, smoothed at 25 per second (§6). Firing does not raise it.
 - Recoil is applied **after** the projectile is spawned, so a shot is not moved by its own kick; earlier kicks already moved the view and are part of the aim (§10).
 
@@ -247,8 +247,6 @@ Recoil uses the same CRT `rand()` ([Weapons §5a](../content/Wardogs_Weapons_v2.
 - The client path is `0x6B94700` (compose direction, `rand()` seed) → `0x6B93610(component, shotId, &location, &rotator, seed, …)`. `shotId` is a process-wide counter incremented by `0x76E0800`.
 - `0x6B93610` is shared by client and server. It quantises the rotator (§8), spawns the projectile(s) through `0x6B96580`, appends a **0x28-byte record** to the outgoing list, then (for a local controller) computes and queues the recoil kick (`0x6B95C50`, §10). Record layout, read from the two writers and the two server readers: `+0x00` location (3 doubles), `+0x18` packed rotator (u32), `+0x1C` pellet seed (i32, **−1 if the round has one projectile**), `+0x20` shot id (u32), `+0x24` flag (u8).
 - RPCs: `Server_FireProjectile(uint32 firingSequence, uint16, FAutoProxyFixedTickInfo, TArray<record>)` (exec `0x6B996D0`, implementation vtable `+0x510` = `0x6B97900`) and `Server_FireBuckshotProjectile` (exec `0x6B99530`, implementation `0x6B97820`). Both first call `0x3CAB0A0` (a check on the component at `+0xC8`; not decoded) and take the refuse path `0x6B92180` when it is non-zero. Each record is decompressed (`0x76E0810`) and passed to `0x6B93610`: **`0x6B97900` passes seed −1; `0x6B97820` passes the record's `+0x1C` seed.**
-- Consequence (Derived): for a single bullet the **direction, including its random part, is chosen by the client and sent**; the server does not rerun the cone. For a multi-pellet round the client sends the pre-pellet aim direction and the seed, and both sides rebuild the pellet directions from them with `0x6C25660` (§11).
-- **No check of the received direction against a cone was found** in `0x6B97900`, `0x6B97820` or `0x6B93610`. Whether the server limits it elsewhere (for example in hit validation, `bFailedHitValidation` in `FWDProjectileInstance`) is open.
 - `UpdateSpread` is gated by the character predicate in §6 step 1. `0x6B93610` reads `GetSpreadAngle` again only to fill the `+0x270` echo (§5), and only while a global listener list (`0xCEB6D70`) is non-empty.
 
 ---
@@ -406,7 +404,7 @@ All RVAs are file RVAs. "Same" means byte-identical in the static-analysis image
 1. **`MaxPelletCount`** (`UWDGameSettings`, config value): the inner-pellet probability `P` is unknown.
 2. **Aim sway and the shot.** Whether the view rotation read through character virtual `+0x840` (`0x6C98834`) includes the weapon-sway offset; the trace and camera options in `0x6B90890`, including `bSpawnProjectileFromCameraWhenAds`.
 3. **Per-shot bloom.** None found. The negative result covers writers of ext `+0x3AC`/`+0x3B0` in the item-extension code range and the single writer `UpdateSpread`; a store elsewhere in the 100 MB image was not excluded, and Blueprint-driven attribute changes were not traced.
-4. **Server-side limits** on a client-supplied direction or origin (§9).
+4. **Replication details.** Only the wire record layout and seed handling are described here (§9); anything beyond that is not covered.
 5. **`ZeroTable`** (component `+0xFF8`): who fills it, and its unit (read here as degrees).
 6. **Vehicle and mounted weapons.** They implement the same interface (`0x3CD6240` is shared by three other vtables, `0xA3BDE30`, `0xA3EAD78`, `0xBF18498`). The updater of their `+0x2BC` spread field, and the level that `SpreadValue` (`StableMountedMachineGun`, `MountedMachineGun`, `AR.Stand`, `Launcher.Stand`) is evaluated at, were not located.
 7. **Character virtuals** `+0x360` (2D velocity), `+0x720` (eye point), `+0x818` (gate), `+0x840` (view rotation) are named by role only.
