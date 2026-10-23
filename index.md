@@ -16,12 +16,10 @@ nav_order: 1
 <a class="wd-hero-viewer" href="pipelines/vehicle-viewer.html">
 <img src="{{ '/assets/images/vehicle-viewer-preview.png' | relative_url }}" alt="3D collision mesh of the Havoc attack helicopter, coloured by health section" width="780" height="585">
 <span class="wd-hero-viewer-name">Vehicle Hitbox Viewer</span>
-<span class="wd-hero-viewer-desc">Every vehicle's collision mesh in 3D, coloured by health section. Pick a part to see how it routes damage and how many hits destroy the vehicle.</span>
 </a>
 <a class="wd-hero-viewer" href="pipelines/infantry-viewer.html">
 <img src="{{ '/assets/images/infantry-viewer-preview.png' | relative_url }}" alt="3D physics bodies of the player character, coloured by hit location" width="780" height="585">
 <span class="wd-hero-viewer-name">Infantry Hitbox Viewer</span>
-<span class="wd-hero-viewer-desc">The player's physics bodies coloured by hit location. Pick a damage source, armor or helmet to see each body part's multiplier.</span>
 </a>
 </div>
 </div>
