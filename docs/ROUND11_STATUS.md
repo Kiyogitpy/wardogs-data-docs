@@ -662,6 +662,8 @@ does not claim a portable trigonometric implementation. The current
 source/SDK identities, code ranges and the updated model/checker, and checks
 **110,868 scalar bit patterns**.
 
+> **Round 19 re-verification.** Evidence level: static-analysis image; virtualized dispatch not removed. Helper `0x44176D0` has byte-identical code in both images (no stub, no changed constant or branch); the page-level difference lies in the preceding function's tail at the page start (`0x4417000`–`0x441705F`). Unaffected.
+
 The socket-cache construction entry is now aligned and replayed at
 `0x441D5B0` (the corpus begins at a garbage prefix, `0x441D5AF`).
 `socket-cache-construction-v2.json` executes all 35 meshes through the native
@@ -1179,6 +1181,8 @@ the native tag-store prefix, recovering globals `0xD36B8E8` =
 registration. `vehicle-gate-caller-native-v1.json` replaces the preceding
 boolean query service with the actual vehicle query VFT, `0x53CB980` and
 `0x5230BE0`, over an owned cached tag container and parent cache.
+
+> **Round 19 re-verification.** Evidence level: static-analysis image; virtualized dispatch not removed. Function `0x5230BE0` begins with a protection-layer dispatch stub in the static-analysis image (`mov reg,[rip+x]` then `jmp [reg+disp]` through a runtime-filled global table, so its target is not statically resolvable); the older reference image holds the plain body, and it null-checks the tag, then searches the explicit array (`+0x4E8`/`+0x4F0`) and the cached parent array (`+0x4F8`/`+0x500`), matching the description. Classification: unaffected by the stub.
 
 The native acceptance rule is **outside SafeZone or inside SafeZone.Hostile**.
 Friendly safe-zone descendants are rejected; hostile descendants are
