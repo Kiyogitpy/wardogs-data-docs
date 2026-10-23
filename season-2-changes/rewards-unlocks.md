@@ -2,7 +2,7 @@
 title: "Rewards & Unlocks changes"
 parent: "Season 2 Changes"
 nav_order: 7
-description: "Rewards & Unlocks: 14 assets added, 105 modified with real changes, 4 noise-only, 10,299 property changes. Role XP, unlock-tree costs and challenge rewards changed."
+description: "Rewards & Unlocks: 14 assets added, 105 modified with real changes, 4 noise-only, 9,905 property changes. Role XP, unlock-tree costs and challenge rewards changed."
 ---
 
 # Rewards & Unlocks changes
@@ -16,7 +16,7 @@ Season 1 to Season 2 changes for the Rewards & Unlocks area, from the area diff 
 | Assets modified with real changes | 105 |
 | Assets moved | 0 |
 | Noise-only modified assets (skipped, no real change) | 4 |
-| Property changes | 10,299 (changed 7,954, added 2,062, removed 283) |
+| Property changes | 9,905 (changed 7,543, added 2,067, removed 288) |
 
 Full filterable list: [Rewards & Unlocks in the change browser]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=rewards-unlocks).
 
@@ -38,49 +38,125 @@ Full filterable list: [Rewards & Unlocks in the change browser]({{ '/season-2-ch
 
 ### Unlock tree costs and level gates (`DT_MetaTree_Roles`)
 
-194 node cash costs and 194 node level gates (`MinLevel`) changed, 211 node IDs changed, and 31 nodes were added. Nodes are listed by their position in the table. 211 node IDs changed, so the same position can name a different unlock in each season.
+Nodes are matched by item ID, so each row is the same unlock in both seasons. 54 node cash costs and 118 node level gates (`MinLevel`) changed. 50 nodes were added and 19 removed. Node lists were also reordered in 7 roles.
 
-Largest cash cost changes (top 20 of 194 by percent):
-
-| Asset | Property | Season 1 | Season 2 | Change |
-|---|---|---:|---:|---:|
-| DT_MetaTree_Roles | Pilot · node 2 · cash cost | 750 | 125000 | +124250 (+16566.7%) |
-| DT_MetaTree_Roles | Pilot · node 6 · cash cost | 2500 | 250000 | +247500 (+9900.0%) |
-| DT_MetaTree_Roles | Driver · node 5 · cash cost | 1500 | 35000 | +33500 (+2233.3%) |
-| DT_MetaTree_Roles | Driver · node 12 · cash cost | 5000 | 100000 | +95000 (+1900.0%) |
-| DT_MetaTree_Roles | Support · node 10 · cash cost | 7500 | 100000 | +92500 (+1233.3%) |
-| DT_MetaTree_Roles | Support · node 14 · cash cost | 10000 | 100000 | +90000 (+900.0%) |
-| DT_MetaTree_Roles | Support · node 28 · cash cost | 25000 | 250000 | +225000 (+900.0%) |
-| DT_MetaTree_Roles | Wardog · node 50 · cash cost | 5000 | 50000 | +45000 (+900.0%) |
-| DT_MetaTree_Roles | Driver · node 10 · cash cost | 2500 | 20000 | +17500 (+700.0%) |
-| DT_MetaTree_Roles | Medic · node 30 · cash cost | 25000 | 200000 | +175000 (+700.0%) |
-| DT_MetaTree_Roles | Recon · node 40 · cash cost | 25000 | 200000 | +175000 (+700.0%) |
-| DT_MetaTree_Roles | Recon · node 34 · cash cost | 25000 | 150000 | +125000 (+500.0%) |
-| DT_MetaTree_Roles | Infantry · node 30 · cash cost | 45000 | 250000 | +205000 (+455.6%) |
-| DT_MetaTree_Roles | Infantry · node 17 · cash cost | 20000 | 100000 | +80000 (+400.0%) |
-| DT_MetaTree_Roles | Medic · node 11 · cash cost | 10000 | 50000 | +40000 (+400.0%) |
-| DT_MetaTree_Roles | Medic · node 18 · cash cost | 15000 | 75000 | +60000 (+400.0%) |
-| DT_MetaTree_Roles | Support · node 9 · cash cost | 10000 | 50000 | +40000 (+400.0%) |
-| DT_MetaTree_Roles | Support · node 16 · cash cost | 30000 | 150000 | +120000 (+400.0%) |
-| DT_MetaTree_Roles | Wardog · node 6 · cash cost | 5000 | 25000 | +20000 (+400.0%) |
-| DT_MetaTree_Roles | Recon · node 21 · cash cost | 30000 | 125000 | +95000 (+316.7%) |
-
-Largest level gate changes (top 10 of 194 by size):
+All cash cost changes (54, sorted by percent):
 
 | Asset | Property | Season 1 | Season 2 | Change |
 |---|---|---:|---:|---:|
-| DT_MetaTree_Roles | Wardog · node 57 · min level | 150 | 100 | −50 (−33.3%) |
-| DT_MetaTree_Roles | Wardog · node 56 · min level | 140 | 100 | −40 (−28.6%) |
-| DT_MetaTree_Roles | Wardog · node 55 · min level | 130 | 95 | −35 (−26.9%) |
-| DT_MetaTree_Roles | Wardog · node 54 · min level | 120 | 90 | −30 (−25.0%) |
-| DT_MetaTree_Roles | Wardog · node 53 · min level | 110 | 85 | −25 (−22.7%) |
-| DT_MetaTree_Roles | Wardog · node 45 · min level | 83 | 65 | −18 (−21.7%) |
-| DT_MetaTree_Roles | Wardog · node 49 · min level | 93 | 75 | −18 (−19.4%) |
-| DT_MetaTree_Roles | Wardog · node 51 · min level | 100 | 82 | −18 (−18.0%) |
-| DT_MetaTree_Roles | Wardog · node 43 · min level | 80 | 63 | −17 (−21.2%) |
-| DT_MetaTree_Roles | Wardog · node 44 · min level | 82 | 65 | −17 (−20.7%) |
+| DT_MetaTree_Roles | Pilot · Id.Item.MusicTape.04 · cash cost | 1500 | 25000 | +23500 (+1566.7%) |
+| DT_MetaTree_Roles | Driver · Id.Item.MusicTape.03 · cash cost | 1500 | 10000 | +8500 (+566.7%) |
+| DT_MetaTree_Roles | Medic · Id.Item.MAGZ_066 · cash cost | 15000 | 75000 | +60000 (+400.0%) |
+| DT_MetaTree_Roles | Medic · Id.Item.MP9Magazine · cash cost | 10000 | 50000 | +40000 (+400.0%) |
+| DT_MetaTree_Roles | Medic · Id.Item.MUZL_052 · cash cost | 10000 | 45000 | +35000 (+350.0%) |
+| DT_MetaTree_Roles | Support · Id.Item.FGRP_012 · cash cost | 15000 | 50000 | +35000 (+233.3%) |
+| DT_MetaTree_Roles | Driver · Vehicle.Variant.Land.Wheeled.Humvee.Default · cash cost | 25000 | 75000 | +50000 (+200.0%) |
+| DT_MetaTree_Roles | Medic · Id.Item.MUZL_019 · cash cost | 7500 | 22500 | +15000 (+200.0%) |
+| DT_MetaTree_Roles | Wardog · Id.Item.Glock17 · cash cost | 5000 | 15000 | +10000 (+200.0%) |
+| DT_MetaTree_Roles | Infantry · Id.Item.MUZL_014 · cash cost | 7500 | 20000 | +12500 (+166.7%) |
+| DT_MetaTree_Roles | Infantry · Id.Item.MUZL_024 · cash cost | 5000 | 12500 | +7500 (+150.0%) |
+| DT_MetaTree_Roles | Pilot · Vehicle.Variant.Air.Rotary.Littlebird.MountedMachineGuns · cash cost | 50000 | 125000 | +75000 (+150.0%) |
+| DT_MetaTree_Roles | Wardog · Id.Item.WEPN_032 · cash cost | 50000 | 125000 | +75000 (+150.0%) |
+| DT_MetaTree_Roles | Medic · Id.Item.Defibrillator.Standard · cash cost | 50000 | 110000 | +60000 (+120.0%) |
+| DT_MetaTree_Roles | Recon · Id.Item.SGHT_036 · cash cost | 35000 | 75000 | +40000 (+114.3%) |
+| DT_MetaTree_Roles | Infantry · Id.Item.STANAGMagazine · cash cost | 10000 | 0 | −10000 (−100.0%) |
+| DT_MetaTree_Roles | Medic · Id.Item.MAGZ_061 · cash cost | 7500 | 0 | −7500 (−100.0%) |
+| DT_MetaTree_Roles | Medic · Id.Item.SMG_03 · cash cost | 25000 | 50000 | +25000 (+100.0%) |
+| DT_MetaTree_Roles | Recon · Id.Item.MUZL_055 · cash cost | 25000 | 50000 | +25000 (+100.0%) |
+| DT_MetaTree_Roles | Support · ID.Item.RepairTool.Drill.Heavy · cash cost | 25000 | 50000 | +25000 (+100.0%) |
+| DT_MetaTree_Roles | Recon · Id.Item.Claymore · cash cost | 50000 | 90000 | +40000 (+80.0%) |
+| DT_MetaTree_Roles | Medic · Id.Item.MAGZ_046 · cash cost | 50000 | 15000 | −35000 (−70.0%) |
+| DT_MetaTree_Roles | Infantry · Id.Item.MUZL_039 · cash cost | 15000 | 5000 | −10000 (−66.7%) |
+| DT_MetaTree_Roles | Medic · Id.Item.MUZL_037 · cash cost | 22500 | 7500 | −15000 (−66.7%) |
+| DT_MetaTree_Roles | Medic · Id.Item.WEPN_028 · cash cost | 75000 | 25000 | −50000 (−66.7%) |
+| DT_MetaTree_Roles | Recon · ID.Item.RangeFinder · cash cost | 15000 | 25000 | +10000 (+66.7%) |
+| DT_MetaTree_Roles | Wardog · Id.Item.Judge · cash cost | 15000 | 5000 | −10000 (−66.7%) |
+| DT_MetaTree_Roles | Infantry · Id.Item.MUZL_013 · cash cost | 20000 | 7500 | −12500 (−62.5%) |
+| DT_MetaTree_Roles | Infantry · Id.Item.FGRP_014 · cash cost | 25000 | 10000 | −15000 (−60.0%) |
+| DT_MetaTree_Roles | Medic · Id.Item.MAGZ_004 · cash cost | 25000 | 10000 | −15000 (−60.0%) |
+| DT_MetaTree_Roles | Medic · Id.Item.MUZL_053 · cash cost | 45000 | 20000 | −25000 (−55.6%) |
+| DT_MetaTree_Roles | Driver · Id.Item.MusicTape.07 · cash cost | 5000 | 2500 | −2500 (−50.0%) |
+| DT_MetaTree_Roles | Infantry · Id.Item.M4 · cash cost | 100000 | 150000 | +50000 (+50.0%) |
+| DT_MetaTree_Roles | Support · Id.Item.M249 · cash cost | 100000 | 150000 | +50000 (+50.0%) |
+| DT_MetaTree_Roles | Recon · Id.Item.FGRP_009 · cash cost | 30000 | 17500 | −12500 (−41.7%) |
+| DT_MetaTree_Roles | Medic · Id.Item.MAGZ_056 · cash cost | 75000 | 50000 | −25000 (−33.3%) |
+| DT_MetaTree_Roles | Medic · Id.Item.MAGZ_059 · cash cost | 7500 | 10000 | +2500 (+33.3%) |
+| DT_MetaTree_Roles | Medic · Id.Item.MedKit.Standard · cash cost | 75000 | 50000 | −25000 (−33.3%) |
+| DT_MetaTree_Roles | Medic · Id.Item.Vector · cash cost | 150000 | 200000 | +50000 (+33.3%) |
+| DT_MetaTree_Roles | Recon · Id.Item.MUZL_062 · cash cost | 7500 | 5000 | −2500 (−33.3%) |
+| DT_MetaTree_Roles | Support · Id.Item.LMG_02 · cash cost | 150000 | 100000 | −50000 (−33.3%) |
+| DT_MetaTree_Roles | Pilot · Vehicle.Variant.Air.Rotary.Havoc.Default · cash cost | 500000 | 650000 | +150000 (+30.0%) |
+| DT_MetaTree_Roles | Medic · Id.Item.MUZL_058 · cash cost | 17500 | 12500 | −5000 (−28.6%) |
+| DT_MetaTree_Roles | Support · Id.Item.FGRP_008 · cash cost | 35000 | 25000 | −10000 (−28.6%) |
+| DT_MetaTree_Roles | Infantry · Id.Item.WEPN_030 · cash cost | 200000 | 250000 | +50000 (+25.0%) |
+| DT_MetaTree_Roles | Support · Id.Item.MMGL · cash cost | 200000 | 250000 | +50000 (+25.0%) |
+| DT_MetaTree_Roles | Driver · Vehicle.Variant.Land.Wheeled.Ural.Attack · cash cost | 125000 | 100000 | −25000 (−20.0%) |
+| DT_MetaTree_Roles | Infantry · ID.Item.PWSCQB74Muzzle · cash cost | 12500 | 15000 | +2500 (+20.0%) |
+| DT_MetaTree_Roles | Recon · Id.Item.CombatBow · cash cost | 125000 | 150000 | +25000 (+20.0%) |
+| DT_MetaTree_Roles | Support · Id.Item.CGM4 · cash cost | 125000 | 100000 | −25000 (−20.0%) |
+| DT_MetaTree_Roles | Pilot · Vehicle.Variant.Air.Rotary.ROT_04.MountedMachineGuns · cash cost | 75000 | 85000 | +10000 (+13.3%) |
+| DT_MetaTree_Roles | Infantry · Id.Item.MZL_07 · cash cost | 20000 | 22500 | +2500 (+12.5%) |
+| DT_MetaTree_Roles | Medic · Id.Item.MUZL_054 · cash cost | 20000 | 17500 | −2500 (−12.5%) |
+| DT_MetaTree_Roles | Recon · Id.Item.MUZL_056 · cash cost | 27500 | 25000 | −2500 (−9.1%) |
 
-The other 174 cost changes and 184 level gate changes are in the [browser]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=rewards-unlocks&q=MetaTree).
+Largest level gate changes (top 40 of 118 by percent):
+
+| Asset | Property | Season 1 | Season 2 | Change |
+|---|---|---:|---:|---:|
+| DT_MetaTree_Roles | Medic · Id.Item.MUZL_019 · level gate | 1 | 28 | +27 (+2700.0%) |
+| DT_MetaTree_Roles | Wardog · Id.Item.Glock17 · level gate | 1 | 18 | +17 (+1700.0%) |
+| DT_MetaTree_Roles | Wardog · Id.Item.Glock17Magazine · level gate | 1 | 18 | +17 (+1700.0%) |
+| DT_MetaTree_Roles | Medic · Id.Item.MAGZ_061 · level gate | 3 | 20 | +17 (+566.7%) |
+| DT_MetaTree_Roles | Wardog · Id.Item.BasicRedDot · level gate | 4 | 17 | +13 (+325.0%) |
+| DT_MetaTree_Roles | Infantry · Id.Item.MUZL_014 · level gate | 5 | 21 | +16 (+320.0%) |
+| DT_MetaTree_Roles | Medic · Id.Item.SMG_03 · level gate | 4 | 15 | +11 (+275.0%) |
+| DT_MetaTree_Roles | Medic · Id.Item.SMG_03Magazine · level gate | 4 | 15 | +11 (+275.0%) |
+| DT_MetaTree_Roles | Medic · Id.Item.MP9Magazine · level gate | 10 | 30 | +20 (+200.0%) |
+| DT_MetaTree_Roles | Infantry · Id.Item.MUZL_024 · level gate | 2 | 5 | +3 (+150.0%) |
+| DT_MetaTree_Roles | Medic · Id.Item.MAGZ_059 · level gate | 7 | 17 | +10 (+142.9%) |
+| DT_MetaTree_Roles | Pilot · Id.Item.MusicTape.04 · level gate | 13 | 30 | +17 (+130.8%) |
+| DT_MetaTree_Roles | Medic · Id.Item.MAGZ_066 · level gate | 20 | 45 | +25 (+125.0%) |
+| DT_MetaTree_Roles | Medic · Id.Item.MUZL_052 · level gate | 12 | 26 | +14 (+116.7%) |
+| DT_MetaTree_Roles | Driver · Id.Item.MusicTape.03 · level gate | 13 | 28 | +15 (+115.4%) |
+| DT_MetaTree_Roles | Infantry · ID.Item.PWSCQB74Muzzle · level gate | 8 | 16 | +8 (+100.0%) |
+| DT_MetaTree_Roles | Medic · Id.Item.Defibrillator.Standard · level gate | 11 | 22 | +11 (+100.0%) |
+| DT_MetaTree_Roles | Pilot · Vehicle.Variant.Air.Rotary.Littlebird.MountedMachineGuns · level gate | 4 | 8 | +4 (+100.0%) |
+| DT_MetaTree_Roles | Medic · Id.Item.MUZL_037 · level gate | 26 | 1 | −25 (−96.2%) |
+| DT_MetaTree_Roles | Wardog · Id.Item.Judge · level gate | 18 | 1 | −17 (−94.4%) |
+| DT_MetaTree_Roles | Infantry · Id.Item.MUZL_039 · level gate | 16 | 2 | −14 (−87.5%) |
+| DT_MetaTree_Roles | Wardog · Id.Item.SGHT_009 · level gate | 21 | 4 | −17 (−81.0%) |
+| DT_MetaTree_Roles | Medic · Id.Item.MAGZ_064 · level gate | 15 | 4 | −11 (−73.3%) |
+| DT_MetaTree_Roles | Medic · Id.Item.WEPN_028 · level gate | 15 | 4 | −11 (−73.3%) |
+| DT_MetaTree_Roles | Medic · Id.Item.MAGZ_004 · level gate | 25 | 8 | −17 (−68.0%) |
+| DT_MetaTree_Roles | Infantry · Id.Item.MUZL_013 · level gate | 24 | 8 | −16 (−66.7%) |
+| DT_MetaTree_Roles | Wardog · Id.Item.9mm.HollowPoint.Tracer · level gate | 6 | 10 | +4 (+66.7%) |
+| DT_MetaTree_Roles | Infantry · Id.Item.FGRP_014 · level gate | 38 | 14 | −24 (−63.2%) |
+| DT_MetaTree_Roles | Wardog · Id.Item.545mm.HollowPoint.Tracer · level gate | 16 | 6 | −10 (−62.5%) |
+| DT_MetaTree_Roles | Support · Id.Item.MUZL_023 · level gate | 17 | 27 | +10 (+58.8%) |
+| DT_MetaTree_Roles | Recon · Id.Item.MUZL_025 · level gate | 28 | 44 | +16 (+57.1%) |
+| DT_MetaTree_Roles | Recon · Id.Item.SniperScope10x · level gate | 18 | 28 | +10 (+55.6%) |
+| DT_MetaTree_Roles | Driver · Id.Item.MusicTape.07 · level gate | 28 | 13 | −15 (−53.6%) |
+| DT_MetaTree_Roles | Recon · Id.Item.GhillieArmor.Dead · level gate | 27 | 41 | +14 (+51.9%) |
+| DT_MetaTree_Roles | Recon · Id.Item.GhillieHelmet.Dead · level gate | 27 | 41 | +14 (+51.9%) |
+| DT_MetaTree_Roles | Infantry · Id.Item.STANAGMagazine · level gate | 6 | 3 | −3 (−50.0%) |
+| DT_MetaTree_Roles | Recon · Id.Item.MUZL_028 · level gate | 6 | 9 | +3 (+50.0%) |
+| DT_MetaTree_Roles | Support · Id.Item.LMG_02 · level gate | 30 | 15 | −15 (−50.0%) |
+| DT_MetaTree_Roles | Support · Id.Item.LMG_02Magazine · level gate | 30 | 15 | −15 (−50.0%) |
+| DT_MetaTree_Roles | Support · Id.Item.FGRP_008 · level gate | 33 | 17 | −16 (−48.5%) |
+
+The other 78 level gate changes are in the [browser]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=rewards-unlocks&q=MetaTree).
+
+Nodes added and removed, by role:
+
+| Role | Added | Removed | Added node IDs | Removed node IDs |
+|---|---:|---:|---|---|
+| Driver | 8 | 2 | `Id.Item.MusicTape.06`, `Vehicle.Variant.Land.Wheeled.WHL_08.Default`, `Vehicle.Variant.Land.Wheeled.WHL_08.MachineGun`, `Vehicle.Variant.Land.Tracked.TNK_04.Default`, `Id.Item.MusicTape.02`, `Vehicle.Variant.Land.Tracked.TNK_01.AntiAir`, `Vehicle.Variant.Land.Tracked.TNK_01.Artillery`, `Id.Item.MusicTape.05` | `Id.Item.MusicTape.01`, `Id.Item.MusicTape.08` |
+| Infantry | 14 | 7 | `Id.Item.TAR21`, `Id.Item.C4Trigger`, `Id.Item.C4Explosive`, `Id.Item.Molotov`, `Id.Item.OPT_08`, `Id.Item.WEPN_037`, `Id.Item.MAGZ_069`, `Id.Item.SGHT_016`, `Id.Item.MUZL_067`, `Id.Item.SGHT_029`, `Id.Item.MUZL_068`, `Id.Item.FGRP_006`, `Id.Item.MUZL_069`, `Id.Item.4xElcanSpectr` | `Id.Item.AK74M`, `Id.Item.AK74MMagazine`, `Id.Item.SGHT_026`, `Id.Item.FGP_03`, `Id.Item.EotechHoloSight`, `Id.Item.3xScope`, `Id.Item.SGHT_030` |
+| Medic | 4 | 2 | `Id.Item.EotechHoloSight`, `Id.Item.FGP_03`, `Id.Item.MP9`, `Id.Item.MAGZ_052` | `Id.Item.SGHT_016`, `Id.Item.FGRP_006` |
+| Pilot | 2 | 2 | `Id.Item.MusicTape.08`, `Id.Item.MusicTape.01` | `Id.Item.MusicTape.02`, `Id.Item.MusicTape.06` |
+| Recon | 9 | 0 | `Id.Item.SGHT_040`, `Id.Item.WEPN_034`, `Id.Item.MAGZ_068`, `Id.Item.SGHT_039`, `Id.Item.FGRP_020`, `Id.Item.MAGZ_071`, `Id.Item.MAGZ_070`, `Id.Item.MUZL_071`, `Id.Item.MUZL_072` | — |
+| Support | 5 | 3 | `Id.Item.SGHT_030`, `Id.Item.WEPN_036`, `Id.Item.MAGZ_067`, `Id.Item.FGRP_019`, `Id.Item.MUZL_070` | `Id.Item.C4Trigger`, `Id.Item.C4Explosive`, `Id.Item.4xElcanSpectr` |
+| Wardog | 8 | 3 | `ID.Item.VehicleSupplyCrate.Pallet.SparePartsSupply`, `ID.Item.VehicleSupplyCrate.Pallet.MunitionsSupply`, `ID.Item.VehicleSupplyCrate.Pallet.FuelSupply`, `Id.Item.SGHT_038`, `Id.Item.SGHT_026`, `Id.Item.MusicTape.11`, `Id.Item.3xScope`, `Meta.Unlocks.GoldExchange` | `Id.Item.OPT_08`, `Id.Item.SGHT_029`, `Vehicle.Variant.Land.Tracked.TNK_01.Artillery` |
 
 ### Challenge rewards (`DT_ChallengeRewards_SessionEvents_Shared`)
 
@@ -243,9 +319,9 @@ Cosmetic sort indexes in `DT_CosmeticSets_Debug` also changed (4 rows, each +1),
 
 | Group | State trees | Property changes |
 |---|---:|---:|
-| KOTH session-event state trees | 52 | 6,232 |
-| Buildable session-event state trees | 10 | 860 |
-| Other state trees | 20 | 466 |
+| KOTH session-event state trees | 52 | 6,222 |
+| Buildable session-event state trees | 10 | 859 |
+| Other state trees | 20 | 465 |
 
 Most of these changes are compiled-graph data: task and node indexes, offsets, bindings, and `LastCompiledEditorDataHash`. They are not tabulated here. Browse them in the [change browser]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=rewards-unlocks&q=KOTH).
 

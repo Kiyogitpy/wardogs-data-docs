@@ -16,7 +16,7 @@ Season 1 to Season 2 changes for this area, from the area diff file. Audio and U
 | Assets modified with real changes | 140 |
 | Assets moved | 1 |
 | Noise-only modified assets (skipped, no real change) | 85 |
-| Property changes | 1,056 (changed 86, added 617, removed 353); 41 further entries are on the removed assets |
+| Property changes | 1,049 (changed 83, added 615, removed 351); 41 further entries are on the removed assets |
 
 ## Gameplay-relevant changes
 
