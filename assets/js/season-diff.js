@@ -405,7 +405,7 @@
         meta.appendChild(h('div', { class: 'sd-old' }, ['Moved from ', h('code', { text: a.old_path }), how ? ' (' + how + ')' : null]));
       }
       if (a.note) meta.appendChild(h('div', { class: 'sd-asset-note', text: a.note }));
-      var noiseParts = [['renamed_keys', 'renamed keys'], ['swapped_keys', 'swapped key names'], ['dup_keys', 'duplicate keys'], ['ref_shifts', 'reference shifts']]
+      var noiseParts = [['renamed_keys', 'renamed keys'], ['swapped_keys', 'swapped key names'], ['dup_keys', 'duplicate keys'], ['type_reinterpret', 'values stored as raw bits'], ['ref_shifts', 'reference shifts']]
         .filter(function (n) { return a.noise && a.noise[n[0]]; })
         .map(function (n) { return fmtNum(a.noise[n[0]]) + ' ' + n[1]; });
       if (noiseParts.length) {
