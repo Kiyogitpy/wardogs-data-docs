@@ -145,13 +145,16 @@
       var d = c.after - c.before;
       var tone = d > 0 ? 'is-up' : d < 0 ? 'is-down' : '';
       var txt = (d > 0 ? '+' : '') + round(d);
-      if (c.before !== 0) {
+      if (Math.abs(c.before) >= 1e-30) {   // no % from zero or denormal Season 1 values
         var p = d / Math.abs(c.before) * 100;   // relative to |before|; the sign follows the change
         txt += ' (' + (p > 0 ? '+' : '') + (Math.abs(p) >= 100 ? Math.round(p) : Math.round(p * 10) / 10) + '%)';
       }
       td.appendChild(h('span', { class: 'sd-delta ' + tone, text: txt }));
     } else {
       td.appendChild(h('span', { class: 'sd-tag', text: 'changed' }));
+    }
+    if (c.matched === 'position') {
+      td.appendChild(h('div', { class: 'sd-seq-note', title: 'Both seasons store this under an unnamed key with different names; it was matched as the only candidate of the same shape.', text: 'matched by position' }));
     }
     return td;
   }
