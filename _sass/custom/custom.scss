@@ -448,7 +448,7 @@ input:focus-visible {
   gap: 2.5rem;
   align-items: start;
 
-  @media (min-width: 62rem) { grid-template-columns: minmax(0, 1fr) minmax(18rem, 26rem); }
+  @media (min-width: 62rem) { grid-template-columns: minmax(0, 1fr) minmax(24rem, 34rem); }
 
   h1 {
     font-size: clamp(2.5rem, 6vw, 4.25rem);
@@ -467,7 +467,11 @@ input:focus-visible {
 }
 
 // Interactive-viewer teasers on the right of the hero.
-.wd-hero-viewers { display: flex; flex-direction: column; gap: 1rem; }
+.wd-hero-viewers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 1rem;
+}
 
 .wd-hero-viewer {
   display: flex;
@@ -482,9 +486,8 @@ input:focus-visible {
   transition: border-color 0.15s ease;
 
   &:hover { border-color: rgba(255, 255, 255, 0.2); text-decoration: none; }
-  img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: $radius-card; }
-  .wd-hero-viewer-name { color: $ue-white; font-weight: 600; font-size: 1.1rem; padding: 0.4rem 0.7rem 0; }
-  .wd-hero-viewer-desc { color: $ue-text-dim; font-size: 0.85rem; line-height: 1.45; padding: 0 0.7rem; }
+  img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: $radius-card; }
+  .wd-hero-viewer-name { color: $ue-white; font-weight: 600; font-size: 1rem; padding: 0.4rem 0.7rem 0; }
 }
 
 .wd-actions {
