@@ -17,7 +17,7 @@ Two terms appear in the totals. An asset is **noise-only** when the only differe
   <p class="sd-note">Loading totals…</p>
 </div>
 
-<a class="wd-btn wd-btn-primary" href="{{ '/season-2-changes/all-changes/' | relative_url }}">Browse every change</a>
+<a class="wd-btn wd-btn-primary" href="{{ '/season-2-changes/all-changes.html' | relative_url }}">Browse every change</a>
 
 ## Areas
 
