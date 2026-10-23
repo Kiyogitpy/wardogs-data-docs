@@ -2,7 +2,7 @@
 title: "Vehicles changes"
 parent: "Season 2 Changes"
 nav_order: 4
-description: "Vehicle changes from Season 1 to Season 2: 151 assets added, 1 removed, 331 modified with real changes, 3,886 property changes."
+description: "Vehicle changes from Season 1 to Season 2: 151 assets added, 1 removed, 263 modified with real changes, 3,942 property changes."
 ---
 
 # Vehicles changes
@@ -15,12 +15,12 @@ Counts come from `assets/data/season-diff/index.json` and `vehicles.json`. Value
 |---|---|
 | Assets added | 151 |
 | Assets removed | 1 |
-| Assets modified with real changes | 331 |
-| Assets modified, noise only (skipped) | 131 |
+| Assets modified with real changes | 263 |
+| Assets modified, noise only (skipped) | 199 |
 | Assets moved | 0 |
-| Property changes (index.json) | 3,886 |
+| Property changes (index.json) | 3,942 |
 
-The change list for these assets holds 3,904 records. The index figure equals that total minus `removed_values` (18).
+The change list for these assets holds 3,960 records. The index figure equals that total minus `removed_values` (18).
 
 ## Headline changes
 
@@ -79,7 +79,7 @@ Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=veh
 
 ### Phalanx and Mistral stage tables
 
-`DA_Phalanx_Stages` has 1,252 change records and `DA_Mistral_AA_Stages` has 592. Most are `CriticalHitSpots` array entries compared by index. That is array churn, not a balance change, so these rows are not tabulated. Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=vehicles&q=DA_Phalanx_Stages
+`DA_Phalanx_Stages` has 1,894 change records and `DA_Mistral_AA_Stages` has 559. Most are `CriticalHitSpots` array entries compared by index. That is array churn, not a balance change, so these rows are not tabulated. Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=vehicles&q=DA_Phalanx_Stages
 
 ### Countermeasures
 
@@ -104,6 +104,7 @@ The asset was renamed and its type changed. The record is in `engine-tooling-dat
 | DA_FrontAxle_WHL_06_DuneBuggy | WheelSetup[frontRWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
 | DA_FrontAxle_WHL_07 | WheelSetup[frontLWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
 | DA_FrontAxle_WHL_07 | WheelSetup[frontRWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
+| DA_FrontWheels_WHL_05_Humvee | CompressionDamper.Values | 6000.0 | 7000.0 | +1000.0 (+16.7%) |
 | DA_FrontWheels_WHL_05_Humvee | RelaxationDamper.Values | 7000.0 | 5250.0 | −1750.0 (−25.0%) |
 | DA_MidAxle_WHL_07 | WheelSetup[rearL_frontWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
 | DA_MidAxle_WHL_07 | WheelSetup[rearR_frontWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
@@ -118,6 +119,7 @@ The asset was renamed and its type changed. The record is in `engine-tooling-dat
 | DA_RearAxle_WHL_06_DuneBuggy | WheelSetup[rearRWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
 | DA_RearAxle_WHL_07 | WheelSetup[rearL_rearWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
 | DA_RearAxle_WHL_07 | WheelSetup[rearR_rearWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
+| DA_RearWheels_WHL_05_Humvee | CompressionDamper.Values | 9000.0 | 8250.0 | −750.0 (−8.3%) |
 | DA_RearWheels_WHL_05_Humvee | RelaxationDamper.Values | 12000.0 | 6250.0 | −5750.0 (−47.9%) |
 | DA_RearWheels_WHL_06_DuneBuggy | BrakeTorque.Values | 16000.0 | 13000.0 | −3000.0 (−18.8%) |
 | DA_RearWheels_WHL_06_DuneBuggy | BrakeTorque.Values[1] | 12000.0 | 9000.0 | −3000.0 (−25.0%) |
@@ -128,7 +130,7 @@ The asset was renamed and its type changed. The record is in `engine-tooling-dat
 | DA_WHL_01_RearAxle | WheelSetup[rearLWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
 | DA_WHL_01_RearAxle | WheelSetup[rearRWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
 
-Showing all 34 numeric changes in wheel, axle and suspension assets. Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=vehicles&q=Wheel
+Showing all 36 numeric changes in wheel, axle and suspension assets. Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=vehicles&q=Wheel
 
 ### Vehicle market prices and buildable costs
 
@@ -165,27 +167,17 @@ Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=veh
 | CRV_Torque | FloatCurve.Keys[2].LeaveTangent | 0.4375 | 0.1875 | −0.25 (−57.1%) |
 | CRV_Torque | FloatCurve.Keys[4].ArriveTangent | 0.15 | -0.13095558 | −0.28095558 (−187.3%) |
 | CRV_Torque | FloatCurve.Keys[4].LeaveTangent | 0.15 | -0.13095558 | −0.28095558 (−187.3%) |
-| CRV_Torque | FloatCurve.Keys[5].ArriveTangent | 0.036315992 | -0.84 | −0.876315992 (−2413.0%) |
-| CRV_Torque | FloatCurve.Keys[5].LeaveTangent | 0.036315992 | -0.84 | −0.876315992 (−2413.0%) |
-| CRV_Torque | FloatCurve.Keys[5].Time | 3000.0 | 3100.0 | +100.0 (+3.3%) |
-| CRV_Torque | FloatCurve.Keys[5].Value | 1500.0 | 1000.0 | −500.0 (−33.3%) |
-| CRV_Torque | FloatCurve.Keys[6].ArriveTangent | -0.779376 | 0.0 | +0.779376 (+100.0%) |
-| CRV_Torque | FloatCurve.Keys[6].LeaveTangent | -0.779376 | 0.0 | +0.779376 (+100.0%) |
-| CRV_Torque | FloatCurve.Keys[6].Time | 3550.0 | 3750.0 | +200.0 (+5.6%) |
-| CRV_Torque | FloatCurve.Keys[6].Value | 1335.0 | 399.99997 | −935.00003 (−70.0%) |
+| CRV_Torque | FloatCurve.Keys[6].Time | 4000.0 | 3750.0 | −250.0 (−6.2%) |
+| CRV_Torque | FloatCurve.Keys[6].Value | 650.0 | 399.99997 | −250.00003 (−38.5%) |
 
 ### Other numeric changes
 
 | Asset | Property | Season 1 | Season 2 | Change |
 |---|---|---|---|---|
-| AE_Vehicle_Exit_ROT_Littlebird | unnamed property (`_aaabhgndclheajnnlna`) | 0.505 | 50.5 | +49.995 (+9900.0%) |
-| DA_GameplaySystems_SPW | …CountermeasureSettings.unnamed property (`_aaaanaajodikgainmio`).unnamed property (`_aaa… | 10.0 | 16.0 | +6.0 (+60.0%) |
 | DA_GameplaySystems_TNK_01_Heavy | ActiveZonesSettings.ActiveZones[1].WidgetLocation.Y | -40.0 | -85.0 | −45.0 (−112.5%) |
 | DA_GameplaySystems_TNK_01_Heavy | ActiveZonesSettings.ActiveZones[4].WidgetLocation.Y | 40.0 | 85.0 | +45.0 (+112.5%) |
-| DA_GameplaySystems_TNK_01_Heavy | …CountermeasureSettings.unnamed property (`_aaaanaajodikgainmio`).unnamed property (`_aaa… | 10.0 | 16.0 | +6.0 (+60.0%) |
 | DA_GameplaySystems_TNK_03 | ActiveZonesSettings.ActiveZones[1].WidgetLocation.Y | -40.0 | -85.0 | −45.0 (−112.5%) |
 | DA_GameplaySystems_TNK_03 | ActiveZonesSettings.ActiveZones[4].WidgetLocation.Y | 40.0 | 85.0 | +45.0 (+112.5%) |
-| DA_GameplaySystems_TNK_03 | …CountermeasureSettings.unnamed property (`_aaaanaajodikgainmio`).unnamed property (`_aaa… | 10.0 | 16.0 | +6.0 (+60.0%) |
 | DA_STN_02_Heavy_MainCannon_Stats | WeaponStats.InitialBulletSpeed | 85000.0 | 110000.0 | +25000.0 (+29.4%) |
 | DA_STN_03_Heavy_MainBarrel_Stats | WeaponStats.WindupTime | 0.85 | 2.5 | +1.65 (+194.1%) |
 | DA_VehicleInteractions_TNK_01_Heavy | InteractionTrackerPoints[6].Location.Y | -40.0 | -85.0 | −45.0 (−112.5%) |
@@ -202,6 +194,10 @@ Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=veh
 | ID_WHL_01_Default | Dimensions.Y | 4 | 2 | −2 (−50.0%) |
 | ID_WHL_02_Default | Dimensions.Y | 4 | 3 | −1 (−25.0%) |
 | ID_WHL_02_MachineGun | Dimensions.Y | 4 | 3 | −1 (−25.0%) |
+| ID_WHL_02_Pickup | Dimensions.Y | 4 | 3 | −1 (−25.0%) |
+| ID_WHL_05_Default | Dimensions.Y | 4 | 3 | −1 (−25.0%) |
+| ID_WHL_05_MachineGun | Dimensions.Y | 4 | 3 | −1 (−25.0%) |
+| ID_WHL_05_Minigun | Dimensions.Y | 4 | 3 | −1 (−25.0%) |
 | Skin_BlackAndGold | Skin.DefaultCPD.AccentPrimaryUVInfo.Y | 1.35187 | 0.1 | −1.25187 (−92.6%) |
 | WE_STN_01_Heavy_MountedMachineGun | ReloadSetupData.ReloadTime | 2.0 | 5.0 | +3.0 (+150.0%) |
 | WE_STN_01_Heavy_MountedMachineGun | RestockSuppliesNeeded | 50 | 200 | +150 (+300.0%) |
@@ -219,7 +215,7 @@ Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=veh
 | W_WHL_07_Ural_RingTurret_L | GamepadRotationSensitivity | 35.0 | 80.0 | +45.0 (+128.6%) |
 | W_WHL_07_Ural_RingTurret_R | GamepadRotationSensitivity | 35.0 | 80.0 | +45.0 (+128.6%) |
 
-Showing 40 of 49 rows. The two `W_STN_01_MountedMachineGun` rows with Season 1 values near 1e-38 have no percentage. Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=vehicles&q=Properties
+Showing 40 of 45 rows. The 2 rows with Season 1 values near 1e-38 or below have no percentage: `W_STN_01_MountedMachineGun`. Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=vehicles&q=Properties
 
 ### Skin values
 
@@ -227,22 +223,22 @@ Showing 40 of 49 rows. The two `W_STN_01_MountedMachineGun` rows with Season 1 v
 
 ### Non-numeric changes
 
-378 changed values are not numeric. The most common properties:
+367 changed values are not numeric. The most common properties:
 
 | Property | Changes | Example asset | Season 1 | Season 2 |
 |---|---|---|---|---|
 | bCheckIfAboveThreshold | 205 | DA_FWG_01_GameplaySystems | true | false |
 | ObjectPath | 78 | DA_Vehicle_BrakingSurface_WHL_06 | /WHL_06/Audio/Wavs/Skidding_WheelSpin_Braking/Dirt/SFX_Vehicles_Land_WHL01_DirtWheelBraki… | /Game/Audio/Vehicles/Shared/Surface/SFX_Vehicles_Land_WHL01_DirtWheelBraking_01.0 |
 | ObjectName | 33 | DA_Vehicle_Skidding_Fast_WHL_01 | SoundWave'SFX_Vehicles_Land_WHL_02_Skidding_Asphalt' | SoundWave'SFX_Vehicles_Land_WHL_02_Skidding_Asphalt1' |
-| TagName | 14 | DA_GameplaySystems_SPW | Id.Item.Flares | Id.Item.VehicleSmoke |
+| TagName | 11 | DT_EntityData_UI_TNK01 | Attribute.Meta.XP.Role.Support | Attribute.Meta.XP.Role.Driver |
 | SettingBehavior | 8 | IMC_LandVehicles_Driver | EPlayerMappableKeySettingBehaviors::OverrideSettings | EPlayerMappableKeySettingBehaviors::IgnoreSettings |
-| YawJointSocket | 7 | W_ROT_04_MountedMachineGun_L | TurretSkeleton_L | turretYaw_J |
 | Name | 6 | IMC_RotaryVehicles_Driver | Input.NamedActions.Vehicle.FireFlares | Input.NamedActions.Vehicle.FireCountermeasures |
 | KeyName | 5 | IMC_MountedGunnerInput | Gamepad_LeftTriggerAxis | Gamepad_LeftTrigger |
 | Key | 4 | DT_EntityData_UI_Vehicles_ROT_04 | Vehicle.Name.Rotary.Blackhawk | Vehicle.Name.Rotary.Z20 |
 | SourceString | 4 | DT_EntityData_UI_Vehicles_WHL_02_RingTurret | - 1 Driver + 4 Passengers  / - Optional Logistics Crates | - 2 Crew + 3 Passengers  / - Optional Logistics Crates |
 | LocalizedString | 4 | DT_EntityData_UI_Vehicles_WHL_02_RingTurret | - 1 Driver + 4 Passengers  / - Optional Logistics Crates | - 2 Crew + 3 Passengers  / - Optional Logistics Crates |
-| TangentMode | 3 | CRV_Torque | RCTM_Auto | RCTM_User |
+| GroupRules | 3 | VP_SPW_Radar | — | {'_aaabbmnjfiefjaocbjbnl': {'TagName': 'Vehicle.DestructibleMesh.Radar.Deployed'}, '_aaaa… |
+| TangentMode | 2 | CRV_Torque | RCTM_Auto | RCTM_User |
 
 ## New in Season 2
 
