@@ -49,6 +49,10 @@ $wiki-head: "Barlow Condensed", "Arial Narrow", sans-serif;
   line-height: 1.2;
 }
 
+// just-the-docs gives .table-wrapper width: 100%, which pushes every table below a floated
+// infobox. Auto width keeps it a scrolling block that fills the space beside the box.
+.wiki .table-wrapper { width: auto; }
+
 // Infobox. just-the-docs wraps every table in .table-wrapper, so the wrapper is what floats.
 .main-content .table-wrapper:has(> table.wiki-infobox) {
   margin: 0 0 1.5rem;
@@ -92,8 +96,8 @@ $wiki-head: "Barlow Condensed", "Arial Narrow", sans-serif;
   td:last-child { color: $ue-white; }
   tr:last-child td { border-bottom: 0; }
 
-  // A row like `| **Performance** | |` is a group band inside the box.
-  tr:has(> td:last-child:empty) td {
+  // A row like `| **Performance** | |` (first cell only bold text) is a group band inside the box.
+  tr:has(> td:first-child > strong:only-child) td {
     background: $wiki-band-deep;
     color: $wiki-tan;
     font-family: $wiki-head;
