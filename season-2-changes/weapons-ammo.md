@@ -132,7 +132,7 @@ On `DA_SKS_Stats`, `ViewKickMagnitudeMultiplier` was removed and `SuppressionMul
 
 ### Vector distance falloff curve
 
-Season 2 adds two keys, `Keys[3]` at Time 10000.0 (Value 0.4) and `Keys[4]` at Time 15000.0 (Value 0.3). Keys 1 and 2 also change interpolation and tangents.
+Season 2 adds two keys, `Keys[3]` at Time 10000.0 (Value 0.4) and `Keys[4]` at Time 15000.0 (Value 0.3). Keys 1 and 2 also change interpolation and tangents. The Season 1 key at Time 120000.0 (Value 0.2) is unchanged.
 
 | Asset | Property | Season 1 | Season 2 | Change |
 |---|---|---|---|---|
@@ -241,9 +241,14 @@ Other numeric item values:
 
 | Asset | Property | Season 1 | Season 2 | Change |
 |---|---|---|---|---|
+| ID_4xElcanSpectr | AttachmentData.SightsData[Key=S_Aim02].Value.SightCameraOffsetOverridePerWeapon[0] | -30.0 | -1.6 | +28.4 (+94.7%) |
+| ID_EotechHoloSight | AttachmentData.SightsData[Key=S_Aim01].Value.SightCameraOffsetOverridePerWeapon[0] | -8.0 | -7.0 | +1.0 (+12.5%) |
+| ID_OPT_08 | AttachmentData.SightsData[Key=S_Aim01].Value.SightCameraOffsetOverridePerWeapon[0] | -20.548815 | -3.9 | +16.648815 (+81.0%) |
 | ID_SGHT_011 | AttachmentData.SightsData[Key=S_Aim01].Value.ScopeMaskScale.X | 0.015 | 0.02 | +0.005 (+33.3%) |
 | ID_SGHT_011 | AttachmentData.SightsData[Key=S_Aim01].Value.ScopeMaskScale.Y | 0.015 | 0.02 | +0.005 (+33.3%) |
 | ID_SGHT_011 | AttachmentData.SightsData[Key=S_Aim01].Value.ScopeMaskScale.Z | 0.015 | 0.02 | +0.005 (+33.3%) |
+| ID_SGHT_016 | AttachmentData.SightsData[Key=S_Aim01].Value.SightCameraOffsetOverridePerWeapon[0] | 10.0 | -5.0 | −15.0 (−150.0%) |
+| ID_SGHT_023 | AttachmentData.SightsData[Key=S_Aim01].Value.SightCameraOffsetOverridePerWeapon[0] | -8.0 | -2.0 | +6.0 (+75.0%) |
 | ID_SR_04 | TimeAfterFireToRechamber | 0.24 | 0.2 | −0.04 (−16.7%) |
 | ID_SV98 | TimeAfterFireToRechamber | 0.3 | 0.08 | −0.22 (−73.3%) |
 
