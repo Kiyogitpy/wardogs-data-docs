@@ -1,0 +1,6558 @@
+{
+ "meta": {
+  "generator": "_tools/weapon_penetration.py",
+  "doc": "docs/evidence/round25-ricochet-penetration.md",
+  "assumptions": [
+   "Point blank: the impact speed is the weapon's InitialBulletSpeed (no drag, ProjectileFlight section 2).",
+   "Normal incidence for load figures (cosine 1). capacity = k * cos / density; thickness load f = thickness * density / (k * cos); a pass needs capacity > thickness / cos, which is f < cos.",
+   "speed after the pass = speed * (1 - f) * clamp(1 - 0.5 * (p + s), 0, 1), with p the ammo variant's exit-speed multiplier and s the surface entry.",
+   "next_impact_damage_fraction = min(1, speed_after / speed_scale_reference): the section 7.6 speed scale at the NEXT impact, no drag between the two.",
+   "Ammo variant stats = base asset stat times the modifier multiplier; an omitted base stat takes the native constructor default (E 1.0, p 0.0).",
+   "Nothing here says which surface a given wall or prop has, or its density or thickness. Those are not in the export."
+  ],
+  "surface_note": "The surface types a given world material resolves to are not in the export. The names above are the engine's physical-surface names (DefaultEngine.ini); a PM_<name> asset using the surface of the same name is an assumption, not data.",
+  "native_defaults": {
+   "penetration_effectiveness_multiplier": 1.0,
+   "penetration_exit_speed_multiplier": 0.0,
+   "min_impact_angle_for_ricochet_deg": 10.0
+  },
+  "native_constants": {
+   "capacity_speed_scale": 0.01,
+   "capacity_denominator_scale": 0.099999994
+  },
+  "reference_weapons": [
+   "A91",
+   "AK74M",
+   "SV98",
+   "SR_04",
+   "Glock17"
+  ],
+  "load_grid": [
+   0.0,
+   0.25,
+   0.5,
+   0.75
+  ]
+ },
+ "config": {
+  "source": "Wardogs/Config/DefaultGame.ini line 303 (ProjectileSystemSettings), PlanarSurfaceThicknessScale; Wardogs/Config/DefaultEngine.ini [PhysicalSurfaces]; offline extraction, not in data/",
+  "surfaces": [
+   {
+    "surface_type": 0,
+    "name": "Default",
+    "exit_speed_modifier": 0.0,
+    "ricochet_probability": 0.3,
+    "restitution": [
+     0.25,
+     0.45
+    ]
+   },
+   {
+    "surface_type": 1,
+    "name": "Asphalt",
+    "exit_speed_modifier": 0.15,
+    "ricochet_probability": 0.4,
+    "restitution": [
+     0.2,
+     0.4
+    ]
+   },
+   {
+    "surface_type": 2,
+    "name": "Bark",
+    "exit_speed_modifier": 0.1,
+    "ricochet_probability": 0.25,
+    "restitution": [
+     0.1,
+     0.25
+    ]
+   },
+   {
+    "surface_type": 3,
+    "name": "Body",
+    "exit_speed_modifier": 0.0,
+    "ricochet_probability": 0.0,
+    "restitution": [
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "surface_type": 4,
+    "name": "Brick",
+    "exit_speed_modifier": 0.3,
+    "ricochet_probability": 0.25,
+    "restitution": [
+     0.15,
+     0.35
+    ]
+   },
+   {
+    "surface_type": 5,
+    "name": "Ceramic",
+    "exit_speed_modifier": 0.35,
+    "ricochet_probability": 0.55,
+    "restitution": [
+     0.2,
+     0.4
+    ]
+   },
+   {
+    "surface_type": 6,
+    "name": "Chemical",
+    "exit_speed_modifier": 0.1,
+    "ricochet_probability": 0.05,
+    "restitution": [
+     0.05,
+     0.2
+    ]
+   },
+   {
+    "surface_type": 7,
+    "name": "Coal",
+    "exit_speed_modifier": 0.25,
+    "ricochet_probability": 0.2,
+    "restitution": [
+     0.2,
+     0.4
+    ]
+   },
+   {
+    "surface_type": 8,
+    "name": "Concrete",
+    "exit_speed_modifier": 0.4,
+    "ricochet_probability": 0.35,
+    "restitution": [
+     0.25,
+     0.5
+    ]
+   },
+   {
+    "surface_type": 9,
+    "name": "Debris",
+    "exit_speed_modifier": 0.25,
+    "ricochet_probability": 0.4,
+    "restitution": [
+     0.15,
+     0.5
+    ]
+   },
+   {
+    "surface_type": 10,
+    "name": "Dirt",
+    "exit_speed_modifier": 0.2,
+    "ricochet_probability": 0.08,
+    "restitution": [
+     0.05,
+     0.15
+    ]
+   },
+   {
+    "surface_type": 11,
+    "name": "Electrical",
+    "exit_speed_modifier": 0.1,
+    "ricochet_probability": 0.2,
+    "restitution": [
+     0.2,
+     0.45
+    ]
+   },
+   {
+    "surface_type": 12,
+    "name": "Fabric",
+    "exit_speed_modifier": 0.05,
+    "ricochet_probability": 0.02,
+    "restitution": [
+     0.1,
+     0.15
+    ]
+   },
+   {
+    "surface_type": 13,
+    "name": "Fur",
+    "exit_speed_modifier": 0.05,
+    "ricochet_probability": 0.0,
+    "restitution": [
+     0.1,
+     0.15
+    ]
+   },
+   {
+    "surface_type": 14,
+    "name": "Glass",
+    "exit_speed_modifier": 0.05,
+    "ricochet_probability": 0.1,
+    "restitution": [
+     0.15,
+     0.4
+    ]
+   },
+   {
+    "surface_type": 15,
+    "name": "Grass",
+    "exit_speed_modifier": 0.05,
+    "ricochet_probability": 0.1,
+    "restitution": [
+     0.05,
+     0.15
+    ]
+   },
+   {
+    "surface_type": 16,
+    "name": "Gravel",
+    "exit_speed_modifier": 0.25,
+    "ricochet_probability": 0.45,
+    "restitution": [
+     0.15,
+     0.35
+    ]
+   },
+   {
+    "surface_type": 17,
+    "name": "Head",
+    "exit_speed_modifier": 0.0,
+    "ricochet_probability": 0.0,
+    "restitution": [
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "surface_type": 18,
+    "name": "Ice",
+    "exit_speed_modifier": 0.15,
+    "ricochet_probability": 0.8,
+    "restitution": [
+     0.5,
+     0.85
+    ]
+   },
+   {
+    "surface_type": 19,
+    "name": "Lava",
+    "exit_speed_modifier": 0.9,
+    "ricochet_probability": 0.0,
+    "restitution": null
+   },
+   {
+    "surface_type": 20,
+    "name": "Leaf",
+    "exit_speed_modifier": 0.05,
+    "ricochet_probability": 0.0,
+    "restitution": [
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "surface_type": 21,
+    "name": "Limestone",
+    "exit_speed_modifier": 0.3,
+    "ricochet_probability": 0.6,
+    "restitution": [
+     0.25,
+     0.5
+    ]
+   },
+   {
+    "surface_type": 22,
+    "name": "Marble",
+    "exit_speed_modifier": 0.35,
+    "ricochet_probability": 0.65,
+    "restitution": [
+     0.35,
+     0.6
+    ]
+   },
+   {
+    "surface_type": 23,
+    "name": "Metal",
+    "exit_speed_modifier": 0.4,
+    "ricochet_probability": 0.45,
+    "restitution": [
+     0.35,
+     0.65
+    ]
+   },
+   {
+    "surface_type": 24,
+    "name": "Mirror",
+    "exit_speed_modifier": 0.35,
+    "ricochet_probability": 0.15,
+    "restitution": [
+     0.1,
+     0.25
+    ]
+   },
+   {
+    "surface_type": 25,
+    "name": "Moss",
+    "exit_speed_modifier": 0.05,
+    "ricochet_probability": 0.05,
+    "restitution": [
+     0.1,
+     0.15
+    ]
+   },
+   {
+    "surface_type": 26,
+    "name": "Oil",
+    "exit_speed_modifier": 0.9,
+    "ricochet_probability": 0.05,
+    "restitution": [
+     0.05,
+     0.15
+    ]
+   },
+   {
+    "surface_type": 27,
+    "name": "Paper",
+    "exit_speed_modifier": 0.05,
+    "ricochet_probability": 0.02,
+    "restitution": [
+     0.1,
+     0.15
+    ]
+   },
+   {
+    "surface_type": 28,
+    "name": "Plaster",
+    "exit_speed_modifier": 0.25,
+    "ricochet_probability": 0.2,
+    "restitution": [
+     0.15,
+     0.35
+    ]
+   },
+   {
+    "surface_type": 29,
+    "name": "Rock",
+    "exit_speed_modifier": 0.35,
+    "ricochet_probability": 0.5,
+    "restitution": [
+     0.35,
+     0.55
+    ]
+   },
+   {
+    "surface_type": 30,
+    "name": "Rubber",
+    "exit_speed_modifier": 0.1,
+    "ricochet_probability": 0.4,
+    "restitution": [
+     0.1,
+     0.25
+    ]
+   },
+   {
+    "surface_type": 31,
+    "name": "Sand",
+    "exit_speed_modifier": 0.25,
+    "ricochet_probability": 0.02,
+    "restitution": [
+     0.03,
+     0.1
+    ]
+   },
+   {
+    "surface_type": 32,
+    "name": "Snow",
+    "exit_speed_modifier": 0.1,
+    "ricochet_probability": 0.03,
+    "restitution": [
+     0.03,
+     0.1
+    ]
+   },
+   {
+    "surface_type": 33,
+    "name": "Soil",
+    "exit_speed_modifier": 0.2,
+    "ricochet_probability": 0.12,
+    "restitution": [
+     0.08,
+     0.2
+    ]
+   },
+   {
+    "surface_type": 34,
+    "name": "Water",
+    "exit_speed_modifier": 0.9,
+    "ricochet_probability": 0.0,
+    "restitution": [
+     0.35,
+     0.6
+    ]
+   },
+   {
+    "surface_type": 35,
+    "name": "Wood",
+    "exit_speed_modifier": 0.15,
+    "ricochet_probability": 0.3,
+    "restitution": [
+     0.15,
+     0.35
+    ]
+   },
+   {
+    "surface_type": 36,
+    "name": "Plastic",
+    "exit_speed_modifier": 0.12,
+    "ricochet_probability": 0.4,
+    "restitution": [
+     0.2,
+     0.45
+    ]
+   },
+   {
+    "surface_type": 37,
+    "name": "NonRicochetable",
+    "exit_speed_modifier": 0.15,
+    "ricochet_probability": 0.1,
+    "restitution": [
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "surface_type": 38,
+    "name": "BulletProofGlass",
+    "exit_speed_modifier": 1.0,
+    "ricochet_probability": 0.1,
+    "restitution": [
+     0.15,
+     0.4
+    ]
+   },
+   {
+    "surface_type": 39,
+    "name": "Unnamed39",
+    "exit_speed_modifier": 0.0,
+    "ricochet_probability": 0.5,
+    "restitution": [
+     0.4,
+     0.6
+    ]
+   },
+   {
+    "surface_type": 40,
+    "name": "Unnamed40",
+    "exit_speed_modifier": 0.0,
+    "ricochet_probability": 0.5,
+    "restitution": [
+     0.4,
+     0.6
+    ]
+   },
+   {
+    "surface_type": 41,
+    "name": "Unnamed41",
+    "exit_speed_modifier": 0.0,
+    "ricochet_probability": 0.5,
+    "restitution": [
+     0.4,
+     0.6
+    ]
+   },
+   {
+    "surface_type": 42,
+    "name": "Unnamed42",
+    "exit_speed_modifier": 0.0,
+    "ricochet_probability": 0.5,
+    "restitution": [
+     0.4,
+     0.6
+    ]
+   },
+   {
+    "surface_type": 43,
+    "name": "Unnamed43",
+    "exit_speed_modifier": 0.0,
+    "ricochet_probability": 0.5,
+    "restitution": [
+     0.4,
+     0.6
+    ]
+   },
+   {
+    "surface_type": 44,
+    "name": "Unnamed44",
+    "exit_speed_modifier": 0.0,
+    "ricochet_probability": 0.5,
+    "restitution": [
+     0.4,
+     0.6
+    ]
+   },
+   {
+    "surface_type": 45,
+    "name": "Unnamed45",
+    "exit_speed_modifier": 0.0,
+    "ricochet_probability": 0.5,
+    "restitution": [
+     0.4,
+     0.6
+    ]
+   },
+   {
+    "surface_type": 46,
+    "name": "Unnamed46",
+    "exit_speed_modifier": 0.0,
+    "ricochet_probability": 0.5,
+    "restitution": [
+     0.4,
+     0.6
+    ]
+   },
+   {
+    "surface_type": 47,
+    "name": "Unnamed47",
+    "exit_speed_modifier": 0.0,
+    "ricochet_probability": 0.5,
+    "restitution": [
+     0.4,
+     0.6
+    ]
+   },
+   {
+    "surface_type": 48,
+    "name": "Unnamed48",
+    "exit_speed_modifier": 0.0,
+    "ricochet_probability": 0.5,
+    "restitution": [
+     0.4,
+     0.6
+    ]
+   },
+   {
+    "surface_type": 49,
+    "name": "Unnamed49",
+    "exit_speed_modifier": 0.0,
+    "ricochet_probability": 0.5,
+    "restitution": [
+     0.4,
+     0.6
+    ]
+   },
+   {
+    "surface_type": 50,
+    "name": "Unnamed50",
+    "exit_speed_modifier": 0.0,
+    "ricochet_probability": 0.5,
+    "restitution": [
+     0.4,
+     0.6
+    ]
+   },
+   {
+    "surface_type": 51,
+    "name": "Unnamed51",
+    "exit_speed_modifier": 0.0,
+    "ricochet_probability": 0.5,
+    "restitution": [
+     0.4,
+     0.6
+    ]
+   },
+   {
+    "surface_type": 52,
+    "name": "Unnamed52",
+    "exit_speed_modifier": 0.0,
+    "ricochet_probability": 0.5,
+    "restitution": [
+     0.4,
+     0.6
+    ]
+   },
+   {
+    "surface_type": 53,
+    "name": "Unnamed53",
+    "exit_speed_modifier": 0.0,
+    "ricochet_probability": 0.5,
+    "restitution": [
+     0.4,
+     0.6
+    ]
+   },
+   {
+    "surface_type": 54,
+    "name": "Unnamed54",
+    "exit_speed_modifier": 0.0,
+    "ricochet_probability": 0.5,
+    "restitution": [
+     0.4,
+     0.6
+    ]
+   },
+   {
+    "surface_type": 55,
+    "name": "Unnamed55",
+    "exit_speed_modifier": 0.0,
+    "ricochet_probability": 0.5,
+    "restitution": [
+     0.4,
+     0.6
+    ]
+   },
+   {
+    "surface_type": 56,
+    "name": "Unnamed56",
+    "exit_speed_modifier": 0.0,
+    "ricochet_probability": 0.5,
+    "restitution": [
+     0.4,
+     0.6
+    ]
+   },
+   {
+    "surface_type": 57,
+    "name": "Unnamed57",
+    "exit_speed_modifier": 0.0,
+    "ricochet_probability": 0.5,
+    "restitution": [
+     0.4,
+     0.6
+    ]
+   },
+   {
+    "surface_type": 58,
+    "name": "Unnamed58",
+    "exit_speed_modifier": 0.0,
+    "ricochet_probability": 0.5,
+    "restitution": [
+     0.4,
+     0.6
+    ]
+   },
+   {
+    "surface_type": 59,
+    "name": "Unnamed59",
+    "exit_speed_modifier": 0.0,
+    "ricochet_probability": 0.5,
+    "restitution": [
+     0.4,
+     0.6
+    ]
+   },
+   {
+    "surface_type": 60,
+    "name": "Unnamed60",
+    "exit_speed_modifier": 0.0,
+    "ricochet_probability": 0.5,
+    "restitution": [
+     0.4,
+     0.6
+    ]
+   },
+   {
+    "surface_type": 61,
+    "name": "Unnamed61",
+    "exit_speed_modifier": 0.0,
+    "ricochet_probability": 0.5,
+    "restitution": [
+     0.4,
+     0.6
+    ]
+   },
+   {
+    "surface_type": 62,
+    "name": "Unnamed62",
+    "exit_speed_modifier": 0.0,
+    "ricochet_probability": 0.5,
+    "restitution": [
+     0.4,
+     0.6
+    ]
+   }
+  ],
+  "impact_angle_ricochet_probabilities": [
+   [
+    0.0,
+    10.0,
+    0.08
+   ],
+   [
+    10.0,
+    20.0,
+    0.18
+   ],
+   [
+    20.0,
+    30.0,
+    0.3
+   ],
+   [
+    30.0,
+    40.0,
+    0.42
+   ],
+   [
+    40.0,
+    50.0,
+    0.55
+   ],
+   [
+    50.0,
+    60.0,
+    0.67
+   ],
+   [
+    60.0,
+    70.0,
+    0.78
+   ],
+   [
+    70.0,
+    80.0,
+    0.87
+   ],
+   [
+    80.0,
+    90.0,
+    0.92
+   ]
+  ],
+  "penetration_effectiveness_ricochet_range": [
+   2.0,
+   1.0
+  ],
+  "penetration_phys_mat_ignore_list": [
+   "/Game/Environment/_Global/PhysicalMaterials/PM_MetalChainLink.PM_MetalChainLink",
+   "/Game/Environment/_Global/PhysicalMaterials/PM_GlassBulletProof.PM_GlassBulletProof",
+   "/Game/Environment/_Global/PhysicalMaterials/PM_Glass.PM_Glass",
+   "/Game/Environment/_Global/PhysicalMaterials/PM_Glass_1cm.PM_Glass_1cm",
+   "/Game/Vehicles/ComplexCollision/Physics/PM_VehicleCC_GlassBulletProof.PM_VehicleCC_GlassBulletProof",
+   "/Game/Vehicles/ComplexCollision/Physics/PM_VehicleCC_Glass_Solid.PM_VehicleCC_Glass_Solid",
+   "/Game/Vehicles/ComplexCollision/Physics/PM_VehicleCC_Glass.PM_VehicleCC_Glass",
+   "/Game/Vehicles/ComplexCollision/Physics/PM_VehicleCC_ArmoredGlass.PM_VehicleCC_ArmoredGlass",
+   "/Game/Vehicles/ComplexCollision/Physics/PM_VehicleCC_Reinforced_GlassBulletProof.PM_VehicleCC_Reinforced_GlassBulletProof",
+   "/Game/Vehicles/ComplexCollision/Physics/PM_VehicleCC_StrongGlass.PM_VehicleCC_StrongGlass",
+   "/Game/Environment/_Global/PhysicalMaterials/PM_Body.PM_Body",
+   "/Game/Environment/_Global/PhysicalMaterials/PM_Head.PM_Head",
+   "/Game/Vehicles/ComplexCollision/Physics/PM_VehicleCC_Glass_Humvee.PM_VehicleCC_Glass_Humvee"
+  ],
+  "exit_deflection_penetration_effectiveness_range": [
+   5.0,
+   0.5
+  ],
+  "exit_deflection_angle_range_deg": [
+   0.0,
+   7.5
+  ],
+  "max_ricochet_angle_variance": 40.0,
+  "max_deflection_percentage_shallow_angle": [
+   0.2,
+   10.0
+  ],
+  "max_deflection_percentage_sharp_angle": [
+   0.2,
+   0.8
+  ],
+  "max_pellet_count": 16,
+  "simulation_frame_rate": 30,
+  "planar_surface_thickness_scale": 10.0
+ },
+ "ammo_modifiers": {
+  "Meta.Damage.AmmoModifier.ArmorPiercing": {
+   "asset": "DA_AmmoModifier_ArmorPiercing",
+   "PenetrationEffectivenessMultiplier": 1.8,
+   "EffectiveRangeMultiplier": 1.2,
+   "PenetrationExitSpeedMultiplier": 0.0
+  },
+  "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer": {
+   "asset": "DA_AmmoModifier_ArmorPiercing_Tracer",
+   "PenetrationEffectivenessMultiplier": 1.76,
+   "EffectiveRangeMultiplier": 1.2,
+   "TracerChance": 1.0,
+   "PenetrationExitSpeedMultiplier": 0.0
+  },
+  "Meta.Damage.AmmoModifier.HollowPoint": {
+   "asset": "DA_AmmoModifier_HollowPoint",
+   "PenetrationEffectivenessMultiplier": 0.1,
+   "EffectiveRangeMultiplier": 0.8,
+   "PenetrationExitSpeedMultiplier": 0.15
+  },
+  "Meta.Damage.AmmoModifier.HollowPoint.Tracer": {
+   "asset": "DA_AmmoModifier_HollowPoint_Tracer",
+   "PenetrationEffectivenessMultiplier": 0.1,
+   "EffectiveRangeMultiplier": 0.8,
+   "TracerChance": 1.0,
+   "PenetrationExitSpeedMultiplier": 0.15
+  },
+  "Meta.Damage.AmmoModifier.Tracer": {
+   "asset": "DA_AmmoModifier_Tracer",
+   "PenetrationEffectivenessMultiplier": 1.0,
+   "EffectiveRangeMultiplier": 1.0,
+   "TracerChance": 1.0,
+   "PenetrationExitSpeedMultiplier": 0.075
+  }
+ },
+ "projectiles": {
+  "Item.Caliber.120x570mm": {
+   "asset": "DA_120x570mm_ProjectileData",
+   "diameter": 12.0,
+   "mass": 20.0,
+   "typical_speed": 22400.0,
+   "penetration_exit_speed_multiplier": null,
+   "penetration_effectiveness_multiplier": null,
+   "min_impact_angle_for_ricochet_deg": 91.0,
+   "bShouldPenetrate": false,
+   "bForcePenetrateThinSurfaces": null
+  },
+  "Item.Caliber.120x800mm.Standard": {
+   "asset": "DA_120x800mm_Standard_ProjectileData",
+   "diameter": 12.0,
+   "mass": 15.0,
+   "typical_speed": 15000.0,
+   "penetration_exit_speed_multiplier": null,
+   "penetration_effectiveness_multiplier": null,
+   "min_impact_angle_for_ricochet_deg": 91.0,
+   "bShouldPenetrate": false,
+   "bForcePenetrateThinSurfaces": null
+  },
+  "Item.Caliber.122mm.Havoc": {
+   "asset": "DA_122_mm_HAVOC_ProjectileData",
+   "diameter": 12.2,
+   "mass": 57.0,
+   "typical_speed": 143000.0,
+   "penetration_exit_speed_multiplier": null,
+   "penetration_effectiveness_multiplier": 2.0,
+   "min_impact_angle_for_ricochet_deg": 91.0,
+   "bShouldPenetrate": false,
+   "bForcePenetrateThinSurfaces": true
+  },
+  "Item.Caliber.122mm": {
+   "asset": "DA_122mm_ProjectileData",
+   "diameter": 12.2,
+   "mass": 57.0,
+   "typical_speed": 143000.0,
+   "penetration_exit_speed_multiplier": null,
+   "penetration_effectiveness_multiplier": 2.0,
+   "min_impact_angle_for_ricochet_deg": 91.0,
+   "bShouldPenetrate": false,
+   "bForcePenetrateThinSurfaces": true
+  },
+  "Item.Caliber.125x570mm": {
+   "asset": "DA_125x570mm_ProjectileData",
+   "diameter": 12.5,
+   "mass": 23.0,
+   "typical_speed": 22400.0,
+   "penetration_exit_speed_multiplier": null,
+   "penetration_effectiveness_multiplier": null,
+   "min_impact_angle_for_ricochet_deg": 91.0,
+   "bShouldPenetrate": false,
+   "bForcePenetrateThinSurfaces": null
+  },
+  "Item.Caliber.155mm.Expensive": {
+   "asset": "DA_155mm_Expensive_ProjectileData",
+   "diameter": 10.5,
+   "mass": 19.0,
+   "typical_speed": 15000.0,
+   "penetration_exit_speed_multiplier": null,
+   "penetration_effectiveness_multiplier": null,
+   "min_impact_angle_for_ricochet_deg": 91.0,
+   "bShouldPenetrate": false,
+   "bForcePenetrateThinSurfaces": null
+  },
+  "Item.Caliber.155mm.Expensive.Sandbox": {
+   "asset": "DA_155mm_Expensive_ProjectileData_SB",
+   "diameter": 8.4,
+   "mass": 70.0,
+   "typical_speed": 15000.0,
+   "penetration_exit_speed_multiplier": null,
+   "penetration_effectiveness_multiplier": null,
+   "min_impact_angle_for_ricochet_deg": 91.0,
+   "bShouldPenetrate": false,
+   "bForcePenetrateThinSurfaces": null
+  },
+  "Item.Caliber.155mm.Standard": {
+   "asset": "DA_155mm_Standard_ProjectileData",
+   "diameter": 8.4,
+   "mass": 70.0,
+   "typical_speed": 15000.0,
+   "penetration_exit_speed_multiplier": null,
+   "penetration_effectiveness_multiplier": null,
+   "min_impact_angle_for_ricochet_deg": 91.0,
+   "bShouldPenetrate": false,
+   "bForcePenetrateThinSurfaces": null
+  },
+  "Item.Caliber.155mm.Standard.Sandbox": {
+   "asset": "DA_155mm_Standard_ProjectileData_SB",
+   "diameter": 8.4,
+   "mass": 70.0,
+   "typical_speed": 15000.0,
+   "penetration_exit_speed_multiplier": null,
+   "penetration_effectiveness_multiplier": null,
+   "min_impact_angle_for_ricochet_deg": 91.0,
+   "bShouldPenetrate": false,
+   "bForcePenetrateThinSurfaces": null
+  },
+  "Item.Caliber.20x102mm": {
+   "asset": "DA_20x102mm",
+   "diameter": 1.0,
+   "mass": 0.04,
+   "typical_speed": 22400.0,
+   "penetration_exit_speed_multiplier": null,
+   "penetration_effectiveness_multiplier": 1.8,
+   "min_impact_angle_for_ricochet_deg": 91.0,
+   "bShouldPenetrate": null,
+   "bForcePenetrateThinSurfaces": null
+  },
+  "Item.Caliber.308Win": {
+   "asset": "DA_308Winchester_ProjectileData",
+   "diameter": 0.782,
+   "mass": 0.012,
+   "typical_speed": 38500.0,
+   "penetration_exit_speed_multiplier": 0.13,
+   "penetration_effectiveness_multiplier": null,
+   "min_impact_angle_for_ricochet_deg": null,
+   "bShouldPenetrate": null,
+   "bForcePenetrateThinSurfaces": null
+  },
+  "Item.Caliber.30mm": {
+   "asset": "DA_30mm_ProjectileData",
+   "diameter": 3.0,
+   "mass": 0.22,
+   "typical_speed": 80000.0,
+   "penetration_exit_speed_multiplier": null,
+   "penetration_effectiveness_multiplier": 2.0,
+   "min_impact_angle_for_ricochet_deg": 85.0,
+   "bShouldPenetrate": null,
+   "bForcePenetrateThinSurfaces": null
+  },
+  "Item.Caliber.338Nor": {
+   "asset": "DA_338Norman_ProjectileData",
+   "diameter": 0.86106,
+   "mass": 0.01944,
+   "typical_speed": 50000.0,
+   "penetration_exit_speed_multiplier": null,
+   "penetration_effectiveness_multiplier": null,
+   "min_impact_angle_for_ricochet_deg": null,
+   "bShouldPenetrate": null,
+   "bForcePenetrateThinSurfaces": null
+  },
+  "Item.Caliber.35x228mm": {
+   "asset": "DA_35x228mm_ProjectileData",
+   "diameter": 3.5,
+   "mass": 0.375,
+   "typical_speed": 79200.0,
+   "penetration_exit_speed_multiplier": null,
+   "penetration_effectiveness_multiplier": 0.75,
+   "min_impact_angle_for_ricochet_deg": 91.0,
+   "bShouldPenetrate": null,
+   "bForcePenetrateThinSurfaces": null
+  },
+  "Item.Caliber.40mm": {
+   "asset": "DA_40mm_ProjectileData",
+   "diameter": 4.0,
+   "mass": 0.23,
+   "typical_speed": 7500.0,
+   "penetration_exit_speed_multiplier": null,
+   "penetration_effectiveness_multiplier": null,
+   "min_impact_angle_for_ricochet_deg": 91.0,
+   "bShouldPenetrate": false,
+   "bForcePenetrateThinSurfaces": true
+  },
+  "Item.Caliber.45ACP": {
+   "asset": "DA_45ACP_ProjectileData",
+   "diameter": 1.15,
+   "mass": 0.015,
+   "typical_speed": 32200.0,
+   "penetration_exit_speed_multiplier": 0.32,
+   "penetration_effectiveness_multiplier": null,
+   "min_impact_angle_for_ricochet_deg": null,
+   "bShouldPenetrate": null,
+   "bForcePenetrateThinSurfaces": null
+  },
+  "Item.Caliber.45Colt": {
+   "asset": "DA_45Colt_ProjectileData",
+   "diameter": 1.14,
+   "mass": 0.01,
+   "typical_speed": 29200.0,
+   "penetration_exit_speed_multiplier": 0.3,
+   "penetration_effectiveness_multiplier": null,
+   "min_impact_angle_for_ricochet_deg": null,
+   "bShouldPenetrate": null,
+   "bForcePenetrateThinSurfaces": null
+  },
+  "Item.Caliber.50AE": {
+   "asset": "DA_50AE_ProjectileData",
+   "diameter": 1.27,
+   "mass": 0.019,
+   "typical_speed": 41600.0,
+   "penetration_exit_speed_multiplier": 0.08,
+   "penetration_effectiveness_multiplier": null,
+   "min_impact_angle_for_ricochet_deg": null,
+   "bShouldPenetrate": null,
+   "bForcePenetrateThinSurfaces": null
+  },
+  "Item.Caliber.50Cal": {
+   "asset": "DA_50Cal_ProjectileData",
+   "diameter": 1.2954,
+   "mass": 0.051,
+   "typical_speed": 31500.0,
+   "penetration_exit_speed_multiplier": 0.05,
+   "penetration_effectiveness_multiplier": 3.5,
+   "min_impact_angle_for_ricochet_deg": null,
+   "bShouldPenetrate": null,
+   "bForcePenetrateThinSurfaces": null
+  },
+  "Item.Caliber.545mm": {
+   "asset": "DA_545mm_ProjectileData",
+   "diameter": 0.56,
+   "mass": 0.0034,
+   "typical_speed": 30000.0,
+   "penetration_exit_speed_multiplier": null,
+   "penetration_effectiveness_multiplier": null,
+   "min_impact_angle_for_ricochet_deg": null,
+   "bShouldPenetrate": null,
+   "bForcePenetrateThinSurfaces": null
+  },
+  "Item.Caliber.556mm": {
+   "asset": "DA_556mm_ProjectileData",
+   "diameter": 0.57,
+   "mass": 0.0041,
+   "typical_speed": 40400.0,
+   "penetration_exit_speed_multiplier": 0.18,
+   "penetration_effectiveness_multiplier": null,
+   "min_impact_angle_for_ricochet_deg": null,
+   "bShouldPenetrate": null,
+   "bForcePenetrateThinSurfaces": null
+  },
+  "Item.Caliber.70mm": {
+   "asset": "DA_70mm_ProjectileData",
+   "diameter": 12.0,
+   "mass": 10.1,
+   "typical_speed": 22400.0,
+   "penetration_exit_speed_multiplier": null,
+   "penetration_effectiveness_multiplier": null,
+   "min_impact_angle_for_ricochet_deg": 100.0,
+   "bShouldPenetrate": false,
+   "bForcePenetrateThinSurfaces": null
+  },
+  "Item.Caliber.762x51mm": {
+   "asset": "DA_762x51mm_ProjectileData",
+   "diameter": 0.782,
+   "mass": 0.01,
+   "typical_speed": null,
+   "penetration_exit_speed_multiplier": null,
+   "penetration_effectiveness_multiplier": null,
+   "min_impact_angle_for_ricochet_deg": null,
+   "bShouldPenetrate": null,
+   "bForcePenetrateThinSurfaces": null
+  },
+  "Item.Caliber.72mm": {
+   "asset": "DA_72mm_ProjectileData",
+   "diameter": 7.2,
+   "mass": 9.2,
+   "typical_speed": 45000.0,
+   "penetration_exit_speed_multiplier": null,
+   "penetration_effectiveness_multiplier": null,
+   "min_impact_angle_for_ricochet_deg": 91.0,
+   "bShouldPenetrate": false,
+   "bForcePenetrateThinSurfaces": true
+  },
+  "Item.Caliber.762mm": {
+   "asset": "DA_762mm_ProjectileData",
+   "diameter": 0.792,
+   "mass": 0.008,
+   "typical_speed": 38600.0,
+   "penetration_exit_speed_multiplier": 0.15,
+   "penetration_effectiveness_multiplier": null,
+   "min_impact_angle_for_ricochet_deg": null,
+   "bShouldPenetrate": null,
+   "bForcePenetrateThinSurfaces": null
+  },
+  "Item.Caliber.762x54mm": {
+   "asset": "DA_762x54mm_ProjectileData",
+   "diameter": 0.79248,
+   "mass": 0.011729,
+   "typical_speed": 43000.0,
+   "penetration_exit_speed_multiplier": 0.14,
+   "penetration_effectiveness_multiplier": null,
+   "min_impact_angle_for_ricochet_deg": null,
+   "bShouldPenetrate": null,
+   "bForcePenetrateThinSurfaces": null
+  },
+  "Item.Caliber.12g.RifledSlug": {
+   "asset": "DA_12g_RifledSlug_ProjectileData",
+   "diameter": 1.85,
+   "mass": 0.028,
+   "typical_speed": 29800.0,
+   "penetration_exit_speed_multiplier": 0.12,
+   "penetration_effectiveness_multiplier": null,
+   "min_impact_angle_for_ricochet_deg": null,
+   "bShouldPenetrate": null,
+   "bForcePenetrateThinSurfaces": null
+  },
+  "Item.Caliber.7mmBuck": {
+   "asset": "DA_7mmBuckshot_ProjectileData",
+   "diameter": 0.83282,
+   "mass": 0.004,
+   "typical_speed": 29200.0,
+   "penetration_exit_speed_multiplier": 0.28,
+   "penetration_effectiveness_multiplier": null,
+   "min_impact_angle_for_ricochet_deg": null,
+   "bShouldPenetrate": null,
+   "bForcePenetrateThinSurfaces": null
+  },
+  "Item.Caliber.84mm": {
+   "asset": "DA_84mm_ProjectileData",
+   "diameter": 8.4,
+   "mass": 2.3,
+   "typical_speed": 22400.0,
+   "penetration_exit_speed_multiplier": null,
+   "penetration_effectiveness_multiplier": null,
+   "min_impact_angle_for_ricochet_deg": 91.0,
+   "bShouldPenetrate": false,
+   "bForcePenetrateThinSurfaces": true
+  },
+  "Item.Caliber.93mm": {
+   "asset": "DA_93mm_ProjectileData",
+   "diameter": 9.3,
+   "mass": 2.0,
+   "typical_speed": 12000.0,
+   "penetration_exit_speed_multiplier": null,
+   "penetration_effectiveness_multiplier": null,
+   "min_impact_angle_for_ricochet_deg": 91.0,
+   "bShouldPenetrate": false,
+   "bForcePenetrateThinSurfaces": true
+  },
+  "Item.Caliber.9mm": {
+   "asset": "DA_9mm_ProjectileData",
+   "diameter": 0.9017,
+   "mass": 0.007,
+   "typical_speed": 28000.0,
+   "penetration_exit_speed_multiplier": 0.35,
+   "penetration_effectiveness_multiplier": null,
+   "min_impact_angle_for_ricochet_deg": null,
+   "bShouldPenetrate": null,
+   "bForcePenetrateThinSurfaces": null
+  },
+  "Item.Caliber.84mm.TVGuided": {
+   "asset": "DA_TVGuidedMissile_Data",
+   "diameter": 8.4,
+   "mass": 2.3,
+   "typical_speed": 22400.0,
+   "penetration_exit_speed_multiplier": null,
+   "penetration_effectiveness_multiplier": null,
+   "min_impact_angle_for_ricochet_deg": 85.0,
+   "bShouldPenetrate": false,
+   "bForcePenetrateThinSurfaces": null
+  }
+ },
+ "weapons": [
+  {
+   "id": "A91",
+   "caliber": "556mm",
+   "stats_asset": "DA_A91_Stats",
+   "initial_bullet_speed": 71500.0,
+   "typical_speed_override": null,
+   "ammo": [
+    {
+     "ammo": "FMJ",
+     "modifier_tag": null,
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.18,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 40400.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 90.2278,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.Tracer",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.0135,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 40400.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 90.2278,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.027,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 40400.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 9.02278,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint.Tracer",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.027,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 40400.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 9.02278,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.8,
+     "speed_scale_reference": 40400.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 162.41,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.76,
+     "speed_scale_reference": 40400.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 158.801,
+     "launch_speed_scale": 1.0
+    }
+   ]
+  },
+  {
+   "id": "TAR21",
+   "caliber": "556mm",
+   "stats_asset": "DA_TAR21_Stats",
+   "initial_bullet_speed": 91000.0,
+   "typical_speed_override": 46300.0,
+   "ammo": [
+    {
+     "ammo": "FMJ",
+     "modifier_tag": null,
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.18,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 46300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 114.835,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.Tracer",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.0135,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 46300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 114.835,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.027,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 46300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 11.4835,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint.Tracer",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.027,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 46300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 11.4835,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.8,
+     "speed_scale_reference": 46300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 206.704,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.76,
+     "speed_scale_reference": 46300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 202.11,
+     "launch_speed_scale": 1.0
+    }
+   ]
+  },
+  {
+   "id": "WEPN_033",
+   "caliber": "556mm",
+   "stats_asset": "DA_WEPN_033_Stats",
+   "initial_bullet_speed": 71500.0,
+   "typical_speed_override": 46300.0,
+   "ammo": [
+    {
+     "ammo": "FMJ",
+     "modifier_tag": null,
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.18,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 46300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 90.2278,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.Tracer",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.0135,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 46300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 90.2278,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.027,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 46300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 9.02278,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint.Tracer",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.027,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 46300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 9.02278,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.8,
+     "speed_scale_reference": 46300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 162.41,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.76,
+     "speed_scale_reference": 46300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 158.801,
+     "launch_speed_scale": 1.0
+    }
+   ]
+  },
+  {
+   "id": "AK74M",
+   "caliber": "545mm",
+   "stats_asset": "DA_AK74M_Stats",
+   "initial_bullet_speed": 88000.0,
+   "typical_speed_override": null,
+   "ammo": [
+    {
+     "ammo": "FMJ",
+     "modifier_tag": null,
+     "projectile": "Item.Caliber.545mm",
+     "projectile_asset": "DA_545mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 30000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 95.4082,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.Tracer",
+     "projectile": "Item.Caliber.545mm",
+     "projectile_asset": "DA_545mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 30000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 95.4082,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint",
+     "projectile": "Item.Caliber.545mm",
+     "projectile_asset": "DA_545mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 30000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 9.54082,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint.Tracer",
+     "projectile": "Item.Caliber.545mm",
+     "projectile_asset": "DA_545mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 30000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 9.54082,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing",
+     "projectile": "Item.Caliber.545mm",
+     "projectile_asset": "DA_545mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.8,
+     "speed_scale_reference": 30000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 171.735,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer",
+     "projectile": "Item.Caliber.545mm",
+     "projectile_asset": "DA_545mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.76,
+     "speed_scale_reference": 30000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 167.918,
+     "launch_speed_scale": 1.0
+    }
+   ]
+  },
+  {
+   "id": "WEPN_030",
+   "caliber": "308Win",
+   "stats_asset": "DA_WEPN_030_Stats",
+   "initial_bullet_speed": 84000.0,
+   "typical_speed_override": 49500.0,
+   "ammo": [
+    {
+     "ammo": "FMJ",
+     "modifier_tag": null,
+     "projectile": "Item.Caliber.308Win",
+     "projectile_asset": "DA_308Winchester_ProjectileData",
+     "exit_speed_multiplier": 0.13,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 49500.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 164.834,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.Tracer",
+     "projectile": "Item.Caliber.308Win",
+     "projectile_asset": "DA_308Winchester_ProjectileData",
+     "exit_speed_multiplier": 0.00975,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 49500.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 164.834,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint",
+     "projectile": "Item.Caliber.308Win",
+     "projectile_asset": "DA_308Winchester_ProjectileData",
+     "exit_speed_multiplier": 0.0195,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 49500.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 16.4834,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint.Tracer",
+     "projectile": "Item.Caliber.308Win",
+     "projectile_asset": "DA_308Winchester_ProjectileData",
+     "exit_speed_multiplier": 0.0195,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 49500.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 16.4834,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing",
+     "projectile": "Item.Caliber.308Win",
+     "projectile_asset": "DA_308Winchester_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.8,
+     "speed_scale_reference": 49500.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 296.701,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer",
+     "projectile": "Item.Caliber.308Win",
+     "projectile_asset": "DA_308Winchester_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.76,
+     "speed_scale_reference": 49500.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 290.108,
+     "launch_speed_scale": 1.0
+    }
+   ]
+  },
+  {
+   "id": "WEPN_029",
+   "caliber": "556mm",
+   "stats_asset": "DA_WEPN_029_Stats",
+   "initial_bullet_speed": 95000.0,
+   "typical_speed_override": null,
+   "ammo": [
+    {
+     "ammo": "FMJ",
+     "modifier_tag": null,
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.18,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 40400.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 119.883,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.Tracer",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.0135,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 40400.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 119.883,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.027,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 40400.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 11.9883,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint.Tracer",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.027,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 40400.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 11.9883,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.8,
+     "speed_scale_reference": 40400.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 215.789,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.76,
+     "speed_scale_reference": 40400.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 210.994,
+     "launch_speed_scale": 1.0
+    }
+   ]
+  },
+  {
+   "id": "KH2002",
+   "caliber": "556mm",
+   "stats_asset": "DA_KH2002_Stats",
+   "initial_bullet_speed": 71500.0,
+   "typical_speed_override": 46300.0,
+   "ammo": [
+    {
+     "ammo": "FMJ",
+     "modifier_tag": null,
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.18,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 46300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 90.2278,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.Tracer",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.0135,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 46300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 90.2278,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.027,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 46300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 9.02278,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint.Tracer",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.027,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 46300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 9.02278,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.8,
+     "speed_scale_reference": 46300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 162.41,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.76,
+     "speed_scale_reference": 46300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 158.801,
+     "launch_speed_scale": 1.0
+    }
+   ]
+  },
+  {
+   "id": "M4",
+   "caliber": "556mm",
+   "stats_asset": "DA_M4_Stats",
+   "initial_bullet_speed": 91000.0,
+   "typical_speed_override": null,
+   "ammo": [
+    {
+     "ammo": "FMJ",
+     "modifier_tag": null,
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.18,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 40400.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 114.835,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.Tracer",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.0135,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 40400.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 114.835,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.027,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 40400.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 11.4835,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint.Tracer",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.027,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 40400.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 11.4835,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.8,
+     "speed_scale_reference": 40400.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 206.704,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.76,
+     "speed_scale_reference": 40400.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 202.11,
+     "launch_speed_scale": 1.0
+    }
+   ]
+  },
+  {
+   "id": "WEPN_037",
+   "caliber": "762mm",
+   "stats_asset": "DA_WEPN_037_Stats",
+   "initial_bullet_speed": 70000.0,
+   "typical_speed_override": 35000.0,
+   "ammo": [
+    {
+     "ammo": "FMJ",
+     "modifier_tag": null,
+     "projectile": "Item.Caliber.762mm",
+     "projectile_asset": "DA_762mm_ProjectileData",
+     "exit_speed_multiplier": 0.15,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 35000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 89.2766,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.Tracer",
+     "projectile": "Item.Caliber.762mm",
+     "projectile_asset": "DA_762mm_ProjectileData",
+     "exit_speed_multiplier": 0.01125,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 35000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 89.2766,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint",
+     "projectile": "Item.Caliber.762mm",
+     "projectile_asset": "DA_762mm_ProjectileData",
+     "exit_speed_multiplier": 0.0225,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 35000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 8.92766,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint.Tracer",
+     "projectile": "Item.Caliber.762mm",
+     "projectile_asset": "DA_762mm_ProjectileData",
+     "exit_speed_multiplier": 0.0225,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 35000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 8.92766,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing",
+     "projectile": "Item.Caliber.762mm",
+     "projectile_asset": "DA_762mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.8,
+     "speed_scale_reference": 35000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 160.698,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer",
+     "projectile": "Item.Caliber.762mm",
+     "projectile_asset": "DA_762mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.76,
+     "speed_scale_reference": 35000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 157.127,
+     "launch_speed_scale": 1.0
+    }
+   ]
+  },
+  {
+   "id": "RFB",
+   "caliber": "308Win",
+   "stats_asset": "DA_RFB_Stats",
+   "initial_bullet_speed": 88000.0,
+   "typical_speed_override": 60000.0,
+   "ammo": [
+    {
+     "ammo": "FMJ",
+     "modifier_tag": null,
+     "projectile": "Item.Caliber.308Win",
+     "projectile_asset": "DA_308Winchester_ProjectileData",
+     "exit_speed_multiplier": 0.13,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 60000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 172.683,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.Tracer",
+     "projectile": "Item.Caliber.308Win",
+     "projectile_asset": "DA_308Winchester_ProjectileData",
+     "exit_speed_multiplier": 0.00975,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 60000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 172.683,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint",
+     "projectile": "Item.Caliber.308Win",
+     "projectile_asset": "DA_308Winchester_ProjectileData",
+     "exit_speed_multiplier": 0.0195,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 60000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 17.2683,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint.Tracer",
+     "projectile": "Item.Caliber.308Win",
+     "projectile_asset": "DA_308Winchester_ProjectileData",
+     "exit_speed_multiplier": 0.0195,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 60000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 17.2683,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing",
+     "projectile": "Item.Caliber.308Win",
+     "projectile_asset": "DA_308Winchester_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.8,
+     "speed_scale_reference": 60000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 310.83,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer",
+     "projectile": "Item.Caliber.308Win",
+     "projectile_asset": "DA_308Winchester_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.76,
+     "speed_scale_reference": 60000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 303.923,
+     "launch_speed_scale": 1.0
+    }
+   ]
+  },
+  {
+   "id": "SKS",
+   "caliber": "762mm",
+   "stats_asset": "DA_SKS_Stats",
+   "initial_bullet_speed": 73500.0,
+   "typical_speed_override": null,
+   "ammo": [
+    {
+     "ammo": "FMJ",
+     "modifier_tag": null,
+     "projectile": "Item.Caliber.762mm",
+     "projectile_asset": "DA_762mm_ProjectileData",
+     "exit_speed_multiplier": 0.15,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 38600.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 93.7404,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.Tracer",
+     "projectile": "Item.Caliber.762mm",
+     "projectile_asset": "DA_762mm_ProjectileData",
+     "exit_speed_multiplier": 0.01125,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 38600.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 93.7404,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint",
+     "projectile": "Item.Caliber.762mm",
+     "projectile_asset": "DA_762mm_ProjectileData",
+     "exit_speed_multiplier": 0.0225,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 38600.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 9.37404,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint.Tracer",
+     "projectile": "Item.Caliber.762mm",
+     "projectile_asset": "DA_762mm_ProjectileData",
+     "exit_speed_multiplier": 0.0225,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 38600.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 9.37404,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing",
+     "projectile": "Item.Caliber.762mm",
+     "projectile_asset": "DA_762mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.8,
+     "speed_scale_reference": 38600.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 168.733,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer",
+     "projectile": "Item.Caliber.762mm",
+     "projectile_asset": "DA_762mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.76,
+     "speed_scale_reference": 38600.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 164.983,
+     "launch_speed_scale": 1.0
+    }
+   ]
+  },
+  {
+   "id": "SVDM",
+   "caliber": "762x54mm",
+   "stats_asset": "DA_SVDM_Stats",
+   "initial_bullet_speed": 80000.0,
+   "typical_speed_override": 35000.0,
+   "ammo": [
+    {
+     "ammo": "FMJ",
+     "modifier_tag": null,
+     "projectile": "Item.Caliber.762x54mm",
+     "projectile_asset": "DA_762x54mm_ProjectileData",
+     "exit_speed_multiplier": 0.14,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 35000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 149.408,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.Tracer",
+     "projectile": "Item.Caliber.762x54mm",
+     "projectile_asset": "DA_762x54mm_ProjectileData",
+     "exit_speed_multiplier": 0.0105,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 35000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 149.408,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint",
+     "projectile": "Item.Caliber.762x54mm",
+     "projectile_asset": "DA_762x54mm_ProjectileData",
+     "exit_speed_multiplier": 0.021,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 35000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 14.9408,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint.Tracer",
+     "projectile": "Item.Caliber.762x54mm",
+     "projectile_asset": "DA_762x54mm_ProjectileData",
+     "exit_speed_multiplier": 0.021,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 35000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 14.9408,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing",
+     "projectile": "Item.Caliber.762x54mm",
+     "projectile_asset": "DA_762x54mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.8,
+     "speed_scale_reference": 35000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 268.935,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer",
+     "projectile": "Item.Caliber.762x54mm",
+     "projectile_asset": "DA_762x54mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.76,
+     "speed_scale_reference": 35000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 262.958,
+     "launch_speed_scale": 1.0
+    }
+   ]
+  },
+  {
+   "id": "WEPN_034",
+   "caliber": "308Win",
+   "stats_asset": "DA_WEPN_034_Stats",
+   "initial_bullet_speed": 85300.0,
+   "typical_speed_override": 60300.0,
+   "ammo": [
+    {
+     "ammo": "FMJ",
+     "modifier_tag": null,
+     "projectile": "Item.Caliber.308Win",
+     "projectile_asset": "DA_308Winchester_ProjectileData",
+     "exit_speed_multiplier": 0.13,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 60300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 167.385,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.Tracer",
+     "projectile": "Item.Caliber.308Win",
+     "projectile_asset": "DA_308Winchester_ProjectileData",
+     "exit_speed_multiplier": 0.00975,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 60300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 167.385,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint",
+     "projectile": "Item.Caliber.308Win",
+     "projectile_asset": "DA_308Winchester_ProjectileData",
+     "exit_speed_multiplier": 0.0195,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 60300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 16.7385,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint.Tracer",
+     "projectile": "Item.Caliber.308Win",
+     "projectile_asset": "DA_308Winchester_ProjectileData",
+     "exit_speed_multiplier": 0.0195,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 60300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 16.7385,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing",
+     "projectile": "Item.Caliber.308Win",
+     "projectile_asset": "DA_308Winchester_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.8,
+     "speed_scale_reference": 60300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 301.293,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer",
+     "projectile": "Item.Caliber.308Win",
+     "projectile_asset": "DA_308Winchester_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.76,
+     "speed_scale_reference": 60300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 294.598,
+     "launch_speed_scale": 1.0
+    }
+   ]
+  },
+  {
+   "id": "LMG_02",
+   "caliber": "762x54mm",
+   "stats_asset": "DA_LMG_02_Stats",
+   "initial_bullet_speed": 82500.0,
+   "typical_speed_override": 33600.0,
+   "ammo": [
+    {
+     "ammo": "FMJ",
+     "modifier_tag": null,
+     "projectile": "Item.Caliber.762x54mm",
+     "projectile_asset": "DA_762x54mm_ProjectileData",
+     "exit_speed_multiplier": 0.14,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 33600.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 154.077,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.Tracer",
+     "projectile": "Item.Caliber.762x54mm",
+     "projectile_asset": "DA_762x54mm_ProjectileData",
+     "exit_speed_multiplier": 0.0105,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 33600.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 154.077,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint",
+     "projectile": "Item.Caliber.762x54mm",
+     "projectile_asset": "DA_762x54mm_ProjectileData",
+     "exit_speed_multiplier": 0.021,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 33600.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 15.4077,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint.Tracer",
+     "projectile": "Item.Caliber.762x54mm",
+     "projectile_asset": "DA_762x54mm_ProjectileData",
+     "exit_speed_multiplier": 0.021,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 33600.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 15.4077,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing",
+     "projectile": "Item.Caliber.762x54mm",
+     "projectile_asset": "DA_762x54mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.8,
+     "speed_scale_reference": 33600.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 277.339,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer",
+     "projectile": "Item.Caliber.762x54mm",
+     "projectile_asset": "DA_762x54mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.76,
+     "speed_scale_reference": 33600.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 271.176,
+     "launch_speed_scale": 1.0
+    }
+   ]
+  },
+  {
+   "id": "M249",
+   "caliber": "556mm",
+   "stats_asset": "DA_M249_Stats",
+   "initial_bullet_speed": 91500.0,
+   "typical_speed_override": 30100.0,
+   "ammo": [
+    {
+     "ammo": "FMJ",
+     "modifier_tag": null,
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.18,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 30100.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 115.466,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.Tracer",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.0135,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 30100.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 115.466,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.027,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 30100.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 11.5466,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint.Tracer",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.027,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 30100.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 11.5466,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.8,
+     "speed_scale_reference": 30100.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 207.839,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.76,
+     "speed_scale_reference": 30100.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 203.221,
+     "launch_speed_scale": 1.0
+    }
+   ]
+  },
+  {
+   "id": "WEPN_036",
+   "caliber": "308Win",
+   "stats_asset": "DA_WEPN_036_Stats",
+   "initial_bullet_speed": 79000.0,
+   "typical_speed_override": 37800.0,
+   "ammo": [
+    {
+     "ammo": "FMJ",
+     "modifier_tag": null,
+     "projectile": "Item.Caliber.308Win",
+     "projectile_asset": "DA_308Winchester_ProjectileData",
+     "exit_speed_multiplier": 0.13,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 37800.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 155.023,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.Tracer",
+     "projectile": "Item.Caliber.308Win",
+     "projectile_asset": "DA_308Winchester_ProjectileData",
+     "exit_speed_multiplier": 0.00975,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 37800.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 155.023,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint",
+     "projectile": "Item.Caliber.308Win",
+     "projectile_asset": "DA_308Winchester_ProjectileData",
+     "exit_speed_multiplier": 0.0195,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 37800.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 15.5023,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint.Tracer",
+     "projectile": "Item.Caliber.308Win",
+     "projectile_asset": "DA_308Winchester_ProjectileData",
+     "exit_speed_multiplier": 0.0195,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 37800.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 15.5023,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing",
+     "projectile": "Item.Caliber.308Win",
+     "projectile_asset": "DA_308Winchester_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.8,
+     "speed_scale_reference": 37800.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 279.041,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer",
+     "projectile": "Item.Caliber.308Win",
+     "projectile_asset": "DA_308Winchester_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.76,
+     "speed_scale_reference": 37800.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 272.84,
+     "launch_speed_scale": 1.0
+    }
+   ]
+  },
+  {
+   "id": "WEPN_027",
+   "caliber": "50AE",
+   "stats_asset": "DA_WEPN_027_Stats",
+   "initial_bullet_speed": 47000.0,
+   "typical_speed_override": null,
+   "ammo": [
+    {
+     "ammo": "FMJ",
+     "modifier_tag": null,
+     "projectile": "Item.Caliber.50AE",
+     "projectile_asset": "DA_50AE_ProjectileData",
+     "exit_speed_multiplier": 0.08,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 41600.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 55.3661,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.Tracer",
+     "projectile": "Item.Caliber.50AE",
+     "projectile_asset": "DA_50AE_ProjectileData",
+     "exit_speed_multiplier": 0.006,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 41600.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 55.3661,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint",
+     "projectile": "Item.Caliber.50AE",
+     "projectile_asset": "DA_50AE_ProjectileData",
+     "exit_speed_multiplier": 0.012,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 41600.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 5.53661,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint.Tracer",
+     "projectile": "Item.Caliber.50AE",
+     "projectile_asset": "DA_50AE_ProjectileData",
+     "exit_speed_multiplier": 0.012,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 41600.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 5.53661,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing",
+     "projectile": "Item.Caliber.50AE",
+     "projectile_asset": "DA_50AE_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.8,
+     "speed_scale_reference": 41600.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 99.659,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer",
+     "projectile": "Item.Caliber.50AE",
+     "projectile_asset": "DA_50AE_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.76,
+     "speed_scale_reference": 41600.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 97.4444,
+     "launch_speed_scale": 1.0
+    }
+   ]
+  },
+  {
+   "id": "Glock17",
+   "caliber": "9mm",
+   "stats_asset": "DA_Glock17_Stats",
+   "initial_bullet_speed": 37500.0,
+   "typical_speed_override": 30000.0,
+   "ammo": [
+    {
+     "ammo": "FMJ",
+     "modifier_tag": null,
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.35,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 30000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 32.2853,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.Tracer",
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.02625,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 30000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 32.2853,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint",
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.0525,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 30000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 3.22853,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint.Tracer",
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.0525,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 30000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 3.22853,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing",
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.8,
+     "speed_scale_reference": 30000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 58.1136,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer",
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.76,
+     "speed_scale_reference": 30000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 56.8222,
+     "launch_speed_scale": 1.0
+    }
+   ]
+  },
+  {
+   "id": "WEPN_032",
+   "caliber": "9mm",
+   "stats_asset": "DA_WEPN_032_Stats",
+   "initial_bullet_speed": 37500.0,
+   "typical_speed_override": 30000.0,
+   "ammo": [
+    {
+     "ammo": "FMJ",
+     "modifier_tag": null,
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.35,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 30000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 32.2853,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.Tracer",
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.02625,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 30000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 32.2853,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint",
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.0525,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 30000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 3.22853,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint.Tracer",
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.0525,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 30000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 3.22853,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing",
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.8,
+     "speed_scale_reference": 30000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 58.1136,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer",
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.76,
+     "speed_scale_reference": 30000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 56.8222,
+     "launch_speed_scale": 1.0
+    }
+   ]
+  },
+  {
+   "id": "Judge",
+   "caliber": "45Colt",
+   "stats_asset": "DA_Judge_Stats",
+   "initial_bullet_speed": 33500.0,
+   "typical_speed_override": null,
+   "ammo": [
+    {
+     "ammo": "FMJ",
+     "modifier_tag": null,
+     "projectile": "Item.Caliber.45Colt",
+     "projectile_asset": "DA_45Colt_ProjectileData",
+     "exit_speed_multiplier": 0.3,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 29200.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 25.7772,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.Tracer",
+     "projectile": "Item.Caliber.45Colt",
+     "projectile_asset": "DA_45Colt_ProjectileData",
+     "exit_speed_multiplier": 0.0225,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 29200.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 25.7772,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint",
+     "projectile": "Item.Caliber.45Colt",
+     "projectile_asset": "DA_45Colt_ProjectileData",
+     "exit_speed_multiplier": 0.045,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 29200.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 2.57772,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint.Tracer",
+     "projectile": "Item.Caliber.45Colt",
+     "projectile_asset": "DA_45Colt_ProjectileData",
+     "exit_speed_multiplier": 0.045,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 29200.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 2.57772,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing",
+     "projectile": "Item.Caliber.45Colt",
+     "projectile_asset": "DA_45Colt_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.8,
+     "speed_scale_reference": 29200.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 46.3989,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer",
+     "projectile": "Item.Caliber.45Colt",
+     "projectile_asset": "DA_45Colt_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.76,
+     "speed_scale_reference": 29200.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 45.3678,
+     "launch_speed_scale": 1.0
+    }
+   ]
+  },
+  {
+   "id": "WEPN_026",
+   "caliber": "45ACP",
+   "stats_asset": "DA_WEPN_026_Stats",
+   "initial_bullet_speed": 25300.0,
+   "typical_speed_override": 24300.0,
+   "ammo": [
+    {
+     "ammo": "FMJ",
+     "modifier_tag": null,
+     "projectile": "Item.Caliber.45ACP",
+     "projectile_asset": "DA_45ACP_ProjectileData",
+     "exit_speed_multiplier": 0.32,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 24300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 28.6957,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.Tracer",
+     "projectile": "Item.Caliber.45ACP",
+     "projectile_asset": "DA_45ACP_ProjectileData",
+     "exit_speed_multiplier": 0.024,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 24300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 28.6957,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint",
+     "projectile": "Item.Caliber.45ACP",
+     "projectile_asset": "DA_45ACP_ProjectileData",
+     "exit_speed_multiplier": 0.048,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 24300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 2.86957,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint.Tracer",
+     "projectile": "Item.Caliber.45ACP",
+     "projectile_asset": "DA_45ACP_ProjectileData",
+     "exit_speed_multiplier": 0.048,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 24300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 2.86957,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing",
+     "projectile": "Item.Caliber.45ACP",
+     "projectile_asset": "DA_45ACP_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.8,
+     "speed_scale_reference": 24300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 51.6522,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer",
+     "projectile": "Item.Caliber.45ACP",
+     "projectile_asset": "DA_45ACP_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.76,
+     "speed_scale_reference": 24300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 50.5044,
+     "launch_speed_scale": 1.0
+    }
+   ]
+  },
+  {
+   "id": "WEPN_028",
+   "caliber": "9mm",
+   "stats_asset": "DA_WEPN_028_Stats",
+   "initial_bullet_speed": 40000.0,
+   "typical_speed_override": null,
+   "ammo": [
+    {
+     "ammo": "FMJ",
+     "modifier_tag": null,
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.35,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 28000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 34.4377,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.Tracer",
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.02625,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 28000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 34.4377,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint",
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.0525,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 28000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 3.44377,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint.Tracer",
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.0525,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 28000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 3.44377,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing",
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.8,
+     "speed_scale_reference": 28000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 61.9878,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer",
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.76,
+     "speed_scale_reference": 28000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 60.6103,
+     "launch_speed_scale": 1.0
+    }
+   ]
+  },
+  {
+   "id": "MP9",
+   "caliber": "9mm",
+   "stats_asset": "DA_MP9_Stats",
+   "initial_bullet_speed": 40000.0,
+   "typical_speed_override": 28000.0,
+   "ammo": [
+    {
+     "ammo": "FMJ",
+     "modifier_tag": null,
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.35,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 28000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 34.4377,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.Tracer",
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.02625,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 28000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 34.4377,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint",
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.0525,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 28000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 3.44377,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint.Tracer",
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.0525,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 28000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 3.44377,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing",
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.8,
+     "speed_scale_reference": 28000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 61.9878,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer",
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.76,
+     "speed_scale_reference": 28000.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 60.6103,
+     "launch_speed_scale": 1.0
+    }
+   ]
+  },
+  {
+   "id": "SMG_03",
+   "caliber": "9mm",
+   "stats_asset": "DA_SMG_03_Stats",
+   "initial_bullet_speed": 38000.0,
+   "typical_speed_override": 20200.0,
+   "ammo": [
+    {
+     "ammo": "FMJ",
+     "modifier_tag": null,
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.35,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 20200.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 32.7158,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.Tracer",
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.02625,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 20200.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 32.7158,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint",
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.0525,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 20200.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 3.27158,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint.Tracer",
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.0525,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 20200.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 3.27158,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing",
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.8,
+     "speed_scale_reference": 20200.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 58.8884,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer",
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.76,
+     "speed_scale_reference": 20200.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 57.5798,
+     "launch_speed_scale": 1.0
+    }
+   ]
+  },
+  {
+   "id": "Vector",
+   "caliber": "45ACP",
+   "stats_asset": "DA_Vector_Stats",
+   "initial_bullet_speed": 37500.0,
+   "typical_speed_override": 32200.0,
+   "ammo": [
+    {
+     "ammo": "FMJ",
+     "modifier_tag": null,
+     "projectile": "Item.Caliber.45ACP",
+     "projectile_asset": "DA_45ACP_ProjectileData",
+     "exit_speed_multiplier": 0.32,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 32200.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 42.5331,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.Tracer",
+     "projectile": "Item.Caliber.45ACP",
+     "projectile_asset": "DA_45ACP_ProjectileData",
+     "exit_speed_multiplier": 0.024,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 32200.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 42.5331,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint",
+     "projectile": "Item.Caliber.45ACP",
+     "projectile_asset": "DA_45ACP_ProjectileData",
+     "exit_speed_multiplier": 0.048,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 32200.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 4.25331,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint.Tracer",
+     "projectile": "Item.Caliber.45ACP",
+     "projectile_asset": "DA_45ACP_ProjectileData",
+     "exit_speed_multiplier": 0.048,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 32200.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 4.25331,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing",
+     "projectile": "Item.Caliber.45ACP",
+     "projectile_asset": "DA_45ACP_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.8,
+     "speed_scale_reference": 32200.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 76.5596,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer",
+     "projectile": "Item.Caliber.45ACP",
+     "projectile_asset": "DA_45ACP_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.76,
+     "speed_scale_reference": 32200.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 74.8582,
+     "launch_speed_scale": 1.0
+    }
+   ]
+  },
+  {
+   "id": "WEPN_031",
+   "caliber": "9mm",
+   "stats_asset": "DA_WEPN_031_Stats",
+   "initial_bullet_speed": 38000.0,
+   "typical_speed_override": 20200.0,
+   "ammo": [
+    {
+     "ammo": "FMJ",
+     "modifier_tag": null,
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.35,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 20200.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 32.7158,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.Tracer",
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.02625,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 20200.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 32.7158,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint",
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.0525,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 20200.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 3.27158,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint.Tracer",
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.0525,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 20200.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 3.27158,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing",
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.8,
+     "speed_scale_reference": 20200.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 58.8884,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer",
+     "projectile": "Item.Caliber.9mm",
+     "projectile_asset": "DA_9mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.76,
+     "speed_scale_reference": 20200.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 57.5798,
+     "launch_speed_scale": 1.0
+    }
+   ]
+  },
+  {
+   "id": "M500",
+   "caliber": "12g",
+   "stats_asset": "DA_M12G_Stats",
+   "initial_bullet_speed": 48000.0,
+   "typical_speed_override": null,
+   "ammo": [
+    {
+     "ammo": "Buckshot",
+     "modifier_tag": null,
+     "projectile": "Item.Caliber.7mmBuck",
+     "projectile_asset": "DA_7mmBuckshot_ProjectileData",
+     "exit_speed_multiplier": 0.28,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 29200.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 27.6821,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "Slug",
+     "modifier_tag": null,
+     "projectile": "Item.Caliber.12g.RifledSlug",
+     "projectile_asset": "DA_12g_RifledSlug_ProjectileData",
+     "exit_speed_multiplier": 0.12,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 29800.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 39.2695,
+     "launch_speed_scale": 1.0
+    }
+   ]
+  },
+  {
+   "id": "MP43",
+   "caliber": "12g",
+   "stats_asset": "DA_MP43_Stats",
+   "initial_bullet_speed": 39100.0,
+   "typical_speed_override": null,
+   "ammo": [
+    {
+     "ammo": "Buckshot",
+     "modifier_tag": null,
+     "projectile": "Item.Caliber.7mmBuck",
+     "projectile_asset": "DA_7mmBuckshot_ProjectileData",
+     "exit_speed_multiplier": 0.28,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 29200.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 22.5494,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "Slug",
+     "modifier_tag": null,
+     "projectile": "Item.Caliber.12g.RifledSlug",
+     "projectile_asset": "DA_12g_RifledSlug_ProjectileData",
+     "exit_speed_multiplier": 0.12,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 29800.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 31.9883,
+     "launch_speed_scale": 1.0
+    }
+   ]
+  },
+  {
+   "id": "MK22",
+   "caliber": "308Win",
+   "stats_asset": "DA_MK22_Stats",
+   "initial_bullet_speed": 89400.0,
+   "typical_speed_override": 42500.0,
+   "ammo": [
+    {
+     "ammo": "FMJ",
+     "modifier_tag": null,
+     "projectile": "Item.Caliber.308Win",
+     "projectile_asset": "DA_308Winchester_ProjectileData",
+     "exit_speed_multiplier": 0.13,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 42500.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 175.431,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.Tracer",
+     "projectile": "Item.Caliber.308Win",
+     "projectile_asset": "DA_308Winchester_ProjectileData",
+     "exit_speed_multiplier": 0.00975,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 42500.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 175.431,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint",
+     "projectile": "Item.Caliber.308Win",
+     "projectile_asset": "DA_308Winchester_ProjectileData",
+     "exit_speed_multiplier": 0.0195,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 42500.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 17.5431,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint.Tracer",
+     "projectile": "Item.Caliber.308Win",
+     "projectile_asset": "DA_308Winchester_ProjectileData",
+     "exit_speed_multiplier": 0.0195,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 42500.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 17.5431,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing",
+     "projectile": "Item.Caliber.308Win",
+     "projectile_asset": "DA_308Winchester_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.8,
+     "speed_scale_reference": 42500.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 315.775,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer",
+     "projectile": "Item.Caliber.308Win",
+     "projectile_asset": "DA_308Winchester_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.76,
+     "speed_scale_reference": 42500.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 308.758,
+     "launch_speed_scale": 1.0
+    }
+   ]
+  },
+  {
+   "id": "SR_04",
+   "caliber": "50Cal",
+   "stats_asset": "DA_SR_04_Stats",
+   "initial_bullet_speed": 90000.0,
+   "typical_speed_override": 31300.0,
+   "ammo": [
+    {
+     "ammo": "FMJ",
+     "modifier_tag": null,
+     "projectile": "Item.Caliber.50Cal",
+     "projectile_asset": "DA_50Cal_ProjectileData",
+     "exit_speed_multiplier": 0.05,
+     "penetration_effectiveness": 3.5,
+     "speed_scale_reference": 31300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 957.355,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.Tracer",
+     "projectile": "Item.Caliber.50Cal",
+     "projectile_asset": "DA_50Cal_ProjectileData",
+     "exit_speed_multiplier": 0.00375,
+     "penetration_effectiveness": 3.5,
+     "speed_scale_reference": 31300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 957.355,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint",
+     "projectile": "Item.Caliber.50Cal",
+     "projectile_asset": "DA_50Cal_ProjectileData",
+     "exit_speed_multiplier": 0.0075,
+     "penetration_effectiveness": 0.35,
+     "speed_scale_reference": 31300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 95.7355,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint.Tracer",
+     "projectile": "Item.Caliber.50Cal",
+     "projectile_asset": "DA_50Cal_ProjectileData",
+     "exit_speed_multiplier": 0.0075,
+     "penetration_effectiveness": 0.35,
+     "speed_scale_reference": 31300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 95.7355,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing",
+     "projectile": "Item.Caliber.50Cal",
+     "projectile_asset": "DA_50Cal_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 6.3,
+     "speed_scale_reference": 31300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 1723.24,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer",
+     "projectile": "Item.Caliber.50Cal",
+     "projectile_asset": "DA_50Cal_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 6.16,
+     "speed_scale_reference": 31300.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 1684.94,
+     "launch_speed_scale": 1.0
+    }
+   ]
+  },
+  {
+   "id": "WEPN_017",
+   "caliber": "762x54mm",
+   "stats_asset": "DA_WEPN_017_Stats",
+   "initial_bullet_speed": 86500.0,
+   "typical_speed_override": 37200.0,
+   "ammo": [
+    {
+     "ammo": "FMJ",
+     "modifier_tag": null,
+     "projectile": "Item.Caliber.762x54mm",
+     "projectile_asset": "DA_762x54mm_ProjectileData",
+     "exit_speed_multiplier": 0.14,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 37200.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 161.548,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.Tracer",
+     "projectile": "Item.Caliber.762x54mm",
+     "projectile_asset": "DA_762x54mm_ProjectileData",
+     "exit_speed_multiplier": 0.0105,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 37200.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 161.548,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint",
+     "projectile": "Item.Caliber.762x54mm",
+     "projectile_asset": "DA_762x54mm_ProjectileData",
+     "exit_speed_multiplier": 0.021,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 37200.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 16.1548,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint.Tracer",
+     "projectile": "Item.Caliber.762x54mm",
+     "projectile_asset": "DA_762x54mm_ProjectileData",
+     "exit_speed_multiplier": 0.021,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 37200.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 16.1548,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing",
+     "projectile": "Item.Caliber.762x54mm",
+     "projectile_asset": "DA_762x54mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.8,
+     "speed_scale_reference": 37200.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 290.786,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer",
+     "projectile": "Item.Caliber.762x54mm",
+     "projectile_asset": "DA_762x54mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.76,
+     "speed_scale_reference": 37200.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 284.324,
+     "launch_speed_scale": 1.0
+    }
+   ]
+  },
+  {
+   "id": "SV98",
+   "caliber": "762x54mm",
+   "stats_asset": "DA_SV98_Stats",
+   "initial_bullet_speed": 83000.0,
+   "typical_speed_override": 41500.0,
+   "ammo": [
+    {
+     "ammo": "FMJ",
+     "modifier_tag": null,
+     "projectile": "Item.Caliber.762x54mm",
+     "projectile_asset": "DA_762x54mm_ProjectileData",
+     "exit_speed_multiplier": 0.14,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 41500.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 155.011,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.Tracer",
+     "projectile": "Item.Caliber.762x54mm",
+     "projectile_asset": "DA_762x54mm_ProjectileData",
+     "exit_speed_multiplier": 0.0105,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 41500.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 155.011,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint",
+     "projectile": "Item.Caliber.762x54mm",
+     "projectile_asset": "DA_762x54mm_ProjectileData",
+     "exit_speed_multiplier": 0.021,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 41500.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 15.5011,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint.Tracer",
+     "projectile": "Item.Caliber.762x54mm",
+     "projectile_asset": "DA_762x54mm_ProjectileData",
+     "exit_speed_multiplier": 0.021,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 41500.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 15.5011,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing",
+     "projectile": "Item.Caliber.762x54mm",
+     "projectile_asset": "DA_762x54mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.8,
+     "speed_scale_reference": 41500.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 279.02,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer",
+     "projectile": "Item.Caliber.762x54mm",
+     "projectile_asset": "DA_762x54mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.76,
+     "speed_scale_reference": 41500.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 272.819,
+     "launch_speed_scale": 1.0
+    }
+   ]
+  },
+  {
+   "id": "WEPN_035",
+   "caliber": "556mm",
+   "stats_asset": "DA_WEPN_035_Stats",
+   "initial_bullet_speed": 97500.0,
+   "typical_speed_override": 57100.0,
+   "ammo": [
+    {
+     "ammo": "FMJ",
+     "modifier_tag": null,
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.18,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 57100.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 123.038,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.Tracer",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.0135,
+     "penetration_effectiveness": 1.0,
+     "speed_scale_reference": 57100.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 123.038,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.027,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 57100.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 12.3038,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "HollowPoint.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.HollowPoint.Tracer",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.027,
+     "penetration_effectiveness": 0.1,
+     "speed_scale_reference": 57100.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 12.3038,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.8,
+     "speed_scale_reference": 57100.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 221.468,
+     "launch_speed_scale": 1.0
+    },
+    {
+     "ammo": "ArmorPiercing.Tracer",
+     "modifier_tag": "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer",
+     "projectile": "Item.Caliber.556mm",
+     "projectile_asset": "DA_556mm_ProjectileData",
+     "exit_speed_multiplier": 0.0,
+     "penetration_effectiveness": 1.76,
+     "speed_scale_reference": 57100.0,
+     "min_impact_angle_for_ricochet_deg": 10.0,
+     "capacity_coefficient_k": 216.547,
+     "launch_speed_scale": 1.0
+    }
+   ]
+  }
+ ],
+ "reference": [
+  {
+   "weapon": "A91",
+   "ammo": "FMJ",
+   "launch_speed": 71500.0,
+   "speed_scale_reference": 40400.0,
+   "exit_speed_multiplier": 0.18,
+   "capacity_coefficient_k": 90.2278,
+   "surfaces": [
+    {
+     "surface_type": 4,
+     "name": "Brick",
+     "exit_speed_modifier": 0.3,
+     "surface_factor": 0.76,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.672525,
+      "0.75": 0.336262
+     }
+    },
+    {
+     "surface_type": 8,
+     "name": "Concrete",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.71,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 0.94242,
+      "0.5": 0.62828,
+      "0.75": 0.31414
+     }
+    },
+    {
+     "surface_type": 14,
+     "name": "Glass",
+     "exit_speed_modifier": 0.05,
+     "surface_factor": 0.885,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.783137,
+      "0.75": 0.391569
+     }
+    },
+    {
+     "surface_type": 23,
+     "name": "Metal",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.71,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 0.94242,
+      "0.5": 0.62828,
+      "0.75": 0.31414
+     }
+    },
+    {
+     "surface_type": 28,
+     "name": "Plaster",
+     "exit_speed_modifier": 0.25,
+     "surface_factor": 0.785,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.694647,
+      "0.75": 0.347324
+     }
+    },
+    {
+     "surface_type": 35,
+     "name": "Wood",
+     "exit_speed_modifier": 0.15,
+     "surface_factor": 0.835,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.738892,
+      "0.75": 0.369446
+     }
+    },
+    {
+     "surface_type": 38,
+     "name": "BulletProofGlass",
+     "exit_speed_modifier": 1.0,
+     "surface_factor": 0.41,
+     "next_impact_damage_fraction": {
+      "0": 0.725619,
+      "0.25": 0.544214,
+      "0.5": 0.362809,
+      "0.75": 0.181405
+     }
+    }
+   ]
+  },
+  {
+   "weapon": "A91",
+   "ammo": "Tracer",
+   "launch_speed": 71500.0,
+   "speed_scale_reference": 40400.0,
+   "exit_speed_multiplier": 0.0135,
+   "capacity_coefficient_k": 90.2278,
+   "surfaces": [
+    {
+     "surface_type": 4,
+     "name": "Brick",
+     "exit_speed_modifier": 0.3,
+     "surface_factor": 0.84325,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.746193,
+      "0.75": 0.373096
+     }
+    },
+    {
+     "surface_type": 8,
+     "name": "Concrete",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.79325,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.701948,
+      "0.75": 0.350974
+     }
+    },
+    {
+     "surface_type": 14,
+     "name": "Glass",
+     "exit_speed_modifier": 0.05,
+     "surface_factor": 0.96825,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.856805,
+      "0.75": 0.428403
+     }
+    },
+    {
+     "surface_type": 23,
+     "name": "Metal",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.79325,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.701948,
+      "0.75": 0.350974
+     }
+    },
+    {
+     "surface_type": 28,
+     "name": "Plaster",
+     "exit_speed_modifier": 0.25,
+     "surface_factor": 0.86825,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.768315,
+      "0.75": 0.384158
+     }
+    },
+    {
+     "surface_type": 35,
+     "name": "Wood",
+     "exit_speed_modifier": 0.15,
+     "surface_factor": 0.91825,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.81256,
+      "0.75": 0.40628
+     }
+    },
+    {
+     "surface_type": 38,
+     "name": "BulletProofGlass",
+     "exit_speed_modifier": 1.0,
+     "surface_factor": 0.49325,
+     "next_impact_damage_fraction": {
+      "0": 0.872955,
+      "0.25": 0.654716,
+      "0.5": 0.436477,
+      "0.75": 0.218239
+     }
+    }
+   ]
+  },
+  {
+   "weapon": "A91",
+   "ammo": "HollowPoint",
+   "launch_speed": 71500.0,
+   "speed_scale_reference": 40400.0,
+   "exit_speed_multiplier": 0.027,
+   "capacity_coefficient_k": 9.02278,
+   "surfaces": [
+    {
+     "surface_type": 4,
+     "name": "Brick",
+     "exit_speed_modifier": 0.3,
+     "surface_factor": 0.8365,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.74022,
+      "0.75": 0.37011
+     }
+    },
+    {
+     "surface_type": 8,
+     "name": "Concrete",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.7865,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.695975,
+      "0.75": 0.347987
+     }
+    },
+    {
+     "surface_type": 14,
+     "name": "Glass",
+     "exit_speed_modifier": 0.05,
+     "surface_factor": 0.9615,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.850832,
+      "0.75": 0.425416
+     }
+    },
+    {
+     "surface_type": 23,
+     "name": "Metal",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.7865,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.695975,
+      "0.75": 0.347987
+     }
+    },
+    {
+     "surface_type": 28,
+     "name": "Plaster",
+     "exit_speed_modifier": 0.25,
+     "surface_factor": 0.8615,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.762342,
+      "0.75": 0.381171
+     }
+    },
+    {
+     "surface_type": 35,
+     "name": "Wood",
+     "exit_speed_modifier": 0.15,
+     "surface_factor": 0.9115,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.806587,
+      "0.75": 0.403294
+     }
+    },
+    {
+     "surface_type": 38,
+     "name": "BulletProofGlass",
+     "exit_speed_modifier": 1.0,
+     "surface_factor": 0.4865,
+     "next_impact_damage_fraction": {
+      "0": 0.861009,
+      "0.25": 0.645756,
+      "0.5": 0.430504,
+      "0.75": 0.215252
+     }
+    }
+   ]
+  },
+  {
+   "weapon": "A91",
+   "ammo": "HollowPoint.Tracer",
+   "launch_speed": 71500.0,
+   "speed_scale_reference": 40400.0,
+   "exit_speed_multiplier": 0.027,
+   "capacity_coefficient_k": 9.02278,
+   "surfaces": [
+    {
+     "surface_type": 4,
+     "name": "Brick",
+     "exit_speed_modifier": 0.3,
+     "surface_factor": 0.8365,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.74022,
+      "0.75": 0.37011
+     }
+    },
+    {
+     "surface_type": 8,
+     "name": "Concrete",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.7865,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.695975,
+      "0.75": 0.347987
+     }
+    },
+    {
+     "surface_type": 14,
+     "name": "Glass",
+     "exit_speed_modifier": 0.05,
+     "surface_factor": 0.9615,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.850832,
+      "0.75": 0.425416
+     }
+    },
+    {
+     "surface_type": 23,
+     "name": "Metal",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.7865,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.695975,
+      "0.75": 0.347987
+     }
+    },
+    {
+     "surface_type": 28,
+     "name": "Plaster",
+     "exit_speed_modifier": 0.25,
+     "surface_factor": 0.8615,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.762342,
+      "0.75": 0.381171
+     }
+    },
+    {
+     "surface_type": 35,
+     "name": "Wood",
+     "exit_speed_modifier": 0.15,
+     "surface_factor": 0.9115,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.806587,
+      "0.75": 0.403294
+     }
+    },
+    {
+     "surface_type": 38,
+     "name": "BulletProofGlass",
+     "exit_speed_modifier": 1.0,
+     "surface_factor": 0.4865,
+     "next_impact_damage_fraction": {
+      "0": 0.861009,
+      "0.25": 0.645756,
+      "0.5": 0.430504,
+      "0.75": 0.215252
+     }
+    }
+   ]
+  },
+  {
+   "weapon": "A91",
+   "ammo": "ArmorPiercing",
+   "launch_speed": 71500.0,
+   "speed_scale_reference": 40400.0,
+   "exit_speed_multiplier": 0.0,
+   "capacity_coefficient_k": 162.41,
+   "surfaces": [
+    {
+     "surface_type": 4,
+     "name": "Brick",
+     "exit_speed_modifier": 0.3,
+     "surface_factor": 0.85,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.752166,
+      "0.75": 0.376083
+     }
+    },
+    {
+     "surface_type": 8,
+     "name": "Concrete",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.8,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.707921,
+      "0.75": 0.35396
+     }
+    },
+    {
+     "surface_type": 14,
+     "name": "Glass",
+     "exit_speed_modifier": 0.05,
+     "surface_factor": 0.975,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.862778,
+      "0.75": 0.431389
+     }
+    },
+    {
+     "surface_type": 23,
+     "name": "Metal",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.8,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.707921,
+      "0.75": 0.35396
+     }
+    },
+    {
+     "surface_type": 28,
+     "name": "Plaster",
+     "exit_speed_modifier": 0.25,
+     "surface_factor": 0.875,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.774288,
+      "0.75": 0.387144
+     }
+    },
+    {
+     "surface_type": 35,
+     "name": "Wood",
+     "exit_speed_modifier": 0.15,
+     "surface_factor": 0.925,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.818533,
+      "0.75": 0.409267
+     }
+    },
+    {
+     "surface_type": 38,
+     "name": "BulletProofGlass",
+     "exit_speed_modifier": 1.0,
+     "surface_factor": 0.5,
+     "next_impact_damage_fraction": {
+      "0": 0.884901,
+      "0.25": 0.663676,
+      "0.5": 0.44245,
+      "0.75": 0.221225
+     }
+    }
+   ]
+  },
+  {
+   "weapon": "A91",
+   "ammo": "ArmorPiercing.Tracer",
+   "launch_speed": 71500.0,
+   "speed_scale_reference": 40400.0,
+   "exit_speed_multiplier": 0.0,
+   "capacity_coefficient_k": 158.801,
+   "surfaces": [
+    {
+     "surface_type": 4,
+     "name": "Brick",
+     "exit_speed_modifier": 0.3,
+     "surface_factor": 0.85,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.752166,
+      "0.75": 0.376083
+     }
+    },
+    {
+     "surface_type": 8,
+     "name": "Concrete",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.8,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.707921,
+      "0.75": 0.35396
+     }
+    },
+    {
+     "surface_type": 14,
+     "name": "Glass",
+     "exit_speed_modifier": 0.05,
+     "surface_factor": 0.975,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.862778,
+      "0.75": 0.431389
+     }
+    },
+    {
+     "surface_type": 23,
+     "name": "Metal",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.8,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.707921,
+      "0.75": 0.35396
+     }
+    },
+    {
+     "surface_type": 28,
+     "name": "Plaster",
+     "exit_speed_modifier": 0.25,
+     "surface_factor": 0.875,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.774288,
+      "0.75": 0.387144
+     }
+    },
+    {
+     "surface_type": 35,
+     "name": "Wood",
+     "exit_speed_modifier": 0.15,
+     "surface_factor": 0.925,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.818533,
+      "0.75": 0.409267
+     }
+    },
+    {
+     "surface_type": 38,
+     "name": "BulletProofGlass",
+     "exit_speed_modifier": 1.0,
+     "surface_factor": 0.5,
+     "next_impact_damage_fraction": {
+      "0": 0.884901,
+      "0.25": 0.663676,
+      "0.5": 0.44245,
+      "0.75": 0.221225
+     }
+    }
+   ]
+  },
+  {
+   "weapon": "AK74M",
+   "ammo": "FMJ",
+   "launch_speed": 88000.0,
+   "speed_scale_reference": 30000.0,
+   "exit_speed_multiplier": 0.0,
+   "capacity_coefficient_k": 95.4082,
+   "surfaces": [
+    {
+     "surface_type": 4,
+     "name": "Brick",
+     "exit_speed_modifier": 0.3,
+     "surface_factor": 0.85,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.623333
+     }
+    },
+    {
+     "surface_type": 8,
+     "name": "Concrete",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.8,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.586667
+     }
+    },
+    {
+     "surface_type": 14,
+     "name": "Glass",
+     "exit_speed_modifier": 0.05,
+     "surface_factor": 0.975,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.715
+     }
+    },
+    {
+     "surface_type": 23,
+     "name": "Metal",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.8,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.586667
+     }
+    },
+    {
+     "surface_type": 28,
+     "name": "Plaster",
+     "exit_speed_modifier": 0.25,
+     "surface_factor": 0.875,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.641667
+     }
+    },
+    {
+     "surface_type": 35,
+     "name": "Wood",
+     "exit_speed_modifier": 0.15,
+     "surface_factor": 0.925,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.678333
+     }
+    },
+    {
+     "surface_type": 38,
+     "name": "BulletProofGlass",
+     "exit_speed_modifier": 1.0,
+     "surface_factor": 0.5,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.733333,
+      "0.75": 0.366667
+     }
+    }
+   ]
+  },
+  {
+   "weapon": "AK74M",
+   "ammo": "Tracer",
+   "launch_speed": 88000.0,
+   "speed_scale_reference": 30000.0,
+   "exit_speed_multiplier": 0.0,
+   "capacity_coefficient_k": 95.4082,
+   "surfaces": [
+    {
+     "surface_type": 4,
+     "name": "Brick",
+     "exit_speed_modifier": 0.3,
+     "surface_factor": 0.85,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.623333
+     }
+    },
+    {
+     "surface_type": 8,
+     "name": "Concrete",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.8,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.586667
+     }
+    },
+    {
+     "surface_type": 14,
+     "name": "Glass",
+     "exit_speed_modifier": 0.05,
+     "surface_factor": 0.975,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.715
+     }
+    },
+    {
+     "surface_type": 23,
+     "name": "Metal",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.8,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.586667
+     }
+    },
+    {
+     "surface_type": 28,
+     "name": "Plaster",
+     "exit_speed_modifier": 0.25,
+     "surface_factor": 0.875,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.641667
+     }
+    },
+    {
+     "surface_type": 35,
+     "name": "Wood",
+     "exit_speed_modifier": 0.15,
+     "surface_factor": 0.925,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.678333
+     }
+    },
+    {
+     "surface_type": 38,
+     "name": "BulletProofGlass",
+     "exit_speed_modifier": 1.0,
+     "surface_factor": 0.5,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.733333,
+      "0.75": 0.366667
+     }
+    }
+   ]
+  },
+  {
+   "weapon": "AK74M",
+   "ammo": "HollowPoint",
+   "launch_speed": 88000.0,
+   "speed_scale_reference": 30000.0,
+   "exit_speed_multiplier": 0.0,
+   "capacity_coefficient_k": 9.54082,
+   "surfaces": [
+    {
+     "surface_type": 4,
+     "name": "Brick",
+     "exit_speed_modifier": 0.3,
+     "surface_factor": 0.85,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.623333
+     }
+    },
+    {
+     "surface_type": 8,
+     "name": "Concrete",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.8,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.586667
+     }
+    },
+    {
+     "surface_type": 14,
+     "name": "Glass",
+     "exit_speed_modifier": 0.05,
+     "surface_factor": 0.975,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.715
+     }
+    },
+    {
+     "surface_type": 23,
+     "name": "Metal",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.8,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.586667
+     }
+    },
+    {
+     "surface_type": 28,
+     "name": "Plaster",
+     "exit_speed_modifier": 0.25,
+     "surface_factor": 0.875,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.641667
+     }
+    },
+    {
+     "surface_type": 35,
+     "name": "Wood",
+     "exit_speed_modifier": 0.15,
+     "surface_factor": 0.925,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.678333
+     }
+    },
+    {
+     "surface_type": 38,
+     "name": "BulletProofGlass",
+     "exit_speed_modifier": 1.0,
+     "surface_factor": 0.5,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.733333,
+      "0.75": 0.366667
+     }
+    }
+   ]
+  },
+  {
+   "weapon": "AK74M",
+   "ammo": "HollowPoint.Tracer",
+   "launch_speed": 88000.0,
+   "speed_scale_reference": 30000.0,
+   "exit_speed_multiplier": 0.0,
+   "capacity_coefficient_k": 9.54082,
+   "surfaces": [
+    {
+     "surface_type": 4,
+     "name": "Brick",
+     "exit_speed_modifier": 0.3,
+     "surface_factor": 0.85,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.623333
+     }
+    },
+    {
+     "surface_type": 8,
+     "name": "Concrete",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.8,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.586667
+     }
+    },
+    {
+     "surface_type": 14,
+     "name": "Glass",
+     "exit_speed_modifier": 0.05,
+     "surface_factor": 0.975,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.715
+     }
+    },
+    {
+     "surface_type": 23,
+     "name": "Metal",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.8,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.586667
+     }
+    },
+    {
+     "surface_type": 28,
+     "name": "Plaster",
+     "exit_speed_modifier": 0.25,
+     "surface_factor": 0.875,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.641667
+     }
+    },
+    {
+     "surface_type": 35,
+     "name": "Wood",
+     "exit_speed_modifier": 0.15,
+     "surface_factor": 0.925,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.678333
+     }
+    },
+    {
+     "surface_type": 38,
+     "name": "BulletProofGlass",
+     "exit_speed_modifier": 1.0,
+     "surface_factor": 0.5,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.733333,
+      "0.75": 0.366667
+     }
+    }
+   ]
+  },
+  {
+   "weapon": "AK74M",
+   "ammo": "ArmorPiercing",
+   "launch_speed": 88000.0,
+   "speed_scale_reference": 30000.0,
+   "exit_speed_multiplier": 0.0,
+   "capacity_coefficient_k": 171.735,
+   "surfaces": [
+    {
+     "surface_type": 4,
+     "name": "Brick",
+     "exit_speed_modifier": 0.3,
+     "surface_factor": 0.85,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.623333
+     }
+    },
+    {
+     "surface_type": 8,
+     "name": "Concrete",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.8,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.586667
+     }
+    },
+    {
+     "surface_type": 14,
+     "name": "Glass",
+     "exit_speed_modifier": 0.05,
+     "surface_factor": 0.975,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.715
+     }
+    },
+    {
+     "surface_type": 23,
+     "name": "Metal",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.8,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.586667
+     }
+    },
+    {
+     "surface_type": 28,
+     "name": "Plaster",
+     "exit_speed_modifier": 0.25,
+     "surface_factor": 0.875,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.641667
+     }
+    },
+    {
+     "surface_type": 35,
+     "name": "Wood",
+     "exit_speed_modifier": 0.15,
+     "surface_factor": 0.925,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.678333
+     }
+    },
+    {
+     "surface_type": 38,
+     "name": "BulletProofGlass",
+     "exit_speed_modifier": 1.0,
+     "surface_factor": 0.5,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.733333,
+      "0.75": 0.366667
+     }
+    }
+   ]
+  },
+  {
+   "weapon": "AK74M",
+   "ammo": "ArmorPiercing.Tracer",
+   "launch_speed": 88000.0,
+   "speed_scale_reference": 30000.0,
+   "exit_speed_multiplier": 0.0,
+   "capacity_coefficient_k": 167.918,
+   "surfaces": [
+    {
+     "surface_type": 4,
+     "name": "Brick",
+     "exit_speed_modifier": 0.3,
+     "surface_factor": 0.85,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.623333
+     }
+    },
+    {
+     "surface_type": 8,
+     "name": "Concrete",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.8,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.586667
+     }
+    },
+    {
+     "surface_type": 14,
+     "name": "Glass",
+     "exit_speed_modifier": 0.05,
+     "surface_factor": 0.975,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.715
+     }
+    },
+    {
+     "surface_type": 23,
+     "name": "Metal",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.8,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.586667
+     }
+    },
+    {
+     "surface_type": 28,
+     "name": "Plaster",
+     "exit_speed_modifier": 0.25,
+     "surface_factor": 0.875,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.641667
+     }
+    },
+    {
+     "surface_type": 35,
+     "name": "Wood",
+     "exit_speed_modifier": 0.15,
+     "surface_factor": 0.925,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.678333
+     }
+    },
+    {
+     "surface_type": 38,
+     "name": "BulletProofGlass",
+     "exit_speed_modifier": 1.0,
+     "surface_factor": 0.5,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.733333,
+      "0.75": 0.366667
+     }
+    }
+   ]
+  },
+  {
+   "weapon": "SV98",
+   "ammo": "FMJ",
+   "launch_speed": 83000.0,
+   "speed_scale_reference": 41500.0,
+   "exit_speed_multiplier": 0.14,
+   "capacity_coefficient_k": 155.011,
+   "surfaces": [
+    {
+     "surface_type": 4,
+     "name": "Brick",
+     "exit_speed_modifier": 0.3,
+     "surface_factor": 0.78,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.78,
+      "0.75": 0.39
+     }
+    },
+    {
+     "surface_type": 8,
+     "name": "Concrete",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.73,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.73,
+      "0.75": 0.365
+     }
+    },
+    {
+     "surface_type": 14,
+     "name": "Glass",
+     "exit_speed_modifier": 0.05,
+     "surface_factor": 0.905,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.905,
+      "0.75": 0.4525
+     }
+    },
+    {
+     "surface_type": 23,
+     "name": "Metal",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.73,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.73,
+      "0.75": 0.365
+     }
+    },
+    {
+     "surface_type": 28,
+     "name": "Plaster",
+     "exit_speed_modifier": 0.25,
+     "surface_factor": 0.805,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.805,
+      "0.75": 0.4025
+     }
+    },
+    {
+     "surface_type": 35,
+     "name": "Wood",
+     "exit_speed_modifier": 0.15,
+     "surface_factor": 0.855,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.855,
+      "0.75": 0.4275
+     }
+    },
+    {
+     "surface_type": 38,
+     "name": "BulletProofGlass",
+     "exit_speed_modifier": 1.0,
+     "surface_factor": 0.43,
+     "next_impact_damage_fraction": {
+      "0": 0.86,
+      "0.25": 0.645,
+      "0.5": 0.43,
+      "0.75": 0.215
+     }
+    }
+   ]
+  },
+  {
+   "weapon": "SV98",
+   "ammo": "Tracer",
+   "launch_speed": 83000.0,
+   "speed_scale_reference": 41500.0,
+   "exit_speed_multiplier": 0.0105,
+   "capacity_coefficient_k": 155.011,
+   "surfaces": [
+    {
+     "surface_type": 4,
+     "name": "Brick",
+     "exit_speed_modifier": 0.3,
+     "surface_factor": 0.84475,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.84475,
+      "0.75": 0.422375
+     }
+    },
+    {
+     "surface_type": 8,
+     "name": "Concrete",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.79475,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.79475,
+      "0.75": 0.397375
+     }
+    },
+    {
+     "surface_type": 14,
+     "name": "Glass",
+     "exit_speed_modifier": 0.05,
+     "surface_factor": 0.96975,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.96975,
+      "0.75": 0.484875
+     }
+    },
+    {
+     "surface_type": 23,
+     "name": "Metal",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.79475,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.79475,
+      "0.75": 0.397375
+     }
+    },
+    {
+     "surface_type": 28,
+     "name": "Plaster",
+     "exit_speed_modifier": 0.25,
+     "surface_factor": 0.86975,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.86975,
+      "0.75": 0.434875
+     }
+    },
+    {
+     "surface_type": 35,
+     "name": "Wood",
+     "exit_speed_modifier": 0.15,
+     "surface_factor": 0.91975,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.91975,
+      "0.75": 0.459875
+     }
+    },
+    {
+     "surface_type": 38,
+     "name": "BulletProofGlass",
+     "exit_speed_modifier": 1.0,
+     "surface_factor": 0.49475,
+     "next_impact_damage_fraction": {
+      "0": 0.9895,
+      "0.25": 0.742125,
+      "0.5": 0.49475,
+      "0.75": 0.247375
+     }
+    }
+   ]
+  },
+  {
+   "weapon": "SV98",
+   "ammo": "HollowPoint",
+   "launch_speed": 83000.0,
+   "speed_scale_reference": 41500.0,
+   "exit_speed_multiplier": 0.021,
+   "capacity_coefficient_k": 15.5011,
+   "surfaces": [
+    {
+     "surface_type": 4,
+     "name": "Brick",
+     "exit_speed_modifier": 0.3,
+     "surface_factor": 0.8395,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.8395,
+      "0.75": 0.41975
+     }
+    },
+    {
+     "surface_type": 8,
+     "name": "Concrete",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.7895,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.7895,
+      "0.75": 0.39475
+     }
+    },
+    {
+     "surface_type": 14,
+     "name": "Glass",
+     "exit_speed_modifier": 0.05,
+     "surface_factor": 0.9645,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.9645,
+      "0.75": 0.48225
+     }
+    },
+    {
+     "surface_type": 23,
+     "name": "Metal",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.7895,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.7895,
+      "0.75": 0.39475
+     }
+    },
+    {
+     "surface_type": 28,
+     "name": "Plaster",
+     "exit_speed_modifier": 0.25,
+     "surface_factor": 0.8645,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.8645,
+      "0.75": 0.43225
+     }
+    },
+    {
+     "surface_type": 35,
+     "name": "Wood",
+     "exit_speed_modifier": 0.15,
+     "surface_factor": 0.9145,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.9145,
+      "0.75": 0.45725
+     }
+    },
+    {
+     "surface_type": 38,
+     "name": "BulletProofGlass",
+     "exit_speed_modifier": 1.0,
+     "surface_factor": 0.4895,
+     "next_impact_damage_fraction": {
+      "0": 0.979,
+      "0.25": 0.73425,
+      "0.5": 0.4895,
+      "0.75": 0.24475
+     }
+    }
+   ]
+  },
+  {
+   "weapon": "SV98",
+   "ammo": "HollowPoint.Tracer",
+   "launch_speed": 83000.0,
+   "speed_scale_reference": 41500.0,
+   "exit_speed_multiplier": 0.021,
+   "capacity_coefficient_k": 15.5011,
+   "surfaces": [
+    {
+     "surface_type": 4,
+     "name": "Brick",
+     "exit_speed_modifier": 0.3,
+     "surface_factor": 0.8395,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.8395,
+      "0.75": 0.41975
+     }
+    },
+    {
+     "surface_type": 8,
+     "name": "Concrete",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.7895,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.7895,
+      "0.75": 0.39475
+     }
+    },
+    {
+     "surface_type": 14,
+     "name": "Glass",
+     "exit_speed_modifier": 0.05,
+     "surface_factor": 0.9645,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.9645,
+      "0.75": 0.48225
+     }
+    },
+    {
+     "surface_type": 23,
+     "name": "Metal",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.7895,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.7895,
+      "0.75": 0.39475
+     }
+    },
+    {
+     "surface_type": 28,
+     "name": "Plaster",
+     "exit_speed_modifier": 0.25,
+     "surface_factor": 0.8645,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.8645,
+      "0.75": 0.43225
+     }
+    },
+    {
+     "surface_type": 35,
+     "name": "Wood",
+     "exit_speed_modifier": 0.15,
+     "surface_factor": 0.9145,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.9145,
+      "0.75": 0.45725
+     }
+    },
+    {
+     "surface_type": 38,
+     "name": "BulletProofGlass",
+     "exit_speed_modifier": 1.0,
+     "surface_factor": 0.4895,
+     "next_impact_damage_fraction": {
+      "0": 0.979,
+      "0.25": 0.73425,
+      "0.5": 0.4895,
+      "0.75": 0.24475
+     }
+    }
+   ]
+  },
+  {
+   "weapon": "SV98",
+   "ammo": "ArmorPiercing",
+   "launch_speed": 83000.0,
+   "speed_scale_reference": 41500.0,
+   "exit_speed_multiplier": 0.0,
+   "capacity_coefficient_k": 279.02,
+   "surfaces": [
+    {
+     "surface_type": 4,
+     "name": "Brick",
+     "exit_speed_modifier": 0.3,
+     "surface_factor": 0.85,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.85,
+      "0.75": 0.425
+     }
+    },
+    {
+     "surface_type": 8,
+     "name": "Concrete",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.8,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.8,
+      "0.75": 0.4
+     }
+    },
+    {
+     "surface_type": 14,
+     "name": "Glass",
+     "exit_speed_modifier": 0.05,
+     "surface_factor": 0.975,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.975,
+      "0.75": 0.4875
+     }
+    },
+    {
+     "surface_type": 23,
+     "name": "Metal",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.8,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.8,
+      "0.75": 0.4
+     }
+    },
+    {
+     "surface_type": 28,
+     "name": "Plaster",
+     "exit_speed_modifier": 0.25,
+     "surface_factor": 0.875,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.875,
+      "0.75": 0.4375
+     }
+    },
+    {
+     "surface_type": 35,
+     "name": "Wood",
+     "exit_speed_modifier": 0.15,
+     "surface_factor": 0.925,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.925,
+      "0.75": 0.4625
+     }
+    },
+    {
+     "surface_type": 38,
+     "name": "BulletProofGlass",
+     "exit_speed_modifier": 1.0,
+     "surface_factor": 0.5,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 0.75,
+      "0.5": 0.5,
+      "0.75": 0.25
+     }
+    }
+   ]
+  },
+  {
+   "weapon": "SV98",
+   "ammo": "ArmorPiercing.Tracer",
+   "launch_speed": 83000.0,
+   "speed_scale_reference": 41500.0,
+   "exit_speed_multiplier": 0.0,
+   "capacity_coefficient_k": 272.819,
+   "surfaces": [
+    {
+     "surface_type": 4,
+     "name": "Brick",
+     "exit_speed_modifier": 0.3,
+     "surface_factor": 0.85,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.85,
+      "0.75": 0.425
+     }
+    },
+    {
+     "surface_type": 8,
+     "name": "Concrete",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.8,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.8,
+      "0.75": 0.4
+     }
+    },
+    {
+     "surface_type": 14,
+     "name": "Glass",
+     "exit_speed_modifier": 0.05,
+     "surface_factor": 0.975,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.975,
+      "0.75": 0.4875
+     }
+    },
+    {
+     "surface_type": 23,
+     "name": "Metal",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.8,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.8,
+      "0.75": 0.4
+     }
+    },
+    {
+     "surface_type": 28,
+     "name": "Plaster",
+     "exit_speed_modifier": 0.25,
+     "surface_factor": 0.875,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.875,
+      "0.75": 0.4375
+     }
+    },
+    {
+     "surface_type": 35,
+     "name": "Wood",
+     "exit_speed_modifier": 0.15,
+     "surface_factor": 0.925,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.925,
+      "0.75": 0.4625
+     }
+    },
+    {
+     "surface_type": 38,
+     "name": "BulletProofGlass",
+     "exit_speed_modifier": 1.0,
+     "surface_factor": 0.5,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 0.75,
+      "0.5": 0.5,
+      "0.75": 0.25
+     }
+    }
+   ]
+  },
+  {
+   "weapon": "SR_04",
+   "ammo": "FMJ",
+   "launch_speed": 90000.0,
+   "speed_scale_reference": 31300.0,
+   "exit_speed_multiplier": 0.05,
+   "capacity_coefficient_k": 957.355,
+   "surfaces": [
+    {
+     "surface_type": 4,
+     "name": "Brick",
+     "exit_speed_modifier": 0.3,
+     "surface_factor": 0.825,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.593051
+     }
+    },
+    {
+     "surface_type": 8,
+     "name": "Concrete",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.775,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.557109
+     }
+    },
+    {
+     "surface_type": 14,
+     "name": "Glass",
+     "exit_speed_modifier": 0.05,
+     "surface_factor": 0.95,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.682907
+     }
+    },
+    {
+     "surface_type": 23,
+     "name": "Metal",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.775,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.557109
+     }
+    },
+    {
+     "surface_type": 28,
+     "name": "Plaster",
+     "exit_speed_modifier": 0.25,
+     "surface_factor": 0.85,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.611022
+     }
+    },
+    {
+     "surface_type": 35,
+     "name": "Wood",
+     "exit_speed_modifier": 0.15,
+     "surface_factor": 0.9,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.646965
+     }
+    },
+    {
+     "surface_type": 38,
+     "name": "BulletProofGlass",
+     "exit_speed_modifier": 1.0,
+     "surface_factor": 0.475,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.682907,
+      "0.75": 0.341454
+     }
+    }
+   ]
+  },
+  {
+   "weapon": "SR_04",
+   "ammo": "Tracer",
+   "launch_speed": 90000.0,
+   "speed_scale_reference": 31300.0,
+   "exit_speed_multiplier": 0.00375,
+   "capacity_coefficient_k": 957.355,
+   "surfaces": [
+    {
+     "surface_type": 4,
+     "name": "Brick",
+     "exit_speed_modifier": 0.3,
+     "surface_factor": 0.848125,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.609675
+     }
+    },
+    {
+     "surface_type": 8,
+     "name": "Concrete",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.798125,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.573732
+     }
+    },
+    {
+     "surface_type": 14,
+     "name": "Glass",
+     "exit_speed_modifier": 0.05,
+     "surface_factor": 0.973125,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.699531
+     }
+    },
+    {
+     "surface_type": 23,
+     "name": "Metal",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.798125,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.573732
+     }
+    },
+    {
+     "surface_type": 28,
+     "name": "Plaster",
+     "exit_speed_modifier": 0.25,
+     "surface_factor": 0.873125,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.627646
+     }
+    },
+    {
+     "surface_type": 35,
+     "name": "Wood",
+     "exit_speed_modifier": 0.15,
+     "surface_factor": 0.923125,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.663588
+     }
+    },
+    {
+     "surface_type": 38,
+     "name": "BulletProofGlass",
+     "exit_speed_modifier": 1.0,
+     "surface_factor": 0.498125,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.716154,
+      "0.75": 0.358077
+     }
+    }
+   ]
+  },
+  {
+   "weapon": "SR_04",
+   "ammo": "HollowPoint",
+   "launch_speed": 90000.0,
+   "speed_scale_reference": 31300.0,
+   "exit_speed_multiplier": 0.0075,
+   "capacity_coefficient_k": 95.7355,
+   "surfaces": [
+    {
+     "surface_type": 4,
+     "name": "Brick",
+     "exit_speed_modifier": 0.3,
+     "surface_factor": 0.84625,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.608327
+     }
+    },
+    {
+     "surface_type": 8,
+     "name": "Concrete",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.79625,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.572384
+     }
+    },
+    {
+     "surface_type": 14,
+     "name": "Glass",
+     "exit_speed_modifier": 0.05,
+     "surface_factor": 0.97125,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.698183
+     }
+    },
+    {
+     "surface_type": 23,
+     "name": "Metal",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.79625,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.572384
+     }
+    },
+    {
+     "surface_type": 28,
+     "name": "Plaster",
+     "exit_speed_modifier": 0.25,
+     "surface_factor": 0.87125,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.626298
+     }
+    },
+    {
+     "surface_type": 35,
+     "name": "Wood",
+     "exit_speed_modifier": 0.15,
+     "surface_factor": 0.92125,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.66224
+     }
+    },
+    {
+     "surface_type": 38,
+     "name": "BulletProofGlass",
+     "exit_speed_modifier": 1.0,
+     "surface_factor": 0.49625,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.713458,
+      "0.75": 0.356729
+     }
+    }
+   ]
+  },
+  {
+   "weapon": "SR_04",
+   "ammo": "HollowPoint.Tracer",
+   "launch_speed": 90000.0,
+   "speed_scale_reference": 31300.0,
+   "exit_speed_multiplier": 0.0075,
+   "capacity_coefficient_k": 95.7355,
+   "surfaces": [
+    {
+     "surface_type": 4,
+     "name": "Brick",
+     "exit_speed_modifier": 0.3,
+     "surface_factor": 0.84625,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.608327
+     }
+    },
+    {
+     "surface_type": 8,
+     "name": "Concrete",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.79625,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.572384
+     }
+    },
+    {
+     "surface_type": 14,
+     "name": "Glass",
+     "exit_speed_modifier": 0.05,
+     "surface_factor": 0.97125,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.698183
+     }
+    },
+    {
+     "surface_type": 23,
+     "name": "Metal",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.79625,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.572384
+     }
+    },
+    {
+     "surface_type": 28,
+     "name": "Plaster",
+     "exit_speed_modifier": 0.25,
+     "surface_factor": 0.87125,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.626298
+     }
+    },
+    {
+     "surface_type": 35,
+     "name": "Wood",
+     "exit_speed_modifier": 0.15,
+     "surface_factor": 0.92125,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.66224
+     }
+    },
+    {
+     "surface_type": 38,
+     "name": "BulletProofGlass",
+     "exit_speed_modifier": 1.0,
+     "surface_factor": 0.49625,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.713458,
+      "0.75": 0.356729
+     }
+    }
+   ]
+  },
+  {
+   "weapon": "SR_04",
+   "ammo": "ArmorPiercing",
+   "launch_speed": 90000.0,
+   "speed_scale_reference": 31300.0,
+   "exit_speed_multiplier": 0.0,
+   "capacity_coefficient_k": 1723.24,
+   "surfaces": [
+    {
+     "surface_type": 4,
+     "name": "Brick",
+     "exit_speed_modifier": 0.3,
+     "surface_factor": 0.85,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.611022
+     }
+    },
+    {
+     "surface_type": 8,
+     "name": "Concrete",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.8,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.57508
+     }
+    },
+    {
+     "surface_type": 14,
+     "name": "Glass",
+     "exit_speed_modifier": 0.05,
+     "surface_factor": 0.975,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.700879
+     }
+    },
+    {
+     "surface_type": 23,
+     "name": "Metal",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.8,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.57508
+     }
+    },
+    {
+     "surface_type": 28,
+     "name": "Plaster",
+     "exit_speed_modifier": 0.25,
+     "surface_factor": 0.875,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.628994
+     }
+    },
+    {
+     "surface_type": 35,
+     "name": "Wood",
+     "exit_speed_modifier": 0.15,
+     "surface_factor": 0.925,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.664936
+     }
+    },
+    {
+     "surface_type": 38,
+     "name": "BulletProofGlass",
+     "exit_speed_modifier": 1.0,
+     "surface_factor": 0.5,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.71885,
+      "0.75": 0.359425
+     }
+    }
+   ]
+  },
+  {
+   "weapon": "SR_04",
+   "ammo": "ArmorPiercing.Tracer",
+   "launch_speed": 90000.0,
+   "speed_scale_reference": 31300.0,
+   "exit_speed_multiplier": 0.0,
+   "capacity_coefficient_k": 1684.94,
+   "surfaces": [
+    {
+     "surface_type": 4,
+     "name": "Brick",
+     "exit_speed_modifier": 0.3,
+     "surface_factor": 0.85,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.611022
+     }
+    },
+    {
+     "surface_type": 8,
+     "name": "Concrete",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.8,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.57508
+     }
+    },
+    {
+     "surface_type": 14,
+     "name": "Glass",
+     "exit_speed_modifier": 0.05,
+     "surface_factor": 0.975,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.700879
+     }
+    },
+    {
+     "surface_type": 23,
+     "name": "Metal",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.8,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.57508
+     }
+    },
+    {
+     "surface_type": 28,
+     "name": "Plaster",
+     "exit_speed_modifier": 0.25,
+     "surface_factor": 0.875,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.628994
+     }
+    },
+    {
+     "surface_type": 35,
+     "name": "Wood",
+     "exit_speed_modifier": 0.15,
+     "surface_factor": 0.925,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 0.664936
+     }
+    },
+    {
+     "surface_type": 38,
+     "name": "BulletProofGlass",
+     "exit_speed_modifier": 1.0,
+     "surface_factor": 0.5,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 1.0,
+      "0.5": 0.71885,
+      "0.75": 0.359425
+     }
+    }
+   ]
+  },
+  {
+   "weapon": "Glock17",
+   "ammo": "FMJ",
+   "launch_speed": 37500.0,
+   "speed_scale_reference": 30000.0,
+   "exit_speed_multiplier": 0.35,
+   "capacity_coefficient_k": 32.2853,
+   "surfaces": [
+    {
+     "surface_type": 4,
+     "name": "Brick",
+     "exit_speed_modifier": 0.3,
+     "surface_factor": 0.675,
+     "next_impact_damage_fraction": {
+      "0": 0.84375,
+      "0.25": 0.632812,
+      "0.5": 0.421875,
+      "0.75": 0.210938
+     }
+    },
+    {
+     "surface_type": 8,
+     "name": "Concrete",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.625,
+     "next_impact_damage_fraction": {
+      "0": 0.78125,
+      "0.25": 0.585938,
+      "0.5": 0.390625,
+      "0.75": 0.195312
+     }
+    },
+    {
+     "surface_type": 14,
+     "name": "Glass",
+     "exit_speed_modifier": 0.05,
+     "surface_factor": 0.8,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 0.75,
+      "0.5": 0.5,
+      "0.75": 0.25
+     }
+    },
+    {
+     "surface_type": 23,
+     "name": "Metal",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.625,
+     "next_impact_damage_fraction": {
+      "0": 0.78125,
+      "0.25": 0.585938,
+      "0.5": 0.390625,
+      "0.75": 0.195312
+     }
+    },
+    {
+     "surface_type": 28,
+     "name": "Plaster",
+     "exit_speed_modifier": 0.25,
+     "surface_factor": 0.7,
+     "next_impact_damage_fraction": {
+      "0": 0.875,
+      "0.25": 0.65625,
+      "0.5": 0.4375,
+      "0.75": 0.21875
+     }
+    },
+    {
+     "surface_type": 35,
+     "name": "Wood",
+     "exit_speed_modifier": 0.15,
+     "surface_factor": 0.75,
+     "next_impact_damage_fraction": {
+      "0": 0.9375,
+      "0.25": 0.703125,
+      "0.5": 0.46875,
+      "0.75": 0.234375
+     }
+    },
+    {
+     "surface_type": 38,
+     "name": "BulletProofGlass",
+     "exit_speed_modifier": 1.0,
+     "surface_factor": 0.325,
+     "next_impact_damage_fraction": {
+      "0": 0.40625,
+      "0.25": 0.304687,
+      "0.5": 0.203125,
+      "0.75": 0.101562
+     }
+    }
+   ]
+  },
+  {
+   "weapon": "Glock17",
+   "ammo": "Tracer",
+   "launch_speed": 37500.0,
+   "speed_scale_reference": 30000.0,
+   "exit_speed_multiplier": 0.02625,
+   "capacity_coefficient_k": 32.2853,
+   "surfaces": [
+    {
+     "surface_type": 4,
+     "name": "Brick",
+     "exit_speed_modifier": 0.3,
+     "surface_factor": 0.836875,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 0.78457,
+      "0.5": 0.523047,
+      "0.75": 0.261523
+     }
+    },
+    {
+     "surface_type": 8,
+     "name": "Concrete",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.786875,
+     "next_impact_damage_fraction": {
+      "0": 0.983594,
+      "0.25": 0.737695,
+      "0.5": 0.491797,
+      "0.75": 0.245898
+     }
+    },
+    {
+     "surface_type": 14,
+     "name": "Glass",
+     "exit_speed_modifier": 0.05,
+     "surface_factor": 0.961875,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 0.901758,
+      "0.5": 0.601172,
+      "0.75": 0.300586
+     }
+    },
+    {
+     "surface_type": 23,
+     "name": "Metal",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.786875,
+     "next_impact_damage_fraction": {
+      "0": 0.983594,
+      "0.25": 0.737695,
+      "0.5": 0.491797,
+      "0.75": 0.245898
+     }
+    },
+    {
+     "surface_type": 28,
+     "name": "Plaster",
+     "exit_speed_modifier": 0.25,
+     "surface_factor": 0.861875,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 0.808008,
+      "0.5": 0.538672,
+      "0.75": 0.269336
+     }
+    },
+    {
+     "surface_type": 35,
+     "name": "Wood",
+     "exit_speed_modifier": 0.15,
+     "surface_factor": 0.911875,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 0.854883,
+      "0.5": 0.569922,
+      "0.75": 0.284961
+     }
+    },
+    {
+     "surface_type": 38,
+     "name": "BulletProofGlass",
+     "exit_speed_modifier": 1.0,
+     "surface_factor": 0.486875,
+     "next_impact_damage_fraction": {
+      "0": 0.608594,
+      "0.25": 0.456445,
+      "0.5": 0.304297,
+      "0.75": 0.152148
+     }
+    }
+   ]
+  },
+  {
+   "weapon": "Glock17",
+   "ammo": "HollowPoint",
+   "launch_speed": 37500.0,
+   "speed_scale_reference": 30000.0,
+   "exit_speed_multiplier": 0.0525,
+   "capacity_coefficient_k": 3.22853,
+   "surfaces": [
+    {
+     "surface_type": 4,
+     "name": "Brick",
+     "exit_speed_modifier": 0.3,
+     "surface_factor": 0.82375,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 0.772266,
+      "0.5": 0.514844,
+      "0.75": 0.257422
+     }
+    },
+    {
+     "surface_type": 8,
+     "name": "Concrete",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.77375,
+     "next_impact_damage_fraction": {
+      "0": 0.967187,
+      "0.25": 0.725391,
+      "0.5": 0.483594,
+      "0.75": 0.241797
+     }
+    },
+    {
+     "surface_type": 14,
+     "name": "Glass",
+     "exit_speed_modifier": 0.05,
+     "surface_factor": 0.94875,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 0.889453,
+      "0.5": 0.592969,
+      "0.75": 0.296484
+     }
+    },
+    {
+     "surface_type": 23,
+     "name": "Metal",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.77375,
+     "next_impact_damage_fraction": {
+      "0": 0.967187,
+      "0.25": 0.725391,
+      "0.5": 0.483594,
+      "0.75": 0.241797
+     }
+    },
+    {
+     "surface_type": 28,
+     "name": "Plaster",
+     "exit_speed_modifier": 0.25,
+     "surface_factor": 0.84875,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 0.795703,
+      "0.5": 0.530469,
+      "0.75": 0.265234
+     }
+    },
+    {
+     "surface_type": 35,
+     "name": "Wood",
+     "exit_speed_modifier": 0.15,
+     "surface_factor": 0.89875,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 0.842578,
+      "0.5": 0.561719,
+      "0.75": 0.280859
+     }
+    },
+    {
+     "surface_type": 38,
+     "name": "BulletProofGlass",
+     "exit_speed_modifier": 1.0,
+     "surface_factor": 0.47375,
+     "next_impact_damage_fraction": {
+      "0": 0.592187,
+      "0.25": 0.444141,
+      "0.5": 0.296094,
+      "0.75": 0.148047
+     }
+    }
+   ]
+  },
+  {
+   "weapon": "Glock17",
+   "ammo": "HollowPoint.Tracer",
+   "launch_speed": 37500.0,
+   "speed_scale_reference": 30000.0,
+   "exit_speed_multiplier": 0.0525,
+   "capacity_coefficient_k": 3.22853,
+   "surfaces": [
+    {
+     "surface_type": 4,
+     "name": "Brick",
+     "exit_speed_modifier": 0.3,
+     "surface_factor": 0.82375,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 0.772266,
+      "0.5": 0.514844,
+      "0.75": 0.257422
+     }
+    },
+    {
+     "surface_type": 8,
+     "name": "Concrete",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.77375,
+     "next_impact_damage_fraction": {
+      "0": 0.967187,
+      "0.25": 0.725391,
+      "0.5": 0.483594,
+      "0.75": 0.241797
+     }
+    },
+    {
+     "surface_type": 14,
+     "name": "Glass",
+     "exit_speed_modifier": 0.05,
+     "surface_factor": 0.94875,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 0.889453,
+      "0.5": 0.592969,
+      "0.75": 0.296484
+     }
+    },
+    {
+     "surface_type": 23,
+     "name": "Metal",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.77375,
+     "next_impact_damage_fraction": {
+      "0": 0.967187,
+      "0.25": 0.725391,
+      "0.5": 0.483594,
+      "0.75": 0.241797
+     }
+    },
+    {
+     "surface_type": 28,
+     "name": "Plaster",
+     "exit_speed_modifier": 0.25,
+     "surface_factor": 0.84875,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 0.795703,
+      "0.5": 0.530469,
+      "0.75": 0.265234
+     }
+    },
+    {
+     "surface_type": 35,
+     "name": "Wood",
+     "exit_speed_modifier": 0.15,
+     "surface_factor": 0.89875,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 0.842578,
+      "0.5": 0.561719,
+      "0.75": 0.280859
+     }
+    },
+    {
+     "surface_type": 38,
+     "name": "BulletProofGlass",
+     "exit_speed_modifier": 1.0,
+     "surface_factor": 0.47375,
+     "next_impact_damage_fraction": {
+      "0": 0.592187,
+      "0.25": 0.444141,
+      "0.5": 0.296094,
+      "0.75": 0.148047
+     }
+    }
+   ]
+  },
+  {
+   "weapon": "Glock17",
+   "ammo": "ArmorPiercing",
+   "launch_speed": 37500.0,
+   "speed_scale_reference": 30000.0,
+   "exit_speed_multiplier": 0.0,
+   "capacity_coefficient_k": 58.1136,
+   "surfaces": [
+    {
+     "surface_type": 4,
+     "name": "Brick",
+     "exit_speed_modifier": 0.3,
+     "surface_factor": 0.85,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 0.796875,
+      "0.5": 0.53125,
+      "0.75": 0.265625
+     }
+    },
+    {
+     "surface_type": 8,
+     "name": "Concrete",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.8,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 0.75,
+      "0.5": 0.5,
+      "0.75": 0.25
+     }
+    },
+    {
+     "surface_type": 14,
+     "name": "Glass",
+     "exit_speed_modifier": 0.05,
+     "surface_factor": 0.975,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 0.914062,
+      "0.5": 0.609375,
+      "0.75": 0.304688
+     }
+    },
+    {
+     "surface_type": 23,
+     "name": "Metal",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.8,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 0.75,
+      "0.5": 0.5,
+      "0.75": 0.25
+     }
+    },
+    {
+     "surface_type": 28,
+     "name": "Plaster",
+     "exit_speed_modifier": 0.25,
+     "surface_factor": 0.875,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 0.820312,
+      "0.5": 0.546875,
+      "0.75": 0.273438
+     }
+    },
+    {
+     "surface_type": 35,
+     "name": "Wood",
+     "exit_speed_modifier": 0.15,
+     "surface_factor": 0.925,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 0.867188,
+      "0.5": 0.578125,
+      "0.75": 0.289062
+     }
+    },
+    {
+     "surface_type": 38,
+     "name": "BulletProofGlass",
+     "exit_speed_modifier": 1.0,
+     "surface_factor": 0.5,
+     "next_impact_damage_fraction": {
+      "0": 0.625,
+      "0.25": 0.46875,
+      "0.5": 0.3125,
+      "0.75": 0.15625
+     }
+    }
+   ]
+  },
+  {
+   "weapon": "Glock17",
+   "ammo": "ArmorPiercing.Tracer",
+   "launch_speed": 37500.0,
+   "speed_scale_reference": 30000.0,
+   "exit_speed_multiplier": 0.0,
+   "capacity_coefficient_k": 56.8222,
+   "surfaces": [
+    {
+     "surface_type": 4,
+     "name": "Brick",
+     "exit_speed_modifier": 0.3,
+     "surface_factor": 0.85,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 0.796875,
+      "0.5": 0.53125,
+      "0.75": 0.265625
+     }
+    },
+    {
+     "surface_type": 8,
+     "name": "Concrete",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.8,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 0.75,
+      "0.5": 0.5,
+      "0.75": 0.25
+     }
+    },
+    {
+     "surface_type": 14,
+     "name": "Glass",
+     "exit_speed_modifier": 0.05,
+     "surface_factor": 0.975,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 0.914062,
+      "0.5": 0.609375,
+      "0.75": 0.304688
+     }
+    },
+    {
+     "surface_type": 23,
+     "name": "Metal",
+     "exit_speed_modifier": 0.4,
+     "surface_factor": 0.8,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 0.75,
+      "0.5": 0.5,
+      "0.75": 0.25
+     }
+    },
+    {
+     "surface_type": 28,
+     "name": "Plaster",
+     "exit_speed_modifier": 0.25,
+     "surface_factor": 0.875,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 0.820312,
+      "0.5": 0.546875,
+      "0.75": 0.273438
+     }
+    },
+    {
+     "surface_type": 35,
+     "name": "Wood",
+     "exit_speed_modifier": 0.15,
+     "surface_factor": 0.925,
+     "next_impact_damage_fraction": {
+      "0": 1.0,
+      "0.25": 0.867188,
+      "0.5": 0.578125,
+      "0.75": 0.289062
+     }
+    },
+    {
+     "surface_type": 38,
+     "name": "BulletProofGlass",
+     "exit_speed_modifier": 1.0,
+     "surface_factor": 0.5,
+     "next_impact_damage_fraction": {
+      "0": 0.625,
+      "0.25": 0.46875,
+      "0.5": 0.3125,
+      "0.75": 0.15625
+     }
+    }
+   ]
+  }
+ ],
+ "known_physical_materials": {
+  "PM_Head": {
+   "surface_type": 17,
+   "density": 0.2,
+   "source": "docs/evidence/round8-collision.md"
+  },
+  "PM_Body": {
+   "surface_type": 3,
+   "density": 1.0,
+   "density_note": "omitted in the asset; native UPhysicalMaterial default",
+   "source": "docs/evidence/round8-collision.md"
+  }
+ }
+}

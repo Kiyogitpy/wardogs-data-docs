@@ -444,13 +444,13 @@ input:focus-visible {
 // Home page: hero, pill buttons, category cards.
 .wd-hero {
   display: grid;
-  gap: 1rem 3rem;
+  gap: 0 3rem;
   align-items: start;
   padding: 2rem 0 1rem;
 
   // Text and "Finding things" stack on the left; the viewer previews run down the right.
   @media (min-width: 62rem) {
-    grid-template-columns: minmax(0, 1fr) minmax(18rem, 24rem);
+    grid-template-columns: minmax(0, 1fr) minmax(16rem, 20rem);
     .wd-hero-text { grid-column: 1; grid-row: 1; }
     .wd-hero-finding { grid-column: 1; grid-row: 2; }
     .wd-hero-viewers { grid-column: 2; grid-row: 1 / span 2; }
@@ -465,8 +465,9 @@ input:focus-visible {
     font-size: 1.15rem;
     color: $ue-text;
     max-width: 60ch;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
+  .wd-hero-finding h2 { margin-top: 0; }
   p code {
     white-space: nowrap;
   }

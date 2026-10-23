@@ -191,7 +191,9 @@ a plain multiplicative chain. Neither is established, so it is withdrawn.
 1. **Speed after drag.** Damage also scales with impact speed below the
    reference speed. How fast each round slows is read from native code in
    [Projectile Flight](Wardogs_ProjectileFlight_v1.md) (drag acceleration,
-   §5); the damage tables here do not apply it yet.
+   §5); the damage tables here do not apply it yet. How the projectile's
+   trace becomes the hit and the event is in
+   [Hit Registration](Wardogs_HitRegistration_v1.md).
 
 Ammo types against armor are tabled in DamagePipeline §7.9.
 
