@@ -2,7 +2,7 @@
 title: "Rewards & Unlocks changes"
 parent: "Season 2 Changes"
 nav_order: 7
-description: "Rewards & Unlocks: 14 assets added, 105 modified with real changes, 4 noise-only, 9,877 property changes. Role XP, unlock-tree costs and challenge rewards changed."
+description: "Rewards & Unlocks: 14 assets added, 105 modified with real changes, 4 noise-only, 7,656 property changes. Role XP, unlock-tree costs and challenge rewards changed."
 ---
 
 # Rewards & Unlocks changes
@@ -16,7 +16,7 @@ Season 1 to Season 2 changes for the Rewards & Unlocks area, from the area diff 
 | Assets modified with real changes | 105 |
 | Assets moved | 0 |
 | Noise-only modified assets (skipped: renamed keys, swapped key names or shifted references from the different Season 1 export) | 4 |
-| Property changes | 9,877 (changed 7,515, added 2,067, removed 288) |
+| Property changes | 7,656 (changed 5,635, added 1,924, removed 90) |
 
 Full filterable list: [Rewards & Unlocks in the change browser]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=rewards-unlocks).
 
@@ -160,9 +160,9 @@ Nodes added and removed, by role:
 
 ### Challenge rewards (`DT_ChallengeRewards_SessionEvents_Shared`)
 
-50 numeric literal values changed and 47 non-numeric values changed. 736 values were added across 164 rows in 9 event groups, and 1 entry was removed.
+50 numeric literal values changed and 47 non-numeric values changed. 735 values were added across 164 rows in 9 event groups, and 0 entry was removed.
 
-Compiled expression instructions in this table changed 18 times (compiled data, not tabulated).
+Compiled expression instructions in this table changed 17 times (compiled data, not tabulated).
 
 Largest literal value changes (top 30 of 50 by percent):
 
@@ -236,9 +236,9 @@ Rows added, by event group:
 
 ### Buildable challenge rewards (`DT_ChallengeRewards_SessionEvents_Buildables`)
 
-87 numeric literal values changed and 20 non-numeric values changed. 260 values were added across 38 rows, and 15 entries were removed.
+87 numeric literal values changed and 20 non-numeric values changed. 245 values were added across 38 rows, and 0 entries were removed.
 
-Compiled expression instructions in this table changed 20 times (compiled data, not tabulated).
+Compiled expression instructions in this table changed 23 times (compiled data, not tabulated).
 
 Largest literal value changes (top 30 of 87 by percent):
 
@@ -308,7 +308,7 @@ Cosmetic sort indexes in `DT_CosmeticSets_Debug` also changed (4 rows, each +1),
 
 | Asset | Change |
 |---|---|
-| DT_GoldMarket | 27 rows added, 20 rows removed |
+| DT_GoldMarket | 8 rows added, 1 rows removed |
 | DT_Achievements | 10 rows added |
 | DT_PassiveMissionChallenges | 15 rows added |
 | DT_Challenges_SessionEvents_Shared | 10 rows added |
@@ -319,9 +319,9 @@ Cosmetic sort indexes in `DT_CosmeticSets_Debug` also changed (4 rows, each +1),
 
 | Group | State trees | Property changes |
 |---|---:|---:|
-| KOTH session-event state trees | 52 | 6,196 |
-| Buildable session-event state trees | 10 | 857 |
-| Other state trees | 20 | 465 |
+| KOTH session-event state trees | 52 | 4,274 |
+| Buildable session-event state trees | 10 | 724 |
+| Other state trees | 20 | 367 |
 
 Most of these changes are compiled-graph data: task and node indexes, offsets, bindings, and `LastCompiledEditorDataHash`. They are not tabulated here. Browse them in the [change browser]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=rewards-unlocks&q=KOTH).
 

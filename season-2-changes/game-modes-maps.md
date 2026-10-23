@@ -2,7 +2,7 @@
 title: "Game Modes & Maps changes"
 parent: "Season 2 Changes"
 nav_order: 8
-description: "Game Modes & Maps: 30 assets added (TeamOffence and HotPotato modes), 2 removed, 8 modified with real changes, 5,327 property changes. Map warm-up data is most of the churn."
+description: "Game Modes & Maps: 30 assets added (TeamOffence and HotPotato modes), 2 removed, 8 modified with real changes, 2,285 property changes. Map warm-up data is most of the churn."
 ---
 
 # Game Modes & Maps changes
@@ -17,7 +17,7 @@ Season 1 to Season 2 changes for the Game Modes & Maps area, from the area diff 
 | Assets modified, not compared (Season 1 source truncated) | 1 |
 | Noise-only modified assets (skipped: renamed keys, swapped key names or shifted references from the different Season 1 export) | 26 |
 | Assets moved | 0 |
-| Property changes | 5,327 (changed 967, added 1,509, removed 2,850, resequenced 1); 40 further entries are on the removed assets |
+| Property changes | 2,285 (changed 59, added 439, removed 1,785, resequenced 2); 40 further entries are on the removed assets |
 
 Full filterable list: [Game Modes & Maps in the change browser]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=game-modes-maps).
 
@@ -27,8 +27,8 @@ Full filterable list: [Game Modes & Maps in the change browser]({{ '/season-2-ch
 
 | Asset | Property changes | Added | Changed | Removed | Lists and paths touched |
 |---|---:|---:|---:|---:|---|
-| NorthAmerica_Detroit_KOTH_01 | 2,828 | 710 | 546 | 1,572 | GraphicsPSOs 2,692, ComputePSOs 136 |
-| Europe_Madrid_KOTH_01 | 2,454 | 763 | 419 | 1,272 | GraphicsPSOs 2,370, ComputePSOs 84 |
+| NorthAmerica_Detroit_KOTH_01 | 1,500 | 312 | 9 | 1,179 | GraphicsPSOs 1,364, ComputePSOs 136 |
+| Europe_Madrid_KOTH_01 | 740 | 91 | 48 | 600 | GraphicsPSOs 656, ComputePSOs 84 |
 
 These two map files list shader and pipeline warm-up entries (graphics and compute pipeline states, vertex factories) and material paths. They are compiled data and are not tabulated. Browse them in the [change browser]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=game-modes-maps&q=PSOWarmup).
 
