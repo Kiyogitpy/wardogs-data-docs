@@ -135,7 +135,7 @@ Sections are Weapons sections; `L` numbers are its lines at `770c47d4`.
 | `0x6B89BB0` | Kick playback: curve deltas, pitch limits, recovery, the `+0x3D0` total | §5a (L246, L247) | `corpus body`; `+0x3D0` verifier-confirmed round 5 (T1-26) |
 | `0x6B8A2F0` | Async "WallCollision" sweep | §5b (L329) | `corpus body`; verifier-confirmed round 5 (T2-27) |
 | `0x6B8A700` | Movement factor m `+0xC04` | §5b (L321) | `corpus body`; verifier-confirmed round 5 (T2-22) |
-| `0x6B8AC90` | `GetWallCollisionAlpha`: reads `+0x41C` | §5b (L329) | `corpus body`; verifier-confirmed round 5 (T2-27) |
+| `0x6B8AC90` | `GetWallCollisionAlpha`: reads `+0x41C` | §5b (L329) | `corpus body`; verifier-confirmed round 5 (T2-27); Round 19 re-verification (static-analysis image; virtualized dispatch not removed): in the static-analysis image `0x6B8AC90` is a dispatch stub (`mov rax,[rip+x]; jmp [rax-0x19B00]`) and its reads cannot be confirmed there; the slot is not statically resolvable. The older reference image holds the original leaf: `mov eax,[rcx+0x41C]; mov [r8],eax` (plus a `+0x20` counter bump on `rdx`), which matches the `+0x41C` read claimed. Verdict: unaffected (supported by the reference image, not by the static-analysis image). |
 | `0x6B8E5A0` | `UWDWeaponComponent` constructor: shot counter `+0xFF0` = −1 | §5a (L236) | `corpus body` |
 | `0x6B93610` | Fire routine | §5a (L236), §5b (L333) | `corpus body` |
 | `0x6B95C50` | Per-shot kick: pattern point or post-pattern ranges | §5a (L237) | `corpus body` |

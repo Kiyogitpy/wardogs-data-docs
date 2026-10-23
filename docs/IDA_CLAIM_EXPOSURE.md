@@ -2,7 +2,7 @@
 
 > **Project:** [`Kiyogitpy/wardogs-data-docs`](https://github.com/Kiyogitpy/wardogs-data-docs) · [Live site](https://kiyogitpy.github.io/wardogs-data-docs/)
 
-This page lists which native-address citations in these docs sit on code pages that the executable's protection layer may have virtualized. **Classification means "the page contains a stub", not "the claim is wrong".** Nothing here has been re-verified or retracted. The page only says where a re-check would be most useful.
+This page lists which native-address citations in these docs sit on code pages that the executable's protection layer may have virtualized. **Classification means "the page contains a stub", not "the claim is wrong".** Nothing here has been retracted. Round 19 re-verified two stub-in-body functions (`0x6bb8970`, `0x6b8ac90`): both unaffected, supported by the reference image only (see rows). The page only says where a re-check would be most useful.
 
 ## Method
 
@@ -35,8 +35,8 @@ A function listed below is not necessarily virtualized. The strongest signal is 
 | `0x395be30`–`0x395beb9` | stub | yes | `content/Wardogs_WeaponAttributes_v1.md` L79; `docs/evidence/round8-ancillary-sights.md` L211; `docs/evidence/round8-weapon-context.md` L157,165,167 |
 | `0x5230be0`–`0x5230c39` | stub | yes | `docs/ROUND11_STATUS.md` L1179 |
 | `0x6b74e30`–`0x6b74f79` | stub | yes | `docs/evidence/round8-weapon-context.md` L31,35 |
-| `0x6b8ac90`–`0x6b8acaf` | stub | yes | `content/Wardogs_Weapons_v2.md` L330; `docs/evidence/weapons.md` L43,138 |
-| `0x6bb8970`–`0x6bb89a3` | stub | yes | `docs/ROUND11_STATUS.md` L978; `docs/evidence/damage.md` L546; `pipelines/Wardogs_DamagePipeline_v2.md` L73,462 |
+| `0x6b8ac90`–`0x6b8acaf` | stub | yes (reverified r19: unaffected; whole body is the stub, original leaf in reference image matches `+0x41C` claim) | `content/Wardogs_Weapons_v2.md` L330; `docs/evidence/weapons.md` L43,138 |
+| `0x6bb8970`–`0x6bb89a3` | stub | yes (reverified r19: unaffected; whole body is the stub, original lookup in reference image matches first-match-index / -1 claim) | `docs/ROUND11_STATUS.md` L978; `docs/evidence/damage.md` L546; `pipelines/Wardogs_DamagePipeline_v2.md` L73,462 |
 | `0x157c320`–`0x157c468` | stub | no | `docs/evidence/round8-loadout-rebuy.md` L110 |
 | `0x1587900`–`0x15879ea` | stub | no | `docs/evidence/damage.md` L259,496; `pipelines/Wardogs_DamagePipeline_v2.md` L1165 |
 | `0x15b83b0`–`0x15b83b4` | stub | no | `docs/evidence/damage.md` L311,645,651 |

@@ -464,6 +464,8 @@ zero-based index of the first exact match in
 `DA_GlobalDamage_Categories.DamageCategories`, or -1 when absent. Each
 target-tag group is then sorted by that signed index, ascending:
 
+> Round 19 re-verification (static-analysis image; virtualized dispatch not removed): in the static-analysis image the whole `0x6BB8970` body (0x6BB8970-0x6BB897E) is a dispatch stub (`mov r9,[rip+x]; jmp [r9-0x9A8]`), so that image cannot confirm the logic; the table base is filled at run time and the slot is not statically resolvable. The older reference image holds the original body: walk the `+0x30` array (count `+0x38`) comparing 8-byte entries to `[rdx]`, return the byte-offset index (`sar 3`) of the first match, else -1. That matches this claim. Verdict: unaffected (supported by the reference image, not by the static-analysis image).
+
 | Index | Category | Index | Category |
 |---:|---|---:|---|
 | 0 | Calibre | 6 | Weapon |
