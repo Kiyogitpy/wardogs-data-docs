@@ -23,7 +23,8 @@ The wiki (`_wiki/`, served at `/wiki/`) turns the data pages into articles a pla
 
 ## Voice
 
-- Write for players, not reverse engineers. No RVAs, addresses, function names, class names like `UWDWeaponComponent`, or asset paths in the article text. Use the in-game display name; give the internal name (e.g. `WEPN_028`) once, in the infobox row "Internal name", only if it helps search.
+- Write for players, not reverse engineers. No RVAs, addresses, function names, class names like `UWDWeaponComponent`, or asset paths in the article text.
+- **Always call things by the name a player knows**: the in-game display name or the common real-world name ("UH-72 Lakota", "AK-74M", "Bandage"), never the internal code (`ROT_03`, `WEPN_028`, `BP_Item_Bandage`). This applies to titles, slugs, headings, prose, tables and links. Find display names on the Item Shop, Weapon Shop, Vehicles, Tag Display Text and Season 01 cosmetic pages and in the item data under `data/`. The internal code may appear only once, in the infobox row "Internal name", so people can search for it. If no display name exists anywhere, describe the thing in plain words ("unnamed test rifle") and keep the code in the infobox.
 - Plain, encyclopedic, third person. Short paragraphs. Explain what a number means for play ("kills an unarmored player in 4 body shots up to 40 m").
 - Units always: m, s, rounds/min, HP, cash. Round sensibly (1 decimal for metres and seconds, whole numbers for damage unless the decimal matters).
 - Only state what the data pages or `assets/data/*.json` say. If something is unknown or not modeled, say so plainly ("not yet known"), never guess. Do not invent lore, release history or tips that the data doesn't support.
