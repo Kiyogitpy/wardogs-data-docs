@@ -2,9 +2,9 @@
 // and, when an answer endpoint is configured, asks it to write a short cited answer from them.
 (function () {
   var cfg = window.WD_ASK || {};
-  var TOP = 5;
-  var SEND_CHARS = 1500;
-  var STOP = new Set("a an the of for to in on at is are was were be what which who how do does did can i it its and or with from by this that these those there about into as".split(" "));
+  var TOP = 6;
+  var SEND_CHARS = 2200;
+  var STOP = new Set("a an the of for to in on at is are was were be what which who how do does did can i it its and or with from by this that these those there about into as me my you your tell show list give much many most output different various".split(" "));
 
   var dialog, form, input, out, index;
 
@@ -65,6 +65,20 @@
     return (from ? "… " : "") + text.slice(from, from + 220) + (text.length > from + 220 ? " …" : "");
   }
 
+  // The SEND_CHARS-long stretch of a section that holds the most question words, so long sections
+  // contribute the part that matches rather than their opening.
+  function excerpt(d, terms) {
+    var text = d.content.replace(/\s+/g, " ");
+    if (text.length <= SEND_CHARS) return text;
+    var low = text.toLowerCase(), step = 300, best = 0, bestScore = -1;
+    for (var from = 0; from + SEND_CHARS - step < text.length; from += step) {
+      var win = low.slice(from, from + SEND_CHARS), score = 0;
+      for (var i = 0; i < terms.length; i++) if (win.indexOf(terms[i]) >= 0) score++;
+      if (score > bestScore) { bestScore = score; best = from; }
+    }
+    return text.slice(best, best + SEND_CHARS);
+  }
+
   function el(tag, cls, text) {
     var e = document.createElement(tag);
     if (cls) e.className = cls;
@@ -115,7 +129,7 @@
       out.replaceChildren(el("p", "wd-ask-status", "Writing an answer…"), sources);
       var payload = {
         question: question,
-        sources: found.sections.map(function (d) { return { title: d.doc + " › " + d.title, text: d.content.slice(0, SEND_CHARS) }; }),
+        sources: found.sections.map(function (d) { return { title: d.doc + " › " + d.title, text: excerpt(d, found.terms) }; }),
       };
       var ctl = new AbortController(), timer = setTimeout(function () { ctl.abort(); }, 25000);
       fetch(cfg.endpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload), signal: ctl.signal })

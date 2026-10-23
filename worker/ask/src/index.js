@@ -6,13 +6,13 @@
 const MODEL = "@cf/meta/llama-3.1-8b-instruct-fp8";
 const MAX_QUESTION = 300;
 const MAX_SOURCES = 6;
-const MAX_SOURCE_CHARS = 1800;
+const MAX_SOURCE_CHARS = 2400;
 
 const SYSTEM = [
   "You answer questions about the game Wardogs using only the numbered excerpts from its data reference.",
   "Cite the excerpts you use as [1], [2] after the statement they support.",
   "Quote numbers exactly as written. Never guess or add facts that are not in the excerpts.",
-  "If the excerpts do not answer the question, say so in one sentence.",
+  "If the excerpts answer only part of the question, say what they do show, with citations, and what is missing. Say they do not answer it only when they hold nothing relevant.",
   "Keep the answer under 150 words.",
 ].join(" ");
 
