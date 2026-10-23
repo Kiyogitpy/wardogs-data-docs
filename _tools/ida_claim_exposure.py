@@ -81,11 +81,7 @@ def page_classes():
     return cls
 
 
-def main():
-    sys.stdout.reconfigure(encoding="utf-8")
-    cls = page_classes()
-    from collections import Counter
-    print("#pages", dict(Counter(cls.values())), file=sys.stderr)
+def collect_cites():
     cites = {}
     for d in DIRS:
         for p in glob.glob(os.path.join(ROOT, d, "**", "*.md"), recursive=True):
@@ -96,26 +92,42 @@ def main():
                 for ls in secs.values():
                     for n in ls:
                         cites.setdefault(v, set()).add((rel, n))
-    db = sqlite3.connect(f"file:///{CORPUS}/corpus.sqlite?mode=ro", uri=True)
-    img = open(NEW, "rb")
+    return cites
+
+
+def classify(cls, cites, img, db):
+    """Yield one dict per cited address: its worst page class and its containing function row."""
     rank = ["exceptional", "stub", "differs", "clean"]
-    print("rva\tclass\town_page\tfunc\tfunc_end\tfunc_has_stub\tdocs")
     for v in sorted(cites):
         fn = db.execute("select rva,end_rva from functions where rva<=? and end_rva>? order by rva desc limit 1", (v, v)).fetchone()
         own = cls.get(v & ~0xFFF, "unknown") if v < TEXT_END else "unknown"
+        row = {"rva": v, "own_page": own, "lo": None, "hi": None, "fstub": "-", "docs": cites[v]}
         if v >= TEXT_END:
-            c, fstub = "unknown", "-"
-            fr, fe = "-", "-"
+            row["class"] = "unknown"
         else:
             lo, hi = (fn if fn else (v, v + 1))
             pgs = [cls.get(p, "unknown") for p in range(lo & ~0xFFF, ((hi - 1) | 0xFFF) + 1, 0x1000)]
-            c = "unknown" if "unknown" in pgs else next(r for r in rank if r in pgs)
-            fstub = "-"
+            row["class"] = "unknown" if "unknown" in pgs else next(r for r in rank if r in pgs)
             if fn and hi - lo <= 0x40000:
-                img.seek(lo); fstub = "yes" if stubs(img.read(hi - lo), lo) else "no"
-            fr, fe = (hex(lo), hex(hi)) if fn else ("no row", "-")
-        docs = ";".join(sorted({f"{r}:{n}" for r, n in cites[v]}))
-        print(hex(v), c, own, fr, fe, fstub, docs, sep="\t")
+                img.seek(lo); row["fstub"] = "yes" if stubs(img.read(hi - lo), lo) else "no"
+            if fn:
+                row["lo"], row["hi"] = lo, hi
+        yield row
+
+
+def main():
+    sys.stdout.reconfigure(encoding="utf-8")
+    cls = page_classes()
+    from collections import Counter
+    print("#pages", dict(Counter(cls.values())), file=sys.stderr)
+    cites = collect_cites()
+    db = sqlite3.connect(f"file:///{CORPUS}/corpus.sqlite?mode=ro", uri=True)
+    img = open(NEW, "rb")
+    print("rva	class	own_page	func	func_end	func_has_stub	docs")
+    for r in classify(cls, cites, img, db):
+        fr, fe = (hex(r["lo"]), hex(r["hi"])) if r["lo"] is not None else (("-", "-") if r["rva"] >= TEXT_END else ("no row", "-"))
+        docs = ";".join(sorted({f"{d}:{n}" for d, n in r["docs"]}))
+        print(hex(r["rva"]), r["class"], r["own_page"], fr, fe, r["fstub"], docs, sep="	")
 
 
 if __name__ == "__main__":
