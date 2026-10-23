@@ -23,6 +23,8 @@ description: "Inventory and folder map, How the vegetation and PCG data combines
 - **[`DA_FencePost_Wood_Tall_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Clusters/Fence_Posts/DA_FencePost_Wood_Tall_01.json):** position Y min/max -2 → 0.
 - **[`DA_Fence_TallWoodWall_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall/DA_Fence_TallWoodWall_02.json):** distance 202 no longer set (shown as `-`). **[`DA_Pillar_Church_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Clusters/Fence_Posts/DA_Pillar_Church_01.json):** collision no longer set (shown as `-`).
 
+Full before/after list: [Season 2 Changes → World, Visuals & Audio]({{ '/season-2-changes/world-visuals-audio.html' | relative_url }}).
+
 ---
 
 ## 1. Inventory and folder map

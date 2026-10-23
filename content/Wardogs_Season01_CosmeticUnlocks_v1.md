@@ -22,6 +22,8 @@ description: "Season definitions, Season 1 emotes and skins, skin data assets, e
 - **[`Skin_DigitalWood`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season01_SkinsData/Content/Data/Skin_DigitalWood.json):** CPD overrides 43 → 46 (added `Id.Item.WEPN_034`, `Vehicle.Variant.Air.Rotary.Havoc.Default` and `Vehicle.Variant.Air.Rotary.Littlebird`). `WearThreshold` 0.8 → 1.0 on 10 existing overrides (Bobcat, DuneBuggy, Kodiak, Humvee, Tracked TNK_01 entries). Primary pattern UV X on the Bobcat override 456.06403 → 50.0.
 - **[`Skin_TwoTone_Desert`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season01_SkinsData/Content/Data/Skin_TwoTone_Desert.json):** CPD overrides 3 → 8 (added `Id.Item.WEPN_036`, `Id.Item.KH2002`, `Id.Item.WEPN_033`, `Id.Item.WEPN_034` and `Vehicle.Variant.Air.Rotary.Havoc.Default`). Existing overrides unchanged.
 
+Full before/after list: [Season 2 Changes → Rewards & Unlocks]({{ '/season-2-changes/rewards-unlocks.html' | relative_url }}).
+
 ---
 
 ## 1. [`DT_SeasonDefinitions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/DT_SeasonDefinitions.json) — 1 row

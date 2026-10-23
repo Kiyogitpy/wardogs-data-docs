@@ -26,6 +26,8 @@ description: "Inventory, Minimal Grid Test, Shooting-Range Moving Target, Water 
 - **Moving target offsets:** the root and base components' values are now exported as relative location (root X -10; base X 0.28, Z -5.47). Values are unchanged.
 - **File count:** 7 files and 41 export blocks become 12 files and 48 export blocks.
 
+Full before/after list: [Season 2 Changes → Game Modes & Maps]({{ '/season-2-changes/game-modes-maps.html' | relative_url }}).
+
 ---
 
 ## 1. Inventory

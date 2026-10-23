@@ -31,6 +31,8 @@ description: "Folder Map, Role Unlock Trees, Character Skill Effects, Reward Sca
 - **Mock investments:** 2 placeholder entries in one row, still debug data.
 - **Role XP tables:** Driver level 10 XP 35,000 to 25,000, and level 100 XP 6,000,000 to 5,132,500. The same change appears for every role. The XP curve values are in the rewards doc.
 
+Full before/after list: [Season 2 Changes → Rewards & Unlocks]({{ '/season-2-changes/rewards-unlocks.html' | relative_url }}).
+
 ---
 
 ## 1. Folder Map

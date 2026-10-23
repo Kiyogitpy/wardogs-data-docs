@@ -14,6 +14,8 @@ description: "What This Folder Holds, Match Flow and Components, Helicopter Fly-
 
 - Added a data registry source action to [`ShootingRangeTutorial.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ShootingRangeTutorial/Content/ShootingRangeTutorial.json) that adds `DT_SceneData_Match_ShootingRange` to the `UISceneData_Match` registry (client and server source, asset priority 0).
 
+Full before/after list: [Season 2 Changes → Game Modes & Maps]({{ '/season-2-changes/game-modes-maps.html' | relative_url }}).
+
 ---
 
 ## 1. What This Folder Holds

@@ -22,9 +22,11 @@ description: "Vehicle kills and assists, supply crates, buildables, spotting, ch
 - **Reward formulas, 17a ([`DT_ChallengeRewards_SessionEvents_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/DT_ChallengeRewards_SessionEvents_Shared.json)):** 161 → 298 rows and 311 → 585 resource rows. 46 existing formulas changed, e.g. FOB-supplied assists are now divided by `NumberOfAssisters`, and `DeploySupplyCrate` gains a crate-streak term (`CrateStreak`).
 - **Literal values, 17a:** `VehicleDestroyed.TNK_01.Heavy` 7000.0 → 5500.0; `VehicleDestroyed.Mortar` 300.0 → 650.0; `VehicleDestroyed.Phalanx` 3000.0 → 1200.0; `DestroySupplyCrate.Small.Armoured` 250.0 → 500.0; `DestroySupplyCrate.Large.Armoured` 500.0 → 800.0.
 - **Reward formulas, 17b and 17c:** [`DT_ChallengeRewards_SessionEvents_Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_ChallengeRewards_SessionEvents_Buildables.json) 29 → 47 rows and [`DT_ChallengeRewards_SessionEvents_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/DT_ChallengeRewards_SessionEvents_Spotting.json) 44 → 130 rows. 20 and 16 formulas changed respectively.
-- **Reward formulas, 17d:** [`DT_ChallengeRewards_SessionEvents_HotZoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Data/Challenges/DT_ChallengeRewards_SessionEvents_HotZoneMagnet.json) is unchanged (3 rows, no formula changes).
+- **Reward formulas, 17d:** [`DT_ChallengeRewards_SessionEvents_HotZoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Data/Challenges/DT_ChallengeRewards_SessionEvents_HotZoneMagnet.json) has no formula changes (3 rows; two literal values changed, `HostileFactor` 3.0 → 6.0 on the cash resource and `HostileReward` 250.0 → 300.0 on the XP resource).
 - **Shared definitions:** [`DT_Challenges_SessionEvents_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/DT_Challenges_SessionEvents_Shared.json) goes from 0 to 10 rows (achievement definitions, see section 19).
 - **Removed:** no files and no lookup rows were removed.
+
+Full before/after list: [Season 2 Changes → Rewards & Unlocks]({{ '/season-2-changes/rewards-unlocks.html' | relative_url }}).
 
 ---
 

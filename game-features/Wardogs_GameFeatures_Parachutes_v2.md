@@ -19,6 +19,8 @@ description: "Plugin Inventory, Movement Profiles, Inventory Items, Vendor Listi
 - Both profiles gained `VerticalDragCoefficient` (1.75), `OpenDuration` (2.0) and `MinHeightOpenParachuteFromGround` (1000).
 - Vendor price: Basic 100 → 500, Sport 1,000 → 700.
 
+Full before/after list: [Season 2 Changes → Player & Movement]({{ '/season-2-changes/player-movement.html' | relative_url }}).
+
 ---
 
 ## 1. Plugin Inventory

@@ -22,6 +22,8 @@ description: "Plugin Inventory, Root Game Feature, Frontend and Dev Map, Scene"
   - `UI.Popup.FullBlueprintItems`: Warning, OK.
   - `UI.Popup.ChangeComponent`: Warning, Apply / Cancel.
 
+Full before/after list: [Season 2 Changes → Weapons & Ammo]({{ '/season-2-changes/weapons-ammo.html' | relative_url }}).
+
 ## 1. Plugin Inventory
 
 | Group | Assets | Role |

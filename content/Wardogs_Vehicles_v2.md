@@ -22,6 +22,8 @@ description: "Folder Inventory, Vehicle Identity, Rigid Body, Engine, Drag, Flig
 - **Mapping counts per context (old → new):** [`IMC_DefaultVehicleInputs`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Vehicles/Inputs/IMC_DefaultVehicleInputs.json) 22 → 21 (`ChangeSeat_0` loses its `Gamepad_FaceButton_Right` binding), [`IMC_LandVehicles_Driver`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Vehicles/Inputs/IMC_LandVehicles_Driver.json) 40 → 41, [`IMC_RotaryVehicles_Driver`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Vehicles/Inputs/IMC_RotaryVehicles_Driver.json) 37 → 38, [`IMC_RotaryVehicles_DriverGunner`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Vehicles/Inputs/IMC_RotaryVehicles_DriverGunner.json) 42 → 43.
 - No input contexts were added or removed. The 11 mapping contexts and the 77 input actions are unchanged in number.
 
+Full before/after list: [Season 2 Changes → Vehicles]({{ '/season-2-changes/vehicles.html' | relative_url }}).
+
 ---
 
 ## 1. Folder Inventory

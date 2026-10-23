@@ -12,15 +12,13 @@ description: "What This Folder Holds, HotZoneMagnet, Lootable, SpawnZoneTest"
 
 ## Season 02 update (2026-10-15)
 
-- No files were added or removed, and the file count (31) and table counts are unchanged.
+- No files were added or removed, and the file count (31) is unchanged. Row counts: `DT_LootableDataTable` 12 to 52 (below); the other tables are unchanged.
 - HotZoneMagnet tower-capture cash reward, `HostileFactor` literal (`Resources[0]`): 3.0 → 6.0.
 - HotZoneMagnet tower-capture XP reward, `HostileReward` literal (`Resources[1]`): 250.0 → 300.0.
 - The three `ST_Challenges_SessionEvents_KOTH_HotZoneMagnet_*` StateTrees and the [`DT_Challenges_SessionEvents_KOTH_HotZoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Data/Challenges/DT_Challenges_SessionEvents_KOTH_HotZoneMagnet.json) table have structural changes only in fields this page does not cover. Their values are otherwise unchanged.
-- [`DT_LootableDataTable`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/Lootable/Content/Data/DT_LootableDataTable.json) item entries changed across the tower rows, including `ItemsToSpawn` item tags, sub-item tags and sub-item amounts. Loot contents are not covered on this page, so only the notable changes are listed here:
-  - Tower row `ItemsToSpawn[0]` item: `Id.Item.FOB` → `Id.Item.SV98`.
-  - Tower row `ItemsToSpawn[2]` item: `Id.Item.M249` → `Id.Item.MedKit.Standard`.
-  - Tower row `ItemsToSpawn[3]` sub-item amount: 1 → 30 (sub-item `Id.Item.12g.RifledSlug`).
-  - Tower row `ItemsToSpawn[4]` item: `Id.Item.M500` → `ID.Item.RepairTool.Drill.Heavy`, with `ItemSpawnWeight` 1.0 → 0.5.
+- [`DT_LootableDataTable`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/Lootable/Content/Data/DT_LootableDataTable.json) grew from 12 rows to 52. 40 rows are new: `Lootable.PreLobby` and 39 rows named for a weapon or item (for example `Lootable.AK74`, `Lootable.M4`, `Lootable.Mosin`, `Lootable.SV98`). The 12 existing rows are otherwise unchanged except for the `Lootable.Tower` row, which lost its `Id.Item.FOB` entry (weight 0.5, no sub-items) from `ItemsToSpawn`, so that list goes from 6 entries to 5. Every other `Lootable.Tower` entry is identical in both seasons (`Id.Item.SV98`, `Id.Item.M249`, `Id.Item.MedKit.Standard`, `Id.Item.M500` with its 30-round `Id.Item.12g.RifledSlug` sub-item, `ID.Item.RepairTool.Drill.Heavy`); they only sit one position earlier. Season 2 also adds a new boolean field, exported with an unresolved name (`_aaabeefoaikdjpkadlplk`), to every row, including the original 12. It is false on 51 rows and true on `Lootable.PreLobby`.
+
+Full before/after list: [Season 2 Changes → Game Modes & Maps]({{ '/season-2-changes/game-modes-maps.html' | relative_url }}).
 
 ---
 
@@ -117,7 +115,7 @@ Seven crosstalk audio events cover the activate, deactivate, capture start and s
 | Components | `B_LootableComponent` on `WDGameFrameworkComponentReceiver` |
 | Interaction registries | [`DT_InteractionContexts_Lootable`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/Lootable/Content/Data/DT_InteractionContexts_Lootable.json), [`DT_InteractionContextData_Lootable`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/Lootable/Content/Data/DT_InteractionContextData_Lootable.json) |
 | Contexts | `Interaction.Context.WorldFeatures.Lootable.Equip`, `…Lootable.Swap` |
-| Loot table | [`DT_LootableDataTable`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/Lootable/Content/Data/DT_LootableDataTable.json) (12 rows) |
+| Loot table | [`DT_LootableDataTable`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/Lootable/Content/Data/DT_LootableDataTable.json) (52 rows in Season 2, 12 in Season 1; the tables below list the 12 Season 1 rows) |
 | Query | [`EQS_FindSubLootableLocation`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/Lootable/Content/Data/EQS_FindSubLootableLocation.json) |
 
 ### 3a. Loot rows
