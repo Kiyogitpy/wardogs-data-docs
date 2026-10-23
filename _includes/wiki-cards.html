@@ -1,0 +1,11 @@
+{%- comment -%}Cards for wiki articles under include.parent, or for the hub pages (wiki_hub: true) when include.hubs is set.{%- endcomment -%}
+<div class="wd-grid" markdown="0">
+{%- if include.hubs -%}
+{%- assign docs = site.wiki | where: "wiki_hub", true | sort: "nav_order" -%}
+{%- else -%}
+{%- assign docs = site.wiki | where: "parent", include.parent | sort: "title" -%}
+{%- endif -%}
+{%- for p in docs %}
+<a class="wd-card" href="{{ p.url | relative_url }}"><span class="wd-card-name">{{ p.title | escape }}</span><span class="wd-card-desc">{{ p.description | escape }}</span></a>
+{%- endfor %}
+</div>

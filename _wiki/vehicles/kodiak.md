@@ -1,0 +1,85 @@
+---
+title: "Kodiak"
+parent: "Vehicles"
+description: "Four-seat SUV with a driver and three passengers and no weapons, the base model of the Kodiak family."
+---
+
+# Kodiak
+
+| Kodiak | |
+|---|---|
+| Type | SUV |
+| Seats | 4 (driver and 3 passengers) |
+| Price | 2,500 cash |
+| Unlock level | 0 |
+| Main health | 400 HP |
+| Top speed | 154 (as stored) |
+| Rifle damage taken (derived) | 5% |
+| Internal name | WHL_02 (default variant) |
+{: .wiki-infobox }
+
+The Kodiak is a four-seat SUV with no weapons. It is the base model of the Kodiak family, which also includes the [Kodiak [Pickup]](kodiak-pickup.md) and the [Kodiak [M249]](kodiak-m249.md).
+
+## Overview
+
+The Kodiak is sold in the vehicle vendor under land transport, for 2,500 cash, and unlocks at level 0. Its shop description lists four seats and optional logistics crates.
+
+## Stats
+
+| Stat | Value |
+|---|---|
+| Max speed | 154 (as stored) |
+| Fuel capacity | 50 (as stored) |
+| Fuel economy | 2.9 (as stored) |
+| Seats | 4 |
+| Mass | 2,750 (as stored, unit not stated) |
+| Countermeasures | Not stated |
+
+## Armor and damage
+
+Main health is 400 HP. The Kodiak has separate health for its engine (400 HP), fuel tank (400 HP) and each wheel (75 HP).
+
+Rifle rounds do 5% of their damage against the hull. Bullets that hit a wheel can destroy the vehicle faster than hits to the body.
+
+Hits needed to destroy the main health. These counts are derived by simulating the damage rules with full-power, point-blank, standard (FMJ) hits; they are estimates from the data, not measured in game:
+
+| Ammunition | Hits to destroy | Faster route |
+|---|---:|---|
+| 5.56 mm rifle | 572 | 143 through the left front wheel |
+| 7.62×54 mm rifle | 364 | 91 through the left front wheel |
+| .308 Win | 712 | 178 through the left front wheel |
+| .50 cal | 178 | 45 through the left front wheel |
+| 20×102 mm cannon | 39 | None found |
+| 30 mm cannon | 8 | None found |
+
+## Weapons and seats
+
+The Kodiak has no weapons. It has four seats: a driver and three active passengers.
+
+## Handling
+
+- Mass 2,750, hand brake 50, and front steering of 30 degrees.
+- ABS 30 with a minimum speed of 35, and traction control 55, as stored.
+- Engine torque curve runs from 0 to 9,000 RPM, with a torque scale of 0.6, as stored.
+
+## Season 2 changes
+
+- The wheel deflation threshold rose from 0.5 to 0.55 on the front and rear axles.
+- A new 125 mm rocket rule adds +250%.
+- The vehicle item changed size in inventory (height 4 to 3).
+- Price is unchanged at 2,500.
+
+## See also
+
+- [Kodiak [Pickup]](kodiak-pickup.md) and [Kodiak [M249]](kodiak-m249.md), the variants
+- [Humvee](humvee.md), a larger SUV
+- [Vehicle damage](vehicle-damage.md)
+
+## Sources
+
+- [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
+- [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
+- [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md)
+- [Vehicle Damage Pipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md)
+- [Item Shop](../../game-features/Wardogs_ItemShop_v1.md)
+- [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
