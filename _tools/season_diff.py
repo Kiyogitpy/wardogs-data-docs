@@ -55,7 +55,9 @@ Value comparison (diff_value).
     * different length otherwise -> the common prefix and suffix are matched, the middle is aligned with difflib on
       normalised element text; equal runs are unchanged, replaced runs are paired by index, extra elements are
       added/removed ("Path[index]" with the Season 2 index for added, Season 1 index for removed). Oversized
-      middles fall back to index pairing.
+      middles fall back to index pairing. When the leftover elements are all structs they are re-aligned: exact
+      matches anywhere in the array are unchanged, then the most similar pairs (>= 50% identical leaf values) are
+      diffed, the rest are removed + added. Equal-length arrays get the same treatment when an element merely moved.
   A change of kind (scalar vs object vs array) is one "changed" op with both whole values.
   Added/removed sub-objects are one op carrying the whole compact value.
   Multi-export files prefix every path with "ExportName::" (exports are matched by name, then by occurrence;
@@ -69,6 +71,7 @@ import json
 import math
 import os
 import re
+import struct
 import subprocess
 import sys
 
@@ -268,8 +271,15 @@ def ref_shift(a, b, parent_a, parent_b):
 def deep_same(a, b):
     """Equality modulo float tolerance and ref shifts (no counting)."""
     if isinstance(a, dict):
-        if not isinstance(b, dict) or set(a) != set(b):
+        if not isinstance(b, dict):
             return False
+        if set(a) != set(b):
+            # keys that differ only by unknown (hashed / duplicate) names are compared by position
+            ua = [k for k in a if k not in b]
+            ub = [k for k in b if k not in a]
+            if len(ua) != len(ub) or not all(unnamed(k) for k in ua + ub):
+                return False
+            return all(deep_same(a[k], b[k]) for k in a if k in b) and                 all(deep_same(a[x], b[y]) for x, y in zip(ua, ub))
         for k, v in a.items():
             if k == "ObjectPath" and ref_shift(v, b[k], a, b):
                 continue
@@ -306,6 +316,7 @@ class Ctx:
         self.shifts = 0
         self.dups = 0
         self.swapped = 0
+        self.reinterp = 0
         self.perm_instances = []
         self.swaps = []
         self.cands = []
@@ -321,20 +332,36 @@ def unnamed(k):
     return bool(HASHED.match(k) or DUP_SUFFIX.search(k))
 
 
+def hash_body(k):
+    return re.sub(r"_\$[0-9A-F]+\$_\$\d+\$$", "", k)
+
+
 def match_renames(a, b, only_a, only_b, common_a, common_b):
-    """Pair hashed keys with their named counterparts. Returns {old_key: new_key}."""
+    """Pair unnamed keys (hashed or Key#n) with their other-usmap counterparts. Returns {old_key: new_key}.
+
+    Noise pairing needs equal values, except where identity is certain: the same hash body on both sides, or one
+    named side and exactly one candidate in the gap. Otherwise the keys are left to show as removed + added."""
     pairs = {}
     used = set()
-    # 1. identical values
+    # 0. same hash body (the hashed name differs only by the _$HEX$_$n$ suffix)
     for ka in only_a:
         for kb in only_b:
-            if kb in used:
-                continue
-            if (unnamed(ka) or unnamed(kb)) and deep_same(a[ka], b[kb]):
+            if kb not in used and HASHED.match(ka) and hash_body(ka) == hash_body(kb):
                 pairs[ka] = kb
                 used.add(kb)
                 break
-    # 2. same gap between common keys, same kind of value
+    # 1. identical values
+    for ka in only_a:
+        if ka in pairs:
+            continue
+        for kb in only_b:
+            if kb in used:
+                continue
+            if (unnamed(ka) or unnamed(kb)) and (deep_same(a[ka], b[kb]) or reinterpreted(a[ka], b[kb])):
+                pairs[ka] = kb
+                used.add(kb)
+                break
+    # 2. same gap between common keys, same kind of value, one named side, unambiguous
     def gaps(keys, only, common):
         out = {}
         idx = {k: i for i, k in enumerate(common)}
@@ -349,8 +376,10 @@ def match_renames(a, b, only_a, only_b, common_a, common_b):
     gb = gaps(list(b), set(only_b) - used, common_b)
     for gap, la in ga.items():
         lb = gb.get(gap, [])
-        for ka, kb in zip(la, lb):
-            if (unnamed(ka) or unnamed(kb)) and kind(a[ka]) == kind(b[kb]):
+        if len(la) == 1 and len(lb) == 1:
+            ka, kb = la[0], lb[0]
+            one_named = not HASHED.match(ka) or not HASHED.match(kb)
+            if (unnamed(ka) or unnamed(kb)) and one_named and kind(a[ka]) == kind(b[kb]):
                 pairs[ka] = kb
     return pairs
 
@@ -421,7 +450,7 @@ def apply_learned(a, b, path, ctx):
     ren = {}
     for perm in LEARNED:
         in_a = [k for k in perm if k in a]
-        if not in_a or not any(k in b for k in perm):
+        if not in_a or not any(v in b for v in perm.values()):
             continue
         both = [k for k in perm if k in a and k in b]
         if both and len(both) == len(in_a) and all(deep_same(a[k], b[k]) for k in both):
@@ -436,16 +465,17 @@ def apply_learned(a, b, path, ctx):
 
 
 def learn(observed):
-    """Accept a permutation seen >= 2 times exactly where no key of it maps to two different targets anywhere."""
-    support, targets = {}, {}
+    """Accept a mapping seen >= 2 times exactly where no source key maps to two targets and no target has two sources."""
+    support, targets, sources = {}, {}, {}
     for ks, mp in observed:
         support.setdefault((ks, mp), 0)
         support[(ks, mp)] += 1
         for k, j in mp:
             targets.setdefault(k, set()).add(j)
+            sources.setdefault(j, set()).add(k)
     learned, refused = [], []
     for (ks, mp), n in sorted(support.items(), key=lambda kv: sorted(kv[0][0])):
-        bad = any(len(targets[k]) > 1 for k in ks)
+        bad = any(len(targets[k]) > 1 for k, _ in mp) or any(len(sources[j]) > 1 for _, j in mp)
         if n >= 2 and not bad:
             learned.append(dict(mp))
         else:
@@ -552,6 +582,13 @@ def diff_dict(a, b, path, ctx):
             if sa and sb and sa != sb and isinstance(a[ka], dict) and deep_same(a[ka], b[kb_]):
                 pairs[ka] = kb_   # S1 usmap misnamed a vector (RelativeScale3D holding a location)
                 break
+    if OBS_ON:
+        la_ = [k for k in only_a if k not in pairs and not unnamed(k)]
+        lb_ = [k for k in only_b if k not in pairs.values() and not unnamed(k)]
+        for ka_ in la_:
+            hits = [kb_ for kb_ in lb_ if deep_same(a[ka_], b[kb_])]
+            if len(hits) == 1 and sum(deep_same(a[x], b[hits[0]]) for x in la_) == 1                     and not (not isinstance(a[ka_], (dict, list)) and a[ka_] in (0, 1, True, False, "", "None")):
+                OBSERVED.append((frozenset((ka_, hits[0])), ((ka_, hits[0]),)))
     new_to_old = {v: k for k, v in pairs.items()}
     skip = find_swaps(a, b, path, ctx)
     if ctx.collect:
@@ -612,6 +649,93 @@ def identity_key(a, b):
     return None
 
 
+SIM_MIN = 0.5
+
+
+def leaves(v, prefix, out):
+    """Flat {path: value text}; hashed key names become positional placeholders so renamed keys still compare."""
+    if isinstance(v, dict):
+        n = 0
+        for k, x in v.items():
+            if unnamed(k):
+                k = "?%d" % n
+                n += 1
+            if k == "ObjectPath" and isinstance(x, str):
+                x = INDEX_SUFFIX.sub("", x)
+            leaves(x, prefix + "." + k, out)
+    elif isinstance(v, list):
+        for i, x in enumerate(v):
+            leaves(x, "%s[%d]" % (prefix, i), out)
+    else:
+        out[prefix] = v if is_num(v) else json.dumps(v)
+    return out
+
+
+def leaf_eq(x, y, tol):
+    if is_num(x) and is_num(y):
+        return x == y or math.isclose(x, y, rel_tol=tol, abs_tol=1e-9)
+    return not is_num(x) and not is_num(y) and x == y
+
+
+def leaves_same(lx, ly):
+    return lx.keys() == ly.keys() and all(leaf_eq(lx[k], ly[k], REL_TOL) for k in lx)
+
+
+def similarity(lx, ly):
+    keys = set(lx) | set(ly)
+    # requirement / tag fields identify an element: if any differs these are different elements
+    for k in keys:
+        if ("Requirement" in k or "Tag" in k) and not (k in lx and k in ly and leaf_eq(lx[k], ly[k], 1e-3)):
+            return 0.0
+    return sum(1 for k in keys if k in lx and k in ly and leaf_eq(lx[k], ly[k], 1e-3)) / len(keys) if keys else 1.0
+
+
+def align_unmatched(a, b, ua, ub, path, ctx):
+    """Align the elements left over after the sequence match: exact matches anywhere first (no change), then the
+    most similar pairs (>= SIM_MIN share of identical leaf values), the rest are removed + added."""
+    la_ = {i: leaves(a[i], "", {}) for i in ua}
+    lb_ = {j: leaves(b[j], "", {}) for j in ub}
+    left_a, left_b = set(ua), set(ub)
+    for j in ub:
+        cands = [i for i in left_a if leaves_same(la_[i], lb_[j])]
+        if cands:
+            i = min(cands, key=lambda i: abs(i - j))
+            left_a.discard(i)
+            left_b.discard(j)
+    pairs = []
+    if len(left_a) * len(left_b) <= 250_000:
+        scored = sorted(((similarity(la_[i], lb_[j]), -abs(i - j), i, j) for i in left_a for j in left_b), reverse=True)
+        for s, _d, i, j in scored:
+            if s < SIM_MIN:
+                break
+            if i in left_a and j in left_b:
+                left_a.discard(i)
+                left_b.discard(j)
+                pairs.append((i, j))
+    ev = [(j, "pair", i) for i, j in pairs] + [(j, "added", None) for j in left_b]
+    for j, how, i in sorted(ev):
+        if how == "pair":
+            diff_value(a[i], b[j], "%s[%d]" % (path, j), ctx)
+        else:
+            ctx.add("%s[%d]" % (path, j), "added", None, b[j])
+    for i in sorted(left_a):
+        ctx.add("%s[%d]" % (path, i), "removed", a[i], None)
+
+
+def scratch_of(ctx):
+    s = Ctx()
+    s.collect = ctx.collect
+    return s
+
+
+def merge_ctx(ctx, s):
+    ctx.changes.extend(s.changes)
+    for f in ("renamed", "shifts", "dups", "swapped", "reinterp"):
+        setattr(ctx, f, getattr(ctx, f) + getattr(s, f))
+    for f in ("cands", "swaps", "switched", "perm_instances"):
+        getattr(ctx, f).extend(getattr(s, f))
+
+
 def diff_list(a, b, path, ctx):
     key = identity_key(a, b)
     if key:
@@ -639,6 +763,18 @@ def diff_list(a, b, path, ctx):
                 and sorted(map(norm_text, a)) == sorted(map(norm_text, b)):
             ctx.add(path, "resequenced", a, b)
             return
+        bad = [i for i, (x, y) in enumerate(zip(a, b)) if not deep_same(x, y)]
+        if len(bad) > 1 and all(isinstance(a[i], dict) and isinstance(b[i], dict) for i in bad):
+            ta = {i: leaves(a[i], "", {}) for i in bad}
+            tb = {i: leaves(b[i], "", {}) for i in bad}
+            bad = [i for i in bad if not leaves_same(ta[i], tb[i])]
+            if len(bad) > 1 and any(leaves_same(ta[i], tb[j]) for i in bad for j in bad if i != j):
+                s_idx, s_al = scratch_of(ctx), scratch_of(ctx)
+                for i, (x, y) in enumerate(zip(a, b)):
+                    diff_value(x, y, "%s[%d]" % (path, i), s_idx)
+                align_unmatched(a, b, bad, bad, path, s_al)   # elements moved within the array
+                merge_ctx(ctx, s_al if len(s_al.changes) < len(s_idx.changes) else s_idx)
+                return
         for i, (x, y) in enumerate(zip(a, b)):
             diff_value(x, y, "%s[%d]" % (path, i), ctx)
         return
@@ -656,6 +792,11 @@ def diff_list(a, b, path, ctx):
         ops = [("replace", 0, len(ma), 0, len(mb))]
     else:
         ops = difflib.SequenceMatcher(None, ma, mb, autojunk=False).get_opcodes()
+    ua = [lo + i for tag, i1, i2, j1, j2 in ops if tag != "equal" for i in range(i1, i2)]
+    ub = [lo + j for tag, i1, i2, j1, j2 in ops if tag != "equal" for j in range(j1, j2)]
+    if (ua or ub) and all(isinstance(a[i], dict) for i in ua) and all(isinstance(b[j], dict) for j in ub):
+        align_unmatched(a, b, ua, ub, path, ctx)
+        return
     for tag, i1, i2, j1, j2 in ops:
         if tag == "equal":
             continue
@@ -668,6 +809,21 @@ def diff_list(a, b, path, ctx):
             ctx.add("%s[%d]" % (path, lo + j), "added", None, b[lo + j])
 
 
+def reinterpreted(a, b):
+    """One side int, the other float, and the int is the IEEE754 float32 bit pattern of the float."""
+    if isinstance(a, float) and is_num(b) and isinstance(b, int):
+        a, b = b, a
+    if not (isinstance(a, int) and not isinstance(a, bool) and isinstance(b, float)):
+        return False
+    if not -0x80000000 <= a <= 0xFFFFFFFF:
+        return False
+    try:
+        f = struct.unpack("<f", struct.pack("<I", a & 0xFFFFFFFF))[0]
+    except struct.error:
+        return False
+    return math.isfinite(f) and same_scalar(f, b)
+
+
 def diff_value(a, b, path, ctx):
     if isinstance(a, dict) and isinstance(b, dict):
         diff_dict(a, b, path, ctx)
@@ -676,6 +832,9 @@ def diff_value(a, b, path, ctx):
     elif isinstance(a, (dict, list)) or isinstance(b, (dict, list)):
         ctx.add(path, "changed", a, b)
     elif not same_scalar(a, b):
+        if reinterpreted(a, b):
+            ctx.reinterp += 1   # int holding the float32 bit pattern of the float (old usmap typed it as int)
+            return
         ctx.add(path, "changed", a, b)
 
 
@@ -770,6 +929,7 @@ def diff_assets(ex1, ex2, collect=False):
             ctx.shifts += sub.shifts
             ctx.dups += sub.dups
             ctx.swapped += sub.swapped
+            ctx.reinterp += sub.reinterp
             for pi in sub.perm_instances:
                 pi["parent"] = prefixed(pre, multi, pi["parent"])
                 ctx.perm_instances.append(pi)
@@ -837,7 +997,7 @@ def build(s1_dir, s2_dir, log=print):
         if err1 or err2:
             stats["unparsed"].append((rel, err1 or err2))
             assets.append(make(name, rel, None, "modified", main_type(rel, ex2), None, [],
-                               {"renamed_keys": 0, "ref_shifts": 0, "dup_keys": 0, "swapped_keys": 0}, classify(rel, ex2),
+                               {"renamed_keys": 0, "ref_shifts": 0, "dup_keys": 0, "swapped_keys": 0, "type_reinterpret": 0}, classify(rel, ex2),
                                note="not compared: " + (("Season 1 file is truncated in the source commit (%s)" % err1)
                                                          if err1 else ("Season 2 " + err2))))
             continue
@@ -850,12 +1010,12 @@ def build(s1_dir, s2_dir, log=print):
             SWAPS.append(dict(asset=name, path=rel, **sp))
         for sw in ctx.switched:
             SWITCHED.append(dict(asset=name, file=rel, **sw))
-        if not ctx.changes and not ctx.renamed and not ctx.shifts and not ctx.dups and not ctx.swapped:
+        if not ctx.changes and not ctx.renamed and not ctx.shifts and not ctx.dups and not ctx.swapped and not ctx.reinterp:
             # equal up to formatting or float noise only
             stats["identical"] += 1
             continue
         assets.append(make(name, rel, None, "modified", main_type(rel, ex2), None, ctx.changes,
-                           {"renamed_keys": ctx.renamed, "ref_shifts": ctx.shifts, "dup_keys": ctx.dups, "swapped_keys": ctx.swapped}, classify(rel, ex2)))
+                           {"renamed_keys": ctx.renamed, "ref_shifts": ctx.shifts, "dup_keys": ctx.dups, "swapped_keys": ctx.swapped, "type_reinterpret": ctx.reinterp}, classify(rel, ex2)))
 
     # moved
     pairs = []   # (old, new, paired_by)
@@ -907,7 +1067,7 @@ def build(s1_dir, s2_dir, log=print):
             ctx = diff_assets(ex1, ex2, CANDS is not None)
         stats["paired"][new] = (old, how)
         assets.append(make(name, new, old, "moved", main_type(new, ex2), how, ctx.changes,
-                           {"renamed_keys": ctx.renamed, "ref_shifts": ctx.shifts, "dup_keys": ctx.dups, "swapped_keys": ctx.swapped}, classify(new, ex2)))
+                           {"renamed_keys": ctx.renamed, "ref_shifts": ctx.shifts, "dup_keys": ctx.dups, "swapped_keys": ctx.swapped, "type_reinterpret": ctx.reinterp}, classify(new, ex2)))
     stats["rejected_renames"] = rejected
 
     # added
@@ -915,7 +1075,7 @@ def build(s1_dir, s2_dir, log=print):
         ex2, err2 = parsed(files2[rel])
         name = os.path.splitext(os.path.basename(rel))[0]
         assets.append(make(name, rel, None, "added", main_type(rel, ex2), None, [],
-                           {"renamed_keys": 0, "ref_shifts": 0, "dup_keys": 0, "swapped_keys": 0}, classify(rel, ex2), exports=len(ex2)))
+                           {"renamed_keys": 0, "ref_shifts": 0, "dup_keys": 0, "swapped_keys": 0, "type_reinterpret": 0}, classify(rel, ex2), exports=len(ex2)))
     # removed
     for rel in sorted(rem_left):
         ex1, err1 = parsed(files1[rel])
@@ -926,7 +1086,7 @@ def build(s1_dir, s2_dir, log=print):
             pre = key[0] if key[1] == 0 else "%s#%d" % key
             flatten(o, pre if multi else "", out)
         assets.append(make(name, rel, None, "removed", main_type(rel, ex1), None, out,
-                           {"renamed_keys": 0, "ref_shifts": 0, "dup_keys": 0, "swapped_keys": 0}, classify(rel, ex1)))
+                           {"renamed_keys": 0, "ref_shifts": 0, "dup_keys": 0, "swapped_keys": 0, "type_reinterpret": 0}, classify(rel, ex1)))
     # Config check
     stats["config_same"] = config_same(s1_dir, s2_dir)
     return assets, stats
@@ -960,7 +1120,7 @@ def render(assets):
     index_areas = []
     totals = {"assets_added": 0, "assets_removed": 0, "assets_modified": 0, "assets_moved": 0,
               "noise_only_assets": 0, "property_changes": 0, "removed_values": 0,
-              "noise_renamed_keys": 0, "noise_ref_shifts": 0, "noise_dup_keys": 0, "noise_swapped_keys": 0}
+              "noise_renamed_keys": 0, "noise_ref_shifts": 0, "noise_dup_keys": 0, "noise_swapped_keys": 0, "noise_type_reinterpret": 0}
     for aid, title in AREAS:
         mine = [a for a in assets if a["_area"] == aid]
         mine.sort(key=lambda a: (STATUS_ORDER[a["status"]], a["name"].lower(), a["path"]))
@@ -970,12 +1130,13 @@ def render(assets):
             counts["property_changes"] += count_changes(a)
             if a["status"] == "removed":
                 counts["removed_values"] += len(a["changes"])
-            if a["status"] == "modified" and not a["changes"] and (a["noise"]["renamed_keys"] or a["noise"]["ref_shifts"] or a["noise"]["dup_keys"] or a["noise"]["swapped_keys"]):
+            if a["status"] == "modified" and not a["changes"] and (a["noise"]["renamed_keys"] or a["noise"]["ref_shifts"] or a["noise"]["dup_keys"] or a["noise"]["swapped_keys"] or a["noise"]["type_reinterpret"]):
                 totals["noise_only_assets"] += 1
             totals["noise_renamed_keys"] += a["noise"]["renamed_keys"]
             totals["noise_ref_shifts"] += a["noise"]["ref_shifts"]
             totals["noise_dup_keys"] += a["noise"]["dup_keys"]
             totals["noise_swapped_keys"] += a["noise"]["swapped_keys"]
+            totals["noise_type_reinterpret"] += a["noise"]["type_reinterpret"]
         lines = [dumps({k: v for k, v in a.items() if not k.startswith("_")}) for a in mine]
         # split if too big
         chunks, cur, size = [], [], 0
