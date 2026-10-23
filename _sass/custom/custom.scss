@@ -583,6 +583,33 @@ $ue-btn-grey-hover: #46474a;
   .wd-card-desc { font-size: 0.95rem; max-width: 70ch; }
 }
 
+// Home-page viewer card: preview image beside the text, stacked on narrow screens.
+.wd-card-preview {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.75rem;
+  padding: 1rem;
+  background: linear-gradient(180deg, $ue-panel-raised, $ue-panel);
+
+  img {
+    flex: 0 0 min(22rem, 45%);
+    width: min(22rem, 45%);
+    height: auto;
+    border-radius: $radius-card;
+  }
+  .wd-card-body { display: flex; flex-direction: column; gap: 0.5rem; padding-right: 1rem; }
+  .wd-card-name { font-size: 1.4rem; }
+  .wd-card-desc { font-size: 0.95rem; max-width: 60ch; }
+
+  @media (max-width: 40rem) {
+    flex-direction: column;
+    align-items: stretch;
+    img { width: 100%; flex-basis: auto; }
+    .wd-card-body { padding: 0 0.5rem 0.5rem; }
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .wd-btn, .wd-card { transition: none; }
 }
