@@ -64,7 +64,7 @@ Full lists: [Items & Equipment changes](../../season-2-changes/items-equipment.m
 
 ## Modes and rewards
 
-- **Spotting pay for vehicles changed.** Spotting the L2A6's artillery variant pays 400 cash (was 1,500) and destroying it 1,200 (was 8,000). Spotting the Talon 9K-SAM pays 75 (was 200), and destroying the Vanguard CIWS pays 725 (was 1,500).
+- **Cash for spotting and destroying some vehicles changed.** For the L2A6's artillery variant, the Season 1 amounts of 1,500 and 8,000 were replaced by 400 and 1,200. The data does not say which amount is for spotting and which for destroying. Talon 9K-SAM spotting went from 200 to 75, and destroying a Vanguard CIWS went from 1,500 to 725.
 - **Spotting pay range is unchanged.** Spotting still pays 15 to 275 cash, and destroying a spotted target 50 to 500.
 - **Spotting challenges gained rows.** The calculator grew from 44 to 130 rows, with variant-level rows for each vehicle and new entries for buildables that scale with build progress.
 - **Vehicle destroyed rewards cover the new vehicles.**

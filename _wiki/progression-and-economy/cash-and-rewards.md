@@ -71,7 +71,7 @@ When a heal is the one that brings a downed player back, it pays 1,500 with a de
 | Humvee | 500 |
 | Kodiak | 500 |
 | MH-6 (Little Bird) | 800 |
-| Huey | 1,200 |
+| Huey (in the reward table, not sold in any shop) | 1,200 |
 | Heavy tank | 5,000 |
 | Artillery tank | 6,000 |
 | Newer tank (Season 2) | 5,000 |
