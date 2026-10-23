@@ -1,0 +1,533 @@
+"""Generate the Weapons section of the wiki: _wiki/weapons.md and _wiki/weapons/*.md.
+
+Numbers come from assets/data/*.json and the data pages cited in each article's Sources.
+Per-weapon tables, infobox rows and Season 2 bullets are computed here so they match the data.
+Short fixed prose (class blurbs, lead sentences) lives in this file.
+
+Run from the repo root:  python _tools/wiki_weapons.py
+"""
+import json
+import os
+import re
+
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+GH = "https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/"
+WIKI = os.path.join(ROOT, "_wiki")
+OUT = os.path.join(WIKI, "weapons")
+
+
+def read(rel):
+    with open(os.path.join(ROOT, rel), encoding="utf-8") as f:
+        return f.read()
+
+
+def jload(rel):
+    return json.loads(read(rel))
+
+
+loadouts = jload("assets/data/weapon-loadouts.json")
+EFFECTS = loadouts["effects"]  # GE name -> list of modifiers
+wdamage = {w["id"]: w for w in jload("assets/data/weapon-damage.json")["weapons"]}
+falloff_doc = jload("assets/data/weapon-damage-falloff.json")
+falloff = {w["id"]: w for w in falloff_doc["weapons"]}
+DIST = falloff_doc["meta"]["distances_m"]
+TAG_TEXT = read("content/Wardogs_TagDisplayText_v1.md")
+SHOP = read("game-features/Wardogs_WeaponShop_v1.md")
+ROSTER = read("content/Wardogs_InfantryWeapons_Stats_v1.md")
+S2 = read("season-2-changes/weapons-ammo.md")
+
+# Compound Bow: no shop price and no stats in the data pages, so it has no article.
+SKIP = {"CombatBow"}
+
+CLASS_NAME = {
+    "AR": "Assault rifle", "DMR": "Marksman rifle", "LMG": "Light machine gun",
+    "Pistol": "Pistol", "SMG": "Submachine gun", "Shotgun": "Shotgun",
+    "Sniper": "Sniper rifle", "Launcher": "Launcher",
+}
+CLASS_BLURB = {
+    "AR": "Assault rifles are the AR class in the weapon data.",
+    "DMR": "Marksman rifles are the DMR class in the weapon data. Most are semi-automatic rifles.",
+    "LMG": "Light machine guns are the LMG class in the weapon data.",
+    "Pistol": "Pistols are the sidearm class in the weapon data.",
+    "SMG": "Submachine guns are the SMG class in the weapon data.",
+    "Shotgun": "Shotguns are the shotgun class in the weapon data. They fire shells rather than single bullets.",
+    "Sniper": "Sniper rifles are the sniper class in the weapon data.",
+    "Launcher": "Launchers fire explosive rounds rather than bullets.",
+}
+FIRE_PLAIN = {"Automatic": "fully automatic", "SemiAutomatic": "semi-automatic", "Burst": "burst fire"}
+AMMO_NAME = {
+    "FMJ": "Standard (FMJ)", "Tracer": "Standard (FMJ) with tracer",
+    "HollowPoint": "Flesh Damage (HP)", "HollowPoint.Tracer": "Flesh Damage (HP) with tracer",
+    "ArmorPiercing": "Armor Piercing (AP)", "ArmorPiercing.Tracer": "Armor Piercing (AP) with tracer",
+    "Buckshot": "Buckshot", "Slug": "Rifled slug",
+}
+ARMOR_NAME = {"None": "No armor", "Light": "Light", "Medium": "Medium", "Heavy": "Heavy", "SuperHeavy": "Super heavy"}
+LOC_NAME = {"Head": "Head", "Neck": "Neck", "Torso.Upper": "Upper torso", "Torso.Middle": "Middle torso",
+            "Arm.Upper": "Upper arm", "Leg.Thigh": "Thigh"}
+ATTR_PLAIN = [
+    "vertical recoil", "horizontal recoil", "ADS zoom", "aim-down-sights time", "spread",
+    "accuracy", "weapon length", "minimum zeroing range", "maximum zeroing range", "equip speed",
+    "holster speed", "sway stabilisation time", "sway rotation stabilisation", "sway translation stabilisation",
+    "aim sway amount", "aim sway speed", "sway while moving (horizontal)", "sway while moving (vertical)",
+]
+ATTACH_CAT_TEXT = {
+    "Muzzle": "Brakes, flash hiders, compensators and suppressors that fit the end of the barrel.",
+    "Barrel": "Replacement barrels. Some carry a muzzle slot of their own.",
+    "Sight": "Optics and iron sights on top of the weapon. They change zoom and aim time.",
+    "Magazine": "Magazines hold the rounds. Some weapons use an internal magazine instead of a swappable one.",
+    "Grip": "Pistol grips and foregrips. They change how the weapon is held.",
+    "Stock": "Stocks fit at the back of the weapon.",
+    "Handguard": "Covers over the barrel. They carry further slots.",
+    "Bipod": "Folding legs that mount under the weapon.",
+    "Underbarrel": "Mounts on the bottom rail, for grips and bipods.",
+}
+
+
+def slugify(text):
+    return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
+
+
+def fmt_int(v):
+    v = float(v)
+    if v.is_integer():
+        return f"{int(v):,}"
+    return f"{v:,.1f}"
+
+
+def caliber_names():
+    names = {}
+    for m in re.finditer(r"\| `Item\.Caliber\.([^`]+)` \| ([^|]+) \|", TAG_TEXT):
+        key = m.group(1).split(" ")[0]
+        names.setdefault(key, m.group(2).strip())
+    return names
+
+
+CAL = caliber_names()
+
+
+def caliber_display(key):
+    if key is None:
+        return "None (explosive)"
+    return CAL.get(key, key)
+
+
+# ---- Weapon Shop rows: price, unlock level, default magazine ----
+shop_rows = {}
+sec = SHOP.split("## 1. Weapon platforms", 1)[1].split("## 2.", 1)[0]
+for line in sec.splitlines():
+    if not line.startswith("| ") or line.startswith("| Weapon ") or line.startswith("|---"):
+        continue
+    c = [x.strip() for x in line.strip().strip("|").split("|")]
+    if len(c) < 10:
+        continue
+    shop_rows[c[0]] = {
+        "price": re.sub(r"\s*\(hidden\)", "", c[5]),
+        "unlock": c[6],
+        "defaults": c[9],
+    }
+
+# ---- Infantry stats roster: rate fallback, keyed by weapon code ----
+roster_rate = {}
+for line in ROSTER.split("## 2. Raw properties", 1)[0].splitlines():
+    if not line.startswith("| [`DA_"):
+        continue
+    c = [x.strip() for x in line.strip().strip("|").split("|")]
+    if len(c) >= 6:
+        code = re.sub(r"^(Id|ID)\.Item\.", "", c[2])
+        roster_rate[code] = {"rpm": c[3], "modes": c[4]}
+
+S2_LINES = [l for l in S2.splitlines() if l.startswith("| DA_") or l.startswith("| DT_")]
+
+
+def s2_for(code):
+    pat = re.compile(r"(?<![A-Za-z0-9])" + re.escape(code) + r"(?![A-Za-z0-9])")
+    out, recoil_rows, falloff_rows = [], 0, 0
+    for l in S2_LINES:
+        c = [x.strip() for x in l.strip().strip("|").split("|")]
+        if len(c) < 4 or not pat.search(l):
+            continue
+        m = re.match(r"[A-Za-z]+", c[1])
+        prop = m.group(0) if m else c[1]
+        old, new = c[2], c[3]
+        if prop in ("Name", "Package"):
+            continue
+        if prop == "Price":
+            if old in ("—", "-"):
+                out.append(f"Vendor price: {new}")
+            else:
+                out.append(f"Vendor price: {fmt_int(float(old))} to {fmt_int(float(new))}")
+        elif prop == "InitialBulletSpeed":
+            out.append(f"Muzzle velocity: {float(old)/100:.0f} m/s to {float(new)/100:.0f} m/s")
+        elif prop == "SuppressionMultiplier":
+            out.append(f"Suppression effect multiplier: {'none' if old in ('—', '-') else old} to {new}")
+        elif prop == "ViewKickMagnitudeMultiplier":
+            out.append("View kick multiplier removed" if new in ("—", "-") else f"View kick multiplier: {old} to {new}")
+        elif prop == "RecoilPattern":
+            recoil_rows += 1
+        elif prop == "DistanceDamageFalloffCurve":
+            falloff_rows += 1
+        else:
+            out.append("Aim or handling tuning changed")
+    res = []
+    for o in out:
+        if o not in res:
+            res.append(o)
+    if recoil_rows:
+        res.append("Recoil pattern reworked")
+    if falloff_rows:
+        res.append("Damage falloff curve reshaped")
+    return res
+
+
+def attach_effects():
+    per = {}
+    for iid, it in loadouts["items"].items():
+        typ = it.get("type") or ""
+        if "Attachment" not in typ:
+            continue
+        cat = typ.split(".")[-1]
+        entry = per.setdefault(cat, {"count": 0, "attrs": {}})
+        entry["count"] += 1
+        for ge in it.get("applied", []):
+            for m in EFFECTS.get(ge, []):
+                if 0 <= m.get("attr", -1) < len(ATTR_PLAIN):
+                    attr = ATTR_PLAIN[m["attr"]]
+                    entry["attrs"][attr] = entry["attrs"].get(attr, 0) + 1
+    return per
+
+
+ATTACH = attach_effects()
+
+
+def code_for(wid):
+    return wid[3:] if wid.startswith("ID_") else wid
+
+
+def page_title(wid):
+    if code_for(wid) == "AK74M":
+        return "AK74"  # the shop and in-game display name
+    return loadouts["items"][wid]["display"]
+
+
+def magazine_text(defaults):
+    m = re.search(r"Magazine: ([^,]+)", defaults or "")
+    return m.group(1).strip() if m else "not yet known"
+
+
+def ammo_names(code):
+    w = wdamage.get(code)
+    return [AMMO_NAME.get(a["id"], a["id"]) for a in w["ammo"]] if w else []
+
+
+def ammo_base_names(code):
+    w = wdamage.get(code)
+    if not w:
+        return []
+    return [AMMO_NAME.get(a["id"], a["id"]) for a in w["ammo"] if "Tracer" not in a["id"]]
+
+
+def stats(wid):
+    """Every number a weapon article or hub row shows, in display form."""
+    code = code_for(wid)
+    it = loadouts["items"][wid]
+    dmg = wdamage.get(code)
+    fo = falloff.get(code)
+    ro = roster_rate.get(code, {"rpm": "", "modes": ""})
+    shop = shop_rows.get(it["display"], {"price": "not yet known", "unlock": "not yet known", "defaults": ""})
+
+    if dmg and dmg.get("rpm") is not None:
+        rpm = f"{fmt_int(dmg['rpm'])} rounds/min"
+    else:
+        m = re.match(r"([0-9.]+)\s*(\(class default\))?", ro["rpm"] or "")
+        if m:
+            rpm = f"{fmt_int(float(m.group(1)))} rounds/min" + (" (class default)" if m.group(2) else "")
+        else:
+            rpm = "not yet known"
+
+    if dmg:
+        modes = [FIRE_PLAIN.get(x, x) for x in dmg["fire_modes"]]
+    elif ro["modes"]:
+        modes = [FIRE_PLAIN.get(x.strip(), x.strip()) for x in ro["modes"].split(",")]
+    else:
+        modes = []
+    modes_txt = " and ".join(modes) if modes else "not yet known"
+    modes_cap = modes_txt[:1].upper() + modes_txt[1:]
+
+    cal = caliber_display(dmg["caliber"]) if dmg else "None (explosive)"
+    speed = f"{fo['initial_bullet_speed_cm_s']/100:.0f} m/s" if fo and fo.get("initial_bullet_speed_cm_s") else "not yet known"
+    rng = f"{fo['effective_range_m']:.0f} m" if fo and fo.get("effective_range_m") is not None else "not yet known"
+    mag = magazine_text(shop["defaults"])
+    return {
+        "cls": CLASS_NAME[it["archetype"]], "arch": it["archetype"], "cal": cal,
+        "modes": modes_txt, "modes_cap": modes_cap, "rpm": rpm, "speed": speed, "range": rng,
+        "mag": mag, "price": shop["price"], "unlock": shop["unlock"], "defaults": shop["defaults"],
+    }
+
+
+def build_weapon(wid):
+    code = code_for(wid)
+    title = page_title(wid)
+    it = loadouts["items"][wid]
+    s = stats(wid)
+    dmg = wdamage.get(code)
+    fo = falloff.get(code)
+    is_launcher = it["archetype"] == "Launcher"
+    cls_l = s["cls"].lower()
+    art = "an" if cls_l[:1] in "aeiou" else "a"
+
+    infobox_rows = [
+        ("Class", s["cls"]),
+        ("Caliber", s["cal"]),
+        ("Fire modes", s["modes_cap"]),
+        ("Fire rate", s["rpm"]),
+        ("Muzzle velocity", s["speed"]),
+        ("Effective range", s["range"]),
+        ("Standard magazine", s["mag"]),
+        ("Vendor price", s["price"] or "not yet known"),
+        ("Unlock level", s["unlock"] or "not yet known"),
+    ]
+    infobox_rows.append(("Internal name", code))
+    infobox = [f"| {title} | |", "|---|---|"] + [f"| {a} | {b} |" for a, b in infobox_rows] + ["{: .wiki-infobox }"]
+
+    if is_launcher:
+        lead = f"The {title} is {art} {cls_l} that fires explosive rounds rather than bullets."
+        if s["rpm"] != "not yet known":
+            lead += f" Its fire rate is {s['rpm'].replace(' (class default)', '')}."
+    else:
+        lead = (f"The {title} is {art} {cls_l} chambered in {s['cal']}. It fires {s['modes']} at {s['rpm'].replace(' (class default)', '')}.")
+        if s["mag"] != "not yet known":
+            lead += f" Its standard magazine is the {s['mag']}."
+
+    out = [f"# {title}", ""] + infobox + ["", lead, ""]
+
+    # Overview
+    out += ["## Overview", "", CLASS_BLURB[it["archetype"]], ""]
+    if dmg:
+        is_shell = any(a["id"] in ("Buckshot", "Slug") for a in dmg["ammo"])
+        kind = "shells" if is_shell else "bullet types"
+        out += [f"It takes the {kind} described on the [Ammunition](ammunition.md) page: {', '.join(ammo_base_names(code))}. Each has a tracer version.", ""]
+
+    # Stats
+    out += ["## Stats", "", "| Stat | Value |", "|---|---|",
+            f"| Fire modes | {s['modes_cap']} |",
+            f"| Fire rate | {s['rpm']} |",
+            f"| Muzzle velocity | {s['speed']} |",
+            f"| Effective range | {s['range']} |", ""]
+    if not dmg:
+        out += ["Launcher stats beyond the fire rate are not in the data pages.", ""]
+
+    # Damage
+    out += ["## Damage", ""]
+    if dmg and dmg["ammo"]:
+        base = next((a for a in dmg["ammo"] if a["id"] in ("FMJ", "Buckshot")), dmg["ammo"][0])
+        pell = base.get("pellets")
+        if pell:
+            out += [f"Figures are for {AMMO_NAME[base['id']]} at point blank range, per pellet ({pell} pellets per shot), "
+                    "against a character without armor, before any falloff.", ""]
+        else:
+            out += [f"Figures are for {AMMO_NAME[base['id']]} at point blank range, per hit, against a character without armor.", ""]
+        loc = base["damage"]["location"]
+        out += ["**By body part (no armor)**", "", "| Body part | Damage |", "|---|---|"]
+        for k in ["Head", "Neck", "Torso.Upper", "Torso.Middle", "Arm.Upper", "Leg.Thigh"]:
+            if k in loc:
+                out.append(f"| {LOC_NAME[k]} | {loc[k]:.1f} |")
+        out.append("")
+        ta, ha = base["damage"]["torso_armor"], base["damage"]["head_armor"]
+        out += ["**Armor (torso and head hits)**", "", "| Armor class | Torso | Head |", "|---|---|---|"]
+        for k in ["None", "Light", "Medium", "Heavy", "SuperHeavy"]:
+            if k in ta:
+                out.append(f"| {ARMOR_NAME[k]} | {ta[k]:.1f} | {ha[k]:.1f} |")
+        out.append("")
+        if fo:
+            tor = fo["ammo"][0]["damage"]["torso"]["None"]
+            out += ["**Range falloff (upper torso, no armor)**", "", "| Distance | Damage |", "|---|---|"]
+            for d in [0, 50, 100, 200, 300, 400, 600, 800, 1000]:
+                v = tor[DIST.index(d)]
+                out.append(f"| {d} m | {('not reached' if v is None else f'{v:.1f}')} |")
+            out.append("")
+        ammo_rows = [a for a in dmg["ammo"] if a["id"] in ("FMJ", "HollowPoint", "ArmorPiercing", "Buckshot", "Slug")]
+        if len(ammo_rows) > 1 or ammo_rows[0]["id"] != "FMJ":
+            out += ["**Upper torso, no armor, by ammo type**", "", "| Ammo | Damage per hit |", "|---|---|"]
+            for a in ammo_rows:
+                dv = a["damage"]["location"]["Torso.Upper"]
+                p = f" ({a['pellets']} pellets)" if a.get("pellets") else ""
+                out.append(f"| {AMMO_NAME[a['id']]} | {dv:.1f}{p} |")
+            out.append("")
+        out += ["See [Ammunition](ammunition.md) for how each type does against armor, and [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md) for the full tables.", ""]
+    else:
+        out += ["The damage data pages do not compute body-part damage for launchers. The data treats the shot as an explosion; see [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md).", ""]
+
+    # Ammunition
+    out += ["## Ammunition", ""]
+    if dmg:
+        out += [f"Ammo types for this weapon: {', '.join(ammo_names(code))}. See [Ammunition](ammunition.md).", ""]
+    else:
+        out += ["Launchers do not use the bullet types on the [Ammunition](ammunition.md) page.", ""]
+
+    # Attachments
+    out += ["## Attachments", ""]
+    slots = sorted({sl["tag"].split(".")[-1] for sl in it["slots"] if sl["tag"].split(".")[-1] != "Chamber"})
+    out += [f"Slots on this weapon: {', '.join(slots)}. See [Attachments](attachments.md) for what each part changes.", ""]
+    defaults = []
+    for sl in it["slots"]:
+        d = sl.get("default")
+        disp = loadouts["items"].get(d, {}).get("display") if d else None
+        if disp:
+            disp = re.sub(r"\s+", " ", re.sub(r"\s*\(?WEPN_\d+\)?", " ", disp)).strip()
+            defaults.append(f"{sl['tag'].split('.')[-1].lower()} ({disp})")
+    if defaults:
+        out += ["Default parts: " + ", ".join(defaults) + ".", ""]
+
+    # Cost and unlocking
+    out += ["## Cost and unlocking", "",
+            f"- Vendor price: {s['price'] or 'not yet known'}. The data pages do not decode the currency, so the price is shown as a plain number.",
+            f"- Unlock level: {s['unlock'] or 'not yet known'}.", ""]
+
+    # Season 2 changes
+    s2 = s2_for(code)
+    out += ["## Season 2 changes", ""]
+    if s2:
+        out += [f"- {x}" for x in s2] + [""]
+    else:
+        out += ["The Season 2 changes page lists no changes for this weapon.", ""]
+
+    out += ["## See also", "", "- [Weapons](../weapons.md)", "- [Ammunition](ammunition.md)", "- [Attachments](attachments.md)", "- [Choosing Ammo](../guides/choosing-ammo.md)", "- [Ballistics](../game-mechanics/ballistics.md)", "- [Health and Damage](../game-mechanics/health-and-damage.md)", "- [Spread and Recoil](../game-mechanics/spread-and-recoil.md)", ""]
+
+    out += ["## Sources", "",
+            "- [Weapon Shop and Parts](../../game-features/Wardogs_WeaponShop_v1.md): price, unlock level, default magazine",
+            "- [Infantry Weapon Stats](../../content/Wardogs_InfantryWeapons_Stats_v1.md): fire rate and fire modes",
+            "- [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md): body-part, armor and falloff numbers",
+            "- [Season 2 Changes: Weapons & Ammo](../../season-2-changes/weapons-ammo.md)",
+            "- [Tag Display Text](../../content/Wardogs_TagDisplayText_v1.md): caliber and ammo names",
+            f"- [weapon-loadouts.json]({GH}assets/data/weapon-loadouts.json): names, slots and effects",
+            f"- [weapon-damage.json]({GH}assets/data/weapon-damage.json): body-part and armor damage",
+            f"- [weapon-damage-falloff.json]({GH}assets/data/weapon-damage-falloff.json): speed, effective range and falloff",
+            ""]
+    desc = f"The {title} {cls_l}: fire rate, damage by body part, range falloff, ammunition, attachments and Season 2 changes."
+    return title, desc, "\n".join(out)
+
+
+def front_matter(title, desc):
+    return f"---\ntitle: \"{title}\"\nparent: \"Weapons\"\ndescription: \"{desc}\"\n---\n\n"
+
+
+def ammo_page():
+    body = ["# Ammunition", "",
+            "Bullet weapons use one of four bullet types, and each has a tracer version that does the same damage with a visible trail. "
+            "The shotgun fires two shell types. The type changes how much damage a hit does, most of all against armor.", "",
+            "| Type | What it does | Against no armor | Against armor |",
+            "|---|---|---|---|",
+            "| Standard (FMJ) | The baseline round. | Baseline. | Baseline. |",
+            "| Flesh Damage (HP) | Does more damage to unarmored targets. | About double the standard damage. | Much weaker than standard against every armor class. |",
+            "| Armor Piercing (AP) | Built to get through armor. | About 0.8 times the standard damage. | Overtakes standard from Medium armor for rifle calibers, and from Heavy armor for pistol and SMG calibers. |",
+            "", "Tracer versions of each type do the same damage as their base type.", ""]
+    rifle = wdamage["A91"]
+    body += ["## Torso damage by type: 5.56mm rifle example", "",
+             "A-91 chambered in 5.56mm, upper torso hits:", "",
+             "| Ammo | No armor | Light | Medium | Heavy | Super heavy |", "|---|---|---|---|---|---|"]
+    for aid in ["FMJ", "HollowPoint", "ArmorPiercing"]:
+        a = next(x for x in rifle["ammo"] if x["id"] == aid)
+        ta = a["damage"]["torso_armor"]
+        body.append(f"| {AMMO_NAME[aid]} | {ta['None']:.1f} | {ta['Light']:.1f} | {ta['Medium']:.1f} | {ta['Heavy']:.1f} | {ta['SuperHeavy']:.1f} |")
+    body += ["", "Head hits follow the same pattern with higher numbers. Armor covers different body parts by type; see [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md).", ""]
+    body += ["## Shotgun shells", ""]
+    for a in wdamage["M500"]["ammo"]:
+        dv = a["damage"]["location"]["Torso.Upper"]
+        p = f" per pellet, {a['pellets']} pellets per shot" if a.get("pellets") else " per hit"
+        body.append(f"- {AMMO_NAME[a['id']]}: {dv:.1f} upper torso damage, no armor,{p}.")
+    body += ["", "## Which weapons use each caliber", "", "| Caliber | Weapons |", "|---|---|"]
+    by_cal = {}
+    for wid in loadouts["weapons"]:
+        code = code_for(wid)
+        if code in SKIP or code not in wdamage:
+            continue
+        by_cal.setdefault(caliber_display(wdamage[code]["caliber"]), []).append(
+            f"[{page_title(wid)}]({slugify(page_title(wid))}.md)")
+    for k in sorted(by_cal):
+        body.append(f"| {k} | {', '.join(by_cal[k])} |")
+    body += ["", "## See also", "",
+             "- [Choosing Ammo](../guides/choosing-ammo.md), which round to load against each armor level",
+             "- [Armor](../game-mechanics/armor.md)",
+             "- [Penetration and Ricochet](../game-mechanics/penetration-and-ricochet.md)",
+             "- [Ballistics](../game-mechanics/ballistics.md)",
+             "", "## Sources", "",
+             f"- [weapon-damage.json]({GH}assets/data/weapon-damage.json)",
+             f"- [ammo-availability.json]({GH}assets/data/ammo-availability.json)",
+             "- [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md)",
+             "- [Ammo (feature)](../../game-features/Wardogs_GameFeatures_Ammo_v2.md)",
+             ""]
+    return "\n".join(body)
+
+
+def attachments_page():
+    cats = sorted(ATTACH, key=lambda c: -ATTACH[c]["count"])
+    body = ["# Attachments", "",
+            "Attachments are parts that fit onto a weapon. While a part is fitted, it changes some of the weapon's numbers. "
+            "The table lists each slot type in the data, how many parts it has and what it is for. "
+            "The list after it shows which numbers the parts in each category change, and how many parts change each one.", "",
+            "| Category | Parts | What it is |", "|---|---|---|"]
+    for cat in cats:
+        body.append(f"| {cat} | {ATTACH[cat]['count']} | {ATTACH_CAT_TEXT.get(cat, 'Other slot type.')} |")
+    body += ["", "## What the parts change", ""]
+    for cat in cats:
+        attrs = ATTACH[cat]["attrs"]
+        if attrs:
+            effects = ", ".join(f"{k} ({v} modifiers)" for k, v in sorted(attrs.items(), key=lambda kv: -kv[1]))
+            body.append(f"- **{cat}**: {effects}.")
+        else:
+            body.append(f"- **{cat}**: no effect entries in the loadout data.")
+    body += ["", "Each weapon article lists its own slots and default parts under its Attachments section.", "",
+             "## See also", "",
+             "- [Spread and Recoil](../game-mechanics/spread-and-recoil.md), where bipods, muzzle devices and foregrips change spread",
+             "- [Weapons](../weapons.md)",
+             "",
+             "## Sources", "",
+             f"- [weapon-loadouts.json]({GH}assets/data/weapon-loadouts.json): slot, part and effect data",
+             "- [Attachments and Platforms](../../game-features/Wardogs_AttachmentsPlatforms_v1.md)",
+             "- [Weapon Shop and Parts](../../game-features/Wardogs_WeaponShop_v1.md)",
+             ""]
+    return "\n".join(body)
+
+
+def hub_page(entries):
+    head = ("---\ntitle: Weapons\nnav_order: 1\nwiki_hub: true\nhas_children: true\n"
+            "description: \"Every player weapon, the ammunition they use and the attachments that change them.\"\n---\n\n")
+    body = ["# Weapons", "",
+            "Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun, sniper rifle and launcher "
+            "in the weapon data that a player can get. Each name links to its article. Ammunition and attachments have their own pages.", "",
+            "| Weapon | Class | Caliber | Fire rate | Standard magazine | Vendor price |",
+            "|---|---|---|---|---|---|"]
+    body += entries
+    body += ["", "{% include wiki-cards.html parent=\"Weapons\" %}", ""]
+    return head + "\n".join(body)
+
+
+def main():
+    os.makedirs(OUT, exist_ok=True)
+    rows, count = [], 0
+    for wid in loadouts["weapons"]:
+        code = code_for(wid)
+        if code in SKIP:
+            continue
+        title, desc, text = build_weapon(wid)
+        slug = slugify(title)
+        with open(os.path.join(OUT, slug + ".md"), "w", encoding="utf-8", newline="\n") as f:
+            f.write(front_matter(title, desc) + text)
+        s = stats(wid)
+        rows.append(f"| [{title}](weapons/{slug}.md) | {s['cls']} | {s['cal']} | {s['rpm']} | {s['mag']} | {s['price'] or 'not yet known'} |")
+        count += 1
+    ammo = front_matter("Ammunition", "Bullet and shell types, what each does to armor and flesh, and which weapons use them.") + ammo_page()
+    with open(os.path.join(OUT, "ammunition.md"), "w", encoding="utf-8", newline="\n") as f:
+        f.write(ammo)
+    att = front_matter("Attachments", "The parts that fit on weapons, the slots they go into and what each category changes.") + attachments_page()
+    with open(os.path.join(OUT, "attachments.md"), "w", encoding="utf-8", newline="\n") as f:
+        f.write(att)
+    rows.append("| [Ammunition](weapons/ammunition.md) | Bullet and shell types | - | - | - | - |")
+    rows.append("| [Attachments](weapons/attachments.md) | Muzzles, sights, magazines and more | - | - | - | - |")
+    with open(os.path.join(WIKI, "weapons.md"), "w", encoding="utf-8", newline="\n") as f:
+        f.write(hub_page(rows))
+    print(f"wrote {count} weapon articles, ammunition, attachments and the hub")
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,104 @@
+---
+title: Grenades and Explosives
+parent: "Equipment"
+description: "Frag grenade, C4, placed mines, IED and launcher rounds: blast damage, the distance it reaches, and the fuse or trigger."
+---
+
+# Grenades and Explosives
+
+| Grenades and explosives | |
+|---|---|
+| Hand grenade | M67 Frag Grenade |
+| Remote | C4 Charge with Remote Detonator; IED with its trigger |
+| Placed | Claymore, AT Mine |
+| Launcher and bow rounds | 40mm, 84mm, 93mm, 72mm rounds; Explosive Arrow |
+| Largest blast at centre | 300 HP (AT Mine and IED) |
+{: .wiki-infobox }
+
+Grenades and explosives deal damage in a blast around the point where they go off. A thrown grenade or placed charge does its damage at its centre and less further out, and it reaches no further than its outer radius. Molotovs and smoke are covered on [Fire, Smoke and Flash](fire-smoke-and-flash.md).
+
+## Overview
+
+The table lists the blast numbers in the data. These are the starting amounts before armor and before the game's rules for each body part, so they are not the final damage a player takes. Armor reduction is explained on [Body Armor](body-armor.md).
+
+Blast damage falls evenly from the full amount at the inner radius to zero at the outer radius. Where a value is shown as "full to", the blast does its full amount out to that distance.
+
+## Effects
+
+### Thrown and placed explosives
+
+| Item | Blast at centre | Full damage out to | No damage beyond | Thrown contact |
+|---|---:|---:|---:|---|
+| M67 Frag Grenade | 100 HP | 5 m | 10 m | 10 HP on thrown contact |
+| C4 Charge | 250 HP | 2.5 m | 6 m | 10 HP |
+| AT Mine | 300 HP | 3.8 m | 7.5 m | placed, not thrown |
+| Claymore | 150 HP | 1.5 m | 3 m | placed, not thrown |
+| IED | 300 HP | 4 m | 8 m | 10 HP |
+
+Examples from the frag grenade: 100 HP at 5 m, 50 HP at 7.5 m, and nothing from 10 m on.
+
+The gold variant of the M67 Frag Grenade is in the item data, but it has no shop listing, so it is not described further.
+
+### Launcher and bow rounds
+
+These rounds are fired by weapons. The figures are the explosion at the centre of each round. A direct hit before the round arms does the direct-hit damage shown instead of the blast.
+
+| Round | Fired by | Blast at centre | Full damage out to | No damage beyond | Direct hit before arming |
+|---|---|---:|---:|---:|---:|
+| 40mm grenade | MGL-40 | 100 HP | 2.5 m | 10 m | 80 HP |
+| 84mm rocket | MAAWS | 100 HP | 4 m | 10 m | 120 HP |
+| 93mm rocket | RPG-7 | 110 HP | 2.5 m | 12 m | 120 HP |
+| 72mm rocket | 9K333 Verba | 200 HP | 2 m | 10.8 m | 120 HP |
+| Explosive Arrow | Combat bow | 150 HP | 2 m | 4 m | not listed |
+
+The vehicle cannons, artillery and drone shells are on the [Explosives](../../game-features/Wardogs_Explosives_v1.md) data page. They are used by vehicles, not infantry.
+
+## Use and timing
+
+| Item | Fuse or trigger | Arming | How it is used |
+|---|---|---|---|
+| M67 Frag Grenade | 4 s after the throw | none | Thrown. Can be cooked (held before throwing) and can be thrown back |
+| C4 Charge | Set off by the Remote Detonator; the charge adds a 0.2 s delay | sticks to what it hits | Thrown, then detonated remotely |
+| IED | 3 s after the trigger is pressed | none | Placed, then detonated remotely; no range limit |
+| AT Mine | when a vehicle moves over the trigger area | 1 s after placement | Placed; see [Fire, Smoke and Flash](fire-smoke-and-flash.md) for trigger details |
+| Claymore | when a player or vehicle enters the trigger area | 2 s after placement | Placed; see [Fire, Smoke and Flash](fire-smoke-and-flash.md) for trigger details |
+
+### Throwing
+
+The M67 Frag Grenade has three throws: an overarm throw at 2,500 cm/s (25 m/s), an underarm throw at 1,400 cm/s, and a back throw at 1,800 cm/s. The C4 trigger and IED trigger are thrown at 900 cm/s and 1,200 cm/s. Speeds in the data are in centimetres per second.
+
+### Remote detonators
+
+The Remote Detonator sets off placed C4 charges. The data sets the detonator's range to 20,000 units. Units are centimetres in this game, so that is 200 m. A Support skill raises the range to 240 m and then 280 m. The IED trigger has no range limit.
+
+## Cost
+
+| Item | Price (cash) |
+|---|---:|
+| M67 Frag Grenade | 200 |
+| C4 Charge | 250 |
+| Remote Detonator | 650 |
+| IED trigger | 300 |
+| Claymore | 900 |
+| AT Mine | 650 |
+
+Launcher and bow rounds are priced with their weapons. See the [Weapon Shop](../../game-features/Wardogs_WeaponShop_v1.md) data page.
+
+## Season 2 changes
+
+The Season 2 items data lists no change to the blast damage, radius or fuse of any grenade, C4 charge, mine, IED or launcher round. It lists no price change for these items either.
+
+## See also
+
+- [Fire, Smoke and Flash](fire-smoke-and-flash.md), for the Molotov, smoke grenades and mine triggers
+- [Buildables](buildables.md), which take damage from grenades and explosives
+- [Body Armor](body-armor.md)
+- [Vehicle damage](../vehicles/vehicle-damage.md)
+
+## Sources
+
+- [Explosives Reference](../../game-features/Wardogs_Explosives_v1.md): blast damage, radius, falloff, fuse and arming values
+- [Fire, Smoke and Mines](../../game-features/Wardogs_FireAndUtility_v1.md): throw speeds, detonator range and placement
+- [Item Shop for Non-Weapon Items](../../game-features/Wardogs_ItemShop_v1.md): prices and shop text
+- [Explosive actor defaults](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/explosive-actors.json): thrown and placed actor values
+- [Items and Equipment changes, Season 2](../../season-2-changes/items-equipment.md): the Season 2 check
