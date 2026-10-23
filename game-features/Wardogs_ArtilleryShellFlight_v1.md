@@ -67,7 +67,7 @@ Result: world gravity is the UE default of -980.0 cm/s^2 (9.8 m/s^2 downward), t
 
 ## 4. What is not known
 
-- **Native thrust and drag maths** (`WDProjectileMove`, `WDArtilleryProjectileMove`, `WDDefaultProjectileSyncState`): not decoded on this page. **[Placeholder: teammate B, round 21 native flight analysis. Link and results go here.]**
+- **Native thrust and drag maths** (`WDProjectileMove`, `WDArtilleryProjectileMove`): decoded on [Projectile Flight: Thrust, Drag and Gravity](../pipelines/Wardogs_ProjectileFlight_v1.md). Gravity, drag and wind are modelled natively with the same force model as every other projectile; the 155mm assets set `ThrustSpeed` but never `bShouldThrust`, so the shell does not thrust. The `WDArtilleryProjectileMove` rotation step is still untraced.
 - How `TypicalSpeed`, `ThrustSpeed`, `Mass`, `DragModel` and `MaxProjectileLifetime` enter the mover: not known from data alone. The existence of a native range helper `WDArtilleryRangeLibrary::SimulateImpactDistance` (inputs: projectile stats, weapon stats, an air-density value) shows that range is simulated natively, but its body is not in the export.
 - Units of the data-asset fields: still the UE convention (cm, cm/s, kg as stored). Only the gravity value is confirmed against the engine config.
 - Whether the native mode constructors give non-zero default values for speed limits, drag or gravity scale: the Blueprints store none, so any such values live in native constructors and are not in this file.
