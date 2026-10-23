@@ -2,7 +2,7 @@
 title: "Damage & Combat Systems changes"
 parent: "Season 2 Changes"
 nav_order: 2
-description: "Bone damage modifiers, global damage tables and demolition rules: 9 assets added, 16 modified with real changes, 160 property changes."
+description: "Bone damage modifiers, global damage tables and demolition rules: 9 assets added, 16 modified with real changes, 151 property changes."
 ---
 
 # Damage & Combat Systems changes
@@ -13,7 +13,7 @@ Damage tables, combat rules and demolition rule sets: what changed between Seaso
 - **Removed:** 0 assets
 - **Modified with real changes:** 16 assets (11 more are noise-only: renamed keys, swapped key names or shifted references from the different Season 1 export, not listed)
 - **Moved:** 0 assets
-- **Property changes:** 160 in modified and moved assets
+- **Property changes:** 151 in modified and moved assets
 - **Removed properties:** 0 values in 0 removed assets
 ## Headline changes
 
@@ -60,15 +60,14 @@ Added weapon entry: `HMG.MWSY_001` (no Season 1 value).
 
 [All 72 bone damage modifier changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=damage-combat-systems&q=BoneDamageModifiers)
 
-### Global damage tables (45 rows)
+### Global damage tables (28 rows)
 
 | Asset | Property | Season 1 | Season 2 | Change |
 |---|---|---|---|---|
 | DT_GlobalDamage_ArmorData | Armor · Entry 3 | — | Percentage_Ongoing, Amount 28.0 | added |
 | DT_GlobalDamage_ArmorData | Helmet · Entry 3 | — | Percentage_Ongoing, Amount 28.0 | added |
 | DT_GlobalDamage_InfantryData | Infantry · Entry 6 | — | Percentage_Ongoing, Amount 0.0 | added |
-| DT_GlobalDamage_InfantryData | Infantry · Entry 26 · TargetRequirements[0] | Meta.Damage.Armor | Meta.Damage.Armor.Heavy | changed |
-| DT_GlobalDamage_InfantryData | Infantry · Entry 26 · OutModification.Amount | 0.0 | -10.0 | −10.0 (n/a) |
+| DT_GlobalDamage_InfantryData | Infantry · Entry 26 | — | Percentage_Ongoing, Amount -10.0 | added |
 | DT_GlobalDamage_InfantryData | Infantry · Entry 27 | — | Percentage_Ongoing, Amount -34.0 | added |
 | DT_GlobalDamage_InfantryData | Infantry · Entry 29 | — | Percentage_Ongoing, Amount 0.0 | added |
 | DT_GlobalDamage_InfantryData | Infantry · Entry 30 | — | Percentage_Ongoing, Amount -10.0 | added |
@@ -77,59 +76,42 @@ Added weapon entry: `HMG.MWSY_001` (no Season 1 value).
 | DT_GlobalDamage_InfantryData | Infantry · Entry 89 · OutModification.Amount | -13.0 | -30.0 | −17.0 (−130.8%) |
 | DT_GlobalDamage_InfantryData | Infantry · Entry 106 | — | Percentage_Ongoing, Amount -30.0 | added |
 | DT_GlobalDamage_InfantryData | Infantry · Entry 109 | — | Percentage_Ongoing, Amount -50.0 | added |
-| DT_GlobalDamage_InfantryData | Infantry · Entry 110 | — | Percentage_Ongoing, Amount -45.0 | added |
-| DT_GlobalDamage_InfantryData | Infantry · Entry 112 · SourceRequirements[0] | Meta.Damage.Explosive.Rocket.122mm | Meta.Damage.Explosive.Radius.Outer | changed |
-| DT_GlobalDamage_InfantryData | Infantry · Entry 112 · SourceRequirements[1] | — | Meta.Damage.Explosive.Rocket.93mm | added |
-| DT_GlobalDamage_InfantryData | Infantry · Entry 112 · OutModification.Amount | -45.0 | -50.0 | −5.0 (−11.1%) |
-| DT_GlobalDamage_InfantryData | Infantry · Entry 115 · SourceRequirements[0] | Meta.Damage.Explosive.Radius.Outer | Meta.Damage.Explosive.Grenade.40mm | changed |
-| DT_GlobalDamage_InfantryData | Infantry · Entry 115 · SourceRequirements[1] | Meta.Damage.Explosive.Rocket.93mm | Meta.Damage.Explosive.Radius.Outer | changed |
+| DT_GlobalDamage_InfantryData | Infantry · Entry 115 | — | Percentage_Ongoing, Amount -50.0 | added |
 | DT_GlobalDamage_InfantryData | Infantry · Entry 118 | — | Percentage_Ongoing, Amount -30.0 | added |
 | DT_GlobalDamage_InfantryData | Infantry · Entry 119 | — | Percentage_Ongoing, Amount -30.0 | added |
-| DT_GlobalDamage_InfantryData | Infantry · Entry 124 · TargetRequirements[0] | Meta.Damage.Armor | — | removed |
-| DT_GlobalDamage_InfantryData | Infantry · Entry 124 · PossibleHitLocations[0] | — | Meta.Damage.HitLocation.Infantry.Head | added |
-| DT_GlobalDamage_InfantryData | Infantry · Entry 124 · PossibleHitLocations[1] | — | Meta.Damage.HitLocation.Infantry.Neck | added |
-| DT_GlobalDamage_InfantryData | Infantry · Entry 124 · OutModification.Amount | 0.0 | -15.6 | −15.6 (n/a) |
-| DT_GlobalDamage_InfantryData | Infantry · Entry 125 · TargetRequirements[0] | Meta.Damage.Helmet | — | removed |
-| DT_GlobalDamage_InfantryData | Infantry · Entry 125 · PossibleHitLocations[0] | — | Meta.Damage.HitLocation.Infantry.Torso.Upper | added |
-| DT_GlobalDamage_InfantryData | Infantry · Entry 125 · OutModification.Amount | 0.0 | -12.5 | −12.5 (n/a) |
-| DT_GlobalDamage_InfantryData | Infantry · Entry 126 · SourceRequirements[0] | — | Meta.Damage.Bullet.50Cal | added |
-| DT_GlobalDamage_InfantryData | Infantry · Entry 126 · PossibleHitLocations[0] | — | Meta.Damage.HitLocation.Infantry.Torso.Middle | added |
-| DT_GlobalDamage_InfantryData | Infantry · Entry 126 · PossibleHitLocations[1] | — | Meta.Damage.HitLocation.Infantry.Torso.Lower | added |
-| DT_GlobalDamage_InfantryData | Infantry · Entry 126 · OutModification.Operation | EWDDamageModificationOperation::None | EWDDamageModificationOperation::Percentage_Ongoing | changed |
-| DT_GlobalDamage_InfantryData | Infantry · Entry 126 · OutModification.Amount | 0.0 | -6.0 | −6.0 (n/a) |
-| DT_GlobalDamage_InfantryData | Infantry · Entry 126 · OutModification.PriorityCategory.TagName | None | Meta.Damage.Category.PenetrationEffectiveness | changed |
-| DT_GlobalDamage_InfantryData | Infantry · Entry 127 · TargetRequirements[0] | Meta.Damage.Helmet.SuperHeavy | — | removed |
-| DT_GlobalDamage_InfantryData | Infantry · Entry 127 · SourceRequirements[0] | Meta.Damage.Arms.High | Meta.Damage.Bullet.50Cal | changed |
-| DT_GlobalDamage_InfantryData | Infantry · Entry 127 · PossibleHitLocations[0] | — | Meta.Damage.HitLocation.Infantry.Torso.Middle | added |
-| DT_GlobalDamage_InfantryData | Infantry · Entry 127 · PossibleHitLocations[1] | — | Meta.Damage.HitLocation.Infantry.Torso.Lower | added |
-| DT_GlobalDamage_InfantryData | Infantry · Entry 127 · OutModification.Amount | -25.0 | -7.7 | +17.3 (+69.2%) |
+| DT_GlobalDamage_InfantryData | Infantry · Entry 124 | — | Percentage_Ongoing, Amount -15.6 | added |
+| DT_GlobalDamage_InfantryData | Infantry · Entry 125 | — | Percentage_Ongoing, Amount -12.5 | added |
+| DT_GlobalDamage_InfantryData | Infantry · Entry 126 | — | Percentage_Ongoing, Amount -6.0 | added |
+| DT_GlobalDamage_InfantryData | Infantry · Entry 127 | — | Percentage_Ongoing, Amount -7.7 | added |
 | DT_GlobalDamage_InfantryData | Infantry · Entry 128 | — | Percentage_Ongoing, Amount -10.0 | added |
 | DT_GlobalDamage_InfantryData | Infantry · Entry 129 | — | Percentage_Ongoing, Amount -12.5 | added |
 | DT_GlobalDamage_InfantryData | Infantry · Entry 130 | — | Percentage_Ongoing, Amount -10.0 | added |
 | DT_GlobalDamage_InfantryData | Infantry · Entry 131 | — | Percentage_Ongoing, Amount -20.0 | added |
-| DT_GlobalDamage_InfantryData | Infantry · Entry 135 | — | None, Amount 0.0 | added |
 | DT_GlobalDamage_InfantryData | Infantry · Entry 136 | — | Percentage_Ongoing, Amount -20.0 | added |
+| DT_GlobalDamage_InfantryData | Infantry · Entry 25 | present | — | removed |
+| DT_GlobalDamage_InfantryData | Infantry · Entry 113 | present | — | removed |
+| DT_GlobalDamage_InfantryData | Infantry · Entry 114 | present | — | removed |
+| DT_GlobalDamage_InfantryData | Infantry · Entry 116 | present | — | removed |
 
-[All 45 global damage changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=damage-combat-systems&q=GlobalDamage)
+[All 28 global damage changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=damage-combat-systems&q=GlobalDamage)
 
-### Vehicle seat damage reduction (12 rows)
+### Vehicle seat damage reduction (11 rows)
 
 | Asset | Property | Season 1 | Season 2 | Change |
 |---|---|---|---|---|
-| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.ROT_01.Default[0] · seat damage reduction | -50.0 | -25.0 | +25.0 (+50.0%) |
-| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.ROT_01.Default[1] · seat damage reduction | -20.0 | -15.0 | +5.0 (+25.0%) |
-| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.ROT_01.MountedMachineGuns[0] · seat damage reduction | -50.0 | -25.0 | +25.0 (+50.0%) |
-| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.ROT_01.MountedMachineGuns[1] · seat damage reduction | -20.0 | -15.0 | +5.0 (+25.0%) |
-| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.Littlebird.Default[0] · seat damage reduction | -50.0 | -25.0 | +25.0 (+50.0%) |
-| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.Littlebird.Default[1] · seat damage reduction | -20.0 | -15.0 | +5.0 (+25.0%) |
-| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.Littlebird.RocketPods[0] · seat damage reduction | -50.0 | -25.0 | +25.0 (+50.0%) |
-| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.Littlebird.RocketPods[1] · seat damage reduction | -20.0 | -15.0 | +5.0 (+25.0%) |
-| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.Littlebird.MountedMachineGuns[0] · seat damage reduction | -50.0 | -25.0 | +25.0 (+50.0%) |
-| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.Littlebird.MountedMachineGuns[1] · seat damage reduction | -20.0 | -15.0 | +5.0 (+25.0%) |
+| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.ROT_01.Default | — | added | added |
+| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.ROT_01.MountedMachineGuns | — | added | added |
+| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.Havoc.Default | — | added | added |
+| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.Littlebird.Default | — | added | added |
+| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.Littlebird.RocketPods | — | added | added |
+| DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.Littlebird.MountedMachineGuns | — | added | added |
+| DT_InfantryData_VehicleSeatDamageReduction | Land.Wheeled.Humvee.Default | — | added | added |
+| DT_InfantryData_VehicleSeatDamageReduction | Land.Wheeled.Humvee.MachineGun | — | added | added |
+| DT_InfantryData_VehicleSeatDamageReduction | Land.Wheeled.Humvee.Minigun | — | added | added |
 | DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.ROT_04.Default | — | added | added |
 | DT_InfantryData_VehicleSeatDamageReduction | Air.Rotary.ROT_04.MountedMachineGuns | — | added | added |
 
-[All 12 vehicle seat damage changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=damage-combat-systems&q=VehicleSeatDamage)
+[All 20 vehicle seat damage changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=damage-combat-systems&q=VehicleSeatDamage)
 
 ### Demolition rule sets and other changes (31 rows)
 
