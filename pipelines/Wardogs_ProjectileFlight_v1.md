@@ -73,7 +73,7 @@ sweep a trace x -> x + dx; on a hit the step stops at the hit fraction f
 | Drag `a_drag` | `-(100/m) · ½ρ · Cd · (π/4)(D/100)² · (|v|/100)² · v̂` with `ρ = 1.2`, `Cd = DragModel.Value × Curve(|v|/100)`, `D` cm, `m` kg | §5 |
 | Thrust `a_thrust` | `ThrustSpeed · v̂` (cm/s², despite the name) while fuel remains and the start delay has passed | §6 |
 | Wind `a_wind` | `0.75 · Wind · clamp((T² − X²)/X², 0, 1)`, `T` = absolute path travelled | §6.4 |
-| Step | `dt = floor(1000 / Rate) · 0.001` s, `Rate` an integer setting of the subsystem | §3 |
+| Step | `dt = floor(1000 / Rate) · 0.001` s, `Rate` = `SimulationFrameRate` = 30 (`DefaultGame.ini`), so 33 ms | §3 |
 
 Launch speed is the **weapon's** `InitialBulletSpeed` (cm/s), not the
 projectile's `TypicalSpeed` (§2). `ThrustSpeed` is a cm/s² acceleration, not a
@@ -151,9 +151,38 @@ The actor-driven exemption is explicit in three places: the spawn code copies
 the flag to `inst+0x128` (`0x6F39940`), `Tick` branches on it at `0x6F3BE31`,
 and the step driver `0x6F3D130` returns "alive" for it before it would call
 `0x6F3CB80` (`0x6F3D164: cmp byte [rbx+0x128],0`). `0x6F3CB80` itself returns 0
-immediately when `inst+0x128` is set. `Rate`'s initial value was not found
-(§11); the step length is `floor(1000/Rate)` ms, an integer number of
-milliseconds.
+immediately when `inst+0x128` is set.
+
+**`Rate` is `SimulationFrameRate`, and it is 30.** (Round 23.) The int at tickable `+0x40C`
+(subsystem `+0x444`) is `FWDProjectileSystemSettings.SimulationFrameRate` (SDK `+0x1A4`), the last
+field of the `ProjectileSystemSettings` struct the subsystem holds at `+0x2A0`:
+
+| Step | Where | Value |
+|---|---|---|
+| Class default | the struct constructor `0x6F2A600` stores `0x1E` at struct `+0x1A4` (`0x6F2A792`); the subsystem constructor `0x6F2AAA0` calls it on `+0x2A0` (`0x6F2ACE3`) | 30 |
+| Config | `Wardogs/Config/DefaultGame.ini` line 303, `[/Script/WDGame.WDGameSettings]`, `ProjectileSystemSettings=(…,MaxConsecutiveFullRefundedSubsteps=10,SimulationFrameRate=30)` (SHA-256 `56fda182…33f1bd`, the same file as [round 8 config](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-config.md)) | 30 |
+| Load | subsystem `Initialize` (`0x6F37F12`–`0x6F37F25`) resolves the `WDGameSettings` object (`0x6C03540`) and copies its `+0x458` struct into `+0x2A0` with the copy-assign `0x6F2C180`, which copies `+0x1A4` at `0x6F2C427`–`0x6F2C432` | 30 |
+
+No other write to subsystem `+0x444` (or to the tickable `+0x40C`) exists in `0x6F20000`–`0x6F50000`; the
+settings object's own constructor initialises the same struct through the same `0x6F2A600`
+(`0x6C02F3A`). The field is read at four sites, each computing `floor(1000/Rate)` the same way
+(`cvtdq2pd`, `divsd` by 1000.0, `roundpd` mode 3 = truncate; `Rate = 0` gives a step of 0): `Tick`
+(`0x6F3BCB7`), and `0x6F2C72C`, `0x6F3D798`, and `0x6F34343`, which stores the step (`entry+0x100`) and the
+instance accumulator (`entry+0x108`) in the per-handle tracer-presentation entry (map at `+0x140`,
+stride `0x168`). So:
+
+- **Fixed, not variable:** `dt = floor(1000/30) = 33` ms = `0.033` s, `Tick` accumulates real frame time
+  and runs at most one step per tick (`acc ≥ 33 → acc −= 33`; an accumulator within an epsilon of zero is
+  snapped to 0). A frame longer than 33 ms leaves a backlog that drains one step per later tick.
+- **Not replicated as a value:** nothing in the traced readers sends it. Each machine reads its own
+  `DefaultGame.ini` (the same shipped file), so server and client agree by configuration.
+- **Only for native-stepped projectiles.** Actor-driven projectiles (`bActorHandlesProjectileMovement`,
+  §7: the 155 mm shells, 120/125 mm, 122 mm, 93 mm and others) use the mover time step instead.
+  `DefaultNetworkPrediction.ini` sets `PreferredTickingPolicy=Fixed` and `FixedTickFrameRate=30`, i.e.
+  `1/30` s = 33.3 ms if the projectile mover ticks on the fixed policy (not confirmed for
+  `BP_155mm_Standard`). Against `_tools/shell_sim.py` the difference between 33 and 33.3 ms is 0.01 m.
+- **Build check:** the settings constructor, the copy, `Initialize` and `Tick` are byte-identical in the
+  analysis image and the older reference image; the readers above were read in the reference image.
 
 `0x6F3CB80` loops the substep `0x6F3C060` until the step's time is consumed
 (each call returns the unused fraction `(1 − f)·dt` after a hit) and then runs
@@ -548,8 +577,9 @@ WARDOGS_ANALYSIS_EXE=<analysis image> python _tools/projectile_flight_check.py
 2. **World gravity.** Resolved: −980.0 cm/s² (§4). Open only: override volumes
    in world-partition cells, and any gravity scale applied by the artillery
    mode.
-3. **`Rate`.** The integer behind `floor(1000/Rate)` ms (tickable `+0x40C`) was not located; the
-   step length in §3 is a formula, not a number.
+3. **`Rate`.** Resolved in round 23: `SimulationFrameRate` = 30 (class default and `DefaultGame.ini`),
+   so the native step is 33 ms (§3). Still open: the mover time step of the actor-driven path (probably the
+   `FixedTickFrameRate=30` fixed policy, 33.3 ms), and whether any server config overrides the value.
 4. **Subsystem flag `+0xB0`.** When set, `Tick` only advances `ElapsedTime` and
    checks the lifetime, without integrating (`0x6F3BE3A`). Its meaning
    (client replay, server verification, or a mode switch) is not established.
@@ -564,7 +594,10 @@ WARDOGS_ANALYSIS_EXE=<analysis image> python _tools/projectile_flight_check.py
 9. **Arming tag `0xD3815F8`** (§10): consumer and meaning; whether the 155 mm
    shell is blocked from detonating by it.
 10. **`DragModel.Value = 80`** on the Standard 155 mm (and `_SB`) assets against
-    2.5 on the Expensive asset: data intent unknown; §8 shows its effect.
+    2.5 on the Expensive asset: data intent unknown; §8 shows its effect. The survey of every projectile
+    asset ([round 23](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round23-projectile-drag-survey.md))
+    finds 80 only on the 155 mm Standard family and `DA_155mm_Expensive_ProjectileData_SB`, which carries
+    the Standard numbers (70 kg, 8.4 cm).
 11. **Actor-driven lifetime.** Which code ends an actor-driven projectile at
     `MaxProjectileLifetime` (40 s for 155 mm).
 12. **Runtime check.** Nothing here was observed running; the equations are
