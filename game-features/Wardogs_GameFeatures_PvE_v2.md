@@ -124,3 +124,4 @@ Samples checked (`StrikeDisarm_Intro1`, `VIPEscort_Intro3`, `VIPEscort_Success`,
 - **Units.** Curve times and values, and the helicopter speed, have no stated units.
   - **See [`docs/UNITS.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/UNITS.md)** for the project-wide units reference (UE 5.7 defaults + Wardogs-specific suffixes).
 - **Scenario logic.** How quest objectives and the `ScenarioData` values drive the mission flow is in BP and runtime code, not in this folder.
+- **Remaining small assets.** Ten scenario voice-over entries, the VIP tracker distance rules and related framework settings are listed row by row in [PvE and Settings Assets](Wardogs_PveSettingsAssets_v1.md).
