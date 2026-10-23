@@ -284,3 +284,43 @@ A function listed below is not necessarily virtualized. The strongest signal is 
 | `0x74f72e0` | stub | - | `docs/evidence/round8-exploding-gate.md` L28 |
 | `0x76449c0` | stub | - | `docs/evidence/round8-weapon-context.md` L110 |
 | `0x76ab5f0` | stub | - | `docs/WHAT_IS_LEFT.md` L122; `docs/evidence/vehicles.md` L66,236,314; `pipelines/Wardogs_VehicleDamagePipeline_v1.md` L615 |
+
+## Byte-level comparison
+
+The own bytes of each cited function that has a corpus row in `.text` were compared between the analysis image and the reference image (file offsets from each image's `.text` section). For the functions in the 'stub' and 'differs' categories the immediately preceding corpus function was compared the same way.
+
+| Measure | Count |
+|---|---:|
+| Cited functions in `.text` (distinct corpus rows) | 896 |
+| Cited addresses with no function row (not compared) | 441 |
+| Own bytes identical | 888 |
+| Own bytes differ (any category) | 8 |
+| Not comparable (range outside the reference `.text`) | 0 |
+| Own bytes differ, category 'unknown' (page not in the recovered table) | 0 |
+| Category clean | 663 |
+| Category stub or differs | 207 |
+| &nbsp;&nbsp;of which own bytes differ | 8 |
+| &nbsp;&nbsp;of which own bytes identical | 199 |
+| &nbsp;&nbsp;&nbsp;&nbsp;differing bytes outside its range lie in a corpus row whose own bytes differ | 106 |
+| &nbsp;&nbsp;&nbsp;&nbsp;differing bytes outside its range lie in no corpus row | 93 |
+| &nbsp;&nbsp;&nbsp;&nbsp;other | 0 |
+| &nbsp;&nbsp;&nbsp;&nbsp;(immediately preceding row has differing own bytes, for reference) | 4 |
+
+Cited functions whose own bytes differ between the images (8 rows, by start address; at most 60 shown). 'Preceding' is the corpus function immediately below the cited start, with its own-bytes status.
+
+| Function | Category | Stub in body | Differing own bytes (first rva) | Preceding function | Preceding own bytes | Cited at |
+|---|---|---|---|---|---|---|
+| `0x395be30`–`0x395beb9` | stub | yes | 132 (`0x395be31`) | `0x395bd50`–`0x395be2a` | same | `content/Wardogs_WeaponAttributes_v1.md:79`; `content/Wardogs_WeaponAttributes_v1.md:83` +6 |
+| `0x4232fd0`–`0x4233054` | stub | yes | 130 (`0x4232fd1`) | `0x4232700`–`0x4232fc4` | same | `docs/evidence/round8-tapered-query.md:87` |
+| `0x4416ff0`–`0x4417060` | stub | yes | 109 (`0x4416ff0`) | `0x4416f50`–`0x4416fe9` | same | `docs/ROUND11_STATUS.md:665` |
+| `0x5230be0`–`0x5230c39` | stub | yes | 85 (`0x5230be2`) | `0x5230b80`–`0x5230bd9` | differs | `docs/ROUND11_STATUS.md:1183`; `docs/ROUND11_STATUS.md:1185` |
+| `0x6b74e30`–`0x6b74f79` | stub | yes | 319 (`0x6b74e30`) | `0x6b747f0`–`0x6b74e28` | same | `docs/evidence/round8-weapon-context.md:31`; `docs/evidence/round8-weapon-context.md:35` +1 |
+| `0x6b8ac90`–`0x6b8acaf` | stub | yes | 26 (`0x6b8ac92`) | `0x6b8ac60`–`0x6b8ac81` | differs | `content/Wardogs_Weapons_v2.md:330`; `content/Wardogs_Weapons_v2.md:332` +2 |
+| `0x6b99300`–`0x6b99320` | stub | yes | 29 (`0x6b99302`) | `0x6b99270`–`0x6b992f9` | same | `game-features/Wardogs_GameFeatures_Weapons_v2.md:209` |
+| `0x6bb8970`–`0x6bb89a3` | stub | yes | 47 (`0x6bb8972`) | `0x6bb8900`–`0x6bb8969` | same | `docs/ROUND11_STATUS.md:980`; `docs/ROUND11_STATUS.md:988` +4 |
+
+Reading the section. The eight rows with differing own bytes are all stub-bodied functions, so the difference is the dispatch stub that replaces the body in the analysis image. Every cited function whose category is clean or unknown has identical own bytes.
+
+Of the 199 stub or differs functions whose own bytes are identical, 106 have differing bytes outside their range inside a corpus row whose own bytes differ. This covers the two round 19 cases: `0x42333f0` and `0x44176d0` differ only in the tail of the stub functions `0x4232fd0` and `0x4416ff0`, which share their page. Only four of them have a differing immediately preceding row (`0x157c320`, `0x15b83b0`, `0x2f691e0`, `0x538abd0`). For the other 93, the differing bytes lie in no corpus row, so this check does not attribute them. They are an open question about the protection layer's byte layout, not evidence that a claim is wrong.
+
+Method: `_tools/ida_claim_bytes.py` (sibling of `_tools/ida_claim_exposure.py`, which supplies the page classes and the citation list). Run `python -I _tools/ida_claim_bytes.py` for this section, or add `--tsv` for one line per cited function.
