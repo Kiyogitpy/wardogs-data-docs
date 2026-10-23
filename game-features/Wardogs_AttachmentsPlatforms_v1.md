@@ -13,6 +13,8 @@ description: "Every weapon attachment item with what it changes, which weapons a
 
 This page is the inventory: what attachment items exist, what each one changes, which weapon slots take it, and what slots each weapon has. Item loading, sub-slot filters and default loadouts come from the same code as [Weapon Attributes](../content/Wardogs_WeaponAttributes_v1.md), so the two agree. That page adds the rules for combining modifiers and the final value of every attribute per weapon; this page does not repeat them. Prices, unlock levels and shop text are in [Weapon Shop and Parts](Wardogs_WeaponShop_v1.md). The Gunsmith screens are in [Gunsmith](Wardogs_GameFeatures_Gunsmith_v2.md). To try a loadout, use the [Weapon Loadout Calculator](../content/loadout-calculator.md).
 
+The animation sets of the platforms and launchers (reload and melee montages, magazine-swap overrides) are tabulated on [Weapon Animation Sets and Misc](Wardogs_WeaponMisc_v1.md).
+
 Labels: **Data** is read straight from the export. **Derived** is worked out from Data by the generator (fit lists, counts, ranges). **Inferred** is a reading the data does not state. Audio is out of scope; a tag that only names an audio cue is shown as a tag and not explained.
 
 <!-- attachment_tables counts -->
