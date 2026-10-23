@@ -198,3 +198,23 @@
   .sd-asset > summary .sd-count { margin-left: 0; flex-basis: 100%; }
   .sd-controls { gap: 0.75rem; }
 }
+
+// Export-name group rows, resequenced lists, notes
+.main-content .sd-table tr.sd-group th {
+  background: $ue-panel-raised;
+  color: $ue-text-dim;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.35rem 0.75rem;
+  code { background: transparent; border: 0; padding: 0; color: $ue-white; font-size: 0.8rem; }
+}
+.sd-seq { font-size: 0.8rem; summary { cursor: pointer; color: $ue-text-dim; } }
+.sd-seq-list {
+  margin: 0.4rem 0 0;
+  padding-left: 2rem;
+  max-height: 16rem;
+  overflow: auto;
+  code { background: transparent; border: 0; padding: 0; font-size: 0.75rem; }
+}
+.sd-seq-note { color: $ue-text-dim; font-size: 0.75rem; margin-top: 0.2rem; }
+.sd-meta-row .sd-asset-note { margin-top: 0.4rem; color: #ffc79a; }
