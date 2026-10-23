@@ -1179,3 +1179,19 @@ $wd-mono: "JetBrains Mono", ui-monospace, monospace;
 
 // Weapon spray viewer page (shares the vehicle viewer styles above).
 @import "./spray-viewer";
+
+// Wiki infobox: the stat table at the top of a wiki article, written as a markdown table
+// followed by `{: .wiki-infobox }`. Floats right on wide screens, full width on phones.
+.main-content table.wiki-infobox {
+  width: 100%;
+  margin: 0 0 1.5rem;
+
+  @media (min-width: 50rem) {
+    float: right;
+    width: 20rem;
+    margin: 0 0 1rem 1.5rem;
+  }
+  th:first-child, td:first-child { color: $ue-text-dim; white-space: nowrap; }
+}
+
+.main-content h2 { clear: both; }
