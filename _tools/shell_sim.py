@@ -13,9 +13,10 @@ parameters in this file.  The inputs are:
                         Expensive Value 2.5, m 19 kg, D 10.5 cm
   * thrust, wind        none (155 mm sets no bShouldThrust; wind taken as zero)
 
-The step length is the one unknown of the documented model (open item 3 on the
-projectile-flight page: Rate, dt = floor(1000/Rate) ms).  `dt_ms` is therefore an
-argument; the sensitivity to it is reported by the analysis, not tuned.
+The step length: the native step is floor(1000/Rate) ms with Rate =
+SimulationFrameRate = 30, i.e. 33 ms (projectile-flight page section 3, round 23);
+the actor-driven mover probably uses 1000/30 ms.  `dt_ms` stays an argument; the
+sensitivity to it is reported by the analysis, not tuned.
 
 Integration (page section 1), per step:
     a  = g + a_drag(v)

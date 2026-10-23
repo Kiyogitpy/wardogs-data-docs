@@ -27,7 +27,7 @@ Labels: **Derived** is arithmetic on documented data; **Measured** is a number t
 | Step | `a` from the velocity at the start of the step, `v1 = v + a*dt`, `dx = (v+v1)/2*dt` | Derived (native) |
 | Lifetime | flight ends after 40 s (`MaxProjectileLifetime`) | Derived (data) |
 
-**Step length (assumed).** The native step is `floor(1000/Rate)` ms and `Rate` was never located (open item 3 on the flight page). Results are given at 4 ms for the exploration and tested from 1 ms to 33 ms (Rate 30 to 1000). The step does not move any conclusion (section 4, last block).
+**Step length (assumed).** The native step is `floor(1000/Rate)` ms and `Rate` was never located when this was written (open item 3 on the flight page). Round 23 found it: `SimulationFrameRate` is 30, a 33 ms step, which is inside the tested range. Results are given at 4 ms for the exploration and tested from 1 ms to 33 ms (Rate 30 to 1000). The step does not move any conclusion (section 4, last block).
 
 **Mil to elevation (assumed).** The calculator's dial range runs 20 to 1390 mil; the artillery's pitch limits are 2 to 80 degrees (`MinWeaponPitchAngle`, `MaxWeaponPitchAngle` of `W_TNK_01_Artillery`). Three conventions are tested, none fitted: NATO (6400 per turn), Warsaw (6000 per turn) and the true milliradian (2000*pi per turn, 1 mil = 0.0573 degrees). The elevation is the barrel elevation above horizontal.
 
