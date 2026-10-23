@@ -3,7 +3,7 @@
 // the model to answer from those sections and returns the text. It keeps no state and no keys:
 // the model runs through the Workers AI binding, whose free daily allowance caps total use.
 
-const MODEL = "@cf/meta/llama-3.1-8b-instruct";
+const MODEL = "@cf/meta/llama-3.1-8b-instruct-fp8";
 const MAX_QUESTION = 300;
 const MAX_SOURCES = 6;
 const MAX_SOURCE_CHARS = 1800;
@@ -81,8 +81,9 @@ export default {
     try {
       const out = await env.AI.run(MODEL, { messages: buildMessages(parsed), max_tokens: 400 });
       return reply({ answer: String(out.response || "").trim() }, 200, headers);
-    } catch {
-      return reply({ error: "model unavailable" }, 502, headers);
+    } catch (err) {
+      console.error("AI.run failed:", err && err.message);
+      return reply({ error: "model unavailable", detail: String((err && err.message) || err).slice(0, 300) }, 502, headers);
     }
   },
 };
