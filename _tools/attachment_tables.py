@@ -385,6 +385,87 @@ def noeffect(d):
     return "\n".join(out)
 
 
+def ref_index(d, ids):
+    """item id (lower) -> set of file stems under data/ that mention it."""
+    pats = {i.lower(): set() for i in ids}
+    for path in glob.glob(os.path.join(ROOT, "data", "**", "*.json"), recursive=True):
+        try:
+            with open(path, encoding="utf-8") as f:
+                text = f.read().lower()
+        except OSError:
+            continue
+        stem = os.path.basename(path)[:-5]
+        for i in pats:
+            if i in text:
+                pats[i].add(stem)
+    return pats
+
+
+def ref_kind(stem):
+    if stem.startswith("DT_EntityData_UI"):
+        return "UI catalog"
+    if stem.startswith(("DT_WeaponMarket", "DT_VendorData")):
+        return "vendor"
+    if stem.startswith("DT_LootableDataTable"):
+        return "loot"
+    if stem.startswith(("DT_MetaTree", "DA_Weapon_UnlocksTree")):
+        return "unlock tree"
+    if stem.startswith(("DT_Challenge", "ST_Challenges", "DT_Reward")):
+        return "challenges/rewards"
+    if stem.startswith(("AE_",)):
+        return "audio"
+    return "item or weapon file"
+
+
+def nofit_rows(d):
+    """For each attachment no weapon sub-slot accepts: (item, reason text, reference kinds)."""
+    nf = [it for it in d.attachments if it.key not in d.fits]
+    refs = ref_index(d, [it.item_id for it in nf])
+    wkeys = {w.key for w in d.weapons}
+    others = [i for i in {id(i): i for i in d.items.values()}.values() if i.key not in wkeys]
+    rows = []
+    for it in nf:
+        typ = type_label(it).split(".")[0]
+        tool = set()
+        for o in others:
+            for c in getattr(o, "containers", None) or []:
+                tag = c["ContainerIdentifier"]["TagName"]
+                if tag == "None" or tag.startswith("Item.Container") or tag.startswith("Inventory.Slot"):
+                    continue
+                if wa.accepts(c, it):
+                    tool.add(f"`{o.asset}` {wa.short_slot(tag)}")
+        spec = [t for t in it.context_tags if t.startswith(f"Item.Attachment.{typ}.")]
+        stem = spec[0].split(".")[-1] if spec else re.sub(r"^ID_|_(Mag|BRL|HGD|GRP|STK)\w*$", "", it.asset)
+        owners = [w for w in d.weapons if stem.lower() in f"{w.asset} {w.display or ''} {w.item_id}".lower().replace(" ", "")]
+        if tool:
+            reason = "fits a tool or deployable slot, not a weapon: " + ", ".join(sorted(tool))
+        elif owners:
+            parts = []
+            for w in owners:
+                sl = [c for c in w.containers if wa.short_slot(c["ContainerIdentifier"]["TagName"]) == typ]
+                if not sl:
+                    parts.append(f"`{w.asset}` has no {typ} slot")
+                else:
+                    f = sl[0].get("Filter", {})
+                    names = [tname(d, x).replace("ID_", "") for x in f.get("AllowedSubSlotItems", [])]
+                    ctx = f.get("AllowedSubSlotContext", [])
+                    allow = ", ".join([f"`{x}`" for x in names] + [f"ctx `{x}`" for x in ctx][:3]) or "no allow list (blocks decide)"
+                    parts.append(f"`{w.asset}` {typ} slot is {f.get('SupportFilter', '').split('::')[-1]} and allows " + allow)
+            reason = "; ".join(parts)
+        else:
+            reason = f"no weapon is named for it; the {typ} slots that exist accept other items"
+        kinds = sorted({ref_kind(s) for s in refs[it.item_id.lower()] if s != os.path.basename(it.path)[:-5]})
+        rows.append((it, reason, ", ".join(kinds) or "none"))
+    return rows
+
+
+def nofit(d):
+    out = ["| Asset | Type | Why no weapon accepts it | Referenced elsewhere in data/ |", "|---|---|---|---|"]
+    for it, reason, kinds in sorted(nofit_rows(d), key=lambda r: (type_label(r[0]).lower(), r[0].asset.lower())):
+        out.append(f"| {link(it)} | {type_label(it)} | {reason} | {kinds} |")
+    return "\n".join(out)
+
+
 def nullfrag(d):
     rows = null_frag(d)
     out = ["| Asset | Item id | Name | Context tags |", "|---|---|---|---|"]
@@ -428,7 +509,7 @@ def attributes(d):
 
 
 MODES = {"counts": counts, "archetypes": archetypes, "platforms": platforms, "slots": slots, "items": items,
-         "effects": effects, "bipods": bipods, "noeffect": noeffect, "nullfrag": nullfrag, "attributes": attributes}
+         "effects": effects, "bipods": bipods, "noeffect": noeffect, "nofit": nofit, "nullfrag": nullfrag, "attributes": attributes}
 
 
 def regenerate(d, text):
