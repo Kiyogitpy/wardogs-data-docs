@@ -405,8 +405,11 @@
         meta.appendChild(h('div', { class: 'sd-old' }, ['Moved from ', h('code', { text: a.old_path }), how ? ' (' + how + ')' : null]));
       }
       if (a.note) meta.appendChild(h('div', { class: 'sd-asset-note', text: a.note }));
-      if (a.noise && (a.noise.renamed_keys || a.noise.ref_shifts)) {
-        meta.appendChild(h('div', { class: 'sd-noise', text: 'Also: ' + fmtNum(a.noise.renamed_keys || 0) + ' renamed keys, ' + fmtNum(a.noise.ref_shifts || 0) + ' reference shifts (not listed).' }));
+      var noiseParts = [['renamed_keys', 'renamed keys'], ['swapped_keys', 'swapped key names'], ['dup_keys', 'duplicate keys'], ['ref_shifts', 'reference shifts']]
+        .filter(function (n) { return a.noise && a.noise[n[0]]; })
+        .map(function (n) { return fmtNum(a.noise[n[0]]) + ' ' + n[1]; });
+      if (noiseParts.length) {
+        meta.appendChild(h('div', { class: 'sd-noise', text: 'Also: ' + noiseParts.join(', ') + ' from the different Season 1 export (not listed).' }));
       }
       var body = h('div', { class: 'sd-body' }, [meta]);
       var done = false;
