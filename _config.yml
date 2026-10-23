@@ -30,6 +30,7 @@ search:
 ask_endpoint: "https://wardogs-ask.wardogs-docs.workers.dev"
 
 aux_links:
+  "Wiki": "https://kiyogitpy.github.io/wardogs-data-docs/wiki/"
   "View on GitHub": "https://github.com/Kiyogitpy/wardogs-data-docs"
 
 # The source JSON is browsed on GitHub (the docs link there), not served by Pages
@@ -49,3 +50,17 @@ exclude:
   - Note_Template.md
   - aes.md
   - worker/
+
+# The wiki: readable articles compiled from the data pages, served under /wiki/ with its
+# own sidebar section. Writing rules: docs/WIKI_STYLE.md
+collections:
+  wiki:
+    output: true
+    permalink: /wiki/:path/
+just_the_docs:
+  collections:
+    wiki:
+      name: Wardogs Wiki
+relative_links:
+  enabled: true
+  collections: true
