@@ -2,7 +2,7 @@
 title: "Weapons & Ammo changes"
 parent: "Season 2 Changes"
 nav_order: 1
-description: "Weapon stats, vendor prices, attachments and aim assist: 162 assets added, 16 removed, 192 modified, 11 moved, 1,469 property changes."
+description: "Weapon stats, vendor prices, attachments and aim assist: 162 assets added, 16 removed, 175 modified, 11 moved, 1,241 property changes."
 ---
 
 # Weapons & Ammo changes
@@ -11,64 +11,26 @@ Weapons, ammo, attachments and aim assist: what changed between Season 1 and Sea
 
 - **Added:** 162 assets
 - **Removed:** 16 assets (all aim assist curves)
-- **Modified with real changes:** 192 assets (233 more are noise-only and not listed: only renamed keys or shifted references)
+- **Modified with real changes:** 175 assets (250 more are noise-only: renamed keys, swapped key names or shifted references from the different Season 1 export, not listed)
 - **Moved:** 11 assets (the Mosin folder moved to `WEPN_017`)
-- **Property changes:** 1,469 (includes 989 removed values)
-
+- **Property changes:** 1,241 in modified and moved assets
+- **Removed properties:** 989 values in 16 removed assets
 Vector rows show the signed change on each axis, for example `X −0.4, Y −0.4`.
 
 ## Headline changes
 
 ### Weapon stats (`DA_*_Stats`)
 
-#### Random firing animation offset (42 rows, 21 weapons)
+#### Random firing animation offset (4 rows, 2 weapons)
 
 | Asset | Property | Season 1 | Season 2 | Change |
 |---|---|---|---|---|
-| DA_AK74M_Stats | MinimumRandomFiringAnimationOffset (X, Y) | (0.0, 0.05) | (-0.15, -0.05) | X −0.15, Y −0.1 |
-| DA_AK74M_Stats | MaximumRandomFiringAnimationOffset (X, Y) | (-0.15, -0.05) | (0.0, 0.05) | X +0.15, Y +0.1 |
-| DA_KH2002_Stats | MinimumRandomFiringAnimationOffset (X, Y) | (0.2, 0.2) | (-0.2, -0.2) | X −0.4, Y −0.4 |
-| DA_KH2002_Stats | MaximumRandomFiringAnimationOffset (X, Y) | (-0.2, -0.2) | (0.2, 0.2) | X +0.4, Y +0.4 |
-| DA_M12G_Stats | MinimumRandomFiringAnimationOffset (X, Y) | (0.35, 0.35) | (-0.35, -0.35) | X −0.7, Y −0.7 |
-| DA_M12G_Stats | MaximumRandomFiringAnimationOffset (X, Y) | (-0.35, -0.35) | (0.35, 0.35) | X +0.7, Y +0.7 |
-| DA_M249_Stats | MinimumRandomFiringAnimationOffset (X, Y) | (0.5, 0.5) | (-0.5, -0.5) | X −1.0, Y −1.0 |
-| DA_M249_Stats | MaximumRandomFiringAnimationOffset (X, Y) | (-0.5, -0.5) | (0.5, 0.5) | X +1.0, Y +1.0 |
-| DA_M4_Stats | MinimumRandomFiringAnimationOffset (X, Y) | (0.35, 0.1) | (-0.35, -0.1) | X −0.7, Y −0.2 |
-| DA_M4_Stats | MaximumRandomFiringAnimationOffset (X, Y) | (-0.35, -0.1) | (0.35, 0.1) | X +0.7, Y +0.2 |
-| DA_MP43_Stats | MinimumRandomFiringAnimationOffset (X, Y) | (0.35, 0.35) | (-0.35, -0.35) | X −0.7, Y −0.7 |
-| DA_MP43_Stats | MaximumRandomFiringAnimationOffset (X, Y) | (-0.35, -0.35) | (0.35, 0.35) | X +0.7, Y +0.7 |
-| DA_MP9_Stats | MinimumRandomFiringAnimationOffset (X, Y) | (0.3, 0.3) | (-0.3, -0.3) | X −0.6, Y −0.6 |
-| DA_MP9_Stats | MaximumRandomFiringAnimationOffset (X, Y) | (-0.3, -0.3) | (0.3, 0.3) | X +0.6, Y +0.6 |
-| DA_RFB_Stats | MinimumRandomFiringAnimationOffset (X, Y) | (0.35, 0.1) | (-0.35, -0.1) | X −0.7, Y −0.2 |
-| DA_RFB_Stats | MaximumRandomFiringAnimationOffset (X, Y) | (-0.35, -0.1) | (0.35, 0.1) | X +0.7, Y +0.2 |
-| DA_SKS_Stats | MinimumRandomFiringAnimationOffset (X, Y) | (0.2, 0.2) | (-0.2, -0.2) | X −0.4, Y −0.4 |
-| DA_SKS_Stats | MaximumRandomFiringAnimationOffset (X, Y) | (-0.2, -0.2) | (0.2, 0.2) | X +0.4, Y +0.4 |
 | DA_SMG_03_Stats | MinimumRandomFiringAnimationOffset (X, Y) | (0.3, 0.3) | (1.0, -1.0) | X +0.7, Y −1.3 |
 | DA_SMG_03_Stats | MaximumRandomFiringAnimationOffset (X, Y) | (1.0, -1.0) | (0.3, 0.3) | X −0.7, Y +1.3 |
 | DA_SV98_Stats | MinimumRandomFiringAnimationOffset (X, Y) | (0.2, 0.2) | — | removed |
 | DA_SV98_Stats | MaximumRandomFiringAnimationOffset (X, Y) | — | (0.2, 0.2) | added |
-| DA_SVDM_Stats | MinimumRandomFiringAnimationOffset (X, Y) | (0.5, 0.5) | (0.2, 0.2) | X −0.3, Y −0.3 |
-| DA_SVDM_Stats | MaximumRandomFiringAnimationOffset (X, Y) | (0.2, 0.2) | (0.5, 0.5) | X +0.3, Y +0.3 |
-| DA_TAR21_Stats | MinimumRandomFiringAnimationOffset (X, Y) | (0.2, 0.2) | (-0.2, -0.2) | X −0.4, Y −0.4 |
-| DA_TAR21_Stats | MaximumRandomFiringAnimationOffset (X, Y) | (-0.2, -0.2) | (0.2, 0.2) | X +0.4, Y +0.4 |
-| DA_Vector_Stats | MinimumRandomFiringAnimationOffset (X, Y) | (0.3, 0.3) | (-0.3, -0.3) | X −0.6, Y −0.6 |
-| DA_Vector_Stats | MaximumRandomFiringAnimationOffset (X, Y) | (-0.3, -0.3) | (0.3, 0.3) | X +0.6, Y +0.6 |
-| DA_WEPN_026_Stats | MinimumRandomFiringAnimationOffset (X, Y) | (0.3, 0.3) | (-0.3, -0.3) | X −0.6, Y −0.6 |
-| DA_WEPN_026_Stats | MaximumRandomFiringAnimationOffset (X, Y) | (-0.3, -0.3) | (0.3, 0.3) | X +0.6, Y +0.6 |
-| DA_WEPN_027_Stats | MinimumRandomFiringAnimationOffset (X, Y) | (0.35, 0.1) | (-0.35, -0.1) | X −0.7, Y −0.2 |
-| DA_WEPN_027_Stats | MaximumRandomFiringAnimationOffset (X, Y) | (-0.35, -0.1) | (0.35, 0.1) | X +0.7, Y +0.2 |
-| DA_WEPN_028_Stats | MinimumRandomFiringAnimationOffset (X, Y) | (0.3, 0.3) | (-0.3, -0.3) | X −0.6, Y −0.6 |
-| DA_WEPN_028_Stats | MaximumRandomFiringAnimationOffset (X, Y) | (-0.3, -0.3) | (0.3, 0.3) | X +0.6, Y +0.6 |
-| DA_WEPN_029_Stats | MinimumRandomFiringAnimationOffset (X, Y) | (0.0, 0.05) | (-0.15, -0.05) | X −0.15, Y −0.1 |
-| DA_WEPN_029_Stats | MaximumRandomFiringAnimationOffset (X, Y) | (-0.15, -0.05) | (0.0, 0.05) | X +0.15, Y +0.1 |
-| DA_WEPN_030_Stats | MinimumRandomFiringAnimationOffset (X, Y) | (0.35, 0.1) | (-0.35, -0.1) | X −0.7, Y −0.2 |
-| DA_WEPN_030_Stats | MaximumRandomFiringAnimationOffset (X, Y) | (-0.35, -0.1) | (0.35, 0.1) | X +0.7, Y +0.2 |
-| DA_WEPN_033_Stats | MinimumRandomFiringAnimationOffset (X, Y) | (0.2, 0.2) | (-0.2, -0.2) | X −0.4, Y −0.4 |
-| DA_WEPN_033_Stats | MaximumRandomFiringAnimationOffset (X, Y) | (-0.2, -0.2) | (0.2, 0.2) | X +0.4, Y +0.4 |
-| DA_WEPN_035_Stats | MinimumRandomFiringAnimationOffset (X, Y) | (0.35, 0.1) | (-0.35, -0.1) | X −0.7, Y −0.2 |
-| DA_WEPN_035_Stats | MaximumRandomFiringAnimationOffset (X, Y) | (-0.35, -0.1) | (0.35, 0.1) | X +0.7, Y +0.2 |
 
-[All 232 FiringAnimationOffset changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=weapons-ammo&q=FiringAnimationOffset)
+[All 7 FiringAnimationOffset changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=weapons-ammo&q=FiringAnimationOffset)
 
 ### Recoil pattern (79 points, 4 weapons)
 
@@ -101,7 +63,7 @@ Shown: the 24 points with the largest change. The other 55 points are in the bro
 | DA_RFB_Stats | RecoilPattern[4] (X, Y) | (0.235, 1.375) | (0.4, 3.06) | X +0.165, Y +1.685 |
 | DA_RFB_Stats | RecoilPattern[3] (X, Y) | (0.216, 1.47) | (0.7, 3.105) | X +0.484, Y +1.635 |
 
-[All 150 recoil pattern changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=weapons-ammo&q=RecoilPattern)
+[All 134 recoil pattern changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=weapons-ammo&q=RecoilPattern)
 
 ### Other weapon stats
 
@@ -200,42 +162,9 @@ Each row is one vendor price in a `DT_*` data table. Sorted from largest decreas
 | DT_WeaponVendor_EXT_SMG_01 | Price (Vector) | 2600.0 | 5600.0 | +3000.0 (+115.4%) |
 | DT_WeaponVendor_MUZL_012 | Price (MZL_07) | 400.0 | 1200.0 | +800.0 (+200.0%) |
 
-### Bipod and stance values (7 items, 2 groups)
+### Bipod and stance values
 
-Items: `ID_FGP_04`, `ID_FGRP_009`, `ID_FGRP_010`, `ID_FGRP_011`, `ID_FGRP_013`. The table shows the first item; the others have identical values. 21 values each.
-
-| Asset | Property | Season 1 | Season 2 | Change |
-|---|---|---|---|---|
-| ID_FGP_04 | Stand · BipodMountLocationVerticalDistance | 75.0 | 40.0 | −35.0 (−46.7%) |
-| ID_FGP_04 | Stand · MaxBipodToPlayerHorizontalDistance | 37.5 | 75.0 | +37.5 (+100.0%) |
-| ID_FGP_04 | Stand · MaxLedgeAngle | -15.0 | 15.0 | +30.0 (+200.0%) |
-| ID_FGP_04 | Stand · MaxTransitionDuration | 0.2 | 0.5 | +0.3 (+150.0%) |
-| ID_FGP_04 | Stand · MinBipodToPlayerHorizontalDistance | 40.0 | 37.5 | −2.5 (−6.2%) |
-| ID_FGP_04 | Stand · MinLedgeAngle | 15.0 | -15.0 | −30.0 (−200.0%) |
-| ID_FGP_04 | Stand · MinTransitionDuration | 0.5 | 0.2 | −0.3 (−60.0%) |
-| ID_FGP_04 | Crouch · BipodMountLocationVerticalDistance | 75.0 | 40.0 | −35.0 (−46.7%) |
-| ID_FGP_04 | Crouch · MaxBipodToPlayerHorizontalDistance | 37.5 | 75.0 | +37.5 (+100.0%) |
-| ID_FGP_04 | Crouch · MaxLedgeAngle | -15.0 | 15.0 | +30.0 (+200.0%) |
-| ID_FGP_04 | Crouch · MaxTransitionDuration | 0.2 | 0.5 | +0.3 (+150.0%) |
-| ID_FGP_04 | Crouch · MinBipodToPlayerHorizontalDistance | 40.0 | 37.5 | −2.5 (−6.2%) |
-| ID_FGP_04 | Crouch · MinLedgeAngle | 15.0 | -15.0 | −30.0 (−200.0%) |
-| ID_FGP_04 | Crouch · MinTransitionDuration | 0.5 | 0.2 | −0.3 (−60.0%) |
-| ID_FGP_04 | Prone · BipodMountLocationVerticalDistance | 75.0 | 60.0 | −15.0 (−20.0%) |
-| ID_FGP_04 | Prone · MaxBipodToPlayerHorizontalDistance | 37.5 | 75.0 | +37.5 (+100.0%) |
-| ID_FGP_04 | Prone · MaxLedgeAngle | -15.0 | 15.0 | +30.0 (+200.0%) |
-| ID_FGP_04 | Prone · MaxTransitionDuration | 0.5 | 1.0 | +0.5 (+100.0%) |
-| ID_FGP_04 | Prone · MinBipodToPlayerHorizontalDistance | 60.0 | 37.5 | −22.5 (−37.5%) |
-| ID_FGP_04 | Prone · MinLedgeAngle | 15.0 | -15.0 | −30.0 (−200.0%) |
-| ID_FGP_04 | Prone · MinTransitionDuration | 1.0 | 0.5 | −0.5 (−50.0%) |
-
-Items: `ID_FGRP_008`, `ID_FGRP_012`. The same 21 values change as in the table above, except these 4, which differ:
-
-| Asset | Property | Season 1 | Season 2 | Change |
-|---|---|---|---|---|
-| ID_FGRP_008 | Stand · MaxTransitionDuration | 0.35 | 0.7 | +0.35 (+100.0%) |
-| ID_FGRP_008 | Stand · MinTransitionDuration | 0.7 | 0.35 | −0.35 (−50.0%) |
-| ID_FGRP_008 | Crouch · MaxTransitionDuration | 0.35 | 0.7 | +0.35 (+100.0%) |
-| ID_FGRP_008 | Crouch · MinTransitionDuration | 0.7 | 0.35 | −0.35 (−50.0%) |
+The bipod distance, ledge angle and transition values on ID_FGP_04 and the ID_FGRP items were exchanged between keys (for example Min and Max). They are classified as swapped-key noise and are not listed. They are in the browser.
 
 Other numeric item values:
 
@@ -269,15 +198,13 @@ Other numeric item values:
 | AnimSet_WEPN_035 | Animations[Animation.Asset.Weapon.Reload.Empty].Value.OverrideLength | 5.0 | 3.0 | −2.0 (−40.0%) |
 | AnimSet_WEPN_035 | Animations[Animation.Asset.Weapon.Reload.Tactical].Value.OverrideLength | 1.25 | 3.0 | +1.75 (+140.0%) |
 
-### Aim assist settings (141 numeric rows across 7 assets)
+### Aim assist settings (136 numeric rows across 7 assets)
 
-Shown: the 30 largest changes by percentage (values that start at 0 are listed first). The other 111 rows are in the browser.
+Shown: the 30 largest changes by percentage (values that start at 0 are listed first). The other 106 rows are in the browser.
 
 | Asset | Property | Season 1 | Season 2 | Change |
 |---|---|---|---|---|
 | DA_AimAssistSettings_Melee | PullInnerStrengthHip | 0.0 | 1.0 | +1.0 (n/a) |
-| DA_AimAssistSettings_Melee | SlowInnerStrengthHip | 0.0 | 0.36 | +0.36 (n/a) |
-| DA_AimAssistSettings_SR | PullInnerStrengthAds | 0.0 | 2.0 | +2.0 (n/a) |
 | DA_AimAssistSettings_SR | SlowInnerStrengthAds | 0.0 | 0.4 | +0.4 (n/a) |
 | DA_AimAssistSettings_AR | unnamed property (`_aaabkejidmenonabgon`) | 0.5 | 2.5 | +2.0 (+400.0%) |
 | DA_AimAssistSettings_LMG | unnamed property (`_aaabkejidmenonabgon`) | 0.5 | 2.5 | +2.0 (+400.0%) |
@@ -296,17 +223,19 @@ Shown: the 30 largest changes by percentage (values that start at 0 are listed f
 | DA_AimAssistSettings_SMG | PullInnerStrengthHip | 0.44 | 1.0 | +0.56 (+127.3%) |
 | DA_AimAssistSettings_LMG | SlowLerpInRate | 5.0 | 10.0 | +5.0 (+100.0%) |
 | DA_AimAssistSettings_Melee | PullInnerStrengthAds | 1.5 | 0.0 | −1.5 (−100.0%) |
-| DA_AimAssistSettings_Melee | SlowInnerStrengthAds | 0.19 | 0.0 | −0.19 (−100.0%) |
 | DA_AimAssistSettings_Pistol | SlowLerpInRate | 5.0 | 10.0 | +5.0 (+100.0%) |
 | DA_AimAssistSettings_Shotgun | SlowLerpInRate | 5.0 | 10.0 | +5.0 (+100.0%) |
 | DA_AimAssistSettings_SMG | SlowLerpInRate | 5.0 | 10.0 | +5.0 (+100.0%) |
 | DA_AimAssistSettings_SR | PullInnerStrengthHip | 0.28 | 0.0 | −0.28 (−100.0%) |
-| DA_AimAssistSettings_SR | SlowInnerStrengthHip | 2.0 | 0.0 | −2.0 (−100.0%) |
 | DA_AimAssistSettings_SR | SlowLerpInRate | 5.0 | 10.0 | +5.0 (+100.0%) |
 | DA_AimAssistSettings_SR | ReticleDepth | 20000.0 | 40000.0 | +20000.0 (+100.0%) |
 | DA_AimAssistSettings_SR | AssistOuterReticleWidth | 1860.0 | 3600.0 | +1740.0 (+93.5%) |
+| DA_AimAssistSettings_AR | unnamed property (`_aaabiopcjcdaaocfaif`) | 1.0 | 0.1 | −0.9 (−90.0%) |
+| DA_AimAssistSettings_LMG | unnamed property (`_aaabiopcjcdaaocfaif`) | 1.0 | 0.1 | −0.9 (−90.0%) |
+| DA_AimAssistSettings_Pistol | unnamed property (`_aaabiopcjcdaaocfaif`) | 1.0 | 0.1 | −0.9 (−90.0%) |
+| DA_AimAssistSettings_Shotgun | unnamed property (`_aaabiopcjcdaaocfaif`) | 1.0 | 0.1 | −0.9 (−90.0%) |
 
-[All 214 aim assist settings changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=weapons-ammo&q=AimAssistSettings)
+[All 209 aim assist settings changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=weapons-ammo&q=AimAssistSettings)
 
 ### Aim assist curves (69 time and value rows across 14 curves)
 
