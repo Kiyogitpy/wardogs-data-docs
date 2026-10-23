@@ -2,7 +2,7 @@
 title: "Vehicles changes"
 parent: "Season 2 Changes"
 nav_order: 4
-description: "Vehicle changes from Season 1 to Season 2: 151 assets added, 1 removed, 335 modified with real changes, 3,930 property changes."
+description: "Vehicle changes from Season 1 to Season 2: 151 assets added, 1 removed, 331 modified with real changes, 3,886 property changes."
 ---
 
 # Vehicles changes
@@ -15,12 +15,12 @@ Counts come from `assets/data/season-diff/index.json` and `vehicles.json`. Value
 |---|---|
 | Assets added | 151 |
 | Assets removed | 1 |
-| Assets modified with real changes | 335 |
-| Assets modified, noise only (skipped) | 127 |
+| Assets modified with real changes | 331 |
+| Assets modified, noise only (skipped) | 131 |
 | Assets moved | 0 |
-| Property changes (index.json) | 3,930 |
+| Property changes (index.json) | 3,886 |
 
-The change list for these assets holds 3,948 records. The index figure equals that total minus `removed_values` (18).
+The change list for these assets holds 3,904 records. The index figure equals that total minus `removed_values` (18).
 
 ## Headline changes
 
@@ -104,37 +104,31 @@ The asset was renamed and its type changed. The record is in `engine-tooling-dat
 | DA_FrontAxle_WHL_06_DuneBuggy | WheelSetup[frontRWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
 | DA_FrontAxle_WHL_07 | WheelSetup[frontLWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
 | DA_FrontAxle_WHL_07 | WheelSetup[frontRWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
-| DA_FrontWheels_WHL_05_Humvee | PhysMatLerpValue.Values | 7000.0 | 0.5 | −6999.5 (−100.0%) |
-| DA_FrontWheels_WHL_05_Humvee | PhysMatLerpValue.Values[1] | 3200.0 | 0.65 | −3199.35 (−100.0%) |
-| DA_FrontWheels_WHL_05_Humvee | PhysMatLerpValue.Values[2] | 3200.0 | 0.85 | −3199.15 (−100.0%) |
-| DA_FrontWheels_WHL_05_Humvee | RelaxationDamper.Values | 80.0 | 5250.0 | +5170.0 (+6462.5%) |
-| DA_FrontWheels_WHL_05_Humvee | RelaxationDamper.Values[1] | 80.0 | 3200.0 | +3120.0 (+3900.0%) |
-| DA_FrontWheels_WHL_05_Humvee | RelaxationDamper.Values[2] | 80.0 | 3200.0 | +3120.0 (+3900.0%) |
-| DA_FrontWheels_WHL_05_Humvee | SuspensionSpring.Values | 0.5 | 80.0 | +79.5 (+15900.0%) |
-| DA_FrontWheels_WHL_05_Humvee | SuspensionSpring.Values[1] | 0.65 | 80.0 | +79.35 (+12207.7%) |
-| DA_FrontWheels_WHL_05_Humvee | SuspensionSpring.Values[2] | 0.85 | 80.0 | +79.15 (+9311.8%) |
+| DA_FrontWheels_WHL_05_Humvee | RelaxationDamper.Values | 7000.0 | 5250.0 | −1750.0 (−25.0%) |
+| DA_MidAxle_WHL_07 | WheelSetup[rearL_frontWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
+| DA_MidAxle_WHL_07 | WheelSetup[rearR_frontWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
+| DA_RearAxle_WHL_02 | WheelSetup[rearLWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
+| DA_RearAxle_WHL_02 | WheelSetup[rearRWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
+| DA_RearAxle_WHL_02_Pickup | WheelSetup[rearLWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
+| DA_RearAxle_WHL_02_Pickup | WheelSetup[rearRWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
 | DA_RearAxle_WHL_05_Humvee | TorqueShare | 0.3 | 0.6 | +0.3 (+100.0%) |
-| DA_RearWheels_WHL_05_Humvee | PhysMatLerpValue.Values | 12000.0 | 0.5 | −11999.5 (−100.0%) |
-| DA_RearWheels_WHL_05_Humvee | PhysMatLerpValue.Values[1] | 2500.0 | 0.65 | −2499.35 (−100.0%) |
-| DA_RearWheels_WHL_05_Humvee | PhysMatLerpValue.Values[2] | 2500.0 | 0.85 | −2499.15 (−100.0%) |
-| DA_RearWheels_WHL_05_Humvee | RelaxationDamper.Values | 88.0 | 6250.0 | +6162.0 (+7002.3%) |
-| DA_RearWheels_WHL_05_Humvee | RelaxationDamper.Values[1] | 88.0 | 2500.0 | +2412.0 (+2740.9%) |
-| DA_RearWheels_WHL_05_Humvee | RelaxationDamper.Values[2] | 88.0 | 2500.0 | +2412.0 (+2740.9%) |
-| DA_RearWheels_WHL_05_Humvee | SuspensionSpring.Values | 0.5 | 88.0 | +87.5 (+17500.0%) |
-| DA_RearWheels_WHL_05_Humvee | SuspensionSpring.Values[1] | 0.65 | 88.0 | +87.35 (+13438.5%) |
-| DA_RearWheels_WHL_05_Humvee | SuspensionSpring.Values[2] | 0.85 | 88.0 | +87.15 (+10252.9%) |
+| DA_RearAxle_WHL_05_Humvee | WheelSetup[rearLWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
+| DA_RearAxle_WHL_05_Humvee | WheelSetup[rearRWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
+| DA_RearAxle_WHL_06_DuneBuggy | WheelSetup[rearLWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
+| DA_RearAxle_WHL_06_DuneBuggy | WheelSetup[rearRWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
+| DA_RearAxle_WHL_07 | WheelSetup[rearL_rearWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
+| DA_RearAxle_WHL_07 | WheelSetup[rearR_rearWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
+| DA_RearWheels_WHL_05_Humvee | RelaxationDamper.Values | 12000.0 | 6250.0 | −5750.0 (−47.9%) |
 | DA_RearWheels_WHL_06_DuneBuggy | BrakeTorque.Values | 16000.0 | 13000.0 | −3000.0 (−18.8%) |
 | DA_RearWheels_WHL_06_DuneBuggy | BrakeTorque.Values[1] | 12000.0 | 9000.0 | −3000.0 (−25.0%) |
 | DA_SPW_01_WheelData | DampingRebound | 12000.0 | 17000.0 | +5000.0 (+41.7%) |
 | DA_TNK_01_WheelData | DampingRebound | 12000.0 | 17000.0 | +5000.0 (+41.7%) |
-| DA_WHL_01_FrontWheels | RelaxationDamper.Values | 6.5 | 450.0 | +443.5 (+6823.1%) |
-| DA_WHL_01_FrontWheels | RelaxationDamper.Values[1] | 5.0 | 400.0 | +395.0 (+7900.0%) |
-| DA_WHL_01_FrontWheels | RelaxationDamper.Values[2] | 5.0 | 400.0 | +395.0 (+7900.0%) |
-| DA_WHL_01_RearWheels | RelaxationDamper.Values | 6.5 | 450.0 | +443.5 (+6823.1%) |
-| DA_WHL_01_RearWheels | RelaxationDamper.Values[1] | 5.0 | 400.0 | +395.0 (+7900.0%) |
-| DA_WHL_01_RearWheels | RelaxationDamper.Values[2] | 5.0 | 400.0 | +395.0 (+7900.0%) |
+| DA_WHL_01_FrontAxle | WheelSetup[frontLWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
+| DA_WHL_01_FrontAxle | WheelSetup[frontRWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
+| DA_WHL_01_RearAxle | WheelSetup[rearLWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
+| DA_WHL_01_RearAxle | WheelSetup[rearRWheelSpin_J].DeflateThreshold | 0.5 | 0.55 | +0.05 (+10.0%) |
 
-Showing 40 of 56 numeric changes in wheel, axle and suspension assets, sorted by significance. Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=vehicles&q=Wheel
+Showing all 34 numeric changes in wheel, axle and suspension assets. Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=vehicles&q=Wheel
 
 ### Vehicle market prices and buildable costs
 
