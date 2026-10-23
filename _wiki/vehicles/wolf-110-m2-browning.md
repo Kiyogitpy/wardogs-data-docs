@@ -1,6 +1,7 @@
 ---
 title: "Wolf-110 [M2 Browning]"
 parent: "Vehicles"
+group: "Cars and trucks"
 description: "Five-seat Wolf-110 SUV with a ring-mounted M2 Browning machine gun, added in Season 2 and sold for 7,800 cash."
 ---
 

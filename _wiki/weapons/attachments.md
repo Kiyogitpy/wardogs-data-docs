@@ -1,6 +1,7 @@
 ---
 title: "Attachments"
 parent: "Weapons"
+group: "Reference"
 description: "The parts that fit on weapons, the slots they go into and what each category changes."
 ---
 

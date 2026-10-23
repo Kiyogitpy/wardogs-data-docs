@@ -1,6 +1,7 @@
 ---
 title: "Z20 Lakota [Miniguns]"
 parent: "Vehicles"
+group: "Helicopters"
 description: "Armed version of the Z20 Lakota helicopter with two M134D miniguns on a 13-seat airframe."
 ---
 

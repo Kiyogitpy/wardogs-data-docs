@@ -1,6 +1,7 @@
 ---
 title: "GGX 17"
 parent: "Weapons"
+group: "Pistols"
 description: "The GGX 17 pistol: fire rate, damage by body part, range falloff, ammunition, attachments and Season 2 changes."
 ---
 
@@ -8,13 +9,16 @@ description: "The GGX 17 pistol: fire rate, damage by body part, range falloff, 
 
 | GGX 17 | |
 |---|---|
+| **General** |  |
 | Class | Pistol |
 | Caliber | 9x19mm |
 | Fire modes | Semi-automatic |
+| **Performance** |  |
 | Fire rate | 600 rounds/min (class default) |
 | Muzzle velocity | 375 m/s |
 | Effective range | 50 m |
 | Standard magazine | GGX 17 RND Magazine |
+| **Availability** |  |
 | Vendor price | 200 |
 | Unlock level | 1 |
 | Internal name | Glock17 |

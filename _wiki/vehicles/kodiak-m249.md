@@ -1,6 +1,7 @@
 ---
 title: "Kodiak [M249]"
 parent: "Vehicles"
+group: "Cars and trucks"
 description: "Five-seat Kodiak SUV with a ring-mounted M249 machine gun, sold for 6,750 cash."
 ---
 

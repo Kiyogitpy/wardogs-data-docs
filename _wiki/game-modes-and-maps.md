@@ -33,9 +33,6 @@ The server browser lists one more mode, Tank Town, with no rules, map name or ot
 ## Server options
 
 Hosts can set options that apply across modes. The data names these server options: Hardcore, Infantry Only, No Rebuy, No Return To Spawn, No Vault, No Player Looting, No Team Change, No Give Up, Reduced HUD, Persistent Cash and XP (on or off), and minimum or maximum cash and player level limits. The data does not say what each option changes in play, beyond the names.
-
-{% include wiki-cards.html parent="Game Modes & Maps" %}
-
 ## Sources
 
 - [Season 2 changes: Game Modes & Maps](../season-2-changes/game-modes-maps.md)

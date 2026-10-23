@@ -1,6 +1,7 @@
 ---
 title: "Super-45"
 parent: "Weapons"
+group: "Submachine guns"
 description: "The Super-45 submachine gun: fire rate, damage by body part, range falloff, ammunition, attachments and Season 2 changes."
 ---
 
@@ -8,13 +9,16 @@ description: "The Super-45 submachine gun: fire rate, damage by body part, range
 
 | Super-45 | |
 |---|---|
+| **General** |  |
 | Class | Submachine gun |
 | Caliber | .45 ACP |
 | Fire modes | Fully automatic and semi-automatic |
+| **Performance** |  |
 | Fire rate | 1,200 rounds/min |
 | Muzzle velocity | 375 m/s |
 | Effective range | 50 m |
 | Standard magazine | Super-45 30 RND Magazine |
+| **Availability** |  |
 | Vendor price | 5600 |
 | Unlock level | 1 |
 | Internal name | Vector |

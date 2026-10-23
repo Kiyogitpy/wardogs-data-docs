@@ -1,6 +1,7 @@
 ---
 title: "PP-19 Bizon"
 parent: "Weapons"
+group: "Submachine guns"
 description: "The PP-19 Bizon submachine gun: fire rate, damage by body part, range falloff, ammunition, attachments and Season 2 changes."
 ---
 
@@ -8,13 +9,16 @@ description: "The PP-19 Bizon submachine gun: fire rate, damage by body part, ra
 
 | PP-19 Bizon | |
 |---|---|
+| **General** |  |
 | Class | Submachine gun |
 | Caliber | 9x19mm |
 | Fire modes | Fully automatic and semi-automatic |
+| **Performance** |  |
 | Fire rate | 700 rounds/min |
 | Muzzle velocity | 380 m/s |
 | Effective range | 200 m |
 | Standard magazine | PP-19 Bizon 53 RND Magazine |
+| **Availability** |  |
 | Vendor price | 1000 |
 | Unlock level | 1 |
 | Internal name | WEPN_031 |

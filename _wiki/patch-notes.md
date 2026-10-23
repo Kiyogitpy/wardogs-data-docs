@@ -15,5 +15,3 @@ Patch notes summarise what changed between one season of Wardogs and the next. E
 | Article | What it covers |
 |---|---|
 | [Season 2 Patch Notes](patch-notes/season-2.md) | Weapons, damage and armor, vehicles, items, modes, movement and progression changes from Season 1 to Season 2 |
-
-{% include wiki-cards.html parent="Patch Notes" %}

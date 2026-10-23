@@ -1,6 +1,7 @@
 ---
 title: "Flakpanzer Gepard"
 parent: "Vehicles"
+group: "Armored vehicles"
 description: "Two-seat tracked anti-air tank with twin 35 mm Oerlikon cannons, sold for 14,000 cash."
 ---
 

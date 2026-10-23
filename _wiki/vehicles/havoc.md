@@ -1,6 +1,7 @@
 ---
 title: "Havoc"
 parent: "Vehicles"
+group: "Helicopters"
 description: "Two-seat attack helicopter with a 30 mm autocannon and B-13 rocket pods, the most expensive air vehicle in the shop."
 ---
 

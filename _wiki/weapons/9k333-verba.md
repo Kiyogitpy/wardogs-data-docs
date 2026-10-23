@@ -1,6 +1,7 @@
 ---
 title: "9K333 Verba"
 parent: "Weapons"
+group: "Launchers"
 description: "The 9K333 Verba launcher: fire rate, damage by body part, range falloff, ammunition, attachments and Season 2 changes."
 ---
 
@@ -8,13 +9,16 @@ description: "The 9K333 Verba launcher: fire rate, damage by body part, range fa
 
 | 9K333 Verba | |
 |---|---|
+| **General** |  |
 | Class | Launcher |
 | Caliber | None (explosive) |
 | Fire modes | Semi-automatic |
+| **Performance** |  |
 | Fire rate | 100 rounds/min |
 | Muzzle velocity | not yet known |
 | Effective range | not yet known |
 | Standard magazine | not yet known |
+| **Availability** |  |
 | Vendor price | 800 |
 | Unlock level | 1 |
 | Internal name | Launcher_04 |

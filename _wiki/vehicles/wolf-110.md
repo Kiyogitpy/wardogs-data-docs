@@ -1,6 +1,7 @@
 ---
 title: "Wolf-110"
 parent: "Vehicles"
+group: "Cars and trucks"
 description: "Four-seat SUV added in Season 2, with the strongest torque curve of the wheeled vehicles, sold for 2,200 cash."
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Ural"
 parent: "Vehicles"
+group: "Cars and trucks"
 description: "Heavy three-seat truck with no weapons and the heaviest mass of the wheeled vehicles, sold for 5,000 cash."
 ---
 

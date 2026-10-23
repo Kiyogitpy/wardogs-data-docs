@@ -1,6 +1,7 @@
 ---
 title: "Humvee [M249]"
 parent: "Vehicles"
+group: "Cars and trucks"
 description: "Five-seat Humvee with a ring-mounted M249 machine gun, sold for 8,500 cash."
 ---
 

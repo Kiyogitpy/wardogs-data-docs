@@ -1,6 +1,7 @@
 ---
 title: "Humvee [Minigun]"
 parent: "Vehicles"
+group: "Cars and trucks"
 description: "Five-seat Humvee with a ring-mounted M134D minigun, the lowest rifle damage taken of any truck or SUV."
 ---
 

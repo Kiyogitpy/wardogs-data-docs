@@ -1,6 +1,7 @@
 ---
 title: "FAL"
 parent: "Weapons"
+group: "Assault rifles"
 description: "The FAL assault rifle: fire rate, damage by body part, range falloff, ammunition, attachments and Season 2 changes."
 ---
 
@@ -8,13 +9,16 @@ description: "The FAL assault rifle: fire rate, damage by body part, range fallo
 
 | FAL | |
 |---|---|
+| **General** |  |
 | Class | Assault rifle |
 | Caliber | .308 Win |
 | Fire modes | Fully automatic and semi-automatic |
+| **Performance** |  |
 | Fire rate | 650 rounds/min |
 | Muzzle velocity | 840 m/s |
 | Effective range | 800 m |
 | Standard magazine | FAL 20 RND Magazine |
+| **Availability** |  |
 | Vendor price | 6000 |
 | Unlock level | 1 |
 | Internal name | WEPN_030 |

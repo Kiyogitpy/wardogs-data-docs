@@ -1,6 +1,7 @@
 ---
 title: "PP-19 Vityaz"
 parent: "Weapons"
+group: "Submachine guns"
 description: "The PP-19 Vityaz submachine gun: fire rate, damage by body part, range falloff, ammunition, attachments and Season 2 changes."
 ---
 
@@ -8,13 +9,16 @@ description: "The PP-19 Vityaz submachine gun: fire rate, damage by body part, r
 
 | PP-19 Vityaz | |
 |---|---|
+| **General** |  |
 | Class | Submachine gun |
 | Caliber | 9x19mm |
 | Fire modes | Fully automatic and semi-automatic |
+| **Performance** |  |
 | Fire rate | 800 rounds/min |
 | Muzzle velocity | 380 m/s |
 | Effective range | 200 m |
 | Standard magazine | PP-19 Vityaz 30 RND Magazine |
+| **Availability** |  |
 | Vendor price | 1200 |
 | Unlock level | 1 |
 | Internal name | SMG_03 |

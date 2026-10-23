@@ -1,0 +1,22 @@
+{%- comment -%}Bottom-of-article navbox: every article under the page's hub, in the group rows set by _data/wiki_groups.yml.{%- endcomment -%}
+{%- if page.wiki_hub -%}{%- assign hub = page.title -%}{%- else -%}{%- assign hub = page.parent -%}{%- endif -%}
+{%- if hub -%}
+{%- assign items = site.wiki | where: "parent", hub -%}
+{%- assign hub_page = site.wiki | where: "title", hub | where: "wiki_hub", true | first -%}
+{%- if items.size > 0 -%}
+<nav class="wiki-navbox" aria-label="{{ hub | escape }} articles">
+  <div class="wiki-navbox-title"><a href="{{ hub_page.url | relative_url }}">{{ hub | escape }}</a></div>
+  {%- assign groups = site.data.wiki_groups[hub] -%}
+  {%- for g in groups -%}
+  {%- assign row = items | where: "group", g | sort: "title" -%}
+  {%- if row.size > 0 %}
+  <div class="wiki-navbox-row"><span class="wiki-navbox-group">{{ g }}</span><span class="wiki-navbox-links">{% for p in row %}<a href="{{ p.url | relative_url }}"{% if p.url == page.url %} aria-current="page"{% endif %}>{{ p.title | escape }}</a>{% endfor %}</span></div>
+  {%- endif -%}
+  {%- endfor -%}
+  {%- assign row = items | where_exp: "p", "p.group == nil" | sort: "title" -%}
+  {%- if row.size > 0 %}
+  <div class="wiki-navbox-row"><span class="wiki-navbox-links">{% for p in row %}<a href="{{ p.url | relative_url }}"{% if p.url == page.url %} aria-current="page"{% endif %}>{{ p.title | escape }}</a>{% endfor %}</span></div>
+  {%- endif %}
+</nav>
+{%- endif -%}
+{%- endif -%}

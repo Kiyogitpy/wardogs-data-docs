@@ -1,6 +1,7 @@
 ---
 title: "GGX 18"
 parent: "Weapons"
+group: "Pistols"
 description: "The GGX 18 pistol: fire rate, damage by body part, range falloff, ammunition, attachments and Season 2 changes."
 ---
 
@@ -8,13 +9,16 @@ description: "The GGX 18 pistol: fire rate, damage by body part, range falloff, 
 
 | GGX 18 | |
 |---|---|
+| **General** |  |
 | Class | Pistol |
 | Caliber | 9x19mm |
 | Fire modes | Fully automatic and semi-automatic |
+| **Performance** |  |
 | Fire rate | 1,200 rounds/min |
 | Muzzle velocity | 375 m/s |
 | Effective range | 50 m |
 | Standard magazine | GGX 17 RND Magazine |
+| **Availability** |  |
 | Vendor price | 1000 |
 | Unlock level | 1 |
 | Internal name | WEPN_032 |

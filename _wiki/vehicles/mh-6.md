@@ -1,6 +1,7 @@
 ---
 title: "MH-6"
 parent: "Vehicles"
+group: "Helicopters"
 description: "Six-seat transport helicopter with no weapons, the base model of the MH-6 family and the cheapest air vehicle in the shop."
 ---
 

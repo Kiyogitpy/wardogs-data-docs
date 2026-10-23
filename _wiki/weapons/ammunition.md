@@ -1,6 +1,7 @@
 ---
 title: "Ammunition"
 parent: "Weapons"
+group: "Reference"
 description: "Bullet and shell types, what each does to armor and flesh, and which weapons use them."
 ---
 

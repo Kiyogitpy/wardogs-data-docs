@@ -1,6 +1,7 @@
 ---
 title: "AH-6R [Rockets]"
 parent: "Vehicles"
+group: "Helicopters"
 description: "Small attack helicopter of the Little Bird family with two B-13 rocket pods."
 ---
 

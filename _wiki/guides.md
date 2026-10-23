@@ -16,5 +16,3 @@ Practical guides for playing Wardogs, written from the numbers in the game data.
 |---|---|
 | [Beginner's Guide](guides/beginners-guide.md) | Health, where hits count, armor, healing, aiming and movement |
 | [Choosing Ammo](guides/choosing-ammo.md) | When armor-piercing beats full metal jacket, and what to load against each armor class |
-
-{% include wiki-cards.html parent="Guides" %}

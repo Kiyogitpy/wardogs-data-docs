@@ -1,6 +1,7 @@
 ---
 title: "Ural Defender [M249]"
 parent: "Vehicles"
+group: "Cars and trucks"
 description: "Armored Ural Defender with a mounted M249 machine gun, sold for 9,500 cash."
 ---
 

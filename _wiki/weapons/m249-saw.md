@@ -1,6 +1,7 @@
 ---
 title: "M249 SAW"
 parent: "Weapons"
+group: "Light machine guns"
 description: "The M249 SAW light machine gun: fire rate, damage by body part, range falloff, ammunition, attachments and Season 2 changes."
 ---
 
@@ -8,13 +9,16 @@ description: "The M249 SAW light machine gun: fire rate, damage by body part, ra
 
 | M249 SAW | |
 |---|---|
+| **General** |  |
 | Class | Light machine gun |
 | Caliber | 5.56x45mm |
 | Fire modes | Fully automatic and semi-automatic |
+| **Performance** |  |
 | Fire rate | 850 rounds/min |
 | Muzzle velocity | 915 m/s |
 | Effective range | 700 m |
 | Standard magazine | M249 200 RND Box |
+| **Availability** |  |
 | Vendor price | 3200 |
 | Unlock level | 1 |
 | Internal name | M249 |

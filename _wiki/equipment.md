@@ -20,5 +20,3 @@ Prices are cash in the item shop, and "Build Supplies" is the resource that buil
 | [Fire, Smoke and Flash](equipment/fire-smoke-and-flash.md) | Molotov fire, smoke and signal grenades, mine triggers and throwing | Molotov, smoke and signal grenades, vehicle smoke |
 | [Buildables](equipment/buildables.md) | What players can build with hammers, what it costs, how much health it has, and where it can go | Walls, doors, gates, bunkers, stations, drill rig, stationary weapons |
 | [Utility Items](equipment/utility-items.md) | Parachutes, backpacks, tactical vests, optics, tools and batteries | Parachutes, backpacks, Tac Vests, binoculars and range finders, Halligan Bar, drills |
-
-{% include wiki-cards.html parent="Equipment" %}

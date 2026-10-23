@@ -1,6 +1,7 @@
 ---
 title: "Kodiak [Pickup]"
 parent: "Vehicles"
+group: "Cars and trucks"
 description: "Six-seat pickup version of the Kodiak SUV with no weapons, sold for 3,000 cash."
 ---
 

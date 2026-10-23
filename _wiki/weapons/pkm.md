@@ -1,6 +1,7 @@
 ---
 title: "PKM"
 parent: "Weapons"
+group: "Light machine guns"
 description: "The PKM light machine gun: fire rate, damage by body part, range falloff, ammunition, attachments and Season 2 changes."
 ---
 
@@ -8,13 +9,16 @@ description: "The PKM light machine gun: fire rate, damage by body part, range f
 
 | PKM | |
 |---|---|
+| **General** |  |
 | Class | Light machine gun |
 | Caliber | 7.62x54mm |
 | Fire modes | Fully automatic and semi-automatic |
+| **Performance** |  |
 | Fire rate | 600 rounds/min (class default) |
 | Muzzle velocity | 825 m/s |
 | Effective range | 1000 m |
 | Standard magazine | PKM 100 RND Box |
+| **Availability** |  |
 | Vendor price | 4100 |
 | Unlock level | 1 |
 | Internal name | LMG_02 |

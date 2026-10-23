@@ -1,6 +1,7 @@
 ---
 title: "RPG-7"
 parent: "Weapons"
+group: "Launchers"
 description: "The RPG-7 launcher: fire rate, damage by body part, range falloff, ammunition, attachments and Season 2 changes."
 ---
 
@@ -8,13 +9,16 @@ description: "The RPG-7 launcher: fire rate, damage by body part, range falloff,
 
 | RPG-7 | |
 |---|---|
+| **General** |  |
 | Class | Launcher |
 | Caliber | None (explosive) |
 | Fire modes | Semi-automatic |
+| **Performance** |  |
 | Fire rate | 100 rounds/min |
 | Muzzle velocity | not yet known |
 | Effective range | not yet known |
 | Standard magazine | not yet known |
+| **Availability** |  |
 | Vendor price | 1800 |
 | Unlock level | 1 |
 | Internal name | RPG7 |

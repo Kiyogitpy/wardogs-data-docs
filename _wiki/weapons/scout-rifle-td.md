@@ -1,6 +1,7 @@
 ---
 title: "Scout Rifle TD"
 parent: "Weapons"
+group: "Sniper rifles"
 description: "The Scout Rifle TD sniper rifle: fire rate, damage by body part, range falloff, ammunition, attachments and Season 2 changes."
 ---
 
@@ -8,13 +9,16 @@ description: "The Scout Rifle TD sniper rifle: fire rate, damage by body part, r
 
 | Scout Rifle TD | |
 |---|---|
+| **General** |  |
 | Class | Sniper rifle |
 | Caliber | 5.56x45mm |
 | Fire modes | Semi-automatic |
+| **Performance** |  |
 | Fire rate | 46 rounds/min |
 | Muzzle velocity | 975 m/s |
 | Effective range | 300 m |
 | Standard magazine | not yet known |
+| **Availability** |  |
 | Vendor price | 1200 |
 | Unlock level | 1 |
 | Internal name | WEPN_035 |
