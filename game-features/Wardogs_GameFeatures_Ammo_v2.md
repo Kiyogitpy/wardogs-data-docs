@@ -15,9 +15,11 @@ description: "Package Contents, Bundle-to-Layer Map, What Each Bundle Does, Rela
 ## Season 02 update (2026-10-15)
 
 - **New table: [`DT_InfantryData_ArchetypeCaliberModifiers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_ArchetypeCaliberModifiers.json)** ([link](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_ArchetypeCaliberModifiers.json)). Per-weapon-archetype multipliers by bullet caliber. For example, the AR row lists 556mm 1.0, 545mm 1.0, 308Win 0.75, 762mm 0.88.
-- **Armour damage table changed.** [`DT_GlobalDamage_ArmorData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_ArmorData.json) has reordered modification entries. The Armor entry at index 3 changed from Explosive, -85 to Bullet, 28. The same reordering applies to the Helmet entries.
+- **Armour damage table changed.** [`DT_GlobalDamage_ArmorData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_ArmorData.json) gained one modification entry each in its `Armor` row (8 to 9 entries) and its `Helmet` row (7 to 8): a new entry 3 for `Meta.Damage.Bullet` with `Meta.Damage.Arms.High` and `Meta.Damage.Weapon.Sniper`, amount 28.0. The existing entries are unchanged and now sit one position later (the Armor `Explosive` -85.0 entry moved from index 3 to index 4).
 - **Infantry damage tables changed.** [`DT_GlobalDamage_InfantryData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_InfantryData.json), [`DT_InfantryData_BoneDamageModifiers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_BoneDamageModifiers.json) and [`DT_InfantryData_VehicleSeatDamageReduction`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_VehicleSeatDamageReduction.json) have value and order changes.
 - No GameFeature bundles were added or removed. All 23 bundles and their External Data Layers are unchanged.
+
+Full before/after list: [Season 2 Changes → Weapons & Ammo]({{ '/season-2-changes/weapons-ammo.html' | relative_url }}).
 
 ---
 

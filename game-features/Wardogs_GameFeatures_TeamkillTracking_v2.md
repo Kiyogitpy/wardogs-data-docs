@@ -14,6 +14,8 @@ description: "What This Folder Holds, How It Is Used"
 
 - The TeamkillTracking pack and its only file (`Content/TeamkillTracking.json`, 2 exports) were removed from the game data. This page is kept for reference only and no longer maps to a file in the data set.
 
+Full before/after list: [Season 2 Changes → Game Modes & Maps]({{ '/season-2-changes/game-modes-maps.html' | relative_url }}).
+
 ---
 
 ## 1. What This Folder Held

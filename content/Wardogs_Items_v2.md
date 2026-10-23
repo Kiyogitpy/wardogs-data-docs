@@ -21,7 +21,7 @@ description: "How an Item Is Built, Attachments, Clothing and Equipment, Consuma
 - **Removed:** no items or files were removed.
 - **Stack overrides:** 30mm gains a `Vehicle.Storage` override of 200. The .50 Cal tracer gains `Vehicle.Storage` and `Type.Vehicle` at 50. The 762x54mm tracer variants gain both overrides at 150.
 - **Ammo context:** 84mm and 93mm no longer carry `Item.Context.ForceToStorage`.
-- **Vehicle items:** 20 items gain `Item.Context.MovementBlocked`.
+- **Vehicle items:** 16 existing items gain `Item.Context.MovementBlocked`, and the 4 new vehicle weapons carry it from the start, so 20 items in this folder have it (none did in Season 1).
 - **Aim assist, reticles:** AR inner reticle width 1900 -> 900, AR reticle depth 60000 -> 30000, SMG reticle depth 40000 -> 20000, SR reticle depth 20000 -> 40000.
 - **Aim assist, range:** LMG target range 50000 -> 30000, Shotgun 15000 -> 20000, SR gains 40000.
 - **Aim assist, pull and slow:** PullLerp and SlowLerp rates become 10 / 8 for every class except RPG (were 30 / 12 for PullLerp, and 6 / 5 or 5 / 5 for SlowLerp). PullInnerStrengthHip becomes 1.0 for every class that sets it (was 1.4 to 4.0). PullInnerStrengthAds becomes 2.0 for AR, LMG, Pistol, SMG, SR and Shotgun (was 4.0 to 6.0).
@@ -29,6 +29,8 @@ description: "How an Item Is Built, Attachments, Clothing and Equipment, Consuma
 - **Aim assist, removed keys:** `PullOuterStrengthHip`, `SlowInnerStrengthHip` and `SlowMinRotationRate` are gone for most classes. SR no longer sets `PullMode`, and Melee no longer sets `PullModeADS`.
 - **Aim assist, curves:** hipfire pull and slow curves for most classes now point to `_Default` curves (section 9).
 - **Counts:** 259 files, 230 primary assets, 193 item definitions (was 254, 225, 188).
+
+Full before/after list: [Season 2 Changes → Items & Equipment]({{ '/season-2-changes/items-equipment.html' | relative_url }}).
 
 ---
 

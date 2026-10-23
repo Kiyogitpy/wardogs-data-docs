@@ -27,11 +27,13 @@ description: "Folder Layout and Family Map, Vehicle Chain: How the Assets Link, 
 - **Mounted Verba (STN_01):** reload 2.0 s → 5.0 s; restock 50 → 200.
 - **Mortar (STN_03):** restock 75 → 150.
 - **Phalanx (STN_02) cannon:** muzzle speed 85,000 → 110,000.
-- **Damage tables:** entry counts rose by 1 to 3 in ROT_02, SPW_01, STN_01, TNK_01 (84 → 87), WHL_01, the WHL_05 family, WHL_06 and WHL_07.
+- **Damage tables:** every existing vehicle damage table except the base `DT_GlobalDamage_VehicleData` gained entries. ROT_02, ROT_03, ROT_04, SPW_01, WHL_01, WHL_02, the three WHL_05 tables, WHL_06 and WHL_07 gained 1 (the `Rocket.125mm` entry). STN_01 to STN_05 gained 2 (that entry plus a `Cannon.20x102mm` entry). TNK_01 went from 84 to 87 entries, 1 more in each of its three rows.
 - **Stats assets:** the values of the existing 20 stats assets are unchanged. Three assets were added (TNK_04, WHL_08, WHL_08_RingTurret), so the total is 23.
 - **Input:** the Flares fire action is renamed to `FireCountermeasures` in the vehicle input controls. The Flares item itself is unchanged.
 - **Seat check:** [`DA_TNK_04_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/Data/DA_TNK_04_Stats.json) lists MaxSeats 3, but the TNK_04 seat asset has 2 setups.
 - **Not in this doc's scope:** `IA_Vehicle_FireFlares` was removed from [`Content/Vehicles`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Vehicles), and [`IA_Vehicle_FireCountermeasures`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Vehicles/Inputs/IA_Vehicle_FireCountermeasures.json) was added there. Two REV audio files moved to a differently cased folder, so family file totals are unchanged.
+
+Full before/after list: [Season 2 Changes → Vehicles]({{ '/season-2-changes/vehicles.html' | relative_url }}).
 
 ---
 

@@ -28,6 +28,8 @@ description: "Inventory of the Category, Minimap and World Textures, Map and Min
 - **Ping requests:** `ChannelType` is set on [`DA_PingAction_Request_Dropoff`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_Dropoff.json) (`Vehicle`) and on the Fuel and Supplies request assets (`Team`).
 - **Spelling in strings:** some UI strings moved to US spelling, for example "Optimised" → "Optimized" in [`DT_EntityData_UI_Items`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Entities/DT_EntityData_UI_Items.json) and "cancelled" → "canceled" in [`DT_EventFeedTypes`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/EventFeed/Data/DT_EventFeedTypes.json).
 
+Full before/after list: [Season 2 Changes → World, Visuals & Audio]({{ '/season-2-changes/world-visuals-audio.html' | relative_url }}).
+
 ---
 
 ## 1. Inventory of the Category

@@ -22,6 +22,8 @@ description: "Plugin Inventory, Root Game Feature, Frontend Scene Entry, Dev Men
   - `UI.Popup.FullBlueprintItems`: Warning, OK.
   - `UI.Popup.ChangeComponent`: Warning, Apply / Cancel.
 
+Full before/after list: [Season 2 Changes → Vehicles]({{ '/season-2-changes/vehicles.html' | relative_url }}).
+
 ## 1. Plugin Inventory
 
 | Asset | Type | Role |

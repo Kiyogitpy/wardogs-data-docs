@@ -16,6 +16,8 @@ description: "What This Folder Holds, Investment Definition, Production Lines, R
 - `Id.Item.MP9` ProductionCost: 720 → 1100.
 - `Id.Item.Vector` ProductionCost: 2080 → 4480.
 
+Full before/after list: [Season 2 Changes → Game Modes & Maps]({{ '/season-2-changes/game-modes-maps.html' | relative_url }}).
+
 ---
 
 ## 1. What This Folder Holds

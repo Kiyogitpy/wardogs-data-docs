@@ -25,6 +25,8 @@ description: "Folder layout, Weapon roster, Per-weapon ballistics, Default weapo
 - **Totals:** 870 → 1013 JSON files and 3383 → 3905 exported objects.
 - **Not tabulated here:** recoil patterns, aim sway and other curves changed on many weapons. Their values are not in this doc.
 
+Full before/after list: [Season 2 Changes → Weapons & Ammo]({{ '/season-2-changes/weapons-ammo.html' | relative_url }}).
+
 ---
 
 ## 1. Folder layout

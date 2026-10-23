@@ -27,6 +27,8 @@ description: "Inventory, Event structure, Notable events, Player Damage, Movemen
 - **Comms VOIP events** ([`AE_Comms_Played`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Comms/AE_Comms_Played.json), [`AE_Comms_PlayerStartedSpeaking`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Comms/VOIP/AE_Comms_PlayerStartedSpeaking.json), [`AE_Comms_PlayerStoppedSpeaking`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Comms/VOIP/AE_Comms_PlayerStoppedSpeaking.json)) gain a `WDAudioEventBehaviorHelmetMuffle` behaviour.
 - **Six impact DAs** (30mm, Large, Medium, Rocket_BluntImpact, Small) gain an `Audio.Asset.Surface.Vehicle` entry.
 
+Full before/after list: [Season 2 Changes → World, Visuals & Audio]({{ '/season-2-changes/world-visuals-audio.html' | relative_url }}).
+
 ---
 
 ## 1. Inventory

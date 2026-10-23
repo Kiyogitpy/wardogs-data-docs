@@ -26,6 +26,8 @@ description: "Assets at a Glance, Normal Building Lookup, Anonymous Building Loo
 | [`CF_DestructionBuildingAngleScore`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Destruction/CF_DestructionBuildingAngleScore.json) | `CurveFloat` | 3 keys | Score as a function of an angle-like input (time axis 0–100) |
 | [`CF_DestructionBuildingDistanceScore`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Destruction/CF_DestructionBuildingDistanceScore.json) | `CurveFloat` | 3 keys | Score as a function of distance (time axis 2,000–75,000) |
 
+Full before/after list: [Season 2 Changes → World, Visuals & Audio]({{ '/season-2-changes/world-visuals-audio.html' | relative_url }}).
+
 ---
 
 ## 2. Normal Building Lookup (63 entries, all mapped)
