@@ -1,0 +1,16 @@
+name = "wardogs-ask"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+[vars]
+ALLOWED_ORIGINS = "https://kiyogitpy.github.io"
+
+[ai]
+binding = "AI"
+
+# Per-IP limit: 10 questions a minute.
+[[unsafe.bindings]]
+name = "LIMITER"
+type = "ratelimit"
+namespace_id = "1001"
+simple = { limit = 10, period = 60 }
