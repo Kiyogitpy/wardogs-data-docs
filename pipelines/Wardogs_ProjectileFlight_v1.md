@@ -572,4 +572,5 @@ WARDOGS_ANALYSIS_EXE=<analysis image> python _tools/projectile_flight_check.py
 
 Related: [Damage Pipeline §7.8](Wardogs_DamagePipeline_v2.md) (speed scale after
 drag), [Combat Data Flow](Wardogs_CombatDataFlow_v1.md),
-[Units](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/UNITS.md), [native defaults](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round17-native-defaults.md).
+[Units](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/UNITS.md), [native defaults](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round17-native-defaults.md),
+[artillery range check](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round21-artillery-range-check.md) (the model against logged impacts and the calculator table).
