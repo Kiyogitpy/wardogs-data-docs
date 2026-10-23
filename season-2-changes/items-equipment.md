@@ -9,7 +9,7 @@ description: "Item and equipment changes from Season 1 to Season 2: 37 assets ad
 
 {{ page.description }}
 
-Counts come from `assets/data/season-diff/index.json` and `items-equipment.json`. Values are copied as stored. Signed deltas and percentages are calculated from the stored values. Noise-only assets are skipped.
+Counts come from `assets/data/season-diff/index.json` and `items-equipment.json`. Values are copied as stored. Signed deltas and percentages are calculated from the stored values. Noise-only assets are skipped: renamed keys, swapped key names or shifted references from the different Season 1 export.
 
 | Measure | Count |
 |---|---|
