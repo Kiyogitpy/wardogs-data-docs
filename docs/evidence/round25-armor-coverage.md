@@ -59,7 +59,7 @@ Inferred, not read from a single data field:
    Equipping both therefore never needs the "first in context order" tie-break.
 2. Two vests or two helmets are not equipped at once. The game has one slot of each kind; I assumed
    this and did not read the slot definition in this round.
-3. Ghillie items are treated as no effect. Their fragment has no stages and no coverage list, so the
+3. Ghillie items are treated as no effect, which is an assumption: DT_GlobalDamage_ArmorData has Ghillie rows (Armor entry 7 at -10000 percent, Helmet entry 6 at -1000 percent, -100 percent against explosive, cannon, impact and melee) and the suit's AppliedEffects are not in the export. See the round 25 verification. Their fragment has no stages and no coverage list, so the
    rule cannot select them at any location. Whether a Ghillie context tag has rows in other tables is
    not covered by this round.
 

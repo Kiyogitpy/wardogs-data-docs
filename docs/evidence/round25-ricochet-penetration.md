@@ -17,11 +17,15 @@ what happens against "a concrete wall in Bakurani".
 
 Two corrections to the shorthand used elsewhere in the docs:
 
-- "Ricochet chances are zero" is true only for SurfaceType3 (Body) and
-  SurfaceType17 (Head). In the packed config 57 of the 63 surface types have a
-  nonzero ricochet probability, and 36 of the 63 (every named type except Body
-  and Head, plus none of the unnamed 39-62) have a nonzero exit-speed modifier. The zeros for Body and Head are the exception, and they matter only
-  for flesh. They say nothing about walls.
+- "Ricochet chances are zero" is true for six surface types: Body (3), Head (17),
+  Fur (13), Lava (19), Leaf (20) and Water (34). In the packed config the other 57 of
+  the 63 surface types have a nonzero ricochet probability. 36 of the 63 have a nonzero
+  exit-speed modifier: the 39 named types except Default (0), Body and Head, and none
+  of the unnamed types. The zeros for Body and Head matter only for flesh. They say
+  nothing about walls.
+- The minimum ricochet angle is not 91 degrees on every asset that has one. 91 is set on at
+  least 18 assets (the 155 mm shells among them), 100 on the 70 mm, 85 on the TV-guided
+  missile and the 30 mm round, and 30 on the combat arrow, so some projectiles do ricochet.
 - "Ricochet and penetration are not modeled" on the damage page is a statement
   about scope, not about the game. The game models both, with the constants
   below.

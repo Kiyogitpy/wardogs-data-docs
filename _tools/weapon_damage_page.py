@@ -281,7 +281,7 @@ def armor_cover_block():
         cells = []
         for loc in covered:
             cells.append(f"{red:.0f}%" if loc in cov else "")
-        cls_text = cls if red is not None else f"{cls} (no effect)"
+        cls_text = cls if red is not None else f"{cls} (effect not determined, treated as none)"
         out.append(f"| {', '.join(ids)} | {kind} | {cls_text} | " + " | ".join(cells) + " |")
     vest = {loc for it in items if it["kind"] == "vest" for loc in it["covered_locations"]}
     helm = {loc for it in items if it["kind"] == "helmet" for loc in it["covered_locations"]}
