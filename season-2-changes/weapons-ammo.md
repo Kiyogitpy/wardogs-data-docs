@@ -2,7 +2,7 @@
 title: "Weapons & Ammo changes"
 parent: "Season 2 Changes"
 nav_order: 1
-description: "Weapon stats, vendor prices, attachments and aim assist: 162 assets added, 16 removed, 175 modified, 11 moved, 1,241 property changes."
+description: "Weapon stats, vendor prices, attachments and aim assist: 162 assets added, 16 removed, 174 modified, 11 moved, 1,235 property changes."
 ---
 
 # Weapons & Ammo changes
@@ -11,9 +11,9 @@ Weapons, ammo, attachments and aim assist: what changed between Season 1 and Sea
 
 - **Added:** 162 assets
 - **Removed:** 16 assets (all aim assist curves)
-- **Modified with real changes:** 175 assets (250 more are noise-only: renamed keys, swapped key names or shifted references from the different Season 1 export, not listed)
+- **Modified with real changes:** 174 assets (251 more are noise-only: renamed keys, swapped key names or shifted references from the different Season 1 export, not listed)
 - **Moved:** 11 assets (the Mosin folder moved to `WEPN_017`)
-- **Property changes:** 1,241 in modified and moved assets
+- **Property changes:** 1,235 in modified and moved assets
 - **Removed properties:** 989 values in 16 removed assets
 Vector rows show the signed change on each axis, for example `X −0.4, Y −0.4`.
 
@@ -21,16 +21,9 @@ Vector rows show the signed change on each axis, for example `X −0.4, Y −0.4
 
 ### Weapon stats (`DA_*_Stats`)
 
-#### Random firing animation offset (4 rows, 2 weapons)
+#### Random firing animation offset
 
-| Asset | Property | Season 1 | Season 2 | Change |
-|---|---|---|---|---|
-| DA_SMG_03_Stats | MinimumRandomFiringAnimationOffset (X, Y) | (0.3, 0.3) | (1.0, -1.0) | X +0.7, Y −1.3 |
-| DA_SMG_03_Stats | MaximumRandomFiringAnimationOffset (X, Y) | (1.0, -1.0) | (0.3, 0.3) | X −0.7, Y +1.3 |
-| DA_SV98_Stats | MinimumRandomFiringAnimationOffset (X, Y) | (0.2, 0.2) | — | removed |
-| DA_SV98_Stats | MaximumRandomFiringAnimationOffset (X, Y) | — | (0.2, 0.2) | added |
-
-[All 7 FiringAnimationOffset changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=weapons-ammo&q=FiringAnimationOffset)
+No firing animation offset values changed. The Minimum and Maximum changes seen earlier were swapped key names from the Season 1 export, so they are not listed.
 
 ### Recoil pattern (79 points, 4 weapons)
 
