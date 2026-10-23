@@ -446,7 +446,7 @@ input:focus-visible {
   padding: 3rem 0 2.5rem;
   display: grid;
   gap: 2.5rem;
-  align-items: center;
+  align-items: start;
 
   @media (min-width: 62rem) { grid-template-columns: minmax(0, 1fr) minmax(18rem, 26rem); }
 
@@ -482,7 +482,7 @@ input:focus-visible {
   transition: border-color 0.15s ease;
 
   &:hover { border-color: rgba(255, 255, 255, 0.2); text-decoration: none; }
-  img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: $radius-card; }
+  img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: $radius-card; }
   .wd-hero-viewer-name { color: $ue-white; font-weight: 600; font-size: 1.1rem; padding: 0.4rem 0.7rem 0; }
   .wd-hero-viewer-desc { color: $ue-text-dim; font-size: 0.85rem; line-height: 1.45; padding: 0 0.7rem; }
 }
