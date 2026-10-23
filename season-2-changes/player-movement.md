@@ -134,7 +134,7 @@ Each row is one reward value: event (Added or Removed), challenge row, resource,
 
 The two `ST_Challenges_SessionEvents_KOTH_Spotting_*` state trees have 132 numeric values that change. They are compiled property-binding indexes and hashes, not balance changes. They are in the browser.
 
-`DA_DefaultPlayerMovementAudioConfiguration` is now noise-only. Its 42 former effect and gameplay cue changes are 21 pairs of swapped key values, so they are not listed.
+`DA_DefaultPlayerMovementAudioConfiguration` is now noise-only. Its 42 former effect and gameplay cue changes are swapped key values (42 swapped keys in the index), so they are not listed.
 
 [All 615 spotting changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=player-movement&q=Spotting)
 
