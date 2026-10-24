@@ -35,7 +35,7 @@ PvE is the scenario framework: a shared base ([`PvECore`](https://github.com/Kiy
 | [`StrikeDisarm_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PvE/Scenarios/StrikeDisarm_01/Content/StrikeDisarm_01.json) | `B_DeathRuleSet_NoRespawns` | `Q_StrikeDisarm_01` | `Meta.Alignment.Faction.Charlie` | 3000 (unnamed key) | Interaction contexts ([`DT_InteractionContextData_StrikeDisarm_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PvE/Scenarios/StrikeDisarm_01/Content/DT_InteractionContextData_StrikeDisarm_01.json)) |
 | [`VIPEscort_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PvE/Scenarios/VIPEscort_01/Content/VIPEscort_01.json) | `B_DeathRuleSet_NoRespawns` | `Q_VIPEscort_01` | `Meta.Alignment.Faction.Bravo` | 2000 (unnamed key) | Lootable table ([`DT_LootableDataTable_VIPEscort_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PvE/Scenarios/VIPEscort_01/Content/DT_LootableDataTable_VIPEscort_01.json)) |
 
-The "Scenario value" field is an unnamed property name in the export. The values 3000 (StrikeDisarm) and 2000 (VIPEscort) are present, but their meaning (time limit, reward, or score target) is not confirmed.
+The "Scenario value" field is `ScenarioStartingCash` of `WDScenarioData` (SDK `BaseScenarioRuntime`, +0x0004): the cash players start the mission with. StrikeDisarm_01 = 3000, VIPEscort_01 = 2000; HunterKiller_01 and ScenarioExample set none. The key was unnamed in earlier exports only because the usmap name was hashed. Round 36 added the placed actors and quest graphs: see [`docs/evidence/round36-ai.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-ai.md) and `assets/data/pve-scenarios.json`.
 
 Every scenario pack also adds `WDGameFeatureAction_AddScenarioState` with the `ScenarioData` shown above, and `GameFeatureAction_AddComponents` on `WDGameState` with `B_FactionSetup_CreateThreeTeams`.
 
@@ -63,7 +63,7 @@ All five share the same controller, behaviour tree (`BT_WDAIPvECore_Base`), aler
 | [`AIC_Manticore_Machinegunner`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PvE/Scenarios/BaseScenario/Content/AIConfigs/Manticore/AIC_Manticore_Machinegunner.json) | Charlie | `Id.Item.LMG_02`, `Id.Item.LightArmor`, `Id.Item.LightHelmet`, `Id.Item.LMG_02Magazine`, `Id.Item.MZL_04` |
 | [`AIC_Manticore_Marksman`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PvE/Scenarios/BaseScenario/Content/AIConfigs/Manticore/AIC_Manticore_Marksman.json) | Charlie | `Id.Item.SVDM`, `Id.Item.LightArmor`, `Id.Item.LightHelmet`, `Id.Item.SVDMMagazine`, `Id.Item.6xScope`, `Id.Item.MZL_04` |
 
-Inventory counts other than those shown are not extracted in this pass. Only the ×count given is confirmed.
+Round 36 read the full `AIInventory` of every config: each soldier carries `LightArmor` x1, `LightHelmet` x1 and **2 magazines** (`M4Magazine`, `MK22Mag`, `AK74MMagazine`, `LMG_02Magazine`, `SVDMMagazine`); the sniper has `SniperScope10x` x1, the marksman `6xScope` x1, and the Manticore soldiers one muzzle device (`MZL_07` rifleman, `MZL_04` machine gunner and marksman). Every config uses the player character `B_WDCore_MoverPlayerCharacter_C`, so health is the player's 100.
 
 ---
 
@@ -116,12 +116,30 @@ Samples checked (`StrikeDisarm_Intro1`, `VIPEscort_Intro3`, `VIPEscort_Success`,
 
 ## 8. Still not pulled / limitations
 
-- **Scenario quest contents.** The `Q_*` quest assets are referenced by path but are not in this folder.
-- **Unnamed scenario values.** The 3000 and 2000 values in StrikeDisarm_01 and VIPEscort_01 are under unnamed keys. Their meaning is not confirmed.
-- **Full AI inventories.** Only some item counts are confirmed.
+- **Scenario quest contents.** The `Q_*`/`SQ_*` quest assets are not in this folder's export but are read in round 36 (see section 9). Hunter Killer's quest is an empty Entry to Exit.
+- **Scenario values.** Resolved in round 36: 3000 and 2000 are the starting cash (section 2).
+- **Full AI inventories.** Resolved in round 36 (section 3).
 - **Tracker rows.** Some tracker-table rows were not expanded.
 - **Voice-over durations.** Only the samples were checked. The 10.0 value is not confirmed across all 13 assets.
 - **Units.** Curve times and values, and the helicopter speed, have no stated units.
   - **See [`docs/UNITS.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/UNITS.md)** for the project-wide units reference (UE 5.7 defaults + Wardogs-specific suffixes).
 - **Scenario logic.** How quest objectives and the `ScenarioData` values drive the mission flow is in BP and runtime code, not in this folder.
 - **Remaining small assets.** Ten scenario voice-over entries, the VIP tracker distance rules and related framework settings are listed row by row in [PvE and Settings Assets](Wardogs_PveSettingsAssets_v1.md).
+
+---
+
+## 9. Round 36: placed AI, objectives and hack (from cooked scenario levels and quests)
+
+Source: the World Partition cells of each scenario's external data layers and the `Q_*`/`SQ_*` quests, read with the extractor; method and every value in [`docs/evidence/round36-ai.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-ai.md). Machine-readable copy: [`assets/data/pve-scenarios.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/pve-scenarios.json).
+
+| Mission | Map | AI spawners placed | Player faction | Start cash |
+|---|---|---|---|---|
+| HunterKiller_01 | Kavkazi | 0 (placeholder labels only; quest is empty) | not set | not set |
+| StrikeDisarm_01 | Kavkazi | 53: `AIC_Lonestar_Rifleman` 49, `AIC_Lonestar_Sniper` 4. 27 start at once (6 on `Goal_Patrol`); 26 riflemen are a counter-attack wave started by quest event `Quest.Actor.Event.AISpawners.Trigger` when the hack begins | Charlie | 3000 |
+| VIPEscort_01 | Kavkazi | 95: `AIC_Manticore_Rifleman` 86, `AIC_Manticore_Marksman` 5, `AIC_Manticore_Machinegunner` 4; 31 riflemen on `Goal_Patrol` | Bravo | 2000 |
+
+- **Hack:** `B_StrikeDisarm_LaptopObjective_C.HackingDurationSeconds` is 60.0 on the Blueprint but 300.0 on the placed laptop. Aborting the hack fails the mission.
+- **Strike and Disarm flow:** `SQ_LaptopHacking` (upload the virus, defend the laptop; during the hack `Goal_BesiegeTarget` and `Goal_StopHack` are added to the AI) then `SQ_Extraction_Helicopter` (board the helicopter), then the mission-complete line.
+- **VIP Escort flow:** `SQ_RandomPlayerMarkedForDeath` makes one random player the VIP; the mission fails 10 s after that player goes Critical or disconnects; success is reaching `ExtractionProximity` and boarding the helicopter.
+- **Time limit:** none in the quest data.
+- **VIP loot:** `Lootable.VIPEscort01.AK` is `Id.Item.SV98` x1 + `Id.Item.SV98Magazine` x1 (respawn 10 s, 15 initial points); the name "AK" is misleading.

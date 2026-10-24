@@ -217,3 +217,23 @@ These are general UE EQS semantics. The dump gives the test settings, but this p
 - **Behaviour trees.** `BT_WDAIPvECore_Base` is referenced but not in this folder.
 - **Sub-exports not expanded.** EQS sub-exports (individual test settings) are summarised by count and type, not every field.
 - **Unnamed localisation keys.** Some properties appear as `_aaa…` hashes; those were not resolved.
+
+---
+
+## 12. Round 36: controller senses, detectability, firing, health
+
+Source: `BP_CoreAIController`, `BP_PlayerCharacterDetectabilityComponent`, `BTS_FireWeapon`, `BTS_AimAtTarget`, the `BT_*` trees and native constructors `0x8863540`, `0x8863AB0`, `0x8863090`, `0x8864400` (static reading). Full table and method: [`docs/evidence/round36-ai.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-ai.md).
+
+| Item | Value |
+|---|---|
+| AI health | The soldiers are `B_WDCore_MoverPlayerCharacter_C`, the player character: max health 100 (native `UWDVitalityComponent` ctor); no AI-specific health, attribute or damage multiplier found |
+| Sight | `SightRadius` 200000, `LoseSightRadius` 210000, `MaxAge` 30 s |
+| Hearing | `HearingRange` 100000, `MaxAge` 30 s |
+| Damage sense | `MaxAge` 10 s |
+| `WDAIPerceptionComponent` | `VisionRangeMultiplier` 0.02, `HearingRangeMultiplier` 0.05; `VisionAngleMultiplier` and `VisionPlayerConcealmentMultiplier` 1.0 (native). How the multipliers combine with the ranges is native logic, not verified |
+| Threat detection | `DetectionDecayRate` 0.25 (native default 0.01), `TimeBeforeStartDecay` 5 s (native 10), `MaxDetectionLevel` 1.0 (native) |
+| Player detectability | Stand 1.0, Crouch 0.4, Prone 0.3; `StanceDetectabilityMultiplier` 0.5; `HearingMovementSpeedMultiplier` 0.0015; `WeaponFiring` 5.0 |
+| Config defaults (native, not set in assets) | `POILookAtSwitchTime` 2.5 s, `AlertWaitTime` 2.0 s, `RadiusToSearchForCovers` 3000 |
+| Firing (`BTS_FireWeapon`) | burst of 3 shots, `BurstDuration` 0.2, `BurstInterval` 1.0, `ShotInterval` 0.2, `TriggerPullDuration` 0.05; `WDBTTask_ShootAtTarget.RoundOfBursts` 3 |
+| Aim | `BTS_AimAtTarget` focuses on the target's `Head` bone every 0.1 s; no AI-specific spread or accuracy value in any asset |
+| Goals that ship in missions | `Goal_Patrol` (VIP Escort), `Goal_Search` and `Goal_BesiegeTarget` (Strike and Disarm, plugin dependencies; Besiege and `Goal_StopHack` added by the hack quest). `Goal_Example_Flee` and `Goal_Example_AttackPlayer` have no dependent plugin |

@@ -1,0 +1,109 @@
+{
+ "scenarios": {
+  "HunterKiller_01": {
+   "hackingDurationSeconds": null,
+   "map": "Kavkazi",
+   "playerFaction": null,
+   "spawnerTotal": 0,
+   "spawners": [],
+   "startingCash": null
+  },
+  "StrikeDisarm_01": {
+   "hackingDurationSeconds": 300.0,
+   "map": "Kavkazi",
+   "playerFaction": "Meta.Alignment.Faction.Charlie",
+   "spawnerTotal": 53,
+   "spawners": [
+    {
+     "config": "AIC_Lonestar_Rifleman",
+     "count": 5,
+     "goal": "Goal_Patrol_C",
+     "spawn": "automatic"
+    },
+    {
+     "config": "AIC_Lonestar_Rifleman",
+     "count": 18,
+     "goal": "default",
+     "spawn": "automatic"
+    },
+    {
+     "config": "AIC_Lonestar_Rifleman",
+     "count": 26,
+     "goal": "default",
+     "spawn": "triggered"
+    },
+    {
+     "config": "AIC_Lonestar_Sniper",
+     "count": 1,
+     "goal": "Goal_Patrol_C",
+     "spawn": "automatic"
+    },
+    {
+     "config": "AIC_Lonestar_Sniper",
+     "count": 3,
+     "goal": "default",
+     "spawn": "automatic"
+    }
+   ],
+   "startingCash": 3000
+  },
+  "VIPEscort_01": {
+   "hackingDurationSeconds": null,
+   "map": "Kavkazi",
+   "playerFaction": "Meta.Alignment.Faction.Bravo",
+   "spawnerTotal": 95,
+   "spawners": [
+    {
+     "config": "AIC_Manticore_Machinegunner",
+     "count": 4,
+     "goal": "default",
+     "spawn": "automatic"
+    },
+    {
+     "config": "AIC_Manticore_Marksman",
+     "count": 5,
+     "goal": "default",
+     "spawn": "automatic"
+    },
+    {
+     "config": "AIC_Manticore_Rifleman",
+     "count": 31,
+     "goal": "Goal_Patrol_C",
+     "spawn": "automatic"
+    },
+    {
+     "config": "AIC_Manticore_Rifleman",
+     "count": 55,
+     "goal": "default",
+     "spawn": "automatic"
+    }
+   ],
+   "startingCash": 2000
+  }
+ },
+ "source": "round 36 cooked-data read (docs/evidence/round36-ai.md)",
+ "vipEscortLoot": {
+  "Lootable.VIPEscort01.AK": {
+   "amount": 1,
+   "canRespawn": true,
+   "chance": 100.0,
+   "initialSpawnPoints": 15,
+   "item": "Id.Item.SV98",
+   "respawnTime": 10.0,
+   "spawnByPoints": true,
+   "subItems": [
+    "Id.Item.SV98Magazine"
+   ]
+  },
+  "Lootable.VIPEscort01.Fuelcan100": {
+   "amount": 1,
+   "canRespawn": false,
+   "chance": 100.0,
+   "initialSpawnPoints": 0,
+   "item": "Id.Item.FuelCan",
+   "respawnTime": 0.0,
+   "spawnByPoints": false,
+   "subItems": []
+  }
+ }
+}
