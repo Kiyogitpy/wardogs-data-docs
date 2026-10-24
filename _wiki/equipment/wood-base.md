@@ -61,6 +61,14 @@ The Wood base uses the same damage row as the Sandbag Wall. See [Sandbag Wall](s
 
 The data does not say how many hits a Wood base takes to destroy, so that number is not yet known.
 
+## Hits to destroy (point blank, derived)
+
+Derived from each source's base damage and the damage table. It is not a count from play: each figure assumes every shot lands at point blank for full damage, with no falloff and no other rules, so real fights can differ. Base damage used: M4 5.56 mm FMJ 28, M67 frag grenade 100, 120 mm rocket 150, C4 charge 250.
+
+| Structure | HP | M4 5.56 mm FMJ | M67 frag grenade | 120 mm rocket | C4 charge |
+|---|---:|---:|---:|---:|---:|
+| Wood base | 735 | 175 | 8 | 1 | 1 |
+
 ## Season 2 changes
 
 The Season 2 data lists no change to the Wood base's cost or health.
@@ -75,3 +83,4 @@ The Season 2 data lists no change to the Wood base's cost or health.
 
 - [Buildables](../../game-features/Wardogs_Buildables_v1.md): cost, health, stages, damage row and placement conditions
 - [Items and equipment changes, Season 2](../../season-2-changes/items-equipment.md): the buildable changes
+- [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy for each source of damage.

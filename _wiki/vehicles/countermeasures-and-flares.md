@@ -39,7 +39,7 @@ Smoke is a sustained countermeasure. A smoke screen is visible for 6 seconds in 
 
 ### Amounts and reloading
 
-The data gives the airplane 3 starting flares, active for 3.5 seconds. For helicopters, the item text says 3 bursts per use, but no per-vehicle starting count is stated. How flares are restocked or reloaded is not yet known.
+Each flare-carrying vehicle has a starting count in the data, and each burst stays active for 3.5 seconds. The fixed-wing airplane starts with 3 flares, the Havoc with 2, the MH-6 and AH-6 family with 2, and the Z20 Lakota with 2. The item text's "3 bursts per use" does not match these helicopter counts, and the data does not say how the two fit together. How flares are restocked is not yet known.
 
 ### Season 2 changes
 
@@ -49,13 +49,13 @@ Season 2 renamed the flares input to Fire Countermeasures. The key stays the sam
 
 | Vehicle | Countermeasure | Amount | Notes |
 |---|---|---|---|
-| [Havoc](havoc.md) | Flares | Not stated | 3 bursts per use (item text) |
-| [MH-6](mh-6.md) | Flares | Not stated | 3 bursts per use (item text) |
-| [AH-6M [Miniguns]](ah-6m-miniguns.md) | Flares | Not stated | 3 bursts per use (item text) |
-| [AH-6R [Rockets]](ah-6r-rockets.md) | Flares | Not stated | 3 bursts per use (item text) |
-| [Z20 Lakota](z20-lakota.md) | Flares | Not stated | 3 bursts per use (item text) |
-| [Z20 Lakota [Miniguns]](z20-lakota-miniguns.md) | Flares | Not stated | 3 bursts per use (item text) |
-| [Fixed-wing airplane](fixed-wing-airplane.md) | Flares | 3 starting | Active for 3.5 seconds |
+| [Havoc](havoc.md) | Flares | 2 starting | Active 3.5 s; range band 5 to 300 m |
+| [MH-6](mh-6.md) | Flares | 2 starting | Active 3.5 s; range band 10 to 300 m |
+| [AH-6M [Miniguns]](ah-6m-miniguns.md) | Flares | 2 starting | Active 3.5 s; range band 10 to 300 m |
+| [AH-6R [Rockets]](ah-6r-rockets.md) | Flares | 2 starting | Active 3.5 s; range band 10 to 300 m |
+| [Z20 Lakota](z20-lakota.md) | Flares | 2 starting | Active 3.5 s; range band 15 to 300 m |
+| [Z20 Lakota [Miniguns]](z20-lakota-miniguns.md) | Flares | 2 starting | Active 3.5 s; range band 15 to 300 m |
+| [Fixed-wing airplane](fixed-wing-airplane.md) | Flares | 3 starting | Active for 3.5 seconds; no range band set |
 | [L2A6](l2a6.md) | Smoke | Not stated | Sustained smoke trail, visible for 6 seconds |
 
 The other vehicles list no countermeasure, or list "Not stated" for it. These include the SPH-2 (not stated for its variant), the Flakpanzer Gepard, the T-72B3, the M113 APC SV and every wheeled vehicle.
@@ -65,7 +65,7 @@ The other vehicles list no countermeasure, or list "Not stated" for it. These in
 - Flares are the only countermeasure for the helicopter and airplane group, so a helicopter pilot should treat them as the main defence against heat-seeking attacks.
 - Smoke lasts 6 seconds in total, so a smoke screen is short. Use it as a short cover, not a long one.
 - Because the airplane's flares are a fixed count of 3, use them when they matter most rather than as a routine.
-- The data does not give the number of flares each helicopter carries beyond the 3 bursts per use. Check the vehicle's own article before planning a long flight.
+- The data gives each helicopter 2 starting flares, while the item text says 3 bursts per use. Check the vehicle's own article before planning a long flight.
 
 ## See also
 
@@ -83,3 +83,4 @@ The other vehicles list no countermeasure, or list "Not stated" for it. These in
 - [Frontend, Server and Test Data](../../content/Wardogs_DataTables_Frontend_v1.md): the in-game tips on flares and flying low
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md): prices and unlock levels
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
+- [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): starting flare counts, active time and range bands for each flare-carrying vehicle.

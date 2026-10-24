@@ -69,6 +69,14 @@ Each fuel unit buys 0.03 of run time, which is probably seconds. The run time fo
 
 The data does not say how many hits the Drill Rig takes to destroy, so that number is not yet known. For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
 
+## Hits to destroy (point blank, derived)
+
+Derived from each source's base damage and the damage table. It is not a count from play: each figure assumes every shot lands at point blank for full damage, with no falloff and no other rules, so real fights can differ. Base damage used: M4 5.56 mm FMJ 28, M67 frag grenade 100, 120 mm rocket 150, C4 charge 250.
+
+| Structure | HP | M4 5.56 mm FMJ | M67 frag grenade | 120 mm rocket | C4 charge |
+|---|---:|---:|---:|---:|---:|
+| Drill Rig | 2,500 | 596 | 25 | 2 | 2 |
+
 ## Season 2 changes
 
 - Build cost went from 2,250 to 2,750 Build Supplies.
@@ -88,3 +96,4 @@ The recharge duration of 900 is not listed as changed.
 
 - [Buildables](../../game-features/Wardogs_Buildables_v1.md): cost, health, stages, damage row, placement conditions, fuel settings and cash rewards
 - [Items and equipment changes, Season 2](../../season-2-changes/items-equipment.md): the cost and fuel changes
+- [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy for each source of damage.

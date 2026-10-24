@@ -15,7 +15,7 @@ description: "How much fuel each vehicle carries, how its fuel economy is listed
 | Refuel options | Fuel Canister, Refuel Station |
 | **Data** | |
 | Fuel unit | Not labelled in the data (shown as stored) |
-| Refuel rate | Not yet known |
+| Refuel rate | Refuel Station: Fast 5% in 3 s, Max up to 100% in 9 s. Canister: 2.0 units per 0.75 s |
 {: .wiki-infobox }
 
 Every driven vehicle has a fuel tank with a stored capacity and a stored fuel economy number. The data does not label the units, so this article shows them as stored and does not convert them to litres or kilometres. The fuel tank also has its own health, which is covered in [Repair and vehicle parts](repair-and-vehicle-parts.md).
@@ -38,12 +38,12 @@ Fuel tank health triggers sit at 90% (and 80%), 55% and 0% on several vehicles, 
 
 ### Refueling
 
-- **Fuel Canister.** A 40L Fuel Canister costs 150 cash and has 40 durability. Each use adds 25 fuel. It is used until the can is empty or the vehicle is full.
+- **Fuel Canister.** A 40L Fuel Canister costs 150 cash and has 40 durability. The shop lists 25 fuel per use, while the item's timed refuel step adds 2.0 units every 0.75 s. How the two fit together is not confirmed. It is used until the can is empty or the vehicle is full. Canisters are filled for cash at world refuel points, see [Fuel Canister](../equipment/fuel-canister.md).
 - **Refuel Station.** Built with the Large Hammer for 200 Build Supplies, with 1,600 HP. Only one can stand in each Forward Operating Base. It takes Fuel Supplies and must be inside the FOB radius to be used.
 - **Fuel Supplies.** Sold for 10 cash per lot of 50. A Fuel Supply Pallet costs 400 cash. The Refuel Station needs them to work.
 - **Refuel at base.** The in-game tip says vehicles can be refuelled by returning to your faction's safe zone or a FOB, and that this is not free.
 
-The refuel rate of the Refuel Station is not in the data, so how long a refill takes is not yet known.
+The Refuel Station has a Fast and a Max restock. Fast restocks 5% of the tank in 3 s for 75 cash. Max restocks up to a full tank in 9 s for 1,500 cash. Each restock uses 5 Fuel Supplies. The [Refuel and Repair Stations](../equipment/refuel-and-repair-stations.md) page has the full figures. What an empty tank does to the vehicle is not known.
 
 ## Numbers
 
@@ -103,3 +103,4 @@ Season 2 changed no fuel capacity or fuel economy value in the data.
 - [Buildables](../../game-features/Wardogs_Buildables_v1.md): the Refuel Station and its supplies
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md): Fuel Canister and supply prices
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
+- [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): Refuel Station restock rates and the Fuel Canister's timed refuel step.

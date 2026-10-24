@@ -18,9 +18,10 @@ description: "A buildable stationary emplacement whose ammunition is listed as U
 | Rate | 50 rounds/min |
 | Effective range | 10,000 m (stats sheet; not the real reach) |
 | Range table | 80 to 697 m |
-| Reload | Not yet known |
+| Reload | None (0.0 s; 1.0 s start and end delay) |
 | Starting ammunition | 0 |
-| Restock | 900 Ammo Supplies |
+| Restock | 900 Mechanical Supplies and 5,000 cash, per drone |
+| Lock-on | Air vehicles only; 2.0 s to lock, fires 0.5 s after lock |
 | **Building** | |
 | Build cost | 650 Build Supplies |
 | Health | 3,000 HP |
@@ -32,15 +33,19 @@ The Stingray is a buildable stationary emplacement with a main barrel that fires
 
 ## Overview
 
-The Stingray starts with no ammunition and needs a restock before it can fire. The restock takes 900 Ammo Supplies, the largest restock of the stationary weapons in the data. The match interface has a drone reload screen for this emplacement.
+The Stingray starts with no ammunition and needs a restock before it can fire. The restock takes 900 Mechanical Supplies (the Spare Parts supply) and 5,000 cash, the largest restock of the stationary weapons in the data. The match interface has a drone reload screen for this emplacement.
 
 ## Effects
 
 ### Weapon
 
-The barrel is listed at 50 rounds/min in semi-automatic mode, with an effective range of 10,000 m. The data gives a reload value of 0.0 s, which may mean that the barrel has no reload step, but the export does not confirm this, so the reload is shown as not yet known.
+The barrel is listed at 50 rounds/min in semi-automatic mode, with an effective range of 10,000 m. The barrel has no reload step: its reload time is 0.0 s. It has a 1.0 s start delay and a 1.0 s end delay.
 
 The data does not give a windup time or a bullet speed that this article can check against play.
+
+### Targeting
+
+The Stingray is a lock-on weapon. Its target list covers air vehicles only, including the Little Bird family, the Havoc and the fixed-wing airplane. It takes 2.0 s to lock onto a target, and it fires 0.5 s after the lock.
 
 ### Range table
 
@@ -72,7 +77,7 @@ The table is laid out like the L81 Mortar's: the same elevations (-500 to 300 mr
 
 The Stingray uses the same placement rules as the other stationary weapons: it is built with a Large Hammer, and its placement conditions check the Forward Operating Base bounds, a ladder-bounds rule and a safe-zone rule. The [Buildables](buildables.md) page describes these rules.
 
-Because the emplacement starts with no ammunition, the first use in a match depends on a restock. How quickly a restock takes effect in play is not yet known.
+Because the emplacement starts with no ammunition, the first use in a match depends on a restock. One restock gives one drone (derived: the data does not write a drone count per restock, so the engine's default of one is used). How long the drone reload takes in play is not known.
 
 ## Cost
 
@@ -103,3 +108,4 @@ The Build Supplies cost is not a cash price. Build Supplies are bought in the sh
 - [Vehicles changes, Season 2](../../season-2-changes/vehicles.md): cost and damage table changes
 - [Stingray weapon data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/Weapons/WeaponExtensions/WE_STN_05_Heavy_MainBarrel.json): restock, ammunition and the 17-row range table (mrad, impact distance, travel time)
 - [Vehicle hitboxes](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/vehicle-hitboxes.json): the 3D hitbox set used by the viewer link
+- [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): lock-on timings, the restock cost and the drone count.

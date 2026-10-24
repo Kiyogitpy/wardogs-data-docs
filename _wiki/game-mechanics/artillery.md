@@ -102,7 +102,7 @@ How the game table and the dial compare:
 
 - On the **low arc**, the game table's elevation is higher than the dial setting for the same range, by 45 to 97 mils (about 50 in the middle of the range, 97 at 2,600 m). The gap is largest at the short end and at the very top of the range.
 - On the **high arc**, the game table is slightly lower than the dial, by 2 to 5 mils over most of the range and by up to 34 mils at 2,500 m.
-- The gap is not a fixed shift on the SPH-2, and why the two differ is not known. The game table also lists settings the dial cannot reach: its low arc starts at 20 mrad for 600 m, but the dial's lowest setting, 20 mils, already lands at 1,181 m, and its high arc runs to 1,400 mrad for 700 m, while the dial stops at 1,390 mils (780 m).
+- The gap is not a fixed shift on the SPH-2. The sight does not read the table's distances. It works out each mil mark's distance with a live simulation, taking the altitude above sea level and the air density as inputs, so the table and the dial are two different calculations. The game table also lists settings the dial cannot reach: its low arc starts at 20 mrad for 600 m, but the dial's lowest setting, 20 mils, already lands at 1,181 m, and its high arc runs to 1,400 mrad for 700 m, while the dial stops at 1,390 mils (780 m).
 - The game's travel times fit the flight maths at the game table's own elevation. On the high arc the simulator is within 0.1 to 0.4 s of the game (under 2 percent). On the low arc the game takes 0.5 to 1.6 s longer than the simulator, and the simulator lands 18 to 283 m short of the game table's range at the same elevation. The high-arc fit is good and the low-arc fit is loose, especially at the shortest ranges.
 
 Reading the table:
@@ -151,7 +151,7 @@ The stats sheet gives the SPH-2 gun an "effective range" of 10,000 m. That is no
 
 ## What is not known
 
-- Why the game table's elevations differ from the dial settings on the SPH-2. The difference is 45 to 97 mils on the low arc and 2 to 34 mils (lower) on the high arc, and it is not a fixed shift. The dial values are the ones measured in game and checked against impacts, so use them.
+- The zero of the sight's mil scale. The dial shows true milliradians of the gun's pitch, but the angle it counts from (the hull, the horizon or a rest angle) is not confirmed. The dial values are the ones measured in game and checked against impacts, so use them.
 - Why the game table's low-arc travel times run 0.5 to 1.6 s longer than the flight maths gives at the same elevation, while the high-arc times agree.
 
 - How the game handles hull tilt. The simulator's result suggests the elevation is measured from the tilted hull, but this is not confirmed.
@@ -179,3 +179,4 @@ The stats sheet gives the SPH-2 gun an "effective range" of 10,000 m. That is no
 - [artillery_range_tables.py](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/_tools/artillery_range_tables.py): prints the game tables and compares them with the dial readings and the simulator
 - [shell_sim.py](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/_tools/shell_sim.py): flight simulator for the apex heights and miss estimates
 - [Round 21 artillery range check](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round21-artillery-range-check.md): the comparison against 87 logged shots
+- [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): how the SPH-2 sight labels its mil marks, and the mil scale.
