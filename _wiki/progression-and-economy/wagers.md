@@ -143,7 +143,7 @@ The data holds a catalogue of prebuilt objectives. Five are public, with a fixed
 
 ## Payout and settlement
 
-- **Stake and odds.** The slip shows a total odds figure and a return. The return is the stake times the total odds, and the slip labels it "(capped)" when the cap applies. The cap is 5,000,000 cash.
+- **Stake and odds.** The slip shows a total odds figure and a return. By the slip's own labels the return is the stake times the total odds (the exact formula is not read from the data), and the slip labels it "(capped)" when the cap applies. The cap is 5,000,000 cash.
 - **Settlement.** Settlement runs on the server. The data has the odds, the cap and the stake limits, but not the formula that decides whether a wager pays and how much.
 - **Not known.** How deaths, leaving a match or completing only part of a slip affect a payout is not in the data.
 

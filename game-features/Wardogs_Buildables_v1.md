@@ -521,6 +521,7 @@ The cash for Fast is 5% of the Max price. The sale appears to pay the FOB owner 
 | Bunker, Recon Tower, Indirect Fire Shelter | 5,000 | 893 | 100 | 23 | 14 |
 | Gate | 5,320 | 1,267 | 54 | 4 | 2 |
 | Bremer Wall | 6,500 | 1,161 | 44 | 13 | 7 |
+| Refuel Station, Repair Station | 1,600 | 286 | 11 | 1 | 1 |
 | FOB | 15,000 | 2,679 | 50 | 7 | 5 |
 
 These are bounds from the tables, not observed hit counts. The build time per structure and how `Cost` converts to Build Supplies per hit stay native (hit path `Server_SingleHitMode_Construct` -> `0x86032F0` -> `0x85EAAA0` -> `0x85F1D90` -> `0x85F1F20`).

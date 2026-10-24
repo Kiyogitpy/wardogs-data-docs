@@ -77,7 +77,7 @@ Wrench and drills: +5 HP per use is already on the wiki. The timing is `UpdateTi
 | Bunker / Recon Tower / Indirect Fire Shelter | 5,000 | 893 | 100 | 23 | 14 |
 | Gate | 5,320 | 1,267 | 54 | 4 | 2 |
 | Bremer Wall | 6,500 | 1,161 | 44 | 13 | 7 |
-| Refuel / Repair Station | 1,600 | 286 | 11 | 2 | 2 |
+| Refuel / Repair Station | 1,600 | 286 | 11 | 1 | 1 |
 | FOB | 15,000 | 2,679 | 50 | 7 | 5 |
 
 The Refuel and Repair Station rows come from the page's factors (rocket +1500%, C4 +600%); the table is a bound under the assumptions above, not an observed hit count.

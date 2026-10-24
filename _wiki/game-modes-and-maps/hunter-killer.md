@@ -2,7 +2,7 @@
 title: "Hunter Killer"
 parent: "Game Modes & Maps"
 group: "PvE missions"
-description: "A single-life PvE mission on the Kavkazi map with no respawns. Its data is unfinished: no soldiers, objectives or player faction are set."
+description: "A single-life PvE mission on the Bakurani world with no respawns. Its data is unfinished: no soldiers, objectives or player faction are set."
 ---
 
 # Hunter Killer
@@ -11,7 +11,7 @@ description: "A single-life PvE mission on the Kavkazi map with no respawns. Its
 |---|---|
 | **General** | |
 | Mode | PvE mission against AI squads |
-| Map or layout | Kavkazi (the data's name; the in-game name is not confirmed) |
+| Map or layout | The Bakurani world (the data's name: Kavkazi) |
 | Lives | One: no respawns |
 | **Objective** | |
 | Objective | None set: the mission data is unfinished |
@@ -33,7 +33,7 @@ Hunter Killer is one of the three PvE missions in the data, alongside [Strike an
 - **Respawns.** None. A player who dies stays out for the rest of the mission.
 - **Teams.** Like the other PvE missions, it uses the shared three-team setup. The data does not set the player's own faction for this mission, so which side the player starts on is not yet known.
 - **Objectives.** None are set. The mission's quest has only a start and an end, with no steps between them.
-- **Map.** The Kavkazi map. No time limit is set in the data.
+- **Map.** The Bakurani world (the data's name for it is Kavkazi). No time limit is set in the data.
 - **Starting cash.** None is set for this mission.
 
 ## Enemies

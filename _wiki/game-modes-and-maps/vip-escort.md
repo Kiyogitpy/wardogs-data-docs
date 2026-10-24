@@ -2,7 +2,7 @@
 title: "VIP Escort"
 parent: "Game Modes & Maps"
 group: "PvE missions"
-description: "A single-life PvE mission on the Kavkazi map in which one random player is the VIP to escort to an extraction helicopter, against 95 Manticore soldiers."
+description: "A single-life PvE mission on the Bakurani world in which one random player is the VIP to escort to an extraction helicopter, against 95 Manticore soldiers."
 ---
 
 # VIP Escort
@@ -11,7 +11,7 @@ description: "A single-life PvE mission on the Kavkazi map in which one random p
 |---|---|
 | **General** | |
 | Mode | PvE mission against AI squads |
-| Map or layout | Kavkazi (the data's name; the in-game name is not confirmed) |
+| Map or layout | The Bakurani world (the data's name: Kavkazi) |
 | Lives | One: no respawns |
 | **Objective** | |
 | Objective | Keep the marked VIP alive, reach the extraction area and board the extraction helicopter |
@@ -38,7 +38,7 @@ VIP Escort is one of the three PvE missions in the data, alongside [Hunter Kille
 - **Success.** The team must reach the extraction area with the VIP alive, then board the extraction helicopter. The helicopter is a Little Bird. It appears for the team at one of three entry points and flies a set route.
 - **Voice-over.** An intro of three lines, a success line and a failure line.
 - **Starting cash.** Each player starts the mission with 2,000 cash. The mission data sets no time limit.
-- **Map.** The Kavkazi map, which all three PvE missions share.
+- **Map.** The Bakurani world (the data's name: Kavkazi), which all three PvE missions share.
 
 ## Enemies
 

@@ -13,7 +13,7 @@ description: "Single-life PvE missions against AI squads: Hunter Killer, Strike 
 | Missions | Hunter Killer, Strike and Disarm, VIP Escort (plus an example scenario for testing) |
 | Respawns | None: death in a scenario is final |
 | Factions | Three: Lonestar, Valkyra and Manticore |
-| Map | Kavkazi for all three missions (the data's name; the in-game name is not confirmed) |
+| Map | The Bakurani world for all three missions (the data's name: Kavkazi) |
 | Internal name | PvE (scenario framework) |
 {: .wiki-infobox }
 

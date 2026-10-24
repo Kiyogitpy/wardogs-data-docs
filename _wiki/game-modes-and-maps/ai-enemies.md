@@ -15,7 +15,7 @@ description: "The computer-controlled soldiers of the PvE missions: five types i
 | **Combat** | |
 | Health | 100, the same as a player |
 | Accuracy | No AI-specific value; they shoot with their weapon's own spread and recoil |
-| Sight and hearing | Sees up to 2,000 m and hears up to 1,000 m (configured ranges) |
+| Sight and hearing | Configured radius 2,000 m sight and 1,000 m hearing; the range in play is not confirmed |
 | Reaction time | Not yet known |
 | Internal name | AIC_Lonestar_Rifleman, AIC_Lonestar_Sniper, AIC_Manticore_Rifleman, AIC_Manticore_Machinegunner, AIC_Manticore_Marksman |
 {: .wiki-infobox }
@@ -56,7 +56,7 @@ The weapon, attachment and magazine names are the display names from the game da
 | How long a soldier remembers what it saw or heard | 30 s |
 | How long a soldier remembers a hit | 10 s |
 
-These are the configured ranges. The data also sets two internal range multipliers, 0.02 for sight and 0.05 for hearing. How they change the ranges in play is not confirmed, so treat the figures above as configured values, not confirmed distances.
+These are the configured radii, not confirmed distances in play. The perception setup also carries two range multipliers, 0.02 for sight and 0.05 for hearing, and how the game combines them with the radii is not known. A soldier may therefore notice a player at far less than 2 km, but the real sight and hearing distance has not been measured or decoded, so do not rely on either figure.
 
 - **Threat build-up.** A soldier builds up a detection level for a player and loses it again over time. The data sets the fade rate at 0.25 (the unit is not confirmed), and the fade starts only 5 s after the last detection.
 - **How visible a player is.** The data sets a value of 1.0 for a standing player, 0.4 for a crouching player and 0.3 for a prone player. Firing a weapon is set at 5.0, far above standing still, and movement speed also feeds into hearing. How these values combine into a chance of being spotted is not confirmed.

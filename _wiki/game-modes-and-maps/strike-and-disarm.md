@@ -2,7 +2,7 @@
 title: "Strike and Disarm"
 parent: "Game Modes & Maps"
 group: "PvE missions"
-description: "A single-life PvE mission on the Kavkazi map: the team hacks a laptop while Lonestar soldiers try to stop it, then boards an extraction helicopter."
+description: "A single-life PvE mission on the Bakurani world: the team hacks a laptop while Lonestar soldiers try to stop it, then boards an extraction helicopter."
 ---
 
 # Strike and Disarm
@@ -11,7 +11,7 @@ description: "A single-life PvE mission on the Kavkazi map: the team hacks a lap
 |---|---|
 | **General** | |
 | Mode | PvE mission against AI squads |
-| Map or layout | Kavkazi (the data's name; the in-game name is not confirmed) |
+| Map or layout | The Bakurani world (the data's name: Kavkazi) |
 | Lives | One: no respawns |
 | **Objective** | |
 | Objective | Keep Lonestar soldiers away from the laptop until the virus is uploaded, then board the extraction helicopter |
@@ -35,7 +35,7 @@ Strike and Disarm is one of the three PvE missions in the data, alongside [Hunte
 - **Laptop hack.** The hack takes 5 minutes (300 seconds) once it starts. It has a start line and an end line of voice-over. Aborting the hack fails the mission.
 - **Intro and completion.** Four intro voice-over lines and a mission-complete line.
 - **Starting cash.** Each player starts the mission with 3,000 cash. The mission data sets no time limit.
-- **Map.** The Kavkazi map, which all three PvE missions share.
+- **Map.** The Bakurani world (the data's name: Kavkazi), which all three PvE missions share.
 - **Objectives.** Upload the virus while keeping Lonestar soldiers away from the laptop, then board the extraction helicopter to leave the area.
 
 ## Enemies
