@@ -42,7 +42,7 @@ Sizes are the data values converted to metres. Height is the vertical extent.
 | Ozeti | 550 × 550 × 150 | 85 × 85 × 150 | 4 |
 | Zestafona | 500 × 500 × 500 | 85 × 85 × 850 | 4 |
 | Saburtulo | 550 × 550 × 150 | 85 × 85 × 150 | 4 |
-| Africa (see [Maps](maps.md)) | 550 × 550 × 150 | 85 × 85 × 150 | 4 |
+| Unnamed Africa layout (see [Maps](maps.md)) | 550 × 550 × 150 | 85 × 85 × 150 | 4 |
 | Bakurani Outskirts (Sniper Showdown) | 350 × 350 × 170 | 75 × 75 × 170 | None (fixed spot) |
 | Sniper Showdown, North America and Russia zones | 350 × 350 × 170 | 75 × 75 × 170 | None (fixed spot) |
 
@@ -59,8 +59,8 @@ The Zestafona Hot Zone is 850 m tall against a 500 m tall Control Zone. The data
 | Ozeti | Farmland | 0.0 |
 | Zestafona | Default, Water Treatment, Houses | 1.0 each |
 | Zestafona | Small Factory | 0.0 |
-| Africa | Default | 1.0 |
-| Africa | North, East, West | 0.0 each |
+| Unnamed Africa layout | Default | 1.0 |
+| Unnamed Africa layout | North, East, West | 0.0 each |
 | Saburtulo | Hospital | 1.0 |
 | Saburtulo | Bazaar, River, Hillside | 0.0 each |
 

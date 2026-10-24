@@ -61,10 +61,10 @@ The data gives the number of centre hits a vehicle needs to lose its main health
 
 | Vehicle | Main health | Centre hits to destroy |
 |---|---:|---:|
-| Little Bird family helicopter | 400 HP | 2 |
-| Humvee | 500 HP | 1 |
-| T-72B3 | 750 HP | 3 |
-| 1000 HP vehicle | 1000 HP | 2 |
+| [MH-6](../vehicles/mh-6.md) | 400 HP | 2 |
+| [Humvee](../vehicles/humvee.md) | 500 HP | 1 |
+| [T-72B3](../vehicles/t-72b3.md) | 750 HP | 3 |
+| [M113 APC SV](../vehicles/m113-apc-sv.md) | 1000 HP | 2 |
 
 See [Vehicle damage](../vehicles/vehicle-damage.md) for how vehicles take damage in general.
 

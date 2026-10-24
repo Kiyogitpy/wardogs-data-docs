@@ -21,7 +21,7 @@ description: "A buildable stationary machine gun firing .50 cal tracer rounds, b
 | Restock | 200 Ammo Supplies for 60 rounds |
 | **Building** | |
 | Build cost | 650 Build Supplies |
-| Health | 3,000 HP |
+| Health | 3,000 HP (buildable data; the body pool is 1,800 HP) |
 | Hammer | Large Hammer |
 | 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#stationary-mgnest) |
 | Internal name | STN_06 |
@@ -41,7 +41,7 @@ The gun reloads in 8.0 s. The data gives no rate of fire and no effective range 
 
 ### Health
 
-The Buildables data gives the MG Nest 3,000 HP. The vehicle damage data gives the same emplacement a health of 1,800 HP. The two figures are not reconciled in the data, so the game's health value for this emplacement is not yet known for certain. The [vehicle damage](../vehicles/vehicle-damage.md) page explains how the damage table works.
+Two health figures exist for the MG Nest. The Buildables data sets 3,000 HP as the structure's maximum health, the same as the Talon 9K-SAM and Stingray. The vehicle damage table, which describes the gun's body when shots hit it, gives a pool of 1,800 HP. Every other stationary weapon has the same figure in both places. Which of the two decides when a hit MG Nest is destroyed is not confirmed, so treat 3,000 HP as the build-menu health and 1,800 HP as the body pool that shots are counted against. The [vehicle damage](../vehicles/vehicle-damage.md) page explains how the damage table works.
 
 ## Use and timing
 
@@ -52,7 +52,7 @@ The MG Nest uses the same placement rules as the other stationary weapons: it is
 | Item | Value |
 |---|---|
 | Build Supplies | 650 |
-| Health | 3,000 HP (see Effects) |
+| Health | 3,000 HP (see Health) |
 | Hammer | Large Hammer |
 
 The Build Supplies cost is not a cash price. Build Supplies are bought in the shop, as the [Buildables](buildables.md) page explains.
