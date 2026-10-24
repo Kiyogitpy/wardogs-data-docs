@@ -280,3 +280,13 @@ Details behind the table:
 - Placement condition Blueprints and any placement count limit.
 - What the smoke volume's pawn list is used for, and the smoke fuse.
 - Any flash or stun grenade: not present in this build's export.
+
+## 7. Round 36 additions
+
+Evidence: [round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md), sections 7 and 8.
+
+- **Fire patch size (Data, Blueprint dump).** `B_Molotov_TriggerVolume`'s `BoxComponent` has `BoxExtent` 100 x 100 x 25 (half extents, cm), so each patch trigger box is 200 x 200 x 50 cm and overlaps `Pawn` only. The total spread of the 15 patches is native and not decoded.
+- **Impact or fuse (Native).** `B_Molotov` only plays a flight sound. `CollisionExplodeImpactThreshold` (`AWDExplosive +0x498`) is 0.0 in the constructor and no Blueprint sets it; no reader of that field was found, so only the 5.0 s fuse (and depletion of the 50 starting health) is a confirmed trigger.
+- **Armor against fire (Derived from the damage tables).** The fire tick is `Meta.Damage.DamageType.Enviroment`; no row in `DT_GlobalDamage_ArmorData`, `_InfantryData` or `_VehicleData` matches that source, so armor rows do not apply to it. The burst (`Meta.Damage.Explosive.Utility.Molotov`) matches the Explosive armor rows (-85%) and gets -30% against `Armor.SuperHeavy` in `_InfantryData`.
+- **Teammates (Derived).** `AlignmentRequired = Friendly` entries exist in `DT_GlobalDamage_InfantryData` for Bullet (-50%) and Large Hammer (-70%) only; none for the Molotov burst or fire tick, and the fire loop has no team check. Whether the mode disables friendly damage elsewhere is not in these tables.
+- **What smoke blocks (Native, static).** The only caller of the sight-blocker query (`0x6F4E2D0`) is the aim-assist target manager (`0x6D821E1`). No spotting, lock-on, minimap or damage code calls it, and no smoke effect or tag exists. Whether AI sight traces ignore the smoke is not determined.

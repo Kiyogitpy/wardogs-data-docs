@@ -111,3 +111,12 @@ So the game's high-arc travel times agree with the flight maths at the table's o
 1. Build `tools/cue4parse_extractor` ([README](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/tools/cue4parse_extractor/README.md)); `list BP_` finds the actor packages, `dump <files.txt>` exports them and `rawfiles <text> --copy` writes the packed `.ini` files.
 2. `python _tools/shell_actors.py --dump <dumpdir> --world <dir with world.json>` rewrites `assets/data/shell-actors.json`.
 3. `python -I _tools/artillery_range_tables.py [--calc <weapons.json>]` prints the three range tables of section 5 and the comparisons.
+
+## 7. Round 36: what the artillery HUD reads
+
+Evidence: Blueprint bytecode of `W_Artillery_Reticle` (TNK_01) and `W_STN_03_Reticle` (STN_03), see the [round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md), sections 9 and 10.
+
+- The MIL scale pointer is `VehicleCrosshairViewModel.WeaponPitchBindable` (degrees, handler `OnTurretPitchUpdated`) times pi/180 times 1000, a true milliradian. What the angle is measured from is set in native code that was not located.
+- **SPH-2.** The scale spans the first to the last `Milliradians` of `ArtilleryRangeData` (20 to 1400). The distance printed on each tick is not the table's `ImpactDistance`: `UpdateDistanceText` calls `WDArtilleryRangeLibrary::SimulateImpactDistance(ProjectileStats, WeaponStats, mil, altitude above sea level, air density 1.2)`. `ImpactDistance` and `TravelTime` are never read by this widget, which explains the non-constant gap between the table and the dial in section 5.
+- **L81 Mortar.** The widget reads the table directly: the mil label is the row's `Milliradians` plus a hard-coded 650.0, and the distance label is the row's `ImpactDistance`. This is the exact +650.
+- **Mortar minimum range.** `W_STN_03_MainBarrel` limits the barrel to -29 to +15 degrees (-506 to +262 mrad, dial 144 to 912). The table's 300 mrad row (80 m) is beyond that, the 250 mrad row (110 m) is inside it. Linear interpolation at +262 mrad gives about 103 m (Derived). The community stop at 850 mils (200 mrad, 132 m) is below the data limit and is not explained by it.
