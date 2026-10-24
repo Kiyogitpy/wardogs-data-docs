@@ -24,6 +24,8 @@ description: "Magazines for the weapons in the data, with the aim time, recoil, 
 
 Magazines hold the rounds a weapon fires. Some weapons use an internal magazine instead of a swappable one. The data lists 69 magazines. 46 of them change weapon numbers and 23 change nothing in the data.
 
+Parts the game data gives no display name are labelled "Unnamed" followed by the weapon and part type. These labels are placeholders used on this wiki, not names shown in the game, and the same label can appear more than once for different parts.
+
 ## What they change
 
 - Aim time: x0.83 to x1.26 (46 parts).
@@ -69,7 +71,7 @@ Each row is one magazine. Fits lists the weapons that accept it. Prices come fro
 | Judge Bullet Cylinder | Judge | Not in shop data | No stat change in data |
 | KH2002 Extended Mag | No weapon | Not in shop data | No stat change in data |
 | KH2002 Standard Mag | No weapon | Not in shop data | No stat change in data |
-| Launcher_04 Standard Mag | No weapon | Not in shop data | No stat change in data |
+| 9K333 Verba Standard Mag | No weapon | Not in shop data | No stat change in data |
 | M14 10 RND Magazine | M14 | 60 | No stat change in data |
 | M14 20 RND Magazine | M14 | 110 | aim time x1.08; vertical recoil x1.07; horizontal recoil x1.05; equip speed x0.95; aim sway scale x1.08 |
 | M14 30 RND Magazine | M14 | 180 | aim time x1.2; vertical recoil x1.22; horizontal recoil x1.24; equip speed x0.93; aim sway scale x1.24 |
@@ -114,7 +116,7 @@ Each row is one magazine. Fits lists the weapons that accept it. Prices come fro
 
 12 parts in the data can't be fitted: no weapon's slot accepts them, so their modifiers never apply in game. They are still listed in the table above with "No weapon" in the Fits column.
 
-A91 Standard Mag, Battery, C4 Charge, Combat Bow Standard Mag, High Capacity Battery, KH2002 Extended Mag, KH2002 Standard Mag, Launcher_04 Standard Mag, M4 Extended Mag, MP43 Internal Mag, TAR21 Standard Mag, Unnamed magazine.
+A91 Standard Mag, Battery, C4 Charge, Combat Bow Standard Mag, High Capacity Battery, KH2002 Extended Mag, KH2002 Standard Mag, 9K333 Verba Standard Mag, M4 Extended Mag, MP43 Internal Mag, TAR21 Standard Mag, Unnamed magazine.
 
 ## Season 2 changes
 

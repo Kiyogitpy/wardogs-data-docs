@@ -24,6 +24,8 @@ description: "Handguards that cover the barrel: which fit the weapons in the dat
 
 Handguards are the covers over the barrel. The data lists 25 of them, and 19 fit no weapon. None of them changes a weapon or character stat in the data.
 
+Parts the game data gives no display name are labelled "Unnamed" followed by the weapon and part type. These labels are placeholders used on this wiki, not names shown in the game, and the same label can appear more than once for different parts.
+
 ## What they change
 
 - Weapon and character stats: no handguard changes any in the data (25 of 25).

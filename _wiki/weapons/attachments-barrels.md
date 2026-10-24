@@ -24,6 +24,8 @@ description: "Replacement barrels for the weapons in the data, and the muzzle sl
 
 Barrels are replacement barrels that go in a weapon's barrel slot. The data lists 41 of them. None of them changes a weapon or character stat. Their main job is the muzzle slot that most of them carry, which decides which muzzle devices can be fitted.
 
+Parts the game data gives no display name are labelled "Unnamed" followed by the weapon and part type. These labels are placeholders used on this wiki, not names shown in the game, and the same label can appear more than once for different parts.
+
 ## What they change
 
 - Weapon and character stats: no barrel changes any in the data (41 of 41).

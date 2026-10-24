@@ -24,6 +24,8 @@ description: "Pistol grips and foregrips: which change recoil, spread and aim, a
 
 Grips sit under the weapon or in the grip slot. The data lists 32 grip parts. Pistol grips fit the grip slot and, apart from one, change nothing. Foregrips fit the underbarrel slot and change recoil, spread, aim time and sway.
 
+Parts the game data gives no display name are labelled "Unnamed" followed by the weapon and part type. These labels are placeholders used on this wiki, not names shown in the game, and the same label can appear more than once for different parts.
+
 ## What they change
 
 Foregrips (10 parts with effects):

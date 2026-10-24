@@ -24,6 +24,8 @@ description: "Stocks that fit the back of the weapons in the data, and which of 
 
 Stocks fit at the back of a weapon. The data lists 37 stock parts. None of them changes a weapon or character stat, so the choice of stock is about which weapons take it, not about numbers.
 
+Parts the game data gives no display name are labelled "Unnamed" followed by the weapon and part type. These labels are placeholders used on this wiki, not names shown in the game, and the same label can appear more than once for different parts. The data files three Season 2 handguard-coded parts (the unnamed M14, PP-19 Bizon and TCX-SPR ones) under the stock category, so they are listed here.
+
 ## What they change
 
 - Weapon and character stats: no stock changes any in the data (37 of 37).

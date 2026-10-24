@@ -477,20 +477,27 @@ def ammo_page():
     return "\n".join(body)
 
 
+ATTACH_ARTICLE = {"Magazine": "attachments-magazines.md", "Muzzle": "attachments-muzzle-devices.md",
+                  "Barrel": "attachments-barrels.md", "Stock": "attachments-stocks.md",
+                  "Grip": "attachments-grips.md", "Sight": "attachments-sights-and-optics.md",
+                  "Handguard": "attachments-handguards.md", "Bipod": "attachments-bipods.md"}
+
+
 def attachments_page():
     cats = sorted(ATTACH, key=lambda c: -ATTACH[c]["count"])
     body = ["# Attachments", "",
             "Attachments are parts that fit onto a weapon. While a part is fitted, it changes some of the weapon's numbers. "
             "The table lists each slot type in the data, how many parts it has and what it is for. "
-            "The list after it shows which numbers the parts in each category change, and how many parts change each one.", "",
+            "The list after it shows which numbers the parts in each category change, and how many parts change each one. Each category name links to its own article.", "",
             "| Category | Parts | What it is |", "|---|---|---|"]
     for cat in cats:
-        body.append(f"| {cat} | {ATTACH[cat]['count']} | {ATTACH_CAT_TEXT.get(cat, 'Other slot type.')} |")
+        label = f"[{cat}]({ATTACH_ARTICLE[cat]})" if cat in ATTACH_ARTICLE else cat
+        body.append(f"| {label} | {ATTACH[cat]['count']} | {ATTACH_CAT_TEXT.get(cat, 'Other slot type.')} |")
     body += ["", "## What the parts change", ""]
     for cat in cats:
         attrs = ATTACH[cat]["attrs"]
         if attrs:
-            effects = ", ".join(f"{k} ({v} modifiers)" for k, v in sorted(attrs.items(), key=lambda kv: -kv[1]))
+            effects = ", ".join(f"{k} ({v} modifier{'s' if v != 1 else ''})" for k, v in sorted(attrs.items(), key=lambda kv: -kv[1]))
             body.append(f"- **{cat}**: {effects}.")
         else:
             body.append(f"- **{cat}**: no effect entries in the loadout data.")

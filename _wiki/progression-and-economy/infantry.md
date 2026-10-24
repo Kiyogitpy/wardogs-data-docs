@@ -11,7 +11,6 @@ description: "The Infantry role: 17 skills for assault rifles and SMGs, faster a
 |---|---|
 | **General** | |
 | Skills | 17 |
-| Game label | ASSAULT |
 | Focus | Assault rifles, SMGs and movement |
 | **Mastery** | |
 | XP to level 10 | 25,000 |

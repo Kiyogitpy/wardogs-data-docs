@@ -7,18 +7,18 @@ description: "The parts that fit on weapons, the slots they go into and what eac
 
 # Attachments
 
-Attachments are parts that fit onto a weapon. While a part is fitted, it changes some of the weapon's numbers. The table lists each slot type in the data, how many parts it has and what it is for. The list after it shows which numbers the parts in each category change, and how many parts change each one.
+Attachments are parts that fit onto a weapon. While a part is fitted, it changes some of the weapon's numbers. The table lists each slot type in the data, how many parts it has and what it is for. The list after it shows which numbers the parts in each category change, and how many parts change each one. Each category name links to its own article.
 
 | Category | Parts | What it is |
 |---|---|---|
-| Magazine | 69 | Magazines hold the rounds. Some weapons use an internal magazine instead of a swappable one. |
-| Muzzle | 56 | Brakes, flash hiders, compensators and suppressors that fit the end of the barrel. |
-| Barrel | 41 | Replacement barrels. Some carry a muzzle slot of their own. |
-| Stock | 37 | Stocks fit at the back of the weapon. |
-| Grip | 32 | Pistol grips and foregrips. They change how the weapon is held. |
-| Sight | 29 | Optics and iron sights on top of the weapon. They change zoom and aim time. |
-| Handguard | 25 | Covers over the barrel. They carry further slots. |
-| Bipod | 9 | Folding legs that mount under the weapon. |
+| [Magazine](attachments-magazines.md) | 69 | Magazines hold the rounds. Some weapons use an internal magazine instead of a swappable one. |
+| [Muzzle](attachments-muzzle-devices.md) | 56 | Brakes, flash hiders, compensators and suppressors that fit the end of the barrel. |
+| [Barrel](attachments-barrels.md) | 41 | Replacement barrels. Some carry a muzzle slot of their own. |
+| [Stock](attachments-stocks.md) | 37 | Stocks fit at the back of the weapon. |
+| [Grip](attachments-grips.md) | 32 | Pistol grips and foregrips. They change how the weapon is held. |
+| [Sight](attachments-sights-and-optics.md) | 29 | Optics and iron sights on top of the weapon. They change zoom and aim time. |
+| [Handguard](attachments-handguards.md) | 25 | Covers over the barrel. They carry further slots. |
+| [Bipod](attachments-bipods.md) | 9 | Folding legs that mount under the weapon. |
 
 ## What the parts change
 
@@ -29,7 +29,7 @@ Attachments are parts that fit onto a weapon. While a part is fitted, it changes
 - **Grip**: horizontal recoil (11 modifiers), vertical recoil (11 modifiers), spread (10 modifiers), aim-down-sights time (10 modifiers), equip speed (10 modifiers).
 - **Sight**: aim-down-sights time (26 modifiers), ADS zoom (25 modifiers), maximum zeroing range (24 modifiers), minimum zeroing range (17 modifiers).
 - **Handguard**: no effect entries in the loadout data.
-- **Bipod**: vertical recoil (9 modifiers), horizontal recoil (9 modifiers), spread (9 modifiers), aim-down-sights time (9 modifiers), equip speed (1 modifiers).
+- **Bipod**: vertical recoil (9 modifiers), horizontal recoil (9 modifiers), spread (9 modifiers), aim-down-sights time (9 modifiers), equip speed (1 modifier).
 
 Each weapon article lists its own slots and default parts under its Attachments section.
 

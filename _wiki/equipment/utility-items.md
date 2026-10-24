@@ -154,7 +154,7 @@ Both parachutes also gained three values in Season 2: a vertical drag coefficien
 
 ## See also
 
-- [Buildables](../../game-features/Wardogs_Buildables_v1.md), for the structures the hammers place
+- [Buildables](buildables.md), for the structures the hammers place
 - [Medical Items](medical-items.md), for the Defibrillator that uses Batteries
 - [Body Armor](body-armor.md), for armor that protects against damage
 
