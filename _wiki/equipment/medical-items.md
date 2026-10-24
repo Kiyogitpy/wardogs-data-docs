@@ -17,6 +17,17 @@ description: "Healing and revive items: use time, healing amounts, the effects e
 
 Medical items heal the player who uses them, a teammate, or both, and some bring a downed teammate back to their feet. Most healing is a fixed amount added in one use. The Medical Bag is the exception, because it heals over time. The data shows no medical item that stops bleeding or does damage over time. In this game, "bleed" refers to the bleed-out timer of a downed player, described below.
 
+## Individual items
+
+- [Bandage](bandage.md)
+- [Individual First Aid Kit](individual-first-aid-kit.md)
+- [Medical Bag](medical-bag.md)
+- [Enox](enox.md)
+- [Adrenaline Pen](adrenaline-pen.md)
+- [Defibrillator](defibrillator.md)
+- [Emergency Resuscitator](emergency-resuscitator.md)
+- [Field Resuscitator](field-resuscitator.md)
+
 ## Overview
 
 | Item | Heals | Revives | Price (cash) |
@@ -52,7 +63,7 @@ Healing stops if the user moves away, according to the in-game tutorial text. Ho
 
 **Defibrillator.** Revives a downed teammate to 35 HP at once. It needs a battery: one discharge uses 25 battery charges, and the charge-up takes 4 s. It cannot be used while you yourself are downed. Batteries are in [Utility Items](utility-items.md).
 
-**Emergency Resuscitator and Field Resuscitator.** Revive a downed teammate. The shop text says each is a single-use item, and the Emergency Resuscitator is limited to one per life. The health a teammate has after revival is not yet known. The use time works out to about 4 s (derived from the item's action).
+**Emergency Resuscitator and Field Resuscitator.** Revive a downed teammate. The shop text says each is a single-use item, and the Emergency Resuscitator is limited to one per life. The health a teammate has after revival is not yet known. The use animation is 2.2 s, and the item keeps running until its container is empty or the target is full, which the data estimates at up to 44 s.
 
 ### Downed and revive
 
