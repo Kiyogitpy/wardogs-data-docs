@@ -67,8 +67,73 @@ All six roles share one mastery XP curve. The milestones for Recon are:
 
 The full curve is in [Cash and Rewards](cash-and-rewards.md#role-mastery-xp). Whether each value is a running total or a step from the level before is not stated.
 
-- **Rewards per level.** Not yet known. The sources do not list a reward for each Recon mastery level, and the platform mastery reward data has no entries for roles.
-- **Unlock tree.** Recon items and vehicles unlock through the role tree at a minimum mastery level, with a cash cost. The Season 2 section lists the changes.
+- **Rewards per level.** None in the data. The level table has an empty reward list for every level, so a level gives no reward of its own. What a level gives is access to the unlock tree (see Unlocks below).
+- **Unlock tree.** 58 items and vehicles, from level 2 to level 50, with 2,445,000 cash in total. Each one needs a role level and a cash price (see Unlocks below).
+
+## Unlocks
+
+Each row is one item, vehicle or attachment in the Recon unlock tree, with the role level it needs and its cash cost. The data gives no other cost for any unlock. Rows at 0 cash are magazines, ammunition and explosives. Where the data has no display name for an item, the row describes it in plain words.
+
+| Role level | Item | Cash |
+|---|---:|---:|
+| 2 | Monocular | 7,500 |
+| 3 | STRELIX Suppressor | 5,000 |
+| 5 | SKS | 25,000 |
+| 6 | Deadeye Flash Hider | 12,500 |
+| 7 | SKS Bipod | 10,000 |
+| 8 | Range finder | 25,000 |
+| 9 | DTK-1 Brake | 7,500 |
+| 10 | PU 91/30 Scope | 12,500 |
+| 10 | Mosin Nagant | 50,000 |
+| 11 | 1x-6x LPVO Short Dot | 15,000 |
+| 12 | SVD 5 RND Magazine | 0 |
+| 12 | SVD | 50,000 |
+| 13 | SVD 7.62x54R Brake | 10,000 |
+| 14 | SVD Bipod | 10,000 |
+| 15 | Hexagon 762 Suppressor | 15,000 |
+| 16 | Arrow | 0 |
+| 16 | Compound Bow | 150,000 |
+| 17 | SVD magazine | 25,000 |
+| 18 | SV98 magazine | 0 |
+| 18 | SV98 | 100,000 |
+| 19 | 6-10x Scope MOA | 45,000 |
+| 20 | FAL 10 RND Magazine | 0 |
+| 20 | BMR-308 | 125,000 |
+| 21 | SV98 Bipod | 17,500 |
+| 22 | SRVV Brake | 17,500 |
+| 23 | Claymore | 90,000 |
+| 24 | BMR-308 Flash Hider | 50,000 |
+| 25 | M14 10 RND Magazine | 0 |
+| 25 | M14 | 100,000 |
+| 26 | Ghillie Headwear | 60,000 |
+| 26 | Ghillie Suit | 80,000 |
+| 27 | Leatherwood ART II | 35,000 |
+| 28 | 6-10x Scope MRAD | 40,000 |
+| 29 | M14 Bipod | 25,000 |
+| 30 | MK22 5 RND Magazine | 0 |
+| 30 | MK22 | 150,000 |
+| 31 | M14 20 RND Magazine | 27,500 |
+| 32 | Infrared range finder | 50,000 |
+| 33 | BMR-308 Suppressor | 25,000 |
+| 34 | Constrictor Brake | 20,000 |
+| 35 | AMR 50 magazine | 0 |
+| 35 | AMR 50 | 200,000 |
+| 36 | M14 30 RND Magazine | 50,000 |
+| 37 | .30 Cal SS Phosphate Muzzle Brake | 22,500 |
+| 38 | AMR 50 Cal Muzzle Brake | 35,000 |
+| 39 | MK22 magazine | 35,000 |
+| 40 | Flow-Through .308 Suppressor | 30,000 |
+| 41 | Ghillie headwear (dead variant) | 80,000 |
+| 41 | Ghillie suit (dead variant) | 100,000 |
+| 42 | .30 Cal Steel Black Flash Hider | 27,500 |
+| 43 | 6x Marksman Scope + Reflex | 75,000 |
+| 44 | Slicktap Brake | 22,500 |
+| 45 | GOL Multi-Caliber Suppressor | 32,500 |
+| 46 | Pro Tilt Bipod | 50,000 |
+| 47 | Frontier 2.5x-10x Precision Scope | 95,000 |
+| 48 | .50 Cal Heavy Suppressor | 27,500 |
+| 49 | Three Port Brake | 25,000 |
+| 50 | AMR 50 10 RND Magazine | 50,000 |
 
 ## How the role earns cash and XP
 
@@ -100,5 +165,7 @@ The reward tables list events, not roles. The events below are the ones that fit
 - [Progression tables](../../game-features/Wardogs_Progression_v1.md), including the Recon skill table
 - [Rewards and progression](../../Wardogs_Rewards_and_Progression_v2.md)
 - [Session-event reward lookups](../../content/Wardogs_RewardLookup_SessionEvents_v1.md)
-- [Battle-pass track and Platform Mastery rewards](../../content/Wardogs_TreeRewardTrack_PlatformMastery_v1.md)
+- [Reward track and platform mastery data](../../content/Wardogs_TreeRewardTrack_PlatformMastery_v1.md)
 - [Season 2 changes: Rewards & Unlocks](../../season-2-changes/rewards-unlocks.md)
+- [Economy data: role unlock tree](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/economy.json) (JSON)
+- [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md)

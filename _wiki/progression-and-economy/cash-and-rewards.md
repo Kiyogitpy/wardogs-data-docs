@@ -141,6 +141,22 @@ All six roles use the same XP curve. Milestones:
 
 The data gives one XP value per level. Whether each value is a running total or a step up from the level before is not stated.
 
+### Mastery rewards per level
+
+Each role's mastery runs from level 0 to level 100 and gives no reward of its own: the level table has an empty reward list for every level. What a level opens is the role's unlock tree, where each item or vehicle needs a role level and a cash price. The table counts those unlocks for each tree. The Wardog tree is the overall level, and it runs to level 150. How the six role levels add up to the overall level is not in the data.
+
+| Tree | Unlocks | Level range | Cash in the tree |
+|---|---:|---:|---:|
+| Assault | 40 | 2 to 50 | 1,270,000 |
+| Recon | 58 | 2 to 50 | 2,445,000 |
+| Support | 33 | 1 to 50 | 1,630,000 |
+| Medic | 38 | 1 to 50 | 1,220,000 |
+| Pilot | 11 | 2 to 35 | 1,218,250 |
+| Driver | 21 | 3 to 35 | 2,308,250 |
+| Wardog (overall level) | 63 | 1 to 150 | 2,645,000 |
+
+The unlock rows for each role are on its page, under Unlocks.
+
 ## Tips that follow from the numbers
 
 - Artillery kills in open ground pay 5,000, against 250 for a default kill. The per-kill calculator adds the zone and streak multipliers on top.
@@ -172,3 +188,5 @@ The data gives one XP value per level. Whether each value is a running total or 
 - [Rewards (buildables)](../../game-features/Wardogs_GameFeatures_Rewards_v2.md)
 - [Season 2 changes: Rewards & Unlocks](../../season-2-changes/rewards-unlocks.md)
 - [Zone rewards data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/zone-rewards.json)
+- [Economy data: role unlock tree and mastery](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/economy.json) (JSON)
+- [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md)

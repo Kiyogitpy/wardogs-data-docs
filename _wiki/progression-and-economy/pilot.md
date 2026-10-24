@@ -56,8 +56,26 @@ All six roles share one mastery XP curve. The milestones for Pilot are:
 
 The full curve is in [Cash and Rewards](cash-and-rewards.md#role-mastery-xp). Whether each value is a running total or a step from the level before is not stated.
 
-- **Rewards per level.** Not yet known. The sources do not list a reward for each Pilot mastery level, and the platform mastery reward data has no entries for roles.
-- **Unlock tree.** Pilot items and air vehicles unlock through the role tree at a minimum mastery level, with a cash cost. The Havoc and the MH-6's mounted machine guns are among them. The Season 2 section lists the changes.
+- **Rewards per level.** None in the data. The level table has an empty reward list for every level, so a level gives no reward of its own. What a level gives is access to the unlock tree (see Unlocks below).
+- **Unlock tree.** 11 items and vehicles, from level 2 to level 35, with 1,218,250 cash in total. Each one needs a role level and a cash price (see Unlocks below).
+
+## Unlocks
+
+Each row is one item, vehicle or attachment in the Pilot unlock tree, with the role level it needs and its cash cost. The data gives no other cost for any unlock. Rows at 0 cash are magazines, ammunition and explosives. Where the data has no display name for an item, the row describes it in plain words.
+
+| Role level | Item | Cash |
+|---|---:|---:|
+| 2 | Armored small supply crate | 10,000 |
+| 5 | Music tape 08 | 750 |
+| 8 | AH-6M [Miniguns] | 125,000 |
+| 10 | Z20 Lakota | 35,000 |
+| 13 | Music tape 01 | 2,500 |
+| 15 | Armored large supply crate | 25,000 |
+| 20 | AH-6R [Rockets] | 250,000 |
+| 23 | Music tape 09 | 10,000 |
+| 25 | Z20 Lakota [Miniguns] | 85,000 |
+| 30 | Music tape 04 | 25,000 |
+| 35 | Havoc | 650,000 |
 
 ## How the role earns cash and XP
 
@@ -91,5 +109,7 @@ The reward tables list events, not roles. The events below are the ones that fit
 - [Progression tables](../../game-features/Wardogs_Progression_v1.md), including the Pilot skill table
 - [Rewards and progression](../../Wardogs_Rewards_and_Progression_v2.md)
 - [Session-event reward lookups](../../content/Wardogs_RewardLookup_SessionEvents_v1.md)
-- [Battle-pass track and Platform Mastery rewards](../../content/Wardogs_TreeRewardTrack_PlatformMastery_v1.md)
+- [Reward track and platform mastery data](../../content/Wardogs_TreeRewardTrack_PlatformMastery_v1.md)
 - [Season 2 changes: Rewards & Unlocks](../../season-2-changes/rewards-unlocks.md)
+- [Economy data: role unlock tree](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/economy.json) (JSON)
+- [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md)

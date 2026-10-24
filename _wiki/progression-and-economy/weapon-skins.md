@@ -27,7 +27,7 @@ The table below lists each weapon skin once per set, sorted by weapon. A weapon 
 | Weapon | Skin set | Season | Price (Gold Bars) | How it unlocks |
 |---|---|---|---|---|
 | A-91 | Two-Tone Desert | Season 1 | 5 | Gold Market |
-| AK74 | Black and Gold | Season 1 | Not sold | No Gold Market listing in the data; how it is obtained is not yet known |
+| AK74 | Black and Gold | Season 1 | Not sold | No Gold Market row. It can only come from a server grant, which the client data does not show |
 | AMP-9 | Two-Tone Desert | Season 1 | 10 | Gold Market |
 | AMR 50 | Two-Tone Desert | Season 1 | 15 | Gold Market |
 | Bushmaster M17S | Two-Tone Desert | Season 1 | 5 | Gold Market |
@@ -53,14 +53,14 @@ Each faction logo is a skin for one weapon, and each faction has one logo. The d
 
 | Weapon | Faction | Price (Gold Bars) | How it unlocks |
 |---|---|---|---|
-| A-91 | Valkyra | Not sold | Not yet known |
-| Bushmaster M17S | Lonestar | Not sold | Not yet known |
-| KH-2002 | Manticore | Not sold | Not yet known |
+| A-91 | Valkyra | Not sold | Not in the data |
+| Bushmaster M17S | Lonestar | Not sold | Not in the data |
+| KH-2002 | Manticore | Not sold | Not in the data |
 
 ## Cost and unlocking
 
 - **Gold Market.** Every priced weapon skin is a Gold Market entry. A player spends Gold Bars to buy it. Gold Bars are covered in [Currencies](currencies.md).
-- **No level gate.** The season schedule that would tie a skin to a level is empty in this build, so the data does not show any level requirement. See [Season 1 Cosmetics](season-01-cosmetics.md).
+- **No level gate.** The data ties no weapon skin to a level. There is no season reward track, so skins are sold on the Gold Market, and server grants are the only other route. See [Season 1 Cosmetics](season-01-cosmetics.md).
 - **Look on other items.** The skin data also sets how each set looks on items that are not sold with it. Digital Wood has settings for 46 items and Chocolate Chip for 56. The data does not say whether a player can apply those looks to the other items.
 
 ## Season 2 changes
@@ -86,3 +86,4 @@ Each faction logo is a skin for one weapon, and each faction has one logo. The d
 - [Meta: currency and Gold Market](../../content/Wardogs_Meta_v2.md)
 - [Data tables: Economy and Rewards](../../content/Wardogs_DataTables_Economy_v1.md), the Gold Market table
 - [Season 2 changes: Rewards & Unlocks](../../season-2-changes/rewards-unlocks.md)
+- [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md)

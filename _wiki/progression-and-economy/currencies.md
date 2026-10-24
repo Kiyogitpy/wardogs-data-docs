@@ -2,7 +2,7 @@
 title: "Currencies"
 parent: "Progression & Economy"
 group: "Economy"
-description: "The money in Wardogs: Cash, Gold Bars and Intel, their starting balances, how each is earned and spent, and the Gold Market."
+description: "The money in Wardogs: Cash, Gold Bars (bought with cash at the Gold Exchange) and Intel (earned from passive missions, with no use in the data), their starting balances, and the Gold Market."
 ---
 
 # Currencies
@@ -10,28 +10,29 @@ description: "The money in Wardogs: Cash, Gold Bars and Intel, their starting ba
 | Currencies | |
 |---|---|
 | Cash | Starts at 10,000. Earned in matches and spent at vendors and on unlocks |
-| Gold Bars | Start at 0. Spent on skins and emotes on the Gold Market. No way to earn them is in the data |
-| Intel | Paid by passive missions. Its use is not yet known |
-| Skill points | One per role in the data. Not yet known how they are shown or spent |
+| Gold Bars | Start at 0. Exchanged for cash at the Gold Exchange, then spent on cosmetics |
+| Intel | Earned from passive missions. The data gives it no use |
+| Skill points | Reserved. Six per-role tags exist, and nothing grants or spends them |
+| Gold Exchange | Unlocks at Wardog level 35 for 150,000 cash |
 | Internal name | Currency definitions and exchange table (`DT_CurrenciesDefinitions`, `DT_ExchangeDefinitions`) |
 {: .wiki-infobox }
 
-The game has three currencies a player sees: Cash, Gold Bars and Intel. Cash is the money of a match. Gold Bars buy cosmetics. Intel is paid for passive missions and has no shop use in the data yet.
+The game has three currencies a player sees: Cash, Gold Bars and Intel. Cash is the money of a match. Gold Bars come from exchanging cash and buy cosmetics. Intel is paid for passive missions, and the data gives it no use.
 
 ## Overview
 
 | Currency | Starting balance | How it is earned | How it is spent | Carries between matches |
 |---|---|---|---|---|
 | Cash | 10,000 | Kills, revives, heals, vehicle work, zones, spotting, supply crates, and the end-of-match bonus | Vendors, role unlocks, factory investments | Yes, according to the in-game tip |
-| Gold Bars | 0 | Not yet known. No reward row pays them | Gold Market skins and emotes | Not yet known |
-| Intel | Not yet known | Passive missions, 100 to 500 per tier | Not yet known | Not yet known |
+| Gold Bars | 0 | Exchanged from cash at the Gold Exchange, and leftover cash at a season reset | Gold Market skins and emotes | Not in the data |
+| Intel | Not in the data | Passive missions, 100 to 500 per tier | Not in the data | Not in the data |
 
 ## Cash
 
 Cash is the main currency. It starts every player at 10,000, and players earn more during the match.
 
 - **Earned.** Every action in a match pays cash, such as a kill, a revive or a heal. The amounts are in [Cash and Rewards](cash-and-rewards.md). The end-of-match bonus adds more on top, for the faction placed first, second or third.
-- **Spent.** Cash buys gear, weapons, vehicles and supply crates from vendors, as listed on [Shops](shops.md). It also buys role unlocks in the unlock tree. In Season 2 the Humvee unlock for the Driver role rose from 25,000 to 75,000 cash. The first factory investment costs 200 cash (see [Factory Investment](factory-investment.md)).
+- **Spent.** Cash buys gear, weapons, vehicles and supply crates from vendors, as listed on [Shops](shops.md). It also buys role unlocks in the unlock tree, and it can be exchanged for Gold Bars. In Season 2 the Humvee unlock for the Driver role rose from 25,000 to 75,000 cash. The first factory investment costs 200 cash (see [Factory Investment](factory-investment.md)).
 - **Carries over.** The loading-screen tip says the cash a player earns in a match is persistent, and whatever they leave with is what they spend in the next match. A server setting, Persistent Progression, switches persistent cash and XP on or off. The data does not say what an off setting does beyond losing the carry-over.
 
 ## Gold Bars
@@ -39,21 +40,24 @@ Cash is the main currency. It starts every player at 10,000, and players earn mo
 Gold Bars are the premium currency. They pay for cosmetics only.
 
 - **Starting balance.** 0.
-- **Earning.** The data gives Gold Bars no reward. No match event, challenge or mission pays them, and the exchange table has no cash-to-Gold-Bar rate. The UI data has Gold Exchange text and a purchase sound, but no rate, so how a player gets Gold Bars is not yet known.
+- **Earning.** Gold Bars are earned by exchanging cash at the Gold Exchange. The exchange unlocks at Wardog level 35, and unlocking it costs 150,000 cash. The exchange text calls Gold Bars the WARDOGS endgame currency, says that the rate varies, and says that a gold exchange cannot be resold or refunded.
+- **Rate.** The server sets the rate, and it changes over time. The client holds no rate, so the cash price of a Gold Bar is not known from the data.
+- **Season resets.** At the end of a major update cycle, level progression and cash are reset. Any cash left over is exchanged for Gold Bars automatically. The season reset reports the leftover cash and the Gold Bars given, and the conversion happens on the server.
+- **Other sources.** No match event, challenge, mission or achievement pays Gold Bars directly. The data has no Gold Bar pack, so whether Gold Bars are sold for money is not in the client data.
 - **Spending.** Gold Market cosmetics. See the Gold Market section below.
-- **Carry-over.** Not yet known.
+- **Carry-over.** Not in the data.
 
 ## Intel
 
 In the data, Intel is paid only by passive missions.
 
 - **Earned.** The passive mission Earn Cash pays 100, 200, 300, 400 and 500 Intel at its five tiers. The Earn Role XP mission and the Time Played mission pay the same five amounts. See [Challenges](challenges.md).
-- **Spent.** The data gives Intel no display text beyond its name and no shop use, so its use is not yet known.
-- **Starting balance.** Not stated in the data.
+- **Spent.** Nothing in the data uses Intel. It has no balance entry, no shop price, no unlock cost and no exchange, so the client has no spending route for it.
+- **Starting balance.** Not in the data.
 
 ## Skill points
 
-The data has a skill point tag for each role. The resource-change effect sets a skill point value alongside each role XP value. The data gives skill points no display name, starting balance or spending rule, so how they work is not yet known. See [Skills](skills.md).
+The data has a skill point tag for each role. Each role XP gain also sets a skill point value. Nothing in the data grants or spends skill points: the currency table defines only Cash and Gold Bars, and no reward, unlock or cost uses them. They are reserved. See [Skills](skills.md).
 
 ## Gold Market
 
@@ -68,9 +72,9 @@ The Gold Market sells cosmetics for Gold Bars. Its table has 27 entries worth 27
 | Total | 27 | 275 |
 
 - Prices run from 5 to 30 Gold Bars per entry. The most expensive is the Black and Gold MH-6 at 30.
-- Most entries never expire.
-- One entry, the Black and Gold MH-6, carries an expiry timestamp of 31 December 2026 in the data. Its expiration type is "no end time", so whether it leaves the market at that date is not yet known.
-- Cosmetics that are not on the Gold Market, such as the faction logos, the taxi skin and the bobbleheads, have no price in the data. See [Cosmetics](cosmetics.md).
+- Most entries have no expiry.
+- The Black and Gold MH-6 has an expiry date of 31 December 2026 in the data, and its tile shows a countdown. The expiry field has three settings in the data: no expiry, expiry with no end time, and expiry with an end time. This entry has the no-end-time setting. Whether the entry leaves the market on that date is not confirmed, and the server controls the schedule.
+- Cosmetics that are not on the Gold Market, such as the faction logos, the taxi skin and the bobbleheads, have no price in the data. Their route is not known. See [Cosmetics](cosmetics.md).
 
 The full list of skins and emotes is in [Weapon Skins](weapon-skins.md), [Vehicle Skins](vehicle-skins.md), [Emotes](emotes.md) and [Season 1 Cosmetics](season-01-cosmetics.md).
 
@@ -101,3 +105,5 @@ The full list of skins and emotes is in [Weapon Skins](weapon-skins.md), [Vehicl
 - [Factory investment](../../game-features/Wardogs_GameFeatures_FactoryInvestment_01_v2.md)
 - [Season 2 changes: Rewards & Unlocks](../../season-2-changes/rewards-unlocks.md)
 - [Loading screen tips](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/LoadingScreen/Data/DT_LoadingScreenTips.json), the persistent cash tip
+- [Economy data: currencies, exchange and Gold Market](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/economy.json) (JSON)
+- [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md)

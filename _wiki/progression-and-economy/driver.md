@@ -56,8 +56,36 @@ All six roles share one mastery XP curve. The milestones for Driver are:
 
 The full curve is in [Cash and Rewards](cash-and-rewards.md#role-mastery-xp). Whether each value is a running total or a step from the level before is not stated.
 
-- **Rewards per level.** Not yet known. The sources do not list a reward for each Driver mastery level, and the platform mastery reward data has no entries for roles.
-- **Unlock tree.** Driver items and ground vehicles unlock through the role tree at a minimum mastery level, with a cash cost. The Humvee is one of them. The Season 2 section lists the changes.
+- **Rewards per level.** None in the data. The level table has an empty reward list for every level, so a level gives no reward of its own. What a level gives is access to the unlock tree (see Unlocks below).
+- **Unlock tree.** 21 items and vehicles, from level 3 to level 35, with 2,308,250 cash in total. Each one needs a role level and a cash price (see Unlocks below).
+
+## Unlocks
+
+Each row is one item, vehicle or attachment in the Driver unlock tree, with the role level it needs and its cash cost. The data gives no other cost for any unlock. Rows at 0 cash are magazines, ammunition and explosives. Where the data has no display name for an item, the row describes it in plain words.
+
+| Role level | Item | Cash |
+|---|---:|---:|
+| 3 | Ural | 35,000 |
+| 5 | Music tape 06 | 750 |
+| 6 | Kodiak [M249] | 50,000 |
+| 8 | Wolf-110 | 50,000 |
+| 9 | Dune Buggy | 25,000 |
+| 10 | Kodiak [Pickup] | 35,000 |
+| 13 | Music tape 07 | 2,500 |
+| 14 | Humvee | 75,000 |
+| 15 | Ural Defender | 75,000 |
+| 16 | Wolf-110 [M2 Browning] | 125,000 |
+| 17 | Large supply crate | 20,000 |
+| 20 | T-72B3 | 250,000 |
+| 22 | Ural Defender [M249] | 100,000 |
+| 23 | Music tape 02 | 5,000 |
+| 24 | Humvee [M249] | 125,000 |
+| 25 | Flakpanzer Gepard | 300,000 |
+| 28 | Music tape 03 | 10,000 |
+| 30 | Humvee [Minigun] | 150,000 |
+| 31 | SPH-2 | 350,000 |
+| 33 | Music tape 05 | 25,000 |
+| 35 | L2A6 | 500,000 |
 
 ## How the role earns cash and XP
 
@@ -92,5 +120,7 @@ The reward tables list events, not roles. The events below are the ones that fit
 - [Progression tables](../../game-features/Wardogs_Progression_v1.md), including the Driver skill table
 - [Rewards and progression](../../Wardogs_Rewards_and_Progression_v2.md)
 - [Session-event reward lookups](../../content/Wardogs_RewardLookup_SessionEvents_v1.md)
-- [Battle-pass track and Platform Mastery rewards](../../content/Wardogs_TreeRewardTrack_PlatformMastery_v1.md)
+- [Reward track and platform mastery data](../../content/Wardogs_TreeRewardTrack_PlatformMastery_v1.md)
 - [Season 2 changes: Rewards & Unlocks](../../season-2-changes/rewards-unlocks.md)
+- [Economy data: role unlock tree](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/economy.json) (JSON)
+- [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md)

@@ -35,7 +35,7 @@ The table below lists each vehicle skin sold on the Gold Market, sorted by vehic
 
 The Gold Market prices are 6 vehicle skins worth 85 Gold Bars in total.
 
-The MH-6 Black and Gold skin is the most expensive vehicle skin, at 30 Gold Bars. Its Gold Market entry is a single hero tile, and it carries an expiry timestamp of 31 December 2026 in the data. The data also marks that entry as having no end time, so whether it leaves the market at that date is not yet known.
+The MH-6 Black and Gold skin is the most expensive vehicle skin, at 30 Gold Bars. Its Gold Market entry is a single hero tile. It carries an expiry timestamp of 31 December 2026 in the data, with the setting for no end time, and its tile shows a countdown. Whether the skin leaves the market on that date is not confirmed, and the server controls it.
 
 ## Taxi skin
 
@@ -47,10 +47,10 @@ Bobbleheads are vehicle cosmetics that fit a vehicle slot. The data has four of 
 
 | Bobblehead | Price (Gold Bars) | How it unlocks |
 |---|---|---|
-| Faction | Not sold | Not yet known |
-| Grenade | Not sold | Not yet known |
-| Helmet | Not sold | Not yet known |
-| A fourth bobblehead | Not sold | Not yet known (the data gives it no display name) |
+| Faction | Not sold | Not in the data |
+| Grenade | Not sold | Not in the data |
+| Helmet | Not sold | Not in the data |
+| A fourth bobblehead | Not sold | Not in the data (the data gives it no display name) |
 
 The data gives the bobbleheads no vehicle filter, so they are not limited to particular vehicles.
 
@@ -58,7 +58,7 @@ The data gives the bobbleheads no vehicle filter, so they are not limited to par
 
 - **Gold Market.** Every priced vehicle skin is a Gold Market entry, bought with Gold Bars. Gold Bars are covered in [Currencies](currencies.md).
 - **Look on other vehicles.** Digital Wood and Chocolate Chip also set how their looks appear on other vehicles, such as the Kodiak, Ural and Humvee variants. The data does not list those as sold skins, and it does not say whether a player can apply them.
-- **No level gate.** The data does not tie any vehicle skin to a level. See [Season 1 Cosmetics](season-01-cosmetics.md).
+- **No level gate.** The data does not tie any vehicle skin to a level, and there is no season reward track. Server grants are the only route outside the Gold Market. See [Season 1 Cosmetics](season-01-cosmetics.md).
 
 ## Season 2 changes
 
@@ -80,3 +80,4 @@ The data gives the bobbleheads no vehicle filter, so they are not limited to par
 - [Meta: currency and Gold Market](../../content/Wardogs_Meta_v2.md)
 - [Data tables: Economy and Rewards](../../content/Wardogs_DataTables_Economy_v1.md), the Gold Market table
 - [Season 1 cosmetic unlocks](../../content/Wardogs_Season01_CosmeticUnlocks_v1.md)
+- [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md)

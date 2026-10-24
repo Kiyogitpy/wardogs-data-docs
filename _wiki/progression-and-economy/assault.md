@@ -68,8 +68,55 @@ All six roles share one mastery XP curve. The milestones for Assault are:
 
 The full curve is in [Cash and Rewards](cash-and-rewards.md#role-mastery-xp). Whether each value is a running total or a step from the level before is not stated.
 
-- **Rewards per level.** Not yet known. The sources do not list a reward for each Assault mastery level, and the platform mastery reward data has no entries for roles.
-- **Unlock tree.** Items and vehicles that unlock through the role's tree have a minimum mastery level (a level gate) and a cash cost. The tree entries are not listed here, so see the Season 2 section for the changes.
+- **Rewards per level.** None in the data. The level table has an empty reward list for every level, so a level gives no reward of its own. What a level gives is access to the unlock tree (see Unlocks below).
+- **Unlock tree.** 40 items and vehicles, from level 2 to level 50, with 1,270,000 cash in total. Each one needs a role level and a cash price (see Unlocks below).
+
+## Unlocks
+
+Each row is one item, vehicle or attachment in the Assault unlock tree, with the role level it needs and its cash cost. The data gives no other cost for any unlock. Rows at 0 cash are magazines, ammunition and explosives. Where the data has no display name for an item, the row describes it in plain words.
+
+| Role level | Item | Cash |
+|---|---:|---:|
+| 2 | Birdcage Flash Hider | 5,000 |
+| 3 | STANAG 30 RND Magazine | 0 |
+| 3 | T-21 | 10,000 |
+| 4 | C4 explosive | 0 |
+| 4 | C4 detonator | 15,000 |
+| 5 | Hexagon Brake | 12,500 |
+| 8 | 3 Prong Flash Hider | 7,500 |
+| 10 | Galil 35 RND Magazine | 0 |
+| 10 | Galil | 35,000 |
+| 11 | Rubberized Ergonomic Foregrip | 7,500 |
+| 12 | CQ-2x Prism Combat Scope | 15,000 |
+| 13 | Molotov | 25,000 |
+| 14 | CQR Tactical Front Rail Grip | 10,000 |
+| 15 | Galil 50 RND Magazine | 25,000 |
+| 16 | CQB 74 Brake | 15,000 |
+| 17 | 2.5x Combat Optic | 10,000 |
+| 19 | PBS-4 Suppressor | 25,000 |
+| 20 | SIG Spear Standard Mag | 0 |
+| 20 | TCX-SPR | 100,000 |
+| 21 | TopComp Brake | 20,000 |
+| 22 | Four Reticle Reflex | 10,000 |
+| 24 | RC-556 Suppressor | 30,000 |
+| 25 | AK74 60 RND Magazine | 30,000 |
+| 26 | OKP 7 Reflex | 30,000 |
+| 27 | TGP-A Suppressor 5.45 | 17,500 |
+| 28 | M4 | 150,000 |
+| 29 | AR Multi-Caliber Suppressor | 22,500 |
+| 30 | STANAG extended magazine | 25,000 |
+| 32 | Cross Rifle Muzzle Brake | 35,000 |
+| 33 | 3x Tactical Prism Scope | 15,000 |
+| 35 | FAL 20 RND Magazine | 0 |
+| 35 | FAL | 250,000 |
+| 36 | AK74 75 RND Drum Magazine | 75,000 |
+| 37 | Clutch Lok Muzzle Brake | 37,500 |
+| 38 | RVG Vertical Foregrip | 25,000 |
+| 40 | SRD762TI-QD | 40,000 |
+| 43 | Spectr 4x | 15,000 |
+| 45 | 3-Chamber Brake | 45,000 |
+| 48 | Shift Foregrip | 30,000 |
+| 50 | FAL 30 RND Magazine | 50,000 |
 
 ## How the role earns cash and XP
 
@@ -103,6 +150,8 @@ The reward tables list events, not roles. The events below are the ones that fit
 - [Progression tables](../../game-features/Wardogs_Progression_v1.md), including the role's skill table (listed there as Assault)
 - [Rewards and progression](../../Wardogs_Rewards_and_Progression_v2.md)
 - [Session-event reward lookups](../../content/Wardogs_RewardLookup_SessionEvents_v1.md)
-- [Battle-pass track and Platform Mastery rewards](../../content/Wardogs_TreeRewardTrack_PlatformMastery_v1.md)
+- [Reward track and platform mastery data](../../content/Wardogs_TreeRewardTrack_PlatformMastery_v1.md)
 - [Season 2 changes: Rewards & Unlocks](../../season-2-changes/rewards-unlocks.md)
 - [Tag display text](../../content/Wardogs_TagDisplayText_v1.md), for the ASSAULT label
+- [Economy data: role unlock tree](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/economy.json) (JSON)
+- [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md)

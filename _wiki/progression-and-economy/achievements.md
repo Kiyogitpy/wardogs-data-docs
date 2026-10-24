@@ -2,7 +2,7 @@
 title: "Achievements"
 parent: "Progression & Economy"
 group: "Unlocks"
-description: "The ten one-time achievements, what each asks for, and what the data says about thresholds and rewards."
+description: "The ten one-time achievements, the thresholds they use (100,000 cash, one hour in a control zone, 950 m) and what each one asks for. Each is a Steam achievement, and the data lists no other reward."
 ---
 
 # Achievements
@@ -12,42 +12,48 @@ description: "The ten one-time achievements, what each asks for, and what the da
 | **General** | |
 | Kind | One-time goals |
 | Number | 10 |
-| Rewards | Not in the data |
+| Rewards | None in the data. The Steam achievement is the reward |
 | Steam | Each achievement is also a Steam achievement |
+| **Thresholds** | |
+| Cash | 100,000 (Loadout Spender and Single Life Profit) |
+| Time | 3,600 seconds, or 1 hour (Control Zone Survivor) |
+| Distance | 950 m (Long Shot) |
 | Internal name | DT_Challenges_SessionEvents_Shared |
 {: .wiki-infobox }
 
-Achievements are one-time goals. A player can earn each one once, and each is also a Steam achievement. The data gives a name for all ten, a description for three, and no reward for any of them.
+Achievements are one-time goals. A player can earn each one once, and each is also a Steam achievement. The data gives a name and a goal for all ten. Four of them have a number to reach: 100,000 cash twice, one hour in a control zone, and a 950 m kill. The data lists no cash, XP or item reward for any of them, so the Steam achievement is the only reward.
 
 ## Overview
 
-There are ten achievements. They are active from the start, and each one stops counting once it is done. Seven of the ten have only a name in the data, so their goal column repeats the name.
+There are ten achievements. They are active from the start, and each one stops counting once it is done.
 
 ## How it works
 
 - **Always active.** The data sets all ten achievements to start automatically.
-- **Earned once.** Each achievement is only available while it is not yet done.
-- **Steam.** Each achievement is linked to a Steam achievement.
-- **Thresholds.** Loadout Spender and Single Life Profit use a cash threshold, Control Zone Survivor uses a required time in the zone, and Long Shot uses a distance. The sources do not give those numbers.
+- **Earned once.** Each achievement stops counting after it is earned.
+- **Steam.** Each achievement is linked to a Steam achievement with its own ID in the data.
+- **Thresholds.** Loadout Spender and Single Life Profit need 100,000 cash. Control Zone Survivor needs 3,600 seconds (one hour) alive in a control zone. Long Shot needs a kill from 950 m. The data stores that distance as 95,000 Unreal units, the same unit the kill-distance rewards use, so 950 m is a derived figure.
 
 ## Achievements
 
 | Achievement | Goal | Threshold | Reward |
 |---|---|---|---|
-| Loadout Spender | Name only. Spend cash on your loadout. | Cash threshold: not yet known | Not in the data |
-| Complete The Tutorial | Name only. Complete the tutorial. | None | Not in the data |
-| Punch Kristopher | Name only. | None | Not in the data |
-| Top Cash Earner | Name only. | None | Not in the data |
-| Control Zone Survivor | Name only. Survive in a control zone. | Required time: not yet known | Not in the data |
-| Single Life Profit | Name only. | Cash threshold: not yet known | Not in the data |
-| Long Shot | Name only. | Distance: not yet known | Not in the data |
-| Ricochet Kill | Kill an enemy with a ricocheted projectile. | None | Not in the data |
-| Defibrillator Kill | Kill an enemy with the defibrillator. | None | Not in the data |
-| Clean Sweep | Win a King of the Hill match without the opposing faction scoring. | None | Not in the data |
+| Loadout Spender | Make one loadout purchase of at least 100,000 cash. The check is on a single purchase event. | 100,000 cash | Steam achievement |
+| Complete The Tutorial | Finish the tutorial. | None | Steam achievement |
+| Punch Kristopher | Hit the tutorial character Kristopher with a melee attack. | None | Steam achievement |
+| Top Cash Earner | Finish first for cash earned in a match, with more than 0 cash earned. It is checked from the match stats, not from an event. | None | Steam achievement |
+| Control Zone Survivor | Stay alive in a control zone for 3,600 seconds. Entering the zone starts the timer, and a death resets it. | 3,600 s (1 hour) | Steam achievement |
+| Single Life Profit | Reach a profit of 100,000 cash. The check runs on each profit change. | 100,000 cash | Steam achievement |
+| Long Shot | Kill a hostile target from at least 950 m. | 950 m | Steam achievement |
+| Ricochet Kill | Kill a hostile target with a ricochet. | None | Steam achievement |
+| Defibrillator Kill | Kill a hostile target with the defibrillator. | None | Steam achievement |
+| Clean Sweep | At the end of the match, your faction has a score above 0 and the other faction has 0. It is checked from the final scores. | None | Steam achievement |
+
+Kill achievements count hostile targets only. Long Shot, Ricochet Kill and Defibrillator Kill all need the target to be an enemy.
 
 ## Rewards
 
-The data lists no cash, role XP or item for any achievement. What an achievement pays, if anything, is not yet known.
+The data lists no cash, role XP or item for any achievement. The reward is the Steam achievement that matches each one.
 
 ## Season 2 changes
 
@@ -66,3 +72,5 @@ The data lists no cash, role XP or item for any achievement. What an achievement
 - [Season 2 changes: Rewards & Unlocks](../../season-2-changes/rewards-unlocks.md)
 - [Achievement table](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Achievements/DT_Achievements.json) (JSON)
 - [Shared session-event challenges](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/DT_Challenges_SessionEvents_Shared.json) (JSON)
+- [Economy data: achievements](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/economy.json) (JSON)
+- [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md)
