@@ -1,11 +1,11 @@
 ---
-title: Fuel Canister
+title: "40L Fuel Canister"
 parent: "Equipment"
 group: "Utility"
 description: "The 40 L Fuel Canister: a 150 cash fuel can that refuels vehicles, with 40 durability and 25 fuel per use."
 ---
 
-# Fuel Canister
+# 40L Fuel Canister
 
 | Fuel Canister | |
 |---|---|
