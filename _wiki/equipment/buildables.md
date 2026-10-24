@@ -81,6 +81,25 @@ Each stationary weapon has its own article, with its gun, ammunition, restock an
 - [Stingray](stingray.md): UAV ammunition
 - [MG Nest](mg-nest.md): .50 cal tracer rounds
 
+### Individual structures
+
+Each structure below has its own article, with its cost, placement, damage numbers and Season 2 changes. Variants that differ only in size or parts share one article.
+
+- [Sandbag Wall](sandbag-wall.md): low cover wall, 735 HP
+- [Wood base](wood-base.md): cover structure with the same numbers as the Sandbag Wall, placed inside a base radius
+- [Barbed Wire](barbed-wire.md): the lowest-health structure, 250 HP
+- [Recon Tent](recon-tent.md): small tent, 300 HP
+- [Hedgehog](hedgehog.md): tank trap, 4,500 HP
+- [Hesco Walls](hesco-walls.md): the Small and Large Hesco Blocks and the Hesco Wall
+- [Bremer Wall](bremer-wall.md): the most health of any wall, 6,500 HP
+- [Door](door.md) and [Gate](gate.md): closeable barriers with parts
+- [Bunker](bunker.md), [Recon Tower](recon-tower.md) and [Indirect Fire Shelter](indirect-fire-shelter.md): large multi-part structures
+- [Shelter](shelter.md): a single-piece shelter, 2,250 HP
+- [Refuel and Repair Stations](refuel-and-repair-stations.md): vehicle service structures, one of each per base
+- [Builder's Radio](builders-radio.md): support structure, up to 4 per base
+- [Drill Rig](drill-rig.md): fuel-powered rig for the hot zone
+- [Forward Operating Base](forward-operating-base.md): the base that anchors most building
+
 ## Effects
 
 ### Damage by source
