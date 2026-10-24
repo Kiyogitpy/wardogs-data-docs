@@ -25,7 +25,6 @@ description: "A buildable stationary emplacement whose ammunition is listed as U
 | Build cost | 650 Build Supplies |
 | Health | 3,000 HP |
 | Hammer | Large Hammer |
-| 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#stationary-stn-05) |
 | Internal name | STN_05 |
 {: .wiki-infobox }
 
