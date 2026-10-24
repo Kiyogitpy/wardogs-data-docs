@@ -26,7 +26,7 @@ The framework has a shared base and a set of missions. Each mission adds its own
 
 ## Individual missions
 
-- [Hunter Killer](hunter-killer.md): the mission with three teams and no respawns; its objectives and enemies are not yet known.
+- [Hunter Killer](hunter-killer.md): the mission with no respawns; its objectives and enemies are not yet known.
 - [Strike and Disarm](strike-and-disarm.md): the laptop hack mission, with an intro, a hack start and end, and a mission-complete line.
 - [VIP Escort](vip-escort.md): the mission that tracks a VIP on the map and has its own loot table.
 - [AI enemies](ai-enemies.md): the five PvE soldier types, their loadouts, and how their alert and cover behaviour is set up.
@@ -36,7 +36,7 @@ The example scenario used for testing has no article of its own.
 ## Rules and objectives
 
 - **Respawns.** Every mission uses the no-respawn rule set. A player who dies stays out for the rest of the mission.
-- **Hunter Killer.** The mission is set up with three factions. Its quest data is not in the sources, so its objectives are not yet known.
+- **Hunter Killer.** Its quest data is not in the sources, so its objectives are not yet known.
 - **Strike and Disarm.** The player faction is tagged Charlie, the same tag the Manticore AI uses. The mission includes a laptop hack with a start and an end, an intro in four voice-over lines, and a mission-complete line. The hack is an interaction with its own duration in the data.
 - **VIP Escort.** The player faction is tagged Bravo, the Valkyra tag. The mission has an intro in three voice-over lines, a success line and a failure line. It uses its own loot table.
 - **AI squads.** The scenario AI comes in five types. The Lonestar squad has a rifleman and a sniper. The Manticore squad has a rifleman, a machine gunner and a marksman. The riflemen carry light armor, a light helmet, a rifle and spare magazines. The sniper and marksman carry scopes.

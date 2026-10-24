@@ -68,7 +68,6 @@ The data gives the bobbleheads no vehicle filter, so they are not limited to par
 ## See also
 
 - [Weapon Skins](weapon-skins.md)
-- [Character Cosmetics](character-cosmetics.md)
 - [Cosmetics](cosmetics.md)
 - [Currencies](currencies.md)
 - [MH-6](../vehicles/mh-6.md), [Havoc](../vehicles/havoc.md), [Bobcat](../vehicles/bobcat.md), [Dune Buggy](../vehicles/dune-buggy.md), [Humvee](../vehicles/humvee.md)

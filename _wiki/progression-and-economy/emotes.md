@@ -48,7 +48,6 @@ The data does not include the animation, sound or visual effects of any emote, o
 
 - [Weapon Skins](weapon-skins.md)
 - [Vehicle Skins](vehicle-skins.md)
-- [Character Cosmetics](character-cosmetics.md)
 - [Cosmetics](cosmetics.md)
 - [Currencies](currencies.md)
 

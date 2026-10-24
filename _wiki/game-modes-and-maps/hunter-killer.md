@@ -20,7 +20,7 @@ description: "A single-life PvE mission against AI squads with no respawns. Its 
 | Internal name | HunterKiller_01 |
 {: .wiki-infobox }
 
-Hunter Killer is a PvE mission played against AI squads instead of other players. A player who dies stays out for the rest of the mission. The data sets the mission up with three teams, but it does not give the mission's objectives, map or enemy squads.
+Hunter Killer is a PvE mission played against AI squads instead of other players. A player who dies stays out for the rest of the mission. Like every PvE mission, it uses the shared setup with three teams. The data does not give the mission's objectives, map or enemy squads.
 
 Hunter Killer is a plain-language name taken from the data's internal mission name. The data gives no display name, so this is not confirmed as the in-game title.
 
@@ -31,7 +31,7 @@ Hunter Killer is one of the three PvE missions in the data, alongside [Strike an
 ## Objective and rules
 
 - **Respawns.** None. A player who dies stays out for the rest of the mission.
-- **Teams.** The mission sets up three teams. The data does not set the player's own faction for this mission, so which side the player starts on is not yet known.
+- **Teams.** Like the other PvE missions, it uses the shared three-team setup. The data does not set the player's own faction for this mission, so which side the player starts on is not yet known.
 - **Objectives.** The mission's quest contents are not in the data, so its objectives are not yet known.
 - **Map, layout and time limit.** Not yet known.
 - **Scenario value.** None is set for this mission.

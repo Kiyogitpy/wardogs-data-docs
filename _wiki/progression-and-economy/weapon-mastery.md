@@ -16,7 +16,7 @@ description: "How weapon mastery is organised: the eight weapon types it tracks,
 | Rewards per level | Not yet known |
 | Internal name | DA_UI_PlatformMastery_SceneData |
 | **Rewards** | |
-| Season 1 skins | 17 in total: 11 weapons, 4 vehicles and 1 parachute |
+| Season 1 skins | 17 in total: 12 weapon skins (on 11 weapons, the M4 has two), 4 vehicle skins and 1 parachute skin |
 {: .wiki-infobox }
 
 Weapon mastery is the reward track for each type of weapon. The game data calls it platform mastery. It has eight types, and their names match the weapon classes used in this wiki. The sources do not give the XP each level needs or what each level rewards, so most of those figures are marked not yet known.

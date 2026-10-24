@@ -109,8 +109,8 @@ Helicopters have a drag coefficient of 0.006 on every variant. Their steering, b
 
 ## Tips that follow from the numbers
 
-- The Dune Buggy is the lightest car at 550 mass and sends 85% of its torque to the rear. It has the widest front steering angle of the wheeled vehicles at 40 degrees.
-- The Ural has the heaviest mass in the wheeled group at 10,000, but also the largest first gear (5.62) and a torque peak of 900 at 1,200 RPM, so it has strong pull from low speed.
+- The Dune Buggy is the lightest full-size car at 550 mass (only the Bobcat is lighter, at 250) and sends 85% of its torque to the rear. It has the widest front steering angle of the wheeled vehicles at 40 degrees.
+- The Ural has the heaviest mass in the wheeled group at 10,000, a long first gear (5.62, second only to the Kodiak's 6.0) and a torque peak of 900 at 1,200 RPM, so it has strong pull from low speed.
 - The Wolf-110 has the largest torque peak of the wheeled vehicles, 1,500 at 1,650 RPM, with a top speed of 129.
 - Since Season 2 the Humvee sends 60% of its torque to the rear axle, so its rear wheels do most of the pulling.
 - The tracked vehicles all share a 50 degree maximum incline in the data.

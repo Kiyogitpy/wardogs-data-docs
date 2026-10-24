@@ -25,7 +25,7 @@ Cosmetics change how weapons, vehicles, parachutes and emotes look. Skins repain
 |---|---|---|---|---|
 | Weapon skins | 18, plus 3 faction logos | 17 | 5 to 15 | [Weapon Skins](weapon-skins.md) |
 | Vehicle skins | 7, including the taxi skin | 6 | 5 to 30 | [Vehicle Skins](vehicle-skins.md) |
-| Parachute skin | 1 | 1 | 15 | [Character Cosmetics](character-cosmetics.md) |
+| Parachute skin | 1 | 1 | 15 | Below |
 | Emotes | 6 | 3 | 5 | [Emotes](emotes.md) |
 | Season 1 | 20 | 19 | 5 to 15 | [Season 1 Cosmetics](season-01-cosmetics.md) |
 | Gold Market total | 27 entries | 27 | 275 Gold Bars in all | [Currencies](currencies.md) |
@@ -39,6 +39,10 @@ The Gold Market sells 27 entries. Weapon and vehicle skins account for most of t
 - **Emotes.** Each emote has a name and an action. Six emote entries exist. Shh, Rock Paper Scissors and Middle Finger have cosmetic rows with prices. Rock, Paper and Scissors have none.
 - **Look only.** The data shows the pattern and colour of each set. It does not show how a skin looks on a model.
 - **Unlocking.** The data does not say whether cosmetics unlock with level, with purchase only, or some other way. The only purchase route in the data is the Gold Market. The season schedule that would gate them is empty in this build.
+
+## Parachute skin and character looks
+
+The data has no outfits or character skins. The only cosmetic a character carries is one parachute skin: the Sport parachute in the Digital Wood set, sold on the Gold Market for 15 Gold Bars. The gear shop lists the Sport parachute itself at 700 (see [Shops](shops.md)); the data does not say whether the parachute must be owned before its skin is bought, or how a character cosmetic is equipped in a match.
 
 ## Tips that follow from the numbers
 
@@ -57,7 +61,6 @@ The Gold Market sells 27 entries. Weapon and vehicle skins account for most of t
 
 - [Weapon Skins](weapon-skins.md): every weapon skin, grouped by weapon, with its price and how it unlocks
 - [Vehicle Skins](vehicle-skins.md): every vehicle skin, the taxi skin and the bobbleheads
-- [Character Cosmetics](character-cosmetics.md): outfits (none in the data) and the parachute skin
 - [Emotes](emotes.md): all six emotes and their prices
 - [Season 1 Cosmetics](season-01-cosmetics.md): the full Season 1 list and how it was earned
 - [Currencies](currencies.md): Cash, Gold Bars and Intel, and the Gold Market

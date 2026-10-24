@@ -73,7 +73,6 @@ Each faction logo is a skin for one weapon, and each faction has one logo. The d
 
 - [Vehicle Skins](vehicle-skins.md)
 - [Emotes](emotes.md)
-- [Character Cosmetics](character-cosmetics.md)
 - [Season 1 Cosmetics](season-01-cosmetics.md)
 - [Cosmetics](cosmetics.md)
 - [Currencies](currencies.md)
