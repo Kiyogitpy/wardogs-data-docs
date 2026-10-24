@@ -28,7 +28,7 @@ Each hammer builds a set of structures:
 | Medium Hammer | 800 | Moderate | Door, Gate, Hesco Wall, Hesco Block (Large), Shelter, and the parts of these |
 | Large Hammer | 2,400 | Fast | Every structure above, plus Bremer Wall, Bunker, Recon Tower, Indirect Fire Shelter, Drill Rig, Refuel Station and Repair Station |
 
-The Large Hammer is the only hammer that can place the Bunker, Recon Tower, Indirect Fire Shelter, Bremer Wall, Drill Rig, Refuel Station and Repair Station. The stationary weapons, listed below, are built with the Large Hammer.
+The Large Hammer is the only hammer that can place the Bunker, Recon Tower, Indirect Fire Shelter, Bremer Wall, Drill Rig, Refuel Station and Repair Station. The stationary weapons, listed below, are built with the Large Hammer, and the Loudspeaker can also be built with the Medium Hammer.
 
 The export gives no display name for the Shelter and the Wood base, so this page uses the plain names "Shelter" and "Wood base".
 
@@ -69,6 +69,17 @@ Stationary weapons are built like structures, with the same placement rules:
 | Loudspeaker | 200 | 1,000 | M, L |
 | Stingray | 650 | 3,000 | L |
 | MG Nest | 650 | 3,000 | L |
+
+### Individual emplacements
+
+Each stationary weapon has its own article, with its gun, ammunition, restock and Season 2 changes:
+
+- [Talon 9K-SAM](talon-9k-sam.md): heavy mounted machine gun, 72 mm rounds
+- [Vanguard CIWS](vanguard-ciws.md): automatic 20x102 mm cannon
+- [L81 Mortar](l81-mortar.md): 120x800 mm shells, with an elevation table and flight data
+- [Loudspeaker](loudspeaker.md): no weapon in the data
+- [Stingray](stingray.md): UAV ammunition
+- [MG Nest](mg-nest.md): .50 cal tracer rounds
 
 ## Effects
 
