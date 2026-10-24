@@ -1,0 +1,64 @@
+---
+title: M18 Smoke Grenade
+parent: "Equipment"
+group: "Explosives and throwables"
+description: "The M18 Smoke Grenade in white and black: a thrown smoke cloud that lasts 120 s, with no direct effect on players in the data."
+---
+
+# M18 Smoke Grenade
+
+| M18 Smoke Grenade | |
+|---|---|
+| **General** | |
+| Type | Tactical, thrown smoke (quick slot) |
+| Variants | M18 Smoke Grenade: White, M18 Smoke Grenade: Black |
+| How it is used | Thrown. Releases a cloud of smoke |
+| Fuse | 3 s |
+| **Cloud** | |
+| Cloud length | 120 s |
+| Effect on players | None in the data |
+| **Availability** | |
+| Price, each | 100 cash |
+| Shop unlock level | 0 |
+| Required items | None |
+| Internal name | `ID.Item.SmokeGrenade.White`, `ID.Item.SmokeGrenade.Black` |
+{: .wiki-infobox }
+
+The M18 Smoke Grenade makes a cloud of white or black smoke that lasts 120 s. It is the plain smoke throwable, and it is not a blast. The data does not say that the cloud blocks sight or targeting, so what it does in play is not yet known.
+
+## Overview
+
+There are two M18 Smoke Grenades in the item shop, White and Black. They are the same item apart from the colour of the smoke. Each costs 100 cash.
+
+The coloured signal grenades use the same smoke but also place a marker on the map. See [M18 Signal Grenade](m18-signal-grenade.md).
+
+## How it works
+
+**Throwing.** The smoke grenade has the same two throws as the Molotov. An overarm throw sends it at 20 m/s (2,000 cm/s). An underarm throw sends it at 12 m/s (1,200 cm/s).
+
+**Fuse.** It releases its smoke 3 s after it is thrown.
+
+**Cloud.** The cloud lasts 120 s. The smoke stops at walls, so it does not pass through them.
+
+**Players in the cloud.** The data does not apply any game effect through the smoke. It does not hurt, heal or slow anyone in the cloud. Whether the cloud blocks sight or enemy targeting is not yet known.
+
+## Damage
+
+The M18 Smoke Grenade does no damage. It has no blast and no thrown-contact damage in the data.
+
+## Season 2 changes
+
+The Season 2 items data lists no change to the M18 Smoke Grenade, and no change to its price.
+
+## See also
+
+- [Fire, Smoke and Flash](fire-smoke-and-flash.md), the overview of fire, smoke and signal throwables
+- [M18 Signal Grenade](m18-signal-grenade.md), the coloured smoke grenades that also mark the map
+- [Molotov](molotov.md), the incendiary throwable
+
+## Sources
+
+- [Fire, Smoke and Mines](../../game-features/Wardogs_FireAndUtility_v1.md): smoke asset durations, throws and the smoke volume
+- [Item Shop for Non-Weapon Items](../../game-features/Wardogs_ItemShop_v1.md): names, prices and shop text
+- [Explosive actor defaults](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/explosive-actors.json): throwable fuse values
+- [Items and Equipment changes, Season 2](../../season-2-changes/items-equipment.md): the Season 2 check

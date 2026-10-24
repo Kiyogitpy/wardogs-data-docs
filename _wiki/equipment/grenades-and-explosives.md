@@ -2,7 +2,7 @@
 title: Grenades and Explosives
 parent: "Equipment"
 group: "Explosives and throwables"
-description: "Frag grenade, C4, placed mines, IED and launcher rounds: blast damage, the distance it reaches, and the fuse or trigger."
+description: "Frag grenade, C4, placed mines, Improvised Explosive Device and launcher rounds: blast damage, the distance it reaches, and the fuse or trigger."
 ---
 
 # Grenades and Explosives
@@ -10,10 +10,10 @@ description: "Frag grenade, C4, placed mines, IED and launcher rounds: blast dam
 | Grenades and explosives | |
 |---|---|
 | Hand grenade | M67 Frag Grenade |
-| Remote | C4 Charge with Remote Detonator; IED with its trigger |
+| Remote | C4 Charge with Remote Detonator; Improvised Explosive Device with its trigger |
 | Placed | Claymore, AT Mine |
 | Launcher and bow rounds | 40mm, 84mm, 93mm, 72mm rounds; Explosive Arrow |
-| Largest blast at centre | 300 HP (AT Mine and IED) |
+| Largest blast at centre | 300 HP (AT Mine and Improvised Explosive Device) |
 {: .wiki-infobox }
 
 Grenades and explosives deal damage in a blast around the point where they go off. A thrown grenade or placed charge does its damage at its centre and less further out, and it reaches no further than its outer radius. Molotovs and smoke are covered on [Fire, Smoke and Flash](fire-smoke-and-flash.md).
@@ -23,6 +23,14 @@ Grenades and explosives deal damage in a blast around the point where they go of
 The table lists the blast numbers in the data. These are the starting amounts before armor and before the game's rules for each body part, so they are not the final damage a player takes. Armor reduction is explained on [Body Armor](body-armor.md).
 
 Blast damage falls evenly from the full amount at the inner radius to zero at the outer radius. Where a value is shown as "full to", the blast does its full amount out to that distance.
+
+## Individual items
+
+- [M67 Frag Grenade](m67-frag-grenade.md)
+- [C4 Charge](c4-charge.md), with the Remote Detonator
+- [Claymore](claymore.md)
+- [AT Mine](at-mine.md)
+- [Improvised Explosive Device](improvised-explosive-device.md)
 
 ## Effects
 
@@ -34,7 +42,7 @@ Blast damage falls evenly from the full amount at the inner radius to zero at th
 | C4 Charge | 250 HP | 2.5 m | 6 m | 10 HP |
 | AT Mine | 300 HP | 3.8 m | 7.5 m | placed, not thrown |
 | Claymore | 150 HP | 1.5 m | 3 m | placed, not thrown |
-| IED | 300 HP | 4 m | 8 m | 10 HP |
+| Improvised Explosive Device | 300 HP | 4 m | 8 m | 10 HP |
 
 Examples from the frag grenade: 100 HP at 5 m, 50 HP at 7.5 m, and nothing from 10 m on.
 
@@ -60,17 +68,17 @@ The vehicle cannons, artillery and drone shells are on the [Explosives](../../ga
 |---|---|---|---|
 | M67 Frag Grenade | 4 s after the throw | none | Thrown. Can be cooked (held before throwing) and can be thrown back |
 | C4 Charge | Set off by the Remote Detonator; the charge adds a 0.2 s delay | sticks to what it hits | Thrown, then detonated remotely |
-| IED | 3 s after the trigger is pressed | none | Placed, then detonated remotely; no range limit |
+| Improvised Explosive Device | 3 s after the trigger is pressed | none | Placed, then detonated remotely; no range limit |
 | AT Mine | when a vehicle moves over the trigger area | 1 s after placement | Placed; see [Fire, Smoke and Flash](fire-smoke-and-flash.md) for trigger details |
 | Claymore | when a player or vehicle enters the trigger area | 2 s after placement | Placed; see [Fire, Smoke and Flash](fire-smoke-and-flash.md) for trigger details |
 
 ### Throwing
 
-The M67 Frag Grenade has three throws: an overarm throw at 2,500 cm/s (25 m/s), an underarm throw at 1,400 cm/s, and a back throw at 1,800 cm/s. The C4 trigger and IED trigger are thrown at 900 cm/s and 1,200 cm/s. Speeds in the data are in centimetres per second.
+The M67 Frag Grenade has three throws: an overarm throw at 2,500 cm/s (25 m/s), an underarm throw at 1,400 cm/s, and a back throw at 1,800 cm/s. The C4 trigger and Improvised Explosive Device trigger are thrown at 900 cm/s and 1,200 cm/s. Speeds in the data are in centimetres per second.
 
 ### Remote detonators
 
-The Remote Detonator sets off placed C4 charges. The data sets the detonator's range to 20,000 units. Units are centimetres in this game, so that is 200 m. A Support skill raises the range to 240 m and then 280 m. The IED trigger has no range limit.
+The Remote Detonator sets off placed C4 charges. The data sets the detonator's range to 20,000 units. Units are centimetres in this game, so that is 200 m. A Support skill raises the range to 240 m and then 280 m. The Improvised Explosive Device trigger has no range limit.
 
 ## Cost
 
@@ -79,7 +87,7 @@ The Remote Detonator sets off placed C4 charges. The data sets the detonator's r
 | M67 Frag Grenade | 200 |
 | C4 Charge | 250 |
 | Remote Detonator | 650 |
-| IED trigger | 300 |
+| Improvised Explosive Device trigger | 300 |
 | Claymore | 900 |
 | AT Mine | 650 |
 
@@ -87,7 +95,7 @@ Launcher and bow rounds are priced with their weapons. See the [Weapon Shop](../
 
 ## Season 2 changes
 
-The Season 2 items data lists no change to the blast damage, radius or fuse of any grenade, C4 charge, mine, IED or launcher round. It lists no price change for these items either.
+The Season 2 items data lists no change to the blast damage, radius or fuse of any grenade, C4 charge, mine, Improvised Explosive Device or launcher round. It lists no price change for these items either.
 
 ## See also
 
