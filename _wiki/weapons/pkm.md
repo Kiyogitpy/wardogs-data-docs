@@ -11,7 +11,7 @@ description: "The PKM light machine gun: fire rate, damage by body part, range f
 |---|---|
 | **General** |  |
 | Class | Light machine gun |
-| Caliber | 7.62x54mm |
+| Caliber | [7.62x54mm](caliber-7-62x54mm.md) |
 | Fire modes | Fully automatic and semi-automatic |
 | **Performance** |  |
 | Fire rate | 600 rounds/min (class default) |

@@ -11,7 +11,7 @@ description: "The FAL assault rifle: fire rate, damage by body part, range fallo
 |---|---|
 | **General** |  |
 | Class | Assault rifle |
-| Caliber | .308 Win |
+| Caliber | [.308 Win](caliber-308-win.md) |
 | Fire modes | Fully automatic and semi-automatic |
 | **Performance** |  |
 | Fire rate | 650 rounds/min |

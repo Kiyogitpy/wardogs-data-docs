@@ -11,7 +11,7 @@ description: "The Evo-3 Ultra light machine gun: fire rate, damage by body part,
 |---|---|
 | **General** |  |
 | Class | Light machine gun |
-| Caliber | .308 Win |
+| Caliber | [.308 Win](caliber-308-win.md) |
 | Fire modes | Fully automatic and semi-automatic |
 | **Performance** |  |
 | Fire rate | 700 rounds/min |

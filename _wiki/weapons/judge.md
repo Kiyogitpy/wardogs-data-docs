@@ -11,7 +11,7 @@ description: "The Judge pistol: fire rate, damage by body part, range falloff, a
 |---|---|
 | **General** |  |
 | Class | Pistol |
-| Caliber | .45 Colt |
+| Caliber | [.45 Colt](caliber-45-colt.md) |
 | Fire modes | Semi-automatic |
 | **Performance** |  |
 | Fire rate | 200 rounds/min |

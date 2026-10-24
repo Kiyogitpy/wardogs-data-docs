@@ -11,7 +11,7 @@ description: "The Super-45 submachine gun: fire rate, damage by body part, range
 |---|---|
 | **General** |  |
 | Class | Submachine gun |
-| Caliber | .45 ACP |
+| Caliber | [.45 ACP](caliber-45-acp.md) |
 | Fire modes | Fully automatic and semi-automatic |
 | **Performance** |  |
 | Fire rate | 1,200 rounds/min |

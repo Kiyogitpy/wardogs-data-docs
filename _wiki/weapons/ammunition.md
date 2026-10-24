@@ -38,17 +38,17 @@ Head hits follow the same pattern with higher numbers. Armor covers different bo
 
 | Caliber | Weapons |
 |---|---|
-| .308 Win | [FAL](fal.md), [BMR-308](bmr-308.md), [M14](m14.md), [Evo-3 Ultra](evo-3-ultra.md), [MK22](mk22.md) |
-| .45 ACP | [M1911](m1911.md), [Super-45](super-45.md) |
-| .45 Colt | [Judge](judge.md) |
-| .50Cal | [AMR 50](amr-50.md) |
-| 12g | [M500](m500.md), [MP43](mp43.md) |
-| 5.45x39mm | [AK74](ak74.md) |
-| 5.56x45mm | [A-91](a-91.md), [Bushmaster M17S](bushmaster-m17s.md), [Galil](galil.md), [KH-2002](kh-2002.md), [M4](m4.md), [T-21](t-21.md), [M249 SAW](m249-saw.md), [Scout Rifle TD](scout-rifle-td.md) |
-| 50AE | [Deagle](deagle.md) |
-| 7.62x39mm | [SKS](sks.md), [TCX-SPR](tcx-spr.md) |
-| 7.62x54mm | [SVD](svd.md), [PKM](pkm.md), [Mosin Nagant](mosin-nagant.md), [SV98](sv98.md) |
-| 9x19mm | [GGX 17](ggx-17.md), [GGX 18](ggx-18.md), [AMP-9](amp-9.md), [MP5](mp5.md), [PP-19 Bizon](pp-19-bizon.md), [PP-19 Vityaz](pp-19-vityaz.md) |
+| [.308 Win](caliber-308-win.md) | [FAL](fal.md), [BMR-308](bmr-308.md), [M14](m14.md), [Evo-3 Ultra](evo-3-ultra.md), [MK22](mk22.md) |
+| [.45 ACP](caliber-45-acp.md) | [M1911](m1911.md), [Super-45](super-45.md) |
+| [.45 Colt](caliber-45-colt.md) | [Judge](judge.md) |
+| [.50Cal](caliber-50cal.md) | [AMR 50](amr-50.md) |
+| [12g](caliber-12g.md) | [M500](m500.md), [MP43](mp43.md) |
+| [5.45x39mm](caliber-5-45x39mm.md) | [AK74](ak74.md) |
+| [5.56x45mm](caliber-5-56x45mm.md) | [A-91](a-91.md), [Bushmaster M17S](bushmaster-m17s.md), [Galil](galil.md), [KH-2002](kh-2002.md), [M4](m4.md), [T-21](t-21.md), [M249 SAW](m249-saw.md), [Scout Rifle TD](scout-rifle-td.md) |
+| [50AE](caliber-50ae.md) | [Deagle](deagle.md) |
+| [7.62x39mm](caliber-7-62x39mm.md) | [SKS](sks.md), [TCX-SPR](tcx-spr.md) |
+| [7.62x54mm](caliber-7-62x54mm.md) | [SVD](svd.md), [PKM](pkm.md), [Mosin Nagant](mosin-nagant.md), [SV98](sv98.md) |
+| [9x19mm](caliber-9x19mm.md) | [GGX 17](ggx-17.md), [GGX 18](ggx-18.md), [AMP-9](amp-9.md), [MP5](mp5.md), [PP-19 Bizon](pp-19-bizon.md), [PP-19 Vityaz](pp-19-vityaz.md) |
 
 ## See also
 

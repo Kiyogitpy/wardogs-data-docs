@@ -11,7 +11,7 @@ description: "The Mosin Nagant sniper rifle: fire rate, damage by body part, ran
 |---|---|
 | **General** |  |
 | Class | Sniper rifle |
-| Caliber | 7.62x54mm |
+| Caliber | [7.62x54mm](caliber-7-62x54mm.md) |
 | Fire modes | Semi-automatic |
 | **Performance** |  |
 | Fire rate | 46 rounds/min |

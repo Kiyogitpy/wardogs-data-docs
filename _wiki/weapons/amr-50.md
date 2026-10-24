@@ -11,7 +11,7 @@ description: "The AMR 50 sniper rifle: fire rate, damage by body part, range fal
 |---|---|
 | **General** |  |
 | Class | Sniper rifle |
-| Caliber | .50Cal |
+| Caliber | [.50Cal](caliber-50cal.md) |
 | Fire modes | Semi-automatic |
 | **Performance** |  |
 | Fire rate | 41.5 rounds/min |

@@ -11,7 +11,7 @@ description: "The AMP-9 submachine gun: fire rate, damage by body part, range fa
 |---|---|
 | **General** |  |
 | Class | Submachine gun |
-| Caliber | 9x19mm |
+| Caliber | [9x19mm](caliber-9x19mm.md) |
 | Fire modes | Fully automatic and semi-automatic |
 | **Performance** |  |
 | Fire rate | 900 rounds/min |

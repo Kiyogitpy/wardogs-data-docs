@@ -11,7 +11,7 @@ description: "The SKS marksman rifle: fire rate, damage by body part, range fall
 |---|---|
 | **General** |  |
 | Class | Marksman rifle |
-| Caliber | 7.62x39mm |
+| Caliber | [7.62x39mm](caliber-7-62x39mm.md) |
 | Fire modes | Semi-automatic |
 | **Performance** |  |
 | Fire rate | 420 rounds/min |

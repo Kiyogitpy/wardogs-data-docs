@@ -11,7 +11,7 @@ description: "The SVD marksman rifle: fire rate, damage by body part, range fall
 |---|---|
 | **General** |  |
 | Class | Marksman rifle |
-| Caliber | 7.62x54mm |
+| Caliber | [7.62x54mm](caliber-7-62x54mm.md) |
 | Fire modes | Semi-automatic |
 | **Performance** |  |
 | Fire rate | 480 rounds/min |

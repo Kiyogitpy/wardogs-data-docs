@@ -11,7 +11,7 @@ description: "The TCX-SPR marksman rifle: fire rate, damage by body part, range 
 |---|---|
 | **General** |  |
 | Class | Marksman rifle |
-| Caliber | 7.62x39mm |
+| Caliber | [7.62x39mm](caliber-7-62x39mm.md) |
 | Fire modes | Fully automatic and semi-automatic |
 | **Performance** |  |
 | Fire rate | 800 rounds/min |

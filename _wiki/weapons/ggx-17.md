@@ -11,7 +11,7 @@ description: "The GGX 17 pistol: fire rate, damage by body part, range falloff, 
 |---|---|
 | **General** |  |
 | Class | Pistol |
-| Caliber | 9x19mm |
+| Caliber | [9x19mm](caliber-9x19mm.md) |
 | Fire modes | Semi-automatic |
 | **Performance** |  |
 | Fire rate | 600 rounds/min (class default) |

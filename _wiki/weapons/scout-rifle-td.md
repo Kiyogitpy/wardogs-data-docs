@@ -11,7 +11,7 @@ description: "The Scout Rifle TD sniper rifle: fire rate, damage by body part, r
 |---|---|
 | **General** |  |
 | Class | Sniper rifle |
-| Caliber | 5.56x45mm |
+| Caliber | [5.56x45mm](caliber-5-56x45mm.md) |
 | Fire modes | Semi-automatic |
 | **Performance** |  |
 | Fire rate | 46 rounds/min |

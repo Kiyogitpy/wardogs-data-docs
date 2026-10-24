@@ -1,0 +1,74 @@
+---
+title: "5.45x39mm"
+parent: "Weapons"
+group: "Calibers"
+description: "The 5.45x39mm caliber: the weapons that fire it, its bullet types, how they do against armor and what the ammunition costs."
+---
+
+# 5.45x39mm
+
+| 5.45x39mm | |
+|---|---|
+| **General** | |
+| Bullet types | Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP) (each with a tracer version) |
+| Weapons | 1 |
+| Classes | Assault rifle |
+| **Ballistics** | |
+| Muzzle velocity | 880 m/s |
+| **Availability** | |
+| Standard (FMJ) price | 15 cash (vendor lot of 10), not shown in the vendor list |
+| Flesh Damage (HP) price | 25 cash (vendor lot of 10), not shown in the vendor list |
+| Armor Piercing (AP) price | 40 cash (vendor lot of 10), not shown in the vendor list |
+| Internal name | 545mm |
+{: .wiki-infobox }
+
+The 5.45x39mm caliber is used by 1 weapon in the weapon data, across the Assault rifle class. Its rounds are Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). The tables below show how each type does against armor.
+
+## Weapons that use it
+
+| Weapon | Class | Fire rate | Upper torso, no armor, point blank |
+|---|---|---:|---:|
+| [AK74](ak74.md) | Assault rifle | 650 rounds/min | 25.3 |
+
+Point-blank figures use standard rounds (buckshot for shotguns, per pellet), per hit, without falloff. See [Ammunition](ammunition.md) for the bullet types.
+
+## Ammunition types
+
+Upper torso hits from the AK74 at point blank range, per hit, without falloff. Armor changes these numbers a lot, so every armor class is shown.
+
+| Ammo | No armor | Light | Medium | Heavy | Super heavy |
+|---|---|---|---|---|---|
+| Standard (FMJ) | 25.3 | 17.7 | 15.2 | 12.7 | 10.1 |
+| Flesh Damage (HP) | 50.6 | 7.5 | 5.5 | 3.4 | 1.4 |
+| Armor Piercing (AP) | 20.2 | 16.6 | 15.4 | 14.2 | 13.0 |
+| Standard (FMJ) with tracer | 25.3 | 17.7 | 15.2 | 12.7 | 10.1 |
+
+Flesh Damage (HP) with tracer, Armor Piercing (AP) with tracer match their base type in the data.
+
+## Against armor
+
+- Armor Piercing does less damage than standard rounds up to light armor and more damage from medium armor up.
+- Flesh Damage does 2.0 times the standard damage with no armor and 0.1 times against super heavy armor. It is the strongest type against unarmored targets. It is the weakest type against super heavy armor.
+
+The numbers come from the upper torso column of the table above. Head hits follow the same pattern at higher values; see [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md).
+
+## Season 2 changes
+
+- Weapons in this caliber with Season 2 changes: [AK74](ak74.md). Each article lists its changes.
+
+## See also
+
+- [Ammunition](ammunition.md), the bullet types and which weapons use each caliber
+- [Choosing Ammo](../guides/choosing-ammo.md), which round to load against each armor level
+- [Armor](../game-mechanics/armor.md)
+- [Ballistics](../game-mechanics/ballistics.md)
+- [Weapons](../weapons.md)
+
+## Sources
+
+- [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md): body-part and armor numbers
+- [Season 2 Changes: Weapons & Ammo](../../season-2-changes/weapons-ammo.md)
+- [Tag Display Text](../../content/Wardogs_TagDisplayText_v1.md): caliber names
+- [weapon-damage.json](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-damage.json): ammo types and damage by armor class
+- [weapon-damage-falloff.json](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-damage-falloff.json): muzzle velocity
+- [ammo-availability.json](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/ammo-availability.json): ammo prices

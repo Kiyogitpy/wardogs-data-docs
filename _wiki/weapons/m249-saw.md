@@ -11,7 +11,7 @@ description: "The M249 SAW light machine gun: fire rate, damage by body part, ra
 |---|---|
 | **General** |  |
 | Class | Light machine gun |
-| Caliber | 5.56x45mm |
+| Caliber | [5.56x45mm](caliber-5-56x45mm.md) |
 | Fire modes | Fully automatic and semi-automatic |
 | **Performance** |  |
 | Fire rate | 850 rounds/min |

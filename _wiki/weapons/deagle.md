@@ -11,7 +11,7 @@ description: "The Deagle pistol: fire rate, damage by body part, range falloff, 
 |---|---|
 | **General** |  |
 | Class | Pistol |
-| Caliber | 50AE |
+| Caliber | [50AE](caliber-50ae.md) |
 | Fire modes | Semi-automatic |
 | **Performance** |  |
 | Fire rate | 267 rounds/min |

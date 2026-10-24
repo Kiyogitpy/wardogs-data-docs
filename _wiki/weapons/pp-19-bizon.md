@@ -11,7 +11,7 @@ description: "The PP-19 Bizon submachine gun: fire rate, damage by body part, ra
 |---|---|
 | **General** |  |
 | Class | Submachine gun |
-| Caliber | 9x19mm |
+| Caliber | [9x19mm](caliber-9x19mm.md) |
 | Fire modes | Fully automatic and semi-automatic |
 | **Performance** |  |
 | Fire rate | 700 rounds/min |

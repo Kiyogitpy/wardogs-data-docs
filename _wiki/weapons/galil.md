@@ -11,7 +11,7 @@ description: "The Galil assault rifle: fire rate, damage by body part, range fal
 |---|---|
 | **General** |  |
 | Class | Assault rifle |
-| Caliber | 5.56x45mm |
+| Caliber | [5.56x45mm](caliber-5-56x45mm.md) |
 | Fire modes | Fully automatic and semi-automatic |
 | **Performance** |  |
 | Fire rate | 650 rounds/min |

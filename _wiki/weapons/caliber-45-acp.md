@@ -1,0 +1,75 @@
+---
+title: ".45 ACP"
+parent: "Weapons"
+group: "Calibers"
+description: "The .45 ACP caliber: the weapons that fire it, its bullet types, how they do against armor and what the ammunition costs."
+---
+
+# .45 ACP
+
+| .45 ACP | |
+|---|---|
+| **General** | |
+| Bullet types | Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP) (each with a tracer version) |
+| Weapons | 2 |
+| Classes | Submachine gun, Pistol |
+| **Ballistics** | |
+| Muzzle velocity | 253 to 375 m/s |
+| **Availability** | |
+| Standard (FMJ) price | 10 cash (vendor lot of 10), not shown in the vendor list |
+| Flesh Damage (HP) price | 15 cash (vendor lot of 10), not shown in the vendor list |
+| Armor Piercing (AP) price | 20 cash (vendor lot of 10), not shown in the vendor list |
+| Internal name | 45ACP |
+{: .wiki-infobox }
+
+The .45 ACP caliber is used by 2 weapons in the weapon data, across the Submachine gun and Pistol classes. Its rounds are Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). The tables below show how each type does against armor.
+
+## Weapons that use it
+
+| Weapon | Class | Fire rate | Upper torso, no armor, point blank |
+|---|---|---:|---:|
+| [Super-45](super-45.md) | Submachine gun | 1,200 rounds/min | 34.7 |
+| [M1911](m1911.md) | Pistol | 430 rounds/min | 45.0 |
+
+Point-blank figures use standard rounds (buckshot for shotguns, per pellet), per hit, without falloff. See [Ammunition](ammunition.md) for the bullet types.
+
+## Ammunition types
+
+Upper torso hits from the Super-45 at point blank range, per hit, without falloff. Armor changes these numbers a lot, so every armor class is shown.
+
+| Ammo | No armor | Light | Medium | Heavy | Super heavy |
+|---|---|---|---|---|---|
+| Standard (FMJ) | 34.7 | 24.3 | 20.8 | 17.3 | 13.9 |
+| Flesh Damage (HP) | 69.3 | 10.3 | 7.5 | 4.7 | 1.9 |
+| Armor Piercing (AP) | 27.7 | 21.9 | 20.0 | 18.0 | 16.1 |
+| Standard (FMJ) with tracer | 34.7 | 24.3 | 20.8 | 17.3 | 13.9 |
+
+Flesh Damage (HP) with tracer, Armor Piercing (AP) with tracer match their base type in the data.
+
+## Against armor
+
+- Armor Piercing does less damage than standard rounds up to medium armor and more damage from heavy armor up.
+- Flesh Damage does 2.0 times the standard damage with no armor and 0.1 times against super heavy armor. It is the strongest type against unarmored targets. It is the weakest type against super heavy armor.
+
+The numbers come from the upper torso column of the table above. Head hits follow the same pattern at higher values; see [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md).
+
+## Season 2 changes
+
+- Weapons in this caliber with Season 2 changes: [Super-45](super-45.md). Each article lists its changes.
+
+## See also
+
+- [Ammunition](ammunition.md), the bullet types and which weapons use each caliber
+- [Choosing Ammo](../guides/choosing-ammo.md), which round to load against each armor level
+- [Armor](../game-mechanics/armor.md)
+- [Ballistics](../game-mechanics/ballistics.md)
+- [Weapons](../weapons.md)
+
+## Sources
+
+- [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md): body-part and armor numbers
+- [Season 2 Changes: Weapons & Ammo](../../season-2-changes/weapons-ammo.md)
+- [Tag Display Text](../../content/Wardogs_TagDisplayText_v1.md): caliber names
+- [weapon-damage.json](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-damage.json): ammo types and damage by armor class
+- [weapon-damage-falloff.json](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-damage-falloff.json): muzzle velocity
+- [ammo-availability.json](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/ammo-availability.json): ammo prices

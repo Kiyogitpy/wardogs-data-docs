@@ -11,7 +11,7 @@ description: "The Bushmaster M17S assault rifle: fire rate, damage by body part,
 |---|---|
 | **General** |  |
 | Class | Assault rifle |
-| Caliber | 5.56x45mm |
+| Caliber | [5.56x45mm](caliber-5-56x45mm.md) |
 | Fire modes | Semi-automatic and burst fire |
 | **Performance** |  |
 | Fire rate | 700 rounds/min |

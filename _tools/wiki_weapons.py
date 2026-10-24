@@ -119,6 +119,11 @@ def caliber_display(key):
     return CAL.get(key, key)
 
 
+def caliber_slug(key):
+    """Slug of a caliber article (_wiki/weapons/caliber-<slug>.md), written by _tools/wiki_calibers.py."""
+    return "caliber-" + slugify(caliber_display(key))
+
+
 # ---- Weapon Shop rows: price, unlock level, default magazine ----
 shop_rows = {}
 sec = SHOP.split("## 1. Weapon platforms", 1)[1].split("## 2.", 1)[0]
@@ -284,10 +289,11 @@ def build_weapon(wid):
     art = "an" if cls_l[:1] in "aeiou" else "a"
 
     # A ("**Band**", "") row is drawn as a group band inside the infobox.
+    cal_cell = f"[{s['cal']}]({caliber_slug(dmg['caliber'])}.md)" if dmg else s["cal"]
     infobox_rows = [
         ("**General**", ""),
         ("Class", s["cls"]),
-        ("Caliber", s["cal"]),
+        ("Caliber", cal_cell),
         ("Fire modes", s["modes_cap"]),
         ("**Performance**", ""),
         ("Fire rate", s["rpm"]),
@@ -453,10 +459,10 @@ def ammo_page():
         code = code_for(wid)
         if code in SKIP or code not in wdamage:
             continue
-        by_cal.setdefault(caliber_display(wdamage[code]["caliber"]), []).append(
+        by_cal.setdefault(wdamage[code]["caliber"], []).append(
             f"[{page_title(wid)}]({slugify(page_title(wid))}.md)")
-    for k in sorted(by_cal):
-        body.append(f"| {k} | {', '.join(by_cal[k])} |")
+    for key in sorted(by_cal, key=caliber_display):
+        body.append(f"| [{caliber_display(key)}]({caliber_slug(key)}.md) | {', '.join(by_cal[key])} |")
     body += ["", "## See also", "",
              "- [Choosing Ammo](../guides/choosing-ammo.md), which round to load against each armor level",
              "- [Armor](../game-mechanics/armor.md)",
