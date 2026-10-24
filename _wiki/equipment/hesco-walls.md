@@ -65,6 +65,16 @@ For the Large Block, rockets do 1.8 times their normal damage, and IEDs do 4 tim
 
 The data does not say how many hits any Hesco variant takes to destroy, so that number is not yet known.
 
+## Hits to destroy (point blank, derived)
+
+Derived from each source's base damage and the damage table. It is not a count from play: each figure assumes every shot lands at point blank for full damage, with no falloff and no other rules, so real fights can differ. Base damage used: M4 5.56 mm FMJ 28, M67 frag grenade 100, 120 mm rocket 150, C4 charge 250.
+
+| Structure | HP | M4 5.56 mm FMJ | M67 frag grenade | 120 mm rocket | C4 charge |
+|---|---:|---:|---:|---:|---:|
+| Hesco Block (Small) | 1,600 | 286 | 11 | 5 | 2 |
+| Hesco Block (Large) | 2,250 | 402 | 15 | 9 | 4 |
+| Hesco Wall | 4,600 | 822 | 46 | 11 | 8 |
+
 ## Season 2 changes
 
 The Season 2 data lists no change to the cost or health of any Hesco variant.
@@ -81,3 +91,4 @@ The Season 2 data lists no change to the cost or health of any Hesco variant.
 - [Buildables](../../game-features/Wardogs_Buildables_v1.md): cost, health, stages, damage rows, placement conditions and cash rewards
 - [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md): how the percentage changes are applied (section 6)
 - [Items and equipment changes, Season 2](../../season-2-changes/items-equipment.md): the buildable changes
+- [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy for each source of damage.

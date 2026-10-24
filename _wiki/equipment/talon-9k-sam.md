@@ -27,7 +27,7 @@ description: "A buildable stationary emplacement with a heavy mounted machine gu
 | Internal name | STN_01 |
 {: .wiki-infobox }
 
-The Talon 9K-SAM is a stationary emplacement that players build with a Large Hammer. Its weapon is a heavy mounted machine gun that fires 72 mm rounds in single shots. Its name points to an anti-air role, but the game data describes only its gun, so this article does not say more about what it targets.
+The Talon 9K-SAM is a stationary emplacement that players build with a Large Hammer. Its weapon is a heavy mounted machine gun that fires 72 mm rounds in single shots. Its name points to an anti-air role. The data also gives it lock-on timings (see Targeting), but it does not list the targets it can lock onto, so this article does not say what it targets.
 
 ## Overview
 
@@ -38,6 +38,10 @@ The Talon is built from 650 Build Supplies and has 3,000 HP. It is one of six st
 ### Weapon
 
 The gun fires 100 rounds/min in semi-automatic mode, which is one shot per trigger pull. The data lists an effective range of 1,000 m. The game data gives a reload time of 5.0 s and a starting count of 1 round. The gun is restocked with Ammo Supplies, and a full restock takes 200 of them.
+
+### Targeting
+
+The data gives the emplacement 2.0 s to lock onto a target, and a 0.5 s delay after the lock before it fires. The data does not link flares to it (see [Countermeasures and flares](../vehicles/countermeasures-and-flares.md)).
 
 ## Use and timing
 
@@ -76,3 +80,4 @@ The Build Supplies cost is not a cash price. Build Supplies are bought in the sh
 - [Items and equipment changes, Season 2](../../season-2-changes/items-equipment.md) and [Vehicles changes, Season 2](../../season-2-changes/vehicles.md): cost, reload, restock and damage table changes
 - [Talon weapon extension data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_01/Content/Weapon/WeaponExtensions/WE_STN_01_Heavy_MountedMachineGun.json): reload, restock and ammunition
 - [Vehicle hitboxes](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/vehicle-hitboxes.json): the 3D hitbox set used by the viewer link
+- [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): lock-on timings for the Talon.

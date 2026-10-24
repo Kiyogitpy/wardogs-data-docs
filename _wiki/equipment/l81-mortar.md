@@ -13,7 +13,7 @@ description: "A buildable mortar emplacement with one firing arc and a range of 
 | Type | Stationary mortar emplacement |
 | Arcs | One |
 | **Range** | |
-| Minimum range | 132 m |
+| Minimum range | 132 m (measured); about 103 m allowed by the data (derived) |
 | Maximum range | 684 m |
 | Travel time | 15.9 to 22.4 s (game table) |
 | **Building** | |
@@ -64,13 +64,13 @@ Mils fall as range rises, so a longer shot needs a lower elevation setting. A sh
 
 ### How the game table and the dial compare
 
-At the same range, the dial setting is the game table's elevation plus 650, to within 2 mils, on every one of the 17 rows. The two lists therefore agree on the shape of the mortar's range curve and differ by a fixed shift. Why the scales are shifted by 650 is not known. Because the match is so close, the two should not be counted as two independent measurements.
+At the same range, the dial setting is the game table's elevation plus 650, to within 2 mils, on every one of the 17 rows. The two lists therefore agree on the shape of the mortar's range curve and differ by a fixed shift. The sight adds the 650 itself: its mil label is the table value plus 650. The two lists are therefore one measurement shown twice, not two independent measurements.
 
 The travel time in the -300 mrad row (20.0 s) breaks the pattern of its neighbours (17.9 s before it, 19.0 s after), and is probably a data oddity. The cause is not known.
 
 ### Minimum range
 
-The game table goes down to 80 m. The calculator gives 132 m as the minimum range. The two fit together this way: 132 m is the row at 850 mils, the end of the mortar's dial range (150 to 850 mils). The game table has two more rows beyond that stop, 110 m at 900 mils and 80 m at 950 mils on the dial scale, which the measured dial does not reach. Whether the mortar can actually fire at those settings is not known, so treat 132 m as the shortest range you can set.
+The calculator's minimum range is 132 m, at 850 mils, the end of the dial range it measured (150 to 850 mils). The game table has rows beyond that stop, down to 80 m at 950 mils. The barrel's data limits its pitch to -29 to +15 degrees. The +15 degree limit is about 262 mrad, which is dial 912, and the table interpolated at that limit puts the shell about 103 m out (derived). The 110 m row (dial 900) is inside the limit, and the 80 m row (dial 950) is beyond it. So the data would allow shots down to about 103 m, and no limit found explains the community's 132 m stop. Treat 132 m as the shortest range measured in play and about 103 m as the shortest the weapon data appears to allow.
 
 ## Season 2 changes
 
@@ -106,3 +106,4 @@ The Build Supplies cost is taken from the [Buildables](buildables.md) article, w
 - [All vehicles stat and damage sheet](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md): the mortar's rate and damage table
 - [Vehicles changes, Season 2](../../season-2-changes/vehicles.md): cost, restock, windup and damage table changes
 - [Vehicle hitboxes](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/vehicle-hitboxes.json): the 3D hitbox set used by the viewer link
+- [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): mortar sight labels, and the minimum range from the barrel's pitch limit.

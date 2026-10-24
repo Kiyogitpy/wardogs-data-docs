@@ -15,7 +15,7 @@ description: "The damageable parts of each Wardogs vehicle with their health, wh
 | Health unit | HP |
 | **Repair** | |
 | Hand repair | Wrench, Light drill, Heavy drill (+5 HP per use) |
-| Base repair | Repair Station (rate not yet known) |
+| Base repair | Repair Station (Fast: 5% in 3 s; Max: up to 100% in 9 s) |
 {: .wiki-infobox }
 
 A vehicle has one main health pool, plus separate pools for some parts: the engine, the fuel tank, the wheels or tracks, and on helicopters the rotors. The main health decides whether the vehicle is destroyed. The part pools decide what breaks and when. How hits reach each part is covered in [Vehicle damage](vehicle-damage.md).
@@ -103,9 +103,9 @@ Health pools per vehicle, as stored in the data. Sort by any column with the hea
 | [Wrench](../equipment/wrench.md) | All vehicles | +5 HP | Not yet known | 180 cash |
 | [Light repair drill](../equipment/drills.md) | Vehicles | +5 HP | Moderate | 600 cash |
 | [Heavy repair drill](../equipment/drills.md) | Vehicles | +5 HP | Fastest | 1,300 cash |
-| [Refuel and Repair Stations](../equipment/refuel-and-repair-stations.md) | Vehicles in the FOB radius | Not yet known | Not yet known | Station: 200 Build Supplies |
+| [Refuel and Repair Stations](../equipment/refuel-and-repair-stations.md) | Vehicles in the FOB radius | Fast: 5%; Max: up to 100% | Fast: 3 s; Max: 9 s | Fast: 100 cash; Max: 2,000 cash. Building a station costs 200 Build Supplies |
 
-Each repair tool is used until it is empty or the target is full. The wrench and drills share the same +5 HP per use. A Repair Station uses Mechanical Supplies, which cost 10 cash per lot of 50. Its repair multiplier is stored as 13.33, but the data does not say what that multiplier does in play.
+Each repair tool is used until it is empty or the target is full. The wrench and drills share the same +5 HP per use. A Repair Station uses Mechanical Supplies, which cost 10 cash per lot of 50. Each restock uses 5 of them. The station's stored 13.33 figure is the structure's own hammer repair-speed multiplier. Every buildable has one, and most are the structure's Build Supplies cost divided by 15. It is not a vehicle repair rate.
 
 The in-game tips say that high impact damage zones on a vehicle can be repaired with repair tools, and that returning to base for repairs is not free.
 
@@ -132,3 +132,4 @@ The in-game tips say that high impact damage zones on a vehicle can be repaired 
 - [Buildables](../../game-features/Wardogs_Buildables_v1.md): the Repair Station
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md) and [Item Actions](../../content/Wardogs_ItemActions_v1.md): repair tool amounts and prices
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
+- [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): Repair Station restock rates and the stored 13.33 multiplier.

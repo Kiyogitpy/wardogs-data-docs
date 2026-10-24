@@ -33,16 +33,16 @@ Flash and stun grenades are not in the data for this build. There is no flashban
 
 The Molotov bursts on detonation, dealing 40 HP at its centre out to 2.5 m and nothing beyond 5 m. It then leaves a burning area.
 
-- **Burning area.** The fire lasts up to 45 s. It damages players and vehicles inside it every 0.4 s.
+- **Burning area.** The fire lasts up to 45 s. It is laid as 15 patches per throw, each a 2 m by 2 m box 0.5 m tall. It damages players and vehicles inside a patch every 0.4 s.
 - **Players.** Each tick deals 15 HP, which is 37.5 HP per second while standing in the fire. Players without the Alive state take no damage.
 - **Vehicles.** Each tick deals 2 health, which is 5 per second.
 - **Burning status.** A player in the fire gets a "burning" status, shown with a screen effect that darkens and blurs the view. The status ends when the player leaves the fire. The data points to this without a timer, but this is not fully confirmed.
 
-Not yet known: whether armor reduces fire damage, whether the Molotov bursts on impact or when its fuse runs out, and whether a teammate's Molotov fire damages you.
+The Molotov bursts when its 5 s fuse runs out; no impact trigger was found. Armor reduces the burst but not the fire, since no armor rule in the data applies to fire damage (derived). The damage tables give a teammate's Molotov fire no reduction (derived).
 
 ### Smoke grenades
 
-Smoke grenades make a cloud of smoke. The data gives the length of each cloud, but no effect on play. No item applies a game effect through smoke, so smoke does not hurt, heal or slow anyone in the data. What the cloud blocks, such as sight or enemy targeting, is not yet known.
+Smoke grenades make a cloud of smoke. The data gives the length of each cloud, but no effect on play. No item applies a game effect through smoke, so smoke does not hurt, heal or slow anyone in the data. In the code found, the only thing that reads a smoke cloud is the aim-assist target picker, so smoke blocks aim assist. Spotting, lock-on and the minimap do not read it. Whether enemy AI sight is blocked is not confirmed.
 
 | Item | Cloud length | Cost (cash) |
 |---|---:|---:|
@@ -137,3 +137,4 @@ The Season 2 items data lists no change to the Molotov, smoke grenades, mines or
 - [Explosive actor defaults](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/explosive-actors.json): the Molotov fire field and mine values
 - [Explosives Reference](../../game-features/Wardogs_Explosives_v1.md): Molotov blast damage and fuses
 - [Items and Equipment changes, Season 2](../../season-2-changes/items-equipment.md): the Season 2 check
+- [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): Molotov patches and fire rules, and what smoke affects in the code found.

@@ -20,6 +20,7 @@ description: "The Molotov: a thrown incendiary that bursts for 40 HP and leaves 
 | Burst no damage beyond | 5 m |
 | Burst minimum damage | 10 HP |
 | Fire area life | 45 s |
+| Fire patches | 15 per throw, each 2 m x 2 m and 0.5 m tall |
 | Fire damage to players | 15 HP every 0.4 s (37.5 HP per second) |
 | Fire damage to vehicles | 2 HP every 0.4 s (5 HP per second) |
 | **Availability** | |
@@ -41,15 +42,15 @@ For the other explosives, see [Grenades and Explosives](grenades-and-explosives.
 
 **Throwing.** The Molotov has two throws. An overarm throw sends it at 20 m/s (2,000 cm/s). An underarm throw sends it at 12 m/s (1,200 cm/s). Thrown contact adds 10 HP of impact damage.
 
-**Fuse.** The Molotov goes off 5 s after it is thrown. It cannot be cooked.
+**Fuse.** The Molotov goes off 5 s after it is thrown. It cannot be cooked. The data also has it go off when its own 50 HP is used up. No impact trigger was found, so it does not appear to burst on contact.
 
 **Burst.** On detonation the Molotov does its burst damage, then starts a fire area.
 
-**Fire area.** The fire area lasts 45 s. It hurts anyone and any vehicle inside it every 0.4 s. The size of the fire area is not yet known.
+**Fire area.** The fire is laid as patches: each throw makes 15, and each patch is a box 2 m by 2 m and 0.5 m tall. The patches last 45 s. Anyone or any vehicle inside a patch takes damage every 0.4 s. The data does not give the spacing of the patches, so the total size of the fire is not known.
 
 **Burning status.** A player in the fire gets a "burning" status. It darkens and blurs the screen, with a vignette effect. The data does not give a timer for the status. How it ends is not fully confirmed.
 
-Not yet known: whether the Molotov goes off on impact or when its fuse runs out, whether armor reduces fire damage, and whether a teammate's fire damages you.
+Armor reduces the burst but not the fire: no armor rule in the data applies to fire damage (derived). The damage tables give a teammate's Molotov fire no reduction (derived), so as far as those tables show, it hurts teammates in full. Whether the game mode turns off friendly damage elsewhere is not in these tables.
 
 ## Damage
 
@@ -93,3 +94,4 @@ The Season 2 items data adds the Molotov, along with four other items, to the it
 - [Explosive actor defaults](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/explosive-actors.json): Molotov burst and fire values
 - [Vehicle damage pipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md): how explosives are scaled against vehicles
 - [Items and Equipment changes, Season 2](../../season-2-changes/items-equipment.md): the Season 2 check
+- [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): Molotov fire patches, fuse and damage rules.

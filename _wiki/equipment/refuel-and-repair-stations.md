@@ -32,7 +32,7 @@ The Refuel Station and the Repair Station are vehicle service structures that on
 
 Both stations cost 200 Build Supplies and have 1,600 HP. Neither has separate parts.
 
-The Refuel Station works with Fuel Supplies, and the Repair Station works with Mechanical Supplies. The item text for each says it is needed to refuel or repair vehicles, and that it needs a friendly base radius to use. The data gives the Repair Station and the Refuel Station the same repair speed multiplier of 13.33. What that number does in play is not yet known.
+The Refuel Station works with Fuel Supplies, and the Repair Station works with Mechanical Supplies. The item text for each says it is needed to refuel or repair vehicles, and that it needs a friendly base radius to use. Both stations store the same repair speed figure, 13.33. It is the structure's own hammer repair-speed multiplier, not a vehicle repair rate (see [Repair and vehicle parts](../vehicles/repair-and-vehicle-parts.md)).
 
 The reward tables have no cash entry for either station.
 
@@ -47,7 +47,16 @@ The reward tables have no cash entry for either station.
 
 ## What it does
 
-The data says the stations refuel and repair vehicles. The refuel and repair rates are not yet known, so how fast a vehicle is serviced is also not yet known. The Refuel Station has a refuel start and stop sound, and the Repair Station has a repair start and stop sound.
+The stations refuel and repair vehicles in the Forward Operating Base radius. Each has a Fast and a Max restock:
+
+| Station | Restock | Amount per restock | Time | Cost | Supplies per restock |
+|---|---|---:|---:|---:|---:|
+| Refuel Station | Fast | 5% of the tank | 3 s | 75 cash | 5 Fuel Supplies |
+| Refuel Station | Max | up to 100% of the tank | 9 s | 1,500 cash | 5 Fuel Supplies |
+| Repair Station | Fast | 5% of health | 3 s | 100 cash | 5 Mechanical Supplies |
+| Repair Station | Max | up to 100% of health | 9 s | 2,000 cash | 5 Mechanical Supplies |
+
+The times are the stored values. Whether a Max restock is shorter when the tank or health is nearly full is not known. The Refuel Station has a refuel start and stop sound, and the Repair Station has a repair start and stop sound.
 
 ## Durability
 
@@ -60,7 +69,16 @@ The data says the stations refuel and repair vehicles. The refuel and repair rat
 | C4 | +600% | +600% |
 | IEDs | no single entry | +1,000% |
 
-Rockets do 16 times their normal damage to either station. The Refuel Station has no single IED entry in the data, so the IED damage it takes is not yet known from this table. The data does not say how many hits either station takes to destroy, so that number is not yet known. For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
+Rockets do 16 times their normal damage to either station. The Refuel Station has no single IED entry in the data, so the IED damage it takes is not yet known from this table. The hits either station takes to destroy are derived in the table below. For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
+
+## Hits to destroy (point blank, derived)
+
+Derived from each source's base damage and the damage table. It is not a count from play: each figure assumes every shot lands at point blank for full damage, with no falloff and no other rules, so real fights can differ. Base damage used: M4 5.56 mm FMJ 28, M67 frag grenade 100, 120 mm rocket 150, C4 charge 250.
+
+| Structure | HP | M4 5.56 mm FMJ | M67 frag grenade | 120 mm rocket | C4 charge |
+|---|---:|---:|---:|---:|---:|
+| Refuel Station | 1,600 | 286 | 11 | 1 | 1 |
+| Repair Station | 1,600 | 286 | 11 | 1 | 1 |
 
 ## Season 2 changes
 
@@ -77,3 +95,4 @@ The Season 2 data lists no change to either station's cost or health.
 - [Buildables](../../game-features/Wardogs_Buildables_v1.md): cost, health, damage rows, placement limits, the repair multiplier and the item descriptions
 - [Tag display text](../../content/Wardogs_TagDisplayText_v1.md): the names of the FOB supply containers, including Fuel Supplies and Mechanical Supplies
 - [Items and equipment changes, Season 2](../../season-2-changes/items-equipment.md): the buildable changes
+- [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): restock amounts, times and costs for both stations, and the derived hits to destroy.

@@ -60,6 +60,15 @@ The data does not describe what a player can do on the tower. Its effect in play
 
 The data does not say how many hits the Recon Tower takes to destroy, so that number is not yet known. For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
 
+## Hits to destroy (point blank, derived)
+
+Derived from each source's base damage and the damage table. It is not a count from play: each figure assumes every shot lands at point blank for full damage, with no falloff and no other rules, so real fights can differ. Base damage used: M4 5.56 mm FMJ 28, M67 frag grenade 100, 120 mm rocket 150, C4 charge 250.
+
+| Structure | HP | M4 5.56 mm FMJ | M67 frag grenade | 120 mm rocket | C4 charge |
+|---|---:|---:|---:|---:|---:|
+| Recon Tower | 5,000 | 893 | 100 | 23 | 14 |
+| Recon Tower floor or roof | 2,250 | 402 | 45 | 11 | 6 |
+
 ## Season 2 changes
 
 - Build cost went from 100 to 200 Build Supplies. The data lists this change for the main tower only.
@@ -73,3 +82,4 @@ The data does not say how many hits the Recon Tower takes to destroy, so that nu
 
 - [Buildables](../../game-features/Wardogs_Buildables_v1.md): cost, health, parts, stages, damage row, placement conditions and cash rewards
 - [Items and equipment changes, Season 2](../../season-2-changes/items-equipment.md): the build cost change
+- [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy for each source of damage.

@@ -67,6 +67,14 @@ The FOB has the most exposure to explosives of any structure. Its IED entry mult
 
 The data sets a field called "do not take damage" on the FOB. How that field works with the damage numbers above and its 15,000 HP is not yet known. The data does not say how many hits the FOB takes to destroy, so that number is not yet known. For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
 
+## Hits to destroy (point blank, derived)
+
+Derived from each source's base damage and the damage table. It is not a count from play: each figure assumes every shot lands at point blank for full damage, with no falloff and no other rules, so real fights can differ. Base damage used: M4 5.56 mm FMJ 28, M67 frag grenade 100, 120 mm rocket 150, C4 charge 250.
+
+| Structure | HP | M4 5.56 mm FMJ | M67 frag grenade | 120 mm rocket | C4 charge |
+|---|---:|---:|---:|---:|---:|
+| Forward Operating Base | 15,000 | 2679 | 50 | 7 | 5 |
+
 ## Season 2 changes
 
 The Season 2 data lists no change to the Forward Operating Base's cost or health.
@@ -83,3 +91,4 @@ The Season 2 data lists no change to the Forward Operating Base's cost or health
 - [Item actions](../../content/Wardogs_ItemActions_v1.md): the FOB placement action, which is separate from the hammer actions
 - [Tag display text](../../content/Wardogs_TagDisplayText_v1.md): the names of the FOB supply containers
 - [Items and equipment changes, Season 2](../../season-2-changes/items-equipment.md): the buildable changes
+- [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy for each source of damage.

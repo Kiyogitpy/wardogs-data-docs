@@ -41,6 +41,20 @@ The item data gives the Ghillie Body Suit no damage reduction and no covered bod
 | **Ghillie Body Suit** | Not yet known | None in the item data | Not yet known |
 | [Level 1 Armor](level-1-armor.md) | 30% | Torso (upper, middle, lower) | 200 |
 
+## Effects when worn together
+
+The suit and the headwear work as a pair. The effects below apply only when both pieces are worn:
+
+| Effect | Change |
+|---|---|
+| Aim down sights time | 20% faster (multiplier 0.8) |
+| Aim sway | 15% more (multiplier 1.15) |
+| Lean and unlean time | 15% slower (multiplier 1.15) |
+| Move speed | 5% slower (multiplier 0.95) |
+| Jump velocity | 5% lower (multiplier 0.95) |
+
+The armor tables have rows for the suit and headwear tags, but the data does not show what they do to damage. The item data still gives no damage reduction.
+
 ## Season 2 changes
 
 The Season 2 data does not list a change for the Ghillie Body Suit.
@@ -61,3 +75,4 @@ The Season 2 data does not list a change for the Ghillie Body Suit.
 - [Items and Equipment changes, Season 2](../../season-2-changes/items-equipment.md)
 - [Tag Display Text](../../content/Wardogs_TagDisplayText_v1.md): category names
 - [Body Armor](body-armor.md): the overview of all armor
+- [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): the combined effect of the Ghillie suit and headwear.

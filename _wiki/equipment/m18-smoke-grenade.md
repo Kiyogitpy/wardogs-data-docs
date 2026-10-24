@@ -24,7 +24,7 @@ description: "The M18 Smoke Grenade in white and black: a thrown smoke cloud tha
 | Internal name | `ID.Item.SmokeGrenade.White`, `ID.Item.SmokeGrenade.Black` |
 {: .wiki-infobox }
 
-The M18 Smoke Grenade makes a cloud of white or black smoke that lasts 120 s. It is the plain smoke throwable, and it is not a blast. The data does not say that the cloud blocks sight or targeting, so what it does in play is not yet known.
+The M18 Smoke Grenade makes a cloud of white or black smoke that lasts 120 s. It is the plain smoke throwable, and it is not a blast. In the code found, the only thing that reads the cloud is the aim-assist target picker, so smoke blocks aim assist. Spotting, lock-on and the minimap do not read it. Whether enemy AI sight is blocked is not confirmed.
 
 ## Overview
 
@@ -40,7 +40,7 @@ The coloured signal grenades use the same smoke but also place a marker on the m
 
 **Cloud.** The cloud lasts 120 s. The smoke stops at walls, so it does not pass through them.
 
-**Players in the cloud.** The data does not apply any game effect through the smoke. It does not hurt, heal or slow anyone in the cloud. Whether the cloud blocks sight or enemy targeting is not yet known.
+**Players in the cloud.** The data does not apply any game effect through the smoke. It does not hurt, heal or slow anyone in the cloud. The only effect found is on aim assist, as described above.
 
 ## Damage
 
@@ -62,3 +62,4 @@ The Season 2 items data lists no change to the M18 Smoke Grenade, and no change 
 - [Item Shop for Non-Weapon Items](../../game-features/Wardogs_ItemShop_v1.md): names, prices and shop text
 - [Explosive actor defaults](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/explosive-actors.json): throwable fuse values
 - [Items and Equipment changes, Season 2](../../season-2-changes/items-equipment.md): the Season 2 check
+- [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): what the smoke cloud affects in the code found.

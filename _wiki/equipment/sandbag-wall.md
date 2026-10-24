@@ -61,6 +61,14 @@ The table shows how much of each damage source reaches the wall. A change of -85
 
 These are the entries that match one source on its own. The data also has entries for particular ammunition and calibers, which this table does not show. The data does not say how many hits a Sandbag Wall takes to destroy, so the number of rockets or bullets it needs is not yet known.
 
+## Hits to destroy (point blank, derived)
+
+Derived from each source's base damage and the damage table. It is not a count from play: each figure assumes every shot lands at point blank for full damage, with no falloff and no other rules, so real fights can differ. Base damage used: M4 5.56 mm FMJ 28, M67 frag grenade 100, 120 mm rocket 150, C4 charge 250.
+
+| Structure | HP | M4 5.56 mm FMJ | M67 frag grenade | 120 mm rocket | C4 charge |
+|---|---:|---:|---:|---:|---:|
+| Sandbag Wall | 735 | 175 | 8 | 1 | 1 |
+
 ## Season 2 changes
 
 The Season 2 data lists no change to the Sandbag Wall's cost or health. Season 2 changed six values in three entries of the buildable damage table, but the data does not say which structures those entries affect.
@@ -76,3 +84,4 @@ The Season 2 data lists no change to the Sandbag Wall's cost or health. Season 2
 - [Buildables](../../game-features/Wardogs_Buildables_v1.md): cost, health, stages, damage row, placement conditions and cash rewards
 - [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md): how the percentage changes are applied (section 6)
 - [Items and equipment changes, Season 2](../../season-2-changes/items-equipment.md): the buildable damage table changes
+- [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy for each source of damage.

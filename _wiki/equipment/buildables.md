@@ -68,7 +68,7 @@ Stationary weapons are built like structures, with the same placement rules:
 | L81 Mortar | 600 | 3,000 | L |
 | Loudspeaker | 200 | 1,000 | M, L |
 | Stingray | 650 | 3,000 | L |
-| MG Nest | 650 | 3,000 (the vehicle damage table uses 1,800; see [MG Nest](mg-nest.md)) | L |
+| MG Nest | 650 | 3,000 while under construction (1,800 once finished; see [MG Nest](mg-nest.md)) | L |
 
 ### Individual emplacements
 
@@ -121,7 +121,7 @@ Each structure has a damage row that changes how much damage each source does to
 | Builder's Radio | 1,000 | +70% | -85% | +500% | +1,000% | +400% | +800% |
 | Forward Operating Base | 15,000 | -80% | -80% | +200% | +1,400% | +1,250% | +5,000% |
 
-Plain reading: a Bunker takes about a fifth of the bullet damage, and rockets do their normal damage plus 45%. Rockets, C4 and IEDs multiply the damage to most structures. The Forward Operating Base is the most exposed to IEDs, at +5,000%, which is 51 times the normal damage. These are the damage entries that match one source on its own. Other entries, for particular weapons and ammunition, can also apply, so these figures are a first estimate. The data does not yet show how many hits each structure takes to destroy.
+Plain reading: a Bunker takes about a fifth of the bullet damage, and rockets do their normal damage plus 45%. Rockets, C4 and IEDs multiply the damage to most structures. The Forward Operating Base is the most exposed to IEDs, at +5,000%, which is 51 times the normal damage. These are the damage entries that match one source on its own. Other entries, for particular weapons and ammunition, can also apply, so these figures are a first estimate. The hits each structure takes to destroy are derived in the table below.
 
 The full table for every structure is on the [Buildables](../../game-features/Wardogs_Buildables_v1.md) data page.
 
@@ -162,13 +162,37 @@ What the Drill Rig does to the hot zone is not yet known.
 
 ### Refuel and repair
 
-The Refuel Station and Repair Station work with Fuel Supplies and Mechanical Supplies. Their refuel and repair rates are not yet known.
+The Refuel Station and Repair Station work with Fuel Supplies and Mechanical Supplies. Each has a Fast restock (5% in 3 s, for 75 or 100 cash) and a Max restock (up to 100% in 9 s, for 1,500 or 2,000 cash), using 5 supplies per restock. See [Refuel and Repair Stations](refuel-and-repair-stations.md).
 
 ## Cost
 
 The cost column in the Structures table is the Build Supplies cost. The data does not yet show exactly when Build Supplies are taken, at placement or while building. Build Supplies cost 10 cash each in the shop and are sold in lots of 50.
 
 Hammers cost 2,400 cash (Large), 800 (Medium) and 100 (Small). The Forward Operating Base costs 7,500 cash.
+
+## Hits to destroy (point blank, derived)
+
+Derived from each source's base damage and the damage table. It is not a count from play: each figure assumes every shot lands at point blank for full damage, with no falloff and no other rules, so real fights can differ. Base damage used: M4 5.56 mm FMJ 28, M67 frag grenade 100, 120 mm rocket 150, C4 charge 250. Parts of larger structures (floors, roofs, door sections) have less health and take fewer hits. Each structure's article gives its parts.
+
+| Structure | HP | M4 5.56 mm FMJ | M67 frag grenade | 120 mm rocket | C4 charge |
+|---|---:|---:|---:|---:|---:|
+| Barbed Wire | 250 | 60 | 3 | 1 | 1 |
+| Recon Tent | 300 | 72 | 3 | 1 | 1 |
+| Sandbag Wall | 735 | 175 | 8 | 1 | 1 |
+| Wood base | 735 | 175 | 8 | 1 | 1 |
+| Hedgehog | 4,500 | 1072 | 90 | 6 | 3 |
+| Hesco Block (Small) | 1,600 | 286 | 11 | 5 | 2 |
+| Builder's Radio | 1,000 | 239 | 2 | 1 | 1 |
+| Hesco Block (Large) | 2,250 | 402 | 15 | 9 | 4 |
+| Hesco Wall | 4,600 | 822 | 46 | 11 | 8 |
+| Shelter | 2,250 | 402 | 15 | 9 | 4 |
+| Door | 2,200 | 524 | 22 | 2 | 3 |
+| Gate | 5,320 | 1267 | 54 | 4 | 2 |
+| Bremer Wall | 6,500 | 1161 | 44 | 13 | 7 |
+| Bunker, Recon Tower or Indirect Fire Shelter | 5,000 | 893 | 100 | 23 | 14 |
+| Refuel Station or Repair Station | 1,600 | 286 | 11 | 1 | 1 |
+| Drill Rig | 2,500 | 596 | 25 | 2 | 2 |
+| Forward Operating Base | 15,000 | 2679 | 50 | 7 | 5 |
 
 ## Season 2 changes
 
@@ -201,3 +225,4 @@ Several entries in the buildable damage table changed by 5 to 17 percentage poin
 - [Buildables](../../game-features/Wardogs_Buildables_v1.md): costs, health, stages, damage rows, placement rules and the Drill Rig settings
 - [Item Shop for Non-Weapon Items](../../game-features/Wardogs_ItemShop_v1.md): hammer prices, build speed text and supply prices
 - [Items and Equipment changes, Season 2](../../season-2-changes/items-equipment.md): build cost, hammer and damage row changes
+- [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy and the stationary weapons' health.
