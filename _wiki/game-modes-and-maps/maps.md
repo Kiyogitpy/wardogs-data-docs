@@ -9,12 +9,12 @@ description: "Every map the data names, the modes that use it, and its zone layo
 
 | Maps | |
 |---|---|
-| Maps named in the data | Bakurani, Ozeti, Zestafona, Saburtulo, Bakurani Outskirts - Jutari, plus Africa |
+| Maps named in the data | Bakurani, Ozeti, Zestafona, Saburtulo, Bakurani Outskirts - Jutari, plus one unnamed layout labelled Africa in the data |
 | Map entries with no display name | Four King of the Hill entries, and the North America and Russia Sniper Showdown layouts |
 | Training gyms | Two test areas, not playable modes |
 {: .wiki-infobox }
 
-Wardogs has four main King of the Hill maps, a Sniper Showdown map and an Africa zone set. Each is named in the server browser by the name players see. The sources do not describe level layouts, spawn points or buildings, so the articles here cover only what the data records about each map.
+Wardogs has four main King of the Hill maps, a Sniper Showdown map and one unnamed layout whose data is labelled Africa. The first five are named in the server browser by the name players see. The sources do not describe level layouts, spawn points or buildings, so the articles here cover only what the data records about each map.
 
 ## Individual maps
 
@@ -23,7 +23,7 @@ Wardogs has four main King of the Hill maps, a Sniper Showdown map and an Africa
 - [Zestafona](zestafona.md), King of the Hill
 - [Saburtulo](saburtulo.md), King of the Hill
 - [Bakurani Outskirts - Jutari](bakurani-outskirts-jutari.md), Sniper Showdown
-- [Africa](africa.md), zone set with no server browser name
+- [Unnamed Africa layout](unnamed-africa-layout.md), zone set with no server browser name
 
 ## Overview
 
@@ -34,7 +34,7 @@ Wardogs has four main King of the Hill maps, a Sniper Showdown map and an Africa
 | Zestafona | King of the Hill | 500 m, 4 placements | 56 | Its Hot Zone is 850 m tall. |
 | Saburtulo | King of the Hill | 550 m, 4 placements | Not in the data | Its shader warm-up list was added in Season 2. |
 | Bakurani Outskirts - Jutari | Sniper Showdown | 350 m, fixed spot | Not in the data | Sniper Showdown's own map entry. |
-| Africa | Control Zone set | 550 m, 4 placements | Not in the data | Added in Season 2. Its display name is not in the data. |
+| [Unnamed Africa layout](unnamed-africa-layout.md) | Control Zone set | 550 m, 4 placements | Not in the data | Added in Season 2. Its display name is not in the data, and the Africa label is the data's, not a map name. |
 | Four more entries | King of the Hill | Not in the data | Not in the data | The server browser lists them without display names. Their names are not yet known. |
 | Sniper Showdown layouts (North America and Russia) | Sniper Showdown | 350 m, fixed spot | Not in the data | Not matched to a display name in the sources. |
 | Deathmatch | Deathmatch | Not applicable | Not applicable | Listed in the server browser with no map name. |
@@ -63,9 +63,9 @@ A King of the Hill map. Its Control Zone is 550 m across and 150 m tall, with fo
 
 The Sniper Showdown map. Its zone is 350 m across and 170 m tall, with a 75 m Hot Zone and a fixed spot. See [Sniper Showdown](sniper-showdown.md).
 
-### Africa
+### Unnamed Africa layout
 
-A zone set added in Season 2. Its Control Zone is 550 m across and 150 m tall. Four placements exist: a default with weight 1, and North, East and West with weight 0. The server browser table has no display name for this set, so it is listed here by its layout only.
+A zone set (labelled Africa in the data) added in Season 2. Its Control Zone is 550 m across and 150 m tall. Four placements exist: a default with weight 1, and North, East and West with weight 0. The server browser table has no display name for this set, so it is listed here by its layout only.
 
 ### Other entries
 

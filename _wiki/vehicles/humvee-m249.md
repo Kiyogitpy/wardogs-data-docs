@@ -56,9 +56,9 @@ Hits needed to destroy the main health. These counts are derived by simulating t
 
 | Weapon | Type | Rate | Effective range | Reload | Starting ammunition |
 |---|---|---:|---:|---:|---:|
-| M249 Machine Gun (ring turret) | Machine gun | Not yet known | Not yet known | Not yet known | Not yet known |
+| M249 Machine Gun (ring turret) | Machine gun | Not yet known | Not yet known | 4.25 s | 0 (tracer) |
 
-The data does not give the rate of fire, range, reload or starting ammunition for this gun.
+The data gives the reload time and the starting ammunition for this gun (none loaded at the start, tracer rounds). It does not give the rate of fire or the range, so those are not yet known.
 
 ## Handling
 

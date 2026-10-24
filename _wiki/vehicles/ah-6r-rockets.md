@@ -58,9 +58,9 @@ Hits needed to destroy the main health. These counts are derived by simulating t
 
 | Weapon | Type | Rate | Effective range | Reload | Starting ammunition |
 |---|---|---:|---:|---:|---:|
-| B-13 Rocket Pods (two, 122 mm) | Rockets | 350 rounds/min | 1,000 m | Not yet known | Not yet known |
+| B-13 Rocket Pods (two, 122 mm) | Rockets | 350 rounds/min | 1,000 m | 6.0 s | 0 |
 
-The data does not give the reload time or starting rocket count for this variant. The seats are a driver and one active passenger, as listed for the attack variants.
+The pod reloads in 6.0 s and starts with no rockets loaded, according to the weapon data. The seats are a driver and one active passenger, as listed for the attack variants.
 
 ## Handling
 

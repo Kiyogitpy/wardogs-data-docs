@@ -32,7 +32,7 @@ A downed player is on the ground and cannot fight. Health does not drop any furt
 - **Reviving by hand.** A teammate holds the revive for 20 seconds with no equipment. The health the revived player comes back with is not yet known.
 - **Reviving with a defibrillator.** A defibrillator revives the player instantly to 35 HP. It needs a battery and a 4 s charge. The user cannot use it while downed.
 - **Reviving with a Medical Bag.** A teammate can revive a player with a Medical Bag, restoring 50 HP and costing 10 durability.
-- **Reviving with a resuscitator.** Resuscitators revive faster than bare hands. Each one is a single use. The health they restore is not yet known.
+- **Reviving with a resuscitator.** Resuscitators revive faster than bare hands. Each one is a single use. The use animation is 2.2 s and the item keeps running until its container is empty or the target is full (up to 44 s, derived). The health they restore is not yet known.
 - **Revived again.** A player who is revived and then goes down again gets a bleed-out timer of at least 30 s. At half drain speed that is about 60 seconds.
 - **Revive boost.** After a Medic reviews a teammate, both can get a short sprint speed boost for 5 seconds (see the skills table below).
 
@@ -46,8 +46,8 @@ Healing items:
 |---|---|---|---|
 | Bandage | +35 HP | 5.2 s on yourself, 4.8 s on a teammate | Stack of 5 |
 | Individual First Aid Kit | +100 HP | 5.2 s (heal lands at 4.7 s) | Single item |
-| Medical Bag, yourself | 35 HP over 5 s | 7 HP per second | Costs 25 durability per use from 150 |
-| Medical Bag, teammate | 15 HP over 1.5 s | 10 HP per second | Costs 2 durability per use |
+| Medical Bag, yourself | 35 HP over 5 s | 7 HP per second | The data lists a durability cost of 25 for a self heal, from a pool of 150; how it is spent is not confirmed |
+| Medical Bag, teammate | 15 HP over 1.5 s | 10 HP per second | The data lists a durability cost of 2 for a teammate heal |
 | Enox | +40 HP as decaying health | 2.2 s | Pool of 40; the decay rate is not confirmed |
 | Adrenaline Pen | No healing; unlimited tactical sprint for 60 s | 2 s on yourself, 1.3 s on a teammate | Stack of 3 |
 
@@ -75,7 +75,7 @@ The other Medic skills have names and descriptions in the data, but the size of 
 ## Not yet known
 
 - The health a bare-hands revive restores.
-- The health a resuscitator restores, and how long a resuscitator revive takes.
+- The health a resuscitator restores, and how much of the 44 s container a resuscitator revive actually uses.
 - Whether natural regeneration exists for infantry. The data shows a 10-second delay before regeneration would start, but no healing over time.
 - The exact decay rate of Enox's extra health.
 - What the Medic skills for bleed-out time and heal speed change in play.
