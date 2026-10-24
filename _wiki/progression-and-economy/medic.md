@@ -54,8 +54,53 @@ All six roles share one mastery XP curve. The milestones for Medic are:
 
 The full curve is in [Cash and Rewards](cash-and-rewards.md#role-mastery-xp). Whether each value is a running total or a step from the level before is not stated.
 
-- **Rewards per level.** Not yet known. The sources do not list a reward for each Medic mastery level, and the platform mastery reward data has no entries for roles.
-- **Unlock tree.** Medic items unlock through the role tree at a minimum mastery level, with a cash cost. The Season 2 section lists the changes, which are large for this role.
+- **Rewards per level.** None in the data. The level table has an empty reward list for every level, so a level gives no reward of its own. What a level gives is access to the unlock tree (see Unlocks below).
+- **Unlock tree.** 38 items and vehicles, from level 1 to level 50, with 1,220,000 cash in total. Each one needs a role level and a cash price (see Unlocks below).
+
+## Unlocks
+
+Each row is one item, vehicle or attachment in the Medic unlock tree, with the role level it needs and its cash cost. The data gives no other cost for any unlock. Rows at 0 cash are magazines, ammunition and explosives. Where the data has no display name for an item, the row describes it in plain words.
+
+| Role level | Item | Cash |
+|---|---:|---:|
+| 1 | Eclipse Flash Hider | 7,500 |
+| 2 | Resuscitator | 10,000 |
+| 4 | MP5 20 RND Magazine | 0 |
+| 4 | MP5 | 25,000 |
+| 5 | White smoke grenade | 7,500 |
+| 6 | Holographic Sight | 20,000 |
+| 8 | MP5 30 RND Magazine | 10,000 |
+| 10 | Individual First Aid Kit | 25,000 |
+| 11 | AFG Angled Foregrip | 10,000 |
+| 12 | Ballista Brake | 15,000 |
+| 13 | QD-5 Suppressor | 12,500 |
+| 14 | Medkit | 50,000 |
+| 15 | PP-19 Vityaz magazine | 0 |
+| 15 | PP-19 Vityaz | 50,000 |
+| 16 | Stim Pen | 25,000 |
+| 17 | PP-19 Vityaz 10 RND Magazine | 10,000 |
+| 18 | PP-19 Vityaz Flash Hider | 17,500 |
+| 19 | Vektor Frenix-X Micro Reflex Sight | 15,000 |
+| 20 | AMP-9 15 RND Magazine | 0 |
+| 20 | AMP-9 | 75,000 |
+| 21 | PP-19 50 RND Vityaz Drum Magazine | 15,000 |
+| 22 | Defibrillator | 110,000 |
+| 23 | Black smoke grenade | 15,000 |
+| 24 | PP-19-01 Vityaz 9x19 Suppressor | 20,000 |
+| 25 | AMP-9 20 RND Magazine | 12,500 |
+| 26 | AMP-9 Tactical Flash Hider | 45,000 |
+| 27 | AMP-9 9x19 Suppressor | 25,000 |
+| 28 | Dual Port Brake | 22,500 |
+| 29 | MP5 50 RND Drum Magazine | 50,000 |
+| 30 | AMP-9 magazine | 50,000 |
+| 35 | Super-45 13 RND Magazine | 0 |
+| 35 | Super-45 | 200,000 |
+| 36 | Super-45 Flash Hider | 40,000 |
+| 40 | Ghost LITE Muzzle Brake | 30,000 |
+| 43 | Super-45 30 RND Magazine | 25,000 |
+| 45 | AMP-9 50 RND Drum Magazine | 75,000 |
+| 48 | SG Multi-Caliber Suppressor | 50,000 |
+| 50 | Super-45 40 RND Drum Magazine | 50,000 |
 
 ## How the role earns cash and XP
 
@@ -104,5 +149,7 @@ When a heal brings a downed player back, it pays 1,500 with a defibrillator or r
 - [Progression tables](../../game-features/Wardogs_Progression_v1.md), including the Medic skill table
 - [Rewards and progression](../../Wardogs_Rewards_and_Progression_v2.md)
 - [Session-event reward lookups](../../content/Wardogs_RewardLookup_SessionEvents_v1.md)
-- [Battle-pass track and Platform Mastery rewards](../../content/Wardogs_TreeRewardTrack_PlatformMastery_v1.md)
+- [Reward track and platform mastery data](../../content/Wardogs_TreeRewardTrack_PlatformMastery_v1.md)
 - [Season 2 changes: Rewards & Unlocks](../../season-2-changes/rewards-unlocks.md)
+- [Economy data: role unlock tree](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/economy.json) (JSON)
+- [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md)

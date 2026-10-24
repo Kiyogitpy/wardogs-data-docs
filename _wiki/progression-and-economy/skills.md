@@ -11,7 +11,7 @@ description: "The six roles and their 62 skills: what each skill changes in play
 |---|---|
 | Roles | Assault (17 skills), Recon (17), Support (12), Medic (4), Pilot (6), Driver (6) |
 | Total | 62 skills |
-| Unlock level and cost | Not yet known (see below) |
+| Unlock level and cost | Not in the game data: skills are not part of the unlock tree |
 | Internal name | Role skill tables (one per role, plus four plugin tables) |
 {: .wiki-infobox }
 
@@ -30,7 +30,7 @@ Each role has its own skill set. A skill tweaks one part of play: how fast a wea
 
 A skill is stored as a set of effects. Each effect changes one value, such as aiming time or recoil, by a multiplier. The strength of the multiplier grows with the skill's rank. The data stores that growth as a curve for each skill. Lower aim-time multipliers mean faster aiming, for example.
 
-Skill unlock levels and costs are not in the sources. The skill tree layout exists, but the tree that links skills to unlock levels does not list them, so the level and cost of each rank are not yet known.
+Skills are not part of the role unlock tree. The tree lists 264 items and vehicles, each with a role level and a cash cost (see the Unlocks table on each role page), and none of them is a skill. The skill tree screen shows 130 nodes, but only 62 of them have a skill effect in the data. The other 68 have a name and a description and a place on the grid, with no effect. The level and cost of each skill rank are not in the game data. Skill points are reserved (see [Currencies](currencies.md)).
 
 ## How it works
 
@@ -106,3 +106,4 @@ The sources list no Season 2 changes to the skill tables. Season 2 did change th
 - [Progression tables](../../game-features/Wardogs_Progression_v1.md), including the skill tables
 - [Rewards and progression](../../Wardogs_Rewards_and_Progression_v2.md)
 - [Season 2 changes: Rewards & Unlocks](../../season-2-changes/rewards-unlocks.md)
+- [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md)

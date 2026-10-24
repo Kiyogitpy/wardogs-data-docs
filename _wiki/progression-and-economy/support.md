@@ -62,8 +62,48 @@ All six roles share one mastery XP curve. The milestones for Support are:
 
 The full curve is in [Cash and Rewards](cash-and-rewards.md#role-mastery-xp). Whether each value is a running total or a step from the level before is not stated.
 
-- **Rewards per level.** Not yet known. The sources do not list a reward for each Support mastery level, and the platform mastery reward data has no entries for roles.
-- **Unlock tree.** Support items unlock through the role tree at a minimum mastery level, with a cash cost. The Season 2 section lists the changes.
+- **Rewards per level.** None in the data. The level table has an empty reward list for every level, so a level gives no reward of its own. What a level gives is access to the unlock tree (see Unlocks below).
+- **Unlock tree.** 33 items and vehicles, from level 1 to level 50, with 1,630,000 cash in total. Each one needs a role level and a cash price (see Unlocks below).
+
+## Unlocks
+
+Each row is one item, vehicle or attachment in the Support unlock tree, with the role level it needs and its cash cost. The data gives no other cost for any unlock. Rows at 0 cash are magazines, ammunition and explosives. Where the data has no display name for an item, the row describes it in plain words.
+
+| Role level | Item | Cash |
+|---|---:|---:|
+| 1 | Light repair drill | 10,000 |
+| 3 | Medium hammer | 25,000 |
+| 6 | 93mm | 0 |
+| 6 | RPG-7 | 30,000 |
+| 8 | Large hammer | 75,000 |
+| 10 | M500 | 50,000 |
+| 11 | M500 Sabre Brake | 17,500 |
+| 12 | PGO-7 | 10,000 |
+| 13 | Improved Cylinder Choke | 7,500 |
+| 14 | 9K333 Verba | 50,000 |
+| 15 | PKM magazine | 0 |
+| 15 | PKM | 100,000 |
+| 16 | Full Choke | 30,000 |
+| 17 | PKM Bipod | 25,000 |
+| 18 | MAAWS | 100,000 |
+| 19 | Slotted Flash Hider | 20,000 |
+| 20 | M249 100 RND Fabric Magazine | 0 |
+| 20 | M249 SAW | 150,000 |
+| 21 | 4x Combat Prism Scope with Reflex | 35,000 |
+| 24 | M249 Bipod | 50,000 |
+| 25 | Anti-tank mine | 75,000 |
+| 26 | M249 200 RND Box | 35,000 |
+| 27 | Tread Brake | 10,000 |
+| 28 | Heavy repair drill | 50,000 |
+| 30 | Evo-3 Ultra 50 RND Box | 0 |
+| 30 | Evo-3 Ultra | 200,000 |
+| 32 | 12 Gauge Suppressor | 25,000 |
+| 33 | Evo-3 Ultra Bipod | 75,000 |
+| 35 | 40mm | 0 |
+| 35 | MGL-40 | 250,000 |
+| 40 | SL7i-BL Suppressor | 35,000 |
+| 45 | Orpheus Max Brake | 40,000 |
+| 50 | Hybrid Grip Pod | 50,000 |
 
 ## How the role earns cash and XP
 
@@ -97,5 +137,7 @@ The reward tables list events, not roles. The events below are the ones that fit
 - [Rewards and progression](../../Wardogs_Rewards_and_Progression_v2.md)
 - [Rewards (buildables)](../../game-features/Wardogs_GameFeatures_Rewards_v2.md)
 - [Session-event reward lookups](../../content/Wardogs_RewardLookup_SessionEvents_v1.md)
-- [Battle-pass track and Platform Mastery rewards](../../content/Wardogs_TreeRewardTrack_PlatformMastery_v1.md)
+- [Reward track and platform mastery data](../../content/Wardogs_TreeRewardTrack_PlatformMastery_v1.md)
 - [Season 2 changes: Rewards & Unlocks](../../season-2-changes/rewards-unlocks.md)
+- [Economy data: role unlock tree](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/economy.json) (JSON)
+- [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md)

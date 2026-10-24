@@ -2,7 +2,7 @@
 title: "Weapon Mastery"
 parent: "Progression & Economy"
 group: "Unlocks"
-description: "How weapon mastery is organised: the eight weapon types it tracks, the Season 1 skins that go with them, and what the data does not yet say about XP and rewards per level."
+description: "The mastery screen's lists: 8 weapon types with 25 weapons, and 2 vehicle types with 8 vehicles. The data has no XP, level or reward table for either, so how progress is earned is not in the game data."
 ---
 
 # Weapon Mastery
@@ -10,40 +10,52 @@ description: "How weapon mastery is organised: the eight weapon types it tracks,
 | Weapon Mastery | |
 |---|---|
 | **General** | |
-| Kind | Reward track for each weapon type |
-| Weapon types | 8 |
-| XP per level | Not yet known |
-| Rewards per level | Not yet known |
-| Internal name | DA_UI_PlatformMastery_SceneData |
+| Kind | Mastery track for each weapon type and vehicle type |
+| Weapon types | 8, with 25 weapons on the screen |
+| Vehicle types | 2, with 8 vehicles on the screen |
+| XP per level | Not in the client data |
+| Rewards per level | Not in the client data |
 | **Rewards** | |
 | Season 1 skins | 17 in total: 12 weapon skins (on 11 weapons, the M4 has two), 4 vehicle skins and 1 parachute skin |
+| Internal name | DA_UI_PlatformMastery_SceneData |
 {: .wiki-infobox }
 
-Weapon mastery is the reward track for each type of weapon. The game data calls it platform mastery. It has eight types, and their names match the weapon classes used in this wiki. The sources do not give the XP each level needs or what each level rewards, so most of those figures are marked not yet known.
+Weapon mastery is the mastery track for each type of weapon. The game data calls it platform mastery. The mastery screen has two halves: Weapon Mastery, for eight weapon types, and Vehicle Mastery, for two vehicle types. The data gives the lists that the screen shows. It holds no XP, level or reward table for any of them, so how progress is earned and what each level gives is not in the game data.
 
 ## Overview
 
-Each weapon type has its own mastery progress. The mastery screen shows an "All" view and one view for each type. The eight types are Assault Rifle, Light Machine Gun, Marksman Rifle, Shotgun, Submachine Gun, Sniper Rifle, Pistol and Launcher.
+Each weapon type and vehicle type has its own mastery progress. The mastery screen shows an "All" view and one view for each type.
 
 ## How it works
 
-- **Per type.** Progress is kept for each weapon type, not for each weapon. Which weapons count toward a type is not stated in the sources, but the names match the wiki's weapon classes.
+- **Per type.** Progress is kept for each type, not for each weapon or vehicle. The screen lists which weapons and vehicles belong to each type.
 - **Two tabs.** The platform mastery screen has a Progression tab and a Challenges tab.
-- **XP.** How much XP a weapon type earns, and how much each level needs, is not yet known. The data holds no XP figures for platform mastery.
-- **Separate from role mastery.** Role mastery is a different track for the six roles, with its own XP curve. See [Wardogs Rewards and Progression](../../Wardogs_Rewards_and_Progression_v2.md). It is not covered here.
+- **XP.** The data gives no XP for any weapon or vehicle. No item in this build has a platform XP tag set (it is empty on all 628 item rows), so the data does not say how mastery XP is earned.
+- **Separate from role mastery.** Role mastery is a different track for the six roles, with its own XP curve. See [Cash and Rewards](cash-and-rewards.md#role-mastery-xp).
 
 ## Weapon types
 
-| Weapon type | Weapons in this wiki | Season 1 skin |
-|---|---|---|
-| Assault Rifle | [A-91](../weapons/a-91.md), [AK74](../weapons/ak74.md), [Bushmaster M17S](../weapons/bushmaster-m17s.md), [FAL](../weapons/fal.md), [Galil](../weapons/galil.md), [KH-2002](../weapons/kh-2002.md), [M4](../weapons/m4.md), [T-21](../weapons/t-21.md) | A-91, AK74, Bushmaster M17S, KH-2002, M4 |
-| Light Machine Gun | [Evo-3 Ultra](../weapons/evo-3-ultra.md), [M249 SAW](../weapons/m249-saw.md), [PKM](../weapons/pkm.md) | M249 SAW |
-| Marksman Rifle | [BMR-308](../weapons/bmr-308.md), [M14](../weapons/m14.md), [SKS](../weapons/sks.md), [SVD](../weapons/svd.md), [TCX-SPR](../weapons/tcx-spr.md) | None listed |
-| Shotgun | [M500](../weapons/m500.md), [MP43](../weapons/mp43.md) | M500 |
-| Submachine Gun | [AMP-9](../weapons/amp-9.md), [MP5](../weapons/mp5.md), [PP-19 Bizon](../weapons/pp-19-bizon.md), [PP-19 Vityaz](../weapons/pp-19-vityaz.md), [Super-45](../weapons/super-45.md) | AMP-9 |
-| Sniper Rifle | [AMR 50](../weapons/amr-50.md), [MK22](../weapons/mk22.md), [Mosin Nagant](../weapons/mosin-nagant.md), [SV98](../weapons/sv98.md), [Scout Rifle TD](../weapons/scout-rifle-td.md) | AMR 50, SV98 |
-| Pistol | [Deagle](../weapons/deagle.md), [GGX 17](../weapons/ggx-17.md), [GGX 18](../weapons/ggx-18.md), [Judge](../weapons/judge.md), [M1911](../weapons/m1911.md) | GGX 17 |
-| Launcher | [9K333 Verba](../weapons/9k333-verba.md), [MAAWS](../weapons/maaws.md), [MGL-40](../weapons/mgl-40.md), [RPG-7](../weapons/rpg-7.md) | None listed |
+The lists below are the weapons on the mastery screen, as the screen groups them. Each name links to its wiki article.
+
+| Weapon type | Weapons on the screen |
+|---|---|
+| Assault Rifle (5) | [AK74](../weapons/ak74.md), [M4](../weapons/m4.md), [KH-2002](../weapons/kh-2002.md), [T-21](../weapons/t-21.md), [A-91](../weapons/a-91.md) |
+| Light Machine Gun (2) | [PKM](../weapons/pkm.md), [M249 SAW](../weapons/m249-saw.md) |
+| Marksman Rifle (3) | [BMR-308](../weapons/bmr-308.md), [SKS](../weapons/sks.md), [SVD](../weapons/svd.md) |
+| Shotgun (2) | [MP43](../weapons/mp43.md), [M500](../weapons/m500.md) |
+| Submachine Gun (3) | [AMP-9](../weapons/amp-9.md), [Super-45](../weapons/super-45.md), [PP-19 Vityaz](../weapons/pp-19-vityaz.md) |
+| Sniper Rifle (4) | [MK22](../weapons/mk22.md), [SV98](../weapons/sv98.md), [Mosin Nagant](../weapons/mosin-nagant.md), [AMR 50](../weapons/amr-50.md) |
+| Pistol (2) | [GGX 17](../weapons/ggx-17.md), [Judge](../weapons/judge.md) |
+| Launcher (4) | [RPG-7](../weapons/rpg-7.md), [MAAWS](../weapons/maaws.md), [9K333 Verba](../weapons/9k333-verba.md), [MGL-40](../weapons/mgl-40.md) |
+
+These lists differ from the weapon classes used elsewhere on this wiki. The Galil, FAL, Bushmaster M17S, Evo-3 Ultra, TCX-SPR, MP5, GGX 18, Deagle and M1911 are not on the mastery screen, although some of them have skins. The mapping is by item ID.
+
+## Vehicle types
+
+| Vehicle type | Vehicles on the screen |
+|---|---|
+| Land Vehicle (5) | [SPH-2](../vehicles/sph-2.md) (artillery), [L2A6](../vehicles/l2a6.md) (heavy tank), [Kodiak](../vehicles/kodiak.md), [Bobcat](../vehicles/bobcat.md), Lonestar spawn vehicle |
+| Air Vehicle (3) | [Havoc](../vehicles/havoc.md), [MH-6](../vehicles/mh-6.md) (Little Bird), and a third helicopter that has no wiki article yet |
 
 The Season 1 skin table names three weapons differently from this wiki. Its AX50 row is the AMR 50, its MP9 row is the AMP-9, and its Glock 17 row is the GGX 17. The mapping here is by item ID.
 
@@ -69,15 +81,15 @@ The Season 1 cosmetic data lists skins for weapons, vehicles and a parachute, in
 | Humvee, Bobcat, Littlebird and Dune Buggy | Vehicles | Two-Tone Desert |
 | Sports parachute | Parachute | Digital Wood |
 
-The data does not say how a skin is granted. The Season 1 level schedule is empty in this build, so which mastery level unlocks which skin is not yet known. No skin is listed for the Marksman Rifle or Launcher types.
+The data does not say how a skin is granted. The Season 1 skins are sold on the Gold Market, and the backend can grant items outside the shop (see [Cosmetics](cosmetics.md)). No mastery level is linked to a skin in the data. No skin is listed for the Marksman Rifle or Launcher types.
 
 ### Parts
 
-The data has a mastery paint title and a mastery texture slot for paints, but it lists no mastery paint names and no weapon paint list. Which attachments or parts a weapon type unlocks is not yet known.
+The data has a mastery paint title and a mastery texture slot for paints, but it lists no mastery paint names and no weapon paint list. Which attachments or parts a weapon type unlocks is not in the data.
 
 ### XP and rewards per level
 
-Not yet known. The mastery data holds screen text, colours and icon settings. It has no XP figures and no reward for any level. The level and XP thresholds that gate the track are not in the data.
+Not in the client data. The mastery data holds screen text, colours and icon settings. It has no XP figures and no reward for any level, and the backend has no platform mastery content type. The level and XP thresholds that would gate the track do not appear in the client.
 
 ## Season 2 changes
 
@@ -91,10 +103,12 @@ The Season 02 update changed the text strings for the reward track and its panel
 
 ## Sources
 
-- [Battle-pass track and platform mastery rewards](../../content/Wardogs_TreeRewardTrack_PlatformMastery_v1.md)
+- [Reward track and platform mastery data](../../content/Wardogs_TreeRewardTrack_PlatformMastery_v1.md)
 - [Season 1 cosmetic and item unlocks](../../content/Wardogs_Season01_CosmeticUnlocks_v1.md)
 - [Season 2 changes: Rewards & Unlocks](../../season-2-changes/rewards-unlocks.md)
 - [Rewards and progression](../../Wardogs_Rewards_and_Progression_v2.md)
 - [Platform mastery screen data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Mastery/Platforms/Data/DA_UI_PlatformMastery_SceneData.json) (JSON)
 - [Season 1 skin table](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season01_SkinsData/Content/Data/DT_Cosmetics_Season01_Skins.json) (JSON)
 - [Mastery paint select data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/UI/Flair/PaintSelect/Data/Mastery/DA_Itemsmith_MasteryPaintSelect.json) (JSON)
+- [Economy data: platform mastery](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/economy.json) (JSON)
+- [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md)
