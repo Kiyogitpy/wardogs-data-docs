@@ -1,0 +1,156 @@
+---
+title: Round 36 economy and progression gaps
+nav_exclude: true
+---
+
+# Round 36: where the economy and progression "not yet known" values live
+
+Seven gaps on the wiki's Progression and Economy pages. For each: status (FOUND, NATIVE, SERVER, ABSENT), values, source, evidence level and how to reproduce. Everything is static: cooked data read with the offline extractor, SDK headers, and string and pseudocode search. Nothing was run or contacted.
+
+| # | Gap | Status |
+|---|---|---|
+| 1 | Weapon (platform) mastery: XP, levels, rewards | ABSENT in the client; no backend type for it either |
+| 2 | Achievements: thresholds and rewards | FOUND (4 thresholds, criteria for all 10); rewards ABSENT (a Steam achievement is the only reward) |
+| 3 | Wagers: targets and payouts | FOUND (counts, odds, limits); settlement is SERVER |
+| 4 | Skill unlock level or cost, skill points | ABSENT in the client (skills are not in any unlock table; skill points are reserved tags only) |
+| 5 | Gold Bars and Intel | Gold Bars: FOUND route (cash exchange), rate SERVER. Intel spending: ABSENT |
+| 6 | Season routes, MH-6 expiry | Schedule SERVER; routes FOUND (Gold Market and order fulfilment only); expiry enforcement unresolved |
+| 7 | Mastery rewards per role level | FOUND: the `Rewards` arrays are empty; the unlock tree is the reward |
+
+Machine-readable rows: [`assets/data/economy.json`](../../assets/data/economy.json), written by [`_tools/economy_tables.py`](../../_tools/economy_tables.py).
+
+## The backend serves these tables (the SERVER question, answered once)
+
+Evidence level: SDK headers (`sdk/raw`), static.
+
+- The client links the Pragma Engine backend SDK (`PragmaSDK`, `OnlineSubsystemPragma`). Player state is requested through proto structs: `Pragma_PlayerData_CreditCurrency*`, `TryDebitCurrencies*`, `PurchaseCollectionItem*`, `GrantCollectionItems*`, `GrantFulfilledCollectionItems*`, `ExecuteExchange*` and `ExecuteExchangeV2*`, `GetGoldExchangeState*`, `UpgradeNode*`, `UpdateNode*`, `CurrenciesHandleSeasonReset*`, `PlayerMasteryHandleSeasonReset*`, `TrySeasonReset*`, `ForceSeasonReset*`, and `Pragma_Order_*` (Steam inventory and ownership, Epic entitlement, Xbox, PlayStation and Twitch order sources).
+- Game content reaches the client as versioned "game data": `EPragma_CustomGameData_DataArray_TypeType` has 18 types: GlobalAnnouncements, Currencies, PlayerMastery, VendorData, ExchangeDefinitions, LiveCurves, ChallengeRewards, MetaTrees, GoldMarketItems, Collection, Seasons, MockInvestments, ClientHotConfig, WagerActions, WagerConditions, WagerPricing, WagerObjectiveCatalog. `GetVersionedGameDataV8Response` carries the first fourteen. Each has a client marshaler (`UOnline*DataMarshaler`) and a `UWD*BackendDataHandler`.
+- `UBackendGameDataExporterConfigurationPragma` lists the file paths the editor exports for each type (currency, exchange, gold market, mastery, meta trees, vendor, live curves, challenge rewards, season definitions, vault entries, mock investments, client hot config, four wager files). The cooked client tables (`DT_CurrenciesDefinitions`, `DT_ExchangeDefinitions`, `DT_GoldMarket`, `DT_RoleMasteryDefinitions`, `DT_MetaTree_Roles`, `DT_SeasonDefinitions`, `DT_Wager*` and so on) are the source of those exports. What the live service holds today can differ; this repository sees only the shipped copy.
+- Types that do not exist as content: there is no platform mastery, achievement, skill point or Intel content type. That is the evidence behind the ABSENT results below.
+
+## 1. Weapon (platform) mastery
+
+Status: ABSENT. Evidence: cooked data read, SDK headers, tag lists. Not run.
+
+- Membership is known. `DA_UI_PlatformMastery_SceneData` lists the platforms per type. Weapon Mastery: AssaultRifle 5 (AK74M, M4, KH2002, TAR21, A91), LMG 2 (LMG_02, M249), MarksmanRifle 3 (RFB, SKS, SVDM), Shotgun 2 (MP43, M500), SMG 3 (MP9, Vector, SMG_03), Sniper 4 (MK22, SV98, Mosin, SR_04), Pistol 2 (Glock17, Judge), Launcher 4 (RPG7, CGM4, Launcher_04, MMGL): 25 weapons. Vehicle Mastery: LandVehicle 5 (Artillery, Heavy tank, Kodiak, Bobcat, Lonestar spawn vehicle), AirVehicle 3 (Havoc, Littlebird, ROT_01): 8 vehicles. The wiki says eight types of weapon; it does not mention the vehicle half or the exact weapon lists (they differ from the wiki's class lists: for example no Galil, FAL, Bushmaster, PKM).
+- No XP per level, no max level, no reward per level. `DA_UI_PlatformMastery_*` hold colours, icon tags and text only. The classes behind them (`WDUIPlatformMasteryProgressViewModel`, `...ProgressBarViewModel`, `...RewardViewModel`, `...RewardData`) are UI types.
+- The XP plumbing is reserved but unused. `Attribute.Meta.XP.Platform.*` exists for 26 weapons (`WEPN_001` to `WEPN_026`) and 8 vehicles (Bobcat, Havoc, Huey, Kodiak, Leopard, LittleBird, PZH2000, SpawnVehicle). `GE_Meta_ResourceChange` has one SetByCaller Add modifier for each. But `PlatformXPTag` (a field of `BHEntityData_UI`) is `None` on all 628 entity-data rows in every `DT_EntityData_*` table, no reward or challenge row names a platform XP tag, and `DT_RoleMasteryDefinitions` has only the six roles. The native tag `Attribute.Meta.XP.Platform` is registered at RVA 0x128B310 (`sub_14128B310`, `AddNativeGameplayTag`); that is a registration, not an award rule.
+- Skins carry a mastery colour. Each skin asset (`Skin_BlackAndGold`, `Skin_DigitalWood`, ...) has `MasteryColour` and `DisplayMastery` (0 or 1) per weapon, so a mastery-coloured part is a planned cosmetic. When it shows is not in the data.
+- How XP is earned and what each level gives: not determinable from the client. The backend has no platform mastery content type, so there is nothing to ask for. The Season 1 skins are bought on the Gold Market, not earned.
+
+Reproduce: `python -I _tools/economy_tables.py` (`platformMastery`); `grep -rl "XP.Platform" data` finds only the tag list; entity rows with `PlatformXPTag` set: 0 of 628.
+
+## 2. Achievements
+
+Status: thresholds FOUND, rewards ABSENT. Evidence: cooked package bytes read (thresholds), StateTree export read (criteria).
+
+The achievement rows (`DT_Challenges_SessionEvents_Shared`) have `Rewards` `[]` and `Objectives` `[]`; `DT_Achievements` has only the Steam id and name. The reward of an achievement is the Steam achievement itself.
+
+| Achievement | Steam id | Threshold | Criterion |
+|---|---|---|---|
+| Loadout Spender | `ACH_ECONOMY_LOADOUT_SPEND` | `CashThreshold` 100,000 | One loadout purchase event (resource = cash) with a change of at least 100,000 (`GreaterOrEqual`). Sign handling of the change is not read. |
+| Single Life Profit | `ACH_ECONOMY_SINGLE_LIFE_PROFIT` | `CashThreshold` 100,000 | The match-stat profit difference reaches 100,000 (`GreaterOrEqual`) on a profit-changed event. |
+| Control Zone Survivor | `ACH_SURVIVAL_CONTROL_ZONE_SURVIVOR` | `RequiredSeconds` 3,600 (1 hour) | Enter a control zone, then stay (alive) for 3,600 s; a death resets the watch. |
+| Long Shot | `ACH_COMBAT_LONG_SHOT` | `DistanceThreshold` 95,000 (Unreal units, cm: 950 m) | A kill of a hostile target at message distance at least 95,000 (`GreaterOrEqual`). The unit is derived: the kill-distance reward curves use the same unit (30,000 = 300 m). |
+| Complete The Tutorial | `ACH_TUTORIAL_COMPLETED` | none | `Event.StateTree.TutorialCompleted`. |
+| Punch Kristopher | `ACH_TUTORIAL_PUNCH_KRISTOPHER` | none | Melee damage to the tutorial NPC Kristopher. |
+| Top Cash Earner | `ACH_ECONOMY_TOP_CASH_EARNER` | none | No event; a match-stat check: cash-earned placement is 1 and cash earned is above 0. |
+| Ricochet Kill | `ACH_COMBAT_RICOCHET_KILL` | none | Kill of a hostile with the ricochet tag. |
+| Defibrillator Kill | `ACH_COMBAT_DEFIBRILLATOR_KILL` | none | Kill of a hostile with the defibrillator tag. |
+| Clean Sweep | `ACH_MATCH_CLEAN_SWEEP` | none | Final faction scores: own score above 0 and the opposing faction at 0. |
+
+"Hidden criteria" in the sense of conditions the name does not state: Top Cash Earner needs a positive amount as well as first place; Clean Sweep needs the player's own faction to have scored; Control Zone Survivor is lost on death; Punch Kristopher needs melee damage; Long Shot, Ricochet Kill and Defibrillator Kill only count hostile targets. The Steam ids are in `DT_Achievements` and in `economy.json`.
+
+### How the bytes were read
+
+CUE4Parse exports a property bag (`Parameters`) as descriptors and `SerialSize` and skips the values, so the JSON in `data/` shows `SerialSize` 6 and 3 but no number. `docs/evidence/round36-econ-package-bytes.cs` dumps a package's bytes. In `Meta/Challenges/DT_Challenges_SessionEvents_Shared` each override is: descriptor GUID, name, value type, `int32 SerialSize` = 6, then an unversioned-property block: a 2-byte fragment header (`00 03` = one value, no zero mask) and the 4-byte value:
+
+| Parameter | Block | Value |
+|---|---|---|
+| Loadout Spender `CashThreshold` | `00 03 a0 86 01 00` | int32 100000 |
+| Single Life Profit `CashThreshold` | `00 03 a0 86 01 00` | int32 100000 |
+| Control Zone Survivor `RequiredSeconds` | `00 03 00 00 61 45` | float 3600.0 |
+| Long Shot `DistanceThreshold` | `00 03 00 8c b9 47` | float 95000.0 |
+
+Method check: the same decoding of `DT_PassiveMissionChallenges` EarnCash.1 (bag `SerialSize` 31, header `00 07`, first value `88 13 00 00`) gives `RequiredAmount` 5000, equal to that row's objective value 5000. The tutorial and other achievements have `SerialSize` 2 (no parameters). `python -I _tools/economy_tables.py --bytes <dir>` re-checks these against a dump.
+
+## 3. Wagers
+
+Status: counts, odds and limits FOUND; settlement SERVER. Evidence: cooked data read (plus UI strings for the formula).
+
+- Targets. The four wager challenges (`DT_WagerChallenges`) hold only a placeholder: the bag value of `NumPlayersToKill` is 1 (bytes `00 03 01 00 00 00`). The target is the count the player picks. `DT_WagerActions` gives each action's range and default:
+
+| Action | Count (min to max, default) | Cooldown | Rules |
+|---|---|---|---|
+| Kills | 1 to 25, default 1 | 86,400 s | Inside the control zone; enemy players only; not a player an enemy revived; repeats on the same player do not count |
+| PlayerDelivery | 1 to 20, default 1 | 86,400 s | Spawn vehicles do not count; counts once the passenger survives the drop-off |
+| Revives | 1 to 50, default 5 | 86,400 s | Inside the control zone; teammates only; not a player downed by a teammate or themselves; repeats on the same player do not count |
+| VehiclesDestroyed | 1 to 20, default 1 | 86,400 s | An enemy must be driving it; an enemy must have bought it |
+
+- Odds by count. Each action has an odds list indexed by count. Kills: 1.001 for counts 1 to 3, 1.0055 at 4, 1.01 at 5, up to 1.2004 at 25. Revives: 1.001 to count 5, up to 1.2498 at 50. PlayerDelivery: 1.001 to count 5, 1.0771 at 20. VehiclesDestroyed: 1.001 to count 3, 1.1479 at 20 (full lists in `economy.json`).
+- Pricing (`DT_WagerPricing`): stake 2,500 to 100,000 cash, `MaxPayout` 5,000,000, `FoldBonusStep` 0.25, `LivesOdds` [1.009, 1.003, 1.002, 1.001], two unnamed floats 1.001 and 100.0.
+- Conditions (`DT_WagerConditions`): 50, each with an odds multiplier, from 1.005 (5 tapes in the vehicle) to 10.0 (Deathwish); others include Time Limit 4.0, No Vehicles 3.0, No Resupply 2.0, Havoc destroyed 1.7, With Headshot 1.2.
+- Prebuilt objectives (`DT_WagerObjectiveCatalog`): 17. Public ones: Kills3 (3 kills, 1.001), Kills2WithHeadshot (2, 1.2012), Revives2 (2, 1.001), PlayerDelivery3 (3, 1.001), VehiclesDestroyed1 (1, 1.001). Three are test rows (`TestParked` 300 s cooldown, `TestLockedWagerNode`, `TestLockedNodeInNoTree`). Nine carry the flag set (Hammertime 10/20/25 kills at 1.5/1.64/1.72 in a hot zone with a hammer; MedicMarathon 30/40/50 revives at 1.37/1.44/1.51; AllDrillerNoFiller 15/20/25 kills with the light drill at 1.57/1.64/1.72).
+- Slip rules from the UI text (`DA_VendorPanel_Wagers_Create`, `DA_WagerReceipt`): "Every objective after the first adds x{Step}" and "{Legs} objectives: 1 + {Extra} x {Step}" (so a multi bonus of 1 + (objectives - 1) x 0.25), "Total odds", "Return", "{Line} (capped)", "Requires Wardog level {Level}", deaths allowed. The `LivesOdds` list is read as odds by deaths allowed; that is an inference from the strings.
+- Not in the client: the exact settlement formula (stake times combined odds, capped at 5,000,000, is what the labels say) and the Wardog level that unlocks wagers. The unlock tag `Meta.Unlocks.Wager` is named by a test objective but is not a node in `DT_MetaTree_Roles`. Wager pricing, actions, conditions and the objective catalog are four exported backend content types, so settlement is a backend operation (status SERVER; formula not read).
+
+## 4. Skill unlocks and skill points
+
+Status: ABSENT. Evidence: cooked data read, SDK structs, tag lists.
+
+- `DT_MetaTree_Roles` is the only `WDMetaTreeTableRow` table. Its 264 nodes (7 trees: six roles and Wardog) are items and vehicles and the Gold Exchange; every node has one level, one level gate and a cash cost. None of the 62 skill tags is a node (checked by tag).
+- The tree UI layout (`DA_UI_RoleSkillTree_NodePresetData`) places 130 nodes (Infantry 29, Medic 22, Support 27, Pilot 12, Recon 28, Driver 12), a circular grid of 4 rows by 9 columns. Only 62 have an effect row (`DT_*Skills`). The other 68 have a name and description in `DT_CharacterSkillNodes_Data` (131 rows) and a grid position only, for example `Meta.Role.Infantry.StrongArm`, `Meta.Role.Infantry.MeleeDamage`, `Meta.Role.Medic.DragSpeed`, `Meta.Role.Support.ReloadSpeed.LMG`.
+- The upgrade call: `WDMetaTreeComponent::Server_TryUpgradeNode(treetag, NodeTag)` and `Pragma_PlayerData_UpgradeNodeRequestProto` (NodeId, TreeId, MetaTrees, Currency and PlayerMastery content versions). The backend checks the exported tree, which has no skill node.
+- Skill points: six `Attribute.Meta.Currency.SkillPoint.Role.<Role>` tags and six SetByCaller Add modifiers in `GE_Meta_ResourceChange`, beside the role XP modifiers. `DT_CurrenciesDefinitions` defines only Cash and Gold Bars (a `Pragma_Content_CurrencySpec` is built from it), no table or reward row grants skill points, and the tag has no other use in `data/` or the SDK. So skill points are reserved: no earning rule and no cost in the client.
+- What the skill rows do carry: the curve of values by rank (see [Progression](../../game-features/Wardogs_Progression_v1.md)). Rank thresholds, if any, are not in the client.
+
+## 5. Gold Bars and Intel
+
+Status: Gold Bars route FOUND, rate SERVER; Intel spend ABSENT. Evidence: cooked UI text, SDK structs, static.
+
+- Gold Bars are earned by exchange, not by play. The Gold Exchange text (`DA_InfoPrompt_GoldExchange`): "Exchange cash earned in matches for Gold Bars - WARDOGS endgame currency. Gold bars can then be used to obtain cosmetics in the Gold Market. Exchange rates of gold vary so timing your exchange is key... Gold Bars exchanges cannot be resold / refunded." The unlock node text says "Trade cash for gold bars which can be used to unlock cosmetics". The progression info prompt adds: "At the end of a major update cycle your level progression and cash will be reset... Any remaining cash at the end of a cycle will be automatically exchanged for gold bars."
+- The exchange is gated: `Meta.Unlocks.GoldExchange` in the Wardog tree needs Wardog level 35 and 150,000 cash.
+- The rate is server data. `DT_ExchangeDefinitions` has a Gold Bars row with `ExchangeRates` `[]`. The backend type `Pragma_Content_ExchangeDefinitionSpec` is an ExchangeId with a `PriceHistory`; the graph widget has 1W, 4W, 12W and 52W ranges and the label "{ExchangeRate} = 1 gold bar". The requests carry the content version and a data timestamp (`ExecuteExchangeV2requestProto`: ExchangeId, Quantity, CurrencyContentVersion, ExchangeContentVersion, ExchangeDataTimestampSeconds). `GetGoldExchangeStateResponseProto` returns Enabled, UnlockNodeId and Unlocked.
+- Season end: `CurrenciesHandleSeasonResetResponseProto` returns `EndOfSeasonCashValue` and `RewardedGoldBars`; `SeasonCompletedComponentProto` stores both with the end-of-season mastery info. So the leftover cash is converted by the backend at the reset. No cash-to-gold rate is in the client.
+- Other earning paths: no reward row, challenge, mission or achievement pays Gold Bars (`Attribute.Meta.Currency.GoldBars` appears 5 times in `data/`: twice in the currency table, twice in the exchange table, once in the Gold Exchange graph). The order service (`Pragma_Order_*`, with Steam inventory, ownership and other storefront sources, and `bEnableFulfillOrders=True` in `DT_ClientHotConfigs`) exists, but no SKU or Gold Bars pack is in the client, so whether Gold Bars are sold for money is not determinable. Currency spec also has a `Limit` field; the client table sets none.
+- Intel. `Attribute.Meta.Currency.Intel` appears 15 times in `data/`, all as the reward of the 15 passive mission tiers (100 to 500; reward type `REWARD_TYPE_INVALID`). It is not in `DT_CurrenciesDefinitions` (so no starting balance, no backend currency spec), is in no cost list (every one of 264 unlock costs and the investment costs is cash), no vendor or exchange uses it, and the Black Market missions panel (`DA_MissionsPanel_Intel`) only lists the missions. Intel has no spend path in the client. The native tag list (`Attribute.Meta.Currency.Cash`, `.Intel`, `.GoldBars`) shows it is a known currency tag.
+
+## 6. Seasons, cosmetic routes and MH-6 expiry
+
+Status: schedule SERVER; routes FOUND; MH-6 expiry enforcement unresolved. Evidence: cooked data, SDK, static.
+
+- Schedule. `DT_SeasonDefinitions` is `CurrentSeasonNumber` 1 with an empty list. The backend season type is `Pragma_Content_SeasonDefinition` (SeasonNumber, SeasonName, HasExpirationTime, ExpirationTimestampSeconds), delivered in game data. The season rewards popup reads "SEASON {SeasonName}" and a role level view model, and the progression scene shows a countdown ("{Days}:{Hours}:{Minutes}:{Seconds}"). So the real schedule (dates, names) is server-side and not visible.
+- What a season does (UI text and backend structs): progression (levels and cash) resets at the end of a major update cycle with notice; remaining cash is exchanged for Gold Bars; end-of-season mastery info is stored.
+- Reward tracks. There is no battle-pass content: no season reward track type exists among the 18 content types; the "reward track" widgets (`TreeRewardTrack*`) are the role unlock tree view. Season 1 and Season 2 cosmetic tables (`DT_Cosmetics_Season01_*`) are collection items with no level, cost or unlock field.
+- Cosmetic routes in the client: (a) Gold Market purchase: `PurchaseCollectionItem` with a Gold Market price (`GoldMarketItemSpec`: cost, tile, expiry); (b) backend grants: `GrantCollectionItems` and `GrantFulfilledCollectionItems` (fulfilled items come from the order service, with `AvailableOn`, per platform). Items with no Gold Market row (AK74 Black and Gold, faction logos, taxi skin, bobbleheads) can only come from route (b) or something outside the client; which one is not determinable.
+- MH-6 (Black and Gold Little Bird, `Meta.Cosmetic.BlackAndGold.Littlebird`): 30 Gold Bars, `ExpirationType` `EXPIRATION_NO_END_TIME` (value 1), `ExpirationTime` 639342720000000000 ticks = 2026-12-31 00:00:00 UTC. The enum has three values: NO_EXPIRATION (0, the other 26 rows), EXPIRATION_NO_END_TIME (1) and EXPIRATION_WITH_END_TIME (2); the backend spec has the same three and a timestamp. The Gold Market tile shows a "{Days}:{Hours}:{Minutes}:{Seconds}" countdown. No function that reads the expiration type was found in the pseudocode corpus (search for the field and type names gives nothing), so whether type 1 hides the item at the timestamp, or only flags it, is not determinable here. Type 2 would be the one that names an end time. Wiki wording should stay: flagged as expiring, date 31 Dec 2026 in the data, effect not confirmed.
+
+## 7. Mastery rewards per role level
+
+Status: FOUND (none are listed). Evidence: cooked data read.
+
+- `DT_RoleMasteryDefinitions` has 101 level rows (0 to 100) for each of the six roles, identical XP curves (level 100 needs 5,132,500; level 1 200, level 10 25,000), and an empty `Rewards` array on every one of the 606 rows. The backend `Pragma_Content_LevelDefinition` has a Rewards list and `Pragma_Content_Reward` types (unlock challenge, unlock component, currency), but the client table fills none.
+- What a level does give is access: the unlock tree gates each item behind a role level and a cash price. Counts (nodes, level range, total cash): Recon 58 (2 to 50, 2,445,000), Infantry 40 (2 to 50, 1,270,000), Medic 38 (1 to 50, 1,220,000), Support 33 (1 to 50, 1,630,000), Driver 21 (3 to 35, 2,308,250), Pilot 11 (2 to 35, 1,218,250), and the Wardog tree 63 (1 to 150, 2,645,000). The Wardog tree runs to level 150, so the overall Wardog level is not capped at 100 like the role levels; how the six role levels combine ("all role levels culminate into your overall wardog level") is not shown. Free nodes (cash 0) are magazines and ammunition that come with a weapon.
+- Per node rows are in `economy.json` (`roleUnlocks.nodes`: tree, tag, name where the item name is known, level, cash). 191 of 264 tags have no friendly name in the entity tables, so they stay as tags.
+
+## Not resolved
+
+- Platform mastery XP, levels and rewards (nothing to read).
+- Skill rank unlock thresholds and skill points (nothing to read).
+- Wager settlement formula and the unlock level for wagers.
+- Gold Exchange rate history and Gold Bar conversion at the reset (server).
+- Season dates and names (server).
+- MH-6 type 1 expiry behaviour.
+- Whether `TopCashEarner` and `CleanSweep` (no event trigger) are fired by a native end-of-match call.
+
+## Wiki updates
+
+- `_wiki/progression-and-economy/weapon-mastery.md` -> infobox "XP per level / Rewards per level: Not yet known" -> "Not in the client data (no platform mastery XP, level or reward table exists, and the backend has no content type for it)". Add that the mastery screen also has a Vehicle Mastery half (Land 5, Air 3: Artillery, Heavy tank, Kodiak, Bobcat, Lonestar spawn vehicle; Havoc, Little Bird, ROT_01) and replace the class tables with the screen's exact weapon lists (25 weapons: AR AK74M, M4, KH-2002, T-21, A-91; LMG Evo-3 Ultra, M249; Marksman RFB, SKS, SVD; Shotgun MP43, M500; SMG AMP-9, Vector, SMG_03; Sniper MK22, SV98, Mosin, SR_04; Pistol GGX 17, Judge; Launcher RPG-7, CGM4, Launcher_04, MMGL), flagged as "as listed on the mastery screen"; name mapping to wiki weapon pages by item id.
+- `_wiki/progression-and-economy/weapon-mastery.md` -> "XP and rewards per level: Not yet known" -> "No platform XP is set on any item in this build (PlatformXPTag is None on all 628 item rows), so how weapon mastery XP is earned is not in the data".
+- `_wiki/progression-and-economy/achievements.md` -> "Thresholds ... The sources do not give those numbers" -> Loadout Spender 100,000 cash in one loadout purchase; Single Life Profit 100,000 cash profit in one life; Control Zone Survivor 3,600 seconds (1 hour) alive in a control zone; Long Shot 95,000 Unreal units (950 m). Infobox "Rewards: Not in the data" -> "None in the data: the Steam achievement is the reward". Add the criteria (Top Cash Earner: first place and above 0 cash; Clean Sweep: own faction scored above 0 and the opposition at 0; Punch Kristopher: melee hit on the tutorial NPC Kristopher; kill achievements count hostile targets only; death resets Control Zone Survivor).
+- `_wiki/progression-and-economy/wagers.md` -> "Target number: Not in the data" -> Kills 1 to 25 (default 1), Dropoff People 1 to 20 (default 1), Revive Teammates 1 to 50 (default 5), Destroy Occupied Vehicles 1 to 20 (default 1), picked on the slip; add the odds ranges (Kills 1.001 to 1.2004, Revives 1.001 to 1.2498, Dropoff 1.001 to 1.0771, Vehicles 1.001 to 1.1479), 50 conditions with odds from 1.005 to 10.0, a multi-objective bonus step of 0.25 per extra objective, a payout cap of 5,000,000 cash, 86,400 s (24 h) cooldown per action, prebuilt objectives (Kills3, Kills2WithHeadshot, Revives2, PlayerDelivery3, VehiclesDestroyed1). Keep "Rewards: Not in the data" for the challenge rows but say the payout is stake times odds as the slip shows it, settled by the backend, exact formula not read.
+- `_wiki/progression-and-economy/skills.md` -> "Unlock level and cost: Not yet known" -> "Not in the game data: skills are not part of the unlock tree" and add that the skill tree screen lists 130 nodes but only 62 have an effect, with the other 68 named but unfinished; "Skill points" paragraph in currencies.md -> "reserved: six per-role tags exist, nothing grants or spends them".
+- `_wiki/progression-and-economy/currencies.md` -> infobox and Gold Bars section "No way to earn them is in the data" -> "Earned by exchanging cash at the Gold Exchange (unlocked at Wardog level 35 for 150,000 cash); the exchange rate changes over time and is set by the server; cash left at the end of a season or major update cycle is exchanged for Gold Bars automatically". Intel -> "Earned from passive missions (15 tiers, 100 to 500); the data gives it no use and it has no balance entry". Skill points row -> "Reserved tags only".
+- `_wiki/progression-and-economy/currencies.md` and `cosmetics.md` -> MH-6: "Its expiration type is 'no end time', so whether it leaves the market at that date is not yet known" stays accurate; add that the field has three values (no expiry, expiry with no end time, expiry with an end time) and the tile counts down, and that the server decides.
+- `_wiki/progression-and-economy/cash-and-rewards.md` (role mastery XP section), `assault.md`, `recon.md`, `support.md`, `medic.md`, `pilot.md`, `driver.md` -> "Mastery rewards per role level": every role has 100 levels with no rewards listed in the level table; the unlock tree is the reward (items at a level for cash). Add per-role unlock counts and level ranges from `economy.json`; the role pages can list their tree rows (level, cash).
+- `_wiki/progression-and-economy/cosmetics.md`, `season-01-cosmetics.md`, `weapon-skins.md`, `vehicle-skins.md` -> "Unlock schedule: not yet known" -> "Gold Market purchase is the only client route; items with no Gold Market row can be granted by the backend (including order fulfilment); there is no battle pass or season reward track in the data; the season schedule is a server value".

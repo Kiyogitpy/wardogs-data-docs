@@ -22,6 +22,15 @@ Full before/after list: [Season 2 Changes → Rewards & Unlocks]({{ '/season-2-c
 
 ---
 
+## Round 36 findings (platform mastery and the reward track)
+
+- **What the reward track shows.** The Progression scene's tree reward track ("// Level {Level} Unlockable Items", "{Cost} to Unlock", "{Experience}XP Required") draws the role unlock tree `DT_MetaTree_Roles`: each node is an item or vehicle with a role level and a cash cost. `DT_RoleMasteryDefinitions` lists 101 levels (0 to 100) for each of the six roles with an empty `Rewards` array on every level, so there is no separate reward per level. The rows are in [`economy.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/economy.json) (`roleUnlocks`).
+- **Platform mastery membership.** [`DA_UI_PlatformMastery_SceneData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Mastery/Platforms/Data/DA_UI_PlatformMastery_SceneData.json) lists the platforms of each mastery type: `UI.Meta.Mastery.Weapon` (AssaultRifle 5, LMG 2, MarksmanRifle 3, Shotgun 2, SMG 3, Sniper 4, Pistol 2, Launcher 4 = 25 weapons) and `UI.Meta.Mastery.Vehicle` (LandVehicle 5, AirVehicle 3 = 8 vehicles). Platform mastery therefore has a vehicle half as well as a weapon half.
+- **No XP, level or reward data.** `Attribute.Meta.XP.Platform.*` tags exist for 26 weapons and 8 vehicles and `GE_Meta_ResourceChange` has a SetByCaller modifier for each, but `PlatformXPTag` is `None` on all 628 entity-data rows, no reward row or table names a platform XP tag, and the content types the backend serves (`EPragma_CustomGameData_DataArray_TypeType`) have no platform mastery type. The mastery view models are UI shells (`WDUIPlatformMastery*`). Status: absent from the client data; see [round 36 economy](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md#1-weapon-platform-mastery).
+- **Season definitions.** `DT_SeasonDefinitions` is empty here, but the backend has a season type (`Pragma_Content_SeasonDefinition`: number, name, optional expiry timestamp) delivered by `GetVersionedGameData`, so the live schedule is a server value.
+
+---
+
 ## 1. [`DA_TreeRewardTrackCard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Progression/Widgets/Widgets/TreeRewardCard/Data/DA_TreeRewardTrackCard.json) (`WDUIUnlockTreeData`)
 
 ### 1a. Package

@@ -1,0 +1,4227 @@
+{
+ "meta": {
+  "source": "data/Wardogs/Content (CL516586 cooked export) plus package bytes for achievement parameter values",
+  "script": "_tools/economy_tables.py",
+  "evidence": "docs/evidence/round36-econ.md"
+ },
+ "achievements": [
+  {
+   "tag": "Achievement.Tutorial.Completed",
+   "name": "Complete The Tutorial",
+   "steamId": "ACH_TUTORIAL_COMPLETED",
+   "stateTree": "ST_Achievement_TutorialCompleted",
+   "autoActivate": true,
+   "rewards": [],
+   "objectives": [],
+   "parameter": null,
+   "threshold": null,
+   "unit": null,
+   "criteria": "Event.StateTree.TutorialCompleted fires (the tutorial is finished)."
+  },
+  {
+   "tag": "Achievement.Tutorial.PunchKristopher",
+   "name": "Punch Kristopher",
+   "steamId": "ACH_TUTORIAL_PUNCH_KRISTOPHER",
+   "stateTree": "ST_Achievement_PunchKristopher",
+   "autoActivate": true,
+   "rewards": [],
+   "objectives": [],
+   "parameter": null,
+   "threshold": null,
+   "unit": null,
+   "criteria": "A character-damaged event whose target is Kristopher (the tutorial NPC) and whose damage is melee."
+  },
+  {
+   "tag": "Achievement.Economy.TopCashEarner",
+   "name": "Top Cash Earner",
+   "steamId": "ACH_ECONOMY_TOP_CASH_EARNER",
+   "stateTree": "ST_Achievement_TopCashEarner",
+   "autoActivate": true,
+   "rewards": [],
+   "objectives": [],
+   "parameter": null,
+   "threshold": null,
+   "unit": null,
+   "criteria": "No event trigger. Checked on a match stat: the player's cash-earned placement equals 1 and the cash earned is above 0."
+  },
+  {
+   "tag": "Achievement.Economy.SingleLifeProfit",
+   "name": "Single Life Profit",
+   "steamId": "ACH_ECONOMY_SINGLE_LIFE_PROFIT",
+   "stateTree": "ST_Achievement_SingleLifeProfit",
+   "autoActivate": true,
+   "rewards": [],
+   "objectives": [],
+   "parameter": "CashThreshold",
+   "threshold": 100000,
+   "unit": "cash",
+   "criteria": "Event.StateTree.ProfitChanged; a match-stat difference (profit) compared with CashThreshold using GreaterOrEqual."
+  },
+  {
+   "tag": "Achievement.Economy.LoadoutSpend",
+   "name": "Loadout Spender",
+   "steamId": "ACH_ECONOMY_LOADOUT_SPEND",
+   "stateTree": "ST_Achievement_LoadoutSpend",
+   "autoActivate": true,
+   "rewards": [],
+   "objectives": [],
+   "parameter": "CashThreshold",
+   "threshold": 100000,
+   "unit": "cash",
+   "criteria": "Event.StateTree.LoadoutPurchased; the resource tag must equal cash and the resource change is compared with CashThreshold using GreaterOrEqual."
+  },
+  {
+   "tag": "Achievement.Survival.ControlZoneSurvivor",
+   "name": "Control Zone Survivor",
+   "steamId": "ACH_SURVIVAL_CONTROL_ZONE_SURVIVOR",
+   "stateTree": "ST_Achievement_ControlZoneSurvivor",
+   "autoActivate": true,
+   "rewards": [],
+   "objectives": [],
+   "parameter": "RequiredSeconds",
+   "threshold": 3600.0,
+   "unit": "seconds",
+   "criteria": "Entering a control zone starts a timer; the achievement unlocks when RequiredSeconds pass in the zone and the pawn is still alive. Death resets the watch."
+  },
+  {
+   "tag": "Achievement.Combat.LongShot",
+   "name": "Long Shot",
+   "steamId": "ACH_COMBAT_LONG_SHOT",
+   "stateTree": "ST_Achievement_LongShot",
+   "autoActivate": true,
+   "rewards": [],
+   "objectives": [],
+   "parameter": "DistanceThreshold",
+   "threshold": 95000.0,
+   "unit": "Unreal units (cm); 95000 = 950 m",
+   "criteria": "Event.StateTree.LongShotVitalityChanged; the target is hostile and the message Distance (float) is compared with DistanceThreshold using GreaterOrEqual."
+  },
+  {
+   "tag": "Achievement.Match.CleanSweep",
+   "name": "Clean Sweep",
+   "steamId": "ACH_MATCH_CLEAN_SWEEP",
+   "stateTree": "ST_Achievement_CleanSweep",
+   "autoActivate": true,
+   "rewards": [],
+   "objectives": [],
+   "parameter": null,
+   "threshold": null,
+   "unit": null,
+   "criteria": "No event trigger. Checked on the final faction scores: the player's own faction score is above 0 and the opposing faction's score is 0."
+  },
+  {
+   "tag": "Achievement.Combat.RicochetKill",
+   "name": "Ricochet Kill",
+   "steamId": "ACH_COMBAT_RICOCHET_KILL",
+   "stateTree": "ST_Achievement_RicochetKill",
+   "autoActivate": true,
+   "rewards": [],
+   "objectives": [],
+   "parameter": null,
+   "threshold": null,
+   "unit": null,
+   "criteria": "Event.StateTree.RicochetVitalityChanged; the target is hostile and the kill carries the ricochet tag."
+  },
+  {
+   "tag": "Achievement.Combat.DefibrillatorKill",
+   "name": "Defibrillator Kill",
+   "steamId": "ACH_COMBAT_DEFIBRILLATOR_KILL",
+   "stateTree": "ST_Achievement_DefibrillatorKill",
+   "autoActivate": true,
+   "rewards": [],
+   "objectives": [],
+   "parameter": null,
+   "threshold": null,
+   "unit": null,
+   "criteria": "Event.StateTree.DefibrillatorVitalityChanged; the target is hostile and the kill carries the defibrillator tag."
+  }
+ ],
+ "wagers": {
+  "pricing": {
+   "minStake": 2500,
+   "maxStake": 100000,
+   "maxPayout": 5000000,
+   "foldBonusStep": 0.25,
+   "livesOdds": [
+    1.009,
+    1.003,
+    1.002,
+    1.001
+   ],
+   "unnamedFloats": {
+    "_aaaaneeiimhdoagdnepon": 1.001,
+    "_aaaanhjhmeoeolaclenmp": 100.0
+   }
+  },
+  "actions": [
+   {
+    "tag": "Wager.Action.Kills",
+    "name": "Get {Count} Kills",
+    "shortName": "Kills",
+    "description": "Get this amount of kills.",
+    "challenge": "Challenges.Challenge.Wager.Kills",
+    "countParameter": "NumPlayersToKill",
+    "minCount": 1,
+    "maxCount": 25,
+    "defaultCount": 1,
+    "oddsByCount": [
+     1.001,
+     1.001,
+     1.001,
+     1.0055,
+     1.01,
+     1.0179,
+     1.0258,
+     1.0338,
+     1.0419,
+     1.05,
+     1.0594,
+     1.0689,
+     1.0785,
+     1.0881,
+     1.0979,
+     1.1077,
+     1.1176,
+     1.1276,
+     1.1377,
+     1.1479,
+     1.1582,
+     1.1686,
+     1.1791,
+     1.1897,
+     1.2004
+    ],
+    "rules": [
+     "You must be inside the control zone",
+     "Enemy players only",
+     "Not a player an enemy revived",
+     "Repeats on the same player don't count"
+    ],
+    "payoutResource": "Attribute.Meta.Currency.Cash",
+    "cooldownSeconds": 86400.0
+   },
+   {
+    "tag": "Wager.Action.PlayerDelivery",
+    "name": "Deliver {Count} people to the Control Zone",
+    "shortName": "Players Delivered",
+    "description": "Get this amount of players delivered to the Control Zone",
+    "challenge": "Challenges.Challenge.Wager.PlayerDelivery",
+    "countParameter": "NumPassengersToDeliver",
+    "minCount": 1,
+    "maxCount": 20,
+    "defaultCount": 1,
+    "oddsByCount": [
+     1.001,
+     1.001,
+     1.001,
+     1.001,
+     1.001,
+     1.0058,
+     1.0105,
+     1.0153,
+     1.0202,
+     1.025,
+     1.0301,
+     1.0352,
+     1.0404,
+     1.0455,
+     1.0507,
+     1.056,
+     1.0612,
+     1.0665,
+     1.0718,
+     1.0771
+    ],
+    "rules": [
+     "Spawn vehicles don't count",
+     "Counts once your passenger survives the drop-off"
+    ],
+    "payoutResource": "Attribute.Meta.Currency.Cash",
+    "cooldownSeconds": 86400.0
+   },
+   {
+    "tag": "Wager.Action.Revives",
+    "name": "Revive {Count} Teammates",
+    "shortName": "Revives",
+    "description": "Revive this many teammates.",
+    "challenge": "Challenges.Challenge.Wager.Revives",
+    "countParameter": "NumPlayersToRevive",
+    "minCount": 1,
+    "maxCount": 50,
+    "defaultCount": 5,
+    "oddsByCount": [
+     1.001,
+     1.001,
+     1.001,
+     1.001,
+     1.001,
+     1.0058,
+     1.0105,
+     1.0153,
+     1.0202,
+     1.025,
+     1.0301,
+     1.0352,
+     1.0404,
+     1.0455,
+     1.0507,
+     1.056,
+     1.0612,
+     1.0665,
+     1.0718,
+     1.0771,
+     1.0825,
+     1.0878,
+     1.0932,
+     1.0987,
+     1.1041,
+     1.1096,
+     1.1151,
+     1.1207,
+     1.1263,
+     1.1318,
+     1.1375,
+     1.1431,
+     1.1488,
+     1.1545,
+     1.1603,
+     1.166,
+     1.1718,
+     1.1776,
+     1.1835,
+     1.1894,
+     1.1953,
+     1.2012,
+     1.2072,
+     1.2132,
+     1.2192,
+     1.2253,
+     1.2314,
+     1.2375,
+     1.2437,
+     1.2498
+    ],
+    "rules": [
+     "You must be inside the control zone",
+     "Teammates only",
+     "Not a player downed by a teammate or by themselves",
+     "Repeats on the same player don't count"
+    ],
+    "payoutResource": "Attribute.Meta.Currency.Cash",
+    "cooldownSeconds": 86400.0
+   },
+   {
+    "tag": "Wager.Action.VehiclesDestroyed",
+    "name": "Destroy {Count} Occupied Vehicles",
+    "shortName": "Vehicles Destroyed",
+    "description": "Destroy this many vehicles that have an enemy occupant.",
+    "challenge": "Challenges.Challenge.Wager.VehiclesDestroyed",
+    "countParameter": "NumVehiclesToDestroy",
+    "minCount": 1,
+    "maxCount": 20,
+    "defaultCount": 1,
+    "oddsByCount": [
+     1.001,
+     1.001,
+     1.001,
+     1.0055,
+     1.01,
+     1.0179,
+     1.0258,
+     1.0338,
+     1.0419,
+     1.05,
+     1.0594,
+     1.0689,
+     1.0785,
+     1.0881,
+     1.0979,
+     1.1077,
+     1.1176,
+     1.1276,
+     1.1377,
+     1.1479
+    ],
+    "rules": [
+     "An enemy must be driving it",
+     "An enemy must have bought it"
+    ],
+    "payoutResource": "Attribute.Meta.Currency.Cash",
+    "cooldownSeconds": 86400.0
+   }
+  ],
+  "conditions": [
+   {
+    "tag": "Wager.Condition.Naked",
+    "name": "No Spend",
+    "category": "Wager.ConditionCategory.Rules",
+    "odds": 1.1,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.Deathwish",
+    "name": "Deathwish",
+    "category": "Wager.ConditionCategory.Rules",
+    "odds": 10.0,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.TimeLimit",
+    "name": "Time Limit",
+    "category": "Wager.ConditionCategory.Rules",
+    "odds": 4.0,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.NoVehicles",
+    "name": "No Vehicles",
+    "category": "Wager.ConditionCategory.Self.Loadout",
+    "odds": 3.0,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.NoResupply",
+    "name": "No Resupply",
+    "category": "Wager.ConditionCategory.Self.Loadout",
+    "odds": 2.0,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.Kills.WithAK74",
+    "name": "With {Entity}",
+    "category": "Wager.ConditionCategory.Means.Weapon",
+    "odds": 1.01,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.Kills.WithJudge",
+    "name": "With {Entity}",
+    "category": "Wager.ConditionCategory.Means.Weapon",
+    "odds": 1.3,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.Kills.WithScout",
+    "name": "With {Entity}",
+    "category": "Wager.ConditionCategory.Means.Weapon",
+    "odds": 1.05,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.Kills.WithGrenade",
+    "name": "With {Entity}",
+    "category": "Wager.ConditionCategory.Means.Utility",
+    "odds": 1.45,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.Kills.WithPunch",
+    "name": "With {Entity}",
+    "category": "Wager.ConditionCategory.Means.Weapon",
+    "odds": 1.4,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.Kills.WithLargeHammer",
+    "name": "With {Entity}",
+    "category": "Wager.ConditionCategory.Means.Weapon",
+    "odds": 1.3,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.Kills.UsingHPAmmo",
+    "name": "Using HP Ammo",
+    "category": "Wager.ConditionCategory.Means.Weapon.Ammo",
+    "odds": 1.15,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.Kills.UsingAPAmmo",
+    "name": "Using AP Ammo",
+    "category": "Wager.ConditionCategory.Means.Weapon.Ammo",
+    "odds": 1.1,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.Kills.WithHeadshot",
+    "name": "With Headshot",
+    "category": "Wager.ConditionCategory.Manner",
+    "odds": 1.2,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.VehiclesDestroyed.Tank",
+    "name": "Tank Destroyed",
+    "category": "Wager.ConditionCategory.Target.Vehicle",
+    "odds": 1.6,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.VehiclesDestroyed.Havoc",
+    "name": "{Entity} Destroyed",
+    "category": "Wager.ConditionCategory.Target.Vehicle",
+    "odds": 1.7,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.VehiclesDestroyed.Blackhawk",
+    "name": "{Entity} Destroyed",
+    "category": "Wager.ConditionCategory.Target.Vehicle",
+    "odds": 1.5,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.VehiclesDestroyed.Artillery",
+    "name": "{Entity} Destroyed",
+    "category": "Wager.ConditionCategory.Target.Vehicle",
+    "odds": 1.4,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.VehiclesDestroyed.RocketLittleBird",
+    "name": "{Entity} Destroyed",
+    "category": "Wager.ConditionCategory.Target.Vehicle",
+    "odds": 1.45,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.Revives.WithResus",
+    "name": "With Resus",
+    "category": "Wager.ConditionCategory.Means.Utility",
+    "odds": 1.1,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.Revives.WithDefib",
+    "name": "With {Entity}",
+    "category": "Wager.ConditionCategory.Means.Utility",
+    "odds": 1.025,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.Revives.WithMedkit",
+    "name": "With {Entity}",
+    "category": "Wager.ConditionCategory.Means.Utility",
+    "odds": 1.05,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.PlayerDelivery.ToControlZone",
+    "name": "To Control Zone",
+    "category": "Wager.ConditionCategory.Place",
+    "odds": 1.15,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.PlayerDelivery.ToHotzone",
+    "name": "To Hotzone",
+    "category": "Wager.ConditionCategory.Place",
+    "odds": 1.25,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.PlayerDelivery.InAirVehicle",
+    "name": "In Air Vehicle",
+    "category": "Wager.ConditionCategory.Means.Vehicle",
+    "odds": 1.1,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.PlayerDelivery.InGroundVehicle",
+    "name": "In Ground Vehicle",
+    "category": "Wager.ConditionCategory.Means.Vehicle",
+    "odds": 1.05,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.PlayerDelivery.InLittleBird",
+    "name": "In {Entity}",
+    "category": "Wager.ConditionCategory.Means.Vehicle",
+    "odds": 1.2,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.PlayerDelivery.InBlackhawk",
+    "name": "In {Entity}",
+    "category": "Wager.ConditionCategory.Means.Vehicle",
+    "odds": 1.15,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.PlayerDelivery.InKodiak",
+    "name": "In {Entity}",
+    "category": "Wager.ConditionCategory.Means.Vehicle",
+    "odds": 1.15,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.PlayerDelivery.InDuneBuggy",
+    "name": "In {Entity}",
+    "category": "Wager.ConditionCategory.Means.Vehicle",
+    "odds": 1.025,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.PlayerDelivery.InBobcat",
+    "name": "In {Entity}",
+    "category": "Wager.ConditionCategory.Means.Vehicle",
+    "odds": 1.2,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.PlayerDelivery.InUral",
+    "name": "In {Entity}",
+    "category": "Wager.ConditionCategory.Means.Vehicle",
+    "odds": 1.01,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.Kills.WithVehicleImpact",
+    "name": "With Vehicle Impact",
+    "category": "Wager.ConditionCategory.Means.Weapon",
+    "odds": 1.075,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.Kills.OnlyOneMag",
+    "name": "With Only 1 Mag",
+    "category": "Wager.ConditionCategory.Self.Loadout",
+    "odds": 1.2,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.VehiclesDestroyed.WithTank",
+    "name": "With Tank",
+    "category": "Wager.ConditionCategory.Means.Weapon",
+    "odds": 1.1,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.VehiclesDestroyed.WithHavoc",
+    "name": "With {Entity}",
+    "category": "Wager.ConditionCategory.Means.Weapon",
+    "odds": 1.15,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.VehiclesDestroyed.WithRocketLittleBird",
+    "name": "With {Entity}",
+    "category": "Wager.ConditionCategory.Means.Weapon",
+    "odds": 1.15,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.VehiclesDestroyed.Above50Kph",
+    "name": "While Moving Above 50 kph",
+    "category": "Wager.ConditionCategory.Manner",
+    "odds": 1.1,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.Revives.FarFromTeammates",
+    "name": "50 m From Teammates",
+    "category": "Wager.ConditionCategory.Place.Proximity",
+    "odds": 1.1,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.Revives.NoWeapons",
+    "name": "With No Weapons",
+    "category": "Wager.ConditionCategory.Self.Loadout",
+    "odds": 1.15,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.PlayerDelivery.FiveTapes",
+    "name": "With 5 Tapes in the Vehicle",
+    "category": "Wager.ConditionCategory.Means.Vehicle",
+    "odds": 1.005,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.InControlZone",
+    "name": "In Control Zone",
+    "category": "Wager.ConditionCategory.Place",
+    "odds": 1.15,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.InHotzone",
+    "name": "In Hotzone",
+    "category": "Wager.ConditionCategory.Place",
+    "odds": 1.1,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.NoArmor",
+    "name": "While Wearing No Armor",
+    "category": "Wager.ConditionCategory.Self.Loadout",
+    "odds": 1.15,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.Loadout20k",
+    "name": "With a $20k Loadout",
+    "category": "Wager.ConditionCategory.Self.Loadout",
+    "odds": 1.05,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.NoBandages",
+    "name": "With No Bandages",
+    "category": "Wager.ConditionCategory.Self.Loadout",
+    "odds": 1.15,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.Under50HP",
+    "name": "While Under 50 HP",
+    "category": "Wager.ConditionCategory.Self.Condition",
+    "odds": 1.2,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.Kills.WithSmallHammer",
+    "name": "With {Entity}",
+    "category": "Wager.ConditionCategory.Means.Weapon",
+    "odds": 1.3,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.Revives.MagicHands",
+    "name": "With Magic Hands",
+    "category": "Wager.ConditionCategory.Means.Utility",
+    "odds": 1.1,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   },
+   {
+    "tag": "Wager.Condition.Kills.WithLightDrill",
+    "name": "With {Entity}",
+    "category": "Wager.ConditionCategory.Means.Weapon",
+    "odds": 1.3,
+    "minValue": 0,
+    "maxValue": 0,
+    "valueStep": 1,
+    "cooldownSeconds": 86400.0,
+    "requiresAnyAction": []
+   }
+  ],
+  "objectiveCatalog": [
+   {
+    "id": "Kills3",
+    "action": "Wager.Action.Kills",
+    "count": 3,
+    "conditions": [],
+    "odds": 1.001,
+    "cooldownSeconds": 0.0,
+    "unlockNode": "None",
+    "flag": false
+   },
+   {
+    "id": "Kills2WithHeadshot",
+    "action": "Wager.Action.Kills",
+    "count": 2,
+    "conditions": [
+     "Wager.Condition.Kills.WithHeadshot"
+    ],
+    "odds": 1.2012,
+    "cooldownSeconds": 0.0,
+    "unlockNode": "None",
+    "flag": false
+   },
+   {
+    "id": "Revives2",
+    "action": "Wager.Action.Revives",
+    "count": 2,
+    "conditions": [],
+    "odds": 1.001,
+    "cooldownSeconds": 0.0,
+    "unlockNode": "None",
+    "flag": false
+   },
+   {
+    "id": "PlayerDelivery3",
+    "action": "Wager.Action.PlayerDelivery",
+    "count": 3,
+    "conditions": [],
+    "odds": 1.001,
+    "cooldownSeconds": 0.0,
+    "unlockNode": "None",
+    "flag": false
+   },
+   {
+    "id": "VehiclesDestroyed1",
+    "action": "Wager.Action.VehiclesDestroyed",
+    "count": 1,
+    "conditions": [],
+    "odds": 1.001,
+    "cooldownSeconds": 0.0,
+    "unlockNode": "None",
+    "flag": false
+   },
+   {
+    "id": "TestParked",
+    "action": "Wager.Action.Kills",
+    "count": 1,
+    "conditions": [],
+    "odds": 1.5,
+    "cooldownSeconds": 300.0,
+    "unlockNode": "None",
+    "flag": false
+   },
+   {
+    "id": "TestLockedWagerNode",
+    "action": "Wager.Action.Kills",
+    "count": 1,
+    "conditions": [],
+    "odds": 1.5,
+    "cooldownSeconds": 0.0,
+    "unlockNode": "Meta.Unlocks.Wager",
+    "flag": false
+   },
+   {
+    "id": "TestLockedNodeInNoTree",
+    "action": "Wager.Action.Kills",
+    "count": 1,
+    "conditions": [],
+    "odds": 1.5,
+    "cooldownSeconds": 0.0,
+    "unlockNode": "Wager.Pricing",
+    "flag": false
+   },
+   {
+    "id": "Hammertime1",
+    "action": "Wager.Action.Kills",
+    "count": 10,
+    "conditions": [
+     "Wager.Condition.Kills.WithSmallHammer",
+     "Wager.Condition.InHotzone"
+    ],
+    "odds": 1.5,
+    "cooldownSeconds": 0.0,
+    "unlockNode": "None",
+    "flag": true
+   },
+   {
+    "id": "Hammertime2",
+    "action": "Wager.Action.Kills",
+    "count": 20,
+    "conditions": [
+     "Wager.Condition.Kills.WithSmallHammer",
+     "Wager.Condition.InHotzone"
+    ],
+    "odds": 1.64,
+    "cooldownSeconds": 0.0,
+    "unlockNode": "None",
+    "flag": true
+   },
+   {
+    "id": "Hammertime3",
+    "action": "Wager.Action.Kills",
+    "count": 25,
+    "conditions": [
+     "Wager.Condition.Kills.WithLargeHammer",
+     "Wager.Condition.InHotzone"
+    ],
+    "odds": 1.72,
+    "cooldownSeconds": 0.0,
+    "unlockNode": "None",
+    "flag": true
+   },
+   {
+    "id": "MedicMarathon1",
+    "action": "Wager.Action.Revives",
+    "count": 30,
+    "conditions": [
+     "Wager.Condition.Revives.MagicHands",
+     "Wager.Condition.InHotzone"
+    ],
+    "odds": 1.37,
+    "cooldownSeconds": 0.0,
+    "unlockNode": "None",
+    "flag": true
+   },
+   {
+    "id": "MedicMarathon2",
+    "action": "Wager.Action.Revives",
+    "count": 40,
+    "conditions": [
+     "Wager.Condition.Revives.MagicHands",
+     "Wager.Condition.InHotzone"
+    ],
+    "odds": 1.44,
+    "cooldownSeconds": 0.0,
+    "unlockNode": "None",
+    "flag": true
+   },
+   {
+    "id": "MedicMarathon3",
+    "action": "Wager.Action.Revives",
+    "count": 50,
+    "conditions": [
+     "Wager.Condition.Revives.MagicHands",
+     "Wager.Condition.InHotzone"
+    ],
+    "odds": 1.51,
+    "cooldownSeconds": 0.0,
+    "unlockNode": "None",
+    "flag": true
+   },
+   {
+    "id": "AllDrillerNoFiller1",
+    "action": "Wager.Action.Kills",
+    "count": 15,
+    "conditions": [
+     "Wager.Condition.Kills.WithLightDrill",
+     "Wager.Condition.InHotzone"
+    ],
+    "odds": 1.57,
+    "cooldownSeconds": 0.0,
+    "unlockNode": "None",
+    "flag": true
+   },
+   {
+    "id": "AllDrillerNoFiller2",
+    "action": "Wager.Action.Kills",
+    "count": 20,
+    "conditions": [
+     "Wager.Condition.Kills.WithLightDrill",
+     "Wager.Condition.InHotzone"
+    ],
+    "odds": 1.64,
+    "cooldownSeconds": 0.0,
+    "unlockNode": "None",
+    "flag": true
+   },
+   {
+    "id": "AllDrillerNoFiller3",
+    "action": "Wager.Action.Kills",
+    "count": 25,
+    "conditions": [
+     "Wager.Condition.Kills.WithLightDrill",
+     "Wager.Condition.InHotzone"
+    ],
+    "odds": 1.72,
+    "cooldownSeconds": 0.0,
+    "unlockNode": "None",
+    "flag": true
+   }
+  ]
+ },
+ "roleUnlocks": {
+  "nodes": [
+   {
+    "tree": "Meta.Role.Driver",
+    "node": "Vehicle.Variant.Land.Wheeled.Ural.Default",
+    "name": "URAL",
+    "minLevel": 3,
+    "cash": 35000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Driver",
+    "node": "Id.Item.MusicTape.06",
+    "name": null,
+    "minLevel": 5,
+    "cash": 750,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Driver",
+    "node": "Vehicle.Variant.Land.Wheeled.Kodiak.MachineGun",
+    "name": null,
+    "minLevel": 6,
+    "cash": 50000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Driver",
+    "node": "Vehicle.Variant.Land.Wheeled.WHL_08.Default",
+    "name": null,
+    "minLevel": 8,
+    "cash": 50000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Driver",
+    "node": "Vehicle.Variant.Land.Wheeled.DuneBuggy.Default",
+    "name": "Dune Buggy",
+    "minLevel": 9,
+    "cash": 25000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Driver",
+    "node": "Vehicle.Variant.Land.Wheeled.Kodiak.Pickup",
+    "name": null,
+    "minLevel": 10,
+    "cash": 35000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Driver",
+    "node": "Id.Item.MusicTape.07",
+    "name": null,
+    "minLevel": 13,
+    "cash": 2500,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Driver",
+    "node": "Vehicle.Variant.Land.Wheeled.Humvee.Default",
+    "name": null,
+    "minLevel": 14,
+    "cash": 75000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Driver",
+    "node": "Vehicle.Variant.Land.Wheeled.Ural.Battle",
+    "name": null,
+    "minLevel": 15,
+    "cash": 75000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Driver",
+    "node": "Vehicle.Variant.Land.Wheeled.WHL_08.MachineGun",
+    "name": null,
+    "minLevel": 16,
+    "cash": 125000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Driver",
+    "node": "ID.Item.VehicleSupplyCrate.Large",
+    "name": null,
+    "minLevel": 17,
+    "cash": 20000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Driver",
+    "node": "Vehicle.Variant.Land.Tracked.TNK_04.Default",
+    "name": null,
+    "minLevel": 20,
+    "cash": 250000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Driver",
+    "node": "Vehicle.Variant.Land.Wheeled.Ural.Attack",
+    "name": null,
+    "minLevel": 22,
+    "cash": 100000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Driver",
+    "node": "Id.Item.MusicTape.02",
+    "name": null,
+    "minLevel": 23,
+    "cash": 5000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Driver",
+    "node": "Vehicle.Variant.Land.Wheeled.Humvee.MachineGun",
+    "name": null,
+    "minLevel": 24,
+    "cash": 125000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Driver",
+    "node": "Vehicle.Variant.Land.Tracked.TNK_01.AntiAir",
+    "name": null,
+    "minLevel": 25,
+    "cash": 300000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Driver",
+    "node": "Id.Item.MusicTape.03",
+    "name": null,
+    "minLevel": 28,
+    "cash": 10000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Driver",
+    "node": "Vehicle.Variant.Land.Wheeled.Humvee.Minigun",
+    "name": null,
+    "minLevel": 30,
+    "cash": 150000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Driver",
+    "node": "Vehicle.Variant.Land.Tracked.TNK_01.Artillery",
+    "name": null,
+    "minLevel": 31,
+    "cash": 350000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Driver",
+    "node": "Id.Item.MusicTape.05",
+    "name": null,
+    "minLevel": 33,
+    "cash": 25000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Driver",
+    "node": "Vehicle.Variant.Land.Tracked.TNK_01.Heavy",
+    "name": null,
+    "minLevel": 35,
+    "cash": 500000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.MUZL_039",
+    "name": null,
+    "minLevel": 2,
+    "cash": 5000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.TAR21",
+    "name": "T-21",
+    "minLevel": 3,
+    "cash": 10000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.STANAGMagazine",
+    "name": "STANAG 30 RND Magazine",
+    "minLevel": 3,
+    "cash": 0,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.C4Trigger",
+    "name": null,
+    "minLevel": 4,
+    "cash": 15000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.C4Explosive",
+    "name": null,
+    "minLevel": 4,
+    "cash": 0,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.MUZL_024",
+    "name": null,
+    "minLevel": 5,
+    "cash": 12500,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.MUZL_013",
+    "name": null,
+    "minLevel": 8,
+    "cash": 7500,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.WEPN_029",
+    "name": null,
+    "minLevel": 10,
+    "cash": 35000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.MAGZ_005",
+    "name": null,
+    "minLevel": 10,
+    "cash": 0,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.FGRP_015",
+    "name": null,
+    "minLevel": 11,
+    "cash": 7500,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.SGHT_028",
+    "name": null,
+    "minLevel": 12,
+    "cash": 15000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.Molotov",
+    "name": null,
+    "minLevel": 13,
+    "cash": 25000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.FGRP_014",
+    "name": null,
+    "minLevel": 14,
+    "cash": 10000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.MAGZ_060",
+    "name": null,
+    "minLevel": 15,
+    "cash": 25000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "ID.Item.PWSCQB74Muzzle",
+    "name": "CQB 74 Brake",
+    "minLevel": 16,
+    "cash": 15000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.OPT_08",
+    "name": "2.5x Combat Optic",
+    "minLevel": 17,
+    "cash": 10000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.MZL_09",
+    "name": "PBS-4 Suppressor",
+    "minLevel": 19,
+    "cash": 25000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.WEPN_037",
+    "name": null,
+    "minLevel": 20,
+    "cash": 100000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.MAGZ_069",
+    "name": null,
+    "minLevel": 20,
+    "cash": 0,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.MUZL_014",
+    "name": null,
+    "minLevel": 21,
+    "cash": 20000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.SGHT_016",
+    "name": null,
+    "minLevel": 22,
+    "cash": 10000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.MUZL_032",
+    "name": null,
+    "minLevel": 24,
+    "cash": 30000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.AK74MExtendedMagazine",
+    "name": "AK74 60 RND Magazine",
+    "minLevel": 25,
+    "cash": 30000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.SGHT_023",
+    "name": null,
+    "minLevel": 26,
+    "cash": 30000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.MZL_10",
+    "name": "TGP-A Suppressor 5.45",
+    "minLevel": 27,
+    "cash": 17500,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.M4",
+    "name": "M4",
+    "minLevel": 28,
+    "cash": 150000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.MZL_07",
+    "name": "AR Multi-Caliber Suppressor",
+    "minLevel": 29,
+    "cash": 22500,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.STANAGExtendedMagazine",
+    "name": null,
+    "minLevel": 30,
+    "cash": 25000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.MUZL_067",
+    "name": null,
+    "minLevel": 32,
+    "cash": 35000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.SGHT_029",
+    "name": null,
+    "minLevel": 33,
+    "cash": 15000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.WEPN_030",
+    "name": null,
+    "minLevel": 35,
+    "cash": 250000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.MAGZ_006",
+    "name": null,
+    "minLevel": 35,
+    "cash": 0,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.AK74MMagazine75rnd",
+    "name": "AK74 75 RND Drum Magazine",
+    "minLevel": 36,
+    "cash": 75000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.MUZL_068",
+    "name": null,
+    "minLevel": 37,
+    "cash": 37500,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.FGRP_006",
+    "name": null,
+    "minLevel": 38,
+    "cash": 25000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.MUZL_069",
+    "name": null,
+    "minLevel": 40,
+    "cash": 40000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.4xElcanSpectr",
+    "name": "Spectr 4x",
+    "minLevel": 43,
+    "cash": 15000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.MUZL_027",
+    "name": null,
+    "minLevel": 45,
+    "cash": 45000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.FGRP_007",
+    "name": null,
+    "minLevel": 48,
+    "cash": 30000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Infantry",
+    "node": "Id.Item.MAGZ_024",
+    "name": null,
+    "minLevel": 50,
+    "cash": 50000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "Id.Item.MUZL_037",
+    "name": null,
+    "minLevel": 1,
+    "cash": 7500,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "Id.Item.Resuscitator.Standard",
+    "name": null,
+    "minLevel": 2,
+    "cash": 10000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "Id.Item.WEPN_028",
+    "name": null,
+    "minLevel": 4,
+    "cash": 25000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "Id.Item.MAGZ_064",
+    "name": null,
+    "minLevel": 4,
+    "cash": 0,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "ID.Item.SmokeGrenade.White",
+    "name": null,
+    "minLevel": 5,
+    "cash": 7500,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "Id.Item.EotechHoloSight",
+    "name": "Holographic Sight",
+    "minLevel": 6,
+    "cash": 20000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "Id.Item.MAGZ_004",
+    "name": null,
+    "minLevel": 8,
+    "cash": 10000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "Id.Item.SuperBandage",
+    "name": "Individual First Aid Kit",
+    "minLevel": 10,
+    "cash": 25000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "Id.Item.FGP_03",
+    "name": "AFG Angled Foregrip",
+    "minLevel": 11,
+    "cash": 10000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "Id.Item.MUZL_020",
+    "name": null,
+    "minLevel": 12,
+    "cash": 15000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "Id.Item.MUZL_058",
+    "name": null,
+    "minLevel": 13,
+    "cash": 12500,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "Id.Item.MedKit.Standard",
+    "name": null,
+    "minLevel": 14,
+    "cash": 50000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "Id.Item.SMG_03",
+    "name": "PP-19 Vityaz",
+    "minLevel": 15,
+    "cash": 50000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "Id.Item.SMG_03Magazine",
+    "name": null,
+    "minLevel": 15,
+    "cash": 0,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "Id.Item.StimPen",
+    "name": null,
+    "minLevel": 16,
+    "cash": 25000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "Id.Item.MAGZ_059",
+    "name": null,
+    "minLevel": 17,
+    "cash": 10000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "Id.Item.MUZL_054",
+    "name": null,
+    "minLevel": 18,
+    "cash": 17500,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "Id.Item.SGHT_027",
+    "name": null,
+    "minLevel": 19,
+    "cash": 15000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "Id.Item.MP9",
+    "name": "AMP-9",
+    "minLevel": 20,
+    "cash": 75000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "Id.Item.MAGZ_061",
+    "name": null,
+    "minLevel": 20,
+    "cash": 0,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "Id.Item.MAGZ_046",
+    "name": null,
+    "minLevel": 21,
+    "cash": 15000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "Id.Item.Defibrillator.Standard",
+    "name": null,
+    "minLevel": 22,
+    "cash": 110000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "ID.Item.SmokeGrenade.Black",
+    "name": null,
+    "minLevel": 23,
+    "cash": 15000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "Id.Item.MUZL_053",
+    "name": null,
+    "minLevel": 24,
+    "cash": 20000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "Id.Item.MAGZ_052",
+    "name": null,
+    "minLevel": 25,
+    "cash": 12500,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "Id.Item.MUZL_052",
+    "name": null,
+    "minLevel": 26,
+    "cash": 45000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "Id.Item.MUZL_051",
+    "name": null,
+    "minLevel": 27,
+    "cash": 25000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "Id.Item.MUZL_019",
+    "name": null,
+    "minLevel": 28,
+    "cash": 22500,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "Id.Item.MAGZ_056",
+    "name": null,
+    "minLevel": 29,
+    "cash": 50000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "Id.Item.MP9Magazine",
+    "name": null,
+    "minLevel": 30,
+    "cash": 50000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "Id.Item.Vector",
+    "name": "Super-45",
+    "minLevel": 35,
+    "cash": 200000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "Id.Item.MAGZ_057",
+    "name": null,
+    "minLevel": 35,
+    "cash": 0,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "Id.Item.MUZL_046",
+    "name": null,
+    "minLevel": 36,
+    "cash": 40000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "Id.Item.MUZL_047",
+    "name": null,
+    "minLevel": 40,
+    "cash": 30000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "ID.Item.VectorMagazine",
+    "name": "Super-45 30 RND Magazine",
+    "minLevel": 43,
+    "cash": 25000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "Id.Item.MAGZ_066",
+    "name": null,
+    "minLevel": 45,
+    "cash": 75000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "Id.Item.MZL_05",
+    "name": "SG Multi-Caliber Suppressor",
+    "minLevel": 48,
+    "cash": 50000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Medic",
+    "node": "Id.Item.MAGZ_055",
+    "name": null,
+    "minLevel": 50,
+    "cash": 50000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Pilot",
+    "node": "ID.Item.VehicleSupplyCrate.Small.Armoured",
+    "name": null,
+    "minLevel": 2,
+    "cash": 10000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Pilot",
+    "node": "Id.Item.MusicTape.08",
+    "name": null,
+    "minLevel": 5,
+    "cash": 750,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Pilot",
+    "node": "Vehicle.Variant.Air.Rotary.Littlebird.MountedMachineGuns",
+    "name": null,
+    "minLevel": 8,
+    "cash": 125000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Pilot",
+    "node": "Vehicle.Variant.Air.Rotary.ROT_04.Default",
+    "name": null,
+    "minLevel": 10,
+    "cash": 35000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Pilot",
+    "node": "Id.Item.MusicTape.01",
+    "name": null,
+    "minLevel": 13,
+    "cash": 2500,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Pilot",
+    "node": "ID.Item.VehicleSupplyCrate.Large.Armoured",
+    "name": null,
+    "minLevel": 15,
+    "cash": 25000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Pilot",
+    "node": "Vehicle.Variant.Air.Rotary.Littlebird.RocketPods",
+    "name": null,
+    "minLevel": 20,
+    "cash": 250000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Pilot",
+    "node": "Id.Item.MusicTape.09",
+    "name": null,
+    "minLevel": 23,
+    "cash": 10000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Pilot",
+    "node": "Vehicle.Variant.Air.Rotary.ROT_04.MountedMachineGuns",
+    "name": null,
+    "minLevel": 25,
+    "cash": 85000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Pilot",
+    "node": "Id.Item.MusicTape.04",
+    "name": null,
+    "minLevel": 30,
+    "cash": 25000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Pilot",
+    "node": "Vehicle.Variant.Air.Rotary.Havoc.Default",
+    "name": null,
+    "minLevel": 35,
+    "cash": 650000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "ID.Item.Monocular",
+    "name": null,
+    "minLevel": 2,
+    "cash": 7500,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.MUZL_062",
+    "name": null,
+    "minLevel": 3,
+    "cash": 5000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.SKS",
+    "name": "SKS",
+    "minLevel": 5,
+    "cash": 25000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.MUZL_042",
+    "name": null,
+    "minLevel": 6,
+    "cash": 12500,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.FGRP_010",
+    "name": null,
+    "minLevel": 7,
+    "cash": 10000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "ID.Item.RangeFinder",
+    "name": null,
+    "minLevel": 8,
+    "cash": 25000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.MUZL_028",
+    "name": null,
+    "minLevel": 9,
+    "cash": 7500,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.Mosin",
+    "name": "Mosin Nagant",
+    "minLevel": 10,
+    "cash": 50000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.SGHT_040",
+    "name": null,
+    "minLevel": 10,
+    "cash": 12500,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.SGHT_011",
+    "name": null,
+    "minLevel": 11,
+    "cash": 15000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.SVDM",
+    "name": null,
+    "minLevel": 12,
+    "cash": 50000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.MAGZ_065",
+    "name": null,
+    "minLevel": 12,
+    "cash": 0,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.MUZL_040",
+    "name": null,
+    "minLevel": 13,
+    "cash": 10000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.FGRP_011",
+    "name": null,
+    "minLevel": 14,
+    "cash": 10000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.MZL_08",
+    "name": "Hexagon 762 Suppressor",
+    "minLevel": 15,
+    "cash": 15000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.CombatBow",
+    "name": null,
+    "minLevel": 16,
+    "cash": 150000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.Arrow",
+    "name": null,
+    "minLevel": 16,
+    "cash": 0,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.SVDMMagazine",
+    "name": null,
+    "minLevel": 17,
+    "cash": 25000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.SV98",
+    "name": null,
+    "minLevel": 18,
+    "cash": 100000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.SV98Magazine",
+    "name": null,
+    "minLevel": 18,
+    "cash": 0,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.10xScopeMoa",
+    "name": "6-10x Scope MOA",
+    "minLevel": 19,
+    "cash": 45000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.RFB",
+    "name": "BMR-308",
+    "minLevel": 20,
+    "cash": 125000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.RFBMagazine",
+    "name": "FAL 10 RND Magazine",
+    "minLevel": 20,
+    "cash": 0,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.FGRP_009",
+    "name": null,
+    "minLevel": 21,
+    "cash": 17500,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.MUZL_041",
+    "name": null,
+    "minLevel": 22,
+    "cash": 17500,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.Claymore",
+    "name": null,
+    "minLevel": 23,
+    "cash": 90000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.MUZL_055",
+    "name": null,
+    "minLevel": 24,
+    "cash": 50000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.WEPN_034",
+    "name": null,
+    "minLevel": 25,
+    "cash": 100000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.MAGZ_068",
+    "name": null,
+    "minLevel": 25,
+    "cash": 0,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.GhillieHelmet",
+    "name": null,
+    "minLevel": 26,
+    "cash": 60000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.GhillieArmor",
+    "name": null,
+    "minLevel": 26,
+    "cash": 80000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.SGHT_039",
+    "name": null,
+    "minLevel": 27,
+    "cash": 35000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.SniperScope10x",
+    "name": "6-10x Scope MRAD",
+    "minLevel": 28,
+    "cash": 40000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.FGRP_020",
+    "name": null,
+    "minLevel": 29,
+    "cash": 25000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.MK22",
+    "name": null,
+    "minLevel": 30,
+    "cash": 150000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.MAGZ_034",
+    "name": null,
+    "minLevel": 30,
+    "cash": 0,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.MAGZ_071",
+    "name": null,
+    "minLevel": 31,
+    "cash": 27500,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "ID.Item.InfraredRangeFinder",
+    "name": null,
+    "minLevel": 32,
+    "cash": 50000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.MUZL_056",
+    "name": null,
+    "minLevel": 33,
+    "cash": 25000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.MUZL_022",
+    "name": null,
+    "minLevel": 34,
+    "cash": 20000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.SR_04",
+    "name": null,
+    "minLevel": 35,
+    "cash": 200000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.SR_04Magazine",
+    "name": null,
+    "minLevel": 35,
+    "cash": 0,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.MAGZ_070",
+    "name": null,
+    "minLevel": 36,
+    "cash": 50000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.MUZL_071",
+    "name": null,
+    "minLevel": 37,
+    "cash": 22500,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.MUZL_048",
+    "name": null,
+    "minLevel": 38,
+    "cash": 35000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.MK22Mag",
+    "name": null,
+    "minLevel": 39,
+    "cash": 35000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.MUZL_057",
+    "name": null,
+    "minLevel": 40,
+    "cash": 30000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.GhillieHelmet.Dead",
+    "name": null,
+    "minLevel": 41,
+    "cash": 80000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.GhillieArmor.Dead",
+    "name": null,
+    "minLevel": 41,
+    "cash": 100000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.MUZL_072",
+    "name": null,
+    "minLevel": 42,
+    "cash": 27500,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.SGHT_036",
+    "name": null,
+    "minLevel": 43,
+    "cash": 75000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.MUZL_025",
+    "name": null,
+    "minLevel": 44,
+    "cash": 22500,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.MZL_04",
+    "name": "GOL Multi-Caliber Suppressor",
+    "minLevel": 45,
+    "cash": 32500,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.FGRP_013",
+    "name": null,
+    "minLevel": 46,
+    "cash": 50000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.SGHT_032",
+    "name": null,
+    "minLevel": 47,
+    "cash": 95000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.MUZL_049",
+    "name": null,
+    "minLevel": 48,
+    "cash": 27500,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.MUZL_030",
+    "name": null,
+    "minLevel": 49,
+    "cash": 25000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Recon",
+    "node": "Id.Item.MAGZ_026",
+    "name": null,
+    "minLevel": 50,
+    "cash": 50000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Support",
+    "node": "ID.Item.RepairTool.Drill.Light",
+    "name": null,
+    "minLevel": 1,
+    "cash": 10000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Support",
+    "node": "ID.Item.BuildTool.Hammer.Medium",
+    "name": null,
+    "minLevel": 3,
+    "cash": 25000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Support",
+    "node": "Id.Item.RPG7",
+    "name": "RPG-7",
+    "minLevel": 6,
+    "cash": 30000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Support",
+    "node": "Id.Item.93mm",
+    "name": "93mm",
+    "minLevel": 6,
+    "cash": 0,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Support",
+    "node": "ID.Item.BuildTool.Hammer.Large",
+    "name": null,
+    "minLevel": 8,
+    "cash": 75000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Support",
+    "node": "Id.Item.M500",
+    "name": "M500",
+    "minLevel": 10,
+    "cash": 50000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Support",
+    "node": "Id.Item.MUZL_031",
+    "name": null,
+    "minLevel": 11,
+    "cash": 17500,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Support",
+    "node": "Id.Item.SGHT_034",
+    "name": null,
+    "minLevel": 12,
+    "cash": 10000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Support",
+    "node": "Id.Item.MUZL_044",
+    "name": null,
+    "minLevel": 13,
+    "cash": 7500,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Support",
+    "node": "Id.Item.Launcher_04",
+    "name": "9K333 Verba",
+    "minLevel": 14,
+    "cash": 50000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Support",
+    "node": "Id.Item.LMG_02",
+    "name": null,
+    "minLevel": 15,
+    "cash": 100000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Support",
+    "node": "Id.Item.LMG_02Magazine",
+    "name": null,
+    "minLevel": 15,
+    "cash": 0,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Support",
+    "node": "Id.Item.MUZL_045",
+    "name": null,
+    "minLevel": 16,
+    "cash": 30000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Support",
+    "node": "Id.Item.FGRP_008",
+    "name": null,
+    "minLevel": 17,
+    "cash": 25000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Support",
+    "node": "Id.Item.CGM4",
+    "name": "MAAWS",
+    "minLevel": 18,
+    "cash": 100000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Support",
+    "node": "Id.Item.MUZL_038",
+    "name": null,
+    "minLevel": 19,
+    "cash": 20000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Support",
+    "node": "Id.Item.M249",
+    "name": "M249 SAW",
+    "minLevel": 20,
+    "cash": 150000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Support",
+    "node": "Id.Item.MAGZ_062",
+    "name": null,
+    "minLevel": 20,
+    "cash": 0,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Support",
+    "node": "Id.Item.SGHT_030",
+    "name": null,
+    "minLevel": 21,
+    "cash": 35000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Support",
+    "node": "Id.Item.FGRP_012",
+    "name": null,
+    "minLevel": 24,
+    "cash": 50000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Support",
+    "node": "ID.Item.ATMine",
+    "name": null,
+    "minLevel": 25,
+    "cash": 75000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Support",
+    "node": "Id.Item.M249Magazine",
+    "name": "M249 200 RND Box",
+    "minLevel": 26,
+    "cash": 35000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Support",
+    "node": "Id.Item.MUZL_023",
+    "name": null,
+    "minLevel": 27,
+    "cash": 10000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Support",
+    "node": "ID.Item.RepairTool.Drill.Heavy",
+    "name": null,
+    "minLevel": 28,
+    "cash": 50000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Support",
+    "node": "Id.Item.WEPN_036",
+    "name": null,
+    "minLevel": 30,
+    "cash": 200000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Support",
+    "node": "Id.Item.MAGZ_067",
+    "name": null,
+    "minLevel": 30,
+    "cash": 0,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Support",
+    "node": "Id.Item.MZL_06",
+    "name": "12 Gauge Suppressor",
+    "minLevel": 32,
+    "cash": 25000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Support",
+    "node": "Id.Item.FGRP_019",
+    "name": null,
+    "minLevel": 33,
+    "cash": 75000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Support",
+    "node": "Id.Item.MMGL",
+    "name": "MGL-40",
+    "minLevel": 35,
+    "cash": 250000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Support",
+    "node": "Id.Item.40mm",
+    "name": "40mm ",
+    "minLevel": 35,
+    "cash": 0,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Support",
+    "node": "Id.Item.MUZL_070",
+    "name": null,
+    "minLevel": 40,
+    "cash": 35000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Support",
+    "node": "Id.Item.MUZL_029",
+    "name": null,
+    "minLevel": 45,
+    "cash": 40000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Support",
+    "node": "Id.Item.FGP_04",
+    "name": "Hybrid Grip Pod",
+    "minLevel": 50,
+    "cash": 50000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.Judge",
+    "name": "Judge",
+    "minLevel": 1,
+    "cash": 5000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.LightHelmet",
+    "name": null,
+    "minLevel": 3,
+    "cash": 7500,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.LightArmor",
+    "name": null,
+    "minLevel": 3,
+    "cash": 10000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.SGHT_009",
+    "name": null,
+    "minLevel": 4,
+    "cash": 7500,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "ID.Item.VehicleSupplyCrate.Pallet.SparePartsSupply",
+    "name": null,
+    "minLevel": 5,
+    "cash": 10000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.545mm.HollowPoint.Tracer",
+    "name": "5.45mm Flesh Damage (HP)",
+    "minLevel": 6,
+    "cash": 5000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "ID.Item.VehicleSupplyCrate.Pallet.MunitionsSupply",
+    "name": null,
+    "minLevel": 9,
+    "cash": 25000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.9mm.HollowPoint.Tracer",
+    "name": "9mm Flesh Damage (HP)",
+    "minLevel": 10,
+    "cash": 5000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.762mm.HollowPoint.Tracer",
+    "name": "7.62mm Flesh Damage (HP)",
+    "minLevel": 11,
+    "cash": 5000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.BPAK_005",
+    "name": "Field Backpack",
+    "minLevel": 12,
+    "cash": 20000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.556mm.HollowPoint.Tracer",
+    "name": "5.56mm Flesh Damage (HP)",
+    "minLevel": 13,
+    "cash": 5000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.MediumTacVest",
+    "name": "Medium Tac Vest",
+    "minLevel": 14,
+    "cash": 10000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.RK6ForeGrip",
+    "name": "RK6 Tactical Foregrip",
+    "minLevel": 15,
+    "cash": 7500,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "ID.Item.VehicleSupplyCrate.Pallet.FuelSupply",
+    "name": null,
+    "minLevel": 16,
+    "cash": 50000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.BasicRedDot",
+    "name": null,
+    "minLevel": 17,
+    "cash": 5000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.Glock17",
+    "name": "GGX 17",
+    "minLevel": 18,
+    "cash": 15000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.Glock17Magazine",
+    "name": "GGX 17 RND Magazine",
+    "minLevel": 18,
+    "cash": 0,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.MediumBackpack",
+    "name": "Operator Backpack",
+    "minLevel": 20,
+    "cash": 25000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.SGHT_038",
+    "name": null,
+    "minLevel": 21,
+    "cash": 12500,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.MAGZ_012",
+    "name": null,
+    "minLevel": 23,
+    "cash": 10000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.45Colt.HollowPoint.Tracer",
+    "name": ".45 Colt Flesh Damage (HP)",
+    "minLevel": 25,
+    "cash": 5000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.SGHT_026",
+    "name": null,
+    "minLevel": 26,
+    "cash": 10000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.762x54mm.HollowPoint.Tracer",
+    "name": "7.62x54mm Flesh Damage (HP)",
+    "minLevel": 28,
+    "cash": 5000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.MusicTape.11",
+    "name": null,
+    "minLevel": 29,
+    "cash": 25000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.MediumHelmet",
+    "name": null,
+    "minLevel": 30,
+    "cash": 37500,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.MediumArmor",
+    "name": null,
+    "minLevel": 30,
+    "cash": 50000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.3xScope",
+    "name": "Spitfire 3X",
+    "minLevel": 31,
+    "cash": 25000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.BPAK_006",
+    "name": "Assault Backpack",
+    "minLevel": 32,
+    "cash": 50000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.FGRP_016",
+    "name": null,
+    "minLevel": 33,
+    "cash": 15000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.Parachute.Sport",
+    "name": null,
+    "minLevel": 34,
+    "cash": 25000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Meta.Unlocks.GoldExchange",
+    "name": null,
+    "minLevel": 35,
+    "cash": 150000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.12g.RifledSlug",
+    "name": "12g Rifled Slug",
+    "minLevel": 36,
+    "cash": 5000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.FGRP_018",
+    "name": null,
+    "minLevel": 38,
+    "cash": 12500,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.WEPN_026",
+    "name": null,
+    "minLevel": 40,
+    "cash": 25000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.MAGZ_002",
+    "name": null,
+    "minLevel": 41,
+    "cash": 0,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.MUZL_050",
+    "name": null,
+    "minLevel": 43,
+    "cash": 15000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.LargeBattery",
+    "name": null,
+    "minLevel": 46,
+    "cash": 50000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.45ACP.HollowPoint.Tracer",
+    "name": ".45 ACP Flesh Damage (HP)",
+    "minLevel": 48,
+    "cash": 5000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.LargeTacVest",
+    "name": "Large Tac Vest",
+    "minLevel": 50,
+    "cash": 25000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.MAGZ_063",
+    "name": null,
+    "minLevel": 53,
+    "cash": 10000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.LargeBackpack",
+    "name": "Ruck Backpack",
+    "minLevel": 55,
+    "cash": 100000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.FGP_02",
+    "name": "TDG Vertical Foregrip",
+    "minLevel": 58,
+    "cash": 25000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.762mm.ArmorPiercing.Tracer",
+    "name": "7.62mm Armor Piercing (AP)",
+    "minLevel": 60,
+    "cash": 50000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.308Win.HollowPoint.Tracer",
+    "name": ".308 Win Flesh Damage (HP)",
+    "minLevel": 63,
+    "cash": 5000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.WEPN_027",
+    "name": null,
+    "minLevel": 65,
+    "cash": 75000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "ID.Item.MAGZ_003",
+    "name": null,
+    "minLevel": 65,
+    "cash": 0,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.HeavyHelmet",
+    "name": null,
+    "minLevel": 70,
+    "cash": 75000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.HeavyArmor",
+    "name": null,
+    "minLevel": 70,
+    "cash": 100000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.LargeSlingBackpack",
+    "name": "Gunner Backpack + Sling",
+    "minLevel": 73,
+    "cash": 125000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.9mm.ArmorPiercing.Tracer",
+    "name": "9mm Armor Piercing (AP)",
+    "minLevel": 75,
+    "cash": 75000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.MAGZ_011",
+    "name": null,
+    "minLevel": 80,
+    "cash": 50000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.762x54mm.ArmorPiercing.Tracer",
+    "name": "7.62x54mm Armor Piercing (AP)",
+    "minLevel": 82,
+    "cash": 75000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.556mm.ArmorPiercing.Tracer",
+    "name": "5.56mm Armor Piercing (AP)",
+    "minLevel": 84,
+    "cash": 75000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.WEPN_032",
+    "name": null,
+    "minLevel": 85,
+    "cash": 125000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.545mm.ArmorPiercing.Tracer",
+    "name": "5.45mm Armor Piercing (AP)",
+    "minLevel": 90,
+    "cash": 75000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.50AE.HollowPoint.Tracer",
+    "name": "50AE Flesh Damage (HP)",
+    "minLevel": 95,
+    "cash": 5000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.SuperHeavyHelmet",
+    "name": null,
+    "minLevel": 100,
+    "cash": 150000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.SuperHeavyArmor",
+    "name": null,
+    "minLevel": 100,
+    "cash": 200000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.45Colt.ArmorPiercing.Tracer",
+    "name": ".45 Colt Armor Piercing (AP)",
+    "minLevel": 110,
+    "cash": 75000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.45ACP.ArmorPiercing.Tracer",
+    "name": ".45 ACP Armor Piercing (AP)",
+    "minLevel": 120,
+    "cash": 75000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.50AE.ArmorPiercing.Tracer",
+    "name": "50AE Armor Piercing (AP)",
+    "minLevel": 130,
+    "cash": 75000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.308Win.ArmorPiercing.Tracer",
+    "name": ".308 Win Armor Piercing (AP)",
+    "minLevel": 140,
+    "cash": 75000,
+    "otherCosts": []
+   },
+   {
+    "tree": "Meta.Role.Wardog",
+    "node": "Id.Item.ExtraLargeSlingBackpack",
+    "name": "Arsenal Backpack + 2 Slings",
+    "minLevel": 150,
+    "cash": 175000,
+    "otherCosts": []
+   }
+  ],
+  "roleMastery": {
+   "Meta.Role.Driver": {
+    "xpResource": "Attribute.Meta.XP.Role.Driver",
+    "levels": 100,
+    "rewardsListed": 0,
+    "xpAtLevel": [
+     0,
+     200,
+     750,
+     1250,
+     3000,
+     6250,
+     9250,
+     13000,
+     17250,
+     22500,
+     25000,
+     28750,
+     33750,
+     37500,
+     43750,
+     54750,
+     64500,
+     75000,
+     84750,
+     95750,
+     111500,
+     127200,
+     145400,
+     163200,
+     183450,
+     206600,
+     225600,
+     246700,
+     266950,
+     288450,
+     318200,
+     346300,
+     381050,
+     419100,
+     462950,
+     525000,
+     559150,
+     596250,
+     632100,
+     670850,
+     712500,
+     750400,
+     791250,
+     830850,
+     873350,
+     920850,
+     962950,
+     1007950,
+     1051700,
+     1098350,
+     1150000,
+     1183400,
+     1218800,
+     1253450,
+     1290850,
+     1333000,
+     1368650,
+     1406550,
+     1443950,
+     1483600,
+     1529500,
+     1567650,
+     1608550,
+     1648200,
+     1691100,
+     1740500,
+     1781900,
+     1825800,
+     1868700,
+     1914600,
+     1967750,
+     2011900,
+     2059050,
+     2104950,
+     2154600,
+     2218000,
+     2278900,
+     2353300,
+     2424200,
+     2504600,
+     2597000,
+     2674400,
+     2760050,
+     2842950,
+     2935100,
+     3052250,
+     3146400,
+     3248800,
+     3347950,
+     3456850,
+     3598750,
+     3714650,
+     3840300,
+     3962450,
+     4095850,
+     4270500,
+     4416400,
+     4574050,
+     4727200,
+     4892850,
+     5132500
+    ]
+   },
+   "Meta.Role.Infantry": {
+    "xpResource": "Attribute.Meta.XP.Role.Infantry",
+    "levels": 100,
+    "rewardsListed": 0,
+    "xpAtLevel": [
+     0,
+     200,
+     750,
+     1250,
+     3000,
+     6250,
+     9250,
+     13000,
+     17250,
+     22500,
+     25000,
+     28750,
+     33750,
+     37500,
+     43750,
+     54750,
+     64500,
+     75000,
+     84750,
+     95750,
+     111500,
+     127200,
+     145400,
+     163200,
+     183450,
+     206600,
+     225600,
+     246700,
+     266950,
+     288450,
+     318200,
+     346300,
+     381050,
+     419100,
+     462950,
+     525000,
+     559150,
+     596250,
+     632100,
+     670850,
+     712500,
+     750400,
+     791250,
+     830850,
+     873350,
+     920850,
+     962950,
+     1007950,
+     1051700,
+     1098350,
+     1150000,
+     1183400,
+     1218800,
+     1253450,
+     1290850,
+     1333000,
+     1368650,
+     1406550,
+     1443950,
+     1483600,
+     1529500,
+     1567650,
+     1608550,
+     1648200,
+     1691100,
+     1740500,
+     1781900,
+     1825800,
+     1868700,
+     1914600,
+     1967750,
+     2011900,
+     2059050,
+     2104950,
+     2154600,
+     2218000,
+     2278900,
+     2353300,
+     2424200,
+     2504600,
+     2597000,
+     2674400,
+     2760050,
+     2842950,
+     2935100,
+     3052250,
+     3146400,
+     3248800,
+     3347950,
+     3456850,
+     3598750,
+     3714650,
+     3840300,
+     3962450,
+     4095850,
+     4270500,
+     4416400,
+     4574050,
+     4727200,
+     4892850,
+     5132500
+    ]
+   },
+   "Meta.Role.Medic": {
+    "xpResource": "Attribute.Meta.XP.Role.Medic",
+    "levels": 100,
+    "rewardsListed": 0,
+    "xpAtLevel": [
+     0,
+     200,
+     750,
+     1250,
+     3000,
+     6250,
+     9250,
+     13000,
+     17250,
+     22500,
+     25000,
+     28750,
+     33750,
+     37500,
+     43750,
+     54750,
+     64500,
+     75000,
+     84750,
+     95750,
+     111500,
+     127200,
+     145400,
+     163200,
+     183450,
+     206600,
+     225600,
+     246700,
+     266950,
+     288450,
+     318200,
+     346300,
+     381050,
+     419100,
+     462950,
+     525000,
+     559150,
+     596250,
+     632100,
+     670850,
+     712500,
+     750400,
+     791250,
+     830850,
+     873350,
+     920850,
+     962950,
+     1007950,
+     1051700,
+     1098350,
+     1150000,
+     1183400,
+     1218800,
+     1253450,
+     1290850,
+     1333000,
+     1368650,
+     1406550,
+     1443950,
+     1483600,
+     1529500,
+     1567650,
+     1608550,
+     1648200,
+     1691100,
+     1740500,
+     1781900,
+     1825800,
+     1868700,
+     1914600,
+     1967750,
+     2011900,
+     2059050,
+     2104950,
+     2154600,
+     2218000,
+     2278900,
+     2353300,
+     2424200,
+     2504600,
+     2597000,
+     2674400,
+     2760050,
+     2842950,
+     2935100,
+     3052250,
+     3146400,
+     3248800,
+     3347950,
+     3456850,
+     3598750,
+     3714650,
+     3840300,
+     3962450,
+     4095850,
+     4270500,
+     4416400,
+     4574050,
+     4727200,
+     4892850,
+     5132500
+    ]
+   },
+   "Meta.Role.Pilot": {
+    "xpResource": "Attribute.Meta.XP.Role.Pilot",
+    "levels": 100,
+    "rewardsListed": 0,
+    "xpAtLevel": [
+     0,
+     200,
+     750,
+     1250,
+     3000,
+     6250,
+     9250,
+     13000,
+     17250,
+     22500,
+     25000,
+     28750,
+     33750,
+     37500,
+     43750,
+     54750,
+     64500,
+     75000,
+     84750,
+     95750,
+     111500,
+     127200,
+     145400,
+     163200,
+     183450,
+     206600,
+     225600,
+     246700,
+     266950,
+     288450,
+     318200,
+     346300,
+     381050,
+     419100,
+     462950,
+     525000,
+     559150,
+     596250,
+     632100,
+     670850,
+     712500,
+     750400,
+     791250,
+     830850,
+     873350,
+     920850,
+     962950,
+     1007950,
+     1051700,
+     1098350,
+     1150000,
+     1183400,
+     1218800,
+     1253450,
+     1290850,
+     1333000,
+     1368650,
+     1406550,
+     1443950,
+     1483600,
+     1529500,
+     1567650,
+     1608550,
+     1648200,
+     1691100,
+     1740500,
+     1781900,
+     1825800,
+     1868700,
+     1914600,
+     1967750,
+     2011900,
+     2059050,
+     2104950,
+     2154600,
+     2218000,
+     2278900,
+     2353300,
+     2424200,
+     2504600,
+     2597000,
+     2674400,
+     2760050,
+     2842950,
+     2935100,
+     3052250,
+     3146400,
+     3248800,
+     3347950,
+     3456850,
+     3598750,
+     3714650,
+     3840300,
+     3962450,
+     4095850,
+     4270500,
+     4416400,
+     4574050,
+     4727200,
+     4892850,
+     5132500
+    ]
+   },
+   "Meta.Role.Recon": {
+    "xpResource": "Attribute.Meta.XP.Role.Recon",
+    "levels": 100,
+    "rewardsListed": 0,
+    "xpAtLevel": [
+     0,
+     200,
+     750,
+     1250,
+     3000,
+     6250,
+     9250,
+     13000,
+     17250,
+     22500,
+     25000,
+     28750,
+     33750,
+     37500,
+     43750,
+     54750,
+     64500,
+     75000,
+     84750,
+     95750,
+     111500,
+     127200,
+     145400,
+     163200,
+     183450,
+     206600,
+     225600,
+     246700,
+     266950,
+     288450,
+     318200,
+     346300,
+     381050,
+     419100,
+     462950,
+     525000,
+     559150,
+     596250,
+     632100,
+     670850,
+     712500,
+     750400,
+     791250,
+     830850,
+     873350,
+     920850,
+     962950,
+     1007950,
+     1051700,
+     1098350,
+     1150000,
+     1183400,
+     1218800,
+     1253450,
+     1290850,
+     1333000,
+     1368650,
+     1406550,
+     1443950,
+     1483600,
+     1529500,
+     1567650,
+     1608550,
+     1648200,
+     1691100,
+     1740500,
+     1781900,
+     1825800,
+     1868700,
+     1914600,
+     1967750,
+     2011900,
+     2059050,
+     2104950,
+     2154600,
+     2218000,
+     2278900,
+     2353300,
+     2424200,
+     2504600,
+     2597000,
+     2674400,
+     2760050,
+     2842950,
+     2935100,
+     3052250,
+     3146400,
+     3248800,
+     3347950,
+     3456850,
+     3598750,
+     3714650,
+     3840300,
+     3962450,
+     4095850,
+     4270500,
+     4416400,
+     4574050,
+     4727200,
+     4892850,
+     5132500
+    ]
+   },
+   "Meta.Role.Support": {
+    "xpResource": "Attribute.Meta.XP.Role.Support",
+    "levels": 100,
+    "rewardsListed": 0,
+    "xpAtLevel": [
+     0,
+     200,
+     750,
+     1250,
+     3000,
+     6250,
+     9250,
+     13000,
+     17250,
+     22500,
+     25000,
+     28750,
+     33750,
+     37500,
+     43750,
+     54750,
+     64500,
+     75000,
+     84750,
+     95750,
+     111500,
+     127200,
+     145400,
+     163200,
+     183450,
+     206600,
+     225600,
+     246700,
+     266950,
+     288450,
+     318200,
+     346300,
+     381050,
+     419100,
+     462950,
+     525000,
+     559150,
+     596250,
+     632100,
+     670850,
+     712500,
+     750400,
+     791250,
+     830850,
+     873350,
+     920850,
+     962950,
+     1007950,
+     1051700,
+     1098350,
+     1150000,
+     1183400,
+     1218800,
+     1253450,
+     1290850,
+     1333000,
+     1368650,
+     1406550,
+     1443950,
+     1483600,
+     1529500,
+     1567650,
+     1608550,
+     1648200,
+     1691100,
+     1740500,
+     1781900,
+     1825800,
+     1868700,
+     1914600,
+     1967750,
+     2011900,
+     2059050,
+     2104950,
+     2154600,
+     2218000,
+     2278900,
+     2353300,
+     2424200,
+     2504600,
+     2597000,
+     2674400,
+     2760050,
+     2842950,
+     2935100,
+     3052250,
+     3146400,
+     3248800,
+     3347950,
+     3456850,
+     3598750,
+     3714650,
+     3840300,
+     3962450,
+     4095850,
+     4270500,
+     4416400,
+     4574050,
+     4727200,
+     4892850,
+     5132500
+    ]
+   }
+  }
+ },
+ "platformMastery": {
+  "types": {
+   "UI.Meta.Mastery.Weapon": {
+    "AssaultRifle": [
+     {
+      "id": "Id.Item.AK74M",
+      "name": "AK74"
+     },
+     {
+      "id": "Id.Item.M4",
+      "name": "M4"
+     },
+     {
+      "id": "Id.Item.KH2002",
+      "name": "KH-2002"
+     },
+     {
+      "id": "Id.Item.TAR21",
+      "name": "T-21"
+     },
+     {
+      "id": "Id.Item.A91",
+      "name": "A-91"
+     }
+    ],
+    "LMG": [
+     {
+      "id": "Id.Item.LMG_02",
+      "name": null
+     },
+     {
+      "id": "Id.Item.M249",
+      "name": "M249 SAW"
+     }
+    ],
+    "MarksmanRifle": [
+     {
+      "id": "Id.Item.RFB",
+      "name": "BMR-308"
+     },
+     {
+      "id": "Id.Item.SKS",
+      "name": "SKS"
+     },
+     {
+      "id": "Id.Item.SVDM",
+      "name": null
+     }
+    ],
+    "Shotgun": [
+     {
+      "id": "Id.Item.MP43",
+      "name": "MP43"
+     },
+     {
+      "id": "Id.Item.M500",
+      "name": "M500"
+     }
+    ],
+    "SMG": [
+     {
+      "id": "Id.Item.MP9",
+      "name": "AMP-9"
+     },
+     {
+      "id": "Id.Item.Vector",
+      "name": "Super-45"
+     },
+     {
+      "id": "Id.Item.SMG_03",
+      "name": "PP-19 Vityaz"
+     }
+    ],
+    "Sniper": [
+     {
+      "id": "Id.Item.MK22",
+      "name": null
+     },
+     {
+      "id": "Id.Item.SV98",
+      "name": null
+     },
+     {
+      "id": "Id.Item.Mosin",
+      "name": "Mosin Nagant"
+     },
+     {
+      "id": "Id.Item.SR_04",
+      "name": null
+     }
+    ],
+    "Pistol": [
+     {
+      "id": "Id.Item.Glock17",
+      "name": "GGX 17"
+     },
+     {
+      "id": "Id.Item.Judge",
+      "name": "Judge"
+     }
+    ],
+    "Launcher": [
+     {
+      "id": "Id.Item.RPG7",
+      "name": "RPG-7"
+     },
+     {
+      "id": "Id.Item.CGM4",
+      "name": "MAAWS"
+     },
+     {
+      "id": "Id.Item.Launcher_04",
+      "name": "9K333 Verba"
+     },
+     {
+      "id": "Id.Item.MMGL",
+      "name": "MGL-40"
+     }
+    ]
+   },
+   "UI.Meta.Mastery.Vehicle": {
+    "LandVehicle": [
+     {
+      "id": "Vehicle.Variant.Land.Tracked.TNK_01.Artillery",
+      "name": null
+     },
+     {
+      "id": "Vehicle.Variant.Land.Tracked.TNK_01.Heavy",
+      "name": null
+     },
+     {
+      "id": "Vehicle.Variant.Land.Wheeled.Kodiak.Default",
+      "name": null
+     },
+     {
+      "id": "Vehicle.Variant.Land.Wheeled.Bobcat.Default",
+      "name": null
+     },
+     {
+      "id": "Vehicle.Variant.Land.Tracked.SpawnVehicle.Lonestar",
+      "name": null
+     }
+    ],
+    "AirVehicle": [
+     {
+      "id": "Vehicle.Variant.Air.Rotary.Havoc.Default",
+      "name": null
+     },
+     {
+      "id": "Vehicle.Variant.Air.Rotary.Littlebird.Default",
+      "name": null
+     },
+     {
+      "id": "Vehicle.Variant.Air.Rotary.ROT_01.Default",
+      "name": null
+     }
+    ]
+   }
+  },
+  "entityRowsWithPlatformXPTag": 628,
+  "entityRowsWithPlatformXPTagSet": 0
+ },
+ "currencies": {
+  "definitions": {
+   "Attribute.Meta.Currency.Cash": {
+    "initialBalance": 10000,
+    "name": "Cash"
+   },
+   "Attribute.Meta.Currency.GoldBars": {
+    "initialBalance": 0,
+    "name": "Gold Bars"
+   }
+  },
+  "exchangeDefinitions": {
+   "Attribute.Meta.Currency.GoldBars": {
+    "exchangeRates": []
+   }
+  },
+  "intelRewards": [
+   {
+    "challenge": "Challenges.Challenge.Mission.Passive.EarnCash.1",
+    "reward": "Attribute.Meta.Currency.Intel",
+    "quantity": 100,
+    "objective": [
+     [
+      "Challenges.Objective.CashEarned",
+      5000
+     ]
+    ]
+   },
+   {
+    "challenge": "Challenges.Challenge.Mission.Passive.EarnCash.2",
+    "reward": "Attribute.Meta.Currency.Intel",
+    "quantity": 200,
+    "objective": [
+     [
+      "Challenges.Objective.CashEarned",
+      12000
+     ]
+    ]
+   },
+   {
+    "challenge": "Challenges.Challenge.Mission.Passive.EarnCash.3",
+    "reward": "Attribute.Meta.Currency.Intel",
+    "quantity": 300,
+    "objective": [
+     [
+      "Challenges.Objective.CashEarned",
+      30000
+     ]
+    ]
+   },
+   {
+    "challenge": "Challenges.Challenge.Mission.Passive.EarnCash.4",
+    "reward": "Attribute.Meta.Currency.Intel",
+    "quantity": 400,
+    "objective": [
+     [
+      "Challenges.Objective.CashEarned",
+      80000
+     ]
+    ]
+   },
+   {
+    "challenge": "Challenges.Challenge.Mission.Passive.EarnCash.5",
+    "reward": "Attribute.Meta.Currency.Intel",
+    "quantity": 500,
+    "objective": [
+     [
+      "Challenges.Objective.CashEarned",
+      200000
+     ]
+    ]
+   },
+   {
+    "challenge": "Challenges.Challenge.Mission.Passive.EarnRoleXp.1",
+    "reward": "Attribute.Meta.Currency.Intel",
+    "quantity": 100,
+    "objective": [
+     [
+      "Challenges.Objective.RoleXpEarned",
+      500
+     ]
+    ]
+   },
+   {
+    "challenge": "Challenges.Challenge.Mission.Passive.EarnRoleXp.2",
+    "reward": "Attribute.Meta.Currency.Intel",
+    "quantity": 200,
+    "objective": [
+     [
+      "Challenges.Objective.RoleXpEarned",
+      500
+     ]
+    ]
+   },
+   {
+    "challenge": "Challenges.Challenge.Mission.Passive.EarnRoleXp.3",
+    "reward": "Attribute.Meta.Currency.Intel",
+    "quantity": 300,
+    "objective": [
+     [
+      "Challenges.Objective.RoleXpEarned",
+      500
+     ]
+    ]
+   },
+   {
+    "challenge": "Challenges.Challenge.Mission.Passive.EarnRoleXp.4",
+    "reward": "Attribute.Meta.Currency.Intel",
+    "quantity": 400,
+    "objective": [
+     [
+      "Challenges.Objective.RoleXpEarned",
+      500
+     ]
+    ]
+   },
+   {
+    "challenge": "Challenges.Challenge.Mission.Passive.EarnRoleXp.5",
+    "reward": "Attribute.Meta.Currency.Intel",
+    "quantity": 500,
+    "objective": [
+     [
+      "Challenges.Objective.RoleXpEarned",
+      500
+     ]
+    ]
+   },
+   {
+    "challenge": "Challenges.Challenge.Mission.Passive.TimePlayed.1",
+    "reward": "Attribute.Meta.Currency.Intel",
+    "quantity": 100,
+    "objective": [
+     [
+      "Challenges.Objective.TimePlayed",
+      1800
+     ]
+    ]
+   },
+   {
+    "challenge": "Challenges.Challenge.Mission.Passive.TimePlayed.2",
+    "reward": "Attribute.Meta.Currency.Intel",
+    "quantity": 200,
+    "objective": [
+     [
+      "Challenges.Objective.TimePlayed",
+      1800
+     ]
+    ]
+   },
+   {
+    "challenge": "Challenges.Challenge.Mission.Passive.TimePlayed.3",
+    "reward": "Attribute.Meta.Currency.Intel",
+    "quantity": 300,
+    "objective": [
+     [
+      "Challenges.Objective.TimePlayed",
+      1800
+     ]
+    ]
+   },
+   {
+    "challenge": "Challenges.Challenge.Mission.Passive.TimePlayed.4",
+    "reward": "Attribute.Meta.Currency.Intel",
+    "quantity": 400,
+    "objective": [
+     [
+      "Challenges.Objective.TimePlayed",
+      1800
+     ]
+    ]
+   },
+   {
+    "challenge": "Challenges.Challenge.Mission.Passive.TimePlayed.5",
+    "reward": "Attribute.Meta.Currency.Intel",
+    "quantity": 500,
+    "objective": [
+     [
+      "Challenges.Objective.TimePlayed",
+      1800
+     ]
+    ]
+   }
+  ],
+  "goldMarketExpiring": [
+   {
+    "tag": "Meta.Cosmetic.BlackAndGold.Littlebird",
+    "goldBars": 30,
+    "expirationType": "EXPIRATION_NO_END_TIME",
+    "ticks": 639342720000000000
+   }
+  ]
+ }
+}
