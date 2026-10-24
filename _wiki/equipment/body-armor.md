@@ -24,6 +24,14 @@ The armor levels are named by tier in the game. The vests are the "Level 1" to "
 
 Tactical vests are a different item. They add quick slots and do not protect against damage. See [Utility Items](utility-items.md).
 
+## Individual items
+
+Each vest and helmet has its own article.
+
+- Vests: [Level 1 Armor](level-1-armor.md), [Level 2 Armor](level-2-armor.md), [Level 3 Armor](level-3-armor.md), [Level 4 Armor](level-4-armor.md)
+- Helmets: [Level 1 Helmet](level-1-helmet.md), [Level 2 Helmet](level-2-helmet.md), [Level 3 Helmet](level-3-helmet.md), [Level 4 Helmet](level-4-helmet.md), [Pilot Helmet](pilot-helmet.md), [Tank Helmet](tank-helmet.md)
+- Camouflage: [Ghillie Body Suit](ghillie-body-suit.md), [Ghillie Headwear](ghillie-headwear.md)
+
 ## Effects
 
 ### Vests
