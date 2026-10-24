@@ -16,6 +16,15 @@ description: "Every map the data names, the modes that use it, and its zone layo
 
 Wardogs has four main King of the Hill maps, a Sniper Showdown map and an Africa zone set. Each is named in the server browser by the name players see. The sources do not describe level layouts, spawn points or buildings, so the articles here cover only what the data records about each map.
 
+## Individual maps
+
+- [Bakurani](bakurani.md), King of the Hill
+- [Ozeti](ozeti.md), King of the Hill
+- [Zestafona](zestafona.md), King of the Hill
+- [Saburtulo](saburtulo.md), King of the Hill
+- [Bakurani Outskirts - Jutari](bakurani-outskirts-jutari.md), Sniper Showdown
+- [Africa](africa.md), zone set with no server browser name
+
 ## Overview
 
 | Map | Modes | Control Zone | Named zone regions | Notes |
