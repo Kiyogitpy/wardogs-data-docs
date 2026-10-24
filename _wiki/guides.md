@@ -17,3 +17,4 @@ Practical guides for playing Wardogs, written from the numbers in the game data.
 | [Beginner's Guide](guides/beginners-guide.md) | Health, where hits count, armor, healing, aiming and movement |
 | [Choosing Ammo](guides/choosing-ammo.md) | When armor-piercing beats full metal jacket, and what to load against each armor class |
 | [Aiming the SPH-2](guides/aiming-the-sph-2.md) | Every gun-sight instrument with its numbers, a fire mission step by step, and correcting your aim |
+| [Glossary](guides/glossary.md) | An A to Z list of the game and wiki terms, each with a short meaning and a link |

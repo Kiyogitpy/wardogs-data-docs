@@ -25,3 +25,5 @@ These articles explain the rules of combat and movement in Wardogs: how much dam
 | [Status Effects](game-mechanics/status-effects.md) | Downed, bleeding, burning, suppression, medical buffs, falls and movement penalties in one table |
 | [Hit Registration](game-mechanics/hit-registration.md) | When a bullet counts as a hit, in plain terms |
 | [Artillery](game-mechanics/artillery.md) | Map coordinates, mils, low and high arcs, the SPH-2 firing table, height and tilt |
+| [Destruction](game-mechanics/destruction.md) | Which fences, walls, signs and poles can be knocked down, by which explosives and vehicles |
+| [Controls and Settings](game-mechanics/controls-and-settings.md) | Default keys by activity, and the aim, field of view and HUD settings with their defaults |
