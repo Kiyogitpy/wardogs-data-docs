@@ -436,3 +436,7 @@ Three effects ship in the paks but not in the SDK headers: `GE_GrantSkill_Lockpi
 | `GE_UseAppliable` | Movement.MaxSpeedMultiplier ×c 0.5 |  |  |  |  |
 | `GE_UsePlaceable` | Movement.MaxSpeedMultiplier ×c 0.4 |  |  |  |  |
 | `GE_Weapons_DetonatorRangeMultiplier` | Weapon.DetonatorRangeMultiplier × SetByCaller(Weapon.DetonatorRangeMultiplier), fallback 1 |  |  |  |  |
+
+## Ghillie effect (round 36 note)
+
+`GE_Player_GhilliEffects` (Ghillie Body Suit and Ghillie Headwear applied together; it requires both `State.Player.Ghilli.BodySuit` and `State.Player.Ghilli.Headwear`) multiplies, all `MultiplyCompound`: `AdsTimeMultiplier` 0.8, `AimSwayScaleMultiplier` 1.15, `LeanTimeMultiplier` 1.15, `UnleanTimeMultiplier` 1.15, `MaxSpeedMultiplier` 0.95, `JumpVelocityMultiplier` 0.95. No other cooked asset names the two `State.Player.Ghilli.*` tags (`findname` over all packages). See the [round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md#6-ghillie-suit-and-headwear).

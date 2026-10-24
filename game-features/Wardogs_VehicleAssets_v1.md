@@ -530,3 +530,15 @@ Engine type `WDDeploymentBoardVehicleConfigExtension`.
 | [`DA_SPW_DeploymentConfigExtension`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/SPW_01/Content/Data/DA_SPW_DeploymentConfigExtension.json) | `SPW_01` | `DeploymentAvailableGameplayCueTag`=GameplayCue.Vehicle.SpawnVehicle.DeploymentAvailable |
 <!-- /vehicle_asset_tables -->
 
+## 34. Flare settings (round 36)
+
+`FWDFlaresSettings` per vehicle, from the `DA_*GameplaySystems*` assets (see the [round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md#5-flares)). Re-derive with `python -I _tools/round36_combat.py`.
+
+| Vehicle | Internal | Starting flares | Active time (s) | Effective range min / max (m) |
+|---|---|---:|---:|---|
+| Fixed-wing airplane | FWG_01 | 3 | 3.5 | not set |
+| Havoc | ROT_02 | 2 | 3.5 | 5 / 300 |
+| MH-6, AH-6M, AH-6R | ROT_03 | 2 | 3.5 | 10 / 300 |
+| Z20 Lakota | ROT_04 | 2 | 3.5 | 15 / 300 |
+
+`FlaresCooldownTime` is not set in any shipped asset. Restocking and the effect on lock-on weapons are native and not recovered.

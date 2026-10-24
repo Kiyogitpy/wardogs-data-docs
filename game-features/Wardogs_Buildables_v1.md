@@ -480,7 +480,62 @@ Total: 206 files.
 - How `Cost` turns into Build Supplies spent, and how a hammer's `BuildAmount` scales against the stage progress (the per-hit amounts and swing times are in section 3; the progress arithmetic is native, thunks at `0x8593E80`, `0x8593FB0`, `0x85940E0`).
 - Meaning of `MaxStack`, `PlacementFlags`, `StackCheckOffset` and the unnamed (`_aaab...`) placement fields.
 - What `SafeZonePlacementCondition` and `WithinLadderBoundsPlacementCondition` test (Blueprint, not exported here).
-- Function of the Builder's Radio, and the exact rate of the Refuel and Repair stations.
+- Function of the Builder's Radio. (The Refuel and Repair Station rates were found in round 36: section 12.)
 - Cash rows for the Talon 9K-SAM, Loudspeaker, Vanguard CIWS, Stingray and MG Nest, and for WoodBase and Shelter. The stationary weapons' placement path through the hammer registry is not traced.
 - Whether the FOB spawns players, and how `Buildable.Damage.DoNotTakeDamage` combines with the FOB damage row.
-- Hit-count tables per structure: these need all matching damage entries (armor-piercing, hollow-point, calibers) and the instigator and target rules, not just the single-tag entries above.
+- Hit-count tables per structure: a derived bound for four sources is in section 12.3; the exact tables need all matching damage entries (armor-piercing, hollow-point, calibers) and the instigator and target rules.
+
+## 12. Round 36 additions
+
+Evidence: cooked data read and static disassembly, see [round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md). Re-derive the numbers with `python -I _tools/round36_combat.py --check`.
+
+### 12.1 Refuel and Repair Station rates
+
+The stations hold no numbers of their own. The rates are in the FOB refuel and repair scene asset [`DA_Scene_FobRefuelRepair`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/UI/FobRefuelRepair/DA_Scene_FobRefuelRepair.json) (`StationData`). `MaxAmount` is a fraction of the vehicle's fuel tank or health pool.
+
+| Station | Button | `MaxAmount` | `Cost` (cash) | `RestockTime` (s) | Supply item | Items per restock |
+|---|---|---:|---:|---:|---|---:|
+| Refuel Station | Fast | 0.05 | 75 | 3.0 | Fuel Supplies | 5 |
+| Refuel Station | Max | 1.0 | 1,500 | 9.0 | Fuel Supplies | 5 |
+| Repair Station | Fast | 0.05 | 100 | 3.0 | Mechanical Supplies (`SparePartsSupplies`) | 5 |
+| Repair Station | Max | 1.0 | 2,000 | 9.0 | Mechanical Supplies | 5 |
+
+The cash for Fast is 5% of the Max price. The sale appears to pay the FOB owner (inferred from `WDFobStationPayOwner`). How the 5 items scale with the amount restocked is native and not read.
+
+### 12.2 What `RepairSpeedMultiplier` is
+
+`WDBuildableDataAsset.RepairSpeedMultiplier` exists on 32 buildable assets. It equals `Cost / 15` on 21 of them (Refuel and Repair Station 13.33, Radio 1.33, Tank Trap 1.47, Quad Wall 5.0); the multi-stage parents and the stationary weapons differ (Bunker 6.67, Door 2.0, Gate 5.67, Talon 66.67). It is a per-structure value that the native hammer path multiplies into the hit amount (inferred from `0x85F1F20`, which reads the data asset at `+0x64`); it is not a vehicle refuel or repair rate.
+
+### 12.3 Hits to destroy (derived)
+
+`ceil(MaxHealth / (base * (1 + factor)))` at point blank with full base damage, using the per-source factors of section 4. Base damage: M4 5.56 FMJ 28, M67 frag 100, 120 mm tank rocket 150, C4 250.
+
+| Structure | HP | M4 5.56 FMJ | M67 frag | 120 mm rocket | C4 |
+|---|---:|---:|---:|---:|---:|
+| Barbed Wire | 250 | 60 | 3 | 1 | 1 |
+| Sandbag Wall, Wood base | 735 | 175 | 8 | 1 | 1 |
+| Hesco (HBlock) | 1,600 | 286 | 11 | 5 | 2 |
+| Door | 2,200 | 524 | 22 | 2 | 3 |
+| Tall Hesco, Shelter | 2,250 | 402 | 15 | 9 | 4 |
+| Tank Trap | 4,500 | 1,072 | 90 | 6 | 3 |
+| Bunker, Recon Tower, Indirect Fire Shelter | 5,000 | 893 | 100 | 23 | 14 |
+| Gate | 5,320 | 1,267 | 54 | 4 | 2 |
+| Bremer Wall | 6,500 | 1,161 | 44 | 13 | 7 |
+| FOB | 15,000 | 2,679 | 50 | 7 | 5 |
+
+These are bounds from the tables, not observed hit counts. The build time per structure and how `Cost` converts to Build Supplies per hit stay native (hit path `Server_SingleHitMode_Construct` -> `0x86032F0` -> `0x85EAAA0` -> `0x85F1D90` -> `0x85F1F20`).
+
+### 12.4 Stationary weapon health and restock
+
+The MG Nest buildable asset says 3,000 `MaxHealth`; the finished gun is the `STN_06` vehicle, whose `InitialVehicleHealth` and `VP_STN_06` `MaxHealth` are 1,800 (the other five stationary weapons have equal values in both places). The plot actor `B_Buildable_StationaryVehicle` takes its health from the buildable asset while it is being built.
+
+| Weapon | `ReloadTime` (s) | Start + end delay (s) | Restock supplies | Cash | Rounds per restock |
+|---|---:|---:|---|---:|---|
+| Talon (STN_01) | 5.0 | 1.0 + 1.0 | 200 Munitions | not set | not serialized |
+| STN_02 | 3.0 | 1.0 + 1.0 | 250 Munitions | not set | 500 |
+| L81 Mortar (STN_03) | 4.5 | 1.0 + 1.0 | 150 Munitions | not set | not serialized |
+| Stingray (STN_05) | 0.0 | 1.0 + 1.0 | 900 Mechanical Supplies | 5,000 | 1 (native default) |
+| MG Nest (STN_06) | 8.0 | 1.0 + 1.0 | 200 Munitions | not set | 60 |
+
+The Stingray is bought, not reloaded: the drone reload scene reads "PURCHASE STINGRAY" with spare parts and cash. It and the Talon are lock-on weapons (`TargetingSetup`: air targets, `TimeToTarget` 2.0 s, `FireDelayAfterLock` 0.5 s; the Stingray fires only while locked).
+
