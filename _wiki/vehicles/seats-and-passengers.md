@@ -1,0 +1,134 @@
+---
+title: "Seats and passengers"
+parent: "Vehicles"
+group: "Reference"
+description: "How many seats each Wardogs vehicle has, what the driver, pilot, gunner and passenger seats do, how seated players are protected from gunfire on helicopters and how Season 2 changed that, and how to get in and out."
+---
+
+# Seats and passengers
+
+| Seats and passengers | |
+|---|---|
+| **General** | |
+| Type | Mechanic |
+| Applies to | Every player vehicle |
+| Seat roles | Driver or pilot, gunner, active passenger, passive passenger |
+| Seat switching | F1 to F12 by default, not instant |
+| **Protection** | |
+| Seated protection | Helicopters and the Humvee family, in the data |
+| Season 2 change | Little Bird family halved, Z20 Lakota added |
+{: .wiki-infobox }
+
+Every vehicle has a set of seats, and each seat has a role. The driver or pilot steers and flies. A gunner works a mounted weapon. Passengers ride along. Seated players also take a reduced share of gunfire damage on some vehicles, set by the seat-protection rules.
+
+## Overview
+
+The seat count on each vehicle's stats sheet is the number the data lists for it. The seat data sometimes lists a different number of setups, which the tables below note. A vehicle with a mounted gun has a gunner seat for that gun.
+
+## How it works
+
+### Seat roles
+
+The seat data names four roles. Every seat is one of them:
+
+- **Driver or pilot.** Steers the vehicle or flies it. The in-game tip says the driver or pilot navigates the battlefield.
+- **Gunner.** Works a mounted weapon. The in-game tip says gunners track targets.
+- **Active passenger.** A passenger seat listed as active in the data.
+- **Passive passenger.** A passenger seat listed as passive in the data, as used on the M113 APC SV.
+
+The data gives only these names. What the difference between active and passive passengers does in play is not stated.
+
+### Getting in, switching and leaving
+
+- **Enter.** Approach the vehicle and use the interaction prompt for Enter Vehicle.
+- **Switch seats.** Seats are chosen with F1 to F12 by default. The in-game tip says switching is not instant and takes a moment.
+- **Exit.** Open the interaction menu and press and hold the Exit Vehicle option.
+- **Unlock.** Purchased vehicles start locked. The owner can unlock them for a squad or for everyone, and teammates cannot enter until they are unlocked.
+
+The data does not describe ejecting a player from a vehicle.
+
+### Seat protection
+
+The seat data sets a reduction for seated players against two main groups of arms: small and medium arms, and high-calibre arms. A value of -25 means the seated player takes 75% of the damage, which is 25% protection. A value of -90 means the player takes 10% of the damage.
+
+The data lists seat protection only for these vehicles:
+
+| Vehicle group | Small and medium arms | High-calibre arms | Season 2 |
+|---|---|---|---|
+| Little Bird family ([MH-6](mh-6.md), [AH-6M [Miniguns]](ah-6m-miniguns.md), [AH-6R [Rockets]](ah-6r-rockets.md)) | -50% in Season 1, -25% in Season 2 | -20% in Season 1, -15% in Season 2 | Halved |
+| Venom helicopter | -50% in Season 1, -25% in Season 2 | -20% in Season 1, -15% in Season 2 | Halved |
+| [Z20 Lakota](z20-lakota.md) and [Z20 Lakota [Miniguns]](z20-lakota-miniguns.md) | None in Season 1, -25% in Season 2 | None in Season 1, -15% in Season 2 | Added |
+| [Havoc](havoc.md) | -90% | -50%, plus -60% in a third group the data labels only as Special | Unchanged |
+| Humvee family ([Humvee](humvee.md), [Minigun](humvee-minigun.md), [M249](humvee-m249.md)) | -70% | -40% | Unchanged |
+
+The Season 2 values are the ones shown in the current data. The Season 2 notes say the Havoc and Humvee rows did not change. The data has no seat protection row for the other vehicles, including the Kodiak, Ural, Wolf-110, Bobcat, Dune Buggy, M113, the tanks and the airplane.
+
+### Season 2 changes
+
+- The Little Bird family's seat protection was halved: 50% to 25% against small and medium arms, and 20% to 15% against high-calibre arms.
+- The Z20 Lakota gained a seat rule of 25% against small and medium arms and 15% against high-calibre arms.
+- The Havoc and Humvee rules did not change.
+
+### Parachutes and jumping
+
+The Basic and Sport parachutes are single-use items that a player deploys by hand after a long fall. The data gives a fall of 400 (unit not stated) before a parachute can open, but does not say whether a player can jump from an aircraft, or how that works from a helicopter. That is not yet known. See the [Parachutes](../equipment/parachutes.md) article.
+
+## Numbers
+
+Seat counts and roles for every drivable vehicle. Sort by seats with the header.
+
+| Vehicle | Seats | Roles (as the data gives them) |
+|---|---:|---|
+| [Havoc](havoc.md) | 2 | Pilot and gunner |
+| [MH-6](mh-6.md) | 6 | Pilot and five passenger seats, roles not given |
+| [AH-6M [Miniguns]](ah-6m-miniguns.md) | 2 | Driver and one active passenger |
+| [AH-6R [Rockets]](ah-6r-rockets.md) | 2 | Driver and one active passenger |
+| [Z20 Lakota](z20-lakota.md) | 13 | Pilot and passengers, 11 passengers in the shop text |
+| [Z20 Lakota [Miniguns]](z20-lakota-miniguns.md) | 13 | Pilot and passengers, with the miniguns |
+| [Fixed-wing airplane](fixed-wing-airplane.md) | 2 | Driver and one passenger |
+| [SPH-2](sph-2.md) | 3 | Driver and gunner, 2 seat setups |
+| [L2A6](l2a6.md) | 3 | Driver and gunner, 2 seat setups |
+| [Flakpanzer Gepard](flakpanzer-gepard.md) | 2 | Driver and gunner |
+| [T-72B3](t-72b3.md) | 3 | Driver, gunner and a mounted machine gun seat |
+| [M113 APC SV](m113-apc-sv.md) | 10 | Driver and nine passive passengers |
+| [Bobcat](bobcat.md) | 2 | Driver and passenger |
+| [Kodiak](kodiak.md) | 4 | Driver and three active passengers |
+| [Kodiak [Pickup]](kodiak-pickup.md) | 6 | Driver and passengers, 4 seats in the base seat data |
+| [Kodiak [M249]](kodiak-m249.md) | 5 | Driver, passengers and the ring turret |
+| [Humvee](humvee.md) | 4 | Driver and three active passengers |
+| [Humvee [Minigun]](humvee-minigun.md) | 5 | Driver, passengers and the minigun mount, 4 on one stats sheet |
+| [Humvee [M249]](humvee-m249.md) | 5 | Driver, passengers and the ring turret |
+| [Dune Buggy](dune-buggy.md) | 3 | Driver and two passengers |
+| [Ural](ural.md) | 3 | Driver and two passengers |
+| [Ural Defender](ural-defender.md) | 3 | Driver and two passengers |
+| [Ural Defender [M249]](ural-defender-m249.md) | 3 | Driver, passengers and the M249 mount, 5 seat setups in the seat data |
+| [Wolf-110](wolf-110.md) | 4 | Driver and three active passengers |
+| [Wolf-110 [M2 Browning]](wolf-110-m2-browning.md) | 5 | Driver, passengers and the M2 Browning ring turret |
+
+Some vehicles have more seat setups in the seat data than seats on the stats sheet. The Pickup, Ural Defender [M249] and Humvee [Minigun] are the clearest cases. The data does not resolve every one of them, so those counts are shown as the data gives them.
+
+## Tips that follow from the numbers
+
+- On a Little Bird, a seated player takes 75% of small and medium arms damage in Season 2. In Season 1 the seated player took 50%.
+- On a Havoc, a seated player takes 10% of small and medium arms damage. That is the strongest seat protection in the data.
+- The Z20 Lakota gets seat protection for the first time in Season 2, with 25% against small and medium arms.
+- A vehicle with no seat protection row, such as the Kodiak or the Ural, has no seat reduction in the data.
+- The in-game tip says the passenger list shows who has a parachute.
+
+## See also
+
+- [Vehicle damage](vehicle-damage.md): how hits reach the vehicle and its occupants
+- [Vehicle weapons](vehicle-weapons.md): the guns that gunner seats use
+- [Repair and vehicle parts](repair-and-vehicle-parts.md): what happens to the vehicle while seated players are inside
+- [Vehicles](../vehicles.md): the full list of vehicles
+
+## Sources
+
+- [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md): seat counts per stats sheet
+- [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md): seat setups and roles
+- [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md): seat names
+- [Vehicle Damage Pipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md): the seat protection table and how it applies
+- [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md): the seat reduction step
+- [Frontend, Server and Test Data](../../content/Wardogs_DataTables_Frontend_v1.md): the in-game vehicle tips
+- [Season 2 Changes: Damage and Combat](../../season-2-changes/damage-combat-systems.md)
+- [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)

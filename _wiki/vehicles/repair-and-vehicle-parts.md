@@ -1,0 +1,134 @@
+---
+title: "Repair and vehicle parts"
+parent: "Vehicles"
+group: "Reference"
+description: "The damageable parts of each Wardogs vehicle with their health, what happens when a tyre, engine, fuel tank, track or rotor breaks, and how to repair them with a Wrench, a repair drill or a Repair Station."
+---
+
+# Repair and vehicle parts
+
+| Repair and vehicle parts | |
+|---|---|
+| **General** | |
+| Type | Mechanic |
+| Applies to | Every player vehicle |
+| Health unit | HP |
+| **Repair** | |
+| Hand repair | Wrench, Light drill, Heavy drill (+5 HP per use) |
+| Base repair | Repair Station (rate not yet known) |
+{: .wiki-infobox }
+
+A vehicle has one main health pool, plus separate pools for some parts: the engine, the fuel tank, the wheels or tracks, and on helicopters the rotors. The main health decides whether the vehicle is destroyed. The part pools decide what breaks and when. How hits reach each part is covered in [Vehicle damage](vehicle-damage.md).
+
+## Overview
+
+Parts with their own health are the engine, fuel tank, wheels (or tracks on tanks and the M113), and the main and tail rotors on helicopters. The airplane has no separate pools. Its 150 HP starts as one body pool.
+
+## How it works
+
+### Damageable parts
+
+- **Engine.** Its own health pool. It has effect triggers at fixed health percentages.
+- **Fuel tank.** Its own health pool. Its triggers and the leak effect are covered in [Fuel and refueling](fuel-and-refueling.md).
+- **Tyres (wheeled vehicles).** Each wheel has its own pool, usually 75 HP.
+- **Tracks (tanks, the M113).** Each track has its own pool, usually 125 HP.
+- **Rotors (helicopters).** A main rotor and a tail rotor, each with its own pool.
+- **Radar (M113).** A separate part with 100 HP.
+
+### Tyres
+
+A tyre has three states in the data:
+
+1. **Intact.**
+2. **Deflated** when the wheel's health falls to 55% of its maximum or below. A 75 HP tyre deflates at about 41 HP or less. Season 1 used 50%, and Season 2 raised it to 55% on every wheeled axle.
+3. **Destroyed** when the wheel's health reaches zero.
+
+A deflated tyre keeps its wheel on the ground but uses a different collision shape. A destroyed tyre is replaced by a damaged-wheel model. The data stores the tyre radius for each state. On the Dune Buggy it falls from 0.45 m to 0.345 m and then to 0.26 m. The data does not say how a deflated tyre changes handling beyond that.
+
+### Health triggers
+
+Parts have effect triggers at fixed percentages of their health. The data lists where each trigger sits. Most effects are not decoded in the data, so the wiki does not say exactly what each one does. Where the data is clear, it is stated below.
+
+- **Main body.** Triggers at 55%, 25% and 10% on most ground vehicles and helicopters.
+- **Engine.** Triggers at 20% on the Bobcat, at 55% on the SPH-2, L2A6, Gepard and Humvee [M249], and at 0% on all of them.
+- **Fuel tank.** Triggers at 90% and 80%, 55%, and 0% on several vehicles. The Little Bird family uses 10% and 0%.
+- **Tracks.** A track has an effect above 55% and is dead at 0%.
+- **Wheels.** Triggers at 55% and 0% on the wheeled vehicles.
+- **Rotors.** The Havoc's main and tail rotors have triggers at 55% and 0%. The data sets rotor triggers only for the Havoc.
+- **Radar.** On the M113, triggers at 55%, 25% and 0%.
+
+A non-main part that reaches zero is marked destroyed, and the vehicle keeps going. Only the main health at zero destroys the vehicle.
+
+### Season 2 changes
+
+- The tyre deflate threshold rose from 50% to 55% on every wheeled axle (the Humvee, Kodiak, Dune Buggy, Ural and Bobcat axles, among others).
+- The data lists no Season 2 change to the health pools of the engine, fuel tank, tracks or rotors.
+
+## Numbers
+
+Health pools per vehicle, as stored in the data. Sort by any column with the header. "Not listed" means the data sets no separate pool for that part.
+
+| Vehicle | Main health (HP) | Engine (HP) | Fuel tank (HP) | Wheels or tracks (HP each) | Rotors (HP, main / tail) |
+|---|---:|---:|---:|---|---|
+| [Havoc](havoc.md) | 800 | 200 | 200 | Front wheels 100 | 400 / 300 |
+| [MH-6](mh-6.md) | 400 | 200 | 200 | None | 400 / 300 |
+| [AH-6M [Miniguns]](ah-6m-miniguns.md) | 400 | 200 | 200 | None | 400 / 300 |
+| [AH-6R [Rockets]](ah-6r-rockets.md) | 400 | 200 | 200 | None | 400 / 300 |
+| [Z20 Lakota](z20-lakota.md) | 600 | 200 | 200 | None | 400 / 300 |
+| [Z20 Lakota [Miniguns]](z20-lakota-miniguns.md) | 600 | 200 | 200 | None | 400 / 300 |
+| [Fixed-wing airplane](fixed-wing-airplane.md) | 150 at start | Not listed | Not listed | None | None |
+| [M113 APC SV](m113-apc-sv.md) | 1,000 | Not listed | 100 | Tracks 125, radar 100 | None |
+| [SPH-2](sph-2.md) | 650 | 150 | 100 | Tracks 125 | None |
+| [L2A6](l2a6.md) | 800 | 150 | 150 | Tracks 125, hull zone 350 | None |
+| [Flakpanzer Gepard](flakpanzer-gepard.md) | 800 | 150 | 150 | Tracks 125 | None |
+| [T-72B3](t-72b3.md) | 750 | 150 | 150 | Tracks 125 | None |
+| [Bobcat](bobcat.md) | 200 | 200 | 100 | Wheels 75 | None |
+| [Kodiak](kodiak.md) | 400 | 400 | 400 | Wheels 75 | None |
+| [Kodiak [Pickup]](kodiak-pickup.md) | 400 | 400 | 400 | Wheels 75 | None |
+| [Kodiak [M249]](kodiak-m249.md) | 400 | 400 | 400 | Wheels 75 | None |
+| [Humvee](humvee.md) | 500 | 400 | 400 | Wheels 75 | None |
+| [Humvee [Minigun]](humvee-minigun.md) | 500 | 400 | 400 | Wheels 75 | None |
+| [Humvee [M249]](humvee-m249.md) | 500 | 400 | 400 | Wheels 75 | None |
+| [Dune Buggy](dune-buggy.md) | 400 | 400 | 300 | Wheels 75 | None |
+| [Ural](ural.md) | 700 | 400 | 400 | Six wheels 75 | None |
+| [Ural Defender](ural-defender.md) | 700 | 400 | 400 | Six wheels 75 | None |
+| [Ural Defender [M249]](ural-defender-m249.md) | 700 | 400 | 400 | Six wheels 75 | None |
+| [Wolf-110](wolf-110.md) | 500 | 400 | 400 | Not yet known | None |
+| [Wolf-110 [M2 Browning]](wolf-110-m2-browning.md) | 500 | 400 | 400 | Not yet known | None |
+
+### Repair tools and stations
+
+| Repair option | Repairs | Per use | Speed | Cost |
+|---|---|---:|---|---|
+| [Wrench](../equipment/wrench.md) | All vehicles | +5 HP | Not yet known | 180 cash |
+| [Light repair drill](../equipment/drills.md) | Vehicles | +5 HP | Moderate | 600 cash |
+| [Heavy repair drill](../equipment/drills.md) | Vehicles | +5 HP | Fastest | 1,300 cash |
+| [Refuel and Repair Stations](../equipment/refuel-and-repair-stations.md) | Vehicles in the FOB radius | Not yet known | Not yet known | Station: 200 Build Supplies |
+
+Each repair tool is used until it is empty or the target is full. The wrench and drills share the same +5 HP per use. A Repair Station uses Mechanical Supplies, which cost 10 cash per lot of 50. Its repair multiplier is stored as 13.33, but the data does not say what that multiplier does in play.
+
+The in-game tips say that high impact damage zones on a vehicle can be repaired with repair tools, and that returning to base for repairs is not free.
+
+## Tips that follow from the numbers
+
+- A Humvee tyre deflates at about 41 HP, which is 55% of its 75 HP. Any tyre damage past that point changes the tyre's state, so a deflated tyre is the first warning.
+- Tanks take little rifle damage, and their tracks have 125 HP each. The data sets a track trigger at 55%, but not what it does.
+- At +5 HP per use, the Humvee's 500 HP would take 100 uses to restore from zero, before any limit on the tool's uses, which is not yet known.
+- The in-game tip says a rotor blade breaks if it hits an object, so flying close to terrain or other aircraft puts the rotors at risk.
+
+## See also
+
+- [Vehicle damage](vehicle-damage.md): how hits reach each part
+- [Fuel and refueling](fuel-and-refueling.md): the fuel tank and refilling
+- [Vehicle handling](vehicle-handling.md): how wheel and track state affects movement, where the data says so
+- [Wrench](../equipment/wrench.md), [Drills](../equipment/drills.md) and [Supplies](../equipment/supplies.md)
+
+## Sources
+
+- [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
+- [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md): health pools and health triggers
+- [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md): wheel radius states
+- [Vehicle Damage Pipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md): the tyre states and deflate threshold
+- [Buildables](../../game-features/Wardogs_Buildables_v1.md): the Repair Station
+- [Item Shop](../../game-features/Wardogs_ItemShop_v1.md) and [Item Actions](../../content/Wardogs_ItemActions_v1.md): repair tool amounts and prices
+- [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
