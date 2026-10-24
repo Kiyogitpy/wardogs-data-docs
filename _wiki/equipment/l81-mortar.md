@@ -31,7 +31,7 @@ The mortar can hit targets from 132 m to 684 m away. It has one firing arc only,
 
 ### Range and elevation
 
-The table gives the elevation in mils for each range on flat ground, as the [wardogs-calculator](https://github.com/apollyon-sys/wardogs-calculator) by apollyon-sys lists it (MIT licence) [CALC]. Values between the rows are not listed here.
+The table gives the elevation in mils for each range on flat ground, as measured in game by the community calculator [wardogs-calculator](https://github.com/apollyon-sys/wardogs-calculator) by apollyon-sys (MIT licence). The calculator gives the range as 132 m to 684 m and the sight as 150 to 850 mils; the table is its mil values at every 50 m. The calculator reads between its rows in a straight line.
 
 | Range (m) | Mils | | Range (m) | Mils |
 |---:|---:|---|---:|---:|
@@ -46,7 +46,7 @@ Mils fall as range rises, so a longer shot needs a lower elevation setting. The 
 
 ### Flight time
 
-The game files hold no mortar projectile data. The mortar appears in them only as audio, so no flight-time, apex or fall-time estimate exists for the L81 Mortar [GAME]. The elevation table above is the only firing data available.
+The game files hold no mortar projectile data. The mortar appears in them only as audio, so no flight-time, apex or fall-time estimate exists for the L81 Mortar. The elevation table above is the only firing data available.
 
 ## Cost
 
@@ -68,5 +68,5 @@ The Build Supplies cost is taken from the [Buildables](buildables.md) article, w
 ## Sources
 
 - [Buildables](buildables.md): build cost, health and hammer (stationary weapons table)
-- [wardogs-calculator](https://github.com/apollyon-sys/wardogs-calculator) by apollyon-sys (MIT licence): range, one-arc and mils table [CALC]
-- Game files: no mortar projectile data (the mortar appears only as audio) [GAME]
+- [wardogs-calculator](https://github.com/apollyon-sys/wardogs-calculator) by apollyon-sys (MIT licence): range, one-arc and mils table, measured in game
+- [Artillery shell flight data](../../game-features/Wardogs_ArtilleryShellFlight_v1.md): confirms the game files hold no mortar projectile data (the mortar appears only as audio)
