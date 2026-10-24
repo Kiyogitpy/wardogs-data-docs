@@ -16,6 +16,7 @@ description: "Five-seat Humvee with a ring-mounted M249 machine gun, sold for 8,
 | Main health | 500 HP |
 | Top speed | 113.2 (as stored) |
 | Rifle damage taken (derived) | 4% |
+| 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#land-wheeled-humvee-machinegun) |
 | Internal name | WHL_05 (machine gun variant) |
 {: .wiki-infobox }
 

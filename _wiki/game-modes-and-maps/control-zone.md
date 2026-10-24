@@ -1,6 +1,7 @@
 ---
 title: "Control Zone"
 parent: "Game Modes & Maps"
+group: "Game modes"
 description: "The zone objective behind King of the Hill and Sniper Showdown: zone sizes, the moving Hot Zone, capture rules and placement."
 ---
 

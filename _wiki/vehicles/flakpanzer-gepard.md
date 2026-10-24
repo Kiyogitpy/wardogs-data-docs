@@ -16,6 +16,7 @@ description: "Two-seat tracked anti-air tank with twin 35 mm Oerlikon cannons, s
 | Main health | 800 HP |
 | Top speed | 65 (as stored) |
 | Rifle damage taken (derived) | 0% |
+| 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#land-tracked-tnk-01-antiair) |
 | Internal name | TNK_01 (anti-air variant) |
 {: .wiki-infobox }
 

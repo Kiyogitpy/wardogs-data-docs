@@ -1,6 +1,7 @@
 ---
 title: "Sniper Showdown"
 parent: "Game Modes & Maps"
+group: "Game modes"
 description: "A sniper mode where standing still gets you revealed, played on its own zone and a countdown between rounds."
 ---
 

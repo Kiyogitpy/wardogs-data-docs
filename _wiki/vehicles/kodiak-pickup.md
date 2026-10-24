@@ -16,6 +16,7 @@ description: "Six-seat pickup version of the Kodiak SUV with no weapons, sold fo
 | Main health | 400 HP |
 | Top speed | 154 (as stored) |
 | Rifle damage taken (derived) | 5% |
+| 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#land-wheeled-patriot-kodiak/WHL_02_Pickup) |
 | Internal name | WHL_02 (pickup variant) |
 {: .wiki-infobox }
 

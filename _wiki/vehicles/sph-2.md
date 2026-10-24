@@ -25,6 +25,7 @@ description: "Tracked artillery vehicle that fires 155 mm shells from a long-ran
 | Main health | 650 HP |
 | Top speed | 65 (as stored) |
 | Rifle damage taken (derived) | 0% |
+| 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#land-tracked-tnk-01-artillery) |
 | Internal name | TNK_01 (artillery variant) |
 {: .wiki-infobox }
 

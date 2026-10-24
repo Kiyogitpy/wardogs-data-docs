@@ -16,6 +16,7 @@ description: "Five-seat Wolf-110 SUV with a ring-mounted M2 Browning machine gun
 | Main health | 500 HP |
 | Top speed | 129 (as stored) |
 | Rifle damage taken (derived) | 4.5% |
+| 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#land-wheeled-whl-08-default/WHL_08_RingTurret) |
 | Internal name | WHL_08 (ring turret variant) |
 {: .wiki-infobox }
 

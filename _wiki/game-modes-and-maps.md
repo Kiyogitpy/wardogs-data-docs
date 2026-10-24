@@ -12,19 +12,7 @@ Wardogs has a few team modes built around zones and objectives, a sniper mode wi
 
 Where the data has no answer, the articles say "not yet known" rather than guess. That includes team sizes, match timers and win conditions for most modes.
 
-## Overview
-
-| Article | What it covers |
-|---|---|
-| [King of the Hill](game-modes-and-maps/king-of-the-hill.md) | The main three-team zone-capture mode, played on the main maps |
-| [Control Zone](game-modes-and-maps/control-zone.md) | The zone objective used by King of the Hill and Sniper Showdown: zone sizes, moving Hot Zones, capture rules |
-| [Sniper Showdown](game-modes-and-maps/sniper-showdown.md) | The sniper mode where standing still gets you revealed |
-| [Deathmatch](game-modes-and-maps/deathmatch.md) | Team deathmatch with a weapon pick before each spawn |
-| [PvE Scenarios](game-modes-and-maps/pve-scenarios.md) | Single-life missions against AI squads: Hunter Killer, Strike and Disarm, VIP Escort |
-| [Shooting Range](game-modes-and-maps/shooting-range.md) | The practice range with moving targets |
-| [Team Offence](game-modes-and-maps/team-offence.md) | Season 2: teamkill offences are handled by player ballots |
-| [Hot Potato](game-modes-and-maps/hot-potato.md) | Season 2: a mode built around three Hot Potato items |
-| [Maps](game-modes-and-maps/maps.md) | Every map named in the data, which modes use it, and its zone layout |
+{% include wiki-index.html hub="Game Modes & Maps" %}
 
 ## Other modes in the data
 

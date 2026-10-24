@@ -1,6 +1,7 @@
 ---
 title: "Deathmatch"
 parent: "Game Modes & Maps"
+group: "Game modes"
 description: "Team deathmatch: pick one of 20 weapons before each spawn, with health regeneration and a loadout that comes with ammo."
 ---
 

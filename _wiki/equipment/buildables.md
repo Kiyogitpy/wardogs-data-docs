@@ -1,6 +1,7 @@
 ---
 title: Buildables
 parent: "Equipment"
+group: "Emplacements and buildables"
 description: "Everything players can build with hammers: Build Supplies cost, health, which hammer builds it, placement rules and how each damage type affects it."
 ---
 

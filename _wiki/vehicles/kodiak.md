@@ -16,6 +16,7 @@ description: "Four-seat SUV with a driver and three passengers and no weapons, t
 | Main health | 400 HP |
 | Top speed | 154 (as stored) |
 | Rifle damage taken (derived) | 5% |
+| 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#land-wheeled-patriot-kodiak) |
 | Internal name | WHL_02 (default variant) |
 {: .wiki-infobox }
 

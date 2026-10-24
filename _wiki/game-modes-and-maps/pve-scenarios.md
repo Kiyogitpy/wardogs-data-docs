@@ -1,6 +1,7 @@
 ---
 title: "PvE Scenarios"
 parent: "Game Modes & Maps"
+group: "Game modes"
 description: "Single-life PvE missions against AI squads: Hunter Killer, Strike and Disarm, and VIP Escort, with their objectives and AI factions."
 ---
 

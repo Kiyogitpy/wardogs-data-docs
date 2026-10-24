@@ -1,6 +1,7 @@
 ---
 title: Grenades and Explosives
 parent: "Equipment"
+group: "Explosives and throwables"
 description: "Frag grenade, C4, placed mines, IED and launcher rounds: blast damage, the distance it reaches, and the fuse or trigger."
 ---
 

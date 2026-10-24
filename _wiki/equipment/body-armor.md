@@ -1,6 +1,7 @@
 ---
 title: Body Armor
 parent: "Equipment"
+group: "Armor"
 description: "Vests and helmets: four tiers, the body parts each one covers, their damage reduction, durability, weight and price."
 ---
 

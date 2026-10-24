@@ -16,6 +16,7 @@ description: "Two-seat attack helicopter with a 30 mm autocannon and B-13 rocket
 | Main health | 800 HP |
 | Top speed | 400 (as stored) |
 | Rifle damage taken (derived) | 5% |
+| 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#air-rotary-havoc) |
 | Internal name | ROT_02 |
 {: .wiki-infobox }
 

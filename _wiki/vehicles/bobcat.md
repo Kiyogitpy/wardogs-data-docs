@@ -16,6 +16,7 @@ description: "Two-seat quad bike, the cheapest wheeled vehicle in the vehicle ve
 | Main health | 200 HP |
 | Top speed | 75 (as stored) |
 | Rifle damage taken (derived) | 7.5% |
+| 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#land-wheeled-bobcat) |
 | Internal name | WHL_01 |
 {: .wiki-infobox }
 

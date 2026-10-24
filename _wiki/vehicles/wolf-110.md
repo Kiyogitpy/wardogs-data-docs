@@ -16,6 +16,7 @@ description: "Four-seat SUV added in Season 2, with the strongest torque curve o
 | Main health | 500 HP |
 | Top speed | 129 (as stored) |
 | Rifle damage taken (derived) | 5% |
+| 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#land-wheeled-whl-08-default) |
 | Internal name | WHL_08 (default variant) |
 {: .wiki-infobox }
 

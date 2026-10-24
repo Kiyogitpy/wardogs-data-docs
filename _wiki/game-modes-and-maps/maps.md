@@ -1,6 +1,7 @@
 ---
 title: "Maps"
 parent: "Game Modes & Maps"
+group: "Maps"
 description: "Every map the data names, the modes that use it, and its zone layout. Level layouts, spawns and buildings are not in the data."
 ---
 

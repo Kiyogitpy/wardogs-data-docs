@@ -1,6 +1,7 @@
 ---
 title: "Hot Potato"
 parent: "Game Modes & Maps"
+group: "Game modes"
 description: "Season 2 mode built around three Hot Potato items, with its own map tracker and animation set. Its rules are not yet known."
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Shooting Range"
 parent: "Game Modes & Maps"
+group: "Game modes"
 description: "The practice range: moving targets that drop when hit, with a tutorial that runs on top of it."
 ---
 
