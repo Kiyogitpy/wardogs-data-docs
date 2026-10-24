@@ -1,6 +1,7 @@
 ---
 title: "Shops"
 parent: "Progression & Economy"
+group: "Economy"
 description: "Where to buy gear, weapons, vehicles and supply crates, what each listing costs, and how unlock levels and buy limits work."
 ---
 

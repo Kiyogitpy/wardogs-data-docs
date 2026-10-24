@@ -1,6 +1,7 @@
 ---
 title: "Cash and Rewards"
 parent: "Progression & Economy"
+group: "Economy"
 description: "What each action pays in cash and role XP: kills, revives, heals, vehicles, zones, spotting, supply crates and the end-of-match bonus."
 ---
 

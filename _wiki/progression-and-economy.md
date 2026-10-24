@@ -12,16 +12,7 @@ Players earn cash and XP for almost everything they do in a match: kills, revive
 
 Where the data has no answer, the articles say "not yet known". The sources do not give the level or cost that unlocks each skill rank, for example.
 
-## Overview
-
-| Article | What it covers |
-|---|---|
-| [Cash and Rewards](progression-and-economy/cash-and-rewards.md) | What each action pays in cash and XP, the end-of-match bonus, and the role mastery XP curve |
-| [Skills](progression-and-economy/skills.md) | The six roles and their 62 skills, and what each one does |
-| [Challenges](progression-and-economy/challenges.md) | Achievements, passive missions, wagers, and the in-match challenges that pay out |
-| [Shops](progression-and-economy/shops.md) | The item shop, the weapon shop, vehicle and garage purchases, and how unlock levels work |
-| [Factory Investment](progression-and-economy/factory-investment.md) | The factory that produces weapons and optics, its upgrades and its recipes |
-| [Cosmetics](progression-and-economy/cosmetics.md) | Skins, emotes and other cosmetics, their Gold Bar prices, and what the data shows about unlocking them |
+{% include wiki-index.html hub="Progression & Economy" %}
 
 ## Currencies
 

@@ -1,6 +1,7 @@
 ---
 title: "Factory Investment"
 parent: "Progression & Economy"
+group: "Economy"
 description: "The first factory investment: three production lines that build weapons and optics, with queue and storage upgrades and recipe costs."
 ---
 
