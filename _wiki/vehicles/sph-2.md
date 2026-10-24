@@ -20,7 +20,7 @@ description: "Tracked artillery vehicle that fires 155 mm shells from a long-ran
 | Range | 780–2,629 m (measured) |
 | Elevation | 20–1,390 mils |
 | Reload | 25.0 s |
-| Flight time | about 6–20 s low arc, 28–37 s high arc (estimated) |
+| Travel time | about 5.5–24 s low arc, 28–37 s high arc (game table) |
 | **Durability** | |
 | Main health | 650 HP |
 | Top speed | 65 (as stored) |
@@ -43,9 +43,9 @@ Shells leave the barrel at 300 m/s and disappear after 40 s of flight. The barre
 
 The stats sheet gives the gun an "effective range" of 10,000 m. That is not the real reach: the longest measured shot is 2,629 m (measured in game by the community calculator). Air drag is the reason. With drag, the Expensive shell tops out near 2.6 km; without drag the same launch would throw it about 9 km (simulator estimate).
 
-Ranges from about 1,181 m to 2,629 m can be hit on a low arc (20 to about 600 mils, flat and fast, 6 to 20 s in the air) or a high arc (about 610 to 1,390 mils, steep and slow, 28 to 37 s in the air, estimated). Between 780 m and 1,181 m only the high arc reaches.
+Ranges from about 1,181 m to 2,629 m can be hit on a low arc (20 to about 600 mils, flat and fast, about 5.5 to 24 s in the air) or a high arc (about 610 to 1,390 mils, steep and slow, 28 to 37 s in the air). The travel times come from the gun's range table in the game files. Between 780 m and 1,181 m only the high arc reaches.
 
-A short table of the firing solutions on flat ground (mils measured in game):
+A short table of the firing solutions on flat ground. The mils are the settings to dial on the sight's MIL scale, measured in game; the game's own range table lists different elevations for the same ranges (45 to 97 mils higher on the low arc, up to 34 mils lower on the high arc), and the reason is not known:
 
 | Range (m) | Low arc (mils) | High arc (mils) |
 |---:|---:|---:|
@@ -55,7 +55,7 @@ A short table of the firing solutions on flat ground (mils measured in game):
 | 2,400 | 358 | 877 |
 | 2,600 | 522 | 708 |
 
-The full table, with flight times and the high-arc apex, is on the [Artillery](../game-mechanics/artillery.md) page.
+The full table, with the game table's elevations, the travel times and the high-arc apex, is on the [Artillery](../game-mechanics/artillery.md) page.
 
 ## Aiming
 
@@ -127,4 +127,5 @@ The stats sheet gives 3 seats, but the seat data has two setups: a driver and a 
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
 - [wardogs-calculator by apollyon-sys (MIT)](https://github.com/apollyon-sys/wardogs-calculator), measured in game: maximum range, minimum range, and the firing table mils
 - [CV Artillery Computer by Kiyogitpy (MIT)](https://github.com/Kiyogitpy/cv-artillery-computer), measured on the game screen at 2560x1440: gun sight instruments and map readout
-- [Round 21 artillery range check](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round21-artillery-range-check.md), estimated: flight times, high-arc apex and the flight simulator's miss against real shots
+- [SPH-2 weapon data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/Artillery/WE_TNK_01_Artillery.json), from the game files: the range table with travel times
+- [Round 21 artillery range check](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round21-artillery-range-check.md), estimated: the high-arc apex and the flight simulator's miss against real shots

@@ -29,8 +29,9 @@ The SPH-2 can hit any range from 780 m to about 2,629 m, but only with the right
 ### Where these numbers come from
 
 - The gun's stats, the shell masses and drag values, the launch speed and the 40 s flight limit are read from the game's data files.
-- The firing table's mils, the arcs and the 780 m and 2,629 m limits were measured in game by the community calculator [wardogs-calculator](https://github.com/apollyon-sys/wardogs-calculator) by apollyon-sys. The map readout and sight instrument figures were measured on the game screen by the [CV Artillery Computer](https://github.com/Kiyogitpy/cv-artillery-computer).
-- Flight times, high-arc heights, the tilt comparison and the miss figures are estimates worked out from the game's flight data with a flight simulator. The simulator's median miss against 87 real logged shots was about 59 m, so treat these as estimates.
+- The gun's own range table is in the game files: for each elevation setting it lists where the shell lands and how long it takes. This article calls it the game table, and its elevations are in milliradians (mrad). It gives the travel times in the firing table below.
+- The "dial" mils are the settings read off the sight's MIL scale in game. They were measured by the community calculator [wardogs-calculator](https://github.com/apollyon-sys/wardogs-calculator) by apollyon-sys and checked against logged impacts. The map readout and sight instrument figures were measured on the game screen by the [CV Artillery Computer](https://github.com/Kiyogitpy/cv-artillery-computer).
+- High-arc heights, the tilt comparison and the miss figures are estimates worked out from the game's flight data with a flight simulator. The simulator's median miss against 87 real logged shots was about 59 m, so treat these as estimates.
 
 ## How it works
 
@@ -73,35 +74,42 @@ Two rules matter in practice:
 
 ### The firing table
 
-The table gives the elevation in mils for each range on flat ground. The mils come from the community calculator's table. The flight-time and apex columns are estimates from the flight simulator and are rounded. A dash means there is no value for that cell.
+The table gives, for each range on flat ground, the dial setting to use and the game table's own figures. **Dial these numbers: the "dial" columns.** They were measured on the in-game MIL scale and checked against logged impacts, while the game table's elevations do not match the dial (see below). The travel times come from the game table. The top-of-arc column is an estimate from the flight simulator. A dash means there is no value for that cell.
 
-| Range (m) | Low arc (mils) | Low-arc flight, est. (s) | High arc (mils) | High-arc flight, est. (s) | High-arc top, est. (m) |
-|---:|---:|---:|---:|---:|---:|
-| 800 | - | - | 1,386 | - | - |
-| 900 | - | - | 1,363 | ~37 | ~1,650 |
-| 1,000 | - | - | 1,340 | ~37 | ~1,630 |
-| 1,100 | - | - | 1,316 | ~36 | ~1,620 |
-| 1,200 | 24 | ~6 | 1,291 | ~36 | ~1,600 |
-| 1,300 | 43 | ~6 | 1,266 | ~36 | ~1,580 |
-| 1,400 | 63 | ~7 | 1,240 | ~36 | ~1,560 |
-| 1,500 | 84 | ~8 | 1,213 | ~35 | ~1,530 |
-| 1,600 | 105 | ~9 | 1,185 | ~35 | ~1,500 |
-| 1,700 | 128 | ~9 | 1,155 | ~35 | ~1,470 |
-| 1,800 | 152 | ~10 | 1,124 | ~34 | ~1,440 |
-| 1,900 | 178 | ~11 | 1,092 | ~34 | ~1,400 |
-| 2,000 | 206 | ~12 | 1,057 | ~33 | ~1,350 |
-| 2,100 | 237 | ~13 | 1,019 | ~32 | ~1,300 |
-| 2,200 | 271 | ~15 | 977 | ~32 | ~1,240 |
-| 2,300 | 312 | ~16 | 931 | ~31 | ~1,170 |
-| 2,400 | 358 | ~18 | 877 | ~30 | ~1,090 |
-| 2,500 | 421 | ~20 | 811 | ~28 | ~970 |
-| 2,600 | 522 | - | 708 | - | - |
+| Range (m) | Low arc: dial (mils) | Low arc: game table (mrad) | Low arc: travel time (s) | High arc: dial (mils) | High arc: game table (mrad) | High arc: travel time (s) | High-arc top, est. (m) |
+|---:|---:|---:|---:|---:|---:|---:|---:|
+| 800 | - | 42 | 3.4 | 1,386 | 1,384 | 36.9 | - |
+| 900 | - | 53 | 4.0 | 1,363 | 1,360 | 36.7 | about 1,650 |
+| 1,000 | - | 64 | 4.5 | 1,340 | 1,337 | 36.6 | about 1,630 |
+| 1,100 | - | 77 | 5.1 | 1,316 | 1,313 | 36.4 | about 1,620 |
+| 1,200 | 24 | 91 | 5.7 | 1,291 | 1,287 | 36.1 | about 1,600 |
+| 1,300 | 43 | 106 | 6.4 | 1,266 | 1,262 | 35.9 | about 1,580 |
+| 1,400 | 63 | 121 | 7.1 | 1,240 | 1,236 | 35.6 | about 1,560 |
+| 1,500 | 84 | 139 | 7.8 | 1,213 | 1,209 | 35.3 | about 1,530 |
+| 1,600 | 105 | 157 | 8.6 | 1,185 | 1,180 | 35.0 | about 1,500 |
+| 1,700 | 128 | 177 | 9.4 | 1,155 | 1,149 | 34.5 | about 1,470 |
+| 1,800 | 152 | 199 | 10.3 | 1,124 | 1,118 | 34.1 | about 1,440 |
+| 1,900 | 178 | 224 | 11.2 | 1,092 | 1,084 | 33.6 | about 1,400 |
+| 2,000 | 206 | 251 | 12.2 | 1,057 | 1,048 | 33.0 | about 1,350 |
+| 2,100 | 237 | 282 | 13.4 | 1,019 | 1,009 | 32.4 | about 1,300 |
+| 2,200 | 271 | 316 | 14.6 | 977 | 965 | 31.6 | about 1,240 |
+| 2,300 | 312 | 358 | 16.0 | 931 | 915 | 30.6 | about 1,170 |
+| 2,400 | 358 | 409 | 17.6 | 877 | 857 | 29.4 | about 1,090 |
+| 2,500 | 421 | 480 | 19.8 | 811 | 777 | 27.7 | about 970 |
+| 2,600 | 522 | 619 | 23.7 | 708 | - | - | - |
+
+How the game table and the dial compare:
+
+- On the **low arc**, the game table's elevation is higher than the dial setting for the same range, by 45 to 97 mils (about 50 in the middle of the range, 97 at 2,600 m). The gap is largest at the short end and at the very top of the range.
+- On the **high arc**, the game table is slightly lower than the dial, by 2 to 5 mils over most of the range and by up to 34 mils at 2,500 m.
+- The gap is not a fixed shift on the SPH-2, and why the two differ is not known. The game table also lists settings the dial cannot reach: its low arc starts at 20 mrad for 600 m, but the dial's lowest setting, 20 mils, already lands at 1,181 m, and its high arc runs to 1,400 mrad for 700 m, while the dial stops at 1,390 mils (780 m).
+- The game's travel times fit the flight maths at the game table's own elevation. On the high arc the simulator is within 0.1 to 0.4 s of the game (under 2 percent). On the low arc the game takes 0.5 to 1.6 s longer than the simulator, and the simulator lands 18 to 283 m short of the game table's range at the same elevation. The high-arc fit is good and the low-arc fit is loose, especially at the shortest ranges.
 
 Reading the table:
 
 - Near the top of the range, a small change in mils moves the low-arc shell a long way. From 2,500 m to 2,600 m is about 100 mils.
 - At mid range the low arc needs much less change. From 1,500 m to 1,600 m is 21 mils (84 to 105).
-- The high arc stays in the air for 30 s or more. The low arc is in the air for about 6 to 20 s. A moving target is a low-arc job. A shell that must clear a wall or a ridge is a high-arc job.
+- The high arc stays in the air for 28 to 37 s. The low arc is in the air for about 5 to 24 s (5.7 s at 1,200 m, 19.8 s at 2,500 m). A moving target is a low-arc job. A shell that must clear a wall or a ridge is a high-arc job.
 
 ### Height difference and hull tilt
 
@@ -130,7 +138,7 @@ The Expensive camera follows the shell, then detaches and zooms out after a whil
 
 All shells launch at 300 m/s and fall under gravity of 9.8 m/s². Air drag slows them a great deal. Without drag, the same launch would carry the shell about 9 km. With drag, the Expensive shell tops out near 2.6 km (simulator estimate). A shell disappears after 40 s of flight.
 
-The longest flat-ground shot the simulator found with the Expensive shell is about 2,580 m, fired at about 37° (about 645 mils). It takes about 24 s, peaks at about 728 m and lands at about 113 m/s.
+The longest flat-ground shot the simulator found with the Expensive shell is about 2,580 m, fired at about 37° (about 645 mils). It takes about 24 s (the game table gives 23.7 s for 2,600 m), peaks at about 728 m and lands at about 113 m/s.
 
 The stats sheet gives the SPH-2 gun an "effective range" of 10,000 m. That is not the real reach. The longest range measured in game is 2,629 m.
 
@@ -143,9 +151,12 @@ The stats sheet gives the SPH-2 gun an "effective range" of 10,000 m. That is no
 
 ## What is not known
 
+- Why the game table's elevations differ from the dial settings on the SPH-2. The difference is 45 to 97 mils on the low arc and 2 to 34 mils (lower) on the high arc, and it is not a fixed shift. The dial values are the ones measured in game and checked against impacts, so use them.
+- Why the game table's low-arc travel times run 0.5 to 1.6 s longer than the flight maths gives at the same elevation, while the high-arc times agree.
+
 - How the game handles hull tilt. The simulator's result suggests the elevation is measured from the tilted hull, but this is not confirmed.
 - The high-arc height correction. The calculator's version is experimental and off by default.
-- The effect of wind. The simulator uses flat ground and no wind, and its median miss against 87 logged real shots was about 59 m. Treat the simulator's flight times and apex heights as estimates.
+- The effect of wind. The simulator uses flat ground and no wind, and its median miss against 87 logged real shots was about 59 m. Treat the simulator's apex heights as estimates.
 - Why the stats sheet gives 10,000 m as the effective range when the measured reach is 2,629 m.
 - Where the Standard shell fits in play. The game's flight maths say it cannot fly the measured ranges, so this article does not cover it further.
 
@@ -158,11 +169,13 @@ The stats sheet gives the SPH-2 gun an "effective range" of 10,000 m. That is no
 
 ## Sources
 
-- [Artillery shell flight data](../../game-features/Wardogs_ArtilleryShellFlight_v1.md): shell masses, drag values, camera
+- [Artillery shell flight data](../../game-features/Wardogs_ArtilleryShellFlight_v1.md): shell masses, drag values, camera and the range tables
 - [Projectile flight: drag and gravity](../../pipelines/Wardogs_ProjectileFlight_v1.md)
 - [All vehicles: stats and damage](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
 - [SPH-2](../vehicles/sph-2.md)
-- [wardogs-calculator](https://github.com/apollyon-sys/wardogs-calculator) by apollyon-sys (MIT licence): firing table, arcs, ranges and height correction
+- [wardogs-calculator](https://github.com/apollyon-sys/wardogs-calculator) by apollyon-sys (MIT licence): dial settings, arcs, ranges and height correction
 - [CV Artillery Computer](https://github.com/Kiyogitpy/cv-artillery-computer) (MIT licence): map coordinates, compass and bearing readings, and terrain height correction
-- [shell_sim.py](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/_tools/shell_sim.py): flight simulator for the flight times, apex heights and miss estimates
+- [SPH-2 weapon data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/Artillery/WE_TNK_01_Artillery.json): the game table (elevation, impact distance, travel time)
+- [artillery_range_tables.py](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/_tools/artillery_range_tables.py): prints the game tables and compares them with the dial readings and the simulator
+- [shell_sim.py](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/_tools/shell_sim.py): flight simulator for the apex heights and miss estimates
 - [Round 21 artillery range check](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round21-artillery-range-check.md): the comparison against 87 logged shots
