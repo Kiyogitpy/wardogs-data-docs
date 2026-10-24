@@ -68,7 +68,7 @@ Stationary weapons are built like structures, with the same placement rules:
 | L81 Mortar | 600 | 3,000 | L |
 | Loudspeaker | 200 | 1,000 | M, L |
 | Stingray | 650 | 3,000 | L |
-| MG Nest | 650 | 3,000 | L |
+| MG Nest | 650 | 3,000 (the vehicle damage table uses 1,800; see [MG Nest](mg-nest.md)) | L |
 
 ### Individual emplacements
 

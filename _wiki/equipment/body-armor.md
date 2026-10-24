@@ -85,7 +85,7 @@ Each armor piece has a durability value, and the data gives each one four durabi
 
 ## Use and timing
 
-Armor fills the vest and helmet slots. The data has one armor slot and one helmet slot, so two vests or two helmets are not worn together. The data gives no time to put armor on or take it off, so that is not yet known.
+Armor vests go in the Armor slot and helmets in the Helmet slot. Tactical vests use a separate Tac-Vest slot, so they do not take up the Armor slot. The data has one Armor slot and one Helmet slot, so two armor vests or two helmets are not worn together. The data gives no time to put armor on or take it off, so that is not yet known.
 
 ## Cost
 

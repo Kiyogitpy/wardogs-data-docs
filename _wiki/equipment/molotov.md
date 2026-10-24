@@ -66,10 +66,10 @@ The burst does 40 HP at the centre, which is small against vehicles. The data gi
 
 | Vehicle | Main health | Burst hits to destroy |
 |---|---:|---:|
-| Little Bird family helicopter | 400 HP | 10 |
-| Humvee | 500 HP | 13 |
-| T-72B3 | 750 HP | 20 |
-| 1000 HP vehicle | 1000 HP | 27 |
+| [MH-6](../vehicles/mh-6.md) | 400 HP | 10 |
+| [Humvee](../vehicles/humvee.md) | 500 HP | 13 |
+| [T-72B3](../vehicles/t-72b3.md) | 750 HP | 20 |
+| [M113 APC SV](../vehicles/m113-apc-sv.md) | 1000 HP | 27 |
 
 The fire adds 2 HP every 0.4 s, which is 5 HP per second while a vehicle stays in the area. See [Vehicle damage](../vehicles/vehicle-damage.md) for how vehicles take damage in general.
 

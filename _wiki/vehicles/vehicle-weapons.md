@@ -27,23 +27,23 @@ This page lists every gun mounted on a vehicle in Wardogs, from the miniguns on 
 | M134D Minigun (two) | [AH-6M [Miniguns]](ah-6m-miniguns.md) | .308 Win | 1,500 rounds/min | 800 m | 4.25 s | 300 (tracer) |
 | M134D Minigun (two) | [Z20 Lakota [Miniguns]](z20-lakota-miniguns.md) | .308 Win | 1,500 rounds/min | 1,500 m | 5.0 s | 150 (tracer) |
 | M134D Minigun (ring mount) | [Humvee [Minigun]](humvee-minigun.md) | .308 Win | 1,500 rounds/min | 800 m | 4.25 s | 150 (tracer) |
-| M249 Machine Gun (ring turret) | [Humvee [M249]](humvee-m249.md) | 5.56 mm | Not yet known | Not yet known | 4.25 s (data) | 0 (tracer) (data) |
-| M249 Machine Gun (ring turret) | [Kodiak [M249]](kodiak-m249.md) | 5.56 mm | Not yet known | Not yet known | 4.25 s (data) | Not yet known |
-| M249 Machine Gun (mounted) | [Ural Defender [M249]](ural-defender-m249.md) | 5.56 mm | Not yet known | Not yet known | 4.25 s (data) | 0 (tracer) (data) |
-| M2 Browning Machine Gun (ring turret) | [Wolf-110 [M2 Browning]](wolf-110-m2-browning.md) | .50 cal | Not yet known | Not yet known | 8.0 s (data) | 0 (tracer) (data) |
+| M249 Machine Gun (ring turret) | [Humvee [M249]](humvee-m249.md) | 5.56 mm | Not yet known | Not yet known | 4.25 s | 0 (tracer) |
+| M249 Machine Gun (ring turret) | [Kodiak [M249]](kodiak-m249.md) | 5.56 mm | Not yet known | Not yet known | 4.25 s | 0 (tracer) |
+| M249 Machine Gun (mounted) | [Ural Defender [M249]](ural-defender-m249.md) | 5.56 mm | Not yet known | Not yet known | 4.25 s | 0 (tracer) |
+| M2 Browning Machine Gun (ring turret) | [Wolf-110 [M2 Browning]](wolf-110-m2-browning.md) | .50 cal | Not yet known | Not yet known | 8.0 s | 0 (tracer) |
 | M249 Machine Gun (mounted) | [L2A6](l2a6.md) | 5.56 mm | Not yet known | Not yet known | 4.25 s | 0 (tracer) |
 | MG3A1 Coaxial Gun (.308 Win) | [L2A6](l2a6.md) | .308 Win | 650 rounds/min | 200 m | 4.25 s | 300 (tracer) |
 | L55A1 Cannon (120×570 mm) | [L2A6](l2a6.md) | 120×570 mm | 50 rounds/min | 10,000 m | 4.0 s | 9 |
 | 2A46M-5 Cannon (125 mm) | [T-72B3](t-72b3.md) | 125 mm | 50 rounds/min | 10,000 m | 4.0 s | 9 |
 | PKTM Coaxial Gun (7.62 mm class) | [T-72B3](t-72b3.md) | 7.62 mm class | Not yet known | Not yet known | 4.25 s | 300 (tracer) |
-| M2 Browning Machine Gun (mounted) | [T-72B3](t-72b3.md) | .50 cal | Not yet known | Not yet known | 8.0 s (data) | 0 (data) |
+| M2 Browning Machine Gun (mounted) | [T-72B3](t-72b3.md) | .50 cal | Not yet known | Not yet known | 8.0 s | 0 (tracer) |
 | Duel 35 mm Oerlikon GDF cannons (twin) | [Flakpanzer Gepard](flakpanzer-gepard.md) | 35 mm | 1,100 rounds/min | 1,000 m | 4.0 s | None |
 | 2A42 Autocannon (30 mm) | [Havoc](havoc.md) | 30 mm | 250 rounds/min | 600 m | 8.0 s | None |
 | B-13 Rocket Pods (122 mm) | [Havoc](havoc.md) | 122 mm | 500 rounds/min | 1,000 m | 6.0 s | None |
-| B-13 Rocket Pods (two, 122 mm) | [AH-6R [Rockets]](ah-6r-rockets.md) | 122 mm | 350 rounds/min | 1,000 m | 6.0 s (data) | Not yet known |
+| B-13 Rocket Pods (two, 122 mm) | [AH-6R [Rockets]](ah-6r-rockets.md) | 122 mm | 350 rounds/min | 1,000 m | 6.0 s | 0 |
 | L52 Cannon (155 mm artillery) | [SPH-2](sph-2.md) | 155 mm | 50 rounds/min | 10,000 m | 25.0 s | 10 Expensive, 0 Standard |
 
-Values marked (data) come from the weapon's data file. The vehicle's own article gives that value as not yet known, so the article should be updated to match. Where the table says "Not yet known", neither the article nor the data gives the value. Starting ammunition of "None" means the article records no starting rounds.
+Reload times and starting ammunition come from each weapon's data file. A starting ammunition of 0 means no rounds are loaded at the start. "None" means the article records no starting rounds. Where the table says "Not yet known", the data does not give the value.
 
 ## Miniguns
 
@@ -53,9 +53,9 @@ Season 2 changed the damage table entries of the AH-6M and the Humvee [Minigun],
 
 ## Machine guns
 
-The M249 appears on four vehicles, and all four use 5.56 mm rounds. The data gives a 4.25 s reload for each. The articles for the Humvee, the Kodiak and the Ural Defender list the rate, range and starting ammunition as not yet known, and the L2A6 article gives the same for its rate and range.
+The M249 appears on four vehicles, and all four use 5.56 mm rounds. The data gives a 4.25 s reload and no starting rounds for each. The rate and range of the M249 are not yet known on any of the four.
 
-The M2 Browning is a .50 cal gun on two vehicles. The Wolf-110 ring turret and the T-72B3 mounted gun both have a data reload of 8.0 s. The T-72B3 article gives this gun's reload as not yet known.
+The M2 Browning is a .50 cal gun on two vehicles. The Wolf-110 ring turret and the T-72B3 mounted gun both reload in 8.0 s and start with no rounds loaded. Their rate and range are not yet known.
 
 The L2A6 has a coaxial MG3A1 that fires .308 Win rounds at 650 rounds/min to 200 m. The T-72B3 has a coaxial PKTM, a 7.62 mm class gun, with a 4.25 s reload and 300 tracer rounds; its rate and range are not yet known.
 
@@ -63,7 +63,7 @@ Season 2 raised the gamepad rotation sensitivity for the ring turrets of the Kod
 
 ## Rocket pods
 
-The B-13 is a 122 mm rocket pod. The Havoc carries it at 500 rounds/min with a 6.0 s reload and a 1,000 m range. The AH-6R [Rockets] carries two pods at 350 rounds/min, also with a 1,000 m range. The AH-6R article does not give its reload or starting rocket count, and the data gives a 6.0 s reload for the same pod.
+The B-13 is a 122 mm rocket pod. The Havoc carries it at 500 rounds/min with a 6.0 s reload and a 1,000 m range. The AH-6R [Rockets] carries two pods at 350 rounds/min, also with a 1,000 m range. The AH-6R [Rockets] pod also reloads in 6.0 s, and its starting rocket count is 0.
 
 Season 2 changed one Havoc damage table entry, from 87.5 to -46.0, as the [Vehicles changes page](../../season-2-changes/vehicles.md) shows.
 
@@ -95,4 +95,4 @@ The SPH-2's L52 fires 155 mm shells at 50 rounds/min with a 10,000 m range. The 
 - [All vehicles stat and damage sheet](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md): the vehicle weapon stats (rate, effective range) and damage table changes
 - [Vehicles changes, Season 2](../../season-2-changes/vehicles.md): damage entries, gamepad sensitivity and cost changes
 - [Vehicle weapon articles](ah-6m-miniguns.md): the per-vehicle weapon tables this page collects, each linked from the table above
-- [Vehicle weapon extension data](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Vehicles): reload, restock and starting ammunition for each weapon, marked (data) above
+- [Vehicle weapon extension data](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Vehicles): reload, restock and starting ammunition for each weapon

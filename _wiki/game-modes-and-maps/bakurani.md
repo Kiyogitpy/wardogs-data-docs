@@ -24,7 +24,7 @@ Bakurani is the first King of the Hill map in the server browser, and it is the 
 
 ## Overview
 
-Bakurani is played in [King of the Hill](king-of-the-hill.md). The server browser lists it twice, as Bakurani_KOTH_01 and Bakurani_KOTH_02, and both use the Bakurani name and loading screen art. The data does not say how the two entries differ.
+Bakurani is played in [King of the Hill](king-of-the-hill.md). The server browser lists it twice, as Bakurani_KOTH_01 and Bakurani_KOTH_02, and both use the Bakurani name and loading screen art. The data does not say how the two entries differ. The Bakurani zone configuration is tied to these entries by name only, which is not confirmed in game.
 
 ## Modes played here
 

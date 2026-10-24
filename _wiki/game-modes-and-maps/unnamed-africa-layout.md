@@ -1,13 +1,13 @@
 ---
-title: "Africa"
+title: "Unnamed Africa layout"
 parent: "Game Modes & Maps"
 group: "Maps"
-description: "The Africa zone set added in Season 2: a 550 m Control Zone with four placements. The data does not give its display name or modes."
+description: "A Control Zone layout added in Season 2 whose data is labelled Africa: a 550 m zone with four placements. The data gives no player-facing map name and no mode."
 ---
 
-# Africa
+# Unnamed Africa layout
 
-| Africa | |
+| Unnamed Africa layout | |
 |---|---|
 | **General** | |
 | Map area | Not in the data |
@@ -17,14 +17,15 @@ description: "The Africa zone set added in Season 2: a 550 m Control Zone with f
 | Hot Zone | 85 m across, 150 m tall |
 | Zone placements | 4 |
 | Zone regions | Not in the data |
+| Display name | None in the data |
 | Internal name | Zone config Africa, with placements named after a region called Kenya |
 {: .wiki-infobox }
 
-Africa is a Control Zone set added in Season 2. It has a 550 m Control Zone with four placements, but only one of them is ever picked by weight. The server browser does not list a map with this name, so the data does not say which map or mode uses it.
+This layout is a Control Zone set added in Season 2. Its data is labelled "Africa", which is a data label and not a map name players see. It has a 550 m Control Zone with four placements, but only one of them is ever picked by weight. The server browser does not list a map with this name, so the data does not say which map or mode uses it. This article calls it the unnamed Africa layout until a display name is known.
 
 ## Overview
 
-The data holds one zone set named Africa, added in Season 2, and no server browser entry for it. The zone file gives the layout only. Its display name, its map and its mode are not yet known, and the name "Africa" is the name of the zone set in the data, not a name players see in the browser.
+The data holds one zone set labelled Africa, added in Season 2, and no server browser entry for it. The zone file gives the layout only. Its display name, its map and its mode are not yet known, and "Africa" is the label of the zone set in the data, not a name players see in the browser.
 
 ## Modes played here
 
@@ -48,7 +49,7 @@ The Control Zone is 550 m across and 150 m tall, with an 85 m Hot Zone in its ce
 
 ## Season 2 changes
 
-- The Africa zone set was added in Season 2. Its Control Zone and Hot Zone sizes are the same as the Russia zone set, which is the set for [Saburtulo](saburtulo.md).
+- The zone set labelled Africa was added in Season 2. Its Control Zone and Hot Zone sizes are the same as the Russia zone set, which the data links to [Saburtulo](saburtulo.md) only by the placement names (not confirmed).
 
 ## See also
 
