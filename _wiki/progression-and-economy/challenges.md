@@ -10,7 +10,7 @@ description: "The challenges that pay out during and across matches: in-match ac
 | Challenges | |
 |---|---|
 | Kinds | In-match action challenges, achievements, passive missions, wagers, tips |
-| In-match action challenges | 60 for King of the Hill, plus buildable, spotting and Team Offence challenges |
+| In-match action challenges | 60 for King of the Hill, plus buildable, spotting, Hot Zone Magnet, crowbar and Team Offence challenges |
 | Achievements | 10 |
 | Passive missions | 15 (earn cash, earn role XP, time played) |
 | Wagers | 4 (get kills, drop off people, revive teammates, destroy occupied vehicles) |
@@ -21,7 +21,7 @@ A challenge is a small rule that waits for one thing to happen in a match, then 
 
 ## Overview
 
-The sources list 108 challenge definitions in nine tables. Most are in-match action challenges that run automatically as the match goes on. The rest are achievements, passive missions, wagers and Team Offence challenges.
+The sources list 108 challenge definitions in nine tables. Each table is one category, and each category has its own article, listed under Categories below. Most are in-match action challenges that run automatically as the match goes on.
 
 ## How it works
 
@@ -29,34 +29,19 @@ The sources list 108 challenge definitions in nine tables. Most are in-match act
 - **Assist versions.** Most action challenges have assist versions. A player who helped with a kill, a revive or a vehicle kill gets credit under the assist version, with its own split.
 - **Tips.** A tip is a reward for passing help to a teammate, such as sending or receiving a tip for healing or delivering a player. Pre-tips are a separate challenge.
 - **Passive missions.** These track a total over time. They do not depend on one event.
-- **Wagers.** A wager is a short goal inside a match, such as a number of kills. The number needed is a setting the data does not record.
+- **Wagers.** A wager is a goal taken on with a stake. The four wager goals and their numbers are described on the Wagers article.
 
-## Achievements
+## Categories
 
-Achievements are one-time goals. They are: Loadout Spender, Complete The Tutorial, Punch Kristopher, Top Cash Earner, Control Zone Survivor, Single Life Profit, Long Shot, Ricochet Kill, Defibrillator Kill and Clean Sweep.
-
-Some achievements have a number attached. Loadout Spender and Single Life Profit use a cash threshold, Control Zone Survivor uses a required time in the zone, and Long Shot uses a distance threshold. The data does not give those numbers in the rows.
-
-## Passive missions
-
-| Mission | Target | Reward per tier |
-|---|---|---|
-| Earn Cash | 5,000, 12,000, 30,000, 80,000, 200,000 cash (five tiers) | 100, 200, 300, 400, 500 Intel |
-| Earn Role XP | 500 role XP in each of five tiers | 100, 200, 300, 400, 500 Intel |
-| Time Played | 1,800 seconds (30 minutes) in each of five tiers | 100, 200, 300, 400, 500 Intel |
-
-Intel is the currency these missions pay. The data gives it no display name and no shop use, so its use is not yet known.
-
-## Wagers
-
-| Wager | Goal |
-|---|---|
-| Get Kills | A set number of player kills |
-| Dropoff People | A set number of passengers delivered |
-| Revive Teammates | A set number of revives (some action types excluded) |
-| Destroy Occupied Vehicles | A set number of vehicles destroyed while occupied |
-
-The wager goals are set by the match. The numbers are not in the data.
+- [Achievements](achievements.md): 10 one-time goals
+- [Passive Missions](passive-missions.md): 15 tiered totals (cash earned, role XP earned, time played)
+- [Wagers](wagers.md): 4 goals taken on with a stake
+- [King of the Hill Challenges](king-of-the-hill-challenges.md): 60 event rewards, including assist versions
+- [Buildable Challenges](buildable-challenges.md): 11 rewards for buildables and FOBs
+- [Crowbar Challenges](crowbar-challenges.md): 1 reward for forcing a door open
+- [Spotting Challenges](spotting-challenges.md): 2 rewards for spotting and for destroying a spotted target
+- [Team Offence Challenges](team-offence-challenges.md): 2 rewards for punishing a kill and voting on a teamkill
+- [Hot Zone Magnet Challenges](hot-zone-magnet-challenges.md): 3 rewards for magnet and tower events
 
 ## Tips
 
@@ -94,6 +79,7 @@ Base values for in-match actions are on [Cash and Rewards](cash-and-rewards.md).
 ## See also
 
 - [Cash and Rewards](cash-and-rewards.md)
+- [Weapon Mastery](weapon-mastery.md)
 - [King of the Hill](../game-modes-and-maps/king-of-the-hill.md)
 - [Team Offence](../game-modes-and-maps/team-offence.md)
 
