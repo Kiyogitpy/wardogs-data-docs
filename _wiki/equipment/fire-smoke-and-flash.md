@@ -11,7 +11,7 @@ description: "Molotov fire, smoke and signal grenades, mine and Claymore trigger
 |---|---|
 | Fire | Molotov (burning area for 45 s) |
 | Smoke | White and Black smoke; eight coloured signal grenades; vehicle smoke |
-| Triggered | AT Mine, Claymore, C4 and IED (detail below) |
+| Triggered | AT Mine, Claymore, C4 and Improvised Explosive Device (detail below) |
 | Flash and stun | not in this build |
 {: .wiki-infobox }
 
@@ -20,6 +20,12 @@ This article covers the throwables and placed gear that do something other than 
 ## Overview
 
 Flash and stun grenades are not in the data for this build. There is no flashbang item, no shop listing and no effect. The only remnants are three sound effects and a Medic skill that reduces the effect of flash and stun, which has no number attached in the data.
+
+## Individual items
+
+- [Molotov](molotov.md)
+- [M18 Smoke Grenade](m18-smoke-grenade.md), white and black
+- [M18 Signal Grenade](m18-signal-grenade.md), six colours
 
 ## Effects
 
@@ -63,24 +69,24 @@ How the marker is created is not yet known.
 
 ### Mines and placed explosives
 
-The AT Mine, Claymore and IED are placed on the ground, and each has its own trigger. Placing them takes time, and the player moves at 40% speed while placing. A placed mine has 1 HP.
+The AT Mine, Claymore and Improvised Explosive Device are placed on the ground, and each has its own trigger. Placing them takes time, and the player moves at 40% speed while placing. A placed mine has 1 HP.
 
-| | AT Mine | Claymore | C4 Charge | IED |
+| | AT Mine | Claymore | C4 Charge | Improvised Explosive Device |
 |---|---|---|---|---|
-| Triggered by | Vehicles | Players and vehicles | Remote Detonator | IED trigger |
+| Triggered by | Vehicles | Players and vehicles | Remote Detonator | Improvised Explosive Device trigger |
 | Speed rule | Vehicle moving above 0.1 km/h | Vehicle moving above 0 km/h | none | none |
 | Arming delay | 1 s after placement | 2 s after placement | none | none |
 | Delay after trigger | none | none | none (charge 0.2 s) | 3 s |
 | Team rule | Triggers on friendly vehicles | Triggers on teammates | none | none |
 | Line of sight | not used | yes, to the target | none | none |
 | Range | placed up to 4 m away | placed up to 4 m away | 200 m (remote) | no limit |
-| Shot | any damage except thrown impacts sets it off | an explosion sets it off; other damage destroys it | a C4 or IED blast sets it off; it has 30 HP | same as C4 |
+| Shot | any damage except thrown impacts sets it off | an explosion sets it off; other damage destroys it | a C4 or Improvised Explosive Device blast sets it off; it has 30 HP | same as C4 |
 
 Notes from the data:
 
 - The AT Mine checks for vehicles every 0.1 s, and ignores everything else.
 - The Claymore's trigger area is in front of it. Players must have a matching tag to count as a target.
-- The C4 charge and IED charge stick to the surface they hit. A charge whose owner is no longer valid is removed after a 5 s check, without a blast.
+- The C4 charge and Improvised Explosive Device charge stick to the surface they hit. A charge whose owner is no longer valid is removed after a 5 s check, without a blast.
 - Placement distance for the mines and Claymore is 400 units, which is about 4 m. The placement angle limit is 30, which the data reads as degrees; this is assumed.
 
 ### Throwing
@@ -101,7 +107,7 @@ Each throw also has a speed curve in the data. How the curve combines with the f
 | Molotov | 5 s | Cannot be cooked (held before throwing) |
 | Smoke grenades | 3 s | The cloud lasts for the length given above |
 | C4 Charge | 0.2 s after the trigger | Set off by the Remote Detonator |
-| IED | 3 s after the trigger | |
+| Improvised Explosive Device | 3 s after the trigger | |
 
 ## Cost
 
@@ -113,7 +119,7 @@ Each throw also has a speed curve in the data. How the curve combines with the f
 | Vehicle smoke | 750 |
 | AT Mine | 650 |
 | Claymore | 900 |
-| IED trigger | 300 |
+| Improvised Explosive Device trigger | 300 |
 
 ## Season 2 changes
 
