@@ -23,3 +23,4 @@ These articles explain the rules of combat and movement in Wardogs: how much dam
 | [Downed and Revive](game-mechanics/downed-and-revive.md) | Bleed-out, revives and healing items |
 | [Spotting](game-mechanics/spotting.md) | Marking enemies and what spotting pays |
 | [Hit Registration](game-mechanics/hit-registration.md) | When a bullet counts as a hit, in plain terms |
+| [Artillery](game-mechanics/artillery.md) | Map coordinates, mils, low and high arcs, the SPH-2 firing table, height and tilt |
