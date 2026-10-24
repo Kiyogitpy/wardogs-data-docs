@@ -9,21 +9,56 @@ description: "Tracked artillery vehicle that fires 155 mm shells from a long-ran
 
 | SPH-2 | |
 |---|---|
+| **General** | |
 | Type | Artillery armored vehicle |
 | Seats | 3 on the stats sheet (2 seat setups in the seat data) |
 | Price | 8,000 cash |
 | Unlock level | 1 |
+| **Gun** | |
+| Main gun | L52 cannon, 155 mm |
+| Shell | 155mm HE Shell |
+| Range | 780–2,629 m (measured) |
+| Elevation | 20–1,390 mils |
+| Reload | 25.0 s |
+| Flight time | about 6–20 s low arc, 28–37 s high arc (estimated) |
+| **Durability** | |
 | Main health | 650 HP |
 | Top speed | 65 (as stored) |
 | Rifle damage taken (derived) | 0% |
 | Internal name | TNK_01 (artillery variant) |
 {: .wiki-infobox }
 
-The SPH-2 is a tracked artillery vehicle. Its main gun is a 155 mm artillery piece that fires shells over long distances, and its gunner works the turret from inside.
+The SPH-2 is a tracked artillery vehicle built for long-range indirect fire. Its 155 mm cannon reaches from 780 m to about 2.6 km, and the gunner aims it from the map and the gun sight's bearing tape and MIL scale rather than by direct sight. The gunner works the turret from inside.
 
 ## Overview
 
 The SPH-2 is sold in the vehicle vendor under land artillery, for 8,000 cash, and unlocks at level 1. It shares its tracks, suspension and rifle protection with the other tracked tanks in the family.
+
+## The gun
+
+The SPH-2 fires 155 mm shells from an L52 cannon. There are two kinds of shell, Expensive and Standard, and the vehicle starts with 10 Expensive and no Standard. The Expensive shell (19 kg) carries a camera that follows it in flight: the view stays with the shell, then detaches after a while and zooms out, with a 4 s fade. The Standard shell (70 kg) has no camera, and the flight simulator estimates it cannot fly further than about 815 m, so it cannot produce the long ranges.
+
+Shells leave the barrel at 300 m/s and disappear after 40 s of flight. The barrel elevates from 2° to 80°, and the sight's MIL dial sets the elevation within the range shown in the infobox.
+
+The stats sheet gives the gun an "effective range" of 10,000 m. That is not the real reach: the longest measured shot is 2,629 m (measured in game by the community calculator). Air drag is the reason. With drag, the Expensive shell tops out near 2.6 km; without drag the same launch would throw it about 9 km (simulator estimate).
+
+Ranges from about 1,181 m to 2,629 m can be hit on a low arc (20 to about 600 mils, flat and fast, 6 to 20 s in the air) or a high arc (about 610 to 1,390 mils, steep and slow, 28 to 37 s in the air, estimated). Between 780 m and 1,181 m only the high arc reaches.
+
+A short table of the firing solutions on flat ground (mils measured in game):
+
+| Range (m) | Low arc (mils) | High arc (mils) |
+|---:|---:|---:|
+| 1,200 | 24 | 1,291 |
+| 1,600 | 105 | 1,185 |
+| 2,000 | 206 | 1,057 |
+| 2,400 | 358 | 877 |
+| 2,600 | 522 | 708 |
+
+The full table, with flight times and the high-arc apex, is on the [Artillery](../game-mechanics/artillery.md) page.
+
+## Aiming
+
+Aiming is done from the map and the gun sight, not by eye. The [Aiming the SPH-2](../guides/aiming-the-sph-2.md) guide covers the bearing tape, compass box, MIL scale, tilt dial, minimap and map readout, and how to turn them into a fire mission. The most useful tip: aim with the bearing tape, not the compass box, because the box reads about 1.3° lower than the tape.
 
 ## Stats
 
@@ -73,6 +108,9 @@ The stats sheet gives 3 seats, but the seat data has two setups: a driver and a 
 
 ## See also
 
+- [Artillery](../game-mechanics/artillery.md), the full firing table and flight data
+- [Aiming the SPH-2](../guides/aiming-the-sph-2.md), reading the gun sight and the map
+- [L81 Mortar](../equipment/l81-mortar.md), the fixed mortar emplacement for shorter range
 - [L2A6](l2a6.md) and [Flakpanzer Gepard](flakpanzer-gepard.md), the other tanks of this family
 - [T-72B3](t-72b3.md), a separate tank
 - [Vehicle damage](vehicle-damage.md)
@@ -86,3 +124,6 @@ The stats sheet gives 3 seats, but the seat data has two setups: a driver and a 
 - [Artillery Shell Flight Data](../../game-features/Wardogs_ArtilleryShellFlight_v1.md)
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md)
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
+- [wardogs-calculator by apollyon-sys (MIT)](https://github.com/apollyon-sys/wardogs-calculator), measured in game: maximum range, minimum range, and the firing table mils
+- [CV Artillery Computer by Kiyogitpy (MIT)](https://github.com/Kiyogitpy/cv-artillery-computer), measured on the game screen at 2560x1440: gun sight instruments and map readout
+- [Round 21 artillery range check](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round21-artillery-range-check.md), estimated: flight times, high-arc apex and the flight simulator's miss against real shots
