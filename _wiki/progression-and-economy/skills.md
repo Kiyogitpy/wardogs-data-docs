@@ -17,6 +17,15 @@ description: "The six roles and their 62 skills: what each skill changes in play
 
 Each role has its own skill set. A skill tweaks one part of play: how fast a weapon comes up, how far a player moves while aiming, how much recoil a weapon kicks, or how much fuel a vehicle uses. The skills are the role-level side of progression, alongside [role mastery XP](cash-and-rewards.md#role-mastery-xp).
 
+## Roles
+
+- [Infantry](infantry.md): 17 skills for assault rifles and SMGs, plus movement and door breaching
+- [Recon](recon.md): 17 skills for sniper and marksman rifles, spotting and infrared visibility
+- [Support](support.md): 12 skills for LMGs and shotguns, plus C4 detonator range
+- [Medic](medic.md): 4 skills for medical items and sprint boosts after a revive
+- [Pilot](pilot.md): 6 skills for air vehicles and dropped supply crates
+- [Driver](driver.md): 6 skills for ground vehicles and dropped supply crates
+
 ## Overview
 
 A skill is stored as a set of effects. Each effect changes one value, such as aiming time or recoil, by a multiplier. The strength of the multiplier grows with the skill's rank. The data stores that growth as a curve for each skill. Lower aim-time multipliers mean faster aiming, for example.
