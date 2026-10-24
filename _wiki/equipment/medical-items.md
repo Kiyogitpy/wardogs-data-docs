@@ -1,6 +1,7 @@
 ---
 title: Medical Items
 parent: "Equipment"
+group: "Medical"
 description: "Healing and revive items: use time, healing amounts, the effects each one applies, and the downed and revive rules."
 ---
 

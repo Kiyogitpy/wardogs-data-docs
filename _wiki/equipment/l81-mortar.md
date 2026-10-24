@@ -1,6 +1,7 @@
 ---
 title: "L81 Mortar"
 parent: "Equipment"
+group: "Emplacements and buildables"
 description: "A buildable mortar emplacement with one firing arc and a range of 132 to 684 m, built with a Large Hammer from 600 Build Supplies."
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "King of the Hill"
 parent: "Game Modes & Maps"
+group: "Game modes"
 description: "The main three-team zone-capture mode: hold the Control Zone and its Hot Zone against two other factions."
 ---
 

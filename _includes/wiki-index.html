@@ -1,0 +1,16 @@
+{%- comment -%}Hub index: one section and table per group (order from _data/wiki_groups.yml), built from each article's title and description. Usage: {% include wiki-index.html hub="Equipment" %}{%- endcomment -%}
+{%- assign items = site.wiki | where: "parent", include.hub -%}
+{%- assign groups = site.data.wiki_groups[include.hub] -%}
+{%- for g in groups -%}
+{%- assign row = items | where: "group", g | sort: "title" -%}
+{%- if row.size > 0 %}
+<h2 id="{{ g | slugify }}">{{ g }}</h2>
+<div class="table-wrapper"><table>
+<thead><tr><th>Article</th><th>What it covers</th></tr></thead>
+<tbody>
+{%- for p in row %}
+<tr><td><a href="{{ p.url | relative_url }}">{{ p.title | escape }}</a></td><td>{{ p.description | escape }}</td></tr>
+{%- endfor %}
+</tbody></table></div>
+{%- endif -%}
+{%- endfor %}

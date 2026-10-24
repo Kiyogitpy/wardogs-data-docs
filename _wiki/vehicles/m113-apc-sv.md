@@ -16,6 +16,7 @@ description: "Ten-seat tracked armored personnel carrier that rifle fire cannot 
 | Main health | 1,000 HP |
 | Top speed | 71 (as stored) |
 | Rifle damage taken (derived) | 0% on hull and tracks |
+| 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#land-tracked-leopard-spawn-spw-01) |
 | Internal name | SPW_01 (Lonestar, Manticore and Valkyra faction versions) |
 {: .wiki-infobox }
 

@@ -16,6 +16,7 @@ description: "Armored Ural Defender with a mounted M249 machine gun, sold for 9,
 | Main health | 700 HP |
 | Top speed | 79 (as stored) |
 | Rifle damage taken (derived) | 5% |
+| 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#land-wheeled-ural/WHL_07_ArmouredBattle) |
 | Internal name | WHL_07 (armored battle variant) |
 {: .wiki-infobox }
 

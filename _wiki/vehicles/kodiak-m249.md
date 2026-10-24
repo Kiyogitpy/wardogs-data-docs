@@ -16,6 +16,7 @@ description: "Five-seat Kodiak SUV with a ring-mounted M249 machine gun, sold fo
 | Main health | 400 HP |
 | Top speed | 154 (as stored) |
 | Rifle damage taken (derived) | 5% (from the Kodiak damage rules) |
+| 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#land-wheeled-patriot-kodiak/WHL_02_SUV_RingTurret) |
 | Internal name | WHL_02 (machine gun variant) |
 {: .wiki-infobox }
 

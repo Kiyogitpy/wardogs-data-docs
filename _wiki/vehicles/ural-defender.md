@@ -16,6 +16,7 @@ description: "Three-seat protected version of the Ural heavy truck with no weapo
 | Main health | 700 HP |
 | Top speed | 79 (as stored) |
 | Rifle damage taken (derived) | 5% |
+| 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#land-wheeled-ural/WHL_07_Battle) |
 | Internal name | WHL_07 (battle variant) |
 {: .wiki-infobox }
 

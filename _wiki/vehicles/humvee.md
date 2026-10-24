@@ -16,6 +16,7 @@ description: "Four-seat light armored SUV with no weapons, built for off-road tr
 | Main health | 500 HP |
 | Top speed | 113.2 (as stored) |
 | Rifle damage taken (derived) | 5% |
+| 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#land-wheeled-humvee-default) |
 | Internal name | WHL_05 (default variant) |
 {: .wiki-infobox }
 

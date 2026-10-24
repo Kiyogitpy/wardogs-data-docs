@@ -1,6 +1,7 @@
 ---
 title: Utility Items
 parent: "Equipment"
+group: "Utility"
 description: "Parachutes, backpacks, tactical vests, recon optics, vehicle and build tools, batteries and supplies: what each one does and what it costs."
 ---
 

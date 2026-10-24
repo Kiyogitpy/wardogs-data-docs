@@ -1,6 +1,7 @@
 ---
 title: Fire, Smoke and Flash
 parent: "Equipment"
+group: "Explosives and throwables"
 description: "Molotov fire, smoke and signal grenades, mine and Claymore triggers, and throwing. Flash and stun grenades are not in this build."
 ---
 

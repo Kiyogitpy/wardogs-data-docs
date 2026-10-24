@@ -16,6 +16,7 @@ description: "Light three-seat buggy with a rear-biased drive and no weapons, so
 | Main health | 400 HP |
 | Top speed | 130 (as stored) |
 | Rifle damage taken (derived) | 10% |
+| 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#land-wheeled-dunebuggy) |
 | Internal name | WHL_06 |
 {: .wiki-infobox }
 

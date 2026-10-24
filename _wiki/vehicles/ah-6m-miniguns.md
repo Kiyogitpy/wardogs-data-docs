@@ -16,6 +16,7 @@ description: "Small attack helicopter of the Little Bird family with two M134D m
 | Main health | 400 HP |
 | Top speed | 350 (as stored) |
 | Rifle damage taken (derived) | 7.5% |
+| 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#air-rotary-littlebird/ROT_03_MachineGuns) |
 | Internal name | ROT_03 (miniguns variant) |
 {: .wiki-infobox }
 

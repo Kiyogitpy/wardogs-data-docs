@@ -16,6 +16,7 @@ description: "Six-seat transport helicopter with no weapons, the base model of t
 | Main health | 400 HP |
 | Top speed | 350 (as stored) |
 | Rifle damage taken (derived) | 7.5% |
+| 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#air-rotary-littlebird) |
 | Internal name | ROT_03 (default variant) |
 {: .wiki-infobox }
 

@@ -16,6 +16,7 @@ description: "Five-seat Humvee with a ring-mounted M134D minigun, the lowest rif
 | Main health | 500 HP |
 | Top speed | 113.2 (as stored) |
 | Rifle damage taken (derived) | 2.5% |
+| 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#land-wheeled-humvee-minigun) |
 | Internal name | WHL_05 (minigun variant) |
 {: .wiki-infobox }
 

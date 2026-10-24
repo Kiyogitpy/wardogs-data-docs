@@ -16,6 +16,7 @@ description: "Large 13-seat transport helicopter with no weapons, the helicopter
 | Main health | 600 HP |
 | Top speed | 445 (as stored) |
 | Rifle damage taken (derived) | 5% |
+| 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#air-rotary-rot-04) |
 | Internal name | ROT_04 (default variant) |
 {: .wiki-infobox }
 
