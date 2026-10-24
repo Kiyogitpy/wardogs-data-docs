@@ -1,7 +1,7 @@
 ---
 title: "PvE Scenarios"
 parent: "Game Modes & Maps"
-group: "Game modes"
+group: "PvE missions"
 description: "Single-life PvE missions against AI squads: Hunter Killer, Strike and Disarm, and VIP Escort, with their objectives and AI factions."
 ---
 
@@ -23,6 +23,15 @@ Mission names here are plain-language names taken from the data's internal missi
 ## Overview
 
 The framework has a shared base and a set of missions. Each mission adds its own quest, its own faction settings, and its own voice-over lines. The data shows three missions and one example for testing.
+
+## Individual missions
+
+- [Hunter Killer](hunter-killer.md): the mission with three teams and no respawns; its objectives and enemies are not yet known.
+- [Strike and Disarm](strike-and-disarm.md): the laptop hack mission, with an intro, a hack start and end, and a mission-complete line.
+- [VIP Escort](vip-escort.md): the mission that tracks a VIP on the map and has its own loot table.
+- [AI enemies](ai-enemies.md): the five PvE soldier types, their loadouts, and how their alert and cover behaviour is set up.
+
+The example scenario used for testing has no article of its own.
 
 ## Rules and objectives
 
@@ -47,5 +56,6 @@ The scenario data has no cash or XP table of its own. The general rules apply; s
 ## Sources
 
 - [PvE game feature](../../game-features/Wardogs_GameFeatures_PvE_v2.md)
+- [AI game feature](../../game-features/Wardogs_GameFeatures_AI_v2.md)
 - [Rewards and progression](../../Wardogs_Rewards_and_Progression_v2.md)
 - [Season 2 changes: Game Modes & Maps](../../season-2-changes/game-modes-maps.md)
