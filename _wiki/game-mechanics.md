@@ -22,5 +22,6 @@ These articles explain the rules of combat and movement in Wardogs: how much dam
 | [Movement](game-mechanics/movement.md) | Walking, sprinting, stamina, falls and parachutes |
 | [Downed and Revive](game-mechanics/downed-and-revive.md) | Bleed-out, revives and healing items |
 | [Spotting](game-mechanics/spotting.md) | Marking enemies and what spotting pays |
+| [Status Effects](game-mechanics/status-effects.md) | Downed, bleeding, burning, suppression, medical buffs, falls and movement penalties in one table |
 | [Hit Registration](game-mechanics/hit-registration.md) | When a bullet counts as a hit, in plain terms |
 | [Artillery](game-mechanics/artillery.md) | Map coordinates, mils, low and high arcs, the SPH-2 firing table, height and tilt |
