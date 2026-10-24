@@ -57,7 +57,7 @@ The numbers come from the data pages and are shown as stored. The data does not 
 |---|---|---:|---:|---:|---:|---:|
 | [Fixed-wing airplane](vehicles/fixed-wing-airplane.md) | Airplane | 2 | Not sold | 150 at start | Not yet known | 7.5% |
 
-Stationary emplacements (Talon 9K-SAM, Vanguard CIWS, L81 Mortar, Loudspeaker, Stingray and MG Nest) are built as buildables and cannot be driven, so they have no article here. The data lists no boats.
+Stationary emplacements are built as buildables and cannot be driven, so they are listed under Equipment instead: [Talon 9K-SAM](equipment/talon-9k-sam.md), [Vanguard CIWS](equipment/vanguard-ciws.md), [L81 Mortar](equipment/l81-mortar.md), [Loudspeaker](equipment/loudspeaker.md), [Stingray](equipment/stingray.md) and [MG Nest](equipment/mg-nest.md). The guns mounted on vehicles are collected in [Vehicle weapons](vehicles/vehicle-weapons.md). The data lists no boats.
 
 ## Sources
 

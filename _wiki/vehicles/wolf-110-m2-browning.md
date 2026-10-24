@@ -56,9 +56,9 @@ The data simulates this variant with the same destruction numbers as the base Wo
 
 | Weapon | Type | Rate | Effective range | Reload | Starting ammunition |
 |---|---|---:|---:|---:|---:|
-| M2 Browning Machine Gun (ring turret) | Machine gun | Not yet known | Not yet known | Not yet known | Not yet known |
+| M2 Browning Machine Gun (ring turret) | Machine gun | Not yet known | Not yet known | 8.0 s | 0 (tracer) |
 
-The data does not give the rate of fire, range, reload or starting ammunition for this gun. The five seats are a driver, three active passengers and a gunner on the ring turret.
+The data gives the reload time and the starting ammunition for this gun (none loaded at the start, tracer rounds). It does not give the rate of fire or the range, so those are not yet known. The five seats are a driver, three active passengers and a gunner on the ring turret.
 
 ## Handling
 
