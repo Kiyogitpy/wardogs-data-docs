@@ -41,7 +41,7 @@ Use it for: traversing the gun onto a bearing. This is the instrument to aim wit
 
 ### Compass box
 
-The compass box is the whole-degree number at the top centre of the gun sight, for example `353 N`. It reads about 1.3° less than the bearing tape. The difference was measured at 1.28° over 23 frames. In a test of ten shots aimed by the compass box, every shot landed 1.3° to the right of the target.
+The compass box is the whole-degree number at the top centre of the gun sight, for example `353 N`. It reads about 1.3° less than the bearing tape. The difference was measured at 1.28° over 23 frames. Ten shots aimed by the compass box landed about 1.3° to the right of the target.
 
 Use it for: a quick check of your general direction. Do not use it to aim a shot. Aim with the bearing tape.
 
@@ -87,9 +87,9 @@ Use it for: checking how far the hull is tilted, so you can correct the elevatio
 
 Use the Expensive shell's camera to see where the shell lands. Watch it fall, then find the crater on the map. Compare the crater with the target and work out how far off it is and in which direction. Most misses have one of three causes.
 
-- **Height difference.** The firing table assumes the target is at the same height as the gun. A target higher than the gun is hit short, and a target lower is overshot. The firing table is for a target at the gun's height. The community calculator has a height correction table for the low arc, and the CV Artillery Computer uses terrain heights to apply it. For a target about 100 m higher, three logged shots landed within about 20 m. Correct for height if you can, or move so that you fire at a similar height.
+- **Height difference.** The firing table assumes the target is at the same height as the gun. A target higher or lower than the gun makes the shell land short or long. The community calculator has a height correction table for the low arc, and the CV Artillery Computer uses terrain heights to apply it. For a target about 100 m higher, three logged shots landed within about 20 m. Correct for height if you can, or move so that you fire at a similar height.
 
-- **Hull tilt.** When the hull is tipped toward the target, the elevation you set is measured relative to the tilted hull. In a comparison of real impacts, adding the hull's pitch from the tilt dial to the elevation halved the median miss, from 59 m to 34 m. This suggests that the tilt dial is worth checking before you fire. It is not proven how the game handles tilt in every case. The simplest fix is to park the vehicle level.
+- **Hull tilt.** The elevation you set appears to be measured relative to the tilted hull. In a comparison of real impacts, adding the hull's pitch from the tilt dial to the elevation halved the median miss, from 59 m to 34 m. This is an estimate from a flight simulator, so it suggests that the tilt dial is worth checking before you fire. It is not proven how the game handles tilt. The simplest fix is to park the vehicle level.
 
 - **Aiming by the compass box.** The compass box reads about 1.3° less than the bearing tape. A shot aimed by the box lands about 1.3° to the side. Aim with the bearing tape, and you remove that error.
 
@@ -100,6 +100,17 @@ The gun itself is very consistent. Repeat shots with the same setting landed wit
 - **wardogs-calculator** by apollyon-sys is a community calculator for the SPH-2 and the L81 Mortar. It gives the mils for a range and a height correction table for the low arc. It is released under the MIT licence. Source: [github.com/apollyon-sys/wardogs-calculator](https://github.com/apollyon-sys/wardogs-calculator).
 - **CV Artillery Computer** is a community project by Kiyogitpy that reads the game screen and works out the firing solution. It only reads the screen. It never presses keys and never moves the mouse. It is released under the MIT licence. Source: [github.com/Kiyogitpy/cv-artillery-computer](https://github.com/Kiyogitpy/cv-artillery-computer).
 
+## Where these numbers come from
+
+Numbers in this guide come from four kinds of source.
+
+- **Screen measurements (CV Artillery Computer).** The instrument readings (map readout precision, minimap scale, bearing tape ticks and the 1.28° compass box offset, MIL scale ticks, the tilt dial's tick size) were measured on the game screen at 2560x1440 by the [CV Artillery Computer](https://github.com/Kiyogitpy/cv-artillery-computer). The pixel values, such as 1.48 m per minimap pixel, depend on resolution and may differ on another screen.
+- **Measured in game (wardogs-calculator).** The firing table (mils for each range, the two arcs, the 780 m minimum and the 2,629 m longest range) and the height correction table were measured in game by the [wardogs-calculator](https://github.com/apollyon-sys/wardogs-calculator) by apollyon-sys.
+- **Game files.** The stats sheet (50 rounds/min, 25.0 s reload, 10,000 m stated effective range, starting ammunition), the shell's name and variants, the launch speed, gravity and the 40 s flight limit come from the game files. See [Artillery shell flight](../../game-features/Wardogs_ArtilleryShellFlight_v1.md), [Projectile flight](../../pipelines/Wardogs_ProjectileFlight_v1.md), [All vehicles stats and damage](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md) and the [SPH-2](../vehicles/sph-2.md) article.
+- **Simulator estimates.** Flight times, the high-arc top height, the drag figures and the hull tilt comparison (59 m median miss falling to 34 m) are estimates worked out with a flight simulator, [shell_sim.py](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/_tools/shell_sim.py), on flat ground with no wind. The simulator's median miss against 87 real logged shots was about 59 m. The full write-up is in the [round 21 range check](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round21-artillery-range-check.md).
+
+The stats sheet gives an effective range of 10,000 m, but the longest shot measured in game reaches 2,629 m. The real reach is the measured figure.
+
 ## See also
 
 - [Artillery](../game-mechanics/artillery.md)
@@ -109,11 +120,11 @@ The gun itself is very consistent. Repeat shots with the same setting landed wit
 
 ## Sources
 
-Numbers in this guide come from four kinds of source. The labels below say which is which.
-
-- **Screen measurements (CV Artillery Computer).** The instrument readings (map readout precision, minimap scale, bearing tape ticks and the 1.28° compass box offset, MIL scale ticks, the tilt dial's tick size) were measured on the game screen at 2560x1440 by the [CV Artillery Computer](https://github.com/Kiyogitpy/cv-artillery-computer). The pixel values, such as 1.48 m per minimap pixel, depend on resolution and may differ on another screen. The degree and mil values do not change with resolution.
-- **Measured in game (wardogs-calculator).** The firing table (mils for each range, the two arcs, the 780 m minimum and the 2,629 m longest range) and the height correction table were measured in game by the [wardogs-calculator](https://github.com/apollyon-sys/wardogs-calculator) by apollyon-sys.
-- **Game files.** The stats sheet (50 rounds/min, 25.0 s reload, 10,000 m stated effective range, starting ammunition), the shell's name and variants, the launch speed, gravity and the 40 s flight limit come from the game files. See [Artillery shell flight](../../game-features/Wardogs_ArtilleryShellFlight_v1.md), [Projectile flight](../../pipelines/Wardogs_ProjectileFlight_v1.md), [All vehicles stats and damage](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md) and the [SPH-2](../vehicles/sph-2.md) article.
-- **Simulator estimates.** Flight times, the high-arc top height, the drag figures and the hull tilt comparison (59 m median miss falling to 34 m) are estimates worked out with the repo's flight simulator, [`_tools/shell_sim.py`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/_tools/shell_sim.py), on flat ground with no wind. The simulator's median miss against 87 real logged shots was about 59 m. The full write-up is in the [round 21 range check](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round21-artillery-range-check.md).
-
-The stats sheet gives an effective range of 10,000 m, but the longest shot measured in game reaches 2,629 m. The real reach is the measured figure.
+- [Artillery shell flight data](../../game-features/Wardogs_ArtilleryShellFlight_v1.md)
+- [Projectile flight](../../pipelines/Wardogs_ProjectileFlight_v1.md)
+- [All vehicles stats and damage](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
+- [Artillery](../game-mechanics/artillery.md)
+- [wardogs-calculator](https://github.com/apollyon-sys/wardogs-calculator) by apollyon-sys (MIT licence)
+- [CV Artillery Computer](https://github.com/Kiyogitpy/cv-artillery-computer) (MIT licence)
+- [shell_sim.py](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/_tools/shell_sim.py)
+- [Round 21 artillery range check](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round21-artillery-range-check.md)
