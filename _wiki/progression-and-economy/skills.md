@@ -9,7 +9,7 @@ description: "The six roles and their 62 skills: what each skill changes in play
 
 | Skills | |
 |---|---|
-| Roles | Infantry (17 skills), Recon (17), Support (12), Medic (4), Pilot (6), Driver (6) |
+| Roles | Assault (17 skills), Recon (17), Support (12), Medic (4), Pilot (6), Driver (6) |
 | Total | 62 skills |
 | Unlock level and cost | Not yet known (see below) |
 | Internal name | Role skill tables (one per role, plus four plugin tables) |
@@ -19,7 +19,7 @@ Each role has its own skill set. A skill tweaks one part of play: how fast a wea
 
 ## Roles
 
-- [Infantry](infantry.md): 17 skills for assault rifles and SMGs, plus movement and door breaching
+- [Assault](assault.md): 17 skills for assault rifles and SMGs, plus movement and door breaching
 - [Recon](recon.md): 17 skills for sniper and marksman rifles, spotting and infrared visibility
 - [Support](support.md): 12 skills for LMGs and shotguns, plus C4 detonator range
 - [Medic](medic.md): 4 skills for medical items and sprint boosts after a revive
@@ -37,11 +37,11 @@ Skill unlock levels and costs are not in the sources. The skill tree layout exis
 - **Where a skill applies.** Each skill applies to one of several slots: an item, a vehicle, the character, a held item, a supply crate you drop, or a player you revive.
 - **Strength.** Most effects multiply a value by the skill's current strength. The strength is set by the skill's curve.
 - **Curve example.** The Driver's time-to-aim curve steps from 1.0 down to 0.6 across its ranks, so a higher rank aims faster. The data does not state which curve key is which rank, so this reading is inferred.
-- **Grants.** Three skills unlock an ability rather than changing a number: sprint-breaching doors (Infantry), lockpicking (Recon) and a sniper-kill focus refresh (Recon).
+- **Grants.** Three skills unlock an ability rather than changing a number: sprint-breaching doors (Assault), lockpicking (Recon) and a sniper-kill focus refresh (Recon).
 
 ## Skills by role
 
-### Infantry (17)
+### Assault (17)
 
 - **Aiming.** Faster time to aim down sights with assault rifles and with SMGs. Faster aiming movement with assault rifles and with SMGs.
 - **Recoil.** Less horizontal and less vertical recoil with assault rifles and with SMGs.
@@ -85,7 +85,7 @@ The data stores each skill's per-rank values in curve tables. This page does not
 
 ## Tips that follow from the numbers
 
-- Infantry and Recon have the most skills (17 each). Support has 12, and the rest have 4 to 6.
+- Assault and Recon have the most skills (17 each). Support has 12, and the rest have 4 to 6.
 - Several skills are one-time unlocks: infrared reduction and sniper focus refresh (Recon), and detonator range (Support).
 - Skills that change aiming speed apply by weapon class (assault rifle, SMG, LMG, shotgun, sniper, marksman). A skill helps only the class it names.
 
