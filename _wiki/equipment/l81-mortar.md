@@ -15,7 +15,7 @@ description: "A buildable mortar emplacement with one firing arc and a range of 
 | **Range** | |
 | Minimum range | 132 m |
 | Maximum range | 684 m |
-| Flight-time data | 17 points in the game files (see Flight time) |
+| Travel time | 15.9 to 22.4 s (game table) |
 | **Building** | |
 | Build cost | 600 Build Supplies |
 | Health | 3,000 HP |
@@ -28,7 +28,7 @@ The L81 Mortar is a stationary emplacement that fires mortar rounds over short d
 
 ## Overview
 
-The mortar can hit targets from 132 m to 684 m away. It has one firing arc only, so each range has a single elevation setting. That setting is listed in mils for each range below. The game files also hold a range table for the shell, which is summarised under Flight time.
+The mortar can hit targets from 132 m to 684 m away. It has one firing arc only, so each range has a single elevation setting. The setting to dial for each range, and the game's own range table with travel times, are in the table below.
 
 ## Effects
 
@@ -38,29 +38,39 @@ The gun fires 120x800 mm shells in semi-automatic mode at 50 rounds/min. It relo
 
 ### Range and elevation
 
-The table gives the elevation in mils for each range on flat ground, as measured in game by the community calculator [wardogs-calculator](https://github.com/apollyon-sys/wardogs-calculator) by apollyon-sys (MIT licence). The calculator gives the range as 132 m to 684 m and the sight as 150 to 850 mils; the table is its mil values at every 50 m. The calculator reads between its rows in a straight line.
+The game files hold a range table for the mortar: 17 rows, each giving a firing elevation in milliradians (mrad), the distance the shell lands at and its travel time. The "dial" column is the setting on the sight's MIL scale as measured in game by the community calculator [wardogs-calculator](https://github.com/apollyon-sys/wardogs-calculator) by apollyon-sys (MIT licence); the calculator gives the dial range as 150 to 850 mils. **Dial the numbers in the "dial" column.** The calculator reads between its rows in a straight line.
 
-| Range (m) | Mils | | Range (m) | Mils |
-|---:|---:|---|---:|---:|
-| 150 | 831 | | 450 | 525 |
-| 200 | 788 | | 500 | 461 |
-| 250 | 740 | | 550 | 393 |
-| 300 | 690 | | 600 | 315 |
-| 350 | 638 | | 650 | 222 |
-| 400 | 583 | | | |
+| Range (m) | Dial (mils) | Game table (mrad) | Travel time (s) |
+|---:|---:|---:|---:|
+| 684 | 150 | -500 | 15.9 |
+| 661 | 200 | -450 | 16.6 |
+| 637 | 248 | -400 | 17.2 |
+| 609 | 300 | -350 | 17.9 |
+| 578 | 350 | -300 | 20.0 |
+| 545 | 400 | -250 | 19.0 |
+| 510 | 449 | -200 | 19.5 |
+| 470 | 500 | -150 | 20.0 |
+| 430 | 549 | -100 | 20.5 |
+| 385 | 600 | -50 | 20.9 |
+| 340 | 649 | 0 | 21.2 |
+| 290 | 700 | 50 | 21.6 |
+| 240 | 749 | 100 | 21.9 |
+| 187 | 800 | 150 | 22.1 |
+| 132 | 850 | 200 | 22.3 |
+| 110 | 900 | 250 | 22.4 |
+| 80 | 950 | 300 | 22.0 |
 
-Mils fall as range rises, so a longer shot needs a lower elevation setting. The shortest and longest shots, 132 m and 684 m, are outside the rows above.
+Mils fall as range rises, so a longer shot needs a lower elevation setting. A shell is in the air for 16 to 22 s: the longer the shot, the shorter the flight, which is the opposite of the SPH-2 low arc. The data stores the travel times as plain numbers, and they are read here as seconds.
 
-### Flight time
+### How the game table and the dial compare
 
-The mortar's weapon data holds an artillery range table with 17 points. Each point pairs a firing setting in milliradians with the impact distance and the travel time of the shell. The export does not state the unit of the travel time, so the times below are read as seconds and should be checked in game.
+At the same range, the dial setting is the game table's elevation plus 650, to within 2 mils, on every one of the 17 rows. The two lists therefore agree on the shape of the mortar's range curve and differ by a fixed shift. Why the scales are shifted by 650 is not known. Because the match is so close, the two should not be counted as two independent measurements.
 
-- At the longest setting (-500 milliradians), the shell lands 684 m away after about 15.9 s.
-- At 0 milliradians, it lands 340 m away after about 21.3 s.
-- At 200 milliradians, it lands 132 m away after about 22.3 s.
-- At the shortest impact in the table (300 milliradians), it lands 80 m away after about 22.0 s.
+The travel time in the -300 mrad row (20.0 s) breaks the pattern of its neighbours (17.9 s before it, 19.0 s after), and is probably a data oddity. The cause is not known.
 
-The table's milliradian values use a different scale from the mil values in the elevation table above, and the two have not been matched point for point. The table's shortest impact, 80 m, is also below the 132 m minimum given in the infobox, which comes from the community calculator. This article keeps both figures and does not choose between them.
+### Minimum range
+
+The game table goes down to 80 m. The calculator gives 132 m as the minimum range. The two fit together this way: 132 m is the row at 850 mils, the end of the mortar's dial range (150 to 850 mils). The game table has two more rows beyond that stop, 110 m at 900 mils and 80 m at 950 mils on the dial scale, which the measured dial does not reach. Whether the mortar can actually fire at those settings is not known, so treat 132 m as the shortest range you can set.
 
 ## Season 2 changes
 
@@ -90,8 +100,9 @@ The Build Supplies cost is taken from the [Buildables](buildables.md) article, w
 ## Sources
 
 - [Buildables](buildables.md): build cost, health and hammer (stationary weapons table)
-- [wardogs-calculator](https://github.com/apollyon-sys/wardogs-calculator) by apollyon-sys (MIT licence): range, one-arc and mils table, measured in game
-- [Mortar weapon extension data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_03/Content/Weapons/WeaponExtensions/WE_STN_03_Heavy_MainBarrel.json): the 17-point artillery range table, reload, restock, windup and starting shells
+- [wardogs-calculator](https://github.com/apollyon-sys/wardogs-calculator) by apollyon-sys (MIT licence): range, one arc and dial settings, measured in game
+- [artillery_range_tables.py](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/_tools/artillery_range_tables.py): prints the table and compares it with the dial readings
+- [Mortar weapon extension data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_03/Content/Weapons/WeaponExtensions/WE_STN_03_Heavy_MainBarrel.json): the 17-row range table (mrad, impact distance, travel time), reload, restock, windup and starting shells
 - [All vehicles stat and damage sheet](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md): the mortar's rate and damage table
 - [Vehicles changes, Season 2](../../season-2-changes/vehicles.md): cost, restock, windup and damage table changes
 - [Vehicle hitboxes](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/vehicle-hitboxes.json): the 3D hitbox set used by the viewer link

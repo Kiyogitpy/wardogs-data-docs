@@ -69,7 +69,7 @@ Use it for: checking how far the hull is tilted, so you can correct the elevatio
 
 4. **Traverse to the bearing.** In the gun view, turn the turret until the centre of the bearing tape reads your bearing. Use the bearing tape, not the compass box.
 
-5. **Set the elevation.** Look up the mils for your range in the firing table on the [Artillery](../game-mechanics/artillery.md) article, then set the MIL scale's centre line to that value. Some sample rows:
+5. **Set the elevation.** Look up the mils for your range in the "dial" columns of the firing table on the [Artillery](../game-mechanics/artillery.md) article (not the game table's mrad columns, which are a different list), then set the MIL scale's centre line to that value. Some sample rows:
 
    | Range (m) | Low arc (mils) | High arc (mils) |
    |---:|---:|---:|
@@ -79,7 +79,7 @@ Use it for: checking how far the hull is tilted, so you can correct the elevatio
 
    If the target is higher or lower than your gun, or the hull is tilted, correct the setting as described below.
 
-6. **Fire, then watch the shell.** With the Expensive shell, the camera follows the round in flight. Mark where it lands on the map and compare the crater with the target.
+6. **Fire, then watch the shell.** With the Expensive shell, the camera follows the round in flight. Mark where it lands on the map and compare the crater with the target. The same table gives the travel time: about 12 s at 2,000 m on the low arc, about 33 s on the high arc.
 
 7. **Adjust.** On the low arc, more mils means the shell lands further. On the high arc, more mils means the shell lands shorter. Change the setting by a little at a time and fire again.
 
@@ -106,8 +106,8 @@ Numbers in this guide come from four kinds of source.
 
 - **Screen measurements (CV Artillery Computer).** The instrument readings (map readout precision, minimap scale, bearing tape ticks and the 1.28° compass box offset, MIL scale ticks, the tilt dial's tick size) were measured on the game screen at 2560x1440 by the [CV Artillery Computer](https://github.com/Kiyogitpy/cv-artillery-computer). The pixel values, such as 1.48 m per minimap pixel, depend on resolution and may differ on another screen.
 - **Measured in game (wardogs-calculator).** The firing table (mils for each range, the two arcs, the 780 m minimum and the 2,629 m longest range) and the height correction table were measured in game by the [wardogs-calculator](https://github.com/apollyon-sys/wardogs-calculator) by apollyon-sys.
-- **Game files.** The stats sheet (50 rounds/min, 25.0 s reload, 10,000 m stated effective range, starting ammunition), the shell's name and variants, the launch speed, gravity and the 40 s flight limit come from the game files. See [Artillery shell flight](../../game-features/Wardogs_ArtilleryShellFlight_v1.md), [Projectile flight](../../pipelines/Wardogs_ProjectileFlight_v1.md), [All vehicles stats and damage](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md) and the [SPH-2](../vehicles/sph-2.md) article.
-- **Simulator estimates.** Flight times, the high-arc top height, the drag figures and the hull tilt comparison (59 m median miss falling to 34 m) are estimates worked out with a flight simulator, [shell_sim.py](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/_tools/shell_sim.py), on flat ground with no wind. The simulator's median miss against 87 real logged shots was about 59 m. The full write-up is in the [round 21 range check](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round21-artillery-range-check.md).
+- **Game files.** The gun's range table (the travel times, and an elevation for each range that does not match the dial settings, for a reason not known), the stats sheet (50 rounds/min, 25.0 s reload, 10,000 m stated effective range, starting ammunition), the shell's name and variants, the launch speed, gravity and the 40 s flight limit come from the game files. See [Artillery shell flight](../../game-features/Wardogs_ArtilleryShellFlight_v1.md), [Projectile flight](../../pipelines/Wardogs_ProjectileFlight_v1.md), [All vehicles stats and damage](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md) and the [SPH-2](../vehicles/sph-2.md) article.
+- **Simulator estimates.** The high-arc top height, the drag figures and the hull tilt comparison (59 m median miss falling to 34 m) are estimates worked out with a flight simulator, [shell_sim.py](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/_tools/shell_sim.py), on flat ground with no wind. The simulator's median miss against 87 real logged shots was about 59 m. The full write-up is in the [round 21 range check](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round21-artillery-range-check.md).
 
 The stats sheet gives an effective range of 10,000 m, but the longest shot measured in game reaches 2,629 m. The real reach is the measured figure.
 

@@ -16,7 +16,7 @@ The 155 mm shell data assets (`DA_155mm_*_ProjectileData`) set `bActorHandlesPro
 | `DA_155mm_Standard_ProjectileData`, `..._SB` | `BP_155mm_Standard` | `WDProjectile` | `WDProjectileMove` (`Mover.Mode.Projectile.Standard`) |
 | `DA_155mm_Expensive_ProjectileData`, `..._SB` | `BP_155mm_Expensive` | `WDCameraProjectile` | `WDArtilleryProjectileMove` (`Mover.Mode.Projectile.Artillery`) |
 
-The same export covers the other actor-driven projectiles named by a `DA_*_ProjectileData`: `BP_120x570mm`, `BP_120x800mm` (artillery mover), `BP_125x570mm`, `BP_122mm`, `BP_40mm`, `BP_72mm`, `BP_84mm`, `BP_93mm`, `BP_Drone_Projectile` (`WDGlideProjectileMove`) and `BP_MoverProjectile` (`WDTVGuidedProjectileMove`). No mortar projectile data asset exists in the export (mortar is audio only).
+The same export covers the other actor-driven projectiles named by a `DA_*_ProjectileData`: `BP_120x570mm`, `BP_120x800mm` (artillery mover), `BP_125x570mm`, `BP_122mm`, `BP_40mm`, `BP_72mm`, `BP_84mm`, `BP_93mm`, `BP_Drone_Projectile` (`WDGlideProjectileMove`) and `BP_MoverProjectile` (`WDTVGuidedProjectileMove`). No mortar projectile data asset (`DA_*_ProjectileData`) exists in the export (mortar is audio only), but the mortar does have a range table: see section 5.
 
 Fields on the 155 mm data assets that feed the actor (all `ProjectileStats`):
 
@@ -72,9 +72,42 @@ Result: world gravity is the UE default of -980.0 cm/s^2 (9.8 m/s^2 downward), t
 - How `TypicalSpeed`, `ThrustSpeed`, `Mass`, `DragModel` and `MaxProjectileLifetime` enter the mover: not known from data alone. The existence of a native range helper `WDArtilleryRangeLibrary::SimulateImpactDistance` (inputs: projectile stats, weapon stats, an air-density value) shows that range is simulated natively, but its body is not in the export.
 - Units of the data-asset fields: still the UE convention (cm, cm/s, kg as stored). Only the gravity value is confirmed against the engine config.
 - Whether the native mode constructors give non-zero default values for speed limits, drag or gravity scale: the Blueprints store none, so any such values live in native constructors and are not in this file.
-- No curve is fitted to calculator or in-game range data on this page.
+- No curve is fitted to calculator or in-game range data on this page. The relation between the range tables' milliradians and the sight's dial mils on the SPH-2 is not known (section 5).
 
-## 5. Reproduce
+## 5. `ArtilleryRangeData` tables (game range tables)
+
+Three weapon extension data assets carry a table `ArtilleryRangeData`: a list of rows `{Milliradians, ImpactDistance, TravelTime}`. `ImpactDistance` is in metres and `TravelTime` in seconds (the SPH-2 values match the flight maths in seconds, section 4 of the projectile-flight page; the unit is not stated in the export).
+
+| Weapon | Asset | Rows | Milliradians | ImpactDistance (m) | TravelTime (s) |
+|---|---|---:|---|---|---|
+| SPH-2 | `WE_TNK_01_Artillery` (`Vehicles/TNK_01/.../WeaponExtensions/Artillery/`) | 41 | 20 to 1400, rising | 600 up to 2,600 (at 619 mrad), then back down to 700 | 2.74 to 23.73 (low arc), 27.68 to 37.00 (high arc) |
+| L81 Mortar | `WE_STN_03_Heavy_MainBarrel` (`Vehicles/STN_03/.../WeaponExtensions/`) | 17 | -500 to 300 in steps of 50 | 684 down to 80 | 15.94 to 22.39 |
+| Stingray | `WE_STN_05_Heavy_MainBarrel` (`Vehicles/STN_05/.../WeaponExtensions/`) | 17 | -500 to 300 in steps of 50 | 697 down to 80 | 15.94 to 22.39 (identical to the mortar's) |
+
+The SPH-2 table is a low arc rising to the longest row, then a high arc with the elevation still rising and the distance falling. The mortar and Stingray tables have one arc each. The tables are stored data; how they were produced (the native range helper named in section 4 is one candidate) is not known. `python -I _tools/artillery_range_tables.py` prints all three, and `--calc <weapons.json>` compares them with the community calculator's dial readings.
+
+Comparison with the community calculator (`wardogs-calculator`, dial mils measured on the in-game MIL scale; `_tools/artillery_range_tables.py --calc`), same range, game mrad minus calculator mil:
+
+| Weapon | Difference | Note |
+|---|---|---|
+| SPH-2 low arc | +44.5 to +97.3 (median +50.5), 15 rows | not constant: smallest near 2,000 to 2,200 m, largest at 2,600 m and at the short end |
+| SPH-2 high arc | -33.8 to -1.6 (median -5.4), 18 rows | shrinks toward short range; largest at 2,500 m |
+| L81 Mortar | -650.0 to -648.0, 17 rows | a constant shift of 650 (the calculator's rows are 150 to 850 mils; the game table's last two rows, 250 and 300 mrad, sit at 900 and 950 on that scale, outside the 150 to 850 sight limits) |
+| Stingray | none | the calculator has no Stingray table |
+
+The SPH-2 offset is not a unit conversion or a fixed shift, and its cause is not known. The calculator values were measured in game on the dial and checked against logged impacts (round 21), so the dial values are the ones to use for aiming.
+
+Comparison with `shell_sim.py` (Expensive shell, elevation = mrad / 1000 rad as degrees, 1 ms step), SPH-2 rows only:
+
+| Arc | Range, sim minus game | Travel time, sim minus game |
+|---|---|---|
+| Low (21 rows) | -283.4 to -18.1 m (median -102.7), short of the game range at every row, worst at the short end | -1.57 to -0.47 s (median -0.8); sim is 43 to 98 percent of the game time |
+| High (19 rows) | +21.8 to +103.6 m (median +59.9) | -0.44 to -0.11 s (median -0.2); sim is 98.4 to 99.7 percent of the game time |
+
+So the game's high-arc travel times agree with the flight maths at the table's own true-milliradian elevation to within 0.4 s, while its low-arc times are up to 1.6 s longer, and in both arcs the ranges at that elevation differ by tens to hundreds of metres. This does not show that the table elevation is the true barrel elevation; it shows only that the travel times are close to it on the high arc. The mortar and Stingray are not simulated (no 120 mm flight data). The mortar and Stingray rows have one travel time (20.0 s at -300 mrad) that breaks the trend of its neighbours (17.86 s above, 19.02 s below); it is identical in both tables and unexplained.
+
+## 6. Reproduce
 
 1. Build `tools/cue4parse_extractor` ([README](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/tools/cue4parse_extractor/README.md)); `list BP_` finds the actor packages, `dump <files.txt>` exports them and `rawfiles <text> --copy` writes the packed `.ini` files.
 2. `python _tools/shell_actors.py --dump <dumpdir> --world <dir with world.json>` rewrites `assets/data/shell-actors.json`.
+3. `python -I _tools/artillery_range_tables.py [--calc <weapons.json>]` prints the three range tables of section 5 and the comparisons.
