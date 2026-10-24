@@ -2,7 +2,7 @@
 title: "Strike and Disarm"
 parent: "Game Modes & Maps"
 group: "PvE missions"
-description: "A single-life PvE mission against AI squads with a laptop hack, voice-over intro and mission-complete line. Its map, full objectives and enemy squads are not yet known."
+description: "A single-life PvE mission on the Kavkazi map: the team hacks a laptop while Lonestar soldiers try to stop it, then boards an extraction helicopter."
 ---
 
 # Strike and Disarm
@@ -11,10 +11,10 @@ description: "A single-life PvE mission against AI squads with a laptop hack, vo
 |---|---|
 | **General** | |
 | Mode | PvE mission against AI squads |
-| Map or layout | Not yet known |
+| Map or layout | Kavkazi (the data's name; the in-game name is not confirmed) |
 | Lives | One: no respawns |
 | **Objective** | |
-| Objective | Laptop hack and other objectives; the full list is not yet known |
+| Objective | Keep Lonestar soldiers away from the laptop until the virus is uploaded, then board the extraction helicopter |
 | **Rewards** | |
 | Mission rewards | Not in the data; see Rewards |
 | Internal name | StrikeDisarm_01 |
@@ -32,14 +32,15 @@ Strike and Disarm is one of the three PvE missions in the data, alongside [Hunte
 
 - **Respawns.** None. A player who dies stays out for the rest of the mission.
 - **Player faction.** Set to the Manticore faction, the same faction the Manticore AI uses.
-- **Laptop hack.** The mission has a laptop hack with a start line and an end line of voice-over. The hack is an interaction with its own duration in the data, but the length is not yet known.
+- **Laptop hack.** The hack takes 5 minutes (300 seconds) once it starts. It has a start line and an end line of voice-over. Aborting the hack fails the mission.
 - **Intro and completion.** Four intro voice-over lines and a mission-complete line.
-- **Scenario value.** The data sets an unnamed value of 3000. Its meaning, such as a time limit or a score target, is not confirmed.
-- **Map, layout and other objectives.** Not yet known.
+- **Starting cash.** Each player starts the mission with 3,000 cash. The mission data sets no time limit.
+- **Map.** The Kavkazi map, which all three PvE missions share.
+- **Objectives.** Upload the virus while keeping Lonestar soldiers away from the laptop, then board the extraction helicopter to leave the area.
 
 ## Enemies
 
-The data does not link an AI squad to this mission, so the number of enemies and their squad types are not yet known. The five AI types used in the PvE missions are described on the [AI enemies](ai-enemies.md) page.
+The mission has 53 Lonestar soldiers: 49 riflemen and 4 snipers. 27 are on the map when the mission starts, six of them on patrol routes. When the laptop hack begins, 26 more riflemen spawn as a counter-attack, a single wave, and the soldiers are sent to the laptop to stop the hack. The [AI enemies](ai-enemies.md) page describes their loadouts.
 
 ## Rewards
 
@@ -57,4 +58,6 @@ The mission has no reward table of its own, so its rewards are not yet known. Re
 
 - [PvE game feature](../../game-features/Wardogs_GameFeatures_PvE_v2.md)
 - [AI game feature](../../game-features/Wardogs_GameFeatures_AI_v2.md)
+
+- [Round 36 AI and PvE evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-ai.md)
 - [Session-event reward lookups](../../content/Wardogs_RewardLookup_SessionEvents_v1.md)

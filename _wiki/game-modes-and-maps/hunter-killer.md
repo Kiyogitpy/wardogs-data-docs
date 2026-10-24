@@ -2,7 +2,7 @@
 title: "Hunter Killer"
 parent: "Game Modes & Maps"
 group: "PvE missions"
-description: "A single-life PvE mission against AI squads with no respawns. Its objectives, map and enemy squads are not yet known from the data."
+description: "A single-life PvE mission on the Kavkazi map with no respawns. Its data is unfinished: no soldiers, objectives or player faction are set."
 ---
 
 # Hunter Killer
@@ -11,16 +11,16 @@ description: "A single-life PvE mission against AI squads with no respawns. Its 
 |---|---|
 | **General** | |
 | Mode | PvE mission against AI squads |
-| Map or layout | Not yet known |
+| Map or layout | Kavkazi (the data's name; the in-game name is not confirmed) |
 | Lives | One: no respawns |
 | **Objective** | |
-| Objective | Not yet known |
+| Objective | None set: the mission data is unfinished |
 | **Rewards** | |
 | Mission rewards | Not in the data; see Rewards |
 | Internal name | HunterKiller_01 |
 {: .wiki-infobox }
 
-Hunter Killer is a PvE mission played against AI squads instead of other players. A player who dies stays out for the rest of the mission. Like every PvE mission, it uses the shared setup with three teams. The data does not give the mission's objectives, map or enemy squads.
+Hunter Killer is a PvE mission played against AI squads instead of other players. A player who dies stays out for the rest of the mission. Like every PvE mission, it uses the shared setup with three teams. The mission data is unfinished: it has a map, but no soldiers, objectives or player faction are set.
 
 Hunter Killer is a plain-language name taken from the data's internal mission name. The data gives no display name, so this is not confirmed as the in-game title.
 
@@ -32,13 +32,13 @@ Hunter Killer is one of the three PvE missions in the data, alongside [Strike an
 
 - **Respawns.** None. A player who dies stays out for the rest of the mission.
 - **Teams.** Like the other PvE missions, it uses the shared three-team setup. The data does not set the player's own faction for this mission, so which side the player starts on is not yet known.
-- **Objectives.** The mission's quest contents are not in the data, so its objectives are not yet known.
-- **Map, layout and time limit.** Not yet known.
-- **Scenario value.** None is set for this mission.
+- **Objectives.** None are set. The mission's quest has only a start and an end, with no steps between them.
+- **Map.** The Kavkazi map. No time limit is set in the data.
+- **Starting cash.** None is set for this mission.
 
 ## Enemies
 
-The data does not link an AI squad to this mission, so the number of enemies and their squad types are not yet known. The five AI types used in the PvE missions are described on the [AI enemies](ai-enemies.md) page.
+No AI soldiers are placed on the map, so the mission has no enemies in the data. The map has placeholder labels such as Guards and Patrol, but no soldiers. The [AI enemies](ai-enemies.md) page describes the soldiers used in the other two PvE missions.
 
 ## Rewards
 
@@ -56,4 +56,8 @@ The data has no reward table for this mission, so its rewards are not yet known.
 
 - [PvE game feature](../../game-features/Wardogs_GameFeatures_PvE_v2.md)
 - [AI game feature](../../game-features/Wardogs_GameFeatures_AI_v2.md)
+
+- [Round 36 AI and PvE evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-ai.md)
 - [Session-event reward lookups](../../content/Wardogs_RewardLookup_SessionEvents_v1.md)
+
+- [Round 36 AI and PvE evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-ai.md)

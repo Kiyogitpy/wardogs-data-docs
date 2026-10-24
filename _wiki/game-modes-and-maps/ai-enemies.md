@@ -13,17 +13,18 @@ description: "The computer-controlled soldiers of the PvE missions: five types i
 | Type | Computer-controlled infantry in PvE missions |
 | Squads | Lonestar (rifleman, sniper) and Manticore (rifleman, machine gunner, marksman) |
 | **Combat** | |
-| Health | Not yet known |
-| Accuracy | Not yet known |
-| Perception and reaction time | Not yet known |
+| Health | 100, the same as a player |
+| Accuracy | No AI-specific value; they shoot with their weapon's own spread and recoil |
+| Sight and hearing | Sees up to 2,000 m and hears up to 1,000 m (configured ranges) |
+| Reaction time | Not yet known |
 | Internal name | AIC_Lonestar_Rifleman, AIC_Lonestar_Sniper, AIC_Manticore_Rifleman, AIC_Manticore_Machinegunner, AIC_Manticore_Marksman |
 {: .wiki-infobox }
 
-The AI enemies are the computer-controlled soldiers that fill the PvE missions. The data defines five soldier types in two squads, each with its own weapon, armor, helmet and magazines. It gives their loadouts and how their alert, cover and squad behaviour is set up, but not their health, accuracy or reaction times.
+The AI enemies are the computer-controlled soldiers that fill the PvE missions. The data defines five soldier types in two squads, each with its own weapon, armor, helmet and magazines. It gives their health, senses, firing, loadouts, and how their alert, cover and squad behaviour is set up. The data has no AI-specific accuracy value, and their reaction timing is only partly known.
 
 ## Overview
 
-All five PvE soldiers share the same controller, behaviour tree and alert and influence settings. They differ in their loadouts. The data does not say which mission uses which squad; see the Enemies section of each mission, such as [Strike and Disarm](strike-and-disarm.md).
+All five PvE soldiers share the same controller, behaviour tree and alert and influence settings. They differ in their loadouts. [Strike and Disarm](strike-and-disarm.md) uses the Lonestar squad, [VIP Escort](vip-escort.md) uses the Manticore squad, and [Hunter Killer](hunter-killer.md) places no soldiers. Counts for each mission are under Where the soldiers appear.
 
 ## Squad types and loadouts
 
@@ -35,9 +36,42 @@ All five PvE soldiers share the same controller, behaviour tree and alert and in
 | Manticore | Machine gunner | [PKM](../weapons/pkm.md) | GOL Multi-Caliber Suppressor | PKM 100 RND Box |
 | Manticore | Marksman | [SVD](../weapons/svd.md) | 3-6x Scope, GOL Multi-Caliber Suppressor | SVDM Standard Magazine |
 
-Every soldier also carries [Level 1 Armor](../equipment/level-1-armor.md) and a [Level 1 Helmet](../equipment/level-1-helmet.md). The data gives a count only for some items: one M4 and two M4 magazines for the Lonestar rifleman, and one MK22 for the Lonestar sniper. All other counts are not yet known.
+Every soldier also carries [Level 1 Armor](../equipment/level-1-armor.md) and a [Level 1 Helmet](../equipment/level-1-helmet.md). Each soldier carries one of its weapon and two spare magazines for it.
 
 The weapon, attachment and magazine names are the display names from the game data. For attachments, see [Sights and Optics](../weapons/attachments-sights-and-optics.md) and [Muzzle Devices](../weapons/attachments-muzzle-devices.md).
+
+## Health and armor
+
+- **Health.** An AI soldier has 100 health, the same as a player. The soldiers are built on the player character, and the data sets no separate health value for them.
+- **Armor and helmet.** Every soldier wears Level 1 Armor and a Level 1 Helmet, so hits to the body and the head are handled the same way as for players. See [Armor](../game-mechanics/armor.md).
+- **Damage.** The data has no damage multiplier that applies only to AI soldiers. The normal damage rules are the only ones found for them.
+
+## Senses and detection
+
+| Setting | Value |
+|---|---|
+| Sight range | 2,000 m |
+| Distance at which a soldier loses sight of a player | 2,100 m |
+| Hearing range | 1,000 m |
+| How long a soldier remembers what it saw or heard | 30 s |
+| How long a soldier remembers a hit | 10 s |
+
+These are the configured ranges. The data also sets two internal range multipliers, 0.02 for sight and 0.05 for hearing. How they change the ranges in play is not confirmed, so treat the figures above as configured values, not confirmed distances.
+
+- **Threat build-up.** A soldier builds up a detection level for a player and loses it again over time. The data sets the fade rate at 0.25 (the unit is not confirmed), and the fade starts only 5 s after the last detection.
+- **How visible a player is.** The data sets a value of 1.0 for a standing player, 0.4 for a crouching player and 0.3 for a prone player. Firing a weapon is set at 5.0, far above standing still, and movement speed also feeds into hearing. How these values combine into a chance of being spotted is not confirmed.
+
+## Firing and aim
+
+- When a soldier uses burst fire, it fires three shots per burst, with a 1 s pause between bursts.
+- It aims at the target's head and refreshes its aim every 0.1 s.
+- The data has no AI-specific spread or accuracy value. Soldiers shoot with their weapon's own spread and recoil; see [Spread and recoil](../game-mechanics/spread-and-recoil.md).
+
+## Where the soldiers appear
+
+- **Strike and Disarm:** 53 Lonestar soldiers, 49 riflemen and 4 snipers. 27 are on the map from the start, six of them on patrol routes. When the laptop hack begins, 26 more riflemen spawn as one counter-attack wave.
+- **VIP Escort:** 95 Manticore soldiers, 86 riflemen, 5 marksmen and 4 machine gunners. All start on the map, and 31 of the riflemen follow patrol routes.
+- **Hunter Killer:** no soldiers. The mission places none in the data.
 
 ## Numbers
 
@@ -45,7 +79,7 @@ The weapon, attachment and magazine names are the display names from the game da
 - **Pressure.** The alert levels are compared with a continuous value. The data has a value named Pressure that is most likely the input, but the data does not say so outright.
 - **Influence maps.** The team map has a radius of 1000 and the enemy map a radius of 500. The alert map has a radius of 1000 and is fed by hearing. Units are not yet confirmed.
 - **Fire mode priority.** The base preset that the PvE soldiers follow prefers Burst, then Automatic, then Semi-automatic.
-- **Health, accuracy, perception range and reaction time.** Not yet known.
+- **Health and senses.** See Health and armor and Senses and detection above.
 
 ## How the AI behaves
 
@@ -53,8 +87,8 @@ The weapon, attachment and magazine names are the display names from the game da
 - **Finding targets.** A soldier picks a target from the threats it knows about.
 - **Taking cover.** Soldiers look for nearby cover, cover closer to the enemy and cover that faces the enemy. They also look for peek points off their current cover, peek points toward a sighting, combat positions near the target, and shooting spots in the open.
 - **Team awareness.** Soldiers share a team map and an enemy map. Both fade over time, and the enemy map is refreshed every 2 seconds.
-- **Computers.** The AI can use a computer as a smart object. The data does not say which missions use this.
-- **Example behaviours.** The AI data also has patrol, search, flee and squad attack examples. A squad example includes a query that handles movement tokens, probably so squad members take turns moving. These are example packs, and the data does not confirm that they are used in the live game.
+- **Computers.** In Strike and Disarm, soldiers are sent to the laptop to stop the hack. The data shows no other mission using this.
+- **Behaviours in the missions.** Patrol sends soldiers along set routes in VIP Escort and Strike and Disarm. The besiege behaviour is added to the soldiers while the laptop hack runs. Search is included with Strike and Disarm, but no soldier or quest in the data uses it. Flee and the squad attack are example behaviours that no mission uses. A squad example includes a query that handles movement tokens, probably so squad members take turns moving.
 - **Exact action order.** The behaviour tree that sequences these actions is not in the data, so the exact order is not yet known.
 
 ## See also
@@ -69,3 +103,5 @@ The weapon, attachment and magazine names are the display names from the game da
 - [AI game feature](../../game-features/Wardogs_GameFeatures_AI_v2.md)
 - [PvE game feature](../../game-features/Wardogs_GameFeatures_PvE_v2.md)
 - [Weapon and attachment loadout data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-loadouts.json) (display names)
+
+- [Round 36 AI and PvE evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-ai.md)

@@ -2,7 +2,7 @@
 title: "VIP Escort"
 parent: "Game Modes & Maps"
 group: "PvE missions"
-description: "A single-life PvE mission against AI squads that tracks a VIP on the map, with its own loot table. Its map, full objectives and enemy squads are not yet known."
+description: "A single-life PvE mission on the Kavkazi map in which one random player is the VIP to escort to an extraction helicopter, against 95 Manticore soldiers."
 ---
 
 # VIP Escort
@@ -11,12 +11,12 @@ description: "A single-life PvE mission against AI squads that tracks a VIP on t
 |---|---|
 | **General** | |
 | Mode | PvE mission against AI squads |
-| Map or layout | Not yet known |
+| Map or layout | Kavkazi (the data's name; the in-game name is not confirmed) |
 | Lives | One: no respawns |
 | **Objective** | |
-| Objective | Escort the VIP; the full list is not yet known |
+| Objective | Keep the marked VIP alive, reach the extraction area and board the extraction helicopter |
 | **Rewards** | |
-| Mission rewards | Own loot table; quantities not yet known |
+| Mission rewards | Own loot table: an SV98 sniper rifle and a Fuel Canister |
 | Internal name | VIPEscort_01 |
 {: .wiki-infobox }
 
@@ -33,17 +33,20 @@ VIP Escort is one of the three PvE missions in the data, alongside [Hunter Kille
 - **Respawns.** None. A player who dies stays out for the rest of the mission.
 - **Player faction.** Set to the Valkyra faction.
 - **VIP tracker.** The VIP has a persistent tracker on the tactical map and the minimap. The map marker is purple, and the VIP's health state is shown with its own icon for each vitality state.
+- **The VIP.** One random player is chosen as the VIP. The VIP is a player, not a soldier.
+- **Failure.** The mission fails 10 seconds after the VIP is critically wounded or disconnects.
+- **Success.** The team must reach the extraction area with the VIP alive, then board the extraction helicopter. The helicopter is a Little Bird. It appears for the team at one of three entry points and flies a set route.
 - **Voice-over.** An intro of three lines, a success line and a failure line.
-- **Scenario value.** The data sets an unnamed value of 2000. Its meaning, such as a time limit or a score target, is not confirmed.
-- **Map, layout and full objectives.** Not yet known.
+- **Starting cash.** Each player starts the mission with 2,000 cash. The mission data sets no time limit.
+- **Map.** The Kavkazi map, which all three PvE missions share.
 
 ## Enemies
 
-The data does not link an AI squad to this mission, so the number of enemies and their squad types are not yet known. The five AI types used in the PvE missions are described on the [AI enemies](ai-enemies.md) page.
+The mission has 95 Manticore soldiers: 86 riflemen, 5 marksmen and 4 machine gunners. All of them are on the map from the start, and 31 of the riflemen follow patrol routes. The [AI enemies](ai-enemies.md) page describes their loadouts.
 
 ## Rewards
 
-The mission has a loot table of its own. The data lists two entries: a [Fuel Canister](../equipment/fuel-canister.md) and a rifle that the data names only as "AK". Which AK rifle this is, and the quantities and drop rules, are not yet known.
+The mission has a loot table of its own with two entries, each with a 100% chance: a [Fuel Canister](../equipment/fuel-canister.md), which does not respawn, and an [SV98](../weapons/sv98.md) sniper rifle with one magazine, which respawns after 10 seconds. The data names the rifle entry "AK", but the item is the SV98, not an AK. The data does not say where this loot is placed or how often it appears.
 
 Other rewards follow the general rules; see [Cash and Rewards](../progression-and-economy/cash-and-rewards.md). The session-event reward lookup has no rows for PvE missions.
 
@@ -58,6 +61,8 @@ Other rewards follow the general rules; see [Cash and Rewards](../progression-an
 ## Sources
 
 - [PvE game feature](../../game-features/Wardogs_GameFeatures_PvE_v2.md)
+
+- [Round 36 AI and PvE evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-ai.md)
 - [AI game feature](../../game-features/Wardogs_GameFeatures_AI_v2.md)
 - [Season 2 changes: Game Modes & Maps](../../season-2-changes/game-modes-maps.md) (the VIP loot table is new in Season 2)
 - [Session-event reward lookups](../../content/Wardogs_RewardLookup_SessionEvents_v1.md)
