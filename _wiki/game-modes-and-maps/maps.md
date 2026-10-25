@@ -88,7 +88,9 @@ The data includes two test areas that are not playable modes. A minimal test are
 
 ## Rules and objectives
 
-The game's level files exist for the four main worlds and the test gym, but the spawn points and buildings inside them have not been read, so they are not described here. Anything a player sees on a map beyond the zone and region data is not yet known.
+The game's level files exist for the four main worlds and the test gym. The data lists the spawn areas for vehicles and for the test gym (see [Zone Layouts](zone-layouts.md)), but the buildings inside the maps have not been read, so they are not described here. Anything a player sees on a map beyond the zone, region and spawn data is not yet known.
+
+The gym range has a moving target, which slides on a set path and takes 15 to 25 seconds to cross. See [Shooting Range](shooting-range.md).
 
 ## See also
 

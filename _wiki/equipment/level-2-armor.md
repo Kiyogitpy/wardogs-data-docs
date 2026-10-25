@@ -12,7 +12,7 @@ description: "Second vest tier: 40% damage reduction on the torso, 220 durabilit
 | **General** | |
 | Type | Vest |
 | Slot | Armor |
-| Weight | 4.5 |
+| Weight | 4.5 kg |
 | **Protection** | |
 | Damage reduction | 40% |
 | Body parts covered | Torso: upper, middle and lower |

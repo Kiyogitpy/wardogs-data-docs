@@ -74,6 +74,26 @@ Two curves in the data scale building destruction with an angle and with a dista
 
 Health of world props, how many hits each takes, and how long a building piece takes to fall are not in the data. They are **not yet known**.
 
+## Wreck explosions
+
+When a vehicle or a fixed gun is destroyed, it plays an explosion picked for its type. The game files name 14 explosion sequences. The table shows which one each kind of wreck uses. Exact timing and look are on the [VFX page](../../content/Wardogs_VFX_v2.md).
+
+| Destroyed | Explosion |
+|---|---|
+| Helicopters: [Z-20 Lakota](../vehicles/z20-lakota.md) and the second helicopter in the data (its name is not on the wiki yet) | Helicopter |
+| [Havoc](../vehicles/havoc.md) | Havoc |
+| [MH-6](../vehicles/mh-6.md) and its AH-6 variants | Little Bird |
+| [Fixed-wing airplane](../vehicles/fixed-wing-airplane.md) and the PzH 2000 self-propelled howitzer | Tank |
+| [Kodiak](../vehicles/kodiak.md), the [Humvee](../vehicles/humvee-m249.md) machine gun variant and the [Wolf 110](../vehicles/wolf-110.md) | Kodiak |
+| [Dune Buggy](../vehicles/dune-buggy.md) | Dune Buggy |
+| [Ural](../vehicles/ural.md) and the [Ural Defender](../vehicles/ural-defender.md) | Ural |
+| [Talon 9K SAM](../equipment/talon-9k-sam.md), [Vanguard CIWS](../equipment/vanguard-ciws.md), [L81 Mortar](../equipment/l81-mortar.md) and [Loudspeaker](../equipment/loudspeaker.md) | Each has its own |
+| 155 mm shells, Standard and Expensive | 155 mm shell |
+| [Improvised Explosive Device](../equipment/improvised-explosive-device.md) | Improvised Explosive Device |
+| [Forward operating base](../equipment/forward-operating-base.md) | Destroyed base |
+
+Vehicles not in this table, such as the [T-72B3](../vehicles/t-72b3.md), use one general explosion recipe from the game files instead of a named sequence. This is read from the data; how it looks in play was not checked.
+
 ## Tips that follow from the numbers
 
 - Grenades and charges can break the light props, such as the chain-link and metal fences and the lamp posts and telephone poles. They cannot break brick walls, concrete fences or concrete barriers. For those, use a large explosion or a tank.
@@ -93,3 +113,5 @@ Health of world props, how many hits each takes, and how long a building piece t
 - [Demolition assets (row level)](../../content/Wardogs_DemolitionAssets_v1.md)
 - [Buildables](../../game-features/Wardogs_Buildables_v1.md)
 - [Season 2 changes: world, visuals and audio](../../season-2-changes/world-visuals-audio.md)
+- [VFX (explosion sequences)](../../content/Wardogs_VFX_v2.md)
+- [Round 42 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-modes-ai-other.md): which explosion sequence each destroyed item uses

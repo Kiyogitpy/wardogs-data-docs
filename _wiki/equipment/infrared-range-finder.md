@@ -12,7 +12,7 @@ description: "The Infrared Range Finder: the most expensive recon optic, with in
 | **General** | |
 | Type | Recon, specialist item |
 | Use | Spot enemy infantry and vehicles, with an accurate distance |
-| Weight | 0.43 (unit not stated) |
+| Weight | 0.43 kg |
 | **Use** | |
 | Magnification | Infrared, variable |
 | Distance readout | Accurate |

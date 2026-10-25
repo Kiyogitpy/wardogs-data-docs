@@ -12,7 +12,7 @@ description: "Ammo, Fuel, Mechanical and Build Supplies: the resources that rear
 | **General** | |
 | Type | Logistics, resource |
 | Stack | 50 per item |
-| Weight | 0.02 to 0.03 each (unit not stated) |
+| Weight | 0.02 to 0.03 kg each |
 | **Use** | |
 | Ammo Supplies | Reloads buildable weapons |
 | Fuel Supplies | Refuels vehicles at a Refuel Station |

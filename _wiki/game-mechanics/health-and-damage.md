@@ -50,6 +50,13 @@ Base multiplier per body part, before the weapon class is added:
 
 Head multiplier added by each weapon class: assault rifles 2.35, SMGs 2.1, LMGs 2.35, shotguns 1.5, DMRs 2.45 and sniper rifles about 4.27.
 
+**Arm damage class.** Each bullet also has an arm damage class, set by its caliber. It belongs to the bullet, not to the armour the target wears.
+
+- **Small:** 9 mm, .45 ACP, .45 Colt, 7 mm buckshot and 12 gauge rifled slug.
+- **Medium:** 5.45 mm and 5.56 mm.
+- **High:** the 7.62 family (7.62x39, 7.62x51, 7.62x54R), .308, .338 Norma Magnum, .50 AE, 30 mm, and the combat and explosive arrows.
+- **Special:** .50 Cal.
+
 Damage per hit with the M4 (full metal jacket ammo, no armor) and the number of hits that kill an unarmored player:
 
 | Body part | Damage per hit | Hits to kill |

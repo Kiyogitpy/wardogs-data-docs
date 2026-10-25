@@ -22,7 +22,7 @@ Vehicles take damage through the same rule set that infantry use, but the result
 2. **The hit location decides which part takes it.** Each part has its own health. A hit to the engine uses the engine's health, a hit to a wheel uses that wheel's health, and so on.
 3. **Some parts pass damage on.** While a part still stands, some parts send a share of their damage to another part. The Flakpanzer Gepard's main body sends 5% of each hit to its fuel tank while it is intact. The L2A6's hull has a tougher zone that sends 40% of its damage to the main health while the zone stands. Once that zone is destroyed, the remainder goes to the main health.
 4. **Losing a part does not always end the fight.** When a non-main part runs out, the game marks it destroyed and the vehicle keeps going. Parts also have threshold triggers at fixed percentages of their health. The data lists those triggers, such as fuel leaks on the airplane, but does not decode every effect.
-5. **The main health decides the outcome.** At zero the vehicle is destroyed.
+5. **The main health decides the outcome.** At zero the vehicle is destroyed, and it plays an explosion picked for its type. See [Destruction](../game-mechanics/destruction.md#wreck-explosions).
 6. **Explosions count differently.** A blast is treated as an explosion, not as a direct hit, so it meets its own rules. Rocket and grenade rules often have a separate line for the inner radius, and those lines are much larger on many vehicles. One explosion also counts once per part. If several contacts land on the same part, only the first counts.
 7. **Some rules add instead of multiply.** A few rules add a fixed amount, and the order in which rules apply matters for them. Damage never drops below zero.
 

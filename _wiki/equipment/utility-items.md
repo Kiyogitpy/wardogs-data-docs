@@ -55,7 +55,7 @@ Each item below has its own article with the full details. The tables on this pa
 
 A parachute is a single-use item that must be deployed by hand. The data gives it a minimum fall before it can be opened, a minimum clearance above the ground, and an open time. See [Parachutes](parachutes.md) for the values and their units.
 
-| Item | Weight | Price (cash) | Can steer | Notes |
+| Item | Weight (kg) | Price (cash) | Can steer | Notes |
 |---|---:|---:|---|---|
 | Basic Parachute | 2.5 | 500 | no | No glide; no pull-up |
 | Sport Parachute | 9 | 700 | yes | Glide, pull-up and speed caps; pull-up uses stamina |

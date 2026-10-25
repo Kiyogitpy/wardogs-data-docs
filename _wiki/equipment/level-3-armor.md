@@ -12,7 +12,7 @@ description: "Third vest tier: 50% damage reduction on the torso, 250 durability
 | **General** | |
 | Type | Vest |
 | Slot | Armor |
-| Weight | 10.5 |
+| Weight | 10.5 kg |
 | **Protection** | |
 | Damage reduction | 50% (55% in Season 1) |
 | Body parts covered | Torso: upper, middle and lower |

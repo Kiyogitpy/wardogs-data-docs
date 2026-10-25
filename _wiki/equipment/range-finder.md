@@ -12,7 +12,7 @@ description: "The Range Finder: a high, variable magnification recon optic that 
 | **General** | |
 | Type | Recon, specialist item |
 | Use | Spot enemy infantry and vehicles, with an accurate distance |
-| Weight | 0.23 (unit not stated) |
+| Weight | 0.23 kg |
 | **Use** | |
 | Magnification | High, variable |
 | Distance readout | Accurate |

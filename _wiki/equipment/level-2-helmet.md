@@ -12,7 +12,7 @@ description: "Second helmet tier: 40% head damage reduction, 100 durability, 500
 | **General** | |
 | Type | Helmet |
 | Slot | Helmet |
-| Weight | 1.6 |
+| Weight | 1.6 kg |
 | **Protection** | |
 | Damage reduction | 40% |
 | Body parts covered | Head |

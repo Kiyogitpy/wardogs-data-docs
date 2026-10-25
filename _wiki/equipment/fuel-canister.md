@@ -12,7 +12,7 @@ description: "The 40 L Fuel Canister: a 150 cash fuel can that refuels vehicles 
 | **General** | |
 | Type | Logistics, specialist item, vehicle fuel |
 | Size | 40 L |
-| Weight | 5 (unit not stated) |
+| Weight | 5 kg |
 | Durability | 40 |
 | **Use** | |
 | Fuel per use | 25 (shop figure; see Overview) |

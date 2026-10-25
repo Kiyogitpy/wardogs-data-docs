@@ -33,7 +33,7 @@ Players earn cash and XP from the zone and from fights around it. Challenges suc
 - **Scoring the zone.** A player counts toward capturing the zone only while alive. A critically wounded or dead player adds nothing. See [Control Zone](control-zone.md).
 - **Hot Zone.** Each Control Zone has a Hot Zone in its centre. The Hot Zone moves during the match. Kills and captures inside it pay more than in the outer zone.
 - **Hot Zone Magnet.** Players can build and activate a Hot Zone Magnet. While it is active, kills in the Hot Zone pay the highest multiplier in the game. Capturing hostile or neutral towers also counts.
-- **Spawning.** KOTH has its own spawn manager. The data does not describe a starting kit for KOTH players.
+- **Spawning.** KOTH has its own spawn manager. Your first spawn is in your faction's spawn area. The game picks a random start point in that area and, if it is taken, moves on to the next free point. There is no forward operating base step, and no enemy-distance rule like the one Deathmatch uses. Which spawn area a player gets on the maps other than Bakurani is not confirmed. The data does not describe a starting kit for KOTH players.
 - **Win condition.** The first team to reach 100 points wins, which is the game's default score limit. A point is added every 22 seconds (the example server file uses 24 seconds). There is no time limit.
 - **Team balance.** A team may be at most 2 players larger than the smallest team. The game's default leaves this lock off; the example server file turns it on.
 - **Player cap.** The maximum number of players is a server setting, which can be set between 60 and 100.
@@ -78,5 +78,7 @@ At the end of the match, factions are ranked and paid a flat placement bonus: 20
 - [Season 2 changes: Game Modes & Maps](../../season-2-changes/game-modes-maps.md)
 - [Round 39 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-modes-ai-other.md)
 - [Round 40 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-modes-ai-other.md)
+- [Round 41 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-modes-ai-other.md)
+- [Round 42 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-modes-ai-other.md)
 - [Mode rules (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/mode-rules.json)
 - [Default game settings (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/default-game-ini.json)

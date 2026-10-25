@@ -29,7 +29,7 @@ The standard backpacks differ in price, grid and slot count. The shop text gives
 
 ## How it works
 
-| Backpack | Price (cash) | Grid | Slots | Weight |
+| Backpack | Price (cash) | Grid | Slots | Weight (kg) |
 |---|---:|---|---:|---:|
 | Pouch | 0 | 3 x 2 (vertical placement only) | 6 | 0.3 |
 | Scout Backpack | 350 | 4 x 2 | 8 | 0.5 |
@@ -39,7 +39,7 @@ The standard backpacks differ in price, grid and slot count. The shop text gives
 | Ruck Backpack | 1,600 | 6 x 4 | 24 | 1.5 |
 | Halftrack Backpack (hidden in the shop) | 15,000 | 6 x 5 | 30 | 2.78 |
 
-The weight is the value in the item data, and its unit is not stated. The item data draws some bags with a different grid shape from the shop text, for example the Scout Backpack. This page uses the shop text.
+The weight is in kilograms, the unit the game shows for item weight. The item data draws some bags with a different grid shape from the shop text, for example the Scout Backpack. This page uses the shop text.
 
 The Halftrack Backpack has no price in the shop and cannot be bought there. The sources do not say where else it could be obtained, so that is not yet known.
 

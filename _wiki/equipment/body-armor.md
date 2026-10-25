@@ -36,7 +36,7 @@ Each vest and helmet has its own article.
 
 ### Vests
 
-| Item | Reduction | Covers | Durability | Weight | Price (cash) |
+| Item | Reduction | Covers | Durability | Weight (kg) | Price (cash) |
 |---|---:|---|---:|---:|---:|
 | Level 1 Armor | 30% | Torso (lower, middle, upper) | 200 | 3 | 400 |
 | Level 2 Armor | 40% | Torso (lower, middle, upper) | 220 | 4.5 | 1,000 |
@@ -45,7 +45,7 @@ Each vest and helmet has its own article.
 
 ### Helmets
 
-| Item | Reduction | Covers | Durability | Weight | Price (cash) | Notes |
+| Item | Reduction | Covers | Durability | Weight (kg) | Price (cash) | Notes |
 |---|---:|---|---:|---:|---:|---|
 | Level 1 Helmet | 30% | Head | 80 | - | 200 | |
 | Level 2 Helmet | 40% | Head | 100 | 1.6 | 500 | |

@@ -35,6 +35,9 @@ Hunter Killer is one of the three PvE missions in the data, alongside [Strike an
 - **Objectives.** None are set. The mission's quest has only a start and an end, with no steps between them.
 - **Map.** The Bakurani world (the data's name for it is Kavkazi). No time limit is set in the data.
 - **Starting cash.** None is set for this mission.
+- **Downed players.** The mission switches off the rule that skips the downed state, so a player can be downed here, as in King of the Hill.
+- **Name.** The data has no name text for this mission at all, so the title above is a working name.
+- **Completion cash.** No payout for finishing the mission appears in the game files.
 
 ## Enemies
 
@@ -58,6 +61,6 @@ The data has no reward table for this mission, so its rewards are not yet known.
 - [AI game feature](../../game-features/Wardogs_GameFeatures_AI_v2.md)
 
 - [Round 36 AI and PvE evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-ai.md)
+- [Round 41 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-modes-ai-other.md)
+- [Round 42 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-modes-ai-other.md)
 - [Session-event reward lookups](../../content/Wardogs_RewardLookup_SessionEvents_v1.md)
-
-- [Round 36 AI and PvE evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-ai.md)

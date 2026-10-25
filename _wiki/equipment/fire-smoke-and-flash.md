@@ -21,6 +21,8 @@ This article covers the throwables and placed gear that do something other than 
 
 Flash and stun grenades are not in the data for this build. There is no flashbang item, no shop listing and no effect. The only remnants are three sound effects and a Medic skill that reduces the effect of flash and stun, which has no number attached in the data.
 
+Destroyed vehicles, the fixed guns and a destroyed forward operating base also set off explosions of their own. See [Destruction](../game-mechanics/destruction.md#wreck-explosions).
+
 ## Individual items
 
 - [Molotov](molotov.md)
@@ -53,6 +55,8 @@ Smoke grenades make a cloud of smoke. The data gives the length of each cloud, b
 Vehicle smoke is a countermeasure that trails smoke around a vehicle and then settles into a larger screen, according to the shop text. The screen lasts 6 s and then fades for 2 s before it is removed.
 
 Each smoke stays for its full duration (white and black 120 s, blue signal 64 s, other signals 180 s, vehicle smoke 6 s). Then the plume fades out over the fade time (10 s for the grenades, 2 s for the vehicle screen) before it is removed. A smoke effect that is already running when you arrive has lost the time it has already spent, so less of it is left.
+
+The smoke effect's own defaults in the game files are a 180 s total, a 20 s fade in and a 10 s fade out. The white grenade overrides the length to 120 s. These are read from the files and were not seen in play.
 
 ### Signal grenades
 
@@ -142,3 +146,5 @@ The Season 2 items data lists no change to the Molotov, smoke grenades, mines or
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): Molotov patches and fire rules, and what smoke affects in the code found.
 - [Round 39 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md): Smoke duration and fade, signal markers and the Claymore and mine rules.
 - [Round 40 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-vehicles-explosives.md): the same topics, with the round 40 values where they differ.
+- [Round 41 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-modes-ai-other.md): the smoke effect's default durations and fades.
+- [Round 42 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-modes-ai-other.md): which explosion sequence each destroyed item uses.

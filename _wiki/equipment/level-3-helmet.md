@@ -12,7 +12,7 @@ description: "Third helmet tier: 50% reduction for the head and neck, 180 durabi
 | **General** | |
 | Type | Helmet |
 | Slot | Helmet |
-| Weight | 3 |
+| Weight | 3 kg |
 | **Protection** | |
 | Damage reduction | 50% (55% in Season 1) |
 | Body parts covered | Head and neck |

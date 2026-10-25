@@ -12,7 +12,7 @@ description: "The lightest vest in the Armor group: 30% damage reduction on the 
 | **General** | |
 | Type | Vest |
 | Slot | Armor |
-| Weight | 3 |
+| Weight | 3 kg |
 | **Protection** | |
 | Damage reduction | 30% |
 | Body parts covered | Torso: upper, middle and lower |

@@ -19,7 +19,7 @@ description: "Single-life PvE missions against AI squads: Hunter Killer, Strike 
 
 PvE Scenarios are missions played against AI squads instead of other players. Every mission in the data ends a life for good, because all four mission rule sets turn respawns off. Each mission has its own objectives, voice-over and AI.
 
-Mission names here are plain-language names taken from the data's internal mission names. The data does not give display names for the missions, so these are not confirmed as the in-game titles.
+Mission names here are plain-language names taken from the data's internal mission names. The data does not give display names for the missions, so these are not confirmed as the in-game titles. Two missions carry placeholder quest names in the data, and the third has no name text at all.
 
 ## Overview
 
@@ -43,13 +43,15 @@ The example scenario used for testing has no article of its own.
 - **AI squads.** The scenario AI comes in five types. The Lonestar squad has a rifleman and a sniper. The Manticore squad has a rifleman, a machine gunner and a marksman. The riflemen carry light armor, a light helmet, a rifle and spare magazines. The sniper and marksman carry scopes.
 - **Starting cash.** Each player starts Strike and Disarm with 3,000 cash and VIP Escort with 2,000. Hunter Killer sets none.
 - **Timers.** No mission has a time limit in its data. The timers that do exist are the 5-minute laptop hack in Strike and Disarm and the 10-second wait between the VIP going down and VIP Escort failing. After a mission ends, the scenario waits 15 seconds before its post-match step, and the end screen is delayed by 0.5 seconds.
-- **Team sizes.** Not yet known.
+- **Downed players.** The three missions switch off the rule that skips the downed state, so a player can be downed in a mission, as in King of the Hill. The rules for downed players are on the [Downed and Revive](../game-mechanics/downed-and-revive.md) page.
+- **Voice-over subtitles.** Every voice-over line in the missions has a subtitle that stays on screen for 10 s.
+- **Team sizes.** The game files set no team size for these missions. The session size is a server setting.
 - **Shared extraction.** Strike and Disarm and VIP Escort both end with the same extraction helicopter. It appears for the player's team at one of three entry points and flies a set route.
 - **Soldier behaviour.** Patrol routes are used in Strike and Disarm and VIP Escort. The besiege behaviour is added while the laptop hack runs. Search is included with Strike and Disarm, but no soldier or quest in the data uses it. Flee and the squad attack are example behaviours that no mission uses.
 
 ## Rewards
 
-The scenario data has no cash or XP table of its own. The general rules apply; see [Cash and Rewards](../progression-and-economy/cash-and-rewards.md).
+The scenario data has no cash or XP table of its own. The general rules apply; see [Cash and Rewards](../progression-and-economy/cash-and-rewards.md). None of the four scenario definitions sets a cash reward for finishing a mission, so no completion payout appears in the game files. Any payout would be decided elsewhere, and the files do not show it.
 
 ## See also
 
@@ -66,3 +68,5 @@ The scenario data has no cash or XP table of its own. The general rules apply; s
 
 - [Round 36 AI and PvE evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-ai.md)
 - [Round 39 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-modes-ai-other.md)
+- [Round 41 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-modes-ai-other.md)
+- [Round 42 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-modes-ai-other.md)
