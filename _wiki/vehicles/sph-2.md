@@ -111,6 +111,10 @@ The stats sheet gives 3 seats, but the seat data has two setups: a driver and a 
 - The vehicle item is wider in inventory (width 4 to 6).
 - Price is unchanged at 8,000.
 
+## Vehicle spawns
+
+The SPH-2 is placed by the ground vehicle yards of all four main maps: [Bakurani](../game-modes-and-maps/bakurani.md), [Ozeti](../game-modes-and-maps/ozeti.md), [Zestafona](../game-modes-and-maps/zestafona.md) and [Saburtulo](../game-modes-and-maps/saburtulo.md). The yards list the vehicle family (L2A6, Flakpanzer Gepard and SPH-2 share one tank tag), not each variant, so which variant appears in a slot is not in the data (inferred). A match offers it in 7 of the 7 ground yards on Ozeti, 5 or 6 of the 7 or 6 on Bakurani, 7 of 7 on Zestafona and 6 of 6 on Saburtulo. The data gives no vehicle count or respawn timer per yard. See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
+
 ## See also
 
 - [Artillery](../game-mechanics/artillery.md), the full firing table and flight data
@@ -122,6 +126,7 @@ The stats sheet gives 3 seats, but the seat data has two setups: a driver and a 
 
 ## Sources
 
+- [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md): which maps place this vehicle
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
 - [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
 - [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md)

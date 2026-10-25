@@ -89,6 +89,10 @@ The seats are a driver (pilot) seat and one gunner seat.
 - The vehicle item is one step wider in inventory (width 4 to 5).
 - The flares button is renamed Fire Countermeasures. The key is the same (V on keyboard).
 
+## Vehicle spawns
+
+The Havoc is covered by the air vehicle yards (inferred). Each side normally has one air yard, and every yard allows any helicopter by a general air tag, so it can be placed on all four main maps (three air yards per match). The Havoc is also named directly in one Zestafona yard (the extra air yard of the Lonestar side, with the Little Bird family, the Huey and the Z20 Lakota family). The airframe is not named in those yards, so which helicopter appears in a slot is not in the data. See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
+
 ## See also
 
 - [Vehicle damage](vehicle-damage.md)
@@ -97,6 +101,7 @@ The seats are a driver (pilot) seat and one gunner seat.
 
 ## Sources
 
+- [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md): which maps place this vehicle
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
 - [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
 - [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md)

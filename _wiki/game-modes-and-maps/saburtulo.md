@@ -12,6 +12,7 @@ description: "The Saburtulo King of the Hill map, added with its Season 2 zone a
 | **General** | |
 | Map area | About 16.3 km square (minimap bounds) |
 | Modes | King of the Hill |
+| Vehicle spawns | 3 deployment boards and 11 vehicle yards (6 ground, 2 air, 3 light) and one extra air yard |
 | **Zones** | |
 | Control Zone | 550 m across, 150 m tall |
 | Hot Zone | 85 m across, 150 m tall |
@@ -20,7 +21,7 @@ description: "The Saburtulo King of the Hill map, added with its Season 2 zone a
 | Internal name | Server browser Moscow_KOTH_01; zone config Russia; minimap folder Russia |
 {: .wiki-infobox }
 
-Saburtulo is a King of the Hill map with a 550 m Control Zone and four possible zone placements. Its zone configuration, shader warm-up list and sight-blocker data were all added in Season 2. The data does not include a list of named zone regions for it, and it does not describe its streets, buildings or spawn points.
+Saburtulo is a King of the Hill map with a 550 m Control Zone and four possible zone placements. Its zone configuration, shader warm-up list and sight-blocker data were all added in Season 2. The data does not include a list of named zone regions for it, and it does not describe its streets or buildings. Its vehicle and infantry spawn areas are covered under Vehicle spawns.
 
 ## Overview
 
@@ -46,6 +47,22 @@ The Control Zone is 550 m across and 150 m tall, with an 85 m Hot Zone in its ce
 
 - **Zone regions.** The data does not include a region list for this map, so where the zone can sit beyond these four placements is not known.
 
+## Vehicle spawns
+
+The Moscow entry uses three spawn areas: Kuzminki (Lonestar side), Rostokino (Valkyra side) and Ramenki (Manticore side). In total the match has 11 vehicle yards in the spawn areas (6 ground, 2 air, 3 light), 3 deployment boards and 68 vehicle slots, plus one more air yard in the Rostokino area that is tagged for the Lonestar side.
+
+| Side | Spawn area | Deployment board | Ground yards | Air yards | Light yards | Vehicle slots | Infantry spawn spots |
+|---|---|---|---:|---:|---:|---:|---:|
+| Lonestar | Kuzminki | Manticore version | 2 | 0 | 1 | 17 | 81 |
+| Valkyra | Rostokino | Valkyra version | 2 | 1 | 1 | 25 | 69 |
+| Manticore | Ramenki | Lonestar version | 2 | 1 | 1 | 26 | 76 |
+
+The side names follow the spawn vehicle that each area's yards list (Lonestar, Valkyra or Manticore version; the pairing with the three team slots is inferred, see the [Vehicle Spawns data page](../../game-features/Wardogs_VehicleSpawns_v1.md)). Vehicle slots are the places where each side's yards park vehicles (inferred from the yard's target points). Two details look swapped in the data: the Kuzminki area (Lonestar side) holds a Manticore deployment board and the Ramenki area (Manticore side) holds a Lonestar board. Which team receives which spawn vehicle at run time is not known. The Rostokino area has no infantry spawn area in the dumped files.
+
+- **Vehicles offered (inferred).** The yards do not name vehicles one by one; they allow vehicle families by tag. The ground yards allow the Humvee, Kodiak, Ural, Dune Buggy and Wolf 110 families (each family covers its gun variants), the tank family of the L2A6, Flakpanzer Gepard and SPH-2, and the T-72B3. The light yards allow only the Bobcat. The air yards allow any helicopter (the fixed-wing airplane is under the same tag; whether a yard ever places it was not checked). The data does not say how many of each vehicle a yard holds or in what order they appear.
+- **Limits and timers.** A player may own at most 2 spawned vehicles at a time. After a player deploys onto a spawn vehicle, the deployment board's cooldown is 600 s (this value is stored; its start trigger was not traced). How long a destroyed vehicle takes to return is not in the data.
+- **What is not known.** Which vehicle each slot gives, how many vehicles of one kind can exist, and whether every King of the Hill match uses these yards are not in the game files.
+
 ## Layouts
 
 The zone layout for this map is described in full on [Zone Layouts](zone-layouts.md#saburtulo).
@@ -64,6 +81,8 @@ The zone layout for this map is described in full on [Zone Layouts](zone-layouts
 
 ## Sources
 
+- [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md): boards, yards and infantry spawn areas per map
+- [Vehicle spawn data (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/vehicle-spawns.json)
 - [Maps and gym data](../../content/Wardogs_Maps_v2.md)
 - [ControlZone game feature](../../game-features/Wardogs_GameFeatures_ControlZone_v2.md)
 - [Frontend data tables (server browser list)](../../content/Wardogs_DataTables_Frontend_v1.md)
