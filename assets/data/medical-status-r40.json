@@ -1,0 +1,708 @@
+{
+ "meta": {
+  "source": "docs/evidence/round40-medical-movement.md; written by _tools/round40_medical_movement.py"
+ },
+ "armor": [
+  {
+   "item": "ID_GhillieArmor",
+   "weight": 1.5,
+   "durability": null,
+   "stages": [],
+   "covered": [],
+   "context_tag": "Meta.Damage.Armor.Ghillie"
+  },
+  {
+   "item": "ID_GhillieArmorDry",
+   "weight": 1.5,
+   "durability": null,
+   "stages": [],
+   "covered": [],
+   "context_tag": "Meta.Damage.Armor.Ghillie"
+  },
+  {
+   "item": "ID_GhillieHelmet",
+   "weight": "default",
+   "durability": null,
+   "stages": [],
+   "covered": [],
+   "context_tag": "Meta.Damage.Helmet.Ghillie"
+  },
+  {
+   "item": "ID_GhillieHelmetDry",
+   "weight": "default",
+   "durability": null,
+   "stages": [],
+   "covered": [],
+   "context_tag": "Meta.Damage.Helmet.Ghillie"
+  },
+  {
+   "item": "ID_HeavyArmor",
+   "weight": 10.5,
+   "durability": 250.0,
+   "stages": [
+    [
+     50.0,
+     1.0,
+     100.0
+    ],
+    [
+     50.0,
+     1.0,
+     90.0
+    ],
+    [
+     50.0,
+     1.0,
+     80.0
+    ],
+    [
+     50.0,
+     1.0,
+     60.0
+    ]
+   ],
+   "covered": [
+    "Lower",
+    "Middle",
+    "Upper"
+   ],
+   "context_tag": "Meta.Damage.Armor.Heavy"
+  },
+  {
+   "item": "ID_HeavyHelmet",
+   "weight": 3.0,
+   "durability": 180.0,
+   "stages": [
+    [
+     50.0,
+     1.0,
+     100.0
+    ],
+    [
+     50.0,
+     1.0,
+     90.0
+    ],
+    [
+     50.0,
+     1.0,
+     80.0
+    ],
+    [
+     50.0,
+     1.0,
+     60.0
+    ]
+   ],
+   "covered": [
+    "Head",
+    "Neck"
+   ],
+   "context_tag": "Meta.Damage.Helmet.Heavy"
+  },
+  {
+   "item": "ID_LightArmor",
+   "weight": 3.0,
+   "durability": 200.0,
+   "stages": [
+    [
+     30.0,
+     0.5,
+     50.0
+    ],
+    [
+     30.0,
+     0.5,
+     40.0
+    ],
+    [
+     30.0,
+     0.5,
+     30.0
+    ],
+    [
+     30.0,
+     0.5,
+     20.0
+    ]
+   ],
+   "covered": [
+    "Lower",
+    "Middle",
+    "Upper"
+   ],
+   "context_tag": "Meta.Damage.Armor.Light"
+  },
+  {
+   "item": "ID_LightHelmet",
+   "weight": "default",
+   "durability": 80.0,
+   "stages": [
+    [
+     30.0,
+     0.5,
+     50.0
+    ],
+    [
+     30.0,
+     0.5,
+     40.0
+    ],
+    [
+     30.0,
+     0.5,
+     30.0
+    ],
+    [
+     30.0,
+     0.5,
+     20.0
+    ]
+   ],
+   "covered": [
+    "Head"
+   ],
+   "context_tag": "Meta.Damage.Helmet.Light"
+  },
+  {
+   "item": "ID_MediumArmor",
+   "weight": 4.5,
+   "durability": 220.0,
+   "stages": [
+    [
+     40.0,
+     0.7,
+     60.0
+    ],
+    [
+     40.0,
+     0.7,
+     50.0
+    ],
+    [
+     40.0,
+     0.7,
+     40.0
+    ],
+    [
+     40.0,
+     0.7,
+     30.0
+    ]
+   ],
+   "covered": [
+    "Lower",
+    "Middle",
+    "Upper"
+   ],
+   "context_tag": "Meta.Damage.Armor.Medium"
+  },
+  {
+   "item": "ID_MediumHelmet",
+   "weight": 1.6,
+   "durability": 100.0,
+   "stages": [
+    [
+     40.0,
+     0.7,
+     60.0
+    ],
+    [
+     40.0,
+     0.7,
+     50.0
+    ],
+    [
+     40.0,
+     0.7,
+     40.0
+    ],
+    [
+     40.0,
+     0.7,
+     30.0
+    ]
+   ],
+   "covered": [
+    "Head"
+   ],
+   "context_tag": "Meta.Damage.Helmet.Medium"
+  },
+  {
+   "item": "ID_PilotHelmet",
+   "weight": "default",
+   "durability": 180.0,
+   "stages": [
+    [
+     30.0,
+     0.5,
+     50.0
+    ],
+    [
+     30.0,
+     0.5,
+     40.0
+    ],
+    [
+     30.0,
+     0.5,
+     30.0
+    ],
+    [
+     30.0,
+     0.5,
+     20.0
+    ]
+   ],
+   "covered": [
+    "Head"
+   ],
+   "context_tag": "Meta.Damage.Helmet.Pilot"
+  },
+  {
+   "item": "ID_SuperHeavyArmor",
+   "weight": 18.0,
+   "durability": 300.0,
+   "stages": [
+    [
+     60.0,
+     1.5,
+     130.0
+    ],
+    [
+     60.0,
+     1.5,
+     120.0
+    ],
+    [
+     60.0,
+     1.5,
+     110.0
+    ],
+    [
+     60.0,
+     1.5,
+     100.0
+    ]
+   ],
+   "covered": [
+    "Lower",
+    "Middle",
+    "Upper",
+    "Pelvis",
+    "Upper"
+   ],
+   "context_tag": "Meta.Damage.Armor.SuperHeavy"
+  },
+  {
+   "item": "ID_SuperHeavyHelmet",
+   "weight": 4.5,
+   "durability": 200.0,
+   "stages": [
+    [
+     60.0,
+     1.5,
+     130.0
+    ],
+    [
+     60.0,
+     1.5,
+     120.0
+    ],
+    [
+     60.0,
+     1.5,
+     110.0
+    ],
+    [
+     60.0,
+     1.5,
+     100.0
+    ]
+   ],
+   "covered": [
+    "Head",
+    "Neck"
+   ],
+   "context_tag": "Meta.Damage.Helmet.SuperHeavy"
+  },
+  {
+   "item": "ID_TankHelmet",
+   "weight": "default",
+   "durability": 180.0,
+   "stages": [
+    [
+     55.0,
+     1.0,
+     100.0
+    ],
+    [
+     55.0,
+     1.0,
+     90.0
+    ],
+    [
+     55.0,
+     1.0,
+     80.0
+    ],
+    [
+     55.0,
+     1.0,
+     60.0
+    ]
+   ],
+   "covered": [
+    "Head",
+    "Neck"
+   ],
+   "context_tag": "Meta.Damage.Helmet.Tank"
+  }
+ ],
+ "ghillie_set_effect": {
+  "requires": [
+   "State.Player.Ghilli.BodySuit",
+   "State.Player.Ghilli.Headwear"
+  ],
+  "modifiers": [
+   [
+    "Character.AdsTimeMultiplier",
+    "MultiplyCompound",
+    0.8
+   ],
+   [
+    "Character.AimSwayScaleMultiplier",
+    "MultiplyCompound",
+    1.15
+   ],
+   [
+    "Movement.LeanTimeMultiplier",
+    "MultiplyCompound",
+    1.15
+   ],
+   [
+    "Movement.UnleanTimeMultiplier",
+    "MultiplyCompound",
+    1.15
+   ],
+   [
+    "Movement.MaxSpeedMultiplier",
+    "MultiplyCompound",
+    0.95
+   ],
+   [
+    "Movement.JumpVelocityMultiplier",
+    "MultiplyCompound",
+    0.95
+   ]
+  ]
+ },
+ "native_and_blueprint": {
+  "critical_state": {
+   "ctor": "0x6E9B030 (UWDPlayerVitalityState_Critical)",
+   "vitality_tag_source": "ctor stores global tag qword_14D36B800 at +0x28 (VitalityTag); the Critical state object carries State.Player.Vitality.Critical and the character applies a state's VitalityTag when it enters it",
+   "InputMappingContextPriority": 2,
+   "bIsPlayerAbleToGiveUp": true,
+   "CallForHelpCooldownTime": 5.0,
+   "pawn_states": [
+    "WDPlayerVitalityState_Alive",
+    "B_WDPlayerVitalityState_Critical_C",
+    "WDPlayerVitalityState_Dead"
+   ],
+   "pawn_values": {
+    "GiveUpBleedOutRate": 240.0,
+    "OutOfBoundsTimeLimit": 20.0,
+    "CriticalReviveHoldThreshold": 10.0,
+    "core_pawn_CriticalReviveHoldThreshold": 20.0,
+    "BaseBleedOutTime": 360.0,
+    "MinBleedOutTime": 30.0,
+    "BleedOutRevivePenaltyOffset": 100.00002,
+    "HoldOnBleedOutRate": 0.5
+   },
+   "camera": {
+    "asset": "DA_CharacterModifierState_Critical",
+    "Priority": 0,
+    "PitchLockAngle": 40.0,
+    "DefaultState": "Character transform, bone head, world offset (0, -200, 0), transition 0 s",
+    "DraggedState": "Character transform, bone pelvis, relative offset (3, 20, 0), rotation (0, 110, -90)",
+    "character_modifier": "B_CharacterModifier_IgnoreLookInput",
+    "condition": "State.Player.Vitality.Critical and none of the vehicle roles (driver, gunner, active or passive passenger)"
+   }
+  },
+  "halligan": {
+   "item": "ID_Crowbar",
+   "durability": 7000.0,
+   "cost_per_use": -1000.0,
+   "uses": 7,
+   "actions": [
+    "B_Action_ForceOpenDoor",
+    "B_Action_ForceUnlockVehicle"
+   ],
+   "call": "WDDurabilityHelpers::UpdateDurability(owner, WDItemExtension_Inventory, DurabilityCost, 0.0, 100000.0); ConsumeItem() when the returned durability is <= 0",
+   "source": "ID_Crowbar WDInventoryFragment_Durability (data); DurabilityCost -1000 in the CDO of both action Blueprints"
+  },
+  "armor_durability_write": {
+   "queue": "WDPlayerInventoryComponent.QueuedArmorDamageEvents (+0xA60), 20-byte events {slot tag, fragment, Amount}",
+   "producer": "0x6B53280 (called from the slot-5 hook 0x6E74970 and 0x6B676DD)",
+   "consumer": "tick 0x6B64EC0 loops 0x6B59000, which does Durability -= Amount on the replicated armour entry, updates the stage index and sends WDEvent_ArmorDamage"
+  },
+  "weight_default": {
+   "ctor": "0x67793A0 (UBHInventoryFragment_Weight)",
+   "value": 1.0,
+   "note": "stores 0x3F800000 at +0x38; fragments that omit Weight (Level 1 Helmet, Tank, Pilot, Ghillie headwear) take it"
+  },
+  "enox_decay": {
+   "callback": "0x6B16EC0",
+   "per_tick": "min(DecayMagnitude (+0x170), decay pool (+0x17C))",
+   "application": "applied to the Health attribute through 0x52311D0 (negated), the pool then drops by |applied|",
+   "DecayRate": 5.0,
+   "DecayMagnitude": 5.0
+  },
+  "deathmatch_regen": {
+   "component": "UWDHealthRegenComponent",
+   "tick": "0x8496170 (vtable slot 131)",
+   "HealthToRegenerate": 5.0,
+   "TickInterval_field": 1.0,
+   "gate": "stored regen deadline byte (+0xF0, set by OnRegenTimerStarted 0x84965F0 as world time + RegenDelay) reached, then if CurrentHealth < MaxHealth a heal event of HealthToRegenerate (movss at 0x849627C) is sent through the vitality component vtable +0x518",
+   "open": "TickInterval (+0xEC) has no reader; whether it feeds the component tick rate was not shown"
+  },
+  "swimming_defaults": {
+   "ctor": "0x52B3270 (UBHMoverSwimmingDataAsset)",
+   "values": {
+    "MaxInputSpeed": 250.0,
+    "InputAcceleration": 500.0,
+    "InputDeceleration": 800.0,
+    "FastSwimMultiplier": 2.0,
+    "FastSwimStaminaUsagePerSecond": 20.0,
+    "bFastSwimConsumesStamina": true,
+    "WaterAcceleration": 1000.0,
+    "MaxStepHeight": 40.0,
+    "IdealImmersionDepth": 156.0,
+    "IdealImmersionDepthTolerance": 7.5,
+    "ImmersionDepthToStartSwimming": 170.0,
+    "ImmersionDepthToStopSwimming": 120.0,
+    "MaxBuoyancyForce": 3800.0,
+    "BuoyancyFrictionUp": 3.0,
+    "BuoyancyExpDragUp": 0.05,
+    "BuoyancyFrictionDownSubmerged": 7.5,
+    "BuoyancyExpDragDownSubmerged": 0.1,
+    "BuoyancyFrictionDown": 5.0,
+    "BuoyancyExpDragDown": 0.05
+   },
+   "overridden_in_DA_SwimmingMovement": {
+    "WaterAcceleration": 4000.0,
+    "InputDeceleration": 500.0
+   }
+  },
+  "ping_component": {
+   "ctor": "0x6B472C0 (UWDPingComponent)",
+   "Cooldown": 0.1,
+   "DoublePingThreshold": 0.25,
+   "PingTraceAngle": 5.0,
+   "TraceChannel": 26,
+   "note": "unit of the first three presumed seconds, seconds, degrees; no Blueprint override was found"
+  },
+  "pawn": {
+   "asset": "B_WDMoverPlayerCharacter CDO",
+   "ProneHeldThreshold": 0.25,
+   "CloseAnimationDistance": 3500.0,
+   "WalkGunBobRotation": "CRV_LandGunBob",
+   "first_person_fov": 106.0,
+   "PlayerInteractionData_ServerBoxExtent": [
+    50.0,
+    50.0,
+    50.0
+   ],
+   "TacSprintFOV": "parent: keys (0,0) (0.25,5) (0.5,0), hold 0.25; WDCore pawn: delta 10, fade 0.25 in/out, hold 1.0",
+   "PlayerKillFOV": "parent: keys (0,0) (0.05,-2.5) (0.25,-2.5) (0.3,0) (1,0), chromatic aberration x2.0; WDCore pawn: duration 0.25, delta 11, chromatic aberration x3.5"
+  },
+  "death_effect_close_eyes": {
+   "asset": "B_CharacterDeathStateEffectComponent",
+   "blink": {
+    "BlinkCycleDuration": 5.0,
+    "BlinkCycleRandomness": 0.35,
+    "BlinkCooldownDuration": 0.65,
+    "MinimumBlinkOpenness": 0.35,
+    "OpenHoldDuration": 3.75,
+    "OpenHoldDurationRandomness": 0.35,
+    "BlinkSpeedScaleFactor": 0.85,
+    "TwitchDuration": 0.5,
+    "TwitchMagnitude": 0.3,
+    "MinBlurValue": 1.0,
+    "EaseInOutExponent": 0.65
+   },
+   "linear": [
+    [
+     "Eye_Mask_Visibility",
+     null,
+     null,
+     0.965,
+     0.94
+    ],
+    [
+     "Exposure",
+     1.0,
+     0.0,
+     null,
+     null
+    ],
+    [
+     "Eye_Strain_Visibility",
+     null,
+     null,
+     0.7,
+     0.65
+    ],
+    [
+     "Blur_Strength",
+     1.0,
+     3.0,
+     0.9,
+     0.2
+    ],
+    [
+     "Distortion_Amp",
+     0.0035,
+     0.005,
+     0.85,
+     0.15
+    ],
+    [
+     "Distortion_Pulse_Speed",
+     0.03,
+     0.05,
+     0.85,
+     0.15
+    ]
+   ],
+   "pulse": [
+    [
+     "Exposure",
+     0.9,
+     1.0,
+     1.5,
+     2.0,
+     0.6
+    ],
+    [
+     "Eye_Mask_Strain_Strength",
+     0.75,
+     2.0,
+     1.75,
+     1.5,
+     0.7
+    ]
+   ],
+   "unit_of_conditions": "fraction of the bleed-out time left (BleedoutStart/EndCondition)"
+  },
+  "speed_pipeline": {
+   "mode_slots": {
+    "142 (+0x470)": "0x5291720 BH / 0x6DC1000 WD: walk speed",
+    "144 (+0x480)": "0x5291A90 / 0x6DC1050: sprint scale",
+    "145 (+0x488)": "0x5291FD0 / 0x6DC10F0: tactical sprint scale",
+    "147 (+0x498)": "0x5290900 / 0x6DC0E70: friction"
+   },
+   "lambda": "0x52820C0 runs the thunk 0x5288D80, which calls slot 142 of the mode",
+   "formula": "stance speed = MaxSpeedModifier.ModifyValue(MaxSpeed) of the current stance, or MaxSpeed (+0x4C) when the stance has no modifier; while a stance change is running it is blended: prev + (cur - prev) x alpha; only when Stand (enum 2) and sprinting is it multiplied by the sprint scale (data +0x130) or the tactical sprint scale (+0x134), otherwise by a mode float (+168, writer not found); the WD mode then multiplies by an attribute evaluator (+272 for speed, +304 sprint, +320 tactical sprint, +352 friction)"
+  }
+ },
+ "gamepad_look_acceleration": {
+  "user_settings": [
+   "UserSettings.Controls.Gamepad.LookAcceleration",
+   ".Curve",
+   ".MagnitudeThreshold",
+   ".PitchWeight",
+   ".MaxMultiplier"
+  ],
+  "curve_types": [
+   "Standard",
+   "Linear",
+   "Aggressive"
+  ],
+  "exe_strings": "0xB41F490 bGamepadLookAccelerationEnabled; 0xB41F4B0 LookAccelerationCurveType; 0xB420980 EWDLookAccelerationCurveType; 0xB424678 UserSettings.Controls.Gamepad.LookAcceleration*"
+ },
+ "mode_input_contexts": [
+  [
+   "Falling",
+   "IMC_Player_Falling",
+   "IA_Player_DeployParachute",
+   "SpaceBar / Gamepad_FaceButton_Bottom"
+  ],
+  [
+   "Ladder",
+   "IMC_LadderClimbing",
+   "IA_Player_SlideDownLadder_Toggle",
+   "LeftShift / Gamepad_LeftThumbstick"
+  ],
+  [
+   "Ladder",
+   "IMC_LadderClimbing",
+   "IA_Player_JumpOffLadder",
+   "SpaceBar / Gamepad_FaceButton_Bottom"
+  ],
+  [
+   "Swimming",
+   "IMC_Player_Swimming",
+   "IA_Player_FastSwim_Toggle",
+   "LeftShift / Gamepad_LeftThumbstick"
+  ],
+  [
+   "Body dragging",
+   "IMC_Player_BodyDrag",
+   "IA_Player_BodyDrag",
+   "G / Gamepad_RightShoulder"
+  ],
+  [
+   "No clip",
+   "IMC_Player_NoClipping",
+   "IA_Player_NoClipDown / NoClipUp / NoClipSuperSpeed",
+   "LeftControl / SpaceBar / LeftShift"
+  ]
+ ],
+ "action_response_types": [
+  "None",
+  "Block",
+  "BlockingStates",
+  "Interrupt",
+  "InterruptAndBuffer",
+  "InterruptOnComplete",
+  "Reactivate",
+  "Buffer",
+  "BlockCategories",
+  "InterruptCategories",
+  "InterruptBuffered",
+  "RequiredStates"
+ ],
+ "query_token_stream": {
+  "format": "UE FGameplayTagQuery: [version 0][has root 1][root expr 5 = AllExprMatch][2 sub-expressions][1 = AnyTagsMatch, 1 tag, index 0][3 = NoTagsMatch, 4 tags, indexes 1 2 3 4]",
+  "example": "DA_CharacterModifierState_Critical: [0,1,5,2,1,1,0,3,4,1,2,3,4] = ALL(ANY(Critical), NONE(ActivePassenger, Driver, Gunner, PassivePassenger))",
+  "expr_types": {
+   "1": "AnyTagsMatch",
+   "2": "AllTagsMatch",
+   "3": "NoTagsMatch",
+   "4": "AnyExprMatch",
+   "5": "AllExprMatch",
+   "6": "NoExprMatch"
+  }
+ },
+ "pose_search": {
+  "databases": 20,
+  "schemas": [
+   "PSS_TPCharacter",
+   "PSS_TPCharacter_Traversal",
+   "PSS_TPCharacter_Turns"
+  ],
+  "animation_counts": {
+   "PSD_Launcher_Loco": 27,
+   "PSD_Pistol_Loco": 21,
+   "PSD_Unarmed_Loco": 24,
+   "PSD_Rifle_Idle": 16,
+   "PSD_Rifle_Walking_*": 8,
+   "PSD_Rifle_Running_*": 8,
+   "PSD_Rifle_Standing_Turns": 6,
+   "PSD_Rifle_Mantle_*": "3 to 4",
+   "PSD_Rifle_Vault_*": 3,
+   "PSD_Rifle_Climb_On/Off": 1
+  }
+ }
+}

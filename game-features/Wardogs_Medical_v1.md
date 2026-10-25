@@ -65,14 +65,14 @@ Batteries that feed the defibrillator (**Data**, `Plugins/GameFeatures/Items/Bat
 <!-- medical_tables effect -->
 | Item | Heal now | Heal over time | Revive | Cures or removes | Applied effects | Side effects | Stacking and cooldown |
 |---|---|---|---|---|---|---|---|
-| Bandage (`Id.Item.Bandage`) | +35 health (delta) | no per-tick value in data; one `AttributeValue` per use (when it is applied within the animation: not traced) | - | no cure or removal tags in data (no bleed, splint or poison state exists to cure) | `GE_UseAppliable` | movement speed x0.5 while using (`GE_UseAppliable`, no duration set; removal by the action, not traced) | carry up to 5; the primary and secondary bandage use block each other (response rules in Item Actions §4.1) |
-| Individual First Aid Kit (`Id.Item.SuperBandage`) | +100 health (delta) | no per-tick value in data; one `AttributeValue` per use (when it is applied within the animation: not traced) | - | no cure or removal tags in data (no bleed, splint or poison state exists to cure) | `GE_UseAppliable` | movement speed x0.5 while using (`GE_UseAppliable`, no duration set; removal by the action, not traced) | the primary and secondary bandage use block each other (response rules in Item Actions §4.1) |
+| Bandage (`Id.Item.Bandage`) | +35 health (delta) | no per-tick value in data; one `AttributeValue` per use (applied once when the use animation ends, round 39) | - | no cure or removal tags in data (no bleed, splint or poison state exists to cure) | `GE_UseAppliable` | movement speed x0.5 while using (`GE_UseAppliable`, no duration set; removal by the action, not traced) | carry up to 5; the primary and secondary bandage use block each other (response rules in Item Actions §4.1) |
+| Individual First Aid Kit (`Id.Item.SuperBandage`) | +100 health (delta) | no per-tick value in data; one `AttributeValue` per use (applied once when the use animation ends, round 39) | - | no cure or removal tags in data (no bleed, splint or poison state exists to cure) | `GE_UseAppliable` | movement speed x0.5 while using (`GE_UseAppliable`, no duration set; removal by the action, not traced) | the primary and secondary bandage use block each other (response rules in Item Actions §4.1) |
 | Medical Bag (`ID.Item.MedKit.Standard`) | self 35 over 5 s; other 15 over 1.5 s | self 7 HP/s; other 10 HP/s (Derived: amount / duration) | 50 health (durability 10) | no cure or removal tags in data (no bleed, splint or poison state exists to cure) | `GE_UseAppliable` | movement speed x0.5 while using (`GE_UseAppliable`, no duration set; removal by the action, not traced) | no cooldown in data; durability 150 is the limit |
 | Enox (`ID.Item.Enox.Standard`) | +40 as decaying health (`DecayHealAmount` 40) | decays after use; pool size 40 (Blueprint `MaxDecayHealth`), decay delta not decoded (see states) | - | no cure or removal tags in data (no bleed, splint or poison state exists to cure) | - | - | requires Injured; no cooldown in data |
 | Stim Pen (`Id.Item.StimPen`) | - | - | - | no cure or removal tags in data (no bleed, splint or poison state exists to cure) | `GE_UnlimitedTacSprint`, `GE_UseAppliable` | movement speed x0.5 while using (`GE_UseAppliable`, no duration set; removal by the action, not traced); 60 s: tac sprint stamina use x0, focus energy use x0; tags `Stimulant.UnlimitedTacSprint`, `InhibitWeight.StepDown` (equipment weight class one step lower); camera FOV x1.05 (ignored while Critical) | carry up to 3; effect `Stacks` 1; `max_stacks` and refresh policy are not set in data (native default not traced); the two stim uses block each other |
 | Defibrillator (`Id.Item.Defibrillator.Standard`) | - | - | instant revive to 35 health (`AttributeValue`, passed to `RevivePlayer` by `BH_Defibrillator_WattsExtensionComponent.ReviveCharacter`; **Data (Blueprint CDO)**) | no cure or removal tags in data (no bleed, splint or poison state exists to cure) | `GE_Defib` | `GE_Defib` (from the action) grants tag `Reviving.Friendly` (no modifiers); watts extension `Damage` 100 (what it applies to is not traced) | cannot be used while the user is Critical |
-| Emergency Resuscitator (`Id.Item.Resuscitator.Cheap`) | - | - | revive; health after revive not traced | no cure or removal tags in data (no bleed, splint or poison state exists to cure) | `GE_UseAppliable` | movement speed x0.5 while using (`GE_UseAppliable`, no duration set; removal by the action, not traced) | single use per purchase (shop text) |
-| Field Resuscitator (`Id.Item.Resuscitator.Standard`) | - | - | revive; health after revive not traced | no cure or removal tags in data (no bleed, splint or poison state exists to cure) | `GE_UseAppliable` | movement speed x0.5 while using (`GE_UseAppliable`, no duration set; removal by the action, not traced) | single use per purchase (shop text) |
+| Emergency Resuscitator (`Id.Item.Resuscitator.Cheap`) | - | - | revive to 10 health (`AttributeValue`, passed to `RevivePlayer` by `B_Action_Resuscitator.OnInteractionFinished`; **Data**, round 39) | no cure or removal tags in data (no bleed, splint or poison state exists to cure) | `GE_UseAppliable` | movement speed x0.5 while using (`GE_UseAppliable`, no duration set; removal by the action, not traced) | single use per purchase (shop text) |
+| Field Resuscitator (`Id.Item.Resuscitator.Standard`) | - | - | revive to 10 health (`AttributeValue`, passed to `RevivePlayer` by `B_Action_Resuscitator.OnInteractionFinished`; **Data**, round 39) | no cure or removal tags in data (no bleed, splint or poison state exists to cure) | `GE_UseAppliable` | movement speed x0.5 while using (`GE_UseAppliable`, no duration set; removal by the action, not traced) | single use per purchase (shop text) |
 <!-- /medical_tables -->
 
 Notes:
@@ -215,11 +215,77 @@ Reading it: the bandage and the First Aid Kit are counted in uses and in montage
 
 Settled in round 17 (**Data (Blueprint CDO)**, [evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round17-blueprint-defaults.md)): the seconds of every `AnimationLength` use (montage lengths) and the `Heal` notify time; the defibrillator charge time (`ChargeDuration` 4 s) and battery cost (`BatteryChargesUsed` 25 per discharge); the player bleed-out values (360 s, 30 s, rates 0.5 and 240); the Enox pool (`MaxDecayHealth` 40); the defibrillator revive health (35).
 
-Open (not traced):
+Open (not traced after round 39):
 
-- The resuscitator revive duration: the container formula gives 44 s to empty, but what ends a resuscitator revive earlier, and the health it passes to `RevivePlayer`, were not traced (the resuscitator Blueprint is the base appliable action with no revive code).
-- Where in the animation or action the bandage amount is applied (the kit applies at its `Heal` notify).
-- Where `Meta.Role.Medic.IncreaseBleedTime` acts, and what `HealthierRevive` adds.
-- The value the base revive passes as health, and what `CriticalReviveHoldThreshold` (20, native default 2) and `BleedOutRevivePenaltyOffset` (100, native default 15) gate in native code.
-- How `UsageRateMultiplier` reduces Medical Bag durability.
-- What applies `GE_Player_RessedByEnemy` (60 s tag), and the Deathmatch regen values.
+- What reads `BleedOutRevivePenaltyOffset` (no reader found in round 40 either; `CriticalReviveHoldThreshold` is the hold time of the revive interaction context).
+- Enox decay per tick: settled in round 40 (section 11b): `min(DecayMagnitude, pool)` = 5 every 5 s.
+- How many application steps the Medical Bag makes while healing a teammate (base-class timing).
+- The 19 Medic skill nodes without a data row: nothing in the client reads them (see section 10).
+
+## 10. Round 39 findings
+
+Evidence: [round 39 medical and movement](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-medical-movement.md). Data: [`medical-status-r39.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/medical-status-r39.json) (`_tools/round39_medical_tables.py`).
+
+| Question | Answer | Level |
+|---|---|---|
+| Health after a hand revive | **10** (`UWDReviveInteractionContext` +0x240, constructor `0x772C5F0`; passed to `RevivePlayer` `0x6E75620`, which calls `ResetHealth` `0x6B16E80`; 25 is used only when the passed value is 0). Corrects section 6, which read the 25 default as the hand revive | static disassembly |
+| Health after a resuscitator revive | **10** (`AttributeValue` of both `ID_Resuscitator` items, passed by `B_Action_Resuscitator.OnInteractionFinished`). One revive, then the item is consumed; derived interaction time 4 s (base `CalculateAmountToFullTarget` returns 0; this replaces the 44 s container formula shown in section 2, which assumed the full 10 units are stepped through) | cooked data and bytecode read; Derived time |
+| `GE_Player_RessedByEnemy` | applied by the resuscitator action when the target is on another faction; 60 s, tag `State.Player.RessedByEnemy` | bytecode read |
+| Bandage +35 timing | applied once when the use animation ends (`AnimationLength` method), 5.2333 s self and 4.8333 s teammate | bytecode and data read |
+| Medical Bag durability | fixed cost per application call (`Auth_ReduceDurability(cost)`, helper `0x6C1D110` subtracts); no code reads `UsageRateMultiplier`, so the skill curve is not applied to durability in any code read | bytecode and disassembly; negative result |
+| Adrenaline Pen, second use | one stack, restarts the 60 s (`UBHGameplayEffect` constructor `0x5225C60`: `MaxStacks` 1, refresh on application) | disassembly; Derived |
+| Adrenaline Pen, teammate | the same effect (`GE_UnlimitedTacSprint` x1), target must be alive | cooked data |
+| Item-switch skill coverage | items tagged `Item.Context.Medical`: Medical Bag, Bandage, Individual First Aid Kit, Defibrillator, both Resuscitators, Stim Pen (not Enox) | cooked data |
+| Critical revive hold threshold | read once by `0x6E69D20`, passed as the hold threshold of the revive interaction context (20 in data, native 2) | static disassembly |
+| Deathmatch regeneration | `WDHealthRegenComponent` constructor `0x848B5F0`: 5 health per 1 s tick; delay 10 s from the vitality component. No regeneration component exists outside Deathmatch | disassembly; tick body not located |
+| Medic skill nodes without a row (19) | no asset and no native string reads their tags: no values exist in the game files | name-map search of all packages, string scan |
+
+## 11. Round 40 findings
+
+Read from the cooked data and the restored exe; the reading path of every row is in the [round 40 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-medical-movement.md). Generated by `_tools/round40_medical_movement.py`.
+
+### 11a. Armour: durability, stages, weight and what happens on a hit
+
+<!-- r40_med armor -->
+| Piece | Context tag | Durability | Stage rows (reduction %, thickness, density) | Covered locations | Weight |
+|---|---|---:|---|---|---:|
+| `ID_GhillieArmor` | `Meta.Damage.Armor.Ghillie` | - | none | - | 1.5 |
+| `ID_GhillieArmorDry` | `Meta.Damage.Armor.Ghillie` | - | none | - | 1.5 |
+| `ID_GhillieHelmet` | `Meta.Damage.Helmet.Ghillie` | - | none | - | 1 (class default, omitted) |
+| `ID_GhillieHelmetDry` | `Meta.Damage.Helmet.Ghillie` | - | none | - | 1 (class default, omitted) |
+| `ID_HeavyArmor` | `Meta.Damage.Armor.Heavy` | 250 | 50 / 1 / 100; 50 / 1 / 90; 50 / 1 / 80; 50 / 1 / 60 | Lower, Middle, Upper | 10.5 |
+| `ID_HeavyHelmet` | `Meta.Damage.Helmet.Heavy` | 180 | 50 / 1 / 100; 50 / 1 / 90; 50 / 1 / 80; 50 / 1 / 60 | Head, Neck | 3 |
+| `ID_LightArmor` | `Meta.Damage.Armor.Light` | 200 | 30 / 0.5 / 50; 30 / 0.5 / 40; 30 / 0.5 / 30; 30 / 0.5 / 20 | Lower, Middle, Upper | 3 |
+| `ID_LightHelmet` | `Meta.Damage.Helmet.Light` | 80 | 30 / 0.5 / 50; 30 / 0.5 / 40; 30 / 0.5 / 30; 30 / 0.5 / 20 | Head | 1 (class default, omitted) |
+| `ID_MediumArmor` | `Meta.Damage.Armor.Medium` | 220 | 40 / 0.7 / 60; 40 / 0.7 / 50; 40 / 0.7 / 40; 40 / 0.7 / 30 | Lower, Middle, Upper | 4.5 |
+| `ID_MediumHelmet` | `Meta.Damage.Helmet.Medium` | 100 | 40 / 0.7 / 60; 40 / 0.7 / 50; 40 / 0.7 / 40; 40 / 0.7 / 30 | Head | 1.6 |
+| `ID_PilotHelmet` | `Meta.Damage.Helmet.Pilot` | 180 | 30 / 0.5 / 50; 30 / 0.5 / 40; 30 / 0.5 / 30; 30 / 0.5 / 20 | Head | 1 (class default, omitted) |
+| `ID_SuperHeavyArmor` | `Meta.Damage.Armor.SuperHeavy` | 300 | 60 / 1.5 / 130; 60 / 1.5 / 120; 60 / 1.5 / 110; 60 / 1.5 / 100 | Lower, Middle, Upper, Pelvis | 18 |
+| `ID_SuperHeavyHelmet` | `Meta.Damage.Helmet.SuperHeavy` | 200 | 60 / 1.5 / 130; 60 / 1.5 / 120; 60 / 1.5 / 110; 60 / 1.5 / 100 | Head, Neck | 4.5 |
+| `ID_TankHelmet` | `Meta.Damage.Helmet.Tank` | 180 | 55 / 1 / 100; 55 / 1 / 90; 55 / 1 / 80; 55 / 1 / 60 | Head, Neck | 1 (class default, omitted) |
+<!-- /r40_med -->
+
+Ghillie pieces have no durability fragment, no covered locations and no stage rows, so the armour operation returns 0 for them. The Ghillie set effect (`GE_Player_GhilliEffects`) needs both the body suit tag and the headwear tag and applies: ADS time x0.8, aim sway x1.15, lean and un-lean time x1.15, max speed x0.95, jump velocity x0.95. In `DT_GlobalDamage_ArmorData` the Ghillie target rows are -100% for bullet, explosive, cannon, impact, melee and the unconditional entry (armour event amount x0), and the ordinary armour and helmet rows carry -10000% and -1000% entries that require the Ghillie context tag; so a Ghillie piece takes no armour damage and gives no reduction (the evaluator behaviour for values below -100% was not traced).
+
+### 11b. Native readings
+
+<!-- r40_med native -->
+| Item | Reading |
+|---|---|
+| Armour durability when hit | Each armour or helmet piece that takes a hit gets an armour event whose `Amount` comes from `DT_GlobalDamage_ArmorData` (ordinary bullet: 0.4 x the incoming amount). Events queue in `QueuedArmorDamageEvents`; the inventory tick `0x6B64EC0` runs `0x6B59000`, which does `Durability -= Amount`, updates the stage and fires `WDEvent_ArmorDamage` (0x6B53280 (called from the slot-5 hook 0x6E74970 and 0x6B676DD)). The piece breaks when durability reaches 0 (**Native**). The stage tables above all give a flat reduction, so the number only drives the break and the durability bar |
+| Halligan durability | `ID_Crowbar` durability 7000; opening a door (`B_Action_ForceOpenDoor`) or unlocking a vehicle (`B_Action_ForceUnlockVehicle`) each add `DurabilityCost` -1000; the item is consumed when the result is 0 or less, so 7 uses (**Data** and **bytecode read**) |
+| Enox decay per tick | min(DecayMagnitude (+0x170), decay pool (+0x17C)), applied to Health through `0x52311D0`; with `DecayRate` 5 s and `DecayMagnitude` 5 that is 5 health every 5 s until the pool (+0x17C) is empty (**Native**; the `movss xmm0,[rcx+0x170]` read at `0x6B16EE7` is the reader earlier searches missed) |
+| Armour weight default | 1 (constructor 0x67793A0 (UBHInventoryFragment_Weight)); stores 0x3F800000 at +0x38; fragments that omit Weight (Level 1 Helmet, Tank, Pilot, Ghillie headwear) take it (**Native**) |
+| Deathmatch regeneration tick | UWDHealthRegenComponent tick `0x8496170 (vtable slot 131)`: stored regen deadline byte (+0xF0, set by OnRegenTimerStarted 0x84965F0 as world time + RegenDelay) reached, then if CurrentHealth < MaxHealth a heal event of HealthToRegenerate (movss at 0x849627C) is sent through the vitality component vtable +0x518. Amount 5 per tick (**Native**). TickInterval (+0xEC) has no reader; whether it feeds the component tick rate was not shown, so "5 per second" stays derived |
+<!-- /r40_med -->
+
+### 11c. Critical state
+
+<!-- r40_med critical -->
+| Item | Value |
+|---|---|
+| Where the Critical tag is set | The vitality state object `UWDPlayerVitalityState_Critical` carries `VitalityTag`; its constructor `0x6E9B030` stores the global tag `State.Player.Vitality.Critical` (`qword_14D36B800`) at +0x28. The pawn lists three state classes (Alive, `B_WDPlayerVitalityState_Critical_C`, Dead); the character applies a state's tag when it enters the state (**Native**, constructor read; the enter call itself was not traced) |
+| Critical state defaults | `bIsPlayerAbleToGiveUp` True, `CallForHelpCooldownTime` 5 s, `InputMappingContextPriority` 2 (**Native** constructor; the Blueprint only sets the call-for-help cue and the input context) |
+| Critical camera | `DA_CharacterModifierState_Critical`, priority 0, pitch lock 40 degrees. Default state: Character transform, bone head, world offset (0, -200, 0), transition 0 s. Dragged state: Character transform, bone pelvis, relative offset (3, 20, 0), rotation (0, 110, -90). Character modifier `B_CharacterModifier_IgnoreLookInput` (look input ignored). Applies while: State.Player.Vitality.Critical and none of the vehicle roles (driver, gunner, active or passive passenger) (**Data**) |
+| Pawn bleed-out values | `BaseBleedOutTime` 360, `MinBleedOutTime` 30, `HoldOnBleedOutRate` 0.5, `GiveUpBleedOutRate` 240, `OutOfBoundsTimeLimit` 20 (**Data**, pawn CDO; the WDCore pawn holds `CriticalReviveHoldThreshold` 20, its parent 10) |
+<!-- /r40_med -->

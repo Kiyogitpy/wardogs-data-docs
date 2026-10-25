@@ -68,7 +68,7 @@ NATIVE = [
     ("Minimum bleed-out time after a revive", "60 s", "constructor `0x6E67160` writes `MinBleedOutTime` (+0x984) = 60.0; `0x6E75540` uses `max(MinBleedOutTime, remaining)` when the revive counter byte (+0xA70) is nonzero, so a character that was revived once and goes down again restarts from at least 60 s, not 300 s"),
     ("Bleed-out drain", "dt x rate; kill at 0", "tick `0x6E780D0` subtracts `dt * rate` from the remaining time (floored at 0) and, with role byte 3, calls the kill path `0x6E71400` when it reaches 0. The rate it reads in the normal state is the float at +0x990 (SDK name `HoldOnBleedOutRate`, native default 0.1); in give-up state (byte +0x820 = 2) it reads +0x994 (`GiveUpBleedOutRate`, default 6.0). `DefaultBleedOutRate` (+0x98C, default 1.0) has no native reader, so the blueprint presumably sets +0x990 per state: the effective rate in each state is not traced"),
     ("Damage while critical", "none", "the bleed tick never calls the damage or health path; `UWDCharacterVitalityComponent` (`0x6B17760`) returns 0 and writes no health when the character lacks `State.Player.Vitality.Alive`. There is no damage-over-time bleeding"),
-    ("Revive health (component default)", "25", "`UWDCharacterVitalityComponent` constructor `0x6B16790` writes `DefaultHealthToReviveTo` (+0x160) = 25.0. The revive handler (`AWDMoverCharacter` vtable slot 323, `0x6E75620`) sets the Alive tag, bumps the revive counter, restarts the bleed timer and calls `ResetHealth` (`0x6B16E80`); which function applies the 25 (or the Medical Bag's 50) is not traced, the revive call `RevivePlayer(..., float, ...)` is blueprint-implemented"),
+    ("Revive health (component default)", "25", "`UWDCharacterVitalityComponent` constructor `0x6B16790` writes `DefaultHealthToReviveTo` (+0x160) = 25.0. The revive handler (`AWDMoverCharacter` vtable slot 323, `0x6E75620`) sets the Alive tag, bumps the revive counter, restarts the bleed timer and calls `ResetHealth` (`0x6B16E80`); `ResetHealth` sets the Health attribute to the health passed to `RevivePlayer` (xmm3 at `0x6E75AD6`) and uses the 25 only when that value is 0; the hand revive passes 10 (`UWDReviveInteractionContext` +0x240, constructor `0x772C5F0`), the resuscitator 10 (`AttributeValue`), the defibrillator 35, the Medical Bag 50 (round 39)"),
     ("Max health", "100", "`UWDVitalityComponent` constructor `0x6B81720` writes `BaseHealth` = `MaxHealth` = 100.0 (**Data (Blueprint CDO)**: neither player Blueprint sets `MaxHealth`, so 100 stands)"),
     ("Regeneration delay", "10 s", "same constructor: `RegenDelay` (+0x138) = 10.0. The damage path (`0x6B82520`) only broadcasts the `RegenTimer` delegate with this delay; no native tick that adds health to infantry was found. The only regeneration component in the data is `WDHealthRegenComponent`, added by the Deathmatch game feature (`OnRegenTimerStarted` `0x84965F0` is a ProcessEvent stub, so its logic and values are blueprint: not traced)"),
     ("Overheal pool", "max 0", "`MaxOverhealHealth` (+0x164) defaults to 0 in the constructor `0x6B16790`; the character clamp is `[0, MaxHealth + MaxOverhealHealth + MaxDecayHealth]` (`0x6B17D20`)"),
@@ -232,10 +232,10 @@ def effect_of(it, d):
             rev = (f"instant revive to {n(bp('ID_Defibrillator_Standard', 'AttributeValue'))} health (`AttributeValue`, passed to `RevivePlayer` by "
                    "`BH_Defibrillator_WattsExtensionComponent.ReviveCharacter`; **Data (Blueprint CDO)**)")
         if nm.startswith("Id.Item.Resus"):
-            rev = "revive; health after revive not traced"
+            rev = "revive to 10 health (`AttributeValue`, passed to `RevivePlayer` by `B_Action_Resuscitator.OnInteractionFinished`; **Data**, round 39)"
     elif app.get("AttributeValue") and tag(app.get("Attribute")) == "Attribute.Gameplay.Health":
         heal = f"+{n(app['AttributeValue'])} health ({'delta' if app.get('bApplyAsDelta') else 'set'})"
-        hot = "no per-tick value in data; one `AttributeValue` per use (when it is applied within the animation: not traced)"
+        hot = "no per-tick value in data; one `AttributeValue` per use (applied once when the use animation ends, round 39)"
         rev = "-"
         if "Enox" in nm:
             heal = "+40 as decaying health (`DecayHealAmount` 40)"
