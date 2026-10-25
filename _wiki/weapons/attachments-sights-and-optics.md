@@ -26,13 +26,13 @@ Sights sit on the top slot of a weapon. The data lists 29 of them and 28 fit a w
 
 ## What they change
 
-- ADS zoom: set to a fixed value on 29 sights, from 1.2 (red dots and holographic sights) to 6 (the 6-10x scope). The data gives the number only; how it appears on screen is not traced here.
-- Aim time: x0.85 to x1.2 (26 parts).
+- ADS zoom: set to a fixed value on 29 sights, from 1.2 (red dots and holographic sights) to 6 (the 6-10x scope). The number is a magnification factor: 2.5 means the view is magnified 2.5 times (derived from the game's code, not checked on screen). The sight's sway is divided by it, so higher magnification steadies the view more.
+- Aim time: x0.85 to x1.2 (26 parts). This multiplies the time the weapon takes to come up to aim down the sights.
 - Minimum zeroing range: set to 10 to 100 on 18 sights. The data gives no unit.
 - Maximum zeroing range: set to 10 to 1000 on 18 sights. On 7 sights it follows the minimum zeroing range instead of a fixed value. The data gives no unit.
 - Character side: weapon sway stabilisation time is multiplied by 1 to 1.5 on 5 sights and set to 1.6 on 8 others.
 
-Zeroing range is the distance the sight is set for, bounded by the minimum and maximum. The stat is named ADS zoom, but the data does not say how its number maps to magnification, so the on-screen zoom is not yet known.
+Zeroing range is the distance the sight is set for, bounded by the minimum and maximum. The game reads the ADS zoom number as a magnification factor, so a 3x sight gives a 3 times view. Whether the screen matches that was not checked.
 
 ## Parts
 
@@ -108,3 +108,4 @@ The Season 2 notes also list a fourth sight folder that has no part data in this
 - [Gameplay Effect Values](../../pipelines/Wardogs_GameplayEffect_Values_v1.md): the modifier values behind each effect.
 - [weapon-loadouts.json](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-loadouts.json): slot, part and effect data.
 - [Season 2 changes: weapons and ammo](../../season-2-changes/weapons-ammo.md): Season 2 prices, new parts and sight values.
+- [Round 41 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-weapons.md): the ADS zoom as a magnification factor and the sight's ADS time

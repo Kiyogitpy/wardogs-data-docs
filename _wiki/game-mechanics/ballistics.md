@@ -27,7 +27,7 @@ A bullet leaves the muzzle at the weapon's muzzle speed. From then on, gravity p
 - **Lifetime.** A bullet is removed 10 s after it is fired. Artillery shells last longer, up to 40 s (see [Artillery](artillery.md)).
 - **Flight steps.** The game moves a bullet in steps of 33 ms (about 30 a second) and checks its path at each step.
 - **Drag.** Air slows bullets. How much depends on the bullet's shape, weight and size, so the same muzzle speed does not mean the same range for every round.
-- **Damage falloff.** Each weapon has a distance curve. Damage stays at full up to a set distance and then drops; on many rifles the curve reaches 20% of full damage at 1,200 m. Separately, once a bullet has slowed below a reference speed, its damage is also scaled down. Both effects multiply together, which is why the table drops further than the curve alone.
+- **Damage falloff.** Each weapon has a distance curve. Damage stays at full up to a set distance and then drops; on many rifles the curve reaches 20% of full damage at 1,200 m. Separately, once a bullet has slowed below a reference speed, its damage is also scaled down (see Speed scale below). Both effects multiply together, which is why the table drops further than the curve alone.
 - **Effective range.** Each weapon's data lists an effective range (see the table below). The game multiplies it by 100 when it sets up each shot, then scales it by 1.2 for armor-piercing ammo and 0.8 for hollow point. The only use found so far is as the distance over which the wind effect on the bullet's flight builds up, which is an inference from reading the code; it was not seen in play. It is not a damage cutoff: damage falloff comes from the weapon's own curve, not from the effective range.
 
 ## Numbers
@@ -68,6 +68,23 @@ The AMR 50 and MK22 keep most of their damage at long range, while the MP5 and S
 
 **Drop, estimated.** Ignoring drag, a bullet at 880 m/s falls about 6 cm at 100 m, about 25 cm at 200 m and about 1.6 m at 500 m. Drag makes the real drop larger than these figures. They are simple estimates from the gravity and muzzle speed in the data, not measured in-game values.
 
+### Speed scale
+
+Once a bullet is slower than the reference speed for its weapon, its damage is scaled by how much speed it has left. The scale is the bullet's speed divided by that reference, capped at 1, so full speed means no change. The figures below come from the game's drag model: the bullet is flown with the game's drag, and the speed is read at each distance. They are computed, not measured in game. Launchers, bows and vehicle guns are not in this model.
+
+| Weapon | 100 m | 200 m | 400 m | 600 m |
+|---|---:|---:|---:|---:|
+| GGX 17 | 0.94 | 0.80 | 0.60 | 0.45 |
+| AMP-9 | 1.00 | 0.88 | 0.66 | 0.50 |
+| Super-45 | 0.92 | 0.80 | 0.64 | 0.52 |
+| Judge | 0.94 | 0.81 | 0.63 | 0.49 |
+| A-91 | 1.00 | 1.00 | 0.91 | 0.72 |
+| AK74 | 1.00 | 1.00 | 1.00 | 0.95 |
+| M4 | 1.00 | 1.00 | 1.00 | 0.85 |
+| MK22 | 1.00 | 1.00 | 1.00 | 1.00 |
+
+The M4 keeps full speed to 400 m. The GGX 17 is already at 0.80 by 200 m and 0.45 by 600 m, so pistols lose damage to speed as well as to distance.
+
 ## Tips that follow from the numbers
 
 - **Range is different for every weapon.** The MP5 does 25.4 at 100 m and 7.4 at 400 m, so it is a close-range weapon. The FAL still does 32.9 at 600 m.
@@ -92,3 +109,4 @@ The AMR 50 and MK22 keep most of their damage at long range, while the MP5 and S
 - [Damage rules](../../pipelines/Wardogs_DamagePipeline_v2.md)
 - [Round 39 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-weapons.md): bullet lifetime, effective range use, flight step, and the hit record
 - [Round 40 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-weapons.md): the 33 ms flight step re-check
+- [Round 41 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-weapons.md): the speed scale after drag, computed by [weapon_speed_scale.py](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/_tools/weapon_speed_scale.py)

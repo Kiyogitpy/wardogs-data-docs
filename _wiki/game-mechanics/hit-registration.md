@@ -10,7 +10,7 @@ description: "The plain-language rules for when a bullet counts as a hit, which 
 |---|---|
 | Bullet type | Travelling projectile, not an instant hit |
 | Stops at | The first surface or player in its path, unless it passes through or bounces |
-| Friendly fire | Half damage to teammates and to yourself |
+| Friendly fire | Half damage to players of your own faction and to yourself |
 | Shotgun | 8 pellets per shell, each a separate hit |
 {: .wiki-infobox }
 
@@ -24,10 +24,11 @@ In Wardogs, a bullet is a moving object, not an instant line from the gun to the
 
 - **Path.** A bullet is checked along its path at each step of its flight. If something solid is in the way, the bullet hits it.
 - **Surfaces.** A hit on a surface can stop the bullet, bounce it off (ricochet) or let it pass through. The surface material decides the chance. See [Penetration and Ricochet](penetration-and-ricochet.md).
-- **Players.** A bullet that reaches a player counts as a hit on the body part it struck. Which part that is decides the damage (see [Health and Damage](health-and-damage.md)).
-- **Your own vehicle.** A shot fired from a vehicle is not stopped by that vehicle for a short time after you fire. The length of that time is not yet known.
-- **Friendly fire.** Bullets that hit a teammate still count as hits, but they do half the damage. Nothing in the game stops the bullet from hitting a teammate.
+- **Players.** A bullet that reaches a player is checked against every body part its path passes through. A character has 20 collision bodies, and one bullet can cross several of them. The game works out the damage for each part crossed, and the highest result counts. Which part that is decides the damage (see [Health and Damage](health-and-damage.md)).
+- **Your own vehicle.** A shot fired from a vehicle seat can be set to ignore that vehicle, so the bullet passes it. This is a plain on or off setting for the projectile, not a timer. The data has no time limit for it.
+- **Friendly fire.** Bullets that hit a player of your own faction still count as hits, but they do half the damage. Nothing in the game stops the bullet from hitting that player. Two players are of the same faction when they carry the same faction tag. Two players with no faction at all also match (derived from the code, not seen in play).
 - **Impact effects.** Each hit shows an impact effect on the surface it struck. These do not change the damage.
+- **Artillery shells.** The 155 mm shells are checked against a box 61.2 cm long and 11 cm across, not a point (derived from the box size in the shell data).
 - **Shotgun pellets.** Each pellet is a separate hit. A pellet that misses does no damage, and each one that hits does its own damage.
 
 ## Numbers
@@ -40,6 +41,7 @@ Bullet and hit values that matter in play:
 | Friendly-fire damage | 50% of normal |
 | Shotgun pellets per buckshot shell | 8 |
 | Hits a bullet's record holds | The first 16. Hits 17 to 32 are not recorded, and the record starts again at hit 33 |
+| 155 mm artillery shell hit box | 61.2 cm long, 11 cm across (derived) |
 | Cap on the number of hits a bullet can make | None found |
 
 ## Tips that follow from the rules
@@ -51,7 +53,7 @@ Bullet and hit values that matter in play:
 ## What is not yet known
 
 - How the game settles a hit when the shooter and target see it differently, such as with slow connections. The data does not show this.
-- The length of time a vehicle's own shots are ignored by that vehicle.
+- Whether the own-vehicle setting applies to every projectile fired from a vehicle. It was not checked weapon by weapon.
 
 ## See also
 
@@ -66,3 +68,4 @@ Bullet and hit values that matter in play:
 - [Damage by Weapon and Ammo](../../game-features/Wardogs_WeaponDamage_v1.md)
 - [Damage rules](../../pipelines/Wardogs_DamagePipeline_v2.md) (friendly fire)
 - [Round 39 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-weapons.md): hit record of 16 slots and the hit limit
+- [Round 41 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-weapons.md): body parts crossed, the faction rule, the own-vehicle setting and the artillery shell box

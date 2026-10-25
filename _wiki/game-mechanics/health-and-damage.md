@@ -22,12 +22,14 @@ A player can be hit in twelve places: the head, neck, three parts of the torso (
 
 ## How it works
 
-1. The game finds which body part the bullet touched. A hit on the chest counts as an upper-torso hit, a hit on the forearm as a lower-arm hit, and so on.
+1. The game finds which body parts the bullet's path passes through. A hit on the chest counts as an upper-torso hit, a hit on the forearm as a lower-arm hit, and so on. If the path crosses more than one part, the damage is worked out for each and the highest result counts (see [Hit Registration](hit-registration.md)).
 2. Each body part has a base multiplier, and each weapon class adds its own multiplier for that part. The two multiply together.
 3. Armor covering that body part reduces the result (see [Armor](armor.md)).
 4. The remaining damage comes off health. When health reaches zero the player is downed (see [Downed and Revive](downed-and-revive.md)).
 
 Friendly fire is part of the same system. A bullet that hits a teammate does half the damage it would otherwise do.
+
+A bullet also does less damage once it has slowed. Its speed is compared with a reference speed for the weapon, and the damage is scaled by the ratio (see [Ballistics](ballistics.md)).
 
 ## Numbers
 
@@ -92,6 +94,7 @@ The same bullet does different damage to different weapons. A sniper rifle such 
 
 - [Damage by Weapon and Ammo](../../game-features/Wardogs_WeaponDamage_v1.md)
 - [Damage rules](../../pipelines/Wardogs_DamagePipeline_v2.md) (body-part multipliers and friendly fire)
+- [Round 41 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-weapons.md): the body parts crossed by one bullet and the faction rule
 - [Game Mechanics Reference](../../content/Wardogs_GameMechanics_v2.md) (hit-location table)
 - [Weapon damage by location (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-damage-locations.json)
 - [Infantry hitboxes (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/infantry-hitboxes.json)

@@ -22,11 +22,19 @@ Most bullets stop at the first solid surface, and that surface absorbs the bulle
 
 ## How it works
 
-- **Ricochet.** When a bullet hits a surface, the game rolls a chance to bounce. The chance depends on the surface material (see the table below). The data indicates that ricochet is checked first, so a bullet that bounces does not also pass through (not fully verified).
+- **Ricochet.** When a bullet hits a surface, the game rolls a chance to bounce. The chance depends on the surface material (see the table below) and on the angle of the hit. Measured from the surface's normal (the line straight out of it), a head-on hit's chance is multiplied by 0.08, and a hit at 80 to 90 degrees, almost flat along the surface, by 0.92. A bullet that has slowed below a tenth of its launch speed cannot bounce. The data indicates that ricochet is checked first, so a bullet that bounces does not also pass through (not fully verified).
 - **Penetration.** A bullet can pass through a surface only if it has enough energy left for that thickness. A steeper angle makes the surface look thicker, which makes passing harder. Armor-piercing rounds have the most penetration, and hollow points have very little.
 - **Speed after passing.** A bullet that passes through leaves slower. How much slower depends on the surface and the ammo.
 - **Damage at the next hit.** A bullet that has slowed does less damage when it hits something next, in proportion to the speed it has left.
 - **Flesh.** Body and head surfaces have no ricochet, so a bullet that hits a person does not bounce off them.
+
+## How a ricochet leaves
+
+A bounce is not a mirror reflection. The game picks the new direction at random, and for nearly every bounce the bullet leaves steeper than a mirror would send it, so it rises away from the surface more sharply (derived from the game's code).
+
+- **Random cone.** The new direction is picked at random within a cone of up to 40 degrees around the surface normal. Two bullets that hit the same spot can leave at different angles.
+- **Steeper than a mirror.** The sideways part of the bullet's speed is kept. The part that was driving it into the surface is turned around and multiplied by one plus a random factor. That factor is drawn between 0.2 and 10, with an average of about 5, for almost every bounce. A factor above 1 leaves steeper than a mirror, so most bounces do. About 1 bounce in 12 draws a factor under 1 and leaves lower than a mirror (derived, assuming the draws are spread evenly across the range).
+- **Speed after the bounce.** The bullet's speed is set back to what it was before the hit, then multiplied by a random factor that depends on the surface. Each material has its own range for this. The ranges are in the data pipeline and are not listed here.
 
 ## Numbers
 
@@ -82,7 +90,7 @@ Ricochet chance by surface material (named surfaces in the data; unnamed surface
 
 - The materials and thicknesses of world walls, doors and props. The data has no material assigned to most world meshes, so no result can be given for a specific wall.
 - The unit of surface thickness.
-- The exact direction a bullet takes after a ricochet.
+- The speed ranges kept after a bounce for each material, which are in the data pipeline but not listed here.
 - Whether a bullet with penetration 2 or more can ever ricochet. The data suggests not, but this has not been checked.
 
 ## See also
@@ -99,3 +107,4 @@ Ricochet chance by surface material (named surfaces in the data; unnamed surface
 - [Weapon penetration (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-penetration.json)
 - [Hit Registration](../../pipelines/Wardogs_HitRegistration_v1.md)
 - [Round 39 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-weapons.md): the exit-speed setting and the effective-range multiplier
+- [Round 41 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-weapons.md): the direction of a ricochet, the angle factor and the speed kept after a bounce
