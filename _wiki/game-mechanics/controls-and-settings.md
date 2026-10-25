@@ -166,7 +166,7 @@ Each setting has a default. Some have an exact range; where the export does not 
 | Gamepad response curve | Standard | Linear, Standard, Classic or Dynamic |
 | Slow walk speed | Slow | Slow, Moderate or Fast |
 
-The gamepad look acceleration is a separate setting with three curves (Standard, Linear and Aggressive), a magnitude threshold, a pitch weight and a max multiplier. The data does not show how it relates to the gamepad response curve above.
+Two different gamepad curve settings exist in the data: the look acceleration curve (Standard, Linear or Aggressive, with its own threshold, pitch weight and max multiplier) and the gamepad response curve (Linear, Standard, Classic or Dynamic). The data does not show how the two relate.
 
 ### Field of view and view model
 

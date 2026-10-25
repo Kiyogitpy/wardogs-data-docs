@@ -22,7 +22,7 @@ A status effect is a temporary condition that changes how a player fights or mov
 | Downed | Health reaches 0 | Cannot fight; waits for a revive | Bleed-out timer | Timer 360 s, drains at 0.5 per second |
 | Bleed-out | Downed timer running | Player dies and respawns at Headquarters | Ends when timer hits 0 | At least 30 s after a revive; 1.5 s after giving up |
 | Burning | Standing in Molotov fire | Fire damages players; screen goes blurred and dark | Fire lasts 45 s; burning ends on leaving the fire | 15 damage every 0.4 s |
-| Suppression | Enemy fire near you | Screen effect; strength set per bullet class, no movement effect found | Screen effect fades at 0.4 of its rate (concussive 0.1, lasts 2 s) | Base values 0.2 to 0.9 by bullet class; helmets cut suppression to 32% or 20% |
+| Suppression | Enemy fire near you | Screen effect; strength set per bullet class, no movement effect found | Screen effect fades at 0.4 of its rate (concussive 0.1, lasts 2 s) | Base values 0.2 to 0.9 by bullet class; heavy helmets 0.32 and super-heavy helmets 0.2 as a suppression multiplier (read as the share left; not tested) |
 | Spotted | You spot an enemy | Enemy shows to your team on the mini and tactical maps | Infantry 30 s, kept up to 180 s; vehicles 60 to 90 s; bases up to 3,600 s | Spot on infantry takes 0.5 s; spot marker fades over 3.0 s |
 | Adrenaline | Using an Adrenaline Pen | Unlimited tactical sprint, lighter equipment class | 60 s | Camera field of view x1.05 |
 | Medical use | Using a medical item | Move at half speed while using it | While using | Speed x0.5 |
@@ -51,7 +51,7 @@ Molotov fire creates a fire area that lasts 45 s. A player standing in it takes 
 
 ## Suppression
 
-Enemy bullets that pass near a player add suppression. Each weapon has a suppression value and a distance falloff, so close shots matter more. Each bullet class has a suppression value in the game data, from 0.2 for small pistol rounds to 0.9 for 120 mm and larger rounds, and it falls off with distance. The screen effect fades at 0.4 of its rate, and the concussive variant at 0.1, lasting 2 s. No movement effect from suppression was found. The data does list three things that reduce it. Heavy helmets cut suppression to 32% and super-heavy helmets to 20%. The Tank Helmet removes it entirely while the wearer is a driver or gunner in a tracked vehicle. Two Medic skills change it (less suppression, and faster healing while suppressed), but their values are not in the data. See [Body Armor](../equipment/body-armor.md) for the helmets.
+Enemy bullets that pass near a player add suppression. Each weapon has a suppression value and a distance falloff, so close shots matter more. Each bullet class has a suppression value in the game data, from 0.2 for small pistol rounds to 0.9 for 120 mm and larger rounds, and it falls off with distance. The screen effect fades at 0.4 of its rate, and the concussive variant at 0.1, lasting 2 s. No movement effect from suppression was found. The data does list three things that reduce it. Heavy helmets carry a suppression multiplier of 0.32 and super-heavy helmets 0.2, which reads as cutting suppression to 32% and 20% (a reading of the effect data, not tested in play). The Tank Helmet removes it entirely while the wearer is a driver or gunner in a tracked vehicle. Two Medic skills change it (less suppression, and faster healing while suppressed), but their values are not in the data. See [Body Armor](../equipment/body-armor.md) for the helmets.
 
 ## Spotted
 

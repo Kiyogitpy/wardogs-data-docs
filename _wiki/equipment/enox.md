@@ -32,7 +32,7 @@ The Enox is in the Medical category but is listed under Equipment in the shop. T
 ## Effects
 
 - **Healing:** +40 HP as decaying health. The decay pool holds up to 40 HP above the normal maximum. Healing is capped at the maximum plus the decay pool.
-- **Fading:** the decaying health fades over time, and damage also lowers it. Every 5 s the fade removes 5 HP, or what is left of the pool, until the pool is empty. A full 40 HP pool is therefore gone after 40 s (read from the game code).
+- **Fading:** the decaying health fades over time, and damage taken also lowers it (a static reading of the game code). Every 5 s the fade removes 5 HP, or what is left of the pool, until the pool is empty. A full 40 HP pool is therefore gone after 40 s (read from the game code).
 - **Movement:** the data lists no movement slow for the Enox.
 - **Bleeding:** the Enox does not stop bleeding. The game has no damage-over-time bleeding to cure.
 

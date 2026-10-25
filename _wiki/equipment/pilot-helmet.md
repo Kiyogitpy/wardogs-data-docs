@@ -12,7 +12,7 @@ description: "Vehicle-use helmet: 30% head damage reduction, muffles vehicle aud
 | **General** | |
 | Type | Helmet |
 | Slot | Helmet |
-| Weight | 1 |
+| Weight | 1 kg |
 | **Protection** | |
 | Damage reduction | 30% |
 | Body parts covered | Head |

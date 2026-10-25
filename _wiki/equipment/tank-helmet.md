@@ -12,7 +12,7 @@ description: "Vehicle-use helmet: 55% reduction for the head and neck, removes s
 | **General** | |
 | Type | Helmet |
 | Slot | Helmet |
-| Weight | 1 |
+| Weight | 1 kg |
 | **Protection** | |
 | Damage reduction | 55% |
 | Body parts covered | Head and neck |

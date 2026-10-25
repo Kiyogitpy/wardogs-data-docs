@@ -12,7 +12,7 @@ description: "Entry helmet: 30% head damage reduction, 80 durability, 200 cash, 
 | **General** | |
 | Type | Helmet |
 | Slot | Helmet |
-| Weight | 1 |
+| Weight | 1 kg |
 | **Protection** | |
 | Damage reduction | 30% |
 | Body parts covered | Head |

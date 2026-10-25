@@ -28,7 +28,7 @@ Aim assist is a pull, not an automatic aim. The game looks at the enemies in a s
 - **Input.** Unless a setting says otherwise, the pull needs input from you, either movement or looking (derived from the game's default for this setting).
 - **Targets.** Up to 8 targets are counted at once for every class. A minimum weight of 0.125 is stored for every class.
 - **Slow-down.** The settings also hold a slow-down part, with its own rates. The data stores the rates, but the feel in play has not been measured.
-- **Smoke.** The cloud from an [M18 Smoke Grenade](../equipment/m18-smoke-grenade.md) blocks aim assist on targets inside it.
+- **Smoke.** The cloud from an [M18 Smoke Grenade](../equipment/m18-smoke-grenade.md) appears to block aim assist on targets inside it (a static reading of the code; not tested in play).
 - **Season 2.** Season 2 set the pull and slow rates to 10 in and 8 out for every class except the RPG-7 (see [Season 2 changes](../patch-notes/season-2.md)).
 
 ## Numbers
@@ -46,7 +46,7 @@ A class with no stored pull mode takes the game's default, which is All in both 
 ## Tips that follow from the numbers
 
 - **The RPG-7 gets no help.** Its pull is off in both modes, so aiming it is entirely up to you.
-- **Smoke blocks the assist.** A target inside an M18 cloud gets no pull, so expect no help against enemies in smoke.
+- **Smoke may block the assist.** A target inside an M18 cloud probably gets no pull (static reading), so do not count on help against enemies in smoke.
 
 ## What is not yet known
 

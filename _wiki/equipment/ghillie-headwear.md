@@ -12,7 +12,7 @@ description: "Camouflage headwear for 2,500 cash, worn with the Ghillie Body Sui
 | **General** | |
 | Type | Camouflage headwear |
 | Slot | Helmet |
-| Weight | 1 |
+| Weight | 1 kg |
 | **Protection** | |
 | Damage reduction | None |
 | Body parts covered | None |
