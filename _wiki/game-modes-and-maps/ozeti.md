@@ -46,6 +46,10 @@ The Control Zone is 550 m across and 150 m tall, with an 85 m Hot Zone in its ce
 
 - **Zone regions.** The data lists 55 named regions. Of these, 54 have weight 1 and one, Tower 2, has weight 0. Regions are named for towers and points of interest such as the stadium, pool, church top, lumberyard and apartments. Every non-zero region is equally likely under the data, because no other weight values appear.
 
+## Layouts
+
+The zone layout for this map is described in full on [Zone Layouts](zone-layouts.md#ozeti).
+
 ## Season 2 changes
 
 - The shader warm-up list for this map was updated. Graphics pipeline states went from 1,639 to 1,053, and compute pipeline states from 6 to 83. These lists are technical caches and do not change play.

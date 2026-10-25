@@ -16,6 +16,10 @@ description: "Every map the data names, the modes that use it, and its zone layo
 
 Wardogs has four main King of the Hill maps, a Sniper Showdown map and one unnamed layout whose data is labelled Africa. The first five are named in the server browser by the name players see. The sources do not describe level layouts, spawn points or buildings, so the articles here cover only what the data records about each map.
 
+## Layouts
+
+Every zone layout in the data, including the unnamed Africa, Sniper Showdown and server browser layouts, is described on [Zone Layouts](zone-layouts.md).
+
 ## Individual maps
 
 - [Bakurani](bakurani.md), King of the Hill
