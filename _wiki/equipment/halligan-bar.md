@@ -38,6 +38,10 @@ The shop text says the Halligan Bar pries open doors but is ineffective against 
 - The bar cannot be used while the player is critically injured or dead.
 - Inspecting the item interrupts a use.
 
+## Forcing doors and your camera
+
+While you are forcing a door open, the game ignores your look input, so you cannot turn the camera until the action ends. A player in the critical state is excluded from this lock.
+
 ## Season 2 changes
 
 | Item | Season 1 | Season 2 |
@@ -56,3 +60,4 @@ The shop text says the Halligan Bar pries open doors but is ineffective against 
 - [Item Actions](../../content/Wardogs_ItemActions_v1.md): the door and vehicle actions and the blocking rules
 - [Items and Equipment, Season 2](../../season-2-changes/items-equipment.md): price and durability changes
 - [Round 40 medical, armour and movement evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-medical-movement.md): the durability cost of the door and vehicle actions
+- [Misc Gameplay Assets: Crowbar door modifier](../../content/Wardogs_MiscGameplayAssets_v1.md): section 7c
