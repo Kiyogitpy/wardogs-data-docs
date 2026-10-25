@@ -45,7 +45,7 @@ Full before/after list: [Season 2 Changes → Weapons & Ammo]({{ '/season-2-chan
 Notes:
 - [`DA_BuildTool_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/BuildTool/Data/DA_BuildTool_Stats.json) contains only `WeaponId`. Its tag uses `ID.Item.` where every other asset uses `Id.Item.`.
 - [`DA_TankBarrelTest_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/RocketLauncher/TankBarrelTest/Data/DA_TankBarrelTest_Stats.json) uses the tag `Id.Item.LeapordBarrel` (misspelling of "Leopard" is in the source).
-- Units are not stated in the export. Inferred, not confirmed: `InitialBulletSpeed` is in Unreal cm/s (SKS 73,500 cm/s = 735 m/s; AT4 29,000 = 290 m/s), and `EffectiveRange` is in metres (SKS 400 m, Artillery 10 km).
+- Units are not stated in the export. `InitialBulletSpeed` is in Unreal cm/s (SKS 73,500 cm/s = 735 m/s; AT4 29,000 = 290 m/s) and `EffectiveRange` is in metres: both confirmed by native code in [Projectile Flight section 9](../pipelines/Wardogs_ProjectileFlight_v1.md) (`0x6BBD420` multiplies `EffectiveRange` by 100; the launch velocity is a unit direction times `InitialBulletSpeed`). `RandomDeviationDegree` is degrees; the `WeaponAccuracy` unit is the `AccuracyType` field (MOA or mrad, [Weapon Spread](../pipelines/Wardogs_WeaponSpread_v1.md) section 12).
 
 ### 1a. Per-weapon details beyond the table
 
@@ -350,8 +350,8 @@ Both multipliers default to 1. They require valid sight attachment data, the sel
 ## 6. Still Not Pulled / Limitations
 
 - The main AR, SMG, LMG, shotgun and pistol **stat tables** are not in this folder. Only their aim-sway and stabilisation curves are here. The stat tables are in [Infantry Weapon Stats](Wardogs_InfantryWeapons_Stats_v1.html).
-- **Units are not stated** in the export. Speeds are assumed to be cm/s and ranges to be metres, based on the falloff-curve and EffectiveRange check. That is an inference. Recoil values are degrees of view rotation, confirmed in code (§5a).
-- `IronSightsAimTime = 50,000` on the tank barrel and `WeaponAccuracy = 70 MOA` look like placeholders or unused tuning. The export gives no way to check.
+- **Units are not stated** in the export. Speeds are cm/s and `EffectiveRange` is metres, confirmed in code in round 23 and re-read in round 39 (Projectile Flight section 9). Recoil values are degrees of view rotation, confirmed in code (§5a).
+- `IronSightsAimTime = 50,000` on the tank barrel and `WeaponAccuracy = 70 MOA` look like placeholders or unused tuning. Round 39: the asset belongs to `ID_TankBarrelTest` in `Items/Weapons/Launcher/VehicleBarrelLaunchersTests`, which no other exported asset references (shop, loadout, vehicle), and its fire rate (100), speed (550 m/s) and range (3500 m) are authored; the aim time and accuracy look like inert test values, not checked in code.
 - The unnamed fields on the SKS and Judge are now placed: SKS 1.0 is the focus-drain window (§5a), and SKS 2.5 / Judge 2.0 is the `StabilizationTimeMultiplier` cap in `AdsStabilizationData` (§5b).
 - `CF_*_ADS_Curve` and [`ADS_Blur_Curve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/ADS_Blur_Curve.json) have no stated output meaning.
 - Curve tangents and interpolation modes are not summarised. Only key times and values are reported.

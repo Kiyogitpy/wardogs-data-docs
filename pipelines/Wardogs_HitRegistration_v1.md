@@ -392,7 +392,7 @@ not read by this function; its only reader found is the damage-side struct write
 **Native.** `0x6F353F0` keeps a 16-bit hit counter at `inst+0x118` and two 16-bit bitmaps: ricochet at `+0x11A`, penetration at `+0x11C`.
 At each hit, the bit number `HitCount` is set in the ricochet bitmap when the hit ricocheted (`0x6F354DD`–`0x6F354EE`), or in the
 penetration bitmap when it penetrated and the history argument is true (`0x6F354F7`–`0x6F35516`); then `HitCount` is incremented
-(`0x6F3551D`). Because the bitmaps are 16 bits wide, only the first 16 hits of a projectile are recorded in them. No other upper limit
+(`0x6F3551D`). Because the bitmaps are 16 bits wide, only the first 16 hits of a projectile are recorded in them. (Round 39, disassembly: the bit is set with `bts ecx, eax` on a zero-extended 16-bit load and stored back with `mov word [rdi+0x11A]`/`[rdi+0x11C]`. `bts` with a register bit offset takes it modulo 32, so hits 17 to 32 set a bit above bit 15 that the 16-bit store drops, and hit 33 sets bit 0 again. The counter at `+0x118` is incremented by `inc word` at `0x6F3551D`.) No other upper limit
 on the number of hits was found: a projectile ends when a hit is neither a ricochet nor a penetration, when its speed or capacity runs out,
 or at its lifetime.
 

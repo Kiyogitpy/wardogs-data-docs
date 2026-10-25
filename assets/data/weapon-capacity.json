@@ -1,0 +1,1284 @@
+{
+ "meta": {
+  "generator": "_tools/weapon_capacity_tables.py",
+  "source": "data/ cooked export (CL516586)",
+  "units": "muzzle speed cm/s (also m/s), effective range metres, rpm rounds per minute",
+  "notes": [
+   "rpm is the asset value, or 600 (native struct default) where the asset omits it",
+   "muzzle speed and effective range likewise fall back to the struct ctor defaults 100000 cm/s and 100 m (RVA 0x699E6C0) where the asset omits them",
+   "capacity = MaxSlotAmountStackSize of the container (inferred meaning, Items v2 section 2a)"
+  ]
+ },
+ "weapons": [
+  {
+   "id": "Id.Item.A91",
+   "name": "A-91",
+   "stats_asset": "DA_A91_Stats",
+   "rpm": 700.0,
+   "rpm_source": "asset",
+   "muzzle_cm_s": 71500.0,
+   "muzzle_m_s": 715.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": null,
+   "effective_range_m": 300.0,
+   "effective_range_source": "asset",
+   "rounds_held": 20,
+   "rounds_held_from": "default magazine container",
+   "calibers": [
+    "Item.Caliber.556mm"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [],
+    "allowed_context": [
+     "Item.Caliber.556mm"
+    ],
+    "default": []
+   },
+   "magazine": {
+    "item": "Id.Item.STANAGMagazine20rd",
+    "capacity": 20,
+    "allowed_context": [
+     "Item.Caliber.556mm"
+    ],
+    "allowed_items": []
+   }
+  },
+  {
+   "id": "Id.Item.AK74M",
+   "name": "AK74",
+   "stats_asset": "DA_AK74M_Stats",
+   "rpm": 650.0,
+   "rpm_source": "asset",
+   "muzzle_cm_s": 88000.0,
+   "muzzle_m_s": 880.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": null,
+   "effective_range_m": 500.0,
+   "effective_range_source": "asset",
+   "rounds_held": 30,
+   "rounds_held_from": "default magazine container",
+   "calibers": [
+    "Item.Caliber.545mm"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [],
+    "allowed_context": [
+     "Item.Caliber.545mm"
+    ],
+    "default": []
+   },
+   "magazine": {
+    "item": "Id.Item.AK74MMagazine",
+    "capacity": 30,
+    "allowed_context": [
+     "Item.Caliber.545mm"
+    ],
+    "allowed_items": []
+   }
+  },
+  {
+   "id": "Id.Item.CGM4",
+   "name": "MAAWS",
+   "stats_asset": "DA_CGM4_Stats",
+   "rpm": 100.0,
+   "rpm_source": "asset",
+   "muzzle_cm_s": 23000.0,
+   "muzzle_m_s": 230.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": null,
+   "effective_range_m": 400.0,
+   "effective_range_source": "asset",
+   "rounds_held": 1,
+   "rounds_held_from": "chamber container (no magazine container)",
+   "calibers": [
+    "Item.Caliber.84mm"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [
+     "Id.Item.84mm"
+    ],
+    "allowed_context": [],
+    "default": [
+     "Id.Item.84mm"
+    ]
+   },
+   "magazine": null
+  },
+  {
+   "id": "Id.Item.Glock17",
+   "name": "GGX 17",
+   "stats_asset": "DA_Glock17_Stats",
+   "rpm": 600.0,
+   "rpm_source": "class_default_native",
+   "muzzle_cm_s": 37500.0,
+   "muzzle_m_s": 375.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": 30000.0,
+   "effective_range_m": 50.0,
+   "effective_range_source": "asset",
+   "rounds_held": 17,
+   "rounds_held_from": "default magazine container",
+   "calibers": [
+    "Item.Caliber.9mm"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [],
+    "allowed_context": [
+     "Item.Caliber.9mm"
+    ],
+    "default": []
+   },
+   "magazine": {
+    "item": "Id.Item.Glock17Magazine",
+    "capacity": 17,
+    "allowed_context": [
+     "Item.Caliber.9mm"
+    ],
+    "allowed_items": []
+   }
+  },
+  {
+   "id": "Id.Item.Judge",
+   "name": "Judge",
+   "stats_asset": "DA_Judge_Stats",
+   "rpm": 200.0,
+   "rpm_source": "asset",
+   "muzzle_cm_s": 33500.0,
+   "muzzle_m_s": 335.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": null,
+   "effective_range_m": 50.0,
+   "effective_range_source": "asset",
+   "rounds_held": 6,
+   "rounds_held_from": "default magazine container",
+   "calibers": [
+    "Item.Caliber.45Colt"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [],
+    "allowed_context": [
+     "Item.Caliber.45Colt"
+    ],
+    "default": []
+   },
+   "magazine": {
+    "item": "Id.Item.JudgeMagazine",
+    "capacity": 6,
+    "allowed_context": [
+     "Item.Caliber.45Colt"
+    ],
+    "allowed_items": []
+   }
+  },
+  {
+   "id": "Id.Item.KH2002",
+   "name": "KH-2002",
+   "stats_asset": "DA_KH2002_Stats",
+   "rpm": 700.0,
+   "rpm_source": "asset",
+   "muzzle_cm_s": 71500.0,
+   "muzzle_m_s": 715.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": 46300.0,
+   "effective_range_m": 300.0,
+   "effective_range_source": "asset",
+   "rounds_held": 20,
+   "rounds_held_from": "default magazine container",
+   "calibers": [
+    "Item.Caliber.556mm"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [],
+    "allowed_context": [
+     "Item.Caliber.556mm"
+    ],
+    "default": []
+   },
+   "magazine": {
+    "item": "Id.Item.STANAGMagazine20rd",
+    "capacity": 20,
+    "allowed_context": [
+     "Item.Caliber.556mm"
+    ],
+    "allowed_items": []
+   }
+  },
+  {
+   "id": "Id.Item.LMG_02",
+   "name": "PKM",
+   "stats_asset": "DA_LMG_02_Stats",
+   "rpm": 600.0,
+   "rpm_source": "class_default_native",
+   "muzzle_cm_s": 82500.0,
+   "muzzle_m_s": 825.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": 33600.0,
+   "effective_range_m": 1000.0,
+   "effective_range_source": "asset",
+   "rounds_held": 100,
+   "rounds_held_from": "default magazine container",
+   "calibers": [
+    "Item.Caliber.762x54mm"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [],
+    "allowed_context": [
+     "Item.Caliber.762x54mm"
+    ],
+    "default": []
+   },
+   "magazine": {
+    "item": "Id.Item.LMG_02Magazine",
+    "capacity": 100,
+    "allowed_context": [
+     "Item.Caliber.762x54mm"
+    ],
+    "allowed_items": []
+   }
+  },
+  {
+   "id": "Id.Item.Launcher_04",
+   "name": "9K333 Verba",
+   "stats_asset": "DA_Launcher_04_Stats",
+   "rpm": 100.0,
+   "rpm_source": "asset",
+   "muzzle_cm_s": 2000.0,
+   "muzzle_m_s": 20.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": null,
+   "effective_range_m": 1000.0,
+   "effective_range_source": "asset",
+   "rounds_held": 1,
+   "rounds_held_from": "chamber container (no magazine container)",
+   "calibers": [
+    "Item.Caliber.72mm"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [
+     "Id.Item.72mm"
+    ],
+    "allowed_context": [],
+    "default": [
+     "Id.Item.72mm"
+    ]
+   },
+   "magazine": null
+  },
+  {
+   "id": "Id.Item.M249",
+   "name": "M249 SAW",
+   "stats_asset": "DA_M249_Stats",
+   "rpm": 850.0,
+   "rpm_source": "asset",
+   "muzzle_cm_s": 91500.0,
+   "muzzle_m_s": 915.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": 30100.0,
+   "effective_range_m": 700.0,
+   "effective_range_source": "asset",
+   "rounds_held": 200,
+   "rounds_held_from": "default magazine container",
+   "calibers": [
+    "Item.Caliber.556mm"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [],
+    "allowed_context": [
+     "Item.Caliber.556mm"
+    ],
+    "default": []
+   },
+   "magazine": {
+    "item": "Id.Item.M249Magazine",
+    "capacity": 200,
+    "allowed_context": [
+     "Item.Caliber.556mm"
+    ],
+    "allowed_items": []
+   }
+  },
+  {
+   "id": "Id.Item.M4",
+   "name": "M4",
+   "stats_asset": "DA_M4_Stats",
+   "rpm": 800.0,
+   "rpm_source": "asset",
+   "muzzle_cm_s": 91000.0,
+   "muzzle_m_s": 910.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": null,
+   "effective_range_m": 500.0,
+   "effective_range_source": "asset",
+   "rounds_held": 30,
+   "rounds_held_from": "default magazine container",
+   "calibers": [
+    "Item.Caliber.556mm"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [],
+    "allowed_context": [
+     "Item.Caliber.556mm"
+    ],
+    "default": []
+   },
+   "magazine": {
+    "item": "Id.Item.STANAGMagazine",
+    "capacity": 30,
+    "allowed_context": [
+     "Item.Caliber.556mm"
+    ],
+    "allowed_items": []
+   }
+  },
+  {
+   "id": "Id.Item.M500",
+   "name": "M500",
+   "stats_asset": "DA_M12G_Stats",
+   "rpm": 120.0,
+   "rpm_source": "asset",
+   "muzzle_cm_s": 48000.0,
+   "muzzle_m_s": 480.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": null,
+   "effective_range_m": 70.0,
+   "effective_range_source": "asset",
+   "rounds_held": 6,
+   "rounds_held_from": "default magazine container",
+   "calibers": [
+    "Item.Caliber.12g",
+    "Item.Caliber.7mmBuck"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [],
+    "allowed_context": [
+     "Item.Caliber.12g"
+    ],
+    "default": []
+   },
+   "magazine": {
+    "item": "Id.Item.M500Magazine",
+    "capacity": 6,
+    "allowed_context": [
+     "Item.Caliber.12g"
+    ],
+    "allowed_items": []
+   }
+  },
+  {
+   "id": "Id.Item.MK22",
+   "name": "MK22",
+   "stats_asset": "DA_MK22_Stats",
+   "rpm": 46.0,
+   "rpm_source": "asset",
+   "muzzle_cm_s": 89400.0,
+   "muzzle_m_s": 894.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": 42500.0,
+   "effective_range_m": 1000.0,
+   "effective_range_source": "asset",
+   "rounds_held": 10,
+   "rounds_held_from": "default magazine container",
+   "calibers": [
+    "Item.Caliber.308Win"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [],
+    "allowed_context": [
+     "Item.Caliber.308Win"
+    ],
+    "default": []
+   },
+   "magazine": {
+    "item": "Id.Item.MK22Mag",
+    "capacity": 10,
+    "allowed_context": [
+     "Item.Caliber.308Win"
+    ],
+    "allowed_items": []
+   }
+  },
+  {
+   "id": "Id.Item.MMGL",
+   "name": "MGL-40",
+   "stats_asset": "DA_MMGL_Stats",
+   "rpm": 75.0,
+   "rpm_source": "asset",
+   "muzzle_cm_s": 7500.0,
+   "muzzle_m_s": 75.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": null,
+   "effective_range_m": 400.0,
+   "effective_range_source": "asset",
+   "rounds_held": 6,
+   "rounds_held_from": "default magazine container",
+   "calibers": [
+    "Item.Caliber.40mm"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [
+     "Id.Item.40mm"
+    ],
+    "allowed_context": [],
+    "default": []
+   },
+   "magazine": {
+    "item": "Id.Item.MMGLMagazine",
+    "capacity": 6,
+    "allowed_context": [
+     "Item.Caliber.40mm"
+    ],
+    "allowed_items": []
+   }
+  },
+  {
+   "id": "Id.Item.MP43",
+   "name": "MP43",
+   "stats_asset": "DA_MP43_Stats",
+   "rpm": 900.0,
+   "rpm_source": "asset",
+   "muzzle_cm_s": 39100.0,
+   "muzzle_m_s": 391.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": null,
+   "effective_range_m": 100.0,
+   "effective_range_source": "class_default_native",
+   "rounds_held": 2,
+   "rounds_held_from": "chamber container (no magazine container)",
+   "calibers": [
+    "Item.Caliber.7mmBuck",
+    "Item.Caliber.12g"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 2,
+    "allowed_items": [],
+    "allowed_context": [
+     "Item.Caliber.12g"
+    ],
+    "default": []
+   },
+   "magazine": null
+  },
+  {
+   "id": "Id.Item.MP9",
+   "name": "AMP-9",
+   "stats_asset": "DA_MP9_Stats",
+   "rpm": 900.0,
+   "rpm_source": "asset",
+   "muzzle_cm_s": 40000.0,
+   "muzzle_m_s": 400.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": 28000.0,
+   "effective_range_m": 100.0,
+   "effective_range_source": "class_default_native",
+   "rounds_held": 30,
+   "rounds_held_from": "default magazine container",
+   "calibers": [
+    "Item.Caliber.9mm"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [],
+    "allowed_context": [
+     "Item.Caliber.9mm"
+    ],
+    "default": []
+   },
+   "magazine": {
+    "item": "Id.Item.MP9Magazine",
+    "capacity": 30,
+    "allowed_context": [
+     "Item.Caliber.9mm"
+    ],
+    "allowed_items": []
+   }
+  },
+  {
+   "id": "Id.Item.Mosin",
+   "name": "Mosin Nagant",
+   "stats_asset": "DA_WEPN_017_Stats",
+   "rpm": 46.0,
+   "rpm_source": "asset",
+   "muzzle_cm_s": 86500.0,
+   "muzzle_m_s": 865.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": 37200.0,
+   "effective_range_m": 500.0,
+   "effective_range_source": "asset",
+   "rounds_held": 5,
+   "rounds_held_from": "default magazine container",
+   "calibers": [
+    "Item.Caliber.762x54mm"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [],
+    "allowed_context": [
+     "Item.Caliber.762x54mm"
+    ],
+    "default": []
+   },
+   "magazine": {
+    "item": "Id.Item.MosinMagazine",
+    "capacity": 5,
+    "allowed_context": [
+     "Item.Caliber.762x54mm"
+    ],
+    "allowed_items": []
+   }
+  },
+  {
+   "id": "Id.Item.RFB",
+   "name": "BMR-308",
+   "stats_asset": "DA_RFB_Stats",
+   "rpm": 450.0,
+   "rpm_source": "asset",
+   "muzzle_cm_s": 88000.0,
+   "muzzle_m_s": 880.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": 60000.0,
+   "effective_range_m": 500.0,
+   "effective_range_source": "asset",
+   "rounds_held": 10,
+   "rounds_held_from": "default magazine container",
+   "calibers": [
+    "Item.Caliber.308Win"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [],
+    "allowed_context": [
+     "Item.Caliber.308Win"
+    ],
+    "default": []
+   },
+   "magazine": {
+    "item": "Id.Item.RFBMagazine",
+    "capacity": 10,
+    "allowed_context": [
+     "Item.Caliber.308Win"
+    ],
+    "allowed_items": []
+   }
+  },
+  {
+   "id": "Id.Item.RPG7",
+   "name": "RPG-7",
+   "stats_asset": "DA_RPG7_Stats",
+   "rpm": 100.0,
+   "rpm_source": "asset",
+   "muzzle_cm_s": 10000.0,
+   "muzzle_m_s": 100.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": null,
+   "effective_range_m": 300.0,
+   "effective_range_source": "asset",
+   "rounds_held": 1,
+   "rounds_held_from": "chamber container (no magazine container)",
+   "calibers": [
+    "Item.Caliber.93mm"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [
+     "Id.Item.93mm"
+    ],
+    "allowed_context": [],
+    "default": [
+     "Id.Item.93mm"
+    ]
+   },
+   "magazine": null
+  },
+  {
+   "id": "Id.Item.SKS",
+   "name": "SKS",
+   "stats_asset": "DA_SKS_Stats",
+   "rpm": 420.0,
+   "rpm_source": "asset",
+   "muzzle_cm_s": 73500.0,
+   "muzzle_m_s": 735.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": null,
+   "effective_range_m": 400.0,
+   "effective_range_source": "asset",
+   "rounds_held": 10,
+   "rounds_held_from": "default magazine container",
+   "calibers": [
+    "Item.Caliber.762mm"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [],
+    "allowed_context": [
+     "Item.Caliber.762mm"
+    ],
+    "default": []
+   },
+   "magazine": {
+    "item": "Id.Item.SKSMagazine",
+    "capacity": 10,
+    "allowed_context": [
+     "Item.Caliber.762mm"
+    ],
+    "allowed_items": []
+   }
+  },
+  {
+   "id": "Id.Item.SMG_03",
+   "name": "PP-19 Vityaz",
+   "stats_asset": "DA_SMG_03_Stats",
+   "rpm": 800.0,
+   "rpm_source": "asset",
+   "muzzle_cm_s": 38000.0,
+   "muzzle_m_s": 380.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": 20200.0,
+   "effective_range_m": 200.0,
+   "effective_range_source": "asset",
+   "rounds_held": 30,
+   "rounds_held_from": "default magazine container",
+   "calibers": [
+    "Item.Caliber.9mm"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [],
+    "allowed_context": [
+     "Item.Caliber.9mm"
+    ],
+    "default": []
+   },
+   "magazine": {
+    "item": "Id.Item.SMG_03Magazine",
+    "capacity": 30,
+    "allowed_context": [
+     "Item.Caliber.9mm"
+    ],
+    "allowed_items": []
+   }
+  },
+  {
+   "id": "Id.Item.SR_04",
+   "name": "AMR 50",
+   "stats_asset": "DA_SR_04_Stats",
+   "rpm": 41.5,
+   "rpm_source": "asset",
+   "muzzle_cm_s": 90000.0,
+   "muzzle_m_s": 900.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": 31300.0,
+   "effective_range_m": 2000.0,
+   "effective_range_source": "asset",
+   "rounds_held": 5,
+   "rounds_held_from": "default magazine container",
+   "calibers": [
+    "Item.Caliber.50Cal"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [],
+    "allowed_context": [
+     "Item.Caliber.50Cal"
+    ],
+    "default": []
+   },
+   "magazine": {
+    "item": "Id.Item.SR_04Magazine",
+    "capacity": 5,
+    "allowed_context": [
+     "Item.Caliber.50Cal"
+    ],
+    "allowed_items": []
+   }
+  },
+  {
+   "id": "Id.Item.SV98",
+   "name": "SV98",
+   "stats_asset": "DA_SV98_Stats",
+   "rpm": 46.0,
+   "rpm_source": "asset",
+   "muzzle_cm_s": 83000.0,
+   "muzzle_m_s": 830.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": 41500.0,
+   "effective_range_m": 1000.0,
+   "effective_range_source": "asset",
+   "rounds_held": 10,
+   "rounds_held_from": "default magazine container",
+   "calibers": [
+    "Item.Caliber.762x54mm"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [],
+    "allowed_context": [
+     "Item.Caliber.762x54mm"
+    ],
+    "default": []
+   },
+   "magazine": {
+    "item": "Id.Item.SV98Magazine",
+    "capacity": 10,
+    "allowed_context": [
+     "Item.Caliber.762x54mm"
+    ],
+    "allowed_items": []
+   }
+  },
+  {
+   "id": "Id.Item.SVDM",
+   "name": "SVD",
+   "stats_asset": "DA_SVDM_Stats",
+   "rpm": 480.0,
+   "rpm_source": "asset",
+   "muzzle_cm_s": 80000.0,
+   "muzzle_m_s": 800.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": 35000.0,
+   "effective_range_m": 800.0,
+   "effective_range_source": "asset",
+   "rounds_held": 10,
+   "rounds_held_from": "default magazine container",
+   "calibers": [
+    "Item.Caliber.762x54mm"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [],
+    "allowed_context": [
+     "Item.Caliber.762x54mm"
+    ],
+    "default": []
+   },
+   "magazine": {
+    "item": "Id.Item.SVDMMagazine",
+    "capacity": 10,
+    "allowed_context": [
+     "Item.Caliber.762x54mm"
+    ],
+    "allowed_items": []
+   }
+  },
+  {
+   "id": "Id.Item.TAR21",
+   "name": "T-21",
+   "stats_asset": "DA_TAR21_Stats",
+   "rpm": 750.0,
+   "rpm_source": "asset",
+   "muzzle_cm_s": 91000.0,
+   "muzzle_m_s": 910.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": 46300.0,
+   "effective_range_m": 550.0,
+   "effective_range_source": "asset",
+   "rounds_held": 20,
+   "rounds_held_from": "default magazine container",
+   "calibers": [
+    "Item.Caliber.556mm"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [],
+    "allowed_context": [
+     "Item.Caliber.556mm"
+    ],
+    "default": []
+   },
+   "magazine": {
+    "item": "Id.Item.STANAGMagazine20rd",
+    "capacity": 20,
+    "allowed_context": [
+     "Item.Caliber.556mm"
+    ],
+    "allowed_items": []
+   }
+  },
+  {
+   "id": "Id.Item.Vector",
+   "name": "Super-45",
+   "stats_asset": "DA_Vector_Stats",
+   "rpm": 1200.0,
+   "rpm_source": "asset",
+   "muzzle_cm_s": 37500.0,
+   "muzzle_m_s": 375.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": 32200.0,
+   "effective_range_m": 50.0,
+   "effective_range_source": "asset",
+   "rounds_held": 30,
+   "rounds_held_from": "default magazine container",
+   "calibers": [
+    "Item.Caliber.45ACP"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [],
+    "allowed_context": [
+     "Item.Caliber.45ACP"
+    ],
+    "default": []
+   },
+   "magazine": {
+    "item": "ID.Item.VectorMagazine",
+    "capacity": 30,
+    "allowed_context": [
+     "Item.Caliber.45ACP"
+    ],
+    "allowed_items": []
+   }
+  },
+  {
+   "id": "Id.Item.WEPN_026",
+   "name": "M1911",
+   "stats_asset": "DA_WEPN_026_Stats",
+   "rpm": 430.0,
+   "rpm_source": "asset",
+   "muzzle_cm_s": 25300.0,
+   "muzzle_m_s": 253.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": 24300.0,
+   "effective_range_m": 50.0,
+   "effective_range_source": "asset",
+   "rounds_held": 7,
+   "rounds_held_from": "default magazine container",
+   "calibers": [
+    "Item.Caliber.45ACP"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [],
+    "allowed_context": [
+     "Item.Caliber.45ACP"
+    ],
+    "default": []
+   },
+   "magazine": {
+    "item": "Id.Item.MAGZ_002",
+    "capacity": 7,
+    "allowed_context": [
+     "Item.Caliber.45ACP"
+    ],
+    "allowed_items": []
+   }
+  },
+  {
+   "id": "Id.Item.WEPN_027",
+   "name": "Deagle",
+   "stats_asset": "DA_WEPN_027_Stats",
+   "rpm": 267.0,
+   "rpm_source": "asset",
+   "muzzle_cm_s": 47000.0,
+   "muzzle_m_s": 470.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": null,
+   "effective_range_m": 100.0,
+   "effective_range_source": "class_default_native",
+   "rounds_held": 7,
+   "rounds_held_from": "default magazine container",
+   "calibers": [
+    "Item.Caliber.50AE"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [],
+    "allowed_context": [
+     "Item.Caliber.50AE"
+    ],
+    "default": []
+   },
+   "magazine": {
+    "item": "ID.Item.MAGZ_003",
+    "capacity": 7,
+    "allowed_context": [
+     "Item.Caliber.50AE"
+    ],
+    "allowed_items": []
+   }
+  },
+  {
+   "id": "Id.Item.WEPN_028",
+   "name": "MP5",
+   "stats_asset": "DA_WEPN_028_Stats",
+   "rpm": 800.0,
+   "rpm_source": "asset",
+   "muzzle_cm_s": 40000.0,
+   "muzzle_m_s": 400.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": null,
+   "effective_range_m": 200.0,
+   "effective_range_source": "asset",
+   "rounds_held": 30,
+   "rounds_held_from": "default magazine container",
+   "calibers": [
+    "Item.Caliber.9mm"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [],
+    "allowed_context": [
+     "Item.Caliber.9mm"
+    ],
+    "default": []
+   },
+   "magazine": {
+    "item": "Id.Item.MAGZ_004",
+    "capacity": 30,
+    "allowed_context": [
+     "Item.Caliber.9mm"
+    ],
+    "allowed_items": []
+   }
+  },
+  {
+   "id": "Id.Item.WEPN_029",
+   "name": "Galil",
+   "stats_asset": "DA_WEPN_029_Stats",
+   "rpm": 650.0,
+   "rpm_source": "asset",
+   "muzzle_cm_s": 95000.0,
+   "muzzle_m_s": 950.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": null,
+   "effective_range_m": 400.0,
+   "effective_range_source": "asset",
+   "rounds_held": 35,
+   "rounds_held_from": "default magazine container",
+   "calibers": [
+    "Item.Caliber.556mm"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [],
+    "allowed_context": [
+     "Item.Caliber.556mm"
+    ],
+    "default": []
+   },
+   "magazine": {
+    "item": "Id.Item.MAGZ_005",
+    "capacity": 35,
+    "allowed_context": [
+     "Item.Caliber.556mm"
+    ],
+    "allowed_items": []
+   }
+  },
+  {
+   "id": "Id.Item.WEPN_030",
+   "name": "FAL",
+   "stats_asset": "DA_WEPN_030_Stats",
+   "rpm": 650.0,
+   "rpm_source": "asset",
+   "muzzle_cm_s": 84000.0,
+   "muzzle_m_s": 840.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": 49500.0,
+   "effective_range_m": 800.0,
+   "effective_range_source": "asset",
+   "rounds_held": 20,
+   "rounds_held_from": "default magazine container",
+   "calibers": [
+    "Item.Caliber.308Win"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [],
+    "allowed_context": [
+     "Item.Caliber.308Win"
+    ],
+    "default": []
+   },
+   "magazine": {
+    "item": "Id.Item.MAGZ_006",
+    "capacity": 20,
+    "allowed_context": [
+     "Item.Caliber.308Win"
+    ],
+    "allowed_items": []
+   }
+  },
+  {
+   "id": "Id.Item.WEPN_031",
+   "name": "PP-19 Bizon",
+   "stats_asset": "DA_WEPN_031_Stats",
+   "rpm": 700.0,
+   "rpm_source": "asset",
+   "muzzle_cm_s": 38000.0,
+   "muzzle_m_s": 380.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": 20200.0,
+   "effective_range_m": 200.0,
+   "effective_range_source": "asset",
+   "rounds_held": 53,
+   "rounds_held_from": "default magazine container",
+   "calibers": [
+    "Item.Caliber.9mm"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [],
+    "allowed_context": [
+     "Item.Caliber.9mm"
+    ],
+    "default": []
+   },
+   "magazine": {
+    "item": "Id.Item.MAGZ_051",
+    "capacity": 53,
+    "allowed_context": [
+     "Item.Caliber.9mm"
+    ],
+    "allowed_items": []
+   }
+  },
+  {
+   "id": "Id.Item.WEPN_032",
+   "name": "GGX 18",
+   "stats_asset": "DA_WEPN_032_Stats",
+   "rpm": 1200.0,
+   "rpm_source": "asset",
+   "muzzle_cm_s": 37500.0,
+   "muzzle_m_s": 375.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": 30000.0,
+   "effective_range_m": 50.0,
+   "effective_range_source": "asset",
+   "rounds_held": 17,
+   "rounds_held_from": "default magazine container",
+   "calibers": [
+    "Item.Caliber.9mm"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [],
+    "allowed_context": [
+     "Item.Caliber.9mm"
+    ],
+    "default": []
+   },
+   "magazine": {
+    "item": "Id.Item.Glock17Magazine",
+    "capacity": 17,
+    "allowed_context": [
+     "Item.Caliber.9mm"
+    ],
+    "allowed_items": []
+   }
+  },
+  {
+   "id": "Id.Item.WEPN_033",
+   "name": "Bushmaster M17S",
+   "stats_asset": "DA_WEPN_033_Stats",
+   "rpm": 700.0,
+   "rpm_source": "asset",
+   "muzzle_cm_s": 71500.0,
+   "muzzle_m_s": 715.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": 46300.0,
+   "effective_range_m": 300.0,
+   "effective_range_source": "asset",
+   "rounds_held": 20,
+   "rounds_held_from": "default magazine container",
+   "calibers": [
+    "Item.Caliber.556mm"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [],
+    "allowed_context": [
+     "Item.Caliber.556mm"
+    ],
+    "default": []
+   },
+   "magazine": {
+    "item": "Id.Item.STANAGMagazine20rd",
+    "capacity": 20,
+    "allowed_context": [
+     "Item.Caliber.556mm"
+    ],
+    "allowed_items": []
+   }
+  },
+  {
+   "id": "Id.Item.WEPN_034",
+   "name": "M14",
+   "stats_asset": "DA_WEPN_034_Stats",
+   "rpm": 700.0,
+   "rpm_source": "asset",
+   "muzzle_cm_s": 85300.0,
+   "muzzle_m_s": 853.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": 60300.0,
+   "effective_range_m": 500.0,
+   "effective_range_source": "asset",
+   "rounds_held": 10,
+   "rounds_held_from": "default magazine container",
+   "calibers": [
+    "Item.Caliber.308Win"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [],
+    "allowed_context": [
+     "Item.Caliber.308Win"
+    ],
+    "default": []
+   },
+   "magazine": {
+    "item": "Id.Item.MAGZ_068",
+    "capacity": 10,
+    "allowed_context": [
+     "Item.Caliber.308Win"
+    ],
+    "allowed_items": []
+   }
+  },
+  {
+   "id": "Id.Item.WEPN_035",
+   "name": "Scout Rifle TD",
+   "stats_asset": "DA_WEPN_035_Stats",
+   "rpm": 46.0,
+   "rpm_source": "asset",
+   "muzzle_cm_s": 97500.0,
+   "muzzle_m_s": 975.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": 57100.0,
+   "effective_range_m": 300.0,
+   "effective_range_source": "asset",
+   "rounds_held": 1,
+   "rounds_held_from": "chamber container (no magazine container)",
+   "calibers": [
+    "Item.Caliber.556mm"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [],
+    "allowed_context": [
+     "Item.Caliber.556mm"
+    ],
+    "default": [
+     "Id.Item.556mm.Tracer"
+    ]
+   },
+   "magazine": null
+  },
+  {
+   "id": "Id.Item.WEPN_036",
+   "name": "Evo-3 Ultra",
+   "stats_asset": "DA_WEPN_036_Stats",
+   "rpm": 700.0,
+   "rpm_source": "asset",
+   "muzzle_cm_s": 79000.0,
+   "muzzle_m_s": 790.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": 37800.0,
+   "effective_range_m": 1000.0,
+   "effective_range_source": "asset",
+   "rounds_held": 50,
+   "rounds_held_from": "default magazine container",
+   "calibers": [
+    "Item.Caliber.308Win"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [],
+    "allowed_context": [
+     "Item.Caliber.308Win"
+    ],
+    "default": []
+   },
+   "magazine": {
+    "item": "Id.Item.MAGZ_067",
+    "capacity": 50,
+    "allowed_context": [
+     "Item.Caliber.308Win"
+    ],
+    "allowed_items": []
+   }
+  },
+  {
+   "id": "Id.Item.WEPN_037",
+   "name": "TCX-SPR",
+   "stats_asset": "DA_WEPN_037_Stats",
+   "rpm": 800.0,
+   "rpm_source": "asset",
+   "muzzle_cm_s": 70000.0,
+   "muzzle_m_s": 700.0,
+   "muzzle_source": "asset",
+   "typical_speed_cm_s": 35000.0,
+   "effective_range_m": 400.0,
+   "effective_range_source": "asset",
+   "rounds_held": 28,
+   "rounds_held_from": "default magazine container",
+   "calibers": [
+    "Item.Caliber.762mm"
+   ],
+   "chamber": {
+    "container": "Item.Attachment.Chamber",
+    "stack": 1,
+    "allowed_items": [],
+    "allowed_context": [
+     "Item.Caliber.762mm"
+    ],
+    "default": []
+   },
+   "magazine": {
+    "item": "Id.Item.MAGZ_069",
+    "capacity": 28,
+    "allowed_context": [
+     "Item.Caliber.762mm"
+    ],
+    "allowed_items": []
+   }
+  }
+ ]
+}

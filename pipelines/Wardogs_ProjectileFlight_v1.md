@@ -99,6 +99,22 @@ the round is slower than `TypicalSpeed`; read at `0x6F3B9BE`) and the ammo
 modifier multiplier (`0x6BBAB70`, which multiplies `+0x1FC` by a modifier
 value). The constructor default is 60000 cm/s (`0x699DEE0`).
 
+**Ammo modifier applier (round 39, static).** `0x6BBAB70(stats, out, modifierAsset)` multiplies fields of a per-ammo copy of the projectile stats by the
+values in `AttributeModificationMultipliers`; each key is matched by a gameplay-tag global. The tag-to-field map read from the tag registration
+functions: BaseDamage `+0x30`, ExplosiveRadius `+0x34`, MinimumExplosiveDamage `+0x38`, EffectiveExplosiveRadius `+0x3C`, ExplosiveDamageFallOff `+0x40`,
+Length `+0x68`, Diameter `+0x6C`, Mass `+0x70`, DragModelValue `+0x78`, **TypicalSpeed `+0x1FC`**, **EffectiveRangeMultiplier `+0x200`**,
+**PenetrationEffectivenessMultiplier `+0x208`**, ThrustSpeed `+0x2B0`, Suppression.BaseValue `+0xB8`, Suppression.DistanceFalloff.Min and Max
+`+0xBC` and `+0xC0`, Suppression.FriendlySafeRadius `+0x150`, Suppression.FriendlyMultiplier `+0x154`, TravelDistanceWhizBy `+0x2D4`,
+DistanceToPlayerWhizBy `+0x2D8`, **TracerChance `+0x1F4`** (assigned, not multiplied) and **PenetrationExitSpeedMultiplier `+0x20C`**. The five
+`DA_AmmoModifier_*` assets set only EffectiveRangeMultiplier, PenetrationEffectivenessMultiplier, PenetrationExitSpeedMultiplier and TracerChance, so
+**no ammo type changes `TypicalSpeed`**, and `InitialBulletSpeed` is a weapon field the applier never touches. The weapon-component spawn routine
+`0x6B747F0` builds the request range as `EffectiveRange x 100` (`0x6BBD420`) times `GetProjectileStats(projectile, ammoTag)+0x200`, so the armor-piercing
+1.2 and hollow-point 0.8 multiply the range value that the spawn request carries (the value section 6.4 reads as `X`; inferred). The infantry fire
+path `0x6F1DDC0` calls `GetProjectileStats` with the global at `0xD2692F8`, which is never written and is used as the empty gameplay tag elsewhere,
+and `0x6BBA900` returns the base stats when the tag is 0. Constructor defaults of the projectile stats (`0x699DEE0`): `MaxProjectileLifetime` (`+0x188`)
+10.0 s (`0x41200000`, store at `0x699E09B`), `TypicalSpeed` 60000, EffectiveRangeMultiplier 1.0. The bullet projectile assets do not set
+`MaxProjectileLifetime`, so bullets live 10 s.
+
 | Quantity | Value | Source |
 |---|---:|---|
 | 155 mm artillery `InitialBulletSpeed` | 30000 cm/s (300 m/s) | **Data**, [`DA_TNK_01_Artillery_Weapon_Stats`](../data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/Artillery/DA_TNK_01_Artillery_Weapon_Stats.json) |
@@ -584,9 +600,9 @@ WARDOGS_ANALYSIS_EXE=<analysis image> python _tools/projectile_flight_check.py
    checks the lifetime, without integrating (`0x6F3BE3A`). Its meaning
    (client replay, server verification, or a mode switch) is not established.
 5. **Launch speed modifiers.** Whether `InitialBulletSpeedModifier` or attachment
-   modifiers change `InitialBulletSpeed` before the spawn request (§2).
+   modifiers change `InitialBulletSpeed` before the spawn request (§2). Round 39: ammo-type modifiers do not (§2, ammo modifier applier); `component+0x114` is applied to the pellet speed in the shotgun path (Weapon Spread §11).
 6. **`X` of the wind ramp** (§6.4): initial value and meaning (inferred
-   `EffectiveRange × 100`); the unit of the wind vector.
+   `EffectiveRange × 100`); the unit of the wind vector. Round 39: the spawn request range is `EffectiveRange × 100 ×` the ammo's `EffectiveRangeMultiplier` (AP 1.2, HP 0.8; §2), still not seen to be the same field as `X`.
 7. **Thrust instability** (§6.1): the two scalar functions `0x1498F816A` and
    `0x1498F815E`.
 8. **Artillery mode rotation** (§7): what `WDProjectileSyncState +0x80` holds

@@ -18,8 +18,8 @@ JSON schema (assets/data/weapon-damage.json)
     meta        generator, source_data_tree, assumptions, unit, rules, armor/location vocabularies, exclusions
     weapons[]   one per weapon:
         id, name, archetype, weapon_tag, caliber (primary caliber key), calibers[] (stats SupportedCaliber),
-        base_damage (of the default FMJ round), rpm (RoundsPerMinute when the stats asset sets it, else null),
-        rpm_source ("asset" | "class_default_not_in_asset"), fire_modes[], same_damage_as[] (other weapons with
+        base_damage (of the default FMJ round), rpm (RoundsPerMinute when the stats asset sets it, else the native struct default 600, ctor RVA 0x699E6C0),
+        rpm_source ("asset" | "class_default_native"), fire_modes[], same_damage_as[] (other weapons with
         identical damage cells for every ammo option),
         ammo[]: one per loadable round:
             id          FMJ | Tracer | HollowPoint | HollowPoint.Tracer | ArmorPiercing | ArmorPiercing.Tracer
@@ -98,7 +98,8 @@ def weapon_meta(name, files):
     rpm = next((v for o in st for v in dt.walk(o, "RoundsPerMinute")), None)
     modes = next((m for o in st for m in dt.walk(o, "SupportedFireModes")), [])
     return {"name": disp.get("LocalizedString") or disp.get("SourceString") or name, "archetype": arch,
-            "rpm": rpm, "rpm_source": "asset" if rpm is not None else "class_default_not_in_asset",
+            "rpm": rpm if rpm is not None else 600.0,
+            "rpm_source": "asset" if rpm is not None else "class_default_native",
             "fire_modes": [m.split("::")[-1] for m in modes]}
 
 
@@ -237,7 +238,7 @@ def build():
             "ammo type changes the result through the HP/AP rule entries and the ammo scalar against armor (DamagePipeline v2 sections 7.3, 7.9)",
             "armor classes are evaluated for Torso.Upper (torso_armor) and Head (head_armor, helmets); the location columns are for an unarmored target. In the game, vests also cover Torso.Middle and Torso.Lower, SuperHeavy armor also covers Pelvis and Arm.Upper, and Heavy, SuperHeavy and Tank helmets also cover Neck, so those locations take less damage on an armored target than their columns show",
             "damage is rounded to one decimal; damage_raw is unrounded",
-            "rpm is RoundsPerMinute from the weapon's stats asset; null where the asset omits it (the class default, 600 per Wardogs_InfantryWeapons_Stats_v1, is not applied)"],
+            "rpm is RoundsPerMinute from the weapon's stats asset; where the asset omits it (LMG_02, Glock17) the native struct default 600 is used (rpm_source class_default_native; FWDWeaponStats ctor RVA 0x699E6C0, docs/evidence/round39-weapons.md)"],
         "rules": ("Armor piercing does not add damage. Against an unarmored target it deals 0.8 times FMJ. Against armor it cuts the armor reduction by an amount that depends on the bullet's arms class (a per-class scalar), so it overtakes FMJ from Medium armor for rifle calibers and the Deagle (50AE) and from Heavy armor for 9mm, 45ACP and 45Colt. "
                   "Where the arms class gives AP a scalar of 1.0 (the 50Cal SR_04) it never beats FMJ. "
                   "Hollow point doubles unarmored damage, but the HP rule entries (-70, -55, -40 and -40 percent against the armor classes) together with armor scalar 1.5 make it far weaker than FMJ against any armor. "

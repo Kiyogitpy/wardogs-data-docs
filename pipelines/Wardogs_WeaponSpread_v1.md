@@ -280,7 +280,7 @@ for each of N pellets:
     else     :  pellet = VRandCone(Centre, I·A·π/180, I·B·π/180)                  inner (choked) pellet
 ```
 
-`MaxPelletCount` is `UWDGameSettings.ProjectileSystemSettings` `+0x18C` (settings `+0x5E4`, read through `0x6C03540`); its value is **not in the export**, so `P` is not a number yet (§14). The inner cone always fits inside the outer cone, because the centre may move only `A(1−I)`.
+`MaxPelletCount` is `UWDGameSettings.ProjectileSystemSettings` `+0x18C` (settings `+0x5E4`, read through `0x6C03540`); its value is **16** (packed `DefaultGame.ini`, [Hit Registration §4.6](Wardogs_HitRegistration_v1.md)). With `N` = 8 pellets (7mm Buckshot) and `AmmunitionFactor` 0.8: M500 `P` = 0.5 x 0.8 x 0.5 = **0.20**, MP43 `P` = 0.5 x 0.8 x 0.35 = **0.14**. The M500 choke attachments carry their own `ShotgunData` (`bOverrideShotgunData` true): Improved Cylinder Choke (`ID_MUZL_044`) choke 0.65, outer half-angle 1.36 degrees, random limit 0 to 1.75, inner multiplier 0.55, so `P` = 0.26; Full Choke (`ID_MUZL_045`) choke 0.85, outer 0.95 degrees, random limit 0 to 1.55, inner multiplier 0.6, so `P` = 0.34. The 54 other muzzle devices that have the field set it to false. The inner cone always fits inside the outer cone, because the centre may move only `A(1−I)`.
 Each pellet then goes to `0x6B96580` with speed `InitialBulletSpeed × component+0x114`; the id of every spawned pellet is collected for the RPC.
 
 **Data.** Native defaults (constructor `0x699E6C0`): `ChokeFactor` 0.8, outer half-angle 10 degrees (horizontal and vertical 10), inner multiplier 0.5, random ranges (0, 0). `7mm Buckshot` has `NumberOfPellets` 8 and `AmmunitionFactor` 0.8; the rifled slug has no pellet count (one projectile). Cooked shotguns are in §12: M500 (`DA_M12G_Stats`: choke 0.5, outer 1.56 degrees, random limit 0 to 2 degrees, inner multiplier default 0.5) and MP43 (choke 0.35, outer 1.85 degrees, random limit 0 to 3, inner 0.6). The Judge has no `ShotgunData` block, so it uses the defaults if its ammunition has more than one pellet.
@@ -401,7 +401,7 @@ All RVAs are file RVAs. "Same" means byte-identical in the static-analysis image
 
 ## 14. What is open
 
-1. **`MaxPelletCount`** (`UWDGameSettings`, config value): the inner-pellet probability `P` is unknown.
+1. **`MaxPelletCount`** is 16 (`DefaultGame.ini` `ProjectileSystemSettings`, [Hit Registration §4.6](Wardogs_HitRegistration_v1.md)); resolved in round 39. With 8 pellets and `AmmunitionFactor` 0.8, `P = 8/16 x 0.8 x ChokeFactor` = 0.20 on the M500 (choke 0.5), 0.14 on the MP43 (choke 0.35), 0.26 with the Improved Cylinder Choke and 0.34 with the Full Choke on the M500 (§11).
 2. **Aim sway and the shot.** Whether the view rotation read through character virtual `+0x840` (`0x6C98834`) includes the weapon-sway offset; the trace and camera options in `0x6B90890`, including `bSpawnProjectileFromCameraWhenAds`.
 3. **Per-shot bloom.** None found. The negative result covers writers of ext `+0x3AC`/`+0x3B0` in the item-extension code range and the single writer `UpdateSpread`; a store elsewhere in the 100 MB image was not excluded, and Blueprint-driven attribute changes were not traced.
 4. **Replication details.** Only the wire record layout and seed handling are described here (§9); anything beyond that is not covered.
@@ -410,8 +410,8 @@ All RVAs are file RVAs. "Same" means byte-identical in the static-analysis image
 7. **Character virtuals** `+0x360` (2D velocity), `+0x720` (eye point), `+0x818` (gate), `+0x840` (view rotation) are named by role only.
 8. **Frame `+0x270` echo** (`θ` in degrees) and its consumer; the snapshot at `0x6C9DB60`.
 9. **Where `component+0x114`** (muzzle-speed scale, default 1.0) is changed, and where it is applied.
-10. **AI shooters** (`AIWeaponData`, `AEB_EnemyAccuracyScaling`) were not traced; they may use a different direction path.
-11. **`srand` seed** value (call site `0x46CF6E8`).
+10. **AI shooters** (`AIWeaponData`, `AEB_EnemyAccuracyScaling`) were not traced; they may use a different direction path. Round 39: `AEB_EnemyAccuracyScaling` is an audio-event behaviour (`EnemyAccuracyScaling_Vehicle` in the vehicle weapon fire events), not an accuracy value. `AIWeaponData` on 12 stats assets holds `MinAIRange`, `MaxAIRange` (150 to 650) and `ShootCountOfBurst` (1 to 8) only; no AI spread value exists ([round 36 AI](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-ai.md)).
+11. **`srand` seed** value (call site `0x46CF6E8`). Round 39: the call at `0x46CF6E8` is in the engine start-up sequence (it seeds the C runtime from `ebx`, then calls the engine's own seeder at `0x1415C48B0` with `edi`). Both values are read from a platform call just before (`0x46CF6BE`, `0x46CF6CD`), so the seed is not a constant in the image; the other branch (`0x46CF6D9`) loads one register (`r15d`) into both, which fits a fixed-seed switch, but its value and the switch were not traced. The shot seeds are drawn from this stream (§9).
 12. **Cooked effects only.** Attribute changes made at runtime by Blueprint or by effects outside the 341 exported ones are not visible.
 13. **Runtime check.** Nothing here was observed running; the equations are static readings.
 
