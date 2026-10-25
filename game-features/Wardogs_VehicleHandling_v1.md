@@ -336,7 +336,7 @@ Steering, suspension and tracks
 ## 9. Open items
 
 - Which of `EngineData` and `DynamicsData` drives a tracked vehicle, and the unit of the torque and brake numbers, are not traced.
-- Gear order (whether the last wheeled ratio is reverse) is inferred, not traced; the native default list is two entries (3.0, 5.0) with automatic reverse on, which fits "last = reverse" ([round 45](../docs/evidence/round45-b.md), item 5).
+- Gear order: **the last entry of `GearRatios` is the reverse gear**, applied with a negative sign; the forward gears are the entries before it ([round 46](../docs/evidence/round46-b.md), item 1). So WHL_01 (4.2, 2.8, 1.9, 1.5, 1.3, 6) has five forward gears and reverse 6.0, and the native default list (3.0, 5.0) is one forward gear and reverse 5.0.
 - `FlightCharacteristics` and `DA_ArcadeControls_*` are not decoded.
 - Whether the boost switch (`bEnableBoost`, false in every wheeled asset) gates the stored boost scale is not traced.
 
