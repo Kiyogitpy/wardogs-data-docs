@@ -36,8 +36,8 @@ Rows are grouped by the kind of work: building and finishing, destroying and dam
 | Buildable Destroyed | Destroying a buildable | Per structure (see below) | Per structure (see below) |
 | Buildable Destroyed Assist | Helping to destroy a buildable | Per structure, as above, split with the assisters | Per structure, as above |
 | Buildable Finished | Finishing construction of a buildable | Base 0.5, owner assist 0.25 | Base 0.25, owner assist 0.1 |
-| Buildable Building | Contributing to a buildable under construction | 5 per build hit, owner assist 1 | 1 per build hit, owner assist 0.4 |
-| Schematic Placed | Placing a building schematic | 10 | None |
+| Buildable Building | Contributing to a buildable under construction | 5 per point of build progress inside a zone (1 outside), owner assist 1 | 1 per point of build progress, owner assist 0.4 |
+| Schematic Placed | Placing a building schematic | 10 in a control zone, 20 in a hot zone, 0 outside a zone | None |
 | Build Supplies Deposited | Placing build supplies in the FOB | Base 0.5, owner assist 0.25, default 0.4 | Base 0.25, owner assist 0.1, default 0.1 |
 | Build Supplies Consumed | Using build supplies in the FOB | Base 0.5, owner assist 0.25 | Base 0.25, owner assist 0.1 |
 | FOB Resources Used | Another player uses supplies from your FOB | Base 0.5, owner assist 0.25 | Base 0.25, owner assist 0.1 |

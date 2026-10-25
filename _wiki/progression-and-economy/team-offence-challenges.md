@@ -2,7 +2,7 @@
 title: "Team Offence Challenges"
 parent: "Progression & Economy"
 group: "Unlocks"
-description: "The two Team Offence challenges, for punishing a kill and for voting on a teamkill. The data gives no amounts for either."
+description: "The two Team Offence challenges, for punishing a kill and for voting on a teamkill. A voter forgive pays 500 cash; a punished kill pays points, not cash."
 ---
 
 # Team Offence Challenges

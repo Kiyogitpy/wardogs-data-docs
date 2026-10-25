@@ -32,7 +32,7 @@ Team Offence adds its own challenges, a punish challenge, a voter challenge and 
 
 ## Rewards
 
-A forgive decision pays the voter 500 cash and no XP. A punished kill pays points rather than cash: 1 to 5 points, halved to a maximum of 2 when the kill was flagged as a teamkill (see [Team Offence challenges](../progression-and-economy/team-offence-challenges.md#punish-points)). Points are not cash, so they do not add to the cash total.
+A forgive decision pays the voter 500 cash and no XP. A punished kill pays points rather than cash: 1 to 5 points, or 2 at most (0.4 for a Claymore or environment kill) when the kill was flagged as a teamkill (see [Team Offence challenges](../progression-and-economy/team-offence-challenges.md#punish-points)). Points are not cash, so they do not add to the cash total.
 
 ## See also
 

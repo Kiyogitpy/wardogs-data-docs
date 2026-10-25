@@ -110,7 +110,7 @@ See [Control Zone](../game-modes-and-maps/control-zone.md) for the zone rules.
 | Destroying an enemy FOB | 2,500, plus up to 7,500 by the FOB's supplies |
 | Destroying a Hot Zone Magnet structure | 3,000 |
 
-Destroying a Bunker, Recon Tower, Indirect Fire Shelter, Gate, Loudspeaker, Refuel Station or Repair Station pays 200 cash and 50 Role XP. A Vanguard CIWS pays 1,200 and 300, and an L81 Mortar or Talon 9K-SAM 650 and 175. Walls and other small buildables pay 5 to 85 cash. Placing a schematic pays 10 cash, and each build hit pays 5 cash.
+Destroying a Bunker, Recon Tower, Indirect Fire Shelter, Gate, Loudspeaker, Refuel Station or Repair Station pays 200 cash and 50 Role XP. A Vanguard CIWS pays 1,200 and 300, and an L81 Mortar or Talon 9K-SAM 650 and 175. Walls and other small buildables pay 5 to 85 cash. Placing a schematic pays 10 cash in a control zone and 20 in a hot zone, and nothing outside a zone. Building pays 5 cash per point of build progress inside a zone and 1 outside.
 
 ### End-of-match bonus
 
