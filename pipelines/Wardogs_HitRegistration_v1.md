@@ -254,7 +254,7 @@ bodies are registered as query shapes is still [open](https://github.com/Kiyogit
 
 On the fire side, when a projectile's `IgnoreInstigatorVehicleTime` (stats `+0x2E4`) is greater than 0, the
 weapon fire path (`0x6B937D0`) appends the shooter's seated vehicle (`0x6E6EBA0`) to the spawn request's
-ignore list. How the time value limits that ignore after spawning was not located (O-9). The cooked values
+ignore list. Round 41: **the time value is never used as a time**. Every access of stats `+0x2E4` in `0x6B00000`-`0x6F60000` is a copy (`0x6BB9CD1`, `0x6BBA1BB`, `0x6BBA66F`, `0x6F2C0BE`), the request store (`0x6B8FD5A`) or the single test at `0x6B937D0` (`comiss 0, [stats+0x2E4]` then `jae` skip), so the field acts as a flag (greater than 0). The vehicle is added to the request's ignore list and no expiry code was found, so it stays ignored for the whole flight (derived; O-9 closed). The cooked values
 are in §4.7.
 
 Class-level rules that are not part of the query: `ImpactIgnoreAngleClasses` (§4.4) and the
@@ -278,7 +278,13 @@ margin (about `0.1 / length` of the sweep, capped, plus `0.001`, `0x76D96E8`–`
 WDVehicleCamera, WDBuildablePlacement, WDRotor, WDProjectile, WDMeleeHit, WDWaterBody, WDExplosive and
 WDSmashableWindow). The shipped Blueprint default of `SweepProfileName` is not in `data/`, and the native
 tick passes channel 3 and the stock response parameters rather than a profile, so which query actually uses
-`ProjectileSweep` is **Open** (O-1).
+`ProjectileSweep` is **Open** (O-1, residual).
+
+**Round 41 (O-1, static).** The shape from slot `0x8B0` (`0x76D963E`) is called on the updated component held at `a2+8` (the projectile actor's root primitive), so it is that
+component's own collision shape. For the 155 mm shells the Blueprint root primitive is a `BoxComponent` with half extents **30.6 x 5.5 x 5.5 cm**
+(`BP_155mm_Standard` and `BP_155mm_Expensive`, exported with the extractor), so those shells sweep a box about 61 cm long and 11 cm wide, not a line. The query runs by channel 3
+with the stock response parameters, so the box component's own collision profile does not decide what it hits. No native reader of `SweepProfileName` (`+0x2F8`) was found in the tick
+(the displacement-`0x2F8` reads in `0x6A00000`-`0x6F60000` belong to other classes), so the `ProjectileSweep` profile is not used by this path.
 
 ### 2.6 Complex vs simple collision
 
@@ -300,7 +306,8 @@ step. Two things look like hit-scan but are not:
 - `FWDAdditionalDamageData_Projectile` (SDK, 0x0C bytes: `ProjectileIndex`, `bPenetrated`, `bPenetrationForced`,
   `bIsHitScan`, `fireid`) has a hit-scan flag. The only writer found is `0x6B71254`'s function, which stores
   `bPenetrationForced` from stats `+0x205` (`bForcePenetrateThinSurfaces`) and `bIsHitScan` as the result of a
-  byte compare (`sete`) on a context byte at `+0x2DA`; the meaning of that byte is **Open** (O-7).
+  byte compare (`sete`) on a context byte at `+0x2DA`; the meaning of that byte is **Open** (O-7). Round 41: `bIsHitScan` is true when the byte is **zero** (`cmp byte [rsi+0x2DA], r15b ; sete`, `0x6B71249`-`0x6B7125C`). The byte belongs to a 0x310-byte pending-shot entry
+(array at weapon component `+0x100`/`+0x108`), and is copied there from `request+0x128` at `0x6B71BAD`-`0x6B71BB5`; the writer of `request+0x128` was not found.
 - `UWDWeaponBehaviorComponent` (SDK) has `MuzzleTraceDistance`, `MuzzleTraceChannel` and
   `MuzzleTraceInterval` and caches a `CachedMuzzleHitResult`. That is a wall-collision check for the weapon
   (`GetWallCollisionAlpha`), not a shot.
@@ -373,6 +380,15 @@ random lerp inside `PhysMatRicochetRestitutionCoefficient[surface]` (`Min`, `Max
 with a further random scaling from `MaxDeflectionPercentage{Shallow,Sharp}Angle` (`0x6F36BB2`–`0x6F36C88`); the
 ricochet cue `0x6F380A0` is sent with tag global `0xD3815F0`; and, if the debug byte `inst+0x260` is set, an arc record is
 appended to the debug array at `inst+0x268`.
+
+**Round 41 reading of the reflection (static disassembly `0x6F36B80`-`0x6F36D6F`, decompiler output for the control flow).** With `V` the velocity, `N` the unit surface normal and `w = -(N.V) N` the normal component reversed (only when `N.V <= 0`; a bullet already moving away is not changed):
+
+1. `u` = a random unit vector in a cone of half angle `MaxRicochetAngleVariance` about `N` (`0x3FD4C50`);
+2. `V := V + |w| u`;
+3. `t = clamp(angle_deg x 0.63662, 0, 1)` (constant `0x0B440AF8` = 0.6366182836771073, applied to the impact angle **in degrees**); the deflection factor `f` is a random lerp between `lo` and `hi`, with `lo = Sharp.Min + (Shallow.Min - Sharp.Min) t` and `hi = Sharp.Max + (Shallow.Max - Sharp.Max) t` (settings `+0x424/+0x41C` and `+0x428/+0x420`); `V := V + f |w| u`;
+4. `V` is rescaled to its original speed (`0x165ED30`), then multiplied by the surface restitution `lerp(Min, Max, random)` of `PhysMatRicochetRestitutionCoefficient[surface]` (map `+0x3C8`).
+
+So the outgoing direction is `V + (1 + f) |w| u`: `f = 1` with `u = N` would be a mirror bounce, `f` below 1 skids lower than a mirror and `f` above 1 leaves steeper than a mirror. **The constant 0.63662 is 2/pi and is applied to a value in degrees**, so `t` reaches 1 at about **1.57 degrees** and the `Shallow` interval (`f` uniform in 0.2 to 10, mean 5.1) is used for essentially every ricochet; the `Sharp` interval (0.2 to 0.8) only matters for angles under 1.6 degrees. Whether the 2/pi was meant for radians is a reading of the code, not a statement from the files. Rolls use the instance seed (`inst+0xD0`) three times (cone, `f`, restitution) after the probability roll.
 
 With the packed values (§4.6) effectiveness 2 or more gives `t = 0`, so a round whose capacity is at least twice the
 thickness never ricochets; effectiveness 1 or less gives `t = 1`; in between `t = 2 - effectiveness`.
@@ -584,14 +600,14 @@ The truth table of step 4 is a network-authority matter and is not tabulated her
 | the hit actor is not matched by any element of the 8-byte array at `inst+0x130` (matcher `0x24738D0`), unless the damageable test above passed | `0x6B722E7`–`0x6B7230D` |
 | or the hit is `bExploding` (§4.1; set by `0x6B72249`–`0x6B722C6`) | `0x6B72318` |
 
-The array at `inst+0x130` is read here and in `0x6F353F0` (`0x6F35F39`); its writer was not located (O-6).
+The array at `inst+0x130` is read here and in `0x6F353F0` (`0x6F35F39`); its writer was not located (O-6). Round 41: the instance constructor `0x6F3C060` zeroes it (`0x6F3C628`) and no instruction in `0x6F30000`-`0x6F40000` appends to it (the only `+0x130` accesses are the copy routines and reads), so its elements arrive through the instance copy from the spawn request; the request-side writer is still unknown.
 
 ### 6.3 Custom hit results (`0x6B73500`)
 
 **Native.** For a hit on a character it reads the target's mesh component (`+0x3A0` of the pawn) and its body instances
 (`0x41FFAF0`) and returns a list of extra `FHitResult`s, stored in the record's `CustomHitResults` (`+0x100`). The damage builder evaluates each
 custom hit separately and keeps the highest result (see [Damage Pipeline §7.6](Wardogs_DamagePipeline_v2.md#76-the-bullet-event), "Custom hits").
-What the list holds for a typical bullet hit is **Open** (O-10).
+Round 41 (O-10, static): the function walks the array of 8-byte body pointers at the target mesh component `+0xBE0` (count `+0xBE8`) and, for each, calls the body-instance line trace (`0x41FFAF0`) with the bullet segment (`a3+112` start, `a3+136` end); every body the segment crosses contributes one `FHitResult`. `CustomHitResults` is therefore **every physics body of the character hit by the same segment** (the physics asset has 20 bodies), sorted by `0x6B6FFD0`; the damage builder keeps the best-scoring one.
 
 ### 6.4 Alignment: friendly fire and self hits
 
@@ -611,8 +627,8 @@ alignment of `Friendly` (of 146):
 | 9 | `Meta.Damage.Utility.LargeHammer` | `Percentage_Ongoing` -70 |
 
 Every other entry has alignment `None` and matches regardless. So, in the infantry table, friendly and self bullet damage is halved and not
-removed. Nothing in the trace, the eligibility test or the damage builder compares teams. Whether other damage systems (vehicles,
-buildables) use alignment, and the identity of the pawn-side value at `+0x2C0`, are **Open** (O-5). The existing
+removed. Nothing in the trace, the eligibility test or the damage builder compares teams. Round 41 resolved the pawn-side value (O-5): `+0x2C0` on a pawn is `APawn::PlayerState` (SDK `Engine_classes.hpp:14046`); `0x6DAE470` passes the player state's member at `+0x5A0`, which is `AWDPlayerStateSession::FactionComponent` (`WDGame_classes.hpp:15958`), to `0x6F143A0`, which returns the component's 8-byte **`FactionTag`** (component `+0x110`; an empty tag when the pointer is null). **Friendly means both sides have a valid player state and the same faction tag.** Two player states that both lack a faction component compare equal (both empty) and would also read as Friendly (derived). Whether other damage systems (vehicles,
+buildables) use alignment, and how non-player instigators (AI, turrets, no player state) resolve, stays **Open**. The existing
 [cash-reward row](../content/Wardogs_Meta_v2.md) that halves reward for `Meta.Damage.Category.Friendly` shows the category tag exists on the reward side.
 
 A target can also refuse damage altogether: the character's `IWDDamageable` slot `+0x30` (`0x6E6BD70`) returns the negation of `0x6E71010`, which asks
@@ -698,11 +714,22 @@ same reservation); findings in that area follow [`SECURITY.md`](https://github.c
   damageable targets get their cue from the post-damage code `0x6B717C0` instead); and, for a projectile with an arming delay, whenever the selector is not
   `0xD381600` (`0x6F38137`–`0x6F3816F`). The meaning of the subsystem bytes `+0xB0` and `+0xB1` is **Open**.
 
-The tag globals are initialised by static code and were not resolved to names (O-8).
+The tag globals are initialised by static code (each by a function that calls `RequestGameplayTag` with a string). Round 41 resolved them by reading those initialisers:
+
+| Global | Tag |
+|---|---|
+| `0xD3815E0` | `Projectile.Impact.PenetrationEnter` |
+| `0xD3815E8` | `Projectile.Impact.PenetrationExit` |
+| `0xD3815F0` | `Projectile.Impact.Ricochet` (ricochet cue, §4.3) |
+| `0xD3815F8` | `Projectile.Impact.ExplosiveBlunt` |
+| `0xD381600` | `Projectile.Impact.Final` (terminal cue, §4.1 step 8; the selector tested for projectiles with an arming delay) |
+| `0xD381608` | `Projectile.Cue.WithWhizBy` (read by the whiz-by consumer `0x6F3B0E0`) |
+| `0xD381610` | `Projectile.Cue.WithSuppression` |
+| `0xD36C4A0` | `GameplayCue.Weapon.Impact` (the `GC_Weapon_Impact_C` family) |
 
 [SDK] The cue notify Blueprint `GC_Weapon_Impact_C` (`AWDGameplayCueNotify_Actor`, tag family `GameplayCue.Weapon.Impact`) declares `SpawnImpactDecal`, `SpawnBloodDecal`,
 `CreateGlassMeshDecal` and a `DefaultSurfaceResponse`, with `EPhysicalSurface` inputs. Its graph is not in `data/`, so which surface produces which decal, effect or
-sound is **Open** (O-8). `FWDProjectileStats.ProjectileEffects.GameplayCueTag` names the in-flight cue per ammunition (for example
+sound is **Open** (O-8, residual: the tag names above are resolved; the graph is in the round 8 Blueprint dump `GC_Weapon_Impact`, 45 exports, not read here). `FWDProjectileStats.ProjectileEffects.GameplayCueTag` names the in-flight cue per ammunition (for example
 `GameplayCue.Weapon.RocketProjectile` on the 120x570 mm round) and is separate from the impact cue.
 
 ---
@@ -756,19 +783,16 @@ WARDOGS_ANALYSIS_EXE=<analysis image> python -I _tools/hit_registration_check.py
 
 ## 10. What is open
 
-1. **O-1: mover sweep.** Which collision shape slot `0x8B0` returns for an actor-driven projectile and which query, if any, uses the `ProjectileSweep` profile or
-   the actor's `SweepProfileName` (§2.5).
-2. **O-2: tapered capsules.** Whether the six tapered-capsule bodies are registered as query shapes (carried over from the collision evidence).
+1. **O-1: mover sweep.** Resolved in round 41 for the shape (root primitive's own collision shape; 155 mm shells: box 30.6 x 5.5 x 5.5 cm half extents) and the query (channel 3, stock response, §2.5). Residual: which code, if any, reads `SweepProfileName`.
+2. **O-2: tapered capsules.** Whether the six tapered-capsule bodies are registered as query shapes (carried over from the collision evidence). Round 41: the function `0x66BF0EC` that appends 0x70-byte elements and fills Radius0/Radius1/Length is an authoring-side array builder, not the runtime consumer; the Chaos geometry builder that strides `UBodySetup` `+0x78` was not found.
 3. **O-3: server-side handling of a forwarded hit.** Not documented here (§7).
-4. **O-4: fixed-tick and server-time fields.** Writers and readers of `ServerTime`, `AutoProxyFixedTickInfo` and `FromToPct` in the hit record; whether any
-   target pose is reconstructed from them.
-5. **O-5: alignment.** The identity of the object at pawn `+0x2C0` and the value `0x6F143A0` returns; whether non-infantry damage systems read alignment; how
-   non-player instigators (AI, turrets) resolve.
-6. **O-6: the array at `inst+0x130`.** Its writer and its exact meaning (§6.2).
-7. **O-7: `bIsHitScan`.** The meaning of the context byte at `+0x2DA` behind the flag (§3); whether any weapon bypasses the projectile subsystem.
-8. **O-8: impact cue tags and decal selection.** Names of the tag globals `0xD381600`, `0xD3815F0`, `0xD36C4A0`; the `GC_Weapon_Impact_C` graph (§8).
-9. **O-9: `IgnoreInstigatorVehicleTime`.** How the time limits the ignore after the spawn (§2.4). Round 40: `inst+0x129` / `+0x28D` are whiz-by flags (consumer `0x6F3B0E0`), so they are not the answer; the stat is copied to spawn-request `+0xB0` (`0x6B8FD5A`) and no timing consumer was found.
-10. **O-10: `CustomHitResults` content** for infantry hits (§6.3).
+4. **O-4: fixed-tick and server-time fields.** Round 41: the only writers of `+0x18C`/`+0x190`/`+0x19C` in `0x6B00000`-`0x6C00000` are the record's copy and move routines (`0x6B709F0`, `0x6B70750`); the builder `0x6F353F0` stores -1, so the values come from the fire RPC `Server_FireProjectile(FireId, uint16, FAutoProxyFixedTickInfo, array)` (`0x6B996D0` is its exec thunk). The RPC implementation that copies them into the record was not read. Whether any target pose is reconstructed from them is open.
+5. **O-5: alignment.** Resolved in round 41 (§6.4): same `FactionTag` on the two player states. Open: non-infantry damage systems; non-player instigators.
+6. **O-6: the array at `inst+0x130`.** Filled by the instance copy from the spawn request; request-side writer not found (§6.2).
+7. **O-7: `bIsHitScan`.** The flag is `(byte at +0x2DA) == 0`, copied from `request+0x128` (§3); the writer of that request byte and whether any weapon bypasses the projectile subsystem are open.
+8. **O-8: impact cue tags and decal selection.** Tags resolved in round 41 (§8). Open: the `GC_Weapon_Impact_C` graph.
+9. **O-9: `IgnoreInstigatorVehicleTime`.** Closed in round 41: a flag test only (§2.4).
+10. **O-10: `CustomHitResults`.** Closed in round 41: one hit per physics body crossed by the bullet segment (§6.3).
 11. **O-11: settings consumers.** `MaxPelletCount`, `MaxConsecutiveFullRefundedSubsteps`, and the exit-deflection distribution (§4.4, §4.6).
 12. **O-12: `IWDDamageable` implementations.** The tag behind slot `+0x30`, slots `+0x38`, `+0x60`, `+0x68` for each actor type (§6.2, §4.1).
 13. **O-13: runtime.** Nothing here was observed running; the trace shape and channel are static readings of the call site, and the stock Unreal definitions

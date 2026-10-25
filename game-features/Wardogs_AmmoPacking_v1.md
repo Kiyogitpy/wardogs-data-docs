@@ -175,10 +175,17 @@ Both fields (`FWDMagazineAttachmentData` `+0x68` and `+0x6C`) sit next to `Reloa
 Fallback combine curve `CR_CombineAmmoCurve` (used only when no caliber entry matches): 30 rounds -> 2.50, 60 rounds -> 4.00, 100 rounds -> 6.00.
 <!-- /ammo_packing_tables -->
 
+## 6. Native consumers (round 41, static disassembly, decompiler output unreviewed)
+
+- **Curve choice by caliber tag, with a parent search.** `0x6C2F100` looks the item's caliber tag up in the map; when the tag is absent it asks for the tag's **direct parent** and tries again, until a hit or no parent is left. So `Id.Item.556mm.Tracer` resolves to the `Id.Item.556mm` entry. Only if the whole chain misses does the caller use the default curve.
+- **Which map does what.** `+0x1C8` is the **extract** map (default `+0x30`), `+0x218` the **load** map (default `+0xB8`), `+0x268` the **combine-loose** map (default `+0x140`). `0x6B5E500` reads `+0x1C8` / `+0x30` and `+0x218` / `+0xB8`; the load rule (`UWDCustomInventoryOperationRule_LoadAmmo` slot 86, `0x6C47420`) reads `+0x218` / `+0xB8` for a load into a magazine and `+0x268` / `+0x140` for combining loose rounds of one caliber.
+- **Input and output.** The curve is evaluated at the **round count** (`0x6B5E566`: the integer argument converted to float, then `0x6C26830`, the rich-curve read of the external curve). The result is multiplied by the magazine's `+0x6C` field (extract term) or `+0x68` field (load term) and the two are added (`0x6B5E500`, called twice by `CombineAmmo` `0x6B554B0`). Whether the sum is seconds is still inferred from its use as an operation duration.
+- **Defaults and the int `48`.** The scalars at `+0x2B8`, `+0x2BC`, `+0x2C0` are unset in the asset; `+0x2C4` is 48 (the asset's own value). Their consumers were not found (the load rule does not read them).
+
 ## Still Not Pulled / Limitations
 
 - The unit of the output (seconds assumed) and the input (round count) are inferred, not recovered; no UI or timer consumer was read this round.
-- Native consumer for the combine-loose map (`+0x268`) and default (`+0x140`) not traced; the stored int `48` at `+0x2C4` and the three default-valued scalars are unexplained.
-- Which gameplay-tag parent search results apply to tags such as `Id.Item.556mm.Tracer` (the tags on the magazines above) is not traced beyond the 12 tag keys listed.
+- Native consumer for the combine-loose map and default: found in round 41 (section 6). The stored int `48` at `+0x2C4` and the three default-valued scalars are still unexplained.
+- The parent-tag search is found (section 6); which tags the shipped magazines carry beyond the 12 keys is not listed here.
 - Standalone curve assets do not store an extrapolation mode in the export; clamping past the last key is assumed.
 - No in-game timing was measured, so none of the example values are verified against play.
