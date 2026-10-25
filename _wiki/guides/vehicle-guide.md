@@ -50,7 +50,7 @@ Tips that follow from the table:
 - **The Little Bird family takes the most rifle damage of any helicopter.** The MH-6, AH-6M and AH-6R take 7.5%, against 5% for the Z20 Lakota and the Havoc.
 - **The Havoc has the most main health of any helicopter, 800 HP,** but it costs 28,000 cash, the highest price in the vehicle vendor. See the [Havoc](../vehicles/havoc.md) article.
 - **Among helicopters, the Z20 Lakota gives the most seats per cash.** It has 13 seats for 7,400 cash, about 570 cash per seat (derived). The MH-6 has 6 seats for 6,250 cash, about 1,040 per seat (derived). The Bobcat and the Kodiak [Pickup] are cheaper per seat, but both are ground vehicles.
-- **Speed is a relative number here.** The data stores 445 for the Z20 Lakota and 79 for the Ural, but does not say what unit those are in, so compare speeds within a role rather than across them.
+- **Speed is a relative number here.** The data stores 445 for the Z20 Lakota and 79 for the Ural, and the vendor stat sheet labels that figure km/h, but the values were not checked in play, so compare speeds within a role rather than across them.
 
 ## Keeping it alive
 

@@ -14,7 +14,7 @@ description: "Top speed, torque, gearing, steering, braking and maximum incline 
 | Applies to | Wheeled, tracked and rotary vehicles |
 | Units | Mostly not labelled in the data (shown as stored) |
 | **Data** | |
-| Acceleration time | Not yet known |
+| Acceleration time | Not stored in the data |
 | Curves | [Vehicle Curves](../../game-features/Wardogs_VehicleCurves_v1.md) |
 {: .wiki-infobox }
 
@@ -32,7 +32,7 @@ The torque curve is the engine's pull at each engine speed. A peak of 475 at 5,5
 
 In a wheeled vehicle's gear list, the last ratio is the reverse gear, applied in the opposite direction (confirmed in the game code). The other entries are the forward gears, in order. The Bobcat's list, 4.2, 2.8, 1.9, 1.5, 1.3 and 6, therefore gives five forward gears with a reverse ratio of 6.0. The Humvee's list ends in 3.6, which is its reverse, so it also has five forward gears. The tracked vehicles' gear lists were not checked this way.
 
-The data does not store a 0 to top speed time, so acceleration is shown here only through the torque and first gear numbers. The actual acceleration time is not yet known.
+The data does not store a 0 to top speed time, so acceleration is shown here only through the torque and first gear numbers. The game files hold no acceleration time to read.
 
 ### Steering
 

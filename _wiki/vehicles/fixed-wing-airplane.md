@@ -39,7 +39,7 @@ The airplane has two seats, a driver and one passenger. Its model still uses pla
 
 ## Armor and damage
 
-The airplane lists 150 HP at start. The data gives threshold triggers on its main health at 90% and on its fuel tank at 90%, 50% and 0%. The fuel tank has three fuel-leak effects of 0.1, 0.4 and 0.5 per second. The data does not say which threshold drives which leak.
+The airplane lists 150 HP at start. The data gives threshold triggers on its main health at 90% and on its fuel tank at 90%, 50% and 0%. The fuel tank has three fuel-leak effects of 0.1, 0.4 and 0.5 per second. The leaks pair with the tank thresholds in order: 0.1 per second below 90%, 0.4 below 50% and 0.5 at 0%.
 
 Every other armed or armored vehicle splits its body into damage zones, such as the hull, engine and fuel tank. The airplane has none: no zones and no hit boxes on its model. A bullet, rocket or explosion that hits it finds no zone to damage, so the data gives it no way to lose health from enemy fire. The 150 HP and the thresholds therefore have nothing feeding them, and no hit counts are listed. Its damage rules are copied from the Little Bird family (rifle rounds would do 7.5% of their damage), but with no zones they never apply.
 
@@ -67,7 +67,7 @@ The airplane has no weapons. It has two seats: a driver seat and an active passe
 
 ## Vehicle spawns
 
-The airplane falls under the same general air tag as the helicopters. 20 of the 21 air vehicle yards accept any air vehicle, so their rules would allow it, while the ground and light yards list it as excluded. No yard names it, and the data does not say whether it is ever placed (not known). See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
+The airplane falls under the same general air tag as the helicopters. 20 of the 21 air vehicle yards accept any air vehicle, so their rules would allow it, while the ground and light yards list it as excluded. No yard and no map file names it, so the game files cannot show whether any build ever placed it. See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
 
 ## See also
 

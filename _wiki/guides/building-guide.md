@@ -125,7 +125,7 @@ Restock costs at the Supplies lot price of 10 cash per 50 are derived: 200 Ammo 
 
 ### Tips that follow from the numbers
 
-- **Only the Stingray has a target list in the data.** It is air-only, so it is the only emplacement here whose role is stated. For the other guns, the data gives the range, rate or lock-on time but not the targets, so this guide does not say what they counter.
+- **Every lock-on emplacement is air-only in the data.** The Stingray, Talon 9K-SAM, Vanguard CIWS, L81 Mortar and MG Nest all carry a target list of air vehicles only. The data does not show how the mortar or the player-operated MG Nest uses it.
 - **Health and price.** The Vanguard CIWS has the most health (5,000) and costs 1,200 Build Supplies, 1.85 times the 650 of the Talon, Stingray and MG Nest (derived). The L81 Mortar is the cheapest gun at 600 Build Supplies, with 3,000 HP, the same as the Talon and Stingray.
 - **The MG Nest is the weakest finished emplacement.** It has 1,800 HP when finished, and the 3,000 HP figure applies only while it is under construction ([MG Nest](../building/mg-nest.md#health)).
 - **The Stingray has the largest restock.** It needs 900 Mechanical Supplies and 5,000 cash each time, while the other guns restock with Ammo Supplies only ([Stingray](../building/stingray.md#overview)).

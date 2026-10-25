@@ -98,7 +98,7 @@ Leaving a moving vehicle can also hurt you. The damage depends on the vehicle's 
 ## Not yet known
 
 - How the acceleration units map to metres per second.
-- What the slow-walk setting multiplies in play.
+- How the slow-walk setting changes speed. The data stores three input scales for it (0.2, 0.4 and 0.6), but the code that applies the chosen scale to walking speed was not found.
 - How much stamina a plain sprint uses, if any.
 
 ## See also

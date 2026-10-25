@@ -61,7 +61,7 @@ The round counts are examples. The magazine's capacity is not stored on the maga
 ## What is not yet known
 
 - Whether the times are seconds in play. The unit is inferred from how the game uses them.
-- How many rounds each magazine holds, since the capacity is not on the magazine item.
+- How many rounds each magazine holds is set by the weapon's magazine slot, not by the magazine item, so this page does not list capacities. Each weapon article gives its own.
 - Which magazine's factor applies to which half of a combine.
 
 ## See also

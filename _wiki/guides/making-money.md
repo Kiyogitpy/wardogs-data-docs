@@ -78,19 +78,19 @@ The slip labels its return as the stake times the total odds, with a cap of 5,00
 
 - Count is a weak lever for odds. Kills go from 1.001 at one to three kills to 1.2004 at 25 kills, so going from 3 kills to 25 raises the odds by about 0.2 ([Wagers](../progression-and-economy/wagers.md#odds)).
 - Conditions raise odds, and each one is an extra rule on the wager. "Deathwish" multiplies odds by 10.0, "Time limit" by 4.0 and "No vehicles" by 3.0, while "With a $20k loadout" gives 1.05 ([Wagers](../progression-and-economy/wagers.md#conditions)).
-- The data does not say whether two conditions on one wager multiply together, so do not stack them expecting the product ([Wagers](../progression-and-economy/wagers.md#conditions)).
+- The server settles the payout, so the game files do not say whether two conditions on one wager multiply together, so do not stack them expecting the product ([Wagers](../progression-and-economy/wagers.md#conditions)).
 
 ## The Gold Exchange
 
 The Gold Exchange turns cash into Gold Bars, which buy cosmetics only ([Currencies](../progression-and-economy/currencies.md#gold-bars)).
 
 - **Unlock.** The exchange unlocks at Wardog level 35 and costs 150,000 cash to unlock.
-- **Rate.** The server sets the rate and it changes over time. The client holds no rate, so the cash price of a Gold Bar is not known.
+- **Rate.** The server sets the rate and it changes over time. The client holds no rate (its exchange table is empty), so the cash price of a Gold Bar is set by the server and cannot be read from the game files.
 - **No resale.** The exchange text says a gold exchange cannot be resold or refunded.
 - **Season end.** At the end of a major update cycle, level progression and cash are reset. Any cash left over is exchanged for Gold Bars automatically on the server ([Currencies](../progression-and-economy/currencies.md#gold-bars)).
 - **Cost of cosmetics.** The Gold Market entries cost 5 to 30 Gold Bars each ([Currencies](../progression-and-economy/currencies.md#gold-market)).
 
-Because the rate is set by the server, the number of Gold Bars that a cash amount buys is not known from the data.
+Because the rate is set by the server, the number of Gold Bars that a cash amount buys cannot be read from the game files.
 
 ## What is worth buying early
 

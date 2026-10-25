@@ -30,7 +30,7 @@ Each weapon type and vehicle type has its own mastery progress. The mastery scre
 
 - **Per type.** Progress is kept for each type, not for each weapon or vehicle. The screen lists which weapons and vehicles belong to each type.
 - **Two tabs.** The platform mastery screen has a Progression tab and a Challenges tab.
-- **XP.** The data gives no XP for any weapon or vehicle. No item in this build has a platform XP tag set (it is empty on all 628 item rows), so the data does not say how mastery XP is earned.
+- **XP.** The data gives no XP for any weapon or vehicle. No item in this build has a platform XP tag set (it is empty on all 628 item rows), so how mastery XP is earned is not in the game files, and the backend has no record type for it.
 - **Separate from role mastery.** Role mastery is a different track for the six roles, with its own XP curve. See [Cash and Rewards](cash-and-rewards.md#role-mastery-xp).
 
 ## Weapon types

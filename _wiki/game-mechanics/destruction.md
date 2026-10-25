@@ -14,7 +14,7 @@ description: "What can be knocked down in the world, which explosives and vehicl
 | Street objects | 23 meshes (signs, poles, benches, bins, a traffic cone) have no break-apart piece in the data |
 | **Demolition** | |
 | Brought down by | Explosives (by size), vehicles (by type) and some player-built structures |
-| Health | Not yet known for world props |
+| Health | None in the game files for world props |
 | **Internal name** | DA_NormalBuilding_MeshToPrefabLookup, DA_AnonymousBuilding_MeshToPrefabLookup, DA_Demolition_* |
 {: .wiki-infobox }
 
@@ -69,14 +69,14 @@ Season 2 added one new metal fence, which the larger explosions and larger vehic
 
 The minimum distances are attached to each explosion rule in the data. The data does not give their unit or confirm what they do, so they are shown as the raw values.
 
-A collision that can break a building piece or a decorative piece has to pass a force threshold: 1,200 for building pieces and 400 for decorative pieces. Damage from a type the data flags for destruction ignores these thresholds and breaks the piece whatever the force. The data gives the thresholds no unit, so they are shown as raw values.
+A collision that can break a building piece or a decorative piece has to pass a force threshold: 1,200 for building pieces and 400 for decorative pieces. Damage from a type the data flags for destruction ignores these thresholds and breaks the piece whatever the force. Each is multiplied by 1,000 before the check, so the real thresholds are 1,200,000 and 400,000 in an internal value (speed times a scale). The game does not name a unit for it, so the thresholds are shown as raw values.
 
 Two curves in the data scale building destruction with an angle and with a distance. Their output is not stated, so the value they produce is **not yet known**:
 
 - The angle curve starts at 0.7, falls to 0.2 at 90, and reaches 0 at 100. The angle unit is not stated.
 - The distance curve is 1.0 up to 2,000, falls to 0.5 at 50,000 and to 0.1 at 75,000. The distance unit is not stated.
 
-Health of world props, how many hits each takes, and how long a building piece takes to fall are not in the data. They are **not yet known**.
+World props and building pieces hold no health, hit count or fall time in the game files. The building pieces carry only a debris look and, for one piece, an indestructible flag. A piece breaks when a hit passes the force thresholds above, so there is no health to state.
 
 ## Wreck explosions
 

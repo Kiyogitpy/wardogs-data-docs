@@ -74,7 +74,7 @@ Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun,
 |---|---|---:|---|---:|
 | [AMR 50](weapons/amr-50.md) | .50 Cal | 41.5 rounds/min | AMR 50 5 RND Magazine | 14800 |
 | [MK22](weapons/mk22.md) | .308 Win | 46 rounds/min | MK22 10 RND Magazine | 6400 |
-| [Mosin Nagant](weapons/mosin-nagant.md) | 7.62x54mm | 46 rounds/min | Mosin Standard Mag | 4500 |
+| [Mosin Nagant](weapons/mosin-nagant.md) | 7.62x54mm | 46 rounds/min | Mosin Standard Mag (5 rounds) | 4500 |
 | [Scout Rifle TD](weapons/scout-rifle-td.md) | 5.56x45mm | 46 rounds/min | None, the chamber holds 1 (5.56x45mm) | 1200 |
 | [SV98](weapons/sv98.md) | 7.62x54mm | 46 rounds/min | SV98 10 RND Magazine | 5200 |
 

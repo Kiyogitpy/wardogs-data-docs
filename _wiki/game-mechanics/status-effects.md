@@ -47,7 +47,7 @@ In Wardogs, "bleeding" means the bleed-out timer. There is no damage over time: 
 
 ## Burning
 
-Molotov fire creates a fire area that lasts 45 s. A player standing in it takes 15 damage each time the fire ticks, which happens every 0.4 s. That is 37.5 health per second, derived from those two values, while in the fire. A burning screen effect blurs and darkens the view and desaturates the colours over about half a second. The effect ends when the player leaves the fire area. The data does not say whether a player's own fire or a teammate's fire hurts, because that rule was not traced. Vehicles in the fire lose 5 health per second.
+Molotov fire creates a fire area that lasts 45 s. A player standing in it takes 15 damage each time the fire ticks, which happens every 0.4 s. That is 37.5 health per second, derived from those two values, while in the fire. A burning screen effect blurs and darkens the view and desaturates the colours over about half a second. The effect ends when the player leaves the fire area. The fire is credited to the player who threw the Molotov, and the damage tables give fire no friendly-fire reduction. So a player's own fire and a teammate's fire read as hurting at full strength (a reading of the tables, not tested in play). Vehicles in the fire lose 5 health per second.
 
 ## Suppression
 
@@ -97,7 +97,7 @@ Barbed wire has an effect that sets movement to 7.5% of normal speed. The data d
 
 - How the suppression values turn into what a player sees in play; the game was not run.
 - What "revived by an enemy" does to the player. A resuscitator used on the other faction gives it, for 60 s, and marks the revive as an enemy revive. What the state does to the player beyond that tag was not traced.
-- Whether a player's own fire or a teammate's fire hurts.
+- Whether a rule outside the damage tables switches friendly fire off for fire.
 
 ## See also
 

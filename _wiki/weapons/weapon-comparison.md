@@ -41,7 +41,7 @@ One table for every weapon that fires bullets or shells. Click a column heading 
 | [MP43](mp43.md) | Shotgun | 12 gauge | 900 | 2 | 400 | 198.4 | 1 | 0.00 | 2 | 0.07 | 12.4 |
 | [AMR 50](amr-50.md) | Sniper rifle | .50 Cal | 41.5 | 5 | 14800 | 207.9 | 1 | 0.00 | 2 | 1.45 | 17.5 |
 | [MK22](mk22.md) | Sniper rifle | .308 Win | 46 | 10 | 6400 | 118.8 | 1 | 0.00 | 2 | 1.30 | 15.0 |
-| [Mosin Nagant](mosin-nagant.md) | Sniper rifle | 7.62x54mm | 46 | not yet known | 4500 | 116.2 | 1 | 0.00 | 2 | 1.30 | 25.0 |
+| [Mosin Nagant](mosin-nagant.md) | Sniper rifle | 7.62x54mm | 46 | 5 | 4500 | 116.2 | 1 | 0.00 | 2 | 1.30 | 25.0 |
 | [Scout Rifle TD](scout-rifle-td.md) | Sniper rifle | 5.56x45mm | 46 | 1 | 1200 | 73.9 | 2 | 1.30 | 3 | 2.61 | 15.0 |
 | [SV98](sv98.md) | Sniper rifle | 7.62x54mm | 46 | 10 | 5200 | 116.2 | 1 | 0.00 | 2 | 1.30 | 15.0 |
 

@@ -62,7 +62,7 @@ Short answers to the questions players ask most often. Each answer gives the num
 
 **How many rifle rounds destroy a Humvee?** About 715 to the body, or 129 through the fuel tank. Both counts are derived at point blank with full metal jacket, not measured in play ([Vehicle Guide](vehicle-guide.md)).
 
-**Do flares stop missiles?** Not known. An in-game tip says flares can "momentarily prevent" heat-seeking projectiles from locking on, but a search of the client found no rule that breaks a lock, and the data does not say how long a burst would last against a given launcher. A server-side effect is not ruled out ([Countermeasures and Flares](../vehicles/countermeasures-and-flares.md)).
+**Do flares stop missiles?** The game files do not show it. An in-game tip says flares can "momentarily prevent" heat-seeking projectiles from locking on, but a search of the client found no rule that breaks a lock, and the data does not say how long a burst would last against a given launcher. A server-side effect is not ruled out ([Countermeasures and Flares](../vehicles/countermeasures-and-flares.md)).
 
 **How do I refuel?** At a Refuel Station inside a Forward Operating Base. The Fast option restores 5% of the tank for 75 cash over 3 s, and the Max option restores up to 100% over 9 s. A Fuel Canister also refuels a vehicle ([Vehicle Guide](vehicle-guide.md), [Refuel and Repair Stations](../building/refuel-and-repair-stations.md)).
 
@@ -106,7 +106,7 @@ Short answers to the questions players ask most often. Each answer gives the num
 
 **How much cash do I start with?** You start with 10,000 cash. The loading-screen tip says cash carries over between matches, and a server setting, Persistent Progression, switches that on or off ([Currencies](../progression-and-economy/currencies.md)).
 
-**How do I get Gold Bars?** Exchange cash at the Gold Exchange, which unlocks at Wardog level 35 for 150,000 cash. The server sets the rate, and the rate is not known from the data. Gold Bars buy cosmetics only ([Currencies](../progression-and-economy/currencies.md), [Making Money](making-money.md)).
+**How do I get Gold Bars?** Exchange cash at the Gold Exchange, which unlocks at Wardog level 35 for 150,000 cash. The server sets the rate and it changes over time, so the rate is not in the game files (the exchange table in the files is empty). Gold Bars buy cosmetics only ([Currencies](../progression-and-economy/currencies.md), [Making Money](making-money.md)).
 
 **Can I buy Gold Bars with real money?** The client data has no Gold Bar pack, so it does not show whether they are sold for money ([Currencies](../progression-and-economy/currencies.md)).
 
@@ -130,7 +130,7 @@ Short answers to the questions players ask most often. Each answer gives the num
 
 **How long does the VIP have before the mission fails?** In VIP Escort the mission fails 10 s after the VIP goes critical or disconnects. The data does not say whether a revive stops that clock ([VIP Escort](../game-modes-and-maps/vip-escort.md), [PvE Guide](pve-guide.md)).
 
-**What does Hunter Killer include?** Its data is not finished. It sets no soldiers, objectives, player faction or starting cash, so those answers are not yet known ([Hunter Killer](../game-modes-and-maps/hunter-killer.md)).
+**What does Hunter Killer include?** Its data is not finished. It sets no soldiers, objectives, player faction or starting cash, so the game files have no answer for them ([Hunter Killer](../game-modes-and-maps/hunter-killer.md)).
 
 ## Sources
 

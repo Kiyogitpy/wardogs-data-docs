@@ -29,15 +29,15 @@ All six emotes use the same placeholder icon in this build, so none has final ar
 | Rock Paper Scissors | 5 | Gold Market |
 | Shh | 5 | Gold Market |
 | Paper | Not sold | No price in the data |
-| Rock | Not sold | Not yet known |
-| Scissors | Not sold | Not yet known |
+| Rock | Not sold | Not in the game files |
+| Scissors | Not sold | Not in the game files |
 
 The three priced emotes are worth 15 Gold Bars in total. Rock Paper Scissors is the combined emote. The data does not confirm how it relates to Rock, Paper and Scissors.
 
 ## Cost and unlocking
 
 - **Gold Market.** Shh, Rock Paper Scissors and Middle Finger are bought with Gold Bars. Gold Bars are covered in [Currencies](currencies.md).
-- **Rock, Paper and Scissors.** These have an emote entry but no cosmetic row, so the data gives them no price and no unlock. The game files give them no price or unlock, so how they are obtained is not in the data.
+- **Rock, Paper and Scissors.** These have an emote entry but no cosmetic row, so the data gives them no price and no unlock. The game files hold no price or unlock for them, so how they are obtained is not shown.
 - **No level gate.** The season schedule that would tie an emote to a level is empty in this build. See [Season 1 Cosmetics](season-01-cosmetics.md).
 
 ## Not yet in the data

@@ -19,13 +19,13 @@ description: "The Medic role: 4 skills for medical items, medkit uses and sprint
 | Internal name | Meta.Role.Medic, DT_MedicSkills |
 {: .wiki-infobox }
 
-Medic is one of the six roles and has the fewest skills with numbers, four. Its tree has 23 nodes. The other 19 have no number in the game files and no game code reads them, so their effect is not known. Two skills tune medical items: the medic switches to them faster, and a medkit lasts more uses. The other two give a short sprint boost to the medic who has just revived a teammate and to the teammate who was revived. A bare-hands revive pays 1,500 cash, more than a revive with a defibrillator.
+Medic is one of the six roles and has the fewest skills with numbers, four. Its tree has 23 nodes. The other 19 have no number in the game files and no game code reads them, so their effect is not in the game files. Two skills tune medical items: the medic switches to them faster, and a medkit lasts more uses. The other two give a short sprint boost to the medic who has just revived a teammate and to the teammate who was revived. A bare-hands revive pays 1,500 cash, more than a revive with a defibrillator.
 
 ## Overview
 
 The skills apply to medical items and to the revive itself. The medical item skills apply to items in the medical archetype or to a specific item, and the revive skills apply after a revive ends.
 
-Each skill's value comes from its curve at the skill's level. The unlock cost of each skill level is not in the game data, so it is not yet known (see [Skills](skills.md)).
+Each skill's value comes from its curve at the skill's level. The game files hold no unlock cost or skill points for the skill levels (see [Skills](skills.md)).
 
 ## Skills
 

@@ -21,7 +21,7 @@ The tables are for comparing, not for ranking. A vehicle with fewer hit points o
 
 ## Reading the tables
 
-- **As stored** means the number is copied from the data without conversion. The data does not label the speed and fuel units, so those are plain numbers. Main health is in HP, prices are in cash, and the aircraft masses are in kilograms.
+- **As stored** means the number is copied from the data without conversion. The vendor stat sheet labels speed as km/h; the data does not label the fuel unit. Both are shown as stored. Main health is in HP, prices are in cash, and the aircraft masses are in kilograms.
 - **Derived** means the number was worked out from the data. Rifle damage taken is the share of a full-power 5.56 mm hit that reaches the hull, as each article gives it. Hits to destroy are counts from simulating the damage rules with full-power, point-blank, standard (FMJ) hits. They are estimates, not measured in game. The value-for-money figures are plain division of the shop price by the seat count or by the main health.
 - Rockets, grenades, C4, mines and the other explosives have their own table, Hits to destroy by explosive. It uses a different rule from the bullet table above, so read its assumptions before comparing the two.
 - Mass is shown for the aircraft only. The wheeled and tracked articles list a mass too, but in units the data does not name.
@@ -148,7 +148,7 @@ How to read the table:
 - **The RPG-7 is never stronger than the MAAWS here, and often much weaker.** Its rocket takes 6 hits on a Humvee where the MAAWS takes 2. The Humvee's rule keeps about 0.9 of the RPG-7 rocket's damage and multiplies the MAAWS rocket's damage by 3.9.
 - **Armor angle and thickness play no part.** The damage rules for tanks look only at the type of damage and at the part that was hit, not at the angle, the thickness or the side of the armor. See [Vehicle damage](vehicle-damage.md).
 - **The B-13 rocket is a helicopter pod rocket.** The Havoc and the AH-6R [Rockets] fire it. The data lists no hand-carried launcher for it.
-- **The 9K333 Verba is listed with the launchers because its rocket is an explosive round.** The data does not say it needs a target lock, so the counts treat it as any other rocket.
+- **The 9K333 Verba is listed with the launchers because its rocket is an explosive round.** The data sets it to fire only while locked on to an air vehicle, so the counts show what its rocket does to each vehicle, not whether it can be fired at it.
 
 The Z20 Lakota [Miniguns] article says its rifle damage works as on the Z20 Lakota and gives no separate table. The Fixed-wing airplane article lists no hit counts: it has no damage zones, so hits to it do nothing.
 

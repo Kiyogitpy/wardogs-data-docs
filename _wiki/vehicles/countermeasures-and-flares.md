@@ -63,11 +63,11 @@ Season 2 renamed the flares input to Fire Countermeasures. The key stays the sam
 | [T-72B3](t-72b3.md) | Smoke | 1 charge | Smoke screen active for 16 s, usable again after 90 s |
 | [M113 APC SV](m113-apc-sv.md) | Smoke | 255 charges | Smoke screen active for 16 s, usable again after 90 s |
 
-The Flakpanzer Gepard, the T-72B3 and the M113 APC SV have a smoke countermeasure in their game systems data, like the L2A6 (one charge each on the Gepard and T-72B3, 255 on the M113). The charge counts are the starting values in the data. Smoke charges follow the vehicle inventory in the same way as flares: the smoke item must be added to the vehicle. The data does not say what sells or gives smoke charges. The SPH-2 variant, the Kodiak, Humvee, Dune Buggy, Bobcat, Ural and Wolf-110 have none.
+The Flakpanzer Gepard, the T-72B3 and the M113 APC SV have a smoke countermeasure in their game systems data, like the L2A6 (one charge each on the Gepard and T-72B3, 255 on the M113). The charge counts are the starting values in the data. Smoke charges follow the vehicle inventory in the same way as flares: the smoke item must be added to the vehicle. The vehicle vendor sells smoke for 750 cash, one charge per purchase, the same as flares. The SPH-2 variant, the Kodiak, Humvee, Dune Buggy, Bobcat, Ural and Wolf-110 have none.
 
 ## Tips that follow from the numbers
 
-- Flares are the only countermeasure for the helicopter and airplane group. Whether they stop a heat-seeking lock is not known: the client code read has no flare check on the lock, so any such rule would sit elsewhere.
+- Flares are the only countermeasure for the helicopter and airplane group. The client code read has no flare check on the lock, so the game files do not show whether they stop a heat-seeking lock. Any such rule would sit elsewhere, and a server-side effect is not ruled out.
 - A smoke screen is active for 16 seconds, then the vehicle must wait until 90 seconds after the first use before it can use smoke again. Use it as a short cover, and plan the next one around the 90 second wait.
 - Because the airplane's flares are a fixed count of 3, use them when they matter most rather than as a routine.
 - Each helicopter starts with 2 flares. Each press uses one and then waits 5 seconds before the next, so plan a flight around that count. The "3 bursts" in the item text is not a count.

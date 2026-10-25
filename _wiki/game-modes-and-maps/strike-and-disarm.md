@@ -16,7 +16,7 @@ description: "A single-life PvE mission on the Bakurani world: the team hacks a 
 | **Objective** | |
 | Objective | Keep Lonestar soldiers away from the laptop until the virus is uploaded, then board the extraction helicopter |
 | **Rewards** | |
-| Mission rewards | Not in the data; see Rewards |
+| Mission rewards | None set in the game files; see Rewards |
 | Internal name | StrikeDisarm_01 |
 {: .wiki-infobox }
 

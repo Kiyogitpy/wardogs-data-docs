@@ -26,7 +26,7 @@ Assault is one of the six roles. Each role has its own skill set and its own mas
 
 Most Assault skills apply to one weapon archetype. A skill for assault rifles helps only assault rifles, and a skill for SMGs helps only SMGs. The movement and handling skills apply to the player or to the held weapon in general.
 
-Each skill's value comes from its curve at the skill's level. The unlock cost of each skill level is not in the game data, so it is not yet known (see [Skills](skills.md)).
+Each skill's value comes from its curve at the skill's level. The game files hold no unlock cost or skill points for the skill levels (see [Skills](skills.md)).
 
 ## Skills
 

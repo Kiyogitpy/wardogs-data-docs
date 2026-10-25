@@ -38,7 +38,7 @@ The MG Nest starts with 60 rounds and is restocked with Ammo Supplies. A restock
 
 ### Weapon
 
-The gun fires 600 rounds/min out to an effective range of 1,000 m. It holds 60 rounds and reloads in 8.0 s. The weapon data leaves the rate unset, so 600 rounds/min is the game's default rate. The data lists no targets for the gun, because it is a stationary weapon that a player operates, so there is no target list to give.
+The gun fires 600 rounds/min out to an effective range of 1,000 m. It holds 60 rounds and reloads in 8.0 s. The weapon data leaves the rate unset, so 600 rounds/min is the game's default rate. The weapon data carries the same lock-on setup as the other stationary guns: a 2.0 s lock, a 0.5 s delay after the lock, and a target list of air vehicles only (the Little Bird family, the Havoc, the Huey and the fixed-wing airplane), with fire allowed only while locked on. The data does not show how a gun that a player operates uses it.
 
 ### Health
 
@@ -82,6 +82,6 @@ The Season 2 changes page lists no value changes for the MG Nest's build cost or
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): health of the finished MG Nest and of the build plot.
 - [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
 - [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings
-- [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): the gun's rate, range, magazine and reload, and the absence of a target list.
+- [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): the gun's rate, range, magazine and reload, and the absence of a target list in the stats and actor data.
 - [Round 39 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md): MG Nest gun rate and range.
 - [Round 40 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-vehicles-explosives.md): the same topics, with the round 40 values where they differ.

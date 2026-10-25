@@ -93,7 +93,7 @@ The Kuzminki and Ramenki boards look swapped in the data. Which team gets which 
 
 - A player may own at most 2 spawned vehicles at a time.
 - After a player deploys onto a spawn vehicle, the deployment board's cooldown is 600 s. This is the stored value, and its start trigger was not traced.
-- How long a destroyed vehicle takes to return is not in the data.
+- The deployment board's built-in respawn timers are 300 s, or 60 s for a losing side. They most likely time the side's spawn vehicle (inferred from their names). The data gives no return time for the other yard vehicles.
 
 For which vehicles to use against which targets, see the [Vehicle Guide](vehicle-guide.md) and the [Anti-Vehicle Guide](anti-vehicle-guide.md).
 

@@ -36,6 +36,12 @@ wdamage = {w["id"]: w for w in jload("assets/data/weapon-damage.json")["weapons"
 falloff_doc = jload("assets/data/weapon-damage-falloff.json")
 # muzzle speed, effective range (with its source), chamber and magazine per weapon, from the cooked export
 CAP = {w["id"].split("Id.Item.", 1)[1]: w for w in jload("assets/data/weapon-capacity.json")["weapons"]}
+# Some capacity rows are keyed by a friendly item name (for example Mosin) while the
+# loadout code is the platform code (WEPN_017). Add the platform code as an alias.
+for _w in list(CAP.values()):
+    _m = re.match(r"DA_(WEPN_\d+)_Stats", _w.get("stats_asset") or "")
+    if _m and _m.group(1) not in CAP:
+        CAP[_m.group(1)] = _w
 falloff = {w["id"]: w for w in falloff_doc["weapons"]}
 DIST = falloff_doc["meta"]["distances_m"]
 TAG_TEXT = read("content/Wardogs_TagDisplayText_v1.md")

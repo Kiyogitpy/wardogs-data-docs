@@ -143,7 +143,7 @@ The data gives one XP value per level. Each value is the total Role XP needed to
 
 ### Mastery rewards per level
 
-Each role's mastery runs from level 0 to level 100 and gives no reward of its own: the level table has an empty reward list for every level. What a level opens is the role's unlock tree, where each item or vehicle needs a role level and a cash price. The table counts those unlocks for each tree. The Wardog tree is the overall level, and it runs to level 150. How the six role levels add up to the overall level is not in the data.
+Each role's mastery runs from level 0 to level 100 and gives no reward of its own: the level table has an empty reward list for every level. What a level opens is the role's unlock tree, where each item or vehicle needs a role level and a cash price. The table counts those unlocks for each tree. The Wardog tree is the overall level, and it runs to level 150. The game files hold no rule for how the six role levels add up to the overall level.
 
 | Tree | Unlocks | Level range | Cash in the tree |
 |---|---:|---:|---:|

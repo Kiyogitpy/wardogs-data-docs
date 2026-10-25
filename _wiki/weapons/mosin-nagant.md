@@ -17,7 +17,7 @@ description: "The Mosin Nagant sniper rifle: fire rate, damage by body part, ran
 | Fire rate | 46 rounds/min |
 | Muzzle velocity | 865 m/s |
 | Effective range | 500 m |
-| Standard magazine | Mosin Standard Mag |
+| Standard magazine | Mosin Standard Mag (5 rounds) |
 | **Availability** |  |
 | Vendor price | 4500 |
 | Unlock level | 1 |

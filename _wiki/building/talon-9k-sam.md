@@ -28,7 +28,7 @@ description: "A buildable stationary emplacement with a heavy mounted machine gu
 | Internal name | STN_01 |
 {: .wiki-infobox }
 
-The Talon 9K-SAM is a stationary emplacement that players build with a Large Hammer. Its weapon is a heavy mounted machine gun that fires 72 mm rounds in single shots. Its name points to an anti-air role. The data also gives it lock-on timings (see Targeting), but it does not list the targets it can lock onto, so this article does not say what it targets.
+The Talon 9K-SAM is a stationary emplacement that players build with a Large Hammer. Its weapon is a heavy mounted machine gun that fires 72 mm rounds in single shots. Its name points to an anti-air role. The data also gives it lock-on timings (see Targeting) and a target list of air vehicles only: the Little Bird family, the Havoc, the Huey, the Z20 Lakota family and the fixed-wing airplane. It is set to fire only while locked on.
 
 ## Overview
 

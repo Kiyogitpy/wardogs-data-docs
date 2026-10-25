@@ -57,7 +57,7 @@ Fuel capacity and fuel economy for every drivable vehicle, from the vendor stats
 | [AH-6R [Rockets]](ah-6r-rockets.md) | 105 | 4.4 |
 | [Z20 Lakota](z20-lakota.md) | 120 | 4.4 |
 | [Z20 Lakota [Miniguns]](z20-lakota-miniguns.md) | 120 | 4.4 |
-| [Fixed-wing airplane](fixed-wing-airplane.md) | Not yet known | Not yet known |
+| [Fixed-wing airplane](fixed-wing-airplane.md) | No stats sheet in the data | No stats sheet in the data |
 | [SPH-2](sph-2.md) | 105 | 8.0 |
 | [L2A6](l2a6.md) | 110 | 8.0 |
 | [Flakpanzer Gepard](flakpanzer-gepard.md) | 110 | 10.0 |

@@ -76,7 +76,7 @@ Tips that follow from the numbers:
 - **VIP Escort** starts each player with 2,000 cash.
 - **Hunter Killer** sets no starting cash.
 
-The VIP Escort loot table has two entries, each with a 100% chance: a [Fuel Canister](../equipment/fuel-canister.md), which does not respawn, and an [SV98](../weapons/sv98.md) with one magazine, which respawns after 10 seconds. The scenario data has no cash or XP table of its own, so other rewards follow the general rules. See [Cash and Rewards](../progression-and-economy/cash-and-rewards.md). The team sizes for each mission are not yet known.
+The VIP Escort loot table has two entries, each with a 100% chance: a [Fuel Canister](../equipment/fuel-canister.md), which does not respawn, and an [SV98](../weapons/sv98.md) with one magazine, which respawns after 10 seconds. The scenario data has no cash or XP table of its own, so other rewards follow the general rules. See [Cash and Rewards](../progression-and-economy/cash-and-rewards.md). The game files set no team size for any mission, so the server decides it.
 
 ## Sources
 

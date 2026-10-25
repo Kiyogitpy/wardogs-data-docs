@@ -43,7 +43,7 @@ This page lists every gun mounted on a vehicle in Wardogs, from the miniguns on 
 | B-13 Rocket Pods (two, 122 mm) | [AH-6R [Rockets]](ah-6r-rockets.md) | 122 mm | 350 rounds/min | 1,000 m | 6.0 s | 0 |
 | L52 Cannon (155 mm artillery) | [SPH-2](sph-2.md) | 155 mm | 50 rounds/min | 10,000 m | 25.0 s | 10 Expensive, 0 Standard |
 
-Reload times and starting ammunition come from each weapon's data file. A starting ammunition of 0 means no rounds are loaded at the start. "None" means the article records no starting rounds. The 600 rounds/min shown for the M2 Browning and the PKTM is the game's default rate, because their weapon data does not set one. Where the table says "Not yet known", the data does not give the value.
+Reload times and starting ammunition come from each weapon's data file. A starting ammunition of 0 means no rounds are loaded at the start. "None" means the article records no starting rounds. The 600 rounds/min shown for the M2 Browning and the PKTM is the game's default rate, because their weapon data does not set one.
 
 Only stationary weapons restock with supplies, as the [Building](../building.md) emplacements do. The guns on vehicles do not restock this way. A vehicle gun carries the rounds in the starting ammunition column and has no supply restock in the data.
 

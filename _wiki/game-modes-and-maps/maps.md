@@ -39,7 +39,7 @@ Every zone layout in the data, including the unnamed Africa, Sniper Showdown and
 | Saburtulo | King of the Hill | 550 m, 4 placements | Not in the data | Its shader warm-up list was added in Season 2. |
 | Bakurani Outskirts - Jutari | Sniper Showdown | 350 m, fixed spot | Not in the data | Sniper Showdown's own map entry. |
 | [Kenya (Africa layout)](unnamed-africa-layout.md) | King of the Hill | 550 m, 4 placements | Not in the data | Added in Season 2. The zone set is labelled Africa in the data. |
-| Berlin, Paris, Mindori and Tevza | King of the Hill | Not in the data | Not in the data | Listed in the server browser. The game files give them no zone data, so their layouts are not known. |
+| Berlin, Paris, Mindori and Tevza | King of the Hill | Not in the data | Not in the data | Listed in the server browser. The game files hold no zone data for them, so their layouts cannot be stated. |
 | Detroit and Moscow Sniper Showdown layouts | Sniper Showdown | 350 m, fixed spot | Not in the data | Match the Detroit and Moscow Sniper Showdown entries by name only (not confirmed in game). |
 | Deathmatch | Deathmatch | Not applicable | Not applicable | Listed in the server browser with no map name. |
 | Tank Town | Tank Town | Not applicable | Not applicable | Uses the King of the Hill rules, with no map or zone data of its own. |
@@ -105,7 +105,7 @@ The data includes two test areas that are not playable modes. A minimal test are
 
 ## Rules and objectives
 
-The game's level files exist for the four main worlds and the test gym. The data lists the spawn areas for vehicles and infantry (see the Vehicle spawns section of each map article, and [Zone Layouts](zone-layouts.md)), but the buildings inside the maps have not been read, so they are not described here. Anything a player sees on a map beyond the zone, region and spawn data is not yet known.
+The game's level files exist for the four main worlds and the test gym. The data lists the spawn areas for vehicles and infantry (see the Vehicle spawns section of each map article, and [Zone Layouts](zone-layouts.md)), but the buildings inside the maps are not described here. The level cells that were checked hold only art and ambience, with no player starts, spawn volumes, zones or bases. Those come from the separate game mode data, so the zone, region and spawn data above is all the game files hold on map layout.
 
 The playable areas are about 8.5 by 7.8 km on the Europe world, 11 by 11 km on Kavkazi, 10.5 by 9.2 km on North America and 13.2 by 13.2 km on Russia. The map data measures in centimetres (one world unit is 1 cm). On Europe, Kavkazi and North America the kill height is 1,500 m below the map's zero level; the data gives no kill height for Russia.
 

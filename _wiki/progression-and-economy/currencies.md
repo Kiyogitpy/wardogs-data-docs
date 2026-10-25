@@ -24,7 +24,7 @@ The game has three currencies a player sees: Cash, Gold Bars and Intel. Cash is 
 | Currency | Starting balance | How it is earned | How it is spent | Carries between matches |
 |---|---|---|---|---|
 | Cash | 10,000 | Kills, revives, heals, vehicle work, zones, spotting, supply crates, and the end-of-match bonus | Vendors, role unlocks, factory investments | Yes, according to the in-game tip |
-| Gold Bars | 0 | Exchanged from cash at the Gold Exchange, and leftover cash at a season reset | Gold Market skins and emotes | Not in the data |
+| Gold Bars | 0 | Exchanged from cash at the Gold Exchange, and leftover cash at a season reset | Gold Market skins and emotes | Set by the server, so not in the game files |
 | Intel | None (no entry in the currency table) | Passive missions, 100 to 500 per tier | None found in the game files | None found in the game files |
 
 ## Cash
@@ -41,7 +41,7 @@ Gold Bars are the premium currency. They pay for cosmetics only.
 
 - **Starting balance.** 0.
 - **Earning.** Gold Bars are earned by exchanging cash at the Gold Exchange. The exchange unlocks at Wardog level 35, and unlocking it costs 150,000 cash. The exchange text calls Gold Bars the WARDOGS endgame currency, says that the rate varies, and says that a gold exchange cannot be resold or refunded.
-- **Rate.** The server sets the rate, and it changes over time. The client holds no rate, so the cash price of a Gold Bar is not known from the data.
+- **Rate.** The server sets the rate, and it changes over time. The client holds no rate (its exchange table is empty), so the cash price of a Gold Bar is set by the server and cannot be read from the game files.
 - **Season resets.** At the end of a major update cycle, level progression and cash are reset. Any cash left over is exchanged for Gold Bars automatically. The season reset reports the leftover cash and the Gold Bars given, and the conversion happens on the server.
 - **Other sources.** No match event, challenge, mission or achievement pays Gold Bars directly. The data has no Gold Bar pack, so whether Gold Bars are sold for money is not in the client data.
 - **Spending.** Gold Market cosmetics. See the Gold Market section below.
