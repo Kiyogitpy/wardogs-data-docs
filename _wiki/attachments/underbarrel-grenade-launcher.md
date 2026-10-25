@@ -1,7 +1,7 @@
 ---
 title: "Underbarrel Grenade Launcher (test item)"
-parent: "Weapons"
-group: "Attachments"
+redirect_from: ["/wiki/weapons/underbarrel-grenade-launcher/"]
+parent: "Attachments"
 description: "A 40 mm underbarrel launcher that the game data names TEST Grenade Launcher: not sold in the shop, with 75 rounds/min, a 300 m range and a 100 damage explosive round."
 ---
 
@@ -44,9 +44,9 @@ The item does not appear in the shop data, and no unlock level for it is listed.
 
 ## See also
 
-- [Attachments](attachments.md): the other parts that fit on weapons
+- [Attachments](../attachments.md): the other parts that fit on weapons
 - [Launchers](../weapons.md#launchers): the stand-alone launchers in the weapon list
-- [MGL-40](mgl-40.md): a 40 mm grenade launcher with its own magazine
+- [MGL-40](../weapons/mgl-40.md): a 40 mm grenade launcher with its own magazine
 
 ## Sources
 

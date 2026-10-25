@@ -1,7 +1,7 @@
 ---
 title: "Stocks"
-parent: "Weapons"
-group: "Attachments"
+redirect_from: ["/wiki/weapons/attachments-stocks/"]
+parent: "Attachments"
 description: "Stocks that fit the back of the weapons in the data, and which of them change no stat."
 ---
 
@@ -92,11 +92,11 @@ No shop price changes for this category are listed in the Season 2 notes.
 
 ## See also
 
-- [Attachments](attachments.md), the list of attachment categories and what each slot does
+- [Attachments](../attachments.md), the list of attachment categories and what each slot does
 - [Spread and Recoil](../game-mechanics/spread-and-recoil.md), how the recoil and spread multipliers combine
 - [Weapons](../weapons.md)
-- [Handguards](attachments-handguards.md)
-- [Barrels](attachments-barrels.md)
+- [Handguards](handguards.md)
+- [Barrels](barrels.md)
 
 ## Sources
 

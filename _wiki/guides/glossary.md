@@ -25,7 +25,7 @@ This glossary explains the terms a player meets in the game and on this wiki. Ea
 |---|---|---|
 | Bearing | The compass angle, measured clockwise from north, from your position to a target or to the gun. | [Artillery](../game-mechanics/artillery.md) |
 | Bearing tape | The scale across the top of the SPH-2 gun sight. It shows the gun's compass bearing, with a tick every 3 degrees. | [Aiming the SPH-2](../guides/aiming-the-sph-2.md) |
-| Bipod | An attachment that steadies a weapon when it is deployed and limits how far the weapon turns while mounted. | [Bipods](../weapons/attachments-bipods.md) |
+| Bipod | An attachment that steadies a weapon when it is deployed and limits how far the weapon turns while mounted. | [Bipods](../attachments/bipods.md) |
 | Bleed-out | The timer a downed player has before dying. It is 360 seconds and drains at half speed, so it lasts about 12 minutes. | [Downed and Revive](../game-mechanics/downed-and-revive.md) |
 | Build Supplies | The resource that powers hammers. Players buy it and spend it to build structures. | [Supplies](../equipment/supplies.md) |
 | Buildable | Any structure built with a hammer, such as a wall, door, bunker or station. | [Buildables](../equipment/buildables.md) |
@@ -165,7 +165,7 @@ This glossary explains the terms a player meets in the game and on this wiki. Ea
 
 | Term | Meaning | Read more |
 |---|---|---|
-| Zeroing | Setting a sight to the range of the target. Page Up and Page Down change it by default. | [Sights and Optics](../weapons/attachments-sights-and-optics.md) |
+| Zeroing | Setting a sight to the range of the target. Page Up and Page Down change it by default. | [Sights and Optics](../attachments/sights-and-optics.md) |
 
 ## Sources
 

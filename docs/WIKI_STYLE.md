@@ -18,7 +18,7 @@ The wiki (`_wiki/`, served at `/wiki/`) turns the data pages into articles a pla
   ```
 
 - Article front matter: `title`, `parent` (exactly the hub title), `description` (one sentence, shown on cards). Add `has_children: true` and use `grand_parent` only if an article really has sub-articles.
-- Hub order: Weapons 1, Equipment 2, Vehicles 3, Game Mechanics 4, Game Modes & Maps 5, Progression & Economy 6, Guides 7, Patch Notes 8.
+- Hub order: Weapons 1, Attachments 1.5, Equipment 2, Vehicles 3, Game Mechanics 4, Game Modes & Maps 5, Progression & Economy 6, Guides 7, Patch Notes 8.
 - A hub page has a short intro and an overview table of everything it covers (one row per article, linking to it). Hubs with groups (see below) use one `##` section and table per group, like a game wiki's weapon list. Every table with three or more rows gets click-to-sort headers automatically.
 - Groups: an article may set `group:` in its front matter (e.g. `group: "Assault rifles"`). The group names and their order per hub live in `_data/wiki_groups.yml`; the navbox at the bottom of every article (`_includes/wiki-navbox.html`, added by `_layouts/wiki.html`) shows one row per group. Articles without a group go in a final unlabelled row. Do not hand-write a list of sibling articles; the navbox does it.
 - Main page tiles are data: edit `_data/wiki_portals.yml` (label, Material Symbols icon name, site path).

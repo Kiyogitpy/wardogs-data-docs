@@ -1,7 +1,7 @@
 ---
 title: "Muzzle Devices"
-parent: "Weapons"
-group: "Attachments"
+redirect_from: ["/wiki/weapons/attachments-muzzle-devices/"]
+parent: "Attachments"
 description: "Muzzle devices (brakes, flash hiders, suppressors and chokes) and the recoil, spread and aim time changes each one makes."
 ---
 
@@ -138,10 +138,10 @@ Shop price changes (Season 1 to Season 2):
 
 ## See also
 
-- [Attachments](attachments.md), the list of attachment categories and what each slot does
+- [Attachments](../attachments.md), the list of attachment categories and what each slot does
 - [Spread and Recoil](../game-mechanics/spread-and-recoil.md), how the recoil and spread multipliers combine
 - [Weapons](../weapons.md)
-- [Barrels](attachments-barrels.md), the barrels that carry the muzzle slot
+- [Barrels](barrels.md), the barrels that carry the muzzle slot
 
 ## Sources
 

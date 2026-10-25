@@ -1,7 +1,7 @@
 ---
 title: "Handguards"
-parent: "Weapons"
-group: "Attachments"
+redirect_from: ["/wiki/weapons/attachments-handguards/"]
+parent: "Attachments"
 description: "Handguards that cover the barrel: which fit the weapons in the data, and the few that add an underbarrel slot."
 ---
 
@@ -29,7 +29,7 @@ Parts the game data gives no display name are labelled "Unnamed" followed by the
 ## What they change
 
 - Weapon and character stats: no handguard changes any in the data (25 of 25).
-- Underbarrel slot: 5 handguards add an underbarrel slot. A foregrip or bipod can go there, see [Grips and Foregrips](attachments-grips.md) and [Bipods](attachments-bipods.md).
+- Underbarrel slot: 5 handguards add an underbarrel slot. A foregrip or bipod can go there, see [Grips and Foregrips](grips.md) and [Bipods](bipods.md).
 - Names: 8 handguards have no data name, so the table lists them by the weapon they fit.
 
 ## Parts
@@ -80,11 +80,11 @@ No shop price changes for this category are listed in the Season 2 notes.
 
 ## See also
 
-- [Attachments](attachments.md), the list of attachment categories and what each slot does
+- [Attachments](../attachments.md), the list of attachment categories and what each slot does
 - [Spread and Recoil](../game-mechanics/spread-and-recoil.md), how the recoil and spread multipliers combine
 - [Weapons](../weapons.md)
-- [Barrels](attachments-barrels.md)
-- [Stocks](attachments-stocks.md)
+- [Barrels](barrels.md)
+- [Stocks](stocks.md)
 
 ## Sources
 

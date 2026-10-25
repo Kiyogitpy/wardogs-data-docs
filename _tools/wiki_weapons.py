@@ -445,7 +445,7 @@ def recoil_section(wid, title, multi_pellet=False):
             "- The 10° in-air figure is a native default found by static reading; only the grenade launcher's data sets it, to the same 10°.",
             "- At full aim (aim blend exactly 1.0) hip spread is set to zero, so only the aimed row applies. A partly aimed weapon counts as hip fire.",
             "- \"Full speed\" means 4 m/s standing, 2.5 m/s crouching and 0.5 m/s prone; between still and that speed the hip spread is a straight line.",
-            "- The figures are before attachments, which can change spread (see [Attachments](attachments.md)).", ""]
+            "- The figures are before attachments, which can change spread (see [Attachments](../attachments.md)).", ""]
 
     # Recoil
     pat = season["pattern"]
@@ -591,7 +591,7 @@ def build_weapon(wid):
     # Attachments
     out += ["## Attachments", ""]
     slots = sorted({sl["tag"].split(".")[-1] for sl in it["slots"] if sl["tag"].split(".")[-1] != "Chamber"})
-    out += [f"Slots on this weapon: {', '.join(slots)}. See [Attachments](attachments.md) for what each part changes.", ""]
+    out += [f"Slots on this weapon: {', '.join(slots)}. See [Attachments](../attachments.md) for what each part changes.", ""]
     defaults = []
     for sl in it["slots"]:
         d = sl.get("default")
@@ -615,7 +615,7 @@ def build_weapon(wid):
     else:
         out += ["The Season 2 changes page lists no changes for this weapon.", ""]
 
-    out += ["## See also", "", "- [Weapons](../weapons.md)", "- [Ammunition](ammunition.md)", "- [Attachments](attachments.md)", "- [Choosing Ammo](../guides/choosing-ammo.md)", "- [Ballistics](../game-mechanics/ballistics.md)", "- [Health and Damage](../game-mechanics/health-and-damage.md)", "- [Spread and Recoil](../game-mechanics/spread-and-recoil.md)", ""]
+    out += ["## See also", "", "- [Weapons](../weapons.md)", "- [Ammunition](ammunition.md)", "- [Attachments](../attachments.md)", "- [Choosing Ammo](../guides/choosing-ammo.md)", "- [Ballistics](../game-mechanics/ballistics.md)", "- [Health and Damage](../game-mechanics/health-and-damage.md)", "- [Spread and Recoil](../game-mechanics/spread-and-recoil.md)", ""]
 
     out += ["## Sources", "",
             "- [Weapon Shop and Parts](../../game-features/Wardogs_WeaponShop_v1.md): price, unlock level, default magazine",
@@ -691,10 +691,10 @@ def ammo_page():
     return "\n".join(body)
 
 
-ATTACH_ARTICLE = {"Magazine": "attachments-magazines.md", "Muzzle": "attachments-muzzle-devices.md",
-                  "Barrel": "attachments-barrels.md", "Stock": "attachments-stocks.md",
-                  "Grip": "attachments-grips.md", "Sight": "attachments-sights-and-optics.md",
-                  "Handguard": "attachments-handguards.md", "Bipod": "attachments-bipods.md"}
+ATTACH_ARTICLE = {"Magazine": "magazines.md", "Muzzle": "muzzle-devices.md",
+                  "Barrel": "barrels.md", "Stock": "stocks.md",
+                  "Grip": "grips.md", "Sight": "sights-and-optics.md",
+                  "Handguard": "handguards.md", "Bipod": "bipods.md"}
 
 
 def attachments_page():
@@ -705,7 +705,7 @@ def attachments_page():
             "The list after it shows which numbers the parts in each category change, and how many parts change each one. Each category name links to its own article.", "",
             "| Category | Parts | What it is |", "|---|---|---|"]
     for cat in cats:
-        label = f"[{cat}]({ATTACH_ARTICLE[cat]})" if cat in ATTACH_ARTICLE else cat
+        label = f"[{cat}](attachments/{ATTACH_ARTICLE[cat]})" if cat in ATTACH_ARTICLE else cat
         body.append(f"| {label} | {ATTACH[cat]['count']} | {ATTACH_CAT_TEXT.get(cat, 'Other slot type.')} |")
     body += ["", "## What the parts change", ""]
     for cat in cats:
@@ -717,14 +717,14 @@ def attachments_page():
             body.append(f"- **{cat}**: no effect entries in the loadout data.")
     body += ["", "Each weapon article lists its own slots and default parts under its Attachments section.", "",
              "## See also", "",
-             "- [Spread and Recoil](../game-mechanics/spread-and-recoil.md), where bipods, muzzle devices and foregrips change spread",
-             "- [Underbarrel Grenade Launcher (test item)](underbarrel-grenade-launcher.md), a 40 mm launcher attachment named as a test item in the data",
-             "- [Weapons](../weapons.md)",
+             "- [Spread and Recoil](game-mechanics/spread-and-recoil.md), where bipods, muzzle devices and foregrips change spread",
+             "- [Underbarrel Grenade Launcher (test item)](attachments/underbarrel-grenade-launcher.md), a 40 mm launcher attachment named as a test item in the data",
+             "- [Weapons](weapons.md)",
              "",
              "## Sources", "",
              f"- [weapon-loadouts.json]({GH}assets/data/weapon-loadouts.json): slot, part and effect data",
-             "- [Attachments and Platforms](../../game-features/Wardogs_AttachmentsPlatforms_v1.md)",
-             "- [Weapon Shop and Parts](../../game-features/Wardogs_WeaponShop_v1.md)",
+             "- [Attachments and Platforms](../game-features/Wardogs_AttachmentsPlatforms_v1.md)",
+             "- [Weapon Shop and Parts](../game-features/Wardogs_WeaponShop_v1.md)",
              ""]
     return "\n".join(body)
 
@@ -735,7 +735,7 @@ def hub_page(sections):
     body = ["# Weapons", "",
             "Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun, sniper rifle and launcher "
             "in the weapon data that a player can get, grouped by class. Each name links to its article; click a column heading to sort. "
-            "[Ammunition](weapons/ammunition.md) and [Attachments](weapons/attachments.md) have their own pages.", ""]
+            "[Ammunition](weapons/ammunition.md) and [Attachments](attachments.md) have their own pages.", ""]
     for arch in CLASS_ORDER:
         if sections.get(arch):
             if arch == "Launcher":
@@ -771,8 +771,10 @@ def main():
     ammo = front_matter("Ammunition", "Bullet and shell types, what each does to armor and flesh, and which weapons use them.", "Reference") + ammo_page()
     with open(os.path.join(OUT, "ammunition.md"), "w", encoding="utf-8", newline="\n") as f:
         f.write(ammo)
-    att = front_matter("Attachments", "The parts that fit on weapons, the slots they go into and what each category changes.", "Reference") + attachments_page()
-    with open(os.path.join(OUT, "attachments.md"), "w", encoding="utf-8", newline="\n") as f:
+    att = ("---\ntitle: Attachments\nnav_order: 1.5\nwiki_hub: true\nhas_children: true\n"
+           "redirect_from: [\"/wiki/weapons/attachments/\"]\n"
+           "description: \"The parts that fit on weapons, the slots they go into and what each category changes.\"\n---\n\n") + attachments_page()
+    with open(os.path.join(WIKI, "attachments.md"), "w", encoding="utf-8", newline="\n") as f:
         f.write(att)
     with open(os.path.join(WIKI, "weapons.md"), "w", encoding="utf-8", newline="\n") as f:
         f.write(hub_page(sections))

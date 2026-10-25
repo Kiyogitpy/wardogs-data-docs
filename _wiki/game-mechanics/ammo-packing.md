@@ -66,7 +66,7 @@ The round counts are examples. The magazine's capacity is not stored on the maga
 ## See also
 
 - [Ammunition](../weapons/ammunition.md)
-- [Magazines](../weapons/attachments-magazines.md)
+- [Magazines](../attachments/magazines.md)
 - [Weapons](../weapons.md)
 
 ## Sources

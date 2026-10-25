@@ -1,7 +1,9 @@
 ---
-title: "Attachments"
-parent: "Weapons"
-group: "Reference"
+title: Attachments
+nav_order: 1.5
+wiki_hub: true
+has_children: true
+redirect_from: ["/wiki/weapons/attachments/"]
 description: "The parts that fit on weapons, the slots they go into and what each category changes."
 ---
 
@@ -11,14 +13,14 @@ Attachments are parts that fit onto a weapon. While a part is fitted, it changes
 
 | Category | Parts | What it is |
 |---|---|---|
-| [Magazine](attachments-magazines.md) | 69 | Magazines hold the rounds. Some weapons use an internal magazine instead of a swappable one. |
-| [Muzzle](attachments-muzzle-devices.md) | 56 | Brakes, flash hiders, compensators and suppressors that fit the end of the barrel. |
-| [Barrel](attachments-barrels.md) | 41 | Replacement barrels. Some carry a muzzle slot of their own. |
-| [Stock](attachments-stocks.md) | 37 | Stocks fit at the back of the weapon. |
-| [Grip](attachments-grips.md) | 32 | Pistol grips and foregrips. They change how the weapon is held. |
-| [Sight](attachments-sights-and-optics.md) | 29 | Optics and iron sights on top of the weapon. They change zoom and aim time. |
-| [Handguard](attachments-handguards.md) | 25 | Covers over the barrel. They carry further slots. |
-| [Bipod](attachments-bipods.md) | 9 | Folding legs that mount under the weapon. |
+| [Magazine](attachments/magazines.md) | 69 | Magazines hold the rounds. Some weapons use an internal magazine instead of a swappable one. |
+| [Muzzle](attachments/muzzle-devices.md) | 56 | Brakes, flash hiders, compensators and suppressors that fit the end of the barrel. |
+| [Barrel](attachments/barrels.md) | 41 | Replacement barrels. Some carry a muzzle slot of their own. |
+| [Stock](attachments/stocks.md) | 37 | Stocks fit at the back of the weapon. |
+| [Grip](attachments/grips.md) | 32 | Pistol grips and foregrips. They change how the weapon is held. |
+| [Sight](attachments/sights-and-optics.md) | 29 | Optics and iron sights on top of the weapon. They change zoom and aim time. |
+| [Handguard](attachments/handguards.md) | 25 | Covers over the barrel. They carry further slots. |
+| [Bipod](attachments/bipods.md) | 9 | Folding legs that mount under the weapon. |
 
 ## What the parts change
 
@@ -35,12 +37,12 @@ Each weapon article lists its own slots and default parts under its Attachments 
 
 ## See also
 
-- [Spread and Recoil](../game-mechanics/spread-and-recoil.md), where bipods, muzzle devices and foregrips change spread
-- [Underbarrel Grenade Launcher (test item)](underbarrel-grenade-launcher.md), a 40 mm launcher attachment named as a test item in the data
-- [Weapons](../weapons.md)
+- [Spread and Recoil](game-mechanics/spread-and-recoil.md), where bipods, muzzle devices and foregrips change spread
+- [Underbarrel Grenade Launcher (test item)](attachments/underbarrel-grenade-launcher.md), a 40 mm launcher attachment named as a test item in the data
+- [Weapons](weapons.md)
 
 ## Sources
 
 - [weapon-loadouts.json](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-loadouts.json): slot, part and effect data
-- [Attachments and Platforms](../../game-features/Wardogs_AttachmentsPlatforms_v1.md)
-- [Weapon Shop and Parts](../../game-features/Wardogs_WeaponShop_v1.md)
+- [Attachments and Platforms](../game-features/Wardogs_AttachmentsPlatforms_v1.md)
+- [Weapon Shop and Parts](../game-features/Wardogs_WeaponShop_v1.md)

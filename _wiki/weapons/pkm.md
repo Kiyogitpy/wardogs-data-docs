@@ -113,7 +113,7 @@ Accuracy is 2.5 mrad, a full cone angle; the aimed row is half of it, in degrees
 - The 10° in-air figure is a native default found by static reading; only the grenade launcher's data sets it, to the same 10°.
 - At full aim (aim blend exactly 1.0) hip spread is set to zero, so only the aimed row applies. A partly aimed weapon counts as hip fire.
 - "Full speed" means 4 m/s standing, 2.5 m/s crouching and 0.5 m/s prone; between still and that speed the hip spread is a straight line.
-- The figures are before attachments, which can change spread (see [Attachments](attachments.md)).
+- The figures are before attachments, which can change spread (see [Attachments](../attachments.md)).
 
 **Recoil**
 
@@ -141,7 +141,7 @@ Ammo types for this weapon: Standard (FMJ), Standard (FMJ) with tracer, Flesh Da
 
 ## Attachments
 
-Slots on this weapon: Barrel, Grip, Handguard, Magazine, Sight, Stock, Underbarrel. See [Attachments](attachments.md) for what each part changes.
+Slots on this weapon: Barrel, Grip, Handguard, Magazine, Sight, Stock, Underbarrel. See [Attachments](../attachments.md) for what each part changes.
 
 Default parts: magazine (PKM 100 RND Box).
 
@@ -159,7 +159,7 @@ Default parts: magazine (PKM 100 RND Box).
 
 - [Weapons](../weapons.md)
 - [Ammunition](ammunition.md)
-- [Attachments](attachments.md)
+- [Attachments](../attachments.md)
 - [Choosing Ammo](../guides/choosing-ammo.md)
 - [Ballistics](../game-mechanics/ballistics.md)
 - [Health and Damage](../game-mechanics/health-and-damage.md)

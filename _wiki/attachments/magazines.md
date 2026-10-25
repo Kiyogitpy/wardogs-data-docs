@@ -1,7 +1,7 @@
 ---
 title: "Magazines"
-parent: "Weapons"
-group: "Attachments"
+redirect_from: ["/wiki/weapons/attachments-magazines/"]
+parent: "Attachments"
 description: "Magazines for the weapons in the data, with the aim time, recoil, equip speed and aim sway each one changes, and Season 2 additions."
 ---
 
@@ -129,10 +129,10 @@ No shop price changes for this category are listed in the Season 2 notes.
 
 ## See also
 
-- [Attachments](attachments.md), the list of attachment categories and what each slot does
+- [Attachments](../attachments.md), the list of attachment categories and what each slot does
 - [Spread and Recoil](../game-mechanics/spread-and-recoil.md), how the recoil and spread multipliers combine
 - [Weapons](../weapons.md)
-- [Sights and Optics](attachments-sights-and-optics.md), another attachment category that changes aim time
+- [Sights and Optics](sights-and-optics.md), another attachment category that changes aim time
 
 ## Sources
 

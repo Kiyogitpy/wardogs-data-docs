@@ -1,7 +1,7 @@
 ---
 title: "Grips and Foregrips"
-parent: "Weapons"
-group: "Attachments"
+redirect_from: ["/wiki/weapons/attachments-grips/"]
+parent: "Attachments"
 description: "Pistol grips and foregrips: which change recoil, spread and aim, and which change nothing."
 ---
 
@@ -104,10 +104,10 @@ Shop price changes (Season 1 to Season 2):
 
 ## See also
 
-- [Attachments](attachments.md), the list of attachment categories and what each slot does
+- [Attachments](../attachments.md), the list of attachment categories and what each slot does
 - [Spread and Recoil](../game-mechanics/spread-and-recoil.md), how the recoil and spread multipliers combine
 - [Weapons](../weapons.md)
-- [Bipods](attachments-bipods.md), the underbarrel parts that also change recoil and spread
+- [Bipods](bipods.md), the underbarrel parts that also change recoil and spread
 
 ## Sources
 

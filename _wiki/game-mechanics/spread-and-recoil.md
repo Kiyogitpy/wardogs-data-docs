@@ -27,7 +27,7 @@ Two things decide where a shot goes. The first is the **spread cone**, which is 
 - **Moving widens the cone.** Hip spread scales with your speed compared with a reference speed for your stance. Standing and running make the cone widest, lying prone keeps it narrowest.
 - **Stance matters.** Prone and crouch give smaller spread than standing for the same speed.
 - **Air.** A shot fired while airborne uses a separate spread value of 10 degrees (half-angle) for every weapon. The stance and speed multipliers do not apply while airborne.
-- **Aim sway moves the shot.** In the game's default camera mode, the sway of the weapon as you aim is added to the view's rotation, and the bullet leaves along that view. So sway changes where the shot goes, not only what the camera shows. Sway is divided by the sight's magnification, so a higher-magnification sight steadies it (see [Sights and Optics](../weapons/attachments-sights-and-optics.md)). No weapon in the data changes this mode (derived from the game's code).
+- **Aim sway moves the shot.** In the game's default camera mode, the sway of the weapon as you aim is added to the view's rotation, and the bullet leaves along that view. So sway changes where the shot goes, not only what the camera shows. Sway is divided by the sight's magnification, so a higher-magnification sight steadies it (see [Sights and Optics](../attachments/sights-and-optics.md)). No weapon in the data changes this mode (derived from the game's code).
 - **Vehicle-mounted guns.** A gun on a vehicle with its own spread setting eases toward that spread at about 25 per second rather than jumping to it. When the gunner is fully aimed down sights, the spread is zero. Plain mounted weapons have no spread of their own (a static reading of the game code, not checked in play).
 - **Attachments.** Bipods, muzzle devices and foregrips change the spread. Their multipliers are listed below.
 - **Zeroing.** The data does not list the zero angle for each sight range. The game works it out while it runs. At each zeroing range it predicts the bullet's drop over that distance and stores the angle that drop implies, in degrees, for each ammunition type (derived from the game's code).
@@ -83,7 +83,7 @@ While a player is airborne, hip-fire spread uses the game's in-air value of 10.0
 - [Health and Damage](health-and-damage.md)
 - [Movement](movement.md)
 - [Beginner's Guide](../guides/beginners-guide.md)
-- [Weapon attachments](../weapons/attachments.md)
+- [Weapon attachments](../attachments.md)
 
 ## Sources
 

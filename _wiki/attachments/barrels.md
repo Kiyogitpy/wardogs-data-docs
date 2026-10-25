@@ -1,7 +1,7 @@
 ---
 title: "Barrels"
-parent: "Weapons"
-group: "Attachments"
+redirect_from: ["/wiki/weapons/attachments-barrels/"]
+parent: "Attachments"
 description: "Replacement barrels for the weapons in the data, and the muzzle slots that decide which muzzle devices fit."
 ---
 
@@ -29,7 +29,7 @@ Parts the game data gives no display name are labelled "Unnamed" followed by the
 ## What they change
 
 - Weapon and character stats: no barrel changes any in the data (41 of 41).
-- Muzzle slot: 37 barrels carry one. Its allow or block list decides which muzzle devices fit, see [Muzzle Devices](attachments-muzzle-devices.md).
+- Muzzle slot: 37 barrels carry one. Its allow or block list decides which muzzle devices fit, see [Muzzle Devices](muzzle-devices.md).
 - Fit: 34 barrels fit one weapon, 2 fit two, and 5 fit no weapon. The Fits column is the quickest guide.
 
 ## Parts
@@ -96,11 +96,11 @@ No shop price changes for this category are listed in the Season 2 notes.
 
 ## See also
 
-- [Attachments](attachments.md), the list of attachment categories and what each slot does
+- [Attachments](../attachments.md), the list of attachment categories and what each slot does
 - [Spread and Recoil](../game-mechanics/spread-and-recoil.md), how the recoil and spread multipliers combine
 - [Weapons](../weapons.md)
-- [Stocks](attachments-stocks.md)
-- [Handguards](attachments-handguards.md)
+- [Stocks](stocks.md)
+- [Handguards](handguards.md)
 
 ## Sources
 

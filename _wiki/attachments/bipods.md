@@ -1,7 +1,7 @@
 ---
 title: "Bipods"
-parent: "Weapons"
-group: "Attachments"
+redirect_from: ["/wiki/weapons/attachments-bipods/"]
+parent: "Attachments"
 description: "Bipods and the Grip Pod: the bipods that limit how far a weapon turns while mounted, and the one part in the group that changes recoil and sway."
 ---
 
@@ -68,11 +68,11 @@ The Season 2 notes also record bipod distance and ledge values whose min and max
 
 ## See also
 
-- [Attachments](attachments.md), the list of attachment categories and what each slot does
+- [Attachments](../attachments.md), the list of attachment categories and what each slot does
 - [Spread and Recoil](../game-mechanics/spread-and-recoil.md), how the recoil and spread multipliers combine
 - [Weapons](../weapons.md)
-- [Grips and Foregrips](attachments-grips.md)
-- [Muzzle Devices](attachments-muzzle-devices.md)
+- [Grips and Foregrips](grips.md)
+- [Muzzle Devices](muzzle-devices.md)
 
 ## Sources
 

@@ -38,7 +38,7 @@ All five PvE soldiers share the same controller, behaviour tree and alert and in
 
 Every soldier also carries [Level 1 Armor](../equipment/level-1-armor.md) and a [Level 1 Helmet](../equipment/level-1-helmet.md). Each soldier carries one of its weapon and two spare magazines for it.
 
-The weapon, attachment and magazine names are the display names from the game data. For attachments, see [Sights and Optics](../weapons/attachments-sights-and-optics.md) and [Muzzle Devices](../weapons/attachments-muzzle-devices.md).
+The weapon, attachment and magazine names are the display names from the game data. For attachments, see [Sights and Optics](../attachments/sights-and-optics.md) and [Muzzle Devices](../attachments/muzzle-devices.md).
 
 ## Health and armor
 
