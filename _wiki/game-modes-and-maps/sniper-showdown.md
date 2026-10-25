@@ -11,6 +11,7 @@ description: "A sniper mode where standing still gets you revealed, played on it
 |---|---|
 | Type | Sniper mode with a stillness rule |
 | Objective | Control zone, with players revealed when they stop moving |
+| Win condition | 10 kills, or 30 minutes |
 | Maps | Bakurani Outskirts - Jutari, plus two zone layouts for North America and Russia (see [Maps](maps.md)) |
 | Server browser label | Sniper Showdown |
 | Internal name | SniperShowdown (experience) |
@@ -24,14 +25,15 @@ Sniper Showdown runs on its own map entry in the server browser, Bakurani Outski
 
 ## Rules and objectives
 
-- **Stillness.** Standing still reveals you. The on-screen message reads "Keep moving or you will be revealed." Once spotted, the message is "You have been revealed. Run." Moving clears it with "You are now hidden." The time or distance that counts as standing still is not in the data.
+- **Stillness.** Stand within about 50 m of one spot for 90 seconds and you are revealed: a marker shows your position on the map for 200 seconds, and at most three markers show at once. A warning appears at 75 seconds. After a reveal, the check waits 15 seconds before it can count standing still again. The on-screen message reads "Keep moving or you will be revealed." Once spotted, the message is "You have been revealed. Run." Moving clears it with "You are now hidden." The 50 m figure assumes the data's distance unit is centimetres, and the 200 seconds comes from the same settings block. Neither is confirmed in play.
 - **Zone.** The mode uses a Control Zone with a seeker that finds the zone. Its zones are 350 m across, with a 75 m Hot Zone and no alternative placements. The Hot Zone moves from the start (first move at 0 seconds), at a default speed of 1.5. See [Control Zone](control-zone.md).
-- **Out of bounds.** A component handles players who leave the play area. The rules inside it are not in the data.
+- **Out of bounds.** Leaving both the Control Zone and the Hot Zone puts you in the hostile-zone state. The effect of that state is applied elsewhere in the game, and the data does not give its size.
 - **Deaths and respawns.** The death screen shows "Killed by" the attacker's name, then a blackout of 3.0 seconds, then "Respawning in" a countdown.
+- **Death explosion.** A player who dies explodes 1.5 seconds later. The blast is set to 250 damage, a radius of 500, an effective radius of 250, a minimum of 30 damage, a falloff of 0.5 and 100 blunt damage. Line of sight is checked. How these values combine into the final damage is not in the data.
 - **Round end.** At the end of a round a countdown shows "Next Round in" minutes and seconds, then a scoreboard.
-- **Timer and leaderboard.** The timer shows minutes and seconds. A leaderboard is shown during play. The round length and the leaderboard's contents are not in the data.
+- **Timer and leaderboard.** The timer shows minutes and seconds. A leaderboard is shown during play. A round ends at 10 kills or after 30 minutes. The leaderboard's contents are not in the data.
 - **Starting loadout.** Each player gets a Scout Backpack and a GGX 17 pistol at spawn.
-- **Factions and team sizes.** Players are assigned factions by a component. How many factions, and team sizes, are not yet known.
+- **Factions.** The mode is free-for-all. Each player is given a faction from a pool, and how many factions the pool holds is not in the data.
 
 ## Rewards
 
@@ -51,3 +53,6 @@ The data does not list Sniper Showdown-specific cash or XP rewards. The general 
 - [Frontend data tables (server browser list)](../../content/Wardogs_DataTables_Frontend_v1.md)
 - [Season 2 changes: Game Modes & Maps](../../season-2-changes/game-modes-maps.md)
 - [Tag display text](../../content/Wardogs_TagDisplayText_v1.md)
+- [Round 39 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-modes-ai-other.md)
+- [Round 40 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-modes-ai-other.md)
+- [Mode rules (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/mode-rules.json)

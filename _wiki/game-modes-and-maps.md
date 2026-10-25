@@ -8,7 +8,7 @@ description: "The game modes, the maps they run on, and the match rules players 
 
 # Game Modes & Maps
 
-Wardogs has a few team modes built around zones and objectives, a sniper mode with a stillness rule, a deathmatch mode, a set of PvE missions, a shooting range for practice, and two modes added in Season 2. This hub covers each mode and the maps they are played on.
+Wardogs has a few team modes built around zones and objectives, a sniper mode with a stillness rule, a deathmatch mode, a set of PvE missions, a shooting range for practice, and two Season 2 additions, Team Offence and the Hot Potato pre-lobby mini-game. This hub covers each mode and the maps they are played on.
 
 Where the data has no answer, the articles say "not yet known" rather than guess. That includes team sizes, match timers and win conditions for most modes.
 
@@ -16,7 +16,7 @@ Where the data has no answer, the articles say "not yet known" rather than guess
 
 ## Other modes in the data
 
-The server browser lists one more mode, Tank Town, with no rules, map name or other data in the sources. Its rules are not yet known.
+The server browser lists one more mode, Tank Town. It uses the King of the Hill experience unchanged, with the same three teams and score limit, and it has no map or zone data of its own.
 
 ## Server options
 

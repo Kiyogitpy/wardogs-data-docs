@@ -24,7 +24,7 @@ Bakurani is the first King of the Hill map in the server browser, and it is the 
 
 ## Overview
 
-Bakurani is played in [King of the Hill](king-of-the-hill.md). The server browser lists it twice, as Bakurani_KOTH_01 and Bakurani_KOTH_02, and both use the Bakurani name and loading screen art. The data does not say how the two entries differ. The Bakurani zone configuration is tied to these entries by name only, which is not confirmed in game.
+Bakurani is played in [King of the Hill](king-of-the-hill.md). The server browser lists it as two entries, both called Bakurani. They share the same map and rules and differ only in their spawn areas: the first uses the Khevuli, Chuta and Baghi areas, the second the Rachuri, Tavarshi and Sanavi areas. Both use the Bakurani name and loading screen art, and the Bakurani zone configuration.
 
 ## Modes played here
 
@@ -35,8 +35,8 @@ Bakurani is played in [King of the Hill](king-of-the-hill.md). The server browse
 
 The Control Zone is 500 m across and 170 m tall, with an 85 m Hot Zone in its centre. For how capture works, see [Control Zone](control-zone.md).
 
-- **Hot Zone movement.** The Hot Zone moves every 25 seconds. Its default speed is 1.0, and the speed table runs from 0.75 to 2.0.
-- **Placements.** The zone has three placements. The default has weight 2, and Farmland and Lumberyard each have weight 1. If the weights decide the pick, the default is twice as likely as either alternative. The data suggests this, but the code path is not confirmed.
+- **Hot Zone movement.** The Hot Zone is placed at the start and then moves about every 25 seconds. Its default speed is 1.0, and the speed table runs from 0.75 to 2.0.
+- **Placements.** The zone has three placements. The server rotation can name one for a match. Without a name, one is drawn at random by weight, so the default (weight 2) is twice as likely as Farmland or Lumberyard (weight 1 each). The example server rotation names a Bakurani River entry, which has no placement in the game files, so that match falls back to the random draw: Default 50%, Farmland 25%, Lumberyard 25%.
 
 | Placement | Weight |
 |---|---|
@@ -44,7 +44,7 @@ The Control Zone is 500 m across and 170 m tall, with an 85 m Hot Zone in its ce
 | Farmland | 1 |
 | Lumberyard | 1 |
 
-- **Zone regions.** The data lists 60 named regions. Seven are towers with weight 0, so they are never picked by default weight. Most other regions have weight 1. A few have weight 5, including SUNFLOWERS HOUSE, WEST FOREST PYLON and HILLSIDE TOP, which makes them much more likely. How a region is chosen is not confirmed in the data.
+- **Zone regions.** The data lists 60 named regions. Seven are towers with weight 0, which are never drawn at random. Most other regions have weight 1, and a few have weight 5, including SUNFLOWERS HOUSE, WEST FOREST PYLON and HILLSIDE TOP, which makes them much more likely. The Hot Zone moves to a region drawn at random by weight, and the region just used gives away half its weight, so it is unlikely to come up again at once. Regions overlap in 33 pairs, which does not affect the draw.
 
 ## Layouts
 
@@ -71,3 +71,5 @@ The zone layout for this map is described in full on [Zone Layouts](zone-layouts
 - [Frontend data tables (server browser list)](../../content/Wardogs_DataTables_Frontend_v1.md)
 - [UI data (minimap bounds)](../../content/Wardogs_UI_v2.md)
 - [Season 2 changes: Game Modes & Maps](../../season-2-changes/game-modes-maps.md)
+- [Round 40 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-modes-ai-other.md)
+- [Zone selection rules (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/zone-selection.json)

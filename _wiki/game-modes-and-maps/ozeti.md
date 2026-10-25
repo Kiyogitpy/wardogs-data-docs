@@ -24,7 +24,7 @@ Ozeti is a King of the Hill map with a 550 m Control Zone and four possible zone
 
 ## Overview
 
-Ozeti is played in [King of the Hill](king-of-the-hill.md) under one server browser entry. The data ties it to the Madrid entry by name, and its zone configuration and regions are stored under the Europe files. The name link is not confirmed in game.
+Ozeti is played in [King of the Hill](king-of-the-hill.md) under one server browser entry, Madrid. Its zone configuration and regions are stored under the Europe files, and the example server rotation pairs the Madrid entry with the Ozeti placements.
 
 ## Modes played here
 
@@ -34,8 +34,8 @@ Ozeti is played in [King of the Hill](king-of-the-hill.md) under one server brow
 
 The Control Zone is 550 m across and 150 m tall, with an 85 m Hot Zone in its centre. For how capture works, see [Control Zone](control-zone.md).
 
-- **Hot Zone movement.** The Hot Zone moves every 25 seconds, with a default speed of 1.0 and a speed table from 0.75 to 2.0.
-- **Placements.** The zone has four placements. Default, Church and River each have weight 1. Farmland has weight 0, so by weight alone it is never picked.
+- **Hot Zone movement.** The Hot Zone is placed at the start and then moves about every 25 seconds, with a default speed of 1.0 and a speed table from 0.75 to 2.0.
+- **Placements.** The zone has four placements. Default, Church and River each have weight 1, and one of them is drawn at random when the server rotation does not name one. Farmland has weight 0, so it is used only when the server rotation names it.
 
 | Placement | Weight |
 |---|---|
@@ -44,7 +44,7 @@ The Control Zone is 550 m across and 150 m tall, with an 85 m Hot Zone in its ce
 | River | 1 |
 | Farmland | 0 |
 
-- **Zone regions.** The data lists 55 named regions. Of these, 54 have weight 1 and one, Tower 2, has weight 0. Regions are named for towers and points of interest such as the stadium, pool, church top, lumberyard and apartments. Every non-zero region is equally likely under the data, because no other weight values appear.
+- **Zone regions.** The data lists 55 named regions. Of these, 54 have weight 1 and one, Tower 2, has weight 0. Regions are named for towers and points of interest such as the stadium, pool, church top, lumberyard and apartments. Every non-zero region is equally likely under the data, because no other weight values appear. A region just used gives away half its weight, so it is unlikely to come up again at once.
 
 ## Layouts
 
@@ -70,3 +70,5 @@ The zone layout for this map is described in full on [Zone Layouts](zone-layouts
 - [Frontend data tables (server browser list)](../../content/Wardogs_DataTables_Frontend_v1.md)
 - [UI data (minimap bounds)](../../content/Wardogs_UI_v2.md)
 - [Season 2 changes: Game Modes & Maps](../../season-2-changes/game-modes-maps.md)
+- [Round 40 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-modes-ai-other.md)
+- [Zone selection rules (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/zone-selection.json)

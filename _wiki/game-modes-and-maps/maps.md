@@ -2,19 +2,19 @@
 title: "Maps"
 parent: "Game Modes & Maps"
 group: "Maps"
-description: "Every map the data names, the modes that use it, and its zone layout. Level layouts, spawns and buildings are not in the data."
+description: "Every map the data names, the modes that use it, and its zone layout. Spawns and buildings are not described."
 ---
 
 # Maps
 
 | Maps | |
 |---|---|
-| Maps named in the data | Bakurani, Ozeti, Zestafona, Saburtulo, Bakurani Outskirts - Jutari, plus one unnamed layout labelled Africa in the data |
-| Map entries with no display name | Four King of the Hill entries, and the North America and Russia Sniper Showdown layouts |
+| Maps named in the data | Bakurani, Ozeti, Zestafona, Saburtulo, Bakurani Outskirts - Jutari, and Kenya (its zone layout is labelled Africa in the data) |
+| Entries with no zone data | Four King of the Hill entries (Berlin, Paris, Mindori and Tevza) and Tank Town |
 | Training gyms | Two test areas, not playable modes |
 {: .wiki-infobox }
 
-Wardogs has four main King of the Hill maps, a Sniper Showdown map and one unnamed layout whose data is labelled Africa. The first five are named in the server browser by the name players see. The sources do not describe level layouts, spawn points or buildings, so the articles here cover only what the data records about each map.
+Wardogs has four main King of the Hill maps, a fifth King of the Hill map (Kenya, whose zone layout is labelled Africa in the data) and a Sniper Showdown map. The first five are named in the server browser by the name players see. The sources do not describe level layouts, spawn points or buildings, so the articles here cover only what the data records about each map.
 
 ## Layouts
 
@@ -27,7 +27,7 @@ Every zone layout in the data, including the unnamed Africa, Sniper Showdown and
 - [Zestafona](zestafona.md), King of the Hill
 - [Saburtulo](saburtulo.md), King of the Hill
 - [Bakurani Outskirts - Jutari](bakurani-outskirts-jutari.md), Sniper Showdown
-- [Unnamed Africa layout](unnamed-africa-layout.md), zone set with no server browser name
+- [Kenya (Africa layout)](unnamed-africa-layout.md), King of the Hill map
 
 ## Overview
 
@@ -38,10 +38,11 @@ Every zone layout in the data, including the unnamed Africa, Sniper Showdown and
 | Zestafona | King of the Hill | 500 m, 4 placements | 56 | Its Hot Zone is 850 m tall. |
 | Saburtulo | King of the Hill | 550 m, 4 placements | Not in the data | Its shader warm-up list was added in Season 2. |
 | Bakurani Outskirts - Jutari | Sniper Showdown | 350 m, fixed spot | Not in the data | Sniper Showdown's own map entry. |
-| [Unnamed Africa layout](unnamed-africa-layout.md) | Control Zone set | 550 m, 4 placements | Not in the data | Added in Season 2. Its display name is not in the data, and the Africa label is the data's, not a map name. |
-| Four more entries | King of the Hill | Not in the data | Not in the data | The server browser lists them without display names. Their names are not yet known. |
-| Sniper Showdown layouts (North America and Russia) | Sniper Showdown | 350 m, fixed spot | Not in the data | Not matched to a display name in the sources. |
+| [Kenya (Africa layout)](unnamed-africa-layout.md) | King of the Hill | 550 m, 4 placements | Not in the data | Added in Season 2. The zone set is labelled Africa in the data. |
+| Berlin, Paris, Mindori and Tevza | King of the Hill | Not in the data | Not in the data | Listed in the server browser. The game files give them no zone data, so their layouts are not known. |
+| Detroit and Moscow Sniper Showdown layouts | Sniper Showdown | 350 m, fixed spot | Not in the data | Match the Detroit and Moscow Sniper Showdown entries by name only (not confirmed in game). |
 | Deathmatch | Deathmatch | Not applicable | Not applicable | Listed in the server browser with no map name. |
+| Tank Town | Tank Town | Not applicable | Not applicable | Uses the King of the Hill rules, with no map or zone data of its own. |
 
 Zone sizes and placement weights are on [Control Zone](control-zone.md).
 
@@ -67,9 +68,9 @@ A King of the Hill map. Its Control Zone is 550 m across and 150 m tall, with fo
 
 The Sniper Showdown map. Its zone is 350 m across and 170 m tall, with a 75 m Hot Zone and a fixed spot. See [Sniper Showdown](sniper-showdown.md).
 
-### Unnamed Africa layout
+### Kenya (Africa layout)
 
-A zone set (labelled Africa in the data) added in Season 2. Its Control Zone is 550 m across and 150 m tall. Four placements exist: a default with weight 1, and North, East and West with weight 0. The server browser table has no display name for this set, so it is listed here by its layout only.
+The Kenya map, added in Season 2. Its zone set is labelled Africa in the data. Its Control Zone is 550 m across and 150 m tall. Four placements exist: a default with weight 1, and North, East and West with weight 0. It is covered in full on [Kenya (Africa layout)](unnamed-africa-layout.md).
 
 ### Other entries
 
@@ -87,7 +88,7 @@ The data includes two test areas that are not playable modes. A minimal test are
 
 ## Rules and objectives
 
-Level layouts, spawn points, buildings and the places that count as zone cells are not in the data for any map. Anything a player sees on a map beyond the zone and region data is not yet known.
+The game's level files exist for the four main worlds and the test gym, but the spawn points and buildings inside them have not been read, so they are not described here. Anything a player sees on a map beyond the zone and region data is not yet known.
 
 ## See also
 
@@ -103,3 +104,5 @@ Level layouts, spawn points, buildings and the places that count as zone cells a
 - [ControlZone regions](../../game-features/Wardogs_GameFeatures_ControlZoneRegions_v2.md)
 - [Frontend data tables (server browser list)](../../content/Wardogs_DataTables_Frontend_v1.md)
 - [Season 2 changes: Game Modes & Maps](../../season-2-changes/game-modes-maps.md)
+- [Round 40 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-modes-ai-other.md)
+- [Zone selection rules (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/zone-selection.json)

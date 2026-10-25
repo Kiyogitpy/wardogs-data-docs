@@ -32,6 +32,7 @@ The weapon listings are on the weapon shop data page. Gear, medical items and ve
 ## How it works
 
 - **Price.** Each listing has one price. The vendor rows do not name a currency. The Season 2 unlock tree lists its costs in cash, so vendor prices are most likely cash, but the data does not state it outright.
+- **Price modifiers.** The economy settings in the game's configuration change what a player pays. A player at Wardog level 8 or below has a multiplier of 50, a team that trails by 40 points has 80, and a first purchase has 90. The faction signature rifles are set to 0 for their own faction. Refunds use a 0.9 factor. The code that applies these was not traced, so reading the multiplier as a percentage of the normal price is an inference.
 - **Unlock level.** Each listing has an unlock level. Most listings are level 1 and some are level 0. The data does not say which level counts (for example the role level or the account level).
 - **Required items.** Some listings need other items first. The data records these; the sample listings below show none.
 - **Buy limit.** Some listings have a lifetime buy limit. Where the data shows none, the listing has no limit.
@@ -135,3 +136,5 @@ The full tree is not in the sources, so this page does not list every unlock.
 - [Weapon shop](../../game-features/Wardogs_WeaponShop_v1.md)
 - [Progression tables](../../game-features/Wardogs_Progression_v1.md)
 - [Season 2 changes: Rewards & Unlocks](../../season-2-changes/rewards-unlocks.md)
+- [Default game settings (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/default-game-ini.json)
+- [Round 40 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-modes-ai-other.md)

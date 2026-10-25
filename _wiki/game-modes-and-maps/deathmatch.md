@@ -12,6 +12,7 @@ description: "Team deathmatch: pick one of 20 weapons before each spawn, with he
 | Type | Team deathmatch |
 | Teams | Two teams |
 | Objective | Kills, not zones |
+| Win condition | 75 kills or 30 minutes, whichever comes first |
 | Maps | Not named in the data |
 | Server browser label | Deathmatch |
 | Internal name | Deathmatch (experience) |
@@ -31,10 +32,10 @@ The server browser lists Deathmatch as a mode, but the data gives it no map name
   AK74, M4, SKS, KH-2002, A-91, GGX 17, M500, AMP-9, SV98, PP-19 Vityaz, Judge, PKM, M249 SAW, MK22, MGL-40, BMR-308, AMR 50, SVD, T-21, Super-45.
 
   Each entry uses the weapon's normal name and icon.
-- **Health.** Players regenerate health. The regeneration rate is not in the data.
-- **Ammunition.** The loadout is built with ammunition for the chosen weapon. The amounts are not in the data.
-- **Spawning.** How spawns are chosen is not yet known.
-- **Team sizes, match length and win condition.** Not yet known.
+- **Health.** Players regenerate 5 health per second.
+- **Ammunition.** Choosing a weapon gives you that weapon and four magazines. How many rounds start loaded is not in the data.
+- **Spawning.** You respawn at the spawn point furthest from all enemies. The choice is made by the game's code, not by a data table.
+- **Teams and win condition.** Two teams, Lonestar and Valkyra. The mode ends when a side reaches a score limit of 75 kills, or when the 30 minute time limit runs out. How many players each side may have is a server setting. Whether kills are counted per team or per player is not confirmed.
 
 ## Rewards
 
@@ -53,3 +54,7 @@ Deathmatch has no mode-specific reward table in the sources. Kill cash applies: 
 - [Rewards and progression](../../Wardogs_Rewards_and_Progression_v2.md)
 - [Frontend data tables (server browser list)](../../content/Wardogs_DataTables_Frontend_v1.md)
 - [Season 2 changes: Game Modes & Maps](../../season-2-changes/game-modes-maps.md)
+- [Round 39 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-modes-ai-other.md)
+- [Round 40 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-modes-ai-other.md)
+- [Mode rules (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/mode-rules.json)
+- [Default game settings (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/default-game-ini.json)

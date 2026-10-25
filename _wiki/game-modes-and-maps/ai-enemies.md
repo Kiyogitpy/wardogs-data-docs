@@ -16,7 +16,7 @@ description: "The computer-controlled soldiers of the PvE missions: five types i
 | Health | 100, the same as a player |
 | Accuracy | No AI-specific value; they shoot with their weapon's own spread and recoil |
 | Sight and hearing | Configured radius 2,000 m sight and 1,000 m hearing; the range in play is not confirmed |
-| Reaction time | Not yet known |
+| Reaction time | No reaction-time value; a soldier waits 2 s after noticing a threat before it moves to cover |
 | Internal name | AIC_Lonestar_Rifleman, AIC_Lonestar_Sniper, AIC_Manticore_Rifleman, AIC_Manticore_Machinegunner, AIC_Manticore_Marksman |
 {: .wiki-infobox }
 
@@ -58,7 +58,7 @@ The weapon, attachment and magazine names are the display names from the game da
 
 These are the configured radii, not confirmed distances in play. The perception setup also carries two range multipliers, 0.02 for sight and 0.05 for hearing, and how the game combines them with the radii is not known. A soldier may therefore notice a player at far less than 2 km, but the real sight and hearing distance has not been measured or decoded, so do not rely on either figure.
 
-- **Threat build-up.** A soldier builds up a detection level for a player and loses it again over time. The data sets the fade rate at 0.25 (the unit is not confirmed), and the fade starts only 5 s after the last detection.
+- **Threat build-up.** A soldier builds up a detection level for a player and loses it again over time. The fade starts 5 s after the last detection and runs at 0.25 per second, so a full level is gone in about 4 seconds.
 - **How visible a player is.** The data sets a value of 1.0 for a standing player, 0.4 for a crouching player and 0.3 for a prone player. Firing a weapon is set at 5.0, far above standing still, and movement speed also feeds into hearing. How these values combine into a chance of being spotted is not confirmed.
 
 ## Firing and aim
@@ -89,7 +89,7 @@ These are the configured radii, not confirmed distances in play. The perception 
 - **Team awareness.** Soldiers share a team map and an enemy map. Both fade over time, and the enemy map is refreshed every 2 seconds.
 - **Computers.** In Strike and Disarm, soldiers are sent to the laptop to stop the hack. The data shows no other mission using this.
 - **Behaviours in the missions.** Patrol sends soldiers along set routes in VIP Escort and Strike and Disarm. The besiege behaviour is added to the soldiers while the laptop hack runs. Search is included with Strike and Disarm, but no soldier or quest in the data uses it. Flee and the squad attack are example behaviours that no mission uses. A squad example includes a query that handles movement tokens, probably so squad members take turns moving.
-- **Exact action order.** The behaviour tree that sequences these actions is not in the data, so the exact order is not yet known.
+- **Action order.** Each soldier runs its behaviour in this order. First, if it is on Alert, it stops its current task, looks toward the stimulus and waits 2 s before it finds cover or peeks. Otherwise it takes a job when it has none, runs the goal of that job, and falls back to idling. It attacks only in Combat with line of sight to the player: it shoots from cover first, then moves along cover, and shoots in the open only when neither works. A burst is three rounds, and it reloads when its magazine is empty. Its target is refreshed every 1.5 seconds.
 
 ## See also
 
@@ -105,3 +105,5 @@ These are the configured radii, not confirmed distances in play. The perception 
 - [Weapon and attachment loadout data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-loadouts.json) (display names)
 
 - [Round 36 AI and PvE evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-ai.md)
+- [Round 39 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-modes-ai-other.md)
+- [Round 40 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-modes-ai-other.md)

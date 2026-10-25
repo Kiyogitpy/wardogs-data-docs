@@ -24,7 +24,7 @@ Saburtulo is a King of the Hill map with a 550 m Control Zone and four possible 
 
 ## Overview
 
-Saburtulo is played in [King of the Hill](king-of-the-hill.md) under one server browser entry. The data ties it to the Moscow entry by name, and its zone configuration is stored under the Russia files. The name link is not confirmed in game. Some data entries spell the placement names with "Sabartulo", which refers to the same placement set.
+Saburtulo is played in [King of the Hill](king-of-the-hill.md) under one server browser entry. The data ties it to the Moscow entry by name and folder only, so that link is not confirmed in game. Its zone configuration is stored under the Russia files. Some data entries spell the placement names with "Sabartulo", which refers to the same placement set.
 
 ## Modes played here
 
@@ -34,8 +34,8 @@ Saburtulo is played in [King of the Hill](king-of-the-hill.md) under one server 
 
 The Control Zone is 550 m across and 150 m tall, with an 85 m Hot Zone in its centre. For how capture works, see [Control Zone](control-zone.md).
 
-- **Hot Zone movement.** The Hot Zone moves every 25 seconds, with a default speed of 1.0 and a speed table from 0.75 to 2.0.
-- **Placements.** The zone has four placements. Hospital has weight 1, so it is the only placement picked by weight. Bazaar, River and Hillside have weight 0, so by weight alone they are never picked.
+- **Hot Zone movement.** The Hot Zone is placed at the start and then moves about every 25 seconds, with a default speed of 1.0 and a speed table from 0.75 to 2.0.
+- **Placements.** The zone has four placements. Hospital has weight 1, so it is the only placement drawn at random. Bazaar, River and Hillside have weight 0, so they are used only when the server rotation names them.
 
 | Placement | Weight |
 |---|---|
@@ -69,3 +69,4 @@ The zone layout for this map is described in full on [Zone Layouts](zone-layouts
 - [Frontend data tables (server browser list)](../../content/Wardogs_DataTables_Frontend_v1.md)
 - [UI data (minimap bounds)](../../content/Wardogs_UI_v2.md)
 - [Season 2 changes: Game Modes & Maps](../../season-2-changes/game-modes-maps.md)
+- [Zone selection rules (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/zone-selection.json)
