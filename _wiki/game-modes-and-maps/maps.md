@@ -85,6 +85,8 @@ Each King of the Hill match uses three spawn areas, one per side, and each area 
 | Saburtulo | 3 | 11 (6 / 2 / 3), plus one extra air yard | 68, plus 9 |
 | Kenya | Not in the data | Not in the data | Not in the data |
 
+Each deployment board looks after one vehicle, the side's M113 APC SV that players deploy onto. The game's built-in defaults, which every main map uses, set a vehicle respawn timer of 300 s and a shorter 60 s timer whose name ties it to a side that is losing. The board also has a 600 s deploy cooldown per player. The names suggest these govern the APC's return and how often one player can deploy, but the code that uses them has not been traced, so this is inferred. The respawn times are read from the game's code, not from the map files, and the exact conditions for the shorter time are not yet known. The data gives no respawn time for the vehicles in the yards.
+
 The Berlin, Paris and Mindori entries also have spawn areas of the same kind; the Tevza entry names three spawn areas that hold no vehicle or infantry spawn data in the game files. The details are on the [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md) data page.
 
 ### Other entries
