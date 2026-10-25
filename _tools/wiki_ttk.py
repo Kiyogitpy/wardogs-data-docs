@@ -134,7 +134,7 @@ def section_lines(code):
                      f"{cell(code, ammo, 'head', armor, d)}" for armor, level in ARMOR_LEVELS]
             out.append(f"- At {d} m, " + "; ".join(parts) + ".")
         out.append("")
-    notes = ["Derived from the game data, not from play testing. It assumes every shot hits the stated part, and it ignores reload time, "
+    notes = ["Derived from the game data, not from play testing. It assumes every shot hits the stated part and that armor stays intact, and it ignores reload time, "
              "spread and recoil, so real fights take longer. Damage after the first 10 m comes from the range falloff curve."]
     if n_pel > 1:
         notes.append(f"Shotgun figures add up all {n_pel} pellets of a shell and assume every pellet hits; at range the pellets spread out and some will miss.")

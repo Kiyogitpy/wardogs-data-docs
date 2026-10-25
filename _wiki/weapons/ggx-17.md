@@ -124,7 +124,7 @@ Shots and time to kill (TTK) against a character with 100 HP. TTK runs from the 
 - At 10 m, no helmet: 3 shots, 0.20 s; Level 1 helmet: 4 shots, 0.30 s; Level 2 helmet: 4 shots, 0.30 s; Level 3 helmet: 5 shots, 0.40 s; Level 4 helmet: 5 shots, 0.40 s.
 - At 100 m, no helmet: 3 shots, 0.20 s*; Level 1 helmet: 4 shots, 0.30 s*; Level 2 helmet: 5 shots, 0.40 s*; Level 3 helmet: 5 shots, 0.40 s*; Level 4 helmet: 6 shots, 0.50 s*.
 
-Derived from the game data, not from play testing. It assumes every shot hits the stated part, and it ignores reload time, spread and recoil, so real fights take longer. Damage after the first 10 m comes from the range falloff curve. A * marks a distance beyond the weapon's effective range of 50 m, where damage falls with distance.
+Derived from the game data, not from play testing. It assumes every shot hits the stated part and that armor stays intact, and it ignores reload time, spread and recoil, so real fights take longer. Damage after the first 10 m comes from the range falloff curve. A * marks a distance beyond the weapon's effective range of 50 m, where damage falls with distance.
 
 ## Recoil and spread
 

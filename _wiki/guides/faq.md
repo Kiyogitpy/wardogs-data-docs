@@ -30,7 +30,7 @@ Short answers to the questions players ask most often. Each answer gives the num
 
 **Does armor cover my legs?** No. Thighs, calves, feet, hands and lower arms are never covered by armor. Only the Super heavy vest also covers the pelvis and upper arm ([Armor](../game-mechanics/armor.md)).
 
-**How much damage does armor block?** Light armor blocks 30%, Medium 40%, Heavy 50% and Super heavy 60%. Vests cover the torso, and helmets cover the head ([Armor](../game-mechanics/armor.md), [Body Armor](../equipment/body-armor.md)).
+**How much damage does armor block?** Light armor (Level 1) blocks 30%, Medium (Level 2) 40%, Heavy (Level 3) 50% and Super heavy (Level 4) 60%. Vests cover the torso, and helmets cover the head ([Armor](../game-mechanics/armor.md), [Body Armor](../equipment/body-armor.md)).
 
 **Does a helmet cover my neck?** Only the heavier helmets. The Heavy, Super heavy and Tank helmets cover the neck, and the Light and Medium helmets cover the head only ([Armor](../game-mechanics/armor.md)).
 
@@ -38,7 +38,7 @@ Short answers to the questions players ask most often. Each answer gives the num
 
 **How long does a bandage take?** About 5.2 s to use on yourself, and 4.8 s on a teammate. It restores 35 HP ([Downed and Revive](../game-mechanics/downed-and-revive.md), [Bandage](../equipment/bandage.md)).
 
-**What is the Medical Bag for?** It heals you at 7 HP per second, or a teammate at 10 HP per second, and it can revive a downed player to 50 HP. Using any healing item halves your movement speed while you use it ([Medical Items](../equipment/medical-items.md), [Downed and Revive](../game-mechanics/downed-and-revive.md)).
+**What is the Medical Bag for?** It heals you at 7 HP per second, or a teammate at 10 HP per second, and it can revive a downed player to 50 HP. While a bandage, First Aid Kit, Medical Bag, Adrenaline Pen or resuscitator is in use, your maximum movement speed is halved ([Medical Items](../equipment/medical-items.md), [Downed and Revive](../game-mechanics/downed-and-revive.md)).
 
 **How long does a revive take?** A teammate holding a revive by hand needs 20 s with no equipment, and the revived player comes back at 10 HP. A Defibrillator needs a battery and a 4 s charge and restores 35 HP. The resuscitator takes about 4 s by derivation from the item data, but it has not been timed in play ([Downed and Revive](../game-mechanics/downed-and-revive.md), [Defibrillator](../equipment/defibrillator.md)).
 
@@ -62,7 +62,7 @@ Short answers to the questions players ask most often. Each answer gives the num
 
 **How many rifle rounds destroy a Humvee?** About 715 to the body, or 129 through the fuel tank. Both counts are derived at point blank with full metal jacket, not measured in play ([Vehicle Guide](vehicle-guide.md)).
 
-**Do flares stop missiles?** The data says flares can "momentarily prevent" a lock, but it does not say how long a burst breaks it. Treat them as a short delay, not a shield ([Countermeasures and Flares](../vehicles/countermeasures-and-flares.md)).
+**Do flares stop missiles?** Not known. An in-game tip says flares can "momentarily prevent" heat-seeking projectiles from locking on, but a search of the client found no rule that breaks a lock, and the data does not say how long a burst would last against a given launcher. A server-side effect is not ruled out ([Countermeasures and Flares](../vehicles/countermeasures-and-flares.md)).
 
 **How do I refuel?** At a Refuel Station inside a Forward Operating Base. The Fast option restores 5% of the tank for 75 cash over 3 s, and the Max option restores up to 100% over 9 s. A Fuel Canister also refuels a vehicle ([Vehicle Guide](vehicle-guide.md), [Refuel and Repair Stations](../building/refuel-and-repair-stations.md)).
 
@@ -76,19 +76,19 @@ Short answers to the questions players ask most often. Each answer gives the num
 
 **What is a Forward Operating Base?** The anchor for building. Most structures must be placed inside its radius. It costs 30 Build Supplies to place and 7,500 cash in the shop, and it has 15,000 HP ([Forward Operating Base](../building/forward-operating-base.md)).
 
-**Which hammer builds a Bunker, and how many rockets kill one?** Only the Large Hammer builds a Bunker, for 200 Build Supplies and 134 hits. Rockets do 45% more damage to it, and about 33 120 mm rockets destroy it at point blank. That count is derived from the damage table, not measured in play ([Bunker](../building/bunker.md)).
+**Which hammer builds a Bunker, and how many rockets kill one?** Only the Large Hammer builds a Bunker, for 200 Build Supplies and 134 hits. Rockets do 45% more damage to it, and about 33 120 mm rockets destroy it at point blank. That count is derived from the damage table, not measured in play ([Bunker](../building/bunker.md), [Buildables](../building.md)).
 
 **What does the Drill Rig do?** It is a fuel-powered rig built with the Large Hammer for 2,750 Build Supplies, with 2,500 HP. It runs on Fuel Supplies and pulls the Hot Zone toward it, at 3 m/s by the game's default. The rig's own data lists 5 m/s, which is not confirmed ([Drill Rig](../building/drill-rig.md)).
 
 **Do sandbags stop bullets?** A Sandbag Wall, with 735 HP, takes 15% of bullet damage. It takes 650% more from rockets and 500% more from IEDs ([Buildables](../building.md#damage-by-source), [Sandbag Wall](../building/sandbag-wall.md)).
 
-**Where do I get Build Supplies?** Ammo, Fuel, Mechanical and Build Supplies all cost 10 cash for a lot of 50 ([Supplies](../equipment/supplies.md)).
+**Where do I get Build Supplies?** From the Item Shop. Ammo, Fuel, Mechanical and Build Supplies all cost 10 cash for a lot of 50 ([Supplies](../equipment/supplies.md)).
 
 **Can I take down a structure I built?** Yes. A hammer hit on your own structure does 150, 200 or 250 damage with the Small, Medium or Large hammer. The data finds no Build Supplies refund for dismantling ([Buildables](../building.md#repair-and-dismantle)).
 
 ## Modes and maps
 
-**How do I win King of the Hill?** Be the first team to 100 points. A point is added every 22 s, and there is no time limit ([King of the Hill](../game-modes-and-maps/king-of-the-hill.md)).
+**How do I win King of the Hill?** Be the first team to 100 points. A point is added every 22 s by default, and there is no time limit ([King of the Hill](../game-modes-and-maps/king-of-the-hill.md)).
 
 **How do I win Deathmatch?** Reach 75 kills or play for 30 minutes, whichever comes first ([Deathmatch](../game-modes-and-maps/deathmatch.md)).
 
@@ -110,11 +110,11 @@ Short answers to the questions players ask most often. Each answer gives the num
 
 **Can I buy Gold Bars with real money?** The client data has no Gold Bar pack, so it does not show whether they are sold for money ([Currencies](../progression-and-economy/currencies.md)).
 
-**Why is my shop price lower?** Each price is multiplied by every discount that applies. A player at Wardog level 8 or below gets 50% off, a first purchase gets 90%, and a losing faction that trails by 40 points gets 80% (this one is inferred from the setting's field names). Your faction's signature rifle is free ([Shops](../progression-and-economy/shops.md)).
+**Why is my shop price lower?** Each price is multiplied by every discount that applies. A player at Wardog level 8 or below pays 50% of the price, a first purchase pays 90% (10% off), and a losing faction that trails by 40 points pays 80% (this condition is inferred from the setting's field names). Your faction's signature rifle is free, as read from the setting's name ([Shops](../progression-and-economy/shops.md)).
 
 **Can I get a refund?** Yes. A refund pays 90% of the eligible amount, but it must be claimed within 20 score ticks ([Shops](../progression-and-economy/shops.md)).
 
-**What pays the most cash for one action?** Destroying an enemy Havoc pays 6,000 cash for the Pilot role, the top payout in the role table on Making Money. A kill from artillery while standing in the open pays 5,000 for the Assault role, and destroying a heavy tank pays 5,000 for the Driver role ([Making Money](making-money.md), [Cash and Rewards](../progression-and-economy/cash-and-rewards.md)).
+**What is the biggest role payout for one action?** Destroying an enemy Havoc pays 6,000 cash for the Pilot role, the top payout in the role table on Making Money. A kill from artillery while standing in the open pays 5,000 for the Assault role, and destroying a heavy tank pays 5,000 for the Driver role ([Making Money](making-money.md), [Cash and Rewards](../progression-and-economy/cash-and-rewards.md)).
 
 **What is Intel for?** Passive missions pay 100 to 500 Intel per tier. The data has no shop price, unlock or exchange that uses it ([Currencies](../progression-and-economy/currencies.md), [Passive Missions](../progression-and-economy/passive-missions.md)).
 

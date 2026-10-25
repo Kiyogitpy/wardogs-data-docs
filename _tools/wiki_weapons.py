@@ -821,7 +821,7 @@ def comparison_page():
              "- A * marks a 100 m figure that is beyond the weapon's effective range, where damage falls with distance. Damage at 100 m uses the range falloff curve.",
              "- A Level 3 vest cuts upper-torso damage by 50%. See [Body Armor](../equipment/body-armor.md) for all four levels.",
              "- Recoil climb is how far the view rises over the first 10 shots of the Season 2 pattern, before attachments. See [Spread and Recoil](../game-mechanics/spread-and-recoil.md).",
-             "- Everything is derived from game data. It assumes every shot hits, and it ignores reload, spread and recoil. Real fights take longer.", "",
+             "- Everything is derived from game data. It assumes every shot hits and armor stays intact, and it ignores reload, spread and recoil. Real fights take longer.", "",
              "## See also", "", "- [Weapons](../weapons.md)", "- [Ammunition](../ammunition.md)", "- [Choosing Ammo](../guides/choosing-ammo.md)", "- [Health and Damage](../game-mechanics/health-and-damage.md)", "",
              "## Sources", "",
              "- [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md): body-part, armor and falloff numbers",
