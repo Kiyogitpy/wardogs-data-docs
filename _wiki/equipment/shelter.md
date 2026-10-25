@@ -32,7 +32,7 @@ The Shelter is a single-piece shelter that a Medium or Large Hammer can build. I
 
 The Shelter costs 250 Build Supplies and has 2,250 HP. It has no separate parts. The export gives no display name for it, so this article uses the plain name "Shelter".
 
-Destroying an enemy Shelter pays 250 cash and 65 Role XP. The placement rewards for a structure placed inside a base are a flat 5 cash (10 in a hot zone). The data has a Placed and a Placed in FOB reward table that could pay this, and it is not confirmed which one the game uses; see [Cash and Rewards](../progression-and-economy/cash-and-rewards.md).
+Destroying an enemy Shelter pays 250 cash and 65 Role XP. The placement rewards for a structure placed inside a base are a flat 5 cash (10 in a hot zone). The data also has Placed and Placed in FOB reward tables, but the game's lookup takes the first table that has a matching row (the Built table, checked first), so those two tables are never reached; this structure has no row of its own in any of them (read from the game code, assuming the usual table order; see [Cash and Rewards](../progression-and-economy/cash-and-rewards.md) and the [round 47 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round47.md)).
 
 ## Building it
 
