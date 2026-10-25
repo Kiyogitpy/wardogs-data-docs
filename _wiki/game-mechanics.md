@@ -27,3 +27,5 @@ These articles explain the rules of combat and movement in Wardogs: how much dam
 | [Artillery](game-mechanics/artillery.md) | Map coordinates, mils, low and high arcs, the SPH-2 firing table, height and tilt |
 | [Destruction](game-mechanics/destruction.md) | Which fences, walls, signs and poles can be knocked down, by which explosives and vehicles |
 | [Controls and Settings](game-mechanics/controls-and-settings.md) | Default keys by activity, and the aim, field of view and HUD settings with their defaults |
+| [Aim Assist](game-mechanics/aim-assist.md) | The four pull modes, the targets it counts and the weapon with assist switched off |
+| [Ammo Packing](game-mechanics/ammo-packing.md) | How long loading, unloading and combining rounds takes, by caliber and magazine |

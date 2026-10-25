@@ -51,6 +51,8 @@ The MIL scale is the sliding scale on the right of the gun sight. It is labelled
 
 Use it for: setting the elevation from the firing table. The value on the dashed centre line is what the gun will fire at.
 
+The MIL scale reads the barrel's pitch against the world horizontal, so the hull's tilt is already part of what it shows (derived from the game's code). The game does not add a separate tilt correction to the mil value.
+
 ### Tilt dial
 
 The tilt dial is a tank icon between two scales of seven ticks, at the bottom of the gun and driver views. The two triangles outside the scales move up and down together with the hull's pitch: when the nose tips up, the triangles move up. The angle of the bars shows the roll. One tick of pitch is about 7°. This figure was measured on one slope, so treat it as a rough guide. The dial also shows the turret angle relative to the hull. The hull heading is the sight bearing minus the turret angle.
@@ -67,9 +69,11 @@ Use it for: checking how far the hull is tilted, so you can correct the elevatio
 
 3. **Choose the arc.** Every range from about 1,181 m to 2,629 m can be hit two ways. The low arc is flat and fast, between 20 and about 600 mils. The high arc is steep and slow, between about 610 and 1,390 mils. Use the low arc if the target can move or you need the shell to arrive quickly. Use the high arc to clear a wall, a ridge or other cover. Between 780 m and 1,181 m only the high arc reaches the target.
 
-4. **Traverse to the bearing.** In the gun view, turn the turret until the centre of the bearing tape reads your bearing. Use the bearing tape, not the compass box.
+4. **Stabilize the hull, if you can.** Stabilizing takes 2.0 s and releasing it takes 1.0 s. The hull must be almost stopped (speed at most 0.1) on ground at most 20 degrees steep to stabilize. While stabilized the hull cannot move, and the gun cannot fire while the state changes. A hard enough impact releases it.
 
-5. **Set the elevation.** Look up the mils for your range in the "dial" columns of the firing table on the [Artillery](../game-mechanics/artillery.md) article (not the game table's mrad columns, which are a different list), then set the MIL scale's centre line to that value. Some sample rows:
+5. **Traverse to the bearing.** In the gun view, turn the turret until the centre of the bearing tape reads your bearing. Use the bearing tape, not the compass box.
+
+6. **Set the elevation.** Look up the mils for your range in the "dial" columns of the firing table on the [Artillery](../game-mechanics/artillery.md) article (not the game table's mrad columns, which are a different list), then set the MIL scale's centre line to that value. Some sample rows:
 
    | Range (m) | Low arc (mils) | High arc (mils) |
    |---:|---:|---:|
@@ -79,9 +83,9 @@ Use it for: checking how far the hull is tilted, so you can correct the elevatio
 
    If the target is higher or lower than your gun, or the hull is tilted, correct the setting as described below.
 
-6. **Fire, then watch the shell.** With the Expensive shell, the camera follows the round in flight. Mark where it lands on the map and compare the crater with the target. The same table gives the travel time: about 12 s at 2,000 m on the low arc, about 33 s on the high arc.
+7. **Fire, then watch the shell.** With the Expensive shell, the camera follows the round in flight. Mark where it lands on the map and compare the crater with the target. The same table gives the travel time: about 12 s at 2,000 m on the low arc, about 33 s on the high arc. The Expensive shell can also be steered in flight with a small input (scaled to 0.02). The Standard shell cannot be steered.
 
-7. **Adjust.** On the low arc, more mils means the shell lands further. On the high arc, more mils means the shell lands shorter. Change the setting by a little at a time and fire again.
+8. **Adjust.** On the low arc, more mils means the shell lands further. On the high arc, more mils means the shell lands shorter. Change the setting by a little at a time and fire again.
 
 ## Correcting your aim
 
@@ -89,7 +93,7 @@ Use the Expensive shell's camera to see where the shell lands. Watch it fall, th
 
 - **Height difference.** The firing table assumes the target is at the same height as the gun. A target higher or lower than the gun makes the shell land short or long. The community calculator has a height correction table for the low arc, and the CV Artillery Computer uses terrain heights to apply it. For a target about 100 m higher, three logged shots landed within about 20 m. Correct for height if you can, or move so that you fire at a similar height.
 
-- **Hull tilt.** The elevation you set appears to be measured relative to the tilted hull. In a comparison of real impacts, adding the hull's pitch from the tilt dial to the elevation halved the median miss, from 59 m to 34 m. This is an estimate from a flight simulator, so it suggests that the tilt dial is worth checking before you fire. It is not proven how the game handles tilt. The simplest fix is to park the vehicle level.
+- **Hull tilt.** The elevation you set appears to be measured relative to the tilted hull. In a comparison of real impacts, adding the hull's pitch from the tilt dial to the elevation halved the median miss, from 59 m to 34 m. This is an estimate from a flight simulator, so it suggests that the tilt dial is worth checking before you fire. It is not proven how the game handles tilt. The simplest fix is to park the vehicle level. Stabilizing the hull does not level the barrel.
 
 - **Firing altitude.** The mils for a range depend on how high the gun sits above sea level. Simulated, a 2,000 m low-arc shot needs 250 mils fired from 3 m, 224 from 50 m and 197 from 100 m. A gun on high ground can therefore need tens of mils less than a table measured at another height. The altitude the community table was measured at is not known.
 - **Aiming by the compass box.** The compass box reads about 1.3° less than the bearing tape. A shot aimed by the box lands about 1.3° to the side. Aim with the bearing tape, and you remove that error.
@@ -130,3 +134,4 @@ The stats sheet gives an effective range of 10,000 m, but the longest shot measu
 - [shell_sim.py](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/_tools/shell_sim.py)
 - [Round 21 artillery range check](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round21-artillery-range-check.md)
 - [Round 40 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-weapons.md): mil offset (16.8 mrad) and firing altitude
+- [Round 41 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-weapons.md): the dial's world pitch, the SPH-2 stabilized state and the Expensive shell's steering

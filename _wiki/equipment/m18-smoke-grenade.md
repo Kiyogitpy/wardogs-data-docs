@@ -24,7 +24,7 @@ description: "The M18 Smoke Grenade in white and black: a thrown smoke cloud tha
 | Internal name | `ID.Item.SmokeGrenade.White`, `ID.Item.SmokeGrenade.Black` |
 {: .wiki-infobox }
 
-The M18 Smoke Grenade makes a cloud of white or black smoke that lasts 120 s. It is the plain smoke throwable, and it is not a blast. In the code found, the only thing that reads the cloud is the aim-assist target picker, so smoke blocks aim assist. Spotting, lock-on and the minimap do not read it. Nothing in the data makes smoke block enemy soldiers' sight: the smoke has no collision or sight-blocker, so AI sight is not blocked as far as the data shows.
+The M18 Smoke Grenade makes a cloud of white or black smoke that lasts 120 s. It is the plain smoke throwable, and it is not a blast. In the code found, the only thing that reads the cloud is the [aim-assist](../game-mechanics/aim-assist.md) target picker, so smoke blocks aim assist. Spotting, lock-on and the minimap do not read it. Nothing in the data makes smoke block enemy soldiers' sight: the smoke has no collision or sight-blocker, so AI sight is not blocked as far as the data shows.
 
 ## Overview
 

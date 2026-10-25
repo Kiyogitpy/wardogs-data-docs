@@ -121,7 +121,11 @@ The table assumes the target is at the same height as the gun. A target higher o
 - The CV Artillery Computer uses terrain heights for the same correction. Three logged shots at targets about 100 m higher landed within about 20 m.
 - Shots fired without a known height difference overshot by about 70 m on average.
 
-Hull tilt also changes where the shell lands. The range function that the game uses for the dial takes only the dial value, with no hull pitch term. Where the game adds the hull pitch to the sight was not located. In the simulator's comparison against real shots, adding the hull's pitch to the elevation setting halved the median miss, from 59 m to 34 m. This suggests that the elevation is measured from the tilted hull, so park the SPH-2 level or correct for the slope. The game's handling of tilt is not confirmed.
+Hull tilt also changes where the shell lands. The dial reads the barrel's pitch against the world horizontal, so the hull's tilt is already part of the reading (derived from the game's code). The range function that the game uses for the dial takes only the dial value, with no hull pitch term, so the game does not correct the mils for tilt. Where the game adds the hull pitch to the sight was not located. In the simulator's comparison against real shots, adding the hull's pitch to the elevation setting halved the median miss, from 59 m to 34 m. This suggests that the elevation is measured from the tilted hull, so park the SPH-2 level or correct for the slope. The game's handling of tilt is not confirmed.
+
+### Stabilizing the hull
+
+The SPH-2 hull has a stabilized state. Entering it takes 2.0 s and leaving it takes 1.0 s. The game allows stabilizing only when the vehicle is almost stopped (speed at most 0.1, no unit given) and the ground under it is at most 20 degrees steep. While the hull is stabilized it cannot move, and the gun cannot fire while the state is changing. A hard enough impact (an impulse of at least 200,000, no unit given) takes the hull out of the stabilized state. The stabilized state does not level the barrel, so a slope still changes the shot.
 
 ### How consistent the gun is
 
@@ -136,7 +140,9 @@ Two shells exist for the SPH-2. Both are the "155mm HE Shell" in the game.
 | Expensive | 19 kg | 2.5 | Follows the shell in flight | The SPH-2 starts with this shell |
 | Standard | 70 kg | 80 | None | With the game's flight maths it cannot fly further than about 810 m (estimated) |
 
-The Expensive camera follows the shell, then detaches and zooms out after a while, with a 4 s fade. The stored range table was computed for the Expensive shell.
+The Expensive camera follows the shell, then detaches and zooms out after a while, with a 4 s fade.
+
+The Expensive shell can also be steered after it leaves the barrel. The steering input is scaled to 0.02, and vertical input is ignored (the game's flag for the shell's flight, derived from its settings). The Standard shell has no steering. The stored range table was computed for the Expensive shell.
 
 All shells launch at 300 m/s and fall under gravity of 9.8 m/s². Air drag slows them a great deal. Without drag, the same launch would carry the shell about 9 km. With drag, the Expensive shell tops out near 2.6 km (simulator estimate). A shell disappears after 40 s of flight.
 
@@ -183,3 +189,4 @@ The stats sheet gives the SPH-2 gun an "effective range" of 10,000 m. That is no
 - [Round 21 artillery range check](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round21-artillery-range-check.md): the comparison against 87 logged shots
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): how the SPH-2 sight labels its mil marks, and the mil scale.
 - [Round 40 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-weapons.md): mil offset (16.8 mrad), dial versus range table, firing altitude, Expensive shell
+- [Round 41 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-weapons.md): the dial's world pitch, the SPH-2 stabilized state and the Expensive shell's steering
