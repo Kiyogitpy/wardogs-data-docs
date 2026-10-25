@@ -24,7 +24,7 @@ cross-referenced to the UE class hierarchy.
 |---|---|
 | `*.md` (top-level) | 75 per-category reference docs (weapons, vehicles, items, game mechanics, UI, VFX, audio, animation, maps, meta, etc.) |
 | `data/Wardogs/` | Cooked data exports (JSON, parsed from `.uasset` via CUE4Parse) |
-| `sdk/` | CppSDK dump from UEDumper — UE class hierarchy mapping |
+| `sdk/` | CppSDK dump from Dumper-7 — UE class hierarchy mapping |
 | `mappings/` | Cooked-data `.usmap` and documentation of the sole external IDA map |
 | `docs/` | Scope, methodology, intent — project framing docs |
 | `tools/` | Research instrumentation (access-controlled; see `tools/README.md`) |
@@ -86,7 +86,7 @@ disclosure channel not public PRs.
 - **Wardogs** © Bulkhead Ltd, published by Team17
 - **Elytra** anti-cheat © Embark Studios AB
 - **Unreal Engine 5.7** © Epic Games
-- Community tooling: UEDumper, UnrealMappingsDumper, CUE4Parse,
+- Community tooling: Dumper-7, IDAExecFunctionsImporter, CUE4Parse,
   FModel, IDA Pro
 
 ## License

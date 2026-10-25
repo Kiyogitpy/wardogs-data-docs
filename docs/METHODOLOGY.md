@@ -12,7 +12,7 @@ How the data documentation and reverse engineering work gets done.
 │  .pak / .ucas   │   │  .exe          │
 └────────┬────────┘   └────────┬────────┘
          │                     │
-   CUE4Parse               UEDumper +
+   CUE4Parse               Dumper-7 +
    extraction              IDA Pro + .usmap
          │                     │
          ▼                     ▼
@@ -44,8 +44,9 @@ How the data documentation and reverse engineering work gets done.
 | **CUE4Parse** (.NET 10 SDK) | Read `.pak` / `.ucas` + decrypt + decode .uasset | `data/**/*.json` |
 | **retoc** (Rust) | Zen-to-legacy pak conversion | Intermediate paks |
 | **FModel** | Interactive asset browser (manual exploration) | ad-hoc |
-| **UEDumper** | Live dump of UE class hierarchy from running game | `sdk/*.h/.cpp` |
+| **[Dumper-7](https://github.com/Encryqed/Dumper-7)** | Live dump of the running game: C++ SDK, `.usmap`, `.idmap`, GObjects lists | `sdk/raw/`, `mappings/` |
 | **IDA Pro** | Static disassembly of the shipping binary | `.i64` project + exports |
+| **[IDAExecFunctionsImporter](https://github.com/Fischsalat/IDAExecFunctionsImporter)** | IDA 9.2+ plugin: imports Dumper-7 `CppSDK` types and `IDAMappings` names (exec functions, vtables, `StaticClass`, `FName` constants, `GObjects`/`GNames`/`ProcessEvent`) | Named, typed `.i64` |
 | **.usmap** | Serialized class/property metadata | Companion to CUE4Parse |
 
 ### Parsing and doc generation
@@ -95,7 +96,7 @@ The game patches regularly. Each patch:
    - **Structural** (new field, new asset class) → may need SDK
      refresh, possibly a new doc section
    - **Removed** (asset gone) → note removal
-4. UEDumper + IDA refresh if structure changed
+4. Dumper-7 + IDA refresh (re-import with IDAExecFunctionsImporter) if structure changed
 5. Update affected docs' top sections, keep the `v2` version
    number (bump to `v3` only for major structural rewrites)
 
@@ -152,7 +153,7 @@ After a data update: rerun the generators, then `check_links.py`.
 **Questions resolvable from static analysis alone:**
 
 - "What are the values in this asset" → CUE4Parse answers
-- "What's the SDK structure of this class" → UEDumper answers
+- "What's the SDK structure of this class" → Dumper-7 SDK answers
 - "Which function reads this asset" → IDA xref answers
 - "What does the function do" → IDA disassembly + decompile answer
 

@@ -3,8 +3,9 @@
 (function () {
   var cfg = window.WD_ASK || {};
   var TOP = 6;
+  var PER_PAGE = 2;
   var SEND_CHARS = 2200;
-  var STOP = new Set("a an the of for to in on at is are was were be what which who how do does did can i it its and or with from by this that these those there about into as me my you your tell show list give much many most output different various".split(" "));
+  var STOP = new Set("a an the of for to in on at is are was were be what which who how do does did can i it its and or with from by this that these those there about into as me my you your have has had tell show list give much many most output different various".split(" "));
 
   var dialog, form, input, out, index;
 
@@ -49,11 +50,14 @@
       return { d: d, s: s * Math.pow(hit / q.length, 2) };
     }).filter(function (x) { return x.s > 0; });
     scored.sort(function (a, b) { return b.s - a.s; });
-    var seen = Object.create(null), res = [];
+    // At most PER_PAGE sections from one page, so a page whose title matches cannot fill every slot.
+    var seen = Object.create(null), perPage = Object.create(null), res = [];
     for (var i = 0; i < scored.length && res.length < TOP; i++) {
-      if (seen[scored[i].d.url]) continue;
-      seen[scored[i].d.url] = 1;
-      res.push(scored[i].d);
+      var d = scored[i].d;
+      if (seen[d.url] || (perPage[d.doc] || 0) >= PER_PAGE) continue;
+      seen[d.url] = 1;
+      perPage[d.doc] = (perPage[d.doc] || 0) + 1;
+      res.push(d);
     }
     return { sections: res, terms: q };
   }
@@ -65,18 +69,32 @@
     return (from ? "… " : "") + text.slice(from, from + 220) + (text.length > from + 220 ? " …" : "");
   }
 
-  // The SEND_CHARS-long stretch of a section that holds the most question words, so long sections
-  // contribute the part that matches rather than their opening.
-  function excerpt(d, terms) {
+  // A long section is cut into pieces and the SEND_CHARS of pieces that best match the question are
+  // sent, in reading order, so the matching rows reach the model even when they sit far apart or
+  // deep in the section. Rare words weigh more and repeats count with diminishing returns.
+  function excerpt(ix, d, terms) {
     var text = d.content.replace(/\s+/g, " ");
     if (text.length <= SEND_CHARS) return text;
-    var low = text.toLowerCase(), step = 300, best = 0, bestScore = -1;
-    for (var from = 0; from + SEND_CHARS - step < text.length; from += step) {
-      var win = low.slice(from, from + SEND_CHARS), score = 0;
-      for (var i = 0; i < terms.length; i++) if (win.indexOf(terms[i]) >= 0) score++;
-      if (score > bestScore) { bestScore = score; best = from; }
+    var n = ix.docs.length, piece = 300, pieces = [];
+    var idf = terms.map(function (t) { var df = ix.df[t] || 0; return Math.log(1 + (n - df + 0.5) / (df + 0.5)); });
+    for (var from = 0; from < text.length; from += piece) {
+      var low = text.slice(from, from + piece).toLowerCase(), score = 0;
+      for (var i = 0; i < terms.length; i++) {
+        var c = 0, at = -1;
+        while ((at = low.indexOf(terms[i], at + 1)) >= 0) c++;
+        score += idf[i] * Math.log(1 + c);
+      }
+      pieces.push({ from: from, score: score });
     }
-    return text.slice(best, best + SEND_CHARS);
+    var keep = pieces.slice().sort(function (a, b) { return b.score - a.score || a.from - b.from; })
+      .slice(0, Math.floor(SEND_CHARS / piece))
+      .sort(function (a, b) { return a.from - b.from; });
+    var out = "", end = 0;
+    keep.forEach(function (p) {
+      out += (p.from === end ? "" : out ? " … " : "… ") + text.slice(p.from, p.from + piece);
+      end = p.from + piece;
+    });
+    return out;
   }
 
   function el(tag, cls, text) {
@@ -129,7 +147,7 @@
       out.replaceChildren(el("p", "wd-ask-status", "Writing an answer…"), sources);
       var payload = {
         question: question,
-        sources: found.sections.map(function (d) { return { title: d.doc + " › " + d.title, text: excerpt(d, found.terms) }; }),
+        sources: found.sections.map(function (d) { return { title: d.doc + " › " + d.title, text: excerpt(ix, d, found.terms) }; }),
       };
       var ctl = new AbortController(), timer = setTimeout(function () { ctl.abort(); }, 25000);
       fetch(cfg.endpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload), signal: ctl.signal })

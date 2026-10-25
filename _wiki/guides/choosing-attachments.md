@@ -39,7 +39,7 @@ Muzzle devices change vertical and horizontal recoil, spread and aim time. The r
 - **Quickest aim:** the .30 Cal Steel Black Flash Hider, aim time x0.97 (730). It fits the M14, and its only stat change is aim time.
 - **Shotgun chokes (M500):** the Improved Cylinder Choke (540) narrows the outer edge of the pellet pattern from 1.56 to 1.36 degrees, and about 26 percent of pellets land in the tight inner cluster. The Full Choke (1,150) narrows the edge to 0.95 degrees, and 34 percent of pellets land in the inner cluster. Both add aim time x1.02.
 - Brakes, chokes and suppressors with a stat change add aim time, from x1.02 to x1.15. Only the flash hiders cut aim time, to x0.97 or x0.98. A recoil pick usually costs some aim time.
-- The muzzle devices page counts 55 of the 56 parts as changing weapon numbers. Its table also lists the Deadeye Flash Hider with no stat change, so the page's count and its table do not fully agree.
+- 54 of the 56 muzzle devices change weapon numbers. The Deadeye Flash Hider is not one of them: its multipliers are all 1, even though its shop text promises faster aiming.
 - **Price range:** 350 to 1,400. 46 of the 56 parts have a shop price.
 
 ## Barrels

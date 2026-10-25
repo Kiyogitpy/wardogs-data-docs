@@ -210,9 +210,8 @@ mapping-to-image match.
 
 ### `.usmap` — UE class/property metadata
 
-Binary format produced by the community UEDumper fork
-([OutTheShade/UnrealMappingsDumper](https://github.com/OutTheShade/UnrealMappingsDumper))
-or similar tools. Encodes:
+Binary format produced by [Dumper-7](https://github.com/Encryqed/Dumper-7) (its `Mappings/` output; this
+build's live usmap came from that run) and other mappings dumpers. Encodes:
 
 - Class → parent class chain
 - Class → property list (name, type, offset, size, flags)
@@ -223,7 +222,6 @@ Used by:
 - **CUE4Parse** — resolves hashed property names when deserializing
   `.uasset` files
 - **FModel** — same, for interactive browsing
-- **UEDumper** — can import to seed a fresh dump
 
 ## How this fits the pipeline
 

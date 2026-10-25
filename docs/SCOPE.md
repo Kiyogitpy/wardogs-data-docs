@@ -26,7 +26,7 @@ agents, loaders, or instrumentation are published here.
 - Disassembly of `WardogsClient-Win64-Shipping.exe` using IDA Pro
   and the community `.idmap` / `.usmap` mappings documented in
   [`../mappings/`](../mappings/)
-- CppSDK generation via UEDumper
+- CppSDK generation via Dumper-7
 - Function-level documentation of code paths that consume the
   documented data assets
 - Formula documentation ("how multipliers combine", "how damage

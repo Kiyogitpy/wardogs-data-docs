@@ -22,7 +22,7 @@ description: "Muzzle devices (brakes, flash hiders, suppressors and chokes) and 
 | Internal name | `Item.Attachment.Muzzle` |
 {: .wiki-infobox }
 
-Muzzle devices fit the end of a barrel: flash hiders, brakes, compensators, suppressors and shotgun chokes. The data lists 56 of them, and all of them fit a weapon. 55 change weapon numbers; the one that changes nothing is the M14 standard muzzle.
+Muzzle devices fit the end of a barrel: flash hiders, brakes, compensators, suppressors and shotgun chokes. The data lists 56 of them, and all of them fit a weapon. 54 change weapon numbers. Two change nothing: the M14 standard muzzle, and the Deadeye Flash Hider, whose multipliers are all set to 1 even though its shop text promises a minor flash reduction and faster aiming.
 
 ## What they change
 

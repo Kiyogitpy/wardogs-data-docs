@@ -3,7 +3,7 @@
 > **Project:** [`Kiyogitpy/wardogs-data-docs`](https://github.com/Kiyogitpy/wardogs-data-docs) · [Live site](https://kiyogitpy.github.io/wardogs-data-docs/)
 
 Generated UE class hierarchy for Wardogs CL-516586, extracted via
-UEDumper. This bridges the per-category reference docs (which document
+Dumper-7. This bridges the per-category reference docs (which document
 *data*) and the game binary (which contains *code* that consumes the
 data).
 
@@ -11,7 +11,7 @@ data).
 
 **Committed:** 3653 files across 1807 packages (70 MB).
 
-- [`raw/`](raw/) — raw UEDumper output (one `.hpp` / `.cpp` per package)
+- [`raw/`](raw/) — raw Dumper-7 output (one `.hpp` / `.cpp` per package)
 - [`INDEX.md`](INDEX.md) — auto-generated package index by category
 
 ## What's here
@@ -69,8 +69,8 @@ See [`../docs/METHODOLOGY.md`](../docs/METHODOLOGY.md) for the full
 pipeline. Short version:
 
 1. Launch the game locally (author's own hardware, author's own copy)
-2. Attach UEDumper to the process
-3. UEDumper walks `GUObjectArray` and `GNames` to produce the C++ headers
+2. Load Dumper-7 into the process
+3. Dumper-7 walks `GUObjectArray` and `GNames` to produce the C++ headers
 4. Validate against known offsets from `.idmap` in `../mappings/`
 5. Commit the generated headers under `sdk/raw/`
 
@@ -83,7 +83,7 @@ pipeline. Short version:
 | Build | `++Wardogs+Live-CL-516586` |
 | Season | Season 02 (data as of 2026-10-15) |
 | SDK generated | 2026-10-15 |
-| UEDumper variant | current `main` branch |
+| Generator | Dumper-7 (`5.7.4-516586+++Wardogs+Live` in the `SDK.hpp` header) |
 
 ## Related
 

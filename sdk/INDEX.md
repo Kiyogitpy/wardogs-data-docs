@@ -4,7 +4,7 @@
 
 Auto-generated index of the 3653 SDK files committed under [`raw/`](raw/).
 
-Each UEDumper package has up to four files:
+Each Dumper-7 package has up to four files:
 - `_classes.hpp` — class declarations with inherited chain, properties, and method prototypes
 - `_parameters.hpp` — parameter structs for UFunction calls
 - `_structs.hpp` — package-local USTRUCT definitions

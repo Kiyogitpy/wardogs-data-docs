@@ -21,7 +21,7 @@ contributing.
 
 ### ✅ SDK and mapping improvements
 
-- Updated UEDumper outputs matching a new game build
+- Updated Dumper-7 outputs matching a new game build
 - IDA mapping (`.idmap`) refreshes for new builds
 - SDK class ↔ data doc cross-reference additions
 
