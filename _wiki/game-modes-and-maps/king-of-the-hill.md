@@ -12,6 +12,7 @@ description: "The main three-team zone-capture mode: hold the Control Zone and i
 | Type | Three-team zone capture |
 | Teams | Three factions: Lonestar, Valkyra and Manticore |
 | Objective | Hold the Control Zone and the Hot Zone inside it |
+| Win condition | First team to 100 points; no time limit |
 | Maps | Bakurani, Ozeti, Zestafona, Saburtulo, and four more (see [Maps](maps.md)) |
 | Server browser label | KOTH |
 | Internal name | KOTH (experience) |
@@ -21,19 +22,21 @@ King of the Hill (KOTH) is the main team mode. Three factions fight over a Contr
 
 ## Overview
 
-King of the Hill is the mode most of the maps are built for. The server browser lists it on four main maps (Bakurani, Ozeti, Zestafona and Saburtulo) and on four further maps that have no display name in the data. Every KOTH match uses the Control Zone runtime and three factions.
+King of the Hill is the mode most of the maps are built for. The server browser lists it on four main maps (Bakurani, Ozeti, Zestafona and Saburtulo) and on four further entries (Berlin, Paris, Mindori and Tevza) that have no zone data in the game files. Tank Town, a separate server browser entry, uses these same rules. Every KOTH match uses the Control Zone runtime and three factions.
 
 Players earn cash and XP from the zone and from fights around it. Challenges such as kills, revives and vehicle kills run during the match, and there are 60 KOTH-specific challenge rows; see [Challenges](../progression-and-economy/challenges.md).
 
 ## Rules and objectives
 
 - **Factions.** Three teams are set up at the start of the match. The factions are named in the data as Lonestar, Valkyra and Manticore.
-- **Match flow.** A match goes through four stages: waiting for the world to load, waiting for enough players, playing, then post-match.
+- **Match flow.** A match goes through four stages: waiting for the world to load, waiting for enough players, playing, then post-match. The lobby needs 60 players and waits up to 10 seconds for them. If that does not fill, a 5 second ready-up step needs at least 9 players. The post-match screen lasts 45 seconds.
 - **Scoring the zone.** A player counts toward capturing the zone only while alive. A critically wounded or dead player adds nothing. See [Control Zone](control-zone.md).
 - **Hot Zone.** Each Control Zone has a Hot Zone in its centre. The Hot Zone moves during the match. Kills and captures inside it pay more than in the outer zone.
 - **Hot Zone Magnet.** Players can build and activate a Hot Zone Magnet. While it is active, kills in the Hot Zone pay the highest multiplier in the game. Capturing hostile or neutral towers also counts.
 - **Spawning.** KOTH has its own spawn manager. The data does not describe a starting kit for KOTH players.
-- **Team sizes, match length and win condition.** Not yet known.
+- **Win condition.** The first team to reach 100 points wins, which is the game's default score limit. A point is added every 22 seconds (the example server file uses 24 seconds). There is no time limit.
+- **Team balance.** A team may be at most 2 players larger than the smallest team. The game's default leaves this lock off; the example server file turns it on.
+- **Player cap.** The maximum number of players is a server setting, which can be set between 60 and 100.
 
 ## Rewards
 
@@ -73,3 +76,7 @@ At the end of the match, factions are ranked and paid a flat placement bonus: 20
 - [Frontend data tables (server browser list)](../../content/Wardogs_DataTables_Frontend_v1.md)
 - [Maps and gym data](../../content/Wardogs_Maps_v2.md)
 - [Season 2 changes: Game Modes & Maps](../../season-2-changes/game-modes-maps.md)
+- [Round 39 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-modes-ai-other.md)
+- [Round 40 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-modes-ai-other.md)
+- [Mode rules (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/mode-rules.json)
+- [Default game settings (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/default-game-ini.json)

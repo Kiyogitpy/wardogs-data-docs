@@ -19,7 +19,7 @@ description: "The three factions in the game data, Lonestar, Valkyra and Mantico
 | **Internal name** | Meta.Alignment.Faction.Alpha, Bravo, Charlie and Default |
 {: .wiki-infobox }
 
-Wardogs has three factions: Lonestar, Valkyra and Manticore. A match sets up its teams from these factions, and the factions decide which vehicle versions, cosmetics and rewards a player sees. The game data gives the names, a few concrete differences and the rewards. It does not describe what each faction stands for or whether the factions differ in weapons or gear, so this article marks those points as not yet known.
+Wardogs has three factions: Lonestar, Valkyra and Manticore. A match sets up its teams from these factions, and the factions decide which vehicle versions, cosmetics and rewards a player sees. The game data gives the names, a few concrete differences and the rewards. The data gives each faction a colour and a signature rifle. What each faction stands for is not in the data.
 
 ## Overview
 
@@ -53,13 +53,13 @@ The default faction in the data uses the Manticore Forward Operating Base, so Ma
 
 - King of the Hill and the Shooting Range use three factions. The data says three teams are set up at the start of a match.
 - Deathmatch has two factions, the only mode in the sources with two.
-- Sniper Showdown assigns factions with a component. How many factions it uses and the team sizes are not yet known.
+- Sniper Showdown is free-for-all. Each player is given a faction from a pool, and how many factions the pool holds is not in the data.
 
 ## What is not known
 
-- **What each faction is.** The names are the only description in the sources. Backstory, colours and any roleplay identity are not yet known.
-- **Gear and weapons by faction.** The sources list no weapon stats or gear that changes by faction, apart from the logo skins. That is not the same as proof that none exists.
-- **Joining a faction.** How a player is placed into a faction in a normal match is not yet known.
+- **What each faction is.** The data gives each faction a name, a colour and a logo: Lonestar is blue, Valkyra red and Manticore green. Backstory and any roleplay identity are not in the data.
+- **Signature rifles.** Each faction has a 5.56 mm rifle that costs nothing for that faction (the economy data sets its price multiplier to 0): Lonestar the [Bushmaster M17S](../weapons/bushmaster-m17s.md), Valkyra the [A-91](../weapons/a-91.md) and Manticore the [KH-2002](../weapons/kh-2002.md). The data lists no other weapon or gear differences, which is not proof that none exist.
+- **Joining a faction.** How a player is placed into a faction in a normal match is not yet known. Deathmatch creates two factions, Lonestar and Valkyra; King of the Hill creates three.
 
 ## See also
 
@@ -76,3 +76,6 @@ The default faction in the data uses the Manticore Forward Operating Base, so Ma
 - [Demolition reference](../../content/Wardogs_Demolition_v2.md), vehicle rules
 - [Game features: AI](../../game-features/Wardogs_GameFeatures_AI_v2.md)
 - [Gameplay tags](../../content/Wardogs_GameplayTags_v1.md)
+- [Round 39 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-modes-ai-other.md)
+- [Round 40 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-modes-ai-other.md)
+- [Default game settings (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/default-game-ini.json)

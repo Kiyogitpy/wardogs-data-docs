@@ -42,7 +42,7 @@ The example scenario used for testing has no article of its own.
 - **VIP Escort.** The player faction is tagged Bravo, the Valkyra tag. The mission has an intro in three voice-over lines, a success line and a failure line. It uses its own loot table. One random player is chosen as the VIP, and the team must escort them to the extraction helicopter.
 - **AI squads.** The scenario AI comes in five types. The Lonestar squad has a rifleman and a sniper. The Manticore squad has a rifleman, a machine gunner and a marksman. The riflemen carry light armor, a light helmet, a rifle and spare magazines. The sniper and marksman carry scopes.
 - **Starting cash.** Each player starts Strike and Disarm with 3,000 cash and VIP Escort with 2,000. Hunter Killer sets none.
-- **Timers.** No mission has a time limit in its data. The timers that do exist are the 5-minute laptop hack in Strike and Disarm and the 10-second wait between the VIP going down and VIP Escort failing.
+- **Timers.** No mission has a time limit in its data. The timers that do exist are the 5-minute laptop hack in Strike and Disarm and the 10-second wait between the VIP going down and VIP Escort failing. After a mission ends, the scenario waits 15 seconds before its post-match step, and the end screen is delayed by 0.5 seconds.
 - **Team sizes.** Not yet known.
 - **Shared extraction.** Strike and Disarm and VIP Escort both end with the same extraction helicopter. It appears for the player's team at one of three entry points and flies a set route.
 - **Soldier behaviour.** Patrol routes are used in Strike and Disarm and VIP Escort. The besiege behaviour is added while the laptop hack runs. Search is included with Strike and Disarm, but no soldier or quest in the data uses it. Flee and the squad attack are example behaviours that no mission uses.
@@ -65,3 +65,4 @@ The scenario data has no cash or XP table of its own. The general rules apply; s
 - [Season 2 changes: Game Modes & Maps](../../season-2-changes/game-modes-maps.md)
 
 - [Round 36 AI and PvE evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-ai.md)
+- [Round 39 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-modes-ai-other.md)

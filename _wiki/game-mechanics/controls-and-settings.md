@@ -10,7 +10,7 @@ description: "Default keyboard and mouse controls grouped by movement, combat, v
 |---|---|
 | **Controls** | |
 | Default input | Keyboard and mouse (gamepad defaults are in the data, not listed here) |
-| Changing keys | Not stated in the data |
+| Changing keys | One action per key in each category |
 | **Settings** | |
 | Mouse sensitivity | Default 0.4, shown range 0.1 to 2 |
 | Field of view | Default 90, range 60 to 120 |
@@ -198,7 +198,8 @@ Video and quality options (upscaling, resolution scale, DLSS, FSR and similar) a
 ## Tips that follow from the settings
 
 - Sprint is set to Toggle by default, so Left Shift switches sprinting on and off rather than being held.
-- Aim down sight (FOV) is set to Affected by default. The data gives the two option names only, not what each one changes in play, so that effect is not yet known.
+- Aim down sight (FOV) is set to Affected by default. With Affected, the aimed field of view follows your field of view setting at low magnification (below 3.25x). With Independent, the aimed field of view always uses a fixed base value.
+- **Chat distances.** Proximity chat reaches 1,500 and team chat 10,000 (units not stated in the data). The chat history keeps the last 250 messages.
 
 ## See also
 
@@ -209,3 +210,5 @@ Video and quality options (upscaling, resolution scale, DLSS, FSR and similar) a
 ## Sources
 
 - [Settings and Input Actions](../../content/Wardogs_SettingsAndInputs_v1.md)
+- [Default game settings (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/default-game-ini.json)
+- [Round 40 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-modes-ai-other.md)

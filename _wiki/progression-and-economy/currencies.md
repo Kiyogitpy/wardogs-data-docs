@@ -25,11 +25,11 @@ The game has three currencies a player sees: Cash, Gold Bars and Intel. Cash is 
 |---|---|---|---|---|
 | Cash | 10,000 | Kills, revives, heals, vehicle work, zones, spotting, supply crates, and the end-of-match bonus | Vendors, role unlocks, factory investments | Yes, according to the in-game tip |
 | Gold Bars | 0 | Exchanged from cash at the Gold Exchange, and leftover cash at a season reset | Gold Market skins and emotes | Not in the data |
-| Intel | Not in the data | Passive missions, 100 to 500 per tier | Not in the data | Not in the data |
+| Intel | None (no entry in the currency table) | Passive missions, 100 to 500 per tier | Not in the data | Not in the data |
 
 ## Cash
 
-Cash is the main currency. It starts every player at 10,000, and players earn more during the match.
+Cash is the main currency. It starts every player at 10,000, and players earn more during the match. The client's currency table sets this starting balance.
 
 - **Earned.** Every action in a match pays cash, such as a kill, a revive or a heal. The amounts are in [Cash and Rewards](cash-and-rewards.md). The end-of-match bonus adds more on top, for the faction placed first, second or third.
 - **Spent.** Cash buys gear, weapons, vehicles and supply crates from vendors, as listed on [Shops](shops.md). It also buys role unlocks in the unlock tree, and it can be exchanged for Gold Bars. In Season 2 the Humvee unlock for the Driver role rose from 25,000 to 75,000 cash. The first factory investment costs 200 cash (see [Factory Investment](factory-investment.md)).
@@ -53,7 +53,7 @@ In the data, Intel is paid only by passive missions.
 
 - **Earned.** The passive mission Earn Cash pays 100, 200, 300, 400 and 500 Intel at its five tiers. The Earn Role XP mission and the Time Played mission pay the same five amounts. See [Challenges](challenges.md).
 - **Spent.** Nothing in the data uses Intel. It has no balance entry, no shop price, no unlock cost and no exchange, so the client has no spending route for it.
-- **Starting balance.** Not in the data.
+- **Starting balance.** None. The client's currency table has no Intel entry, so Intel starts at nothing.
 
 ## Skill points
 
@@ -107,3 +107,5 @@ The full list of skins and emotes is in [Weapon Skins](weapon-skins.md), [Vehicl
 - [Loading screen tips](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/LoadingScreen/Data/DT_LoadingScreenTips.json), the persistent cash tip
 - [Economy data: currencies, exchange and Gold Market](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/economy.json) (JSON)
 - [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md)
+- [Currency definitions (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/CurrencyDefinitions/DT_CurrenciesDefinitions.json)
+- [Round 40 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-modes-ai-other.md)
