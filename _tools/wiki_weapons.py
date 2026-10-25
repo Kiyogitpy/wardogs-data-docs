@@ -251,6 +251,8 @@ def stats(wid):
 
     if dmg and dmg.get("rpm") is not None:
         rpm = f"{fmt_int(dmg['rpm'])} rounds/min"
+        if str(dmg.get("rpm_source", "")).startswith("class_default"):
+            rpm += " (class default)"
     else:
         m = re.match(r"([0-9.]+)\s*(\(class default\))?", ro["rpm"] or "")
         if m:

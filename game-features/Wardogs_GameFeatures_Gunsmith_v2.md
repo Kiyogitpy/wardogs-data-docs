@@ -208,7 +208,7 @@ Expand and collapse actions: `Input.NamedActions.ItemSmith.ExpandStats` and `...
 | Max visualizer radius | **0.5** |
 | Minimum crosshair offset multiplier | **0.7** |
 
-The large-MOA bands are on the asset but were not extracted. These read as display and crosshair-visualiser settings. The export does not show them feeding weapon accuracy.
+The large-MOA value bands (extracted in round 39) are 5.0, 10.0, 15.0, 20.0 and 25.0, the small bands being 1.0 to 5.0; `MaxMOAValue` 25 is the top of the large scale. These read as display and crosshair-visualiser settings. The export does not show them feeding weapon accuracy.
 
 ---
 
@@ -236,7 +236,6 @@ The large-MOA bands are on the asset but were not extracted. These read as displ
 ## 12. Still Not Pulled / Limitations
 
 - **Weapon balance is not here.** Damage, fire rate, recoil and spread live on the weapon items, which are outside this plugin.
-- **Large-MOA bands** on [`DA_GunsmithExpandedAccuracy`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Shared/Stats/ExpandedStats/Data/DA_GunsmithExpandedAccuracy.json) were not extracted.
 - **Texture and widget assets** (`T_Reticle_*`, `W_*`, `DL_Gunsmith_*`, `B_Gunsmith*`) are referenced by name or path only.
   - **See [`docs/CROSS_REFERENCE.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/CROSS_REFERENCE.md)** for the project-wide cross-reference index of where referenced assets are defined.
 - **Localised strings** are referenced by key. The text is not in this export except where a `SourceString` was exported.
