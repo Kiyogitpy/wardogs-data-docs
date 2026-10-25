@@ -62,6 +62,8 @@ These rounds are fired by weapons. The figures are the explosion at the centre o
 
 The vehicle cannons, artillery and drone shells are on the [Explosives](../../game-features/Wardogs_Explosives_v1.md) data page. They are used by vehicles, not infantry.
 
+**Guidance.** The game data gives two rocket projectiles a guidance setting. The 72 mm rocket is guided, with a proportional-navigation (steering) constant of 30, a maximum turn of 10 and a lock-on time of 2 s. The 70 mm projectile is also guided, with a maximum turn of 1.0; these units are as stored, not labelled in the data. No weapon item lists the 70 mm projectile, and its other guidance fields are not set. The Talon 9K-SAM also fires 72 mm rounds, and the data does not say whether its rounds use this guidance.
+
 **Friendly fire.** The damage tables reduce friendly fire only for infantry bullets (-50 %) and large hammers (-70 %). Explosives and fire have no friendly-fire reduction in the tables. Any limit on hitting teammates with this item would have to come from the item itself or from native code, which the data does not show.
 
 ## Use and timing
@@ -116,3 +118,5 @@ The Season 2 items data lists no change to the blast damage, radius or fuse of a
 - [Items and Equipment changes, Season 2](../../season-2-changes/items-equipment.md): the Season 2 check
 - [Round 42 weapons evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-weapons.md): the throw-back gate for the M67, and the molotov and smoke rule
 - [Round 42 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-vehicles-explosives.md): the throw-back gate data for grenades, molotovs and smoke
+- [Round 46 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-b.md): wiki update notes for gear order, the Drill Rig zone speed, the lock and flare search, rocket guidance and placement rewards
+- [Guided projectile data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/r46-guidance.json): the guidance fields for the 72 mm and 70 mm projectiles

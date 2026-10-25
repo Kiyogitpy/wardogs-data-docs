@@ -45,7 +45,7 @@ The data does not give a windup time or a bullet speed that this article can che
 
 ### Targeting
 
-The Stingray is a lock-on weapon. Its target list covers air vehicles only, including the Little Bird family, the Havoc and the fixed-wing airplane. It takes 2.0 s to lock onto a target, and it fires 0.5 s after the lock.
+The Stingray is a lock-on weapon. Its target list covers air vehicles only, including the Little Bird family, the Havoc and the fixed-wing airplane. It takes 2.0 s to lock onto a target, and it fires 0.5 s after the lock. In the client code read, the lock only decides whether the weapon can fire.
 
 ### Range table
 
@@ -119,3 +119,4 @@ The Build Supplies cost is not a cash price. Build Supplies are bought in the sh
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): lock-on timings, the restock cost and the drone count.
 - [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
 - [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings
+- [Round 46 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-b.md): wiki update notes for gear order, the Drill Rig zone speed, the lock and flare search, rocket guidance and placement rewards

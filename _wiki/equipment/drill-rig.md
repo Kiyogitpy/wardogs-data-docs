@@ -68,7 +68,9 @@ After it is placed, the rig waits 15 s before it can start. Starting it is a hol
 | Run time per fuel unit | 0.03 s (Derived) |
 | Recharge after a run | 900 s (Derived) |
 
-While it runs, the Drill Rig is meant to pull the hot zone toward it. Once activated, the rig shrinks the hot zone to 0.6 of its width and length with the world default, which is 36 percent of the area. The rig's own data lists 0.5 instead, but the code reads the world default, and which value a live server uses is not shown. How the zone moves is not confirmed; the movement itself is not in the readable code.
+While it runs, the Drill Rig pulls the hot zone toward it. Once activated, the rig shrinks the hot zone to 0.6 of its width and length with the world default, which is 36 percent of the area. The rig's own data lists 0.5 instead, but the code reads the world default, and which value a live server uses is not shown.
+
+**Movement.** The hot zone moves toward the activated rig at a speed given in metres per second. The game's default for this is 3 m/s, which the code reads. The rig's own data lists 5 m/s; whether that replaces the 3 m/s in play is not confirmed. The time to arrive is the distance in metres divided by the speed, and that time is added to how long the rig stays active. Derived example: a hot zone 300 m away takes 100 s at 3 m/s and 60 s at 5 m/s.
 
 ## Durability
 
@@ -115,3 +117,4 @@ The recharge duration of 900 is not listed as changed.
 - [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): the rig's settings and placement checks
 - [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): the reward and hit-count rows used on this page.
 - [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
+- [Round 46 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-b.md): wiki update notes for gear order, the Drill Rig zone speed, the lock and flare search, rocket guidance and placement rewards

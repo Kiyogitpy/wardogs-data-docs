@@ -56,7 +56,7 @@ The Ural Defender has no weapons. Its three seats are a driver and two passenger
 
 ## Handling
 
-Handling matches the base Ural: mass 10,000, hand brake 50, front steering of 30 degrees, and the same six-speed gearbox.
+Handling matches the base Ural: mass 10,000, hand brake 50, front steering of 30 degrees, and the same gearbox: five forward gears and a reverse ratio.
 
 - **Tyre states.** Each tyre has three states: intact; damaged (deflated), at or below 55% of the wheel's health; and destroyed, at 0. The wheel data stores a radius, friction and brake value for each state. [Repair and vehicle parts](repair-and-vehicle-parts.md) covers what each state does.
 
@@ -79,3 +79,4 @@ Handling matches the base Ural: mass 10,000, hand brake 50, front steering of 30
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md)
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
 - [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
+- [Round 46 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-b.md): wiki update notes for gear order, the Drill Rig zone speed, the lock and flare search, rocket guidance and placement rewards

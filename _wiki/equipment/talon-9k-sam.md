@@ -43,7 +43,7 @@ The gun fires 100 rounds/min in semi-automatic mode, which is one shot per trigg
 
 ### Targeting
 
-The data gives the emplacement 2.0 s to lock onto a target, and a 0.5 s delay after the lock before it fires. The data does not link flares to it (see [Countermeasures and flares](../vehicles/countermeasures-and-flares.md)).
+The data gives the emplacement 2.0 s to lock onto a target, and a 0.5 s delay after the lock before it fires. In the client code read, a lock only decides whether a lock-on weapon can fire. The data does not link flares to it (see [Countermeasures and flares](../vehicles/countermeasures-and-flares.md)).
 
 ## Use and timing
 
@@ -86,3 +86,4 @@ The Build Supplies cost is not a cash price. Build Supplies are bought in the sh
 - [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
 - [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings
 - [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): the reward and hit-count rows used on this page.
+- [Round 46 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-b.md): wiki update notes for gear order, the Drill Rig zone speed, the lock and flare search, rocket guidance and placement rewards

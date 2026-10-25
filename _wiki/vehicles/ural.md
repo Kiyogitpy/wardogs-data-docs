@@ -64,7 +64,7 @@ The Ural has no weapons. Its three seats are a driver and two passengers.
 
 - Mass 10,000, hand brake 50, ABS 15 with a minimum speed of 35, and traction control 45, as stored.
 - Front steering of 30 degrees.
-- Six-speed gearbox with a first gear ratio of 5.62, the longest first gear of the wheeled vehicles.
+- Five forward gears and a reverse ratio (the last of its six gear entries). The first gear ratio is 5.62, second only to the Kodiak's 6.0 among the wheeled vehicles.
 - Torque peak 900 at 1,200 RPM, with a torque scale of 2.0 and an idle of 650 RPM.
 
 **Steering and pedal tuning.** The data stores steer input gravity 2 and throttle sensitivity 1. Its steer-speed multiplier falls from 1.4 to 0.5 as the input rises. The game does not label the units. (see [Vehicle handling](vehicle-handling.md#driving-input-tuning) for how these settings work).
@@ -95,3 +95,4 @@ The Ural has no weapons. Its three seats are a driver and two passengers.
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md)
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
 - [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
+- [Round 46 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-b.md): wiki update notes for gear order, the Drill Rig zone speed, the lock and flare search, rocket guidance and placement rewards

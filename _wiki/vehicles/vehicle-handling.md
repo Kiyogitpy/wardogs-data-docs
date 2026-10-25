@@ -30,6 +30,8 @@ Each vehicle has a top speed from its vendor stats. Its drive comes from a torqu
 
 The torque curve is the engine's pull at each engine speed. A peak of 475 at 5,500 means the engine pulls hardest at 5,500 RPM on that vehicle. Gears multiply that pull. A low first gear (a big ratio) gives more push when starting, and a high top gear gives more speed. Tracked vehicles use the same kind of torque curve against engine RPM, with the curve running up to 5,000 RPM. The torque values carry no unit label.
 
+In a wheeled vehicle's gear list, the last ratio is the reverse gear, applied in the opposite direction (confirmed in the game code). The other entries are the forward gears, in order. The Bobcat's list, 4.2, 2.8, 1.9, 1.5, 1.3 and 6, therefore gives five forward gears with a reverse ratio of 6.0. The Humvee's list ends in 3.6, which is its reverse, so it also has five forward gears. The tracked vehicles' gear lists were not checked this way.
+
 The data does not store a 0 to top speed time, so acceleration is shown here only through the torque and first gear numbers. The actual acceleration time is not yet known.
 
 ### Steering
@@ -128,13 +130,15 @@ The Ural's brake torque is listed for its three axles, with 38,000 on both the m
 
 ### Tracked vehicles
 
-| Vehicle | Max speed (as stored) | Peak torque (at RPM) | Gears | Brake force | Max incline (deg) |
+| Vehicle | Max speed (as stored) | Peak torque (at RPM) | Gear entries (as stored) | Brake force | Max incline (deg) |
 |---|---:|---|---:|---:|---:|
 | [M113 APC SV](m113-apc-sv.md) | 71 | 2,500 at 1,200 | 10 | 14 | 50 |
 | [SPH-2](sph-2.md) | 65 | 1,800 at 1,400 | 10 | Not set | 50 |
 | [L2A6](l2a6.md) | 65 | 1,800 at 1,400 | 10 | Not set | 50 |
 | [Flakpanzer Gepard](flakpanzer-gepard.md) | 65 | 1,800 at 1,400 | 7 | 30 | 50 |
 | [T-72B3](t-72b3.md) | 60 | 1,800 at 1,400 | 10 | Not set | 50 |
+
+The gear column counts the entries stored for each tracked vehicle. For the wheeled vehicles the last entry is reverse, but the tracked gear lists were not read, so whether their last entry is reverse is not confirmed, and the count may include it.
 
 The tank torque curves are the same for the SPH-2, L2A6, Gepard and T-72B3, and the M113 has its own curve. Tracked vehicles store a second engine curve with a peak of 1,400 at 1,911 RPM, which the data does not say is used alongside the first.
 
@@ -177,3 +181,4 @@ Helicopters have a drag coefficient of 0.006 on every variant. Their steering, b
 - [Round 39 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md): Driving and flight assist settings, tyre models and wheeled incline.
 - [Round 40 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-vehicles-explosives.md): the same topics, with the round 40 values where they differ.
 - [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
+- [Round 46 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-b.md): wiki update notes for gear order, the Drill Rig zone speed, the lock and flare search, rocket guidance and placement rewards

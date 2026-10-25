@@ -32,7 +32,7 @@ The Shelter is a single-piece shelter that a Medium or Large Hammer can build. I
 
 The Shelter costs 250 Build Supplies and has 2,250 HP. It has no separate parts. The export gives no display name for it, so this article uses the plain name "Shelter".
 
-Destroying an enemy Shelter pays 250 cash and 65 Role XP. The placement rewards for a structure placed inside a base are a flat 5 cash (10 in a hot zone) from the Placed-in-FOB resource, as far as the data shows; see [Cash and Rewards](../progression-and-economy/cash-and-rewards.md).
+Destroying an enemy Shelter pays 250 cash and 65 Role XP. The placement rewards for a structure placed inside a base are a flat 5 cash (10 in a hot zone). The data has a Placed and a Placed in FOB reward table that could pay this, and it is not confirmed which one the game uses; see [Cash and Rewards](../progression-and-economy/cash-and-rewards.md).
 
 ## Building it
 
@@ -96,3 +96,4 @@ The Season 2 data lists no change to the Shelter's cost or health.
 - [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
 - [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings
 - [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): structure hit counts for every listed source (stacked damage entries, IED and the M67 as a rocket) and the build time estimates.
+- [Round 46 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-b.md): wiki update notes for gear order, the Drill Rig zone speed, the lock and flare search, rocket guidance and placement rewards

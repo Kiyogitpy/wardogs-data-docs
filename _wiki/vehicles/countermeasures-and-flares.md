@@ -31,7 +31,7 @@ Flares are an anti-air countermeasure. The item text says a flare use "deploys 3
 
 The in-game tip says flares "can be used to momentarily prevent heat-seeking projectiles from locking onto your helicopter". The same tip set gives a second way to stay hidden from some launchers: "flying low stops certain launchers being able to lock on to your vehicle".
 
-A search of the game code found no rule that makes a flare clear or break a missile lock. That does not show that flares do nothing against lock-on; it means no such rule was found. The data does not say how a flare burst would change the lock of a particular launcher, or how long a lock would be broken. Missile lock against flares stays not confirmed. The Talon 9K-SAM is a fixed emplacement rather than a vehicle weapon, and the data does not say how flares interact with its targeting. See the [Talon 9K-SAM](../equipment/talon-9k-sam.md) article for the emplacement itself.
+A search of the game client found no rule that makes a flare clear or break a missile lock, and no code found clears a lock while flares are active. In the client code read, a lock only decides whether a lock-on weapon can fire. A server-side effect is not ruled out. A missing rule in the client does not show that flares do nothing against lock-on; it means no such rule was found. The data does not say how a flare burst would change the lock of a particular launcher, or how long a lock would be broken. Missile lock against flares stays not confirmed. The Talon 9K-SAM is a fixed emplacement rather than a vehicle weapon, and the data does not say how flares interact with its targeting. See the [Talon 9K-SAM](../equipment/talon-9k-sam.md) article for the emplacement itself.
 
 ### Smoke
 
@@ -95,3 +95,4 @@ The Flakpanzer Gepard, the T-72B3 and the M113 APC SV have a smoke countermeasur
 - [Round 42 weapons evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-weapons.md): the flare data and the search for a lock-on rule
 - [Round 42 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-vehicles-explosives.md): the flare cooldown and countermeasure readings
 - [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): the flare and smoke inventory handlers and the flare vendor row
+- [Round 46 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-b.md): wiki update notes for gear order, the Drill Rig zone speed, the lock and flare search, rocket guidance and placement rewards
