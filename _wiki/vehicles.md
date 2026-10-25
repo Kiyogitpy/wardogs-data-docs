@@ -59,6 +59,12 @@ The numbers come from the data pages and are shown as stored. The data does not 
 
 Stationary emplacements are built as buildables and cannot be driven, so they are listed under Building instead: [Talon 9K-SAM](building/talon-9k-sam.md), [Vanguard CIWS](building/vanguard-ciws.md), [L81 Mortar](building/l81-mortar.md), [Loudspeaker](building/loudspeaker.md), [Stingray](building/stingray.md) and [MG Nest](building/mg-nest.md). The guns mounted on vehicles are collected in [Vehicle weapons](vehicles/vehicle-weapons.md). Reference articles cover [fuel and refueling](vehicles/fuel-and-refueling.md), [repair and vehicle parts](vehicles/repair-and-vehicle-parts.md), [vehicle handling](vehicles/vehicle-handling.md), [countermeasures and flares](vehicles/countermeasures-and-flares.md) and [seats and passengers](vehicles/seats-and-passengers.md). The data lists no boats.
 
+## Reference
+
+| Article | What it covers |
+|---|---|
+| [Vehicle Comparison](vehicles/vehicle-comparison.md) | Every vehicle's seats, price, health, speed, fuel, weapons, countermeasures and damage numbers in one sortable table, with hits to destroy and value for money. |
+
 ## Sources
 
 - [All-Vehicle Stat & Damage Sheets](../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
