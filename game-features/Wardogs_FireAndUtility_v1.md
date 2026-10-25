@@ -229,6 +229,8 @@ Fields the item definition sets on its extension data. "Not serialized" means th
 | `Id.Item.IED.Trigger` | `BH_C4_Data_C` | `DelayTillExplosion` | 3 |
 <!-- /utility_throwable_tables trigger -->
 
+_AT mine vertical numbers._ The item data puts the trigger box centre at Z 120 (`TriggerLocation`) with a half-height of 120. The mine actor Blueprint `B_AT_Mine` has a separate `Z Offset` of 20 next to a trace offset of (0, 0, 50) (round 40 evidence, section R40-15). These are different fields of different assets: 120 positions the trigger box, 20 belongs to the actor and its use was not traced. Neither replaces the other.
+
 ### 5.3 How each one triggers
 
 | | AT mine | Claymore | C4 charge | IED |
@@ -260,6 +262,7 @@ Details behind the table:
 | C4 detonator | `Id.Item.C4Trigger` "Remote Detonator", chamber `Item.Attachment.Chamber` accepts only `Id.Item.C4Explosive` and starts with one; charge stack size 3 | Data |
 | C4 range | `MaxDetonationDistance` 200 in the detonator's extension data, times `DetonationDistanceMultiplier`, times 100. Code compares the distance from the owner to the charge against this value and cancels the blast when the charge is farther away. -1 disables the check. | Data + Bytecode (`DelayedDetonate`, offsets 4487-4851) |
 | C4 range value | 200 x 100 = 20,000 units at multiplier 1 | Derived |
+| C4 range, other value seen | The thrown charge Blueprint `B_ThrowableC4` also lists a "max detonation distance" of 100 (round 40 evidence, section R40-15). The item data and the `DelayedDetonate` bytecode use the detonator's 200, so 200 (20,000 units) is the range used here and the 100 is not applied as a limit; whether the charge-side field is read anywhere was not traced. | Data, conflict settled in favour of the item data (verification, round 39-40) |
 | Range skill | Support skill `Meta.Role.Support.IncreadedDetonatorRange` multiplies `Attribute.Gameplay.Weapon.DetonatorRangeMultiplier` (default 1) by the curve 1, 1.2, 1.4 (levels 0, 2, 4), so 20,000, 24,000 and 28,000 units. See [Progression](Wardogs_Progression_v1.md). | Data + Derived |
 | IED range | `MaxDetonationDistance` -1: no range limit | Data |
 | IED detonator | `Id.Item.IED.Trigger`, Specialist slot item. Primary use is the place action `Action.Placeable.PrimaryUse.IED` (consumes `Id.Item.IED.Explosive`); it also binds `Input.NamedActions.Appliable.SecondaryUse`. An action class `B_Action_IED_Trigger` exists; its logic was not read. | Data |

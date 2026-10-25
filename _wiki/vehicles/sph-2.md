@@ -37,7 +37,7 @@ The SPH-2 is sold in the vehicle vendor under land artillery, for 8,000 cash, an
 
 ## The gun
 
-The SPH-2 fires 155 mm shells from an L52 cannon. There are two kinds of shell, Expensive and Standard, and the vehicle starts with 10 Expensive and no Standard. The Expensive shell (19 kg) carries a camera that follows it in flight: the view stays with the shell, then detaches after a while and zooms out, with a 4 s fade. The Standard shell (70 kg) has no camera, and the game's flight maths put its longest flight at about 815 m (simulator estimate), so it cannot produce the long ranges.
+The SPH-2 fires 155 mm shells from an L52 cannon. There are two kinds of shell, Expensive and Standard, and the vehicle starts with 10 Expensive and no Standard. The Expensive shell (19 kg) carries a camera that follows it in flight: the view stays with the shell, then detaches after a while and zooms out, with a 4 s fade. The Standard shell (70 kg) has no camera, and the game's flight maths put its longest flight at about 810 m (simulator estimate), so it cannot produce the long ranges.
 
 Shells leave the barrel at 300 m/s and disappear after 40 s of flight. The barrel elevates from 2° to 80°, and the sight's MIL dial sets the elevation within the range shown in the infobox.
 

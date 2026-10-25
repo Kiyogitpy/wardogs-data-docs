@@ -717,6 +717,7 @@ def attachments_page():
     body += ["", "Each weapon article lists its own slots and default parts under its Attachments section.", "",
              "## See also", "",
              "- [Spread and Recoil](../game-mechanics/spread-and-recoil.md), where bipods, muzzle devices and foregrips change spread",
+             "- [Underbarrel Grenade Launcher (test item)](underbarrel-grenade-launcher.md), a 40 mm launcher attachment named as a test item in the data",
              "- [Weapons](../weapons.md)",
              "",
              "## Sources", "",

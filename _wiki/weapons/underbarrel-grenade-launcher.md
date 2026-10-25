@@ -1,16 +1,17 @@
 ---
-title: "TEST Grenade Launcher"
+title: "Underbarrel Grenade Launcher (test item)"
 parent: "Weapons"
-group: "Launchers"
-description: "The TEST Grenade Launcher: a 40 mm underbarrel launcher in the game data, with 75 rounds/min, a 300 m range and a 100 damage explosive round."
+group: "Attachments"
+description: "A 40 mm underbarrel launcher that the game data names TEST Grenade Launcher: not sold in the shop, with 75 rounds/min, a 300 m range and a 100 damage explosive round."
 ---
 
-# TEST Grenade Launcher
+# Underbarrel Grenade Launcher (test item)
 
-| TEST Grenade Launcher | |
+| Underbarrel Grenade Launcher (test item) | |
 |---|---|
 | **General** | |
-| Class | Underbarrel grenade launcher |
+| In-game name | TEST Grenade Launcher |
+| Class | Underbarrel grenade launcher (attachment) |
 | Caliber | 40 mm |
 | Fire modes | Semi-automatic |
 | **Performance** | |
@@ -18,12 +19,12 @@ description: "The TEST Grenade Launcher: a 40 mm underbarrel launcher in the gam
 | Muzzle speed | 7,600 (unit not stated) |
 | Effective range | 300 m |
 | **Availability** | |
-| Vendor price | Not listed |
+| Vendor price | Not sold in the shop data |
 | Unlock level | Not listed |
 | Internal name | TestGrenadeLauncher |
 {: .wiki-infobox }
 
-The TEST Grenade Launcher is an underbarrel launcher that fires 40 mm explosive rounds. It is in the game data with a full set of stats, but the sources used for this article list no shop price or unlock level for it.
+The game data lists an underbarrel launcher named "TEST Grenade Launcher" that fires 40 mm explosive rounds. The name reads as a test or placeholder item. It has a full set of stats, but no shop price or unlock level appears for it, and whether players can get or use it in a live match is not confirmed. It is a mountable attachment rather than a standalone weapon, so it is not in the weapon list.
 
 ## Overview
 
@@ -39,11 +40,12 @@ The launcher uses 40 mm rounds, one per shot.
 
 ## Cost and unlocking
 
-No vendor price or unlock level for the launcher is in the sources used for this article.
+The item does not appear in the shop data, and no unlock level for it is listed.
 
 ## See also
 
-- [Launchers](../weapons.md#launchers): the other launchers in the weapon list
+- [Attachments](attachments.md): the other parts that fit on weapons
+- [Launchers](../weapons.md#launchers): the stand-alone launchers in the weapon list
 - [MGL-40](mgl-40.md): a 40 mm grenade launcher with its own magazine
 
 ## Sources

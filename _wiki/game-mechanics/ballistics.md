@@ -28,7 +28,7 @@ A bullet leaves the muzzle at the weapon's muzzle speed. From then on, gravity p
 - **Flight steps.** The game moves a bullet in steps of 33 ms (about 30 a second) and checks its path at each step.
 - **Drag.** Air slows bullets. How much depends on the bullet's shape, weight and size, so the same muzzle speed does not mean the same range for every round.
 - **Damage falloff.** Each weapon has a distance curve. Damage stays at full up to a set distance and then drops; on many rifles the curve reaches 20% of full damage at 1,200 m. Separately, once a bullet has slowed below a reference speed, its damage is also scaled down. Both effects multiply together, which is why the table drops further than the curve alone.
-- **Effective range.** Each weapon's data lists an effective range (see the table below). The game multiplies it by 100 when it sets up each shot, then scales it by 1.2 for armor-piercing ammo and 0.8 for hollow point. The only use found so far is in the wind effect on the bullet's flight. It is not a damage cutoff: damage falloff comes from the weapon's own curve, not from the effective range.
+- **Effective range.** Each weapon's data lists an effective range (see the table below). The game multiplies it by 100 when it sets up each shot, then scales it by 1.2 for armor-piercing ammo and 0.8 for hollow point. The only use found so far is as the distance over which the wind effect on the bullet's flight builds up, which is an inference from reading the code; it was not seen in play. It is not a damage cutoff: damage falloff comes from the weapon's own curve, not from the effective range.
 
 ## Numbers
 
