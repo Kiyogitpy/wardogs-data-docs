@@ -23,7 +23,7 @@ The tables are for comparing, not for ranking. A vehicle with fewer hit points o
 
 - **As stored** means the number is copied from the data without conversion. The data does not label the speed and fuel units, so those are plain numbers. Main health is in HP, prices are in cash, and the aircraft masses are in kilograms.
 - **Derived** means the number was worked out from the data. Rifle damage taken is the share of a full-power 5.56 mm hit that reaches the hull, as each article gives it. Hits to destroy are counts from simulating the damage rules with full-power, point-blank, standard (FMJ) hits. They are estimates, not measured in game. The value-for-money figures are plain division of the shop price by the seat count or by the main health.
-- Rockets, C4 and anti-tank mines are not in the hits table. The vehicle articles give no hit counts for them.
+- Rockets, grenades, C4, mines and the other explosives have their own table, Hits to destroy by explosive. It uses a different rule from the bullet table above, so read its assumptions before comparing the two.
 - Mass is shown for the aircraft only. The wheeled and tracked articles list a mass too, but in units the data does not name.
 - Where articles disagree on seats, the table shows the figure in each article's infobox. The Humvee [Minigun] shop listing has 5 seats, while one stats sheet lists 4. The SPH-2 and the Ural Defender [M249] have 3 seats on the stats sheet, while their seat data has more setups.
 
@@ -90,6 +90,65 @@ Hits needed to destroy the main health, from the damage simulation in each artic
 | [Wolf-110](wolf-110.md) | 715 | 223 | 13 |
 | [Wolf-110 [M2 Browning]](wolf-110-m2-browning.md) | 715 | 223 | 13 |
 | [Fixed-wing airplane](fixed-wing-airplane.md) | Not simulated | Not simulated | Not simulated |
+
+## Hits to destroy by explosive
+
+How many blasts of each explosive it takes to destroy the main health of a vehicle (derived from the damage rules, not timed in play). The counts assume all of these:
+
+- The blast lands on a vehicle at full health, and nothing repairs it.
+- The vehicle is inside the inner radius of the blast. For a rocket that is a direct hit or a near miss of about 2 to 4 m, depending on the rocket. Past the inner radius the counts are much higher, see below.
+- Each blast counts once. One explosion applies to a vehicle once per part, so extra contacts on the same part do not add up.
+- Where one part destroys the vehicle faster than the main body, the count is shown in brackets.
+
+The rule used: the blast damage is multiplied by the vehicle's percentage rule for that explosive, and the number of blasts is the main health divided by that result, rounded up. The AT mine only goes off under a moving vehicle. The Stingray drone is fired by the Stingray emplacement. The Claymore is built for people, and its high vehicle counts show why it is a poor choice against vehicles.
+
+**Launchers** (one rocket or grenade per hit)
+
+| Vehicle | Main health (HP) | RPG-7 | MAAWS | 9K333 Verba | B-13 rocket | MGL-40 |
+|---|---:|---:|---:|---:|---:|---:|
+| [Havoc](havoc.md) | 800 | 3 | 2 | 2 | 11 | 15 |
+| [MH-6](mh-6.md), [AH-6M [Miniguns]](ah-6m-miniguns.md), [AH-6R [Rockets]](ah-6r-rockets.md) | 400 | 1 | 1 | 1 | 5 (2 through the tail rotor) | 5 |
+| [Z20 Lakota](z20-lakota.md), [Z20 Lakota [Miniguns]](z20-lakota-miniguns.md) | 600 | 3 | 2 | 2 | 11 | 8 |
+| [SPH-2](sph-2.md) | 650 | 5 | 3 | 3 | 10 | 15 |
+| [L2A6](l2a6.md), [Flakpanzer Gepard](flakpanzer-gepard.md) | 800 | 6 | 3 | 4 | 12 | 18 |
+| [T-72B3](t-72b3.md) | 750 | 5 | 3 | 4 | 9 | 17 |
+| [M113 APC SV](m113-apc-sv.md) | 1,000 | 5 | 3 | 4 | 12 | 44 |
+| [Bobcat](bobcat.md) | 200 | 1 | 1 | 1 | 1 | 1 |
+| [Dune Buggy](dune-buggy.md) | 400 | 3 | 2 | 1 | 2 | 4 |
+| [Kodiak](kodiak.md), [Kodiak [Pickup]](kodiak-pickup.md), [Kodiak [M249]](kodiak-m249.md) | 400 | 1 | 1 | 1 | 1 | 5 |
+| [Humvee](humvee.md) | 500 | 6 | 2 | 1 | 4 | 8 |
+| [Humvee [Minigun]](humvee-minigun.md) | 500 | 7 | 2 | 1 | 5 | 10 |
+| [Humvee [M249]](humvee-m249.md) | 500 | 7 | 2 | 1 | 5 | 9 |
+| [Ural](ural.md), [Ural Defender](ural-defender.md), [Ural Defender [M249]](ural-defender-m249.md) | 700 | 4 | 2 | 2 | 6 | 12 |
+| [Wolf-110](wolf-110.md), [Wolf-110 [M2 Browning]](wolf-110-m2-browning.md) | 500 | 2 | 1 | 1 | 3 | 7 |
+
+**Charges, mines and drones**
+
+| Vehicle | Main health (HP) | M67 frag grenade | C4 | AT mine | IED | Claymore | Stingray drone |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| [Havoc](havoc.md) | 800 | 2 | 4 | 1 | 2 | 22 | 2 |
+| [MH-6](mh-6.md), [AH-6M [Miniguns]](ah-6m-miniguns.md), [AH-6R [Rockets]](ah-6r-rockets.md) | 400 | 1 | 2 | 1 | 2 | 6 | 1 |
+| [Z20 Lakota](z20-lakota.md), [Z20 Lakota [Miniguns]](z20-lakota-miniguns.md) | 600 | 2 | 4 | 1 | 2 | 16 | 1 |
+| [SPH-2](sph-2.md) | 650 | 6 | 4 | 1 | 3 | 92 | 1 |
+| [L2A6](l2a6.md), [Flakpanzer Gepard](flakpanzer-gepard.md) | 800 | 8 | 5 | 2 | 3 | 113 | 2 |
+| [T-72B3](t-72b3.md) | 750 | 7 | 5 | 2 | 3 | 106 | 2 |
+| [M113 APC SV](m113-apc-sv.md) | 1,000 | 6 | 4 | 2 | 2 | 141 | 2 |
+| [Bobcat](bobcat.md) | 200 | 1 | 1 | 1 | 1 | 2 | 1 |
+| [Dune Buggy](dune-buggy.md) | 400 | 2 | 2 | 1 | 1 | 6 | 1 |
+| [Kodiak](kodiak.md), [Kodiak [Pickup]](kodiak-pickup.md), [Kodiak [M249]](kodiak-m249.md) | 400 | 1 | 2 | 1 | 1 | 6 | 1 |
+| [Humvee](humvee.md) | 500 | 2 | 3 | 1 | 1 | 14 | 1 |
+| [Humvee [Minigun]](humvee-minigun.md) | 500 | 2 | 5 | 1 | 1 | 14 | 1 |
+| [Humvee [M249]](humvee-m249.md) | 500 | 2 | 4 | 1 | 1 | 14 | 1 |
+| [Ural](ural.md), [Ural Defender](ural-defender.md), [Ural Defender [M249]](ural-defender-m249.md) | 700 | 3 | 7 | 1 | 2 | 14 | 1 |
+| [Wolf-110](wolf-110.md), [Wolf-110 [M2 Browning]](wolf-110-m2-browning.md) | 500 | 2 | 3 | 1 | 1 | 9 | 1 |
+
+How to read the table:
+
+- **Outside the inner radius the counts rise sharply.** A rocket or grenade that bursts beyond its inner radius loses the large inner-radius bonus that most vehicles have, and its damage also falls off with distance. For example, a Humvee takes 2 MAAWS rockets inside 4 m, and about 8 when the blast is halfway out between the inner and outer radius (derived). Aim for the vehicle itself.
+- **The RPG-7 is never stronger than the MAAWS here, and often much weaker.** Its rocket takes 6 hits on a Humvee where the MAAWS takes 2. The Humvee's rule keeps about 0.9 of the RPG-7 rocket's damage and multiplies the MAAWS rocket's damage by 3.9.
+- **Armor angle and thickness play no part.** The damage rules for tanks look only at the type of damage and at the part that was hit, not at the angle, the thickness or the side of the armor. See [Vehicle damage](vehicle-damage.md).
+- **The B-13 rocket is a helicopter pod rocket.** The Havoc and the AH-6R [Rockets] fire it. The data lists no hand-carried launcher for it.
+- **The 9K333 Verba is listed with the launchers because its rocket is an explosive round.** The data does not say it needs a target lock, so the counts treat it as any other rocket.
 
 The Z20 Lakota [Miniguns] article says its rifle damage works as on the Z20 Lakota and gives no separate table. The Fixed-wing airplane article lists no hit counts.
 

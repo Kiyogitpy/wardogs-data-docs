@@ -75,7 +75,7 @@ The table gives the 5.56 mm rifle hits needed to destroy the main health at full
 | [Dune Buggy](../vehicles/dune-buggy.md) | 286 | 84 through the fuel tank |
 | SPH-2, L2A6, Flakpanzer Gepard, T-72B3 | Cannot be destroyed | Cannon fire needed |
 
-The table counts only cannon fire for the tanks. The L2A6 takes 47 hits from the 30 mm cannon or 312 from the 20×102 mm cannon. The Havoc takes 42 hits from its 30 mm autocannon. The vehicle damage article also names rockets and explosives as ways to damage tanks, but the data gives no hit counts for them.
+The table counts only cannon fire for the tanks. The L2A6 takes 47 hits from the 30 mm cannon or 312 from the 20×102 mm cannon. The Havoc takes 42 hits from its 30 mm autocannon. Rockets, grenades, C4 and mines are the way to destroy tanks. Their hit counts are in the [Anti-Vehicle Guide](anti-vehicle-guide.md) and in [Vehicle Comparison](../vehicles/vehicle-comparison.md#hits-to-destroy-by-explosive).
 
 Tips that follow from the numbers:
 
