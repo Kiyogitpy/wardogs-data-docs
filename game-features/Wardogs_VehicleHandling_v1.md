@@ -93,7 +93,7 @@ Where the seat setups and `MaxSeats` differ (`WHL_05_Humvee_RingMinigun` 5 and 4
 
 ## 3. Wheeled vehicles
 
-**Data.** The torque curve is a `CurveFloat` (`CRV_Torque` in each vehicle's `Data/Curves`; WHL_02, WHL_05 and WHL_06 share the 475 @ 5,500 shape and differ in `TorqueScale`). `—` means the asset does not set the field, so the native default applies (not traced). The gear list has six entries; the sixth is the largest ratio and is probably reverse (not traced). Torque share and steer angle are per axle, front first. Wheel assets store three values per field (intact tyre, then two damaged states, shown by the tyre radius falling 0.45, 0.345, 0.26 on the dune buggy); the tables show the intact value. Brake torque, damper and spring units are not labelled.
+**Data.** The torque curve is a `CurveFloat` (`CRV_Torque` in each vehicle's `Data/Curves`; WHL_02, WHL_05 and WHL_06 share the 475 @ 5,500 shape and differ in `TorqueScale`). `—` means the asset does not set the field, so the native default applies (traced in round 45, see [Native defaults](#10-native-defaults-for--fields)). The gear list has six entries; the sixth is the largest ratio and is probably reverse (not traced). Torque share and steer angle are per axle, front first. Wheel assets store three values per field (intact tyre, then two damaged states, shown by the tyre radius falling 0.45, 0.345, 0.26 on the dune buggy); the tables show the intact value. Brake torque, damper and spring units are not labelled.
 
 <!-- vehicle_part_tables wheeled -->
 Drivetrain
@@ -336,6 +336,23 @@ Steering, suspension and tracks
 ## 9. Open items
 
 - Which of `EngineData` and `DynamicsData` drives a tracked vehicle, and the unit of the torque and brake numbers, are not traced.
-- Native defaults for the fields marked `—` (for example WHL_02 idle RPM, rotary engine values) are not traced.
-- Gear order (whether the last wheeled ratio is reverse) is inferred, not traced.
+- Gear order (whether the last wheeled ratio is reverse) is inferred, not traced; the native default list is two entries (3.0, 5.0) with automatic reverse on, which fits "last = reverse" ([round 45](../docs/evidence/round45-b.md), item 5).
 - `FlightCharacteristics` and `DA_ArcadeControls_*` are not decoded.
+- Whether the boost switch (`bEnableBoost`, false in every wheeled asset) gates the stored boost scale is not traced.
+
+---
+
+## 10. Native defaults for `—` fields
+
+**Data.** A cooked asset stores only the properties that differ from the class default, so every `—` above (and every missing `Values[n]` key of a wheel asset) takes the value the native constructor writes. The constructors were read statically in [round 45](../docs/evidence/round45-b.md) (items 1, 4 and 7); the filled-in values for every asset are in [`vehicle-native-defaults.json`](../assets/data/vehicle-native-defaults.json), rebuilt by [`_tools/r45_vehicle_defaults.py`](../_tools/r45_vehicle_defaults.py). A missing key is the default, not zero.
+
+| Class (constructor RVA) | Defaults that matter for the `—` cells |
+|---|---|
+| Engine and transmission (`0x530F660`) | torque scale 1.0, friction torque 50, **idle RPM 1,000**, limit RPM 6,500, limiter time 100, inertia 0.25, boost switch off, boost scale 1.0; auto change, auto reverse, auto clutch and rev matching on; change time 100, gear up / down ratio 90 / 80, crawling gear 1, **gear ratios 3.0 and 5.0**, final ratio 3.0 |
+| Axle (`0x530F5A0`) | differential strength 0.25, **torque share 0.5**, max steer angle 0, Ackermann 1.0, hand brake off |
+| Input (`0x530F7A0`) | **steer sensitivity 5.0**, steer input gravity 1.5, steer dead zone 0.01, steering assist 0, throttle / brake / clutch sensitivity 3.0, range 100, dead zone 0.01 |
+| Wheel (`0x5311EB0`), per state | friction and scales 1.0, tyre pressure 2.0, radius 0.25, width 0.2, mass 10, brake torque 1,000, travel 0.1, spring 5,000, dampers 1,000, physical-material lerp 1.0 |
+| Tracked engine data (`0x5304980`) | track mass 600, sprocket mass 64, brake force 20, boost scale 1.0, differential ratio 10, extra power ratio 5 |
+| Helicopter engine (`0x53846F0`) | operating RPM 15,000, RPM rates 1,000 up and down, main rotor 400 low / 500 operating, tail rotor 1,500 (least certain constructor of the set) |
+
+**Wheel states.** Each wheel field holds three values: intact, damaged and destroyed. The state byte is written from the wheel's health: damaged at or below the trigger threshold (55 percent in the cooked triggers), destroyed at 0 (see the round 45 note). The tables above show the intact value.

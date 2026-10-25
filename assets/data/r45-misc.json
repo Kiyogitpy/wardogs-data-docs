@@ -1,0 +1,365 @@
+{
+ "extractionHelicopter": {
+  "asset": "Extraction_Helicopter_Speed_Curve_Entry (used by the entry and the exit path)",
+  "keys": [
+   [
+    0.0,
+    300.0
+   ],
+   [
+    0.7,
+    300.0
+   ],
+   [
+    1.0,
+    100.0
+   ]
+  ],
+  "mover": "WDQuestNodeLatentAction_WaitForVehicleMovedAlongSpline tick 0x88A48E0: distance += Curve(distance / splineLength) x deltaTime, clamped to the spline length (USplineComponent length, Unreal units = cm), so the value is cm per second",
+  "unit": "cm/s (3 m/s up to 70 percent of the path, then easing to 1 m/s)"
+ },
+ "flareRestock": {
+  "addHandler": "0x767E260 via OnItemAdded 0x7689D10: on the authority, when the added item tag equals the flare tag, CurrentFlaresAmount (+0x790) += Delta, replicate, then broadcast 0x7673540 (Client_FlaresRestocked)",
+  "item": "Id.Item.Flares (FlaresIdTag of each DA_*GameplaySystems)",
+  "removeHandler": "0x767E3A0 via OnItemRemoved 0x7689EE0: count -= Delta",
+  "smoke": "same handlers: the smoke block (+0x350) count at +0x7B4 follows its own item tag",
+  "vendorRow": {
+   "amount": 1,
+   "category": "Vendor.Category.Vehicle.CounterMeasures",
+   "levelToUnlock": 1,
+   "price": 750.0,
+   "table": "DT_VendorData_Ext_Flares"
+  }
+ },
+ "hotZoneMagnet": {
+  "activationHandler": "0x85674A0 (authority-side activation handler; it reads as the rig or tower activation) and client function 0x8571F80: the hot-zone cache extents are multiplied component-wise by the world component's size multiplier and the result is handed to the control-zone component callback 0x8571E20; the tower number, durations and location are stored by 0x856FE50 and replicated",
+  "nativeDefaults": {
+   "sizeMultiplier": [
+    0.6,
+    0.6,
+    1.0
+   ],
+   "speed": 3.0
+  },
+  "rigDataAssetValues": {
+   "ActivatedHotZoneMagnetSpeed": 5.0,
+   "SizeMultiplier": [
+    0.5,
+    0.5,
+    1.0
+   ],
+   "note": "The rig data asset carries its own pair; the two activation functions read the world component's pair at +0xF8 (0.6, 0.6, 1.0 by default), not the rig's."
+  },
+  "sizeMultiplierFieldOffset": "+0xF8 (vector); speed +0xF0 (float, read only through the Blueprint getter 0x8573ED0)",
+  "worldComponent": "WDHotZoneMagnetGameStateComponent (native constructor 0x8566570)"
+ },
+ "pawnUnitSystems": {
+  "aiPerception": "SightRadius 200000 and HearingRange 100000 are Unreal units (cm): 2,000 m and 1,000 m",
+  "vendorSpeedLabel": "STRINGS_VehicleVendor_Stats VehicleStats.Title.MaxSpeed = \"Max Speed (KM/H)\""
+ },
+ "russiaCellSample": {
+  "cellsSampled": 100,
+  "cellsTotal": 10746,
+  "gameplayClassesFound": [
+   "PropVehicle_C (3, parked prop vehicles)",
+   "B_Door_C (5)"
+  ],
+  "notFound": [
+   "PlayerStart",
+   "spawn volumes",
+   "control-zone actors",
+   "FOB or buildable actors"
+  ],
+  "topClasses": {
+   "B_SmashableApartmentSingleWindow_C": 17,
+   "BodySetup": 152,
+   "ChildActorComponent": 69,
+   "EpSpawnedSplineMeshComponent": 111,
+   "HLODInstancedStaticMeshComponent": 107,
+   "HierarchicalInstancedStaticMeshComponent": 51,
+   "InstancedStaticMeshComponent": 589,
+   "PCGPartitionActor": 89,
+   "PropVehicle_C": 3,
+   "SceneComponent": 163,
+   "StaticMeshActor": 77,
+   "StaticMeshComponent": 212,
+   "WDDestructionAmbienceVolume": 26
+  }
+ },
+ "sniperShowdown": {
+  "assignment": {
+   "factionsCreatedAt": "0x864A150 (BeginPlay hook): one faction actor spawned per pool entry",
+   "function": "0x86464B0 (called from the player-state-added callback 0x864B1D0)",
+   "rule": "each joining player goes to the non-default faction with the fewest members (lowest count; the first one wins a tie), so with 100 or fewer players everyone is alone"
+  },
+  "factionPool": {
+   "class": "WDSniperShowdownFactionPool",
+   "classConstructor": "0x8644C80",
+   "entries": 100,
+   "entryNames": "FFAFactionData_001 .. FFAFactionData_100 (display \"FFA %d\")"
+  },
+  "lootPointNote": "WDGameFrameworkComponentReceiver actors with tags Lootable.SniperOnly.{High,Middle,Low}Value in the Sniper Showdown data-layer cells (10 cells per map).",
+  "lootPointsPerMap": {
+   "Kavkazi": {
+    "HighValue": 87,
+    "LowValue": 42,
+    "MiddleValue": 21,
+    "total": 150
+   },
+   "NorthAmerica": {
+    "HighValue": 69,
+    "LowValue": 65,
+    "MiddleValue": 16,
+    "total": 150
+   },
+   "Russia": {
+    "HighValue": 79,
+    "LowValue": 52,
+    "MiddleValue": 19,
+    "total": 150
+   }
+  }
+ },
+ "teamOffence": {
+  "constructor": "0x8936700",
+  "defaults": {
+   "ApprovalsPerSessionToFlag": 3,
+   "BanLengthsInSeconds": [
+    600,
+    1500,
+    3600,
+    86400
+   ],
+   "ConsequencePointThreshold": 15.0,
+   "FlaggedVoterWeight": 0.5,
+   "ForgivenessTimeInSeconds": 604800,
+   "OffenceRelevanceSeconds": 180.0,
+   "RejectRewardCooldownSeconds": 900.0,
+   "SelfDefenceWindowSeconds": 60.0
+  },
+  "defaultsNote": "Constructor values; DefaultGame.ini excerpt carries no TeamOffence section, so these apply.",
+  "notices": {
+   "Notice.TeamOffence.OffenderKicked": "Removed for repeated team offences.",
+   "Notice.TeamOffence.OffenderPunished": "You were punished for a team offence. You have {Points} of {Threshold} points before a kick vote.",
+   "Notice.TeamOffence.VoterExpired": "You were removed from the vote on {OffenderName}: no decision was made within {Seconds} seconds.",
+   "Notice.TeamOffence.VoterForgive": "{OffenderName} was forgiven.",
+   "Notice.TeamOffence.VoterKick": "{OffenderName} was punished, they have been banned.",
+   "Notice.TeamOffence.VoterPunish": "{OffenderName} was punished.",
+   "Notice.TeamOffence.VoterSafeZoneForgive": "You left the safe zone before deciding, so your vote on {OffenderName} was recorded as Forgive."
+  },
+  "prompt": {
+   "forgive": "FORGIVE",
+   "killer": "KILLER",
+   "punish": "PUNISH",
+   "rewardFeed": "Forgave Player",
+   "text": "{OffenderName}\\nHas killed you. Forgive or punish?",
+   "title": "TEAM KILL"
+  },
+  "settingsClass": "WDTeamOffenceSettings (UDeveloperSettings, Config)"
+ },
+ "tyreStateWriter": {
+  "binding": "0x5356B00 binds it to each wheel's health attribute",
+  "function": "0x537C580",
+  "states": "0 intact, 1 damaged (health / max health at or below the trigger threshold, 55 percent in the cooked triggers), 2 destroyed (health 0); byte array at +0x9B0, replicated (copy at +0x9D8), change handler 0x5370A40 refreshes the wheel mesh"
+ },
+ "vehicleSeatRoles": {
+  "inputContexts": "MVehicleInputControlsDataAsset has separate ActivePassenger and PassivePassenger InputMappingContexts arrays; none of the 15 cooked input-controls assets sets either (only DriverInputMappingContexts, and Gunner on 2).",
+  "passiveOnly": "SPW_01 (M113): seats 1 to 9",
+  "pluginsByRole": {
+   "ActivePassenger": [
+    "FWG_01",
+    "ROT_03",
+    "ROT_03_WeaponVariants",
+    "ROT_04",
+    "ROT_04_MachineGun",
+    "WHL_01",
+    "WHL_02",
+    "WHL_02_RingTurret",
+    "WHL_05",
+    "WHL_05_RingTurret",
+    "WHL_06",
+    "WHL_07",
+    "WHL_07_ArmouredBattle",
+    "WHL_08",
+    "WHL_08_RingTurret"
+   ],
+   "Driver": [
+    "FWG_01",
+    "ROT_02",
+    "ROT_03",
+    "ROT_03_WeaponVariants",
+    "ROT_04",
+    "ROT_04_MachineGun",
+    "SPW_01",
+    "TNK_01",
+    "TNK_04",
+    "WHL_01",
+    "WHL_02",
+    "WHL_02_RingTurret",
+    "WHL_05",
+    "WHL_05_RingTurret",
+    "WHL_06",
+    "WHL_07",
+    "WHL_07_ArmouredBattle",
+    "WHL_08",
+    "WHL_08_RingTurret"
+   ],
+   "Gunner": [
+    "ROT_02",
+    "ROT_04_MachineGun",
+    "STN_01",
+    "STN_02",
+    "STN_03",
+    "STN_05",
+    "STN_06",
+    "TNK_01",
+    "TNK_04",
+    "WHL_02_RingTurret",
+    "WHL_05",
+    "WHL_05_RingTurret",
+    "WHL_07_ArmouredBattle",
+    "WHL_08_RingTurret"
+   ],
+   "None": [
+    "STN_04"
+   ],
+   "PassivePassenger": [
+    "SPW_01"
+   ]
+  },
+  "rules": "All 17 gameplay-state queries and the Sprint, TacSprint and ping-request blocks that name a vehicle role list State.Player.Vehicle.Role.ActivePassenger and .PassivePassenger together.",
+  "seatsByRole": {
+   "ActivePassenger": 62,
+   "Driver": 23,
+   "Gunner": 21,
+   "None": 1,
+   "PassivePassenger": 9
+  }
+ },
+ "waterHeight": {
+  "formula": "bilinear blend of the four nearest samples (cell centres at half-sample offsets); a sample of 65535 means no water and is left out of the blend (weights renormalised); height = low + sample / 65535 x (high - low); the subsystem returns max(height - query Z, 0), the water depth at the point",
+  "gridLayout": {
+   "+0x30/+0x38": "world minimum X, Y (double)",
+   "+0x40/+0x48": "world size X, Y (double)",
+   "+0x50/+0x54": "width, height in samples (int32)",
+   "+0x58/+0x60": "height range low, high (double)",
+   "+0x88": "pointer to uint16 samples"
+  },
+  "sampler": {
+   "grid": "0x76C1430",
+   "subsystem": "0x6F771B0",
+   "subsystemGetter": "0x6F77110",
+   "users": [
+    "WDMolotovGrenade::Auth_Explode (0x86A15B0)",
+    "0x6E6FD40"
+   ]
+  }
+ },
+ "worldUnits": "WorldToMeters is not stored in any of the four WDWorldSettings, so the engine default 100 applies: 1 Unreal unit = 1 cm",
+ "worlds": {
+  "Europe": {
+   "defaultExperience": "Madrid_KOTH_01",
+   "killZ": -150000.0,
+   "playableBounds": {
+    "max": [
+     -190525.48,
+     -201000.0
+    ],
+    "min": [
+     -1042343.4,
+     -975825.06
+    ]
+   },
+   "worldBounds": {
+    "max": [
+     0.0,
+     0.0,
+     18442.0
+    ],
+    "min": [
+     -1632400.0,
+     -1632400.0,
+     -99075.0
+    ]
+   }
+  },
+  "Kavkazi": {
+   "defaultExperience": "Bakurani_KOTH_01",
+   "killZ": -150000.0,
+   "playableBounds": {
+    "max": [
+     -300000.0,
+     -600000.0
+    ],
+    "min": [
+     -1400000.0,
+     -1700000.0
+    ]
+   },
+   "worldBounds": {
+    "max": [
+     724.3164,
+     -407388.78,
+     18638.545
+    ],
+    "min": [
+     -1633865.9,
+     -2040857.2,
+     -103095.89
+    ]
+   }
+  },
+  "NorthAmerica": {
+   "defaultExperience": "Detroit_KOTH_01",
+   "killZ": -150000.0,
+   "playableBounds": {
+    "max": [
+     430000.0,
+     320000.0
+    ],
+    "min": [
+     -620000.0,
+     -600000.0
+    ]
+   },
+   "worldBounds": {
+    "max": [
+     867000.0,
+     610000.0,
+     1000000000.0
+    ],
+    "min": [
+     -867000.0,
+     -610000.0,
+     -10000000000.0
+    ]
+   }
+  },
+  "Russia": {
+   "defaultExperience": "KOTH",
+   "killZ": null,
+   "playableBounds": {
+    "max": [
+     660000.0,
+     660000.0
+    ],
+    "min": [
+     -660000.0,
+     -660000.0
+    ]
+   },
+   "worldBounds": {
+    "max": [
+     816000.0,
+     816000.0,
+     66003.19
+    ],
+    "min": [
+     -816000.0,
+     -816000.0,
+     8121.4907
+    ]
+   }
+  }
+ }
+}
