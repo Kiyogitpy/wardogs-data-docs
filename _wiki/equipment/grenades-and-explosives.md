@@ -62,7 +62,7 @@ These rounds are fired by weapons. The figures are the explosion at the centre o
 
 The vehicle cannons, artillery and drone shells are on the [Explosives](../../game-features/Wardogs_Explosives_v1.md) data page. They are used by vehicles, not infantry.
 
-**Guidance.** The game data gives two rocket projectiles a guidance setting. The 72 mm rocket is guided, with a proportional-navigation (steering) constant of 30, a maximum turn of 10 and a lock-on time of 2 s. The 70 mm projectile is also guided, with a maximum turn of 1.0; these units are as stored, not labelled in the data. No weapon item lists the 70 mm projectile, and its other guidance fields are not set. The Talon 9K-SAM also fires 72 mm rounds, and the data does not say whether its rounds use this guidance.
+**Guidance.** The game data stores guidance settings for two rocket projectiles: the 72 mm rocket has a proportional-navigation (steering) constant of 30, a maximum turn of 10 and a lock-on time of 2 s, and the 70 mm projectile a maximum turn of 1.0 (units as stored). Whether these values steer the rocket in flight is not confirmed: the code that reads them was not found, and no code found switches homing on.
 
 **Friendly fire.** The damage tables reduce friendly fire only for infantry bullets (-50 %) and large hammers (-70 %). Explosives and fire have no friendly-fire reduction in the tables. Any limit on hitting teammates with this item would have to come from the item itself or from native code, which the data does not show.
 
