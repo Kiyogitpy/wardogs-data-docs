@@ -32,7 +32,7 @@ The Door is a closeable barrier that a Medium or Large Hammer can build. It has 
 
 The Door costs 80 Build Supplies and has 2,200 HP. It is made of a door section and a top section, each costing 22 Build Supplies and having 500 HP.
 
-The reward tables give 100 cash for destroying an enemy Door. They give no cash for building or placing one. Closing a friendly Forward Operating Base door pays cash too. The [Rewards page](../../game-features/Wardogs_GameFeatures_Rewards_v2.md) has the amount.
+Destroying an enemy Door pays 100 cash and 25 Role XP. They give no cash for building or placing one. Closing a friendly Forward Operating Base door pays cash too. The [Rewards page](../../game-features/Wardogs_GameFeatures_Rewards_v2.md) has the amount.
 
 ## Building it
 
@@ -46,9 +46,11 @@ The reward tables give 100 cash for destroying an enemy Door. They give no cash 
 
 | Building it | Small hammer | Medium hammer | Large hammer |
 |---|---:|---:|---:|
-| Hits to build | cannot place | 80 | 54 |
+| Hits to build | cannot place | 80 (about 45.4 s) | 54 (about 47.7 s) |
 | Hits to repair from zero health | 80 | 40 | 27 |
 | Hits to dismantle (your own) | 15 | 11 | 9 |
+
+Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
 
 Each part on its own takes 15 repair hits from zero with the Medium Hammer or 10 with the Large Hammer, and 3 dismantle hits with the Medium Hammer or 2 with the Large Hammer (Derived). The build count assumes normal hits, and hitting weak spots brings it down.
 
@@ -67,16 +69,16 @@ The Door can be closed, and the data gives it a breach effect when it is destroy
 | C4 | +200% | 3 times |
 | IEDs | +800% | 9 times |
 
-The damage numbers for the Door also apply to its door section and top section. The data does not say how many hits the Door takes to destroy, so that number is not yet known. For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
+The damage numbers for the Door also apply to its door section and top section. The table below gives the hits it takes to destroy, for each source. For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
 
 ## Hits to destroy (point blank, derived)
 
-Derived from each source's base damage and the damage table. It is not a count from play: each figure assumes every shot lands at point blank for full damage, with no falloff and no other rules, so real fights can differ. Base damage used: M4 5.56 mm FMJ 28, M67 frag grenade 100, 120 mm rocket 150, C4 charge 250.
+Derived from each source's base damage and the damage table. It is not a count from play: each figure assumes every shot lands at point blank for full damage, with no falloff and no other rules, so real fights can differ. Base damage used: M4 5.56 mm FMJ 28, .50 cal FMJ 90, 120 mm rocket 150, M67 frag grenade 100 (it counts as a rocket against structures), C4 charge 250, IED 300. Each figure is the number of hits needed after every matching damage entry is applied.
 
-| Structure | HP | M4 5.56 mm FMJ | M67 frag grenade | 120 mm rocket | C4 charge |
-|---|---:|---:|---:|---:|---:|
-| Door | 2,200 | 524 | 22 | 2 | 3 |
-| Door-only or top section | 500 | 120 | 5 | 1 | 1 |
+| Structure | HP | M4 5.56 mm FMJ | .50 cal FMJ | 120 mm rocket | M67 frag grenade | C4 charge | IED |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Door | 2,200 | 524 | 163 | 4 | 3 | 3 | 1 |
+| Door-only or top section | 500 | 120 | 38 | 1 | 1 | 1 | 1 |
 
 ## Season 2 changes
 
@@ -96,3 +98,4 @@ Derived from each source's base damage and the damage table. It is not a count f
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy for each source of damage.
 - [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
 - [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings
+- [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): structure hit counts for every listed source (stacked damage entries, IED and the M67 as a rocket) and the build time estimates.

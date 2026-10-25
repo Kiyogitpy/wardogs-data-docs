@@ -22,7 +22,7 @@ description: "Two vehicle service stations built with the Large Hammer from 200 
 | Grenades | +50% |
 | Rockets | +1,500% |
 | C4 | +600% |
-| IEDs | +1,000% (Repair Station); no single entry (Refuel Station) |
+| IEDs | +1,000% (Repair Station); +0% (Refuel Station) |
 | Internal name | `DA_Buildable_RefuelStation`, `DA_Buildable_RepairStation` |
 {: .wiki-infobox }
 
@@ -34,7 +34,7 @@ Both stations cost 200 Build Supplies and have 1,600 HP. Neither has separate pa
 
 The Refuel Station works with Fuel Supplies, and the Repair Station works with Mechanical Supplies. The item text for each says it is needed to refuel or repair vehicles, and that it needs a friendly base radius to use. Both stations store the same repair speed figure, 13.33. It is the structure's own hammer repair-speed multiplier, not a vehicle repair rate (see [Repair and vehicle parts](../vehicles/repair-and-vehicle-parts.md)).
 
-The reward tables have no cash entry for either station.
+Destroying an enemy Refuel Station or Repair Station pays 200 cash and 50 Role XP each.
 
 ## Building it
 
@@ -48,9 +48,11 @@ The reward tables have no cash entry for either station.
 
 | Building it | Small hammer | Medium hammer | Large hammer |
 |---|---:|---:|---:|
-| Hits to build | cannot place | cannot place | 134 |
+| Hits to build | cannot place | cannot place | 134 (about 118.3 s) |
 | Hits to repair from zero health | 31 | 16 | 11 |
 | Hits to dismantle (your own) | 11 | 8 | 7 |
+
+Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
 
 The Large Hammer is the only one that can place a station. The repair and dismantle hits for the other hammers are what their hits do; the data does not check them for this structure. The build count assumes normal hits, and hitting weak spots brings it down. The repair hits are for a finished station; the repair multiplier is 13.3.
 
@@ -76,18 +78,18 @@ The times are the stored values. Whether a Max restock is shorter when the tank 
 | Grenades | +50% | +50% |
 | Rockets | +1,500% | +1,500% |
 | C4 | +600% | +600% |
-| IEDs | no single entry | +1,000% |
+| IEDs | +0% (300 per hit) | +1,000% |
 
-Rockets do 16 times their normal damage to either station. The Refuel Station has no single IED entry in the data, so the IED damage it takes is not yet known from this table. The hits either station takes to destroy are derived in the table below. For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
+Rockets do 16 times their normal damage to either station. The Refuel Station has no IED entry of its own, so an IED does its base 300 damage to it: 6 IED hits destroy it. The Repair Station has its own IED entry (+1,000%), so 1 IED hit destroys it. The other hits either station takes to destroy are derived in the table below. For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
 
 ## Hits to destroy (point blank, derived)
 
-Derived from each source's base damage and the damage table. It is not a count from play: each figure assumes every shot lands at point blank for full damage, with no falloff and no other rules, so real fights can differ. Base damage used: M4 5.56 mm FMJ 28, M67 frag grenade 100, 120 mm rocket 150, C4 charge 250.
+Derived from each source's base damage and the damage table. It is not a count from play: each figure assumes every shot lands at point blank for full damage, with no falloff and no other rules, so real fights can differ. Base damage used: M4 5.56 mm FMJ 28, .50 cal FMJ 90, 120 mm rocket 150, M67 frag grenade 100 (it counts as a rocket against structures), C4 charge 250, IED 300. Each figure is the number of hits needed after every matching damage entry is applied.
 
-| Structure | HP | M4 5.56 mm FMJ | M67 frag grenade | 120 mm rocket | C4 charge |
-|---|---:|---:|---:|---:|---:|
-| Refuel Station | 1,600 | 286 | 11 | 1 | 1 |
-| Repair Station | 1,600 | 286 | 11 | 1 | 1 |
+| Structure | HP | M4 5.56 mm FMJ | .50 cal FMJ | 120 mm rocket | M67 frag grenade | C4 charge | IED |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Refuel Station | 1,600 | 286 | 89 | 1 | 1 | 1 | 6 |
+| Repair Station | 1,600 | 286 | 89 | 1 | 1 | 1 | 1 |
 
 ## Season 2 changes
 
@@ -108,3 +110,4 @@ The Season 2 data lists no change to either station's cost or health.
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): restock amounts, times and costs for both stations, and the derived hits to destroy.
 - [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
 - [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings
+- [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): structure hit counts for every listed source (stacked damage entries, IED and the M67 as a rocket) and the build time estimates.

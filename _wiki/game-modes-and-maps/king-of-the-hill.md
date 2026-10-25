@@ -40,6 +40,8 @@ Players earn cash and XP from the zone and from fights around it. Challenges suc
 
 ## Rewards
 
+King of the Hill challenge rewards use the same reward rows as every other mode. A player kill pays 300 cash and 250 Role XP, a defibrillator revive 600 and 250, and a bandage heal 200 and 80 (base amounts, before the zone and assist terms). The full list is on [King of the Hill Challenges](../progression-and-economy/king-of-the-hill-challenges.md).
+
 Cash for the zone, from the cash tables:
 
 | Event | Base cash |
@@ -82,3 +84,4 @@ At the end of the match, factions are ranked and paid a flat placement bonus: 20
 - [Round 42 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-modes-ai-other.md)
 - [Mode rules (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/mode-rules.json)
 - [Default game settings (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/default-game-ini.json)
+- [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): the reward and hit-count rows used on this page.

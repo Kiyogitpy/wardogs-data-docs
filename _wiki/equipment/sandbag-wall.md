@@ -32,7 +32,7 @@ The Sandbag Wall is a low cover wall that any of the three hammers can build. It
 
 The Sandbag Wall costs 15 Build Supplies and has 735 HP. It has no separate parts. It is one of the small structures, so it can be placed without a Forward Operating Base radius, as explained under [Building it](#building-it).
 
-The reward tables give 100 cash for destroying an enemy Sandbag Wall. They give no cash for building or placing one.
+Destroying an enemy Sandbag Wall pays 15 cash and 5 Role XP.
 
 ## Building it
 
@@ -45,9 +45,11 @@ The reward tables give 100 cash for destroying an enemy Sandbag Wall. They give 
 
 | Building it | Small hammer | Medium hammer | Large hammer |
 |---|---:|---:|---:|
-| Hits to build | 30 | 15 | 10 |
+| Hits to build | 30 (about 17.0 s) | 15 (about 8.5 s) | 10 (about 8.8 s) |
 | Hits to repair from zero health | 30 | 15 | 10 |
 | Hits to dismantle (your own) | 5 | 4 | 3 |
+
+Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
 
 The hits assume normal hits, not weak-spot hits. See [Buildables](buildables.md#building) for how the hit amounts work.
 
@@ -68,15 +70,15 @@ The table shows how much of each damage source reaches the wall. A change of -85
 | C4 | +200% | 3 times |
 | IEDs | +500% | 6 times |
 
-These are the entries that match one source on its own. The data also has entries for particular ammunition and calibers, which this table does not show. The data does not say how many hits a Sandbag Wall takes to destroy, so the number of rockets or bullets it needs is not yet known.
+These are the entries that match one source on its own. The data also has entries for particular ammunition and calibers, which this table does not show. The table below gives the hits it takes to destroy, for each source.
 
 ## Hits to destroy (point blank, derived)
 
-Derived from each source's base damage and the damage table. It is not a count from play: each figure assumes every shot lands at point blank for full damage, with no falloff and no other rules, so real fights can differ. Base damage used: M4 5.56 mm FMJ 28, M67 frag grenade 100, 120 mm rocket 150, C4 charge 250.
+Derived from each source's base damage and the damage table. It is not a count from play: each figure assumes every shot lands at point blank for full damage, with no falloff and no other rules, so real fights can differ. Base damage used: M4 5.56 mm FMJ 28, .50 cal FMJ 90, 120 mm rocket 150, M67 frag grenade 100 (it counts as a rocket against structures), C4 charge 250, IED 300. Each figure is the number of hits needed after every matching damage entry is applied.
 
-| Structure | HP | M4 5.56 mm FMJ | M67 frag grenade | 120 mm rocket | C4 charge |
-|---|---:|---:|---:|---:|---:|
-| Sandbag Wall | 735 | 175 | 8 | 1 | 1 |
+| Structure | HP | M4 5.56 mm FMJ | .50 cal FMJ | 120 mm rocket | M67 frag grenade | C4 charge | IED |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Sandbag Wall | 735 | 175 | 55 | 2 | 1 | 1 | 1 |
 
 ## Season 2 changes
 
@@ -96,3 +98,4 @@ The Season 2 data lists no change to the Sandbag Wall's cost or health. Season 2
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy for each source of damage.
 - [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
 - [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings
+- [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): structure hit counts for every listed source (stacked damage entries, IED and the M67 as a rocket) and the build time estimates.

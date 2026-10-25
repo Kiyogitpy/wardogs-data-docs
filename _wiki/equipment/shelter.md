@@ -32,7 +32,7 @@ The Shelter is a single-piece shelter that a Medium or Large Hammer can build. I
 
 The Shelter costs 250 Build Supplies and has 2,250 HP. It has no separate parts. The export gives no display name for it, so this article uses the plain name "Shelter".
 
-The reward tables have no cash entry for the Shelter. They do have a one-cash default row, which the data does not confirm applies to it. The placement rewards for a structure placed inside a base are a flat 5 cash (10 in a hot zone) from the Placed-in-FOB resource, as far as the data shows; see [Cash and Rewards](../progression-and-economy/cash-and-rewards.md).
+Destroying an enemy Shelter pays 250 cash and 65 Role XP. The placement rewards for a structure placed inside a base are a flat 5 cash (10 in a hot zone) from the Placed-in-FOB resource, as far as the data shows; see [Cash and Rewards](../progression-and-economy/cash-and-rewards.md).
 
 ## Building it
 
@@ -45,9 +45,11 @@ The reward tables have no cash entry for the Shelter. They do have a one-cash de
 
 | Building it | Small hammer | Medium hammer | Large hammer |
 |---|---:|---:|---:|
-| Hits to build | cannot place | 250 | 167 |
+| Hits to build | cannot place | 250 (about 141.8 s) | 167 (about 147.5 s) |
 | Hits to repair from zero health | 500 | 250 | 167 |
 | Hits to dismantle (your own) | 15 | 12 | 9 |
+
+Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
 
 The hits assume normal hits, not weak-spot hits. The Small Hammer cannot place the Shelter, so its build column says so, but the repair and dismantle figures are what its hit does and are not checked in play. See [Buildables](buildables.md#building) for how the hit amounts work.
 
@@ -66,15 +68,15 @@ The data does not describe its use in play beyond its health and how it takes da
 | C4 | +150% | 2.5 times |
 | IEDs | +300% | 4 times |
 
-The data does not say how many hits the Shelter takes to destroy, so that number is not yet known. For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
+The table below gives the hits it takes to destroy, for each source. For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
 
 ## Hits to destroy (point blank, derived)
 
-Derived from each source's base damage and the damage table. It is not a count from play: each figure assumes every shot lands at point blank for full damage, with no falloff and no other rules, so real fights can differ. Base damage used: M4 5.56 mm FMJ 28, M67 frag grenade 100, 120 mm rocket 150, C4 charge 250.
+Derived from each source's base damage and the damage table. It is not a count from play: each figure assumes every shot lands at point blank for full damage, with no falloff and no other rules, so real fights can differ. Base damage used: M4 5.56 mm FMJ 28, .50 cal FMJ 90, 120 mm rocket 150, M67 frag grenade 100 (it counts as a rocket against structures), C4 charge 250, IED 300. Each figure is the number of hits needed after every matching damage entry is applied.
 
-| Structure | HP | M4 5.56 mm FMJ | M67 frag grenade | 120 mm rocket | C4 charge |
-|---|---:|---:|---:|---:|---:|
-| Shelter | 2,250 | 402 | 15 | 9 | 4 |
+| Structure | HP | M4 5.56 mm FMJ | .50 cal FMJ | 120 mm rocket | M67 frag grenade | C4 charge | IED |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Shelter | 2,250 | 402 | 125 | 7 | 13 | 4 | 2 |
 
 ## Season 2 changes
 
@@ -93,3 +95,4 @@ The Season 2 data lists no change to the Shelter's cost or health.
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy for each source of damage.
 - [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
 - [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings
+- [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): structure hit counts for every listed source (stacked damage entries, IED and the M67 as a rocket) and the build time estimates.

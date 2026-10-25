@@ -29,26 +29,26 @@ Every hammer spends Build Supplies. Build Supplies sell in lots of 50 for 10 cas
 
 ## How many hits to build
 
-Each hit adds the hammer's build amount divided by the structure's Build Supplies cost to its progress. The table gives the hits to finish each structure, with normal hits only. Seconds are not given, because the time for one hit in play is not published.
+Each hit adds the hammer's build amount divided by the structure's Build Supplies cost to its progress. The table gives the hits to finish each structure, with normal hits only. Seconds are an estimate, shown in brackets: one hammer hit per swing takes 0.567 s with the Small and Medium hammers and 0.883 s with the Large, derived from the use animation and not measured in play.
 
 | Structure | Build Supplies | Small hits | Medium hits | Large hits |
 |---|---:|---:|---:|---:|
-| Barbed Wire | 7 | 4 | 2 | 2 |
-| Recon Tent | 7 | 4 | 2 | 2 |
-| Sandbag Wall | 15 | 30 | 15 | 10 |
-| Wood base | 15 | 30 | 15 | 10 |
-| Hesco Block (Small) | 15 | 30 | 15 | 10 |
-| Builder's Radio | 20 | 40 | 20 | 14 |
-| Hedgehog | 22 | 44 | 22 | 15 |
-| Hesco Block (Large) | 22 | cannot place | 22 | 15 |
-| Hesco Wall | 75 | cannot place | 75 | 50 |
-| Shelter | 250 | cannot place | 250 | 167 |
-| Door | 80 | cannot place | 80 | 54 |
-| Gate | 200 | cannot place | 200 | 134 |
-| Bremer Wall | 32 | cannot place | cannot place | 22 |
-| Bunker, Recon Tower, Indirect Fire Shelter | 200 | cannot place | cannot place | 134 |
-| Refuel and Repair Stations | 200 | cannot place | cannot place | 134 |
-| Drill Rig | 2,750 | cannot place | cannot place | 917 |
+| Barbed Wire | 7 | 4 (about 2.3 s) | 2 (about 1.1 s) | 2 (about 1.8 s) |
+| Recon Tent | 7 | 4 (about 2.3 s) | 2 (about 1.1 s) | 2 (about 1.8 s) |
+| Sandbag Wall | 15 | 30 (about 17.0 s) | 15 (about 8.5 s) | 10 (about 8.8 s) |
+| Wood base | 15 | 30 (about 17.0 s) | 15 (about 8.5 s) | 10 (about 8.8 s) |
+| Hesco Block (Small) | 15 | 30 (about 17.0 s) | 15 (about 8.5 s) | 10 (about 8.8 s) |
+| Builder's Radio | 20 | 40 (about 22.7 s) | 20 (about 11.3 s) | 14 (about 12.4 s) |
+| Hedgehog | 22 | 44 (about 24.9 s) | 22 (about 12.5 s) | 15 (about 13.2 s) |
+| Hesco Block (Large) | 22 | cannot place | 22 (about 12.5 s) | 15 (about 13.2 s) |
+| Hesco Wall | 75 | cannot place | 75 (about 42.5 s) | 50 (about 44.1 s) |
+| Shelter | 250 | cannot place | 250 (about 141.8 s) | 167 (about 147.5 s) |
+| Door | 80 | cannot place | 80 (about 45.4 s) | 54 (about 47.7 s) |
+| Gate | 200 | cannot place | 200 (about 113.4 s) | 134 (about 118.3 s) |
+| Bremer Wall | 32 | cannot place | cannot place | 22 (about 19.4 s) |
+| Bunker, Recon Tower, Indirect Fire Shelter | 200 | cannot place | cannot place | 134 (about 118.3 s) |
+| Refuel and Repair Stations | 200 | cannot place | cannot place | 134 (about 118.3 s) |
+| Drill Rig | 2,750 | cannot place | cannot place | 917 (about 809.7 s) |
 
 The Forward Operating Base has no hits: it is placed at once from its own item. Each structure's article has the repair and dismantle hits too.
 
@@ -69,7 +69,7 @@ The Forward Operating Base (FOB) is the anchor for building. It is placed from i
 
 - Because most structures need the FOB radius, place the FOB before any wall or station. The small structures are the only ones that can go down without one.
 - The FOB takes 51 times normal IED damage, more than any other structure in the damage table, so IEDs are its most damaging source in the data ([Forward Operating Base](../equipment/forward-operating-base.md#durability)).
-- Destroying an enemy FOB pays the attacker 5,000 cash, and placing one pays 1,000 ([Cash and Rewards](../progression-and-economy/cash-and-rewards.md#spotting-supply-crates-and-buildables)).
+- Destroying an enemy FOB pays the attacker 2,500 cash plus up to 7,500 by its supplies, and hacking one pays 1,000 ([Cash and Rewards](../progression-and-economy/cash-and-rewards.md#spotting-supply-crates-and-buildables)).
 
 ## What to build first
 
@@ -117,7 +117,7 @@ Six stationary weapons are buildable. Five are built with the Large Hammer and t
 | [L81 Mortar](../equipment/l81-mortar.md) | 600 | 3,000 | 120x800 mm shells, 132 to 684 m | 150 Ammo Supplies | Targets are not listed. Its range table runs 132 to 684 m |
 | [Talon 9K-SAM](../equipment/talon-9k-sam.md) | 650 | 3,000 | 72 mm heavy machine gun, 1,000 m effective | 200 Ammo Supplies | Targets are not listed. Lock-on takes 2.0 s |
 | [Stingray](../equipment/stingray.md) | 650 | 3,000 | UAV drone projectile, lock-on | 900 Mechanical Supplies and 5,000 cash | Air vehicles only: the Little Bird family, the Havoc and the fixed-wing airplane |
-| [MG Nest](../equipment/mg-nest.md) | 650 | 1,800 when finished (3,000 under construction) | .50 cal tracer machine gun | 200 Ammo Supplies for 60 rounds | Targets are not listed. Rate and range are not known |
+| [MG Nest](../equipment/mg-nest.md) | 650 | 1,800 when finished (3,000 under construction) | .50 cal tracer machine gun | 200 Ammo Supplies for 60 rounds | Targets are not listed. 600 rounds/min, 1,000 m range, 8 s reload |
 | [Vanguard CIWS](../equipment/vanguard-ciws.md) | 1,200 | 5,000 | 20x102 mm cannon, 1,800 rounds/min, 1,000 m | 250 Ammo Supplies for 500 rounds | Targets are not listed |
 | [Loudspeaker](../equipment/loudspeaker.md) | 200 | 1,000 | No weapon in the data | Not applicable | Not applicable |
 
@@ -133,35 +133,35 @@ Restock costs at the Supplies lot price of 10 cash per 50 are derived: 200 Ammo 
 
 ## How fast each structure falls
 
-The derived tables below give the hits needed to destroy each structure with four sources: an M4 with 5.56 mm full metal jacket (28 base damage per hit), an M67 frag grenade (100), a 120 mm rocket (150) and a C4 charge (250). Each figure assumes every shot lands at point blank for full damage, with no falloff, so real fights differ ([Buildables](../equipment/buildables.md#hits-to-destroy-point-blank-derived)).
+The derived table below gives the hits needed to destroy each structure with six sources: an M4 with 5.56 mm full metal jacket (28 base damage per hit), a .50 cal full metal jacket (90), a 120 mm rocket (150), an M67 frag grenade (100, which counts as a rocket against structures), a C4 charge (250) and an IED (300). Matching damage entries are stacked, so a rocket is not counted at its base damage alone. Each figure assumes every shot lands at point blank for full damage, with no falloff, so real fights differ ([Buildables](../equipment/buildables.md#hits-to-destroy-point-blank-derived)).
 
-| Structure | HP | M4 hits | Frag grenade hits | Rocket hits | C4 hits |
-|---|---:|---:|---:|---:|---:|
-| Barbed Wire | 250 | 60 | 3 | 1 | 1 |
-| Recon Tent | 300 | 72 | 3 | 1 | 1 |
-| Sandbag Wall | 735 | 175 | 8 | 1 | 1 |
-| Wood base | 735 | 175 | 8 | 1 | 1 |
-| Builder's Radio | 1,000 | 239 | 2 | 1 | 1 |
-| Hesco Block (Small) | 1,600 | 286 | 11 | 5 | 2 |
-| Refuel Station or Repair Station | 1,600 | 286 | 11 | 1 | 1 |
-| Hesco Block (Large) | 2,250 | 402 | 15 | 9 | 4 |
-| Shelter | 2,250 | 402 | 15 | 9 | 4 |
-| Door | 2,200 | 524 | 22 | 2 | 3 |
-| Drill Rig | 2,500 | 596 | 25 | 2 | 2 |
-| Hesco Wall | 4,600 | 822 | 46 | 11 | 8 |
-| Hedgehog | 4,500 | 1,072 | 90 | 6 | 3 |
-| Gate | 5,320 | 1,267 | 54 | 4 | 2 |
-| Bremer Wall | 6,500 | 1,161 | 44 | 13 | 7 |
-| Bunker, Recon Tower or Indirect Fire Shelter | 5,000 | 893 | 100 | 23 | 14 |
-| Forward Operating Base | 15,000 | 2,679 | 50 | 7 | 5 |
+| Structure | HP | M4 5.56 mm FMJ | .50 cal FMJ | 120 mm rocket | M67 frag grenade | C4 charge | IED |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Barbed Wire | 250 | 60 | 19 | 1 | 1 | 1 | 1 |
+| Recon Tent | 300 | 72 | 23 | 1 | 1 | 1 | 1 |
+| Sandbag Wall | 735 | 175 | 55 | 2 | 1 | 1 | 1 |
+| Wood base | 735 | 175 | 55 | 2 | 1 | 1 | 1 |
+| Builder's Radio | 1,000 | 239 | 75 | 1 | 1 | 1 | 1 |
+| Hesco Block (Small) | 1,600 | 286 | 89 | 4 | 8 | 2 | 1 |
+| Refuel Station or Repair Station | 1,600 | 286 | 89 | 1 | 1 | 1 | 6 |
+| Hesco Block (Large) | 2,250 | 402 | 125 | 7 | 13 | 4 | 2 |
+| Shelter | 2,250 | 402 | 125 | 7 | 13 | 4 | 2 |
+| Door | 2,200 | 524 | 163 | 4 | 3 | 3 | 1 |
+| Hesco Wall | 4,600 | 822 | 256 | 21 | 16 | 8 | 4 |
+| Hedgehog | 4,500 | 1,072 | 334 | 8 | 9 | 6 | 3 |
+| Gate | 5,320 | 1,267 | 395 | 5 | 6 | 2 | 1 |
+| Bremer Wall | 6,500 | 1,161 | 362 | 11 | 19 | 7 | 5 |
+| Bunker, Recon Tower or Indirect Fire Shelter | 5,000 | 893 | 278 | 33 | 35 | 27 | 12 |
+| Drill Rig | 2,500 | not in the data | not in the data | not in the data | not in the data | not in the data | not in the data |
+| Forward Operating Base | 15,000 | 2,679 | 834 | 5 | 10 | 5 | 1 |
 
 Parts of larger structures, such as a Door's top section or a Bunker's floor, have less health and take fewer hits. Each structure's article gives its parts.
 
 ### Tips that follow from the numbers
 
-- **Explosives finish the cheap structures.** One rocket or one C4 charge destroys the Barbed Wire, Recon Tent, Sandbag Wall, Wood base, Builder's Radio, and the Refuel and Repair Stations. The Sandbag Wall and Wood base take 1 hit from each, against 175 M4 hits.
-- **Small arms are slow.** The Gate (1,267 M4 hits), the Hedgehog (1,072) and the Bremer Wall (1,161) need the most rifle hits of the large structures. Against grenades, the Bunker family takes 100 frag hits, the most of any non-FOB structure.
-- **Rockets are the Gate's and the Door's weak point.** The Gate takes 850% more rocket damage than normal and the Door 650% more, so they need 4 and 2 rocket hits, against 1,267 and 524 M4 hits ([Gate](../equipment/gate.md), [Door](../equipment/door.md)).
+- **Explosives finish the cheap structures.** One C4 charge destroys the Barbed Wire, Recon Tent, Sandbag Wall, Wood base, Builder's Radio, and the Refuel and Repair Stations. One 120 mm rocket does the same, except the Sandbag Wall and Wood base, which take 2, against 175 M4 hits.
+- **Small arms are slow.** The Gate (1,267 M4 hits), the Hedgehog (1,072) and the Bremer Wall (1,161) need the most rifle hits of the large structures. Against M67 grenades, the Bunker family takes 35 hits, the most of any non-FOB structure.
+- **Rockets are the Gate's and the Door's weak point.** The Gate takes 850% more rocket damage than normal and the Door 650% more, so they need 5 and 4 hits from a 120 mm rocket, against 1,267 and 524 M4 hits ([Gate](../equipment/gate.md), [Door](../equipment/door.md)).
 - **Against the FOB, C4 and rockets are the fast routes.** The FOB needs 7 rocket hits and 5 C4 charges, against 2,679 M4 hits ([Forward Operating Base](../equipment/forward-operating-base.md#hits-to-destroy-point-blank-derived)).
 - **Emplacements are not in the hits table.** The derived hits cover structures only. The emplacements are compared by health alone in the table above.
 
@@ -185,3 +185,4 @@ Parts of larger structures, such as a Door's top section or a Bunker's floor, ha
 - [Cash and Rewards](../progression-and-economy/cash-and-rewards.md), for the cash paid for destroying an enemy FOB and for placing one
 - [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
 - [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the Drill Rig settings
+- [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): structure hit counts for every listed source, the IED entries and the build time estimates

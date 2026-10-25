@@ -24,6 +24,8 @@ The Loudspeaker is the one stationary emplacement in the game data with no weapo
 
 ## Overview
 
+Destroying an enemy Loudspeaker pays 200 cash and 50 Role XP. The data still gives it no function.
+
 The Loudspeaker is listed on the [Buildables](buildables.md) page with the other stationary emplacements, but the data gives no gun, ammunition, rate or range for it. The data does not say what it does in play, so that is not yet known.
 
 ## Effects
@@ -68,3 +70,4 @@ The Build Supplies cost is not a cash price. Build Supplies are bought in the sh
 - [Vehicle hitboxes](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/vehicle-hitboxes.json): the 3D hitbox set used by the viewer link
 - [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
 - [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings
+- [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): the reward and hit-count rows used on this page.

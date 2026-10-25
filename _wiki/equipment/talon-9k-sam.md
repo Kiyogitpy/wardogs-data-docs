@@ -31,6 +31,8 @@ The Talon 9K-SAM is a stationary emplacement that players build with a Large Ham
 
 ## Overview
 
+Destroying an enemy Talon 9K-SAM pays 650 cash and 175 Role XP.
+
 The Talon is built from 650 Build Supplies and has 3,000 HP. It is one of six stationary weapons listed on the [Buildables](buildables.md) page, and it is placed with the same rules as the other stationary weapons.
 
 ## Effects
@@ -83,3 +85,4 @@ The Build Supplies cost is not a cash price. Build Supplies are bought in the sh
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): lock-on timings for the Talon.
 - [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
 - [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings
+- [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): the reward and hit-count rows used on this page.

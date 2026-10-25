@@ -125,7 +125,7 @@ Plain reading: a Bunker takes about a fifth of the bullet damage, and rockets do
 
 The full table for every structure is on the [Buildables](../../game-features/Wardogs_Buildables_v1.md) data page.
 
-One field of the Forward Operating Base's data is set to "do not take damage". How that interacts with its 15,000 HP is not yet known.
+The Forward Operating Base's data has a flag named "do not take damage". Nothing in the game code reads it, so it is probably unused data; its effect on damage is not confirmed, and the hit counts above assume the base takes damage like any other structure.
 
 ### Build stages
 
@@ -149,7 +149,7 @@ The number of hits to build, repair or dismantle each structure is in its articl
 
 Some structures change the hit amount: Barbed Wire and Recon Tent count a hit 3.5 times as much, the Drill Rig 2 times and the Vanguard CIWS 1.25 times. The hit counts in the articles already include this.
 
-The shop text describes the hammers as slow, moderate and fast. The time one hit takes in play is not published, so build time in seconds is not given.
+The shop text describes the hammers as slow, moderate and fast. The hammer's use animation has one hit per swing: 0.567 s per hit with the Small and Medium hammers and 0.883 s with the Large. These are derived from the animation, not measured in play, so the articles give build time in seconds as an estimate (for example, about 17.0 s for a 30-hit Sandbag Wall with the Small hammer). The shop text calls the Large hammer fast, and the swing timing does not explain that, so it is not confirmed.
 
 ### Repair and dismantle
 
@@ -199,27 +199,27 @@ Hammers cost 2,400 cash (Large), 800 (Medium) and 100 (Small). The Forward Opera
 
 ## Hits to destroy (point blank, derived)
 
-Derived from each source's base damage and the damage table. It is not a count from play: each figure assumes every shot lands at point blank for full damage, with no falloff and no other rules, so real fights can differ. Base damage used: M4 5.56 mm FMJ 28, M67 frag grenade 100, 120 mm rocket 150, C4 charge 250. Parts of larger structures (floors, roofs, door sections) have less health and take fewer hits. Each structure's article gives its parts.
+Derived from each source's base damage and the damage table. It is not a count from play: each figure assumes every shot lands at point blank for full damage, with no falloff and no other rules, so real fights can differ. Base damage used: M4 5.56 mm FMJ 28, .50 cal FMJ 90, 120 mm rocket 150, M67 frag grenade 100 (it counts as a rocket against structures), C4 charge 250, IED 300. Each figure is the number of hits needed after every matching damage entry is applied. Parts of larger structures (floors, roofs, door sections) have less health and take fewer hits. Each structure's article gives its parts. The Drill Rig is not in the structure data, so it has no hit counts here.
 
-| Structure | HP | M4 5.56 mm FMJ | M67 frag grenade | 120 mm rocket | C4 charge |
-|---|---:|---:|---:|---:|---:|
-| Barbed Wire | 250 | 60 | 3 | 1 | 1 |
-| Recon Tent | 300 | 72 | 3 | 1 | 1 |
-| Sandbag Wall | 735 | 175 | 8 | 1 | 1 |
-| Wood base | 735 | 175 | 8 | 1 | 1 |
-| Hedgehog | 4,500 | 1072 | 90 | 6 | 3 |
-| Hesco Block (Small) | 1,600 | 286 | 11 | 5 | 2 |
-| Builder's Radio | 1,000 | 239 | 2 | 1 | 1 |
-| Hesco Block (Large) | 2,250 | 402 | 15 | 9 | 4 |
-| Hesco Wall | 4,600 | 822 | 46 | 11 | 8 |
-| Shelter | 2,250 | 402 | 15 | 9 | 4 |
-| Door | 2,200 | 524 | 22 | 2 | 3 |
-| Gate | 5,320 | 1267 | 54 | 4 | 2 |
-| Bremer Wall | 6,500 | 1161 | 44 | 13 | 7 |
-| Bunker, Recon Tower or Indirect Fire Shelter | 5,000 | 893 | 100 | 23 | 14 |
-| Refuel Station or Repair Station | 1,600 | 286 | 11 | 1 | 1 |
-| Drill Rig | 2,500 | 596 | 25 | 2 | 2 |
-| Forward Operating Base | 15,000 | 2679 | 50 | 7 | 5 |
+| Structure | HP | M4 5.56 mm FMJ | .50 cal FMJ | 120 mm rocket | M67 frag grenade | C4 charge | IED |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Barbed Wire | 250 | 60 | 19 | 1 | 1 | 1 | 1 |
+| Recon Tent | 300 | 72 | 23 | 1 | 1 | 1 | 1 |
+| Sandbag Wall | 735 | 175 | 55 | 2 | 1 | 1 | 1 |
+| Wood base | 735 | 175 | 55 | 2 | 1 | 1 | 1 |
+| Hedgehog | 4,500 | 1,072 | 334 | 8 | 9 | 6 | 3 |
+| Hesco Block (Small) | 1,600 | 286 | 89 | 4 | 8 | 2 | 1 |
+| Builder's Radio | 1,000 | 239 | 75 | 1 | 1 | 1 | 1 |
+| Hesco Block (Large) | 2,250 | 402 | 125 | 7 | 13 | 4 | 2 |
+| Hesco Wall | 4,600 | 822 | 256 | 21 | 16 | 8 | 4 |
+| Shelter | 2,250 | 402 | 125 | 7 | 13 | 4 | 2 |
+| Door | 2,200 | 524 | 163 | 4 | 3 | 3 | 1 |
+| Gate | 5,320 | 1,267 | 395 | 5 | 6 | 2 | 1 |
+| Bremer Wall | 6,500 | 1,161 | 362 | 11 | 19 | 7 | 5 |
+| Bunker, Recon Tower or Indirect Fire Shelter | 5,000 | 893 | 278 | 33 | 35 | 27 | 12 |
+| Refuel Station or Repair Station | 1,600 | 286 | 89 | 1 | 1 | 1 | 6 |
+| Drill Rig | 2,500 | not in the data | not in the data | not in the data | not in the data | not in the data | not in the data |
+| Forward Operating Base | 15,000 | 2,679 | 834 | 5 | 10 | 5 | 1 |
 
 ## Season 2 changes
 
@@ -255,3 +255,4 @@ Several entries in the buildable damage table changed by 5 to 17 percentage poin
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy and the stationary weapons' health.
 - [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
 - [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings
+- [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): structure hit counts for every listed source (stacked damage entries, IED, the M67 as a rocket) and the build time estimates.

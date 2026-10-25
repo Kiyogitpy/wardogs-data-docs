@@ -35,7 +35,7 @@ The FOB costs 7,500 cash in the shop, and its Build Supplies cost is 30. Its ite
 
 Each faction has its own FOB model in the data.
 
-The reward tables give 1,000 cash for placing a FOB and 5,000 cash for destroying an enemy one.
+Destroying an enemy FOB pays 2,500 cash and 500 Role XP, plus up to 7,500 more cash that depends on the supplies the FOB holds (the full bonus at 25,000 supplies). Hacking an enemy FOB pays 1,000 cash.
 
 ## Building it
 
@@ -67,15 +67,15 @@ The FOB has the most exposure to explosives of any structure. Its IED entry mult
 | C4 | +1,250% | 13.5 times |
 | IEDs | +5,000% | 51 times |
 
-The data sets a field called "do not take damage" on the FOB. How that field works with the damage numbers above and its 15,000 HP is not yet known. The data does not say how many hits the FOB takes to destroy, so that number is not yet known. For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
+The data has a flag on the FOB named "do not take damage". Nothing in the game code reads it, so it is probably unused data, but its effect on damage is not confirmed. The table below assumes the FOB takes damage like any other structure. A second health value of 300 is also set for the FOB; which of the two values the game uses is not confirmed, so the 15,000 HP figure from the data is the one shown here. The table below gives the hits it takes to destroy, for each source. For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
 
 ## Hits to destroy (point blank, derived)
 
-Derived from each source's base damage and the damage table. It is not a count from play: each figure assumes every shot lands at point blank for full damage, with no falloff and no other rules, so real fights can differ. Base damage used: M4 5.56 mm FMJ 28, M67 frag grenade 100, 120 mm rocket 150, C4 charge 250.
+Derived from each source's base damage and the damage table. It is not a count from play: each figure assumes every shot lands at point blank for full damage, with no falloff and no other rules, so real fights can differ. Base damage used: M4 5.56 mm FMJ 28, .50 cal FMJ 90, 120 mm rocket 150, M67 frag grenade 100 (it counts as a rocket against structures), C4 charge 250, IED 300. Each figure is the number of hits needed after every matching damage entry is applied.
 
-| Structure | HP | M4 5.56 mm FMJ | M67 frag grenade | 120 mm rocket | C4 charge |
-|---|---:|---:|---:|---:|---:|
-| Forward Operating Base | 15,000 | 2679 | 50 | 7 | 5 |
+| Structure | HP | M4 5.56 mm FMJ | .50 cal FMJ | 120 mm rocket | M67 frag grenade | C4 charge | IED |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Forward Operating Base | 15,000 | 2,679 | 834 | 5 | 10 | 5 | 1 |
 
 ## Season 2 changes
 
@@ -96,3 +96,4 @@ The Season 2 data lists no change to the Forward Operating Base's cost or health
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy for each source of damage.
 - [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
 - [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings
+- [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): structure hit counts for every listed source (stacked damage entries, IED and the M67 as a rocket) and the build time estimates.

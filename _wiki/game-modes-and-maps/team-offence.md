@@ -25,14 +25,14 @@ Team Offence adds its own challenges, a punish challenge, a voter challenge and 
 ## Rules and objectives
 
 - **Ballots.** When an offence is recorded, a ballot opens or joins a ballot that is already open. Players vote on the offender. Pending ballots queue up one after another.
-- **Vote outcomes.** The notices in the data are: offender punished, offender kicked, voter punish, voter kick, voter forgive, voter safe-zone forgive, and voter expired (the exact meaning is not confirmed). The data also records a "forgive by leave" vote, which suggests a vote is forgiven when the voter leaves the match. This last point is inferred from the names.
+- **Vote outcomes.** The notices in the data are: offender punished, offender kicked, voter punish, voter kick, voter forgive, voter safe-zone forgive, and voter expired. A voter who leaves the safe zone before deciding records a "forgive by leave" vote, and a voter whose time runs out is recorded as having given up (voter expired).
 - **Vehicle crashes.** A vehicle crash can count as a team offence in the challenge data.
 - **Challenges.** The "Teamkill Voter" challenge tracks voting, and the "Team Offence Punish" challenge tracks the punish outcome.
 - **Team sizes and timers.** Not applicable: the plugin runs alongside other modes.
 
 ## Rewards
 
-The Team Offence challenge rewards table exists, with two reward rows: a forgive reward and a punish-kill reward. The cash and XP amounts are not extracted in the sources, so they are not yet known.
+A forgive decision pays the voter 500 cash and no XP. A punished kill pays points rather than cash: 1 to 5 points, halved to a maximum of 2 when the kill was flagged as a teamkill (see [Team Offence challenges](../progression-and-economy/team-offence-challenges.md#punish-points)). Points are not cash, so they do not add to the cash total.
 
 ## See also
 
@@ -47,3 +47,4 @@ The Team Offence challenge rewards table exists, with two reward rows: a forgive
 - [Session-event reward lookups](../../content/Wardogs_RewardLookup_SessionEvents_v1.md)
 - [Tag display text](../../content/Wardogs_TagDisplayText_v1.md)
 - [Season 2 changes: Game Modes & Maps](../../season-2-changes/game-modes-maps.md)
+- [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): the reward and hit-count rows used on this page.

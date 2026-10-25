@@ -32,7 +32,7 @@ The Drill Rig is the most expensive structure that a player can build with a ham
 
 The Drill Rig costs 2,750 Build Supplies and has 2,500 HP. It has no separate parts.
 
-The reward tables give 3,000 cash for destroying an enemy Drill Rig. They give no cash for placing one.
+Destroying an enemy Drill Rig pays 2,750 cash and 700 Role XP. The data pays the same row as the Hot Zone Magnet, because the Drill Rig is the buildable form of the magnet.
 
 ## Building it
 
@@ -45,9 +45,11 @@ The reward tables give 3,000 cash for destroying an enemy Drill Rig. They give n
 
 | Building it | Small hammer | Medium hammer | Large hammer |
 |---|---:|---:|---:|
-| Hits to build | cannot place | cannot place | 917 |
+| Hits to build | cannot place | cannot place | 917 (about 809.7 s) |
 | Hits to repair from zero health | 19 | 10 | 7 |
 | Hits to dismantle (your own) | 17 | 13 | 10 |
+
+Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
 
 The Drill Rig is Large only, so the Small and Medium columns for building say "cannot place". The repair and dismantle hits are what each hammer's hit does; the data does not check them for this structure. The build count assumes normal hits. The rig's build factor is 2, so each Large Hammer hit counts double: 3 build amount instead of 1.5. Hitting its weak spots brings the count down.
 
@@ -79,15 +81,15 @@ While it runs, the Drill Rig pulls the hot zone toward it. How the zone moves is
 | C4 | +500% | 6 times |
 | IEDs | +1,500% | 16 times |
 
-The data does not say how many hits the Drill Rig takes to destroy from play, so that number is not yet known. For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
+For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
 
 ## Hits to destroy (point blank, derived)
 
-Derived from each source's base damage and the damage table. It is not a count from play: each figure assumes every shot lands at point blank for full damage, with no falloff and no other rules, so real fights can differ. Base damage used: M4 5.56 mm FMJ 28, M67 frag grenade 100, 120 mm rocket 150, C4 charge 250.
+The Drill Rig's damage row is not in the structure table this page uses, so no hit counts are given here. The other structures' counts are in the [Buildables](buildables.md#hits-to-destroy-point-blank-derived) article.
 
-| Structure | HP | M4 5.56 mm FMJ | M67 frag grenade | 120 mm rocket | C4 charge |
-|---|---:|---:|---:|---:|---:|
-| Drill Rig | 2,500 | 596 | 25 | 2 | 2 |
+| Structure | HP | M4 5.56 mm FMJ | .50 cal FMJ | 120 mm rocket | M67 frag grenade | C4 charge | IED |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Drill Rig | 2,500 | not in the data | not in the data | not in the data | not in the data | not in the data | not in the data |
 
 ## Season 2 changes
 
@@ -111,3 +113,4 @@ The recharge duration of 900 is not listed as changed.
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy for each source of damage.
 - [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
 - [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): the rig's settings and placement checks
+- [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): the reward and hit-count rows used on this page.

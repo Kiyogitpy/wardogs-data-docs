@@ -54,7 +54,7 @@ Curve values are listed in key order, starting with the first key. Speed skills 
 
 ## Mastery and rewards
 
-All six roles share one mastery XP curve. The milestones for Assault are:
+All six roles share one mastery XP curve. The milestones for Assault are the total XP needed to reach each level, not the step from the level before:
 
 | Level | XP needed |
 |---|---|
@@ -155,3 +155,4 @@ The reward tables list events, not roles. The events below are the ones that fit
 - [Tag display text](../../content/Wardogs_TagDisplayText_v1.md), for the ASSAULT label
 - [Economy data: role unlock tree](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/economy.json) (JSON)
 - [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md)
+- [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): the reward and hit-count rows used on this page.

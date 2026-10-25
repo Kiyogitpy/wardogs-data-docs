@@ -27,6 +27,7 @@ Spotting has two events. A **target spotted** event happens when an enemy is mar
 - **How long a spot lasts.** On infantry a spot takes 0.5 s to register, fades over 30 s and is kept for up to 180 s. Rotary and wheeled vehicles take 0.75 s to spot and stay spotted 60 s (180 s kept); tracked vehicles take 1.25 s and stay 90 s. Bases and buildings stay spotted for up to 3,600 s.
 - **Pay on spot.** Spotting pays between 15 and 275 cash. The spotter gets a share of the top amount, which is 20% of the 275 maximum.
 - **Pay on destroy.** Destroying a spotted target pays between 50 and 500 cash. The spotter gets 75% of the 500 maximum for the destroy.
+- **Role XP.** A spot pays 5 to 100 Role XP (25 for a player). Destroying a spotted target pays 5 to 500 (150 for a player). A target destroyed by the enemy pays a quarter of its cash and half its Role XP.
 - **Assists.** Teammates who help with the spot or the destroy get their own share, set by a separate modifier.
 - **Repeats.** The data lowers the pay for a target type after repeated kills of that same type. The exact reduction per repeat is not yet known.
 - **Buildables.** In Season 2, buildable and stationary targets pay in proportion to how much they were built, so an unfinished buildable pays less.
@@ -78,3 +79,4 @@ Base payouts for each kind of target (vehicle, buildable, player and so on) are 
 - [Player & Movement changes (Season 2)](../../season-2-changes/player-movement.md)
 - [Round 39 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-medical-movement.md): heal timing, skill rows, durability costs and status effects
 - [Round 40 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-medical-movement.md): revive health, decay, armour and critical state values
+- [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): the reward and hit-count rows used on this page.

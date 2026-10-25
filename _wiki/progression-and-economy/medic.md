@@ -40,7 +40,7 @@ Curve values are listed in key order, starting with the first key. Speed skills 
 
 ## Mastery and rewards
 
-All six roles share one mastery XP curve. The milestones for Medic are:
+All six roles share one mastery XP curve. The milestones for Medic are the total XP needed to reach each level, not the step from the level before:
 
 | Level | XP needed |
 |---|---|
@@ -155,3 +155,4 @@ When a heal brings a downed player back, it pays 1,500 with a defibrillator or r
 - [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md)
 - [Round 39 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-medical-movement.md): heal timing, skill rows, durability costs and status effects
 - [Round 40 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-medical-movement.md): revive health, decay, armour and critical state values
+- [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): the reward and hit-count rows used on this page.

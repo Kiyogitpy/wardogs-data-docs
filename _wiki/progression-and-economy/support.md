@@ -48,7 +48,7 @@ Curve values are listed in key order, starting with the first key. Speed skills 
 
 ## Mastery and rewards
 
-All six roles share one mastery XP curve. The milestones for Support are:
+All six roles share one mastery XP curve. The milestones for Support are the total XP needed to reach each level, not the step from the level before:
 
 | Level | XP needed |
 |---|---|
@@ -111,8 +111,8 @@ The reward tables list events, not roles. The events below are the ones that fit
 
 - **Deploying a supply crate.** The base cash is 25 for the free container, 50 for a small crate and 150 for a large one.
 - **Destroying a supply crate.** An enemy supply crate pays 100 to 200.
-- **Forward operating bases.** Placing a FOB pays 1,000. Destroying an enemy FOB pays 5,000. The FOB-supplied assist is divided by the number of assisters.
-- **Buildables.** Destroying a bunker or an air raid shelter pays 1,400. Destroying an enemy claymore, C4 or anti-tank mine pays 100 each. Other buildables mostly pay 10 to 500. Destroying a Hot Zone Magnet structure pays 3,000.
+- **Forward operating bases.** Hacking an enemy FOB pays 1,000. Destroying an enemy FOB pays 2,500, plus up to 7,500 by the supplies it holds. The FOB-supplied assist is divided by the number of assisters.
+- **Buildables.** Destroying a Bunker or an Indirect Fire Shelter pays 200 cash and 50 Role XP. Destroying an enemy claymore, C4 or anti-tank mine pays 100 each. Other buildables mostly pay 10 to 500. Destroying a Drill Rig (the Hot Zone Magnet) pays 2,750 cash and 700 Role XP.
 - **Supply crate assists.** Assist credit for a supply crate kill is split by assist type, as described in [Cash and Rewards](cash-and-rewards.md#how-it-works).
 
 ## Season 2 changes
@@ -141,3 +141,4 @@ The reward tables list events, not roles. The events below are the ones that fit
 - [Season 2 changes: Rewards & Unlocks](../../season-2-changes/rewards-unlocks.md)
 - [Economy data: role unlock tree](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/economy.json) (JSON)
 - [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md)
+- [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): the reward and hit-count rows used on this page.
