@@ -25,7 +25,7 @@ Recon is one of the six roles. Its 17 skills mostly tune long-range play: how fa
 
 Most Recon skills apply to one weapon archetype. A skill for marksman rifles helps only marksman rifles, and a skill for sniper rifles helps only sniper rifles. The spotting skills apply to the player and to spotted targets, not to a weapon.
 
-The skill curves give a value for each step. The unlock level and cost of each step are not in the sources, so they are not yet known (see [Skills](skills.md)).
+Each skill's value comes from its curve at the skill's level. The unlock cost of each skill level is not in the game data, so it is not yet known (see [Skills](skills.md)).
 
 ## Skills
 
@@ -49,7 +49,7 @@ The skill curves give a value for each step. The unlock level and cost of each s
 | Pistol switch speed | Faster switching to sidearms. | 1, 1.2, 1.4 | Sidearms only |
 | Sniper and marksman switch speed | Faster switching to sniper and marksman rifles. | 1, 1.2, 1.4 | Sniper and marksman rifles |
 
-Curve values are listed in key order, starting with the first key. Speed skills use three values and handling skills use four. The data does not confirm which key is which rank, so the rank reading is inferred.
+Curve values are listed in order for skill levels 0, 2, 3 and 4. Level 0 is always 1, which means no effect. Curves with three values store levels 0, 2 and 4 only, and levels in between are blended from the stored values.
 
 ## Mastery and rewards
 
@@ -170,3 +170,4 @@ The reward tables list events, not roles. The events below are the ones that fit
 - [Economy data: role unlock tree](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/economy.json) (JSON)
 - [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md)
 - [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): the reward and hit-count rows used on this page.
+- [Round 45 C, FOB health, build messages, skill curve and destruction evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-c.md)

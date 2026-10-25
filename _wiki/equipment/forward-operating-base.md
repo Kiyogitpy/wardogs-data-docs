@@ -41,7 +41,7 @@ Destroying an enemy FOB pays 2,500 cash and 500 Role XP, plus up to 7,500 more c
 
 - **Cost:** 7,500 cash from the shop. Its Build Supplies cost is 30, and nothing is charged at placement.
 - **Hammer:** None. The FOB is placed from its own item.
-- **Placement:** It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder. Its own placement rules beyond these checks are not yet known.
+- **Placement:** It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder. A new FOB also cannot be placed within about 42 m of another FOB. The exact shape of that check is not decoded.
 - **Build time:** Instant. The FOB has no build stages.
 - **Repair and dismantle:** The data gives hammer figures for the FOB: 30 hits (Small), 15 (Medium) or 10 (Large) to repair from zero health, and 100, 75 or 60 hits to dismantle your own. Whether a hammer can work on a FOB is not confirmed, so these are shown for reference only. Dismantling gives no supplies back, as far as the data shows.
 - **Stack limit:** 1.
@@ -67,7 +67,7 @@ The FOB has the most exposure to explosives of any structure. Its IED entry mult
 | C4 | +1,250% | 13.5 times |
 | IEDs | +5,000% | 51 times |
 
-The data has a flag on the FOB named "do not take damage". Nothing in the game code reads it, so it is probably unused data, but its effect on damage is not confirmed. The table below assumes the FOB takes damage like any other structure. A second health value of 300 is also set for the FOB; which of the two values the game uses is not confirmed, so the 15,000 HP figure from the data is the one shown here. The table below gives the hits it takes to destroy, for each source. For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
+The FOB's data has a flag named "do not take damage". No code reads it, so the flag is unused and has no effect. The table below assumes the FOB takes damage like any other structure. Its health is 15,000, the value in its data asset, which is applied when the FOB is spawned. The table gives the hits it takes to destroy, for each source. For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
 
 ## Hits to destroy (point blank, derived)
 
@@ -97,3 +97,5 @@ The Season 2 data lists no change to the Forward Operating Base's cost or health
 - [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
 - [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings
 - [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): structure hit counts for every listed source (stacked damage entries, IED and the M67 as a rocket) and the build time estimates.
+- [Round 44 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round44-econ-buildables.md)
+- [Round 45 C, FOB health, build messages, skill curve and destruction evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-c.md)

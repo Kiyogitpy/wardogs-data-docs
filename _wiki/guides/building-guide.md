@@ -61,7 +61,7 @@ The Forward Operating Base has no hits: it is placed at once from its own item. 
 
 The Forward Operating Base (FOB) is the anchor for building. It is placed from its own item rather than a hammer, costs 7,500 cash in the shop and 30 Build Supplies to place, and has 15,000 HP, the most of any structure ([Forward Operating Base](../equipment/forward-operating-base.md)).
 
-- **Radius.** Most structures must be placed inside a friendly FOB radius. The exceptions are Barbed Wire, Recon Tent, Sandbag Wall and Hedgehog ([Buildables](../equipment/buildables.md#use-and-timing)).
+- **Radius.** Most structures must be placed inside a friendly FOB radius. The exceptions are Barbed Wire, Recon Tent, Sandbag Wall and Hedgehog ([Buildables](../equipment/buildables.md#use-and-timing)). A new FOB also cannot be placed within about 42 m of another one.
 - **Limits.** Each FOB allows one Refuel Station, one Repair Station and up to four Builder's Radios ([Forward Operating Base](../equipment/forward-operating-base.md#building-it)).
 - **Exposure.** The FOB takes 51 times normal IED damage, 15 times rocket damage and 13.5 times C4 damage, the largest multipliers of any structure ([Forward Operating Base](../equipment/forward-operating-base.md#durability)).
 
@@ -162,7 +162,7 @@ Parts of larger structures, such as a Door's top section or a Bunker's floor, ha
 - **Explosives finish the cheap structures.** One C4 charge destroys the Barbed Wire, Recon Tent, Sandbag Wall, Wood base, Builder's Radio, and the Refuel and Repair Stations. One 120 mm rocket does the same, except the Sandbag Wall and Wood base, which take 2, against 175 M4 hits.
 - **Small arms are slow.** The Gate (1,267 M4 hits), the Hedgehog (1,072) and the Bremer Wall (1,161) need the most rifle hits of the large structures. Against M67 grenades, the Bunker family takes 35 hits, the most of any non-FOB structure.
 - **Rockets are the Gate's and the Door's weak point.** The Gate takes 850% more rocket damage than normal and the Door 650% more, so they need 5 and 4 hits from a 120 mm rocket, against 1,267 and 524 M4 hits ([Gate](../equipment/gate.md), [Door](../equipment/door.md)).
-- **Against the FOB, C4 and rockets are the fast routes.** The FOB needs 7 rocket hits and 5 C4 charges, against 2,679 M4 hits ([Forward Operating Base](../equipment/forward-operating-base.md#hits-to-destroy-point-blank-derived)).
+- **Against the FOB, C4 and rockets are the fast routes.** The FOB needs 5 rocket hits and 5 C4 charges, against 2,679 M4 hits ([Forward Operating Base](../equipment/forward-operating-base.md#hits-to-destroy-point-blank-derived)).
 - **Emplacements are not in the hits table.** The derived hits cover structures only. The emplacements are compared by health alone in the table above.
 
 ## See also
@@ -186,3 +186,5 @@ Parts of larger structures, such as a Door's top section or a Bunker's floor, ha
 - [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
 - [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the Drill Rig settings
 - [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): structure hit counts for every listed source, the IED entries and the build time estimates
+- [Round 44 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round44-econ-buildables.md)
+- [Round 45 C, FOB health, build messages, skill curve and destruction evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-c.md)

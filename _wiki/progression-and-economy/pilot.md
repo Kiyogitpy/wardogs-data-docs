@@ -25,7 +25,7 @@ Pilot is one of the six roles. Its six skills apply to air vehicles: the mounted
 
 The vehicle skills apply to the air vehicle the player is flying. The gun skills apply only to the mounted machine gun named in the data, not to every gun on an air vehicle. The supply crate skill applies to a crate the pilot drops. It sets the crate's own health, not the aircraft's.
 
-The skill curves give a value for each step. The unlock level and cost of each step are not in the sources, so they are not yet known (see [Skills](skills.md)).
+Each skill's value comes from its curve at the skill's level. The unlock cost of each skill level is not in the game data, so it is not yet known (see [Skills](skills.md)).
 
 ## Skills
 
@@ -38,7 +38,7 @@ The skill curves give a value for each step. The unlock level and cost of each s
 | Supply crate durability | A supply crate the pilot drops has 1.0, 1.2 or 1.4 times its normal health at skill levels 0, 2 and 4. It is set when the crate is created, and it is not a vehicle-health bonus. | 1, 1.2, 1.4 | Crates the pilot drops |
 | Vertical recoil (mounted machine gun) | Less upward kick. | 1, 0.8, 0.7, 0.6 | Mounted machine gun on air vehicles |
 
-Curve values are listed in key order, starting with the first key. Speed and durability skills use three values and the others use four. The data does not confirm which key is which rank, so the rank reading is inferred, except for supply crate durability, whose levels (0, 2 and 4) the data gives.
+Curve values are listed in order for skill levels 0, 2, 3 and 4. Level 0 is always 1, which means no effect. Curves with three values store levels 0, 2 and 4 only, and levels in between are blended from the stored values.
 
 ## Mastery and rewards
 
@@ -115,3 +115,4 @@ The reward tables list events, not roles. The events below are the ones that fit
 - [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md)
 - [Round 42 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-vehicles-explosives.md): the supply crate durability skill and how it is applied to dropped crates
 - [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): the reward and hit-count rows used on this page.
+- [Round 45 C, FOB health, build messages, skill curve and destruction evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-c.md)

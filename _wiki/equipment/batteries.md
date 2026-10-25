@@ -34,7 +34,7 @@ The shop text lists two sizes. The Battery is a medium 20 V, 5 AH cell. The High
 | Battery | 150 | 0.63 | 20 V, 5 AH |
 | High Capacity Battery | 300 | 2 | 20 V, 15 AH |
 
-The weights are in kilograms, the unit the game shows for item weight.
+The weights are in kilograms. The game stores item weight as a whole number 1,000 times the kilogram figure, so the kilogram value here is derived from it.
 
 - The drills use battery power while they work, at 1.25 per second in the item data.
 - The Defibrillator needs a battery to charge and to use, according to its shop text. See [Medical Items](medical-items.md).
@@ -54,3 +54,4 @@ No Season 2 change to the batteries is listed in the data.
 
 - [Item Shop for Non-Weapon Items](../../game-features/Wardogs_ItemShop_v1.md): prices, unlock levels, shop text, weights and capacities
 - [Item Actions](../../content/Wardogs_ItemActions_v1.md): the battery use of the drills
+- [Round 43 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round43-econ-buildables.md)

@@ -125,7 +125,7 @@ Plain reading: a Bunker takes about a fifth of the bullet damage, and rockets do
 
 The full table for every structure is on the [Buildables](../../game-features/Wardogs_Buildables_v1.md) data page.
 
-The Forward Operating Base's data has a flag named "do not take damage". Nothing in the game code reads it, so it is probably unused data; its effect on damage is not confirmed, and the hit counts above assume the base takes damage like any other structure.
+The Forward Operating Base has a "do not take damage" flag in its data. No code reads it, so the flag is unused, and the hit counts above treat the base like any other structure.
 
 ### Build stages
 
@@ -179,7 +179,7 @@ The hit counts in the structure articles assume every hit is a normal hit, and t
 - Builder's Radio: up to 4 per Forward Operating Base. It counts toward that limit.
 - Refuel Station and Repair Station: 1 per Forward Operating Base each.
 - Drill Rig: only inside a placement zone within a control zone.
-- The rules for placing the Forward Operating Base itself are not yet known.
+- A Forward Operating Base cannot be placed within about 42 m of another one. The exact shape of this check is not decoded.
 
 ### Drill Rig
 
@@ -256,3 +256,5 @@ Several entries in the buildable damage table changed by 5 to 17 percentage poin
 - [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
 - [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings
 - [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): structure hit counts for every listed source (stacked damage entries, IED, the M67 as a rocket) and the build time estimates.
+- [Round 44 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round44-econ-buildables.md)
+- [Round 45 C, FOB health, build messages, skill curve and destruction evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-c.md)

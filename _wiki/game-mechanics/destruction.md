@@ -63,9 +63,13 @@ Season 2 added one new metal fence, which the larger explosions and larger vehic
 | Minimum distance from a large explosion | 500 |
 | Minimum distance from a Molotov | 300 |
 | Demolition props | 39 |
+| Force threshold, building pieces | 1,200 |
+| Force threshold, decorative pieces | 400 |
 | Remnant sets | 19 |
 
 The minimum distances are attached to each explosion rule in the data. The data does not give their unit or confirm what they do, so they are shown as the raw values.
+
+A collision that can break a building piece or a decorative piece has to pass a force threshold: 1,200 for building pieces and 400 for decorative pieces. Damage from a type the data flags for destruction ignores these thresholds and breaks the piece whatever the force. The data gives the thresholds no unit, so they are shown as raw values.
 
 Two curves in the data scale building destruction with an angle and with a distance. Their output is not stated, so the value they produce is **not yet known**:
 
@@ -115,3 +119,5 @@ Vehicles not in this table, such as the [T-72B3](../vehicles/t-72b3.md), use one
 - [Season 2 changes: world, visuals and audio](../../season-2-changes/world-visuals-audio.md)
 - [VFX (explosion sequences)](../../content/Wardogs_VFX_v2.md)
 - [Round 42 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-modes-ai-other.md): which explosion sequence each destroyed item uses
+- [Round 43 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round43-econ-buildables.md)
+- [Round 45 C, FOB health, build messages, skill curve and destruction evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-c.md)

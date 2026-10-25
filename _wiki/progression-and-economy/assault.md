@@ -26,7 +26,7 @@ Assault is one of the six roles. Each role has its own skill set and its own mas
 
 Most Assault skills apply to one weapon archetype. A skill for assault rifles helps only assault rifles, and a skill for SMGs helps only SMGs. The movement and handling skills apply to the player or to the held weapon in general.
 
-The skill curves give a value for each step of the skill. The data does not state the unlock level or cost of each step, so those are not yet known (see [Skills](skills.md)).
+Each skill's value comes from its curve at the skill's level. The unlock cost of each skill level is not in the game data, so it is not yet known (see [Skills](skills.md)).
 
 ## Skills
 
@@ -50,7 +50,7 @@ The skill curves give a value for each step of the skill. The data does not stat
 | Vertical recoil (SMGs) | Less upward kick. | 1, 0.8, 0.7, 0.6 | SMGs only |
 | Weapon switch speed | Faster switching to assault rifles and SMGs. | 1, 1.2, 1.4 | Assault rifles and SMGs |
 
-Curve values are listed in key order, starting with the first key. Speed skills use three values and handling skills use four. The data does not confirm which key is which rank, so the rank reading is inferred. For the multiplier skills, a lower value gives a faster or less disruptive result, and the data's skill descriptions say so for aiming and recoil.
+Curve values are listed in order for skill levels 0, 2, 3 and 4. Level 0 is always 1, which means no effect. Curves with three values store levels 0, 2 and 4 only, and levels in between are blended from the stored values. For the multiplier skills, a lower value gives a faster or less disruptive result, and the data's skill descriptions say so for aiming and recoil.
 
 ## Mastery and rewards
 
@@ -156,3 +156,4 @@ The reward tables list events, not roles. The events below are the ones that fit
 - [Economy data: role unlock tree](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/economy.json) (JSON)
 - [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md)
 - [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): the reward and hit-count rows used on this page.
+- [Round 45 C, FOB health, build messages, skill curve and destruction evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-c.md)

@@ -39,7 +39,7 @@ The standard backpacks differ in price, grid and slot count. The shop text gives
 | Ruck Backpack | 1,600 | 6 x 4 | 24 | 1.5 |
 | Halftrack Backpack (hidden in the shop) | 15,000 | 6 x 5 | 30 | 2.78 |
 
-The weight is in kilograms, the unit the game shows for item weight. The item data draws some bags with a different grid shape from the shop text, for example the Scout Backpack. This page uses the shop text.
+The weight is in kilograms. The game stores item weight as a whole number 1,000 times the kilogram figure, so the kilogram value here is derived from it. The item data draws some bags with a different grid shape from the shop text, for example the Scout Backpack. This page uses the shop text.
 
 The Halftrack Backpack has no price in the shop and cannot be bought there. The game files show no vendor, loot table or unlock that gives it, so how it can be obtained is not in the data.
 
@@ -62,3 +62,4 @@ No Season 2 change to the standard backpacks is listed in the data.
 - [Items (data)](../../content/Wardogs_Items_v2.md): backpack weights and grid shapes in the item data
 - [Items and Equipment, Season 2](../../season-2-changes/items-equipment.md): checked for changes
 - [Round 42 economy and buildables evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): no vendor, loot or unlock row (P38)
+- [Round 43 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round43-econ-buildables.md)

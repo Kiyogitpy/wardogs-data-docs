@@ -23,13 +23,13 @@ Passive missions track a total that builds up over play, not a single event. The
 
 - **Earn Cash** counts the cash a player earns. Tiers: 5,000, 12,000, 30,000, 80,000 and 200,000 cash.
 - **Earn Role XP** counts role XP earned. Every tier has the same goal in the data: 500 role XP.
-- **Time Played** counts time played. Every tier has the same goal in the data: 1,800 seconds (30 minutes).
+- **Time Played** counts real time played, in 5-second steps. Every tier has the same goal in the data: 1,800 seconds (30 minutes).
 
 ## How it works
 
 - **Not automatic.** The data marks passive missions as not auto-activated.
 - **Tiers.** Each tier is a separate challenge with its own reward. The Earn Role XP and Time Played tiers differ only in their reward.
-- **Time Played** is checked on a set interval. The length of that interval is not in the data.
+- **Time Played** records the real time elapsed every 5 seconds, so progress moves in 5-second steps.
 
 ## Missions
 
@@ -72,3 +72,4 @@ Intel is the currency these missions pay. The data gives it no display name, and
 - [Season 2 changes: Rewards & Unlocks](../../season-2-changes/rewards-unlocks.md)
 - [Passive mission table](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Missions/DT_PassiveMissionChallenges.json) (JSON)
 - [Round 42 economy and buildables evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): no spend path for Intel (P13)
+- [Round 43 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round43-econ-buildables.md)

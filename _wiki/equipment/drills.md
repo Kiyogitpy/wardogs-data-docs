@@ -44,7 +44,7 @@ The shop text says the Light Drill has a moderate repair speed and the Heavy Dri
 | Light Drill | 600 | 1.5 | 2 x 2 | 5 |
 | Heavy Drill | 1,300 | 6.9 | 3 x 2 | 10 |
 
-The weights are in kilograms, the unit the game shows for item weight.
+The weights are in kilograms. The game stores item weight as a whole number 1,000 times the kilogram figure, so the kilogram value here is derived from it.
 
 ## Season 2 changes
 
@@ -62,3 +62,4 @@ No Season 2 change to the drills is listed in the data.
 - [Item Actions](../../content/Wardogs_ItemActions_v1.md): the repair, reload and use-until-empty rules
 - [Round 39 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md): Drill repair per application and rate.
 - [Round 40 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-vehicles-explosives.md): the same topics, with the round 40 values where they differ.
+- [Round 43 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round43-econ-buildables.md)

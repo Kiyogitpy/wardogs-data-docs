@@ -32,7 +32,7 @@ The game has three currencies a player sees: Cash, Gold Bars and Intel. Cash is 
 Cash is the main currency. It starts every player at 10,000, and players earn more during the match. The client's currency table sets this starting balance.
 
 - **Earned.** Every action in a match pays cash, such as a kill, a revive or a heal. The amounts are in [Cash and Rewards](cash-and-rewards.md). The end-of-match bonus adds more on top, for the faction placed first, second or third.
-- **Spent.** Cash buys gear, weapons, vehicles and supply crates from vendors, as listed on [Shops](shops.md). It also buys role unlocks in the unlock tree, and it can be exchanged for Gold Bars. In Season 2 the Humvee unlock for the Driver role rose from 25,000 to 75,000 cash. The first factory investment costs 200 cash (see [Factory Investment](factory-investment.md)).
+- **Spent.** Cash buys gear, weapons, vehicles and supply crates from vendors, as listed on [Shops](shops.md). Vendor prices are changed by discounts there, and a refund returns 90% of the eligible amount. It also buys role unlocks in the unlock tree, and it can be exchanged for Gold Bars. In Season 2 the Humvee unlock for the Driver role rose from 25,000 to 75,000 cash. The first factory investment costs 200 cash (see [Factory Investment](factory-investment.md)).
 - **Carries over.** The loading-screen tip says the cash a player earns in a match is persistent, and whatever they leave with is what they spend in the next match. A server setting, Persistent Progression, switches persistent cash and XP on or off. The data does not say what an off setting does beyond losing the carry-over.
 
 ## Gold Bars

@@ -25,7 +25,7 @@ Support is one of the six roles. Its 12 skills tune the heavy weapons: light mac
 
 Most Support skills apply to one weapon archetype. A skill for LMGs helps only LMGs, and a skill for shotguns helps only shotguns. The switching skill covers both archetypes at once.
 
-The skill curves give a value for each step. The unlock level and cost of each step are not in the sources, so they are not yet known (see [Skills](skills.md)).
+Each skill's value comes from its curve at the skill's level. The unlock cost of each skill level is not in the game data, so it is not yet known (see [Skills](skills.md)).
 
 ## Skills
 
@@ -44,7 +44,7 @@ The skill curves give a value for each step. The unlock level and cost of each s
 | Vertical recoil (shotguns) | Less upward kick. | 1, 0.8, 0.7, 0.6 | Shotguns only |
 | Weapon switch speed | Faster switching to LMGs and shotguns. | 1, 1.2, 1.4 | LMGs and shotguns |
 
-Curve values are listed in key order, starting with the first key. Speed skills use three values and handling skills use four. The data does not confirm which key is which rank, so the rank reading is inferred.
+Curve values are listed in order for skill levels 0, 2, 3 and 4. Level 0 is always 1, which means no effect. Curves with three values store levels 0, 2 and 4 only, and levels in between are blended from the stored values.
 
 ## Mastery and rewards
 
@@ -142,3 +142,4 @@ The reward tables list events, not roles. The events below are the ones that fit
 - [Economy data: role unlock tree](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/economy.json) (JSON)
 - [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md)
 - [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): the reward and hit-count rows used on this page.
+- [Round 45 C, FOB health, build messages, skill curve and destruction evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-c.md)

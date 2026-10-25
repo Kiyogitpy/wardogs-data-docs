@@ -28,15 +28,15 @@ Each role has its own skill set. A skill tweaks one part of play: how fast a wea
 
 ## Overview
 
-A skill is stored as a set of effects. Each effect changes one value, such as aiming time or recoil, by a multiplier. The strength of the multiplier grows with the skill's rank. The data stores that growth as a curve for each skill. Lower aim-time multipliers mean faster aiming, for example.
+A skill is stored as a set of effects. Each effect changes one value, such as aiming time or recoil, by a multiplier. The strength of the multiplier depends on the skill's level. The data stores a curve for each skill, which gives the value at each level. Lower aim-time multipliers mean faster aiming, for example.
 
-Skills are not part of the role unlock tree. The tree lists 264 items and vehicles, each with a role level and a cash cost (see the Unlocks table on each role page), and none of them is a skill. The skill tree screen shows 130 nodes, but only 62 of them have a skill effect in the data. The other 68 have a name and a description and a place on the grid, with no effect. The level and cost of each skill rank are not in the game data. Skill points are reserved (see [Currencies](currencies.md)).
+Skills are not part of the role unlock tree. The tree lists 264 items and vehicles, each with a role level and a cash cost (see the Unlocks table on each role page), and none of them is a skill. The skill tree screen shows 130 nodes, but only 62 of them have a skill effect in the data. The other 68 have a name and a description and a place on the grid, with no effect. The unlock cost of each skill level is not in the game data. Skill points are reserved (see [Currencies](currencies.md)).
 
 ## How it works
 
 - **Where a skill applies.** Each skill applies to one of several slots: an item, a vehicle, the character, a held item, a supply crate you drop, or a player you revive.
-- **Strength.** Most effects multiply a value by the skill's current strength. The strength is set by the skill's curve.
-- **Curve example.** The Driver's time-to-aim curve steps from 1.0 down to 0.6 across its ranks, so a higher rank aims faster. The data does not state which curve key is which rank, so this reading is inferred.
+- **Skill level.** A skill's level is the upgrade level of its node in the skill tree, not a point count. Level 0 gives no effect. Most effects multiply a value by the number the skill's curve gives at that level. Each curve stores values at levels 0, 2, 3 and 4 (levels 0, 2 and 4 for curves with three values), and levels in between are blended from them.
+- **Curve example.** The Assault aim-down-sights time curves are 1, 0.8, 0.7 and 0.6 at levels 0, 2, 3 and 4, so a higher skill level aims faster.
 - **Grants.** Three skills unlock an ability rather than changing a number: sprint-breaching doors (Assault), lockpicking (Recon) and a sniper-kill focus refresh (Recon).
 
 ## Skills by role
@@ -81,7 +81,7 @@ Skills are not part of the role unlock tree. The tree lists 264 items and vehicl
 
 ## Numbers
 
-The data stores each skill's per-rank values in curve tables. This page does not quote them. The skill tables in the progression data page have the full values.
+The data stores each skill's values as curves over skill levels. This page does not quote them. The skill tables in the progression data page have the full values.
 
 ## Tips that follow from the numbers
 
@@ -110,3 +110,4 @@ The sources list no Season 2 changes to the skill tables. Season 2 did change th
 - [Round 39 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-medical-movement.md): heal timing, skill rows, durability costs and status effects
 - [Round 42 weapons evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-weapons.md): the supply crate durability skill for pilots and drivers
 - [Round 42 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-vehicles-explosives.md): the supply crate durability skill and how it is applied to dropped crates
+- [Round 45 C, FOB health, build messages, skill curve and destruction evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-c.md)

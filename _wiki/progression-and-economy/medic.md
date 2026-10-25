@@ -25,7 +25,7 @@ Medic is one of the six roles and has the fewest skills with numbers, four. Its 
 
 The skills apply to medical items and to the revive itself. The medical item skills apply to items in the medical archetype or to a specific item, and the revive skills apply after a revive ends.
 
-The skill curves give a value for each step. The unlock level and cost of each step are not in the sources, so they are not yet known (see [Skills](skills.md)).
+Each skill's value comes from its curve at the skill's level. The unlock cost of each skill level is not in the game data, so it is not yet known (see [Skills](skills.md)).
 
 ## Skills
 
@@ -36,7 +36,7 @@ The skill curves give a value for each step. The unlock level and cost of each s
 | Sprint boost after a revive (medic) | After reviving a teammate, the medic sprints faster for a short time. | 1, 1.2, 1.4 | Sprint and tac-sprint. The data gives the boost a duration of 5.0 with no unit. |
 | Sprint boost after a revive (teammate) | After the medic revives a teammate, the revived player sprints faster for a short time. | 1, 1.2, 1.4 | Sprint and tac-sprint. Same duration of 5.0 with no unit. |
 
-Curve values are listed in key order, starting with the first key. Speed skills use three values and the medkit skill uses four. The data does not confirm which key is which rank, so the rank reading is inferred.
+Curve values are listed in order for skill levels 0, 2, 3 and 4. Level 0 is always 1, which means no effect. Curves with three values store levels 0, 2 and 4 only, and levels in between are blended from the stored values.
 
 ## Mastery and rewards
 
@@ -156,3 +156,4 @@ When a heal brings a downed player back, it pays 1,500 with a defibrillator or r
 - [Round 39 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-medical-movement.md): heal timing, skill rows, durability costs and status effects
 - [Round 40 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-medical-movement.md): revive health, decay, armour and critical state values
 - [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): the reward and hit-count rows used on this page.
+- [Round 45 C, FOB health, build messages, skill curve and destruction evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-c.md)
