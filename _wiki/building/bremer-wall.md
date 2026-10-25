@@ -85,7 +85,7 @@ Derived from each source's base damage and the damage table. It is not a count f
 
 ## See also
 
-- [Buildables](../building.md): costs, hammers and placement for every structure
+- [Building](../building.md): costs, hammers and placement for every structure
 - [Hesco Walls](hesco-walls.md): the smaller barriers
 - [Hedgehog](hedgehog.md): another high-health barrier
 

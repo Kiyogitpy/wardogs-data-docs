@@ -105,7 +105,7 @@ The recharge duration of 900 is not listed as changed.
 
 ## See also
 
-- [Buildables](../building.md): costs, hammers and placement for every structure
+- [Building](../building.md): costs, hammers and placement for every structure
 - [Utility Items](../equipment/utility-items.md): the Fuel Supplies that the rig runs on
 - [Forward Operating Base](forward-operating-base.md): the base that the rig must be placed inside
 

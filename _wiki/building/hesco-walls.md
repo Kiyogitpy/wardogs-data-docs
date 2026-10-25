@@ -92,7 +92,7 @@ The Season 2 data lists no change to the cost or health of any Hesco variant.
 
 ## See also
 
-- [Buildables](../building.md): costs, hammers and placement for every structure
+- [Building](../building.md): costs, hammers and placement for every structure
 - [Bremer Wall](bremer-wall.md): the largest wall in the data
 - [Hedgehog](hedgehog.md): another high-health barrier
 - [Grenades and Explosives](../equipment/grenades-and-explosives.md): the explosives that damage structures

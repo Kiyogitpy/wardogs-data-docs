@@ -37,7 +37,7 @@ Destroying an enemy Sandbag Wall pays 15 cash and 5 Role XP.
 
 ## Building it
 
-- **Cost:** 15 Build Supplies, whichever hammer builds it. Nothing is charged at placement. See [Buildables](../building.md) for how Build Supplies are bought.
+- **Cost:** 15 Build Supplies, whichever hammer builds it. Nothing is charged at placement. See [Building](../building.md) for how Build Supplies are bought.
 - **Hammers:** Small, Medium or Large.
 - **Placement:** The Sandbag Wall is one of the four small structures (with the [Barbed Wire](barbed-wire.md), [Recon Tent](recon-tent.md) and [Hedgehog](hedgehog.md)). It does not need a friendly base radius, but it cannot be placed inside an enemy base radius. It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder.
 - **Stack limit:** 100.
@@ -87,7 +87,7 @@ The Season 2 data lists no change to the Sandbag Wall's cost or health. Season 2
 
 ## See also
 
-- [Buildables](../building.md): costs, hammers and placement for every structure
+- [Building](../building.md): costs, hammers and placement for every structure
 - [Wood base](wood-base.md): a structure with the same health and damage numbers
 - [Grenades and Explosives](../equipment/grenades-and-explosives.md): the explosives that damage walls
 

@@ -98,7 +98,7 @@ The Season 2 data lists no change to either station's cost or health.
 
 ## See also
 
-- [Buildables](../building.md): costs, hammers and placement for every structure
+- [Building](../building.md): costs, hammers and placement for every structure
 - [Utility Items](../equipment/utility-items.md): the Fuel Supplies and Mechanical Supplies that the stations use
 - [Vehicle damage](../vehicles/vehicle-damage.md): how vehicles take damage, for the vehicles these stations serve
 

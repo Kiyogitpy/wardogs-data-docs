@@ -87,7 +87,7 @@ The Season 2 data lists no change to the Wood base's cost or health.
 
 ## See also
 
-- [Buildables](../building.md): costs, hammers and placement for every structure
+- [Building](../building.md): costs, hammers and placement for every structure
 - [Sandbag Wall](sandbag-wall.md): the structure with the same health and damage numbers
 - [Barbed Wire](barbed-wire.md): the small structures that do not need a base radius
 

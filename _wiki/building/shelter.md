@@ -86,7 +86,7 @@ The Season 2 data lists no change to the Shelter's cost or health.
 ## See also
 
 - [Indirect Fire Shelter](indirect-fire-shelter.md): a different, larger shelter
-- [Buildables](../building.md): costs, hammers and placement for every structure
+- [Building](../building.md): costs, hammers and placement for every structure
 - [Hesco Walls](hesco-walls.md): structures that a Medium Hammer can also build
 
 ## Sources

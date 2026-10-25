@@ -84,7 +84,7 @@ The Season 2 data lists no change to the Forward Operating Base's cost or health
 
 ## See also
 
-- [Buildables](../building.md): costs, hammers and placement for every structure
+- [Building](../building.md): costs, hammers and placement for every structure
 - [Drill Rig](drill-rig.md): a structure that must be placed inside a base radius
 - [Grenades and Explosives](../equipment/grenades-and-explosives.md): the explosives that damage structures
 

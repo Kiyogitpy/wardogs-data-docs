@@ -35,7 +35,7 @@ The Vanguard CIWS is a stationary emplacement with an automatic 20x102 mm cannon
 
 Destroying an enemy Vanguard CIWS pays 1,200 cash and 300 Role XP.
 
-The Vanguard starts with 500 rounds and fires them in automatic bursts. The data gives a windup time of 1.5 s before the gun reaches full speed. It is listed on the [Buildables](../building.md) page with the other stationary weapons.
+The Vanguard starts with 500 rounds and fires them in automatic bursts. The data gives a windup time of 1.5 s before the gun reaches full speed. It is listed on the [Building](../building.md) page with the other stationary weapons.
 
 ## Effects
 
@@ -47,7 +47,7 @@ The emplacement starts with 500 rounds. A restock takes 250 Ammo Supplies and gi
 
 ## Use and timing
 
-The Vanguard uses the same placement rules as the other stationary weapons: it is built with a Large Hammer, and its placement conditions check the Forward Operating Base bounds, a ladder check (not within 1 m of a ladder) and a safe zone check (not within 3 m of a safe zone or while standing in one). The [Buildables](../building.md) page describes these rules.
+The Vanguard uses the same placement rules as the other stationary weapons: it is built with a Large Hammer, and its placement conditions check the Forward Operating Base bounds, a ladder check (not within 1 m of a ladder) and a safe zone check (not within 3 m of a safe zone or while standing in one). The [Building](../building.md) page describes these rules.
 
 At 1,800 rounds/min, a full 500-round magazine lasts 16.7 s of continuous fire (derived: 500 rounds at 30 rounds per second). The reload after that takes 3.0 s. The figure assumes the gun never stops firing; it is not a measured time in play.
 
@@ -59,7 +59,7 @@ At 1,800 rounds/min, a full 500-round magazine lasts 16.7 s of continuous fire (
 | Health | 5,000 HP |
 | Hammer | Large Hammer |
 
-The Build Supplies cost is not a cash price. Build Supplies are bought in the shop, as the [Buildables](../building.md) page explains.
+The Build Supplies cost is not a cash price. Build Supplies are bought in the shop, as the [Building](../building.md) page explains.
 
 ## Season 2 changes
 
@@ -69,7 +69,7 @@ The Build Supplies cost is not a cash price. Build Supplies are bought in the sh
 
 ## See also
 
-- [Buildables](../building.md): Build Supplies costs, health and hammers for every structure and stationary weapon
+- [Building](../building.md): Build Supplies costs, health and hammers for every structure and stationary weapon
 - [Talon 9K-SAM](talon-9k-sam.md), [Stingray](stingray.md), [MG Nest](mg-nest.md), [Loudspeaker](loudspeaker.md) and [L81 Mortar](l81-mortar.md): the other stationary emplacements
 - [Vehicle weapons](../vehicles/vehicle-weapons.md): the guns mounted on vehicles
 

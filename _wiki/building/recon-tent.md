@@ -84,7 +84,7 @@ The Season 2 data lists no change to the Recon Tent's cost or health.
 
 ## See also
 
-- [Buildables](../building.md): costs, hammers and placement for every structure
+- [Building](../building.md): costs, hammers and placement for every structure
 - [Barbed Wire](barbed-wire.md): the other small wire and cover structure
 
 ## Sources

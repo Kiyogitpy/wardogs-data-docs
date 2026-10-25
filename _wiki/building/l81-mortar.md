@@ -90,19 +90,19 @@ The calculator's minimum range is 132 m, at 850 mils, the end of the dial range 
 | Health | 3,000 HP |
 | Hammer | Large Hammer |
 
-The Build Supplies cost is taken from the [Buildables](../building.md) article, which lists the stationary weapons with their Build Supplies, health and hammer. The Build Supplies cost is not a cash price. Build Supplies are bought in the shop, as the Buildables article explains.
+The Build Supplies cost is taken from the [Building](../building.md) article, which lists the stationary weapons with their Build Supplies, health and hammer. The Build Supplies cost is not a cash price. Build Supplies are bought in the shop, as the Buildables article explains.
 
 ## See also
 
 - [Artillery](../game-mechanics/artillery.md): how the SPH-2 fires, with its arcs and firing table
-- [Buildables](../building.md): Build Supplies costs, health and hammers for every structure and stationary weapon
+- [Building](../building.md): Build Supplies costs, health and hammers for every structure and stationary weapon
 - [Talon 9K-SAM](talon-9k-sam.md), [Vanguard CIWS](vanguard-ciws.md), [Stingray](stingray.md), [MG Nest](mg-nest.md) and [Loudspeaker](loudspeaker.md): the other stationary emplacements
 - [SPH-2](../vehicles/sph-2.md)
 - [Aiming the SPH-2](../guides/aiming-the-sph-2.md)
 
 ## Sources
 
-- [Buildables](../building.md): build cost, health and hammer (stationary weapons table)
+- [Building](../building.md): build cost, health and hammer (stationary weapons table)
 - [wardogs-calculator](https://github.com/apollyon-sys/wardogs-calculator) by apollyon-sys (MIT licence): range, one arc and dial settings, measured in game
 - [artillery_range_tables.py](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/_tools/artillery_range_tables.py): prints the table and compares it with the dial readings
 - [Mortar weapon extension data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_03/Content/Weapons/WeaponExtensions/WE_STN_03_Heavy_MainBarrel.json): the 17-row range table (mrad, impact distance, travel time), reload, restock, windup and starting shells

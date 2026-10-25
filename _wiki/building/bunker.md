@@ -90,7 +90,7 @@ Derived from each source's base damage and the damage table. It is not a count f
 
 ## See also
 
-- [Buildables](../building.md): costs, hammers and placement for every structure
+- [Building](../building.md): costs, hammers and placement for every structure
 - [Recon Tower](recon-tower.md) and [Indirect Fire Shelter](indirect-fire-shelter.md): the structures with the same damage numbers
 - [Grenades and Explosives](../equipment/grenades-and-explosives.md): the explosives that damage structures
 

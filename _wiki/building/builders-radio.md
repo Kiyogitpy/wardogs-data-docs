@@ -90,7 +90,7 @@ The Season 2 data lists no change to the Builder's Radio's cost or health.
 
 ## See also
 
-- [Buildables](../building.md): costs, hammers and placement for every structure
+- [Building](../building.md): costs, hammers and placement for every structure
 - [Refuel and Repair Stations](refuel-and-repair-stations.md): the other structures with a per-base limit
 - [Forward Operating Base](forward-operating-base.md): the base that limits the radio
 

@@ -34,7 +34,7 @@ The Talon 9K-SAM is a stationary emplacement that players build with a Large Ham
 
 Destroying an enemy Talon 9K-SAM pays 650 cash and 175 Role XP.
 
-The Talon is built from 650 Build Supplies and has 3,000 HP. It is one of six stationary weapons listed on the [Buildables](../building.md) page, and it is placed with the same rules as the other stationary weapons.
+The Talon is built from 650 Build Supplies and has 3,000 HP. It is one of six stationary weapons listed on the [Building](../building.md) page, and it is placed with the same rules as the other stationary weapons.
 
 ## Effects
 
@@ -48,7 +48,7 @@ The data gives the emplacement 2.0 s to lock onto a target, and a 0.5 s delay af
 
 ## Use and timing
 
-The Talon uses the same placement rules as the other stationary weapons: it is built with a Large Hammer, and its placement conditions check the Forward Operating Base bounds, a ladder check (not within 1 m of a ladder) and a safe zone check (not within 3 m of a safe zone or while standing in one). The [Buildables](../building.md) page describes these rules for every structure.
+The Talon uses the same placement rules as the other stationary weapons: it is built with a Large Hammer, and its placement conditions check the Forward Operating Base bounds, a ladder check (not within 1 m of a ladder) and a safe zone check (not within 3 m of a safe zone or while standing in one). The [Building](../building.md) page describes these rules for every structure.
 
 The data does not say how many hits the emplacement takes to destroy in play, beyond its 3,000 HP.
 
@@ -60,7 +60,7 @@ The data does not say how many hits the emplacement takes to destroy in play, be
 | Health | 3,000 HP |
 | Hammer | Large Hammer |
 
-The Build Supplies cost is not a cash price. Build Supplies are bought in the shop, as the [Buildables](../building.md) page explains.
+The Build Supplies cost is not a cash price. Build Supplies are bought in the shop, as the [Building](../building.md) page explains.
 
 ## Season 2 changes
 
@@ -72,7 +72,7 @@ The Build Supplies cost is not a cash price. Build Supplies are bought in the sh
 
 ## See also
 
-- [Buildables](../building.md): Build Supplies costs, health and hammers for every structure and stationary weapon
+- [Building](../building.md): Build Supplies costs, health and hammers for every structure and stationary weapon
 - [Vanguard CIWS](vanguard-ciws.md), [Stingray](stingray.md), [MG Nest](mg-nest.md), [Loudspeaker](loudspeaker.md) and [L81 Mortar](l81-mortar.md): the other stationary emplacements
 - [Vehicle weapons](../vehicles/vehicle-weapons.md): the guns mounted on vehicles
 

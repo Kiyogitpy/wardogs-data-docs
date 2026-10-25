@@ -55,6 +55,7 @@ Head hits follow the same pattern with higher numbers. Armor covers different bo
 ## See also
 
 - [Choosing Ammo](guides/choosing-ammo.md), which round to load against each armor level
+- [Ammo Packing](ammunition/ammo-packing.md), how long loading and unloading magazines takes
 - [Armor](game-mechanics/armor.md)
 - [Penetration and Ricochet](game-mechanics/penetration-and-ricochet.md)
 - [Ballistics](game-mechanics/ballistics.md)

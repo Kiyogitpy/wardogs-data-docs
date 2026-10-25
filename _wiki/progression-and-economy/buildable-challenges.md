@@ -74,7 +74,7 @@ The sources list no Season 2 changes for these rows.
 ## See also
 
 - [Challenges](challenges.md), the overview of every challenge category
-- [Buildables](../building.md)
+- [Building](../building.md)
 - [Forward Operating Base](../building/forward-operating-base.md)
 - [Crowbar Challenges](crowbar-challenges.md)
 

@@ -87,7 +87,7 @@ Derived from each source's base damage and the damage table. It is not a count f
 
 ## See also
 
-- [Buildables](../building.md): costs, hammers and placement for every structure
+- [Building](../building.md): costs, hammers and placement for every structure
 - [Bunker](bunker.md) and [Indirect Fire Shelter](indirect-fire-shelter.md): the structures with the same damage numbers
 
 ## Sources

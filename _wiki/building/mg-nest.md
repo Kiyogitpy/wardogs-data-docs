@@ -46,7 +46,7 @@ The finished MG Nest has 1,800 HP. Shots hit the gun as a vehicle, and its vehic
 
 ## Use and timing
 
-The MG Nest uses the same placement rules as the other stationary weapons: it is built with a Large Hammer, and its placement conditions check the Forward Operating Base bounds, a ladder check (not within 1 m of a ladder) and a safe zone check (not within 3 m of a safe zone or while standing in one). The [Buildables](../building.md) page describes these rules.
+The MG Nest uses the same placement rules as the other stationary weapons: it is built with a Large Hammer, and its placement conditions check the Forward Operating Base bounds, a ladder check (not within 1 m of a ladder) and a safe zone check (not within 3 m of a safe zone or while standing in one). The [Building](../building.md) page describes these rules.
 
 ## Cost
 
@@ -56,7 +56,7 @@ The MG Nest uses the same placement rules as the other stationary weapons: it is
 | Health | 1,800 HP (finished gun; see Health) |
 | Hammer | Large Hammer |
 
-The Build Supplies cost is not a cash price. Build Supplies are bought in the shop, as the [Buildables](../building.md) page explains.
+The Build Supplies cost is not a cash price. Build Supplies are bought in the shop, as the [Building](../building.md) page explains.
 
 ## Season 2 changes
 
@@ -64,7 +64,7 @@ The Season 2 changes page lists no value changes for the MG Nest's build cost or
 
 ## See also
 
-- [Buildables](../building.md): Build Supplies costs, health and hammers for every structure and stationary weapon
+- [Building](../building.md): Build Supplies costs, health and hammers for every structure and stationary weapon
 - [Talon 9K-SAM](talon-9k-sam.md), [Vanguard CIWS](vanguard-ciws.md), [Stingray](stingray.md), [Loudspeaker](loudspeaker.md) and [L81 Mortar](l81-mortar.md): the other stationary emplacements
 - [Vehicle weapons](../vehicles/vehicle-weapons.md): the machine guns mounted on vehicles
 

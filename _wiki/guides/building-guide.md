@@ -167,7 +167,7 @@ Parts of larger structures, such as a Door's top section or a Bunker's floor, ha
 
 ## See also
 
-- [Buildables](../building.md): costs, health, placement and damage for every structure
+- [Building](../building.md): costs, health, placement and damage for every structure
 - [Hammers](../equipment/hammers.md) and [Supplies](../equipment/supplies.md)
 - [Forward Operating Base](../building/forward-operating-base.md)
 - [Grenades and Explosives](../equipment/grenades-and-explosives.md): the explosives that damage structures
@@ -176,7 +176,7 @@ Parts of larger structures, such as a Door's top section or a Bunker's floor, ha
 
 ## Sources
 
-- [Buildables](../building.md)
+- [Building](../building.md)
 - [Hammers](../equipment/hammers.md)
 - [Supplies](../equipment/supplies.md)
 - [Forward Operating Base](../building/forward-operating-base.md)

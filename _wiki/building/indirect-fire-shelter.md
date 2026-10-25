@@ -90,7 +90,7 @@ Derived from each source's base damage and the damage table. It is not a count f
 
 - [Shelter](shelter.md): a different, medium-cost shelter
 - [Bunker](bunker.md) and [Recon Tower](recon-tower.md): the structures with the same damage numbers
-- [Buildables](../building.md): costs, hammers and placement for every structure
+- [Building](../building.md): costs, hammers and placement for every structure
 
 ## Sources
 

@@ -27,7 +27,7 @@ The Loudspeaker is the one stationary emplacement in the game data with no weapo
 
 Destroying an enemy Loudspeaker pays 200 cash and 50 Role XP. The data still gives it no function.
 
-The Loudspeaker is listed on the [Buildables](../building.md) page with the other stationary emplacements, but the data gives no gun, ammunition, rate or range for it. The game files have no buildable data or weapon for the Loudspeaker, so what it does is not in the data.
+The Loudspeaker is listed on the [Building](../building.md) page with the other stationary emplacements, but the data gives no gun, ammunition, rate or range for it. The game files have no buildable data or weapon for the Loudspeaker, so what it does is not in the data.
 
 ## Effects
 
@@ -41,7 +41,7 @@ The damage data files the Loudspeaker under the same table as the radio tower st
 
 ## Use and timing
 
-The Loudspeaker can be placed with a Medium Hammer as well as a Large Hammer, the only stationary emplacement that has this choice. Its placement conditions check the Forward Operating Base bounds, a ladder check (not within 1 m of a ladder) and a safe zone check (not within 3 m of a safe zone or while standing in one), the same as the other stationary emplacements. The [Buildables](../building.md) page describes these rules.
+The Loudspeaker can be placed with a Medium Hammer as well as a Large Hammer, the only stationary emplacement that has this choice. Its placement conditions check the Forward Operating Base bounds, a ladder check (not within 1 m of a ladder) and a safe zone check (not within 3 m of a safe zone or while standing in one), the same as the other stationary emplacements. The [Building](../building.md) page describes these rules.
 
 ## Cost
 
@@ -51,7 +51,7 @@ The Loudspeaker can be placed with a Medium Hammer as well as a Large Hammer, th
 | Health | 1,000 HP |
 | Hammer | Medium Hammer or Large Hammer |
 
-The Build Supplies cost is not a cash price. Build Supplies are bought in the shop, as the [Buildables](../building.md) page explains.
+The Build Supplies cost is not a cash price. Build Supplies are bought in the shop, as the [Building](../building.md) page explains.
 
 ## Season 2 changes
 
@@ -60,7 +60,7 @@ The Build Supplies cost is not a cash price. Build Supplies are bought in the sh
 
 ## See also
 
-- [Buildables](../building.md): Build Supplies costs, health and hammers for every structure and stationary weapon
+- [Building](../building.md): Build Supplies costs, health and hammers for every structure and stationary weapon
 - [Talon 9K-SAM](talon-9k-sam.md), [Vanguard CIWS](vanguard-ciws.md), [Stingray](stingray.md), [MG Nest](mg-nest.md) and [L81 Mortar](l81-mortar.md): the other stationary emplacements
 
 ## Sources

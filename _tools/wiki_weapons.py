@@ -702,6 +702,7 @@ def ammo_page():
         body.append(f"| [{caliber_display(key)}]({caliber_link(key)}) | {', '.join(by_cal[key])} |")
     body += ["", "## See also", "",
              "- [Choosing Ammo](../guides/choosing-ammo.md), which round to load against each armor level",
+             "- [Ammo Packing](../ammunition/ammo-packing.md), how long loading and unloading magazines takes",
              "- [Armor](../game-mechanics/armor.md)",
              "- [Penetration and Ricochet](../game-mechanics/penetration-and-ricochet.md)",
              "- [Ballistics](../game-mechanics/ballistics.md)",

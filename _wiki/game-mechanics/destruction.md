@@ -28,7 +28,7 @@ Destruction covers three kinds of object:
 - **Demolition props.** The fences, walls, bollards, signs, poles, bushes and trees that can be demolished by a set of named damage sources. Each prop has a rule set that decides what can bring it down.
 - **Street objects.** Road signs, telephone poles, lamp posts, benches, bins and a traffic cone. The data lists them for destruction, but none has a break-apart piece, so the data does not show how they break.
 
-Player-built structures such as walls, doors and bunkers are a separate system with their own health. They are covered on the [Buildables](../building.md) page.
+Player-built structures such as walls, doors and bunkers are a separate system with their own health. They are covered on the [Building](../building.md) page.
 
 ## How it works
 
@@ -106,7 +106,7 @@ Vehicles not in this table, such as the [T-72B3](../vehicles/t-72b3.md), use one
 
 ## See also
 
-- [Buildables](../building.md): player-built structures, their health and what damages them
+- [Building](../building.md): player-built structures, their health and what damages them
 - [Vehicle damage](../vehicles/vehicle-damage.md): how vehicles take damage
 - [Penetration and Ricochet](penetration-and-ricochet.md): what happens when a bullet hits a surface
 

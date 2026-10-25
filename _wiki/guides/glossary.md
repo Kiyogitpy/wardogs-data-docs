@@ -28,7 +28,7 @@ This glossary explains the terms a player meets in the game and on this wiki. Ea
 | Bipod | An attachment that steadies a weapon when it is deployed and limits how far the weapon turns while mounted. | [Bipods](../attachments/bipods.md) |
 | Bleed-out | The timer a downed player has before dying. It is 360 seconds and drains at half speed, so it lasts about 12 minutes. | [Downed and Revive](../game-mechanics/downed-and-revive.md) |
 | Build Supplies | The resource that powers hammers. Players buy it and spend it to build structures. | [Supplies](../equipment/supplies.md) |
-| Buildable | Any structure built with a hammer, such as a wall, door, bunker or station. | [Buildables](../building.md) |
+| Buildable | Any structure built with a hammer, such as a wall, door, bunker or station. | [Building](../building.md) |
 
 ## C
 

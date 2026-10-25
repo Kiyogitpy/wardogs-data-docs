@@ -127,7 +127,7 @@ The reward tables list events, not roles. The events below are the ones that fit
 
 - [Skills](skills.md)
 - [Cash and Rewards](cash-and-rewards.md)
-- [Buildables](../building.md)
+- [Building](../building.md)
 - [C4 Charge](../equipment/c4-charge.md)
 - [Weapons](../weapons.md)
 

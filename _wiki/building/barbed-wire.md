@@ -86,7 +86,7 @@ The Season 2 data lists no change to Barbed Wire's cost or health.
 
 ## See also
 
-- [Buildables](../building.md): costs, hammers and placement for every structure
+- [Building](../building.md): costs, hammers and placement for every structure
 - [Recon Tent](recon-tent.md) and [Hedgehog](hedgehog.md): the other small structures
 
 ## Sources
