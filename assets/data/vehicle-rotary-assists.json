@@ -1,0 +1,2640 @@
+[
+ {
+  "asset": "DA_ROT_02_FlightCharacteristics",
+  "vehicle": "ROT_02",
+  "rotorSettings": {
+   "MaxLiftCoeff": 1.8,
+   "BladeAngleOfAttackForStall_deg": 40.0,
+   "RotorRadius": 600.0,
+   "LiftForcesAppliedAtRadius": 1000.0,
+   "LowAltitude_m": 40.0,
+   "HighAltitude_m": 200.0,
+   "MaxAltitude_m": 280.0,
+   "HighAltitudeRotorEfficiency": 0.65,
+   "MaxAltitudeRotorEfficiency": 0.4,
+   "_aaabgcipakomhengpaeid": 0.3,
+   "TailRotorNeutralTorque": 600000000.0
+  },
+  "forces": {
+   "PitchControlForce": {
+    "Type": "RotorBladeAngle",
+    "MaxTorque": 4800000000.0,
+    "MaxRotorBladeAngleDelta": 1.3
+   },
+   "RollControlForce": {
+    "Type": "RotorBladeAngle",
+    "MaxTorque": 1500000000.0,
+    "MaxRotorBladeAngleDelta": 0.42
+   },
+   "YawControlForce": {
+    "MaxTorque": 330000100.0
+   },
+   "CollectiveControlForce": {
+    "Type": "RotorBladeAngle",
+    "MinForce": 400000.0,
+    "MaxForce": 2800000.0,
+    "MinRotorBladeAngleDelta": -0.5,
+    "MaxRotorBladeAngleDelta": 10.0
+   }
+  },
+  "controls": {
+   "PitchControl": {
+    "assists": [
+     {
+      "label": "Dampen pressed inputs",
+      "category": "Core",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "CyclicY",
+        "Threshold": 1.0,
+        "Operator": "Equal"
+       }
+      ],
+      "body": {
+       "type": "Damping",
+       "Interpolation": {
+        "InterpolationMethod": "INTERP_TO",
+        "InterpSpeed": 7.0
+       }
+      }
+     },
+     {
+      "label": "Set to 0 on ground",
+      "category": "Core",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "IsOnGround"
+       },
+       {
+        "type": "InputState",
+        "ControlType": "CyclicY",
+        "Operator": "Equal"
+       }
+      ],
+      "body": {
+       "type": "SetToValue"
+      }
+     },
+     {
+      "label": "Stabilize after input released",
+      "category": "Stability",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "StabilizedAfterInputReleased",
+        "StabilityControlValueType": "LocalAngularVelocity_DegPerS",
+        "StabilityControlValueComponent": "Y",
+        "StabilityThreshold": 0.57295775,
+        "TimeThresholdS": 0.06,
+        "InfluenceProperties": {
+         "OutInterpolation": {
+          "InterpolationMethod": "INTERP_TO",
+          "InterpSpeed": 3.0
+         }
+        }
+       },
+       {
+        "type": "InputState",
+        "ControlType": "CyclicY",
+        "Operator": "Equal"
+       }
+      ],
+      "body": {
+       "type": "PID",
+       "ControlValueParams": {
+        "Type": "LocalAngularVelocity_DegPerS",
+        "Component": "Y"
+       },
+       "PID": {
+        "ProportionalGain": 0.55850536,
+        "DerivativeGain": 0.13962634
+       }
+      }
+     },
+     {
+      "label": "Level at low speeds",
+      "category": "Stability",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "CyclicY",
+        "bAbsolute": false,
+        "Operator": "Equal",
+        "Label": "Raw input at zero"
+       },
+       {
+        "type": "ControlValueSatisfies",
+        "ControlValueType": "WorldVelocity_KmPerH",
+        "ControlValueComponent": "Length",
+        "TestOperator": "LessThan",
+        "TestValue": 36.0,
+        "Label": "At low speeds"
+       }
+      ],
+      "body": {
+       "type": "PID",
+       "OutputParams": {
+        "Type": "Value",
+        "MaxPIDOutput": 0.035,
+        "NegateCondition": "Always"
+       },
+       "ControlValueParams": {
+        "Type": "WorldRotation_Deg",
+        "Component": "Y"
+       },
+       "PID": {
+        "ProportionalGain": 0.004363323,
+        "DerivativeGain": 0.0034906585
+       }
+      }
+     },
+     {
+      "label": "Stabilize released pitch when collective up",
+      "category": "Stability",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "CyclicY",
+        "Operator": "Equal",
+        "Label": "Cyclic Y released"
+       },
+       {
+        "type": "InputState",
+        "ControlType": "Collective",
+        "Threshold": 1.0,
+        "bAbsolute": false,
+        "Operator": "Equal",
+        "Label": "Collective pressed and up"
+       },
+       {
+        "type": "ControlValueSatisfies",
+        "ControlValueType": "WorldRotation_Deg",
+        "ControlValueComponent": "Y",
+        "bAbsolute": false,
+        "TestOperator": "GreaterThan",
+        "Label": "Nose up"
+       }
+      ],
+      "body": {
+       "type": "PID",
+       "ControlValueParams": {
+        "Type": "LocalAngularVelocity_DegPerS",
+        "Component": "Y"
+       },
+       "PID": {
+        "ProportionalGain": 0.012217305,
+        "DerivativeGain": 0.030543262
+       }
+      }
+     },
+     {
+      "label": "Stabilize released pitch when collective down",
+      "category": "Stability",
+      "enabled": false,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "CyclicY",
+        "Operator": "Equal",
+        "Label": "Cyclic Y released"
+       },
+       {
+        "type": "InputState",
+        "ControlType": "Collective",
+        "Threshold": -1.0,
+        "bAbsolute": false,
+        "Operator": "Equal",
+        "Label": "Collective pressed and down"
+       },
+       {
+        "type": "ControlValueSatisfies",
+        "ControlValueType": "WorldRotation_Deg",
+        "ControlValueComponent": "Y",
+        "bAbsolute": false,
+        "TestOperator": "LessThan",
+        "Label": "Nose down"
+       }
+      ],
+      "body": {
+       "type": "PID",
+       "ControlValueParams": {
+        "Type": "LocalAngularVelocity_DegPerS",
+        "Component": "Y"
+       },
+       "PID": {
+        "ProportionalGain": 0.008726646,
+        "DerivativeGain": 0.02443461
+       }
+      }
+     },
+     {
+      "label": "Snap to 0 skid pitch",
+      "category": "TurnCoordination",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "CyclicY",
+        "Operator": "Equal"
+       },
+       {
+        "type": "ControlValueSatisfies",
+        "ControlValueType": "WorldVelocity_KmPerH",
+        "ControlValueComponent": "Length",
+        "TestOperator": "GreaterThan",
+        "TestValue": 18.0,
+        "InterpolationBand": 18.0,
+        "InterpolationExponent": 2.0,
+        "Label": "Speed must be above threshold to avoid faulty skid angles"
+       },
+       {
+        "type": "ControlValueSatisfies",
+        "ControlValueType": "SkidAngle_Deg",
+        "ControlValueComponent": "Y",
+        "TestOperator": "LessThan",
+        "TestValue": 0.5729577823242186,
+        "InterpolationBand": 14.32394487827058,
+        "InterpolationExponent": 4.0
+       }
+      ],
+      "body": {
+       "type": "PID",
+       "OutputParams": {
+        "Type": "Value"
+       },
+       "ControlValueParams": {
+        "Type": "SkidAngle_Deg",
+        "Component": "Y"
+       },
+       "PID": {
+        "DerivativeGain": 0.0076794485
+       },
+       "bNegateOutputFixedAfterSkidAngleFlip": true
+      }
+     },
+     {
+      "label": "Dampen released inputs",
+      "category": "Core",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "CyclicY",
+        "Operator": "Equal"
+       }
+      ],
+      "body": {
+       "type": "Damping",
+       "Interpolation": {
+        "InterpolationMethod": "INTERP_TO",
+        "InterpSpeed": 7.0
+       }
+      }
+     }
+    ]
+   },
+   "RollControl": {
+    "assists": [
+     {
+      "label": "Dampen pressed inputs",
+      "category": "Core",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "CyclicX",
+        "Threshold": 1.0,
+        "Operator": "Equal"
+       }
+      ],
+      "body": {
+       "type": "Damping",
+       "Interpolation": {
+        "InterpolationMethod": "INTERP_TO",
+        "InterpSpeed": 7.0
+       }
+      }
+     },
+     {
+      "label": "Set to 0 on ground",
+      "category": "Core",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "IsOnGround"
+       },
+       {
+        "type": "InputState",
+        "ControlType": "CyclicX",
+        "Operator": "Equal"
+       }
+      ],
+      "body": {
+       "type": "SetToValue"
+      }
+     },
+     {
+      "label": "Stabilize after input released",
+      "category": "Stability",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "StabilizedAfterInputReleased",
+        "StabilityControlValueType": "LocalAngularVelocity_DegPerS",
+        "StabilityControlValueComponent": "X",
+        "StabilityThreshold": 2.864789
+       },
+       {
+        "type": "InputState",
+        "ControlType": "CyclicX",
+        "Operator": "Equal"
+       }
+      ],
+      "body": {
+       "type": "PID",
+       "OutputParams": {
+        "NegateCondition": "Always"
+       },
+       "ControlValueParams": {
+        "Type": "LocalAngularVelocity_DegPerS",
+        "Component": "X"
+       },
+       "PID": {
+        "ProportionalGain": 0.20943952,
+        "IntegralGain": 0.0017453292,
+        "DerivativeGain": 0.08726646
+       }
+      }
+     },
+     {
+      "label": "Level at low speeds",
+      "category": "Stability",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "CyclicX",
+        "bAbsolute": false,
+        "Operator": "Equal",
+        "Label": "Raw input at zero"
+       },
+       {
+        "type": "ControlValueSatisfies",
+        "ControlValueType": "WorldVelocity_KmPerH",
+        "ControlValueComponent": "Length",
+        "TestOperator": "LessThan",
+        "TestValue": 36.0,
+        "Label": "At low speeds"
+       }
+      ],
+      "body": {
+       "type": "PID",
+       "OutputParams": {
+        "Type": "Value",
+        "MaxPIDOutput": 0.035
+       },
+       "ControlValueParams": {
+        "Type": "WorldRotation_Deg",
+        "Component": "X"
+       },
+       "PID": {
+        "ProportionalGain": 0.004363323,
+        "DerivativeGain": 0.0034906585
+       }
+      }
+     },
+     {
+      "label": "Prevent drag torque overshoot",
+      "category": "Core",
+      "enabled": false,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "ControlValueSatisfies",
+        "ControlValueType": "LocalAngularVelocity_DegPerS",
+        "ControlValueComponent": "X",
+        "TestOperator": "LessThan",
+        "TestValue": 28.64788975654116,
+        "Label": "Roll speed close to zero"
+       },
+       {
+        "type": "InputState",
+        "ControlType": "CyclicX",
+        "Operator": "Equal"
+       }
+      ],
+      "body": {
+       "type": "PID",
+       "OutputParams": {
+        "NegateCondition": "Always"
+       },
+       "ControlValueParams": {
+        "Type": "LocalAngularVelocity_DegPerS",
+        "Component": "X"
+       },
+       "PID": {
+        "ProportionalGain": 0.08726646,
+        "DerivativeGain": 0.05235988
+       }
+      }
+     },
+     {
+      "label": "Dampen inputs",
+      "category": "Core",
+      "enabled": false,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "CyclicX",
+        "Operator": "Equal"
+       }
+      ],
+      "body": {
+       "type": "Damping",
+       "Interpolation": {
+        "InterpolationMethod": "INTERP_TO",
+        "InterpSpeed": 4.0
+       }
+      }
+     }
+    ]
+   },
+   "YawControl": {
+    "assists": [
+     {
+      "label": "Dampen pressed inputs",
+      "category": "Core",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "Pedals",
+        "Threshold": 1.0,
+        "Operator": "Equal"
+       }
+      ],
+      "body": {
+       "type": "Damping",
+       "Interpolation": {
+        "InterpolationMethod": "INTERP_TO",
+        "InterpSpeed": 7.0
+       }
+      }
+     },
+     {
+      "label": "Set to 0 on ground",
+      "category": "Core",
+      "enabled": false,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "IsOnGround"
+       },
+       {
+        "type": "InputState",
+        "ControlType": "Pedals",
+        "Operator": "Equal"
+       }
+      ],
+      "body": {
+       "type": "SetToValue"
+      }
+     },
+     {
+      "label": "Stabilize after input released",
+      "category": "Stability",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "StabilizedAfterInputReleased",
+        "StabilityControlValueType": "LocalAngularVelocity_DegPerS",
+        "StabilityControlValueComponent": "Z",
+        "StabilityThreshold": 0.28647888,
+        "InfluenceProperties": {
+         "InInterpolation": {
+          "InterpolationMethod": "INTERP_TO",
+          "InterpSpeed": 1.5
+         },
+         "OutInterpolation": {
+          "InterpolationMethod": "INTERP_TO",
+          "InterpSpeed": 1.5
+         }
+        }
+       },
+       {
+        "type": "InputState",
+        "ControlType": "Pedals",
+        "Operator": "Equal"
+       }
+      ],
+      "body": {
+       "type": "PID",
+       "ControlValueParams": {
+        "Type": "LocalAngularVelocity_DegPerS",
+        "Component": "Z"
+       },
+       "PID": {
+        "ProportionalGain": 0.2,
+        "IntegralGain": 0.05,
+        "DerivativeGain": 0.10471976,
+        "IntegralAntiWindUp": {
+         "AggregatedErrorLimit": 0.5,
+         "ErrorLimit": 0.3
+        }
+       }
+      }
+     },
+     {
+      "label": "Prevent drag torque overshoot",
+      "category": "Core",
+      "enabled": false,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "ControlValueSatisfies",
+        "ControlValueType": "LocalAngularVelocity_DegPerS",
+        "ControlValueComponent": "Z",
+        "TestOperator": "LessThan",
+        "TestValue": 5.729578036685597,
+        "Label": "Yaw value close to zero"
+       },
+       {
+        "type": "InputState",
+        "ControlType": "Pedals",
+        "Operator": "Equal"
+       }
+      ],
+      "body": {
+       "type": "PID",
+       "ControlValueParams": {
+        "Type": "LocalAngularVelocity_DegPerS",
+        "Component": "Z"
+       },
+       "PID": {
+        "ProportionalGain": 0.10471976,
+        "DerivativeGain": 0.10471976
+       }
+      }
+     },
+     {
+      "label": "Dampen angular velocity near 0 yaw",
+      "category": "Core",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "ControlValueSatisfies",
+        "ControlValueType": "SkidAngle_Deg",
+        "ControlValueComponent": "Z",
+        "TestOperator": "LessThan",
+        "TestValue": 18.907607239317166,
+        "InterpolationBand": 12.032113697747288,
+        "InterpolationExponent": 0.6600000262260437
+       },
+       {
+        "type": "InputState",
+        "ControlType": "Pedals",
+        "Operator": "Equal"
+       },
+       {
+        "type": "ControlValueSatisfies",
+        "ControlValueType": "LocalAngularVelocity_DegPerS",
+        "ControlValueComponent": "Z",
+        "TestOperator": "GreaterThan",
+        "TestValue": 2.8647889756541165,
+        "InterpolationBand": 8.594366926962348,
+        "Label": "Don't dampen low yaw angular speed as it is drag trying to aling the heli with the flight direction"
+       }
+      ],
+      "body": {
+       "type": "PID",
+       "ControlValueParams": {
+        "Type": "LocalAngularVelocity_DegPerS",
+        "Component": "Z"
+       },
+       "PID": {
+        "ProportionalGain": 0.05235988,
+        "DerivativeGain": 0.05235988
+       }
+      }
+     },
+     {
+      "label": "Dampen inputs",
+      "category": "Core",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "Pedals",
+        "Operator": "Equal"
+       }
+      ],
+      "body": {
+       "type": "Damping",
+       "Interpolation": {
+        "InterpolationMethod": "INTERP_TO",
+        "InterpSpeed": 20.0
+       }
+      }
+     }
+    ]
+   },
+   "CollectiveControl": {
+    "assists": [
+     {
+      "label": "Limit climb rate",
+      "category": "EnvelopeLimits",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "ControlValueSatisfies",
+        "ControlValueType": "WorldVelocity_KmPerH",
+        "ControlValueComponent": "Z",
+        "bAbsolute": false,
+        "TestOperator": "GreaterThan",
+        "TestValue": 36.0
+       },
+       {
+        "type": "InputState",
+        "ControlType": "Collective",
+        "Threshold": 1.0,
+        "Operator": "Equal"
+       }
+      ],
+      "body": {
+       "type": "PID",
+       "ControlValueParams": {
+        "Type": "WorldVelocity_KmPerH",
+        "Component": "Z"
+       },
+       "TargetParams": {
+        "Value": 36.0
+       },
+       "PID": {
+        "ProportionalGain": 0.11111111,
+        "DerivativeGain": 0.16666667
+       }
+      }
+     },
+     {
+      "label": "Limit sink rate",
+      "category": "EnvelopeLimits",
+      "enabled": false,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "ControlValueSatisfies",
+        "ControlValueType": "WorldVelocity_KmPerH",
+        "ControlValueComponent": "Z",
+        "bAbsolute": false,
+        "TestOperator": "LessThan",
+        "TestValue": -50.0
+       },
+       {
+        "type": "InputState",
+        "ControlType": "Collective",
+        "Threshold": 1.0,
+        "Operator": "Equal"
+       }
+      ],
+      "body": {
+       "type": "PID",
+       "ControlValueParams": {
+        "Type": "WorldVelocity_KmPerH",
+        "Component": "Z"
+       },
+       "TargetParams": {
+        "Value": -31.32
+       },
+       "PID": {
+        "ProportionalGain": 0.16666667,
+        "DerivativeGain": 0.11111111
+       }
+      }
+     },
+     {
+      "label": "Reset collective on ground when engaged",
+      "category": "Core",
+      "enabled": false,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "WasOnGroundAtStart"
+       },
+       {
+        "type": "InputState",
+        "ControlType": "Collective",
+        "Threshold": 1.0,
+        "bAbsolute": false,
+        "Operator": "Equal",
+        "Label": "Collective pressed"
+       }
+      ],
+      "body": {
+       "type": "Damping",
+       "Interpolation": {
+        "InterpolationMethod": "EASE_IN_EASE_OUT",
+        "InterpTimeS": 2.5,
+        "exp": 3.0
+       }
+      }
+     },
+     {
+      "label": "Dampen pressed inputs - up",
+      "category": "Core",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "Collective",
+        "Threshold": 1.0,
+        "bAbsolute": false,
+        "Operator": "Equal",
+        "InfluenceProperties": {
+         "InInterpolation": {
+          "InterpTimeS": 1.0,
+          "exp": 2.0
+         },
+         "OutInterpolation": {
+          "InterpTimeS": 1.5,
+          "exp": 1.5
+         }
+        }
+       }
+      ],
+      "body": {
+       "type": "Damping",
+       "Interpolation": {
+        "InterpolationMethod": "EASE_IN_EASE_OUT",
+        "InterpTimeS": 1.5,
+        "exp": 1.25
+       }
+      }
+     },
+     {
+      "label": "Dampen pressed inputs - down",
+      "category": "Core",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "Collective",
+        "Threshold": -1.0,
+        "bAbsolute": false,
+        "Operator": "Equal"
+       }
+      ],
+      "body": {
+       "type": "Damping",
+       "Interpolation": {
+        "InterpolationMethod": "EASE_IN_EASE_OUT",
+        "InterpTimeS": 1.5,
+        "exp": 1.25
+       }
+      }
+     },
+     {
+      "label": "Set to -1 on ground",
+      "category": "Core",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "Collective",
+        "Operator": "Equal"
+       },
+       {
+        "type": "IsOnGround",
+        "InfluenceProperties": {
+         "InInterpolation": {
+          "InterpolationMethod": "INTERP_TO",
+          "InterpSpeed": 0.2
+         }
+        }
+       }
+      ],
+      "body": {
+       "type": "SetToValue",
+       "Value": -1.0
+      }
+     },
+     {
+      "label": "Stabilize after input released",
+      "category": "AutoHover",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "StabilizedAfterInputReleased",
+        "StabilityControlValueType": "WorldVelocity_KmPerH",
+        "StabilityControlValueComponent": "Z",
+        "StabilityThreshold": 0.00036,
+        "InfluenceProperties": {
+         "InInterpolation": {
+          "InterpTimeS": 1.5,
+          "exp": 1.5
+         }
+        }
+       },
+       {
+        "type": "InputState",
+        "ControlType": "Collective",
+        "Operator": "Equal"
+       }
+      ],
+      "body": {
+       "type": "PID",
+       "ControlValueParams": {
+        "Type": "WorldVelocity_KmPerH",
+        "Component": "Z"
+       },
+       "PID": {
+        "ProportionalGain": 0.055555556,
+        "DerivativeGain": 0.055555556
+       }
+      }
+     },
+     {
+      "label": "Hover assist",
+      "category": "AutoHover",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "Collective",
+        "Operator": "Equal"
+       },
+       {
+        "type": "HasPilot"
+       }
+      ],
+      "body": {
+       "type": "PID",
+       "ControlValueParams": {
+        "Type": "WorldVelocity_KmPerH",
+        "Component": "Z"
+       },
+       "PID": {
+        "ProportionalGain": 0.055555556,
+        "DerivativeGain": 0.055555556
+       }
+      }
+     },
+     {
+      "label": "Dampen released inputs",
+      "category": "Core",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "Collective",
+        "Operator": "Equal"
+       }
+      ],
+      "body": {
+       "type": "Damping",
+       "Interpolation": {
+        "InterpolationMethod": "EASE_IN_EASE_OUT",
+        "InterpTimeS": 1.5,
+        "exp": 1.5
+       }
+      }
+     }
+    ]
+   }
+  }
+ },
+ {
+  "asset": "DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight",
+  "vehicle": "ROT_03",
+  "rotorSettings": {
+   "MaxLiftCoeff": 1.25,
+   "LowAltitude_m": 75.0,
+   "HighAltitude_m": 250.0,
+   "MaxAltitude_m": 325.0,
+   "HighAltitudeRotorEfficiency": 0.75,
+   "MaxAltitudeRotorEfficiency": 0.45,
+   "_aaabgcipakomhengpaeid": 0.3,
+   "TailRotorNeutralTorque": 600000000.0
+  },
+  "forces": {
+   "PitchControlForce": {
+    "Type": "RotorBladeAngle",
+    "MaxTorque": 4800000000.0,
+    "MaxRotorBladeAngleDelta": 2.0
+   },
+   "RollControlForce": {
+    "Type": "RotorBladeAngle",
+    "MaxTorque": 1500000000.0,
+    "MaxRotorBladeAngleDelta": 0.6
+   },
+   "YawControlForce": {
+    "MaxTorque": 37000000.0
+   },
+   "CollectiveControlForce": {
+    "Type": "RotorBladeAngle",
+    "MinForce": 400000.0,
+    "MaxForce": 2800000.0,
+    "MinRotorBladeAngleDelta": -3.0,
+    "MaxRotorBladeAngleDelta": 14.5
+   }
+  },
+  "controls": {
+   "PitchControl": {
+    "assists": [
+     {
+      "label": "Stabilize after input released",
+      "category": "Stability",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "CyclicY",
+        "Operator": "Equal",
+        "Label": "Input not pressed"
+       },
+       {
+        "type": "StabilizedAfterInputReleased",
+        "StabilityControlValueType": "LocalAngularVelocity_DegPerS",
+        "StabilityControlValueComponent": "Y",
+        "StabilityThreshold": 0.572958,
+        "TimeThresholdS": 0.06,
+        "TimeoutS": 0.6,
+        "InfluenceProperties": {
+         "OutInterpolation": {
+          "InterpolationMethod": "INTERP_TO",
+          "InterpSpeed": 3.0
+         }
+        }
+       }
+      ],
+      "body": {
+       "type": "PID",
+       "OutputParams": {
+        "Type": "Value"
+       },
+       "ControlValueParams": {
+        "Type": "LocalAngularVelocity_DegPerS",
+        "Component": "Y"
+       },
+       "PID": {
+        "ProportionalGain": 0.02
+       }
+      }
+     },
+     {
+      "label": "Pitch input pressed",
+      "category": "Core",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "CyclicY",
+        "Operator": "GreaterThan"
+       }
+      ],
+      "body": {
+       "type": "RotaryMovementControlMultiAssist",
+       "Children": [
+        {
+         "bEnabled": true,
+         "Category": "EBHHeliAssistCategory::Core",
+         "Label": "Dampen pressed inputs",
+         "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+         "Conditions": [],
+         "Body": {
+          "ObjectName": "BHDampingRotaryMovementControlAssistBody'DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight:PitchControl_0.BHRotaryMovementControlMultiAssistBody_0.BHDampingRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/ROT_03/Data/DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight.15"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "label": "Pitch input released",
+      "category": "Core",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "CyclicY",
+        "Operator": "Equal"
+       }
+      ],
+      "body": {
+       "type": "RotaryMovementControlMultiAssist",
+       "Children": [
+        {
+         "bEnabled": true,
+         "Category": "EBHHeliAssistCategory::Core",
+         "Label": "Set to 0 on ground",
+         "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+         "Conditions": [
+          {
+           "ObjectName": "BHIsOnGroundRotaryMovementControlAssistCondition'DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight:PitchControl_0.BHRotaryMovementControlMultiAssistBody_1.BHIsOnGroundControlAssistCondition_0'",
+           "ObjectPath": "/ROT_03/Data/DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight.48"
+          }
+         ],
+         "Body": {
+          "ObjectName": "BHSetToValueRotaryMovementControlAssistBody'DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight:PitchControl_0.BHRotaryMovementControlMultiAssistBody_1.BHSetRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/ROT_03/Data/DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight.81"
+         }
+        },
+        {
+         "bEnabled": true,
+         "Category": "EBHHeliAssistCategory::Stability",
+         "Label": "Level at low speeds",
+         "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+         "Conditions": [
+          {
+           "ObjectName": "BHControlValueSatisfiesRotaryMovementControlAssistCondition'DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight:PitchControl_0.BHRotaryMovementControlMultiAssistBody_1.BHControlValueSatisfiesRotaryMovementControlAssistCondition_1'",
+           "ObjectPath": "/ROT_03/Data/DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight.3"
+          },
+          {
+           "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight:PitchControl_0.BHRotaryMovementControlMultiAssistBody_1.BHInputStateRotaryMovementControlAssistCondition_0'",
+           "ObjectPath": "/ROT_03/Data/DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight.35"
+          }
+         ],
+         "Body": {
+          "ObjectName": "BHPIDRotaryMovementControlAssistBody'DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight:PitchControl_0.BHRotaryMovementControlMultiAssistBody_1.BHPIDRotaryMovementControlAssistBody_4'",
+          "ObjectPath": "/ROT_03/Data/DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight.56"
+         }
+        },
+        {
+         "bEnabled": true,
+         "Category": "EBHHeliAssistCategory::Core",
+         "Label": "Stabilize unrolled",
+         "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+         "Conditions": [
+          {
+           "ObjectName": "BHControlValueSatisfiesRotaryMovementControlAssistCondition'DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight:PitchControl_0.BHRotaryMovementControlMultiAssistBody_1.BHControlValueSatisfiesRotaryMovementControlAssistCondition_0'",
+           "ObjectPath": "/ROT_03/Data/DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight.2"
+          }
+         ],
+         "Body": {
+          "ObjectName": "BHRotaryMovementControlMultiAssistBody'DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight:PitchControl_0.BHRotaryMovementControlMultiAssistBody_1.BHRotaryMovementControlMultiAssistBody_0'",
+          "ObjectPath": "/ROT_03/Data/DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight.73"
+         }
+        },
+        {
+         "bEnabled": true,
+         "Category": "EBHHeliAssistCategory::Core",
+         "Label": "Dampen released inputs",
+         "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+         "Conditions": [],
+         "Body": {
+          "ObjectName": "BHDampingRotaryMovementControlAssistBody'DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight:PitchControl_0.BHRotaryMovementControlMultiAssistBody_1.BHDampingRotaryMovementControlAssistBody_1'",
+          "ObjectPath": "/ROT_03/Data/DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight.16"
+         }
+        }
+       ]
+      }
+     }
+    ]
+   },
+   "RollControl": {
+    "assists": [
+     {
+      "label": "Stabilize after input released",
+      "category": "Stability",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "CyclicX",
+        "Operator": "Equal"
+       },
+       {
+        "type": "StabilizedAfterInputReleased",
+        "StabilityControlValueType": "LocalAngularVelocity_DegPerS",
+        "StabilityControlValueComponent": "X",
+        "StabilityThreshold": 0.6,
+        "TimeThresholdS": 0.3,
+        "TimeoutS": 0.9
+       }
+      ],
+      "body": {
+       "type": "PID",
+       "OutputParams": {
+        "NegateCondition": "Always"
+       },
+       "ControlValueParams": {
+        "Type": "LocalAngularVelocity_DegPerS",
+        "Component": "X"
+       },
+       "PID": {
+        "ProportionalGain": 0.1,
+        "IntegralGain": 0.002,
+        "DerivativeGain": 0.05
+       }
+      }
+     },
+     {
+      "label": "Roll input pressed",
+      "category": "Core",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "CyclicX",
+        "Operator": "GreaterThan"
+       }
+      ],
+      "body": {
+       "type": "RotaryMovementControlMultiAssist",
+       "Children": [
+        {
+         "bEnabled": true,
+         "Category": "EBHHeliAssistCategory::Core",
+         "Label": "Dampen pressed inputs",
+         "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+         "Conditions": [],
+         "Body": {
+          "ObjectName": "BHDampingRotaryMovementControlAssistBody'DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight:RollControl_1.BHRotaryMovementControlMultiAssistBody_0.BHDampingRotaryMovementControlAssistBody_1'",
+          "ObjectPath": "/ROT_03/Data/DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight.17"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "label": "Roll input released",
+      "category": "Core",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "CyclicX",
+        "Operator": "Equal"
+       }
+      ],
+      "body": {
+       "type": "RotaryMovementControlMultiAssist",
+       "Children": [
+        {
+         "bEnabled": true,
+         "Category": "EBHHeliAssistCategory::Core",
+         "Label": "Set to 0 on ground",
+         "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+         "Conditions": [
+          {
+           "ObjectName": "BHIsOnGroundRotaryMovementControlAssistCondition'DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight:RollControl_1.BHRotaryMovementControlMultiAssistBody_1.BHIsOnGroundControlAssistCondition_0'",
+           "ObjectPath": "/ROT_03/Data/DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight.49"
+          }
+         ],
+         "Body": {
+          "ObjectName": "BHSetToValueRotaryMovementControlAssistBody'DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight:RollControl_1.BHRotaryMovementControlMultiAssistBody_1.BHSetRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/ROT_03/Data/DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight.82"
+         }
+        },
+        {
+         "bEnabled": true,
+         "Category": "EBHHeliAssistCategory::Stability",
+         "Label": "Level at low speeds",
+         "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+         "Conditions": [
+          {
+           "ObjectName": "BHControlValueSatisfiesRotaryMovementControlAssistCondition'DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight:RollControl_1.BHRotaryMovementControlMultiAssistBody_1.BHControlValueSatisfiesRotaryMovementControlAssistCondition_0'",
+           "ObjectPath": "/ROT_03/Data/DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight.5"
+          },
+          {
+           "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight:RollControl_1.BHRotaryMovementControlMultiAssistBody_1.BHInputStateRotaryMovementControlAssistCondition_0'",
+           "ObjectPath": "/ROT_03/Data/DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight.39"
+          }
+         ],
+         "Body": {
+          "ObjectName": "BHPIDRotaryMovementControlAssistBody'DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight:RollControl_1.BHRotaryMovementControlMultiAssistBody_1.BHPIDRotaryMovementControlAssistBody_4'",
+          "ObjectPath": "/ROT_03/Data/DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight.60"
+         }
+        },
+        {
+         "bEnabled": true,
+         "Category": "EBHHeliAssistCategory::Stability",
+         "Label": "Stabilize around 0 world roll",
+         "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+         "Conditions": [
+          {
+           "ObjectName": "BHControlValueSatisfiesRotaryMovementControlAssistCondition'DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight:RollControl_1.BHRotaryMovementControlMultiAssistBody_1.BHControlValueSatisfiesRotaryMovementControlAssistCondition_1'",
+           "ObjectPath": "/ROT_03/Data/DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight.6"
+          }
+         ],
+         "Body": {
+          "ObjectName": "BHPIDRotaryMovementControlAssistBody'DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight:RollControl_1.BHRotaryMovementControlMultiAssistBody_1.BHPIDRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/ROT_03/Data/DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight.59"
+         }
+        },
+        {
+         "bEnabled": true,
+         "Category": "EBHHeliAssistCategory::Core",
+         "Label": "Dampen inputs",
+         "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+         "Conditions": [],
+         "Body": {
+          "ObjectName": "BHDampingRotaryMovementControlAssistBody'DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight:RollControl_1.BHRotaryMovementControlMultiAssistBody_1.BHDampingRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/ROT_03/Data/DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight.18"
+         }
+        }
+       ]
+      }
+     }
+    ]
+   },
+   "YawControl": {
+    "assists": [
+     {
+      "label": "Yaw Damping",
+      "category": "Core",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "Pedals",
+        "Operator": "Equal",
+        "bNegate": true
+       }
+      ],
+      "body": {
+       "type": "Damping",
+       "Interpolation": {
+        "InterpolationMethod": "EASE_IN",
+        "InterpTimeS": 0.35,
+        "exp": 2.5
+       }
+      }
+     },
+     {
+      "label": "Stabilize after input released",
+      "category": "Stability",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "Pedals",
+        "Operator": "Equal",
+        "Label": "Input not pressed"
+       },
+       {
+        "type": "StabilizedAfterInputReleased",
+        "StabilityControlValueType": "LocalAngularVelocity_DegPerS",
+        "StabilityControlValueComponent": "Z",
+        "StabilityThreshold": 1.0,
+        "TimeThresholdS": 0.5,
+        "TimeoutS": 6.0,
+        "InfluenceProperties": {
+         "InInterpolation": {
+          "InterpolationMethod": "INTERP_TO",
+          "InterpSpeed": 1.5
+         },
+         "OutInterpolation": {
+          "InterpolationMethod": "INTERP_TO",
+          "InterpSpeed": 1.5
+         }
+        }
+       },
+       {
+        "type": "YawLimitedAtSpeed",
+        "InfluenceProperties": {
+         "OutInterpolation": {
+          "InterpolationMethod": "INTERP_TO",
+          "InterpSpeed": 1.5
+         }
+        },
+        "bNegate": true
+       }
+      ],
+      "body": {
+       "type": "PID",
+       "ControlValueParams": {
+        "Type": "LocalAngularVelocity_DegPerS",
+        "Component": "Z"
+       },
+       "PID": {
+        "ProportionalGain": 0.45,
+        "IntegralGain": 0.05,
+        "DerivativeGain": 0.08726646,
+        "IntegralAntiWindUp": {
+         "AggregatedErrorLimit": 0.5,
+         "ErrorLimit": 0.3
+        }
+       }
+      }
+     },
+     {
+      "label": "Pedals input pressed",
+      "category": "Core",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "Pedals",
+        "Threshold": 0.05,
+        "Operator": "GreaterThan",
+        "InfluenceProperties": {
+         "InInterpolation": {
+          "InterpolationMethod": "INTERP_TO",
+          "InterpSpeed": -1000000.0
+         }
+        }
+       }
+      ],
+      "body": {
+       "type": "RotaryMovementControlMultiAssist",
+       "Children": [
+        {
+         "bEnabled": true,
+         "Category": "EBHHeliAssistCategory::EnvelopeLimits",
+         "Label": "Avoid oscillation at yaw limit",
+         "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+         "Conditions": [
+          {
+           "ObjectName": "BHWithinYawLimitsAtSpeedControlAssistCondition'DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight:YawControl_2.BHRotaryMovementControlMultiAssistBody_2.BHWithinYawLimitsAtSpeedControlAssistCondition_0'",
+           "ObjectPath": "/ROT_03/Data/DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight.89"
+          }
+         ],
+         "Body": {
+          "ObjectName": "BHPIDRotaryMovementControlAssistBody'DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight:YawControl_2.BHRotaryMovementControlMultiAssistBody_2.BHPIDRotaryMovementControlAssistBody_1'",
+          "ObjectPath": "/ROT_03/Data/DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight.62"
+         }
+        },
+        {
+         "bEnabled": true,
+         "Category": "EBHHeliAssistCategory::Core",
+         "Label": "Dampen pressed inputs",
+         "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+         "Conditions": [],
+         "Body": {
+          "ObjectName": "BHDampingRotaryMovementControlAssistBody'DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight:YawControl_2.BHRotaryMovementControlMultiAssistBody_2.BHDampingRotaryMovementControlAssistBody_1'",
+          "ObjectPath": "/ROT_03/Data/DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight.20"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "label": "Pedals input released",
+      "category": "Core",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "Pedals",
+        "Operator": "Equal",
+        "InfluenceProperties": {
+         "InInterpolation": {
+          "InterpolationMethod": "EASE_IN",
+          "exp": 0.0
+         }
+        }
+       }
+      ],
+      "body": {
+       "type": "RotaryMovementControlMultiAssist",
+       "Children": [
+        {
+         "bEnabled": true,
+         "Category": "EBHHeliAssistCategory::Core",
+         "Label": "Set to 0 on ground",
+         "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+         "Conditions": [
+          {
+           "ObjectName": "BHIsOnGroundRotaryMovementControlAssistCondition'DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight:YawControl_2.BHRotaryMovementControlMultiAssistBody_3.BHIsOnGroundControlAssistCondition_0'",
+           "ObjectPath": "/ROT_03/Data/DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight.50"
+          }
+         ],
+         "Body": {
+          "ObjectName": "BHSetToValueRotaryMovementControlAssistBody'DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight:YawControl_2.BHRotaryMovementControlMultiAssistBody_3.BHSetRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/ROT_03/Data/DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight.83"
+         }
+        },
+        {
+         "bEnabled": true,
+         "Category": "EBHHeliAssistCategory::Core",
+         "Label": "Stabilize rolled",
+         "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+         "Conditions": [
+          {
+           "ObjectName": "BHInterpolatedRotaryMovementControlAssistConditions'DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight:YawControl_2.BHRotaryMovementControlMultiAssistBody_3.BHInterpolatedRotaryMovementControlAssistConditions_1'",
+           "ObjectPath": "/ROT_03/Data/DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight.46"
+          }
+         ],
+         "Body": {
+          "ObjectName": "BHRotaryMovementControlMultiAssistBody'DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight:YawControl_2.BHRotaryMovementControlMultiAssistBody_3.BHRotaryMovementControlMultiAssistBody_0'",
+          "ObjectPath": "/ROT_03/Data/DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight.78"
+         }
+        },
+        {
+         "bEnabled": true,
+         "Category": "EBHHeliAssistCategory::Core",
+         "Label": "Stabilize unrolled",
+         "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+         "Conditions": [
+          {
+           "ObjectName": "BHInterpolatedRotaryMovementControlAssistConditions'DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight:YawControl_2.BHRotaryMovementControlMultiAssistBody_3.BHInterpolatedRotaryMovementControlAssistConditions_0'",
+           "ObjectPath": "/ROT_03/Data/DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight.45"
+          }
+         ],
+         "Body": {
+          "ObjectName": "BHRotaryMovementControlMultiAssistBody'DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight:YawControl_2.BHRotaryMovementControlMultiAssistBody_3.BHRotaryMovementControlMultiAssistBody_1'",
+          "ObjectPath": "/ROT_03/Data/DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight.79"
+         }
+        },
+        {
+         "bEnabled": true,
+         "Category": "EBHHeliAssistCategory::TurnCoordination",
+         "Label": "Avoid oscillation around 0 skid yaw",
+         "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+         "Conditions": [
+          {
+           "ObjectName": "BHControlValueSatisfiesRotaryMovementControlAssistCondition'DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight:YawControl_2.BHRotaryMovementControlMultiAssistBody_3.BHControlValueSatisfiesRotaryMovementControlAssistCondition_1'",
+           "ObjectPath": "/ROT_03/Data/DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight.8"
+          },
+          {
+           "ObjectName": "BHControlValueSatisfiesRotaryMovementControlAssistCondition'DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight:YawControl_2.BHRotaryMovementControlMultiAssistBody_3.BHControlValueSatisfiesRotaryMovementControlAssistCondition_0'",
+           "ObjectPath": "/ROT_03/Data/DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight.7"
+          }
+         ],
+         "Body": {
+          "ObjectName": "BHPIDRotaryMovementControlAssistBody'DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight:YawControl_2.BHRotaryMovementControlMultiAssistBody_3.BHPIDRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/ROT_03/Data/DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight.63"
+         }
+        },
+        {
+         "bEnabled": true,
+         "Category": "EBHHeliAssistCategory::Core",
+         "Label": "Dampen inputs",
+         "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+         "Conditions": [
+          {
+           "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight:YawControl_2.BHRotaryMovementControlMultiAssistBody_3.BHInputStateRotaryMovementControlAssistCondition_1'",
+           "ObjectPath": "/ROT_03/Data/DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight.44"
+          }
+         ],
+         "Body": {
+          "ObjectName": "BHDampingRotaryMovementControlAssistBody'DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight:YawControl_2.BHRotaryMovementControlMultiAssistBody_3.BHDampingRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/ROT_03/Data/DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight.21"
+         }
+        }
+       ]
+      }
+     }
+    ]
+   },
+   "CollectiveControl": {
+    "assists": [
+     {
+      "label": "Limit climb rate",
+      "category": "EnvelopeLimits",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "ControlValueSatisfies",
+        "ControlValueType": "WorldVelocity_KmPerH",
+        "ControlValueComponent": "Z",
+        "bAbsolute": false,
+        "TestOperator": "GreaterThan",
+        "TestValue": 36.0
+       },
+       {
+        "type": "InputState",
+        "ControlType": "Collective",
+        "Threshold": 1.0,
+        "Operator": "Equal"
+       }
+      ],
+      "body": {
+       "type": "PID",
+       "ControlValueParams": {
+        "Type": "WorldVelocity_KmPerH",
+        "Component": "Z"
+       },
+       "TargetParams": {
+        "Value": 36.0
+       },
+       "PID": {
+        "ProportionalGain": 0.055555556,
+        "DerivativeGain": 0.055555556
+       }
+      }
+     },
+     {
+      "label": "Limit sink rate",
+      "category": "EnvelopeLimits",
+      "enabled": false,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "ControlValueSatisfies",
+        "ControlValueType": "WorldVelocity_KmPerH",
+        "ControlValueComponent": "Z",
+        "bAbsolute": false,
+        "TestOperator": "LessThan",
+        "TestValue": -36.0
+       },
+       {
+        "type": "InputState",
+        "ControlType": "Collective",
+        "Threshold": 1.0,
+        "Operator": "Equal"
+       }
+      ],
+      "body": {
+       "type": "PID",
+       "ControlValueParams": {
+        "Type": "WorldVelocity_KmPerH",
+        "Component": "Z"
+       },
+       "TargetParams": {
+        "Value": -36.0
+       }
+      }
+     },
+     {
+      "label": "Reset collective on ground when engaged",
+      "category": "Core",
+      "enabled": false,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "WasOnGroundAtStart"
+       },
+       {
+        "type": "InputState",
+        "ControlType": "Collective",
+        "Threshold": 1.0,
+        "bAbsolute": false,
+        "Operator": "Equal",
+        "Label": "Collective pressed"
+       }
+      ],
+      "body": {
+       "type": "Damping",
+       "Interpolation": {
+        "InterpolationMethod": "EASE_IN_EASE_OUT",
+        "InterpTimeS": 2.5,
+        "exp": 3.0
+       }
+      }
+     },
+     {
+      "label": "Dampen pressed inputs - up",
+      "category": "Core",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "Collective",
+        "Threshold": 1.0,
+        "bAbsolute": false,
+        "Operator": "Equal",
+        "InfluenceProperties": {
+         "InInterpolation": {
+          "InterpTimeS": 1.0,
+          "exp": 2.0
+         },
+         "OutInterpolation": {
+          "InterpTimeS": 1.5,
+          "exp": 1.5
+         }
+        }
+       }
+      ],
+      "body": {
+       "type": "Damping",
+       "Interpolation": {
+        "InterpolationMethod": "EASE_IN_EASE_OUT",
+        "InterpTimeS": 1.5,
+        "exp": 1.25
+       }
+      }
+     },
+     {
+      "label": "Dampen pressed inputs - down",
+      "category": "Core",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "Collective",
+        "Threshold": -1.0,
+        "bAbsolute": false,
+        "Operator": "Equal"
+       }
+      ],
+      "body": {
+       "type": "Damping",
+       "Interpolation": {
+        "InterpolationMethod": "EASE_IN_EASE_OUT",
+        "InterpTimeS": 1.5,
+        "exp": 1.25
+       }
+      }
+     },
+     {
+      "label": "Set to -1 on ground",
+      "category": "Core",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "Collective",
+        "Operator": "Equal"
+       },
+       {
+        "type": "IsOnGround",
+        "InfluenceProperties": {
+         "InInterpolation": {
+          "InterpolationMethod": "INTERP_TO",
+          "InterpSpeed": 0.2
+         }
+        }
+       }
+      ],
+      "body": {
+       "type": "SetToValue",
+       "Value": -1.0
+      }
+     },
+     {
+      "label": "Stabilize after input released",
+      "category": "AutoHover",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "StabilizedAfterInputReleased",
+        "StabilityControlValueType": "WorldVelocity_KmPerH",
+        "StabilityControlValueComponent": "Z",
+        "StabilityThreshold": 0.00036,
+        "InfluenceProperties": {
+         "InInterpolation": {
+          "InterpTimeS": 1.5,
+          "exp": 1.5
+         }
+        }
+       },
+       {
+        "type": "InputState",
+        "ControlType": "Collective",
+        "Operator": "Equal"
+       }
+      ],
+      "body": {
+       "type": "PID",
+       "ControlValueParams": {
+        "Type": "WorldVelocity_KmPerH",
+        "Component": "Z"
+       },
+       "PID": {
+        "ProportionalGain": 0.02,
+        "DerivativeGain": 0.02
+       }
+      }
+     },
+     {
+      "label": "Hover assist",
+      "category": "AutoHover",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "Collective",
+        "Operator": "Equal"
+       },
+       {
+        "type": "HasPilot"
+       }
+      ],
+      "body": {
+       "type": "PID",
+       "ControlValueParams": {
+        "Type": "WorldVelocity_KmPerH",
+        "Component": "Z"
+       },
+       "PID": {
+        "ProportionalGain": 0.555556,
+        "DerivativeGain": 0.555556
+       }
+      }
+     },
+     {
+      "label": "Dampen released inputs",
+      "category": "Core",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "Collective",
+        "Operator": "Equal"
+       }
+      ],
+      "body": {
+       "type": "Damping",
+       "Interpolation": {
+        "InterpolationMethod": "EASE_IN_EASE_OUT",
+        "InterpTimeS": 1.5,
+        "exp": 1.5
+       }
+      }
+     }
+    ]
+   }
+  }
+ },
+ {
+  "asset": "DA_ROT_04_FlightCharacteristicsDataAsset",
+  "vehicle": "ROT_04",
+  "rotorSettings": {
+   "MaxLiftCoeff": 5.75,
+   "StallLiftCoeff": 3.0,
+   "RotorRadius": 800.0,
+   "LiftForcesAppliedAtRadius": 275.0,
+   "LowAltitude_m": 50.0,
+   "HighAltitude_m": 250.0,
+   "MaxAltitude_m": 350.0,
+   "HighAltitudeRotorEfficiency": 0.65,
+   "MaxAltitudeRotorEfficiency": 0.4,
+   "_aaabgcipakomhengpaeid": 0.325,
+   "TailRotorNeutralTorque": 600000000.0
+  },
+  "forces": {
+   "PitchControlForce": {
+    "Type": "RotorBladeAngle",
+    "MaxTorque": 4800000000.0,
+    "MaxRotorBladeAngleDelta": 6.0
+   },
+   "RollControlForce": {
+    "Type": "RotorBladeAngle",
+    "MaxTorque": 1500000000.0,
+    "MaxRotorBladeAngleDelta": 0.85
+   },
+   "YawControlForce": {
+    "MaxTorque": 500000000.0
+   },
+   "CollectiveControlForce": {
+    "Type": "RotorBladeAngle",
+    "MinForce": 400000.0,
+    "MaxForce": 3400000.0,
+    "MinRotorBladeAngleDelta": -1.9,
+    "MaxRotorBladeAngleDelta": 10.67
+   }
+  },
+  "controls": {
+   "PitchControl": {
+    "assists": [
+     {
+      "label": "Stabilize after input released",
+      "category": "Stability",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "StabilizedAfterInputReleased",
+        "StabilityControlValueType": "LocalAngularVelocity_DegPerS",
+        "StabilityControlValueComponent": "Y",
+        "StabilityThreshold": 0.57295775,
+        "TimeThresholdS": 0.06,
+        "InfluenceProperties": {
+         "OutInterpolation": {
+          "InterpolationMethod": "INTERP_TO",
+          "InterpSpeed": 3.0
+         }
+        }
+       },
+       {
+        "type": "InputState",
+        "ControlType": "CyclicY",
+        "Operator": "Equal"
+       }
+      ],
+      "body": {
+       "type": "PID",
+       "ControlValueParams": {
+        "Type": "LocalAngularVelocity_DegPerS",
+        "Component": "Y"
+       },
+       "PID": {
+        "ProportionalGain": 0.29670596,
+        "DerivativeGain": 0.10471976
+       }
+      }
+     },
+     {
+      "label": "Pitch input pressed",
+      "category": "Core",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "CyclicY",
+        "Operator": "GreaterThan"
+       }
+      ],
+      "body": {
+       "type": "RotaryMovementControlMultiAssist",
+       "Children": [
+        {
+         "bEnabled": true,
+         "Category": "EBHHeliAssistCategory::Core",
+         "Label": "Dampen pressed inputs",
+         "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+         "Conditions": [],
+         "Body": {
+          "ObjectName": "BHDampingRotaryMovementControlAssistBody'DA_ROT_04_FlightCharacteristicsDataAsset:PitchControl_0.BHRotaryMovementControlMultiAssistBody_0.BHDampingRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.17"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "label": "Pitch input released",
+      "category": "Core",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "CyclicY",
+        "Operator": "Equal"
+       }
+      ],
+      "body": {
+       "type": "RotaryMovementControlMultiAssist",
+       "Children": [
+        {
+         "bEnabled": true,
+         "Category": "EBHHeliAssistCategory::Core",
+         "Label": "Set to 0 on ground",
+         "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+         "Conditions": [
+          {
+           "ObjectName": "BHIsOnGroundRotaryMovementControlAssistCondition'DA_ROT_04_FlightCharacteristicsDataAsset:PitchControl_0.BHRotaryMovementControlMultiAssistBody_1.BHIsOnGroundRotaryMovementControlAssistCondition_0'",
+           "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.48"
+          }
+         ],
+         "Body": {
+          "ObjectName": "BHSetToValueRotaryMovementControlAssistBody'DA_ROT_04_FlightCharacteristicsDataAsset:PitchControl_0.BHRotaryMovementControlMultiAssistBody_1.BHSetToValueRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.83"
+         }
+        },
+        {
+         "bEnabled": true,
+         "Category": "EBHHeliAssistCategory::Stability",
+         "Label": "Level at low speeds",
+         "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+         "Conditions": [
+          {
+           "ObjectName": "BHControlValueSatisfiesRotaryMovementControlAssistCondition'DA_ROT_04_FlightCharacteristicsDataAsset:PitchControl_0.BHRotaryMovementControlMultiAssistBody_1.BHControlValueSatisfiesRotaryMovementControlAssistCondition_0'",
+           "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.2"
+          },
+          {
+           "ObjectName": "BHControlValueSatisfiesRotaryMovementControlAssistCondition'DA_ROT_04_FlightCharacteristicsDataAsset:PitchControl_0.BHRotaryMovementControlMultiAssistBody_1.BHControlValueSatisfiesRotaryMovementControlAssistCondition_2'",
+           "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.4"
+          },
+          {
+           "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_04_FlightCharacteristicsDataAsset:PitchControl_0.BHRotaryMovementControlMultiAssistBody_1.BHInputStateRotaryMovementControlAssistCondition_0'",
+           "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.36"
+          }
+         ],
+         "Body": {
+          "ObjectName": "BHPIDRotaryMovementControlAssistBody'DA_ROT_04_FlightCharacteristicsDataAsset:PitchControl_0.BHRotaryMovementControlMultiAssistBody_1.BHPIDRotaryMovementControlAssistBody_4'",
+          "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.56"
+         }
+        },
+        {
+         "bEnabled": true,
+         "Category": "EBHHeliAssistCategory::Core",
+         "Label": "Stabilize unrolled",
+         "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+         "Conditions": [
+          {
+           "ObjectName": "BHControlValueSatisfiesRotaryMovementControlAssistCondition'DA_ROT_04_FlightCharacteristicsDataAsset:PitchControl_0.BHRotaryMovementControlMultiAssistBody_1.BHControlValueSatisfiesRotaryMovementControlAssistCondition_1'",
+           "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.3"
+          }
+         ],
+         "Body": {
+          "ObjectName": "BHRotaryMovementControlMultiAssistBody'DA_ROT_04_FlightCharacteristicsDataAsset:PitchControl_0.BHRotaryMovementControlMultiAssistBody_1.BHRotaryMovementControlMultiAssistBody_0'",
+          "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.74"
+         }
+        },
+        {
+         "bEnabled": true,
+         "Category": "EBHHeliAssistCategory::Core",
+         "Label": "Dampen released inputs",
+         "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+         "Conditions": [],
+         "Body": {
+          "ObjectName": "BHDampingRotaryMovementControlAssistBody'DA_ROT_04_FlightCharacteristicsDataAsset:PitchControl_0.BHRotaryMovementControlMultiAssistBody_1.BHDampingRotaryMovementControlAssistBody_1'",
+          "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.18"
+         }
+        }
+       ]
+      }
+     }
+    ]
+   },
+   "RollControl": {
+    "assists": [
+     {
+      "label": "Stabilize after input released",
+      "category": "Stability",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "StabilizedAfterInputReleased",
+        "StabilityControlValueType": "LocalAngularVelocity_DegPerS",
+        "StabilityControlValueComponent": "X",
+        "StabilityThreshold": 0.6,
+        "TimeThresholdS": 0.5,
+        "TimeoutS": 1.5,
+        "InfluenceProperties": {
+         "OutInterpolation": {
+          "InterpolationMethod": "INTERP_TO",
+          "InterpSpeed": 3.0
+         }
+        }
+       },
+       {
+        "type": "InputState",
+        "ControlType": "CyclicX",
+        "Operator": "Equal"
+       }
+      ],
+      "body": {
+       "type": "PID",
+       "OutputParams": {
+        "MaxPIDOutput": 10.0,
+        "NegateCondition": "Always"
+       },
+       "ControlValueParams": {
+        "Type": "LocalAngularVelocity_DegPerS",
+        "Component": "X"
+       },
+       "PID": {
+        "ProportionalGain": 0.335103,
+        "DerivativeGain": 0.12566371,
+        "DerivativeSmoothing": {
+         "Alpha": 0.8,
+         "Multiplier": "Ratio30FPSToCurrent"
+        }
+       }
+      }
+     },
+     {
+      "label": "Roll input pressed",
+      "category": "Core",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "CyclicX",
+        "Operator": "GreaterThan"
+       }
+      ],
+      "body": {
+       "type": "RotaryMovementControlMultiAssist",
+       "Children": [
+        {
+         "bEnabled": true,
+         "Category": "EBHHeliAssistCategory::Core",
+         "Label": "Dampen pressed inputs",
+         "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+         "Conditions": [],
+         "Body": {
+          "ObjectName": "BHDampingRotaryMovementControlAssistBody'DA_ROT_04_FlightCharacteristicsDataAsset:RollControl_1.BHRotaryMovementControlMultiAssistBody_0.BHDampingRotaryMovementControlAssistBody_1'",
+          "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.19"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "label": "Roll input released",
+      "category": "Core",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "CyclicX",
+        "Operator": "Equal"
+       }
+      ],
+      "body": {
+       "type": "RotaryMovementControlMultiAssist",
+       "Children": [
+        {
+         "bEnabled": true,
+         "Category": "EBHHeliAssistCategory::Core",
+         "Label": "Set to 0 on ground",
+         "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+         "Conditions": [
+          {
+           "ObjectName": "BHIsOnGroundRotaryMovementControlAssistCondition'DA_ROT_04_FlightCharacteristicsDataAsset:RollControl_1.BHRotaryMovementControlMultiAssistBody_1.BHIsOnGroundControlAssistCondition_0'",
+           "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.49"
+          }
+         ],
+         "Body": {
+          "ObjectName": "BHSetToValueRotaryMovementControlAssistBody'DA_ROT_04_FlightCharacteristicsDataAsset:RollControl_1.BHRotaryMovementControlMultiAssistBody_1.BHSetRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.84"
+         }
+        },
+        {
+         "bEnabled": true,
+         "Category": "EBHHeliAssistCategory::Stability",
+         "Label": "Level at low speeds",
+         "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+         "Conditions": [
+          {
+           "ObjectName": "BHControlValueSatisfiesRotaryMovementControlAssistCondition'DA_ROT_04_FlightCharacteristicsDataAsset:RollControl_1.BHRotaryMovementControlMultiAssistBody_1.BHControlValueSatisfiesRotaryMovementControlAssistCondition_0'",
+           "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.6"
+          },
+          {
+           "ObjectName": "BHControlValueSatisfiesRotaryMovementControlAssistCondition'DA_ROT_04_FlightCharacteristicsDataAsset:RollControl_1.BHRotaryMovementControlMultiAssistBody_1.BHControlValueSatisfiesRotaryMovementControlAssistCondition_2'",
+           "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.8"
+          },
+          {
+           "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_04_FlightCharacteristicsDataAsset:RollControl_1.BHRotaryMovementControlMultiAssistBody_1.BHInputStateRotaryMovementControlAssistCondition_0'",
+           "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.40"
+          }
+         ],
+         "Body": {
+          "ObjectName": "BHPIDRotaryMovementControlAssistBody'DA_ROT_04_FlightCharacteristicsDataAsset:RollControl_1.BHRotaryMovementControlMultiAssistBody_1.BHPIDRotaryMovementControlAssistBody_4'",
+          "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.60"
+         }
+        },
+        {
+         "bEnabled": false,
+         "Category": "EBHHeliAssistCategory::Stability",
+         "Label": "Stabilize around 0 world roll",
+         "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+         "Conditions": [
+          {
+           "ObjectName": "BHControlValueSatisfiesRotaryMovementControlAssistCondition'DA_ROT_04_FlightCharacteristicsDataAsset:RollControl_1.BHRotaryMovementControlMultiAssistBody_1.BHControlValueSatisfiesRotaryMovementControlAssistCondition_1'",
+           "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.7"
+          }
+         ],
+         "Body": {
+          "ObjectName": "BHPIDRotaryMovementControlAssistBody'DA_ROT_04_FlightCharacteristicsDataAsset:RollControl_1.BHRotaryMovementControlMultiAssistBody_1.BHPIDRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.59"
+         }
+        },
+        {
+         "bEnabled": true,
+         "Category": "EBHHeliAssistCategory::Core",
+         "Label": "Dampen inputs",
+         "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+         "Conditions": [],
+         "Body": {
+          "ObjectName": "BHDampingRotaryMovementControlAssistBody'DA_ROT_04_FlightCharacteristicsDataAsset:RollControl_1.BHRotaryMovementControlMultiAssistBody_1.BHDampingRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.20"
+         }
+        }
+       ]
+      }
+     }
+    ]
+   },
+   "YawControl": {
+    "assists": [
+     {
+      "label": "Stabilize after input released",
+      "category": "Stability",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "Pedals",
+        "Operator": "Equal",
+        "Label": "Input not pressed"
+       },
+       {
+        "type": "StabilizedAfterInputReleased",
+        "StabilityControlValueType": "LocalAngularVelocity_DegPerS",
+        "StabilityControlValueComponent": "Z",
+        "StabilityThreshold": 0.28647888,
+        "TimeThresholdS": 0.06,
+        "TimeoutS": 1.8,
+        "InfluenceProperties": {
+         "InInterpolation": {
+          "InterpolationMethod": "INTERP_TO",
+          "InterpSpeed": 1.5
+         },
+         "OutInterpolation": {
+          "InterpolationMethod": "INTERP_TO",
+          "InterpSpeed": 1.5
+         }
+        }
+       },
+       {
+        "type": "YawLimitedAtSpeed",
+        "InfluenceProperties": {
+         "OutInterpolation": {
+          "InterpolationMethod": "INTERP_TO",
+          "InterpSpeed": 1.5
+         }
+        },
+        "bNegate": true
+       }
+      ],
+      "body": {
+       "type": "PID",
+       "ControlValueParams": {
+        "Type": "LocalAngularVelocity_DegPerS",
+        "Component": "Z"
+       },
+       "PID": {
+        "ProportionalGain": 0.27925268,
+        "DerivativeGain": 0.13962634
+       }
+      }
+     },
+     {
+      "label": "Pedals input pressed",
+      "category": "Core",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "Pedals",
+        "Operator": "GreaterThan"
+       }
+      ],
+      "body": {
+       "type": "RotaryMovementControlMultiAssist",
+       "Children": [
+        {
+         "bEnabled": true,
+         "Category": "EBHHeliAssistCategory::EnvelopeLimits",
+         "Label": "Avoid oscillation at yaw limit",
+         "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+         "Conditions": [
+          {
+           "ObjectName": "BHWithinYawLimitsAtSpeedControlAssistCondition'DA_ROT_04_FlightCharacteristicsDataAsset:YawControl_2.BHRotaryMovementControlMultiAssistBody_0.BHWithinYawLimitsAtSpeedControlAssistCondition_0'",
+           "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.92"
+          }
+         ],
+         "Body": {
+          "ObjectName": "BHPIDRotaryMovementControlAssistBody'DA_ROT_04_FlightCharacteristicsDataAsset:YawControl_2.BHRotaryMovementControlMultiAssistBody_0.BHPIDRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.62"
+         }
+        },
+        {
+         "bEnabled": true,
+         "Category": "EBHHeliAssistCategory::Core",
+         "Label": "Dampen pressed inputs",
+         "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+         "Conditions": [],
+         "Body": {
+          "ObjectName": "BHDampingRotaryMovementControlAssistBody'DA_ROT_04_FlightCharacteristicsDataAsset:YawControl_2.BHRotaryMovementControlMultiAssistBody_0.BHDampingRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.21"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "label": "Pedals input released",
+      "category": "Core",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "Pedals",
+        "Operator": "Equal"
+       }
+      ],
+      "body": {
+       "type": "RotaryMovementControlMultiAssist",
+       "Children": [
+        {
+         "bEnabled": true,
+         "Category": "EBHHeliAssistCategory::Core",
+         "Label": "Set to 0 on ground",
+         "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+         "Conditions": [
+          {
+           "ObjectName": "BHIsOnGroundRotaryMovementControlAssistCondition'DA_ROT_04_FlightCharacteristicsDataAsset:YawControl_2.BHRotaryMovementControlMultiAssistBody_1.BHIsOnGroundControlAssistCondition_0'",
+           "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.50"
+          }
+         ],
+         "Body": {
+          "ObjectName": "BHSetToValueRotaryMovementControlAssistBody'DA_ROT_04_FlightCharacteristicsDataAsset:YawControl_2.BHRotaryMovementControlMultiAssistBody_1.BHSetRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.85"
+         }
+        },
+        {
+         "bEnabled": true,
+         "Category": "EBHHeliAssistCategory::Core",
+         "Label": "Stabilize rolled",
+         "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+         "Conditions": [
+          {
+           "ObjectName": "BHInterpolatedRotaryMovementControlAssistConditions'DA_ROT_04_FlightCharacteristicsDataAsset:YawControl_2.BHRotaryMovementControlMultiAssistBody_1.BHInterpolatedRotaryMovementControlAssistConditions_0'",
+           "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.45"
+          }
+         ],
+         "Body": {
+          "ObjectName": "BHRotaryMovementControlMultiAssistBody'DA_ROT_04_FlightCharacteristicsDataAsset:YawControl_2.BHRotaryMovementControlMultiAssistBody_1.BHRotaryMovementControlMultiAssistBody_0'",
+          "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.79"
+         }
+        },
+        {
+         "bEnabled": true,
+         "Category": "EBHHeliAssistCategory::Core",
+         "Label": "Stabilize unrolled",
+         "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+         "Conditions": [
+          {
+           "ObjectName": "BHInterpolatedRotaryMovementControlAssistConditions'DA_ROT_04_FlightCharacteristicsDataAsset:YawControl_2.BHRotaryMovementControlMultiAssistBody_1.BHInterpolatedRotaryMovementControlAssistConditions_1'",
+           "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.46"
+          }
+         ],
+         "Body": {
+          "ObjectName": "BHRotaryMovementControlMultiAssistBody'DA_ROT_04_FlightCharacteristicsDataAsset:YawControl_2.BHRotaryMovementControlMultiAssistBody_1.BHRotaryMovementControlMultiAssistBody_1'",
+          "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.80"
+         }
+        },
+        {
+         "bEnabled": true,
+         "Category": "EBHHeliAssistCategory::TurnCoordination",
+         "Label": "Avoid oscillation around 0 skid yaw",
+         "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+         "Conditions": [
+          {
+           "ObjectName": "BHControlValueSatisfiesRotaryMovementControlAssistCondition'DA_ROT_04_FlightCharacteristicsDataAsset:YawControl_2.BHRotaryMovementControlMultiAssistBody_1.BHControlValueSatisfiesRotaryMovementControlAssistCondition_0'",
+           "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.9"
+          },
+          {
+           "ObjectName": "BHControlValueSatisfiesRotaryMovementControlAssistCondition'DA_ROT_04_FlightCharacteristicsDataAsset:YawControl_2.BHRotaryMovementControlMultiAssistBody_1.BHControlValueSatisfiesRotaryMovementControlAssistCondition_1'",
+           "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.10"
+          }
+         ],
+         "Body": {
+          "ObjectName": "BHPIDRotaryMovementControlAssistBody'DA_ROT_04_FlightCharacteristicsDataAsset:YawControl_2.BHRotaryMovementControlMultiAssistBody_1.BHPIDRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.63"
+         }
+        },
+        {
+         "bEnabled": true,
+         "Category": "EBHHeliAssistCategory::Core",
+         "Label": "Dampen inputs",
+         "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+         "Conditions": [
+          {
+           "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_04_FlightCharacteristicsDataAsset:YawControl_2.BHRotaryMovementControlMultiAssistBody_1.BHInputStateRotaryMovementControlAssistCondition_0'",
+           "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.44"
+          }
+         ],
+         "Body": {
+          "ObjectName": "BHDampingRotaryMovementControlAssistBody'DA_ROT_04_FlightCharacteristicsDataAsset:YawControl_2.BHRotaryMovementControlMultiAssistBody_1.BHDampingRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.22"
+         }
+        }
+       ]
+      }
+     }
+    ]
+   },
+   "CollectiveControl": {
+    "assists": [
+     {
+      "label": "Reset when airfoil stalling",
+      "category": "Core",
+      "enabled": false,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "SmoothedInfluenceConditions",
+        "InInterpSpeed": 8.0,
+        "OutInterpSpeed": 1.0,
+        "Conditions": [
+         {
+          "ObjectName": "BHRotaryAirfoilsStallingRotaryControlAssistCondition'DA_ROT_04_FlightCharacteristicsDataAsset:CollectiveControl_3.BHSmoothedInfluenceRotaryMovementControlAssistConditions_1.BHRotaryAirfoilsStallingRotaryControlAssistCondition_0'",
+          "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.66"
+         }
+        ]
+       }
+      ],
+      "body": {
+       "type": "SetToValue",
+       "Value": -1.0
+      }
+     },
+     {
+      "label": "Limit climb rate",
+      "category": "EnvelopeLimits",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "ControlValueSatisfies",
+        "ControlValueType": "WorldVelocity_KmPerH",
+        "ControlValueComponent": "Z",
+        "bAbsolute": false,
+        "TestOperator": "GreaterThan",
+        "TestValue": 36.0
+       },
+       {
+        "type": "InputState",
+        "ControlType": "Collective",
+        "Threshold": 1.0,
+        "Operator": "Equal"
+       }
+      ],
+      "body": {
+       "type": "PID",
+       "ControlValueParams": {
+        "Type": "WorldVelocity_KmPerH",
+        "Component": "Z"
+       },
+       "TargetParams": {
+        "Value": 36.0
+       },
+       "PID": {
+        "ProportionalGain": 0.35,
+        "DerivativeGain": 0.25
+       }
+      }
+     },
+     {
+      "label": "Limit sink rate",
+      "category": "EnvelopeLimits",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "ControlValueSatisfies",
+        "ControlValueType": "WorldVelocity_KmPerH",
+        "ControlValueComponent": "Z",
+        "bAbsolute": false,
+        "TestOperator": "LessThan",
+        "TestValue": -36.0
+       },
+       {
+        "type": "InputState",
+        "ControlType": "Collective",
+        "Threshold": 1.0,
+        "Operator": "Equal"
+       }
+      ],
+      "body": {
+       "type": "PID",
+       "ControlValueParams": {
+        "Type": "WorldVelocity_KmPerH",
+        "Component": "Z"
+       },
+       "TargetParams": {
+        "Value": -36.0
+       },
+       "PID": {
+        "ProportionalGain": 0.1,
+        "DerivativeGain": 0.1
+       }
+      }
+     },
+     {
+      "label": "Reset collective on ground when engaged",
+      "category": "Core",
+      "enabled": false,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "WasOnGroundAtStart"
+       },
+       {
+        "type": "InputState",
+        "ControlType": "Collective",
+        "Threshold": 1.0,
+        "bAbsolute": false,
+        "Operator": "Equal",
+        "Label": "Collective pressed"
+       }
+      ],
+      "body": {
+       "type": "Damping",
+       "Interpolation": {
+        "InterpolationMethod": "EASE_IN_EASE_OUT",
+        "InterpTimeS": 2.5,
+        "exp": 3.0
+       }
+      }
+     },
+     {
+      "label": "Dampen pressed inputs - up",
+      "category": "Core",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "Collective",
+        "bAbsolute": false,
+        "Operator": "GreaterThan",
+        "InfluenceProperties": {
+         "InInterpolation": {
+          "InterpTimeS": 1.0,
+          "exp": 2.0
+         },
+         "OutInterpolation": {
+          "InterpTimeS": 1.5,
+          "exp": 1.5
+         }
+        }
+       }
+      ],
+      "body": {
+       "type": "Damping",
+       "Interpolation": {
+        "InterpolationMethod": "EASE_IN_EASE_OUT",
+        "InterpTimeS": 1.0,
+        "exp": 1.25
+       }
+      }
+     },
+     {
+      "label": "Dampen pressed inputs - down",
+      "category": "Core",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "Collective",
+        "bAbsolute": false,
+        "Operator": "LessThan"
+       }
+      ],
+      "body": {
+       "type": "Damping",
+       "Interpolation": {
+        "InterpolationMethod": "EASE_IN_EASE_OUT",
+        "InterpTimeS": 1.5,
+        "exp": 1.25
+       }
+      }
+     },
+     {
+      "label": "Set to -1 on ground",
+      "category": "Core",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "Collective",
+        "Operator": "Equal"
+       },
+       {
+        "type": "IsOnGround",
+        "InfluenceProperties": {
+         "InInterpolation": {
+          "InterpolationMethod": "INTERP_TO",
+          "InterpSpeed": 0.2
+         }
+        }
+       }
+      ],
+      "body": {
+       "type": "SetToValue",
+       "Value": -1.0
+      }
+     },
+     {
+      "label": "Stabilize after input released",
+      "category": "AutoHover",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "StabilizedAfterInputReleased",
+        "StabilityControlValueType": "WorldVelocity_KmPerH",
+        "StabilityControlValueComponent": "Z",
+        "StabilityThreshold": 0.00036,
+        "InfluenceProperties": {
+         "InInterpolation": {
+          "InterpTimeS": 1.5,
+          "exp": 1.5
+         }
+        }
+       },
+       {
+        "type": "InputState",
+        "ControlType": "Collective",
+        "Operator": "Equal"
+       }
+      ],
+      "body": {
+       "type": "PID",
+       "ControlValueParams": {
+        "Type": "WorldVelocity_KmPerH",
+        "Component": "Z"
+       },
+       "PID": {
+        "ProportionalGain": 0.055555556,
+        "DerivativeGain": 0.055555556
+       }
+      }
+     },
+     {
+      "label": "Hover assist",
+      "category": "AutoHover",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "Collective",
+        "Operator": "Equal"
+       },
+       {
+        "type": "HasPilot"
+       }
+      ],
+      "body": {
+       "type": "PID",
+       "ControlValueParams": {
+        "Type": "WorldVelocity_KmPerH",
+        "Component": "Z"
+       },
+       "PID": {
+        "ProportionalGain": 0.055555556,
+        "DerivativeGain": 0.055555556
+       }
+      }
+     },
+     {
+      "label": "Dampen released inputs",
+      "category": "Core",
+      "enabled": true,
+      "outputMode": "Mixed",
+      "conditions": [
+       {
+        "type": "InputState",
+        "ControlType": "Collective",
+        "Operator": "Equal"
+       }
+      ],
+      "body": {
+       "type": "Damping",
+       "Interpolation": {
+        "InterpolationMethod": "EASE_IN_EASE_OUT",
+        "InterpTimeS": 1.5,
+        "exp": 1.5
+       }
+      }
+     }
+    ]
+   }
+  }
+ }
+]
