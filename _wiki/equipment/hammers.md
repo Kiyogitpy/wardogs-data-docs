@@ -28,7 +28,7 @@ A hammer is the build tool for placing and building structures. Using it places 
 
 ## Overview
 
-There are three hammers, each for a different size of structure. The Small Hammer builds small structures only. The Medium Hammer builds large and basic structures. The Large Hammer can build every structure, and it is the fastest.
+There are three hammers, each for a different size of structure. The Small Hammer builds small structures only. The Medium Hammer builds large and basic structures. The Large Hammer can build every structure. The shop text calls it fast, but by the swing timing below it adds build progress per second at about the same rate as the Medium, so that is not confirmed.
 
 ## How it works
 
@@ -44,7 +44,7 @@ There are three hammers, each for a different size of structure. The Small Hamme
 - Blow time is the point in the swing when the hit lands, from the first-person animation data. It is not the time a build takes.
 - The hammers also repair finished structures and dismantle your own. A repair hit restores health at the build amount times the structure's repair multiplier, and a dismantle hit does the damage in the Dismantle column to the structure.
 - The item data gives the hammers a melee value of 20 (Small), 35 (Medium) and 150 (Large). What that value hits is not yet known.
-- The time one hit takes in play is not published, so build time in seconds is not given.
+- One hit per swing takes 0.567 s with the Small and Medium hammers and 0.883 s with the Large. These come from the use animation (one hit per pass of the swing loop) and are estimates, not times measured in play. The articles use them to give build time in seconds.
 
 The hammer's actions let the player rotate the structure being placed, toggle snapping and toggle placement mode.
 
@@ -71,3 +71,4 @@ The Small Hammer's build amounts did not change in Season 2.
 - [Items and Equipment, Season 2](../../season-2-changes/items-equipment.md): weak-spot build amount changes
 - [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
 - [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots and placement checks
+- [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): the swing timing (one hit per loop) and build time estimates

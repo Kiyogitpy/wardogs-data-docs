@@ -42,7 +42,7 @@ Curve values are listed in key order, starting with the first key. Speed and dur
 
 ## Mastery and rewards
 
-All six roles share one mastery XP curve. The milestones for Pilot are:
+All six roles share one mastery XP curve. The milestones for Pilot are the total XP needed to reach each level, not the step from the level before:
 
 | Level | XP needed |
 |---|---|
@@ -113,3 +113,4 @@ The reward tables list events, not roles. The events below are the ones that fit
 - [Season 2 changes: Rewards & Unlocks](../../season-2-changes/rewards-unlocks.md)
 - [Economy data: role unlock tree](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/economy.json) (JSON)
 - [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md)
+- [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): the reward and hit-count rows used on this page.

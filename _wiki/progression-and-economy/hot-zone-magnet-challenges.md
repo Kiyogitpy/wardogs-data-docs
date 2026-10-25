@@ -13,7 +13,7 @@ description: "The three Hot Zone Magnet and tower challenges, and the base cash 
 | Kind | Event reward |
 | Challenges | 3 |
 | Cash | Up to 5,000 (magnet activated) |
-| Role XP | Not in the data |
+| Role XP | 500 (Magnet Activated), 100 (Tower Captured) |
 | Internal name | DT_Challenges_SessionEvents_KOTH_HotZoneMagnet |
 {: .wiki-infobox }
 
@@ -23,11 +23,11 @@ These challenges pay when a Hot Zone Magnet is activated or deactivated, or when
 
 | Challenge | What earns it | Cash (base) | Role XP |
 |---|---|---|---|
-| Magnet Activated | Players in range of an activated magnet | Activating the magnet: 5,000. Near an activated magnet: 5,000. | Not in the data |
-| Magnet Deactivated | Players in range of a deactivated magnet | Deactivating the magnet: 200. No nearby row is listed. | Not in the data |
-| Tower Captured | Players in range of a captured tower | Capturing a hostile tower: 1,000. Near a hostile tower: 1,000. Capturing a neutral tower: 250. Near a neutral tower: 250. | Not in the data |
+| Magnet Activated | Players in range of an activated magnet | 2,500 | 500 |
+| Magnet Deactivated | Players in range of a deactivated magnet | 2,500 | None (cash only) |
+| Tower Captured | Players in range of a captured tower | 250 for a neutral tower, 1,500 for a hostile tower (six times the neutral amount) | 100 (300 for a hostile tower) |
 
-The challenge descriptions say "of the same faction", but the cash table lists the hostile and neutral tower rows. The sources do not settle which rows pay which challenge. The cash table also has a magnet destroyed row worth 150 cash, which the data marks as unused.
+The tower row pays a neutral and a hostile tower at different amounts: a hostile tower pays six times the neutral cash and 300 Role XP instead of 100. The Magnet Deactivated row pays cash only. The cash table also has a magnet destroyed row worth 150 cash, which the data marks as unused.
 
 ## Season 2 changes
 
@@ -45,3 +45,4 @@ The sources list no Season 2 changes for these challenges.
 - [Rewards and progression](../../Wardogs_Rewards_and_Progression_v2.md), section 6b for the magnet and tower cash
 - [Challenges and session events](../../game-features/Wardogs_Challenges_v1.md), sections 3 and 6
 - [Hot Zone Magnet challenge table](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Data/Challenges/DT_Challenges_SessionEvents_KOTH_HotZoneMagnet.json) (JSON)
+- [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): the reward and hit-count rows used on this page.

@@ -32,7 +32,7 @@ Barbed Wire is a cheap wire obstacle that any hammer can build. It costs 7 Build
 
 Barbed Wire costs 7 Build Supplies and has 250 HP. It has no separate parts.
 
-The reward tables give 10 cash for placing Barbed Wire and 75 cash for destroying an enemy one.
+Destroying an enemy Barbed Wire pays 5 cash and 5 Role XP.
 
 ## Building it
 
@@ -46,9 +46,11 @@ The reward tables give 10 cash for placing Barbed Wire and 75 cash for destroyin
 
 | Building it | Small hammer | Medium hammer | Large hammer |
 |---|---:|---:|---:|
-| Hits to build | 4 | 2 | 2 |
+| Hits to build | 4 (about 2.3 s) | 2 (about 1.1 s) | 2 (about 1.8 s) |
 | Hits to repair from zero health | 9 | 5 | 3 |
 | Hits to dismantle (your own) | 2 | 2 | 1 |
+
+Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
 
 ## What it does
 
@@ -67,15 +69,15 @@ A change of -28% means 72% of the melee damage gets through. The other numbers f
 | C4 | +150% | 2.5 times |
 | IEDs | +400% | 5 times |
 
-Barbed Wire's 250 HP is the lowest of any structure. The data does not say how many hits it takes to destroy, so that number is not yet known.
+Barbed Wire's 250 HP is the lowest of any structure. The table below gives the hits it takes to destroy, for each source.
 
 ## Hits to destroy (point blank, derived)
 
-Derived from each source's base damage and the damage table. It is not a count from play: each figure assumes every shot lands at point blank for full damage, with no falloff and no other rules, so real fights can differ. Base damage used: M4 5.56 mm FMJ 28, M67 frag grenade 100, 120 mm rocket 150, C4 charge 250.
+Derived from each source's base damage and the damage table. It is not a count from play: each figure assumes every shot lands at point blank for full damage, with no falloff and no other rules, so real fights can differ. Base damage used: M4 5.56 mm FMJ 28, .50 cal FMJ 90, 120 mm rocket 150, M67 frag grenade 100 (it counts as a rocket against structures), C4 charge 250, IED 300. Each figure is the number of hits needed after every matching damage entry is applied.
 
-| Structure | HP | M4 5.56 mm FMJ | M67 frag grenade | 120 mm rocket | C4 charge |
-|---|---:|---:|---:|---:|---:|
-| Barbed Wire | 250 | 60 | 3 | 1 | 1 |
+| Structure | HP | M4 5.56 mm FMJ | .50 cal FMJ | 120 mm rocket | M67 frag grenade | C4 charge | IED |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Barbed Wire | 250 | 60 | 19 | 1 | 1 | 1 | 1 |
 
 ## Season 2 changes
 
@@ -94,3 +96,4 @@ The Season 2 data lists no change to Barbed Wire's cost or health.
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy for each source of damage.
 - [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
 - [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings
+- [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): structure hit counts for every listed source (stacked damage entries, IED and the M67 as a rocket) and the build time estimates.

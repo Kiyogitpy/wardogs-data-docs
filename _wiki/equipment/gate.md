@@ -32,7 +32,7 @@ The Gate is a closeable barrier made of two halves and a ramp. A Medium or Large
 
 The Gate costs 200 Build Supplies and has 5,320 HP. Its parts are the left half, the right half and the ramp. Each half costs 85 Build Supplies and has 5,320 HP. The ramp costs 85 Build Supplies and has 6,500 HP.
 
-The reward tables give 300 cash for placing a Gate and 500 cash for destroying an enemy one.
+Destroying an enemy Gate pays 200 cash and 50 Role XP. Its ramp pays 85 cash and 20 Role XP.
 
 ## Building it
 
@@ -46,9 +46,11 @@ The reward tables give 300 cash for placing a Gate and 500 cash for destroying a
 
 | Building it | Small hammer | Medium hammer | Large hammer |
 |---|---:|---:|---:|
-| Hits to build | cannot place | 200 | 134 |
+| Hits to build | cannot place | 200 (about 113.4 s) | 134 (about 118.3 s) |
 | Hits to repair from zero health | 71 | 36 | 24 |
 | Hits to dismantle (your own) | 36 | 27 | 22 |
+
+Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
 
 The parts are not built on their own; they come with the finished Gate. Once separated, each half has 85 Build Supplies of cost and takes 10 repair hits from zero and 22 dismantle hits with the Large Hammer. The ramp, also 85 Build Supplies, takes 10 repair hits and 26 dismantle hits with the Large Hammer (Derived). The build count assumes normal hits, and hitting weak spots brings it down.
 
@@ -67,16 +69,16 @@ The Gate can be closed, and the data gives it a breach effect when it is destroy
 | C4 | +1,000% | 11 times |
 | IEDs | +2,000% | 21 times |
 
-Rockets, C4 and IEDs multiply the Gate's damage far more than they do to most walls. The data does not say how many hits the Gate takes to destroy, so that number is not yet known. For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
+Rockets, C4 and IEDs multiply the Gate's damage far more than they do to most walls. The table below gives the hits it takes to destroy, for each source. For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
 
 ## Hits to destroy (point blank, derived)
 
-Derived from each source's base damage and the damage table. It is not a count from play: each figure assumes every shot lands at point blank for full damage, with no falloff and no other rules, so real fights can differ. Base damage used: M4 5.56 mm FMJ 28, M67 frag grenade 100, 120 mm rocket 150, C4 charge 250.
+Derived from each source's base damage and the damage table. It is not a count from play: each figure assumes every shot lands at point blank for full damage, with no falloff and no other rules, so real fights can differ. Base damage used: M4 5.56 mm FMJ 28, .50 cal FMJ 90, 120 mm rocket 150, M67 frag grenade 100 (it counts as a rocket against structures), C4 charge 250, IED 300. Each figure is the number of hits needed after every matching damage entry is applied.
 
-| Structure | HP | M4 5.56 mm FMJ | M67 frag grenade | 120 mm rocket | C4 charge |
-|---|---:|---:|---:|---:|---:|
-| Gate, or each half | 5,320 | 1267 | 54 | 4 | 2 |
-| Gate ramp | 6,500 | 1548 | 65 | 5 | 3 |
+| Structure | HP | M4 5.56 mm FMJ | .50 cal FMJ | 120 mm rocket | M67 frag grenade | C4 charge | IED |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Gate, or each half | 5,320 | 1,267 | 395 | 5 | 6 | 2 | 1 |
+| Gate ramp | 6,500 | 1,548 | 482 | 6 | 7 | 3 | 2 |
 
 ## Season 2 changes
 
@@ -96,3 +98,4 @@ Derived from each source's base damage and the damage table. It is not a count f
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy for each source of damage.
 - [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
 - [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings
+- [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): structure hit counts for every listed source (stacked damage entries, IED and the M67 as a rocket) and the build time estimates.

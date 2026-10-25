@@ -32,6 +32,8 @@ The Vanguard CIWS is a stationary emplacement with an automatic 20x102 mm cannon
 
 ## Overview
 
+Destroying an enemy Vanguard CIWS pays 1,200 cash and 300 Role XP.
+
 The Vanguard starts with 500 rounds and fires them in automatic bursts. The data gives a windup time of 1.5 s before the gun reaches full speed. It is listed on the [Buildables](buildables.md) page with the other stationary weapons.
 
 ## Effects
@@ -46,7 +48,7 @@ The emplacement starts with 500 rounds. A restock takes 250 Ammo Supplies and gi
 
 The Vanguard uses the same placement rules as the other stationary weapons: it is built with a Large Hammer, and its placement conditions check the Forward Operating Base bounds, a ladder check (not within 1 m of a ladder) and a safe zone check (not within 3 m of a safe zone or while standing in one). The [Buildables](buildables.md) page describes these rules.
 
-At 1,800 rounds/min, the starting 500 rounds last a short time. The data does not say how long one full magazine lasts in play, so that is not yet known.
+At 1,800 rounds/min, a full 500-round magazine lasts 16.7 s of continuous fire (derived: 500 rounds at 30 rounds per second). The reload after that takes 3.0 s. The figure assumes the gun never stops firing; it is not a measured time in play.
 
 ## Cost
 
@@ -79,3 +81,4 @@ The Build Supplies cost is not a cash price. Build Supplies are bought in the sh
 - [Vehicle hitboxes](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/vehicle-hitboxes.json): the 3D hitbox set used by the viewer link
 - [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
 - [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings
+- [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): the reward and hit-count rows used on this page.

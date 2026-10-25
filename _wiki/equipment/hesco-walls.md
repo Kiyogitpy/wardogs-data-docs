@@ -48,9 +48,11 @@ The Hesco Walls are three barriers: the Small Hesco Block, the Large Hesco Block
 
 | Building it | Small Block | Large Block | Hesco Wall |
 |---|---:|---:|---:|
-| Hits to build | 30 (Small), 15 (Medium), 10 (Large) | 22 (Medium), 15 (Large) | 75 (Medium), 50 (Large) |
+| Hits to build | 30 (Small, about 17.0 s), 15 (Medium, about 8.5 s), 10 (Large, about 8.8 s) | 22 (Medium, about 12.5 s), 15 (Large, about 13.2 s) | 75 (Medium, about 42.5 s), 50 (Large, about 44.1 s) |
 | Hits to repair from zero health | 30 / 15 / 10 | 15 (Medium), 10 (Large) | 15 (Medium), 10 (Large) |
 | Hits to dismantle (your own) | 11 / 8 / 7 | 12 (Medium), 9 (Large) | 23 (Medium), 19 (Large) |
+
+Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
 
 The columns for the Small Block read Small / Medium / Large hammer. The other two are Medium and Large only. The build counts assume normal hits, and hitting weak spots brings them down.
 
@@ -71,17 +73,17 @@ The Hesco Walls are cover and obstacles. The data gives them no effect beyond th
 
 For the Large Block, rockets do 1.8 times their normal damage, and IEDs do 4 times. For the Hesco Wall, rockets do 3 times and IEDs do 5 times. The full reading of the percentages is in the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic). These are the entries that match one source on its own, so they are a first estimate.
 
-The data does not say how many hits any Hesco variant takes to destroy, so that number is not yet known.
+The table below gives the hits it takes to destroy, for each source.
 
 ## Hits to destroy (point blank, derived)
 
-Derived from each source's base damage and the damage table. It is not a count from play: each figure assumes every shot lands at point blank for full damage, with no falloff and no other rules, so real fights can differ. Base damage used: M4 5.56 mm FMJ 28, M67 frag grenade 100, 120 mm rocket 150, C4 charge 250.
+Derived from each source's base damage and the damage table. It is not a count from play: each figure assumes every shot lands at point blank for full damage, with no falloff and no other rules, so real fights can differ. Base damage used: M4 5.56 mm FMJ 28, .50 cal FMJ 90, 120 mm rocket 150, M67 frag grenade 100 (it counts as a rocket against structures), C4 charge 250, IED 300. Each figure is the number of hits needed after every matching damage entry is applied.
 
-| Structure | HP | M4 5.56 mm FMJ | M67 frag grenade | 120 mm rocket | C4 charge |
-|---|---:|---:|---:|---:|---:|
-| Hesco Block (Small) | 1,600 | 286 | 11 | 5 | 2 |
-| Hesco Block (Large) | 2,250 | 402 | 15 | 9 | 4 |
-| Hesco Wall | 4,600 | 822 | 46 | 11 | 8 |
+| Structure | HP | M4 5.56 mm FMJ | .50 cal FMJ | 120 mm rocket | M67 frag grenade | C4 charge | IED |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Hesco Block (Small) | 1,600 | 286 | 89 | 4 | 8 | 2 | 1 |
+| Hesco Block (Large) | 2,250 | 402 | 125 | 7 | 13 | 4 | 2 |
+| Hesco Wall | 4,600 | 822 | 256 | 21 | 16 | 8 | 4 |
 
 ## Season 2 changes
 
@@ -102,3 +104,4 @@ The Season 2 data lists no change to the cost or health of any Hesco variant.
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy for each source of damage.
 - [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
 - [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings
+- [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): structure hit counts for every listed source (stacked damage entries, IED and the M67 as a rocket) and the build time estimates.

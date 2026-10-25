@@ -13,7 +13,7 @@ description: "The first factory investment: three production lines that build we
 | Cost | 200 cash |
 | Production lines | 3 |
 | Upgrades | Queue size (three lines), storage size |
-| Full in-game name | Not yet known: the data cuts it off after "Zaystev Foun" |
+| Full in-game name | Zaystev Foundry |
 | Internal name | Factory 01 investment (Id.Investment.Factory01) |
 {: .wiki-infobox }
 
@@ -28,8 +28,8 @@ The first factory investment sets up three lines and six recipes. It is passive:
 - **Lines.** Each line can make only the two recipes listed for it.
 - **Queues.** Each line has a queue. The queue size comes from an upgrade. The data reads the queue size from the level of the upgrade.
 - **Storage.** The factory has a storage size, also set by an upgrade.
-- **Recipes.** Each recipe has a production cost and a production discount. The discount is 20 in the data. Whether it is a percentage, and how it applies, is not confirmed.
-- **Build time.** Every recipe takes 10 in the data. The unit is not stated, and seconds is an inference.
+- **Recipes.** Each recipe has a production cost and a production discount. The discount is 20 percent: the production cost of a recipe is 80% of its shop price.
+- **Build time.** Every recipe takes 10 in the data. The unit is not confirmed.
 
 ## Numbers
 
@@ -62,7 +62,7 @@ The first factory investment sets up three lines and six recipes. It is passive:
 | 4 | 20 | 4 | 20 |
 | 5 | 20 | 5 | 20 |
 
-The data gives a separate "slot amount" value. Its meaning is inferred from the name. Levels above 5 keep the level 5 values.
+The data also has a slot amount for each level. The investment does not use it, so its effect is not known. Levels above 5 keep the level 5 values.
 
 The investment starts with its upgrade at level 1 for each of the three queues and for storage.
 
@@ -88,3 +88,4 @@ The investment starts with its upgrade at level 1 for each of the three queues a
 - [FactoryInvestment (feature)](../../game-features/Wardogs_GameFeatures_FactoryInvestment_v2.md)
 - [FactoryInvestment_01 (feature)](../../game-features/Wardogs_GameFeatures_FactoryInvestment_01_v2.md)
 - [Season 2 changes: Game Modes & Maps](../../season-2-changes/game-modes-maps.md)
+- [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): the reward and hit-count rows used on this page.

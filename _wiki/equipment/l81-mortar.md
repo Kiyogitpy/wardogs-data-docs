@@ -28,6 +28,8 @@ The L81 Mortar is a stationary emplacement that fires mortar rounds over short d
 
 ## Overview
 
+Destroying an enemy L81 Mortar pays 650 cash and 175 Role XP.
+
 The mortar can hit targets from 132 m to 684 m away. It has one firing arc only, so each range has a single elevation setting. The setting to dial for each range, and the game's own range table with travel times, are in the table below.
 
 ## Effects
@@ -108,3 +110,4 @@ The Build Supplies cost is taken from the [Buildables](buildables.md) article, w
 - [Vehicle hitboxes](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/vehicle-hitboxes.json): the 3D hitbox set used by the viewer link
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): mortar sight labels, and the minimum range from the barrel's pitch limit.
 - [Round 39 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-weapons.md): the -300 mrad row (20.0 s) check
+- [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): the reward and hit-count rows used on this page.

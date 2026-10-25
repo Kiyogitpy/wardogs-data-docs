@@ -32,7 +32,7 @@ The Indirect Fire Shelter is a large shelter with a floor and a ceiling. Only th
 
 The Indirect Fire Shelter costs 200 Build Supplies and has 5,000 HP. Its two parts, the floor and the ceiling, each cost 10 Build Supplies and have 2,250 HP.
 
-The reward tables give 500 cash for placing one and 1,400 cash for destroying an enemy one.
+Destroying an enemy Indirect Fire Shelter pays 200 cash and 50 Role XP.
 
 ## Building it
 
@@ -46,9 +46,11 @@ The reward tables give 500 cash for placing one and 1,400 cash for destroying an
 
 | Building it | Small hammer | Medium hammer | Large hammer |
 |---|---:|---:|---:|
-| Hits to build | cannot place | cannot place | 134 |
+| Hits to build | cannot place | cannot place | 134 (about 118.3 s) |
 | Hits to repair from zero health | 60 | 30 | 20 |
 | Hits to dismantle (your own) | 34 | 25 | 20 |
+
+Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
 
 The Large Hammer is the only one that can place the shelter. The repair and dismantle hits for the other hammers are what their hits do; the data does not check them for this structure. The build count assumes normal hits, and hitting weak spots brings it down.
 
@@ -67,16 +69,16 @@ The shelter is a large structure with a floor and a ceiling. The data does not d
 | C4 | +50% | 1.5 times |
 | IEDs | +200% | 3 times |
 
-The data does not say how many hits the shelter takes to destroy, so that number is not yet known. For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
+The table below gives the hits it takes to destroy, for each source. For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
 
 ## Hits to destroy (point blank, derived)
 
-Derived from each source's base damage and the damage table. It is not a count from play: each figure assumes every shot lands at point blank for full damage, with no falloff and no other rules, so real fights can differ. Base damage used: M4 5.56 mm FMJ 28, M67 frag grenade 100, 120 mm rocket 150, C4 charge 250.
+Derived from each source's base damage and the damage table. It is not a count from play: each figure assumes every shot lands at point blank for full damage, with no falloff and no other rules, so real fights can differ. Base damage used: M4 5.56 mm FMJ 28, .50 cal FMJ 90, 120 mm rocket 150, M67 frag grenade 100 (it counts as a rocket against structures), C4 charge 250, IED 300. Each figure is the number of hits needed after every matching damage entry is applied.
 
-| Structure | HP | M4 5.56 mm FMJ | M67 frag grenade | 120 mm rocket | C4 charge |
-|---|---:|---:|---:|---:|---:|
-| Indirect Fire Shelter | 5,000 | 893 | 100 | 23 | 14 |
-| Indirect Fire Shelter floor or ceiling | 2,250 | 402 | 45 | 11 | 6 |
+| Structure | HP | M4 5.56 mm FMJ | .50 cal FMJ | 120 mm rocket | M67 frag grenade | C4 charge | IED |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Indirect Fire Shelter | 5,000 | 893 | 278 | 33 | 35 | 27 | 12 |
+| Floor or ceiling | 2,250 | 402 | 125 | 15 | 16 | 12 | 5 |
 
 ## Season 2 changes
 
@@ -96,3 +98,4 @@ Derived from each source's base damage and the damage table. It is not a count f
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy for each source of damage.
 - [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
 - [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings
+- [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): structure hit counts for every listed source (stacked damage entries, IED and the M67 as a rocket) and the build time estimates.

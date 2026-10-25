@@ -107,10 +107,10 @@ See [Control Zone](../game-modes-and-maps/control-zone.md) for the zone rules.
 | Destroying an enemy claymore, C4 or anti-tank mine | 100 each |
 | Destroying an enemy supply crate | 100 to 200 |
 | Placing a forward operating base (FOB) | 1,000 |
-| Destroying an enemy FOB | 5,000 |
+| Destroying an enemy FOB | 2,500, plus up to 7,500 by the FOB's supplies |
 | Destroying a Hot Zone Magnet structure | 3,000 |
 
-Bunkers and air raid shelters pay 1,400 when destroyed. Other buildables mostly pay 10 to 500.
+Destroying a Bunker, Recon Tower, Indirect Fire Shelter, Gate, Loudspeaker, Refuel Station or Repair Station pays 200 cash and 50 Role XP. A Vanguard CIWS pays 1,200 and 300, and an L81 Mortar or Talon 9K-SAM 650 and 175. Walls and other small buildables pay 5 to 85 cash. Placing a schematic pays 10 cash, and each build hit pays 5 cash.
 
 ### End-of-match bonus
 
@@ -139,7 +139,7 @@ All six roles use the same XP curve. Milestones:
 | 75 | 2,218,000 |
 | 100 | 5,132,500 |
 
-The data gives one XP value per level. Whether each value is a running total or a step up from the level before is not stated.
+The data gives one XP value per level. Each value is the total Role XP needed to reach that level, not the step from the level before.
 
 ### Mastery rewards per level
 
@@ -190,3 +190,4 @@ The unlock rows for each role are on its page, under Unlocks.
 - [Zone rewards data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/zone-rewards.json)
 - [Economy data: role unlock tree and mastery](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/economy.json) (JSON)
 - [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md)
+- [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): the reward and hit-count rows used on this page.
