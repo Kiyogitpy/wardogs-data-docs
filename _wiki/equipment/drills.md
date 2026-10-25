@@ -35,7 +35,7 @@ The shop text says the Light Drill has a moderate repair speed and the Heavy Dri
 
 - Using a drill repairs a vehicle. The use continues until the drill's power is spent or the vehicle is full.
 - The item data lists 1.25 for battery use per second on both drills, but nothing in the game reads that figure. The repair action spends 1 battery charge for each repair swing that lands (a Battery holds 100 charges, a High Capacity Battery 250). No per-second drain was found, so see [Batteries](batteries.md) for the swing-based estimate (inferred).
-- Both have a reload action in the data. What it reloads is not yet known.
+- Both have a reload action in the data. It swaps in a fresh battery from the drill's single battery slot.
 - The item data gives each drill a melee value: 5 for the Light Drill and 10 for the Heavy Drill.
 - The Light Drill repairs 14.5 health every 0.75 seconds (about 19.3 per second). The Heavy Drill repairs 14.5 health every 0.5 seconds (29 per second). The drills have no durability value in the data.
 
