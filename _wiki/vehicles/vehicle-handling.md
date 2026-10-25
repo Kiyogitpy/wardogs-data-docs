@@ -144,7 +144,7 @@ The tank torque curves are the same for the SPH-2, L2A6, Gepard and T-72B3, and 
 
 ### Helicopters
 
-| Vehicle | Max speed (as stored) | Mass (as stored) |
+| Vehicle | Max speed (as stored) | Body mass (kg) |
 |---|---:|---:|
 | [Havoc](havoc.md) | 400 | 7,500 |
 | [MH-6](mh-6.md) | 350 | 722 |
@@ -152,7 +152,7 @@ The tank torque curves are the same for the SPH-2, L2A6, Gepard and T-72B3, and 
 | [AH-6R [Rockets]](ah-6r-rockets.md) | 350 | 722 |
 | [Z20 Lakota](z20-lakota.md) | 445 | 9,500 |
 
-Helicopters have a drag coefficient of 0.006 on every variant. Their steering, braking and torque values are not in the handling tables. The MH-6's mass of 722 is far below its collision mass of 1,200, and the data does not label the unit, so the two numbers cannot be compared directly. The vehicle vendor labels top speeds in km/h, so the helicopter speeds above are km/h.
+Helicopters have a drag coefficient of 0.006 on every variant. Their steering, braking and torque values are not in the handling tables. The aircraft body masses are in kilograms (the airplane's is 10,000 kg). The MH-6's mass of 722 kg is far below its collision mass of 1,200, whose unit the data does not label, so the two numbers cannot be compared directly. The vehicle vendor labels top speeds in km/h, so the helicopter speeds above are km/h.
 
 ## Tips that follow from the numbers
 

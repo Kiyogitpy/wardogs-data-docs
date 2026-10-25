@@ -10,7 +10,7 @@ description: "The game modes, the maps they run on, and the match rules players 
 
 Wardogs has a few team modes built around zones and objectives, a sniper mode with a stillness rule, a deathmatch mode, a set of PvE missions, a shooting range for practice, and two Season 2 additions, Team Offence and the Hot Potato pre-lobby mini-game. This hub covers each mode and the maps they are played on.
 
-Where the data has no answer, the articles say "not yet known" rather than guess. That includes team sizes, match timers and win conditions for most modes.
+Where the data has no answer, the articles say "not yet known" rather than guess. That includes team sizes (a server setting for most modes) and match timers for the PvE missions, which have no time limit in their data.
 
 {% include wiki-index.html hub="Game Modes & Maps" %}
 

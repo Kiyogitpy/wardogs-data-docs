@@ -2,7 +2,7 @@
 title: "Countermeasures and flares"
 parent: "Vehicles"
 group: "Reference"
-description: "Which Wardogs vehicles carry flares or smoke, how many they get, how flares are meant to work against heat-seeking lock-on weapons, and what the data does not yet say about reloading."
+description: "Which Wardogs vehicles carry flares or smoke, how many they get, how flares are meant to work against heat-seeking lock-on weapons, and how they are restocked."
 ---
 
 # Countermeasures and flares
@@ -67,7 +67,7 @@ The Flakpanzer Gepard, the T-72B3 and the M113 APC SV have a smoke countermeasur
 
 ## Tips that follow from the numbers
 
-- Flares are the only countermeasure for the helicopter and airplane group. Whether they stop a heat-seeking lock is not known.
+- Flares are the only countermeasure for the helicopter and airplane group. Whether they stop a heat-seeking lock is not known: the client code read has no flare check on the lock, so any such rule would sit elsewhere.
 - A smoke screen is active for 16 seconds, then the vehicle must wait until 90 seconds after the first use before it can use smoke again. Use it as a short cover, and plan the next one around the 90 second wait.
 - Because the airplane's flares are a fixed count of 3, use them when they matter most rather than as a routine.
 - Each helicopter starts with 2 flares. Each press uses one and then waits 5 seconds before the next, so plan a flight around that count. The "3 bursts" in the item text is not a count.

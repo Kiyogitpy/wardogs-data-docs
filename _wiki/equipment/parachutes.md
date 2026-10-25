@@ -39,7 +39,7 @@ Both parachutes sit in the Traversal slot of the shop and are listed under the U
 - The player needs at least 1,000 clearance above the ground to open it, most likely 10 m (derived).
 - Opening takes 2.0. The data does not give the unit.
 - To open a parachute you need the parachute item, the parachute must not already be open, you must be falling, and there must be enough clear space below you. You can cut the parachute only while it is open.
-- The game text says both versions reduce fall damage when deployed. The landing damage curve for a parachute runs from 0 at input 695 to 100 at 1,700, in a straight line (input unit not stated).
+- The game text says both versions reduce fall damage when deployed. The landing damage curve for a parachute runs in a straight line from 0 damage at a fall speed of 6.95 m/s to 100 at 17 m/s (the input is speed in cm/s).
 
 ### Movement values
 

@@ -28,7 +28,7 @@ The 60 rows cover player kills, revives, heals, vehicle kills, vehicle sections,
 - **Assist versions.** An assist row pays a player who helped. A crew row pays the pilot, driver or gunner of a vehicle that took part.
 - **Friendly events.** Several rows list a friendly value of 0, so they pay nothing when the event is friendly.
 - **Auto-activate.** All rows start automatically except Supply Pallet Dropped.
-- **Amounts.** The cash and role XP columns show the base amount of each reward row. These are the same reward rows that every mode uses, so a King of the Hill kill pays what a kill pays elsewhere. The zone, kill-streak and last-victim terms then multiply the base (see [Cash and Rewards](cash-and-rewards.md)). Smaller amounts in the same rule are assist, owner or friendly shares.
+- **Amounts.** The cash and role XP columns show the base amount of each reward row. These are the shared challenge reward rows that the challenges of every mode use. They differ from the cash tables on [Cash and Rewards](cash-and-rewards.md), which give other bases for the same actions (a default kill 250, a defibrillator revive 1,000, a Bandage heal 400), and which set a match pays out is not known. The zone, kill-streak and last-victim terms then multiply the base (see [Cash and Rewards](cash-and-rewards.md)). Smaller amounts in the same rule are assist, owner or friendly shares.
 - **No row.** The reward table has no entry for that reward, so the event pays nothing from it.
 - **Not in data.** No base amount was found for that reward in the sources, so its amount is not yet known.
 - **Duplicate name.** The data has two rows named Vehicle Destroyed Assist Revive Assist. One is the revive assist and the other is the FOB-supplied assist.

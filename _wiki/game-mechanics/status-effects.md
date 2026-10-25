@@ -75,7 +75,7 @@ After a Medic revives a teammate, the Medic gets a faster sprint and tactical sp
 
 ## Falling and landing
 
-A hard landing causes damage that rises with fall speed. The data curve gives 0 damage at input 670, 100 at 875 and 200 at 1,080, and the input unit is not exported (it is presumed to be centimetres per second). The output is presumed to be health, but this is not checked. Parachute landings use a separate curve that starts at 695 and reaches 100 at 1,700. A landing also briefly changes weapon sway and dips the weapon, for about 0.6 s.
+A hard landing causes damage that rises with fall speed. The data curve gives 0 damage at input 670, 100 at 875 and 200 at 1,080, which reads as fall speeds of 6.7, 8.8 and 10.8 m/s (the unit of this curve is presumed to be centimetres per second, as for the parachute curve). The output is presumed to be health, but this is not checked. Parachute landings use a separate curve that starts at 6.95 m/s and reaches 100 at 17 m/s. A landing also briefly changes weapon sway and dips the weapon, for about 0.6 s.
 
 ## Movement sway
 

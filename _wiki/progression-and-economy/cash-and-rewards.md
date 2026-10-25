@@ -41,7 +41,7 @@ Cash pays for gear, weapons, vehicles and skills. Role XP raises a role's master
 | Killed from artillery while the attacker is in open ground | 5,000 |
 | Artillery kill while the attacker is inside a zone | 100 |
 
-The per-kill calculator uses a different base for each kill type: default 300, headshot 350, precision artillery strike 250, and air vehicle 300.
+The per-kill calculator uses a different base for each kill type: default 300, headshot 350, precision artillery strike 250, and air vehicle 300. The shared challenge reward rows used by the King of the Hill challenges also give 300 for a player kill (and 600 for a defibrillator revive, 200 for a Bandage heal), see [King of the Hill Challenges](king-of-the-hill-challenges.md).
 
 ### Revives and heals
 
@@ -108,7 +108,7 @@ See [Control Zone](../game-modes-and-maps/control-zone.md) for the zone rules.
 | Destroying an enemy supply crate | 100 to 200 |
 | Placing a forward operating base (FOB) | 1,000 |
 | Destroying an enemy FOB | 2,500, plus up to 7,500 by the FOB's supplies |
-| Destroying a Hot Zone Magnet structure | 3,000 |
+| Destroying a Hot Zone Magnet structure | 3,000 in the flat buildable cash table; the challenge reward row for the Drill Rig gives 2,750 and 700 Role XP (see [Buildable Challenges](buildable-challenges.md)) |
 
 Destroying a Bunker, Recon Tower, Indirect Fire Shelter, Gate, Loudspeaker, Refuel Station or Repair Station pays 200 cash and 50 Role XP. A Vanguard CIWS pays 1,200 and 300, and an L81 Mortar or Talon 9K-SAM 650 and 175. Walls and other small buildables pay 5 to 85 cash. Placing a schematic pays 10 cash in a control zone and 20 in a hot zone, and nothing outside a zone. Building pays 5 cash per point of build progress inside a zone and 1 outside.
 
