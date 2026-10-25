@@ -46,6 +46,10 @@ The Control Zone is 550 m across and 150 m tall, with an 85 m Hot Zone in its ce
 
 - **Zone regions.** The data does not include a region list for this map, so where the zone can sit beyond these four placements is not known.
 
+## Layouts
+
+The zone layout for this map is described in full on [Zone Layouts](zone-layouts.md#saburtulo).
+
 ## Season 2 changes
 
 - The Russia zone configuration was added in Season 2. It is 550 m across with an 85 m Hot Zone, and it uses the standard 25-second move delay.

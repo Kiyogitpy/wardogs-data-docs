@@ -46,6 +46,10 @@ The Control Zone is 500 m across and 170 m tall, with an 85 m Hot Zone in its ce
 
 - **Zone regions.** The data lists 60 named regions. Seven are towers with weight 0, so they are never picked by default weight. Most other regions have weight 1. A few have weight 5, including SUNFLOWERS HOUSE, WEST FOREST PYLON and HILLSIDE TOP, which makes them much more likely. How a region is chosen is not confirmed in the data.
 
+## Layouts
+
+The zone layout for this map is described in full on [Zone Layouts](zone-layouts.md#bakurani).
+
 ## Season 2 changes
 
 - The shader warm-up list for this map was updated. Its old count was withdrawn because the old file was cut short. The new file lists 867 graphics pipeline states and 117 compute pipeline states. These lists are technical caches and do not change play.

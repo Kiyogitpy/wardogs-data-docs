@@ -47,6 +47,10 @@ The Control Zone is 550 m across and 150 m tall, with an 85 m Hot Zone in its ce
 
 - **Zone regions.** The data has no region list for this zone set.
 
+## Layouts
+
+The zone layout for this map is described in full on [Zone Layouts](zone-layouts.md#unnamed-layout-data-name-africa).
+
 ## Season 2 changes
 
 - The zone set labelled Africa was added in Season 2. Its Control Zone and Hot Zone sizes are the same as the Russia zone set, which the data links to [Saburtulo](saburtulo.md) only by the placement names (not confirmed).

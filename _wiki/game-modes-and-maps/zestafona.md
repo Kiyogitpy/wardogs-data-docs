@@ -46,6 +46,10 @@ The Control Zone is 500 m across and 500 m tall. The Hot Zone is 85 m across and
 
 - **Zone regions.** The data lists 56 named regions. Of these, 53 have weight 1, and the three towers have weight 0. Named sites include large factories, shipping and export yards, a scrap import area, train tracks and two train sheds. Every non-zero region is equally likely under the data.
 
+## Layouts
+
+The zone layout for this map is described in full on [Zone Layouts](zone-layouts.md#zestafona).
+
 ## Season 2 changes
 
 - The shader warm-up list for this map was updated. Graphics pipeline states went from 1,870 to 1,000, and compute pipeline states from 76 to 79. These lists are technical caches and do not change play.

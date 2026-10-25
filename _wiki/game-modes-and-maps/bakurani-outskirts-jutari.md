@@ -39,6 +39,10 @@ The Control Zone is 350 m across and 170 m tall, with a 75 m Hot Zone in its cen
 - **Placements.** There are no alternative placements. The zone is always in the same spot.
 - **Zone regions.** The data has no region list for this zone.
 
+## Layouts
+
+The zone layout for this map is described in full on [Zone Layouts](zone-layouts.md#bakurani-outskirts---jutari).
+
 ## Season 2 changes
 
 - Two more Sniper Showdown layouts were added in Season 2, for North America and Russia. They have no display name in the data, so they are not described on their own page. See [Maps](maps.md).
