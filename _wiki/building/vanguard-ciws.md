@@ -51,6 +51,10 @@ The Vanguard uses the same placement rules as the other stationary weapons: it i
 
 At 1,800 rounds/min, a full 500-round magazine lasts 16.7 s of continuous fire (derived: 500 rounds at 30 rounds per second). The reload after that takes 3.0 s. The figure assumes the gun never stops firing; it is not a measured time in play.
 
+## Destroying it
+
+The Vanguard CIWS has 5,000 HP. Explosives that burst within their inner radius take this many hits to destroy it: MAAWS 7, 9K333 Verba 4, RPG-7 7, IED 1, C4 3, M67 frag 7. The counts are worked out from the damage rules, not timed in play, and assume full health with no repair. See the [Anti-Vehicle Guide](../guides/anti-vehicle-guide.md#emplacements).
+
 ## Cost
 
 | Item | Value |

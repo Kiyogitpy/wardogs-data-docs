@@ -48,6 +48,10 @@ The finished MG Nest has 1,800 HP. Shots hit the gun as a vehicle, and its vehic
 
 The MG Nest uses the same placement rules as the other stationary weapons: it is built with a Large Hammer, and its placement conditions check the Forward Operating Base bounds, a ladder check (not within 1 m of a ladder) and a safe zone check (not within 3 m of a safe zone or while standing in one). The [Building](../building.md) page describes these rules.
 
+## Destroying it
+
+The MG Nest has 1,800 HP. Explosives that burst within their inner radius take this many hits to destroy it: MAAWS 18, 9K333 Verba 9, RPG-7 17, IED 6, C4 8, M67 frag 18. The counts are worked out from the damage rules, not timed in play, and assume full health with no repair. See the [Anti-Vehicle Guide](../guides/anti-vehicle-guide.md#emplacements).
+
 ## Cost
 
 | Item | Value |

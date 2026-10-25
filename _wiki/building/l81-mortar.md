@@ -82,6 +82,10 @@ The calculator's minimum range is 132 m, at 850 mils, the end of the dial range 
 - The windup time went from 0.85 s to 2.5 s.
 - Two damage entries were added to the mortar's damage table: one for 20x102 mm cannon hits (amount -70) and one for 125 mm rocket hits (amount -50). The amounts use the same units as the other entries in the [vehicle damage](../vehicles/vehicle-damage.md) table.
 
+## Destroying it
+
+The L81 Mortar has 3,000 HP. Explosives that burst within their inner radius take this many hits to destroy it: MAAWS 4, 9K333 Verba 2, RPG-7 4, IED 2, C4 3, M67 frag 4. The counts are worked out from the damage rules, not timed in play, and assume full health with no repair. See the [Anti-Vehicle Guide](../guides/anti-vehicle-guide.md#emplacements).
+
 ## Cost
 
 | Item | Value |

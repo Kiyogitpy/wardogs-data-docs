@@ -43,6 +43,10 @@ The damage data files the Loudspeaker under the same table as the radio tower st
 
 The Loudspeaker can be placed with a Medium Hammer as well as a Large Hammer, the only stationary emplacement that has this choice. Its placement conditions check the Forward Operating Base bounds, a ladder check (not within 1 m of a ladder) and a safe zone check (not within 3 m of a safe zone or while standing in one), the same as the other stationary emplacements. The [Building](../building.md) page describes these rules.
 
+## Destroying it
+
+The Loudspeaker has 1,000 HP. Explosives that burst within their inner radius take this many hits to destroy it: MAAWS 3, 9K333 Verba 2, RPG-7 5, IED 2, C4 4, M67 frag 4. The counts are worked out from the damage rules, not timed in play, and assume full health with no repair. See the [Anti-Vehicle Guide](../guides/anti-vehicle-guide.md#emplacements).
+
 ## Cost
 
 | Item | Value |
