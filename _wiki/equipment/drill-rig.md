@@ -41,7 +41,7 @@ Destroying an enemy Drill Rig pays 2,750 cash and 700 Role XP. The data pays the
 - **Placement:** It must be inside a friendly Forward Operating Base radius, inside a placement zone, and that zone must be inside a control zone. Unlike most structures, it has no ladder check and no safe zone check.
 - **Stack limit:** 0, so it cannot be placed on top of another buildable. Nothing can be placed on top of it either.
 - **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress. The earlier stages have 70, 79, 98 and 95 weak spots. A hammer hit on a weak spot adds more progress (see [Buildables](buildables.md#weak-spots)).
-- **Build time:** Not published in seconds.
+- **Build time:** Estimated from the hits to build in the table below, one hit per swing (derived, not timed in play).
 
 | Building it | Small hammer | Medium hammer | Large hammer |
 |---|---:|---:|---:|

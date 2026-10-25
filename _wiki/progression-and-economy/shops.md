@@ -34,9 +34,9 @@ The weapon listings are on the weapon shop data page. Gear, medical items and ve
 - **Price.** Each listing has one price. The vendor rows do not name a currency. The Season 2 unlock tree lists its costs in cash, so vendor prices are most likely cash, but the data does not state it outright.
 - **Price modifiers.** Each price is multiplied by every discount that applies. A discount is a percentage: 50% halves the price and 90% takes 10% off. The discounts in the game's economy settings are:
   - Wardog level 8 or below: 50%.
-  - The losing faction, when it trails by 40 points: 80%. The condition is read from the setting's field names.
+  - The losing faction, when it trails by 40 points: 80%. This condition is inferred from the setting's field names.
   - A first purchase: 90%.
-  - The signature rifle of a faction is free (0%) for that faction. See [Factions](../game-modes-and-maps/factions.md).
+  - The signature rifle of a faction is free (0%) for that faction: the setting pairs each rifle with a faction tag, and the faction data names them Lonestar, Valkyra and Manticore. The check that matches the buyer's faction was not decoded, so "own faction" is read from the setting's name. See [Factions](../game-modes-and-maps/factions.md).
 
   Derived example: an AK74 (800 cash) bought as a first purchase by a Wardog level 8 player costs 360 (800 x 0.5 x 0.9), before any other discount.
 - **Refunds.** A refund pays 90% of the smaller of what was spent on the refunded items and the eligible purchase amount. It must be claimed within 20 score ticks, a window set in the economy settings.
@@ -85,7 +85,7 @@ The weapon listings are on the weapon shop data page. Gear, medical items and ve
 | FAL | 6,000 |
 | A-91, KH-2002 and Bushmaster M17S | 0 |
 
-Attachments, magazines and the rest of the weapon catalogue are on the weapon shop data page. The shop lists 0 for the three signature rifles. Each one is free for its own faction: Bushmaster M17S for Lonestar, A-91 for Valkyra and KH-2002 for Manticore.
+Attachments, magazines and the rest of the weapon catalogue are on the weapon shop data page. The shop lists 0 for the three signature rifles. The economy settings pair them with factions, so each is free for its own faction (the faction match is read from the setting's name): Bushmaster M17S for Lonestar, A-91 for Valkyra and KH-2002 for Manticore.
 
 ### Vehicles and supply crates
 

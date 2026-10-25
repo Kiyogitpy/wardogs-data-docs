@@ -41,7 +41,7 @@ Destroying an enemy Shelter pays 250 cash and 65 Role XP. The placement rewards 
 - **Placement:** It must be inside a friendly Forward Operating Base radius. It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder.
 - **Stack limit:** 1.
 - **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress. Each of the first four stages has 24 weak spots. A hammer hit on a weak spot adds more progress (see [Buildables](buildables.md#weak-spots)).
-- **Build time:** Not published in seconds.
+- **Build time:** Estimated from the hits to build in the table below, one hit per swing (derived, not timed in play).
 
 | Building it | Small hammer | Medium hammer | Large hammer |
 |---|---:|---:|---:|

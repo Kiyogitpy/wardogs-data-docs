@@ -44,7 +44,7 @@ Destroying an enemy Refuel Station or Repair Station pays 200 cash and 50 Role X
 - **Placement:** Each must be inside a friendly Forward Operating Base radius. It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder.
 - **Stack limit:** 100.
 - **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress. The Refuel Station has 15, 14, 27 and 14 weak spots in its first four stages. The Repair Station has 16, 16, 16 and 15. A hammer hit on a weak spot adds more progress (see [Buildables](buildables.md#weak-spots)).
-- **Build time:** Not published in seconds.
+- **Build time:** Estimated from the hits to build in the table below, one hit per swing (derived, not timed in play).
 
 | Building it | Small hammer | Medium hammer | Large hammer |
 |---|---:|---:|---:|

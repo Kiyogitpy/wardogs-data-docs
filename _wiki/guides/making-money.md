@@ -136,9 +136,9 @@ A selection of vendor prices, lowest first (the full list is on each weapon arti
 | Galil | 2,000 | [Galil](../weapons/galil.md) |
 | M4 | 2,800 | [M4](../weapons/m4.md) |
 
-Three weapons show a vendor price of 0 in the data: A-91, KH-2002 and Bushmaster M17S. Each is the signature rifle of one faction and costs nothing to that faction, so the 0 is a discount rather than a missing price ([A-91](../weapons/a-91.md), [KH-2002](../weapons/kh-2002.md), [Bushmaster M17S](../weapons/bushmaster-m17s.md)).
+Three weapons show a vendor price of 0 in the data: A-91, KH-2002 and Bushmaster M17S. Each is paired with one faction in the economy settings and is set to cost nothing for that faction (read from the setting's name, not traced in the game code), so the 0 is a discount rather than a missing price ([A-91](../weapons/a-91.md), [KH-2002](../weapons/kh-2002.md), [Bushmaster M17S](../weapons/bushmaster-m17s.md)).
 
-Discounts stack. A Wardog level 8 or lower player pays half of the listed price, a first purchase costs 90%, and the faction that trails by 40 points pays 80%. Derived: a first purchase by a player at level 8 or lower costs 45% of the listed price (0.5 x 0.9). See [Shops](../progression-and-economy/shops.md#how-it-works).
+Discounts stack. A Wardog level 8 or lower player pays half of the listed price, a first purchase costs 90%, and the faction that trails by 40 points pays 80% (inferred from field names). Derived: a first purchase by a player at level 8 or lower costs 45% of the listed price (0.5 x 0.9). See [Shops](../progression-and-economy/shops.md#how-it-works).
 
 ### Factory recipes
 

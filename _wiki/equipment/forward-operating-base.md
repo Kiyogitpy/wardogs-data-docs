@@ -67,7 +67,7 @@ The FOB has the most exposure to explosives of any structure. Its IED entry mult
 | C4 | +1,250% | 13.5 times |
 | IEDs | +5,000% | 51 times |
 
-The FOB's data has a flag named "do not take damage". No code reads it, so the flag is unused and has no effect. The table below assumes the FOB takes damage like any other structure. Its health is 15,000, the value in its data asset, which is applied when the FOB is spawned. The table gives the hits it takes to destroy, for each source. For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
+The FOB's data has a flag named "do not take damage". No code in the game files reads it, so it appears to be unused data. The table below assumes the FOB takes damage like any other structure. Its health is 15,000, the value in its data asset, which is applied when the FOB is spawned. The table gives the hits it takes to destroy, for each source. For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
 
 ## Hits to destroy (point blank, derived)
 

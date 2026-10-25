@@ -125,7 +125,7 @@ Plain reading: a Bunker takes about a fifth of the bullet damage, and rockets do
 
 The full table for every structure is on the [Buildables](../../game-features/Wardogs_Buildables_v1.md) data page.
 
-The Forward Operating Base has a "do not take damage" flag in its data. No code reads it, so the flag is unused, and the hit counts above treat the base like any other structure.
+The Forward Operating Base has a "do not take damage" flag in its data. No code in the game files reads it, so it appears to be unused data, and the hit counts above treat the base like any other structure.
 
 ### Build stages
 

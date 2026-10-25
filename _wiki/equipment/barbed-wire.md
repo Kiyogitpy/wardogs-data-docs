@@ -42,7 +42,7 @@ Destroying an enemy Barbed Wire pays 5 cash and 5 Role XP.
 - **Stack limit:** 100.
 - **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress.
 - **Weak spots:** switched off. Its build stages do not show the hammer bonus, so each hit adds the normal amount, multiplied by its build factor of 3.5 (see [Buildables](buildables.md#building)).
-- **Build time:** Not published in seconds.
+- **Build time:** Estimated from the hits to build in the table below, one hit per swing (derived, not timed in play).
 
 | Building it | Small hammer | Medium hammer | Large hammer |
 |---|---:|---:|---:|

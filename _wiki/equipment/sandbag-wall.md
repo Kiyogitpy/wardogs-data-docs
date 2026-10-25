@@ -41,7 +41,7 @@ Destroying an enemy Sandbag Wall pays 15 cash and 5 Role XP.
 - **Placement:** The Sandbag Wall is one of the four small structures (with the [Barbed Wire](barbed-wire.md), [Recon Tent](recon-tent.md) and [Hedgehog](hedgehog.md)). It does not need a friendly base radius, but it cannot be placed inside an enemy base radius. It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder.
 - **Stack limit:** 100.
 - **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress. The earlier stages have 14, 12, 10 and 8 weak spots, in that order. A hammer hit on a weak spot adds more progress (see [Buildables](buildables.md#weak-spots)).
-- **Build time:** Not published in seconds.
+- **Build time:** Estimated from the hits to build in the table below, one hit per swing (derived, not timed in play).
 
 | Building it | Small hammer | Medium hammer | Large hammer |
 |---|---:|---:|---:|

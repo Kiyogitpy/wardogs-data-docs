@@ -59,7 +59,7 @@ The Forward Operating Base has no hits: it is placed at once from its own item. 
 
 ## The Forward Operating Base comes first
 
-The Forward Operating Base (FOB) is the anchor for building. It is placed from its own item rather than a hammer, costs 7,500 cash in the shop and 30 Build Supplies to place, and has 15,000 HP, the most of any structure ([Forward Operating Base](../equipment/forward-operating-base.md)).
+The Forward Operating Base (FOB) is the anchor for building. It is placed from its own item rather than a hammer, costs 7,500 cash in the shop and has a Build Supplies cost of 30 (nothing is charged at placement), and has 15,000 HP, the most of any structure ([Forward Operating Base](../equipment/forward-operating-base.md)).
 
 - **Radius.** Most structures must be placed inside a friendly FOB radius. The exceptions are Barbed Wire, Recon Tent, Sandbag Wall and Hedgehog ([Buildables](../equipment/buildables.md#use-and-timing)). A new FOB also cannot be placed within about 42 m of another one.
 - **Limits.** Each FOB allows one Refuel Station, one Repair Station and up to four Builder's Radios ([Forward Operating Base](../equipment/forward-operating-base.md#building-it)).

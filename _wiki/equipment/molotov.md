@@ -35,7 +35,7 @@ The Molotov is a thrown incendiary. It does a small burst when it goes off, then
 
 ## Overview
 
-The Molotov is sold as a Lethal, Quick Slot item for 340 cash, and it needs unlock level 1 in the shop data. Its burst is small, so most of its value is the fire. The Season 2 item data adds the Molotov to the item list of each of the 24 emotes, but it does not say what that does in play.
+The Molotov is sold as a Lethal, Quick Slot item for 340 cash, and its shop listing has unlock level 1, a field that gates nothing. Its burst is small, so most of its value is the fire. The Season 2 item data adds the Molotov to the item list of each of the 24 emotes, but it does not say what that does in play.
 
 For the other explosives, see [Grenades and Explosives](grenades-and-explosives.md). For the smoke and signal throwables, see [Fire, Smoke and Flash](fire-smoke-and-flash.md).
 

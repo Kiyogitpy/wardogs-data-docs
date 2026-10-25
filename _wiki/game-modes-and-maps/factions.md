@@ -58,7 +58,7 @@ The default faction in the data uses the Manticore Forward Operating Base, so Ma
 ## What is not known
 
 - **What each faction is.** The data gives each faction a name, a colour and a logo: Lonestar is blue, Valkyra red and Manticore green. Backstory and any roleplay identity are not in the data.
-- **Signature rifles.** Each faction's signature rifle is free for that faction: Lonestar has the [Bushmaster M17S](../weapons/bushmaster-m17s.md), Valkyra the [A-91](../weapons/a-91.md) and Manticore the [KH-2002](../weapons/kh-2002.md). The economy settings set the price of each to 0% for its own faction (see [Shops](../progression-and-economy/shops.md)). The data gives no separate price for the other factions. The data lists no other weapon or gear differences, which is not proof that none exist.
+- **Signature rifles.** Each faction's signature rifle is free for that faction (the pairing is in the economy settings; the check that matches the buyer's faction was not decoded, so the rule is read from the setting's name): Lonestar has the [Bushmaster M17S](../weapons/bushmaster-m17s.md), Valkyra the [A-91](../weapons/a-91.md) and Manticore the [KH-2002](../weapons/kh-2002.md). The economy settings set the price of each to 0% for its own faction (see [Shops](../progression-and-economy/shops.md)). The data gives no separate price for the other factions. The data lists no other weapon or gear differences, which is not proof that none exist.
 - **Joining a faction.** How a player is placed into a faction in a normal match is not yet known. Deathmatch creates two factions, Lonestar and Valkyra; King of the Hill creates three.
 
 ## See also

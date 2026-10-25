@@ -44,7 +44,7 @@ Destroying an enemy Bunker pays 200 cash and 50 Role XP. Each of its floor and r
 - **Stack limit:** 2.
 - **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress. The earlier stages have 29, 39, 60 and 99 weak spots. A hammer hit on a weak spot adds more progress (see [Buildables](buildables.md#weak-spots)).
 - **Parts:** When the Bunker is finished, it turns into separate parts: a floor, a roof, and the Hesco Blocks and sandbag wall around them. Each part is its own buildable with its own health. The floor and roof each have 2,250 HP and use the Bunker's damage numbers. This is Derived from the stage data (see [Buildables](buildables.md#building)).
-- **Build time:** Not published in seconds.
+- **Build time:** Estimated from the hits to build in the table below, one hit per swing (derived, not timed in play).
 
 | Building it | Small hammer | Medium hammer | Large hammer |
 |---|---:|---:|---:|

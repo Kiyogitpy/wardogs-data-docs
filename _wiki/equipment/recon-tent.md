@@ -14,7 +14,7 @@ description: "A small camouflage tent built with any hammer from 7 Build Supplie
 | Hammer | Small, Medium, Large |
 | **Building** | |
 | Build cost | 7 Build Supplies |
-| Build time | 14 hits Small (7.9 s), 7 hits Medium (4.0 s), 5 hits Large (4.4 s). Derived from the hammer swing timing, not timed in play. |
+| Build time | 4 hits Small (2.3 s), 2 hits Medium (1.1 s), 2 hits Large (1.8 s). Derived from the hammer swing timing, not timed in play. |
 | Health | 300 HP |
 | **Damage** | |
 | Bullets | -85% |
@@ -42,7 +42,7 @@ Destroying an enemy Recon Tent pays 5 cash and 5 Role XP.
 - **Stack limit:** 100.
 - **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress.
 - **Weak spots:** switched off. Its build stages do not use the hammer bonus, so each hit adds the normal amount, multiplied by its build factor of 3.5 (see [Buildables](buildables.md#building)).
-- **Build time:** Not published in seconds.
+- **Build time:** Estimated from the hits to build in the table below, one hit per swing (derived, not timed in play).
 
 | Building it | Small hammer | Medium hammer | Large hammer |
 |---|---:|---:|---:|
