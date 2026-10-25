@@ -41,7 +41,7 @@ The reward tables give 300 cash for placing a Gate and 500 cash for destroying a
 - **Placement:** It must be inside a friendly Forward Operating Base radius. It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder. The Gate's parts can sit on surfaces with a maximum angle of 10. The data does not state the unit, which is most likely degrees.
 - **Stack limit:** 1.
 - **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress. The earlier stages have 21, 19, 39 and 40 weak spots. A hammer hit on a weak spot adds more progress (see [Buildables](buildables.md#weak-spots)).
-- **Parts:** When the Gate is finished, it turns into separate parts: the left half, the right half and the ramp. Each is its own buildable with its own health: each half has 5,320 HP and the ramp has 6,500 HP.
+- **Parts:** When the Gate is finished, it turns into separate parts: the left half, the right half and the ramp. Each is its own buildable with its own health: each half has 5,320 HP and the ramp has 6,500 HP. This is Derived from the stage data (see [Buildables](buildables.md#building)).
 - **Build time:** Not published in seconds.
 
 | Building it | Small hammer | Medium hammer | Large hammer |

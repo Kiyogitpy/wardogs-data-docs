@@ -154,7 +154,7 @@ The shop text describes the hammers as slow, moderate and fast. The time one hit
 ### Repair and dismantle
 
 - **Repair:** on a finished structure, a hammer hit restores health instead of adding progress. It restores the hammer's build amount times the structure's repair multiplier. Repairing uses Build Supplies too, and any supplies not needed are returned. The repair multiplier differs by structure: 1 for most walls, 6.7 for the Bunker, Recon Tower and Indirect Fire Shelter, 13.3 for the Refuel and Repair Stations and 150 for the Drill Rig. Each article gives its repair hit count.
-- **Dismantle:** a hammer hit on your own structure does 150 (Small), 200 (Medium) or 250 (Large) damage. The data also sets half of that for a structure owned by someone else (the modifier name is read as "hostile"; this is inferred). Dismantling gives no Build Supplies back, as far as the data shows.
+- **Dismantle:** a hammer hit on your own structure does 150 (Small), 200 (Medium) or 250 (Large) damage. The data also sets half of that for a structure owned by someone else (the modifier name is read as "hostile"; this is inferred). No Build Supplies refund on dismantling was found in the data.
 - **Unfinished structures:** damage removes build progress in proportion to the structure's maximum health. At zero progress the structure is destroyed.
 
 ### Weak spots

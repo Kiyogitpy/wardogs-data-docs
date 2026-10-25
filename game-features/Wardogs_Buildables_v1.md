@@ -645,7 +645,7 @@ Native defaults of the manager that the hammers do not override (constructor `0x
 | `B_SafeZonePlacementCondition` (`IsSatisfied`) | Fails with the warning tag `UI.Interactions.PlacementWarnings.InSafeZone` if the placing player carries any of the tags `State.Location.SafeZone.Alpha`, `.Bravo`, `.Charlie` or `.Hostile`. Otherwise it walks every `B_SafeZone` actor and fails if the closest point of that safe zone's trigger volume to the placement location is at most `MinDistanceToSafezone` away. | 300 Unreal units (3 m) |
 | `B_WithinLadderBoundsPlacementCondition` (native `WDWithinLadderBoundsPlacementCondition`, vtable slot `0x7725250`) | Runs a sphere overlap (trace tag `WDLadderPlacementCheck`) at the placement location and fails if any `WDMoverLadder` actor (class in `/Script/WDGame`) overlaps. | `BlockRadius` 100 Unreal units (1 m) |
 
-The safe-zone condition is listed on 25 of the 38 buildable data assets (the FOB has it; Bunker, Door, Gate and Drill Rig do not), the ladder condition on 37 (all but the Drill Rig). The Unreal unit is the centimetre.
+The safe-zone condition is listed on 25 of the 38 buildable data assets (the FOB, Bunker, Door and Gate main assets list it; the Drill Rig and the sub-part assets of multi-part structures do not), the ladder condition on 37 (all but the Drill Rig). The Unreal unit is the centimetre.
 
 ### 14.5 Builder's Radio
 

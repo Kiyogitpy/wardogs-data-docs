@@ -41,7 +41,7 @@ The reward tables have no cash entry for placing a Recon Tower. They give 1,400 
 - **Placement:** The tower must be inside a friendly Forward Operating Base radius. It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder.
 - **Stack limit:** 0, so the tower cannot be placed on top of another buildable.
 - **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress. The earlier stages have 27, 47, 41 and 41 weak spots. A hammer hit on a weak spot adds more progress (see [Buildables](buildables.md#weak-spots)).
-- **Parts:** When the tower is finished, it turns into separate parts: a base floor, a first floor and a roof, together with the Hesco Blocks and sandbag wall around them. Each part is its own buildable with its own health. The floor and roof parts each have 2,250 HP.
+- **Parts:** When the tower is finished, it turns into separate parts: a base floor, a first floor and a roof, together with the Hesco Blocks and sandbag wall around them. Each part is its own buildable with its own health. The floor and roof parts each have 2,250 HP. This is Derived from the stage data (see [Buildables](buildables.md#building)).
 - **Build time:** Not published in seconds.
 
 | Building it | Small hammer | Medium hammer | Large hammer |

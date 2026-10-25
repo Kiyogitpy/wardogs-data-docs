@@ -41,7 +41,7 @@ The reward tables give 500 cash for placing one and 1,400 cash for destroying an
 - **Placement:** The shelter must be inside a friendly Forward Operating Base radius. It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder.
 - **Stack limit:** 1.
 - **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress. The earlier stages have 26, 40, 72 and 86 weak spots. A hammer hit on a weak spot adds more progress (see [Buildables](buildables.md#weak-spots)).
-- **Parts:** When the shelter is finished, it turns into separate parts: a floor, a ceiling, and Hesco Blocks around them. Each part is its own buildable with its own health. The floor and ceiling each have 2,250 HP.
+- **Parts:** When the shelter is finished, it turns into separate parts: a floor, a ceiling, and Hesco Blocks around them. Each part is its own buildable with its own health. The floor and ceiling each have 2,250 HP. This is Derived from the stage data (see [Buildables](buildables.md#building)).
 - **Build time:** Not published in seconds.
 
 | Building it | Small hammer | Medium hammer | Large hammer |

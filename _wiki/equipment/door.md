@@ -41,7 +41,7 @@ The reward tables give 100 cash for destroying an enemy Door. They give no cash 
 - **Placement:** It must be inside a friendly Forward Operating Base radius. It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder.
 - **Stack limit:** 2.
 - **Build stages:** Five, at 0, 30, 60, 80 and 100% of progress. The earlier stages have 12, 11, 15 and 11 weak spots. A hammer hit on a weak spot adds more progress (see [Buildables](buildables.md#weak-spots)).
-- **Parts:** When the Door is finished, it turns into separate parts: a door section that closes, and a top section. Each is its own buildable with 500 HP and uses the same damage numbers as the Door.
+- **Parts:** When the Door is finished, it turns into separate parts: a door section that closes, and a top section. Each is its own buildable with 500 HP and uses the same damage numbers as the Door. This is Derived from the stage data (see [Buildables](buildables.md#building)).
 - **Build time:** Not published in seconds.
 
 | Building it | Small hammer | Medium hammer | Large hammer |

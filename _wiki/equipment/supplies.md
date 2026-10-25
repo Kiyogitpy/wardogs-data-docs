@@ -42,7 +42,7 @@ Each supply is sold in lots of 50 for 10 cash, which is 0.2 cash per unit. The l
 
 The structures on the [Buildables](../../game-features/Wardogs_Buildables_v1.md) page each have a supply cost. That cost is the total Build Supplies the structure uses up, whichever hammer builds it. The supplies are used a little with each hit, so a finished structure has used its whole cost. Nothing is charged at placement, as far as the data shows.
 
-Repairs use Build Supplies too, and any not needed are returned. Dismantling a structure gives no Build Supplies back, as far as the data shows. See [Buildables](buildables.md#repair-and-dismantle).
+Repairs use Build Supplies too, and any not needed are returned. No Build Supplies refund on dismantling was found in the data. See [Buildables](buildables.md#repair-and-dismantle).
 
 ### Supply pallets
 
