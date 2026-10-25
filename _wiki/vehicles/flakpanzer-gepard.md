@@ -87,4 +87,3 @@ The seats are a driver and a gunner in the turret. The Gepard also carries a smo
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md)
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
 - [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
-- [Round 46 A evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-a.md): wiki update notes and data findings for this article

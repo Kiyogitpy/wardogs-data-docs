@@ -71,4 +71,3 @@ Other rewards follow the general rules; see [Cash and Rewards](../progression-an
 - [Season 2 changes: Game Modes & Maps](../../season-2-changes/game-modes-maps.md) (the VIP loot table is new in Season 2)
 - [Session-event reward lookups](../../content/Wardogs_RewardLookup_SessionEvents_v1.md)
 - [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
-- [Round 46 A evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-a.md): wiki update notes and data findings for this article

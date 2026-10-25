@@ -98,7 +98,7 @@ Helicopters and the airplane carry flares. The L2A6 carries smoke. Every other v
 
 Tips that follow from the numbers:
 
-- **Because each helicopter starts with only 2 flares, plan a flight around that count.** Each press uses one flare and then waits 5 seconds before the next. The "3 bursts" in the item text is not a count. Flares are an inventory item: the vehicle vendor sells one for 750 cash, and buying or being given one adds a flare to the vehicle. See [Countermeasures and flares](../vehicles/countermeasures-and-flares.md).
+- **Because each helicopter starts with only 2 flares, plan a flight around that count.** Each press uses one flare and then waits 5 seconds before the next. The "3 bursts" in the item text is not a count. Flares are an inventory item: the vehicle vendor sells one for 750 cash, and buying or being given one adds a flare to the vehicle (what removes it when you press the key was not traced). See [Countermeasures and flares](../vehicles/countermeasures-and-flares.md).
 - **Because the helicopters have arcade assists, do not expect a manual climb to be unlimited.** Each helicopter limits its climb rate to 36 km/h and holds a hover when the collective is released. The Havoc alone also levels pitch and roll at low speed. See [Vehicle handling](../vehicles/vehicle-handling.md#driving-and-flight-assists).
 - **Because the in-game tip says flares can "momentarily prevent" heat-seeking projectiles from locking on, do not treat them as a shield.** The data does not say how long a burst breaks a lock.
 - **Because the in-game tip also says flying low stops certain launchers from locking on, low flight is a second defence.** The data does not say which launchers.

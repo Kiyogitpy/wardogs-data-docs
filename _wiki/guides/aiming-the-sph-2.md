@@ -51,7 +51,7 @@ The MIL scale is the sliding scale on the right of the gun sight. It is labelled
 
 Use it for: setting the elevation from the firing table. The value on the dashed centre line is what the gun will fire at.
 
-The MIL scale reads the turret's own elevation against its mounting, so it is measured from the hull, not from the horizon. On level ground the hull and the horizon agree, so the scale is right there. On a slope the scale does not show the hull's tilt, and the game does not add the hull's pitch to the mil value.
+The MIL scale reads the turret's own elevation relative to the hull, not the angle above the horizon. On level ground the hull and the horizon agree, so the two are the same there. On a slope the scale does not include the hull's tilt, and no place where the game adds the hull's pitch to the mil value was found.
 
 ### Tilt dial
 
@@ -93,7 +93,7 @@ Use the Expensive shell's camera to see where the shell lands. Watch it fall, th
 
 - **Height difference.** The firing table assumes the target is at the same height as the gun. A target higher or lower than the gun makes the shell land short or long. The community calculator has a height correction table for the low arc, and the CV Artillery Computer uses terrain heights to apply it. For a target about 100 m higher, three logged shots landed within about 20 m. Correct for height if you can, or move so that you fire at a similar height.
 
-- **Hull tilt.** The MIL pointer is measured from the hull, and the game does not add the hull's pitch to the elevation, so on a slope the setting does not account for the tilt. In a comparison of real impacts, adding the hull's pitch from the tilt dial to the elevation halved the median miss, from 59 m to 34 m. This is an estimate from a flight simulator, so it suggests that the tilt dial is worth checking before you fire, and that you correct for the hull's pitch by hand. The simplest fix is to park the vehicle level. Stabilizing the hull does not level the barrel.
+- **Hull tilt.** The MIL pointer is measured from the hull, and no place where the game adds the hull's pitch to the elevation was found, so on a slope the setting may not account for the tilt. In a comparison of real impacts, adding the hull's pitch from the tilt dial to the elevation halved the median miss, from 59 m to 34 m. This is an estimate from a flight simulator, not a measurement in game, but it suggests the tilt dial is worth checking before you fire and the hull's pitch worth correcting by hand. The simplest fix is to park the vehicle level. Stabilizing the hull does not level the barrel.
 
 - **Firing altitude.** The mils for a range depend on how high the gun sits above sea level. Simulated, a 2,000 m low-arc shot needs 250 mils fired from 3 m, 224 from 50 m and 197 from 100 m. A gun on high ground can therefore need tens of mils less than a table measured at another height. The altitude the community table was measured at is not known.
 - **Aiming by the compass box.** The compass box reads about 1.3° less than the bearing tape. A shot aimed by the box lands about 1.3° to the side. Aim with the bearing tape, and you remove that error.
@@ -135,5 +135,4 @@ The stats sheet gives an effective range of 10,000 m, but the longest shot measu
 - [Round 21 artillery range check](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round21-artillery-range-check.md)
 - [Round 40 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-weapons.md): mil offset (16.8 mrad) and firing altitude
 - [Round 41 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-weapons.md): the dial's pitch reference (corrected in round 46), the SPH-2 stabilized state and the Expensive shell's steering
-- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
 - [Round 46 A evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-a.md): wiki update notes and data findings for this article

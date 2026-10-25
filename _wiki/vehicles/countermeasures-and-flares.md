@@ -39,9 +39,9 @@ Smoke is a sustained countermeasure. A vehicle's smoke screen stays active for 1
 
 ### Amounts and reloading
 
-Each flare-carrying vehicle has a starting count in the data, and each burst stays active for 3.5 seconds. The fixed-wing airplane starts with 3 flares, the Havoc with 2, the MH-6 and AH-6 family with 2, and the Z20 Lakota with 2. Each press of the countermeasure key uses one flare from the vehicle's inventory and then starts a 5 second cooldown before the next press. The "3x bursts" line is item text only; no number in the data is 3 bursts.
+Each flare-carrying vehicle has a starting count in the data, and each burst stays active for 3.5 seconds. The fixed-wing airplane starts with 3 flares, the Havoc with 2, the MH-6 and AH-6 family with 2, and the Z20 Lakota with 2. Each press of the countermeasure key uses one flare and then starts a 5 second cooldown before the next press. The "3x bursts" line is item text only; no number in the data is 3 bursts.
 
-Flares are also an inventory item. The vehicle vendor sells them for 750 cash, one per purchase. A vehicle's flare count follows its inventory: buying or being given the item adds one flare, and each use removes one. Smoke charges follow the vehicle inventory in the same way (see the table notes below).
+Flares are also an inventory item. The vehicle vendor sells them for 750 cash, one per purchase. A vehicle's flare count follows its inventory: buying or being given the item adds that many flares, and taking the item out removes them. What removes the item when you press the countermeasure key was not traced. Smoke charges follow the vehicle inventory in the same way (see the table notes below).
 
 ### Season 2 changes
 
@@ -95,4 +95,3 @@ The Flakpanzer Gepard, the T-72B3 and the M113 APC SV have a smoke countermeasur
 - [Round 42 weapons evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-weapons.md): the flare data and the search for a lock-on rule
 - [Round 42 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-vehicles-explosives.md): the flare cooldown and countermeasure readings
 - [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): the flare and smoke inventory handlers and the flare vendor row
-- [Round 46 A evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-a.md): wiki update notes and data findings for this article

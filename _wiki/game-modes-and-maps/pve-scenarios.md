@@ -46,7 +46,7 @@ The example scenario used for testing has no article of its own.
 - **Downed players.** The three missions switch off the rule that skips the downed state, so a player can be downed in a mission, as in King of the Hill. The rules for downed players are on the [Downed and Revive](../game-mechanics/downed-and-revive.md) page.
 - **Voice-over subtitles.** Every voice-over line in the missions has a subtitle that stays on screen for 10 s.
 - **Team sizes.** The game files set no team size for these missions. The session size is a server setting.
-- **Shared extraction.** Strike and Disarm and VIP Escort both end with the same extraction helicopter. It appears for the player's team at one of three entry points. A non-player pilot flies it along an entry path at 3 m/s, it waits for players to board, and then it flies the exit path. The speed holds at 3 m/s for the first 70 percent of a path and eases to 1 m/s at the end; both paths use the same speed curve.
+- **Shared extraction.** Strike and Disarm and VIP Escort both end with the same extraction helicopter. The mission picks which faction's version of the helicopter to spawn, and it appears at the extraction vehicle point with its engine running. A non-player pilot flies it along an entry path at 3 m/s, it waits for players to board, and then it flies the exit path. The speed holds at 3 m/s for the first 70 percent of a path and eases to 1 m/s at the end; both paths use the same speed curve.
 - **Soldier behaviour.** Patrol routes are used in Strike and Disarm and VIP Escort. The besiege behaviour is added while the laptop hack runs. Search is included with Strike and Disarm, but no soldier or quest in the data uses it. Flee and the squad attack are example behaviours that no mission uses.
 
 ## Rewards
@@ -71,4 +71,3 @@ The scenario data has no cash or XP table of its own. The general rules apply; s
 - [Round 41 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-modes-ai-other.md)
 - [Round 42 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-modes-ai-other.md)
 - [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
-- [Round 46 A evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-a.md): wiki update notes and data findings for this article

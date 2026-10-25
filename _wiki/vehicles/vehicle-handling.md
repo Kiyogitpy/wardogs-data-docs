@@ -74,7 +74,7 @@ When an asset does not store a field, the game uses the value its class construc
 
 | Field | Game default | Used by |
 |---|---|---|
-| Idle RPM | 1,000 | Kodiak and Kodiak Pickup |
+| Idle RPM | 1,000 | All three Kodiak versions |
 | Torque scale | 1.0 | Bobcat, Humvee |
 | Steering sensitivity | 5.0 | Kodiak, Ural, Wolf-110 |
 | Steer dead zone | 0.01 | Wheeled vehicles that store none |
@@ -177,4 +177,3 @@ Helicopters have a drag coefficient of 0.006 on every variant. Their steering, b
 - [Round 39 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md): Driving and flight assist settings, tyre models and wheeled incline.
 - [Round 40 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-vehicles-explosives.md): the same topics, with the round 40 values where they differ.
 - [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
-- [Round 46 A evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-a.md): wiki update notes and data findings for this article
