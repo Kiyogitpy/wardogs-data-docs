@@ -1,0 +1,6673 @@
+[
+ {
+  "asset": "DA_FWG_01_GameplaySystems",
+  "plugin": "FWG_01",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 90.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_FWG_01_GameplaySystems",
+  "plugin": "FWG_01",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 90.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.1
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.FuelComponent"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_FWG_01_GameplaySystems",
+  "plugin": "FWG_01",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 50.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.4
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_FWG_01_GameplaySystems",
+  "plugin": "FWG_01",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.5
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_ROT_02",
+  "plugin": "ROT_02",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.ROT_02"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_ROT_02",
+  "plugin": "ROT_02",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 25.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.ROT_02"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_ROT_02",
+  "plugin": "ROT_02",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 10.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   },
+   {
+    "side": "below",
+    "type": "WDRotaryVehicleBehaviourEffect",
+    "values": {
+     "ModifierValue": 0.0
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.ROT_02"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_ROT_02",
+  "plugin": "ROT_02",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 90.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.1
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.FuelComponent"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_ROT_02",
+  "plugin": "ROT_02",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.4
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_ROT_02",
+  "plugin": "ROT_02",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.5
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_ROT_02",
+  "plugin": "ROT_02",
+  "attribute": "Attribute.Gameplay.Health.Rotor.Main",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDRotaryVehicleBehaviourEffect",
+    "values": {
+     "ModifierValue": -0.05
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.MainRotor"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_ROT_02",
+  "plugin": "ROT_02",
+  "attribute": "Attribute.Gameplay.Health.Rotor.Main",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDRotaryVehicleBehaviourEffect",
+    "values": {
+     "ModifierValue": -0.75
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_ROT_02",
+  "plugin": "ROT_02",
+  "attribute": "Attribute.Gameplay.Health.Rotor.Main",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.MainRotor"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_ROT_02",
+  "plugin": "ROT_02",
+  "attribute": "Attribute.Gameplay.Health.Rotor.Main",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": false,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "above",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToRemove": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.MainRotor"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_ROT_02",
+  "plugin": "ROT_02",
+  "attribute": "Attribute.Gameplay.Health.Rotor.Tail",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDRotaryVehicleBehaviourEffect",
+    "values": {
+     "ModifierType": "EWDRotaryModifier::TailRotorRPMMultiplier",
+     "ModifierValue": -0.025
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDRotaryDisableAssistsEffect",
+    "values": {}
+   },
+   {
+    "side": "below",
+    "type": "WDRotaryVehicleBehaviourEffect",
+    "values": {
+     "ModifierValue": -0.1
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.TailRotor.ROT_02"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_ROT_02",
+  "plugin": "ROT_02",
+  "attribute": "Attribute.Gameplay.Health.Rotor.Tail",
+  "threshold": 25.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDRotaryVehicleBehaviourEffect",
+    "values": {
+     "ModifierType": "EWDRotaryModifier::TailRotorRPMMultiplier",
+     "ModifierValue": -0.1
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDRotaryDisableAssistsEffect",
+    "values": {}
+   },
+   {
+    "side": "below",
+    "type": "WDRotaryDisableAssistsEffect",
+    "values": {
+     "Assist": "EWDRotaryAssistType::Collective"
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_ROT_02",
+  "plugin": "ROT_02",
+  "attribute": "Attribute.Gameplay.Health.Rotor.Tail",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDRotaryVehicleBehaviourEffect",
+    "values": {
+     "ModifierType": "EWDRotaryModifier::TailRotorRPMMultiplier",
+     "ModifierValue": -1.2
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_ROT_02",
+  "plugin": "ROT_02",
+  "attribute": "Attribute.Gameplay.Health.Rotor.Tail",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.TailRotor"
+     ],
+     "GameplayCuesToRemove": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.TailRotor.ROT_02"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_ROT_02",
+  "plugin": "ROT_02",
+  "attribute": "Attribute.Gameplay.Health.Rotor.Tail",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": false,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "above",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToRemove": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.TailRotor"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_ROT_02",
+  "plugin": "ROT_02",
+  "attribute": "Attribute.Gameplay.Health.Engine",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_ROT_03",
+  "plugin": "ROT_03",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.ROT_03"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_ROT_03",
+  "plugin": "ROT_03",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 25.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.ROT_03"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_ROT_03",
+  "plugin": "ROT_03",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 10.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   },
+   {
+    "side": "below",
+    "type": "WDRotaryVehicleBehaviourEffect",
+    "values": {
+     "ModifierValue": 0.0
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.ROT_03"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_ROT_03",
+  "plugin": "ROT_03",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 10.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.1
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.FuelComponent"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_ROT_03",
+  "plugin": "ROT_03",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.75
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_ROT_03",
+  "plugin": "ROT_03",
+  "attribute": "Attribute.Gameplay.Health.Rotor.Main",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDRotaryVehicleBehaviourEffect",
+    "values": {
+     "ModifierValue": -0.05
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.MainRotor"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_ROT_03",
+  "plugin": "ROT_03",
+  "attribute": "Attribute.Gameplay.Health.Rotor.Main",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDRotaryVehicleBehaviourEffect",
+    "values": {
+     "ModifierValue": -0.75
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_ROT_03",
+  "plugin": "ROT_03",
+  "attribute": "Attribute.Gameplay.Health.Rotor.Main",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.MainRotor"
+     ],
+     "GameplayCuesToRemove": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.MainRotor"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_ROT_03",
+  "plugin": "ROT_03",
+  "attribute": "Attribute.Gameplay.Health.Rotor.Main",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": false,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "above",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToRemove": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.MainRotor"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_ROT_03",
+  "plugin": "ROT_03",
+  "attribute": "Attribute.Gameplay.Health.Rotor.Tail",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDRotaryVehicleBehaviourEffect",
+    "values": {
+     "ModifierType": "EWDRotaryModifier::TailRotorRPMMultiplier",
+     "ModifierValue": -0.025
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDRotaryDisableAssistsEffect",
+    "values": {}
+   },
+   {
+    "side": "below",
+    "type": "WDRotaryVehicleBehaviourEffect",
+    "values": {
+     "ModifierValue": -0.1
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.TailRotor"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_ROT_03",
+  "plugin": "ROT_03",
+  "attribute": "Attribute.Gameplay.Health.Rotor.Tail",
+  "threshold": 25.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDRotaryVehicleBehaviourEffect",
+    "values": {
+     "ModifierType": "EWDRotaryModifier::TailRotorRPMMultiplier",
+     "ModifierValue": -0.1
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDRotaryDisableAssistsEffect",
+    "values": {}
+   },
+   {
+    "side": "below",
+    "type": "WDRotaryDisableAssistsEffect",
+    "values": {
+     "Assist": "EWDRotaryAssistType::Collective"
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_ROT_03",
+  "plugin": "ROT_03",
+  "attribute": "Attribute.Gameplay.Health.Rotor.Tail",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDRotaryVehicleBehaviourEffect",
+    "values": {
+     "ModifierType": "EWDRotaryModifier::TailRotorRPMMultiplier",
+     "ModifierValue": -1.2
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_ROT_03",
+  "plugin": "ROT_03",
+  "attribute": "Attribute.Gameplay.Health.Rotor.Tail",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.TailRotor"
+     ],
+     "GameplayCuesToRemove": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.TailRotor"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_ROT_03",
+  "plugin": "ROT_03",
+  "attribute": "Attribute.Gameplay.Health.Rotor.Tail",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": false,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "above",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToRemove": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.TailRotor"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_ROT_03",
+  "plugin": "ROT_03",
+  "attribute": "Attribute.Gameplay.Health.Engine",
+  "threshold": 20.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.Engine.ROT_03"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDRotaryVehicleBehaviourEffect",
+    "values": {
+     "ModifierValue": -0.4
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_ROT_03",
+  "plugin": "ROT_03",
+  "attribute": "Attribute.Gameplay.Health.Engine",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   }
+  ]
+ },
+ {
+  "asset": "DA_ROT_04_GameplaySystems",
+  "plugin": "ROT_04",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.ROT_04"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_ROT_04_GameplaySystems",
+  "plugin": "ROT_04",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 25.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.ROT_04"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_ROT_04_GameplaySystems",
+  "plugin": "ROT_04",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 10.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDRotaryVehicleBehaviourEffect",
+    "values": {
+     "ModifierValue": 0.0
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.ROT_04"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_ROT_04_GameplaySystems",
+  "plugin": "ROT_04",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 90.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.1
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.FuelComponent"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_ROT_04_GameplaySystems",
+  "plugin": "ROT_04",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.4
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_ROT_04_GameplaySystems",
+  "plugin": "ROT_04",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.5
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_ROT_04_GameplaySystems",
+  "plugin": "ROT_04",
+  "attribute": "Attribute.Gameplay.Health.Rotor.Main",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDRotaryVehicleBehaviourEffect",
+    "values": {
+     "ModifierValue": -0.05
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.MainRotor"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_ROT_04_GameplaySystems",
+  "plugin": "ROT_04",
+  "attribute": "Attribute.Gameplay.Health.Rotor.Main",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDRotaryVehicleBehaviourEffect",
+    "values": {
+     "ModifierValue": -0.75
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_ROT_04_GameplaySystems",
+  "plugin": "ROT_04",
+  "attribute": "Attribute.Gameplay.Health.Rotor.Main",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.MainRotor"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_ROT_04_GameplaySystems",
+  "plugin": "ROT_04",
+  "attribute": "Attribute.Gameplay.Health.Rotor.Main",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": false,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "above",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToRemove": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.MainRotor"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_ROT_04_GameplaySystems",
+  "plugin": "ROT_04",
+  "attribute": "Attribute.Gameplay.Health.Rotor.Tail",
+  "threshold": 30.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDRotaryVehicleBehaviourEffect",
+    "values": {
+     "ModifierType": "EWDRotaryModifier::TailRotorRPMMultiplier",
+     "ModifierValue": -0.1
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDRotaryDisableAssistsEffect",
+    "values": {}
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.TailRotor"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_ROT_04_GameplaySystems",
+  "plugin": "ROT_04",
+  "attribute": "Attribute.Gameplay.Health.Rotor.Tail",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDRotaryVehicleBehaviourEffect",
+    "values": {
+     "ModifierType": "EWDRotaryModifier::TailRotorRPMMultiplier",
+     "ModifierValue": -0.9
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_ROT_04_GameplaySystems",
+  "plugin": "ROT_04",
+  "attribute": "Attribute.Gameplay.Health.Rotor.Tail",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.TailRotor"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_ROT_04_GameplaySystems",
+  "plugin": "ROT_04",
+  "attribute": "Attribute.Gameplay.Health.Rotor.Tail",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": false,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "above",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToRemove": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.TailRotor"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_ROT_04_GameplaySystems",
+  "plugin": "ROT_04",
+  "attribute": "Attribute.Gameplay.Health.Engine",
+  "threshold": 20.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.Engine.ROT_04"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_ROT_04_GameplaySystems",
+  "plugin": "ROT_04",
+  "attribute": "Attribute.Gameplay.Health.Engine",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_SPW",
+  "plugin": "SPW_01",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.SPW_01"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_SPW",
+  "plugin": "SPW_01",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 10.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.PostDestroyed.PZH2000"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_SPW",
+  "plugin": "SPW_01",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 90.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.1
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.FuelComponent"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_SPW",
+  "plugin": "SPW_01",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.4
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_SPW",
+  "plugin": "SPW_01",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.5
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_SPW",
+  "plugin": "SPW_01",
+  "attribute": "Attribute.Gameplay.Health.Tracks.Right",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDTrackedVehicleTrackSpeedEffect",
+    "values": {
+     "TrackSide": "ETrackSide::Right"
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.Tracks.Right"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_SPW",
+  "plugin": "SPW_01",
+  "attribute": "Attribute.Gameplay.Health.Tracks.Right",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": false,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "above",
+    "type": "WDTrackedVehicleTrackSpeedEffect",
+    "values": {
+     "TrackSide": "ETrackSide::Right",
+     "TrackSpeedModifier": 1.0
+    }
+   },
+   {
+    "side": "above",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToRemove": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.Tracks.Right"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_SPW",
+  "plugin": "SPW_01",
+  "attribute": "Attribute.Gameplay.Health.Tracks.Left",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDTrackedVehicleTrackSpeedEffect",
+    "values": {}
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.Tracks.Left"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_SPW",
+  "plugin": "SPW_01",
+  "attribute": "Attribute.Gameplay.Health.Tracks.Left",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": false,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "above",
+    "type": "WDTrackedVehicleTrackSpeedEffect",
+    "values": {
+     "TrackSpeedModifier": 1.0
+    }
+   },
+   {
+    "side": "above",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToRemove": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.Tracks.Left"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_SPW",
+  "plugin": "SPW_01",
+  "attribute": "Attribute.Gameplay.Health.Radar",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.Radar"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_SPW",
+  "plugin": "SPW_01",
+  "attribute": "Attribute.Gameplay.Health.Radar",
+  "threshold": 25.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.Radar.HeavyDamage"
+     ],
+     "GameplayCuesToRemove": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.Radar"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_SPW",
+  "plugin": "SPW_01",
+  "attribute": "Attribute.Gameplay.Health.Radar",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.Radar"
+     ],
+     "GameplayCuesToRemove": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.Radar.HeavyDamage"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_SPW",
+  "plugin": "SPW_01",
+  "attribute": "Attribute.Gameplay.Health.Radar",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": false,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "above",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToRemove": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.Radar"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_STN_02",
+  "plugin": "STN_02",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 1.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Destroyed.STN_02"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_STN_06",
+  "plugin": "STN_06",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 1.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Destroyed.STN_06"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_03",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health.Engine",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.TNK_01"
+     ]
+    }
+   },
+   {
+    "side": "above",
+    "type": "WDVehicleEngineEffect",
+    "values": {
+     "bIsDestroyed": false
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_03",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health.Engine",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_03",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 80.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.25
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.FuelComponent"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_03",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 1.0
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_03",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 3.0
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_03",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health.Tracks.Right",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDTrackedVehicleTrackSpeedEffect",
+    "values": {
+     "TrackSide": "ETrackSide::Right"
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.Tracks.Right"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_03",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health.Tracks.Right",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": false,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "above",
+    "type": "WDTrackedVehicleTrackSpeedEffect",
+    "values": {
+     "TrackSide": "ETrackSide::Right",
+     "TrackSpeedModifier": 1.0
+    }
+   },
+   {
+    "side": "above",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToRemove": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.Tracks.Right"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_03",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health.Tracks.Left",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDTrackedVehicleTrackSpeedEffect",
+    "values": {}
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.Tracks.Left"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_03",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health.Tracks.Left",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": false,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "above",
+    "type": "WDTrackedVehicleTrackSpeedEffect",
+    "values": {
+     "TrackSpeedModifier": 1.0
+    }
+   },
+   {
+    "side": "above",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToRemove": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.Tracks.Left"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_03",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.TNK_01"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_03",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 25.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.TNK_01"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDVehicleTurretEffect",
+    "values": {
+     "bStabilisationPermitted": false
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_03",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 10.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.TNK_01"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_01_Artillery",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health.Engine",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.TNK_01"
+     ]
+    }
+   },
+   {
+    "side": "above",
+    "type": "WDVehicleEngineEffect",
+    "values": {
+     "bIsDestroyed": false
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_01_Artillery",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health.Engine",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_01_Artillery",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 90.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.1
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.FuelComponent"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_01_Artillery",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.4
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_01_Artillery",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.5
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_01_Artillery",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health.Tracks.Right",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDTrackedVehicleTrackSpeedEffect",
+    "values": {
+     "TrackSide": "ETrackSide::Right"
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.Tracks.Right"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_01_Artillery",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health.Tracks.Right",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": false,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "above",
+    "type": "WDTrackedVehicleTrackSpeedEffect",
+    "values": {
+     "TrackSide": "ETrackSide::Right",
+     "TrackSpeedModifier": 1.0
+    }
+   },
+   {
+    "side": "above",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToRemove": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.Tracks.Right"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_01_Artillery",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health.Tracks.Left",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDTrackedVehicleTrackSpeedEffect",
+    "values": {}
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.Tracks.Left"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_01_Artillery",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health.Tracks.Left",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": false,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "above",
+    "type": "WDTrackedVehicleTrackSpeedEffect",
+    "values": {
+     "TrackSpeedModifier": 1.0
+    }
+   },
+   {
+    "side": "above",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToRemove": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.Tracks.Left"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_01_Artillery",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.TNK_01"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_01_Artillery",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 25.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.TNK_01"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDVehicleTurretEffect",
+    "values": {
+     "bStabilisationPermitted": false
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_01_Artillery",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 10.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.TNK_01"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_01_Heavy",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health.Engine",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.TNK_01"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDTrackedVehicleTrackSpeedEffect",
+    "values": {
+     "TrackSpeedModifier": 0.6
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDTrackedVehicleTrackSpeedEffect",
+    "values": {
+     "TrackSide": "ETrackSide::Right",
+     "TrackSpeedModifier": 0.6
+    }
+   },
+   {
+    "side": "above",
+    "type": "WDVehicleEngineEffect",
+    "values": {
+     "bIsDestroyed": false
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_01_Heavy",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health.Engine",
+  "threshold": 5.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_01_Heavy",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 80.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.25
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.FuelComponent"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_01_Heavy",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 1.0
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_01_Heavy",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 3.0
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_01_Heavy",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health.Tracks.Right",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDTrackedVehicleTrackSpeedEffect",
+    "values": {
+     "TrackSide": "ETrackSide::Right"
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.Tracks.Right"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_01_Heavy",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health.Tracks.Right",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": false,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "above",
+    "type": "WDTrackedVehicleTrackSpeedEffect",
+    "values": {
+     "TrackSide": "ETrackSide::Right",
+     "TrackSpeedModifier": 1.0
+    }
+   },
+   {
+    "side": "above",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToRemove": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.Tracks.Right"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_01_Heavy",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health.Tracks.Left",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDTrackedVehicleTrackSpeedEffect",
+    "values": {}
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.Tracks.Left"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_01_Heavy",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health.Tracks.Left",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": false,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "above",
+    "type": "WDTrackedVehicleTrackSpeedEffect",
+    "values": {
+     "TrackSpeedModifier": 1.0
+    }
+   },
+   {
+    "side": "above",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToRemove": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.Tracks.Left"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_01_Heavy",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.TNK_01"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_01_Heavy",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 25.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.TNK_01"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDVehicleTurretEffect",
+    "values": {
+     "bStabilisationPermitted": false
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_01_Heavy",
+  "plugin": "TNK_01",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 10.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.TNK_01"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_04",
+  "plugin": "TNK_04",
+  "attribute": "Attribute.Gameplay.Health.Engine",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.TNK_04"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDTrackedVehicleTrackSpeedEffect",
+    "values": {
+     "TrackSpeedModifier": 0.6
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDTrackedVehicleTrackSpeedEffect",
+    "values": {
+     "TrackSide": "ETrackSide::Right",
+     "TrackSpeedModifier": 0.6
+    }
+   },
+   {
+    "side": "above",
+    "type": "WDVehicleEngineEffect",
+    "values": {
+     "bIsDestroyed": false
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_04",
+  "plugin": "TNK_04",
+  "attribute": "Attribute.Gameplay.Health.Engine",
+  "threshold": 5.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_04",
+  "plugin": "TNK_04",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 80.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.25
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.FuelComponent"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_04",
+  "plugin": "TNK_04",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 1.0
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_04",
+  "plugin": "TNK_04",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 3.0
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_04",
+  "plugin": "TNK_04",
+  "attribute": "Attribute.Gameplay.Health.Tracks.Right",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDTrackedVehicleTrackSpeedEffect",
+    "values": {
+     "TrackSide": "ETrackSide::Right"
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.Tracks.Right.TNK_04"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_04",
+  "plugin": "TNK_04",
+  "attribute": "Attribute.Gameplay.Health.Tracks.Right",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": false,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "above",
+    "type": "WDTrackedVehicleTrackSpeedEffect",
+    "values": {
+     "TrackSide": "ETrackSide::Right",
+     "TrackSpeedModifier": 1.0
+    }
+   },
+   {
+    "side": "above",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToRemove": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.Tracks.Right.TNK_04"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_04",
+  "plugin": "TNK_04",
+  "attribute": "Attribute.Gameplay.Health.Tracks.Left",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDTrackedVehicleTrackSpeedEffect",
+    "values": {}
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.Tracks.Left.TNK_04"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_04",
+  "plugin": "TNK_04",
+  "attribute": "Attribute.Gameplay.Health.Tracks.Left",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": false,
+  "removedInReverse": false,
+  "effects": [
+   {
+    "side": "above",
+    "type": "WDTrackedVehicleTrackSpeedEffect",
+    "values": {
+     "TrackSpeedModifier": 1.0
+    }
+   },
+   {
+    "side": "above",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToRemove": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.Tracks.Left.TNK_04"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_04",
+  "plugin": "TNK_04",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.TNK_04"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_04",
+  "plugin": "TNK_04",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 25.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.TNK_04"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDVehicleTurretEffect",
+    "values": {
+     "bStabilisationPermitted": false
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_TNK_04",
+  "plugin": "TNK_04",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 10.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.TNK_04"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_WHL_01_GameplaySystems",
+  "plugin": "WHL_01",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.WHL_01"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_WHL_01_GameplaySystems",
+  "plugin": "WHL_01",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 25.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.WHL_01"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   }
+  ]
+ },
+ {
+  "asset": "DA_WHL_01_GameplaySystems",
+  "plugin": "WHL_01",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 10.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.WHL_01"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_WHL_01_GameplaySystems",
+  "plugin": "WHL_01",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 90.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.1
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.FuelComponent"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_WHL_01_GameplaySystems",
+  "plugin": "WHL_01",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.4
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_WHL_01_GameplaySystems",
+  "plugin": "WHL_01",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.5
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_WHL_01_GameplaySystems",
+  "plugin": "WHL_01",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Left.Front",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "ModifierAmount": -0.125
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Left.Front"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "DragAdditive": 1.5
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "FrictionMultiplierAdditive": -0.35
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.05
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_WHL_01_GameplaySystems",
+  "plugin": "WHL_01",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Left.Front",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": []
+ },
+ {
+  "asset": "DA_WHL_01_GameplaySystems",
+  "plugin": "WHL_01",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Left.Rear",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Left.Rear"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "AxlePosition": 1,
+     "DragAdditive": 1.75
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "AxlePosition": 1,
+     "FrictionMultiplierAdditive": -0.35
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.1
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_WHL_01_GameplaySystems",
+  "plugin": "WHL_01",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Left.Rear",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": []
+ },
+ {
+  "asset": "DA_WHL_01_GameplaySystems",
+  "plugin": "WHL_01",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Right.Front",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "ModifierAmount": 0.125
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Right.Front"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "WheelSide": "EMWheelSide::Right",
+     "DragAdditive": 1.5
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "WheelSide": "EMWheelSide::Right",
+     "FrictionMultiplierAdditive": -0.35
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.05
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_WHL_01_GameplaySystems",
+  "plugin": "WHL_01",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Right.Front",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": []
+ },
+ {
+  "asset": "DA_WHL_01_GameplaySystems",
+  "plugin": "WHL_01",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Right.Rear",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Right.Rear"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "AxlePosition": 1,
+     "WheelSide": "EMWheelSide::Right",
+     "DragAdditive": 1.75
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "AxlePosition": 1,
+     "WheelSide": "EMWheelSide::Right",
+     "FrictionMultiplierAdditive": -0.35
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.1
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_WHL_01_GameplaySystems",
+  "plugin": "WHL_01",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Right.Rear",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": []
+ },
+ {
+  "asset": "DA_WHL_01_GameplaySystems",
+  "plugin": "WHL_01",
+  "attribute": "Attribute.Gameplay.Health.Engine",
+  "threshold": 20.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.Engine.WHL_01"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Throttle",
+     "ModifierAmount": 0.8
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_WHL_01_GameplaySystems",
+  "plugin": "WHL_01",
+  "attribute": "Attribute.Gameplay.Health.Engine",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_02",
+  "plugin": "WHL_02",
+  "attribute": "Attribute.Gameplay.Health.Engine",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.WHL_02"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_02",
+  "plugin": "WHL_02",
+  "attribute": "Attribute.Gameplay.Health.Engine",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_02",
+  "plugin": "WHL_02",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 80.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.25
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.FuelComponent"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_02",
+  "plugin": "WHL_02",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.75
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_02",
+  "plugin": "WHL_02",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 2.0
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_02",
+  "plugin": "WHL_02",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Left.Front",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": []
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_02",
+  "plugin": "WHL_02",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Left.Front",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": []
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_02",
+  "plugin": "WHL_02",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Left.Rear",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Left.Rear"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "AxlePosition": 1,
+     "DragAdditive": 1.75
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "AxlePosition": 1,
+     "FrictionMultiplierAdditive": -0.35
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.1
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_02",
+  "plugin": "WHL_02",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Left.Rear",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": []
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_02",
+  "plugin": "WHL_02",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Right.Front",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": []
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_02",
+  "plugin": "WHL_02",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Right.Front",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": []
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_02",
+  "plugin": "WHL_02",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Right.Rear",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Right.Rear"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "AxlePosition": 1,
+     "WheelSide": "EMWheelSide::Right",
+     "DragAdditive": 1.75
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "AxlePosition": 1,
+     "WheelSide": "EMWheelSide::Right",
+     "FrictionMultiplierAdditive": -0.35
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.1
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_02",
+  "plugin": "WHL_02",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Right.Rear",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": []
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_02",
+  "plugin": "WHL_02",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.WHL_02"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Throttle",
+     "ModifierAmount": 0.25
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_02",
+  "plugin": "WHL_02",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 25.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.WHL_02"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Throttle",
+     "ModifierAmount": 1.0
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_02",
+  "plugin": "WHL_02",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 10.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.WHL_02"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee",
+  "plugin": "WHL_05",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.WHL_05"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Throttle",
+     "ModifierAmount": 0.35
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee",
+  "plugin": "WHL_05",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 25.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.WHL_05"
+     ],
+     "GameplayCuesToRemove": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.Engine.WHL_05.Minor"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Throttle",
+     "ModifierAmount": 1.0
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee",
+  "plugin": "WHL_05",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 10.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.WHL_05"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee",
+  "plugin": "WHL_05",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 80.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.25
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.FuelComponent"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee",
+  "plugin": "WHL_05",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.75
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee",
+  "plugin": "WHL_05",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 2.0
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee",
+  "plugin": "WHL_05",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Left.Front",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "ModifierAmount": -0.125
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Left.Front"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "DragAdditive": 1.5
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "FrictionMultiplierAdditive": -0.35
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.05
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee",
+  "plugin": "WHL_05",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Left.Front",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": []
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee",
+  "plugin": "WHL_05",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Left.Rear",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Left.Rear"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "AxlePosition": 1,
+     "DragAdditive": 1.75
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "AxlePosition": 1,
+     "FrictionMultiplierAdditive": -0.35
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.1
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee",
+  "plugin": "WHL_05",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Left.Rear",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": []
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee",
+  "plugin": "WHL_05",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Right.Front",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "ModifierAmount": 0.125
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Right.Front"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "WheelSide": "EMWheelSide::Right",
+     "DragAdditive": 1.5
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "WheelSide": "EMWheelSide::Right",
+     "FrictionMultiplierAdditive": -0.35
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.05
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee",
+  "plugin": "WHL_05",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Right.Front",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": []
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee",
+  "plugin": "WHL_05",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Right.Rear",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Right.Rear"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "AxlePosition": 1,
+     "WheelSide": "EMWheelSide::Right",
+     "DragAdditive": 1.75
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "AxlePosition": 1,
+     "WheelSide": "EMWheelSide::Right",
+     "FrictionMultiplierAdditive": -0.35
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.1
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee",
+  "plugin": "WHL_05",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Right.Rear",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": []
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee",
+  "plugin": "WHL_05",
+  "attribute": "Attribute.Gameplay.Health.Engine",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.Engine.WHL_05"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Throttle",
+     "ModifierAmount": 0.8
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee",
+  "plugin": "WHL_05",
+  "attribute": "Attribute.Gameplay.Health.Engine",
+  "threshold": 25.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Throttle"
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee",
+  "plugin": "WHL_05",
+  "attribute": "Attribute.Gameplay.Health.Engine",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee_Minigun",
+  "plugin": "WHL_05",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.WHL_05"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Throttle",
+     "ModifierAmount": 0.35
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee_Minigun",
+  "plugin": "WHL_05",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 25.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.WHL_05"
+     ],
+     "GameplayCuesToRemove": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.Engine.WHL_05.Minor"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Throttle",
+     "ModifierAmount": 1.0
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee_Minigun",
+  "plugin": "WHL_05",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 10.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.WHL_05"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee_Minigun",
+  "plugin": "WHL_05",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 80.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.25
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.FuelComponent"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee_Minigun",
+  "plugin": "WHL_05",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.75
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee_Minigun",
+  "plugin": "WHL_05",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 2.0
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee_Minigun",
+  "plugin": "WHL_05",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Left.Front",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "ModifierAmount": -0.05
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Left.Front"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "DragAdditive": 1.5
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "FrictionMultiplierAdditive": -0.35
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.05
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee_Minigun",
+  "plugin": "WHL_05",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Left.Front",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "ModifierAmount": -0.1
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDVehicleWheelGameplayCueEffect",
+    "values": {
+     "WheelDataIndex": 0,
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.Wheel.Left.Front"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Throttle",
+     "ModifierAmount": 0.15
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "DragAdditive": -0.5
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "FrictionMultiplierAdditive": -0.5
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.15
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee_Minigun",
+  "plugin": "WHL_05",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Left.Rear",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Left.Rear"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "AxlePosition": 1,
+     "DragAdditive": 1.75
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "AxlePosition": 1,
+     "FrictionMultiplierAdditive": -0.35
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.1
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee_Minigun",
+  "plugin": "WHL_05",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Left.Rear",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.25
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDVehicleWheelGameplayCueEffect",
+    "values": {
+     "WheelDataIndex": 2,
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.Wheel.Left.Rear"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "AxlePosition": 1,
+     "DragAdditive": -1.75
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "AxlePosition": 1,
+     "FrictionMultiplierAdditive": -0.5
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee_Minigun",
+  "plugin": "WHL_05",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Right.Front",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "ModifierAmount": 0.05
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Right.Front"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "WheelSide": "EMWheelSide::Right",
+     "DragAdditive": 1.5
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "WheelSide": "EMWheelSide::Right",
+     "FrictionMultiplierAdditive": -0.35
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.05
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee_Minigun",
+  "plugin": "WHL_05",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Right.Front",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "ModifierAmount": 0.1
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDVehicleWheelGameplayCueEffect",
+    "values": {
+     "WheelDataIndex": 1,
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.Wheel.Right.Front"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Throttle",
+     "ModifierAmount": 0.15
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "WheelSide": "EMWheelSide::Right",
+     "DragAdditive": -0.5
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "WheelSide": "EMWheelSide::Right",
+     "FrictionMultiplierAdditive": -0.5
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.15
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee_Minigun",
+  "plugin": "WHL_05",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Right.Rear",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Right.Rear"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "AxlePosition": 1,
+     "WheelSide": "EMWheelSide::Right",
+     "DragAdditive": 1.75
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "AxlePosition": 1,
+     "WheelSide": "EMWheelSide::Right",
+     "FrictionMultiplierAdditive": -0.35
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.1
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee_Minigun",
+  "plugin": "WHL_05",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Right.Rear",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.25
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDVehicleWheelGameplayCueEffect",
+    "values": {
+     "WheelDataIndex": 3,
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.Wheel.Right.Rear"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "AxlePosition": 1,
+     "WheelSide": "EMWheelSide::Right",
+     "DragAdditive": -1.75
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "AxlePosition": 1,
+     "WheelSide": "EMWheelSide::Right",
+     "FrictionMultiplierAdditive": -0.5
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee_Minigun",
+  "plugin": "WHL_05",
+  "attribute": "Attribute.Gameplay.Health.Engine",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.Engine.WHL_05"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Throttle",
+     "ModifierAmount": 0.8
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee_Minigun",
+  "plugin": "WHL_05",
+  "attribute": "Attribute.Gameplay.Health.Engine",
+  "threshold": 25.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Throttle"
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee_Minigun",
+  "plugin": "WHL_05",
+  "attribute": "Attribute.Gameplay.Health.Engine",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee_RingTurret",
+  "plugin": "WHL_05_RingTurret",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.WHL_05"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Throttle",
+     "ModifierAmount": 0.35
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee_RingTurret",
+  "plugin": "WHL_05_RingTurret",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 25.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.WHL_05"
+     ],
+     "GameplayCuesToRemove": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.Engine.WHL_05.Minor"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Throttle",
+     "ModifierAmount": 1.0
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee_RingTurret",
+  "plugin": "WHL_05_RingTurret",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 10.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.WHL_05"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee_RingTurret",
+  "plugin": "WHL_05_RingTurret",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 80.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.25
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.FuelComponent"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee_RingTurret",
+  "plugin": "WHL_05_RingTurret",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.75
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee_RingTurret",
+  "plugin": "WHL_05_RingTurret",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 2.0
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee_RingTurret",
+  "plugin": "WHL_05_RingTurret",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Left.Front",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "ModifierAmount": -0.05
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Left.Front"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "DragAdditive": 1.5
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "FrictionMultiplierAdditive": -0.35
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.05
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee_RingTurret",
+  "plugin": "WHL_05_RingTurret",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Left.Front",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "ModifierAmount": -0.1
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDVehicleWheelGameplayCueEffect",
+    "values": {
+     "WheelDataIndex": 0,
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.Wheel.Left.Front"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Throttle",
+     "ModifierAmount": 0.15
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "DragAdditive": -0.5
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "FrictionMultiplierAdditive": -0.5
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.15
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee_RingTurret",
+  "plugin": "WHL_05_RingTurret",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Left.Rear",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Left.Rear"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "AxlePosition": 1,
+     "DragAdditive": 1.75
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "AxlePosition": 1,
+     "FrictionMultiplierAdditive": -0.35
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.1
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee_RingTurret",
+  "plugin": "WHL_05_RingTurret",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Left.Rear",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.25
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDVehicleWheelGameplayCueEffect",
+    "values": {
+     "WheelDataIndex": 2,
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.Wheel.Left.Rear"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "AxlePosition": 1,
+     "DragAdditive": -1.75
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "AxlePosition": 1,
+     "FrictionMultiplierAdditive": -0.5
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee_RingTurret",
+  "plugin": "WHL_05_RingTurret",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Right.Front",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "ModifierAmount": 0.05
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Right.Front"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "WheelSide": "EMWheelSide::Right",
+     "DragAdditive": 1.5
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "WheelSide": "EMWheelSide::Right",
+     "FrictionMultiplierAdditive": -0.35
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.05
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee_RingTurret",
+  "plugin": "WHL_05_RingTurret",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Right.Front",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "ModifierAmount": 0.1
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDVehicleWheelGameplayCueEffect",
+    "values": {
+     "WheelDataIndex": 1,
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.Wheel.Right.Front"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Throttle",
+     "ModifierAmount": 0.15
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "WheelSide": "EMWheelSide::Right",
+     "DragAdditive": -0.5
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "WheelSide": "EMWheelSide::Right",
+     "FrictionMultiplierAdditive": -0.5
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.15
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee_RingTurret",
+  "plugin": "WHL_05_RingTurret",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Right.Rear",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Right.Rear"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "AxlePosition": 1,
+     "WheelSide": "EMWheelSide::Right",
+     "DragAdditive": 1.75
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "AxlePosition": 1,
+     "WheelSide": "EMWheelSide::Right",
+     "FrictionMultiplierAdditive": -0.35
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.1
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee_RingTurret",
+  "plugin": "WHL_05_RingTurret",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Right.Rear",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.25
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDVehicleWheelGameplayCueEffect",
+    "values": {
+     "WheelDataIndex": 3,
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.Wheel.Right.Rear"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "AxlePosition": 1,
+     "WheelSide": "EMWheelSide::Right",
+     "DragAdditive": -1.75
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "AxlePosition": 1,
+     "WheelSide": "EMWheelSide::Right",
+     "FrictionMultiplierAdditive": -0.5
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee_RingTurret",
+  "plugin": "WHL_05_RingTurret",
+  "attribute": "Attribute.Gameplay.Health.Engine",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.Engine.WHL_05"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Throttle",
+     "ModifierAmount": 0.8
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee_RingTurret",
+  "plugin": "WHL_05_RingTurret",
+  "attribute": "Attribute.Gameplay.Health.Engine",
+  "threshold": 25.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Throttle"
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_05_Humvee_RingTurret",
+  "plugin": "WHL_05_RingTurret",
+  "attribute": "Attribute.Gameplay.Health.Engine",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_06_DuneBuggy",
+  "plugin": "WHL_06",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.WHL_06"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Throttle",
+     "ModifierAmount": 0.45
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_06_DuneBuggy",
+  "plugin": "WHL_06",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 25.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.WHL_06"
+     ],
+     "GameplayCuesToRemove": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.Engine.WHL_06.Minor"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Throttle",
+     "ModifierAmount": 1.0
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_06_DuneBuggy",
+  "plugin": "WHL_06",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 10.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.WHL_06"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_06_DuneBuggy",
+  "plugin": "WHL_06",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 80.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.25
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.FuelComponent"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_06_DuneBuggy",
+  "plugin": "WHL_06",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.75
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_06_DuneBuggy",
+  "plugin": "WHL_06",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 3.0
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_06_DuneBuggy",
+  "plugin": "WHL_06",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Left.Front",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "ModifierAmount": -0.125
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Left.Front"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "DragAdditive": 1.5
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "FrictionMultiplierAdditive": -0.35
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.05
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_06_DuneBuggy",
+  "plugin": "WHL_06",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Left.Front",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": []
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_06_DuneBuggy",
+  "plugin": "WHL_06",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Left.Rear",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Left.Rear"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "AxlePosition": 1,
+     "DragAdditive": 1.75
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "AxlePosition": 1,
+     "FrictionMultiplierAdditive": -0.35
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.1
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_06_DuneBuggy",
+  "plugin": "WHL_06",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Left.Rear",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": []
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_06_DuneBuggy",
+  "plugin": "WHL_06",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Right.Front",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "ModifierAmount": 0.125
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Right.Front"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "WheelSide": "EMWheelSide::Right",
+     "DragAdditive": 1.5
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "WheelSide": "EMWheelSide::Right",
+     "FrictionMultiplierAdditive": -0.35
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.05
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_06_DuneBuggy",
+  "plugin": "WHL_06",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Right.Front",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": []
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_06_DuneBuggy",
+  "plugin": "WHL_06",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Right.Rear",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Right.Rear"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "AxlePosition": 1,
+     "WheelSide": "EMWheelSide::Right",
+     "DragAdditive": 1.75
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "AxlePosition": 1,
+     "WheelSide": "EMWheelSide::Right",
+     "FrictionMultiplierAdditive": -0.35
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.1
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_06_DuneBuggy",
+  "plugin": "WHL_06",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Right.Rear",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": []
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_06_DuneBuggy",
+  "plugin": "WHL_06",
+  "attribute": "Attribute.Gameplay.Health.Engine",
+  "threshold": 20.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.Engine.WHL_06"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Throttle",
+     "ModifierAmount": 0.8
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_06_DuneBuggy",
+  "plugin": "WHL_06",
+  "attribute": "Attribute.Gameplay.Health.Engine",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_07",
+  "plugin": "WHL_07",
+  "attribute": "Attribute.Gameplay.Health.Engine",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.WHL_07"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_07",
+  "plugin": "WHL_07",
+  "attribute": "Attribute.Gameplay.Health.Engine",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_07",
+  "plugin": "WHL_07",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 80.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.25
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.FuelComponent"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_07",
+  "plugin": "WHL_07",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.75
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_07",
+  "plugin": "WHL_07",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 2.0
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_07",
+  "plugin": "WHL_07",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Left.Front",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "ModifierAmount": -0.125
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Left.Front"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "DragAdditive": 1.5
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "FrictionMultiplierAdditive": -0.35
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.05
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_07",
+  "plugin": "WHL_07",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Left.Front",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": []
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_07",
+  "plugin": "WHL_07",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Left.Rear",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Left.Rear"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "AxlePosition": 1,
+     "DragAdditive": 0.75
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "AxlePosition": 1,
+     "FrictionMultiplierAdditive": -0.35
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.05
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_07",
+  "plugin": "WHL_07",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Left.Rear",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": []
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_07",
+  "plugin": "WHL_07",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Right.Front",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "ModifierAmount": 0.125
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Right.Front"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "WheelSide": "EMWheelSide::Right",
+     "DragAdditive": 1.5
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "WheelSide": "EMWheelSide::Right",
+     "FrictionMultiplierAdditive": -0.35
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.05
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_07",
+  "plugin": "WHL_07",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Right.Front",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": []
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_07",
+  "plugin": "WHL_07",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Right.Rear",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Right.Rear"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "AxlePosition": 1,
+     "WheelSide": "EMWheelSide::Right",
+     "DragAdditive": 0.75
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "AxlePosition": 1,
+     "WheelSide": "EMWheelSide::Right",
+     "FrictionMultiplierAdditive": -0.35
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.05
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_07",
+  "plugin": "WHL_07",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Right.Rear",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": []
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_07",
+  "plugin": "WHL_07",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.WHL_07"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Throttle",
+     "ModifierAmount": 0.25
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_07",
+  "plugin": "WHL_07",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 25.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.WHL_07"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Throttle",
+     "ModifierAmount": 1.0
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_07",
+  "plugin": "WHL_07",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 10.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.WHL_07"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_07",
+  "plugin": "WHL_07",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Left.Middle",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Left.Rear"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "AxlePosition": 1,
+     "DragAdditive": 0.75
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "AxlePosition": 1,
+     "FrictionMultiplierAdditive": -0.35
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.05
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_07",
+  "plugin": "WHL_07",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Left.Middle",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": []
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_07",
+  "plugin": "WHL_07",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Right.Middle",
+  "threshold": 55.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Right.Rear"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "AxlePosition": 1,
+     "WheelSide": "EMWheelSide::Right",
+     "DragAdditive": 0.75
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "AxlePosition": 1,
+     "WheelSide": "EMWheelSide::Right",
+     "FrictionMultiplierAdditive": -0.35
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.05
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_07",
+  "plugin": "WHL_07",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Right.Middle",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": []
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_08",
+  "plugin": "WHL_08",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 50.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.WHL_08"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Throttle",
+     "ModifierAmount": 0.35
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_08",
+  "plugin": "WHL_08",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 25.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.WHL_08"
+     ],
+     "GameplayCuesToRemove": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.Engine.WHL_08.Minor"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Throttle",
+     "ModifierAmount": 1.0
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_08",
+  "plugin": "WHL_08",
+  "attribute": "Attribute.Gameplay.Health",
+  "threshold": 10.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.Smoking.WHL_08"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_08",
+  "plugin": "WHL_08",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 80.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.25
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.FuelComponent"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_08",
+  "plugin": "WHL_08",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 50.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 0.75
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_08",
+  "plugin": "WHL_08",
+  "attribute": "Attribute.Gameplay.Health.FuelTank",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDFuelComponentEffect",
+    "values": {
+     "FuelLeakPerSecondValue": 2.0
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_08",
+  "plugin": "WHL_08",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Left.Front",
+  "threshold": 50.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "ModifierAmount": -0.125
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Left.Front"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "DragAdditive": 2.0
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "FrictionMultiplierAdditive": -0.1
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.05
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_08",
+  "plugin": "WHL_08",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Left.Front",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "ModifierAmount": -0.2
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDVehicleWheelGameplayCueEffect",
+    "values": {
+     "WheelDataIndex": 0,
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.Wheel.Left.Front"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Throttle",
+     "ModifierAmount": 0.15
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "DragAdditive": 1.5
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "FrictionMultiplierAdditive": -0.1
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.15
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_08",
+  "plugin": "WHL_08",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Left.Rear",
+  "threshold": 50.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Left.Rear"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "AxlePosition": 1,
+     "DragAdditive": 2.0
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "AxlePosition": 1,
+     "FrictionMultiplierAdditive": -0.1
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.1
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_08",
+  "plugin": "WHL_08",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Left.Rear",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.25
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDVehicleWheelGameplayCueEffect",
+    "values": {
+     "WheelDataIndex": 2,
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.Wheel.Left.Rear"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "AxlePosition": 1,
+     "DragAdditive": 2.5
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "AxlePosition": 1,
+     "FrictionMultiplierAdditive": -0.15
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_08",
+  "plugin": "WHL_08",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Right.Front",
+  "threshold": 50.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "ModifierAmount": 0.125
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Right.Front"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "WheelSide": "EMWheelSide::Right",
+     "DragAdditive": 2.0
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "WheelSide": "EMWheelSide::Right",
+     "FrictionMultiplierAdditive": -0.1
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.05
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_08",
+  "plugin": "WHL_08",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Right.Front",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "ModifierAmount": 0.2
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDVehicleWheelGameplayCueEffect",
+    "values": {
+     "WheelDataIndex": 1,
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.Wheel.Right.Front"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Throttle",
+     "ModifierAmount": 0.15
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "WheelSide": "EMWheelSide::Right",
+     "DragAdditive": 1.5
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "WheelSide": "EMWheelSide::Right",
+     "FrictionMultiplierAdditive": -0.1
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.15
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_08",
+  "plugin": "WHL_08",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Right.Rear",
+  "threshold": 50.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Right.Rear"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "AxlePosition": 1,
+     "WheelSide": "EMWheelSide::Right",
+     "DragAdditive": 2.0
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "AxlePosition": 1,
+     "WheelSide": "EMWheelSide::Right",
+     "FrictionMultiplierAdditive": -0.1
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.1
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_08",
+  "plugin": "WHL_08",
+  "attribute": "Attribute.Gameplay.Health.Wheel.Right.Rear",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Braking",
+     "ModifierAmount": 0.25
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDVehicleWheelGameplayCueEffect",
+    "values": {
+     "WheelDataIndex": 3,
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Destroyed.Wheel.Right.Rear"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelDragEffect",
+    "values": {
+     "AxlePosition": 1,
+     "WheelSide": "EMWheelSide::Right",
+     "DragAdditive": 2.5
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleWheelFrictionEffect",
+    "values": {
+     "AxlePosition": 1,
+     "WheelSide": "EMWheelSide::Right",
+     "FrictionMultiplierAdditive": -0.15
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_08",
+  "plugin": "WHL_08",
+  "attribute": "Attribute.Gameplay.Health.Engine",
+  "threshold": 50.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDGameplayCueEffect",
+    "values": {
+     "GameplayCuesToApply": [
+      "GameplayCue.Vehicle.HIDZ.Damaged.Engine.WHL_08"
+     ]
+    }
+   },
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Throttle",
+     "ModifierAmount": 0.8
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_08",
+  "plugin": "WHL_08",
+  "attribute": "Attribute.Gameplay.Health.Engine",
+  "threshold": 25.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDWheeledVehicleEffect",
+    "values": {
+     "DrivingModifierType": "EWDDrivingModifier::Throttle"
+    }
+   }
+  ]
+ },
+ {
+  "asset": "DA_GameplaySystems_WHL_08",
+  "plugin": "WHL_08",
+  "attribute": "Attribute.Gameplay.Health.Engine",
+  "threshold": 0.0,
+  "asPercentage": true,
+  "triggersWhenBelow": true,
+  "removedInReverse": true,
+  "effects": [
+   {
+    "side": "below",
+    "type": "WDVehicleEngineEffect",
+    "values": {}
+   }
+  ]
+ }
+]

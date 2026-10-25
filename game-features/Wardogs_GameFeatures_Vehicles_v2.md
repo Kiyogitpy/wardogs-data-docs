@@ -256,13 +256,12 @@ Seat setups define a role per seat (Driver, Gunner, ActivePassenger, PassivePass
 | DA_SeatSettings_WHL_08 | WHL_08 | 4 | Driver + 3 ActivePassenger | 0 |
 | DA_SeatSettings_WHL_08_RingTurret | WHL_08 RingTurret | 5 | Driver, 3 ActivePassenger, Gunner | 1 |
 
-Seat assets with 0 setups (no seats defined in this asset): WHL_01, STN_01, the MachineGun/MountedMachineGun variants (ROT_04_MachineGun, TNK_01 Artillery MG, TNK_01 Heavy MG), and several WHL variants (WHL_02_Pickup extra seats, WHL_02_RingTurret, WHL_05 variants, WHL_06, WHL_07_ArmouredBattle).
+Round 39 re-read of the seat assets (`assets/data/vehicle-seats.json`, [Vehicle weapon rates, seats and damage effects](Wardogs_VehicleWeaponsEffects_v1.md) section 3): the assets listed above as having 0 setups do have seats. WHL_01 has 2 (exterior driver and passenger), STN_01 has 1 (exterior gunner), the TNK_01 Artillery MG, TNK_01 Heavy MG and TNK_04 MG seat assets have 1 gunner each, WHL_02_RingTurret has 5, the three WHL_05 variants have 4, 5 and 5, WHL_06 has 3, WHL_07_ArmouredBattle has 5, ROT_04_MachineGun has 13 and the Pickup extra-seats asset has 6.
 
-**Stats disagree with seat setups:**
-- TNK_01 Artillery and Heavy: `MaxSeats` 3, but 2 seat setups.
-- TNK_04: `MaxSeats` 3, but 2 seat setups.
-- WHL_02 Pickup: `MaxSeats` 6, base seat asset has 4 and the extra-seats asset has 0 setups. Where the other 2 seats come from is not resolved here.
-- ROT_03 and ROT_04: their base seat assets were not pulled in this pass, so no check is possible.
+**Stats against seat setups, resolved in round 39:**
+- TNK_01 Artillery and Heavy: `MaxSeats` 3 = the 2 hull seats (Driver, Gunner) + 1 gunner seat in the separate mounted-machine-gun seat asset. TNK_04: `MaxSeats` 3 = 2 + 1 the same way.
+- WHL_02 Pickup: `MaxSeats` 6 = the extra-seats asset, which lists 6 seats: Driver, 3 ActivePassenger, then 2 ActivePassenger flagged `bIsExteriorSeat` (the bed). The first four match the base asset; whether the pickup chassis part (fragment key `ExtraSeats`) replaces or adds to the base seat fragment is assembly code, not read.
+- ROT_03 and ROT_04: `DA_ROT_03_SeatSettings` has 6 seats (Driver, 1 ActivePassenger, 4 exterior ActivePassenger) = `MaxSeats` 6; `DA_ROT_03_Attack_SeatSettings` has 2 = the MG and rocket variants' 2; `DA_ROT_04_SeatSettings` has 13 (Driver + 12 ActivePassenger) = `MaxSeats` 13, and the MG variant has the same 13 with 2 of them gunners.
 
 ---
 
@@ -488,7 +487,7 @@ Stationary platforms use `BHBaseVehicleConfigDataAsset` (no physics). They carry
 - **Units.** Speed, fuel, FuelEconomy, muzzle speed, drag area and mass are not labelled in the export. Treat them as relative values until a reference confirms them. Only fields with a unit suffix (`_mps`, `_kmh`, `_deg`, `_m`) have a known unit.
   - **See [`docs/CROSS_REFERENCE.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/CROSS_REFERENCE.md)** for the project-wide cross-reference index of where referenced assets are defined.
 - **Semantics inferred from names.** `LevelToUnlock` (vendor), `StartDelayTime` / `LoopLoadRoundTime` (reload), `RestockSuppliesNeeded`, and the above/below effect split on health triggers are read from names only.
-- **Health trigger effects.** Effect objects (`WDVehicleEngineEffect`, `WDFuelComponentEffect`, `WDVehicleTurretEffect`, `WDWheeledVehicleEffect` and so on, roughly 180 objects across the folder) are counted but their parameters are not decoded.
+- **Health trigger effects.** Round 39 tabled the parameters of every health-trigger effect (251 threshold rows, effect types and values) in [Vehicle weapon rates, seats and damage effects](Wardogs_VehicleWeaponsEffects_v1.md) section 4 and `assets/data/vehicle-health-effects.json`. Still open: the class defaults behind effects that serialise no property (`WDVehicleEngineEffect` is empty except `bIsDestroyed: false` at 55 percent) and the unit of `FuelLeakPerSecondValue`.
 - **Damage entries.** Damage tables are counted by operation. Each entry's `Amount`, requirements and priority are not summarized.
 - **Seat counts.** ROT_03 and ROT_04 base seat assets were not pulled. Pickup's extra 2 seats (6 stated vs 4 base) are unresolved.
 - **Wheel and surface curves.** The 116 `CurveFloat` objects, the per-surface audio and skid assets (`DA_Vehicle_Surface_*`, `DA_Vehicle_Skidding_*`, `DA_Vehicle_BrakingSurface_*`), and the wheel-level `MWheeledVehicleWheelDataAsset` values (friction, suspension, brake torque, Values[0..2] meaning unconfirmed) are not tabled.

@@ -1,0 +1,147 @@
+{
+ "nativeDefaults": {
+  "StartingFlaresAmount": 0,
+  "FlaresEffectiveRangeMin": 25.0,
+  "FlaresEffectiveRangeMax": 100.0,
+  "FlaresActiveTime": 5.0,
+  "FlaresCooldownTime": 5.0
+ },
+ "vehicles": [
+  {
+   "asset": "DA_FWG_01_GameplaySystems",
+   "plugin": "FWG_01",
+   "set": {
+    "StartingFlaresAmount": 3,
+    "FlaresActiveTime": 3.5
+   },
+   "effective": {
+    "StartingFlaresAmount": 3,
+    "FlaresEffectiveRangeMin": 25.0,
+    "FlaresEffectiveRangeMax": 100.0,
+    "FlaresActiveTime": 3.5,
+    "FlaresCooldownTime": 5.0
+   },
+   "cooldownFromNativeDefault": true
+  },
+  {
+   "asset": "DA_GameplaySystems_ROT_02",
+   "plugin": "ROT_02",
+   "set": {
+    "StartingFlaresAmount": 2,
+    "FlaresEffectiveRangeMin": 5.0,
+    "FlaresEffectiveRangeMax": 300.0,
+    "FlaresActiveTime": 3.5
+   },
+   "effective": {
+    "StartingFlaresAmount": 2,
+    "FlaresEffectiveRangeMin": 5.0,
+    "FlaresEffectiveRangeMax": 300.0,
+    "FlaresActiveTime": 3.5,
+    "FlaresCooldownTime": 5.0
+   },
+   "cooldownFromNativeDefault": true
+  },
+  {
+   "asset": "DA_GameplaySystems_ROT_03",
+   "plugin": "ROT_03",
+   "set": {
+    "StartingFlaresAmount": 2,
+    "FlaresEffectiveRangeMin": 10.0,
+    "FlaresEffectiveRangeMax": 300.0,
+    "FlaresActiveTime": 3.5
+   },
+   "effective": {
+    "StartingFlaresAmount": 2,
+    "FlaresEffectiveRangeMin": 10.0,
+    "FlaresEffectiveRangeMax": 300.0,
+    "FlaresActiveTime": 3.5,
+    "FlaresCooldownTime": 5.0
+   },
+   "cooldownFromNativeDefault": true
+  },
+  {
+   "asset": "DA_ROT_04_GameplaySystems",
+   "plugin": "ROT_04",
+   "set": {
+    "StartingFlaresAmount": 2,
+    "FlaresEffectiveRangeMin": 15.0,
+    "FlaresEffectiveRangeMax": 300.0,
+    "FlaresActiveTime": 3.5
+   },
+   "effective": {
+    "StartingFlaresAmount": 2,
+    "FlaresEffectiveRangeMin": 15.0,
+    "FlaresEffectiveRangeMax": 300.0,
+    "FlaresActiveTime": 3.5,
+    "FlaresCooldownTime": 5.0
+   },
+   "cooldownFromNativeDefault": true
+  }
+ ],
+ "smokeSettings": [
+  {
+   "asset": "DA_GameplaySystems_SPW",
+   "plugin": "SPW_01",
+   "fields": {
+    "+0x00 item tag": "Id.Item.VehicleSmoke",
+    "+0x08 byte": 255,
+    "+0x0C float": 16.0,
+    "+0x10 float": 90.0,
+    "+0x14 cue tag": "GameplayCue.Vehicle.Countermeasures.Smoke",
+    "+0x28 vector": {
+     "X": 0.0,
+     "Y": 400.0,
+     "Z": 200.0
+    }
+   }
+  },
+  {
+   "asset": "DA_GameplaySystems_TNK_03",
+   "plugin": "TNK_01",
+   "fields": {
+    "+0x00 item tag": "Id.Item.VehicleSmoke",
+    "+0x08 byte": 1,
+    "+0x0C float": 16.0,
+    "+0x10 float": 90.0,
+    "+0x14 cue tag": "GameplayCue.Vehicle.Countermeasures.Smoke",
+    "+0x28 vector": {
+     "X": 0.0,
+     "Y": 400.0,
+     "Z": 200.0
+    }
+   }
+  },
+  {
+   "asset": "DA_GameplaySystems_TNK_01_Heavy",
+   "plugin": "TNK_01",
+   "fields": {
+    "+0x00 item tag": "Id.Item.VehicleSmoke",
+    "+0x08 byte": 1,
+    "+0x0C float": 16.0,
+    "+0x10 float": 90.0,
+    "+0x14 cue tag": "GameplayCue.Vehicle.Countermeasures.Smoke",
+    "+0x28 vector": {
+     "X": 0.0,
+     "Y": 400.0,
+     "Z": 200.0
+    }
+   }
+  },
+  {
+   "asset": "DA_GameplaySystems_TNK_04",
+   "plugin": "TNK_04",
+   "fields": {
+    "+0x00 item tag": "Id.Item.VehicleSmoke",
+    "+0x08 byte": 1,
+    "+0x0C float": 16.0,
+    "+0x10 float": 90.0,
+    "+0x14 cue tag": "GameplayCue.Vehicle.Countermeasures.Smoke",
+    "+0x28 vector": {
+     "X": 0.0,
+     "Y": 400.0,
+     "Z": 200.0
+    }
+   }
+  }
+ ]
+}

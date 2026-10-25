@@ -1,0 +1,488 @@
+[
+ {
+  "asset": "WE_ROT_02_Weapon_122mm",
+  "plugin": "ROT_02",
+  "name": "122mm Rockets",
+  "statsAsset": "DA_ROT_02_Weapon_122mm_Stats",
+  "roundsPerMinute": 500.0,
+  "rpmSource": "stats asset",
+  "effectiveRange_m": 1000.0,
+  "caliber": "Item.Caliber.122mm",
+  "initialBulletSpeed": 45000.0,
+  "fireModes": [
+   "EWDFireMode::Automatic"
+  ],
+  "accuracyValue": 6.0,
+  "reloadTime_s": 6.0,
+  "startingAmmo": {
+   "Id.Item.122mm": 0
+  },
+  "weaponItemId": "ID.Item.VehicleHelicopterRockets"
+ },
+ {
+  "asset": "WE_ROT_02_Weapon_30mmCannon",
+  "plugin": "ROT_02",
+  "name": "30mm Cannon",
+  "statsAsset": "DA_ROT_02_Weapon_30mmCannon_Stats",
+  "roundsPerMinute": 250.0,
+  "rpmSource": "stats asset",
+  "effectiveRange_m": 600.0,
+  "caliber": "Item.Caliber.30mm",
+  "initialBulletSpeed": 90000.0,
+  "fireModes": [
+   "EWDFireMode::Automatic"
+  ],
+  "accuracyValue": 35.0,
+  "reloadTime_s": 8.0,
+  "startingAmmo": {
+   "Id.Item.30mm": 0
+  },
+  "weaponItemId": "ID.Item.VehicleHelicopterCannon"
+ },
+ {
+  "asset": "WE_ROT_03_AttachedMachineGuns",
+  "plugin": "ROT_03_WeaponVariants",
+  "name": "308mm Machine Gun",
+  "statsAsset": "DA_ROT_03_AttachedMachineGuns_Stats",
+  "roundsPerMinute": 1500.0,
+  "rpmSource": "stats asset",
+  "effectiveRange_m": 800.0,
+  "caliber": "Item.Caliber.308Win",
+  "initialBulletSpeed": 85300.0,
+  "fireModes": [
+   "EWDFireMode::Automatic"
+  ],
+  "accuracyValue": 25.0,
+  "reloadTime_s": 4.25,
+  "startingAmmo": {
+   "Id.Item.308Win.Tracer": 300
+  },
+  "weaponItemId": "Id.Item.ROT_03.MountedMachineGun"
+ },
+ {
+  "asset": "WE_ROT_03_Weapon_122mm",
+  "plugin": "ROT_03_WeaponVariants",
+  "name": "122mm Rockets",
+  "statsAsset": "DA_ROT_03_Weapon_122mm_Stats",
+  "roundsPerMinute": 350.0,
+  "rpmSource": "stats asset",
+  "effectiveRange_m": 1000.0,
+  "caliber": "Item.Caliber.122mm",
+  "initialBulletSpeed": 45000.0,
+  "fireModes": [
+   "EWDFireMode::Automatic"
+  ],
+  "accuracyValue": 6.0,
+  "reloadTime_s": 6.0,
+  "startingAmmo": {
+   "Id.Item.122mm": 0
+  },
+  "weaponItemId": "ID.Item.VehicleHelicopterRockets_ROT_03"
+ },
+ {
+  "asset": "WE_ROT_04_MountedMachineGun",
+  "plugin": "ROT_04_MachineGun",
+  "name": "MachineGun",
+  "statsAsset": "DA_ROT_04_MountedMachineGun_Stats",
+  "roundsPerMinute": 1500.0,
+  "rpmSource": "stats asset",
+  "effectiveRange_m": 1500.0,
+  "caliber": "Item.Caliber.308Win",
+  "initialBulletSpeed": 85300.0,
+  "fireModes": [
+   "EWDFireMode::Automatic"
+  ],
+  "accuracyValue": 10.0,
+  "reloadTime_s": 5.0,
+  "startingAmmo": {
+   "Id.Item.308Win.Tracer": 150
+  },
+  "weaponItemId": "Id.Item.ROT_04.MountedMachineGun"
+ },
+ {
+  "asset": "WE_ROT_04_MountedMachineGun_L",
+  "plugin": "ROT_04_MachineGun",
+  "name": "MachineGun",
+  "statsAsset": "DA_ROT_04_MountedMachineGun_Stats",
+  "roundsPerMinute": 1500.0,
+  "rpmSource": "stats asset",
+  "effectiveRange_m": 1500.0,
+  "caliber": "Item.Caliber.308Win",
+  "initialBulletSpeed": 85300.0,
+  "fireModes": [
+   "EWDFireMode::Automatic"
+  ],
+  "accuracyValue": 10.0,
+  "reloadTime_s": 5.0,
+  "startingAmmo": {
+   "Id.Item.308Win.Tracer": 150
+  },
+  "weaponItemId": "Id.Item.ROT_04.MountedMachineGun"
+ },
+ {
+  "asset": "WE_STN_01_Heavy_MountedMachineGun",
+  "plugin": "STN_01",
+  "name": "Mounted Verba",
+  "statsAsset": "DA_STN_01_Heavy_MountedMachineGun_Stats",
+  "roundsPerMinute": 100.0,
+  "rpmSource": "stats asset",
+  "effectiveRange_m": 1000.0,
+  "caliber": "Item.Caliber.72mm",
+  "initialBulletSpeed": 2000.0,
+  "fireModes": [
+   "EWDFireMode::SemiAutomatic"
+  ],
+  "accuracyValue": null,
+  "reloadTime_s": 5.0,
+  "startingAmmo": {
+   "Id.Item.72mm": 1
+  },
+  "weaponItemId": "Id.Item.MistralAA"
+ },
+ {
+  "asset": "WE_STN_02_Heavy_MainCannon",
+  "plugin": "STN_02",
+  "name": "Mounted Verba",
+  "statsAsset": "DA_STN_02_Heavy_MainCannon_Stats",
+  "roundsPerMinute": 1800.0,
+  "rpmSource": "stats asset",
+  "effectiveRange_m": 1000.0,
+  "caliber": "Item.Caliber.20x102mm",
+  "initialBulletSpeed": 110000.0,
+  "fireModes": [
+   "EWDFireMode::Automatic"
+  ],
+  "accuracyValue": 25.0,
+  "reloadTime_s": 3.0,
+  "startingAmmo": {
+   "Id.Item.20x102mm": 500
+  },
+  "weaponItemId": "Id.Item.STN_02.MainCannon"
+ },
+ {
+  "asset": "WE_STN_03_Heavy_MainBarrel",
+  "plugin": "STN_03",
+  "name": "Mortar",
+  "statsAsset": "DA_STN_03_Heavy_MainBarrel_Stats",
+  "roundsPerMinute": 50.0,
+  "rpmSource": "stats asset",
+  "effectiveRange_m": 1000.0,
+  "caliber": "Item.Caliber.120x800mm",
+  "initialBulletSpeed": 80000.0,
+  "fireModes": [
+   "EWDFireMode::SemiAutomatic"
+  ],
+  "accuracyValue": 50.0,
+  "reloadTime_s": 4.5,
+  "startingAmmo": {
+   "Id.Item.120x800mm": 3
+  },
+  "weaponItemId": "Id.Item.STN_03.MainBarrel"
+ },
+ {
+  "asset": "WE_STN_05_Heavy_MainBarrel",
+  "plugin": "STN_05",
+  "name": "Stingray",
+  "statsAsset": "DA_STN_05_Heavy_MainBarrel_Stats",
+  "roundsPerMinute": 50.0,
+  "rpmSource": "stats asset",
+  "effectiveRange_m": 10000.0,
+  "caliber": "Item.Caliber.DroneProjectile",
+  "initialBulletSpeed": 11000.0,
+  "fireModes": [
+   "EWDFireMode::SemiAutomatic"
+  ],
+  "accuracyValue": 50.0,
+  "reloadTime_s": 0.0,
+  "startingAmmo": {
+   "Id.Item.DroneProjectile": 0
+  },
+  "weaponItemId": "Id.Item.STN_05.MainBarrel"
+ },
+ {
+  "asset": "WE_STN_06_MountedMachineGun",
+  "plugin": "STN_06",
+  "name": "Mounted M2 Browning",
+  "statsAsset": "DA_MWSY_001_Heavy_MountedMachineGun_Stats",
+  "roundsPerMinute": 600.0,
+  "rpmSource": "native default 600 (stats asset omits RoundsPerMinute)",
+  "effectiveRange_m": 1000.0,
+  "caliber": "Item.Caliber.50Cal",
+  "initialBulletSpeed": 89000.0,
+  "fireModes": [
+   "EWDFireMode::Automatic"
+  ],
+  "accuracyValue": 16.0,
+  "reloadTime_s": 8.0,
+  "startingAmmo": {
+   "Id.Item.50Cal.Tracer": 60
+  },
+  "weaponItemId": "Id.Item.MWSY_001.MountedMachineGun"
+ },
+ {
+  "asset": "WE_TNK_03",
+  "plugin": "TNK_01",
+  "name": "35mm Cannons",
+  "statsAsset": "DA_TNK_03_Weapon_Stats",
+  "roundsPerMinute": 1100.0,
+  "rpmSource": "stats asset",
+  "effectiveRange_m": 1000.0,
+  "caliber": "Item.Caliber.35x228mm",
+  "initialBulletSpeed": 117500.0,
+  "fireModes": [
+   "EWDFireMode::Automatic"
+  ],
+  "accuracyValue": null,
+  "reloadTime_s": 4.0,
+  "startingAmmo": {
+   "Item.Caliber.35x228mm": 0
+  },
+  "weaponItemId": "ID.Item.VehicleTurretAntiAir"
+ },
+ {
+  "asset": "WE_TNK_01_Artillery",
+  "plugin": "TNK_01",
+  "name": "Artillery",
+  "statsAsset": "DA_TNK_01_Artillery_Weapon_Stats",
+  "roundsPerMinute": 50.0,
+  "rpmSource": "stats asset",
+  "effectiveRange_m": 10000.0,
+  "caliber": "Item.Caliber.155mm",
+  "initialBulletSpeed": 30000.0,
+  "fireModes": [
+   "EWDFireMode::SemiAutomatic"
+  ],
+  "accuracyValue": 10.0,
+  "reloadTime_s": 25.0,
+  "startingAmmo": {
+   "ID.Item.155mm.Expensive": 10,
+   "ID.Item.155mm.Standard": 0
+  },
+  "weaponItemId": "ID.Item.VehicleTurretArtillery"
+ },
+ {
+  "asset": "WE_TNK_01_Heavy_MountedMachineGun",
+  "plugin": "TNK_01",
+  "name": "Mounted M249",
+  "statsAsset": "DA_M249_Stats",
+  "roundsPerMinute": 850.0,
+  "rpmSource": "stats asset",
+  "effectiveRange_m": 700.0,
+  "caliber": "Item.Caliber.556mm",
+  "initialBulletSpeed": 91500.0,
+  "fireModes": [
+   "EWDFireMode::Automatic",
+   "EWDFireMode::SemiAutomatic"
+  ],
+  "accuracyValue": 4.3,
+  "reloadTime_s": 4.25,
+  "startingAmmo": {
+   "Id.Item.556mm.Tracer": 0
+  },
+  "weaponItemId": "ID.Item.HeavyTankMountedMachineGun"
+ },
+ {
+  "asset": "WE_TNK_01_Heavy",
+  "plugin": "TNK_01",
+  "name": "Heavy Turret",
+  "statsAsset": "DA_TNK_01_Heavy_Weapon_Stats",
+  "roundsPerMinute": 50.0,
+  "rpmSource": "stats asset",
+  "effectiveRange_m": 10000.0,
+  "caliber": "Item.Caliber.120x570mm",
+  "initialBulletSpeed": 60000.0,
+  "fireModes": [
+   "EWDFireMode::SemiAutomatic"
+  ],
+  "accuracyValue": 30.0,
+  "reloadTime_s": 4.0,
+  "startingAmmo": {
+   "ID.Item.120x570mm": 9
+  },
+  "weaponItemId": "ID.Item.VehicleTurretHeavy"
+ },
+ {
+  "asset": "WE_TNK_01_MachineGun",
+  "plugin": "TNK_01",
+  "name": "Machine Gun",
+  "statsAsset": "DA_TNK_01_MachineGun_Weapon_Stats",
+  "roundsPerMinute": 650.0,
+  "rpmSource": "stats asset",
+  "effectiveRange_m": 200.0,
+  "caliber": "Item.Caliber.308Win",
+  "initialBulletSpeed": 82000.0,
+  "fireModes": [
+   "EWDFireMode::Automatic"
+  ],
+  "accuracyValue": 25.0,
+  "reloadTime_s": 4.25,
+  "startingAmmo": {
+   "Id.Item.308Win.Tracer": 300
+  },
+  "weaponItemId": "ID.Item.VehicleTurretMachineGun"
+ },
+ {
+  "asset": "WE_TNK_04_MachineGun",
+  "plugin": "TNK_04",
+  "name": "Machine Gun",
+  "statsAsset": "DA_LMG_02_Stats",
+  "roundsPerMinute": 600.0,
+  "rpmSource": "native default 600 (stats asset omits RoundsPerMinute)",
+  "effectiveRange_m": 1000.0,
+  "caliber": "Item.Caliber.762x54mm",
+  "initialBulletSpeed": 82500.0,
+  "fireModes": [
+   "EWDFireMode::Automatic",
+   "EWDFireMode::SemiAutomatic"
+  ],
+  "accuracyValue": 2.5,
+  "reloadTime_s": 4.25,
+  "startingAmmo": {
+   "Id.Item.762x54mm.Tracer": 300
+  },
+  "weaponItemId": "ID.Item.VehicleTurretMachineGun_TNK_04"
+ },
+ {
+  "asset": "WE_TNK_04_MountedMachineGun",
+  "plugin": "TNK_04",
+  "name": "Mounted M2 Browning",
+  "statsAsset": "DA_MWSY_001_Heavy_MountedMachineGun_Stats",
+  "roundsPerMinute": 600.0,
+  "rpmSource": "native default 600 (stats asset omits RoundsPerMinute)",
+  "effectiveRange_m": 1000.0,
+  "caliber": "Item.Caliber.50Cal",
+  "initialBulletSpeed": 89000.0,
+  "fireModes": [
+   "EWDFireMode::Automatic"
+  ],
+  "accuracyValue": 16.0,
+  "reloadTime_s": 8.0,
+  "startingAmmo": {
+   "Id.Item.50Cal.Tracer": 0
+  },
+  "weaponItemId": "ID.Item.MountedMachineGun_TNK_04"
+ },
+ {
+  "asset": "WE_TNK_04",
+  "plugin": "TNK_04",
+  "name": "Heavy Turret",
+  "statsAsset": "DA_TNK_04_Weapon_Stats",
+  "roundsPerMinute": 50.0,
+  "rpmSource": "stats asset",
+  "effectiveRange_m": 10000.0,
+  "caliber": "Item.Caliber.125x570mm",
+  "initialBulletSpeed": 46000.0,
+  "fireModes": [
+   "EWDFireMode::SemiAutomatic"
+  ],
+  "accuracyValue": 30.0,
+  "reloadTime_s": 4.0,
+  "startingAmmo": {
+   "ID.Item.125x570mm": 9
+  },
+  "weaponItemId": "ID.Item.VehicleTurret_TNK_04"
+ },
+ {
+  "asset": "WE_WHL_02_RingTurret",
+  "plugin": "WHL_02_RingTurret",
+  "name": "Mounted M249",
+  "statsAsset": "DA_M249_Stats",
+  "roundsPerMinute": 850.0,
+  "rpmSource": "stats asset",
+  "effectiveRange_m": 700.0,
+  "caliber": "Item.Caliber.556mm",
+  "initialBulletSpeed": 91500.0,
+  "fireModes": [
+   "EWDFireMode::Automatic",
+   "EWDFireMode::SemiAutomatic"
+  ],
+  "accuracyValue": 4.3,
+  "reloadTime_s": 4.25,
+  "startingAmmo": {
+   "Id.Item.556mm.Tracer": 0
+  },
+  "weaponItemId": "ID.Item.VehicleRingTurret"
+ },
+ {
+  "asset": "WE_WHL_05_RingMinigun",
+  "plugin": "WHL_05_Minigun",
+  "name": "Minigun",
+  "statsAsset": "DA_WHL_05_RingMinigun_Stats",
+  "roundsPerMinute": 1500.0,
+  "rpmSource": "stats asset",
+  "effectiveRange_m": 800.0,
+  "caliber": "Item.Caliber.308Win",
+  "initialBulletSpeed": 85300.0,
+  "fireModes": [
+   "EWDFireMode::Automatic"
+  ],
+  "accuracyValue": 25.0,
+  "reloadTime_s": 4.25,
+  "startingAmmo": {
+   "Id.Item.308Win.Tracer": 150
+  },
+  "weaponItemId": "Id.Item.HumveeVehicleRingMinigun"
+ },
+ {
+  "asset": "WE_WHL_05_RingTurret",
+  "plugin": "WHL_05_RingTurret",
+  "name": "Mounted M249",
+  "statsAsset": "DA_M249_Stats",
+  "roundsPerMinute": 850.0,
+  "rpmSource": "stats asset",
+  "effectiveRange_m": 700.0,
+  "caliber": "Item.Caliber.556mm",
+  "initialBulletSpeed": 91500.0,
+  "fireModes": [
+   "EWDFireMode::Automatic",
+   "EWDFireMode::SemiAutomatic"
+  ],
+  "accuracyValue": 4.3,
+  "reloadTime_s": 4.25,
+  "startingAmmo": {
+   "Id.Item.556mm.Tracer": 0
+  },
+  "weaponItemId": "Id.Item.HumveeVehicleRingTurret"
+ },
+ {
+  "asset": "WE_WHL_07_Turret",
+  "plugin": "WHL_07_ArmouredBattle",
+  "name": "Mounted M249",
+  "statsAsset": "DA_M249_Stats",
+  "roundsPerMinute": 850.0,
+  "rpmSource": "stats asset",
+  "effectiveRange_m": 700.0,
+  "caliber": "Item.Caliber.556mm",
+  "initialBulletSpeed": 91500.0,
+  "fireModes": [
+   "EWDFireMode::Automatic",
+   "EWDFireMode::SemiAutomatic"
+  ],
+  "accuracyValue": 4.3,
+  "reloadTime_s": 4.25,
+  "startingAmmo": {
+   "Id.Item.556mm.Tracer": 0
+  },
+  "weaponItemId": "Id.Item.UralVehicleMachineGun"
+ },
+ {
+  "asset": "WE_WHL_08_RingTurret",
+  "plugin": "WHL_08_RingTurret",
+  "name": "Mounted M2 Browning",
+  "statsAsset": "DA_MWSY_001_Heavy_MountedMachineGun_Stats",
+  "roundsPerMinute": 600.0,
+  "rpmSource": "native default 600 (stats asset omits RoundsPerMinute)",
+  "effectiveRange_m": 1000.0,
+  "caliber": "Item.Caliber.50Cal",
+  "initialBulletSpeed": 89000.0,
+  "fireModes": [
+   "EWDFireMode::Automatic"
+  ],
+  "accuracyValue": 16.0,
+  "reloadTime_s": 8.0,
+  "startingAmmo": {
+   "Id.Item.50Cal.Tracer": 0
+  },
+  "weaponItemId": "Id.Item.WHL_08_VehicleRingTurret"
+ }
+]
