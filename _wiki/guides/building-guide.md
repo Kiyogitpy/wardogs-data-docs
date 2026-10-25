@@ -37,7 +37,7 @@ The Forward Operating Base (FOB) is the anchor for building. It is placed from i
 ### Tips that follow from the numbers
 
 - Because most structures need the FOB radius, place the FOB before any wall or station. The small structures are the only ones that can go down without one.
-- Because the FOB takes the most damage from IEDs, the explosives are the threat to plan around near it ([Forward Operating Base](../equipment/forward-operating-base.md#durability)).
+- The FOB takes 51 times normal IED damage, more than any other structure in the damage table, so IEDs are its most damaging source in the data ([Forward Operating Base](../equipment/forward-operating-base.md#durability)).
 - Destroying an enemy FOB pays the attacker 5,000 cash, and placing one pays 1,000 ([Cash and Rewards](../progression-and-economy/cash-and-rewards.md#spotting-supply-crates-and-buildables)).
 
 ## What to build first
@@ -74,7 +74,7 @@ Sources for these numbers: [Buildables](../equipment/buildables.md#structures), 
 - **Walls for the price.** The Hesco Block (Small) and the Sandbag Wall both cost 15 Build Supplies, but the Hesco has 1,600 HP against 735. The damage table makes the Hesco the sturdier of the two in every column of the hits table below, so it is the better buy at the same cost ([Hesco Walls](../equipment/hesco-walls.md), [Sandbag Wall](../equipment/sandbag-wall.md)).
 - **Most health per supply.** The Hedgehog (4,500 HP for 22 Build Supplies) and the Bremer Wall (6,500 HP for 32) give the most health per supply of any wall or barrier, about 200 HP per Build Supply each ([Hedgehog](../equipment/hedgehog.md), [Bremer Wall](../equipment/bremer-wall.md)).
 - **Least health per supply.** The Drill Rig gives 0.9 HP per Build Supply and the Shelter 9. The Shelter needs the Medium or Large Hammer and the Drill Rig needs the Large Hammer, so buy them for their function, not their health ([Drill Rig](../equipment/drill-rig.md), [Shelter](../equipment/shelter.md)).
-- **Cheap stations are fragile.** The Refuel and Repair Stations cost 200 Build Supplies for 1,600 HP, which is 8 HP per supply. A rocket or a C4 charge destroys either one in a single hit ([Refuel and Repair Stations](../equipment/refuel-and-repair-stations.md#hits-to-destroy-point-blank-derived)).
+- **Stations are fragile for their cost.** The Refuel and Repair Stations cost 200 Build Supplies for 1,600 HP, which is 8 HP per supply. A rocket or a C4 charge destroys either one in a single hit ([Refuel and Repair Stations](../equipment/refuel-and-repair-stations.md#hits-to-destroy-point-blank-derived)).
 - **Season 2 raised several costs.** The Bremer Wall went from 15 to 32 Build Supplies, the Door from 22 to 80, the Bunker from 100 to 200 and the Drill Rig from 2,250 to 2,750 ([Buildables](../equipment/buildables.md#season-2-changes)).
 
 ## Stationary emplacements
@@ -95,7 +95,7 @@ Restock costs at the Supplies lot price of 10 cash per 50 are derived: 200 Ammo 
 ### Tips that follow from the numbers
 
 - **Only the Stingray has a target list in the data.** It is air-only, so it is the only emplacement here whose role is stated. For the other guns, the data gives the range, rate or lock-on time but not the targets, so this guide does not say what they counter.
-- **Health and price.** The Vanguard CIWS has the most health (5,000) and costs 1,200 Build Supplies, 1.85 times the 650 of the Talon, Stingray and MG Nest (derived). The L81 Mortar is the cheapest at 600 Build Supplies, with 3,000 HP, the same as the Talon and Stingray.
+- **Health and price.** The Vanguard CIWS has the most health (5,000) and costs 1,200 Build Supplies, 1.85 times the 650 of the Talon, Stingray and MG Nest (derived). The L81 Mortar is the cheapest gun at 600 Build Supplies, with 3,000 HP, the same as the Talon and Stingray.
 - **The MG Nest is the weakest finished emplacement.** It has 1,800 HP when finished, and the 3,000 HP figure applies only while it is under construction ([MG Nest](../equipment/mg-nest.md#health)).
 - **The Stingray has the largest restock.** It needs 900 Mechanical Supplies and 5,000 cash each time, while the other guns restock with Ammo Supplies only ([Stingray](../equipment/stingray.md#overview)).
 - **Restock cost is a running cost.** The restocks above add up over a match, so budget for them along with the build cost ([Making Money](making-money.md#restocks-for-stationary-weapons)).

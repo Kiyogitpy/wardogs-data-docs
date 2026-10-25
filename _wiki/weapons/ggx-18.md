@@ -108,11 +108,12 @@ Cone half-angles in degrees: a bullet can land up to that far from the aim point
 
 Accuracy is 2 mrad, a full cone angle; the aimed row is half of it, in degrees.
 
-- Shooting does not widen the spread. The data has no per-shot bloom and no recovery timer.
-- Hip spread moves with speed, stance and being in the air, and eases to its new value in about 0.04 s.
-- Fully aimed, hip spread drops to zero at once, so only the aimed row applies.
+- The data has no per-shot bloom and no recovery timer: nothing found in the spread data makes firing widen the spread, and spread changes only with speed, stance, being in the air and aiming. This comes from reading the game files, not from testing in game.
+- Hip spread eases toward its new value with a time constant of about 0.04 s (a native default found by static reading).
+- The 10° in-air figure is a native default found by static reading; only the grenade launcher's data sets it, to the same 10°.
+- At full aim (aim blend exactly 1.0) hip spread is set to zero, so only the aimed row applies. A partly aimed weapon counts as hip fire.
+- "Full speed" means 4 m/s standing, 2.5 m/s crouching and 0.5 m/s prone; between still and that speed the hip spread is a straight line.
 - The figures are before attachments, which can change spread (see [Attachments](attachments.md)).
-- Between still and full speed, hip spread is a straight line.
 
 **Recoil**
 

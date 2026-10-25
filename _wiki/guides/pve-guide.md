@@ -63,7 +63,7 @@ Every soldier has 100 HP, the same as a player, and wears [Level 1 Armor](../equ
 
 Tips that follow from the numbers:
 
-- **Because a Level 1 Helmet cuts head damage by 30%, the M4 needs three headshots on a soldier where it needs two on an unarmored player.** The M4 does 65.8 to the head with no armor and 46.1 with a Light helmet, both with full metal jacket. Two hits on the helmeted head give 92.2 (derived), which is under 100 HP. See [Armor](../game-mechanics/armor.md).
+- **Because a Level 1 Helmet cuts head damage by 30%, the M4 needs three headshots on a soldier where it needs two on an unarmored player.** The M4 does 65.8 to the head with no armor and 46.1 with a Level 1 Helmet, both with full metal jacket. Two hits on the helmeted head give 92.2 (derived), which is under 100 HP. See [Armor](../game-mechanics/armor.md).
 - **Because soldiers aim at the head, the helmet is the armor piece that meets their aim.** The data says each soldier aims at the target's head and refreshes its aim every 0.1 s.
 - **Because the PvE soldiers' base preset prefers burst fire, and a burst is three shots followed by a 1 s pause, a soldier stops between bursts.** The data gives the burst size and the pause, not the time between shots inside a burst.
 - **Because a soldier moves to Combat only once it sees the player, a soldier that has not seen you is at most on Alert.** The levels are Relaxed at 0.0, Alert at 0.8 and Combat at 1.0. Hearing raises the alert level, but the data does not say by how much.

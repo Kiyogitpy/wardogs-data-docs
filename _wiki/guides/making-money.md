@@ -72,12 +72,12 @@ A wager is a goal a player takes on with a stake of cash. The stake is between 2
 
 Each action has a 24-hour (86,400 s) cooldown in the data, but the data does not say whether the cooldown is per player, per wager or per match ([Wagers](../progression-and-economy/wagers.md#how-it-works)).
 
-The payout formula is not in the data. The wager article gives the odds, the cap and the stake limits, but not how a wager is settled, so this guide gives no expected return.
+The slip labels its return as the stake times the total odds, with a cap of 5,000,000 cash, but the exact settlement formula is not read from the data, and settlement runs on the server. So this guide gives no expected return ([Wagers](../progression-and-economy/wagers.md#payout-and-settlement)).
 
 ### Tips that follow from the numbers
 
-- Count is a weak lever for odds. Kills go from 1.001 at one to three kills to 1.2004 at 25 kills, so a 25-kill wager is much harder for only a small rise in odds ([Wagers](../progression-and-economy/wagers.md#odds)).
-- Conditions raise odds, and each one is an extra rule. "Deathwish" multiplies odds by 10.0, "Time limit" by 4.0 and "No vehicles" by 3.0, while "With a $20k loadout" gives 1.05 ([Wagers](../progression-and-economy/wagers.md#conditions)).
+- Count is a weak lever for odds. Kills go from 1.001 at one to three kills to 1.2004 at 25 kills, so going from 3 kills to 25 raises the odds by about 0.2 ([Wagers](../progression-and-economy/wagers.md#odds)).
+- Conditions raise odds, and each one is an extra rule on the wager. "Deathwish" multiplies odds by 10.0, "Time limit" by 4.0 and "No vehicles" by 3.0, while "With a $20k loadout" gives 1.05 ([Wagers](../progression-and-economy/wagers.md#conditions)).
 - The data does not say whether two conditions on one wager multiply together, so do not stack them expecting the product ([Wagers](../progression-and-economy/wagers.md#conditions)).
 
 ## The Gold Exchange
@@ -121,7 +121,7 @@ With M4 full-metal-jacket rounds, an upper-torso hit does 27.3 HP with no armor,
 
 ### Weapons by price
 
-The vendor prices of the weapons, lowest first. The weapon articles note that the data does not decode the currency. The Shops article says vendor prices are most likely cash ([Shops](../progression-and-economy/shops.md#how-it-works)).
+A selection of vendor prices, lowest first (the full list is on each weapon article; for example GGX 18 and PP-19 Bizon sell for 1,000 and M500 for 1,200). The weapon articles note that the data does not decode the currency. The Shops article says vendor prices are most likely cash ([Shops](../progression-and-economy/shops.md#how-it-works)).
 
 | Weapon | Vendor price | Article |
 |---|---:|---|

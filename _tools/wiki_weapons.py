@@ -365,7 +365,7 @@ def _season_sentence(spray):
     return parts[0] + ("; and " + parts[1] if len(parts) > 1 else "") + "."
 
 
-def recoil_section(wid, title):
+def recoil_section(wid, title, multi_pellet=False):
     spread = SPREAD_BY_ITEM.get(wid)
     spray = SPRAY_BY_ITEM.get(wid)
     if spread is None or spray is None:
@@ -407,12 +407,18 @@ def recoil_section(wid, title):
                    "(a full cone angle; the aimed row is half of it, in degrees).")
     else:
         out.append(f"Accuracy is {acc['value']:g} {UNIT_NAME[unit]}, a full cone angle; the aimed row is half of it, in degrees.")
-    out += ["",
-            "- Shooting does not widen the spread. The data has no per-shot bloom and no recovery timer.",
-            "- Hip spread moves with speed, stance and being in the air, and eases to its new value in about 0.04 s.",
-            "- Fully aimed, hip spread drops to zero at once, so only the aimed row applies.",
-            "- The figures are before attachments, which can change spread (see [Attachments](attachments.md)).",
-            "- Between still and full speed, hip spread is a straight line.", ""]
+    out += [""]
+    if multi_pellet:
+        out += ["Buckshot fires several pellets per shot. For a multi-pellet round the hip spread rows above are not used; "
+                "the pellet pattern comes from the weapon's shotgun data instead (see [Weapon Spread pipeline](../../pipelines/Wardogs_WeaponSpread_v1.md)). "
+                "The hip rows apply to single-projectile ammunition such as the rifled slug.", ""]
+    out += ["- The data has no per-shot bloom and no recovery timer: nothing found in the spread data makes firing widen the spread, "
+            "and spread changes only with speed, stance, being in the air and aiming. This comes from reading the game files, not from testing in game.",
+            "- Hip spread eases toward its new value with a time constant of about 0.04 s (a native default found by static reading).",
+            "- The 10° in-air figure is a native default found by static reading; only the grenade launcher's data sets it, to the same 10°.",
+            "- At full aim (aim blend exactly 1.0) hip spread is set to zero, so only the aimed row applies. A partly aimed weapon counts as hip fire.",
+            "- \"Full speed\" means 4 m/s standing, 2.5 m/s crouching and 0.5 m/s prone; between still and that speed the hip spread is a straight line.",
+            "- The figures are before attachments, which can change spread (see [Attachments](attachments.md)).", ""]
 
     # Recoil
     pat = season["pattern"]
@@ -547,7 +553,7 @@ def build_weapon(wid):
         out += ["The damage data pages do not compute body-part damage for launchers. The data treats the shot as an explosion; see [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md).", ""]
 
     # Recoil and spread (after Damage, before Ammunition)
-    out += recoil_section(wid, title).rstrip("\n").split("\n") + [""]
+    out += recoil_section(wid, title, bool(dmg) and any(a.get("pellets") for a in dmg["ammo"])).rstrip("\n").split("\n") + [""]
     # Ammunition
     out += ["## Ammunition", ""]
     if dmg:

@@ -166,7 +166,7 @@ The Refuel Station and Repair Station work with Fuel Supplies and Mechanical Sup
 
 ## Cost
 
-The cost column in the Structures table is the Build Supplies cost. The data does not yet show exactly when Build Supplies are taken, at placement or while building. Build Supplies cost 10 cash each in the shop and are sold in lots of 50.
+The cost column in the Structures table is the Build Supplies cost. The data does not yet show exactly when Build Supplies are taken, at placement or while building. Build Supplies are sold in lots of 50 for 10 cash a lot (0.2 cash per unit).
 
 Hammers cost 2,400 cash (Large), 800 (Medium) and 100 (Small). The Forward Operating Base costs 7,500 cash.
 

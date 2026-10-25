@@ -118,7 +118,7 @@ Refuel a vehicle at a Refuel Station inside a Forward Operating Base, or with a 
 Tips that follow from the numbers:
 
 - **Because Fast and Max cost the same per percent when Max fills the whole tank, choose Fast for a partial top-up.** Fast costs 15 cash per percent (75 for 5%), and Max costs 15 cash per percent only when it fills to 100% (1,500 for 100%) (derived). Whether a Max restock stops early when the tank is nearly full is not known.
-- **Because the empty-tank effect is not in the data, do not let a tank run dry on purpose.** The data does not say whether the engine stops or how quickly. See [Fuel and refueling](../vehicles/fuel-and-refueling.md).
+- **What an empty tank does is not in the data.** The data does not say whether the engine stops or how quickly. See [Fuel and refueling](../vehicles/fuel-and-refueling.md).
 
 ### Repair
 
