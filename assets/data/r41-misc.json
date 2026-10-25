@@ -1,0 +1,187 @@
+{
+ "source": "round 41 cooked-data read (docs/evidence/round41-modes-ai-other.md)",
+ "factionSetup": {
+  "CreateTwoTeams": [
+   "Alpha",
+   "Bravo"
+  ],
+  "CreateThreeTeams": [
+   "Alpha",
+   "Bravo",
+   "Charlie"
+  ]
+ },
+ "smokeGrenadeClassDefaults": {
+  "Diameter": 15.0,
+  "Total Duration": 180.0,
+  "Fade In Time": 20.0,
+  "Fade Out Time": 10.0,
+  "SpriteMaxSize": 800.0,
+  "SmokeColor": {
+   "R": 1.0,
+   "G": 1.0,
+   "B": 1.0,
+   "A": 0.75,
+   "Hex": "BFFFFFFF"
+  }
+ },
+ "movingTarget": {
+  "Health": 1.0,
+  "DamageIncrease": 3.5,
+  "TimeToReachTargetRange": {
+   "Min": 15.0,
+   "Max": 25.0
+  },
+  "fallTimelineSeconds": 0.5,
+  "moveLocationOffsetY": 150.0
+ },
+ "serverTestingProfiles": {
+  "rowStruct": "WDAutomatedTestServerProfile",
+  "rows": {
+   "Default": {
+    "totalClients": 100,
+    "orchestrator": "B_Default_C"
+   },
+   "SoloTest": {
+    "totalClients": 1,
+    "orchestrator": "B_SoloTest_C"
+   },
+   "Default10Players": {
+    "totalClients": 10,
+    "orchestrator": "B_Default10Players_C"
+   },
+   "100Players": {
+    "totalClients": 100,
+    "orchestrator": "B_100Players_C"
+   },
+   "100GroundVehicles": {
+    "totalClients": 100,
+    "orchestrator": "B_100GroundVehicles_C"
+   },
+   "100TrackedVehicles": {
+    "totalClients": 100,
+    "orchestrator": "B_100TrackedVehicles_C"
+   },
+   "100Helicopters": {
+    "totalClients": 100,
+    "orchestrator": "B_100Helicopters_C"
+   },
+   "30BotOrchestra": {
+    "totalClients": 30,
+    "orchestrator": "B_30BotOrchestra_C"
+   },
+   "MovementMedley": {
+    "totalClients": 100,
+    "orchestrator": "B_MovementMedley_C"
+   },
+   "Macarena": {
+    "totalClients": 100,
+    "orchestrator": "B_Macarena_C"
+   },
+   "InputTest": {
+    "totalClients": 5,
+    "orchestrator": "B_InputTest_C"
+   }
+  }
+ },
+ "localization": {
+  "archive": "Game.locres (UE LocRes version 3)",
+  "cultures": {
+   "de": {
+    "entries": 5948,
+    "sameAsEnglish": 640
+   },
+   "en": {
+    "entries": 5948,
+    "sameAsEnglish": 5948
+   },
+   "es-ES": {
+    "entries": 5948,
+    "sameAsEnglish": 540
+   },
+   "fr-FR": {
+    "entries": 5948,
+    "sameAsEnglish": 585
+   },
+   "it-IT": {
+    "entries": 5948,
+    "sameAsEnglish": 629
+   },
+   "ja-JP": {
+    "entries": 5948,
+    "sameAsEnglish": 479
+   },
+   "ko": {
+    "entries": 5948,
+    "sameAsEnglish": 466
+   },
+   "pl-PL": {
+    "entries": 5948,
+    "sameAsEnglish": 525
+   },
+   "pt": {
+    "entries": 5948,
+    "sameAsEnglish": 550
+   },
+   "pt-BR": {
+    "entries": 5948,
+    "sameAsEnglish": 548
+   },
+   "ru": {
+    "entries": 5948,
+    "sameAsEnglish": 443
+   },
+   "tr-TR": {
+    "entries": 5948,
+    "sameAsEnglish": 549
+   },
+   "uk-UA": {
+    "entries": 5948,
+    "sameAsEnglish": 454
+   },
+   "zh-Hans": {
+    "entries": 5948,
+    "sameAsEnglish": 506
+   },
+   "zh-Hant": {
+    "entries": 5948,
+    "sameAsEnglish": 479
+   }
+  },
+  "namespaces": 169,
+  "largestNamespaces": [
+   [
+    "STRINGS_Settings",
+    779
+   ],
+   [
+    "(empty)",
+    707
+   ],
+   [
+    "STRINGS_Ingame",
+    584
+   ],
+   [
+    "STRINGS_Frontend",
+    293
+   ],
+   [
+    "STRINGS_Popups",
+    258
+   ],
+   [
+    "BHUserSettings",
+    179
+   ],
+   [
+    "STRINGS_Tutorial_Subtitles",
+    178
+   ],
+   [
+    "STRINGS_Wagers",
+    166
+   ]
+  ]
+ }
+}

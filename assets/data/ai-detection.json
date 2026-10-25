@@ -1,0 +1,149 @@
+{
+ "source": "round 41: cooked Blueprint values (round36_ai dump) + static native formulas (CL516586)",
+ "parameters": {
+  "SightRadius": 200000.0,
+  "LoseSightRadius": 210000.0,
+  "HearingRange": 100000.0,
+  "VisionRangeMultiplier": 0.02,
+  "HearingRangeMultiplier": 0.05,
+  "VisionAngleMultiplier": 1.0,
+  "VisionPlayerConcealmentMultiplier": 1.0,
+  "StanceDetectability": {
+   "Stand": 1.0,
+   "Prone": 0.3,
+   "Crouch": 0.4
+  },
+  "StanceDetectabilityMultiplier": 0.5,
+  "MovementSpeedMultiplier": 1.0,
+  "HearingMovementSpeedMultiplier": 0.0015,
+  "WeaponFiring": 5.0,
+  "WeaponFiringMultiplier": 1.0,
+  "MaxDetectionLevel": 1.0,
+  "DetectionDecayRate": 0.25,
+  "TimeBeforeStartDecay": 5.0,
+  "DamageSenseMaxAge": 10.0
+ },
+ "formulas": {
+  "sightStrength": "angle * (x^(-2*VisionRangeMultiplier) - 1) * concealment * detectabilitySight; x = clamp(distance / SightRadius, 0, 1); angle = dot(facing, direction to target)^VisionAngleMultiplier (0 if dot <= 0); concealment = (visible points / total points)^VisionPlayerConcealmentMultiplier",
+  "detectabilitySight": "StanceDetectability[stance] * StanceDetectabilityMultiplier + clamp(speed / maxSpeed, 0, 1) * MovementSpeedMultiplier",
+  "hearingStrength": "detectabilityHearing * (1 / x^2 - 1) * HearingRangeMultiplier; x = clamp(distance / HearingRange, 0, 1); zero at or beyond HearingRange",
+  "detectabilityHearing": "1.0 if the character operates a vehicle; else max(WeaponFiring * WeaponFiringMultiplier if firing, clamp(speed / maxSpeed, 0, 1)^2 * HearingMovementSpeedMultiplier)",
+  "damageSense": "a damage stimulus adds a fixed strength of 1.0",
+  "detectionLevel": "each tick, per tracked target: level = clamp(level + deltaTime * sum of the sense strengths, 0, MaxDetectionLevel); decays by deltaTime * DetectionDecayRate once TimeBeforeStartDecay has passed without an update; the entry is removed at level <= 0"
+ },
+ "sampleTables": {
+  "unit": "detection level gained per second (1.0 = a full level), target facing the AI head-on, unconcealed",
+  "rows": [
+   {
+    "distanceMeters": 10,
+    "sightStandStill": 0.118,
+    "sightCrouchStill": 0.04721,
+    "sightProneStill": 0.03541,
+    "sightStandRunning": 0.3541,
+    "hearFiring": 2500.0,
+    "hearVehicleOccupant": 500.0,
+    "hearRunning": 0.7499
+   },
+   {
+    "distanceMeters": 25,
+    "sightStandStill": 0.09579,
+    "sightCrouchStill": 0.03832,
+    "sightProneStill": 0.02874,
+    "sightStandRunning": 0.2874,
+    "hearFiring": 399.7,
+    "hearVehicleOccupant": 79.95,
+    "hearRunning": 0.1199
+   },
+   {
+    "distanceMeters": 50,
+    "sightStandStill": 0.0795,
+    "sightCrouchStill": 0.0318,
+    "sightProneStill": 0.02385,
+    "sightStandRunning": 0.2385,
+    "hearFiring": 99.75,
+    "hearVehicleOccupant": 19.95,
+    "hearRunning": 0.02993
+   },
+   {
+    "distanceMeters": 100,
+    "sightStandStill": 0.06365,
+    "sightCrouchStill": 0.02546,
+    "sightProneStill": 0.0191,
+    "sightStandRunning": 0.191,
+    "hearFiring": 24.75,
+    "hearVehicleOccupant": 4.95,
+    "hearRunning": 0.007425
+   },
+   {
+    "distanceMeters": 200,
+    "sightStandStill": 0.04824,
+    "sightCrouchStill": 0.0193,
+    "sightProneStill": 0.01447,
+    "sightStandRunning": 0.1447,
+    "hearFiring": 6.0,
+    "hearVehicleOccupant": 1.2,
+    "hearRunning": 0.0018
+   },
+   {
+    "distanceMeters": 300,
+    "sightStandStill": 0.03942,
+    "sightCrouchStill": 0.01577,
+    "sightProneStill": 0.01183,
+    "sightStandRunning": 0.1183,
+    "hearFiring": 2.528,
+    "hearVehicleOccupant": 0.5056,
+    "hearRunning": 0.0007583
+   },
+   {
+    "distanceMeters": 500,
+    "sightStandStill": 0.02851,
+    "sightCrouchStill": 0.0114,
+    "sightProneStill": 0.008553,
+    "sightStandRunning": 0.08553,
+    "hearFiring": 0.75,
+    "hearVehicleOccupant": 0.15,
+    "hearRunning": 0.000225
+   },
+   {
+    "distanceMeters": 750,
+    "sightStandStill": 0.02001,
+    "sightCrouchStill": 0.008003,
+    "sightProneStill": 0.006002,
+    "sightStandRunning": 0.06002,
+    "hearFiring": 0.1944,
+    "hearVehicleOccupant": 0.03889,
+    "hearRunning": 5.833e-05
+   },
+   {
+    "distanceMeters": 1000,
+    "sightStandStill": 0.01406,
+    "sightCrouchStill": 0.005623,
+    "sightProneStill": 0.004217,
+    "sightStandRunning": 0.04217,
+    "hearFiring": 0.0,
+    "hearVehicleOccupant": 0.0,
+    "hearRunning": 0.0
+   },
+   {
+    "distanceMeters": 1500,
+    "sightStandStill": 0.005787,
+    "sightCrouchStill": 0.002315,
+    "sightProneStill": 0.001736,
+    "sightStandRunning": 0.01736,
+    "hearFiring": 0.0,
+    "hearVehicleOccupant": 0.0,
+    "hearRunning": 0.0
+   },
+   {
+    "distanceMeters": 2000,
+    "sightStandStill": 0.0,
+    "sightCrouchStill": 0.0,
+    "sightProneStill": 0.0,
+    "sightStandRunning": 0.0,
+    "hearFiring": 0.0,
+    "hearVehicleOccupant": 0.0,
+    "hearRunning": 0.0
+   }
+  ]
+ }
+}
