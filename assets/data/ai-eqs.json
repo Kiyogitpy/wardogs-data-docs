@@ -1,0 +1,1092 @@
+{
+ "contexts": {
+  "BP_EnvQueryContext_AliveTeammates": {
+   "RequiredDeathStates": [
+    {
+     "TagName": "State.Player.Vitality.Alive"
+    }
+   ]
+  },
+  "BP_EnvQueryContext_ClosestPointOnSplineFromItem": {
+   "ReferencePointContext": "EnvQueryContext_Item"
+  },
+  "BP_EnvQueryContext_FriendsMovementLocations": {
+   "ContextActors": "EnvQueryContext_SquadMembers_C"
+  },
+  "BP_EnvQueryContext_ProjectedPatrolPointOnSpline": {
+   "ForwardProjectionsOnSpline": [
+    1000.0,
+    1500.0,
+    2000.0
+   ],
+   "ReferencePointContext": "EnvQueryContext_Querier"
+  },
+  "EQS_Context_TargetEnemy": {
+   "TargetEnemyBlackboardKey": "TargetActor"
+  }
+ },
+ "queries": {
+  "EQS_BesiegeTakeOverMovementTokenHandling": [
+   {
+    "generator": {
+     "type": "SDEnvQueryGenerator_TokenRequests"
+    },
+    "tests": [
+     {
+      "InfluenceMapTag": {
+       "TagName": "InfluenceMap.TeamMap"
+      },
+      "TestPurpose": "TestPurpose.Score",
+      "type": "WDEnvQueryTest_InfluenceMapValue"
+     }
+    ]
+   }
+  ],
+  "EQS_FindBestPeekPointOfCurrentCover": [
+   {
+    "generator": {
+     "type": "SDEnvQueryGenerator_PeekPoints"
+    },
+    "tests": [
+     {
+      "BoolValue": false,
+      "Context": "EQS_Context_TargetEnemy_C",
+      "TestPurpose": "TestPurpose.Filter",
+      "TraceData": {
+       "SerializedChannel": "ECollisionChannel.ECC_Visibility",
+       "TraceMode": "QueryTrace.GeometryByChannel",
+       "TraceProfileName": "ECC_WorldStatic",
+       "bCanDisableTrace": false,
+       "bCanTraceOnNavMesh": false,
+       "bOnlyBlockingHits": false
+      },
+      "type": "WDEnvQueryTest_CoverTrace"
+     }
+    ]
+   }
+  ],
+  "EQS_FindClosestCoverToQuerier": [
+   {
+    "generator": {
+     "CenterContext": "EnvQueryContext_Querier",
+     "OnlyFreeCovers": true,
+     "Radius": 2000.0,
+     "type": "SDEnvQueryGenerator_Covers"
+    },
+    "tests": [
+     {
+      "FloatValueMax": 1.0,
+      "FloatValueMin": 0.8,
+      "LineA": {
+       "Rotation": "EnvQueryContext_Item"
+      },
+      "LineB": {
+       "LineFrom": "EnvQueryContext_Item",
+       "LineTo": "EnvQueryContext_SDAIGoalTarget"
+      },
+      "TestMode": "TestDot.Dot2D",
+      "TestPurpose": "TestPurpose.Filter",
+      "type": "EnvQueryTest_Dot"
+     },
+     {
+      "FilterType": "TestFilterType.Range",
+      "ScoringEquation": "TestScoreEquation.InverseLinear",
+      "TestMode": "TestPathfinding.PathCost",
+      "TestOrder": 1,
+      "TestPurpose": "TestPurpose.Score",
+      "bWorkOnFloatValues": true,
+      "type": "EnvQueryTest_Pathfinding"
+     },
+     {
+      "DistanceTo": "EnvQueryContext_SDAIGoalSquadMembers",
+      "FilterType": "TestFilterType.Minimum",
+      "FloatValueMin": 300.0,
+      "TestOrder": 2,
+      "type": "EnvQueryTest_Distance"
+     }
+    ]
+   }
+  ],
+  "EQS_FindCombatPositionCloserToTarget": [
+   {
+    "generator": {
+     "InnerRadius": 200.0,
+     "OuterRadius": {
+      "default": 3000.0,
+      "field": "DataValue",
+      "from": {
+       "AIConfigDataField": "EAIConfigDataField.RadiusToSearchForCovers",
+       "provider": "WDAIDataProvider_AIConfigData"
+      }
+     },
+     "ProjectionData": {
+      "SerializedChannel": "ECollisionChannel.ECC_Visibility",
+      "TraceMode": "QueryTrace.Navigation"
+     },
+     "type": "EnvQueryGenerator_Donut"
+    },
+    "tests": [
+     {
+      "TestPurpose": "TestPurpose.Filter",
+      "type": "EnvQueryTest_Pathfinding"
+     },
+     {
+      "DistanceTo": "EQS_Context_TargetEnemy_C",
+      "FilterType": "TestFilterType.Maximum",
+      "FloatValueMax": {
+       "field": "DataValue",
+       "from": {
+        "SourceContext": "EnvQueryContext_Querier",
+        "TargetContext": "EQS_Context_TargetEnemy_C",
+        "provider": "WDAIDataProvider_Distance"
+       }
+      },
+      "FloatValueMin": {
+       "field": "FloatValue",
+       "from": {
+        "DataProviders": [
+         {
+          "default": 0.0,
+          "field": "DataValue",
+          "from": {
+           "WeaponDataField": "EAIWeaponDataField.MinAIRange",
+           "provider": "WDAIDataProvider_WeaponData"
+          }
+         },
+         {
+          "default": 0.5
+         }
+        ],
+        "Operator": "ESDAICompositeOperation.Mul",
+        "provider": "SDCompositeDataProvider"
+       }
+      },
+      "ReferenceValue": {
+       "field": "DataValue",
+       "from": {
+        "WeaponDataField": "EAIWeaponDataField.MinAIRange",
+        "provider": "WDAIDataProvider_WeaponData"
+       }
+      },
+      "ScoringEquation": "TestScoreEquation.InverseLinear",
+      "TestOrder": 1,
+      "type": "EnvQueryTest_Distance"
+     },
+     {
+      "DistanceTo": "BP_EnvQueryContext_AliveTeammates_C",
+      "FilterType": "TestFilterType.Minimum",
+      "FloatValueMin": 200.0,
+      "TestOrder": 2,
+      "TestPurpose": "TestPurpose.Filter",
+      "type": "EnvQueryTest_Distance"
+     }
+    ]
+   }
+  ],
+  "EQS_FindCoverCloserToEnemy": [
+   {
+    "generator": {
+     "CenterContext": "EnvQueryContext_Querier",
+     "IncludeReservedByMe": true,
+     "OnlyFreeCovers": true,
+     "Radius": 3000.0,
+     "type": "SDEnvQueryGenerator_Covers"
+    },
+    "tests": [
+     {
+      "FilterType": "TestFilterType.Minimum",
+      "FloatValueMax": 1.0,
+      "FloatValueMin": 0.7,
+      "LineA": {
+       "Rotation": "EnvQueryContext_Item"
+      },
+      "LineB": {
+       "LineFrom": "EnvQueryContext_Item",
+       "LineTo": "EQS_Context_TargetEnemy_C"
+      },
+      "NormalizationType": "EEQSNormalizationType.RelativeToScores",
+      "ScoringEquation": "TestScoreEquation.Square",
+      "ScoringFactor": 0.5,
+      "TestMode": "TestDot.Dot2D",
+      "type": "EnvQueryTest_Dot"
+     },
+     {
+      "FilterType": "TestFilterType.Minimum",
+      "FloatValueMin": {
+       "field": "DataValue",
+       "from": {
+        "WeaponDataField": "EAIWeaponDataField.MinAIRange",
+        "provider": "WDAIDataProvider_WeaponData"
+       }
+      },
+      "ScoringEquation": "TestScoreEquation.InverseLinear",
+      "ScoringFactor": 0.5,
+      "TestOrder": 1,
+      "TestPurpose": "TestPurpose.Score",
+      "type": "EnvQueryTest_Distance"
+     },
+     {
+      "BoolValue": false,
+      "Context": "EQS_Context_TargetEnemy_C",
+      "TestOrder": 2,
+      "TestPurpose": "TestPurpose.Filter",
+      "TraceData": {
+       "TraceMode": "QueryTrace.GeometryByChannel",
+       "bOnlyBlockingHits": false
+      },
+      "type": "WDEnvQueryTest_CoverTrace"
+     },
+     {
+      "DistanceTo": "EQS_Context_TargetEnemy_C",
+      "FilterType": "TestFilterType.Maximum",
+      "FloatValueMax": {
+       "field": "DataValue",
+       "from": {
+        "WeaponDataField": "EAIWeaponDataField.MinAIRange",
+        "provider": "WDAIDataProvider_WeaponData"
+       }
+      },
+      "FloatValueMin": {
+       "default": 500.0,
+       "field": "FloatValue",
+       "from": {
+        "DataProviders": [
+         {
+          "default": 0.0,
+          "field": "DataValue",
+          "from": {
+           "WeaponDataField": "EAIWeaponDataField.MinAIRange",
+           "provider": "WDAIDataProvider_WeaponData"
+          }
+         },
+         {
+          "default": 0.5
+         }
+        ],
+        "Operator": "ESDAICompositeOperation.Mul",
+        "provider": "SDCompositeDataProvider"
+       }
+      },
+      "ReferenceValue": {
+       "field": "DataValue",
+       "from": {
+        "WeaponDataField": "EAIWeaponDataField.MinAIRange",
+        "provider": "WDAIDataProvider_WeaponData"
+       }
+      },
+      "ScoringEquation": "TestScoreEquation.InverseLinear",
+      "TestOrder": 3,
+      "bDefineReferenceValue": true,
+      "type": "EnvQueryTest_Distance"
+     },
+     {
+      "DistanceTo": "BP_EnvQueryContext_AliveTeammates_C",
+      "FilterType": "TestFilterType.Minimum",
+      "FloatValueMin": 200.0,
+      "TestOrder": 4,
+      "TestPurpose": "TestPurpose.Filter",
+      "type": "EnvQueryTest_Distance"
+     },
+     {
+      "TestOrder": 5,
+      "TestPurpose": "TestPurpose.Filter",
+      "type": "EnvQueryTest_PathfindingBatch"
+     }
+    ]
+   }
+  ],
+  "EQS_FindCoverInBesiegeArea": [
+   {
+    "generator": {
+     "CenterContext": "EnvQueryContext_SDAIGoalTarget",
+     "OnlyFreeCovers": true,
+     "Radius": {
+      "field": "DataValue",
+      "from": {
+       "VolumeContext": "EnvQueryContext_SDAIGoalTarget",
+       "provider": "WDAIDataProvider_VolumeSize"
+      }
+     },
+     "type": "SDEnvQueryGenerator_Covers"
+    },
+    "tests": [
+     {
+      "TestPurpose": "TestPurpose.Filter",
+      "VolumeClass": "WDTargetAreaVolume",
+      "VolumeContext": "EnvQueryContext_SDAIGoalTarget",
+      "type": "EnvQueryTest_Volume"
+     },
+     {
+      "BoolValue": false,
+      "FilterType": "TestFilterType.Maximum",
+      "FloatValueMax": 0.4,
+      "InfluenceMapTag": {
+       "TagName": "InfluenceMap.TeamMap"
+      },
+      "ScoringEquation": "TestScoreEquation.InverseLinear",
+      "TestOrder": 1,
+      "type": "WDEnvQueryTest_InfluenceMapValue"
+     },
+     {
+      "TestOrder": 2,
+      "TestPurpose": "TestPurpose.Filter",
+      "type": "EnvQueryTest_PathfindingBatch"
+     },
+     {
+      "DistanceTo": "BP_EnvQueryContext_FriendsMovementLocations_C",
+      "FilterType": "TestFilterType.Minimum",
+      "FloatValueMin": 200.0,
+      "MultipleContextScoreOp": "TestScoreOperator.MinScore",
+      "TestOrder": 3,
+      "type": "EnvQueryTest_Distance"
+     },
+     {
+      "FilterType": "TestFilterType.Maximum",
+      "FloatValueMin": 0.6,
+      "LineA": {
+       "Rotation": "EnvQueryContext_Item"
+      },
+      "LineB": {
+       "LineFrom": "EnvQueryContext_Item",
+       "LineTo": "EnvQueryContext_SDAIGoalTarget"
+      },
+      "TestMode": "TestDot.Dot2D",
+      "TestOrder": 4,
+      "TestPurpose": "TestPurpose.Filter",
+      "type": "EnvQueryTest_Dot"
+     }
+    ]
+   }
+  ],
+  "EQS_FindCoverInBesiegeAreaClosest": [
+   {
+    "generator": {
+     "CenterContext": "EnvQueryContext_SDAIGoalTarget",
+     "OnlyFreeCovers": true,
+     "Radius": {
+      "field": "DataValue",
+      "from": {
+       "VolumeContext": "EnvQueryContext_SDAIGoalTarget",
+       "provider": "WDAIDataProvider_VolumeSize"
+      }
+     },
+     "type": "SDEnvQueryGenerator_Covers"
+    },
+    "tests": [
+     {
+      "TestPurpose": "TestPurpose.Filter",
+      "VolumeClass": "WDTargetAreaVolume",
+      "VolumeContext": "EnvQueryContext_SDAIGoalTarget",
+      "type": "EnvQueryTest_Volume"
+     },
+     {
+      "TestOrder": 1,
+      "TestPurpose": "TestPurpose.Filter",
+      "type": "EnvQueryTest_PathfindingBatch"
+     },
+     {
+      "DistanceTo": "BP_EnvQueryContext_FriendsMovementLocations_C",
+      "FilterType": "TestFilterType.Minimum",
+      "FloatValueMin": 200.0,
+      "MultipleContextScoreOp": "TestScoreOperator.MinScore",
+      "ScoringFactor": 0.6,
+      "TestOrder": 2,
+      "TestPurpose": "TestPurpose.Filter",
+      "type": "EnvQueryTest_Distance"
+     },
+     {
+      "FilterType": "TestFilterType.Minimum",
+      "FloatValueMin": 200.0,
+      "MultipleContextScoreOp": "TestScoreOperator.MinScore",
+      "ScoringEquation": "TestScoreEquation.InverseLinear",
+      "TestOrder": 3,
+      "TestPurpose": "TestPurpose.Score",
+      "type": "EnvQueryTest_Distance"
+     }
+    ]
+   }
+  ],
+  "EQS_FindCoverNearby": [
+   {
+    "generator": {
+     "CenterContext": "EnvQueryContext_Querier",
+     "IncludeReservedByMe": true,
+     "OnlyFreeCovers": true,
+     "Radius": {
+      "default": 3000.0,
+      "field": "DataValue",
+      "from": {
+       "AIConfigDataField": "EAIConfigDataField.RadiusToSearchForCovers",
+       "provider": "WDAIDataProvider_AIConfigData"
+      }
+     },
+     "type": "SDEnvQueryGenerator_Covers"
+    },
+    "tests": [
+     {
+      "FilterType": "TestFilterType.Minimum",
+      "FloatValueMax": 1.0,
+      "FloatValueMin": 0.5,
+      "LineA": {
+       "Rotation": "EnvQueryContext_Item"
+      },
+      "LineB": {
+       "LineFrom": "EnvQueryContext_Item",
+       "LineTo": "WDEnvQueryContext_HighestThreatLocation"
+      },
+      "NormalizationType": "EEQSNormalizationType.RelativeToScores",
+      "ScoringEquation": "TestScoreEquation.Square",
+      "ScoringFactor": 0.5,
+      "TestMode": "TestDot.Dot2D",
+      "type": "EnvQueryTest_Dot"
+     },
+     {
+      "ScoringEquation": "TestScoreEquation.InverseLinear",
+      "TestOrder": 1,
+      "TestPurpose": "TestPurpose.Score",
+      "type": "EnvQueryTest_Distance"
+     },
+     {
+      "DistanceTo": "BP_EnvQueryContext_AliveTeammates_C",
+      "FilterType": "TestFilterType.Minimum",
+      "FloatValueMin": 200.0,
+      "TestOrder": 2,
+      "TestPurpose": "TestPurpose.Filter",
+      "type": "EnvQueryTest_Distance"
+     }
+    ]
+   }
+  ],
+  "EQS_FindCoverTowardBesiegeTarget": [
+   {
+    "generator": {
+     "CenterContext": "EnvQueryContext_SDAIGoalTarget",
+     "OnlyFreeCovers": true,
+     "Radius": {
+      "default": 2000.0,
+      "field": "DataValue",
+      "from": {
+       "VolumeContext": "EnvQueryContext_SDAIGoalTarget",
+       "provider": "WDAIDataProvider_VolumeSize"
+      }
+     },
+     "type": "SDEnvQueryGenerator_Covers"
+    },
+    "tests": [
+     {
+      "TestPurpose": "TestPurpose.Filter",
+      "VolumeClass": "WDTargetAreaVolume",
+      "VolumeContext": "EnvQueryContext_SDAIGoalTarget",
+      "type": "EnvQueryTest_Volume"
+     },
+     {
+      "FilterType": "TestFilterType.Minimum",
+      "FloatValueMax": 1.0,
+      "FloatValueMin": 0.6,
+      "LineA": {
+       "Rotation": "EnvQueryContext_Item"
+      },
+      "LineB": {
+       "LineFrom": "EnvQueryContext_Item",
+       "LineTo": "EnvQueryContext_SDAIGoalTarget"
+      },
+      "TestMode": "TestDot.Dot2D",
+      "TestOrder": 1,
+      "TestPurpose": "TestPurpose.Filter",
+      "type": "EnvQueryTest_Dot"
+     },
+     {
+      "FloatValueMin": 400.0,
+      "ReferenceValue": 500.0,
+      "TestOrder": 2,
+      "TestPurpose": "TestPurpose.Filter",
+      "bDefineReferenceValue": true,
+      "type": "EnvQueryTest_PathfindingBatch"
+     },
+     {
+      "DistanceTo": "EnvQueryContext_SDAIGoalTarget",
+      "FilterType": "TestFilterType.Maximum",
+      "FloatValueMax": {
+       "field": "DataValue",
+       "from": {
+        "TargetType": "ESDAIGoalDataProviderTargetType.GoalToOwnerDistance",
+        "provider": "SDAIGoalDataProvider_Target"
+       }
+      },
+      "ScoringEquation": "TestScoreEquation.InverseLinear",
+      "TestOrder": 3,
+      "TestPurpose": "TestPurpose.Score",
+      "type": "EnvQueryTest_Distance"
+     },
+     {
+      "DistanceTo": "BP_EnvQueryContext_FriendsMovementLocations_C",
+      "FilterType": "TestFilterType.Minimum",
+      "FloatValueMin": 200.0,
+      "MultipleContextScoreOp": "TestScoreOperator.MinScore",
+      "TestOrder": 4,
+      "type": "EnvQueryTest_Distance"
+     }
+    ]
+   }
+  ],
+  "EQS_FindCoverTowardGoalTarget": [
+   {
+    "generator": {
+     "CenterContext": "EnvQueryContext_Querier",
+     "OnlyFreeCovers": true,
+     "Radius": 2000.0,
+     "type": "SDEnvQueryGenerator_Covers"
+    },
+    "tests": [
+     {
+      "FloatValueMax": 1.0,
+      "FloatValueMin": 0.8,
+      "LineA": {
+       "Rotation": "EnvQueryContext_Item"
+      },
+      "LineB": {
+       "LineFrom": "EnvQueryContext_Item",
+       "LineTo": "EnvQueryContext_SDAIGoalTarget"
+      },
+      "TestMode": "TestDot.Dot2D",
+      "TestPurpose": "TestPurpose.Filter",
+      "type": "EnvQueryTest_Dot"
+     },
+     {
+      "FilterType": "TestFilterType.Range",
+      "ScoringEquation": "TestScoreEquation.InverseLinear",
+      "TestMode": "TestPathfinding.PathCost",
+      "TestOrder": 1,
+      "TestPurpose": "TestPurpose.Score",
+      "bWorkOnFloatValues": true,
+      "type": "EnvQueryTest_Pathfinding"
+     },
+     {
+      "DistanceTo": "EnvQueryContext_SDAIGoalTarget",
+      "FilterType": "TestFilterType.Maximum",
+      "FloatValueMax": {
+       "field": "DataValue",
+       "from": {
+        "TargetType": "ESDAIGoalDataProviderTargetType.GoalToOwnerDistance",
+        "provider": "SDAIGoalDataProvider_Target"
+       }
+      },
+      "FloatValueMin": 200.0,
+      "ScoringEquation": "TestScoreEquation.InverseLinear",
+      "ScoringFactor": 4.0,
+      "TestOrder": 2,
+      "TestPurpose": "TestPurpose.Filter",
+      "type": "EnvQueryTest_Distance"
+     },
+     {
+      "DistanceTo": "EnvQueryContext_SDAIGoalSquadMembers",
+      "FilterType": "TestFilterType.Minimum",
+      "FloatValueMin": 300.0,
+      "TestOrder": 3,
+      "type": "EnvQueryTest_Distance"
+     }
+    ]
+   }
+  ],
+  "EQS_FindCoverTowardsEnemy": [
+   {
+    "generator": {
+     "CenterContext": "EnvQueryContext_Querier",
+     "IncludeReservedByMe": true,
+     "OnlyFreeCovers": true,
+     "Radius": {
+      "default": 3000.0,
+      "field": "DataValue",
+      "from": {
+       "AIConfigDataField": "EAIConfigDataField.RadiusToSearchForCovers",
+       "provider": "WDAIDataProvider_AIConfigData"
+      }
+     },
+     "type": "SDEnvQueryGenerator_Covers"
+    },
+    "tests": [
+     {
+      "FilterType": "TestFilterType.Minimum",
+      "FloatValueMax": 1.0,
+      "FloatValueMin": 0.4,
+      "LineA": {
+       "Rotation": "EnvQueryContext_Item"
+      },
+      "LineB": {
+       "LineFrom": "EnvQueryContext_Item",
+       "LineTo": "EQS_Context_TargetEnemy_C"
+      },
+      "TestMode": "TestDot.Dot2D",
+      "TestPurpose": "TestPurpose.Filter",
+      "type": "EnvQueryTest_Dot"
+     },
+     {
+      "FilterType": "TestFilterType.Range",
+      "ScoringEquation": "TestScoreEquation.InverseLinear",
+      "ScoringFactor": 0.8,
+      "TestMode": "TestPathfinding.PathCost",
+      "TestOrder": 1,
+      "TestPurpose": "TestPurpose.Score",
+      "bWorkOnFloatValues": true,
+      "type": "EnvQueryTest_Pathfinding"
+     },
+     {
+      "FilterType": "TestFilterType.Minimum",
+      "FloatValueMin": 200.0,
+      "TestOrder": 2,
+      "TestPurpose": "TestPurpose.Filter",
+      "type": "EnvQueryTest_Distance"
+     },
+     {
+      "DistanceTo": "BP_EnvQueryContext_AliveTeammates_C",
+      "FilterType": "TestFilterType.Minimum",
+      "FloatValueMin": 200.0,
+      "TestOrder": 3,
+      "TestPurpose": "TestPurpose.Filter",
+      "bDefineReferenceValue": true,
+      "type": "EnvQueryTest_Distance"
+     },
+     {
+      "DistanceTo": "EQS_Context_TargetEnemy_C",
+      "FilterType": "TestFilterType.Maximum",
+      "FloatValueMax": {
+       "field": "DataValue",
+       "from": {
+        "SourceContext": "EnvQueryContext_Querier",
+        "TargetContext": "EQS_Context_TargetEnemy_C",
+        "provider": "WDAIDataProvider_Distance"
+       }
+      },
+      "TestOrder": 4,
+      "TestPurpose": "TestPurpose.Filter",
+      "type": "EnvQueryTest_Distance"
+     }
+    ]
+   }
+  ],
+  "EQS_FindFleePointFromGoalTarget": [
+   {
+    "generator": {
+     "ArcAngle": 180.0,
+     "ArcDirection": {
+      "LineTo": "EnvQueryContext_SDAIGoalTarget"
+     },
+     "ProjectionData": {
+      "SerializedChannel": "ECollisionChannel.ECC_Visibility",
+      "TraceMode": "QueryTrace.Navigation"
+     },
+     "bDefineArc": true,
+     "type": "EnvQueryGenerator_Donut"
+    },
+    "tests": [
+     {
+      "DistanceTo": "EnvQueryContext_SDAIGoalTarget",
+      "TestPurpose": "TestPurpose.Score",
+      "type": "EnvQueryTest_Distance"
+     }
+    ]
+   }
+  ],
+  "EQS_FindPeekPointToStimulus": [
+   {
+    "generator": {
+     "type": "SDEnvQueryGenerator_PeekPoints"
+    },
+    "tests": []
+   }
+  ],
+  "EQS_FindPointAroundBesiegeTarget": [
+   {
+    "generator": {
+     "Center": "EnvQueryContext_SDAIGoalTarget",
+     "DistanceBetweenPoints": 500,
+     "InnerRadius": 200.0,
+     "OuterRadius": {
+      "field": "DataValue",
+      "from": {
+       "VolumeContext": "EnvQueryContext_SDAIGoalTarget",
+       "provider": "WDAIDataProvider_VolumeSize"
+      }
+     },
+     "ProjectionData": {
+      "SerializedChannel": "ECollisionChannel.ECC_Visibility",
+      "TraceMode": "QueryTrace.Navigation"
+     },
+     "SpacingMethod": "ESpacingMethod.DistanceBetweenPoints",
+     "type": "EnvQueryGenerator_SD_Donut"
+    },
+    "tests": [
+     {
+      "FloatValueMin": 100.0,
+      "SkipUnreachable": false,
+      "TestPurpose": "TestPurpose.Filter",
+      "type": "EnvQueryTest_PathfindingBatch"
+     },
+     {
+      "DistanceTo": "EnvQueryContext_SDAIGoalTarget",
+      "ScoringEquation": "TestScoreEquation.InverseLinear",
+      "TestOrder": 1,
+      "TestPurpose": "TestPurpose.Score",
+      "type": "EnvQueryTest_Distance"
+     },
+     {
+      "DistanceTo": "BP_EnvQueryContext_FriendsMovementLocations_C",
+      "FilterType": "TestFilterType.Minimum",
+      "FloatValueMin": 200.0,
+      "TestOrder": 2,
+      "TestPurpose": "TestPurpose.Filter",
+      "type": "EnvQueryTest_Distance"
+     },
+     {
+      "TestOrder": 3,
+      "TestPurpose": "TestPurpose.Filter",
+      "VolumeClass": "WDTargetAreaVolume",
+      "VolumeContext": "EnvQueryContext_SDAIGoalTarget",
+      "type": "EnvQueryTest_Volume"
+     }
+    ]
+   }
+  ],
+  "EQS_FindPointCloseToBesiegeTarget": [
+   {
+    "generator": {
+     "DistanceBetweenPoints": 500,
+     "InnerRadius": 1000.0,
+     "OuterRadius": {
+      "field": "DataValue",
+      "from": {
+       "AIConfigDataField": "EAIConfigDataField.RadiusToSearchForCovers",
+       "provider": "WDAIDataProvider_AIConfigData"
+      }
+     },
+     "ProjectionData": {
+      "SerializedChannel": "ECollisionChannel.ECC_Visibility",
+      "TraceMode": "QueryTrace.Navigation"
+     },
+     "SpacingMethod": "ESpacingMethod.DistanceBetweenPoints",
+     "type": "EnvQueryGenerator_SD_Donut"
+    },
+    "tests": [
+     {
+      "FloatValueMin": 100.0,
+      "SkipUnreachable": false,
+      "TestPurpose": "TestPurpose.Filter",
+      "type": "EnvQueryTest_PathfindingBatch"
+     },
+     {
+      "DistanceTo": "EnvQueryContext_SDAIGoalTarget",
+      "ScoringEquation": "TestScoreEquation.InverseLinear",
+      "TestOrder": 1,
+      "TestPurpose": "TestPurpose.Score",
+      "type": "EnvQueryTest_Distance"
+     },
+     {
+      "DistanceTo": "BP_EnvQueryContext_FriendsMovementLocations_C",
+      "FilterType": "TestFilterType.Minimum",
+      "FloatValueMin": 100.0,
+      "TestOrder": 2,
+      "TestPurpose": "TestPurpose.Filter",
+      "type": "EnvQueryTest_Distance"
+     }
+    ]
+   }
+  ],
+  "EQS_FindRandomPeekPoint": [
+   {
+    "generator": {
+     "type": "SDEnvQueryGenerator_PeekPoints"
+    },
+    "tests": []
+   }
+  ],
+  "EQS_FindSearchLocation": [
+   {
+    "generator": {
+     "InfluenceMapEvaluatorInstance": "BP_InfluenceEvaluator_AlertLocationGenerator_C_0",
+     "bUseContextAreaId": true,
+     "bUseRandomLocationInPolygon": true,
+     "type": "WDEnvQueryGenerator_GenerateInfluenceLocations"
+    },
+    "tests": [
+     {
+      "ScoringEquation": "TestScoreEquation.InverseLinear",
+      "TestPurpose": "TestPurpose.Score",
+      "type": "EnvQueryTest_Distance"
+     }
+    ]
+   }
+  ],
+  "EQS_FindShootPositionInTheOpen": [
+   {
+    "generator": {
+     "InnerRadius": 0.0,
+     "NumberOfRings": 4,
+     "OuterRadius": {
+      "default": 3000.0,
+      "field": "DataValue",
+      "from": {
+       "AIConfigDataField": "EAIConfigDataField.RadiusToSearchForCovers",
+       "provider": "WDAIDataProvider_AIConfigData"
+      }
+     },
+     "ProjectionData": {
+      "SerializedChannel": "ECollisionChannel.ECC_Visibility",
+      "TraceMode": "QueryTrace.Navigation"
+     },
+     "type": "EnvQueryGenerator_Donut"
+    },
+    "tests": [
+     {
+      "BoolValue": false,
+      "Context": "EQS_Context_TargetEnemy_C",
+      "ContextHeightOffset": {
+       "DataField": "FloatValue"
+      },
+      "ItemHeightOffset": {
+       "default": 170.0,
+       "field": "DataValue",
+       "from": {
+        "Context": "EnvQueryContext_Querier",
+        "provider": "WDAIDataProvider_AgentHeight"
+       }
+      },
+      "TestPurpose": "TestPurpose.Filter",
+      "TraceData": {
+       "SerializedChannel": "ECollisionChannel.ECC_Visibility",
+       "bOnlyBlockingHits": false
+      },
+      "type": "EnvQueryTest_Trace"
+     },
+     {
+      "FilterType": "TestFilterType.Range",
+      "ScoringEquation": "TestScoreEquation.InverseLinear",
+      "ScoringFactor": 0.5,
+      "TestMode": "TestPathfinding.PathCost",
+      "TestOrder": 1,
+      "TestPurpose": "TestPurpose.Score",
+      "bWorkOnFloatValues": true,
+      "type": "EnvQueryTest_Pathfinding"
+     },
+     {
+      "DistanceTo": "EQS_Context_TargetEnemy_C",
+      "FilterType": "TestFilterType.Maximum",
+      "FloatValueMax": {
+       "field": "DataValue",
+       "from": {
+        "WeaponDataField": "EAIWeaponDataField.MaxAIRange",
+        "provider": "WDAIDataProvider_WeaponData"
+       }
+      },
+      "FloatValueMin": {
+       "field": "FloatValue",
+       "from": {
+        "DataProviders": [
+         {
+          "default": 0.0,
+          "field": "DataValue",
+          "from": {
+           "WeaponDataField": "EAIWeaponDataField.MinAIRange",
+           "provider": "WDAIDataProvider_WeaponData"
+          }
+         },
+         {
+          "default": 0.5
+         }
+        ],
+        "Operator": "ESDAICompositeOperation.Mul",
+        "provider": "SDCompositeDataProvider"
+       }
+      },
+      "ReferenceValue": {
+       "field": "DataValue",
+       "from": {
+        "WeaponDataField": "EAIWeaponDataField.MinAIRange",
+        "provider": "WDAIDataProvider_WeaponData"
+       }
+      },
+      "ScoringEquation": "TestScoreEquation.InverseLinear",
+      "TestOrder": 2,
+      "bDefineReferenceValue": true,
+      "type": "EnvQueryTest_Distance"
+     },
+     {
+      "DistanceTo": "BP_EnvQueryContext_AliveTeammates_C",
+      "FilterType": "TestFilterType.Minimum",
+      "FloatValueMin": 200.0,
+      "TestOrder": 3,
+      "TestPurpose": "TestPurpose.Filter",
+      "type": "EnvQueryTest_Distance"
+     }
+    ]
+   }
+  ],
+  "EQS_FindTarget": [
+   {
+    "generator": {
+     "type": "WDEnvQueryGenerator_ThreatActors"
+    },
+    "tests": [
+     {
+      "TagQueryToMatch": {
+       "AutoDescription": " ALL( State.Player.Vitality.Alive )",
+       "QueryTokenStream": [
+        0,
+        1,
+        2,
+        1,
+        0
+       ],
+       "TagDictionary": [
+        {
+         "TagName": "State.Player.Vitality.Alive"
+        }
+       ],
+       "UserDescription": "Actor is 'alive'."
+      },
+      "type": "EnvQueryTest_GameplayTags"
+     }
+    ]
+   },
+   {
+    "generator": {
+     "SenseToUse": "AISense_Hearing",
+     "type": "WDEnvQueryGenerator_ThreatActors"
+    },
+    "tests": [
+     {
+      "TagQueryToMatch": {
+       "AutoDescription": " ALL( State.Player.Vitality.Alive )",
+       "QueryTokenStream": [
+        0,
+        1,
+        2,
+        1,
+        0
+       ],
+       "TagDictionary": [
+        {
+         "TagName": "State.Player.Vitality.Alive"
+        }
+       ],
+       "UserDescription": "Actor is 'alive'."
+      },
+      "type": "EnvQueryTest_GameplayTags"
+     }
+    ]
+   },
+   {
+    "generator": {
+     "SenseToUse": "AISense_Damage",
+     "type": "WDEnvQueryGenerator_ThreatActors"
+    },
+    "tests": [
+     {
+      "TagQueryToMatch": {
+       "AutoDescription": " ALL( State.Player.Vitality.Alive )",
+       "QueryTokenStream": [
+        0,
+        1,
+        2,
+        1,
+        0
+       ],
+       "TagDictionary": [
+        {
+         "TagName": "State.Player.Vitality.Alive"
+        }
+       ],
+       "UserDescription": "Actor is 'alive'."
+      },
+      "type": "EnvQueryTest_GameplayTags"
+     }
+    ]
+   }
+  ],
+  "EQS_LeapFrogTokenHandling": [
+   {
+    "generator": {
+     "type": "SDEnvQueryGenerator_TokenRequests"
+    },
+    "tests": [
+     {
+      "DistanceTo": "EnvQueryContext_SDAIGoalTarget",
+      "FilterType": "TestFilterType.Maximum",
+      "FloatValueMax": {
+       "DataField": "DataValue"
+      },
+      "FloatValueMin": 200.0,
+      "TestPurpose": "TestPurpose.Score",
+      "type": "EnvQueryTest_Distance"
+     }
+    ]
+   }
+  ],
+  "EQS_PatrolPoint": [
+   {
+    "generator": {
+     "ProjectionData": {
+      "SerializedChannel": "ECollisionChannel.ECC_Visibility"
+     },
+     "QueryContext": "BP_EnvQueryContext_ProjectedPatrolPointOnSpline_C",
+     "type": "EnvQueryGenerator_ProjectedLocation"
+    },
+    "tests": [
+     {
+      "FloatValueMin": 0.0,
+      "TestPurpose": "TestPurpose.Filter",
+      "type": "EnvQueryTest_PathfindingBatch"
+     },
+     {
+      "FilterType": "TestFilterType.Minimum",
+      "FloatValueMin": 200.0,
+      "ScoringEquation": "TestScoreEquation.InverseLinear",
+      "TestOrder": 1,
+      "type": "EnvQueryTest_Distance"
+     },
+     {
+      "DistanceTo": "BP_EnvQueryContext_ClosestPointOnSplineFromItem_C",
+      "ScoringEquation": "TestScoreEquation.InverseLinear",
+      "ScoringFactor": 10.0,
+      "TestOrder": 2,
+      "TestPurpose": "TestPurpose.Score",
+      "type": "EnvQueryTest_Distance"
+     }
+    ]
+   }
+  ],
+  "EQS_PatrolPoint_Follower": [
+   {
+    "generator": {
+     "Center": "EnvQueryContext_SDAIMovementLocationWithinSquad",
+     "DistanceBetweenPoints": 200,
+     "InnerRadius": 1.0,
+     "OuterRadius": 600.0,
+     "ProjectionData": {
+      "SerializedChannel": "ECollisionChannel.ECC_Visibility"
+     },
+     "SpacingMethod": "ESpacingMethod.DistanceBetweenPoints",
+     "bUseSpiralPattern": true,
+     "type": "EnvQueryGenerator_SD_Donut"
+    },
+    "tests": [
+     {
+      "FloatValueMin": 0.0,
+      "TestPurpose": "TestPurpose.Filter",
+      "type": "EnvQueryTest_PathfindingBatch"
+     },
+     {
+      "DistanceTo": "EnvQueryContext_SDAIMovementLocationWithinSquad",
+      "FilterType": "TestFilterType.Minimum",
+      "FloatValueMin": 20.0,
+      "ScoringEquation": "TestScoreEquation.InverseLinear",
+      "TestMode": "TestDistance.Distance2D",
+      "TestOrder": 1,
+      "TestPurpose": "TestPurpose.Score",
+      "type": "EnvQueryTest_Distance"
+     }
+    ]
+   }
+  ]
+ },
+ "source": "round 41 cooked-data read of round36_ai/dump (EQS_* and EQS context assets)"
+}
