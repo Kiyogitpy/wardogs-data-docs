@@ -108,7 +108,7 @@ Tips that follow from the numbers:
 
 ### Fuel
 
-Refuel a vehicle at a Refuel Station inside a Forward Operating Base, or with a Fuel Canister. The Refuel Station needs Fuel Supplies, and it must be inside the FOB radius to be used. The [Refuel and Repair Stations](../equipment/refuel-and-repair-stations.md) page has the stored figures, and the [Fuel and refueling](../vehicles/fuel-and-refueling.md) article covers the fuel tanks.
+Refuel a vehicle at a Refuel Station inside a Forward Operating Base, or with a Fuel Canister. The Refuel Station needs Fuel Supplies, and it must be inside the FOB radius to be used. The [Refuel and Repair Stations](../building/refuel-and-repair-stations.md) page has the stored figures, and the [Fuel and refueling](../vehicles/fuel-and-refueling.md) article covers the fuel tanks.
 
 | Option | Restock | Time | Cost | Input used |
 |---|---|---:|---:|---|
@@ -166,7 +166,7 @@ Tips that follow from the numbers:
 - [Vehicles](../vehicles.md): the full vehicle list
 - [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the smoke screen timing, the empty-tank restart block and the Max refuel charge rule
 - [Vehicle damage](../vehicles/vehicle-damage.md), [Repair and vehicle parts](../vehicles/repair-and-vehicle-parts.md), [Fuel and refueling](../vehicles/fuel-and-refueling.md), [Countermeasures and flares](../vehicles/countermeasures-and-flares.md) and [Seats and passengers](../vehicles/seats-and-passengers.md)
-- [Refuel and Repair Stations](../equipment/refuel-and-repair-stations.md) and [Fuel Canister](../equipment/fuel-canister.md)
+- [Refuel and Repair Stations](../building/refuel-and-repair-stations.md) and [Fuel Canister](../equipment/fuel-canister.md)
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
 - [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
 - [Vehicle Damage Pipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md)

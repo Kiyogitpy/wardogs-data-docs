@@ -11,7 +11,7 @@ description: "The AMR 50 sniper rifle: fire rate, damage by body part, range fal
 |---|---|
 | **General** |  |
 | Class | Sniper rifle |
-| Caliber | [.50Cal](caliber-50cal.md) |
+| Caliber | [.50 Cal](../ammunition/50-cal.md) |
 | Fire modes | Semi-automatic |
 | **Performance** |  |
 | Fire rate | 41.5 rounds/min |
@@ -24,13 +24,13 @@ description: "The AMR 50 sniper rifle: fire rate, damage by body part, range fal
 | Internal name | SR_04 |
 {: .wiki-infobox }
 
-The AMR 50 is a sniper rifle chambered in .50Cal. It fires semi-automatic at 41.5 rounds/min. Its standard magazine is the AMR 50 5 RND Magazine.
+The AMR 50 is a sniper rifle chambered in .50 Cal. It fires semi-automatic at 41.5 rounds/min. Its standard magazine is the AMR 50 5 RND Magazine.
 
 ## Overview
 
 Sniper rifles are the sniper class in the weapon data.
 
-It takes the bullet types described on the [Ammunition](ammunition.md) page: Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). Each has a tracer version.
+It takes the bullet types described on the [Ammunition](../ammunition.md) page: Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). Each has a tracer version.
 
 ## Stats
 
@@ -88,7 +88,7 @@ Figures are for Standard (FMJ) at point blank range, per hit, against a characte
 | Flesh Damage (HP) | 415.8 |
 | Armor Piercing (AP) | 166.3 |
 
-See [Ammunition](ammunition.md) for how each type does against armor, and [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md) for the full tables.
+See [Ammunition](../ammunition.md) for how each type does against armor, and [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md) for the full tables.
 
 ## Recoil and spread
 
@@ -137,7 +137,7 @@ To see the whole pattern as a picture, open the [Weapon Spray Viewer](https://ki
 
 ## Ammunition
 
-Ammo types for this weapon: Standard (FMJ), Standard (FMJ) with tracer, Flesh Damage (HP), Flesh Damage (HP) with tracer, Armor Piercing (AP), Armor Piercing (AP) with tracer. See [Ammunition](ammunition.md).
+Ammo types for this weapon: Standard (FMJ), Standard (FMJ) with tracer, Flesh Damage (HP), Flesh Damage (HP) with tracer, Armor Piercing (AP), Armor Piercing (AP) with tracer. See [Ammunition](../ammunition.md).
 
 ## Attachments
 
@@ -158,7 +158,7 @@ Default parts: magazine (AMR 50 5 RND Magazine).
 ## See also
 
 - [Weapons](../weapons.md)
-- [Ammunition](ammunition.md)
+- [Ammunition](../ammunition.md)
 - [Attachments](../attachments.md)
 - [Choosing Ammo](../guides/choosing-ammo.md)
 - [Ballistics](../game-mechanics/ballistics.md)

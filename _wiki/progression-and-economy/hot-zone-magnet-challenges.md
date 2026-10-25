@@ -1,7 +1,7 @@
 ---
 title: "Hot Zone Magnet Challenges"
 parent: "Progression & Economy"
-group: "Unlocks"
+group: "Challenges"
 description: "The three Hot Zone Magnet and tower challenges, and the base cash the magnet and tower events pay."
 ---
 

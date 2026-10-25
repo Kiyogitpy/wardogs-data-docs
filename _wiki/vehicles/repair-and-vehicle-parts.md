@@ -104,7 +104,7 @@ Health pools per vehicle, as stored in the data. Sort by any column with the hea
 | [Wrench](../equipment/wrench.md) | All vehicles | 10 HP | 0.68 s (about 14.7 HP per second) | 180 cash |
 | [Light repair drill](../equipment/drills.md) | Vehicles | 14.5 HP | 0.75 s (about 19.3 HP per second) | 600 cash |
 | [Heavy repair drill](../equipment/drills.md) | Vehicles | 14.5 HP | 0.5 s (29 HP per second) | 1,300 cash |
-| [Refuel and Repair Stations](../equipment/refuel-and-repair-stations.md) | Vehicles in the FOB radius | Fast: 5%; Max: up to 100% | Fast: 3 s; Max: 9 s | Fast: 100 cash; Max: 2,000 cash. Building a station costs 200 Build Supplies |
+| [Refuel and Repair Stations](../building/refuel-and-repair-stations.md) | Vehicles in the FOB radius | Fast: 5%; Max: up to 100% | Fast: 3 s; Max: 9 s | Fast: 100 cash; Max: 2,000 cash. Building a station costs 200 Build Supplies |
 
 Each repair tool is used until it is empty or the target is full. Each tool repairs a fixed amount per application: 10 HP for the Wrench and 14.5 HP for each drill, at the rates in the table. A Repair Station uses Mechanical Supplies, which cost 10 cash per lot of 50. A full restock uses 5 of them. A Max restock is charged only for the share of health it restores: the 2,000 cash price is the full-health price, scaled down for a partial repair and rounded up to a multiple of 50 (static reading of the restock code, not checked in play). The station's stored 13.33 figure is the structure's own hammer repair-speed multiplier. Every buildable has one, and most are the structure's Build Supplies cost divided by 15. It is not a vehicle repair rate.
 

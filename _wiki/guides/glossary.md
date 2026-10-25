@@ -15,7 +15,7 @@ This glossary explains the terms a player meets in the game and on this wiki. Ea
 | Adrenaline Pen | A non-healing item that gives unlimited tactical sprint for 60 seconds. | [Adrenaline Pen](../equipment/adrenaline-pen.md) |
 | Aim down sight (ADS) | Aiming through the weapon's sights, which removes hip spread. | [Spread and Recoil](../game-mechanics/spread-and-recoil.md) |
 | Armor | Vests and helmets that absorb part of the damage from a hit. | [Armor](../game-mechanics/armor.md) |
-| Armor-piercing (AP) | Ammunition built to get through armor. It does about 0.8 times standard damage, but it does more than standard against medium armor on rifle calibers. | [Ammunition](../weapons/ammunition.md) |
+| Armor-piercing (AP) | Ammunition built to get through armor. It does about 0.8 times standard damage, but it does more than standard against medium armor on rifle calibers. | [Ammunition](../ammunition.md) |
 | Artillery | Long-range fire missions from the SPH-2 gun, aimed with map coordinates, a bearing and mils. | [Artillery](../game-mechanics/artillery.md) |
 | Assault | One of the six roles. It was called Infantry in the game data and is titled Assault on this wiki. | [Assault](../progression-and-economy/assault.md) |
 
@@ -24,17 +24,17 @@ This glossary explains the terms a player meets in the game and on this wiki. Ea
 | Term | Meaning | Read more |
 |---|---|---|
 | Bearing | The compass angle, measured clockwise from north, from your position to a target or to the gun. | [Artillery](../game-mechanics/artillery.md) |
-| Bearing tape | The scale across the top of the SPH-2 gun sight. It shows the gun's compass bearing, with a tick every 3 degrees. | [Aiming the SPH-2](../guides/aiming-the-sph-2.md) |
+| Bearing tape | The scale across the top of the SPH-2 gun sight. It shows the gun's compass bearing, with a tick every 3 degrees. | [Aiming the SPH-2](aiming-the-sph-2.md) |
 | Bipod | An attachment that steadies a weapon when it is deployed and limits how far the weapon turns while mounted. | [Bipods](../attachments/bipods.md) |
 | Bleed-out | The timer a downed player has before dying. It is 360 seconds and drains at half speed, so it lasts about 12 minutes. | [Downed and Revive](../game-mechanics/downed-and-revive.md) |
 | Build Supplies | The resource that powers hammers. Players buy it and spend it to build structures. | [Supplies](../equipment/supplies.md) |
-| Buildable | Any structure built with a hammer, such as a wall, door, bunker or station. | [Buildables](../equipment/buildables.md) |
+| Buildable | Any structure built with a hammer, such as a wall, door, bunker or station. | [Buildables](../building.md) |
 
 ## C
 
 | Term | Meaning | Read more |
 |---|---|---|
-| Calibers | The bullet types a weapon fires, such as 5.56x45mm or .308 Win. | [Ammunition](../weapons/ammunition.md) |
+| Calibers | The bullet types a weapon fires, such as 5.56x45mm or .308 Win. | [Ammunition](../ammunition.md) |
 | Cash | The currency earned in matches and spent on gear, weapons, vehicles and skills. | [Cash and Rewards](../progression-and-economy/cash-and-rewards.md) |
 | C4 charge | A strong blast that a player places and sets off from a distance with the Remote Detonator. | [C4 Charge](../equipment/c4-charge.md) |
 | Challenge | An objective tracked across matches that pays rewards when completed. | [Challenges](../progression-and-economy/challenges.md) |
@@ -62,8 +62,8 @@ This glossary explains the terms a player meets in the game and on this wiki. Ea
 |---|---|---|
 | Factions | The three teams in the game data: Lonestar, Valkyra and Manticore. | [Factions](../game-modes-and-maps/factions.md) |
 | Fall damage | Damage taken from a hard landing or a fall from height. | [Movement](../game-mechanics/movement.md) |
-| FMJ (full metal jacket) | The standard ammunition type and the baseline for damage. | [Ammunition](../weapons/ammunition.md) |
-| Forward Operating Base (FOB) | The main player-built base. Most structures must be placed inside its radius. | [Forward Operating Base](../equipment/forward-operating-base.md) |
+| FMJ (full metal jacket) | The standard ammunition type and the baseline for damage. | [Ammunition](../ammunition.md) |
+| Forward Operating Base (FOB) | The main player-built base. Most structures must be placed inside its radius. | [Forward Operating Base](../building/forward-operating-base.md) |
 
 ## G
 
@@ -153,7 +153,7 @@ This glossary explains the terms a player meets in the game and on this wiki. Ea
 | Term | Meaning | Read more |
 |---|---|---|
 | Tac sprint (tactical sprint) | A faster sprint that drains stamina. It needs at least 20% stamina to start. | [Movement](../game-mechanics/movement.md) |
-| Tracer | A visible-trail version of each bullet type. It does the same damage as its base type. | [Ammunition](../weapons/ammunition.md) |
+| Tracer | A visible-trail version of each bullet type. It does the same damage as its base type. | [Ammunition](../ammunition.md) |
 
 ## X
 

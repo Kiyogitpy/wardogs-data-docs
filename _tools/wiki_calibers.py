@@ -1,4 +1,4 @@
-"""Generate one wiki article per caliber: _wiki/weapons/caliber-<slug>.md.
+"""Generate one wiki article per caliber: _wiki/ammunition/<slug>.md (the Ammunition section).
 
 Names, slugs, armor and damage helpers come from _tools/wiki_weapons.py, so every caliber
 name matches the weapon articles. Numbers come from assets/data/weapon-damage.json,
@@ -153,7 +153,7 @@ def build(key):
                    f"{s['rpm'].replace(' (class default)', '')} | {dmg_txt} |")
     out.append("")
     out += ["Point-blank figures use standard rounds (buckshot for shotguns, per pellet), per hit, without falloff. "
-            "See [Ammunition](ammunition.md) for the bullet types.", ""]
+            "See [Ammunition](../ammunition.md) for the bullet types.", ""]
 
     # Ammunition types, for one representative weapon
     rep_wid, rep_code = ws[0]
@@ -245,7 +245,7 @@ def build(key):
 
     # See also and sources
     out += ["## See also", "",
-            "- [Ammunition](ammunition.md), the bullet types and which weapons use each caliber",
+            "- [Ammunition](../ammunition.md), the bullet types and which weapons use each caliber",
             "- [Choosing Ammo](../guides/choosing-ammo.md), which round to load against each armor level",
             "- [Armor](../game-mechanics/armor.md)",
             "- [Ballistics](../game-mechanics/ballistics.md)",
@@ -265,14 +265,18 @@ def build(key):
 
 
 def main():
-    os.makedirs(W.OUT, exist_ok=True)
+    out_dir = os.path.join(W.WIKI, "ammunition")
+    os.makedirs(out_dir, exist_ok=True)
     keys = caliber_keys()
     for key in keys:
         title, desc, body = build(key)
-        fm = f"---\ntitle: \"{title}\"\nparent: \"Weapons\"\ngroup: \"Calibers\"\ndescription: \"{desc}\"\n---\n\n"
-        path = os.path.join(W.OUT, W.caliber_slug(key) + ".md")
+        slug = W.caliber_slug(key)
+        legacy = W.slugify(W.CAL.get(key, key))  # slug the page had under _wiki/weapons/caliber-*
+        fm = (f"---\ntitle: \"{title}\"\nparent: \"Ammunition\"\n"
+              f"redirect_from: [\"/wiki/weapons/caliber-{legacy}/\"]\ndescription: \"{desc}\"\n---\n\n")
+        path = os.path.join(out_dir, slug + ".md")
         with open(path, "w", encoding="utf-8", newline="\n") as f:
-            f.write(fm + body)
+            f.write(fm + W.rebase_links(body, "weapons", "ammunition"))
     print(f"wrote {len(keys)} caliber articles")
 
 

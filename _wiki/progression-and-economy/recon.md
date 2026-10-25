@@ -1,7 +1,7 @@
 ---
 title: "Recon"
 parent: "Progression & Economy"
-group: "Roles"
+group: "Roles and mastery"
 description: "The Recon role: 17 skills for sniper and marksman rifles, longer enemy spotting, lower visibility to infrared, lockpicking, its mastery curve and how it earns cash and XP."
 ---
 

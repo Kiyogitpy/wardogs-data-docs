@@ -134,7 +134,7 @@ The Season 2 items data lists no change to the Molotov, smoke grenades, mines or
 ## See also
 
 - [Grenades and Explosives](grenades-and-explosives.md), for blast damage and fuses of the frag grenade, C4 and launcher rounds
-- [Buildables](buildables.md), for the structures that the Molotov fire damages
+- [Buildables](../building.md), for the structures that the Molotov fire damages
 
 ## Sources
 

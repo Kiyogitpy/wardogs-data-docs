@@ -1,7 +1,7 @@
 ---
 title: "Achievements"
 parent: "Progression & Economy"
-group: "Unlocks"
+group: "Challenges"
 description: "The ten one-time achievements, the thresholds they use (100,000 cash, one hour in a control zone, 950 m) and what each one asks for. Each is a Steam achievement, and the data lists no other reward."
 ---
 

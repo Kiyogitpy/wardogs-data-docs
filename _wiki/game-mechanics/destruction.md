@@ -28,7 +28,7 @@ Destruction covers three kinds of object:
 - **Demolition props.** The fences, walls, bollards, signs, poles, bushes and trees that can be demolished by a set of named damage sources. Each prop has a rule set that decides what can bring it down.
 - **Street objects.** Road signs, telephone poles, lamp posts, benches, bins and a traffic cone. The data lists them for destruction, but none has a break-apart piece, so the data does not show how they break.
 
-Player-built structures such as walls, doors and bunkers are a separate system with their own health. They are covered on the [Buildables](../equipment/buildables.md) page.
+Player-built structures such as walls, doors and bunkers are a separate system with their own health. They are covered on the [Buildables](../building.md) page.
 
 ## How it works
 
@@ -91,10 +91,10 @@ When a vehicle or a fixed gun is destroyed, it plays an explosion picked for its
 | [Kodiak](../vehicles/kodiak.md), the [Humvee](../vehicles/humvee-m249.md) machine gun variant and the [Wolf 110](../vehicles/wolf-110.md) | Kodiak |
 | [Dune Buggy](../vehicles/dune-buggy.md) | Dune Buggy |
 | [Ural](../vehicles/ural.md) and the [Ural Defender](../vehicles/ural-defender.md) | Ural |
-| [Talon 9K SAM](../equipment/talon-9k-sam.md), [Vanguard CIWS](../equipment/vanguard-ciws.md), [L81 Mortar](../equipment/l81-mortar.md) and [Loudspeaker](../equipment/loudspeaker.md) | Each has its own |
+| [Talon 9K SAM](../building/talon-9k-sam.md), [Vanguard CIWS](../building/vanguard-ciws.md), [L81 Mortar](../building/l81-mortar.md) and [Loudspeaker](../building/loudspeaker.md) | Each has its own |
 | 155 mm shells, Standard and Expensive | 155 mm shell |
 | [Improvised Explosive Device](../equipment/improvised-explosive-device.md) | Improvised Explosive Device |
-| [Forward operating base](../equipment/forward-operating-base.md) | Destroyed base |
+| [Forward operating base](../building/forward-operating-base.md) | Destroyed base |
 
 Vehicles not in this table, such as the [T-72B3](../vehicles/t-72b3.md), use one general explosion recipe from the game files instead of a named sequence. This is read from the data; how it looks in play was not checked.
 
@@ -106,7 +106,7 @@ Vehicles not in this table, such as the [T-72B3](../vehicles/t-72b3.md), use one
 
 ## See also
 
-- [Buildables](../equipment/buildables.md): player-built structures, their health and what damages them
+- [Buildables](../building.md): player-built structures, their health and what damages them
 - [Vehicle damage](../vehicles/vehicle-damage.md): how vehicles take damage
 - [Penetration and Ricochet](penetration-and-ricochet.md): what happens when a bullet hits a surface
 

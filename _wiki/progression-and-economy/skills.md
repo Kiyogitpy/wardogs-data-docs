@@ -1,7 +1,7 @@
 ---
 title: "Skills"
 parent: "Progression & Economy"
-group: "Roles"
+group: "Roles and mastery"
 description: "The six roles and their 62 skills: what each skill changes in play, from faster aiming to longer tac-sprints and lower fuel use."
 ---
 

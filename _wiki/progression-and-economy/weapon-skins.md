@@ -1,7 +1,7 @@
 ---
 title: "Weapon Skins"
 parent: "Progression & Economy"
-group: "Unlocks"
+group: "Cosmetics"
 description: "Every weapon skin in Seasons 1 and 2, grouped by weapon, with its Gold Bar price and how it is unlocked, plus the faction logos."
 ---
 

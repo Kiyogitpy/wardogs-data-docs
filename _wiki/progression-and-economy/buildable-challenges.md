@@ -1,7 +1,7 @@
 ---
 title: "Buildable Challenges"
 parent: "Progression & Economy"
-group: "Unlocks"
+group: "Challenges"
 description: "The eleven challenges for building, supplying, damaging and hacking buildables and forward operating bases, with the base amounts in the data."
 ---
 
@@ -74,8 +74,8 @@ The sources list no Season 2 changes for these rows.
 ## See also
 
 - [Challenges](challenges.md), the overview of every challenge category
-- [Buildables](../equipment/buildables.md)
-- [Forward Operating Base](../equipment/forward-operating-base.md)
+- [Buildables](../building.md)
+- [Forward Operating Base](../building/forward-operating-base.md)
 - [Crowbar Challenges](crowbar-challenges.md)
 
 ## Sources

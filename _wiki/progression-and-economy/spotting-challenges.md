@@ -1,7 +1,7 @@
 ---
 title: "Spotting Challenges"
 parent: "Progression & Economy"
-group: "Unlocks"
+group: "Challenges"
 description: "The two spotting challenges, which pay cash when a player spots a target and when a spotted target is destroyed."
 ---
 

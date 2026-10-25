@@ -18,7 +18,7 @@ description: "Every gun mounted on a Wardogs vehicle: miniguns, M249 and M2 Brow
 | Rate | Rounds/min |
 {: .wiki-infobox }
 
-This page lists every gun mounted on a vehicle in Wardogs, from the miniguns on the helicopters to the cannons on the tanks and the SPH-2 artillery gun. Each row links to the vehicle article that carries the weapon. Guns on buildable emplacements are not on this page; they are in the emplacement articles listed under [Buildables](../equipment/buildables.md).
+This page lists every gun mounted on a vehicle in Wardogs, from the miniguns on the helicopters to the cannons on the tanks and the SPH-2 artillery gun. Each row links to the vehicle article that carries the weapon. Guns on buildable emplacements are not on this page; they are in the emplacement articles listed under [Buildables](../building.md).
 
 ## All vehicle weapons
 
@@ -45,7 +45,7 @@ This page lists every gun mounted on a vehicle in Wardogs, from the miniguns on 
 
 Reload times and starting ammunition come from each weapon's data file. A starting ammunition of 0 means no rounds are loaded at the start. "None" means the article records no starting rounds. The 600 rounds/min shown for the M2 Browning and the PKTM is the game's default rate, because their weapon data does not set one. Where the table says "Not yet known", the data does not give the value.
 
-Only stationary weapons restock with supplies, as the [Buildables](../equipment/buildables.md) emplacements do. The guns on vehicles do not restock this way. A vehicle gun carries the rounds in the starting ammunition column and has no supply restock in the data.
+Only stationary weapons restock with supplies, as the [Buildables](../building.md) emplacements do. The guns on vehicles do not restock this way. A vehicle gun carries the rounds in the starting ammunition column and has no supply restock in the data.
 
 Guns mounted on vehicles can have a spread of their own, set in the vehicle data. That spread eases toward its value at about 25 per second, and it is zero when the gunner is fully aimed down sights. Plain mounted weapons have no spread of their own. See [Spread and Recoil](../game-mechanics/spread-and-recoil.md) (a static reading of the game code, not checked in play).
 
@@ -90,7 +90,7 @@ The SPH-2's L52 fires 155 mm shells at 50 rounds/min with a 10,000 m range. The 
 ## See also
 
 - [Vehicles](../vehicles.md): every vehicle with its seats, health and price
-- [Buildables](../equipment/buildables.md): the stationary guns, which are built rather than driven
+- [Buildables](../building.md): the stationary guns, which are built rather than driven
 - [Vehicle damage](vehicle-damage.md): how the damage tables work
 - [Artillery](../game-mechanics/artillery.md): the SPH-2's gun in detail
 

@@ -1,7 +1,7 @@
 ---
 title: "Challenges"
 parent: "Progression & Economy"
-group: "Unlocks"
+group: "Challenges"
 description: "The challenges that pay out during and across matches: in-match actions, achievements, passive missions, wagers and tips."
 ---
 

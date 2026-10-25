@@ -8,7 +8,7 @@ description: "Every player weapon, the ammunition they use and the attachments t
 
 # Weapons
 
-Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun, sniper rifle and launcher in the weapon data that a player can get, grouped by class. Each name links to its article; click a column heading to sort. [Ammunition](weapons/ammunition.md) and [Attachments](attachments.md) have their own pages.
+Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun, sniper rifle and launcher in the weapon data that a player can get, grouped by class. Each name links to its article; click a column heading to sort. [Ammunition](ammunition.md) and [Attachments](attachments.md) have their own sections.
 
 ## Assault rifles
 
@@ -55,7 +55,7 @@ Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun,
 
 | Weapon | Caliber | Fire rate | Standard magazine | Vendor price |
 |---|---|---:|---|---:|
-| [Deagle](weapons/deagle.md) | 50AE | 267 rounds/min | Deagle 7 RND Magazine | 750 |
+| [Deagle](weapons/deagle.md) | .50 AE | 267 rounds/min | Deagle 7 RND Magazine | 750 |
 | [GGX 17](weapons/ggx-17.md) | 9x19mm | 600 rounds/min (class default) | GGX 17 RND Magazine | 200 |
 | [GGX 18](weapons/ggx-18.md) | 9x19mm | 1,200 rounds/min | GGX 17 RND Magazine | 1000 |
 | [Judge](weapons/judge.md) | .45 Colt | 200 rounds/min | Judge Bullet Cylinder (6 rounds) | 250 |
@@ -65,14 +65,14 @@ Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun,
 
 | Weapon | Caliber | Fire rate | Standard magazine | Vendor price |
 |---|---|---:|---|---:|
-| [M500](weapons/m500.md) | 12g | 120 rounds/min | M500 Internal Mag | 1200 |
-| [MP43](weapons/mp43.md) | 12g | 900 rounds/min | None, the chamber holds 2 (12g 7mm Buckshot) | 400 |
+| [M500](weapons/m500.md) | 12 gauge | 120 rounds/min | M500 Internal Mag | 1200 |
+| [MP43](weapons/mp43.md) | 12 gauge | 900 rounds/min | None, the chamber holds 2 (12g 7mm Buckshot) | 400 |
 
 ## Sniper rifles
 
 | Weapon | Caliber | Fire rate | Standard magazine | Vendor price |
 |---|---|---:|---|---:|
-| [AMR 50](weapons/amr-50.md) | .50Cal | 41.5 rounds/min | AMR 50 5 RND Magazine | 14800 |
+| [AMR 50](weapons/amr-50.md) | .50 Cal | 41.5 rounds/min | AMR 50 5 RND Magazine | 14800 |
 | [MK22](weapons/mk22.md) | .308 Win | 46 rounds/min | MK22 10 RND Magazine | 6400 |
 | [Mosin Nagant](weapons/mosin-nagant.md) | 7.62x54mm | 46 rounds/min | Mosin Standard Mag | 4500 |
 | [Scout Rifle TD](weapons/scout-rifle-td.md) | 5.56x45mm | 46 rounds/min | None, the chamber holds 1 (5.56x45mm) | 1200 |

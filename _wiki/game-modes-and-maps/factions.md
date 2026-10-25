@@ -36,7 +36,7 @@ The default faction in the data uses the Manticore Forward Operating Base, so Ma
 ## What differs between factions
 
 - **Vehicles.** The [M113 APC SV](../vehicles/m113-apc-sv.md) comes in three faction versions, Lonestar, Manticore and Valkyra. They share the same numbers. The data also lists a spawn vehicle for each faction in the vehicle rules.
-- **Forward Operating Base.** Each faction has its own Forward Operating Base model, and the data gives each one its own placement. The health and cost numbers are shared, so the data shows no faction-specific numbers for it. See the [Forward Operating Base](../equipment/forward-operating-base.md) page.
+- **Forward Operating Base.** Each faction has its own Forward Operating Base model, and the data gives each one its own placement. The health and cost numbers are shared, so the data shows no faction-specific numbers for it. See the [Forward Operating Base](../building/forward-operating-base.md) page.
 - **Supply crates.** Free supply crates have a skin for each faction, chosen by the faction. The skins differ in appearance, and the data does not show any difference in contents.
 - **Bobbleheads.** Vehicle bobbleheads have a version for each faction, chosen by the faction selectors. See [Cosmetics](../progression-and-economy/cosmetics.md).
 - **Faction logos.** Each faction has a logo cosmetic on one weapon, listed in the table above. The data gives these no price.

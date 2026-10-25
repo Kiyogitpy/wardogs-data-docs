@@ -88,7 +88,7 @@ The Season 2 items data adds the Molotov, along with four other items, to the it
 - [Fire, Smoke and Flash](fire-smoke-and-flash.md), the overview of fire, smoke and signal throwables
 - [Grenades and Explosives](grenades-and-explosives.md), for the blast explosives
 - [M18 Smoke Grenade](m18-smoke-grenade.md)
-- [Buildables](buildables.md), for structures that fire can affect
+- [Buildables](../building.md), for structures that fire can affect
 - [Vehicle damage](../vehicles/vehicle-damage.md)
 
 ## Sources

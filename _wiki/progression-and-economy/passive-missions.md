@@ -1,7 +1,7 @@
 ---
 title: "Passive Missions"
 parent: "Progression & Economy"
-group: "Unlocks"
+group: "Challenges"
 description: "The three passive missions with five tiers each: cash earned, role XP earned and time played, and the Intel each tier pays."
 ---
 

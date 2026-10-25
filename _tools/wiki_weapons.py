@@ -119,12 +119,36 @@ CAL = caliber_names()
 def caliber_display(key):
     if key is None:
         return "None (explosive)"
-    return CAL.get(key, key)
+    return CAL_OVERRIDE.get(key) or CAL.get(key, key)
+
+
+# Player-facing names for calibers whose display text is a bare code ("50AE", ".50Cal", "12g").
+CAL_OVERRIDE = {"50AE": ".50 AE", "50Cal": ".50 Cal", "12g": "12 gauge"}
 
 
 def caliber_slug(key):
-    """Slug of a caliber article (_wiki/weapons/caliber-<slug>.md), written by _tools/wiki_calibers.py."""
-    return "caliber-" + slugify(caliber_display(key))
+    """Slug of a caliber article (_wiki/ammunition/<slug>.md), written by _tools/wiki_calibers.py."""
+    return slugify(caliber_display(key))
+
+
+def caliber_link(key):
+    """Link to a caliber article from a page in _wiki/weapons/."""
+    return f"../ammunition/{caliber_slug(key)}.md"
+
+
+LINK_RE = re.compile(r"\]\(([^)\s#]+\.md)(#[^)\s]*)?\)")
+
+
+def rebase_links(text, from_dir, to_dir):
+    """Rewrite relative .md links written for a page in _wiki/<from_dir>/ so they work from _wiki/<to_dir>/."""
+    def fix(m):
+        target, anchor = m.group(1), m.group(2) or ""
+        if "://" in target or target.startswith("/"):
+            return m.group(0)
+        absolute = os.path.normpath(os.path.join("_wiki", from_dir, target))
+        new = os.path.relpath(absolute, os.path.join("_wiki", to_dir)).replace(os.sep, "/")
+        return f"]({new}{anchor})"
+    return LINK_RE.sub(fix, text)
 
 
 # ---- Weapon Shop rows: price, unlock level, default magazine ----
@@ -493,7 +517,7 @@ def build_weapon(wid):
     art = "an" if cls_l[:1] in "aeiou" else "a"
 
     # A ("**Band**", "") row is drawn as a group band inside the infobox.
-    cal_cell = f"[{s['cal']}]({caliber_slug(dmg['caliber'])}.md)" if dmg else s["cal"]
+    cal_cell = f"[{s['cal']}]({caliber_link(dmg['caliber'])})" if dmg else s["cal"]
     infobox_rows = [
         ("**General**", ""),
         ("Class", s["cls"]),
@@ -527,7 +551,7 @@ def build_weapon(wid):
     if dmg:
         is_shell = any(a["id"] in ("Buckshot", "Slug") for a in dmg["ammo"])
         kind = "shells" if is_shell else "bullet types"
-        out += [f"It takes the {kind} described on the [Ammunition](ammunition.md) page: {', '.join(ammo_base_names(code))}. Each has a tracer version.", ""]
+        out += [f"It takes the {kind} described on the [Ammunition](../ammunition.md) page: {', '.join(ammo_base_names(code))}. Each has a tracer version.", ""]
 
     # Stats
     out += ["## Stats", "", "| Stat | Value |", "|---|---|",
@@ -575,7 +599,7 @@ def build_weapon(wid):
                 p = f" ({a['pellets']} pellets)" if a.get("pellets") else ""
                 out.append(f"| {AMMO_NAME[a['id']]} | {dv:.1f}{p} |")
             out.append("")
-        out += ["See [Ammunition](ammunition.md) for how each type does against armor, and [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md) for the full tables.", ""]
+        out += ["See [Ammunition](../ammunition.md) for how each type does against armor, and [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md) for the full tables.", ""]
     else:
         out += ["The damage data pages do not compute body-part damage for launchers. The data treats the shot as an explosion; see [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md).", ""]
 
@@ -584,9 +608,9 @@ def build_weapon(wid):
     # Ammunition
     out += ["## Ammunition", ""]
     if dmg:
-        out += [f"Ammo types for this weapon: {', '.join(ammo_names(code))}. See [Ammunition](ammunition.md).", ""]
+        out += [f"Ammo types for this weapon: {', '.join(ammo_names(code))}. See [Ammunition](../ammunition.md).", ""]
     else:
-        out += ["Launchers do not use the bullet types on the [Ammunition](ammunition.md) page.", ""]
+        out += ["Launchers do not use the bullet types on the [Ammunition](../ammunition.md) page.", ""]
 
     # Attachments
     out += ["## Attachments", ""]
@@ -615,7 +639,7 @@ def build_weapon(wid):
     else:
         out += ["The Season 2 changes page lists no changes for this weapon.", ""]
 
-    out += ["## See also", "", "- [Weapons](../weapons.md)", "- [Ammunition](ammunition.md)", "- [Attachments](../attachments.md)", "- [Choosing Ammo](../guides/choosing-ammo.md)", "- [Ballistics](../game-mechanics/ballistics.md)", "- [Health and Damage](../game-mechanics/health-and-damage.md)", "- [Spread and Recoil](../game-mechanics/spread-and-recoil.md)", ""]
+    out += ["## See also", "", "- [Weapons](../weapons.md)", "- [Ammunition](../ammunition.md)", "- [Attachments](../attachments.md)", "- [Choosing Ammo](../guides/choosing-ammo.md)", "- [Ballistics](../game-mechanics/ballistics.md)", "- [Health and Damage](../game-mechanics/health-and-damage.md)", "- [Spread and Recoil](../game-mechanics/spread-and-recoil.md)", ""]
 
     out += ["## Sources", "",
             "- [Weapon Shop and Parts](../../game-features/Wardogs_WeaponShop_v1.md): price, unlock level, default magazine",
@@ -675,7 +699,7 @@ def ammo_page():
         by_cal.setdefault(wdamage[code]["caliber"], []).append(
             f"[{page_title(wid)}]({slugify(page_title(wid))}.md)")
     for key in sorted(by_cal, key=caliber_display):
-        body.append(f"| [{caliber_display(key)}]({caliber_slug(key)}.md) | {', '.join(by_cal[key])} |")
+        body.append(f"| [{caliber_display(key)}]({caliber_link(key)}) | {', '.join(by_cal[key])} |")
     body += ["", "## See also", "",
              "- [Choosing Ammo](../guides/choosing-ammo.md), which round to load against each armor level",
              "- [Armor](../game-mechanics/armor.md)",
@@ -735,7 +759,7 @@ def hub_page(sections):
     body = ["# Weapons", "",
             "Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun, sniper rifle and launcher "
             "in the weapon data that a player can get, grouped by class. Each name links to its article; click a column heading to sort. "
-            "[Ammunition](weapons/ammunition.md) and [Attachments](attachments.md) have their own pages.", ""]
+            "[Ammunition](ammunition.md) and [Attachments](attachments.md) have their own sections.", ""]
     for arch in CLASS_ORDER:
         if sections.get(arch):
             if arch == "Launcher":
@@ -768,8 +792,10 @@ def main():
             row = (f"| [{title}](weapons/{slug}.md) | {s['cal']} | {s['rpm']} | {s['mag_row']} | {s['price'] or 'not yet known'} |")
         sections.setdefault(arch, []).append(row)
         count += 1
-    ammo = front_matter("Ammunition", "Bullet and shell types, what each does to armor and flesh, and which weapons use them.", "Reference") + ammo_page()
-    with open(os.path.join(OUT, "ammunition.md"), "w", encoding="utf-8", newline="\n") as f:
+    ammo = ("---\ntitle: Ammunition\nnav_order: 1.2\nwiki_hub: true\nhas_children: true\n"
+            "redirect_from: [\"/wiki/weapons/ammunition/\"]\n"
+            "description: \"Bullet and shell types, what each does to armor and flesh, and which weapons use them.\"\n---\n\n") + rebase_links(ammo_page(), "weapons", "")
+    with open(os.path.join(WIKI, "ammunition.md"), "w", encoding="utf-8", newline="\n") as f:
         f.write(ammo)
     att = ("---\ntitle: Attachments\nnav_order: 1.5\nwiki_hub: true\nhas_children: true\n"
            "redirect_from: [\"/wiki/weapons/attachments/\"]\n"

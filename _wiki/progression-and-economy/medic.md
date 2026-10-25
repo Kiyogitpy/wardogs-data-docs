@@ -1,7 +1,7 @@
 ---
 title: "Medic"
 parent: "Progression & Economy"
-group: "Roles"
+group: "Roles and mastery"
 description: "The Medic role: 4 skills for medical items, medkit uses and sprint boosts after a revive, its mastery curve, and how it earns cash and XP from heals and revives."
 ---
 

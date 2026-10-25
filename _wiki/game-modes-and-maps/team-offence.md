@@ -1,7 +1,7 @@
 ---
 title: "Team Offence"
 parent: "Game Modes & Maps"
-group: "Game modes"
+group: "Match rules"
 description: "Season 2: teamkill offences are handled by player ballots that can punish, kick or forgive the offender."
 ---
 

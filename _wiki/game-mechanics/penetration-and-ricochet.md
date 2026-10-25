@@ -99,7 +99,7 @@ Ricochet chance by surface material (named surfaces in the data; unnamed surface
 - [Health and Damage](health-and-damage.md)
 - [Choosing Ammo](../guides/choosing-ammo.md)
 - [Hit Registration](hit-registration.md)
-- [Ammunition](../weapons/ammunition.md)
+- [Ammunition](../ammunition.md)
 
 ## Sources
 

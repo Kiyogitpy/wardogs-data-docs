@@ -92,7 +92,7 @@ To see the whole pattern as a picture, open the [Weapon Spray Viewer](https://ki
 
 ## Ammunition
 
-Launchers do not use the bullet types on the [Ammunition](ammunition.md) page.
+Launchers do not use the bullet types on the [Ammunition](../ammunition.md) page.
 
 ## Attachments
 
@@ -110,7 +110,7 @@ The Season 2 changes page lists no changes for this weapon.
 ## See also
 
 - [Weapons](../weapons.md)
-- [Ammunition](ammunition.md)
+- [Ammunition](../ammunition.md)
 - [Attachments](../attachments.md)
 - [Choosing Ammo](../guides/choosing-ammo.md)
 - [Ballistics](../game-mechanics/ballistics.md)

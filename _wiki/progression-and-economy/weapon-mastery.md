@@ -1,7 +1,7 @@
 ---
 title: "Weapon Mastery"
 parent: "Progression & Economy"
-group: "Unlocks"
+group: "Roles and mastery"
 description: "The mastery screen's lists: 8 weapon types with 25 weapons, and 2 vehicle types with 8 vehicles. The data has no XP, level or reward table for either, so how progress is earned is not in the game data."
 ---
 

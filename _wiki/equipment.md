@@ -8,8 +8,8 @@ description: "Body armor, medical items, grenades, fire and smoke, buildables an
 
 # Equipment
 
-Equipment is everything a player carries, wears or places apart from weapons. This section covers body armor, medical items, grenades and other explosives, fire and smoke throwables, the structures players build with hammers, and the remaining utility gear such as parachutes, backpacks and tools.
+Equipment is everything a player carries or wears apart from weapons: body armor, medical items, grenades and other explosives, fire and smoke throwables, and utility gear such as parachutes, backpacks and tools. Structures and emplacements built with hammers have their own section, [Building](building.md); ammunition and attachments have theirs too ([Ammunition](ammunition.md), [Attachments](attachments.md)).
 
-Prices are cash in the item shop, and "Build Supplies" is the resource that buildables cost. Health is shown in HP. Where the data does not give a value, the article says "not yet known".
+Prices are cash in the item shop. Health is shown in HP. Where the data does not give a value, the article says "not yet known".
 
 {% include wiki-index.html hub="Equipment" %}

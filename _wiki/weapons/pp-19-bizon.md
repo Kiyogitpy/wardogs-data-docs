@@ -11,7 +11,7 @@ description: "The PP-19 Bizon submachine gun: fire rate, damage by body part, ra
 |---|---|
 | **General** |  |
 | Class | Submachine gun |
-| Caliber | [9x19mm](caliber-9x19mm.md) |
+| Caliber | [9x19mm](../ammunition/9x19mm.md) |
 | Fire modes | Fully automatic and semi-automatic |
 | **Performance** |  |
 | Fire rate | 700 rounds/min |
@@ -30,7 +30,7 @@ The PP-19 Bizon is a submachine gun chambered in 9x19mm. It fires fully automati
 
 Submachine guns are the SMG class in the weapon data.
 
-It takes the bullet types described on the [Ammunition](ammunition.md) page: Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). Each has a tracer version.
+It takes the bullet types described on the [Ammunition](../ammunition.md) page: Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). Each has a tracer version.
 
 ## Stats
 
@@ -88,7 +88,7 @@ Figures are for Standard (FMJ) at point blank range, per hit, against a characte
 | Flesh Damage (HP) | 50.8 |
 | Armor Piercing (AP) | 20.3 |
 
-See [Ammunition](ammunition.md) for how each type does against armor, and [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md) for the full tables.
+See [Ammunition](../ammunition.md) for how each type does against armor, and [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md) for the full tables.
 
 ## Recoil and spread
 
@@ -137,7 +137,7 @@ To see the whole pattern as a picture, open the [Weapon Spray Viewer](https://ki
 
 ## Ammunition
 
-Ammo types for this weapon: Standard (FMJ), Standard (FMJ) with tracer, Flesh Damage (HP), Flesh Damage (HP) with tracer, Armor Piercing (AP), Armor Piercing (AP) with tracer. See [Ammunition](ammunition.md).
+Ammo types for this weapon: Standard (FMJ), Standard (FMJ) with tracer, Flesh Damage (HP), Flesh Damage (HP) with tracer, Armor Piercing (AP), Armor Piercing (AP) with tracer. See [Ammunition](../ammunition.md).
 
 ## Attachments
 
@@ -157,7 +157,7 @@ The Season 2 changes page lists no changes for this weapon.
 ## See also
 
 - [Weapons](../weapons.md)
-- [Ammunition](ammunition.md)
+- [Ammunition](../ammunition.md)
 - [Attachments](../attachments.md)
 - [Choosing Ammo](../guides/choosing-ammo.md)
 - [Ballistics](../game-mechanics/ballistics.md)

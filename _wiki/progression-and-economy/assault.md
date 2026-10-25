@@ -2,7 +2,7 @@
 title: "Assault"
 redirect_from: ["/wiki/progression-and-economy/infantry/"]
 parent: "Progression & Economy"
-group: "Roles"
+group: "Roles and mastery"
 description: "The Assault role: 17 skills for assault rifles and SMGs, faster aiming and recoil control, longer tac-sprints, its mastery curve and how it earns cash and XP."
 ---
 

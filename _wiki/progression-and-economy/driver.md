@@ -1,7 +1,7 @@
 ---
 title: "Driver"
 parent: "Progression & Economy"
-group: "Roles"
+group: "Roles and mastery"
 description: "The Driver role: 6 skills for ground vehicles, covering mounted machine gun aiming and recoil, fuel use, impact damage and supply crate durability, plus its mastery curve and earnings."
 ---
 

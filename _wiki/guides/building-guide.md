@@ -10,7 +10,7 @@ Players build walls, stations and emplacements with hammers, and every structure
 
 ## Hammers and Build Supplies
 
-Each hammer builds a set of structures, and the larger hammers do more progress per hit ([Hammers](../equipment/hammers.md), [Buildables](../equipment/buildables.md#overview)).
+Each hammer builds a set of structures, and the larger hammers do more progress per hit ([Hammers](../equipment/hammers.md), [Buildables](../building.md#overview)).
 
 | Hammer | Price (cash) | Build per hit | Build on a weak spot | Structures it can place |
 |---|---:|---:|---:|---:|
@@ -22,8 +22,8 @@ Every hammer spends Build Supplies. Build Supplies sell in lots of 50 for 10 cas
 
 ### Tips that follow from the numbers
 
-- **Same supplies, fewer hits.** A bigger hammer does not change what a structure costs in Build Supplies. It only changes how many hits it takes. A Sandbag Wall takes 30 hits with the Small Hammer, 15 with the Medium and 10 with the Large ([Buildables](../equipment/buildables.md#building)).
-- **Hit the weak spots to build 5 to 6 times faster.** A hit on a weak spot adds 3, 5 or 8 build progress (Small, Medium, Large) instead of 0.5, 1 or 1.5. Only a hammer can hit a weak spot, because bullets cannot. Barbed Wire and Recon Tent have their weak spots switched off ([Buildables](../equipment/buildables.md#weak-spots)).
+- **Same supplies, fewer hits.** A bigger hammer does not change what a structure costs in Build Supplies. It only changes how many hits it takes. A Sandbag Wall takes 30 hits with the Small Hammer, 15 with the Medium and 10 with the Large ([Buildables](../building.md#building)).
+- **Hit the weak spots to build 5 to 6 times faster.** A hit on a weak spot adds 3, 5 or 8 build progress (Small, Medium, Large) instead of 0.5, 1 or 1.5. Only a hammer can hit a weak spot, because bullets cannot. Barbed Wire and Recon Tent have their weak spots switched off ([Buildables](../building.md#weak-spots)).
 - **Weak spots are about building, not damage.** No damage entry in the data uses them, so a structure does not take more damage because it has them.
 - **Repair with the big hammer.** On a finished structure, each hit restores health at the hammer's build amount times the structure's repair multiplier, and the repair uses Build Supplies too. The Large Hammer needs fewer repair hits than the Small one for every structure in the data (see each article's "Building it" table).
 
@@ -53,22 +53,22 @@ Each hit adds the hammer's build amount divided by the structure's Build Supplie
 The Forward Operating Base has no hits: it is placed at once from its own item. Each structure's article has the repair and dismantle hits too.
 
 
-- The Large Hammer is the only hammer that places the Bunker, Recon Tower, Indirect Fire Shelter, Bremer Wall, Drill Rig, Refuel Station and Repair Station ([Buildables](../equipment/buildables.md#overview)). Buy it if the base needs any of these.
+- The Large Hammer is the only hammer that places the Bunker, Recon Tower, Indirect Fire Shelter, Bremer Wall, Drill Rig, Refuel Station and Repair Station ([Buildables](../building.md#overview)). Buy it if the base needs any of these.
 - The Large Hammer gives three times the build progress per hit of the Small Hammer (1.5 against 0.5) for 24 times the price (2,400 against 100). Derived from the table above.
-- The Small Hammer, at 100 cash, builds Barbed Wire (7 Build Supplies), Sandbag Wall (15), Wood base (15) and Hesco Block (Small) (15) ([Hammers](../equipment/hammers.md), [Buildables](../equipment/buildables.md#overview)).
+- The Small Hammer, at 100 cash, builds Barbed Wire (7 Build Supplies), Sandbag Wall (15), Wood base (15) and Hesco Block (Small) (15) ([Hammers](../equipment/hammers.md), [Buildables](../building.md#overview)).
 
 ## The Forward Operating Base comes first
 
-The Forward Operating Base (FOB) is the anchor for building. It is placed from its own item rather than a hammer, costs 7,500 cash in the shop and has a Build Supplies cost of 30 (nothing is charged at placement), and has 15,000 HP, the most of any structure ([Forward Operating Base](../equipment/forward-operating-base.md)).
+The Forward Operating Base (FOB) is the anchor for building. It is placed from its own item rather than a hammer, costs 7,500 cash in the shop and has a Build Supplies cost of 30 (nothing is charged at placement), and has 15,000 HP, the most of any structure ([Forward Operating Base](../building/forward-operating-base.md)).
 
-- **Radius.** Most structures must be placed inside a friendly FOB radius. The exceptions are Barbed Wire, Recon Tent, Sandbag Wall and Hedgehog ([Buildables](../equipment/buildables.md#use-and-timing)). A new FOB also cannot be placed within about 42 m of another one.
-- **Limits.** Each FOB allows one Refuel Station, one Repair Station and up to four Builder's Radios ([Forward Operating Base](../equipment/forward-operating-base.md#building-it)).
-- **Exposure.** The FOB takes 51 times normal IED damage, 15 times rocket damage and 13.5 times C4 damage, the largest multipliers of any structure ([Forward Operating Base](../equipment/forward-operating-base.md#durability)).
+- **Radius.** Most structures must be placed inside a friendly FOB radius. The exceptions are Barbed Wire, Recon Tent, Sandbag Wall and Hedgehog ([Buildables](../building.md#use-and-timing)). A new FOB also cannot be placed within about 42 m of another one.
+- **Limits.** Each FOB allows one Refuel Station, one Repair Station and up to four Builder's Radios ([Forward Operating Base](../building/forward-operating-base.md#building-it)).
+- **Exposure.** The FOB takes 51 times normal IED damage, 15 times rocket damage and 13.5 times C4 damage, the largest multipliers of any structure ([Forward Operating Base](../building/forward-operating-base.md#durability)).
 
 ### Tips that follow from the numbers
 
 - Because most structures need the FOB radius, place the FOB before any wall or station. The small structures are the only ones that can go down without one.
-- The FOB takes 51 times normal IED damage, more than any other structure in the damage table, so IEDs are its most damaging source in the data ([Forward Operating Base](../equipment/forward-operating-base.md#durability)).
+- The FOB takes 51 times normal IED damage, more than any other structure in the damage table, so IEDs are its most damaging source in the data ([Forward Operating Base](../building/forward-operating-base.md#durability)).
 - Destroying an enemy FOB pays the attacker 2,500 cash plus up to 7,500 by its supplies, and hacking one pays 1,000 ([Cash and Rewards](../progression-and-economy/cash-and-rewards.md#spotting-supply-crates-and-buildables)).
 
 ## What to build first
@@ -98,28 +98,28 @@ The table lists every structure with its Build Supplies cost and health. The las
 | Drill Rig | 2,750 | 2,500 | L | 0.9 |
 | Forward Operating Base | 30 | 15,000 | Own item | 500.0 |
 
-Sources for these numbers: [Buildables](../equipment/buildables.md#structures), with each structure's article: [Barbed Wire](../equipment/barbed-wire.md), [Recon Tent](../equipment/recon-tent.md), [Sandbag Wall](../equipment/sandbag-wall.md), [Wood base](../equipment/wood-base.md), [Hesco Walls](../equipment/hesco-walls.md), [Builder's Radio](../equipment/builders-radio.md), [Hedgehog](../equipment/hedgehog.md), [Shelter](../equipment/shelter.md), [Door](../equipment/door.md), [Gate](../equipment/gate.md), [Bremer Wall](../equipment/bremer-wall.md), [Bunker](../equipment/bunker.md), [Recon Tower](../equipment/recon-tower.md), [Indirect Fire Shelter](../equipment/indirect-fire-shelter.md), [Refuel and Repair Stations](../equipment/refuel-and-repair-stations.md), [Drill Rig](../equipment/drill-rig.md).
+Sources for these numbers: [Buildables](../building.md#structures), with each structure's article: [Barbed Wire](../building/barbed-wire.md), [Recon Tent](../building/recon-tent.md), [Sandbag Wall](../building/sandbag-wall.md), [Wood base](../building/wood-base.md), [Hesco Walls](../building/hesco-walls.md), [Builder's Radio](../building/builders-radio.md), [Hedgehog](../building/hedgehog.md), [Shelter](../building/shelter.md), [Door](../building/door.md), [Gate](../building/gate.md), [Bremer Wall](../building/bremer-wall.md), [Bunker](../building/bunker.md), [Recon Tower](../building/recon-tower.md), [Indirect Fire Shelter](../building/indirect-fire-shelter.md), [Refuel and Repair Stations](../building/refuel-and-repair-stations.md), [Drill Rig](../building/drill-rig.md).
 
 ### Tips that follow from the numbers
 
-- **Walls for the price.** The Hesco Block (Small) and the Sandbag Wall both cost 15 Build Supplies, but the Hesco has 1,600 HP against 735. The damage table makes the Hesco the sturdier of the two in every column of the hits table below, so it is the better buy at the same cost ([Hesco Walls](../equipment/hesco-walls.md), [Sandbag Wall](../equipment/sandbag-wall.md)).
-- **Most health per supply.** The Hedgehog (4,500 HP for 22 Build Supplies) and the Bremer Wall (6,500 HP for 32) give the most health per supply of any wall or barrier, about 200 HP per Build Supply each ([Hedgehog](../equipment/hedgehog.md), [Bremer Wall](../equipment/bremer-wall.md)).
-- **Least health per supply.** The Drill Rig gives 0.9 HP per Build Supply and the Shelter 9. The Shelter needs the Medium or Large Hammer and the Drill Rig needs the Large Hammer, so buy them for their function, not their health ([Drill Rig](../equipment/drill-rig.md), [Shelter](../equipment/shelter.md)).
-- **Stations are fragile for their cost.** The Refuel and Repair Stations cost 200 Build Supplies for 1,600 HP, which is 8 HP per supply. A rocket or a C4 charge destroys either one in a single hit ([Refuel and Repair Stations](../equipment/refuel-and-repair-stations.md#hits-to-destroy-point-blank-derived)).
-- **Season 2 raised several costs.** The Bremer Wall went from 15 to 32 Build Supplies, the Door from 22 to 80, the Bunker from 100 to 200 and the Drill Rig from 2,250 to 2,750 ([Buildables](../equipment/buildables.md#season-2-changes)).
+- **Walls for the price.** The Hesco Block (Small) and the Sandbag Wall both cost 15 Build Supplies, but the Hesco has 1,600 HP against 735. The damage table makes the Hesco the sturdier of the two in every column of the hits table below, so it is the better buy at the same cost ([Hesco Walls](../building/hesco-walls.md), [Sandbag Wall](../building/sandbag-wall.md)).
+- **Most health per supply.** The Hedgehog (4,500 HP for 22 Build Supplies) and the Bremer Wall (6,500 HP for 32) give the most health per supply of any wall or barrier, about 200 HP per Build Supply each ([Hedgehog](../building/hedgehog.md), [Bremer Wall](../building/bremer-wall.md)).
+- **Least health per supply.** The Drill Rig gives 0.9 HP per Build Supply and the Shelter 9. The Shelter needs the Medium or Large Hammer and the Drill Rig needs the Large Hammer, so buy them for their function, not their health ([Drill Rig](../building/drill-rig.md), [Shelter](../building/shelter.md)).
+- **Stations are fragile for their cost.** The Refuel and Repair Stations cost 200 Build Supplies for 1,600 HP, which is 8 HP per supply. A rocket or a C4 charge destroys either one in a single hit ([Refuel and Repair Stations](../building/refuel-and-repair-stations.md#hits-to-destroy-point-blank-derived)).
+- **Season 2 raised several costs.** The Bremer Wall went from 15 to 32 Build Supplies, the Door from 22 to 80, the Bunker from 100 to 200 and the Drill Rig from 2,250 to 2,750 ([Buildables](../building.md#season-2-changes)).
 
 ## Stationary emplacements
 
-Six stationary weapons are buildable. Five are built with the Large Hammer and the Loudspeaker with the Medium or Large Hammer ([Buildables](../equipment/buildables.md#overview)).
+Six stationary weapons are buildable. Five are built with the Large Hammer and the Loudspeaker with the Medium or Large Hammer ([Buildables](../building.md#overview)).
 
 | Emplacement | Build Supplies | Health (HP) | Gun and ammunition | Restock | What the data says it counters |
 |---|---:|---:|---|---|---|
-| [L81 Mortar](../equipment/l81-mortar.md) | 600 | 3,000 | 120x800 mm shells, 132 to 684 m | 150 Ammo Supplies | Targets are not listed. Its range table runs 132 to 684 m |
-| [Talon 9K-SAM](../equipment/talon-9k-sam.md) | 650 | 3,000 | 72 mm heavy machine gun, 1,000 m effective | 200 Ammo Supplies | Targets are not listed. Lock-on takes 2.0 s |
-| [Stingray](../equipment/stingray.md) | 650 | 3,000 | UAV drone projectile, lock-on | 900 Mechanical Supplies and 5,000 cash | Air vehicles only: the Little Bird family, the Havoc and the fixed-wing airplane |
-| [MG Nest](../equipment/mg-nest.md) | 650 | 1,800 when finished (3,000 under construction) | .50 cal tracer machine gun | 200 Ammo Supplies for 60 rounds | Targets are not listed. 600 rounds/min, 1,000 m range, 8 s reload |
-| [Vanguard CIWS](../equipment/vanguard-ciws.md) | 1,200 | 5,000 | 20x102 mm cannon, 1,800 rounds/min, 1,000 m | 250 Ammo Supplies for 500 rounds | Targets are not listed |
-| [Loudspeaker](../equipment/loudspeaker.md) | 200 | 1,000 | No weapon in the data | Not applicable | Not applicable |
+| [L81 Mortar](../building/l81-mortar.md) | 600 | 3,000 | 120x800 mm shells, 132 to 684 m | 150 Ammo Supplies | Targets are not listed. Its range table runs 132 to 684 m |
+| [Talon 9K-SAM](../building/talon-9k-sam.md) | 650 | 3,000 | 72 mm heavy machine gun, 1,000 m effective | 200 Ammo Supplies | Targets are not listed. Lock-on takes 2.0 s |
+| [Stingray](../building/stingray.md) | 650 | 3,000 | UAV drone projectile, lock-on | 900 Mechanical Supplies and 5,000 cash | Air vehicles only: the Little Bird family, the Havoc and the fixed-wing airplane |
+| [MG Nest](../building/mg-nest.md) | 650 | 1,800 when finished (3,000 under construction) | .50 cal tracer machine gun | 200 Ammo Supplies for 60 rounds | Targets are not listed. 600 rounds/min, 1,000 m range, 8 s reload |
+| [Vanguard CIWS](../building/vanguard-ciws.md) | 1,200 | 5,000 | 20x102 mm cannon, 1,800 rounds/min, 1,000 m | 250 Ammo Supplies for 500 rounds | Targets are not listed |
+| [Loudspeaker](../building/loudspeaker.md) | 200 | 1,000 | No weapon in the data | Not applicable | Not applicable |
 
 Restock costs at the Supplies lot price of 10 cash per 50 are derived: 200 Ammo Supplies is about 40 cash, 250 is 50 cash and 150 is 30 cash ([Supplies](../equipment/supplies.md)).
 
@@ -127,13 +127,13 @@ Restock costs at the Supplies lot price of 10 cash per 50 are derived: 200 Ammo 
 
 - **Only the Stingray has a target list in the data.** It is air-only, so it is the only emplacement here whose role is stated. For the other guns, the data gives the range, rate or lock-on time but not the targets, so this guide does not say what they counter.
 - **Health and price.** The Vanguard CIWS has the most health (5,000) and costs 1,200 Build Supplies, 1.85 times the 650 of the Talon, Stingray and MG Nest (derived). The L81 Mortar is the cheapest gun at 600 Build Supplies, with 3,000 HP, the same as the Talon and Stingray.
-- **The MG Nest is the weakest finished emplacement.** It has 1,800 HP when finished, and the 3,000 HP figure applies only while it is under construction ([MG Nest](../equipment/mg-nest.md#health)).
-- **The Stingray has the largest restock.** It needs 900 Mechanical Supplies and 5,000 cash each time, while the other guns restock with Ammo Supplies only ([Stingray](../equipment/stingray.md#overview)).
+- **The MG Nest is the weakest finished emplacement.** It has 1,800 HP when finished, and the 3,000 HP figure applies only while it is under construction ([MG Nest](../building/mg-nest.md#health)).
+- **The Stingray has the largest restock.** It needs 900 Mechanical Supplies and 5,000 cash each time, while the other guns restock with Ammo Supplies only ([Stingray](../building/stingray.md#overview)).
 - **Restock cost is a running cost.** The restocks above add up over a match, so budget for them along with the build cost ([Making Money](making-money.md#restocks-for-stationary-weapons)).
 
 ## How fast each structure falls
 
-The derived table below gives the hits needed to destroy each structure with six sources: an M4 with 5.56 mm full metal jacket (28 base damage per hit), a .50 cal full metal jacket (90), a 120 mm rocket (150), an M67 frag grenade (100, which counts as a rocket against structures), a C4 charge (250) and an IED (300). Matching damage entries are stacked, so a rocket is not counted at its base damage alone. Each figure assumes every shot lands at point blank for full damage, with no falloff, so real fights differ ([Buildables](../equipment/buildables.md#hits-to-destroy-point-blank-derived)).
+The derived table below gives the hits needed to destroy each structure with six sources: an M4 with 5.56 mm full metal jacket (28 base damage per hit), a .50 cal full metal jacket (90), a 120 mm rocket (150), an M67 frag grenade (100, which counts as a rocket against structures), a C4 charge (250) and an IED (300). Matching damage entries are stacked, so a rocket is not counted at its base damage alone. Each figure assumes every shot lands at point blank for full damage, with no falloff, so real fights differ ([Buildables](../building.md#hits-to-destroy-point-blank-derived)).
 
 | Structure | HP | M4 5.56 mm FMJ | .50 cal FMJ | 120 mm rocket | M67 frag grenade | C4 charge | IED |
 |---|---:|---:|---:|---:|---:|---:|---:|
@@ -161,27 +161,27 @@ Parts of larger structures, such as a Door's top section or a Bunker's floor, ha
 
 - **Explosives finish the cheap structures.** One C4 charge destroys the Barbed Wire, Recon Tent, Sandbag Wall, Wood base, Builder's Radio, and the Refuel and Repair Stations. One 120 mm rocket does the same, except the Sandbag Wall and Wood base, which take 2, against 175 M4 hits.
 - **Small arms are slow.** The Gate (1,267 M4 hits), the Hedgehog (1,072) and the Bremer Wall (1,161) need the most rifle hits of the large structures. Against M67 grenades, the Bunker family takes 35 hits, the most of any non-FOB structure.
-- **Rockets are the Gate's and the Door's weak point.** The Gate takes 850% more rocket damage than normal and the Door 650% more, so they need 5 and 4 hits from a 120 mm rocket, against 1,267 and 524 M4 hits ([Gate](../equipment/gate.md), [Door](../equipment/door.md)).
-- **Against the FOB, C4 and rockets are the fast routes.** The FOB needs 5 rocket hits and 5 C4 charges, against 2,679 M4 hits ([Forward Operating Base](../equipment/forward-operating-base.md#hits-to-destroy-point-blank-derived)).
+- **Rockets are the Gate's and the Door's weak point.** The Gate takes 850% more rocket damage than normal and the Door 650% more, so they need 5 and 4 hits from a 120 mm rocket, against 1,267 and 524 M4 hits ([Gate](../building/gate.md), [Door](../building/door.md)).
+- **Against the FOB, C4 and rockets are the fast routes.** The FOB needs 5 rocket hits and 5 C4 charges, against 2,679 M4 hits ([Forward Operating Base](../building/forward-operating-base.md#hits-to-destroy-point-blank-derived)).
 - **Emplacements are not in the hits table.** The derived hits cover structures only. The emplacements are compared by health alone in the table above.
 
 ## See also
 
-- [Buildables](../equipment/buildables.md): costs, health, placement and damage for every structure
+- [Buildables](../building.md): costs, health, placement and damage for every structure
 - [Hammers](../equipment/hammers.md) and [Supplies](../equipment/supplies.md)
-- [Forward Operating Base](../equipment/forward-operating-base.md)
+- [Forward Operating Base](../building/forward-operating-base.md)
 - [Grenades and Explosives](../equipment/grenades-and-explosives.md): the explosives that damage structures
 - [Making Money](making-money.md): cash costs of restocks and repairs
 - [Beginner's Guide](beginners-guide.md): combat basics
 
 ## Sources
 
-- [Buildables](../equipment/buildables.md)
+- [Buildables](../building.md)
 - [Hammers](../equipment/hammers.md)
 - [Supplies](../equipment/supplies.md)
-- [Forward Operating Base](../equipment/forward-operating-base.md)
-- Structures: [Barbed Wire](../equipment/barbed-wire.md), [Recon Tent](../equipment/recon-tent.md), [Sandbag Wall](../equipment/sandbag-wall.md), [Wood base](../equipment/wood-base.md), [Hesco Walls](../equipment/hesco-walls.md), [Builder's Radio](../equipment/builders-radio.md), [Hedgehog](../equipment/hedgehog.md), [Shelter](../equipment/shelter.md), [Door](../equipment/door.md), [Gate](../equipment/gate.md), [Bremer Wall](../equipment/bremer-wall.md), [Bunker](../equipment/bunker.md), [Recon Tower](../equipment/recon-tower.md), [Indirect Fire Shelter](../equipment/indirect-fire-shelter.md), [Refuel and Repair Stations](../equipment/refuel-and-repair-stations.md), [Drill Rig](../equipment/drill-rig.md)
-- Emplacements: [L81 Mortar](../equipment/l81-mortar.md), [Talon 9K-SAM](../equipment/talon-9k-sam.md), [Stingray](../equipment/stingray.md), [MG Nest](../equipment/mg-nest.md), [Vanguard CIWS](../equipment/vanguard-ciws.md), [Loudspeaker](../equipment/loudspeaker.md)
+- [Forward Operating Base](../building/forward-operating-base.md)
+- Structures: [Barbed Wire](../building/barbed-wire.md), [Recon Tent](../building/recon-tent.md), [Sandbag Wall](../building/sandbag-wall.md), [Wood base](../building/wood-base.md), [Hesco Walls](../building/hesco-walls.md), [Builder's Radio](../building/builders-radio.md), [Hedgehog](../building/hedgehog.md), [Shelter](../building/shelter.md), [Door](../building/door.md), [Gate](../building/gate.md), [Bremer Wall](../building/bremer-wall.md), [Bunker](../building/bunker.md), [Recon Tower](../building/recon-tower.md), [Indirect Fire Shelter](../building/indirect-fire-shelter.md), [Refuel and Repair Stations](../building/refuel-and-repair-stations.md), [Drill Rig](../building/drill-rig.md)
+- Emplacements: [L81 Mortar](../building/l81-mortar.md), [Talon 9K-SAM](../building/talon-9k-sam.md), [Stingray](../building/stingray.md), [MG Nest](../building/mg-nest.md), [Vanguard CIWS](../building/vanguard-ciws.md), [Loudspeaker](../building/loudspeaker.md)
 - [Cash and Rewards](../progression-and-economy/cash-and-rewards.md), for the cash paid for destroying an enemy FOB and for placing one
 - [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
 - [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the Drill Rig settings

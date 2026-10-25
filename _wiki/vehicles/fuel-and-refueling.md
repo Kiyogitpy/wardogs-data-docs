@@ -22,7 +22,7 @@ Every driven vehicle has a fuel tank with a stored capacity and a stored fuel ec
 
 ## Overview
 
-A vehicle's fuel is set by its vendor stats. Fuel is refilled in three ways: a [40L Fuel Canister](../equipment/fuel-canister.md) carried by a player, a [Refuel Station](../equipment/refuel-and-repair-stations.md) built inside a Forward Operating Base, or [Fuel Supplies](../equipment/supplies.md) delivered to that station.
+A vehicle's fuel is set by its vendor stats. Fuel is refilled in three ways: a [40L Fuel Canister](../equipment/fuel-canister.md) carried by a player, a [Refuel Station](../building/refuel-and-repair-stations.md) built inside a Forward Operating Base, or [Fuel Supplies](../equipment/supplies.md) delivered to that station.
 
 ## How it works
 
@@ -43,7 +43,7 @@ Most vehicles set their first leak step at 90 or 80 percent of fuel tank health,
 - **Fuel Supplies.** Sold for 10 cash per lot of 50. A Fuel Supply Pallet costs 400 cash. The Refuel Station needs them to work.
 - **Refuel at base.** The in-game tip says vehicles can be refuelled by returning to your faction's safe zone or a FOB, and that this is not free.
 
-The Refuel Station has a Fast and a Max restock. Fast restocks 5% of the tank in 3 s for 75 cash. Max restocks up to a full tank in 9 s. A Max restock charges only for what the tank receives: the listed cash cost is scaled by the share of the tank restored and rounded up to a multiple of 50 (1,500 cash for a full tank), and the Fuel Supplies used are the item's cost times the amount restored. A nearly full tank costs little, and a restock cannot give more fuel than the FOB has in stock. The [Refuel and Repair Stations](../equipment/refuel-and-repair-stations.md) page has the full figures. A vehicle with an empty tank has its engine stopped, as described above.
+The Refuel Station has a Fast and a Max restock. Fast restocks 5% of the tank in 3 s for 75 cash. Max restocks up to a full tank in 9 s. A Max restock charges only for what the tank receives: the listed cash cost is scaled by the share of the tank restored and rounded up to a multiple of 50 (1,500 cash for a full tank), and the Fuel Supplies used are the item's cost times the amount restored. A nearly full tank costs little, and a restock cannot give more fuel than the FOB has in stock. The [Refuel and Repair Stations](../building/refuel-and-repair-stations.md) page has the full figures. A vehicle with an empty tank has its engine stopped, as described above.
 
 ## Numbers
 
@@ -91,7 +91,7 @@ Season 2 changed no fuel capacity or fuel economy value in the data.
 
 - [Repair and vehicle parts](repair-and-vehicle-parts.md): fuel tank and other part health, and repairing
 - [Vehicle damage](vehicle-damage.md): how hits reach the fuel tank
-- [Fuel Canister](../equipment/fuel-canister.md) and [Refuel and Repair Stations](../equipment/refuel-and-repair-stations.md)
+- [Fuel Canister](../equipment/fuel-canister.md) and [Refuel and Repair Stations](../building/refuel-and-repair-stations.md)
 - [Supplies](../equipment/supplies.md): Fuel Supplies and Mechanical Supplies
 
 ## Sources

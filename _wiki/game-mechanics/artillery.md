@@ -20,7 +20,7 @@ description: "How SPH-2 artillery fire works: reading map coordinates, working o
 | Stats sheet "effective range" | 10,000 m (not the real reach) |
 {: .wiki-infobox }
 
-Artillery in Wardogs is a long-range fire mission. The SPH-2 fires 155 mm shells at a point on the map that you cannot see from the gun, so you work out an elevation and a bearing from map coordinates, set them on the gun, and read the impact. This article explains each step and gives the firing table. The table is for the SPH-2; the [L81 Mortar](../equipment/l81-mortar.md) is a separate, shorter-range emplacement. For a walk-through of firing, see [Aiming the SPH-2](../guides/aiming-the-sph-2.md).
+Artillery in Wardogs is a long-range fire mission. The SPH-2 fires 155 mm shells at a point on the map that you cannot see from the gun, so you work out an elevation and a bearing from map coordinates, set them on the gun, and read the impact. This article explains each step and gives the firing table. The table is for the SPH-2; the [L81 Mortar](../building/l81-mortar.md) is a separate, shorter-range emplacement. For a walk-through of firing, see [Aiming the SPH-2](../guides/aiming-the-sph-2.md).
 
 ## Overview
 
@@ -172,7 +172,7 @@ The stats sheet gives the SPH-2 gun an "effective range" of 10,000 m. That is no
 
 - [SPH-2](../vehicles/sph-2.md)
 - [Aiming the SPH-2](../guides/aiming-the-sph-2.md)
-- [L81 Mortar](../equipment/l81-mortar.md)
+- [L81 Mortar](../building/l81-mortar.md)
 - [Ballistics](ballistics.md)
 
 ## Sources

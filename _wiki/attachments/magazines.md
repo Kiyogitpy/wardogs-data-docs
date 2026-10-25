@@ -33,7 +33,7 @@ Parts the game data gives no display name are labelled "Unnamed" followed by the
 - Horizontal recoil: x0.83 to x1.24 (46 parts).
 - Equip speed: x0.9 to x1.24 (31 parts).
 - Aim sway (character side): x0.77 to x1.25 (37 parts).
-- Packing time: x0.6 to x0.8 on 3 parts (the machine-gun magazines), no change on the rest. See [Ammo Packing](../game-mechanics/ammo-packing.md).
+- Packing time: x0.6 to x0.8 on 3 parts (the machine-gun magazines), no change on the rest. See [Ammo Packing](../ammunition/ammo-packing.md).
 
 A multiplier below 1 lowers the stat and one above 1 raises it, so for recoil lower is better. Equip speed is a speed multiplier, so a higher value should mean a faster equip (read from the stat name; the data gives no plain-words description). The name of each magazine gives its capacity: "30 RND" is 30 rounds.
 

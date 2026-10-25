@@ -11,7 +11,7 @@ description: "The SVD marksman rifle: fire rate, damage by body part, range fall
 |---|---|
 | **General** |  |
 | Class | Marksman rifle |
-| Caliber | [7.62x54mm](caliber-7-62x54mm.md) |
+| Caliber | [7.62x54mm](../ammunition/7-62x54mm.md) |
 | Fire modes | Semi-automatic |
 | **Performance** |  |
 | Fire rate | 480 rounds/min |
@@ -30,7 +30,7 @@ The SVD is a marksman rifle chambered in 7.62x54mm. It fires semi-automatic at 4
 
 Marksman rifles are the DMR class in the weapon data. Most are semi-automatic rifles.
 
-It takes the bullet types described on the [Ammunition](ammunition.md) page: Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). Each has a tracer version.
+It takes the bullet types described on the [Ammunition](../ammunition.md) page: Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). Each has a tracer version.
 
 ## Stats
 
@@ -88,7 +88,7 @@ Figures are for Standard (FMJ) at point blank range, per hit, against a characte
 | Flesh Damage (HP) | 82.9 |
 | Armor Piercing (AP) | 33.1 |
 
-See [Ammunition](ammunition.md) for how each type does against armor, and [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md) for the full tables.
+See [Ammunition](../ammunition.md) for how each type does against armor, and [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md) for the full tables.
 
 ## Recoil and spread
 
@@ -137,7 +137,7 @@ To see the whole pattern as a picture, open the [Weapon Spray Viewer](https://ki
 
 ## Ammunition
 
-Ammo types for this weapon: Standard (FMJ), Standard (FMJ) with tracer, Flesh Damage (HP), Flesh Damage (HP) with tracer, Armor Piercing (AP), Armor Piercing (AP) with tracer. See [Ammunition](ammunition.md).
+Ammo types for this weapon: Standard (FMJ), Standard (FMJ) with tracer, Flesh Damage (HP), Flesh Damage (HP) with tracer, Armor Piercing (AP), Armor Piercing (AP) with tracer. See [Ammunition](../ammunition.md).
 
 ## Attachments
 
@@ -159,7 +159,7 @@ Default parts: magazine (SVDM Standard Magazine).
 ## See also
 
 - [Weapons](../weapons.md)
-- [Ammunition](ammunition.md)
+- [Ammunition](../ammunition.md)
 - [Attachments](../attachments.md)
 - [Choosing Ammo](../guides/choosing-ammo.md)
 - [Ballistics](../game-mechanics/ballistics.md)

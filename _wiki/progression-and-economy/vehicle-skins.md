@@ -1,7 +1,7 @@
 ---
 title: "Vehicle Skins"
 parent: "Progression & Economy"
-group: "Unlocks"
+group: "Cosmetics"
 description: "Every vehicle skin, the MH-6 taxi skin and the bobbleheads, with Gold Bar prices and how each is unlocked."
 ---
 

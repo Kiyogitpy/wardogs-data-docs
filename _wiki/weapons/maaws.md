@@ -90,7 +90,7 @@ To see the whole pattern as a picture, open the [Weapon Spray Viewer](https://ki
 
 ## Ammunition
 
-Launchers do not use the bullet types on the [Ammunition](ammunition.md) page.
+Launchers do not use the bullet types on the [Ammunition](../ammunition.md) page.
 
 ## Attachments
 
@@ -110,7 +110,7 @@ Default parts: sight (CGM4 Scope).
 ## See also
 
 - [Weapons](../weapons.md)
-- [Ammunition](ammunition.md)
+- [Ammunition](../ammunition.md)
 - [Attachments](../attachments.md)
 - [Choosing Ammo](../guides/choosing-ammo.md)
 - [Ballistics](../game-mechanics/ballistics.md)

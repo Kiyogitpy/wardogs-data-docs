@@ -1,7 +1,7 @@
 ---
 title: "Season 1 Cosmetics"
 parent: "Progression & Economy"
-group: "Unlocks"
+group: "Cosmetics"
 description: "Every Season 1 cosmetic: three skin sets and three emotes, their Gold Bar prices, and what the data says about how they were earned."
 ---
 

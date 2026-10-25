@@ -119,7 +119,7 @@ The stats sheet gives an effective range of 10,000 m, but the longest shot measu
 ## See also
 
 - [Artillery](../game-mechanics/artillery.md)
-- [L81 Mortar](../equipment/l81-mortar.md)
+- [L81 Mortar](../building/l81-mortar.md)
 - [SPH-2](../vehicles/sph-2.md)
 - [Spotting](../game-mechanics/spotting.md)
 

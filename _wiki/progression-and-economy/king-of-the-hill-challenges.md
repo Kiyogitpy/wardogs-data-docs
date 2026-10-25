@@ -1,7 +1,7 @@
 ---
 title: "King of the Hill Challenges"
 parent: "Progression & Economy"
-group: "Unlocks"
+group: "Challenges"
 description: "The 60 King of the Hill event challenges: kills, revives, heals, vehicles, supply crates, tips and zone play, with the base cash and role XP each pays."
 ---
 

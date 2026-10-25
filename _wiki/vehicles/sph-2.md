@@ -114,7 +114,7 @@ The stats sheet gives 3 seats, but the seat data has two setups: a driver and a 
 
 - [Artillery](../game-mechanics/artillery.md), the full firing table and flight data
 - [Aiming the SPH-2](../guides/aiming-the-sph-2.md), reading the gun sight and the map
-- [L81 Mortar](../equipment/l81-mortar.md), the fixed mortar emplacement for shorter range
+- [L81 Mortar](../building/l81-mortar.md), the fixed mortar emplacement for shorter range
 - [L2A6](l2a6.md) and [Flakpanzer Gepard](flakpanzer-gepard.md), the other tanks of this family
 - [T-72B3](t-72b3.md), a separate tank
 - [Vehicle damage](vehicle-damage.md)

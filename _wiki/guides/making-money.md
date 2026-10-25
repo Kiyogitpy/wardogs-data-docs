@@ -160,9 +160,9 @@ The first factory investment costs 200 cash and runs three production lines ([Fa
 | Refuel Station, Max | Up to a full tank | 9 s | 1,500 cash |
 | Fuel Canister | One can | Timed step | 150 cash, 40 durability |
 
-Each restock uses 5 Fuel Supplies, and Fuel Supplies sell for 10 cash per lot of 50 ([Refuel and Repair Stations](../equipment/refuel-and-repair-stations.md), [Supplies](../equipment/supplies.md)). Refuelling at base is not free, as the in-game tip says ([Fuel and refueling](../vehicles/fuel-and-refueling.md#refueling)).
+Each restock uses 5 Fuel Supplies, and Fuel Supplies sell for 10 cash per lot of 50 ([Refuel and Repair Stations](../building/refuel-and-repair-stations.md), [Supplies](../equipment/supplies.md)). Refuelling at base is not free, as the in-game tip says ([Fuel and refueling](../vehicles/fuel-and-refueling.md#refueling)).
 
-Filling a tank from empty with Fast restocks takes 20 restocks of 75 cash, which is 1,500 cash over 60 s. A single Max restock costs the same 1,500 cash and takes 9 s. Max saves time, not cash ([Refuel and Repair Stations](../equipment/refuel-and-repair-stations.md)). The same comparison holds for repair: 20 Fast restocks of 100 cash give 2,000, the Max price.
+Filling a tank from empty with Fast restocks takes 20 restocks of 75 cash, which is 1,500 cash over 60 s. A single Max restock costs the same 1,500 cash and takes 9 s. Max saves time, not cash ([Refuel and Repair Stations](../building/refuel-and-repair-stations.md)). The same comparison holds for repair: 20 Fast restocks of 100 cash give 2,000, the Max price.
 
 ### Repairing
 
@@ -182,18 +182,18 @@ Stationary weapons need ammunition restocked, and the cost is in Ammo Supplies o
 
 | Weapon | Restock | Supply value (derived) |
 |---|---|---|
-| [Talon 9K-SAM](../equipment/talon-9k-sam.md) | 200 Ammo Supplies | 40 cash |
-| [MG Nest](../equipment/mg-nest.md) | 200 Ammo Supplies for 60 rounds | 40 cash |
-| [Vanguard CIWS](../equipment/vanguard-ciws.md) | 250 Ammo Supplies for 500 rounds | 50 cash |
-| [L81 Mortar](../equipment/l81-mortar.md) | 150 Ammo Supplies | 30 cash |
-| [Stingray](../equipment/stingray.md) | 900 Mechanical Supplies and 5,000 cash | 180 cash, plus 5,000 cash |
+| [Talon 9K-SAM](../building/talon-9k-sam.md) | 200 Ammo Supplies | 40 cash |
+| [MG Nest](../building/mg-nest.md) | 200 Ammo Supplies for 60 rounds | 40 cash |
+| [Vanguard CIWS](../building/vanguard-ciws.md) | 250 Ammo Supplies for 500 rounds | 50 cash |
+| [L81 Mortar](../building/l81-mortar.md) | 150 Ammo Supplies | 30 cash |
+| [Stingray](../building/stingray.md) | 900 Mechanical Supplies and 5,000 cash | 180 cash, plus 5,000 cash |
 
 The Stingray is the most expensive restock in the data. Its 5,000 cash is a direct payment, on top of the supplies.
 
 ### Tips that follow from the numbers
 
-- The Stingray's restock is the largest cash outlay of the stationary weapons in the data, at 5,000 cash plus 900 Mechanical Supplies, before any build cost ([Stingray](../equipment/stingray.md)).
-- Fast and Max restocks cost the same per percent of the tank or health: 15 cash per percent for refuelling and 20 cash per percent for repair. Max is faster for the same money ([Refuel and Repair Stations](../equipment/refuel-and-repair-stations.md)).
+- The Stingray's restock is the largest cash outlay of the stationary weapons in the data, at 5,000 cash plus 900 Mechanical Supplies, before any build cost ([Stingray](../building/stingray.md)).
+- Fast and Max restocks cost the same per percent of the tank or health: 15 cash per percent for refuelling and 20 cash per percent for repair. Max is faster for the same money ([Refuel and Repair Stations](../building/refuel-and-repair-stations.md)).
 
 ## See also
 
@@ -216,8 +216,8 @@ The Stingray is the most expensive restock in the data. Its 5,000 cash is a dire
 - [Body Armor](../equipment/body-armor.md) and the armor and helmet tier articles
 - [Fuel and refueling](../vehicles/fuel-and-refueling.md)
 - [Repair and vehicle parts](../vehicles/repair-and-vehicle-parts.md)
-- [Refuel and Repair Stations](../equipment/refuel-and-repair-stations.md)
+- [Refuel and Repair Stations](../building/refuel-and-repair-stations.md)
 - [Supplies](../equipment/supplies.md)
-- [Stationary emplacement articles](../equipment/buildables.md): [Talon 9K-SAM](../equipment/talon-9k-sam.md), [MG Nest](../equipment/mg-nest.md), [Vanguard CIWS](../equipment/vanguard-ciws.md), [L81 Mortar](../equipment/l81-mortar.md), [Stingray](../equipment/stingray.md)
+- [Stationary emplacement articles](../building.md): [Talon 9K-SAM](../building/talon-9k-sam.md), [MG Nest](../building/mg-nest.md), [Vanguard CIWS](../building/vanguard-ciws.md), [L81 Mortar](../building/l81-mortar.md), [Stingray](../building/stingray.md)
 - Weapon articles for the vendor prices listed above
 - [Round 44 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round44-econ-buildables.md)

@@ -39,7 +39,7 @@ There are three hammers, each for a different size of structure. The Small Hamme
 | Large Hammer | 1.5 | 8 | 0.45 | 250 | 3,000 |
 
 - A hit adds the build amount divided by the structure's Build Supplies cost to its progress. A bigger hammer therefore needs fewer hits for the same structure, and the same total Build Supplies. The hit counts for each structure are in its article.
-- A weak-spot hit adds the larger amount in the table, which is 6, 5 and 5.3 times the normal hit. Weak spots are explained in the [Buildables](buildables.md#weak-spots) article.
+- A weak-spot hit adds the larger amount in the table, which is 6, 5 and 5.3 times the normal hit. Weak spots are explained in the [Buildables](../building.md#weak-spots) article.
 - The Small Hammer's build amount is 0.5. Barbed Wire and Recon Tent count each hit 3.5 times as much, so a Small Hammer builds them in 4 hits.
 - Blow time is the point in the swing when the hit lands, from the first-person animation data. It is not the time a build takes.
 - The hammers also repair finished structures and dismantle your own. A repair hit restores health at the build amount times the structure's repair multiplier, and a dismantle hit does the damage in the Dismantle column to the structure.

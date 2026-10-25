@@ -1,7 +1,7 @@
 ---
 title: "Pilot"
 parent: "Progression & Economy"
-group: "Roles"
+group: "Roles and mastery"
 description: "The Pilot role: 6 skills for air vehicles, covering mounted machine gun aiming and recoil, fuel use, impact damage and supply crate durability, plus its mastery curve and earnings."
 ---
 

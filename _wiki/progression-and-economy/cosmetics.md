@@ -1,7 +1,7 @@
 ---
 title: "Cosmetics"
 parent: "Progression & Economy"
-group: "Unlocks"
+group: "Cosmetics"
 description: "Skins, emotes and other cosmetics for Seasons 1 and 2, their Gold Bar prices, and what the data does and does not say about how they are unlocked."
 ---
 

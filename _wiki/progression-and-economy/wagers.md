@@ -1,7 +1,7 @@
 ---
 title: "Wagers"
 parent: "Progression & Economy"
-group: "Unlocks"
+group: "Challenges"
 description: "The four wager actions, how many of each a player can take on, the odds, the 50 conditions and the payout limits in the data. Settlement is on the server."
 ---
 

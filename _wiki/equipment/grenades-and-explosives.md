@@ -104,7 +104,7 @@ The Season 2 items data lists no change to the blast damage, radius or fuse of a
 ## See also
 
 - [Fire, Smoke and Flash](fire-smoke-and-flash.md), for the Molotov, smoke grenades and mine triggers
-- [Buildables](buildables.md), which take damage from grenades and explosives
+- [Buildables](../building.md), which take damage from grenades and explosives
 - [Body Armor](body-armor.md)
 - [Vehicle damage](../vehicles/vehicle-damage.md)
 

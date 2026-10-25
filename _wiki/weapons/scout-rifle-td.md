@@ -11,7 +11,7 @@ description: "The Scout Rifle TD sniper rifle: fire rate, damage by body part, r
 |---|---|
 | **General** |  |
 | Class | Sniper rifle |
-| Caliber | [5.56x45mm](caliber-5-56x45mm.md) |
+| Caliber | [5.56x45mm](../ammunition/5-56x45mm.md) |
 | Fire modes | Semi-automatic |
 | **Performance** |  |
 | Fire rate | 46 rounds/min |
@@ -30,7 +30,7 @@ The Scout Rifle TD is a sniper rifle chambered in 5.56x45mm. It fires semi-autom
 
 Sniper rifles are the sniper class in the weapon data.
 
-It takes the bullet types described on the [Ammunition](ammunition.md) page: Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). Each has a tracer version.
+It takes the bullet types described on the [Ammunition](../ammunition.md) page: Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). Each has a tracer version.
 
 ## Stats
 
@@ -88,7 +88,7 @@ Figures are for Standard (FMJ) at point blank range, per hit, against a characte
 | Flesh Damage (HP) | 147.8 |
 | Armor Piercing (AP) | 59.1 |
 
-See [Ammunition](ammunition.md) for how each type does against armor, and [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md) for the full tables.
+See [Ammunition](../ammunition.md) for how each type does against armor, and [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md) for the full tables.
 
 ## Recoil and spread
 
@@ -137,7 +137,7 @@ To see the whole pattern as a picture, open the [Weapon Spray Viewer](https://ki
 
 ## Ammunition
 
-Ammo types for this weapon: Standard (FMJ), Standard (FMJ) with tracer, Flesh Damage (HP), Flesh Damage (HP) with tracer, Armor Piercing (AP), Armor Piercing (AP) with tracer. See [Ammunition](ammunition.md).
+Ammo types for this weapon: Standard (FMJ), Standard (FMJ) with tracer, Flesh Damage (HP), Flesh Damage (HP) with tracer, Armor Piercing (AP), Armor Piercing (AP) with tracer. See [Ammunition](../ammunition.md).
 
 ## Attachments
 
@@ -158,7 +158,7 @@ Default parts: stock (Scout Rifle Stock), barrel (Scout Rifle Standard Barrel).
 ## See also
 
 - [Weapons](../weapons.md)
-- [Ammunition](ammunition.md)
+- [Ammunition](../ammunition.md)
 - [Attachments](../attachments.md)
 - [Choosing Ammo](../guides/choosing-ammo.md)
 - [Ballistics](../game-mechanics/ballistics.md)

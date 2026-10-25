@@ -1,7 +1,7 @@
 ---
 title: "Crowbar Challenges"
 parent: "Progression & Economy"
-group: "Unlocks"
+group: "Challenges"
 description: "The one crowbar challenge, Door Forced Open, and the base amounts it pays."
 ---
 

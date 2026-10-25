@@ -1,7 +1,7 @@
 ---
 title: "Emotes"
 parent: "Progression & Economy"
-group: "Unlocks"
+group: "Cosmetics"
 description: "The six emotes in the data, which three are sold on the Gold Market for 5 Gold Bars, and how the others are unlocked."
 ---
 

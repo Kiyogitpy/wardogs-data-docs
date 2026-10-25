@@ -98,7 +98,7 @@ The M4 keeps full speed to 400 m. The GGX 17 is already at 0.80 by 200 m and 0.4
 - [Penetration and Ricochet](penetration-and-ricochet.md)
 - [Spread and Recoil](spread-and-recoil.md)
 - [Hit Registration](hit-registration.md)
-- [Ammunition](../weapons/ammunition.md)
+- [Ammunition](../ammunition.md)
 - [Weapons](../weapons.md)
 
 ## Sources

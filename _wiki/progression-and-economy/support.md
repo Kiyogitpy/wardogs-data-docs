@@ -1,7 +1,7 @@
 ---
 title: "Support"
 parent: "Progression & Economy"
-group: "Roles"
+group: "Roles and mastery"
 description: "The Support role: 12 skills for LMGs and shotguns, a longer C4 detonator range, its mastery curve, and how it earns cash and XP from supply crates, buildables and forward bases."
 ---
 
@@ -127,7 +127,7 @@ The reward tables list events, not roles. The events below are the ones that fit
 
 - [Skills](skills.md)
 - [Cash and Rewards](cash-and-rewards.md)
-- [Buildables](../equipment/buildables.md)
+- [Buildables](../building.md)
 - [C4 Charge](../equipment/c4-charge.md)
 - [Weapons](../weapons.md)
 
