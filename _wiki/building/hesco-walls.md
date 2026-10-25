@@ -88,7 +88,9 @@ Derived from each source's base damage and the damage table. It is not a count f
 
 ## Season 2 changes
 
-The Season 2 data lists no change to the cost or health of any Hesco variant.
+- The Season 2 data lists no change to the cost or health of any Hesco variant.
+- Cannon rules changed for the two Hesco Blocks. The Gepard's 35 mm cannon went from x0.25 to x0.08 against the small Block and from x0.15 to x0.08 against the large Block, and the Vanguard CIWS 20 mm cannon from full damage to x0.08 against both. Hits to destroy at point blank (derived): small Block 107 to 334 (35 mm) and 27 to 334 (20 mm), large Block 250 to 469 (35 mm) and 38 to 469 (20 mm). The Hesco Wall has no change for either cannon.
+- The T-72B3's 125 mm shell does more damage to the Blocks and less to the Wall: x1.25 against the small Block (5 hits to 4), x1.20 against the large Block (9 to 7) and x0.50 against the Hesco Wall (11 to 21).
 
 ## See also
 

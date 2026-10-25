@@ -239,7 +239,13 @@ The following build costs changed in Season 2:
 
 The Drill Rig's fuel values changed too: the minimum fuel to run went from 1,500 to 2,000, the maximum fuel from 7,500 to 10,000, and the run time per fuel unit from 0.05 to 0.03.
 
-Several entries in the buildable damage table changed by 5 to 17 percentage points. The Season 2 data does not say which structures they apply to.
+The buildable damage table changed in three places, and each structure's article lists its own values:
+
+- The Flakpanzer Gepard's 35 mm cannon does less to the Door, both small and large Hesco Blocks, the Gate, the Bremer Wall and the Builder's Radio.
+- The Vanguard CIWS 20 mm cannon, which did full damage to most structures, now does x0.08 to x0.80 of it to the Door, the Hesco Blocks, the Gate, the Bremer Wall, the Sandbag Wall, the Repair and Refuel Stations, the Forward Operating Base and the Drill Rig.
+- The T-72B3's 125 mm shell has a rule for every structure. It does more to the Forward Operating Base, the Hesco Blocks and the Bremer Wall, and less to the Door, the Hesco Wall, the Sandbag Wall, the Gate, the Repair and Refuel Stations, the Drill Rig, the Hedgehog and the three tall shelters.
+
+See the [Season 2 patch notes](patch-notes/season-2.md) for the values.
 
 ## See also
 

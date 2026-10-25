@@ -69,6 +69,25 @@ Hollow point and armor-piercing numbers against the M4 (upper torso and head):
 | Heavy helmet (head) | 32.9 | 5.9 | 36.8 |
 | Super heavy helmet (head) | 26.3 | 2.4 | 33.7 |
 
+## Rounds with their own armor rules
+
+A few rounds have extra rules on top of the armor's reduction. Each multiplies the damage that is left. Values are for Season 2.
+
+| Round | Against | Extra factor |
+|---|---|---:|
+| 12 gauge rifled slug | Any vest | x0.70 |
+| 12 gauge rifled slug | Any helmet | x0.95 |
+| 12 gauge rifled slug | Super heavy helmet | x0.88 more, so x0.84 with the row above |
+| Compound Bow arrow | Heavy vest, Heavy helmet | x0.90 |
+| Compound Bow arrow | Super heavy vest, Super heavy helmet | x0.66 |
+| .50 cal | Heavy vest, Heavy helmet | x0.90 |
+| .50 cal | Super heavy vest | x0.875 |
+| .50 cal | Super heavy helmet | x0.80 |
+| Armor-piercing sniper rounds | Super heavy helmet | x0.80 |
+| Molotov fire | Super heavy vest | x0.70 |
+
+Season 2 changed the slug rule against vests from x0.87 to x0.70, added the arrow, .50 cal and Molotov rules, and removed the old x0.75 that every high-class round (7.62 family, .308, .338 Norma Magnum, .50 AE, 30 mm, arrows) took against a Super heavy helmet. See [Season 2 patch notes](../patch-notes/season-2.md).
+
 ## Tips that follow from the numbers
 
 - **Against Light armor, full metal jacket is best.** Armor-piercing is slightly weaker, and hollow point is much weaker.

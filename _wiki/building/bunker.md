@@ -87,6 +87,7 @@ Derived from each source's base damage and the damage table. It is not a count f
 
 - Build cost went from 100 to 200 Build Supplies. The data lists this change for the main Bunker only.
 - The roof's build-stage mesh bounds changed. The data does not say what that means in play.
+- The T-72B3's 125 mm shell does x0.70 of the damage it did: 23 hits to destroy became 33 (derived).
 
 ## See also
 

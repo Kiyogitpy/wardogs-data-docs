@@ -83,7 +83,8 @@ Derived from each source's base damage and the damage table. It is not a count f
 
 ## Season 2 changes
 
-The Season 2 data lists no change to the Sandbag Wall's cost or health. Season 2 changed six values in three entries of the buildable damage table, but the data does not say which structures those entries affect.
+- The Season 2 data lists no change to the Sandbag Wall's cost or health.
+- The Vanguard CIWS 20 mm cannon went from full damage to x0.20 (13 hits to destroy became 62, derived). The T-72B3's 125 mm shell does half the damage it did: 1 hit to destroy became 2 (derived).
 
 ## See also
 

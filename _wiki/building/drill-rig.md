@@ -100,8 +100,8 @@ The Drill Rig's damage row is not in the structure table this page uses, so no h
 - Minimum fuel to run went from 1,500 to 2,000.
 - Maximum fuel went from 7,500 to 10,000.
 - Run time per fuel unit went from 0.05 to 0.03.
-
-The recharge duration of 900 is not listed as changed.
+- The Vanguard CIWS 20 mm cannon went from full damage to x0.135, and the T-72B3's 125 mm shell does x0.80 of the damage it did.
+- The recharge duration of 900 is not listed as changed.
 
 ## See also
 

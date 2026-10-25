@@ -80,6 +80,17 @@ These values are calculated from the game's multipliers and the M4's base damage
 
 The same bullet does different damage to different weapons. A sniper rifle such as the MK22 does 118.8 to the upper torso and 192.0 to the head, so one hit kills an unarmored player in either place. A pistol such as the GGX 17 does 25.4 to the upper torso and 46.2 to the head, so it takes four body shots or three headshots.
 
+## Rules that depend on the weapon or the round
+
+Besides the body-part multiplier, the damage table has rules that match a weapon type, a round or an explosive. They multiply with everything else. Values are for Season 2.
+
+- **Weapon type and round.** Assault rifles do x0.75 with .308 Winchester (FAL) and x0.88 with 7.62x39 mm (TCX-SPR). Marksman rifles do x0.85 with .308 Winchester (BMR-308, M14) and x0.80 with 7.62x54R (SVD). Machine guns do x0.75 with 7.62x54R (PKM) and .308 Winchester (Evo-3 Ultra). All other weapons are x1.00. The weapon articles already include this.
+- **Autocannons.** The Flakpanzer Gepard's 35 mm and the 20 mm cannon of the Vanguard CIWS and other stationary guns do x0.70 to a player on any body part.
+- **Outer blast ring.** An explosion's outer ring does x0.50 for the 84, 93, 120, 125 and 40 mm weapons (RPG-7, MAAWS, the L2A6 and T-72B3 guns, the MGL-40) and x0.45 for the 155 mm shell, on top of the distance falloff. The 40 mm grenade and the 125 mm shell gained this in Season 2. Inside the inner ring the rule does not apply. C4 has x0.60 in its outer ring.
+- **Rifled slug and arrows.** The 12 gauge rifled slug does x0.70 on a body part covered by a vest. Compound Bow arrows do x0.90 against Heavy gear and x0.66 against Super heavy gear. See [Armor](armor.md).
+- **.50 cal.** AMR 50 and M2 Browning hits do x0.84 to the head and neck, x0.875 to the upper torso and about x0.87 to the middle and lower torso, before armor.
+- **Molotov.** Fire does x0.70 against a Super heavy vest.
+
 ## Tips that follow from the numbers
 
 - **Aim high.** With the M4, two headshots kill an unarmored player, while four torso hits are needed. Head and neck hits matter most.

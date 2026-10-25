@@ -86,7 +86,8 @@ Derived from each source's base damage and the damage table. It is not a count f
 
 ## Season 2 changes
 
-The Season 2 data lists no change to the Builder's Radio's cost or health.
+- The Season 2 data lists no change to the Builder's Radio's cost or health.
+- The Gepard's 35 mm cannon went from x0.25 to x0.20 of its damage (67 hits to destroy became 84, derived). The T-72B3's 125 mm shell and the 20 mm cannon are unchanged.
 
 ## See also
 

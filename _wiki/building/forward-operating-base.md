@@ -80,7 +80,8 @@ Derived from each source's base damage and the damage table. It is not a count f
 
 ## Season 2 changes
 
-The Season 2 data lists no change to the Forward Operating Base's cost or health.
+- The Season 2 data lists no change to the Forward Operating Base's cost or health.
+- The Vanguard CIWS 20 mm cannon went from full damage to x0.80 (250 hits to destroy became 313, derived). The T-72B3's 125 mm shell does x1.35 of the damage it did: 7 hits to destroy became 5 (derived).
 
 ## See also
 

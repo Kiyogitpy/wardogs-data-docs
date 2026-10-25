@@ -84,6 +84,8 @@ Derived from each source's base damage and the damage table. It is not a count f
 ## Season 2 changes
 
 - Build cost went from 22 to 80 Build Supplies. The data lists this change for the main Door only, not for its parts.
+- The Gepard's 35 mm cannon went from x0.20 to x0.08 of its damage. The Vanguard CIWS 20 mm cannon, which did full damage, now does x0.08. Hits to destroy the 2,200 HP Door at point blank (derived): 184 to 459 for the 35 mm cannon, 37 to 459 for the 20 mm cannon.
+- The T-72B3's 125 mm shell does half the damage it did: 2 hits to destroy became 4 (derived).
 
 ## See also
 

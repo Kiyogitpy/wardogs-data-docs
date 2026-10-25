@@ -82,6 +82,8 @@ Derived from each source's base damage and the damage table. It is not a count f
 ## Season 2 changes
 
 - Build cost went from 15 to 32 Build Supplies.
+- The Gepard's 35 mm cannon went from x0.30 to x0.20 of its damage, and the Vanguard CIWS 20 mm cannon from full damage to x0.20. Hits to destroy at point blank (derived): 362 to 542 for the 35 mm cannon, 109 to 542 for the 20 mm cannon.
+- The T-72B3's 125 mm shell does x1.15 of the damage it did: 13 hits to destroy became 11 (derived).
 
 ## See also
 

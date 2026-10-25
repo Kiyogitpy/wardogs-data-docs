@@ -81,7 +81,8 @@ Derived from each source's base damage and the damage table. It is not a count f
 
 ## Season 2 changes
 
-The Season 2 data lists no change to the Hedgehog's cost or health.
+- The Season 2 data lists no change to the Hedgehog's cost or health.
+- The T-72B3's 125 mm shell does x0.70 of the damage it did: 6 hits to destroy became 8 (derived). The cannons are unchanged.
 
 ## See also
 

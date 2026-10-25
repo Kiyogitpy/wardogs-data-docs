@@ -94,7 +94,8 @@ Derived from each source's base damage and the damage table. It is not a count f
 
 ## Season 2 changes
 
-The Season 2 data lists no change to either station's cost or health.
+- The Season 2 data lists no change to either station's cost or health.
+- The Vanguard CIWS 20 mm cannon went from full damage to x0.25 against both stations (27 hits to destroy became 107, derived). The T-72B3's 125 mm shell does x0.80 of the damage it did and still destroys either station in 1 hit (derived).
 
 ## See also
 

@@ -82,7 +82,8 @@ Derived from each source's base damage and the damage table. It is not a count f
 
 ## Season 2 changes
 
-The Season 2 data lists no change to Barbed Wire's cost or health.
+- The Season 2 data lists no change to Barbed Wire's cost or health.
+- The Season 2 damage table gained a 125 mm shell entry for Barbed Wire, but its amount is 0, so nothing changed.
 
 ## See also
 
