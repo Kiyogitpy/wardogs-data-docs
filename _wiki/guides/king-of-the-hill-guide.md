@@ -125,7 +125,7 @@ Zone events pay these base amounts:
 - A Hot Zone Magnet, once active, makes kills in the Hot Zone pay the highest multiplier in the game. Capturing towers also counts.
 - Each repeat kill on the same player pays 24% less, up to four repeats.
 - Revives in a zone are multiplied by 1.2 to 2.0.
-- Challenge rewards: a player kill pays 300 cash and 250 Role XP, a defibrillator revive 600 cash and 250 Role XP, and a Bandage heal 200 cash and 80 Role XP. These are base amounts from the challenge table. The cash tables list other bases for the same actions, and the wiki does not know which set a match pays. See [King of the Hill Challenges](../progression-and-economy/king-of-the-hill-challenges.md).
+- Challenge rewards: a player kill pays 300 cash and 250 Role XP, a defibrillator revive 600 cash and 250 Role XP, and a Bandage heal 200 cash and 80 Role XP. These are base amounts from the challenge table. The cash tables list other bases for the same actions, and the game server decides which set a match pays. See [King of the Hill Challenges](../progression-and-economy/king-of-the-hill-challenges.md).
 - End of match: the top three factions get a flat 200, 150 and 100 cash. They also get 0.30, 0.25 and 0.20 times the match cash. In Season 2, the Lonestar faction gets an extra 10,000 cash. The other two factions get nothing from that bonus.
 
 Sources: [Cash and Rewards](../progression-and-economy/cash-and-rewards.md), [King of the Hill](../game-modes-and-maps/king-of-the-hill.md).

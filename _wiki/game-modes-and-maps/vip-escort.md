@@ -35,7 +35,8 @@ VIP Escort is one of the three PvE missions in the data, alongside [Hunter Kille
 - **Downed players.** The mission switches off the rule that skips the downed state, so a player can be downed here, as in King of the Hill.
 - **VIP tracker.** The VIP has a persistent tracker on the tactical map and the minimap. The map marker is purple, and the VIP's health state is shown with its own icon for each vitality state.
 - **The VIP.** One random player is chosen as the VIP. The VIP is a player, not a soldier.
-- **Failure.** The mission fails 10 seconds after the VIP is critically wounded or disconnects.
+- **Failure.** The mission fails 10 seconds after the VIP goes down (reaches the critical state). The countdown starts the moment the VIP drops and nothing stops it: a revive inside those 10 seconds does not cancel it, and the normal bleed-out time (see [Downed and Revive](../game-mechanics/downed-and-revive.md)) does not matter here. The VIP needs to stay on their feet.
+- **VIP disconnects.** This does not fail the mission. If the VIP leaves, the game picks another random player as the new VIP.
 - **Success.** The team must reach the extraction area with the VIP alive, then board the extraction helicopter. The helicopter is a Little Bird. It appears for the team at one of three entry points and flies a set route.
 - **Voice-over.** An intro of three lines, a success line and a failure line.
 - **Starting cash.** Each player starts the mission with 2,000 cash. The mission data sets no time limit.
@@ -48,7 +49,7 @@ The mission has 95 Manticore soldiers: 86 riflemen, 5 marksmen and 4 machine gun
 
 ## Rewards
 
-The mission has a loot table of its own with two entries, each with a 100% chance: a [Fuel Canister](../equipment/fuel-canister.md), which does not respawn, and an [SV98](../weapons/sv98.md) sniper rifle with one magazine, which respawns after 10 seconds. The data names the rifle entry "AK", but the item is the SV98, not an AK. The data does not say where this loot is placed or how often it appears.
+The mission has a loot table of its own with two entries, each with a 100% chance: a [Fuel Canister](../equipment/fuel-canister.md), which does not respawn, and an [SV98](../weapons/sv98.md) sniper rifle with one magazine, which respawns after 10 seconds. The data names the rifle entry "AK", but the item is the SV98, not an AK. Loot appears at marker points placed in the map, and each marker is named after one of the loot entries. When the match starts, the game creates the loot at every marker whose name matches an entry; neither VIP Escort entry is limited to a control zone, so both appear straight away. The chance is rolled once per marker (100% for both, so always), and when an entry lists several items the game picks one by weight. The marker positions themselves are not in the map files the project holds, so where exactly the SV98 and the Fuel Canister lie is not known.
 
 Other rewards follow the general rules; see [Cash and Rewards](../progression-and-economy/cash-and-rewards.md). The session-event reward lookup has no rows for PvE missions.
 
@@ -71,3 +72,4 @@ Other rewards follow the general rules; see [Cash and Rewards](../progression-an
 - [Season 2 changes: Game Modes & Maps](../../season-2-changes/game-modes-maps.md) (the VIP loot table is new in Season 2)
 - [Session-event reward lookups](../../content/Wardogs_RewardLookup_SessionEvents_v1.md)
 - [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
+- [Round 59 open questions evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round59-open-questions.md): the revive clock, the VIP re-pick and loot placement.

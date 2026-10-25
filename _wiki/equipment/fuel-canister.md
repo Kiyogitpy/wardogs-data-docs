@@ -29,7 +29,7 @@ The 40 L Fuel Canister is the portable fuel supply for vehicles. It holds 40 L a
 
 ## Overview
 
-The canister is sold for 150 cash and has 40 durability. The shop lists 25 fuel per use, but that figure is not what the refuel action uses. The action adds 2.0 fuel every 0.75 seconds, about 2.7 per second. The item data also lists a 20 L version. The Item Shop does not sell that version, so whether it can be obtained is not yet known.
+The canister is sold for 150 cash and has 40 durability. The shop lists 25 fuel per use, but that figure is not what the refuel action uses. The action adds 2.0 fuel every 0.75 seconds, about 2.7 per second. The item data also lists a 20 L version. The Item Shop does not sell that version, and nothing else in the data hands it out: the 20 L item has no item name of its own (it carries only the generic item tag), so no shop row, loot table or starting kit can point at it. Players cannot get it in the game as shipped (inferred; it looks like an unfinished item).
 
 ## How it works
 
@@ -56,3 +56,4 @@ No Season 2 change to the Fuel Canister is listed in the data.
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): fuel pump behaviour and the Fuel Canister's timed refuel step.
 - [Round 39 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md): Canister refuel step (2.0 per 0.75 s).
 - [Round 40 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-vehicles-explosives.md): the same topics, with the round 40 values where they differ.
+- [Round 59 open questions evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round59-open-questions.md): why the 20 L version cannot be obtained.

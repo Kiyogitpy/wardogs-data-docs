@@ -37,7 +37,7 @@ Destroying an enemy Door pays 100 cash and 25 Role XP. They give no cash for bui
 
 ## Building it
 
-- **Cost:** 80 Build Supplies for the Door, whichever hammer builds it. Each part costs 22 Build Supplies. The data does not say whether the part costs add to the 80. Nothing is charged at placement.
+- **Cost:** 80 Build Supplies for the Door, whichever hammer builds it. Each part costs 22 Build Supplies, but the parts are not added on top: the 80 is the whole price of the Door, and a part's own price most likely applies only when that part is repaired by itself (inferred). Nothing is charged at placement.
 - **Hammers:** Medium or Large.
 - **Placement:** It must be inside a friendly Forward Operating Base radius. It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder.
 - **Stack limit:** 2.
@@ -57,7 +57,7 @@ Each part on its own takes 15 repair hits from zero with the Medium Hammer or 10
 
 ## What it does
 
-The Door can be closed, and the data gives it a breach effect when it is destroyed. The data does not say what the breach looks like or does in play beyond that. The rest of its effect is health and how it takes damage.
+The Door can be closed, and the data gives it a breach effect when it is destroyed. The breach is a visual particle effect that plays at the door when the door section is destroyed; the data attaches no damage, blast or other number to it. The rest of its effect is health and how it takes damage.
 
 ## Durability
 

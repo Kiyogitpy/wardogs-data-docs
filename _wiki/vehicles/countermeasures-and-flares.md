@@ -39,7 +39,7 @@ The game's code shows a different job for flares than clearing a lock. A lock-on
 - Only guided missiles steer at all, and only while their rocket motor burns.
 - The airplane carries flares with the same rules. Its data sets no flare distances of its own, so it uses the game's default band of 25 to 100 m, and it sets no flare points, so where its flares pull a missile is not yet known.
 
-A helicopter also reports itself as "cannot be locked on to" while its flares are active, and the airplane never does. This fits the in-game tip, but the game code that reads this was not found, so whether it stops a new lock or drops one you already have is not yet known (inferred). The Talon 9K-SAM is a fixed emplacement rather than a vehicle weapon; it fires the same guided 72 mm rocket as the 9K333 Verba, so the flare rules above apply to its missiles as well (inferred). See the [Talon 9K-SAM](../building/talon-9k-sam.md) article for the emplacement itself.
+A helicopter also reports itself as "cannot be locked on to" while its flares are active, and the airplane never does. This matches the in-game tip, but nothing in the game's code reads it. The lock-on rules never ask the target whether it can be locked on to, so burning flares neither stop a new lock nor drop one you already have (read from the game's code, not tested in play; the part of the program that is hidden by the game's protection was not read, so keep this as inferred). Flares only work on a missile that is already in the air. The Talon 9K-SAM is a fixed emplacement rather than a vehicle weapon; it fires the same guided 72 mm rocket as the 9K333 Verba, so the flare rules above apply to its missiles as well (inferred). See the [Talon 9K-SAM](../building/talon-9k-sam.md) article for the emplacement itself.
 
 ### Smoke
 
@@ -105,3 +105,4 @@ The Flakpanzer Gepard, the T-72B3 and the M113 APC SV have a smoke countermeasur
 - [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): the flare and smoke inventory handlers and the flare vendor row
 - [Round 46 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-b.md): wiki update notes for gear order, the Drill Rig zone speed, the lock and flare search, rocket guidance and placement rewards
 - [Round 58 open questions evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round58-open-questions.md): what flares and smoke do to guided missiles and locks, and what a key press removes.
+- [Round 59 open questions evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round59-open-questions.md): the search for a reader of the lock-on flag.

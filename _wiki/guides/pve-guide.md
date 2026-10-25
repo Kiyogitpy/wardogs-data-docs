@@ -13,7 +13,7 @@ This guide covers the three PvE missions, which are played against AI squads on 
 | Mission | Objective | Enemies | Starting cash | Loot | Timer |
 |---|---|---|---:|---|---|
 | [Strike and Disarm](../game-modes-and-maps/strike-and-disarm.md) | Upload the virus at the laptop, then board the extraction helicopter | 53 Lonestar soldiers: 27 at the start, 26 more as a counter-attack | 3,000 | None of its own; see [Cash and Rewards](../progression-and-economy/cash-and-rewards.md) | 5-minute laptop hack |
-| [VIP Escort](../game-modes-and-maps/vip-escort.md) | Keep the VIP alive, reach the extraction area and board the extraction helicopter | 95 Manticore soldiers, all on the map from the start | 2,000 | A Fuel Canister and an SV98 | Fails 10 s after the VIP goes critical or disconnects |
+| [VIP Escort](../game-modes-and-maps/vip-escort.md) | Keep the VIP alive, reach the extraction area and board the extraction helicopter | 95 Manticore soldiers, all on the map from the start | 2,000 | A Fuel Canister and an SV98 | Fails 10 s after the VIP goes down |
 | [Hunter Killer](../game-modes-and-maps/hunter-killer.md) | None set | None placed | None set | None set | None set |
 
 Every mission uses the no-respawn rule, so a player who dies stays out for the rest of the mission. The shared rules are on the [PvE Scenarios](../game-modes-and-maps/pve-scenarios.md) page.
@@ -38,8 +38,8 @@ The data sets 95 Manticore soldiers: 86 riflemen, 5 marksmen and 4 machine gunne
 Tips that follow from the numbers:
 
 - **Because the VIP is marked on the minimap for the whole mission, the rest of the team can always see where the VIP is.** The marker is purple.
-- **Because the mission fails 10 seconds after the VIP is critically wounded or disconnects, a critical VIP leaves a 10-second clock.** The data does not say whether a revive stops that clock, so do not plan on it.
-- **Because the SV98 loot entry respawns after 10 seconds and the Fuel Canister entry does not, the rifle is the loot that comes back.** The data does not say where either item is placed. See [VIP Escort](../game-modes-and-maps/vip-escort.md).
+- **Because the mission fails 10 seconds after the VIP goes down, a downed VIP is a lost mission.** A revive does not stop the 10-second clock, so keep the VIP out of fights rather than planning to revive them. If the VIP disconnects, the game picks another random player as the new VIP.
+- **Because the SV98 loot entry respawns after 10 seconds and the Fuel Canister entry does not, the rifle is the loot that comes back.** Both are placed at named marker points in the map, and the positions of those markers are not known. See [VIP Escort](../game-modes-and-maps/vip-escort.md).
 
 ## Hunter Killer
 

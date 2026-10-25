@@ -128,7 +128,7 @@ Short answers to the questions players ask most often. Each answer gives the num
 
 **How many AI soldiers are in Strike and Disarm?** 53 Lonestar soldiers. 27 are on the map at the start, and 26 more arrive as a counter-attack when the laptop hack begins ([Strike and Disarm](../game-modes-and-maps/strike-and-disarm.md)).
 
-**How long does the VIP have before the mission fails?** In VIP Escort the mission fails 10 s after the VIP goes critical or disconnects. The data does not say whether a revive stops that clock ([VIP Escort](../game-modes-and-maps/vip-escort.md), [PvE Guide](pve-guide.md)).
+**How long does the VIP have before the mission fails?** In VIP Escort the mission fails 10 s after the VIP goes down (reaches the critical state). A revive does not stop that clock, so a downed VIP means a lost mission. If the VIP disconnects, the game picks a new VIP instead ([VIP Escort](../game-modes-and-maps/vip-escort.md), [PvE Guide](pve-guide.md)).
 
 **What does Hunter Killer include?** Its data is not finished. It sets no soldiers, objectives, player faction or starting cash, so the game files have no answer for them ([Hunter Killer](../game-modes-and-maps/hunter-killer.md)).
 

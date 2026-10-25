@@ -37,7 +37,7 @@ Destroying an enemy Indirect Fire Shelter pays 200 cash and 50 Role XP.
 
 ## Building it
 
-- **Cost:** 200 Build Supplies for the shelter, whichever hammer builds it. Each part costs 10 Build Supplies. The data does not say whether the part costs add to the 200. Nothing is charged at placement.
+- **Cost:** 200 Build Supplies for the shelter, whichever hammer builds it. Each part costs 10 Build Supplies, but the parts are not added on top: the 200 is the whole price of the shelter, and a part's own price most likely applies only when that part is repaired by itself (inferred). Nothing is charged at placement.
 - **Hammers:** Large only.
 - **Placement:** The shelter must be inside a friendly Forward Operating Base radius. It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder.
 - **Stack limit:** 1.
@@ -84,7 +84,7 @@ Derived from each source's base damage and the damage table. It is not a count f
 ## Season 2 changes
 
 - Build cost went from 100 to 200 Build Supplies. The data lists this change for the main shelter only.
-- The build-stage mesh bounds of the ceiling changed. The data does not say what that means in play.
+- The ceiling's footprint box changed slightly. It is the box the data stores around the ceiling for its build stages and its finished shape: it became about 2 cm shorter at one end and 1 cm at the other, and its top edge about 8 cm lower. The data does not say what the game does with the box; it most likely sets the space the ceiling takes up when it is placed and checked (inferred).
 - The T-72B3's 125 mm shell does x0.70 of the damage it did: 23 hits to destroy became 33 (derived).
 
 ## See also

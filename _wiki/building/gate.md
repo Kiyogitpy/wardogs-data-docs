@@ -37,7 +37,7 @@ Destroying an enemy Gate pays 200 cash and 50 Role XP. Its ramp pays 85 cash and
 
 ## Building it
 
-- **Cost:** 200 Build Supplies for the Gate, whichever hammer builds it. The data does not say whether the part costs add to the 200. Nothing is charged at placement.
+- **Cost:** 200 Build Supplies for the Gate, whichever hammer builds it. The parts (85 Build Supplies each) are not added on top of the 200: three parts would come to 255, and the game charges only the 200 for the whole Gate. A part's own price most likely applies only when that part is repaired by itself (inferred). Nothing is charged at placement.
 - **Hammers:** Medium or Large.
 - **Placement:** It must be inside a friendly Forward Operating Base radius. It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder. The Gate's parts can sit on surfaces with a maximum angle of 10. The data does not state the unit, which is most likely degrees.
 - **Stack limit:** 1.
@@ -57,7 +57,7 @@ The parts are not built on their own; they come with the finished Gate. Once sep
 
 ## What it does
 
-The Gate can be closed, and the data gives it a breach effect when it is destroyed. The data does not say what the breach does in play beyond that. The rest of its effect is health and how it takes damage.
+The Gate can be closed, and the data gives it a breach effect when it is destroyed. The breach is a visual particle effect that plays at the gate halves when they are destroyed; the data attaches no damage, blast or other number to it. The rest of its effect is health and how it takes damage.
 
 ## Durability
 

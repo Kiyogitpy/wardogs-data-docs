@@ -37,7 +37,7 @@ Destroying an enemy Recon Tower pays 200 cash and 50 Role XP.
 
 ## Building it
 
-- **Cost:** 200 Build Supplies for the tower, whichever hammer builds it. Each part costs 10 Build Supplies. The data does not say whether the part costs add to the 200. Nothing is charged at placement.
+- **Cost:** 200 Build Supplies for the tower, whichever hammer builds it. Each part costs 10 Build Supplies, but the parts are not added on top: the 200 is the whole price of the tower, and a part's own price most likely applies only when that part is repaired by itself (inferred). Nothing is charged at placement.
 - **Hammers:** Large only.
 - **Placement:** The tower must be inside a friendly Forward Operating Base radius. It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder.
 - **Stack limit:** 0, so the tower cannot be placed on top of another buildable.
