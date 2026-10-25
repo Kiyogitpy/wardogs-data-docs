@@ -68,7 +68,7 @@ The vehicle cannons, artillery and drone shells are on the [Explosives](../../ga
 
 | Item | Fuse or trigger | Arming | How it is used |
 |---|---|---|---|
-| M67 Frag Grenade | 4 s after the throw | none | Thrown. Can be cooked (held before throwing). A throw-back is listed in the data but not confirmed in play |
+| M67 Frag Grenade | 4 s after the throw | none | Thrown. Can be cooked (held before throwing). Throwing it back never applies as shipped (from the game code, not tested in play) |
 | C4 Charge | Set off by the Remote Detonator; the charge adds a 0.2 s delay | sticks to what it hits | Thrown, then detonated remotely |
 | Improvised Explosive Device | 3 s after the trigger is pressed | none | Placed, then detonated remotely; no range limit |
 | AT Mine | when a vehicle moves over the trigger area | 1 s after placement | Placed; see [Fire, Smoke and Flash](fire-smoke-and-flash.md) for trigger details |
@@ -76,7 +76,7 @@ The vehicle cannons, artillery and drone shells are on the [Explosives](../../ga
 
 ### Throwing
 
-The M67 Frag Grenade has three throws: an overarm throw at 2,500 cm/s (25 m/s), an underarm throw at 1,400 cm/s, and a back throw at 1,800 cm/s. The C4 trigger and Improvised Explosive Device trigger are thrown at 900 cm/s and 1,200 cm/s. Speeds in the data are in centimetres per second. The throw speed is scaled by a curve of how high you aim, and part of your own movement speed is added to it (a static reading of the throw code, not checked in play).
+The M67 Frag Grenade has three throws: an overarm throw at 2,500 cm/s (25 m/s), an underarm throw at 1,400 cm/s, and a back throw at 1,800 cm/s. From the game code, not tested in play, the back throw never applies as shipped, and molotovs and smoke grenades cannot be thrown back. The C4 trigger and Improvised Explosive Device trigger are thrown at 900 cm/s and 1,200 cm/s. Speeds in the data are in centimetres per second. The throw speed is scaled by a curve of how high you aim, and part of your own movement speed is added to it (a static reading of the throw code, not checked in play).
 
 ### Remote detonators
 
@@ -114,3 +114,5 @@ The Season 2 items data lists no change to the blast damage, radius or fuse of a
 - [Item Shop for Non-Weapon Items](../../game-features/Wardogs_ItemShop_v1.md): prices and shop text
 - [Explosive actor defaults](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/explosive-actors.json): thrown and placed actor values
 - [Items and Equipment changes, Season 2](../../season-2-changes/items-equipment.md): the Season 2 check
+- [Round 42 weapons evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-weapons.md): the throw-back gate for the M67, and the molotov and smoke rule
+- [Round 42 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-vehicles-explosives.md): the throw-back gate data for grenades, molotovs and smoke

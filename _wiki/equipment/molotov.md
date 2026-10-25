@@ -14,6 +14,7 @@ description: "The Molotov: a thrown incendiary that bursts for 40 HP and leaves 
 | How it is used | Thrown. Bursts and leaves a fire area |
 | Fuse | Bursts on first impact; 5 s backstop |
 | Cookable | No |
+| Thrown back | No |
 | **Blast and fire** | |
 | Burst damage at centre | 40 HP |
 | Burst full damage out to | 2.5 m |
@@ -49,6 +50,8 @@ For the other explosives, see [Grenades and Explosives](grenades-and-explosives.
 **Fire area.** The fire is laid as patches: each throw makes 15, and each patch is a box 2 m by 2 m and 0.5 m tall. The patches last 45 s. Anyone or any vehicle inside a patch takes damage every 0.4 s. The 15 patches lie on a spiral out to about 2.5 m from the impact point. The spiral's centre is pushed up to 3.75 m further along the throw, so the fire spreads forward from where it lands.
 
 **Burning status.** A player in the fire gets a "burning" status. It darkens and blurs the screen, with a vignette effect. The data does not give a timer for the status. It ends when the player leaves the patch: a static reading of the game code finds the status removed on leaving the fire volume (not checked in play).
+
+Burning damage from the fire counts as the thrower's damage, so kills and score from the fire go to the player who threw the Molotov (a static reading of the game code, not checked in play).
 
 Armor reduces the burst but not the fire: no armor rule in the data applies to fire damage (derived). The damage tables reduce friendly fire only for infantry bullets (-50 %) and large hammers (-70 %), so fire from a teammate's Molotov has no reduction in the tables. Whether the game mode turns off friendly damage elsewhere is not in these tables.
 
@@ -98,3 +101,5 @@ The Season 2 items data adds the Molotov, along with four other items, to the it
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): Molotov fire patches, fuse and damage rules.
 - [Round 39 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md): Impact burst and patch spiral.
 - [Round 40 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-vehicles-explosives.md): the same topics, with the round 40 values where they differ.
+- [Round 42 weapons evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-weapons.md): fire damage is credited to the thrower, and the Molotov cannot be thrown back
+- [Round 42 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-vehicles-explosives.md): the Molotov throw-back rule and the fire field's instigator

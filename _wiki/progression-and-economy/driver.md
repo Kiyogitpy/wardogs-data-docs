@@ -23,7 +23,7 @@ Driver is one of the six roles. Its six skills apply to ground vehicles: the mou
 
 ## Overview
 
-The vehicle skills apply to the ground vehicle the player is driving. The gun skills apply only to the mounted machine gun named in the data, which is the heavy tank's mounted machine gun, not every gun on a ground vehicle. The supply crate skill applies to a crate the driver drops.
+The vehicle skills apply to the ground vehicle the player is driving. The gun skills apply only to the mounted machine gun named in the data, which is the heavy tank's mounted machine gun, not every gun on a ground vehicle. The supply crate skill applies to a crate the driver drops. It sets the crate's own health, not the vehicle's.
 
 The skill curves give a value for each step. The unlock level and cost of each step are not in the sources, so they are not yet known (see [Skills](skills.md)).
 
@@ -35,10 +35,10 @@ The skill curves give a value for each step. The unlock level and cost of each s
 | Fuel use | Less fuel used in ground vehicles, for a longer fuel time. | 1, 0.8, 0.7, 0.6 | Ground vehicles. The data overrides the fuel usage multiplier with this value. |
 | Horizontal recoil (mounted machine gun) | Less sideways kick. | 1, 0.8, 0.7, 0.6 | Heavy tank's mounted machine gun |
 | Impact damage | Less damage when the ground vehicle hits objects or the landscape. | 1, 0.8, 0.7, 0.6 | Ground vehicles. The data overrides the impact reduction multiplier with this value. |
-| Supply crate durability | A supply crate the driver drops takes more damage before it breaks. | 1, 1.2, 1.4 | Crates the driver drops |
+| Supply crate durability | A supply crate the driver drops has 1.0, 1.2 or 1.4 times its normal health at skill levels 0, 2 and 4. It is set when the crate is created, and it is not a vehicle-health bonus. | 1, 1.2, 1.4 | Crates the driver drops |
 | Vertical recoil (mounted machine gun) | Less upward kick. | 1, 0.8, 0.7, 0.6 | Heavy tank's mounted machine gun |
 
-Curve values are listed in key order, starting with the first key. The durability skill uses three values and the others use four. The data does not confirm which key is which rank, so the rank reading is inferred.
+Curve values are listed in key order, starting with the first key. The durability skill uses three values and the others use four. The data does not confirm which key is which rank, so the rank reading is inferred, except for supply crate durability, whose levels (0, 2 and 4) the data gives.
 
 ## Mastery and rewards
 
@@ -124,3 +124,5 @@ The reward tables list events, not roles. The events below are the ones that fit
 - [Season 2 changes: Rewards & Unlocks](../../season-2-changes/rewards-unlocks.md)
 - [Economy data: role unlock tree](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/economy.json) (JSON)
 - [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md)
+- [Round 42 weapons evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-weapons.md): the supply crate durability skill and how it is applied
+- [Round 42 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-vehicles-explosives.md): the GE_Vehicle_Health reading for dropped crates

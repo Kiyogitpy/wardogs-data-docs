@@ -15,6 +15,7 @@ description: "Small attack helicopter of the Little Bird family with two M134D m
 | Unlock level | 1 |
 | Main health | 400 HP |
 | Top speed | 350 (as stored) |
+| Mass | 722 kg |
 | Rifle damage taken (derived) | 7.5% |
 | 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#air-rotary-littlebird/ROT_03_MachineGuns) |
 | Internal name | ROT_03 (miniguns variant) |
@@ -34,7 +35,7 @@ The AH-6M [Miniguns] is sold in the vehicle vendor under air combat, for 12,000 
 | Fuel capacity | 105 (as stored) |
 | Fuel economy | 4.4 (as stored) |
 | Seats | 2 |
-| Mass | 722 (as stored, unit not stated) |
+| Mass | 722 kg |
 | Countermeasures | Flares |
 
 ## Armor and damage
@@ -89,3 +90,5 @@ The data does not say which of the two seats fires the miniguns. The seats are a
 - [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md)
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md)
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
+- [Round 42 weapons evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-weapons.md): the body mass of this aircraft, in kilograms
+- [Round 42 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-vehicles-explosives.md): the airplane and helicopter mass override values

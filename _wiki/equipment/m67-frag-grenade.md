@@ -11,7 +11,7 @@ description: "The M67 Frag Grenade: a thrown blast grenade with a 4 second fuse,
 |---|---|
 | **General** | |
 | Type | Lethal, thrown (quick slot) |
-| How it is used | Thrown. Can be cooked (held before throwing). A throw-back is listed in the data but not confirmed in play |
+| How it is used | Thrown. Can be cooked (held before throwing). Throwing one back never applies as shipped (from the game code, not tested in play) |
 | Fuse | 4 s after the throw |
 | **Blast** | |
 | Damage at centre | 100 HP |
@@ -26,17 +26,17 @@ description: "The M67 Frag Grenade: a thrown blast grenade with a 4 second fuse,
 | Internal name | `Id.Item.M67Grenade` |
 {: .wiki-infobox }
 
-The M67 Frag Grenade is the standard hand grenade. It is thrown, goes off 4 seconds later, and does up to 100 HP to everyone close to the blast. Its damage stops at 10 m. The data lists a throw-back, but a static reading suggests it may not be possible at all; see Fuse. That reading was not checked in game.
+The M67 Frag Grenade is the standard hand grenade. It is thrown, goes off 4 seconds later, and does up to 100 HP to everyone close to the blast. Its damage stops at 10 m. Throwing a live one back never applies as shipped; see Fuse.
 
 ## Overview
 
-The M67 is the basic blast throwable in the item shop. It sits in the quick slot and is listed as a lethal item. The data also has a gold variant, but it has no shop listing, so it is not described here.
+The M67 is the basic blast throwable in the item shop. It sits in the quick slot and is listed as a lethal item. The Gold M67 inherits the M67 and has no shop listing. It has the same 4 second fuse, so the same rule against throwing it back applies to it (from the game code, not tested in play).
 
 For the blast numbers of every other explosive, see [Grenades and Explosives](grenades-and-explosives.md).
 
 ## How it works
 
-**Fuse.** The grenade goes off 4 s after it is thrown. Holding it before the throw (cooking) is allowed, so a player can shorten the time left before it lands. The data lists a back throw. By a static reading of the throw-back check, a grenade can be thrown back only while more than 5 s of its fuse is left, and the M67's fuse is 4 s, so the throw-back may not be possible as shipped. This reading was not checked in game, so treat the throw-back as unconfirmed.
+**Fuse.** The grenade goes off 4 s after it is thrown. Holding it before the throw (cooking) is allowed, so a player can shorten the time left before it lands. **Throwing one back never applies as shipped.** From the game code, not tested in play: a grenade can be thrown back only while more than 5 s of its fuse is left, and the M67's fuse is 4 s at most, so the check always fails. Molotovs and smoke grenades cannot be thrown back at all.
 
 **Throw.** The data has three throws:
 
@@ -44,7 +44,7 @@ For the blast numbers of every other explosive, see [Grenades and Explosives](gr
 |---|---:|---|
 | Overarm (primary) | 25 m/s (2,500 cm/s) | The longest throw |
 | Underarm (secondary) | 14 m/s (1,400 cm/s) | Short range |
-| Back throw | 18 m/s (1,800 cm/s) | Third throw action in the data; by the static reading in Fuse it may never be usable |
+| Back throw | 18 m/s (1,800 cm/s) | Third throw action in the data; never applies as shipped (see Fuse) |
 
 **Contact.** A grenade that hits something before it goes off does 10 HP of thrown-contact damage.
 
@@ -98,3 +98,5 @@ The Season 2 items data lists no change to the M67 Frag Grenade.
 - [Explosive actor defaults](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/explosive-actors.json): thrown actor values
 - [Vehicle damage pipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md): how explosives are scaled against vehicles
 - [Items and Equipment changes, Season 2](../../season-2-changes/items-equipment.md): the Season 2 check
+- [Round 42 weapons evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-weapons.md): the M67 throw-back check and its fuse time, and the Gold M67 entry
+- [Round 42 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-vehicles-explosives.md): the throw-back gate and the M67 fuse values

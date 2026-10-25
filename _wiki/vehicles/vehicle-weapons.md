@@ -47,6 +47,8 @@ Reload times and starting ammunition come from each weapon's data file. A starti
 
 Only stationary weapons restock with supplies, as the [Buildables](../equipment/buildables.md) emplacements do. The guns on vehicles do not restock this way. A vehicle gun carries the rounds in the starting ammunition column and has no supply restock in the data.
 
+Guns mounted on vehicles can have a spread of their own, set in the vehicle data. That spread eases toward its value at about 25 per second, and it is zero when the gunner is fully aimed down sights. Plain mounted weapons have no spread of their own. See [Spread and Recoil](../game-mechanics/spread-and-recoil.md) (a static reading of the game code, not checked in play).
+
 ## Miniguns
 
 The M134D minigun is the same gun on three vehicles, and it fires .308 Win rounds at 1,500 rounds/min everywhere. The AH-6M and the Humvee [Minigun] reach 800 m and reload in 4.25 s. The Z20 Lakota [Miniguns] reaches 1,500 m and reloads in 5.0 s. Each starts with 150 or 300 tracer rounds, as the table shows. The data does not say which seat fires the miniguns on the helicopter and the Humvee.
@@ -100,3 +102,5 @@ The SPH-2's L52 fires 155 mm shells at 50 rounds/min with a 10,000 m range. The 
 - [Vehicle weapon extension data](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Vehicles): reload, restock and starting ammunition for each weapon
 - [Round 39 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md): Round 39 and 40 evidence: machine gun rates and ranges, restock rules.
 - [Round 40 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-vehicles-explosives.md): the same topics, with the round 40 values where they differ.
+- [Round 42 weapons evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-weapons.md): vehicle-mounted gun spread and its easing
+- [Round 42 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-vehicles-explosives.md): the vehicle weapon spread setting and its easing

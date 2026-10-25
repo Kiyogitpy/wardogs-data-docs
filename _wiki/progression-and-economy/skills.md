@@ -72,12 +72,12 @@ Skills are not part of the role unlock tree. The tree lists 264 items and vehicl
 ### Pilot (6)
 
 - **Air vehicles.** Faster time to aim down sights on a mounted machine gun in an air vehicle. Less horizontal and vertical recoil on that gun. Lower fuel use in air vehicles. Less impact damage to an air vehicle.
-- **Supply crates.** A supply crate you drop as a pilot takes more damage before it breaks.
+- **Supply crates.** A supply crate you drop as a pilot has 1.0, 1.2 or 1.4 times its normal health at skill levels 0, 2 and 4. It is set when the crate is created, and it is not a vehicle-health bonus.
 
 ### Driver (6)
 
 - **Ground vehicles.** The same set as the Pilot skills, for ground vehicles and their mounted guns: faster aiming on the gun, less recoil, lower fuel use, less impact damage.
-- **Supply crates.** A supply crate you drop as a driver takes more damage before it breaks.
+- **Supply crates.** A supply crate you drop as a driver has 1.0, 1.2 or 1.4 times its normal health at skill levels 0, 2 and 4. It is set when the crate is created, and it is not a vehicle-health bonus.
 
 ## Numbers
 
@@ -108,3 +108,5 @@ The sources list no Season 2 changes to the skill tables. Season 2 did change th
 - [Season 2 changes: Rewards & Unlocks](../../season-2-changes/rewards-unlocks.md)
 - [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md)
 - [Round 39 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-medical-movement.md): heal timing, skill rows, durability costs and status effects
+- [Round 42 weapons evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-weapons.md): the supply crate durability skill for pilots and drivers
+- [Round 42 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-vehicles-explosives.md): the GE_Vehicle_Health reading for dropped crates

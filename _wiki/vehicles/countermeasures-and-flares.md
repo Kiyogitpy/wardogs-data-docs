@@ -31,7 +31,7 @@ Flares are an anti-air countermeasure. The item text says a flare use "deploys 3
 
 The in-game tip says flares "can be used to momentarily prevent heat-seeking projectiles from locking onto your helicopter". The same tip set gives a second way to stay hidden from some launchers: "flying low stops certain launchers being able to lock on to your vehicle".
 
-The data does not say how a flare burst changes the lock of a particular launcher, or how long the lock is broken. The Talon 9K-SAM is a fixed emplacement rather than a vehicle weapon, and the data does not say how flares interact with its targeting. See the [Talon 9K-SAM](../equipment/talon-9k-sam.md) article for the emplacement itself.
+A search of the game code found no rule that makes a flare clear or break a missile lock. That does not show that flares do nothing against lock-on; it means no such rule was found. The data does not say how a flare burst would change the lock of a particular launcher, or how long a lock would be broken. The Talon 9K-SAM is a fixed emplacement rather than a vehicle weapon, and the data does not say how flares interact with its targeting. See the [Talon 9K-SAM](../equipment/talon-9k-sam.md) article for the emplacement itself.
 
 ### Smoke
 
@@ -65,7 +65,7 @@ The Flakpanzer Gepard, the T-72B3 and the M113 APC SV have a smoke countermeasur
 
 ## Tips that follow from the numbers
 
-- Flares are the only countermeasure for the helicopter and airplane group, so a helicopter pilot should treat them as the main defence against heat-seeking attacks.
+- Flares are the only countermeasure for the helicopter and airplane group. Whether they stop a heat-seeking lock is not known, so a pilot should not plan a flight around them as a defence.
 - A smoke screen is active for 16 seconds, then the vehicle must wait until 90 seconds after the first use before it can use smoke again. Use it as a short cover, and plan the next one around the 90 second wait.
 - Because the airplane's flares are a fixed count of 3, use them when they matter most rather than as a routine.
 - Each helicopter starts with 2 flares. Each press uses one and then waits 5 seconds before the next, so plan a flight around that count. The "3 bursts" in the item text is not a count.
@@ -90,3 +90,5 @@ The Flakpanzer Gepard, the T-72B3 and the M113 APC SV have a smoke countermeasur
 - [Round 40 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-vehicles-explosives.md): the confirmation that restock and the lock-on effect are still not in the data.
 - [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the 16 second active window and 90 second cooldown of the vehicle smoke screen, and the lock-on interplay that stays open.
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): starting flare counts, active time and range bands for each flare-carrying vehicle.
+- [Round 42 weapons evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-weapons.md): the flare data and the search for a lock-on rule
+- [Round 42 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-vehicles-explosives.md): the flare cooldown and countermeasure readings

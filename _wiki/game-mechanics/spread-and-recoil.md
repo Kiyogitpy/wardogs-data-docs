@@ -28,6 +28,7 @@ Two things decide where a shot goes. The first is the **spread cone**, which is 
 - **Stance matters.** Prone and crouch give smaller spread than standing for the same speed.
 - **Air.** A shot fired while airborne uses a separate spread value of 10 degrees (half-angle) for every weapon. The stance and speed multipliers do not apply while airborne.
 - **Aim sway moves the shot.** In the game's default camera mode, the sway of the weapon as you aim is added to the view's rotation, and the bullet leaves along that view. So sway changes where the shot goes, not only what the camera shows. Sway is divided by the sight's magnification, so a higher-magnification sight steadies it (see [Sights and Optics](../weapons/attachments-sights-and-optics.md)). No weapon in the data changes this mode (derived from the game's code).
+- **Vehicle-mounted guns.** A gun on a vehicle with its own spread setting eases toward that spread at about 25 per second rather than jumping to it. When the gunner is fully aimed down sights, the spread is zero. Plain mounted weapons have no spread of their own (a static reading of the game code, not checked in play).
 - **Attachments.** Bipods, muzzle devices and foregrips change the spread. Their multipliers are listed below.
 - **Zeroing.** The data does not list the zero angle for each sight range. The game works it out while it runs. At each zeroing range it predicts the bullet's drop over that distance and stores the angle that drop implies, in degrees, for each ammunition type (derived from the game's code).
 - **Recoil is applied after the shot.** The bullet leaves along the view as it was before that shot's kick. Earlier kicks have already moved the view, and they are part of the next shot's aim.
@@ -93,3 +94,5 @@ Recoil patterns (the points that set each shot's kick) are different for each we
 - [Round 39 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-weapons.md): air spread, pellet clusters
 - [Round 40 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-weapons.md): zero angles measured at run time
 - [Round 41 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-weapons.md): sway in the shot direction, zero angles from the predicted drop, and no per-shot bloom field
+- [Round 42 weapons evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-weapons.md): vehicle-mounted gun spread, its easing rate and the zero in aim-down-sights
+- [Round 42 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-vehicles-explosives.md): the vehicle weapon spread path

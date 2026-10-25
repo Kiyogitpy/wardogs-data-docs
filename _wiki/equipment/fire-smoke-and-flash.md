@@ -40,7 +40,7 @@ The Molotov bursts on detonation, dealing 40 HP at its centre out to 2.5 m and n
 - **Vehicles.** Each tick deals 2 health, which is 5 per second.
 - **Burning status.** A player in the fire gets a "burning" status, shown with a screen effect that darkens and blurs the view. The status ends when the player leaves the patch (a static reading of the game code, not checked in play). The data gives no timer for it.
 
-The Molotov bursts on its first impact. Its 5 s fuse is only a backstop, and it is the only throwable set to burst on impact. Armor reduces the burst but not the fire, since no armor rule in the data applies to fire damage (derived). The damage tables reduce friendly fire only for infantry bullets (-50 %) and large hammers (-70 %), so a teammate's Molotov fire has no reduction in the tables.
+The Molotov bursts on its first impact. Its 5 s fuse is only a backstop, and it is the only throwable set to burst on impact. Burning damage from the fire counts as the thrower's damage, so kills and score from the fire go to the player who threw the Molotov (a static reading of the game code, not checked in play). Armor reduces the burst but not the fire, since no armor rule in the data applies to fire damage (derived). The damage tables reduce friendly fire only for infantry bullets (-50 %) and large hammers (-70 %), so a teammate's Molotov fire has no reduction in the tables.
 
 ### Smoke grenades
 
@@ -110,8 +110,8 @@ Each throw also has a speed curve in the data. A static reading of the throw cod
 
 | Item | Fuse | Notes |
 |---|---|---|
-| Molotov | 5 s | Cannot be cooked (held before throwing) |
-| Smoke grenades | 3 s | The cloud lasts for the length given above |
+| Molotov | 5 s | Cannot be cooked (held before throwing) or thrown back |
+| Smoke grenades | 3 s | Cannot be thrown back. The cloud lasts for the length given above |
 | C4 Charge | 0.2 s after the trigger | Set off by the Remote Detonator |
 | Improvised Explosive Device | 3 s after the trigger | |
 
@@ -149,3 +149,5 @@ The Season 2 items data lists no change to the Molotov, smoke grenades, mines or
 - [Round 40 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-vehicles-explosives.md): the same topics, with the round 40 values where they differ.
 - [Round 41 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-modes-ai-other.md): the smoke effect's default durations and fades.
 - [Round 42 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-modes-ai-other.md): which explosion sequence each destroyed item uses.
+- [Round 42 weapons evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-weapons.md): fire damage is credited to the thrower, and smoke and Molotovs cannot be thrown back
+- [Round 42 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-vehicles-explosives.md): the Molotov fire instigator and the throw-back gate

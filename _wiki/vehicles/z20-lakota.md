@@ -15,6 +15,7 @@ description: "Large 13-seat transport helicopter with no weapons, the helicopter
 | Unlock level | 0 |
 | Main health | 600 HP |
 | Top speed | 445 (as stored) |
+| Mass | 9,500 kg |
 | Rifle damage taken (derived) | 5% |
 | 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#air-rotary-rot-04) |
 | Internal name | ROT_04 (default variant) |
@@ -34,7 +35,7 @@ The Z20 Lakota is sold in the vehicle vendor under air transport, for 7,400 cash
 | Fuel capacity | 120 (as stored) |
 | Fuel economy | 4.4 (as stored) |
 | Seats | 13 |
-| Mass | 9,500 (as stored, unit not stated) |
+| Mass | 9,500 kg |
 | Countermeasures | Flares |
 
 ## Armor and damage
@@ -89,3 +90,5 @@ The Z20 Lakota has no weapons. The seat with the pilot is labelled "Pilot". The 
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md)
 - [Vehicle Damage Pipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md)
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
+- [Round 42 weapons evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-weapons.md): the body mass of this aircraft, in kilograms
+- [Round 42 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-vehicles-explosives.md): the airplane and helicopter mass override values

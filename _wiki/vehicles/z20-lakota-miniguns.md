@@ -15,6 +15,7 @@ description: "Armed version of the Z20 Lakota helicopter with two M134D miniguns
 | Unlock level | 0 |
 | Main health | 600 HP |
 | Top speed | 445 (as stored) |
+| Mass | 9,500 kg |
 | Rifle damage taken (derived) | 5% |
 | 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#air-rotary-rot-04/ROT_04_MountedMachineGuns) |
 | Internal name | ROT_04 (miniguns variant) |
@@ -34,7 +35,7 @@ The armed Z20 is sold in the vehicle vendor under air combat, for 15,000 cash. I
 | Fuel capacity | 120 (as stored) |
 | Fuel economy | 4.4 (as stored) |
 | Seats | 13 (stats sheet) |
-| Mass | 9,500 (as stored, unit not stated) |
+| Mass | 9,500 kg |
 | Countermeasures | Flares |
 
 The shop description says 11 passengers, which is fewer than the 13 seats on the stats sheet.
@@ -72,3 +73,5 @@ Rifle damage works as on the [Z20 Lakota](z20-lakota.md). The tail rotor is the 
 - [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md)
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md)
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
+- [Round 42 weapons evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-weapons.md): the body mass of this aircraft, in kilograms
+- [Round 42 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-vehicles-explosives.md): the airplane and helicopter mass override values

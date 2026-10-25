@@ -15,6 +15,7 @@ description: "Fixed-wing airplane with a driver seat and one passenger seat; the
 | Unlock level | Not applicable |
 | Main health | 150 HP at start |
 | Top speed | Not stored (see Handling) |
+| Mass | 10,000 kg |
 | Rifle damage taken (derived) | 7.5% |
 | Internal name | FWG_01 |
 {: .wiki-infobox }
@@ -32,7 +33,7 @@ The airplane has two seats, a driver and one passenger. Its damage rules are cop
 | Max speed | Not stored (see Handling) |
 | Fuel | Fuel tank and fuel-leak effects (see below) |
 | Seats | 2 |
-| Mass override | 10,000 (as stored, unit not stated) |
+| Mass | 10,000 kg |
 | Max engine thrust | 226,800 N |
 | Countermeasures | Flares, 3 starting, active for 3.5 s |
 
@@ -48,7 +49,7 @@ The airplane has no weapons. It has two seats: a driver seat and an active passe
 
 ## Handling
 
-- The data stores no top speed. The airplane's speed comes from its engine thrust (226,800 N), its mass (10,000) and drag, not from a speed limit.
+- The data stores no top speed. The airplane's speed comes from its engine thrust (226,800 N), its mass (10,000 kg) and drag, not from a speed limit.
 
 - Control surfaces: elevators up to 40 degrees each, ailerons and rudders up to 20 degrees, flaps up to 18 degrees, and an airbrake that can extend.
 - Retractable landing gear, with a nose wheel that steers up to 45 degrees.
@@ -75,3 +76,5 @@ The airplane has no weapons. It has two seats: a driver seat and an active passe
 - [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md)
 - [Vehicle Damage Pipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md)
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
+- [Round 42 weapons evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-weapons.md): the body mass of the airplane, in kilograms
+- [Round 42 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-vehicles-explosives.md): the airplane mass override value

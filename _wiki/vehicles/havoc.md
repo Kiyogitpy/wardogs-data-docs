@@ -15,6 +15,7 @@ description: "Two-seat attack helicopter with a 30 mm autocannon and B-13 rocket
 | Unlock level | 0 |
 | Main health | 800 HP |
 | Top speed | 400 (as stored) |
+| Mass | 7,500 kg |
 | Rifle damage taken (derived) | 5% |
 | 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#air-rotary-havoc) |
 | Internal name | ROT_02 |
@@ -34,7 +35,7 @@ The Havoc is listed in the vehicle vendor under air combat. The pilot flies it a
 | Fuel capacity | 130 (as stored) |
 | Fuel economy | 4.4 (as stored) |
 | Seats | 2 |
-| Mass | 7,500 (as stored, unit not stated) |
+| Mass | 7,500 kg |
 | Countermeasures | Flares |
 
 ## Armor and damage
@@ -102,3 +103,5 @@ The seats are a driver (pilot) seat and one gunner seat.
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md)
 - [Vehicle Damage Pipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md)
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
+- [Round 42 weapons evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-weapons.md): the body mass of this aircraft, in kilograms
+- [Round 42 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-vehicles-explosives.md): the airplane and helicopter mass override values
