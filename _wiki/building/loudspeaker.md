@@ -45,7 +45,7 @@ The Loudspeaker can be placed with a Medium Hammer as well as a Large Hammer, th
 
 ## Destroying it
 
-The Loudspeaker has 1,000 HP. Explosives that burst within their inner radius take this many hits to destroy it: MAAWS 3, 9K333 Verba 2, RPG-7 5, IED 2, C4 4, M67 frag 4. The counts are worked out from the damage rules, not timed in play, and assume full health with no repair. See the [Anti-Vehicle Guide](../guides/anti-vehicle-guide.md#emplacements).
+The Loudspeaker has 1,000 HP. Explosives that burst within their inner radius take this many hits to destroy it: MAAWS 3, RPG-7 5, IED 2, C4 4, M67 frag 4. The counts are worked out from the damage rules, not timed in play, and assume full health with no repair. See the [Anti-Vehicle Guide](../guides/anti-vehicle-guide.md#emplacements).
 
 ## Cost
 

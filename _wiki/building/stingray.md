@@ -88,7 +88,7 @@ Because the emplacement starts with no ammunition, the first use in a match depe
 
 ## Destroying it
 
-The Stingray has 3,000 HP. Explosives that burst within their inner radius take this many hits to destroy it: MAAWS 4, 9K333 Verba 2, RPG-7 4, IED 2, C4 3, M67 frag 4. The counts are worked out from the damage rules, not timed in play, and assume full health with no repair. See the [Anti-Vehicle Guide](../guides/anti-vehicle-guide.md#emplacements).
+The Stingray has 3,000 HP. Explosives that burst within their inner radius take this many hits to destroy it: MAAWS 4, RPG-7 4, IED 2, C4 3, M67 frag 4. The counts are worked out from the damage rules, not timed in play, and assume full health with no repair. See the [Anti-Vehicle Guide](../guides/anti-vehicle-guide.md#emplacements).
 
 ## Cost
 

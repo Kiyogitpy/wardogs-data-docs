@@ -276,6 +276,21 @@ def ammo_base_names(code):
     return [AMMO_NAME.get(a["id"], a["id"]) for a in w["ammo"] if "Tracer" not in a["id"]]
 
 
+def lock_on(code):
+    """Lock-on rule from the weapon's item definition, or None if it can fire freely."""
+    import glob
+    for path in glob.glob(os.path.join(ROOT, "data/Wardogs/Plugins/GameFeatures/Weapons/**", f"ID_{code}.json"), recursive=True):
+        text = read(os.path.relpath(path, ROOT))
+        if '"bOnlyFireWhenLockedOn": true' not in text:
+            continue
+        lock = re.search(r'"TimeToTarget":\s*([\d.]+)', text)
+        delay = re.search(r'"FireDelayAfterLock":\s*([\d.]+)', text)
+        targets = re.findall(r'"Vehicle\.Variant\.([A-Za-z]+)\.', text)
+        return {"lock": lock and float(lock.group(1)), "delay": delay and float(delay.group(1)),
+                "air_only": bool(targets) and set(targets) == {"Air"}}
+    return None
+
+
 def stats(wid):
     """Every number a weapon article or hub row shows, in display form."""
     code = code_for(wid)
@@ -549,6 +564,10 @@ def build_weapon(wid):
         lead = f"The {title} is {art} {cls_l} that fires explosive rounds rather than bullets."
         if s["rpm"] != "not yet known":
             lead += f" Its fire rate is {s['rpm'].replace(' (class default)', '')}."
+        lk = lock_on(code)
+        if lk:
+            lead += (f" It fires only while locked on to a target ({lk['lock']:g} s to lock, {lk['delay']:g} s delay)"
+                     + (", and it can lock on to helicopters and the airplane only, so it cannot be used against ground vehicles." if lk["air_only"] else "."))
     else:
         lead = (f"The {title} is {art} {cls_l} chambered in {s['cal']}. It fires {s['modes']} at {s['rpm'].replace(' (class default)', '')}.")
         if s["has_mag"]:

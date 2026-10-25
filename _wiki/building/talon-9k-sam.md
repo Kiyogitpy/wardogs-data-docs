@@ -52,7 +52,7 @@ The Talon uses the same placement rules as the other stationary weapons: it is b
 
 ## Destroying it
 
-The Talon 9K SAM has 3,000 HP. Explosives that burst within their inner radius take this many hits to destroy it: MAAWS 4, 9K333 Verba 2, RPG-7 4, IED 4, C4 1, M67 frag 4. The counts are worked out from the damage rules, not timed in play, and assume full health with no repair. See the [Anti-Vehicle Guide](../guides/anti-vehicle-guide.md#emplacements).
+The Talon 9K SAM has 3,000 HP. Explosives that burst within their inner radius take this many hits to destroy it: MAAWS 4, RPG-7 4, IED 4, C4 1, M67 frag 4. The counts are worked out from the damage rules, not timed in play, and assume full health with no repair. See the [Anti-Vehicle Guide](../guides/anti-vehicle-guide.md#emplacements).
 
 ## Cost
 

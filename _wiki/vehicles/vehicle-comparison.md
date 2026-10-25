@@ -104,7 +104,7 @@ The rule used: the blast damage is multiplied by the vehicle's percentage rule f
 
 **Launchers** (one rocket or grenade per hit)
 
-| Vehicle | Main health (HP) | RPG-7 | MAAWS | 9K333 Verba | B-13 rocket | MGL-40 |
+| Vehicle | Main health (HP) | RPG-7 | MAAWS | 9K333 Verba (air only) | B-13 rocket | MGL-40 |
 |---|---:|---:|---:|---:|---:|---:|
 | [Havoc](havoc.md) | 800 | 3 | 2 | 2 | 11 | 15 |
 | [MH-6](mh-6.md), [AH-6M [Miniguns]](ah-6m-miniguns.md), [AH-6R [Rockets]](ah-6r-rockets.md) | 400 | 1 | 1 | 1 | 5 (2 through the tail rotor) | 5 |
@@ -148,7 +148,7 @@ How to read the table:
 - **The RPG-7 is never stronger than the MAAWS here, and often much weaker.** Its rocket takes 6 hits on a Humvee where the MAAWS takes 2. The Humvee's rule keeps about 0.9 of the RPG-7 rocket's damage and multiplies the MAAWS rocket's damage by 3.9.
 - **Armor angle and thickness play no part.** The damage rules for tanks look only at the type of damage and at the part that was hit, not at the angle, the thickness or the side of the armor. See [Vehicle damage](vehicle-damage.md).
 - **The B-13 rocket is a helicopter pod rocket.** The Havoc and the AH-6R [Rockets] fire it. The data lists no hand-carried launcher for it.
-- **The 9K333 Verba is listed with the launchers because its rocket is an explosive round.** The data sets it to fire only while locked on to an air vehicle, so the counts show what its rocket does to each vehicle, not whether it can be fired at it.
+- **The 9K333 Verba is listed with the launchers because its rocket is an explosive round.** It fires only while locked on, and it can lock on to helicopters and the airplane only. Its counts against ground vehicles show what the rocket would do, but in play it cannot be fired at them.
 
 The Z20 Lakota [Miniguns] article says its rifle damage works as on the Z20 Lakota and gives no separate table. The Fixed-wing airplane article lists no hit counts: it has no damage zones, so hits to it do nothing.
 
