@@ -1,0 +1,4571 @@
+{
+ "note": "round 42 (RE42-MODES). Static entries are RVAs of WardogsClient-Win64-Shipping.restored.exe; data entries are read from cooked packages.",
+ "static": {
+  "alert_state_update": {
+   "function": "UWDAIAlertStateComponent_VFT slot 131 = 0x887C140 (tick); state setter 0x887C000",
+   "rule": "level = max(highest detection level among this AI's own perceived targets, highest level among the AIs returned by 0x8870590 for the target); walk the threshold list in file order (Relaxed, Alert, Combat); a candidate passes if level >= LowerThreshold and, when its sight flag applies, the sight strength stored for the current target is above 0.0001; the walk stops at the first failure; the state is the last passing entry (Relaxed when none pass).",
+   "sight_flag_choice": "bRequireSightToTransitionFromHigher is used when the current state is at or above the candidate, bRequireSightToTransitionFromLower otherwise",
+   "thresholds_asset": "AlertStateThreashold_DataConfig: Relaxed 0.0, Alert 0.8, Combat 1.0 (sight required only to rise into Combat)"
+  },
+  "is_firing_test": {
+   "field": "UWDWeaponComponent byte at +0xFE1",
+   "reader": "0x6B96BF0 (returns the byte); IsCurrentlyFiring BP getter 0x6B99300; variant 0x6B96C00 / 0x6B99320 also needs the byte at +0xFEC above 0",
+   "writers": "slot 175 (0x6B980A0) sets the word at +0xFE1 to 0x0101; slot 176 (0x6B98560) and the tail of 0x6B980A0 clear it",
+   "target_weapon_lookup": "AI reads it from the target character's weapon component via the character's component getter (vtable +1848)"
+  },
+  "vehicle_noise_defaults": {
+   "class": "UBHBaseVehicleConfigDataAsset, constructor 0x5300B10",
+   "AIEngineLoudnessMaxRange_cm": 10000.0,
+   "AIHornLoudnessMaxRange_cm": 50000.0,
+   "AIVehicleDestroyedLoudnessMaxRange_cm": 80000.0,
+   "overrides_in_cooked_data": 0
+  },
+  "significance_rules": {
+   "sphere_0x50D30B0": "per object, squared distance d2 to the nearest viewer; level = highest index i whose squared threshold is at or below d2 (0 when none; also 0 when d2 <= LowestNonZeroSignificanceDistance squared); the object keeps the lower of its stored level and the new one",
+   "fov_0x50D2CE0": "per object and viewer: unit direction to the object; dot with the viewer facing; d2 as above; level 0 when dot >= HighestConeCosAngle and d2 <= FurthestDistanceSquared; otherwise the first setting index 1.. whose cone cosine <= dot and squared distance >= d2 (only if dot > LowestConeCosAngle and d2 <= FurthestDistanceSquared); keeps the lower of stored and new",
+   "combination": "every evaluator only lowers the stored level, so the result is the minimum over evaluators and viewers; level 0 is the nearest or most central band",
+   "setup": "0x50D2FC0 (FOV) and 0x50D32E0 (Sphere) square the distances and cache the min and max cone cosine"
+  }
+ },
+ "alert_thresholds": [
+  {
+   "AlertState": "EWDAIAlertState::Relaxed",
+   "LowerThreshold": 0.0,
+   "bRequireSightToTransitionFromLower": false,
+   "bRequireSightToTransitionFromHigher": false
+  },
+  {
+   "AlertState": "EWDAIAlertState::Alert",
+   "LowerThreshold": 0.8,
+   "bRequireSightToTransitionFromLower": false,
+   "bRequireSightToTransitionFromHigher": false
+  },
+  {
+   "AlertState": "EWDAIAlertState::Combat",
+   "LowerThreshold": 1.0,
+   "bRequireSightToTransitionFromLower": true,
+   "bRequireSightToTransitionFromHigher": false
+  }
+ ],
+ "spawn_volumes": {
+  "count": 110,
+  "by_world_faction_kind": {
+   "Europe|Alpha|vehicle": 10,
+   "Europe|Bravo|vehicle": 15,
+   "Europe|Charlie|vehicle": 16,
+   "Gym_Minimal|Alpha|no_vehicle_list": 1,
+   "Gym_Minimal|Bravo|no_vehicle_list": 1,
+   "Gym_Minimal|Charlie|no_vehicle_list": 1,
+   "Kavkazi|Alpha|vehicle": 11,
+   "Kavkazi|Bravo|vehicle": 8,
+   "Kavkazi|Charlie|no_vehicle_list": 1,
+   "Kavkazi|Charlie|vehicle": 15,
+   "NorthAmerica|Alpha|vehicle": 5,
+   "NorthAmerica|Bravo|vehicle": 5,
+   "NorthAmerica|Charlie|vehicle": 6,
+   "Russia|Alpha|vehicle": 5,
+   "Russia|Bravo|vehicle": 5,
+   "Russia|Charlie|vehicle": 5
+  },
+  "volumes": [
+   {
+    "world": "Europe",
+    "package": "F1YBW4VDM6H3CYL6WJX49TVWC",
+    "actor": "WDSpawnVolume_UAID_08BFB816559FDA5302_1859718594",
+    "faction": "Alpha",
+    "allowed_vehicles": [
+     "Land.Tracked.SpawnVehicle.Lonestar"
+    ],
+    "disallowed_count": 6,
+    "max_spawn_points": 4,
+    "horizontal_spacing": 1200.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -780074.8,
+     -293030.9,
+     -82435.5
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "F1WC3Z0XSI9O6RDNWBL6U7L2Y",
+    "actor": "WDSpawnVolume_UAID_BCFCE7083D411CBC02_1924070194",
+    "faction": "Alpha",
+    "allowed_vehicles": [
+     "Air"
+    ],
+    "disallowed_count": 1,
+    "max_spawn_points": 0,
+    "horizontal_spacing": 2000.0,
+    "vertical_spacing": 2400.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -778950.6,
+     -299404.9,
+     -82401.5
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "F1WC3Z0XSI9O6RDNWBL6U7L2Y",
+    "actor": "WDSpawnVolume_UAID_BCFCE7083D411CBC02_1924084206",
+    "faction": "Alpha",
+    "allowed_vehicles": [
+     "Land.Tracked.TNK_01",
+     "Land.Tracked.TNK_04",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak",
+     "Land.Wheeled.WHL_08",
+     "Land.Wheeled.Ural"
+    ],
+    "disallowed_count": 4,
+    "max_spawn_points": 4,
+    "horizontal_spacing": 1200.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -785078.1,
+     -299660.9,
+     -82451.6
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "F1WC3Z0XSI9O6RDNWBL6U7L2Y",
+    "actor": "WDSpawnVolume_UAID_BCFCE7083D412EBC02_1695651119",
+    "faction": "Alpha",
+    "allowed_vehicles": [
+     "Land.Wheeled.Bobcat"
+    ],
+    "disallowed_count": 8,
+    "max_spawn_points": 7,
+    "horizontal_spacing": 550.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -778766.7,
+     -293684.6,
+     -82440.4
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "5PCLS3G2BH97NZPKO2O4PHOOC",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D10C302_1639989407",
+    "faction": "Alpha",
+    "allowed_vehicles": [
+     "Land.Wheeled.Bobcat"
+    ],
+    "disallowed_count": 3,
+    "max_spawn_points": 7,
+    "horizontal_spacing": 430.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -691760.1,
+     -384409.2,
+     -82985.0
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "5PCLS3G2BH97NZPKO2O4PHOOC",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D10C302_1639990408",
+    "faction": "Alpha",
+    "allowed_vehicles": [
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak",
+     "Land.Wheeled.Ural",
+     "Land.Wheeled.Azar",
+     "Land.Tracked"
+    ],
+    "disallowed_count": 3,
+    "max_spawn_points": 7,
+    "horizontal_spacing": 430.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -694688.9,
+     -385141.8,
+     -82913.9
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "404GWOTMRA8RLJT1KUZHQ7YFT",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D10C302_1639991409",
+    "faction": "Alpha",
+    "allowed_vehicles": [
+     "Air"
+    ],
+    "disallowed_count": 1,
+    "max_spawn_points": 6,
+    "horizontal_spacing": 2150.0,
+    "vertical_spacing": 2200.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -684933.5,
+     -384740.9,
+     -82998.3
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "5PCLS3G2BH97NZPKO2O4PHOOC",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D10C302_1639992410",
+    "faction": "Alpha",
+    "allowed_vehicles": [
+     "Land.Tracked",
+     "Land.Wheeled.Ural",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak"
+    ],
+    "disallowed_count": 4,
+    "max_spawn_points": 8,
+    "horizontal_spacing": 745.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -694902.8,
+     -386846.5,
+     -82900.6
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "60E5UCIWB4DOLC1Y1XUC25YLT",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D23C302_1281115589",
+    "faction": "Alpha",
+    "allowed_vehicles": [
+     "Land.Tracked.SpawnVehicle.Valkyra"
+    ],
+    "disallowed_count": 6,
+    "max_spawn_points": 4,
+    "horizontal_spacing": 1200.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -694232.2,
+     -382420.0,
+     -82977.3
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "F1WC3Z0XSI9O6RDNWBL6U7L2Y",
+    "actor": "WDSpawnVolume_UAID_E89C25C716F22DC702_1096273559",
+    "faction": "Alpha",
+    "allowed_vehicles": [
+     "Land.Tracked.TNK_01",
+     "Land.Tracked.TNK_04",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak",
+     "Land.Wheeled.WHL_08",
+     "Land.Wheeled.Ural"
+    ],
+    "disallowed_count": 4,
+    "max_spawn_points": 0,
+    "horizontal_spacing": 1200.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -784471.4,
+     -295215.0,
+     -82451.6
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "4NDBIEJPMJQ9I1GKKD31ZYCJN",
+    "actor": "WDSpawnVolume_UAID_BCFCE7083D411EBC02_1150501570",
+    "faction": "Bravo",
+    "allowed_vehicles": [
+     "Air"
+    ],
+    "disallowed_count": 1,
+    "max_spawn_points": 0,
+    "horizontal_spacing": 2150.0,
+    "vertical_spacing": 2200.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -251393.8,
+     -646766.6,
+     -85981.6
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "4NDBIEJPMJQ9I1GKKD31ZYCJN",
+    "actor": "WDSpawnVolume_UAID_BCFCE7083D411EBC02_1150503572",
+    "faction": "Bravo",
+    "allowed_vehicles": [
+     "Land.Tracked.TNK_01",
+     "Land.Tracked.TNK_04",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak",
+     "Land.Wheeled.WHL_08",
+     "Land.Wheeled.Ural"
+    ],
+    "disallowed_count": 4,
+    "max_spawn_points": 8,
+    "horizontal_spacing": 745.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -246694.4,
+     -654440.6,
+     -86023.7
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "4NDBIEJPMJQ9I1GKKD31ZYCJN",
+    "actor": "WDSpawnVolume_UAID_BCFCE7083D411EBC02_1150517588",
+    "faction": "Bravo",
+    "allowed_vehicles": [
+     "Land.Tracked.TNK_01",
+     "Land.Tracked.TNK_04",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak",
+     "Land.Wheeled.WHL_08",
+     "Land.Wheeled.Ural"
+    ],
+    "disallowed_count": 3,
+    "max_spawn_points": 0,
+    "horizontal_spacing": 430.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -244219.5,
+     -649511.5,
+     -86028.2
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "61HB03Q8HFCM80RCKQXKDO5F3",
+    "actor": "WDSpawnVolume_UAID_BCFCE7083D411EBC02_1591558592",
+    "faction": "Bravo",
+    "allowed_vehicles": [
+     "Land.Tracked.SpawnVehicle.Valkyra"
+    ],
+    "disallowed_count": 6,
+    "max_spawn_points": 4,
+    "horizontal_spacing": 1200.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -243209.4,
+     -654359.7,
+     -86074.1
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "4NDBIEJPMJQ9I1GKKD31ZYCJN",
+    "actor": "WDSpawnVolume_UAID_BCFCE7083D412FBC02_1100501305",
+    "faction": "Bravo",
+    "allowed_vehicles": [
+     "Land.Wheeled.Bobcat"
+    ],
+    "disallowed_count": 3,
+    "max_spawn_points": 7,
+    "horizontal_spacing": 430.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -241575.6,
+     -650532.4,
+     -86035.2
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "11NYMUSBD7NPG2MGX68CB9F3C",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D0FC302_1695520134",
+    "faction": "Bravo",
+    "allowed_vehicles": [
+     "Land.Wheeled.Bobcat"
+    ],
+    "disallowed_count": 3,
+    "max_spawn_points": 7,
+    "horizontal_spacing": 430.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -740524.1,
+     -1003070.8,
+     -86598.8
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "EWRAHFLZNW34QE0BCIQWYW7FS",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D0FC302_1695533135",
+    "faction": "Bravo",
+    "allowed_vehicles": [
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak",
+     "Land.Wheeled.Ural",
+     "Land.Wheeled.Azar",
+     "Land.Tracked"
+    ],
+    "disallowed_count": 3,
+    "max_spawn_points": 7,
+    "horizontal_spacing": 430.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -743768.5,
+     -994339.3,
+     -87099.5
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "EWRAHFLZNW34QE0BCIQWYW7FS",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D0FC302_1695535136",
+    "faction": "Bravo",
+    "allowed_vehicles": [
+     "Air"
+    ],
+    "disallowed_count": 1,
+    "max_spawn_points": 6,
+    "horizontal_spacing": 2150.0,
+    "vertical_spacing": 2200.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -748028.4,
+     -998075.9,
+     -87249.0
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "11NYMUSBD7NPG2MGX68CB9F3C",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D0FC302_1695536137",
+    "faction": "Bravo",
+    "allowed_vehicles": [
+     "Land.Tracked",
+     "Land.Wheeled.Ural",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak"
+    ],
+    "disallowed_count": 4,
+    "max_spawn_points": 8,
+    "horizontal_spacing": 745.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -738256.6,
+     -1005582.5,
+     -86275.5
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "6OSBODBLESTG5KVRYRBUXRSIT",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D11C302_1949772615",
+    "faction": "Bravo",
+    "allowed_vehicles": [
+     "Land.Wheeled.Bobcat"
+    ],
+    "disallowed_count": 3,
+    "max_spawn_points": 7,
+    "horizontal_spacing": 430.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -412120.6,
+     -243877.2,
+     -83279.0
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "6OSBODBLESTG5KVRYRBUXRSIT",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D11C302_1949773616",
+    "faction": "Bravo",
+    "allowed_vehicles": [
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak",
+     "Land.Wheeled.Ural",
+     "Land.Wheeled.Azar",
+     "Land.Tracked"
+    ],
+    "disallowed_count": 3,
+    "max_spawn_points": 7,
+    "horizontal_spacing": 430.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -411987.5,
+     -238688.5,
+     -83219.8
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "19RMEGELGQZKMXTOUTYWHS1XI",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D11C302_1949774617",
+    "faction": "Bravo",
+    "allowed_vehicles": [
+     "Air"
+    ],
+    "disallowed_count": 1,
+    "max_spawn_points": 6,
+    "horizontal_spacing": 2150.0,
+    "vertical_spacing": 2200.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -407322.9,
+     -235547.0,
+     -83259.3
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "6OSBODBLESTG5KVRYRBUXRSIT",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D11C302_1949775618",
+    "faction": "Bravo",
+    "allowed_vehicles": [
+     "Land.Tracked",
+     "Land.Wheeled.Ural",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak"
+    ],
+    "disallowed_count": 4,
+    "max_spawn_points": 8,
+    "horizontal_spacing": 745.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -410060.7,
+     -241009.8,
+     -83282.8
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "7HCUGJXXI7BWPGHYDNAWB01UJ",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D22C302_2129447408",
+    "faction": "Bravo",
+    "allowed_vehicles": [
+     "Land.Tracked.SpawnVehicle.Valkyra"
+    ],
+    "disallowed_count": 6,
+    "max_spawn_points": 4,
+    "horizontal_spacing": 1200.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -406409.4,
+     -242919.4,
+     -83373.8
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "1VOWPLN0AGOQRTPB3P9MQUT9U",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D23C302_1522849594",
+    "faction": "Bravo",
+    "allowed_vehicles": [
+     "Land.Tracked.SpawnVehicle.Valkyra"
+    ],
+    "disallowed_count": 6,
+    "max_spawn_points": 4,
+    "horizontal_spacing": 1200.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -744406.2,
+     -991456.8,
+     -87155.4
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "EEG88PWZEWA6OGN1823YYTDJQ",
+    "actor": "WDSpawnVolume_UAID_08BFB816559FDA5302_1863008663",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Land.Tracked.SpawnVehicle.Manticore"
+    ],
+    "disallowed_count": 6,
+    "max_spawn_points": 15,
+    "horizontal_spacing": 2250.0,
+    "vertical_spacing": 2500.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -932869.1,
+     -857912.8,
+     -80089.7
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "C1O2FUNLM60YUFU1TOQDXRA76",
+    "actor": "WDSpawnVolume_UAID_BCFCE7083D411FBC02_1198315774",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Land.Tracked.TNK_01",
+     "Land.Tracked.TNK_04",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak",
+     "Land.Wheeled.WHL_08",
+     "Land.Wheeled.Ural"
+    ],
+    "disallowed_count": 4,
+    "max_spawn_points": 2,
+    "horizontal_spacing": 600.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -928915.9,
+     -860616.7,
+     -80195.7
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "C1O2FUNLM60YUFU1TOQDXRA76",
+    "actor": "WDSpawnVolume_UAID_BCFCE7083D411FBC02_1198320779",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Land.Tracked.TNK_01",
+     "Land.Tracked.TNK_04",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak",
+     "Land.Wheeled.WHL_08",
+     "Land.Wheeled.Ural"
+    ],
+    "disallowed_count": 4,
+    "max_spawn_points": 4,
+    "horizontal_spacing": 1200.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -928642.2,
+     -858585.7,
+     -79924.5
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "ANNZX8CMUD3EXT074B6V0NOPY",
+    "actor": "WDSpawnVolume_UAID_BCFCE7083D411FBC02_1198320780",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Air"
+    ],
+    "disallowed_count": 3,
+    "max_spawn_points": 0,
+    "horizontal_spacing": 2000.0,
+    "vertical_spacing": 2400.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -920292.2,
+     -858907.9,
+     -79891.9
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "C1O2FUNLM60YUFU1TOQDXRA76",
+    "actor": "WDSpawnVolume_UAID_BCFCE7083D411FBC02_1198333794",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Land.Wheeled.Bobcat"
+    ],
+    "disallowed_count": 8,
+    "max_spawn_points": 7,
+    "horizontal_spacing": 550.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -931570.8,
+     -863616.5,
+     -79955.6
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "C1O2FUNLM60YUFU1TOQDXRA76",
+    "actor": "WDSpawnVolume_UAID_BCFCE7083D4176BC02_1369513029",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Land.Tracked.TNK_01",
+     "Land.Tracked.TNK_04",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak",
+     "Land.Wheeled.WHL_08",
+     "Land.Wheeled.Ural"
+    ],
+    "disallowed_count": 4,
+    "max_spawn_points": 2,
+    "horizontal_spacing": 600.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -925969.0,
+     -860783.9,
+     -79999.1
+    ],
+    "target_points": [
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "A4UIQATKF7CXBYALHW7MYEPSE",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D0FC302_1949073199",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Land.Wheeled.Bobcat"
+    ],
+    "disallowed_count": 3,
+    "max_spawn_points": 7,
+    "horizontal_spacing": 430.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -1177262.0,
+     -577372.7,
+     -89808.4
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "A4UIQATKF7CXBYALHW7MYEPSE",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D0FC302_1949074200",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak",
+     "Land.Wheeled.Ural",
+     "Land.Wheeled.Azar",
+     "Land.Tracked"
+    ],
+    "disallowed_count": 3,
+    "max_spawn_points": 7,
+    "horizontal_spacing": 430.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -1174064.0,
+     -579002.9,
+     -89745.2
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "A4UIQATKF7CXBYALHW7MYEPSE",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D0FC302_1949076201",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Air"
+    ],
+    "disallowed_count": 1,
+    "max_spawn_points": 6,
+    "horizontal_spacing": 2150.0,
+    "vertical_spacing": 2200.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -1169335.5,
+     -581515.8,
+     -89852.4
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "A4UIQATKF7CXBYALHW7MYEPSE",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D0FC302_1949076202",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Land.Tracked",
+     "Land.Wheeled.Ural",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak"
+    ],
+    "disallowed_count": 4,
+    "max_spawn_points": 8,
+    "horizontal_spacing": 745.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -1173338.1,
+     -580361.7,
+     -89752.2
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "6UQTFPUELQDWVVY8T0JH9ZCOF",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D12C302_1102495823",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Land.Wheeled.Bobcat"
+    ],
+    "disallowed_count": 3,
+    "max_spawn_points": 7,
+    "horizontal_spacing": 430.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -733670.1,
+     -731337.2,
+     -90208.0
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "6UQTFPUELQDWVVY8T0JH9ZCOF",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D12C302_1102496824",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak",
+     "Land.Wheeled.Ural",
+     "Land.Wheeled.Azar",
+     "Land.Tracked"
+    ],
+    "disallowed_count": 3,
+    "max_spawn_points": 7,
+    "horizontal_spacing": 430.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -731970.1,
+     -731226.6,
+     -90048.6
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "6UQTFPUELQDWVVY8T0JH9ZCOF",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D12C302_1102497825",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Air"
+    ],
+    "disallowed_count": 1,
+    "max_spawn_points": 6,
+    "horizontal_spacing": 2150.0,
+    "vertical_spacing": 2200.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -739618.9,
+     -730329.2,
+     -89840.8
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "6UQTFPUELQDWVVY8T0JH9ZCOF",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D12C302_1102497826",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Land.Tracked",
+     "Land.Wheeled.Ural",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak"
+    ],
+    "disallowed_count": 4,
+    "max_spawn_points": 8,
+    "horizontal_spacing": 745.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -733684.2,
+     -728907.2,
+     -90088.7
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "4MAL2XWCHHE1CPTLA1JBNEVND",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D24C302_1544004775",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Land.Tracked.SpawnVehicle.Valkyra"
+    ],
+    "disallowed_count": 6,
+    "max_spawn_points": 4,
+    "horizontal_spacing": 1200.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -735263.2,
+     -731819.9,
+     -90256.0
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Europe",
+    "package": "507KKB941O0AYNTD9RRZT1FRM",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D24C302_1789012780",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Land.Tracked.SpawnVehicle.Valkyra"
+    ],
+    "disallowed_count": 6,
+    "max_spawn_points": 4,
+    "horizontal_spacing": 1200.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -1178595.9,
+     -576362.5,
+     -89894.6
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Gym_Minimal",
+    "package": "Gym_Minimal",
+    "actor": "WDSpawnVolume_UAID_C87F5408D4E847B301_1987334701",
+    "faction": "Alpha",
+    "allowed_vehicles": [],
+    "disallowed_count": 0,
+    "max_spawn_points": 15,
+    "horizontal_spacing": 1200.0,
+    "vertical_spacing": 1200.0,
+    "spawn_point_offset_z": 20.0,
+    "location": [
+     -1555.5,
+     -1878.1,
+     319.8
+    ],
+    "target_points": []
+   },
+   {
+    "world": "Gym_Minimal",
+    "package": "Gym_Minimal",
+    "actor": "WDSpawnVolume_UAID_C87F5408D4E847B301_1987335702",
+    "faction": "Bravo",
+    "allowed_vehicles": [],
+    "disallowed_count": 0,
+    "max_spawn_points": 15,
+    "horizontal_spacing": 1200.0,
+    "vertical_spacing": 1200.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -1542.6,
+     1789.0,
+     319.8
+    ],
+    "target_points": []
+   },
+   {
+    "world": "Gym_Minimal",
+    "package": "Gym_Minimal",
+    "actor": "WDSpawnVolume_UAID_C87F5408D4E847B301_1987336703",
+    "faction": "Charlie",
+    "allowed_vehicles": [],
+    "disallowed_count": 0,
+    "max_spawn_points": 15,
+    "horizontal_spacing": 1200.0,
+    "vertical_spacing": 1200.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     2112.2,
+     -9.6,
+     319.8
+    ],
+    "target_points": []
+   },
+   {
+    "world": "Kavkazi",
+    "package": "7VV1E5JUQ7U3OYWL76DG4DSDG",
+    "actor": "WDSpawnVolume_UAID_08BFB81912ECEA3702_1895578172",
+    "faction": "Alpha",
+    "allowed_vehicles": [
+     "Land.Tracked.SpawnVehicle.Lonestar"
+    ],
+    "disallowed_count": 6,
+    "max_spawn_points": 4,
+    "horizontal_spacing": 1200.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -765234.4,
+     -736460.1,
+     -84172.7
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Kavkazi",
+    "package": "06BDGZA4Z46TF5P1J48OF0XLJ",
+    "actor": "WDSpawnVolume_UAID_08BFB81912ECEB3702_2051825160",
+    "faction": "Alpha",
+    "allowed_vehicles": [
+     "Land.Wheeled.Bobcat"
+    ],
+    "disallowed_count": 8,
+    "max_spawn_points": 7,
+    "horizontal_spacing": 550.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -769202.8,
+     -733006.4,
+     -84172.7
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Kavkazi",
+    "package": "06BDGZA4Z46TF5P1J48OF0XLJ",
+    "actor": "WDSpawnVolume_UAID_C87F5408D4E847B101_1644611593",
+    "faction": "Alpha",
+    "allowed_vehicles": [
+     "Air"
+    ],
+    "disallowed_count": 1,
+    "max_spawn_points": 6,
+    "horizontal_spacing": 2000.0,
+    "vertical_spacing": 2400.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -771647.4,
+     -735635.4,
+     -84111.8
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Kavkazi",
+    "package": "06BDGZA4Z46TF5P1J48OF0XLJ",
+    "actor": "WDSpawnVolume_UAID_E89C25C716541A3802_1557257103",
+    "faction": "Alpha",
+    "allowed_vehicles": [
+     "Land.Wheeled.Azar",
+     "Land.Wheeled.Kodiak"
+    ],
+    "disallowed_count": 4,
+    "max_spawn_points": 2,
+    "horizontal_spacing": 500.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -769392.9,
+     -738160.8,
+     -84193.7
+    ],
+    "target_points": [
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Kavkazi",
+    "package": "06BDGZA4Z46TF5P1J48OF0XLJ",
+    "actor": "WDSpawnVolume_UAID_E89C25C716541A3802_1557280110",
+    "faction": "Alpha",
+    "allowed_vehicles": [
+     "Land.Wheeled.Azar",
+     "Land.Wheeled.Kodiak"
+    ],
+    "disallowed_count": 4,
+    "max_spawn_points": 2,
+    "horizontal_spacing": 500.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -768122.3,
+     -736963.2,
+     -84226.7
+    ],
+    "target_points": [
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Kavkazi",
+    "package": "7VV1E5JUQ7U3OYWL76DG4DSDG",
+    "actor": "WDSpawnVolume_UAID_E89C25C71654E23702_1101108210",
+    "faction": "Alpha",
+    "allowed_vehicles": [
+     "Land.Tracked.TNK_01",
+     "Land.Tracked.TNK_04",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak",
+     "Land.Wheeled.WHL_08",
+     "Land.Wheeled.Ural"
+    ],
+    "disallowed_count": 5,
+    "max_spawn_points": 4,
+    "horizontal_spacing": 1200.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -768124.1,
+     -739158.4,
+     -84172.7
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Kavkazi",
+    "package": "6MIIZZHOQECUNW8XX0Z8P304M",
+    "actor": "WDSpawnVolume_UAID_E89C25C716F272F902_1489075503",
+    "faction": "Alpha",
+    "allowed_vehicles": [
+     "Land.Tracked.TNK_01",
+     "Land.Tracked.TNK_04",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.WHL_08",
+     "Land.Wheeled.Ural",
+     "Land.Wheeled.Kodiak"
+    ],
+    "disallowed_count": 4,
+    "max_spawn_points": 0,
+    "horizontal_spacing": 500.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -965067.4,
+     -763820.2,
+     -86320.6
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Kavkazi",
+    "package": "4Q4EU23RUZ85BW7VJE2ACYSSI",
+    "actor": "WDSpawnVolume_UAID_E89C25C716F272F902_1489088505",
+    "faction": "Alpha",
+    "allowed_vehicles": [
+     "Land.Tracked.SpawnVehicle.Lonestar"
+    ],
+    "disallowed_count": 6,
+    "max_spawn_points": 0,
+    "horizontal_spacing": 1200.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -965310.2,
+     -759867.8,
+     -86320.6
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Kavkazi",
+    "package": "6MIIZZHOQECUNW8XX0Z8P304M",
+    "actor": "WDSpawnVolume_UAID_E89C25C716F272F902_1489090506",
+    "faction": "Alpha",
+    "allowed_vehicles": [
+     "Land.Tracked.TNK_01",
+     "Land.Tracked.TNK_04",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.WHL_08",
+     "Land.Wheeled.Ural",
+     "Land.Wheeled.Kodiak"
+    ],
+    "disallowed_count": 5,
+    "max_spawn_points": 0,
+    "horizontal_spacing": 1200.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -963451.6,
+     -763357.3,
+     -86320.6
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Kavkazi",
+    "package": "6MIIZZHOQECUNW8XX0Z8P304M",
+    "actor": "WDSpawnVolume_UAID_E89C25C716F272F902_1489091507",
+    "faction": "Alpha",
+    "allowed_vehicles": [
+     "Land.Wheeled.Bobcat"
+    ],
+    "disallowed_count": 8,
+    "max_spawn_points": 0,
+    "horizontal_spacing": 550.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -966902.9,
+     -761007.1,
+     -86320.6
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Kavkazi",
+    "package": "6MIIZZHOQECUNW8XX0Z8P304M",
+    "actor": "WDSpawnVolume_UAID_E89C25C716F272F902_1489092508",
+    "faction": "Alpha",
+    "allowed_vehicles": [
+     "Air"
+    ],
+    "disallowed_count": 1,
+    "max_spawn_points": 0,
+    "horizontal_spacing": 2000.0,
+    "vertical_spacing": 2400.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -967766.5,
+     -765848.7,
+     -86259.7
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Kavkazi",
+    "package": "DLGBLGSGBRFV1O6U9ISYO19J8",
+    "actor": "WDSpawnVolume_UAID_107C611E668C2E3702_2029764912",
+    "faction": "Bravo",
+    "allowed_vehicles": [
+     "Air"
+    ],
+    "disallowed_count": 1,
+    "max_spawn_points": 6,
+    "horizontal_spacing": 2150.0,
+    "vertical_spacing": 2200.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -457747.9,
+     -1108082.9,
+     -85360.3
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Kavkazi",
+    "package": "DLGBLGSGBRFV1O6U9ISYO19J8",
+    "actor": "WDSpawnVolume_UAID_107C611E668C383702_1076527533",
+    "faction": "Bravo",
+    "allowed_vehicles": [
+     "Land.Wheeled.Bobcat"
+    ],
+    "disallowed_count": 3,
+    "max_spawn_points": 7,
+    "horizontal_spacing": 430.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -453214.8,
+     -1108022.8,
+     -85360.3
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Kavkazi",
+    "package": "9YZD9U16IE7ERENVJ0OV8PHJW",
+    "actor": "WDSpawnVolume_UAID_BCFCE7083D41BDF902_1154832711",
+    "faction": "Bravo",
+    "allowed_vehicles": [
+     "Land.Tracked.TNK_01",
+     "Land.Tracked.TNK_04",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak",
+     "Land.Wheeled.WHL_08",
+     "Land.Wheeled.Ural"
+    ],
+    "disallowed_count": 2,
+    "max_spawn_points": 0,
+    "horizontal_spacing": null,
+    "vertical_spacing": null,
+    "spawn_point_offset_z": null,
+    "location": [
+     -459668.0,
+     -1179197.0,
+     -63976.1
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Kavkazi",
+    "package": "9RJ0OQO2JJHTRJ07QLY97JXQH",
+    "actor": "WDSpawnVolume_UAID_BCFCE7083D41BDF902_1154834712",
+    "faction": "Bravo",
+    "allowed_vehicles": [
+     "Air"
+    ],
+    "disallowed_count": 2,
+    "max_spawn_points": 0,
+    "horizontal_spacing": null,
+    "vertical_spacing": null,
+    "spawn_point_offset_z": null,
+    "location": [
+     -459087.6,
+     -1174335.1,
+     -63772.9
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Kavkazi",
+    "package": "5JKWY98RYIWKMC8L25DUFA4DL",
+    "actor": "WDSpawnVolume_UAID_BCFCE7083D41BFF902_1152609097",
+    "faction": "Bravo",
+    "allowed_vehicles": [
+     "Land.Tracked.SpawnVehicle.Valkyra"
+    ],
+    "disallowed_count": 2,
+    "max_spawn_points": 8,
+    "horizontal_spacing": null,
+    "vertical_spacing": null,
+    "spawn_point_offset_z": null,
+    "location": [
+     -456187.8,
+     -1178640.4,
+     -64032.3
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Kavkazi",
+    "package": "9RJ0OQO2JJHTRJ07QLY97JXQH",
+    "actor": "WDSpawnVolume_UAID_BCFCE7083D41BFF902_2135268097",
+    "faction": "Bravo",
+    "allowed_vehicles": [
+     "Land.Wheeled.Bobcat"
+    ],
+    "disallowed_count": 3,
+    "max_spawn_points": 0,
+    "horizontal_spacing": 430.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -454504.0,
+     -1177580.9,
+     -64012.7
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Kavkazi",
+    "package": "9RJ0OQO2JJHTRJ07QLY97JXQH",
+    "actor": "WDSpawnVolume_UAID_BCFCE7083D41F7FA02_2144038458",
+    "faction": "Bravo",
+    "allowed_vehicles": [
+     "Land.Tracked.TNK_01",
+     "Land.Tracked.TNK_04",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak",
+     "Land.Wheeled.WHL_08",
+     "Land.Wheeled.Ural"
+    ],
+    "disallowed_count": 2,
+    "max_spawn_points": 0,
+    "horizontal_spacing": null,
+    "vertical_spacing": null,
+    "spawn_point_offset_z": null,
+    "location": [
+     -458007.4,
+     -1177112.4,
+     -63980.8
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Kavkazi",
+    "package": "DLGBLGSGBRFV1O6U9ISYO19J8",
+    "actor": "WDSpawnVolume_UAID_C87F5408D4E847B101_1644589574",
+    "faction": "Bravo",
+    "allowed_vehicles": [
+     "Land.Tracked.TNK_01",
+     "Land.Tracked.TNK_04",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak",
+     "Land.Wheeled.WHL_08",
+     "Land.Wheeled.Ural"
+    ],
+    "disallowed_count": 4,
+    "max_spawn_points": 8,
+    "horizontal_spacing": 745.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -454502.5,
+     -1104389.1,
+     -85319.4
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Kavkazi",
+    "package": "1FFG4AWQIKUVNSDK1PUS0VJPS",
+    "actor": "WDSpawnVolume_UAID_08BFB816559F18C302_1576612144",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Land"
+    ],
+    "disallowed_count": 4,
+    "max_spawn_points": 8,
+    "horizontal_spacing": 745.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -1095215.4,
+     -1055038.6,
+     -87757.1
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Kavkazi",
+    "package": "1FFG4AWQIKUVNSDK1PUS0VJPS",
+    "actor": "WDSpawnVolume_UAID_08BFB816559F18C302_1576613145",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Air"
+    ],
+    "disallowed_count": 1,
+    "max_spawn_points": 6,
+    "horizontal_spacing": 2150.0,
+    "vertical_spacing": 2200.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -1092152.8,
+     -1060661.4,
+     -87604.9
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Kavkazi",
+    "package": "1FFG4AWQIKUVNSDK1PUS0VJPS",
+    "actor": "WDSpawnVolume_UAID_08BFB816559F18C302_1576614146",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Land.Wheeled.Bobcat"
+    ],
+    "disallowed_count": 3,
+    "max_spawn_points": 7,
+    "horizontal_spacing": 430.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -1097977.5,
+     -1058722.9,
+     -87531.9
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Kavkazi",
+    "package": "CQG8DMYRXUODLSXM5O00MH95H",
+    "actor": "WDSpawnVolume_UAID_08BFB81912EC983702_1641583699",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Land.Tracked.TNK_01",
+     "Land.Tracked.TNK_04",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak",
+     "Land.Wheeled.WHL_08",
+     "Land.Wheeled.Ural"
+    ],
+    "disallowed_count": 4,
+    "max_spawn_points": 2,
+    "horizontal_spacing": 600.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -1233507.9,
+     -1171748.2,
+     -73527.5
+    ],
+    "target_points": [
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Kavkazi",
+    "package": "CQG8DMYRXUODLSXM5O00MH95H",
+    "actor": "WDSpawnVolume_UAID_08BFB81912ECCB3702_1747343720",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Land.Tracked.TNK_01",
+     "Land.Tracked.TNK_04",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak",
+     "Land.Wheeled.WHL_08",
+     "Land.Wheeled.Ural"
+    ],
+    "disallowed_count": 4,
+    "max_spawn_points": 2,
+    "horizontal_spacing": 600.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -1231491.2,
+     -1170336.2,
+     -73527.5
+    ],
+    "target_points": [
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Kavkazi",
+    "package": "5LGQCPJ1QU0ZJOBSN4ECNCD28",
+    "actor": "WDSpawnVolume_UAID_08BFB81912ECE33702_1504146450",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Land.Wheeled.Bobcat"
+    ],
+    "disallowed_count": 8,
+    "max_spawn_points": 7,
+    "horizontal_spacing": 550.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -1229987.8,
+     -1180096.4,
+     -73527.5
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Kavkazi",
+    "package": "CQG8DMYRXUODLSXM5O00MH95H",
+    "actor": "WDSpawnVolume_UAID_08BFB81912ECF53502_1581952000",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Land.Tracked.SpawnVehicle.Manticore"
+    ],
+    "disallowed_count": 8,
+    "max_spawn_points": 15,
+    "horizontal_spacing": 2250.0,
+    "vertical_spacing": 2500.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -1235614.4,
+     -1175989.2,
+     -73527.5
+    ],
+    "target_points": []
+   },
+   {
+    "world": "Kavkazi",
+    "package": "CQG8DMYRXUODLSXM5O00MH95H",
+    "actor": "WDSpawnVolume_UAID_08BFB81912ECFD3502_1823995284",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Land.Tracked.TNK_01",
+     "Land.Tracked.TNK_04",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak",
+     "Land.Wheeled.WHL_08",
+     "Land.Wheeled.Ural"
+    ],
+    "disallowed_count": 4,
+    "max_spawn_points": 4,
+    "horizontal_spacing": 1200.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -1230526.9,
+     -1173178.8,
+     -73527.5
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Kavkazi",
+    "package": "6R0UAIQ0ULMW77RFELQNR28PU",
+    "actor": "WDSpawnVolume_UAID_581122BC5F51511902_1615612154",
+    "faction": "Charlie",
+    "allowed_vehicles": [],
+    "disallowed_count": 0,
+    "max_spawn_points": 15,
+    "horizontal_spacing": 2500.0,
+    "vertical_spacing": 2500.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -1241132.2,
+     -973956.7,
+     -93695.9
+    ],
+    "target_points": []
+   },
+   {
+    "world": "Kavkazi",
+    "package": "6UTLJ2R9TLU68R9EIRMEE8NMV",
+    "actor": "WDSpawnVolume_UAID_BCFCE7083D4172F902_1548001569",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Air"
+    ],
+    "disallowed_count": 3,
+    "max_spawn_points": 0,
+    "horizontal_spacing": 2150.0,
+    "vertical_spacing": 2500.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -1085855.8,
+     -1394021.2,
+     -54366.8
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Kavkazi",
+    "package": "6UTLJ2R9TLU68R9EIRMEE8NMV",
+    "actor": "WDSpawnVolume_UAID_BCFCE7083D4172F902_1548001570",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Land.Tracked.TNK_01",
+     "Land.Tracked.TNK_04",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak",
+     "Land.Wheeled.WHL_08",
+     "Land.Wheeled.Ural"
+    ],
+    "disallowed_count": 4,
+    "max_spawn_points": 0,
+    "horizontal_spacing": 1200.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -1083343.0,
+     -1397073.8,
+     -54366.8
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Kavkazi",
+    "package": "6UTLJ2R9TLU68R9EIRMEE8NMV",
+    "actor": "WDSpawnVolume_UAID_BCFCE7083D4172F902_1548006574",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Land.Wheeled.Bobcat"
+    ],
+    "disallowed_count": 8,
+    "max_spawn_points": 0,
+    "horizontal_spacing": 550.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -1083481.1,
+     -1401537.2,
+     -54366.8
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Kavkazi",
+    "package": "9A1MF61AR414F8PBEJX3GXSBW",
+    "actor": "WDSpawnVolume_UAID_BCFCE7083D4179F902_1699430739",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Land.Tracked.SpawnVehicle.Manticore"
+    ],
+    "disallowed_count": 2,
+    "max_spawn_points": 0,
+    "horizontal_spacing": null,
+    "vertical_spacing": null,
+    "spawn_point_offset_z": null,
+    "location": [
+     -1082025.1,
+     -1402250.9,
+     -54373.1
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Kavkazi",
+    "package": "6UTLJ2R9TLU68R9EIRMEE8NMV",
+    "actor": "WDSpawnVolume_UAID_BCFCE7083D41EDFB02_1870167295",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Land.Tracked.TNK_01",
+     "Land.Tracked.TNK_04",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak",
+     "Land.Wheeled.WHL_08",
+     "Land.Wheeled.Ural"
+    ],
+    "disallowed_count": 4,
+    "max_spawn_points": 0,
+    "horizontal_spacing": 1200.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -1081873.2,
+     -1399206.1,
+     -54366.8
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Kavkazi",
+    "package": "CU0GV3DTEETL00ZEA7LQRT7A6",
+    "actor": "WDSpawnVolume_UAID_BCFCE7083D41EEC402_1176610399",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Land.Tracked.SpawnVehicle.Manticore"
+    ],
+    "disallowed_count": 6,
+    "max_spawn_points": 4,
+    "horizontal_spacing": 1200.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -1095351.8,
+     -1060043.0,
+     -87604.9
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Kavkazi",
+    "package": "4D9WGKMWSI7HDA0S8XYD96BBM",
+    "actor": "WDSpawnVolume_UAID_C87F5408D4E847B101_1644600583",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Air"
+    ],
+    "disallowed_count": 3,
+    "max_spawn_points": 6,
+    "horizontal_spacing": 2150.0,
+    "vertical_spacing": 2500.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -1226933.0,
+     -1176799.2,
+     -73527.5
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "NorthAmerica",
+    "package": "05U14HSLUB0GYSA1JOTXFHAUB",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D77C702_1767350647",
+    "faction": "Alpha",
+    "allowed_vehicles": [
+     "Land.Tracked.SpawnVehicle.Lonestar"
+    ],
+    "disallowed_count": 6,
+    "max_spawn_points": 0,
+    "horizontal_spacing": 1200.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -135848.6,
+     155714.1,
+     7298.8
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "NorthAmerica",
+    "package": "15NZ0KYMIFTTJ597CLAN0MSY4",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D77C702_1767361653",
+    "faction": "Alpha",
+    "allowed_vehicles": [
+     "Land.Tracked.TNK_01",
+     "Land.Tracked.TNK_04",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak",
+     "Land.Wheeled.WHL_08",
+     "Land.Wheeled.Ural"
+    ],
+    "disallowed_count": 4,
+    "max_spawn_points": 0,
+    "horizontal_spacing": 1200.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -136053.2,
+     152794.8,
+     7287.2
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "NorthAmerica",
+    "package": "15NZ0KYMIFTTJ597CLAN0MSY4",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D77C702_1767368658",
+    "faction": "Alpha",
+    "allowed_vehicles": [
+     "Land.Tracked.TNK_01",
+     "Land.Tracked.TNK_04",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak",
+     "Land.Wheeled.WHL_08",
+     "Land.Wheeled.Ural"
+    ],
+    "disallowed_count": 4,
+    "max_spawn_points": 4,
+    "horizontal_spacing": 1200.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -137570.0,
+     151987.4,
+     7253.4
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "NorthAmerica",
+    "package": "84PV1Z3YP4K8Z484TSF5W6V6N",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D77C702_1767376663",
+    "faction": "Alpha",
+    "allowed_vehicles": [
+     "Land.Wheeled.Bobcat"
+    ],
+    "disallowed_count": 6,
+    "max_spawn_points": 7,
+    "horizontal_spacing": 550.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -139002.6,
+     154900.1,
+     7215.6
+    ],
+    "target_points": [
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "NorthAmerica",
+    "package": "762OUIX0A3AFYQWGLXLFHHA46",
+    "actor": "WDSpawnVolume_UAID_E89C25C716F293DC02_1095813688",
+    "faction": "Alpha",
+    "allowed_vehicles": [
+     "Air.Rotary.Havoc",
+     "Air.Rotary.Littlebird",
+     "Air.Rotary.ROT_01",
+     "Air.Rotary.ROT_04"
+    ],
+    "disallowed_count": 1,
+    "max_spawn_points": 0,
+    "horizontal_spacing": null,
+    "vertical_spacing": null,
+    "spawn_point_offset_z": null,
+    "location": [
+     -145340.0,
+     152469.2,
+     7494.8
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "NorthAmerica",
+    "package": "ALMA8XZXJTMWDUMOJP6Y7BX4L",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D77C702_1767421685",
+    "faction": "Bravo",
+    "allowed_vehicles": [
+     "Land.Tracked.TNK_01",
+     "Land.Tracked.TNK_04",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak",
+     "Land.Wheeled.WHL_08",
+     "Land.Wheeled.Ural"
+    ],
+    "disallowed_count": 4,
+    "max_spawn_points": 0,
+    "horizontal_spacing": 430.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -425904.7,
+     -431415.2,
+     8411.3
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "NorthAmerica",
+    "package": "2J4KPJIGZL9J56IZ7DWMK4MKS",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D77C702_1767429690",
+    "faction": "Bravo",
+    "allowed_vehicles": [
+     "Land.Tracked.SpawnVehicle.Valkyra"
+    ],
+    "disallowed_count": 6,
+    "max_spawn_points": 4,
+    "horizontal_spacing": 1200.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -429003.4,
+     -428706.4,
+     8363.9
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "NorthAmerica",
+    "package": "ALMA8XZXJTMWDUMOJP6Y7BX4L",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D77C702_1767436695",
+    "faction": "Bravo",
+    "allowed_vehicles": [
+     "Land.Tracked.TNK_01",
+     "Land.Tracked.TNK_04",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak",
+     "Land.Wheeled.WHL_08",
+     "Land.Wheeled.Ural"
+    ],
+    "disallowed_count": 4,
+    "max_spawn_points": 8,
+    "horizontal_spacing": 745.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -425848.7,
+     -427212.6,
+     8395.2
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "NorthAmerica",
+    "package": "ALMA8XZXJTMWDUMOJP6Y7BX4L",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D77C702_1767443700",
+    "faction": "Bravo",
+    "allowed_vehicles": [
+     "Land.Wheeled.Bobcat"
+    ],
+    "disallowed_count": 3,
+    "max_spawn_points": 7,
+    "horizontal_spacing": 430.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -428311.8,
+     -433273.0,
+     8405.6
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "NorthAmerica",
+    "package": "ALMA8XZXJTMWDUMOJP6Y7BX4L",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D77C702_1767451705",
+    "faction": "Bravo",
+    "allowed_vehicles": [
+     "Air"
+    ],
+    "disallowed_count": 1,
+    "max_spawn_points": 0,
+    "horizontal_spacing": 2150.0,
+    "vertical_spacing": 2200.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -417591.7,
+     -430886.3,
+     8459.7
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "NorthAmerica",
+    "package": "733100J1D4WX3J7YDD2I5MMT9",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D77C702_1767275608",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Land.Tracked.TNK_01",
+     "Land.Tracked.TNK_04",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak",
+     "Land.Wheeled.WHL_08",
+     "Land.Wheeled.Ural"
+    ],
+    "disallowed_count": 4,
+    "max_spawn_points": 2,
+    "horizontal_spacing": 600.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     226474.0,
+     -332643.4,
+     15441.4
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "NorthAmerica",
+    "package": "4CZQED472O1E8OQQ90QIKF6Y4",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D77C702_1767289614",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Land.Tracked.TNK_01",
+     "Land.Tracked.TNK_04",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak",
+     "Land.Wheeled.WHL_08",
+     "Land.Wheeled.Ural"
+    ],
+    "disallowed_count": 4,
+    "max_spawn_points": 4,
+    "horizontal_spacing": 1200.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     226807.3,
+     -335428.4,
+     15696.0
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "NorthAmerica",
+    "package": "4CZQED472O1E8OQQ90QIKF6Y4",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D77C702_1767298619",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Land.Tracked.TNK_01",
+     "Land.Tracked.TNK_04",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak",
+     "Land.Wheeled.WHL_08",
+     "Land.Wheeled.Ural"
+    ],
+    "disallowed_count": 4,
+    "max_spawn_points": 2,
+    "horizontal_spacing": 600.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     223852.7,
+     -333635.4,
+     15618.8
+    ],
+    "target_points": [
+     null,
+     null
+    ]
+   },
+   {
+    "world": "NorthAmerica",
+    "package": "733100J1D4WX3J7YDD2I5MMT9",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D77C702_1767303622",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Land.Wheeled.Bobcat"
+    ],
+    "disallowed_count": 8,
+    "max_spawn_points": 7,
+    "horizontal_spacing": 550.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     229850.8,
+     -329929.9,
+     15691.0
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "NorthAmerica",
+    "package": "733100J1D4WX3J7YDD2I5MMT9",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D77C702_1767311627",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Air"
+    ],
+    "disallowed_count": 3,
+    "max_spawn_points": 0,
+    "horizontal_spacing": 2000.0,
+    "vertical_spacing": 2400.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     225632.2,
+     -325708.9,
+     15630.4
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "NorthAmerica",
+    "package": "9FEJMT8UGWFST7M4T406H6XD1",
+    "actor": "WDSpawnVolume_UAID_C87F5469411D77C702_1767320634",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Land.Tracked.SpawnVehicle.Manticore"
+    ],
+    "disallowed_count": 6,
+    "max_spawn_points": 15,
+    "horizontal_spacing": 2250.0,
+    "vertical_spacing": 2500.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     230317.3,
+     -334723.0,
+     15657.7
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Russia",
+    "package": "3BBCISDI9H069YAVK6BJS0FYJ",
+    "actor": "WDSpawnVolume_UAID_C87F546A3ED597D602_1232376142",
+    "faction": "Alpha",
+    "allowed_vehicles": [
+     "Land.Tracked.SpawnVehicle.Lonestar"
+    ],
+    "disallowed_count": 6,
+    "max_spawn_points": 0,
+    "horizontal_spacing": 2250.0,
+    "vertical_spacing": 2500.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     211946.0,
+     309651.7,
+     11498.8
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Russia",
+    "package": "2TF6T037M23PLRFGTARWUVLT8",
+    "actor": "WDSpawnVolume_UAID_C87F546A3ED597D602_1232389154",
+    "faction": "Alpha",
+    "allowed_vehicles": [
+     "Land.Wheeled.Bobcat"
+    ],
+    "disallowed_count": 8,
+    "max_spawn_points": 7,
+    "horizontal_spacing": 550.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     207717.2,
+     311674.0,
+     11442.9
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Russia",
+    "package": "A4HTKJWAQ1LJDXTENPRLSMCNJ",
+    "actor": "WDSpawnVolume_UAID_C87F546A3ED597D602_1232398162",
+    "faction": "Alpha",
+    "allowed_vehicles": [
+     "Land.Tracked.TNK_01",
+     "Land.Tracked.TNK_04",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak",
+     "Land.Wheeled.WHL_08",
+     "Land.Wheeled.Ural"
+    ],
+    "disallowed_count": 4,
+    "max_spawn_points": 4,
+    "horizontal_spacing": 1200.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     208900.6,
+     306882.1,
+     11442.9
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Russia",
+    "package": "2TF6T037M23PLRFGTARWUVLT8",
+    "actor": "WDSpawnVolume_UAID_C87F546A3ED597D602_1232404168",
+    "faction": "Alpha",
+    "allowed_vehicles": [
+     "Land.Tracked.TNK_01",
+     "Land.Tracked.TNK_04",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak",
+     "Land.Wheeled.WHL_08",
+     "Land.Wheeled.Ural"
+    ],
+    "disallowed_count": 4,
+    "max_spawn_points": 0,
+    "horizontal_spacing": 600.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     206015.1,
+     308070.8,
+     11391.8
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Russia",
+    "package": "BOZO4X8YVLWRA0ETN8PQGC6XH",
+    "actor": "WDSpawnVolume_UAID_E89C25C716F2DFF802_1777294682",
+    "faction": "Alpha",
+    "allowed_vehicles": [
+     "Air"
+    ],
+    "disallowed_count": 1,
+    "max_spawn_points": 0,
+    "horizontal_spacing": 2150.0,
+    "vertical_spacing": 2200.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     200280.3,
+     309731.7,
+     11526.5
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Russia",
+    "package": "8UPOA1AEUZPYSOPJU0FVSX6IE",
+    "actor": "WDSpawnVolume_UAID_C87F546A3ED595D602_1393872706",
+    "faction": "Bravo",
+    "allowed_vehicles": [
+     "Air"
+    ],
+    "disallowed_count": 1,
+    "max_spawn_points": 0,
+    "horizontal_spacing": 2150.0,
+    "vertical_spacing": 2200.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     148254.2,
+     -350222.2,
+     17023.5
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Russia",
+    "package": "8UPOA1AEUZPYSOPJU0FVSX6IE",
+    "actor": "WDSpawnVolume_UAID_C87F546A3ED595D602_1393890719",
+    "faction": "Bravo",
+    "allowed_vehicles": [
+     "Land.Wheeled.Bobcat"
+    ],
+    "disallowed_count": 3,
+    "max_spawn_points": 0,
+    "horizontal_spacing": 430.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     144403.8,
+     -357157.6,
+     16684.0
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Russia",
+    "package": "8UPOA1AEUZPYSOPJU0FVSX6IE",
+    "actor": "WDSpawnVolume_UAID_C87F546A3ED595D602_1393896724",
+    "faction": "Bravo",
+    "allowed_vehicles": [
+     "Land.Tracked.TNK_01",
+     "Land.Tracked.TNK_04",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak",
+     "Land.Wheeled.WHL_08",
+     "Land.Wheeled.Ural"
+    ],
+    "disallowed_count": 4,
+    "max_spawn_points": 0,
+    "horizontal_spacing": 745.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     139960.0,
+     -351760.8,
+     16681.5
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Russia",
+    "package": "C9SC0QRXR14BDEBW8AWQP6N5Q",
+    "actor": "WDSpawnVolume_UAID_C87F546A3ED595D602_1393902729",
+    "faction": "Bravo",
+    "allowed_vehicles": [
+     "Land.Tracked.SpawnVehicle.Valkyra"
+    ],
+    "disallowed_count": 6,
+    "max_spawn_points": 4,
+    "horizontal_spacing": 1200.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     145599.8,
+     -356607.2,
+     16641.6
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Russia",
+    "package": "8UPOA1AEUZPYSOPJU0FVSX6IE",
+    "actor": "WDSpawnVolume_UAID_C87F546A3ED595D602_1393907734",
+    "faction": "Bravo",
+    "allowed_vehicles": [
+     "Land.Tracked.TNK_01",
+     "Land.Tracked.TNK_04",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak",
+     "Land.Wheeled.WHL_08",
+     "Land.Wheeled.Ural"
+    ],
+    "disallowed_count": 4,
+    "max_spawn_points": 0,
+    "horizontal_spacing": 430.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     142777.5,
+     -352044.6,
+     16681.5
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Russia",
+    "package": "9ZHQN1TWBO0JSAX0W0YXSTQLR",
+    "actor": "WDSpawnVolume_UAID_C87F546A3ED596D602_1406362930",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Air"
+    ],
+    "disallowed_count": 1,
+    "max_spawn_points": 0,
+    "horizontal_spacing": 2000.0,
+    "vertical_spacing": 2400.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -407217.8,
+     38348.2,
+     13969.3
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Russia",
+    "package": "5UQ1P7JY7201TRXB5UYRO1MWE",
+    "actor": "WDSpawnVolume_UAID_C87F546A3ED596D602_1406367935",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Land.Wheeled.Bobcat"
+    ],
+    "disallowed_count": 8,
+    "max_spawn_points": 7,
+    "horizontal_spacing": 550.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -412481.6,
+     36236.0,
+     13925.7
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Russia",
+    "package": "9ZHQN1TWBO0JSAX0W0YXSTQLR",
+    "actor": "WDSpawnVolume_UAID_C87F546A3ED596D602_1406372940",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Land.Tracked.TNK_01",
+     "Land.Tracked.TNK_04",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak",
+     "Land.Wheeled.WHL_08",
+     "Land.Wheeled.Ural"
+    ],
+    "disallowed_count": 4,
+    "max_spawn_points": 4,
+    "horizontal_spacing": 1200.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -408339.6,
+     32110.0,
+     13923.4
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Russia",
+    "package": "9ZHQN1TWBO0JSAX0W0YXSTQLR",
+    "actor": "WDSpawnVolume_UAID_C87F546A3ED596D602_1406377945",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Land.Tracked.TNK_01",
+     "Land.Tracked.TNK_04",
+     "Land.Wheeled.DuneBuggy",
+     "Land.Wheeled.Humvee",
+     "Land.Wheeled.Kodiak",
+     "Land.Wheeled.WHL_08",
+     "Land.Wheeled.Ural"
+    ],
+    "disallowed_count": 4,
+    "max_spawn_points": 0,
+    "horizontal_spacing": 1200.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -409069.5,
+     34499.6,
+     13923.4
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "world": "Russia",
+    "package": "1L1VKS2PXT2E69UJ9GYBI4QJX",
+    "actor": "WDSpawnVolume_UAID_C87F546A3ED596D602_1406382950",
+    "faction": "Charlie",
+    "allowed_vehicles": [
+     "Land.Tracked.SpawnVehicle.Manticore"
+    ],
+    "disallowed_count": 6,
+    "max_spawn_points": 0,
+    "horizontal_spacing": 1200.0,
+    "vertical_spacing": 0.0,
+    "spawn_point_offset_z": null,
+    "location": [
+     -414020.2,
+     34459.5,
+     13925.7
+    ],
+    "target_points": [
+     null,
+     null,
+     null,
+     null
+    ]
+   }
+  ]
+ },
+ "explosion_sequences": {
+  "vehicle_destroyed": {
+   "FWG_01": "DA_TankExplosionSequence",
+   "PZH2000": "DA_TankExplosionSequence",
+   "ROT_01": "DA_HelicopterExplosionSequence",
+   "ROT_02": "DA_HavocExplosionSequence",
+   "ROT_03": "DA_LittlebirdExplosionSequence",
+   "ROT_04": "DA_HelicopterExplosionSequence",
+   "STN_01": "DA_STN01_Misteral_ExplosionSequence",
+   "STN_02": "DA_STN02_Phalanx_ExplosionSequence",
+   "STN_03": "DA_STN03_Mortar_ExplosionSequence",
+   "STN_04": "DA_STN04_Loudspeaker_ExplosionSequence",
+   "WHL_02": "DA_KodiakExplosionSequence",
+   "WHL_05": "DA_KodiakExplosionSequence",
+   "WHL_06": "DA_DuneBuggyExplosionSequence",
+   "WHL_07": "DA_UralExplosionSequence",
+   "WHL_08": "DA_KodiakExplosionSequence"
+  },
+  "caliber": {
+   "Item.Caliber.155mm.Expensive": "DA_155mmExplosionSequence",
+   "Item.Caliber.155mm.Standard": "DA_155mmExplosionSequence"
+  },
+  "other_cues": {
+   "GameplayCue.IED.Explode": "DA_IEDExplosionSequence",
+   "GameplayCue.FOB.DamageStateChanged": "DA_FOBDestroyed_ExplosionSequence"
+  }
+ },
+ "kawaii_physics": [
+  {
+   "blueprint": "ABP_Bobblehead_000_Lonestar",
+   "node": "AnimGraphNode_KawaiiPhysics",
+   "root_bone": "Base_Bobble",
+   "extra_root_chains": 0,
+   "excluded_bones": 0,
+   "damping": 0.0,
+   "stiffness": 0.1,
+   "world_damping_location": 1.0,
+   "world_damping_rotation": 0.2,
+   "radius": 1.0,
+   "limit_angle": 20.0,
+   "forward_axis": "Y_Negative",
+   "simulation_space": "BaseBoneSpace",
+   "target_framerate": 60,
+   "teleport_distance": 300.0,
+   "teleport_rotation": 10.0
+  },
+  {
+   "blueprint": "ABP_Bobblehead_001_VK",
+   "node": "AnimGraphNode_KawaiiPhysics",
+   "root_bone": "Base_Bobble",
+   "extra_root_chains": 0,
+   "excluded_bones": 0,
+   "damping": 0.0,
+   "stiffness": 0.1,
+   "world_damping_location": 1.0,
+   "world_damping_rotation": 0.2,
+   "radius": 1.0,
+   "limit_angle": 20.0,
+   "forward_axis": "Y_Negative",
+   "simulation_space": "BaseBoneSpace",
+   "target_framerate": 60,
+   "teleport_distance": 300.0,
+   "teleport_rotation": 10.0
+  },
+  {
+   "blueprint": "ABP_Bobblehead_003",
+   "node": "AnimGraphNode_KawaiiPhysics_1",
+   "root_bone": "Base_Bobble",
+   "extra_root_chains": 0,
+   "excluded_bones": 4,
+   "damping": 0.0,
+   "stiffness": 0.1,
+   "world_damping_location": 1.0,
+   "world_damping_rotation": 0.2,
+   "radius": 1.0,
+   "limit_angle": 20.0,
+   "forward_axis": "Y_Negative",
+   "simulation_space": "BaseBoneSpace",
+   "target_framerate": 60,
+   "teleport_distance": 300.0,
+   "teleport_rotation": 10.0
+  },
+  {
+   "blueprint": "ABP_Bobblehead_003",
+   "node": "AnimGraphNode_KawaiiPhysics",
+   "root_bone": "Eye_L_Constraint",
+   "extra_root_chains": 1,
+   "excluded_bones": 0,
+   "damping": 0.0,
+   "stiffness": 0.1,
+   "world_damping_location": 0.1,
+   "world_damping_rotation": 0.8,
+   "radius": 1.0,
+   "limit_angle": 20.0,
+   "forward_axis": "Y_Negative",
+   "simulation_space": "BaseBoneSpace",
+   "target_framerate": 60,
+   "teleport_distance": 300.0,
+   "teleport_rotation": 10.0
+  },
+  {
+   "blueprint": "ABP_Bobblehead_004",
+   "node": "AnimGraphNode_KawaiiPhysics",
+   "root_bone": "Rotate_Bobble",
+   "extra_root_chains": 0,
+   "excluded_bones": 0,
+   "damping": 0.0,
+   "stiffness": 0.1,
+   "world_damping_location": 1.0,
+   "world_damping_rotation": 0.2,
+   "radius": 1.0,
+   "limit_angle": 60.0,
+   "forward_axis": "Y_Negative",
+   "simulation_space": "BaseBoneSpace",
+   "target_framerate": 60,
+   "teleport_distance": 300.0,
+   "teleport_rotation": 10.0
+  },
+  {
+   "blueprint": "ABP_Bobblehead_005",
+   "node": "AnimGraphNode_KawaiiPhysics_1",
+   "root_bone": "Base_Bobble",
+   "extra_root_chains": 0,
+   "excluded_bones": 1,
+   "damping": 0.0,
+   "stiffness": 0.1,
+   "world_damping_location": 2.0,
+   "world_damping_rotation": 0.1,
+   "radius": 1.0,
+   "limit_angle": 20.0,
+   "forward_axis": "Y_Negative",
+   "simulation_space": "BaseBoneSpace",
+   "target_framerate": 60,
+   "teleport_distance": 300.0,
+   "teleport_rotation": 10.0
+  },
+  {
+   "blueprint": "ABP_Bobblehead_005",
+   "node": "AnimGraphNode_KawaiiPhysics",
+   "root_bone": "Ring_Rotate",
+   "extra_root_chains": 0,
+   "excluded_bones": 0,
+   "damping": 0.0,
+   "stiffness": 0.1,
+   "world_damping_location": 1.0,
+   "world_damping_rotation": 0.2,
+   "radius": 1.0,
+   "limit_angle": 20.0,
+   "forward_axis": "Y_Negative",
+   "simulation_space": "BaseBoneSpace",
+   "target_framerate": 60,
+   "teleport_distance": 300.0,
+   "teleport_rotation": 10.0
+  },
+  {
+   "blueprint": "ABP_Bobblehead_MT_002",
+   "node": "AnimGraphNode_KawaiiPhysics_1",
+   "root_bone": "Base_Bobble",
+   "extra_root_chains": 0,
+   "excluded_bones": 2,
+   "damping": 0.0,
+   "stiffness": 0.1,
+   "world_damping_location": 1.0,
+   "world_damping_rotation": 0.2,
+   "radius": 1.0,
+   "limit_angle": 20.0,
+   "forward_axis": "Y_Negative",
+   "simulation_space": "BaseBoneSpace",
+   "target_framerate": 60,
+   "teleport_distance": 300.0,
+   "teleport_rotation": 10.0
+  },
+  {
+   "blueprint": "ABP_Bobblehead_MT_002",
+   "node": "AnimGraphNode_KawaiiPhysics",
+   "root_bone": "Rotate_RagBase",
+   "extra_root_chains": 0,
+   "excluded_bones": 0,
+   "damping": 0.0,
+   "stiffness": 0.1,
+   "world_damping_location": 1.0,
+   "world_damping_rotation": 0.2,
+   "radius": 1.0,
+   "limit_angle": 20.0,
+   "forward_axis": "Y_Negative",
+   "simulation_space": "BaseBoneSpace",
+   "target_framerate": 60,
+   "teleport_distance": 300.0,
+   "teleport_rotation": 10.0
+  },
+  {
+   "blueprint": "ABP_GhilliArmour_000_PostProcess",
+   "node": "AnimGraphNode_KawaiiPhysics",
+   "root_bone": "ghille_dyn_back_l_A1",
+   "extra_root_chains": 21,
+   "excluded_bones": 0,
+   "damping": 0.25,
+   "stiffness": 0.1,
+   "world_damping_location": 1.0,
+   "world_damping_rotation": 1.0,
+   "radius": 7.0,
+   "limit_angle": 40.0,
+   "forward_axis": "X_Positive",
+   "simulation_space": "ComponentSpace",
+   "target_framerate": 60,
+   "teleport_distance": 300.0,
+   "teleport_rotation": 10.0
+  },
+  {
+   "blueprint": "ABP_GhilliHead_000_PostProcess",
+   "node": "AnimGraphNode_KawaiiPhysics",
+   "root_bone": "ghille_dyn_head_r_A1",
+   "extra_root_chains": 11,
+   "excluded_bones": 0,
+   "damping": 0.25,
+   "stiffness": 0.1,
+   "world_damping_location": 1.0,
+   "world_damping_rotation": 1.0,
+   "radius": 5.0,
+   "limit_angle": 40.0,
+   "forward_axis": "X_Positive",
+   "simulation_space": "ComponentSpace",
+   "target_framerate": 60,
+   "teleport_distance": 300.0,
+   "teleport_rotation": 10.0
+  }
+ ],
+ "water": {
+  "grids": 40,
+  "iteration_delta_time_values": {
+   "0.18000000715255737": 40
+  },
+  "rows": [
+   {
+    "grid": "PDA_Europe_0000",
+    "state": "PDA_Europe_0000",
+    "grid_wh": [
+     512,
+     128
+    ],
+    "world_size": [
+     102400.0,
+     25600.0
+    ],
+    "cell_cm": [
+     200.0,
+     200.0
+    ],
+    "double_58": -97173.6,
+    "double_60": -94622.6,
+    "range": 2551.0,
+    "samples_65535": 56018,
+    "samples": 65536,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -96428.6,
+    "iteration": 110793,
+    "resolution": [
+     2048,
+     512
+    ]
+   },
+   {
+    "grid": "PDA_Europe_0001",
+    "state": "PDA_Europe_0001",
+    "grid_wh": [
+     512,
+     128
+    ],
+    "world_size": [
+     102400.0,
+     25600.0
+    ],
+    "cell_cm": [
+     200.0,
+     200.0
+    ],
+    "double_58": -97756.2,
+    "double_60": -95396.5,
+    "range": 2359.8,
+    "samples_65535": 59643,
+    "samples": 65536,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -97011.2,
+    "iteration": 127947,
+    "resolution": [
+     2048,
+     512
+    ]
+   },
+   {
+    "grid": "PDA_Europe_0002",
+    "state": "PDA_Europe_0002",
+    "grid_wh": [
+     512,
+     128
+    ],
+    "world_size": [
+     102400.0,
+     25600.0
+    ],
+    "cell_cm": [
+     200.0,
+     200.0
+    ],
+    "double_58": -100229.6,
+    "double_60": -97593.5,
+    "range": 2636.1,
+    "samples_65535": 55300,
+    "samples": 65536,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -99484.6,
+    "iteration": 132926,
+    "resolution": [
+     2048,
+     512
+    ]
+   },
+   {
+    "grid": "PDA_Europe_0003",
+    "state": "PDA_Europe_0003",
+    "grid_wh": [
+     512,
+     128
+    ],
+    "world_size": [
+     102400.0,
+     25600.0
+    ],
+    "cell_cm": [
+     200.0,
+     200.0
+    ],
+    "double_58": -100229.1,
+    "double_60": -98525.0,
+    "range": 1704.1,
+    "samples_65535": 59396,
+    "samples": 65536,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -99484.6,
+    "iteration": 102758,
+    "resolution": [
+     2048,
+     512
+    ]
+   },
+   {
+    "grid": "PDA_Europe_0004",
+    "state": "PDA_Europe_0004",
+    "grid_wh": [
+     512,
+     256
+    ],
+    "world_size": [
+     102400.0,
+     51200.0
+    ],
+    "cell_cm": [
+     200.0,
+     200.0
+    ],
+    "double_58": -96450.7,
+    "double_60": -93550.7,
+    "range": 2900.0,
+    "samples_65535": 117689,
+    "samples": 131072,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -95705.7,
+    "iteration": 55395,
+    "resolution": [
+     2048,
+     1024
+    ]
+   },
+   {
+    "grid": "PDA_Europe_0005",
+    "state": "PDA_Europe_0005",
+    "grid_wh": [
+     512,
+     256
+    ],
+    "world_size": [
+     102400.0,
+     51200.0
+    ],
+    "cell_cm": [
+     200.0,
+     200.0
+    ],
+    "double_58": -95202.0,
+    "double_60": -92711.4,
+    "range": 2490.6,
+    "samples_65535": 118197,
+    "samples": 131072,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -94458.5,
+    "iteration": 64864,
+    "resolution": [
+     2048,
+     1024
+    ]
+   },
+   {
+    "grid": "PDA_Europe_0006",
+    "state": "PDA_Europe_0006",
+    "grid_wh": [
+     512,
+     256
+    ],
+    "world_size": [
+     102400.0,
+     51200.0
+    ],
+    "cell_cm": [
+     200.0,
+     200.0
+    ],
+    "double_58": -94255.4,
+    "double_60": -91686.4,
+    "range": 2569.0,
+    "samples_65535": 118055,
+    "samples": 131072,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -93510.4,
+    "iteration": 46357,
+    "resolution": [
+     2048,
+     1024
+    ]
+   },
+   {
+    "grid": "PDA_Europe_0009",
+    "state": "PDA_Europe_0009",
+    "grid_wh": [
+     256,
+     512
+    ],
+    "world_size": [
+     204800.0,
+     409600.0
+    ],
+    "cell_cm": [
+     800.0,
+     800.0
+    ],
+    "double_58": -98326.1,
+    "double_60": -92790.7,
+    "range": 5535.4,
+    "samples_65535": 125224,
+    "samples": 131072,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -96731.1,
+    "iteration": 277444,
+    "resolution": [
+     1024,
+     2048
+    ]
+   },
+   {
+    "grid": "PDA_Europe_0010",
+    "state": "PDA_Europe_0010",
+    "grid_wh": [
+     512,
+     512
+    ],
+    "world_size": [
+     102400.0,
+     102400.0
+    ],
+    "cell_cm": [
+     200.0,
+     200.0
+    ],
+    "double_58": -96919.2,
+    "double_60": -94534.1,
+    "range": 2385.1,
+    "samples_65535": 249039,
+    "samples": 262144,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -96174.2,
+    "iteration": 97729,
+    "resolution": [
+     2048,
+     2048
+    ]
+   },
+   {
+    "grid": "PDA_Europe_0011",
+    "state": "PDA_Europe_0011",
+    "grid_wh": [
+     256,
+     512
+    ],
+    "world_size": [
+     51200.0,
+     102400.0
+    ],
+    "cell_cm": [
+     200.0,
+     200.0
+    ],
+    "double_58": -98047.1,
+    "double_60": -96102.9,
+    "range": 1944.2,
+    "samples_65535": 117495,
+    "samples": 131072,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -97302.1,
+    "iteration": 64723,
+    "resolution": [
+     1024,
+     2048
+    ]
+   },
+   {
+    "grid": "PDA_Europe_0012",
+    "state": "PDA_Europe_0012",
+    "grid_wh": [
+     512,
+     512
+    ],
+    "world_size": [
+     102400.0,
+     102400.0
+    ],
+    "cell_cm": [
+     200.0,
+     200.0
+    ],
+    "double_58": -99846.5,
+    "double_60": -97198.5,
+    "range": 2648.0,
+    "samples_65535": 242021,
+    "samples": 262144,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -99101.8,
+    "iteration": 47507,
+    "resolution": [
+     2048,
+     2048
+    ]
+   },
+   {
+    "grid": "PDA_Europe_0014",
+    "state": "PDA_Europe_0014",
+    "grid_wh": [
+     512,
+     256
+    ],
+    "world_size": [
+     409600.0,
+     204800.0
+    ],
+    "cell_cm": [
+     800.0,
+     800.0
+    ],
+    "double_58": -103218.5,
+    "double_60": -99361.5,
+    "range": 3857.0,
+    "samples_65535": 124723,
+    "samples": 131072,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -101973.5,
+    "iteration": 207756,
+    "resolution": [
+     2048,
+     1024
+    ]
+   },
+   {
+    "grid": "PDA_Europe_007",
+    "state": "PDA_Europe_007",
+    "grid_wh": [
+     256,
+     256
+    ],
+    "world_size": [
+     51200.0,
+     51200.0
+    ],
+    "cell_cm": [
+     200.0,
+     200.0
+    ],
+    "double_58": -93746.9,
+    "double_60": -91184.9,
+    "range": 2562.0,
+    "samples_65535": 56985,
+    "samples": 65536,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -93001.9,
+    "iteration": 26321,
+    "resolution": [
+     1024,
+     1024
+    ]
+   },
+   {
+    "grid": "PDA_Europe_008",
+    "state": "PDA_Europe_008",
+    "grid_wh": [
+     512,
+     256
+    ],
+    "world_size": [
+     102400.0,
+     51200.0
+    ],
+    "cell_cm": [
+     200.0,
+     200.0
+    ],
+    "double_58": -92573.4,
+    "double_60": -89931.4,
+    "range": 2641.9,
+    "samples_65535": 119167,
+    "samples": 131072,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -91828.4,
+    "iteration": 105211,
+    "resolution": [
+     2048,
+     1024
+    ]
+   },
+   {
+    "grid": "PDA_Europe_013",
+    "state": "PDA_Europe_013",
+    "grid_wh": [
+     512,
+     256
+    ],
+    "world_size": [
+     204800.0,
+     102400.0
+    ],
+    "cell_cm": [
+     400.0,
+     400.0
+    ],
+    "double_58": -92884.4,
+    "double_60": -88303.4,
+    "range": 4581.0,
+    "samples_65535": 125325,
+    "samples": 131072,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -91639.4,
+    "iteration": 76306,
+    "resolution": [
+     2048,
+     1024
+    ]
+   },
+   {
+    "grid": "PDA_Europe_015",
+    "state": "PDA_Europe_015",
+    "grid_wh": [
+     512,
+     256
+    ],
+    "world_size": [
+     409600.0,
+     204800.0
+    ],
+    "cell_cm": [
+     800.0,
+     800.0
+    ],
+    "double_58": -106345.9,
+    "double_60": -101779.9,
+    "range": 4566.0,
+    "samples_65535": 124229,
+    "samples": 131072,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -105100.9,
+    "iteration": 127401,
+    "resolution": [
+     2048,
+     1024
+    ]
+   },
+   {
+    "grid": "PDA_Europe_016",
+    "state": "PDA_Europe_016",
+    "grid_wh": [
+     256,
+     256
+    ],
+    "world_size": [
+     307200.0,
+     307200.0
+    ],
+    "cell_cm": [
+     1200.0,
+     1200.0
+    ],
+    "double_58": -96041.5,
+    "double_60": -91990.5,
+    "range": 4051.0,
+    "samples_65535": 60482,
+    "samples": 65536,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -94796.5,
+    "iteration": 180576,
+    "resolution": [
+     1024,
+     1024
+    ]
+   },
+   {
+    "grid": "PDA_Flux_Bakurani_River_001",
+    "state": "PDA_Flux_Bakurani_River_001",
+    "grid_wh": [
+     512,
+     512
+    ],
+    "world_size": [
+     102400.0,
+     102400.0
+    ],
+    "cell_cm": [
+     200.0,
+     200.0
+    ],
+    "double_58": -87971.0,
+    "double_60": -81140.0,
+    "range": 6831.0,
+    "samples_65535": 256656,
+    "samples": 262144,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -85976.0,
+    "iteration": 63648,
+    "resolution": [
+     2048,
+     2048
+    ]
+   },
+   {
+    "grid": "PDA_Flux_Bakurani_River_East_000",
+    "state": "PDA_Flux_Bakurani_River_East_000",
+    "grid_wh": [
+     512,
+     512
+    ],
+    "world_size": [
+     102400.0,
+     102400.0
+    ],
+    "cell_cm": [
+     200.0,
+     200.0
+    ],
+    "double_58": -91492.5,
+    "double_60": -89496.0,
+    "range": 1996.5,
+    "samples_65535": 257867,
+    "samples": 262144,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -90750.0,
+    "iteration": 76695,
+    "resolution": [
+     2048,
+     2048
+    ]
+   },
+   {
+    "grid": "PDA_Flux_Bakurani_River_East_001",
+    "state": "PDA_Flux_Bakurani_River_East_001",
+    "grid_wh": [
+     512,
+     512
+    ],
+    "world_size": [
+     102400.0,
+     102400.0
+    ],
+    "cell_cm": [
+     200.0,
+     200.0
+    ],
+    "double_58": -91903.6,
+    "double_60": -91216.5,
+    "range": 687.1,
+    "samples_65535": 257172,
+    "samples": 262144,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -92050.0,
+    "iteration": 190097,
+    "resolution": [
+     2048,
+     2048
+    ]
+   },
+   {
+    "grid": "PDA_Flux_Bakurani_River_East_002",
+    "state": "PDA_Flux_Bakurani_River_East_002",
+    "grid_wh": [
+     512,
+     512
+    ],
+    "world_size": [
+     102400.0,
+     102400.0
+    ],
+    "cell_cm": [
+     200.0,
+     200.0
+    ],
+    "double_58": -93099.0,
+    "double_60": -91870.9,
+    "range": 1228.1,
+    "samples_65535": 257750,
+    "samples": 262144,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -93750.0,
+    "iteration": 155865,
+    "resolution": [
+     2048,
+     2048
+    ]
+   },
+   {
+    "grid": "PDA_Flux_Bakurani_River_East_003",
+    "state": "PDA_Flux_Bakurani_River_East_003",
+    "grid_wh": [
+     512,
+     512
+    ],
+    "world_size": [
+     102400.0,
+     102400.0
+    ],
+    "cell_cm": [
+     200.0,
+     200.0
+    ],
+    "double_58": -93944.8,
+    "double_60": -93034.0,
+    "range": 910.8,
+    "samples_65535": 256747,
+    "samples": 262144,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -95150.0,
+    "iteration": 137487,
+    "resolution": [
+     2048,
+     2048
+    ]
+   },
+   {
+    "grid": "PDA_Flux_Bakurani_River_East_004",
+    "state": "PDA_Flux_Bakurani_River_East_004",
+    "grid_wh": [
+     512,
+     512
+    ],
+    "world_size": [
+     102400.0,
+     102400.0
+    ],
+    "cell_cm": [
+     200.0,
+     200.0
+    ],
+    "double_58": -94815.0,
+    "double_60": -93851.0,
+    "range": 964.0,
+    "samples_65535": 254302,
+    "samples": 262144,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -95650.0,
+    "iteration": 222034,
+    "resolution": [
+     2048,
+     2048
+    ]
+   },
+   {
+    "grid": "PDA_Flux_Bakurani_River_East_005",
+    "state": "PDA_Flux_Bakurani_River_East_005",
+    "grid_wh": [
+     512,
+     512
+    ],
+    "world_size": [
+     102400.0,
+     102400.0
+    ],
+    "cell_cm": [
+     200.0,
+     200.0
+    ],
+    "double_58": -95688.5,
+    "double_60": -94757.3,
+    "range": 931.2,
+    "samples_65535": 256661,
+    "samples": 262144,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -95350.0,
+    "iteration": 138858,
+    "resolution": [
+     2048,
+     2048
+    ]
+   },
+   {
+    "grid": "PDA_Flux_Bakurani_River_East_006",
+    "state": "PDA_Flux_Bakurani_River_East_006",
+    "grid_wh": [
+     512,
+     512
+    ],
+    "world_size": [
+     102400.0,
+     102400.0
+    ],
+    "cell_cm": [
+     200.0,
+     200.0
+    ],
+    "double_58": -96545.6,
+    "double_60": -95608.0,
+    "range": 937.6,
+    "samples_65535": 256630,
+    "samples": 262144,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -96150.0,
+    "iteration": 77591,
+    "resolution": [
+     2048,
+     2048
+    ]
+   },
+   {
+    "grid": "PDA_Flux_Bakurani_River_East_007",
+    "state": "PDA_Flux_Bakurani_River_East_007",
+    "grid_wh": [
+     512,
+     512
+    ],
+    "world_size": [
+     102400.0,
+     102400.0
+    ],
+    "cell_cm": [
+     200.0,
+     200.0
+    ],
+    "double_58": -97173.6,
+    "double_60": -96440.0,
+    "range": 733.6,
+    "samples_65535": 254877,
+    "samples": 262144,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -97350.0,
+    "iteration": 178073,
+    "resolution": [
+     2048,
+     2048
+    ]
+   },
+   {
+    "grid": "PDA_Flux_Bakurani_River_East_008",
+    "state": "PDA_Flux_Bakurani_River_East_008",
+    "grid_wh": [
+     512,
+     512
+    ],
+    "world_size": [
+     102400.0,
+     102400.0
+    ],
+    "cell_cm": [
+     200.0,
+     200.0
+    ],
+    "double_58": -97621.3,
+    "double_60": -97109.8,
+    "range": 511.5,
+    "samples_65535": 257018,
+    "samples": 262144,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -100223.3,
+    "iteration": 66764,
+    "resolution": [
+     2048,
+     2048
+    ]
+   },
+   {
+    "grid": "PDA_Flux_Bakurani_River_RedSpawn_000",
+    "state": "PDA_Flux_Bakurani_River_RedSpawn_000",
+    "grid_wh": [
+     256,
+     512
+    ],
+    "world_size": [
+     51200.0,
+     102400.0
+    ],
+    "cell_cm": [
+     200.0,
+     200.0
+    ],
+    "double_58": -88595.0,
+    "double_60": -86450.0,
+    "range": 2145.0,
+    "samples_65535": 123266,
+    "samples": 131072,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -87600.0,
+    "iteration": 160886,
+    "resolution": [
+     1024,
+     2048
+    ]
+   },
+   {
+    "grid": "PDA_Flux_Bakurani_River_West_000",
+    "state": "PDA_Flux_Bakurani_River_West_000",
+    "grid_wh": [
+     512,
+     512
+    ],
+    "world_size": [
+     102400.0,
+     102400.0
+    ],
+    "cell_cm": [
+     200.0,
+     200.0
+    ],
+    "double_58": -99205.7,
+    "double_60": -98350.0,
+    "range": 855.7,
+    "samples_65535": 255250,
+    "samples": 262144,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -99700.0,
+    "iteration": 483046,
+    "resolution": [
+     2048,
+     2048
+    ]
+   },
+   {
+    "grid": "PDA_Flux_Bakurani_River_West_001",
+    "state": "PDA_Flux_Bakurani_River_West_001",
+    "grid_wh": [
+     512,
+     512
+    ],
+    "world_size": [
+     102400.0,
+     102400.0
+    ],
+    "cell_cm": [
+     200.0,
+     200.0
+    ],
+    "double_58": -99331.0,
+    "double_60": -99025.8,
+    "range": 305.2,
+    "samples_65535": 253058,
+    "samples": 262144,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -99700.0,
+    "iteration": 65161,
+    "resolution": [
+     2048,
+     2048
+    ]
+   },
+   {
+    "grid": "PDA_Flux_Bakurani_River_West_002",
+    "state": "PDA_Flux_Bakurani_River_West_002",
+    "grid_wh": [
+     512,
+     512
+    ],
+    "world_size": [
+     102400.0,
+     102400.0
+    ],
+    "cell_cm": [
+     200.0,
+     200.0
+    ],
+    "double_58": -99850.5,
+    "double_60": -98721.0,
+    "range": 1129.5,
+    "samples_65535": 252759,
+    "samples": 262144,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -99700.0,
+    "iteration": 63070,
+    "resolution": [
+     2048,
+     2048
+    ]
+   },
+   {
+    "grid": "PDA_Flux_Bakurani_River_West_003",
+    "state": "PDA_Flux_Bakurani_River_West_003",
+    "grid_wh": [
+     512,
+     256
+    ],
+    "world_size": [
+     204800.0,
+     102400.0
+    ],
+    "cell_cm": [
+     400.0,
+     400.0
+    ],
+    "double_58": -100988.0,
+    "double_60": -99971.4,
+    "range": 1016.6,
+    "samples_65535": 125917,
+    "samples": 131072,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -100500.0,
+    "iteration": 284089,
+    "resolution": [
+     2048,
+     1024
+    ]
+   },
+   {
+    "grid": "PDA_Flux_Bakurani_River_West_005",
+    "state": "PDA_Flux_Bakurani_River_West_005",
+    "grid_wh": [
+     512,
+     512
+    ],
+    "world_size": [
+     102400.0,
+     102400.0
+    ],
+    "cell_cm": [
+     200.0,
+     200.0
+    ],
+    "double_58": -101565.8,
+    "double_60": -100451.4,
+    "range": 1114.4,
+    "samples_65535": 256451,
+    "samples": 262144,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -101800.0,
+    "iteration": 23813,
+    "resolution": [
+     2048,
+     2048
+    ]
+   },
+   {
+    "grid": "PDA_Flux_Bakurani_River_West_006",
+    "state": "PDA_Flux_Bakurani_River_West_006",
+    "grid_wh": [
+     512,
+     512
+    ],
+    "world_size": [
+     102400.0,
+     102400.0
+    ],
+    "cell_cm": [
+     200.0,
+     200.0
+    ],
+    "double_58": -101595.0,
+    "double_60": -101031.8,
+    "range": 563.2,
+    "samples_65535": 243867,
+    "samples": 262144,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -102400.0,
+    "iteration": 248599,
+    "resolution": [
+     2048,
+     2048
+    ]
+   },
+   {
+    "grid": "PDA_Flux_RedSpawn_001",
+    "state": "PDA_Flux_RedSpawn_001",
+    "grid_wh": [
+     512,
+     512
+    ],
+    "world_size": [
+     102400.0,
+     102400.0
+    ],
+    "cell_cm": [
+     200.0,
+     200.0
+    ],
+    "double_58": -92296.8,
+    "double_60": -80592.8,
+    "range": 11704.0,
+    "samples_65535": 249312,
+    "samples": 262144,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -89664.8,
+    "iteration": 77615,
+    "resolution": [
+     2048,
+     2048
+    ]
+   },
+   {
+    "grid": "PDA_Flux_RedSpawn_002",
+    "state": "PDA_Flux_RedSpawn_002",
+    "grid_wh": [
+     256,
+     512
+    ],
+    "world_size": [
+     51200.0,
+     102400.0
+    ],
+    "cell_cm": [
+     200.0,
+     200.0
+    ],
+    "double_58": -93467.5,
+    "double_60": -89506.0,
+    "range": 3961.5,
+    "samples_65535": 125220,
+    "samples": 131072,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -92650.0,
+    "iteration": 298983,
+    "resolution": [
+     1024,
+     2048
+    ]
+   },
+   {
+    "grid": "PDA_Flux_RedSpawn_003",
+    "state": "PDA_Flux_RedSpawn_003",
+    "grid_wh": [
+     512,
+     512
+    ],
+    "world_size": [
+     102400.0,
+     102400.0
+    ],
+    "cell_cm": [
+     200.0,
+     200.0
+    ],
+    "double_58": -95940.3,
+    "double_60": -91465.3,
+    "range": 4475.0,
+    "samples_65535": 253944,
+    "samples": 262144,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -94695.3,
+    "iteration": 43496,
+    "resolution": [
+     2048,
+     2048
+    ]
+   },
+   {
+    "grid": "PDA_Flux_River_CZ_000",
+    "state": "PDA_Flux_River_CZ_000",
+    "grid_wh": [
+     128,
+     512
+    ],
+    "world_size": [
+     25600.0,
+     102400.0
+    ],
+    "cell_cm": [
+     200.0,
+     200.0
+    ],
+    "double_58": -96206.5,
+    "double_60": -93799.5,
+    "range": 2407.0,
+    "samples_65535": 56636,
+    "samples": 65536,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -95300.0,
+    "iteration": 58874,
+    "resolution": [
+     512,
+     2048
+    ]
+   },
+   {
+    "grid": "PDA_Flux_River_CZ_001",
+    "state": "PDA_Flux_River_CZ_001",
+    "grid_wh": [
+     256,
+     512
+    ],
+    "world_size": [
+     51200.0,
+     102400.0
+    ],
+    "cell_cm": [
+     200.0,
+     200.0
+    ],
+    "double_58": -99039.4,
+    "double_60": -94953.8,
+    "range": 4085.6,
+    "samples_65535": 121101,
+    "samples": 131072,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -98289.7,
+    "iteration": 244633,
+    "resolution": [
+     1024,
+     2048
+    ]
+   },
+   {
+    "grid": "PDA_Flux_River_CZ_002",
+    "state": "PDA_Flux_River_CZ_002",
+    "grid_wh": [
+     512,
+     512
+    ],
+    "world_size": [
+     102400.0,
+     102400.0
+    ],
+    "cell_cm": [
+     200.0,
+     200.0
+    ],
+    "double_58": -99395.5,
+    "double_60": -95420.0,
+    "range": 3975.5,
+    "samples_65535": 255511,
+    "samples": 262144,
+    "worldmin_equals_area_minus_half": true,
+    "double_60_below_area_z": true,
+    "capture_offset": -98450.0,
+    "iteration": 125237,
+    "resolution": [
+     2048,
+     2048
+    ]
+   }
+  ]
+ },
+ "arm_class_by_projectile": {
+  "DA_12g_RifledSlug_ProjectileData": [
+   "Small"
+  ],
+  "DA_308Winchester_ProjectileData": [
+   "High"
+  ],
+  "DA_30mm_ProjectileData": [
+   "High"
+  ],
+  "DA_338Norman_ProjectileData": [
+   "High"
+  ],
+  "DA_45ACP_ProjectileData": [
+   "Small"
+  ],
+  "DA_45Colt_ProjectileData": [
+   "Small"
+  ],
+  "DA_50AE_ProjectileData": [
+   "High"
+  ],
+  "DA_50Cal_ProjectileData": [
+   "Special"
+  ],
+  "DA_545mm_ProjectileData": [
+   "Medium"
+  ],
+  "DA_556mm_ProjectileData": [
+   "Medium"
+  ],
+  "DA_762mm_ProjectileData": [
+   "High"
+  ],
+  "DA_762x51mm_ProjectileData": [
+   "High"
+  ],
+  "DA_762x54mm_ProjectileData": [
+   "High"
+  ],
+  "DA_7mmBuckshot_ProjectileData": [
+   "Small"
+  ],
+  "DA_9mm_ProjectileData": [
+   "Small"
+  ],
+  "DA_Arrow_Combat_ProjectileData": [
+   "High"
+  ],
+  "DA_Arrow_Explosive_ProjectileData": [
+   "High"
+  ]
+ },
+ "streaming": {
+  "texture_pool_mb_by_scalability": {
+   "TextureQuality@0": 1280,
+   "TextureQuality@1": 2048,
+   "TextureQuality@2": 3072,
+   "TextureQuality@3": 6144,
+   "TextureQuality@Cine": 310
+  },
+  "device_profile_note": "r.Streaming.PoolSize 1280 and r.Nanite.Streaming.StreamingPoolSize 256 or 512 only in console device profiles",
+  "default_engine": {
+   "r.MeshStreaming": true,
+   "r.Nanite.Streaming.StreamingPoolSize": 256,
+   "r.Nanite.Streaming.NumInitialRootPages": 4096
+  }
+ }
+}
