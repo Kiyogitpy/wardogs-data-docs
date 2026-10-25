@@ -7,6 +7,7 @@ Short fixed prose (class blurbs, lead sentences) lives in this file.
 Run from the repo root:  python _tools/wiki_weapons.py
 """
 import json
+import math
 import os
 import re
 
@@ -277,6 +278,176 @@ def stats(wid):
     }
 
 
+# ---- Recoil and spread (assets/data/weapon-spread-recoil.json, assets/data/spray-patterns.json) ----
+SPREAD_DOC = jload("assets/data/weapon-spread-recoil.json")
+SPRAY_DOC = jload("assets/data/spray-patterns.json")
+SPREAD_BY_ITEM = {}
+for _w in SPREAD_DOC["weapons"]:
+    _iid = (_w.get("item") or {}).get("id")
+    if _iid:
+        SPREAD_BY_ITEM.setdefault(_iid, _w)
+SPRAY_BY_ITEM = {w["itemAsset"]: w for w in SPRAY_DOC["weapons"] if w.get("itemAsset")}
+# row -> [[x, degrees], ...]; x is the speed ratio, 0 = still, 1 = full speed (linear)
+SPREAD_CURVES = SPREAD_DOC["spreadCurveTable"]
+# radians per unit of WeaponAccuracy.AccuracyValue (pipeline doc, accuracy getter)
+RAD_PER_UNIT = {"Milliradians": 0.001, "MinutesOfAngle": 0.000290888}
+UNIT_NAME = {"Milliradians": "mrad", "MinutesOfAngle": "MOA"}
+# airborne hip fire: InAirHipFireSpread, native default 10 degrees, only GrenadeLauncher sets it (pipeline doc, section 6)
+AIR_HIP_DEG = 10.0
+RECOIL_VIEWER = "https://kiyogitpy.github.io/wardogs-data-docs/pipelines/spray-viewer.html"
+
+
+def _deg(v):
+    return f"{v:.4f}°" if abs(v) < 0.1 else f"{v:.1f}°"
+
+
+def _metres(v):
+    return f"{v:.2f} m" if abs(v) < 1 else f"{v:.1f} m"
+
+
+def _radius_100m(half_deg):
+    return _metres(100 * math.tan(math.radians(half_deg)))
+
+
+def _curve_at(row, x):
+    pts = sorted(SPREAD_CURVES[row], key=lambda p: p[0])
+    for (x0, y0), (x1, y1) in zip(pts, pts[1:]):
+        if x0 <= x <= x1:
+            return y0 + (y1 - y0) * (x - x0) / (x1 - x0)
+    raise ValueError(f"{row} has no value at x={x}")
+
+
+def _hip(spread, stance):
+    """(still, full speed) cone half-angles in degrees for one stance, or None if the data has no curve for it."""
+    spv = spread["item"]["spreadValues"].get(stance)
+    if not spv:
+        return None
+    return spv["value"] * _curve_at(spv["row"], 0.0), spv["value"] * _curve_at(spv["row"], 1.0)
+
+
+def _path(season, n):
+    """Yaw and pitch in degrees after n shots, from the pattern points. Shots past the pattern use the
+    mean of the post-pattern range (the same rule as expectedPath in the spray data). Yaw + is right, pitch + is up."""
+    pat = [(p["x"], p["y"]) for p in season["pattern"]]
+    mean_yaw = sum(season["postPattern"]["yaw"]) / 2
+    mean_pitch = sum(season["postPattern"]["pitch"]) / 2
+    extra = max(0, n - len(pat))
+    x = sum(a for a, _ in pat[:n]) + extra * mean_yaw
+    y = sum(b for _, b in pat[:n]) + extra * mean_pitch
+    return x, y
+
+
+def _drift(x):
+    if abs(x) < 0.05:
+        return "none"
+    return f"{abs(x):.1f}° {'right' if x > 0 else 'left'}"
+
+
+def _season_sentence(spray):
+    s1 = spray["seasons"].get("s1")
+    s2 = spray["seasons"]["s2"]
+    if not s1 or not s1.get("present"):
+        return "The Season 1 data has no entry for this weapon, so there is nothing to compare."
+    changed = spray.get("changedS1toS2") or []
+    if "pattern" not in changed and "viewKickMagnitudeMultiplier" not in changed:
+        return "Season 2 did not change the recoil pattern."
+    parts = []
+    if "pattern" in changed:
+        c1, c2 = _path(s1, 10)[1], _path(s2, 10)[1]
+        d1, d2 = _path(s1, 30)[1], _path(s2, 30)[1]
+        if abs(c1 - c2) < 0.05 and abs(d1 - d2) < 0.05:
+            parts.append("Season 2 changed the shape of the recoil pattern, but the climb after 10 and 30 shots is the same")
+        else:
+            parts.append(f"Season 2 changed the recoil pattern: the climb after 10 shots went from {c1:.1f}° to {c2:.1f}°, "
+                         f"and after 30 shots from {d1:.1f}° to {d2:.1f}°")
+    if "viewKickMagnitudeMultiplier" in changed:
+        parts.append(f"the view kick multiplier went from {s1['viewKickMagnitudeMultiplier']:g} to {s2['viewKickMagnitudeMultiplier']:g}")
+    return parts[0] + ("; and " + parts[1] if len(parts) > 1 else "") + "."
+
+
+def recoil_section(wid, title):
+    spread = SPREAD_BY_ITEM.get(wid)
+    spray = SPRAY_BY_ITEM.get(wid)
+    if spread is None or spray is None:
+        raise SystemExit(f"no spread or spray data for {wid}")
+    season = spray["seasons"].get("s2")
+    if not season or not season.get("present"):
+        raise SystemExit(f"no Season 2 spray data for {wid}")
+
+    # Aimed spread: the accuracy value is a full cone angle; the half-angle is half of it.
+    acc = spread["fields"]["WeaponAccuracy.AccuracyValue"]
+    unit = spread["fields"]["WeaponAccuracy.AccuracyType"]["value"].split("::")[-1]  # "EWDWeaponAccuracyType::Milliradians"
+    aimed = 0.5 * acc["value"] * RAD_PER_UNIT[unit] * 180 / math.pi
+
+    out = ["## Recoil and spread", "",
+           "Each bullet leaves the barrel in a random direction inside a cone around the point you aim at. "
+           "Hip fire uses a wide cone that grows when you move. Aiming down the sights uses a very narrow one. "
+           "Every shot also pushes the view up and to the side, following the weapon's recoil pattern.", "",
+           "**Spread**", "",
+           "| Situation | Still | Moving at full speed |", "|---|---|---|"]
+    stand_hip = None
+    for stance, label in [("Stand", "Standing, hip fire"), ("Crouch", "Crouching, hip fire"), ("Prone", "Prone, hip fire")]:
+        hip = _hip(spread, stance)
+        if hip is None:
+            out.append(f"| {label} | not in the data | not in the data |")
+            continue
+        if stance == "Stand":
+            stand_hip = hip
+        out.append(f"| {label} | {_deg(hip[0])} | {_deg(hip[1])} |")
+    out.append(f"| In the air, hip fire | {_deg(AIR_HIP_DEG)} | {_deg(AIR_HIP_DEG)} |")
+    out.append(f"| Aimed down sights | {_deg(aimed)} | {_deg(aimed)} |")
+    out += ["", "Cone half-angles in degrees: a bullet can land up to that far from the aim point. "]
+    if stand_hip:
+        out[-1] += (f"At 100 m, standing hip fire has a radius of {_radius_100m(stand_hip[0])} when still and "
+                    f"{_radius_100m(stand_hip[1])} at full speed; aimed, it is {_radius_100m(aimed)}. "
+                    "Half of the shots land within half that radius.")
+    out.append("")
+    if acc.get("source") == "native default":
+        out.append(f"The data leaves the accuracy value out for this weapon, so the game default of {acc['value']:g} {UNIT_NAME[unit]} is used "
+                   "(a full cone angle; the aimed row is half of it, in degrees).")
+    else:
+        out.append(f"Accuracy is {acc['value']:g} {UNIT_NAME[unit]}, a full cone angle; the aimed row is half of it, in degrees.")
+    out += ["",
+            "- Shooting does not widen the spread. The data has no per-shot bloom and no recovery timer.",
+            "- Hip spread moves with speed, stance and being in the air, and eases to its new value in about 0.04 s.",
+            "- Fully aimed, hip spread drops to zero at once, so only the aimed row applies.",
+            "- The figures are before attachments, which can change spread (see [Attachments](attachments.md)).",
+            "- Between still and full speed, hip spread is a straight line.", ""]
+
+    # Recoil
+    pat = season["pattern"]
+    post = season["postPattern"]
+    out += ["**Recoil**", "", "| Measure | Value |", "|---|---|"]
+    if pat:
+        out.append(f"| Shots in the recoil pattern | {len(pat)} |")
+        out.append(f"| Kick on the first shot | {pat[0]['y']:.2f}° up |")
+    else:
+        out.append("| Shots in the recoil pattern | none, each shot kicks at random |")
+        out.append(f"| Random kick per shot | up {min(post['pitch']):.2f}° to {max(post['pitch']):.2f}°, "
+                   f"sideways {min(post['yaw']):.2f}° to {max(post['yaw']):.2f}° |")
+    y10 = _path(season, 10)[1]
+    y30 = _path(season, 30)[1]
+    out.append(f"| Climb after 10 shots | {y10:.1f}° up |")
+    out.append(f"| Climb after 30 shots | {y30:.1f}° up |")
+    out.append(f"| Average climb per shot over 30 shots | {y30 / 30:.2f}° up |")
+    out.append(f"| Sideways drift after 30 shots | {_drift(_path(season, 30)[0])} |")
+    out.append(f"| Pattern resets after | {season['recoilPatternResetTime_s']:g} s without firing |")
+    stance = season["multipliers"]["stance"]
+    out.append(f"| Vertical kick crouching / prone, compared with standing | {stance['crouch']:.2f}× / {stance['prone']:.2f}× |")
+    mult = season["multipliers"]
+    out.append(f"| Default-loadout recoil multiplier, vertical / horizontal | {mult['vertical']:g} / {mult['horizontal']:g} |")
+    out.append("")
+    note = "Climb and drift figures are computed from the pattern points, before the recoil multiplier. "
+    if pat:
+        note += (f"The game turns each authored kick by up to {season['randomDeviationDeg']:g}° per shot, so the real sideways drift "
+                 f"varies from burst to burst. After shot {len(pat)} each kick is random inside the post-pattern range.")
+    else:
+        note += "This weapon has no authored pattern, so the climb figures use the middle of its random range."
+    out += [note, "", _season_sentence(spray), "",
+            f"To see the whole pattern as a picture, open the [Weapon Spray Viewer]({RECOIL_VIEWER}) and pick the {title} in the viewer.", ""]
+    return "\n".join(out)
+
+
 def build_weapon(wid):
     code = code_for(wid)
     title = page_title(wid)
@@ -375,6 +546,8 @@ def build_weapon(wid):
     else:
         out += ["The damage data pages do not compute body-part damage for launchers. The data treats the shot as an explosion; see [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md).", ""]
 
+    # Recoil and spread (after Damage, before Ammunition)
+    out += recoil_section(wid, title).rstrip("\n").split("\n") + [""]
     # Ammunition
     out += ["## Ammunition", ""]
     if dmg:
@@ -415,6 +588,11 @@ def build_weapon(wid):
             "- [Weapon Shop and Parts](../../game-features/Wardogs_WeaponShop_v1.md): price, unlock level, default magazine",
             "- [Infantry Weapon Stats](../../content/Wardogs_InfantryWeapons_Stats_v1.md): fire rate and fire modes",
             "- [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md): body-part, armor and falloff numbers",
+            "- [Weapon Spread and Recoil Data](../../content/Wardogs_WeaponSpreadRecoilData_v1.md): spread and recoil inputs",
+            "- [Weapon Spread pipeline](../../pipelines/Wardogs_WeaponSpread_v1.md): how the aim cone and hip spread are computed",
+            "- [Spray Patterns Gallery](../../game-features/Wardogs_SprayPatterns_v1.md): recoil patterns, Season 1 and Season 2",
+            f"- [weapon-spread-recoil.json]({GH}assets/data/weapon-spread-recoil.json): accuracy and hip spread curves",
+            f"- [spray-patterns.json]({GH}assets/data/spray-patterns.json): recoil pattern points, Season 1 and Season 2",
             "- [Season 2 Changes: Weapons & Ammo](../../season-2-changes/weapons-ammo.md)",
             "- [Tag Display Text](../../content/Wardogs_TagDisplayText_v1.md): caliber and ammo names",
             f"- [weapon-loadouts.json]({GH}assets/data/weapon-loadouts.json): names, slots and effects",

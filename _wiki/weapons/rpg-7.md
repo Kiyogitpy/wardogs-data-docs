@@ -45,6 +45,50 @@ Launcher stats beyond the fire rate are not in the data pages.
 
 The damage data pages do not compute body-part damage for launchers. The data treats the shot as an explosion; see [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md).
 
+## Recoil and spread
+
+Each bullet leaves the barrel in a random direction inside a cone around the point you aim at. Hip fire uses a wide cone that grows when you move. Aiming down the sights uses a very narrow one. Every shot also pushes the view up and to the side, following the weapon's recoil pattern.
+
+**Spread**
+
+| Situation | Still | Moving at full speed |
+|---|---|---|
+| Standing, hip fire | 2.0° | 4.0° |
+| Crouching, hip fire | 1.5° | 3.0° |
+| Prone, hip fire | 1.0° | 2.0° |
+| In the air, hip fire | 10.0° | 10.0° |
+| Aimed down sights | 0.0859° | 0.0859° |
+
+Cone half-angles in degrees: a bullet can land up to that far from the aim point. At 100 m, standing hip fire has a radius of 3.5 m when still and 7.0 m at full speed; aimed, it is 0.15 m. Half of the shots land within half that radius.
+
+Accuracy is 3 mrad, a full cone angle; the aimed row is half of it, in degrees.
+
+- Shooting does not widen the spread. The data has no per-shot bloom and no recovery timer.
+- Hip spread moves with speed, stance and being in the air, and eases to its new value in about 0.04 s.
+- Fully aimed, hip spread drops to zero at once, so only the aimed row applies.
+- The figures are before attachments, which can change spread (see [Attachments](attachments.md)).
+- Between still and full speed, hip spread is a straight line.
+
+**Recoil**
+
+| Measure | Value |
+|---|---|
+| Shots in the recoil pattern | none, each shot kicks at random |
+| Random kick per shot | up 1.00° to 2.00°, sideways -1.00° to 1.00° |
+| Climb after 10 shots | 15.0° up |
+| Climb after 30 shots | 45.0° up |
+| Average climb per shot over 30 shots | 1.50° up |
+| Sideways drift after 30 shots | none |
+| Pattern resets after | 0.5 s without firing |
+| Vertical kick crouching / prone, compared with standing | 1.00× / 1.00× |
+| Default-loadout recoil multiplier, vertical / horizontal | 1 / 1 |
+
+Climb and drift figures are computed from the pattern points, before the recoil multiplier. This weapon has no authored pattern, so the climb figures use the middle of its random range.
+
+Season 2 did not change the recoil pattern.
+
+To see the whole pattern as a picture, open the [Weapon Spray Viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/spray-viewer.html) and pick the RPG-7 in the viewer.
+
 ## Ammunition
 
 Launchers do not use the bullet types on the [Ammunition](ammunition.md) page.
@@ -77,6 +121,11 @@ Slots on this weapon: Sight. See [Attachments](attachments.md) for what each par
 - [Weapon Shop and Parts](../../game-features/Wardogs_WeaponShop_v1.md): price, unlock level, default magazine
 - [Infantry Weapon Stats](../../content/Wardogs_InfantryWeapons_Stats_v1.md): fire rate and fire modes
 - [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md): body-part, armor and falloff numbers
+- [Weapon Spread and Recoil Data](../../content/Wardogs_WeaponSpreadRecoilData_v1.md): spread and recoil inputs
+- [Weapon Spread pipeline](../../pipelines/Wardogs_WeaponSpread_v1.md): how the aim cone and hip spread are computed
+- [Spray Patterns Gallery](../../game-features/Wardogs_SprayPatterns_v1.md): recoil patterns, Season 1 and Season 2
+- [weapon-spread-recoil.json](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-spread-recoil.json): accuracy and hip spread curves
+- [spray-patterns.json](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/spray-patterns.json): recoil pattern points, Season 1 and Season 2
 - [Season 2 Changes: Weapons & Ammo](../../season-2-changes/weapons-ammo.md)
 - [Tag Display Text](../../content/Wardogs_TagDisplayText_v1.md): caliber and ammo names
 - [weapon-loadouts.json](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-loadouts.json): names, slots and effects

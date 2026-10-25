@@ -49,7 +49,7 @@ The wiki (`_wiki/`, served at `/wiki/`) turns the data pages into articles a pla
    Group rows inside the infobox are written `| **Performance** | |` (bold label, empty value) and are drawn as bands. Suggested bands: weapons General / Performance / Availability; vehicles General / Durability / Availability.
 3. Lead paragraph (2–4 sentences): what it is and its role.
 4. Sections with `##` headings, in this order where they apply:
-   - Weapons: Overview, Stats, Damage (body parts, range falloff, armor), Ammunition, Attachments, Cost and unlocking, Season 2 changes, See also, Sources.
+   - Weapons: Overview, Stats, Damage (body parts, range falloff, armor), Recoil and spread, Ammunition, Attachments, Cost and unlocking, Season 2 changes, See also, Sources.
    - Equipment/items: Overview, Effects, Use and timing, Cost, Season 2 changes, See also, Sources.
    - Vehicles: Overview, Stats, Armor and damage, Weapons and seats, Handling, Season 2 changes, See also, Sources.
    - Mechanics: Overview, How it works, Numbers, Tips that follow from the numbers, See also, Sources.

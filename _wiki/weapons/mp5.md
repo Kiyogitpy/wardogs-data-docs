@@ -90,6 +90,50 @@ Figures are for Standard (FMJ) at point blank range, per hit, against a characte
 
 See [Ammunition](ammunition.md) for how each type does against armor, and [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md) for the full tables.
 
+## Recoil and spread
+
+Each bullet leaves the barrel in a random direction inside a cone around the point you aim at. Hip fire uses a wide cone that grows when you move. Aiming down the sights uses a very narrow one. Every shot also pushes the view up and to the side, following the weapon's recoil pattern.
+
+**Spread**
+
+| Situation | Still | Moving at full speed |
+|---|---|---|
+| Standing, hip fire | 2.0° | 4.0° |
+| Crouching, hip fire | 1.5° | 3.0° |
+| Prone, hip fire | 1.0° | 2.0° |
+| In the air, hip fire | 10.0° | 10.0° |
+| Aimed down sights | 0.0332° | 0.0332° |
+
+Cone half-angles in degrees: a bullet can land up to that far from the aim point. At 100 m, standing hip fire has a radius of 3.5 m when still and 7.0 m at full speed; aimed, it is 0.06 m. Half of the shots land within half that radius.
+
+Accuracy is 1.16 mrad, a full cone angle; the aimed row is half of it, in degrees.
+
+- Shooting does not widen the spread. The data has no per-shot bloom and no recovery timer.
+- Hip spread moves with speed, stance and being in the air, and eases to its new value in about 0.04 s.
+- Fully aimed, hip spread drops to zero at once, so only the aimed row applies.
+- The figures are before attachments, which can change spread (see [Attachments](attachments.md)).
+- Between still and full speed, hip spread is a straight line.
+
+**Recoil**
+
+| Measure | Value |
+|---|---|
+| Shots in the recoil pattern | 30 |
+| Kick on the first shot | 0.72° up |
+| Climb after 10 shots | 8.8° up |
+| Climb after 30 shots | 24.0° up |
+| Average climb per shot over 30 shots | 0.80° up |
+| Sideways drift after 30 shots | 4.6° left |
+| Pattern resets after | 0.5 s without firing |
+| Vertical kick crouching / prone, compared with standing | 0.85× / 0.70× |
+| Default-loadout recoil multiplier, vertical / horizontal | 1 / 1 |
+
+Climb and drift figures are computed from the pattern points, before the recoil multiplier. The game turns each authored kick by up to 20° per shot, so the real sideways drift varies from burst to burst. After shot 30 each kick is random inside the post-pattern range.
+
+Season 2 changed the shape of the recoil pattern, but the climb after 10 and 30 shots is the same; and the view kick multiplier went from 1.1 to 1.15.
+
+To see the whole pattern as a picture, open the [Weapon Spray Viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/spray-viewer.html) and pick the MP5 in the viewer.
+
 ## Ammunition
 
 Ammo types for this weapon: Standard (FMJ), Standard (FMJ) with tracer, Flesh Damage (HP), Flesh Damage (HP) with tracer, Armor Piercing (AP), Armor Piercing (AP) with tracer. See [Ammunition](ammunition.md).
@@ -125,6 +169,11 @@ Default parts: magazine (MP5 30 RND Magazine), stock (MP5 Stock), barrel (MP5 Ba
 - [Weapon Shop and Parts](../../game-features/Wardogs_WeaponShop_v1.md): price, unlock level, default magazine
 - [Infantry Weapon Stats](../../content/Wardogs_InfantryWeapons_Stats_v1.md): fire rate and fire modes
 - [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md): body-part, armor and falloff numbers
+- [Weapon Spread and Recoil Data](../../content/Wardogs_WeaponSpreadRecoilData_v1.md): spread and recoil inputs
+- [Weapon Spread pipeline](../../pipelines/Wardogs_WeaponSpread_v1.md): how the aim cone and hip spread are computed
+- [Spray Patterns Gallery](../../game-features/Wardogs_SprayPatterns_v1.md): recoil patterns, Season 1 and Season 2
+- [weapon-spread-recoil.json](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-spread-recoil.json): accuracy and hip spread curves
+- [spray-patterns.json](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/spray-patterns.json): recoil pattern points, Season 1 and Season 2
 - [Season 2 Changes: Weapons & Ammo](../../season-2-changes/weapons-ammo.md)
 - [Tag Display Text](../../content/Wardogs_TagDisplayText_v1.md): caliber and ammo names
 - [weapon-loadouts.json](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-loadouts.json): names, slots and effects
