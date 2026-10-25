@@ -25,8 +25,9 @@ Hot Potato came in with Season 2 alongside [Team Offence](team-offence.md). The 
 
 ## Rules and objectives
 
-- **Passing.** Each pass of the Gold Potato pays 10 times the pass multiplier, in pre-lobby points. The multiplier is a whole number. How it grows with each pass is not in the data.
+- **Passing.** Each pass of the Gold Potato pays 10 times the pass multiplier, in pre-lobby points. The multiplier is a whole number. A new potato starts at 1, and each pass adds 1: when a thrown potato reaches another player, the potato that player ends up with has the thrown potato's multiplier plus 1. So passes pay 10, 20, 30 and so on. No upper limit was found.
 - **Items.** There are three Gold Potato items. They share one name in the game's text, with the description "Don't hold it for too long..." and the flavour line "Hot. Hot. Hot." The data labels them Alpha, Bravo and Charlie, and they differ only in their tag. The potato is thrown like a grenade, overarm or underarm.
+- **Fuse.** Each potato runs a hidden timer that picks a random time between 8 and 15 seconds, then shortens it by a factor of 0.85 for every point of the multiplier, so a potato that has been passed many times goes off sooner. At multiplier 1 the time is about 6.8 to 12.8 seconds, and at multiplier 5 about 3.5 to 6.7 seconds (worked out from the game code, not timed in play). When the timer ends, the game acts on the player holding the potato (inferred to be the penalty for holding it too long).
 - **Damage.** The thrown potato does no damage in the item data.
 - **Map tracker.** The mode has its own map tracker data.
 - **Teams, match length and win condition.** None. The game runs while players wait for the match to start.

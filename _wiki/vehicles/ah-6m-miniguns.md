@@ -61,7 +61,7 @@ Hits needed to destroy the main health. These counts are derived by simulating t
 |---|---|---:|---:|---:|---:|
 | M134D Minigun (two) | Machine gun | 1,500 rounds/min | 800 m | 4.25 s | 300 (tracer) |
 
-The data does not say which of the two seats fires the miniguns. The seats are a driver and one active passenger.
+The pilot fires the miniguns. The two guns are grouped on one mount, and the data allows only the driver seat to use that weapon. The second seat is an active passenger seat with no gun. The mount can aim from 30 degrees down to 22 degrees up.
 
 ## Handling
 

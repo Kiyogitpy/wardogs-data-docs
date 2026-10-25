@@ -27,7 +27,7 @@ description: "A small wire obstacle built with any hammer from 7 Build Supplies,
 | Internal name | `DA_Buildable_BarbedWire` |
 {: .wiki-infobox }
 
-Barbed Wire is a cheap wire obstacle that any hammer can build. It costs 7 Build Supplies and has 250 HP, the lowest health of any structure in the data. It takes more melee damage than most walls, and only 15% of bullet damage gets through.
+Barbed Wire is a cheap wire obstacle that any hammer can build. It costs 7 Build Supplies and has 250 HP, the lowest health of any structure in the data. It takes more melee damage than most walls, and only 15% of bullet damage gets through. Anyone standing in it is slowed and hurt.
 
 ## Overview
 
@@ -55,7 +55,11 @@ Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small
 
 ## What it does
 
-Barbed Wire is an obstacle. The data gives it no effect beyond its health and how it takes damage.
+Barbed Wire is more than an obstacle. A built wire has a narrow trigger box around it (roughly 0.8 m thick, 2.7 m long and 1.4 m high, worked out from the box size). Anything that enters the box is tracked until it leaves, and a check runs every 0.4 s while at least one thing is inside.
+
+- **On foot.** A living player standing in the box takes 8 damage on every check, which is 20 damage per second, and the screen shakes briefly. Players inside a vehicle are skipped. The effect that cuts movement to 7.5% of normal speed is listed on the wire for people in the box (the game applies it, inferred), so a player caught in the wire crawls.
+- **In a vehicle.** A moving vehicle in the box has its wheels cut. Each wheel loses 10% of its full health on every check, and a wheel stops taking this damage once it is down to 15% health. A vehicle that is standing still is not hurt. Tracked vehicles and helicopters are treated as resistant and are not cut (the check reads the tracked and rotary vehicle tags).
+- **Who gets credit.** The damage on players is credited to the player who built the wire. Whether it spares the builder's own team was not checked.
 
 ## Durability
 
@@ -98,4 +102,5 @@ Derived from each source's base damage and the damage table. It is not a count f
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy for each source of damage.
 - [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
 - [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings
+- [Round 57 open questions](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round57-open-questions.md): what triggers the wire's slow and damage
 - [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): structure hit counts for every listed source (stacked damage entries, IED and the M67 as a rocket) and the build time estimates.

@@ -84,7 +84,7 @@ Seat counts and roles for every drivable vehicle. Sort by seats with the header.
 | [AH-6M [Miniguns]](ah-6m-miniguns.md) | 2 | Driver and one active passenger |
 | [AH-6R [Rockets]](ah-6r-rockets.md) | 2 | Driver and one active passenger |
 | [Z20 Lakota](z20-lakota.md) | 13 | Pilot and passengers, 11 passengers in the shop text |
-| [Z20 Lakota [Miniguns]](z20-lakota-miniguns.md) | 13 | Pilot and passengers, with the miniguns |
+| [Z20 Lakota [Miniguns]](z20-lakota-miniguns.md) | 13 | Pilot, two gunners (one per minigun) and passengers |
 | [Fixed-wing airplane](fixed-wing-airplane.md) | 2 | Driver and one passenger |
 | [SPH-2](sph-2.md) | 3 | Driver and gunner, 2 seat setups |
 | [L2A6](l2a6.md) | 3 | Two hull seats and a turret gunner |
@@ -96,7 +96,7 @@ Seat counts and roles for every drivable vehicle. Sort by seats with the header.
 | [Kodiak [Pickup]](kodiak-pickup.md) | 6 | Driver, three inside passengers and two in the bed |
 | [Kodiak [M249]](kodiak-m249.md) | 5 | Driver, passengers and the ring turret |
 | [Humvee](humvee.md) | 4 | Driver and three active passengers |
-| [Humvee [Minigun]](humvee-minigun.md) | 5 | Driver, passengers and the minigun mount, 4 on one stats sheet |
+| [Humvee [Minigun]](humvee-minigun.md) | 5 | Driver, one gunner at the minigun and three passengers, 4 on one stats sheet |
 | [Humvee [M249]](humvee-m249.md) | 5 | Driver, passengers and the ring turret |
 | [Dune Buggy](dune-buggy.md) | 3 | Driver and two passengers |
 | [Ural](ural.md) | 3 | Driver and two passengers |

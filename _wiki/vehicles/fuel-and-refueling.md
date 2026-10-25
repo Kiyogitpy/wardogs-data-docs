@@ -18,7 +18,7 @@ description: "How much fuel each vehicle carries, how its fuel economy is listed
 | Refuel rate | Refuel Station: Fast 5% in 3 s, Max up to 100% in 9 s. Canister: 2.0 units per 0.75 s |
 {: .wiki-infobox }
 
-Every driven vehicle has a fuel tank with a stored capacity and a stored fuel economy number. The data does not label the units, so this article shows them as stored and does not convert them to litres or kilometres. The fuel tank also has its own health, which is covered in [Repair and vehicle parts](repair-and-vehicle-parts.md).
+Every driven vehicle has a fuel tank with a stored capacity and a stored fuel economy number. The vendor labels the economy number "L/KM", litres per kilometre, so a higher number means the vehicle burns more fuel for each kilometre. The capacity is labelled "L", litres. This article shows both numbers as the vendor lists them. The fuel tank also has its own health, which is covered in [Repair and vehicle parts](repair-and-vehicle-parts.md).
 
 ## Overview
 
@@ -77,14 +77,14 @@ Fuel capacity and fuel economy for every drivable vehicle, from the vendor stats
 | [Wolf-110](wolf-110.md) | 60 | 4.0 |
 | [Wolf-110 [M2 Browning]](wolf-110-m2-browning.md) | 60 | 4.0 |
 
-The data does not say whether a higher fuel economy number means better or worse fuel use, so the table does not rank vehicles on it. The fixed-wing airplane has no stats sheet in the data.
+A higher fuel economy number means more fuel used per kilometre, which is worse (the vendor label is litres per kilometre). The tracked and heavy vehicles have the highest numbers and the Bobcat the lowest. The number is the vendor's listed stat; how the engine itself spends fuel in play was not traced. The fixed-wing airplane has no stats sheet in the data.
 
 Season 2 changed no fuel capacity or fuel economy value in the data.
 
 ## Tips that follow from the numbers
 
 - The Bobcat has the smallest stored capacity, 18. One Fuel Canister use adds 25, so one use is more than its whole tank, if the two use the same stored unit.
-- The Flakpanzer Gepard has the highest fuel economy number, 10.0, but the data does not say which way is better. Plan fuel from the vehicle's own article, not from this column alone.
+- The Flakpanzer Gepard has the highest fuel economy number, 10.0, which means the thirstiest listed use of fuel per kilometre. Plan fuel from the vehicle's own article, not from this column alone.
 - The fuel tank is also a weak point for attackers. On the Humvee, bullets to the fuel tank take an extra 400%, so it is the fastest route to destroy that vehicle. See [Vehicle damage](vehicle-damage.md).
 
 ## See also

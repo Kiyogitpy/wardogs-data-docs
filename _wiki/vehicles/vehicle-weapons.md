@@ -51,7 +51,7 @@ Guns mounted on vehicles can have a spread of their own, set in the vehicle data
 
 ## Miniguns
 
-The M134D minigun is the same gun on three vehicles, and it fires .308 Win rounds at 1,500 rounds/min everywhere. The AH-6M and the Humvee [Minigun] reach 800 m and reload in 4.25 s. The Z20 Lakota [Miniguns] reaches 1,500 m and reloads in 5.0 s. Each starts with 150 or 300 tracer rounds, as the table shows. The data does not say which seat fires the miniguns on the helicopter and the Humvee.
+The M134D minigun is the same gun on three vehicles, and it fires .308 Win rounds at 1,500 rounds/min everywhere. The AH-6M and the Humvee [Minigun] reach 800 m and reload in 4.25 s. The Z20 Lakota [Miniguns] reaches 1,500 m and reloads in 5.0 s. Each starts with 150 or 300 tracer rounds, as the table shows. On the Humvee [Minigun] the second seat is a gunner seat that fires the gun. On the AH-6M the pilot fires both guns, because the data allows only the driver seat to use them. On the Z20 Lakota [Miniguns] two gunner seats fire one gun each.
 
 Season 2 changed the damage table entries of the AH-6M and the Humvee [Minigun], and patch notes describe calibre reductions for these miniguns. The [Vehicles changes page](../../season-2-changes/vehicles.md) lists the damage changes.
 

@@ -52,6 +52,8 @@ Rifle damage works as on the [Z20 Lakota](z20-lakota.md). The tail rotor is the 
 |---|---|---:|---:|---:|---:|
 | M134D Minigun (two) | Machine gun | 1,500 rounds/min | 1,500 m | 5.0 s | 150 (tracer) |
 
+The two miniguns are fired by two dedicated gunner seats, one for the left gun and one for the right gun. The pilot and the other passengers do not fire them. Each gunner takes the gun automatically on entering the seat. The other eleven seats are the pilot and passenger seats of the standard Z20 Lakota.
+
 ## Season 2 changes
 
 - Price rose from 8,000 to 15,000 cash.

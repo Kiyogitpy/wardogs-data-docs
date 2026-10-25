@@ -58,7 +58,7 @@ The fuel tank takes an extra 400% from bullets, and the wheels take an extra 800
 |---|---|---:|---:|---:|---:|
 | M134D Minigun (ring mount) | Machine gun | 1,500 rounds/min | 800 m | 4.25 s | 150 (tracer) |
 
-The seats include a driver and passengers. The data does not say which seat fires the minigun.
+The five seats are the driver, one gunner and three passengers. The gunner seat is the second seat. It is an exterior standing seat at the ring mount, and the player who takes it is the one who fires the minigun. Taking that seat puts the player on the gun automatically. The driver and the three passengers do not fire it.
 
 ## Handling
 

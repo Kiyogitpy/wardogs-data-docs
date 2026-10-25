@@ -28,12 +28,13 @@ A status effect is a temporary condition that changes how a player fights or mov
 | Medical use | Using a medical item | Move at half speed while using it | While using | Speed x0.5 |
 | Enox boost | Using Enox | Extra health that drains over time | Until the pool is empty (40 s for a full pool) | Pool of 40 health, loses 5 health every 5 s |
 | Revive sprint boost | Reviving, or being revived by, a teammate | Faster sprint | 5 s | Speed x1.2 at skill level 2, x1.4 at level 4 |
+| Revived by an enemy | A resuscitator used on a player of the other faction | No effect on the player; killing them pays almost nothing | 60 s | Kill cash x0.01, no Role XP |
 | Fall landing | Landing hard | Damage | Once per landing | 0 at input 670, 100 at 875, 200 at 1,080 |
 | Landing and action sway | Jump, landing, vault, mantle, stance change, end of tactical sprint | Weapon sway changes briefly | 2 s to 15 s | Jump 2 s, landing 10 s, mantle 10 s, vault 5 s, stance 5 s, tactical sprint end 15 s |
 | Heavy load | Equipment weight class | Slower, slower to aim and jump | While equipped | Heavy speed x0.8, super heavy jump x0.65 |
 | Aiming | Aiming down sights | Move at half speed | While aiming | Speed x0.5 |
 | Ghillie suit | Body suit and headwear both worn | Slower, quicker to aim, more sway | While worn | Aim time x0.8, aim sway x1.15 |
-| Barbed wire slow | Barbed wire (inferred from the effect name) | Movement cut to 7.5% of normal speed | Not set in the data | Speed x0.075 |
+| Barbed wire slow | Standing inside a barbed wire | Movement cut to 7.5% of normal speed | Not set in the data | Speed x0.075 |
 | Door breach | Breaching a door | Movement ramps down and back up | 0.8 s | Ramp curve, not a fixed number |
 | Tinnitus | Nearby explosions and backblast | Audio only: a low-pass mix | About 1.2 s (1 s hold, 0.1 s fades; derived) | Tank Helmet removes it, per the shop text |
 
@@ -91,12 +92,11 @@ Aiming down sights halves movement speed. Wearing a Ghillie suit and Ghillie hea
 
 ## Barbed wire, door breach and tinnitus
 
-Barbed wire has an effect that sets movement to 7.5% of normal speed. The data does not say what applies it; the name points to barbed wire, but this was not traced, and the effect has no set duration. A door breach slows movement during a 0.8 s ramp. Tinnitus is an audio state. Nearby explosions and backblast trigger it. It is a low-pass audio mix that holds for about 1 s, with 0.1 s fades, so it lasts about 1.2 s in total (derived). The Tank Helmet removes it, according to the shop text.
+Barbed wire has an effect that sets movement to 7.5% of normal speed. It is applied to anyone standing inside a built barbed wire, and it has no set duration of its own (see [Barbed Wire](../building/barbed-wire.md#what-it-does)). A door breach slows movement during a 0.8 s ramp. Tinnitus is an audio state. Nearby explosions and backblast trigger it. It is a low-pass audio mix that holds for about 1 s, with 0.1 s fades, so it lasts about 1.2 s in total (derived). The Tank Helmet removes it, according to the shop text.
 
 ## Not yet known
 
 - How the suppression values turn into what a player sees in play; the game was not run.
-- What "revived by an enemy" does to the player. A resuscitator used on the other faction gives it, for 60 s, and marks the revive as an enemy revive. What the state does to the player beyond that tag was not traced.
 - Whether a rule outside the damage tables switches friendly fire off for fire.
 
 ## See also
