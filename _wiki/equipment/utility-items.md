@@ -113,8 +113,8 @@ The Light and Heavy Drills use Batteries, and Batteries also power the [Defibril
 
 | Item | Price (cash) | Capacity |
 |---|---:|---|
-| Battery | 150 | 20 V, 5 AH |
-| High Capacity Battery | 300 | 20 V, 15 AH |
+| Battery | 150 | 20 V, 5 AH; 100 charges |
+| High Capacity Battery | 300 | 20 V, 15 AH; 250 charges |
 
 ### Vehicle fuel
 

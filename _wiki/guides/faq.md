@@ -40,7 +40,7 @@ Short answers to the questions players ask most often. Each answer gives the num
 
 **What is the Medical Bag for?** It heals you at 7 HP per second, or a teammate at 10 HP per second, and it can revive a downed player to 50 HP. While a bandage, First Aid Kit, Medical Bag, Adrenaline Pen or resuscitator is in use, your maximum movement speed is halved ([Medical Items](../equipment/medical-items.md), [Downed and Revive](../game-mechanics/downed-and-revive.md)).
 
-**How long does a revive take?** A teammate holding a revive by hand needs 20 s with no equipment, and the revived player comes back at 10 HP. A Defibrillator needs a battery and a 4 s charge and restores 35 HP. The resuscitator takes about 4 s by derivation from the item data, but it has not been timed in play ([Downed and Revive](../game-mechanics/downed-and-revive.md), [Defibrillator](../equipment/defibrillator.md)).
+**How long does a revive take?** A teammate holding a revive by hand needs 20 s with no equipment, and the revived player comes back at 10 HP. A Defibrillator needs a battery and a 4 s charge and restores 35 HP. The resuscitator takes about 4 s by derivation from the item data, but it has not been timed in play. A player revived by an enemy is a "No Value Kill" for 60 s: killing them pays almost no cash and no Role XP ([Downed and Revive](../game-mechanics/downed-and-revive.md), [Defibrillator](../equipment/defibrillator.md)).
 
 **How long do I have when I am downed?** The bleed-out timer starts at 360 s and drains at half speed, so about 12 minutes unless you are helped. Giving up ends the wait in 1.5 s ([Downed and Revive](../game-mechanics/downed-and-revive.md)).
 
@@ -100,7 +100,7 @@ Short answers to the questions players ask most often. Each answer gives the num
 
 **How does Sniper Showdown punish standing still?** If you stand within about 50 m of one spot for 90 s, you are revealed. A marker shows your position for 200 s, and a warning appears at 75 s ([Sniper Showdown](../game-modes-and-maps/sniper-showdown.md)).
 
-**What is Team Offence?** A Season 2 system for teamkills. An offence opens a player ballot, and the players vote to punish, kick or forgive the offender ([Team Offence](../game-modes-and-maps/team-offence.md)).
+**What is Team Offence?** A Season 2 system for teamkills. An offence opens a player ballot, and the players vote to punish, kick or forgive the offender. Each ballot has a 180 s deadline, after which the voters' prompts close (inferred from the game code) ([Team Offence](../game-modes-and-maps/team-offence.md)).
 
 ## Money and progression
 

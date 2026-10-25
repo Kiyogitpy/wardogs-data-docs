@@ -92,7 +92,7 @@ Aiming down sights halves movement speed. Wearing a Ghillie suit and Ghillie hea
 
 ## Barbed wire, door breach and tinnitus
 
-Barbed wire has an effect that sets movement to 7.5% of normal speed. It is applied to anyone standing inside a built barbed wire, and it has no set duration of its own (see [Barbed Wire](../building/barbed-wire.md#what-it-does)). A door breach slows movement during a 0.8 s ramp. Tinnitus is an audio state. Nearby explosions and backblast trigger it. It is a low-pass audio mix that holds for about 1 s, with 0.1 s fades, so it lasts about 1.2 s in total (derived). The Tank Helmet removes it, according to the shop text.
+Barbed wire has an effect that sets movement to 7.5% of normal speed. It is applied to anyone standing inside a built barbed wire (the game applies it, inferred), and it has no set duration of its own (see [Barbed Wire](../building/barbed-wire.md#what-it-does)). A door breach slows movement during a 0.8 s ramp. Tinnitus is an audio state. Nearby explosions and backblast trigger it. It is a low-pass audio mix that holds for about 1 s, with 0.1 s fades, so it lasts about 1.2 s in total (derived). The Tank Helmet removes it, according to the shop text.
 
 ## Not yet known
 

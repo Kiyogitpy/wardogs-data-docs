@@ -30,7 +30,7 @@ Each vehicle has a top speed from its vendor stats. Its drive comes from a torqu
 
 The torque curve is the engine's pull at each engine speed. A peak of 475 at 5,500 means the engine pulls hardest at 5,500 RPM on that vehicle. Gears multiply that pull. A low first gear (a big ratio) gives more push when starting, and a high top gear gives more speed. Tracked vehicles use the same kind of torque curve against engine RPM, with the curve running up to 5,000 RPM. The torque values carry no unit label.
 
-In a wheeled vehicle's gear list, the last ratio is the reverse gear, applied in the opposite direction (confirmed in the game code). The other entries are the forward gears, in order. The Bobcat's list, 4.2, 2.8, 1.9, 1.5, 1.3 and 6, therefore gives five forward gears with a reverse ratio of 6.0. The Humvee's list ends in 3.6, which is its reverse, so it also has five forward gears. The tracked vehicles' gear lists were not checked this way.
+In a wheeled vehicle's gear list, the last ratio is the reverse gear, applied in the opposite direction (confirmed in the game code). The other entries are the forward gears, in order. The Bobcat's list, 4.2, 2.8, 1.9, 1.5, 1.3 and 6, therefore gives five forward gears with a reverse ratio of 6.0. The Humvee's list ends in 3.6, which is its reverse, so it also has five forward gears. Tracked vehicles read their list differently: the entry with a ratio of 0 is neutral, so they have 1 reverse and 3 forward gears (see the tracked section below).
 
 The data does not store a 0 to top speed time, so acceleration is shown here only through the torque and first gear numbers. The game files hold no acceleration time to read.
 

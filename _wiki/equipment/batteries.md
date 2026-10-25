@@ -36,7 +36,7 @@ The shop text lists two sizes. The Battery is a medium 20 V, 5 AH cell. The High
 
 The weights are in kilograms. The game stores item weight as a whole number 1,000 times the kilogram figure, so the kilogram value here is derived from it.
 
-- The drills use battery power while they work, at 1.25 per second in the item data.
+- The drills spend 1 charge per repair swing. The item data also lists 1.25 per second for them, but nothing in the game reads that figure.
 - The Defibrillator needs a battery to charge and to use, according to its shop text. See [Medical Items](medical-items.md).
 - A battery is a small magazine of charges. The Battery holds 100 charges and the High Capacity Battery holds 250, and a new one is full. Tools spend charges, and the Defibrillator uses 25 per discharge, so a Battery covers four discharges and a High Capacity Battery ten.
 - Each tool and the Defibrillator have one battery slot. Their reload action swaps in a new battery from your inventory, the same way a gun swaps a magazine, and a new tool comes with a battery loaded.

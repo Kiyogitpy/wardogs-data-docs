@@ -36,7 +36,7 @@ The export gives no display name for the Shelter and the Wood base, so this page
 
 ### Structures
 
-Parts of a larger structure, such as a floor or a roof, are placed with their parent and cannot be picked on their own. They are shown on the parent's row.
+Parts of a larger structure, such as a floor or a roof, are placed with their parent and cannot be picked on their own. They are shown on the parent's row. A part's own cost is not added to the parent's total: the parent's cost is the whole price.
 
 | Structure | Build Supplies | Health (HP) | Hammers | Parts |
 |---|---:|---:|---|---|

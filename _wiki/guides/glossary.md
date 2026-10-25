@@ -130,7 +130,7 @@ This glossary explains the terms a player meets in the game and on this wiki. Ea
 | Recoil | The kick of a shot, which moves the aim after firing. | [Spread and Recoil](../game-mechanics/spread-and-recoil.md) |
 | Recon | One of the six roles. | [Recon](../progression-and-economy/recon.md) |
 | Remnant | The pieces that stay on the ground when a demolished prop breaks. | [Destruction](../game-mechanics/destruction.md) |
-| Revive | Restoring a downed player to health, done by a teammate. | [Downed and Revive](../game-mechanics/downed-and-revive.md) |
+| Revive | Restoring a downed player to health, usually done by a teammate. A player revived by an enemy becomes a "No Value Kill" for 60 s. | [Downed and Revive](../game-mechanics/downed-and-revive.md) |
 | Ricochet | A bullet bouncing off a surface. The chance is 0% to 80%, set by the surface material, and bodies and heads never ricochet. | [Penetration and Ricochet](../game-mechanics/penetration-and-ricochet.md) |
 | Role | One of the six classes, Assault, Driver, Medic, Pilot, Recon and Support. Each role has its own mastery and skills. | [Progression and Economy](../progression-and-economy.md) |
 

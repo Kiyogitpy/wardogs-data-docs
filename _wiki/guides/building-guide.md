@@ -115,7 +115,7 @@ Six stationary weapons are buildable. Five are built with the Large Hammer and t
 | Emplacement | Build Supplies | Health (HP) | Gun and ammunition | Restock | What the data says it counters |
 |---|---:|---:|---|---|---|
 | [L81 Mortar](../building/l81-mortar.md) | 600 | 3,000 | 120x800 mm shells, 132 to 684 m | 150 Ammo Supplies | Targets are not listed. Its range table runs 132 to 684 m |
-| [Talon 9K-SAM](../building/talon-9k-sam.md) | 650 | 3,000 | 72 mm heavy machine gun, 1,000 m effective | 200 Ammo Supplies | Targets are not listed. Lock-on takes 2.0 s |
+| [Talon 9K-SAM](../building/talon-9k-sam.md) | 650 | 3,000 | 72 mm heavy machine gun, 1,000 m effective | 200 Ammo Supplies | Air vehicles only. Lock-on takes 2.0 s |
 | [Stingray](../building/stingray.md) | 650 | 3,000 | UAV drone projectile, lock-on | 900 Mechanical Supplies and 5,000 cash | Air vehicles only: the Little Bird family, the Havoc and the fixed-wing airplane |
 | [MG Nest](../building/mg-nest.md) | 650 | 1,800 when finished (3,000 under construction) | .50 cal tracer machine gun | 200 Ammo Supplies for 60 rounds | Targets are not listed. 600 rounds/min, 1,000 m range, 8 s reload |
 | [Vanguard CIWS](../building/vanguard-ciws.md) | 1,200 | 5,000 | 20x102 mm cannon, 1,800 rounds/min, 1,000 m | 250 Ammo Supplies for 500 rounds | Targets are not listed |
