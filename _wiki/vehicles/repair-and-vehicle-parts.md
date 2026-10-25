@@ -43,7 +43,7 @@ A tyre has three states in the data:
 2. **Damaged** (deflated) when the wheel's health falls to 55% of its maximum or below. A 75 HP tyre deflates at about 41 HP or less. Season 1 used 50%, and Season 2 raised it to 55% on every wheeled axle.
 3. **Destroyed** when the wheel's health reaches zero.
 
-A deflated tyre keeps its wheel on the ground but uses a different collision shape. A destroyed tyre is replaced by a damaged-wheel model. The data stores the tyre radius for each state. On the Dune Buggy it falls from 0.45 m to 0.345 m and then to 0.26 m. A deflated tyre also adds 1.5 of wheel drag, cuts grip by 0.35 friction, pulls the steering toward the damaged side (0.125) and adds 0.05 braking. The data does not say how the smaller radius of a deflated or destroyed tyre affects the car beyond the collision shape.
+A deflated tyre keeps its wheel on the ground but uses a different collision shape. A destroyed tyre is replaced by a damaged-wheel model. The data stores a tyre radius for each state (on the Dune Buggy 0.45 m, 0.345 m and 0.26 m). The code that applies these per-state values was not found: in the code read, the damage state itself only shows or hides wheel meshes and sets two visual values ([round 48 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round48.md)). A deflated tyre also adds 1.5 of wheel drag, cuts grip by 0.35 friction, pulls the steering toward the damaged side (0.125) and adds 0.05 braking. The data does not say how the smaller radius of a deflated or destroyed tyre affects the car beyond the collision shape.
 
 ### Health triggers
 
