@@ -68,6 +68,10 @@ Handling matches the base Kodiak: mass 2,750, hand brake 50, and front steering 
 - Price rose from 3,750 to 6,750 cash.
 - The vehicle item changed size in inventory (height 4 to 3).
 
+## Vehicle spawns
+
+The Kodiak [M249] is placed by the ground vehicle yards of all four main maps: [Bakurani](../game-modes-and-maps/bakurani.md), [Ozeti](../game-modes-and-maps/ozeti.md), [Zestafona](../game-modes-and-maps/zestafona.md) and [Saburtulo](../game-modes-and-maps/saburtulo.md). The yards list the vehicle family (Kodiak, Kodiak [M249] and Kodiak [Pickup]), not each variant, so which variant appears in a slot is not in the data (inferred). A match offers it in all 7 ground yards on Ozeti, 6 or 7 of the 6 or 7 on Bakurani, 7 of 7 on Zestafona and 6 of 6 on Saburtulo. The data gives no vehicle count or respawn timer per yard. See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
+
 ## See also
 
 - [Kodiak](kodiak.md) and [Kodiak [Pickup]](kodiak-pickup.md), the other Kodiak variants
@@ -76,6 +80,7 @@ Handling matches the base Kodiak: mass 2,750, hand brake 50, and front steering 
 
 ## Sources
 
+- [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md): which maps place this vehicle
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
 - [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
 - [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md)

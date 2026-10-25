@@ -68,6 +68,10 @@ The M113 APC SV has no weapons. It has ten seats: a driver and nine passenger se
 - The 20×102 mm cannon rule changed from -60% to -84%, so cannon hits from that calibre now do less damage.
 - Track rebound damping rose from 12,000 to 17,000.
 
+## Vehicle spawns
+
+Each side's spawn area has a deployment board that places this vehicle in the side's own version (Lonestar, Manticore or Valkyra): 3 boards per match on [Bakurani](../game-modes-and-maps/bakurani.md), [Ozeti](../game-modes-and-maps/ozeti.md), [Zestafona](../game-modes-and-maps/zestafona.md) and [Saburtulo](../game-modes-and-maps/saburtulo.md). Players deploy onto it from the board. Each board has 4 to 6 vehicle slots. In the Saburtulo data the Lonestar and Manticore boards sit in each other's spawn areas, and a few other mismatches between board and yard tags exist (see [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md)). Respawn time after a loss is not in the data; the deploy cooldown is 600 s.
+
 ## See also
 
 - [T-72B3](t-72b3.md), another tracked vehicle
@@ -75,6 +79,7 @@ The M113 APC SV has no weapons. It has ten seats: a driver and nine passenger se
 
 ## Sources
 
+- [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md): which maps place this vehicle
 - [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the smoke screen's 16 s active window and 90 s cooldown, and the other round 41 vehicle readings
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
 - [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)

@@ -63,6 +63,10 @@ The airplane has no weapons. It has two seats: a driver seat and an active passe
 - One health-threshold flag in its gameplay settings changed from true to false, and the export does not say what that flag controls.
 - The flares button is renamed Fire Countermeasures. The key is the same (V on keyboard).
 
+## Vehicle spawns
+
+The airplane falls under the same general air tag as the helicopters, so the air vehicle yards on the four main maps could place it, but no yard names it and the data does not say whether it is ever placed (not known). See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
+
 ## See also
 
 - [Vehicle damage](vehicle-damage.md)
@@ -71,6 +75,7 @@ The airplane has no weapons. It has two seats: a driver seat and an active passe
 
 ## Sources
 
+- [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md): which maps place this vehicle
 - [Vehicles (reference)](../../content/Wardogs_Vehicles_v2.md)
 - [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
 - [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md)

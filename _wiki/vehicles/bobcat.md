@@ -77,6 +77,10 @@ The Bobcat has no weapons. Its two seats are a driver and a passenger.
 - Wheel deflation threshold rose from 0.5 to 0.55 on both axles.
 - Price is unchanged at 500.
 
+## Vehicle spawns
+
+The Bobcat is placed by the light vehicle yards of all four main maps: [Bakurani](../game-modes-and-maps/bakurani.md), [Ozeti](../game-modes-and-maps/ozeti.md), [Zestafona](../game-modes-and-maps/zestafona.md) and [Saburtulo](../game-modes-and-maps/saburtulo.md). Each side has one yard that allows only the Bobcat; a match offers it in all 3 light yards on each of the four maps. The data gives no vehicle count or respawn timer per yard. See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
+
 ## See also
 
 - [Kodiak](kodiak.md), the next size up
@@ -85,6 +89,7 @@ The Bobcat has no weapons. Its two seats are a driver and a passenger.
 
 ## Sources
 
+- [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md): which maps place this vehicle
 - [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the wheeled steering and pedal tuning for this vehicle
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
 - [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)

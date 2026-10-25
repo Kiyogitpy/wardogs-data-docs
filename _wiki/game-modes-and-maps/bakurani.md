@@ -12,6 +12,7 @@ description: "The Bakurani King of the Hill map: zone sizes, the three zone plac
 | **General** | |
 | Map area | About 16.3 km square (minimap bounds) |
 | Modes | King of the Hill, two server browser entries |
+| Vehicle spawns | 3 deployment boards per entry; 13 vehicle yards in the first entry and 12 in the second |
 | **Zones** | |
 | Control Zone | 500 m across, 170 m tall |
 | Hot Zone | 85 m across, 170 m tall |
@@ -20,7 +21,7 @@ description: "The Bakurani King of the Hill map: zone sizes, the three zone plac
 | Internal name | Server browser Bakurani_KOTH_01 and Bakurani_KOTH_02; zone config Bakurani; region config and minimap folder Kavkazi |
 {: .wiki-infobox }
 
-Bakurani is the first King of the Hill map in the server browser, and it is the one with the most zone data. It has three alternative zone placements and 60 named zone regions, so the zone can appear in several parts of the map. The data does not describe its streets, buildings or spawn points.
+Bakurani is the first King of the Hill map in the server browser, and it is the one with the most zone data. It has three alternative zone placements and 60 named zone regions, so the zone can appear in several parts of the map. The data does not describe its streets or buildings. Its vehicle and infantry spawn areas are covered under Vehicle spawns.
 
 ## Overview
 
@@ -46,6 +47,32 @@ The Control Zone is 500 m across and 170 m tall, with an 85 m Hot Zone in its ce
 
 - **Zone regions.** The data lists 60 named regions. Seven are towers with weight 0, which are never drawn at random. Most other regions have weight 1, and a few have weight 5, including SUNFLOWERS HOUSE, WEST FOREST PYLON and HILLSIDE TOP, which makes them much more likely. The Hot Zone moves to a region drawn at random by weight, and the region just used gives away half its weight, so it is unlikely to come up again at once. Regions overlap in 33 pairs, which does not affect the draw.
 
+## Vehicle spawns
+
+Bakurani has two server browser entries with different spawn areas, so its vehicle spawns differ between them. The first entry uses Baghi (Lonestar side), Khevuli (Valkyra side) and Chuta (Manticore side) and has 13 vehicle yards (7 ground, 3 air, 3 light) with 67 vehicle slots. The second uses Sanavi (Lonestar side), Rachuri (Valkyra side) and Tavarshi (Manticore side) and has 12 vehicle yards (6 ground, 3 air, 3 light) with 72 vehicle slots. Both entries have 3 deployment boards.
+
+**First entry (Baghi, Khevuli, Chuta)**
+
+| Side | Spawn area | Deployment board | Ground yards | Air yards | Light yards | Vehicle slots | Infantry spawn spots |
+|---|---|---|---:|---:|---:|---:|---:|
+| Lonestar | Baghi | Lonestar version | 3 | 1 | 1 | 25 | 69 |
+| Valkyra | Khevuli | Valkyra version | 1 | 1 | 1 | 21 | 46 |
+| Manticore | Chuta | Manticore version | 3 | 1 | 1 | 21 | 81 |
+
+**Second entry (Sanavi, Rachuri, Tavarshi)**
+
+| Side | Spawn area | Deployment board | Ground yards | Air yards | Light yards | Vehicle slots | Infantry spawn spots |
+|---|---|---|---:|---:|---:|---:|---:|
+| Lonestar | Sanavi | Lonestar version | 2 | 1 | 1 | 23 | 81 |
+| Valkyra | Rachuri | Valkyra version | 2 | 1 | 1 | 25 | 69 |
+| Manticore | Tavarshi | Manticore version | 2 | 1 | 1 | 24 | 69 |
+
+The side names follow the spawn vehicle that each area's yards list (Lonestar, Valkyra or Manticore version; the pairing with the three team slots is inferred, see the [Vehicle Spawns data page](../../game-features/Wardogs_VehicleSpawns_v1.md)). Vehicle slots are the places where each side's yards park vehicles (inferred from the yard's target points). In the first entry the Khevuli area has no APC volume of its own and only one ground yard; the Baghi and Chuta areas have three ground yards. One Baghi yard also allows the Azar test vehicle, which has no wiki article. The Chuta infantry spawn area is the largest in the first entry. 
+
+- **Vehicles offered (inferred).** The yards do not name vehicles one by one; they allow vehicle families by tag. The ground yards allow the Humvee, Kodiak, Ural, Dune Buggy and Wolf 110 families (each family covers its gun variants), the tank family of the L2A6, Flakpanzer Gepard and SPH-2, and the T-72B3. The light yards allow only the Bobcat. The air yards allow any helicopter (the fixed-wing airplane is under the same tag; whether a yard ever places it was not checked). The data does not say how many of each vehicle a yard holds or in what order they appear.
+- **Limits and timers.** A player may own at most 2 spawned vehicles at a time. After a player deploys onto a spawn vehicle, the deployment board's cooldown is 600 s (this value is stored; its start trigger was not traced). How long a destroyed vehicle takes to return is not in the data.
+- **What is not known.** Which vehicle each slot gives, how many vehicles of one kind can exist, and whether every King of the Hill match uses these yards are not in the game files.
+
 ## Layouts
 
 The zone layout for this map is described in full on [Zone Layouts](zone-layouts.md#bakurani).
@@ -65,6 +92,8 @@ The zone layout for this map is described in full on [Zone Layouts](zone-layouts
 
 ## Sources
 
+- [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md): boards, yards and infantry spawn areas per map
+- [Vehicle spawn data (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/vehicle-spawns.json)
 - [Maps and gym data](../../content/Wardogs_Maps_v2.md)
 - [ControlZone game feature](../../game-features/Wardogs_GameFeatures_ControlZone_v2.md)
 - [ControlZone regions](../../game-features/Wardogs_GameFeatures_ControlZoneRegions_v2.md)

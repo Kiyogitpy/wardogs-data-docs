@@ -2,7 +2,7 @@
 title: "Maps"
 parent: "Game Modes & Maps"
 group: "Maps"
-description: "Every map the data names, the modes that use it, and its zone layout. Spawns and buildings are not described."
+description: "Every map the data names, the modes that use it, and its zone layout. Vehicle spawns are summarised; buildings are not described."
 ---
 
 # Maps
@@ -14,7 +14,7 @@ description: "Every map the data names, the modes that use it, and its zone layo
 | Training gyms | Two test areas, not playable modes |
 {: .wiki-infobox }
 
-Wardogs has four main King of the Hill maps, a fifth King of the Hill map (Kenya, whose zone layout is labelled Africa in the data) and a Sniper Showdown map. The first five are named in the server browser by the name players see. The sources do not describe level layouts, spawn points or buildings, so the articles here cover only what the data records about each map.
+Wardogs has four main King of the Hill maps, a fifth King of the Hill map (Kenya, whose zone layout is labelled Africa in the data) and a Sniper Showdown map. The first five are named in the server browser by the name players see. The sources do not describe level layouts or buildings, so the articles here cover only what the data records about each map: zones, regions and, for the four main maps, vehicle and infantry spawn areas.
 
 ## Layouts
 
@@ -72,6 +72,21 @@ The Sniper Showdown map. Its zone is 350 m across and 170 m tall, with a 75 m Ho
 
 The Kenya map, added in Season 2. Its zone set is labelled Africa in the data. Its Control Zone is 550 m across and 150 m tall. Four placements exist: a default with weight 1, and North, East and West with weight 0. It is covered in full on [Kenya (Africa layout)](unnamed-africa-layout.md).
 
+### Vehicle spawns on the main maps
+
+Each King of the Hill match uses three spawn areas, one per side, and each area has a vehicle deployment board, several vehicle yards and an infantry spawn area. The counts below are per server browser entry; the data does not say how many vehicles of each kind a yard holds.
+
+| Map (entry) | Deployment boards | Vehicle yards (ground / air / light) | Vehicle slots |
+|---|---:|---|---:|
+| Bakurani (first entry) | 3 | 13 (7 / 3 / 3) | 67 |
+| Bakurani (second entry) | 3 | 12 (6 / 3 / 3) | 72 |
+| Ozeti | 3 | 13 (7 / 3 / 3) | 74 |
+| Zestafona | 3 | 12 (7 / 2 / 3), plus one extra air yard | 61, plus 7 |
+| Saburtulo | 3 | 11 (6 / 2 / 3), plus one extra air yard | 68, plus 9 |
+| Kenya | Not in the data | Not in the data | Not in the data |
+
+The Berlin, Paris and Mindori entries also have spawn areas of the same kind; the Tevza entry names three spawn areas that hold no vehicle or infantry spawn data in the game files. The details are on the [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md) data page.
+
 ### Other entries
 
 The server browser table has four further King of the Hill entries with no display name, and one Sniper Showdown layout (for North America) and one for Russia that are not matched to a name. The sources do not say where those are, so they are not described further.
@@ -88,7 +103,7 @@ The data includes two test areas that are not playable modes. A minimal test are
 
 ## Rules and objectives
 
-The game's level files exist for the four main worlds and the test gym. The data lists the spawn areas for vehicles and for the test gym (see [Zone Layouts](zone-layouts.md)), but the buildings inside the maps have not been read, so they are not described here. Anything a player sees on a map beyond the zone, region and spawn data is not yet known.
+The game's level files exist for the four main worlds and the test gym. The data lists the spawn areas for vehicles and infantry (see the Vehicle spawns section of each map article, and [Zone Layouts](zone-layouts.md)), but the buildings inside the maps have not been read, so they are not described here. Anything a player sees on a map beyond the zone, region and spawn data is not yet known.
 
 The playable areas are about 8.5 by 7.8 km on the Europe world, 11 by 11 km on Kavkazi, 10.5 by 9.2 km on North America and 13.2 by 13.2 km on Russia. The map data measures in centimetres (one world unit is 1 cm). On Europe, Kavkazi and North America the kill height is 1,500 m below the map's zero level; the data gives no kill height for Russia.
 

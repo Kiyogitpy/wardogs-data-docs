@@ -60,6 +60,10 @@ Rifle damage works as on the [Z20 Lakota](z20-lakota.md). The tail rotor is the 
 - The vehicle item is one step wider in inventory (width 4 to 5).
 - The flares button is renamed Fire Countermeasures. The key is the same (V on keyboard).
 
+## Vehicle spawns
+
+The Z20 Lakota [Miniguns] is covered by the air vehicle yards (inferred). Each side normally has one air yard, and every yard allows any helicopter by a general air tag, so it can be placed on all four main maps (three air yards per match). The Z20 Lakota family (with and without miniguns) is named directly in one Zestafona yard, the extra air yard of the Lonestar side. The airframe is not named in those yards, so which helicopter appears in a slot is not in the data. See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
+
 ## See also
 
 - [Z20 Lakota](z20-lakota.md), the transport model
@@ -68,6 +72,7 @@ Rifle damage works as on the [Z20 Lakota](z20-lakota.md). The tail rotor is the 
 
 ## Sources
 
+- [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md): which maps place this vehicle
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
 - [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
 - [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md)
