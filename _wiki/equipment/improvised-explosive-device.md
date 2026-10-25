@@ -43,6 +43,10 @@ The IED uses a C4-style detonation, so a blast from another C4 or IED sets it of
 
 **Chain reactions.** Another C4 or IED blast sets it off.
 
+## Default controls
+
+Held, the IED uses the left mouse button (right trigger on a gamepad) for its main use, the right mouse button (left trigger) for its secondary use, and I to inspect. These are defaults and can be rebound in the control settings.
+
 ## Damage
 
 ### To players
@@ -88,3 +92,4 @@ The Season 2 items data lists no change to the Improvised Explosive Device, and 
 - [Explosive actor defaults](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/explosive-actors.json): IED actor values
 - [Vehicle damage pipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md): how explosives are scaled against vehicles
 - [Items and Equipment changes, Season 2](../../season-2-changes/items-equipment.md): the Season 2 check
+- [Misc Gameplay Assets: item inputs](../../content/Wardogs_MiscGameplayAssets_v1.md): section 7a, the default keys

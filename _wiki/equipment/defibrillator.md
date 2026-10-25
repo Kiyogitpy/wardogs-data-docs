@@ -54,6 +54,10 @@ The revive speed boost skills apply after you revive a teammate. Your sprint and
 
 The use animation in the data is 9.15 s long, and it loops in its middle part. The 4 s charge is the timer the item runs before the discharge. You need a teammate who is downed for it to revive, and you must be alive and not downed. It has its own reload action, and its magazine is a battery.
 
+## Default controls
+
+Held, the Defibrillator uses the left mouse button (right trigger on a gamepad) for its main use and the right mouse button (left trigger) for its secondary use. Inspect is I. The reload key, R (the left face button on a gamepad), is also bound while it is held. These are defaults and can be rebound in the control settings.
+
 ## Cost
 
 The Item Shop lists the Defibrillator at 1,600 cash.
@@ -80,3 +84,4 @@ No Season 2 change to the Defibrillator is listed in the data.
 - [Items and Equipment, Season 2](../../season-2-changes/items-equipment.md): checked for changes
 - [Round 40 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-medical-movement.md): revive health, decay and armour values
 - [Round 39 medical and movement evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-medical-movement.md): Medic skill magnitudes are absent from the data (M2)
+- [Misc Gameplay Assets: item inputs](../../content/Wardogs_MiscGameplayAssets_v1.md): section 7a, the default keys

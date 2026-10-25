@@ -127,6 +127,8 @@ A sequence is a list of `TimingInfo` entries. Each entry names an explosion reci
 
 Three layers, combined in this order: the **weapon** asset (section 4c) names a **default muzzle** attachment (section 4b). The **ammo** asset (section 4a) can override flash color and sparks. The attachment's multipliers scale the weapon's values. The exact multiplication rule is an inference (see section 10).
 
+Row-level values for every ammo, muzzle-device, weapon and vehicle-gun flash asset are on [Muzzle Flashes](Wardogs_MuzzleFlashes_v1.md).
+
 ### 4a. Ammo overrides (`PDA_MuzzleFlashAmmuniton_C`, 12 assets)
 
 | Asset | OverrideFlash | Flash RGB (R,G,B) | OverrideSparks | Spark amount (X,Y) | Spark RGB |
