@@ -23,6 +23,15 @@ build finished). A row whose value scales with a runtime amount the tables don't
 multiple of that amount instead of a cash figure.
 
     python _tools/zone_rewards.py
+    python _tools/zone_rewards.py --check     # assert the Team Offence values (exit 1 on mismatch)
+
+Names are matched case-insensitively. The Team Offence table names its selector and variable keys
+"basePoints", "causeMultiplier" while its expression and DefaultOption say "BasePoints",
+"CauseMultiplier". The selector and variable maps are TMap<FName, ...> (sdk/raw/WDGame_structs.hpp,
+FWDRewardCalculatorExpression), and an FName compares case-insensitively, so the game's lookup
+treats them as the same key; the lower-casing below is that rule. The Team Offence table
+(DT_ChallengeRewards_TeamOffence) is evaluated too, and its Punish.Kill points under each cause
+context are written to the "teamOffence" part of the output.
 """
 import ast
 import glob
@@ -30,9 +39,11 @@ import json
 import math
 import os
 import re
+import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TABLES = os.path.join(ROOT, "data", "**", "DT_ChallengeRewards_SessionEvents_*.json")
+TEAM_OFFENCE = os.path.join(ROOT, "data", "**", "DT_ChallengeRewards_TeamOffence.json")
 OUT = os.path.join(ROOT, "assets", "data", "zone-rewards.json")
 CASH_TABLES = os.path.join(ROOT, "data", "**", "DT_Reward_Cash_*.json")
 CASH_DOCS = ["Wardogs_Rewards_and_Progression_v2.md"]
@@ -108,16 +119,16 @@ def evaluate(expr, values):
 def resource_values(res, tags):
     """(value, scaled_by) for one resource in one context; scaled_by names the unknown inputs."""
     expr = res["DefaultExpression"]["ExpressionString"]
-    selectors = {s["Key"]: s["Value"] for s in res["Selectors"]}
-    variables = {v["Key"]: v["Value"] for v in res["Variables"]}
+    selectors = {s["Key"].lower(): s["Value"] for s in res["Selectors"]}
+    variables = {v["Key"].lower(): v["Value"] for v in res["Variables"]}
     values, unknown = {}, set()
     for name in set(re.findall(r"[A-Za-z_]\w*", expr)) - set(FUNCS):
         chosen = name
-        if name in selectors:
-            sel = selectors[name]
+        if name.lower() in selectors:
+            sel = selectors[name.lower()]
             chosen = next((o["Variable"] for o in sel["Options"]
                            if matches(o["Condition"]["AutoDescription"], tags)), sel["DefaultOption"])
-        var = variables.get(chosen)
+        var = variables.get(chosen.lower())
         kind = var["VariableType"].split("::")[1] if var else None
         if kind == "Literal":
             values[name] = float(var["LiteralValue"])
@@ -189,9 +200,48 @@ def cash_labels(tables):
     return out, skipped
 
 
+TO_CTX = ["ClaymoreKill", "ExplosiveKill", "EnvironmentKill", "Headshot", "PrecisionArtilleryStrikeKill",
+          "SniperKill"]
+
+
+def team_offence():
+    """Forgive and Punish.Kill for the plain case and each cause context (flagged = TeamkillFlagged)."""
+    out = {}
+    for path in sorted(glob.glob(TEAM_OFFENCE, recursive=True)):
+        for row, data in load(path)["Rows"].items():
+            res = data["Resources"][0]
+            cases = {"plain": set()}
+            if row.endswith("Punish.Kill"):
+                for c in TO_CTX:
+                    cases[c] = {CTX + c}
+                cases["TeamkillFlagged"] = {CTX + "TeamkillFlagged"}
+                cases["Headshot+TeamkillFlagged"] = {CTX + "Headshot", CTX + "TeamkillFlagged"}
+            out[row] = {n: round(resource_values(res["Value"], t)[0], 4) for n, t in cases.items()}
+            out[row]["resource"] = res["Key"]["TagName"]
+    return out
+
+
+def check():
+    to = team_offence()
+    want = {("Challenges.Rewards.TeamOffence.Forgive", "plain"): 500.0,
+            ("Challenges.Rewards.TeamOffence.Punish.Kill", "plain"): 5.0,
+            ("Challenges.Rewards.TeamOffence.Punish.Kill", "ClaymoreKill"): 1.0,
+            ("Challenges.Rewards.TeamOffence.Punish.Kill", "ExplosiveKill"): 4.0,
+            ("Challenges.Rewards.TeamOffence.Punish.Kill", "TeamkillFlagged"): 2.0,
+            ("Challenges.Rewards.TeamOffence.Punish.Kill", "Headshot"): 5.0}
+    bad = [(k, to.get(k[0], {}).get(k[1]), v) for k, v in want.items() if to.get(k[0], {}).get(k[1]) != v]
+    for b in bad:
+        print("MISMATCH", b)
+    if bad:
+        raise SystemExit(1)
+    print("ok", json.dumps(to, sort_keys=True))
+
+
 def main():
+    if "--check" in sys.argv:
+        return check()
     challenges = {}
-    for path in sorted(glob.glob(TABLES, recursive=True)):
+    for path in sorted(glob.glob(TABLES, recursive=True)) + sorted(glob.glob(TEAM_OFFENCE, recursive=True)):
         for row, data in load(path)["Rows"].items():
             for res in data["Resources"]:
                 key = f"{row}|{res['Key']['TagName']}"
@@ -204,7 +254,7 @@ def main():
     cash, skipped = cash_labels(cash_rows())
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, "w", encoding="utf-8", newline="\n") as f:
-        json.dump({"challenges": challenges, "cash": cash}, f, separators=(",", ":"), sort_keys=True)
+        json.dump({"challenges": challenges, "cash": cash, "teamOffence": team_offence()}, f, separators=(",", ":"), sort_keys=True)
     changed = sum(1 for e in challenges.values() if len(set(e["v"])) > 1)
     labels = sum(len(rows) for rows in cash.values())
     print(f"{len(challenges)} challenge rows ({changed} change with the zone), "
