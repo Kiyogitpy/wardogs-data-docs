@@ -17,4 +17,6 @@ Practical guides for playing Wardogs, written from the numbers in the game data.
 | [Beginner's Guide](guides/beginners-guide.md) | Health, where hits count, armor, healing, aiming and movement |
 | [Choosing Ammo](guides/choosing-ammo.md) | When armor-piercing beats full metal jacket, and what to load against each armor class |
 | [Aiming the SPH-2](guides/aiming-the-sph-2.md) | Every gun-sight instrument with its numbers, a fire mission step by step, and correcting your aim |
+| [Making Money](guides/making-money.md) | Where cash comes from by role, passive missions and wagers, the Gold Exchange, the best-value gear, and the costs that drain cash |
+| [Building a Base](guides/building-guide.md) | Build Supplies and hammers, what to build first, the Forward Operating Base, the stationary emplacements, and how fast structures fall |
 | [Glossary](guides/glossary.md) | An A to Z list of the game and wiki terms, each with a short meaning and a link |
