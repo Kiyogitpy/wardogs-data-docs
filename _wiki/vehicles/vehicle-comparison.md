@@ -150,7 +150,7 @@ How to read the table:
 - **The B-13 rocket is a helicopter pod rocket.** The Havoc and the AH-6R [Rockets] fire it. The data lists no hand-carried launcher for it.
 - **The 9K333 Verba is listed with the launchers because its rocket is an explosive round.** The data does not say it needs a target lock, so the counts treat it as any other rocket.
 
-The Z20 Lakota [Miniguns] article says its rifle damage works as on the Z20 Lakota and gives no separate table. The Fixed-wing airplane article lists no hit counts.
+The Z20 Lakota [Miniguns] article says its rifle damage works as on the Z20 Lakota and gives no separate table. The Fixed-wing airplane article lists no hit counts: it has no damage zones, so hits to it do nothing.
 
 ## Value for money
 
