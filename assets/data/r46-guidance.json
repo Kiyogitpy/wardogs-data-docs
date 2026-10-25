@@ -1,0 +1,34 @@
+{
+  "_note": "WDProjectileGuidance fields stored in the cooked asset; unset keys keep the native struct default (not read). Struct layout: bGuidedProjectile, ProportionalNavigationConstant, MaxTurnAngle, LockOnTime, NearMissExtentMultiplier.",
+  "projectiles": {
+    "DA_70mm_ProjectileData": {
+      "GuidanceData": {
+        "bGuidedProjectile": true,
+        "MaxTurnAngle": 1.0
+      },
+      "TypicalSpeed": 22400.0,
+      "MaxProjectileLifetime": 100.00002,
+      "ArmingDelay": null
+    },
+    "DA_72mm_ProjectileData": {
+      "GuidanceData": {
+        "bGuidedProjectile": true,
+        "ProportionalNavigationConstant": 30.0,
+        "MaxTurnAngle": 10.0,
+        "LockOnTime": 2.0
+      },
+      "TypicalSpeed": 45000.0,
+      "MaxProjectileLifetime": 50.0,
+      "ArmingDelay": 0.13
+    },
+    "DA_DebugHomingRocketData": {
+      "GuidanceData": {
+        "bGuidedProjectile": true,
+        "MaxTurnAngle": 2.0
+      },
+      "TypicalSpeed": 100000.0,
+      "MaxProjectileLifetime": 20.0,
+      "ArmingDelay": null
+    }
+  }
+}
