@@ -748,6 +748,7 @@ def attachments_page():
             body.append(f"- **{cat}**: no effect entries in the loadout data.")
     body += ["", "Each weapon article lists its own slots and default parts under its Attachments section.", "",
              "## See also", "",
+             "- [Choosing Attachments](guides/choosing-attachments.md), which part to pick in each category and the cheapest useful picks",
              "- [Spread and Recoil](game-mechanics/spread-and-recoil.md), where bipods, muzzle devices and foregrips change spread",
              "- [Underbarrel Grenade Launcher (test item)](attachments/underbarrel-grenade-launcher.md), a 40 mm launcher attachment named as a test item in the data",
              "- [Weapons](weapons.md)",
