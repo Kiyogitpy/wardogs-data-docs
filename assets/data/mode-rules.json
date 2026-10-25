@@ -1,0 +1,874 @@
+{
+ "meta": {
+  "source": "CL516586 paks (config files), restored exe constructors (native), data/ (currencies)",
+  "evidence": "docs/evidence/round39-modes-ai-other.md",
+  "note": "native defaults are constructor values; a server or runtime option can override them"
+ },
+ "initialBalances": {
+  "Cash": 10000,
+  "GoldBars": 0
+ },
+ "matchStateIni": {
+  "WDMatchStateWaitingToStart": {
+   "StateTimeLimit": 5.0,
+   "bCanPurchase": "false",
+   "bCanSpawnVehicles": "false",
+   "bShouldTrackStats": "false",
+   "bCanEarnCash": "false"
+  },
+  "WDMatchStateInProgress": {
+   "StateTimeLimit": 0
+  },
+  "WDMatchStateEnding": {
+   "StateTimeLimit": 35.0
+  },
+  "WDMatchStateBase": {
+   "bCanPurchase": "true",
+   "bCanSpawnVehicles": "true",
+   "bShouldTrackStats": "true",
+   "bCanEarnCash": "true"
+  }
+ },
+ "matchStateIniNote": "DefaultMatchState.ini names WDMatchStateWaitingToStart / InProgress / Ending, classes that are not in this build's SDK; treat as unused legacy config",
+ "pluginIni": {
+  "ControlZone.WDControlZoneGameStateComponent.ScorePerControlZoneTick": 1,
+  "BaseScenario.WDScenarioStateComponent.ScenarioPostMatchTimeoutDuration": 15.0,
+  "BaseScenario.WDScenarioStateComponent.PvEGameEndUiDelay": 0.5,
+  "VehicleUtility.WDVehicleUtilityComponent.MaxVehiclesPerPlayer": 2
+ },
+ "upluginDescriptions": {
+  "HotPotato": {
+   "Description": "Hot Potato pre-lobby world feature. Enable this to run the hot potato mini-game while players wait in the pre-lobby.",
+   "BuiltInInitialFeatureState": "Registered",
+   "EnabledByDefault": false
+  },
+  "ServerSeeding": {
+   "Description": "Server Seeding world feature. Enable this to allow server seeding for this game mode.",
+   "BuiltInInitialFeatureState": "Registered",
+   "EnabledByDefault": false
+  },
+  "Deathmatch": {
+   "Description": "The Deathmatch game feature provides basic functionality to support a Deathmatch game mode",
+   "BuiltInInitialFeatureState": "Registered",
+   "EnabledByDefault": false
+  }
+ },
+ "exampleServer": {
+  "file": "data/Wardogs/Config/ServerConfigs/ExampleStandaloneServerConfig.ini",
+  "MinimumRequiredPlayers": 20,
+  "KOTH_ScorePeriod": 24,
+  "bLockOverpopulatedTeamsConfig": "true",
+  "OverpopulatedTeamThresholdConfig": 2,
+  "RotationMode": "Ordered",
+  "rotationEntryCount": 72,
+  "rotationByMap": [
+   {
+    "map": "Europe",
+    "experience": "Madrid_KOTH_01",
+    "entries": 24,
+    "zoneAlternatorCounts": {
+     "ZoneAlternator.Ozeti.Church.Circle": 6,
+     "ZoneAlternator.Ozeti.Default.Circle": 6,
+     "ZoneAlternator.Ozeti.Farmland.Circle": 6,
+     "ZoneAlternator.Ozeti.River.Circle": 6
+    }
+   },
+   {
+    "map": "Kavkazi",
+    "experience": "Bakurani_KOTH_01",
+    "entries": 24,
+    "zoneAlternatorCounts": {
+     "ZoneAlternator.Bakurani.Default.Circle": 6,
+     "ZoneAlternator.Bakurani.Farmland.Circle": 6,
+     "ZoneAlternator.Bakurani.Lumberyard.Circle": 6,
+     "ZoneAlternator.Bakurani.River.Circle": 6
+    }
+   },
+   {
+    "map": "NorthAmerica",
+    "experience": "Detroit_KOTH_01",
+    "entries": 24,
+    "zoneAlternatorCounts": {
+     "ZoneAlternator.Zestafona.Default.Circle": 6,
+     "ZoneAlternator.Zestafona.Houses.Circle": 6,
+     "ZoneAlternator.Zestafona.SmallFactory.Circle": 6,
+     "ZoneAlternator.Zestafona.WaterTreatment.Circle": 6
+    }
+   }
+  ],
+  "lightingPresets": [
+   "DayClear",
+   "DayEarlyClear",
+   "DayEarlyFog",
+   "DayLateClear",
+   "DayLateGray",
+   "DayLateGrayFog"
+  ]
+ },
+ "experiences": {
+  "Africa/Kenya_KOTH_01": {
+   "Aliases": [
+    "Kenya_KOTH_01"
+   ],
+   "Includes": [
+    "KOTH"
+   ],
+   "EnabledDataLayers": [
+    "DL_Kenya"
+   ],
+   "EditorVisible": true
+  },
+  "Deathmatch": {
+   "Aliases": [
+    "ED_Deathmatch"
+   ],
+   "Includes": [
+    "DefaultSet"
+   ],
+   "EnabledGameFeatures": [
+    "Deathmatch"
+   ],
+   "PawnData": "BH.PawnData:WDCore_PlayerData",
+   "DisallowedFeatureFlags": [
+    "Experience.Rules.SkipPlayerDeathItemDrop",
+    "Experience.Rules.SkipPlayerKnocked"
+   ],
+   "EditorVisible": true
+  },
+  "Europe/Berlin_KOTH_01": {
+   "Aliases": [
+    "Berlin_KOTH_01"
+   ],
+   "Includes": [
+    "KOTH"
+   ],
+   "EnabledDataLayers": [
+    "DL_Berlin",
+    "DL_StuttgartSpawn",
+    "DL_HanoverSpawn",
+    "DL_BremenSpawn"
+   ],
+   "EditorVisible": true
+  },
+  "Europe/Madrid_KOTH_01": {
+   "Aliases": [
+    "Madrid_KOTH_01"
+   ],
+   "Includes": [
+    "KOTH"
+   ],
+   "EnabledDataLayers": [
+    "DL_Madrid",
+    "DL_BarcelonaSpawn",
+    "DL_MalagaSpawn",
+    "DL_GranadaSpawn"
+   ],
+   "EditorVisible": true
+  },
+  "Europe/Paris_KOTH_01": {
+   "Aliases": [
+    "Paris_KOTH_01"
+   ],
+   "Includes": [
+    "KOTH"
+   ],
+   "EnabledDataLayers": [
+    "DL_Paris",
+    "DL_RennesSpawn",
+    "DL_CalaisSpawn",
+    "DL_GranadaSpawn"
+   ],
+   "EditorVisible": true
+  },
+  "Frontend": {
+   "Aliases": [
+    "ED_Frontend"
+   ],
+   "Includes": [
+    "DefaultSet"
+   ],
+   "DisallowedFeatureFlags": [
+    "Experience.Rules.EnablePresenceJoinOnExperienceLoad"
+   ],
+   "PresenceStatus": "Status_Frontend",
+   "EditorVisible": true
+  },
+  "Gym": {
+   "Aliases": [
+    "ED_Gym"
+   ],
+   "Includes": [
+    "KOTH"
+   ],
+   "EnabledGameFeatures": [
+    "FreeVehicleSpawner"
+   ],
+   "EditorVisible": true
+  },
+  "KOTH": {
+   "Aliases": [
+    "ED_KOTH"
+   ],
+   "Includes": [
+    "DefaultSet"
+   ],
+   "EnabledDataLayers": [
+    "EDL_KOTH"
+   ],
+   "EnabledGameFeatures": [
+    "KOTH",
+    "ServerSeeding",
+    "AlternativeCriticalCamera",
+    "ControlZone",
+    "ControlZoneRegions",
+    "FlyByManager",
+    "FreeVehicleSpawner",
+    "HotZoneMagnet",
+    "Lootable",
+    "PlayerHealthBar",
+    "Spotting"
+   ],
+   "PawnData": "BH.PawnData:WDCore_PlayerData",
+   "FeatureFlags": [
+    "Experience.Rules.ReturnToSpawnEnabled"
+   ],
+   "DisallowedFeatureFlags": [
+    "Experience.Rules.SkipPlayerDowned"
+   ],
+   "PresenceStatus": "Status_KOTH",
+   "EditorVisible": false
+  },
+  "KOTH_Hardcore": {
+   "Aliases": [
+    "Hardcore"
+   ],
+   "DisabledGameFeatures": [
+    "AlternativeCriticalCamera",
+    "PlayerHealthBar"
+   ],
+   "FeatureFlags": [
+    "Experience.Rules.NoDynamicCrosshair",
+    "Experience.Rules.KillfeedSquadOnly",
+    "Experience.Rules.NoHudAmmo",
+    "Experience.Rules.NoMinimapHealth",
+    "Experience.Rules.NoQuickSlots",
+    "Experience.Rules.Hardcore"
+   ],
+   "DisallowedFeatureFlags": [
+    "Vehicle.Feature.ThirdPersonCamera"
+   ],
+   "EditorVisible": true
+  },
+  "KOTH_InfantryOnly": {
+   "Aliases": [
+    "InfantryOnly"
+   ],
+   "Includes": [
+    "KOTH"
+   ],
+   "DisabledGameFeatures": [
+    "TNK_01",
+    "ROT_02",
+    "ROT_03_WeaponVariants",
+    "WHL_05_Minigun",
+    "STN_01",
+    "STN_02",
+    "STN_05",
+    "TNK_04",
+    "ROT_04_MachineGun",
+    "WHL_02_RingTurret",
+    "WHL_05_RingTurret",
+    "WHL_07_ArmouredBattle",
+    "WHL_08_RingTurret"
+   ],
+   "FeatureFlags": [
+    "Experience.Rules.InfantryOnly"
+   ],
+   "EditorVisible": true
+  },
+  "Kavkazi/Bakurani_KOTH_01": {
+   "Aliases": [
+    "Bakurani_KOTH_01"
+   ],
+   "Includes": [
+    "KOTH"
+   ],
+   "EnabledDataLayers": [
+    "DL_Bakurani",
+    "DL_KhevuliSpawn",
+    "DL_ChutaSpawn",
+    "DL_BaghiSpawn"
+   ],
+   "EditorVisible": true
+  },
+  "Kavkazi/Bakurani_KOTH_02": {
+   "Aliases": [
+    "Bakurani_KOTH_02"
+   ],
+   "Includes": [
+    "KOTH"
+   ],
+   "EnabledDataLayers": [
+    "DL_Bakurani",
+    "DL_RachuriSpawn",
+    "DL_TavarshiSpawn",
+    "DL_SanaviSpawn"
+   ],
+   "EditorVisible": true
+  },
+  "Kavkazi/Bakurani_SniperShowdown_01": {
+   "Aliases": [
+    "Bakurani_SniperShowdown_01"
+   ],
+   "Includes": [
+    "SniperShowdown"
+   ],
+   "EditorVisible": true
+  },
+  "Kavkazi/Mindori_KOTH_01": {
+   "Aliases": [
+    "Mindori_KOTH_01"
+   ],
+   "Includes": [
+    "KOTH"
+   ],
+   "EnabledDataLayers": [
+    "DL_Mindori",
+    "DL_KhevuliSpawn",
+    "DL_LiknisiSpawn",
+    "DL_BaghiSpawn"
+   ],
+   "EditorVisible": true
+  },
+  "Kavkazi/Tevza_KOTH_01": {
+   "Aliases": [
+    "Tevza_KOTH_01"
+   ],
+   "Includes": [
+    "KOTH"
+   ],
+   "EnabledDataLayers": [
+    "DL_Tevza",
+    "DL_VostimiSpawn",
+    "DL_EdemiSpawn",
+    "DL_ShovliSpawn"
+   ],
+   "EditorVisible": true
+  },
+  "LegacyAIScenarios/HunterKiller": {
+   "Aliases": [
+    "ED_HunterKiller_01"
+   ],
+   "EnabledGameFeatures": [
+    "DestructionPlayground",
+    "Lootable",
+    "HunterKiller_01",
+    "WDAICover"
+   ],
+   "PawnData": "BH.PawnData:WDCore_PlayerData",
+   "DisallowedFeatureFlags": [
+    "Experience.Rules.SkipPlayerDowned"
+   ]
+  },
+  "LegacyAIScenarios/ScenarioExample": {
+   "Aliases": [
+    "ED_ScenarioExample"
+   ],
+   "EnabledGameFeatures": [
+    "WDCore",
+    "DestructionPlayground",
+    "Lootable",
+    "ScenarioExample",
+    "WDAIPveAICore",
+    "Behaviour_Patrol",
+    "Behaviour_Besiege"
+   ],
+   "PawnData": "BH.PawnData:WDCore_PlayerData",
+   "DisallowedFeatureFlags": [
+    "Experience.Rules.SkipPlayerDowned"
+   ]
+  },
+  "LegacyAIScenarios/StrikeDisarm": {
+   "Aliases": [
+    "ED_StrikeDisarm_01"
+   ],
+   "EnabledGameFeatures": [
+    "DestructionPlayground",
+    "Lootable",
+    "StrikeDisarm_01",
+    "WDAICover",
+    "Behaviour_Patrol"
+   ],
+   "PawnData": "BH.PawnData:WDCore_PlayerData",
+   "DisallowedFeatureFlags": [
+    "Experience.Rules.SkipPlayerDowned"
+   ]
+  },
+  "LegacyAIScenarios/VIPEscort": {
+   "Aliases": [
+    "ED_VIPEscort_01"
+   ],
+   "EnabledGameFeatures": [
+    "DestructionPlayground",
+    "Lootable",
+    "VIPEscort_01",
+    "WDAICover",
+    "Behaviour_Patrol"
+   ],
+   "PawnData": "BH.PawnData:WDCore_PlayerData",
+   "DisallowedFeatureFlags": [
+    "Experience.Rules.SkipPlayerDowned"
+   ]
+  },
+  "Legacy/ArtWorld": {
+   "Aliases": [
+    "ED_ArtWorld"
+   ],
+   "EnabledGameFeatures": [
+    "WDCore",
+    "ArtWorld"
+   ],
+   "PawnData": "BH.PawnData:WDCore_PlayerData"
+  },
+  "Legacy/KillKennel": {
+   "Aliases": [
+    "ED_KillKennel"
+   ],
+   "EnabledGameFeatures": [
+    "WDCore",
+    "KillKennel"
+   ],
+   "PawnData": "BH.PawnData:WDCore_PlayerData"
+  },
+  "Legacy/Lookdev": {
+   "Aliases": [
+    "ED_Lookdev"
+   ],
+   "EnabledGameFeatures": [
+    "WDCore",
+    "Lookdev"
+   ],
+   "PawnData": "BH.PawnData:WDCore_PlayerData"
+  },
+  "Legacy/Lookdev_KOTH": {
+   "Aliases": [
+    "ED_Lookdev_KOTH"
+   ],
+   "EnabledGameFeatures": [
+    "WDCore",
+    "ControlZone",
+    "KOTH",
+    "Lookdev"
+   ],
+   "PawnData": "BH.PawnData:WDCore_PlayerData",
+   "DisallowedFeatureFlags": [
+    "Experience.Rules.SkipPlayerDowned"
+   ]
+  },
+  "Legacy/MapPerf": {
+   "Aliases": [
+    "ED_MapPerf"
+   ],
+   "EnabledGameFeatures": [
+    "WDCore",
+    "MapPerf"
+   ],
+   "PawnData": "BH.PawnData:WDCore_PlayerData"
+  },
+  "Legacy/PerformanceCapture": {
+   "Aliases": [
+    "ED_PerformanceCapture"
+   ],
+   "EnabledGameFeatures": [
+    "WDCore",
+    "PerformanceCapture"
+   ],
+   "PawnData": "BH.PawnData:WDCore_PlayerData"
+  },
+  "NorthAmerica/Detroit_KOTH_01": {
+   "Aliases": [
+    "ED_Detroit_KOTH_01"
+   ],
+   "Includes": [
+    "KOTH"
+   ],
+   "EnabledDataLayers": [
+    "DL_Detroit",
+    "DL_AustinSpawn",
+    "DL_BostonSpawn",
+    "DL_ChicagoSpawn"
+   ],
+   "EditorVisible": true
+  },
+  "NorthAmerica/Detroit_SniperShowdown_01": {
+   "Aliases": [
+    "Detroit_SniperShowdown_01"
+   ],
+   "Includes": [
+    "SniperShowdown"
+   ],
+   "EditorVisible": true
+  },
+  "Russia/Moscow_KOTH_01": {
+   "Aliases": [
+    "Moscow_KOTH_01"
+   ],
+   "Includes": [
+    "KOTH"
+   ],
+   "EnabledDataLayers": [
+    "DL_Moscow",
+    "DL_RostokinoSpawn",
+    "DL_KuzminkiSpawn",
+    "DL_RamenkiSpawn"
+   ],
+   "EditorVisible": true
+  },
+  "Russia/Moscow_SniperShowdown_01": {
+   "Aliases": [
+    "Moscow_SniperShowdown_01"
+   ],
+   "Includes": [
+    "SniperShowdown"
+   ],
+   "EditorVisible": true
+  },
+  "ShootingRange": {
+   "Aliases": [
+    "ED_ShootingRange"
+   ],
+   "Includes": [
+    "DefaultSet"
+   ],
+   "EnabledGameFeatures": [
+    "ShootingRange",
+    "AlternativeCriticalCamera"
+   ],
+   "PawnData": "BH.PawnData:WDCore_PlayerData",
+   "FeatureFlags": [
+    "Experience.Rules.AutoAssignFactions",
+    "Experience.Rules.SpawnVolumesRequireTag",
+    "Experience.Rules.ChangeTeamDisabled",
+    "Experience.Rules.ReturnToSpawnEnabled",
+    "Experience.Rules.POICameraRequiresTag",
+    "Experience.Rules.RebuyDisabled"
+   ],
+   "DisallowedFeatureFlags": [
+    "Experience.Rules.SkipPlayerDowned",
+    "Experience.Rules.VaultEnabled"
+   ],
+   "PresenceStatus": "Status_ShootingRange",
+   "ReturnToSpawnLockTime": 0,
+   "EditorVisible": true
+  },
+  "ShootingRangeTutorial": {
+   "Aliases": [
+    "ED_ShootingRangeTutorial"
+   ],
+   "Includes": [
+    "DefaultSet"
+   ],
+   "EnabledGameFeatures": [
+    "ShootingRangeTutorial",
+    "AlternativeCriticalCamera"
+   ],
+   "PawnData": "BH.PawnData:WDCore_PlayerData",
+   "FeatureFlags": [
+    "Experience.Rules.AutoAssignFirstFaction",
+    "Experience.Rules.ControlZoneRequiresTag",
+    "Experience.Rules.ChangeTeamDisabled",
+    "Experience.Rules.ChatboxDisabled",
+    "Experience.Rules.GiveUpDisabled",
+    "Experience.Rules.RebuyDisabled"
+   ],
+   "DisallowedFeatureFlags": [
+    "Experience.Rules.SkipPlayerDowned",
+    "Experience.Rules.VaultEnabled"
+   ],
+   "PresenceStatus": "Status_ShootingRangeTutorial",
+   "EditorVisible": true
+  },
+  "ShootingRangeTutorial_Dev": {
+   "Aliases": [
+    "ED_ShootingRangeTutorial_Dev"
+   ],
+   "Includes": [
+    "ShootingRangeTutorial"
+   ],
+   "DisabledDataLayers": [
+    "DL_Destruction"
+   ],
+   "EditorVisible": true
+  },
+  "SniperShowdown": {
+   "Aliases": [
+    "ED_SniperShowdown"
+   ],
+   "Includes": [
+    "DefaultSet"
+   ],
+   "EnabledDataLayers": [
+    "EDL_SniperShowdown"
+   ],
+   "EnabledGameFeatures": [
+    "SniperShowdown",
+    "ControlZone",
+    "Lootable",
+    "Spotting"
+   ],
+   "PawnData": "BH.PawnData:SniperShowdown_PlayerData",
+   "FeatureFlags": [
+    "Experience.Rules.FreeForAll",
+    "Experience.Rules.NoCashFeed"
+   ],
+   "DisallowedFeatureFlags": [
+    "Experience.Rules.SkipPlayerKnocked"
+   ],
+   "EditorVisible": true
+  },
+  "Tanktown": {
+   "Aliases": [
+    "ED_Tanktown"
+   ],
+   "Includes": [
+    "KOTH"
+   ],
+   "PawnData": "BH.PawnData:WDCore_PlayerData",
+   "DisallowedFeatureFlags": [
+    "Experience.Rules.SkipPlayerDowned"
+   ],
+   "EditorVisible": true
+  }
+ },
+ "native": {
+  "WDMatchState_Playing_KOTH": {
+   "ctorRva": "0x77560C0",
+   "fields": [
+    {
+     "field": "ScoreLimit",
+     "offset": "0x50",
+     "raw": "0x0000000A",
+     "value": 10
+    },
+    {
+     "field": "ScorePeriod",
+     "offset": "0x54",
+     "raw": "0x00000000",
+     "value": 0.0
+    },
+    {
+     "field": "MinScorePeriod",
+     "offset": "0x58",
+     "raw": "0x41900000",
+     "value": 18.0
+    },
+    {
+     "field": "MaxScorePeriod",
+     "offset": "0x5C",
+     "raw": "0x41F00000",
+     "value": 30.0
+    },
+    {
+     "field": "InactivityTimeoutSeconds",
+     "offset": "0x60",
+     "raw": "0x00000000",
+     "value": 0.0
+    },
+    {
+     "field": "MatchHardCapSeconds",
+     "offset": "0x64",
+     "raw": "0x00000000",
+     "value": 0.0
+    }
+   ]
+  },
+  "WDMatchState_Playing_Deathmatch": {
+   "ctorRva": "0x848B6F0",
+   "fields": [
+    {
+     "field": "ScoreLimit",
+     "offset": "0x60",
+     "raw": "0x0000004B",
+     "value": 75
+    }
+   ]
+  },
+  "WDMatchState_Playing_SniperShowdown": {
+   "ctorRva": "0x8644A30",
+   "fields": [
+    {
+     "field": "KillLimit",
+     "offset": "0x50",
+     "raw": "0x0000000A",
+     "value": 10
+    }
+   ]
+  },
+  "WDHealthRegenComponent": {
+   "ctorRva": "0x848B5F0",
+   "fields": [
+    {
+     "field": "HealthToRegenerate",
+     "offset": "0xE8",
+     "raw": "0x40A00000",
+     "value": 5.0
+    },
+    {
+     "field": "TickInterval",
+     "offset": "0xEC",
+     "raw": "0x3F800000",
+     "value": 1.0
+    }
+   ]
+  },
+  "WDSniperShowdownStillnessSpottingComponent": {
+   "ctorRva": "0x8645410",
+   "fields": [
+    {
+     "field": "UpdateInterval",
+     "offset": "0xE0",
+     "raw": "0x3F800000",
+     "value": 1.0
+    },
+    {
+     "field": "unnamed_E4",
+     "offset": "0xE4",
+     "raw": "0x40A00000",
+     "value": 5.0
+    },
+    {
+     "field": "DistanceThreshold",
+     "offset": "0xE8",
+     "raw": "0x459C4000",
+     "value": 5000.0
+    },
+    {
+     "field": "unnamed_EC",
+     "offset": "0xEC",
+     "raw": "0x41700000",
+     "value": 15.0
+    },
+    {
+     "field": "unnamed_F0",
+     "offset": "0xF0",
+     "raw": "0x42B40000",
+     "value": 90.0
+    },
+    {
+     "field": "GracePeriod",
+     "offset": "0xF4",
+     "raw": "0x41700000",
+     "value": 15.0
+    },
+    {
+     "field": "unnamed_F8",
+     "offset": "0xF8",
+     "raw": "0x00000003",
+     "value": 3
+    },
+    {
+     "field": "unnamed_FC",
+     "offset": "0xFC",
+     "raw": "0x43480000",
+     "value": 200.0
+    }
+   ]
+  },
+  "WDServerSeedingPreLobbyComponent": {
+   "ctorRva": "0x863D6A0",
+   "fields": [
+    {
+     "field": "unnamed_E0 (first pending award)",
+     "offset": "0xE0",
+     "raw": "0x00000096",
+     "value": 150
+    },
+    {
+     "field": "unnamed_E4 (pending award cap)",
+     "offset": "0xE4",
+     "raw": "0x00001388",
+     "value": 5000
+    },
+    {
+     "field": "unnamed_E8 (periodic timer, seconds)",
+     "offset": "0xE8",
+     "raw": "0x42700000",
+     "value": 60.0
+    },
+    {
+     "field": "unnamed_EC (periodic award)",
+     "offset": "0xEC",
+     "raw": "0x000000FA",
+     "value": 250
+    },
+    {
+     "field": "unnamed_F0 (seconds added to a game-state value)",
+     "offset": "0xF0",
+     "raw": "0x41700000",
+     "value": 15.0
+    },
+    {
+     "field": "unnamed_F4 (stop threshold, compared with a player-state value)",
+     "offset": "0xF4",
+     "raw": "0x0000003C",
+     "value": 60
+    }
+   ]
+  },
+  "WDHotPotatoComponent": {
+   "ctorRva": "0x8636FE0",
+   "fields": [
+    {
+     "field": "unnamed_100",
+     "offset": "0x100",
+     "raw": "0x40200000",
+     "value": 2.5
+    }
+   ]
+  },
+  "WDItemExtensionData_HotPotato": {
+   "ctorRva": "0x8637170",
+   "fields": [
+    {
+     "field": "unnamed_48",
+     "offset": "0x48",
+     "raw": "0x41000000",
+     "value": 8.0
+    },
+    {
+     "field": "unnamed_4C",
+     "offset": "0x4C",
+     "raw": "0x41700000",
+     "value": 15.0
+    },
+    {
+     "field": "unnamed_50",
+     "offset": "0x50",
+     "raw": "0x3F59999A",
+     "value": 0.85
+    }
+   ]
+  }
+ },
+ "hotPotato": {
+  "component": "B_HotPotatoComponent (WDHotPotatoComponent subclass), added to WDMoverPlayerCharacter",
+  "itemtags": [
+   "Id.Item.HotPotato.Alpha",
+   "Id.Item.HotPotato.Charlie",
+   "Id.Item.HotPotato.Bravo"
+  ],
+  "awardFormula": "Amount = 5 * (PassMultiplier * 2) = 10 * PassMultiplier",
+  "awardEvent": "WDPreGameLobbyAwardEvent {PlayerState of the owning player, Amount, ReasonTag}",
+  "awardReasonTag": "UI.ServerSeeding.RewardReason.Potato",
+  "awardReasonText": "Hot! Hot! Hot!",
+  "itemDisplayName": "Gold Potato",
+  "itemDescription": "- Don't hold it for too long...",
+  "itemFlavor": "Hot. Hot. Hot.",
+  "spawnComponent": "B_HotPotatoSpawnComponent (WDHotPotatoSpawnComponent subclass), added to WDGameFrameworkComponentReceiver",
+  "throwable": "B_HotPotato_{Alpha,Bravo,Charlie}: WDHotPotatoThrowable, ThrowVelocity 2200 (primary, overarm) and 1400 (secondary, underarm)"
+ },
+ "teams": {
+  "KOTH": "B_FactionSetup_CreateThreeTeams (Alpha, Bravo, Charlie)",
+  "Deathmatch": "B_FactionSetup_CreateTwoTeams (Alpha, Bravo)"
+ }
+}
