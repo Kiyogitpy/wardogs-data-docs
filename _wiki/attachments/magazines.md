@@ -28,9 +28,9 @@ Parts the game data gives no display name are labelled "Unnamed" followed by the
 
 ## What they change
 
-- Aim time: x0.83 to x1.26 (46 parts carry it, 27 with a value other than 1).
-- Vertical recoil: x0.83 to x1.22 (46 parts carry it, 27 with a value other than 1).
-- Horizontal recoil: x0.83 to x1.24 (46 parts carry it, 27 with a value other than 1).
+- Aim time: x0.83 to x1.26 (46 parts carry it).
+- Vertical recoil: x0.83 to x1.22 (46 parts carry it).
+- Horizontal recoil: x0.83 to x1.24 (46 parts carry it).
 - Equip speed: x0.9 to x1.24 (31 parts carry it).
 - Aim sway (character side): x0.77 to x1.25 (37 parts carry it).
 - Packing time: x0.6 to x0.8 on 3 parts (the machine-gun magazines), no change on the rest. See [Ammo Packing](../ammunition/ammo-packing.md).
