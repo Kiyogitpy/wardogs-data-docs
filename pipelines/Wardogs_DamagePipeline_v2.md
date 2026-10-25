@@ -901,6 +901,37 @@ those four weapons (WEPN_028, MP9, SMG_03, WEPN_031): by 17.8% or more from 400 
 by more than 100% at 800 m. The exact curves, the drag-based speed scale and every ammo and armor
 class are on [Damage by Weapon and Ammo](../game-features/Wardogs_WeaponDamage_v1.md#5-damage-over-distance).
 
+**Speed scale after drag (round 41, derived).** `_tools/weapon_speed_scale.py` flies each firearm's bullet level with the game's own drag term (`Cd = DragModel.Value x curve(v)`, air density 1.2, gravity 9.8 m/s2, 1 ms steps, the projectile asset of the weapon's `SupportedCaliber`) and reports `min(1, speed / reference)` with the reference of the table above (weapon override if set, else the projectile's `TypicalSpeed`). It multiplies the damage of this section and of the falloff curve. Only the weapons whose scale drops below 1 within 600 m are listed (the others, all long-barrelled 7.62x54 and .50 rifles, the 308 DMRs and machine guns, stay at 1.00); the muzzle and reference speeds are m/s. Rockets, launchers, bows and vehicle guns are left out: they thrust, are actor-moved or use other models.
+
+| Weapon | Ammo | Muzzle | Reference | Scale < 1 beyond (m) | 100 m | 200 m | 300 m | 400 m | 600 m |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| A91 | 556mm | 715 | 404 | 352 | 1.00 | 1.00 | 1.00 | 0.91 | 0.72 |
+| AK74M | 545mm | 880 | 300 | 540 | 1.00 | 1.00 | 1.00 | 1.00 | 0.95 |
+| Glock17 | 9mm | 375 | 300 (weapon) | 72 | 0.94 | 0.80 | 0.69 | 0.60 | 0.45 |
+| Judge | 45Colt | 335 | 292 | 62 | 0.94 | 0.81 | 0.71 | 0.63 | 0.49 |
+| KH2002 | 556mm | 715 | 463 (weapon) | 275 | 1.00 | 1.00 | 0.96 | 0.80 | 0.63 |
+| M2Browning | 762mm | 715 | 386 | 400 | 1.00 | 1.00 | 1.00 | 1.00 | 0.77 |
+| M4 | 556mm | 910 | 404 | 512 | 1.00 | 1.00 | 1.00 | 1.00 | 0.85 |
+| MP43 | 7mmBuck | 391 | 292 | 62 | 0.90 | 0.72 | 0.60 | 0.49 | 0.33 |
+| MP9 | 9mm | 400 | 280 (weapon) | 121 | 1.00 | 0.88 | 0.76 | 0.66 | 0.50 |
+| RFB | 308Win | 880 | 600 (weapon) | 554 | 1.00 | 1.00 | 1.00 | 1.00 | 0.97 |
+| SKS | 762mm | 735 | 386 | 420 | 1.00 | 1.00 | 1.00 | 1.00 | 0.78 |
+| SMG_03 | 9mm | 380 | 202 (weapon) | 321 | 1.00 | 1.00 | 1.00 | 0.90 | 0.68 |
+| TAR21 | 556mm | 910 | 463 (weapon) | 435 | 1.00 | 1.00 | 1.00 | 1.00 | 0.74 |
+| Vector | 45ACP | 375 | 322 (weapon) | 58 | 0.92 | 0.80 | 0.72 | 0.64 | 0.52 |
+| WEPN_026 | 45ACP | 253 | 243 (weapon) | 34 | 0.93 | 0.83 | 0.75 | 0.67 | 0.54 |
+| WEPN_027 | 50AE | 470 | 416 | 82 | 0.97 | 0.83 | 0.74 | 0.70 | 0.63 |
+| WEPN_028 | 9mm | 400 | 280 | 121 | 1.00 | 0.88 | 0.76 | 0.66 | 0.50 |
+| WEPN_029 | 556mm | 950 | 404 | 541 | 1.00 | 1.00 | 1.00 | 1.00 | 0.90 |
+| WEPN_031 | 9mm | 380 | 202 (weapon) | 321 | 1.00 | 1.00 | 1.00 | 0.90 | 0.68 |
+| WEPN_032 | 9mm | 375 | 300 (weapon) | 72 | 0.94 | 0.80 | 0.69 | 0.60 | 0.45 |
+| WEPN_033 | 556mm | 715 | 463 (weapon) | 275 | 1.00 | 1.00 | 0.96 | 0.80 | 0.63 |
+| WEPN_034 | 308Win | 853 | 603 (weapon) | 501 | 1.00 | 1.00 | 1.00 | 1.00 | 0.93 |
+| WEPN_035 | 556mm | 975 | 571 (weapon) | 354 | 1.00 | 1.00 | 1.00 | 0.93 | 0.65 |
+| WEPN_037 | 762mm | 700 | 350 (weapon) | 442 | 1.00 | 1.00 | 1.00 | 1.00 | 0.85 |
+
+Pistols and SMGs lose a fifth of their damage by 200 m (Glock 17 0.80, Vector 0.80, MP9 0.88) and about half at 600 m; assault rifles such as the M4, AK74M and A91 keep full damage to 300-500 m. Muzzle speeds are the cooked `InitialBulletSpeed`; attachments or ammunition that change speed or `TypicalSpeed` (tracer, AP, `DA_AmmoModifier_*`) are not applied. Pellet weapons (MP43, Judge) use one pellet's data. The scale at the target is of the **impact** speed after any ricochet or penetration loss, which this table does not include.
+
 <!-- damage_tables --falloff -->
 | Weapon | Curve keys (m → ×) | 50 m | 100 m | 200 m | 400 m | 800 m | 1200 m |
 |---|---|---:|---:|---:|---:|---:|---:|
@@ -1096,7 +1127,7 @@ is a percentage change, so -25 gives ×0.75 and -90 gives ×0.10.
 | O-3 | Callers, origin of `S`, consumer of the result | **Closed** (§1.1). The bool's gameplay meaning stays open |
 | O-4 | Entry data never reaches custom operations | **Closed** (§2) |
 | O-5 | Four Blueprint bodies | **Closed** (§7.1–7.4), from the cooked bytecode |
-| O-6 | End-to-end number for one concrete hit | **Closed for bullets** (§7.6–7.9): every ammo type, armored or not, by distance. Only the speed scale after drag is not applied in the tables (the drag model itself is in [Projectile Flight](Wardogs_ProjectileFlight_v1.md)) |
+| O-6 | End-to-end number for one concrete hit | **Closed for bullets** (§7.6–7.9): every ammo type, armored or not, by distance. The speed scale after drag is computed per weapon in §7.8 (round 41, `_tools/weapon_speed_scale.py`) but is not folded into the stored tables (the drag model itself is in [Projectile Flight](Wardogs_ProjectileFlight_v1.md)) |
 | O-7 | The health write | **Closed** (§10). Network authority stays open: role checks are visible in code, but server behaviour cannot be observed statically. Security-relevant findings go through [`SECURITY.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/SECURITY.md), not this document |
 | O-8 | Which branch of `0x6B92900` runs for a back-blast: `0x6F042A0` (traced hits) or `0x6F06EB0` (synthetic hits, [VehicleDamagePipeline §3.2](Wardogs_VehicleDamagePipeline_v1.md#32-from-a-hit-triangle-to-a-section)) | **Closed** (§1.1): the shooter's seat (`0x6E6EBA0`). On foot `0x6F042A0` traces the cone; seated in a vehicle `0x6F06EB0` hits that vehicle's occupants, and the vehicle takes the self-damage map directly |
 | O-9 | `122mm.Havoc` blast radii look swapped | **Closed for the reviewed default mapping.** [`DA_122_mm_HAVOC_ProjectileData.json`](../data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/122mm/DA_122_mm_HAVOC_ProjectileData.json) sets `EffectiveExplosiveRadius` 600 above `ExplosiveRadius` 300 (`BaseDamage` 300, `ExplosiveDamageFallOff` 0.6). Under §1.1 that would mean full damage to 600 and none beyond, and it is the only one of 11 rounds with the radii this way. The bounded package-name and executable searches found no firing consumer; the reviewed ROT_02/ROT_03 default ammo item instead references plain `Item.Caliber.122mm` ([`DA_122mm_ProjectileData.json`](../data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/122mm/DA_122mm_ProjectileData.json): Base 100, E 200, R 600, FallOff 1.0). The [loaded-item trace](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-weapon-context.md) verifies that default mapping; other runtime actions are not ruled out by these negative searches. |
