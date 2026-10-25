@@ -134,7 +134,140 @@
    "SpawnVehicleTag": "Vehicle.Variant.Land.Tracked.SpawnVehicle.Valkyra"
   }
  },
- "board_timer_note": "Map boards carry no instance overrides, so the blueprint default applies for PlayerDeployCooldown (600 s). VehicleRespawnTimer, LosingVehicleRespawnTimer, VehicleHealthThreshold and VehicleSpeedThreshold are not set in the blueprint or in any map instance (native class defaults, not read); only the Gym test area sets them (240 s respawn, 120 s deploy cooldown).",
+ "board_native_defaults": {
+  "constructor_rva": "0x7708A00",
+  "status": "FOUND (static disassembly)",
+  "note": "Fields the board Blueprint and the map boards leave unset keep these constructor values. The Blueprint overrides PlayerDeployCooldown (600 s) and RadarRestoreHealthThreshold (0.55); only the Gym test boards override the respawn timer (240 s) and the deploy cooldown (120 s). The consumers of the respawn timers were not located, so what exactly the game does with them is inferred from the field names.",
+  "fields": [
+   {
+    "field": "VehicleHealthThreshold",
+    "offset": "0x3F8",
+    "native_default": 0.3,
+    "unit": "fraction of health",
+    "blueprint_override": null
+   },
+   {
+    "field": "RadarRestoreHealthThreshold",
+    "offset": "0x3FC",
+    "native_default": 0.5,
+    "unit": "fraction of health",
+    "blueprint_override": 0.55
+   },
+   {
+    "field": "VehicleSpeedThreshold",
+    "offset": "0x400",
+    "native_default": 10.0,
+    "unit": "speed units (not shown to be km/h)",
+    "blueprint_override": null
+   },
+   {
+    "field": "MinRequiredScore",
+    "offset": "0x404",
+    "native_default": 20.0,
+    "unit": "score",
+    "blueprint_override": null
+   },
+   {
+    "field": "VehicleRespawnTimer",
+    "offset": "0x408",
+    "native_default": 300.0,
+    "unit": "s",
+    "blueprint_override": null
+   },
+   {
+    "field": "LosingVehicleRespawnTimer",
+    "offset": "0x40C",
+    "native_default": 60.0,
+    "unit": "s",
+    "blueprint_override": null
+   },
+   {
+    "field": "LosingScoreThreshold",
+    "offset": "0x410",
+    "native_default": 15,
+    "unit": "score",
+    "blueprint_override": null
+   },
+   {
+    "field": "SpawnFailedRetryTime",
+    "offset": "0x414",
+    "native_default": 10.0,
+    "unit": "s",
+    "blueprint_override": null
+   },
+   {
+    "field": "PlayerDeployCooldown",
+    "offset": "0x418",
+    "native_default": 120.0,
+    "unit": "s",
+    "blueprint_override": 600.0
+   },
+   {
+    "field": "MaxInteractionDistance",
+    "offset": "0x358",
+    "native_default": 500.0,
+    "unit": "cm",
+    "blueprint_override": null
+   },
+   {
+    "field": "SpawnVehicleStateRetryDelay",
+    "offset": "0x3C0",
+    "native_default": 1.0,
+    "unit": "s",
+    "blueprint_override": null
+   },
+   {
+    "field": "StreamingTimer",
+    "offset": "0x3C4",
+    "native_default": 5.0,
+    "unit": "s",
+    "blueprint_override": null
+   },
+   {
+    "field": "LookbackSeconds",
+    "offset": "0x3D4",
+    "native_default": 30.0,
+    "unit": "s",
+    "blueprint_override": null
+   },
+   {
+    "field": "DamageLookBackSeconds",
+    "offset": "0x3D8",
+    "native_default": 10.0,
+    "unit": "s",
+    "blueprint_override": null
+   },
+   {
+    "field": "MinRiskDisplaySeconds",
+    "offset": "0x3DC",
+    "native_default": 15.0,
+    "unit": "s",
+    "blueprint_override": null
+   },
+   {
+    "field": "ContestedThreshold",
+    "offset": "0x3CC",
+    "native_default": 1,
+    "unit": "count",
+    "blueprint_override": null
+   },
+   {
+    "field": "LethalThreshold",
+    "offset": "0x3D0",
+    "native_default": 2,
+    "unit": "count",
+    "blueprint_override": null
+   }
+  ]
+ },
+ "vehicle_limits_native": {
+  "MaxVehiclesPerPlayer": {
+   "native_default": 2,
+   "constructor_rva": "0x893EDE0",
+   "status": "FOUND (static disassembly)"
+  }
+ },
+ "board_timer_note": "Map boards carry no instance overrides, so the blueprint default applies for PlayerDeployCooldown (600 s). VehicleRespawnTimer (300 s), LosingVehicleRespawnTimer (60 s), VehicleHealthThreshold (0.3) and VehicleSpeedThreshold (10) are not set in the blueprint or in any map instance, so the native class defaults read in round 53 apply; only the Gym test area overrides them (240 s respawn, 120 s deploy cooldown).",
  "worlds": {
   "Europe": {
    "map": "Ozeti",
