@@ -37,7 +37,7 @@ The Talon is built from 650 Build Supplies and has 3,000 HP. It is one of six st
 
 ### Weapon
 
-The gun fires 100 rounds/min in semi-automatic mode, which is one shot per trigger pull. The data lists an effective range of 1,000 m. The game data gives a reload time of 5.0 s and a starting count of 1 round. The gun is restocked with Ammo Supplies, and a full restock takes 200 of them.
+The gun fires 100 rounds/min in semi-automatic mode, which is one shot per trigger pull. The data lists an effective range of 1,000 m. The game data gives a reload time of 5.0 s and a starting count of 1 round. The gun is restocked with Ammo Supplies, and a full restock takes 200 of them. The data does not store how many rounds one restock gives, so the engine default of one round is used (derived).
 
 ### Targeting
 

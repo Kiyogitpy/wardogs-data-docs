@@ -33,16 +33,16 @@ Flash and stun grenades are not in the data for this build. There is no flashban
 
 The Molotov bursts on detonation, dealing 40 HP at its centre out to 2.5 m and nothing beyond 5 m. It then leaves a burning area.
 
-- **Burning area.** The fire lasts up to 45 s. It is laid as 15 patches per throw, each a 2 m by 2 m box 0.5 m tall. It damages players and vehicles inside a patch every 0.4 s.
+- **Burning area.** The fire lasts up to 45 s. It is laid as 15 patches per throw, each a 2 m by 2 m box 0.5 m tall. It damages players and vehicles inside a patch every 0.4 s. The 15 patches spread on a spiral out to about 2.5 m from the impact point.
 - **Players.** Each tick deals 15 HP, which is 37.5 HP per second while standing in the fire. Players without the Alive state take no damage.
 - **Vehicles.** Each tick deals 2 health, which is 5 per second.
 - **Burning status.** A player in the fire gets a "burning" status, shown with a screen effect that darkens and blurs the view. The status ends when the player leaves the fire. The data points to this without a timer, but this is not fully confirmed.
 
-The Molotov bursts when its 5 s fuse runs out; no impact trigger was found. Armor reduces the burst but not the fire, since no armor rule in the data applies to fire damage (derived). The damage tables give a teammate's Molotov fire no reduction (derived).
+The Molotov bursts on its first impact. Its 5 s fuse is only a backstop, and it is the only throwable set to burst on impact. Armor reduces the burst but not the fire, since no armor rule in the data applies to fire damage (derived). The damage tables give a teammate's Molotov fire no reduction (derived).
 
 ### Smoke grenades
 
-Smoke grenades make a cloud of smoke. The data gives the length of each cloud, but no effect on play. No item applies a game effect through smoke, so smoke does not hurt, heal or slow anyone in the data. In the code found, the only thing that reads a smoke cloud is the aim-assist target picker, so smoke blocks aim assist. Spotting, lock-on and the minimap do not read it. Whether enemy AI sight is blocked is not confirmed.
+Smoke grenades make a cloud of smoke. The data gives the length of each cloud, but no effect on play. No item applies a game effect through smoke, so smoke does not hurt, heal or slow anyone in the data. In the code found, the only thing that reads a smoke cloud is the aim-assist target picker, so smoke blocks aim assist. Spotting, lock-on and the minimap do not read it. Nothing in the data makes smoke block enemy soldiers' sight: the smoke has no collision or sight-blocker, so the AI sight is not blocked as far as the data shows.
 
 | Item | Cloud length | Cost (cash) |
 |---|---:|---:|
@@ -50,7 +50,9 @@ Smoke grenades make a cloud of smoke. The data gives the length of each cloud, b
 | M18 Smoke Grenade: Black | 120 s | 100 |
 | Vehicle smoke (countermeasure) | 6 s | 750 |
 
-Vehicle smoke is a countermeasure that trails smoke around a vehicle and then settles into a larger screen that gives infantry cover, according to the shop text.
+Vehicle smoke is a countermeasure that trails smoke around a vehicle and then settles into a larger screen, according to the shop text. The screen lasts 6 s and then fades for 2 s before it is removed.
+
+Each smoke stays for its full duration (white and black 120 s, blue signal 64 s, other signals 180 s, vehicle smoke 6 s). Then the plume fades out over the fade time (10 s for the grenades, 2 s for the vehicle screen) before it is removed. A smoke effect that is already running when you arrive has lost the time it has already spent, so less of it is left.
 
 ### Signal grenades
 
@@ -65,7 +67,7 @@ Signal grenades release a column of coloured smoke and place a marker on the map
 | Green | Supply Request | Supply Request | Logistics |
 | Purple | Landing Zone | Landing Zone | Logistics |
 
-How the marker is created is not yet known.
+Each colour adds its marker through the deployable map tracker, which places the marker on the map. The game names the smoke types "Covering" and "Signal". The data does not say who else can see the marker.
 
 ### Mines and placed explosives
 
@@ -138,3 +140,5 @@ The Season 2 items data lists no change to the Molotov, smoke grenades, mines or
 - [Explosives Reference](../../game-features/Wardogs_Explosives_v1.md): Molotov blast damage and fuses
 - [Items and Equipment changes, Season 2](../../season-2-changes/items-equipment.md): the Season 2 check
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): Molotov patches and fire rules, and what smoke affects in the code found.
+- [Round 39 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md): Smoke duration and fade, signal markers and the Claymore and mine rules.
+- [Round 40 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-vehicles-explosives.md): the same topics, with the round 40 values where they differ.

@@ -35,7 +35,7 @@ The M113 APC SV is listed in the entity text table under the names Lonestar, Man
 | Fuel economy | 5.7 (as stored) |
 | Seats | 10 |
 | Max incline | 50 degrees |
-| Countermeasures | Not stated |
+| Countermeasures | Smoke (255 charges) |
 
 ## Armor and damage
 

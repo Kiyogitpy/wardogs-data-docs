@@ -71,7 +71,7 @@ The Season 2 values are the ones shown in the current data. The Season 2 notes s
 
 ### Parachutes and jumping
 
-The Basic and Sport parachutes are single-use items that a player deploys by hand after a long fall. The data gives a fall of 400 (unit not stated) before a parachute can open, but does not say whether a player can jump from an aircraft, or how that works from a helicopter. That is not yet known. See the [Parachutes](../equipment/parachutes.md) article.
+The Basic and Sport parachutes are single-use items that a player deploys by hand after a long fall. The data gives a fall of 400 (unit not stated) before a parachute can open. The vehicle data gives no parachute to any aircraft: the parachute belongs to the on-foot character, so a helicopter or the airplane has none. See the [Parachutes](../equipment/parachutes.md) article.
 
 ## Numbers
 
@@ -80,20 +80,20 @@ Seat counts and roles for every drivable vehicle. Sort by seats with the header.
 | Vehicle | Seats | Roles (as the data gives them) |
 |---|---:|---|
 | [Havoc](havoc.md) | 2 | Pilot and gunner |
-| [MH-6](mh-6.md) | 6 | Pilot and five passenger seats, roles not given |
+| [MH-6](mh-6.md) | 6 | Pilot and five passenger seats, four of them outside the cabin |
 | [AH-6M [Miniguns]](ah-6m-miniguns.md) | 2 | Driver and one active passenger |
 | [AH-6R [Rockets]](ah-6r-rockets.md) | 2 | Driver and one active passenger |
 | [Z20 Lakota](z20-lakota.md) | 13 | Pilot and passengers, 11 passengers in the shop text |
 | [Z20 Lakota [Miniguns]](z20-lakota-miniguns.md) | 13 | Pilot and passengers, with the miniguns |
 | [Fixed-wing airplane](fixed-wing-airplane.md) | 2 | Driver and one passenger |
 | [SPH-2](sph-2.md) | 3 | Driver and gunner, 2 seat setups |
-| [L2A6](l2a6.md) | 3 | Driver and gunner, 2 seat setups |
+| [L2A6](l2a6.md) | 3 | Two hull seats and a turret gunner |
 | [Flakpanzer Gepard](flakpanzer-gepard.md) | 2 | Driver and gunner |
-| [T-72B3](t-72b3.md) | 3 | Driver, gunner and a mounted machine gun seat |
+| [T-72B3](t-72b3.md) | 3 | Two hull seats (driver and mounted machine gun) and a turret gunner |
 | [M113 APC SV](m113-apc-sv.md) | 10 | Driver and nine passive passengers |
 | [Bobcat](bobcat.md) | 2 | Driver and passenger |
 | [Kodiak](kodiak.md) | 4 | Driver and three active passengers |
-| [Kodiak [Pickup]](kodiak-pickup.md) | 6 | Driver and passengers, 4 seats in the base seat data |
+| [Kodiak [Pickup]](kodiak-pickup.md) | 6 | Driver, three inside passengers and two in the bed |
 | [Kodiak [M249]](kodiak-m249.md) | 5 | Driver, passengers and the ring turret |
 | [Humvee](humvee.md) | 4 | Driver and three active passengers |
 | [Humvee [Minigun]](humvee-minigun.md) | 5 | Driver, passengers and the minigun mount, 4 on one stats sheet |
@@ -105,7 +105,7 @@ Seat counts and roles for every drivable vehicle. Sort by seats with the header.
 | [Wolf-110](wolf-110.md) | 4 | Driver and three active passengers |
 | [Wolf-110 [M2 Browning]](wolf-110-m2-browning.md) | 5 | Driver, passengers and the M2 Browning ring turret |
 
-Some vehicles have more seat setups in the seat data than seats on the stats sheet. The Pickup, Ural Defender [M249] and Humvee [Minigun] are the clearest cases. The data does not resolve every one of them, so those counts are shown as the data gives them.
+Some vehicles have more seat setups in the seat data than seats on the stats sheet. The Ural Defender [M249] and Humvee [Minigun] are the clearest remaining cases, so their counts are shown as the data gives them. The Pickup's six seats are now resolved: the driver, three passengers inside and two passengers in the bed.
 
 ## Tips that follow from the numbers
 
@@ -132,3 +132,5 @@ Some vehicles have more seat setups in the seat data than seats on the stats she
 - [Frontend, Server and Test Data](../../content/Wardogs_DataTables_Frontend_v1.md): the in-game vehicle tips
 - [Season 2 Changes: Damage and Combat](../../season-2-changes/damage-combat-systems.md)
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
+- [Round 39 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md): Seat counts and the aircraft parachute question.
+- [Round 40 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-vehicles-explosives.md): the same topics, with the round 40 values where they differ.

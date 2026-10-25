@@ -60,6 +60,8 @@ The Ural has no weapons. Its three seats are a driver and two passengers.
 
 ## Handling
 
+- Driving assists: drift values of 2.5 at the front and 30 at the rear. See [Vehicle handling](vehicle-handling.md#driving-and-flight-assists).
+
 - Mass 10,000, hand brake 50, ABS 15 with a minimum speed of 35, and traction control 45, as stored.
 - Front steering of 30 degrees.
 - Six-speed gearbox with a first gear ratio of 5.62, the longest first gear of the wheeled vehicles.

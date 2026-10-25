@@ -10,7 +10,7 @@ description: "Six-seat pickup version of the Kodiak SUV with no weapons, sold fo
 | Kodiak [Pickup] | |
 |---|---|
 | Type | Pickup |
-| Seats | 6 on the stats sheet (the base seat data lists 4) |
+| Seats | 6 (driver, three inside passengers and two in the bed) |
 | Price | 3,000 cash |
 | Unlock level | 0 |
 | Main health | 400 HP |
@@ -37,7 +37,7 @@ The Kodiak [Pickup] is sold in the vehicle vendor under land transport, for 3,00
 | Mass | 2,750 (as stored, unit not stated) |
 | Countermeasures | Not stated |
 
-The stats sheet gives 6 seats. The base Kodiak seat data lists 4, and the data does not show where the other two come from.
+The six seats are the driver, three passengers inside and two passengers in the bed. The two bed seats are exterior seats.
 
 ## Armor and damage
 
@@ -54,7 +54,7 @@ Main health is 400 HP, with the same engine, fuel tank and wheel health as the [
 
 ## Weapons and seats
 
-The pickup has no weapons. Its seats are a driver and passengers.
+The pickup has no weapons. Its seats are the driver, three inside passengers and two in the bed.
 
 ## Handling
 

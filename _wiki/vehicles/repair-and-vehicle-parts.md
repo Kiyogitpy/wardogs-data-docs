@@ -14,7 +14,7 @@ description: "The damageable parts of each Wardogs vehicle with their health, wh
 | Applies to | Every player vehicle |
 | Health unit | HP |
 | **Repair** | |
-| Hand repair | Wrench, Light drill, Heavy drill (+5 HP per use) |
+| Hand repair | Wrench, Light drill, Heavy drill (10 HP per Wrench use; 14.5 HP per drill use) |
 | Base repair | Repair Station (Fast: 5% in 3 s; Max: up to 100% in 9 s) |
 {: .wiki-infobox }
 
@@ -43,7 +43,7 @@ A tyre has three states in the data:
 2. **Deflated** when the wheel's health falls to 55% of its maximum or below. A 75 HP tyre deflates at about 41 HP or less. Season 1 used 50%, and Season 2 raised it to 55% on every wheeled axle.
 3. **Destroyed** when the wheel's health reaches zero.
 
-A deflated tyre keeps its wheel on the ground but uses a different collision shape. A destroyed tyre is replaced by a damaged-wheel model. The data stores the tyre radius for each state. On the Dune Buggy it falls from 0.45 m to 0.345 m and then to 0.26 m. The data does not say how a deflated tyre changes handling beyond that.
+A deflated tyre keeps its wheel on the ground but uses a different collision shape. A destroyed tyre is replaced by a damaged-wheel model. The data stores the tyre radius for each state. On the Dune Buggy it falls from 0.45 m to 0.345 m and then to 0.26 m. A deflated tyre also adds 1.5 of wheel drag, cuts grip by 0.35 friction, pulls the steering toward the damaged side (0.125) and adds 0.05 braking. The data does not say how the smaller radius of a deflated or destroyed tyre affects the car beyond the collision shape.
 
 ### Health triggers
 
@@ -51,11 +51,12 @@ Parts have effect triggers at fixed percentages of their health. The data lists 
 
 - **Main body.** Triggers at 55%, 25% and 10% on most ground vehicles and helicopters.
 - **Engine.** Triggers at 20% on the Bobcat, at 55% on the SPH-2, L2A6, Gepard and Humvee [M249], and at 0% on all of them.
-- **Fuel tank.** Triggers at 90% and 80%, 55%, and 0% on several vehicles. The Little Bird family uses 10% and 0%.
+- **Fuel tank.** Triggers at 90% and 80%, 55%, and 0% on several vehicles. The Little Bird family uses 10% and 0%. When the fuel tank is hit, the tank leaks fuel at a rate that rises as its health falls; the steps are in [Fuel and refueling](fuel-and-refueling.md#fuel-leaks).
 - **Tracks.** A track has an effect above 55% and is dead at 0%.
 - **Wheels.** Triggers at 55% and 0% on the wheeled vehicles.
 - **Rotors.** The Havoc's main and tail rotors have triggers at 55% and 0%. The data sets rotor triggers only for the Havoc.
 - **Radar.** On the M113, triggers at 55%, 25% and 0%.
+- **Turret stabilisation.** On the SPH-2, L2A6 and T-72B3, the turret's stabilisation is switched off below 25% main health. The data marks that point as the one where stabilisation is no longer permitted.
 
 A non-main part that reaches zero is marked destroyed, and the vehicle keeps going. Only the main health at zero destroys the vehicle.
 
@@ -100,12 +101,12 @@ Health pools per vehicle, as stored in the data. Sort by any column with the hea
 
 | Repair option | Repairs | Per use | Speed | Cost |
 |---|---|---:|---|---|
-| [Wrench](../equipment/wrench.md) | All vehicles | +5 HP | Not yet known | 180 cash |
-| [Light repair drill](../equipment/drills.md) | Vehicles | +5 HP | Moderate | 600 cash |
-| [Heavy repair drill](../equipment/drills.md) | Vehicles | +5 HP | Fastest | 1,300 cash |
+| [Wrench](../equipment/wrench.md) | All vehicles | 10 HP | 0.68 s (about 14.7 HP per second) | 180 cash |
+| [Light repair drill](../equipment/drills.md) | Vehicles | 14.5 HP | 0.75 s (about 19.3 HP per second) | 600 cash |
+| [Heavy repair drill](../equipment/drills.md) | Vehicles | 14.5 HP | 0.5 s (29 HP per second) | 1,300 cash |
 | [Refuel and Repair Stations](../equipment/refuel-and-repair-stations.md) | Vehicles in the FOB radius | Fast: 5%; Max: up to 100% | Fast: 3 s; Max: 9 s | Fast: 100 cash; Max: 2,000 cash. Building a station costs 200 Build Supplies |
 
-Each repair tool is used until it is empty or the target is full. The wrench and drills share the same +5 HP per use. A Repair Station uses Mechanical Supplies, which cost 10 cash per lot of 50. Each restock uses 5 of them. The station's stored 13.33 figure is the structure's own hammer repair-speed multiplier. Every buildable has one, and most are the structure's Build Supplies cost divided by 15. It is not a vehicle repair rate.
+Each repair tool is used until it is empty or the target is full. Each tool repairs a fixed amount per application: 10 HP for the Wrench and 14.5 HP for each drill, at the rates in the table. A Repair Station uses Mechanical Supplies, which cost 10 cash per lot of 50. Each restock uses 5 of them. The station's stored 13.33 figure is the structure's own hammer repair-speed multiplier. Every buildable has one, and most are the structure's Build Supplies cost divided by 15. It is not a vehicle repair rate.
 
 The in-game tips say that high impact damage zones on a vehicle can be repaired with repair tools, and that returning to base for repairs is not free.
 
@@ -113,7 +114,7 @@ The in-game tips say that high impact damage zones on a vehicle can be repaired 
 
 - A Humvee tyre deflates at about 41 HP, which is 55% of its 75 HP. Any tyre damage past that point changes the tyre's state, so a deflated tyre is the first warning.
 - Tanks take little rifle damage, and their tracks have 125 HP each. The data sets a track trigger at 55%, but not what it does.
-- At +5 HP per use, the Humvee's 500 HP would take 100 uses to restore from zero, before any limit on the tool's uses, which is not yet known.
+- At 10 HP per Wrench use, the Humvee's 500 HP would take 50 uses to restore from zero, about 34 seconds of repair (derived).
 - The in-game tip says a rotor blade breaks if it hits an object, so flying close to terrain or other aircraft puts the rotors at risk.
 
 ## See also
@@ -133,3 +134,5 @@ The in-game tips say that high impact damage zones on a vehicle can be repaired 
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md) and [Item Actions](../../content/Wardogs_ItemActions_v1.md): repair tool amounts and prices
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): Repair Station restock rates and the stored 13.33 multiplier.
+- [Round 39 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md): Wrench and drill repair per application and rate, tyre deflation and fuel-tank leak steps.
+- [Round 40 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-vehicles-explosives.md): the Wrench and drill timings and the fuel-tank health steps.

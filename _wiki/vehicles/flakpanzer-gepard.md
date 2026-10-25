@@ -35,6 +35,7 @@ The Gepard is sold in the vehicle vendor under land tank, for 14,000 cash, and u
 | Fuel economy | 10.0 (as stored) |
 | Seats | 2 |
 | Max incline | 50 degrees |
+| Countermeasures | Smoke (1 charge) |
 
 ## Armor and damage
 
@@ -54,7 +55,7 @@ While its main body stands, the body sends 5% of each hit to the fuel tank. Rifl
 |---|---|---:|---:|---:|---:|
 | Duel 35 mm Oerlikon GDF cannons (twin) | Cannon | 1,100 rounds/min | 1,000 m | 4.0 s | None |
 
-The seats are a driver and a gunner in the turret.
+The seats are a driver and a gunner in the turret. The Gepard also carries a smoke countermeasure with one charge, like the L2A6.
 
 ## Handling
 

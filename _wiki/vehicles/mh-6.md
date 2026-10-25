@@ -60,6 +60,8 @@ The MH-6 has no weapons. Its six seats are for the pilot and passengers. The pil
 
 ## Handling
 
+- Driving assists: the climb rate is limited to 36 km/h and the collective holds a hover when released; the collective resets to minus 1 on the ground. See [Vehicle handling](vehicle-handling.md#driving-and-flight-assists).
+
 - Rotor and flight settings are the same as the other Little Bird helicopters. See the [AH-6M [Miniguns]](ah-6m-miniguns.md) article for details.
 - Maximum angular velocity 83 deg/s. Translational lift of 16% between 20 and 28 m/s.
 

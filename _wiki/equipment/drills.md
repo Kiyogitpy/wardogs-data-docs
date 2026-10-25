@@ -15,7 +15,8 @@ description: "The Light and Heavy Drills: the battery-powered vehicle repair too
 | Power | Batteries |
 | **Use** | |
 | Repair speed | Light: moderate. Heavy: fastest |
-| Repair per application | +5 vehicle health (both, item data) |
+| Repair per application | 14.5 vehicle health (both) |
+| Repair rate | Light 19.3 per second (every 0.75 s); Heavy 29 per second (every 0.5 s) |
 | Battery use | 1.25 per second (both, item data; unit not stated) |
 | **Availability** | |
 | Price | 600 (Light), 1,300 cash (Heavy) |
@@ -28,7 +29,7 @@ The Light and Heavy Drills are the battery-powered repair tools for vehicles. Th
 
 ## Overview
 
-The shop text says the Light Drill has a moderate repair speed and the Heavy Drill the fastest. Both require batteries. The data gives both the same battery use and the same repair amount per application, so the speed gap is not shown as numbers in the sources.
+The shop text says the Light Drill has a moderate repair speed and the Heavy Drill the fastest. Both require batteries. Both drills repair 14.5 vehicle health per application and draw the same battery use. The Heavy Drill applies its repair every 0.5 seconds and the Light Drill every 0.75 seconds, which is where the gap in speed comes from.
 
 ## How it works
 
@@ -36,7 +37,7 @@ The shop text says the Light Drill has a moderate repair speed and the Heavy Dri
 - Both drills draw 1.25 battery per second in use, according to the item data. The unit is not stated.
 - Both have a reload action in the data. What it reloads is not yet known.
 - The item data gives each drill a melee value: 5 for the Light Drill and 10 for the Heavy Drill.
-- The time per application is not yet known.
+- The Light Drill repairs 14.5 health every 0.75 seconds (about 19.3 per second). The Heavy Drill repairs 14.5 health every 0.5 seconds (29 per second). The drills have no durability value in the data.
 
 | Drill | Price (cash) | Weight | Grid | Melee value |
 |---|---:|---:|---|---:|
@@ -59,3 +60,5 @@ No Season 2 change to the drills is listed in the data.
 
 - [Item Shop for Non-Weapon Items](../../game-features/Wardogs_ItemShop_v1.md): prices, unlock levels, shop text, weights, grids and melee values
 - [Item Actions](../../content/Wardogs_ItemActions_v1.md): the repair, reload and use-until-empty rules
+- [Round 39 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md): Drill repair per application and rate.
+- [Round 40 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-vehicles-explosives.md): the same topics, with the round 40 values where they differ.

@@ -60,6 +60,8 @@ The Humvee has no weapons. Its four seats are a driver and three passengers.
 
 ## Handling
 
+- Driving assists: anti-roll 40 on both axles and a full-recovery speed of 120. See [Vehicle handling](vehicle-handling.md#driving-and-flight-assists).
+
 - Mass 7,250, hand brake 80, ABS 50 and traction control 45, as stored.
 - Front steering of 35 degrees.
 - Torque split of 0.4 to the front and 0.6 to the rear.

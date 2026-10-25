@@ -86,3 +86,4 @@ Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun,
 | [MAAWS](weapons/maaws.md) | None (explosive) | 100 rounds/min | not yet known | 2400 |
 | [MGL-40](weapons/mgl-40.md) | None (explosive) | 75 rounds/min | MMGL Internal Mag | 7500 |
 | [RPG-7](weapons/rpg-7.md) | None (explosive) | 100 rounds/min | not yet known | 1800 |
+| [TEST Grenade Launcher](weapons/test-grenade-launcher.md) | 40 mm | 75 rounds/min | Single rounds | Not listed |

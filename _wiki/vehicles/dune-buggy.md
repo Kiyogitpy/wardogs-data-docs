@@ -60,6 +60,8 @@ The Dune Buggy has no weapons. Its three seats are a driver and two passengers.
 
 ## Handling
 
+- Driving assists: lean up to 15 degrees and pitch up to 20 degrees, with drift values of 1 at the front and 1 at the rear. See [Vehicle handling](vehicle-handling.md#driving-and-flight-assists).
+
 - Mass 550, with hand brake 50 and front steering of 40 degrees.
 - Torque split heavily toward the rear: 0.15 to the front and 0.85 to the rear.
 - Engine idle 800 RPM, with a torque scale of 0.35.

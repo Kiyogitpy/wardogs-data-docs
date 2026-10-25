@@ -64,6 +64,8 @@ The pod reloads in 6.0 s and starts with no rockets loaded, according to the wea
 
 ## Handling
 
+- Driving assists: the climb rate is limited to 36 km/h and the collective holds a hover when released; the collective resets to minus 1 on the ground. See [Vehicle handling](vehicle-handling.md#driving-and-flight-assists).
+
 - Maximum angular velocity 83 deg/s. Translational lift of 16% between 20 and 28 m/s.
 - Ground effect falloff 12 m, with no strength stored.
 

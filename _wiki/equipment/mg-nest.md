@@ -14,8 +14,8 @@ description: "A buildable stationary machine gun firing .50 cal tracer rounds, b
 | **Weapon** | |
 | Gun | Mounted machine gun |
 | Ammunition | .50 cal tracer |
-| Rate | Not yet known |
-| Effective range | Not yet known |
+| Rate | 600 rounds/min (game default) |
+| Effective range | 1,000 m |
 | Reload | 8.0 s |
 | Starting ammunition | 60 rounds |
 | Restock | 200 Ammo Supplies for 60 rounds |
@@ -31,7 +31,7 @@ The MG Nest is a buildable stationary machine gun that fires .50 cal tracer roun
 
 ## Overview
 
-The MG Nest starts with 60 rounds and is restocked with Ammo Supplies. A restock takes 200 Ammo Supplies and gives 60 rounds. The data does not give the gun's rate of fire or effective range, so those are not yet known.
+The MG Nest starts with 60 rounds and is restocked with Ammo Supplies. A restock takes 200 Ammo Supplies and gives 60 rounds. The gun fires 600 rounds/min out to 1,000 m. The weapon data does not set a rate, so 600 rounds/min is the game's default.
 
 ## Effects
 
@@ -77,3 +77,5 @@ The Season 2 changes page lists no value changes for the MG Nest's build cost or
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): health of the finished MG Nest and of the build plot.
 - [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
 - [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings
+- [Round 39 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md): MG Nest gun rate and range.
+- [Round 40 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-vehicles-explosives.md): the same topics, with the round 40 values where they differ.

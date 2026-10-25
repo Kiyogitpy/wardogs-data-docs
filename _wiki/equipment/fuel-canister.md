@@ -2,7 +2,7 @@
 title: "40L Fuel Canister"
 parent: "Equipment"
 group: "Utility"
-description: "The 40 L Fuel Canister: a 150 cash fuel can that refuels vehicles, with 40 durability and 25 fuel per use."
+description: "The 40 L Fuel Canister: a 150 cash fuel can that refuels vehicles at about 2.7 fuel per second, with 40 durability."
 ---
 
 # 40L Fuel Canister
@@ -16,6 +16,7 @@ description: "The 40 L Fuel Canister: a 150 cash fuel can that refuels vehicles,
 | Durability | 40 |
 | **Use** | |
 | Fuel per use | 25 (shop figure; see Overview) |
+| Refuel rate | 2.0 every 0.75 s (about 2.7 per second) |
 | Uses | Fill the can, or refuel a vehicle |
 | **Availability** | |
 | Price | 150 cash |
@@ -28,7 +29,7 @@ The 40 L Fuel Canister is the portable fuel supply for vehicles. It holds 40 L a
 
 ## Overview
 
-The canister is sold for 150 cash and has 40 durability. The shop lists 25 fuel per use, but the item's timed refuel step adds 2.0 units every 0.75 s. The data does not show how the two fit together. The item data also lists a 20 L version. The Item Shop does not sell that version, so whether it can be obtained is not yet known.
+The canister is sold for 150 cash and has 40 durability. The shop lists 25 fuel per use, but that figure is not what the refuel action uses. The action adds 2.0 fuel every 0.75 seconds, about 2.7 per second. The item data also lists a 20 L version. The Item Shop does not sell that version, so whether it can be obtained is not yet known.
 
 ## How it works
 
@@ -53,3 +54,5 @@ No Season 2 change to the Fuel Canister is listed in the data.
 - [Item Shop for Non-Weapon Items](../../game-features/Wardogs_ItemShop_v1.md): price, unlock level, shop text, weight, durability and fuel value
 - [Item Actions](../../content/Wardogs_ItemActions_v1.md): the fill and refuel uses and the use-until-empty rule
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): fuel pump behaviour and the Fuel Canister's timed refuel step.
+- [Round 39 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md): Canister refuel step (2.0 per 0.75 s).
+- [Round 40 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-vehicles-explosives.md): the same topics, with the round 40 values where they differ.
