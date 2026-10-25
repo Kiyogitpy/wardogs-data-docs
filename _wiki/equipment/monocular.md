@@ -49,6 +49,7 @@ The data gives the Monocular no reload action.
 - [Range Finder](range-finder.md)
 - [Infrared Range Finder](infrared-range-finder.md)
 - [Utility Items](utility-items.md)
+- [Optics Comparison](optics-comparison.md)
 
 ## Sources
 

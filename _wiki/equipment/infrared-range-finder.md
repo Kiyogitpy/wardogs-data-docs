@@ -51,6 +51,7 @@ The shop text lists the Infrared Range Finder as a variable infrared magnificati
 - [Monocular](monocular.md)
 - [Binoculars](binoculars.md)
 - [Utility Items](utility-items.md)
+- [Optics Comparison](optics-comparison.md)
 
 ## Sources
 

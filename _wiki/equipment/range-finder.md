@@ -48,6 +48,7 @@ The shop text lists the Range Finder as a high magnification optic with an accur
 - [Monocular](monocular.md)
 - [Infrared Range Finder](infrared-range-finder.md)
 - [Utility Items](utility-items.md)
+- [Optics Comparison](optics-comparison.md)
 
 ## Sources
 

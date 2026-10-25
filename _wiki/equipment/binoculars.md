@@ -49,6 +49,7 @@ The other recon optics are the [Monocular](monocular.md), the [Range Finder](ran
 - [Range Finder](range-finder.md)
 - [Infrared Range Finder](infrared-range-finder.md)
 - [Utility Items](utility-items.md)
+- [Optics Comparison](optics-comparison.md)
 
 ## Sources
 
