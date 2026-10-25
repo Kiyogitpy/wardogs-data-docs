@@ -231,9 +231,10 @@ sets the capsule's response to channel 3 (Visibility) to Ignore (`0x6E67CCD`); t
 `CharacterMesh` (`0x6E67D25`), whose packed definition blocks Visibility
 ([details](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-config.md)).
 A bullet therefore registers on the **physics-asset bodies** of the mesh, not on the capsule, which is why a
-hit carries a bone: `FHitResult.BoneName` (`+0xF0`) is the body's bone. Whether the six tapered-capsule
-bodies are registered as query shapes is still [open](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-collision.md)
-(O-2).
+hit carries a bone: `FHitResult.BoneName` (`+0xF0`) is the body's bone. The six tapered-capsule
+bodies (calves, forearms, thighs) are registered as query shapes, but as **straight capsules of the mean of their two
+radii**: the Chaos geometry builder `0x423A2C0` strides the tapered array and calls the ordinary capsule constructor
+`0x21A6160` (round 42, O-2; see also [round 8](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-tapered-query.md)).
 
 ### 2.4 Ignored actors and components
 
@@ -306,8 +307,8 @@ step. Two things look like hit-scan but are not:
 - `FWDAdditionalDamageData_Projectile` (SDK, 0x0C bytes: `ProjectileIndex`, `bPenetrated`, `bPenetrationForced`,
   `bIsHitScan`, `fireid`) has a hit-scan flag. The only writer found is `0x6B71254`'s function, which stores
   `bPenetrationForced` from stats `+0x205` (`bForcePenetrateThinSurfaces`) and `bIsHitScan` as the result of a
-  byte compare (`sete`) on a context byte at `+0x2DA`; the meaning of that byte is **Open** (O-7). Round 41: `bIsHitScan` is true when the byte is **zero** (`cmp byte [rsi+0x2DA], r15b ; sete`, `0x6B71249`-`0x6B7125C`). The byte belongs to a 0x310-byte pending-shot entry
-(array at weapon component `+0x100`/`+0x108`), and is copied there from `request+0x128` at `0x6B71BAD`-`0x6B71BB5`; the writer of `request+0x128` was not found.
+  byte compare (`sete`) on a context byte at `+0x2DA`; the meaning of that byte is resolved below (O-7, round 42). Round 41: `bIsHitScan` is true when the byte is **zero** (`cmp byte [rsi+0x2DA], r15b ; sete`, `0x6B71249`-`0x6B7125C`). The byte belongs to a 0x310-byte pending-shot entry
+(array at weapon component `+0x100`/`+0x108`), and is copied there from `request+0x128` at `0x6B71BAD`-`0x6B71BB5`; the writer of `request+0x128` is `0x6F39940` (`0x6F3A53C`), which copies **`bActorHandlesProjectileMovement`** (`FWDProjectileStats +0x1F0`): `bIsHitScan` is true exactly when the ammunition's projectile stats have that flag false (round 42, O-7).
 - `UWDWeaponBehaviorComponent` (SDK) has `MuzzleTraceDistance`, `MuzzleTraceChannel` and
   `MuzzleTraceInterval` and caches a `CachedMuzzleHitResult`. That is a wall-collision check for the weapon
   (`GetWallCollisionAlpha`), not a shot.
@@ -551,8 +552,8 @@ Ricochet angle 91 (or more) can never be met (§4.3), so those rounds never rico
 | `+0x158` / `+0x170` | `PostImpactLocation` / `PostImpactVelocity` | with a ricochet or penetration: `inst.Location` / `inst.Velocity` after the response; otherwise `hit.ImpactPoint` and the zero vector (`0x6F35C6D`–`0x6F35CC7`) | |
 | `+0x188` / `+0x189` | `bRicocheted` / `bPenetrated` | arguments of §4.1 step 7, `0x6F3571A`, `0x6F35735` | |
 | `+0x18A` | `bExploding` | written by `0x6B721B0` (§6.2) | |
-| `+0x18C` | `ServerTime` | not written by `0x6F353F0` | writer **Open** (O-4) |
-| `+0x190` / `+0x19C` | `AutoProxyFixedTickInfo` / `FromToPct` fixed-tick info (`NetworkPrediction`) | initialised to -1 by `0x6F353F0` | writers **Open** (O-4) |
+| `+0x18C` | `ServerTime` | not written by `0x6F353F0` | no fire-path writer exists (round 42, O-4) |
+| `+0x190` / `+0x19C` | `AutoProxyFixedTickInfo` / `FromToPct` fixed-tick info (`NetworkPrediction`) | initialised to -1 by `0x6F353F0` | no fire-path writer exists: the RPC's tick info is stored in a queue and passed to a shot function that never reads it (round 42, O-4) |
 | `+0x1A8` | `ProjectileId` | `inst+0xE0`, `0x6F356D2` | |
 | `+0x1B0` | `SimulationData` (0x50): `ElapsedTime`, `Fuel`, `TotalAbsoluteWindDrift`, `TotalAbsoluteMove`, `HitCount`, `RicochetBitMap`, `PenetrationBitMap`, `RandomStreamSeed` | snapshot of the instance (`+0x290`, `+0x38`, `+0x58`, `+0x40`, `+0x118`, `+0x11A`, `+0x11C`, `+0xD0`) at `0x6F35C56`–`0x6F35D5F` | the state a replay of the step needs |
 
@@ -600,7 +601,7 @@ The truth table of step 4 is a network-authority matter and is not tabulated her
 | the hit actor is not matched by any element of the 8-byte array at `inst+0x130` (matcher `0x24738D0`), unless the damageable test above passed | `0x6B722E7`–`0x6B7230D` |
 | or the hit is `bExploding` (§4.1; set by `0x6B72249`–`0x6B722C6`) | `0x6B72318` |
 
-The array at `inst+0x130` is read here and in `0x6F353F0` (`0x6F35F39`); its writer was not located (O-6). Round 41: the instance constructor `0x6F3C060` zeroes it (`0x6F3C628`) and no instruction in `0x6F30000`-`0x6F40000` appends to it (the only `+0x130` accesses are the copy routines and reads), so its elements arrive through the instance copy from the spawn request; the request-side writer is still unknown.
+The array at `inst+0x130` is read here and in `0x6F353F0` (`0x6F35F39`); its writer is `0x6B717C0` (round 42, O-6): every processed hit appends the hit actor's weak pointer, so the array is the list of actors this projectile has already hit, and a second hit on a listed actor is refused while `+0x25D` is set. Round 41 (superseded): the instance constructor `0x6F3C060` zeroes it (`0x6F3C628`) and no instruction in `0x6F30000`-`0x6F40000` appends to it (the only `+0x130` accesses are the copy routines and reads), so its elements arrive through the instance copy from the spawn request; the request-side writer is still unknown.
 
 ### 6.3 Custom hit results (`0x6B73500`)
 
@@ -691,7 +692,7 @@ for hit number `HitCount - 2`, reads the speed from `ImpactVelocity` (`+0x128`) 
   (SDK; the implementations are virtual slots `0x500` and `0x4F8` of the component's vtable, `0x6B74770` and `0x6B72370`, reached from the exec thunks
   `0x69E93E0` and `0x69E8E50`; the sender is `0x69E86F0`). The result struct carries `ProjectileNetId`, `ClientHitIndex`, `ElapsedTime` and `bValidHit`; the
   instance has `ValidClientProjectileHitData` and `bFailedHitValidation` fields (SDK);
-- the hit record has `ServerTime` and `NetworkPrediction` fixed-tick fields (§5); the writers and readers of those fields are **Open** (O-4).
+- the hit record has `ServerTime` and `NetworkPrediction` fixed-tick fields (§5); no native code fills or reads them (round 42, O-4: the fixed-tick info of `Server_FireProjectile` is queued and passed to a shot function that ignores it; the validate step always passes).
 
 This page documents the flow, not its trust properties. What the server does with a forwarded hit is not described here (Damage Pipeline O-7 makes the
 same reservation); findings in that area follow [`SECURITY.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/SECURITY.md).
@@ -784,12 +785,12 @@ WARDOGS_ANALYSIS_EXE=<analysis image> python -I _tools/hit_registration_check.py
 ## 10. What is open
 
 1. **O-1: mover sweep.** Resolved in round 41 for the shape (root primitive's own collision shape; 155 mm shells: box 30.6 x 5.5 x 5.5 cm half extents) and the query (channel 3, stock response, §2.5). Residual: which code, if any, reads `SweepProfileName`.
-2. **O-2: tapered capsules.** Whether the six tapered-capsule bodies are registered as query shapes (carried over from the collision evidence). Round 41: the function `0x66BF0EC` that appends 0x70-byte elements and fills Radius0/Radius1/Length is an authoring-side array builder, not the runtime consumer; the Chaos geometry builder that strides `UBodySetup` `+0x78` was not found.
+2. **O-2: tapered capsules.** Closed in round 42: straight capsules of mean radius via `0x423A2C0` / `0x21A6160`. Earlier question: whether the six tapered-capsule bodies are registered as query shapes (carried over from the collision evidence). Round 41: the function `0x66BF0EC` that appends 0x70-byte elements and fills Radius0/Radius1/Length is an authoring-side array builder, not the runtime consumer; the Chaos geometry builder that strides `UBodySetup` `+0x78` was not found.
 3. **O-3: server-side handling of a forwarded hit.** Not documented here (§7).
-4. **O-4: fixed-tick and server-time fields.** Round 41: the only writers of `+0x18C`/`+0x190`/`+0x19C` in `0x6B00000`-`0x6C00000` are the record's copy and move routines (`0x6B709F0`, `0x6B70750`); the builder `0x6F353F0` stores -1, so the values come from the fire RPC `Server_FireProjectile(FireId, uint16, FAutoProxyFixedTickInfo, array)` (`0x6B996D0` is its exec thunk). The RPC implementation that copies them into the record was not read. Whether any target pose is reconstructed from them is open.
+4. **O-4: fixed-tick and server-time fields.** Closed in round 42: `Server_FireProjectile_Validate` (`0xD356F0`) always returns true; the implementation `0x6B97900` runs or queues the shots (`0x6B92180`); the fixed-tick info is never read; the client seed is replaced by -1. Round 41 (superseded): the only writers of `+0x18C`/`+0x190`/`+0x19C` in `0x6B00000`-`0x6C00000` are the record's copy and move routines (`0x6B709F0`, `0x6B70750`); the builder `0x6F353F0` stores -1, so the values come from the fire RPC `Server_FireProjectile(FireId, uint16, FAutoProxyFixedTickInfo, array)` (`0x6B996D0` is its exec thunk). The RPC implementation that copies them into the record was not read. Whether any target pose is reconstructed from them is open.
 5. **O-5: alignment.** Resolved in round 41 (§6.4): same `FactionTag` on the two player states. Open: non-infantry damage systems; non-player instigators.
-6. **O-6: the array at `inst+0x130`.** Filled by the instance copy from the spawn request; request-side writer not found (§6.2).
-7. **O-7: `bIsHitScan`.** The flag is `(byte at +0x2DA) == 0`, copied from `request+0x128` (§3); the writer of that request byte and whether any weapon bypasses the projectile subsystem are open.
+6. **O-6: the array at `inst+0x130`.** Closed in round 42: appended hit by hit by `0x6B717C0` (§6.2).
+7. **O-7: `bIsHitScan`.** Closed in round 42: `(byte at +0x2DA) == 0`, copied from `request+0x128`, which `0x6F39940` fills from `bActorHandlesProjectileMovement` (§3). Open: whether any weapon bypasses the projectile subsystem.
 8. **O-8: impact cue tags and decal selection.** Tags resolved in round 41 (§8). Open: the `GC_Weapon_Impact_C` graph.
 9. **O-9: `IgnoreInstigatorVehicleTime`.** Closed in round 41: a flag test only (§2.4).
 10. **O-10: `CustomHitResults`.** Closed in round 41: one hit per physics body crossed by the bullet segment (§6.3).
