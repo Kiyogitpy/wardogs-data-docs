@@ -22,17 +22,17 @@ description: "Magazines for the weapons in the data, with the aim time, recoil, 
 | Internal name | `Item.Attachment.Magazine` |
 {: .wiki-infobox }
 
-Magazines hold the rounds a weapon fires. Some weapons use an internal magazine instead of a swappable one. The data lists 69 magazines. 46 of them change weapon numbers and 23 change nothing in the data. Tracer rounds load into the normal magazines for their caliber: loading checks the magazine and its caliber, not an ammo tag.
+Magazines hold the rounds a weapon fires. Some weapons use an internal magazine instead of a swappable one. The data lists 69 magazines. 46 of them carry stat multipliers, but on 19 of those every multiplier is 1, so 27 change weapon numbers and 42 change nothing. Tracer rounds load into the normal magazines for their caliber: loading checks the magazine and its caliber, not an ammo tag.
 
 Parts the game data gives no display name are labelled "Unnamed" followed by the weapon and part type. These labels are placeholders used on this wiki, not names shown in the game, and the same label can appear more than once for different parts.
 
 ## What they change
 
-- Aim time: x0.83 to x1.26 (46 parts).
-- Vertical recoil: x0.83 to x1.22 (46 parts).
-- Horizontal recoil: x0.83 to x1.24 (46 parts).
-- Equip speed: x0.9 to x1.24 (31 parts).
-- Aim sway (character side): x0.77 to x1.25 (37 parts).
+- Aim time: x0.83 to x1.26 (46 parts carry it, 27 with a value other than 1).
+- Vertical recoil: x0.83 to x1.22 (46 parts carry it, 27 with a value other than 1).
+- Horizontal recoil: x0.83 to x1.24 (46 parts carry it, 27 with a value other than 1).
+- Equip speed: x0.9 to x1.24 (31 parts carry it).
+- Aim sway (character side): x0.77 to x1.25 (37 parts carry it).
 - Packing time: x0.6 to x0.8 on 3 parts (the machine-gun magazines), no change on the rest. See [Ammo Packing](../ammunition/ammo-packing.md).
 
 A multiplier below 1 lowers the stat and one above 1 raises it, so for recoil lower is better. Equip speed is a speed multiplier, so a higher value should mean a faster equip (read from the stat name; the data gives no plain-words description). The name of each magazine gives its capacity: "30 RND" is 30 rounds.
