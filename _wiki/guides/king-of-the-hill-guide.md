@@ -101,7 +101,7 @@ Sources: [Maps](../game-modes-and-maps/maps.md), [Bakurani](../game-modes-and-ma
 
 ## Building a forward base
 
-The Forward Operating Base (FOB) costs 7,500 cash in the shop and 30 Build Supplies. It has 15,000 HP, is placed from its own item, and has no build time. Most structures must be placed inside its radius. A new FOB cannot be placed within about 42 m of another FOB. Destroying an enemy FOB pays 2,500 cash. The King of the Hill spawn manager has no FOB step.
+The Forward Operating Base (FOB) costs 7,500 cash in the shop. Its data lists a Build Supplies cost of 30, but nothing is charged at placement. It has 15,000 HP, is placed from its own item, and has no build time. Most structures must be placed inside its radius. A new FOB cannot be placed within about 42 m of another FOB. Destroying an enemy FOB pays 2,500 cash. The King of the Hill spawn manager has no FOB step.
 
 Read [Forward Operating Base](../building/forward-operating-base.md) for the full figures, and [Building a Base](building-guide.md) for what to build around it.
 

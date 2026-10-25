@@ -24,7 +24,7 @@ A player starts with 10,000 cash, and the loading-screen tip says cash carries o
 | Medic | Revive with a defibrillator or resuscitator | 1,000 |
 | Medic | Heal with an Individual First Aid Kit | 1,000 |
 | Medic | Heal with a Bandage | 400 |
-| Support | Destroy an enemy forward operating base | 5,000 |
+| Support | Destroy an enemy forward operating base | 2,500, plus up to 7,500 by its supplies |
 | Support | Place a forward operating base | 1,000 |
 | Support | Deploy a large supply crate | 150 |
 | Recon | Destroy a target the player spotted | 50 to 500 |
@@ -168,9 +168,9 @@ Filling a tank from empty with Fast restocks takes 20 restocks of 75 cash, which
 
 | Repair option | Repairs | Per use | Cost |
 |---|---|---|---:|
-| Wrench | Any vehicle | 5 HP | 180 cash |
-| Light repair drill | Vehicles | 5 HP | 600 cash |
-| Heavy repair drill | Vehicles | 5 HP | 1,300 cash |
+| Wrench | Any vehicle | 10 HP | 180 cash |
+| Light repair drill | Vehicles | 14.5 HP | 600 cash |
+| Heavy repair drill | Vehicles | 14.5 HP | 1,300 cash |
 | Repair Station, Fast | Vehicles in the FOB radius | 5% of health | 100 cash |
 | Repair Station, Max | Vehicles in the FOB radius | Up to full | 2,000 cash |
 

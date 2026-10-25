@@ -34,7 +34,7 @@ Short answers to the questions players ask most often. Each answer gives the num
 
 **Does a helmet cover my neck?** Only the heavier helmets. The Heavy, Super heavy and Tank helmets cover the neck, and the Light and Medium helmets cover the head only ([Armor](../game-mechanics/armor.md)).
 
-**Does armor wear out?** Each vest and helmet has durability. A hit takes durability from it, and the piece breaks at 0. The reduction stays the same through all four durability stages ([Armor](../game-mechanics/armor.md)).
+**Does armor wear out?** Each vest and helmet has durability. A hit takes durability from it, and the piece breaks at 0. The reduction stays the same through all four durability stages. This is read from the game code and was not confirmed in play ([Armor](../game-mechanics/armor.md)).
 
 **How long does a bandage take?** About 5.2 s to use on yourself, and 4.8 s on a teammate. It restores 35 HP ([Downed and Revive](../game-mechanics/downed-and-revive.md), [Bandage](../equipment/bandage.md)).
 
@@ -74,7 +74,7 @@ Short answers to the questions players ask most often. Each answer gives the num
 
 ## Building
 
-**What is a Forward Operating Base?** The anchor for building. Most structures must be placed inside its radius. It costs 30 Build Supplies to place and 7,500 cash in the shop, and it has 15,000 HP ([Forward Operating Base](../building/forward-operating-base.md)).
+**What is a Forward Operating Base?** The anchor for building. Most structures must be placed inside its radius. It costs 7,500 cash in the shop and has 15,000 HP. Its data lists a Build Supplies cost of 30, but nothing is charged at placement ([Forward Operating Base](../building/forward-operating-base.md)).
 
 **Which hammer builds a Bunker, and how many rockets kill one?** Only the Large Hammer builds a Bunker, for 200 Build Supplies and 134 hits. Rockets do 45% more damage to it, and about 33 120 mm rockets destroy it at point blank. That count is derived from the damage table, not measured in play ([Bunker](../building/bunker.md), [Buildables](../building.md)).
 
@@ -114,7 +114,7 @@ Short answers to the questions players ask most often. Each answer gives the num
 
 **Can I get a refund?** Yes. A refund pays 90% of the eligible amount, but it must be claimed within 20 score ticks ([Shops](../progression-and-economy/shops.md)).
 
-**What is the biggest role payout for one action?** Destroying an enemy Havoc pays 6,000 cash for the Pilot role, the top payout in the role table on Making Money. Destroying an artillery tank also pays a 6,000 base, and the L2A6 artillery variant has a separate per-kill session value of 8,000 in Season 2, so no single figure is the biggest. A kill from artillery while standing in the open pays 5,000 for the Assault role, and destroying a heavy tank pays 5,000 for the Driver role ([Making Money](making-money.md), [Cash and Rewards](../progression-and-economy/cash-and-rewards.md)).
+**What is the biggest role payout for one action?** Destroying an enemy Havoc pays 6,000 cash for the Pilot role, the top vehicle payout in the role table on Making Money. Destroying an artillery tank also pays a 6,000 base, and the L2A6 artillery variant has a separate per-kill session value of 8,000 in Season 2. Destroying an enemy Forward Operating Base pays 2,500 plus up to 7,500 more depending on the supplies it holds, so no single figure is the biggest. A kill from artillery while standing in the open pays 5,000 for the Assault role, and destroying a heavy tank pays 5,000 for the Driver role ([Making Money](making-money.md), [Cash and Rewards](../progression-and-economy/cash-and-rewards.md)).
 
 **What is Intel for?** Passive missions pay 100 to 500 Intel per tier. The data has no shop price, unlock or exchange that uses it ([Currencies](../progression-and-economy/currencies.md), [Passive Missions](../progression-and-economy/passive-missions.md)).
 

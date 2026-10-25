@@ -20,7 +20,7 @@ This guide picks the best part for each job from the stat values on the attachme
 
 ## Magazines
 
-Magazines change aim time, vertical and horizontal recoil, equip speed and aim sway in 46 of their 69 parts. The other 23 change nothing in the data.
+The data gives 46 of the 69 magazines aim time, recoil, equip speed and aim sway multipliers, but the magazine page shows only 27 of them with a value other than x1. The other 42 change nothing you can feel.
 
 - **Least recoil and aim time:** the Super-45 13 RND Magazine (30) gives aim time x0.83, vertical and horizontal recoil x0.83 each, and aim sway x0.77. Its equip speed is x1.21, the highest of the priced magazines. The AMP-9 15 RND Magazine (30) has the same recoil values, with aim time x0.86.
 - **Worst values:** the largest magazines. The AK74 75 RND Drum Magazine has aim time x1.26 and vertical recoil x1.22. It has no shop price. The Super-45 40 RND Drum Magazine (280) has aim time x1.2 and vertical recoil x1.2.
@@ -35,7 +35,7 @@ Muzzle devices change vertical and horizontal recoil, spread and aim time. The r
 
 - **Least vertical recoil:** the Orpheus Max Brake, x0.74 (980). It fits the M249 SAW and the PKM. Its horizontal recoil is x0.9 and its aim time is x1.07.
 - **Least horizontal recoil:** the Hexagon Brake, x0.78 (350). It fits the Galil, M4 and T-21. Its vertical recoil is x0.99.
-- **Least spread:** the RC-556 Suppressor, x0.88 (1,310). It fits the Galil, M249 SAW, M4 and T-21. Its aim time is x1.12.
+- **Least spread:** the RC-556 Suppressor, x0.88 (1,310), tied with the .30 Cal SS Phosphate Muzzle Brake, x0.88 (950, M14 only). The RC-556 fits the Galil, M249 SAW, M4 and T-21. Its aim time is x1.12.
 - **Quickest aim:** the .30 Cal Steel Black Flash Hider, aim time x0.97 (730). It fits the M14, and its only stat change is aim time.
 - **Shotgun chokes (M500):** the Improved Cylinder Choke (540) narrows the outer edge of the pellet pattern from 1.56 to 1.36 degrees, and about 26 percent of pellets land in the tight inner cluster. The Full Choke (1,150) narrows the edge to 0.95 degrees, and 34 percent of pellets land in the inner cluster. Both add aim time x1.02.
 - Brakes, chokes and suppressors with a stat change add aim time, from x1.02 to x1.15. Only the flash hiders cut aim time, to x0.97 or x0.98. A recoil pick usually costs some aim time.
