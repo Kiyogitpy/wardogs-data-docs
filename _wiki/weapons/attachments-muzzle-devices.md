@@ -33,7 +33,9 @@ Muzzle devices fit the end of a barrel: flash hiders, brakes, compensators, supp
 
 Lower recoil and spread are better. Aim time is a time multiplier, so a value above 1 adds time to aim. A muzzle device changes no character-side stat in the data.
 
-The two shotgun chokes on the M500 (Improved Cylinder Choke and Full Choke) are also marked in the data as replacing the shotgun pellet pattern. Only that flag is in the data; the replacement pattern values are not in it, so the pattern change is not yet known.
+The two shotgun chokes on the M500 (Improved Cylinder Choke and Full Choke) replace the shotgun pellet pattern. Improved Cylinder Choke narrows the outer edge of the pellet cone from 1.56 to 1.36 degrees, and about 26 percent of pellets land in the tight inner cluster (20 percent without it). Full Choke narrows the outer edge to 0.95 degrees, and 34 percent of pellets land in the inner cluster (derived from the game's values).
+
+The M14 standard muzzle carries the suppressor sound cue and a smaller flash, but no stat change.
 
 Each device also stores a muzzle flash size and a sound cue. Only the stat changes are described here.
 
@@ -148,3 +150,4 @@ Shop price changes (Season 1 to Season 2):
 - [Gameplay Effect Values](../../pipelines/Wardogs_GameplayEffect_Values_v1.md): the modifier values behind each effect.
 - [weapon-loadouts.json](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-loadouts.json): slot, part and effect data.
 - [Season 2 changes: weapons and ammo](../../season-2-changes/weapons-ammo.md): Season 2 prices, new parts and sight values.
+- [Round 39 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-weapons.md): M500 choke replacement values, M14 muzzle

@@ -29,7 +29,7 @@ Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun,
 |---|---|---:|---|---:|
 | [BMR-308](weapons/bmr-308.md) | .308 Win | 450 rounds/min | FAL 10 RND Magazine | 6250 |
 | [M14](weapons/m14.md) | .308 Win | 700 rounds/min | M14 10 RND Magazine | 7400 |
-| [SKS](weapons/sks.md) | 7.62x39mm | 420 rounds/min | SKS Internal Mag | 2400 |
+| [SKS](weapons/sks.md) | 7.62x39mm | 420 rounds/min | SKS Internal Mag (10 rounds) | 2400 |
 | [SVD](weapons/svd.md) | 7.62x54mm | 480 rounds/min | SVD 10 RND Magazine | 4800 |
 | [TCX-SPR](weapons/tcx-spr.md) | 7.62x39mm | 800 rounds/min | TCX-SPR 28 RND Magazine | 3200 |
 
@@ -58,7 +58,7 @@ Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun,
 | [Deagle](weapons/deagle.md) | 50AE | 267 rounds/min | Deagle 7 RND Magazine | 750 |
 | [GGX 17](weapons/ggx-17.md) | 9x19mm | 600 rounds/min (class default) | GGX 17 RND Magazine | 200 |
 | [GGX 18](weapons/ggx-18.md) | 9x19mm | 1,200 rounds/min | GGX 17 RND Magazine | 1000 |
-| [Judge](weapons/judge.md) | .45 Colt | 200 rounds/min | Judge Bullet Cylinder | 250 |
+| [Judge](weapons/judge.md) | .45 Colt | 200 rounds/min | Judge Bullet Cylinder (6 rounds) | 250 |
 | [M1911](weapons/m1911.md) | .45 ACP | 430 rounds/min | M1911 7 RND Magazine | 300 |
 
 ## Shotguns
@@ -66,7 +66,7 @@ Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun,
 | Weapon | Caliber | Fire rate | Standard magazine | Vendor price |
 |---|---|---:|---|---:|
 | [M500](weapons/m500.md) | 12g | 120 rounds/min | M500 Internal Mag | 1200 |
-| [MP43](weapons/mp43.md) | 12g | 900 rounds/min | not yet known | 400 |
+| [MP43](weapons/mp43.md) | 12g | 900 rounds/min | None, the chamber holds 2 (12g 7mm Buckshot) | 400 |
 
 ## Sniper rifles
 
@@ -75,14 +75,14 @@ Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun,
 | [AMR 50](weapons/amr-50.md) | .50Cal | 41.5 rounds/min | AMR 50 5 RND Magazine | 14800 |
 | [MK22](weapons/mk22.md) | .308 Win | 46 rounds/min | MK22 10 RND Magazine | 6400 |
 | [Mosin Nagant](weapons/mosin-nagant.md) | 7.62x54mm | 46 rounds/min | Mosin Standard Mag | 4500 |
-| [Scout Rifle TD](weapons/scout-rifle-td.md) | 5.56x45mm | 46 rounds/min | not yet known | 1200 |
+| [Scout Rifle TD](weapons/scout-rifle-td.md) | 5.56x45mm | 46 rounds/min | None, the chamber holds 1 (5.56x45mm) | 1200 |
 | [SV98](weapons/sv98.md) | 7.62x54mm | 46 rounds/min | SV98 10 RND Magazine | 5200 |
 
 ## Launchers
 
-| Weapon | Caliber | Fire rate | Standard magazine | Vendor price |
-|---|---|---:|---|---:|
-| [9K333 Verba](weapons/9k333-verba.md) | None (explosive) | 100 rounds/min | not yet known | 800 |
-| [MAAWS](weapons/maaws.md) | None (explosive) | 100 rounds/min | not yet known | 2400 |
-| [MGL-40](weapons/mgl-40.md) | None (explosive) | 75 rounds/min | MMGL Internal Mag | 7500 |
-| [RPG-7](weapons/rpg-7.md) | None (explosive) | 100 rounds/min | not yet known | 1800 |
+| Weapon | Muzzle velocity | Effective range | Fire rate | Standard magazine | Vendor price |
+|---|---:|---:|---:|---|---:|
+| [9K333 Verba](weapons/9k333-verba.md) | 20 m/s | 1000 m | 100 rounds/min | None, the chamber holds 1 (72mm) | 800 |
+| [MAAWS](weapons/maaws.md) | 230 m/s | 400 m | 100 rounds/min | None, the chamber holds 1 (84mm) | 2400 |
+| [MGL-40](weapons/mgl-40.md) | 75 m/s | 400 m | 75 rounds/min | MMGL Internal Mag (6 rounds) | 7500 |
+| [RPG-7](weapons/rpg-7.md) | 100 m/s | 300 m | 100 rounds/min | None, the chamber holds 1 (93mm) | 1800 |

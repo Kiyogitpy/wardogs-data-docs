@@ -30,6 +30,8 @@ loadouts = jload("assets/data/weapon-loadouts.json")
 EFFECTS = loadouts["effects"]  # GE name -> list of modifiers
 wdamage = {w["id"]: w for w in jload("assets/data/weapon-damage.json")["weapons"]}
 falloff_doc = jload("assets/data/weapon-damage-falloff.json")
+# muzzle speed, effective range (with its source), chamber and magazine per weapon, from the cooked export
+CAP = {w["id"].split("Id.Item.", 1)[1]: w for w in jload("assets/data/weapon-capacity.json")["weapons"]}
 falloff = {w["id"]: w for w in falloff_doc["weapons"]}
 DIST = falloff_doc["meta"]["distances_m"]
 TAG_TEXT = read("content/Wardogs_TagDisplayText_v1.md")
@@ -270,13 +272,36 @@ def stats(wid):
     modes_cap = modes_txt[:1].upper() + modes_txt[1:]
 
     cal = caliber_display(dmg["caliber"]) if dmg else "None (explosive)"
-    speed = f"{fo['initial_bullet_speed_cm_s']/100:.0f} m/s" if fo and fo.get("initial_bullet_speed_cm_s") else "not yet known"
-    rng = f"{fo['effective_range_m']:.0f} m" if fo and fo.get("effective_range_m") is not None else "not yet known"
+    cap = CAP.get(code)
+    if cap and cap.get("muzzle_m_s"):
+        speed = f"{cap['muzzle_m_s']:.0f} m/s"
+    else:
+        speed = f"{fo['initial_bullet_speed_cm_s']/100:.0f} m/s" if fo and fo.get("initial_bullet_speed_cm_s") else "not yet known"
+    if cap and cap.get("effective_range_m") is not None:
+        rng = f"{cap['effective_range_m']:.0f} m"
+        if cap.get("effective_range_source") == "class_default_native":
+            rng += " (game default)"
+    else:
+        rng = f"{fo['effective_range_m']:.0f} m" if fo and fo.get("effective_range_m") is not None else "not yet known"
     mag = magazine_text(shop["defaults"])
+    has_mag = mag != "not yet known"
+    mag_row = mag
+    if cap and cap.get("magazine"):
+        cap_n = cap["magazine"]["capacity"]
+        if has_mag and not re.search(r"[0-9]", mag):
+            mag_row = f"{mag} ({cap_n} rounds)"
+    elif cap and cap.get("rounds_held"):
+        # no magazine container: the chamber holds the rounds (launchers, single-shot and internal-magazine weapons)
+        n = cap["rounds_held"]
+        cal_key = (cap.get("calibers") or [None])[0]
+        cal_name = caliber_display(cal_key.split("Item.Caliber.", 1)[1]) if cal_key else cal
+        mag = "none (chamber only)"
+        has_mag = False
+        mag_row = f"None, the chamber holds {n} ({cal_name})"
     return {
         "cls": CLASS_NAME[it["archetype"]], "arch": it["archetype"], "cal": cal,
         "modes": modes_txt, "modes_cap": modes_cap, "rpm": rpm, "speed": speed, "range": rng,
-        "mag": mag, "price": shop["price"], "unlock": shop["unlock"], "defaults": shop["defaults"],
+        "mag": mag, "mag_row": mag_row, "has_mag": has_mag, "price": shop["price"], "unlock": shop["unlock"], "defaults": shop["defaults"],
     }
 
 
@@ -478,7 +503,7 @@ def build_weapon(wid):
         ("Fire rate", s["rpm"]),
         ("Muzzle velocity", s["speed"]),
         ("Effective range", s["range"]),
-        ("Standard magazine", s["mag"]),
+        ("Standard magazine", s["mag_row"]),
         ("**Availability**", ""),
         ("Vendor price", s["price"] or "not yet known"),
         ("Unlock level", s["unlock"] or "not yet known"),
@@ -492,7 +517,7 @@ def build_weapon(wid):
             lead += f" Its fire rate is {s['rpm'].replace(' (class default)', '')}."
     else:
         lead = (f"The {title} is {art} {cls_l} chambered in {s['cal']}. It fires {s['modes']} at {s['rpm'].replace(' (class default)', '')}.")
-        if s["mag"] != "not yet known":
+        if s["has_mag"]:
             lead += f" Its standard magazine is the {s['mag']}."
 
     out = [f"# {title}", ""] + infobox + ["", lead, ""]
@@ -510,8 +535,8 @@ def build_weapon(wid):
             f"| Fire rate | {s['rpm']} |",
             f"| Muzzle velocity | {s['speed']} |",
             f"| Effective range | {s['range']} |", ""]
-    if not dmg:
-        out += ["Launcher stats beyond the fire rate are not in the data pages.", ""]
+    if code == "Launcher_04":
+        out += ["The muzzle velocity is the launch speed. The rocket has its own thrust after launch, so its speed in flight is higher than this.", ""]
 
     # Damage
     out += ["## Damage", ""]
@@ -605,7 +630,9 @@ def build_weapon(wid):
             "- [Tag Display Text](../../content/Wardogs_TagDisplayText_v1.md): caliber and ammo names",
             f"- [weapon-loadouts.json]({GH}assets/data/weapon-loadouts.json): names, slots and effects",
             f"- [weapon-damage.json]({GH}assets/data/weapon-damage.json): body-part and armor damage",
-            f"- [weapon-damage-falloff.json]({GH}assets/data/weapon-damage-falloff.json): speed, effective range and falloff",
+            f"- [weapon-damage-falloff.json]({GH}assets/data/weapon-damage-falloff.json): falloff curves",
+            f"- [weapon-capacity.json]({GH}assets/data/weapon-capacity.json): muzzle speed, effective range, chamber and magazine",
+            f"- [Round 39 weapon evidence]({GH}docs/evidence/round39-weapons.md): launcher speeds and ranges, magazines, default rate",
             ""]
     desc = f"The {title} {cls_l}: fire rate, damage by body part, range falloff, ammunition, attachments and Season 2 changes."
     return title, desc, "\n".join(out)
@@ -709,9 +736,13 @@ def hub_page(sections):
             "[Ammunition](weapons/ammunition.md) and [Attachments](weapons/attachments.md) have their own pages.", ""]
     for arch in CLASS_ORDER:
         if sections.get(arch):
-            body += [f"## {class_group(arch)}", "",
-                     "| Weapon | Caliber | Fire rate | Standard magazine | Vendor price |",
-                     "|---|---|---:|---|---:|"] + sections[arch] + [""]
+            if arch == "Launcher":
+                head_rows = ["| Weapon | Muzzle velocity | Effective range | Fire rate | Standard magazine | Vendor price |",
+                             "|---|---:|---:|---:|---|---:|"]
+            else:
+                head_rows = ["| Weapon | Caliber | Fire rate | Standard magazine | Vendor price |",
+                             "|---|---|---:|---|---:|"]
+            body += [f"## {class_group(arch)}", ""] + head_rows + sections[arch] + [""]
     return head + "\n".join(body)
 
 
@@ -728,8 +759,12 @@ def main():
         with open(os.path.join(OUT, slug + ".md"), "w", encoding="utf-8", newline="\n") as f:
             f.write(front_matter(title, desc, class_group(arch)) + text)
         s = stats(wid)
-        sections.setdefault(arch, []).append(
-            f"| [{title}](weapons/{slug}.md) | {s['cal']} | {s['rpm']} | {s['mag']} | {s['price'] or 'not yet known'} |")
+        if arch == "Launcher":
+            row = (f"| [{title}](weapons/{slug}.md) | {s['speed']} | {s['range']} | {s['rpm']} | {s['mag_row']} "
+                   f"| {s['price'] or 'not yet known'} |")
+        else:
+            row = (f"| [{title}](weapons/{slug}.md) | {s['cal']} | {s['rpm']} | {s['mag_row']} | {s['price'] or 'not yet known'} |")
+        sections.setdefault(arch, []).append(row)
         count += 1
     ammo = front_matter("Ammunition", "Bullet and shell types, what each does to armor and flesh, and which weapons use them.", "Reference") + ammo_page()
     with open(os.path.join(OUT, "ammunition.md"), "w", encoding="utf-8", newline="\n") as f:

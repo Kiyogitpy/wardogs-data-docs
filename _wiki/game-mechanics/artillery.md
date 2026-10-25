@@ -56,6 +56,8 @@ The calculator and the CV Artillery Computer do this sum for you. The terrain on
 
 The gun's elevation scale is in mils. The best fit with the real impacts is a true milliradian, where 1 mil is 0.0573° and 1,000 mils is 57.3°. Two other mil systems, the NATO scale (6,400 per circle) and the Warsaw Pact scale (6,000 per circle), fit the impacts worse.
 
+The barrel's true elevation is the dial reading plus 16.8 mrad (about 0.96 degrees). The game's range code adds this offset before the shell flies, so the dial values in the tables are the ones to set on the gun.
+
 ### Low and high arcs
 
 Every range from about 1,181 m to 2,629 m can be hit two ways:
@@ -102,7 +104,7 @@ How the game table and the dial compare:
 
 - On the **low arc**, the game table's elevation is higher than the dial setting for the same range, by 45 to 97 mils (about 50 in the middle of the range, 97 at 2,600 m). The gap is largest at the short end and at the very top of the range.
 - On the **high arc**, the game table is slightly lower than the dial, by 2 to 5 mils over most of the range and by up to 34 mils at 2,500 m.
-- The gap is not a fixed shift on the SPH-2. The sight does not read the table's distances. It works out each mil mark's distance with a live simulation, taking the altitude above sea level and the air density as inputs, so the table and the dial are two different calculations. The game table also lists settings the dial cannot reach: its low arc starts at 20 mrad for 600 m, but the dial's lowest setting, 20 mils, already lands at 1,181 m, and its high arc runs to 1,400 mrad for 700 m, while the dial stops at 1,390 mils (780 m).
+- The gap is not a fixed shift on the SPH-2. The sight does not read the table's distances. It works out each mil mark's distance with a live simulation, taking the altitude above sea level and the air density as inputs, so the table and the dial are two different calculations. Because the firing altitude is an input, the mils for a range depend on how high the gun sits. Simulated, a 2,000 m low-arc shot needs 250 mils fired from 3 m, 224 from 50 m and 197 from 100 m. This altitude effect is why the community calculator's dial readings and the stored table differ by 40 to 60 mils on the low arc. The altitude the calculator used is not known. The game table also lists settings the dial cannot reach: its low arc starts at 20 mrad for 600 m, but the dial's lowest setting, 20 mils, already lands at 1,181 m, and its high arc runs to 1,400 mrad for 700 m, while the dial stops at 1,390 mils (780 m).
 - The game's travel times fit the flight maths at the game table's own elevation. On the high arc the simulator is within 0.1 to 0.4 s of the game (under 2 percent). On the low arc the game takes 0.5 to 1.6 s longer than the simulator, and the simulator lands 18 to 283 m short of the game table's range at the same elevation. The high-arc fit is good and the low-arc fit is loose, especially at the shortest ranges.
 
 Reading the table:
@@ -119,7 +121,7 @@ The table assumes the target is at the same height as the gun. A target higher o
 - The CV Artillery Computer uses terrain heights for the same correction. Three logged shots at targets about 100 m higher landed within about 20 m.
 - Shots fired without a known height difference overshot by about 70 m on average.
 
-Hull tilt also changes where the shell lands. In the simulator's comparison against real shots, adding the hull's pitch to the elevation setting halved the median miss, from 59 m to 34 m. This suggests that the elevation is measured from the tilted hull, so park the SPH-2 level or correct for the slope. The game's handling of tilt is not confirmed.
+Hull tilt also changes where the shell lands. The range function that the game uses for the dial takes only the dial value, with no hull pitch term. Where the game adds the hull pitch to the sight was not located. In the simulator's comparison against real shots, adding the hull's pitch to the elevation setting halved the median miss, from 59 m to 34 m. This suggests that the elevation is measured from the tilted hull, so park the SPH-2 level or correct for the slope. The game's handling of tilt is not confirmed.
 
 ### How consistent the gun is
 
@@ -132,9 +134,9 @@ Two shells exist for the SPH-2. Both are the "155mm HE Shell" in the game.
 | Shell | Mass | Drag value | Camera | Notes |
 |---|---:|---:|---|---|
 | Expensive | 19 kg | 2.5 | Follows the shell in flight | The SPH-2 starts with this shell |
-| Standard | 70 kg | 80 | None | With the game's flight maths it cannot fly further than about 815 m (estimated) |
+| Standard | 70 kg | 80 | None | With the game's flight maths it cannot fly further than about 810 m (estimated) |
 
-The Expensive camera follows the shell, then detaches and zooms out after a while, with a 4 s fade.
+The Expensive camera follows the shell, then detaches and zooms out after a while, with a 4 s fade. The stored range table was computed for the Expensive shell.
 
 All shells launch at 300 m/s and fall under gravity of 9.8 m/s². Air drag slows them a great deal. Without drag, the same launch would carry the shell about 9 km. With drag, the Expensive shell tops out near 2.6 km (simulator estimate). A shell disappears after 40 s of flight.
 
@@ -151,7 +153,7 @@ The stats sheet gives the SPH-2 gun an "effective range" of 10,000 m. That is no
 
 ## What is not known
 
-- The zero of the sight's mil scale. The dial shows true milliradians of the gun's pitch, but the angle it counts from (the hull, the horizon or a rest angle) is not confirmed. The dial values are the ones measured in game and checked against impacts, so use them.
+- The reason for the 16.8 mrad offset. The game's code measures the dial from a fixed launch-axis zero and adds 16.8 mrad, but the files do not say whether that offset is the gap between the barrel and the pivot, or how the zero relates to the hull. The dial values are the ones measured in game and checked against impacts, so use them.
 - Why the game table's low-arc travel times run 0.5 to 1.6 s longer than the flight maths gives at the same elevation, while the high-arc times agree.
 
 - How the game handles hull tilt. The simulator's result suggests the elevation is measured from the tilted hull, but this is not confirmed.
@@ -180,3 +182,4 @@ The stats sheet gives the SPH-2 gun an "effective range" of 10,000 m. That is no
 - [shell_sim.py](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/_tools/shell_sim.py): flight simulator for the apex heights and miss estimates
 - [Round 21 artillery range check](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round21-artillery-range-check.md): the comparison against 87 logged shots
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): how the SPH-2 sight labels its mil marks, and the mil scale.
+- [Round 40 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-weapons.md): mil offset (16.8 mrad), dial versus range table, firing altitude, Expensive shell

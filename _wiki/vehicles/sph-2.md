@@ -45,7 +45,7 @@ The stats sheet gives the gun an "effective range" of 10,000 m. That is not the 
 
 Ranges from about 1,181 m to 2,629 m can be hit on a low arc (20 to about 600 mils, flat and fast, about 5.5 to 24 s in the air) or a high arc (about 610 to 1,390 mils, steep and slow, 28 to 37 s in the air). The travel times come from the gun's range table in the game files. Between 780 m and 1,181 m only the high arc reaches.
 
-A short table of the firing solutions on flat ground. The mils are the settings to dial on the sight's MIL scale, measured in game. The game's own range table lists different elevations for the same ranges (45 to 97 mils higher on the low arc, up to 34 mils lower on the high arc). The reason is that the sight does not read that table's distances. It works out each mil mark's distance with a live simulation, so the table and the dial are two different calculations. The dial shows true milliradians of the gun's pitch, but the angle that counts as zero is not confirmed:
+A short table of the firing solutions on flat ground. The mils are the settings to dial on the sight's MIL scale, measured in game. The game's own range table lists different elevations for the same ranges (45 to 97 mils higher on the low arc, up to 34 mils lower on the high arc). The reason is that the sight does not read that table's distances. It works out each mil mark's distance with a live simulation from your firing altitude, so the table and the dial are two different calculations. The barrel's true elevation is the dial reading plus 16.8 mrad (about 0.96 degrees). Simulated, a 2,000 m low-arc shot needs 250 mils from 3 m, 224 from 50 m and 197 from 100 m, so the altitude explains part of the gap:
 
 | Range (m) | Low arc (mils) | High arc (mils) |
 |---:|---:|---:|
@@ -130,3 +130,4 @@ The stats sheet gives 3 seats, but the seat data has two setups: a driver and a 
 - [SPH-2 weapon data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/Artillery/WE_TNK_01_Artillery.json), from the game files: the range table with travel times
 - [Round 21 artillery range check](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round21-artillery-range-check.md), estimated: the high-arc apex and the flight simulator's miss against real shots
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): how the SPH-2 sight labels its mil marks, and the mil scale.
+- [Round 40 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-weapons.md): mil offset (16.8 mrad) and firing altitude

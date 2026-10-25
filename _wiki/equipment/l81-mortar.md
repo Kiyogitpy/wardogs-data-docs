@@ -66,7 +66,7 @@ Mils fall as range rises, so a longer shot needs a lower elevation setting. A sh
 
 At the same range, the dial setting is the game table's elevation plus 650, to within 2 mils, on every one of the 17 rows. The two lists therefore agree on the shape of the mortar's range curve and differ by a fixed shift. The sight adds the 650 itself: its mil label is the table value plus 650. The two lists are therefore one measurement shown twice, not two independent measurements.
 
-The travel time in the -300 mrad row (20.0 s) breaks the pattern of its neighbours (17.9 s before it, 19.0 s after), and is probably a data oddity. The cause is not known.
+The travel time in the -300 mrad row (20.0 s) breaks the pattern of its neighbours (17.9 s before it, 19.0 s after), and is probably a data oddity. The value is a round number among two-decimal values (the +300 row is 22.0 too), which suggests a hand-entered entry; a smooth value from the neighbouring rows would be about 18.4 s. The cause is not known.
 
 ### Minimum range
 
@@ -107,3 +107,4 @@ The Build Supplies cost is taken from the [Buildables](buildables.md) article, w
 - [Vehicles changes, Season 2](../../season-2-changes/vehicles.md): cost, restock, windup and damage table changes
 - [Vehicle hitboxes](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/vehicle-hitboxes.json): the 3D hitbox set used by the viewer link
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): mortar sight labels, and the minimum range from the barrel's pitch limit.
+- [Round 39 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-weapons.md): the -300 mrad row (20.0 s) check

@@ -24,9 +24,11 @@ A bullet leaves the muzzle at the weapon's muzzle speed. From then on, gravity p
 
 - **Muzzle speed.** Every weapon fires its bullet at a fixed speed. Heavier sniper rounds and rifle rounds are fast; pistol and the Judge shotgun are slower.
 - **Gravity.** Bullets fall at 9.8 m/s², the game's world gravity.
+- **Lifetime.** A bullet is removed 10 s after it is fired. Artillery shells last longer, up to 40 s (see [Artillery](artillery.md)).
+- **Flight steps.** The game moves a bullet in steps of 33 ms (about 30 a second) and checks its path at each step.
 - **Drag.** Air slows bullets. How much depends on the bullet's shape, weight and size, so the same muzzle speed does not mean the same range for every round.
 - **Damage falloff.** Each weapon has a distance curve. Damage stays at full up to a set distance and then drops; on many rifles the curve reaches 20% of full damage at 1,200 m. Separately, once a bullet has slowed below a reference speed, its damage is also scaled down. Both effects multiply together, which is why the table drops further than the curve alone.
-- **Effective range.** Each weapon's data lists an effective range (see the table below). How the game uses that value in play is not yet known.
+- **Effective range.** Each weapon's data lists an effective range (see the table below). The game multiplies it by 100 when it sets up each shot, then scales it by 1.2 for armor-piercing ammo and 0.8 for hollow point. The only use found so far is in the wind effect on the bullet's flight. It is not a damage cutoff: damage falloff comes from the weapon's own curve, not from the effective range.
 
 ## Numbers
 
@@ -43,7 +45,7 @@ Muzzle speed and listed effective range, from the weapon data:
 | MP5 | 400 m/s | 200 m |
 | GGX 17 | 375 m/s | 50 m |
 | Super-45 | 375 m/s | 50 m |
-| Deagle | 470 m/s | not listed |
+| Deagle | 470 m/s | 100 m (game default) |
 | Judge | 335 m/s | 50 m |
 
 Upper-torso damage per hit with full metal jacket ammo and no armor, at set distances. These include the distance curve and the slowing:
@@ -88,3 +90,5 @@ The AMR 50 and MK22 keep most of their damage at long range, while the MP5 and S
 - [Damage by Weapon and Ammo](../../game-features/Wardogs_WeaponDamage_v1.md) (damage over distance)
 - [Weapon damage falloff (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-damage-falloff.json)
 - [Damage rules](../../pipelines/Wardogs_DamagePipeline_v2.md)
+- [Round 39 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-weapons.md): bullet lifetime, effective range use, flight step, and the hit record
+- [Round 40 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-weapons.md): the 33 ms flight step re-check

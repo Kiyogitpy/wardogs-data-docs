@@ -47,7 +47,7 @@ Use it for: a quick check of your general direction. Do not use it to aim a shot
 
 ### MIL scale
 
-The MIL scale is the sliding scale on the right of the gun sight. It is labelled "50 mils", "60 mils" and so on, with a thousands comma from "1,000 mils". There is a tick every 10 mils. The elevation set on the gun is the value on the dashed centre line. A tick above the centre line is a lower mil value, and a tick below it is a higher one.
+The MIL scale is the sliding scale on the right of the gun sight. It is labelled "50 mils", "60 mils" and so on, with a thousands comma from "1,000 mils". There is a tick every 10 mils. The elevation set on the gun is the value on the dashed centre line. A tick above the centre line is a lower mil value, and a tick below it is a higher one. The barrel's true elevation is the dial reading plus 16.8 mrad (about 0.96 degrees). The game adds this offset itself, so you set the dial value and add nothing.
 
 Use it for: setting the elevation from the firing table. The value on the dashed centre line is what the gun will fire at.
 
@@ -91,6 +91,7 @@ Use the Expensive shell's camera to see where the shell lands. Watch it fall, th
 
 - **Hull tilt.** The elevation you set appears to be measured relative to the tilted hull. In a comparison of real impacts, adding the hull's pitch from the tilt dial to the elevation halved the median miss, from 59 m to 34 m. This is an estimate from a flight simulator, so it suggests that the tilt dial is worth checking before you fire. It is not proven how the game handles tilt. The simplest fix is to park the vehicle level.
 
+- **Firing altitude.** The mils for a range depend on how high the gun sits above sea level. Simulated, a 2,000 m low-arc shot needs 250 mils fired from 3 m, 224 from 50 m and 197 from 100 m. A gun on high ground can therefore need tens of mils less than a table measured at another height. The altitude the community table was measured at is not known.
 - **Aiming by the compass box.** The compass box reads about 1.3° less than the bearing tape. A shot aimed by the box lands about 1.3° to the side. Aim with the bearing tape, and you remove that error.
 
 The gun itself is very consistent. Repeat shots with the same setting landed within about 4 m of each other, and never more than 12 m apart. If your shots keep landing in the same place, the setting is wrong, not the gun, so adjust the setting rather than repeating the shot.
@@ -128,3 +129,4 @@ The stats sheet gives an effective range of 10,000 m, but the longest shot measu
 - [CV Artillery Computer](https://github.com/Kiyogitpy/cv-artillery-computer) (MIT licence)
 - [shell_sim.py](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/_tools/shell_sim.py)
 - [Round 21 artillery range check](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round21-artillery-range-check.md)
+- [Round 40 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-weapons.md): mil offset (16.8 mrad) and firing altitude

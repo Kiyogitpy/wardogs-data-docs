@@ -39,7 +39,8 @@ Bullet and hit values that matter in play:
 | Bullets that bounce off flesh | 0% (bodies and heads never ricochet) |
 | Friendly-fire damage | 50% of normal |
 | Shotgun pellets per buckshot shell | 8 |
-| Hits a single bullet's history can record | 33 (what happens after that is not yet known) |
+| Hits a bullet's record holds | The first 16. Hits 17 to 32 are not recorded, and the record starts again at hit 33 |
+| Cap on the number of hits a bullet can make | None found |
 
 ## Tips that follow from the rules
 
@@ -51,7 +52,6 @@ Bullet and hit values that matter in play:
 
 - How the game settles a hit when the shooter and target see it differently, such as with slow connections. The data does not show this.
 - The length of time a vehicle's own shots are ignored by that vehicle.
-- What happens to a bullet after its 33rd recorded hit.
 
 ## See also
 
@@ -65,3 +65,4 @@ Bullet and hit values that matter in play:
 - [Hit Registration](../../pipelines/Wardogs_HitRegistration_v1.md)
 - [Damage by Weapon and Ammo](../../game-features/Wardogs_WeaponDamage_v1.md)
 - [Damage rules](../../pipelines/Wardogs_DamagePipeline_v2.md) (friendly fire)
+- [Round 39 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-weapons.md): hit record of 16 slots and the hit limit

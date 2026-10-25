@@ -26,10 +26,11 @@ Two things decide where a shot goes. The first is the **spread cone**, which is 
 - **Aiming down sights removes hip spread.** Once the weapon is fully aimed down the sights, the hip spread is zero. Partly aimed counts as hip fire at full value.
 - **Moving widens the cone.** Hip spread scales with your speed compared with a reference speed for your stance. Standing and running make the cone widest, lying prone keeps it narrowest.
 - **Stance matters.** Prone and crouch give smaller spread than standing for the same speed.
-- **Air.** A shot fired while airborne uses a separate spread value. Its size is not yet known.
+- **Air.** A shot fired while airborne uses a separate spread value of 10 degrees (half-angle) for every weapon. The stance and speed multipliers do not apply while airborne.
 - **Attachments.** Bipods, muzzle devices and foregrips change the spread. Their multipliers are listed below.
+- **Zeroing.** The data does not list the zero angle for each sight range. The game works it out while it runs, by tracing a shot at each zeroing range and storing the angle in degrees.
 - **Recoil is applied after the shot.** The bullet leaves along the view as it was before that shot's kick. Earlier kicks have already moved the view, and they are part of the next shot's aim.
-- **Shotguns.** Each buckshot shell fires 8 pellets. Each pellet has its own random direction inside a cone, and the pellets all land at a small spread around the aim.
+- **Shotguns.** Each buckshot shell fires 8 pellets. Each pellet has its own random direction inside a cone, and the pellets all land at a small spread around the aim. Part of the pattern is a tight inner cluster: about 20 percent of pellets on the M500 and 14 percent on the MP43 (derived), rising to 26 and 34 percent on the M500 with the Improved Cylinder and Full Choke.
 
 ## Numbers
 
@@ -86,3 +87,5 @@ Recoil patterns (the points that set each shot's kick) are different for each we
 - [Weapon Spread, Accuracy and Shot Direction](../../pipelines/Wardogs_WeaponSpread_v1.md)
 - [Weapon Spread and Recoil Data](../../content/Wardogs_WeaponSpreadRecoilData_v1.md)
 - [Season 2 weapons changes](../../season-2-changes/weapons-ammo.md) (recoil patterns)
+- [Round 39 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-weapons.md): air spread, pellet clusters
+- [Round 40 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-weapons.md): zero angles measured at run time

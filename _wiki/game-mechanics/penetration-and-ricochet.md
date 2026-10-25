@@ -41,7 +41,7 @@ Ammo penetration, from the ammo data:
 | Armor-piercing | 1.8 | 0 |
 | Armor-piercing tracer | 1.76 | 0 |
 
-The exit-speed setting controls how much speed a bullet keeps when it comes out the far side. The data also lists an effective-range multiplier for each ammo type (hollow point 0.8, armor-piercing 1.2). How the game uses that value is not yet known.
+The exit-speed setting controls how much speed a bullet keeps when it comes out the far side. The effective-range multiplier for each ammo type (hollow point 0.8, armor-piercing 1.2) scales the weapon's effective range in the bullet's setup. It does not change the bullet's speed. See [Ballistics](ballistics.md).
 
 Ricochet chance by surface material (named surfaces in the data; unnamed surface types are left out):
 
@@ -83,7 +83,6 @@ Ricochet chance by surface material (named surfaces in the data; unnamed surface
 - The materials and thicknesses of world walls, doors and props. The data has no material assigned to most world meshes, so no result can be given for a specific wall.
 - The unit of surface thickness.
 - The exact direction a bullet takes after a ricochet.
-- What happens to a bullet after its 33rd hit.
 - Whether a bullet with penetration 2 or more can ever ricochet. The data suggests not, but this has not been checked.
 
 ## See also
@@ -99,3 +98,4 @@ Ricochet chance by surface material (named surfaces in the data; unnamed surface
 - [Damage by Weapon and Ammo](../../game-features/Wardogs_WeaponDamage_v1.md) (ricochet and penetration)
 - [Weapon penetration (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-penetration.json)
 - [Hit Registration](../../pipelines/Wardogs_HitRegistration_v1.md)
+- [Round 39 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-weapons.md): the exit-speed setting and the effective-range multiplier

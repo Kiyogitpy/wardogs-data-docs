@@ -15,9 +15,9 @@ description: "The MGL-40 launcher: fire rate, damage by body part, range falloff
 | Fire modes | Semi-automatic |
 | **Performance** |  |
 | Fire rate | 75 rounds/min |
-| Muzzle velocity | not yet known |
-| Effective range | not yet known |
-| Standard magazine | MMGL Internal Mag |
+| Muzzle velocity | 75 m/s |
+| Effective range | 400 m |
+| Standard magazine | MMGL Internal Mag (6 rounds) |
 | **Availability** |  |
 | Vendor price | 7500 |
 | Unlock level | 1 |
@@ -36,10 +36,8 @@ Launchers fire explosive rounds rather than bullets.
 |---|---|
 | Fire modes | Semi-automatic |
 | Fire rate | 75 rounds/min |
-| Muzzle velocity | not yet known |
-| Effective range | not yet known |
-
-Launcher stats beyond the fire rate are not in the data pages.
+| Muzzle velocity | 75 m/s |
+| Effective range | 400 m |
 
 ## Damage
 
@@ -134,4 +132,6 @@ Default parts: sight (MMGL Sight), magazine (MMGL Internal Mag).
 - [Tag Display Text](../../content/Wardogs_TagDisplayText_v1.md): caliber and ammo names
 - [weapon-loadouts.json](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-loadouts.json): names, slots and effects
 - [weapon-damage.json](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-damage.json): body-part and armor damage
-- [weapon-damage-falloff.json](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-damage-falloff.json): speed, effective range and falloff
+- [weapon-damage-falloff.json](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-damage-falloff.json): falloff curves
+- [weapon-capacity.json](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-capacity.json): muzzle speed, effective range, chamber and magazine
+- [Round 39 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-weapons.md): launcher speeds and ranges, magazines, default rate

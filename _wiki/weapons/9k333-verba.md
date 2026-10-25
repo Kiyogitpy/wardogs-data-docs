@@ -15,9 +15,9 @@ description: "The 9K333 Verba launcher: fire rate, damage by body part, range fa
 | Fire modes | Semi-automatic |
 | **Performance** |  |
 | Fire rate | 100 rounds/min |
-| Muzzle velocity | not yet known |
-| Effective range | not yet known |
-| Standard magazine | not yet known |
+| Muzzle velocity | 20 m/s |
+| Effective range | 1000 m |
+| Standard magazine | None, the chamber holds 1 (72mm) |
 | **Availability** |  |
 | Vendor price | 800 |
 | Unlock level | 1 |
@@ -36,10 +36,10 @@ Launchers fire explosive rounds rather than bullets.
 |---|---|
 | Fire modes | Semi-automatic |
 | Fire rate | 100 rounds/min |
-| Muzzle velocity | not yet known |
-| Effective range | not yet known |
+| Muzzle velocity | 20 m/s |
+| Effective range | 1000 m |
 
-Launcher stats beyond the fire rate are not in the data pages.
+The muzzle velocity is the launch speed. The rocket has its own thrust after launch, so its speed in flight is higher than this.
 
 ## Damage
 
@@ -131,4 +131,6 @@ The Season 2 changes page lists no changes for this weapon.
 - [Tag Display Text](../../content/Wardogs_TagDisplayText_v1.md): caliber and ammo names
 - [weapon-loadouts.json](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-loadouts.json): names, slots and effects
 - [weapon-damage.json](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-damage.json): body-part and armor damage
-- [weapon-damage-falloff.json](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-damage-falloff.json): speed, effective range and falloff
+- [weapon-damage-falloff.json](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-damage-falloff.json): falloff curves
+- [weapon-capacity.json](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-capacity.json): muzzle speed, effective range, chamber and magazine
+- [Round 39 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-weapons.md): launcher speeds and ranges, magazines, default rate
