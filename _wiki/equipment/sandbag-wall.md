@@ -14,7 +14,7 @@ description: "A low cover wall built with any hammer from 15 Build Supplies, wit
 | Hammer | Small, Medium, Large |
 | **Building** | |
 | Build cost | 15 Build Supplies |
-| Build time | Not yet known |
+| Build time | 30 hits Small (17.0 s), 15 hits Medium (8.5 s), 10 hits Large (8.8 s). Derived from the hammer swing timing, not timed in play. |
 | Health | 735 HP |
 | **Damage** | |
 | Bullets | -85% |

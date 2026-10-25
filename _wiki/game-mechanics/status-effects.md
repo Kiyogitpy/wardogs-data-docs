@@ -96,7 +96,7 @@ Barbed wire has an effect that sets movement to 7.5% of normal speed. The data d
 ## Not yet known
 
 - How the suppression values turn into what a player sees in play; the game was not run.
-- What "revived by an enemy" does to the player. A resuscitator used on the other faction gives it, for 60 s; its effect on the player was not traced.
+- What "revived by an enemy" does to the player. A resuscitator used on the other faction gives it, for 60 s, and marks the revive as an enemy revive. What the state does to the player beyond that tag was not traced.
 - Whether a player's own fire or a teammate's fire hurts.
 
 ## See also

@@ -48,9 +48,9 @@ The data has no outfits or character skins. The only cosmetic a character carrie
 ## Tips that follow from the numbers
 
 - Emotes and several Season 1 skins cost 5 Gold Bars, the lowest listed price. Rock, Paper and Scissors have no price in the data.
-- The most expensive listed cosmetic is the Black and Gold Little Bird (MH-6), at 30 Gold Bars. Its Gold Market entry carries an expiry date of 31 December 2026 in the data, with a countdown on the tile. Whether it leaves the market on that date is decided by the server and is not confirmed.
+- The most expensive listed cosmetic is the Black and Gold Little Bird (MH-6), at 30 Gold Bars. Its Gold Market entry carries an expiry date of 31 December 2026 in the data, with a countdown on the tile. Whether it leaves the market on that date is decided by the server; the game files only store the date.
 - Most Season 2 skins cost 10 Gold Bars.
-- The AK74 Black and Gold skin is not on the Gold Market, so its price is not yet known.
+- The AK74 Black and Gold skin is not on the Gold Market, and the game files give it no price.
 
 ## Season 2 changes
 
@@ -82,3 +82,4 @@ The data has no outfits or character skins. The only cosmetic a character carrie
 - [Taxi skins data](../../game-features/Wardogs_GameFeatures_Taxi_SkinsData_v2.md)
 - [Season 2 changes: Rewards & Unlocks](../../season-2-changes/rewards-unlocks.md)
 - [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md)
+- [Round 42 economy and buildables evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): no Gold Market row and no price for cosmetics not on the market (P19)

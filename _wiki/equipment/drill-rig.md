@@ -14,7 +14,7 @@ description: "A fuel-powered rig built with the Large Hammer from 2,750 Build Su
 | Hammer | Large |
 | **Building** | |
 | Build cost | 2,750 Build Supplies (2,250 in Season 1) |
-| Build time | Not yet known |
+| Build time | 917 hits Large (about 809.7 s). Derived from the hammer swing timing, not timed in play. |
 | Health | 2,500 HP |
 | **Damage** | |
 | Bullets | -85% |

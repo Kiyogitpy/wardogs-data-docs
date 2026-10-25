@@ -16,7 +16,7 @@ Where the data has no answer, the articles say "not yet known". The sources do n
 
 ## Currencies
 
-The data defines two currencies. The data lists 10,000 as the starting balance of Cash. Gold Bars start at 0 and pay for cosmetics on the Gold Market. A third tag, Intel, is paid by passive missions, but the data gives it no display name or shop use, so its use is not yet known. See [Currencies](progression-and-economy/currencies.md) for the details.
+The data defines two currencies. The data lists 10,000 as the starting balance of Cash. Gold Bars start at 0 and pay for cosmetics on the Gold Market. A third tag, Intel, is paid by passive missions, but the data gives it no display name, and the game files show no way to spend it. See [Currencies](progression-and-economy/currencies.md) for the details.
 ## Sources
 
 - [Rewards and progression](../Wardogs_Rewards_and_Progression_v2.md)

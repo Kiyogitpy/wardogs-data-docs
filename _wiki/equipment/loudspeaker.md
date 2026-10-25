@@ -26,7 +26,7 @@ The Loudspeaker is the one stationary emplacement in the game data with no weapo
 
 Destroying an enemy Loudspeaker pays 200 cash and 50 Role XP. The data still gives it no function.
 
-The Loudspeaker is listed on the [Buildables](buildables.md) page with the other stationary emplacements, but the data gives no gun, ammunition, rate or range for it. The data does not say what it does in play, so that is not yet known.
+The Loudspeaker is listed on the [Buildables](buildables.md) page with the other stationary emplacements, but the data gives no gun, ammunition, rate or range for it. The game files have no buildable data or weapon for the Loudspeaker, so what it does is not in the data.
 
 ## Effects
 

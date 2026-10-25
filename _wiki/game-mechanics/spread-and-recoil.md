@@ -73,9 +73,9 @@ Shotgun pellet spread for the two shotguns in the data: the outer edge of the M5
 
 Recoil patterns (the points that set each shot's kick) are different for each weapon. Season 2 changed recoil patterns on four weapons, including the SKS and SVD. Every weapon's recoil and camera-kick values are listed row by row on [Weapon Spread and Recoil Data](../../content/Wardogs_WeaponSpreadRecoilData_v1.md).
 
-## What is not yet known
+## Spread in the air
 
-- The spread value used while airborne.
+While a player is airborne, hip-fire spread uses the game's in-air value of 10.0 degrees. Only the grenade launcher sets that value itself, to the same 10.0 degrees, and the weapon's spread multiplier is not applied on this path. The game files have no per-shot bloom field, so spread does not build up with each shot.
 
 ## See also
 

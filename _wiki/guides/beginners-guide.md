@@ -84,7 +84,7 @@ Bullets that hit a teammate do half damage. Friendly fire still costs health, so
 ## What is not yet known
 
 - How the game settles a hit when the shooter and target see it differently.
-- The payout for every kind of spotted target.
+- The payout for each kind of spotted target is in the spotting challenge rows.
 - The real revive time of a resuscitator, which is about 4 s by derivation from the item data.
 
 ## See also
@@ -108,3 +108,4 @@ Bullets that hit a teammate do half damage. Friendly fire still costs health, so
 - [Weapon Spread, Accuracy and Shot Direction](../../pipelines/Wardogs_WeaponSpread_v1.md)
 - [Round 39 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-medical-movement.md): heal timing, skill rows, durability costs and status effects
 - [Round 40 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-medical-movement.md): revive health, decay, armour and critical state values
+- [Round 42 economy and buildables evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): spotting reward rows (P29, P30)

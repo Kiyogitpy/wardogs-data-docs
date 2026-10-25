@@ -14,7 +14,7 @@ description: "A large multi-part structure built only with the Large Hammer from
 | Hammer | Large |
 | **Building** | |
 | Build cost | 200 Build Supplies (100 in Season 1) |
-| Build time | Not yet known |
+| Build time | 134 hits Large (about 118.3 s). Derived from the hammer swing timing, not timed in play. |
 | Health | 5,000 HP |
 | **Damage** | |
 | Bullets | -80% |

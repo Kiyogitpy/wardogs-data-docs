@@ -28,7 +28,7 @@ All six emotes use the same placeholder icon in this build, so none has final ar
 | Middle Finger | 5 | Gold Market |
 | Rock Paper Scissors | 5 | Gold Market |
 | Shh | 5 | Gold Market |
-| Paper | Not sold | Not yet known |
+| Paper | Not sold | No price in the data |
 | Rock | Not sold | Not yet known |
 | Scissors | Not sold | Not yet known |
 
@@ -37,7 +37,7 @@ The three priced emotes are worth 15 Gold Bars in total. Rock Paper Scissors is 
 ## Cost and unlocking
 
 - **Gold Market.** Shh, Rock Paper Scissors and Middle Finger are bought with Gold Bars. Gold Bars are covered in [Currencies](currencies.md).
-- **Rock, Paper and Scissors.** These have an emote entry but no cosmetic row, so the data gives them no price and no unlock. How they are obtained is not yet known.
+- **Rock, Paper and Scissors.** These have an emote entry but no cosmetic row, so the data gives them no price and no unlock. The game files give them no price or unlock, so how they are obtained is not in the data.
 - **No level gate.** The season schedule that would tie an emote to a level is empty in this build. See [Season 1 Cosmetics](season-01-cosmetics.md).
 
 ## Not yet in the data
@@ -58,3 +58,4 @@ The data does not include the animation, sound or visual effects of any emote, o
 - [Progression tables](../../game-features/Wardogs_Progression_v1.md), including the Gold Market prices
 - [Data tables: Economy and Rewards](../../content/Wardogs_DataTables_Economy_v1.md), the Gold Market table
 - [Meta: currency and Gold Market](../../content/Wardogs_Meta_v2.md)
+- [Round 42 economy and buildables evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): emotes with no price or unlock (P19)

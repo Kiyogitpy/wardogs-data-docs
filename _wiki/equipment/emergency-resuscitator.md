@@ -29,7 +29,7 @@ The Emergency Resuscitator revives a downed teammate. It is a single-use item, a
 
 ## Overview
 
-The shop describes the item as a one-per-life emergency revive that revives teammates faster and is single use. The shop data lists its price as 0, so how a player obtains it is not yet known from the data. The Field Resuscitator is the other item of this type, with the same use behavior.
+The shop describes the item as a one-per-life emergency revive that revives teammates faster and is single use. The shop data lists its price as 0, and the game files show no vendor, loot or unlock that gives it. The Field Resuscitator is the other item of this type, with the same use behavior.
 
 ## Effects
 
@@ -71,3 +71,4 @@ No Season 2 change to this item is listed in the data.
 - [Items and Equipment, Season 2](../../season-2-changes/items-equipment.md): checked for changes
 - [Round 39 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-medical-movement.md): heal timing, skill rows, durability costs and status effects
 - [Round 40 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-medical-movement.md): revive health, decay and armour values
+- [Round 42 economy and buildables evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): no vendor, loot or unlock row (P38)

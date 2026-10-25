@@ -31,15 +31,15 @@ The table below lists each vehicle skin sold on the Gold Market, sorted by vehic
 | Humvee | Two-Tone Desert | Season 1 | 10 | Gold Market |
 | MH-6 | Black and Gold | Season 2 | 30 | Gold Market (see the note below) |
 | MH-6 | Two-Tone Desert | Season 1 | 15 | Gold Market |
-| MH-6 | Taxi | Not stated | Not sold | Not yet known |
+| MH-6 | Taxi | Not stated | Not sold | No price in the data |
 
 The Gold Market prices are 6 vehicle skins worth 85 Gold Bars in total.
 
-The MH-6 Black and Gold skin is the most expensive vehicle skin, at 30 Gold Bars. Its Gold Market entry is a single hero tile. It carries an expiry timestamp of 31 December 2026 in the data, with the setting for no end time, and its tile shows a countdown. Whether the skin leaves the market on that date is not confirmed, and the server controls it.
+The MH-6 Black and Gold skin is the most expensive vehicle skin, at 30 Gold Bars. Its Gold Market entry is a single hero tile. It carries an expiry timestamp of 31 December 2026 in the data, with the setting for no end time, and its tile shows a countdown. Whether the skin leaves the market on that date is decided by the server; the game files only store the date.
 
 ## Taxi skin
 
-The taxi skin is for the MH-6 (Little Bird). It is the only taxi cosmetic. It works by swapping materials on the helicopter rather than changing its shape. The list of material swaps is in the data but is not expanded here. The data gives the taxi skin no price and no Gold Market row, so how a player gets it is not yet known.
+The taxi skin is for the MH-6 (Little Bird). It is the only taxi cosmetic. It works by swapping materials on the helicopter rather than changing its shape. The list of material swaps is in the data but is not expanded here. The data gives the taxi skin no price and no Gold Market row, so the game files do not show how a player gets it.
 
 ## Bobbleheads
 
@@ -81,3 +81,4 @@ The data gives the bobbleheads no vehicle filter, so they are not limited to par
 - [Data tables: Economy and Rewards](../../content/Wardogs_DataTables_Economy_v1.md), the Gold Market table
 - [Season 1 cosmetic unlocks](../../content/Wardogs_Season01_CosmeticUnlocks_v1.md)
 - [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md)
+- [Round 42 economy and buildables evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): expiry (P18) and skins with no price or unlock (P19)

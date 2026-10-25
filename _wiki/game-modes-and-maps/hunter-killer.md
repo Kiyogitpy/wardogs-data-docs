@@ -31,7 +31,7 @@ Hunter Killer is one of the three PvE missions in the data, alongside [Strike an
 ## Objective and rules
 
 - **Respawns.** None. A player who dies stays out for the rest of the mission.
-- **Teams.** Like the other PvE missions, it uses the shared three-team setup. The data does not set the player's own faction for this mission, so which side the player starts on is not yet known.
+- **Teams.** Like the other PvE missions, it uses the shared three-team setup. The game files set no faction for the player on this mission, so which side the player starts on is not in the data.
 - **Objectives.** None are set. The mission's quest has only a start and an end, with no steps between them.
 - **Map.** The Bakurani world (the data's name for it is Kavkazi). No time limit is set in the data.
 - **Starting cash.** None is set for this mission.
@@ -45,7 +45,7 @@ No AI soldiers are placed on the map, so the mission has no enemies in the data.
 
 ## Rewards
 
-The data has no reward table for this mission, so its rewards are not yet known. Rewards follow the general rules; see [Cash and Rewards](../progression-and-economy/cash-and-rewards.md). The session-event reward lookup has no rows for PvE missions.
+The data has no reward table and no cash payout for this mission, so any payout is decided by the server. Rewards follow the general rules; see [Cash and Rewards](../progression-and-economy/cash-and-rewards.md). The session-event reward lookup has no rows for PvE missions.
 
 ## See also
 

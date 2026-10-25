@@ -27,7 +27,7 @@ The list below is the full Season 1 cosmetic set from the data. Each row is one 
 
 | Cosmetic | Type | Skin set | Price (Gold Bars) | How it was earned |
 |---|---|---|---|---|
-| AK74 | Weapon skin | Black and Gold | Not sold | No Gold Market listing in the data; not yet known |
+| AK74 | Weapon skin | Black and Gold | Not sold | No Gold Market listing and no price in the data |
 | GGX 17 | Weapon skin | Digital Wood | 5 | Gold Market |
 | M4 | Weapon skin | Digital Wood | 10 | Gold Market |
 | SV98 | Weapon skin | Digital Wood | 10 | Gold Market |
@@ -77,3 +77,4 @@ Season 1 rows are unchanged in Season 2, and none was removed. Season 2 adds a L
 - [Data tables: Economy and Rewards](../../content/Wardogs_DataTables_Economy_v1.md), the Gold Market table
 - [Season 2 changes: Rewards & Unlocks](../../season-2-changes/rewards-unlocks.md)
 - [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md)
+- [Round 42 economy and buildables evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): no price for cosmetics not on the market (P19)

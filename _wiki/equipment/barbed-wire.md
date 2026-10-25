@@ -14,7 +14,7 @@ description: "A small wire obstacle built with any hammer from 7 Build Supplies,
 | Hammer | Small, Medium, Large |
 | **Building** | |
 | Build cost | 7 Build Supplies |
-| Build time | Not yet known |
+| Build time | 4 hits Small (2.3 s), 2 hits Medium (1.1 s), 2 hits Large (1.8 s). Derived from the hammer swing timing, not timed in play. |
 | Health | 250 HP |
 | **Damage** | |
 | Bullets | -85% |

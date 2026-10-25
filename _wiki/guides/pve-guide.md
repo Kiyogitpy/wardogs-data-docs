@@ -68,7 +68,7 @@ Tips that follow from the numbers:
 - **Because the PvE soldiers' base preset prefers burst fire, and a burst is three shots followed by a 1 s pause, a soldier stops between bursts.** The data gives the burst size and the pause, not the time between shots inside a burst.
 - **Because a soldier moves to Combat only once it sees the player, a soldier that has not seen you is at most on Alert.** The levels are Relaxed at 0.0, Alert at 0.8 and Combat at 1.0. Hearing raises the alert level, but the data does not say by how much.
 - **Because a standing player is rated 1.0 for visibility, a crouched player 0.4 and a prone player 0.3, staying low lowers the rating a soldier works from.** Firing is rated 5.0, far above standing still, so a shot reveals a player more than stance does. The data does not confirm how these values combine into a chance of being spotted.
-- **Because the configured sight range is 2,000 m and the hearing range is 1,000 m, do not plan for those distances.** The data sets two range multipliers, 0.02 for sight and 0.05 for hearing, and does not say how they combine with the radii. The distance in play is not confirmed.
+- **Because the configured sight range is 2,000 m and the hearing range is 1,000 m, do not plan for those distances.** The data sets two range multipliers, 0.02 for sight and 0.05 for hearing, and does not say how they combine with the radii. Worked out from the perception code (not tested in play), a standing, still target in the open reaches full detection by sight in about 16 s at 100 m, and gunfire within about 450 m gives full hearing detection within a second.
 
 ## Starting cash and loot
 
@@ -84,3 +84,4 @@ The VIP Escort loot table has two entries, each with a 100% chance: a [Fuel Cani
 - [PvE game feature](../../game-features/Wardogs_GameFeatures_PvE_v2.md)
 - [AI game feature](../../game-features/Wardogs_GameFeatures_AI_v2.md)
 - [Session-event reward lookups](../../content/Wardogs_RewardLookup_SessionEvents_v1.md)
+- [Round 41 modes, AI and other evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-modes-ai-other.md): sight and hearing in play (R3)

@@ -25,7 +25,7 @@ The game has three currencies a player sees: Cash, Gold Bars and Intel. Cash is 
 |---|---|---|---|---|
 | Cash | 10,000 | Kills, revives, heals, vehicle work, zones, spotting, supply crates, and the end-of-match bonus | Vendors, role unlocks, factory investments | Yes, according to the in-game tip |
 | Gold Bars | 0 | Exchanged from cash at the Gold Exchange, and leftover cash at a season reset | Gold Market skins and emotes | Not in the data |
-| Intel | None (no entry in the currency table) | Passive missions, 100 to 500 per tier | Not in the data | Not in the data |
+| Intel | None (no entry in the currency table) | Passive missions, 100 to 500 per tier | None found in the game files | None found in the game files |
 
 ## Cash
 
@@ -45,7 +45,7 @@ Gold Bars are the premium currency. They pay for cosmetics only.
 - **Season resets.** At the end of a major update cycle, level progression and cash are reset. Any cash left over is exchanged for Gold Bars automatically. The season reset reports the leftover cash and the Gold Bars given, and the conversion happens on the server.
 - **Other sources.** No match event, challenge, mission or achievement pays Gold Bars directly. The data has no Gold Bar pack, so whether Gold Bars are sold for money is not in the client data.
 - **Spending.** Gold Market cosmetics. See the Gold Market section below.
-- **Carry-over.** Not in the data.
+- **Carry-over.** Decided by the server; the game files do not describe it.
 
 ## Intel
 
@@ -73,7 +73,7 @@ The Gold Market sells cosmetics for Gold Bars. Its table has 27 entries worth 27
 
 - Prices run from 5 to 30 Gold Bars per entry. The most expensive is the Black and Gold MH-6 at 30.
 - Most entries have no expiry.
-- The Black and Gold MH-6 has an expiry date of 31 December 2026 in the data, and its tile shows a countdown. The expiry field has three settings in the data: no expiry, expiry with no end time, and expiry with an end time. This entry has the no-end-time setting. Whether the entry leaves the market on that date is not confirmed, and the server controls the schedule.
+- The Black and Gold MH-6 has an expiry date of 31 December 2026 in the data, and its tile shows a countdown. The expiry field has three settings in the data: no expiry, expiry with no end time, and expiry with an end time. This entry has the no-end-time setting. Whether the entry leaves the market on that date is decided by the server; the game files only store the date.
 - Cosmetics that are not on the Gold Market, such as the faction logos, the taxi skin and the bobbleheads, have no price in the data. Their route is not known. See [Cosmetics](cosmetics.md).
 
 The full list of skins and emotes is in [Weapon Skins](weapon-skins.md), [Vehicle Skins](vehicle-skins.md), [Emotes](emotes.md) and [Season 1 Cosmetics](season-01-cosmetics.md).
@@ -109,3 +109,4 @@ The full list of skins and emotes is in [Weapon Skins](weapon-skins.md), [Vehicl
 - [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md)
 - [Currency definitions (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/CurrencyDefinitions/DT_CurrenciesDefinitions.json)
 - [Round 40 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-modes-ai-other.md)
+- [Round 42 economy and buildables evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): expiry (P18), carry-over (P15) and Intel spend path (P13)

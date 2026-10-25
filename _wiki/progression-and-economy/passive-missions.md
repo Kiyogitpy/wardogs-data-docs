@@ -53,7 +53,7 @@ Passive missions track a total that builds up over play, not a single event. The
 
 ## Intel
 
-Intel is the currency these missions pay. The data gives it no display name and no shop use, so its use is not yet known.
+Intel is the currency these missions pay. The data gives it no display name, and the game files show no way to spend it.
 
 ## Season 2 changes
 
@@ -71,3 +71,4 @@ Intel is the currency these missions pay. The data gives it no display name and 
 - [Challenges and session events](../../game-features/Wardogs_Challenges_v1.md)
 - [Season 2 changes: Rewards & Unlocks](../../season-2-changes/rewards-unlocks.md)
 - [Passive mission table](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Missions/DT_PassiveMissionChallenges.json) (JSON)
+- [Round 42 economy and buildables evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): no spend path for Intel (P13)

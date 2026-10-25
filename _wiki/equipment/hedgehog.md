@@ -14,7 +14,7 @@ description: "A heavy obstacle built with any hammer from 22 Build Supplies, wit
 | Hammer | Small, Medium, Large |
 | **Building** | |
 | Build cost | 22 Build Supplies |
-| Build time | Not yet known |
+| Build time | 44 hits Small (24.9 s), 22 hits Medium (12.5 s), 15 hits Large (13.2 s). Derived from the hammer swing timing, not timed in play. |
 | Health | 4,500 HP |
 | **Damage** | |
 | Bullets | -85% |

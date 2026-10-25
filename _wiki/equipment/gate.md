@@ -14,7 +14,7 @@ description: "A large closeable gate built with a Medium or Large Hammer from 20
 | Hammer | Medium, Large |
 | **Building** | |
 | Build cost | 200 Build Supplies (85 in Season 1) |
-| Build time | Not yet known |
+| Build time | 200 hits Medium (113.4 s), 134 hits Large (118.3 s). Derived from the hammer swing timing, not timed in play. |
 | Health | 5,320 HP |
 | **Damage** | |
 | Bullets | -85% |

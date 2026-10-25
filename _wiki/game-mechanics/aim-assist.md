@@ -52,7 +52,7 @@ A class with no stored pull mode takes the game's default, which is All in both 
 
 - The units of the target range and the reticle sizes. The data gives none.
 - How strong the pull feels in play. The settings are stored, but the feel was not measured.
-- Whether the RPG-7 has assist off on purpose. The data cannot say.
+- The data turns aim assist off for the RPG-7. It does not say why.
 
 ## See also
 

@@ -41,7 +41,7 @@ The shop describes the Defibrillator as reviving a teammate instantly, and says 
 
 ### Medic skills
 
-The "Defib charge speed" skill is described as reducing the charge time. The "Increased charges per battery" skill is also described. Neither has a number in the data, so the new charge time and battery use are not yet known.
+The "Defib charge speed" skill is described as reducing the charge time. The "Increased charges per battery" skill is also described. The game files give no number for either skill, so the new charge time and battery use are not in the data.
 
 The revive speed boost skills apply after you revive a teammate. Your sprint and tactical sprint speed are multiplied by 1.2 at skill level 2 and 1.4 at level 4, and the revived teammate gets the same boost. Both last 5 s.
 
@@ -79,3 +79,4 @@ No Season 2 change to the Defibrillator is listed in the data.
 - [Tag Display Text](../../content/Wardogs_TagDisplayText_v1.md): the Medical category label
 - [Items and Equipment, Season 2](../../season-2-changes/items-equipment.md): checked for changes
 - [Round 40 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-medical-movement.md): revive health, decay and armour values
+- [Round 39 medical and movement evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-medical-movement.md): Medic skill magnitudes are absent from the data (M2)

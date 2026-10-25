@@ -77,7 +77,7 @@ The other Medic skills have names and descriptions in the skill tree, but no num
 
 ## Not yet known
 
-- What the Medic skills for bleed-out time and heal speed change in play. They have no numbers in the game files.
+- What the Medic skills for bleed-out time and heal speed change in play. The game files contain no numbers for those skills, so their size is not in the data.
 - The resuscitator revive time is about 4 s by derivation from the item data; it has not been timed in play.
 - Deathmatch regeneration is 5 health after a 10 s delay with no damage. The tick rate is derived from the component's 1 s setting.
 

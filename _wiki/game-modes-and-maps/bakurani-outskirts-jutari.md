@@ -34,7 +34,7 @@ The server browser lists this map as a Sniper Showdown entry, with the Bakurani 
 
 The Control Zone is 350 m across and 170 m tall, with a 75 m Hot Zone in its centre. For how capture works, see [Control Zone](control-zone.md) and [Sniper Showdown](sniper-showdown.md).
 
-- **Hot Zone movement.** The data sets the first move and the delay between moves to 0 seconds. How often the Hot Zone actually moves in play is not confirmed.
+- **Hot Zone movement.** The data sets the first move and the delay between moves to 0 seconds. The data gives no delay between moves, so no timer holds the zone back; how often it moves in play was not measured.
 - **Speed.** The default move speed is 1.5. The speed table runs from 1.25 to 3.0, which is faster than the 0.75 to 2.0 table on the King of the Hill maps.
 - **Placements.** There are no alternative placements. The zone is always in the same spot.
 - **Zone regions.** The data has no region list for this zone.
@@ -61,3 +61,4 @@ The zone layout for this map is described in full on [Zone Layouts](zone-layouts
 - [ControlZone game feature](../../game-features/Wardogs_GameFeatures_ControlZone_v2.md)
 - [Frontend data tables (server browser list)](../../content/Wardogs_DataTables_Frontend_v1.md)
 - [Season 2 changes: Game Modes & Maps](../../season-2-changes/game-modes-maps.md)
+- [Round 40 modes, AI and other evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-modes-ai-other.md): Hot Zone movement state machine (Sniper Showdown configs)

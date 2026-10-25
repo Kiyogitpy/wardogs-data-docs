@@ -24,7 +24,7 @@ Saburtulo is a King of the Hill map with a 550 m Control Zone and four possible 
 
 ## Overview
 
-Saburtulo is played in [King of the Hill](king-of-the-hill.md) under one server browser entry. The data ties it to the Moscow entry by name and folder only, so that link is not confirmed in game. Its zone configuration is stored under the Russia files. Some data entries spell the placement names with "Sabartulo", which refers to the same placement set.
+Saburtulo is played in [King of the Hill](king-of-the-hill.md) under one server browser entry. The data ties it to the Moscow entry by name and folder only (an inference from the names, not checked in game). Its zone configuration is stored under the Russia files. Some data entries spell the placement names with "Sabartulo", which refers to the same placement set.
 
 ## Modes played here
 
@@ -70,3 +70,4 @@ The zone layout for this map is described in full on [Zone Layouts](zone-layouts
 - [UI data (minimap bounds)](../../content/Wardogs_UI_v2.md)
 - [Season 2 changes: Game Modes & Maps](../../season-2-changes/game-modes-maps.md)
 - [Zone selection rules (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/zone-selection.json)
+- [Round 40 modes, AI and other evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-modes-ai-other.md): Moscow name link (inference from names and folders)

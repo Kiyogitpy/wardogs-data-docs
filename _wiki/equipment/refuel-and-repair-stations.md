@@ -14,7 +14,7 @@ description: "Two vehicle service stations built with the Large Hammer from 200 
 | Hammer | Large |
 | **Building** | |
 | Build cost | 200 Build Supplies each |
-| Build time | Not yet known |
+| Build time | 134 hits Large (about 118.3 s). Derived from the hammer swing timing, not timed in play. |
 | Health | 1,600 HP each |
 | **Damage** | |
 | Bullets | -80% |

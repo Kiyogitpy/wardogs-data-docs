@@ -14,7 +14,7 @@ description: "A music radio built with any hammer from 20 Build Supplies, with 1
 | Hammer | Small, Medium, Large |
 | **Building** | |
 | Build cost | 20 Build Supplies |
-| Build time | Not yet known |
+| Build time | 40 hits Small (22.7 s), 20 hits Medium (11.3 s), 14 hits Large (12.4 s). Derived from the hammer swing timing, not timed in play. |
 | Health | 1,000 HP |
 | **Damage** | |
 | Bullets | -85% |

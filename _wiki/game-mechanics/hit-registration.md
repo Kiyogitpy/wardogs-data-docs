@@ -23,7 +23,7 @@ In Wardogs, most bullets are moving objects, not instant lines from the gun to t
 ## How it works
 
 - **Path.** A bullet is checked along its path at each step of its flight. If something solid is in the way, the bullet hits it.
-- **Hit-scan shots.** A shot counts as hit-scan, meaning it is not a travelling bullet, when its ammunition is not a self-moving projectile. Which ammunition uses this is not yet known (a static reading of the game code, not checked in play).
+- **Hit-scan shots.** A shot counts as hit-scan, meaning it is not a travelling bullet, when its ammunition is not a self-moving projectile. The condition comes from a stats flag that the projectile code reads. Which ammunition has that flag off is not listed here (a static reading of the game code, not checked in play).
 - **Surfaces.** A hit on a surface can stop the bullet, bounce it off (ricochet) or let it pass through. The surface material decides the chance. See [Penetration and Ricochet](penetration-and-ricochet.md).
 - **Players.** A bullet that reaches a player is checked against every body part its path passes through. A character has 20 collision bodies, and one bullet can cross several of them. The game works out the damage for each part crossed, and the highest result counts. Which part that is decides the damage (see [Health and Damage](health-and-damage.md)).
 - **Limbs.** Calves, forearms and thighs are checked as plain capsules: a straight shape whose radius is the average of its two ends, not a tapered shape (a static reading of the game code, not checked in play).

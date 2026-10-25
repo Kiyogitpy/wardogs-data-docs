@@ -14,7 +14,7 @@ description: "A closeable door built with a Medium or Large Hammer from 80 Build
 | Hammer | Medium, Large |
 | **Building** | |
 | Build cost | 80 Build Supplies (22 in Season 1) |
-| Build time | Not yet known |
+| Build time | 80 hits Medium (45.4 s), 54 hits Large (47.7 s). Derived from the hammer swing timing, not timed in play. |
 | Health | 2,200 HP |
 | **Damage** | |
 | Bullets | -85% |

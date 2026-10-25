@@ -45,7 +45,7 @@ The mission has 53 Lonestar soldiers: 49 riflemen and 4 snipers. 27 are on the m
 
 ## Rewards
 
-The mission has no reward table of its own, so its rewards are not yet known. No payout for completing the mission is set in the game files. Rewards follow the general rules; see [Cash and Rewards](../progression-and-economy/cash-and-rewards.md). The session-event reward lookup has no rows for PvE missions.
+The mission has no reward table of its own. No payout for completing the mission is set in the game files, so any payout is decided by the server. Rewards follow the general rules; see [Cash and Rewards](../progression-and-economy/cash-and-rewards.md). The session-event reward lookup has no rows for PvE missions.
 
 ## See also
 

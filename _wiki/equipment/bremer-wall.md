@@ -14,7 +14,7 @@ description: "A large wall built only with the Large Hammer, from 32 Build Suppl
 | Hammer | Large |
 | **Building** | |
 | Build cost | 32 Build Supplies (15 in Season 1) |
-| Build time | Not yet known |
+| Build time | 22 hits Large (about 19.4 s). Derived from the hammer swing timing, not timed in play. |
 | Health | 6,500 HP |
 | **Damage** | |
 | Bullets | -80% |

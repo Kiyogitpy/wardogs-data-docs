@@ -31,7 +31,7 @@ Sniper Showdown runs on its own map entry in the server browser, Bakurani Outski
 - **Deaths and respawns.** The death screen shows "Killed by" the attacker's name, then a blackout of 3.0 seconds, then "Respawning in" a countdown.
 - **Death explosion.** A player who dies explodes 1.5 seconds later. The blast is set to 250 damage, a radius of 500, an effective radius of 250, a minimum of 30 damage, a falloff of 0.5 and 100 blunt damage. Line of sight is checked. How these values combine into the final damage is not in the data.
 - **Round end.** At the end of a round a countdown shows "Next Round in" minutes and seconds, then a scoreboard.
-- **Timer and leaderboard.** The timer shows minutes and seconds. A leaderboard is shown during play. A round ends at 10 kills or after 30 minutes. The leaderboard's contents are not in the data.
+- **Timer and leaderboard.** The timer shows minutes and seconds. A leaderboard is shown during play. A round ends at 10 kills or after 30 minutes. The game files do not describe what the leaderboard shows.
 - **Starting loadout.** Each player gets a Scout Backpack and a GGX 17 pistol at spawn.
 - **Factions.** The mode is free-for-all. Each player is given a faction from a pool, and how many factions the pool holds is not in the data.
 

@@ -14,7 +14,7 @@ description: "A small camouflage tent built with any hammer from 7 Build Supplie
 | Hammer | Small, Medium, Large |
 | **Building** | |
 | Build cost | 7 Build Supplies |
-| Build time | Not yet known |
+| Build time | 14 hits Small (7.9 s), 7 hits Medium (4.0 s), 5 hits Large (4.4 s). Derived from the hammer swing timing, not timed in play. |
 | Health | 300 HP |
 | **Damage** | |
 | Bullets | -85% |

@@ -14,7 +14,7 @@ description: "A shelter built with a Medium or Large Hammer from 250 Build Suppl
 | Hammer | Medium, Large |
 | **Building** | |
 | Build cost | 250 Build Supplies |
-| Build time | Not yet known |
+| Build time | 250 hits Medium (141.8 s), 167 hits Large (147.5 s). Derived from the hammer swing timing, not timed in play. |
 | Health | 2,250 HP |
 | **Damage** | |
 | Bullets | -80% |

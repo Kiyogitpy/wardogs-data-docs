@@ -41,7 +41,7 @@ The standard backpacks differ in price, grid and slot count. The shop text gives
 
 The weight is in kilograms, the unit the game shows for item weight. The item data draws some bags with a different grid shape from the shop text, for example the Scout Backpack. This page uses the shop text.
 
-The Halftrack Backpack has no price in the shop and cannot be bought there. The sources do not say where else it could be obtained, so that is not yet known.
+The Halftrack Backpack has no price in the shop and cannot be bought there. The game files show no vendor, loot table or unlock that gives it, so how it can be obtained is not in the data.
 
 The data gives no other effect for the standard backpacks. The number of slots is the only stated benefit.
 
@@ -61,3 +61,4 @@ No Season 2 change to the standard backpacks is listed in the data.
 - [Item Shop for Non-Weapon Items](../../game-features/Wardogs_ItemShop_v1.md): prices, unlock level, grids and slot counts, the hidden Halftrack Backpack, weights
 - [Items (data)](../../content/Wardogs_Items_v2.md): backpack weights and grid shapes in the item data
 - [Items and Equipment, Season 2](../../season-2-changes/items-equipment.md): checked for changes
+- [Round 42 economy and buildables evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): no vendor, loot or unlock row (P38)

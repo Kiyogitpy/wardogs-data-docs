@@ -62,7 +62,7 @@ Base payouts for each kind of target (vehicle, buildable, player and so on) are 
 
 - How the spot times hold up in play. The values come from the spotting data; the game was not run to time them.
 - The base payout for every target type. It is in the challenge tables, not on this page.
-- The payout for spotting a player. The data has a calculator row but no lookup for it.
+- The payout for spotting a player. The data has its own cash and Role XP rows for spotting a player, which are not repeated on this page.
 - The exact reduction for repeat targets.
 
 ## See also
