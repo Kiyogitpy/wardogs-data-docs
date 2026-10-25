@@ -94,7 +94,7 @@ Helicopters and the airplane carry flares. The L2A6 carries smoke. Every other v
 | [Havoc](../vehicles/havoc.md) | Flares | 2 | 3.5 s | 5 to 300 m |
 | [MH-6](../vehicles/mh-6.md), [AH-6M [Miniguns]](../vehicles/ah-6m-miniguns.md), [AH-6R [Rockets]](../vehicles/ah-6r-rockets.md) | Flares | 2 | 3.5 s | 10 to 300 m |
 | [Z20 Lakota](../vehicles/z20-lakota.md), [Z20 Lakota [Miniguns]](../vehicles/z20-lakota-miniguns.md) | Flares | 2 | 3.5 s | 15 to 300 m |
-| [L2A6](../vehicles/l2a6.md) | Smoke, visible for 6 s in total | Not stated | Not applicable | Not applicable |
+| [L2A6](../vehicles/l2a6.md) | Smoke screen, active for 16 s, usable again after 90 s | Not stated | Not applicable | Not applicable |
 
 Tips that follow from the numbers:
 
@@ -102,7 +102,7 @@ Tips that follow from the numbers:
 - **Because the helicopters have arcade assists, do not expect a manual climb to be unlimited.** Each helicopter limits its climb rate to 36 km/h and holds a hover when the collective is released. The Havoc alone also levels pitch and roll at low speed. See [Vehicle handling](../vehicles/vehicle-handling.md#driving-and-flight-assists).
 - **Because the in-game tip says flares can "momentarily prevent" heat-seeking projectiles from locking on, do not treat them as a shield.** The data does not say how long a burst breaks a lock.
 - **Because the in-game tip also says flying low stops certain launchers from locking on, low flight is a second defence.** The data does not say which launchers.
-- **Because the L2A6's smoke lasts 6 seconds in total (2 seconds fading in, 2 at full density, 2 fading out), it gives short cover.** The data does not say whether smoke affects lock-on weapons.
+- **Because the L2A6's smoke screen stays active for 16 seconds and can be used again 90 seconds after it is fired, it gives short cover with a long wait.** The 6 seconds in the smoke effect data describe the look of the grenade-style cloud (2 seconds fading in, 2 at full density, 2 fading out), not how long the screen is active. The data does not say whether smoke affects lock-on weapons.
 
 ## Fuel and repair
 
@@ -113,13 +113,13 @@ Refuel a vehicle at a Refuel Station inside a Forward Operating Base, or with a 
 | Option | Restock | Time | Cost | Input used |
 |---|---|---:|---:|---|
 | Refuel Station, Fast | 5% of the tank | 3 s | 75 cash | 5 Fuel Supplies |
-| Refuel Station, Max | Up to 100% of the tank | 9 s | 1,500 cash | 5 Fuel Supplies |
+| Refuel Station, Max | Up to 100% of the tank | 9 s | 1,500 cash for a full tank, less for a partial fill | Fuel Supplies in proportion to the amount restored |
 | [Fuel Canister](../equipment/fuel-canister.md), carried by a player | 2.0 units every 0.75 s | Not applicable | 150 cash for the can | Can has 40 durability |
 
 Tips that follow from the numbers:
 
-- **Because Fast and Max cost the same per percent when Max fills the whole tank, choose Fast for a partial top-up.** Fast costs 15 cash per percent (75 for 5%), and Max costs 15 cash per percent only when it fills to 100% (1,500 for 100%) (derived). Whether a Max restock stops early when the tank is nearly full is not known.
-- **When the fuel runs out, the engine stops.** The server stops the engine when a vehicle's fuel reaches zero. Whether it can be restarted before refuelling is not yet known. See [Fuel and refueling](../vehicles/fuel-and-refueling.md).
+- **Because Max charges only for the fuel it restores, a Max restock of a nearly full tank costs little.** This is a static reading of the restock code, not checked in play. Fast restocks 5% of the tank for 75 cash, which is the simpler way to add a small amount.
+- **When the fuel runs out, the engine stops.** The server stops the engine when a vehicle's fuel reaches zero, and by a static reading (not checked in play) it cannot be restarted while the tank is empty, so refuel first. See [Fuel and refueling](../vehicles/fuel-and-refueling.md).
 
 ### Repair
 
@@ -163,6 +163,7 @@ Tips that follow from the numbers:
 ## Sources
 
 - [Vehicles](../vehicles.md): the full vehicle list
+- [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the smoke screen timing, the empty-tank restart block and the Max refuel charge rule
 - [Vehicle damage](../vehicles/vehicle-damage.md), [Repair and vehicle parts](../vehicles/repair-and-vehicle-parts.md), [Fuel and refueling](../vehicles/fuel-and-refueling.md), [Countermeasures and flares](../vehicles/countermeasures-and-flares.md) and [Seats and passengers](../vehicles/seats-and-passengers.md)
 - [Refuel and Repair Stations](../equipment/refuel-and-repair-stations.md) and [Fuel Canister](../equipment/fuel-canister.md)
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)

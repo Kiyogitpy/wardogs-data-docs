@@ -67,6 +67,8 @@ The Humvee has no weapons. Its four seats are a driver and three passengers.
 - Torque split of 0.4 to the front and 0.6 to the rear.
 - Engine idle 700 RPM, rev limit 4,000 RPM.
 
+**Steering and pedal tuning.** The data stores steer sensitivity 2.5, steer input gravity 2, throttle sensitivity 2 and brake sensitivity 6.5, the highest brake value in the data, and the brake reaches full at a tenth of pedal travel. The game does not label the units. (see [Vehicle handling](vehicle-handling.md#driving-input-tuning) for how these settings work).
+
 ## Season 2 changes
 
 - Torque split moved toward the rear wheels: the front share fell from 0.7 to 0.4, and the rear share rose from 0.3 to 0.6.
@@ -85,6 +87,7 @@ The Humvee has no weapons. Its four seats are a driver and three passengers.
 
 ## Sources
 
+- [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the wheeled steering and pedal tuning for this vehicle
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
 - [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
 - [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md)

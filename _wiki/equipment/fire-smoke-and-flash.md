@@ -36,9 +36,9 @@ The Molotov bursts on detonation, dealing 40 HP at its centre out to 2.5 m and n
 - **Burning area.** The fire lasts up to 45 s. It is laid as 15 patches per throw, each a 2 m by 2 m box 0.5 m tall. It damages players and vehicles inside a patch every 0.4 s. The 15 patches spread on a spiral out to about 2.5 m from the impact point.
 - **Players.** Each tick deals 15 HP, which is 37.5 HP per second while standing in the fire. Players without the Alive state take no damage.
 - **Vehicles.** Each tick deals 2 health, which is 5 per second.
-- **Burning status.** A player in the fire gets a "burning" status, shown with a screen effect that darkens and blurs the view. The status ends when the player leaves the fire. The data points to this without a timer, but this is not fully confirmed.
+- **Burning status.** A player in the fire gets a "burning" status, shown with a screen effect that darkens and blurs the view. The status ends when the player leaves the patch (a static reading of the game code, not checked in play). The data gives no timer for it.
 
-The Molotov bursts on its first impact. Its 5 s fuse is only a backstop, and it is the only throwable set to burst on impact. Armor reduces the burst but not the fire, since no armor rule in the data applies to fire damage (derived). The damage tables give a teammate's Molotov fire no reduction (derived).
+The Molotov bursts on its first impact. Its 5 s fuse is only a backstop, and it is the only throwable set to burst on impact. Armor reduces the burst but not the fire, since no armor rule in the data applies to fire damage (derived). The damage tables reduce friendly fire only for infantry bullets (-50 %) and large hammers (-70 %), so a teammate's Molotov fire has no reduction in the tables.
 
 ### Smoke grenades
 
@@ -100,7 +100,7 @@ The Molotov and smoke grenades use the same throw speeds:
 | Overarm (primary) | 2,000 | 20 |
 | Underarm (secondary) | 1,200 | 12 |
 
-Each throw also has a speed curve in the data. How the curve combines with the flat speed is not yet known.
+Each throw also has a speed curve in the data. A static reading of the throw code (not checked in play) scales the flat speed by a curve of how high you aim, and then adds part of your own horizontal and vertical movement speed.
 
 ## Use and timing
 
@@ -134,6 +134,7 @@ The Season 2 items data lists no change to the Molotov, smoke grenades, mines or
 
 ## Sources
 
+- [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the 45 s fire field and the burning status ending on leaving the patch, and the throw speed readings
 - [Fire, Smoke and Mines](../../game-features/Wardogs_FireAndUtility_v1.md): Molotov burst and fire, smoke assets, throws and mine triggers
 - [Item Shop for Non-Weapon Items](../../game-features/Wardogs_ItemShop_v1.md): prices, shop text and signal grenade names
 - [Explosive actor defaults](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/explosive-actors.json): the Molotov fire field and mine values

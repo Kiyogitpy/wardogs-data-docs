@@ -65,7 +65,7 @@ The stations refuel and repair vehicles in the Forward Operating Base radius. Ea
 | Repair Station | Fast | 5% of health | 3 s | 100 cash | 5 Mechanical Supplies |
 | Repair Station | Max | up to 100% of health | 9 s | 2,000 cash | 5 Mechanical Supplies |
 
-The times are the stored values. Whether a Max restock is shorter when the tank or health is nearly full is not known. The Refuel Station has a refuel start and stop sound, and the Repair Station has a repair start and stop sound.
+The times are the stored values. Whether a Max restock is shorter when the tank or health is nearly full is not known. The charge is different: a Max restock is charged for the share it restores. The cash cost in the table is the full-tank or full-health price, scaled by the share restored and rounded up to a multiple of 50. The supplies used are the item's cost times the amount restored, so a nearly full target costs little, and a restock cannot give more than the FOB has in stock. This is a static reading of the restock code (round 41), not checked in play. The Refuel Station has a refuel start and stop sound, and the Repair Station has a repair start and stop sound.
 
 ## Durability
 
@@ -101,6 +101,7 @@ The Season 2 data lists no change to either station's cost or health.
 
 ## Sources
 
+- [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the Max restock charge rule (the supplies and cash scale with the amount restored)
 - [Buildables](../../game-features/Wardogs_Buildables_v1.md): cost, health, damage rows, placement limits, the repair multiplier and the item descriptions
 - [Tag display text](../../content/Wardogs_TagDisplayText_v1.md): the names of the FOB supply containers, including Fuel Supplies and Mechanical Supplies
 - [Items and equipment changes, Season 2](../../season-2-changes/items-equipment.md): the buildable changes

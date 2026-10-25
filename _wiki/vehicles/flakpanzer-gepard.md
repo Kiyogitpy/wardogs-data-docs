@@ -35,7 +35,7 @@ The Gepard is sold in the vehicle vendor under land tank, for 14,000 cash, and u
 | Fuel economy | 10.0 (as stored) |
 | Seats | 2 |
 | Max incline | 50 degrees |
-| Countermeasures | Smoke (1 charge) |
+| Countermeasures | Smoke (1 charge; screen active for 16 s, usable again after 90 s) |
 
 ## Armor and damage
 
@@ -55,12 +55,14 @@ While its main body stands, the body sends 5% of each hit to the fuel tank. Rifl
 |---|---|---:|---:|---:|---:|
 | Duel 35 mm Oerlikon GDF cannons (twin) | Cannon | 1,100 rounds/min | 1,000 m | 4.0 s | None |
 
-The seats are a driver and a gunner in the turret. The Gepard also carries a smoke countermeasure with one charge, like the L2A6.
+The seats are a driver and a gunner in the turret. The Gepard also carries a smoke countermeasure with one charge, like the L2A6. Its smoke screen stays active for 16 seconds, and the Gepard can use smoke again 90 seconds after the first use. The data lists one starting charge; how charges come back is not yet known.
 
 ## Handling
 
 - Tracked drive with a top speed of 65 and a maximum incline of 50 degrees.
 - Fuel economy is listed as 10.0 (as stored), higher than the other tanks' 8.0 to 8.5. The data does not say which direction is better.
+
+**Engine torque.** The torque curve is set against engine RPM up to 5,000 in the tracked drive data, and the torque values carry no unit label. See [Vehicle handling](vehicle-handling.md) for the other tracked numbers.
 
 ## Season 2 changes
 
@@ -77,6 +79,7 @@ The seats are a driver and a gunner in the turret. The Gepard also carries a smo
 
 ## Sources
 
+- [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the smoke screen's 16 s active window and 90 s cooldown, and the other round 41 vehicle readings
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
 - [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
 - [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md)

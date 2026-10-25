@@ -46,6 +46,8 @@ Hip spread in degrees (half-angle), from standing still to full speed. Full spee
 
 The PKM uses the sniper values. Fully aimed, all of these are 0.
 
+The data stores these as one spread curve row for each class and stance (29 rows in all, including the mounted machine guns and the stable mount). Each row is a straight line from input 0 to input 1, and the stored numbers carry no unit in the curve table. The degree reading above comes from the spread pipeline page, not from this table. What the 0 to 1 input measures is not traced.
+
 Attachment multipliers on the spread:
 
 | Attachment | Multiplier |
@@ -84,6 +86,7 @@ Recoil patterns (the points that set each shot's kick) are different for each we
 
 ## Sources
 
+- [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the stored spread curve rows per class and stance (unit not published in the curve table)
 - [Weapon Spread, Accuracy and Shot Direction](../../pipelines/Wardogs_WeaponSpread_v1.md)
 - [Weapon Spread and Recoil Data](../../content/Wardogs_WeaponSpreadRecoilData_v1.md)
 - [Season 2 weapons changes](../../season-2-changes/weapons-ammo.md) (recoil patterns)

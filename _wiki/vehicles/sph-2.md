@@ -101,6 +101,8 @@ The stats sheet gives 3 seats, but the seat data has two setups: a driver and a 
 - Steering input rises at 40 and falls at 80, as stored.
 - Stabilized state: the hull takes 2.0 s to stabilize and 1.0 s to release. It must be almost stopped, on ground at most 20 degrees steep, to start. It cannot move while stabilized, and the gun cannot fire while the state changes. The stabilized state does not level the barrel.
 
+**Engine torque.** The torque curve is set against engine RPM up to 5,000 in the tracked drive data, and the torque values carry no unit label. See [Vehicle handling](vehicle-handling.md) for the other tracked numbers.
+
 ## Season 2 changes
 
 - A new 125 mm rocket rule adds +15%.

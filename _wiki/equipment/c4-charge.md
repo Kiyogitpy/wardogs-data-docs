@@ -68,6 +68,8 @@ The data gives the number of centre hits a vehicle needs to lose its main health
 | [T-72B3](../vehicles/t-72b3.md) | 750 HP | 5 |
 | [M113 APC SV](../vehicles/m113-apc-sv.md) | 1000 HP | 4 |
 
+Against armour the C4 is weak on the tanks and the Humvee family, and very strong on stationary weapons. Its table entry is -25 % on the tanks and -15 to -52.5 % on the Humvee family and the Havoc. On stationary weapons it is +1,500 % on the Mistral, +700 % on the Phalanx and +300 % on the Mortar and the Stingray. Other entries on the same row also apply.
+
 See [Vehicle damage](../vehicles/vehicle-damage.md) for how vehicles take damage in general.
 
 ## Season 2 changes
@@ -84,6 +86,7 @@ The Season 2 items data lists no change to the C4 Charge or the Remote Detonator
 
 ## Sources
 
+- [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the C4 armour readings against vehicles and stationary weapons
 - [Explosives Reference](../../game-features/Wardogs_Explosives_v1.md): blast damage, radius, falloff and vehicle hit counts
 - [Fire, Smoke and Mines](../../game-features/Wardogs_FireAndUtility_v1.md): charge health, detonator range, throw speed and expiry check
 - [Item Shop for Non-Weapon Items](../../game-features/Wardogs_ItemShop_v1.md): names, prices and unlock levels

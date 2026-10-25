@@ -60,6 +60,8 @@ The pickup has no weapons. Its seats are the driver, three inside passengers and
 
 Handling matches the base Kodiak: mass 2,750, hand brake 50, front steering of 30 degrees, and the same engine and transmission.
 
+**Steering and pedal tuning.** The pickup uses the same input set as the Kodiak, which stores steer input gravity 2 and no other sensitivity values. The game does not label the units. (see [Vehicle handling](vehicle-handling.md#driving-input-tuning) for how these settings work).
+
 ## Season 2 changes
 
 - The vehicle item changed size in inventory (height 4 to 3).
@@ -75,6 +77,7 @@ Handling matches the base Kodiak: mass 2,750, hand brake 50, front steering of 3
 
 ## Sources
 
+- [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the wheeled steering and pedal tuning for this vehicle
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
 - [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
 - [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md)

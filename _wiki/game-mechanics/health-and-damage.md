@@ -10,7 +10,7 @@ description: "How much health a player has, which body parts count for more, and
 |---|---|
 | Max health | 100 HP |
 | Hit locations | 12 body parts |
-| Friendly fire | Bullet damage to a teammate is halved |
+| Friendly fire | Bullet damage to a teammate is halved; Large Hammer damage to a teammate is cut by 70 % |
 | Health regeneration | None outside Deathmatch (none found in the game code; see [Downed and Revive](downed-and-revive.md)). Deathmatch: 5 health per tick after 10 s without damage |
 {: .wiki-infobox }
 
@@ -27,7 +27,7 @@ A player can be hit in twelve places: the head, neck, three parts of the torso (
 3. Armor covering that body part reduces the result (see [Armor](armor.md)).
 4. The remaining damage comes off health. When health reaches zero the player is downed (see [Downed and Revive](downed-and-revive.md)).
 
-Friendly fire is part of the same system. A bullet that hits a teammate does half the damage it would otherwise do.
+Friendly fire is part of the same system. A bullet that hits a teammate does half the damage it would otherwise do, and a Large Hammer hit on a teammate does 30 % of its damage. The damage tables give no friendly-fire reduction to explosives or fire, so a teammate's grenade, mine, C4 or Molotov fire is not reduced there.
 
 A bullet also does less damage once it has slowed. Its speed is compared with a reference speed for the weapon, and the damage is scaled by the ratio (see [Ballistics](ballistics.md)).
 
@@ -92,6 +92,7 @@ The same bullet does different damage to different weapons. A sniper rifle such 
 
 ## Sources
 
+- [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the friendly-fire rule in the damage tables (only bullets and the Large Hammer are reduced)
 - [Damage by Weapon and Ammo](../../game-features/Wardogs_WeaponDamage_v1.md)
 - [Damage rules](../../pipelines/Wardogs_DamagePipeline_v2.md) (body-part multipliers and friendly fire)
 - [Round 41 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-weapons.md): the body parts crossed by one bullet and the faction rule

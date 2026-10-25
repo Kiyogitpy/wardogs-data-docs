@@ -66,6 +66,8 @@ The Dune Buggy has no weapons. Its three seats are a driver and two passengers.
 - Torque split heavily toward the rear: 0.15 to the front and 0.85 to the rear.
 - Engine idle 800 RPM, with a torque scale of 0.35.
 
+**Steering and pedal tuning.** The data stores steer sensitivity 1.25, steer input gravity 2, throttle sensitivity 1.75 and brake sensitivity 1.25. Its steer-speed multiplier falls from 1.5 to 1 as the input rises. The game does not label the units. (see [Vehicle handling](vehicle-handling.md#driving-input-tuning) for how these settings work).
+
 ## Season 2 changes
 
 - A new 125 mm rocket rule adds +250%.
@@ -81,6 +83,7 @@ The Dune Buggy has no weapons. Its three seats are a driver and two passengers.
 
 ## Sources
 
+- [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the wheeled steering and pedal tuning for this vehicle
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
 - [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
 - [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md)

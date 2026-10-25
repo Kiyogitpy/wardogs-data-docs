@@ -66,6 +66,8 @@ The Kodiak has no weapons. It has four seats: a driver and three active passenge
 - ABS 30 with a minimum speed of 35, and traction control 55, as stored.
 - Engine torque curve runs from 0 to 9,000 RPM, with a torque scale of 0.6, as stored.
 
+**Steering and pedal tuning.** The data stores steer input gravity 2 and no other sensitivity values for this input set. The game does not label the units. (see [Vehicle handling](vehicle-handling.md#driving-input-tuning) for how these settings work).
+
 ## Season 2 changes
 
 - The wheel deflation threshold rose from 0.5 to 0.55 on the front and rear axles.
@@ -81,6 +83,7 @@ The Kodiak has no weapons. It has four seats: a driver and three active passenge
 
 ## Sources
 
+- [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the wheeled steering and pedal tuning for this vehicle
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
 - [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
 - [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md)

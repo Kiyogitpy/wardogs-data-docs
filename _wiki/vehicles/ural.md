@@ -67,6 +67,8 @@ The Ural has no weapons. Its three seats are a driver and two passengers.
 - Six-speed gearbox with a first gear ratio of 5.62, the longest first gear of the wheeled vehicles.
 - Torque peak 900 at 1,200 RPM, with a torque scale of 2.0 and an idle of 650 RPM.
 
+**Steering and pedal tuning.** The data stores steer input gravity 2 and throttle sensitivity 1. Its steer-speed multiplier falls from 1.4 to 0.5 as the input rises. The game does not label the units. (see [Vehicle handling](vehicle-handling.md#driving-input-tuning) for how these settings work).
+
 ## Season 2 changes
 
 - The 35×228 mm cannon rule changed from -65% to -87.5%, so cannon hits from that calibre now do less damage.
@@ -82,6 +84,7 @@ The Ural has no weapons. Its three seats are a driver and two passengers.
 
 ## Sources
 
+- [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the wheeled steering and pedal tuning for this vehicle
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
 - [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
 - [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md)

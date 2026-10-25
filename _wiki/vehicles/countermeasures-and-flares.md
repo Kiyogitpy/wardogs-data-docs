@@ -35,7 +35,7 @@ The data does not say how a flare burst changes the lock of a particular launche
 
 ### Smoke
 
-Smoke is a sustained countermeasure. A smoke screen is visible for 6 seconds in total: a 2 second fade in, a 2 second hold at full density, and a 2 second fade out. The data does not say whether smoke affects lock-on weapons or how much.
+Smoke is a sustained countermeasure. A vehicle's smoke screen stays active for 16 seconds after it is fired, and the vehicle can use it again 90 seconds after that first use. The 6 seconds that appear in the smoke effect data are the look of the grenade-style smoke cloud (a 2 second fade in, a 2 second hold at full density and a 2 second fade out). They are not the screen's active time, and the data does not state how long a vehicle's cloud is drawn. The data does not say whether smoke affects lock-on weapons or how much.
 
 ### Amounts and reloading
 
@@ -56,17 +56,17 @@ Season 2 renamed the flares input to Fire Countermeasures. The key stays the sam
 | [Z20 Lakota](z20-lakota.md) | Flares | 2 starting | Active 3.5 s; range band 15 to 300 m |
 | [Z20 Lakota [Miniguns]](z20-lakota-miniguns.md) | Flares | 2 starting | Active 3.5 s; range band 15 to 300 m |
 | [Fixed-wing airplane](fixed-wing-airplane.md) | Flares | 3 starting | Active for 3.5 seconds; no range band set |
-| [L2A6](l2a6.md) | Smoke | Not stated | Sustained smoke trail, visible for 6 seconds |
-| [Flakpanzer Gepard](flakpanzer-gepard.md) | Smoke | 1 charge | Smoke countermeasure |
-| [T-72B3](t-72b3.md) | Smoke | 1 charge | Smoke countermeasure |
-| [M113 APC SV](m113-apc-sv.md) | Smoke | 255 charges | Smoke countermeasure |
+| [L2A6](l2a6.md) | Smoke | Not stated | Smoke screen active for 16 s, usable again after 90 s |
+| [Flakpanzer Gepard](flakpanzer-gepard.md) | Smoke | 1 charge | Smoke screen active for 16 s, usable again after 90 s |
+| [T-72B3](t-72b3.md) | Smoke | 1 charge | Smoke screen active for 16 s, usable again after 90 s |
+| [M113 APC SV](m113-apc-sv.md) | Smoke | 255 charges | Smoke screen active for 16 s, usable again after 90 s |
 
-The Flakpanzer Gepard, the T-72B3 and the M113 APC SV have a smoke countermeasure in their game systems data, like the L2A6 (one charge each on the Gepard and T-72B3, 255 on the M113). The SPH-2 variant, the Kodiak, Humvee, Dune Buggy, Bobcat, Ural and Wolf-110 have none.
+The Flakpanzer Gepard, the T-72B3 and the M113 APC SV have a smoke countermeasure in their game systems data, like the L2A6 (one charge each on the Gepard and T-72B3, 255 on the M113). The charge counts are the starting values in the data; the load path that sets them was not traced, so they are read by analogy with the flares. The SPH-2 variant, the Kodiak, Humvee, Dune Buggy, Bobcat, Ural and Wolf-110 have none.
 
 ## Tips that follow from the numbers
 
 - Flares are the only countermeasure for the helicopter and airplane group, so a helicopter pilot should treat them as the main defence against heat-seeking attacks.
-- Smoke lasts 6 seconds in total, so a smoke screen is short. Use it as a short cover, not a long one.
+- A smoke screen is active for 16 seconds, then the vehicle must wait until 90 seconds after the first use before it can use smoke again. Use it as a short cover, and plan the next one around the 90 second wait.
 - Because the airplane's flares are a fixed count of 3, use them when they matter most rather than as a routine.
 - Each helicopter starts with 2 flares. Each press uses one and then waits 5 seconds before the next, so plan a flight around that count. The "3 bursts" in the item text is not a count.
 
@@ -88,4 +88,5 @@ The Flakpanzer Gepard, the T-72B3 and the M113 APC SV have a smoke countermeasur
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
 - [Round 39 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md): the 5 second flare cooldown, one flare per press and the smoke countermeasure on the Gepard, T-72B3 and M113.
 - [Round 40 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-vehicles-explosives.md): the confirmation that restock and the lock-on effect are still not in the data.
+- [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the 16 second active window and 90 second cooldown of the vehicle smoke screen, and the lock-on interplay that stays open.
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): starting flare counts, active time and range bands for each flare-carrying vehicle.
