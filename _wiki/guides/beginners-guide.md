@@ -31,7 +31,7 @@ A headshot is the fastest kill, and limb hits are the slowest. Full details are 
 
 ## 3. Armor and which ammo to load
 
-Vests cover the torso, helmets cover the head, and the arms, hands, thighs, calves and feet are never covered.
+Vests cover the torso and helmets cover the head. Only the top-tier vest also covers the pelvis and upper arm, and only the heavier helmets cover the neck. Lower arms, hands, thighs, calves and feet are never covered by armor.
 
 | Vest or helmet | Reduction | Damage reduced at |
 |---|---:|---|
@@ -44,7 +44,7 @@ Choose ammo to match what the enemy wears:
 
 - **No armor:** hollow point. It does about twice the damage of full metal jacket.
 - **Light armor:** full metal jacket. Hollow point loses most of its damage.
-- **Medium, Heavy or Super heavy armor:** armor-piercing does more damage than full metal jacket with rifles.
+- **Heavy or Super heavy armor:** armor-piercing does clearly more damage than full metal jacket with rifles. Against Medium armor the gap is small (16.6 against 16.4 on a Medium vest).
 
 The full comparison is in [Choosing Ammo](choosing-ammo.md) and [Armor](../game-mechanics/armor.md).
 
@@ -53,16 +53,16 @@ The full comparison is in [Choosing Ammo](choosing-ammo.md) and [Armor](../game-
 - **Bandage:** +35 HP, about 5 seconds to use.
 - **Individual First Aid Kit:** +100 HP, about 5 seconds to use.
 - **Medical Bag:** heals 35 HP over 5 seconds on yourself, or 15 HP over 1.5 seconds on a teammate.
-- **Health does not regenerate on its own.** The data shows no natural healing over time.
+- **Health does not regenerate on its own.** The data shows no natural healing for infantry outside the Deathmatch mode, and regeneration over time is not yet known.
 - **At 0 HP you are downed.** You have 360 seconds on the bleed-out timer, which drains at half speed, so about 12 minutes in total (derived from the player defaults). A teammate can revive you by holding for 20 seconds with no equipment.
-- **Defibrillator:** revives instantly to 35 HP, once it has charged and has a battery.
+- **Defibrillator:** revives a teammate to 35 HP after a 4 second charge, once it has a battery. You cannot use it while you are downed yourself.
 - **Giving up** ends the wait in 1.5 seconds. Use it only when no help is coming.
 
 See [Downed and Revive](../game-mechanics/downed-and-revive.md) for every item and its numbers.
 
 ## 5. Aiming and moving
 
-- **Aiming down the sights removes hip spread completely.** Shots fired from the hip are spread by 1 to 7 degrees, depending on your speed, stance and weapon.
+- **Aiming down the sights removes hip spread completely.** Shots fired from the hip are spread at random. An assault rifle's hip spread runs from 3 degrees standing still to 6 degrees at full speed, 2 to 4 crouched and 1.5 to 3 prone. Sniper rifles spread 4 to 7 degrees standing.
 - **Stand still and crouch to shoot more accurately.** Standing still reduces hip spread compared with moving, and crouching or going prone reduces it further.
 - **Aiming down the sights halves your movement speed.** Plan to aim when you have stopped.
 - **Walking speed:** 4.3 m/s standing, 2.7 m/s crouched, and 0.8 m/s prone. A standing sprint is 6.1 m/s.
@@ -73,6 +73,13 @@ For the full spread and movement rules, see [Spread and Recoil](../game-mechanic
 ## 6. Teammates
 
 Bullets that hit a teammate do half damage. Friendly fire still costs health, so take care with your line of fire.
+
+## 7. Where to go next
+
+- **Money:** [Making Money](making-money.md) explains how cash comes in and what it buys.
+- **Base:** [Building a Base](building-guide.md) covers the Forward Operating Base and the buildables you place in it.
+- **Vehicles:** the [Vehicle Guide](vehicle-guide.md) compares every vehicle by role and shows how to keep one alive and fuelled.
+- **Missions against AI:** the [PvE Guide](pve-guide.md) covers the three PvE missions and the soldiers you fight in them.
 
 ## What is not yet known
 
@@ -91,6 +98,8 @@ Bullets that hit a teammate do half damage. Friendly fire still costs health, so
 - [Weapons](../weapons.md)
 - [Body armor](../equipment/body-armor.md)
 - [Vehicles](../vehicles.md)
+- [Vehicle Guide](vehicle-guide.md)
+- [PvE Guide](pve-guide.md)
 
 ## Sources
 
